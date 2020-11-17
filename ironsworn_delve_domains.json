@@ -1,0 +1,968 @@
+{
+  "Title": "Site Themes for Ironsworn: Delve",
+  "Source": {
+    "Name": "Ironsworn: Delve"
+  },
+  "Domains": {
+    "Barrow": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "88"
+      },
+      "Summary": "The dead are enshrined here.",
+      "Description": "In this cruel land, there is no shortage of dead to be put to rest. Some barrows are simple crypts for a family or steading. Others are more elaborate or extensive, plunging well into the depths of the earth. A few inconspicuous mounds, their rock and earth worn by time, mark an entryway into impossibly labyrinthine tombs built by long-forgotten people.\n\nEven the most ancient of these sites still echo with the memory and power of lives once lived, battles once fought, loves gained or lost, and vows unfulfilled.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Burial chambers"
+        },
+        {
+          "Chance": 56,
+          "Description": "Maze of narrow passages"
+        },
+        {
+          "Chance": 64,
+          "Description": "Shrine"
+        },
+        {
+          "Chance": 68,
+          "Description": "Stately vault"
+        },
+        {
+          "Chance": 72,
+          "Description": "Offerings to the dead"
+        },
+        {
+          "Chance": 76,
+          "Description": "Statuary or tapestries"
+        },
+        {
+          "Chance": 80,
+          "Description": "Remains of a grave robber"
+        },
+        {
+          "Chance": 84,
+          "Description": "Mass grave"
+        },
+        {
+          "Chance": 88,
+          "Description": "Exhumed corpses"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen guards this area"
+        },
+        {
+          "Chance": 36,
+          "Description": "Trap"
+        },
+        {
+          "Chance": 39,
+          "Description": "Death makes its presence known"
+        },
+        {
+          "Chance": 42,
+          "Description": "Crumbling architecture"
+        },
+        {
+          "Chance": 45,
+          "Description": "Grave goods with hidden dangers"
+        }
+      ]
+    },
+    "Cavern": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "88"
+      },
+      "Summary": "A place of stone and darkness.",
+      "Description": "Another world lies beneath our feet. Caverns vein the Ironlands with meandering tunnels, plunging pits, soaring chambers, and absolute darkness. Claustrophobic crawlspaces and crevices may lead to miles-long cave complexes. Underground waterways carve a relentless path through stone.\n\nWhen you enter these sites, you are a trespasser in a hostile domain. What unseen things dwell here, watching and waiting, amidst the depths?",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Twisting passages"
+        },
+        {
+          "Chance": 56,
+          "Description": "Cramped caves"
+        },
+        {
+          "Chance": 64,
+          "Description": "Vast chamber"
+        },
+        {
+          "Chance": 68,
+          "Description": "Subterranean waterway"
+        },
+        {
+          "Chance": 72,
+          "Description": "Cave pool"
+        },
+        {
+          "Chance": 76,
+          "Description": "Natural bridge"
+        },
+        {
+          "Chance": 80,
+          "Description": "Towering stone formations"
+        },
+        {
+          "Chance": 84,
+          "Description": "Natural illumination"
+        },
+        {
+          "Chance": 88,
+          "Description": "Dark pit"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen lairs here"
+        },
+        {
+          "Chance": 36,
+          "Description": "Cave-in"
+        },
+        {
+          "Chance": 39,
+          "Description": "Flooding"
+        },
+        {
+          "Chance": 42,
+          "Description": "Perilous climb or descent"
+        },
+        {
+          "Chance": 45,
+          "Description": "Fissure or sinkhole"
+        }
+      ]
+    },
+    "Frozen Cavern": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "89"
+      },
+      "Summary": "A place of deep caves and enduring cold.",
+      "Description": "These maze-like tunnels are found in the most inhospitable northern reaches of the Ironlands—carved through glacier, mountain, and hill—or in places of supernatural cold. Their icy depths are a perilous environment of fracturing terrain, shadowy reflections, hollow echoes, and lurking predators.\n\nEntering a frozen cavern is like delving into another world. There is a stark beauty in the icebound passages and glistening chambers. Amazing discoveries, locked in the ice, lie unseen for millennia. But do not be distracted by those enticements. The hazards of this site have no sympathy for the unwary and ill-prepared.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Maze of icy tunnels"
+        },
+        {
+          "Chance": 56,
+          "Description": "Glistening cave"
+        },
+        {
+          "Chance": 64,
+          "Description": "Vast chamber"
+        },
+        {
+          "Chance": 68,
+          "Description": "Frigid waterway"
+        },
+        {
+          "Chance": 72,
+          "Description": "Icy pools"
+        },
+        {
+          "Chance": 76,
+          "Description": "Magnificent ice formations"
+        },
+        {
+          "Chance": 80,
+          "Description": "Frozen waterfall"
+        },
+        {
+          "Chance": 84,
+          "Description": "Deep crevasses"
+        },
+        {
+          "Chance": 88,
+          "Description": "Discovery locked in the ice"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen lairs here"
+        },
+        {
+          "Chance": 36,
+          "Description": "Fracturing ice"
+        },
+        {
+          "Chance": 39,
+          "Description": "Crumbling chasm"
+        },
+        {
+          "Chance": 42,
+          "Description": "Bitter chill"
+        },
+        {
+          "Chance": 45,
+          "Description": "Disorienting reflections"
+        }
+      ]
+    },
+    "Icereach": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "89"
+      },
+      "Summary": "A frigid landscape formed of frozen seas.",
+      "Description": "An Icereach is an expanse of frozen sea, blue-white and sprawling in all directions. These sites are typically found in the northernmost waters. However, a few vast icereaches— kept perpetually frozen by forces we do not understand—clog the seas in southern regions.\n\nOnly the cruelest, most powerful creatures can survive here. The terrain is rugged and cut-through with unstable ice and frigid waterways. Food is scarce. Bitter winds blast the landscape. The remains of ships, locked within the ice, stand as monuments to those who braved these places and were forever lost.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Plains of ice and snow"
+        },
+        {
+          "Chance": 56,
+          "Description": "Seawater channel"
+        },
+        {
+          "Chance": 64,
+          "Description": "Icy highlands"
+        },
+        {
+          "Chance": 68,
+          "Description": "Crevasse"
+        },
+        {
+          "Chance": 72,
+          "Description": "Ice floes"
+        },
+        {
+          "Chance": 76,
+          "Description": "Ship trapped in ice"
+        },
+        {
+          "Chance": 80,
+          "Description": "Animal herd or habitat"
+        },
+        {
+          "Chance": 84,
+          "Description": "Frozen carcass"
+        },
+        {
+          "Chance": 88,
+          "Description": "Camp or outpost"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen hunts"
+        },
+        {
+          "Chance": 36,
+          "Description": "Fragile ice above watery depths"
+        },
+        {
+          "Chance": 39,
+          "Description": "Perilous climb or descent"
+        },
+        {
+          "Chance": 42,
+          "Description": "Avalanche or icefall"
+        },
+        {
+          "Chance": 45,
+          "Description": "Foul weather"
+        }
+      ]
+    },
+    "Mine": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "90"
+      },
+      "Summary": "Tunnels dug greedily and deep.",
+      "Description": "Within the earth, riches await the bold. Some mines are shallow pits worked by pick and shovel. Others are offshoots of existing caverns which pierce deep into hills and mountains. A few are the remains of vast underground complexes built by forgotten cultures.\n\nThe iron and other metals claimed from these sites feed our furnaces. From those fires, we craft tools, armor, weapons, and other precious goods. Our hunger for these resources is never satiated, and we often dig into places best left undisturbed.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Cramped tunnels"
+        },
+        {
+          "Chance": 56,
+          "Description": "Mine works"
+        },
+        {
+          "Chance": 64,
+          "Description": "Excavated chamber"
+        },
+        {
+          "Chance": 68,
+          "Description": "Mineshaft"
+        },
+        {
+          "Chance": 72,
+          "Description": "Collapsed tunnel"
+        },
+        {
+          "Chance": 76,
+          "Description": "Cluttered storage"
+        },
+        {
+          "Chance": 80,
+          "Description": "Housing or common areas"
+        },
+        {
+          "Chance": 84,
+          "Description": "Flooded chamber"
+        },
+        {
+          "Chance": 88,
+          "Description": "Unearthed secret"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Cave-in"
+        },
+        {
+          "Chance": 36,
+          "Description": "Flooding"
+        },
+        {
+          "Chance": 39,
+          "Description": "Unstable platforms or architecture"
+        },
+        {
+          "Chance": 42,
+          "Description": "Hazardous gas pocket"
+        },
+        {
+          "Chance": 45,
+          "Description": "Weakened terrain"
+        }
+      ]
+    },
+    "Pass": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "90"
+      },
+      "Summary": "Treacherous paths over high mountains.",
+      "Description": "Winding through highlands and mountain ranges, these sites offer a tempting route over otherwise impassable terrain. But treacherous landscapes, foul weather, and a host of mountain predators offer their own dangers. Raiders and others take advantage of these natural chokepoints to ambush the unwary.\n\nLonely cairns mark the resting places of those who walked these routes undefended or unprepared. Pray that your path here does not end under a pile of mountain stones.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Winding mountain path"
+        },
+        {
+          "Chance": 56,
+          "Description": "Snowfield or glacial rocks"
+        },
+        {
+          "Chance": 64,
+          "Description": "River gorge"
+        },
+        {
+          "Chance": 68,
+          "Description": "Crashing waterfall"
+        },
+        {
+          "Chance": 72,
+          "Description": "Highland lake"
+        },
+        {
+          "Chance": 76,
+          "Description": "Forgotten cairn"
+        },
+        {
+          "Chance": 80,
+          "Description": "Bridge"
+        },
+        {
+          "Chance": 84,
+          "Description": "Overlook"
+        },
+        {
+          "Chance": 88,
+          "Description": "Camp or outpost"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen lairs here"
+        },
+        {
+          "Chance": 36,
+          "Description": "Denizen hunts"
+        },
+        {
+          "Chance": 39,
+          "Description": "Perilous climb or descent"
+        },
+        {
+          "Chance": 42,
+          "Description": "Avalanche or rockslide"
+        },
+        {
+          "Chance": 45,
+          "Description": "Foul weather"
+        }
+      ]
+    },
+    "Ruin": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "91"
+      },
+      "Summary": "The crumbling legacy of a dead civilization.",
+      "Description": "These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by Ironlanders as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.\n\nNewly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. But most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Crumbling corridors and chambers"
+        },
+        {
+          "Chance": 56,
+          "Description": "Collapsed architecture"
+        },
+        {
+          "Chance": 64,
+          "Description": "Rubble-choked hall"
+        },
+        {
+          "Chance": 68,
+          "Description": "Courtyard"
+        },
+        {
+          "Chance": 72,
+          "Description": "Archive or library"
+        },
+        {
+          "Chance": 76,
+          "Description": "Broken statuary or fading murals"
+        },
+        {
+          "Chance": 80,
+          "Description": "Preserved vault"
+        },
+        {
+          "Chance": 84,
+          "Description": "Temple to forgotten gods"
+        },
+        {
+          "Chance": 88,
+          "Description": "Mausoleum"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Ancient mechanism or trap"
+        },
+        {
+          "Chance": 36,
+          "Description": "Collapsing wall or ceiling"
+        },
+        {
+          "Chance": 39,
+          "Description": "Blocked or broken passage"
+        },
+        {
+          "Chance": 42,
+          "Description": "Unstable floor above a new danger"
+        },
+        {
+          "Chance": 45,
+          "Description": "Ancient secrets best left buried"
+        }
+      ]
+    },
+    "Sea Cave": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "91"
+      },
+      "Summary": "Stone passages carved by ocean waves.",
+      "Description": "Carved by ocean waves and unyielding currents, the sea caves pockmarking the coasts plunge deep into the land’s dark heart. Deadly creatures or determined foes often lair within, but it is the water that is your ever-present enemy. The chill and damp seep into your bones. The tides and upland flooding can bring a torrent of water with little warning. You plunge desperately through submerged passages, praying that an opening will provide a pocket of air.\n\nThis is a realm of water and stone, cold and darkness. You are not welcome here.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Watery tunnels"
+        },
+        {
+          "Chance": 56,
+          "Description": "Eroded chamber"
+        },
+        {
+          "Chance": 64,
+          "Description": "Flooded chamber"
+        },
+        {
+          "Chance": 68,
+          "Description": "Vast chamber"
+        },
+        {
+          "Chance": 72,
+          "Description": "Dry passages"
+        },
+        {
+          "Chance": 76,
+          "Description": "Freshwater inlet"
+        },
+        {
+          "Chance": 80,
+          "Description": "Rocky island"
+        },
+        {
+          "Chance": 84,
+          "Description": "Waterborne debris"
+        },
+        {
+          "Chance": 88,
+          "Description": "Shipwreck or boat"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen strikes without warning"
+        },
+        {
+          "Chance": 36,
+          "Description": "Denizen lurks below"
+        },
+        {
+          "Chance": 39,
+          "Description": "Flooding"
+        },
+        {
+          "Chance": 42,
+          "Description": "Rushing current"
+        },
+        {
+          "Chance": 45,
+          "Description": "Claustrophobic squeeze"
+        }
+      ]
+    },
+    "Shadowfen": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "92"
+      },
+      "Summary": "A primeval marsh, cloaked in mist.",
+      "Description": "These foul sites are cloaked in mist, clogged with muddy peat, and drenched in fetid water. Thickets of gray, skeletal trees conceal stalking creatures. Strange shapes move in the fog and beneath dark, placid water. Narrow trails tease with the promise of passage, but instead lead to hidden quagmires.\n\nBe wary. When you enter a shadowfen, the specter of death is your constant companion.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Narrow path through a fetid bog"
+        },
+        {
+          "Chance": 56,
+          "Description": "Stagnant waterway"
+        },
+        {
+          "Chance": 64,
+          "Description": "Flooded thicket"
+        },
+        {
+          "Chance": 68,
+          "Description": "Island of dry land"
+        },
+        {
+          "Chance": 72,
+          "Description": "Submerged discovery"
+        },
+        {
+          "Chance": 76,
+          "Description": "Preserved corpses"
+        },
+        {
+          "Chance": 80,
+          "Description": "Overgrown structure"
+        },
+        {
+          "Chance": 84,
+          "Description": "Tall reeds"
+        },
+        {
+          "Chance": 88,
+          "Description": "Camp or outpost"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen hunts"
+        },
+        {
+          "Chance": 36,
+          "Description": "Deep water blocks the path"
+        },
+        {
+          "Chance": 39,
+          "Description": "Toxic environment"
+        },
+        {
+          "Chance": 42,
+          "Description": "Concealing or disorienting mist"
+        },
+        {
+          "Chance": 45,
+          "Description": "Hidden quagmire"
+        }
+      ]
+    },
+    "Stronghold": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "92"
+      },
+      "Summary": "A fortress secured against trespassers.",
+      "Description": "These sites weather storms and sieges alike. Their walls stand firm against the forces of this dark land. They are fortified against attack and rife with guards, traps, and other defenses. For those who dwell within, strongholds provide the comfort of wood and stone, axe and bow. For those who seek to breach the walls, they can be as unyielding and unforgiving as the most stalwart ironbound shield.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Connecting passageways"
+        },
+        {
+          "Chance": 56,
+          "Description": "Barracks or common quarters"
+        },
+        {
+          "Chance": 64,
+          "Description": "Large hall"
+        },
+        {
+          "Chance": 68,
+          "Description": "Workshop or library"
+        },
+        {
+          "Chance": 72,
+          "Description": "Command center or leadership"
+        },
+        {
+          "Chance": 76,
+          "Description": "Ladder or stairwell"
+        },
+        {
+          "Chance": 80,
+          "Description": "Storage"
+        },
+        {
+          "Chance": 84,
+          "Description": "Kitchen or larder"
+        },
+        {
+          "Chance": 88,
+          "Description": "Courtyard"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Blocked or guarded path"
+        },
+        {
+          "Chance": 36,
+          "Description": "Caught in the open"
+        },
+        {
+          "Chance": 39,
+          "Description": "Chokepoint"
+        },
+        {
+          "Chance": 42,
+          "Description": "Trap"
+        },
+        {
+          "Chance": 45,
+          "Description": "Alarm trigger"
+        }
+      ]
+    },
+    "Tanglewood": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "93"
+      },
+      "Summary": "A perilous forest of eternal shadow.",
+      "Description": "A tanglewood is a thick wilderness, shrouded in mist. Overhanging, twisted boughs obscure the sky. The ground is snarled with exposed roots. The wind carries foreboding whispers, and branches rattle like old bones.\n\nMany refuse to harvest wood from these places, believing the spirits who reside within will bring a curse upon them and their families. Others fear the creatures and beings which lurk within. For these reasons, even near settled areas, the tangles still stand.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Dense thicket"
+        },
+        {
+          "Chance": 56,
+          "Description": "Overgrown path"
+        },
+        {
+          "Chance": 64,
+          "Description": "Waterway"
+        },
+        {
+          "Chance": 68,
+          "Description": "Clearing "
+        },
+        {
+          "Chance": 72,
+          "Description": "Elder tree"
+        },
+        {
+          "Chance": 76,
+          "Description": "Brambles"
+        },
+        {
+          "Chance": 80,
+          "Description": "Overgrown structure"
+        },
+        {
+          "Chance": 84,
+          "Description": "Rocky outcrop"
+        },
+        {
+          "Chance": 88,
+          "Description": "Camp or outpost"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Denizen hunts"
+        },
+        {
+          "Chance": 36,
+          "Description": "Denizen lairs here"
+        },
+        {
+          "Chance": 39,
+          "Description": "Trap or snare"
+        },
+        {
+          "Chance": 42,
+          "Description": "Path leads you astray"
+        },
+        {
+          "Chance": 45,
+          "Description": "Entangling plant life"
+        }
+      ]
+    },
+    "Underkeep": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "93"
+      },
+      "Summary": "An age-old subterranean dungeon.",
+      "Description": "These subterranean structures are a mystery. They are inexplicably ancient, older perhaps than even the Firstborn. Their passages and halls hide dangers within unfathomable darkness.\n\nMost Ironlanders stay well clear of these places. But some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.",
+      "Features": [
+        {
+          "Chance": 43,
+          "Description": "Carved passages"
+        },
+        {
+          "Chance": 56,
+          "Description": "Hall or chamber"
+        },
+        {
+          "Chance": 64,
+          "Description": "Stairs into the depths"
+        },
+        {
+          "Chance": 68,
+          "Description": "Grand doorway or entrance"
+        },
+        {
+          "Chance": 72,
+          "Description": "Tomb or catacombs"
+        },
+        {
+          "Chance": 76,
+          "Description": "Rough-hewn cave"
+        },
+        {
+          "Chance": 80,
+          "Description": "Foundry or workshop"
+        },
+        {
+          "Chance": 84,
+          "Description": "Shrine or temple"
+        },
+        {
+          "Chance": 88,
+          "Description": "Imposing architecture or artistry"
+        },
+        {
+          "Chance": 98,
+          "Description": "Something unusual or unexpected"
+        },
+        {
+          "Chance": 99,
+          "Description": "You transition into a new theme"
+        },
+        {
+          "Chance": 100,
+          "Description": "You transition into a new domain"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 33,
+          "Description": "Ancient mechanism or trap"
+        },
+        {
+          "Chance": 36,
+          "Description": "Crumbling architecture"
+        },
+        {
+          "Chance": 39,
+          "Description": "Blocked or broken passage"
+        },
+        {
+          "Chance": 42,
+          "Description": "Artifact with a hidden danger"
+        },
+        {
+          "Chance": 45,
+          "Description": "Denizen lurks in darkness"
+        }
+      ]
+    }
+  }
+}

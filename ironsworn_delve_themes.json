@@ -1,0 +1,648 @@
+{
+  "Title": "Site Themes for Ironsworn: Delve",
+  "Source": {
+    "Name": "Ironsworn: Delve"
+  },
+  "Themes": {
+    "Ancient": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "84"
+      },
+      "Summary": "This place holds the secrets of a bygone age.",
+      "Description": "An ancient site contains the mysteries, legacies, and dangers of another age.\n\nWalking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, but those treasures may come with a dire cost. Some secrets are best left buried.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Evidence of lost knowledge"
+        },
+        {
+          "Chance": 8,
+          "Description": "Inscrutable relics"
+        },
+        {
+          "Chance": 12,
+          "Description": "Ancient artistry or craft"
+        },
+        {
+          "Chance": 16,
+          "Description": "Preserved corpses or fossils"
+        },
+        {
+          "Chance": 20,
+          "Description": "Visions of this place in another time"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Ancient trap"
+        },
+        {
+          "Chance": 10,
+          "Description": "Hazardous architecture or terrain"
+        },
+        {
+          "Chance": 12,
+          "Description": "Blocked or broken path"
+        },
+        {
+          "Chance": 14,
+          "Description": "Denizen protects an ancient secret"
+        },
+        {
+          "Chance": 16,
+          "Description": "Denizen reveres an ancient power"
+        },
+        {
+          "Chance": 18,
+          "Description": "Living relics of a lost age"
+        },
+        {
+          "Chance": 20,
+          "Description": "Ancient evil resurgent"
+        },
+        {
+          "Chance": 22,
+          "Description": "Dire warnings of a long-buried danger"
+        },
+        {
+          "Chance": 24,
+          "Description": "Ancient disease or contamination"
+        },
+        {
+          "Chance": 26,
+          "Description": "Artifact of terrible meaning or power"
+        },
+        {
+          "Chance": 28,
+          "Description": "Disturbing evidence of ancient wrongs"
+        },
+        {
+          "Chance": 30,
+          "Description": "Others seek power or knowledge"
+        }
+      ]
+    },
+    "Corrupted": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "84"
+      },
+      "Summary": "This place is tainted by dark magic.",
+      "Description": "A corrupted site is befouled by dark forces. It might be the ancient magic of the Ironlands, or the residue of ancient evils, concentrated here like poisoned water soaked into a sponge. Perhaps a powerful mystic dwells in this place, one who walks a sinister path in search of power.\n\nWhen you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Mystic focus or conduit"
+        },
+        {
+          "Chance": 8,
+          "Description": "Strange environmental disturbances"
+        },
+        {
+          "Chance": 12,
+          "Description": "Mystic runes or markings"
+        },
+        {
+          "Chance": 16,
+          "Description": "Blight or decay"
+        },
+        {
+          "Chance": 20,
+          "Description": "Evidence of a foul ritual"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Denizen spawned from dark magic"
+        },
+        {
+          "Chance": 10,
+          "Description": "Denizen controls dark magic"
+        },
+        {
+          "Chance": 12,
+          "Description": "Denizen corrupted by dark magic"
+        },
+        {
+          "Chance": 14,
+          "Description": "Corruption marks you"
+        },
+        {
+          "Chance": 16,
+          "Description": "Innocents held in thrall"
+        },
+        {
+          "Chance": 18,
+          "Description": "Revelations of a terrible truth"
+        },
+        {
+          "Chance": 20,
+          "Description": "Mystic trap or trigger"
+        },
+        {
+          "Chance": 22,
+          "Description": "Mystic barrier or ward"
+        },
+        {
+          "Chance": 24,
+          "Description": "Illusions lead you astray"
+        },
+        {
+          "Chance": 26,
+          "Description": "Dark ritual in progress"
+        },
+        {
+          "Chance": 28,
+          "Description": "Lingering effects of a dark ritual"
+        },
+        {
+          "Chance": 30,
+          "Description": "Dread harbingers of a greater magic"
+        }
+      ]
+    },
+    "Fortified": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "85"
+      },
+      "Summary": "Foes defend this place against intruders.",
+      "Description": "A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.\n\nInfiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Camp or quarters"
+        },
+        {
+          "Chance": 8,
+          "Description": "Guarded location"
+        },
+        {
+          "Chance": 12,
+          "Description": "Storage or repository"
+        },
+        {
+          "Chance": 16,
+          "Description": "Work or training area"
+        },
+        {
+          "Chance": 20,
+          "Description": "Command center or leadership"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Denizen patrols the area"
+        },
+        {
+          "Chance": 10,
+          "Description": "Denizen on guard"
+        },
+        {
+          "Chance": 12,
+          "Description": "Denizen ready to sound the alarm"
+        },
+        {
+          "Chance": 14,
+          "Description": "Denizen sets an ambush"
+        },
+        {
+          "Chance": 16,
+          "Description": "Denizen lures you into a trap"
+        },
+        {
+          "Chance": 18,
+          "Description": "Denizens converge on this area"
+        },
+        {
+          "Chance": 20,
+          "Description": "Pets or underlings"
+        },
+        {
+          "Chance": 22,
+          "Description": "Unexpected alliance revealed"
+        },
+        {
+          "Chance": 24,
+          "Description": "Nefarious plans revealed"
+        },
+        {
+          "Chance": 26,
+          "Description": "Unexpected leader revealed"
+        },
+        {
+          "Chance": 28,
+          "Description": "Trap"
+        },
+        {
+          "Chance": 30,
+          "Description": "Alarm trigger"
+        }
+      ]
+    },
+    "Hallowed": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "85"
+      },
+      "Summary": "The faithful worship here.",
+      "Description": "A hallowed site is a place of great reverence, suffused with the power of old gods or the fervency of belief. It might be a location of religious significance, the resting place of legendary relics or figures, or the haven of a religious leader.\n\nHallowed places may be warded by ancient rituals, or imbued with divine energy. But it is the faithful and the zealous who will sacrifice everything to defend this place.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Temple or altar"
+        },
+        {
+          "Chance": 8,
+          "Description": "Offerings or atonements"
+        },
+        {
+          "Chance": 12,
+          "Description": "Religious relic or idol"
+        },
+        {
+          "Chance": 16,
+          "Description": "Consecrated ground"
+        },
+        {
+          "Chance": 20,
+          "Description": "Dwellings or gathering place"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Denizen defends their sanctum"
+        },
+        {
+          "Chance": 10,
+          "Description": "Denizen enacts the will of their god"
+        },
+        {
+          "Chance": 12,
+          "Description": "Denizen seeks martyrdom"
+        },
+        {
+          "Chance": 14,
+          "Description": "Secret of the faith is revealed"
+        },
+        {
+          "Chance": 16,
+          "Description": "Greater purpose is revealed"
+        },
+        {
+          "Chance": 18,
+          "Description": "Unexpected disciples are revealed"
+        },
+        {
+          "Chance": 20,
+          "Description": "Divine manifestations"
+        },
+        {
+          "Chance": 22,
+          "Description": "Aspect of the faith beguiles you"
+        },
+        {
+          "Chance": 24,
+          "Description": "Unexpected leader is revealed"
+        },
+        {
+          "Chance": 26,
+          "Description": "Embodiment of a god or myth"
+        },
+        {
+          "Chance": 28,
+          "Description": "Protective ward or barrier"
+        },
+        {
+          "Chance": 30,
+          "Description": "Prophecies reveal a dark fate"
+        }
+      ]
+    },
+    "Haunted": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "86"
+      },
+      "Summary": "Restless spirits are bound to this place.",
+      "Description": "Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will when you enter this place, for you walk at the boundary of life and death.\n\nSome lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Tomb or burial site"
+        },
+        {
+          "Chance": 8,
+          "Description": "Blood was spilled here"
+        },
+        {
+          "Chance": 12,
+          "Description": "Unnatural mists or darkness"
+        },
+        {
+          "Chance": 16,
+          "Description": "Messages from beyond the grave"
+        },
+        {
+          "Chance": 20,
+          "Description": "Apparitions of a person or event"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Denizen haunts this area"
+        },
+        {
+          "Chance": 10,
+          "Description": "Unsettling sounds or foreboding signs"
+        },
+        {
+          "Chance": 12,
+          "Description": "Denizen attacks without warning"
+        },
+        {
+          "Chance": 14,
+          "Description": "Denizen makes a costly demand"
+        },
+        {
+          "Chance": 16,
+          "Description": "Denizen seizes your body or mind"
+        },
+        {
+          "Chance": 18,
+          "Description": "Denizen taunts or lures you"
+        },
+        {
+          "Chance": 20,
+          "Description": "A disturbing truth is revealed"
+        },
+        {
+          "Chance": 22,
+          "Description": "Frightening visions"
+        },
+        {
+          "Chance": 24,
+          "Description": "The environment is used against you"
+        },
+        {
+          "Chance": 26,
+          "Description": "Trickery leads you astray"
+        },
+        {
+          "Chance": 28,
+          "Description": "True nature of this place is revealed"
+        },
+        {
+          "Chance": 30,
+          "Description": "Sudden, shocking manifestation"
+        }
+      ]
+    },
+    "Infested": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "86"
+      },
+      "Summary": "Foul creatures dwell here.",
+      "Description": "Foul creatures swarm these sites, overwhelming trespassers with sheer numbers and unchecked ferocity. The denizens do little beyond multiplying, feeding, and expanding, ravenous for fresh kills to feed the swarm.\n\nNavigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. But it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Inhabited nest"
+        },
+        {
+          "Chance": 8,
+          "Description": "Abandoned nest"
+        },
+        {
+          "Chance": 12,
+          "Description": "Ravaged terrain or architecture"
+        },
+        {
+          "Chance": 16,
+          "Description": "Remains or carrion"
+        },
+        {
+          "Chance": 20,
+          "Description": "Hoarded food"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Denizens swarm and attack"
+        },
+        {
+          "Chance": 10,
+          "Description": "Toxic or sickening environment"
+        },
+        {
+          "Chance": 12,
+          "Description": "Denizen stalks you"
+        },
+        {
+          "Chance": 14,
+          "Description": "Denizen takes or destroys something"
+        },
+        {
+          "Chance": 16,
+          "Description": "Denizen reveals surprising cleverness"
+        },
+        {
+          "Chance": 18,
+          "Description": "Denizen guided by a greater threat"
+        },
+        {
+          "Chance": 20,
+          "Description": "Denizen blocks the path"
+        },
+        {
+          "Chance": 22,
+          "Description": "Denizen funnels you down a new path"
+        },
+        {
+          "Chance": 24,
+          "Description": "Denizen undermines the path"
+        },
+        {
+          "Chance": 26,
+          "Description": "Denizen lays in wait"
+        },
+        {
+          "Chance": 28,
+          "Description": "Trap or snare"
+        },
+        {
+          "Chance": 30,
+          "Description": "Victim’s horrible fate is revealed"
+        }
+      ]
+    },
+    "Ravaged": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "87"
+      },
+      "Summary": "Time, disaster, or strife have taken their toll.",
+      "Description": "Time, weather, war, or calamity have laid waste to a ravaged site. The terrain is precarious. Hazards lurk around every corner. You may face glimpses of a former greatness, but this place is a ruined shadow of what it once was.\n\nTraversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Path of destruction"
+        },
+        {
+          "Chance": 8,
+          "Description": "Abandoned or ruined dwelling"
+        },
+        {
+          "Chance": 12,
+          "Description": "Untouched or preserved area"
+        },
+        {
+          "Chance": 16,
+          "Description": "Traces of what was lost"
+        },
+        {
+          "Chance": 20,
+          "Description": "Ill-fated victims"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Precarious architecture or terrain"
+        },
+        {
+          "Chance": 10,
+          "Description": "Imminent collapse or destruction"
+        },
+        {
+          "Chance": 12,
+          "Description": "Path undermined"
+        },
+        {
+          "Chance": 14,
+          "Description": "Blocked or broken path"
+        },
+        {
+          "Chance": 16,
+          "Description": "Vestiges of a destructive force"
+        },
+        {
+          "Chance": 18,
+          "Description": "Unexpected environmental threat"
+        },
+        {
+          "Chance": 20,
+          "Description": "Echoes of a troubling past"
+        },
+        {
+          "Chance": 22,
+          "Description": "Signs of a horrible fate"
+        },
+        {
+          "Chance": 24,
+          "Description": "Denizen seeks retribution"
+        },
+        {
+          "Chance": 26,
+          "Description": "Denizen leverages the environment"
+        },
+        {
+          "Chance": 28,
+          "Description": "Denizen restores what was lost"
+        },
+        {
+          "Chance": 30,
+          "Description": "Ravages return anew"
+        }
+      ]
+    },
+    "Wild": {
+      "Source": {
+        "Name": "Ironsworn: Delve",
+        "Page": "87"
+      },
+      "Summary": "Nature prevails in this place.",
+      "Description": "Despite our attempts to extend our control into untracked reaches, the primal forces of nature still hold sway across the Ironlands. In those wild places, we must test our shields against tooth and claw, our wits against insidious creatures, and our resolve against dangerous terrain and harsh environments.\n\nBe wary when you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.",
+      "Features": [
+        {
+          "Chance": 4,
+          "Description": "Denizen’s lair"
+        },
+        {
+          "Chance": 8,
+          "Description": "Territorial markings"
+        },
+        {
+          "Chance": 12,
+          "Description": "Impressive flora or fauna"
+        },
+        {
+          "Chance": 16,
+          "Description": "Hunting ground or watering hole"
+        },
+        {
+          "Chance": 20,
+          "Description": "Remains or carrion"
+        }
+      ],
+      "Dangers": [
+        {
+          "Chance": 5,
+          "Description": "Denizen hunts"
+        },
+        {
+          "Chance": 10,
+          "Description": "Denizen strikes without warning"
+        },
+        {
+          "Chance": 12,
+          "Description": "Denizen leverages the environment"
+        },
+        {
+          "Chance": 14,
+          "Description": "Denizen wields unexpected abilities"
+        },
+        {
+          "Chance": 16,
+          "Description": "Denizen guided by a greater threat"
+        },
+        {
+          "Chance": 18,
+          "Description": "Denizen protects something"
+        },
+        {
+          "Chance": 20,
+          "Description": "Hazardous terrain"
+        },
+        {
+          "Chance": 22,
+          "Description": "Weather or environmental threat"
+        },
+        {
+          "Chance": 24,
+          "Description": "Benign aspect becomes a threat"
+        },
+        {
+          "Chance": 26,
+          "Description": "Overzealous hunter"
+        },
+        {
+          "Chance": 28,
+          "Description": "Disturbing evidence of a victim’s fate"
+        },
+        {
+          "Chance": 30,
+          "Description": "Ill-fated victim in danger"
+        }
+      ]
+    }
+  }
+}
