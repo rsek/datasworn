@@ -1,0 +1,380 @@
+{
+  "Monstrosity Oracles": {
+    "Size": [
+      {
+        "Chance": 5,
+        "Description": "Tiny (rodent-sized)"
+      },
+      {
+        "Chance": 30,
+        "Description": "Small (hound-sized)"
+      },
+      {
+        "Chance": 65,
+        "Description": "Medium (person-sized)"
+      },
+      {
+        "Chance": 94,
+        "Description": "Large (giant-sized)"
+      },
+      {
+        "Chance": 99,
+        "Description": "Huge (whale-sized)"
+      },
+      {
+        "Chance": 100,
+        "Description": "Titanic (incomprehensible)"
+      }
+    ],
+    "Primary Form": [
+      {
+        "Chance": 15,
+        "Description": "Beast / mammal"
+      },
+      {
+        "Chance": 25,
+        "Description": "Humanoid"
+      },
+      {
+        "Chance": 31,
+        "Description": "Bird"
+      },
+      {
+        "Chance": 37,
+        "Description": "Spider"
+      },
+      {
+        "Chance": 43,
+        "Description": "Snake"
+      },
+      {
+        "Chance": 49,
+        "Description": "Worm / slug"
+      },
+      {
+        "Chance": 55,
+        "Description": "Lizard"
+      },
+      {
+        "Chance": 61,
+        "Description": "Insect"
+      },
+      {
+        "Chance": 66,
+        "Description": "Amorphous"
+      },
+      {
+        "Chance": 69,
+        "Description": "Crustacean"
+      },
+      {
+        "Chance": 71,
+        "Description": "Fish"
+      },
+      {
+        "Chance": 73,
+        "Description": "Octopoid"
+      },
+      {
+        "Chance": 75,
+        "Description": "Amphibian"
+      },
+      {
+        "Chance": 77,
+        "Description": "Plant"
+      },
+      {
+        "Chance": 78,
+        "Description": "Incorporeal"
+      },
+      {
+        "Chance": 79,
+        "Description": "Mineral"
+      },
+      {
+        "Chance": 80,
+        "Description": "Elemental"
+      },
+      {
+        "Chance": 100,
+        "Description": "Hybrid: [Roll twice]"
+      }
+    ],
+    "Characteristics": [
+      {
+        "Chance": 5,
+        "Description": "Extra limbs"
+      },
+      {
+        "Chance": 10,
+        "Description": "Fangs / rows of sharp teeth"
+      },
+      {
+        "Chance": 15,
+        "Description": "Claws / talons"
+      },
+      {
+        "Chance": 20,
+        "Description": "Strange color / markings"
+      },
+      {
+        "Chance": 25,
+        "Description": "Horns / tusks"
+      },
+      {
+        "Chance": 30,
+        "Description": "Oversized mouth"
+      },
+      {
+        "Chance": 35,
+        "Description": "Spikes / spines"
+      },
+      {
+        "Chance": 40,
+        "Description": "Tail"
+      },
+      {
+        "Chance": 45,
+        "Description": "Multi-segmented body"
+      },
+      {
+        "Chance": 50,
+        "Description": "Wings"
+      },
+      {
+        "Chance": 54,
+        "Description": "Stinger / barbs"
+      },
+      {
+        "Chance": 58,
+        "Description": "Many-eyed"
+      },
+      {
+        "Chance": 62,
+        "Description": "Distinctive sound"
+      },
+      {
+        "Chance": 66,
+        "Description": "Tentacles / tendrils"
+      },
+      {
+        "Chance": 69,
+        "Description": "Mandibles / pincers"
+      },
+      {
+        "Chance": 72,
+        "Description": "Luminescent"
+      },
+      {
+        "Chance": 75,
+        "Description": "Antennae / sensory organs"
+      },
+      {
+        "Chance": 78,
+        "Description": "Proboscis / inner jaw"
+      },
+      {
+        "Chance": 81,
+        "Description": "Exoskeleton / shell"
+      },
+      {
+        "Chance": 84,
+        "Description": "Bony protuberances"
+      },
+      {
+        "Chance": 87,
+        "Description": "Corrupted flesh"
+      },
+      {
+        "Chance": 90,
+        "Description": "Semi-transparent"
+      },
+      {
+        "Chance": 93,
+        "Description": "Scarred / injured"
+      },
+      {
+        "Chance": 95,
+        "Description": "Egg sac / carried offspring"
+      },
+      {
+        "Chance": 97,
+        "Description": "Rotting / skeletal"
+      },
+      {
+        "Chance": 98,
+        "Description": "Mummified / desiccated"
+      },
+      {
+        "Chance": 99,
+        "Description": "Multi-headed"
+      },
+      {
+        "Chance": 100,
+        "Description": "Etched with mystic runes"
+      }
+    ],
+    "Abilities": [
+      {
+        "Chance": 4,
+        "Description": "Keen senses"
+      },
+      {
+        "Chance": 8,
+        "Description": "Intimidating vocalization"
+      },
+      {
+        "Chance": 12,
+        "Description": "Climber"
+      },
+      {
+        "Chance": 16,
+        "Description": "Intelligent"
+      },
+      {
+        "Chance": 20,
+        "Description": "Swift"
+      },
+      {
+        "Chance": 24,
+        "Description": "Powerful bite"
+      },
+      {
+        "Chance": 28,
+        "Description": "Stealthy / ambusher"
+      },
+      {
+        "Chance": 32,
+        "Description": "Horrid visage"
+      },
+      {
+        "Chance": 36,
+        "Description": "Strong"
+      },
+      {
+        "Chance": 40,
+        "Description": "Camouflaged"
+      },
+      {
+        "Chance": 43,
+        "Description": "Flier / glider"
+      },
+      {
+        "Chance": 46,
+        "Description": "Poisonous"
+      },
+      {
+        "Chance": 49,
+        "Description": "Semiaquatic / swimmer"
+      },
+      {
+        "Chance": 52,
+        "Description": "Grappler / entangler"
+      },
+      {
+        "Chance": 55,
+        "Description": "Leaper"
+      },
+      {
+        "Chance": 58,
+        "Description": "Crusher / constrictor"
+      },
+      {
+        "Chance": 61,
+        "Description": "Armored"
+      },
+      {
+        "Chance": 64,
+        "Description": "Burrower"
+      },
+      {
+        "Chance": 67,
+        "Description": "Noxious smell"
+      },
+      {
+        "Chance": 69,
+        "Description": "Trap-setter"
+      },
+      {
+        "Chance": 71,
+        "Description": "Parasitic"
+      },
+      {
+        "Chance": 73,
+        "Description": "Vibration sense"
+      },
+      {
+        "Chance": 75,
+        "Description": "Breath weapon / toxic spew"
+      },
+      {
+        "Chance": 77,
+        "Description": "Mimicry"
+      },
+      {
+        "Chance": 79,
+        "Description": "Shapeshifting"
+      },
+      {
+        "Chance": 81,
+        "Description": "Control lesser creatures"
+      },
+      {
+        "Chance": 83,
+        "Description": "Echolocation"
+      },
+      {
+        "Chance": 85,
+        "Description": "Electric shock"
+      },
+      {
+        "Chance": 87,
+        "Description": "Acidic"
+      },
+      {
+        "Chance": 89,
+        "Description": "Symbiotic"
+      },
+      {
+        "Chance": 91,
+        "Description": "Shoot projectiles"
+      },
+      {
+        "Chance": 92,
+        "Description": "Paralyzing"
+      },
+      {
+        "Chance": 93,
+        "Description": "Immune to iron"
+      },
+      {
+        "Chance": 94,
+        "Description": "Feels no pain"
+      },
+      {
+        "Chance": 95,
+        "Description": "Enact rituals"
+      },
+      {
+        "Chance": 96,
+        "Description": "Create illusions"
+      },
+      {
+        "Chance": 97,
+        "Description": "Mind control / telepathy"
+      },
+      {
+        "Chance": 98,
+        "Description": "Move between realities"
+      },
+      {
+        "Chance": 99,
+        "Description": "Wield weapons"
+      },
+      {
+        "Chance": 100,
+        "Description": "Control elements"
+      }
+    ]
+  }
+}

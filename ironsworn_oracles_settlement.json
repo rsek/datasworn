@@ -1,0 +1,729 @@
+{
+  "Settlement Oracles": {
+    "Settlement Name": {
+      "Type": "Nested",
+      "Results": [
+        {
+          "Chance": 15,
+          "Description": "A feature of the landscape",
+          "Prompt": "Envision what it is. What makes it unusual or distinctive?",
+          "Oracles": [
+            {
+              "Chance": 10,
+              "Description": "Highmount"
+            },
+            {
+              "Chance": 20,
+              "Description": "Brackwater"
+            },
+            {
+              "Chance": 30,
+              "Description": "Frostwood"
+            },
+            {
+              "Chance": 40,
+              "Description": "Redcrest"
+            },
+            {
+              "Chance": 50,
+              "Description": "Grimtree"
+            },
+            {
+              "Chance": 60,
+              "Description": "Stoneford"
+            },
+            {
+              "Chance": 70,
+              "Description": "Deepwater"
+            },
+            {
+              "Chance": 80,
+              "Description": "Whitefall"
+            },
+            {
+              "Chance": 90,
+              "Description": "Graycliff"
+            },
+            {
+              "Chance": 100,
+              "Description": "Three Rivers"
+            }
+          ]
+        },
+        {
+          "Chance": 30,
+          "Description": "A manmade edifice",
+          "Prompt": "What is it? Why is it important to this settlement’s history?",
+          "Oracles": [
+            {
+              "Chance": 10,
+              "Description": "Whitebridge"
+            },
+            {
+              "Chance": 20,
+              "Description": "Lonefort"
+            },
+            {
+              "Chance": 30,
+              "Description": "Highcairn"
+            },
+            {
+              "Chance": 40,
+              "Description": "Redhall"
+            },
+            {
+              "Chance": 50,
+              "Description": "Darkwell"
+            },
+            {
+              "Chance": 60,
+              "Description": "Timberwall"
+            },
+            {
+              "Chance": 70,
+              "Description": "Stonetower"
+            },
+            {
+              "Chance": 80,
+              "Description": "Thornhall"
+            },
+            {
+              "Chance": 90,
+              "Description": "Cinderhome"
+            },
+            {
+              "Chance": 100,
+              "Description": "Fallowfield"
+            }
+          ]
+        },
+        {
+          "Chance": 45,
+          "Description": "A creature",
+          "Prompt": "Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
+          "Oracles": [
+            {
+              "Chance": 10,
+              "Description": "Ravencliff"
+            },
+            {
+              "Chance": 20,
+              "Description": "Bearmark"
+            },
+            {
+              "Chance": 30,
+              "Description": "Wolfcrag"
+            },
+            {
+              "Chance": 40,
+              "Description": "Eaglespire"
+            },
+            {
+              "Chance": 50,
+              "Description": "Wyvern's Rest"
+            },
+            {
+              "Chance": 60,
+              "Description": "Boarwood"
+            },
+            {
+              "Chance": 70,
+              "Description": "Foxhollow"
+            },
+            {
+              "Chance": 80,
+              "Description": "Elderwatch"
+            },
+            {
+              "Chance": 90,
+              "Description": "Elkfield"
+            },
+            {
+              "Chance": 100,
+              "Description": "Dragonshadow"
+            }
+          ]
+        },
+        {
+          "Chance": 60,
+          "Description": "A historical event",
+          "Prompt": "What happened here? What place or practice commemorates this event?",
+          "Oracles": [
+            {
+              "Chance": 10,
+              "Description": "Swordbreak"
+            },
+            {
+              "Chance": 20,
+              "Description": "Fool's Fall"
+            },
+            {
+              "Chance": 30,
+              "Description": "Firstmeet"
+            },
+            {
+              "Chance": 40,
+              "Description": "Brokenhelm"
+            },
+            {
+              "Chance": 50,
+              "Description": "Mournhaunt"
+            },
+            {
+              "Chance": 60,
+              "Description": "Olgar's Stand"
+            },
+            {
+              "Chance": 70,
+              "Description": "Lostwater"
+            },
+            {
+              "Chance": 80,
+              "Description": "Rojirra's Lament"
+            },
+            {
+              "Chance": 90,
+              "Description": "Lastmarch"
+            },
+            {
+              "Chance": 100,
+              "Description": "Rockfall"
+            }
+          ]
+        },
+        {
+          "Chance": 75,
+          "Description": "A word in an Old World language",
+          "Prompt": "What culture is represented by this word? What does it translate to?",
+          "Oracles": [
+            {
+              "Chance": 10,
+              "Description": "Abon"
+            },
+            {
+              "Chance": 20,
+              "Description": "Daveza"
+            },
+            {
+              "Chance": 30,
+              "Description": "Damula"
+            },
+            {
+              "Chance": 40,
+              "Description": "Essus"
+            },
+            {
+              "Chance": 50,
+              "Description": "Sina"
+            },
+            {
+              "Chance": 60,
+              "Description": "Kazeera"
+            },
+            {
+              "Chance": 70,
+              "Description": "Khazu"
+            },
+            {
+              "Chance": 80,
+              "Description": "Sova"
+            },
+            {
+              "Chance": 90,
+              "Description": "Nabuma"
+            },
+            {
+              "Chance": 100,
+              "Description": "Tiza"
+            }
+          ]
+        },
+        {
+          "Chance": 90,
+          "Description": "A season or environmental aspect",
+          "Prompt": "What influence does the weather have on this settlement?",
+          "Oracles": [
+            {
+              "Chance": 10,
+              "Description": "Winterhome"
+            },
+            {
+              "Chance": 20,
+              "Description": "Windhaven"
+            },
+            {
+              "Chance": 30,
+              "Description": "Stormrest"
+            },
+            {
+              "Chance": 40,
+              "Description": "Bleakfrost"
+            },
+            {
+              "Chance": 50,
+              "Description": "Springtide"
+            },
+            {
+              "Chance": 60,
+              "Description": "Duskmoor"
+            },
+            {
+              "Chance": 70,
+              "Description": "Frostcrag"
+            },
+            {
+              "Chance": 80,
+              "Description": "Springbrook"
+            },
+            {
+              "Chance": 90,
+              "Description": "Icebreak"
+            },
+            {
+              "Chance": 100,
+              "Description": "Summersong"
+            }
+          ]
+        },
+        {
+          "Chance": 100,
+          "Description": "Something Else....",
+          "Oracles": [
+            {
+              "Chance": 10,
+              "Description": "A trade good (Ironhome)"
+            },
+            {
+              "Chance": 20,
+              "Description": "An Old World city (New Arkesh)"
+            },
+            {
+              "Chance": 30,
+              "Description": "A founder or famous settler (Kei's Hall)"
+            },
+            {
+              "Chance": 40,
+              "Description": "A god (Elisora)"
+            },
+            {
+              "Chance": 50,
+              "Description": "A historical item (Blackhelm)"
+            },
+            {
+              "Chance": 60,
+              "Description": "A firstborn race (Elfbrook)"
+            },
+            {
+              "Chance": 70,
+              "Description": "An elvish word or name (Nessana)"
+            },
+            {
+              "Chance": 80,
+              "Description": "A mythic belief or event (Ghostwalk)"
+            },
+            {
+              "Chance": 90,
+              "Description": "A positive term (Hope)"
+            },
+            {
+              "Chance": 100,
+              "Description": "A negative term (Forsaken)"
+            }
+          ]
+        }
+      ]
+    },
+    "Quick Settlement Name Generator": {
+      "Prefix": [
+        {
+          "Chance": 4,
+          "Description": "Bleak-"
+        },
+        {
+          "Chance": 8,
+          "Description": "Green-"
+        },
+        {
+          "Chance": 12,
+          "Description": "Wolf-"
+        },
+        {
+          "Chance": 16,
+          "Description": "Raven-"
+        },
+        {
+          "Chance": 20,
+          "Description": "Gray-"
+        },
+        {
+          "Chance": 24,
+          "Description": "Red-"
+        },
+        {
+          "Chance": 28,
+          "Description": "Axe-"
+        },
+        {
+          "Chance": 32,
+          "Description": "Great-"
+        },
+        {
+          "Chance": 36,
+          "Description": "Wood-"
+        },
+        {
+          "Chance": 40,
+          "Description": "Low-"
+        },
+        {
+          "Chance": 44,
+          "Description": "White-"
+        },
+        {
+          "Chance": 48,
+          "Description": "Storm-"
+        },
+        {
+          "Chance": 52,
+          "Description": "Black-"
+        },
+        {
+          "Chance": 56,
+          "Description": "Mourn-"
+        },
+        {
+          "Chance": 60,
+          "Description": "New-"
+        },
+        {
+          "Chance": 64,
+          "Description": "Stone-"
+        },
+        {
+          "Chance": 68,
+          "Description": "Grim-"
+        },
+        {
+          "Chance": 72,
+          "Description": "Lost-"
+        },
+        {
+          "Chance": 76,
+          "Description": "High-"
+        },
+        {
+          "Chance": 80,
+          "Description": "Rock-"
+        },
+        {
+          "Chance": 84,
+          "Description": "Shield-"
+        },
+        {
+          "Chance": 88,
+          "Description": "Sword-"
+        },
+        {
+          "Chance": 92,
+          "Description": "Frost-"
+        },
+        {
+          "Chance": 96,
+          "Description": "Thorn-"
+        },
+        {
+          "Chance": 100,
+          "Description": "Long-"
+        }
+      ],
+      "Suffix": [
+        {
+          "Chance": 4,
+          "Description": "-moor"
+        },
+        {
+          "Chance": 8,
+          "Description": "-ford"
+        },
+        {
+          "Chance": 12,
+          "Description": "-crag"
+        },
+        {
+          "Chance": 16,
+          "Description": "-watch"
+        },
+        {
+          "Chance": 20,
+          "Description": "-hope"
+        },
+        {
+          "Chance": 24,
+          "Description": "-wood"
+        },
+        {
+          "Chance": 28,
+          "Description": "-ridge"
+        },
+        {
+          "Chance": 32,
+          "Description": "-stone"
+        },
+        {
+          "Chance": 36,
+          "Description": "-haven"
+        },
+        {
+          "Chance": 40,
+          "Description": "-fall(s)"
+        },
+        {
+          "Chance": 44,
+          "Description": "-river"
+        },
+        {
+          "Chance": 48,
+          "Description": "-field"
+        },
+        {
+          "Chance": 52,
+          "Description": "-hill"
+        },
+        {
+          "Chance": 56,
+          "Description": "-bridge"
+        },
+        {
+          "Chance": 60,
+          "Description": "-mark"
+        },
+        {
+          "Chance": 64,
+          "Description": "-cairn"
+        },
+        {
+          "Chance": 68,
+          "Description": "-land"
+        },
+        {
+          "Chance": 72,
+          "Description": "-hall"
+        },
+        {
+          "Chance": 76,
+          "Description": "-mount"
+        },
+        {
+          "Chance": 80,
+          "Description": "-rock"
+        },
+        {
+          "Chance": 84,
+          "Description": "-brook"
+        },
+        {
+          "Chance": 88,
+          "Description": "-barrow"
+        },
+        {
+          "Chance": 92,
+          "Description": "-stead"
+        },
+        {
+          "Chance": 96,
+          "Description": "-home"
+        },
+        {
+          "Chance": 100,
+          "Description": "-wick"
+        }
+      ]
+    },
+    "Settlement Trouble": [
+      {
+        "Chance": 2,
+        "Description": "Outsiders rejected"
+      },
+      {
+        "Chance": 4,
+        "Description": "Dangerous discovery"
+      },
+      {
+        "Chance": 6,
+        "Description": "Dreadful omens"
+      },
+      {
+        "Chance": 8,
+        "Description": "Natural disaster"
+      },
+      {
+        "Chance": 10,
+        "Description": "Old wounds reopened"
+      },
+      {
+        "Chance": 12,
+        "Description": "Important object is lost"
+      },
+      {
+        "Chance": 14,
+        "Description": "Someone is captured"
+      },
+      {
+        "Chance": 16,
+        "Description": "Mysterious phenomenon"
+      },
+      {
+        "Chance": 18,
+        "Description": "Revolt against a leader"
+      },
+      {
+        "Chance": 20,
+        "Description": "Vengeful outcast"
+      },
+      {
+        "Chance": 22,
+        "Description": "Rival settlement"
+      },
+      {
+        "Chance": 24,
+        "Description": "Nature strikes back"
+      },
+      {
+        "Chance": 26,
+        "Description": "Someone is missing"
+      },
+      {
+        "Chance": 28,
+        "Description": "Production halts"
+      },
+      {
+        "Chance": 30,
+        "Description": "Mysterious murders"
+      },
+      {
+        "Chance": 32,
+        "Description": "Debt comes due"
+      },
+      {
+        "Chance": 34,
+        "Description": "Unjust leadership"
+      },
+      {
+        "Chance": 36,
+        "Description": "Disastrous accident"
+      },
+      {
+        "Chance": 38,
+        "Description": "In league with the enemy"
+      },
+      {
+        "Chance": 40,
+        "Description": "Raiders prey on the weak"
+      },
+      {
+        "Chance": 42,
+        "Description": "Cursed past"
+      },
+      {
+        "Chance": 44,
+        "Description": "An innocent is accused"
+      },
+      {
+        "Chance": 46,
+        "Description": "Corrupted by dark magic"
+      },
+      {
+        "Chance": 48,
+        "Description": "Isolated by brutal weather"
+      },
+      {
+        "Chance": 50,
+        "Description": "Provisions are scarce"
+      },
+      {
+        "Chance": 52,
+        "Description": "Sickness run amok"
+      },
+      {
+        "Chance": 54,
+        "Description": "Allies become enemies"
+      },
+      {
+        "Chance": 56,
+        "Description": "Attack is imminent"
+      },
+      {
+        "Chance": 58,
+        "Description": "Lost caravan"
+      },
+      {
+        "Chance": 60,
+        "Description": "Dark secret revealed"
+      },
+      {
+        "Chance": 62,
+        "Description": "Urgent expedition"
+      },
+      {
+        "Chance": 64,
+        "Description": "A leader falls"
+      },
+      {
+        "Chance": 66,
+        "Description": "Families in conflict"
+      },
+      {
+        "Chance": 68,
+        "Description": "Incompetent leadership"
+      },
+      {
+        "Chance": 70,
+        "Description": "Reckless warmongering"
+      },
+      {
+        "Chance": 72,
+        "Description": "Beast on the hunt"
+      },
+      {
+        "Chance": 74,
+        "Description": "Betrayed from within"
+      },
+      {
+        "Chance": 76,
+        "Description": "Broken truce"
+      },
+      {
+        "Chance": 78,
+        "Description": "Wrathful haunt"
+      },
+      {
+        "Chance": 80,
+        "Description": "Conflict with firstborn"
+      },
+      {
+        "Chance": 82,
+        "Description": "Trade route blocked"
+      },
+      {
+        "Chance": 84,
+        "Description": "In the crossfire"
+      },
+      {
+        "Chance": 86,
+        "Description": "Stranger causes discord"
+      },
+      {
+        "Chance": 88,
+        "Description": "Important event threatened"
+      },
+      {
+        "Chance": 90,
+        "Description": "Dangerous tradition"
+      },
+      {
+        "Chance": 100,
+        "Description": "[Roll twice]"
+      }
+    ]
+  }
+}

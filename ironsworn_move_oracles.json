@@ -1,0 +1,284 @@
+{
+  "Move Oracles": {
+    "Pay the Price": [
+      {
+        "Chance": 2,
+        "Description": "Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest (Ask the Oracle if unsure) and make it happen."
+      },
+      {
+        "Chance": 5,
+        "Description": "A person or community you trusted loses faith in you, or acts against you."
+      },
+      {
+        "Chance": 9,
+        "Description": "A person or community you care about is exposed to danger."
+      },
+      {
+        "Chance": 16,
+        "Description": "You are separated from something or someone."
+      },
+      {
+        "Chance": 23,
+        "Description": "Your action has an unintended effect."
+      },
+      {
+        "Chance": 32,
+        "Description": "Something of value is lost or destroyed."
+      },
+      {
+        "Chance": 41,
+        "Description": "The current situation worsens."
+      },
+      {
+        "Chance": 50,
+        "Description": "A new danger or foe is revealed."
+      },
+      {
+        "Chance": 59,
+        "Description": "It causes a delay or puts you at a disadvantage."
+      },
+      {
+        "Chance": 68,
+        "Description": "It is harmful."
+      },
+      {
+        "Chance": 77,
+        "Description": "It is stressful."
+      },
+      {
+        "Chance": 85,
+        "Description": "A surprising development complicates your quest."
+      },
+      {
+        "Chance": 90,
+        "Description": "It wastes resources."
+      },
+      {
+        "Chance": 94,
+        "Description": "It forces you to act against your best intentions."
+      },
+      {
+        "Chance": 98,
+        "Description": "A friend, companion, or ally is put in harm’s way (or you are, if alone)."
+      },
+      {
+        "Chance": 100,
+        "Description": "Roll twice more on this table. Both results occur. If they are the same result, make it worse."
+      }
+    ],
+    "Delve the Depths - Edge": [
+      {
+        "Chance": 45,
+        "Description": "Mark progress and Reveal a Danger."
+      },
+      {
+        "Chance": 65,
+        "Description": "Mark progress."
+      },
+      {
+        "Chance": 75,
+        "Description": "Choose one: Mark progress or Find an Opportunity."
+      },
+      {
+        "Chance": 80,
+        "Description": "Take both: Mark progress and Find an Opportunity."
+      },
+      {
+        "Chance": 100,
+        "Description": "Mark progress twice and Reveal a Danger."
+      }
+    ],
+    "Delve the Depths - Shadow": [
+      {
+        "Chance": 30,
+        "Description": "Mark progress and Reveal a Danger."
+      },
+      {
+        "Chance": 65,
+        "Description": "Mark progress."
+      },
+      {
+        "Chance": 90,
+        "Description": "Choose one: Mark progress or Find an Opportunity."
+      },
+      {
+        "Chance": 99,
+        "Description": "Take both: Mark progress and Find an Opportunity."
+      },
+      {
+        "Chance": 100,
+        "Description": "Mark progress twice and Reveal a Danger."
+      }
+    ],
+    "Delve the Depths - Wits": [
+      {
+        "Chance": 40,
+        "Description": "Mark progress and Reveal a Danger."
+      },
+      {
+        "Chance": 55,
+        "Description": "Mark progress."
+      },
+      {
+        "Chance": 80,
+        "Description": "Choose one: Mark progress or Find an Opportunity."
+      },
+      {
+        "Chance": 99,
+        "Description": "Take both: Mark progress and Find an Opportunity."
+      },
+      {
+        "Chance": 100,
+        "Description": "Mark progress twice and Reveal a Danger."
+      }
+    ],
+    "Find an Opportunity": [
+      {
+        "Chance": 25,
+        "Description": "The terrain favors you, or you find a hidden path."
+      },
+      {
+        "Chance": 45,
+        "Description": "An aspect of the history or nature of this place is revealed."
+      },
+      {
+        "Chance": 57,
+        "Description": "You locate a secure area."
+      },
+      {
+        "Chance": 68,
+        "Description": "A clue offers insight or direction."
+      },
+      {
+        "Chance": 78,
+        "Description": "You get the drop on a denizen."
+      },
+      {
+        "Chance": 86,
+        "Description": "This area provides an opportunity to scavenge, forage, or hunt."
+      },
+      {
+        "Chance": 90,
+        "Description": "You locate an interesting or helpful object."
+      },
+      {
+        "Chance": 94,
+        "Description": "You are alerted to a potential threat."
+      },
+      {
+        "Chance": 98,
+        "Description": "You encounter a denizen who might support you."
+      },
+      {
+        "Chance": 100,
+        "Description": "You encounter a denizen in need of help."
+      }
+    ],
+    "Reveal a Danger": [
+      {
+        "Chance": 30,
+        "Description": "Check the theme card."
+      },
+      {
+        "Chance": 45,
+        "Description": "Check the domain card."
+      },
+      {
+        "Chance": 57,
+        "Description": "You encounter a hostile denizen."
+      },
+      {
+        "Chance": 68,
+        "Description": "You face an environmental or architectural hazard."
+      },
+      {
+        "Chance": 76,
+        "Description": "A discovery undermines or complicates your quest."
+      },
+      {
+        "Chance": 79,
+        "Description": "You confront a harrowing situation or sensation."
+      },
+      {
+        "Chance": 82,
+        "Description": "You face the consequences of an earlier choice or approach."
+      },
+      {
+        "Chance": 85,
+        "Description": "Your way is blocked or trapped."
+      },
+      {
+        "Chance": 88,
+        "Description": "A resource is diminished, broken, or lost."
+      },
+      {
+        "Chance": 91,
+        "Description": "You face a perplexing mystery or tough choice."
+      },
+      {
+        "Chance": 94,
+        "Description": "You lose your way or are delayed."
+      },
+      {
+        "Chance": 100,
+        "Description": "Roll twice more on this table. Both results occur. If they are the same result, make it worse."
+      }
+    ],
+    "Reveal a Danger Alternate": [
+      {
+        "Chance": 22,
+        "Description": "You encounter a hostile denizen."
+      },
+      {
+        "Chance": 42,
+        "Description": "You face an environmental or architectural hazard."
+      },
+      {
+        "Chance": 58,
+        "Description": "A discovery undermines or complicates your quest."
+      },
+      {
+        "Chance": 64,
+        "Description": "You confront a harrowing situation or sensation."
+      },
+      {
+        "Chance": 70,
+        "Description": "You face the consequences of an earlier choice or approach."
+      },
+      {
+        "Chance": 76,
+        "Description": "The path is blocked or trapped."
+      },
+      {
+        "Chance": 82,
+        "Description": "A resource is diminished, broken, or lost."
+      },
+      {
+        "Chance": 88,
+        "Description": "You face a perplexing mystery or tough choice."
+      },
+      {
+        "Chance": 94,
+        "Description": "You lose your way or are delayed."
+      },
+      {
+        "Chance": 100,
+        "Description": "Roll twice more on this table. Both results occur. If they are the same result, make it worse."
+      }
+    ],
+    "Advance a Threat": [
+      {
+        "Chance": 30,
+        "Description": "The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, Reach a Milestone. Otherwise, mark menace."
+      },
+      {
+        "Chance": 70,
+        "Description": "The threat works subtly to advance toward its goal, or the danger escalates. Mark menace."
+      },
+      {
+        "Chance": 100,
+        "Description": "The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice."
+      }
+    ]
+  }
+}
