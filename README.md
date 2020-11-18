@@ -1,6 +1,6 @@
 # Datasworn
 
-JSON files of game data for the [Ironsworn](http://ironswornrpg.com) tabletop role-playing game, and its expansion, Ironsworn: Delve. Use them for your community to game tools without all the hassle of data entry.
+JSON files of game data for the [Ironsworn](http://ironswornrpg.com) tabletop role-playing game, and its expansion, Ironsworn: Delve. For use in community-created tools, because there's no use in duplicating labour on the data entry.
 
 ## todo
 * ironlands region data
