@@ -4,7 +4,6 @@ JSON files of game data for the [Ironsworn](http://ironswornrpg.com) tabletop ro
 
 ## todo
 * ironlands region data
-* add missing move oracles (endure harm etc)
 * clean up markdown in moves
 * setting truths + their associated quests
 
