@@ -1,5 +1,45 @@
 {
   "Move Oracles": {
+    "Endure Harm": [
+      {
+        "Chance": 10,
+        "Description": "The harm is mortal. _Face Death_."
+      },
+      {
+        "Chance": 20,
+        "Description": "You are dying. You need to _Heal_ within an hour or two, or _Face Death_."
+      },
+      {
+        "Chance": 35,
+        "Description": "You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, _Face Death_."
+      },
+      {
+        "Chance": 50,
+        "Description": "You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move)."
+      },
+      {
+        "Chance": 100,
+        "Description": "You are battered but still standing."
+      }
+    ],
+    "Endure Stress": [
+      {
+        "Chance": 10,
+        "Description": "You are overwhelmed. _Face Desolation_."
+      },
+      {
+        "Chance": 25,
+        "Description": "You give up. _Forsake Your Vow_ (if possible, one relevant to your current crisis)."
+      },
+      {
+        "Chance": 50,
+        "Description": "You give in to a fear or compulsion, and act against your better instincts."
+      },
+      {
+        "Chance": 100,
+        "Description": "You persevere."
+      }
+    ],
     "Pay the Price": [
       {
         "Chance": 2,
