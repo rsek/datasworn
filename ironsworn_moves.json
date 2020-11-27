@@ -210,157 +210,157 @@
         },
         "Text": "When **your momentum is at its minimum** (-6), and you suffer additional -momentum, choose one.\n\n  * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.\n  * Envision an event or discovery (_Ask the Oracle_ if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional -momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick)."
       }
-    }
-  },
-  "Quest Moves": {
-    "Swear an Iron Vow": {
-      "Source": {
-        "Name": "Ironsworn Rulebook",
-        "Page": "98"
-      },
-      "Text": "When **you swear upon iron to complete a quest**, write your vow and give the quest a rank. Then, roll +heart. If you make this vow to a person or community with whom you share a bond, add +1.\n\nOn a **strong hit**, you are emboldened and it is clear what you must do next (_Ask the Oracle_ if unsure). Take +2 momentum.\n\nOn a **weak hit**, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.\n\nOn a **miss**, you face a significant obstacle before you can begin your quest. Envision what stands in your way (_Ask the Oracle_ if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: _Forsake Your Vow_."
     },
-    "Reach a Milestone": {
-      "Source": {
-        "Name": "Ironsworn Rulebook",
-        "Page": "100"
+    "Quest Moves": {
+      "Swear an Iron Vow": {
+        "Source": {
+          "Name": "Ironsworn Rulebook",
+          "Page": "98"
+        },
+        "Text": "When **you swear upon iron to complete a quest**, write your vow and give the quest a rank. Then, roll +heart. If you make this vow to a person or community with whom you share a bond, add +1.\n\nOn a **strong hit**, you are emboldened and it is clear what you must do next (_Ask the Oracle_ if unsure). Take +2 momentum.\n\nOn a **weak hit**, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.\n\nOn a **miss**, you face a significant obstacle before you can begin your quest. Envision what stands in your way (_Ask the Oracle_ if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: _Forsake Your Vow_."
       },
-      "Text": "When **you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item**, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick."
+      "Reach a Milestone": {
+        "Source": {
+          "Name": "Ironsworn Rulebook",
+          "Page": "100"
+        },
+        "Text": "When **you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item**, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick."
+      },
+      "Fulfill Your Vow": {
+        "Source": {
+          "Name": "Ironsworn Rulebook",
+          "Page": "101"
+        },
+        "Progress Move": true,
+        "Text": "When **you achieve what you believe to be the fulfillment of your vow**, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, your quest is complete. Mark experience (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5).\n\nOn a **weak hit**, there is more to be done or you realize the truth of your quest. Envision what you discover (_Ask the Oracle_ if unsure). Then, mark experience (troublesome=0; dangerous=1; formidable=2; extreme=3; epic=4). You may _Swear an Iron Vow_ to set things right. If you do, add +1.\n\nOn a **miss**, your quest is undone. Envision what happens (_Ask the Oracle_ if unsure), and choose one.\n\n  * You recommit: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).\n  * You give up: _Forsake Your Vow_."
+      },
+      "Forsake Your Vow": {
+        "Source": {
+          "Name": "Ironsworn Rulebook",
+          "Page": "102"
+        },
+        "Text": "When **you renounce your quest, betray your promise, or the goal is lost to you**, clear the vow and _Endure Stress_. You suffer -spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet."
+      },
+      "Advance": {
+        "Source": {
+          "Name": "Ironsworn Rulebook",
+          "Page": "103"
+        },
+        "Text": "When **you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion**, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset."
+      }
     },
-    "Fulfill Your Vow": {
-      "Source": {
-        "Name": "Ironsworn Rulebook",
-        "Page": "101"
+    "Fate Moves": {
+      "Pay the Price": {
+        "Source": {
+          "Name": "Ironsworn Rulebook",
+          "Page": "105"
+        },
+        "Text": "When **you suffer the outcome of a move**, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and _Ask the Oracle_ using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\nRoll Result\n```1-2  \tRoll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest (Ask the Oracle if unsure) and make it happen.\n3-5  \tA person or community you trusted loses faith in you, or acts against you.\n6-9  \tA person or community you care about is exposed to danger.\n10-16\tYou are separated from something or someone.\n17-23\tYour action has an unintended effect.\n24-32\tSomething of value is lost or destroyed.\n33-41\tThe current situation worsens.\n42-50\tA new danger or foe is revealed.\n51-59\tIt causes a delay or puts you at a disadvantage.\n60-68\tIt is harmful.\n69-76\tIt is stressful.\n77-85\tA surprising development complicates your quest.\n86-90\tIt wastes resources.\n91-94\tIt forces you to act against your best intentions.\n95-98\tA friend, companion, or ally is put in harm’s way (or you are, if alone).\n99-00\tRoll twice more on this table. Both results occur. If they are the same result, make it worse.```"
       },
-      "Progress Move": true,
-      "Text": "When **you achieve what you believe to be the fulfillment of your vow**, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, your quest is complete. Mark experience (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5).\n\nOn a **weak hit**, there is more to be done or you realize the truth of your quest. Envision what you discover (_Ask the Oracle_ if unsure). Then, mark experience (troublesome=0; dangerous=1; formidable=2; extreme=3; epic=4). You may _Swear an Iron Vow_ to set things right. If you do, add +1.\n\nOn a **miss**, your quest is undone. Envision what happens (_Ask the Oracle_ if unsure), and choose one.\n\n  * You recommit: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).\n  * You give up: _Forsake Your Vow_."
+      "Ask the Oracle": {
+        "Source": {
+          "Name": "Ironsworn Rulebook",
+          "Page": "107"
+        },
+        "Text": "When **you seek to resolve questions, discover details in the world, determine how other characters respond, or trigger encounters or events**, you may…\n\n  * Draw a conclusion: Decide the answer based on the most interesting and obvious result.\n  * Ask a yes/no question: Decide the odds of a ‘yes’, and roll on the table below to check the answer.\n  * Pick two: Envision two options. Rate one as ‘likely’, and roll on the table below to see if it is true. If not, it is the other.\n  * Spark an idea: Brainstorm or use a random prompt.\n\n```Odds          \tThe answer is ‘yes’ if you roll... \n\nAlmost Certain\t11 or greater \n\nLikely        \t26 or greater \n50/50         \t51 or greater \n\nUnlikely      \t76 or greater \n\nSmall Chance  \t91 or greater\n\nOn a match, an extreme result or twist has occurred.```"
+      }
     },
-    "Forsake Your Vow": {
-      "Source": {
-        "Name": "Ironsworn Rulebook",
-        "Page": "102"
+    "Delve Moves": {
+      "Discover a Site": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "19"
+        },
+        "Text": "When **you resolve to enter a perilous site in pursuit of an objective**, choose the theme and domain which best represent its nature (*Ask the Oracle* if unsure), and give it a rank.\n\n  * Troublesome site: 3 progress per area.\n  * Dangerous site: 2 progress per area.\n  * Formidable site: 1 progress per area.\n  * Extreme site: 2 ticks per area.\n  * Epic site: 1 tick per area.\n\nIf you are returning to a previously explored site, roll both challenge dice, take the lowest value, and clear that number of progress boxes.\n\nThen, **Delve the Depths** to explore this place."
       },
-      "Text": "When **you renounce your quest, betray your promise, or the goal is lost to you**, clear the vow and _Endure Stress_. You suffer -spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet."
+      "Delve the Depths": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "21"
+        },
+        "Text": "When you **traverse an area within a perilous site**, envision your surroundings (*Ask the Oracle* if unsure). Then, consider your approach. If you navigate this area...\n\n  * With haste: Roll +edge.\n  * With stealth or trickery: Roll +shadow.\n  * With observation, intuition, or expertise: Roll +wits.\n\nOn a **strong hit**, you delve deeper. Mark progress and *Find an Opportunity*. On a **weak hit**, roll on the following table according to your stat.\n\nOn a **miss**, *Reveal a Danger*. ```Edge\tShadow\tWits\tWeak Hit Result\n 1-45\t 1-30\t 1-40\tMark progress and Reveal a Danger.\n 46-65\t31-65\t41-55\tMark progress.\n 66-75\t66-90\t56-80\tChoose one: Mark progress or Find an Opportunity.\n 76-80\t91-99\t81-99\tTake both: Mark progress and Find an Opportunity.\n 81-00\t   00\t   00\tMark progress twice and Reveal a Danger.```"
+      },
+      "Find an Opportunity": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "30"
+        },
+        "Text": "When **you encounter a helpful situation or feature within a site**, roll on the following table. If you are making this move as a result of a strong hit on *Delve the Depths*, you may pick or envision an opportunity instead of rolling.\n\nThen, choose one.\n\n  * Gain insight or prepare: Take +1 momentum.\n  * Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.\n\n```Roll\tResult\n 1-25\tThe terrain favors you, or you find a hidden path.\n26-45\tAn aspect of the history or nature of this place is revealed.\n46-57\tYou locate a secure area.\n58-68\tA clue offers insight or direction.\n69-78\tYou get the drop on a denizen.\n79-86\tThis area provides an opportunity to scavenge, forage, or hunt. \n87-90\tYou locate an interesting or helpful object.\n91-94\tYou are alerted to a potential threat.\n95-98\tYou encounter a denizen who might support you.\n99-00\tYou encounter a denizen in need of help.```"
+      },
+      "Reveal a Danger": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "34"
+        },
+        "Text": "When **you encounter a risky situation within a site**, envision the danger or roll on the following table. ```Roll\tResult\n 1-30\tCheck the theme card.\n31-45\tCheck the domain card.\n46-57\tYou encounter a hostile denizen.\n58-68\tYou face an environmental or architectural hazard.\n69-76\tA discovery undermines or complicates your quest.\n77-79\tYou confront a harrowing situation or sensation.\n80-82\tYou face the consequences of an earlier choice or approach.\n83-85\tYour way is blocked or trapped.\n86-88\tA resource is diminished, broken, or lost.\n89-91\tYou face a perplexing mystery or tough choice.\n92-94\tYou lose your way or are delayed.\n95-00\tRoll twice more on this table. Both results occur. If they are the same result, make it worse.```"
+      },
+      "Check Your Gear": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "38"
+        },
+        "Text": "When **you check to see if you have a specific helpful item**, and you have at least +1 supply, roll +supply.\n\nOn a **strong hit**, you have it. Take +1 momentum.\n\nOn a **weak hit**, you have it, but your resources are diminished. Take +1 momentum and suffer -1 supply.\n\nOn a **miss**, you don’t have it and the situation grows more perilous. *Pay the Price*."
+      },
+      "Locate Your Objective": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "40"
+        },
+        "Progress Move": true,
+        "Text": "When **your exploration of a site comes to an end**, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, you locate your objective and the situation favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.\n\nOn a **weak hit**, you locate your objective but face an unforeseen hazard or complication. Envision what you find (**Ask the Oracle** if unsure).\n\nOn a **miss**, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic)."
+      },
+      "Escape the Depths": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "42"
+        },
+        "Text": "When **you flee or withdraw from a site**, consider the situation and your approach. If you...\n\n  * Find the fastest way out: Roll +edge.\n  * Steel yourself against the horrors of this place: Roll +heart.\n  * Fight your way out: Roll +iron.\n  * Retrace your steps or locate an alternate path: Roll +wits.\n  * Keep out of sight: Roll +shadow.\n\nOn a **strong hit**, you make your way safely out of the site. Take +1 momentum. \n\nOn a **weak hit**, you find your way out, but this place exacts its price. Choose one.\n\n  * You are weary or wounded: *Endure Harm*.\n  * The experience leaves you shaken: *Endure Stress*.\n  * You are delayed, and it costs you.\n  * You leave behind something important.\n  * You face a new complication as you emerge from the depths.\n  * A denizen plots their revenge.\n\nOn a **miss**, a dire threat or imposing obstacle stands in your way. *Reveal a Danger*. If you survive, you may make your escape."
+      }
     },
-    "Advance": {
-      "Source": {
-        "Name": "Ironsworn Rulebook",
-        "Page": "103"
+    "Optional Delve Moves": {
+      "Reveal a Danger (alternate version)": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "68"
+        },
+        "Text": "When **you encounter a risky situation within a site**, envision the danger or roll on the following table. ```Roll\tResult\n 1-22\tYou encounter a hostile denizen.\n23-42\tYou face an environmental or architectural hazard.\n43-58\tA discovery undermines or complicates your quest.\n59-64\tYou confront a harrowing situation or sensation.\n65-70\tYou face the consequences of an earlier choice or approach.\n71-76\tThe path is blocked or trapped.\n77-82\tA resource is diminished, broken, or lost.\n83-88\tYou face a perplexing mystery or tough choice.\n89-94\tYou lose your way or are delayed.\n95-00\tRoll twice more on this table. Both results occur. If they are the same result, make it worse.```"
       },
-      "Text": "When **you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion**, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset."
-    }
-  },
-  "Fate Moves": {
-    "Pay the Price": {
-      "Source": {
-        "Name": "Ironsworn Rulebook",
-        "Page": "105"
+      "Mark Your Failure": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "58"
+        },
+        "Text": "When **you make a move and score a miss**, mark a tick on your failure track. If **you score a miss when making a progress move**, mark two ticks."
       },
-      "Text": "When **you suffer the outcome of a move**, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and _Ask the Oracle_ using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\nRoll Result\n```1-2  \tRoll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest (Ask the Oracle if unsure) and make it happen.\n3-5  \tA person or community you trusted loses faith in you, or acts against you.\n6-9  \tA person or community you care about is exposed to danger.\n10-16\tYou are separated from something or someone.\n17-23\tYour action has an unintended effect.\n24-32\tSomething of value is lost or destroyed.\n33-41\tThe current situation worsens.\n42-50\tA new danger or foe is revealed.\n51-59\tIt causes a delay or puts you at a disadvantage.\n60-68\tIt is harmful.\n69-76\tIt is stressful.\n77-85\tA surprising development complicates your quest.\n86-90\tIt wastes resources.\n91-94\tIt forces you to act against your best intentions.\n95-98\tA friend, companion, or ally is put in harm’s way (or you are, if alone).\n99-00\tRoll twice more on this table. Both results occur. If they are the same result, make it worse.```"
-    },
-    "Ask the Oracle": {
-      "Source": {
-        "Name": "Ironsworn Rulebook",
-        "Page": "107"
+      "Learn From Your Failures": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "59"
+        },
+        "Progress Move": true,
+        "Text": "When **you spend time reflecting on your hardships and missteps**, and your failure track is +6 or greater, roll your challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, you commit to making a dramatic change. Take 3 experience and clear all progress. Then, choose one.\n\n  * Adjust your approach: Discard a single asset, and take 2 experience for each marked ability.\n  * Make an oath: *Swear an Iron Vow*, and reroll any dice.\n  * Ready your next steps: Take +3 momentum.\n\nOn a **weak hit**, you learn from your mistakes. Take 2 experience and clear all progress.\n\nOn a **miss**, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Then, envision how you set off on an ill-fated path."
       },
-      "Text": "When **you seek to resolve questions, discover details in the world, determine how other characters respond, or trigger encounters or events**, you may…\n\n  * Draw a conclusion: Decide the answer based on the most interesting and obvious result.\n  * Ask a yes/no question: Decide the odds of a ‘yes’, and roll on the table below to check the answer.\n  * Pick two: Envision two options. Rate one as ‘likely’, and roll on the table below to see if it is true. If not, it is the other.\n  * Spark an idea: Brainstorm or use a random prompt.\n\n```Odds          \tThe answer is ‘yes’ if you roll... \n\nAlmost Certain\t11 or greater \n\nLikely        \t26 or greater \n50/50         \t51 or greater \n\nUnlikely      \t76 or greater \n\nSmall Chance  \t91 or greater\n\nOn a match, an extreme result or twist has occurred.```"
-    }
-  },
-  "Delve Moves": {
-    "Discover a Site": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "19"
+      "Advance a Threat": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "154"
+        },
+        "Text": "When **you give ground to a threat through inaction, failure, or delay**, roll on the table below and envision how the change manifests in your world (*Ask the Oracle* if unsure). ```Roll\tResult\n 1-30\tThe threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, Reach a Milestone. Otherwise, mark menace.\n31-70\tThe threat works subtly to advance toward its goal, or the danger escalates. Mark menace.\n71-00\tThe threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.``` On a match, this development also exposes a surprising aspect of the threat’s plan or nature.\n\nIf **you mark the last box on the threat’s menace track**, the threat achieves its goal, or the final dire outcome occurs. You must *Forsake Your Vow*."
       },
-      "Text": "When **you resolve to enter a perilous site in pursuit of an objective**, choose the theme and domain which best represent its nature (*Ask the Oracle* if unsure), and give it a rank.\n\n  * Troublesome site: 3 progress per area.\n  * Dangerous site: 2 progress per area.\n  * Formidable site: 1 progress per area.\n  * Extreme site: 2 ticks per area.\n  * Epic site: 1 tick per area.\n\nIf you are returning to a previously explored site, roll both challenge dice, take the lowest value, and clear that number of progress boxes.\n\nThen, **Delve the Depths** to explore this place."
-    },
-    "Delve the Depths": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "21"
+      "Take a Hiatus": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "158"
+        },
+        "Text": "When **you spend an extended time recovering in a safe place while a threat is active**, do any of the following.\n\n  * Clear any marked conditions.\n  * Set your health, spirit, supply, and companion health to their maximum values.\n  * Set your momentum to its reset value.\n\nThen, for each active threat, *Advance a Threat*."
       },
-      "Text": "When you **traverse an area within a perilous site**, envision your surroundings (*Ask the Oracle* if unsure). Then, consider your approach. If you navigate this area...\n\n  * With haste: Roll +edge.\n  * With stealth or trickery: Roll +shadow.\n  * With observation, intuition, or expertise: Roll +wits.\n\nOn a **strong hit**, you delve deeper. Mark progress and *Find an Opportunity*. On a **weak hit**, roll on the following table according to your stat.\n\nOn a **miss**, *Reveal a Danger*. ```Edge\tShadow\tWits\tWeak Hit Result\n 1-45\t 1-30\t 1-40\tMark progress and Reveal a Danger.\n 46-65\t31-65\t41-55\tMark progress.\n 66-75\t66-90\t56-80\tChoose one: Mark progress or Find an Opportunity.\n 76-80\t91-99\t81-99\tTake both: Mark progress and Find an Opportunity.\n 81-00\t   00\t   00\tMark progress twice and Reveal a Danger.```"
-    },
-    "Find an Opportunity": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "30"
-      },
-      "Text": "When **you encounter a helpful situation or feature within a site**, roll on the following table. If you are making this move as a result of a strong hit on *Delve the Depths*, you may pick or envision an opportunity instead of rolling.\n\nThen, choose one.\n\n  * Gain insight or prepare: Take +1 momentum.\n  * Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.\n\n```Roll\tResult\n 1-25\tThe terrain favors you, or you find a hidden path.\n26-45\tAn aspect of the history or nature of this place is revealed.\n46-57\tYou locate a secure area.\n58-68\tA clue offers insight or direction.\n69-78\tYou get the drop on a denizen.\n79-86\tThis area provides an opportunity to scavenge, forage, or hunt. \n87-90\tYou locate an interesting or helpful object.\n91-94\tYou are alerted to a potential threat.\n95-98\tYou encounter a denizen who might support you.\n99-00\tYou encounter a denizen in need of help.```"
-    },
-    "Reveal a Danger": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "34"
-      },
-      "Text": "When **you encounter a risky situation within a site**, envision the danger or roll on the following table. ```Roll\tResult\n 1-30\tCheck the theme card.\n31-45\tCheck the domain card.\n46-57\tYou encounter a hostile denizen.\n58-68\tYou face an environmental or architectural hazard.\n69-76\tA discovery undermines or complicates your quest.\n77-79\tYou confront a harrowing situation or sensation.\n80-82\tYou face the consequences of an earlier choice or approach.\n83-85\tYour way is blocked or trapped.\n86-88\tA resource is diminished, broken, or lost.\n89-91\tYou face a perplexing mystery or tough choice.\n92-94\tYou lose your way or are delayed.\n95-00\tRoll twice more on this table. Both results occur. If they are the same result, make it worse.```"
-    },
-    "Check Your Gear": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "38"
-      },
-      "Text": "When **you check to see if you have a specific helpful item**, and you have at least +1 supply, roll +supply.\n\nOn a **strong hit**, you have it. Take +1 momentum.\n\nOn a **weak hit**, you have it, but your resources are diminished. Take +1 momentum and suffer -1 supply.\n\nOn a **miss**, you don’t have it and the situation grows more perilous. *Pay the Price*."
-    },
-    "Locate Your Objective": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "40"
-      },
-      "Progress Move": true,
-      "Text": "When **your exploration of a site comes to an end**, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, you locate your objective and the situation favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum.\n\nOn a **weak hit**, you locate your objective but face an unforeseen hazard or complication. Envision what you find (**Ask the Oracle** if unsure).\n\nOn a **miss**, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic)."
-    },
-    "Escape the Depths": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "42"
-      },
-      "Text": "When **you flee or withdraw from a site**, consider the situation and your approach. If you...\n\n  * Find the fastest way out: Roll +edge.\n  * Steel yourself against the horrors of this place: Roll +heart.\n  * Fight your way out: Roll +iron.\n  * Retrace your steps or locate an alternate path: Roll +wits.\n  * Keep out of sight: Roll +shadow.\n\nOn a **strong hit**, you make your way safely out of the site. Take +1 momentum. \n\nOn a **weak hit**, you find your way out, but this place exacts its price. Choose one.\n\n  * You are weary or wounded: *Endure Harm*.\n  * The experience leaves you shaken: *Endure Stress*.\n  * You are delayed, and it costs you.\n  * You leave behind something important.\n  * You face a new complication as you emerge from the depths.\n  * A denizen plots their revenge.\n\nOn a **miss**, a dire threat or imposing obstacle stands in your way. *Reveal a Danger*. If you survive, you may make your escape."
-    }
-  },
-  "Optional Delve Moves": {
-    "Reveal a Danger (alternate version)": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "68"
-      },
-      "Text": "When **you encounter a risky situation within a site**, envision the danger or roll on the following table. ```Roll\tResult\n 1-22\tYou encounter a hostile denizen.\n23-42\tYou face an environmental or architectural hazard.\n43-58\tA discovery undermines or complicates your quest.\n59-64\tYou confront a harrowing situation or sensation.\n65-70\tYou face the consequences of an earlier choice or approach.\n71-76\tThe path is blocked or trapped.\n77-82\tA resource is diminished, broken, or lost.\n83-88\tYou face a perplexing mystery or tough choice.\n89-94\tYou lose your way or are delayed.\n95-00\tRoll twice more on this table. Both results occur. If they are the same result, make it worse.```"
-    },
-    "Mark Your Failure": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "58"
-      },
-      "Text": "When **you make a move and score a miss**, mark a tick on your failure track. If **you score a miss when making a progress move**, mark two ticks."
-    },
-    "Learn From Your Failures": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "59"
-      },
-      "Progress Move": true,
-      "Text": "When **you spend time reflecting on your hardships and missteps**, and your failure track is +6 or greater, roll your challenge dice and compare to your progress. Momentum is ignored on this roll.\n\nOn a **strong hit**, you commit to making a dramatic change. Take 3 experience and clear all progress. Then, choose one.\n\n  * Adjust your approach: Discard a single asset, and take 2 experience for each marked ability.\n  * Make an oath: *Swear an Iron Vow*, and reroll any dice.\n  * Ready your next steps: Take +3 momentum.\n\nOn a **weak hit**, you learn from your mistakes. Take 2 experience and clear all progress.\n\nOn a **miss**, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Then, envision how you set off on an ill-fated path."
-    },
-    "Advance a Threat": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "154"
-      },
-      "Text": "When **you give ground to a threat through inaction, failure, or delay**, roll on the table below and envision how the change manifests in your world (*Ask the Oracle* if unsure). ```Roll\tResult\n 1-30\tThe threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, Reach a Milestone. Otherwise, mark menace.\n31-70\tThe threat works subtly to advance toward its goal, or the danger escalates. Mark menace.\n71-00\tThe threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.``` On a match, this development also exposes a surprising aspect of the threat’s plan or nature.\n\nIf **you mark the last box on the threat’s menace track**, the threat achieves its goal, or the final dire outcome occurs. You must *Forsake Your Vow*."
-    },
-    "Take a Hiatus": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "158"
-      },
-      "Text": "When **you spend an extended time recovering in a safe place while a threat is active**, do any of the following.\n\n  * Clear any marked conditions.\n  * Set your health, spirit, supply, and companion health to their maximum values.\n  * Set your momentum to its reset value.\n\nThen, for each active threat, *Advance a Threat*."
-    },
-    "Wield a Rarity": {
-      "Source": {
-        "Name": "Ironsworn: Delve",
-        "Page": "176"
-      },
-      "Text": "When *you make a move aided by an augmented asset*, roll your rarity die in place of your action die.\n\nOn *any result* with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic **strong hit** and take +1 momentum.\n\nOn a *hit* with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Take +1 momentum.\n\nOn a *miss* with 1 showing on the rarity die, the rarity’s power fails or works against you."
+      "Wield a Rarity": {
+        "Source": {
+          "Name": "Ironsworn: Delve",
+          "Page": "176"
+        },
+        "Text": "When *you make a move aided by an augmented asset*, roll your rarity die in place of your action die.\n\nOn *any result* with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic **strong hit** and take +1 momentum.\n\nOn a *hit* with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Take +1 momentum.\n\nOn a *miss* with 1 showing on the rarity die, the rarity’s power fails or works against you."
+      }
     }
   }
 }
