@@ -1031,13 +1031,16 @@
           "Enabled": true
         },
         {
-          "Text": "Your simulacrum has 6 health."
+          "Text": "Your simulacrum has 6 health.",
+          "Alter Properties": {
+            "Health": 6
+          }
         },
         {
           "Text": "When you perform this ritual, add +1 and take +1 momentum on a hit."
         }
       ],
-      "Health": 6
+      "Health": 3
     },
     "Bind": {
       "Asset Type": "Ritual",
