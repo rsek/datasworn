@@ -23,7 +23,7 @@ On a **weak hit**, you succeed, but face a troublesome cost. Choose one.
 
 On a **miss**, you fail, or your progress is undermined by a dramatic and costly turn of events. _Pay the Price_.
 
-### Secure An Advantage
+### Secure an Advantage
 
 When **you assess a situation, make preparations, or attempt to gain leverage**, envision your action and roll. If you act...
 
@@ -218,7 +218,7 @@ On a **miss**, your fears are realized.
 
 ## Combat Moves
 
-### Enter The Fray
+### Enter the Fray
 
 When **you enter into combat**, set the rank of each of your foes.
 

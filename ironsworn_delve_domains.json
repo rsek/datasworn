@@ -3,8 +3,9 @@
   "Source": {
     "Name": "Ironsworn: Delve"
   },
-  "Domains": {
-    "Barrow": {
+  "Domains": [
+    {
+      "Name": "Barrow",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "88"
@@ -84,7 +85,8 @@
         }
       ]
     },
-    "Cavern": {
+    {
+      "Name": "Cavern",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "88"
@@ -164,7 +166,8 @@
         }
       ]
     },
-    "Frozen Cavern": {
+    {
+      "Name": "Frozen Cavern",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "89"
@@ -244,7 +247,8 @@
         }
       ]
     },
-    "Icereach": {
+    {
+      "Name": "Icereach",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "89"
@@ -324,7 +328,8 @@
         }
       ]
     },
-    "Mine": {
+    {
+      "Name": "Mine",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "90"
@@ -404,7 +409,8 @@
         }
       ]
     },
-    "Pass": {
+    {
+      "Name": "Pass",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "90"
@@ -484,7 +490,8 @@
         }
       ]
     },
-    "Ruin": {
+    {
+      "Name": "Ruin",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "91"
@@ -564,7 +571,8 @@
         }
       ]
     },
-    "Sea Cave": {
+    {
+      "Name": "Sea Cave",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "91"
@@ -644,7 +652,8 @@
         }
       ]
     },
-    "Shadowfen": {
+    {
+      "Name": "Shadowfen",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "92"
@@ -724,7 +733,8 @@
         }
       ]
     },
-    "Stronghold": {
+    {
+      "Name": "Stronghold",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "92"
@@ -804,7 +814,8 @@
         }
       ]
     },
-    "Tanglewood": {
+    {
+      "Name": "Tanglewood",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "93"
@@ -884,7 +895,8 @@
         }
       ]
     },
-    "Underkeep": {
+    {
+      "Name": "Underkeep",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "93"
@@ -964,5 +976,5 @@
         }
       ]
     }
-  }
+  ]
 }

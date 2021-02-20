@@ -3,8 +3,9 @@
   "Source": {
     "Name": "Ironsworn: Delve"
   },
-  "Themes": {
-    "Ancient": {
+  "Themes": [
+    {
+      "Name": "Ancient",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "84"
@@ -84,7 +85,8 @@
         }
       ]
     },
-    "Corrupted": {
+    {
+      "Name": "Corrupted",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "84"
@@ -164,7 +166,8 @@
         }
       ]
     },
-    "Fortified": {
+    {
+      "Name": "Fortified",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "85"
@@ -244,7 +247,8 @@
         }
       ]
     },
-    "Hallowed": {
+    {
+      "Name": "Hallowed",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "85"
@@ -324,7 +328,8 @@
         }
       ]
     },
-    "Haunted": {
+    {
+      "Name": "Haunted",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "86"
@@ -404,7 +409,8 @@
         }
       ]
     },
-    "Infested": {
+    {
+      "Name": "Infested",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "86"
@@ -484,7 +490,8 @@
         }
       ]
     },
-    "Ravaged": {
+    {
+      "Name": "Ravaged",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "87"
@@ -564,7 +571,8 @@
         }
       ]
     },
-    "Wild": {
+    {
+      "Name": "Wild",
       "Source": {
         "Name": "Ironsworn: Delve",
         "Page": "87"
@@ -644,5 +652,5 @@
         }
       ]
     }
-  }
+  ]
 }

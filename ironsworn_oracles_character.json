@@ -1,914 +1,930 @@
 {
-  "Character Oracles": {
-    "Role": [
-      {
-        "Chance": 2,
-        "Description": "Criminal"
-      },
-      {
-        "Chance": 4,
-        "Description": "Healer"
-      },
-      {
-        "Chance": 6,
-        "Description": "Bandit"
-      },
-      {
-        "Chance": 9,
-        "Description": "Guide"
-      },
-      {
-        "Chance": 12,
-        "Description": "Performer"
-      },
-      {
-        "Chance": 15,
-        "Description": "Miner"
-      },
-      {
-        "Chance": 18,
-        "Description": "Mercenary"
-      },
-      {
-        "Chance": 21,
-        "Description": "Outcast"
-      },
-      {
-        "Chance": 24,
-        "Description": "Vagrant"
-      },
-      {
-        "Chance": 27,
-        "Description": "Forester"
-      },
-      {
-        "Chance": 30,
-        "Description": "Traveler"
-      },
-      {
-        "Chance": 33,
-        "Description": "Mystic"
-      },
-      {
-        "Chance": 36,
-        "Description": "Priest"
-      },
-      {
-        "Chance": 39,
-        "Description": "Sailor"
-      },
-      {
-        "Chance": 42,
-        "Description": "Pilgrim"
-      },
-      {
-        "Chance": 45,
-        "Description": "Thief"
-      },
-      {
-        "Chance": 48,
-        "Description": "Adventurer"
-      },
-      {
-        "Chance": 51,
-        "Description": "Forager"
-      },
-      {
-        "Chance": 54,
-        "Description": "Leader"
-      },
-      {
-        "Chance": 58,
-        "Description": "Guard"
-      },
-      {
-        "Chance": 62,
-        "Description": "Artisan"
-      },
-      {
-        "Chance": 66,
-        "Description": "Scout"
-      },
-      {
-        "Chance": 70,
-        "Description": "Herder"
-      },
-      {
-        "Chance": 74,
-        "Description": "Fisher"
-      },
-      {
-        "Chance": 79,
-        "Description": "Warrior"
-      },
-      {
-        "Chance": 84,
-        "Description": "Hunter"
-      },
-      {
-        "Chance": 89,
-        "Description": "Raider"
-      },
-      {
-        "Chance": 94,
-        "Description": "Trader"
-      },
-      {
-        "Chance": 99,
-        "Description": "Farmer"
-      },
-      {
-        "Chance": 100,
-        "Description": "Unusual role"
-      }
-    ],
-    "Goal": [
-      {
-        "Chance": 3,
-        "Description": "Obtain an object"
-      },
-      {
-        "Chance": 6,
-        "Description": "Make an agreement"
-      },
-      {
-        "Chance": 9,
-        "Description": "Build a relationship"
-      },
-      {
-        "Chance": 12,
-        "Description": "Undermine a relationship"
-      },
-      {
-        "Chance": 15,
-        "Description": "Seek a truth"
-      },
-      {
-        "Chance": 18,
-        "Description": "Pay a debt"
-      },
-      {
-        "Chance": 21,
-        "Description": "Refute a falsehood"
-      },
-      {
-        "Chance": 24,
-        "Description": "Harm a rival"
-      },
-      {
-        "Chance": 27,
-        "Description": "Cure an ill"
-      },
-      {
-        "Chance": 30,
-        "Description": "Find a person"
-      },
-      {
-        "Chance": 33,
-        "Description": "Find a home"
-      },
-      {
-        "Chance": 36,
-        "Description": "Seize power"
-      },
-      {
-        "Chance": 39,
-        "Description": "Restore a relationship"
-      },
-      {
-        "Chance": 42,
-        "Description": "Create an item"
-      },
-      {
-        "Chance": 45,
-        "Description": "Travel to a place"
-      },
-      {
-        "Chance": 48,
-        "Description": "Secure provisions"
-      },
-      {
-        "Chance": 51,
-        "Description": "Rebel against power"
-      },
-      {
-        "Chance": 54,
-        "Description": "Collect a debt"
-      },
-      {
-        "Chance": 57,
-        "Description": "Protect a secret"
-      },
-      {
-        "Chance": 60,
-        "Description": "Spread faith"
-      },
-      {
-        "Chance": 63,
-        "Description": "Enrich themselves"
-      },
-      {
-        "Chance": 66,
-        "Description": "Protect a person"
-      },
-      {
-        "Chance": 69,
-        "Description": "Protect the status quo"
-      },
-      {
-        "Chance": 72,
-        "Description": "Advance status"
-      },
-      {
-        "Chance": 75,
-        "Description": "Defend a place"
-      },
-      {
-        "Chance": 78,
-        "Description": "Avenge a wrong"
-      },
-      {
-        "Chance": 81,
-        "Description": "Fulfill a duty"
-      },
-      {
-        "Chance": 84,
-        "Description": "Gain knowledge"
-      },
-      {
-        "Chance": 87,
-        "Description": "Prove worthiness"
-      },
-      {
-        "Chance": 90,
-        "Description": "Find redemption"
-      },
-      {
-        "Chance": 92,
-        "Description": "Escape from something"
-      },
-      {
-        "Chance": 95,
-        "Description": "Resolve a dispute"
-      },
-      {
-        "Chance": 100,
-        "Description": "[Roll twice]"
-      }
-    ],
-    "Descriptor": [
-      {
-        "Chance": 1,
-        "Description": "Stoic"
-      },
-      {
-        "Chance": 2,
-        "Description": "Attractive"
-      },
-      {
-        "Chance": 3,
-        "Description": "Passive"
-      },
-      {
-        "Chance": 4,
-        "Description": "Aloof"
-      },
-      {
-        "Chance": 5,
-        "Description": "Affectionate"
-      },
-      {
-        "Chance": 6,
-        "Description": "Generous"
-      },
-      {
-        "Chance": 7,
-        "Description": "Ironsworn"
-      },
-      {
-        "Chance": 8,
-        "Description": "Armed"
-      },
-      {
-        "Chance": 9,
-        "Description": "Clever"
-      },
-      {
-        "Chance": 10,
-        "Description": "Brave"
-      },
-      {
-        "Chance": 11,
-        "Description": "Ugly"
-      },
-      {
-        "Chance": 12,
-        "Description": "Sociable"
-      },
-      {
-        "Chance": 13,
-        "Description": "Doomed"
-      },
-      {
-        "Chance": 14,
-        "Description": "Connected"
-      },
-      {
-        "Chance": 15,
-        "Description": "Bold"
-      },
-      {
-        "Chance": 16,
-        "Description": "Jealous"
-      },
-      {
-        "Chance": 17,
-        "Description": "Angry"
-      },
-      {
-        "Chance": 18,
-        "Description": "Active"
-      },
-      {
-        "Chance": 19,
-        "Description": "Suspicious"
-      },
-      {
-        "Chance": 20,
-        "Description": "Hostile"
-      },
-      {
-        "Chance": 21,
-        "Description": "Hardhearted"
-      },
-      {
-        "Chance": 22,
-        "Description": "Successful"
-      },
-      {
-        "Chance": 23,
-        "Description": "Talented"
-      },
-      {
-        "Chance": 24,
-        "Description": "Experienced"
-      },
-      {
-        "Chance": 25,
-        "Description": "Deceitful"
-      },
-      {
-        "Chance": 26,
-        "Description": "Ambitious"
-      },
-      {
-        "Chance": 27,
-        "Description": "Aggressive"
-      },
-      {
-        "Chance": 28,
-        "Description": "Conceited"
-      },
-      {
-        "Chance": 29,
-        "Description": "Proud"
-      },
-      {
-        "Chance": 30,
-        "Description": "Stern"
-      },
-      {
-        "Chance": 31,
-        "Description": "Dependent"
-      },
-      {
-        "Chance": 32,
-        "Description": "Wary"
-      },
-      {
-        "Chance": 33,
-        "Description": "Strong"
-      },
-      {
-        "Chance": 34,
-        "Description": "Insightful"
-      },
-      {
-        "Chance": 35,
-        "Description": "Dangerous"
-      },
-      {
-        "Chance": 36,
-        "Description": "Quirky"
-      },
-      {
-        "Chance": 37,
-        "Description": "Cheery"
-      },
-      {
-        "Chance": 38,
-        "Description": "Disfigured"
-      },
-      {
-        "Chance": 39,
-        "Description": "Intolerant"
-      },
-      {
-        "Chance": 40,
-        "Description": "Skilled"
-      },
-      {
-        "Chance": 41,
-        "Description": "Stingy"
-      },
-      {
-        "Chance": 42,
-        "Description": "Timid"
-      },
-      {
-        "Chance": 43,
-        "Description": "Insensitive"
-      },
-      {
-        "Chance": 44,
-        "Description": "Wild"
-      },
-      {
-        "Chance": 45,
-        "Description": "Bitter"
-      },
-      {
-        "Chance": 46,
-        "Description": "Cunning"
-      },
-      {
-        "Chance": 47,
-        "Description": "Remorseful"
-      },
-      {
-        "Chance": 48,
-        "Description": "Kind"
-      },
-      {
-        "Chance": 49,
-        "Description": "Charming"
-      },
-      {
-        "Chance": 50,
-        "Description": "Oblivious"
-      },
-      {
-        "Chance": 51,
-        "Description": "Critical"
-      },
-      {
-        "Chance": 52,
-        "Description": "Cautious"
-      },
-      {
-        "Chance": 53,
-        "Description": "Resourceful"
-      },
-      {
-        "Chance": 54,
-        "Description": "Weary"
-      },
-      {
-        "Chance": 55,
-        "Description": "Wounded"
-      },
-      {
-        "Chance": 56,
-        "Description": "Anxious"
-      },
-      {
-        "Chance": 57,
-        "Description": "Powerful"
-      },
-      {
-        "Chance": 58,
-        "Description": "Athletic"
-      },
-      {
-        "Chance": 59,
-        "Description": "Driven"
-      },
-      {
-        "Chance": 60,
-        "Description": "Cruel"
-      },
-      {
-        "Chance": 61,
-        "Description": "Quiet"
-      },
-      {
-        "Chance": 62,
-        "Description": "Honest"
-      },
-      {
-        "Chance": 63,
-        "Description": "Infamous"
-      },
-      {
-        "Chance": 64,
-        "Description": "Dying"
-      },
-      {
-        "Chance": 65,
-        "Description": "Reclusive"
-      },
-      {
-        "Chance": 66,
-        "Description": "Artistic"
-      },
-      {
-        "Chance": 67,
-        "Description": "Disabled"
-      },
-      {
-        "Chance": 68,
-        "Description": "Confused"
-      },
-      {
-        "Chance": 69,
-        "Description": "Manipulative"
-      },
-      {
-        "Chance": 70,
-        "Description": "Relaxed"
-      },
-      {
-        "Chance": 71,
-        "Description": "Stealthy"
-      },
-      {
-        "Chance": 72,
-        "Description": "Confident"
-      },
-      {
-        "Chance": 73,
-        "Description": "Weak"
-      },
-      {
-        "Chance": 74,
-        "Description": "Friendly"
-      },
-      {
-        "Chance": 75,
-        "Description": "Wise"
-      },
-      {
-        "Chance": 76,
-        "Description": "Influential"
-      },
-      {
-        "Chance": 77,
-        "Description": "Young"
-      },
-      {
-        "Chance": 78,
-        "Description": "Adventurous"
-      },
-      {
-        "Chance": 79,
-        "Description": "Oppressed"
-      },
-      {
-        "Chance": 80,
-        "Description": "Vengeful"
-      },
-      {
-        "Chance": 81,
-        "Description": "Cooperative"
-      },
-      {
-        "Chance": 82,
-        "Description": "Armored"
-      },
-      {
-        "Chance": 83,
-        "Description": "Apathetic"
-      },
-      {
-        "Chance": 84,
-        "Description": "Determined"
-      },
-      {
-        "Chance": 85,
-        "Description": "Loyal"
-      },
-      {
-        "Chance": 86,
-        "Description": "Sick"
-      },
-      {
-        "Chance": 87,
-        "Description": "Religious"
-      },
-      {
-        "Chance": 88,
-        "Description": "Selfish"
-      },
-      {
-        "Chance": 89,
-        "Description": "Old"
-      },
-      {
-        "Chance": 90,
-        "Description": "Fervent"
-      },
-      {
-        "Chance": 91,
-        "Description": "Violent"
-      },
-      {
-        "Chance": 92,
-        "Description": "Agreeable"
-      },
-      {
-        "Chance": 93,
-        "Description": "Hot-tempered"
-      },
-      {
-        "Chance": 94,
-        "Description": "Stubborn"
-      },
-      {
-        "Chance": 95,
-        "Description": "Incompetent"
-      },
-      {
-        "Chance": 96,
-        "Description": "Greedy"
-      },
-      {
-        "Chance": 97,
-        "Description": "Cowardly"
-      },
-      {
-        "Chance": 98,
-        "Description": "Obsessed"
-      },
-      {
-        "Chance": 99,
-        "Description": "Careless"
-      },
-      {
-        "Chance": 100,
-        "Description": "Smug"
-      }
-    ],
-    "Disposition": [
-      {
-        "Chance": 6,
-        "Description": "Helpful"
-      },
-      {
-        "Chance": 13,
-        "Description": "Friendly"
-      },
-      {
-        "Chance": 20,
-        "Description": "Cooperative"
-      },
-      {
-        "Chance": 28,
-        "Description": "Curious"
-      },
-      {
-        "Chance": 36,
-        "Description": "Indifferent"
-      },
-      {
-        "Chance": 47,
-        "Description": "Suspicious"
-      },
-      {
-        "Chance": 57,
-        "Description": "Wanting"
-      },
-      {
-        "Chance": 67,
-        "Description": "Desperate"
-      },
-      {
-        "Chance": 76,
-        "Description": "Demanding"
-      },
-      {
-        "Chance": 85,
-        "Description": "Unfriendly"
-      },
-      {
-        "Chance": 93,
-        "Description": "Threatening"
-      },
-      {
-        "Chance": 100,
-        "Description": "Hostile"
-      }
-    ],
-    "Activity": [
-      {
-        "Chance": 2,
-        "Description": "Guarding"
-      },
-      {
-        "Chance": 4,
-        "Description": "Preserving"
-      },
-      {
-        "Chance": 6,
-        "Description": "Constructing"
-      },
-      {
-        "Chance": 8,
-        "Description": "Mending"
-      },
-      {
-        "Chance": 10,
-        "Description": "Assisting"
-      },
-      {
-        "Chance": 12,
-        "Description": "Securing"
-      },
-      {
-        "Chance": 14,
-        "Description": "Learning"
-      },
-      {
-        "Chance": 16,
-        "Description": "Sneaking"
-      },
-      {
-        "Chance": 18,
-        "Description": "Fleeing"
-      },
-      {
-        "Chance": 20,
-        "Description": "Sacrificing"
-      },
-      {
-        "Chance": 22,
-        "Description": "Creating"
-      },
-      {
-        "Chance": 24,
-        "Description": "Luring"
-      },
-      {
-        "Chance": 26,
-        "Description": "Hunting"
-      },
-      {
-        "Chance": 28,
-        "Description": "Seizing"
-      },
-      {
-        "Chance": 30,
-        "Description": "Bargaining"
-      },
-      {
-        "Chance": 32,
-        "Description": "Mimicking"
-      },
-      {
-        "Chance": 34,
-        "Description": "Tricking"
-      },
-      {
-        "Chance": 36,
-        "Description": "Tracking"
-      },
-      {
-        "Chance": 38,
-        "Description": "Escorting"
-      },
-      {
-        "Chance": 40,
-        "Description": "Hiding"
-      },
-      {
-        "Chance": 42,
-        "Description": "Raiding"
-      },
-      {
-        "Chance": 44,
-        "Description": "Socializing"
-      },
-      {
-        "Chance": 46,
-        "Description": "Exploring"
-      },
-      {
-        "Chance": 48,
-        "Description": "Journeying"
-      },
-      {
-        "Chance": 50,
-        "Description": "Supporting"
-      },
-      {
-        "Chance": 52,
-        "Description": "Avoiding"
-      },
-      {
-        "Chance": 54,
-        "Description": "Disabling"
-      },
-      {
-        "Chance": 56,
-        "Description": "Leading"
-      },
-      {
-        "Chance": 58,
-        "Description": "Assaulting"
-      },
-      {
-        "Chance": 60,
-        "Description": "Ensnaring"
-      },
-      {
-        "Chance": 62,
-        "Description": "Defending"
-      },
-      {
-        "Chance": 64,
-        "Description": "Recovering"
-      },
-      {
-        "Chance": 66,
-        "Description": "Patrolling"
-      },
-      {
-        "Chance": 68,
-        "Description": "Resting"
-      },
-      {
-        "Chance": 70,
-        "Description": "Distracting"
-      },
-      {
-        "Chance": 72,
-        "Description": "Leaving"
-      },
-      {
-        "Chance": 74,
-        "Description": "Fighting"
-      },
-      {
-        "Chance": 76,
-        "Description": "Ambushing"
-      },
-      {
-        "Chance": 78,
-        "Description": "Controlling"
-      },
-      {
-        "Chance": 80,
-        "Description": "Observing"
-      },
-      {
-        "Chance": 82,
-        "Description": "Gathering"
-      },
-      {
-        "Chance": 84,
-        "Description": "Suffering"
-      },
-      {
-        "Chance": 86,
-        "Description": "Threatening"
-      },
-      {
-        "Chance": 88,
-        "Description": "Searching"
-      },
-      {
-        "Chance": 90,
-        "Description": "Destroying"
-      },
-      {
-        "Chance": 92,
-        "Description": "Restoring"
-      },
-      {
-        "Chance": 94,
-        "Description": "Consuming"
-      },
-      {
-        "Chance": 96,
-        "Description": "Removing"
-      },
-      {
-        "Chance": 98,
-        "Description": "Inspecting"
-      },
-      {
-        "Chance": 100,
-        "Description": "Summoning"
-      }
-    ]
-  }
+  "Title": "Ironsworn Character Oracles",
+  "Oracles": [
+    {
+      "Name": "Role",
+      "Oracle Table": [
+        {
+          "Chance": 2,
+          "Description": "Criminal"
+        },
+        {
+          "Chance": 4,
+          "Description": "Healer"
+        },
+        {
+          "Chance": 6,
+          "Description": "Bandit"
+        },
+        {
+          "Chance": 9,
+          "Description": "Guide"
+        },
+        {
+          "Chance": 12,
+          "Description": "Performer"
+        },
+        {
+          "Chance": 15,
+          "Description": "Miner"
+        },
+        {
+          "Chance": 18,
+          "Description": "Mercenary"
+        },
+        {
+          "Chance": 21,
+          "Description": "Outcast"
+        },
+        {
+          "Chance": 24,
+          "Description": "Vagrant"
+        },
+        {
+          "Chance": 27,
+          "Description": "Forester"
+        },
+        {
+          "Chance": 30,
+          "Description": "Traveler"
+        },
+        {
+          "Chance": 33,
+          "Description": "Mystic"
+        },
+        {
+          "Chance": 36,
+          "Description": "Priest"
+        },
+        {
+          "Chance": 39,
+          "Description": "Sailor"
+        },
+        {
+          "Chance": 42,
+          "Description": "Pilgrim"
+        },
+        {
+          "Chance": 45,
+          "Description": "Thief"
+        },
+        {
+          "Chance": 48,
+          "Description": "Adventurer"
+        },
+        {
+          "Chance": 51,
+          "Description": "Forager"
+        },
+        {
+          "Chance": 54,
+          "Description": "Leader"
+        },
+        {
+          "Chance": 58,
+          "Description": "Guard"
+        },
+        {
+          "Chance": 62,
+          "Description": "Artisan"
+        },
+        {
+          "Chance": 66,
+          "Description": "Scout"
+        },
+        {
+          "Chance": 70,
+          "Description": "Herder"
+        },
+        {
+          "Chance": 74,
+          "Description": "Fisher"
+        },
+        {
+          "Chance": 79,
+          "Description": "Warrior"
+        },
+        {
+          "Chance": 84,
+          "Description": "Hunter"
+        },
+        {
+          "Chance": 89,
+          "Description": "Raider"
+        },
+        {
+          "Chance": 94,
+          "Description": "Trader"
+        },
+        {
+          "Chance": 99,
+          "Description": "Farmer"
+        },
+        {
+          "Chance": 100,
+          "Description": "Unusual role"
+        }
+      ]
+    },
+    {
+      "Name": "Goal",
+      "Oracle Table": [
+        {
+          "Chance": 3,
+          "Description": "Obtain an object"
+        },
+        {
+          "Chance": 6,
+          "Description": "Make an agreement"
+        },
+        {
+          "Chance": 9,
+          "Description": "Build a relationship"
+        },
+        {
+          "Chance": 12,
+          "Description": "Undermine a relationship"
+        },
+        {
+          "Chance": 15,
+          "Description": "Seek a truth"
+        },
+        {
+          "Chance": 18,
+          "Description": "Pay a debt"
+        },
+        {
+          "Chance": 21,
+          "Description": "Refute a falsehood"
+        },
+        {
+          "Chance": 24,
+          "Description": "Harm a rival"
+        },
+        {
+          "Chance": 27,
+          "Description": "Cure an ill"
+        },
+        {
+          "Chance": 30,
+          "Description": "Find a person"
+        },
+        {
+          "Chance": 33,
+          "Description": "Find a home"
+        },
+        {
+          "Chance": 36,
+          "Description": "Seize power"
+        },
+        {
+          "Chance": 39,
+          "Description": "Restore a relationship"
+        },
+        {
+          "Chance": 42,
+          "Description": "Create an item"
+        },
+        {
+          "Chance": 45,
+          "Description": "Travel to a place"
+        },
+        {
+          "Chance": 48,
+          "Description": "Secure provisions"
+        },
+        {
+          "Chance": 51,
+          "Description": "Rebel against power"
+        },
+        {
+          "Chance": 54,
+          "Description": "Collect a debt"
+        },
+        {
+          "Chance": 57,
+          "Description": "Protect a secret"
+        },
+        {
+          "Chance": 60,
+          "Description": "Spread faith"
+        },
+        {
+          "Chance": 63,
+          "Description": "Enrich themselves"
+        },
+        {
+          "Chance": 66,
+          "Description": "Protect a person"
+        },
+        {
+          "Chance": 69,
+          "Description": "Protect the status quo"
+        },
+        {
+          "Chance": 72,
+          "Description": "Advance status"
+        },
+        {
+          "Chance": 75,
+          "Description": "Defend a place"
+        },
+        {
+          "Chance": 78,
+          "Description": "Avenge a wrong"
+        },
+        {
+          "Chance": 81,
+          "Description": "Fulfill a duty"
+        },
+        {
+          "Chance": 84,
+          "Description": "Gain knowledge"
+        },
+        {
+          "Chance": 87,
+          "Description": "Prove worthiness"
+        },
+        {
+          "Chance": 90,
+          "Description": "Find redemption"
+        },
+        {
+          "Chance": 92,
+          "Description": "Escape from something"
+        },
+        {
+          "Chance": 95,
+          "Description": "Resolve a dispute"
+        },
+        {
+          "Chance": 100,
+          "Description": "[Roll twice]"
+        }
+      ]
+    },
+    {
+      "Name": "Descriptor",
+      "Oracle Table": [
+        {
+          "Chance": 1,
+          "Description": "Stoic"
+        },
+        {
+          "Chance": 2,
+          "Description": "Attractive"
+        },
+        {
+          "Chance": 3,
+          "Description": "Passive"
+        },
+        {
+          "Chance": 4,
+          "Description": "Aloof"
+        },
+        {
+          "Chance": 5,
+          "Description": "Affectionate"
+        },
+        {
+          "Chance": 6,
+          "Description": "Generous"
+        },
+        {
+          "Chance": 7,
+          "Description": "Ironsworn"
+        },
+        {
+          "Chance": 8,
+          "Description": "Armed"
+        },
+        {
+          "Chance": 9,
+          "Description": "Clever"
+        },
+        {
+          "Chance": 10,
+          "Description": "Brave"
+        },
+        {
+          "Chance": 11,
+          "Description": "Ugly"
+        },
+        {
+          "Chance": 12,
+          "Description": "Sociable"
+        },
+        {
+          "Chance": 13,
+          "Description": "Doomed"
+        },
+        {
+          "Chance": 14,
+          "Description": "Connected"
+        },
+        {
+          "Chance": 15,
+          "Description": "Bold"
+        },
+        {
+          "Chance": 16,
+          "Description": "Jealous"
+        },
+        {
+          "Chance": 17,
+          "Description": "Angry"
+        },
+        {
+          "Chance": 18,
+          "Description": "Active"
+        },
+        {
+          "Chance": 19,
+          "Description": "Suspicious"
+        },
+        {
+          "Chance": 20,
+          "Description": "Hostile"
+        },
+        {
+          "Chance": 21,
+          "Description": "Hardhearted"
+        },
+        {
+          "Chance": 22,
+          "Description": "Successful"
+        },
+        {
+          "Chance": 23,
+          "Description": "Talented"
+        },
+        {
+          "Chance": 24,
+          "Description": "Experienced"
+        },
+        {
+          "Chance": 25,
+          "Description": "Deceitful"
+        },
+        {
+          "Chance": 26,
+          "Description": "Ambitious"
+        },
+        {
+          "Chance": 27,
+          "Description": "Aggressive"
+        },
+        {
+          "Chance": 28,
+          "Description": "Conceited"
+        },
+        {
+          "Chance": 29,
+          "Description": "Proud"
+        },
+        {
+          "Chance": 30,
+          "Description": "Stern"
+        },
+        {
+          "Chance": 31,
+          "Description": "Dependent"
+        },
+        {
+          "Chance": 32,
+          "Description": "Wary"
+        },
+        {
+          "Chance": 33,
+          "Description": "Strong"
+        },
+        {
+          "Chance": 34,
+          "Description": "Insightful"
+        },
+        {
+          "Chance": 35,
+          "Description": "Dangerous"
+        },
+        {
+          "Chance": 36,
+          "Description": "Quirky"
+        },
+        {
+          "Chance": 37,
+          "Description": "Cheery"
+        },
+        {
+          "Chance": 38,
+          "Description": "Disfigured"
+        },
+        {
+          "Chance": 39,
+          "Description": "Intolerant"
+        },
+        {
+          "Chance": 40,
+          "Description": "Skilled"
+        },
+        {
+          "Chance": 41,
+          "Description": "Stingy"
+        },
+        {
+          "Chance": 42,
+          "Description": "Timid"
+        },
+        {
+          "Chance": 43,
+          "Description": "Insensitive"
+        },
+        {
+          "Chance": 44,
+          "Description": "Wild"
+        },
+        {
+          "Chance": 45,
+          "Description": "Bitter"
+        },
+        {
+          "Chance": 46,
+          "Description": "Cunning"
+        },
+        {
+          "Chance": 47,
+          "Description": "Remorseful"
+        },
+        {
+          "Chance": 48,
+          "Description": "Kind"
+        },
+        {
+          "Chance": 49,
+          "Description": "Charming"
+        },
+        {
+          "Chance": 50,
+          "Description": "Oblivious"
+        },
+        {
+          "Chance": 51,
+          "Description": "Critical"
+        },
+        {
+          "Chance": 52,
+          "Description": "Cautious"
+        },
+        {
+          "Chance": 53,
+          "Description": "Resourceful"
+        },
+        {
+          "Chance": 54,
+          "Description": "Weary"
+        },
+        {
+          "Chance": 55,
+          "Description": "Wounded"
+        },
+        {
+          "Chance": 56,
+          "Description": "Anxious"
+        },
+        {
+          "Chance": 57,
+          "Description": "Powerful"
+        },
+        {
+          "Chance": 58,
+          "Description": "Athletic"
+        },
+        {
+          "Chance": 59,
+          "Description": "Driven"
+        },
+        {
+          "Chance": 60,
+          "Description": "Cruel"
+        },
+        {
+          "Chance": 61,
+          "Description": "Quiet"
+        },
+        {
+          "Chance": 62,
+          "Description": "Honest"
+        },
+        {
+          "Chance": 63,
+          "Description": "Infamous"
+        },
+        {
+          "Chance": 64,
+          "Description": "Dying"
+        },
+        {
+          "Chance": 65,
+          "Description": "Reclusive"
+        },
+        {
+          "Chance": 66,
+          "Description": "Artistic"
+        },
+        {
+          "Chance": 67,
+          "Description": "Disabled"
+        },
+        {
+          "Chance": 68,
+          "Description": "Confused"
+        },
+        {
+          "Chance": 69,
+          "Description": "Manipulative"
+        },
+        {
+          "Chance": 70,
+          "Description": "Relaxed"
+        },
+        {
+          "Chance": 71,
+          "Description": "Stealthy"
+        },
+        {
+          "Chance": 72,
+          "Description": "Confident"
+        },
+        {
+          "Chance": 73,
+          "Description": "Weak"
+        },
+        {
+          "Chance": 74,
+          "Description": "Friendly"
+        },
+        {
+          "Chance": 75,
+          "Description": "Wise"
+        },
+        {
+          "Chance": 76,
+          "Description": "Influential"
+        },
+        {
+          "Chance": 77,
+          "Description": "Young"
+        },
+        {
+          "Chance": 78,
+          "Description": "Adventurous"
+        },
+        {
+          "Chance": 79,
+          "Description": "Oppressed"
+        },
+        {
+          "Chance": 80,
+          "Description": "Vengeful"
+        },
+        {
+          "Chance": 81,
+          "Description": "Cooperative"
+        },
+        {
+          "Chance": 82,
+          "Description": "Armored"
+        },
+        {
+          "Chance": 83,
+          "Description": "Apathetic"
+        },
+        {
+          "Chance": 84,
+          "Description": "Determined"
+        },
+        {
+          "Chance": 85,
+          "Description": "Loyal"
+        },
+        {
+          "Chance": 86,
+          "Description": "Sick"
+        },
+        {
+          "Chance": 87,
+          "Description": "Religious"
+        },
+        {
+          "Chance": 88,
+          "Description": "Selfish"
+        },
+        {
+          "Chance": 89,
+          "Description": "Old"
+        },
+        {
+          "Chance": 90,
+          "Description": "Fervent"
+        },
+        {
+          "Chance": 91,
+          "Description": "Violent"
+        },
+        {
+          "Chance": 92,
+          "Description": "Agreeable"
+        },
+        {
+          "Chance": 93,
+          "Description": "Hot-tempered"
+        },
+        {
+          "Chance": 94,
+          "Description": "Stubborn"
+        },
+        {
+          "Chance": 95,
+          "Description": "Incompetent"
+        },
+        {
+          "Chance": 96,
+          "Description": "Greedy"
+        },
+        {
+          "Chance": 97,
+          "Description": "Cowardly"
+        },
+        {
+          "Chance": 98,
+          "Description": "Obsessed"
+        },
+        {
+          "Chance": 99,
+          "Description": "Careless"
+        },
+        {
+          "Chance": 100,
+          "Description": "Smug"
+        }
+      ]
+    },
+    {
+      "Name": "Disposition",
+      "Oracle Table": [
+        {
+          "Chance": 6,
+          "Description": "Helpful"
+        },
+        {
+          "Chance": 13,
+          "Description": "Friendly"
+        },
+        {
+          "Chance": 20,
+          "Description": "Cooperative"
+        },
+        {
+          "Chance": 28,
+          "Description": "Curious"
+        },
+        {
+          "Chance": 36,
+          "Description": "Indifferent"
+        },
+        {
+          "Chance": 47,
+          "Description": "Suspicious"
+        },
+        {
+          "Chance": 57,
+          "Description": "Wanting"
+        },
+        {
+          "Chance": 67,
+          "Description": "Desperate"
+        },
+        {
+          "Chance": 76,
+          "Description": "Demanding"
+        },
+        {
+          "Chance": 85,
+          "Description": "Unfriendly"
+        },
+        {
+          "Chance": 93,
+          "Description": "Threatening"
+        },
+        {
+          "Chance": 100,
+          "Description": "Hostile"
+        }
+      ]
+    },
+    {
+      "Name": "Activity",
+      "Oracle Table": [
+        {
+          "Chance": 2,
+          "Description": "Guarding"
+        },
+        {
+          "Chance": 4,
+          "Description": "Preserving"
+        },
+        {
+          "Chance": 6,
+          "Description": "Constructing"
+        },
+        {
+          "Chance": 8,
+          "Description": "Mending"
+        },
+        {
+          "Chance": 10,
+          "Description": "Assisting"
+        },
+        {
+          "Chance": 12,
+          "Description": "Securing"
+        },
+        {
+          "Chance": 14,
+          "Description": "Learning"
+        },
+        {
+          "Chance": 16,
+          "Description": "Sneaking"
+        },
+        {
+          "Chance": 18,
+          "Description": "Fleeing"
+        },
+        {
+          "Chance": 20,
+          "Description": "Sacrificing"
+        },
+        {
+          "Chance": 22,
+          "Description": "Creating"
+        },
+        {
+          "Chance": 24,
+          "Description": "Luring"
+        },
+        {
+          "Chance": 26,
+          "Description": "Hunting"
+        },
+        {
+          "Chance": 28,
+          "Description": "Seizing"
+        },
+        {
+          "Chance": 30,
+          "Description": "Bargaining"
+        },
+        {
+          "Chance": 32,
+          "Description": "Mimicking"
+        },
+        {
+          "Chance": 34,
+          "Description": "Tricking"
+        },
+        {
+          "Chance": 36,
+          "Description": "Tracking"
+        },
+        {
+          "Chance": 38,
+          "Description": "Escorting"
+        },
+        {
+          "Chance": 40,
+          "Description": "Hiding"
+        },
+        {
+          "Chance": 42,
+          "Description": "Raiding"
+        },
+        {
+          "Chance": 44,
+          "Description": "Socializing"
+        },
+        {
+          "Chance": 46,
+          "Description": "Exploring"
+        },
+        {
+          "Chance": 48,
+          "Description": "Journeying"
+        },
+        {
+          "Chance": 50,
+          "Description": "Supporting"
+        },
+        {
+          "Chance": 52,
+          "Description": "Avoiding"
+        },
+        {
+          "Chance": 54,
+          "Description": "Disabling"
+        },
+        {
+          "Chance": 56,
+          "Description": "Leading"
+        },
+        {
+          "Chance": 58,
+          "Description": "Assaulting"
+        },
+        {
+          "Chance": 60,
+          "Description": "Ensnaring"
+        },
+        {
+          "Chance": 62,
+          "Description": "Defending"
+        },
+        {
+          "Chance": 64,
+          "Description": "Recovering"
+        },
+        {
+          "Chance": 66,
+          "Description": "Patrolling"
+        },
+        {
+          "Chance": 68,
+          "Description": "Resting"
+        },
+        {
+          "Chance": 70,
+          "Description": "Distracting"
+        },
+        {
+          "Chance": 72,
+          "Description": "Leaving"
+        },
+        {
+          "Chance": 74,
+          "Description": "Fighting"
+        },
+        {
+          "Chance": 76,
+          "Description": "Ambushing"
+        },
+        {
+          "Chance": 78,
+          "Description": "Controlling"
+        },
+        {
+          "Chance": 80,
+          "Description": "Observing"
+        },
+        {
+          "Chance": 82,
+          "Description": "Gathering"
+        },
+        {
+          "Chance": 84,
+          "Description": "Suffering"
+        },
+        {
+          "Chance": 86,
+          "Description": "Threatening"
+        },
+        {
+          "Chance": 88,
+          "Description": "Searching"
+        },
+        {
+          "Chance": 90,
+          "Description": "Destroying"
+        },
+        {
+          "Chance": 92,
+          "Description": "Restoring"
+        },
+        {
+          "Chance": 94,
+          "Description": "Consuming"
+        },
+        {
+          "Chance": 96,
+          "Description": "Removing"
+        },
+        {
+          "Chance": 98,
+          "Description": "Inspecting"
+        },
+        {
+          "Chance": 100,
+          "Description": "Summoning"
+        }
+      ]
+    }
+  ]
 }

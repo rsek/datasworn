@@ -1,258 +1,273 @@
 {
-  "Challenge Rank": [
+  "Title": "Ironsworn Turning Point Oracles",
+  "Oracles": [
     {
-      "Chance": 20,
-      "Description": "Troublesome"
+      "Name": "Challenge Rank",
+      "Oracle Table": [
+        {
+          "Chance": 20,
+          "Description": "Troublesome"
+        },
+        {
+          "Chance": 55,
+          "Description": "Dangerous"
+        },
+        {
+          "Chance": 80,
+          "Description": "Formidable"
+        },
+        {
+          "Chance": 93,
+          "Description": "Extreme"
+        },
+        {
+          "Chance": 100,
+          "Description": "Epic"
+        }
+      ]
     },
     {
-      "Chance": 55,
-      "Description": "Dangerous"
+      "Name": "Combat Action",
+      "Oracle Table": [
+        {
+          "Chance": 3,
+          "Description": "Compel a surrender."
+        },
+        {
+          "Chance": 6,
+          "Description": "Coordinate with allies."
+        },
+        {
+          "Chance": 9,
+          "Description": "Gather reinforcements."
+        },
+        {
+          "Chance": 13,
+          "Description": "Seize something or someone."
+        },
+        {
+          "Chance": 17,
+          "Description": "Provoke a reckless response."
+        },
+        {
+          "Chance": 21,
+          "Description": "Intimidate or frighten."
+        },
+        {
+          "Chance": 25,
+          "Description": "Reveal a surprising truth."
+        },
+        {
+          "Chance": 29,
+          "Description": "Shift focus to someone or something else."
+        },
+        {
+          "Chance": 33,
+          "Description": "Destroy something, or render it useless."
+        },
+        {
+          "Chance": 39,
+          "Description": "Take a decisive action."
+        },
+        {
+          "Chance": 45,
+          "Description": "Reinforce defenses."
+        },
+        {
+          "Chance": 52,
+          "Description": "Ready an action."
+        },
+        {
+          "Chance": 60,
+          "Description": "Use the terrain to gain advantage."
+        },
+        {
+          "Chance": 68,
+          "Description": "Leverage the advantage of a weapon or ability."
+        },
+        {
+          "Chance": 78,
+          "Description": "Create an opportunity."
+        },
+        {
+          "Chance": 89,
+          "Description": "Attack with precision."
+        },
+        {
+          "Chance": 100,
+          "Description": "Attack with power."
+        }
+      ]
     },
     {
-      "Chance": 80,
-      "Description": "Formidable"
+      "Name": "Major Plot Twist",
+      "Oracle Table": [
+        {
+          "Chance": 2,
+          "Description": "It was all a diversion."
+        },
+        {
+          "Chance": 10,
+          "Description": "A dark secret is revealed."
+        },
+        {
+          "Chance": 15,
+          "Description": "A trap is sprung."
+        },
+        {
+          "Chance": 20,
+          "Description": "An assumption is revealed to be false."
+        },
+        {
+          "Chance": 25,
+          "Description": "A secret alliance is revealed."
+        },
+        {
+          "Chance": 30,
+          "Description": "Your actions benefit an enemy."
+        },
+        {
+          "Chance": 35,
+          "Description": "Someone returns unexpectedly."
+        },
+        {
+          "Chance": 40,
+          "Description": "A more dangerous foe is revealed."
+        },
+        {
+          "Chance": 45,
+          "Description": "You and an enemy share a common goal."
+        },
+        {
+          "Chance": 50,
+          "Description": "A true identity is revealed."
+        },
+        {
+          "Chance": 55,
+          "Description": "You are betrayed by someone who was trusted."
+        },
+        {
+          "Chance": 60,
+          "Description": "You are too late."
+        },
+        {
+          "Chance": 65,
+          "Description": "The true enemy is revealed."
+        },
+        {
+          "Chance": 70,
+          "Description": "The enemy gains new allies."
+        },
+        {
+          "Chance": 75,
+          "Description": "A new danger appears."
+        },
+        {
+          "Chance": 80,
+          "Description": "Someone or something goes missing."
+        },
+        {
+          "Chance": 85,
+          "Description": "The truth of a relationship is revealed."
+        },
+        {
+          "Chance": 90,
+          "Description": "Two seemingly unrelated situations are shown to be connected."
+        },
+        {
+          "Chance": 95,
+          "Description": "Unexpected powers or abilities are revealed."
+        },
+        {
+          "Chance": 100,
+          "Description": "[Roll twice]"
+        }
+      ]
     },
     {
-      "Chance": 93,
-      "Description": "Extreme"
-    },
-    {
-      "Chance": 100,
-      "Description": "Epic"
-    }
-  ],
-  "Combat Action": [
-    {
-      "Chance": 3,
-      "Description": "Compel a surrender."
-    },
-    {
-      "Chance": 6,
-      "Description": "Coordinate with allies."
-    },
-    {
-      "Chance": 9,
-      "Description": "Gather reinforcements."
-    },
-    {
-      "Chance": 13,
-      "Description": "Seize something or someone."
-    },
-    {
-      "Chance": 17,
-      "Description": "Provoke a reckless response."
-    },
-    {
-      "Chance": 21,
-      "Description": "Intimidate or frighten."
-    },
-    {
-      "Chance": 25,
-      "Description": "Reveal a surprising truth."
-    },
-    {
-      "Chance": 29,
-      "Description": "Shift focus to someone or something else."
-    },
-    {
-      "Chance": 33,
-      "Description": "Destroy something, or render it useless."
-    },
-    {
-      "Chance": 39,
-      "Description": "Take a decisive action."
-    },
-    {
-      "Chance": 45,
-      "Description": "Reinforce defenses."
-    },
-    {
-      "Chance": 52,
-      "Description": "Ready an action."
-    },
-    {
-      "Chance": 60,
-      "Description": "Use the terrain to gain advantage."
-    },
-    {
-      "Chance": 68,
-      "Description": "Leverage the advantage of a weapon or ability."
-    },
-    {
-      "Chance": 78,
-      "Description": "Create an opportunity."
-    },
-    {
-      "Chance": 89,
-      "Description": "Attack with precision."
-    },
-    {
-      "Chance": 100,
-      "Description": "Attack with power."
-    }
-  ],
-  "Major Plot Twist": [
-    {
-      "Chance": 2,
-      "Description": "It was all a diversion."
-    },
-    {
-      "Chance": 10,
-      "Description": "A dark secret is revealed."
-    },
-    {
-      "Chance": 15,
-      "Description": "A trap is sprung."
-    },
-    {
-      "Chance": 20,
-      "Description": "An assumption is revealed to be false."
-    },
-    {
-      "Chance": 25,
-      "Description": "A secret alliance is revealed."
-    },
-    {
-      "Chance": 30,
-      "Description": "Your actions benefit an enemy."
-    },
-    {
-      "Chance": 35,
-      "Description": "Someone returns unexpectedly."
-    },
-    {
-      "Chance": 40,
-      "Description": "A more dangerous foe is revealed."
-    },
-    {
-      "Chance": 45,
-      "Description": "You and an enemy share a common goal."
-    },
-    {
-      "Chance": 50,
-      "Description": "A true identity is revealed."
-    },
-    {
-      "Chance": 55,
-      "Description": "You are betrayed by someone who was trusted."
-    },
-    {
-      "Chance": 60,
-      "Description": "You are too late."
-    },
-    {
-      "Chance": 65,
-      "Description": "The true enemy is revealed."
-    },
-    {
-      "Chance": 70,
-      "Description": "The enemy gains new allies."
-    },
-    {
-      "Chance": 75,
-      "Description": "A new danger appears."
-    },
-    {
-      "Chance": 80,
-      "Description": "Someone or something goes missing."
-    },
-    {
-      "Chance": 85,
-      "Description": "The truth of a relationship is revealed."
-    },
-    {
-      "Chance": 90,
-      "Description": "Two seemingly unrelated situations are shown to be connected."
-    },
-    {
-      "Chance": 95,
-      "Description": "Unexpected powers or abilities are revealed."
-    },
-    {
-      "Chance": 100,
-      "Description": "[Roll twice]"
-    }
-  ],
-  "Mystic Backlash": [
-    {
-      "Chance": 5,
-      "Description": "The ritual has the opposite affect."
-    },
-    {
-      "Chance": 10,
-      "Description": "You are sapped of strength."
-    },
-    {
-      "Chance": 15,
-      "Description": "An ally, companion or friend is adversely affected."
-    },
-    {
-      "Chance": 20,
-      "Description": "An important object is destroyed."
-    },
-    {
-      "Chance": 25,
-      "Description": "A horror is drawn to you like a moth to a flame."
-    },
-    {
-      "Chance": 30,
-      "Description": "You collapse, and drift into a troubled sleep."
-    },
-    {
-      "Chance": 35,
-      "Description": "You undergo a physical torment which leaves its mark upon you."
-    },
-    {
-      "Chance": 40,
-      "Description": "Ghostly voices whisper of dark portents. Envision what they tell you."
-    },
-    {
-      "Chance": 45,
-      "Description": "You are lost in shadow, and find yourself in another placewithout memory of how you got there. Envision your new surroundings."
-    },
-    {
-      "Chance": 50,
-      "Description": "You alert someone or something to your presence."
-    },
-    {
-      "Chance": 55,
-      "Description": "You are not yourself, and act against a friend, ally or companion. Envision what you do and how they respond."
-    },
-    {
-      "Chance": 60,
-      "Description": "You affect or damage your surroundings, causing a disturbance or potential harm."
-    },
-    {
-      "Chance": 65,
-      "Description": "Supply is wasted."
-    },
-    {
-      "Chance": 70,
-      "Description": "Creatures exhibit strange or aggressive behavior."
-    },
-    {
-      "Chance": 75,
-      "Description": "You lose your connection to magic for a day or so, and cannot perform rituals."
-    },
-    {
-      "Chance": 80,
-      "Description": "The ritual affects the target in an unexpected and problematic way."
-    },
-    {
-      "Chance": 85,
-      "Description": "The ritual reveals a surprising and troubling truth."
-    },
-    {
-      "Chance": 90,
-      "Description": "You are tempted by dark powers. Envision what you are shown."
-    },
-    {
-      "Chance": 95,
-      "Description": "A horrifying vision manifests. Envision what you see."
-    },
-    {
-      "Chance": 100,
-      "Description": "Roll twice more on this table. Both results occur. If they are the same result, make it worse."
+      "Name": "Mystic Backlash",
+      "Oracle Table": [
+        {
+          "Chance": 5,
+          "Description": "The ritual has the opposite affect."
+        },
+        {
+          "Chance": 10,
+          "Description": "You are sapped of strength."
+        },
+        {
+          "Chance": 15,
+          "Description": "An ally, companion or friend is adversely affected."
+        },
+        {
+          "Chance": 20,
+          "Description": "An important object is destroyed."
+        },
+        {
+          "Chance": 25,
+          "Description": "A horror is drawn to you like a moth to a flame."
+        },
+        {
+          "Chance": 30,
+          "Description": "You collapse, and drift into a troubled sleep."
+        },
+        {
+          "Chance": 35,
+          "Description": "You undergo a physical torment which leaves its mark upon you."
+        },
+        {
+          "Chance": 40,
+          "Description": "Ghostly voices whisper of dark portents. Envision what they tell you."
+        },
+        {
+          "Chance": 45,
+          "Description": "You are lost in shadow, and find yourself in another placewithout memory of how you got there. Envision your new surroundings."
+        },
+        {
+          "Chance": 50,
+          "Description": "You alert someone or something to your presence."
+        },
+        {
+          "Chance": 55,
+          "Description": "You are not yourself, and act against a friend, ally or companion. Envision what you do and how they respond."
+        },
+        {
+          "Chance": 60,
+          "Description": "You affect or damage your surroundings, causing a disturbance or potential harm."
+        },
+        {
+          "Chance": 65,
+          "Description": "Supply is wasted."
+        },
+        {
+          "Chance": 70,
+          "Description": "Creatures exhibit strange or aggressive behavior."
+        },
+        {
+          "Chance": 75,
+          "Description": "You lose your connection to magic for a day or so, and cannot perform rituals."
+        },
+        {
+          "Chance": 80,
+          "Description": "The ritual affects the target in an unexpected and problematic way."
+        },
+        {
+          "Chance": 85,
+          "Description": "The ritual reveals a surprising and troubling truth."
+        },
+        {
+          "Chance": 90,
+          "Description": "You are tempted by dark powers. Envision what you are shown."
+        },
+        {
+          "Chance": 95,
+          "Description": "A horrifying vision manifests. Envision what you see."
+        },
+        {
+          "Chance": 100,
+          "Description": "Roll twice more on this table. Both results occur. If they are the same result, make it worse."
+        }
+      ]
     }
   ]
 }

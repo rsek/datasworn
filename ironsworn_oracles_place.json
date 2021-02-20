@@ -1,524 +1,537 @@
 {
-  "Place Oracles": {
-    "Region": [
-      {
-        "Chance": 12,
-        "Description": "Barrier Islands"
-      },
-      {
-        "Chance": 24,
-        "Description": "Ragged Coast"
-      },
-      {
-        "Chance": 34,
-        "Description": "Deep Wilds"
-      },
-      {
-        "Chance": 46,
-        "Description": "Flooded Lands"
-      },
-      {
-        "Chance": 60,
-        "Description": "Havens"
-      },
-      {
-        "Chance": 72,
-        "Description": "Hinterlands"
-      },
-      {
-        "Chance": 84,
-        "Description": "Tempest Hills"
-      },
-      {
-        "Chance": 94,
-        "Description": "Veiled Mountains"
-      },
-      {
-        "Chance": 99,
-        "Description": "Shattered Wastes"
-      },
-      {
-        "Chance": 100,
-        "Description": "Elsewhere"
-      }
-    ],
-    "Location": [
-      {
-        "Chance": 1,
-        "Description": "Hideout"
-      },
-      {
-        "Chance": 2,
-        "Description": "Ruin"
-      },
-      {
-        "Chance": 3,
-        "Description": "Mine"
-      },
-      {
-        "Chance": 4,
-        "Description": "Waste"
-      },
-      {
-        "Chance": 5,
-        "Description": "Mystical Site"
-      },
-      {
-        "Chance": 6,
-        "Description": "Path"
-      },
-      {
-        "Chance": 7,
-        "Description": "Outpost"
-      },
-      {
-        "Chance": 8,
-        "Description": "Wall"
-      },
-      {
-        "Chance": 9,
-        "Description": "Battlefield"
-      },
-      {
-        "Chance": 10,
-        "Description": "Hovel"
-      },
-      {
-        "Chance": 11,
-        "Description": "Spring"
-      },
-      {
-        "Chance": 12,
-        "Description": "Lair"
-      },
-      {
-        "Chance": 13,
-        "Description": "Fort"
-      },
-      {
-        "Chance": 14,
-        "Description": "Bridge"
-      },
-      {
-        "Chance": 15,
-        "Description": "Camp"
-      },
-      {
-        "Chance": 16,
-        "Description": "Cairn/Grave"
-      },
-      {
-        "Chance": 18,
-        "Description": "Caravan"
-      },
-      {
-        "Chance": 20,
-        "Description": "Waterfall"
-      },
-      {
-        "Chance": 22,
-        "Description": "Cave"
-      },
-      {
-        "Chance": 24,
-        "Description": "Swamp"
-      },
-      {
-        "Chance": 26,
-        "Description": "Fen"
-      },
-      {
-        "Chance": 28,
-        "Description": "Ravine"
-      },
-      {
-        "Chance": 30,
-        "Description": "Road"
-      },
-      {
-        "Chance": 32,
-        "Description": "Tree"
-      },
-      {
-        "Chance": 34,
-        "Description": "Pond"
-      },
-      {
-        "Chance": 36,
-        "Description": "Fields"
-      },
-      {
-        "Chance": 38,
-        "Description": "Marsh"
-      },
-      {
-        "Chance": 40,
-        "Description": "Steading"
-      },
-      {
-        "Chance": 42,
-        "Description": "Rapids"
-      },
-      {
-        "Chance": 44,
-        "Description": "Pass"
-      },
-      {
-        "Chance": 46,
-        "Description": "Trail"
-      },
-      {
-        "Chance": 48,
-        "Description": "Glade"
-      },
-      {
-        "Chance": 50,
-        "Description": "Plain"
-      },
-      {
-        "Chance": 52,
-        "Description": "Ridge"
-      },
-      {
-        "Chance": 54,
-        "Description": "Cliff"
-      },
-      {
-        "Chance": 56,
-        "Description": "Grove"
-      },
-      {
-        "Chance": 58,
-        "Description": "Village"
-      },
-      {
-        "Chance": 60,
-        "Description": "Moor"
-      },
-      {
-        "Chance": 62,
-        "Description": "Thicket"
-      },
-      {
-        "Chance": 64,
-        "Description": "River Ford"
-      },
-      {
-        "Chance": 66,
-        "Description": "Valley"
-      },
-      {
-        "Chance": 68,
-        "Description": "Bay/Fjord"
-      },
-      {
-        "Chance": 70,
-        "Description": "Foothills"
-      },
-      {
-        "Chance": 72,
-        "Description": "Lake"
-      },
-      {
-        "Chance": 75,
-        "Description": "River"
-      },
-      {
-        "Chance": 79,
-        "Description": "Forest"
-      },
-      {
-        "Chance": 83,
-        "Description": "Coast"
-      },
-      {
-        "Chance": 88,
-        "Description": "Hill"
-      },
-      {
-        "Chance": 93,
-        "Description": "Mountain"
-      },
-      {
-        "Chance": 99,
-        "Description": "Woods"
-      },
-      {
-        "Chance": 100,
-        "Description": "Anomaly"
-      }
-    ],
-    "Coastal Waters Location": [
-      {
-        "Chance": 1,
-        "Description": "Fleet"
-      },
-      {
-        "Chance": 2,
-        "Description": "Sargassum"
-      },
-      {
-        "Chance": 3,
-        "Description": "Flotsam"
-      },
-      {
-        "Chance": 4,
-        "Description": "Mystical Site"
-      },
-      {
-        "Chance": 5,
-        "Description": "Lair"
-      },
-      {
-        "Chance": 10,
-        "Description": "Wreck"
-      },
-      {
-        "Chance": 15,
-        "Description": "Harbor"
-      },
-      {
-        "Chance": 23,
-        "Description": "Ship"
-      },
-      {
-        "Chance": 30,
-        "Description": "Rocks"
-      },
-      {
-        "Chance": 38,
-        "Description": "Fjord"
-      },
-      {
-        "Chance": 46,
-        "Description": "Estuary"
-      },
-      {
-        "Chance": 54,
-        "Description": "Cove"
-      },
-      {
-        "Chance": 62,
-        "Description": "Bay"
-      },
-      {
-        "Chance": 70,
-        "Description": "Ice"
-      },
-      {
-        "Chance": 85,
-        "Description": "Island"
-      },
-      {
-        "Chance": 99,
-        "Description": "Open Water"
-      },
-      {
-        "Chance": 100,
-        "Description": "Anomaly"
-      }
-    ],
-    "Location Descriptors": [
-      {
-        "Chance": 2,
-        "Description": "High"
-      },
-      {
-        "Chance": 4,
-        "Description": "Remote"
-      },
-      {
-        "Chance": 6,
-        "Description": "Exposed"
-      },
-      {
-        "Chance": 8,
-        "Description": "Small"
-      },
-      {
-        "Chance": 10,
-        "Description": "Broken"
-      },
-      {
-        "Chance": 12,
-        "Description": "Diverse"
-      },
-      {
-        "Chance": 14,
-        "Description": "Rough"
-      },
-      {
-        "Chance": 16,
-        "Description": "Dark"
-      },
-      {
-        "Chance": 18,
-        "Description": "Shadowy"
-      },
-      {
-        "Chance": 20,
-        "Description": "Contested"
-      },
-      {
-        "Chance": 22,
-        "Description": "Grim"
-      },
-      {
-        "Chance": 24,
-        "Description": "Wild"
-      },
-      {
-        "Chance": 26,
-        "Description": "Fertile"
-      },
-      {
-        "Chance": 28,
-        "Description": "Deep"
-      },
-      {
-        "Chance": 30,
-        "Description": "Ancient"
-      },
-      {
-        "Chance": 32,
-        "Description": "Perilous"
-      },
-      {
-        "Chance": 34,
-        "Description": "Hidden"
-      },
-      {
-        "Chance": 36,
-        "Description": "Occupied"
-      },
-      {
-        "Chance": 38,
-        "Description": "Rich"
-      },
-      {
-        "Chance": 40,
-        "Description": "Big"
-      },
-      {
-        "Chance": 42,
-        "Description": "Savage"
-      },
-      {
-        "Chance": 44,
-        "Description": "Defended"
-      },
-      {
-        "Chance": 46,
-        "Description": "Withered"
-      },
-      {
-        "Chance": 48,
-        "Description": "Mystical"
-      },
-      {
-        "Chance": 50,
-        "Description": "Inaccessible"
-      },
-      {
-        "Chance": 52,
-        "Description": "Protected"
-      },
-      {
-        "Chance": 54,
-        "Description": "Abandoned"
-      },
-      {
-        "Chance": 56,
-        "Description": "Wide"
-      },
-      {
-        "Chance": 58,
-        "Description": "Foul"
-      },
-      {
-        "Chance": 60,
-        "Description": "Dead"
-      },
-      {
-        "Chance": 62,
-        "Description": "Ruined"
-      },
-      {
-        "Chance": 64,
-        "Description": "Barren"
-      },
-      {
-        "Chance": 66,
-        "Description": "Cold"
-      },
-      {
-        "Chance": 68,
-        "Description": "Blighted"
-      },
-      {
-        "Chance": 70,
-        "Description": "Low"
-      },
-      {
-        "Chance": 72,
-        "Description": "Beautiful"
-      },
-      {
-        "Chance": 74,
-        "Description": "Abundant"
-      },
-      {
-        "Chance": 76,
-        "Description": "Lush"
-      },
-      {
-        "Chance": 78,
-        "Description": "Flooded"
-      },
-      {
-        "Chance": 80,
-        "Description": "Empty"
-      },
-      {
-        "Chance": 82,
-        "Description": "Strange"
-      },
-      {
-        "Chance": 84,
-        "Description": "Corrupted"
-      },
-      {
-        "Chance": 86,
-        "Description": "Peaceful"
-      },
-      {
-        "Chance": 88,
-        "Description": "Forgotten"
-      },
-      {
-        "Chance": 90,
-        "Description": "Expansive"
-      },
-      {
-        "Chance": 92,
-        "Description": "Settled"
-      },
-      {
-        "Chance": 94,
-        "Description": "Dense"
-      },
-      {
-        "Chance": 96,
-        "Description": "Civilized"
-      },
-      {
-        "Chance": 98,
-        "Description": "Desolate"
-      },
-      {
-        "Chance": 100,
-        "Description": "Isolated"
-      }
-    ]
-  }
+  "Title": "Ironsworn Place Oracles",
+  "Oracles": [
+    {
+      "Name": "Region",
+      "Oracle Table": [
+        {
+          "Chance": 12,
+          "Description": "Barrier Islands"
+        },
+        {
+          "Chance": 24,
+          "Description": "Ragged Coast"
+        },
+        {
+          "Chance": 34,
+          "Description": "Deep Wilds"
+        },
+        {
+          "Chance": 46,
+          "Description": "Flooded Lands"
+        },
+        {
+          "Chance": 60,
+          "Description": "Havens"
+        },
+        {
+          "Chance": 72,
+          "Description": "Hinterlands"
+        },
+        {
+          "Chance": 84,
+          "Description": "Tempest Hills"
+        },
+        {
+          "Chance": 94,
+          "Description": "Veiled Mountains"
+        },
+        {
+          "Chance": 99,
+          "Description": "Shattered Wastes"
+        },
+        {
+          "Chance": 100,
+          "Description": "Elsewhere"
+        }
+      ]
+    },
+    {
+      "Name": "Location",
+      "Oracle Table": [
+        {
+          "Chance": 1,
+          "Description": "Hideout"
+        },
+        {
+          "Chance": 2,
+          "Description": "Ruin"
+        },
+        {
+          "Chance": 3,
+          "Description": "Mine"
+        },
+        {
+          "Chance": 4,
+          "Description": "Waste"
+        },
+        {
+          "Chance": 5,
+          "Description": "Mystical Site"
+        },
+        {
+          "Chance": 6,
+          "Description": "Path"
+        },
+        {
+          "Chance": 7,
+          "Description": "Outpost"
+        },
+        {
+          "Chance": 8,
+          "Description": "Wall"
+        },
+        {
+          "Chance": 9,
+          "Description": "Battlefield"
+        },
+        {
+          "Chance": 10,
+          "Description": "Hovel"
+        },
+        {
+          "Chance": 11,
+          "Description": "Spring"
+        },
+        {
+          "Chance": 12,
+          "Description": "Lair"
+        },
+        {
+          "Chance": 13,
+          "Description": "Fort"
+        },
+        {
+          "Chance": 14,
+          "Description": "Bridge"
+        },
+        {
+          "Chance": 15,
+          "Description": "Camp"
+        },
+        {
+          "Chance": 16,
+          "Description": "Cairn/Grave"
+        },
+        {
+          "Chance": 18,
+          "Description": "Caravan"
+        },
+        {
+          "Chance": 20,
+          "Description": "Waterfall"
+        },
+        {
+          "Chance": 22,
+          "Description": "Cave"
+        },
+        {
+          "Chance": 24,
+          "Description": "Swamp"
+        },
+        {
+          "Chance": 26,
+          "Description": "Fen"
+        },
+        {
+          "Chance": 28,
+          "Description": "Ravine"
+        },
+        {
+          "Chance": 30,
+          "Description": "Road"
+        },
+        {
+          "Chance": 32,
+          "Description": "Tree"
+        },
+        {
+          "Chance": 34,
+          "Description": "Pond"
+        },
+        {
+          "Chance": 36,
+          "Description": "Fields"
+        },
+        {
+          "Chance": 38,
+          "Description": "Marsh"
+        },
+        {
+          "Chance": 40,
+          "Description": "Steading"
+        },
+        {
+          "Chance": 42,
+          "Description": "Rapids"
+        },
+        {
+          "Chance": 44,
+          "Description": "Pass"
+        },
+        {
+          "Chance": 46,
+          "Description": "Trail"
+        },
+        {
+          "Chance": 48,
+          "Description": "Glade"
+        },
+        {
+          "Chance": 50,
+          "Description": "Plain"
+        },
+        {
+          "Chance": 52,
+          "Description": "Ridge"
+        },
+        {
+          "Chance": 54,
+          "Description": "Cliff"
+        },
+        {
+          "Chance": 56,
+          "Description": "Grove"
+        },
+        {
+          "Chance": 58,
+          "Description": "Village"
+        },
+        {
+          "Chance": 60,
+          "Description": "Moor"
+        },
+        {
+          "Chance": 62,
+          "Description": "Thicket"
+        },
+        {
+          "Chance": 64,
+          "Description": "River Ford"
+        },
+        {
+          "Chance": 66,
+          "Description": "Valley"
+        },
+        {
+          "Chance": 68,
+          "Description": "Bay/Fjord"
+        },
+        {
+          "Chance": 70,
+          "Description": "Foothills"
+        },
+        {
+          "Chance": 72,
+          "Description": "Lake"
+        },
+        {
+          "Chance": 75,
+          "Description": "River"
+        },
+        {
+          "Chance": 79,
+          "Description": "Forest"
+        },
+        {
+          "Chance": 83,
+          "Description": "Coast"
+        },
+        {
+          "Chance": 88,
+          "Description": "Hill"
+        },
+        {
+          "Chance": 93,
+          "Description": "Mountain"
+        },
+        {
+          "Chance": 99,
+          "Description": "Woods"
+        },
+        {
+          "Chance": 100,
+          "Description": "Anomaly"
+        }
+      ]
+    },
+    {
+      "Name": "Coastal Waters Location",
+      "Oracle Table": [
+        {
+          "Chance": 1,
+          "Description": "Fleet"
+        },
+        {
+          "Chance": 2,
+          "Description": "Sargassum"
+        },
+        {
+          "Chance": 3,
+          "Description": "Flotsam"
+        },
+        {
+          "Chance": 4,
+          "Description": "Mystical Site"
+        },
+        {
+          "Chance": 5,
+          "Description": "Lair"
+        },
+        {
+          "Chance": 10,
+          "Description": "Wreck"
+        },
+        {
+          "Chance": 15,
+          "Description": "Harbor"
+        },
+        {
+          "Chance": 23,
+          "Description": "Ship"
+        },
+        {
+          "Chance": 30,
+          "Description": "Rocks"
+        },
+        {
+          "Chance": 38,
+          "Description": "Fjord"
+        },
+        {
+          "Chance": 46,
+          "Description": "Estuary"
+        },
+        {
+          "Chance": 54,
+          "Description": "Cove"
+        },
+        {
+          "Chance": 62,
+          "Description": "Bay"
+        },
+        {
+          "Chance": 70,
+          "Description": "Ice"
+        },
+        {
+          "Chance": 85,
+          "Description": "Island"
+        },
+        {
+          "Chance": 99,
+          "Description": "Open Water"
+        },
+        {
+          "Chance": 100,
+          "Description": "Anomaly"
+        }
+      ]
+    },
+    {
+      "Name": "Location Descriptors",
+      "Oracle Table": [
+        {
+          "Chance": 2,
+          "Description": "High"
+        },
+        {
+          "Chance": 4,
+          "Description": "Remote"
+        },
+        {
+          "Chance": 6,
+          "Description": "Exposed"
+        },
+        {
+          "Chance": 8,
+          "Description": "Small"
+        },
+        {
+          "Chance": 10,
+          "Description": "Broken"
+        },
+        {
+          "Chance": 12,
+          "Description": "Diverse"
+        },
+        {
+          "Chance": 14,
+          "Description": "Rough"
+        },
+        {
+          "Chance": 16,
+          "Description": "Dark"
+        },
+        {
+          "Chance": 18,
+          "Description": "Shadowy"
+        },
+        {
+          "Chance": 20,
+          "Description": "Contested"
+        },
+        {
+          "Chance": 22,
+          "Description": "Grim"
+        },
+        {
+          "Chance": 24,
+          "Description": "Wild"
+        },
+        {
+          "Chance": 26,
+          "Description": "Fertile"
+        },
+        {
+          "Chance": 28,
+          "Description": "Deep"
+        },
+        {
+          "Chance": 30,
+          "Description": "Ancient"
+        },
+        {
+          "Chance": 32,
+          "Description": "Perilous"
+        },
+        {
+          "Chance": 34,
+          "Description": "Hidden"
+        },
+        {
+          "Chance": 36,
+          "Description": "Occupied"
+        },
+        {
+          "Chance": 38,
+          "Description": "Rich"
+        },
+        {
+          "Chance": 40,
+          "Description": "Big"
+        },
+        {
+          "Chance": 42,
+          "Description": "Savage"
+        },
+        {
+          "Chance": 44,
+          "Description": "Defended"
+        },
+        {
+          "Chance": 46,
+          "Description": "Withered"
+        },
+        {
+          "Chance": 48,
+          "Description": "Mystical"
+        },
+        {
+          "Chance": 50,
+          "Description": "Inaccessible"
+        },
+        {
+          "Chance": 52,
+          "Description": "Protected"
+        },
+        {
+          "Chance": 54,
+          "Description": "Abandoned"
+        },
+        {
+          "Chance": 56,
+          "Description": "Wide"
+        },
+        {
+          "Chance": 58,
+          "Description": "Foul"
+        },
+        {
+          "Chance": 60,
+          "Description": "Dead"
+        },
+        {
+          "Chance": 62,
+          "Description": "Ruined"
+        },
+        {
+          "Chance": 64,
+          "Description": "Barren"
+        },
+        {
+          "Chance": 66,
+          "Description": "Cold"
+        },
+        {
+          "Chance": 68,
+          "Description": "Blighted"
+        },
+        {
+          "Chance": 70,
+          "Description": "Low"
+        },
+        {
+          "Chance": 72,
+          "Description": "Beautiful"
+        },
+        {
+          "Chance": 74,
+          "Description": "Abundant"
+        },
+        {
+          "Chance": 76,
+          "Description": "Lush"
+        },
+        {
+          "Chance": 78,
+          "Description": "Flooded"
+        },
+        {
+          "Chance": 80,
+          "Description": "Empty"
+        },
+        {
+          "Chance": 82,
+          "Description": "Strange"
+        },
+        {
+          "Chance": 84,
+          "Description": "Corrupted"
+        },
+        {
+          "Chance": 86,
+          "Description": "Peaceful"
+        },
+        {
+          "Chance": 88,
+          "Description": "Forgotten"
+        },
+        {
+          "Chance": 90,
+          "Description": "Expansive"
+        },
+        {
+          "Chance": 92,
+          "Description": "Settled"
+        },
+        {
+          "Chance": 94,
+          "Description": "Dense"
+        },
+        {
+          "Chance": 96,
+          "Description": "Civilized"
+        },
+        {
+          "Chance": 98,
+          "Description": "Desolate"
+        },
+        {
+          "Chance": 100,
+          "Description": "Isolated"
+        }
+      ]
+    }
+  ]
 }

@@ -1,8 +1,10 @@
 {
-  "Name Oracles": {
-    "Ironlander Names": {
+  "Title": "Ironsworn Name Oracles",
+  "Oracles": [
+    {
+      "Name": "Ironlander Names",
       "d": "200",
-      "Results": [
+      "Oracle Table": [
         {
           "Chance": 1,
           "Description": "Solana"
@@ -805,513 +807,525 @@
         }
       ]
     },
-    "Elf Names": [
-      {
-        "Chance": 2,
-        "Description": "Arsula"
-      },
-      {
-        "Chance": 4,
-        "Description": "Naidita"
-      },
-      {
-        "Chance": 6,
-        "Description": "Belesunna"
-      },
-      {
-        "Chance": 8,
-        "Description": "Vidarna"
-      },
-      {
-        "Chance": 10,
-        "Description": "Ninsunu"
-      },
-      {
-        "Chance": 12,
-        "Description": "Balathu"
-      },
-      {
-        "Chance": 14,
-        "Description": "Dorosi"
-      },
-      {
-        "Chance": 16,
-        "Description": "Gezera"
-      },
-      {
-        "Chance": 18,
-        "Description": "Zursan"
-      },
-      {
-        "Chance": 20,
-        "Description": "Seleeku"
-      },
-      {
-        "Chance": 22,
-        "Description": "Utamara"
-      },
-      {
-        "Chance": 24,
-        "Description": "Nebakay"
-      },
-      {
-        "Chance": 26,
-        "Description": "Dismashk"
-      },
-      {
-        "Chance": 28,
-        "Description": "Mitunu"
-      },
-      {
-        "Chance": 30,
-        "Description": "Atani"
-      },
-      {
-        "Chance": 32,
-        "Description": "Kinzura"
-      },
-      {
-        "Chance": 34,
-        "Description": "Sumula"
-      },
-      {
-        "Chance": 36,
-        "Description": "Ukames"
-      },
-      {
-        "Chance": 38,
-        "Description": "Ahmeshki"
-      },
-      {
-        "Chance": 40,
-        "Description": "Ilsit"
-      },
-      {
-        "Chance": 42,
-        "Description": "Mayatanay"
-      },
-      {
-        "Chance": 44,
-        "Description": "Etana"
-      },
-      {
-        "Chance": 46,
-        "Description": "Gamanna"
-      },
-      {
-        "Chance": 48,
-        "Description": "Nessana"
-      },
-      {
-        "Chance": 50,
-        "Description": "Uralar"
-      },
-      {
-        "Chance": 52,
-        "Description": "Tishetu"
-      },
-      {
-        "Chance": 54,
-        "Description": "Leucia"
-      },
-      {
-        "Chance": 56,
-        "Description": "Sutahe"
-      },
-      {
-        "Chance": 58,
-        "Description": "Dotani"
-      },
-      {
-        "Chance": 60,
-        "Description": "Uktannu"
-      },
-      {
-        "Chance": 62,
-        "Description": "Retenay"
-      },
-      {
-        "Chance": 64,
-        "Description": "Kendalanu"
-      },
-      {
-        "Chance": 66,
-        "Description": "Tahuta"
-      },
-      {
-        "Chance": 68,
-        "Description": "Mattissa"
-      },
-      {
-        "Chance": 70,
-        "Description": "Anatu"
-      },
-      {
-        "Chance": 72,
-        "Description": "Aralu"
-      },
-      {
-        "Chance": 74,
-        "Description": "Arakhi"
-      },
-      {
-        "Chance": 76,
-        "Description": "Ibrahem"
-      },
-      {
-        "Chance": 78,
-        "Description": "Sinosu"
-      },
-      {
-        "Chance": 80,
-        "Description": "Jemshida"
-      },
-      {
-        "Chance": 82,
-        "Description": "Visapni"
-      },
-      {
-        "Chance": 84,
-        "Description": "Hullata"
-      },
-      {
-        "Chance": 86,
-        "Description": "Sidura"
-      },
-      {
-        "Chance": 88,
-        "Description": "Kerihu"
-      },
-      {
-        "Chance": 90,
-        "Description": "Ereshki"
-      },
-      {
-        "Chance": 92,
-        "Description": "Cybela"
-      },
-      {
-        "Chance": 94,
-        "Description": "Anunna"
-      },
-      {
-        "Chance": 96,
-        "Description": "Otani"
-      },
-      {
-        "Chance": 98,
-        "Description": "Ditani"
-      },
-      {
-        "Chance": 100,
-        "Description": "Faraza"
-      }
-    ],
-    "Giant Names": [
-      {
-        "Chance": 4,
-        "Description": "Chony"
-      },
-      {
-        "Chance": 8,
-        "Description": "Banda"
-      },
-      {
-        "Chance": 12,
-        "Description": "Jochu"
-      },
-      {
-        "Chance": 16,
-        "Description": "Kira"
-      },
-      {
-        "Chance": 20,
-        "Description": "Khatir"
-      },
-      {
-        "Chance": 24,
-        "Description": "Chaidu"
-      },
-      {
-        "Chance": 28,
-        "Description": "Atan"
-      },
-      {
-        "Chance": 32,
-        "Description": "Buandu"
-      },
-      {
-        "Chance": 36,
-        "Description": "Javyn"
-      },
-      {
-        "Chance": 40,
-        "Description": "Khashin"
-      },
-      {
-        "Chance": 44,
-        "Description": "Bayara"
-      },
-      {
-        "Chance": 48,
-        "Description": "Temura"
-      },
-      {
-        "Chance": 52,
-        "Description": "Kidha"
-      },
-      {
-        "Chance": 56,
-        "Description": "Kathos"
-      },
-      {
-        "Chance": 60,
-        "Description": "Tanua"
-      },
-      {
-        "Chance": 64,
-        "Description": "Bashtu"
-      },
-      {
-        "Chance": 68,
-        "Description": "Jaran"
-      },
-      {
-        "Chance": 72,
-        "Description": "Othos"
-      },
-      {
-        "Chance": 76,
-        "Description": "Khutan"
-      },
-      {
-        "Chance": 80,
-        "Description": "Otaan"
-      },
-      {
-        "Chance": 84,
-        "Description": "Martu"
-      },
-      {
-        "Chance": 88,
-        "Description": "Baku"
-      },
-      {
-        "Chance": 92,
-        "Description": "Tuban"
-      },
-      {
-        "Chance": 96,
-        "Description": "Qudan"
-      },
-      {
-        "Chance": 100,
-        "Description": "Denua"
-      }
-    ],
-    "Varou Names": [
-      {
-        "Chance": 4,
-        "Description": "Vata"
-      },
-      {
-        "Chance": 8,
-        "Description": "Zora"
-      },
-      {
-        "Chance": 12,
-        "Description": "Jasna"
-      },
-      {
-        "Chance": 16,
-        "Description": "Charna"
-      },
-      {
-        "Chance": 20,
-        "Description": "Tana"
-      },
-      {
-        "Chance": 24,
-        "Description": "Soveen"
-      },
-      {
-        "Chance": 28,
-        "Description": "Radka"
-      },
-      {
-        "Chance": 32,
-        "Description": "Zlata"
-      },
-      {
-        "Chance": 36,
-        "Description": "Leesla"
-      },
-      {
-        "Chance": 40,
-        "Description": "Byna"
-      },
-      {
-        "Chance": 44,
-        "Description": "Meeka"
-      },
-      {
-        "Chance": 48,
-        "Description": "Iskra"
-      },
-      {
-        "Chance": 52,
-        "Description": "Jarek"
-      },
-      {
-        "Chance": 56,
-        "Description": "Darva"
-      },
-      {
-        "Chance": 60,
-        "Description": "Neda"
-      },
-      {
-        "Chance": 64,
-        "Description": "Keha"
-      },
-      {
-        "Chance": 68,
-        "Description": "Zhivka"
-      },
-      {
-        "Chance": 72,
-        "Description": "Kvata"
-      },
-      {
-        "Chance": 76,
-        "Description": "Staysa"
-      },
-      {
-        "Chance": 80,
-        "Description": "Evka"
-      },
-      {
-        "Chance": 84,
-        "Description": "Vuksha"
-      },
-      {
-        "Chance": 88,
-        "Description": "Muko"
-      },
-      {
-        "Chance": 92,
-        "Description": "Dreko"
-      },
-      {
-        "Chance": 96,
-        "Description": "Aleko"
-      },
-      {
-        "Chance": 100,
-        "Description": "Vojan"
-      }
-    ],
-    "Troll Names": [
-      {
-        "Chance": 4,
-        "Description": "Rattle"
-      },
-      {
-        "Chance": 8,
-        "Description": "Scratch"
-      },
-      {
-        "Chance": 12,
-        "Description": "Wallow"
-      },
-      {
-        "Chance": 16,
-        "Description": "Groak"
-      },
-      {
-        "Chance": 20,
-        "Description": "Gimble"
-      },
-      {
-        "Chance": 24,
-        "Description": "Scar"
-      },
-      {
-        "Chance": 28,
-        "Description": "Cratch"
-      },
-      {
-        "Chance": 32,
-        "Description": "Creech"
-      },
-      {
-        "Chance": 36,
-        "Description": "Shush"
-      },
-      {
-        "Chance": 40,
-        "Description": "Glush"
-      },
-      {
-        "Chance": 44,
-        "Description": "Slar"
-      },
-      {
-        "Chance": 48,
-        "Description": "Gnash"
-      },
-      {
-        "Chance": 52,
-        "Description": "Stoad"
-      },
-      {
-        "Chance": 56,
-        "Description": "Grig"
-      },
-      {
-        "Chance": 60,
-        "Description": "Bleat"
-      },
-      {
-        "Chance": 64,
-        "Description": "Chortle"
-      },
-      {
-        "Chance": 68,
-        "Description": "Cluck"
-      },
-      {
-        "Chance": 72,
-        "Description": "Slith"
-      },
-      {
-        "Chance": 76,
-        "Description": "Mongo"
-      },
-      {
-        "Chance": 80,
-        "Description": "Creak"
-      },
-      {
-        "Chance": 84,
-        "Description": "Burble"
-      },
-      {
-        "Chance": 88,
-        "Description": "Vrusk"
-      },
-      {
-        "Chance": 92,
-        "Description": "Snuffle"
-      },
-      {
-        "Chance": 96,
-        "Description": "Leech"
-      },
-      {
-        "Chance": 100,
-        "Description": "Herk"
-      }
-    ]
-  }
+    {
+      "Name": "Elf Names",
+      "Oracle Table": [
+        {
+          "Chance": 2,
+          "Description": "Arsula"
+        },
+        {
+          "Chance": 4,
+          "Description": "Naidita"
+        },
+        {
+          "Chance": 6,
+          "Description": "Belesunna"
+        },
+        {
+          "Chance": 8,
+          "Description": "Vidarna"
+        },
+        {
+          "Chance": 10,
+          "Description": "Ninsunu"
+        },
+        {
+          "Chance": 12,
+          "Description": "Balathu"
+        },
+        {
+          "Chance": 14,
+          "Description": "Dorosi"
+        },
+        {
+          "Chance": 16,
+          "Description": "Gezera"
+        },
+        {
+          "Chance": 18,
+          "Description": "Zursan"
+        },
+        {
+          "Chance": 20,
+          "Description": "Seleeku"
+        },
+        {
+          "Chance": 22,
+          "Description": "Utamara"
+        },
+        {
+          "Chance": 24,
+          "Description": "Nebakay"
+        },
+        {
+          "Chance": 26,
+          "Description": "Dismashk"
+        },
+        {
+          "Chance": 28,
+          "Description": "Mitunu"
+        },
+        {
+          "Chance": 30,
+          "Description": "Atani"
+        },
+        {
+          "Chance": 32,
+          "Description": "Kinzura"
+        },
+        {
+          "Chance": 34,
+          "Description": "Sumula"
+        },
+        {
+          "Chance": 36,
+          "Description": "Ukames"
+        },
+        {
+          "Chance": 38,
+          "Description": "Ahmeshki"
+        },
+        {
+          "Chance": 40,
+          "Description": "Ilsit"
+        },
+        {
+          "Chance": 42,
+          "Description": "Mayatanay"
+        },
+        {
+          "Chance": 44,
+          "Description": "Etana"
+        },
+        {
+          "Chance": 46,
+          "Description": "Gamanna"
+        },
+        {
+          "Chance": 48,
+          "Description": "Nessana"
+        },
+        {
+          "Chance": 50,
+          "Description": "Uralar"
+        },
+        {
+          "Chance": 52,
+          "Description": "Tishetu"
+        },
+        {
+          "Chance": 54,
+          "Description": "Leucia"
+        },
+        {
+          "Chance": 56,
+          "Description": "Sutahe"
+        },
+        {
+          "Chance": 58,
+          "Description": "Dotani"
+        },
+        {
+          "Chance": 60,
+          "Description": "Uktannu"
+        },
+        {
+          "Chance": 62,
+          "Description": "Retenay"
+        },
+        {
+          "Chance": 64,
+          "Description": "Kendalanu"
+        },
+        {
+          "Chance": 66,
+          "Description": "Tahuta"
+        },
+        {
+          "Chance": 68,
+          "Description": "Mattissa"
+        },
+        {
+          "Chance": 70,
+          "Description": "Anatu"
+        },
+        {
+          "Chance": 72,
+          "Description": "Aralu"
+        },
+        {
+          "Chance": 74,
+          "Description": "Arakhi"
+        },
+        {
+          "Chance": 76,
+          "Description": "Ibrahem"
+        },
+        {
+          "Chance": 78,
+          "Description": "Sinosu"
+        },
+        {
+          "Chance": 80,
+          "Description": "Jemshida"
+        },
+        {
+          "Chance": 82,
+          "Description": "Visapni"
+        },
+        {
+          "Chance": 84,
+          "Description": "Hullata"
+        },
+        {
+          "Chance": 86,
+          "Description": "Sidura"
+        },
+        {
+          "Chance": 88,
+          "Description": "Kerihu"
+        },
+        {
+          "Chance": 90,
+          "Description": "Ereshki"
+        },
+        {
+          "Chance": 92,
+          "Description": "Cybela"
+        },
+        {
+          "Chance": 94,
+          "Description": "Anunna"
+        },
+        {
+          "Chance": 96,
+          "Description": "Otani"
+        },
+        {
+          "Chance": 98,
+          "Description": "Ditani"
+        },
+        {
+          "Chance": 100,
+          "Description": "Faraza"
+        }
+      ]
+    },
+    {
+      "Name": "Giant Names",
+      "Oracle Table": [
+        {
+          "Chance": 4,
+          "Description": "Chony"
+        },
+        {
+          "Chance": 8,
+          "Description": "Banda"
+        },
+        {
+          "Chance": 12,
+          "Description": "Jochu"
+        },
+        {
+          "Chance": 16,
+          "Description": "Kira"
+        },
+        {
+          "Chance": 20,
+          "Description": "Khatir"
+        },
+        {
+          "Chance": 24,
+          "Description": "Chaidu"
+        },
+        {
+          "Chance": 28,
+          "Description": "Atan"
+        },
+        {
+          "Chance": 32,
+          "Description": "Buandu"
+        },
+        {
+          "Chance": 36,
+          "Description": "Javyn"
+        },
+        {
+          "Chance": 40,
+          "Description": "Khashin"
+        },
+        {
+          "Chance": 44,
+          "Description": "Bayara"
+        },
+        {
+          "Chance": 48,
+          "Description": "Temura"
+        },
+        {
+          "Chance": 52,
+          "Description": "Kidha"
+        },
+        {
+          "Chance": 56,
+          "Description": "Kathos"
+        },
+        {
+          "Chance": 60,
+          "Description": "Tanua"
+        },
+        {
+          "Chance": 64,
+          "Description": "Bashtu"
+        },
+        {
+          "Chance": 68,
+          "Description": "Jaran"
+        },
+        {
+          "Chance": 72,
+          "Description": "Othos"
+        },
+        {
+          "Chance": 76,
+          "Description": "Khutan"
+        },
+        {
+          "Chance": 80,
+          "Description": "Otaan"
+        },
+        {
+          "Chance": 84,
+          "Description": "Martu"
+        },
+        {
+          "Chance": 88,
+          "Description": "Baku"
+        },
+        {
+          "Chance": 92,
+          "Description": "Tuban"
+        },
+        {
+          "Chance": 96,
+          "Description": "Qudan"
+        },
+        {
+          "Chance": 100,
+          "Description": "Denua"
+        }
+      ]
+    },
+    {
+      "Name": "Varou Names",
+      "Oracle Table": [
+        {
+          "Chance": 4,
+          "Description": "Vata"
+        },
+        {
+          "Chance": 8,
+          "Description": "Zora"
+        },
+        {
+          "Chance": 12,
+          "Description": "Jasna"
+        },
+        {
+          "Chance": 16,
+          "Description": "Charna"
+        },
+        {
+          "Chance": 20,
+          "Description": "Tana"
+        },
+        {
+          "Chance": 24,
+          "Description": "Soveen"
+        },
+        {
+          "Chance": 28,
+          "Description": "Radka"
+        },
+        {
+          "Chance": 32,
+          "Description": "Zlata"
+        },
+        {
+          "Chance": 36,
+          "Description": "Leesla"
+        },
+        {
+          "Chance": 40,
+          "Description": "Byna"
+        },
+        {
+          "Chance": 44,
+          "Description": "Meeka"
+        },
+        {
+          "Chance": 48,
+          "Description": "Iskra"
+        },
+        {
+          "Chance": 52,
+          "Description": "Jarek"
+        },
+        {
+          "Chance": 56,
+          "Description": "Darva"
+        },
+        {
+          "Chance": 60,
+          "Description": "Neda"
+        },
+        {
+          "Chance": 64,
+          "Description": "Keha"
+        },
+        {
+          "Chance": 68,
+          "Description": "Zhivka"
+        },
+        {
+          "Chance": 72,
+          "Description": "Kvata"
+        },
+        {
+          "Chance": 76,
+          "Description": "Staysa"
+        },
+        {
+          "Chance": 80,
+          "Description": "Evka"
+        },
+        {
+          "Chance": 84,
+          "Description": "Vuksha"
+        },
+        {
+          "Chance": 88,
+          "Description": "Muko"
+        },
+        {
+          "Chance": 92,
+          "Description": "Dreko"
+        },
+        {
+          "Chance": 96,
+          "Description": "Aleko"
+        },
+        {
+          "Chance": 100,
+          "Description": "Vojan"
+        }
+      ]
+    },
+    {
+      "Name": "Troll Names",
+      "Oracle Table": [
+        {
+          "Chance": 4,
+          "Description": "Rattle"
+        },
+        {
+          "Chance": 8,
+          "Description": "Scratch"
+        },
+        {
+          "Chance": 12,
+          "Description": "Wallow"
+        },
+        {
+          "Chance": 16,
+          "Description": "Groak"
+        },
+        {
+          "Chance": 20,
+          "Description": "Gimble"
+        },
+        {
+          "Chance": 24,
+          "Description": "Scar"
+        },
+        {
+          "Chance": 28,
+          "Description": "Cratch"
+        },
+        {
+          "Chance": 32,
+          "Description": "Creech"
+        },
+        {
+          "Chance": 36,
+          "Description": "Shush"
+        },
+        {
+          "Chance": 40,
+          "Description": "Glush"
+        },
+        {
+          "Chance": 44,
+          "Description": "Slar"
+        },
+        {
+          "Chance": 48,
+          "Description": "Gnash"
+        },
+        {
+          "Chance": 52,
+          "Description": "Stoad"
+        },
+        {
+          "Chance": 56,
+          "Description": "Grig"
+        },
+        {
+          "Chance": 60,
+          "Description": "Bleat"
+        },
+        {
+          "Chance": 64,
+          "Description": "Chortle"
+        },
+        {
+          "Chance": 68,
+          "Description": "Cluck"
+        },
+        {
+          "Chance": 72,
+          "Description": "Slith"
+        },
+        {
+          "Chance": 76,
+          "Description": "Mongo"
+        },
+        {
+          "Chance": 80,
+          "Description": "Creak"
+        },
+        {
+          "Chance": 84,
+          "Description": "Burble"
+        },
+        {
+          "Chance": 88,
+          "Description": "Vrusk"
+        },
+        {
+          "Chance": 92,
+          "Description": "Snuffle"
+        },
+        {
+          "Chance": 96,
+          "Description": "Leech"
+        },
+        {
+          "Chance": 100,
+          "Description": "Herk"
+        }
+      ]
+    }
+  ]
 }

@@ -3,8 +3,9 @@
   "Source": {
     "Name": "Ironsworn"
   },
-  "Assets": {
-    "Cave Lion": {
+  "Assets": [
+    {
+      "Name": "Cave Lion",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -26,7 +27,8 @@
       ],
       "Health": 4
     },
-    "Giant Spider": {
+    {
+      "Name": "Giant Spider",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -48,7 +50,8 @@
       ],
       "Health": 4
     },
-    "Hawk": {
+    {
+      "Name": "Hawk",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -70,7 +73,8 @@
       ],
       "Health": 3
     },
-    "Horse": {
+    {
+      "Name": "Horse",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -92,7 +96,8 @@
       ],
       "Health": 5
     },
-    "Hound": {
+    {
+      "Name": "Hound",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -114,7 +119,8 @@
       ],
       "Health": 4
     },
-    "Kindred": {
+    {
+      "Name": "Kindred",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -139,7 +145,8 @@
       ],
       "Health": 4
     },
-    "Mammoth": {
+    {
+      "Name": "Mammoth",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -161,7 +168,8 @@
       ],
       "Health": 5
     },
-    "Owl": {
+    {
+      "Name": "Owl",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -183,7 +191,8 @@
       ],
       "Health": 3
     },
-    "Raven": {
+    {
+      "Name": "Raven",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -205,7 +214,8 @@
       ],
       "Health": 2
     },
-    "Young Wyvern": {
+    {
+      "Name": "Young Wyvern",
       "Asset Type": "Companion",
       "Input Fields": [
         "Name"
@@ -227,7 +237,8 @@
       ],
       "Health": 5
     },
-    "Alchemist": {
+    {
+      "Name": "Alchemist",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -242,7 +253,8 @@
         }
       ]
     },
-    "Animal Kin": {
+    {
+      "Name": "Animal Kin",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -257,7 +269,8 @@
         }
       ]
     },
-    "Banner-Sworn": {
+    {
+      "Name": "Banner-Sworn",
       "Asset Type": "Path",
       "Input Fields": [
         "Name"
@@ -276,7 +289,8 @@
         }
       ]
     },
-    "Battle-Scarred": {
+    {
+      "Name": "Battle-Scarred",
       "Asset Type": "Path",
       "Deed": true,
       "Description": "Once you become maimed...",
@@ -292,7 +306,8 @@
         }
       ]
     },
-    "Blade-Bound": {
+    {
+      "Name": "Blade-Bound",
       "Asset Type": "Path",
       "Input Fields": [
         "Name"
@@ -310,7 +325,8 @@
         }
       ]
     },
-    "Bonded": {
+    {
+      "Name": "Bonded",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -325,7 +341,8 @@
         }
       ]
     },
-    "Dancer": {
+    {
+      "Name": "Dancer",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -340,7 +357,8 @@
         }
       ]
     },
-    "Devotant": {
+    {
+      "Name": "Devotant",
       "Asset Type": "Path",
       "Input Fields": [
         "God's Name",
@@ -359,7 +377,8 @@
         }
       ]
     },
-    "Empowered": {
+    {
+      "Name": "Empowered",
       "Asset Type": "Path",
       "Input Fields": [
         "Title/Lineage"
@@ -377,7 +396,8 @@
         }
       ]
     },
-    "Fortune Hunter": {
+    {
+      "Name": "Fortune Hunter",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -397,7 +417,8 @@
         "Starting Value": 0
       }
     },
-    "Herbalist": {
+    {
+      "Name": "Herbalist",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -412,7 +433,8 @@
         }
       ]
     },
-    "Honorbound": {
+    {
+      "Name": "Honorbound",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -427,7 +449,8 @@
         }
       ]
     },
-    "Improviser": {
+    {
+      "Name": "Improviser",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -442,7 +465,8 @@
         }
       ]
     },
-    "Infiltrator": {
+    {
+      "Name": "Infiltrator",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -457,7 +481,8 @@
         }
       ]
     },
-    "Loyalist": {
+    {
+      "Name": "Loyalist",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -472,7 +497,8 @@
         }
       ]
     },
-    "Masked": {
+    {
+      "Name": "Masked",
       "Asset Type": "Path",
       "Description": "Once you mark a bond with elves, and are gifted a mask of precious elderwood...",
       "Abilities": [
@@ -487,7 +513,8 @@
         }
       ]
     },
-    "Oathbreaker": {
+    {
+      "Name": "Oathbreaker",
       "Asset Type": "Path",
       "Deed": true,
       "Description": "Once you *Forsake Your Vow*...",
@@ -504,7 +531,8 @@
         }
       ]
     },
-    "Outcast": {
+    {
+      "Name": "Outcast",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -519,7 +547,8 @@
         }
       ]
     },
-    "Pretender": {
+    {
+      "Name": "Pretender",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -534,7 +563,8 @@
         }
       ]
     },
-    "Revenant": {
+    {
+      "Name": "Revenant",
       "Asset Type": "Path",
       "Deed": true,
       "Description": "Once you *Face Death* and return to the world of the living...",
@@ -551,7 +581,8 @@
         }
       ]
     },
-    "Rider": {
+    {
+      "Name": "Rider",
       "Asset Type": "Path",
       "Description": "If you are with your horse companion...",
       "Abilities": [
@@ -567,7 +598,8 @@
         }
       ]
     },
-    "Ritualist": {
+    {
+      "Name": "Ritualist",
       "Asset Type": "Path",
       "Deed": true,
       "Description": "Once you *Fulfill Your Vow* (formidable or greater) in service to an elder mystic, and *Forge a Bond* to train with them...",
@@ -584,7 +616,8 @@
         }
       ]
     },
-    "Shadow-Kin": {
+    {
+      "Name": "Shadow-Kin",
       "Asset Type": "Path",
       "Description": "Once you become corrupted...",
       "Abilities": [
@@ -599,7 +632,8 @@
         }
       ]
     },
-    "Sighted": {
+    {
+      "Name": "Sighted",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -614,7 +648,8 @@
         }
       ]
     },
-    "Slayer": {
+    {
+      "Name": "Slayer",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -629,7 +664,8 @@
         }
       ]
     },
-    "Spirit-Bound": {
+    {
+      "Name": "Spirit-Bound",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -644,7 +680,8 @@
         }
       ]
     },
-    "Storyweaver": {
+    {
+      "Name": "Storyweaver",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -659,7 +696,8 @@
         }
       ]
     },
-    "Trickster": {
+    {
+      "Name": "Trickster",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -674,7 +712,8 @@
         }
       ]
     },
-    "Veteran": {
+    {
+      "Name": "Veteran",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -689,7 +728,8 @@
         }
       ]
     },
-    "Waterborn": {
+    {
+      "Name": "Waterborn",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -704,7 +744,8 @@
         }
       ]
     },
-    "Wayfinder": {
+    {
+      "Name": "Wayfinder",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -719,7 +760,8 @@
         }
       ]
     },
-    "Weaponmaster": {
+    {
+      "Name": "Weaponmaster",
       "Asset Type": "Path",
       "Deed": true,
       "Description": "Once you *Fulfill Your Vow* (formidable or greater) in service to a seasoned warrior, and *Forge a Bond* to train with them...",
@@ -736,7 +778,8 @@
         }
       ]
     },
-    "Wildblood": {
+    {
+      "Name": "Wildblood",
       "Asset Type": "Path",
       "Abilities": [
         {
@@ -751,7 +794,8 @@
         }
       ]
     },
-    "Wright": {
+    {
+      "Name": "Wright",
       "Asset Type": "Path",
       "Input Fields": [
         "Specialty"
@@ -769,7 +813,8 @@
         }
       ]
     },
-    "Archer": {
+    {
+      "Name": "Archer",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a bow....",
       "Abilities": [
@@ -785,7 +830,8 @@
         }
       ]
     },
-    "Berserker": {
+    {
+      "Name": "Berserker",
       "Asset Type": "Combat Talent",
       "Description": "If you are clad only in animal pelts...",
       "Abilities": [
@@ -801,7 +847,8 @@
         }
       ]
     },
-    "Brawler": {
+    {
+      "Name": "Brawler",
       "Asset Type": "Combat Talent",
       "Description": "If you are unarmed or fighting with a non-deadly weapon...",
       "Abilities": [
@@ -817,7 +864,8 @@
         }
       ]
     },
-    "Cutthroat": {
+    {
+      "Name": "Cutthroat",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a dagger or knife...",
       "Abilities": [
@@ -833,7 +881,8 @@
         }
       ]
     },
-    "Duelist": {
+    {
+      "Name": "Duelist",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a bladed weapon in each hand...",
       "Abilities": [
@@ -849,7 +898,8 @@
         }
       ]
     },
-    "Fletcher": {
+    {
+      "Name": "Fletcher",
       "Asset Type": "Combat Talent",
       "Abilities": [
         {
@@ -864,7 +914,8 @@
         }
       ]
     },
-    "Ironclad": {
+    {
+      "Name": "Ironclad",
       "Asset Type": "Combat Talent",
       "Description": "If you wear armor...",
       "Abilities": [
@@ -896,7 +947,8 @@
         ]
       }
     },
-    "Long-Arm": {
+    {
+      "Name": "Long-Arm",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a staff...",
       "Abilities": [
@@ -912,7 +964,8 @@
         }
       ]
     },
-    "Shield-Bearer": {
+    {
+      "Name": "Shield-Bearer",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a shield...",
       "Abilities": [
@@ -928,7 +981,8 @@
         }
       ]
     },
-    "Skirmisher": {
+    {
+      "Name": "Skirmisher",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a spear...",
       "Abilities": [
@@ -944,7 +998,8 @@
         }
       ]
     },
-    "Slinger": {
+    {
+      "Name": "Slinger",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a sling...",
       "Abilities": [
@@ -960,7 +1015,8 @@
         }
       ]
     },
-    "Sunderer": {
+    {
+      "Name": "Sunderer",
       "Asset Type": "Combat Talent",
       "Description": "If you wield an axe...",
       "Abilities": [
@@ -976,7 +1032,8 @@
         }
       ]
     },
-    "Swordmaster": {
+    {
+      "Name": "Swordmaster",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a sword...",
       "Abilities": [
@@ -992,7 +1049,8 @@
         }
       ]
     },
-    "Thunder-Bringer": {
+    {
+      "Name": "Thunder-Bringer",
       "Asset Type": "Combat Talent",
       "Description": "If you wield a mighty hammer...",
       "Abilities": [
@@ -1008,7 +1066,8 @@
         }
       ]
     },
-    "Augur": {
+    {
+      "Name": "Augur",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1023,7 +1082,8 @@
         }
       ]
     },
-    "Awakening": {
+    {
+      "Name": "Awakening",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1042,7 +1102,8 @@
       ],
       "Health": 3
     },
-    "Bind": {
+    {
+      "Name": "Bind",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1057,7 +1118,8 @@
         }
       ]
     },
-    "Communion": {
+    {
+      "Name": "Communion",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1072,7 +1134,8 @@
         }
       ]
     },
-    "Divination": {
+    {
+      "Name": "Divination",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1087,7 +1150,8 @@
         }
       ]
     },
-    "Invoke": {
+    {
+      "Name": "Invoke",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1107,7 +1171,8 @@
         "Starting Value": 0
       }
     },
-    "Keen": {
+    {
+      "Name": "Keen",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1122,7 +1187,8 @@
         }
       ]
     },
-    "Leech": {
+    {
+      "Name": "Leech",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1137,7 +1203,8 @@
         }
       ]
     },
-    "Lightbearer": {
+    {
+      "Name": "Lightbearer",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1157,7 +1224,8 @@
         "Starting Value": 0
       }
     },
-    "Scry": {
+    {
+      "Name": "Scry",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1172,7 +1240,8 @@
         }
       ]
     },
-    "Shadow-Walk": {
+    {
+      "Name": "Shadow-Walk",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1187,7 +1256,8 @@
         }
       ]
     },
-    "Sway": {
+    {
+      "Name": "Sway",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1202,7 +1272,8 @@
         }
       ]
     },
-    "Talisman": {
+    {
+      "Name": "Talisman",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1217,7 +1288,8 @@
         }
       ]
     },
-    "Tether": {
+    {
+      "Name": "Tether",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1232,7 +1304,8 @@
         }
       ]
     },
-    "Totem": {
+    {
+      "Name": "Totem",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1247,7 +1320,8 @@
         }
       ]
     },
-    "Visage": {
+    {
+      "Name": "Visage",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1262,7 +1336,8 @@
         }
       ]
     },
-    "Ward": {
+    {
+      "Name": "Ward",
       "Asset Type": "Ritual",
       "Abilities": [
         {
@@ -1277,7 +1352,8 @@
         }
       ]
     },
-    "Commander": {
+    {
+      "Name": "Commander",
       "Asset Type": "Path",
       "Source": {
         "Name": "Ironsworn Bonus Assets - July 2020",
@@ -1301,7 +1377,8 @@
         "Starting Value": 4
       }
     },
-    "Fated": {
+    {
+      "Name": "Fated",
       "Asset Type": "Path",
       "Source": {
         "Name": "Ironsworn Bonus Assets - July 2020",
@@ -1320,7 +1397,8 @@
         }
       ]
     },
-    "Lorekeeper": {
+    {
+      "Name": "Lorekeeper",
       "Asset Type": "Path",
       "Source": {
         "Name": "Ironsworn Bonus Assets - July 2020",
@@ -1339,5 +1417,5 @@
         }
       ]
     }
-  }
+  ]
 }

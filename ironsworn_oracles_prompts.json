@@ -1,1824 +1,1860 @@
 {
-  "Action": [
-    {
-      "Chance": 1,
-      "Description": "Scheme"
-    },
-    {
-      "Chance": 2,
-      "Description": "Clash"
-    },
-    {
-      "Chance": 3,
-      "Description": "Weaken"
-    },
-    {
-      "Chance": 4,
-      "Description": "Initiate"
-    },
-    {
-      "Chance": 5,
-      "Description": "Create"
-    },
-    {
-      "Chance": 6,
-      "Description": "Swear"
-    },
-    {
-      "Chance": 7,
-      "Description": "Avenge"
-    },
-    {
-      "Chance": 8,
-      "Description": "Guard"
-    },
-    {
-      "Chance": 9,
-      "Description": "Defeat"
-    },
-    {
-      "Chance": 10,
-      "Description": "Control"
-    },
-    {
-      "Chance": 11,
-      "Description": "Break"
-    },
-    {
-      "Chance": 12,
-      "Description": "Risk"
-    },
-    {
-      "Chance": 13,
-      "Description": "Surrender"
-    },
-    {
-      "Chance": 14,
-      "Description": "Inspect"
-    },
-    {
-      "Chance": 15,
-      "Description": "Raid"
-    },
-    {
-      "Chance": 16,
-      "Description": "Evade"
-    },
-    {
-      "Chance": 17,
-      "Description": "Assault"
-    },
-    {
-      "Chance": 18,
-      "Description": "Deflect"
-    },
-    {
-      "Chance": 19,
-      "Description": "Threaten"
-    },
-    {
-      "Chance": 20,
-      "Description": "Attack"
-    },
-    {
-      "Chance": 21,
-      "Description": "Leave"
-    },
-    {
-      "Chance": 22,
-      "Description": "Preserve"
-    },
-    {
-      "Chance": 23,
-      "Description": "Manipulate"
-    },
-    {
-      "Chance": 24,
-      "Description": "Remove"
-    },
-    {
-      "Chance": 25,
-      "Description": "Eliminate"
-    },
-    {
-      "Chance": 26,
-      "Description": "Withdraw"
-    },
-    {
-      "Chance": 27,
-      "Description": "Abandon"
-    },
-    {
-      "Chance": 28,
-      "Description": "Investigate"
-    },
-    {
-      "Chance": 29,
-      "Description": "Hold"
-    },
-    {
-      "Chance": 30,
-      "Description": "Focus"
-    },
-    {
-      "Chance": 31,
-      "Description": "Uncover"
-    },
-    {
-      "Chance": 32,
-      "Description": "Breach"
-    },
-    {
-      "Chance": 33,
-      "Description": "Aid"
-    },
-    {
-      "Chance": 34,
-      "Description": "Uphold"
-    },
-    {
-      "Chance": 35,
-      "Description": "Falter"
-    },
-    {
-      "Chance": 36,
-      "Description": "Suppress"
-    },
-    {
-      "Chance": 37,
-      "Description": "Hunt"
-    },
-    {
-      "Chance": 38,
-      "Description": "Share"
-    },
-    {
-      "Chance": 39,
-      "Description": "Destroy"
-    },
-    {
-      "Chance": 40,
-      "Description": "Avoid"
-    },
-    {
-      "Chance": 41,
-      "Description": "Reject"
-    },
-    {
-      "Chance": 42,
-      "Description": "Demand"
-    },
-    {
-      "Chance": 43,
-      "Description": "Explore"
-    },
-    {
-      "Chance": 44,
-      "Description": "Bolster"
-    },
-    {
-      "Chance": 45,
-      "Description": "Seize"
-    },
-    {
-      "Chance": 46,
-      "Description": "Mourn"
-    },
-    {
-      "Chance": 47,
-      "Description": "Reveal"
-    },
-    {
-      "Chance": 48,
-      "Description": "Gather"
-    },
-    {
-      "Chance": 49,
-      "Description": "Defy"
-    },
-    {
-      "Chance": 50,
-      "Description": "Transform"
-    },
-    {
-      "Chance": 51,
-      "Description": "Persevere"
-    },
-    {
-      "Chance": 52,
-      "Description": "Serve"
-    },
-    {
-      "Chance": 53,
-      "Description": "Begin"
-    },
-    {
-      "Chance": 54,
-      "Description": "Move"
-    },
-    {
-      "Chance": 55,
-      "Description": "Coordinate"
-    },
-    {
-      "Chance": 56,
-      "Description": "Resist"
-    },
-    {
-      "Chance": 57,
-      "Description": "Await"
-    },
-    {
-      "Chance": 58,
-      "Description": "Impress"
-    },
-    {
-      "Chance": 59,
-      "Description": "Take"
-    },
-    {
-      "Chance": 60,
-      "Description": "Oppose"
-    },
-    {
-      "Chance": 61,
-      "Description": "Capture"
-    },
-    {
-      "Chance": 62,
-      "Description": "Overwhelm"
-    },
-    {
-      "Chance": 63,
-      "Description": "Challenge"
-    },
-    {
-      "Chance": 64,
-      "Description": "Acquire"
-    },
-    {
-      "Chance": 65,
-      "Description": "Protect"
-    },
-    {
-      "Chance": 66,
-      "Description": "Finish"
-    },
-    {
-      "Chance": 67,
-      "Description": "Strengthen"
-    },
-    {
-      "Chance": 68,
-      "Description": "Restore"
-    },
-    {
-      "Chance": 69,
-      "Description": "Advance"
-    },
-    {
-      "Chance": 70,
-      "Description": "Command"
-    },
-    {
-      "Chance": 71,
-      "Description": "Refuse"
-    },
-    {
-      "Chance": 72,
-      "Description": "Find"
-    },
-    {
-      "Chance": 73,
-      "Description": "Deliver"
-    },
-    {
-      "Chance": 74,
-      "Description": "Hide"
-    },
-    {
-      "Chance": 75,
-      "Description": "Fortify"
-    },
-    {
-      "Chance": 76,
-      "Description": "Betray"
-    },
-    {
-      "Chance": 77,
-      "Description": "Secure"
-    },
-    {
-      "Chance": 78,
-      "Description": "Arrive"
-    },
-    {
-      "Chance": 79,
-      "Description": "Affect"
-    },
-    {
-      "Chance": 80,
-      "Description": "Change"
-    },
-    {
-      "Chance": 81,
-      "Description": "Defend"
-    },
-    {
-      "Chance": 82,
-      "Description": "Debate"
-    },
-    {
-      "Chance": 83,
-      "Description": "Support"
-    },
-    {
-      "Chance": 84,
-      "Description": "Follow"
-    },
-    {
-      "Chance": 85,
-      "Description": "Construct"
-    },
-    {
-      "Chance": 86,
-      "Description": "Locate"
-    },
-    {
-      "Chance": 87,
-      "Description": "Endure"
-    },
-    {
-      "Chance": 88,
-      "Description": "Release"
-    },
-    {
-      "Chance": 89,
-      "Description": "Lose"
-    },
-    {
-      "Chance": 90,
-      "Description": "Reduce"
-    },
-    {
-      "Chance": 91,
-      "Description": "Escalate"
-    },
-    {
-      "Chance": 92,
-      "Description": "Distract"
-    },
-    {
-      "Chance": 93,
-      "Description": "Journey"
-    },
-    {
-      "Chance": 94,
-      "Description": "Escort"
-    },
-    {
-      "Chance": 95,
-      "Description": "Learn"
-    },
-    {
-      "Chance": 96,
-      "Description": "Communicate"
-    },
-    {
-      "Chance": 97,
-      "Description": "Depart"
-    },
-    {
-      "Chance": 98,
-      "Description": "Search"
-    },
-    {
-      "Chance": 99,
-      "Description": "Charge"
-    },
-    {
-      "Chance": 100,
-      "Description": "Summon"
+  "Title": "Ironsworn Prompt Oracles",
+  "Oracles": [
+    {
+      "Name": "Action",
+      "Oracle Table": [
+        {
+          "Chance": 1,
+          "Description": "Scheme"
+        },
+        {
+          "Chance": 2,
+          "Description": "Clash"
+        },
+        {
+          "Chance": 3,
+          "Description": "Weaken"
+        },
+        {
+          "Chance": 4,
+          "Description": "Initiate"
+        },
+        {
+          "Chance": 5,
+          "Description": "Create"
+        },
+        {
+          "Chance": 6,
+          "Description": "Swear"
+        },
+        {
+          "Chance": 7,
+          "Description": "Avenge"
+        },
+        {
+          "Chance": 8,
+          "Description": "Guard"
+        },
+        {
+          "Chance": 9,
+          "Description": "Defeat"
+        },
+        {
+          "Chance": 10,
+          "Description": "Control"
+        },
+        {
+          "Chance": 11,
+          "Description": "Break"
+        },
+        {
+          "Chance": 12,
+          "Description": "Risk"
+        },
+        {
+          "Chance": 13,
+          "Description": "Surrender"
+        },
+        {
+          "Chance": 14,
+          "Description": "Inspect"
+        },
+        {
+          "Chance": 15,
+          "Description": "Raid"
+        },
+        {
+          "Chance": 16,
+          "Description": "Evade"
+        },
+        {
+          "Chance": 17,
+          "Description": "Assault"
+        },
+        {
+          "Chance": 18,
+          "Description": "Deflect"
+        },
+        {
+          "Chance": 19,
+          "Description": "Threaten"
+        },
+        {
+          "Chance": 20,
+          "Description": "Attack"
+        },
+        {
+          "Chance": 21,
+          "Description": "Leave"
+        },
+        {
+          "Chance": 22,
+          "Description": "Preserve"
+        },
+        {
+          "Chance": 23,
+          "Description": "Manipulate"
+        },
+        {
+          "Chance": 24,
+          "Description": "Remove"
+        },
+        {
+          "Chance": 25,
+          "Description": "Eliminate"
+        },
+        {
+          "Chance": 26,
+          "Description": "Withdraw"
+        },
+        {
+          "Chance": 27,
+          "Description": "Abandon"
+        },
+        {
+          "Chance": 28,
+          "Description": "Investigate"
+        },
+        {
+          "Chance": 29,
+          "Description": "Hold"
+        },
+        {
+          "Chance": 30,
+          "Description": "Focus"
+        },
+        {
+          "Chance": 31,
+          "Description": "Uncover"
+        },
+        {
+          "Chance": 32,
+          "Description": "Breach"
+        },
+        {
+          "Chance": 33,
+          "Description": "Aid"
+        },
+        {
+          "Chance": 34,
+          "Description": "Uphold"
+        },
+        {
+          "Chance": 35,
+          "Description": "Falter"
+        },
+        {
+          "Chance": 36,
+          "Description": "Suppress"
+        },
+        {
+          "Chance": 37,
+          "Description": "Hunt"
+        },
+        {
+          "Chance": 38,
+          "Description": "Share"
+        },
+        {
+          "Chance": 39,
+          "Description": "Destroy"
+        },
+        {
+          "Chance": 40,
+          "Description": "Avoid"
+        },
+        {
+          "Chance": 41,
+          "Description": "Reject"
+        },
+        {
+          "Chance": 42,
+          "Description": "Demand"
+        },
+        {
+          "Chance": 43,
+          "Description": "Explore"
+        },
+        {
+          "Chance": 44,
+          "Description": "Bolster"
+        },
+        {
+          "Chance": 45,
+          "Description": "Seize"
+        },
+        {
+          "Chance": 46,
+          "Description": "Mourn"
+        },
+        {
+          "Chance": 47,
+          "Description": "Reveal"
+        },
+        {
+          "Chance": 48,
+          "Description": "Gather"
+        },
+        {
+          "Chance": 49,
+          "Description": "Defy"
+        },
+        {
+          "Chance": 50,
+          "Description": "Transform"
+        },
+        {
+          "Chance": 51,
+          "Description": "Persevere"
+        },
+        {
+          "Chance": 52,
+          "Description": "Serve"
+        },
+        {
+          "Chance": 53,
+          "Description": "Begin"
+        },
+        {
+          "Chance": 54,
+          "Description": "Move"
+        },
+        {
+          "Chance": 55,
+          "Description": "Coordinate"
+        },
+        {
+          "Chance": 56,
+          "Description": "Resist"
+        },
+        {
+          "Chance": 57,
+          "Description": "Await"
+        },
+        {
+          "Chance": 58,
+          "Description": "Impress"
+        },
+        {
+          "Chance": 59,
+          "Description": "Take"
+        },
+        {
+          "Chance": 60,
+          "Description": "Oppose"
+        },
+        {
+          "Chance": 61,
+          "Description": "Capture"
+        },
+        {
+          "Chance": 62,
+          "Description": "Overwhelm"
+        },
+        {
+          "Chance": 63,
+          "Description": "Challenge"
+        },
+        {
+          "Chance": 64,
+          "Description": "Acquire"
+        },
+        {
+          "Chance": 65,
+          "Description": "Protect"
+        },
+        {
+          "Chance": 66,
+          "Description": "Finish"
+        },
+        {
+          "Chance": 67,
+          "Description": "Strengthen"
+        },
+        {
+          "Chance": 68,
+          "Description": "Restore"
+        },
+        {
+          "Chance": 69,
+          "Description": "Advance"
+        },
+        {
+          "Chance": 70,
+          "Description": "Command"
+        },
+        {
+          "Chance": 71,
+          "Description": "Refuse"
+        },
+        {
+          "Chance": 72,
+          "Description": "Find"
+        },
+        {
+          "Chance": 73,
+          "Description": "Deliver"
+        },
+        {
+          "Chance": 74,
+          "Description": "Hide"
+        },
+        {
+          "Chance": 75,
+          "Description": "Fortify"
+        },
+        {
+          "Chance": 76,
+          "Description": "Betray"
+        },
+        {
+          "Chance": 77,
+          "Description": "Secure"
+        },
+        {
+          "Chance": 78,
+          "Description": "Arrive"
+        },
+        {
+          "Chance": 79,
+          "Description": "Affect"
+        },
+        {
+          "Chance": 80,
+          "Description": "Change"
+        },
+        {
+          "Chance": 81,
+          "Description": "Defend"
+        },
+        {
+          "Chance": 82,
+          "Description": "Debate"
+        },
+        {
+          "Chance": 83,
+          "Description": "Support"
+        },
+        {
+          "Chance": 84,
+          "Description": "Follow"
+        },
+        {
+          "Chance": 85,
+          "Description": "Construct"
+        },
+        {
+          "Chance": 86,
+          "Description": "Locate"
+        },
+        {
+          "Chance": 87,
+          "Description": "Endure"
+        },
+        {
+          "Chance": 88,
+          "Description": "Release"
+        },
+        {
+          "Chance": 89,
+          "Description": "Lose"
+        },
+        {
+          "Chance": 90,
+          "Description": "Reduce"
+        },
+        {
+          "Chance": 91,
+          "Description": "Escalate"
+        },
+        {
+          "Chance": 92,
+          "Description": "Distract"
+        },
+        {
+          "Chance": 93,
+          "Description": "Journey"
+        },
+        {
+          "Chance": 94,
+          "Description": "Escort"
+        },
+        {
+          "Chance": 95,
+          "Description": "Learn"
+        },
+        {
+          "Chance": 96,
+          "Description": "Communicate"
+        },
+        {
+          "Chance": 97,
+          "Description": "Depart"
+        },
+        {
+          "Chance": 98,
+          "Description": "Search"
+        },
+        {
+          "Chance": 99,
+          "Description": "Charge"
+        },
+        {
+          "Chance": 100,
+          "Description": "Summon"
+        }
+      ]
+    },
+    {
+      "Name": "Theme",
+      "Oracle Table": [
+        {
+          "Chance": 1,
+          "Description": "Risk"
+        },
+        {
+          "Chance": 2,
+          "Description": "Ability"
+        },
+        {
+          "Chance": 3,
+          "Description": "Price"
+        },
+        {
+          "Chance": 4,
+          "Description": "Ally"
+        },
+        {
+          "Chance": 5,
+          "Description": "Battle"
+        },
+        {
+          "Chance": 6,
+          "Description": "Safety"
+        },
+        {
+          "Chance": 7,
+          "Description": "Survival"
+        },
+        {
+          "Chance": 8,
+          "Description": "Weapon"
+        },
+        {
+          "Chance": 9,
+          "Description": "Wound"
+        },
+        {
+          "Chance": 10,
+          "Description": "Shelter"
+        },
+        {
+          "Chance": 11,
+          "Description": "Leader"
+        },
+        {
+          "Chance": 12,
+          "Description": "Fear"
+        },
+        {
+          "Chance": 13,
+          "Description": "Time"
+        },
+        {
+          "Chance": 14,
+          "Description": "Duty"
+        },
+        {
+          "Chance": 15,
+          "Description": "Secret"
+        },
+        {
+          "Chance": 16,
+          "Description": "Innocence"
+        },
+        {
+          "Chance": 17,
+          "Description": "Renown"
+        },
+        {
+          "Chance": 18,
+          "Description": "Direction"
+        },
+        {
+          "Chance": 19,
+          "Description": "Death"
+        },
+        {
+          "Chance": 20,
+          "Description": "Honor"
+        },
+        {
+          "Chance": 21,
+          "Description": "Labor"
+        },
+        {
+          "Chance": 22,
+          "Description": "Solution"
+        },
+        {
+          "Chance": 23,
+          "Description": "Tool"
+        },
+        {
+          "Chance": 24,
+          "Description": "Balance"
+        },
+        {
+          "Chance": 25,
+          "Description": "Love"
+        },
+        {
+          "Chance": 26,
+          "Description": "Barrier"
+        },
+        {
+          "Chance": 27,
+          "Description": "Creation"
+        },
+        {
+          "Chance": 28,
+          "Description": "Decay"
+        },
+        {
+          "Chance": 29,
+          "Description": "Trade"
+        },
+        {
+          "Chance": 30,
+          "Description": "Bond"
+        },
+        {
+          "Chance": 31,
+          "Description": "Hope"
+        },
+        {
+          "Chance": 32,
+          "Description": "Superstition"
+        },
+        {
+          "Chance": 33,
+          "Description": "Peace"
+        },
+        {
+          "Chance": 34,
+          "Description": "Deception"
+        },
+        {
+          "Chance": 35,
+          "Description": "History"
+        },
+        {
+          "Chance": 36,
+          "Description": "World"
+        },
+        {
+          "Chance": 37,
+          "Description": "Vow"
+        },
+        {
+          "Chance": 38,
+          "Description": "Protection"
+        },
+        {
+          "Chance": 39,
+          "Description": "Nature"
+        },
+        {
+          "Chance": 40,
+          "Description": "Opinion"
+        },
+        {
+          "Chance": 41,
+          "Description": "Burden"
+        },
+        {
+          "Chance": 42,
+          "Description": "Vengeance"
+        },
+        {
+          "Chance": 43,
+          "Description": "Opportunity"
+        },
+        {
+          "Chance": 44,
+          "Description": "Faction"
+        },
+        {
+          "Chance": 45,
+          "Description": "Danger"
+        },
+        {
+          "Chance": 46,
+          "Description": "Corruption"
+        },
+        {
+          "Chance": 47,
+          "Description": "Freedom"
+        },
+        {
+          "Chance": 48,
+          "Description": "Debt"
+        },
+        {
+          "Chance": 49,
+          "Description": "Hate"
+        },
+        {
+          "Chance": 50,
+          "Description": "Possession"
+        },
+        {
+          "Chance": 51,
+          "Description": "Stranger"
+        },
+        {
+          "Chance": 52,
+          "Description": "Passage"
+        },
+        {
+          "Chance": 53,
+          "Description": "Land"
+        },
+        {
+          "Chance": 54,
+          "Description": "Creature"
+        },
+        {
+          "Chance": 55,
+          "Description": "Disease"
+        },
+        {
+          "Chance": 56,
+          "Description": "Advantage"
+        },
+        {
+          "Chance": 57,
+          "Description": "Blood"
+        },
+        {
+          "Chance": 58,
+          "Description": "Language"
+        },
+        {
+          "Chance": 59,
+          "Description": "Rumor"
+        },
+        {
+          "Chance": 60,
+          "Description": "Weakness"
+        },
+        {
+          "Chance": 61,
+          "Description": "Greed"
+        },
+        {
+          "Chance": 62,
+          "Description": "Family"
+        },
+        {
+          "Chance": 63,
+          "Description": "Resource"
+        },
+        {
+          "Chance": 64,
+          "Description": "Structure"
+        },
+        {
+          "Chance": 65,
+          "Description": "Dream"
+        },
+        {
+          "Chance": 66,
+          "Description": "Community"
+        },
+        {
+          "Chance": 67,
+          "Description": "War"
+        },
+        {
+          "Chance": 68,
+          "Description": "Portent"
+        },
+        {
+          "Chance": 69,
+          "Description": "Prize"
+        },
+        {
+          "Chance": 70,
+          "Description": "Destiny"
+        },
+        {
+          "Chance": 71,
+          "Description": "Momentum"
+        },
+        {
+          "Chance": 72,
+          "Description": "Power"
+        },
+        {
+          "Chance": 73,
+          "Description": "Memory"
+        },
+        {
+          "Chance": 74,
+          "Description": "Ruin"
+        },
+        {
+          "Chance": 75,
+          "Description": "Mysticism"
+        },
+        {
+          "Chance": 76,
+          "Description": "Rival"
+        },
+        {
+          "Chance": 77,
+          "Description": "Problem"
+        },
+        {
+          "Chance": 78,
+          "Description": "Idea"
+        },
+        {
+          "Chance": 79,
+          "Description": "Revenge"
+        },
+        {
+          "Chance": 80,
+          "Description": "Health"
+        },
+        {
+          "Chance": 81,
+          "Description": "Fellowship"
+        },
+        {
+          "Chance": 82,
+          "Description": "Enemy"
+        },
+        {
+          "Chance": 83,
+          "Description": "Religion"
+        },
+        {
+          "Chance": 84,
+          "Description": "Spirit"
+        },
+        {
+          "Chance": 85,
+          "Description": "Fame"
+        },
+        {
+          "Chance": 86,
+          "Description": "Desolation"
+        },
+        {
+          "Chance": 87,
+          "Description": "Strength"
+        },
+        {
+          "Chance": 88,
+          "Description": "Knowledge"
+        },
+        {
+          "Chance": 89,
+          "Description": "Truth"
+        },
+        {
+          "Chance": 90,
+          "Description": "Quest"
+        },
+        {
+          "Chance": 91,
+          "Description": "Pride"
+        },
+        {
+          "Chance": 92,
+          "Description": "Loss"
+        },
+        {
+          "Chance": 93,
+          "Description": "Law"
+        },
+        {
+          "Chance": 94,
+          "Description": "Path"
+        },
+        {
+          "Chance": 95,
+          "Description": "Warning"
+        },
+        {
+          "Chance": 96,
+          "Description": "Relationship"
+        },
+        {
+          "Chance": 97,
+          "Description": "Wealth"
+        },
+        {
+          "Chance": 98,
+          "Description": "Home"
+        },
+        {
+          "Chance": 99,
+          "Description": "Strategy"
+        },
+        {
+          "Chance": 100,
+          "Description": "Supply"
+        }
+      ]
+    },
+    {
+      "Name": "Feature",
+      "Oracles": [
+        {
+          "Name": "Aspect",
+          "Oracle Table": [
+            {
+              "Chance": 2,
+              "Description": "Blocked"
+            },
+            {
+              "Chance": 4,
+              "Description": "Crafted"
+            },
+            {
+              "Chance": 6,
+              "Description": "Ancient"
+            },
+            {
+              "Chance": 8,
+              "Description": "Sunken"
+            },
+            {
+              "Chance": 10,
+              "Description": "Trapped"
+            },
+            {
+              "Chance": 12,
+              "Description": "Secret"
+            },
+            {
+              "Chance": 14,
+              "Description": "Toxic"
+            },
+            {
+              "Chance": 16,
+              "Description": "Ruined"
+            },
+            {
+              "Chance": 18,
+              "Description": "Defended"
+            },
+            {
+              "Chance": 20,
+              "Description": "Decaying"
+            },
+            {
+              "Chance": 22,
+              "Description": "Marked"
+            },
+            {
+              "Chance": 24,
+              "Description": "Guarded"
+            },
+            {
+              "Chance": 26,
+              "Description": "Inaccessible"
+            },
+            {
+              "Chance": 28,
+              "Description": "Foreboding"
+            },
+            {
+              "Chance": 30,
+              "Description": "Veiled"
+            },
+            {
+              "Chance": 32,
+              "Description": "Deep"
+            },
+            {
+              "Chance": 34,
+              "Description": "Depleted"
+            },
+            {
+              "Chance": 36,
+              "Description": "Foul"
+            },
+            {
+              "Chance": 38,
+              "Description": "Elevated"
+            },
+            {
+              "Chance": 40,
+              "Description": "Moving"
+            },
+            {
+              "Chance": 42,
+              "Description": "Unnatural"
+            },
+            {
+              "Chance": 44,
+              "Description": "Active"
+            },
+            {
+              "Chance": 46,
+              "Description": "Confined"
+            },
+            {
+              "Chance": 48,
+              "Description": "Fortified"
+            },
+            {
+              "Chance": 50,
+              "Description": "Collapsed"
+            },
+            {
+              "Chance": 52,
+              "Description": "Isolated"
+            },
+            {
+              "Chance": 54,
+              "Description": "Destroyed"
+            },
+            {
+              "Chance": 56,
+              "Description": "Open"
+            },
+            {
+              "Chance": 58,
+              "Description": "Sacred"
+            },
+            {
+              "Chance": 60,
+              "Description": "Flooded"
+            },
+            {
+              "Chance": 62,
+              "Description": "Complex"
+            },
+            {
+              "Chance": 64,
+              "Description": "Abundant"
+            },
+            {
+              "Chance": 66,
+              "Description": "Hidden"
+            },
+            {
+              "Chance": 68,
+              "Description": "Expansive"
+            },
+            {
+              "Chance": 70,
+              "Description": "Mysterious"
+            },
+            {
+              "Chance": 72,
+              "Description": "Unstable"
+            },
+            {
+              "Chance": 74,
+              "Description": "Fragile"
+            },
+            {
+              "Chance": 76,
+              "Description": "Broken"
+            },
+            {
+              "Chance": 78,
+              "Description": "Ensnaring"
+            },
+            {
+              "Chance": 80,
+              "Description": "Pillaged"
+            },
+            {
+              "Chance": 82,
+              "Description": "Sealed"
+            },
+            {
+              "Chance": 84,
+              "Description": "Makeshift"
+            },
+            {
+              "Chance": 86,
+              "Description": "Treacherous"
+            },
+            {
+              "Chance": 88,
+              "Description": "Natural"
+            },
+            {
+              "Chance": 90,
+              "Description": "Dead"
+            },
+            {
+              "Chance": 92,
+              "Description": "Unusual"
+            },
+            {
+              "Chance": 94,
+              "Description": "Abandoned"
+            },
+            {
+              "Chance": 96,
+              "Description": "Deadly"
+            },
+            {
+              "Chance": 98,
+              "Description": "Forgotten"
+            },
+            {
+              "Chance": 100,
+              "Description": "Mystical"
+            }
+          ]
+        },
+        {
+          "Name": "Focus",
+          "Oracle Table": [
+            {
+              "Chance": 2,
+              "Description": "Attack"
+            },
+            {
+              "Chance": 4,
+              "Description": "Threshold"
+            },
+            {
+              "Chance": 6,
+              "Description": "Boundary"
+            },
+            {
+              "Chance": 8,
+              "Description": "Alarm"
+            },
+            {
+              "Chance": 10,
+              "Description": "Exit"
+            },
+            {
+              "Chance": 12,
+              "Description": "Passage"
+            },
+            {
+              "Chance": 14,
+              "Description": "Crossing"
+            },
+            {
+              "Chance": 16,
+              "Description": "Trigger"
+            },
+            {
+              "Chance": 18,
+              "Description": "Trap"
+            },
+            {
+              "Chance": 20,
+              "Description": "Hideaway"
+            },
+            {
+              "Chance": 22,
+              "Description": "Nature"
+            },
+            {
+              "Chance": 24,
+              "Description": "Sign"
+            },
+            {
+              "Chance": 26,
+              "Description": "Refuge"
+            },
+            {
+              "Chance": 28,
+              "Description": "Valuables"
+            },
+            {
+              "Chance": 30,
+              "Description": "Breach"
+            },
+            {
+              "Chance": 32,
+              "Description": "Route"
+            },
+            {
+              "Chance": 34,
+              "Description": "Location"
+            },
+            {
+              "Chance": 36,
+              "Description": "Trail"
+            },
+            {
+              "Chance": 38,
+              "Description": "Supply"
+            },
+            {
+              "Chance": 40,
+              "Description": "History"
+            },
+            {
+              "Chance": 42,
+              "Description": "Prisoner"
+            },
+            {
+              "Chance": 44,
+              "Description": "Habitation"
+            },
+            {
+              "Chance": 46,
+              "Description": "Debris"
+            },
+            {
+              "Chance": 48,
+              "Description": "Creature"
+            },
+            {
+              "Chance": 50,
+              "Description": "Lair"
+            },
+            {
+              "Chance": 52,
+              "Description": "Person"
+            },
+            {
+              "Chance": 54,
+              "Description": "Enclosure"
+            },
+            {
+              "Chance": 56,
+              "Description": "Remains"
+            },
+            {
+              "Chance": 58,
+              "Description": "Water"
+            },
+            {
+              "Chance": 60,
+              "Description": "Message"
+            },
+            {
+              "Chance": 62,
+              "Description": "Darkness"
+            },
+            {
+              "Chance": 64,
+              "Description": "Opening"
+            },
+            {
+              "Chance": 66,
+              "Description": "Weapon"
+            },
+            {
+              "Chance": 68,
+              "Description": "Entry"
+            },
+            {
+              "Chance": 70,
+              "Description": "Illumination"
+            },
+            {
+              "Chance": 72,
+              "Description": "Obstacle"
+            },
+            {
+              "Chance": 74,
+              "Description": "Craft"
+            },
+            {
+              "Chance": 76,
+              "Description": "Container"
+            },
+            {
+              "Chance": 78,
+              "Description": "Information"
+            },
+            {
+              "Chance": 80,
+              "Description": "Grave"
+            },
+            {
+              "Chance": 82,
+              "Description": "Equipment"
+            },
+            {
+              "Chance": 84,
+              "Description": "Shelter"
+            },
+            {
+              "Chance": 86,
+              "Description": "Denizen"
+            },
+            {
+              "Chance": 88,
+              "Description": "Environment"
+            },
+            {
+              "Chance": 90,
+              "Description": "Material"
+            },
+            {
+              "Chance": 92,
+              "Description": "Resource"
+            },
+            {
+              "Chance": 94,
+              "Description": "Corruption"
+            },
+            {
+              "Chance": 96,
+              "Description": "Death"
+            },
+            {
+              "Chance": 98,
+              "Description": "Function"
+            },
+            {
+              "Chance": 100,
+              "Description": "Power"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Trap",
+      "Oracles": [
+        {
+          "Name": "Event",
+          "Oracle Table": [
+            {
+              "Chance": 4,
+              "Description": "Block"
+            },
+            {
+              "Chance": 8,
+              "Description": "Create"
+            },
+            {
+              "Chance": 12,
+              "Description": "Break"
+            },
+            {
+              "Chance": 16,
+              "Description": "Puncture"
+            },
+            {
+              "Chance": 20,
+              "Description": "Entangle"
+            },
+            {
+              "Chance": 24,
+              "Description": "Enclose"
+            },
+            {
+              "Chance": 28,
+              "Description": "Ambush"
+            },
+            {
+              "Chance": 32,
+              "Description": "Snare"
+            },
+            {
+              "Chance": 36,
+              "Description": "Change"
+            },
+            {
+              "Chance": 40,
+              "Description": "Imitate"
+            },
+            {
+              "Chance": 44,
+              "Description": "Crush"
+            },
+            {
+              "Chance": 48,
+              "Description": "Drop"
+            },
+            {
+              "Chance": 52,
+              "Description": "Conceal"
+            },
+            {
+              "Chance": 56,
+              "Description": "Lure"
+            },
+            {
+              "Chance": 60,
+              "Description": "Release"
+            },
+            {
+              "Chance": 64,
+              "Description": "Obscure"
+            },
+            {
+              "Chance": 68,
+              "Description": "Cut"
+            },
+            {
+              "Chance": 72,
+              "Description": "Smother"
+            },
+            {
+              "Chance": 76,
+              "Description": "Collapse"
+            },
+            {
+              "Chance": 80,
+              "Description": "Summon"
+            },
+            {
+              "Chance": 84,
+              "Description": "Move"
+            },
+            {
+              "Chance": 88,
+              "Description": "Surprise"
+            },
+            {
+              "Chance": 92,
+              "Description": "Divert"
+            },
+            {
+              "Chance": 96,
+              "Description": "Attack"
+            },
+            {
+              "Chance": 100,
+              "Description": "Trigger"
+            }
+          ]
+        },
+        {
+          "Name": "Component",
+          "Oracle Table": [
+            {
+              "Chance": 4,
+              "Description": "Pit"
+            },
+            {
+              "Chance": 8,
+              "Description": "Water"
+            },
+            {
+              "Chance": 12,
+              "Description": "Fire"
+            },
+            {
+              "Chance": 16,
+              "Description": "Projectile"
+            },
+            {
+              "Chance": 20,
+              "Description": "Passage"
+            },
+            {
+              "Chance": 24,
+              "Description": "Fall"
+            },
+            {
+              "Chance": 28,
+              "Description": "Debris"
+            },
+            {
+              "Chance": 32,
+              "Description": "Fear"
+            },
+            {
+              "Chance": 36,
+              "Description": "Alarm"
+            },
+            {
+              "Chance": 40,
+              "Description": "Trigger"
+            },
+            {
+              "Chance": 44,
+              "Description": "Cold"
+            },
+            {
+              "Chance": 48,
+              "Description": "Weapon"
+            },
+            {
+              "Chance": 52,
+              "Description": "Darkness"
+            },
+            {
+              "Chance": 56,
+              "Description": "Decay"
+            },
+            {
+              "Chance": 60,
+              "Description": "Path"
+            },
+            {
+              "Chance": 64,
+              "Description": "Stone"
+            },
+            {
+              "Chance": 68,
+              "Description": "Terrain"
+            },
+            {
+              "Chance": 72,
+              "Description": "Poison"
+            },
+            {
+              "Chance": 76,
+              "Description": "Barrier"
+            },
+            {
+              "Chance": 80,
+              "Description": "Overhead"
+            },
+            {
+              "Chance": 84,
+              "Description": "Magic"
+            },
+            {
+              "Chance": 88,
+              "Description": "Toxin"
+            },
+            {
+              "Chance": 92,
+              "Description": "Earth"
+            },
+            {
+              "Chance": 96,
+              "Description": "Light"
+            },
+            {
+              "Chance": 100,
+              "Description": "Denizen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Combat Event",
+      "Oracles": [
+        {
+          "Name": "Method",
+          "Oracle Table": [
+            {
+              "Chance": 2,
+              "Description": "Defy"
+            },
+            {
+              "Chance": 4,
+              "Description": "Break"
+            },
+            {
+              "Chance": 6,
+              "Description": "Trick"
+            },
+            {
+              "Chance": 8,
+              "Description": "Evade"
+            },
+            {
+              "Chance": 10,
+              "Description": "Protect"
+            },
+            {
+              "Chance": 12,
+              "Description": "Overwhelm"
+            },
+            {
+              "Chance": 14,
+              "Description": "Persevere"
+            },
+            {
+              "Chance": 16,
+              "Description": "Assist"
+            },
+            {
+              "Chance": 18,
+              "Description": "Await"
+            },
+            {
+              "Chance": 20,
+              "Description": "Abort"
+            },
+            {
+              "Chance": 22,
+              "Description": "Block"
+            },
+            {
+              "Chance": 24,
+              "Description": "Collide"
+            },
+            {
+              "Chance": 26,
+              "Description": "Focus"
+            },
+            {
+              "Chance": 28,
+              "Description": "Advance"
+            },
+            {
+              "Chance": 30,
+              "Description": "Breach"
+            },
+            {
+              "Chance": 32,
+              "Description": "Endure"
+            },
+            {
+              "Chance": 34,
+              "Description": "Assault"
+            },
+            {
+              "Chance": 36,
+              "Description": "Charge"
+            },
+            {
+              "Chance": 38,
+              "Description": "Escalate"
+            },
+            {
+              "Chance": 40,
+              "Description": "Sunder"
+            },
+            {
+              "Chance": 42,
+              "Description": "Shatter"
+            },
+            {
+              "Chance": 44,
+              "Description": "Aim"
+            },
+            {
+              "Chance": 46,
+              "Description": "Stagger"
+            },
+            {
+              "Chance": 48,
+              "Description": "Counter"
+            },
+            {
+              "Chance": 50,
+              "Description": "Seize"
+            },
+            {
+              "Chance": 52,
+              "Description": "Impact"
+            },
+            {
+              "Chance": 54,
+              "Description": "Entangle"
+            },
+            {
+              "Chance": 56,
+              "Description": "Hold"
+            },
+            {
+              "Chance": 58,
+              "Description": "Deflect"
+            },
+            {
+              "Chance": 60,
+              "Description": "Drop"
+            },
+            {
+              "Chance": 62,
+              "Description": "Lose"
+            },
+            {
+              "Chance": 64,
+              "Description": "Sweep"
+            },
+            {
+              "Chance": 66,
+              "Description": "Secure"
+            },
+            {
+              "Chance": 68,
+              "Description": "Cover"
+            },
+            {
+              "Chance": 70,
+              "Description": "Withdraw"
+            },
+            {
+              "Chance": 72,
+              "Description": "Clash"
+            },
+            {
+              "Chance": 74,
+              "Description": "Amplify"
+            },
+            {
+              "Chance": 76,
+              "Description": "Batter"
+            },
+            {
+              "Chance": 78,
+              "Description": "Feint"
+            },
+            {
+              "Chance": 80,
+              "Description": "Shove"
+            },
+            {
+              "Chance": 82,
+              "Description": "Embed"
+            },
+            {
+              "Chance": 84,
+              "Description": "Affect"
+            },
+            {
+              "Chance": 86,
+              "Description": "Probe"
+            },
+            {
+              "Chance": 88,
+              "Description": "Force"
+            },
+            {
+              "Chance": 90,
+              "Description": "Intensify"
+            },
+            {
+              "Chance": 92,
+              "Description": "Distract"
+            },
+            {
+              "Chance": 94,
+              "Description": "Challenge"
+            },
+            {
+              "Chance": 96,
+              "Description": "Brawl"
+            },
+            {
+              "Chance": 98,
+              "Description": "Coordinate"
+            },
+            {
+              "Chance": 100,
+              "Description": "Overrun"
+            }
+          ]
+        },
+        {
+          "Name": "Target",
+          "Oracle Table": [
+            {
+              "Chance": 2,
+              "Description": "Control"
+            },
+            {
+              "Chance": 4,
+              "Description": "Defense"
+            },
+            {
+              "Chance": 6,
+              "Description": "Limbs"
+            },
+            {
+              "Chance": 8,
+              "Description": "Focus"
+            },
+            {
+              "Chance": 10,
+              "Description": "Advantage"
+            },
+            {
+              "Chance": 12,
+              "Description": "Range"
+            },
+            {
+              "Chance": 14,
+              "Description": "Stress"
+            },
+            {
+              "Chance": 16,
+              "Description": "Sense"
+            },
+            {
+              "Chance": 18,
+              "Description": "Weakness"
+            },
+            {
+              "Chance": 20,
+              "Description": "Opening"
+            },
+            {
+              "Chance": 22,
+              "Description": "Fear"
+            },
+            {
+              "Chance": 24,
+              "Description": "Instinct"
+            },
+            {
+              "Chance": 26,
+              "Description": "Footing"
+            },
+            {
+              "Chance": 28,
+              "Description": "Maneuver"
+            },
+            {
+              "Chance": 30,
+              "Description": "Reach"
+            },
+            {
+              "Chance": 32,
+              "Description": "Harm"
+            },
+            {
+              "Chance": 34,
+              "Description": "Finesse"
+            },
+            {
+              "Chance": 36,
+              "Description": "Weapon"
+            },
+            {
+              "Chance": 38,
+              "Description": "Environment"
+            },
+            {
+              "Chance": 40,
+              "Description": "Technique"
+            },
+            {
+              "Chance": 42,
+              "Description": "Surprise"
+            },
+            {
+              "Chance": 44,
+              "Description": "Pride"
+            },
+            {
+              "Chance": 46,
+              "Description": "Wound"
+            },
+            {
+              "Chance": 48,
+              "Description": "Precision"
+            },
+            {
+              "Chance": 50,
+              "Description": "Ally"
+            },
+            {
+              "Chance": 52,
+              "Description": "Ground"
+            },
+            {
+              "Chance": 54,
+              "Description": "Courage"
+            },
+            {
+              "Chance": 56,
+              "Description": "Companion"
+            },
+            {
+              "Chance": 58,
+              "Description": "Object"
+            },
+            {
+              "Chance": 60,
+              "Description": "Momentum"
+            },
+            {
+              "Chance": 62,
+              "Description": "Speed"
+            },
+            {
+              "Chance": 64,
+              "Description": "Strength"
+            },
+            {
+              "Chance": 66,
+              "Description": "Supply"
+            },
+            {
+              "Chance": 68,
+              "Description": "Terrain"
+            },
+            {
+              "Chance": 70,
+              "Description": "Armor"
+            },
+            {
+              "Chance": 72,
+              "Description": "Skill"
+            },
+            {
+              "Chance": 74,
+              "Description": "Body"
+            },
+            {
+              "Chance": 76,
+              "Description": "Protection"
+            },
+            {
+              "Chance": 78,
+              "Description": "Resolve"
+            },
+            {
+              "Chance": 80,
+              "Description": "Ferocity"
+            },
+            {
+              "Chance": 82,
+              "Description": "Shield"
+            },
+            {
+              "Chance": 84,
+              "Description": "Ammo"
+            },
+            {
+              "Chance": 86,
+              "Description": "Anger"
+            },
+            {
+              "Chance": 88,
+              "Description": "Opportunity"
+            },
+            {
+              "Chance": 90,
+              "Description": "Balance"
+            },
+            {
+              "Chance": 92,
+              "Description": "Position"
+            },
+            {
+              "Chance": 94,
+              "Description": "Barrier"
+            },
+            {
+              "Chance": 96,
+              "Description": "Strategy"
+            },
+            {
+              "Chance": 98,
+              "Description": "Grasp"
+            },
+            {
+              "Chance": 100,
+              "Description": "Power"
+            }
+          ]
+        }
+      ]
     }
-  ],
-  "Theme": [
-    {
-      "Chance": 1,
-      "Description": "Risk"
-    },
-    {
-      "Chance": 2,
-      "Description": "Ability"
-    },
-    {
-      "Chance": 3,
-      "Description": "Price"
-    },
-    {
-      "Chance": 4,
-      "Description": "Ally"
-    },
-    {
-      "Chance": 5,
-      "Description": "Battle"
-    },
-    {
-      "Chance": 6,
-      "Description": "Safety"
-    },
-    {
-      "Chance": 7,
-      "Description": "Survival"
-    },
-    {
-      "Chance": 8,
-      "Description": "Weapon"
-    },
-    {
-      "Chance": 9,
-      "Description": "Wound"
-    },
-    {
-      "Chance": 10,
-      "Description": "Shelter"
-    },
-    {
-      "Chance": 11,
-      "Description": "Leader"
-    },
-    {
-      "Chance": 12,
-      "Description": "Fear"
-    },
-    {
-      "Chance": 13,
-      "Description": "Time"
-    },
-    {
-      "Chance": 14,
-      "Description": "Duty"
-    },
-    {
-      "Chance": 15,
-      "Description": "Secret"
-    },
-    {
-      "Chance": 16,
-      "Description": "Innocence"
-    },
-    {
-      "Chance": 17,
-      "Description": "Renown"
-    },
-    {
-      "Chance": 18,
-      "Description": "Direction"
-    },
-    {
-      "Chance": 19,
-      "Description": "Death"
-    },
-    {
-      "Chance": 20,
-      "Description": "Honor"
-    },
-    {
-      "Chance": 21,
-      "Description": "Labor"
-    },
-    {
-      "Chance": 22,
-      "Description": "Solution"
-    },
-    {
-      "Chance": 23,
-      "Description": "Tool"
-    },
-    {
-      "Chance": 24,
-      "Description": "Balance"
-    },
-    {
-      "Chance": 25,
-      "Description": "Love"
-    },
-    {
-      "Chance": 26,
-      "Description": "Barrier"
-    },
-    {
-      "Chance": 27,
-      "Description": "Creation"
-    },
-    {
-      "Chance": 28,
-      "Description": "Decay"
-    },
-    {
-      "Chance": 29,
-      "Description": "Trade"
-    },
-    {
-      "Chance": 30,
-      "Description": "Bond"
-    },
-    {
-      "Chance": 31,
-      "Description": "Hope"
-    },
-    {
-      "Chance": 32,
-      "Description": "Superstition"
-    },
-    {
-      "Chance": 33,
-      "Description": "Peace"
-    },
-    {
-      "Chance": 34,
-      "Description": "Deception"
-    },
-    {
-      "Chance": 35,
-      "Description": "History"
-    },
-    {
-      "Chance": 36,
-      "Description": "World"
-    },
-    {
-      "Chance": 37,
-      "Description": "Vow"
-    },
-    {
-      "Chance": 38,
-      "Description": "Protection"
-    },
-    {
-      "Chance": 39,
-      "Description": "Nature"
-    },
-    {
-      "Chance": 40,
-      "Description": "Opinion"
-    },
-    {
-      "Chance": 41,
-      "Description": "Burden"
-    },
-    {
-      "Chance": 42,
-      "Description": "Vengeance"
-    },
-    {
-      "Chance": 43,
-      "Description": "Opportunity"
-    },
-    {
-      "Chance": 44,
-      "Description": "Faction"
-    },
-    {
-      "Chance": 45,
-      "Description": "Danger"
-    },
-    {
-      "Chance": 46,
-      "Description": "Corruption"
-    },
-    {
-      "Chance": 47,
-      "Description": "Freedom"
-    },
-    {
-      "Chance": 48,
-      "Description": "Debt"
-    },
-    {
-      "Chance": 49,
-      "Description": "Hate"
-    },
-    {
-      "Chance": 50,
-      "Description": "Possession"
-    },
-    {
-      "Chance": 51,
-      "Description": "Stranger"
-    },
-    {
-      "Chance": 52,
-      "Description": "Passage"
-    },
-    {
-      "Chance": 53,
-      "Description": "Land"
-    },
-    {
-      "Chance": 54,
-      "Description": "Creature"
-    },
-    {
-      "Chance": 55,
-      "Description": "Disease"
-    },
-    {
-      "Chance": 56,
-      "Description": "Advantage"
-    },
-    {
-      "Chance": 57,
-      "Description": "Blood"
-    },
-    {
-      "Chance": 58,
-      "Description": "Language"
-    },
-    {
-      "Chance": 59,
-      "Description": "Rumor"
-    },
-    {
-      "Chance": 60,
-      "Description": "Weakness"
-    },
-    {
-      "Chance": 61,
-      "Description": "Greed"
-    },
-    {
-      "Chance": 62,
-      "Description": "Family"
-    },
-    {
-      "Chance": 63,
-      "Description": "Resource"
-    },
-    {
-      "Chance": 64,
-      "Description": "Structure"
-    },
-    {
-      "Chance": 65,
-      "Description": "Dream"
-    },
-    {
-      "Chance": 66,
-      "Description": "Community"
-    },
-    {
-      "Chance": 67,
-      "Description": "War"
-    },
-    {
-      "Chance": 68,
-      "Description": "Portent"
-    },
-    {
-      "Chance": 69,
-      "Description": "Prize"
-    },
-    {
-      "Chance": 70,
-      "Description": "Destiny"
-    },
-    {
-      "Chance": 71,
-      "Description": "Momentum"
-    },
-    {
-      "Chance": 72,
-      "Description": "Power"
-    },
-    {
-      "Chance": 73,
-      "Description": "Memory"
-    },
-    {
-      "Chance": 74,
-      "Description": "Ruin"
-    },
-    {
-      "Chance": 75,
-      "Description": "Mysticism"
-    },
-    {
-      "Chance": 76,
-      "Description": "Rival"
-    },
-    {
-      "Chance": 77,
-      "Description": "Problem"
-    },
-    {
-      "Chance": 78,
-      "Description": "Idea"
-    },
-    {
-      "Chance": 79,
-      "Description": "Revenge"
-    },
-    {
-      "Chance": 80,
-      "Description": "Health"
-    },
-    {
-      "Chance": 81,
-      "Description": "Fellowship"
-    },
-    {
-      "Chance": 82,
-      "Description": "Enemy"
-    },
-    {
-      "Chance": 83,
-      "Description": "Religion"
-    },
-    {
-      "Chance": 84,
-      "Description": "Spirit"
-    },
-    {
-      "Chance": 85,
-      "Description": "Fame"
-    },
-    {
-      "Chance": 86,
-      "Description": "Desolation"
-    },
-    {
-      "Chance": 87,
-      "Description": "Strength"
-    },
-    {
-      "Chance": 88,
-      "Description": "Knowledge"
-    },
-    {
-      "Chance": 89,
-      "Description": "Truth"
-    },
-    {
-      "Chance": 90,
-      "Description": "Quest"
-    },
-    {
-      "Chance": 91,
-      "Description": "Pride"
-    },
-    {
-      "Chance": 92,
-      "Description": "Loss"
-    },
-    {
-      "Chance": 93,
-      "Description": "Law"
-    },
-    {
-      "Chance": 94,
-      "Description": "Path"
-    },
-    {
-      "Chance": 95,
-      "Description": "Warning"
-    },
-    {
-      "Chance": 96,
-      "Description": "Relationship"
-    },
-    {
-      "Chance": 97,
-      "Description": "Wealth"
-    },
-    {
-      "Chance": 98,
-      "Description": "Home"
-    },
-    {
-      "Chance": 99,
-      "Description": "Strategy"
-    },
-    {
-      "Chance": 100,
-      "Description": "Supply"
-    }
-  ],
-  "Feature": {
-    "Aspect": [
-      {
-        "Chance": 2,
-        "Description": "Blocked"
-      },
-      {
-        "Chance": 4,
-        "Description": "Crafted"
-      },
-      {
-        "Chance": 6,
-        "Description": "Ancient"
-      },
-      {
-        "Chance": 8,
-        "Description": "Sunken"
-      },
-      {
-        "Chance": 10,
-        "Description": "Trapped"
-      },
-      {
-        "Chance": 12,
-        "Description": "Secret"
-      },
-      {
-        "Chance": 14,
-        "Description": "Toxic"
-      },
-      {
-        "Chance": 16,
-        "Description": "Ruined"
-      },
-      {
-        "Chance": 18,
-        "Description": "Defended"
-      },
-      {
-        "Chance": 20,
-        "Description": "Decaying"
-      },
-      {
-        "Chance": 22,
-        "Description": "Marked"
-      },
-      {
-        "Chance": 24,
-        "Description": "Guarded"
-      },
-      {
-        "Chance": 26,
-        "Description": "Inaccessible"
-      },
-      {
-        "Chance": 28,
-        "Description": "Foreboding"
-      },
-      {
-        "Chance": 30,
-        "Description": "Veiled"
-      },
-      {
-        "Chance": 32,
-        "Description": "Deep"
-      },
-      {
-        "Chance": 34,
-        "Description": "Depleted"
-      },
-      {
-        "Chance": 36,
-        "Description": "Foul"
-      },
-      {
-        "Chance": 38,
-        "Description": "Elevated"
-      },
-      {
-        "Chance": 40,
-        "Description": "Moving"
-      },
-      {
-        "Chance": 42,
-        "Description": "Unnatural"
-      },
-      {
-        "Chance": 44,
-        "Description": "Active"
-      },
-      {
-        "Chance": 46,
-        "Description": "Confined"
-      },
-      {
-        "Chance": 48,
-        "Description": "Fortified"
-      },
-      {
-        "Chance": 50,
-        "Description": "Collapsed"
-      },
-      {
-        "Chance": 52,
-        "Description": "Isolated"
-      },
-      {
-        "Chance": 54,
-        "Description": "Destroyed"
-      },
-      {
-        "Chance": 56,
-        "Description": "Open"
-      },
-      {
-        "Chance": 58,
-        "Description": "Sacred"
-      },
-      {
-        "Chance": 60,
-        "Description": "Flooded"
-      },
-      {
-        "Chance": 62,
-        "Description": "Complex"
-      },
-      {
-        "Chance": 64,
-        "Description": "Abundant"
-      },
-      {
-        "Chance": 66,
-        "Description": "Hidden"
-      },
-      {
-        "Chance": 68,
-        "Description": "Expansive"
-      },
-      {
-        "Chance": 70,
-        "Description": "Mysterious"
-      },
-      {
-        "Chance": 72,
-        "Description": "Unstable"
-      },
-      {
-        "Chance": 74,
-        "Description": "Fragile"
-      },
-      {
-        "Chance": 76,
-        "Description": "Broken"
-      },
-      {
-        "Chance": 78,
-        "Description": "Ensnaring"
-      },
-      {
-        "Chance": 80,
-        "Description": "Pillaged"
-      },
-      {
-        "Chance": 82,
-        "Description": "Sealed"
-      },
-      {
-        "Chance": 84,
-        "Description": "Makeshift"
-      },
-      {
-        "Chance": 86,
-        "Description": "Treacherous"
-      },
-      {
-        "Chance": 88,
-        "Description": "Natural"
-      },
-      {
-        "Chance": 90,
-        "Description": "Dead"
-      },
-      {
-        "Chance": 92,
-        "Description": "Unusual"
-      },
-      {
-        "Chance": 94,
-        "Description": "Abandoned"
-      },
-      {
-        "Chance": 96,
-        "Description": "Deadly"
-      },
-      {
-        "Chance": 98,
-        "Description": "Forgotten"
-      },
-      {
-        "Chance": 100,
-        "Description": "Mystical"
-      }
-    ],
-    "Focus": [
-      {
-        "Chance": 2,
-        "Description": "Attack"
-      },
-      {
-        "Chance": 4,
-        "Description": "Threshold"
-      },
-      {
-        "Chance": 6,
-        "Description": "Boundary"
-      },
-      {
-        "Chance": 8,
-        "Description": "Alarm"
-      },
-      {
-        "Chance": 10,
-        "Description": "Exit"
-      },
-      {
-        "Chance": 12,
-        "Description": "Passage"
-      },
-      {
-        "Chance": 14,
-        "Description": "Crossing"
-      },
-      {
-        "Chance": 16,
-        "Description": "Trigger"
-      },
-      {
-        "Chance": 18,
-        "Description": "Trap"
-      },
-      {
-        "Chance": 20,
-        "Description": "Hideaway"
-      },
-      {
-        "Chance": 22,
-        "Description": "Nature"
-      },
-      {
-        "Chance": 24,
-        "Description": "Sign"
-      },
-      {
-        "Chance": 26,
-        "Description": "Refuge"
-      },
-      {
-        "Chance": 28,
-        "Description": "Valuables"
-      },
-      {
-        "Chance": 30,
-        "Description": "Breach"
-      },
-      {
-        "Chance": 32,
-        "Description": "Route"
-      },
-      {
-        "Chance": 34,
-        "Description": "Location"
-      },
-      {
-        "Chance": 36,
-        "Description": "Trail"
-      },
-      {
-        "Chance": 38,
-        "Description": "Supply"
-      },
-      {
-        "Chance": 40,
-        "Description": "History"
-      },
-      {
-        "Chance": 42,
-        "Description": "Prisoner"
-      },
-      {
-        "Chance": 44,
-        "Description": "Habitation"
-      },
-      {
-        "Chance": 46,
-        "Description": "Debris"
-      },
-      {
-        "Chance": 48,
-        "Description": "Creature"
-      },
-      {
-        "Chance": 50,
-        "Description": "Lair"
-      },
-      {
-        "Chance": 52,
-        "Description": "Person"
-      },
-      {
-        "Chance": 54,
-        "Description": "Enclosure"
-      },
-      {
-        "Chance": 56,
-        "Description": "Remains"
-      },
-      {
-        "Chance": 58,
-        "Description": "Water"
-      },
-      {
-        "Chance": 60,
-        "Description": "Message"
-      },
-      {
-        "Chance": 62,
-        "Description": "Darkness"
-      },
-      {
-        "Chance": 64,
-        "Description": "Opening"
-      },
-      {
-        "Chance": 66,
-        "Description": "Weapon"
-      },
-      {
-        "Chance": 68,
-        "Description": "Entry"
-      },
-      {
-        "Chance": 70,
-        "Description": "Illumination"
-      },
-      {
-        "Chance": 72,
-        "Description": "Obstacle"
-      },
-      {
-        "Chance": 74,
-        "Description": "Craft"
-      },
-      {
-        "Chance": 76,
-        "Description": "Container"
-      },
-      {
-        "Chance": 78,
-        "Description": "Information"
-      },
-      {
-        "Chance": 80,
-        "Description": "Grave"
-      },
-      {
-        "Chance": 82,
-        "Description": "Equipment"
-      },
-      {
-        "Chance": 84,
-        "Description": "Shelter"
-      },
-      {
-        "Chance": 86,
-        "Description": "Denizen"
-      },
-      {
-        "Chance": 88,
-        "Description": "Environment"
-      },
-      {
-        "Chance": 90,
-        "Description": "Material"
-      },
-      {
-        "Chance": 92,
-        "Description": "Resource"
-      },
-      {
-        "Chance": 94,
-        "Description": "Corruption"
-      },
-      {
-        "Chance": 96,
-        "Description": "Death"
-      },
-      {
-        "Chance": 98,
-        "Description": "Function"
-      },
-      {
-        "Chance": 100,
-        "Description": "Power"
-      }
-    ]
-  },
-  "Trap": {
-    "Event": [
-      {
-        "Chance": 4,
-        "Description": "Block"
-      },
-      {
-        "Chance": 8,
-        "Description": "Create"
-      },
-      {
-        "Chance": 12,
-        "Description": "Break"
-      },
-      {
-        "Chance": 16,
-        "Description": "Puncture"
-      },
-      {
-        "Chance": 20,
-        "Description": "Entangle"
-      },
-      {
-        "Chance": 24,
-        "Description": "Enclose"
-      },
-      {
-        "Chance": 28,
-        "Description": "Ambush"
-      },
-      {
-        "Chance": 32,
-        "Description": "Snare"
-      },
-      {
-        "Chance": 36,
-        "Description": "Change"
-      },
-      {
-        "Chance": 40,
-        "Description": "Imitate"
-      },
-      {
-        "Chance": 44,
-        "Description": "Crush"
-      },
-      {
-        "Chance": 48,
-        "Description": "Drop"
-      },
-      {
-        "Chance": 52,
-        "Description": "Conceal"
-      },
-      {
-        "Chance": 56,
-        "Description": "Lure"
-      },
-      {
-        "Chance": 60,
-        "Description": "Release"
-      },
-      {
-        "Chance": 64,
-        "Description": "Obscure"
-      },
-      {
-        "Chance": 68,
-        "Description": "Cut"
-      },
-      {
-        "Chance": 72,
-        "Description": "Smother"
-      },
-      {
-        "Chance": 76,
-        "Description": "Collapse"
-      },
-      {
-        "Chance": 80,
-        "Description": "Summon"
-      },
-      {
-        "Chance": 84,
-        "Description": "Move"
-      },
-      {
-        "Chance": 88,
-        "Description": "Surprise"
-      },
-      {
-        "Chance": 92,
-        "Description": "Divert"
-      },
-      {
-        "Chance": 96,
-        "Description": "Attack"
-      },
-      {
-        "Chance": 100,
-        "Description": "Trigger"
-      }
-    ],
-    "Component": [
-      {
-        "Chance": 4,
-        "Description": "Pit"
-      },
-      {
-        "Chance": 8,
-        "Description": "Water"
-      },
-      {
-        "Chance": 12,
-        "Description": "Fire"
-      },
-      {
-        "Chance": 16,
-        "Description": "Projectile"
-      },
-      {
-        "Chance": 20,
-        "Description": "Passage"
-      },
-      {
-        "Chance": 24,
-        "Description": "Fall"
-      },
-      {
-        "Chance": 28,
-        "Description": "Debris"
-      },
-      {
-        "Chance": 32,
-        "Description": "Fear"
-      },
-      {
-        "Chance": 36,
-        "Description": "Alarm"
-      },
-      {
-        "Chance": 40,
-        "Description": "Trigger"
-      },
-      {
-        "Chance": 44,
-        "Description": "Cold"
-      },
-      {
-        "Chance": 48,
-        "Description": "Weapon"
-      },
-      {
-        "Chance": 52,
-        "Description": "Darkness"
-      },
-      {
-        "Chance": 56,
-        "Description": "Decay"
-      },
-      {
-        "Chance": 60,
-        "Description": "Path"
-      },
-      {
-        "Chance": 64,
-        "Description": "Stone"
-      },
-      {
-        "Chance": 68,
-        "Description": "Terrain"
-      },
-      {
-        "Chance": 72,
-        "Description": "Poison"
-      },
-      {
-        "Chance": 76,
-        "Description": "Barrier"
-      },
-      {
-        "Chance": 80,
-        "Description": "Overhead"
-      },
-      {
-        "Chance": 84,
-        "Description": "Magic"
-      },
-      {
-        "Chance": 88,
-        "Description": "Toxin"
-      },
-      {
-        "Chance": 92,
-        "Description": "Earth"
-      },
-      {
-        "Chance": 96,
-        "Description": "Light"
-      },
-      {
-        "Chance": 100,
-        "Description": "Denizen"
-      }
-    ]
-  },
-  "Combat Event": {
-    "Method": [
-      {
-        "Chance": 2,
-        "Description": "Defy"
-      },
-      {
-        "Chance": 4,
-        "Description": "Break"
-      },
-      {
-        "Chance": 6,
-        "Description": "Trick"
-      },
-      {
-        "Chance": 8,
-        "Description": "Evade"
-      },
-      {
-        "Chance": 10,
-        "Description": "Protect"
-      },
-      {
-        "Chance": 12,
-        "Description": "Overwhelm"
-      },
-      {
-        "Chance": 14,
-        "Description": "Persevere"
-      },
-      {
-        "Chance": 16,
-        "Description": "Assist"
-      },
-      {
-        "Chance": 18,
-        "Description": "Await"
-      },
-      {
-        "Chance": 20,
-        "Description": "Abort"
-      },
-      {
-        "Chance": 22,
-        "Description": "Block"
-      },
-      {
-        "Chance": 24,
-        "Description": "Collide"
-      },
-      {
-        "Chance": 26,
-        "Description": "Focus"
-      },
-      {
-        "Chance": 28,
-        "Description": "Advance"
-      },
-      {
-        "Chance": 30,
-        "Description": "Breach"
-      },
-      {
-        "Chance": 32,
-        "Description": "Endure"
-      },
-      {
-        "Chance": 34,
-        "Description": "Assault"
-      },
-      {
-        "Chance": 36,
-        "Description": "Charge"
-      },
-      {
-        "Chance": 38,
-        "Description": "Escalate"
-      },
-      {
-        "Chance": 40,
-        "Description": "Sunder"
-      },
-      {
-        "Chance": 42,
-        "Description": "Shatter"
-      },
-      {
-        "Chance": 44,
-        "Description": "Aim"
-      },
-      {
-        "Chance": 46,
-        "Description": "Stagger"
-      },
-      {
-        "Chance": 48,
-        "Description": "Counter"
-      },
-      {
-        "Chance": 50,
-        "Description": "Seize"
-      },
-      {
-        "Chance": 52,
-        "Description": "Impact"
-      },
-      {
-        "Chance": 54,
-        "Description": "Entangle"
-      },
-      {
-        "Chance": 56,
-        "Description": "Hold"
-      },
-      {
-        "Chance": 58,
-        "Description": "Deflect"
-      },
-      {
-        "Chance": 60,
-        "Description": "Drop"
-      },
-      {
-        "Chance": 62,
-        "Description": "Lose"
-      },
-      {
-        "Chance": 64,
-        "Description": "Sweep"
-      },
-      {
-        "Chance": 66,
-        "Description": "Secure"
-      },
-      {
-        "Chance": 68,
-        "Description": "Cover"
-      },
-      {
-        "Chance": 70,
-        "Description": "Withdraw"
-      },
-      {
-        "Chance": 72,
-        "Description": "Clash"
-      },
-      {
-        "Chance": 74,
-        "Description": "Amplify"
-      },
-      {
-        "Chance": 76,
-        "Description": "Batter"
-      },
-      {
-        "Chance": 78,
-        "Description": "Feint"
-      },
-      {
-        "Chance": 80,
-        "Description": "Shove"
-      },
-      {
-        "Chance": 82,
-        "Description": "Embed"
-      },
-      {
-        "Chance": 84,
-        "Description": "Affect"
-      },
-      {
-        "Chance": 86,
-        "Description": "Probe"
-      },
-      {
-        "Chance": 88,
-        "Description": "Force"
-      },
-      {
-        "Chance": 90,
-        "Description": "Intensify"
-      },
-      {
-        "Chance": 92,
-        "Description": "Distract"
-      },
-      {
-        "Chance": 94,
-        "Description": "Challenge"
-      },
-      {
-        "Chance": 96,
-        "Description": "Brawl"
-      },
-      {
-        "Chance": 98,
-        "Description": "Coordinate"
-      },
-      {
-        "Chance": 100,
-        "Description": "Overrun"
-      }
-    ],
-    "Target": [
-      {
-        "Chance": 2,
-        "Description": "Control"
-      },
-      {
-        "Chance": 4,
-        "Description": "Defense"
-      },
-      {
-        "Chance": 6,
-        "Description": "Limbs"
-      },
-      {
-        "Chance": 8,
-        "Description": "Focus"
-      },
-      {
-        "Chance": 10,
-        "Description": "Advantage"
-      },
-      {
-        "Chance": 12,
-        "Description": "Range"
-      },
-      {
-        "Chance": 14,
-        "Description": "Stress"
-      },
-      {
-        "Chance": 16,
-        "Description": "Sense"
-      },
-      {
-        "Chance": 18,
-        "Description": "Weakness"
-      },
-      {
-        "Chance": 20,
-        "Description": "Opening"
-      },
-      {
-        "Chance": 22,
-        "Description": "Fear"
-      },
-      {
-        "Chance": 24,
-        "Description": "Instinct"
-      },
-      {
-        "Chance": 26,
-        "Description": "Footing"
-      },
-      {
-        "Chance": 28,
-        "Description": "Maneuver"
-      },
-      {
-        "Chance": 30,
-        "Description": "Reach"
-      },
-      {
-        "Chance": 32,
-        "Description": "Harm"
-      },
-      {
-        "Chance": 34,
-        "Description": "Finesse"
-      },
-      {
-        "Chance": 36,
-        "Description": "Weapon"
-      },
-      {
-        "Chance": 38,
-        "Description": "Environment"
-      },
-      {
-        "Chance": 40,
-        "Description": "Technique"
-      },
-      {
-        "Chance": 42,
-        "Description": "Surprise"
-      },
-      {
-        "Chance": 44,
-        "Description": "Pride"
-      },
-      {
-        "Chance": 46,
-        "Description": "Wound"
-      },
-      {
-        "Chance": 48,
-        "Description": "Precision"
-      },
-      {
-        "Chance": 50,
-        "Description": "Ally"
-      },
-      {
-        "Chance": 52,
-        "Description": "Ground"
-      },
-      {
-        "Chance": 54,
-        "Description": "Courage"
-      },
-      {
-        "Chance": 56,
-        "Description": "Companion"
-      },
-      {
-        "Chance": 58,
-        "Description": "Object"
-      },
-      {
-        "Chance": 60,
-        "Description": "Momentum"
-      },
-      {
-        "Chance": 62,
-        "Description": "Speed"
-      },
-      {
-        "Chance": 64,
-        "Description": "Strength"
-      },
-      {
-        "Chance": 66,
-        "Description": "Supply"
-      },
-      {
-        "Chance": 68,
-        "Description": "Terrain"
-      },
-      {
-        "Chance": 70,
-        "Description": "Armor"
-      },
-      {
-        "Chance": 72,
-        "Description": "Skill"
-      },
-      {
-        "Chance": 74,
-        "Description": "Body"
-      },
-      {
-        "Chance": 76,
-        "Description": "Protection"
-      },
-      {
-        "Chance": 78,
-        "Description": "Resolve"
-      },
-      {
-        "Chance": 80,
-        "Description": "Ferocity"
-      },
-      {
-        "Chance": 82,
-        "Description": "Shield"
-      },
-      {
-        "Chance": 84,
-        "Description": "Ammo"
-      },
-      {
-        "Chance": 86,
-        "Description": "Anger"
-      },
-      {
-        "Chance": 88,
-        "Description": "Opportunity"
-      },
-      {
-        "Chance": 90,
-        "Description": "Balance"
-      },
-      {
-        "Chance": 92,
-        "Description": "Position"
-      },
-      {
-        "Chance": 94,
-        "Description": "Barrier"
-      },
-      {
-        "Chance": 96,
-        "Description": "Strategy"
-      },
-      {
-        "Chance": 98,
-        "Description": "Grasp"
-      },
-      {
-        "Chance": 100,
-        "Description": "Power"
-      }
-    ]
-  }
+  ]
 }

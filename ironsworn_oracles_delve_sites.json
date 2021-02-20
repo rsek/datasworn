@@ -1,1162 +1,1226 @@
 {
-  "Site Oracles": {
-    "Site Name": {
-      "Format": [
+  "Title": "Ironsworn Site Oracles",
+  "Categories": [
+    {
+      "Name": "Site Name",
+      "Oracles": [
         {
-          "Chance": 25,
-          "Description": "[Description] {Place}"
+          "Name": "Format",
+          "Oracle Table": [
+            {
+              "Chance": 25,
+              "Description": "[Description] {Place}"
+            },
+            {
+              "Chance": 50,
+              "Description": "{Place} of [Detail]"
+            },
+            {
+              "Chance": 70,
+              "Description": "{Place} of [Description] [Detail]"
+            },
+            {
+              "Chance": 80,
+              "Description": "{Place} of [Namesake]'s [Detail]"
+            },
+            {
+              "Chance": 85,
+              "Description": "[Namesake] {Place}"
+            },
+            {
+              "Chance": 95,
+              "Description": "[Description] {Place} of [Namesake]"
+            },
+            {
+              "Chance": 100,
+              "Description": "{Place} of [Namesake]"
+            }
+          ]
         },
         {
-          "Chance": 50,
-          "Description": "{Place} of [Detail]"
+          "Name": "Description",
+          "Oracle Table": [
+            {
+              "Chance": 2,
+              "Description": "Deep"
+            },
+            {
+              "Chance": 4,
+              "Description": "Tainted"
+            },
+            {
+              "Chance": 6,
+              "Description": "Grey"
+            },
+            {
+              "Chance": 8,
+              "Description": "Forgotten"
+            },
+            {
+              "Chance": 10,
+              "Description": "Flooded"
+            },
+            {
+              "Chance": 12,
+              "Description": "Forbidden"
+            },
+            {
+              "Chance": 14,
+              "Description": "Barren"
+            },
+            {
+              "Chance": 16,
+              "Description": "Lost"
+            },
+            {
+              "Chance": 18,
+              "Description": "Cursed"
+            },
+            {
+              "Chance": 20,
+              "Description": "Fell"
+            },
+            {
+              "Chance": 22,
+              "Description": "Sunken"
+            },
+            {
+              "Chance": 24,
+              "Description": "Nightmare"
+            },
+            {
+              "Chance": 26,
+              "Description": "Infernal"
+            },
+            {
+              "Chance": 28,
+              "Description": "Dark"
+            },
+            {
+              "Chance": 30,
+              "Description": "Bloodstained"
+            },
+            {
+              "Chance": 32,
+              "Description": "Haunted"
+            },
+            {
+              "Chance": 34,
+              "Description": "White"
+            },
+            {
+              "Chance": 36,
+              "Description": "Shrouded"
+            },
+            {
+              "Chance": 38,
+              "Description": "Wasted"
+            },
+            {
+              "Chance": 40,
+              "Description": "Grim"
+            },
+            {
+              "Chance": 42,
+              "Description": "Endless"
+            },
+            {
+              "Chance": 44,
+              "Description": "Crumbling"
+            },
+            {
+              "Chance": 46,
+              "Description": "Undying"
+            },
+            {
+              "Chance": 48,
+              "Description": "Bloodied"
+            },
+            {
+              "Chance": 50,
+              "Description": "Forsaken"
+            },
+            {
+              "Chance": 52,
+              "Description": "Silent"
+            },
+            {
+              "Chance": 54,
+              "Description": "Blighted"
+            },
+            {
+              "Chance": 56,
+              "Description": "Iron"
+            },
+            {
+              "Chance": 58,
+              "Description": "Frozen"
+            },
+            {
+              "Chance": 60,
+              "Description": "Abyssal"
+            },
+            {
+              "Chance": 62,
+              "Description": "Crimson"
+            },
+            {
+              "Chance": 64,
+              "Description": "Silver"
+            },
+            {
+              "Chance": 66,
+              "Description": "Desecrated"
+            },
+            {
+              "Chance": 68,
+              "Description": "Ashen"
+            },
+            {
+              "Chance": 70,
+              "Description": "Elder"
+            },
+            {
+              "Chance": 72,
+              "Description": "Scorched"
+            },
+            {
+              "Chance": 74,
+              "Description": "Unknown"
+            },
+            {
+              "Chance": 76,
+              "Description": "Scarred"
+            },
+            {
+              "Chance": 78,
+              "Description": "Broken"
+            },
+            {
+              "Chance": 80,
+              "Description": "Chaotic"
+            },
+            {
+              "Chance": 82,
+              "Description": "Black"
+            },
+            {
+              "Chance": 84,
+              "Description": "Hidden"
+            },
+            {
+              "Chance": 86,
+              "Description": "Sundered"
+            },
+            {
+              "Chance": 88,
+              "Description": "Shattered"
+            },
+            {
+              "Chance": 90,
+              "Description": "Dreaded"
+            },
+            {
+              "Chance": 92,
+              "Description": "Secret"
+            },
+            {
+              "Chance": 94,
+              "Description": "High"
+            },
+            {
+              "Chance": 96,
+              "Description": "Sacred"
+            },
+            {
+              "Chance": 98,
+              "Description": "Fallen"
+            },
+            {
+              "Chance": 100,
+              "Description": "Ruined"
+            }
+          ]
         },
         {
-          "Chance": 70,
-          "Description": "{Place} of [Description] [Detail]"
+          "Name": "Detail",
+          "Oracle Table": [
+            {
+              "Chance": 2,
+              "Description": "Blight"
+            },
+            {
+              "Chance": 4,
+              "Description": "Strife"
+            },
+            {
+              "Chance": 6,
+              "Description": "Nightfall"
+            },
+            {
+              "Chance": 8,
+              "Description": "Fury"
+            },
+            {
+              "Chance": 10,
+              "Description": "Terror"
+            },
+            {
+              "Chance": 12,
+              "Description": "Truth"
+            },
+            {
+              "Chance": 14,
+              "Description": "Spring"
+            },
+            {
+              "Chance": 16,
+              "Description": "Sanctuary"
+            },
+            {
+              "Chance": 18,
+              "Description": "Bone"
+            },
+            {
+              "Chance": 20,
+              "Description": "Specters"
+            },
+            {
+              "Chance": 22,
+              "Description": "Daybreak"
+            },
+            {
+              "Chance": 24,
+              "Description": "Doom"
+            },
+            {
+              "Chance": 26,
+              "Description": "Treachery"
+            },
+            {
+              "Chance": 28,
+              "Description": "Blood"
+            },
+            {
+              "Chance": 30,
+              "Description": "War"
+            },
+            {
+              "Chance": 32,
+              "Description": "Torment"
+            },
+            {
+              "Chance": 34,
+              "Description": "Iron"
+            },
+            {
+              "Chance": 36,
+              "Description": "Silence"
+            },
+            {
+              "Chance": 38,
+              "Description": "Mist"
+            },
+            {
+              "Chance": 40,
+              "Description": "Isolation"
+            },
+            {
+              "Chance": 42,
+              "Description": "Runes"
+            },
+            {
+              "Chance": 44,
+              "Description": "Rot"
+            },
+            {
+              "Chance": 46,
+              "Description": "Corruption"
+            },
+            {
+              "Chance": 48,
+              "Description": "Prophecy"
+            },
+            {
+              "Chance": 50,
+              "Description": "Fate"
+            },
+            {
+              "Chance": 52,
+              "Description": "Twilight"
+            },
+            {
+              "Chance": 54,
+              "Description": "Power"
+            },
+            {
+              "Chance": 56,
+              "Description": "Darkness"
+            },
+            {
+              "Chance": 58,
+              "Description": "Gloom"
+            },
+            {
+              "Chance": 60,
+              "Description": "Storms"
+            },
+            {
+              "Chance": 62,
+              "Description": "Hope"
+            },
+            {
+              "Chance": 64,
+              "Description": "Lament"
+            },
+            {
+              "Chance": 66,
+              "Description": "Frost"
+            },
+            {
+              "Chance": 68,
+              "Description": "Souls"
+            },
+            {
+              "Chance": 70,
+              "Description": "Winter"
+            },
+            {
+              "Chance": 72,
+              "Description": "Sadness"
+            },
+            {
+              "Chance": 74,
+              "Description": "Desolation"
+            },
+            {
+              "Chance": 76,
+              "Description": "Bane"
+            },
+            {
+              "Chance": 78,
+              "Description": "Lies"
+            },
+            {
+              "Chance": 80,
+              "Description": "Ash"
+            },
+            {
+              "Chance": 82,
+              "Description": "Banishment"
+            },
+            {
+              "Chance": 84,
+              "Description": "Shadow"
+            },
+            {
+              "Chance": 86,
+              "Description": "Madness"
+            },
+            {
+              "Chance": 88,
+              "Description": "Stone"
+            },
+            {
+              "Chance": 90,
+              "Description": "Secrets"
+            },
+            {
+              "Chance": 92,
+              "Description": "Despair"
+            },
+            {
+              "Chance": 94,
+              "Description": "Blades"
+            },
+            {
+              "Chance": 96,
+              "Description": "Dread"
+            },
+            {
+              "Chance": 98,
+              "Description": "Light"
+            },
+            {
+              "Chance": 100,
+              "Description": "Wrath"
+            }
+          ]
         },
         {
-          "Chance": 80,
-          "Description": "{Place} of [Namesake]'s [Detail]"
+          "Name": "Namesake",
+          "Oracle Table": [
+            {
+              "Chance": 2,
+              "Description": "Breckon"
+            },
+            {
+              "Chance": 4,
+              "Description": "Issara"
+            },
+            {
+              "Chance": 6,
+              "Description": "Milenna"
+            },
+            {
+              "Chance": 8,
+              "Description": "Thorval"
+            },
+            {
+              "Chance": 10,
+              "Description": "Khulan"
+            },
+            {
+              "Chance": 12,
+              "Description": "Aurvang"
+            },
+            {
+              "Chance": 14,
+              "Description": "Kalida"
+            },
+            {
+              "Chance": 16,
+              "Description": "Keeara"
+            },
+            {
+              "Chance": 18,
+              "Description": "Andor"
+            },
+            {
+              "Chance": 20,
+              "Description": "Zakaria"
+            },
+            {
+              "Chance": 22,
+              "Description": "Willa"
+            },
+            {
+              "Chance": 24,
+              "Description": "Etana"
+            },
+            {
+              "Chance": 26,
+              "Description": "Valgard"
+            },
+            {
+              "Chance": 28,
+              "Description": "Kenrick"
+            },
+            {
+              "Chance": 30,
+              "Description": "Wyland"
+            },
+            {
+              "Chance": 32,
+              "Description": "Sidura"
+            },
+            {
+              "Chance": 34,
+              "Description": "Svala"
+            },
+            {
+              "Chance": 36,
+              "Description": "Kajir"
+            },
+            {
+              "Chance": 38,
+              "Description": "Saiven"
+            },
+            {
+              "Chance": 40,
+              "Description": "Callwen"
+            },
+            {
+              "Chance": 42,
+              "Description": "Zhan"
+            },
+            {
+              "Chance": 44,
+              "Description": "Solana"
+            },
+            {
+              "Chance": 46,
+              "Description": "Ildar"
+            },
+            {
+              "Chance": 48,
+              "Description": "Keelan"
+            },
+            {
+              "Chance": 50,
+              "Description": "Thrain"
+            },
+            {
+              "Chance": 52,
+              "Description": "Kynan"
+            },
+            {
+              "Chance": 54,
+              "Description": "Jadina"
+            },
+            {
+              "Chance": 56,
+              "Description": "Radek"
+            },
+            {
+              "Chance": 58,
+              "Description": "Wulan"
+            },
+            {
+              "Chance": 60,
+              "Description": "Garion"
+            },
+            {
+              "Chance": 62,
+              "Description": "Eysa"
+            },
+            {
+              "Chance": 64,
+              "Description": "Kolor"
+            },
+            {
+              "Chance": 66,
+              "Description": "Katarra"
+            },
+            {
+              "Chance": 68,
+              "Description": "Dain"
+            },
+            {
+              "Chance": 70,
+              "Description": "Farina"
+            },
+            {
+              "Chance": 72,
+              "Description": "Yala"
+            },
+            {
+              "Chance": 74,
+              "Description": "Kodroth"
+            },
+            {
+              "Chance": 76,
+              "Description": "Morien"
+            },
+            {
+              "Chance": 78,
+              "Description": "Akida"
+            },
+            {
+              "Chance": 80,
+              "Description": "Haldorr"
+            },
+            {
+              "Chance": 82,
+              "Description": "Nyrad"
+            },
+            {
+              "Chance": 84,
+              "Description": "Edda"
+            },
+            {
+              "Chance": 86,
+              "Description": "Jorund"
+            },
+            {
+              "Chance": 88,
+              "Description": "Morraine"
+            },
+            {
+              "Chance": 90,
+              "Description": "Lindar"
+            },
+            {
+              "Chance": 92,
+              "Description": "Sithra"
+            },
+            {
+              "Chance": 94,
+              "Description": "Torgan"
+            },
+            {
+              "Chance": 96,
+              "Description": "Arnorr"
+            },
+            {
+              "Chance": 98,
+              "Description": "Thyri"
+            },
+            {
+              "Chance": 100,
+              "Description": "Erisia"
+            }
+          ]
         },
         {
-          "Chance": 85,
-          "Description": "[Namesake] {Place}"
-        },
-        {
-          "Chance": 95,
-          "Description": "[Description] {Place} of [Namesake]"
-        },
-        {
-          "Chance": 100,
-          "Description": "{Place} of [Namesake]"
+          "Name": "Place",
+          "Oracles": [
+            {
+              "Name": "Barrow",
+              "Oracle Table": [
+                {
+                  "Chance": 16,
+                  "Description": "Sepulcher"
+                },
+                {
+                  "Chance": 32,
+                  "Description": "Grave"
+                },
+                {
+                  "Chance": 49,
+                  "Description": "Crypt"
+                },
+                {
+                  "Chance": 66,
+                  "Description": "Mound"
+                },
+                {
+                  "Chance": 83,
+                  "Description": "Tomb"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Barrow"
+                }
+              ]
+            },
+            {
+              "Name": "Cavern",
+              "Oracle Table": [
+                {
+                  "Chance": 10,
+                  "Description": "Abyss"
+                },
+                {
+                  "Chance": 20,
+                  "Description": "Caverns"
+                },
+                {
+                  "Chance": 30,
+                  "Description": "Caves"
+                },
+                {
+                  "Chance": 40,
+                  "Description": "Chasm"
+                },
+                {
+                  "Chance": 50,
+                  "Description": "Depths"
+                },
+                {
+                  "Chance": 60,
+                  "Description": "Hollow"
+                },
+                {
+                  "Chance": 70,
+                  "Description": "Lair"
+                },
+                {
+                  "Chance": 80,
+                  "Description": "Rift"
+                },
+                {
+                  "Chance": 90,
+                  "Description": "Tunnels"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Warren"
+                }
+              ]
+            },
+            {
+              "Name": "Frozen Cavern",
+              "Oracle Table": [
+                {
+                  "Chance": 10,
+                  "Description": "Abyss"
+                },
+                {
+                  "Chance": 20,
+                  "Description": "Caverns"
+                },
+                {
+                  "Chance": 30,
+                  "Description": "Caves"
+                },
+                {
+                  "Chance": 40,
+                  "Description": "Chasm"
+                },
+                {
+                  "Chance": 50,
+                  "Description": "Depths"
+                },
+                {
+                  "Chance": 60,
+                  "Description": "Hollow"
+                },
+                {
+                  "Chance": 70,
+                  "Description": "Lair"
+                },
+                {
+                  "Chance": 80,
+                  "Description": "Rift"
+                },
+                {
+                  "Chance": 90,
+                  "Description": "Tunnels"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Warren"
+                }
+              ]
+            },
+            {
+              "Name": "Icereach",
+              "Oracle Table": [
+                {
+                  "Chance": 16,
+                  "Description": "Icemark"
+                },
+                {
+                  "Chance": 32,
+                  "Description": "Wintertide"
+                },
+                {
+                  "Chance": 49,
+                  "Description": "Reach"
+                },
+                {
+                  "Chance": 66,
+                  "Description": "Waste"
+                },
+                {
+                  "Chance": 83,
+                  "Description": "Expanse"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Barrens"
+                }
+              ]
+            },
+            {
+              "Name": "Mine",
+              "Oracle Table": [
+                {
+                  "Chance": 16,
+                  "Description": "Lode"
+                },
+                {
+                  "Chance": 32,
+                  "Description": "Dig"
+                },
+                {
+                  "Chance": 49,
+                  "Description": "Forge"
+                },
+                {
+                  "Chance": 66,
+                  "Description": "Mine"
+                },
+                {
+                  "Chance": 83,
+                  "Description": "Tunnels"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Cut"
+                }
+              ]
+            },
+            {
+              "Name": "Pass",
+              "Oracle Table": [
+                {
+                  "Chance": 10,
+                  "Description": "Cliffs"
+                },
+                {
+                  "Chance": 20,
+                  "Description": "Crag"
+                },
+                {
+                  "Chance": 30,
+                  "Description": "Cut"
+                },
+                {
+                  "Chance": 40,
+                  "Description": "Gap"
+                },
+                {
+                  "Chance": 50,
+                  "Description": "Gorge"
+                },
+                {
+                  "Chance": 60,
+                  "Description": "Heights"
+                },
+                {
+                  "Chance": 70,
+                  "Description": "Highlands"
+                },
+                {
+                  "Chance": 80,
+                  "Description": "Pass"
+                },
+                {
+                  "Chance": 90,
+                  "Description": "Reach"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Ridge"
+                }
+              ]
+            },
+            {
+              "Name": "Ruin",
+              "Oracle Table": [
+                {
+                  "Chance": 10,
+                  "Description": "Citadel"
+                },
+                {
+                  "Chance": 20,
+                  "Description": "Enclave"
+                },
+                {
+                  "Chance": 30,
+                  "Description": "Fortress"
+                },
+                {
+                  "Chance": 40,
+                  "Description": "Hall"
+                },
+                {
+                  "Chance": 50,
+                  "Description": "Keep"
+                },
+                {
+                  "Chance": 60,
+                  "Description": "Sanctuary"
+                },
+                {
+                  "Chance": 70,
+                  "Description": "Sanctum"
+                },
+                {
+                  "Chance": 80,
+                  "Description": "Spire"
+                },
+                {
+                  "Chance": 90,
+                  "Description": "Temple"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Tower"
+                }
+              ]
+            },
+            {
+              "Name": "Sea Cave",
+              "Oracle Table": [
+                {
+                  "Chance": 16,
+                  "Description": "Caves"
+                },
+                {
+                  "Chance": 32,
+                  "Description": "Channel"
+                },
+                {
+                  "Chance": 49,
+                  "Description": "Cove"
+                },
+                {
+                  "Chance": 66,
+                  "Description": "Hollow"
+                },
+                {
+                  "Chance": 83,
+                  "Description": "Pools"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Gouge"
+                }
+              ]
+            },
+            {
+              "Name": "Shadowfen",
+              "Oracle Table": [
+                {
+                  "Chance": 10,
+                  "Description": "Bog"
+                },
+                {
+                  "Chance": 20,
+                  "Description": "Fen"
+                },
+                {
+                  "Chance": 30,
+                  "Description": "Lowland"
+                },
+                {
+                  "Chance": 40,
+                  "Description": "Marsh"
+                },
+                {
+                  "Chance": 50,
+                  "Description": "Mire"
+                },
+                {
+                  "Chance": 60,
+                  "Description": "Morass"
+                },
+                {
+                  "Chance": 70,
+                  "Description": "Quagmire"
+                },
+                {
+                  "Chance": 80,
+                  "Description": "Floodlands"
+                },
+                {
+                  "Chance": 90,
+                  "Description": "Slough"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Wetlands"
+                }
+              ]
+            },
+            {
+              "Name": "Stronghold",
+              "Oracle Table": [
+                {
+                  "Chance": 10,
+                  "Description": "Bastion"
+                },
+                {
+                  "Chance": 20,
+                  "Description": "Citadel"
+                },
+                {
+                  "Chance": 30,
+                  "Description": "Fortress"
+                },
+                {
+                  "Chance": 40,
+                  "Description": "Garrison"
+                },
+                {
+                  "Chance": 50,
+                  "Description": "Haven"
+                },
+                {
+                  "Chance": 60,
+                  "Description": "Keep"
+                },
+                {
+                  "Chance": 70,
+                  "Description": "Outpost"
+                },
+                {
+                  "Chance": 80,
+                  "Description": "Refuge"
+                },
+                {
+                  "Chance": 90,
+                  "Description": "Sanctuary"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Watch"
+                }
+              ]
+            },
+            {
+              "Name": "Tanglewood",
+              "Oracle Table": [
+                {
+                  "Chance": 11,
+                  "Description": "Weald"
+                },
+                {
+                  "Chance": 23,
+                  "Description": "Tangle"
+                },
+                {
+                  "Chance": 35,
+                  "Description": "Bramble"
+                },
+                {
+                  "Chance": 48,
+                  "Description": "Briar"
+                },
+                {
+                  "Chance": 61,
+                  "Description": "Thicket"
+                },
+                {
+                  "Chance": 74,
+                  "Description": "Forest"
+                },
+                {
+                  "Chance": 87,
+                  "Description": "Wilds"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Wood"
+                }
+              ]
+            },
+            {
+              "Name": "Underkeep",
+              "Oracle Table": [
+                {
+                  "Chance": 10,
+                  "Description": "Catacomb"
+                },
+                {
+                  "Chance": 20,
+                  "Description": "Chambers"
+                },
+                {
+                  "Chance": 30,
+                  "Description": "Den"
+                },
+                {
+                  "Chance": 40,
+                  "Description": "Hall"
+                },
+                {
+                  "Chance": 50,
+                  "Description": "Labyrinth"
+                },
+                {
+                  "Chance": 60,
+                  "Description": "Maze"
+                },
+                {
+                  "Chance": 70,
+                  "Description": "Pit"
+                },
+                {
+                  "Chance": 80,
+                  "Description": "Sanctum"
+                },
+                {
+                  "Chance": 90,
+                  "Description": "Underkeep"
+                },
+                {
+                  "Chance": 100,
+                  "Description": "Vault"
+                }
+              ]
+            }
+          ]
         }
-      ],
-      "Description": [
-        {
-          "Chance": 2,
-          "Description": "Deep"
-        },
-        {
-          "Chance": 4,
-          "Description": "Tainted"
-        },
-        {
-          "Chance": 6,
-          "Description": "Grey"
-        },
-        {
-          "Chance": 8,
-          "Description": "Forgotten"
-        },
-        {
-          "Chance": 10,
-          "Description": "Flooded"
-        },
-        {
-          "Chance": 12,
-          "Description": "Forbidden"
-        },
-        {
-          "Chance": 14,
-          "Description": "Barren"
-        },
-        {
-          "Chance": 16,
-          "Description": "Lost"
-        },
-        {
-          "Chance": 18,
-          "Description": "Cursed"
-        },
-        {
-          "Chance": 20,
-          "Description": "Fell"
-        },
-        {
-          "Chance": 22,
-          "Description": "Sunken"
-        },
-        {
-          "Chance": 24,
-          "Description": "Nightmare"
-        },
-        {
-          "Chance": 26,
-          "Description": "Infernal"
-        },
-        {
-          "Chance": 28,
-          "Description": "Dark"
-        },
-        {
-          "Chance": 30,
-          "Description": "Bloodstained"
-        },
-        {
-          "Chance": 32,
-          "Description": "Haunted"
-        },
-        {
-          "Chance": 34,
-          "Description": "White"
-        },
-        {
-          "Chance": 36,
-          "Description": "Shrouded"
-        },
-        {
-          "Chance": 38,
-          "Description": "Wasted"
-        },
-        {
-          "Chance": 40,
-          "Description": "Grim"
-        },
-        {
-          "Chance": 42,
-          "Description": "Endless"
-        },
-        {
-          "Chance": 44,
-          "Description": "Crumbling"
-        },
-        {
-          "Chance": 46,
-          "Description": "Undying"
-        },
-        {
-          "Chance": 48,
-          "Description": "Bloodied"
-        },
-        {
-          "Chance": 50,
-          "Description": "Forsaken"
-        },
-        {
-          "Chance": 52,
-          "Description": "Silent"
-        },
-        {
-          "Chance": 54,
-          "Description": "Blighted"
-        },
-        {
-          "Chance": 56,
-          "Description": "Iron"
-        },
-        {
-          "Chance": 58,
-          "Description": "Frozen"
-        },
-        {
-          "Chance": 60,
-          "Description": "Abyssal"
-        },
-        {
-          "Chance": 62,
-          "Description": "Crimson"
-        },
-        {
-          "Chance": 64,
-          "Description": "Silver"
-        },
-        {
-          "Chance": 66,
-          "Description": "Desecrated"
-        },
-        {
-          "Chance": 68,
-          "Description": "Ashen"
-        },
-        {
-          "Chance": 70,
-          "Description": "Elder"
-        },
-        {
-          "Chance": 72,
-          "Description": "Scorched"
-        },
-        {
-          "Chance": 74,
-          "Description": "Unknown"
-        },
-        {
-          "Chance": 76,
-          "Description": "Scarred"
-        },
-        {
-          "Chance": 78,
-          "Description": "Broken"
-        },
-        {
-          "Chance": 80,
-          "Description": "Chaotic"
-        },
-        {
-          "Chance": 82,
-          "Description": "Black"
-        },
-        {
-          "Chance": 84,
-          "Description": "Hidden"
-        },
-        {
-          "Chance": 86,
-          "Description": "Sundered"
-        },
-        {
-          "Chance": 88,
-          "Description": "Shattered"
-        },
-        {
-          "Chance": 90,
-          "Description": "Dreaded"
-        },
-        {
-          "Chance": 92,
-          "Description": "Secret"
-        },
-        {
-          "Chance": 94,
-          "Description": "High"
-        },
-        {
-          "Chance": 96,
-          "Description": "Sacred"
-        },
-        {
-          "Chance": 98,
-          "Description": "Fallen"
-        },
-        {
-          "Chance": 100,
-          "Description": "Ruined"
-        }
-      ],
-      "Detail": [
-        {
-          "Chance": 2,
-          "Description": "Blight"
-        },
-        {
-          "Chance": 4,
-          "Description": "Strife"
-        },
-        {
-          "Chance": 6,
-          "Description": "Nightfall"
-        },
-        {
-          "Chance": 8,
-          "Description": "Fury"
-        },
-        {
-          "Chance": 10,
-          "Description": "Terror"
-        },
-        {
-          "Chance": 12,
-          "Description": "Truth"
-        },
-        {
-          "Chance": 14,
-          "Description": "Spring"
-        },
-        {
-          "Chance": 16,
-          "Description": "Sanctuary"
-        },
-        {
-          "Chance": 18,
-          "Description": "Bone"
-        },
-        {
-          "Chance": 20,
-          "Description": "Specters"
-        },
-        {
-          "Chance": 22,
-          "Description": "Daybreak"
-        },
-        {
-          "Chance": 24,
-          "Description": "Doom"
-        },
-        {
-          "Chance": 26,
-          "Description": "Treachery"
-        },
-        {
-          "Chance": 28,
-          "Description": "Blood"
-        },
-        {
-          "Chance": 30,
-          "Description": "War"
-        },
-        {
-          "Chance": 32,
-          "Description": "Torment"
-        },
-        {
-          "Chance": 34,
-          "Description": "Iron"
-        },
-        {
-          "Chance": 36,
-          "Description": "Silence"
-        },
-        {
-          "Chance": 38,
-          "Description": "Mist"
-        },
-        {
-          "Chance": 40,
-          "Description": "Isolation"
-        },
-        {
-          "Chance": 42,
-          "Description": "Runes"
-        },
-        {
-          "Chance": 44,
-          "Description": "Rot"
-        },
-        {
-          "Chance": 46,
-          "Description": "Corruption"
-        },
-        {
-          "Chance": 48,
-          "Description": "Prophecy"
-        },
-        {
-          "Chance": 50,
-          "Description": "Fate"
-        },
-        {
-          "Chance": 52,
-          "Description": "Twilight"
-        },
-        {
-          "Chance": 54,
-          "Description": "Power"
-        },
-        {
-          "Chance": 56,
-          "Description": "Darkness"
-        },
-        {
-          "Chance": 58,
-          "Description": "Gloom"
-        },
-        {
-          "Chance": 60,
-          "Description": "Storms"
-        },
-        {
-          "Chance": 62,
-          "Description": "Hope"
-        },
-        {
-          "Chance": 64,
-          "Description": "Lament"
-        },
-        {
-          "Chance": 66,
-          "Description": "Frost"
-        },
-        {
-          "Chance": 68,
-          "Description": "Souls"
-        },
-        {
-          "Chance": 70,
-          "Description": "Winter"
-        },
-        {
-          "Chance": 72,
-          "Description": "Sadness"
-        },
-        {
-          "Chance": 74,
-          "Description": "Desolation"
-        },
-        {
-          "Chance": 76,
-          "Description": "Bane"
-        },
-        {
-          "Chance": 78,
-          "Description": "Lies"
-        },
-        {
-          "Chance": 80,
-          "Description": "Ash"
-        },
-        {
-          "Chance": 82,
-          "Description": "Banishment"
-        },
-        {
-          "Chance": 84,
-          "Description": "Shadow"
-        },
-        {
-          "Chance": 86,
-          "Description": "Madness"
-        },
-        {
-          "Chance": 88,
-          "Description": "Stone"
-        },
-        {
-          "Chance": 90,
-          "Description": "Secrets"
-        },
-        {
-          "Chance": 92,
-          "Description": "Despair"
-        },
-        {
-          "Chance": 94,
-          "Description": "Blades"
-        },
-        {
-          "Chance": 96,
-          "Description": "Dread"
-        },
-        {
-          "Chance": 98,
-          "Description": "Light"
-        },
-        {
-          "Chance": 100,
-          "Description": "Wrath"
-        }
-      ],
-      "Namesake": [
-        {
-          "Chance": 2,
-          "Description": "Breckon"
-        },
-        {
-          "Chance": 4,
-          "Description": "Issara"
-        },
-        {
-          "Chance": 6,
-          "Description": "Milenna"
-        },
-        {
-          "Chance": 8,
-          "Description": "Thorval"
-        },
-        {
-          "Chance": 10,
-          "Description": "Khulan"
-        },
-        {
-          "Chance": 12,
-          "Description": "Aurvang"
-        },
-        {
-          "Chance": 14,
-          "Description": "Kalida"
-        },
-        {
-          "Chance": 16,
-          "Description": "Keeara"
-        },
-        {
-          "Chance": 18,
-          "Description": "Andor"
-        },
-        {
-          "Chance": 20,
-          "Description": "Zakaria"
-        },
-        {
-          "Chance": 22,
-          "Description": "Willa"
-        },
-        {
-          "Chance": 24,
-          "Description": "Etana"
-        },
-        {
-          "Chance": 26,
-          "Description": "Valgard"
-        },
-        {
-          "Chance": 28,
-          "Description": "Kenrick"
-        },
-        {
-          "Chance": 30,
-          "Description": "Wyland"
-        },
-        {
-          "Chance": 32,
-          "Description": "Sidura"
-        },
-        {
-          "Chance": 34,
-          "Description": "Svala"
-        },
-        {
-          "Chance": 36,
-          "Description": "Kajir"
-        },
-        {
-          "Chance": 38,
-          "Description": "Saiven"
-        },
-        {
-          "Chance": 40,
-          "Description": "Callwen"
-        },
-        {
-          "Chance": 42,
-          "Description": "Zhan"
-        },
-        {
-          "Chance": 44,
-          "Description": "Solana"
-        },
-        {
-          "Chance": 46,
-          "Description": "Ildar"
-        },
-        {
-          "Chance": 48,
-          "Description": "Keelan"
-        },
-        {
-          "Chance": 50,
-          "Description": "Thrain"
-        },
-        {
-          "Chance": 52,
-          "Description": "Kynan"
-        },
-        {
-          "Chance": 54,
-          "Description": "Jadina"
-        },
-        {
-          "Chance": 56,
-          "Description": "Radek"
-        },
-        {
-          "Chance": 58,
-          "Description": "Wulan"
-        },
-        {
-          "Chance": 60,
-          "Description": "Garion"
-        },
-        {
-          "Chance": 62,
-          "Description": "Eysa"
-        },
-        {
-          "Chance": 64,
-          "Description": "Kolor"
-        },
-        {
-          "Chance": 66,
-          "Description": "Katarra"
-        },
-        {
-          "Chance": 68,
-          "Description": "Dain"
-        },
-        {
-          "Chance": 70,
-          "Description": "Farina"
-        },
-        {
-          "Chance": 72,
-          "Description": "Yala"
-        },
-        {
-          "Chance": 74,
-          "Description": "Kodroth"
-        },
-        {
-          "Chance": 76,
-          "Description": "Morien"
-        },
-        {
-          "Chance": 78,
-          "Description": "Akida"
-        },
-        {
-          "Chance": 80,
-          "Description": "Haldorr"
-        },
-        {
-          "Chance": 82,
-          "Description": "Nyrad"
-        },
-        {
-          "Chance": 84,
-          "Description": "Edda"
-        },
-        {
-          "Chance": 86,
-          "Description": "Jorund"
-        },
-        {
-          "Chance": 88,
-          "Description": "Morraine"
-        },
-        {
-          "Chance": 90,
-          "Description": "Lindar"
-        },
-        {
-          "Chance": 92,
-          "Description": "Sithra"
-        },
-        {
-          "Chance": 94,
-          "Description": "Torgan"
-        },
-        {
-          "Chance": 96,
-          "Description": "Arnorr"
-        },
-        {
-          "Chance": 98,
-          "Description": "Thyri"
-        },
-        {
-          "Chance": 100,
-          "Description": "Erisia"
-        }
-      ],
-      "Place": {
-        "Barrow": [
-          {
-            "Chance": 16,
-            "Description": "Sepulcher"
-          },
-          {
-            "Chance": 32,
-            "Description": "Grave"
-          },
-          {
-            "Chance": 49,
-            "Description": "Crypt"
-          },
-          {
-            "Chance": 66,
-            "Description": "Mound"
-          },
-          {
-            "Chance": 83,
-            "Description": "Tomb"
-          },
-          {
-            "Chance": 100,
-            "Description": "Barrow"
-          }
-        ],
-        "Cavern": [
-          {
-            "Chance": 10,
-            "Description": "Abyss"
-          },
-          {
-            "Chance": 20,
-            "Description": "Caverns"
-          },
-          {
-            "Chance": 30,
-            "Description": "Caves"
-          },
-          {
-            "Chance": 40,
-            "Description": "Chasm"
-          },
-          {
-            "Chance": 50,
-            "Description": "Depths"
-          },
-          {
-            "Chance": 60,
-            "Description": "Hollow"
-          },
-          {
-            "Chance": 70,
-            "Description": "Lair"
-          },
-          {
-            "Chance": 80,
-            "Description": "Rift"
-          },
-          {
-            "Chance": 90,
-            "Description": "Tunnels"
-          },
-          {
-            "Chance": 100,
-            "Description": "Warren"
-          }
-        ],
-        "Frozen Cavern": [
-          {
-            "Chance": 10,
-            "Description": "Abyss"
-          },
-          {
-            "Chance": 20,
-            "Description": "Caverns"
-          },
-          {
-            "Chance": 30,
-            "Description": "Caves"
-          },
-          {
-            "Chance": 40,
-            "Description": "Chasm"
-          },
-          {
-            "Chance": 50,
-            "Description": "Depths"
-          },
-          {
-            "Chance": 60,
-            "Description": "Hollow"
-          },
-          {
-            "Chance": 70,
-            "Description": "Lair"
-          },
-          {
-            "Chance": 80,
-            "Description": "Rift"
-          },
-          {
-            "Chance": 90,
-            "Description": "Tunnels"
-          },
-          {
-            "Chance": 100,
-            "Description": "Warren"
-          }
-        ],
-        "Icereach": [
-          {
-            "Chance": 16,
-            "Description": "Icemark"
-          },
-          {
-            "Chance": 32,
-            "Description": "Wintertide"
-          },
-          {
-            "Chance": 49,
-            "Description": "Reach"
-          },
-          {
-            "Chance": 66,
-            "Description": "Waste"
-          },
-          {
-            "Chance": 83,
-            "Description": "Expanse"
-          },
-          {
-            "Chance": 100,
-            "Description": "Barrens"
-          }
-        ],
-        "Mine": [
-          {
-            "Chance": 16,
-            "Description": "Lode"
-          },
-          {
-            "Chance": 32,
-            "Description": "Dig"
-          },
-          {
-            "Chance": 49,
-            "Description": "Forge"
-          },
-          {
-            "Chance": 66,
-            "Description": "Mine"
-          },
-          {
-            "Chance": 83,
-            "Description": "Tunnels"
-          },
-          {
-            "Chance": 100,
-            "Description": "Cut"
-          }
-        ],
-        "Pass": [
-          {
-            "Chance": 10,
-            "Description": "Cliffs"
-          },
-          {
-            "Chance": 20,
-            "Description": "Crag"
-          },
-          {
-            "Chance": 30,
-            "Description": "Cut"
-          },
-          {
-            "Chance": 40,
-            "Description": "Gap"
-          },
-          {
-            "Chance": 50,
-            "Description": "Gorge"
-          },
-          {
-            "Chance": 60,
-            "Description": "Heights"
-          },
-          {
-            "Chance": 70,
-            "Description": "Highlands"
-          },
-          {
-            "Chance": 80,
-            "Description": "Pass"
-          },
-          {
-            "Chance": 90,
-            "Description": "Reach"
-          },
-          {
-            "Chance": 100,
-            "Description": "Ridge"
-          }
-        ],
-        "Ruin": [
-          {
-            "Chance": 10,
-            "Description": "Citadel"
-          },
-          {
-            "Chance": 20,
-            "Description": "Enclave"
-          },
-          {
-            "Chance": 30,
-            "Description": "Fortress"
-          },
-          {
-            "Chance": 40,
-            "Description": "Hall"
-          },
-          {
-            "Chance": 50,
-            "Description": "Keep"
-          },
-          {
-            "Chance": 60,
-            "Description": "Sanctuary"
-          },
-          {
-            "Chance": 70,
-            "Description": "Sanctum"
-          },
-          {
-            "Chance": 80,
-            "Description": "Spire"
-          },
-          {
-            "Chance": 90,
-            "Description": "Temple"
-          },
-          {
-            "Chance": 100,
-            "Description": "Tower"
-          }
-        ],
-        "Sea Cave": [
-          {
-            "Chance": 16,
-            "Description": "Caves"
-          },
-          {
-            "Chance": 32,
-            "Description": "Channel"
-          },
-          {
-            "Chance": 49,
-            "Description": "Cove"
-          },
-          {
-            "Chance": 66,
-            "Description": "Hollow"
-          },
-          {
-            "Chance": 83,
-            "Description": "Pools"
-          },
-          {
-            "Chance": 100,
-            "Description": "Gouge"
-          }
-        ],
-        "Shadowfen": [
-          {
-            "Chance": 10,
-            "Description": "Bog"
-          },
-          {
-            "Chance": 20,
-            "Description": "Fen"
-          },
-          {
-            "Chance": 30,
-            "Description": "Lowland"
-          },
-          {
-            "Chance": 40,
-            "Description": "Marsh"
-          },
-          {
-            "Chance": 50,
-            "Description": "Mire"
-          },
-          {
-            "Chance": 60,
-            "Description": "Morass"
-          },
-          {
-            "Chance": 70,
-            "Description": "Quagmire"
-          },
-          {
-            "Chance": 80,
-            "Description": "Floodlands"
-          },
-          {
-            "Chance": 90,
-            "Description": "Slough"
-          },
-          {
-            "Chance": 100,
-            "Description": "Wetlands"
-          }
-        ],
-        "Stronghold": [
-          {
-            "Chance": 10,
-            "Description": "Bastion"
-          },
-          {
-            "Chance": 20,
-            "Description": "Citadel"
-          },
-          {
-            "Chance": 30,
-            "Description": "Fortress"
-          },
-          {
-            "Chance": 40,
-            "Description": "Garrison"
-          },
-          {
-            "Chance": 50,
-            "Description": "Haven"
-          },
-          {
-            "Chance": 60,
-            "Description": "Keep"
-          },
-          {
-            "Chance": 70,
-            "Description": "Outpost"
-          },
-          {
-            "Chance": 80,
-            "Description": "Refuge"
-          },
-          {
-            "Chance": 90,
-            "Description": "Sanctuary"
-          },
-          {
-            "Chance": 100,
-            "Description": "Watch"
-          }
-        ],
-        "Tanglewood": [
-          {
-            "Chance": 11,
-            "Description": "Weald"
-          },
-          {
-            "Chance": 23,
-            "Description": "Tangle"
-          },
-          {
-            "Chance": 35,
-            "Description": "Bramble"
-          },
-          {
-            "Chance": 48,
-            "Description": "Briar"
-          },
-          {
-            "Chance": 61,
-            "Description": "Thicket"
-          },
-          {
-            "Chance": 74,
-            "Description": "Forest"
-          },
-          {
-            "Chance": 87,
-            "Description": "Wilds"
-          },
-          {
-            "Chance": 100,
-            "Description": "Wood"
-          }
-        ],
-        "Underkeep": [
-          {
-            "Chance": 10,
-            "Description": "Catacomb"
-          },
-          {
-            "Chance": 20,
-            "Description": "Chambers"
-          },
-          {
-            "Chance": 30,
-            "Description": "Den"
-          },
-          {
-            "Chance": 40,
-            "Description": "Hall"
-          },
-          {
-            "Chance": 50,
-            "Description": "Labyrinth"
-          },
-          {
-            "Chance": 60,
-            "Description": "Maze"
-          },
-          {
-            "Chance": 70,
-            "Description": "Pit"
-          },
-          {
-            "Chance": 80,
-            "Description": "Sanctum"
-          },
-          {
-            "Chance": 90,
-            "Description": "Underkeep"
-          },
-          {
-            "Chance": 100,
-            "Description": "Vault"
-          }
-        ]
-      }
+      ]
     },
-    "Site Nature": {
-      "Theme": [
+    {
+      "Name": "Site Nature",
+      "Oracles": [
         {
-          "Chance": 11,
-          "Description": "Ancient"
+          "Name": "Theme",
+          "Oracle Table": [
+            {
+              "Chance": 11,
+              "Description": "Ancient"
+            },
+            {
+              "Chance": 23,
+              "Description": "Corrupted"
+            },
+            {
+              "Chance": 35,
+              "Description": "Fortified"
+            },
+            {
+              "Chance": 48,
+              "Description": "Hallowed"
+            },
+            {
+              "Chance": 61,
+              "Description": "Haunted"
+            },
+            {
+              "Chance": 74,
+              "Description": "Infested"
+            },
+            {
+              "Chance": 87,
+              "Description": "Ravaged"
+            },
+            {
+              "Chance": 100,
+              "Description": "Wild"
+            }
+          ]
         },
         {
-          "Chance": 23,
-          "Description": "Corrupted"
-        },
-        {
-          "Chance": 35,
-          "Description": "Fortified"
-        },
-        {
-          "Chance": 48,
-          "Description": "Hallowed"
-        },
-        {
-          "Chance": 61,
-          "Description": "Haunted"
-        },
-        {
-          "Chance": 74,
-          "Description": "Infested"
-        },
-        {
-          "Chance": 87,
-          "Description": "Ravaged"
-        },
-        {
-          "Chance": 100,
-          "Description": "Wild"
-        }
-      ],
-      "Domain": [
-        {
-          "Chance": 6,
-          "Description": "Barrow"
-        },
-        {
-          "Chance": 18,
-          "Description": "Cavern"
-        },
-        {
-          "Chance": 28,
-          "Description": "Frozen Cavern"
-        },
-        {
-          "Chance": 32,
-          "Description": "Icereach"
-        },
-        {
-          "Chance": 38,
-          "Description": "Mine"
-        },
-        {
-          "Chance": 48,
-          "Description": "Pass"
-        },
-        {
-          "Chance": 58,
-          "Description": "Ruin"
-        },
-        {
-          "Chance": 68,
-          "Description": "Sea Cave"
-        },
-        {
-          "Chance": 78,
-          "Description": "Shadowfen"
-        },
-        {
-          "Chance": 83,
-          "Description": "Stronghold"
-        },
-        {
-          "Chance": 95,
-          "Description": "Tanglewood"
-        },
-        {
-          "Chance": 100,
-          "Description": "Underkeep"
+          "Name": "Domain",
+          "Oracle Table": [
+            {
+              "Chance": 6,
+              "Description": "Barrow"
+            },
+            {
+              "Chance": 18,
+              "Description": "Cavern"
+            },
+            {
+              "Chance": 28,
+              "Description": "Frozen Cavern"
+            },
+            {
+              "Chance": 32,
+              "Description": "Icereach"
+            },
+            {
+              "Chance": 38,
+              "Description": "Mine"
+            },
+            {
+              "Chance": 48,
+              "Description": "Pass"
+            },
+            {
+              "Chance": 58,
+              "Description": "Ruin"
+            },
+            {
+              "Chance": 68,
+              "Description": "Sea Cave"
+            },
+            {
+              "Chance": 78,
+              "Description": "Shadowfen"
+            },
+            {
+              "Chance": 83,
+              "Description": "Stronghold"
+            },
+            {
+              "Chance": 95,
+              "Description": "Tanglewood"
+            },
+            {
+              "Chance": 100,
+              "Description": "Underkeep"
+            }
+          ]
         }
       ]
     }
-  }
+  ]
 }

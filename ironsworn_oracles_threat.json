@@ -1,424 +1,455 @@
 {
-  "Threat Oracles": {
-    "Category": [
-      {
-        "Chance": 10,
-        "Description": "Burgeoning Conflict"
-      },
-      {
-        "Chance": 20,
-        "Description": "Cursed Site"
-      },
-      {
-        "Chance": 30,
-        "Description": "Environmental Calamity"
-      },
-      {
-        "Chance": 40,
-        "Description": "Malignant Plague"
-      },
-      {
-        "Chance": 50,
-        "Description": "Rampaging Creature"
-      },
-      {
-        "Chance": 60,
-        "Description": "Ravaging Horde"
-      },
-      {
-        "Chance": 70,
-        "Description": "Scheming Leader"
-      },
-      {
-        "Chance": 80,
-        "Description": "Power-Hungry Mystic"
-      },
-      {
-        "Chance": 90,
-        "Description": "Zealous Cult"
-      },
-      {
-        "Chance": 100,
-        "Description": "[Roll twice]"
-      }
-    ],
-    "Burgeoning Conflict": [
-      {
-        "Chance": 10,
-        "Description": "Allow warmongers to gain influence"
-      },
-      {
-        "Chance": 20,
-        "Description": "Break a treaty"
-      },
-      {
-        "Chance": 30,
-        "Description": "Force a hasty decision"
-      },
-      {
-        "Chance": 40,
-        "Description": "Deepen suspicions"
-      },
-      {
-        "Chance": 50,
-        "Description": "Trigger a confrontation"
-      },
-      {
-        "Chance": 60,
-        "Description": "Subvert a potential accord"
-      },
-      {
-        "Chance": 70,
-        "Description": "Isolate the antagonists"
-      },
-      {
-        "Chance": 80,
-        "Description": "Draw new battle lines"
-      },
-      {
-        "Chance": 90,
-        "Description": "Reveal an unexpected aspect of the dispute"
-      },
-      {
-        "Chance": 100,
-        "Description": "Introduce a new person or faction to complicate the situation"
-      }
-    ],
-    "Cursed Site": [
-      {
-        "Chance": 10,
-        "Description": "Unleash a creature or being"
-      },
-      {
-        "Chance": 20,
-        "Description": "Lure the unwary into its depths"
-      },
-      {
-        "Chance": 30,
-        "Description": "Offer promises of power"
-      },
-      {
-        "Chance": 40,
-        "Description": "Reveal a new aspect of its cursed history"
-      },
-      {
-        "Chance": 50,
-        "Description": "Expand its malignancy to surrounding lands"
-      },
-      {
-        "Chance": 60,
-        "Description": "Leave its mark on an inhabitant or visitor"
-      },
-      {
-        "Chance": 70,
-        "Description": "Reveal hidden depths"
-      },
-      {
-        "Chance": 80,
-        "Description": "Ensnare an important person or object"
-      },
-      {
-        "Chance": 90,
-        "Description": "Corrupt the environment"
-      },
-      {
-        "Chance": 100,
-        "Description": "Transform its nature"
-      }
-    ],
-    "Environmental Calamity": [
-      {
-        "Chance": 10,
-        "Description": "Devastate a place"
-      },
-      {
-        "Chance": 20,
-        "Description": "Block a path"
-      },
-      {
-        "Chance": 30,
-        "Description": "Threaten a community with imminent destruction"
-      },
-      {
-        "Chance": 40,
-        "Description": "Manifest unexpected effects"
-      },
-      {
-        "Chance": 50,
-        "Description": "Expand in scope or intensity"
-      },
-      {
-        "Chance": 60,
-        "Description": "Allow someone to take advantage"
-      },
-      {
-        "Chance": 70,
-        "Description": "Deprive of resources"
-      },
-      {
-        "Chance": 80,
-        "Description": "Isolate an important person or community"
-      },
-      {
-        "Chance": 90,
-        "Description": "Force refugees into hostile lands"
-      },
-      {
-        "Chance": 100,
-        "Description": "Disrupt natural ecosystems"
-      }
-    ],
-    "Malignant Plague": [
-      {
-        "Chance": 10,
-        "Description": "Manifest new symptoms or effects"
-      },
-      {
-        "Chance": 20,
-        "Description": "Infect someone important"
-      },
-      {
-        "Chance": 30,
-        "Description": "Expand to new territory or communities"
-      },
-      {
-        "Chance": 40,
-        "Description": "Allow someone to take advantage"
-      },
-      {
-        "Chance": 50,
-        "Description": "Allow someone to take the blame"
-      },
-      {
-        "Chance": 60,
-        "Description": "Create panic or disorder"
-      },
-      {
-        "Chance": 70,
-        "Description": "Force a horrible decision"
-      },
-      {
-        "Chance": 80,
-        "Description": "Lure into complacency"
-      },
-      {
-        "Chance": 90,
-        "Description": "Reveal the root of the sickness"
-      },
-      {
-        "Chance": 100,
-        "Description": "Undermine a potential cure"
-      }
-    ],
-    "Rampaging Creature": [
-      {
-        "Chance": 10,
-        "Description": "Reveal a new aspect of its nature or abilities"
-      },
-      {
-        "Chance": 20,
-        "Description": "Expand its territory"
-      },
-      {
-        "Chance": 30,
-        "Description": "Make a sudden and brutal attack"
-      },
-      {
-        "Chance": 40,
-        "Description": "Control or influence lesser creatures"
-      },
-      {
-        "Chance": 50,
-        "Description": "Create confusion or strife"
-      },
-      {
-        "Chance": 60,
-        "Description": "Leave foreboding signs"
-      },
-      {
-        "Chance": 70,
-        "Description": "Lure the unwary"
-      },
-      {
-        "Chance": 80,
-        "Description": "Imperil an event"
-      },
-      {
-        "Chance": 90,
-        "Description": "Assert control over a location"
-      },
-      {
-        "Chance": 100,
-        "Description": "Threaten resources"
-      }
-    ],
-    "Ravaging Horde": [
-      {
-        "Chance": 10,
-        "Description": "Overrun defenses"
-      },
-      {
-        "Chance": 20,
-        "Description": "Gather resources"
-      },
-      {
-        "Chance": 30,
-        "Description": "Attack a location"
-      },
-      {
-        "Chance": 40,
-        "Description": "Expand forces"
-      },
-      {
-        "Chance": 50,
-        "Description": "Appoint or reveal a leader"
-      },
-      {
-        "Chance": 60,
-        "Description": "Send forth a champion"
-      },
-      {
-        "Chance": 70,
-        "Description": "Create a diversion"
-      },
-      {
-        "Chance": 80,
-        "Description": "Undermine an opposing force from within"
-      },
-      {
-        "Chance": 90,
-        "Description": "Cut off supplies or reinforcements"
-      },
-      {
-        "Chance": 100,
-        "Description": "Employ a new weapon"
-      }
-    ],
-    "Scheming Leader": [
-      {
-        "Chance": 10,
-        "Description": "Defeat an enemy"
-      },
-      {
-        "Chance": 20,
-        "Description": "Form a new alliance"
-      },
-      {
-        "Chance": 30,
-        "Description": "Usurp or undermine another leader"
-      },
-      {
-        "Chance": 40,
-        "Description": "Force the loyalty of a community or important person"
-      },
-      {
-        "Chance": 50,
-        "Description": "Enact a new law or tradition"
-      },
-      {
-        "Chance": 60,
-        "Description": "Rescind an old law or tradition"
-      },
-      {
-        "Chance": 70,
-        "Description": "Reveal a true intention"
-      },
-      {
-        "Chance": 80,
-        "Description": "Unravel an existing alliance"
-      },
-      {
-        "Chance": 90,
-        "Description": "Incite conflict"
-      },
-      {
-        "Chance": 100,
-        "Description": "Use an unexpected capability or asset"
-      }
-    ],
-    "Power-Hungry Mystic": [
-      {
-        "Chance": 10,
-        "Description": "Gain hidden knowledge"
-      },
-      {
-        "Chance": 20,
-        "Description": "Assault an enemy with magic"
-      },
-      {
-        "Chance": 30,
-        "Description": "Despoil a place through magic"
-      },
-      {
-        "Chance": 40,
-        "Description": "Forge a bond with ancient forces"
-      },
-      {
-        "Chance": 50,
-        "Description": "Create magical wards or protections"
-      },
-      {
-        "Chance": 60,
-        "Description": "Obtain a powerful artifact"
-      },
-      {
-        "Chance": 70,
-        "Description": "Tempt with power or secrets"
-      },
-      {
-        "Chance": 80,
-        "Description": "Recruit a follower or ally"
-      },
-      {
-        "Chance": 90,
-        "Description": "Sacrifice something in exchange for greater power"
-      },
-      {
-        "Chance": 100,
-        "Description": "Use magic to trick or deceive"
-      }
-    ],
-    "Zealous Cult": [
-      {
-        "Chance": 10,
-        "Description": "Overtake a faction or community"
-      },
-      {
-        "Chance": 20,
-        "Description": "Unlock secrets to greater power"
-      },
-      {
-        "Chance": 30,
-        "Description": "Establish false credibility"
-      },
-      {
-        "Chance": 40,
-        "Description": "Appoint or reveal a leader"
-      },
-      {
-        "Chance": 50,
-        "Description": "Lure new members or establish alliances"
-      },
-      {
-        "Chance": 60,
-        "Description": "Subvert opposition through devious schemes"
-      },
-      {
-        "Chance": 70,
-        "Description": "Attack opposition directly"
-      },
-      {
-        "Chance": 80,
-        "Description": "Spread the word of its doctrine"
-      },
-      {
-        "Chance": 90,
-        "Description": "Reveal a dire prophecy"
-      },
-      {
-        "Chance": 100,
-        "Description": "Reveal its true nature or goal"
-      }
-    ]
-  }
+  "Title": "Ironsworn Threat Oracles",
+  "Oracles": [
+    {
+      "Name": "Threat Category",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Burgeoning Conflict"
+        },
+        {
+          "Chance": 20,
+          "Description": "Cursed Site"
+        },
+        {
+          "Chance": 30,
+          "Description": "Environmental Calamity"
+        },
+        {
+          "Chance": 40,
+          "Description": "Malignant Plague"
+        },
+        {
+          "Chance": 50,
+          "Description": "Rampaging Creature"
+        },
+        {
+          "Chance": 60,
+          "Description": "Ravaging Horde"
+        },
+        {
+          "Chance": 70,
+          "Description": "Scheming Leader"
+        },
+        {
+          "Chance": 80,
+          "Description": "Power-Hungry Mystic"
+        },
+        {
+          "Chance": 90,
+          "Description": "Zealous Cult"
+        },
+        {
+          "Chance": 100,
+          "Description": "[Roll twice]"
+        }
+      ]
+    },
+    {
+      "Name": "Burgeoning Conflict",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Allow warmongers to gain influence"
+        },
+        {
+          "Chance": 20,
+          "Description": "Break a treaty"
+        },
+        {
+          "Chance": 30,
+          "Description": "Force a hasty decision"
+        },
+        {
+          "Chance": 40,
+          "Description": "Deepen suspicions"
+        },
+        {
+          "Chance": 50,
+          "Description": "Trigger a confrontation"
+        },
+        {
+          "Chance": 60,
+          "Description": "Subvert a potential accord"
+        },
+        {
+          "Chance": 70,
+          "Description": "Isolate the antagonists"
+        },
+        {
+          "Chance": 80,
+          "Description": "Draw new battle lines"
+        },
+        {
+          "Chance": 90,
+          "Description": "Reveal an unexpected aspect of the dispute"
+        },
+        {
+          "Chance": 100,
+          "Description": "Introduce a new person or faction to complicate the situation"
+        }
+      ]
+    },
+    {
+      "Name": "Cursed Site",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Unleash a creature or being"
+        },
+        {
+          "Chance": 20,
+          "Description": "Lure the unwary into its depths"
+        },
+        {
+          "Chance": 30,
+          "Description": "Offer promises of power"
+        },
+        {
+          "Chance": 40,
+          "Description": "Reveal a new aspect of its cursed history"
+        },
+        {
+          "Chance": 50,
+          "Description": "Expand its malignancy to surrounding lands"
+        },
+        {
+          "Chance": 60,
+          "Description": "Leave its mark on an inhabitant or visitor"
+        },
+        {
+          "Chance": 70,
+          "Description": "Reveal hidden depths"
+        },
+        {
+          "Chance": 80,
+          "Description": "Ensnare an important person or object"
+        },
+        {
+          "Chance": 90,
+          "Description": "Corrupt the environment"
+        },
+        {
+          "Chance": 100,
+          "Description": "Transform its nature"
+        }
+      ]
+    },
+    {
+      "Name": "Environmental Calamity",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Devastate a place"
+        },
+        {
+          "Chance": 20,
+          "Description": "Block a path"
+        },
+        {
+          "Chance": 30,
+          "Description": "Threaten a community with imminent destruction"
+        },
+        {
+          "Chance": 40,
+          "Description": "Manifest unexpected effects"
+        },
+        {
+          "Chance": 50,
+          "Description": "Expand in scope or intensity"
+        },
+        {
+          "Chance": 60,
+          "Description": "Allow someone to take advantage"
+        },
+        {
+          "Chance": 70,
+          "Description": "Deprive of resources"
+        },
+        {
+          "Chance": 80,
+          "Description": "Isolate an important person or community"
+        },
+        {
+          "Chance": 90,
+          "Description": "Force refugees into hostile lands"
+        },
+        {
+          "Chance": 100,
+          "Description": "Disrupt natural ecosystems"
+        }
+      ]
+    },
+    {
+      "Name": "Malignant Plague",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Manifest new symptoms or effects"
+        },
+        {
+          "Chance": 20,
+          "Description": "Infect someone important"
+        },
+        {
+          "Chance": 30,
+          "Description": "Expand to new territory or communities"
+        },
+        {
+          "Chance": 40,
+          "Description": "Allow someone to take advantage"
+        },
+        {
+          "Chance": 50,
+          "Description": "Allow someone to take the blame"
+        },
+        {
+          "Chance": 60,
+          "Description": "Create panic or disorder"
+        },
+        {
+          "Chance": 70,
+          "Description": "Force a horrible decision"
+        },
+        {
+          "Chance": 80,
+          "Description": "Lure into complacency"
+        },
+        {
+          "Chance": 90,
+          "Description": "Reveal the root of the sickness"
+        },
+        {
+          "Chance": 100,
+          "Description": "Undermine a potential cure"
+        }
+      ]
+    },
+    {
+      "Name": "Rampaging Creature",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Reveal a new aspect of its nature or abilities"
+        },
+        {
+          "Chance": 20,
+          "Description": "Expand its territory"
+        },
+        {
+          "Chance": 30,
+          "Description": "Make a sudden and brutal attack"
+        },
+        {
+          "Chance": 40,
+          "Description": "Control or influence lesser creatures"
+        },
+        {
+          "Chance": 50,
+          "Description": "Create confusion or strife"
+        },
+        {
+          "Chance": 60,
+          "Description": "Leave foreboding signs"
+        },
+        {
+          "Chance": 70,
+          "Description": "Lure the unwary"
+        },
+        {
+          "Chance": 80,
+          "Description": "Imperil an event"
+        },
+        {
+          "Chance": 90,
+          "Description": "Assert control over a location"
+        },
+        {
+          "Chance": 100,
+          "Description": "Threaten resources"
+        }
+      ]
+    },
+    {
+      "Name": "Ravaging Horde",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Overrun defenses"
+        },
+        {
+          "Chance": 20,
+          "Description": "Gather resources"
+        },
+        {
+          "Chance": 30,
+          "Description": "Attack a location"
+        },
+        {
+          "Chance": 40,
+          "Description": "Expand forces"
+        },
+        {
+          "Chance": 50,
+          "Description": "Appoint or reveal a leader"
+        },
+        {
+          "Chance": 60,
+          "Description": "Send forth a champion"
+        },
+        {
+          "Chance": 70,
+          "Description": "Create a diversion"
+        },
+        {
+          "Chance": 80,
+          "Description": "Undermine an opposing force from within"
+        },
+        {
+          "Chance": 90,
+          "Description": "Cut off supplies or reinforcements"
+        },
+        {
+          "Chance": 100,
+          "Description": "Employ a new weapon"
+        }
+      ]
+    },
+    {
+      "Name": "Scheming Leader",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Defeat an enemy"
+        },
+        {
+          "Chance": 20,
+          "Description": "Form a new alliance"
+        },
+        {
+          "Chance": 30,
+          "Description": "Usurp or undermine another leader"
+        },
+        {
+          "Chance": 40,
+          "Description": "Force the loyalty of a community or important person"
+        },
+        {
+          "Chance": 50,
+          "Description": "Enact a new law or tradition"
+        },
+        {
+          "Chance": 60,
+          "Description": "Rescind an old law or tradition"
+        },
+        {
+          "Chance": 70,
+          "Description": "Reveal a true intention"
+        },
+        {
+          "Chance": 80,
+          "Description": "Unravel an existing alliance"
+        },
+        {
+          "Chance": 90,
+          "Description": "Incite conflict"
+        },
+        {
+          "Chance": 100,
+          "Description": "Use an unexpected capability or asset"
+        }
+      ]
+    },
+    {
+      "Name": "Power-Hungry Mystic",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Gain hidden knowledge"
+        },
+        {
+          "Chance": 20,
+          "Description": "Assault an enemy with magic"
+        },
+        {
+          "Chance": 30,
+          "Description": "Despoil a place through magic"
+        },
+        {
+          "Chance": 40,
+          "Description": "Forge a bond with ancient forces"
+        },
+        {
+          "Chance": 50,
+          "Description": "Create magical wards or protections"
+        },
+        {
+          "Chance": 60,
+          "Description": "Obtain a powerful artifact"
+        },
+        {
+          "Chance": 70,
+          "Description": "Tempt with power or secrets"
+        },
+        {
+          "Chance": 80,
+          "Description": "Recruit a follower or ally"
+        },
+        {
+          "Chance": 90,
+          "Description": "Sacrifice something in exchange for greater power"
+        },
+        {
+          "Chance": 100,
+          "Description": "Use magic to trick or deceive"
+        }
+      ]
+    },
+    {
+      "Name": "Zealous Cult",
+      "Oracle Table": [
+        {
+          "Chance": 10,
+          "Description": "Overtake a faction or community"
+        },
+        {
+          "Chance": 20,
+          "Description": "Unlock secrets to greater power"
+        },
+        {
+          "Chance": 30,
+          "Description": "Establish false credibility"
+        },
+        {
+          "Chance": 40,
+          "Description": "Appoint or reveal a leader"
+        },
+        {
+          "Chance": 50,
+          "Description": "Lure new members or establish alliances"
+        },
+        {
+          "Chance": 60,
+          "Description": "Subvert opposition through devious schemes"
+        },
+        {
+          "Chance": 70,
+          "Description": "Attack opposition directly"
+        },
+        {
+          "Chance": 80,
+          "Description": "Spread the word of its doctrine"
+        },
+        {
+          "Chance": 90,
+          "Description": "Reveal a dire prophecy"
+        },
+        {
+          "Chance": 100,
+          "Description": "Reveal its true nature or goal"
+        }
+      ]
+    }
+  ]
 }
