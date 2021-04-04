@@ -8,8 +8,11 @@
     {
       "Name": "Broken",
       "Rank": "Troublesome",
-      "Source": "Ironsworn",
-      "Page": "138",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "138"
+      },
       "Features": [ "Crazed eyes", "Painted skin", "Feral Screams", "Scavenged clothing and weapons" ],
       "Drives": [ "Show my power", "Share my pain" ],
       "Tactics": [ "Spring from hiding", "Ferocious attacks" ],
@@ -19,8 +22,11 @@
     {
       "Name": "Common Folk",
       "Rank": "Troublesome",
-      "Source": "Ironsworn",
-      "Page": "139",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "139"
+      },
       "Features": [ "Diverse looks", "Weary and worried", "Suspicious of strangers" ],
       "Drives": [ "Prepare for winter", "Protect my family" ],
       "Tactics": [ "Desperate defense", "Stand together" ],
@@ -30,8 +36,11 @@
     {
       "Name": "Hunter",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "139",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "139"
+      },
       "Features": [ "Wearing hides and furs to ward away the cold", "Steely gaze", "At home in the woodlands" ],
       "Drives": [ "A clean kill", "Survive the hunt" ],
       "Tactics": [ "Set traps", "Keep to the shadows", "Deadly shot" ],
@@ -41,8 +50,11 @@
     {
       "Name": "Mystic",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "140",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "140"
+      },
       "Features": [ "Knowing eyes", "Tattooed skin" ],
       "Drives": [ "Respect the Old Ways", "Seek the paths of power" ],
       "Tactics": [ "Foresee the intent of my enemies", "Prepare rituals", "Use trickery" ],
@@ -52,8 +64,11 @@
     {
       "Name": "Raider",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "140",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "140"
+      },
       "Features": [ "Geared for war", "Battle fervor" ],
       "Drives": [ "What is theirs will be ours", "Stand with my kin", "Die a glorious death" ],
       "Tactics": [ "Intimidate", "Shield Wall", "Burn it Down" ],
@@ -64,8 +79,11 @@
     {
       "Name": "Warrior",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "141",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "141"
+      },
       "Features": [ "Battle-hardened", "Scarred" ],
       "Drives": [ "The thrill of the fight", "Protect those in my charge", "Survive another day" ],
       "Tactics": [ "Maneuver for advantage", "Find an opening" ],
@@ -76,8 +94,11 @@
     {
       "Name": "Husk",
       "Rank": "Formidable",
-      "Source": "Delve",
-      "Page": "110",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "110"
+      },
       "Features": [ "Withered flesh and black eyes", "Clawed fingernails", "Horrifying wail", "Become more powerful" ],
       "Drives": [ "Make others suffer as they have", "Restore their former self" ],
       "Tactics": [ "Dishearten with a dreadful howl", "Lash out with forbidden magic", "Bind lesser creatures to their will", "Consume the essence of others" ],
@@ -87,8 +108,11 @@
     {
       "Name": "Zealot",
       "Rank": "Troublesome",
-      "Source": "Delve",
-      "Page": "111",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "111"
+      },
       "Features": [ "Sickly pallor", "Distant eyes", "Marks of their faith" ],
       "Drives": [ "Serve the faith", "Bring others into the fold", "Destroy those who oppose them" ],
       "Tactics": [ "Entice with trickery or false promises", "Use the powers of the faith", "Stand together to overcome nonbelievers" ],
@@ -103,8 +127,11 @@
     {
       "Name": "Elf",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "142",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "142"
+      },
       "Features": [ "Large, luminous eyes seen through wooden masks", "Gray-green skin the texture of dry leaves", "Sonorous voices", "Wielding bows and spears" ],
       "Drives": [ "Protect the wilds", "Drive out trespassers, or see them pay" ],
       "Tactics": [ "Strike from shadow", "Force their surrender", "Turn the forest against them" ],
@@ -115,8 +142,11 @@
     {
       "Name": "Giant",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "143",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "143"
+      },
       "Features": [ "Dark hair and ruddy skin", "Twice the size of a tall man, or more", "Wearing layers of wool, hide and furs", "Stoic and observant" ],
       "Drives": [ "Survive the winter", "Protect the herd" ],
       "Tactics": [ "Fight as a last resport", "Sweeping strike", "Make them flee" ],
@@ -127,8 +157,11 @@
     {
       "Name": "Primordial",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "144",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "144"
+      },
       "Features": [ "Personification of the natural world", "Turbulent, changing form", "Vaguely human-like or animal-like form" ],
       "Drives": [ "Embody Chaos", "Cling to vestiges of power" ],
       "Tactics": [ "Control the elements", "Destroy with primal rage" ],
@@ -138,8 +171,11 @@
     {
       "Name": "Troll",
       "Rank": "Formidable",
-      "Source": "Ironsworn",
-      "Page": "145",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "145"
+      },
       "Features": [ "Long limbs", "Sunken, beady eyes", "Translucent skin camouflaged to the environment", "Keen sense of smell", "Speaks in gibberish" ],
       "Drives": [ "Find pretty things", "Keep it secret" ],
       "Tactics": [ "Be sneaky", "Bite and claw", "Run and hide" ],
@@ -149,8 +185,11 @@
     {
       "Name": "Varou",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "146",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "146"
+      },
       "Features": [ "Yellow eyes shining in the moonlight", "Pointed ears and snout-like faces" ],
       "Drives": [ "Take their land", "Defend my kin", "Keep the bloodcall at bay" ],
       "Tactics": [ "Strike at night", "Leap into combat", "Let loose the bloodcall" ],
@@ -161,8 +200,11 @@
     {
       "Name": "Atanya",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "112",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "112"
+      },
       "Features": [ "Stout forms", "Iridescent Skin and dark hair ", "Clothed in hides and furs" ],
       "Drives": [ "Hunt and fish", "Respect the sea", "Seek out new lands" ],
       "Tactics": [ "Strike with spears", "Fight as one, and embody the power of the mighty sea" ],
@@ -173,8 +215,11 @@
     {
       "Name": "Merrow",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "113",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "113"
+      },
       "Features": [ "Gray scaled skin", "Bulbous eyes", "Webbed claws" ],
       "Drives": [ "Blood for the deep gods" ],
       "Tactics": [ "Swarm and overwhelm", "Entangle in nets", "Drag back to the depths" ],
@@ -190,8 +235,11 @@
     {
       "Name": "Bear",
       "Rank": "Formidable",
-      "Source": "Ironsworn",
-      "Page": "147",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "147"
+      },
       "Features": [ "Fearsome teeth and claws", "Thick hide" ],
       "Drives": [ "Find food", "Defend cubs" ],
       "Tactics": [ "Roar", "Pin down", "Maul with savage force" ],
@@ -201,8 +249,11 @@
     {
       "Name": "Boar",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "148",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "148"
+      },
       "Features": [ "Wiry coats", "Long tusks", "Vicious" ],
       "Drives": [ "Forage", "Protect territory", "Defend sows" ],
       "Tactics": [ "Charge and gore", "Circle and attack again" ],
@@ -212,8 +263,11 @@
     {
       "Name": "Gaunt",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "148",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "148"
+      },
       "Features": [ "Horse-like creature with a lean, skeletal frame", "Ghostly pale eyes", "Black, scaled hide" ],
       "Drives": [ "Run like the wind" ],
       "Tactics": [ "Rear up", "Charge", "Trample" ],
@@ -224,8 +278,11 @@
     {
       "Name": "Marsh Rat",
       "Rank": "Troublesome",
-      "Source": "Ironsworn",
-      "Page": "149",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "149"
+      },
       "Features": [ "Beady eyes", "Long tails" ],
       "Drives": [ "Eat everything", "Breed" ],
       "Tactics": [ "Swarm and bite" ],
@@ -235,8 +292,11 @@
     {
       "Name": "Wolf",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "150",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "150"
+      },
       "Features": [ "Keen senses" ],
       "Drives": [ "Fight rivals", "Mark territory", "Run with the pack" ],
       "Tactics": [ "Stalk", "Pack rush", "Drag to the ground" ],
@@ -246,8 +306,11 @@
     {
       "Name": "Bladewing",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "114",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "114"
+      },
       "Features": [ "Large, dagger-shaped wings", "Elongated jaws with needle-like teeth", "Dark, leathery hide" ],
       "Drives": [ "Take flight under the cover of darkness", "Hunt from above" ],
       "Tactics": [ "Glide silently", "Sudden, swift attack" ],
@@ -258,8 +321,11 @@
     {
       "Name": "Carrion Newt",
       "Rank": "Formidable",
-      "Source": "Delve",
-      "Page": "115",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "115"
+      },
       "Features": [ "Long, sleek body", "Brightly-colored markings", "Serrated teeth" ],
       "Drives": [ "Hunt and feed", "Lay eggs within fresh kills" ],
       "Tactics": [ "Lurk in the shallows", "Sudden, ferocious attack", "Unyielding bite" ],
@@ -270,8 +336,11 @@
     {
       "Name": "Cave Lion",
       "Rank": "Formidable",
-      "Source": "Delve",
-      "Page": "116",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "116"
+      },
       "Features": [ "Feline grace", "Tawny, striped coat" ],
       "Drives": [ "Hunt" ],
       "Tactics": [ "Stalk prey", "Leap and bite", "Intimidating roar" ],
@@ -281,8 +350,11 @@
     {
       "Name": "Deep Rat",
       "Rank": "Troublesome",
-      "Source": "Delve",
-      "Page": "117",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "117"
+      },
       "Features": [ "Tiny, blind eyes", "Wrinkled, hairless skin", "Clawed feet", "Jutting incisors" ],
       "Drives": [ "Dig", "Feed" ],
       "Tactics": [ "Undermine paths", "Swarm and bite" ],
@@ -293,8 +365,11 @@
     {
       "Name": "Nightmare Spider",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "118",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "118"
+      },
       "Features": [ "Pale, semitransparent body", "Long, skinny legs", "Fangs, dripping with venom" ],
       "Drives": [ "Lurk in darkness", "Feed", "Lay eggs" ],
       "Tactics": [ "Spin webs", "Drop on prey", "Pierce with venomous fangs" ],
@@ -305,8 +380,11 @@
     {
       "Name": "Shroud Crab",
       "Rank": "Troublesome",
-      "Source": "Delve",
-      "Page": "119",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "119"
+      },
       "Features": [ "Ridged shell", "Snapping, slashing claws", "Barbed, whiplike tail" ],
       "Drives": [ "Lie hidden among rocks and ice", "Feed" ],
       "Tactics": [ "Mimic surroundings", "Leap at unsuspecting prey", "Latch onto victims with powerful legs and tail", "Stab and slash" ],
@@ -316,8 +394,11 @@
     {
       "Name": "Trog",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "120",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "120"
+      },
       "Features": [ "Luminescent, scaled hide", "Keen vision", "Long claws and sharp teeth", "Powerful tail" ],
       "Drives": [ "Lurk in darkness", "Dig tunnels" ],
       "Tactics": [ "Stealthy approach", "Intimidating display", "Pounce", "Bite and thrash" ],
@@ -333,8 +414,11 @@
     {
       "Name": "Basilisk",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "151",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "151"
+      },
       "Features": [ "Giant snake", "Dull yellow-brown skin", "Vibrant yellow eyes" ],
       "Drives": [ "Devour" ],
       "Tactics": [ "Lay in wait", "Mesmerizing gaze", "Sudden bite", "Crush" ],
@@ -345,8 +429,11 @@
     {
       "Name": "Elder Beast",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "152",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "152"
+      },
       "Features": [ "Twice the size of their common kin, or more", "Red eyes" ],
       "Drives": [ "Dominate" ],
       "Tactics": [ "Intimidating display", "Overwhelming attack" ],
@@ -357,8 +444,11 @@
     {
       "Name": "Harrow Spider",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "153",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "153"
+      },
       "Features": [ "Massive fangs", "Long legs and bloated body", "Eight iridescent black eyes" ],
       "Drives": [ "Lurk", "Feed" ],
       "Tactics": [ "Drop atop prey", "Bite with pincers", "Trap in webbing" ],
@@ -368,8 +458,11 @@
     {
       "Name": "Leviathan",
       "Rank": "Epic",
-      "Source": "Ironsworn",
-      "Page": "154",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "154"
+      },
       "Features": [ "Massive bulk", "Flesh as tough as iron", "Cold black eyes", "Sinuous grace" ],
       "Drives": [ "Slumber in the depths", "Destroy those who trespass" ],
       "Tactics": [ "Rise from the depths", "Ram and swamp ships", "Devour prey whole" ],
@@ -380,8 +473,11 @@
     {
       "Name": "Mammoth",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "155",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "155"
+      },
       "Features": [ "Woolly fur", "Large head and curved tusks", "Prehensile trunk" ],
       "Drives": [ "Migrate to fertile ground", "Forage for food", "Protect the young of the herd" ],
       "Tactics": [ "Form a protective circle", "Charge", "Trample", "Gore" ],
@@ -391,8 +487,11 @@
     {
       "Name": "Wyvern",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "156",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "156"
+      },
       "Features": [ "Huge bat-like wings", "Rows of teeth each the size of a knife", "Thick hide with a metallic sheen", "Long tail" ],
       "Drives": [ "Watch for prey from high above", "Feed" ],
       "Tactics": [ "Swoop down", "Snap up prey", "Fearsome roar", "Bash with tail" ],
@@ -403,8 +502,11 @@
     {
       "Name": "Chitter",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "121",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "121"
+      },
       "Features": [ "Chitinous shell", "Snapping mandibles" ],
       "Drives": [ "Sniff out food", "Defend the nest" ],
       "Tactics": [ "Summon the horde", "Swarm and bite", "Spew putrid vomit" ],
@@ -414,8 +516,11 @@
     {
       "Name": "Gnarl",
       "Rank": "Extreme",
-      "Source": "Delve",
-      "Page": "122",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "122"
+      },
       "Features": [ "Thick, sturdy legs", "Tough hide, textured like old bark", "Majestic horns", "Sorrowful call" ],
       "Drives": [ "Keep to the woodlands", "Forage" ],
       "Tactics": [ "Threatening posture", "Powerful charge", "Stomp" ],
@@ -425,8 +530,11 @@
     {
       "Name": "Iron-Wracked Beast",
       "Rank": "Formidable",
-      "Source": "Delve",
-      "Page": "123",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "123"
+      },
       "Features": [ "Flesh corrupted by iron", "Pained howl" ],
       "Drives": [ "Feed the insatiable hunger", "Destroy those who wield iron", "Find a release from pain" ],
       "Tactics": [ "Attack with brutal rage", "Bite and devour" ],
@@ -437,8 +545,11 @@
     {
       "Name": "Kraken",
       "Rank": "Epic",
-      "Source": "Delve",
-      "Page": "124",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "124"
+      },
       "Features": [ "Gargantuan size", "Grasping tentacles", "Beaked maw" ],
       "Drives": [ "Lurk in unfathomable depths", "Destroy those who would trespass", "Inflict terror", "Shatter ships" ],
       "Tactics": [ "Grapple and crush", "Attack from every direction", "Sweep sailors from the deck" ],
@@ -449,8 +560,11 @@
     {
       "Name": "Nightspawn",
       "Rank": "Formidable",
-      "Source": "Delve",
-      "Page": "125",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "125"
+      },
       "Features": [ "Mutated form (see the Monstrosity oracle on page 214)" ],
       "Drives": [ "Guard against intruders", "Lurk in the shadows", "Endure beyond memory" ],
       "Tactics": [ "Varied (see the Monstrosity oracle on page 214)" ],
@@ -460,8 +574,11 @@
     {
       "Name": "Rhaskar",
       "Rank": "Extreme",
-      "Source": "Delve",
-      "Page": "126",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "126"
+      },
       "Features": [ "White fur", "Shark-like head", "Rows of razor-sharp teeth", "Massive claws" ],
       "Drives": [ "Protect territory", "Hunt prey in water and on land" ],
       "Tactics": [ "Burst through ice", "Rend with savage claws", "Clamp down with a powerful bite", "Shake victims like a hound with a rat" ],
@@ -471,8 +588,11 @@
     {
       "Name": "Wyrm",
       "Rank": "Epic",
-      "Source": "Delve",
-      "Page": "127",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "127"
+      },
       "Features": [ "Enormous size", "Yellow eyes, bright as a torch", "Long, sinuous tail", "Scaled skin", "Cavernous mouth" ],
       "Drives": [ "Protect territory", "Kill and feed" ],
       "Tactics": [ "Tail smash", "Pin to the ground", "Savage claw and bite" ],
@@ -488,8 +608,11 @@
     {
       "Name": "Bonewalker",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "157",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "157"
+      },
       "Features": [ "Skeletal corpse", "Eye sockets glowing with a fetid red light", "Tattered remains of clothing and armor" ],
       "Drives": [ "Destroy life" ],
       "Tactics": [ "Rush with unexpected speed", "Attack with the weapons they bore in life", "Grasp and claw" ],
@@ -499,8 +622,11 @@
     {
       "Name": "Frostbound",
       "Rank": "Formidable",
-      "Source": "Ironsworn",
-      "Page": "158",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "158"
+      },
       "Features": [ "Mummified, desiccated flesh", "Frozen blue eyes", "A sorrowful, hollow scream" ],
       "Drives": [ "Absorb the warmth of the living" ],
       "Tactics": [ "Sense heat", "Life-draining grasp" ],
@@ -511,8 +637,11 @@
     {
       "Name": "Chimera",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "158",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "158"
+      },
       "Features": [ "Shambling mass of dead creatures and offal", "Rotting stench" ],
       "Drives": [ "Insatiable hunger" ],
       "Tactics": [ "Horrifying wail", "Relentless assault", "Claw, bite and rend" ],
@@ -522,8 +651,11 @@
     {
       "Name": "Haunt",
       "Rank": "Dangerous",
-      "Source": "Ironsworn",
-      "Page": "159",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "159"
+      },
       "Features": [ "Subtle, unsettling manifestation", "Appear as they did in life", "Lay bare the ravages of death", "Stench of the grave" ],
       "Drives": [ "Torment the living", "Find rest" ],
       "Tactics": [ "Vanish and reappear", "Horrifying visage", "Unleash chaos" ],
@@ -534,8 +666,11 @@
     {
       "Name": "Hollow",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "160",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "160"
+      },
       "Features": [ "Vaguely humanoid shape formed of earth, plant and vermin", "Empty black eyes behind an elven mask", "Smells of wet soil and dead things" ],
       "Drives": [ "See justice done" ],
       "Tactics": [ "Bash with savage strength", "Draw in a whirlwind of materials to reform and enlarge", "Envelop and suffocate" ],
@@ -546,8 +681,11 @@
     {
       "Name": "Iron Revenant",
       "Rank": "Extreme",
-      "Source": "Ironsworn",
-      "Page": "161",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "161"
+      },
       "Features": [ "Empty, patchwork shell of armor and other hunks of metal", "Wielding iron weapons", "A low, reverberating voice" ],
       "Drives": [ "Fulfill the vow", "Destroy any who stand in their way" ],
       "Tactics": [ "Steadfast attacks", "Pull in iron with an unyielding, magnetic force" ],
@@ -557,8 +695,11 @@
     {
       "Name": "Sodden",
       "Rank": "Formidable",
-      "Source": "Ironsworn",
-      "Page": "162",
+      "Source":
+      {
+        "Name": "Ironsworn rulebook",
+        "Page": "162"
+      },
       "Features": [ "Milky eyes", "Mottled flesh" ],
       "Drives": [ "Drown the living" ],
       "Tactics": [ "Draw victims into the water", "Grab and scratch with jagged claws", "Chilling embrace", "Drag into the depths" ],
@@ -569,8 +710,11 @@
     {
       "Name": "Blighthound",
       "Rank": "Formidable",
-      "Source": "Delve",
-      "Page": "128",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "128"
+      },
       "Features": [ "Red eyes", "Lean, hound-like form", "Curved horns" ],
       "Drives": [ "Portend death", "Fulfill the prophecy of death", "Lair in places where death is near" ],
       "Tactics": [ "Unearthly howl", "Piercing gaze", "Savage bite" ],
@@ -580,8 +724,11 @@
     {
       "Name": "Bog Rot",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "129",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "129"
+      },
       "Features": [ "Mummified flesh", "Shambling gait" ],
       "Drives": [ "Rise to seek out the living", "Consign another to death in their place" ],
       "Tactics": [ "Emerge from the muddy earth", "Seize with grasping hands", "Crush with unexpected strength", "Share dreadful secrets" ],
@@ -592,8 +739,11 @@
     {
       "Name": "Bonehorde",
       "Rank": "Extreme",
-      "Source": "Delve",
-      "Page": "130",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "130"
+      },
       "Features": [ "The bones of many corpses, held together by a dark will", "Scurries with a hollow clatter" ],
       "Drives": [ "Destroy and kill", "Gather new bones" ],
       "Tactics": [ "Alter shape", "Strike with skeletal appendages", "Damage terrain or architecture", "Envelop and crush" ],
@@ -603,8 +753,11 @@
     {
       "Name": "Thrall",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "131",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "131"
+      },
       "Features": [ "Sickly countenance", "Glimpses of their true nature", "A clash of personalities" ],
       "Drives": [ "Endure beyond death", "Coerce and manipulate", "Stifle the will of the host" ],
       "Tactics": [ "Reveal their true self", "Lash out with unnatural strength" ],
@@ -615,8 +768,11 @@
     {
       "Name": "Wight",
       "Rank": "Formidable",
-      "Source": "Delve",
-      "Page": "132",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "132"
+      },
       "Features": [ "Pallid skin and clouded eyes", "Ragged, unhealed wounds", "Iron burial mask" ],
       "Drives": [ "Stand in defense" ],
       "Tactics": [ "Skulk in darkness", "Resolute assault", "Exploit knowledge and powers from beyond death" ],
@@ -631,8 +787,11 @@
     {
       "Name": "Blood Thorn",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "138",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "138"
+      },
       "Features": [ "Thorn-tipped branches", "Scattered bones, stripped clean", "Large central pod" ],
       "Drives": [ "Consume blood", "Proliferate" ],
       "Tactics": [ "Lie in wait", "Grasp, entangle, and feed" ],
@@ -643,8 +802,11 @@
     {
       "Name": "Circle of Stones",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "140",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "140"
+      },
       "Features": [ "Ancient stones, etched with mysterious symbols", "Whispers of old magic", "Visions of hoarded memories" ],
       "Drives": [ "Preserve age-old secrets", "Seek new knowledge" ],
       "Tactics": [ "Trap the unwary, and lure the desperate", "Extract painful memories", "Grant knowledge, for a price" ],
@@ -655,8 +817,11 @@
     {
       "Name": "Glimmer",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "142",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "142"
+      },
       "Features": [ "Dancing lights given vague form", "Silent beckoning" ],
       "Drives": [ "Illuminate the darkness", "Provide escort along secret paths" ],
       "Tactics": [ "Appear to the lost and desperate", "Show the way", "Lead astray" ],
@@ -667,8 +832,11 @@
     {
       "Name": "Gloom",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "144",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "144"
+      },
       "Features": [ "Creeping, vaporous murk", "Whispers and illusions" ],
       "Drives": [ "Envelop all in shadow", "Feed on fear and despair" ],
       "Tactics": [ "Lure with trickery", "Snuff out lights", "Surround and engulf", "Show painful and horrifying visions" ],
@@ -679,8 +847,11 @@
     {
       "Name": "Maelstrom",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "146",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "146"
+      },
       "Features": [ "Whirling vortex of water", "Fierce currents", "Ghostly screams" ],
       "Drives": [ "Engulf victims", "Amass the voices of the lost" ],
       "Tactics": [ "Seize with raging, swirling waters", "Stun with numbing cold", "Batter with debris", "Drag into abyssal darkness" ],
@@ -691,8 +862,11 @@
     {
       "Name": "Tempest",
       "Rank": "Dangerous",
-      "Source": "Delve",
-      "Page": "148",
+      "Source":
+      {
+        "Name": "Ironsworn: Delve",
+        "Page": "148"
+      },
       "Features": [ "Biting winds", "Stinging ice", "Ghostly voices and shadowy forms" ],
       "Drives": [ "Seek warmth, and snuff it out" ],
       "Tactics": [ "Envelop in a wintry cyclone", "Batter with icy shards and ferocious winds", "Grant release, at great cost" ],
