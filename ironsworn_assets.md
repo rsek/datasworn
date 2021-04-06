@@ -386,7 +386,7 @@ Once you become corrupted...
 
 ### Lorekeeper
 
-- [x] You are the bearer of a mystical archive. When you [Secure an Advantage](ironsworn_moves.md#Secure-an-Advantage) or [Gather Information](ironsworn_moves.md#Gather-Information) using lore recalled from your studies, add +1. If you have a few hours to search the archive, add +2. On a hit, envision the obscure but helpful knowledge you put to use (*Ask the Oracle* if unsure), and take +1 momentum.
+- [x] You are the bearer of a mystical archive. When you [Secure an Advantage](ironsworn_moves.md#Secure-an-Advantage) or [Gather Information](ironsworn_moves.md#Gather-Information) using lore recalled from your studies, add +1. If you have a few hours to search the archive, add +2. On a hit, envision the obscure but helpful knowledge you put to use ([Ask the Oracle](ironsworn_moves.md#Ask-the-Oracle) if unsure), and take +1 momentum.
 - [ ] When you learn of a site or object holding lost knowledge, and [Swear an Iron Vow](ironsworn_moves.md#Swear-an-Iron-Vow) to recover it for the archive, reroll any dice. When you [Fulfill Your Vow](ironsworn_moves.md#Fulfill-Your-Vow) and mark experience, take +1 experience.
 - [ ] One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or [Face Desolation](ironsworn_moves.md#Face-Desolation) (ignoring momentum).
 
@@ -548,7 +548,7 @@ If you wield a mighty hammer...
 
 ### Augur
 
-- [x] When you summon a flock of crows and ask a single question, roll +wits. On a strong hit, you interpret their calls as a helpful omen. Envision the response (*Ask the Oracle* if unsure) and take +2 momentum. On a weak hit, the crows ignore your question and offer a clue to an unrelated problem or opportunity in this area. Envision what you learn (*Ask the Oracle* if unsure), and take +1 momentum.
+- [x] When you summon a flock of crows and ask a single question, roll +wits. On a strong hit, you interpret their calls as a helpful omen. Envision the response ([Ask the Oracle](ironsworn_moves.md#Ask-the-Oracle) if unsure) and take +2 momentum. On a weak hit, the crows ignore your question and offer a clue to an unrelated problem or opportunity in this area. Envision what you learn ([Ask the Oracle](ironsworn_moves.md#Ask-the-Oracle) if unsure), and take +1 momentum.
 - [ ] As above, and the crows will also help guide you on the proper path. On a hit, add +1 on the next segment when you [Undertake a Journey](ironsworn_moves.md#Undertake-a-Journey).
 - [ ] When you perform this ritual, add +1 and take +1 momentum on a hit.
 
@@ -568,7 +568,7 @@ If you wield a mighty hammer...
 
 ### Communion
 
-- [x] When you surround the remains of a recently deceased intelligent creature with lit candles, and summon its spirit, roll +heart. Add +1 if you share a bond. On a strong hit, the spirit appears and you may converse for a few minutes. Make moves as appropriate (add +1). On a weak hit, as above, but the spirit also delivers troubling news unrelated to your purpose. Envision what it tells you (*Ask the Oracle* if unsure) and [Endure Stress](ironsworn_moves.md#Endure-Stress) (1 stress).
+- [x] When you surround the remains of a recently deceased intelligent creature with lit candles, and summon its spirit, roll +heart. Add +1 if you share a bond. On a strong hit, the spirit appears and you may converse for a few minutes. Make moves as appropriate (add +1). On a weak hit, as above, but the spirit also delivers troubling news unrelated to your purpose. Envision what it tells you ([Ask the Oracle](ironsworn_moves.md#Ask-the-Oracle) if unsure) and [Endure Stress](ironsworn_moves.md#Endure-Stress) (1 stress).
 - [ ] As above, and you may also commune with the long-dead.
 - [ ] When you perform this ritual, add +1 and take +1 momentum on a hit.
 
@@ -623,7 +623,7 @@ If you wield a mighty hammer...
 
 ### Sway
 
-- [x] When you speak a person’s name three times to the wind, roll +wits. On a strong hit, the wind whispers of this person’s need. Envision what you hear (*Ask the Oracle* if unsure). If you use this information or fulfill this need when you [Compel](ironsworn_moves.md#Compel) them, you may reroll any dice (one time only). On a weak hit, as above, but this person’s need creates a troubling dilemma or complication; [Endure Stress](ironsworn_moves.md#Endure-Stress) (1 stress).
+- [x] When you speak a person’s name three times to the wind, roll +wits. On a strong hit, the wind whispers of this person’s need. Envision what you hear ([Ask the Oracle](ironsworn_moves.md#Ask-the-Oracle) if unsure). If you use this information or fulfill this need when you [Compel](ironsworn_moves.md#Compel) them, you may reroll any dice (one time only). On a weak hit, as above, but this person’s need creates a troubling dilemma or complication; [Endure Stress](ironsworn_moves.md#Endure-Stress) (1 stress).
 - [ ] As above, and if you score a strong hit when you [Compel](ironsworn_moves.md#Compel), you may also reroll any dice (one time only) when you [Gather Information](ironsworn_moves.md#Gather-Information) from this person.
 - [ ] When you perform this ritual, add +1 and take +1 momentum on a hit.
 
@@ -656,6 +656,6 @@ If you wield a mighty hammer...
 - [x] When you walk a wide circle, sprinkling the ground with salt, roll +wits. On a strong hit, choose two. On a weak hit, choose one.
   * When a foe first crosses the boundary, take +1 momentum.
   * When you first inflict harm against a foe within the boundary, inflict +1 harm.
-  * Your ward is ‘likely’ (*Ask the Oracle*) to trap a foe within the boundary.
+  * Your ward is ‘likely’ ([Ask the Oracle](ironsworn_moves.md#Ask-the-Oracle)) to trap a foe within the boundary.
 - [ ] As above, and improve the effect of your ward (+2 momentum, +2 harm, and ‘almost certain’).
 - [ ] When you perform this ritual, add +1 and take +1 momentum on a hit.
