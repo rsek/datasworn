@@ -17,11 +17,11 @@ On a **strong hit**, you are successful. Take +1 momentum.
 On a **weak hit**, you succeed, but face a troublesome cost. Choose one.
 
 * You are delayed, lose advantage, or face a new danger: Suffer -1 momentum.
-* You are tired or hurt: *Endure Harm* (1 harm).
-* You are dispirited or afraid: *Endure Stress* (1 stress).
+* You are tired or hurt: [Endure Harm](#Endure-Harm) (1 harm).
+* You are dispirited or afraid: [Endure Stress](#Endure-Stress) (1 stress).
 * You sacrifice resources: Suffer -1 supply.
 
-On a **miss**, you fail, or your progress is undermined by a dramatic and costly turn of events. *Pay the Price*.
+On a **miss**, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](#Pay-the-Price).
 
 ### Secure an Advantage
 
@@ -40,17 +40,17 @@ On a **strong hit**, you gain advantage. Choose one.
 
 On a **weak hit**, your advantage is short-lived. Take +1 momentum.
 
-On a **miss**, you fail or your assumptions betray you. *Pay the Price*.
+On a **miss**, you fail or your assumptions betray you. [Pay the Price](#Pay-the-Price).
 
 ### Gather Information
 
 When **you search an area, ask questions, conduct an investigation, or follow a track**, roll +wits. If you act within a community or ask questions of a person with whom you share a bond, add +1.
 
-On a **strong hit**, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn (*Ask the Oracle* if unsure), and take +2 momentum.
+On a **strong hit**, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn ([Ask the Oracle](#Ask-the-Oracle) if unsure), and take +2 momentum.
 
-On a **weak hit**, the information complicates your quest or introduces a new danger. Envision what you discover (*Ask the Oracle* if unsure), and take +1 momentum.
+On a **weak hit**, the information complicates your quest or introduces a new danger. Envision what you discover ([Ask the Oracle](#Ask-the-Oracle) if unsure), and take +1 momentum.
 
-On a **miss**, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. *Pay the Price*.
+On a **miss**, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](#Pay-the-Price).
 
 ### Heal
 
@@ -60,7 +60,7 @@ On a **strong hit**, your care is helpful. If you (or the ally under your care) 
 
 On a **weak hit**, as above, but you must suffer -1 supply or -1 momentum (your choice).
 
-On a **miss**, your aid is ineffective. *Pay the Price*.
+On a **miss**, your aid is ineffective. [Pay the Price](#Pay-the-Price).
 
 ### Resupply
 
@@ -70,7 +70,7 @@ On a **strong hit**, you bolster your resources. Take +2 supply.
 
 On a **weak hit**, take up to +2 supply, but suffer -1 momentum for each.
 
-On a **miss**, you find nothing helpful. *Pay the Price*.
+On a **miss**, you find nothing helpful. [Pay the Price](#Pay-the-Price).
 
 ### Make Camp
 
@@ -82,9 +82,9 @@ On a **strong hit**, you and your allies may each choose two. On a **weak hit**,
 * Partake: Suffer -1 supply and take +1 health for you and any companions.
 * Relax: Take +1 spirit.
 * Focus: Take +1 momentum.
-* Prepare: When you break camp, add +1 if you Undertake a Journey.
+* Prepare: When you break camp, add +1 if you [Undertake a Journey](#Undertake-a-Journey).
 
-On a **miss**, you take no comfort. *Pay the Price*.
+On a **miss**, you take no comfort. [Pay the Price](#Pay-the-Price).
 
 ### Undertake a Journey
 
@@ -98,14 +98,14 @@ When **you travel across hazardous or unfamiliar lands**, set the rank of your j
 
 Then, for each segment of your journey, roll +wits. If you are setting off from a community with which you share a bond, add +1 to your initial roll.
 
-On a **strong hit**, you reach a waypoint. If the waypoint is unknown to you, envision it (*Ask the Oracle* if unsure). Then, choose one.
+On a **strong hit**, you reach a waypoint. If the waypoint is unknown to you, envision it ([Ask the Oracle](#Ask-the-Oracle) if unsure). Then, choose one.
 
 * You make good use of your resources: Mark progress.
 * You move at speed: Mark progress and take +1 momentum, but suffer -1 supply.
 
 On a **weak hit**, you reach a waypoint and mark progress, but suffer -1 supply.
 
-On a **miss**, you are waylaid by a perilous event. *Pay the Price*.
+On a **miss**, you are waylaid by a perilous event. [Pay the Price](#Pay-the-Price).
 
 ### Reach Your Destination
 
@@ -118,7 +118,7 @@ On a **strong hit**, the situation at your destination favors you. Choose one.
 * Make another move now (not a progress move), and add +1.
 * Take +1 momentum.
 
-On a **weak hit**, you arrive but face an unforeseen hazard or complication. Envision what you find (*Ask the Oracle* if unsure).
+On a **weak hit**, you arrive but face an unforeseen hazard or complication. Envision what you find ([Ask the Oracle](#Ask-the-Oracle) if unsure).
 
 On a **miss**, you have gone hopelessly astray, your objective is lost to you, or you were misled about your destination. If your journey continues, clear all but one filled progress, and raise the journey’s rank by one (if not already epic).
 
@@ -132,11 +132,11 @@ When **you attempt to persuade someone to do something**, envision your approach
 * Threaten or incite: Roll +iron.
 * Lie or swindle: Roll +shadow.
 
-On a **strong hit**, they’ll do what you want or share what they know. Take +1 momentum. If you use this exchange to *Gather Information*, make that move now and add +1.
+On a **strong hit**, they’ll do what you want or share what they know. Take +1 momentum. If you use this exchange to [Gather Information](#Gather-Information), make that move now and add +1.
 
-On a **weak hit**, as above, but they ask something of you in return. Envision what they want (*Ask the Oracle* if unsure).
+On a **weak hit**, as above, but they ask something of you in return. Envision what they want ([Ask the Oracle](#Ask-the-Oracle) if unsure).
 
-On a **miss**, they refuse or make a demand which costs you greatly. *Pay the Price*.
+On a **miss**, they refuse or make a demand which costs you greatly. [Pay the Price](#Pay-the-Price).
 
 ### Sojourn
 
@@ -154,9 +154,9 @@ On a hit, you and your allies may each focus on one of your chosen recover actio
   * Provision: Take +2 supply.
   * Plan: Take +2 momentum.
 * Provide Aid
-  * Take a quest: Envision what this community needs, or what trouble it is facing (*Ask the Oracle* if unsure). If you chose to help, *Swear an Iron Vow* and add +1.
+  * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](#Ask-the-Oracle) if unsure). If you chose to help, [Swear an Iron Vow](#Swear-an-Iron-Vow) and add +1.
 
-On a **miss**, you find no help here. *Pay the Price*.
+On a **miss**, you find no help here. [Pay the Price](#Pay-the-Price).
 
 ### Draw the Circle
 
@@ -169,23 +169,23 @@ On a **weak hit**, you may choose one boast in exchange for +1 momentum.
 * Grant first strike: Your foe has initiative.
 * Bare yourself: Take no benefit of armor or shield; your foe’s harm is +1.
 * Hold no iron: Take no benefit of weapons; your harm is 1.
-* Bloody yourself: *Endure Harm* (1 harm).
+* Bloody yourself: [Endure Harm](#Endure-Harm) (1 harm).
 * To the death: One way or another, this fight must end with death.
 
-On a **miss**, you begin the duel at a disadvantage. Your foe has initiative. *Pay the Price*. Then, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.
+On a **miss**, you begin the duel at a disadvantage. Your foe has initiative. [Pay the Price](#Pay-the-Price). Then, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.
 
 ### Forge a Bond
 
-When **you spend significant time with a person or community, stand together to face hardships, or make sacrifices for their cause**, you can attempt to create a bond. When you do, roll +heart. If you make this move after you successfully *Fulfill Your Vow* to their benefit, you may reroll any dice.
+When **you spend significant time with a person or community, stand together to face hardships, or make sacrifices for their cause**, you can attempt to create a bond. When you do, roll +heart. If you make this move after you successfully [Fulfill Your Vow](#Fulfill-Your-Vow) to their benefit, you may reroll any dice.
 
 On a **strong hit**, make note of the bond, mark a tick on your bond progress track, and choose one.
 
 * Take +1 spirit.
 * Take +2 momentum.
 
-On a **weak hit**, they ask something more of you first. Envision what it is (*Ask the Oracle* if unsure), do it (or *Swear an Iron Vow*), and mark the bond. If you refuse or fail, *Pay the Price*.
+On a **weak hit**, they ask something more of you first. Envision what it is ([Ask the Oracle](#Ask-the-Oracle) if unsure), do it (or [Swear an Iron Vow](#Swear-an-Iron-Vow)), and mark the bond. If you refuse or fail, [Pay the Price](#Pay-the-Price).
 
-On a **miss**, they reject you. *Pay the Price*.
+On a **miss**, they reject you. [Pay the Price](#Pay-the-Price).
 
 ### Test Your Bond
 
@@ -196,13 +196,13 @@ On a **strong hit**, this test has strengthened your bond. Choose one.
 * Take +1 spirit.
 * Take +2 momentum.
 
-On a **weak hit**, your bond is fragile and you must prove your loyalty. Envision what they ask of you (*Ask the Oracle* if unsure), and do it (or *Swear an Iron Vow*). If you refuse or fail, clear the bond and *Pay the Price*.
+On a **weak hit**, your bond is fragile and you must prove your loyalty. Envision what they ask of you ([Ask the Oracle](#Ask-the-Oracle) if unsure), and do it (or [Swear an Iron Vow](#Swear-an-Iron-Vow)). If you refuse or fail, clear the bond and [Pay the Price](#Pay-the-Price).
 
-On a **miss**, or if you have no interest in maintaining this relationship, clear the bond and *Pay the Price*.
+On a **miss**, or if you have no interest in maintaining this relationship, clear the bond and [Pay the Price](#Pay-the-Price).
 
 ### Aid Your Ally
 
-When **you *Secure an Advantage* in direct support of an ally**, and score a hit, they (instead of you) can take the benefits of the move. If you are in combat and score a strong hit, you and your ally have initiative.
+When **you [Secure an Advantage](#Secure-an-Advantage) in direct support of an ally**, and score a hit, they (instead of you) can take the benefits of the move. If you are in combat and score a strong hit, you and your ally have initiative.
 
 ### Write Your Epilogue
 
@@ -212,7 +212,7 @@ When **you retire from your life as Ironsworn**, envision two things: What you h
 
 On a **strong hit**, things come to pass as you hoped.
 
-On a **weak hit**, your life takes an unexpected turn, but not necessarily for the worse. You find yourself spending your days with someone or in a place you did not foresee. Envision it (*Ask the Oracle* if unsure).
+On a **weak hit**, your life takes an unexpected turn, but not necessarily for the worse. You find yourself spending your days with someone or in a place you did not foresee. Envision it ([Ask the Oracle](#Ask-the-Oracle) if unsure).
 
 On a **miss**, your fears are realized.
 
@@ -241,7 +241,7 @@ On a **weak hit**, choose one.
 * Bolster your position: Take +2 momentum.
 * Prepare to act: Take initiative.
 
-On a **miss**, combat begins with you at a disadvantage. *Pay the Price*. Your foe has initiative.
+On a **miss**, combat begins with you at a disadvantage. [Pay the Price](#Pay-the-Price). Your foe has initiative.
 
 ### Strike
 
@@ -251,7 +251,7 @@ On a **strong hit**, inflict +1 harm. You retain initiative.
 
 On a **weak hit**, inflict your harm and lose initiative.
 
-On a **miss**, your attack fails and you must *Pay the Price*. Your foe has initiative.
+On a **miss**, your attack fails and you must [Pay the Price](#Pay-the-Price). Your foe has initiative.
 
 ### Clash
 
@@ -262,13 +262,13 @@ On a **strong hit**, inflict your harm and choose one. You have the initiative.
 * You bolster your position: Take +1 momentum.
 * You find an opening: Inflict +1 harm.
 
-On a **weak hit**, inflict your harm, but then *Pay the Price*. Your foe has initiative.
+On a **weak hit**, inflict your harm, but then [Pay the Price](#Pay-the-Price). Your foe has initiative.
 
-On a **miss**, you are outmatched and must *Pay the Price*. Your foe has initiative.
+On a **miss**, you are outmatched and must [Pay the Price](#Pay-the-Price). Your foe has initiative.
 
 ### Turn the Tide
 
-Once per fight, when you **risk it all**, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. *Pay the Price*.
+Once per fight, when you **risk it all**, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. [Pay the Price](#Pay-the-Price).
 
 ### End the Fight
 
@@ -276,18 +276,18 @@ Once per fight, when you **risk it all**, you may steal initiative from your foe
 
 When **you make a move to take decisive action**, and score a strong hit, you may resolve the outcome of this fight. If you do, roll the challenge dice and compare to your progress. Momentum is ignored on this roll.
 
-On a **strong hit**, this foe is no longer in the fight. They are killed, out of action, flee, or surrender as appropriate to the situation and your intent (*Ask the Oracle* if unsure).
+On a **strong hit**, this foe is no longer in the fight. They are killed, out of action, flee, or surrender as appropriate to the situation and your intent ([Ask the Oracle](#Ask-the-Oracle) if unsure).
 
 On a **weak hit**, as above, but you must also choose one.
 
-* It’s worse than you thought: *Endure Harm*.
-* You are overcome: *Endure Stress*.
+* It’s worse than you thought: [Endure Harm](#Endure-Harm).
+* You are overcome: [Endure Stress](#Endure-Stress).
 * Your victory is short-lived: A new danger or foe appears, or an existing danger worsens.
 * You suffer collateral damage: Something of value is lost or broken, or someone important must pay the cost.
 * You’ll pay for it: An objective falls out of reach.
 * Others won’t forget: You are marked for vengeance.
 
-On a **miss**, you have lost this fight. *Pay the Price*.
+On a **miss**, you have lost this fight. [Pay the Price](#Pay-the-Price).
 
 ### Battle
 
@@ -301,9 +301,9 @@ When **you fight a battle**, and it happens in a blur, envision your objective a
 
 On a **strong hit**, you achieve your objective unconditionally. Take +2 momentum.
 
-On a **weak hit**, you achieve your objective, but not without cost. *Pay the Price*.
+On a **weak hit**, you achieve your objective, but not without cost. [Pay the Price](#Pay-the-Price).
 
-On a **miss**, you are defeated and the objective is lost to you. *Pay the Price*.
+On a **miss**, you are defeated and the objective is lost to you. [Pay the Price](#Pay-the-Price).
 
 ## Suffer Moves
 
@@ -322,9 +322,9 @@ On a **miss**, also suffer -1 momentum. If you are at 0 health, you must mark wo
 
 Roll  | Result
 ------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1-10  | The harm is mortal. Face Death.
-11-20 | You are dying. You need to Heal within an hour or two, or Face Death.
-21-35 | You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, Face Death.
+1-10  | The harm is mortal. [Face Death](#Face-Death).
+11-20 | You are dying. You need to Heal within an hour or two, or [Face Death](#Face-Death).
+21-35 | You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, [Face Death](#Face-Death).
 36-50 | You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move).
 51-00 | You are battered but still standing.
 
@@ -337,7 +337,7 @@ On a **strong hit**, death rejects you. You are cast back into the mortal world.
 On a **weak hit**, choose one.
 
 * You die, but not before making a noble sacrifice. Envision your final moments.
-* Death desires something of you in exchange for your life. Envision what it wants (*Ask the Oracle* if unsure), and *Swear an Iron Vow* (formidable or extreme) to complete that quest. If you fail to score a hit when you *Swear an Iron Vow*, or refuse the quest, you are dead. Otherwise, you return to the mortal world and are now cursed. You may only clear the cursed debility by completing the quest.
+* Death desires something of you in exchange for your life. Envision what it wants ([Ask the Oracle](#Ask-the-Oracle) if unsure), and [Swear an Iron Vow](#Swear-an-Iron-Vow) (formidable or extreme) to complete that quest. If you fail to score a hit when you [Swear an Iron Vow](#Swear-an-Iron-Vow), or refuse the quest, you are dead. Otherwise, you return to the mortal world and are now cursed. You may only clear the cursed debility by completing the quest.
 
 On a **miss**, you are dead.
 
@@ -366,8 +366,8 @@ On a **miss**, also suffer -1 momentum. If you are at 0 spirit, you must mark sh
 
 Roll  | Result
 ------|------------------------------------------------------------------------------------
-1-10  | You are overwhelmed. Face Desolation.
-11-25 | You give up. *Forsake Your Vow* (if possible, one relevant to your current crisis).
+1-10  | You are overwhelmed. [Face Desolation](#Face-Desolation).
+11-25 | You give up. [Forsake Your Vow](#Forsake-Your-Vow) (if possible, one relevant to your current crisis).
 26-50 | You give in to a fear or compulsion, and act against your better instincts.
 51-00 | You persevere.
 
@@ -380,7 +380,7 @@ On a **strong hit**, you resist and press on.
 On a **weak hit**, choose one.
 
 * Your spirit or sanity breaks, but not before you make a noble sacrifice. Envision your final moments.
-* You see a vision of a dreaded event coming to pass. Envision that dark future (*Ask the Oracle* if unsure), and *Swear an Iron Vow* (formidable or extreme) to prevent it. If you fail to score a hit when you *Swear an Iron Vow*, or refuse the quest, you are lost. Otherwise, you return to your senses and are now tormented. You may only clear the tormented debility by completing the quest.
+* You see a vision of a dreaded event coming to pass. Envision that dark future ([Ask the Oracle](#Ask-the-Oracle) if unsure), and [Swear an Iron Vow](#Swear-an-Iron-Vow) (formidable or extreme) to prevent it. If you fail to score a hit when you [Swear an Iron Vow](#Swear-an-Iron-Vow), or refuse the quest, you are lost. Otherwise, you return to your senses and are now tormented. You may only clear the tormented debility by completing the quest.
 
 On a **miss**, you succumb to despair or horror and are lost.
 
@@ -393,7 +393,7 @@ When **your supply is exhausted** (reduced to 0), mark unprepared. If you suffer
 When **your momentum is at its minimum** (-6), and you suffer additional -momentum, choose one.
 
 * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.
-* Envision an event or discovery (*Ask the Oracle* if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional -momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).
+* Envision an event or discovery ([Ask the Oracle](#Ask-the-Oracle) if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional -momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).
 
 ## Quest Moves
 
@@ -401,14 +401,14 @@ When **your momentum is at its minimum** (-6), and you suffer additional -moment
 
 When **you swear upon iron to complete a quest**, write your vow and give the quest a rank. Then, roll +heart. If you make this vow to a person or community with whom you share a bond, add +1.
 
-On a **strong hit**, you are emboldened and it is clear what you must do next (*Ask the Oracle* if unsure). Take +2 momentum.
+On a **strong hit**, you are emboldened and it is clear what you must do next ([Ask the Oracle](#Ask-the-Oracle) if unsure). Take +2 momentum.
 
 On a **weak hit**, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.
 
-On a **miss**, you face a significant obstacle before you can begin your quest. Envision what stands in your way (*Ask the Oracle* if unsure), and choose one.
+On a **miss**, you face a significant obstacle before you can begin your quest. Envision what stands in your way ([Ask the Oracle](#Ask-the-Oracle) if unsure), and choose one.
 
 * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.
-* You give up: *Forsake Your Vow*.
+* You give up: [Forsake Your Vow](#Forsake-Your-Vow).
 
 ### Reach a Milestone
 
@@ -428,16 +428,16 @@ When **you achieve what you believe to be the fulfillment of your vow**, roll th
 
 On a **strong hit**, your quest is complete. Mark experience (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5).
 
-On a **weak hit**, there is more to be done or you realize the truth of your quest. Envision what you discover (*Ask the Oracle* if unsure). Then, mark experience (troublesome=0; dangerous=1; formidable=2; extreme=3; epic=4). You may *Swear an Iron Vow* to set things right. If you do, add +1.
+On a **weak hit**, there is more to be done or you realize the truth of your quest. Envision what you discover ([Ask the Oracle](#Ask-the-Oracle) if unsure). Then, mark experience (troublesome=0; dangerous=1; formidable=2; extreme=3; epic=4). You may [Swear an Iron Vow](#Swear-an-Iron-Vow) to set things right. If you do, add +1.
 
-On a **miss**, your quest is undone. Envision what happens (*Ask the Oracle* if unsure), and choose one.
+On a **miss**, your quest is undone. Envision what happens ([Ask the Oracle](#Ask-the-Oracle) if unsure), and choose one.
 
 * You recommit: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).
-* You give up: *Forsake Your Vow*.
+* You give up: [Forsake Your Vow](#Forsake-Your-Vow).
 
 ### Forsake Your Vow
 
-When **you renounce your quest, betray your promise, or the goal is lost to you**, clear the vow and *Endure Stress*. You suffer -spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.
+When **you renounce your quest, betray your promise, or the goal is lost to you**, clear the vow and [Endure Stress](#Endure-Stress). You suffer -spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.
 
 ### Advance
 
@@ -450,12 +450,12 @@ When **you focus on your skills, receive training, find inspiration, earn a rewa
 When **you suffer the outcome of a move**, choose one.
 
 * Make the most obvious negative outcome happen.
-* Envision two negative outcomes. Rate one as ‘likely’, and *Ask the Oracle* using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.
+* Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](#Ask-the-Oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.
 * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.
 
 Roll  | Result
 ------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1-2   | Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest (Ask the Oracle if unsure) and make it happen.
+1-2   | Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](#Ask-the-Oracle) if unsure) and make it happen.
 3-5   | A person or community you trusted loses faith in you, or acts against you.
 6-9   | A person or community you care about is exposed to danger.
 10-16 | You are separated from something or someone.
@@ -495,7 +495,7 @@ On a match, an extreme result or twist has occurred.
 
 ### Discover a Site
 
-When **you resolve to enter a perilous site in pursuit of an objective**, choose the theme and domain which best represent its nature (*Ask the Oracle* if unsure), and give it a rank.
+When **you resolve to enter a perilous site in pursuit of an objective**, choose the theme and domain which best represent its nature ([Ask the Oracle](#Ask-the-Oracle) if unsure), and give it a rank.
 
 * Troublesome site: 3 progress per area.
 * Dangerous site: 2 progress per area.
@@ -505,31 +505,31 @@ When **you resolve to enter a perilous site in pursuit of an objective**, choose
 
 If you are returning to a previously explored site, roll both challenge dice, take the lowest value, and clear that number of progress boxes.
 
-Then, **Delve the Depths** to explore this place.
+Then, [Delve the Depths](#Delve-the-Depths) to explore this place.
 
 ### Delve the Depths
 
-When you **traverse an area within a perilous site**, envision your surroundings (*Ask the Oracle* if unsure). Then, consider your approach. If you navigate this area...
+When you **traverse an area within a perilous site**, envision your surroundings ([Ask the Oracle](#Ask-the-Oracle) if unsure). Then, consider your approach. If you navigate this area...
 
 * With haste: Roll +edge.
 * With stealth or trickery: Roll +shadow.
 * With observation, intuition, or expertise: Roll +wits.
 
-On a **strong hit**, you delve deeper. Mark progress and *Find an Opportunity*. On a **weak hit**, roll on the following table according to your stat.
+On a **strong hit**, you delve deeper. Mark progress and [Find an Opportunity](#Find-an-Opportunity). On a **weak hit**, roll on the following table according to your stat.
 
-On a **miss**, *Reveal a Danger*.
+On a **miss**, [Reveal a Danger](#Reveal-a-Danger).
 
 Edge  | Shadow | Wits  | Weak Hit Result
 ------|--------|-------|--------------------------------------------------
-1-45  | 1-30   | 1-40  | Mark progress and Reveal a Danger.
+1-45  | 1-30   | 1-40  | Mark progress and [Reveal a Danger](#Reveal-a-Danger).
 46-65 | 31-65  | 41-55 | Mark progress.
-66-75 | 66-90  | 56-80 | Choose one: Mark progress or Find an Opportunity.
-76-80 | 91-99  | 81-99 | Take both: Mark progress and Find an Opportunity.
-81-00 | 00     | 00    | Mark progress twice and Reveal a Danger.
+66-75 | 66-90  | 56-80 | Choose one: Mark progress or [Find an Opportunity](#Find-an-Opportunity).
+76-80 | 91-99  | 81-99 | Take both: Mark progress and [Find an Opportunity](#Find-an-Opportunity).
+81-00 | 00     | 00    | Mark progress twice and [Reveal a Danger](#Reveal-a-Danger).
 
 ### Find an Opportunity
 
-When **you encounter a helpful situation or feature within a site**, roll on the following table. If you are making this move as a result of a strong hit on *Delve the Depths*, you may pick or envision an opportunity instead of rolling.
+When **you encounter a helpful situation or feature within a site**, roll on the following table. If you are making this move as a result of a strong hit on [Delve the Depths](#Delve-the-Depths), you may pick or envision an opportunity instead of rolling.
 
 Then, choose one.
 
@@ -576,7 +576,7 @@ On a **strong hit**, you have it. Take +1 momentum.
 
 On a **weak hit**, you have it, but your resources are diminished. Take +1 momentum and suffer -1 supply.
 
-On a **miss**, you don’t have it and the situation grows more perilous. *Pay the Price*.
+On a **miss**, you don’t have it and the situation grows more perilous. [Pay the Price](#Pay-the-Price).
 
 ### Locate Your Objective
 
@@ -589,7 +589,7 @@ On a **strong hit**, you locate your objective and the situation favors you. Cho
 * Make another move now (not a progress move), and add +1.
 * Take +1 momentum.
 
-On a **weak hit**, you locate your objective but face an unforeseen hazard or complication. Envision what you find (**Ask the Oracle** if unsure).
+On a **weak hit**, you locate your objective but face an unforeseen hazard or complication. Envision what you find ([Ask the Oracle](#Ask-the-Oracle) if unsure).
 
 On a **miss**, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic).
 
@@ -607,14 +607,14 @@ On a **strong hit**, you make your way safely out of the site. Take +1 momentum.
 
 On a **weak hit**, you find your way out, but this place exacts its price. Choose one.
 
-* You are weary or wounded: *Endure Harm*.
-* The experience leaves you shaken: *Endure Stress*.
+* You are weary or wounded: [Endure Harm](#Endure-Harm).
+* The experience leaves you shaken: [Endure Stress](#Endure-Stress).
 * You are delayed, and it costs you.
 * You leave behind something important.
 * You face a new complication as you emerge from the depths.
 * A denizen plots their revenge.
 
-On a **miss**, a dire threat or imposing obstacle stands in your way. *Reveal a Danger*. If you survive, you may make your escape.
+On a **miss**, a dire threat or imposing obstacle stands in your way. [Reveal a Danger](#Reveal-a-Danger). If you survive, you may make your escape.
 
 ## Optional Delve Moves
 
@@ -648,7 +648,7 @@ When **you spend time reflecting on your hardships and missteps**, and your fail
 On a **strong hit**, you commit to making a dramatic change. Take 3 experience and clear all progress. Then, choose one.
 
 * Adjust your approach: Discard a single asset, and take 2 experience for each marked ability.
-* Make an oath: *Swear an Iron Vow*, and reroll any dice.
+* Make an oath: [Swear an Iron Vow](#Swear-an-Iron-Vow), and reroll any dice.
 * Ready your next steps: Take +3 momentum.
 
 On a **weak hit**, you learn from your mistakes. Take 2 experience and clear all progress.
@@ -657,17 +657,17 @@ On a **miss**, you’ve learned the wrong lessons. Take 1 experience and clear a
 
 ### Advance a Threat
 
-When **you give ground to a threat through inaction, failure, or delay**, roll on the table below and envision how the change manifests in your world (*Ask the Oracle* if unsure).
+When **you give ground to a threat through inaction, failure, or delay**, roll on the table below and envision how the change manifests in your world ([Ask the Oracle](#Ask-the-Oracle) if unsure).
 
 Roll  | Result
 ------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1-30  | The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, Reach a Milestone. Otherwise, mark menace.
+1-30  | The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, [Reach a Milestone](#Reach-a-Milestone). Otherwise, mark menace.
 31-70 | The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.
 71-00 | The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.
 
 On a match, this development also exposes a surprising aspect of the threat’s plan or nature.
 
-If **you mark the last box on the threat’s menace track**, the threat achieves its goal, or the final dire outcome occurs. You must *Forsake Your Vow*.
+If **you mark the last box on the threat’s menace track**, the threat achieves its goal, or the final dire outcome occurs. You must [Forsake Your Vow](#Forsake-Your-Vow).
 
 ### Take a Hiatus
 
@@ -677,7 +677,7 @@ When **you spend an extended time recovering in a safe place while a threat is a
 * Set your health, spirit, supply, and companion health to their maximum values.
 * Set your momentum to its reset value.
 
-Then, for each active threat, *Advance a Threat*.
+Then, for each active threat, [Advance a Threat](#Advance-a-Threat).
 
 ### Wield a Rarity
 
