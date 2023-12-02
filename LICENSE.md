@@ -6,13 +6,11 @@ For more information about what you can do with the license, see the [*Ironsworn
 
 ## Data (`*.md`, `*.json`, `*.yaml`): CC BY 4.0
 
-The textual content described by the Markdown, JSON, and YAML files in this repo is originally from the *Ironsworn: Starforged Reference Guide*, and used under the used under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/).
-
-If you're using the *Ironsworn* test data preview (the json files in the `ironsworn` subdirectory), that material falls under [Creative Commons Attribution-NonCommercial 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/).
+The textual content described by any Markdown, JSON, and YAML files in this package is originally from the *Ironsworn: Starforged Reference Guide*, and used under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/).
 
 ## Vector icons (`*.svg`): CC BY 4.0
 
-The following *Ironsworn: Starforged* vector/SVG icons are by [Nathen Graey](https://linktr.ee/owlbare), used under the used under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/):
+The following *Ironsworn: Starforged* vector/SVG icons are by [Nathen Graey](https://linktr.ee/owlbare), used under the [Creative Commons 4.0 Attribution License](https://creativecommons.org/licenses/by/4.0/):
   * asset card and icon designs
   * gameplay pillar icons (page 139)
   * location oracle icons (page 322 and others)
@@ -35,7 +33,7 @@ Any code not included by the categories is released under the MIT license, repro
 
 ### MIT License
 
-Copyright (c) 2022 rsek
+Copyright (c) 2022-2023 rsek
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
