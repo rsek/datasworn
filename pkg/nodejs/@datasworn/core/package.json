@@ -4,13 +4,20 @@
 	"description": "Typings and JSON schema common to Datasworn. This is a pre-release package, provided for developer feedback. It will almost certainly receive breaking changes.",
 	"main": "index.js",
 	"types": "./index.d.ts",
-	"files": ["index.d.ts", "json"],
+	"files": [
+		"index.d.ts",
+		"json"
+	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/rsek/dataforged.git",
+		"url": "git+https://github.com/rsek/datasworn.git",
 		"directory": "pkg/nodejs/@datasworn/core"
 	},
-	"keywords": ["ironsworn", "datasworn", "TTRPG"],
+	"keywords": [
+		"ironsworn",
+		"datasworn",
+		"TTRPG"
+	],
 	"authors": [
 		{
 			"name": "rsek",
@@ -20,6 +27,6 @@
 	],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/rsek/dataforged/issues"
+		"url": "https://github.com/rsek/datasworn/issues"
 	}
 }

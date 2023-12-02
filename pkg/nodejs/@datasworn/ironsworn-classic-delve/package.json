@@ -2,13 +2,21 @@
 	"name": "@datasworn/ironsworn-classic-delve",
 	"version": "0.0.4",
 	"description": "Datasworn JSON data for the Ironsworn: Delve expansion.",
-	"files": ["json"],
+	"files": [
+		"json"
+	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/rsek/dataforged.git",
+		"url": "git+https://github.com/rsek/datasworn.git",
 		"directory": "pkg/nodejs/@datasworn/ironsworn-classic-delve"
 	},
-	"keywords": ["ironsworn", "datasworn", "TTRPG", "delve", "ironsworn-delve"],
+	"keywords": [
+		"ironsworn",
+		"datasworn",
+		"TTRPG",
+		"delve",
+		"ironsworn-delve"
+	],
 	"authors": [
 		{
 			"name": "rsek",
@@ -18,12 +26,12 @@
 	],
 	"license": "SEE LICENSE IN LICENSE.md",
 	"bugs": {
-		"url": "https://github.com/rsek/dataforged/issues"
+		"url": "https://github.com/rsek/datasworn/issues"
 	},
-	"homepage": "https://rsek.github.io/dataforged",
-	"readme": "https://rsek.github.io/dataforged",
+	"homepage": "https://rsek.github.io/datasworn",
+	"readme": "https://rsek.github.io/datasworn",
 	"dependencies": {
-		"@datasworn/core": "^0",
-		"@datasworn/ironsworn-classic": "^0"
+		"@datasworn/core": "0.0.4",
+		"@datasworn/ironsworn-classic": "0.0.4"
 	}
 }
