@@ -3,6 +3,7 @@
   "Oracles": [
     {
       "Name": "Region",
+      "_id": 3,
       "Oracle Table": [
         {
           "Chance": 12,
@@ -48,6 +49,7 @@
     },
     {
       "Name": "Location",
+      "_id": 4,
       "Oracle Table": [
         {
           "Chance": 1,
@@ -257,6 +259,7 @@
     },
     {
       "Name": "Coastal Waters Location",
+      "_id": 5,
       "Oracle Table": [
         {
           "Chance": 1,
@@ -329,7 +332,8 @@
       ]
     },
     {
-      "Name": "Location Descriptors",
+      "Name": "Location Descriptor",
+      "_id": 6,
       "Oracle Table": [
         {
           "Chance": 2,

@@ -3,6 +3,10 @@
   "Oracles": [
     {
       "Name": "Action",
+      "_id": 1,
+      "Source": {
+        "Page": 174
+      },
       "Oracle Table": [
         {
           "Chance": 1,
@@ -408,6 +412,10 @@
     },
     {
       "Name": "Theme",
+      "_id": 2,
+      "Source": {
+        "Page": 175
+      },
       "Oracle Table": [
         {
           "Chance": 1,
