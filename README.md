@@ -20,6 +20,7 @@ Some of the design goals for the new standard:
 * language-agnostic JSON schema as the "source of truth", rather than a JSON schema generated from Typescript typings
 * provide type information for languages other than Typescript
 * provide an interchange format that better accomodates homebrew/3rd party content, so it can be imported to any project that relies on the format
+* provide a format friendlier to localization
 * a format and codebase that are less messy, more consistent, and easier to maintain
 
 ## Usage
