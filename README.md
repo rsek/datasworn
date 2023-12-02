@@ -5,15 +5,32 @@
 [![Official *Ironsworn* Discord server](https://img.shields.io/discord/437120373436186625?color=%235865F2&label=Ironsworn%20Discord&logo=discord&logoColor=white)](https://discordapp.com/invite/6QMvmJb)
 [![Visit the r/Ironsworn subreddit](https://img.shields.io/reddit/subreddit-subscribers/ironsworn?style=social)](https://www.reddit.com/r/Ironsworn/)
 
+## What is this?
+
+This is a pre-release of the successor to the original Datasworn repository and Dataforged package, which provided game rules from the *Ironsworn* and *Ironsworn: Starforged* in JSON.
+
+Until it reaches v1.0, it may receive breaking changes on any version change.
+
+If you're looking for the original Datasworn JSON files, they are available on the [`legacy` branch](https://github.com/rsek/datasworn/tree/legacy).
+
+## Why a new version?
+Some of the design goals for the new standard:
+
+* provide a format that accomodates both classic *Ironsworn* and *Ironsworn: Starforged*
+* language-agnostic JSON schema as the "source of truth", rather than a JSON schema generated from Typescript typings
+* provide type information for languages other than Typescript
+* provide an interchange format that better accomodates homebrew/3rd party content, so it can be imported to any project that relies on the format
+* a format and codebase that are less messy, more consistent, and easier to maintain
+
 ## Usage
 
 ### Javascript and Typescript
 Datasworn spans several NodeJS packages [available via npm](https://www.npmjs.com/org/datasworn).
 
 * `@datasworn/core`: Contains the Typescript typings and the JSON schema, on which all other Datasworn packages depend.
-* `@datasworn/ironsworn-classic`: Contains JSON data from the original <cite>Ironsworn</cite> rulebook.
-* `@datasworn/ironsworn-classic-delve`: Contains JSON data from <cite>Ironsworn: Delve</cite>, an expansion to the <cite>Ironsworn</cite> rulebook.
-* `@datasworn/starforged`: Contains JSON data from <cite>Ironsworn: Starforged</i>.
+* `@datasworn/ironsworn-classic`: Contains JSON data from the original *Ironsworn* rulebook.
+* `@datasworn/ironsworn-classic-delve`: Contains JSON data from *Ironsworn: Delve*, an expansion to the *Ironsworn* rulebook.
+* `@datasworn/starforged`: Contains JSON data from *Ironsworn: Starforged*, and a number of SVG icons and WEBP planet images.
 
 
 ### Other languages
