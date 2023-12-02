@@ -27,10 +27,10 @@ Some of the design goals for the new standard:
 ### Javascript and Typescript
 Datasworn spans several NodeJS packages [available via npm](https://www.npmjs.com/org/datasworn).
 
-* `@datasworn/core`: Contains the Typescript typings and the JSON schema, on which all other Datasworn packages depend.
-* `@datasworn/ironsworn-classic`: Contains JSON data from the original *Ironsworn* rulebook.
-* `@datasworn/ironsworn-classic-delve`: Contains JSON data from *Ironsworn: Delve*, an expansion to the *Ironsworn* rulebook.
-* `@datasworn/starforged`: Contains JSON data from *Ironsworn: Starforged*, and a number of SVG icons and WEBP planet images.
+* [`@datasworn/core`](https://www.npmjs.com/package/@datasworn/core): Contains the Typescript typings and the JSON schema, on which all other Datasworn packages depend.
+* [`@datasworn/ironsworn-classic`](https://www.npmjs.com/package/@datasworn/ironsworn-classic): Contains JSON data from the original *Ironsworn* rulebook.
+* [`@datasworn/ironsworn-classic-delve`](https://www.npmjs.com/package/@datasworn/ironsworn-classic-delve): Contains JSON data from *Ironsworn: Delve*, an expansion to the *Ironsworn* rulebook.
+* [`@datasworn/starforged`](https://www.npmjs.com/package/@datasworn/starforged): Contains JSON data from *Ironsworn: Starforged*, and a number of SVG icons and WEBP planet images.
 
 
 ### Other languages
