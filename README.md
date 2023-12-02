@@ -1,11 +1,9 @@
 # Datasworn v0.0.4
 
-<p align="center">
-<a href="https://www.npmjs.com/package/@datasworn/core"><img alt="undefined" src="https://img.shields.io/npm/v/@datasworn/core?logo=npm" height="20"/></a>
-<a href="https://www.npmjs.com/package/@datasworn/core"><img alt="undefined" src="https://img.shields.io/npm/dm/@datasworn/core?logo=npm" height="20"/></a>
-<a href="https://discordapp.com/invite/6QMvmJb"><img alt="Join the Ironsworn Discord" src="https://img.shields.io/discord/437120373436186625?color=%235865F2&label=Ironsworn%20Discord&logo=discord&logoColor=white" height="20"/></a>
-<a href="https://www.reddit.com/r/Ironsworn/"><img alt="Visit the r/Ironsworn subreddit" src="https://img.shields.io/reddit/subreddit-subscribers/ironsworn?style=social" height="20"/></a>
-</p>
+[![@datasworn/core on npm](https://img.shields.io/npm/v/@datasworn/core?logo=npm)](https://www.npmjs.com/package/@datasworn/core)
+[![@datasworn/core on npm](https://img.shields.io/npm/dm/@datasworn/core?logo=npm)](https://www.npmjs.com/package/@datasworn/core)
+[![Official *Ironsworn* Discord server](https://img.shields.io/discord/437120373436186625?color=%235865F2&label=Ironsworn%20Discord&logo=discord&logoColor=white)](https://discordapp.com/invite/6QMvmJb)
+[![Visit the r/Ironsworn subreddit](https://img.shields.io/reddit/subreddit-subscribers/ironsworn?style=social)](https://www.reddit.com/r/Ironsworn/)
 
 ## Usage
 
@@ -28,7 +26,11 @@ The JSON schema and JSON data are available in the [datasworn](datasworn) direct
 
 ## Licensing
 
-Package content variously falls under the CC BY 4.0, CC BY-NC 4.0, and MIT licenses. See [LICENSE.md](LICENSE.md) for details.
+Core package content (the typings and JSON schema) and internal tooling uses the MIT license.
+
+Textual and image content (in other words, the actual content from the rulebooks as described in JSON, Markdown, and other files) is CC-BY-4.0 or CC-BY-NC-4.0.
+
+Additionally, the JSON files embed licensing information in the `source` property that appears on many objects throughout Datasworn.
 
 ## Contributors
 
