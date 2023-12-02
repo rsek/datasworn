@@ -11,7 +11,7 @@ export async function updatePackageVersions(
   newVersion = VERSION
 ) {
   const pkgs = await FastGlob(dir + '/**/package.json')
-  const readmes = await FastGlob(dir + '/**/README.md')
+  const readmes = [...(await FastGlob(dir + '/**/README.md')), './README.md']
 
   const toWrite = [] as Promise<void>[]
 
