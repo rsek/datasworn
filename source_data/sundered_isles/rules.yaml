@@ -1,12 +1,5 @@
-id: starforged
+id: sundered_isles
 package_type: ruleset
-# source: &Source
-#   authors:
-#     - name: Shawn Tomkin
-#   title: 'Ironsworn: Starforged Rulebook'
-#   url: https://ironswornrpg.com
-#   license: https://creativecommons.org/licenses/by/4.0
-#   date: 2022-10-01
 rules:
   condition_meters:
     health:
@@ -19,12 +12,20 @@ rules:
       max: 5
       value: 5
       description: Spirit is your current morale and mental state.
-    supply:
-      label: supply
+    supply_hold:
+      label: supply (hold)
       max: 5
       value: 5
       shared: true
-      description: Supply represents your preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.
+      description: |-
+        Hold supply represents shipwide resources such as food and water, rum, gear and tools, weapons for the crew, ammo and powder for the cannons, oil for the lamps, wood and sailcloth for repairs, and minor trade goods. It measures your level of readiness for seagoing journeys and naval combat, and your ability to keep the crew provisioned and equipped. If you find yourself commanding multiple ships, the single hold supply value measures your fleetwide readiness.
+    supply_equipped:
+      label: supply (equipped)
+      max: 5
+      value: 5
+      shared: true
+      description: |-
+        Equipped supply represents readiness among you and your allies: gear, weapons and ammo, provisions when going ashore, and minor finances. Think of it as your personal supply—the things you and your allies count among your equipment, belongings, and coin at hand.
   impacts:
     misfortunes:
       label: misfortunes
@@ -40,12 +41,18 @@ rules:
           description: Shaken may be marked when you are at 0 spirit and fail to Endure Stress. You are despairing or distraught.
           prevents_recovery:
             - spirit
-        unprepared:
-          label: unprepared
-          description: Unprepared is marked when you Sacrifice Resources and are reduced to 0 supply. You are not properly equipped for the dangers of the Forge. Because you and your allies share the same supply value, you mark unprepared together.
+        unprepared_hold:
+          label: unprepared (hold)
+          description: Unprepared is marked when you Sacrifice Resources and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
           shared: true
           prevents_recovery:
-            - supply
+            - supply_hold
+        unprepared_equipped:
+          label: unprepared (equipped)
+          description: Unprepared is marked when you Sacrifice Resources and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
+          shared: true
+          prevents_recovery:
+            - supply_equipped
     vehicle_troubles:
       label: vehicle troubles
       description: Vehicle troubles are linked to a specific vehicle, either your command vehicle asset or a support vehicle asset. These impacts are only a factor when you are piloting or aboard that vehicle. Otherwise, they do not count as an impact and do not affect your maximum momentum and momentum reset.
@@ -90,7 +97,7 @@ rules:
       description: Create connections and build relationships.
     discoveries_legacy:
       label: discoveries
-      description: Explore the Forge and unlock its mysteries.
+      description: Explore the Sundered Isles and unlock their mysteries.
   stats:
     edge:
       label: edge
@@ -108,20 +115,5 @@ rules:
       label: wits
       description: Expertise, knowledge, and observation.
   # tags:
-  #   region:
-  #     id: starforged:region
-  #     schema:
-  #       type: object
-  #       properties:
-  #         value:
-  #           enum:
-  #             - terminus
-  #             - outlands
-  #             - expanse
-  #   life:
-  #     id: starforged:life
-  #     schema:
-  #       type: object
-  #       properties:
-  #         value:
-  #           type: boolean
+  #   cursed:
+  #   cursed_by:

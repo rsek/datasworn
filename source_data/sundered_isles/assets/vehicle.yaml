@@ -14,7 +14,48 @@ assets:
   incidental_vehicle:
     source: *Source
     name: Incidental Vehicle Assets
-    contents: {}
+    summary: When you gain command of this ship, envision  its nature and assign a max integrity (5, 4, or 3).  If this is your primary ship, it has up to 5 hold.  You and your allies use your hold value as supply when taking action or suffering a cost related to  cargo and shipwide provisions.
+    contents:
+      sailing_ship:
+        name: Sailing Ship
+        asset_type: Incidental Vehicle
+        options:
+          nature:
+            label: nature
+            field_type: select_enhancement
+            choices:
+              heavy:
+                choice_type: choice
+                label: heavy
+                enhance_asset:
+                  controls:
+                    integrity:
+                      field_type: condition_meter
+                      max: 5
+              medium:
+                choice_type: choice
+                label: medium
+                enhance_asset:
+                  controls:
+                    integrity:
+                      field_type: condition_meter
+                      max: 4
+              light:
+                choice_type: choice
+                label: light
+                enhance_asset:
+                  controls:
+                    integrity:
+                      field_type: condition_meter
+                      max: 3
+        controls:
+          integrity:
+            label: integrity
+            field_type: condition_meter
+            max: 3
+            value: 3
+        abilities: []
+        source: *Source
   support_vehicle:
     source: *Source
     name: Support Vehicle Assets

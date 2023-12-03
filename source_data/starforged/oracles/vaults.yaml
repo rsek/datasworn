@@ -65,26 +65,29 @@ oracles:
           page: 360
         # usage:
         #   initial: true
-        _i18n:
-          result:
-            part_of_speech: common_noun
         table:
           - min: 1
             max: 35
             result: Structure
+            i18n: &i18n.result.common_noun
+              result:
+                part_of_speech: common_noun
           - min: 36
             max: 60
             result: Vessel
+            i18n: *i18n.result.common_noun
           - min: 61
             max: 80
             result: Monument
+            i18n: *i18n.result.common_noun
           - min: 81
             max: 95
             result: Machine
+            i18n: *i18n.result.common_noun
           - min: 96
             max: 100
             result: Incomprehensible
-            i18n:
+            i18n: &i18n.result.adjective
               result:
                 part_of_speech: adjective
       shape:
@@ -94,58 +97,62 @@ oracles:
           page: 361
         # usage:
         #   initial: true
-        _i18n:
-          result:
-            part_of_speech: adjective
         table:
           - min: 1
             max: 15
             result: Practical or functional
+            i18n: *i18n.result.adjective
           - min: 16
             max: 20
             result: Geometric (complex shape)
+            i18n: *i18n.result.adjective
           - min: 21
             max: 25
             result: Geometric (cube)
+            i18n: *i18n.result.adjective
           - min: 26
             max: 30
             result: Geometric (obelisk)
+            i18n: *i18n.result.adjective
           - min: 31
             max: 35
             result: Geometric (pyramid)
+            i18n: *i18n.result.adjective
           - min: 36
             max: 40
             result: Geometric (ring or torus)
+            i18n: *i18n.result.adjective
           - min: 41
             max: 45
             result: Geometric (sphere)
+            i18n: *i18n.result.adjective
           - min: 46
             max: 55
             result: Organic or curved
+            i18n: *i18n.result.adjective
           - min: 56
             max: 60
             result: Platform or disc
-            i18n:
-              result:
-                part_of_speech: common_noun
+            i18n: *i18n.result.common_noun
           - min: 61
             max: 65
             result: Spires or towers
-            i18n:
-              result:
-                part_of_speech: common_noun
+            i18n: *i18n.result.common_noun
           - min: 66
             max: 68
             result: Domed
+            i18n: *i18n.result.adjective
           - min: 69
             max: 73
             result: Spiky
+            i18n: *i18n.result.adjective
           - min: 74
             max: 76
             result: Sculptural or effigy
           - min: 77
             max: 79
             result: Amorphous
+            i18n: *i18n.result.adjective
           - min: 80
             max: 85
             result: Transforming
@@ -155,8 +162,8 @@ oracles:
           - min: 86
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
 
       material:
@@ -166,48 +173,50 @@ oracles:
           page: 361
         # usage:
         #   initial: true
-        _i18n:
-          result:
-            part_of_speech: adjective
         table:
           - min: 1
             max: 30
             result: Metallic (industrial)
+            i18n: *i18n.result.adjective
           - min: 31
             max: 60
             result: Metallic (smooth)
+            i18n: *i18n.result.adjective
           - min: 61
             max: 70
             result: Rocky or stone-like
+            i18n: *i18n.result.adjective
           - min: 71
             max: 74
             result: Crystalline or glass-like
+            i18n: *i18n.result.adjective
           - min: 75
             max: 78
             result: Bone-like
+            i18n: *i18n.result.adjective
           - min: 79
             max: 82
             result: Flesh-like
+            i18n: *i18n.result.adjective
           - min: 83
             max: 86
             result: Plant-like
+            i18n: *i18n.result.adjective
           - min: 87
             max: 88
             result: Energy
-            i18n:
+            i18n: &i18n.result.adjunct_common_noun
               result:
                 part_of_speech: adjunct_common_noun
           - min: 89
             max: 90
             result: Liquid
-            i18n:
-              result:
-                part_of_speech: adjunct_common_noun
+            i18n: *i18n.result.adjunct_common_noun
           - min: 91
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       outer_first_look:
         name: Outer First Look
@@ -312,7 +321,7 @@ oracles:
             max: 100
             <<: &DescriptorFocus
               result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-              rolls:
+              oracle_rolls:
                 - oracle: starforged/oracles/core/descriptor
                   auto: true
                 - oracle: starforged/oracles/core/focus
@@ -548,8 +557,8 @@ oracles:
               - min: 96
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           peril:
             name: Interior Peril
@@ -624,7 +633,7 @@ oracles:
                 max: 99
                 <<: &ActionTheme
                   result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-                  rolls:
+                  oracle_rolls:
                     - oracle: starforged/oracles/core/action
                       auto: true
                     - oracle: starforged/oracles/core/theme
@@ -632,8 +641,8 @@ oracles:
               - min: 100
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           opportunity:
             name: Interior Opportunity
@@ -782,8 +791,8 @@ oracles:
               - min: 96
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           feature:
             source:
@@ -900,8 +909,8 @@ oracles:
               - min: 96
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           peril:
             source:
@@ -977,8 +986,8 @@ oracles:
               - min: 100
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           opportunity:
             name: Sanctum Opportunity

@@ -18,56 +18,56 @@ oracles:
             max: 40
             result: '[Dominion](starforged/oracles/factions/dominion)'
             summary: Governing power
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/factions/dominion
               - oracle: starforged/oracles/factions/leadership
           - min: 41
             max: 70
             result: '[Guild](starforged/oracles/factions/guild)'
             summary: Organization of specialists
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/factions/guild
           - min: 71
             max: 100
             result: '[Fringe Group](starforged/oracles/factions/fringe_group)'
             summary: Band of outlaws, outcasts, or rogues
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/factions/fringe_group
           - min: 101
             max: 140
             result: '[Corporation](starsmith/oracles/factions/corporation_field)'
             summary: Influential business that rules economically
-            rolls:
+            oracle_rolls:
               - oracle: starsmith/oracles/factions/corporation_field
           - min: 141
             max: 170
             result: '[Military](starsmith/oracles/factions/military_specialty)'
             summary: Military outfit exerting power
-            rolls:
+            oracle_rolls:
               - oracle: starsmith/oracles/factions/military_specialty
           - min: 171
             max: 200
             result: '[Religious](starsmith/oracles/factions/religious_role)'
             summary: Sect of mainline believers
-            rolls:
+            oracle_rolls:
               - oracle: starsmith/oracles/factions/religious_role
           - min: 201
             max: 240
             result: '[Research Group](starsmith/oracles/factions/research_field_of_study)'
             summary: Wealthy scientists developing influence
-            rolls:
+            oracle_rolls:
               - oracle: starsmith/oracles/factions/research_field_of_study
           - min: 241
             max: 270
             result: '[Data Harvesters](starsmith/oracles/factions/data_harvesters_role)'
             summary: Keepers of knowledge
-            rolls:
+            oracle_rolls:
               - oracle: starsmith/oracles/factions/data_harvesters_role
           - min: 271
             max: 300
             result: '[AI Hive](starsmith/oracles/factions/ai_hive_prime_directive)'
             summary: Independent, self-governing AI
-            rolls:
+            oracle_rolls:
               - oracle: starsmith/oracles/factions/ai_hive_prime_directive
       dominion:
         replaces: starforged/oracles/factions/dominion
@@ -749,7 +749,7 @@ oracles:
           - min: 97
             max: 100
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
           - min: 101
@@ -851,7 +851,7 @@ oracles:
           - min: 197
             max: 200
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
           - min: 201
@@ -953,7 +953,7 @@ oracles:
           - min: 297
             max: 300
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
       relationships:
@@ -2458,7 +2458,7 @@ oracles:
           - min: 97
             max: 100
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
           - min: 101
@@ -2560,7 +2560,7 @@ oracles:
           - min: 197
             max: 200
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
           - min: 201
@@ -2662,7 +2662,7 @@ oracles:
           - min: 297
             max: 300
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
       rumors:
@@ -2768,7 +2768,7 @@ oracles:
           - min: 97
             max: 100
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
           - min: 101
@@ -2870,7 +2870,7 @@ oracles:
           - min: 197
             max: 200
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
           - min: 201
@@ -2972,7 +2972,7 @@ oracles:
           - min: 297
             max: 300
             result: '[Action + Theme](starforged/oracles/core/action)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
               - oracle: starforged/oracles/core/theme
       corporation_field:

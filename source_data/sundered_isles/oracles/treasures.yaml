@@ -300,7 +300,7 @@ oracles:
             max: 88
             <<: &DescriptorFocus
               result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/descriptor
                 - auto: true

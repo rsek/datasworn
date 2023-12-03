@@ -1,4 +1,5 @@
-import type { Datasworn, DataswornSource } from '../types/index.js'
+import type * as Datasworn from '../types/Datasworn.js'
+import type * as DataswornSource from '../types/DataswornSource.js'
 
 import {
 	sourcedTransformer,

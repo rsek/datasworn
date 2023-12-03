@@ -57,7 +57,8 @@ function replacer(k: string, v: unknown) {
 	if (k === '$id' && typeof v === 'string' && !v.startsWith('http'))
 		return undefined
 
-	if (k === '$ref' && typeof v === 'string') return '#/$defs/' + v
+	if (k === '$ref' && typeof v === 'string' && !v.startsWith('http'))
+		return '#/$defs/' + v
 
 	return v
 }

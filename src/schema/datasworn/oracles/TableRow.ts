@@ -28,7 +28,7 @@ const TableRowBase = Type.Object({
 				'Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`.'
 		})
 	),
-	rolls: Type.Optional(
+	oracle_rolls: Type.Optional(
 		Type.Array(Type.Ref(Rolls.OracleTableRoll), {
 			description: 'Further oracle rolls prompted by this table row.'
 		})

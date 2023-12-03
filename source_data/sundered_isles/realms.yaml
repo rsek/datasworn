@@ -1,0 +1,76 @@
+id: sundered_isles
+package_type: ruleset
+atlas:
+  realms:
+    name: Realms
+    source:
+      <<: &Source
+        title: Sundered Isles
+        date: 2023-11-29
+        authors:
+          - name: Shawn Tomkin
+        license: null
+        url: https://ironswornrpg.com
+    contents:
+      seafaring:
+        name: The Seafaring Realm
+        summary: In this realm, the Sundered Isles lie within vast and perilous seas.
+        features:
+          - Mist-shrouded islands
+          - Warm, turquoise seas
+          - Rocky shoals, shallow reefs, and rugged islets
+          - Coastal boats and mighty seagoing ships
+          - Bustling ports and inland villages
+          - Fast-moving storms
+          - Stirrings of great beasts within shadowy depths
+          - Ruins nestled in jungles, standing amid high rocks, and sunk beneath the sea
+          - Skeletal frames of wrecked ships, cast against rock and reef
+        description: |-
+          No one knows the true extent of the isles. Untold numbers of them are scattered like broken shards across these equatorial waters.
+
+          The isles are home to a diverse array of people, nations, and cultures. Some trace their lineage to the mariners who first sailed these waters in ages past; they mark their history not in the passage of years, but through the ebb and flow of the tides and the communal memories of the generations who came before. Others settled here in recent years as refugees or outcasts from distant lands. And some seek only to exploit the resources and people of the isles for their own ends.
+
+          Seafarers who chart a course through the isles face unpredictable storms, fierce currents, shifting tides, shallow waters, and lurking marauders. For those who abide and understand the whims of the sea, this realm is home. Those who seek to control the sea, to gain mastery of it, often find only a watery grave.
+        # This is the default realm when playing Sundered Isles. You can learn more about the this world on page 30. Depending on the truths you select in the next exercise, your version of the setting can mirror our real-world age of sail, or spotlight more fantastical elements such as supernatural beings, steampunk-style technologies, and monstrous beasts. Your campaign might feature swashbuckling adventure, grim horror, desperate struggles against oppressive empires—or all the above! Ready set sail with the wind in your hair and a vow in your heart? Chart a course for the seafaring realm.
+        source:
+          <<: *Source
+      skyfaring:
+        name: The Skyfaring Realm
+        summary: In this realm, the Sundered Isles are the lofty fragments of a ruined continent.
+        features:
+          - Airborne islands capped by clinging vegetation
+          - Waterfalls fall from broad cliffsides
+          - Constant winds and passing rains
+          - Flocks of birds swirl through misty skies
+          - Storm clouds unleash lighting strikes and blasts of thunder
+          - Villages and ports nestled among rocky enclaves
+          - Ships tethered to portside docks
+          - Colliding islands scatter smaller fragments
+        description: |-
+          In a time before memory, a massive continent broke apart in an earth-shattering cataclysm. The remnants of this land were cast into the skies, held aloft by unknowable forces.
+
+          Eons later, the floating isles beckoned with mysteries and an escape from earthbound war and strife, so explorers crafted airships and launched them into the storm-wracked skies. Over time, people and nations founded burgeoning ports among the aerial enclaves, but there is much that remains unknown and uncharted. The islands are in near-constant motion within a vortex of wind and uncanny gravitational anomalies, making navigation difficult and unpredictable.
+
+          Island ecosystems vary by altitude. In the lower regions, rain-soaked islands are covered by impenetrable jungle. Higher, temperate forests and rocky plateaus are shrouded in cold mist. Still higher, some say, icebound islands are locked in an endless winter.
+        # When exploring the skyfaring realm, you will often need to interpret oracles and outcomes to fit the setting. For example, when generating a location using the Island oracles (page 138), envision the results as the floating shard of a lost continent. In exchange for this leap of faith, this realm offers interesting possibilities for storytelling. What do settlements look like? What resources do the people trade? How are naval battles undertaken in three dimensions? Ready to soar through the skies and battle with pirates in the dark heart of a thunderclou? Launch your ship into the skyfaring realm.
+        source:
+          <<: *Source
+      starfaring:
+        name: The Starfaring Realm
+        features:
+          - Life-giving starborne currents
+          - Colorful clouds of cosmic dust
+          - Countless planets and planetoids orbiting shimmering stars
+          - Space ports sheltered within massive asteroids
+          - Unpredictable aether storms, vibrant with tumultuous energies
+          - Strange creatures cruising in the wake of starborne vessels
+          - Hulks of derelict ships, forever adrift
+          - Mysterious vaults of alien civilizations
+        summary: In this realm, the Sundered Isles are untold worlds adrift on aetherial tides.
+        description: |-
+          The people of your homeworld once navigated the oceans, but now they sail a limitless new frontier. Mighty ships harness aetherial currents and leave shimmering waves of prismatic energy in their wake. An untold number of worlds— colloquially called Isles by your once-seafaring people—spin in their complex orbits within this starry expanse.
+
+          For bold sailors who set off into this realm, the aether is life. Its starborne currents bear ships and provide breathable air in an otherwise deadly void. But the aether is capricious and ever-changing; navigating its chaotic passages demands skill, courage, and luck in equal measure.
+        # The starfaring realm provides the greatest opportunity to freely mix-and-match your Starforged and Sundered Isles assets and oracles. Within this realm, you’ll set a course for distant planets, navigate perilous asteroids fields, encounter extraordinary alien creatures—perhaps even delve ancient precursor vaults. As appropriate to the truths you select in the next exercise, your version of the setting might use technological Starforged assets re-themed as aether-powered technologies. Ready to wade into battle in your ironclad exosuit armed with a blade of scintillating energy? The starfaring realm awaits.
+        source:
+          <<: *Source

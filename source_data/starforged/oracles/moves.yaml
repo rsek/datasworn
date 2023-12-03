@@ -213,8 +213,8 @@ oracles:
             max: 100
             <<: &RollTwice
               result: Roll twice
-              rolls:
-                - times: 2
+              oracle_rolls:
+                - number_of_rolls: 2
                   auto: true
       confront_chaos:
         name: Confront Chaos

@@ -600,7 +600,7 @@ oracles:
             max: 40
             result: '[Dominion](id:starforged/oracles/factions/dominion)'
             summary: 'Governing power'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/factions/dominion
               - oracle: starforged/oracles/factions/leadership
             # set_attributes: {faction_type: [dominion]}
@@ -608,14 +608,14 @@ oracles:
             max: 70
             result: '[Guild](id:starforged/oracles/factions/guild)'
             summary: 'Organization of specialists'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/factions/guild
             # set_attributes: {faction_type: [guild]}
           - min: 71
             max: 100
             result: '[Fringe Group](id:starforged/oracles/factions/fringe_group)'
             summary: 'Band of outlaws, outcasts, or rogues'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/factions/fringe_group
             # set_attributes: {faction_type: [fringe_group]}
       influence:
@@ -947,8 +947,8 @@ oracles:
             min: 91
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       fringe_group:
         name: Fringe Group
@@ -1024,8 +1024,8 @@ oracles:
             min: 96
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       projects:
         name: Faction
@@ -1140,7 +1140,7 @@ oracles:
             max: 100
             <<: &ActionTheme
               result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-              rolls:
+              oracle_rolls:
                 - oracle: starforged/oracles/core/action
                   auto: true
                 - oracle: starforged/oracles/core/theme
@@ -1239,8 +1239,8 @@ oracles:
           - min: 97
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       quirks:
         name: Faction Quirks

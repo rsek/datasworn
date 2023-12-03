@@ -1,10 +1,45 @@
 {
+  "Keyed paragraphs": {
+    "scope": "yaml",
+    "prefix": "kp3",
+    "body": [
+      "${1|summary|}: |-",
+      "  ${CLIPBOARD/(.+)\n(.+)\n(.+)/${1}/m}",
+      "${2|description|}: |-",
+      "  ${CLIPBOARD/(.+)\n(.+)\n(.+)/${2}/m}"
+      "${3|quest_starter|}: |-",
+      "  ${CLIPBOARD/(.+)\n(.+)\n(.+)/${3}/m}"
+    ],
+  },
+  "Truth": {
+    "scope": "yaml",
+    "prefix": "truth",
+    "body": [
+			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
+			"  name: ${10:}",
+      "  source:",
+      "    <<: *Source",
+      "  summary: ${1}",
+      "  options: ",
+			"    - ",
+			"      ${0}",
+    ]
+  },
+  "TruthOption1": {
+    "scope": "yaml",
+    "prefix": "to1",
+    "body": [
+      "min: ${1|1,34,68|}",
+      "max: ${2|33,67,100|}",
+      "summary: |-",
+      "  ${0}",
+    ]
+  },
   "Enhance Moves": {
-    "scope": ["yaml", "markdown"],
+    "scope": "yaml",
     "prefix": "emvs",
     "body": [
       "enhance_moves:",
-
       "  - enhances:",
       "      - ${CLIPBOARD}"
       "    roll_type: ${1|action_roll,no_roll,progress_roll,special_track|}",
@@ -14,9 +49,8 @@
       "          roll_options: ${3:null}",
     ]
   },
-
   "Enhance Moves (add 1, take 1 on hit)": {
-    "scope": ["yaml", "markdown"],
+    "scope": "yaml",
     "prefix": "emvs+",
     "body": [
       "enhance_moves:",
@@ -30,7 +64,7 @@
     ]
   },
   "Enhance Move": {
-    "scope": ["yaml", "markdown"],
+    "scope": "yaml",
     "prefix": "emv",
     "body": [
       "- enhances:",
@@ -42,7 +76,7 @@
       "        roll_options: ${3:null}",
     ]
   },"Enhance Move (Add +1 and take +1 momentum on a hit)": {
-    "scope": ["yaml", "markdown"],
+    "scope": "yaml",
     "prefix": "emv+",
     "body": [
       "- enhances:",

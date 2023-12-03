@@ -117,8 +117,8 @@ oracles:
           - min: 96
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       story_clue:
         name: Story Clue
@@ -223,7 +223,7 @@ oracles:
           - min: 91
             max: 100
             result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/descriptor
                 auto: true
               - oracle: starforged/oracles/core/focus
@@ -338,8 +338,8 @@ oracles:
           - min: 97
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       combat_action:
         name: Combat Action
@@ -451,6 +451,6 @@ oracles:
           - min: 97
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true

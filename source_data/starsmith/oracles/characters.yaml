@@ -1,14 +1,15 @@
 id: starsmith
-source: &Source
-  authors:
-    - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
+package_type: expansion
+ruleset: starforged
 oracles:
   characters:
-    source: *Source
+    source: &Source
+      authors:
+        - name: Eric Bright
+      date: '2023-03-19'
+      title: Starsmith
+      license: https://creativecommons.org/licenses/by/4.0/
+      url: https://playeveryrole.com/
     name: Characters
     enhances: starforged/collections/oracles/characters
     contents:
@@ -631,14 +632,12 @@ oracles:
             max: 95
             <<: &ActionTheme
               result: '[Action + Theme](starforged/oracles/core/action)'
-              rolls:
+              oracle_rolls:
                 - oracle: starforged/oracles/core/action
                 - oracle: starforged/oracles/core/theme
           - min: 96
             max: 100
             result: Roll twice
-            multiple_rolls:
-              amount: 2
           - min: 101
             max: 102
             result: Administrator
@@ -783,8 +782,6 @@ oracles:
           - min: 196
             max: 200
             result: Roll twice
-            multiple_rolls:
-              amount: 2
           - min: 201
             max: 202
             result: Alchemist
@@ -929,8 +926,6 @@ oracles:
           - min: 296
             max: 300
             result: Roll twice
-            multiple_rolls:
-              amount: 2
       goal:
         source: *Source
         name: Character Goal
@@ -1057,8 +1052,6 @@ oracles:
           - min: 91
             max: 100
             result: Roll twice
-            multiple_rolls:
-              amount: 2
           - min: 101
             max: 102
             result: Achieve enlightenment
@@ -1179,8 +1172,6 @@ oracles:
           - min: 191
             max: 200
             result: Roll twice
-            multiple_rolls:
-              amount: 2
           - min: 201
             max: 202
             result: Advance a settlement
@@ -1301,8 +1292,6 @@ oracles:
           - min: 291
             max: 300
             result: Roll twice
-            multiple_rolls:
-              amount: 2
       revealed_aspect:
         source: *Source
         name: Revealed Character Aspect

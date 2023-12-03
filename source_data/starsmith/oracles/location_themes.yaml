@@ -135,7 +135,7 @@ oracles:
                 max: 100
                 <<: &DescriptorFocus
                   result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-                  rolls:
+                  oracle_rolls:
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
                     - oracle: starforged/oracles/core/focus
@@ -178,7 +178,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -291,7 +291,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -404,7 +404,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -517,7 +517,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -630,7 +630,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -743,7 +743,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -856,7 +856,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -969,7 +969,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -1082,7 +1082,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -1195,7 +1195,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99

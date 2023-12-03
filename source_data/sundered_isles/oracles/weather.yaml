@@ -49,9 +49,9 @@ oracles:
                 max: 100
                 <<: &WeatherConditions.1
                   result: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
-                  rolls:
+                  oracle_rolls:
                     - auto: false
-                      times: 1
+                      number_of_rolls: 1
                       oracle: sundered_isles/oracles/weather/foul
           margins:
             source: *Source

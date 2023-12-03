@@ -9,7 +9,8 @@ import { Truth } from './truths.js'
 import { NpcCollection } from './npcs.js'
 import { Atlas } from './atlas.js'
 import { VERSION } from '../scripts/const.js'
-import type { Datasworn, DataswornSource } from '../types/index.js'
+import type * as Datasworn from '../types/Datasworn.js'
+import type * as DataswornSource from '../types/DataswornSource.js'
 
 export const RulesPackage = sourcedTransformer<
 	DataswornSource.RulesPackage,

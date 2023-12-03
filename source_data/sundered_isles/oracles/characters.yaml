@@ -229,88 +229,88 @@ oracles:
           - min: 1
             max: 5
             result: '[Academic](id:sundered_isles/oracles/characters/roles/academic)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/academic
           - min: 6
             max: 10
             result: '[Agent](id:sundered_isles/oracles/characters/roles/agent)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/agent
           - min: 11
             max: 15
             result: '[Caregiver](id:sundered_isles/oracles/characters/roles/caregiver)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/caregiver
           - min: 16
             max: 20
             result: '[Combatant](id:sundered_isles/oracles/characters/roles/combatant)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/combatant
           - min: 21
             max: 25
             result: '[Devotant](id:sundered_isles/oracles/characters/roles/devotant)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/devotant
           - min: 26
             max: 30
             result: '[Laborer](id:sundered_isles/oracles/characters/roles/laborer)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/laborer
           - min: 31
             max: 35
             result: '[Merchant](id:sundered_isles/oracles/characters/roles/merchant)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/merchant
           - min: 36
             max: 40
             result: '[Mystic](id:sundered_isles/oracles/characters/roles/mystic)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/mystic
           - min: 41
             max: 45
             result: '[Outcast](id:sundered_isles/oracles/characters/roles/outcast)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/outcast
           - min: 46
             max: 50
             result: '[Outlander](id:sundered_isles/oracles/characters/roles/outlander)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/outlander
           - min: 51
             max: 55
             result: '[Outlaw](id:sundered_isles/oracles/characters/roles/outlaw)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/outlaw
           - min: 56
             max: 60
             result: '[Performer](id:sundered_isles/oracles/characters/roles/performer)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/performer
           - min: 61
             max: 65
             result: '[Sailor](id:sundered_isles/oracles/characters/roles/sailor)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/sailor
           - min: 66
             max: 70
             result: '[Scavenger](id:sundered_isles/oracles/characters/roles/scavenger)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/scavenger
           - min: 71
             max: 75
             result: '[Statesperson](id:sundered_isles/oracles/characters/roles/statesperson)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/statesperson
           - min: 76
             max: 80
             result: '[Tradesperson](id:sundered_isles/oracles/characters/roles/tradesperson)'
-            rolls:
+            oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/tradesperson
           - min: 81
             max: 90
             <<: &ActionTheme
               result: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
@@ -319,9 +319,9 @@ oracles:
             max: 100
             <<: &RollTwice
               result: Roll twice
-              rolls:
+              oracle_rolls:
                 - auto: true
-                  times: 2
+                  number_of_rolls: 2
       trademark_accessories:
         name: Trademark Accessories
         source:
@@ -478,7 +478,7 @@ oracles:
               max: 100
               <<: &DescriptorFocus
                 result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
-                rolls:
+                oracle_rolls:
                   - auto: true
                     oracle: sundered_isles/oracles/core/descriptor
                   - auto: true

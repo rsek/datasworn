@@ -8,7 +8,8 @@ import {
 import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
 
 import { cloneDeep, merge } from 'lodash-es'
-import type { Datasworn, DataswornSource } from '../types/index.js'
+import type * as Datasworn from '../types/Datasworn.js'
+import type * as DataswornSource from '../types/DataswornSource.js'
 
 export const OracleTableRow: Transformer<
 	DataswornSource.OracleTableRow,
@@ -43,9 +44,6 @@ export const OracleTable = sourcedTransformer<
 		parent: SourcedNode
 	): Datasworn.OracleTableRow[] {
 		return data.table.map((row, i) => {
-			const rowData =
-				data._i18n == null ? row : merge({ i18n: cloneDeep(data._i18n) }, row)
-
 			return transform(rowData, i, this, OracleTableRow)
 		})
 	}

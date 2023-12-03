@@ -117,7 +117,7 @@ oracles:
                 max: 100
                 <<: &DescriptorFocus
                   result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-                  rolls:
+                  oracle_rolls:
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
                     - oracle: starforged/oracles/core/focus
@@ -168,7 +168,7 @@ oracles:
                 min: 91
                 max: 98
                 result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                     auto: true
                   - oracle: starforged/oracles/core/theme
@@ -177,8 +177,8 @@ oracles:
                 min: 99
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           opportunity:
             name: Opportunity

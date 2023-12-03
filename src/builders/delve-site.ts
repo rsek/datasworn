@@ -6,7 +6,8 @@ import {
 import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
 import { trackID } from './id-tracker.js'
 import { cloneDeep } from 'lodash-es'
-import type { Datasworn, DataswornSource } from '../types/index.js'
+import type * as Datasworn from '../types/Datasworn.js'
+import type * as DataswornSource from '../types/DataswornSource.js'
 
 type FeatureOrDangerData =
 	| DataswornSource.DelveSiteThemeDangerRow

@@ -1,7 +1,8 @@
 import { Type, type ObjectOptions, type TObject } from '@sinclair/typebox'
 import { IdentifiedNode, type TIdentifiedNode } from './IdentifiedNode.js'
 import * as Utils from '../Utils.js'
-import { type Id, Metadata, Localize } from '../common/index.js'
+import { Id, Metadata, Localize } from '../common/index.js'
+import { Dictionary } from './Dictionary.js'
 
 /** Interface shared by objects with source attribute. */
 
@@ -21,7 +22,13 @@ export const SourcedNodeBase = Type.Object(
 			description:
 				'Attribution for the original source (such as a book or website) of this item, including the author and licensing information.'
 		}),
-		suggestions: Type.Optional(Type.Ref(Metadata.Suggestions))
+		suggestions: Type.Optional(Type.Ref(Metadata.Suggestions)),
+
+		tags: Type.Optional(
+			Type.Record(Id.RulesetId, Dictionary(Type.String()), {
+				releaseStage: 'experimental'
+			})
+		)
 		// _sort: Type.Optional(SourceOnly(Type.Number()))
 	},
 	// overridden when it's used as a mixin, left in for use in validation

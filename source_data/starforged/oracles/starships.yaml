@@ -193,7 +193,7 @@ oracles:
                 min: 86
                 max: 90
                 result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                     auto: true
                   - oracle: starforged/oracles/core/theme
@@ -202,8 +202,8 @@ oracles:
                 min: 91
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           outlands:
             name: Outlands
@@ -419,9 +419,6 @@ oracles:
         #   initial: true
         # content:
         #   part_of_speech: [fragment]
-        _i18n:
-          result:
-            part_of_speech: common_noun
         rendering:
           style: standalone
           columns:
@@ -440,120 +437,138 @@ oracles:
             result: Carrier
             summary: Launches fighters
             # set_attributes: {starship_type: [carrier]}
+
+            i18n: &i18n.result.common_noun
+              result:
+                part_of_speech: common_noun
           - min: 3
             max: 6
             result: Corvette
             summary: Light attack ship
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [corvette]}
           - min: 7
             max: 11
             result: Courier
             summary: Fast transport
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [courier]}
           - min: 12
             max: 14
             result: Cruiser
             summary: Medium attack ship
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [cruiser]}
           - min: 15
             max: 16
             result: Dreadnought
             summary: Heavy attack ship
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [dreadnought]}
           - min: 17
             max: 19
             result: Escape pod
             summary: Survival craft
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [escape]}
           - min: 20
             max: 22
             result: Foundry
             summary: Mobile construction platform
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [foundry]}
           - min: 23
             max: 27
             result: Harvester
             summary: Fuel or energy excavator
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [harvester]}
           - min: 28
             max: 33
             result: Hauler
             summary: Heavy transport
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hauler]}
           - min: 34
             max: 36
             result: Hunter
             summary: Stealthy attack ship
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hunter]}
           - min: 37
             max: 38
             result: Ironhome
             summary: Habitat
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [ironhome]}
           - min: 39
             max: 42
             result: Mender
             summary: Utility or repair
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [mender]}
           - min: 43
             max: 47
             result: Outbounder
             summary: Remote survey or research
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [outbounder]}
           - min: 48
             max: 50
             result: Pennant
             summary: Command ship
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [pennant]}
           - min: 51
             max: 56
             result: Prospector
             summary: Mineral excavator
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [prospector]}
           - min: 57
             max: 61
             result: Reclaimer
             summary: Salvage or rescue
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [reclaimer]}
           - min: 62
             max: 64
             result: Shuttle
             summary: Short-range transport
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [shuttle]}
           - min: 65
             max: 67
             result: Snub fighter
             summary: Small attack craft
+            i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [snub_fighter]}
           - min: 68
             max: 82
             result: Multipurpose
             summary: '[Starship Mission](id:starforged/oracles/starships/mission)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/starships/mission
               # set_attributes: {starship_type: [multipurpose]}]
-            i18n:
+            i18n: &i18n.result.adjective
               result:
                 part_of_speech: adjective
           - min: 83
             max: 84
             result: Unusual or unknown
-            i18n:
-              result:
-                part_of_speech: adjective
+            i18n: *i18n.result.adjective
           - min: 85
             max: 94
             result: '[Fleet](id:starforged/oracles/starships/fleet)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/starships/fleet
           - min: 95
             max: 100
             result: Ships in conflict (roll twice)
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/starships/type
-                method: keep_duplicates
-                times: 2
-            i18n: {}
+                duplicates: keep
+                number_of_rolls: 2
           # TODO: format the above as a 2nd roll of this table + a game object hint
       fleet:
         name: Fleet
@@ -562,35 +577,39 @@ oracles:
           page: 326
         # usage:
         #   initial: true
-        _i18n:
-          result:
-            part_of_speech: common_noun
         table:
           - min: 1
             max: 10
             result: Battle fleet
+            i18n: *i18n.result.common_noun
           - min: 11
             max: 25
             result: Pirate wing
+            i18n: *i18n.result.common_noun
           - min: 26
             max: 35
             result: Raider horde
+            i18n: *i18n.result.common_noun
           - min: 36
             max: 50
             result: Salvager hive
+            i18n: *i18n.result.common_noun
           - min: 51
             max: 60
             result: Settler caravan
+            i18n: *i18n.result.common_noun
           - min: 61
             max: 70
             result: Trade caravan
+            i18n: *i18n.result.common_noun
           - min: 71
             max: 90
             result: Transport and escorts
+            i18n: *i18n.result.common_noun
           - min: 91
             max: 100
             result: '[Starship Mission](id:starforged/oracles/starships/mission)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/starships/mission
       initial_contact:
         name: Initial Contact
@@ -718,7 +737,7 @@ oracles:
           - min: 95
             max: 100
             result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/descriptor
                 auto: true
               - oracle: starforged/oracles/core/focus
@@ -732,9 +751,9 @@ oracles:
           Give a starship a name when it has an important role in your story. Scan this table and select a name which fits what you know of the ship’s appearance and role. Or generate a random result and let any contradictions contribute to the ship’s history or nature.
         # content:
         #   tags: [name]
-        _i18n:
-          result:
-            part_of_speech: proper_noun
+        # _i18n:
+        #   result:
+        #     part_of_speech: proper_noun
         table:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
           - min: 1

@@ -56,5 +56,6 @@
 		"markdown"
 	],
 	"eslint.useESLintClass": true,
-	"eslint.run": "onSave"
+	"eslint.run": "onSave",
+	"editor.suggest.snippetsPreventQuickSuggestions": true
 }

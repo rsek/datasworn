@@ -235,7 +235,7 @@ oracles:
                 max: 99
                 <<: &ActionTheme
                   result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-                  rolls:
+                  oracle_rolls:
                     - oracle: starforged/oracles/core/action
                       auto: true
                     - oracle: starforged/oracles/core/theme
@@ -244,8 +244,8 @@ oracles:
                 max: 100
                 <<: &RollTwice
                   result: Roll twice
-                  rolls:
-                    - times: 2
+                  oracle_rolls:
+                    - number_of_rolls: 2
                       auto: true
           lifeless:
             name: Lifeless

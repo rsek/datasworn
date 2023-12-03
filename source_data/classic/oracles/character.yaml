@@ -255,8 +255,8 @@ oracles:
           - min: 96
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       descriptor:
         name: Character Descriptor

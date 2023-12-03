@@ -1489,7 +1489,6 @@
 				"drives",
 				"tactics",
 				"description",
-				"quest_starter",
 				"source"
 			],
 			"properties": {
@@ -1557,6 +1556,20 @@
 				"source": {
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -1623,6 +1636,20 @@
 				"replaces": {
 					"$ref": "#/$defs/NpcCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -1713,7 +1740,7 @@
 		"OracleTableRoll": {
 			"title": "OracleTableRoll",
 			"type": "object",
-			"required": ["dice", "auto", "method", "oracle", "times"],
+			"required": ["dice", "auto", "duplicates", "number_of_rolls", "oracle"],
 			"properties": {
 				"dice": {
 					"description": "The dice roll to make on the oracle table. Set it to `null` if you just want the table's default.",
@@ -1732,10 +1759,16 @@
 					"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as \"Action + Theme\".",
 					"default": false
 				},
-				"method": {
-					"$ref": "#/$defs/OracleTableRollMethod",
-					"description": "Special rules on how the oracle table roll is performed.",
+				"duplicates": {
+					"$ref": "#/$defs/OracleTableRollDuplicates",
+					"description": "Special rules on how to handle duplicate results, when rolling multiple times on this table.",
 					"default": "no_duplicates"
+				},
+				"number_of_rolls": {
+					"type": "integer",
+					"description": "The number of times to roll.",
+					"default": 1,
+					"minimum": 1
 				},
 				"oracle": {
 					"description": "The ID of the oracle table to be rolled. A `null` value indicates that it's a roll on the same table.",
@@ -1748,19 +1781,13 @@
 							"type": "null"
 						}
 					]
-				},
-				"times": {
-					"type": "integer",
-					"description": "The number of times to roll.",
-					"default": 1,
-					"minimum": 1
 				}
 			}
 		},
-		"OracleTableRollMethod": {
-			"title": "OracleTableRollMethod",
-			"description": "Special roll instructions to use when rolling multiple times on a single oracle table.\n\n  - `no_duplicates`: Duplicates should be re-rolled.\n  - `keep_duplicates`: Duplicates should be kept.\n  - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.",
-			"enum": ["no_duplicates", "keep_duplicates", "make_it_worse"]
+		"OracleTableRollDuplicates": {
+			"title": "OracleTableRollDuplicates",
+			"description": "Special roll instructions to use when rolling multiple times on a single oracle table.\n\n  - `reroll`: Duplicates should be re-rolled.\n  - `keep`: Duplicates should be kept.\n  - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.",
+			"enum": ["reroll", "keep", "make_it_worse"]
 		},
 		"OracleCollection": {
 			"title": "OracleCollection",
@@ -1840,6 +1867,20 @@
 				"replaces": {
 					"$ref": "#/$defs/OracleCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -1943,7 +1984,14 @@
 			"title": "OracleTable",
 			"type": "object",
 			"description": "Represents a single oracle table, or a single table column of a table that has multiple \"Roll\" or \"Result\" columns.",
-			"required": ["id", "name", "dice", "table", "source"],
+			"required": [
+				"id",
+				"name",
+				"dice",
+				"table",
+				"source",
+				"recommended_rolls"
+			],
 			"properties": {
 				"id": {
 					"$ref": "#/$defs/OracleTableId",
@@ -2007,9 +2055,41 @@
 					"$ref": "#/$defs/I18nHints",
 					"macro": true
 				},
+				"recommended_rolls": {
+					"type": "object",
+					"default": {
+						"min": 1,
+						"max": 1
+					},
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
 				"replaces": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "Indicates that this table replaces the identified table. References to the replaced table can be considered equivalent to this table."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -2226,13 +2306,6 @@
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
-				"rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
-					}
-				},
 				"embed_table": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
@@ -2242,6 +2315,13 @@
 				},
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRoll"
+					}
 				}
 			}
 		},
@@ -2385,6 +2465,20 @@
 				"replaces": {
 					"$ref": "#/$defs/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -2482,6 +2576,20 @@
 				"replaces": {
 					"$ref": "#/$defs/MoveCategoryId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -2613,6 +2721,20 @@
 				"replaces": {
 					"$ref": "#/$defs/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -2739,6 +2861,20 @@
 					"$ref": "#/$defs/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
 				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
 				"tracks": {
 					"$ref": "#/$defs/ProgressTrackTypeInfo",
 					"description": "Describes the common features of progress tracks associated with this move."
@@ -2842,6 +2978,20 @@
 				"replaces": {
 					"$ref": "#/$defs/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -3401,6 +3551,20 @@
 				"source": {
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -4555,6 +4719,20 @@
 				"replaces": {
 					"$ref": "#/$defs/AssetTypeId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -4932,12 +5110,29 @@
 						"$ref": "#/$defs/TruthOption"
 					}
 				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString"
+				},
 				"suggestions": {
 					"$ref": "#/$defs/Suggestions"
 				},
 				"source": {
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				},
 				"your_character": {
 					"$ref": "#/$defs/MarkdownString"
@@ -5026,13 +5221,6 @@
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
-				"rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
-					}
-				},
 				"embed_table": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
@@ -5042,6 +5230,13 @@
 				},
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRoll"
+					}
 				}
 			}
 		},
@@ -5117,6 +5312,20 @@
 				"replaces": {
 					"$ref": "#/$defs/AtlasId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			},
 			"releaseStage": "experimental"
@@ -5125,14 +5334,7 @@
 			"title": "AtlasEntry",
 			"type": "object",
 			"description": "An atlas entry, like the Ironlands region entries found in classic Ironsworn.",
-			"required": [
-				"id",
-				"name",
-				"features",
-				"description",
-				"quest_starter",
-				"source"
-			],
+			"required": ["id", "name", "features", "description", "source"],
 			"properties": {
 				"id": {
 					"$ref": "#/$defs/AtlasEntryId",
@@ -5170,6 +5372,20 @@
 				"source": {
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -5219,6 +5435,20 @@
 				"asset": {
 					"$ref": "#/$defs/AssetId",
 					"description": "The asset augmented by this rarity."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				},
 				"xp_cost": {
 					"type": "integer",
@@ -5535,6 +5765,20 @@
 				"region": {
 					"$ref": "#/$defs/AtlasEntryId",
 					"description": "The ID of an atlas entry representing the region in which this delve site is located."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				},
 				"theme": {
 					"$ref": "#/$defs/DelveSiteThemeId"
@@ -5900,6 +6144,20 @@
 				"name_oracle": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -5939,13 +6197,6 @@
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
-				"rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
-					}
-				},
 				"embed_table": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
@@ -5955,6 +6206,13 @@
 				},
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRoll"
+					}
 				}
 			}
 		},
@@ -5994,13 +6252,6 @@
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
-				"rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
-					}
-				},
 				"embed_table": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
@@ -6010,6 +6261,13 @@
 				},
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRoll"
+					}
 				}
 			}
 		},
@@ -6337,6 +6595,20 @@
 				"source": {
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -6376,13 +6648,6 @@
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
-				"rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
-					}
-				},
 				"embed_table": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
@@ -6392,6 +6657,13 @@
 				},
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRoll"
+					}
 				}
 			}
 		},
@@ -6431,13 +6703,6 @@
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
-				"rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
-					}
-				},
 				"embed_table": {
 					"$ref": "#/$defs/OracleTableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
@@ -6447,6 +6712,13 @@
 				},
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRoll"
+					}
 				}
 			}
 		}

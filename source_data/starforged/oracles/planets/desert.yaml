@@ -21,7 +21,6 @@ oracles:
           <<: *Source
           page: 308
         summary: A pitiless planet of searing heat, blowing sand, and sunbaked rock.
-
         collections:
           settlements:
             name: Settlements
@@ -204,7 +203,7 @@ oracles:
               - min: 89
                 max: 98
                 result: &DF.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-                rolls: &DF.rolls
+                oracle_rolls: &DF.rolls
                   - oracle: starforged/oracles/core/descriptor
                     auto: true
                   - oracle: starforged/oracles/core/focus
@@ -258,7 +257,7 @@ oracles:
               - min: 92
                 max: 98
                 result: *DF.result
-                rolls: *DF.rolls
+                oracle_rolls: *DF.rolls
               - min: 99
                 max: 100
                 result: '[Precursor Vault](id:starforged/collections/oracles/vaults) (planetside)'

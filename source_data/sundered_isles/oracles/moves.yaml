@@ -113,9 +113,9 @@ oracles:
             max: 100
             <<: &RollTwice
               result: Roll twice
-              rolls:
+              oracle_rolls:
                 - auto: true
-                  times: 2
+                  number_of_rolls: 2
       confront_chaos:
         source:
           <<: *Source
@@ -188,7 +188,7 @@ oracles:
         table:
           - min: 1
             max: 40
-            result: 'It’s worse than you thought: Make a suffer move (-2)'
+            result: 'It’s worse than you thought: Make a [suffer move](id:sundered_isles/collections/moves/suffer) (-2)'
           - min: 41
             max: 52
             result: 'Victory is short-lived: A new peril or foe appears'
@@ -211,13 +211,13 @@ oracles:
         table:
           - min: 1
             max: 10
-            result: You suffer mortal harm. Face Death.
+            result: You suffer mortal harm. [Face Death](id:sundered_isles/moves/threshold/face_death).
           - min: 11
             max: 20
-            result: You are dying. Within an hour or two, you must Heal and raise your health above 0, or Face Death.
+            result: You are dying. Within an hour or two, you must [Heal](id:sundered_isles/moves/recover/heal) and raise your health above 0, or [Face Death](id:sundered_isles/moves/threshold/face_death).
           - min: 21
             max: 35
-            result: You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, Face Death.
+            result: You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, [Face Death](id:sundered_isles/moves/threshold/face_death).
           - min: 36
             max: 50
             result: You are reeling. If you engage in any vigorous activity before taking a breather, roll on this table again (before resolving the other move).
@@ -231,10 +231,10 @@ oracles:
         table:
           - min: 1
             max: 10
-            result: You are overwhelmed. Face Desolation.
+            result: You are overwhelmed. [Face Desolation](id:sundered_isles/moves/threshold/face_desolation).
           - min: 11
             max: 25
-            result: You give up. Forsake Your Vow.
+            result: You give up. [Forsake Your Vow](id:sundered_isles/moves/quest/forsake_your_vow).
           - min: 26
             max: 50
             result: You give in to fear or compulsion, and act against your better instincts.
@@ -248,25 +248,25 @@ oracles:
         table:
           - min: 1
             max: 10
-            result: Immediate catastrophic destruction or sinking. You and your allies must Endure Harm or Face Death, as appropriate.
+            result: Immediate catastrophic destruction or sinking. You and your allies must [Endure Harm](id:sundered_isles/moves/suffer/endure_harm) or [Face Death](id:sundered_isles/moves/threshold/face_death), as appropriate.
           - min: 11
             max: 25
             result: Destruction or sinking is imminent and unavoidable. All aboard must find a way to safety.
           - min: 26
             max: 40
-            result: Destruction or sinking is imminent, but can be averted if you Repair your vehicle and raise its integrity above 0. If you fail, see 11–25.
+            result: Destruction or sinking is imminent, but can be averted if you [Repair](id:sundered_isles/moves/recover/repair) your vehicle and raise its integrity above 0. If you fail, see 11–25.
           - min: 41
             max: 55
-            result: You cannot Repair this vehicle until you Resupply and obtain crucial parts or materials. If you roll this result again prior to that, see 11–25.
+            result: You cannot [Repair](id:sundered_isles/moves/recover/repair) this vehicle until you [Resupply](id:sundered_isles/moves/recover/resupply) and obtain crucial parts or materials. If you roll this result again prior to that, see 11–25.
           - min: 56
             max: 70
-            result: The vehicle is crippled. To get it back in action, you must Repair and raise its integrity above 0.
+            result: The vehicle is crippled. To get it back in action, you must [Repair](id:sundered_isles/moves/recover/repair) and raise its integrity above 0.
           - min: 71
             max: 85
-            result: Those aboard bear the brunt of the damage. You and your allies must make the Endure Harm, Endure Stress, or Companion Takes a Hit move, suffering a serious (-2) cost.
+            result: Those aboard bear the brunt of the damage. You and your allies must make the [Endure Harm](id:sundered_isles/moves/suffer/endure_harm), [Endure Stress](id:sundered_isles/moves/suffer/endure_stress), or [Companion Takes a Hit](id:sundered_isles/moves/suffer/companion_takes_a_hit) move, suffering a serious (-2) cost.
           - min: 86
             max: 95
-            result: You’ve lost gear, cargo, or provisions. Sacrifice Resources (-2).
+            result: You’ve lost gear, cargo, or provisions. [Sacrifice Resources](id:sundered_isles/moves/suffer/sacrifice_resources) (-2).
           - min: 96
             max: 100
             result: Against all odds, the vehicle holds together.

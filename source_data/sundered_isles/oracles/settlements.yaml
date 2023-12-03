@@ -1,16 +1,15 @@
 id: sundered_isles
 package_type: ruleset
-source: &Source
-  title: Sundered Isles Book Preview
-  authors:
-    - name: Shawn Tomkin
-  license: null
-  url: https://ironswornrpg.com
-  date: 2023-09-11
 oracles:
   settlements:
     source:
-      <<: *Source
+      <<: &Source
+        title: Sundered Isles Book Preview
+        authors:
+          - name: Shawn Tomkin
+        license: null
+        url: https://ironswornrpg.com
+        date: 2023-09-11
     name: Settlements
     contents:
       location:
@@ -239,7 +238,7 @@ oracles:
             max: 100
             <<: &DescriptorFocus
               result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
-              rolls:
+              oracle_rolls:
                 - oracle: sundered_isles/oracles/core/descriptor
                   auto: true
                 - oracle: sundered_isles/oracles/core/focus
@@ -667,7 +666,7 @@ oracles:
             max: 97
             <<: &ActionTheme
               result: '[Action](id:sundered_isles/oracles/core/theme) + [Theme](id:sundered_isles/oracles/core/theme)'
-              rolls:
+              oracle_rolls:
                 - oracle: sundered_isles/oracles/core/theme
                   auto: true
                 - oracle: sundered_isles/oracles/core/theme

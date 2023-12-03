@@ -7,7 +7,8 @@ import {
 import { mapValues } from 'lodash-es'
 import type * as In from '../types/DataswornSource.js'
 import type * as Out from '../types/Datasworn.js'
-import type { Datasworn, DataswornSource } from '../types/index.js'
+import type * as Datasworn from '../types/Datasworn.js'
+import type * as DataswornSource from '../types/DataswornSource.js'
 
 export const NpcVariant: Transformer<
 	DataswornSource.NpcVariant,

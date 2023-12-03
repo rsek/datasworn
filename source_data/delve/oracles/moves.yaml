@@ -178,8 +178,8 @@ oracles:
           - min: 95
             max: 100
             result: &Reveal_a_Danger_10 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
                 method: make_it_worse
       reveal_a_danger_alt:
@@ -219,8 +219,8 @@ oracles:
           - min: 95
             max: 100
             result: *Reveal_a_Danger_10
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
                 method: make_it_worse
       advance_a_threat:

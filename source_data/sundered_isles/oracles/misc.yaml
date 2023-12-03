@@ -161,7 +161,7 @@ oracles:
             max: 20
             <<: &ActionTheme
               result: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
@@ -170,7 +170,7 @@ oracles:
             max: 40
             <<: &ActionFocus
               result: '[Action](id:sundered_isles/oracles/core/action) + [Focus](id:sundered_isles/oracles/core/focus)'
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
@@ -179,7 +179,7 @@ oracles:
             max: 60
             <<: &DescriptorTheme
               result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Theme](id:sundered_isles/oracles/core/theme)'
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/descriptor
                 - auto: true
@@ -188,7 +188,7 @@ oracles:
             max: 80
             <<: &DescriptorFocus
               result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/descriptor
                 - auto: true
@@ -197,7 +197,7 @@ oracles:
             max: 100
             result: '[Action](id:sundered_isles/oracles/core/action) + [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
             <<: &ActionDescriptorFocus
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
                 - auto: true

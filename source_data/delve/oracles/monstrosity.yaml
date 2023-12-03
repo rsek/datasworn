@@ -150,10 +150,9 @@ oracles:
           - min: 81
             max: 100
             result: Hybrid (roll twice)
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
-                method: no_duplicates
             # *result:RollTwice
       characteristics:
         name: Characteristics

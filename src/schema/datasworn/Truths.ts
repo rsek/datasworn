@@ -27,6 +27,7 @@ export const Truth = Generic.SourcedNode(
 	Type.Ref(Id.TruthId),
 	Type.Object({
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
+		summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		options: Type.Array(Type.Ref(TruthOption)),
 		your_character: Type.Optional(Type.Ref(Localize.MarkdownString))
 	}),

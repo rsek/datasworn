@@ -51,6 +51,9 @@ oracles:
             source: *CollectionSource
             rendering:
               style: column
+            tags:
+              starforged:
+                region: terminus
             # usage:
             #   requires:
             #     attributes:
@@ -59,7 +62,7 @@ oracles:
               - min: 1
                 max: 15
                 result: &Sighting.0.result '[Stellar Object](id:starforged/oracles/space/stellar_object)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/space/stellar_object
               - min: 16
                 max: 35
@@ -88,7 +91,7 @@ oracles:
               - min: 56
                 max: 60
                 result: &Sighting.7.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-                rolls: &Sighting.7.rolls
+                oracle_rolls: &Sighting.7.rolls
                   - oracle: starforged/oracles/core/descriptor
                     auto: true
                   - oracle: starforged/oracles/core/focus
@@ -130,23 +133,26 @@ oracles:
                 min: 94
                 max: 98
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
-                    method: keep_duplicates
+                    duplicates: keep
               - &Sighting.20
                 min: 99
                 max: 100
                 result: Roll three times
-                rolls:
-                  - times: 3
+                oracle_rolls:
+                  - number_of_rolls: 3
                     auto: true
-                    method: keep_duplicates
+                    duplicates: keep
           outlands:
             name: Outlands
             source: *CollectionSource
             rendering:
               style: column
+            tags:
+              starforged:
+                region: outlands
             # usage:
             #   requires:
             #     attributes:
@@ -176,7 +182,7 @@ oracles:
               - min: 53
                 max: 58
                 result: *Sighting.7.result
-                rolls: *Sighting.7.rolls
+                oracle_rolls: *Sighting.7.rolls
               - min: 59
                 max: 63
                 result: *Sighting.8.result
@@ -221,6 +227,9 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [expanse]
+            tags:
+              starforged:
+                region: expanse
             table:
               - min: 1
                 max: 15
@@ -246,7 +255,7 @@ oracles:
               - min: 50
                 max: 56
                 result: *Sighting.7.result
-                rolls: *Sighting.7.rolls
+                oracle_rolls: *Sighting.7.rolls
               - min: 57
                 max: 61
                 result: *Sighting.8.result
@@ -320,34 +329,39 @@ oracles:
             # content:
             #   part_of_speech: [proper noun fragment]
             #   tags: [template fragment]
-            _i18n:
-              result:
-                part_of_speech: adjective
             table:
               - min: 1
                 max: 2
                 result: Accursed
+                i18n: &i18n.result.adjective
+                  result:
+                    part_of_speech: adjective
               - min: 3
                 max: 4
                 result: Ashen
+                i18n: *i18n.result.adjective
               - min: 5
                 max: 6
                 result: Asteria
-                i18n:
+                i18n: &i18n.result.adjunct_proper_noun
                   result:
                     part_of_speech: adjunct_proper_noun
               - min: 7
                 max: 8
                 result: Bitter
+                i18n: *i18n.result.adjective
               - min: 9
                 max: 10
                 result: Blighted
+                i18n: *i18n.result.adjective
               - min: 11
                 max: 12
                 result: Bloodied
+                i18n: *i18n.result.adjective
               - min: 13
                 max: 14
                 result: Boundless
+                i18n: *i18n.result.adjective
               - min: 15
                 max: 16
                 result: Burning
@@ -357,36 +371,26 @@ oracles:
               - min: 17
                 max: 18
                 result: Cortana
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 19
                 max: 20
                 result: Corvus
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 21
                 max: 22
                 result: Crimson
               - min: 23
                 max: 24
                 result: Cygnus
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 25
                 max: 26
                 result: Delphi
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 27
                 max: 28
                 result: Delphian
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 29
                 max: 30
                 result: Devil's
@@ -394,17 +398,18 @@ oracles:
               - min: 31
                 max: 32
                 result: Ebon
+                i18n: *i18n.result.adjective
               - min: 33
                 max: 34
                 result: Essus
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 35
                 max: 36
+                i18n: *i18n.result.adjective
                 result: Fallen
               - min: 37
                 max: 38
+                i18n: *i18n.result.adjective
                 result: Ferrous
               - min: 39
                 max: 40
@@ -413,135 +418,125 @@ oracles:
               - min: 41
                 max: 42
                 result: Forgotten
+                i18n: *i18n.result.adjective
               - min: 43
                 max: 44
                 result: Haunted
+                i18n: *i18n.result.adjective
               - min: 45
                 max: 46
                 result: Hidden
+                i18n: *i18n.result.adjective
               - min: 47
                 max: 48
                 result: Hollow
+                i18n: *i18n.result.adjective
               - min: 49
                 max: 50
                 result: Igneous
+                i18n: *i18n.result.adjective
               - min: 51
                 max: 52
                 result: Infernal
+                i18n: *i18n.result.adjective
               - min: 53
                 max: 54
                 result: Invidia
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 55
                 max: 56
                 result: Iron
-                i18n:
+                i18n: &i18n.result.adjunct_common_noun
                   result:
                     part_of_speech: adjunct_common_noun
               - min: 57
                 max: 58
                 result: Kalidas
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 59
                 max: 60
                 result: Kronos
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 61
                 max: 62
                 result: Lacuna
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 63
                 max: 64
                 result: Lumen
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 65
                 max: 66
                 result: Mobius
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 67
                 max: 68
                 result: Morien
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 69
                 max: 70
                 result: Onyx
-                i18n:
-                  result:
-                    part_of_speech: adjunct_common_noun
+                i18n: *i18n.result.adjunct_common_noun
               - min: 71
                 max: 72
                 result: Outer
+                i18n: *i18n.result.adjective
               - min: 73
                 max: 74
                 result: Sanguis
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 75
                 max: 76
                 result: Scarred
+                i18n: *i18n.result.adjective
               - min: 77
                 max: 78
                 result: Scorched
+                i18n: *i18n.result.adjective
               - min: 79
                 max: 80
                 result: Shattered
+                i18n: *i18n.result.adjective
               - min: 81
                 max: 82
                 result: Shrouded
+                i18n: *i18n.result.adjective
               - min: 83
                 max: 84
                 result: Sindri
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 85
                 max: 86
                 result: Solana
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 87
                 max: 88
                 result: Stygian
+                i18n: *i18n.result.adjective
               - min: 89
                 max: 90
                 result: Sulaco
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 91
                 max: 92
                 result: Sundered
+                i18n: *i18n.result.adjective
               - min: 93
                 max: 94
                 result: Thunor
-                i18n:
-                  result:
-                    part_of_speech: adjunct_proper_noun
+                i18n: *i18n.result.adjunct_proper_noun
               - min: 95
                 max: 96
                 result: Vanguard
+                i18n: *i18n.result.adjective
               - min: 97
                 max: 98
                 result: Veiled
+                i18n: *i18n.result.adjective
               - min: 99
                 max: 100
                 result: Wasted
+                i18n: *i18n.result.adjective
           suffix:
             name: Suffix
             source: *CollectionSource
@@ -553,9 +548,9 @@ oracles:
             suggestions:
               oracles:
                 - starforged/oracles/space/sector_name/prefix
-            _i18n:
-              result:
-                part_of_speech: common_noun
+            # _i18n:
+            #   result:
+            #     part_of_speech: common_noun
             # content:
             #   part_of_speech: [proper noun fragment]
             #   tags: [template fragment, place]
@@ -878,7 +873,7 @@ oracles:
           - min: 97
             max: 99
             result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/core/action
                 auto: true
               - oracle: starforged/oracles/core/theme
@@ -886,8 +881,8 @@ oracles:
           - min: 100
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       opportunity:
         source:

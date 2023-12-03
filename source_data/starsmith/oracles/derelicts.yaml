@@ -1,16 +1,20 @@
 id: starsmith
-source: &Source
-  authors:
-    - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
+package_type: expansion
+ruleset: starforged
 oracles:
   derelicts:
     name: Derelicts
+    source: &Source
+      authors:
+        - name: Eric Bright
+      date: '2023-03-19'
+      title: Starsmith
+      license: https://creativecommons.org/licenses/by/4.0/
+      url: https://playeveryrole.com/
     contents:
       outer_first_look:
+        source:
+          <<: *Source
         replaces: starforged/oracles/derelicts/outer_first_look
         dice: 1d300
         table:
@@ -105,6 +109,8 @@ oracles:
             max: 300
             result: Affected by local stellar phenomenon
       inner_first_look:
+        source:
+          <<: *Source
         replaces: starforged/oracles/derelicts/inner_first_look
         dice: 1d300
         table:
@@ -205,7 +211,7 @@ oracles:
             max: 100
             <<: &DescriptorFocus
               result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-              rolls:
+              oracle_rolls:
                 - oracle: starforged/oracles/core/descriptor
                   auto: true
                 - oracle: starforged/oracles/core/focus
@@ -403,7 +409,8 @@ oracles:
             max: 300
             <<: *DescriptorFocus
       location_and_type:
-        _insert: starforged/oracles/derelicts/location_and_type
+        source:
+          <<: *Source
         name: Location and Type
         dice: 1d100
         table:

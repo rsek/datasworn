@@ -34,7 +34,7 @@ oracles:
             result: Space
             icon: &icon.Space icons/creature/environment/space.svg
             # set_attributes: {environment: [space]}
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/space
           - <<:  *i18n.result.common_noun
             min: 6
@@ -42,7 +42,7 @@ oracles:
             result: Interior
             icon: &icon.Interior icons/creature/environment/interior.svg
             # set_attributes: {environment: [interior]}
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/interior
           - <<:  *i18n.result.common_noun
             min: 16
@@ -50,7 +50,7 @@ oracles:
             result: Land
             icon: &icon.Land icons/creature/environment/land.svg
             # set_attributes: {environment: [land]}
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/land
           - <<:  *i18n.result.common_noun
             min: 56
@@ -58,7 +58,7 @@ oracles:
             result: Liquid
             icon: &icon.Liquid icons/creature/environment/liquid.svg
             # set_attributes: {environment: [liquid]}
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/liquid
           - <<:  *i18n.result.common_noun
             min: 81
@@ -66,7 +66,7 @@ oracles:
             result: Air
             icon: &icon.Air icons/creature/environment/air.svg
             # set_attributes: {environment: [air]}
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/air
       scale:
         name: Scale
@@ -113,7 +113,7 @@ oracles:
             min: 100
             max: 100
             result: '[Ultra-scale](id:starforged/oracles/creatures/ultra_scale)'
-            rolls:
+            oracle_rolls:
               - oracle: starforged/oracles/creatures/ultra_scale
                 auto: true
       ultra_scale:
@@ -421,8 +421,8 @@ oracles:
             min: 96
             max: 100
             result: Roll twice
-            rolls:
-              - times: 2
+            oracle_rolls:
+              - number_of_rolls: 2
                 auto: true
       revealed_creature_aspect:
         name: Revealed Creature Aspect
@@ -721,8 +721,8 @@ oracles:
                 min: 91
                 max: 100
                 result: Roll twice
-                rolls:
-                  - times: 2
+                oracle_rolls:
+                  - number_of_rolls: 2
                     auto: true
           interior:
             name: Interior

@@ -3,7 +3,8 @@ import type * as Out from '../types/Datasworn.js'
 import { collectionTransformer, sourcedTransformer } from './transformer.js'
 import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
 
-import type { Datasworn, DataswornSource } from '../types/index.js'
+import type * as Datasworn from '../types/Datasworn.js'
+import type * as DataswornSource from '../types/DataswornSource.js'
 
 export const Move = sourcedTransformer<DataswornSource.Move, Datasworn.Move>({
 	trigger: function (

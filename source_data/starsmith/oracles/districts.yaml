@@ -1,17 +1,18 @@
 id: starsmith
-source: &Source
-  authors:
-    - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
+package_type: expansion
+ruleset: starforged
 oracles:
   districts:
     name: Districts
     contents:
       zones:
-        _insert: starforged/oracles/districts/zones
+        source: &Source
+          authors:
+            - name: Eric Bright
+          date: '2023-03-19'
+          title: Starsmith
+          license: https://creativecommons.org/licenses/by/4.0/
+          url: https://playeveryrole.com/
         name: Zones
         dice: 1d100
         table:
@@ -123,7 +124,7 @@ oracles:
                 max: 100
                 <<: &DescriptorFocus
                   result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-                  rolls:
+                  oracle_rolls:
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
                     - oracle: starforged/oracles/core/focus
@@ -163,7 +164,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -311,7 +312,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -459,7 +460,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -607,7 +608,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -755,7 +756,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -903,7 +904,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -1051,7 +1052,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99
@@ -1199,7 +1200,7 @@ oracles:
               - min: 91
                 max: 98
                 result: '[Action + Theme](starforged/oracles/core/action)'
-                rolls:
+                oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 99

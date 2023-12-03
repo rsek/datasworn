@@ -44,7 +44,7 @@ oracles:
             result: '[Description](id:delve/oracles/site_name/description) [Place](id:delve/oracles/site_name/place)'
             template:
               result: '{{result:delve/oracles/site_name/description}} {{result:delve/oracles/site_name/place}}'
-            rolls:
+            oracle_rolls:
               - oracle: delve/oracles/site_name/description
               - oracle: delve/oracles/site_name/place
           - <<: *i18n.template.result.proper_noun
@@ -53,7 +53,7 @@ oracles:
             result: '[Place](id:delve/oracles/site_name/place) of [Detail](id:delve/oracles/site_name/detail)'
             template:
               result: '{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/detail}}'
-            rolls:
+            oracle_rolls:
               - oracle: delve/oracles/site_name/place
               - oracle: delve/oracles/site_name/detail
           - <<: *i18n.template.result.proper_noun
@@ -62,7 +62,7 @@ oracles:
             result: '[Place](id:delve/oracles/site_name/place) of [Description](id:delve/oracles/site_name/description) [Detail](id:delve/oracles/site_name/detail)'
             template:
               result: '{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/description}} {{result:delve/oracles/site_name/detail}}'
-            rolls:
+            oracle_rolls:
               - oracle: delve/oracles/site_name/place
               - oracle: delve/oracles/site_name/description
               - oracle: delve/oracles/site_name/detail
@@ -72,7 +72,7 @@ oracles:
             result: "[Place](id:delve/oracles/site_name/place) of [Namesake's](id:delve/oracles/site_name/namesake) [Detail](id:delve/oracles/site_name/detail)"
             template:
               result: "{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/namesake}}'s {{result:delve/oracles/site_name/detail}}"
-            rolls:
+            oracle_rolls:
               - oracle: delve/oracles/site_name/place
               - oracle: delve/oracles/site_name/namesake
               - oracle: delve/oracles/site_name/detail
@@ -82,7 +82,7 @@ oracles:
             result: "[Namesake's](id:delve/oracles/site_name/namesake) [Place](id:delve/oracles/site_name/place)"
             template:
               result: "{{result:delve/oracles/site_name/namesake}}'s {{result:delve/oracles/site_name/place}}"
-            rolls:
+            oracle_rolls:
               - oracle: delve/oracles/site_name/namesake
               - oracle: delve/oracles/site_name/place
           - <<: *i18n.template.result.proper_noun
@@ -91,7 +91,7 @@ oracles:
             result: '[Description](id:delve/oracles/site_name/description) [Place](id:delve/oracles/site_name/place) of [Namesake](id:delve/oracles/site_name/namesake)'
             template:
               result: '{{result:delve/oracles/site_name/description}} {{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/namesake}}'
-            rolls:
+            oracle_rolls:
               - oracle: delve/oracles/site_name/description
               - oracle: delve/oracles/site_name/place
               - oracle: delve/oracles/site_name/namesake
@@ -101,7 +101,7 @@ oracles:
             result: '[Place](id:delve/oracles/site_name/place) of [Namesake](id:delve/oracles/site_name/namesake)'
             template:
               result: '{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/namesake}}'
-            rolls:
+            oracle_rolls:
               - oracle: delve/oracles/site_name/place
               - oracle: delve/oracles/site_name/namesake
       description:
@@ -749,84 +749,84 @@ oracles:
           - min: 1
             max: 6
             result: '[Barrow](id:delve/site_domains/barrow)'
-            rolls:
+            oracle_rolls:
               - oracle: &barrowTableID 'delve/oracles/site_name/place/barrow'
                 auto: true
             embed_table: *barrowTableID
           - min: 7
             max: 18
             result: '[Cavern](id:delve/site_domains/cavern)'
-            rolls:
+            oracle_rolls:
               - oracle: &cavernTableID 'delve/oracles/site_name/place/cavern'
                 auto: true
             embed_table: *cavernTableID
           - min: 19
             max: 28
             result: '[Frozen Cavern](id:delve/site_domains/frozen_cavern)'
-            rolls:
+            oracle_rolls:
               - oracle: &frozen_cavernTableID 'delve/oracles/site_name/place/frozen_cavern'
                 auto: true
             embed_table: *frozen_cavernTableID
           - min: 29
             max: 32
             result: '[Icereach](id:delve/site_domains/icereach)'
-            rolls:
+            oracle_rolls:
               - oracle: &icereachTableID 'delve/oracles/site_name/place/icereach'
                 auto: true
             embed_table: *icereachTableID
           - min: 33
             max: 38
             result: '[Mine](id:delve/site_domains/mine)'
-            rolls:
+            oracle_rolls:
               - oracle: &mineTableID 'delve/oracles/site_name/place/mine'
                 auto: true
             embed_table: *mineTableID
           - min: 39
             max: 48
             result: '[Pass](id:delve/site_domains/pass)'
-            rolls:
+            oracle_rolls:
               - oracle: &passTableID 'delve/oracles/site_name/place/pass'
                 auto: true
             embed_table: *passTableID
           - min: 49
             max: 58
             result: '[Ruin](id:delve/site_domains/ruin)'
-            rolls:
+            oracle_rolls:
               - oracle: &ruinTableID 'delve/oracles/site_name/place/ruin'
                 auto: true
             embed_table: *ruinTableID
           - min: 59
             max: 68
             result: '[Sea Cave](id:delve/site_domains/sea_cave)'
-            rolls:
+            oracle_rolls:
               - oracle: &sea_caveTableID 'delve/oracles/site_name/place/sea_cave'
                 auto: true
             embed_table: *sea_caveTableID
           - min: 69
             max: 78
             result: '[Shadowfen](id:delve/site_domains/shadowfen)'
-            rolls:
+            oracle_rolls:
               - oracle: &shadowfenTableID 'delve/oracles/site_name/place/shadowfen'
                 auto: true
             embed_table: *shadowfenTableID
           - min: 79
             max: 83
             result: '[Stronghold](id:delve/site_domains/stronghold)'
-            rolls:
+            oracle_rolls:
               - oracle: &strongholdTableID 'delve/oracles/site_name/place/stronghold'
                 auto: true
             embed_table: *strongholdTableID
           - min: 84
             max: 95
             result: '[Tanglewood](id:delve/site_domains/tanglewood)'
-            rolls:
+            oracle_rolls:
               - oracle: &tanglewoodTableID 'delve/oracles/site_name/place/tanglewood'
                 auto: true
             embed_table: *tanglewoodTableID
           - min: 96
             max: 100
             result: '[Underkeep](id:delve/site_domains/underkeep)'
-            rolls:
+            oracle_rolls:
               - oracle: &underkeepTableID 'delve/oracles/site_name/place/underkeep'
                 auto: true
             embed_table: *underkeepTableID

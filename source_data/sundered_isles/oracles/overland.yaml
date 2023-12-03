@@ -780,7 +780,7 @@ oracles:
             max: 99
             <<: &ActionTheme
               result: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
-              rolls:
+              oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
@@ -789,9 +789,9 @@ oracles:
             max: 100
             <<: &RollTwice
               result: Roll twice
-              rolls:
+              oracle_rolls:
                 - auto: true
-                  times: 2
+                  number_of_rolls: 2
       opportunity:
         source: *Source
         name: Overland Opportunities
@@ -927,7 +927,7 @@ oracles:
                     Instance (choose one)
                       * [Overland Details](id:sundered_isles/oracles/overland/details)
                       * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
-                  rolls:
+                  oracle_rolls:
                     - oracle: sundered_isles/oracles/overland/details
                     - oracle: sundered_isles/oracles/core/descriptor
                     - oracle: sundered_isles/oracles/core/focus
