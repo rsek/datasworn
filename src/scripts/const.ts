@@ -18,6 +18,11 @@ export const ROOT_OUTPUT = path.join(process.cwd(), 'datasworn')
 export const ROOT_TYPES_OUT = path.join(process.cwd(), 'src/types')
 
 export const TYPES_OUT = path.join(ROOT_TYPES_OUT, 'Datasworn.d.ts')
+export const SOURCE_TYPES_OUT = path.join(
+	ROOT_TYPES_OUT,
+	'DataswornSource.d.ts'
+)
+
 
 export const SCHEMA_PATH = path.join(ROOT_OUTPUT, 'datasworn.schema.json')
 export const SOURCE_SCHEMA_PATH = path.join(

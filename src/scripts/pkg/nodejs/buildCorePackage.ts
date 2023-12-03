@@ -7,6 +7,7 @@ import {
 	ROOT_SOURCE_DATA,
 	SCHEMA_PATH,
 	SOURCE_SCHEMA_PATH,
+	SOURCE_TYPES_OUT,
 	TYPES_OUT
 } from '../../const.js'
 import Log from '../../utils/Log.js'
@@ -17,6 +18,7 @@ const rootDir = path.join(PKG_DIR_NODE, PKG_SCOPE_OFFICIAL, 'core')
 const id = `${PKG_SCOPE_OFFICIAL}/core`
 const jsonDir = path.join(rootDir, 'json')
 const typesPath = path.join(rootDir, 'index.d.ts')
+const sourceTypesPath = path.join(rootDir, 'DataswornSource.d.ts')
 
 export const config = {
 	id,
@@ -49,6 +51,7 @@ export async function buildCorePackage({
 		fs.copy(TYPES_OUT, typesPath, {
 			overwrite: true
 		}),
+		fs.copy(SOURCE_TYPES_OUT, sourceTypesPath, { overwrite: true }),
 		fs.copy(
 			// TODO: script to build the legacy ID map?
 			LEGACY_ID_PATH,
