@@ -99,6 +99,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"reveal_a_danger": {
@@ -177,13 +181,13 @@
 							"min": 95,
 							"max": 100,
 							"result": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "make_it_worse",
-									"oracle": null,
-									"times": 2
+									"duplicates": "make_it_worse",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -199,6 +203,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"reveal_a_danger_alt": {
@@ -265,13 +273,13 @@
 							"min": 95,
 							"max": 100,
 							"result": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "make_it_worse",
-									"oracle": null,
-									"times": 2
+									"duplicates": "make_it_worse",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -287,6 +295,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					},
 					"replaces": "delve/oracles/moves/reveal_a_danger"
 				},
@@ -328,6 +340,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -408,6 +424,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"shadow": {
@@ -457,6 +477,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"wits": {
@@ -506,6 +530,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},
@@ -1116,6 +1144,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"focus": {
@@ -1689,6 +1721,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -1728,29 +1764,29 @@
 							"template": {
 								"result": "{{result:delve/oracles/site_name/description}} {{result:delve/oracles/site_name/place}}"
 							},
-							"rolls": [
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/description",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place",
-									"times": 1
-								}
-							],
 							"i18n": {
 								"template": {
 									"result": {
 										"part_of_speech": "proper_noun"
 									}
 								}
-							}
+							},
+							"oracle_rolls": [
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/description"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place"
+								}
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/format/26-50",
@@ -1760,29 +1796,29 @@
 							"template": {
 								"result": "{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/detail}}"
 							},
-							"rolls": [
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/detail",
-									"times": 1
-								}
-							],
 							"i18n": {
 								"template": {
 									"result": {
 										"part_of_speech": "proper_noun"
 									}
 								}
-							}
+							},
+							"oracle_rolls": [
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/detail"
+								}
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/format/51-70",
@@ -1792,36 +1828,36 @@
 							"template": {
 								"result": "{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/description}} {{result:delve/oracles/site_name/detail}}"
 							},
-							"rolls": [
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/description",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/detail",
-									"times": 1
-								}
-							],
 							"i18n": {
 								"template": {
 									"result": {
 										"part_of_speech": "proper_noun"
 									}
 								}
-							}
+							},
+							"oracle_rolls": [
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/description"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/detail"
+								}
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/format/71-80",
@@ -1831,36 +1867,36 @@
 							"template": {
 								"result": "{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/namesake}}'s {{result:delve/oracles/site_name/detail}}"
 							},
-							"rolls": [
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/namesake",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/detail",
-									"times": 1
-								}
-							],
 							"i18n": {
 								"template": {
 									"result": {
 										"part_of_speech": "proper_noun"
 									}
 								}
-							}
+							},
+							"oracle_rolls": [
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/namesake"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/detail"
+								}
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/format/81-85",
@@ -1870,29 +1906,29 @@
 							"template": {
 								"result": "{{result:delve/oracles/site_name/namesake}}'s {{result:delve/oracles/site_name/place}}"
 							},
-							"rolls": [
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/namesake",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place",
-									"times": 1
-								}
-							],
 							"i18n": {
 								"template": {
 									"result": {
 										"part_of_speech": "proper_noun"
 									}
 								}
-							}
+							},
+							"oracle_rolls": [
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/namesake"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place"
+								}
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/format/86-95",
@@ -1902,36 +1938,36 @@
 							"template": {
 								"result": "{{result:delve/oracles/site_name/description}} {{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/namesake}}"
 							},
-							"rolls": [
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/description",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/namesake",
-									"times": 1
-								}
-							],
 							"i18n": {
 								"template": {
 									"result": {
 										"part_of_speech": "proper_noun"
 									}
 								}
-							}
+							},
+							"oracle_rolls": [
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/description"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/namesake"
+								}
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/format/96-100",
@@ -1941,29 +1977,29 @@
 							"template": {
 								"result": "{{result:delve/oracles/site_name/place}} of {{result:delve/oracles/site_name/namesake}}"
 							},
-							"rolls": [
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place",
-									"times": 1
-								},
-								{
-									"dice": null,
-									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/namesake",
-									"times": 1
-								}
-							],
 							"i18n": {
 								"template": {
 									"result": {
 										"part_of_speech": "proper_noun"
 									}
 								}
-							}
+							},
+							"oracle_rolls": [
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place"
+								},
+								{
+									"dice": null,
+									"auto": false,
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/namesake"
+								}
+							]
 						}
 					],
 					"source": {
@@ -1976,6 +2012,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"description": {
@@ -2546,6 +2586,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"detail": {
@@ -3116,6 +3160,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"namesake": {
@@ -3687,6 +3735,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"place": {
@@ -3700,192 +3752,192 @@
 							"min": 1,
 							"max": 6,
 							"result": "[Barrow](id:delve/site_domains/barrow)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/barrow",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/barrow",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/barrow"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/barrow"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/7-18",
 							"min": 7,
 							"max": 18,
 							"result": "[Cavern](id:delve/site_domains/cavern)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/cavern",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/cavern",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/cavern"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/cavern"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/19-28",
 							"min": 19,
 							"max": 28,
 							"result": "[Frozen Cavern](id:delve/site_domains/frozen_cavern)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/frozen_cavern",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/frozen_cavern",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/frozen_cavern"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/frozen_cavern"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/29-32",
 							"min": 29,
 							"max": 32,
 							"result": "[Icereach](id:delve/site_domains/icereach)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/icereach",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/icereach",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/icereach"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/icereach"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/33-38",
 							"min": 33,
 							"max": 38,
 							"result": "[Mine](id:delve/site_domains/mine)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/mine",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/mine",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/mine"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/mine"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/39-48",
 							"min": 39,
 							"max": 48,
 							"result": "[Pass](id:delve/site_domains/pass)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/pass",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/pass",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/pass"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/pass"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/49-58",
 							"min": 49,
 							"max": 58,
 							"result": "[Ruin](id:delve/site_domains/ruin)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/ruin",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/ruin",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/ruin"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/ruin"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/59-68",
 							"min": 59,
 							"max": 68,
 							"result": "[Sea Cave](id:delve/site_domains/sea_cave)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/sea_cave",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/sea_cave",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/sea_cave"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/sea_cave"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/69-78",
 							"min": 69,
 							"max": 78,
 							"result": "[Shadowfen](id:delve/site_domains/shadowfen)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/shadowfen",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/shadowfen",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/shadowfen"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/shadowfen"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/79-83",
 							"min": 79,
 							"max": 83,
 							"result": "[Stronghold](id:delve/site_domains/stronghold)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/stronghold",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/stronghold",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/stronghold"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/stronghold"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/84-95",
 							"min": 84,
 							"max": 95,
 							"result": "[Tanglewood](id:delve/site_domains/tanglewood)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/tanglewood",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/tanglewood",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/tanglewood"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/tanglewood"
+							]
 						},
 						{
 							"id": "delve/oracles/site_name/place/96-100",
 							"min": 96,
 							"max": 100,
 							"result": "[Underkeep](id:delve/site_domains/underkeep)",
-							"rolls": [
+							"embed_table": "delve/oracles/site_name/place/underkeep",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "delve/oracles/site_name/place/underkeep",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "delve/oracles/site_name/place/underkeep"
 								}
-							],
-							"embed_table": "delve/oracles/site_name/place/underkeep"
+							]
 						}
 					],
 					"source": {
@@ -3899,6 +3951,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -3997,6 +4053,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"cavern": {
@@ -4129,6 +4189,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"frozen_cavern": {
@@ -4261,6 +4325,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"icereach": {
@@ -4349,6 +4417,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"mine": {
@@ -4437,6 +4509,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"pass": {
@@ -4569,6 +4645,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"ruin": {
@@ -4701,6 +4781,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"sea_cave": {
@@ -4789,6 +4873,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"shadowfen": {
@@ -4921,6 +5009,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"stronghold": {
@@ -5053,6 +5145,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"tanglewood": {
@@ -5163,6 +5259,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"underkeep": {
@@ -5295,6 +5395,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},
@@ -5400,6 +5504,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"domain": {
@@ -5492,6 +5600,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -6092,6 +6204,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"disposition": {
@@ -6245,6 +6361,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -6324,6 +6444,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"primary_form": {
@@ -6525,13 +6649,13 @@
 							"min": 81,
 							"max": 100,
 							"result": "Hybrid (roll twice)",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": null,
-									"times": 2
+									"duplicates": "reroll",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -6547,6 +6671,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"characteristics": {
@@ -6737,6 +6865,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"abilities": {
@@ -6999,6 +7131,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -7328,6 +7464,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"component": {
@@ -7626,6 +7766,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -8222,6 +8366,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"target": {
@@ -8795,6 +8943,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -8888,13 +9040,13 @@
 							"min": 91,
 							"max": 100,
 							"result": "Roll twice",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": null,
-									"times": 2
+									"duplicates": "reroll",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -8910,6 +9062,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"burgeoning_conflict": {
@@ -8990,6 +9146,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"cursed_site": {
@@ -9070,6 +9230,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"environmental_calamity": {
@@ -9150,6 +9314,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"malignant_plague": {
@@ -9230,6 +9398,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"rampaging_creature": {
@@ -9310,6 +9482,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"ravaging_horde": {
@@ -9390,6 +9566,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"scheming_leader": {
@@ -9470,6 +9650,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"power_hungry_mystic": {
@@ -9550,6 +9734,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"zealous_cult": {
@@ -9630,6 +9818,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},

@@ -29,9 +29,6 @@ namespace Datasworn
         [JsonPropertyName("name")]
         public Label Name { get; set; }
 
-        [JsonPropertyName("quest_starter")]
-        public MarkdownString QuestStarter { get; set; }
-
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
         /// this item, including the author and licensing information.
@@ -47,6 +44,10 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Label? CanonicalName { get; set; }
 
+        [JsonPropertyName("quest_starter")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public MarkdownString? QuestStarter { get; set; }
+
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
@@ -54,6 +55,10 @@ namespace Datasworn
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public MarkdownString? Summary { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
 
         [JsonPropertyName("your_truth")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

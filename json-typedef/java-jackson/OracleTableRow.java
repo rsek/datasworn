@@ -41,8 +41,8 @@ public class OracleTableRow {
     private SvgImageUrl icon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("rolls")
-    private List<OracleTableRoll> rolls;
+    @JsonProperty("oracle_rolls")
+    private List<OracleTableRoll> oracleRolls;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -186,19 +186,19 @@ public class OracleTableRow {
     }
 
     /**
-     * Getter for rolls.<p>
+     * Getter for oracleRolls.<p>
      * Further oracle rolls prompted by this table row.
      */
-    public List<OracleTableRoll> getRolls() {
-        return rolls;
+    public List<OracleTableRoll> getOracleRolls() {
+        return oracleRolls;
     }
 
     /**
-     * Setter for rolls.<p>
+     * Setter for oracleRolls.<p>
      * Further oracle rolls prompted by this table row.
      */
-    public void setRolls(List<OracleTableRoll> rolls) {
-        this.rolls = rolls;
+    public void setOracleRolls(List<OracleTableRoll> oracleRolls) {
+        this.oracleRolls = oracleRolls;
     }
 
     /**

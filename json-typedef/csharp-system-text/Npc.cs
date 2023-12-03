@@ -35,9 +35,6 @@ namespace Datasworn
         [JsonPropertyName("nature")]
         public NpcNature Nature { get; set; }
 
-        [JsonPropertyName("quest_starter")]
-        public MarkdownString QuestStarter { get; set; }
-
         /// <summary>
         /// The suggested challenge rank for this NPC.
         /// </summary>
@@ -62,6 +59,10 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Label? CanonicalName { get; set; }
 
+        [JsonPropertyName("quest_starter")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public MarkdownString? QuestStarter { get; set; }
+
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
@@ -69,6 +70,10 @@ namespace Datasworn
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public MarkdownString? Summary { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
 
         [JsonPropertyName("variants")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

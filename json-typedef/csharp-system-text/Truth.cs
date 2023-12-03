@@ -48,6 +48,14 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
 
+        [JsonPropertyName("summary")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public MarkdownString? Summary { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
+
         [JsonPropertyName("your_character")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public MarkdownString? YourCharacter { get; set; }

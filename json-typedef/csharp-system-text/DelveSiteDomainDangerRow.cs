@@ -61,9 +61,9 @@ namespace Datasworn
         /// <summary>
         /// Further oracle rolls prompted by this table row.
         /// </summary>
-        [JsonPropertyName("rolls")]
+        [JsonPropertyName("oracle_rolls")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<OracleTableRoll> Rolls { get; set; }
+        public IList<OracleTableRoll> OracleRolls { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

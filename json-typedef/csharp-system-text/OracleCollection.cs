@@ -103,5 +103,9 @@ namespace Datasworn
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public MarkdownString? Summary { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
     }
 }

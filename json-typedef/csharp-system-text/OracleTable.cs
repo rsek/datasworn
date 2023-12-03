@@ -29,6 +29,9 @@ namespace Datasworn
         [JsonPropertyName("name")]
         public Label Name { get; set; }
 
+        [JsonPropertyName("recommended_rolls")]
+        public OracleTableRecommendedRolls RecommendedRolls { get; set; }
+
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
         /// this item, including the author and licensing information.
@@ -38,10 +41,6 @@ namespace Datasworn
 
         [JsonPropertyName("table")]
         public IList<OracleTableRow> Table { get; set; }
-
-        [JsonPropertyName("_i18n")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHints? I18n { get; set; }
 
         /// <summary>
         /// The name of this item as it appears on the page in the book, if it's
@@ -108,5 +107,9 @@ namespace Datasworn
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public MarkdownString? Summary { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
     }
 }

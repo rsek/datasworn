@@ -375,6 +375,7 @@ class Asset:
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Asset':
@@ -394,6 +395,7 @@ class Asset:
             _from_json_data(Optional[Dict[str, AssetOptionField]], data.get("options")),
             _from_json_data(Optional[MarkdownString], data.get("requirement")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -421,6 +423,8 @@ class Asset:
              data["requirement"] = _to_json_data(self.requirement)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -1812,6 +1816,7 @@ class AssetType:
     Longer text should use the "description" key instead.
     """
 
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetType':
@@ -1829,6 +1834,7 @@ class AssetType:
             _from_json_data(Optional[AssetTypeID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -1856,6 +1862,8 @@ class AssetType:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -1936,6 +1944,7 @@ class Atlas:
     Longer text should use the "description" key instead.
     """
 
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Atlas':
@@ -1954,6 +1963,7 @@ class Atlas:
             _from_json_data(Optional[AtlasID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -1983,6 +1993,8 @@ class Atlas:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -2004,7 +2016,6 @@ class AtlasEntry:
     The primary name/label for this item.
     """
 
-    quest_starter: 'MarkdownString'
     source: 'Source'
     """
     Attribution for the original source (such as a book or website) of this
@@ -2017,8 +2028,10 @@ class AtlasEntry:
     different from `name`.
     """
 
+    quest_starter: 'Optional[MarkdownString]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
     your_truth: 'Optional[MarkdownString]'
 
     @classmethod
@@ -2028,11 +2041,12 @@ class AtlasEntry:
             _from_json_data(List[MarkdownString], data.get("features")),
             _from_json_data(AtlasEntryID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(MarkdownString, data.get("quest_starter")),
             _from_json_data(Source, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
             _from_json_data(Optional[MarkdownString], data.get("your_truth")),
         )
 
@@ -2042,14 +2056,17 @@ class AtlasEntry:
         data["features"] = _to_json_data(self.features)
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
-        data["quest_starter"] = _to_json_data(self.quest_starter)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.quest_starter is not None:
+             data["quest_starter"] = _to_json_data(self.quest_starter)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         if self.your_truth is not None:
              data["your_truth"] = _to_json_data(self.your_truth)
         return data
@@ -2310,6 +2327,7 @@ class DelveSite:
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSite':
@@ -2327,6 +2345,7 @@ class DelveSite:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[AtlasEntryID], data.get("region")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2349,6 +2368,8 @@ class DelveSite:
              data["region"] = _to_json_data(self.region)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -2462,6 +2483,7 @@ class DelveSiteDomain:
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomain':
@@ -2477,6 +2499,7 @@ class DelveSiteDomain:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleTableID], data.get("name_oracle")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2497,6 +2520,8 @@ class DelveSiteDomain:
              data["name_oracle"] = _to_json_data(self.name_oracle)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -2538,7 +2563,7 @@ class DelveSiteDomainDangerRow:
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleTableRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
@@ -2563,7 +2588,7 @@ class DelveSiteDomainDangerRow:
             _from_json_data(Optional[OracleTableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("rolls")),
+            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
@@ -2583,8 +2608,8 @@ class DelveSiteDomainDangerRow:
              data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
-        if self.rolls is not None:
-             data["rolls"] = _to_json_data(self.rolls)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
@@ -2632,7 +2657,7 @@ class DelveSiteDomainFeatureRow:
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleTableRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
@@ -2657,7 +2682,7 @@ class DelveSiteDomainFeatureRow:
             _from_json_data(Optional[OracleTableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("rolls")),
+            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
@@ -2677,8 +2702,8 @@ class DelveSiteDomainFeatureRow:
              data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
-        if self.rolls is not None:
-             data["rolls"] = _to_json_data(self.rolls)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
@@ -2751,6 +2776,7 @@ class DelveSiteTheme:
     description: 'Optional[MarkdownString]'
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteTheme':
@@ -2765,6 +2791,7 @@ class DelveSiteTheme:
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2783,6 +2810,8 @@ class DelveSiteTheme:
              data["icon"] = _to_json_data(self.icon)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -2824,7 +2853,7 @@ class DelveSiteThemeDangerRow:
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleTableRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
@@ -2849,7 +2878,7 @@ class DelveSiteThemeDangerRow:
             _from_json_data(Optional[OracleTableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("rolls")),
+            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
@@ -2869,8 +2898,8 @@ class DelveSiteThemeDangerRow:
              data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
-        if self.rolls is not None:
-             data["rolls"] = _to_json_data(self.rolls)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
@@ -2918,7 +2947,7 @@ class DelveSiteThemeFeatureRow:
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleTableRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
@@ -2943,7 +2972,7 @@ class DelveSiteThemeFeatureRow:
             _from_json_data(Optional[OracleTableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("rolls")),
+            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
@@ -2963,8 +2992,8 @@ class DelveSiteThemeFeatureRow:
              data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
-        if self.rolls is not None:
-             data["rolls"] = _to_json_data(self.rolls)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
@@ -3380,6 +3409,7 @@ class MoveActionRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveActionRoll':
@@ -3395,6 +3425,7 @@ class MoveActionRoll(Move):
             _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3413,6 +3444,8 @@ class MoveActionRoll(Move):
              data["replaces"] = _to_json_data(self.replaces)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -3467,6 +3500,7 @@ class MoveNoRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveNoRoll':
@@ -3481,6 +3515,7 @@ class MoveNoRoll(Move):
             _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3498,6 +3533,8 @@ class MoveNoRoll(Move):
              data["replaces"] = _to_json_data(self.replaces)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -3560,6 +3597,7 @@ class MoveProgressRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveProgressRoll':
@@ -3576,6 +3614,7 @@ class MoveProgressRoll(Move):
             _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3595,6 +3634,8 @@ class MoveProgressRoll(Move):
              data["replaces"] = _to_json_data(self.replaces)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -3652,6 +3693,7 @@ class MoveSpecialTrack(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveSpecialTrack':
@@ -3667,6 +3709,7 @@ class MoveSpecialTrack(Move):
             _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3685,6 +3728,8 @@ class MoveSpecialTrack(Move):
              data["replaces"] = _to_json_data(self.replaces)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -3749,6 +3794,7 @@ class MoveCategory:
     Longer text should use the "description" key instead.
     """
 
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveCategory':
@@ -3766,6 +3812,7 @@ class MoveCategory:
             _from_json_data(Optional[MoveCategoryID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3793,6 +3840,8 @@ class MoveCategory:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -4060,7 +4109,6 @@ class Npc:
     """
 
     nature: 'NpcNature'
-    quest_starter: 'MarkdownString'
     rank: 'ChallengeRank'
     """
     The suggested challenge rank for this NPC.
@@ -4079,8 +4127,10 @@ class Npc:
     different from `name`.
     """
 
+    quest_starter: 'Optional[MarkdownString]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
     variants: 'Optional[Dict[str, NpcVariant]]'
     your_truth: 'Optional[MarkdownString]'
 
@@ -4093,13 +4143,14 @@ class Npc:
             _from_json_data(NpcID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(NpcNature, data.get("nature")),
-            _from_json_data(MarkdownString, data.get("quest_starter")),
             _from_json_data(ChallengeRank, data.get("rank")),
             _from_json_data(Source, data.get("source")),
             _from_json_data(List[MarkdownString], data.get("tactics")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
             _from_json_data(Optional[Dict[str, NpcVariant]], data.get("variants")),
             _from_json_data(Optional[MarkdownString], data.get("your_truth")),
         )
@@ -4112,16 +4163,19 @@ class Npc:
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["nature"] = _to_json_data(self.nature)
-        data["quest_starter"] = _to_json_data(self.quest_starter)
         data["rank"] = _to_json_data(self.rank)
         data["source"] = _to_json_data(self.source)
         data["tactics"] = _to_json_data(self.tactics)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.quest_starter is not None:
+             data["quest_starter"] = _to_json_data(self.quest_starter)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         if self.variants is not None:
              data["variants"] = _to_json_data(self.variants)
         if self.your_truth is not None:
@@ -4190,6 +4244,7 @@ class NpcCollection:
     Longer text should use the "description" key instead.
     """
 
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'NpcCollection':
@@ -4207,6 +4262,7 @@ class NpcCollection:
             _from_json_data(Optional[NpcCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4234,6 +4290,8 @@ class NpcCollection:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -4419,6 +4477,7 @@ class OracleCollection:
     Longer text should use the "description" key instead.
     """
 
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleCollection':
@@ -4438,6 +4497,7 @@ class OracleCollection:
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4469,6 +4529,8 @@ class OracleCollection:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -4622,6 +4684,24 @@ class OracleRollTemplate:
         return data
 
 @dataclass
+class OracleTableRecommendedRolls:
+    max: 'int'
+    min: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRecommendedRolls':
+        return cls(
+            _from_json_data(int, data.get("max")),
+            _from_json_data(int, data.get("min")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["max"] = _to_json_data(self.max)
+        data["min"] = _to_json_data(self.min)
+        return data
+
+@dataclass
 class OracleTable:
     """
     Represents a single oracle table, or a single table column of a table that
@@ -4643,6 +4723,7 @@ class OracleTable:
     The primary name/label for this item.
     """
 
+    recommended_rolls: 'OracleTableRecommendedRolls'
     source: 'Source'
     """
     Attribution for the original source (such as a book or website) of this
@@ -4650,7 +4731,6 @@ class OracleTable:
     """
 
     table: 'List[OracleTableRow]'
-    i18n: 'Optional[I18nHints]'
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -4697,6 +4777,7 @@ class OracleTable:
     instead.
     """
 
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTable':
@@ -4704,9 +4785,9 @@ class OracleTable:
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(OracleTableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(OracleTableRecommendedRolls, data.get("recommended_rolls")),
             _from_json_data(Source, data.get("source")),
             _from_json_data(List[OracleTableRow], data.get("table")),
-            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -4716,6 +4797,7 @@ class OracleTable:
             _from_json_data(Optional[OracleTableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4723,10 +4805,9 @@ class OracleTable:
         data["dice"] = _to_json_data(self.dice)
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
+        data["recommended_rolls"] = _to_json_data(self.recommended_rolls)
         data["source"] = _to_json_data(self.source)
         data["table"] = _to_json_data(self.table)
-        if self.i18n is not None:
-             data["_i18n"] = _to_json_data(self.i18n)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -4745,6 +4826,8 @@ class OracleTable:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -4928,44 +5011,45 @@ class OracleTableRoll:
     """
 
     dice: 'DiceExpression'
-    method: 'OracleTableRollMethod'
+    duplicates: 'OracleTableRollDuplicates'
     """
-    Special rules on how the oracle table roll is performed.
+    Special rules on how to handle duplicate results, when rolling multiple
+    times on this table.
     """
 
-    oracle: 'OracleTableID'
-    times: 'int'
+    number_of_rolls: 'int'
     """
     The number of times to roll.
     """
 
+    oracle: 'OracleTableID'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRoll':
         return cls(
             _from_json_data(bool, data.get("auto")),
             _from_json_data(DiceExpression, data.get("dice")),
-            _from_json_data(OracleTableRollMethod, data.get("method")),
+            _from_json_data(OracleTableRollDuplicates, data.get("duplicates")),
+            _from_json_data(int, data.get("number_of_rolls")),
             _from_json_data(OracleTableID, data.get("oracle")),
-            _from_json_data(int, data.get("times")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["auto"] = _to_json_data(self.auto)
         data["dice"] = _to_json_data(self.dice)
-        data["method"] = _to_json_data(self.method)
+        data["duplicates"] = _to_json_data(self.duplicates)
+        data["number_of_rolls"] = _to_json_data(self.number_of_rolls)
         data["oracle"] = _to_json_data(self.oracle)
-        data["times"] = _to_json_data(self.times)
         return data
 
-class OracleTableRollMethod(Enum):
+class OracleTableRollDuplicates(Enum):
     """
     Special roll instructions to use when rolling multiple times on a single
     oracle table.
     """
 
-    KEEP_DUPLICATES = "keep_duplicates"
+    KEEP = "keep"
     """
     Duplicates should be kept.
     """
@@ -4975,13 +5059,13 @@ class OracleTableRollMethod(Enum):
     Duplicates should be kept, and they compound to make things worse.
     """
 
-    NO_DUPLICATES = "no_duplicates"
+    REROLL = "reroll"
     """
     Duplicates should be re-rolled.
     """
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRollMethod':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollDuplicates':
         return cls(data)
 
     def to_json_data(self) -> Any:
@@ -5026,7 +5110,7 @@ class OracleTableRow:
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleTableRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
@@ -5051,7 +5135,7 @@ class OracleTableRow:
             _from_json_data(Optional[OracleTableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("rolls")),
+            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
@@ -5071,8 +5155,8 @@ class OracleTableRow:
              data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
-        if self.rolls is not None:
-             data["rolls"] = _to_json_data(self.rolls)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:
@@ -5287,6 +5371,7 @@ class Rarity:
 
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Rarity':
@@ -5300,6 +5385,7 @@ class Rarity:
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5316,6 +5402,8 @@ class Rarity:
              data["icon"] = _to_json_data(self.icon)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -6843,6 +6931,8 @@ class Truth:
 
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
     your_character: 'Optional[MarkdownString]'
 
     @classmethod
@@ -6855,6 +6945,8 @@ class Truth:
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
             _from_json_data(Optional[MarkdownString], data.get("your_character")),
         )
 
@@ -6870,6 +6962,10 @@ class Truth:
              data["icon"] = _to_json_data(self.icon)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         if self.your_character is not None:
              data["your_character"] = _to_json_data(self.your_character)
         return data
@@ -6979,7 +7075,7 @@ class TruthOptionTableRow:
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleTableRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
@@ -7003,7 +7099,7 @@ class TruthOptionTableRow:
             _from_json_data(Optional[OracleTableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("rolls")),
+            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
@@ -7022,8 +7118,8 @@ class TruthOptionTableRow:
              data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
-        if self.rolls is not None:
-             data["rolls"] = _to_json_data(self.rolls)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.summary is not None:

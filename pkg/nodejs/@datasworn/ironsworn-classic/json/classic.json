@@ -191,6 +191,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"endure_stress": {
@@ -234,6 +238,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"pay_the_price": {
@@ -336,13 +344,13 @@
 							"min": 99,
 							"max": 100,
 							"result": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "make_it_worse",
-									"oracle": null,
-									"times": 2
+									"duplicates": "make_it_worse",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -358,6 +366,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -401,6 +413,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"likely": {
@@ -435,6 +451,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"fifty_fifty": {
@@ -469,6 +489,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"unlikely": {
@@ -503,6 +527,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"small_chance": {
@@ -537,6 +565,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},
@@ -1696,6 +1728,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"theme": {
@@ -2820,6 +2856,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -2922,6 +2962,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"location": {
@@ -3504,6 +3548,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"coastal_waters_location": {
@@ -3712,6 +3760,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"descriptor": {
@@ -4283,6 +4335,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -4589,13 +4645,13 @@
 							"min": 91,
 							"max": 100,
 							"result": "Roll twice",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": null,
-									"times": 2
+									"duplicates": "reroll",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -4611,6 +4667,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"name": {
@@ -4624,112 +4684,112 @@
 							"min": 1,
 							"max": 15,
 							"result": "**A feature of the landscape.** Envision what it is. What makes it unusual or distinctive?",
-							"rolls": [
+							"embed_table": "classic/oracles/settlement/name/landscape_feature",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "classic/oracles/settlement/name/landscape_feature",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "classic/oracles/settlement/name/landscape_feature"
 								}
-							],
-							"embed_table": "classic/oracles/settlement/name/landscape_feature"
+							]
 						},
 						{
 							"id": "classic/oracles/settlement/name/16-30",
 							"min": 16,
 							"max": 30,
 							"result": "**A manmade edifice.** What is it? Why is it important to this settlement’s history?,",
-							"rolls": [
+							"embed_table": "classic/oracles/settlement/name/manmade_edifice",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "classic/oracles/settlement/name/manmade_edifice",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "classic/oracles/settlement/name/manmade_edifice"
 								}
-							],
-							"embed_table": "classic/oracles/settlement/name/manmade_edifice"
+							]
 						},
 						{
 							"id": "classic/oracles/settlement/name/31-45",
 							"min": 31,
 							"max": 45,
 							"result": "**A creature.** Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
-							"rolls": [
+							"embed_table": "classic/oracles/settlement/name/creature",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "classic/oracles/settlement/name/creature",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "classic/oracles/settlement/name/creature"
 								}
-							],
-							"embed_table": "classic/oracles/settlement/name/creature"
+							]
 						},
 						{
 							"id": "classic/oracles/settlement/name/46-60",
 							"min": 46,
 							"max": 60,
 							"result": "**A historical event.** What happened here? What place or practice commemorates this event?",
-							"rolls": [
+							"embed_table": "classic/oracles/settlement/name/historical_event",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "classic/oracles/settlement/name/historical_event",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "classic/oracles/settlement/name/historical_event"
 								}
-							],
-							"embed_table": "classic/oracles/settlement/name/historical_event"
+							]
 						},
 						{
 							"id": "classic/oracles/settlement/name/61-75",
 							"min": 61,
 							"max": 75,
 							"result": "**A word in an Old World language.** What culture is represented by this word? What does it translate to?",
-							"rolls": [
+							"embed_table": "classic/oracles/settlement/name/old_world_language",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "classic/oracles/settlement/name/old_world_language",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "classic/oracles/settlement/name/old_world_language"
 								}
-							],
-							"embed_table": "classic/oracles/settlement/name/old_world_language"
+							]
 						},
 						{
 							"id": "classic/oracles/settlement/name/76-90",
 							"min": 76,
 							"max": 90,
 							"result": "**A season or environmental aspect.** What influence does the weather have on this settlement?",
-							"rolls": [
+							"embed_table": "classic/oracles/settlement/name/environmental_aspect",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": false,
-									"method": "no_duplicates",
-									"oracle": "classic/oracles/settlement/name/environmental_aspect",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "classic/oracles/settlement/name/environmental_aspect"
 								}
-							],
-							"embed_table": "classic/oracles/settlement/name/environmental_aspect"
+							]
 						},
 						{
 							"id": "classic/oracles/settlement/name/91-100",
 							"min": 91,
 							"max": 100,
 							"result": "Something Else...",
-							"rolls": [
+							"embed_table": "classic/oracles/settlement/name/something_else",
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": "classic/oracles/settlement/name/something_else",
-									"times": 1
+									"duplicates": "reroll",
+									"number_of_rolls": 1,
+									"oracle": "classic/oracles/settlement/name/something_else"
 								}
-							],
-							"embed_table": "classic/oracles/settlement/name/something_else"
+							]
 						}
 					],
 					"source": {
@@ -4743,6 +4803,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -4884,6 +4948,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"manmade_edifice": {
@@ -5015,6 +5083,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"creature": {
@@ -5146,6 +5218,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"historical_event": {
@@ -5277,6 +5353,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"old_world_language": {
@@ -5408,6 +5488,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"environmental_aspect": {
@@ -5539,6 +5623,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"something_else": {
@@ -5618,6 +5706,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},
@@ -5955,6 +6047,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"suffix": {
@@ -6252,6 +6348,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},
@@ -6644,6 +6744,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"goal": {
@@ -6850,13 +6954,13 @@
 							"min": 96,
 							"max": 100,
 							"result": "Roll twice",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "no_duplicates",
-									"oracle": null,
-									"times": 2
+									"duplicates": "reroll",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -6872,6 +6976,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"descriptor": {
@@ -7993,6 +8101,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -8585,6 +8697,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -9716,6 +9832,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"b": {
@@ -10836,6 +10956,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},
@@ -11178,6 +11302,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"varou": {
@@ -11475,6 +11603,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"trolls": {
@@ -11772,6 +11904,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},
@@ -11936,6 +12072,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"mystic_backlash": {
@@ -12094,13 +12234,13 @@
 							"min": 97,
 							"max": 100,
 							"result": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "make_it_worse",
-									"oracle": null,
-									"times": 2
+									"duplicates": "make_it_worse",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -12116,6 +12256,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				},
 				"major_plot_twist": {
@@ -12244,13 +12388,13 @@
 							"min": 96,
 							"max": 100,
 							"result": "Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.",
-							"rolls": [
+							"oracle_rolls": [
 								{
 									"dice": null,
 									"auto": true,
-									"method": "make_it_worse",
-									"oracle": null,
-									"times": 2
+									"duplicates": "make_it_worse",
+									"number_of_rolls": 2,
+									"oracle": null
 								}
 							]
 						}
@@ -12266,6 +12410,10 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 1
 					}
 				}
 			},
@@ -12361,6 +12509,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"journey": {
@@ -12418,6 +12570,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						},
 						"foe": {
@@ -12475,6 +12631,10 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"recommended_rolls": {
+								"min": 1,
+								"max": 1
 							}
 						}
 					},

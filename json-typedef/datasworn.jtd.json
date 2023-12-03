@@ -1342,9 +1342,6 @@
 				"description": {
 					"ref": "MarkdownString"
 				},
-				"quest_starter": {
-					"ref": "MarkdownString"
-				},
 				"rank": {
 					"ref": "ChallengeRank",
 					"metadata": {
@@ -1375,7 +1372,23 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
 				"summary": {
+					"ref": "MarkdownString"
+				},
+				"quest_starter": {
 					"ref": "MarkdownString"
 				},
 				"your_truth": {
@@ -1424,6 +1437,19 @@
 				},
 				"suggestions": {
 					"ref": "Suggestions"
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
 				},
 				"color": {
 					"ref": "CssColor",
@@ -1587,34 +1613,34 @@
 						"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as \"Action + Theme\"."
 					}
 				},
-				"times": {
-					"type": "int16",
+				"duplicates": {
+					"ref": "OracleTableRollDuplicates",
 					"metadata": {
-						"description": "The number of times to roll."
-					}
-				},
-				"method": {
-					"ref": "OracleTableRollMethod",
-					"metadata": {
-						"description": "Special rules on how the oracle table roll is performed."
+						"description": "Special rules on how to handle duplicate results, when rolling multiple times on this table."
 					}
 				},
 				"dice": {
 					"ref": "DiceExpression"
+				},
+				"number_of_rolls": {
+					"type": "int16",
+					"metadata": {
+						"description": "The number of times to roll."
+					}
 				}
 			}
 		},
-		"OracleTableRollMethod": {
+		"OracleTableRollDuplicates": {
 			"enum": [
-				"no_duplicates",
-				"keep_duplicates",
+				"reroll",
+				"keep",
 				"make_it_worse"
 			],
 			"metadata": {
 				"description": "Special roll instructions to use when rolling multiple times on a single oracle table.",
 				"enumDescription": {
-					"no_duplicates": "Duplicates should be re-rolled.",
-					"keep_duplicates": "Duplicates should be kept.",
+					"reroll": "Duplicates should be re-rolled.",
+					"keep": "Duplicates should be kept.",
 					"make_it_worse": "Duplicates should be kept, and they compound to make things worse."
 				}
 			}
@@ -1652,6 +1678,19 @@
 				},
 				"suggestions": {
 					"ref": "Suggestions"
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
 				},
 				"color": {
 					"ref": "CssColor",
@@ -1785,6 +1824,16 @@
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
 				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
+					}
+				},
 				"dice": {
 					"ref": "DiceExpression",
 					"metadata": {
@@ -1810,8 +1859,18 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
-				"_i18n": {
-					"ref": "I18nHints"
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
 				},
 				"icon": {
 					"ref": "SvgImageUrl",
@@ -1985,7 +2044,7 @@
 						"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
 					}
 				},
-				"rolls": {
+				"oracle_rolls": {
 					"elements": {
 						"ref": "OracleTableRoll"
 					},
@@ -2084,6 +2143,19 @@
 						"suggestions": {
 							"ref": "Suggestions"
 						},
+						"tags": {
+							"values": {
+								"values": {
+									"type": "string"
+								},
+								"metadata": {
+									"propertyPattern": "^([a-z][a-z_]*)$"
+								}
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z0-9_]{3,})$"
+							}
+						},
 						"replaces": {
 							"ref": "MoveId",
 							"metadata": {
@@ -2145,6 +2217,19 @@
 						},
 						"suggestions": {
 							"ref": "Suggestions"
+						},
+						"tags": {
+							"values": {
+								"values": {
+									"type": "string"
+								},
+								"metadata": {
+									"propertyPattern": "^([a-z][a-z_]*)$"
+								}
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z0-9_]{3,})$"
+							}
 						},
 						"replaces": {
 							"ref": "MoveId",
@@ -2217,6 +2302,19 @@
 						"suggestions": {
 							"ref": "Suggestions"
 						},
+						"tags": {
+							"values": {
+								"values": {
+									"type": "string"
+								},
+								"metadata": {
+									"propertyPattern": "^([a-z][a-z_]*)$"
+								}
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z0-9_]{3,})$"
+							}
+						},
 						"replaces": {
 							"ref": "MoveId",
 							"metadata": {
@@ -2282,6 +2380,19 @@
 						"suggestions": {
 							"ref": "Suggestions"
 						},
+						"tags": {
+							"values": {
+								"values": {
+									"type": "string"
+								},
+								"metadata": {
+									"propertyPattern": "^([a-z][a-z_]*)$"
+								}
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z0-9_]{3,})$"
+							}
+						},
 						"replaces": {
 							"ref": "MoveId",
 							"metadata": {
@@ -2333,6 +2444,19 @@
 				},
 				"suggestions": {
 					"ref": "Suggestions"
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
 				},
 				"color": {
 					"ref": "CssColor",
@@ -2954,6 +3078,19 @@
 				},
 				"suggestions": {
 					"ref": "Suggestions"
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
 				},
 				"icon": {
 					"ref": "SvgImageUrl",
@@ -3839,6 +3976,19 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
 				"color": {
 					"ref": "CssColor",
 					"metadata": {
@@ -4116,8 +4266,24 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
 				"icon": {
 					"ref": "SvgImageUrl"
+				},
+				"summary": {
+					"ref": "MarkdownString"
 				},
 				"your_character": {
 					"ref": "MarkdownString"
@@ -4197,7 +4363,7 @@
 						"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
 					}
 				},
-				"rolls": {
+				"oracle_rolls": {
 					"elements": {
 						"ref": "OracleTableRoll"
 					},
@@ -4255,6 +4421,19 @@
 				},
 				"suggestions": {
 					"ref": "Suggestions"
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
 				},
 				"color": {
 					"ref": "CssColor",
@@ -4345,9 +4524,6 @@
 				},
 				"description": {
 					"ref": "MarkdownString"
-				},
-				"quest_starter": {
-					"ref": "MarkdownString"
 				}
 			},
 			"optionalProperties": {
@@ -4360,7 +4536,23 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
 				"summary": {
+					"ref": "MarkdownString"
+				},
+				"quest_starter": {
 					"ref": "MarkdownString"
 				},
 				"your_truth": {
@@ -4441,6 +4633,19 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				}
@@ -4496,6 +4701,19 @@
 				},
 				"suggestions": {
 					"ref": "Suggestions"
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
 				},
 				"icon": {
 					"ref": "SvgImageUrl"
@@ -4601,6 +4819,19 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
 				"description": {
 					"ref": "MarkdownString"
 				},
@@ -4661,7 +4892,7 @@
 						"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
 					}
 				},
-				"rolls": {
+				"oracle_rolls": {
 					"elements": {
 						"ref": "OracleTableRoll"
 					},
@@ -4732,7 +4963,7 @@
 						"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
 					}
 				},
-				"rolls": {
+				"oracle_rolls": {
 					"elements": {
 						"ref": "OracleTableRoll"
 					},
@@ -4804,6 +5035,19 @@
 				"suggestions": {
 					"ref": "Suggestions"
 				},
+				"tags": {
+					"values": {
+						"values": {
+							"type": "string"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
 				"description": {
 					"ref": "MarkdownString"
 				},
@@ -4858,7 +5102,7 @@
 						"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
 					}
 				},
-				"rolls": {
+				"oracle_rolls": {
 					"elements": {
 						"ref": "OracleTableRoll"
 					},
@@ -4929,7 +5173,7 @@
 						"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
 					}
 				},
-				"rolls": {
+				"oracle_rolls": {
 					"elements": {
 						"ref": "OracleTableRoll"
 					},

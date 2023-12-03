@@ -79,6 +79,7 @@ module Datasworn
     attr_accessor options: Hash[String, AssetOptionField]?
     attr_accessor requirement: MarkdownString?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> Asset
     def to_json_data: () -> untyped
@@ -458,6 +459,7 @@ module Datasworn
     attr_accessor replaces: AssetTypeID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> AssetType
     def to_json_data: () -> untyped
@@ -485,6 +487,7 @@ module Datasworn
     attr_accessor replaces: AtlasID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> Atlas
     def to_json_data: () -> untyped
@@ -495,11 +498,12 @@ module Datasworn
     attr_accessor features: Array[MarkdownString]
     attr_accessor id: AtlasEntryID
     attr_accessor name: Label
-    attr_accessor quest_starter: MarkdownString
     attr_accessor source: Source
     attr_accessor canonical_name: Label?
+    attr_accessor quest_starter: MarkdownString?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
     attr_accessor your_truth: MarkdownString?
 
     def self.from_json_data: (untyped) -> AtlasEntry
@@ -597,6 +601,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor region: AtlasEntryID?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> DelveSite
     def to_json_data: () -> untyped
@@ -646,6 +651,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor name_oracle: OracleTableID?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> DelveSiteDomain
     def to_json_data: () -> untyped
@@ -660,7 +666,7 @@ module Datasworn
     attr_accessor embed_table: OracleTableID?
     attr_accessor i18n: I18nHints?
     attr_accessor icon: SvgImageURL?
-    attr_accessor rolls: Array[OracleTableRoll]?
+    attr_accessor oracle_rolls: Array[OracleTableRoll]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor template: OracleRollTemplate?
@@ -678,7 +684,7 @@ module Datasworn
     attr_accessor embed_table: OracleTableID?
     attr_accessor i18n: I18nHints?
     attr_accessor icon: SvgImageURL?
-    attr_accessor rolls: Array[OracleTableRoll]?
+    attr_accessor oracle_rolls: Array[OracleTableRoll]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor template: OracleRollTemplate?
@@ -712,6 +718,7 @@ module Datasworn
     attr_accessor description: MarkdownString?
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> DelveSiteTheme
     def to_json_data: () -> untyped
@@ -726,7 +733,7 @@ module Datasworn
     attr_accessor embed_table: OracleTableID?
     attr_accessor i18n: I18nHints?
     attr_accessor icon: SvgImageURL?
-    attr_accessor rolls: Array[OracleTableRoll]?
+    attr_accessor oracle_rolls: Array[OracleTableRoll]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor template: OracleRollTemplate?
@@ -744,7 +751,7 @@ module Datasworn
     attr_accessor embed_table: OracleTableID?
     attr_accessor i18n: I18nHints?
     attr_accessor icon: SvgImageURL?
-    attr_accessor rolls: Array[OracleTableRoll]?
+    attr_accessor oracle_rolls: Array[OracleTableRoll]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor template: OracleRollTemplate?
@@ -894,6 +901,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleTableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> MoveActionRoll
     def to_json_data: () -> untyped
@@ -909,6 +917,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleTableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> MoveNoRoll
     def to_json_data: () -> untyped
@@ -926,6 +935,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleTableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> MoveProgressRoll
     def to_json_data: () -> untyped
@@ -942,6 +952,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleTableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> MoveSpecialTrack
     def to_json_data: () -> untyped
@@ -961,6 +972,7 @@ module Datasworn
     attr_accessor replaces: MoveCategoryID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> MoveCategory
     def to_json_data: () -> untyped
@@ -1061,13 +1073,14 @@ module Datasworn
     attr_accessor id: NpcID
     attr_accessor name: Label
     attr_accessor nature: NpcNature
-    attr_accessor quest_starter: MarkdownString
     attr_accessor rank: ChallengeRank
     attr_accessor source: Source
     attr_accessor tactics: Array[MarkdownString]
     attr_accessor canonical_name: Label?
+    attr_accessor quest_starter: MarkdownString?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
     attr_accessor variants: Hash[String, NpcVariant]?
     attr_accessor your_truth: MarkdownString?
 
@@ -1089,6 +1102,7 @@ module Datasworn
     attr_accessor replaces: NpcCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> NpcCollection
     def to_json_data: () -> untyped
@@ -1157,6 +1171,7 @@ module Datasworn
     attr_accessor replaces: OracleCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> OracleCollection
     def to_json_data: () -> untyped
@@ -1208,13 +1223,21 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleTableRecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> OracleTableRecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class OracleTable
     attr_accessor dice: DiceExpression
     attr_accessor id: OracleTableID
     attr_accessor name: Label
+    attr_accessor recommended_rolls: OracleTableRecommendedRolls
     attr_accessor source: Source
     attr_accessor table: Array[OracleTableRow]
-    attr_accessor i18n: I18nHints?
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
     attr_accessor icon: SvgImageURL?
@@ -1224,6 +1247,7 @@ module Datasworn
     attr_accessor replaces: OracleTableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> OracleTable
     def to_json_data: () -> untyped
@@ -1300,22 +1324,22 @@ module Datasworn
   class OracleTableRoll
     attr_accessor auto: bool
     attr_accessor dice: DiceExpression
-    attr_accessor method: OracleTableRollMethod
+    attr_accessor duplicates: OracleTableRollDuplicates
+    attr_accessor number_of_rolls: Integer
     attr_accessor oracle: OracleTableID
-    attr_accessor times: Integer
 
     def self.from_json_data: (untyped) -> OracleTableRoll
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollMethod
+  class OracleTableRollDuplicates
     attr_accessor value: String
 
-    KEEP_DUPLICATES: OracleTableRollMethod
-    MAKE_IT_WORSE: OracleTableRollMethod
-    NO_DUPLICATES: OracleTableRollMethod
+    KEEP: OracleTableRollDuplicates
+    MAKE_IT_WORSE: OracleTableRollDuplicates
+    REROLL: OracleTableRollDuplicates
 
-    def self.from_json_data: (untyped) -> OracleTableRollMethod
+    def self.from_json_data: (untyped) -> OracleTableRollDuplicates
     def to_json_data: () -> untyped
   end
 
@@ -1328,7 +1352,7 @@ module Datasworn
     attr_accessor embed_table: OracleTableID?
     attr_accessor i18n: I18nHints?
     attr_accessor icon: SvgImageURL?
-    attr_accessor rolls: Array[OracleTableRoll]?
+    attr_accessor oracle_rolls: Array[OracleTableRoll]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor template: OracleRollTemplate?
@@ -1408,6 +1432,7 @@ module Datasworn
     attr_accessor canonical_name: Label?
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
 
     def self.from_json_data: (untyped) -> Rarity
     def to_json_data: () -> untyped
@@ -1933,6 +1958,8 @@ module Datasworn
     attr_accessor canonical_name: Label?
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
     attr_accessor your_character: MarkdownString?
 
     def self.from_json_data: (untyped) -> Truth
@@ -1974,7 +2001,7 @@ module Datasworn
     attr_accessor embed_table: OracleTableID?
     attr_accessor i18n: I18nHints?
     attr_accessor icon: SvgImageURL?
-    attr_accessor rolls: Array[OracleTableRoll]?
+    attr_accessor oracle_rolls: Array[OracleTableRoll]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor template: OracleRollTemplate?

@@ -19,18 +19,19 @@ namespace Datasworn
         public DiceExpression Dice { get; set; }
 
         /// <summary>
-        /// Special rules on how the oracle table roll is performed.
+        /// Special rules on how to handle duplicate results, when rolling
+        /// multiple times on this table.
         /// </summary>
-        [JsonPropertyName("method")]
-        public OracleTableRollMethod Method { get; set; }
-
-        [JsonPropertyName("oracle")]
-        public OracleTableId Oracle { get; set; }
+        [JsonPropertyName("duplicates")]
+        public OracleTableRollDuplicates Duplicates { get; set; }
 
         /// <summary>
         /// The number of times to roll.
         /// </summary>
-        [JsonPropertyName("times")]
-        public short Times { get; set; }
+        [JsonPropertyName("number_of_rolls")]
+        public short NumberOfRolls { get; set; }
+
+        [JsonPropertyName("oracle")]
+        public OracleTableId Oracle { get; set; }
     }
 }

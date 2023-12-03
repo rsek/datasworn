@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A move that makes no progress rolls or action rolls.
@@ -42,6 +43,10 @@ public class MoveNoRoll extends Move {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
     private Suggestions suggestions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Map<String, Map<String, String>> tags;
 
     public MoveNoRoll() {
     }
@@ -196,5 +201,19 @@ public class MoveNoRoll extends Move {
      */
     public void setSuggestions(Suggestions suggestions) {
         this.suggestions = suggestions;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Map<String, Map<String, String>> getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Map<String, Map<String, String>> tags) {
+        this.tags = tags;
     }
 }

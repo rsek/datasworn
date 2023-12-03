@@ -44,7 +44,9 @@ export const OracleTable = sourcedTransformer<
 		parent: SourcedNode
 	): Datasworn.OracleTableRow[] {
 		return data.table.map((row, i) => {
-			return transform(rowData, i, this, OracleTableRow)
+
+
+			return transform(row, i, this, OracleTableRow)
 		})
 	}
 })

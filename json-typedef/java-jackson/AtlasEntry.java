@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
+import java.util.Map;
 
 /**
  * An atlas entry, like the Ironlands region entries found in classic Ironsworn.
@@ -24,9 +25,6 @@ public class AtlasEntry {
     @JsonProperty("name")
     private Label name;
 
-    @JsonProperty("quest_starter")
-    private MarkdownString questStarter;
-
     @JsonProperty("source")
     private Source source;
 
@@ -35,12 +33,20 @@ public class AtlasEntry {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("quest_starter")
+    private MarkdownString questStarter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
     private Suggestions suggestions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("summary")
     private MarkdownString summary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Map<String, Map<String, String>> tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("your_truth")
@@ -110,20 +116,6 @@ public class AtlasEntry {
     }
 
     /**
-     * Getter for questStarter.<p>
-     */
-    public MarkdownString getQuestStarter() {
-        return questStarter;
-    }
-
-    /**
-     * Setter for questStarter.<p>
-     */
-    public void setQuestStarter(MarkdownString questStarter) {
-        this.questStarter = questStarter;
-    }
-
-    /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
@@ -160,6 +152,20 @@ public class AtlasEntry {
     }
 
     /**
+     * Getter for questStarter.<p>
+     */
+    public MarkdownString getQuestStarter() {
+        return questStarter;
+    }
+
+    /**
+     * Setter for questStarter.<p>
+     */
+    public void setQuestStarter(MarkdownString questStarter) {
+        this.questStarter = questStarter;
+    }
+
+    /**
      * Getter for suggestions.<p>
      */
     public Suggestions getSuggestions() {
@@ -185,6 +191,20 @@ public class AtlasEntry {
      */
     public void setSummary(MarkdownString summary) {
         this.summary = summary;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Map<String, Map<String, String>> getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Map<String, Map<String, String>> tags) {
+        this.tags = tags;
     }
 
     /**

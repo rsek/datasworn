@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Represents a single oracle table, or a single table column of a table that
@@ -22,15 +23,14 @@ public class OracleTable {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("recommended_rolls")
+    private OracleTableRecommendedRolls recommendedRolls;
+
     @JsonProperty("source")
     private Source source;
 
     @JsonProperty("table")
     private List<OracleTableRow> table;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("_i18n")
-    private I18nHints i18n;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -67,6 +67,10 @@ public class OracleTable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("summary")
     private MarkdownString summary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Map<String, Map<String, String>> tags;
 
     public OracleTable() {
     }
@@ -120,6 +124,20 @@ public class OracleTable {
     }
 
     /**
+     * Getter for recommendedRolls.<p>
+     */
+    public OracleTableRecommendedRolls getRecommendedRolls() {
+        return recommendedRolls;
+    }
+
+    /**
+     * Setter for recommendedRolls.<p>
+     */
+    public void setRecommendedRolls(OracleTableRecommendedRolls recommendedRolls) {
+        this.recommendedRolls = recommendedRolls;
+    }
+
+    /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
@@ -149,20 +167,6 @@ public class OracleTable {
      */
     public void setTable(List<OracleTableRow> table) {
         this.table = table;
-    }
-
-    /**
-     * Getter for i18n.<p>
-     */
-    public I18nHints getI18n() {
-        return i18n;
-    }
-
-    /**
-     * Setter for i18n.<p>
-     */
-    public void setI18n(I18nHints i18n) {
-        this.i18n = i18n;
     }
 
     /**
@@ -321,5 +325,19 @@ public class OracleTable {
      */
     public void setSummary(MarkdownString summary) {
         this.summary = summary;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Map<String, Map<String, String>> getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Map<String, Map<String, String>> tags) {
+        this.tags = tags;
     }
 }

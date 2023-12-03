@@ -227,6 +227,7 @@ module Datasworn
     # Describes prerequisites for purchasing or using this asset.
     attr_accessor :requirement
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = Asset.new
@@ -245,6 +246,7 @@ module Datasworn
       out.options = Datasworn::from_json_data(Hash[String, AssetOptionField], data["options"])
       out.requirement = Datasworn::from_json_data(MarkdownString, data["requirement"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -265,6 +267,7 @@ module Datasworn
       data["options"] = Datasworn::to_json_data(options) unless options.nil?
       data["requirement"] = Datasworn::to_json_data(requirement) unless requirement.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -1245,6 +1248,7 @@ module Datasworn
     # length. This is intended for use in application tooltips and similar sorts
     # of hints. Longer text should use the "description" key instead.
     attr_accessor :summary
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = AssetType.new
@@ -1261,6 +1265,7 @@ module Datasworn
       out.replaces = Datasworn::from_json_data(AssetTypeID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -1279,6 +1284,7 @@ module Datasworn
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -1340,6 +1346,7 @@ module Datasworn
     # length. This is intended for use in application tooltips and similar sorts
     # of hints. Longer text should use the "description" key instead.
     attr_accessor :summary
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = Atlas.new
@@ -1357,6 +1364,7 @@ module Datasworn
       out.replaces = Datasworn::from_json_data(AtlasID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -1376,6 +1384,7 @@ module Datasworn
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -1391,7 +1400,6 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
-    attr_accessor :quest_starter
 
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
@@ -1400,8 +1408,10 @@ module Datasworn
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
+    attr_accessor :quest_starter
     attr_accessor :suggestions
     attr_accessor :summary
+    attr_accessor :tags
     attr_accessor :your_truth
 
     def self.from_json_data(data)
@@ -1410,11 +1420,12 @@ module Datasworn
       out.features = Datasworn::from_json_data(Array[MarkdownString], data["features"])
       out.id = Datasworn::from_json_data(AtlasEntryID, data["id"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
       out.source = Datasworn::from_json_data(Source, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out.your_truth = Datasworn::from_json_data(MarkdownString, data["your_truth"])
       out
     end
@@ -1425,11 +1436,12 @@ module Datasworn
       data["features"] = Datasworn::to_json_data(features)
       data["id"] = Datasworn::to_json_data(id)
       data["name"] = Datasworn::to_json_data(name)
-      data["quest_starter"] = Datasworn::to_json_data(quest_starter)
       data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data["your_truth"] = Datasworn::to_json_data(your_truth) unless your_truth.nil?
       data
     end
@@ -1654,6 +1666,7 @@ module Datasworn
     # is located.
     attr_accessor :region
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = DelveSite.new
@@ -1670,6 +1683,7 @@ module Datasworn
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.region = Datasworn::from_json_data(AtlasEntryID, data["region"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -1688,6 +1702,7 @@ module Datasworn
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["region"] = Datasworn::to_json_data(region) unless region.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -1801,6 +1816,7 @@ module Datasworn
     # delve/oracles/site_name/format) to create random names for delve sites.
     attr_accessor :name_oracle
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = DelveSiteDomain.new
@@ -1815,6 +1831,7 @@ module Datasworn
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.name_oracle = Datasworn::from_json_data(OracleTableID, data["name_oracle"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -1831,6 +1848,7 @@ module Datasworn
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["name_oracle"] = Datasworn::to_json_data(name_oracle) unless name_oracle.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -1859,7 +1877,7 @@ module Datasworn
     attr_accessor :icon
 
     # Further oracle rolls prompted by this table row.
-    attr_accessor :rolls
+    attr_accessor :oracle_rolls
     attr_accessor :suggestions
 
     # Optional secondary text content for this row. Generally, this is longer
@@ -1877,7 +1895,7 @@ module Datasworn
       out.embed_table = Datasworn::from_json_data(OracleTableID, data["embed_table"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["i18n"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["rolls"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["oracle_rolls"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
@@ -1894,7 +1912,7 @@ module Datasworn
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["rolls"] = Datasworn::to_json_data(rolls) unless rolls.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["template"] = Datasworn::to_json_data(template) unless template.nil?
@@ -1926,7 +1944,7 @@ module Datasworn
     attr_accessor :icon
 
     # Further oracle rolls prompted by this table row.
-    attr_accessor :rolls
+    attr_accessor :oracle_rolls
     attr_accessor :suggestions
 
     # Optional secondary text content for this row. Generally, this is longer
@@ -1944,7 +1962,7 @@ module Datasworn
       out.embed_table = Datasworn::from_json_data(OracleTableID, data["embed_table"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["i18n"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["rolls"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["oracle_rolls"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
@@ -1961,7 +1979,7 @@ module Datasworn
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["rolls"] = Datasworn::to_json_data(rolls) unless rolls.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["template"] = Datasworn::to_json_data(template) unless template.nil?
@@ -2021,6 +2039,7 @@ module Datasworn
     attr_accessor :description
     attr_accessor :icon
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = DelveSiteTheme.new
@@ -2034,6 +2053,7 @@ module Datasworn
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -2049,6 +2069,7 @@ module Datasworn
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -2077,7 +2098,7 @@ module Datasworn
     attr_accessor :icon
 
     # Further oracle rolls prompted by this table row.
-    attr_accessor :rolls
+    attr_accessor :oracle_rolls
     attr_accessor :suggestions
 
     # Optional secondary text content for this row. Generally, this is longer
@@ -2095,7 +2116,7 @@ module Datasworn
       out.embed_table = Datasworn::from_json_data(OracleTableID, data["embed_table"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["i18n"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["rolls"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["oracle_rolls"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
@@ -2112,7 +2133,7 @@ module Datasworn
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["rolls"] = Datasworn::to_json_data(rolls) unless rolls.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["template"] = Datasworn::to_json_data(template) unless template.nil?
@@ -2144,7 +2165,7 @@ module Datasworn
     attr_accessor :icon
 
     # Further oracle rolls prompted by this table row.
-    attr_accessor :rolls
+    attr_accessor :oracle_rolls
     attr_accessor :suggestions
 
     # Optional secondary text content for this row. Generally, this is longer
@@ -2162,7 +2183,7 @@ module Datasworn
       out.embed_table = Datasworn::from_json_data(OracleTableID, data["embed_table"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["i18n"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["rolls"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["oracle_rolls"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
@@ -2179,7 +2200,7 @@ module Datasworn
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["rolls"] = Datasworn::to_json_data(rolls) unless rolls.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["template"] = Datasworn::to_json_data(template) unless template.nil?
@@ -2516,6 +2537,7 @@ module Datasworn
     attr_accessor :oracles
     attr_accessor :replaces
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = MoveActionRoll.new
@@ -2530,6 +2552,7 @@ module Datasworn
       out.oracles = Datasworn::from_json_data(Array[OracleTableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -2545,6 +2568,7 @@ module Datasworn
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -2560,6 +2584,7 @@ module Datasworn
     attr_accessor :oracles
     attr_accessor :replaces
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = MoveNoRoll.new
@@ -2573,6 +2598,7 @@ module Datasworn
       out.oracles = Datasworn::from_json_data(Array[OracleTableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -2587,6 +2613,7 @@ module Datasworn
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -2606,6 +2633,7 @@ module Datasworn
     attr_accessor :oracles
     attr_accessor :replaces
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = MoveProgressRoll.new
@@ -2621,6 +2649,7 @@ module Datasworn
       out.oracles = Datasworn::from_json_data(Array[OracleTableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -2637,6 +2666,7 @@ module Datasworn
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -2655,6 +2685,7 @@ module Datasworn
     attr_accessor :oracles
     attr_accessor :replaces
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = MoveSpecialTrack.new
@@ -2669,6 +2700,7 @@ module Datasworn
       out.oracles = Datasworn::from_json_data(Array[OracleTableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -2684,6 +2716,7 @@ module Datasworn
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -2729,6 +2762,7 @@ module Datasworn
     # length. This is intended for use in application tooltips and similar sorts
     # of hints. Longer text should use the "description" key instead.
     attr_accessor :summary
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = MoveCategory.new
@@ -2745,6 +2779,7 @@ module Datasworn
       out.replaces = Datasworn::from_json_data(MoveCategoryID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -2763,6 +2798,7 @@ module Datasworn
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -3013,7 +3049,6 @@ module Datasworn
     # The primary name/label for this item.
     attr_accessor :name
     attr_accessor :nature
-    attr_accessor :quest_starter
 
     # The suggested challenge rank for this NPC.
     attr_accessor :rank
@@ -3026,8 +3061,10 @@ module Datasworn
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
+    attr_accessor :quest_starter
     attr_accessor :suggestions
     attr_accessor :summary
+    attr_accessor :tags
     attr_accessor :variants
     attr_accessor :your_truth
 
@@ -3039,13 +3076,14 @@ module Datasworn
       out.id = Datasworn::from_json_data(NpcID, data["id"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.nature = Datasworn::from_json_data(NpcNature, data["nature"])
-      out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
       out.source = Datasworn::from_json_data(Source, data["source"])
       out.tactics = Datasworn::from_json_data(Array[MarkdownString], data["tactics"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out.variants = Datasworn::from_json_data(Hash[String, NpcVariant], data["variants"])
       out.your_truth = Datasworn::from_json_data(MarkdownString, data["your_truth"])
       out
@@ -3059,13 +3097,14 @@ module Datasworn
       data["id"] = Datasworn::to_json_data(id)
       data["name"] = Datasworn::to_json_data(name)
       data["nature"] = Datasworn::to_json_data(nature)
-      data["quest_starter"] = Datasworn::to_json_data(quest_starter)
       data["rank"] = Datasworn::to_json_data(rank)
       data["source"] = Datasworn::to_json_data(source)
       data["tactics"] = Datasworn::to_json_data(tactics)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data["variants"] = Datasworn::to_json_data(variants) unless variants.nil?
       data["your_truth"] = Datasworn::to_json_data(your_truth) unless your_truth.nil?
       data
@@ -3113,6 +3152,7 @@ module Datasworn
     # length. This is intended for use in application tooltips and similar sorts
     # of hints. Longer text should use the "description" key instead.
     attr_accessor :summary
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = NpcCollection.new
@@ -3129,6 +3169,7 @@ module Datasworn
       out.replaces = Datasworn::from_json_data(NpcCollectionID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -3147,6 +3188,7 @@ module Datasworn
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -3309,6 +3351,7 @@ module Datasworn
     # length. This is intended for use in application tooltips and similar sorts
     # of hints. Longer text should use the "description" key instead.
     attr_accessor :summary
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = OracleCollection.new
@@ -3327,6 +3370,7 @@ module Datasworn
       out.replaces = Datasworn::from_json_data(OracleCollectionID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -3347,6 +3391,7 @@ module Datasworn
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -3477,6 +3522,25 @@ module Datasworn
     end
   end
 
+  class OracleTableRecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = OracleTableRecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
   # Represents a single oracle table, or a single table column of a table that
   # has multiple "Roll" or "Result" columns.
   class OracleTable
@@ -3488,12 +3552,12 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+    attr_accessor :recommended_rolls
 
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
     attr_accessor :table
-    attr_accessor :i18n
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -3526,15 +3590,16 @@ module Datasworn
     # and similar sorts of hints. Longer text should use the "description" key
     # instead.
     attr_accessor :summary
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = OracleTable.new
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.id = Datasworn::from_json_data(OracleTableID, data["id"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleTableRecommendedRolls, data["recommended_rolls"])
       out.source = Datasworn::from_json_data(Source, data["source"])
       out.table = Datasworn::from_json_data(Array[OracleTableRow], data["table"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -3544,6 +3609,7 @@ module Datasworn
       out.replaces = Datasworn::from_json_data(OracleTableID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -3552,9 +3618,9 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["id"] = Datasworn::to_json_data(id)
       data["name"] = Datasworn::to_json_data(name)
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls)
       data["source"] = Datasworn::to_json_data(source)
       data["table"] = Datasworn::to_json_data(table)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -3564,6 +3630,7 @@ module Datasworn
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -3742,20 +3809,21 @@ module Datasworn
     attr_accessor :auto
     attr_accessor :dice
 
-    # Special rules on how the oracle table roll is performed.
-    attr_accessor :method
-    attr_accessor :oracle
+    # Special rules on how to handle duplicate results, when rolling multiple
+    # times on this table.
+    attr_accessor :duplicates
 
     # The number of times to roll.
-    attr_accessor :times
+    attr_accessor :number_of_rolls
+    attr_accessor :oracle
 
     def self.from_json_data(data)
       out = OracleTableRoll.new
       out.auto = Datasworn::from_json_data(TrueClass, data["auto"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
-      out.method = Datasworn::from_json_data(OracleTableRollMethod, data["method"])
+      out.duplicates = Datasworn::from_json_data(OracleTableRollDuplicates, data["duplicates"])
+      out.number_of_rolls = Datasworn::from_json_data(Integer, data["number_of_rolls"])
       out.oracle = Datasworn::from_json_data(OracleTableID, data["oracle"])
-      out.times = Datasworn::from_json_data(Integer, data["times"])
       out
     end
 
@@ -3763,16 +3831,16 @@ module Datasworn
       data = {}
       data["auto"] = Datasworn::to_json_data(auto)
       data["dice"] = Datasworn::to_json_data(dice)
-      data["method"] = Datasworn::to_json_data(method)
+      data["duplicates"] = Datasworn::to_json_data(duplicates)
+      data["number_of_rolls"] = Datasworn::to_json_data(number_of_rolls)
       data["oracle"] = Datasworn::to_json_data(oracle)
-      data["times"] = Datasworn::to_json_data(times)
       data
     end
   end
 
   # Special roll instructions to use when rolling multiple times on a single
   # oracle table.
-  class OracleTableRollMethod
+  class OracleTableRollDuplicates
     attr_accessor :value
 
     def initialize(value)
@@ -3782,19 +3850,19 @@ module Datasworn
     private_class_method :new
 
     # Duplicates should be kept.
-    KEEP_DUPLICATES = new("keep_duplicates")
+    KEEP = new("keep")
 
     # Duplicates should be kept, and they compound to make things worse.
     MAKE_IT_WORSE = new("make_it_worse")
 
     # Duplicates should be re-rolled.
-    NO_DUPLICATES = new("no_duplicates")
+    REROLL = new("reroll")
 
     def self.from_json_data(data)
       {
-        "keep_duplicates" => KEEP_DUPLICATES,
+        "keep" => KEEP,
         "make_it_worse" => MAKE_IT_WORSE,
-        "no_duplicates" => NO_DUPLICATES,
+        "reroll" => REROLL,
       }[data]
     end
 
@@ -3827,7 +3895,7 @@ module Datasworn
     attr_accessor :icon
 
     # Further oracle rolls prompted by this table row.
-    attr_accessor :rolls
+    attr_accessor :oracle_rolls
     attr_accessor :suggestions
 
     # Optional secondary text content for this row. Generally, this is longer
@@ -3845,7 +3913,7 @@ module Datasworn
       out.embed_table = Datasworn::from_json_data(OracleTableID, data["embed_table"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["i18n"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["rolls"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["oracle_rolls"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
@@ -3862,7 +3930,7 @@ module Datasworn
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["rolls"] = Datasworn::to_json_data(rolls) unless rolls.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["template"] = Datasworn::to_json_data(template) unless template.nil?
@@ -4075,6 +4143,7 @@ module Datasworn
     attr_accessor :canonical_name
     attr_accessor :icon
     attr_accessor :suggestions
+    attr_accessor :tags
 
     def self.from_json_data(data)
       out = Rarity.new
@@ -4087,6 +4156,7 @@ module Datasworn
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out
     end
 
@@ -4101,6 +4171,7 @@ module Datasworn
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -5511,6 +5582,8 @@ module Datasworn
     attr_accessor :canonical_name
     attr_accessor :icon
     attr_accessor :suggestions
+    attr_accessor :summary
+    attr_accessor :tags
     attr_accessor :your_character
 
     def self.from_json_data(data)
@@ -5522,6 +5595,8 @@ module Datasworn
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
       out.your_character = Datasworn::from_json_data(MarkdownString, data["your_character"])
       out
     end
@@ -5535,6 +5610,8 @@ module Datasworn
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data["your_character"] = Datasworn::to_json_data(your_character) unless your_character.nil?
       data
     end
@@ -5627,7 +5704,7 @@ module Datasworn
     attr_accessor :icon
 
     # Further oracle rolls prompted by this table row.
-    attr_accessor :rolls
+    attr_accessor :oracle_rolls
     attr_accessor :suggestions
 
     # Optional secondary text content for this row. Generally, this is longer
@@ -5644,7 +5721,7 @@ module Datasworn
       out.embed_table = Datasworn::from_json_data(OracleTableID, data["embed_table"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["i18n"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["rolls"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleTableRoll], data["oracle_rolls"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
@@ -5660,7 +5737,7 @@ module Datasworn
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["rolls"] = Datasworn::to_json_data(rolls) unless rolls.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["template"] = Datasworn::to_json_data(template) unless template.nil?

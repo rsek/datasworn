@@ -1059,10 +1059,11 @@ export interface Npc {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
-	quest_starter: MarkdownString
+	quest_starter?: MarkdownString
 	your_truth?: MarkdownString
 	/**
 	 * The suggested challenge rank for this NPC.
@@ -1095,6 +1096,7 @@ export interface NpcCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1208,33 +1210,30 @@ export interface OracleTableRoll {
 	 */
 	auto: boolean
 	/**
-	 * The number of times to roll.
-	 * @default 1
+	 * Special rules on how to handle duplicate results, when rolling multiple times on this table.
+	 * @default "reroll"
 	 */
-	times: number
-	/**
-	 * Special rules on how the oracle table roll is performed.
-	 * @default "no_duplicates"
-	 */
-	method: OracleTableRollMethod
+	duplicates: OracleTableRollDuplicates
 	/**
 	 * The dice roll to make on the oracle table. Set it to `null` if you just want the table's default.
 	 * @default null
 	 */
 	dice: DiceExpression | null
+	/**
+	 * The number of times to roll.
+	 * @default 1
+	 */
+	number_of_rolls: number
 }
 
 /**
  * Special roll instructions to use when rolling multiple times on a single oracle table.
  *
- *   - `no_duplicates`: Duplicates should be re-rolled.
- *   - `keep_duplicates`: Duplicates should be kept.
+ *   - `reroll`: Duplicates should be re-rolled.
+ *   - `keep`: Duplicates should be kept.
  *   - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.
  */
-export type OracleTableRollMethod =
-	| 'no_duplicates'
-	| 'keep_duplicates'
-	| 'make_it_worse'
+export type OracleTableRollDuplicates = 'reroll' | 'keep' | 'make_it_worse'
 
 export interface OracleCollection {
 	/**
@@ -1263,6 +1262,7 @@ export interface OracleCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1361,12 +1361,31 @@ export interface OracleTable {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @default
+	 * ```javascript
+	 * 	{
+	 * 		min: 1,
+	 * 		max: 1
+	 * 	}
+	 * ```
+	 */
+	recommended_rolls: {
+		/**
+		 * @default 1
+		 */
+		min: number
+		/**
+		 * @default 1
+		 */
+		max: number
+	}
 	/**
 	 * The roll used to select a result on this table.
 	 * @default "1d100"
 	 */
 	dice: DiceExpression
-	_i18n?: I18nHints
 	/**
 	 * An icon that represents this table.
 	 */
@@ -1528,7 +1547,7 @@ export interface OracleTableRow {
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleTableRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
@@ -1596,6 +1615,7 @@ export interface MoveActionRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1653,6 +1673,7 @@ export interface MoveCategory {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1714,6 +1735,7 @@ export interface MoveNoRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1797,6 +1819,7 @@ export interface MoveProgressRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1873,6 +1896,7 @@ export interface MoveSpecialTrack {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2208,6 +2232,7 @@ export interface Asset {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * A localized category label for this asset. This is the surtitle above the asset's name on the card.
 	 * @example "Combat Talent"
@@ -2789,6 +2814,7 @@ export interface AssetType {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2962,7 +2988,9 @@ export interface Truth {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	icon?: SvgImageUrl
+	summary?: MarkdownString
 	options: TruthOption[]
 	your_character?: MarkdownString
 }
@@ -3000,7 +3028,7 @@ export interface TruthOptionTableRow {
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleTableRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
@@ -3038,6 +3066,7 @@ export interface Atlas {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -3094,10 +3123,11 @@ export interface AtlasEntry {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
-	quest_starter: MarkdownString
+	quest_starter?: MarkdownString
 	your_truth?: MarkdownString
 }
 
@@ -3140,6 +3170,7 @@ export interface Rarity {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	/**
 	 * The asset augmented by this rarity.
 	 */
@@ -3178,6 +3209,7 @@ export interface DelveSite {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	icon?: SvgImageUrl
 	rank: ChallengeRank
 	/**
@@ -3299,6 +3331,7 @@ export interface DelveSiteDomain {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
@@ -3406,7 +3439,7 @@ export interface DelveSiteDomainDangerRow {
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleTableRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
@@ -3448,7 +3481,7 @@ export interface DelveSiteDomainFeatureRow {
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleTableRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
@@ -3487,6 +3520,7 @@ export interface DelveSiteTheme {
 	 */
 	source: Source
 	suggestions?: Suggestions
+	tags?: Record<DictKey, Record<DictKey, string>>
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
@@ -3590,7 +3624,7 @@ export interface DelveSiteThemeDangerRow {
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleTableRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
@@ -3632,7 +3666,7 @@ export interface DelveSiteThemeFeatureRow {
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleTableRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.

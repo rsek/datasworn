@@ -181,7 +181,7 @@ oracles:
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
-                method: make_it_worse
+                duplicates: make_it_worse
       reveal_a_danger_alt:
         name: Reveal a Danger (alternate version)
         replaces: delve/oracles/moves/reveal_a_danger
@@ -222,7 +222,7 @@ oracles:
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
-                method: make_it_worse
+                duplicates: make_it_worse
       advance_a_threat:
         name: Advance a Threat
         match:

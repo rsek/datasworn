@@ -219,6 +219,8 @@ type Asset struct {
 	Requirement *MarkdownString `json:"requirement,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // An asset ability: one of the purchasable features of an asset. Most assets
@@ -1037,6 +1039,8 @@ type AssetType struct {
 	// This is intended for use in application tooltips and similar sorts of hints.
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A unique ID for an AssetType.
@@ -1087,6 +1091,8 @@ type Atlas struct {
 	// This is intended for use in application tooltips and similar sorts of hints.
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // An atlas entry, like the Ironlands region entries found in classic Ironsworn.
@@ -1101,8 +1107,6 @@ type AtlasEntry struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
-	QuestStarter MarkdownString `json:"quest_starter"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
 	Source Source `json:"source"`
@@ -1111,9 +1115,13 @@ type AtlasEntry struct {
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
+	QuestStarter *MarkdownString `json:"quest_starter,omitempty"`
+
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 
 	YourTruth *MarkdownString `json:"your_truth,omitempty"`
 }
@@ -1210,6 +1218,8 @@ type DelveSite struct {
 	Region *AtlasEntryID `json:"region,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 type DelveSiteDenizen struct {
@@ -1279,6 +1289,8 @@ type DelveSiteDomain struct {
 	NameOracle *OracleTableID `json:"name_oracle,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // Represents a single Danger entry from a delve site Domain card.
@@ -1307,7 +1319,7 @@ type DelveSiteDomainDangerRow struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	// Further oracle rolls prompted by this table row.
-	Rolls []OracleTableRoll `json:"rolls,omitempty"`
+	OracleRolls []OracleTableRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1344,7 +1356,7 @@ type DelveSiteDomainFeatureRow struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	// Further oracle rolls prompted by this table row.
-	Rolls []OracleTableRoll `json:"rolls,omitempty"`
+	OracleRolls []OracleTableRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1388,6 +1400,8 @@ type DelveSiteTheme struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // Represents a single Danger entry from a delve site Theme card.
@@ -1416,7 +1430,7 @@ type DelveSiteThemeDangerRow struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	// Further oracle rolls prompted by this table row.
-	Rolls []OracleTableRoll `json:"rolls,omitempty"`
+	OracleRolls []OracleTableRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1453,7 +1467,7 @@ type DelveSiteThemeFeatureRow struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	// Further oracle rolls prompted by this table row.
-	Rolls []OracleTableRoll `json:"rolls,omitempty"`
+	OracleRolls []OracleTableRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1647,6 +1661,8 @@ type MoveActionRoll struct {
 	Replaces *MoveID `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A move that makes no progress rolls or action rolls.
@@ -1681,6 +1697,8 @@ type MoveNoRoll struct {
 	Replaces *MoveID `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A progress move that rolls on a standard progress track type (whose features
@@ -1722,6 +1740,8 @@ type MoveProgressRoll struct {
 	Replaces *MoveID `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A progress move that rolls on a special track, such as Legacies (Starforged)
@@ -1760,6 +1780,8 @@ type MoveSpecialTrack struct {
 	Replaces *MoveID `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 type MoveCategory struct {
@@ -1805,6 +1827,8 @@ type MoveCategory struct {
 	// This is intended for use in application tooltips and similar sorts of hints.
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A unique ID for a MoveCategory.
@@ -1962,8 +1986,6 @@ type Npc struct {
 
 	Nature NpcNature `json:"nature"`
 
-	QuestStarter MarkdownString `json:"quest_starter"`
-
 	// The suggested challenge rank for this NPC.
 	Rank ChallengeRank `json:"rank"`
 
@@ -1977,9 +1999,13 @@ type Npc struct {
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
+	QuestStarter *MarkdownString `json:"quest_starter,omitempty"`
+
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 
 	Variants map[string]NpcVariant `json:"variants,omitempty"`
 
@@ -2029,6 +2055,8 @@ type NpcCollection struct {
 	// This is intended for use in application tooltips and similar sorts of hints.
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A unique ID for a NpcCollection.
@@ -2114,6 +2142,8 @@ type OracleCollection struct {
 	// This is intended for use in application tooltips and similar sorts of hints.
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A unique ID for an OracleCollection.
@@ -2204,6 +2234,12 @@ type OracleRollTemplate struct {
 	Summary *TemplateString `json:"summary,omitempty"`
 }
 
+type OracleTableRecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 // Represents a single oracle table, or a single table column of a table that
 // has multiple "Roll" or "Result" columns.
 type OracleTable struct {
@@ -2216,13 +2252,13 @@ type OracleTable struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
+	RecommendedRolls OracleTableRecommendedRolls `json:"recommended_rolls"`
+
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
 	Source Source `json:"source"`
 
 	Table []OracleTableRow `json:"table"`
-
-	I18n *I18nHints `json:"_i18n,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2257,6 +2293,8 @@ type OracleTable struct {
 	// and similar sorts of hints. Longer text should use the "description" key
 	// instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 type OracleTableColumn struct {
@@ -2365,28 +2403,29 @@ type OracleTableRoll struct {
 
 	Dice DiceExpression `json:"dice"`
 
-	// Special rules on how the oracle table roll is performed.
-	Method OracleTableRollMethod `json:"method"`
-
-	Oracle OracleTableID `json:"oracle"`
+	// Special rules on how to handle duplicate results, when rolling multiple
+	// times on this table.
+	Duplicates OracleTableRollDuplicates `json:"duplicates"`
 
 	// The number of times to roll.
-	Times int16 `json:"times"`
+	NumberOfRolls int16 `json:"number_of_rolls"`
+
+	Oracle OracleTableID `json:"oracle"`
 }
 
 // Special roll instructions to use when rolling multiple times on a single
 // oracle table.
-type OracleTableRollMethod string
+type OracleTableRollDuplicates string
 
 const (
 // Duplicates should be kept.
-	OracleTableRollMethodKeepDuplicates OracleTableRollMethod = "keep_duplicates"
+	OracleTableRollDuplicatesKeep OracleTableRollDuplicates = "keep"
 
 // Duplicates should be kept, and they compound to make things worse.
-	OracleTableRollMethodMakeItWorse OracleTableRollMethod = "make_it_worse"
+	OracleTableRollDuplicatesMakeItWorse OracleTableRollDuplicates = "make_it_worse"
 
 // Duplicates should be re-rolled.
-	OracleTableRollMethodNoDuplicates OracleTableRollMethod = "no_duplicates"
+	OracleTableRollDuplicatesReroll OracleTableRollDuplicates = "reroll"
 )
 
 // Represents a row in an oracle table.
@@ -2415,7 +2454,7 @@ type OracleTableRow struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	// Further oracle rolls prompted by this table row.
-	Rolls []OracleTableRoll `json:"rolls,omitempty"`
+	OracleRolls []OracleTableRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -2537,6 +2576,8 @@ type Rarity struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
 }
 
 // A unique ID for a Rarity.
@@ -3218,6 +3259,10 @@ type Truth struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
+	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
+
 	YourCharacter *MarkdownString `json:"your_character,omitempty"`
 }
 
@@ -3267,7 +3312,7 @@ type TruthOptionTableRow struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	// Further oracle rolls prompted by this table row.
-	Rolls []OracleTableRoll `json:"rolls,omitempty"`
+	OracleRolls []OracleTableRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 

@@ -32,9 +32,6 @@ public class Npc {
     @JsonProperty("nature")
     private NpcNature nature;
 
-    @JsonProperty("quest_starter")
-    private MarkdownString questStarter;
-
     @JsonProperty("rank")
     private ChallengeRank rank;
 
@@ -49,12 +46,20 @@ public class Npc {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("quest_starter")
+    private MarkdownString questStarter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
     private Suggestions suggestions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("summary")
     private MarkdownString summary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Map<String, Map<String, String>> tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("variants")
@@ -156,20 +161,6 @@ public class Npc {
     }
 
     /**
-     * Getter for questStarter.<p>
-     */
-    public MarkdownString getQuestStarter() {
-        return questStarter;
-    }
-
-    /**
-     * Setter for questStarter.<p>
-     */
-    public void setQuestStarter(MarkdownString questStarter) {
-        this.questStarter = questStarter;
-    }
-
-    /**
      * Getter for rank.<p>
      * The suggested challenge rank for this NPC.
      */
@@ -236,6 +227,20 @@ public class Npc {
     }
 
     /**
+     * Getter for questStarter.<p>
+     */
+    public MarkdownString getQuestStarter() {
+        return questStarter;
+    }
+
+    /**
+     * Setter for questStarter.<p>
+     */
+    public void setQuestStarter(MarkdownString questStarter) {
+        this.questStarter = questStarter;
+    }
+
+    /**
      * Getter for suggestions.<p>
      */
     public Suggestions getSuggestions() {
@@ -261,6 +266,20 @@ public class Npc {
      */
     public void setSummary(MarkdownString summary) {
         this.summary = summary;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Map<String, Map<String, String>> getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Map<String, Map<String, String>> tags) {
+        this.tags = tags;
     }
 
     /**

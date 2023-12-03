@@ -13,14 +13,14 @@ public class OracleTableRoll {
     @JsonProperty("dice")
     private DiceExpression dice;
 
-    @JsonProperty("method")
-    private OracleTableRollMethod method;
+    @JsonProperty("duplicates")
+    private OracleTableRollDuplicates duplicates;
+
+    @JsonProperty("number_of_rolls")
+    private Short numberOfRolls;
 
     @JsonProperty("oracle")
     private OracleTableId oracle;
-
-    @JsonProperty("times")
-    private Short times;
 
     public OracleTableRoll() {
     }
@@ -60,19 +60,37 @@ public class OracleTableRoll {
     }
 
     /**
-     * Getter for method.<p>
-     * Special rules on how the oracle table roll is performed.
+     * Getter for duplicates.<p>
+     * Special rules on how to handle duplicate results, when rolling multiple
+     * times on this table.
      */
-    public OracleTableRollMethod getMethod() {
-        return method;
+    public OracleTableRollDuplicates getDuplicates() {
+        return duplicates;
     }
 
     /**
-     * Setter for method.<p>
-     * Special rules on how the oracle table roll is performed.
+     * Setter for duplicates.<p>
+     * Special rules on how to handle duplicate results, when rolling multiple
+     * times on this table.
      */
-    public void setMethod(OracleTableRollMethod method) {
-        this.method = method;
+    public void setDuplicates(OracleTableRollDuplicates duplicates) {
+        this.duplicates = duplicates;
+    }
+
+    /**
+     * Getter for numberOfRolls.<p>
+     * The number of times to roll.
+     */
+    public Short getNumberOfRolls() {
+        return numberOfRolls;
+    }
+
+    /**
+     * Setter for numberOfRolls.<p>
+     * The number of times to roll.
+     */
+    public void setNumberOfRolls(Short numberOfRolls) {
+        this.numberOfRolls = numberOfRolls;
     }
 
     /**
@@ -87,21 +105,5 @@ public class OracleTableRoll {
      */
     public void setOracle(OracleTableId oracle) {
         this.oracle = oracle;
-    }
-
-    /**
-     * Getter for times.<p>
-     * The number of times to roll.
-     */
-    public Short getTimes() {
-        return times;
-    }
-
-    /**
-     * Setter for times.<p>
-     * The number of times to roll.
-     */
-    public void setTimes(Short times) {
-        this.times = times;
     }
 }

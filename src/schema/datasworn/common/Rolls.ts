@@ -31,47 +31,6 @@ export const OracleTableRollDuplicates = Utils.UnionEnumFromRecord(
 )
 export type OracleTableRollDuplicates = Static<typeof OracleTableRollDuplicates>
 
-const OracleTableRollBase = Type.Object({
-	oracle: Utils.Nullable(Type.Ref(Id.OracleTableId), {
-		default: null,
-		description:
-			"The ID of the oracle table to be rolled. A `null` value indicates that it's a roll on the same table."
-	}),
-	auto: Type.Boolean({
-		default: false,
-		description:
-			'Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as "Action + Theme".'
-	}),
-	duplicates: Type.Ref(OracleTableRollDuplicates, {
-		description:
-			'Special rules on how to handle duplicate results, when rolling multiple times on this table.',
-		default: 'reroll'
-	}),
-	dice: Utils.Nullable(Type.Ref(DiceExpression), {
-		default: null,
-		description:
-			"The dice roll to make on the oracle table. Set it to `null` if you just want the table's default."
-	})
-})
-
-const OracleTableRollStaticTimes = Utils.Assign([
-	OracleTableRollBase,
-	Type.Object({
-		number_of_rolls: Type.Integer({
-			minimum: 1,
-			default: 1,
-			description: 'The number of times to roll.'
-			// should this interact with
-		})
-	})
-])
-
-const OracleTableRollRandomTimes = Utils.Assign([
-	OracleTableRollBase,
-	Type.Object({
-		number_of_rolls: Type.Ref(DiceExpression)
-	})
-])
 
 export const OracleTableRoll = Type.Object(
 	{
@@ -88,7 +47,7 @@ export const OracleTableRoll = Type.Object(
 		duplicates: Type.Ref(OracleTableRollDuplicates, {
 			description:
 				'Special rules on how to handle duplicate results, when rolling multiple times on this table.',
-			default: 'no_duplicates'
+			default: 'reroll'
 		}),
 		dice: Utils.Nullable(Type.Ref(DiceExpression), {
 			default: null,

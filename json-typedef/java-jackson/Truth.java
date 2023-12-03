@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A setting truth category.
@@ -35,6 +36,14 @@ public class Truth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
     private Suggestions suggestions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("summary")
+    private MarkdownString summary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Map<String, Map<String, String>> tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("your_character")
@@ -151,6 +160,34 @@ public class Truth {
      */
     public void setSuggestions(Suggestions suggestions) {
         this.suggestions = suggestions;
+    }
+
+    /**
+     * Getter for summary.<p>
+     */
+    public MarkdownString getSummary() {
+        return summary;
+    }
+
+    /**
+     * Setter for summary.<p>
+     */
+    public void setSummary(MarkdownString summary) {
+        this.summary = summary;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Map<String, Map<String, String>> getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Map<String, Map<String, String>> tags) {
+        this.tags = tags;
     }
 
     /**

@@ -8,12 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Special roll instructions to use when rolling multiple times on a single
  * oracle table.
  */
-public enum OracleTableRollMethod {
+public enum OracleTableRollDuplicates {
     /**
      * Duplicates should be kept.
      */
-    @JsonProperty("keep_duplicates")
-    KEEP_DUPLICATES,
+    @JsonProperty("keep")
+    KEEP,
 
     /**
      * Duplicates should be kept, and they compound to make things worse.
@@ -24,6 +24,6 @@ public enum OracleTableRollMethod {
     /**
      * Duplicates should be re-rolled.
      */
-    @JsonProperty("no_duplicates")
-    NO_DUPLICATES,
+    @JsonProperty("reroll")
+    REROLL,
 }

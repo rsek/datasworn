@@ -1603,7 +1603,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -1684,7 +1685,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -1800,7 +1802,7 @@
 				"duplicates": {
 					"$ref": "#/$defs/OracleTableRollDuplicates",
 					"description": "Special rules on how to handle duplicate results, when rolling multiple times on this table.",
-					"default": "no_duplicates"
+					"default": "reroll"
 				},
 				"number_of_rolls": {
 					"type": "integer",
@@ -1919,7 +1921,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -2087,10 +2090,6 @@
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
-				"_i18n": {
-					"$ref": "#/$defs/I18nHints",
-					"macro": true
-				},
 				"recommended_rolls": {
 					"type": "object",
 					"default": {
@@ -2125,7 +2124,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -2519,7 +2519,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -2632,7 +2633,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -2770,7 +2772,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -2912,7 +2915,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"tracks": {
 					"$ref": "#/$defs/ProgressTrackTypeInfo",
@@ -3031,7 +3035,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -3611,7 +3616,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -4759,7 +4765,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -5162,7 +5169,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"your_character": {
 					"$ref": "#/$defs/MarkdownString"
@@ -5358,7 +5366,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false,
@@ -5419,7 +5428,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -5483,7 +5493,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"xp_cost": {
 					"type": "integer",
@@ -5813,7 +5824,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"theme": {
 					"$ref": "#/$defs/DelveSiteThemeId"
@@ -6194,7 +6206,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -6648,7 +6661,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false

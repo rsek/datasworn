@@ -261,6 +261,10 @@ pub struct Asset {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// An asset ability: one of the purchasable features of an asset. Most assets
@@ -991,6 +995,10 @@ pub struct AssetType {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A unique ID for an AssetType.
@@ -1068,6 +1076,10 @@ pub struct Atlas {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// An atlas entry, like the Ironlands region entries found in classic
@@ -1088,9 +1100,6 @@ pub struct AtlasEntry {
     #[serde(rename = "name")]
     pub name: Label,
 
-    #[serde(rename = "quest_starter")]
-    pub questStarter: MarkdownString,
-
     /// Attribution for the original source (such as a book or website) of this
     /// item, including the author and licensing information.
     #[serde(rename = "source")]
@@ -1102,6 +1111,10 @@ pub struct AtlasEntry {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub canonicalName: Option<Box<Label>>,
 
+    #[serde(rename = "quest_starter")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub questStarter: Option<Box<MarkdownString>>,
+
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
@@ -1109,6 +1122,10 @@ pub struct AtlasEntry {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 
     #[serde(rename = "your_truth")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1239,6 +1256,10 @@ pub struct DelveSite {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1338,6 +1359,10 @@ pub struct DelveSiteDomain {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// Represents a single Danger entry from a delve site Domain card.
@@ -1380,9 +1405,9 @@ pub struct DelveSiteDomainDangerRow {
     pub icon: Option<Box<SvgImageUrl>>,
 
     /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "rolls")]
+    #[serde(rename = "oracle_rolls")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub rolls: Option<Box<Vec<OracleTableRoll>>>,
+    pub oracleRolls: Option<Box<Vec<OracleTableRoll>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1439,9 +1464,9 @@ pub struct DelveSiteDomainFeatureRow {
     pub icon: Option<Box<SvgImageUrl>>,
 
     /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "rolls")]
+    #[serde(rename = "oracle_rolls")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub rolls: Option<Box<Vec<OracleTableRoll>>>,
+    pub oracleRolls: Option<Box<Vec<OracleTableRoll>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1506,6 +1531,10 @@ pub struct DelveSiteTheme {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// Represents a single Danger entry from a delve site Theme card.
@@ -1548,9 +1577,9 @@ pub struct DelveSiteThemeDangerRow {
     pub icon: Option<Box<SvgImageUrl>>,
 
     /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "rolls")]
+    #[serde(rename = "oracle_rolls")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub rolls: Option<Box<Vec<OracleTableRoll>>>,
+    pub oracleRolls: Option<Box<Vec<OracleTableRoll>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1607,9 +1636,9 @@ pub struct DelveSiteThemeFeatureRow {
     pub icon: Option<Box<SvgImageUrl>>,
 
     /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "rolls")]
+    #[serde(rename = "oracle_rolls")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub rolls: Option<Box<Vec<OracleTableRoll>>>,
+    pub oracleRolls: Option<Box<Vec<OracleTableRoll>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1815,6 +1844,10 @@ pub struct MoveActionRoll {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A move that makes no progress rolls or action rolls.
@@ -1863,6 +1896,10 @@ pub struct MoveNoRoll {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A progress move that rolls on a standard progress track type (whose features
@@ -1921,6 +1958,10 @@ pub struct MoveProgressRoll {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A progress move that rolls on a special track, such as Legacies (Starforged)
@@ -1974,6 +2015,10 @@ pub struct MoveSpecialTrack {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2044,6 +2089,10 @@ pub struct MoveCategory {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A unique ID for a MoveCategory.
@@ -2194,9 +2243,6 @@ pub struct Npc {
     #[serde(rename = "nature")]
     pub nature: NpcNature,
 
-    #[serde(rename = "quest_starter")]
-    pub questStarter: MarkdownString,
-
     /// The suggested challenge rank for this NPC.
     #[serde(rename = "rank")]
     pub rank: ChallengeRank,
@@ -2215,6 +2261,10 @@ pub struct Npc {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub canonicalName: Option<Box<Label>>,
 
+    #[serde(rename = "quest_starter")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub questStarter: Option<Box<MarkdownString>>,
+
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
@@ -2222,6 +2272,10 @@ pub struct Npc {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 
     #[serde(rename = "variants")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2300,6 +2354,10 @@ pub struct NpcCollection {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A unique ID for a NpcCollection.
@@ -2422,6 +2480,10 @@ pub struct OracleCollection {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A unique ID for an OracleCollection.
@@ -2495,6 +2557,15 @@ pub struct OracleRollTemplate {
     pub summary: Option<Box<TemplateString>>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableRecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
 /// Represents a single oracle table, or a single table column of a table that
 /// has multiple "Roll" or "Result" columns.
 #[derive(Serialize, Deserialize)]
@@ -2511,6 +2582,9 @@ pub struct OracleTable {
     #[serde(rename = "name")]
     pub name: Label,
 
+    #[serde(rename = "recommended_rolls")]
+    pub recommendedRolls: OracleTableRecommendedRolls,
+
     /// Attribution for the original source (such as a book or website) of this
     /// item, including the author and licensing information.
     #[serde(rename = "source")]
@@ -2518,10 +2592,6 @@ pub struct OracleTable {
 
     #[serde(rename = "table")]
     pub table: Vec<OracleTableRow>,
-
-    #[serde(rename = "_i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2574,6 +2644,10 @@ pub struct OracleTable {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2661,33 +2735,34 @@ pub struct OracleTableRoll {
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
 
-    /// Special rules on how the oracle table roll is performed.
-    #[serde(rename = "method")]
-    pub method: OracleTableRollMethod,
+    /// Special rules on how to handle duplicate results, when rolling multiple
+    /// times on this table.
+    #[serde(rename = "duplicates")]
+    pub duplicates: OracleTableRollDuplicates,
+
+    /// The number of times to roll.
+    #[serde(rename = "number_of_rolls")]
+    pub numberOfRolls: i16,
 
     #[serde(rename = "oracle")]
     pub oracle: OracleTableId,
-
-    /// The number of times to roll.
-    #[serde(rename = "times")]
-    pub times: i16,
 }
 
 /// Special roll instructions to use when rolling multiple times on a single
 /// oracle table.
 #[derive(Serialize, Deserialize)]
-pub enum OracleTableRollMethod {
+pub enum OracleTableRollDuplicates {
     /// Duplicates should be kept.
-    #[serde(rename = "keep_duplicates")]
-    KeepDuplicates,
+    #[serde(rename = "keep")]
+    Keep,
 
     /// Duplicates should be kept, and they compound to make things worse.
     #[serde(rename = "make_it_worse")]
     MakeItWorse,
 
     /// Duplicates should be re-rolled.
-    #[serde(rename = "no_duplicates")]
-    NoDuplicates,
+    #[serde(rename = "reroll")]
+    Reroll,
 }
 
 /// Represents a row in an oracle table.
@@ -2730,9 +2805,9 @@ pub struct OracleTableRow {
     pub icon: Option<Box<SvgImageUrl>>,
 
     /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "rolls")]
+    #[serde(rename = "oracle_rolls")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub rolls: Option<Box<Vec<OracleTableRoll>>>,
+    pub oracleRolls: Option<Box<Vec<OracleTableRoll>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2891,6 +2966,10 @@ pub struct Rarity {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
 }
 
 /// A unique ID for a Rarity.
@@ -3676,6 +3755,14 @@ pub struct Truth {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
 
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
+
     #[serde(rename = "your_character")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub yourCharacter: Option<Box<MarkdownString>>,
@@ -3752,9 +3839,9 @@ pub struct TruthOptionTableRow {
     pub icon: Option<Box<SvgImageUrl>>,
 
     /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "rolls")]
+    #[serde(rename = "oracle_rolls")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub rolls: Option<Box<Vec<OracleTableRoll>>>,
+    pub oracleRolls: Option<Box<Vec<OracleTableRoll>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]

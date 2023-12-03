@@ -1569,7 +1569,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -1649,7 +1650,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -1762,7 +1764,7 @@
 				"duplicates": {
 					"$ref": "#/$defs/OracleTableRollDuplicates",
 					"description": "Special rules on how to handle duplicate results, when rolling multiple times on this table.",
-					"default": "no_duplicates"
+					"default": "reroll"
 				},
 				"number_of_rolls": {
 					"type": "integer",
@@ -1880,7 +1882,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -2051,10 +2054,6 @@
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
-				"_i18n": {
-					"$ref": "#/$defs/I18nHints",
-					"macro": true
-				},
 				"recommended_rolls": {
 					"type": "object",
 					"default": {
@@ -2089,7 +2088,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -2478,7 +2478,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -2589,7 +2590,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -2734,7 +2736,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -2873,7 +2876,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"tracks": {
 					"$ref": "#/$defs/ProgressTrackTypeInfo",
@@ -2991,7 +2995,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -3564,7 +3569,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -4732,7 +4738,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -5132,7 +5139,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"your_character": {
 					"$ref": "#/$defs/MarkdownString"
@@ -5325,7 +5333,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"releaseStage": "experimental"
@@ -5385,7 +5394,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -5448,7 +5458,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"xp_cost": {
 					"type": "integer",
@@ -5778,7 +5789,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				},
 				"theme": {
 					"$ref": "#/$defs/DelveSiteThemeId"
@@ -6157,7 +6169,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -6608,7 +6621,8 @@
 								}
 							}
 						}
-					}
+					},
+					"releaseStage": "experimental"
 				}
 			}
 		},
