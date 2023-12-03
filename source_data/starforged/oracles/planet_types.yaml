@@ -1,0 +1,2736 @@
+id: starforged
+package_type: ruleset
+oracles:
+  planets:
+    name: Planets
+    source:
+      <<: &Source
+        title: 'Ironsworn: Starforged Rulebook'
+        license: https://creativecommons.org/licenses/by/4.0
+        url: https://ironswornrpg.com
+        date: 2022-05-06
+        authors:
+          - name: Shawn Tomkin
+    collections:
+      desert:
+        name: Desert World
+        images:
+          - images/planets/desert-01.webp
+          - images/planets/desert-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 308
+        summary: A pitiless planet of searing heat, blowing sand, and sunbaked rock.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 50
+                    <<: &Settlements.0
+                      result: None
+                  - min: 51
+                    max: 60
+                    <<: &Settlements.1
+                      result: Orbital settlement
+                  - min: 61
+                    max: 80
+                    <<: &Settlements.2
+                      result: Planetside settlement
+                  - min: 81
+                    max: 92
+                    <<: &Settlements.3
+                      result: Multiple settlements
+                  - min: 93
+                    max: 100
+                    <<: &Settlements.4
+                      result: Settlements in conflict
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 75
+                    <<: *Settlements.0
+                  - min: 76
+                    max: 83
+                    <<: *Settlements.1
+                  - min: 84
+                    max: 95
+                    <<: *Settlements.2
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 90
+                    <<: *Settlements.0
+                  - min: 91
+                    max: 96
+                    <<: *Settlements.1
+                  - min: 97
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Abalos
+              - min: 2
+                max: 2
+                result: Audun
+              - min: 3
+                max: 3
+                result: Bishop
+              - min: 4
+                max: 4
+                result: Desolation
+              - min: 5
+                max: 5
+                result: Dykuma
+              - min: 6
+                max: 6
+                result: Fallow
+              - min: 7
+                max: 7
+                result: Helios
+              - min: 8
+                max: 8
+                result: Mirage
+              - min: 9
+                max: 9
+                result: Morricone
+              - min: 10
+                max: 10
+                result: Nux
+              - min: 11
+                max: 11
+                result: Ordos
+              - min: 12
+                max: 12
+                result: Petra
+              - min: 13
+                max: 13
+                result: Pyla
+              - min: 14
+                max: 14
+                result: Sabulo
+              - min: 15
+                max: 15
+                result: Saffron
+              - min: 16
+                max: 16
+                result: Sirocco
+              - min: 17
+                max: 17
+                result: Sulis
+              - min: 18
+                max: 18
+                result: Torrid
+              - min: 19
+                max: 19
+                result: Umber
+              - min: 20
+                max: 20
+                result: Vermillion
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 10
+                <<: &Atmosphere.NoneThin
+                  result: None / thin
+              - min: 11
+                max: 25
+                <<: &Atmosphere.Toxic
+                  result: Toxic
+              - min: 26
+                max: 40
+                <<: &Atmosphere.Corrosive
+                  result: Corrosive
+              - min: 41
+                max: 70
+                <<: &Atmosphere.Marginal
+                  result: Marginal
+              - min: 71
+                max: 95
+                <<: &Atmosphere.Breathable
+                  result: Breathable
+              - min: 96
+                max: 100
+                <<: &Atmosphere.Ideal
+                  result: Ideal
+          observed_from_space:
+            source: *CollectionSource
+            name: Observed From Space
+            table:
+              - <<: &ObservedFromSpace.0
+                  min: 1
+                  max: 11
+                result: Dry seabeds
+              - <<: &ObservedFromSpace.1
+                  min: 12
+                  max: 22
+                result: Expansive dune seas
+              - <<: &ObservedFromSpace.2
+                  min: 23
+                  max: 33
+                result: Massive canyons
+              - <<: &ObservedFromSpace.3
+                  min: 34
+                  max: 44
+                result: Perpetual daylight
+              - <<: &ObservedFromSpace.4
+                  min: 45
+                  max: 55
+                result: Rugged mountains
+              - <<: &ObservedFromSpace.5
+                  min: 56
+                  max: 66
+                result: Sprawling salt flats
+              - <<: &ObservedFromSpace.6
+                  min: 67
+                  max: 77
+                result: Vast plateaus
+              - <<: &ObservedFromSpace.7
+                  min: 78
+                  max: 88
+                result: Vibrant terrain colors
+              - &ObservedFromSpace.8
+                min: 89
+                max: 98
+                <<: &DescriptorFocus
+                  result: &DF.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  oracle_rolls: &DF.rolls
+                    - oracle: starforged/oracles/core/descriptor
+                      auto: true
+                    - oracle: starforged/oracles/core/focus
+                      auto: true
+              - &ObservedFromSpace.9
+                min: 99
+                max: 100
+                result: '[Precursor Vault](id:starforged/collections/oracles/vaults) (orbital)'
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: &Feature.0
+                  min: 1
+                  max: 7
+                result: Cavernous sinkholes
+              - <<: &Feature.1
+                  min: 8
+                  max: 14
+                result: Engulfing sandstorms
+              - <<: &Feature.2
+                  min: 15
+                  max: 21
+                result: Fleeting rainstorms and flash floods
+              - <<: &Feature.3
+                  min: 22
+                  max: 28
+                result: Flooded grottos
+              - <<: &Feature.4
+                  min: 29
+                  max: 35
+                result: Petrified forest
+              - <<: &Feature.5
+                  min: 36
+                  max: 42
+                result: Rampaging whirlwinds
+              - <<: &Feature.6
+                  min: 43
+                  max: 49
+                result: Scorched glass plains
+              - <<: &Feature.7
+                  min: 50
+                  max: 56
+                result: Severe temperature fluctuations
+              - <<: &Feature.8
+                  min: 57
+                  max: 63
+                result: Sunbaked bones of titanic creatures
+              - <<: &Feature.9
+                  min: 64
+                  max: 70
+                result: Timeworn cliffside caves
+              - <<: &Feature.10
+                  min: 71
+                  max: 77
+                result: Towering rock formations
+              - <<: &Feature.11
+                  min: 78
+                  max: 84
+                result: Violent electrical storms
+              - <<: &Feature.12
+                  min: 85
+                  max: 91
+                result: Windborne metallic sand
+              - &Feature.13
+                min: 92
+                max: 98
+                <<: *DescriptorFocus
+              - &Feature.14
+                min: 99
+                max: 100
+                result: '[Precursor Vault](id:starforged/collections/oracles/vaults) (planetside)'
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 20
+                <<: &Life.None
+                  result: None
+              - min: 21
+                max: 40
+                <<: &Life.Extinct
+                  result: Extinct
+              - min: 41
+                max: 70
+                <<: &Life.Scarce
+                  result: Scarce
+              - min: 71
+                max: 90
+                <<: &Life.Diverse
+                  result: Diverse
+              - min: 91
+                max: 97
+                <<: &Life.Bountiful
+                  result: Bountiful
+              - min: 98
+                max: 100
+                <<: &Life.Overrun
+                  result: Overrun
+      furnace:
+        name: Furnace World
+        images:
+          - images/planets/furnace-01.webp
+          - images/planets/furnace-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 309
+        summary: A planet with relentless volcanic activity, wreathed in fire and ash.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 60
+                    <<: *Settlements.0
+                  - min: 61
+                    max: 75
+                    <<: *Settlements.1
+                  - min: 76
+                    max: 87
+                    <<: *Settlements.2
+                  - min: 88
+                    max: 96
+                    <<: *Settlements.3
+                  - min: 97
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 85
+                    <<: *Settlements.0
+                  - min: 86
+                    max: 92
+                    <<: *Settlements.1
+                  - min: 93
+                    max: 97
+                    <<: *Settlements.2
+                  - min: 98
+                    max: 99
+                    <<: *Settlements.3
+                  - min: 100
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 95
+                    <<: *Settlements.0
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.1
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Ash
+              - min: 2
+                max: 2
+                result: Azula
+              - min: 3
+                max: 3
+                result: Cinder
+              - min: 4
+                max: 4
+                result: Cyrus
+              - min: 5
+                max: 5
+                result: Draconus
+              - min: 6
+                max: 6
+                result: Effigy
+              - min: 7
+                max: 7
+                result: Ember
+              - min: 8
+                max: 8
+                result: Flint
+              - min: 9
+                max: 9
+                result: Hades
+              - min: 10
+                max: 10
+                result: Hera
+              - min: 11
+                max: 11
+                result: Ignis
+              - min: 12
+                max: 12
+                result: Inferno
+              - min: 13
+                max: 13
+                result: Ishum
+              - min: 14
+                max: 14
+                result: Kresnik
+              - min: 15
+                max: 15
+                result: Nemesis
+              - min: 16
+                max: 16
+                result: Obsidian
+              - min: 17
+                max: 17
+                result: Scorch
+              - min: 18
+                max: 18
+                result: Tana
+              - min: 19
+                max: 19
+                result: Vesta
+              - min: 20
+                max: 20
+                result: Vesuvius
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 10
+                <<: *Atmosphere.NoneThin
+              - min: 11
+                max: 50
+                <<: *Atmosphere.Toxic
+              - min: 51
+                max: 65
+                <<: *Atmosphere.Corrosive
+              - min: 66
+                max: 90
+                <<: *Atmosphere.Marginal
+              - min: 91
+                max: 100
+                <<: *Atmosphere.Breathable
+              - *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Fiery world-spanning chasms
+              - <<: *ObservedFromSpace.1
+                result: Glowing rivers of lava
+              - <<: *ObservedFromSpace.2
+                result: Lightning-wracked ash clouds
+              - <<: *ObservedFromSpace.3
+                result: Magma seas
+              - <<: *ObservedFromSpace.4
+                result: Massive supervolcano
+              - <<: *ObservedFromSpace.5
+                result: Once verdant terrain
+              - <<: *ObservedFromSpace.6
+                result: Towering mountain ranges
+              - <<: *ObservedFromSpace.7
+                result: World-spanning fissures
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Blinding ash storms
+              - <<: *Feature.1
+                result: Catastrophic earthquakes
+              - <<: *Feature.2
+                result: Colorful geothermal springs
+              - <<: *Feature.3
+                result: Intricate volcanic rock formations
+              - <<: *Feature.4
+                result: Lava tube tunnel networks
+              - <<: *Feature.5
+                result: Masses of scorched bones
+              - <<: *Feature.6
+                result: Plains of volcanic glass
+              - <<: *Feature.7
+                result: Pools of liquid metal
+              - <<: *Feature.8
+                result: Rocky islands adrift on magma
+              - <<: *Feature.9
+                result: Roiling clouds of superheated gas
+              - <<: *Feature.10
+                result: Scalding geysers
+              - <<: *Feature.11
+                result: Silica or metal storms
+              - <<: *Feature.12
+                result: Steaming mudflats
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 35
+                <<: *Life.None
+              - min: 36
+                max: 60
+                <<: *Life.Extinct
+              - min: 61
+                max: 85
+                <<: *Life.Scarce
+              - min: 86
+                max: 95
+                <<: *Life.Diverse
+              - min: 96
+                max: 98
+                <<: *Life.Bountiful
+              - min: 99
+                max: 100
+                <<: *Life.Overrun
+      grave:
+        name: Grave World
+        images:
+          - images/planets/grave-01.webp
+          - images/planets/grave-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 310
+        summary: A once-thriving world—now a grim monument to a fallen civilization.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 80
+                    <<: *Settlements.0
+                  - min: 81
+                    max: 90
+                    <<: *Settlements.1
+                  - min: 91
+                    max: 95
+                    <<: *Settlements.2
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 90
+                    <<: *Settlements.0
+                  - min: 91
+                    max: 97
+                    <<: *Settlements.1
+                  - min: 98
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 95
+                    <<: *Settlements.0
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.1
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Anubis
+              - min: 2
+                max: 2
+                result: Banshee
+              - min: 3
+                max: 3
+                result: Barrow
+              - min: 4
+                max: 4
+                result: Cairn
+              - min: 5
+                max: 5
+                result: Cerberus
+              - min: 6
+                max: 6
+                result: Charon
+              - min: 7
+                max: 7
+                result: Elysia
+              - min: 8
+                max: 8
+                result: Keen
+              - min: 9
+                max: 9
+                result: Kur
+              - min: 10
+                max: 10
+                result: Lament
+              - min: 11
+                max: 11
+                result: Mantus
+              - min: 12
+                max: 12
+                result: Morrigan
+              - min: 13
+                max: 13
+                result: Mourn
+              - min: 14
+                max: 14
+                result: Necropolis
+              - min: 15
+                max: 15
+                result: Orcus
+              - min: 16
+                max: 16
+                result: Osiris
+              - min: 17
+                max: 17
+                result: Requiem
+              - min: 18
+                max: 18
+                result: Stygia
+              - min: 19
+                max: 19
+                result: Tartarus
+              - min: 20
+                max: 20
+                result: Thrace
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 10
+                <<: *Atmosphere.NoneThin
+              - min: 11
+                max: 45
+                <<: *Atmosphere.Toxic
+              - min: 46
+                max: 70
+                <<: *Atmosphere.Corrosive
+              - min: 71
+                max: 90
+                <<: *Atmosphere.Marginal
+              - min: 91
+                max: 100
+                <<: *Atmosphere.Breathable
+              - *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Broken moon
+              - <<: *ObservedFromSpace.1
+                result: Perpetual overcast
+              - <<: *ObservedFromSpace.2
+                result: Cratered surface
+              - <<: *ObservedFromSpace.3
+                result: Sky-breaching ruins
+              - <<: *ObservedFromSpace.4
+                result: Dry seabeds
+              - <<: *ObservedFromSpace.5
+                result: Vast wastelands
+              - <<: *ObservedFromSpace.6
+                result: Irradiated atmosphere
+              - <<: *ObservedFromSpace.7
+                result: Orbiting ship graveyard
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Acid pools
+              - <<: *Feature.1
+                result: Ash dunes
+              - <<: *Feature.2
+                result: Corrosive rains
+              - <<: *Feature.3
+                result: Dead forests
+              - <<: *Feature.4
+                result: Fetid mudflats
+              - <<: *Feature.5
+                result: Mass graves
+              - <<: *Feature.6
+                result: Moldering bones
+              - <<: *Feature.7
+                result: Noxious fog
+              - <<: *Feature.8
+                result: Radioactive hotspots
+              - <<: *Feature.9
+                result: Ravaged cities
+              - <<: *Feature.10
+                result: Scarred battlefields
+              - <<: *Feature.11
+                result: Ship graveyards
+              - <<: *Feature.12
+                result: Whispers of the dead
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 25
+                <<: *Life.None
+              - min: 26
+                max: 75
+                <<: *Life.Extinct
+              - min: 76
+                max: 95
+                <<: *Life.Scarce
+              - min: 96
+                max: 100
+                <<: *Life.Diverse
+              - *Life.Bountiful
+              - *Life.Overrun
+      ice:
+        name: Ice World
+        images:
+          - images/planets/ice-01.webp
+          - images/planets/ice-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 311
+        summary: A rugged, frozen world—locked in an unending winter.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 50
+                    <<: *Settlements.0
+                  - min: 51
+                    max: 60
+                    <<: *Settlements.1
+                  - min: 61
+                    max: 80
+                    <<: *Settlements.2
+                  - min: 81
+                    max: 92
+                    <<: *Settlements.3
+                  - min: 93
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 75
+                    <<: *Settlements.0
+                  - min: 76
+                    max: 83
+                    <<: *Settlements.1
+                  - min: 84
+                    max: 95
+                    <<: *Settlements.2
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 90
+                    <<: *Settlements.0
+                  - min: 91
+                    max: 96
+                    <<: *Settlements.1
+                  - min: 97
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Beira
+              - min: 2
+                max: 2
+                result: Boreas
+              - min: 3
+                max: 3
+                result: Caradhras
+              - min: 4
+                max: 4
+                result: Cicero
+              - min: 5
+                max: 5
+                result: Demetria
+              - min: 6
+                max: 6
+                result: Enten
+              - min: 7
+                max: 7
+                result: Fissure
+              - min: 8
+                max: 8
+                result: Frost
+              - min: 9
+                max: 9
+                result: Gelida
+              - min: 10
+                max: 10
+                result: Jotunn
+              - min: 11
+                max: 11
+                result: Kanna
+              - min: 12
+                max: 12
+                result: Karn
+              - min: 13
+                max: 13
+                result: Kheimon
+              - min: 14
+                max: 14
+                result: Moroz
+              - min: 15
+                max: 15
+                result: Nix
+              - min: 16
+                max: 16
+                result: Olwen
+              - min: 17
+                max: 17
+                result: Osolok
+              - min: 18
+                max: 18
+                result: Taiga
+              - min: 19
+                max: 19
+                result: Thule
+              - min: 20
+                max: 20
+                result: Varnholme
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 15
+                <<: *Atmosphere.NoneThin
+              - min: 16
+                max: 35
+                <<: *Atmosphere.Toxic
+              - min: 36
+                max: 40
+                <<: *Atmosphere.Corrosive
+              - min: 41
+                max: 70
+                <<: *Atmosphere.Marginal
+              - min: 71
+                max: 95
+                <<: *Atmosphere.Breathable
+              - min: 96
+                max: 100
+                <<: *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Feeble sunlight
+              - <<: *ObservedFromSpace.1
+                result: Supersized ice volcano
+              - <<: *ObservedFromSpace.2
+                result: Frozen oceans
+              - <<: *ObservedFromSpace.3
+                result: Vibrantly colored ice
+              - <<: *ObservedFromSpace.4
+                result: Rocky glacial islands
+              - <<: *ObservedFromSpace.5
+                result: World-spanning ice canyon
+              - <<: *ObservedFromSpace.6
+                result: Snowbound mountains
+              - <<: *ObservedFromSpace.7
+                result: Sky-breaching geysers
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Abyssal ice fissures
+              - <<: *Feature.1
+                result: Blinding snow storms
+              - <<: *Feature.2
+                result: Clusters of ice spikes
+              - <<: *Feature.3
+                result: Colossal ice caves
+              - <<: *Feature.4
+                result: Glistening ice spires
+              - <<: *Feature.5
+                result: Massive snow drifts
+              - <<: *Feature.6
+                result: Preserved carcasses
+              - <<: *Feature.7
+                result: Rocky islands amid icy wastes
+              - <<: *Feature.8
+                result: Shattered plains of pack ice
+              - <<: *Feature.9
+                result: Steaming hot springs
+              - <<: *Feature.10
+                result: Subsurface liquid oceans
+              - <<: *Feature.11
+                result: Vibrant auroras
+              - <<: *Feature.12
+                result: Wind-carved ice formations
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 20
+                <<: *Life.None
+              - min: 21
+                max: 40
+                <<: *Life.Extinct
+              - min: 41
+                max: 70
+                <<: *Life.Scarce
+              - min: 71
+                max: 90
+                <<: *Life.Diverse
+              - min: 91
+                max: 97
+                <<: *Life.Bountiful
+              - min: 98
+                max: 100
+                <<: *Life.Overrun
+      jovian:
+        name: Jovian World
+        images:
+          - images/planets/jovian-01.webp
+          - images/planets/jovian-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 312
+        summary: A massive planet with vast layers of dense gases surrounding a rocky core.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 50
+                    <<: *Settlements.0
+                  - min: 51
+                    max: 70
+                    <<: *Settlements.1
+                  - min: 71
+                    max: 85
+                    <<: *Settlements.2
+                  - min: 86
+                    max: 95
+                    <<: *Settlements.3
+                  - min: 96
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 75
+                    <<: *Settlements.0
+                  - min: 76
+                    max: 87
+                    <<: *Settlements.1
+                  - min: 88
+                    max: 95
+                    <<: *Settlements.2
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 90
+                    <<: *Settlements.0
+                  - min: 91
+                    max: 96
+                    <<: *Settlements.1
+                  - min: 97
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Aether
+              - min: 2
+                max: 2
+                result: Arrokoth
+              - min: 3
+                max: 3
+                result: Esen
+              - min: 4
+                max: 4
+                result: Hanish
+              - min: 5
+                max: 5
+                result: Magnus
+              - min: 6
+                max: 6
+                result: Magonia
+              - min: 7
+                max: 7
+                result: Mistral
+              - min: 8
+                max: 8
+                result: Nephele
+              - min: 9
+                max: 9
+                result: Nimbus
+              - min: 10
+                max: 10
+                result: Nuada
+              - min: 11
+                max: 11
+                result: Nubium
+              - min: 12
+                max: 12
+                result: Serein
+              - min: 13
+                max: 13
+                result: Stratus
+              - min: 14
+                max: 14
+                result: Taranis
+              - min: 15
+                max: 15
+                result: Tempest
+              - min: 16
+                max: 16
+                result: Tenzin
+              - min: 17
+                max: 17
+                result: Tyr
+              - min: 18
+                max: 18
+                result: Veil
+              - min: 19
+                max: 19
+                result: Velum
+              - min: 20
+                max: 20
+                result: Zephyr
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - *Atmosphere.NoneThin
+              - min: 1
+                max: 50
+                <<: *Atmosphere.Toxic
+              - min: 51
+                max: 65
+                <<: *Atmosphere.Corrosive
+              - min: 66
+                max: 85
+                <<: *Atmosphere.Marginal
+              - min: 86
+                max: 100
+                <<: *Atmosphere.Breathable
+              - *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Complex ring system
+              - <<: *ObservedFromSpace.1
+                result: Intense gravity well
+              - <<: *ObservedFromSpace.2
+                result: Numerous moons
+              - <<: *ObservedFromSpace.3
+                result: Perpetual superstorm
+              - <<: *ObservedFromSpace.4
+                result: Powerful magnetic field
+              - <<: *ObservedFromSpace.5
+                result: Severe electrical storms
+              - <<: *ObservedFromSpace.6
+                result: Superheated atmosphere
+              - <<: *ObservedFromSpace.7
+                result: Unusual atmospheric colors
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Clouds of metal particles
+              - <<: *Feature.1
+                result: Crystalline rains
+              - <<: *Feature.2
+                result: Floating glaciers
+              - <<: *Feature.3
+                result: Floating islands
+              - <<: *Feature.4
+                result: Layer of suspended liquid
+              - <<: *Feature.5
+                result: Pockets of explosive gases
+              - <<: *Feature.6
+                result: Powerful vortexes
+              - <<: *Feature.7
+                result: Radiation fields
+              - <<: *Feature.8
+                result: Storm-swept rocky debris
+              - <<: *Feature.9
+                result: Torrential rain
+              - <<: *Feature.10
+                result: Towering thunderheads
+              - <<: *Feature.11
+                result: Violent turbulence
+              - <<: *Feature.12
+                result: Zones of localized atmosphere
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 35
+                <<: *Life.None
+              - min: 36
+                max: 60
+                <<: *Life.Extinct
+              - min: 61
+                max: 85
+                <<: *Life.Scarce
+              - min: 86
+                max: 95
+                <<: *Life.Diverse
+              - min: 96
+                max: 98
+                <<: *Life.Bountiful
+              - min: 99
+                max: 100
+                <<: *Life.Overrun
+      jungle:
+        name: Jungle World
+        images:
+          - images/planets/jungle-01.webp
+          - images/planets/jungle-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 313
+        summary: A humid, rain-soaked planet that keeps its secrets under a thick canopy of vegetation.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 40
+                    <<: *Settlements.0
+                  - min: 41
+                    max: 55
+                    <<: *Settlements.1
+                  - min: 56
+                    max: 80
+                    <<: *Settlements.2
+                  - min: 81
+                    max: 92
+                    <<: *Settlements.3
+                  - min: 93
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 65
+                    <<: *Settlements.0
+                  - min: 66
+                    max: 75
+                    <<: *Settlements.1
+                  - min: 76
+                    max: 92
+                    <<: *Settlements.2
+                  - min: 93
+                    max: 97
+                    <<: *Settlements.3
+                  - min: 98
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 85
+                    <<: *Settlements.0
+                  - min: 86
+                    max: 90
+                    <<: *Settlements.1
+                  - min: 91
+                    max: 97
+                    <<: *Settlements.2
+                  - min: 98
+                    max: 99
+                    <<: *Settlements.3
+                  - min: 100
+                    max: 100
+                    <<: *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Acacia
+              - min: 2
+                max: 2
+                result: Aster
+              - min: 3
+                max: 3
+                result: Beryl
+              - min: 4
+                max: 4
+                result: Celadon
+              - min: 5
+                max: 5
+                result: Ceres
+              - min: 6
+                max: 6
+                result: Damu
+              - min: 7
+                max: 7
+                result: Dryad
+              - min: 8
+                max: 8
+                result: Flora
+              - min: 9
+                max: 9
+                result: Iridum
+              - min: 10
+                max: 10
+                result: Iris
+              - min: 11
+                max: 11
+                result: Kishar
+              - min: 12
+                max: 12
+                result: Penumbra
+              - min: 13
+                max: 13
+                result: Roris
+              - min: 14
+                max: 14
+                result: Sylva
+              - min: 15
+                max: 15
+                result: Tangle
+              - min: 16
+                max: 16
+                result: Thorn
+              - min: 17
+                max: 17
+                result: Venom
+              - min: 18
+                max: 18
+                result: Verdure
+              - min: 19
+                max: 19
+                result: Veris
+              - min: 20
+                max: 20
+                result: Viridian
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - *Atmosphere.NoneThin
+              - min: 1
+                max: 25
+                <<: *Atmosphere.Toxic
+              - min: 26
+                max: 30
+                <<: *Atmosphere.Corrosive
+              - min: 31
+                max: 60
+                <<: *Atmosphere.Marginal
+              - min: 61
+                max: 90
+                <<: *Atmosphere.Breathable
+              - min: 91
+                max: 100
+                <<: *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Cloud-breaching trees
+              - <<: *ObservedFromSpace.1
+                result: Towering mountains
+              - <<: *ObservedFromSpace.2
+                result: Expansive rivers or wetlands
+              - <<: *ObservedFromSpace.3
+                result: Unbroken canopy
+              - <<: *ObservedFromSpace.4
+                result: Inland seas
+              - <<: *ObservedFromSpace.5
+                result: Unusual vegetation color
+              - <<: *ObservedFromSpace.6
+                result: Massive canyons
+              - <<: *ObservedFromSpace.7
+                result: Persistent cloud cover
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Bioluminescent flora
+              - <<: *Feature.1
+                result: Deep river gorges
+              - <<: *Feature.2
+                result: Extensive exposed root systems
+              - <<: *Feature.3
+                result: Immense tiered waterfalls
+              - <<: *Feature.4
+                result: Languid rivers
+              - <<: *Feature.5
+                result: Low-lying fog
+              - <<: *Feature.6
+                result: Plunging sinkholes
+              - <<: *Feature.7
+                result: Scarred clearings
+              - <<: *Feature.8
+                result: Sinking quagmires
+              - <<: *Feature.9
+                result: Surging rivers
+              - <<: *Feature.10
+                result: Torrential rainstorms
+              - <<: *Feature.11
+                result: Violent electrical storms
+              - <<: *Feature.12
+                result: Waterlogged caves
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - *Life.None
+              - *Life.Extinct
+              - min: 1
+                max: 5
+                <<: *Life.Scarce
+              - min: 6
+                max: 35
+                <<: *Life.Diverse
+              - min: 36
+                max: 75
+                <<: *Life.Bountiful
+              - min: 76
+                max: 100
+                <<: *Life.Overrun
+      ocean:
+        name: Ocean World
+        images:
+          - images/planets/ocean-01.webp
+          - images/planets/ocean-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 314
+        summary: A planet completely or almost entirely covered by a boundless ocean.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 40
+                    <<: *Settlements.0
+                  - min: 41
+                    max: 55
+                    <<: *Settlements.1
+                  - min: 56
+                    max: 80
+                    <<: *Settlements.2
+                  - min: 81
+                    max: 92
+                    <<: *Settlements.3
+                  - min: 93
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 65
+                    <<: *Settlements.0
+                  - min: 66
+                    max: 75
+                    <<: *Settlements.1
+                  - min: 76
+                    max: 92
+                    <<: *Settlements.2
+                  - min: 93
+                    max: 97
+                    <<: *Settlements.3
+                  - min: 98
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 85
+                    <<: *Settlements.0
+                  - min: 86
+                    max: 90
+                    <<: *Settlements.1
+                  - min: 91
+                    max: 97
+                    <<: *Settlements.2
+                  - min: 98
+                    max: 99
+                    <<: *Settlements.3
+                  - min: 100
+                    max: 100
+                    <<: *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Aegir
+              - min: 2
+                max: 2
+                result: Alon
+              - min: 3
+                max: 3
+                result: Clarion
+              - min: 4
+                max: 4
+                result: Darya
+              - min: 5
+                max: 5
+                result: Eldoris
+              - min: 6
+                max: 6
+                result: Horizon
+              - min: 7
+                max: 7
+                result: Hydra
+              - min: 8
+                max: 8
+                result: Kai
+              - min: 9
+                max: 9
+                result: Larimar
+              - min: 10
+                max: 10
+                result: Lotan
+              - min: 11
+                max: 11
+                result: Mira
+              - min: 12
+                max: 12
+                result: Navini
+              - min: 13
+                max: 13
+                result: Nerida
+              - min: 14
+                max: 14
+                result: Oceanus
+              - min: 15
+                max: 15
+                result: Pelagic
+              - min: 16
+                max: 16
+                result: Proteus
+              - min: 17
+                max: 17
+                result: Russalka
+              - min: 18
+                max: 18
+                result: Siren
+              - min: 19
+                max: 19
+                result: Thalassa
+              - min: 20
+                max: 20
+                result: Triton
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 5
+                <<: *Atmosphere.NoneThin
+              - min: 6
+                max: 20
+                <<: *Atmosphere.Toxic
+              - min: 21
+                max: 25
+                <<: *Atmosphere.Corrosive
+              - min: 26
+                max: 60
+                <<: *Atmosphere.Marginal
+              - min: 61
+                max: 90
+                <<: *Atmosphere.Breathable
+              - min: 91
+                max: 100
+                <<: *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Complex reef systems
+              - <<: *ObservedFromSpace.1
+                result: Emerging volcanoes
+              - <<: *ObservedFromSpace.2
+                result: Floating forests
+              - <<: *ObservedFromSpace.3
+                result: Global hurricanes
+              - <<: *ObservedFromSpace.4
+                result: Large moon and strong tides
+              - <<: *ObservedFromSpace.5
+                result: Scattered islands
+              - <<: *ObservedFromSpace.6
+                result: Semi-frozen oceans
+              - <<: *ObservedFromSpace.7
+                result: Unusual water color
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Abyssal trenches
+              - <<: *Feature.1
+                result: Living islands
+              - <<: *Feature.2
+                result: Luminescent seas
+              - <<: *Feature.3
+                result: Roaming icebergs
+              - <<: *Feature.4
+                result: Shallow-water plains
+              - <<: *Feature.5
+                result: Subsurface volcanoes
+              - <<: *Feature.6
+                result: Titanic waves
+              - <<: *Feature.7
+                result: Undersea air pockets
+              - <<: *Feature.8
+                result: Undersea caves
+              - <<: *Feature.9
+                result: Undersea forests
+              - <<: *Feature.10
+                result: Unrelenting rainfall
+              - <<: *Feature.11
+                result: Violent currents
+              - <<: *Feature.12
+                result: Windborne waterspouts
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 5
+                <<: *Life.None
+              - min: 6
+                max: 15
+                <<: *Life.Extinct
+              - min: 16
+                max: 30
+                <<: *Life.Scarce
+              - min: 31
+                max: 60
+                <<: *Life.Diverse
+              - min: 61
+                max: 90
+                <<: *Life.Bountiful
+              - min: 91
+                max: 100
+                <<: *Life.Overrun
+      rocky:
+        name: Rocky World
+        images:
+          - images/planets/rocky-01.webp
+          - images/planets/rocky-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 315
+        summary: A rugged planet scarred by eons of destructive asteroid impacts.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 50
+                    <<: *Settlements.0
+                  - min: 51
+                    max: 70
+                    <<: *Settlements.1
+                  - min: 71
+                    max: 85
+                    <<: *Settlements.2
+                  - min: 86
+                    max: 95
+                    <<: *Settlements.3
+                  - min: 96
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 75
+                    <<: *Settlements.0
+                  - min: 76
+                    max: 87
+                    <<: *Settlements.1
+                  - min: 88
+                    max: 95
+                    <<: *Settlements.2
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 90
+                    <<: *Settlements.0
+                  - min: 91
+                    max: 96
+                    <<: *Settlements.1
+                  - min: 97
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Aphelion
+              - min: 2
+                max: 2
+                result: Artemis
+              - min: 3
+                max: 3
+                result: Capella
+              - min: 4
+                max: 4
+                result: Cobalt
+              - min: 5
+                max: 5
+                result: Crag
+              - min: 6
+                max: 6
+                result: Dusk
+              - min: 7
+                max: 7
+                result: Eos
+              - min: 8
+                max: 8
+                result: Hecate
+              - min: 9
+                max: 9
+                result: Imbrium
+              - min: 10
+                max: 10
+                result: Latona
+              - min: 11
+                max: 11
+                result: Losna
+              - min: 12
+                max: 12
+                result: Orpheus
+              - min: 13
+                max: 13
+                result: Ory
+              - min: 14
+                max: 14
+                result: Quietus
+              - min: 15
+                max: 15
+                result: Selene
+              - min: 16
+                max: 16
+                result: Silas
+              - min: 17
+                max: 17
+                result: Silex
+              - min: 18
+                max: 18
+                result: Slate
+              - min: 19
+                max: 19
+                result: Themis
+              - min: 20
+                max: 20
+                result: Umbra
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 65
+                <<: *Atmosphere.NoneThin
+              - min: 66
+                max: 85
+                <<: *Atmosphere.Toxic
+              - min: 86
+                max: 90
+                <<: *Atmosphere.Corrosive
+              - min: 91
+                max: 100
+                <<: *Atmosphere.Marginal
+              - *Atmosphere.Breathable
+              - *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Barren plains
+              - <<: *ObservedFromSpace.1
+                result: Constant asteroid strikes
+              - <<: *ObservedFromSpace.2
+                result: Dense ring system
+              - <<: *ObservedFromSpace.3
+                result: Jagged mountains
+              - <<: *ObservedFromSpace.4
+                result: Massive impact crater
+              - <<: *ObservedFromSpace.5
+                result: Misshapen form (low gravity)
+              - <<: *ObservedFromSpace.6
+                result: Perpetual night
+              - <<: *ObservedFromSpace.7
+                result: Towering plateaus
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Crystalline formations
+              - <<: *Feature.1
+                result: Crystalline caves
+              - <<: *Feature.2
+                result: Exposed mineral deposits
+              - <<: *Feature.3
+                result: Geometric terrain features
+              - <<: *Feature.4
+                result: Geothermal vents
+              - <<: *Feature.5
+                result: Glassy impact craters
+              - <<: *Feature.6
+                result: Massive dust dunes
+              - <<: *Feature.7
+                result: Powerful magnetic fields
+              - <<: *Feature.8
+                result: Rubble-strewn lava fields
+              - <<: *Feature.9
+                result: Steam-heated caves
+              - <<: *Feature.10
+                result: Subsurface magma flows
+              - <<: *Feature.11
+                result: Swirling low-lying gases
+              - <<: *Feature.12
+                result: Towering rocky spires
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 65
+                <<: *Life.None
+              - min: 66
+                max: 80
+                <<: *Life.Extinct
+              - min: 81
+                max: 90
+                <<: *Life.Scarce
+              - min: 91
+                max: 95
+                <<: *Life.Diverse
+              - min: 96
+                max: 98
+                <<: *Life.Bountiful
+              - min: 99
+                max: 100
+                <<: *Life.Overrun
+      shattered:
+        name: Shattered World
+        images:
+          - images/planets/shattered-01.webp
+          - images/planets/shattered-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 316
+        summary: A planet sundered by cataclysmic destruction.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 70
+                    <<: *Settlements.0
+                  - min: 71
+                    max: 90
+                    <<: *Settlements.1
+                  - min: 91
+                    max: 95
+                    <<: *Settlements.2
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 85
+                    <<: *Settlements.0
+                  - min: 86
+                    max: 96
+                    <<: *Settlements.1
+                  - min: 97
+                    max: 99
+                    <<: *Settlements.2
+                  - min: 100
+                    max: 100
+                    <<: *Settlements.3
+                  - *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 95
+                    <<: *Settlements.0
+                  - min: 96
+                    max: 99
+                    <<: *Settlements.1
+                  - min: 100
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Cavus
+              - min: 2
+                max: 2
+                result: Chrysalis
+              - min: 3
+                max: 3
+                result: Fragment
+              - min: 4
+                max: 4
+                result: Havoc
+              - min: 5
+                max: 5
+                result: Keres
+              - min: 6
+                max: 6
+                result: Lux
+              - min: 7
+                max: 7
+                result: Nemain
+              - min: 8
+                max: 8
+                result: Praxis
+              - min: 9
+                max: 9
+                result: Riven
+              - min: 10
+                max: 10
+                result: Schism
+              - min: 11
+                max: 11
+                result: Shell
+              - min: 12
+                max: 12
+                result: Slag
+              - min: 13
+                max: 13
+                result: Sliver
+              - min: 14
+                max: 14
+                result: Sunder
+              - min: 15
+                max: 15
+                result: Torment
+              - min: 16
+                max: 16
+                result: Vestige
+              - min: 17
+                max: 17
+                result: Vigrid
+              - min: 18
+                max: 18
+                result: Vortex
+              - min: 19
+                max: 19
+                result: Wrath
+              - min: 20
+                max: 20
+                result: Zix
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 93
+                <<: *Atmosphere.NoneThin
+              - min: 94
+                max: 95
+                <<: *Atmosphere.Toxic
+              - min: 96
+                max: 97
+                <<: *Atmosphere.Corrosive
+              - min: 98
+                max: 99
+                <<: *Atmosphere.Marginal
+              - min: 100
+                max: 100
+                <<: *Atmosphere.Breathable
+              - *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Demolished space fleet
+              - <<: *ObservedFromSpace.1
+                result: Preserved planetary fragment
+              - <<: *ObservedFromSpace.2
+                result: Dense ring system
+              - <<: *ObservedFromSpace.3
+                result: Swirling debris field
+              - <<: *ObservedFromSpace.4
+                result: Fiery planetary core
+              - <<: *ObservedFromSpace.5
+                result: Unbroken moon
+              - <<: *ObservedFromSpace.6
+                result: Geomagnetic storms
+              - <<: *ObservedFromSpace.7
+                result: Intense solar radiation
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Broken cities
+              - <<: *Feature.1
+                result: Colliding fragments
+              - <<: *Feature.2
+                result: Energy storms
+              - <<: *Feature.3
+                result: Exposed caverns
+              - <<: *Feature.4
+                result: Fluctuating gravity
+              - <<: *Feature.5
+                result: Magnetic disturbances
+              - <<: *Feature.6
+                result: Molten fissures
+              - <<: *Feature.7
+                result: Phantom visions of the past
+              - <<: *Feature.8
+                result: Pocket atmosphere
+              - <<: *Feature.9
+                result: Residual energy storms
+              - <<: *Feature.10
+                result: Swirling corrosive gases
+              - <<: *Feature.11
+                result: Unstable and fracturing terrain
+              - <<: *Feature.12
+                result: Venting magma
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 30
+                <<: *Life.None
+              - min: 31
+                max: 85
+                <<: *Life.Extinct
+              - min: 86
+                max: 95
+                <<: *Life.Scarce
+              - min: 96
+                max: 100
+                <<: *Life.Diverse
+              - *Life.Bountiful
+              - *Life.Overrun
+      tainted:
+        name: Tainted World
+        images:
+          - images/planets/tainted-01.webp
+          - images/planets/tainted-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 317
+        summary: A foul planet wracked by a poisonous climate and virulent growths.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 80
+                    <<: *Settlements.0
+                  - min: 81
+                    max: 90
+                    <<: *Settlements.1
+                  - min: 91
+                    max: 95
+                    <<: *Settlements.2
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 90
+                    <<: *Settlements.0
+                  - min: 91
+                    max: 97
+                    <<: *Settlements.1
+                  - min: 98
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 95
+                    <<: *Settlements.0
+                  - min: 96
+                    max: 98
+                    <<: *Settlements.1
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.2
+                  - *Settlements.3
+                  - *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Achlys
+              - min: 2
+                max: 2
+                result: Animus
+              - min: 3
+                max: 3
+                result: Bane
+              - min: 4
+                max: 4
+                result: Blight
+              - min: 5
+                max: 5
+                result: Carrion
+              - min: 6
+                max: 6
+                result: Chitin
+              - min: 7
+                max: 7
+                result: Datura
+              - min: 8
+                max: 8
+                result: Dreck
+              - min: 9
+                max: 9
+                result: Erra
+              - min: 10
+                max: 10
+                result: Febris
+              - min: 11
+                max: 11
+                result: Malacia
+              - min: 12
+                max: 12
+                result: Miasma
+              - min: 13
+                max: 13
+                result: Morbus
+              - min: 14
+                max: 14
+                result: Pathosis
+              - min: 15
+                max: 15
+                result: Pestis
+              - min: 16
+                max: 16
+                result: Scourge
+              - min: 17
+                max: 17
+                result: Telium
+              - min: 18
+                max: 18
+                result: Timoris
+              - min: 19
+                max: 19
+                result: Verus
+              - min: 20
+                max: 20
+                result: Xanthous
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - *Atmosphere.NoneThin
+              - min: 1
+                max: 65
+                <<: *Atmosphere.Toxic
+              - min: 66
+                max: 85
+                <<: *Atmosphere.Corrosive
+              - min: 86
+                max: 95
+                <<: *Atmosphere.Marginal
+              - min: 96
+                max: 100
+                <<: *Atmosphere.Breathable
+              - *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Expansive fungal plains
+              - <<: *ObservedFromSpace.1
+                result: Stagnant cloud cover
+              - <<: *ObservedFromSpace.2
+                result: Fungal forests
+              - <<: *ObservedFromSpace.3
+                result: Thick, murky atmosphere
+              - <<: *ObservedFromSpace.4
+                result: Scabrous, infected terrain
+              - <<: *ObservedFromSpace.5
+                result: Toxic seas
+              - <<: *ObservedFromSpace.6
+                result: Sky-breaching fungus
+              - <<: *ObservedFromSpace.7
+                result: Sludge-filled river networks
+              - min: 89
+                max: 98
+                <<: &DescriptorFocus
+                  result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  oracle_rolls:
+                    - oracle: starforged/oracles/core/descriptor
+                      auto: true
+                    - oracle: starforged/oracles/core/focus
+                      auto: true
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Caustic gas storms
+              - <<: *Feature.1
+                result: Corrosive, low-lying fog
+              - <<: *Feature.2
+                result: Fungus-encrusted caves
+              - <<: *Feature.3
+                result: Gelatinous ponds
+              - <<: *Feature.4
+                result: Hallucinogenic toxins
+              - <<: *Feature.5
+                result: Layers of fast-growing lichen
+              - <<: *Feature.6
+                result: Moldering bones
+              - <<: *Feature.7
+                result: Mutated flora
+              - <<: *Feature.8
+                result: Poisonous gas vents
+              - <<: *Feature.9
+                result: Spore clouds
+              - <<: *Feature.10
+                result: Terrain marred by fleshy pustules
+              - <<: *Feature.11
+                result: Toxic rain
+              - <<: *Feature.12
+                result: Virulent fungal infestations
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - *Life.None
+              - *Life.Extinct
+              - min: 1
+                max: 10
+                <<: *Life.Scarce
+              - min: 11
+                max: 35
+                <<: *Life.Diverse
+              - min: 36
+                max: 65
+                <<: *Life.Bountiful
+              - min: 66
+                max: 100
+                <<: *Life.Overrun
+      vital:
+        name: Vital World
+        images:
+          - images/planets/vital-01.webp
+          - images/planets/vital-02.webp
+        source: &CollectionSource
+          <<: *Source
+          page: 318
+        summary: This diverse, life-bearing planet might provide some small measure of hope.
+        collections:
+          settlements:
+            name: Settlements
+            source: *CollectionSource
+            contents:
+              terminus:
+                name: Terminus
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 20
+                    <<: *Settlements.0
+                  - min: 21
+                    max: 30
+                    <<: *Settlements.1
+                  - min: 31
+                    max: 70
+                    <<: *Settlements.2
+                  - min: 71
+                    max: 90
+                    <<: *Settlements.3
+                  - min: 91
+                    max: 100
+                    <<: *Settlements.4
+              outlands:
+                name: Outlands
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 50
+                    <<: *Settlements.0
+                  - min: 51
+                    max: 55
+                    <<: *Settlements.1
+                  - min: 56
+                    max: 85
+                    <<: *Settlements.2
+                  - min: 86
+                    max: 95
+                    <<: *Settlements.3
+                  - min: 96
+                    max: 100
+                    <<: *Settlements.4
+              expanse:
+                name: Expanse
+                source: *CollectionSource
+                table:
+                  - min: 1
+                    max: 80
+                    <<: *Settlements.0
+                  - min: 81
+                    max: 83
+                    <<: *Settlements.1
+                  - min: 84
+                    max: 93
+                    <<: *Settlements.2
+                  - min: 94
+                    max: 98
+                    <<: *Settlements.3
+                  - min: 99
+                    max: 100
+                    <<: *Settlements.4
+        contents:
+          name:
+            # not rendered as a table in the text, but commonly requested
+            name: Sample Names
+            dice: 1d20
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 1
+                result: Chiron
+              - min: 2
+                max: 2
+                result: Demeter
+              - min: 3
+                max: 3
+                result: Erebos
+              - min: 4
+                max: 4
+                result: Erembour
+              - min: 5
+                max: 5
+                result: Feronia
+              - min: 6
+                max: 6
+                result: Fortuna
+              - min: 7
+                max: 7
+                result: Gaia
+              - min: 8
+                max: 8
+                result: Harbinger
+              - min: 9
+                max: 9
+                result: Haven
+              - min: 10
+                max: 10
+                result: Hope
+              - min: 11
+                max: 11
+                result: Morpheus
+              - min: 12
+                max: 12
+                result: Nemus
+              - min: 13
+                max: 13
+                result: Sapphire
+              - min: 14
+                max: 14
+                result: Serenity
+              - min: 15
+                max: 15
+                result: Sif
+              - min: 16
+                max: 16
+                result: Silva
+              - min: 17
+                max: 17
+                result: Sirona
+              - min: 18
+                max: 18
+                result: Solstice
+              - min: 19
+                max: 19
+                result: Vale
+              - min: 20
+                max: 20
+                result: Valinor
+          atmosphere:
+            name: Atmosphere
+            source: *CollectionSource
+            table:
+              - *Atmosphere.NoneThin
+              - *Atmosphere.Toxic
+              - *Atmosphere.Corrosive
+              - min: 1
+                max: 20
+                <<: *Atmosphere.Marginal
+              - min: 21
+                max: 50
+                <<: *Atmosphere.Breathable
+              - min: 51
+                max: 100
+                <<: *Atmosphere.Ideal
+          observed_from_space:
+            name: Observed From Space
+            source: *CollectionSource
+            table:
+              - <<: *ObservedFromSpace.0
+                result: Complex ring system
+              - <<: *ObservedFromSpace.1
+                result: Numerous small moons
+              - <<: *ObservedFromSpace.2
+                result: Dramatic seasonal variation
+              - <<: *ObservedFromSpace.3
+                result: Unusual day or night cycle
+              - <<: *ObservedFromSpace.4
+                result: High gravity
+              - <<: *ObservedFromSpace.5
+                result: Vibrantly colored landscapes
+              - <<: *ObservedFromSpace.6
+                result: Large moon
+              - <<: *ObservedFromSpace.7
+                result: Narrow livable band
+              - min: 89
+                max: 98
+                <<: &DescriptorFocus
+                  result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  oracle_rolls:
+                    - oracle: starforged/oracles/core/descriptor
+                      auto: true
+                    - oracle: starforged/oracles/core/focus
+                      auto: true
+              - *ObservedFromSpace.9
+          feature:
+            name: Planetside Feature
+            source: *CollectionSource
+            table:
+              - <<: *Feature.0
+                result: Background radiation
+              - <<: *Feature.1
+                result: Chaotically juxtaposed biomes
+              - <<: *Feature.2
+                result: Creature boneyards
+              - <<: *Feature.3
+                result: Creature lairs or watering holes
+              - <<: *Feature.4
+                result: Crystalline formations
+              - <<: *Feature.5
+                result: Fierce electrical storms
+              - <<: *Feature.6
+                result: Floating terrain
+              - <<: *Feature.7
+                result: Frequent seismic activity
+              - <<: *Feature.8
+                result: Magnetic disturbances
+              - <<: *Feature.9
+                result: Scarred or excavated terrain
+              - <<: *Feature.10
+                result: Signs of an engineered biosphere
+              - <<: *Feature.11
+                result: Sudden weather fluctuations
+              - <<: *Feature.12
+                result: Towering geological formations
+              - *Feature.13
+              - *Feature.14
+          life:
+            name: Life
+            source: *CollectionSource
+            table:
+              - *Life.None
+              - *Life.Extinct
+              - min: 1
+                max: 10
+                <<: *Life.Scarce
+              - min: 11
+                max: 45
+                <<: *Life.Diverse
+              - min: 46
+                max: 85
+                <<: *Life.Bountiful
+              - min: 86
+                max: 100
+                <<: *Life.Overrun
+          diversity:
+            name: Diversity
+            source: *CollectionSource
+            summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
+            table:
+              - min: 1
+                max: 20
+                result: Simple (two biomes)
+                i18n: &i18n.result.adjective
+                  result:
+                    part_of_speech: adjective
+                oracle_rolls:
+                  - number_of_rolls: 2
+                    oracle: &biome starforged/oracles/planets/vital/biomes
+              - min: 21
+                max: 70
+                result: Diverse (three biomes)
+                i18n: *i18n.result.adjective
+                oracle_rolls:
+                  - number_of_rolls: 3
+                    oracle: *biome
+              - min: 71
+                max: 90
+                result: Complex (four biomes)
+                i18n: *i18n.result.adjective
+                oracle_rolls:
+                  - number_of_rolls: 4
+                    oracle: *biome
+              - min: 91
+                max: 100
+                result: Garden world (five or more biomes)
+                i18n: *i18n.result.adjective
+                oracle_rolls:
+                  - number_of_rolls: 5
+                    oracle: *biome
+          biomes:
+            name: Biomes
+            source: *CollectionSource
+            table:
+              - min: 1
+                max: 5
+                result: Caves
+                i18n: &i18n.result.common_noun
+                  result:
+                    part_of_speech: common_noun
+              - min: 6
+                max: 10
+                result: Cold forest
+                i18n: *i18n.result.common_noun
+              - min: 11
+                max: 15
+                result: Fungal
+                i18n: *i18n.result.common_noun
+              - min: 16
+                max: 20
+                result: Glacial or snow
+                i18n: *i18n.result.common_noun
+              - min: 21
+                max: 25
+                result: Grassland
+                i18n: *i18n.result.common_noun
+              - min: 26
+                max: 30
+                result: Islands
+                i18n: *i18n.result.common_noun
+              - min: 31
+                max: 35
+                result: Jungle
+                i18n: *i18n.result.common_noun
+              - min: 36
+                max: 40
+                result: Mountainous
+                i18n: *i18n.result.common_noun
+              - min: 41
+                max: 45
+                result: Ocean
+                i18n: *i18n.result.common_noun
+              - min: 46
+                max: 50
+                result: Rocky desert
+                i18n: *i18n.result.common_noun
+              - min: 51
+                max: 55
+                result: Sandy desert
+                i18n: *i18n.result.common_noun
+              - min: 56
+                max: 60
+                result: Savanna
+                i18n: *i18n.result.common_noun
+              - min: 61
+                max: 65
+                result: Shallow seas
+                i18n: *i18n.result.common_noun
+              - min: 66
+                max: 70
+                result: Shrubland
+                i18n: *i18n.result.common_noun
+              - min: 71
+                max: 75
+                result: Temperate rainforest
+                i18n: *i18n.result.common_noun
+              - min: 76
+                max: 80
+                result: Temperate forest
+                i18n: *i18n.result.common_noun
+              - min: 81
+                max: 85
+                result: Tundra
+                i18n: *i18n.result.common_noun
+              - min: 86
+                max: 90
+                result: Volcanic
+                i18n: *i18n.result.common_noun
+              - min: 91
+                max: 95
+                result: Waterways
+                i18n: *i18n.result.common_noun
+              - min: 96
+                max: 100
+                result: Wetland
+                i18n: *i18n.result.common_noun
