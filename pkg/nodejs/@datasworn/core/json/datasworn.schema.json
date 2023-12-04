@@ -1987,14 +1987,7 @@
 			"title": "OracleTable",
 			"type": "object",
 			"description": "Represents a single oracle table, or a single table column of a table that has multiple \"Roll\" or \"Result\" columns.",
-			"required": [
-				"id",
-				"name",
-				"dice",
-				"table",
-				"source",
-				"recommended_rolls"
-			],
+			"required": ["id", "name", "dice", "table", "source"],
 			"properties": {
 				"id": {
 					"$ref": "#/$defs/OracleTableId",
@@ -2040,6 +2033,20 @@
 					"$ref": "#/$defs/OracleTableMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
 				"suggestions": {
 					"$ref": "#/$defs/Suggestions"
 				},
@@ -2053,24 +2060,6 @@
 				"source": {
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"recommended_rolls": {
-					"type": "object",
-					"default": {
-						"min": 1,
-						"max": 1
-					},
-					"required": ["min", "max"],
-					"properties": {
-						"min": {
-							"type": "integer",
-							"default": 1
-						},
-						"max": {
-							"type": "integer",
-							"default": 1
-						}
-					}
 				},
 				"replaces": {
 					"$ref": "#/$defs/OracleTableId",

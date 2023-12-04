@@ -1824,16 +1824,6 @@
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
 				},
-				"recommended_rolls": {
-					"properties": {
-						"min": {
-							"type": "int16"
-						},
-						"max": {
-							"type": "int16"
-						}
-					}
-				},
 				"dice": {
 					"ref": "DiceExpression",
 					"metadata": {
@@ -1870,6 +1860,16 @@
 					},
 					"metadata": {
 						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
 					}
 				},
 				"icon": {

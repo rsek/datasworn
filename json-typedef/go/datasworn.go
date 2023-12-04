@@ -2252,8 +2252,6 @@ type OracleTable struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
-	RecommendedRolls OracleTableRecommendedRolls `json:"recommended_rolls"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
 	Source Source `json:"source"`
@@ -2277,6 +2275,8 @@ type OracleTable struct {
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleTableMatchBehavior `json:"match,omitempty"`
+
+	RecommendedRolls *OracleTableRecommendedRolls `json:"recommended_rolls,omitempty"`
 
 	// Describes how how to render this table, when presenting it as a standalone
 	// table.

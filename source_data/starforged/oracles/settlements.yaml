@@ -152,7 +152,8 @@ oracles:
           <<: *Source
           page: 323
         # usage:
-        #   max_rolls: 2
+        recommended_rolls:
+          max:  2
         #   initial: true
         # content:
         #   part_of_speech: [fragment]
@@ -338,7 +339,8 @@ oracles:
         # content:
         #   tags: [abstract noun]
         # usage:
-        #   max_rolls: 2
+        recommended_rolls:
+          max:  2
         summary: |-
           Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.
         table:
@@ -488,7 +490,8 @@ oracles:
           <<: *Source
           page: 324
         # usage:
-        #   max_rolls: 2
+        recommended_rolls:
+          max:  2
         # content:
         #   part_of_speech: [fragment]
         #   tags: [peril, event, present]

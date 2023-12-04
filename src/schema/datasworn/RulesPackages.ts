@@ -2,7 +2,7 @@ import { Type, type Static, type TUnsafe } from '@sinclair/typebox'
 import { type Id, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 
-import { type TAssetType } from './Assets.js'
+import { type TAssetCollection } from './Assets.js'
 import { type TAtlas } from './Atlas.js'
 import {
 	type TDelveSiteDomain,
@@ -46,7 +46,7 @@ export const Ruleset = Type.Object(
 			})
 		),
 		assets: Utils.SourceOptional(
-			Generic.Dictionary(Type.Ref<TAssetType>('AssetType'), {
+			Generic.Dictionary(Type.Ref<TAssetCollection>('AssetType'), {
 				default: undefined,
 				description:
 					'A dictionary object containing asset types, which contain assets.'

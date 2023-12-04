@@ -313,6 +313,12 @@
 			"description": "A unique ID for an AssetAbilityOptionField.",
 			"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/options\\/([a-z][a-z_]*)$"
 		},
+		"AssetCollectionId": {
+			"title": "AssetCollectionId",
+			"type": "string",
+			"description": "A unique ID for an AssetCollection.",
+			"pattern": "^([a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
+		},
 		"AssetConditionMeterControlFieldId": {
 			"title": "AssetConditionMeterControlFieldId",
 			"type": "string",
@@ -354,12 +360,6 @@
 			"type": "string",
 			"description": "A wildcarded ID that can be used to match multiple AssetOptionFields.",
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/options\\/(\\*|([a-z][a-z_]*))$"
-		},
-		"AssetTypeId": {
-			"title": "AssetTypeId",
-			"type": "string",
-			"description": "A unique ID for an AssetType.",
-			"pattern": "^([a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
 		},
 		"AtlasEntryId": {
 			"title": "AtlasEntryId",
@@ -1202,16 +1202,6 @@
 			"description": "Describes the features of a type of progress track.",
 			"required": ["category"],
 			"properties": {
-				"controls": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"type": "object",
-							"properties": {}
-						}
-					}
-				},
 				"category": {
 					"$ref": "#/$defs/Label",
 					"description": "A category label for progress tracks of this type.",
@@ -1224,6 +1214,16 @@
 						"Connection",
 						"Delve"
 					]
+				},
+				"controls": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"type": "object",
+							"properties": {}
+						}
+					}
 				}
 			},
 			"additionalProperties": false
@@ -2076,6 +2076,20 @@
 					"$ref": "#/$defs/OracleTableMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
 				"suggestions": {
 					"$ref": "#/$defs/Suggestions"
 				},
@@ -2089,24 +2103,6 @@
 				"source": {
 					"$ref": "#/$defs/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"recommended_rolls": {
-					"type": "object",
-					"default": {
-						"min": 1,
-						"max": 1
-					},
-					"required": ["min", "max"],
-					"properties": {
-						"min": {
-							"type": "integer",
-							"default": 1
-						},
-						"max": {
-							"type": "integer",
-							"default": 1
-						}
-					}
 				},
 				"replaces": {
 					"$ref": "#/$defs/OracleTableId",
@@ -3517,7 +3513,7 @@
 		"Asset": {
 			"title": "Asset",
 			"type": "object",
-			"required": ["name", "asset_type", "abilities", "source"],
+			"required": ["name", "category", "abilities", "source"],
 			"properties": {
 				"id": {
 					"$ref": "#/$defs/AssetId",
@@ -3531,7 +3527,7 @@
 					"$ref": "#/$defs/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
-				"asset_type": {
+				"category": {
 					"$ref": "#/$defs/Label",
 					"description": "A localized category label for this asset. This is the surtitle above the asset's name on the card.",
 					"examples": [
@@ -3696,10 +3692,6 @@
 			"$comment": "Semantics are similar to the `<input type=\"checkbox\">` element.",
 			"required": ["label", "field_type"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetAbilityControlFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -3736,10 +3728,6 @@
 			"$comment": "Semantics are similar to `<input type=\"number\">`, but rendered as a clock (a circle with equally sized wedges).",
 			"required": ["label", "field_type", "max"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetAbilityControlFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -3832,10 +3820,6 @@
 			"$comment": "Semantics are similar to `<input type=\"number\" step=\"1\">`",
 			"required": ["label", "field_type"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetAbilityControlFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -3900,10 +3884,6 @@
 						"type": "object",
 						"additionalProperties": false,
 						"properties": {
-							"id": {
-								"$ref": "#/$defs/AssetAbilityOptionFieldId",
-								"description": "The unique Datasworn ID for this item."
-							},
 							"label": {
 								"$ref": "#/$defs/InputLabel"
 							},
@@ -3968,10 +3948,6 @@
 			"description": "When its value is set to `true` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).",
 			"required": ["label", "field_type"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetControlFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -4008,10 +3984,6 @@
 			"$comment": "Semantics are similar to the `<input type=\"checkbox\">` element.",
 			"required": ["label", "field_type"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetControlFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -4041,16 +4013,94 @@
 			},
 			"additionalProperties": false
 		},
+		"AssetType": {
+			"title": "AssetType",
+			"type": "object",
+			"required": ["name", "source"],
+			"properties": {
+				"id": {
+					"$ref": "#/$defs/AssetCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/$defs/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/$defs/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"enhances": {
+					"$ref": "#/$defs/AssetCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/$defs/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/Asset"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"source": {
+					"$ref": "#/$defs/Source",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"replaces": {
+					"$ref": "#/$defs/AssetCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
 		"AssetConditionMeter": {
 			"title": "AssetConditionMeter",
 			"type": "object",
 			"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\".",
 			"required": ["label", "field_type", "max", "value"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetControlFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -4150,10 +4200,6 @@
 						"type": "object",
 						"additionalProperties": false,
 						"properties": {
-							"id": {
-								"$ref": "#/$defs/AssetConditionMeterControlFieldId",
-								"description": "The unique Datasworn ID for this item."
-							},
 							"label": {
 								"$ref": "#/$defs/InputLabel"
 							},
@@ -4199,10 +4245,6 @@
 						"type": "object",
 						"additionalProperties": false,
 						"properties": {
-							"id": {
-								"$ref": "#/$defs/AssetConditionMeterControlFieldId",
-								"description": "The unique Datasworn ID for this item."
-							},
 							"label": {
 								"$ref": "#/$defs/InputLabel"
 							},
@@ -4443,10 +4485,6 @@
 			"$comment": "Semantics are similar to the HTML `<select>` element",
 			"required": ["label", "field_type", "choices"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetControlFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -4527,10 +4565,6 @@
 			"$comment": "Semantics are similar to the HTML `<select>` element",
 			"required": ["label", "field_type", "choices"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetOptionFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -4611,10 +4645,6 @@
 			"$comment": "Semantics are similar to the HTML `<select>` element",
 			"required": ["label", "field_type", "choices"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetOptionFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -4659,10 +4689,6 @@
 			"$comment": "Semantics are similar to the HTML `<input type=\"text\">` element.",
 			"required": ["label", "field_type"],
 			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetOptionFieldId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"label": {
 					"$ref": "#/$defs/InputLabel"
 				},
@@ -4685,88 +4711,6 @@
 							"type": "null"
 						}
 					]
-				}
-			},
-			"additionalProperties": false
-		},
-		"AssetType": {
-			"title": "AssetType",
-			"type": "object",
-			"required": ["name", "source"],
-			"properties": {
-				"id": {
-					"$ref": "#/$defs/AssetTypeId",
-					"description": "The unique Datasworn ID for this item."
-				},
-				"name": {
-					"$ref": "#/$defs/Label",
-					"description": "The primary name/label for this item."
-				},
-				"canonical_name": {
-					"$ref": "#/$defs/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
-				},
-				"enhances": {
-					"$ref": "#/$defs/AssetTypeId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
-				},
-				"color": {
-					"$ref": "#/$defs/CssColor",
-					"description": "A thematic color associated with this collection."
-				},
-				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An SVG icon associated with this collection."
-				},
-				"images": {
-					"type": "array",
-					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
-						"description": "Extra images associated with this collection."
-					}
-				},
-				"summary": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
-				},
-				"contents": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Asset"
-						}
-					}
-				},
-				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
-				},
-				"source": {
-					"$ref": "#/$defs/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/$defs/AssetTypeId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
-				"tags": {
-					"type": "object",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false

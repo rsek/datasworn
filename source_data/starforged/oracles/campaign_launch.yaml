@@ -330,7 +330,9 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [description]
         # usage:
-        #   max_rolls: 2
+        recommended_rolls:
+          min: 1
+          max: 2
         table:
           - min: 1
             max: 5

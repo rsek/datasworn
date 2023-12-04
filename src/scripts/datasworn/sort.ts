@@ -3,7 +3,7 @@ import { type JSONSchema } from 'json-schema-to-typescript'
 
 
 const typeKeys = [
-	'asset_type',
+	'category',
 	'card_type',
 	'content_type',
 	'field_type',
@@ -82,6 +82,7 @@ export const dataSwornKeyOrder: string[] = [
 	'url',
 	'embed_table',
 	'match',
+	'recommended_rolls',
 	// relationships
 	'oracles',
 	'suggestions',

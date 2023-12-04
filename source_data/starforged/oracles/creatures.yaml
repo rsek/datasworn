@@ -146,7 +146,8 @@ oracles:
           page: 338
         # usage:
         #   initial: true
-        #   max_rolls: 2
+        recommended_rolls:
+          max:  2
         summary: |-
           Roll for a basic form, and flesh out the creature’s appearance using the First Look table.
         # content:
@@ -436,7 +437,8 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         # usage:
-        #   max_rolls: 2
+        recommended_rolls:
+          max:  2
         table:
           - min: 1
             max: 2

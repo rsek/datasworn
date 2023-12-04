@@ -158,7 +158,8 @@ oracles:
         name: Characteristics
         canonical_name: 'Monstrosity: Characteristics'
         # usage:
-        #   max_rolls: 4
+        recommended_rolls:
+          max:  4
         #   initial: true
         summary: Roll up to four times for Characteristics and keep up to three of those results.
         description: |-
@@ -255,7 +256,8 @@ oracles:
         name: Abilities
         canonical_name: 'Monstrosity: Abilities'
         # usage:
-        #   max_rolls: 4
+        recommended_rolls:
+          max:  4
         #   initial: true
         summary: Roll up to four times for Abilities and keep up to three of those results.
         description: |-

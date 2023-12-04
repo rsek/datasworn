@@ -129,6 +129,7 @@ oracles:
       cursed:
         source: *Source
         name: Cursed Weather
+        # TODO: curse tag
         table:
           - min: 1
             max: 5

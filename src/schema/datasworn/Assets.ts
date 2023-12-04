@@ -10,7 +10,7 @@ import { Id, Localize, Metadata } from './common/index.js'
 import * as Utils from './utils/Assign.js'
 
 const AssetMixin = Type.Object({
-	asset_type: Type.Ref(Localize.Label, {
+	category: Type.Ref(Localize.Label, {
 		description:
 			"A localized category label for this asset. This is the surtitle above the asset's name on the card.",
 		examples: [
@@ -66,15 +66,15 @@ export type Asset = Generic.Collectable<
 		Static<ReturnType<typeof AssetPropertiesEnhanceable<TAssetControlField>>>
 >
 
-export const AssetType = Generic.Collection(
-	Type.Ref(Id.AssetTypeId),
+export const AssetCollection = Generic.Collection(
+	Type.Ref(Id.AssetCollectionId),
 	Type.Ref<TUnsafe<Asset>>('Asset'),
 	{
 		$id: 'AssetType'
 	}
 )
-export type TAssetType = typeof AssetType
-export type AssetType = Generic.Collection<Asset>
+export type TAssetCollection = typeof AssetCollection
+export type AssetCollection = Generic.Collection<Asset>
 
 export * from './assets/Ability.js'
 export * from './assets/Enhancement.js'

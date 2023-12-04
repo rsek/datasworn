@@ -666,7 +666,9 @@ oracles:
           page: 327
         # usage:
         #   initial: true
-        #   max_rolls: 2
+        recommended_rolls:
+          min: 1
+          max: 2
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description]

@@ -18,12 +18,11 @@ export type OracleTableRow = Static<typeof OracleTableRow>
 export const OracleTable = Generic.RecursiveCollectable(
 	Type.Ref(Id.OracleTableId),
 	Type.Object({
-		recommended_rolls: Type.Object(
-			{
+		recommended_rolls: Type.Optional(
+			Type.Object({
 				min: Type.Integer({ default: 1 }),
 				max: Type.Integer({ default: 1 })
-			},
-			{ default: { min: 1, max: 1 } }
+			})
 		),
 		dice: Type.Ref(Rolls.DiceExpression, {
 			default: '1d100',

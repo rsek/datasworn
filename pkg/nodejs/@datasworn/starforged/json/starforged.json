@@ -451,10 +451,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"backstory_prompts": {
@@ -565,10 +561,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"starship_history": {
@@ -661,10 +653,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"starship_quirks": {
@@ -672,6 +660,10 @@
 					"name": "Starship Quirks",
 					"dice": "1d100",
 					"summary": "Your ship is an important aspect of your character—and a character in its own right. What does it look like? What makes it interesting or uniquely yours? Does it have any particular quirks? If nothing occurs to you now, you can flesh it out in play, or roll once or twice on the table below.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/campaign_launch/starship_quirks/1-5",
@@ -805,10 +797,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"sector_trouble": {
@@ -948,10 +936,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"inciting_incident": {
@@ -1091,10 +1075,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -1195,10 +1175,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"make_a_discovery": {
@@ -1365,10 +1341,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"confront_chaos": {
@@ -1526,10 +1498,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"take_decisive_action": {
@@ -1585,10 +1553,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"endure_harm": {
@@ -1638,10 +1602,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"endure_stress": {
@@ -1685,10 +1645,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"withstand_damage": {
@@ -1756,10 +1712,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"pay_the_price": {
@@ -1908,10 +1860,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -1955,10 +1903,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"likely": {
@@ -1993,10 +1937,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"fifty_fifty": {
@@ -2031,10 +1971,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"unlikely": {
@@ -2069,10 +2005,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"small_chance": {
@@ -2107,10 +2039,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -3269,10 +3197,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"theme": {
@@ -4396,10 +4320,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"descriptor": {
@@ -5523,10 +5443,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"focus": {
@@ -6650,10 +6566,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -6773,10 +6685,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"peril": {
@@ -7026,10 +6934,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"opportunity": {
@@ -7200,10 +7104,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -7428,10 +7328,6 @@
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
 							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
-							},
 							"tags": {
 								"starforged": {
 									"region": "terminus"
@@ -7619,10 +7515,6 @@
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
 							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
-							},
 							"tags": {
 								"starforged": {
 									"region": "outlands"
@@ -7809,10 +7701,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							},
 							"tags": {
 								"starforged": {
@@ -8418,10 +8306,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"suffix": {
@@ -8748,10 +8632,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -8876,10 +8756,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -9033,10 +8909,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -9092,10 +8964,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -9191,10 +9059,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -9320,10 +9184,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -9379,10 +9239,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -9441,10 +9297,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -9494,10 +9346,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -9547,10 +9395,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -9730,10 +9574,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -9789,10 +9629,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -9888,10 +9724,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -10017,10 +9849,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -10076,10 +9904,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -10138,10 +9962,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -10191,10 +10011,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -10244,10 +10060,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -10427,10 +10239,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -10486,10 +10294,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -10585,10 +10389,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -10714,10 +10514,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -10773,10 +10569,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -10835,10 +10627,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -10888,10 +10676,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -10941,10 +10725,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -11124,10 +10904,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -11183,10 +10959,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -11282,10 +11054,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -11411,10 +11179,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -11470,10 +11234,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -11532,10 +11292,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -11585,10 +11341,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -11638,10 +11390,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -11821,10 +11569,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -11880,10 +11624,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -11979,10 +11719,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -12108,10 +11844,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -12167,10 +11899,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -12229,10 +11957,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -12282,10 +12006,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -12335,10 +12055,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -12518,10 +12234,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -12577,10 +12289,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -12676,10 +12384,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -12805,10 +12509,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -12864,10 +12564,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -12926,10 +12622,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -12979,10 +12671,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -13032,10 +12720,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -13215,10 +12899,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -13274,10 +12954,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -13373,10 +13049,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -13502,10 +13174,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -13561,10 +13229,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -13623,10 +13287,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -13676,10 +13336,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -13729,10 +13385,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -13912,10 +13564,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -13971,10 +13619,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -14070,10 +13714,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -14199,10 +13839,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -14258,10 +13894,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -14320,10 +13952,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -14373,10 +14001,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -14426,10 +14050,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -14609,10 +14229,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -14668,10 +14284,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -14767,10 +14379,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -14896,10 +14504,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -14955,10 +14559,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -15017,10 +14617,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -15070,10 +14666,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -15123,10 +14715,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -15306,10 +14894,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -15365,10 +14949,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -15464,10 +15044,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -15593,10 +15169,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -15652,10 +15224,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -15714,10 +15282,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -15767,10 +15331,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -15820,10 +15380,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -16003,10 +15559,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"atmosphere": {
@@ -16062,10 +15614,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"observed_from_space": {
@@ -16161,10 +15709,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -16290,10 +15834,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"life": {
@@ -16349,10 +15889,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"diversity": {
@@ -16453,10 +15989,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"biomes": {
@@ -16696,10 +16228,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -16758,10 +16286,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"outlands": {
@@ -16811,10 +16335,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								},
 								"expanse": {
@@ -16864,10 +16384,6 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
-									},
-									"recommended_rolls": {
-										"min": 1,
-										"max": 1
 									}
 								}
 							},
@@ -17172,10 +16688,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"lifeless": {
@@ -17427,10 +16939,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -17642,10 +17150,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"lifeless": {
@@ -17818,10 +17322,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -17897,16 +17397,16 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"first_look": {
 					"id": "starforged/oracles/settlements/first_look",
 					"name": "First Look",
 					"dice": "1d100",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/settlements/first_look/1-3",
@@ -18062,10 +17562,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"initial_contact": {
@@ -18151,10 +17647,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"authority": {
@@ -18251,10 +17743,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"projects": {
@@ -18262,6 +17750,10 @@
 					"name": "Settlement Projects",
 					"dice": "1d100",
 					"summary": "Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/settlements/projects/1-5",
@@ -18649,10 +18141,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"trouble": {
@@ -18660,6 +18148,10 @@
 					"name": "Settlement Trouble",
 					"dice": "1d100",
 					"summary": "Check the Settlement Trouble table when it’s appropriate for your character to know or uncover these details. The Settlement Trouble table provides a broad description of the site’s most dramatic current issue.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/settlements/trouble/1-3",
@@ -18893,10 +18385,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"name": {
@@ -20017,10 +19505,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -20104,10 +19588,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"outlands": {
@@ -20160,10 +19640,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"expanse": {
@@ -20216,10 +19692,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -20570,10 +20042,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"fleet": {
@@ -20685,10 +20153,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"initial_contact": {
@@ -20780,16 +20244,16 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"first_look": {
 					"id": "starforged/oracles/starships/first_look",
 					"name": "First Look",
 					"dice": "1d100",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/starships/first_look/1-4",
@@ -20951,10 +20415,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"starship_name": {
@@ -21575,10 +21035,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -21850,10 +21306,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"outlands": {
@@ -22093,10 +21545,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"expanse": {
@@ -22336,10 +21784,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -22382,6 +21826,10 @@
 					"id": "starforged/oracles/characters/first_look",
 					"name": "First Look",
 					"dice": "1d100",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/characters/first_look/1-3",
@@ -22824,10 +22272,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"initial_disposition": {
@@ -22979,10 +22423,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"role": {
@@ -23545,10 +22985,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"goal": {
@@ -23833,10 +23269,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"revealed_aspect": {
@@ -23844,6 +23276,10 @@
 					"name": "Revealed Character Aspect",
 					"dice": "1d100",
 					"summary": "As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. You may ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 3
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/characters/revealed_aspect/1-1",
@@ -24957,10 +24393,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -26121,10 +25553,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"callsign": {
@@ -27253,10 +26681,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"family_name": {
@@ -28385,10 +27809,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -28550,10 +27970,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"scale": {
@@ -28659,10 +28075,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"ultra_scale": {
@@ -28715,10 +28127,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"creature_first_look": {
@@ -28726,6 +28134,10 @@
 					"name": "Creature First Look",
 					"dice": "1d100",
 					"summary": "Roll for a basic form, and flesh out the creature’s appearance using the First Look table.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/creatures/creature_first_look/1-2",
@@ -29039,10 +28451,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"encountered_behavior": {
@@ -29303,10 +28711,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"revealed_creature_aspect": {
@@ -29315,6 +28719,10 @@
 					"dice": "1d100",
 					"summary": "Roll on this table as you interact with the creature to introduce new features or behaviors.",
 					"description": "Roll on this table as you interact with the creature to introduce new features or behaviors. Some results may contradict the established nature of a creature. For example, an amorphous creature that you envisioned as a mass of pure energy would not have typical physical features. If a result doesn’t fit, feel free to ignore, reroll, or adjust. Or envision how this contradiction signals a new understanding or unexpected transformation.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/creatures/revealed_creature_aspect/1-2",
@@ -29628,10 +29036,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -29835,10 +29239,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"interior": {
@@ -29995,10 +29395,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"land": {
@@ -30155,10 +29551,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"liquid": {
@@ -30315,10 +29707,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"air": {
@@ -30475,10 +29863,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -30588,10 +29972,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"influence": {
@@ -30695,10 +30075,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"dominion": {
@@ -30718,6 +30094,10 @@
 								"content_type": "result"
 							}
 						}
+					},
+					"recommended_rolls": {
+						"min": 1,
+						"max": 3
 					},
 					"table": [
 						{
@@ -30996,10 +30376,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"leadership": {
@@ -31079,10 +30455,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"guild": {
@@ -31290,10 +30662,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"fringe_group": {
@@ -31468,10 +30836,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"projects": {
@@ -31479,6 +30843,10 @@
 					"name": "Faction",
 					"dice": "1d100",
 					"description": "Pick or roll on this table to reveal the current focus of a faction. Then, use the nature of the organization to help envision the meaning of the project. The result may introduce events that motivate your character to aid or resist the project, or can serve as background detail for your setting. If you would like to track the faction’s progress, set a clock for the project using the campaign clock guidelines on page 235.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/factions/projects/1-3",
@@ -31706,10 +31074,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"relationships": {
@@ -31907,10 +31271,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"quirks": {
@@ -31918,6 +31278,10 @@
 					"name": "Faction Quirks",
 					"dice": "1d100",
 					"description": "Roll or pick known characteristics of the faction and its members using this table. But keep in mind that even within a small or specialized faction, there are no absolutes. These quirks represent common attitudes, practices, or approaches, but are not universal to every member of that faction. Leave room in your portrayal for diversity and contradictions.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/factions/quirks/1-3",
@@ -32145,10 +31509,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"rumors": {
@@ -32156,6 +31516,10 @@
 					"name": "Faction Rumors",
 					"dice": "1d100",
 					"summary": "Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/factions/rumors/1-3",
@@ -32383,10 +31747,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -32480,10 +31840,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"legacy": {
@@ -33053,10 +32409,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"affiliation": {
@@ -33351,10 +32703,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"identity": {
@@ -33924,10 +33272,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -34014,10 +33358,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"condition": {
@@ -34073,10 +33413,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"outer_first_look": {
@@ -34157,10 +33493,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"inner_first_look": {
@@ -34168,6 +33500,10 @@
 					"name": "Inner First Look",
 					"dice": "1d100",
 					"summary": "Use these First Look tables for your initial survey of the derelict's interior.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/derelicts/inner_first_look/1-3",
@@ -34389,10 +33725,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -34471,10 +33803,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -34631,10 +33959,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -34746,10 +34070,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -34800,10 +34120,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -34918,10 +34234,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -35030,10 +34342,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -35145,10 +34453,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -35199,10 +34503,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -35317,10 +34617,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -35429,10 +34725,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -35544,10 +34836,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -35598,10 +34886,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -35716,10 +35000,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -35828,10 +35108,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -35943,10 +35219,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -35997,10 +35269,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -36115,10 +35383,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -36227,10 +35491,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -36342,10 +35602,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -36396,10 +35652,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -36514,10 +35766,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -36626,10 +35874,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -36741,10 +35985,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -36795,10 +36035,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -36913,10 +36149,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -37025,10 +36257,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -37140,10 +36368,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -37194,10 +36418,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -37312,10 +36532,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -37424,10 +36640,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -37539,10 +36751,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -37593,10 +36801,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -37682,10 +36886,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"orbital": {
@@ -37727,10 +36927,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"deep_space": {
@@ -37772,10 +36968,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -37894,10 +37086,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"settlement": {
@@ -37977,10 +37165,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -38057,10 +37241,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"scale": {
@@ -38110,10 +37290,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"form": {
@@ -38188,10 +37364,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"shape": {
@@ -38386,10 +37558,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"material": {
@@ -38523,16 +37691,16 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"outer_first_look": {
 					"id": "starforged/oracles/vaults/outer_first_look",
 					"name": "Outer First Look",
 					"dice": "1d100",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/vaults/outer_first_look/1-3",
@@ -38742,10 +37910,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -38764,6 +37928,10 @@
 							"name": "Inner First Look",
 							"dice": "1d100",
 							"summary": "Use this table to reveal what you see or encounter when first entering the site. These aspects, combined with the exterior features, will help you envision the nature and condition of the vault and provide context for the rest of your exploration.",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/vaults/interior/first_look/1-3",
@@ -38985,10 +38153,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -39243,10 +38407,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -39418,10 +38578,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -39502,10 +38658,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -39748,10 +38900,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"feature": {
@@ -40006,10 +39154,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -40180,10 +39324,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -40263,10 +39403,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -40388,10 +39524,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},
@@ -40517,10 +39649,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -40638,10 +39766,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -40692,10 +39816,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -40834,10 +39954,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -40956,10 +40072,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -41011,10 +40123,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -41153,10 +40261,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -41275,10 +40379,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -41330,10 +40430,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -41472,10 +40568,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -41594,10 +40686,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -41649,10 +40737,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -41791,10 +40875,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -41913,10 +40993,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -41968,10 +41044,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -42110,10 +41182,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -42232,10 +41300,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -42287,10 +41351,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -42429,10 +41489,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -42551,10 +41607,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -42606,10 +41658,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -42748,10 +41796,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"peril": {
@@ -42870,10 +41914,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						},
 						"opportunity": {
@@ -42925,10 +41965,6 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
-							},
-							"recommended_rolls": {
-								"min": 1,
-								"max": 1
 							}
 						}
 					},
@@ -43167,10 +42203,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"story_clue": {
@@ -43178,6 +42210,10 @@
 					"name": "Story Clue",
 					"dice": "1d100",
 					"summary": "When you [Gather Information](id:starforged/moves/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](id:starforged/moves/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.",
+					"recommended_rolls": {
+						"min": 1,
+						"max": 2
+					},
 					"table": [
 						{
 							"id": "starforged/oracles/misc/story_clue/1-3",
@@ -43393,10 +42429,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"anomaly_effect": {
@@ -43624,10 +42656,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				},
 				"combat_action": {
@@ -43855,10 +42883,6 @@
 						],
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com"
-					},
-					"recommended_rolls": {
-						"min": 1,
-						"max": 1
 					}
 				}
 			},

@@ -3552,7 +3552,6 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
-    attr_accessor :recommended_rolls
 
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
@@ -3575,6 +3574,7 @@ module Datasworn
     # Most oracle tables are insensitive to matches, but a few define special
     # match behavior.
     attr_accessor :match
+    attr_accessor :recommended_rolls
 
     # Describes how how to render this table, when presenting it as a standalone
     # table.
@@ -3597,7 +3597,6 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.id = Datasworn::from_json_data(OracleTableID, data["id"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.recommended_rolls = Datasworn::from_json_data(OracleTableRecommendedRolls, data["recommended_rolls"])
       out.source = Datasworn::from_json_data(Source, data["source"])
       out.table = Datasworn::from_json_data(Array[OracleTableRow], data["table"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -3605,6 +3604,7 @@ module Datasworn
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
       out.match = Datasworn::from_json_data(OracleTableMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleTableRecommendedRolls, data["recommended_rolls"])
       out.rendering = Datasworn::from_json_data(OracleTableRendering, data["rendering"])
       out.replaces = Datasworn::from_json_data(OracleTableID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -3618,7 +3618,6 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["id"] = Datasworn::to_json_data(id)
       data["name"] = Datasworn::to_json_data(name)
-      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls)
       data["source"] = Datasworn::to_json_data(source)
       data["table"] = Datasworn::to_json_data(table)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
@@ -3626,6 +3625,7 @@ module Datasworn
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["images"] = Datasworn::to_json_data(images) unless images.nil?
       data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
       data["rendering"] = Datasworn::to_json_data(rendering) unless rendering.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?

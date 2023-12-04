@@ -126,7 +126,9 @@ oracles:
           <<: *Source
           page: 381
         # usage:
-        #   max_rolls: 2
+        recommended_rolls:
+          min: 1
+          max: 2
         summary: |-
           When you [Gather Information](id:starforged/moves/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](id:starforged/moves/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
         table:

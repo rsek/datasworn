@@ -4,7 +4,7 @@ import { StatRule } from './rules/StatRule.js'
 import { ConditionMeterRule } from './rules/ConditionMeterRule.js'
 import { ImpactCategory } from './rules/ImpactRule.js'
 import { SpecialTrackRule } from './rules/SpecialTrackRule.js'
-import { TagRule } from './rules/TagRule.js'
+import { TagRuleBase } from './rules/TagRule.js'
 
 export * from './rules/StatRule.js'
 export * from './rules/ConditionMeterRule.js'

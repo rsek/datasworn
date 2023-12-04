@@ -1358,15 +1358,6 @@ export interface OracleTable {
 	source: Source
 	suggestions?: Suggestions
 	tags?: Record<DictKey, Record<DictKey, string>>
-	/**
-	 * @default
-	 * ```javascript
-	 * 	{
-	 * 		min: 1,
-	 * 		max: 1
-	 * 	}
-	 * ```
-	 */
 	recommended_rolls?: {
 		/**
 		 * @default 1

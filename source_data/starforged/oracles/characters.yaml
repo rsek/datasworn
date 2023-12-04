@@ -1295,7 +1295,8 @@ oracles:
           page: 330
         # usage:
         #   initial: true
-        #   max_rolls: 2
+        recommended_rolls:
+          max:  2
         table:
           - <<: &i18n.adjective
               i18n:
@@ -1885,7 +1886,8 @@ oracles:
         summary: |-
           As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. You may ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         # usage:
-        #   max_rolls: 3
+        recommended_rolls:
+          max:  3
         table:
           - <<: *i18n.adjective
             min: 1

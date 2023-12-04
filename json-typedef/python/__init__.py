@@ -4723,7 +4723,6 @@ class OracleTable:
     The primary name/label for this item.
     """
 
-    recommended_rolls: 'OracleTableRecommendedRolls'
     source: 'Source'
     """
     Attribution for the original source (such as a book or website) of this
@@ -4756,6 +4755,7 @@ class OracleTable:
     match behavior.
     """
 
+    recommended_rolls: 'Optional[OracleTableRecommendedRolls]'
     rendering: 'Optional[OracleTableRendering]'
     """
     Describes how how to render this table, when presenting it as a standalone
@@ -4785,7 +4785,6 @@ class OracleTable:
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(OracleTableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(OracleTableRecommendedRolls, data.get("recommended_rolls")),
             _from_json_data(Source, data.get("source")),
             _from_json_data(List[OracleTableRow], data.get("table")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -4793,6 +4792,7 @@ class OracleTable:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
             _from_json_data(Optional[OracleTableMatchBehavior], data.get("match")),
+            _from_json_data(Optional[OracleTableRecommendedRolls], data.get("recommended_rolls")),
             _from_json_data(Optional[OracleTableRendering], data.get("rendering")),
             _from_json_data(Optional[OracleTableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -4805,7 +4805,6 @@ class OracleTable:
         data["dice"] = _to_json_data(self.dice)
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
-        data["recommended_rolls"] = _to_json_data(self.recommended_rolls)
         data["source"] = _to_json_data(self.source)
         data["table"] = _to_json_data(self.table)
         if self.canonical_name is not None:
@@ -4818,6 +4817,8 @@ class OracleTable:
              data["images"] = _to_json_data(self.images)
         if self.match is not None:
              data["match"] = _to_json_data(self.match)
+        if self.recommended_rolls is not None:
+             data["recommended_rolls"] = _to_json_data(self.recommended_rolls)
         if self.rendering is not None:
              data["rendering"] = _to_json_data(self.rendering)
         if self.replaces is not None:

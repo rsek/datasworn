@@ -8,7 +8,7 @@ import {
 	type TSchema
 } from '@sinclair/typebox'
 import { Members } from '../../../scripts/json-typedef/symbol.js'
-import * as Generic from '../Generic.js'
+import type * as Generic from '../Generic.js'
 import { type TMoveEnhancement } from '../Moves.js'
 import * as Utils from '../Utils.js'
 import { type TAssetEnhancement } from '../assets/Enhancement.js'
@@ -28,34 +28,42 @@ function InputField<
 >(
 	base: T,
 	discriminator: Discriminator,
-	id: Id.TAnyId,
+	// id: Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
 	const { description, $comment } = base
 
-	const mixin = Utils.Assign([
-		base,
-		Type.Object({
-			[DISCRIMINATOR]: Type.Literal(discriminator),
-			icon: Type.Optional(
-				Type.Ref(Metadata.SvgImageUrl, {
-					description: 'An icon associated with this input.'
-				})
-			)
-		})
-	]) as unknown as TObject<
-		T['properties'] & {
-			[DISCRIMINATOR]: TLiteral<Discriminator>
-			id: Id.TAnyId
-		}
-	>
+	const mixin = Type.Object({
+		[DISCRIMINATOR]: Type.Literal(discriminator),
+		icon: Type.Optional(
+			Type.Ref(Metadata.SvgImageUrl, {
+				description: 'An icon associated with this input.'
+			})
+		)
+	})
 
-	const result = Generic.IdentifiedNode(id, mixin, {
+	const result = Utils.Assign([base, mixin], {
 		description,
 		$comment,
 		[EnhanceableProperties]: [] as Array<keyof Static<T>>,
 		...options
 	}) as unknown as TInputField<T, Discriminator>
+
+	// const result = Generic.IdentifiedNode(
+	// 	id,
+	// 	Utils.Assign([base, mixin]) as unknown as TObject<
+	// 		T['properties'] & {
+	// 			[DISCRIMINATOR]: TLiteral<Discriminator>
+	// 			id: Id.TAnyId
+	// 		}
+	// 	>,
+	// 	{
+	// 		description,
+	// 		$comment,
+	// 		[EnhanceableProperties]: [] as Array<keyof Static<T>>,
+	// 		...options
+	// 	}
+	// ) as unknown as TInputField<T, Discriminator>
 
 	return result
 }
@@ -66,7 +74,7 @@ export type TInputField<
 	TObject<
 		T['properties'] & {
 			[DISCRIMINATOR]: TLiteral<Discriminator>
-			id: Id.TAnyId
+			// id: Id.TAnyId
 		}
 	>
 > & {
@@ -81,7 +89,7 @@ export type InputField<
 > = Utils.Assign<
 	T,
 	{
-		id: string
+		// id: string
 		[DISCRIMINATOR]: Discriminator
 	}
 >
@@ -92,34 +100,51 @@ export function isEnhanceable(
 	return !!field[EnhanceableProperties].length
 }
 
-export function CounterField(id: Id.TAnyId, options: ObjectOptions = {}) {
-	return InputField(Base.Counter, 'counter', id, {
-		[EnhanceableProperties]: ['max'],
-		title: 'CounterField',
-		...options
-	})
+export function CounterField(
+	// id: Id.TAnyId,
+	options: ObjectOptions = {}
+) {
+	return InputField(
+		Base.Counter,
+		'counter',
+		// id,
+		{
+			[EnhanceableProperties]: ['max'],
+			title: 'CounterField',
+			...options
+		}
+	)
 }
 export type TCounterField = ReturnType<typeof CounterField>
 export type CounterField = Static<TCounterField>
 
-export function ClockField(id: Id.TAnyId, options: ObjectOptions = {}) {
+export function ClockField(
+	// id: Id.TAnyId,
+	options: ObjectOptions = {}
+) {
 	const { $comment, description } = Base.Clock
-	return InputField(Base.Clock, 'clock', id, {
-		[EnhanceableProperties]: ['max'],
-		title: 'ClockField',
-		description,
-		$comment,
-		...options
-	})
+	return InputField(
+		Base.Clock,
+		'clock',
+		// id,
+		{
+			[EnhanceableProperties]: ['max'],
+			title: 'ClockField',
+			description,
+			$comment,
+			...options
+		}
+	)
 }
 export type TClockField = ReturnType<typeof ClockField>
 export type ClockField = Static<TClockField>
 
-export function ConditionMeterField(id: Id.TAnyId) {
+export function ConditionMeterField() {
+	// id: Id.TAnyId
 	return InputField(
 		Base.Meter(Type.Integer({ default: 0 }), Type.Integer()),
 		'condition_meter',
-		id,
+		// id,
 		{
 			[EnhanceableProperties]: ['max'],
 			title: 'ConditionMeterField'
@@ -138,10 +163,15 @@ function SelectField<
 >(
 	choiceSchema: Choice,
 	discriminator: Discriminator,
-	id: Id.TAnyId,
+	// id: Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
-	return InputField(Base.Select(choiceSchema), discriminator, id, options)
+	return InputField(
+		Base.Select(choiceSchema),
+		discriminator,
+		// id,
+		options
+	)
 }
 
 function SelectFieldWithGroups<
@@ -151,13 +181,13 @@ function SelectFieldWithGroups<
 	choiceSchema: Choice,
 	choiceGroupSchema: Base.TSelectChoicesGroup<TRef<Choice>>,
 	discriminator: Discriminator,
-	id: Id.TAnyId,
+	// id: Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
 	return InputField(
 		Base.SelectWithGroups(choiceSchema, choiceGroupSchema),
 		discriminator,
-		id,
+		// id,
 		options
 	)
 }
@@ -168,10 +198,18 @@ export const SelectValueFieldChoice = Utils.DiscriminatedUnion(
 	{ $id: 'SelectValueFieldChoice' }
 )
 
-export function SelectValueField(id: Id.TAnyId, options: ObjectOptions = {}) {
-	return SelectField(Type.Ref(SelectValueFieldChoice), 'select_value', id, {
-		...options
-	})
+export function SelectValueField(
+	// id: Id.TAnyId,
+	options: ObjectOptions = {}
+) {
+	return SelectField(
+		Type.Ref(SelectValueFieldChoice),
+		'select_value',
+		// id,
+		{
+			...options
+		}
+	)
 }
 export type TSelectValueField = ReturnType<typeof SelectValueField>
 export type SelectValueField = Static<TSelectValueField>
@@ -195,14 +233,14 @@ export const SelectEnhancementFieldChoiceGroup = Base.SelectChoicesGroup(
 )
 
 export function SelectEnhancementField(
-	id: Id.TAnyId,
+	// id: Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
 	return SelectFieldWithGroups(
 		SelectEnhancementFieldChoice,
 		SelectEnhancementFieldChoiceGroup,
 		'select_enhancement',
-		id,
+		// id,
 		{
 			description:
 				'Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).',
@@ -213,13 +251,16 @@ export function SelectEnhancementField(
 export type TSelectEnhancementField = ReturnType<typeof SelectEnhancementField>
 export type SelectEnhancementField = Static<TSelectEnhancementField>
 
-export function CardFlipField(id: Id.TAnyId, options: ObjectOptions = {}) {
+export function CardFlipField(
+	// id: Id.TAnyId,
+	options: ObjectOptions = {}
+) {
 	return InputField(
 		Base.Input(
 			Type.Boolean({ description: 'Is the card flipped over?', default: false })
 		),
 		'card_flip',
-		id,
+		// id,
 		{
 			title: 'CardFlipField',
 			description: `When its value is set to \`true\` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).`,
@@ -230,20 +271,36 @@ export function CardFlipField(id: Id.TAnyId, options: ObjectOptions = {}) {
 export type TCardFlipField = ReturnType<typeof CardFlipField>
 export type CardFlipField = Static<TCardFlipField>
 
-export function CheckboxField(id: Id.TAnyId, options: ObjectOptions = {}) {
-	return InputField(Base.Checkbox, 'checkbox', id, {
-		title: 'CheckboxField',
-		...options
-	})
+export function CheckboxField(
+	// id: Id.TAnyId,
+	options: ObjectOptions = {}
+) {
+	return InputField(
+		Base.Checkbox,
+		'checkbox',
+		// id,
+		{
+			title: 'CheckboxField',
+			...options
+		}
+	)
 }
 export type TCheckboxField = ReturnType<typeof CheckboxField>
 export type CheckboxField = Static<TCheckboxField>
 
-export function TextField(id: Id.TAnyId, options: ObjectOptions = {}) {
-	return InputField(Base.TextInput, 'text', id, {
-		title: 'TextField',
-		...options
-	})
+export function TextField(
+	// id: Id.TAnyId,
+	options: ObjectOptions = {}
+) {
+	return InputField(
+		Base.TextInput,
+		'text',
+		// id,
+		{
+			title: 'TextField',
+			...options
+		}
+	)
 }
 export type TTextField = ReturnType<typeof TextField>
 export type TextField = Static<TTextField>

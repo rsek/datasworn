@@ -74,12 +74,12 @@ export const NpcVariantId = Extend(NpcId, ['variants', Node], {
 
 export type NpcVariantId = Opaque<Static<typeof NpcVariantId>>
 
-export const AssetTypeId = CollectionId(['assets'], {
-	$id: 'AssetTypeId'
+export const AssetCollectionId = CollectionId(['assets'], {
+	$id: 'AssetCollectionId'
 })
-export type AssetTypeId = Opaque<Static<typeof AssetTypeId>>
+export type AssetCollectionId = Opaque<Static<typeof AssetCollectionId>>
 
-export const AssetId = Extend(AssetTypeId, [Node], {
+export const AssetId = Extend(AssetCollectionId, [Node], {
 	$id: 'AssetId'
 })
 export type AssetId = Opaque<Static<typeof AssetId>>

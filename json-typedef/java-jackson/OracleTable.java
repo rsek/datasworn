@@ -23,9 +23,6 @@ public class OracleTable {
     @JsonProperty("name")
     private Label name;
 
-    @JsonProperty("recommended_rolls")
-    private OracleTableRecommendedRolls recommendedRolls;
-
     @JsonProperty("source")
     private Source source;
 
@@ -51,6 +48,10 @@ public class OracleTable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("match")
     private OracleTableMatchBehavior match;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("recommended_rolls")
+    private OracleTableRecommendedRolls recommendedRolls;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("rendering")
@@ -121,20 +122,6 @@ public class OracleTable {
      */
     public void setName(Label name) {
         this.name = name;
-    }
-
-    /**
-     * Getter for recommendedRolls.<p>
-     */
-    public OracleTableRecommendedRolls getRecommendedRolls() {
-        return recommendedRolls;
-    }
-
-    /**
-     * Setter for recommendedRolls.<p>
-     */
-    public void setRecommendedRolls(OracleTableRecommendedRolls recommendedRolls) {
-        this.recommendedRolls = recommendedRolls;
     }
 
     /**
@@ -253,6 +240,20 @@ public class OracleTable {
      */
     public void setMatch(OracleTableMatchBehavior match) {
         this.match = match;
+    }
+
+    /**
+     * Getter for recommendedRolls.<p>
+     */
+    public OracleTableRecommendedRolls getRecommendedRolls() {
+        return recommendedRolls;
+    }
+
+    /**
+     * Setter for recommendedRolls.<p>
+     */
+    public void setRecommendedRolls(OracleTableRecommendedRolls recommendedRolls) {
+        this.recommendedRolls = recommendedRolls;
     }
 
     /**

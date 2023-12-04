@@ -29,9 +29,6 @@ namespace Datasworn
         [JsonPropertyName("name")]
         public Label Name { get; set; }
 
-        [JsonPropertyName("recommended_rolls")]
-        public OracleTableRecommendedRolls RecommendedRolls { get; set; }
-
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
         /// this item, including the author and licensing information.
@@ -77,6 +74,10 @@ namespace Datasworn
         [JsonPropertyName("match")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public OracleTableMatchBehavior? Match { get; set; }
+
+        [JsonPropertyName("recommended_rolls")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public OracleTableRecommendedRolls RecommendedRolls { get; set; }
 
         /// <summary>
         /// Describes how how to render this table, when presenting it as a

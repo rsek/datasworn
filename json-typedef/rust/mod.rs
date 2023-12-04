@@ -2582,9 +2582,6 @@ pub struct OracleTable {
     #[serde(rename = "name")]
     pub name: Label,
 
-    #[serde(rename = "recommended_rolls")]
-    pub recommendedRolls: OracleTableRecommendedRolls,
-
     /// Attribution for the original source (such as a book or website) of this
     /// item, including the author and licensing information.
     #[serde(rename = "source")]
@@ -2620,6 +2617,10 @@ pub struct OracleTable {
     #[serde(rename = "match")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub match_: Option<Box<OracleTableMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleTableRecommendedRolls>>,
 
     /// Describes how how to render this table, when presenting it as a
     /// standalone table.

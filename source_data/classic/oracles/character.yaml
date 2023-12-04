@@ -263,7 +263,8 @@ oracles:
         canonical_name: 'Oracle 12: Character Descriptor'
         summary: Use this oracle to help flesh out a character’s personality or physical characteristics. Roll more than once to add additional detail.
         # usage:
-        #   max_rolls: 3 # a bit arbitrary, but reasonable
+        recommended_rolls:
+          max:  3 # a bit arbitrary, but reasonable
         source:
           <<: *Source
           page: 183

@@ -1235,7 +1235,6 @@ module Datasworn
     attr_accessor dice: DiceExpression
     attr_accessor id: OracleTableID
     attr_accessor name: Label
-    attr_accessor recommended_rolls: OracleTableRecommendedRolls
     attr_accessor source: Source
     attr_accessor table: Array[OracleTableRow]
     attr_accessor canonical_name: Label?
@@ -1243,6 +1242,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleTableMatchBehavior?
+    attr_accessor recommended_rolls: OracleTableRecommendedRolls?
     attr_accessor rendering: OracleTableRendering?
     attr_accessor replaces: OracleTableID?
     attr_accessor suggestions: Suggestions?

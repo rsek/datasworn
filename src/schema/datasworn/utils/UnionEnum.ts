@@ -27,7 +27,7 @@ export interface TUnionEnum<T extends (string | number)[] = (string | number)[]>
 }
 
 export function UnionEnum<T extends string[] | number[]>(
-	literals: T,
+	literals: [...T],
 	options: SchemaOptions = {}
 ) {
 	if (!TypeRegistry.Has('UnionEnum'))
@@ -37,7 +37,7 @@ export function UnionEnum<T extends string[] | number[]>(
 		...options,
 		[Kind]: 'UnionEnum',
 		enum: literals
-	} as TUnionEnum<T>
+	} as TUnionEnum<[...T]>
 
 	if (result.enum.every(isInteger))
 		set(result[JsonTypeDef], 'metadata.typescriptType', literals.join(' | '))
