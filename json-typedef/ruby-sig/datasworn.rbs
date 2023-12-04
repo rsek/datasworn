@@ -13,7 +13,7 @@ module Datasworn
     attr_accessor datasworn_version: SemanticVersion
     attr_accessor id: ExpansionID
     attr_accessor ruleset: RulesetID
-    attr_accessor assets: Hash[String, AssetType]?
+    attr_accessor assets: Hash[String, AssetCollection]?
     attr_accessor atlas: Hash[String, Atlas]?
     attr_accessor delve_sites: Hash[String, DelveSite]?
     attr_accessor moves: Hash[String, MoveCategory]?
@@ -30,7 +30,7 @@ module Datasworn
   end
 
   class RulesPackageRuleset < RulesPackage
-    attr_accessor assets: Hash[String, AssetType]
+    attr_accessor assets: Hash[String, AssetCollection]
     attr_accessor datasworn_version: SemanticVersion
     attr_accessor id: RulesetID
     attr_accessor moves: Hash[String, MoveCategory]
@@ -65,7 +65,7 @@ module Datasworn
 
   class Asset
     attr_accessor abilities: Array[AssetAbility]
-    attr_accessor asset_type: Label
+    attr_accessor category: Label
     attr_accessor count_as_impact: bool
     attr_accessor id: AssetID
     attr_accessor name: Label
@@ -109,7 +109,6 @@ module Datasworn
 
   class AssetAbilityControlFieldCheckbox < AssetAbilityControlField
     attr_accessor disables_asset: bool
-    attr_accessor id: AssetAbilityControlFieldID
     attr_accessor is_impact: bool
     attr_accessor label: InputLabel
     attr_accessor value: bool
@@ -120,10 +119,10 @@ module Datasworn
   end
 
   class AssetAbilityControlFieldClock < AssetAbilityControlField
-    attr_accessor id: AssetAbilityControlFieldID
     attr_accessor label: InputLabel
     attr_accessor max: Integer
     attr_accessor min: Integer
+    attr_accessor rollable: bool
     attr_accessor value: Integer
     attr_accessor icon: SvgImageURL?
 
@@ -132,14 +131,23 @@ module Datasworn
   end
 
   class AssetAbilityControlFieldCounter < AssetAbilityControlField
-    attr_accessor id: AssetAbilityControlFieldID
     attr_accessor label: InputLabel
     attr_accessor max: Integer
     attr_accessor min: Integer
+    attr_accessor rollable: bool
     attr_accessor value: Integer
     attr_accessor icon: SvgImageURL?
 
     def self.from_json_data: (untyped) -> AssetAbilityControlFieldCounter
+    def to_json_data: () -> untyped
+  end
+
+  class AssetAbilityControlFieldText < AssetAbilityControlField
+    attr_accessor label: InputLabel
+    attr_accessor value: String
+    attr_accessor icon: SvgImageURL?
+
+    def self.from_json_data: (untyped) -> AssetAbilityControlFieldText
     def to_json_data: () -> untyped
   end
 
@@ -165,7 +173,6 @@ module Datasworn
   end
 
   class AssetAbilityOptionFieldText < AssetAbilityOptionField
-    attr_accessor id: AssetAbilityOptionFieldID
     attr_accessor label: InputLabel
     attr_accessor value: String
     attr_accessor icon: SvgImageURL?
@@ -189,6 +196,33 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class AssetCollection
+    attr_accessor id: AssetCollectionID
+    attr_accessor name: Label
+    attr_accessor source: Source
+    attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor contents: Hash[String, Asset]?
+    attr_accessor description: MarkdownString?
+    attr_accessor enhances: AssetCollectionID?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
+    attr_accessor replaces: AssetCollectionID?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, String]]?
+
+    def self.from_json_data: (untyped) -> AssetCollection
+    def to_json_data: () -> untyped
+  end
+
+  class AssetCollectionID
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> AssetCollectionID
+    def to_json_data: () -> untyped
+  end
+
   class AssetConditionMeterControlField
     attr_accessor field_type: String
 
@@ -198,7 +232,6 @@ module Datasworn
 
   class AssetConditionMeterControlFieldCardFlip < AssetConditionMeterControlField
     attr_accessor disables_asset: bool
-    attr_accessor id: AssetConditionMeterControlFieldID
     attr_accessor is_impact: bool
     attr_accessor label: InputLabel
     attr_accessor value: bool
@@ -210,7 +243,6 @@ module Datasworn
 
   class AssetConditionMeterControlFieldCheckbox < AssetConditionMeterControlField
     attr_accessor disables_asset: bool
-    attr_accessor id: AssetConditionMeterControlFieldID
     attr_accessor is_impact: bool
     attr_accessor label: InputLabel
     attr_accessor value: bool
@@ -236,7 +268,6 @@ module Datasworn
 
   class AssetControlFieldCardFlip < AssetControlField
     attr_accessor disables_asset: bool
-    attr_accessor id: AssetControlFieldID
     attr_accessor is_impact: bool
     attr_accessor label: InputLabel
     attr_accessor value: bool
@@ -248,7 +279,6 @@ module Datasworn
 
   class AssetControlFieldCheckbox < AssetControlField
     attr_accessor disables_asset: bool
-    attr_accessor id: AssetControlFieldID
     attr_accessor is_impact: bool
     attr_accessor label: InputLabel
     attr_accessor value: bool
@@ -267,10 +297,10 @@ module Datasworn
   end
 
   class AssetControlFieldConditionMeter < AssetControlField
-    attr_accessor id: AssetControlFieldID
     attr_accessor label: InputLabel
     attr_accessor max: Integer
     attr_accessor min: Integer
+    attr_accessor rollable: bool
     attr_accessor value: Integer
     attr_accessor controls: Hash[String, AssetConditionMeterControlField]?
     attr_accessor icon: SvgImageURL?
@@ -306,7 +336,6 @@ module Datasworn
 
   class AssetControlFieldSelectEnhancement < AssetControlField
     attr_accessor choices: Hash[String, AssetControlFieldSelectEnhancementChoice]
-    attr_accessor id: AssetControlFieldID
     attr_accessor label: InputLabel
     attr_accessor value: DictKey
     attr_accessor icon: SvgImageURL?
@@ -401,7 +430,6 @@ module Datasworn
 
   class AssetOptionFieldSelectEnhancement < AssetOptionField
     attr_accessor choices: Hash[String, AssetOptionFieldSelectEnhancementChoice]
-    attr_accessor id: AssetOptionFieldID
     attr_accessor label: InputLabel
     attr_accessor value: DictKey
     attr_accessor icon: SvgImageURL?
@@ -412,7 +440,6 @@ module Datasworn
 
   class AssetOptionFieldSelectValue < AssetOptionField
     attr_accessor choices: Hash[String, SelectValueFieldChoice]
-    attr_accessor id: AssetOptionFieldID
     attr_accessor label: InputLabel
     attr_accessor value: DictKey
     attr_accessor icon: SvgImageURL?
@@ -422,7 +449,6 @@ module Datasworn
   end
 
   class AssetOptionFieldText < AssetOptionField
-    attr_accessor id: AssetOptionFieldID
     attr_accessor label: InputLabel
     attr_accessor value: String
     attr_accessor icon: SvgImageURL?
@@ -442,33 +468,6 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> AssetOptionFieldIDWildcard
-    def to_json_data: () -> untyped
-  end
-
-  class AssetType
-    attr_accessor id: AssetTypeID
-    attr_accessor name: Label
-    attr_accessor source: Source
-    attr_accessor canonical_name: Label?
-    attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, Asset]?
-    attr_accessor description: MarkdownString?
-    attr_accessor enhances: AssetTypeID?
-    attr_accessor icon: SvgImageURL?
-    attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: AssetTypeID?
-    attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, String]]?
-
-    def self.from_json_data: (untyped) -> AssetType
-    def to_json_data: () -> untyped
-  end
-
-  class AssetTypeID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> AssetTypeID
     def to_json_data: () -> untyped
   end
 
@@ -554,6 +553,28 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class ConditionMeterFieldFieldType
+    attr_accessor value: String
+
+    CONDITION_METER: ConditionMeterFieldFieldType
+
+    def self.from_json_data: (untyped) -> ConditionMeterFieldFieldType
+    def to_json_data: () -> untyped
+  end
+
+  class ConditionMeterField
+    attr_accessor field_type: ConditionMeterFieldFieldType
+    attr_accessor label: InputLabel
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+    attr_accessor rollable: bool
+    attr_accessor value: Integer
+    attr_accessor icon: SvgImageURL?
+
+    def self.from_json_data: (untyped) -> ConditionMeterField
+    def to_json_data: () -> untyped
+  end
+
   class ConditionMeterKey
     attr_accessor value: DictKey
 
@@ -566,6 +587,7 @@ module Datasworn
     attr_accessor label: InputLabel
     attr_accessor max: Integer
     attr_accessor min: Integer
+    attr_accessor rollable: bool
     attr_accessor shared: bool
     attr_accessor value: Integer
 

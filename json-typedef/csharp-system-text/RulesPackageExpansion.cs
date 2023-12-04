@@ -31,7 +31,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("assets")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, AssetType> Assets { get; set; }
+        public IDictionary<string, AssetCollection> Assets { get; set; }
 
         /// <summary>
         /// A dictionary object containing atlas collections, which contain

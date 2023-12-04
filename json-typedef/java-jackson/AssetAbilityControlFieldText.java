@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * Represents an input that accepts plain text.
  */
 @JsonSerialize
-public class AssetAbilityOptionFieldText extends AssetAbilityOptionField {
+public class AssetAbilityControlFieldText extends AssetAbilityControlField {
     @JsonProperty("label")
     private InputLabel label;
 
@@ -21,7 +21,7 @@ public class AssetAbilityOptionFieldText extends AssetAbilityOptionField {
     @JsonProperty("icon")
     private SvgImageUrl icon;
 
-    public AssetAbilityOptionFieldText() {
+    public AssetAbilityControlFieldText() {
     }
 
     /**

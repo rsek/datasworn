@@ -26,6 +26,8 @@ namespace Datasworn
                     return JsonSerializer.Deserialize<AssetAbilityControlFieldClock>(ref readerCopy, options);
                 case "counter":
                     return JsonSerializer.Deserialize<AssetAbilityControlFieldCounter>(ref readerCopy, options);
+                case "text":
+                    return JsonSerializer.Deserialize<AssetAbilityControlFieldText>(ref readerCopy, options);
                 default:
                     throw new ArgumentException(String.Format("Bad FieldType value: {0}", tagValue));
             }

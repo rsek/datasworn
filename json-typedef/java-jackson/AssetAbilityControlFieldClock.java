@@ -11,9 +11,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonSerialize
 public class AssetAbilityControlFieldClock extends AssetAbilityControlField {
-    @JsonProperty("id")
-    private AssetAbilityControlFieldId id;
-
     @JsonProperty("label")
     private InputLabel label;
 
@@ -23,6 +20,9 @@ public class AssetAbilityControlFieldClock extends AssetAbilityControlField {
     @JsonProperty("min")
     private Byte min;
 
+    @JsonProperty("rollable")
+    private Boolean rollable;
+
     @JsonProperty("value")
     private Byte value;
 
@@ -31,22 +31,6 @@ public class AssetAbilityControlFieldClock extends AssetAbilityControlField {
     private SvgImageUrl icon;
 
     public AssetAbilityControlFieldClock() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AssetAbilityControlFieldId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AssetAbilityControlFieldId id) {
-        this.id = id;
     }
 
     /**
@@ -98,8 +82,22 @@ public class AssetAbilityControlFieldClock extends AssetAbilityControlField {
     }
 
     /**
+     * Getter for rollable.<p>
+     */
+    public Boolean getRollable() {
+        return rollable;
+    }
+
+    /**
+     * Setter for rollable.<p>
+     */
+    public void setRollable(Boolean rollable) {
+        this.rollable = rollable;
+    }
+
+    /**
      * Getter for value.<p>
-     * The current number of filled clock segments.
+     * The current value of this input.
      */
     public Byte getValue() {
         return value;
@@ -107,7 +105,7 @@ public class AssetAbilityControlFieldClock extends AssetAbilityControlField {
 
     /**
      * Setter for value.<p>
-     * The current number of filled clock segments.
+     * The current value of this input.
      */
     public void setValue(Byte value) {
         this.value = value;

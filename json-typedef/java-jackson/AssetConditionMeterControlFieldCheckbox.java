@@ -6,16 +6,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * Represents a checkbox.
- */
 @JsonSerialize
 public class AssetConditionMeterControlFieldCheckbox extends AssetConditionMeterControlField {
     @JsonProperty("disables_asset")
     private Boolean disablesAsset;
-
-    @JsonProperty("id")
-    private AssetConditionMeterControlFieldId id;
 
     @JsonProperty("is_impact")
     private Boolean isImpact;
@@ -47,22 +41,6 @@ public class AssetConditionMeterControlFieldCheckbox extends AssetConditionMeter
      */
     public void setDisablesAsset(Boolean disablesAsset) {
         this.disablesAsset = disablesAsset;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AssetConditionMeterControlFieldId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AssetConditionMeterControlFieldId id) {
-        this.id = id;
     }
 
     /**

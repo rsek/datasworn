@@ -4,9 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// Represents a checkbox.
-    /// </summary>
     public class AssetControlFieldCheckbox : AssetControlField
     {
         [JsonPropertyName("field_type")]
@@ -17,12 +14,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("disables_asset")]
         public bool DisablesAsset { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetControlFieldId Id { get; set; }
 
         /// <summary>
         /// Does this field count as an impact (Starforged) or debility

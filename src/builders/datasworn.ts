@@ -1,7 +1,7 @@
 import { sourcedTransformer, transform } from './transformer.js'
 import { mapValues } from 'lodash-es'
 import { OracleCollection } from './oracles.js'
-import { AssetType } from './assets.js'
+import { AssetCollection } from './assets.js'
 import { MoveCategory } from './moves.js'
 import { DelveSite, DelveSiteDomain, DelveSiteTheme } from './delve-site.js'
 import { Rarity } from './rarities.js'
@@ -49,7 +49,9 @@ export const RulesPackage = sourcedTransformer<
 		key: string | number,
 		parent: null
 	) {
-		return mapValues(data.assets, (v, k) => transform(v, k, data, AssetType))
+		return mapValues(data.assets, (v, k) =>
+			transform(v, k, data, AssetCollection)
+		)
 	},
 	moves: function (
 		this: DataswornSource.RulesPackage,

@@ -18,12 +18,6 @@ namespace Datasworn
         [JsonPropertyName("choices")]
         public IDictionary<string, AssetOptionFieldSelectEnhancementChoice> Choices { get; set; }
 
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetOptionFieldId Id { get; set; }
-
         [JsonPropertyName("label")]
         public InputLabel Label { get; set; }
 

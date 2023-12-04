@@ -35,7 +35,7 @@
 				},
 				"assets": {
 					"values": {
-						"ref": "AssetType"
+						"ref": "AssetCollection"
 					},
 					"metadata": {
 						"propertyPattern": "^([a-z][a-z_]*)$",
@@ -148,7 +148,7 @@
 				},
 				"assets": {
 					"values": {
-						"ref": "AssetType"
+						"ref": "AssetCollection"
 					},
 					"metadata": {
 						"propertyPattern": "^([a-z][a-z_]*)$",
@@ -252,6 +252,13 @@
 				"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/options\\/([a-z][a-z_]*)$"
 			}
 		},
+		"AssetCollectionId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID for an AssetCollection.",
+				"pattern": "^([a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
+			}
+		},
 		"AssetConditionMeterControlFieldId": {
 			"type": "string",
 			"metadata": {
@@ -299,13 +306,6 @@
 			"metadata": {
 				"description": "A wildcarded ID that can be used to match multiple AssetOptionFields.",
 				"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/options\\/(\\*|([a-z][a-z_]*))$"
-			}
-		},
-		"AssetTypeId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for an AssetType.",
-				"pattern": "^([a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
 			}
 		},
 		"AtlasEntryId": {
@@ -935,6 +935,9 @@
 					"metadata": {
 						"description": "The maximum value of this meter."
 					}
+				},
+				"rollable": {
+					"type": "boolean"
 				}
 			},
 			"metadata": {
@@ -3032,7 +3035,7 @@
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
 				},
-				"asset_type": {
+				"category": {
 					"ref": "Label",
 					"metadata": {
 						"description": "A localized category label for this asset. This is the surtitle above the asset's name on the card.",
@@ -3213,19 +3216,13 @@
 			"mapping": {
 				"clock": {
 					"properties": {
-						"id": {
-							"ref": "AssetAbilityControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
 						"label": {
 							"ref": "InputLabel"
 						},
 						"value": {
 							"type": "int8",
 							"metadata": {
-								"description": "The current number of filled clock segments."
+								"description": "The current value of this input."
 							}
 						},
 						"min": {
@@ -3239,6 +3236,9 @@
 							"metadata": {
 								"description": "The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments."
 							}
+						},
+						"rollable": {
+							"type": "boolean"
 						}
 					},
 					"optionalProperties": {
@@ -3255,29 +3255,26 @@
 				},
 				"counter": {
 					"properties": {
-						"id": {
-							"ref": "AssetAbilityControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
 						"label": {
 							"ref": "InputLabel"
 						},
 						"value": {
-							"type": "int16",
+							"type": "int8",
 							"metadata": {
 								"description": "The current value of this input."
 							}
 						},
 						"min": {
-							"type": "int16",
+							"type": "int8",
 							"metadata": {
 								"description": "The (inclusive) minimum value."
 							}
 						},
 						"max": {
 							"type": "int16"
+						},
+						"rollable": {
+							"type": "boolean"
 						}
 					},
 					"optionalProperties": {
@@ -3294,12 +3291,6 @@
 				},
 				"checkbox": {
 					"properties": {
-						"id": {
-							"ref": "AssetAbilityControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
 						"label": {
 							"ref": "InputLabel"
 						},
@@ -3329,9 +3320,27 @@
 								"description": "An icon associated with this input."
 							}
 						}
+					}
+				},
+				"text": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"type": "string"
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
 					},
 					"metadata": {
-						"description": "Represents a checkbox."
+						"description": "Represents an input that accepts plain text."
 					}
 				}
 			}
@@ -3341,12 +3350,6 @@
 			"mapping": {
 				"text": {
 					"properties": {
-						"id": {
-							"ref": "AssetAbilityOptionFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
 						"label": {
 							"ref": "InputLabel"
 						},
@@ -3387,568 +3390,10 @@
 				"description": "Describes which assets can be attached to this asset. Example: Starforged's Module assets, which can be equipped by Command Vehicle assets. See p. 55 of Starforged for more info."
 			}
 		},
-		"AssetConditionMeterControlField": {
-			"discriminator": "field_type",
-			"mapping": {
-				"checkbox": {
-					"properties": {
-						"id": {
-							"ref": "AssetConditionMeterControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Is the box checked?"
-							}
-						},
-						"is_impact": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
-							}
-						},
-						"disables_asset": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field disable the asset when its value is set to `true`?"
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Represents a checkbox."
-					}
-				},
-				"card_flip": {
-					"properties": {
-						"id": {
-							"ref": "AssetConditionMeterControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Is the card flipped over?"
-							}
-						},
-						"is_impact": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
-							}
-						},
-						"disables_asset": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field disable the asset when its value is set to `true`?"
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "When its value is set to `true` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets)."
-					}
-				}
-			},
-			"metadata": {
-				"description": "A checkbox control field, rendered as part of an asset condition meter."
-			}
-		},
-		"AssetControlField": {
-			"discriminator": "field_type",
-			"mapping": {
-				"condition_meter": {
-					"properties": {
-						"id": {
-							"ref": "AssetControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"type": "int8",
-							"metadata": {
-								"description": "The current value of this meter."
-							}
-						},
-						"min": {
-							"type": "int8",
-							"metadata": {
-								"description": "The minimum value of this meter."
-							}
-						},
-						"max": {
-							"type": "int8",
-							"metadata": {
-								"description": "The maximum value of this meter."
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						},
-						"moves": {
-							"optionalProperties": {
-								"suffer": {
-									"elements": {
-										"ref": "MoveIdWildcard",
-										"metadata": {
-											"examples": [
-												"classic/moves/suffer/companion_endure_harm",
-												"starforged/moves/suffer/companion_takes_a_hit",
-												"starforged/moves/suffer/withstand_damage"
-											]
-										}
-									},
-									"metadata": {
-										"description": "The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option."
-									}
-								},
-								"recover": {
-									"elements": {
-										"ref": "MoveIdWildcard",
-										"metadata": {
-											"examples": [
-												"classic/moves/adventure/heal",
-												"classic/moves/adventure/make_camp",
-												"classic/moves/relationship/sojourn",
-												"starforged/moves/recover/heal",
-												"starforged/moves/recover/repair"
-											]
-										}
-									},
-									"metadata": {
-										"description": "The ID(s) of recovery moves associated with this meter."
-									}
-								}
-							},
-							"metadata": {
-								"description": "Provides hints for moves that interact with this condition meter, such as suffer and recovery moves."
-							}
-						},
-						"controls": {
-							"values": {
-								"ref": "AssetConditionMeterControlField"
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$",
-								"description": "Checkbox controls rendered as part of the condition meter."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\"."
-					}
-				},
-				"select_enhancement": {
-					"properties": {
-						"id": {
-							"ref": "AssetControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"ref": "DictKey",
-							"metadata": {
-								"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
-							}
-						},
-						"choices": {
-							"values": {
-								"discriminator": "choice_type",
-								"mapping": {
-									"choice": {
-										"properties": {
-											"label": {
-												"ref": "InputLabel"
-											}
-										},
-										"optionalProperties": {
-											"enhance_asset": {
-												"ref": "AssetEnhancement"
-											},
-											"enhance_moves": {
-												"elements": {
-													"ref": "MoveEnhancement"
-												}
-											}
-										},
-										"metadata": {
-											"description": "Represents an option in a list of choices."
-										}
-									},
-									"choice_group": {
-										"properties": {
-											"name": {
-												"ref": "InputLabel",
-												"metadata": {
-													"description": "A label for this option group."
-												}
-											},
-											"choices": {
-												"values": {
-													"ref": "SelectEnhancementFieldChoice"
-												},
-												"metadata": {
-													"propertyPattern": "^([a-z][a-z_]*)$"
-												}
-											}
-										},
-										"metadata": {
-											"description": "Represents a grouping of options in a list of choices."
-										}
-									}
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles)."
-					}
-				},
-				"checkbox": {
-					"properties": {
-						"id": {
-							"ref": "AssetControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Is the box checked?"
-							}
-						},
-						"is_impact": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
-							}
-						},
-						"disables_asset": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field disable the asset when its value is set to `true`?"
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Represents a checkbox."
-					}
-				},
-				"card_flip": {
-					"properties": {
-						"id": {
-							"ref": "AssetControlFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Is the card flipped over?"
-							}
-						},
-						"is_impact": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
-							}
-						},
-						"disables_asset": {
-							"type": "boolean",
-							"metadata": {
-								"description": "Does this field disable the asset when its value is set to `true`?"
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "When its value is set to `true` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets)."
-					}
-				}
-			}
-		},
-		"AssetControlFieldEnhancement": {
-			"discriminator": "field_type",
-			"mapping": {
-				"condition_meter": {
-					"properties": {
-						"max": {
-							"type": "int8",
-							"metadata": {
-								"description": "The maximum value of this meter."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\"."
-					}
-				}
-			}
-		},
-		"AssetEnhancement": {
-			"optionalProperties": {
-				"controls": {
-					"values": {
-						"ref": "AssetControlFieldEnhancement"
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
-						"description": "Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset."
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
-				"count_as_impact": {
-					"type": "boolean",
-					"metadata": {
-						"description": "If `true`, this asset counts as an impact (Starforged) or a debility (classic Ironsworn)."
-					}
-				},
-				"attachments": {
-					"ref": "AssetAttachment"
-				},
-				"shared": {
-					"type": "boolean",
-					"metadata": {
-						"description": "Most assets only benefit to their owner, but certain assets (like Starforged's module and command vehicle assets) are shared amongst the player's allies, too."
-					}
-				}
-			},
-			"metadata": {
-				"description": "Describes enhancements made to this asset in a partial asset object. The changes should be applied recursively; only the values that are specified should be changed."
-			}
-		},
-		"AssetOptionField": {
-			"discriminator": "field_type",
-			"mapping": {
-				"select_value": {
-					"properties": {
-						"id": {
-							"ref": "AssetOptionFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"ref": "DictKey",
-							"metadata": {
-								"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
-							}
-						},
-						"choices": {
-							"values": {
-								"ref": "SelectValueFieldChoice"
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Represents a list of mutually exclusive choices."
-					}
-				},
-				"select_enhancement": {
-					"properties": {
-						"id": {
-							"ref": "AssetOptionFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"ref": "DictKey",
-							"metadata": {
-								"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
-							}
-						},
-						"choices": {
-							"values": {
-								"discriminator": "choice_type",
-								"mapping": {
-									"choice": {
-										"properties": {
-											"label": {
-												"ref": "InputLabel"
-											}
-										},
-										"optionalProperties": {
-											"enhance_asset": {
-												"ref": "AssetEnhancement"
-											},
-											"enhance_moves": {
-												"elements": {
-													"ref": "MoveEnhancement"
-												}
-											}
-										},
-										"metadata": {
-											"description": "Represents an option in a list of choices."
-										}
-									},
-									"choice_group": {
-										"properties": {
-											"name": {
-												"ref": "InputLabel",
-												"metadata": {
-													"description": "A label for this option group."
-												}
-											},
-											"choices": {
-												"values": {
-													"ref": "SelectEnhancementFieldChoice"
-												},
-												"metadata": {
-													"propertyPattern": "^([a-z][a-z_]*)$"
-												}
-											}
-										},
-										"metadata": {
-											"description": "Represents a grouping of options in a list of choices."
-										}
-									}
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
-							}
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles)."
-					}
-				},
-				"text": {
-					"properties": {
-						"id": {
-							"ref": "AssetOptionFieldId",
-							"metadata": {
-								"description": "The unique Datasworn ID for this item."
-							}
-						},
-						"label": {
-							"ref": "InputLabel"
-						},
-						"value": {
-							"type": "string"
-						}
-					},
-					"optionalProperties": {
-						"icon": {
-							"ref": "SvgImageUrl",
-							"metadata": {
-								"description": "An icon associated with this input."
-							}
-						}
-					},
-					"metadata": {
-						"description": "Represents an input that accepts plain text."
-					}
-				}
-			},
-			"metadata": {
-				"description": "Options are asset input fields which are set once, usually when the character takes the asset. The most common example is the \"name\" field on companion assets. A more complex example is the choice of a god's stat for the Devotant asset."
-			}
-		},
-		"AssetType": {
+		"AssetCollection": {
 			"properties": {
 				"id": {
-					"ref": "AssetTypeId",
+					"ref": "AssetCollectionId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
 					}
@@ -4022,13 +3467,13 @@
 					}
 				},
 				"enhances": {
-					"ref": "AssetTypeId",
+					"ref": "AssetCollectionId",
 					"metadata": {
 						"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 					}
 				},
 				"replaces": {
-					"ref": "AssetTypeId",
+					"ref": "AssetCollectionId",
 					"metadata": {
 						"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 					}
@@ -4043,6 +3488,545 @@
 				}
 			},
 			"metadata": {}
+		},
+		"AssetConditionMeterControlField": {
+			"discriminator": "field_type",
+			"mapping": {
+				"checkbox": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is the box checked?"
+							}
+						},
+						"is_impact": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
+							}
+						},
+						"disables_asset": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field disable the asset when its value is set to `true`?"
+							}
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					}
+				},
+				"card_flip": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is the card flipped over?"
+							}
+						},
+						"is_impact": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
+							}
+						},
+						"disables_asset": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field disable the asset when its value is set to `true`?"
+							}
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					}
+				}
+			},
+			"metadata": {
+				"description": "A checkbox control field, rendered as part of an asset condition meter."
+			}
+		},
+		"AssetControlField": {
+			"discriminator": "field_type",
+			"mapping": {
+				"condition_meter": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"type": "int8",
+							"metadata": {
+								"description": "The current value of this meter."
+							}
+						},
+						"min": {
+							"type": "int8",
+							"metadata": {
+								"description": "The minimum value of this meter."
+							}
+						},
+						"max": {
+							"type": "int8",
+							"metadata": {
+								"description": "The maximum value of this meter."
+							}
+						},
+						"rollable": {
+							"type": "boolean"
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						},
+						"moves": {
+							"optionalProperties": {
+								"suffer": {
+									"elements": {
+										"ref": "MoveIdWildcard",
+										"metadata": {
+											"examples": [
+												"classic/moves/suffer/companion_endure_harm",
+												"starforged/moves/suffer/companion_takes_a_hit",
+												"starforged/moves/suffer/withstand_damage"
+											]
+										}
+									},
+									"metadata": {
+										"description": "The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option."
+									}
+								},
+								"recover": {
+									"elements": {
+										"ref": "MoveIdWildcard",
+										"metadata": {
+											"examples": [
+												"classic/moves/adventure/heal",
+												"classic/moves/adventure/make_camp",
+												"classic/moves/relationship/sojourn",
+												"starforged/moves/recover/heal",
+												"starforged/moves/recover/repair"
+											]
+										}
+									},
+									"metadata": {
+										"description": "The ID(s) of recovery moves associated with this meter."
+									}
+								}
+							},
+							"metadata": {
+								"description": "Provides hints for moves that interact with this condition meter, such as suffer and recovery moves."
+							}
+						},
+						"controls": {
+							"values": {
+								"ref": "AssetConditionMeterControlField"
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z][a-z_]*)$",
+								"description": "Checkbox controls rendered as part of the condition meter."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\"."
+					}
+				},
+				"select_enhancement": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"ref": "DictKey",
+							"metadata": {
+								"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
+							}
+						},
+						"choices": {
+							"values": {
+								"discriminator": "choice_type",
+								"mapping": {
+									"choice": {
+										"properties": {
+											"label": {
+												"ref": "InputLabel"
+											}
+										},
+										"optionalProperties": {
+											"enhance_asset": {
+												"ref": "AssetEnhancement"
+											},
+											"enhance_moves": {
+												"elements": {
+													"ref": "MoveEnhancement"
+												}
+											}
+										},
+										"metadata": {
+											"description": "Represents an option in a list of choices."
+										}
+									},
+									"choice_group": {
+										"properties": {
+											"name": {
+												"ref": "InputLabel",
+												"metadata": {
+													"description": "A label for this option group."
+												}
+											},
+											"choices": {
+												"values": {
+													"ref": "SelectEnhancementFieldChoice"
+												},
+												"metadata": {
+													"propertyPattern": "^([a-z][a-z_]*)$"
+												}
+											}
+										},
+										"metadata": {
+											"description": "Represents a grouping of options in a list of choices."
+										}
+									}
+								}
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z][a-z_]*)$"
+							}
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles)."
+					}
+				},
+				"checkbox": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is the box checked?"
+							}
+						},
+						"is_impact": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
+							}
+						},
+						"disables_asset": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field disable the asset when its value is set to `true`?"
+							}
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					}
+				},
+				"card_flip": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is the card flipped over?"
+							}
+						},
+						"is_impact": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
+							}
+						},
+						"disables_asset": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Does this field disable the asset when its value is set to `true`?"
+							}
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					}
+				}
+			}
+		},
+		"AssetControlFieldEnhancement": {
+			"discriminator": "field_type",
+			"mapping": {
+				"condition_meter": {
+					"properties": {
+						"max": {
+							"type": "int8",
+							"metadata": {
+								"description": "The maximum value of this meter."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\"."
+					}
+				}
+			}
+		},
+		"AssetEnhancement": {
+			"optionalProperties": {
+				"controls": {
+					"values": {
+						"ref": "AssetControlFieldEnhancement"
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z][a-z_]*)$",
+						"description": "Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"count_as_impact": {
+					"type": "boolean",
+					"metadata": {
+						"description": "If `true`, this asset counts as an impact (Starforged) or a debility (classic Ironsworn)."
+					}
+				},
+				"attachments": {
+					"ref": "AssetAttachment"
+				},
+				"shared": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Most assets only benefit to their owner, but certain assets (like Starforged's module and command vehicle assets) are shared amongst the player's allies, too."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Describes enhancements made to this asset in a partial asset object. The changes should be applied recursively; only the values that are specified should be changed."
+			}
+		},
+		"AssetOptionField": {
+			"discriminator": "field_type",
+			"mapping": {
+				"select_value": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"ref": "DictKey",
+							"metadata": {
+								"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
+							}
+						},
+						"choices": {
+							"values": {
+								"ref": "SelectValueFieldChoice"
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z][a-z_]*)$"
+							}
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Represents a list of mutually exclusive choices."
+					}
+				},
+				"select_enhancement": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"ref": "DictKey",
+							"metadata": {
+								"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
+							}
+						},
+						"choices": {
+							"values": {
+								"discriminator": "choice_type",
+								"mapping": {
+									"choice": {
+										"properties": {
+											"label": {
+												"ref": "InputLabel"
+											}
+										},
+										"optionalProperties": {
+											"enhance_asset": {
+												"ref": "AssetEnhancement"
+											},
+											"enhance_moves": {
+												"elements": {
+													"ref": "MoveEnhancement"
+												}
+											}
+										},
+										"metadata": {
+											"description": "Represents an option in a list of choices."
+										}
+									},
+									"choice_group": {
+										"properties": {
+											"name": {
+												"ref": "InputLabel",
+												"metadata": {
+													"description": "A label for this option group."
+												}
+											},
+											"choices": {
+												"values": {
+													"ref": "SelectEnhancementFieldChoice"
+												},
+												"metadata": {
+													"propertyPattern": "^([a-z][a-z_]*)$"
+												}
+											}
+										},
+										"metadata": {
+											"description": "Represents a grouping of options in a list of choices."
+										}
+									}
+								}
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z][a-z_]*)$"
+							}
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles)."
+					}
+				},
+				"text": {
+					"properties": {
+						"label": {
+							"ref": "InputLabel"
+						},
+						"value": {
+							"type": "string"
+						}
+					},
+					"optionalProperties": {
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon associated with this input."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Represents an input that accepts plain text."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Options are asset input fields which are set once, usually when the character takes the asset. The most common example is the \"name\" field on companion assets. A more complex example is the choice of a god's stat for the Devotant asset."
+			}
+		},
+		"ConditionMeterField": {
+			"properties": {
+				"label": {
+					"ref": "InputLabel"
+				},
+				"value": {
+					"type": "int8",
+					"metadata": {
+						"description": "The current value of this meter."
+					}
+				},
+				"min": {
+					"type": "int8",
+					"metadata": {
+						"description": "The minimum value of this meter."
+					}
+				},
+				"max": {
+					"type": "int8",
+					"metadata": {
+						"description": "The maximum value of this meter."
+					}
+				},
+				"rollable": {
+					"type": "boolean"
+				},
+				"field_type": {
+					"enum": [
+						"condition_meter"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A meter with an integer value, bounded by a minimum and maximum."
+			}
 		},
 		"SelectEnhancementFieldChoice": {
 			"properties": {

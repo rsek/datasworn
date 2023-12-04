@@ -23,7 +23,7 @@ import type * as Id from './Id.js'
 import * as Localize from './Localize.js'
 import * as Utils from '../Utils.js'
 import * as Generic from '../Generic.js'
-
+import { findLastIndex } from 'lodash-es'
 
 /**
  * @abstract
@@ -48,7 +48,7 @@ export type TInput<Value extends TSchema> = TObject<{
 	value: Value
 }>
 export interface Input<Value> {
-	name: string
+	label: string
 	value: Value
 }
 
@@ -83,108 +83,140 @@ export interface Range<
 	max: Max
 }
 
-export const Counter = Utils.Assign(
-	[
-		Input(Type.Integer({ default: 0 })),
+function IntegerInput<
+	Min extends TFuzzySchemaOf<number>,
+	Max extends TFuzzySchemaOf<number>,
+	Rollable extends TLiteral<boolean>
+>(
+	{ min, max, rollable }: { min: Min; max: Max; rollable: Rollable },
+	options: ObjectOptions = {}
+) {
+	const mixin = Utils.Assign([
+		Input(
+			Type.Integer({ default: 0, [JsonTypeDef]: { schema: { type: 'int8' } } })
+		),
 		Range({
-			min: Type.Integer({ default: 0 }),
-			max: Utils.Nullable(Type.Integer(), {
-				default: null,
-				description:
-					"The (inclusive) maximum value, or `null` if there's no maximum."
-			})
+			min: { [JsonTypeDef]: { schema: { type: 'int8' } }, ...min },
+			max: { [JsonTypeDef]: { schema: { type: 'int8' } }, ...max }
 		})
-	],
+	])
+
+	return Utils.Assign(
+		[
+			mixin,
+			Type.Object({
+				rollable: {
+					[JsonTypeDef]: { schema: { type: 'boolean' } },
+					default: rollable.const,
+					...rollable
+				}
+			})
+		],
+		options
+	) as unknown as TIntegerInput<Min, Max, Rollable>
+}
+export type TIntegerInput<
+	Min extends TFuzzySchemaOf<number> = TFuzzySchemaOf<number>,
+	Max extends TFuzzySchemaOf<number> = TFuzzySchemaOf<number>,
+	Rollable extends TLiteral<boolean> = TLiteral<boolean>
+> = TObject<{
+	label: TRef<TString>
+	min: Min
+	max: Max
+	rollable: Rollable
+	value: TInteger
+}>
+
+// TInput<TInteger> &
+// 	TRange<Min, Max>
+
+export const Counter: TIntegerInput<
+	TInteger,
+	Utils.TNullable<TInteger>,
+	TLiteral<false>
+> = IntegerInput(
+	{
+		min: Type.Integer({ default: 0 }),
+		max: Utils.Nullable(Type.Integer(), {
+			default: null,
+			description:
+				"The (inclusive) maximum value, or `null` if there's no maximum."
+		}),
+		rollable: Type.Literal(false)
+	},
 	{
 		description:
 			'A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.',
 		$comment: 'Semantics are similar to `<input type="number" step="1">`'
 	}
 ) satisfies TInput<TInteger>
+
 export type TCounter = typeof Counter
-export type Counter = Static<typeof Counter>
 
-export const Clock = Utils.Assign(
-	[
-		Input(
-			Type.Integer({
-				[JsonTypeDef]: { schema: { type: 'int8' } },
+export type Counter = Static<TCounter>
 
-				default: 0,
-				description: 'The current number of filled clock segments.'
-			})
-		),
-		Range({
-			min: {
-				...LiteralZero,
-				[JsonTypeDef]: { schema: { type: 'int8' } },
-				description:
-					'The minimum number of filled clock segments. This is always 0.'
-			},
-			max: Type.Integer({
-				[JsonTypeDef]: { schema: { type: 'int8' } },
-				title: 'ClockSize',
-				multipleOf: 2,
-				minimum: 2,
-				// examples: [4, 6, 8, 10],
-				description:
-					'The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.'
-			})
-		})
-	],
+// value: 'The current number of filled clock segments.',
+export const Clock = IntegerInput(
+	{
+		min: {
+			...LiteralZero,
+			description:
+				'The minimum number of filled clock segments. This is always 0.'
+		} as TLiteral<0>,
+		max: Type.Integer({
+			title: 'ClockSize',
+			multipleOf: 2,
+			minimum: 2,
+			// examples: [4, 6, 8, 10],
+			description:
+				'The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.'
+		}),
+		rollable: Type.Literal(false)
+	},
 	{
 		description: 'A clock with 4 or more segments.',
 		$comment:
 			'Semantics are similar to `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).'
 	}
-) satisfies TInput<TInteger>
+)
 export type TClock = typeof Clock
 export type Clock = Static<typeof Clock>
 
 /**
- * A meter with an integer value, bounded by a minimum and maximum.
+ * A meter with an integer value, bounded by a minimum and maximum
  * @abstract
  */
-export function Meter<
-	Min extends TInteger | TLiteral<number> = TInteger,
-	Max extends TInteger | TLiteral<number> = TInteger
->(min: Min, max: Max, options: ObjectOptions = {}) {
-	return Utils.Assign(
-		[
-			Input(
-				Type.Integer({
-					[JsonTypeDef]: { schema: { type: 'int8' } },
-					description: 'The current value of this meter.'
-				})
-			),
-			Range<Min, Max>({
-				min: {
-					description: 'The minimum value of this meter.',
-					[JsonTypeDef]: { schema: { type: 'int8' } },
-					...min
-				},
-				max: {
-					description: 'The maximum value of this meter.',
-					[JsonTypeDef]: { schema: { type: 'int8' } },
-					...max
-				}
-			})
-		],
+export function Meter<Rollable extends TLiteral<boolean>>(
+	rollable: Rollable,
+	options: ObjectOptions = {}
+) {
+	return setDescriptions(
+		IntegerInput(
+			{
+				min: Type.Integer({
+					default: 0,
+					description: 'The minimum value of this meter.'
+				}),
+				max: Type.Integer({ description: 'The maximum value of this meter.' }),
+				rollable
+			},
+			{
+				...options,
+				description:
+					'A meter with an integer value, bounded by a minimum and maximum.'
+			}
+		),
 		{
-			description:
-				'A meter with an integer value, bounded by a minimum and maximum.',
-			options
+			value: 'The current value of this meter.'
 		}
 	)
 }
-export type TMeter<
-	Min extends TInteger | TLiteral<number> = TInteger,
-	Max extends TInteger | TLiteral<number> = TInteger
-> = Utils.TAssign<[TInput<TInteger>, TRange<Min, Max>]>
-export type Meter<
-	Min extends number = number,
-	Max extends number = number
-> = Utils.Assign<Range<Min, Max>, Input<number>>
+
+export type TMeter<Rollable extends TLiteral<boolean> = TLiteral<boolean>> =
+	ReturnType<typeof Meter<Rollable>>
+export type Meter<Rollable extends boolean = boolean> = Static<
+	TMeter<TLiteral<Rollable>>
+>
 
 /**
  * Represents a checkbox, similar to an HTML `<input type="checkbox">` element.
@@ -336,5 +368,3 @@ export type Select<Option extends SelectChoice<any>> = Static<
 	typeof SelectBase
 > &
 	Choices<Option>
-
-

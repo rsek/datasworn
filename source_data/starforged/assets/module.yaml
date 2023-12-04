@@ -24,7 +24,7 @@ assets:
       engine_upgrade:
         name: Engine Upgrade
         <<: &ModuleAsset
-          asset_type: Module
+          category: Module
           shared: true
           color: *ModuleAsset.color
           source: &AssetSource

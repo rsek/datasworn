@@ -22,7 +22,7 @@ assets:
       banshee:
         name: Banshee
         <<: &CompanionAsset
-          asset_type: Companion
+          category: Companion
           color: *CompanionAsset.color
           source:
             <<: *Source

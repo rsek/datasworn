@@ -16,7 +16,7 @@ import type * as Generic from '../schema/datasworn/Generic.js'
 export const Asset = sourcedTransformer<
 	DataswornSource.Asset,
 	Datasworn.Asset,
-	Datasworn.AssetType
+	Datasworn.AssetCollection
 >({
 	options: function (
 		this: SourcedNode,
@@ -139,8 +139,8 @@ export const AssetAbility: Transformer<
 	}
 }
 
-export const AssetType = collectionTransformer<
-	DataswornSource.AssetType,
-	Datasworn.AssetType,
+export const AssetCollection = collectionTransformer<
+	DataswornSource.AssetCollection,
+	Datasworn.AssetCollection,
 	null
 >('assets', Asset, {})

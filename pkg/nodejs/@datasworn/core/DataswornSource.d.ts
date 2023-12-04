@@ -29,7 +29,7 @@ export interface Ruleset {
 	 * A dictionary object containing asset types, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	assets?: Record<DictKey, AssetType>
+	assets?: Record<DictKey, AssetCollection>
 	/**
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
@@ -85,7 +85,7 @@ export interface Expansion {
 	 * A dictionary object containing asset types, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	assets?: Record<DictKey, AssetType>
+	assets?: Record<DictKey, AssetCollection>
 	/**
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
@@ -156,6 +156,14 @@ export type AssetAbilityId = string
 export type AssetAbilityOptionFieldId = string
 
 /**
+ * A unique ID for an AssetCollection.
+ * @pattern ```javascript
+ * /^([a-z0-9_]{3,})\/collections\/assets\/([a-z][a-z_]*)$/
+ * ```
+ */
+export type AssetCollectionId = string
+
+/**
  * A unique ID for an AssetConditionMeterControlField.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/controls\/([a-z][a-z_]*)\/controls\/([a-z][a-z_]*)$/
@@ -210,14 +218,6 @@ export type AssetOptionFieldId = string
  * ```
  */
 export type AssetOptionFieldIdWildcard = string
-
-/**
- * A unique ID for an AssetType.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/assets\/([a-z][a-z_]*)$/
- * ```
- */
-export type AssetTypeId = string
 
 /**
  * A unique ID for an AtlasEntry.
@@ -716,8 +716,9 @@ export interface ConditionMeterRule {
 	label: InputLabel
 	/**
 	 * The current value of this meter.
+	 * @default 0
 	 */
-	value: number
+	value?: number
 	/**
 	 * The minimum value of this meter.
 	 * @default 0
@@ -725,9 +726,12 @@ export interface ConditionMeterRule {
 	min?: number
 	/**
 	 * The maximum value of this meter.
-	 * @default 5
 	 */
-	max?: number
+	max: number
+	/**
+	 * @default 0
+	 */
+	rollable?: number
 }
 
 /**
@@ -2231,7 +2235,7 @@ export interface Asset {
 	 * @example "Ritual"
 	 * @example "Support Vehicle"
 	 */
-	asset_type: Label
+	category: Label
 	/**
 	 * This asset's icon.
 	 */
@@ -2315,127 +2319,18 @@ export interface AssetAbility {
 }
 
 /**
- * Represents a checkbox.
- * @remarks Semantics are similar to the `<input type="checkbox">` element.
- */
-export interface AssetAbilityCheckbox {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetAbilityControlFieldId
-	label: InputLabel
-	/**
-	 * Is the box checked?
-	 * @default false
-	 */
-	value?: boolean
-	field_type: 'checkbox'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-	/**
-	 * Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?
-	 * @default false
-	 */
-	is_impact?: boolean
-	/**
-	 * Does this field disable the asset when its value is set to `true`?
-	 * @default false
-	 */
-	disables_asset?: boolean
-}
-
-/**
- * A clock with 4 or more segments.
- * @remarks Semantics are similar to `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).
- */
-export interface AssetAbilityClock {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetAbilityControlFieldId
-	label: InputLabel
-	/**
-	 * The current number of filled clock segments.
-	 * @default 0
-	 */
-	value?: number
-	/**
-	 * The minimum number of filled clock segments. This is always 0.
-	 */
-	min?: 0
-	/**
-	 * The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.
-	 */
-	max: number
-	field_type: 'clock'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-}
-
-/**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
  */
 export type AssetAbilityControlField =
-	| AssetAbilityClock
-	| AssetAbilityCounter
-	| AssetAbilityCheckbox
-
-/**
- * A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.
- * @remarks Semantics are similar to `<input type="number" step="1">`
- */
-export interface AssetAbilityCounter {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetAbilityControlFieldId
-	label: InputLabel
-	/**
-	 * The current value of this input.
-	 * @default 0
-	 */
-	value?: number
-	/**
-	 * The (inclusive) minimum value.
-	 * @default 0
-	 */
-	min?: number
-	/**
-	 * The (inclusive) maximum value, or `null` if there's no maximum.
-	 * @default null
-	 */
-	max?: number | null
-	field_type: 'counter'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-}
+	| ClockField
+	| CounterField
+	| AssetCheckboxField
+	| TextField
 
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
  */
-export type AssetAbilityOptionField = {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetAbilityOptionFieldId
-	label: InputLabel
-	/**
-	 * The content of this text input, or `null` if it's empty
-	 * @default null
-	 */
-	value?: string | null
-	field_type: 'text'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-}
+export type AssetAbilityOptionField = TextField
 
 /**
  * Describes which assets can be attached to this asset. Example: Starforged's Module assets, which can be equipped by Command Vehicle assets. See p. 55 of Starforged for more info.
@@ -2452,14 +2347,7 @@ export interface AssetAttachment {
 	max?: number | null
 }
 
-/**
- * When its value is set to `true` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).
- */
-export interface AssetCardFlipControlField {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetControlFieldId
+export interface AssetCardFlipField {
 	label: InputLabel
 	/**
 	 * Is the card flipped over?
@@ -2483,15 +2371,7 @@ export interface AssetCardFlipControlField {
 	disables_asset?: boolean
 }
 
-/**
- * Represents a checkbox.
- * @remarks Semantics are similar to the `<input type="checkbox">` element.
- */
-export interface AssetCheckboxControlField {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetControlFieldId
+export interface AssetCheckboxField {
 	label: InputLabel
 	/**
 	 * Is the box checked?
@@ -2515,279 +2395,11 @@ export interface AssetCheckboxControlField {
 	disables_asset?: boolean
 }
 
-/**
- * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
- */
-export interface AssetConditionMeter {
+export interface AssetCollection {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: AssetControlFieldId
-	label: InputLabel
-	/**
-	 * The current value of this meter.
-	 */
-	value: number
-	/**
-	 * The minimum value of this meter.
-	 * @default 0
-	 */
-	min?: number
-	/**
-	 * The maximum value of this meter.
-	 */
-	max: number
-	field_type: 'condition_meter'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-	/**
-	 * Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.
-	 */
-	moves?: {
-		/**
-		 * The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option.
-		 */
-		suffer?: MoveIdWildcard[]
-		/**
-		 * The ID(s) of recovery moves associated with this meter.
-		 */
-		recover?: MoveIdWildcard[]
-	}
-	/**
-	 * Checkbox controls rendered as part of the condition meter.
-	 * @remarks Deserialize as a dictionary object.
-	 */
-	controls?: Record<DictKey, AssetConditionMeterControlField>
-}
-
-/**
- * A checkbox control field, rendered as part of an asset condition meter.
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
- */
-export type AssetConditionMeterControlField =
-	| {
-			/**
-			 * The unique Datasworn ID for this item.
-			 */
-			id?: AssetConditionMeterControlFieldId
-			label: InputLabel
-			/**
-			 * Is the box checked?
-			 * @default false
-			 */
-			value?: boolean
-			field_type: 'checkbox'
-			/**
-			 * An icon associated with this input.
-			 */
-			icon?: SvgImageUrl
-			/**
-			 * Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?
-			 * @default false
-			 */
-			is_impact?: boolean
-			/**
-			 * Does this field disable the asset when its value is set to `true`?
-			 * @default false
-			 */
-			disables_asset?: boolean
-	  }
-	| {
-			/**
-			 * The unique Datasworn ID for this item.
-			 */
-			id?: AssetConditionMeterControlFieldId
-			label: InputLabel
-			/**
-			 * Is the card flipped over?
-			 * @default false
-			 */
-			value?: boolean
-			field_type: 'card_flip'
-			/**
-			 * An icon associated with this input.
-			 */
-			icon?: SvgImageUrl
-			/**
-			 * Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?
-			 * @default false
-			 */
-			is_impact?: boolean
-			/**
-			 * Does this field disable the asset when its value is set to `true`?
-			 * @default false
-			 */
-			disables_asset?: boolean
-	  }
-
-/**
- * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
- */
-export interface AssetConditionMeterEnhancement {
-	/**
-	 * The maximum value of this meter.
-	 */
-	max: number
-	field_type: 'condition_meter'
-}
-
-/**
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
- */
-export type AssetControlField =
-	| AssetConditionMeter
-	| AssetSelectEnhancementControlField
-	| AssetCheckboxControlField
-	| AssetCardFlipControlField
-
-/**
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
- */
-export type AssetControlFieldEnhancement = AssetConditionMeterEnhancement
-
-/**
- * Describes enhancements made to this asset in a partial asset object. The changes should be applied recursively; only the values that are specified should be changed.
- */
-export interface AssetEnhancement {
-	/**
-	 * Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.
-	 * @remarks Deserialize as a dictionary object.
-	 */
-	controls?: Record<DictKey, AssetControlFieldEnhancement>
-	suggestions?: Suggestions
-	/**
-	 * If `true`, this asset counts as an impact (Starforged) or a debility (classic Ironsworn).
-	 */
-	count_as_impact?: boolean
-	attachments?: AssetAttachment
-	/**
-	 * Most assets only benefit to their owner, but certain assets (like Starforged's module and command vehicle assets) are shared amongst the player's allies, too.
-	 */
-	shared?: boolean
-}
-
-/**
- * Options are asset input fields which are set once, usually when the character takes the asset. The most common example is the "name" field on companion assets. A more complex example is the choice of a god's stat for the Devotant asset.
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
- */
-export type AssetOptionField =
-	| AssetSelectValueOptionField
-	| AssetSelectEnhancementOptionField
-	| AssetTextOptionField
-
-/**
- * Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).
- * @remarks Semantics are similar to the HTML `<select>` element
- */
-export interface AssetSelectEnhancementControlField {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetControlFieldId
-	label: InputLabel
-	/**
-	 * The current value of this input.
-	 * @default null
-	 */
-	value?: DictKey | null
-	/**
-	 * @remarks Deserialize as a dictionary object.
-	 */
-	choices: Record<
-		DictKey,
-		SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup
-	>
-	field_type: 'select_enhancement'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-}
-
-/**
- * Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).
- * @remarks Semantics are similar to the HTML `<select>` element
- */
-export interface AssetSelectEnhancementOptionField {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetOptionFieldId
-	label: InputLabel
-	/**
-	 * The current value of this input.
-	 * @default null
-	 */
-	value?: DictKey | null
-	/**
-	 * @remarks Deserialize as a dictionary object.
-	 */
-	choices: Record<
-		DictKey,
-		SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup
-	>
-	field_type: 'select_enhancement'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-}
-
-/**
- * Represents a list of mutually exclusive choices.
- * @remarks Semantics are similar to the HTML `<select>` element
- */
-export interface AssetSelectValueOptionField {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetOptionFieldId
-	label: InputLabel
-	/**
-	 * The current value of this input.
-	 * @default null
-	 */
-	value?: DictKey | null
-	/**
-	 * @remarks Deserialize as a dictionary object.
-	 */
-	choices: Record<DictKey, SelectValueFieldChoice>
-	field_type: 'select_value'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-}
-
-/**
- * Represents an input that accepts plain text.
- * @remarks Semantics are similar to the HTML `<input type="text">` element.
- */
-export interface AssetTextOptionField {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetOptionFieldId
-	label: InputLabel
-	/**
-	 * The content of this text input, or `null` if it's empty
-	 * @default null
-	 */
-	value?: string | null
-	field_type: 'text'
-	/**
-	 * An icon associated with this input.
-	 */
-	icon?: SvgImageUrl
-}
-
-export interface AssetType {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id?: AssetTypeId
+	id?: AssetCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2822,15 +2434,231 @@ export interface AssetType {
 	/**
 	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
 	 */
-	enhances?: AssetTypeId
+	enhances?: AssetCollectionId
 	/**
 	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
 	 */
-	replaces?: AssetTypeId
+	replaces?: AssetCollectionId
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	contents?: Record<DictKey, Asset>
+}
+
+/**
+ * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
+ */
+export interface AssetConditionMeter {
+	label: InputLabel
+	/**
+	 * The current value of this meter.
+	 * @default 0
+	 */
+	value?: number
+	/**
+	 * The minimum value of this meter.
+	 * @default 0
+	 */
+	min?: number
+	/**
+	 * The maximum value of this meter.
+	 */
+	max: number
+	rollable?: true
+	field_type: 'condition_meter'
+	/**
+	 * An icon associated with this input.
+	 */
+	icon?: SvgImageUrl
+	/**
+	 * Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.
+	 */
+	moves?: {
+		/**
+		 * The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option.
+		 */
+		suffer?: MoveIdWildcard[]
+		/**
+		 * The ID(s) of recovery moves associated with this meter.
+		 */
+		recover?: MoveIdWildcard[]
+	}
+	/**
+	 * Checkbox controls rendered as part of the condition meter.
+	 * @remarks Deserialize as a dictionary object.
+	 */
+	controls?: Record<DictKey, AssetConditionMeterControlField>
+}
+
+/**
+ * A checkbox control field, rendered as part of an asset condition meter.
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
+ */
+export type AssetConditionMeterControlField =
+	| AssetCheckboxField
+	| AssetCardFlipField
+
+/**
+ * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
+ */
+export interface AssetConditionMeterEnhancement {
+	/**
+	 * The maximum value of this meter.
+	 */
+	max: number
+	field_type: 'condition_meter'
+}
+
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
+ */
+export type AssetControlField =
+	| AssetConditionMeter
+	| SelectEnhancementField
+	| AssetCheckboxField
+	| AssetCardFlipField
+
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
+ */
+export type AssetControlFieldEnhancement = AssetConditionMeterEnhancement
+
+/**
+ * Describes enhancements made to this asset in a partial asset object. The changes should be applied recursively; only the values that are specified should be changed.
+ */
+export interface AssetEnhancement {
+	/**
+	 * Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.
+	 * @remarks Deserialize as a dictionary object.
+	 */
+	controls?: Record<DictKey, AssetControlFieldEnhancement>
+	suggestions?: Suggestions
+	/**
+	 * If `true`, this asset counts as an impact (Starforged) or a debility (classic Ironsworn).
+	 */
+	count_as_impact?: boolean
+	attachments?: AssetAttachment
+	/**
+	 * Most assets only benefit to their owner, but certain assets (like Starforged's module and command vehicle assets) are shared amongst the player's allies, too.
+	 */
+	shared?: boolean
+}
+
+/**
+ * Options are asset input fields which are set once, usually when the character takes the asset. The most common example is the "name" field on companion assets. A more complex example is the choice of a god's stat for the Devotant asset.
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.
+ */
+export type AssetOptionField =
+	| SelectValueField
+	| SelectEnhancementField
+	| TextField
+
+/**
+ * A clock with 4 or more segments.
+ * @remarks Semantics are similar to `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).
+ */
+export interface ClockField {
+	label: InputLabel
+	/**
+	 * The current value of this input.
+	 * @default 0
+	 */
+	value?: number
+	/**
+	 * The minimum number of filled clock segments. This is always 0.
+	 */
+	min?: 0
+	/**
+	 * The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.
+	 */
+	max: number
+	rollable?: false
+	field_type: 'clock'
+	/**
+	 * An icon associated with this input.
+	 */
+	icon?: SvgImageUrl
+}
+
+/**
+ * A meter with an integer value, bounded by a minimum and maximum.
+ */
+export interface ConditionMeterField {
+	label: InputLabel
+	/**
+	 * The current value of this meter.
+	 * @default 0
+	 */
+	value?: number
+	/**
+	 * The minimum value of this meter.
+	 * @default 0
+	 */
+	min?: number
+	/**
+	 * The maximum value of this meter.
+	 */
+	max: number
+	rollable?: true
+	field_type: 'condition_meter'
+	/**
+	 * An icon associated with this input.
+	 */
+	icon?: SvgImageUrl
+}
+
+/**
+ * A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.
+ * @remarks Semantics are similar to `<input type="number" step="1">`
+ */
+export interface CounterField {
+	label: InputLabel
+	/**
+	 * The current value of this input.
+	 * @default 0
+	 */
+	value?: number
+	/**
+	 * The (inclusive) minimum value.
+	 * @default 0
+	 */
+	min?: number
+	/**
+	 * The (inclusive) maximum value, or `null` if there's no maximum.
+	 * @default null
+	 */
+	max?: number | null
+	rollable?: false
+	field_type: 'counter'
+	/**
+	 * An icon associated with this input.
+	 */
+	icon?: SvgImageUrl
+}
+
+/**
+ * Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).
+ * @remarks Semantics are similar to the HTML `<select>` element
+ */
+export interface SelectEnhancementField {
+	label: InputLabel
+	/**
+	 * The current value of this input.
+	 * @default null
+	 */
+	value?: DictKey | null
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 */
+	choices: Record<
+		DictKey,
+		SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup
+	>
+	field_type: 'select_enhancement'
+	/**
+	 * An icon associated with this input.
+	 */
+	icon?: SvgImageUrl
 }
 
 /**
@@ -2858,6 +2686,28 @@ export interface SelectEnhancementFieldChoiceGroup {
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	choices: Record<DictKey, SelectEnhancementFieldChoice>
+}
+
+/**
+ * Represents a list of mutually exclusive choices.
+ * @remarks Semantics are similar to the HTML `<select>` element
+ */
+export interface SelectValueField {
+	label: InputLabel
+	/**
+	 * The current value of this input.
+	 * @default null
+	 */
+	value?: DictKey | null
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 */
+	choices: Record<DictKey, SelectValueFieldChoice>
+	field_type: 'select_value'
+	/**
+	 * An icon associated with this input.
+	 */
+	icon?: SvgImageUrl
 }
 
 /**
@@ -2953,6 +2803,24 @@ export type SelectValueFieldChoice =
 			 */
 			using: 'custom'
 	  }
+
+/**
+ * Represents an input that accepts plain text.
+ * @remarks Semantics are similar to the HTML `<input type="text">` element.
+ */
+export interface TextField {
+	label: InputLabel
+	/**
+	 * The content of this text input, or `null` if it's empty
+	 * @default null
+	 */
+	value?: string | null
+	field_type: 'text'
+	/**
+	 * An icon associated with this input.
+	 */
+	icon?: SvgImageUrl
+}
 
 /**
  * A setting truth category.

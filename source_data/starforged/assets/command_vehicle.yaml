@@ -23,7 +23,7 @@ assets:
         name: Starship
         <<: &CommandVehicleAsset
           shared: true
-          asset_type: Command Vehicle
+          category: Command Vehicle
           color: *CommandVehicle.color
           source: &AssetSource
             <<: *Source

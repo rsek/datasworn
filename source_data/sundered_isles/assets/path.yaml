@@ -14,7 +14,7 @@ assets:
       automaton:
         source: *Source
         name: Automaton
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -42,7 +42,7 @@ assets:
       cannoneer:
         source: *Source
         name: Cannoneer
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -54,7 +54,7 @@ assets:
       crew_commander:
         source: *Source
         name: Crew Commander
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: &crew_commander.0 |-
@@ -124,7 +124,7 @@ assets:
       cutthroat:
         source: *Source
         name: Cutthroat
-        asset_type: Path
+        category: Path
         requirement: If you wield knives...
         abilities:
           - enabled: true
@@ -137,7 +137,7 @@ assets:
       deck_clearer:
         source: *Source
         name: Deck Clearer
-        asset_type: Path
+        category: Path
         requirement: If you wield a scattergun...
         abilities:
           - enabled: true
@@ -150,7 +150,7 @@ assets:
       duelist:
         source: *Source
         name: Duelist
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -162,7 +162,7 @@ assets:
       harpooner:
         source: *Source
         name: Harpooner
-        asset_type: Path
+        category: Path
         requirement: If you wield a handheld harpoon...
         abilities:
           - enabled: true
@@ -175,7 +175,7 @@ assets:
       merchant:
         source: *Source
         name: Merchant
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -190,7 +190,7 @@ assets:
       musician:
         source: *Source
         name: Musician
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -205,7 +205,7 @@ assets:
       musketeer:
         source: *Source
         name: Musketeer
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -217,7 +217,7 @@ assets:
       necromancer:
         source: *Source
         name: necromancer
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -272,7 +272,7 @@ assets:
       overlander:
         source: *Source
         name: Overlander
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -284,7 +284,7 @@ assets:
       pirate_captain:
         source: *Source
         name: Pirate Captain
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -298,7 +298,7 @@ assets:
       pistoleer:
         source: *Source
         name: Pistoleer
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -310,7 +310,7 @@ assets:
       scholar:
         source: *Source
         name: Scholar
-        asset_type: Path
+        category: Path
         options:
           field_one:
             label: field
@@ -329,7 +329,7 @@ assets:
       seadog:
         source: *Source
         name: Seadog
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -341,7 +341,7 @@ assets:
       shipwright:
         source: *Source
         name: Shipwright
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -353,7 +353,7 @@ assets:
       socialite:
         source: *Source
         name: Socialite
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -369,7 +369,7 @@ assets:
       sorcerer:
         source: *Source
         name: Sorcerer
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -385,7 +385,7 @@ assets:
       spy:
         source: *Source
         name: Spy
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -400,7 +400,7 @@ assets:
       swashbuckler:
         source: *Source
         name: Swashbuckler
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -412,7 +412,7 @@ assets:
       urchin:
         source: *Source
         name: Urchin
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: |-
@@ -462,7 +462,7 @@ assets:
       windbinder:
         source: *Source
         name: Windbinder
-        asset_type: Path
+        category: Path
         abilities:
           - enabled: true
             text: &windbinder.0 |-

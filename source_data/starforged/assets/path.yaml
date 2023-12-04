@@ -22,7 +22,7 @@ assets:
       ace:
         name: Ace
         <<: &PathAsset
-          asset_type: Path
+          category: Path
           color: *PathAsset.color
           source: &AssetSource
             <<: *Source

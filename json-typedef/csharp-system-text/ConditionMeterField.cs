@@ -5,25 +5,24 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A clock with 4 or more segments.
+    /// A meter with an integer value, bounded by a minimum and maximum.
     /// </summary>
-    public class AssetAbilityControlFieldClock : AssetAbilityControlField
+    public class ConditionMeterField
     {
         [JsonPropertyName("field_type")]
-        public string FieldType { get => "clock"; }
+        public ConditionMeterFieldFieldType FieldType { get; set; }
 
         [JsonPropertyName("label")]
         public InputLabel Label { get; set; }
 
         /// <summary>
-        /// The size of the clock -- in other words, the maximum number of
-        /// filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.
+        /// The maximum value of this meter.
         /// </summary>
         [JsonPropertyName("max")]
         public sbyte Max { get; set; }
 
         /// <summary>
-        /// The minimum number of filled clock segments. This is always 0.
+        /// The minimum value of this meter.
         /// </summary>
         [JsonPropertyName("min")]
         public sbyte Min { get; set; }
@@ -32,7 +31,7 @@ namespace Datasworn
         public bool Rollable { get; set; }
 
         /// <summary>
-        /// The current value of this input.
+        /// The current value of this meter.
         /// </summary>
         [JsonPropertyName("value")]
         public sbyte Value { get; set; }

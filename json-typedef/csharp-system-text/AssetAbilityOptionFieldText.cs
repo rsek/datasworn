@@ -12,12 +12,6 @@ namespace Datasworn
         [JsonPropertyName("field_type")]
         public string FieldType { get => "text"; }
 
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetAbilityOptionFieldId Id { get; set; }
-
         [JsonPropertyName("label")]
         public InputLabel Label { get; set; }
 

@@ -24,7 +24,7 @@ public class RulesPackageExpansion extends RulesPackage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("assets")
-    private Map<String, AssetType> assets;
+    private Map<String, AssetCollection> assets;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("atlas")
@@ -117,7 +117,7 @@ public class RulesPackageExpansion extends RulesPackage {
      * Getter for assets.<p>
      * A dictionary object containing asset types, which contain assets.
      */
-    public Map<String, AssetType> getAssets() {
+    public Map<String, AssetCollection> getAssets() {
         return assets;
     }
 
@@ -125,7 +125,7 @@ public class RulesPackageExpansion extends RulesPackage {
      * Setter for assets.<p>
      * A dictionary object containing asset types, which contain assets.
      */
-    public void setAssets(Map<String, AssetType> assets) {
+    public void setAssets(Map<String, AssetCollection> assets) {
         this.assets = assets;
     }
 

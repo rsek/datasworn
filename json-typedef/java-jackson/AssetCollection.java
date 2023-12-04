@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 @JsonSerialize
-public class AssetType {
+public class AssetCollection {
     @JsonProperty("id")
-    private AssetTypeId id;
+    private AssetCollectionId id;
 
     @JsonProperty("name")
     private Label name;
@@ -37,7 +37,7 @@ public class AssetType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("enhances")
-    private AssetTypeId enhances;
+    private AssetCollectionId enhances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
@@ -49,7 +49,7 @@ public class AssetType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private AssetTypeId replaces;
+    private AssetCollectionId replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -63,14 +63,14 @@ public class AssetType {
     @JsonProperty("tags")
     private Map<String, Map<String, String>> tags;
 
-    public AssetType() {
+    public AssetCollection() {
     }
 
     /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
-    public AssetTypeId getId() {
+    public AssetCollectionId getId() {
         return id;
     }
 
@@ -78,7 +78,7 @@ public class AssetType {
      * Setter for id.<p>
      * The unique Datasworn ID for this item.
      */
-    public void setId(AssetTypeId id) {
+    public void setId(AssetCollectionId id) {
         this.id = id;
     }
 
@@ -189,7 +189,7 @@ public class AssetType {
      * This collection's content enhances the identified collection, rather than
      * being a standalone collection of its own.
      */
-    public AssetTypeId getEnhances() {
+    public AssetCollectionId getEnhances() {
         return enhances;
     }
 
@@ -198,7 +198,7 @@ public class AssetType {
      * This collection's content enhances the identified collection, rather than
      * being a standalone collection of its own.
      */
-    public void setEnhances(AssetTypeId enhances) {
+    public void setEnhances(AssetCollectionId enhances) {
         this.enhances = enhances;
     }
 
@@ -237,7 +237,7 @@ public class AssetType {
      * This collection replaces the identified collection. References to the
      * replaced collection can be considered equivalent to this collection.
      */
-    public AssetTypeId getReplaces() {
+    public AssetCollectionId getReplaces() {
         return replaces;
     }
 
@@ -246,7 +246,7 @@ public class AssetType {
      * This collection replaces the identified collection. References to the
      * replaced collection can be considered equivalent to this collection.
      */
-    public void setReplaces(AssetTypeId replaces) {
+    public void setReplaces(AssetCollectionId replaces) {
         this.replaces = replaces;
     }
 

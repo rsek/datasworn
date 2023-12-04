@@ -18,7 +18,7 @@ assets:
       Combat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a **Shield-Bearer** and don’t have a shield at the ready, you can’t use the asset’s abilities.
     contents:
       archer:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: &AssetSource
             <<: *Source
@@ -80,7 +80,7 @@ assets:
                       method: null
 
       berserker:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 12
@@ -130,7 +130,7 @@ assets:
                       roll_options: null
                       method: null
       brawler:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 12
@@ -176,7 +176,7 @@ assets:
                       roll_options: null
                       method: null
       cutthroat:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 12
@@ -233,7 +233,7 @@ assets:
                         - using: stat
                           stat: shadow
       duelist:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 12
@@ -272,7 +272,7 @@ assets:
                   - classic/moves/relationship/draw_the_circle
                 roll_type: action_roll
       fletcher:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 12
@@ -338,7 +338,7 @@ assets:
                     text: |-
                       On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price).
       ironclad:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 12
@@ -409,7 +409,7 @@ assets:
                       roll_options: null
                       method: null
       long_arm:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 14
@@ -460,7 +460,7 @@ assets:
                         ally: true
 
       shield_bearer:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 14
@@ -507,7 +507,7 @@ assets:
                   - classic/moves/suffer/endure_harm
                 roll_type: action_roll
       skirmisher:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 14
@@ -559,7 +559,7 @@ assets:
                       roll_options: null
                       method: null
       slinger:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 14
@@ -605,7 +605,7 @@ assets:
                       roll_options: null
                       method: null
       sunderer:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 14
@@ -664,7 +664,7 @@ assets:
                       Inflict +1d6 harm (one time only) when you [Strike](id:classic/moves/combat/strike) or [Clash](id:classic/moves/combat/clash).
                   miss: *MoveOutcome.Miss.Generic
       swordmaster:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 14
@@ -699,7 +699,7 @@ assets:
                       roll_options: null
                       method: null
       thunder_bringer:
-        asset_type: Combat Talent
+        category: Combat Talent
         source:
           <<: *AssetSource
           page: 14

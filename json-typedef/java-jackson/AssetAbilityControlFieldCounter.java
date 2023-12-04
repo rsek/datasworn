@@ -12,9 +12,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonSerialize
 public class AssetAbilityControlFieldCounter extends AssetAbilityControlField {
-    @JsonProperty("id")
-    private AssetAbilityControlFieldId id;
-
     @JsonProperty("label")
     private InputLabel label;
 
@@ -22,32 +19,19 @@ public class AssetAbilityControlFieldCounter extends AssetAbilityControlField {
     private Short max;
 
     @JsonProperty("min")
-    private Short min;
+    private Byte min;
+
+    @JsonProperty("rollable")
+    private Boolean rollable;
 
     @JsonProperty("value")
-    private Short value;
+    private Byte value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
     private SvgImageUrl icon;
 
     public AssetAbilityControlFieldCounter() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AssetAbilityControlFieldId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AssetAbilityControlFieldId id) {
-        this.id = id;
     }
 
     /**
@@ -82,7 +66,7 @@ public class AssetAbilityControlFieldCounter extends AssetAbilityControlField {
      * Getter for min.<p>
      * The (inclusive) minimum value.
      */
-    public Short getMin() {
+    public Byte getMin() {
         return min;
     }
 
@@ -90,15 +74,29 @@ public class AssetAbilityControlFieldCounter extends AssetAbilityControlField {
      * Setter for min.<p>
      * The (inclusive) minimum value.
      */
-    public void setMin(Short min) {
+    public void setMin(Byte min) {
         this.min = min;
+    }
+
+    /**
+     * Getter for rollable.<p>
+     */
+    public Boolean getRollable() {
+        return rollable;
+    }
+
+    /**
+     * Setter for rollable.<p>
+     */
+    public void setRollable(Boolean rollable) {
+        this.rollable = rollable;
     }
 
     /**
      * Getter for value.<p>
      * The current value of this input.
      */
-    public Short getValue() {
+    public Byte getValue() {
         return value;
     }
 
@@ -106,7 +104,7 @@ public class AssetAbilityControlFieldCounter extends AssetAbilityControlField {
      * Setter for value.<p>
      * The current value of this input.
      */
-    public void setValue(Short value) {
+    public void setValue(Byte value) {
         this.value = value;
     }
 

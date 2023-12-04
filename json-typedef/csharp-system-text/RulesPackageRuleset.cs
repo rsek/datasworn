@@ -17,7 +17,7 @@ namespace Datasworn
         /// A dictionary object containing asset types, which contain assets.
         /// </summary>
         [JsonPropertyName("assets")]
-        public IDictionary<string, AssetType> Assets { get; set; }
+        public IDictionary<string, AssetCollection> Assets { get; set; }
 
         /// <summary>
         /// The version of the Datasworn format used by this data.

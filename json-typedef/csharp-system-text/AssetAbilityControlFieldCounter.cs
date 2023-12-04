@@ -13,12 +13,6 @@ namespace Datasworn
         [JsonPropertyName("field_type")]
         public string FieldType { get => "counter"; }
 
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetAbilityControlFieldId Id { get; set; }
-
         [JsonPropertyName("label")]
         public InputLabel Label { get; set; }
 
@@ -29,13 +23,16 @@ namespace Datasworn
         /// The (inclusive) minimum value.
         /// </summary>
         [JsonPropertyName("min")]
-        public short Min { get; set; }
+        public sbyte Min { get; set; }
+
+        [JsonPropertyName("rollable")]
+        public bool Rollable { get; set; }
 
         /// <summary>
         /// The current value of this input.
         /// </summary>
         [JsonPropertyName("value")]
-        public short Value { get; set; }
+        public sbyte Value { get; set; }
 
         /// <summary>
         /// An icon associated with this input.

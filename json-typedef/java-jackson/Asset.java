@@ -13,8 +13,8 @@ public class Asset {
     @JsonProperty("abilities")
     private List<AssetAbility> abilities;
 
-    @JsonProperty("asset_type")
-    private Label assetType;
+    @JsonProperty("category")
+    private Label category;
 
     @JsonProperty("count_as_impact")
     private Boolean countAsImpact;
@@ -85,21 +85,21 @@ public class Asset {
     }
 
     /**
-     * Getter for assetType.<p>
+     * Getter for category.<p>
      * A localized category label for this asset. This is the surtitle above the
      * asset's name on the card.
      */
-    public Label getAssetType() {
-        return assetType;
+    public Label getCategory() {
+        return category;
     }
 
     /**
-     * Setter for assetType.<p>
+     * Setter for category.<p>
      * A localized category label for this asset. This is the surtitle above the
      * asset's name on the card.
      */
-    public void setAssetType(Label assetType) {
-        this.assetType = assetType;
+    public void setCategory(Label category) {
+        this.category = category;
     }
 
     /**

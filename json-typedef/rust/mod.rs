@@ -33,7 +33,7 @@ pub struct RulesPackageExpansion {
     /// A dictionary object containing asset types, which contain assets.
     #[serde(rename = "assets")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub assets: Option<Box<HashMap<String, AssetType>>>,
+    pub assets: Option<Box<HashMap<String, AssetCollection>>>,
 
     /// A dictionary object containing atlas collections, which contain atlas
     /// entries.
@@ -94,7 +94,7 @@ pub struct RulesPackageExpansion {
 pub struct RulesPackageRuleset {
     /// A dictionary object containing asset types, which contain assets.
     #[serde(rename = "assets")]
-    pub assets: HashMap<String, AssetType>,
+    pub assets: HashMap<String, AssetCollection>,
 
     /// The version of the Datasworn format used by this data.
     #[serde(rename = "datasworn_version")]
@@ -192,8 +192,8 @@ pub struct Asset {
 
     /// A localized category label for this asset. This is the surtitle above
     /// the asset's name on the card.
-    #[serde(rename = "asset_type")]
-    pub assetType: Label,
+    #[serde(rename = "category")]
+    pub category: Label,
 
     /// If `true`, this asset counts as an impact (Starforged) or a debility
     /// (classic Ironsworn).
@@ -328,18 +328,16 @@ pub enum AssetAbilityControlField {
 
     #[serde(rename = "counter")]
     Counter(AssetAbilityControlFieldCounter),
+
+    #[serde(rename = "text")]
+    Text(AssetAbilityControlFieldText),
 }
 
-/// Represents a checkbox.
 #[derive(Serialize, Deserialize)]
 pub struct AssetAbilityControlFieldCheckbox {
     /// Does this field disable the asset when its value is set to `true`?
     #[serde(rename = "disables_asset")]
     pub disablesAsset: bool,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetAbilityControlFieldId,
 
     /// Does this field count as an impact (Starforged) or debility (Ironsworn
     /// classic) when its value is set to `true`?
@@ -362,10 +360,6 @@ pub struct AssetAbilityControlFieldCheckbox {
 /// A clock with 4 or more segments.
 #[derive(Serialize, Deserialize)]
 pub struct AssetAbilityControlFieldClock {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetAbilityControlFieldId,
-
     #[serde(rename = "label")]
     pub label: InputLabel,
 
@@ -378,7 +372,10 @@ pub struct AssetAbilityControlFieldClock {
     #[serde(rename = "min")]
     pub min: i8,
 
-    /// The current number of filled clock segments.
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
+
+    /// The current value of this input.
     #[serde(rename = "value")]
     pub value: i8,
 
@@ -392,10 +389,6 @@ pub struct AssetAbilityControlFieldClock {
 /// start at 0, and may or may not have a maximum.
 #[derive(Serialize, Deserialize)]
 pub struct AssetAbilityControlFieldCounter {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetAbilityControlFieldId,
-
     #[serde(rename = "label")]
     pub label: InputLabel,
 
@@ -404,11 +397,29 @@ pub struct AssetAbilityControlFieldCounter {
 
     /// The (inclusive) minimum value.
     #[serde(rename = "min")]
-    pub min: i16,
+    pub min: i8,
+
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
 
     /// The current value of this input.
     #[serde(rename = "value")]
-    pub value: i16,
+    pub value: i8,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
+
+/// Represents an input that accepts plain text.
+#[derive(Serialize, Deserialize)]
+pub struct AssetAbilityControlFieldText {
+    #[serde(rename = "label")]
+    pub label: InputLabel,
+
+    #[serde(rename = "value")]
+    pub value: String,
 
     /// An icon associated with this input.
     #[serde(rename = "icon")]
@@ -432,10 +443,6 @@ pub enum AssetAbilityOptionField {
 /// Represents an input that accepts plain text.
 #[derive(Serialize, Deserialize)]
 pub struct AssetAbilityOptionFieldText {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetAbilityOptionFieldId,
-
     #[serde(rename = "label")]
     pub label: InputLabel,
 
@@ -464,6 +471,83 @@ pub struct AssetAttachment {
     pub max: i16,
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct AssetCollection {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "id")]
+    pub id: AssetCollectionId,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "source")]
+    pub source: Source,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A thematic color associated with this collection.
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    #[serde(rename = "contents")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub contents: Option<Box<HashMap<String, Asset>>>,
+
+    /// A longer description of this collection, which might include multiple
+    /// paragraphs. If it's only a couple sentences, use the `summary` key
+    /// instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// This collection's content enhances the identified collection, rather
+    /// than being a standalone collection of its own.
+    #[serde(rename = "enhances")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhances: Option<Box<AssetCollectionId>>,
+
+    /// An SVG icon associated with this collection.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    #[serde(rename = "images")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub images: Option<Box<Vec<WebpImageUrl>>>,
+
+    /// This collection replaces the identified collection. References to the
+    /// replaced collection can be considered equivalent to this collection.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<AssetCollectionId>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of this collection, no more than a few sentences in
+    /// length. This is intended for use in application tooltips and similar
+    /// sorts of hints. Longer text should use the "description" key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
+}
+
+/// A unique ID for an AssetCollection.
+pub type AssetCollectionId = String;
+
 /// A checkbox control field, rendered as part of an asset condition meter.
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "field_type")]
@@ -475,18 +559,11 @@ pub enum AssetConditionMeterControlField {
     Checkbox(AssetConditionMeterControlFieldCheckbox),
 }
 
-/// When its value is set to `true` it means that the card is flipped over.
-/// Some assets use this to represent a 'broken' state (e.g. Starforged Module
-/// assets).
 #[derive(Serialize, Deserialize)]
 pub struct AssetConditionMeterControlFieldCardFlip {
     /// Does this field disable the asset when its value is set to `true`?
     #[serde(rename = "disables_asset")]
     pub disablesAsset: bool,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetConditionMeterControlFieldId,
 
     /// Does this field count as an impact (Starforged) or debility (Ironsworn
     /// classic) when its value is set to `true`?
@@ -506,16 +583,11 @@ pub struct AssetConditionMeterControlFieldCardFlip {
     pub icon: Option<Box<SvgImageUrl>>,
 }
 
-/// Represents a checkbox.
 #[derive(Serialize, Deserialize)]
 pub struct AssetConditionMeterControlFieldCheckbox {
     /// Does this field disable the asset when its value is set to `true`?
     #[serde(rename = "disables_asset")]
     pub disablesAsset: bool,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetConditionMeterControlFieldId,
 
     /// Does this field count as an impact (Starforged) or debility (Ironsworn
     /// classic) when its value is set to `true`?
@@ -554,18 +626,11 @@ pub enum AssetControlField {
     SelectEnhancement(AssetControlFieldSelectEnhancement),
 }
 
-/// When its value is set to `true` it means that the card is flipped over.
-/// Some assets use this to represent a 'broken' state (e.g. Starforged Module
-/// assets).
 #[derive(Serialize, Deserialize)]
 pub struct AssetControlFieldCardFlip {
     /// Does this field disable the asset when its value is set to `true`?
     #[serde(rename = "disables_asset")]
     pub disablesAsset: bool,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetControlFieldId,
 
     /// Does this field count as an impact (Starforged) or debility (Ironsworn
     /// classic) when its value is set to `true`?
@@ -585,16 +650,11 @@ pub struct AssetControlFieldCardFlip {
     pub icon: Option<Box<SvgImageUrl>>,
 }
 
-/// Represents a checkbox.
 #[derive(Serialize, Deserialize)]
 pub struct AssetControlFieldCheckbox {
     /// Does this field disable the asset when its value is set to `true`?
     #[serde(rename = "disables_asset")]
     pub disablesAsset: bool,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetControlFieldId,
 
     /// Does this field count as an impact (Starforged) or debility (Ironsworn
     /// classic) when its value is set to `true`?
@@ -637,10 +697,6 @@ pub struct AssetControlFieldConditionMeterMoves {
 /// companion assets use to indicate they are "out of action".
 #[derive(Serialize, Deserialize)]
 pub struct AssetControlFieldConditionMeter {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetControlFieldId,
-
     #[serde(rename = "label")]
     pub label: InputLabel,
 
@@ -651,6 +707,9 @@ pub struct AssetControlFieldConditionMeter {
     /// The minimum value of this meter.
     #[serde(rename = "min")]
     pub min: i8,
+
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
 
     /// The current value of this meter.
     #[serde(rename = "value")]
@@ -716,10 +775,6 @@ pub struct AssetControlFieldSelectEnhancementChoiceChoiceGroup {
 pub struct AssetControlFieldSelectEnhancement {
     #[serde(rename = "choices")]
     pub choices: HashMap<String, AssetControlFieldSelectEnhancementChoice>,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetControlFieldId,
 
     #[serde(rename = "label")]
     pub label: InputLabel,
@@ -860,10 +915,6 @@ pub struct AssetOptionFieldSelectEnhancement {
     #[serde(rename = "choices")]
     pub choices: HashMap<String, AssetOptionFieldSelectEnhancementChoice>,
 
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetOptionFieldId,
-
     #[serde(rename = "label")]
     pub label: InputLabel,
 
@@ -884,10 +935,6 @@ pub struct AssetOptionFieldSelectValue {
     #[serde(rename = "choices")]
     pub choices: HashMap<String, SelectValueFieldChoice>,
 
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetOptionFieldId,
-
     #[serde(rename = "label")]
     pub label: InputLabel,
 
@@ -905,10 +952,6 @@ pub struct AssetOptionFieldSelectValue {
 /// Represents an input that accepts plain text.
 #[derive(Serialize, Deserialize)]
 pub struct AssetOptionFieldText {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetOptionFieldId,
-
     #[serde(rename = "label")]
     pub label: InputLabel,
 
@@ -926,83 +969,6 @@ pub type AssetOptionFieldId = String;
 
 /// A wildcarded ID that can be used to match multiple AssetOptionFields.
 pub type AssetOptionFieldIdWildcard = String;
-
-#[derive(Serialize, Deserialize)]
-pub struct AssetType {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetTypeId,
-
-    /// The primary name/label for this item.
-    #[serde(rename = "name")]
-    pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: Source,
-
-    /// The name of this item as it appears on the page in the book, if it's
-    /// different from `name`.
-    #[serde(rename = "canonical_name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub canonicalName: Option<Box<Label>>,
-
-    /// A thematic color associated with this collection.
-    #[serde(rename = "color")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub color: Option<Box<CssColor>>,
-
-    #[serde(rename = "contents")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<Box<HashMap<String, Asset>>>,
-
-    /// A longer description of this collection, which might include multiple
-    /// paragraphs. If it's only a couple sentences, use the `summary` key
-    /// instead.
-    #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub description: Option<Box<MarkdownString>>,
-
-    /// This collection's content enhances the identified collection, rather
-    /// than being a standalone collection of its own.
-    #[serde(rename = "enhances")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub enhances: Option<Box<AssetTypeId>>,
-
-    /// An SVG icon associated with this collection.
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    #[serde(rename = "images")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub images: Option<Box<Vec<WebpImageUrl>>>,
-
-    /// This collection replaces the identified collection. References to the
-    /// replaced collection can be considered equivalent to this collection.
-    #[serde(rename = "replaces")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub replaces: Option<Box<AssetTypeId>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    /// A brief summary of this collection, no more than a few sentences in
-    /// length. This is intended for use in application tooltips and similar
-    /// sorts of hints. Longer text should use the "description" key instead.
-    #[serde(rename = "summary")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub summary: Option<Box<MarkdownString>>,
-
-    #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, String>>>>,
-}
-
-/// A unique ID for an AssetType.
-pub type AssetTypeId = String;
 
 #[derive(Serialize, Deserialize)]
 pub struct Atlas {
@@ -1164,6 +1130,42 @@ pub struct AuthorInfo {
 /// Challenge rank, represented as an integer from 1 (troublesome) to 5 (epic).
 pub type ChallengeRank = u8;
 
+#[derive(Serialize, Deserialize)]
+pub enum ConditionMeterFieldFieldType {
+    #[serde(rename = "condition_meter")]
+    ConditionMeter,
+}
+
+/// A meter with an integer value, bounded by a minimum and maximum.
+#[derive(Serialize, Deserialize)]
+pub struct ConditionMeterField {
+    #[serde(rename = "field_type")]
+    pub fieldType: ConditionMeterFieldFieldType,
+
+    #[serde(rename = "label")]
+    pub label: InputLabel,
+
+    /// The maximum value of this meter.
+    #[serde(rename = "max")]
+    pub max: i8,
+
+    /// The minimum value of this meter.
+    #[serde(rename = "min")]
+    pub min: i8,
+
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
+
+    /// The current value of this meter.
+    #[serde(rename = "value")]
+    pub value: i8,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
+
 /// A basic, rollable player character resource specified by the ruleset.
 pub type ConditionMeterKey = DictKey;
 
@@ -1184,6 +1186,9 @@ pub struct ConditionMeterRule {
     /// The minimum value of this meter.
     #[serde(rename = "min")]
     pub min: i8,
+
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
 
     /// Is this condition meter shared by all players?
     #[serde(rename = "shared")]

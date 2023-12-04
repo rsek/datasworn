@@ -42,7 +42,7 @@ module Datasworn
       out.datasworn_version = Datasworn::from_json_data(SemanticVersion, data["datasworn_version"])
       out.id = Datasworn::from_json_data(ExpansionID, data["id"])
       out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
-      out.assets = Datasworn::from_json_data(Hash[String, AssetType], data["assets"])
+      out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
       out.atlas = Datasworn::from_json_data(Hash[String, Atlas], data["atlas"])
       out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
       out.moves = Datasworn::from_json_data(Hash[String, MoveCategory], data["moves"])
@@ -95,7 +95,7 @@ module Datasworn
     def self.from_json_data(data)
       out = RulesPackageRuleset.new
       out.package_type = "ruleset"
-      out.assets = Datasworn::from_json_data(Hash[String, AssetType], data["assets"])
+      out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
       out.datasworn_version = Datasworn::from_json_data(SemanticVersion, data["datasworn_version"])
       out.id = Datasworn::from_json_data(RulesetID, data["id"])
       out.moves = Datasworn::from_json_data(Hash[String, MoveCategory], data["moves"])
@@ -182,7 +182,7 @@ module Datasworn
 
     # A localized category label for this asset. This is the surtitle above the
     # asset's name on the card.
-    attr_accessor :asset_type
+    attr_accessor :category
 
     # If `true`, this asset counts as an impact (Starforged) or a debility
     # (classic Ironsworn).
@@ -232,7 +232,7 @@ module Datasworn
     def self.from_json_data(data)
       out = Asset.new
       out.abilities = Datasworn::from_json_data(Array[AssetAbility], data["abilities"])
-      out.asset_type = Datasworn::from_json_data(Label, data["asset_type"])
+      out.category = Datasworn::from_json_data(Label, data["category"])
       out.count_as_impact = Datasworn::from_json_data(TrueClass, data["count_as_impact"])
       out.id = Datasworn::from_json_data(AssetID, data["id"])
       out.name = Datasworn::from_json_data(Label, data["name"])
@@ -253,7 +253,7 @@ module Datasworn
     def to_json_data
       data = {}
       data["abilities"] = Datasworn::to_json_data(abilities)
-      data["asset_type"] = Datasworn::to_json_data(asset_type)
+      data["category"] = Datasworn::to_json_data(category)
       data["count_as_impact"] = Datasworn::to_json_data(count_as_impact)
       data["id"] = Datasworn::to_json_data(id)
       data["name"] = Datasworn::to_json_data(name)
@@ -342,14 +342,13 @@ module Datasworn
         "checkbox" => AssetAbilityControlFieldCheckbox,
         "clock" => AssetAbilityControlFieldClock,
         "counter" => AssetAbilityControlFieldCounter,
+        "text" => AssetAbilityControlFieldText,
       }[data["field_type"]].from_json_data(data)
     end
   end
 
-  # Represents a checkbox.
   class AssetAbilityControlFieldCheckbox < AssetAbilityControlField
     attr_accessor :disables_asset
-    attr_accessor :id
     attr_accessor :is_impact
     attr_accessor :label
     attr_accessor :value
@@ -359,7 +358,6 @@ module Datasworn
       out = AssetAbilityControlFieldCheckbox.new
       out.field_type = "checkbox"
       out.disables_asset = Datasworn::from_json_data(TrueClass, data["disables_asset"])
-      out.id = Datasworn::from_json_data(AssetAbilityControlFieldID, data["id"])
       out.is_impact = Datasworn::from_json_data(TrueClass, data["is_impact"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(TrueClass, data["value"])
@@ -370,7 +368,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "checkbox" }
       data["disables_asset"] = Datasworn::to_json_data(disables_asset)
-      data["id"] = Datasworn::to_json_data(id)
       data["is_impact"] = Datasworn::to_json_data(is_impact)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
@@ -381,20 +378,20 @@ module Datasworn
 
   # A clock with 4 or more segments.
   class AssetAbilityControlFieldClock < AssetAbilityControlField
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :max
     attr_accessor :min
+    attr_accessor :rollable
     attr_accessor :value
     attr_accessor :icon
 
     def self.from_json_data(data)
       out = AssetAbilityControlFieldClock.new
       out.field_type = "clock"
-      out.id = Datasworn::from_json_data(AssetAbilityControlFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
       out.value = Datasworn::from_json_data(Integer, data["value"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out
@@ -402,10 +399,10 @@ module Datasworn
 
     def to_json_data
       data = { "field_type" => "clock" }
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data
@@ -415,20 +412,20 @@ module Datasworn
   # A basic counter representing a non-rollable integer value. They usually
   # start at 0, and may or may not have a maximum.
   class AssetAbilityControlFieldCounter < AssetAbilityControlField
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :max
     attr_accessor :min
+    attr_accessor :rollable
     attr_accessor :value
     attr_accessor :icon
 
     def self.from_json_data(data)
       out = AssetAbilityControlFieldCounter.new
       out.field_type = "counter"
-      out.id = Datasworn::from_json_data(AssetAbilityControlFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
       out.value = Datasworn::from_json_data(Integer, data["value"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out
@@ -436,10 +433,34 @@ module Datasworn
 
     def to_json_data
       data = { "field_type" => "counter" }
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
+    end
+  end
+
+  # Represents an input that accepts plain text.
+  class AssetAbilityControlFieldText < AssetAbilityControlField
+    attr_accessor :label
+    attr_accessor :value
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = AssetAbilityControlFieldText.new
+      out.field_type = "text"
+      out.label = Datasworn::from_json_data(InputLabel, data["label"])
+      out.value = Datasworn::from_json_data(String, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = { "field_type" => "text" }
+      data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data
@@ -488,7 +509,6 @@ module Datasworn
 
   # Represents an input that accepts plain text.
   class AssetAbilityOptionFieldText < AssetAbilityOptionField
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :value
     attr_accessor :icon
@@ -496,7 +516,6 @@ module Datasworn
     def self.from_json_data(data)
       out = AssetAbilityOptionFieldText.new
       out.field_type = "text"
-      out.id = Datasworn::from_json_data(AssetAbilityOptionFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(String, data["value"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -505,7 +524,6 @@ module Datasworn
 
     def to_json_data
       data = { "field_type" => "text" }
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -551,6 +569,103 @@ module Datasworn
     end
   end
 
+  class AssetCollection
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # The primary name/label for this item.
+    attr_accessor :name
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A thematic color associated with this collection.
+    attr_accessor :color
+    attr_accessor :contents
+
+    # A longer description of this collection, which might include multiple
+    # paragraphs. If it's only a couple sentences, use the `summary` key
+    # instead.
+    attr_accessor :description
+
+    # This collection's content enhances the identified collection, rather than
+    # being a standalone collection of its own.
+    attr_accessor :enhances
+
+    # An SVG icon associated with this collection.
+    attr_accessor :icon
+    attr_accessor :images
+
+    # This collection replaces the identified collection. References to the
+    # replaced collection can be considered equivalent to this collection.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of this collection, no more than a few sentences in
+    # length. This is intended for use in application tooltips and similar sorts
+    # of hints. Longer text should use the "description" key instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = AssetCollection.new
+      out.id = Datasworn::from_json_data(AssetCollectionID, data["id"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.source = Datasworn::from_json_data(Source, data["source"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.contents = Datasworn::from_json_data(Hash[String, Asset], data["contents"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.enhances = Datasworn::from_json_data(AssetCollectionID, data["enhances"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
+      out.replaces = Datasworn::from_json_data(AssetCollectionID, data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["id"] = Datasworn::to_json_data(id)
+      data["name"] = Datasworn::to_json_data(name)
+      data["source"] = Datasworn::to_json_data(source)
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["enhances"] = Datasworn::to_json_data(enhances) unless enhances.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["images"] = Datasworn::to_json_data(images) unless images.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A unique ID for an AssetCollection.
+  class AssetCollectionID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetCollectionID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # A checkbox control field, rendered as part of an asset condition meter.
   class AssetConditionMeterControlField
     attr_accessor :field_type
@@ -563,12 +678,8 @@ module Datasworn
     end
   end
 
-  # When its value is set to `true` it means that the card is flipped over.
-  # Some assets use this to represent a 'broken' state (e.g. Starforged Module
-  # assets).
   class AssetConditionMeterControlFieldCardFlip < AssetConditionMeterControlField
     attr_accessor :disables_asset
-    attr_accessor :id
     attr_accessor :is_impact
     attr_accessor :label
     attr_accessor :value
@@ -578,7 +689,6 @@ module Datasworn
       out = AssetConditionMeterControlFieldCardFlip.new
       out.field_type = "card_flip"
       out.disables_asset = Datasworn::from_json_data(TrueClass, data["disables_asset"])
-      out.id = Datasworn::from_json_data(AssetConditionMeterControlFieldID, data["id"])
       out.is_impact = Datasworn::from_json_data(TrueClass, data["is_impact"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(TrueClass, data["value"])
@@ -589,7 +699,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "card_flip" }
       data["disables_asset"] = Datasworn::to_json_data(disables_asset)
-      data["id"] = Datasworn::to_json_data(id)
       data["is_impact"] = Datasworn::to_json_data(is_impact)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
@@ -598,10 +707,8 @@ module Datasworn
     end
   end
 
-  # Represents a checkbox.
   class AssetConditionMeterControlFieldCheckbox < AssetConditionMeterControlField
     attr_accessor :disables_asset
-    attr_accessor :id
     attr_accessor :is_impact
     attr_accessor :label
     attr_accessor :value
@@ -611,7 +718,6 @@ module Datasworn
       out = AssetConditionMeterControlFieldCheckbox.new
       out.field_type = "checkbox"
       out.disables_asset = Datasworn::from_json_data(TrueClass, data["disables_asset"])
-      out.id = Datasworn::from_json_data(AssetConditionMeterControlFieldID, data["id"])
       out.is_impact = Datasworn::from_json_data(TrueClass, data["is_impact"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(TrueClass, data["value"])
@@ -622,7 +728,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "checkbox" }
       data["disables_asset"] = Datasworn::to_json_data(disables_asset)
-      data["id"] = Datasworn::to_json_data(id)
       data["is_impact"] = Datasworn::to_json_data(is_impact)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
@@ -659,12 +764,8 @@ module Datasworn
     end
   end
 
-  # When its value is set to `true` it means that the card is flipped over.
-  # Some assets use this to represent a 'broken' state (e.g. Starforged Module
-  # assets).
   class AssetControlFieldCardFlip < AssetControlField
     attr_accessor :disables_asset
-    attr_accessor :id
     attr_accessor :is_impact
     attr_accessor :label
     attr_accessor :value
@@ -674,7 +775,6 @@ module Datasworn
       out = AssetControlFieldCardFlip.new
       out.field_type = "card_flip"
       out.disables_asset = Datasworn::from_json_data(TrueClass, data["disables_asset"])
-      out.id = Datasworn::from_json_data(AssetControlFieldID, data["id"])
       out.is_impact = Datasworn::from_json_data(TrueClass, data["is_impact"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(TrueClass, data["value"])
@@ -685,7 +785,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "card_flip" }
       data["disables_asset"] = Datasworn::to_json_data(disables_asset)
-      data["id"] = Datasworn::to_json_data(id)
       data["is_impact"] = Datasworn::to_json_data(is_impact)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
@@ -694,10 +793,8 @@ module Datasworn
     end
   end
 
-  # Represents a checkbox.
   class AssetControlFieldCheckbox < AssetControlField
     attr_accessor :disables_asset
-    attr_accessor :id
     attr_accessor :is_impact
     attr_accessor :label
     attr_accessor :value
@@ -707,7 +804,6 @@ module Datasworn
       out = AssetControlFieldCheckbox.new
       out.field_type = "checkbox"
       out.disables_asset = Datasworn::from_json_data(TrueClass, data["disables_asset"])
-      out.id = Datasworn::from_json_data(AssetControlFieldID, data["id"])
       out.is_impact = Datasworn::from_json_data(TrueClass, data["is_impact"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(TrueClass, data["value"])
@@ -718,7 +814,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "checkbox" }
       data["disables_asset"] = Datasworn::to_json_data(disables_asset)
-      data["id"] = Datasworn::to_json_data(id)
       data["is_impact"] = Datasworn::to_json_data(is_impact)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
@@ -758,10 +853,10 @@ module Datasworn
   # may also include their own controls, such as the checkboxes that Starforged
   # companion assets use to indicate they are "out of action".
   class AssetControlFieldConditionMeter < AssetControlField
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :max
     attr_accessor :min
+    attr_accessor :rollable
     attr_accessor :value
     attr_accessor :controls
     attr_accessor :icon
@@ -770,10 +865,10 @@ module Datasworn
     def self.from_json_data(data)
       out = AssetControlFieldConditionMeter.new
       out.field_type = "condition_meter"
-      out.id = Datasworn::from_json_data(AssetControlFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
       out.value = Datasworn::from_json_data(Integer, data["value"])
       out.controls = Datasworn::from_json_data(Hash[String, AssetConditionMeterControlField], data["controls"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -783,10 +878,10 @@ module Datasworn
 
     def to_json_data
       data = { "field_type" => "condition_meter" }
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
       data["value"] = Datasworn::to_json_data(value)
       data["controls"] = Datasworn::to_json_data(controls) unless controls.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -856,7 +951,6 @@ module Datasworn
   # (Sundered Isles).
   class AssetControlFieldSelectEnhancement < AssetControlField
     attr_accessor :choices
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :value
     attr_accessor :icon
@@ -865,7 +959,6 @@ module Datasworn
       out = AssetControlFieldSelectEnhancement.new
       out.field_type = "select_enhancement"
       out.choices = Datasworn::from_json_data(Hash[String, AssetControlFieldSelectEnhancementChoice], data["choices"])
-      out.id = Datasworn::from_json_data(AssetControlFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(DictKey, data["value"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -875,7 +968,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "select_enhancement" }
       data["choices"] = Datasworn::to_json_data(choices)
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1093,7 +1185,6 @@ module Datasworn
   # (Sundered Isles).
   class AssetOptionFieldSelectEnhancement < AssetOptionField
     attr_accessor :choices
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :value
     attr_accessor :icon
@@ -1102,7 +1193,6 @@ module Datasworn
       out = AssetOptionFieldSelectEnhancement.new
       out.field_type = "select_enhancement"
       out.choices = Datasworn::from_json_data(Hash[String, AssetOptionFieldSelectEnhancementChoice], data["choices"])
-      out.id = Datasworn::from_json_data(AssetOptionFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(DictKey, data["value"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1112,7 +1202,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "select_enhancement" }
       data["choices"] = Datasworn::to_json_data(choices)
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1123,7 +1212,6 @@ module Datasworn
   # Represents a list of mutually exclusive choices.
   class AssetOptionFieldSelectValue < AssetOptionField
     attr_accessor :choices
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :value
     attr_accessor :icon
@@ -1132,7 +1220,6 @@ module Datasworn
       out = AssetOptionFieldSelectValue.new
       out.field_type = "select_value"
       out.choices = Datasworn::from_json_data(Hash[String, SelectValueFieldChoice], data["choices"])
-      out.id = Datasworn::from_json_data(AssetOptionFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(DictKey, data["value"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1142,7 +1229,6 @@ module Datasworn
     def to_json_data
       data = { "field_type" => "select_value" }
       data["choices"] = Datasworn::to_json_data(choices)
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1152,7 +1238,6 @@ module Datasworn
 
   # Represents an input that accepts plain text.
   class AssetOptionFieldText < AssetOptionField
-    attr_accessor :id
     attr_accessor :label
     attr_accessor :value
     attr_accessor :icon
@@ -1160,7 +1245,6 @@ module Datasworn
     def self.from_json_data(data)
       out = AssetOptionFieldText.new
       out.field_type = "text"
-      out.id = Datasworn::from_json_data(AssetOptionFieldID, data["id"])
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.value = Datasworn::from_json_data(String, data["value"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1169,7 +1253,6 @@ module Datasworn
 
     def to_json_data
       data = { "field_type" => "text" }
-      data["id"] = Datasworn::to_json_data(id)
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1198,103 +1281,6 @@ module Datasworn
 
     def self.from_json_data(data)
       out = AssetOptionFieldIDWildcard.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
-  class AssetType
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
-
-    # The primary name/label for this item.
-    attr_accessor :name
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
-
-    # The name of this item as it appears on the page in the book, if it's
-    # different from `name`.
-    attr_accessor :canonical_name
-
-    # A thematic color associated with this collection.
-    attr_accessor :color
-    attr_accessor :contents
-
-    # A longer description of this collection, which might include multiple
-    # paragraphs. If it's only a couple sentences, use the `summary` key
-    # instead.
-    attr_accessor :description
-
-    # This collection's content enhances the identified collection, rather than
-    # being a standalone collection of its own.
-    attr_accessor :enhances
-
-    # An SVG icon associated with this collection.
-    attr_accessor :icon
-    attr_accessor :images
-
-    # This collection replaces the identified collection. References to the
-    # replaced collection can be considered equivalent to this collection.
-    attr_accessor :replaces
-    attr_accessor :suggestions
-
-    # A brief summary of this collection, no more than a few sentences in
-    # length. This is intended for use in application tooltips and similar sorts
-    # of hints. Longer text should use the "description" key instead.
-    attr_accessor :summary
-    attr_accessor :tags
-
-    def self.from_json_data(data)
-      out = AssetType.new
-      out.id = Datasworn::from_json_data(AssetTypeID, data["id"])
-      out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(Source, data["source"])
-      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
-      out.color = Datasworn::from_json_data(CSSColor, data["color"])
-      out.contents = Datasworn::from_json_data(Hash[String, Asset], data["contents"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.enhances = Datasworn::from_json_data(AssetTypeID, data["enhances"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
-      out.replaces = Datasworn::from_json_data(AssetTypeID, data["replaces"])
-      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
-      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
-      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, String]], data["tags"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["id"] = Datasworn::to_json_data(id)
-      data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
-      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
-      data["color"] = Datasworn::to_json_data(color) unless color.nil?
-      data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
-      data["description"] = Datasworn::to_json_data(description) unless description.nil?
-      data["enhances"] = Datasworn::to_json_data(enhances) unless enhances.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["images"] = Datasworn::to_json_data(images) unless images.nil?
-      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
-      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data
-    end
-  end
-
-  # A unique ID for an AssetType.
-  class AssetTypeID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = AssetTypeID.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end
@@ -1549,6 +1535,71 @@ module Datasworn
     end
   end
 
+  class ConditionMeterFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CONDITION_METER = new("condition_meter")
+
+    def self.from_json_data(data)
+      {
+        "condition_meter" => CONDITION_METER,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A meter with an integer value, bounded by a minimum and maximum.
+  class ConditionMeterField
+    attr_accessor :field_type
+    attr_accessor :label
+
+    # The maximum value of this meter.
+    attr_accessor :max
+
+    # The minimum value of this meter.
+    attr_accessor :min
+    attr_accessor :rollable
+
+    # The current value of this meter.
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = ConditionMeterField.new
+      out.field_type = Datasworn::from_json_data(ConditionMeterFieldFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(InputLabel, data["label"])
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
+      out.value = Datasworn::from_json_data(Integer, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
+    end
+  end
+
   # A basic, rollable player character resource specified by the ruleset.
   class ConditionMeterKey
     attr_accessor :value
@@ -1575,6 +1626,7 @@ module Datasworn
 
     # The minimum value of this meter.
     attr_accessor :min
+    attr_accessor :rollable
 
     # Is this condition meter shared by all players?
     attr_accessor :shared
@@ -1588,6 +1640,7 @@ module Datasworn
       out.label = Datasworn::from_json_data(InputLabel, data["label"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
       out.shared = Datasworn::from_json_data(TrueClass, data["shared"])
       out.value = Datasworn::from_json_data(Integer, data["value"])
       out
@@ -1599,6 +1652,7 @@ module Datasworn
       data["label"] = Datasworn::to_json_data(label)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
       data["shared"] = Datasworn::to_json_data(shared)
       data["value"] = Datasworn::to_json_data(value)
       data

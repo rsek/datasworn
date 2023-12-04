@@ -21,7 +21,7 @@ assets:
     contents:
       bonded:
         <<: &DeedAsset
-          asset_type: Deed
+          category: Deed
           color: *DeedAsset.color
           source: &AssetSource
             <<: *Source

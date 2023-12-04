@@ -5,13 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    public class AssetType
+    public class AssetCollection
     {
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
         [JsonPropertyName("id")]
-        public AssetTypeId Id { get; set; }
+        public AssetCollectionId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.
@@ -60,7 +60,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("enhances")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public AssetTypeId? Enhances { get; set; }
+        public AssetCollectionId? Enhances { get; set; }
 
         /// <summary>
         /// An SVG icon associated with this collection.
@@ -80,7 +80,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public AssetTypeId? Replaces { get; set; }
+        public AssetCollectionId? Replaces { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

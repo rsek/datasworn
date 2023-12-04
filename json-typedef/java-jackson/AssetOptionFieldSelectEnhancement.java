@@ -17,9 +17,6 @@ public class AssetOptionFieldSelectEnhancement extends AssetOptionField {
     @JsonProperty("choices")
     private Map<String, AssetOptionFieldSelectEnhancementChoice> choices;
 
-    @JsonProperty("id")
-    private AssetOptionFieldId id;
-
     @JsonProperty("label")
     private InputLabel label;
 
@@ -45,22 +42,6 @@ public class AssetOptionFieldSelectEnhancement extends AssetOptionField {
      */
     public void setChoices(Map<String, AssetOptionFieldSelectEnhancementChoice> choices) {
         this.choices = choices;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AssetOptionFieldId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AssetOptionFieldId id) {
-        this.id = id;
     }
 
     /**

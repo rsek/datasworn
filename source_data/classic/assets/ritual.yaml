@@ -18,7 +18,7 @@ assets:
       All rituals utilize a move as their default marked ability. You must make this move and the associated action roll to trigger the effect. Any secondary abilities you gain by upgrading the asset are dependent on performing the ritual described as the default ability.
     contents:
       augur:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: &AssetSource
             <<: *Source
@@ -67,7 +67,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/augur/abilities/0/moves/augur
       awakening:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 14
@@ -118,7 +118,7 @@ assets:
             max: 3
             value: 3
       bind:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -163,7 +163,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/bind/abilities/0/moves/bind
       communion:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -208,7 +208,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/communion/abilities/0/moves/commune
       divination:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -257,7 +257,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/divination/abilities/0/moves/cast_runes
       invoke:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -332,7 +332,7 @@ assets:
             max: 6
             value: 0
       keen:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -377,7 +377,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/keen/abilities/0/moves/keen
       leech:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -425,7 +425,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/leech/abilities/0/moves/draw_blood_rune
       lightbearer:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -490,7 +490,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/lightbearer/abilities/0/moves/capture_light
       scry:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -543,7 +543,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/scry/abilities/0/moves/scry
       shadow_walk:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 16
@@ -588,7 +588,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/shadow_walk/abilities/0/moves/shadow_walk
       sway:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 18
@@ -634,7 +634,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/sway/abilities/0/moves/sway
       talisman:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 18
@@ -677,7 +677,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/talisman/abilities/0/moves/fashion_talisman
       tether:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 18
@@ -743,7 +743,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/tether/abilities/0/moves/tether
       totem:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 18
@@ -788,7 +788,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/totem/abilities/0/moves/focus_totem
       visage:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 18
@@ -834,7 +834,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/visage/abilities/0/moves/paint_visage
       ward:
-        asset_type: Ritual
+        category: Ritual
         source:
           <<: *AssetSource
           page: 18

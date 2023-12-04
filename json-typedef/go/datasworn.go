@@ -63,7 +63,7 @@ type RulesPackageExpansion struct {
 	Ruleset RulesetID `json:"ruleset"`
 
 	// A dictionary object containing asset types, which contain assets.
-	Assets map[string]AssetType `json:"assets,omitempty"`
+	Assets map[string]AssetCollection `json:"assets,omitempty"`
 
 	// A dictionary object containing atlas collections, which contain atlas
 	// entries.
@@ -102,7 +102,7 @@ type RulesPackageExpansion struct {
 // A standalone Datasworn package that describes its own ruleset.
 type RulesPackageRuleset struct {
 	// A dictionary object containing asset types, which contain assets.
-	Assets map[string]AssetType `json:"assets"`
+	Assets map[string]AssetCollection `json:"assets"`
 
 	// The version of the Datasworn format used by this data.
 	DataswornVersion SemanticVersion `json:"datasworn_version"`
@@ -173,7 +173,7 @@ type Asset struct {
 
 	// A localized category label for this asset. This is the surtitle above the
 	// asset's name on the card.
-	AssetType Label `json:"asset_type"`
+	Category Label `json:"category"`
 
 	// If `true`, this asset counts as an impact (Starforged) or a debility
 	// (classic Ironsworn).
@@ -265,6 +265,8 @@ type AssetAbilityControlField struct {
 	Clock AssetAbilityControlFieldClock
 
 	Counter AssetAbilityControlFieldCounter
+
+	Text AssetAbilityControlFieldText
 }
 
 func (v AssetAbilityControlField) MarshalJSON() ([]byte, error) {
@@ -275,6 +277,8 @@ func (v AssetAbilityControlField) MarshalJSON() ([]byte, error) {
 		return json.Marshal(struct { T string `json:"field_type"`; AssetAbilityControlFieldClock }{ v.FieldType, v.Clock })
 	case "counter":
 		return json.Marshal(struct { T string `json:"field_type"`; AssetAbilityControlFieldCounter }{ v.FieldType, v.Counter })
+	case "text":
+		return json.Marshal(struct { T string `json:"field_type"`; AssetAbilityControlFieldText }{ v.FieldType, v.Text })
 	}
 
 	return nil, fmt.Errorf("bad FieldType value: %s", v.FieldType)
@@ -294,6 +298,8 @@ func (v *AssetAbilityControlField) UnmarshalJSON(b []byte) error {
 		err = json.Unmarshal(b, &v.Clock)
 	case "counter":
 		err = json.Unmarshal(b, &v.Counter)
+	case "text":
+		err = json.Unmarshal(b, &v.Text)
 	default:
 		err = fmt.Errorf("bad FieldType value: %s", t.T)
 	}
@@ -306,13 +312,9 @@ func (v *AssetAbilityControlField) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// Represents a checkbox.
 type AssetAbilityControlFieldCheckbox struct {
 	// Does this field disable the asset when its value is set to `true`?
 	DisablesAsset bool `json:"disables_asset"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetAbilityControlFieldID `json:"id"`
 
 	// Does this field count as an impact (Starforged) or debility (Ironsworn
 	// classic) when its value is set to `true`?
@@ -329,9 +331,6 @@ type AssetAbilityControlFieldCheckbox struct {
 
 // A clock with 4 or more segments.
 type AssetAbilityControlFieldClock struct {
-	// The unique Datasworn ID for this item.
-	ID AssetAbilityControlFieldID `json:"id"`
-
 	Label InputLabel `json:"label"`
 
 	// The size of the clock -- in other words, the maximum number of filled clock
@@ -341,7 +340,9 @@ type AssetAbilityControlFieldClock struct {
 	// The minimum number of filled clock segments. This is always 0.
 	Min int8 `json:"min"`
 
-	// The current number of filled clock segments.
+	Rollable bool `json:"rollable"`
+
+	// The current value of this input.
 	Value int8 `json:"value"`
 
 	// An icon associated with this input.
@@ -351,18 +352,27 @@ type AssetAbilityControlFieldClock struct {
 // A basic counter representing a non-rollable integer value. They usually start
 // at 0, and may or may not have a maximum.
 type AssetAbilityControlFieldCounter struct {
-	// The unique Datasworn ID for this item.
-	ID AssetAbilityControlFieldID `json:"id"`
-
 	Label InputLabel `json:"label"`
 
 	Max int16 `json:"max"`
 
 	// The (inclusive) minimum value.
-	Min int16 `json:"min"`
+	Min int8 `json:"min"`
+
+	Rollable bool `json:"rollable"`
 
 	// The current value of this input.
-	Value int16 `json:"value"`
+	Value int8 `json:"value"`
+
+	// An icon associated with this input.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+}
+
+// Represents an input that accepts plain text.
+type AssetAbilityControlFieldText struct {
+	Label InputLabel `json:"label"`
+
+	Value string `json:"value"`
 
 	// An icon associated with this input.
 	Icon *SvgImageURL `json:"icon,omitempty"`
@@ -413,9 +423,6 @@ func (v *AssetAbilityOptionField) UnmarshalJSON(b []byte) error {
 
 // Represents an input that accepts plain text.
 type AssetAbilityOptionFieldText struct {
-	// The unique Datasworn ID for this item.
-	ID AssetAbilityOptionFieldID `json:"id"`
-
 	Label InputLabel `json:"label"`
 
 	Value string `json:"value"`
@@ -436,6 +443,56 @@ type AssetAttachment struct {
 
 	Max int16 `json:"max"`
 }
+
+type AssetCollection struct {
+	// The unique Datasworn ID for this item.
+	ID AssetCollectionID `json:"id"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
+
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source Source `json:"source"`
+
+	// The name of this item as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this collection.
+	Color *CSSColor `json:"color,omitempty"`
+
+	Contents map[string]Asset `json:"contents,omitempty"`
+
+	// A longer description of this collection, which might include multiple
+	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
+	Description *MarkdownString `json:"description,omitempty"`
+
+	// This collection's content enhances the identified collection, rather than
+	// being a standalone collection of its own.
+	Enhances *AssetCollectionID `json:"enhances,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
+
+	// This collection replaces the identified collection. References to the
+	// replaced collection can be considered equivalent to this collection.
+	Replaces *AssetCollectionID `json:"replaces,omitempty"`
+
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	// A brief summary of this collection, no more than a few sentences in length.
+	// This is intended for use in application tooltips and similar sorts of hints.
+	// Longer text should use the "description" key instead.
+	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]string `json:"tags,omitempty"`
+}
+
+// A unique ID for an AssetCollection.
+type AssetCollectionID = string
 
 // A checkbox control field, rendered as part of an asset condition meter.
 type AssetConditionMeterControlField struct {
@@ -481,15 +538,9 @@ func (v *AssetConditionMeterControlField) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// When its value is set to `true` it means that the card is flipped over.
-// Some assets use this to represent a 'broken' state (e.g. Starforged Module
-// assets).
 type AssetConditionMeterControlFieldCardFlip struct {
 	// Does this field disable the asset when its value is set to `true`?
 	DisablesAsset bool `json:"disables_asset"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetConditionMeterControlFieldID `json:"id"`
 
 	// Does this field count as an impact (Starforged) or debility (Ironsworn
 	// classic) when its value is set to `true`?
@@ -504,13 +555,9 @@ type AssetConditionMeterControlFieldCardFlip struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 }
 
-// Represents a checkbox.
 type AssetConditionMeterControlFieldCheckbox struct {
 	// Does this field disable the asset when its value is set to `true`?
 	DisablesAsset bool `json:"disables_asset"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetConditionMeterControlFieldID `json:"id"`
 
 	// Does this field count as an impact (Starforged) or debility (Ironsworn
 	// classic) when its value is set to `true`?
@@ -583,15 +630,9 @@ func (v *AssetControlField) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// When its value is set to `true` it means that the card is flipped over.
-// Some assets use this to represent a 'broken' state (e.g. Starforged Module
-// assets).
 type AssetControlFieldCardFlip struct {
 	// Does this field disable the asset when its value is set to `true`?
 	DisablesAsset bool `json:"disables_asset"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetControlFieldID `json:"id"`
 
 	// Does this field count as an impact (Starforged) or debility (Ironsworn
 	// classic) when its value is set to `true`?
@@ -606,13 +647,9 @@ type AssetControlFieldCardFlip struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 }
 
-// Represents a checkbox.
 type AssetControlFieldCheckbox struct {
 	// Does this field disable the asset when its value is set to `true`?
 	DisablesAsset bool `json:"disables_asset"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetControlFieldID `json:"id"`
 
 	// Does this field count as an impact (Starforged) or debility (Ironsworn
 	// classic) when its value is set to `true`?
@@ -644,9 +681,6 @@ type AssetControlFieldConditionMeterMoves struct {
 // may also include their own controls, such as the checkboxes that Starforged
 // companion assets use to indicate they are "out of action".
 type AssetControlFieldConditionMeter struct {
-	// The unique Datasworn ID for this item.
-	ID AssetControlFieldID `json:"id"`
-
 	Label InputLabel `json:"label"`
 
 	// The maximum value of this meter.
@@ -654,6 +688,8 @@ type AssetControlFieldConditionMeter struct {
 
 	// The minimum value of this meter.
 	Min int8 `json:"min"`
+
+	Rollable bool `json:"rollable"`
 
 	// The current value of this meter.
 	Value int8 `json:"value"`
@@ -734,9 +770,6 @@ type AssetControlFieldSelectEnhancementChoiceChoiceGroup struct {
 // (Sundered Isles).
 type AssetControlFieldSelectEnhancement struct {
 	Choices map[string]AssetControlFieldSelectEnhancementChoice `json:"choices"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetControlFieldID `json:"id"`
 
 	Label InputLabel `json:"label"`
 
@@ -947,9 +980,6 @@ type AssetOptionFieldSelectEnhancementChoiceChoiceGroup struct {
 type AssetOptionFieldSelectEnhancement struct {
 	Choices map[string]AssetOptionFieldSelectEnhancementChoice `json:"choices"`
 
-	// The unique Datasworn ID for this item.
-	ID AssetOptionFieldID `json:"id"`
-
 	Label InputLabel `json:"label"`
 
 	// The key of the currently selected choice from the `choices` property, or
@@ -964,9 +994,6 @@ type AssetOptionFieldSelectEnhancement struct {
 type AssetOptionFieldSelectValue struct {
 	Choices map[string]SelectValueFieldChoice `json:"choices"`
 
-	// The unique Datasworn ID for this item.
-	ID AssetOptionFieldID `json:"id"`
-
 	Label InputLabel `json:"label"`
 
 	// The key of the currently selected choice from the `choices` property, or
@@ -979,9 +1006,6 @@ type AssetOptionFieldSelectValue struct {
 
 // Represents an input that accepts plain text.
 type AssetOptionFieldText struct {
-	// The unique Datasworn ID for this item.
-	ID AssetOptionFieldID `json:"id"`
-
 	Label InputLabel `json:"label"`
 
 	Value string `json:"value"`
@@ -995,56 +1019,6 @@ type AssetOptionFieldID = string
 
 // A wildcarded ID that can be used to match multiple AssetOptionFields.
 type AssetOptionFieldIDWildcard = string
-
-type AssetType struct {
-	// The unique Datasworn ID for this item.
-	ID AssetTypeID `json:"id"`
-
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source Source `json:"source"`
-
-	// The name of this item as it appears on the page in the book, if it's
-	// different from `name`.
-	CanonicalName *Label `json:"canonical_name,omitempty"`
-
-	// A thematic color associated with this collection.
-	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]Asset `json:"contents,omitempty"`
-
-	// A longer description of this collection, which might include multiple
-	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
-
-	// This collection's content enhances the identified collection, rather than
-	// being a standalone collection of its own.
-	Enhances *AssetTypeID `json:"enhances,omitempty"`
-
-	// An SVG icon associated with this collection.
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	Images []WebpImageURL `json:"images,omitempty"`
-
-	// This collection replaces the identified collection. References to the
-	// replaced collection can be considered equivalent to this collection.
-	Replaces *AssetTypeID `json:"replaces,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of this collection, no more than a few sentences in length.
-	// This is intended for use in application tooltips and similar sorts of hints.
-	// Longer text should use the "description" key instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
-
-	Tags map[string]map[string]string `json:"tags,omitempty"`
-}
-
-// A unique ID for an AssetType.
-type AssetTypeID = string
 
 type Atlas struct {
 	// The unique Datasworn ID for this item.
@@ -1152,6 +1126,33 @@ type AuthorInfo struct {
 // Challenge rank, represented as an integer from 1 (troublesome) to 5 (epic).
 type ChallengeRank = uint8
 
+type ConditionMeterFieldFieldType string
+
+const (
+	ConditionMeterFieldFieldTypeConditionMeter ConditionMeterFieldFieldType = "condition_meter"
+)
+
+// A meter with an integer value, bounded by a minimum and maximum.
+type ConditionMeterField struct {
+	FieldType ConditionMeterFieldFieldType `json:"field_type"`
+
+	Label InputLabel `json:"label"`
+
+	// The maximum value of this meter.
+	Max int8 `json:"max"`
+
+	// The minimum value of this meter.
+	Min int8 `json:"min"`
+
+	Rollable bool `json:"rollable"`
+
+	// The current value of this meter.
+	Value int8 `json:"value"`
+
+	// An icon associated with this input.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+}
+
 // A basic, rollable player character resource specified by the ruleset.
 type ConditionMeterKey = DictKey
 
@@ -1167,6 +1168,8 @@ type ConditionMeterRule struct {
 
 	// The minimum value of this meter.
 	Min int8 `json:"min"`
+
+	Rollable bool `json:"rollable"`
 
 	// Is this condition meter shared by all players?
 	Shared bool `json:"shared"`

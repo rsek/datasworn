@@ -30,6 +30,9 @@ namespace Datasworn
         [JsonPropertyName("min")]
         public sbyte Min { get; set; }
 
+        [JsonPropertyName("rollable")]
+        public bool Rollable { get; set; }
+
         /// <summary>
         /// Is this condition meter shared by all players?
         /// </summary>

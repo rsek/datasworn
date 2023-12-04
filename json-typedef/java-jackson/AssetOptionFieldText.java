@@ -11,9 +11,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonSerialize
 public class AssetOptionFieldText extends AssetOptionField {
-    @JsonProperty("id")
-    private AssetOptionFieldId id;
-
     @JsonProperty("label")
     private InputLabel label;
 
@@ -25,22 +22,6 @@ public class AssetOptionFieldText extends AssetOptionField {
     private SvgImageUrl icon;
 
     public AssetOptionFieldText() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AssetOptionFieldId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AssetOptionFieldId id) {
-        this.id = id;
     }
 
     /**

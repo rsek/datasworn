@@ -22,6 +22,7 @@ export const EnhanceableProperties = Symbol('EnhanceableProperties')
 /** The standard discriminator key for input fields. */
 export const DISCRIMINATOR = 'field_type' as const
 
+/** Wraps basic inputs with a descriminator and optional icon for use in discriminated union input fields. */
 function InputField<
 	T extends Base.TInput<TSchema>,
 	Discriminator extends string
@@ -70,16 +71,17 @@ function InputField<
 export type TInputField<
 	T extends Base.TInput<TSchema>,
 	Discriminator extends string
-> = Generic.TIdentifiedNode<
+> =
+	// Generic.TIdentifiedNode<
 	TObject<
 		T['properties'] & {
 			[DISCRIMINATOR]: TLiteral<Discriminator>
 			// id: Id.TAnyId
 		}
-	>
-> & {
-	[EnhanceableProperties]: Array<keyof Static<T>>
-}
+	> & {
+		// >
+		[EnhanceableProperties]: Array<keyof Static<T>>
+	}
 
 // ReturnType<typeof InputField<T, Discriminator>> & InputFieldOptions<T>
 
@@ -100,58 +102,79 @@ export function isEnhanceable(
 	return !!field[EnhanceableProperties].length
 }
 
-export function CounterField(
-	// id: Id.TAnyId,
-	options: ObjectOptions = {}
-) {
-	return InputField(
-		Base.Counter,
-		'counter',
-		// id,
-		{
-			[EnhanceableProperties]: ['max'],
-			title: 'CounterField',
-			...options
-		}
-	)
-}
-export type TCounterField = ReturnType<typeof CounterField>
+// export function CounterField(
+// 	// id: Id.TAnyId,
+// 	options: ObjectOptions = {}
+// ) {
+// 	return InputField(
+// 		Base.Counter,
+// 		'counter',
+// 		// id,
+// 		{
+// 			[EnhanceableProperties]: ['max'],
+// 			title: 'CounterField',
+// 			...options
+// 		}
+// 	)
+// }
+export const CounterField = InputField(
+	Base.Counter,
+	'counter',
+	// id,
+	{
+		[EnhanceableProperties]: ['max'],
+		$id: 'CounterField'
+	}
+)
+export type TCounterField = typeof CounterField
 export type CounterField = Static<TCounterField>
 
-export function ClockField(
-	// id: Id.TAnyId,
-	options: ObjectOptions = {}
-) {
-	const { $comment, description } = Base.Clock
-	return InputField(
-		Base.Clock,
-		'clock',
-		// id,
-		{
-			[EnhanceableProperties]: ['max'],
-			title: 'ClockField',
-			description,
-			$comment,
-			...options
-		}
-	)
-}
-export type TClockField = ReturnType<typeof ClockField>
+// export function ClockField(
+// 	// id: Id.TAnyId,
+// 	options: ObjectOptions = {}
+// ) {
+// 	const { $comment, description } = Base.Clock
+// 	return InputField(
+// 		Base.Clock,
+// 		'clock',
+// 		// id,
+// 		{
+// 			[EnhanceableProperties]: ['max'],
+// 			title: 'ClockField',
+// 			description,
+// 			$comment,
+// 			...options
+// 		}
+// 	)
+// }
+export const ClockField = InputField(Base.Clock, 'clock', {
+	[EnhanceableProperties]: ['max'],
+	$id: 'ClockField'
+})
+export type TClockField = typeof ClockField
 export type ClockField = Static<TClockField>
 
-export function ConditionMeterField() {
-	// id: Id.TAnyId
-	return InputField(
-		Base.Meter(Type.Integer({ default: 0 }), Type.Integer()),
-		'condition_meter',
-		// id,
-		{
-			[EnhanceableProperties]: ['max'],
-			title: 'ConditionMeterField'
-		}
-	)
-}
-export type TConditionMeterField = ReturnType<typeof ConditionMeterField>
+// export function ConditionMeterField() {
+// 	// id: Id.TAnyId
+// 	return InputField(
+// 		Base.Meter(Type.Integer({ default: 0 }), Type.Integer()),
+// 		'condition_meter',
+// 		// id,
+// 		{
+// 			[EnhanceableProperties]: ['max'],
+// 			title: 'ConditionMeterField'
+// 		}
+// 	)
+// }
+export const ConditionMeterField = InputField(
+	Base.Meter(Type.Literal(true)),
+	'condition_meter',
+	{
+		[EnhanceableProperties]: ['max'],
+		$id: 'ConditionMeterField'
+	}
+)
+export type TConditionMeterField = typeof ConditionMeterField
 export type ConditionMeterField = Static<TConditionMeterField>
 
 function SelectField<
@@ -198,20 +221,29 @@ export const SelectValueFieldChoice = Utils.DiscriminatedUnion(
 	{ $id: 'SelectValueFieldChoice' }
 )
 
-export function SelectValueField(
-	// id: Id.TAnyId,
-	options: ObjectOptions = {}
-) {
-	return SelectField(
-		Type.Ref(SelectValueFieldChoice),
-		'select_value',
-		// id,
-		{
-			...options
-		}
-	)
-}
-export type TSelectValueField = ReturnType<typeof SelectValueField>
+// export function SelectValueField(
+// 	// id: Id.TAnyId,
+// 	options: ObjectOptions = {}
+// ) {
+// 	return SelectField(
+// 		Type.Ref(SelectValueFieldChoice),
+// 		'select_value',
+// 		// id,
+// 		{
+// 			...options
+// 		}
+// 	)
+// }
+
+export const SelectValueField = SelectField(
+	Type.Ref(SelectValueFieldChoice),
+	'select_value',
+	// id,
+	{
+		$id: 'SelectValueField'
+	}
+)
+export type TSelectValueField = typeof SelectValueField
 export type SelectValueField = Static<TSelectValueField>
 
 export const SelectEnhancementFieldChoice = Base.SelectOption(
@@ -232,75 +264,111 @@ export const SelectEnhancementFieldChoiceGroup = Base.SelectChoicesGroup(
 	}
 )
 
-export function SelectEnhancementField(
-	// id: Id.TAnyId,
-	options: ObjectOptions = {}
-) {
-	return SelectFieldWithGroups(
-		SelectEnhancementFieldChoice,
-		SelectEnhancementFieldChoiceGroup,
-		'select_enhancement',
-		// id,
-		{
-			description:
-				'Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).',
-			...options
-		}
-	)
-}
-export type TSelectEnhancementField = ReturnType<typeof SelectEnhancementField>
+// export function SelectEnhancementField(
+// 	// id: Id.TAnyId,
+// 	options: ObjectOptions = {}
+// ) {
+// 	return SelectFieldWithGroups(
+// 		SelectEnhancementFieldChoice,
+// 		SelectEnhancementFieldChoiceGroup,
+// 		'select_enhancement',
+// 		// id,
+// 		{
+// 			description:
+// 				'Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).',
+// 			...options
+// 		}
+// 	)
+// }
+export const SelectEnhancementField = SelectFieldWithGroups(
+	SelectEnhancementFieldChoice,
+	SelectEnhancementFieldChoiceGroup,
+	'select_enhancement',
+	// id,
+	{
+		description:
+			'Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).',
+		$id: 'SelectEnhancementField'
+	}
+)
+export type TSelectEnhancementField = typeof SelectEnhancementField
 export type SelectEnhancementField = Static<TSelectEnhancementField>
 
-export function CardFlipField(
-	// id: Id.TAnyId,
-	options: ObjectOptions = {}
-) {
-	return InputField(
-		Base.Input(
-			Type.Boolean({ description: 'Is the card flipped over?', default: false })
-		),
-		'card_flip',
-		// id,
-		{
-			title: 'CardFlipField',
-			description: `When its value is set to \`true\` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).`,
-			...options
-		}
-	)
-}
-export type TCardFlipField = ReturnType<typeof CardFlipField>
+// export function CardFlipField(
+// 	// id: Id.TAnyId,
+// 	options: ObjectOptions = {}
+// ) {
+// 	return InputField(
+// 		Base.Input(
+// 			Type.Boolean({ description: 'Is the card flipped over?', default: false })
+// 		),
+// 		'card_flip',
+// 		// id,
+// 		{
+// 			title: 'CardFlipField',
+// 			description: `When its value is set to \`true\` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).`,
+// 			...options
+// 		}
+// 	)
+// }
+// export type TCardFlipField = ReturnType<typeof CardFlipField>
+// export type CardFlipField = Static<TCardFlipField>
+
+export const CardFlipField = InputField(
+	Base.Input(
+		Type.Boolean({ description: 'Is the card flipped over?', default: false })
+	),
+	'card_flip',
+	// id,
+	{
+		title: 'CardFlipField',
+		description: `When its value is set to \`true\` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).`
+		// ...options
+	}
+)
+
+export type TCardFlipField = typeof CardFlipField
 export type CardFlipField = Static<TCardFlipField>
 
-export function CheckboxField(
-	// id: Id.TAnyId,
-	options: ObjectOptions = {}
-) {
-	return InputField(
-		Base.Checkbox,
-		'checkbox',
-		// id,
-		{
-			title: 'CheckboxField',
-			...options
-		}
-	)
-}
-export type TCheckboxField = ReturnType<typeof CheckboxField>
+// export function CheckboxField(
+// 	// id: Id.TAnyId,
+// 	options: ObjectOptions = {}
+// ) {
+// 	return InputField(
+// 		Base.Checkbox,
+// 		'checkbox',
+// 		// id,
+// 		{
+// 			title: 'CheckboxField',
+// 			...options
+// 		}
+// 	)
+// }
+// export type TCheckboxField = ReturnType<typeof CheckboxField>
+export const CheckboxField = InputField(Base.Checkbox, 'checkbox', {
+	$id: 'CheckboxField'
+})
+export type TCheckboxField = typeof CheckboxField
 export type CheckboxField = Static<TCheckboxField>
 
-export function TextField(
-	// id: Id.TAnyId,
-	options: ObjectOptions = {}
-) {
-	return InputField(
-		Base.TextInput,
-		'text',
-		// id,
-		{
-			title: 'TextField',
-			...options
-		}
-	)
-}
-export type TTextField = ReturnType<typeof TextField>
+// export function TextField(
+// 	// id: Id.TAnyId,
+// 	options: ObjectOptions = {}
+// ) {
+// 	return InputField(
+// 		Base.TextInput,
+// 		'text',
+// 		// id,
+// 		{
+// 			title: 'TextField',
+// 			...options
+// 		}
+// 	)
+// }
+// export type TTextField = ReturnType<typeof TextField>
+// export type TextField = Static<TTextField>
+export const TextField = InputField(Base.TextInput, 'text', {
+	$id: 'TextField'
+})
+export type TTextField = typeof TextField
 export type TextField = Static<TTextField>

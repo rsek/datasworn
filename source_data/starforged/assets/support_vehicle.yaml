@@ -22,7 +22,7 @@ assets:
       exosuit:
         name: Exosuit
         <<: &SupportVehicleAsset
-          asset_type: Support Vehicle
+          category: Support Vehicle
           shared: true
           color: *SupportVehicleAsset.color
           source: &AssetSource

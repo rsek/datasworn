@@ -2,16 +2,17 @@
 
 package Datasworn;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * Describes a standard player character condition meter.
+ * A meter with an integer value, bounded by a minimum and maximum.
  */
 @JsonSerialize
-public class ConditionMeterRule {
-    @JsonProperty("description")
-    private MarkdownString description;
+public class ConditionMeterField {
+    @JsonProperty("field_type")
+    private ConditionMeterFieldFieldType fieldType;
 
     @JsonProperty("label")
     private InputLabel label;
@@ -25,29 +26,28 @@ public class ConditionMeterRule {
     @JsonProperty("rollable")
     private Boolean rollable;
 
-    @JsonProperty("shared")
-    private Boolean shared;
-
     @JsonProperty("value")
     private Byte value;
 
-    public ConditionMeterRule() {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("icon")
+    private SvgImageUrl icon;
+
+    public ConditionMeterField() {
     }
 
     /**
-     * Getter for description.<p>
-     * A description of this condition meter.
+     * Getter for fieldType.<p>
      */
-    public MarkdownString getDescription() {
-        return description;
+    public ConditionMeterFieldFieldType getFieldType() {
+        return fieldType;
     }
 
     /**
-     * Setter for description.<p>
-     * A description of this condition meter.
+     * Setter for fieldType.<p>
      */
-    public void setDescription(MarkdownString description) {
-        this.description = description;
+    public void setFieldType(ConditionMeterFieldFieldType fieldType) {
+        this.fieldType = fieldType;
     }
 
     /**
@@ -111,22 +111,6 @@ public class ConditionMeterRule {
     }
 
     /**
-     * Getter for shared.<p>
-     * Is this condition meter shared by all players?
-     */
-    public Boolean getShared() {
-        return shared;
-    }
-
-    /**
-     * Setter for shared.<p>
-     * Is this condition meter shared by all players?
-     */
-    public void setShared(Boolean shared) {
-        this.shared = shared;
-    }
-
-    /**
      * Getter for value.<p>
      * The current value of this meter.
      */
@@ -140,5 +124,21 @@ public class ConditionMeterRule {
      */
     public void setValue(Byte value) {
         this.value = value;
+    }
+
+    /**
+     * Getter for icon.<p>
+     * An icon associated with this input.
+     */
+    public SvgImageUrl getIcon() {
+        return icon;
+    }
+
+    /**
+     * Setter for icon.<p>
+     * An icon associated with this input.
+     */
+    public void setIcon(SvgImageUrl icon) {
+        this.icon = icon;
     }
 }

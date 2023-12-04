@@ -14,7 +14,7 @@ assets:
       cohort:
         source: *Source
         name: Cohort
-        asset_type: Deed
+        category: Deed
         requirement: Once you [Make a Connection](id:sundered_isles/moves/connection/make_a_connection) and accept them as a crewmate...
         abilities:
           - enabled: true
@@ -28,7 +28,7 @@ assets:
         source: *Source
         name: Damned
         requirement: Once you mark tormented or doomed...
-        asset_type: Deed
+        category: Deed
         attachments:
           max: 3
           assets:
@@ -45,7 +45,7 @@ assets:
         source: *Source
         name: Fleet Commander
         requirement: Once you fill 12 legacy track boxes and take command of a mighty fleet...
-        asset_type: Deed
+        category: Deed
         abilities:
           - enabled: true
             text: |-
@@ -73,7 +73,7 @@ assets:
       undead:
         source: *Source
         name: Undead
-        asset_type: Deed
+        category: Deed
         requirement: Once you die or are cursed with undeath...
         count_as_impact: true
         abilities:

@@ -90,7 +90,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetType"
+							"$ref": "#/$defs/AssetCollection"
 						}
 					}
 				},
@@ -215,7 +215,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetType"
+							"$ref": "#/$defs/AssetCollection"
 						}
 					}
 				},
@@ -927,7 +927,15 @@
 			"title": "ConditionMeterRule",
 			"type": "object",
 			"description": "Describes a standard player character condition meter.",
-			"required": ["label", "min", "max", "value", "shared", "description"],
+			"required": [
+				"label",
+				"min",
+				"max",
+				"value",
+				"shared",
+				"description",
+				"rollable"
+			],
 			"properties": {
 				"label": {
 					"$ref": "#/$defs/InputLabel"
@@ -939,12 +947,12 @@
 				},
 				"max": {
 					"type": "integer",
-					"description": "The maximum value of this meter.",
-					"default": 5
+					"description": "The maximum value of this meter."
 				},
 				"value": {
 					"type": "integer",
-					"description": "The current value of this meter."
+					"description": "The current value of this meter.",
+					"default": 0
 				},
 				"shared": {
 					"type": "boolean",
@@ -954,6 +962,10 @@
 				"description": {
 					"$ref": "#/$defs/MarkdownString",
 					"description": "A description of this condition meter."
+				},
+				"rollable": {
+					"type": "integer",
+					"default": 0
 				}
 			}
 		},
@@ -3629,85 +3641,6 @@
 				}
 			}
 		},
-		"AssetAbilityCheckbox": {
-			"title": "AssetAbilityCheckbox",
-			"type": "object",
-			"description": "Represents a checkbox.",
-			"$comment": "Semantics are similar to the `<input type=\"checkbox\">` element.",
-			"required": [
-				"label",
-				"field_type",
-				"value",
-				"disables_asset",
-				"is_impact"
-			],
-			"properties": {
-				"label": {
-					"$ref": "#/$defs/InputLabel"
-				},
-				"field_type": {
-					"type": "string",
-					"const": "checkbox"
-				},
-				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
-				"value": {
-					"type": "boolean",
-					"description": "Is the box checked?",
-					"default": false
-				},
-				"disables_asset": {
-					"type": "boolean",
-					"description": "Does this field disable the asset when its value is set to `true`?",
-					"default": false
-				},
-				"is_impact": {
-					"type": "boolean",
-					"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?",
-					"default": false
-				}
-			}
-		},
-		"AssetAbilityClock": {
-			"title": "AssetAbilityClock",
-			"type": "object",
-			"description": "A clock with 4 or more segments.",
-			"$comment": "Semantics are similar to `<input type=\"number\">`, but rendered as a clock (a circle with equally sized wedges).",
-			"required": ["label", "field_type", "min", "max", "value"],
-			"properties": {
-				"label": {
-					"$ref": "#/$defs/InputLabel"
-				},
-				"field_type": {
-					"type": "string",
-					"const": "clock"
-				},
-				"min": {
-					"type": "integer",
-					"description": "The minimum number of filled clock segments. This is always 0.",
-					"const": 0,
-					"default": 0
-				},
-				"max": {
-					"title": "ClockSize",
-					"type": "integer",
-					"description": "The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.",
-					"minimum": 2,
-					"multipleOf": 2
-				},
-				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
-				"value": {
-					"type": "integer",
-					"description": "The current number of filled clock segments.",
-					"default": 0
-				}
-			}
-		},
 		"AssetAbilityControlField": {
 			"title": "AssetAbilityControlField",
 			"type": "object",
@@ -3715,7 +3648,7 @@
 			"required": ["field_type"],
 			"properties": {
 				"field_type": {
-					"enum": ["clock", "counter", "checkbox"]
+					"enum": ["clock", "counter", "checkbox", "text"]
 				}
 			},
 			"additionalProperties": true,
@@ -3730,7 +3663,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetAbilityClock"
+						"$ref": "#/$defs/ClockField"
 					}
 				},
 				{
@@ -3743,7 +3676,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetAbilityCounter"
+						"$ref": "#/$defs/CounterField"
 					}
 				},
 				{
@@ -3756,52 +3689,23 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetAbilityCheckbox"
+						"$ref": "#/$defs/AssetCheckboxField"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"field_type": {
+								"const": "text",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/TextField"
 					}
 				}
 			]
-		},
-		"AssetAbilityCounter": {
-			"title": "AssetAbilityCounter",
-			"type": "object",
-			"description": "A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.",
-			"$comment": "Semantics are similar to `<input type=\"number\" step=\"1\">`",
-			"required": ["label", "field_type", "min", "max", "value"],
-			"properties": {
-				"label": {
-					"$ref": "#/$defs/InputLabel"
-				},
-				"field_type": {
-					"type": "string",
-					"const": "counter"
-				},
-				"min": {
-					"type": "integer",
-					"description": "The (inclusive) minimum value.",
-					"default": 0
-				},
-				"max": {
-					"description": "The (inclusive) maximum value, or `null` if there's no maximum.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer"
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
-				"value": {
-					"type": "integer",
-					"description": "The current value of this input.",
-					"default": 0
-				}
-			}
 		},
 		"AssetAbilityOptionField": {
 			"title": "AssetAbilityOptionField",
@@ -3825,37 +3729,7 @@
 						}
 					},
 					"then": {
-						"description": "Represents an input that accepts plain text.",
-						"$comment": "Semantics are similar to the HTML `<input type=\"text\">` element.",
-						"title": "TextField",
-						"type": "object",
-						"properties": {
-							"label": {
-								"$ref": "#/$defs/InputLabel"
-							},
-							"value": {
-								"description": "The content of this text input, or `null` if it's empty",
-								"default": null,
-								"anyOf": [
-									{
-										"type": "string"
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"field_type": {
-								"const": "text",
-								"type": "string"
-							},
-							"icon": {
-								"description": "An icon associated with this input.",
-								"$ref": "#/$defs/SvgImageUrl"
-							}
-						},
-						"required": ["label", "value", "field_type"],
-						"additionalProperties": false
+						"$ref": "#/$defs/TextField"
 					}
 				}
 			]
@@ -3888,10 +3762,9 @@
 				}
 			}
 		},
-		"AssetCardFlipControlField": {
-			"title": "AssetCardFlipControlField",
+		"AssetCardFlipField": {
+			"title": "AssetCardFlipField",
 			"type": "object",
-			"description": "When its value is set to `true` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).",
 			"required": [
 				"label",
 				"field_type",
@@ -3928,11 +3801,9 @@
 				}
 			}
 		},
-		"AssetCheckboxControlField": {
-			"title": "AssetCheckboxControlField",
+		"AssetCheckboxField": {
+			"title": "AssetCheckboxField",
 			"type": "object",
-			"description": "Represents a checkbox.",
-			"$comment": "Semantics are similar to the `<input type=\"checkbox\">` element.",
 			"required": [
 				"label",
 				"field_type",
@@ -3969,8 +3840,8 @@
 				}
 			}
 		},
-		"AssetType": {
-			"title": "AssetType",
+		"AssetCollection": {
+			"title": "AssetCollection",
 			"type": "object",
 			"required": ["id", "name", "source"],
 			"properties": {
@@ -4054,7 +3925,7 @@
 			"title": "AssetConditionMeter",
 			"type": "object",
 			"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\".",
-			"required": ["label", "field_type", "min", "max", "value"],
+			"required": ["label", "field_type", "min", "max", "value", "rollable"],
 			"properties": {
 				"label": {
 					"$ref": "#/$defs/InputLabel"
@@ -4078,7 +3949,8 @@
 				},
 				"value": {
 					"type": "integer",
-					"description": "The current value of this meter."
+					"description": "The current value of this meter.",
+					"default": 0
 				},
 				"controls": {
 					"type": "object",
@@ -4122,6 +3994,11 @@
 						}
 					},
 					"releaseStage": "unstable"
+				},
+				"rollable": {
+					"type": "boolean",
+					"const": true,
+					"default": true
 				}
 			}
 		},
@@ -4148,46 +4025,7 @@
 						}
 					},
 					"then": {
-						"description": "Represents a checkbox.",
-						"$comment": "Semantics are similar to the `<input type=\"checkbox\">` element.",
-						"title": "AssetCheckboxField",
-						"type": "object",
-						"properties": {
-							"label": {
-								"$ref": "#/$defs/InputLabel"
-							},
-							"value": {
-								"description": "Is the box checked?",
-								"default": false,
-								"type": "boolean"
-							},
-							"field_type": {
-								"const": "checkbox",
-								"type": "string"
-							},
-							"icon": {
-								"description": "An icon associated with this input.",
-								"$ref": "#/$defs/SvgImageUrl"
-							},
-							"is_impact": {
-								"default": false,
-								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?",
-								"type": "boolean"
-							},
-							"disables_asset": {
-								"default": false,
-								"description": "Does this field disable the asset when its value is set to `true`?",
-								"type": "boolean"
-							}
-						},
-						"required": [
-							"label",
-							"value",
-							"field_type",
-							"is_impact",
-							"disables_asset"
-						],
-						"additionalProperties": false
+						"$ref": "#/$defs/AssetCheckboxField"
 					}
 				},
 				{
@@ -4200,45 +4038,7 @@
 						}
 					},
 					"then": {
-						"description": "When its value is set to `true` it means that the card is flipped over. Some assets use this to represent a 'broken' state (e.g. Starforged Module assets).",
-						"title": "AssetCardFlipField",
-						"type": "object",
-						"properties": {
-							"label": {
-								"$ref": "#/$defs/InputLabel"
-							},
-							"value": {
-								"description": "Is the card flipped over?",
-								"default": false,
-								"type": "boolean"
-							},
-							"field_type": {
-								"const": "card_flip",
-								"type": "string"
-							},
-							"icon": {
-								"description": "An icon associated with this input.",
-								"$ref": "#/$defs/SvgImageUrl"
-							},
-							"is_impact": {
-								"default": false,
-								"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?",
-								"type": "boolean"
-							},
-							"disables_asset": {
-								"default": false,
-								"description": "Does this field disable the asset when its value is set to `true`?",
-								"type": "boolean"
-							}
-						},
-						"required": [
-							"label",
-							"value",
-							"field_type",
-							"is_impact",
-							"disables_asset"
-						],
-						"additionalProperties": false
+						"$ref": "#/$defs/AssetCardFlipField"
 					}
 				}
 			]
@@ -4299,7 +4099,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetSelectEnhancementControlField"
+						"$ref": "#/$defs/SelectEnhancementField"
 					}
 				},
 				{
@@ -4312,7 +4112,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetCheckboxControlField"
+						"$ref": "#/$defs/AssetCheckboxField"
 					}
 				},
 				{
@@ -4325,7 +4125,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetCardFlipControlField"
+						"$ref": "#/$defs/AssetCardFlipField"
 					}
 				}
 			]
@@ -4411,7 +4211,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetSelectValueOptionField"
+						"$ref": "#/$defs/SelectValueField"
 					}
 				},
 				{
@@ -4424,7 +4224,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetSelectEnhancementOptionField"
+						"$ref": "#/$defs/SelectEnhancementField"
 					}
 				},
 				{
@@ -4437,13 +4237,141 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetTextOptionField"
+						"$ref": "#/$defs/TextField"
 					}
 				}
 			]
 		},
-		"AssetSelectEnhancementControlField": {
-			"title": "AssetSelectEnhancementControlField",
+		"ClockField": {
+			"title": "ClockField",
+			"type": "object",
+			"description": "A clock with 4 or more segments.",
+			"$comment": "Semantics are similar to `<input type=\"number\">`, but rendered as a clock (a circle with equally sized wedges).",
+			"required": ["label", "field_type", "min", "max", "value", "rollable"],
+			"properties": {
+				"label": {
+					"$ref": "#/$defs/InputLabel"
+				},
+				"field_type": {
+					"type": "string",
+					"const": "clock"
+				},
+				"min": {
+					"type": "integer",
+					"description": "The minimum number of filled clock segments. This is always 0.",
+					"const": 0,
+					"default": 0
+				},
+				"max": {
+					"title": "ClockSize",
+					"type": "integer",
+					"description": "The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.",
+					"minimum": 2,
+					"multipleOf": 2
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An icon associated with this input."
+				},
+				"value": {
+					"type": "integer",
+					"description": "The current value of this input.",
+					"default": 0
+				},
+				"rollable": {
+					"type": "boolean",
+					"const": false,
+					"default": false
+				}
+			}
+		},
+		"ConditionMeterField": {
+			"title": "ConditionMeterField",
+			"type": "object",
+			"description": "A meter with an integer value, bounded by a minimum and maximum.",
+			"required": ["label", "field_type", "min", "max", "value", "rollable"],
+			"properties": {
+				"label": {
+					"$ref": "#/$defs/InputLabel"
+				},
+				"field_type": {
+					"type": "string",
+					"const": "condition_meter"
+				},
+				"min": {
+					"type": "integer",
+					"description": "The minimum value of this meter.",
+					"default": 0
+				},
+				"max": {
+					"type": "integer",
+					"description": "The maximum value of this meter."
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An icon associated with this input."
+				},
+				"value": {
+					"type": "integer",
+					"description": "The current value of this meter.",
+					"default": 0
+				},
+				"rollable": {
+					"type": "boolean",
+					"const": true,
+					"default": true
+				}
+			}
+		},
+		"CounterField": {
+			"title": "CounterField",
+			"type": "object",
+			"description": "A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.",
+			"$comment": "Semantics are similar to `<input type=\"number\" step=\"1\">`",
+			"required": ["label", "field_type", "min", "max", "value", "rollable"],
+			"properties": {
+				"label": {
+					"$ref": "#/$defs/InputLabel"
+				},
+				"field_type": {
+					"type": "string",
+					"const": "counter"
+				},
+				"min": {
+					"type": "integer",
+					"description": "The (inclusive) minimum value.",
+					"default": 0
+				},
+				"max": {
+					"description": "The (inclusive) maximum value, or `null` if there's no maximum.",
+					"default": null,
+					"anyOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An icon associated with this input."
+				},
+				"value": {
+					"type": "integer",
+					"description": "The current value of this input.",
+					"default": 0
+				},
+				"rollable": {
+					"type": "boolean",
+					"const": false,
+					"default": false
+				}
+			}
+		},
+		"SelectEnhancementField": {
+			"title": "SelectEnhancementField",
 			"type": "object",
 			"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).",
 			"$comment": "Semantics are similar to the HTML `<select>` element",
@@ -4518,160 +4446,6 @@
 							]
 						}
 					}
-				}
-			}
-		},
-		"AssetSelectEnhancementOptionField": {
-			"title": "AssetSelectEnhancementOptionField",
-			"type": "object",
-			"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).",
-			"$comment": "Semantics are similar to the HTML `<select>` element",
-			"required": ["label", "field_type", "value", "choices"],
-			"properties": {
-				"label": {
-					"$ref": "#/$defs/InputLabel"
-				},
-				"field_type": {
-					"type": "string",
-					"const": "select_enhancement"
-				},
-				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
-				"value": {
-					"description": "The current value of this input.",
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/$defs/DictKey",
-							"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected.",
-							"default": null
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"choices": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"type": "object",
-							"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `choice_type` property as a discriminator.",
-							"required": ["choice_type"],
-							"properties": {
-								"choice_type": {
-									"enum": ["choice", "choice_group"]
-								}
-							},
-							"additionalProperties": true,
-							"allOf": [
-								{
-									"if": {
-										"properties": {
-											"choice_type": {
-												"const": "choice",
-												"type": "string"
-											}
-										}
-									},
-									"then": {
-										"$ref": "#/$defs/SelectEnhancementFieldChoice"
-									}
-								},
-								{
-									"if": {
-										"properties": {
-											"choice_type": {
-												"const": "choice_group",
-												"type": "string"
-											}
-										}
-									},
-									"then": {
-										"$ref": "#/$defs/SelectEnhancementFieldChoiceGroup"
-									}
-								}
-							]
-						}
-					}
-				}
-			}
-		},
-		"AssetSelectValueOptionField": {
-			"title": "AssetSelectValueOptionField",
-			"type": "object",
-			"description": "Represents a list of mutually exclusive choices.",
-			"$comment": "Semantics are similar to the HTML `<select>` element",
-			"required": ["label", "field_type", "value", "choices"],
-			"properties": {
-				"label": {
-					"$ref": "#/$defs/InputLabel"
-				},
-				"field_type": {
-					"type": "string",
-					"const": "select_value"
-				},
-				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
-				"value": {
-					"description": "The current value of this input.",
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/$defs/DictKey",
-							"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected.",
-							"default": null
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"choices": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/SelectValueFieldChoice"
-						}
-					}
-				}
-			}
-		},
-		"AssetTextOptionField": {
-			"title": "AssetTextOptionField",
-			"type": "object",
-			"description": "Represents an input that accepts plain text.",
-			"$comment": "Semantics are similar to the HTML `<input type=\"text\">` element.",
-			"required": ["label", "field_type", "value"],
-			"properties": {
-				"label": {
-					"$ref": "#/$defs/InputLabel"
-				},
-				"field_type": {
-					"type": "string",
-					"const": "text"
-				},
-				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
-				"value": {
-					"description": "The content of this text input, or `null` if it's empty",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "string"
-						},
-						{
-							"type": "null"
-						}
-					]
 				}
 			}
 		},
@@ -4721,6 +4495,49 @@
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/$defs/SelectEnhancementFieldChoice"
+						}
+					}
+				}
+			}
+		},
+		"SelectValueField": {
+			"title": "SelectValueField",
+			"type": "object",
+			"description": "Represents a list of mutually exclusive choices.",
+			"$comment": "Semantics are similar to the HTML `<select>` element",
+			"required": ["label", "field_type", "value", "choices"],
+			"properties": {
+				"label": {
+					"$ref": "#/$defs/InputLabel"
+				},
+				"field_type": {
+					"type": "string",
+					"const": "select_value"
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An icon associated with this input."
+				},
+				"value": {
+					"description": "The current value of this input.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/$defs/DictKey",
+							"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected.",
+							"default": null
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"choices": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/SelectValueFieldChoice"
 						}
 					}
 				}
@@ -5021,6 +4838,38 @@
 					}
 				}
 			]
+		},
+		"TextField": {
+			"title": "TextField",
+			"type": "object",
+			"description": "Represents an input that accepts plain text.",
+			"$comment": "Semantics are similar to the HTML `<input type=\"text\">` element.",
+			"required": ["label", "field_type", "value"],
+			"properties": {
+				"label": {
+					"$ref": "#/$defs/InputLabel"
+				},
+				"field_type": {
+					"type": "string",
+					"const": "text"
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An icon associated with this input."
+				},
+				"value": {
+					"description": "The content of this text input, or `null` if it's empty",
+					"default": null,
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "null"
+						}
+					]
+				}
+			}
 		},
 		"Truth": {
 			"title": "Truth",

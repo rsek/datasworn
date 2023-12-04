@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
     @JsonSubTypes.Type(name = "checkbox", value = AssetAbilityControlFieldCheckbox.class),
     @JsonSubTypes.Type(name = "clock", value = AssetAbilityControlFieldClock.class),
     @JsonSubTypes.Type(name = "counter", value = AssetAbilityControlFieldCounter.class),
+    @JsonSubTypes.Type(name = "text", value = AssetAbilityControlFieldText.class),
 })
 public abstract class AssetAbilityControlField {
 }

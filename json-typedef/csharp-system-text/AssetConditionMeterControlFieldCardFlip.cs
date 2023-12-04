@@ -4,11 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// When its value is set to `true` it means that the card is flipped over.
-    /// Some assets use this to represent a 'broken' state (e.g. Starforged
-    /// Module assets).
-    /// </summary>
     public class AssetConditionMeterControlFieldCardFlip : AssetConditionMeterControlField
     {
         [JsonPropertyName("field_type")]
@@ -19,12 +14,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("disables_asset")]
         public bool DisablesAsset { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetConditionMeterControlFieldId Id { get; set; }
 
         /// <summary>
         /// Does this field count as an impact (Starforged) or debility

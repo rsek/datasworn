@@ -14,8 +14,8 @@ namespace Datasworn
         /// A localized category label for this asset. This is the surtitle
         /// above the asset's name on the card.
         /// </summary>
-        [JsonPropertyName("asset_type")]
-        public Label AssetType { get; set; }
+        [JsonPropertyName("category")]
+        public Label Category { get; set; }
 
         /// <summary>
         /// If `true`, this asset counts as an impact (Starforged) or a debility

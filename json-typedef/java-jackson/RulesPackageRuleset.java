@@ -13,7 +13,7 @@ import java.util.Map;
 @JsonSerialize
 public class RulesPackageRuleset extends RulesPackage {
     @JsonProperty("assets")
-    private Map<String, AssetType> assets;
+    private Map<String, AssetCollection> assets;
 
     @JsonProperty("datasworn_version")
     private SemanticVersion dataswornVersion;
@@ -65,7 +65,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * Getter for assets.<p>
      * A dictionary object containing asset types, which contain assets.
      */
-    public Map<String, AssetType> getAssets() {
+    public Map<String, AssetCollection> getAssets() {
         return assets;
     }
 
@@ -73,7 +73,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * Setter for assets.<p>
      * A dictionary object containing asset types, which contain assets.
      */
-    public void setAssets(Map<String, AssetType> assets) {
+    public void setAssets(Map<String, AssetCollection> assets) {
         this.assets = assets;
     }
 

@@ -17,7 +17,7 @@ assets:
       Paths represent your background, interests, training, and skills. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. For example, a [Ritualist](id:classic/assets/path/ritualist) would likely have a different outlook than a [Veteran](id:classic/assets/path/veteran). Choosing both those paths can reflect an evolution of your character or an interesting background.
     contents:
       alchemist:
-        asset_type: Path
+        category: Path
         source:
           <<: &AssetSource
             <<: *Source
@@ -88,7 +88,7 @@ assets:
                 enhances:
                   - classic/assets/path/alchemist/abilities/0/moves/create_elixir
       animal_kin:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 4
@@ -127,7 +127,7 @@ assets:
                       method: null
 
       banner_sworn:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 4
@@ -180,7 +180,7 @@ assets:
             # TODO: enhance momentum burn
 
       battle_scarred:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 4
@@ -210,7 +210,7 @@ assets:
                         - using: stat
                           stat: heart
       blade_bound:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 4
@@ -255,7 +255,7 @@ assets:
                       roll_options: null
                       method: null
       bonded:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 4
@@ -280,7 +280,7 @@ assets:
             enhance_moves:
               - roll_type: action_roll
       commander:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 4
@@ -339,7 +339,7 @@ assets:
                 - classic/moves/adventure/make_camp
                 - classic/moves/relationship/sojourn
       dancer:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 4
@@ -405,7 +405,7 @@ assets:
                       On a __weak hit__, you take +1 momentum or +1 spirit, but your allies are unmoved.
                   miss: *MoveOutcome.Miss.Generic
       devotant:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -500,7 +500,7 @@ assets:
                           assets: null
                           option: stat
       empowered:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -550,7 +550,7 @@ assets:
                       roll_options: null
                       method: null
       fated:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -589,7 +589,7 @@ assets:
                   - classic/moves/quest/fulfill_your_vow
                 trigger: *FatedVowTrigger
       fortune_hunter:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -642,7 +642,7 @@ assets:
             max: 5
             value: 0
       herbalist:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -699,7 +699,7 @@ assets:
                       roll_options: null
                       method: null
       honorbound:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -733,7 +733,7 @@ assets:
                   - classic/moves/quest/fulfill_your_vow
 
       improviser:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -775,7 +775,7 @@ assets:
                       roll_options: null
                       method: null
       infiltrator:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -829,7 +829,7 @@ assets:
                           stat: shadow
                       text: Within an enemy area by scavenging or looting
       lorekeeper:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 6
@@ -876,7 +876,7 @@ assets:
           - text: |-
               One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or [Face Desolation](id:classic/moves/suffer/face_desolation) (ignoring momentum).
       loyalist:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -917,7 +917,7 @@ assets:
                       method: null
                       text: when you stand with your ally as they make a progress move
       masked:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -989,7 +989,7 @@ assets:
                     - <<: *MaskTrigger.condition
                       method: player_choice
       oathbreaker:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -1031,7 +1031,7 @@ assets:
                   - classic/moves/quest/fulfill_your_vow
                 trigger: *objective
       outcast:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -1078,7 +1078,7 @@ assets:
                 enhances:
                   - classic/moves/adventure/reach_your_destination
       pretender:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -1138,7 +1138,7 @@ assets:
                       roll_options: null
                       method: null
       revenant:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -1182,7 +1182,7 @@ assets:
                       roll_options: null
                       method: null
       rider:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -1233,7 +1233,7 @@ assets:
                           stat: wits
 
       ritualist:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -1264,7 +1264,7 @@ assets:
           - text: |-
               When you tattoo the essence of a new ritual onto your skin, envision the mark you create. You may then purchase and upgrade that ritual asset for 1 fewer experience.
       shadow_kin:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 8
@@ -1294,7 +1294,7 @@ assets:
                         - using: stat
                           stat: shadow
       sighted:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1340,7 +1340,7 @@ assets:
                       method: null
 
       slayer:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1406,7 +1406,7 @@ assets:
                       method: null
 
       spirit_bound:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1452,7 +1452,7 @@ assets:
                       roll_options: null
                       method: null
       storyweaver:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1491,7 +1491,7 @@ assets:
                       roll_options: null
                       method: null
       trickster:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1536,7 +1536,7 @@ assets:
                         - using: stat
                           stat: heart
       veteran:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1579,7 +1579,7 @@ assets:
                       roll_options: null
                       method: null
       waterborn:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1627,7 +1627,7 @@ assets:
                       roll_options: null
                       method: null
       wayfinder:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1671,7 +1671,7 @@ assets:
                 trigger: *WayfinderTrigger
 
       weaponmaster:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 10
@@ -1715,7 +1715,7 @@ assets:
                       roll_options: null
                       method: null
       wildblood:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 12
@@ -1762,7 +1762,7 @@ assets:
                         - using: stat
                           stat: wits
       wright:
-        asset_type: Path
+        category: Path
         source:
           <<: *AssetSource
           page: 12

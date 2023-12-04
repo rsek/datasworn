@@ -10,7 +10,8 @@
 				"max": 5,
 				"value": 5,
 				"shared": false,
-				"description": "Health represents your current physical condition and stamina."
+				"description": "Health represents your current physical condition and stamina.",
+				"rollable": 0
 			},
 			"spirit": {
 				"label": "spirit",
@@ -18,7 +19,8 @@
 				"max": 5,
 				"value": 5,
 				"shared": false,
-				"description": "Spirit is your current morale and mental state."
+				"description": "Spirit is your current morale and mental state.",
+				"rollable": 0
 			},
 			"supply": {
 				"label": "supply",
@@ -26,7 +28,8 @@
 				"max": 5,
 				"value": 5,
 				"shared": true,
-				"description": "Supply represents your preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep."
+				"description": "Supply represents your preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.",
+				"rollable": 0
 			}
 		},
 		"impacts": {
@@ -42911,7 +42914,7 @@
 				"starship": {
 					"id": "starforged/assets/command_vehicle/starship",
 					"name": "Starship",
-					"asset_type": "Command Vehicle",
+					"category": "Command Vehicle",
 					"color": "#9aa3ad",
 					"options": {
 						"label": {
@@ -43016,7 +43019,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -43054,7 +43058,7 @@
 				"engine_upgrade": {
 					"id": "starforged/assets/module/engine_upgrade",
 					"name": "Engine Upgrade",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43165,7 +43169,7 @@
 				"expanded_hold": {
 					"id": "starforged/assets/module/expanded_hold",
 					"name": "Expanded Hold",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43227,7 +43231,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/resupply"],
 								"suffer": ["starforged/moves/suffer/sacrifice_resources"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -43245,7 +43250,7 @@
 				"grappler": {
 					"id": "starforged/assets/module/grappler",
 					"name": "Grappler",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43362,7 +43367,7 @@
 				"heavy_cannons": {
 					"id": "starforged/assets/module/heavy_cannons",
 					"name": "Heavy Cannons",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43457,7 +43462,7 @@
 				"internal_refit": {
 					"id": "starforged/assets/module/internal_refit",
 					"name": "Internal Refit",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43579,7 +43584,7 @@
 				"medbay": {
 					"id": "starforged/assets/module/medbay",
 					"name": "Medbay",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43687,7 +43692,7 @@
 				"missile_array": {
 					"id": "starforged/assets/module/missile_array",
 					"name": "Missile Array",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43779,7 +43784,8 @@
 							"value": 5,
 							"moves": {
 								"recover": ["starforged/moves/recover/resupply"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -43797,7 +43803,7 @@
 				"overseer": {
 					"id": "starforged/assets/module/overseer",
 					"name": "Overseer",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"options": {
 						"name": {
@@ -43900,7 +43906,7 @@
 				"reinforced_hull": {
 					"id": "starforged/assets/module/reinforced_hull",
 					"name": "Reinforced Hull",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -43991,7 +43997,7 @@
 				"research_lab": {
 					"id": "starforged/assets/module/research_lab",
 					"name": "Research Lab",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -44111,7 +44117,7 @@
 				"sensor_array": {
 					"id": "starforged/assets/module/sensor_array",
 					"name": "Sensor Array",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -44245,7 +44251,7 @@
 				"shields": {
 					"id": "starforged/assets/module/shields",
 					"name": "Shields",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -44362,7 +44368,8 @@
 								"recover": [
 									"starforged/assets/module/shields/abilities/0/moves/raise_shields"
 								]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -44380,7 +44387,7 @@
 				"stealth_tech": {
 					"id": "starforged/assets/module/stealth_tech",
 					"name": "Stealth Tech",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -44514,7 +44521,7 @@
 				"vehicle_bay": {
 					"id": "starforged/assets/module/vehicle_bay",
 					"name": "Vehicle Bay",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -44596,7 +44603,7 @@
 				"workshop": {
 					"id": "starforged/assets/module/workshop",
 					"name": "Workshop",
-					"asset_type": "Module",
+					"category": "Module",
 					"color": "#7f5a90",
 					"count_as_impact": false,
 					"shared": true,
@@ -44733,7 +44740,7 @@
 				"ace": {
 					"id": "starforged/assets/path/ace",
 					"name": "Ace",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -44827,7 +44834,7 @@
 				"archer": {
 					"id": "starforged/assets/path/archer",
 					"name": "Archer",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -44941,7 +44948,8 @@
 								"recover": [
 									"starforged/assets/path/archer/abilities/0/moves/craft_projectiles"
 								]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -44959,7 +44967,7 @@
 				"armored": {
 					"id": "starforged/assets/path/armored",
 					"name": "Armored",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -45040,7 +45048,7 @@
 				"artist": {
 					"id": "starforged/assets/path/artist",
 					"name": "Artist",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -45170,7 +45178,7 @@
 				"augmented": {
 					"id": "starforged/assets/path/augmented",
 					"name": "Augmented",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"options": {
 						"one": {
@@ -45244,7 +45252,7 @@
 				"bannersworn": {
 					"id": "starforged/assets/path/bannersworn",
 					"name": "Bannersworn",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"options": {
 						"ideology": {
@@ -45349,7 +45357,7 @@
 				"blademaster": {
 					"id": "starforged/assets/path/blademaster",
 					"name": "Blademaster",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -45475,7 +45483,7 @@
 				"bounty_hunter": {
 					"id": "starforged/assets/path/bounty_hunter",
 					"name": "Bounty Hunter",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -45569,7 +45577,7 @@
 				"brawler": {
 					"id": "starforged/assets/path/brawler",
 					"name": "Brawler",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -45664,7 +45672,7 @@
 				"courier": {
 					"id": "starforged/assets/path/courier",
 					"name": "Courier",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -45750,7 +45758,8 @@
 							"field_type": "condition_meter",
 							"min": 0,
 							"max": 5,
-							"value": 0
+							"value": 0,
+							"rollable": true
 						}
 					},
 					"source": {
@@ -45768,7 +45777,7 @@
 				"demolitionist": {
 					"id": "starforged/assets/path/demolitionist",
 					"name": "Demolitionist",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -45849,7 +45858,7 @@
 				"devotant": {
 					"id": "starforged/assets/path/devotant",
 					"name": "Devotant",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"options": {
 						"name": {
@@ -46010,7 +46019,7 @@
 				"diplomat": {
 					"id": "starforged/assets/path/diplomat",
 					"name": "Diplomat",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46102,7 +46111,7 @@
 				"empath": {
 					"id": "starforged/assets/path/empath",
 					"name": "Empath",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46210,7 +46219,7 @@
 				"explorer": {
 					"id": "starforged/assets/path/explorer",
 					"name": "Explorer",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46275,7 +46284,7 @@
 				"fated": {
 					"id": "starforged/assets/path/fated",
 					"name": "Fated",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46359,7 +46368,7 @@
 				"firebrand": {
 					"id": "starforged/assets/path/firebrand",
 					"name": "Firebrand",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46455,7 +46464,8 @@
 							"field_type": "condition_meter",
 							"min": 0,
 							"max": 5,
-							"value": 0
+							"value": 0,
+							"rollable": true
 						}
 					},
 					"source": {
@@ -46473,7 +46483,7 @@
 				"fugitive": {
 					"id": "starforged/assets/path/fugitive",
 					"name": "Fugitive",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46489,7 +46499,8 @@
 									"field_type": "clock",
 									"min": 0,
 									"max": 4,
-									"value": 0
+									"value": 0,
+									"rollable": false
 								}
 							}
 						},
@@ -46534,7 +46545,7 @@
 				"gearhead": {
 					"id": "starforged/assets/path/gearhead",
 					"name": "Gearhead",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46615,7 +46626,7 @@
 				"gunner": {
 					"id": "starforged/assets/path/gunner",
 					"name": "Gunner",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46734,7 +46745,7 @@
 				"gunslinger": {
 					"id": "starforged/assets/path/gunslinger",
 					"name": "Gunslinger",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46837,7 +46848,7 @@
 				"haunted": {
 					"id": "starforged/assets/path/haunted",
 					"name": "Haunted",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46903,7 +46914,7 @@
 				"healer": {
 					"id": "starforged/assets/path/healer",
 					"name": "Healer",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -46982,7 +46993,7 @@
 				"infiltrator": {
 					"id": "starforged/assets/path/infiltrator",
 					"name": "Infiltrator",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47066,7 +47077,7 @@
 				"kinetic": {
 					"id": "starforged/assets/path/kinetic",
 					"name": "Kinetic",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47132,7 +47143,7 @@
 				"leader": {
 					"id": "starforged/assets/path/leader",
 					"name": "Leader",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47227,7 +47238,7 @@
 				"looper": {
 					"id": "starforged/assets/path/looper",
 					"name": "Looper",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47328,7 +47339,7 @@
 				"lore_hunter": {
 					"id": "starforged/assets/path/lore_hunter",
 					"name": "Lore Hunter",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47429,7 +47440,7 @@
 				"loyalist": {
 					"id": "starforged/assets/path/loyalist",
 					"name": "Loyalist",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47490,7 +47501,7 @@
 				"mercenary": {
 					"id": "starforged/assets/path/mercenary",
 					"name": "Mercenary",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47597,7 +47608,7 @@
 				"naturalist": {
 					"id": "starforged/assets/path/naturalist",
 					"name": "Naturalist",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47694,7 +47705,7 @@
 				"navigator": {
 					"id": "starforged/assets/path/navigator",
 					"name": "Navigator",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47797,7 +47808,7 @@
 				"outcast": {
 					"id": "starforged/assets/path/outcast",
 					"name": "Outcast",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47910,7 +47921,7 @@
 				"scavenger": {
 					"id": "starforged/assets/path/scavenger",
 					"name": "Scavenger",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -47999,7 +48010,7 @@
 				"scoundrel": {
 					"id": "starforged/assets/path/scoundrel",
 					"name": "Scoundrel",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48070,7 +48081,7 @@
 				"seer": {
 					"id": "starforged/assets/path/seer",
 					"name": "Seer",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48163,7 +48174,7 @@
 				"shade": {
 					"id": "starforged/assets/path/shade",
 					"name": "Shade",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48271,7 +48282,7 @@
 				"slayer": {
 					"id": "starforged/assets/path/slayer",
 					"name": "Slayer",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48365,7 +48376,7 @@
 				"sleuth": {
 					"id": "starforged/assets/path/sleuth",
 					"name": "Sleuth",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48446,7 +48457,7 @@
 				"sniper": {
 					"id": "starforged/assets/path/sniper",
 					"name": "Sniper",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48575,7 +48586,7 @@
 				"tech": {
 					"id": "starforged/assets/path/tech",
 					"name": "Tech",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48650,7 +48661,7 @@
 				"trader": {
 					"id": "starforged/assets/path/trader",
 					"name": "Trader",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48754,7 +48765,7 @@
 				"vestige": {
 					"id": "starforged/assets/path/vestige",
 					"name": "Vestige",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"options": {
 						"last_of": {
@@ -48848,7 +48859,7 @@
 				"veteran": {
 					"id": "starforged/assets/path/veteran",
 					"name": "Veteran",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48908,7 +48919,7 @@
 				"voidborn": {
 					"id": "starforged/assets/path/voidborn",
 					"name": "Voidborn",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -48990,7 +49001,7 @@
 				"weapon_master": {
 					"id": "starforged/assets/path/weapon_master",
 					"name": "Weapon Master",
-					"asset_type": "Path",
+					"category": "Path",
 					"color": "#3f7faa",
 					"count_as_impact": false,
 					"shared": false,
@@ -49109,7 +49120,7 @@
 				"exosuit": {
 					"id": "starforged/assets/support_vehicle/exosuit",
 					"name": "Exosuit",
-					"asset_type": "Support Vehicle",
+					"category": "Support Vehicle",
 					"color": "#495790",
 					"options": {
 						"name": {
@@ -49204,7 +49215,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -49222,7 +49234,7 @@
 				"hoverbike": {
 					"id": "starforged/assets/support_vehicle/hoverbike",
 					"name": "Hoverbike",
-					"asset_type": "Support Vehicle",
+					"category": "Support Vehicle",
 					"color": "#495790",
 					"options": {
 						"name": {
@@ -49309,7 +49321,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -49327,7 +49340,7 @@
 				"rover": {
 					"id": "starforged/assets/support_vehicle/rover",
 					"name": "Rover",
-					"asset_type": "Support Vehicle",
+					"category": "Support Vehicle",
 					"color": "#495790",
 					"options": {
 						"name": {
@@ -49434,7 +49447,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -49452,7 +49466,7 @@
 				"service_pod": {
 					"id": "starforged/assets/support_vehicle/service_pod",
 					"name": "Service Pod",
-					"asset_type": "Support Vehicle",
+					"category": "Support Vehicle",
 					"color": "#495790",
 					"options": {
 						"name": {
@@ -49557,7 +49571,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -49575,7 +49590,7 @@
 				"shuttle": {
 					"id": "starforged/assets/support_vehicle/shuttle",
 					"name": "Shuttle",
-					"asset_type": "Support Vehicle",
+					"category": "Support Vehicle",
 					"color": "#495790",
 					"options": {
 						"name": {
@@ -49658,7 +49673,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -49676,7 +49692,7 @@
 				"skiff": {
 					"id": "starforged/assets/support_vehicle/skiff",
 					"name": "Skiff",
-					"asset_type": "Support Vehicle",
+					"category": "Support Vehicle",
 					"color": "#495790",
 					"options": {
 						"name": {
@@ -49789,7 +49805,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -49807,7 +49824,7 @@
 				"snub_fighter": {
 					"id": "starforged/assets/support_vehicle/snub_fighter",
 					"name": "Snub Fighter",
-					"asset_type": "Support Vehicle",
+					"category": "Support Vehicle",
 					"color": "#495790",
 					"options": {
 						"name": {
@@ -49880,7 +49897,8 @@
 									"field_type": "counter",
 									"min": 0,
 									"max": null,
-									"value": 0
+									"value": 0,
+									"rollable": false
 								}
 							}
 						}
@@ -49906,7 +49924,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/withstand_damage"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -49944,7 +49963,7 @@
 				"banshee": {
 					"id": "starforged/assets/companion/banshee",
 					"name": "Banshee",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -50048,7 +50067,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/heal"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50066,7 +50086,7 @@
 				"combat_bot": {
 					"id": "starforged/assets/companion/combat_bot",
 					"name": "Combat Bot",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -50189,7 +50209,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50207,7 +50228,7 @@
 				"glowcat": {
 					"id": "starforged/assets/companion/glowcat",
 					"name": "Glowcat",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -50302,7 +50323,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/heal"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50320,7 +50342,7 @@
 				"protocol_bot": {
 					"id": "starforged/assets/companion/protocol_bot",
 					"name": "Protocol Bot",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -50400,7 +50422,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50418,7 +50441,7 @@
 				"rockhorn": {
 					"id": "starforged/assets/companion/rockhorn",
 					"name": "Rockhorn",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -50519,7 +50542,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/heal"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50537,7 +50561,7 @@
 				"sidekick": {
 					"id": "starforged/assets/companion/sidekick",
 					"name": "Sidekick",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
@@ -50660,7 +50684,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/heal"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50678,7 +50703,7 @@
 				"sprite": {
 					"id": "starforged/assets/companion/sprite",
 					"name": "Sprite",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -50761,7 +50786,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/heal"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50779,7 +50805,7 @@
 				"survey_bot": {
 					"id": "starforged/assets/companion/survey_bot",
 					"name": "Survey Bot",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -50914,7 +50940,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -50932,7 +50959,7 @@
 				"symbiote": {
 					"id": "starforged/assets/companion/symbiote",
 					"name": "Symbiote",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -51003,7 +51030,8 @@
 							"moves": {
 								"recover": ["starforged/moves/suffer/endure_stress"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -51021,7 +51049,7 @@
 				"utility_bot": {
 					"id": "starforged/assets/companion/utility_bot",
 					"name": "Utility Bot",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -51128,7 +51156,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/repair"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -51146,7 +51175,7 @@
 				"voidglider": {
 					"id": "starforged/assets/companion/voidglider",
 					"name": "Voidglider",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
 						"label": {
@@ -51255,7 +51284,8 @@
 							"moves": {
 								"recover": ["starforged/moves/recover/heal"],
 								"suffer": ["starforged/moves/suffer/companion_takes_a_hit"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -51293,7 +51323,7 @@
 				"bonded": {
 					"id": "starforged/assets/deed/bonded",
 					"name": "Bonded",
-					"asset_type": "Deed",
+					"category": "Deed",
 					"color": "#40834f",
 					"options": {
 						"bond_mate": {
@@ -51403,7 +51433,7 @@
 				"homesteader": {
 					"id": "starforged/assets/deed/homesteader",
 					"name": "Homesteader",
-					"asset_type": "Deed",
+					"category": "Deed",
 					"color": "#40834f",
 					"options": {
 						"label": {
@@ -51519,7 +51549,7 @@
 				"marked": {
 					"id": "starforged/assets/deed/marked",
 					"name": "Marked",
-					"asset_type": "Deed",
+					"category": "Deed",
 					"color": "#40834f",
 					"options": {
 						"identifier": {
@@ -51567,7 +51597,8 @@
 									"field_type": "clock",
 									"min": 0,
 									"max": 6,
-									"value": 0
+									"value": 0,
+									"rollable": false
 								}
 							},
 							"enhance_moves": [
@@ -51613,7 +51644,7 @@
 				"oathbreaker": {
 					"id": "starforged/assets/deed/oathbreaker",
 					"name": "Oathbreaker",
-					"asset_type": "Deed",
+					"category": "Deed",
 					"color": "#40834f",
 					"count_as_impact": true,
 					"shared": false,
@@ -51702,7 +51733,7 @@
 				"revenant": {
 					"id": "starforged/assets/deed/revenant",
 					"name": "Revenant",
-					"asset_type": "Deed",
+					"category": "Deed",
 					"color": "#40834f",
 					"count_as_impact": false,
 					"shared": false,
@@ -51792,7 +51823,7 @@
 				"survivor": {
 					"id": "starforged/assets/deed/survivor",
 					"name": "Survivor",
-					"asset_type": "Deed",
+					"category": "Deed",
 					"color": "#40834f",
 					"count_as_impact": false,
 					"shared": false,
@@ -51844,7 +51875,7 @@
 				"vanguard": {
 					"id": "starforged/assets/deed/vanguard",
 					"name": "Vanguard",
-					"asset_type": "Deed",
+					"category": "Deed",
 					"color": "#40834f",
 					"count_as_impact": false,
 					"shared": false,

@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for an AssetType.
+ * A unique ID for an AssetCollection.
  */
-public class AssetTypeId {
+public class AssetCollectionId {
     @JsonValue
     private String value;
 
-    public AssetTypeId() {
+    public AssetCollectionId() {
     }
 
     @JsonCreator
-    public AssetTypeId(String value) {
+    public AssetCollectionId(String value) {
         this.value = value;
     }
 

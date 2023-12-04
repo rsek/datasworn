@@ -16,12 +16,6 @@ namespace Datasworn
         [JsonPropertyName("field_type")]
         public string FieldType { get => "condition_meter"; }
 
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetControlFieldId Id { get; set; }
-
         [JsonPropertyName("label")]
         public InputLabel Label { get; set; }
 
@@ -36,6 +30,9 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("min")]
         public sbyte Min { get; set; }
+
+        [JsonPropertyName("rollable")]
+        public bool Rollable { get; set; }
 
         /// <summary>
         /// The current value of this meter.

@@ -42,7 +42,7 @@ class RulesPackageExpansion(RulesPackage):
 
     id: 'ExpansionID'
     ruleset: 'RulesetID'
-    assets: 'Optional[Dict[str, AssetType]]'
+    assets: 'Optional[Dict[str, AssetCollection]]'
     """
     A dictionary object containing asset types, which contain assets.
     """
@@ -105,7 +105,7 @@ class RulesPackageExpansion(RulesPackage):
             _from_json_data(SemanticVersion, data.get("datasworn_version")),
             _from_json_data(ExpansionID, data.get("id")),
             _from_json_data(RulesetID, data.get("ruleset")),
-            _from_json_data(Optional[Dict[str, AssetType]], data.get("assets")),
+            _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("atlas")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
             _from_json_data(Optional[Dict[str, MoveCategory]], data.get("moves")),
@@ -153,7 +153,7 @@ class RulesPackageRuleset(RulesPackage):
     A standalone Datasworn package that describes its own ruleset.
     """
 
-    assets: 'Dict[str, AssetType]'
+    assets: 'Dict[str, AssetCollection]'
     """
     A dictionary object containing asset types, which contain assets.
     """
@@ -219,7 +219,7 @@ class RulesPackageRuleset(RulesPackage):
     def from_json_data(cls, data: Any) -> 'RulesPackageRuleset':
         return cls(
             "ruleset",
-            _from_json_data(Dict[str, AssetType], data.get("assets")),
+            _from_json_data(Dict[str, AssetCollection], data.get("assets")),
             _from_json_data(SemanticVersion, data.get("datasworn_version")),
             _from_json_data(RulesetID, data.get("id")),
             _from_json_data(Dict[str, MoveCategory], data.get("moves")),
@@ -304,7 +304,7 @@ class ActionRollMethod(Enum):
 @dataclass
 class Asset:
     abilities: 'List[AssetAbility]'
-    asset_type: 'Label'
+    category: 'Label'
     """
     A localized category label for this asset. This is the surtitle above the
     asset's name on the card.
@@ -381,7 +381,7 @@ class Asset:
     def from_json_data(cls, data: Any) -> 'Asset':
         return cls(
             _from_json_data(List[AssetAbility], data.get("abilities")),
-            _from_json_data(Label, data.get("asset_type")),
+            _from_json_data(Label, data.get("category")),
             _from_json_data(bool, data.get("count_as_impact")),
             _from_json_data(AssetID, data.get("id")),
             _from_json_data(Label, data.get("name")),
@@ -401,7 +401,7 @@ class Asset:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["abilities"] = _to_json_data(self.abilities)
-        data["asset_type"] = _to_json_data(self.asset_type)
+        data["category"] = _to_json_data(self.category)
         data["count_as_impact"] = _to_json_data(self.count_as_impact)
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
@@ -526,6 +526,7 @@ class AssetAbilityControlField:
             "checkbox": AssetAbilityControlFieldCheckbox,
             "clock": AssetAbilityControlFieldClock,
             "counter": AssetAbilityControlFieldCounter,
+            "text": AssetAbilityControlFieldText,
         }
 
         return variants[data["field_type"]].from_json_data(data)
@@ -535,18 +536,9 @@ class AssetAbilityControlField:
 
 @dataclass
 class AssetAbilityControlFieldCheckbox(AssetAbilityControlField):
-    """
-    Represents a checkbox.
-    """
-
     disables_asset: 'bool'
     """
     Does this field disable the asset when its value is set to `true`?
-    """
-
-    id: 'AssetAbilityControlFieldID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     is_impact: 'bool'
@@ -572,7 +564,6 @@ class AssetAbilityControlFieldCheckbox(AssetAbilityControlField):
         return cls(
             "checkbox",
             _from_json_data(bool, data.get("disables_asset")),
-            _from_json_data(AssetAbilityControlFieldID, data.get("id")),
             _from_json_data(bool, data.get("is_impact")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(bool, data.get("value")),
@@ -582,7 +573,6 @@ class AssetAbilityControlFieldCheckbox(AssetAbilityControlField):
     def to_json_data(self) -> Any:
         data = { "field_type": "checkbox" }
         data["disables_asset"] = _to_json_data(self.disables_asset)
-        data["id"] = _to_json_data(self.id)
         data["is_impact"] = _to_json_data(self.is_impact)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
@@ -594,11 +584,6 @@ class AssetAbilityControlFieldCheckbox(AssetAbilityControlField):
 class AssetAbilityControlFieldClock(AssetAbilityControlField):
     """
     A clock with 4 or more segments.
-    """
-
-    id: 'AssetAbilityControlFieldID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     label: 'InputLabel'
@@ -613,9 +598,10 @@ class AssetAbilityControlFieldClock(AssetAbilityControlField):
     The minimum number of filled clock segments. This is always 0.
     """
 
+    rollable: 'bool'
     value: 'int'
     """
-    The current number of filled clock segments.
+    The current value of this input.
     """
 
     icon: 'Optional[SvgImageURL]'
@@ -628,20 +614,20 @@ class AssetAbilityControlFieldClock(AssetAbilityControlField):
     def from_json_data(cls, data: Any) -> 'AssetAbilityControlFieldClock':
         return cls(
             "clock",
-            _from_json_data(AssetAbilityControlFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
+            _from_json_data(bool, data.get("rollable")),
             _from_json_data(int, data.get("value")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
         )
 
     def to_json_data(self) -> Any:
         data = { "field_type": "clock" }
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
+        data["rollable"] = _to_json_data(self.rollable)
         data["value"] = _to_json_data(self.value)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
@@ -654,11 +640,6 @@ class AssetAbilityControlFieldCounter(AssetAbilityControlField):
     start at 0, and may or may not have a maximum.
     """
 
-    id: 'AssetAbilityControlFieldID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     label: 'InputLabel'
     max: 'int'
     min: 'int'
@@ -666,6 +647,7 @@ class AssetAbilityControlFieldCounter(AssetAbilityControlField):
     The (inclusive) minimum value.
     """
 
+    rollable: 'bool'
     value: 'int'
     """
     The current value of this input.
@@ -681,20 +663,51 @@ class AssetAbilityControlFieldCounter(AssetAbilityControlField):
     def from_json_data(cls, data: Any) -> 'AssetAbilityControlFieldCounter':
         return cls(
             "counter",
-            _from_json_data(AssetAbilityControlFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
+            _from_json_data(bool, data.get("rollable")),
             _from_json_data(int, data.get("value")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
         )
 
     def to_json_data(self) -> Any:
         data = { "field_type": "counter" }
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
+        data["rollable"] = _to_json_data(self.rollable)
+        data["value"] = _to_json_data(self.value)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        return data
+
+@dataclass
+class AssetAbilityControlFieldText(AssetAbilityControlField):
+    """
+    Represents an input that accepts plain text.
+    """
+
+    label: 'InputLabel'
+    value: 'str'
+    icon: 'Optional[SvgImageURL]'
+    """
+    An icon associated with this input.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'AssetAbilityControlFieldText':
+        return cls(
+            "text",
+            _from_json_data(InputLabel, data.get("label")),
+            _from_json_data(str, data.get("value")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "field_type": "text" }
+        data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
@@ -751,11 +764,6 @@ class AssetAbilityOptionFieldText(AssetAbilityOptionField):
     Represents an input that accepts plain text.
     """
 
-    id: 'AssetAbilityOptionFieldID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     label: 'InputLabel'
     value: 'str'
     icon: 'Optional[SvgImageURL]'
@@ -768,7 +776,6 @@ class AssetAbilityOptionFieldText(AssetAbilityOptionField):
     def from_json_data(cls, data: Any) -> 'AssetAbilityOptionFieldText':
         return cls(
             "text",
-            _from_json_data(AssetAbilityOptionFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(str, data.get("value")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -776,7 +783,6 @@ class AssetAbilityOptionFieldText(AssetAbilityOptionField):
 
     def to_json_data(self) -> Any:
         data = { "field_type": "text" }
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
         if self.icon is not None:
@@ -827,6 +833,133 @@ class AssetAttachment:
         return data
 
 @dataclass
+class AssetCollection:
+    id: 'AssetCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    source: 'Source'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    color: 'Optional[CSSColor]'
+    """
+    A thematic color associated with this collection.
+    """
+
+    contents: 'Optional[Dict[str, Asset]]'
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of this collection, which might include multiple
+    paragraphs. If it's only a couple sentences, use the `summary` key instead.
+    """
+
+    enhances: 'Optional[AssetCollectionID]'
+    """
+    This collection's content enhances the identified collection, rather than
+    being a standalone collection of its own.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An SVG icon associated with this collection.
+    """
+
+    images: 'Optional[List[WebpImageURL]]'
+    replaces: 'Optional[AssetCollectionID]'
+    """
+    This collection replaces the identified collection. References to the
+    replaced collection can be considered equivalent to this collection.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of this collection, no more than a few sentences in length.
+    This is intended for use in application tooltips and similar sorts of hints.
+    Longer text should use the "description" key instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, str]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'AssetCollection':
+        return cls(
+            _from_json_data(AssetCollectionID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(Source, data.get("source")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[Dict[str, Asset]], data.get("contents")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[AssetCollectionID], data.get("enhances")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
+            _from_json_data(Optional[AssetCollectionID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["source"] = _to_json_data(self.source)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.color is not None:
+             data["color"] = _to_json_data(self.color)
+        if self.contents is not None:
+             data["contents"] = _to_json_data(self.contents)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.enhances is not None:
+             data["enhances"] = _to_json_data(self.enhances)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.images is not None:
+             data["images"] = _to_json_data(self.images)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+@dataclass
+class AssetCollectionID:
+    """
+    A unique ID for an AssetCollection.
+    """
+
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'AssetCollectionID':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class AssetConditionMeterControlField:
     """
     A checkbox control field, rendered as part of an asset condition meter.
@@ -848,20 +981,9 @@ class AssetConditionMeterControlField:
 
 @dataclass
 class AssetConditionMeterControlFieldCardFlip(AssetConditionMeterControlField):
-    """
-    When its value is set to `true` it means that the card is flipped over.
-    Some assets use this to represent a 'broken' state (e.g. Starforged Module
-    assets).
-    """
-
     disables_asset: 'bool'
     """
     Does this field disable the asset when its value is set to `true`?
-    """
-
-    id: 'AssetConditionMeterControlFieldID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     is_impact: 'bool'
@@ -887,7 +1009,6 @@ class AssetConditionMeterControlFieldCardFlip(AssetConditionMeterControlField):
         return cls(
             "card_flip",
             _from_json_data(bool, data.get("disables_asset")),
-            _from_json_data(AssetConditionMeterControlFieldID, data.get("id")),
             _from_json_data(bool, data.get("is_impact")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(bool, data.get("value")),
@@ -897,7 +1018,6 @@ class AssetConditionMeterControlFieldCardFlip(AssetConditionMeterControlField):
     def to_json_data(self) -> Any:
         data = { "field_type": "card_flip" }
         data["disables_asset"] = _to_json_data(self.disables_asset)
-        data["id"] = _to_json_data(self.id)
         data["is_impact"] = _to_json_data(self.is_impact)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
@@ -907,18 +1027,9 @@ class AssetConditionMeterControlFieldCardFlip(AssetConditionMeterControlField):
 
 @dataclass
 class AssetConditionMeterControlFieldCheckbox(AssetConditionMeterControlField):
-    """
-    Represents a checkbox.
-    """
-
     disables_asset: 'bool'
     """
     Does this field disable the asset when its value is set to `true`?
-    """
-
-    id: 'AssetConditionMeterControlFieldID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     is_impact: 'bool'
@@ -944,7 +1055,6 @@ class AssetConditionMeterControlFieldCheckbox(AssetConditionMeterControlField):
         return cls(
             "checkbox",
             _from_json_data(bool, data.get("disables_asset")),
-            _from_json_data(AssetConditionMeterControlFieldID, data.get("id")),
             _from_json_data(bool, data.get("is_impact")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(bool, data.get("value")),
@@ -954,7 +1064,6 @@ class AssetConditionMeterControlFieldCheckbox(AssetConditionMeterControlField):
     def to_json_data(self) -> Any:
         data = { "field_type": "checkbox" }
         data["disables_asset"] = _to_json_data(self.disables_asset)
-        data["id"] = _to_json_data(self.id)
         data["is_impact"] = _to_json_data(self.is_impact)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
@@ -997,20 +1106,9 @@ class AssetControlField:
 
 @dataclass
 class AssetControlFieldCardFlip(AssetControlField):
-    """
-    When its value is set to `true` it means that the card is flipped over.
-    Some assets use this to represent a 'broken' state (e.g. Starforged Module
-    assets).
-    """
-
     disables_asset: 'bool'
     """
     Does this field disable the asset when its value is set to `true`?
-    """
-
-    id: 'AssetControlFieldID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     is_impact: 'bool'
@@ -1036,7 +1134,6 @@ class AssetControlFieldCardFlip(AssetControlField):
         return cls(
             "card_flip",
             _from_json_data(bool, data.get("disables_asset")),
-            _from_json_data(AssetControlFieldID, data.get("id")),
             _from_json_data(bool, data.get("is_impact")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(bool, data.get("value")),
@@ -1046,7 +1143,6 @@ class AssetControlFieldCardFlip(AssetControlField):
     def to_json_data(self) -> Any:
         data = { "field_type": "card_flip" }
         data["disables_asset"] = _to_json_data(self.disables_asset)
-        data["id"] = _to_json_data(self.id)
         data["is_impact"] = _to_json_data(self.is_impact)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
@@ -1056,18 +1152,9 @@ class AssetControlFieldCardFlip(AssetControlField):
 
 @dataclass
 class AssetControlFieldCheckbox(AssetControlField):
-    """
-    Represents a checkbox.
-    """
-
     disables_asset: 'bool'
     """
     Does this field disable the asset when its value is set to `true`?
-    """
-
-    id: 'AssetControlFieldID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     is_impact: 'bool'
@@ -1093,7 +1180,6 @@ class AssetControlFieldCheckbox(AssetControlField):
         return cls(
             "checkbox",
             _from_json_data(bool, data.get("disables_asset")),
-            _from_json_data(AssetControlFieldID, data.get("id")),
             _from_json_data(bool, data.get("is_impact")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(bool, data.get("value")),
@@ -1103,7 +1189,6 @@ class AssetControlFieldCheckbox(AssetControlField):
     def to_json_data(self) -> Any:
         data = { "field_type": "checkbox" }
         data["disables_asset"] = _to_json_data(self.disables_asset)
-        data["id"] = _to_json_data(self.id)
         data["is_impact"] = _to_json_data(self.is_impact)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
@@ -1155,11 +1240,6 @@ class AssetControlFieldConditionMeter(AssetControlField):
     companion assets use to indicate they are "out of action".
     """
 
-    id: 'AssetControlFieldID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     label: 'InputLabel'
     max: 'int'
     """
@@ -1171,6 +1251,7 @@ class AssetControlFieldConditionMeter(AssetControlField):
     The minimum value of this meter.
     """
 
+    rollable: 'bool'
     value: 'int'
     """
     The current value of this meter.
@@ -1197,10 +1278,10 @@ class AssetControlFieldConditionMeter(AssetControlField):
     def from_json_data(cls, data: Any) -> 'AssetControlFieldConditionMeter':
         return cls(
             "condition_meter",
-            _from_json_data(AssetControlFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
+            _from_json_data(bool, data.get("rollable")),
             _from_json_data(int, data.get("value")),
             _from_json_data(Optional[Dict[str, AssetConditionMeterControlField]], data.get("controls")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -1209,10 +1290,10 @@ class AssetControlFieldConditionMeter(AssetControlField):
 
     def to_json_data(self) -> Any:
         data = { "field_type": "condition_meter" }
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
+        data["rollable"] = _to_json_data(self.rollable)
         data["value"] = _to_json_data(self.value)
         if self.controls is not None:
              data["controls"] = _to_json_data(self.controls)
@@ -1302,11 +1383,6 @@ class AssetControlFieldSelectEnhancement(AssetControlField):
     """
 
     choices: 'Dict[str, AssetControlFieldSelectEnhancementChoice]'
-    id: 'AssetControlFieldID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     label: 'InputLabel'
     value: 'DictKey'
     """
@@ -1325,7 +1401,6 @@ class AssetControlFieldSelectEnhancement(AssetControlField):
         return cls(
             "select_enhancement",
             _from_json_data(Dict[str, AssetControlFieldSelectEnhancementChoice], data.get("choices")),
-            _from_json_data(AssetControlFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(DictKey, data.get("value")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -1334,7 +1409,6 @@ class AssetControlFieldSelectEnhancement(AssetControlField):
     def to_json_data(self) -> Any:
         data = { "field_type": "select_enhancement" }
         data["choices"] = _to_json_data(self.choices)
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
         if self.icon is not None:
@@ -1601,11 +1675,6 @@ class AssetOptionFieldSelectEnhancement(AssetOptionField):
     """
 
     choices: 'Dict[str, AssetOptionFieldSelectEnhancementChoice]'
-    id: 'AssetOptionFieldID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     label: 'InputLabel'
     value: 'DictKey'
     """
@@ -1624,7 +1693,6 @@ class AssetOptionFieldSelectEnhancement(AssetOptionField):
         return cls(
             "select_enhancement",
             _from_json_data(Dict[str, AssetOptionFieldSelectEnhancementChoice], data.get("choices")),
-            _from_json_data(AssetOptionFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(DictKey, data.get("value")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -1633,7 +1701,6 @@ class AssetOptionFieldSelectEnhancement(AssetOptionField):
     def to_json_data(self) -> Any:
         data = { "field_type": "select_enhancement" }
         data["choices"] = _to_json_data(self.choices)
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
         if self.icon is not None:
@@ -1647,11 +1714,6 @@ class AssetOptionFieldSelectValue(AssetOptionField):
     """
 
     choices: 'Dict[str, SelectValueFieldChoice]'
-    id: 'AssetOptionFieldID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     label: 'InputLabel'
     value: 'DictKey'
     """
@@ -1670,7 +1732,6 @@ class AssetOptionFieldSelectValue(AssetOptionField):
         return cls(
             "select_value",
             _from_json_data(Dict[str, SelectValueFieldChoice], data.get("choices")),
-            _from_json_data(AssetOptionFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(DictKey, data.get("value")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -1679,7 +1740,6 @@ class AssetOptionFieldSelectValue(AssetOptionField):
     def to_json_data(self) -> Any:
         data = { "field_type": "select_value" }
         data["choices"] = _to_json_data(self.choices)
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
         if self.icon is not None:
@@ -1690,11 +1750,6 @@ class AssetOptionFieldSelectValue(AssetOptionField):
 class AssetOptionFieldText(AssetOptionField):
     """
     Represents an input that accepts plain text.
-    """
-
-    id: 'AssetOptionFieldID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     label: 'InputLabel'
@@ -1709,7 +1764,6 @@ class AssetOptionFieldText(AssetOptionField):
     def from_json_data(cls, data: Any) -> 'AssetOptionFieldText':
         return cls(
             "text",
-            _from_json_data(AssetOptionFieldID, data.get("id")),
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(str, data.get("value")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -1717,7 +1771,6 @@ class AssetOptionFieldText(AssetOptionField):
 
     def to_json_data(self) -> Any:
         data = { "field_type": "text" }
-        data["id"] = _to_json_data(self.id)
         data["label"] = _to_json_data(self.label)
         data["value"] = _to_json_data(self.value)
         if self.icon is not None:
@@ -1749,133 +1802,6 @@ class AssetOptionFieldIDWildcard:
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetOptionFieldIDWildcard':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class AssetType:
-    id: 'AssetTypeID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
-    source: 'Source'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
-    """
-
-    canonical_name: 'Optional[Label]'
-    """
-    The name of this item as it appears on the page in the book, if it's
-    different from `name`.
-    """
-
-    color: 'Optional[CSSColor]'
-    """
-    A thematic color associated with this collection.
-    """
-
-    contents: 'Optional[Dict[str, Asset]]'
-    description: 'Optional[MarkdownString]'
-    """
-    A longer description of this collection, which might include multiple
-    paragraphs. If it's only a couple sentences, use the `summary` key instead.
-    """
-
-    enhances: 'Optional[AssetTypeID]'
-    """
-    This collection's content enhances the identified collection, rather than
-    being a standalone collection of its own.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    """
-    An SVG icon associated with this collection.
-    """
-
-    images: 'Optional[List[WebpImageURL]]'
-    replaces: 'Optional[AssetTypeID]'
-    """
-    This collection replaces the identified collection. References to the
-    replaced collection can be considered equivalent to this collection.
-    """
-
-    suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    A brief summary of this collection, no more than a few sentences in length.
-    This is intended for use in application tooltips and similar sorts of hints.
-    Longer text should use the "description" key instead.
-    """
-
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetType':
-        return cls(
-            _from_json_data(AssetTypeID, data.get("id")),
-            _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
-            _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[CSSColor], data.get("color")),
-            _from_json_data(Optional[Dict[str, Asset]], data.get("contents")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[AssetTypeID], data.get("enhances")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
-            _from_json_data(Optional[AssetTypeID], data.get("replaces")),
-            _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
-        data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
-        if self.canonical_name is not None:
-             data["canonical_name"] = _to_json_data(self.canonical_name)
-        if self.color is not None:
-             data["color"] = _to_json_data(self.color)
-        if self.contents is not None:
-             data["contents"] = _to_json_data(self.contents)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
-        if self.enhances is not None:
-             data["enhances"] = _to_json_data(self.enhances)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        if self.images is not None:
-             data["images"] = _to_json_data(self.images)
-        if self.replaces is not None:
-             data["replaces"] = _to_json_data(self.replaces)
-        if self.suggestions is not None:
-             data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
-        if self.tags is not None:
-             data["tags"] = _to_json_data(self.tags)
-        return data
-
-@dataclass
-class AssetTypeID:
-    """
-    A unique ID for an AssetType.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetTypeID':
         return cls(_from_json_data(str, data))
 
     def to_json_data(self) -> Any:
@@ -2181,6 +2107,69 @@ class ChallengeRank:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
+class ConditionMeterFieldFieldType(Enum):
+    CONDITION_METER = "condition_meter"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ConditionMeterFieldFieldType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
+@dataclass
+class ConditionMeterField:
+    """
+    A meter with an integer value, bounded by a minimum and maximum.
+    """
+
+    field_type: 'ConditionMeterFieldFieldType'
+    label: 'InputLabel'
+    max: 'int'
+    """
+    The maximum value of this meter.
+    """
+
+    min: 'int'
+    """
+    The minimum value of this meter.
+    """
+
+    rollable: 'bool'
+    value: 'int'
+    """
+    The current value of this meter.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An icon associated with this input.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ConditionMeterField':
+        return cls(
+            _from_json_data(ConditionMeterFieldFieldType, data.get("field_type")),
+            _from_json_data(InputLabel, data.get("label")),
+            _from_json_data(int, data.get("max")),
+            _from_json_data(int, data.get("min")),
+            _from_json_data(bool, data.get("rollable")),
+            _from_json_data(int, data.get("value")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["field_type"] = _to_json_data(self.field_type)
+        data["label"] = _to_json_data(self.label)
+        data["max"] = _to_json_data(self.max)
+        data["min"] = _to_json_data(self.min)
+        data["rollable"] = _to_json_data(self.rollable)
+        data["value"] = _to_json_data(self.value)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        return data
+
 @dataclass
 class ConditionMeterKey:
     """
@@ -2218,6 +2207,7 @@ class ConditionMeterRule:
     The minimum value of this meter.
     """
 
+    rollable: 'bool'
     shared: 'bool'
     """
     Is this condition meter shared by all players?
@@ -2236,6 +2226,7 @@ class ConditionMeterRule:
             _from_json_data(InputLabel, data.get("label")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
+            _from_json_data(bool, data.get("rollable")),
             _from_json_data(bool, data.get("shared")),
             _from_json_data(int, data.get("value")),
         )
@@ -2246,6 +2237,7 @@ class ConditionMeterRule:
         data["label"] = _to_json_data(self.label)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
+        data["rollable"] = _to_json_data(self.rollable)
         data["shared"] = _to_json_data(self.shared)
         data["value"] = _to_json_data(self.value)
         return data

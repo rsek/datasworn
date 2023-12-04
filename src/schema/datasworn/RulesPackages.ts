@@ -46,7 +46,7 @@ export const Ruleset = Type.Object(
 			})
 		),
 		assets: Utils.SourceOptional(
-			Generic.Dictionary(Type.Ref<TAssetCollection>('AssetType'), {
+			Generic.Dictionary(Type.Ref<TAssetCollection>('AssetCollection'), {
 				default: undefined,
 				description:
 					'A dictionary object containing asset types, which contain assets.'

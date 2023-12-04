@@ -70,7 +70,7 @@ export const AssetCollection = Generic.Collection(
 	Type.Ref(Id.AssetCollectionId),
 	Type.Ref<TUnsafe<Asset>>('Asset'),
 	{
-		$id: 'AssetType'
+		$id: 'AssetCollection'
 	}
 )
 export type TAssetCollection = typeof AssetCollection

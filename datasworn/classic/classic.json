@@ -10,7 +10,8 @@
 				"max": 5,
 				"value": 5,
 				"shared": false,
-				"description": "Health represents your current physical condition and stamina."
+				"description": "Health represents your current physical condition and stamina.",
+				"rollable": 0
 			},
 			"spirit": {
 				"label": "spirit",
@@ -18,7 +19,8 @@
 				"max": 5,
 				"value": 5,
 				"shared": false,
-				"description": "Spirit is your current mental state."
+				"description": "Spirit is your current mental state.",
+				"rollable": 0
 			},
 			"supply": {
 				"label": "supply",
@@ -26,7 +28,8 @@
 				"max": 5,
 				"value": 5,
 				"shared": true,
-				"description": "Supply is an abstract representation of your preparedness, including ammo, food, water, and general upkeep."
+				"description": "Supply is an abstract representation of your preparedness, including ammo, food, water, and general upkeep.",
+				"rollable": 0
 			}
 		},
 		"impacts": {
@@ -12519,7 +12522,7 @@
 				"cave_lion": {
 					"id": "classic/assets/companion/cave_lion",
 					"name": "Cave Lion",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/cave_lion/options/name",
@@ -12615,7 +12618,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -12634,7 +12638,7 @@
 				"giant_spider": {
 					"id": "classic/assets/companion/giant_spider",
 					"name": "Giant Spider",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/giant_spider/options/name",
@@ -12736,7 +12740,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -12755,7 +12760,7 @@
 				"hawk": {
 					"id": "classic/assets/companion/hawk",
 					"name": "Hawk",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/hawk/options/name",
@@ -12878,7 +12883,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -12897,7 +12903,7 @@
 				"horse": {
 					"id": "classic/assets/companion/horse",
 					"name": "Horse",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/horse/options/name",
@@ -13009,7 +13015,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -13028,7 +13035,7 @@
 				"hound": {
 					"id": "classic/assets/companion/hound",
 					"name": "Hound",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/hound/options/name",
@@ -13123,7 +13130,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -13142,7 +13150,7 @@
 				"kindred": {
 					"id": "classic/assets/companion/kindred",
 					"name": "Kindred",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/kindred/options/name",
@@ -13249,7 +13257,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -13268,7 +13277,7 @@
 				"mammoth": {
 					"id": "classic/assets/companion/mammoth",
 					"name": "Mammoth",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/mammoth/options/name",
@@ -13356,7 +13365,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -13375,7 +13385,7 @@
 				"owl": {
 					"id": "classic/assets/companion/owl",
 					"name": "Owl",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/owl/options/name",
@@ -13476,7 +13486,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -13495,7 +13506,7 @@
 				"raven": {
 					"id": "classic/assets/companion/raven",
 					"name": "Raven",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/raven/options/name",
@@ -13590,7 +13601,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -13609,7 +13621,7 @@
 				"young_wyvern": {
 					"id": "classic/assets/companion/young_wyvern",
 					"name": "Young Wyvern",
-					"asset_type": "Companion",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"id": "classic/assets/companion/young_wyvern/options/name",
@@ -13697,7 +13709,8 @@
 									"classic/moves/relationship/sojourn"
 								],
 								"suffer": ["classic/moves/suffer/companion_endure_harm"]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -13735,7 +13748,7 @@
 				"archer": {
 					"id": "classic/assets/combat_talent/archer",
 					"name": "Archer",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a bow...",
@@ -13843,7 +13856,7 @@
 				"berserker": {
 					"id": "classic/assets/combat_talent/berserker",
 					"name": "Berserker",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you are clad only in animal pelts...",
@@ -13931,7 +13944,7 @@
 				"brawler": {
 					"id": "classic/assets/combat_talent/brawler",
 					"name": "Brawler",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you are unarmed or fighting with a non-deadly weapon...",
@@ -14021,7 +14034,7 @@
 				"cutthroat": {
 					"id": "classic/assets/combat_talent/cutthroat",
 					"name": "Cutthroat",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a dagger or knife...",
@@ -14121,7 +14134,7 @@
 				"duelist": {
 					"id": "classic/assets/combat_talent/duelist",
 					"name": "Duelist",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a bladed weapon in each hand...",
@@ -14193,7 +14206,7 @@
 				"fletcher": {
 					"id": "classic/assets/combat_talent/fletcher",
 					"name": "Fletcher",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -14303,7 +14316,7 @@
 				"ironclad": {
 					"id": "classic/assets/combat_talent/ironclad",
 					"name": "Ironclad",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wear armor...",
@@ -14422,7 +14435,7 @@
 				"long_arm": {
 					"id": "classic/assets/combat_talent/long_arm",
 					"name": "Long-Arm",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a staff...",
@@ -14520,7 +14533,7 @@
 				"shield_bearer": {
 					"id": "classic/assets/combat_talent/shield_bearer",
 					"name": "Shield-Bearer",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a shield...",
@@ -14606,7 +14619,7 @@
 				"skirmisher": {
 					"id": "classic/assets/combat_talent/skirmisher",
 					"name": "Skirmisher",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a spear...",
@@ -14697,7 +14710,7 @@
 				"slinger": {
 					"id": "classic/assets/combat_talent/slinger",
 					"name": "Slinger",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a sling...",
@@ -14779,7 +14792,7 @@
 				"sunderer": {
 					"id": "classic/assets/combat_talent/sunderer",
 					"name": "Sunderer",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield an axe...",
@@ -14896,7 +14909,7 @@
 				"swordmaster": {
 					"id": "classic/assets/combat_talent/swordmaster",
 					"name": "Swordmaster",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a sword...",
@@ -14963,7 +14976,7 @@
 				"thunder_bringer": {
 					"id": "classic/assets/combat_talent/thunder_bringer",
 					"name": "Thunder-Bringer",
-					"asset_type": "Combat Talent",
+					"category": "Combat Talent",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you wield a mighty hammer...",
@@ -15060,7 +15073,7 @@
 				"alchemist": {
 					"id": "classic/assets/path/alchemist",
 					"name": "Alchemist",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -15197,7 +15210,7 @@
 				"animal_kin": {
 					"id": "classic/assets/path/animal_kin",
 					"name": "Animal Kin",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -15278,7 +15291,7 @@
 				"banner_sworn": {
 					"id": "classic/assets/path/banner_sworn",
 					"name": "Banner-Sworn",
-					"asset_type": "Path",
+					"category": "Path",
 					"options": {
 						"name": {
 							"id": "classic/assets/path/banner_sworn/options/name",
@@ -15375,7 +15388,7 @@
 				"battle_scarred": {
 					"id": "classic/assets/path/battle_scarred",
 					"name": "Battle-Scarred",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "Once you become maimed...",
@@ -15436,7 +15449,7 @@
 				"blade_bound": {
 					"id": "classic/assets/path/blade_bound",
 					"name": "Blade-Bound",
-					"asset_type": "Path",
+					"category": "Path",
 					"options": {
 						"name": {
 							"id": "classic/assets/path/blade_bound/options/name",
@@ -15529,7 +15542,7 @@
 				"bonded": {
 					"id": "classic/assets/path/bonded",
 					"name": "Bonded",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -15586,7 +15599,7 @@
 				"commander": {
 					"id": "classic/assets/path/commander",
 					"name": "Commander",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -15676,7 +15689,8 @@
 									"classic/moves/adventure/make_camp",
 									"classic/moves/relationship/sojourn"
 								]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -15695,7 +15709,7 @@
 				"dancer": {
 					"id": "classic/assets/path/dancer",
 					"name": "Dancer",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -15828,7 +15842,7 @@
 				"devotant": {
 					"id": "classic/assets/path/devotant",
 					"name": "Devotant",
-					"asset_type": "Path",
+					"category": "Path",
 					"options": {
 						"gods_name": {
 							"id": "classic/assets/path/devotant/options/gods_name",
@@ -15986,7 +16000,7 @@
 				"empowered": {
 					"id": "classic/assets/path/empowered",
 					"name": "Empowered",
-					"asset_type": "Path",
+					"category": "Path",
 					"options": {
 						"title_lineage": {
 							"id": "classic/assets/path/empowered/options/title_lineage",
@@ -16079,7 +16093,7 @@
 				"fated": {
 					"id": "classic/assets/path/fated",
 					"name": "Fated",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16163,7 +16177,7 @@
 				"fortune_hunter": {
 					"id": "classic/assets/path/fortune_hunter",
 					"name": "Fortune Hunter",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16246,7 +16260,8 @@
 							"field_type": "condition_meter",
 							"min": 0,
 							"max": 5,
-							"value": 0
+							"value": 0,
+							"rollable": true
 						}
 					},
 					"source": {
@@ -16265,7 +16280,7 @@
 				"herbalist": {
 					"id": "classic/assets/path/herbalist",
 					"name": "Herbalist",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16362,7 +16377,7 @@
 				"honorbound": {
 					"id": "classic/assets/path/honorbound",
 					"name": "Honorbound",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16428,7 +16443,7 @@
 				"improviser": {
 					"id": "classic/assets/path/improviser",
 					"name": "Improviser",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16516,7 +16531,7 @@
 				"infiltrator": {
 					"id": "classic/assets/path/infiltrator",
 					"name": "Infiltrator",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16625,7 +16640,7 @@
 				"lorekeeper": {
 					"id": "classic/assets/path/lorekeeper",
 					"name": "Lorekeeper",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16723,7 +16738,7 @@
 				"loyalist": {
 					"id": "classic/assets/path/loyalist",
 					"name": "Loyalist",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -16803,7 +16818,7 @@
 				"masked": {
 					"id": "classic/assets/path/masked",
 					"name": "Masked",
-					"asset_type": "Path",
+					"category": "Path",
 					"options": {
 						"material": {
 							"id": "classic/assets/path/masked/options/material",
@@ -16940,7 +16955,7 @@
 				"oathbreaker": {
 					"id": "classic/assets/path/oathbreaker",
 					"name": "Oathbreaker",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": true,
 					"shared": false,
 					"requirement": "Once you [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow)...",
@@ -17025,7 +17040,7 @@
 				"outcast": {
 					"id": "classic/assets/path/outcast",
 					"name": "Outcast",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -17123,7 +17138,7 @@
 				"pretender": {
 					"id": "classic/assets/path/pretender",
 					"name": "Pretender",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -17244,7 +17259,7 @@
 				"revenant": {
 					"id": "classic/assets/path/revenant",
 					"name": "Revenant",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "Once you [Face Death](id:classic/moves/suffer/face_death) and return to the world of the living...",
@@ -17329,7 +17344,7 @@
 				"rider": {
 					"id": "classic/assets/path/rider",
 					"name": "Rider",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "If you are with your horse companion...",
@@ -17420,7 +17435,7 @@
 				"ritualist": {
 					"id": "classic/assets/path/ritualist",
 					"name": "Ritualist",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "Once you [Fulfill Your Vow](id:classic/moves/quest/fulfill_your_vow) (formidable or greater) in service to an elder mystic, and [Forge a Bond](id:classic/moves/relationship/forge_a_bond) to train with them...",
@@ -17478,7 +17493,7 @@
 				"shadow_kin": {
 					"id": "classic/assets/path/shadow_kin",
 					"name": "Shadow-Kin",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "Once you become corrupted...",
@@ -17540,7 +17555,7 @@
 				"sighted": {
 					"id": "classic/assets/path/sighted",
 					"name": "Sighted",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -17628,7 +17643,7 @@
 				"slayer": {
 					"id": "classic/assets/path/slayer",
 					"name": "Slayer",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -17748,7 +17763,7 @@
 				"spirit_bound": {
 					"id": "classic/assets/path/spirit_bound",
 					"name": "Spirit-Bound",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -17832,7 +17847,7 @@
 				"storyweaver": {
 					"id": "classic/assets/path/storyweaver",
 					"name": "Storyweaver",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -17908,7 +17923,7 @@
 				"trickster": {
 					"id": "classic/assets/path/trickster",
 					"name": "Trickster",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -17994,7 +18009,7 @@
 				"veteran": {
 					"id": "classic/assets/path/veteran",
 					"name": "Veteran",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18073,7 +18088,7 @@
 				"waterborn": {
 					"id": "classic/assets/path/waterborn",
 					"name": "Waterborn",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18158,7 +18173,7 @@
 				"wayfinder": {
 					"id": "classic/assets/path/wayfinder",
 					"name": "Wayfinder",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18246,7 +18261,7 @@
 				"weaponmaster": {
 					"id": "classic/assets/path/weaponmaster",
 					"name": "Weaponmaster",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"requirement": "Once you [Fulfill Your Vow](id:classic/moves/quest/fulfill_your_vow) (formidable or greater) in service to a seasoned warrior, and [Forge a Bond](id:classic/moves/relationship/forge_a_bond) to train with them...",
@@ -18328,7 +18343,7 @@
 				"wildblood": {
 					"id": "classic/assets/path/wildblood",
 					"name": "Wildblood",
-					"asset_type": "Path",
+					"category": "Path",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18421,7 +18436,7 @@
 				"wright": {
 					"id": "classic/assets/path/wright",
 					"name": "Wright",
-					"asset_type": "Path",
+					"category": "Path",
 					"options": {
 						"specialty": {
 							"id": "classic/assets/path/wright/options/specialty",
@@ -18559,7 +18574,7 @@
 				"augur": {
 					"id": "classic/assets/ritual/augur",
 					"name": "Augur",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18655,7 +18670,7 @@
 				"awakening": {
 					"id": "classic/assets/ritual/awakening",
 					"name": "Awakening",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18734,7 +18749,8 @@
 							"field_type": "condition_meter",
 							"min": 0,
 							"max": 3,
-							"value": 3
+							"value": 3,
+							"rollable": true
 						}
 					},
 					"source": {
@@ -18753,7 +18769,7 @@
 				"bind": {
 					"id": "classic/assets/ritual/bind",
 					"name": "Bind",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18849,7 +18865,7 @@
 				"communion": {
 					"id": "classic/assets/ritual/communion",
 					"name": "Communion",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -18945,7 +18961,7 @@
 				"divination": {
 					"id": "classic/assets/ritual/divination",
 					"name": "Divination",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19041,7 +19057,7 @@
 				"invoke": {
 					"id": "classic/assets/ritual/invoke",
 					"name": "Invoke",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19165,7 +19181,8 @@
 							"field_type": "condition_meter",
 							"min": 0,
 							"max": 6,
-							"value": 0
+							"value": 0,
+							"rollable": true
 						}
 					},
 					"source": {
@@ -19184,7 +19201,7 @@
 				"keen": {
 					"id": "classic/assets/ritual/keen",
 					"name": "Keen",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19280,7 +19297,7 @@
 				"leech": {
 					"id": "classic/assets/ritual/leech",
 					"name": "Leech",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19376,7 +19393,7 @@
 				"lightbearer": {
 					"id": "classic/assets/ritual/lightbearer",
 					"name": "Lightbearer",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19484,7 +19501,8 @@
 								"recover": [
 									"classic/assets/ritual/lightbearer/abilities/0/moves/capture_light"
 								]
-							}
+							},
+							"rollable": true
 						}
 					},
 					"source": {
@@ -19503,7 +19521,7 @@
 				"scry": {
 					"id": "classic/assets/ritual/scry",
 					"name": "Scry",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19599,7 +19617,7 @@
 				"shadow_walk": {
 					"id": "classic/assets/ritual/shadow_walk",
 					"name": "Shadow-Walk",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19695,7 +19713,7 @@
 				"sway": {
 					"id": "classic/assets/ritual/sway",
 					"name": "Sway",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19791,7 +19809,7 @@
 				"talisman": {
 					"id": "classic/assets/ritual/talisman",
 					"name": "Talisman",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -19887,7 +19905,7 @@
 				"tether": {
 					"id": "classic/assets/ritual/tether",
 					"name": "Tether",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -20018,7 +20036,7 @@
 				"totem": {
 					"id": "classic/assets/ritual/totem",
 					"name": "Totem",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -20114,7 +20132,7 @@
 				"visage": {
 					"id": "classic/assets/ritual/visage",
 					"name": "Visage",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [
@@ -20210,7 +20228,7 @@
 				"ward": {
 					"id": "classic/assets/ritual/ward",
 					"name": "Ward",
-					"asset_type": "Ritual",
+					"category": "Ritual",
 					"count_as_impact": false,
 					"shared": false,
 					"abilities": [

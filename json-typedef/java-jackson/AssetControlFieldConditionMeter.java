@@ -15,9 +15,6 @@ import java.util.Map;
  */
 @JsonSerialize
 public class AssetControlFieldConditionMeter extends AssetControlField {
-    @JsonProperty("id")
-    private AssetControlFieldId id;
-
     @JsonProperty("label")
     private InputLabel label;
 
@@ -26,6 +23,9 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
 
     @JsonProperty("min")
     private Byte min;
+
+    @JsonProperty("rollable")
+    private Boolean rollable;
 
     @JsonProperty("value")
     private Byte value;
@@ -43,22 +43,6 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
     private AssetControlFieldConditionMeterMoves moves;
 
     public AssetControlFieldConditionMeter() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AssetControlFieldId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AssetControlFieldId id) {
-        this.id = id;
     }
 
     /**
@@ -105,6 +89,20 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
      */
     public void setMin(Byte min) {
         this.min = min;
+    }
+
+    /**
+     * Getter for rollable.<p>
+     */
+    public Boolean getRollable() {
+        return rollable;
+    }
+
+    /**
+     * Setter for rollable.<p>
+     */
+    public void setRollable(Boolean rollable) {
+        this.rollable = rollable;
     }
 
     /**
