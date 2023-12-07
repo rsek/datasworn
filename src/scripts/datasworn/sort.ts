@@ -91,6 +91,7 @@ export const dataSwornKeyOrder: string[] = [
 	'enhance_asset',
 	// very long content
 	'enhance_moves',
+	'rows',
 	'table',
 	'assets',
 	'atlas',

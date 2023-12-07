@@ -204,7 +204,7 @@
 						"result": "Background",
 						"detail": "Assets"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/campaign_launch/background_assets/1-5",
 							"min": 1,
@@ -469,7 +469,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/campaign_launch/backstory_prompts/1-7",
 							"min": 1,
@@ -584,7 +584,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/campaign_launch/starship_history/1-8",
 							"min": 1,
@@ -685,7 +685,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/campaign_launch/starship_quirks/1-5",
 							"min": 1,
@@ -829,7 +829,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/campaign_launch/sector_trouble/1-5",
 							"min": 1,
@@ -973,7 +973,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/campaign_launch/inciting_incident/1-5",
 							"min": 1,
@@ -1136,7 +1136,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/begin_a_session/1-10",
 							"min": 1,
@@ -1220,7 +1220,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/make_a_discovery/1-4",
 							"min": 1,
@@ -1391,7 +1391,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/confront_chaos/1-4",
 							"min": 1,
@@ -1553,7 +1553,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/take_decisive_action/1-40",
 							"min": 1,
@@ -1613,7 +1613,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/endure_harm/1-10",
 							"min": 1,
@@ -1667,7 +1667,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/endure_stress/1-10",
 							"min": 1,
@@ -1715,7 +1715,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/withstand_damage/1-10",
 							"min": 1,
@@ -1787,7 +1787,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/moves/pay_the_price/1-2",
 							"min": 1,
@@ -1950,7 +1950,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/almost_certain/1-90",
 									"min": 1,
@@ -1977,7 +1977,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/likely/1-75",
 									"min": 1,
@@ -2004,7 +2004,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/fifty_fifty/1-50",
 									"min": 1,
@@ -2031,7 +2031,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/unlikely/1-25",
 									"min": 1,
@@ -2058,7 +2058,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/small_chance/1-10",
 									"min": 1,
@@ -2122,7 +2122,7 @@
 					"suggestions": {
 						"oracles": ["starforged/oracles/core/theme"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/core/action/1-1",
 							"min": 1,
@@ -3250,7 +3250,7 @@
 					"suggestions": {
 						"oracles": ["starforged/oracles/core/action"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/core/theme/1-1",
 							"min": 1,
@@ -4378,7 +4378,7 @@
 					"suggestions": {
 						"oracles": ["starforged/oracles/core/focus"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/core/descriptor/1-1",
 							"min": 1,
@@ -5506,7 +5506,7 @@
 					"suggestions": {
 						"oracles": ["starforged/oracles/core/descriptor"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/core/focus/1-1",
 							"min": 1,
@@ -6650,7 +6650,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/space/stellar_object/1-15",
 							"min": 1,
@@ -6753,7 +6753,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/space/peril/1-3",
 							"min": 1,
@@ -7007,7 +7007,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/space/opportunity/1-4",
 							"min": 1,
@@ -7189,7 +7189,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/space/sighting/terminus/1-15",
 									"min": 1,
@@ -7375,7 +7375,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/space/sighting/outlands/1-15",
 									"min": 1,
@@ -7561,7 +7561,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/space/sighting/expanse/1-15",
 									"min": 1,
@@ -7774,7 +7774,7 @@
 							"suggestions": {
 								"oracles": ["starforged/oracles/space/sector_name/suffix"]
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/space/sector_name/prefix/1-2",
 									"min": 1,
@@ -8325,7 +8325,7 @@
 							"suggestions": {
 								"oracles": ["starforged/oracles/space/sector_name/prefix"]
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/space/sector_name/suffix/1-2",
 									"min": 1,
@@ -8927,7 +8927,7 @@
 					"suggestions": {
 						"oracles": ["starforged/oracles/core/descriptor"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/planets/class/1-15",
 							"min": 1,
@@ -9029,7 +9029,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/desert/name/1-1",
 									"min": 1,
@@ -9173,7 +9173,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/desert/atmosphere/1-10",
 									"min": 1,
@@ -9237,7 +9237,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/desert/observed_from_space/1-11",
 									"min": 1,
@@ -9341,7 +9341,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/desert/feature/1-7",
 									"min": 1,
@@ -9471,7 +9471,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/desert/life/1-20",
 									"min": 1,
@@ -9538,7 +9538,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/desert/settlements/terminus/1-50",
 											"min": 1,
@@ -9585,7 +9585,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/desert/settlements/outlands/1-75",
 											"min": 1,
@@ -9632,7 +9632,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/desert/settlements/expanse/1-90",
 											"min": 1,
@@ -9720,7 +9720,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/furnace/name/1-1",
 									"min": 1,
@@ -9864,7 +9864,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/furnace/atmosphere/1-10",
 									"min": 1,
@@ -9928,7 +9928,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/furnace/observed_from_space/1-11",
 									"min": 1,
@@ -10032,7 +10032,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/furnace/feature/1-7",
 									"min": 1,
@@ -10162,7 +10162,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/furnace/life/1-35",
 									"min": 1,
@@ -10229,7 +10229,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/furnace/settlements/terminus/1-60",
 											"min": 1,
@@ -10276,7 +10276,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/furnace/settlements/outlands/1-85",
 											"min": 1,
@@ -10323,7 +10323,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/furnace/settlements/expanse/1-95",
 											"min": 1,
@@ -10411,7 +10411,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/grave/name/1-1",
 									"min": 1,
@@ -10555,7 +10555,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/grave/atmosphere/1-10",
 									"min": 1,
@@ -10619,7 +10619,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/grave/observed_from_space/1-11",
 									"min": 1,
@@ -10723,7 +10723,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/grave/feature/1-7",
 									"min": 1,
@@ -10853,7 +10853,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/grave/life/1-25",
 									"min": 1,
@@ -10920,7 +10920,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/grave/settlements/terminus/1-80",
 											"min": 1,
@@ -10967,7 +10967,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/grave/settlements/outlands/1-90",
 											"min": 1,
@@ -11014,7 +11014,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/grave/settlements/expanse/1-95",
 											"min": 1,
@@ -11102,7 +11102,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ice/name/1-1",
 									"min": 1,
@@ -11246,7 +11246,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ice/atmosphere/1-15",
 									"min": 1,
@@ -11310,7 +11310,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ice/observed_from_space/1-11",
 									"min": 1,
@@ -11414,7 +11414,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ice/feature/1-7",
 									"min": 1,
@@ -11544,7 +11544,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ice/life/1-20",
 									"min": 1,
@@ -11611,7 +11611,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/ice/settlements/terminus/1-50",
 											"min": 1,
@@ -11658,7 +11658,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/ice/settlements/outlands/1-75",
 											"min": 1,
@@ -11705,7 +11705,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/ice/settlements/expanse/1-90",
 											"min": 1,
@@ -11793,7 +11793,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jovian/name/1-1",
 									"min": 1,
@@ -11937,7 +11937,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jovian/atmosphere/0",
 									"min": null,
@@ -12001,7 +12001,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jovian/observed_from_space/1-11",
 									"min": 1,
@@ -12105,7 +12105,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jovian/feature/1-7",
 									"min": 1,
@@ -12235,7 +12235,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jovian/life/1-35",
 									"min": 1,
@@ -12302,7 +12302,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/jovian/settlements/terminus/1-50",
 											"min": 1,
@@ -12349,7 +12349,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/jovian/settlements/outlands/1-75",
 											"min": 1,
@@ -12396,7 +12396,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/jovian/settlements/expanse/1-90",
 											"min": 1,
@@ -12484,7 +12484,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jungle/name/1-1",
 									"min": 1,
@@ -12628,7 +12628,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jungle/atmosphere/0",
 									"min": null,
@@ -12692,7 +12692,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jungle/observed_from_space/1-11",
 									"min": 1,
@@ -12796,7 +12796,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jungle/feature/1-7",
 									"min": 1,
@@ -12926,7 +12926,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/jungle/life/0",
 									"min": null,
@@ -12993,7 +12993,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/jungle/settlements/terminus/1-40",
 											"min": 1,
@@ -13040,7 +13040,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/jungle/settlements/outlands/1-65",
 											"min": 1,
@@ -13087,7 +13087,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/jungle/settlements/expanse/1-85",
 											"min": 1,
@@ -13175,7 +13175,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ocean/name/1-1",
 									"min": 1,
@@ -13319,7 +13319,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ocean/atmosphere/1-5",
 									"min": 1,
@@ -13383,7 +13383,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ocean/observed_from_space/1-11",
 									"min": 1,
@@ -13487,7 +13487,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ocean/feature/1-7",
 									"min": 1,
@@ -13617,7 +13617,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/ocean/life/1-5",
 									"min": 1,
@@ -13684,7 +13684,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/ocean/settlements/terminus/1-40",
 											"min": 1,
@@ -13731,7 +13731,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/ocean/settlements/outlands/1-65",
 											"min": 1,
@@ -13778,7 +13778,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/ocean/settlements/expanse/1-85",
 											"min": 1,
@@ -13866,7 +13866,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/rocky/name/1-1",
 									"min": 1,
@@ -14010,7 +14010,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/rocky/atmosphere/1-65",
 									"min": 1,
@@ -14074,7 +14074,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/rocky/observed_from_space/1-11",
 									"min": 1,
@@ -14178,7 +14178,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/rocky/feature/1-7",
 									"min": 1,
@@ -14308,7 +14308,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/rocky/life/1-65",
 									"min": 1,
@@ -14375,7 +14375,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/rocky/settlements/terminus/1-50",
 											"min": 1,
@@ -14422,7 +14422,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/rocky/settlements/outlands/1-75",
 											"min": 1,
@@ -14469,7 +14469,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/rocky/settlements/expanse/1-90",
 											"min": 1,
@@ -14557,7 +14557,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/shattered/name/1-1",
 									"min": 1,
@@ -14701,7 +14701,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/shattered/atmosphere/1-93",
 									"min": 1,
@@ -14765,7 +14765,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/shattered/observed_from_space/1-11",
 									"min": 1,
@@ -14869,7 +14869,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/shattered/feature/1-7",
 									"min": 1,
@@ -14999,7 +14999,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/shattered/life/1-30",
 									"min": 1,
@@ -15066,7 +15066,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/shattered/settlements/terminus/1-70",
 											"min": 1,
@@ -15113,7 +15113,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/shattered/settlements/outlands/1-85",
 											"min": 1,
@@ -15160,7 +15160,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/shattered/settlements/expanse/1-95",
 											"min": 1,
@@ -15248,7 +15248,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/tainted/name/1-1",
 									"min": 1,
@@ -15392,7 +15392,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/tainted/atmosphere/0",
 									"min": null,
@@ -15456,7 +15456,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/tainted/observed_from_space/1-11",
 									"min": 1,
@@ -15560,7 +15560,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/tainted/feature/1-7",
 									"min": 1,
@@ -15690,7 +15690,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/tainted/life/0",
 									"min": null,
@@ -15757,7 +15757,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/tainted/settlements/terminus/1-80",
 											"min": 1,
@@ -15804,7 +15804,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/tainted/settlements/outlands/1-90",
 											"min": 1,
@@ -15851,7 +15851,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/tainted/settlements/expanse/1-95",
 											"min": 1,
@@ -15939,7 +15939,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/vital/name/1-1",
 									"min": 1,
@@ -16083,7 +16083,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/vital/atmosphere/0",
 									"min": null,
@@ -16147,7 +16147,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/vital/observed_from_space/1-11",
 									"min": 1,
@@ -16251,7 +16251,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/vital/feature/1-7",
 									"min": 1,
@@ -16381,7 +16381,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/vital/life/0",
 									"min": null,
@@ -16442,7 +16442,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/vital/diversity/1-20",
 									"min": 1,
@@ -16546,7 +16546,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/vital/biomes/1-5",
 									"min": 1,
@@ -16797,7 +16797,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/vital/settlements/terminus/1-20",
 											"min": 1,
@@ -16844,7 +16844,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/vital/settlements/outlands/1-50",
 											"min": 1,
@@ -16891,7 +16891,7 @@
 										"roll": "Roll",
 										"result": "Result"
 									},
-									"table": [
+									"rows": [
 										{
 											"id": "starforged/oracles/planets/vital/settlements/expanse/1-80",
 											"min": 1,
@@ -16975,7 +16975,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/peril/lifebearing/1-3",
 									"min": 1,
@@ -17216,7 +17216,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/peril/lifeless/0",
 									"min": null,
@@ -17480,7 +17480,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/opportunity/lifebearing/1-4",
 									"min": 1,
@@ -17642,7 +17642,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/planets/opportunity/lifeless/0",
 									"min": null,
@@ -17840,7 +17840,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/settlements/location/1-40",
 							"min": 1,
@@ -17889,7 +17889,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/settlements/first_look/1-3",
 							"min": 1,
@@ -18055,7 +18055,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/settlements/initial_contact/1-20",
 							"min": 1,
@@ -18145,7 +18145,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/settlements/authority/1-15",
 							"min": 1,
@@ -18251,7 +18251,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/settlements/projects/1-5",
 							"min": 1,
@@ -18654,7 +18654,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/settlements/trouble/1-3",
 							"min": 1,
@@ -18899,7 +18899,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/settlements/name/1-1",
 							"min": 1,
@@ -20030,7 +20030,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/settlements/population/terminus/1-10",
 									"min": 1,
@@ -20077,7 +20077,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/settlements/population/outlands/1-15",
 									"min": 1,
@@ -20124,7 +20124,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/settlements/population/expanse/1-20",
 									"min": 1,
@@ -20209,7 +20209,7 @@
 						"result": "Class",
 						"detail": "Typical Role"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/starships/type/1-2",
 							"min": 1,
@@ -20514,7 +20514,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/starships/fleet/1-10",
 							"min": 1,
@@ -20630,7 +20630,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/starships/initial_contact/1-3",
 							"min": 1,
@@ -20730,7 +20730,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/starships/first_look/1-4",
 							"min": 1,
@@ -20903,7 +20903,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/starships/starship_name/1-1",
 							"min": 1,
@@ -21535,7 +21535,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/starships/mission/terminus/1-3",
 									"min": 1,
@@ -21769,7 +21769,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/starships/mission/outlands/1-2",
 									"min": 1,
@@ -22003,7 +22003,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/starships/mission/expanse/1-2",
 									"min": 1,
@@ -22278,7 +22278,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/characters/first_look/1-3",
 							"min": 1,
@@ -22731,7 +22731,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/characters/initial_disposition/1-6",
 							"min": 1,
@@ -22887,7 +22887,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/characters/role/1-2",
 							"min": 1,
@@ -23454,7 +23454,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/characters/goal/1-2",
 							"min": 1,
@@ -23748,7 +23748,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/characters/revealed_aspect/1-1",
 							"min": 1,
@@ -24887,7 +24887,7 @@
 									"starforged/oracles/characters/name/family_name"
 								]
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/characters/name/given/1-1",
 									"min": 1,
@@ -26006,7 +26006,7 @@
 									"starforged/oracles/characters/name/family_name"
 								]
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/characters/name/callsign/1-1",
 									"min": 1,
@@ -27125,7 +27125,7 @@
 									"starforged/oracles/characters/name/callsign"
 								]
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/characters/name/family_name/1-1",
 									"min": 1,
@@ -28275,7 +28275,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/creatures/environment/1-5",
 							"min": 1,
@@ -28404,7 +28404,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/creatures/scale/1-3",
 							"min": 1,
@@ -28514,7 +28514,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/creatures/ultra_scale/1-89",
 							"min": 1,
@@ -28576,7 +28576,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/creatures/first_look/1-2",
 							"min": 1,
@@ -28901,7 +28901,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/creatures/encountered_behavior/1-5",
 							"min": 1,
@@ -29171,7 +29171,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/creatures/revealed_aspect/1-2",
 							"min": 1,
@@ -29498,13 +29498,14 @@
 							"id": "starforged/oracles/creatures/basic_form/space",
 							"name": "Space",
 							"oracle_type": "column_simple",
+							"color": "#131A1C",
 							"icon": "icons/creature/environment/space.svg",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/space/1-5",
 									"min": 1,
@@ -29645,13 +29646,14 @@
 							"id": "starforged/oracles/creatures/basic_form/interior",
 							"name": "Interior",
 							"oracle_type": "column_simple",
+							"color": "#80868E",
 							"icon": "icons/creature/environment/interior.svg",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/interior/1-3",
 									"min": 1,
@@ -29792,13 +29794,14 @@
 							"id": "starforged/oracles/creatures/basic_form/land",
 							"name": "Land",
 							"oracle_type": "column_simple",
+							"color": "#CA181A",
 							"icon": "icons/creature/environment/land.svg",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/land/1-2",
 									"min": 1,
@@ -29939,13 +29942,14 @@
 							"id": "starforged/oracles/creatures/basic_form/liquid",
 							"name": "Liquid",
 							"oracle_type": "column_simple",
+							"color": "#0079BB",
 							"icon": "icons/creature/environment/liquid.svg",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/liquid/1-5",
 									"min": 1,
@@ -30086,13 +30090,14 @@
 							"id": "starforged/oracles/creatures/basic_form/air",
 							"name": "Air",
 							"oracle_type": "column_simple",
+							"color": "#8D1D82",
 							"icon": "icons/creature/environment/air.svg",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/air/1-2",
 									"min": 1,
@@ -30275,7 +30280,7 @@
 						"result": "Result",
 						"detail": "Summary"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/type/1-40",
 							"min": 1,
@@ -30355,7 +30360,7 @@
 						"result": "Result",
 						"detail": "Summary"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/influence/1-10",
 							"min": 1,
@@ -30468,7 +30473,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/dominion/1-5",
 							"min": 1,
@@ -30756,7 +30761,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/dominion_leadership/1-5",
 							"min": 1,
@@ -30841,7 +30846,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/guild/1-5",
 							"min": 1,
@@ -31040,7 +31045,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/fringe_group/1-5",
 							"min": 1,
@@ -31210,7 +31215,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/projects/1-3",
 							"min": 1,
@@ -31449,7 +31454,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/relationships/1-4",
 							"min": 1,
@@ -31655,7 +31660,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/quirks/1-3",
 							"min": 1,
@@ -31898,7 +31903,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/factions/rumors/1-3",
 							"min": 1,
@@ -32144,7 +32149,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/factions/name/template/1-40",
 									"min": 1,
@@ -32232,7 +32237,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/factions/name/legacy/1-2",
 									"min": 1,
@@ -32806,7 +32811,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/factions/name/affiliation/1-4",
 									"min": 1,
@@ -33105,7 +33110,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/factions/name/identity/1-2",
 									"min": 1,
@@ -33714,7 +33719,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/derelicts/location/1-40",
 							"min": 1,
@@ -33768,7 +33773,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/derelicts/condition/1-10",
 							"min": 1,
@@ -33829,7 +33834,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/derelicts/outer_first_look/1-15",
 							"min": 1,
@@ -33918,7 +33923,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/derelicts/inner_first_look/1-3",
 							"min": 1,
@@ -34159,7 +34164,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/access/area/1-50",
 									"min": 1,
@@ -34232,7 +34237,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/access/feature/1-5",
 									"min": 1,
@@ -34393,7 +34398,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/access/peril/1-10",
 									"min": 1,
@@ -34509,7 +34514,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/access/opportunity/1-20",
 									"min": 1,
@@ -34584,7 +34589,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/community/area/1-8",
 									"min": 1,
@@ -34681,7 +34686,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/community/feature/1-8",
 									"min": 1,
@@ -34794,7 +34799,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/community/peril/1-10",
 									"min": 1,
@@ -34910,7 +34915,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/community/opportunity/1-20",
 									"min": 1,
@@ -34985,7 +34990,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/engineering/area/1-8",
 									"min": 1,
@@ -35082,7 +35087,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/engineering/feature/1-8",
 									"min": 1,
@@ -35195,7 +35200,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/engineering/peril/1-10",
 									"min": 1,
@@ -35311,7 +35316,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/engineering/opportunity/1-20",
 									"min": 1,
@@ -35386,7 +35391,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/living/area/1-8",
 									"min": 1,
@@ -35483,7 +35488,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/living/feature/1-8",
 									"min": 1,
@@ -35596,7 +35601,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/living/peril/1-10",
 									"min": 1,
@@ -35712,7 +35717,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/living/opportunity/1-20",
 									"min": 1,
@@ -35787,7 +35792,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/medical/area/1-8",
 									"min": 1,
@@ -35884,7 +35889,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/medical/feature/1-8",
 									"min": 1,
@@ -35997,7 +36002,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/medical/peril/1-10",
 									"min": 1,
@@ -36113,7 +36118,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/medical/opportunity/1-20",
 									"min": 1,
@@ -36188,7 +36193,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/operations/area/1-8",
 									"min": 1,
@@ -36285,7 +36290,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/operations/feature/1-8",
 									"min": 1,
@@ -36398,7 +36403,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/operations/peril/1-10",
 									"min": 1,
@@ -36514,7 +36519,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/operations/opportunity/1-20",
 									"min": 1,
@@ -36589,7 +36594,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/production/area/1-8",
 									"min": 1,
@@ -36686,7 +36691,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/production/feature/1-8",
 									"min": 1,
@@ -36799,7 +36804,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/production/peril/1-10",
 									"min": 1,
@@ -36915,7 +36920,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/production/opportunity/1-20",
 									"min": 1,
@@ -36990,7 +36995,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/research/area/1-8",
 									"min": 1,
@@ -37087,7 +37092,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/research/feature/1-8",
 									"min": 1,
@@ -37200,7 +37205,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/research/peril/1-10",
 									"min": 1,
@@ -37316,7 +37321,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/research/opportunity/1-20",
 									"min": 1,
@@ -37391,7 +37396,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/type/planetside/1-25",
 									"min": 1,
@@ -37427,7 +37432,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/type/orbital/1-40",
 									"min": 1,
@@ -37463,7 +37468,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/type/deep_space/1-75",
 									"min": 1,
@@ -37522,7 +37527,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/zones/starship/0",
 									"min": null,
@@ -37591,7 +37596,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/zones/settlement/0",
 									"min": null,
@@ -37696,7 +37701,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/vaults/location/1-50",
 							"min": 1,
@@ -37741,7 +37746,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/vaults/scale/1-30",
 							"min": 1,
@@ -37795,7 +37800,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/vaults/form/1-35",
 							"min": 1,
@@ -37874,7 +37879,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/vaults/shape/1-15",
 							"min": 1,
@@ -38073,7 +38078,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/vaults/material/1-30",
 							"min": 1,
@@ -38215,7 +38220,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/vaults/outer_first_look/1-3",
 							"min": 1,
@@ -38449,7 +38454,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/interior/first_look/1-3",
 									"min": 1,
@@ -38681,7 +38686,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/interior/feature/1-3",
 									"min": 1,
@@ -38941,7 +38946,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/interior/peril/1-5",
 									"min": 1,
@@ -39117,7 +39122,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/interior/opportunity/1-10",
 									"min": 1,
@@ -39223,7 +39228,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/sanctum/purpose/1-3",
 									"min": 1,
@@ -39446,7 +39451,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/sanctum/feature/1-2",
 									"min": 1,
@@ -39705,7 +39710,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/sanctum/peril/1-5",
 									"min": 1,
@@ -39880,7 +39885,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/vaults/sanctum/opportunity/1-10",
 									"min": 1,
@@ -40001,7 +40006,7 @@
 						"result": "Result",
 						"detail": "Summary"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/location_themes/type/1-15",
 							"min": 1,
@@ -40099,7 +40104,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/chaotic/feature/1-8",
 									"min": 1,
@@ -40218,7 +40223,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/chaotic/peril/1-9",
 									"min": 1,
@@ -40340,7 +40345,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/chaotic/opportunity/1-20",
 									"min": 1,
@@ -40416,7 +40421,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/fortified/feature/1-8",
 									"min": 1,
@@ -40535,7 +40540,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/fortified/peril/1-9",
 									"min": 1,
@@ -40657,7 +40662,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/fortified/opportunity/1-20",
 									"min": 1,
@@ -40733,7 +40738,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/haunted/feature/1-8",
 									"min": 1,
@@ -40852,7 +40857,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/haunted/peril/1-9",
 									"min": 1,
@@ -40974,7 +40979,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/haunted/opportunity/1-20",
 									"min": 1,
@@ -41050,7 +41055,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/infested/feature/1-8",
 									"min": 1,
@@ -41169,7 +41174,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/infested/peril/1-9",
 									"min": 1,
@@ -41291,7 +41296,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/infested/opportunity/1-20",
 									"min": 1,
@@ -41367,7 +41372,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/inhabited/feature/1-8",
 									"min": 1,
@@ -41486,7 +41491,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/inhabited/peril/1-9",
 									"min": 1,
@@ -41608,7 +41613,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/inhabited/opportunity/1-20",
 									"min": 1,
@@ -41684,7 +41689,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/mechanical/feature/1-8",
 									"min": 1,
@@ -41803,7 +41808,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/mechanical/peril/1-9",
 									"min": 1,
@@ -41925,7 +41930,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/mechanical/opportunity/1-20",
 									"min": 1,
@@ -42001,7 +42006,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/ruined/feature/1-8",
 									"min": 1,
@@ -42120,7 +42125,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/ruined/peril/1-9",
 									"min": 1,
@@ -42242,7 +42247,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/ruined/opportunity/1-20",
 									"min": 1,
@@ -42318,7 +42323,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/sacred/feature/1-8",
 									"min": 1,
@@ -42437,7 +42442,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/sacred/peril/1-9",
 									"min": 1,
@@ -42559,7 +42564,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "starforged/oracles/location_themes/sacred/opportunity/1-20",
 									"min": 1,
@@ -42647,7 +42652,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/misc/story_complication/1-4",
 							"min": 1,
@@ -42859,7 +42864,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/misc/story_clue/1-3",
 							"min": 1,
@@ -43086,7 +43091,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/misc/anomaly_effect/1-3",
 							"min": 1,
@@ -43318,7 +43323,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "starforged/oracles/misc/combat_action/1-3",
 							"min": 1,

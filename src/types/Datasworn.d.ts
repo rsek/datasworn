@@ -1742,7 +1742,7 @@ export interface OracleColumnDetails {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	table: OracleTableRowDetails[]
+	rows: OracleTableRowDetails[]
 	oracle_type: 'column_details'
 }
 
@@ -1811,7 +1811,7 @@ export interface OracleColumnSimple {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	table: OracleTableRowSimple[]
+	rows: OracleTableRowSimple[]
 	oracle_type: 'column_simple'
 }
 
@@ -1913,7 +1913,7 @@ export interface OracleTableDetails {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	table: OracleTableRowDetails[]
+	rows: OracleTableRowDetails[]
 	oracle_type: 'table_details'
 }
 
@@ -1942,8 +1942,12 @@ export interface OracleTableRowDetails {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
+	 * @unstable
 	 */
 	embed_table?: OracleRollableId
+	/**
+	 * @unstable
+	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -1956,7 +1960,10 @@ export interface OracleTableRowDetails {
 	 * @default null
 	 */
 	max: number | null
-	detail: MarkdownString
+	/**
+	 * The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.
+	 */
+	detail: MarkdownString | null
 }
 
 /**
@@ -1979,8 +1986,12 @@ export interface OracleTableRowSimple {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
+	 * @unstable
 	 */
 	embed_table?: OracleRollableId
+	/**
+	 * @unstable
+	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -2308,7 +2319,7 @@ export interface OracleTableSimple {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	table: OracleTableRowSimple[]
+	rows: OracleTableRowSimple[]
 	oracle_type: 'table_simple'
 }
 
@@ -3729,8 +3740,12 @@ export interface TruthOptionTableRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
+	 * @unstable
 	 */
 	embed_table?: OracleRollableId
+	/**
+	 * @unstable
+	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -4150,8 +4165,12 @@ export interface DelveSiteDomainDangerRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
+	 * @unstable
 	 */
 	embed_table?: OracleRollableId
+	/**
+	 * @unstable
+	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -4184,8 +4203,12 @@ export interface DelveSiteDomainFeatureRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
+	 * @unstable
 	 */
 	embed_table?: OracleRollableId
+	/**
+	 * @unstable
+	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -4322,8 +4345,12 @@ export interface DelveSiteThemeDangerRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
+	 * @unstable
 	 */
 	embed_table?: OracleRollableId
+	/**
+	 * @unstable
+	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -4356,8 +4383,12 @@ export interface DelveSiteThemeFeatureRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
+	 * @unstable
 	 */
 	embed_table?: OracleRollableId
+	/**
+	 * @unstable
+	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**

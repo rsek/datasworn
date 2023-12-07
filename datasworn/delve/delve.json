@@ -30,7 +30,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/moves/find_an_opportunity/1-25",
 							"min": 1,
@@ -114,7 +114,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/moves/reveal_a_danger/1-30",
 							"min": 1,
@@ -219,7 +219,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/moves/reveal_a_danger_alt/1-22",
 							"min": 1,
@@ -316,7 +316,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/moves/advance_a_threat/1-30",
 							"min": 1,
@@ -365,7 +365,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/moves/delve_the_depths/edge/1-45",
 									"min": 1,
@@ -407,7 +407,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/moves/delve_the_depths/shadow/1-30",
 									"min": 1,
@@ -449,7 +449,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/moves/delve_the_depths/wits/1-40",
 									"min": 1,
@@ -533,7 +533,7 @@
 					"suggestions": {
 						"oracles": ["delve/oracles/feature/focus"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/feature/aspect/1-2",
 							"min": 1,
@@ -1111,7 +1111,7 @@
 					"suggestions": {
 						"oracles": ["delve/oracles/feature/aspect"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/feature/focus/1-2",
 							"min": 1,
@@ -1707,7 +1707,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/site_name/format/1-25",
 							"min": 1,
@@ -1976,7 +1976,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/site_name/description/1-2",
 							"min": 1,
@@ -2551,7 +2551,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/site_name/detail/1-2",
 							"min": 1,
@@ -3127,7 +3127,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/site_name/namesake/1-2",
 							"min": 1,
@@ -3702,7 +3702,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/site_name/place/1-6",
 							"min": 1,
@@ -3926,7 +3926,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/barrow/1-16",
 									"min": 1,
@@ -4016,7 +4016,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/cavern/1-10",
 									"min": 1,
@@ -4150,7 +4150,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/frozen_cavern/1-10",
 									"min": 1,
@@ -4284,7 +4284,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/icereach/1-16",
 									"min": 1,
@@ -4374,7 +4374,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/mine/1-16",
 									"min": 1,
@@ -4464,7 +4464,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/pass/1-10",
 									"min": 1,
@@ -4598,7 +4598,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/ruin/1-10",
 									"min": 1,
@@ -4732,7 +4732,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/sea_cave/1-16",
 									"min": 1,
@@ -4822,7 +4822,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/shadowfen/1-10",
 									"min": 1,
@@ -4956,7 +4956,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/stronghold/1-10",
 									"min": 1,
@@ -5090,7 +5090,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/tanglewood/1-11",
 									"min": 1,
@@ -5202,7 +5202,7 @@
 								"roll": "Roll",
 								"result": "Result"
 							},
-							"table": [
+							"rows": [
 								{
 									"id": "delve/oracles/site_name/place/underkeep/1-10",
 									"min": 1,
@@ -5372,7 +5372,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/site_nature/theme/1-11",
 							"min": 1,
@@ -5445,7 +5445,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/site_nature/domain/1-6",
 							"min": 1,
@@ -5570,7 +5570,7 @@
 							"classic/oracles/action_and_theme/theme"
 						]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/character/activity/1-2",
 							"min": 1,
@@ -6146,7 +6146,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/character/disposition/1-6",
 							"min": 1,
@@ -6324,7 +6324,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/monstrosity/size/1-5",
 							"min": 1,
@@ -6386,7 +6386,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/monstrosity/primary_form/1-15",
 							"min": 1,
@@ -6615,7 +6615,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/monstrosity/characteristics/1-5",
 							"min": 1,
@@ -6810,7 +6810,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/monstrosity/abilities/1-4",
 							"min": 1,
@@ -7107,7 +7107,7 @@
 					"suggestions": {
 						"oracles": ["delve/oracles/trap/component"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/trap/trap/1-4",
 							"min": 1,
@@ -7410,7 +7410,7 @@
 					"suggestions": {
 						"oracles": ["delve/oracles/trap/event"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/trap/component/1-4",
 							"min": 1,
@@ -7734,7 +7734,7 @@
 					"suggestions": {
 						"oracles": ["delve/oracles/combat_event/target"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/combat_event/method/1-2",
 							"min": 1,
@@ -8312,7 +8312,7 @@
 					"suggestions": {
 						"oracles": ["delve/oracles/combat_event/method"]
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/combat_event/target/1-2",
 							"min": 1,
@@ -8911,7 +8911,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/category/1-10",
 							"min": 1,
@@ -9005,7 +9005,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/burgeoning_conflict/1-10",
 							"min": 1,
@@ -9090,7 +9090,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/cursed_site/1-10",
 							"min": 1,
@@ -9175,7 +9175,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/environmental_calamity/1-10",
 							"min": 1,
@@ -9260,7 +9260,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/malignant_plague/1-10",
 							"min": 1,
@@ -9345,7 +9345,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/rampaging_creature/1-10",
 							"min": 1,
@@ -9430,7 +9430,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/ravaging_horde/1-10",
 							"min": 1,
@@ -9515,7 +9515,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/scheming_leader/1-10",
 							"min": 1,
@@ -9600,7 +9600,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/power_hungry_mystic/1-10",
 							"min": 1,
@@ -9685,7 +9685,7 @@
 						"roll": "Roll",
 						"result": "Result"
 					},
-					"table": [
+					"rows": [
 						{
 							"id": "delve/oracles/threat/zealous_cult/1-10",
 							"min": 1,

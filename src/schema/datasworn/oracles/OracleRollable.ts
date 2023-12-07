@@ -47,7 +47,7 @@ function RollableMixin<OracleRow extends TObject>(row: TRef<OracleRow>) {
 	return Type.Object({
 		...TypeClone.Type(RollableMeta).properties,
 		...Type.Pick(Generic.SourcedNodeBase, ['tags', 'suggestions']).properties,
-		table: Type.Array(row, {
+		rows: Type.Array(row, {
 			description:
 				'An array of objects, each representing a single row of the table.'
 		})
@@ -99,7 +99,7 @@ function OracleRollableBase<
 	const base = Type.Object({
 		...TypeClone.Type(TableMeta).properties,
 		...TypeClone.Type(Type.Object(properties)).properties,
-		table: Type.Array(
+		rows: Type.Array(
 			{
 				...row
 			},
@@ -109,7 +109,7 @@ function OracleRollableBase<
 			}
 		)
 	}) as TObject<
-		ObjectProperties<typeof TableMeta> & Props & { table: TArray<OracleRow> }
+		ObjectProperties<typeof TableMeta> & Props & { rows: TArray<OracleRow> }
 	>
 	return Generic.RecursiveCollectable(Type.Ref(Id.OracleRollableId), base)
 }

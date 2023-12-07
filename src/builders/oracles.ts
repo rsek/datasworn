@@ -33,19 +33,17 @@ export const OracleTableRow: Transformer<
 }
 
 export const OracleTable = sourcedTransformer<
-	DataswornSource.OracleTable,
-	Datasworn.OracleTable,
+	DataswornSource.OracleRollable,
+	Datasworn.OracleRollable,
 	Datasworn.OracleCollection
 >({
-	table: function (
+	rows: function (
 		this: SourcedNode,
-		data: DataswornSource.OracleTable,
+		data: DataswornSource.OracleRollable,
 		key: string | number,
 		parent: SourcedNode
-	): Datasworn.OracleTableRow[] {
-		return data.table.map((row, i) => {
-
-
+	): Datasworn.OracleTableRowDetails | Datasworn.OracleTableRowSimple[] {
+		return data.rows.map((row, i) => {
 			return transform(row, i, this, OracleTableRow)
 		})
 	}

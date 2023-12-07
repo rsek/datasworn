@@ -2984,7 +2984,7 @@
 		"OracleColumnDetails": {
 			"title": "OracleColumnDetails",
 			"type": "object",
-			"required": ["name", "oracle_type", "table"],
+			"required": ["name", "oracle_type", "rows"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3046,16 +3046,16 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"table": {
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
 						"$ref": "#/definitions/OracleTableRowDetails"
 					}
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
 					"type": "object",
@@ -3079,7 +3079,7 @@
 			"title": "OracleColumnSimple",
 			"type": "object",
 			"description": "Represents a single column in an OracleCollection.",
-			"required": ["name", "oracle_type", "table"],
+			"required": ["name", "oracle_type", "rows"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3136,16 +3136,16 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"table": {
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
 						"$ref": "#/definitions/OracleTableRowSimple"
 					}
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
 					"type": "object",
@@ -3242,7 +3242,7 @@
 			"title": "OracleTableDetails",
 			"type": "object",
 			"description": "A rollable oracle table with one roll column, one `result` column, and one `detail` column.",
-			"required": ["name", "oracle_type", "table", "source"],
+			"required": ["name", "oracle_type", "source", "rows"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3322,13 +3322,6 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"table": {
-					"type": "array",
-					"description": "An array of objects, each representing a single row of the table.",
-					"items": {
-						"$ref": "#/definitions/OracleTableRowDetails"
-					}
-				},
 				"source": {
 					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3336,6 +3329,13 @@
 				"replaces": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRowDetails"
+					}
 				},
 				"tags": {
 					"type": "object",
@@ -3859,7 +3859,7 @@
 			"title": "OracleTableSimple",
 			"type": "object",
 			"description": "Represents a basic rollable oracle table with one roll column and one `result` column.",
-			"required": ["name", "oracle_type", "table", "source"],
+			"required": ["name", "oracle_type", "source", "rows"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3934,13 +3934,6 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"table": {
-					"type": "array",
-					"description": "An array of objects, each representing a single row of the table.",
-					"items": {
-						"$ref": "#/definitions/OracleTableRowSimple"
-					}
-				},
 				"source": {
 					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3948,6 +3941,13 @@
 				"replaces": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRowSimple"
+					}
 				},
 				"tags": {
 					"type": "object",
