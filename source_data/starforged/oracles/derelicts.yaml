@@ -25,7 +25,7 @@ oracles:
         # usage:
         #   initial: true
         #   requires: *attr:Location.Any
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         contents:
           planetside:
             name: Planetside
@@ -104,7 +104,7 @@ oracles:
           <<: *Source
           page: 351
         summary: &Zones.Summary If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         contents:
           starship:
             name: Starship
@@ -299,7 +299,7 @@ oracles:
             result: Time or reality distortions
       inner_first_look:
         name: Inner First Look
-        oracle_type: table_details
+        oracle_type: table_simple
         summary: Use these First Look tables for your initial survey of the derelict's interior.
         source:
           <<: *Source

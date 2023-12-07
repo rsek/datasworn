@@ -16,7 +16,7 @@ oracles:
       sighting:
         name: Space Sighting
         source: *CollectionSource
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         # content:
         #   part_of_speech: [fragment]
         summary: |-
@@ -300,7 +300,7 @@ oracles:
           page: 302
         summary: To give a sector or region of space a random name, roll once for the first word and once for the second word.
         description: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
-        oracle_type: table_shared_roll
+        oracle_type: table_shared_rolls
         # template:
         #   result: '{{result:starforged/oracles/space/sector_name/prefix}} {{result:starforged/oracles/space/sector_name/suffix}}'
         contents:

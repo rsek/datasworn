@@ -995,7 +995,7 @@ oracles:
         name: Controlling Faction
         source:
           <<: *Source
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         contents:
           myriads:
             name: Myriads
@@ -1053,7 +1053,7 @@ oracles:
         source:
           <<: *Source
         summary: A ship’s faction can reveal its role, such as warship, tradeship, or whaler. If the ship is independent, the faction unknown, or if you simply want more detail, use this table. Alernatively, use the captain’s goal (page 179) to set the ship’s purpose.
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         # rendering:
         #   columns:
         #     - label: Small

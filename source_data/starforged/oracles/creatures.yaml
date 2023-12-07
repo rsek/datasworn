@@ -601,7 +601,7 @@ oracles:
     collections:
       basic_form:
         name: Creature Basic Form
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         source:
           <<: *Source
           page: 337

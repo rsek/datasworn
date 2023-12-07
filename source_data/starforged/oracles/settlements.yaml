@@ -21,7 +21,7 @@ oracles:
         #   requires:
         #     attributes:
         #       region: null
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         column_labels:
           result: Number
         contents:

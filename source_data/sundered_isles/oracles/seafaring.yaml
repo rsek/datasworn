@@ -23,7 +23,7 @@ oracles:
         collections:
           known_waters:
             name: Known Waters
-            oracle_type: table_shared_result
+            oracle_type: table_shared_results
             source: &TableSource
               <<: *CollectionSource
             summary: |-
@@ -145,7 +145,7 @@ oracles:
                     <<: *WaypointKnown.6
           unknown_waters:
             name: Unknown Waters
-            oracle_type: table_shared_result
+            oracle_type: table_shared_results
             source: &TableSource
               <<: *CollectionSource
             summary: |-

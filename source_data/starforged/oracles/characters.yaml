@@ -19,7 +19,7 @@ oracles:
     collections:
       name:
         name: Character Name
-        oracle_type: table_shared_roll
+        oracle_type: table_shared_rolls
         source:
           <<: *Source
           page: 333

@@ -845,7 +845,7 @@ oracles:
         name: Other Names
         canonical_name: 'Oracle 15: Other Names'
         summary: Use this oracle to generate names for other firstborn characters.
-        oracle_type: table_shared_roll
+        oracle_type: table_shared_rolls
         source: &CollectionSource
           <<: *Source
           page: 187

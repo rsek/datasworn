@@ -26,7 +26,7 @@ oracles:
           settlements:
             <<: &Settlements
               name: Settlements
-              oracle_type: table_shared_result
+              oracle_type: table_shared_results
             source: *CollectionSource
             contents:
               terminus:

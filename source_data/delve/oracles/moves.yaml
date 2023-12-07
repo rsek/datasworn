@@ -16,7 +16,7 @@ oracles:
       page: 19
     collections:
       delve_the_depths:
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         # rendering:
         #   columns:
         #     - content_type: roll

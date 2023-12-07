@@ -87,7 +87,7 @@ oracles:
         source: &CollectionSource
           <<: *Source
           page: 320
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         # rendering:
         #   columns:
         #     - content_type: roll
@@ -358,7 +358,7 @@ oracles:
         source: &CollectionSource
           <<: *Source
           page: 321
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         # content:
         #   part_of_speech: [fragment]
         #   tags: [opportunity]

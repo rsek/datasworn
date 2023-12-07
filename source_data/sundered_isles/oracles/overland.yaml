@@ -872,7 +872,7 @@ oracles:
       waypoints:
         source: *Source
         name: Waypoints
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         contents:
           myriads:
             name: Myriads

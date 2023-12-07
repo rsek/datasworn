@@ -555,7 +555,7 @@ oracles:
         canonical_name: 'Oracle 8: Quick Settlement Name Generator'
         name: Quick Settlement Name Generator
         summary: Use this oracle as a simpler alternative for settlement names. Roll once for the prefix, and once for the suffix. If the combination doesn’t quite work, look at adjacent rows or reverse the digits.
-        oracle_type: table_shared_roll
+        oracle_type: table_shared_rolls
         # template:
         #   result: '{{result:classic/oracles/settlement/quick_name/prefix}}{{result:classic/oracles/settlement/quick_name/suffix}}'
         source: &CollectionSource

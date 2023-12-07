@@ -1,10 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://ironswornrpg.com/datasworn-source.schema.json",
-	"$ref": "#/$defs/RulesPackage",
+	"$ref": "#/definitions/RulesPackage",
 	"title": "DataswornSource v0.0.4",
 	"description": "Source data schema for Datasworn, which describes game rules compatible with the Ironsworn tabletop roleplaying game by Shawn Tomkin.\n\nThe source data omits IDs, and makes properties that provide a default value optional; these values are inserted during validation/processing to produce the JSON for distribution.",
-	"$defs": {
+	"definitions": {
 		"RulesPackage": {
 			"title": "RulesPackage",
 			"type": "object",
@@ -28,7 +28,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/Ruleset"
+						"$ref": "#/definitions/Ruleset"
 					}
 				},
 				{
@@ -41,7 +41,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/Expansion"
+						"$ref": "#/definitions/Expansion"
 					}
 				}
 			]
@@ -53,10 +53,10 @@
 			"required": ["id", "package_type"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/RulesetId"
+					"$ref": "#/definitions/RulesetId"
 				},
 				"datasworn_version": {
-					"$ref": "#/$defs/SemanticVersion",
+					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
 				},
 				"package_type": {
@@ -64,7 +64,7 @@
 					"const": "ruleset"
 				},
 				"rules": {
-					"$ref": "#/$defs/Rules"
+					"$ref": "#/definitions/Rules"
 				},
 				"oracles": {
 					"type": "object",
@@ -72,7 +72,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleTablesCollection"
+							"$ref": "#/definitions/OracleTablesCollection"
 						}
 					}
 				},
@@ -82,7 +82,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetCollection"
+							"$ref": "#/definitions/AssetCollection"
 						}
 					}
 				},
@@ -92,7 +92,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Atlas"
+							"$ref": "#/definitions/Atlas"
 						}
 					}
 				},
@@ -102,7 +102,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/MoveCategory"
+							"$ref": "#/definitions/MoveCategory"
 						}
 					}
 				},
@@ -112,7 +112,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/NpcCollection"
+							"$ref": "#/definitions/NpcCollection"
 						}
 					}
 				},
@@ -122,7 +122,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Rarity"
+							"$ref": "#/definitions/Rarity"
 						}
 					}
 				},
@@ -132,7 +132,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/DelveSite"
+							"$ref": "#/definitions/DelveSite"
 						}
 					}
 				},
@@ -142,7 +142,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/DelveSiteDomain"
+							"$ref": "#/definitions/DelveSiteDomain"
 						}
 					}
 				},
@@ -152,7 +152,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/DelveSiteTheme"
+							"$ref": "#/definitions/DelveSiteTheme"
 						}
 					}
 				},
@@ -162,7 +162,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Truth"
+							"$ref": "#/definitions/Truth"
 						}
 					}
 				}
@@ -176,10 +176,10 @@
 			"required": ["id", "package_type", "ruleset"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/ExpansionId"
+					"$ref": "#/definitions/ExpansionId"
 				},
 				"datasworn_version": {
-					"$ref": "#/$defs/SemanticVersion",
+					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
 				},
 				"package_type": {
@@ -187,10 +187,10 @@
 					"const": "expansion"
 				},
 				"ruleset": {
-					"$ref": "#/$defs/RulesetId"
+					"$ref": "#/definitions/RulesetId"
 				},
 				"rules": {
-					"$ref": "#/$defs/RulesExpansion"
+					"$ref": "#/definitions/RulesExpansion"
 				},
 				"oracles": {
 					"type": "object",
@@ -198,7 +198,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleTablesCollection"
+							"$ref": "#/definitions/OracleTablesCollection"
 						}
 					}
 				},
@@ -208,7 +208,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetCollection"
+							"$ref": "#/definitions/AssetCollection"
 						}
 					}
 				},
@@ -218,7 +218,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Atlas"
+							"$ref": "#/definitions/Atlas"
 						}
 					}
 				},
@@ -228,7 +228,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/MoveCategory"
+							"$ref": "#/definitions/MoveCategory"
 						}
 					}
 				},
@@ -238,7 +238,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/NpcCollection"
+							"$ref": "#/definitions/NpcCollection"
 						}
 					}
 				},
@@ -248,7 +248,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Rarity"
+							"$ref": "#/definitions/Rarity"
 						}
 					}
 				},
@@ -258,7 +258,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/DelveSite"
+							"$ref": "#/definitions/DelveSite"
 						}
 					}
 				},
@@ -268,7 +268,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/DelveSiteDomain"
+							"$ref": "#/definitions/DelveSiteDomain"
 						}
 					}
 				},
@@ -278,7 +278,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/DelveSiteTheme"
+							"$ref": "#/definitions/DelveSiteTheme"
 						}
 					}
 				},
@@ -288,7 +288,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Truth"
+							"$ref": "#/definitions/Truth"
 						}
 					}
 				}
@@ -818,7 +818,7 @@
 				"authors": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/AuthorInfo"
+						"$ref": "#/definitions/AuthorInfo"
 					},
 					"minItems": 1
 				},
@@ -855,53 +855,54 @@
 				"oracles": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/OracleRollableId"
+						"$ref": "#/definitions/OracleRollableId"
 					}
 				},
 				"assets": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/AssetId"
+						"$ref": "#/definitions/AssetId"
 					}
 				},
 				"atlas": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/AtlasEntryId"
+						"$ref": "#/definitions/AtlasEntryId"
 					}
 				},
 				"moves": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/MoveId"
+						"$ref": "#/definitions/MoveId"
 					}
 				},
 				"npcs": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/NpcId"
+						"$ref": "#/definitions/NpcId"
 					}
 				},
 				"rarities": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/RarityId"
+						"$ref": "#/definitions/RarityId"
 					}
 				},
 				"site_domains": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/DelveSiteDomainId"
+						"$ref": "#/definitions/DelveSiteDomainId"
 					}
 				},
 				"site_themes": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/DelveSiteThemeId"
+						"$ref": "#/definitions/DelveSiteThemeId"
 					}
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"releaseStage": "unstable"
 		},
 		"SvgImageUrl": {
 			"title": "SvgImageUrl",
@@ -922,7 +923,7 @@
 			"type": "object",
 			"properties": {
 				"part_of_speech": {
-					"$ref": "#/$defs/PartOfSpeech",
+					"$ref": "#/definitions/PartOfSpeech",
 					"description": "The part of speech for this string."
 				}
 			},
@@ -935,27 +936,27 @@
 			"description": "Internationalization/localization hints for the text content of this object.",
 			"properties": {
 				"result": {
-					"$ref": "#/$defs/I18nHint"
+					"$ref": "#/definitions/I18nHint"
+				},
+				"detail": {
+					"$ref": "#/definitions/I18nHint"
 				},
 				"description": {
-					"$ref": "#/$defs/I18nHint"
+					"$ref": "#/definitions/I18nHint"
 				},
 				"template": {
 					"type": "object",
 					"properties": {
 						"result": {
-							"$ref": "#/$defs/I18nHint"
-						},
-						"description": {
-							"$ref": "#/$defs/I18nHint"
+							"$ref": "#/definitions/I18nHint"
 						},
 						"detail": {
-							"$ref": "#/$defs/I18nHint"
+							"$ref": "#/definitions/I18nHint"
+						},
+						"description": {
+							"$ref": "#/definitions/I18nHint"
 						}
 					}
-				},
-				"detail": {
-					"$ref": "#/$defs/I18nHint"
 				}
 			},
 			"additionalProperties": false,
@@ -1026,7 +1027,7 @@
 			"required": ["label", "max", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"min": {
 					"type": "integer",
@@ -1048,7 +1049,7 @@
 					"default": false
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this condition meter."
 				},
 				"rollable": {
@@ -1067,11 +1068,11 @@
 			"required": ["label", "description", "contents"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel",
+					"$ref": "#/definitions/InputLabel",
 					"description": "A label for this impact category."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this impact category."
 				},
 				"contents": {
@@ -1080,7 +1081,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/ImpactRule"
+							"$ref": "#/definitions/ImpactRule"
 						}
 					}
 				}
@@ -1094,7 +1095,7 @@
 			"required": ["label", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel",
+					"$ref": "#/definitions/InputLabel",
 					"description": "The label for this impact."
 				},
 				"shared": {
@@ -1103,7 +1104,7 @@
 					"default": false
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this impact."
 				},
 				"permanent": {
@@ -1116,7 +1117,7 @@
 					"description": "Any ruleset condition meters that can't recover when this impact is active.",
 					"default": [],
 					"items": {
-						"$ref": "#/$defs/ConditionMeterKey"
+						"$ref": "#/definitions/ConditionMeterKey"
 					}
 				}
 			},
@@ -1130,13 +1131,13 @@
 			"title": "ObjectType",
 			"anyOf": [
 				{
-					"$ref": "#/$defs/CollectableType"
+					"$ref": "#/definitions/CollectableType"
 				},
 				{
-					"$ref": "#/$defs/NonCollectableType"
+					"$ref": "#/definitions/NonCollectableType"
 				},
 				{
-					"$ref": "#/$defs/CollectionType"
+					"$ref": "#/definitions/CollectionType"
 				}
 			]
 		},
@@ -1152,7 +1153,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/ConditionMeterRule"
+							"$ref": "#/definitions/ConditionMeterRule"
 						}
 					}
 				},
@@ -1162,7 +1163,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/ImpactCategory"
+							"$ref": "#/definitions/ImpactCategory"
 						}
 					}
 				},
@@ -1172,7 +1173,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/SpecialTrackRule"
+							"$ref": "#/definitions/SpecialTrackRule"
 						}
 					}
 				},
@@ -1182,7 +1183,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/StatRule"
+							"$ref": "#/definitions/StatRule"
 						}
 					}
 				},
@@ -1192,7 +1193,7 @@
 					"default": {},
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/TagRule"
+							"$ref": "#/definitions/TagRule"
 						}
 					},
 					"releaseStage": "experimental"
@@ -1212,7 +1213,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/ConditionMeterRule"
+							"$ref": "#/definitions/ConditionMeterRule"
 						}
 					}
 				},
@@ -1222,7 +1223,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/ImpactCategory"
+							"$ref": "#/definitions/ImpactCategory"
 						}
 					}
 				},
@@ -1232,7 +1233,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/SpecialTrackRule"
+							"$ref": "#/definitions/SpecialTrackRule"
 						}
 					}
 				},
@@ -1242,7 +1243,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/StatRule"
+							"$ref": "#/definitions/StatRule"
 						}
 					}
 				},
@@ -1252,7 +1253,7 @@
 					"default": {},
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/TagRule"
+							"$ref": "#/definitions/TagRule"
 						}
 					},
 					"releaseStage": "experimental"
@@ -1268,7 +1269,7 @@
 			"required": ["label", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel",
+					"$ref": "#/definitions/InputLabel",
 					"description": "A label for this special track."
 				},
 				"shared": {
@@ -1277,7 +1278,7 @@
 					"default": false
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this special track."
 				},
 				"optional": {
@@ -1295,12 +1296,12 @@
 			"required": ["label", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel",
+					"$ref": "#/definitions/InputLabel",
 					"description": "A label for this stat.",
 					"examples": ["edge"]
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this stat.",
 					"examples": [
 						"Quickness, agility, and prowess when fighting at a distance."
@@ -1319,104 +1320,104 @@
 					"type": "integer"
 				},
 				{
-					"$ref": "#/$defs/DictKey"
+					"$ref": "#/definitions/DictKey"
 				},
 				{
-					"$ref": "#/$defs/DiceExpression"
+					"$ref": "#/definitions/DiceExpression"
 				},
 				{
-					"$ref": "#/$defs/OracleRollableId"
+					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
-					"$ref": "#/$defs/MoveId"
+					"$ref": "#/definitions/MoveId"
 				},
 				{
-					"$ref": "#/$defs/AssetId"
+					"$ref": "#/definitions/AssetId"
 				},
 				{
-					"$ref": "#/$defs/AtlasEntryId"
+					"$ref": "#/definitions/AtlasEntryId"
 				},
 				{
-					"$ref": "#/$defs/NpcId"
+					"$ref": "#/definitions/NpcId"
 				},
 				{
-					"$ref": "#/$defs/OracleCollectionId"
+					"$ref": "#/definitions/OracleCollectionId"
 				},
 				{
-					"$ref": "#/$defs/MoveCategoryId"
+					"$ref": "#/definitions/MoveCategoryId"
 				},
 				{
-					"$ref": "#/$defs/AssetCollectionId"
+					"$ref": "#/definitions/AssetCollectionId"
 				},
 				{
-					"$ref": "#/$defs/AtlasId"
+					"$ref": "#/definitions/AtlasId"
 				},
 				{
-					"$ref": "#/$defs/NpcCollectionId"
+					"$ref": "#/definitions/NpcCollectionId"
 				},
 				{
-					"$ref": "#/$defs/DelveSiteId"
+					"$ref": "#/definitions/DelveSiteId"
 				},
 				{
-					"$ref": "#/$defs/DelveSiteThemeId"
+					"$ref": "#/definitions/DelveSiteThemeId"
 				},
 				{
-					"$ref": "#/$defs/DelveSiteDomainId"
+					"$ref": "#/definitions/DelveSiteDomainId"
 				},
 				{
-					"$ref": "#/$defs/TruthId"
+					"$ref": "#/definitions/TruthId"
 				},
 				{
-					"$ref": "#/$defs/RarityId"
+					"$ref": "#/definitions/RarityId"
 				},
 				{
 					"type": "array",
 					"items": {
 						"anyOf": [
 							{
-								"$ref": "#/$defs/OracleRollableIdWildcard"
+								"$ref": "#/definitions/OracleRollableIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/MoveIdWildcard"
+								"$ref": "#/definitions/MoveIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/AssetIdWildcard"
+								"$ref": "#/definitions/AssetIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/AtlasEntryIdWildcard"
+								"$ref": "#/definitions/AtlasEntryIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/NpcIdWildcard"
+								"$ref": "#/definitions/NpcIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/OracleCollectionIdWildcard"
+								"$ref": "#/definitions/OracleCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/MoveCategoryIdWildcard"
+								"$ref": "#/definitions/MoveCategoryIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/AssetCollectionIdWildcard"
+								"$ref": "#/definitions/AssetCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/AtlasIdWildcard"
+								"$ref": "#/definitions/AtlasIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/NpcCollectionIdWildcard"
+								"$ref": "#/definitions/NpcCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/DelveSiteIdWildcard"
+								"$ref": "#/definitions/DelveSiteIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/DelveSiteThemeIdWildcard"
+								"$ref": "#/definitions/DelveSiteThemeIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/DelveSiteDomainIdWildcard"
+								"$ref": "#/definitions/DelveSiteDomainIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/TruthIdWildcard"
+								"$ref": "#/definitions/TruthIdWildcard"
 							},
 							{
-								"$ref": "#/$defs/RarityIdWildcard"
+								"$ref": "#/definitions/RarityIdWildcard"
 							}
 						]
 					}
@@ -1475,7 +1476,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1484,7 +1485,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"array": {
 								"default": false,
@@ -1519,7 +1520,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1528,7 +1529,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"array": {
 								"default": false,
@@ -1563,7 +1564,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1572,7 +1573,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1608,7 +1609,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1617,7 +1618,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1653,7 +1654,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1662,7 +1663,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1698,7 +1699,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1707,7 +1708,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1743,7 +1744,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1752,7 +1753,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1788,7 +1789,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1797,7 +1798,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1833,7 +1834,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1842,7 +1843,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1878,7 +1879,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1887,7 +1888,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1923,7 +1924,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1932,7 +1933,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -1968,7 +1969,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -1977,7 +1978,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -2013,7 +2014,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -2022,7 +2023,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -2058,7 +2059,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -2067,7 +2068,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -2103,7 +2104,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -2112,7 +2113,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -2148,7 +2149,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -2157,7 +2158,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -2193,7 +2194,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -2202,7 +2203,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"wildcard": {
 								"default": false,
@@ -2238,7 +2239,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/ObjectType"
+											"$ref": "#/definitions/ObjectType"
 										}
 									},
 									{
@@ -2247,7 +2248,7 @@
 								]
 							},
 							"description": {
-								"$ref": "#/$defs/MarkdownString"
+								"$ref": "#/definitions/MarkdownString"
 							},
 							"array": {
 								"default": false,
@@ -2260,7 +2261,7 @@
 							"enum": {
 								"type": "array",
 								"items": {
-									"$ref": "#/$defs/DictKey"
+									"$ref": "#/definitions/DictKey"
 								}
 							}
 						},
@@ -2281,7 +2282,7 @@
 			"required": ["category"],
 			"properties": {
 				"category": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "A category label for progress tracks of this type.",
 					"examples": [
 						"Vow",
@@ -2307,7 +2308,7 @@
 			"additionalProperties": false
 		},
 		"SpecialTrackType": {
-			"$ref": "#/$defs/DictKey",
+			"$ref": "#/definitions/DictKey",
 			"title": "SpecialTrackType",
 			"description": "Special, ruleset-specific progress tracks. Usually, one exists per player character, and they persist through the life of the player character.\n'Canonical' examples:\n  * `bonds_track`, described in the Ironsworn Rulebook. For the Starforged legacy track, use `bonds_legacy` instead.\n  * `failure_track`, described in Ironsworn: Delve\n  * `quests_legacy`, `bonds_legacy`, and `discoveries_legacy`, described Ironsworn: Starforged\n\n",
 			"examples": [
@@ -2336,7 +2337,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/AssetIdWildcard"
+								"$ref": "#/definitions/AssetIdWildcard"
 							}
 						},
 						{
@@ -2345,7 +2346,7 @@
 					]
 				},
 				"control": {
-					"$ref": "#/$defs/DictKey",
+					"$ref": "#/definitions/DictKey",
 					"description": "The dictionary key of the asset control field.",
 					"examples": ["health", "integrity"]
 				}
@@ -2370,7 +2371,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/AssetIdWildcard"
+								"$ref": "#/definitions/AssetIdWildcard"
 							}
 						},
 						{
@@ -2379,7 +2380,7 @@
 					]
 				},
 				"option": {
-					"$ref": "#/$defs/DictKey",
+					"$ref": "#/definitions/DictKey",
 					"description": "The dictionary key of the asset option field."
 				}
 			},
@@ -2397,7 +2398,7 @@
 					"const": "attached_asset_control"
 				},
 				"control": {
-					"$ref": "#/$defs/DictKey",
+					"$ref": "#/definitions/DictKey",
 					"description": "The dictionary key of the asset control field.",
 					"examples": ["health", "integrity"]
 				}
@@ -2416,7 +2417,7 @@
 					"const": "attached_asset_option"
 				},
 				"option": {
-					"$ref": "#/$defs/DictKey",
+					"$ref": "#/definitions/DictKey",
 					"description": "The dictionary key of the asset option field."
 				}
 			},
@@ -2434,7 +2435,7 @@
 					"const": "condition_meter"
 				},
 				"condition_meter": {
-					"$ref": "#/$defs/ConditionMeterKey"
+					"$ref": "#/definitions/ConditionMeterKey"
 				}
 			},
 			"additionalProperties": false
@@ -2446,7 +2447,7 @@
 			"required": ["label", "using", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"using": {
 					"type": "string",
@@ -2489,7 +2490,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/StatValueRef"
+						"$ref": "#/definitions/StatValueRef"
 					}
 				},
 				{
@@ -2502,7 +2503,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/ConditionMeterValueRef"
+						"$ref": "#/definitions/ConditionMeterValueRef"
 					}
 				},
 				{
@@ -2515,7 +2516,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetControlValueRef"
+						"$ref": "#/definitions/AssetControlValueRef"
 					}
 				},
 				{
@@ -2528,7 +2529,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetOptionValueRef"
+						"$ref": "#/definitions/AssetOptionValueRef"
 					}
 				},
 				{
@@ -2541,7 +2542,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AttachedAssetControlValueRef"
+						"$ref": "#/definitions/AttachedAssetControlValueRef"
 					}
 				},
 				{
@@ -2554,7 +2555,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AttachedAssetOptionValueRef"
+						"$ref": "#/definitions/AttachedAssetOptionValueRef"
 					}
 				},
 				{
@@ -2567,7 +2568,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/CustomValue"
+						"$ref": "#/definitions/CustomValue"
 					}
 				}
 			]
@@ -2584,7 +2585,7 @@
 					"const": "stat"
 				},
 				"stat": {
-					"$ref": "#/$defs/StatKey"
+					"$ref": "#/definitions/StatKey"
 				}
 			},
 			"additionalProperties": false
@@ -2605,43 +2606,43 @@
 			],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/NpcId",
+					"$ref": "#/definitions/NpcId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"nature": {
-					"$ref": "#/$defs/NpcNature"
+					"$ref": "#/definitions/NpcNature"
 				},
 				"rank": {
-					"$ref": "#/$defs/ChallengeRank",
+					"$ref": "#/definitions/ChallengeRank",
 					"description": "The suggested challenge rank for this NPC."
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"features": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/MarkdownString"
+						"$ref": "#/definitions/MarkdownString"
 					}
 				},
 				"drives": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/MarkdownString"
+						"$ref": "#/definitions/MarkdownString"
 					}
 				},
 				"tactics": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/MarkdownString"
+						"$ref": "#/definitions/MarkdownString"
 					}
 				},
 				"variants": {
@@ -2649,24 +2650,24 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/NpcVariant"
+							"$ref": "#/definitions/NpcVariant"
 						}
 					}
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"quest_starter": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"your_truth": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"tags": {
@@ -2677,7 +2678,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -2693,42 +2694,42 @@
 			"required": ["name", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/NpcCollectionId",
+					"$ref": "#/definitions/NpcCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"enhances": {
-					"$ref": "#/$defs/NpcCollectionId",
+					"$ref": "#/definitions/NpcCollectionId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -2736,19 +2737,19 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Npc"
+							"$ref": "#/definitions/Npc"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/NpcCollectionId",
+					"$ref": "#/definitions/NpcCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -2759,7 +2760,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -2770,7 +2771,7 @@
 			"additionalProperties": false
 		},
 		"NpcNature": {
-			"$ref": "#/$defs/Label",
+			"$ref": "#/definitions/Label",
 			"title": "NpcNature",
 			"description": "A localized category label describing the nature of this NPC.\n\nIn Ironsworn classic, this is probably the singular form of the parent collection's name.\n\nFor Starforged, see the table on p. 258 for examples.",
 			"examples": [
@@ -2793,24 +2794,24 @@
 			"required": ["name", "nature", "rank", "description"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/NpcVariantId",
+					"$ref": "#/definitions/NpcVariantId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label"
+					"$ref": "#/definitions/Label"
 				},
 				"nature": {
-					"$ref": "#/$defs/NpcNature"
+					"$ref": "#/definitions/NpcNature"
 				},
 				"rank": {
-					"$ref": "#/$defs/ChallengeRank",
+					"$ref": "#/definitions/ChallengeRank",
 					"description": "The suggested challenge rank for this NPC."
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				}
 			},
 			"additionalProperties": false
@@ -2833,7 +2834,7 @@
 			"required": ["text"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				}
 			},
 			"additionalProperties": false
@@ -2847,7 +2848,7 @@
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/DiceExpression"
+							"$ref": "#/definitions/DiceExpression"
 						},
 						{
 							"type": "null"
@@ -2860,7 +2861,7 @@
 					"default": false
 				},
 				"duplicates": {
-					"$ref": "#/$defs/OracleDuplicateBehavior",
+					"$ref": "#/definitions/OracleDuplicateBehavior",
 					"description": "Special rules on how to handle duplicate results, when rolling multiple times.",
 					"default": "reroll"
 				},
@@ -2875,7 +2876,7 @@
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/OracleRollableId"
+							"$ref": "#/definitions/OracleRollableId"
 						},
 						{
 							"type": "null"
@@ -2891,22 +2892,23 @@
 			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#detail`, and `OracleTableRow#description`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.",
 			"properties": {
 				"result": {
-					"$ref": "#/$defs/TemplateString",
+					"$ref": "#/definitions/TemplateString",
 					"description": "A string template that may be used in place of OracleTableRow#result.",
 					"examples": [
 						"{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}"
 					]
 				},
-				"description": {
-					"$ref": "#/$defs/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#description."
-				},
 				"detail": {
-					"$ref": "#/$defs/TemplateString",
+					"$ref": "#/definitions/TemplateString",
 					"description": "A string template that may be used in place of OracleTableRow#detail."
+				},
+				"description": {
+					"$ref": "#/definitions/TemplateString",
+					"description": "A string template that may be used in place of OracleTableRow#description."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"releaseStage": "experimental"
 		},
 		"OracleCollection": {
 			"title": "OracleCollection",
@@ -2935,7 +2937,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTablesCollection"
+						"$ref": "#/definitions/OracleTablesCollection"
 					}
 				},
 				{
@@ -2948,7 +2950,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableSharedRoll"
+						"$ref": "#/definitions/OracleTableSharedRolls"
 					}
 				},
 				{
@@ -2961,7 +2963,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableSharedResults"
+						"$ref": "#/definitions/OracleTableSharedResults"
 					}
 				},
 				{
@@ -2974,7 +2976,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableSharedDetails"
+						"$ref": "#/definitions/OracleTableSharedDetails"
 					}
 				}
 			]
@@ -2985,11 +2987,11 @@
 			"required": ["name", "oracle_type", "table"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary label at the head of this column."
 				},
 				"oracle_type": {
@@ -2997,24 +2999,24 @@
 					"const": "column_details"
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An optional icon for this column."
 				},
 				"dice": {
-					"$ref": "#/$defs/DiceExpression",
+					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
 				},
 				"match": {
-					"$ref": "#/$defs/OracleMatchBehavior",
+					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
 				"column_labels": {
@@ -3028,31 +3030,31 @@
 					"required": ["roll", "result", "detail"],
 					"properties": {
 						"roll": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Roll"
 						},
 						"result": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Result"
 						},
 						"detail": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Detail"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"table": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRowDetails"
+						"$ref": "#/definitions/OracleTableRowDetails"
 					}
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
@@ -3063,7 +3065,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -3080,11 +3082,11 @@
 			"required": ["name", "oracle_type", "table"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary label at the head of this column."
 				},
 				"oracle_type": {
@@ -3092,24 +3094,24 @@
 					"const": "column_simple"
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An optional icon for this column."
 				},
 				"dice": {
-					"$ref": "#/$defs/DiceExpression",
+					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
 				},
 				"match": {
-					"$ref": "#/$defs/OracleMatchBehavior",
+					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
 				"column_labels": {
@@ -3122,27 +3124,27 @@
 					"required": ["roll", "result"],
 					"properties": {
 						"roll": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Roll"
 						},
 						"result": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Result"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"table": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRowSimple"
+						"$ref": "#/definitions/OracleTableRowSimple"
 					}
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
@@ -3153,7 +3155,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -3192,7 +3194,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableSimple"
+						"$ref": "#/definitions/OracleTableSimple"
 					}
 				},
 				{
@@ -3205,7 +3207,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableDetails"
+						"$ref": "#/definitions/OracleTableDetails"
 					}
 				},
 				{
@@ -3218,7 +3220,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleColumnSimple"
+						"$ref": "#/definitions/OracleColumnSimple"
 					}
 				},
 				{
@@ -3231,7 +3233,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleColumnDetails"
+						"$ref": "#/definitions/OracleColumnDetails"
 					}
 				}
 			]
@@ -3243,15 +3245,15 @@
 			"required": ["name", "oracle_type", "table", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
@@ -3259,24 +3261,24 @@
 					"const": "table_details"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon that represents this table."
 				},
 				"dice": {
-					"$ref": "#/$defs/DiceExpression",
+					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
-					"$ref": "#/$defs/OracleMatchBehavior",
+					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
 				"recommended_rolls": {
@@ -3304,35 +3306,35 @@
 					"required": ["roll", "result", "detail"],
 					"properties": {
 						"roll": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Roll"
 						},
 						"result": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Result"
 						},
 						"detail": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Detail"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"table": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRowDetails"
+						"$ref": "#/definitions/OracleTableRowDetails"
 					}
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
@@ -3343,7 +3345,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -3376,7 +3378,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableSimple"
+						"$ref": "#/definitions/OracleTableSimple"
 					}
 				},
 				{
@@ -3389,7 +3391,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableDetails"
+						"$ref": "#/definitions/OracleTableDetails"
 					}
 				}
 			]
@@ -3398,10 +3400,10 @@
 			"title": "OracleTableRowDetails",
 			"type": "object",
 			"description": "Represents a row in an oracle table that provides additional details.",
-			"required": ["result"],
+			"required": ["result", "detail"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleTableRowId",
+					"$ref": "#/definitions/OracleTableRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"min": {
@@ -3431,46 +3433,43 @@
 					]
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"result": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
-				},
-				"template": {
-					"$ref": "#/$defs/OracleRollTemplate"
-				},
-				"embed_table": {
-					"$ref": "#/$defs/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row."
-				},
-				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
-				},
-				"i18n": {
-					"$ref": "#/$defs/I18nHints"
-				},
 				"detail": {
-					"default": null,
+					"description": "The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.",
 					"anyOf": [
 						{
-							"$ref": "#/$defs/MarkdownString",
-							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
+							"$ref": "#/definitions/MarkdownString"
 						},
 						{
 							"type": "null"
 						}
 					]
 				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "unstable"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "unstable"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
+				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},
@@ -3483,7 +3482,7 @@
 			"required": ["result"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleTableRowId",
+					"$ref": "#/definitions/OracleTableRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"min": {
@@ -3513,34 +3512,32 @@
 					]
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"result": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
-				},
 				"template": {
-					"$ref": "#/$defs/OracleRollTemplate"
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "unstable"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row."
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "unstable"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"i18n": {
-					"$ref": "#/$defs/I18nHints"
+					"$ref": "#/definitions/I18nHints"
 				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},
@@ -3553,15 +3550,15 @@
 			"required": ["name", "oracle_type", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
@@ -3570,30 +3567,30 @@
 					"const": "table_shared_details"
 				},
 				"enhances": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -3601,7 +3598,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleColumnDetails"
+							"$ref": "#/definitions/OracleColumnDetails"
 						}
 					}
 				},
@@ -3615,24 +3612,24 @@
 					"required": ["result", "detail"],
 					"properties": {
 						"result": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Result"
 						},
 						"detail": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Detail"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -3643,7 +3640,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -3660,15 +3657,15 @@
 			"required": ["name", "oracle_type", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
@@ -3677,30 +3674,30 @@
 					"const": "table_shared_results"
 				},
 				"enhances": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -3708,7 +3705,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleColumnSimple"
+							"$ref": "#/definitions/OracleColumnSimple"
 						}
 					}
 				},
@@ -3721,20 +3718,20 @@
 					"required": ["result"],
 					"properties": {
 						"result": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Result"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -3745,7 +3742,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -3755,22 +3752,22 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableSharedRoll": {
-			"title": "OracleTableSharedRoll",
+		"OracleTableSharedRolls": {
+			"title": "OracleTableSharedRolls",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
 			"required": ["name", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
@@ -3780,30 +3777,30 @@
 					"default": "table_shared_rolls"
 				},
 				"enhances": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -3811,7 +3808,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleColumnSimple"
+							"$ref": "#/definitions/OracleColumnSimple"
 						}
 					}
 				},
@@ -3824,20 +3821,20 @@
 					"required": ["roll"],
 					"properties": {
 						"roll": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Roll"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -3848,7 +3845,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -3865,15 +3862,15 @@
 			"required": ["name", "oracle_type", "table", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
@@ -3881,24 +3878,24 @@
 					"const": "table_simple"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon that represents this table."
 				},
 				"dice": {
-					"$ref": "#/$defs/DiceExpression",
+					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
-					"$ref": "#/$defs/OracleMatchBehavior",
+					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
 				"recommended_rolls": {
@@ -3925,31 +3922,31 @@
 					"required": ["roll", "result"],
 					"properties": {
 						"roll": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Roll"
 						},
 						"result": {
-							"$ref": "#/$defs/Label",
+							"$ref": "#/definitions/Label",
 							"default": "Result"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"table": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRowSimple"
+						"$ref": "#/definitions/OracleTableRowSimple"
 					}
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
@@ -3960,7 +3957,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -3977,15 +3974,15 @@
 			"required": ["name", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
@@ -3995,30 +3992,30 @@
 					"default": "tables"
 				},
 				"enhances": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -4026,7 +4023,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleTableRollable"
+							"$ref": "#/definitions/OracleTableRollable"
 						}
 					}
 				},
@@ -4035,19 +4032,19 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleCollection"
+							"$ref": "#/definitions/OracleCollection"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/definitions/OracleCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -4058,7 +4055,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -4103,7 +4100,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveActionRoll"
+						"$ref": "#/definitions/MoveActionRoll"
 					}
 				},
 				{
@@ -4116,7 +4113,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveNoRoll"
+						"$ref": "#/definitions/MoveNoRoll"
 					}
 				},
 				{
@@ -4129,7 +4126,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveProgressRoll"
+						"$ref": "#/definitions/MoveProgressRoll"
 					}
 				},
 				{
@@ -4142,7 +4139,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveSpecialTrack"
+						"$ref": "#/definitions/MoveSpecialTrack"
 					}
 				}
 			]
@@ -4161,15 +4158,15 @@
 			],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
@@ -4178,34 +4175,34 @@
 					"const": "action_roll"
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerActionRoll",
+					"$ref": "#/definitions/TriggerActionRoll",
 					"title": "Trigger",
 					"description": "Trigger conditions for this move."
 				},
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The complete rules text of the move."
 				},
 				"outcomes": {
-					"$ref": "#/$defs/MoveOutcomes",
+					"$ref": "#/definitions/MoveOutcomes",
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleRollableId"
+						"$ref": "#/definitions/OracleRollableId"
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
 				},
 				"tags": {
@@ -4216,7 +4213,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -4244,7 +4241,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/MoveIdWildcard"
+								"$ref": "#/definitions/MoveIdWildcard"
 							}
 						},
 						{
@@ -4253,7 +4250,7 @@
 					]
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerActionRollEnhancement"
+					"$ref": "#/definitions/TriggerActionRollEnhancement"
 				}
 			},
 			"additionalProperties": false
@@ -4264,42 +4261,42 @@
 			"required": ["name", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/MoveCategoryId",
+					"$ref": "#/definitions/MoveCategoryId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"enhances": {
-					"$ref": "#/$defs/MoveCategoryId",
+					"$ref": "#/definitions/MoveCategoryId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -4307,19 +4304,19 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Move"
+							"$ref": "#/definitions/Move"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/MoveCategoryId",
+					"$ref": "#/definitions/MoveCategoryId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -4330,7 +4327,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -4362,7 +4359,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveActionRollEnhancement"
+						"$ref": "#/definitions/MoveActionRollEnhancement"
 					}
 				},
 				{
@@ -4375,7 +4372,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveNoRollEnhancement"
+						"$ref": "#/definitions/MoveNoRollEnhancement"
 					}
 				},
 				{
@@ -4388,7 +4385,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveProgressRollEnhancement"
+						"$ref": "#/definitions/MoveProgressRollEnhancement"
 					}
 				},
 				{
@@ -4401,7 +4398,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/MoveSpecialTrackEnhancement"
+						"$ref": "#/definitions/MoveSpecialTrackEnhancement"
 					}
 				}
 			]
@@ -4413,15 +4410,15 @@
 			"required": ["name", "roll_type", "trigger", "text", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
@@ -4430,12 +4427,12 @@
 					"const": "no_roll"
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerNoRoll",
+					"$ref": "#/definitions/TriggerNoRoll",
 					"title": "Trigger",
 					"description": "Trigger conditions for this move."
 				},
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The complete rules text of the move."
 				},
 				"outcomes": {
@@ -4447,18 +4444,18 @@
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleRollableId"
+						"$ref": "#/definitions/OracleRollableId"
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
 				},
 				"tags": {
@@ -4469,7 +4466,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -4497,7 +4494,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/MoveIdWildcard"
+								"$ref": "#/definitions/MoveIdWildcard"
 							}
 						},
 						{
@@ -4506,7 +4503,7 @@
 					]
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerNoRollEnhancement"
+					"$ref": "#/definitions/TriggerNoRollEnhancement"
 				}
 			},
 			"additionalProperties": false
@@ -4517,14 +4514,14 @@
 			"required": ["text"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"type": "string",
 					"pattern": "On a __(strong hit|weak hit|miss)__"
 				},
 				"oracle_rolls": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},
@@ -4537,13 +4534,13 @@
 			"required": ["strong_hit", "weak_hit", "miss"],
 			"properties": {
 				"strong_hit": {
-					"$ref": "#/$defs/MoveOutcome"
+					"$ref": "#/definitions/MoveOutcome"
 				},
 				"weak_hit": {
-					"$ref": "#/$defs/MoveOutcome"
+					"$ref": "#/definitions/MoveOutcome"
 				},
 				"miss": {
-					"$ref": "#/$defs/MoveOutcome"
+					"$ref": "#/definitions/MoveOutcome"
 				}
 			},
 			"additionalProperties": false
@@ -4563,15 +4560,15 @@
 			],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
@@ -4580,34 +4577,34 @@
 					"const": "progress_roll"
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerProgressRoll",
+					"$ref": "#/definitions/TriggerProgressRoll",
 					"title": "Trigger",
 					"description": "Trigger conditions for this move."
 				},
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The complete rules text of the move."
 				},
 				"outcomes": {
-					"$ref": "#/$defs/MoveOutcomes",
+					"$ref": "#/definitions/MoveOutcomes",
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleRollableId"
+						"$ref": "#/definitions/OracleRollableId"
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
 				},
 				"tags": {
@@ -4618,7 +4615,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -4626,7 +4623,7 @@
 					"releaseStage": "experimental"
 				},
 				"tracks": {
-					"$ref": "#/$defs/ProgressTrackTypeInfo",
+					"$ref": "#/definitions/ProgressTrackTypeInfo",
 					"description": "Describes the common features of progress tracks associated with this move."
 				}
 			},
@@ -4650,7 +4647,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/MoveIdWildcard"
+								"$ref": "#/definitions/MoveIdWildcard"
 							}
 						},
 						{
@@ -4659,7 +4656,7 @@
 					]
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerProgressRollEnhancement"
+					"$ref": "#/definitions/TriggerProgressRollEnhancement"
 				}
 			},
 			"additionalProperties": false
@@ -4683,15 +4680,15 @@
 			],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
@@ -4700,34 +4697,34 @@
 					"const": "special_track"
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerSpecialTrack",
+					"$ref": "#/definitions/TriggerSpecialTrack",
 					"title": "Trigger",
 					"description": "Trigger conditions for this move."
 				},
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The complete rules text of the move."
 				},
 				"outcomes": {
-					"$ref": "#/$defs/MoveOutcomes",
+					"$ref": "#/definitions/MoveOutcomes",
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleRollableId"
+						"$ref": "#/definitions/OracleRollableId"
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/MoveId",
+					"$ref": "#/definitions/MoveId",
 					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
 				},
 				"tags": {
@@ -4738,7 +4735,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -4766,7 +4763,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/MoveIdWildcard"
+								"$ref": "#/definitions/MoveIdWildcard"
 							}
 						},
 						{
@@ -4775,7 +4772,7 @@
 					]
 				},
 				"trigger": {
-					"$ref": "#/$defs/TriggerSpecialTrackEnhancement"
+					"$ref": "#/definitions/TriggerSpecialTrackEnhancement"
 				}
 			},
 			"additionalProperties": false
@@ -4817,7 +4814,7 @@
 			"required": ["text", "conditions"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"type": "string",
 					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
 					"pattern": ".*\\.{3}"
@@ -4826,7 +4823,7 @@
 					"type": "array",
 					"description": "Specific conditions that qualify for this trigger.",
 					"items": {
-						"$ref": "#/$defs/TriggerActionRollCondition"
+						"$ref": "#/definitions/TriggerActionRollCondition"
 					}
 				}
 			},
@@ -4838,20 +4835,20 @@
 			"required": ["method", "roll_options"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A markdown string of any trigger text specific to this trigger condition."
 				},
 				"by": {
-					"$ref": "#/$defs/TriggerBy"
+					"$ref": "#/definitions/TriggerBy"
 				},
 				"method": {
-					"$ref": "#/$defs/ActionRollMethod"
+					"$ref": "#/definitions/ActionRollMethod"
 				},
 				"roll_options": {
 					"type": "array",
 					"description": "The options available when rolling with this trigger condition.",
 					"items": {
-						"$ref": "#/$defs/RollableValue"
+						"$ref": "#/definitions/RollableValue"
 					}
 				}
 			},
@@ -4862,18 +4859,18 @@
 			"type": "object",
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A markdown string of any trigger text specific to this trigger condition."
 				},
 				"by": {
-					"$ref": "#/$defs/TriggerBy"
+					"$ref": "#/definitions/TriggerBy"
 				},
 				"method": {
 					"description": "A `null` value means this condition provides no roll mechanic of its own; it must be used with another trigger condition that provides a non-null `method`.",
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/ActionRollMethod"
+							"$ref": "#/definitions/ActionRollMethod"
 						},
 						{
 							"type": "null"
@@ -4887,7 +4884,7 @@
 							"type": "array",
 							"description": "The options available when rolling with this trigger condition.",
 							"items": {
-								"$ref": "#/$defs/RollableValue"
+								"$ref": "#/definitions/RollableValue"
 							}
 						},
 						{
@@ -4908,7 +4905,7 @@
 					"type": "array",
 					"description": "Trigger conditions added to the enhanced move.",
 					"items": {
-						"$ref": "#/$defs/TriggerActionRollConditionEnhancement"
+						"$ref": "#/definitions/TriggerActionRollConditionEnhancement"
 					}
 				}
 			},
@@ -4939,7 +4936,7 @@
 			"required": ["text"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"type": "string",
 					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
 					"pattern": ".*\\.{3}"
@@ -4951,7 +4948,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/TriggerNoRollCondition"
+								"$ref": "#/definitions/TriggerNoRollCondition"
 							}
 						},
 						{
@@ -4967,11 +4964,11 @@
 			"type": "object",
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A markdown string of any trigger text specific to this trigger condition."
 				},
 				"by": {
-					"$ref": "#/$defs/TriggerBy"
+					"$ref": "#/definitions/TriggerBy"
 				},
 				"method": {
 					"type": "null",
@@ -4995,7 +4992,7 @@
 					"type": "array",
 					"description": "Trigger conditions added to the enhanced move.",
 					"items": {
-						"$ref": "#/$defs/TriggerNoRollCondition"
+						"$ref": "#/definitions/TriggerNoRollCondition"
 					}
 				}
 			},
@@ -5007,7 +5004,7 @@
 			"required": ["text", "conditions"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"type": "string",
 					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
 					"pattern": ".*\\.{3}"
@@ -5016,7 +5013,7 @@
 					"type": "array",
 					"description": "Specific conditions that qualify for this trigger.",
 					"items": {
-						"$ref": "#/$defs/TriggerProgressRollCondition"
+						"$ref": "#/definitions/TriggerProgressRollCondition"
 					}
 				}
 			},
@@ -5028,21 +5025,21 @@
 			"required": ["roll_options"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A markdown string of any trigger text specific to this trigger condition."
 				},
 				"by": {
-					"$ref": "#/$defs/TriggerBy"
+					"$ref": "#/definitions/TriggerBy"
 				},
 				"method": {
-					"$ref": "#/$defs/ProgressRollMethod",
+					"$ref": "#/definitions/ProgressRollMethod",
 					"default": "progress_roll"
 				},
 				"roll_options": {
 					"type": "array",
 					"description": "The options available when rolling with this trigger condition.",
 					"items": {
-						"$ref": "#/$defs/ProgressRollOption"
+						"$ref": "#/definitions/ProgressRollOption"
 					}
 				}
 			},
@@ -5053,18 +5050,18 @@
 			"type": "object",
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A markdown string of any trigger text specific to this trigger condition."
 				},
 				"by": {
-					"$ref": "#/$defs/TriggerBy"
+					"$ref": "#/definitions/TriggerBy"
 				},
 				"method": {
 					"description": "A `null` value means this condition provides no roll mechanic of its own; it must be used with another trigger condition that provides a non-null `method`.",
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/ProgressRollMethod",
+							"$ref": "#/definitions/ProgressRollMethod",
 							"default": "progress_roll"
 						},
 						{
@@ -5079,7 +5076,7 @@
 							"type": "array",
 							"description": "The options available when rolling with this trigger condition.",
 							"items": {
-								"$ref": "#/$defs/ProgressRollOption"
+								"$ref": "#/definitions/ProgressRollOption"
 							}
 						},
 						{
@@ -5100,7 +5097,7 @@
 					"type": "array",
 					"description": "Trigger conditions added to the enhanced move.",
 					"items": {
-						"$ref": "#/$defs/TriggerProgressRollConditionEnhancement"
+						"$ref": "#/definitions/TriggerProgressRollConditionEnhancement"
 					}
 				}
 			},
@@ -5112,7 +5109,7 @@
 			"required": ["text", "conditions"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"type": "string",
 					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
 					"pattern": ".*\\.{3}"
@@ -5121,7 +5118,7 @@
 					"type": "array",
 					"description": "Specific conditions that qualify for this trigger.",
 					"items": {
-						"$ref": "#/$defs/TriggerSpecialTrackCondition"
+						"$ref": "#/definitions/TriggerSpecialTrackCondition"
 					}
 				}
 			},
@@ -5133,20 +5130,20 @@
 			"required": ["method", "roll_options"],
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A markdown string of any trigger text specific to this trigger condition."
 				},
 				"by": {
-					"$ref": "#/$defs/TriggerBy"
+					"$ref": "#/definitions/TriggerBy"
 				},
 				"method": {
-					"$ref": "#/$defs/SpecialTrackRollMethod"
+					"$ref": "#/definitions/SpecialTrackRollMethod"
 				},
 				"roll_options": {
 					"type": "array",
 					"description": "The options available when rolling with this trigger condition.",
 					"items": {
-						"$ref": "#/$defs/TriggerSpecialTrackConditionOption"
+						"$ref": "#/definitions/TriggerSpecialTrackConditionOption"
 					}
 				}
 			},
@@ -5158,18 +5155,18 @@
 			"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacy (Starforged).",
 			"properties": {
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A markdown string of any trigger text specific to this trigger condition."
 				},
 				"by": {
-					"$ref": "#/$defs/TriggerBy"
+					"$ref": "#/definitions/TriggerBy"
 				},
 				"method": {
 					"description": "A `null` value means this condition provides no roll mechanic of its own; it must be used with another trigger condition that provides a non-null `method`.",
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/SpecialTrackRollMethod"
+							"$ref": "#/definitions/SpecialTrackRollMethod"
 						},
 						{
 							"type": "null"
@@ -5183,7 +5180,7 @@
 							"type": "array",
 							"description": "The options available when rolling with this trigger condition.",
 							"items": {
-								"$ref": "#/$defs/TriggerSpecialTrackConditionOption"
+								"$ref": "#/definitions/TriggerSpecialTrackConditionOption"
 							}
 						},
 						{
@@ -5200,7 +5197,7 @@
 			"required": ["using"],
 			"properties": {
 				"using": {
-					"$ref": "#/$defs/SpecialTrackType"
+					"$ref": "#/definitions/SpecialTrackType"
 				}
 			},
 			"additionalProperties": false
@@ -5215,7 +5212,7 @@
 					"type": "array",
 					"description": "Trigger conditions added to the enhanced move.",
 					"items": {
-						"$ref": "#/$defs/TriggerSpecialTrackConditionEnhancement"
+						"$ref": "#/definitions/TriggerSpecialTrackConditionEnhancement"
 					}
 				}
 			},
@@ -5227,19 +5224,19 @@
 			"required": ["name", "category", "abilities", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/AssetId",
+					"$ref": "#/definitions/AssetId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"category": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "A localized category label for this asset. This is the surtitle above the asset's name on the card.",
 					"examples": [
 						"Combat Talent",
@@ -5253,11 +5250,11 @@
 					]
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this asset."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "This asset's icon."
 				},
 				"options": {
@@ -5266,7 +5263,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetOptionField"
+							"$ref": "#/definitions/AssetOptionField"
 						}
 					}
 				},
@@ -5281,16 +5278,16 @@
 					"default": false
 				},
 				"attachments": {
-					"$ref": "#/$defs/AssetAttachment"
+					"$ref": "#/definitions/AssetAttachment"
 				},
 				"requirement": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "Describes prerequisites for purchasing or using this asset."
 				},
 				"abilities": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/AssetAbility",
+						"$ref": "#/definitions/AssetAbility",
 						"description": "Abilities provided by this asset. Most assets have 3."
 					}
 				},
@@ -5300,15 +5297,15 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetControlField"
+							"$ref": "#/definitions/AssetControlField"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"tags": {
@@ -5319,7 +5316,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -5336,11 +5333,11 @@
 			"required": ["text"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/AssetAbilityId",
+					"$ref": "#/definitions/AssetAbilityId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "A handful of asset abilities have a label/name, for instance classic Ironsworn companion assets. Most canonical assets omit this property."
 				},
 				"enabled": {
@@ -5354,12 +5351,12 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetAbilityOptionField"
+							"$ref": "#/definitions/AssetAbilityOptionField"
 						}
 					}
 				},
 				"text": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The complete rules text of this asset ability."
 				},
 				"controls": {
@@ -5368,19 +5365,19 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetAbilityControlField"
+							"$ref": "#/definitions/AssetAbilityControlField"
 						}
 					}
 				},
 				"enhance_asset": {
-					"$ref": "#/$defs/AssetEnhancement",
+					"$ref": "#/definitions/AssetEnhancement",
 					"description": "Changes made to the asset, when this ability is enabled."
 				},
 				"enhance_moves": {
 					"type": "array",
 					"description": "Describes changes made to various moves by this asset ability. Usually these require specific trigger conditions.",
 					"items": {
-						"$ref": "#/$defs/MoveEnhancement"
+						"$ref": "#/definitions/MoveEnhancement"
 					}
 				},
 				"moves": {
@@ -5389,7 +5386,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Move"
+							"$ref": "#/definitions/Move"
 						}
 					}
 				}
@@ -5418,7 +5415,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/ClockField"
+						"$ref": "#/definitions/ClockField"
 					}
 				},
 				{
@@ -5431,7 +5428,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/CounterField"
+						"$ref": "#/definitions/CounterField"
 					}
 				},
 				{
@@ -5444,7 +5441,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetCheckboxField"
+						"$ref": "#/definitions/AssetCheckboxField"
 					}
 				},
 				{
@@ -5457,7 +5454,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/TextField"
+						"$ref": "#/definitions/TextField"
 					}
 				}
 			]
@@ -5484,7 +5481,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/TextField"
+						"$ref": "#/definitions/TextField"
 					}
 				}
 			]
@@ -5512,7 +5509,7 @@
 					"type": "array",
 					"description": "Asset IDs (which may be wildcards) that may be attached to this asset",
 					"items": {
-						"$ref": "#/$defs/AssetIdWildcard"
+						"$ref": "#/definitions/AssetIdWildcard"
 					}
 				}
 			},
@@ -5524,14 +5521,14 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
 					"const": "card_flip"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -5558,14 +5555,14 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
 					"const": "checkbox"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -5592,42 +5589,42 @@
 			"required": ["name", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/AssetCollectionId",
+					"$ref": "#/definitions/AssetCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"enhances": {
-					"$ref": "#/$defs/AssetCollectionId",
+					"$ref": "#/definitions/AssetCollectionId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -5635,19 +5632,19 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Asset"
+							"$ref": "#/definitions/Asset"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/AssetCollectionId",
+					"$ref": "#/definitions/AssetCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -5658,7 +5655,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -5675,7 +5672,7 @@
 			"required": ["label", "field_type", "max"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
@@ -5691,7 +5688,7 @@
 					"description": "The maximum value of this meter."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -5705,7 +5702,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetConditionMeterControlField"
+							"$ref": "#/definitions/AssetConditionMeterControlField"
 						}
 					}
 				},
@@ -5717,7 +5714,7 @@
 							"type": "array",
 							"description": "The ID(s) of recovery moves associated with this meter.",
 							"items": {
-								"$ref": "#/$defs/MoveIdWildcard",
+								"$ref": "#/definitions/MoveIdWildcard",
 								"examples": [
 									"classic/moves/adventure/heal",
 									"classic/moves/adventure/make_camp",
@@ -5731,7 +5728,7 @@
 							"type": "array",
 							"description": "The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option.",
 							"items": {
-								"$ref": "#/$defs/MoveIdWildcard",
+								"$ref": "#/definitions/MoveIdWildcard",
 								"examples": [
 									"classic/moves/suffer/companion_endure_harm",
 									"starforged/moves/suffer/companion_takes_a_hit",
@@ -5774,7 +5771,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetCheckboxField"
+						"$ref": "#/definitions/AssetCheckboxField"
 					}
 				},
 				{
@@ -5787,7 +5784,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetCardFlipField"
+						"$ref": "#/definitions/AssetCardFlipField"
 					}
 				}
 			]
@@ -5836,7 +5833,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetConditionMeter"
+						"$ref": "#/definitions/AssetConditionMeter"
 					}
 				},
 				{
@@ -5849,7 +5846,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/SelectEnhancementField"
+						"$ref": "#/definitions/SelectEnhancementField"
 					}
 				},
 				{
@@ -5862,7 +5859,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetCheckboxField"
+						"$ref": "#/definitions/AssetCheckboxField"
 					}
 				},
 				{
@@ -5875,7 +5872,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetCardFlipField"
+						"$ref": "#/definitions/AssetCardFlipField"
 					}
 				}
 			]
@@ -5902,7 +5899,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/AssetConditionMeterEnhancement"
+						"$ref": "#/definitions/AssetConditionMeterEnhancement"
 					}
 				}
 			]
@@ -5921,7 +5918,7 @@
 					"description": "Most assets only benefit to their owner, but certain assets (like Starforged's module and command vehicle assets) are shared amongst the player's allies, too."
 				},
 				"attachments": {
-					"$ref": "#/$defs/AssetAttachment"
+					"$ref": "#/definitions/AssetAttachment"
 				},
 				"controls": {
 					"type": "object",
@@ -5929,12 +5926,12 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AssetControlFieldEnhancement"
+							"$ref": "#/definitions/AssetControlFieldEnhancement"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				}
 			},
 			"additionalProperties": false
@@ -5962,7 +5959,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/SelectValueField"
+						"$ref": "#/definitions/SelectValueField"
 					}
 				},
 				{
@@ -5975,7 +5972,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/SelectEnhancementField"
+						"$ref": "#/definitions/SelectEnhancementField"
 					}
 				},
 				{
@@ -5988,7 +5985,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/TextField"
+						"$ref": "#/definitions/TextField"
 					}
 				}
 			]
@@ -6001,7 +5998,7 @@
 			"required": ["label", "field_type", "max"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
@@ -6021,7 +6018,7 @@
 					"multipleOf": 2
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -6044,7 +6041,7 @@
 			"required": ["label", "field_type", "max"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
@@ -6060,7 +6057,7 @@
 					"description": "The maximum value of this meter."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -6085,7 +6082,7 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
@@ -6109,7 +6106,7 @@
 					]
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -6133,14 +6130,14 @@
 			"required": ["label", "field_type", "choices"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
 					"const": "select_enhancement"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -6148,7 +6145,7 @@
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/DictKey",
+							"$ref": "#/definitions/DictKey",
 							"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected.",
 							"default": null
 						},
@@ -6182,7 +6179,7 @@
 										}
 									},
 									"then": {
-										"$ref": "#/$defs/SelectEnhancementFieldChoice"
+										"$ref": "#/definitions/SelectEnhancementFieldChoice"
 									}
 								},
 								{
@@ -6195,7 +6192,7 @@
 										}
 									},
 									"then": {
-										"$ref": "#/$defs/SelectEnhancementFieldChoiceGroup"
+										"$ref": "#/definitions/SelectEnhancementFieldChoiceGroup"
 									}
 								}
 							]
@@ -6213,19 +6210,19 @@
 			"required": ["label", "choice_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"choice_type": {
 					"type": "string",
 					"const": "choice"
 				},
 				"enhance_asset": {
-					"$ref": "#/$defs/AssetEnhancement"
+					"$ref": "#/definitions/AssetEnhancement"
 				},
 				"enhance_moves": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/MoveEnhancement"
+						"$ref": "#/definitions/MoveEnhancement"
 					}
 				}
 			},
@@ -6239,7 +6236,7 @@
 			"required": ["name", "choice_type", "choices"],
 			"properties": {
 				"name": {
-					"$ref": "#/$defs/InputLabel",
+					"$ref": "#/definitions/InputLabel",
 					"description": "A label for this option group."
 				},
 				"choice_type": {
@@ -6251,7 +6248,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/SelectEnhancementFieldChoice"
+							"$ref": "#/definitions/SelectEnhancementFieldChoice"
 						}
 					}
 				}
@@ -6266,14 +6263,14 @@
 			"required": ["label", "field_type", "choices"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
 					"const": "select_value"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -6281,7 +6278,7 @@
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/DictKey",
+							"$ref": "#/definitions/DictKey",
 							"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected.",
 							"default": null
 						},
@@ -6295,7 +6292,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/SelectValueFieldChoice"
+							"$ref": "#/definitions/SelectValueFieldChoice"
 						}
 					}
 				}
@@ -6337,14 +6334,14 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/$defs/InputLabel"
+								"$ref": "#/definitions/InputLabel"
 							},
 							"choice_type": {
 								"const": "choice",
 								"type": "string"
 							},
 							"stat": {
-								"$ref": "#/$defs/StatKey"
+								"$ref": "#/definitions/StatKey"
 							},
 							"using": {
 								"description": "A reference to the value of a standard player character stat.",
@@ -6371,14 +6368,14 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/$defs/InputLabel"
+								"$ref": "#/definitions/InputLabel"
 							},
 							"choice_type": {
 								"const": "choice",
 								"type": "string"
 							},
 							"condition_meter": {
-								"$ref": "#/$defs/ConditionMeterKey"
+								"$ref": "#/definitions/ConditionMeterKey"
 							},
 							"using": {
 								"description": "A reference to the value of a standard player condition meter.",
@@ -6406,7 +6403,7 @@
 						"additionalProperties": false,
 						"properties": {
 							"label": {
-								"$ref": "#/$defs/InputLabel"
+								"$ref": "#/definitions/InputLabel"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6419,7 +6416,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/AssetIdWildcard"
+											"$ref": "#/definitions/AssetIdWildcard"
 										}
 									},
 									{
@@ -6430,7 +6427,7 @@
 							"control": {
 								"description": "The dictionary key of the asset control field.",
 								"examples": ["health", "integrity"],
-								"$ref": "#/$defs/DictKey"
+								"$ref": "#/definitions/DictKey"
 							},
 							"using": {
 								"description": "A reference to the value of an asset control.",
@@ -6457,7 +6454,7 @@
 						"additionalProperties": false,
 						"properties": {
 							"label": {
-								"$ref": "#/$defs/InputLabel"
+								"$ref": "#/definitions/InputLabel"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6470,7 +6467,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/$defs/AssetIdWildcard"
+											"$ref": "#/definitions/AssetIdWildcard"
 										}
 									},
 									{
@@ -6480,7 +6477,7 @@
 							},
 							"option": {
 								"description": "The dictionary key of the asset option field.",
-								"$ref": "#/$defs/DictKey"
+								"$ref": "#/definitions/DictKey"
 							},
 							"using": {
 								"description": "A reference to the value of an asset option.",
@@ -6506,7 +6503,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/$defs/InputLabel"
+								"$ref": "#/definitions/InputLabel"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6515,7 +6512,7 @@
 							"control": {
 								"description": "The dictionary key of the asset control field.",
 								"examples": ["health", "integrity"],
-								"$ref": "#/$defs/DictKey"
+								"$ref": "#/definitions/DictKey"
 							},
 							"using": {
 								"description": "A reference to the value of an attached asset control. For example, a Module asset could use this to roll using the `integrity` control of an attached Vehicle.",
@@ -6542,7 +6539,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/$defs/InputLabel"
+								"$ref": "#/definitions/InputLabel"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6550,7 +6547,7 @@
 							},
 							"option": {
 								"description": "The dictionary key of the asset option field.",
-								"$ref": "#/$defs/DictKey"
+								"$ref": "#/definitions/DictKey"
 							},
 							"using": {
 								"description": "A reference to the value of an attached asset option.",
@@ -6577,7 +6574,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/$defs/InputLabel"
+								"$ref": "#/definitions/InputLabel"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6606,14 +6603,14 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/$defs/InputLabel"
+					"$ref": "#/definitions/InputLabel"
 				},
 				"field_type": {
 					"type": "string",
 					"const": "text"
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An icon associated with this input."
 				},
 				"value": {
@@ -6638,34 +6635,34 @@
 			"required": ["name", "options", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/TruthId",
+					"$ref": "#/definitions/TruthId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"options": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/TruthOption"
+						"$ref": "#/definitions/TruthOption"
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"tags": {
@@ -6676,7 +6673,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -6684,7 +6681,7 @@
 					"releaseStage": "experimental"
 				},
 				"your_character": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				}
 			},
 			"additionalProperties": false
@@ -6695,7 +6692,7 @@
 			"required": ["description", "quest_starter"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/TruthOptionId",
+					"$ref": "#/definitions/TruthOptionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"min": {
@@ -6705,18 +6702,18 @@
 					"type": "integer"
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"quest_starter": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"table": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/TruthOptionTableRow"
+						"$ref": "#/definitions/TruthOptionTableRow"
 					}
 				}
 			},
@@ -6755,34 +6752,32 @@
 					]
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"result": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
-				},
 				"template": {
-					"$ref": "#/$defs/OracleRollTemplate"
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "unstable"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row."
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "unstable"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"i18n": {
-					"$ref": "#/$defs/I18nHints"
+					"$ref": "#/definitions/I18nHints"
 				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},
@@ -6794,42 +6789,42 @@
 			"required": ["name", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/AtlasId",
+					"$ref": "#/definitions/AtlasId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"enhances": {
-					"$ref": "#/$defs/AtlasId",
+					"$ref": "#/definitions/AtlasId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
-					"$ref": "#/$defs/CssColor",
+					"$ref": "#/definitions/CssColor",
 					"description": "A thematic color associated with this collection."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl",
+					"$ref": "#/definitions/SvgImageUrl",
 					"description": "An SVG icon associated with this collection."
 				},
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
+						"$ref": "#/definitions/WebpImageUrl",
 						"description": "Extra images associated with this collection."
 					}
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"contents": {
@@ -6837,7 +6832,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/AtlasEntry"
+							"$ref": "#/definitions/AtlasEntry"
 						}
 					}
 				},
@@ -6846,19 +6841,19 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/Atlas"
+							"$ref": "#/definitions/Atlas"
 						}
 					}
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/AtlasId",
+					"$ref": "#/definitions/AtlasId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"tags": {
@@ -6869,7 +6864,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -6887,40 +6882,40 @@
 			"required": ["name", "features", "description", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/AtlasEntryId",
+					"$ref": "#/definitions/AtlasEntryId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"features": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/MarkdownString"
+						"$ref": "#/definitions/MarkdownString"
 					}
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"quest_starter": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"your_truth": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"tags": {
@@ -6931,7 +6926,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -6942,13 +6937,13 @@
 			"additionalProperties": false
 		},
 		"ConditionMeterKey": {
-			"$ref": "#/$defs/DictKey",
+			"$ref": "#/definitions/DictKey",
 			"title": "ConditionMeterKey",
 			"description": "A basic, rollable player character resource specified by the ruleset.",
 			"examples": ["health", "spirit", "supply"]
 		},
 		"StatKey": {
-			"$ref": "#/$defs/DictKey",
+			"$ref": "#/definitions/DictKey",
 			"title": "StatKey",
 			"description": "A basic player character stat.",
 			"examples": ["edge", "heart", "iron", "shadow", "wits"]
@@ -6960,32 +6955,32 @@
 			"required": ["name", "description", "source", "asset"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/RarityId",
+					"$ref": "#/definitions/RarityId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"asset": {
-					"$ref": "#/$defs/AssetId",
+					"$ref": "#/definitions/AssetId",
 					"description": "The asset augmented by this rarity."
 				},
 				"tags": {
@@ -6996,7 +6991,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -7028,31 +7023,31 @@
 			],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/DelveSiteId",
+					"$ref": "#/definitions/DelveSiteId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"rank": {
-					"$ref": "#/$defs/ChallengeRank"
+					"$ref": "#/definitions/ChallengeRank"
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"denizens": {
@@ -7060,7 +7055,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/DelveSiteDenizen"
+								"$ref": "#/definitions/DelveSiteDenizen"
 							}
 						},
 						{
@@ -7302,21 +7297,21 @@
 					]
 				},
 				"domain": {
-					"$ref": "#/$defs/DelveSiteDomainId"
+					"$ref": "#/definitions/DelveSiteDomainId"
 				},
 				"extra_card": {
 					"description": "An additional theme or domain card ID, for use with optional rules in Ironsworn: Delve.",
 					"anyOf": [
 						{
-							"$ref": "#/$defs/DelveSiteThemeId"
+							"$ref": "#/definitions/DelveSiteThemeId"
 						},
 						{
-							"$ref": "#/$defs/DelveSiteDomainId"
+							"$ref": "#/definitions/DelveSiteDomainId"
 						}
 					]
 				},
 				"region": {
-					"$ref": "#/$defs/AtlasEntryId",
+					"$ref": "#/definitions/AtlasEntryId",
 					"description": "The ID of an atlas entry representing the region in which this delve site is located."
 				},
 				"tags": {
@@ -7327,7 +7322,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -7335,7 +7330,7 @@
 					"releaseStage": "experimental"
 				},
 				"theme": {
-					"$ref": "#/$defs/DelveSiteThemeId"
+					"$ref": "#/definitions/DelveSiteThemeId"
 				}
 			},
 			"additionalProperties": false
@@ -7346,11 +7341,11 @@
 			"required": ["min", "max", "frequency"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/DelveSiteDenizenId",
+					"$ref": "#/definitions/DelveSiteDenizenId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label"
+					"$ref": "#/definitions/Label"
 				},
 				"min": {
 					"type": "integer"
@@ -7359,10 +7354,10 @@
 					"type": "integer"
 				},
 				"frequency": {
-					"$ref": "#/$defs/DelveSiteDenizenFrequency"
+					"$ref": "#/definitions/DelveSiteDenizenFrequency"
 				},
 				"npc": {
-					"$ref": "#/$defs/NpcId",
+					"$ref": "#/definitions/NpcId",
 					"description": "The ID of the relevant NPC entry, if one is specified."
 				}
 			},
@@ -7379,29 +7374,30 @@
 			"required": ["name", "summary", "features", "dangers", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/DelveSiteDomainId",
+					"$ref": "#/definitions/DelveSiteDomainId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString",
+					"deprecated": true
 				},
 				"features": {
 					"allOf": [
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/DelveSiteDomainFeatureRow"
+								"$ref": "#/definitions/DelveSiteDomainFeatureRow"
 							}
 						},
 						{
@@ -7599,7 +7595,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/DelveSiteDomainDangerRow"
+								"$ref": "#/definitions/DelveSiteDomainDangerRow"
 							}
 						},
 						{
@@ -7688,17 +7684,17 @@
 					]
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"name_oracle": {
-					"$ref": "#/$defs/OracleRollableId",
+					"$ref": "#/definitions/OracleRollableId",
 					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
 				},
 				"tags": {
@@ -7709,7 +7705,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -7726,7 +7722,7 @@
 			"required": ["min", "max", "result"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/DomainDangerRowId",
+					"$ref": "#/definitions/DomainDangerRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"min": {
@@ -7738,46 +7734,32 @@
 					"description": "High end of the dice range for this table row."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"result": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
-				},
 				"template": {
-					"$ref": "#/$defs/OracleRollTemplate"
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "unstable"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row."
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "unstable"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"i18n": {
-					"$ref": "#/$defs/I18nHints"
-				},
-				"detail": {
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/$defs/MarkdownString",
-							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-						},
-						{
-							"type": "null"
-						}
-					]
+					"$ref": "#/definitions/I18nHints"
 				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},
@@ -7790,7 +7772,7 @@
 			"required": ["min", "max", "result"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/DomainFeatureRowId",
+					"$ref": "#/definitions/DomainFeatureRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"min": {
@@ -7802,46 +7784,32 @@
 					"description": "High end of the dice range for this table row."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"result": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
-				},
 				"template": {
-					"$ref": "#/$defs/OracleRollTemplate"
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "unstable"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row."
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "unstable"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"i18n": {
-					"$ref": "#/$defs/I18nHints"
-				},
-				"detail": {
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/$defs/MarkdownString",
-							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-						},
-						{
-							"type": "null"
-						}
-					]
+					"$ref": "#/definitions/I18nHints"
 				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},
@@ -7854,29 +7822,29 @@
 			"required": ["name", "summary", "features", "dangers", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/DelveSiteThemeId",
+					"$ref": "#/definitions/DelveSiteThemeId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The primary name/label for this item."
 				},
 				"canonical_name": {
-					"$ref": "#/$defs/Label",
+					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"summary": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"features": {
 					"allOf": [
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/DelveSiteThemeFeatureRow"
+								"$ref": "#/definitions/DelveSiteThemeFeatureRow"
 							}
 						},
 						{
@@ -7969,7 +7937,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/DelveSiteThemeDangerRow"
+								"$ref": "#/definitions/DelveSiteThemeDangerRow"
 							}
 						},
 						{
@@ -8163,13 +8131,13 @@
 					]
 				},
 				"description": {
-					"$ref": "#/$defs/MarkdownString"
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"source": {
-					"$ref": "#/$defs/Source",
+					"$ref": "#/definitions/Source",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"tags": {
@@ -8180,7 +8148,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"$ref": "#/$defs/Tag"
+									"$ref": "#/definitions/Tag"
 								}
 							}
 						}
@@ -8197,7 +8165,7 @@
 			"required": ["min", "max", "result"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/ThemeDangerRowId",
+					"$ref": "#/definitions/ThemeDangerRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"min": {
@@ -8209,46 +8177,32 @@
 					"description": "High end of the dice range for this table row."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"result": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
-				},
 				"template": {
-					"$ref": "#/$defs/OracleRollTemplate"
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "unstable"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row."
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "unstable"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"i18n": {
-					"$ref": "#/$defs/I18nHints"
-				},
-				"detail": {
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/$defs/MarkdownString",
-							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-						},
-						{
-							"type": "null"
-						}
-					]
+					"$ref": "#/definitions/I18nHints"
 				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},
@@ -8261,7 +8215,7 @@
 			"required": ["min", "max", "result"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/ThemeFeatureRowId",
+					"$ref": "#/definitions/ThemeFeatureRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"min": {
@@ -8273,46 +8227,32 @@
 					"description": "High end of the dice range for this table row."
 				},
 				"icon": {
-					"$ref": "#/$defs/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"result": {
-					"$ref": "#/$defs/MarkdownString",
+					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
-				},
 				"template": {
-					"$ref": "#/$defs/OracleRollTemplate"
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "unstable"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row."
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "unstable"
 				},
 				"suggestions": {
-					"$ref": "#/$defs/Suggestions"
+					"$ref": "#/definitions/Suggestions"
 				},
 				"i18n": {
-					"$ref": "#/$defs/I18nHints"
-				},
-				"detail": {
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/$defs/MarkdownString",
-							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-						},
-						{
-							"type": "null"
-						}
-					]
+					"$ref": "#/definitions/I18nHints"
 				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleRoll"
+						"$ref": "#/definitions/OracleRoll"
 					}
 				}
 			},

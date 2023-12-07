@@ -538,7 +538,7 @@ oracles:
       visible_habitation:
         source: *Source
         name: Visible Habitation
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         column_labels:
           result: Result
         contents:

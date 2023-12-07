@@ -1054,7 +1054,7 @@ oracles:
             source:
               <<: *Source
             name: Controlling Faction
-            oracle_type: table_shared_result
+            oracle_type: table_shared_results
             contents:
               myriads:
                 # source:
@@ -1324,6 +1324,7 @@ oracles:
                   - &Focus.36
                     min: 96
                     max: 100
+                    detail: null
                     <<: *ActionTheme
               inland:
                 # source:

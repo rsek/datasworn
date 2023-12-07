@@ -15,7 +15,7 @@ oracles:
     collections:
       ask_the_oracle:
         name: Ask the Oracle
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         source: &CollectionSource
           <<: *Source
           page: 229

@@ -18,7 +18,7 @@ oracles:
         source: &CollectionSource
           <<: *Source
           page: 328
-        oracle_type: table_shared_result
+        oracle_type: table_shared_results
         # content:
         #   part_of_speech: [fragment]
         #   tags: [objective]
@@ -546,15 +546,18 @@ oracles:
           - min: 83
             max: 84
             result: Unusual or unknown
+            detail: null
             i18n: *i18n.result.adjective
           - min: 85
             max: 94
             result: '[Fleet](id:starforged/oracles/starships/fleet)'
+            detail: null
             oracle_rolls:
               - oracle: starforged/oracles/starships/fleet
           - min: 95
             max: 100
             result: Ships in conflict (roll twice)
+            detail: null
             oracle_rolls:
               - oracle: starforged/oracles/starships/type
                 duplicates: keep
