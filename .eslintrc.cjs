@@ -51,6 +51,7 @@ module.exports = {
 		'@typescript-eslint/ban-ts-comment': 'off',
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/return-await': 'off',
+		'@typescript-eslint/method-signature-style': 'off',
 		'@typescript-eslint/no-unused-vars': [
 			'warn',
 			{
