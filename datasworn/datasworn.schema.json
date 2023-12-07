@@ -52,8 +52,13 @@
 			"description": "A standalone Datasworn package that describes its own ruleset.",
 			"required": [
 				"id",
+				"title",
 				"datasworn_version",
 				"package_type",
+				"authors",
+				"date",
+				"url",
+				"license",
 				"rules",
 				"oracles",
 				"assets",
@@ -63,6 +68,9 @@
 				"id": {
 					"$ref": "#/definitions/RulesetId"
 				},
+				"title": {
+					"$ref": "#/definitions/SourceTitle"
+				},
 				"datasworn_version": {
 					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
@@ -70,6 +78,26 @@
 				"package_type": {
 					"type": "string",
 					"const": "ruleset"
+				},
+				"authors": {
+					"type": "array",
+					"description": "Lists authors credited by the source material.",
+					"items": {
+						"$ref": "#/definitions/AuthorInfo"
+					},
+					"minItems": 1
+				},
+				"date": {
+					"$ref": "#/definitions/Date",
+					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
+				},
+				"url": {
+					"$ref": "#/definitions/WebUrl",
+					"description": "A URL where the source document is available.",
+					"examples": ["https://ironswornrpg.com"]
+				},
+				"license": {
+					"$ref": "#/definitions/License"
 				},
 				"rules": {
 					"$ref": "#/definitions/Rules"
@@ -86,7 +114,7 @@
 				},
 				"assets": {
 					"type": "object",
-					"description": "A dictionary object containing asset types, which contain assets.",
+					"description": "A dictionary object containing asset collections, which contain assets.",
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
@@ -185,6 +213,9 @@
 				"id": {
 					"$ref": "#/definitions/ExpansionId"
 				},
+				"title": {
+					"$ref": "#/definitions/SourceTitle"
+				},
 				"datasworn_version": {
 					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
@@ -192,6 +223,26 @@
 				"package_type": {
 					"type": "string",
 					"const": "expansion"
+				},
+				"authors": {
+					"type": "array",
+					"description": "Lists authors credited by the source material.",
+					"items": {
+						"$ref": "#/definitions/AuthorInfo"
+					},
+					"minItems": 1
+				},
+				"date": {
+					"$ref": "#/definitions/Date",
+					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
+				},
+				"url": {
+					"$ref": "#/definitions/WebUrl",
+					"description": "A URL where the source document is available.",
+					"examples": ["https://ironswornrpg.com"]
+				},
+				"license": {
+					"$ref": "#/definitions/License"
 				},
 				"ruleset": {
 					"$ref": "#/definitions/RulesetId"
@@ -211,7 +262,7 @@
 				},
 				"assets": {
 					"type": "object",
-					"description": "A dictionary object containing asset types, which contain assets.",
+					"description": "A dictionary object containing asset collections, which contain assets.",
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
@@ -517,6 +568,10 @@
 		"MoveId": {
 			"title": "MoveId",
 			"description": "A move ID, for a standard move or a unique asset move",
+			"examples": [
+				"classic/moves/combat/strike",
+				"starforged/assets/module/grappler/abilities/0/moves/ready_grappler"
+			],
 			"anyOf": [
 				{
 					"type": "string",
@@ -528,15 +583,15 @@
 					"description": "A move ID for an asset move.",
 					"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/moves\\/([a-z][a-z_]*)$"
 				}
-			],
-			"examples": [
-				"classic/moves/combat/strike",
-				"starforged/assets/module/grappler/abilities/0/moves/ready_grappler"
 			]
 		},
 		"MoveIdWildcard": {
 			"title": "MoveIdWildcard",
 			"description": "A move ID with wildcards.",
+			"examples": [
+				"*/moves/*/face_danger",
+				"*/assets/ritual/*/abilities/*/moves/*"
+			],
 			"anyOf": [
 				{
 					"type": "string",
@@ -548,10 +603,6 @@
 					"description": "A wildcarded ID that can be used to match multiple AssetMoves.",
 					"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/abilities\\/(\\*|(0|[1-9][0-9]*))\\/moves\\/(\\*|([a-z][a-z_]*))$"
 				}
-			],
-			"examples": [
-				"*/moves/*/face_danger",
-				"*/assets/ritual/*/abilities/*/moves/*"
 			]
 		},
 		"NpcCollectionId": {
@@ -637,6 +688,10 @@
 		"OracleTableRowId": {
 			"title": "OracleTableRowId",
 			"description": "Normally, rows will end with two numbers separated by a dash, indicating their dice range.\n\nRows with a single number represent unrollable rows that are sometimes included for rendering purposes; in this case, the number represents the row's index.",
+			"examples": [
+				"classic/oracles/action_and_theme/action/1-1",
+				"starforged/oracles/derelicts/zones/starship/0"
+			],
 			"anyOf": [
 				{
 					"type": "string",
@@ -648,10 +703,6 @@
 					"description": "A unique ID for a RowNull.",
 					"pattern": "^([a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)\\/(0|[1-9][0-9]*)$"
 				}
-			],
-			"examples": [
-				"classic/oracles/action_and_theme/action/1-1",
-				"starforged/oracles/derelicts/zones/starship/0"
 			]
 		},
 		"RarityId": {
@@ -727,6 +778,12 @@
 			"title": "AuthorInfo",
 			"type": "object",
 			"description": "Information on the original creator of this material.",
+			"examples": [
+				{
+					"name": "Shawn Tomkin",
+					"url": "https://ironswornrpg.com"
+				}
+			],
 			"required": ["name"],
 			"properties": {
 				"name": {
@@ -744,13 +801,7 @@
 					"description": "An optional email contact for the author",
 					"format": "email"
 				}
-			},
-			"examples": [
-				{
-					"name": "Shawn Tomkin",
-					"url": "https://ironswornrpg.com"
-				}
-			]
+			}
 		},
 		"CssColor": {
 			"title": "CssColor",
@@ -758,76 +809,93 @@
 			"description": "A CSS color value.",
 			"$comment": "See https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"
 		},
+		"Date": {
+			"title": "Date",
+			"type": "string",
+			"description": "A date formatted YYYY-MM-DD.",
+			"$comment": "You may prefer to deserialize this as a Date object.",
+			"format": "date",
+			"pattern": "[0-9]{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1])"
+		},
+		"License": {
+			"title": "License",
+			"description": "An URL pointing to the location where this element's license can be found.\n\nA `null` here indicates that the content provides __no__ license, and is not intended for redistribution.",
+			"examples": [
+				"https://creativecommons.org/licenses/by/4.0",
+				"https://creativecommons.org/licenses/by-nc-sa/4.0"
+			],
+			"anyOf": [
+				{
+					"$ref": "#/definitions/WebUrl"
+				},
+				{
+					"type": "null"
+				}
+			]
+		},
+		"PageNumber": {
+			"title": "PageNumber",
+			"type": "integer",
+			"description": "Represents a page number in a book.",
+			"minimum": 1
+		},
 		"SemanticVersion": {
 			"title": "SemanticVersion",
 			"type": "string",
 			"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 		},
-		"Source": {
-			"title": "Source",
+		"SourceInfo": {
+			"title": "SourceInfo",
 			"type": "object",
 			"description": "Metadata describing the original source of this item",
-			"required": ["title", "date", "authors", "license", "url"],
+			"required": ["title", "authors", "date", "url", "license"],
 			"properties": {
 				"title": {
-					"title": "Title",
-					"type": "string",
-					"description": "The title of the source document.",
-					"examples": [
-						"Ironsworn Rulebook",
-						"Ironsworn Assets Master Set",
-						"Ironsworn: Delve",
-						"Ironsworn: Starforged Rulebook",
-						"Ironsworn: Starforged Assets",
-						"Sundered Isles"
-					]
-				},
-				"date": {
-					"type": "string",
-					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating.",
-					"$comment": "You may prefer to deserialize this as a Date object.",
-					"format": "date"
+					"$ref": "#/definitions/SourceTitle"
 				},
 				"page": {
-					"type": "integer",
-					"description": "The page number where this item is described in full.",
-					"minimum": 1
+					"$ref": "#/definitions/PageNumber",
+					"description": "The page number where this item is described in full."
 				},
 				"authors": {
 					"type": "array",
+					"description": "Lists authors credited by the source material.",
 					"items": {
 						"$ref": "#/definitions/AuthorInfo"
 					},
 					"minItems": 1
 				},
-				"license": {
-					"title": "License",
-					"description": "An absolute URL pointing to the location where this element's license can be found.\n\nA `null` here indicates that the content provides __no__ license, and is not intended for redistribution.  Datasworn's build process skips unlicensed content by default.",
-					"anyOf": [
-						{
-							"type": "string",
-							"format": "uri"
-						},
-						{
-							"type": "null"
-						}
-					],
-					"examples": [
-						"https://creativecommons.org/licenses/by/4.0",
-						"https://creativecommons.org/licenses/by-nc-sa/4.0"
-					]
+				"date": {
+					"$ref": "#/definitions/Date",
+					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
 				},
 				"url": {
-					"type": "string",
-					"description": "An absolute URL where the source document is available.",
-					"examples": ["https://ironswornrpg.com"],
-					"format": "uri"
+					"$ref": "#/definitions/WebUrl",
+					"description": "A URL where the source document is available.",
+					"examples": ["https://ironswornrpg.com"]
+				},
+				"license": {
+					"$ref": "#/definitions/License"
 				}
 			}
+		},
+		"SourceTitle": {
+			"title": "SourceTitle",
+			"type": "string",
+			"description": "The title of the source document.",
+			"examples": [
+				"Ironsworn Rulebook",
+				"Ironsworn Assets Master Set",
+				"Ironsworn: Delve",
+				"Ironsworn: Starforged Rulebook",
+				"Ironsworn: Starforged Assets",
+				"Sundered Isles"
+			]
 		},
 		"Suggestions": {
 			"title": "Suggestions",
 			"type": "object",
+			"releaseStage": "unstable",
 			"properties": {
 				"oracles": {
 					"type": "array",
@@ -877,38 +945,44 @@
 						"$ref": "#/definitions/DelveSiteThemeId"
 					}
 				}
-			},
-			"releaseStage": "unstable"
+			}
 		},
 		"SvgImageUrl": {
 			"title": "SvgImageUrl",
 			"type": "string",
-			"description": "A relative URL pointing to a vector image in the SVG format.",
+			"description": "A relative (local) URL pointing to a vector image in the SVG format.",
 			"format": "uri-reference",
 			"pattern": "\\.svg$"
+		},
+		"WebUrl": {
+			"title": "WebUrl",
+			"type": "string",
+			"description": "An absolute URL pointing to a website.",
+			"format": "uri"
 		},
 		"WebpImageUrl": {
 			"title": "WebpImageUrl",
 			"type": "string",
-			"description": "A relative URL pointing to a raster image in the WEBP format.",
+			"description": "A relative (local) URL pointing to a raster image in the WEBP format.",
 			"format": "uri-reference",
 			"pattern": "\\.webp$"
 		},
 		"I18nHint": {
 			"title": "I18nHint",
 			"type": "object",
+			"releaseStage": "experimental",
 			"properties": {
 				"part_of_speech": {
 					"$ref": "#/definitions/PartOfSpeech",
 					"description": "The part of speech for this string."
 				}
-			},
-			"releaseStage": "experimental"
+			}
 		},
 		"I18nHints": {
 			"title": "I18nHints",
 			"type": "object",
 			"description": "Internationalization/localization hints for the text content of this object.",
+			"releaseStage": "experimental",
 			"properties": {
 				"result": {
 					"$ref": "#/definitions/I18nHint"
@@ -933,8 +1007,7 @@
 						}
 					}
 				}
-			},
-			"releaseStage": "experimental"
+			}
 		},
 		"InputLabel": {
 			"title": "InputLabel",
@@ -953,8 +1026,8 @@
 			"title": "MarkdownString",
 			"type": "string",
 			"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there part of the source material.",
-			"format": "markdown",
-			"i18n": true
+			"i18n": true,
+			"format": "markdown"
 		},
 		"PartOfSpeech": {
 			"title": "PartOfSpeech",
@@ -976,9 +1049,9 @@
 			"title": "TemplateString",
 			"type": "string",
 			"description": "A rich text string in Markdown with replaced values from oracle roll results.\n\nThe custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`\n",
-			"format": "markdown",
+			"releaseStage": "experimental",
 			"i18n": true,
-			"releaseStage": "experimental"
+			"format": "markdown"
 		},
 		"CollectableType": {
 			"title": "CollectableType",
@@ -1000,16 +1073,22 @@
 			"description": "Describes a standard player character condition meter.",
 			"required": [
 				"label",
+				"rollable",
 				"min",
 				"max",
 				"value",
 				"shared",
-				"description",
-				"rollable"
+				"description"
 			],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel"
+				},
+				"rollable": {
+					"type": "boolean",
+					"description": "Is this meter's `value` usable as a stat in an action roll?",
+					"default": true,
+					"const": true
 				},
 				"min": {
 					"type": "integer",
@@ -1033,12 +1112,6 @@
 				"description": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this condition meter."
-				},
-				"rollable": {
-					"type": "boolean",
-					"description": "Is this meter's `value` usable as a stat in an action roll?",
-					"const": true,
-					"default": true
 				}
 			}
 		},
@@ -1074,15 +1147,28 @@
 			"description": "Describes a standard impact/debility.",
 			"required": [
 				"label",
-				"shared",
-				"description",
+				"prevents_recovery",
 				"permanent",
-				"prevents_recovery"
+				"shared",
+				"description"
 			],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel",
 					"description": "The label for this impact."
+				},
+				"prevents_recovery": {
+					"type": "array",
+					"description": "Any ruleset condition meters that can't recover when this impact is active.",
+					"default": [],
+					"items": {
+						"$ref": "#/definitions/ConditionMeterKey"
+					}
+				},
+				"permanent": {
+					"type": "boolean",
+					"description": "Is this impact permanent?",
+					"default": false
 				},
 				"shared": {
 					"type": "boolean",
@@ -1092,19 +1178,6 @@
 				"description": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this impact."
-				},
-				"permanent": {
-					"type": "boolean",
-					"description": "Is this impact permanent?",
-					"default": false
-				},
-				"prevents_recovery": {
-					"type": "array",
-					"description": "Any ruleset condition meters that can't recover when this impact is active.",
-					"default": [],
-					"items": {
-						"$ref": "#/definitions/ConditionMeterKey"
-					}
 				}
 			}
 		},
@@ -1130,11 +1203,12 @@
 			"title": "Rules",
 			"type": "object",
 			"description": "Describes rules for player characters in this ruleset, such as stats and condition meters.",
+			"releaseStage": "experimental",
 			"required": [
 				"condition_meters",
+				"stats",
 				"impacts",
 				"special_tracks",
-				"stats",
 				"tags"
 			],
 			"properties": {
@@ -1148,6 +1222,16 @@
 						}
 					}
 				},
+				"stats": {
+					"type": "object",
+					"description": "Describes the standard stats used by player characters in this ruleset.",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/definitions/StatRule"
+						}
+					}
+				},
 				"impacts": {
 					"type": "object",
 					"description": "Describes the standard impacts/debilities used by player characters in this ruleset.",
@@ -1168,34 +1252,24 @@
 						}
 					}
 				},
-				"stats": {
-					"type": "object",
-					"description": "Describes the standard stats used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/StatRule"
-						}
-					}
-				},
 				"tags": {
 					"type": "object",
 					"$comment": "Deserialize as a dictionary object.",
+					"releaseStage": "experimental",
 					"default": {},
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/TagRule"
 						}
-					},
-					"releaseStage": "experimental"
+					}
 				}
-			},
-			"releaseStage": "experimental"
+			}
 		},
 		"RulesExpansion": {
 			"title": "RulesExpansion",
 			"type": "object",
 			"description": "Describes rules for player characters in this ruleset, such as stats and condition meters.",
+			"releaseStage": "experimental",
 			"properties": {
 				"condition_meters": {
 					"type": "object",
@@ -1207,6 +1281,16 @@
 						}
 					}
 				},
+				"stats": {
+					"type": "object",
+					"description": "Describes the standard stats used by player characters in this ruleset.",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/definitions/StatRule"
+						}
+					}
+				},
 				"impacts": {
 					"type": "object",
 					"description": "Describes the standard impacts/debilities used by player characters in this ruleset.",
@@ -1227,39 +1311,33 @@
 						}
 					}
 				},
-				"stats": {
-					"type": "object",
-					"description": "Describes the standard stats used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/StatRule"
-						}
-					}
-				},
 				"tags": {
 					"type": "object",
 					"$comment": "Deserialize as a dictionary object.",
+					"releaseStage": "experimental",
 					"default": {},
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/TagRule"
 						}
-					},
-					"releaseStage": "experimental"
+					}
 				}
-			},
-			"releaseStage": "experimental"
+			}
 		},
 		"SpecialTrackRule": {
 			"title": "SpecialTrackRule",
 			"type": "object",
 			"description": "Describes a special track like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
-			"required": ["label", "shared", "description", "optional"],
+			"required": ["label", "optional", "shared", "description"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel",
 					"description": "A label for this special track."
+				},
+				"optional": {
+					"type": "boolean",
+					"description": "Is this track an optional rule?",
+					"default": false
 				},
 				"shared": {
 					"type": "boolean",
@@ -1269,11 +1347,6 @@
 				"description": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "A description of this special track."
-				},
-				"optional": {
-					"type": "boolean",
-					"description": "Is this track an optional rule?",
-					"default": false
 				}
 			}
 		},
@@ -2315,12 +2388,17 @@
 			"title": "AssetControlValueRef",
 			"type": "object",
 			"description": "A reference to the value of an asset control.",
-			"required": ["using", "assets", "control"],
+			"required": ["using", "control", "assets"],
 			"properties": {
 				"using": {
 					"type": "string",
 					"description": "A reference to the value of an asset control.",
 					"const": "asset_control"
+				},
+				"control": {
+					"$ref": "#/definitions/DictKey",
+					"description": "The dictionary key of the asset control field.",
+					"examples": ["health", "integrity"]
 				},
 				"assets": {
 					"description": "Asset IDs (which may be wildcarded) that may provide the control field. For asset ability enhancements, `null` is used to represent the asset's own control fields.",
@@ -2336,11 +2414,6 @@
 							"type": "null"
 						}
 					]
-				},
-				"control": {
-					"$ref": "#/definitions/DictKey",
-					"description": "The dictionary key of the asset control field.",
-					"examples": ["health", "integrity"]
 				}
 			}
 		},
@@ -2348,12 +2421,16 @@
 			"title": "AssetOptionValueRef",
 			"type": "object",
 			"description": "A reference to the value of an asset option.",
-			"required": ["using", "assets", "option"],
+			"required": ["using", "option", "assets"],
 			"properties": {
 				"using": {
 					"type": "string",
 					"description": "A reference to the value of an asset option.",
 					"const": "asset_option"
+				},
+				"option": {
+					"$ref": "#/definitions/DictKey",
+					"description": "The dictionary key of the asset option field."
 				},
 				"assets": {
 					"description": "Asset IDs (which may be wildcarded) that may provide the option field. For asset ability enhancements, `null` is used to represent the asset's own option fields.",
@@ -2369,10 +2446,6 @@
 							"type": "null"
 						}
 					]
-				},
-				"option": {
-					"$ref": "#/definitions/DictKey",
-					"description": "The dictionary key of the asset option field."
 				}
 			}
 		},
@@ -2582,8 +2655,8 @@
 			"required": [
 				"id",
 				"name",
-				"nature",
 				"rank",
+				"nature",
 				"features",
 				"drives",
 				"tactics",
@@ -2603,12 +2676,12 @@
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
-				"nature": {
-					"$ref": "#/definitions/NpcNature"
-				},
 				"rank": {
 					"$ref": "#/definitions/ChallengeRank",
 					"description": "The suggested challenge rank for this NPC."
+				},
+				"nature": {
+					"$ref": "#/definitions/NpcNature"
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString"
@@ -2652,12 +2725,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -2668,8 +2738,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -2689,6 +2762,10 @@
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"$ref": "#/definitions/NpcCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
 					"$ref": "#/definitions/NpcCollectionId",
@@ -2729,16 +2806,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/NpcCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -2749,8 +2819,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -2775,7 +2848,7 @@
 		"NpcVariant": {
 			"title": "NpcVariant",
 			"type": "object",
-			"required": ["id", "name", "nature", "rank", "description"],
+			"required": ["id", "name", "rank", "nature", "description"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/NpcVariantId",
@@ -2784,12 +2857,12 @@
 				"name": {
 					"$ref": "#/definitions/Label"
 				},
-				"nature": {
-					"$ref": "#/definitions/NpcNature"
-				},
 				"rank": {
 					"$ref": "#/definitions/ChallengeRank",
 					"description": "The suggested challenge rank for this NPC."
+				},
+				"nature": {
+					"$ref": "#/definitions/NpcNature"
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString"
@@ -2824,8 +2897,20 @@
 		"OracleRoll": {
 			"title": "OracleRoll",
 			"type": "object",
-			"required": ["dice", "auto", "duplicates", "number_of_rolls", "oracle"],
+			"required": ["oracle", "dice", "auto", "duplicates", "number_of_rolls"],
 			"properties": {
+				"oracle": {
+					"description": "The ID of the oracle to be rolled. A `null` value indicates that it's a roll on the same table.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/OracleRollableId"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
 				"dice": {
 					"description": "The dice roll to make on the oracle table. Set it to `null` if you just want the table's default.",
 					"default": null,
@@ -2853,18 +2938,6 @@
 					"description": "The number of times to roll.",
 					"default": 1,
 					"minimum": 1
-				},
-				"oracle": {
-					"description": "The ID of the oracle to be rolled. A `null` value indicates that it's a roll on the same table.",
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/definitions/OracleRollableId"
-						},
-						{
-							"type": "null"
-						}
-					]
 				}
 			}
 		},
@@ -2872,6 +2945,7 @@
 			"title": "OracleRollTemplate",
 			"type": "object",
 			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#detail`, and `OracleTableRow#description`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.",
+			"releaseStage": "experimental",
 			"properties": {
 				"result": {
 					"$ref": "#/definitions/TemplateString",
@@ -2888,8 +2962,7 @@
 					"$ref": "#/definitions/TemplateString",
 					"description": "A string template that may be used in place of OracleTableRow#description."
 				}
-			},
-			"releaseStage": "experimental"
+			}
 		},
 		"OracleCollection": {
 			"title": "OracleCollection",
@@ -2986,6 +3059,10 @@
 					"type": "string",
 					"const": "column_details"
 				},
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
 					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
@@ -3034,19 +3111,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-				},
-				"rows": {
-					"type": "array",
-					"description": "An array of objects, each representing a single row of the table.",
-					"items": {
-						"$ref": "#/definitions/OracleTableRowDetails"
-					}
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -3057,8 +3124,14 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRowDetails"
+					}
 				}
 			}
 		},
@@ -3086,6 +3159,10 @@
 				"oracle_type": {
 					"type": "string",
 					"const": "column_simple"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -3130,19 +3207,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-				},
-				"rows": {
-					"type": "array",
-					"description": "An array of objects, each representing a single row of the table.",
-					"items": {
-						"$ref": "#/definitions/OracleTableRowSimple"
-					}
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -3153,8 +3220,14 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRowSimple"
+					}
 				}
 			}
 		},
@@ -3241,8 +3314,8 @@
 				"oracle_type",
 				"dice",
 				"column_labels",
-				"source",
-				"rows"
+				"rows",
+				"source"
 			],
 			"properties": {
 				"id": {
@@ -3260,6 +3333,10 @@
 				"oracle_type": {
 					"type": "string",
 					"const": "table_details"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -3323,23 +3400,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-				},
-				"rows": {
-					"type": "array",
-					"description": "An array of objects, each representing a single row of the table.",
-					"items": {
-						"$ref": "#/definitions/OracleTableRowDetails"
-					}
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -3350,8 +3413,18 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRowDetails"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -3462,15 +3535,15 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"i18n": {
-					"$ref": "#/definitions/I18nHints"
-				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		},
@@ -3529,15 +3602,15 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"i18n": {
-					"$ref": "#/definitions/I18nHints"
-				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		},
@@ -3563,6 +3636,10 @@
 					"type": "string",
 					"description": "A table with multiple roll columns, one result column, and one details column.",
 					"const": "table_shared_details"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3622,16 +3699,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -3642,8 +3712,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -3669,6 +3742,10 @@
 					"type": "string",
 					"description": "A table with multiple roll columns and one result column.",
 					"const": "table_shared_results"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3723,16 +3800,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -3743,8 +3813,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -3769,8 +3842,12 @@
 				"oracle_type": {
 					"type": "string",
 					"description": "A table with one roll column and multiple result columns.",
-					"const": "table_shared_rolls",
-					"default": "table_shared_rolls"
+					"default": "table_shared_rolls",
+					"const": "table_shared_rolls"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3825,16 +3902,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -3845,8 +3915,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -3860,8 +3933,8 @@
 				"oracle_type",
 				"dice",
 				"column_labels",
-				"source",
-				"rows"
+				"rows",
+				"source"
 			],
 			"properties": {
 				"id": {
@@ -3879,6 +3952,10 @@
 				"oracle_type": {
 					"type": "string",
 					"const": "table_simple"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -3937,23 +4014,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-				},
-				"rows": {
-					"type": "array",
-					"description": "An array of objects, each representing a single row of the table.",
-					"items": {
-						"$ref": "#/definitions/OracleTableRowSimple"
-					}
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -3964,8 +4027,18 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRowSimple"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -3990,8 +4063,12 @@
 				"oracle_type": {
 					"type": "string",
 					"description": "A grouping of separate tables.",
-					"const": "tables",
-					"default": "tables"
+					"default": "tables",
+					"const": "tables"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -4041,16 +4118,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -4061,8 +4131,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -4176,6 +4249,10 @@
 					"description": "A move that makes an action roll.",
 					"const": "action_roll"
 				},
+				"replaces": {
+					"$ref": "#/definitions/MoveId",
+					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerActionRoll",
 					"title": "Trigger",
@@ -4199,16 +4276,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -4219,8 +4289,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -4272,6 +4345,10 @@
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
+				"replaces": {
+					"$ref": "#/definitions/MoveCategoryId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
 				"enhances": {
 					"$ref": "#/definitions/MoveCategoryId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
@@ -4311,16 +4388,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/MoveCategoryId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -4331,8 +4401,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -4433,6 +4506,10 @@
 					"description": "A move that makes no action rolls or progress rolls.",
 					"const": "no_roll"
 				},
+				"replaces": {
+					"$ref": "#/definitions/MoveId",
+					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerNoRoll",
 					"title": "Trigger",
@@ -4457,16 +4534,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -4477,8 +4547,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -4556,11 +4629,11 @@
 				"id",
 				"name",
 				"roll_type",
+				"tracks",
 				"trigger",
 				"text",
 				"outcomes",
-				"source",
-				"tracks"
+				"source"
 			],
 			"properties": {
 				"id": {
@@ -4579,6 +4652,14 @@
 					"type": "string",
 					"description": "A progress move that rolls on a standard progress track type (defined by this move).",
 					"const": "progress_roll"
+				},
+				"tracks": {
+					"$ref": "#/definitions/ProgressTrackTypeInfo",
+					"description": "Describes the common features of progress tracks associated with this move."
+				},
+				"replaces": {
+					"$ref": "#/definitions/MoveId",
+					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerProgressRoll",
@@ -4603,16 +4684,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -4623,12 +4697,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
 				},
-				"tracks": {
-					"$ref": "#/definitions/ProgressTrackTypeInfo",
-					"description": "Describes the common features of progress tracks associated with this move."
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -4699,6 +4772,10 @@
 					"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
 					"const": "special_track"
 				},
+				"replaces": {
+					"$ref": "#/definitions/MoveId",
+					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerSpecialTrack",
 					"title": "Trigger",
@@ -4722,16 +4799,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -4742,8 +4812,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -4811,20 +4884,20 @@
 			"title": "TriggerActionRoll",
 			"type": "object",
 			"description": "Describes trigger conditions for a move that makes an action roll.",
-			"required": ["text", "conditions"],
+			"required": ["conditions", "text"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"type": "string",
-					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
-					"pattern": ".*\\.{3}"
-				},
 				"conditions": {
 					"type": "array",
 					"description": "Specific conditions that qualify for this trigger.",
 					"items": {
 						"$ref": "#/definitions/TriggerActionRollCondition"
 					}
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"type": "string",
+					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
+					"pattern": ".*\\.{3}"
 				}
 			}
 		},
@@ -4833,10 +4906,6 @@
 			"type": "object",
 			"required": ["method", "roll_options"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A markdown string of any trigger text specific to this trigger condition."
-				},
 				"by": {
 					"$ref": "#/definitions/TriggerBy"
 				},
@@ -4849,6 +4918,10 @@
 					"items": {
 						"$ref": "#/definitions/RollableValue"
 					}
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A markdown string of any trigger text specific to this trigger condition."
 				}
 			}
 		},
@@ -4857,10 +4930,6 @@
 			"type": "object",
 			"required": ["method", "roll_options"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A markdown string of any trigger text specific to this trigger condition."
-				},
 				"by": {
 					"$ref": "#/definitions/TriggerBy"
 				},
@@ -4890,6 +4959,10 @@
 							"type": "null"
 						}
 					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A markdown string of any trigger text specific to this trigger condition."
 				}
 			}
 		},
@@ -4930,14 +5003,8 @@
 			"title": "TriggerNoRoll",
 			"type": "object",
 			"description": "Describes trigger conditions for a move that makes no rolls.",
-			"required": ["text", "conditions"],
+			"required": ["conditions", "text"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"type": "string",
-					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
-					"pattern": ".*\\.{3}"
-				},
 				"conditions": {
 					"description": "Specific conditions that qualify for this trigger.",
 					"default": null,
@@ -4952,6 +5019,12 @@
 							"type": "null"
 						}
 					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"type": "string",
+					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
+					"pattern": ".*\\.{3}"
 				}
 			}
 		},
@@ -4960,10 +5033,6 @@
 			"type": "object",
 			"required": ["method", "roll_options"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A markdown string of any trigger text specific to this trigger condition."
-				},
 				"by": {
 					"$ref": "#/definitions/TriggerBy"
 				},
@@ -4975,6 +5044,10 @@
 					"type": "null",
 					"description": "The options available when rolling with this trigger condition.",
 					"default": null
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A markdown string of any trigger text specific to this trigger condition."
 				}
 			}
 		},
@@ -4996,20 +5069,20 @@
 		"TriggerProgressRoll": {
 			"title": "TriggerProgressRoll",
 			"type": "object",
-			"required": ["text", "conditions"],
+			"required": ["conditions", "text"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"type": "string",
-					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
-					"pattern": ".*\\.{3}"
-				},
 				"conditions": {
 					"type": "array",
 					"description": "Specific conditions that qualify for this trigger.",
 					"items": {
 						"$ref": "#/definitions/TriggerProgressRollCondition"
 					}
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"type": "string",
+					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
+					"pattern": ".*\\.{3}"
 				}
 			}
 		},
@@ -5018,10 +5091,6 @@
 			"type": "object",
 			"required": ["method", "roll_options"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A markdown string of any trigger text specific to this trigger condition."
-				},
 				"by": {
 					"$ref": "#/definitions/TriggerBy"
 				},
@@ -5035,6 +5104,10 @@
 					"items": {
 						"$ref": "#/definitions/ProgressRollOption"
 					}
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A markdown string of any trigger text specific to this trigger condition."
 				}
 			}
 		},
@@ -5043,10 +5116,6 @@
 			"type": "object",
 			"required": ["method", "roll_options"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A markdown string of any trigger text specific to this trigger condition."
-				},
 				"by": {
 					"$ref": "#/definitions/TriggerBy"
 				},
@@ -5077,6 +5146,10 @@
 							"type": "null"
 						}
 					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A markdown string of any trigger text specific to this trigger condition."
 				}
 			}
 		},
@@ -5098,20 +5171,20 @@
 		"TriggerSpecialTrack": {
 			"title": "TriggerSpecialTrack",
 			"type": "object",
-			"required": ["text", "conditions"],
+			"required": ["conditions", "text"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"type": "string",
-					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
-					"pattern": ".*\\.{3}"
-				},
 				"conditions": {
 					"type": "array",
 					"description": "Specific conditions that qualify for this trigger.",
 					"items": {
 						"$ref": "#/definitions/TriggerSpecialTrackCondition"
 					}
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"type": "string",
+					"description": "A markdown string containing the primary trigger text for this move.\n\nSecondary trigger text (for specific stats or uses of an asset ability) may be described in individual trigger conditions.",
+					"pattern": ".*\\.{3}"
 				}
 			}
 		},
@@ -5120,10 +5193,6 @@
 			"type": "object",
 			"required": ["method", "roll_options"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A markdown string of any trigger text specific to this trigger condition."
-				},
 				"by": {
 					"$ref": "#/definitions/TriggerBy"
 				},
@@ -5136,6 +5205,10 @@
 					"items": {
 						"$ref": "#/definitions/TriggerSpecialTrackConditionOption"
 					}
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A markdown string of any trigger text specific to this trigger condition."
 				}
 			}
 		},
@@ -5145,10 +5218,6 @@
 			"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacy (Starforged).",
 			"required": ["method", "roll_options"],
 			"properties": {
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A markdown string of any trigger text specific to this trigger condition."
-				},
 				"by": {
 					"$ref": "#/definitions/TriggerBy"
 				},
@@ -5178,6 +5247,10 @@
 							"type": "null"
 						}
 					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A markdown string of any trigger text specific to this trigger condition."
 				}
 			}
 		},
@@ -5300,12 +5373,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -5316,8 +5386,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -5515,8 +5588,8 @@
 				"label",
 				"field_type",
 				"value",
-				"disables_asset",
-				"is_impact"
+				"is_impact",
+				"disables_asset"
 			],
 			"properties": {
 				"label": {
@@ -5526,23 +5599,23 @@
 					"type": "string",
 					"const": "card_flip"
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
 				"value": {
 					"type": "boolean",
 					"description": "Is the card flipped over?",
 					"default": false
 				},
-				"disables_asset": {
-					"type": "boolean",
-					"description": "Does this field disable the asset when its value is set to `true`?",
-					"default": false
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				},
 				"is_impact": {
 					"type": "boolean",
 					"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?",
+					"default": false
+				},
+				"disables_asset": {
+					"type": "boolean",
+					"description": "Does this field disable the asset when its value is set to `true`?",
 					"default": false
 				}
 			}
@@ -5554,8 +5627,8 @@
 				"label",
 				"field_type",
 				"value",
-				"disables_asset",
-				"is_impact"
+				"is_impact",
+				"disables_asset"
 			],
 			"properties": {
 				"label": {
@@ -5565,23 +5638,23 @@
 					"type": "string",
 					"const": "checkbox"
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
 				"value": {
 					"type": "boolean",
 					"description": "Is the box checked?",
 					"default": false
 				},
-				"disables_asset": {
-					"type": "boolean",
-					"description": "Does this field disable the asset when its value is set to `true`?",
-					"default": false
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				},
 				"is_impact": {
 					"type": "boolean",
 					"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?",
+					"default": false
+				},
+				"disables_asset": {
+					"type": "boolean",
+					"description": "Does this field disable the asset when its value is set to `true`?",
 					"default": false
 				}
 			}
@@ -5602,6 +5675,10 @@
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"$ref": "#/definitions/AssetCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
 					"$ref": "#/definitions/AssetCollectionId",
@@ -5642,16 +5719,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/AssetCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -5662,8 +5732,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -5671,7 +5744,7 @@
 			"title": "AssetConditionMeter",
 			"type": "object",
 			"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\".",
-			"required": ["label", "field_type", "min", "max", "value", "rollable"],
+			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel"
@@ -5679,6 +5752,12 @@
 				"field_type": {
 					"type": "string",
 					"const": "condition_meter"
+				},
+				"rollable": {
+					"type": "boolean",
+					"description": "Is this meter's `value` usable as a stat in an action roll?",
+					"default": true,
+					"const": true
 				},
 				"min": {
 					"type": "integer",
@@ -5689,14 +5768,14 @@
 					"type": "integer",
 					"description": "The maximum value of this meter."
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
 				"value": {
 					"type": "integer",
 					"description": "The current value of this meter.",
 					"default": 0
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				},
 				"controls": {
 					"type": "object",
@@ -5711,6 +5790,7 @@
 				"moves": {
 					"type": "object",
 					"description": "Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.",
+					"releaseStage": "unstable",
 					"properties": {
 						"recover": {
 							"type": "array",
@@ -5738,14 +5818,7 @@
 								]
 							}
 						}
-					},
-					"releaseStage": "unstable"
-				},
-				"rollable": {
-					"type": "boolean",
-					"description": "Is this meter's `value` usable as a stat in an action roll?",
-					"const": true,
-					"default": true
+					}
 				}
 			}
 		},
@@ -5994,7 +6067,7 @@
 			"type": "object",
 			"description": "A clock with 4 or more segments.",
 			"$comment": "Semantics are similar to `<input type=\"number\">`, but rendered as a clock (a circle with equally sized wedges).",
-			"required": ["label", "field_type", "min", "max", "value", "rollable"],
+			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel"
@@ -6003,32 +6076,32 @@
 					"type": "string",
 					"const": "clock"
 				},
+				"rollable": {
+					"type": "boolean",
+					"default": false,
+					"const": false
+				},
 				"min": {
 					"type": "integer",
 					"description": "The minimum number of filled clock segments. This is always 0.",
-					"const": 0,
-					"default": 0
+					"default": 0,
+					"const": 0
 				},
 				"max": {
 					"title": "ClockSize",
 					"type": "integer",
 					"description": "The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.",
-					"minimum": 2,
-					"multipleOf": 2
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
+					"multipleOf": 2,
+					"minimum": 2
 				},
 				"value": {
 					"type": "integer",
 					"description": "The current value of this input.",
 					"default": 0
 				},
-				"rollable": {
-					"type": "boolean",
-					"const": false,
-					"default": false
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				}
 			}
 		},
@@ -6036,7 +6109,7 @@
 			"title": "ConditionMeterField",
 			"type": "object",
 			"description": "A meter with an integer value, bounded by a minimum and maximum.",
-			"required": ["label", "field_type", "min", "max", "value", "rollable"],
+			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel"
@@ -6044,6 +6117,12 @@
 				"field_type": {
 					"type": "string",
 					"const": "condition_meter"
+				},
+				"rollable": {
+					"type": "boolean",
+					"description": "Is this meter's `value` usable as a stat in an action roll?",
+					"default": true,
+					"const": true
 				},
 				"min": {
 					"type": "integer",
@@ -6054,20 +6133,14 @@
 					"type": "integer",
 					"description": "The maximum value of this meter."
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
 				"value": {
 					"type": "integer",
 					"description": "The current value of this meter.",
 					"default": 0
 				},
-				"rollable": {
-					"type": "boolean",
-					"description": "Is this meter's `value` usable as a stat in an action roll?",
-					"const": true,
-					"default": true
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				}
 			}
 		},
@@ -6076,7 +6149,7 @@
 			"type": "object",
 			"description": "A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.",
 			"$comment": "Semantics are similar to `<input type=\"number\" step=\"1\">`",
-			"required": ["label", "field_type", "min", "max", "value", "rollable"],
+			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel"
@@ -6084,6 +6157,11 @@
 				"field_type": {
 					"type": "string",
 					"const": "counter"
+				},
+				"rollable": {
+					"type": "boolean",
+					"default": false,
+					"const": false
 				},
 				"min": {
 					"type": "integer",
@@ -6102,19 +6180,14 @@
 						}
 					]
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
 				"value": {
 					"type": "integer",
 					"description": "The current value of this input.",
 					"default": 0
 				},
-				"rollable": {
-					"type": "boolean",
-					"const": false,
-					"default": false
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				}
 			}
 		},
@@ -6123,7 +6196,7 @@
 			"type": "object",
 			"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).",
 			"$comment": "Semantics are similar to the HTML `<select>` element",
-			"required": ["label", "field_type", "value", "choices"],
+			"required": ["label", "field_type", "choices", "value"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel"
@@ -6131,24 +6204,6 @@
 				"field_type": {
 					"type": "string",
 					"const": "select_enhancement"
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
-				"value": {
-					"description": "The current value of this input.",
-					"default": null,
-					"anyOf": [
-						{
-							"$ref": "#/definitions/DictKey",
-							"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected.",
-							"default": null
-						},
-						{
-							"type": "null"
-						}
-					]
 				},
 				"choices": {
 					"type": "object",
@@ -6194,6 +6249,24 @@
 							]
 						}
 					}
+				},
+				"value": {
+					"description": "The current value of this input.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DictKey",
+							"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected.",
+							"default": null
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				}
 			}
 		},
@@ -6253,7 +6326,7 @@
 			"type": "object",
 			"description": "Represents a list of mutually exclusive choices.",
 			"$comment": "Semantics are similar to the HTML `<select>` element",
-			"required": ["label", "field_type", "value", "choices"],
+			"required": ["label", "field_type", "choices", "value"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/InputLabel"
@@ -6262,9 +6335,14 @@
 					"type": "string",
 					"const": "select_value"
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
+				"choices": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/definitions/SelectValueFieldChoice"
+						}
+					}
 				},
 				"value": {
 					"description": "The current value of this input.",
@@ -6280,14 +6358,9 @@
 						}
 					]
 				},
-				"choices": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/SelectValueFieldChoice"
-						}
-					}
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				}
 			}
 		},
@@ -6601,10 +6674,6 @@
 					"type": "string",
 					"const": "text"
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon associated with this input."
-				},
 				"value": {
 					"description": "The content of this text input, or `null` if it's empty",
 					"default": null,
@@ -6616,6 +6685,10 @@
 							"type": "null"
 						}
 					]
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon associated with this input."
 				}
 			}
 		},
@@ -6649,15 +6722,15 @@
 				"summary": {
 					"$ref": "#/definitions/MarkdownString"
 				},
+				"your_character": {
+					"$ref": "#/definitions/MarkdownString"
+				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -6668,11 +6741,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
 				},
-				"your_character": {
-					"$ref": "#/definitions/MarkdownString"
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -6759,21 +6832,22 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"i18n": {
-					"$ref": "#/definitions/I18nHints"
-				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		},
 		"Atlas": {
 			"title": "Atlas",
 			"type": "object",
+			"releaseStage": "experimental",
 			"required": ["id", "name", "source"],
 			"properties": {
 				"id": {
@@ -6787,6 +6861,10 @@
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"$ref": "#/definitions/AtlasId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
 					"$ref": "#/definitions/AtlasId",
@@ -6836,16 +6914,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"replaces": {
-					"$ref": "#/definitions/AtlasId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -6856,11 +6927,13 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
-			},
-			"releaseStage": "experimental"
+			}
 		},
 		"AtlasEntry": {
 			"title": "AtlasEntry",
@@ -6901,12 +6974,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -6917,8 +6987,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -6938,7 +7011,7 @@
 			"title": "Rarity",
 			"type": "object",
 			"description": "A rarity, as described in Ironsworn: Delve.",
-			"required": ["id", "name", "description", "source", "asset", "xp_cost"],
+			"required": ["id", "name", "xp_cost", "asset", "description", "source"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/RarityId",
@@ -6952,6 +7025,17 @@
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
+				"xp_cost": {
+					"type": "integer",
+					"description": "From Ironsworn: Delve, p. 174:\n\n      Some assets will bring a rarity into play more often than others, so the experience point cost for a rarity will vary by the linked asset. These costs are shown in the tables on page 175.\n\n      If you are playing solo, and aren’t concerned with the relative balance of rarity abilities, you can ignore these variable costs. If so, spend 3 experience points to purchase a rarity.",
+					"default": 3,
+					"minimum": 3,
+					"maximum": 5
+				},
+				"asset": {
+					"$ref": "#/definitions/AssetId",
+					"description": "The asset augmented by this rarity."
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
@@ -6961,16 +7045,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"asset": {
-					"$ref": "#/definitions/AssetId",
-					"description": "The asset augmented by this rarity."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -6981,15 +7058,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
 				},
-				"xp_cost": {
-					"type": "integer",
-					"description": "From Ironsworn: Delve, p. 174:\n\n      Some assets will bring a rarity into play more often than others, so the experience point cost for a rarity will vary by the linked asset. These costs are shown in the tables on page 175.\n\n      If you are playing solo, and aren’t concerned with the relative balance of rarity abilities, you can ignore these variable costs. If so, spend 3 experience points to purchase a rarity.",
-					"default": 3,
-					"minimum": 3,
-					"maximum": 5
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -7000,12 +7073,12 @@
 			"required": [
 				"id",
 				"name",
+				"theme",
+				"domain",
 				"rank",
 				"description",
-				"source",
 				"denizens",
-				"domain",
-				"theme"
+				"source"
 			],
 			"properties": {
 				"id": {
@@ -7020,11 +7093,32 @@
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
+				"region": {
+					"$ref": "#/definitions/AtlasEntryId",
+					"description": "The ID of an atlas entry representing the region in which this delve site is located."
+				},
+				"theme": {
+					"$ref": "#/definitions/DelveSiteThemeId"
+				},
+				"domain": {
+					"$ref": "#/definitions/DelveSiteDomainId"
+				},
+				"extra_card": {
+					"description": "An additional theme or domain card ID, for use with optional rules in Ironsworn: Delve.",
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DelveSiteThemeId"
+						},
+						{
+							"$ref": "#/definitions/DelveSiteDomainId"
+						}
+					]
 				},
 				"rank": {
 					"$ref": "#/definitions/ChallengeRank"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
 				},
 				"description": {
 					"$ref": "#/definitions/MarkdownString"
@@ -7032,9 +7126,20 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				"tags": {
+					"type": "object",
+					"releaseStage": "experimental",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/definitions/Tag"
+								}
+							}
+						}
+					}
 				},
 				"denizens": {
 					"allOf": [
@@ -7276,47 +7381,15 @@
 									"additionalProperties": true
 								}
 							],
-							"additionalItems": false,
+							"minItems": 12,
 							"maxItems": 12,
-							"minItems": 12
+							"additionalItems": false
 						}
 					]
 				},
-				"domain": {
-					"$ref": "#/definitions/DelveSiteDomainId"
-				},
-				"extra_card": {
-					"description": "An additional theme or domain card ID, for use with optional rules in Ironsworn: Delve.",
-					"anyOf": [
-						{
-							"$ref": "#/definitions/DelveSiteThemeId"
-						},
-						{
-							"$ref": "#/definitions/DelveSiteDomainId"
-						}
-					]
-				},
-				"region": {
-					"$ref": "#/definitions/AtlasEntryId",
-					"description": "The ID of an atlas entry representing the region in which this delve site is located."
-				},
-				"tags": {
-					"type": "object",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					},
-					"releaseStage": "experimental"
-				},
-				"theme": {
-					"$ref": "#/definitions/DelveSiteThemeId"
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -7332,6 +7405,10 @@
 				"name": {
 					"$ref": "#/definitions/Label"
 				},
+				"npc": {
+					"$ref": "#/definitions/NpcId",
+					"description": "The ID of the relevant NPC entry, if one is specified."
+				},
 				"min": {
 					"type": "integer"
 				},
@@ -7340,10 +7417,6 @@
 				},
 				"frequency": {
 					"$ref": "#/definitions/DelveSiteDenizenFrequency"
-				},
-				"npc": {
-					"$ref": "#/definitions/NpcId",
-					"description": "The ID of the relevant NPC entry, if one is specified."
 				}
 			}
 		},
@@ -7368,6 +7441,10 @@
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"name_oracle": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
@@ -7568,9 +7645,9 @@
 									"additionalProperties": true
 								}
 							],
-							"additionalItems": false,
+							"minItems": 12,
 							"maxItems": 12,
-							"minItems": 12
+							"additionalItems": false
 						}
 					]
 				},
@@ -7661,9 +7738,9 @@
 									"additionalProperties": true
 								}
 							],
-							"additionalItems": false,
+							"minItems": 5,
 							"maxItems": 5,
-							"minItems": 5
+							"additionalItems": false
 						}
 					]
 				},
@@ -7673,16 +7750,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"name_oracle": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -7693,8 +7763,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -7735,15 +7808,15 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"i18n": {
-					"$ref": "#/definitions/I18nHints"
-				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		},
@@ -7784,15 +7857,15 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"i18n": {
-					"$ref": "#/definitions/I18nHints"
-				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		},
@@ -7907,9 +7980,9 @@
 									"additionalProperties": true
 								}
 							],
-							"additionalItems": false,
+							"minItems": 5,
 							"maxItems": 5,
-							"minItems": 5
+							"additionalItems": false
 						}
 					]
 				},
@@ -8105,9 +8178,9 @@
 									"additionalProperties": true
 								}
 							],
-							"additionalItems": false,
+							"minItems": 12,
 							"maxItems": 12,
-							"minItems": 12
+							"additionalItems": false
 						}
 					]
 				},
@@ -8117,12 +8190,9 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"source": {
-					"$ref": "#/definitions/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"tags": {
 					"type": "object",
+					"releaseStage": "experimental",
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
@@ -8133,8 +8203,11 @@
 								}
 							}
 						}
-					},
-					"releaseStage": "experimental"
+					}
+				},
+				"source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			}
 		},
@@ -8175,15 +8248,15 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"i18n": {
-					"$ref": "#/definitions/I18nHints"
-				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		},
@@ -8224,15 +8297,15 @@
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
-				"i18n": {
-					"$ref": "#/definitions/I18nHints"
-				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"i18n": {
+					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		}

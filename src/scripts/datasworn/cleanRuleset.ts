@@ -1,5 +1,5 @@
 import JsonPointer from 'json-pointer'
-import type * as Out from '../../types/Datasworn.js'
+import type * as Datasworn from '../../types/Datasworn.js'
 import {
 	isSortableObjectSchema,
 	sortDataswornKeys,
@@ -7,6 +7,8 @@ import {
 } from './sort.js'
 import { sortTopLevelCollection } from './sortCollection.js'
 import { type Draft07 } from 'json-schema-library'
+import { Type } from '@sinclair/typebox'
+import Assert from './validators.js'
 
 const metadataKeys: string[] = []
 export function cleanRuleset(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
@@ -34,8 +36,11 @@ export function cleanRuleset(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
 
 	// sort collections
 	for (const [k, v] of Object.entries(datasworn)) {
-		if (metadataKeys.includes(k)) continue
-		if (typeof v !== 'object') continue
+		// this should probably just be, like, a validator
+		// if (metadataKeys.includes(k)) continue
+		// if (typeof v !== 'object') continue
+		// if (Array.isArray(v)) continue
+		if (!Assert.SourcedNodeDictionary.Check(v)) continue
 		if (k === 'rules') continue
 
 		// log.info(`iterating key: ${k}`)

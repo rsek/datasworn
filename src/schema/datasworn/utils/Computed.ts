@@ -3,7 +3,8 @@ import {
 	type SchemaOptions,
 	type Static,
 	type TObject,
-	type TSchema
+	type TSchema,
+	ObjectOptions
 } from '@sinclair/typebox'
 
 /** Symbol indicating that this property is computed at build time, and is therefore optional in DataswornSource */

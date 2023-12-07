@@ -9,11 +9,26 @@ export type RulesPackage = Ruleset | Expansion
  */
 export interface Ruleset {
 	id: RulesetId
+	package_type: 'ruleset'
 	/**
 	 * The version of the Datasworn format used by this data.
 	 */
 	datasworn_version?: SemanticVersion
-	package_type: 'ruleset'
+	title?: SourceTitle
+	/**
+	 * Lists authors credited by the source material.
+	 */
+	authors?: AuthorInfo[]
+	/**
+	 * The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating.
+	 */
+	date?: Date
+	/**
+	 * A URL where the source document is available.
+	 * @example "https://ironswornrpg.com"
+	 */
+	url?: WebUrl
+	license?: License
 	rules?: Rules
 	/**
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
@@ -26,7 +41,7 @@ export interface Ruleset {
 	 */
 	moves?: Record<DictKey, MoveCategory>
 	/**
-	 * A dictionary object containing asset types, which contain assets.
+	 * A dictionary object containing asset collections, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	assets?: Record<DictKey, AssetCollection>
@@ -71,6 +86,21 @@ export interface Ruleset {
  * A Datasworn package that relies on an external package to provide its ruleset.
  */
 export interface Expansion {
+	title?: SourceTitle
+	/**
+	 * Lists authors credited by the source material.
+	 */
+	authors?: AuthorInfo[]
+	/**
+	 * The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating.
+	 */
+	date?: Date
+	/**
+	 * A URL where the source document is available.
+	 * @example "https://ironswornrpg.com"
+	 */
+	url?: WebUrl
+	license?: License
 	/**
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
 	 * @remarks Deserialize as a dictionary object.
@@ -82,7 +112,7 @@ export interface Expansion {
 	 */
 	moves?: Record<DictKey, MoveCategory>
 	/**
-	 * A dictionary object containing asset types, which contain assets.
+	 * A dictionary object containing asset collections, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	assets?: Record<DictKey, AssetCollection>
@@ -122,11 +152,11 @@ export interface Expansion {
 	 */
 	site_domains?: Record<DictKey, DelveSiteDomain>
 	id: ExpansionId
+	package_type: 'expansion'
 	/**
 	 * The version of the Datasworn format used by this data.
 	 */
 	datasworn_version?: SemanticVersion
-	package_type: 'expansion'
 	ruleset: RulesetId
 	rules?: RulesExpansion
 }
@@ -623,6 +653,29 @@ export interface AuthorInfo {
 export type CssColor = string
 
 /**
+ * A date formatted YYYY-MM-DD.
+ * @remarks You may prefer to deserialize this as a Date object.
+ * @pattern ```javascript
+ * /[0-9]{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1])/
+ * ```
+ */
+export type Date = string
+
+/**
+ * An URL pointing to the location where this element's license can be found.
+ *
+ * A `null` here indicates that the content provides __no__ license, and is not intended for redistribution.
+ * @example "https://creativecommons.org/licenses/by/4.0"
+ * @example "https://creativecommons.org/licenses/by-nc-sa/4.0"
+ */
+export type License = WebUrl | null
+
+/**
+ * Represents a page number in a book.
+ */
+export type PageNumber = number
+
+/**
  * @pattern ```javascript
  * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
  * ```
@@ -632,41 +685,38 @@ export type SemanticVersion = string
 /**
  * Metadata describing the original source of this item
  */
-export interface Source {
-	/**
-	 * The title of the source document.
-	 * @example "Ironsworn Rulebook"
-	 * @example "Ironsworn Assets Master Set"
-	 * @example "Ironsworn: Delve"
-	 * @example "Ironsworn: Starforged Rulebook"
-	 * @example "Ironsworn: Starforged Assets"
-	 * @example "Sundered Isles"
-	 */
-	title: string
+export interface SourceInfo {
+	title: SourceTitle
 	/**
 	 * The page number where this item is described in full.
 	 */
-	page?: number
+	page?: PageNumber
+	/**
+	 * Lists authors credited by the source material.
+	 */
 	authors: AuthorInfo[]
 	/**
 	 * The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating.
-	 * @remarks You may prefer to deserialize this as a Date object.
 	 */
-	date: string
+	date: Date
 	/**
-	 * An absolute URL where the source document is available.
+	 * A URL where the source document is available.
 	 * @example "https://ironswornrpg.com"
 	 */
-	url: string
-	/**
-	 * An absolute URL pointing to the location where this element's license can be found.
-	 *
-	 * A `null` here indicates that the content provides __no__ license, and is not intended for redistribution.  Datasworn's build process skips unlicensed content by default.
-	 * @example "https://creativecommons.org/licenses/by/4.0"
-	 * @example "https://creativecommons.org/licenses/by-nc-sa/4.0"
-	 */
-	license: string | null
+	url: WebUrl
+	license: License
 }
+
+/**
+ * The title of the source document.
+ * @example "Ironsworn Rulebook"
+ * @example "Ironsworn Assets Master Set"
+ * @example "Ironsworn: Delve"
+ * @example "Ironsworn: Starforged Rulebook"
+ * @example "Ironsworn: Starforged Assets"
+ * @example "Sundered Isles"
+ */
+export type SourceTitle = string
 
 /**
  * @unstable
@@ -683,7 +733,7 @@ export interface Suggestions {
 }
 
 /**
- * A relative URL pointing to a vector image in the SVG format.
+ * A relative (local) URL pointing to a vector image in the SVG format.
  * @pattern ```javascript
  * /\.svg$/
  * ```
@@ -691,7 +741,12 @@ export interface Suggestions {
 export type SvgImageUrl = string
 
 /**
- * A relative URL pointing to a raster image in the WEBP format.
+ * An absolute URL pointing to a website.
+ */
+export type WebUrl = string
+
+/**
+ * A relative (local) URL pointing to a raster image in the WEBP format.
  * @pattern ```javascript
  * /\.webp$/
  * ```
@@ -1477,7 +1532,7 @@ export interface Npc {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -1517,7 +1572,7 @@ export interface NpcCollection {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -1840,7 +1895,7 @@ export interface OracleTableDetails {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2021,7 +2076,7 @@ export interface OracleTableSharedDetails {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2101,7 +2156,7 @@ export interface OracleTableSharedResults {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2176,7 +2231,7 @@ export interface OracleTableSharedRolls {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2251,7 +2306,7 @@ export interface OracleTableSimple {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2338,7 +2393,7 @@ export interface OracleTablesCollection {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2429,7 +2484,7 @@ export interface MoveActionRoll {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2490,7 +2545,7 @@ export interface MoveCategory {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2555,7 +2610,7 @@ export interface MoveNoRoll {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2643,7 +2698,7 @@ export interface MoveProgressRoll {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2723,7 +2778,7 @@ export interface MoveSpecialTrack {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3062,7 +3117,7 @@ export interface Asset {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3255,7 +3310,7 @@ export interface AssetCollection {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3695,7 +3750,7 @@ export interface Truth {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3775,7 +3830,7 @@ export interface Atlas {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3835,7 +3890,7 @@ export interface AtlasEntry {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3885,7 +3940,7 @@ export interface Rarity {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3927,7 +3982,7 @@ export interface DelveSite {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -4052,7 +4107,7 @@ export interface DelveSiteDomain {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -4236,7 +4291,7 @@ export interface DelveSiteTheme {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: Source
+	source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental

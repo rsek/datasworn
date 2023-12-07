@@ -1,4 +1,4 @@
-import { Type, type Static, type TUnsafe } from '@sinclair/typebox'
+import { Type, type Static, type TUnsafe, TProperties } from '@sinclair/typebox'
 import { type Id, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 
@@ -17,6 +17,8 @@ import { type TRules } from './Rules.js'
 import { type TTruth } from './Truths.js'
 import * as Utils from './Utils.js'
 import * as Rules from './Rules.js'
+import { SourceInfo } from './common/Metadata.js'
+import { mapValues } from 'lodash-es'
 
 const datasworn_version = Utils.Computed(
 	Type.Ref(Metadata.SemanticVersion, {
@@ -24,12 +26,19 @@ const datasworn_version = Utils.Computed(
 	})
 )
 
+const RulesPackageMetaProps = {
+	datasworn_version,
+	...mapValues(Type.Required(Type.Omit(SourceInfo, ['page'])).properties, (v) =>
+		Utils.SourceOptional(v)
+	)
+}
+
 export const Ruleset = Type.Object(
 	{
 		// ruleset ID isn't optional in source, so we don't flag it with IdentifiedNode
 		id: Type.Ref<typeof Id.RulesetId>('RulesetId'),
-		datasworn_version,
 		package_type: Type.Literal('ruleset'),
+		...RulesPackageMetaProps,
 		rules: Utils.SourceOptional(Type.Ref<TRules>('Rules')),
 		oracles: Utils.SourceOptional(
 			Generic.Dictionary(
@@ -52,7 +61,7 @@ export const Ruleset = Type.Object(
 			Generic.Dictionary(Type.Ref<TAssetCollection>('AssetCollection'), {
 				default: undefined,
 				description:
-					'A dictionary object containing asset types, which contain assets.'
+					'A dictionary object containing asset collections, which contain assets.'
 			})
 		),
 		atlas: Type.Optional(
@@ -104,7 +113,6 @@ export const Ruleset = Type.Object(
 	},
 	{
 		$id: 'Ruleset',
-
 		description:
 			'A standalone Datasworn package that describes its own ruleset.'
 	}
@@ -121,8 +129,8 @@ export const Expansion = Utils.Assign(
 		]),
 		Type.Object({
 			id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
-			datasworn_version,
 			package_type: Type.Literal('expansion'),
+			...RulesPackageMetaProps,
 			ruleset: Type.Ref<typeof Id.RulesetId>('RulesetId'),
 			rules: Type.Optional(Type.Ref(Rules.RulesExpansion))
 		})

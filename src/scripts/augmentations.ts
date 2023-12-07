@@ -21,3 +21,9 @@ declare module '@sinclair/typebox' {
 		i18n?: Static<typeof Keywords.i18n>
 	}
 }
+
+declare global {
+	interface ObjectConstructor {
+		keys<T extends object>(object: T): (keyof T)[]
+	}
+}

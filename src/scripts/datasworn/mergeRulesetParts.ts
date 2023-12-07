@@ -1,5 +1,5 @@
 import { merge } from 'lodash-es'
-import type * as Out from '../../types/Datasworn.js'
+import type * as Datasworn from '../../types/Datasworn.js'
 import { sortDataswornKeys } from './sort.js'
 
 export function mergeRulesetData(data: Map<string, Datasworn.RulesPackage>) {
