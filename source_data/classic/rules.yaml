@@ -1,12 +1,12 @@
 id: classic
 package_type: ruleset
-# source:
-#   title: Ironsworn Rulebook
-#   url: https://ironswornrpg.com
-#   authors:
-#     - name: Shawn Tomkin
-#   date: 2019-06-05
-#   license: https://creativecommons.org/licenses/by-nc-sa/4.0
+<<: &Source
+  title: Ironsworn Rulebook
+  url: https://ironswornrpg.com
+  authors:
+    - name: Shawn Tomkin
+  date: 2019-06-05
+  license: https://creativecommons.org/licenses/by/4.0
 rules:
   stats:
     edge:

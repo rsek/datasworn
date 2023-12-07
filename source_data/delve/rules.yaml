@@ -1,6 +1,13 @@
 id: delve
 package_type: expansion
 ruleset: classic
+<<: &Source
+  license: https://creativecommons.org/licenses/by/4.0
+  url: https://ironswornrpg.com
+  date: 2020-02-13
+  title: 'Ironsworn: Delve'
+  authors:
+    - name: Shawn Tomkin
 rules:
   special_tracks:
     failure_track:
