@@ -37,7 +37,7 @@ oracles:
             oracle_type: column_simple
             # usage:
             #   requires: *attr:Location.Planetside
-            table:
+            rows:
               - min: 1
                 max: 25
                 result: Starship
@@ -62,7 +62,7 @@ oracles:
             oracle_type: column_simple
             # usage:
             #   requires: *attr:Location.Orbital
-            table:
+            rows:
               - min: 1
                 max: 40
                 result: Starship
@@ -85,7 +85,7 @@ oracles:
             oracle_type: column_simple
             # usage:
             #   requires: *attr:Location.DeepSpace
-            table:
+            rows:
               - min: 1
                 max: 75
                 result: Starship
@@ -115,7 +115,7 @@ oracles:
             #   requires:
             #     attributes:
             #       derelict_type: [starship]
-            table:
+            rows:
               - &ZoneRow.0
                 min: null
                 max: null
@@ -166,7 +166,7 @@ oracles:
             #   requires:
             #     attributes:
             #       derelict_type: [settlement]
-            table:
+            rows:
               - *ZoneRow.0
               - min: 1
                 max: 20
@@ -203,7 +203,7 @@ oracles:
         source:
           <<: *Source
           page: 348
-        table:
+        rows:
           - min: 1
             max: 40
             result: Planetside
@@ -235,7 +235,7 @@ oracles:
         #   initial: true
         # content:
         #   part_of_speech: [fragment]
-        table:
+        rows:
           - min: 1
             max: 10
             result: Functional
@@ -266,7 +266,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [first look]
-        table:
+        rows:
           - min: 1
             max: 15
             result: Blocked access
@@ -311,7 +311,7 @@ oracles:
         recommended_rolls:
           min: 1
           max: 2
-        table:
+        rows:
           - min: 1
             max: 3
             result: Abnormal gravity

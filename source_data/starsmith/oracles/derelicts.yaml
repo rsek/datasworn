@@ -17,7 +17,7 @@ oracles:
           <<: *Source
         replaces: starforged/oracles/derelicts/outer_first_look
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 15
             result: Blocked access
@@ -113,7 +113,7 @@ oracles:
           <<: *Source
         replaces: starforged/oracles/derelicts/inner_first_look
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Abnormal gravity
@@ -413,7 +413,7 @@ oracles:
           <<: *Source
         name: Location and Type
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 10
             result: Planetside starship

@@ -29,7 +29,7 @@ oracles:
             name: Table A
             oracle_type: table_simple
             canonical_name: Ironlander Names
-            table:
+            rows:
               - <<: &i18n.proper_noun
                   i18n:
                     result:
@@ -440,7 +440,7 @@ oracles:
             canonical_name: Ironlander Names
             name: Table B
             oracle_type: table_simple
-            table:
+            rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 1
@@ -854,7 +854,7 @@ oracles:
             name: Giants
             oracle_type: column_simple
             # source: *CollectionSource
-            table:
+            rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 4
@@ -959,7 +959,7 @@ oracles:
             name: Varou
             oracle_type: column_simple
             # source: *CollectionSource
-            table:
+            rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 4
@@ -1064,7 +1064,7 @@ oracles:
             name: Trolls
             oracle_type: column_simple
             # source: *CollectionSource
-            table:
+            rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 4
@@ -1174,7 +1174,7 @@ oracles:
         source:
           <<: *Source
           page: 186
-        table:
+        rows:
           - <<: *i18n.proper_noun
             min: 1
             max: 2

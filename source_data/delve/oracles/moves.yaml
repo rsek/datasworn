@@ -39,7 +39,7 @@ oracles:
             <<: &DelveTheDepths
               # source: *CollectionSource
               oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 45
                 result: &DelveTheDepths.0 'Mark progress and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
@@ -58,7 +58,7 @@ oracles:
           shadow:
             name: Shadow
             <<: *DelveTheDepths
-            table:
+            rows:
               - min: 1
                 max: 30
                 result: *DelveTheDepths.0
@@ -77,7 +77,7 @@ oracles:
           wits:
             name: Wits
             <<: *DelveTheDepths
-            table:
+            rows:
               - min: 1
                 max: 40
                 result: *DelveTheDepths.0
@@ -101,7 +101,7 @@ oracles:
         source:
           <<: *Source
           page: 30
-        table:
+        rows:
           - min: 1
             max: 25
             result: 'The terrain favors you, or you find a hidden path.'
@@ -138,7 +138,7 @@ oracles:
         source:
           <<: *Source
           page: 34
-        table:
+        rows:
           - min: 1
             max: 30
             result: 'Check the theme card.'
@@ -186,7 +186,7 @@ oracles:
         source:
           <<: *Source
           page: 68
-        table:
+        rows:
           - min: 1
             max: 22
             result: *Reveal_a_Danger_1
@@ -230,7 +230,7 @@ oracles:
         source:
           <<: *Source
           page: 155
-        table:
+        rows:
           - min: 1
             max: 30
             result: 'The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, [Reach a Milestone](id:classic/moves/quest/reach_a_milestone). Otherwise, mark menace.'

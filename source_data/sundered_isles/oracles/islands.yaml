@@ -17,7 +17,7 @@ oracles:
         source:
           <<: *Source
           page: 90
-        table:
+        rows:
           - min: 1
             max: 2
             result: Broad bay protected by offshore islet
@@ -100,7 +100,7 @@ oracles:
         source: *Source
         name: Offshore Observations
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 2
             result: Active lava flow
@@ -234,7 +234,7 @@ oracles:
         source: *Source
         name: Cursed Offshore Observations
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 3
             result: Alluring illusion
@@ -381,7 +381,7 @@ oracles:
               roll: Roll
               result: Result
               detail: Time to Walk the Island Circumference
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Small
@@ -406,7 +406,7 @@ oracles:
               roll: Roll
               result: Result
               detail: Detail
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Sodden
@@ -454,7 +454,7 @@ oracles:
                   name: Myriads
                   summary: Central Seas
                 oracle_type: column_details
-                table:
+                rows:
                   - min: 1
                     max: 15
                     <<: &Vitality.0
@@ -491,7 +491,7 @@ oracles:
                   name: Margins
                   summary: Outer Seas
                 oracle_type: column_details
-                table:
+                rows:
                   - min: 1
                     max: 10
                     <<: *Vitality.0
@@ -516,7 +516,7 @@ oracles:
                   name: Reaches
                   summary: Remote Seas
                 oracle_type: column_details
-                table:
+                rows:
                   - min: 1
                     max: 5
                     <<: *Vitality.0
@@ -546,7 +546,7 @@ oracles:
             <<: *Myriads
             # source: *Source
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 35
                 <<: &VisibleHabitation.0
@@ -575,7 +575,7 @@ oracles:
             # source: *Source
             <<: *Margins
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 50
                 <<: *VisibleHabitation.0
@@ -598,7 +598,7 @@ oracles:
             # source: *Source
             <<: *Reaches
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 65
                 <<: *VisibleHabitation.0

@@ -20,7 +20,7 @@ oracles:
           roll: Roll
           result: Result
           detail: Detail
-        table:
+        rows:
           - min: 1
             max: 20
             result: '[Highlands]'
@@ -65,7 +65,7 @@ oracles:
         source: *Source
         name: Overland Details
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 1
             result: A tree trunk bears a crudely carved message
@@ -370,7 +370,7 @@ oracles:
         source: *Source
         name: Cursed Overland Details
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 1
             result: Your breath escapes in wisps of fog as an uncanny chill takes hold
@@ -675,7 +675,7 @@ oracles:
         source: *Source
         name: Overland Perils
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 3
             result: Caught in a flood or forced to navigate a perilous waterway
@@ -792,7 +792,7 @@ oracles:
         source: *Source
         name: Overland Opportunities
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 4
             result: Advance warning of an ambush or lurking foe
@@ -878,7 +878,7 @@ oracles:
             name: Myriads
             summary: Central Seas
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 20
                 <<: &Waypoints.0
@@ -934,7 +934,7 @@ oracles:
             name: Margins
             summary: Outer Seas
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 20
                 <<: *Waypoints.0
@@ -961,7 +961,7 @@ oracles:
             name: Reaches
             summary: Remote Seas
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 20
                 <<: *Waypoints.0
@@ -994,7 +994,7 @@ oracles:
             name: Highlands
             oracle_type: table_simple
             summary: *highlands.summary
-            table:
+            rows:
               - <<: &Landmark.0
                   min: 1
                   max: 5
@@ -1080,7 +1080,7 @@ oracles:
             name: Jungle
             oracle_type: table_simple
             summary: *jungle.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Ancient tree with a vast canopy
               - <<: *Landmark.1
@@ -1127,7 +1127,7 @@ oracles:
             name: Lava Field
             oracle_type: table_simple
             summary: *lava_field.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Boiling lake
               - <<: *Landmark.1
@@ -1174,7 +1174,7 @@ oracles:
             name: Marsh
             oracle_type: table_simple
             summary: *marsh.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Bursts of flaming marsh gas
               - <<: *Landmark.1
@@ -1221,7 +1221,7 @@ oracles:
             name: River
             oracle_type: table_simple
             summary: *river.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Branching watercourse
               - <<: *Landmark.1
@@ -1268,7 +1268,7 @@ oracles:
             name: Scrub
             oracle_type: table_simple
             summary: *scrub.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Abandoned homestead
               - <<: *Landmark.1
@@ -1315,7 +1315,7 @@ oracles:
             name: Shore
             oracle_type: table_simple
             summary: *shore.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Approaching or anchored ship
               - <<: *Landmark.1
@@ -1362,7 +1362,7 @@ oracles:
             name: Swamp
             oracle_type: table_simple
             summary: *swamp.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Abandoned boat or raft
               - <<: *Landmark.1
@@ -1409,7 +1409,7 @@ oracles:
             name: Wastes
             oracle_type: table_simple
             summary: *wastes.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Carrion birds roosting in a dead tree
               - <<: *Landmark.1
@@ -1456,7 +1456,7 @@ oracles:
             name: Woodland
             oracle_type: table_simple
             summary: *woodland.summary
-            table:
+            rows:
               - <<: *Landmark.0
                 result: Cave tucked behind a misty waterfall
               - <<: *Landmark.1

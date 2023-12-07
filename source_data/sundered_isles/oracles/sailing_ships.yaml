@@ -19,7 +19,7 @@ oracles:
         summary: Use this table to generate the scale of a ship sighting, ranging from a single small ship to a massive armada.
         description: The ship challenge ranks are a starting place. Adjust for the capability of the forces you command and the nature of your objectives. Also, keep in mind that the rank of a ship is relative to other ship-scale vehicles, creatures, or powers. See page 54 for tips on handing naval encounters.
         oracle_type: table_details
-        table:
+        rows:
           - min: 1
             max: 30
             result: Small
@@ -69,7 +69,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 2
             result: Accompanied by creatures
@@ -189,7 +189,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 3
             result: Accompanied by a monstrous beast
@@ -291,7 +291,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 2
             result: Albatross or gull
@@ -441,7 +441,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 10
             result: Demonic figure
@@ -485,7 +485,7 @@ oracles:
           <<: *Source
           # TODO: additive curse
         summary: If you roll a Ship Mission curse, take your result on that table and envision an uncanny or dreadful aspect. For details on how the ship or its mission relates to a cursed power, use the table below.
-        table:
+        rows:
           - min: 1
             max: 15
             result: Acting to fulfill a dreadful bargain
@@ -516,7 +516,7 @@ oracles:
         summary: When upon a ship other than your own—visiting,to reveal new details. exploring, or boarding—use this table.
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 3
             result: Animal mascot
@@ -636,7 +636,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 5
             result: Bloody trail leads belowdecks
@@ -721,7 +721,7 @@ oracles:
         source:
           <<: *Source
         summary: Use this table when surveying a ship’s hold or if coming upon lost or abandoned cargo. Roll or choose a number of items as appropriate to the nature of the find. For example, once for the hold of a typical warship, or up to four times for a fully loaded tradeship. Ships also typically carry basic munitions and provisions for the crew, but this table reveals the details of cargo such as trade goods and plunder.
-        table:
+        rows:
           - min: 1
             max: 2
             result: Ammunition
@@ -865,7 +865,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 5
             result: Ancient sarcophagi
@@ -918,12 +918,12 @@ oracles:
       #   name: Ship Name
       #   source:
       #     <<: *Source
-      #   table:
+      #   rows:
       # cursed_name:
       #   name: Cursed Ship Name
       #   source:
       #     <<: *Source
-      #   table:
+      #   rows:
 
     collections:
       position:
@@ -941,7 +941,7 @@ oracles:
               roll: Roll
               result: Result
               detail: Detail
-            table:
+            rows:
               - min: 1
                 max: 40
                 result: Distant
@@ -963,7 +963,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: In Battle
@@ -1003,7 +1003,7 @@ oracles:
             #   <<: *Source
             summary: Central Seas
             oracle_type: column_simple
-            table:
+            rows:
               - &ControllingFaction.0
                 min: 1
                 max: 60
@@ -1022,7 +1022,7 @@ oracles:
             #   <<: *Source
             summary: Outer Seas
             oracle_type: column_simple
-            table:
+            rows:
               - <<: *ControllingFaction.0
                 min: 1
                 max: 45
@@ -1038,7 +1038,7 @@ oracles:
             #   <<: *Source
             summary: Remote Seas
             oracle_type: column_simple
-            table:
+            rows:
               - <<: *ControllingFaction.0
                 min: 1
                 max: 25
@@ -1088,7 +1088,7 @@ oracles:
             # source:
             #   <<: *Source
             oracle_type: column_simple
-            table:
+            rows:
               - &ShipMission.0
                 result: Blockade a location
               - &ShipMission.1
@@ -1171,7 +1171,7 @@ oracles:
             # source:
             #   <<: *Source
             oracle_type: column_simple
-            table:
+            rows:
               - *ShipMission.0
               - *ShipMission.1
               - *ShipMission.2
@@ -1226,7 +1226,7 @@ oracles:
             # source:
             #   <<: *Source
             oracle_type: column_simple
-            table:
+            rows:
               - <<: *ShipMission.0
                 min: 1
                 max: 2
@@ -1289,7 +1289,7 @@ oracles:
             oracle_type: column_simple
             # source:
             #   <<: *Source
-            table:
+            rows:
               - <<: *ShipMission.0
                 min: 1
                 max: 4
@@ -1352,7 +1352,7 @@ oracles:
             oracle_type: column_simple
             # source:
             #   <<: *Source
-            table:
+            rows:
               - <<: *ShipMission.0
                 min: 1
                 max: 6
@@ -1415,7 +1415,7 @@ oracles:
             oracle_type: column_simple
             # source:
             #   <<: *Source
-            table:
+            rows:
               - <<: *ShipMission.0
                 min: 1
                 max: 10
@@ -1472,7 +1472,7 @@ oracles:
             oracle_type: column_simple
             # source:
             #   <<: *Source
-            table:
+            rows:
               - <<: *ShipMission.0
                 min: 1
                 max: 12

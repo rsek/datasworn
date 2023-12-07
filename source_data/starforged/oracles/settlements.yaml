@@ -38,7 +38,7 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [terminus]
-            table:
+            rows:
               - &Pop.0
                 min: 1
                 max: 10
@@ -77,7 +77,7 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [outlands]
-            table:
+            rows:
               - min: 1
                 max: 15
                 <<: *Pop.0
@@ -106,7 +106,7 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [expanse]
-            table:
+            rows:
               - min: 1
                 max: 20
                 <<: *Pop.0
@@ -132,7 +132,7 @@ oracles:
           page: 322
         # _templateTableRows:
         #   content: *template.content:Generic.Location
-        table:
+        rows:
           - min: 1
             max: 40
             result: Planetside
@@ -159,7 +159,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description]
-        table:
+        rows:
           - min: 1
             max: 3
             result: Beautiful architecture
@@ -241,7 +241,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description]
-        table:
+        rows:
           - min: 1
             max: 20
             result: Welcoming
@@ -295,7 +295,7 @@ oracles:
           page: 323
         # usage:
         #   initial: true
-        table:
+        rows:
           - <<: &i18n.result.adjective
               i18n:
                 result:
@@ -348,7 +348,7 @@ oracles:
           max: 2
         summary: |-
           Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.
-        table:
+        rows:
           - <<: &i18n.result.common_noun
               i18n:
                 result:
@@ -504,7 +504,7 @@ oracles:
         #   tags: [peril, event, present]
         summary: |-
           Check the Settlement Trouble table when it’s appropriate for your character to know or uncover these details. The Settlement Trouble table provides a broad description of the site’s most dramatic current issue.
-        table:
+        rows:
           - min: 1
             max: 3
             result: Battle for leadership
@@ -638,7 +638,7 @@ oracles:
         #   initial: true
         # content:
         #   tags: [name]
-        table:
+        rows:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
           - <<: &i18n.result.proper_noun
               i18n:

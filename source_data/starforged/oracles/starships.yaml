@@ -44,7 +44,7 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [terminus]
-            table: &table:Mission
+            rows: &table:Mission
               - &Mission.0
                 min: 1
                 max: 3
@@ -206,7 +206,7 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [outlands]
-            table:
+            rows:
               - <<: *Mission.0
                 min: 1
                 max: 2
@@ -313,7 +313,7 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [expanse]
-            table:
+            rows:
               - <<: *Mission.0
                 min: 1
                 max: 2
@@ -422,7 +422,7 @@ oracles:
           roll: Roll
           result: Class
           detail: Typical Role
-        table:
+        rows:
           - min: 1
             max: 2
             result: Carrier
@@ -571,7 +571,7 @@ oracles:
           page: 326
         # usage:
         #   initial: true
-        table:
+        rows:
           - min: 1
             max: 10
             result: Battle fleet
@@ -616,7 +616,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [relationship]
-        table:
+        rows:
           - min: 1
             max: 3
             result: Familiar
@@ -668,7 +668,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description]
-        table:
+        rows:
           - min: 1
             max: 4
             result: Abnormal sensor readings
@@ -753,7 +753,7 @@ oracles:
         # _i18n:
         #   result:
         #     part_of_speech: proper_noun
-        table:
+        rows:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
           - min: 1
             max: 1

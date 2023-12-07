@@ -13,7 +13,7 @@ oracles:
       type:
         replaces: starforged/oracles/starships/type
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: Carrier
@@ -272,7 +272,7 @@ oracles:
       fleet:
         replaces: starforged/oracles/starships/fleet
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 10
             result: Battle fleet
@@ -348,7 +348,7 @@ oracles:
       initial_contact:
         replaces: starforged/oracles/starships/initial_contact
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Familiar
@@ -460,7 +460,7 @@ oracles:
       first_look:
         replaces: starforged/oracles/starships/first_look
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Abnormal sensor readings
@@ -668,7 +668,7 @@ oracles:
       name:
         replaces: starforged/oracles/starships/name
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: Arclight
@@ -1576,7 +1576,7 @@ oracles:
           terminus:
             replaces: starforged/oracles/starships/mission/terminus
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 3
                 result: Blockade a location
@@ -1883,7 +1883,7 @@ oracles:
           outlands:
             replaces: starforged/oracles/starships/mission/outlands
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 2
                 result: Blockade a location
@@ -2190,7 +2190,7 @@ oracles:
           expanse:
             replaces: starforged/oracles/starships/mission/expanse
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 2
                 result: Blockade a location

@@ -16,7 +16,7 @@ oracles:
           terminus:
             replaces: starforged/oracles/space/sighting/terminus
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 15
                 result: '[Stellar Object](starforged/oracles/space/stellar_object)'
@@ -233,7 +233,7 @@ oracles:
           outlands:
             replaces: starforged/oracles/space/sighting/outlands
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 15
                 result: '[Stellar Object](starforged/oracles/space/stellar_object)'
@@ -444,7 +444,7 @@ oracles:
           expanse:
             replaces: starforged/oracles/space/sighting/expanse
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 15
                 result: '[Stellar Object](starforged/oracles/space/stellar_object)'
@@ -655,7 +655,7 @@ oracles:
           prefix:
             replaces: starforged/oracles/space/sector_name/prefix
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 2
                 result: Accursed
@@ -1109,7 +1109,7 @@ oracles:
           suffix:
             replaces: starforged/oracles/space/sector_name/suffix
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 2
                 result: Abyss
@@ -1564,7 +1564,7 @@ oracles:
       stellar_object:
         replaces: starforged/oracles/space/stellar_object
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 15
             result: Smoldering red star
@@ -1685,7 +1685,7 @@ oracles:
       peril:
         replaces: starforged/oracles/space/peril
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Artificial gravity generator malfunctions
@@ -2013,7 +2013,7 @@ oracles:
       opportunity:
         replaces: starforged/oracles/space/opportunity
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Advance warning of an environmental threat

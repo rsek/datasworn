@@ -13,7 +13,7 @@ oracles:
       first_look:
         replaces: starforged/oracles/creatures/first_look
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: Antennae or sensory organs
@@ -467,7 +467,7 @@ oracles:
       encountered_behavior:
         replaces: starforged/oracles/creatures/encountered_behavior
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Ambusher
@@ -666,7 +666,7 @@ oracles:
       revealed_aspect:
         replaces: starforged/oracles/creatures/revealed_aspect
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: Alternative environment

@@ -24,7 +24,7 @@ oracles:
         #   tags: [peril, event, present]
         summary: |-
           This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](id:starforged/moves/fate/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
-        table:
+        rows:
           - min: 1
             max: 4
             result: Crucial equipment or device fails
@@ -133,7 +133,7 @@ oracles:
           max: 2
         summary: |-
           When you [Gather Information](id:starforged/moves/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](id:starforged/moves/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
-        table:
+        rows:
           - min: 1
             max: 3
             result: 'Affirms a previously understood fact or clue'
@@ -243,7 +243,7 @@ oracles:
         #   tags: [peril, event, present]
         summary: |-
           Meddling with alien artifacts or forbidden magic may put you at the mercy of chaos. Use this table to resolve the effects of ancient tech, rituals, or other strange forces. Results on this table may have devastating implications, so use it only in rare and dramatic moments.
-        table:
+        rows:
           - min: 1
             max: 3
             result: Alters or focuses gravity
@@ -357,7 +357,7 @@ oracles:
         #   tags: [peril, event, present]
         summary: |-
           Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and your objective.
-        table:
+        rows:
           - min: 1
             max: 3
             result: Block a path or cut off an objective

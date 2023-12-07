@@ -16,7 +16,7 @@ oracles:
         source: *Source
         oracle_type: table_simple
         name: Faction Relationships
-        table:
+        rows:
           - min: 1
             max: 10
             result: Antagonistic or at war with
@@ -66,7 +66,7 @@ oracles:
             #       content_type: result
             #     - label: Detail
             #       content_type: summary
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Akiya
@@ -120,7 +120,7 @@ oracles:
             #       content_type: result
             #     - label: Detail
             #       content_type: summary
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Bloody Skulls
@@ -174,7 +174,7 @@ oracles:
             #       content_type: result
             #     - label: Detail
             #       content_type: summary
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Argosy Company
@@ -228,7 +228,7 @@ oracles:
             #       content_type: result
             #     - label: Detail
             #       content_type: summary
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Acheron's Armada

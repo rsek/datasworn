@@ -44,7 +44,7 @@ oracles:
         source:
           <<: *Source
           page: 214
-        table:
+        rows:
           - min: 1
             max: 5
             result: Tiny (rodent-sized)
@@ -74,7 +74,7 @@ oracles:
         source:
           <<: *Source
           page: 214
-        table:
+        rows:
           - <<: &i18n.adjunct_common_noun
               i18n:
                 result:
@@ -170,7 +170,7 @@ oracles:
         source:
           <<: *Source
           page: 215
-        table:
+        rows:
           - min: 1
             max: 5
             result: Extra limbs
@@ -271,7 +271,7 @@ oracles:
         source:
           <<: *Source
           page: 216
-        table:
+        rows:
           - min: 1
             max: 4
             result: Keen senses

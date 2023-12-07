@@ -34,7 +34,7 @@ oracles:
         source: *Source
         canonical_name: 'Site Name: Format'
         oracle_type: table_simple
-        table:
+        rows:
           - <<: &i18n.template.result.proper_noun
               i18n:
                 template:
@@ -112,7 +112,7 @@ oracles:
         source:
           <<: *Source
           page: 207
-        table:
+        rows:
           - <<: &i18n.adjective
               i18n:
                 result:
@@ -326,7 +326,7 @@ oracles:
         source:
           <<: *Source
           page: 208
-        table:
+        rows:
           - <<: &i18n.common_noun
               i18n:
                 result:
@@ -539,7 +539,7 @@ oracles:
         source:
           <<: *Source
           page: 209
-        table:
+        rows:
           - <<: &i18n.proper_noun
               i18n:
                 result:
@@ -750,7 +750,7 @@ oracles:
         source:
           <<: *Source
           page: 210
-        table:
+        rows:
           - min: 1
             max: 6
             result: '[Barrow](id:delve/site_domains/barrow)'
@@ -854,7 +854,7 @@ oracles:
             source:
               <<: *Source
               page: 210
-            table:
+            rows:
               - <<: &i18n.common_noun
                   i18n:
                     result:
@@ -891,7 +891,7 @@ oracles:
             source:
               <<: *Source
               page: 210
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 10
@@ -941,7 +941,7 @@ oracles:
             source:
               <<: *Source
               page: 210
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 10
@@ -991,7 +991,7 @@ oracles:
             source:
               <<: *Source
               page: 210
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 16
@@ -1025,7 +1025,7 @@ oracles:
             source:
               <<: *Source
               page: 210
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 16
@@ -1059,7 +1059,7 @@ oracles:
             source:
               <<: *Source
               page: 210
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 10
@@ -1109,7 +1109,7 @@ oracles:
             source:
               <<: *Source
               page: 211
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 10
@@ -1159,7 +1159,7 @@ oracles:
             source:
               <<: *Source
               page: 211
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 16
@@ -1193,7 +1193,7 @@ oracles:
             source:
               <<: *Source
               page: 211
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 10
@@ -1243,7 +1243,7 @@ oracles:
             source:
               <<: *Source
               page: 211
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 10
@@ -1293,7 +1293,7 @@ oracles:
             source:
               <<: *Source
               page: 211
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 11
@@ -1335,7 +1335,7 @@ oracles:
             source:
               <<: *Source
               page: 211
-            table:
+            rows:
               - <<: *i18n.common_noun
                 min: 1
                 max: 10

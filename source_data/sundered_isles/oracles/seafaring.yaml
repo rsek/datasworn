@@ -35,7 +35,7 @@ oracles:
                   name: Myriads
                   summary: Central Seas
                   oracle_type: column_simple
-                table:
+                rows:
                   - min: 1
                     max: 25
                     <<: &WaypointKnown.0
@@ -93,7 +93,7 @@ oracles:
                   name: Margins
                   summary: Outer Seas
                   oracle_type: column_simple
-                table:
+                rows:
                   - min: 1
                     max: 15
                     <<: *WaypointKnown.0
@@ -121,7 +121,7 @@ oracles:
                   name: Reaches
                   summary: Remote Seas
                   oracle_type: column_simple
-                table:
+                rows:
                   - min: 1
                     max: 5
                     <<: *WaypointKnown.0
@@ -154,7 +154,7 @@ oracles:
               myriads:
                 <<: *Myriads
                 # source: *TableSource
-                table:
+                rows:
                   - min: 1
                     max: 20
                     <<: &WaypointUnknown.0
@@ -192,7 +192,7 @@ oracles:
               margins:
                 <<: *Margins
                 # source: *TableSource
-                table:
+                rows:
                   - min: 1
                     max: 15
                     <<: *WaypointUnknown.0
@@ -220,7 +220,7 @@ oracles:
               reaches:
                 <<: *Reaches
                 # source: *TableSource
-                table:
+                rows:
                   - min: 1
                     max: 10
                     <<: *WaypointUnknown.0
@@ -254,7 +254,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_by: sundered_isles/oracles/seafaring/cursed_details
-        table:
+        rows:
           - min: 1
             max: 1
             result: A plume of smoke rises on the horizon
@@ -563,7 +563,7 @@ oracles:
           sundered_isles:
             cursed_version_of:
               - sundered_isles/oracles/seafaring/details
-        table:
+        rows:
           - min: 1
             max: 1
             result: An exodus of panicked birds darken the sky
@@ -869,7 +869,7 @@ oracles:
         name: Seafaring
         summary: Roll or choose on this table when you want inspiration for a trouble during ocean exploration or on a seagoing expedition.
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 3
             result: Boarders strike without warning
@@ -983,7 +983,7 @@ oracles:
         name: Seafaring Opportunities
         summary: Roll or choose on this table when you want inspiration for a beneficial encounter or event on a seagoing journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint) and find an opportunity.
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 4
             result: Cache of cargo or supplies

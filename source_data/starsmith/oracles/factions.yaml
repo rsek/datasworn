@@ -13,7 +13,7 @@ oracles:
       type:
         replaces: starforged/oracles/factions/type
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 40
             result: '[Dominion](starforged/oracles/factions/dominion)'
@@ -72,7 +72,7 @@ oracles:
       dominion:
         replaces: starforged/oracles/factions/dominion
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Agriculture
@@ -292,7 +292,7 @@ oracles:
       leadership:
         replaces: starforged/oracles/factions/leadership
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Anarchist
@@ -386,7 +386,7 @@ oracles:
       guild:
         replaces: starforged/oracles/factions/guild
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Assassins
@@ -531,7 +531,7 @@ oracles:
       fringe_group:
         replaces: starforged/oracles/factions/fringe_group
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Cultists
@@ -649,7 +649,7 @@ oracles:
       projects:
         replaces: starforged/oracles/factions/projects
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Broaden scope of the faction to include a new focus
@@ -959,7 +959,7 @@ oracles:
       relationships:
         replaces: starforged/oracles/factions/relationships
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Antagonistic towards
@@ -1221,7 +1221,7 @@ oracles:
       legacy:
         replaces: starforged/oracles/factions/legacy
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: Ancient
@@ -1675,7 +1675,7 @@ oracles:
       affiliation:
         replaces: starforged/oracles/factions/affiliation
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Accord
@@ -1904,7 +1904,7 @@ oracles:
       identity:
         replaces: starforged/oracles/factions/identity
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: Blades
@@ -2358,7 +2358,7 @@ oracles:
       quirks:
         replaces: starforged/oracles/factions/quirks
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Ancient or coded language
@@ -2668,7 +2668,7 @@ oracles:
       rumors:
         replaces: starforged/oracles/factions/rumors
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Caught in the crossfire of feuding factions
@@ -2979,7 +2979,7 @@ oracles:
         _insert: starforged/oracles/factions/corporation_field
         name: 'Corporation: Field'
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 8
             result: Civilian technology
@@ -3025,7 +3025,7 @@ oracles:
         _insert: starforged/oracles/factions/military_specialty
         name: 'Military: Specialty'
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 8
             result: Artillery
@@ -3071,7 +3071,7 @@ oracles:
         _insert: starforged/oracles/factions/religious_role
         name: 'Religious: Role'
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 8
             result: Alien worshipers
@@ -3117,7 +3117,7 @@ oracles:
         _insert: starforged/oracles/factions/research_field_of_study
         name: 'Research: Field of Study'
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 2
             result: AI
@@ -3250,7 +3250,7 @@ oracles:
         _insert: starforged/oracles/factions/ai_hive_prime_directive
         name: 'AI Hive: Prime Directive'
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 8
             result: Assimilate
@@ -3296,7 +3296,7 @@ oracles:
         _insert: starforged/oracles/factions/data_harvesters_role
         name: 'Data Harvesters: Role'
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 8
             result: Archivists

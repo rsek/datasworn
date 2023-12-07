@@ -37,7 +37,7 @@ oracles:
                     starforged:
                       region: terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 50
                     <<: &Settlements.0
@@ -66,7 +66,7 @@ oracles:
                     starforged:
                       region: outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 75
                     <<: *Settlements.0
@@ -90,7 +90,7 @@ oracles:
                     starforged:
                       region: expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 90
                     <<: *Settlements.0
@@ -110,7 +110,7 @@ oracles:
               dice: 1d20
               oracle_type: table_simple
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Abalos
@@ -176,7 +176,7 @@ oracles:
               name: Atmosphere
               oracle_type: table_simple
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 10
                 <<: &Atmosphere.NoneThin
@@ -209,7 +209,7 @@ oracles:
                 min: 1
                 max: 2
             source: *CollectionSource
-            table:
+            rows:
               - <<: &ObservedFromSpace.0
                   min: 1
                   max: 11
@@ -264,7 +264,7 @@ oracles:
                 min: 1
                 max: 2
             source: *CollectionSource
-            table:
+            rows:
               - <<: &Feature.0
                   min: 1
                   max: 7
@@ -330,7 +330,7 @@ oracles:
               name: Life
               oracle_type: table_simple
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 20
                 <<: &Life.None
@@ -373,7 +373,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 60
                     <<: *Settlements.0
@@ -392,7 +392,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 85
                     <<: *Settlements.0
@@ -411,7 +411,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 95
                     <<: *Settlements.0
@@ -428,7 +428,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Ash
@@ -492,7 +492,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 10
                 <<: *Atmosphere.NoneThin
@@ -512,7 +512,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Fiery world-spanning chasms
               - <<: *ObservedFromSpace.1
@@ -534,7 +534,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Blinding ash storms
               - <<: *Feature.1
@@ -566,7 +566,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 35
                 <<: *Life.None
@@ -603,7 +603,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 80
                     <<: *Settlements.0
@@ -622,7 +622,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 90
                     <<: *Settlements.0
@@ -637,7 +637,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 95
                     <<: *Settlements.0
@@ -654,7 +654,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Anubis
@@ -718,7 +718,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 10
                 <<: *Atmosphere.NoneThin
@@ -738,7 +738,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Broken moon
               - <<: *ObservedFromSpace.1
@@ -760,7 +760,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Acid pools
               - <<: *Feature.1
@@ -792,7 +792,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 25
                 <<: *Life.None
@@ -825,7 +825,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 50
                     <<: *Settlements.0
@@ -844,7 +844,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 75
                     <<: *Settlements.0
@@ -863,7 +863,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 90
                     <<: *Settlements.0
@@ -880,7 +880,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Beira
@@ -944,7 +944,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 15
                 <<: *Atmosphere.NoneThin
@@ -966,7 +966,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Feeble sunlight
               - <<: *ObservedFromSpace.1
@@ -988,7 +988,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Abyssal ice fissures
               - <<: *Feature.1
@@ -1020,7 +1020,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 20
                 <<: *Life.None
@@ -1057,7 +1057,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 50
                     <<: *Settlements.0
@@ -1076,7 +1076,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 75
                     <<: *Settlements.0
@@ -1095,7 +1095,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 90
                     <<: *Settlements.0
@@ -1112,7 +1112,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Aether
@@ -1176,7 +1176,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - *Atmosphere.NoneThin
               - min: 1
                 max: 50
@@ -1194,7 +1194,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Complex ring system
               - <<: *ObservedFromSpace.1
@@ -1216,7 +1216,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Clouds of metal particles
               - <<: *Feature.1
@@ -1248,7 +1248,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 35
                 <<: *Life.None
@@ -1285,7 +1285,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 40
                     <<: *Settlements.0
@@ -1304,7 +1304,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 65
                     <<: *Settlements.0
@@ -1323,7 +1323,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 85
                     <<: *Settlements.0
@@ -1344,7 +1344,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Acacia
@@ -1408,7 +1408,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - *Atmosphere.NoneThin
               - min: 1
                 max: 25
@@ -1428,7 +1428,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Cloud-breaching trees
               - <<: *ObservedFromSpace.1
@@ -1450,7 +1450,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Bioluminescent flora
               - <<: *Feature.1
@@ -1482,7 +1482,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - *Life.None
               - *Life.Extinct
               - min: 1
@@ -1515,7 +1515,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 40
                     <<: *Settlements.0
@@ -1534,7 +1534,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 65
                     <<: *Settlements.0
@@ -1553,7 +1553,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 85
                     <<: *Settlements.0
@@ -1574,7 +1574,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Aegir
@@ -1638,7 +1638,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 5
                 <<: *Atmosphere.NoneThin
@@ -1660,7 +1660,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Complex reef systems
               - <<: *ObservedFromSpace.1
@@ -1682,7 +1682,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Abyssal trenches
               - <<: *Feature.1
@@ -1714,7 +1714,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 5
                 <<: *Life.None
@@ -1751,7 +1751,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 50
                     <<: *Settlements.0
@@ -1770,7 +1770,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 75
                     <<: *Settlements.0
@@ -1789,7 +1789,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 90
                     <<: *Settlements.0
@@ -1806,7 +1806,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Aphelion
@@ -1870,7 +1870,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 65
                 <<: *Atmosphere.NoneThin
@@ -1888,7 +1888,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Barren plains
               - <<: *ObservedFromSpace.1
@@ -1910,7 +1910,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Crystalline formations
               - <<: *Feature.1
@@ -1942,7 +1942,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 65
                 <<: *Life.None
@@ -1979,7 +1979,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 70
                     <<: *Settlements.0
@@ -1998,7 +1998,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 85
                     <<: *Settlements.0
@@ -2015,7 +2015,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 95
                     <<: *Settlements.0
@@ -2032,7 +2032,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Cavus
@@ -2096,7 +2096,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 93
                 <<: *Atmosphere.NoneThin
@@ -2116,7 +2116,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Demolished space fleet
               - <<: *ObservedFromSpace.1
@@ -2138,7 +2138,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Broken cities
               - <<: *Feature.1
@@ -2170,7 +2170,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 30
                 <<: *Life.None
@@ -2203,7 +2203,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 80
                     <<: *Settlements.0
@@ -2222,7 +2222,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 90
                     <<: *Settlements.0
@@ -2237,7 +2237,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 95
                     <<: *Settlements.0
@@ -2254,7 +2254,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Achlys
@@ -2318,7 +2318,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - *Atmosphere.NoneThin
               - min: 1
                 max: 65
@@ -2336,7 +2336,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Expansive fungal plains
               - <<: *ObservedFromSpace.1
@@ -2366,7 +2366,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Caustic gas storms
               - <<: *Feature.1
@@ -2398,7 +2398,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - *Life.None
               - *Life.Extinct
               - min: 1
@@ -2431,7 +2431,7 @@ oracles:
               terminus:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 20
                     <<: *Settlements.0
@@ -2450,7 +2450,7 @@ oracles:
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 50
                     <<: *Settlements.0
@@ -2469,7 +2469,7 @@ oracles:
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
-                table:
+                rows:
                   - min: 1
                     max: 80
                     <<: *Settlements.0
@@ -2490,7 +2490,7 @@ oracles:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Chiron
@@ -2554,7 +2554,7 @@ oracles:
           atmosphere:
             <<: *Atmosphere
             source: *CollectionSource
-            table:
+            rows:
               - *Atmosphere.NoneThin
               - *Atmosphere.Toxic
               - *Atmosphere.Corrosive
@@ -2570,7 +2570,7 @@ oracles:
           observed_from_space:
             <<: *ObservedFromSpace
             source: *CollectionSource
-            table:
+            rows:
               - <<: *ObservedFromSpace.0
                 result: Complex ring system
               - <<: *ObservedFromSpace.1
@@ -2600,7 +2600,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Background radiation
               - <<: *Feature.1
@@ -2632,7 +2632,7 @@ oracles:
           life:
             <<: *Life
             source: *CollectionSource
-            table:
+            rows:
               - *Life.None
               - *Life.Extinct
               - min: 1
@@ -2652,7 +2652,7 @@ oracles:
             oracle_type: table_simple
             source: *CollectionSource
             summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Simple (two biomes)
@@ -2687,7 +2687,7 @@ oracles:
             name: Biomes
             oracle_type: table_simple
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 5
                 result: Caves

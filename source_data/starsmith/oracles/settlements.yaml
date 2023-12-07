@@ -13,7 +13,7 @@ oracles:
       location:
         replaces: starforged/oracles/settlements/location
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 40
             result: Planetside
@@ -44,7 +44,7 @@ oracles:
       first_look:
         replaces: starforged/oracles/settlements/first_look
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Beautiful architecture
@@ -243,7 +243,7 @@ oracles:
       initial_contact:
         replaces: starforged/oracles/settlements/initial_contact
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 20
             result: Welcoming
@@ -346,7 +346,7 @@ oracles:
       authority:
         replaces: starforged/oracles/settlements/authority
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 15
             result: None / lawless
@@ -413,7 +413,7 @@ oracles:
       projects:
         replaces: starforged/oracles/settlements/projects
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Agriculture
@@ -723,7 +723,7 @@ oracles:
       trouble:
         replaces: starforged/oracles/settlements/trouble
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Battle for leadership
@@ -1042,7 +1042,7 @@ oracles:
       name:
         replaces: starforged/oracles/settlements/name
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: Aegis

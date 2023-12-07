@@ -22,7 +22,7 @@ oracles:
             name: Myriads
             summary: Central Seas
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 70
                 <<: &WeatherConditions.0
@@ -40,7 +40,7 @@ oracles:
             name: Margins
             summary: Outer Seas
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 60
                 <<: *WeatherConditions.0
@@ -52,7 +52,7 @@ oracles:
             name: Reaches
             summary: Remote Seas
             oracle_type: column_simple
-            table:
+            rows:
               - min: 1
                 max: 50
                 <<: *WeatherConditions.0
@@ -71,7 +71,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_by: sundered_isles/oracles/weather/cursed
-        table:
+        rows:
           - min: 1
             max: 10
             result: Stifling
@@ -105,7 +105,7 @@ oracles:
         name: Duration of Foul or Cursed Weather
         dice: 1d10
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 2
             result: Fleeting (less than an hour)
@@ -127,7 +127,7 @@ oracles:
           sundered_isles:
             cursed_version_of:
               - sundered_isles/oracles/weather/foul
-        table:
+        rows:
           - min: 1
             max: 5
             result: Ash storm

@@ -28,7 +28,7 @@ oracles:
         source:
           <<: *Source
           page: 213
-        table:
+        rows:
           - <<: &i18n.gerund
               i18n:
                 result:
@@ -242,7 +242,7 @@ oracles:
         source:
           <<: *Source
           page: 213
-        table:
+        rows:
           - <<: &i18n.adjective
               i18n:
                 result:

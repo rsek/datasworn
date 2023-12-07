@@ -35,7 +35,7 @@ oracles:
           <<: *Source
           page: 220
         canonical_name: 'Threat: Category'
-        table:
+        rows:
           - min: 1
             max: 10
             result: '[Burgeoning Conflict](id:delve/oracles/threat/burgeoning_conflict)'
@@ -103,7 +103,7 @@ oracles:
         source:
           <<: *Source
           page: 221
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Allow warmongers to gain influence'
@@ -141,7 +141,7 @@ oracles:
         source:
           <<: *Source
           page: 221
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Unleash a creature or being'
@@ -179,7 +179,7 @@ oracles:
         source:
           <<: *Source
           page: 221
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Devastate a place'
@@ -217,7 +217,7 @@ oracles:
         source:
           <<: *Source
           page: 222
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Manifest new symptoms or effects'
@@ -255,7 +255,7 @@ oracles:
         source:
           <<: *Source
           page: 222
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Reveal a new aspect of its nature or abilities'
@@ -293,7 +293,7 @@ oracles:
         source:
           <<: *Source
           page: 222
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Overrun defenses'
@@ -331,7 +331,7 @@ oracles:
         source:
           <<: *Source
           page: 223
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Defeat an enemy'
@@ -369,7 +369,7 @@ oracles:
         source:
           <<: *Source
           page: 223
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Gain hidden knowledge'
@@ -407,7 +407,7 @@ oracles:
         source:
           <<: *Source
           page: 223
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Overtake a faction or community'

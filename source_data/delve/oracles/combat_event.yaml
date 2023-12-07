@@ -34,7 +34,7 @@ oracles:
         source:
           <<: *Source
           page: 218
-        table:
+        rows:
           - <<: &i18n.verb
               i18n:
                 result:
@@ -254,7 +254,7 @@ oracles:
           license: https://creativecommons.org/licenses/by/4.0
           date: 2020-02-13
           url: https://ironswornrpg.com
-        table:
+        rows:
           - <<: &i18n.common_noun
               i18n:
                 result:

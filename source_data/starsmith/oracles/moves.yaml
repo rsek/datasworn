@@ -13,7 +13,7 @@ oracles:
       make_a_discovery:
         replaces: starforged/oracles/moves/make_a_discovery
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Advanced technology waiting to be harnessed or salvaged
@@ -230,7 +230,7 @@ oracles:
       confront_chaos:
         replaces: starforged/oracles/moves/confront_chaos
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Baneful weapon of mass destruction
@@ -441,7 +441,7 @@ oracles:
       pay_the_price:
         replaces: starforged/oracles/moves/pay_the_price
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: A trusted individual or community acts against you

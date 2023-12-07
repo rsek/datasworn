@@ -28,7 +28,7 @@ oracles:
                 text: On a match, envision an extreme result or twist.
               oracle_type: column_simple
             # Aliases: ["90"]
-            table:
+            rows:
               - min: 1
                 max: 90
                 result: 'Yes'
@@ -39,7 +39,7 @@ oracles:
             name: Likely
             <<: *AtO
             # Aliases: ["75"]
-            table:
+            rows:
               - min: 1
                 max: 75
                 result: 'Yes'
@@ -50,7 +50,7 @@ oracles:
             name: 50/50
             <<: *AtO
             # Aliases: ["50"]
-            table:
+            rows:
               - min: 1
                 max: 50
                 result: 'Yes'
@@ -61,7 +61,7 @@ oracles:
             <<: *AtO
             name: Unlikely
             # Aliases: ["25"]
-            table:
+            rows:
               - min: 1
                 max: 25
                 result: 'Yes'
@@ -72,7 +72,7 @@ oracles:
             <<: *AtO
             name: Small Chance
             # Aliases: ["10"]
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: 'Yes'
@@ -88,7 +88,7 @@ oracles:
           page: 141
         # content:
         #   part_of_speech: [fragment]
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Flashback reveals an aspect of your background or nature'
@@ -131,7 +131,7 @@ oracles:
           page: 176
         # content:
         #   part_of_speech: [fragment]
-        table:
+        rows:
           - min: 1
             max: 4
             result: Advanced technology waiting to be harnessed or salvaged
@@ -228,7 +228,7 @@ oracles:
           page: 177
         # content:
         #   part_of_speech: [fragment]
-        table:
+        rows:
           - min: 1
             max: 4
             result: Baneful weapon of mass destruction
@@ -314,7 +314,7 @@ oracles:
           page: 194
         # content:
         #   part_of_speech: [sentences]
-        table:
+        rows:
           - min: 1
             max: 40
             result: 'It’s worse than you thought: Make a suffer move (-2)'
@@ -341,7 +341,7 @@ oracles:
           page: 200
         # content:
         #   part_of_speech: [sentences]
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'You suffer mortal harm. [Face Death](id:starforged/moves/threshold/face_death).'
@@ -365,7 +365,7 @@ oracles:
           page: 202
         # content:
         #   part_of_speech: [sentences]
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'You are overwhelmed. [Face Desolation](id:starforged/moves/threshold/face_desolation).'
@@ -386,7 +386,7 @@ oracles:
           page: 206
         # content:
         #   part_of_speech: [sentences]
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'Immediate catastrophic destruction. All aboard must [Endure Harm](id:starforged/moves/suffer/endure_harm) or [Face Death](id:starforged/moves/threshold/face_death), as appropriate.'
@@ -419,7 +419,7 @@ oracles:
           page: 232
         # content:
         #   part_of_speech: [fragment]
-        table:
+        rows:
           - min: 1
             max: 2
             result: A trusted individual or community acts against you

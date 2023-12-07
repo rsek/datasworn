@@ -25,7 +25,7 @@ oracles:
           page: 336
         summary: |-
           Choose the closest match for your location. Or roll to identify the primary habitat of a creature.
-        table:
+        rows:
           - <<: &i18n.result.common_noun
               i18n:
                 result:
@@ -33,7 +33,7 @@ oracles:
             min: 1
             max: 5
             result: Space
-            icon: &icon.Space icons/creature/environment/space.svg
+            icon: &Space.icon icons/creature/environment/space.svg
             # set_attributes: {environment: [space]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/space
@@ -41,7 +41,7 @@ oracles:
             min: 6
             max: 15
             result: Interior
-            icon: &icon.Interior icons/creature/environment/interior.svg
+            icon: &Interior.icon icons/creature/environment/interior.svg
             # set_attributes: {environment: [interior]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/interior
@@ -49,7 +49,7 @@ oracles:
             min: 16
             max: 55
             result: Land
-            icon: &icon.Land icons/creature/environment/land.svg
+            icon: &Land.icon icons/creature/environment/land.svg
             # set_attributes: {environment: [land]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/land
@@ -57,7 +57,7 @@ oracles:
             min: 56
             max: 80
             result: Liquid
-            icon: &icon.Liquid icons/creature/environment/liquid.svg
+            icon: &Liquid.icon icons/creature/environment/liquid.svg
             # set_attributes: {environment: [liquid]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/liquid
@@ -65,7 +65,7 @@ oracles:
             min: 81
             max: 100
             result: Air
-            icon: &icon.Air icons/creature/environment/air.svg
+            icon: &Air.icon icons/creature/environment/air.svg
             # set_attributes: {environment: [air]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/air
@@ -77,7 +77,7 @@ oracles:
           page: 336
         # usage:
         #   initial: true
-        table:
+        rows:
           - <<: &i18n.result.adjective
               i18n:
                 result:
@@ -126,7 +126,7 @@ oracles:
           page: 336
         # usage:
         #   initial: true
-        table:
+        rows:
           - <<: *i18n.result.adjective
             min: 1
             max: 89
@@ -158,7 +158,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description, first look]
-        table:
+        rows:
           - min: 1
             max: 2
             result: Antennae or sensory organs
@@ -320,7 +320,7 @@ oracles:
 
         # usage:
         #   initial: true
-        table:
+        rows:
           - <<: &i18n.result.common_noun
               i18n:
                 result:
@@ -447,7 +447,7 @@ oracles:
         recommended_rolls:
           min: 1
           max: 2
-        table:
+        rows:
           - min: 1
             max: 2
             result: Alternative environment
@@ -616,86 +616,101 @@ oracles:
           Roll for a basic form, and flesh out the creature’s appearance using the [First Look](id:starforged/oracles/creatures/first_look) table.
         contents:
           space:
-            # source:
-            #   <<: *Source
             name: Space
-            icon: *icon.Space
-            # color: *color.Space
+            icon: *Space.icon
+            color: '#131A1C'
             oracle_type: column_simple
             # usage:
             # requires:
             #   attributes:
             #     environment: [space]
-            table:
+            rows:
               - min: 1
                 max: 5
-                result: &BasicForm0.result Amoeba / pseudopods
-                icon: &BasicForm0.icon icons/creature/basic_form/amoeba_pseudopods.svg
+                <<: &BasicForm.0
+                  result: Amoeba / pseudopods
+                  icon: icons/creature/basic_form/amoeba_pseudopods.svg
               - min: 6
                 max: 20
-                result: &BasicForm1.result Amorphous / elemental
-                icon: &BasicForm1.icon icons/creature/basic_form/amorphous_elemental.svg
+                <<: &BasicForm.1
+                  result: Amorphous / elemental
+                  icon: icons/creature/basic_form/amorphous_elemental.svg
               - min: 21
                 max: 30
-                result: &BasicForm2.result Avian / winged
-                icon: &BasicForm2.icon icons/creature/basic_form/avian_winged.svg
+                <<: &BasicForm.2
+                  result: Avian / winged
+                  icon: icons/creature/basic_form/avian_winged.svg
               - min: 31
                 max: 32
-                result: &BasicForm3.result Beast / mammal
-                icon: &BasicForm3.icon icons/creature/basic_form/beast_mammal.svg
+                <<: &BasicForm.3
+                  result: Beast / mammal
+                  icon: icons/creature/basic_form/beast_mammal.svg
               - min: 33
                 max: 34
-                result: &BasicForm4.result Crustacean / shelled
-                icon: &BasicForm4.icon icons/creature/basic_form/crustacean_shelled.svg
+                <<: &BasicForm.4
+                  result: Crustacean / shelled
+                  icon: icons/creature/basic_form/crustacean_shelled.svg
               - min: 35
                 max: 37
-                result: &BasicForm5.result Fish / torpedo-shaped
-                icon: &BasicForm5.icon icons/creature/basic_form/fish_torpedo_shaped.svg
+                <<: &BasicForm.5
+                  result: Fish / torpedo-shaped
+                  icon: icons/creature/basic_form/fish_torpedo_shaped.svg
               - min: 38
                 max: 39
-                result: &BasicForm6.result Humanoid / bipedal
-                icon: &BasicForm6.icon icons/creature/basic_form/humanoid.svg
+                <<: &BasicForm.6
+                  result: Humanoid / bipedal
+                  icon: icons/creature/basic_form/humanoid.svg
               - min: 40
                 max: 41
-                result: &BasicForm7.result Insectoid / exoskeletal
-                icon: &BasicForm7.icon icons/creature/basic_form/insectoid_exoskeletal.svg
+                <<: &BasicForm.7
+                  result: Insectoid / exoskeletal
+                  icon: icons/creature/basic_form/insectoid_exoskeletal.svg
               - min: 42
                 max: 60
-                result: &BasicForm8.result Jellyfish / gasbag
-                icon: &BasicForm8.icon icons/creature/basic_form/jellyish_gasbag.svg
+                <<: &BasicForm.8
+                  result: Jellyfish / gasbag
+                  icon: icons/creature/basic_form/jellyish_gasbag.svg
               - min: 61
                 max: 62
-                result: &BasicForm9.result Lizard / reptilian
-                icon: &BasicForm9.icon icons/creature/basic_form/lizard_reptilian.svg
+                <<: &BasicForm.9
+                  result: Lizard / reptilian
+                  icon: icons/creature/basic_form/lizard_reptilian.svg
               - min: 63
                 max: 67
-                result: &BasicForm10.result Octopoid / tentacled
-                icon: &BasicForm10.icon icons/creature/basic_form/octopoid_tentacled.svg
+                <<: &BasicForm.10
+                  result: Octopoid / tentacled
+                  icon: icons/creature/basic_form/octopoid_tentacled.svg
               - min: 68
                 max: 72
-                result: &BasicForm11.result Plant / fungus
-                icon: &BasicForm11.icon icons/creature/basic_form/plant_fungus.svg
+                <<: &BasicForm.11
+                  result: Plant / fungus
+                  icon: icons/creature/basic_form/plant_fungus.svg
               - min: 73
                 max: 82
-                result: &BasicForm12.result Ray / flat-bodied
-                icon: &BasicForm12.icon icons/creature/basic_form/ray_flat_bodied.svg
+                <<: &BasicForm.12
+                  result: Ray / flat-bodied
+                  icon: icons/creature/basic_form/ray_flat_bodied.svg
               - min: 83
                 max: 84
-                result: &BasicForm13.result Snake / eel
-                icon: &BasicForm13.icon icons/creature/basic_form/snake_eel.svg
+                <<: &BasicForm.13
+                  result: Snake / eel
+                  icon: icons/creature/basic_form/snake_eel.svg
               - min: 85
                 max: 86
-                result: &BasicForm14.result Spider / web-weaver
-                icon: &BasicForm14.icon icons/creature/basic_form/spider_web_weaver.svg
+                <<: &BasicForm.14
+                  result: Spider / web-weaver
+                  icon: icons/creature/basic_form/spider_web_weaver.svg
               - min: 87
                 max: 88
-                result: &BasicForm15.result Starfish / symmetrical
-                icon: &BasicForm15.icon icons/creature/basic_form/starfish_symmetrical.svg
+                <<: &BasicForm.15
+                  result: Starfish / symmetrical
+                  icon: icons/creature/basic_form/starfish_symmetrical.svg
               - min: 89
                 max: 90
-                result: &BasicForm16.result Worm / slug / larva
-                icon: &BasicForm16.icon icons/creature/basic_form/worm_slug_larva.svg
-              - &BasicForm17
+                <<: &BasicForm.16
+                  result: Worm / slug / larva
+                  icon: icons/creature/basic_form/worm_slug_larva.svg
+              - &BasicForm.17
                 min: 91
                 max: 100
                 result: Roll twice
@@ -704,325 +719,249 @@ oracles:
                     auto: true
           interior:
             name: Interior
-            # source:
-            #   <<: *Source
-            icon: *icon.Interior
+            icon: *Interior.icon
             oracle_type: column_simple
-              # color: *color.Interior
+            color: '#80868E'
             # usage:
             #   requires:
             #     attributes:
             #       environment: [interior]
-            table:
+            rows:
               - min: 1
                 max: 3
-                result: *BasicForm0.result
-                icon: *BasicForm0.icon
+                <<: *BasicForm.0
               - min: 4
                 max: 6
-                result: *BasicForm1.result
-                icon: *BasicForm1.icon
+                <<: *BasicForm.1
               - min: 7
                 max: 12
-                result: *BasicForm2.result
-                icon: *BasicForm2.icon
+                <<: *BasicForm.2
               - min: 13
                 max: 19
-                result: *BasicForm3.result
-                icon: *BasicForm3.icon
+                <<: *BasicForm.3
               - min: 20
                 max: 22
-                result: *BasicForm4.result
-                icon: *BasicForm4.icon
+                <<: *BasicForm.4
               - min: 23
                 max: 24
-                result: *BasicForm5.result
-                icon: *BasicForm5.icon
+                <<: *BasicForm.5
               - min: 25
                 max: 37
-                result: *BasicForm6.result
-                icon: *BasicForm6.icon
+                <<: *BasicForm.6
               - min: 38
                 max: 49
-                result: *BasicForm7.result
-                icon: *BasicForm7.icon
+                <<: *BasicForm.7
               - min: 50
                 max: 51
-                result: *BasicForm8.result
-                icon: *BasicForm8.icon
+                <<: *BasicForm.8
               - min: 52
                 max: 56
-                result: *BasicForm9.result
-                icon: *BasicForm9.icon
+                <<: *BasicForm.9
               - min: 57
                 max: 58
-                result: *BasicForm10.result
-                icon: *BasicForm10.icon
+                <<: *BasicForm.10
               - min: 59
                 max: 63
-                result: *BasicForm11.result
-                icon: *BasicForm11.icon
+                <<: *BasicForm.11
               - min: 64
                 max: 65
-                result: *BasicForm12.result
-                icon: *BasicForm12.icon
+                <<: *BasicForm.12
               - min: 66
                 max: 68
-                result: *BasicForm13.result
-                icon: *BasicForm13.icon
+                <<: *BasicForm.13
               - min: 69
                 max: 83
-                result: *BasicForm14.result
-                icon: *BasicForm14.icon
+                <<: *BasicForm.14
               - min: 84
                 max: 85
-                result: *BasicForm15.result
-                icon: *BasicForm15.icon
+                <<: *BasicForm.15
               - min: 86
                 max: 90
-                result: *BasicForm16.result
-                icon: *BasicForm16.icon
-              - *BasicForm17
+                <<: *BasicForm.16
+              - *BasicForm.17
           land:
             name: Land
-            # source:
-            #   <<: *Source
-            # color: *color.Land
-            icon: *icon.Land
+            color: '#CA181A'
+            icon: *Land.icon
             oracle_type: column_simple
             # usage:
             #   requires:
             #     attributes:
             #       environment: [land]
-            table:
+            rows:
               - min: 1
                 max: 2
-                result: *BasicForm0.result
-                icon: *BasicForm0.icon
+                <<: *BasicForm.0
               - min: 3
                 max: 5
-                result: *BasicForm1.result
-                icon: *BasicForm1.icon
+                <<: *BasicForm.1
               - min: 6
                 max: 10
-                result: *BasicForm2.result
-                icon: *BasicForm2.icon
+                <<: *BasicForm.2
               - min: 11
                 max: 25
-                result: *BasicForm3.result
-                icon: *BasicForm3.icon
+                <<: *BasicForm.3
               - min: 26
                 max: 32
-                result: *BasicForm4.result
-                icon: *BasicForm4.icon
+                <<: *BasicForm.4
               - min: 33
                 max: 34
-                result: *BasicForm5.result
-                icon: *BasicForm5.icon
+                <<: *BasicForm.5
               - min: 35
                 max: 39
-                result: *BasicForm6.result
-                icon: *BasicForm6.icon
+                <<: *BasicForm.6
               - min: 40
                 max: 49
-                result: *BasicForm7.result
-                icon: *BasicForm7.icon
+                <<: *BasicForm.7
               - min: 50
                 max: 51
-                result: *BasicForm8.result
-                icon: *BasicForm8.icon
+                <<: *BasicForm.8
               - min: 52
                 max: 58
-                result: *BasicForm9.result
-                icon: *BasicForm9.icon
+                <<: *BasicForm.9
               - min: 59
                 max: 60
-                result: *BasicForm10.result
-                icon: *BasicForm10.icon
+                <<: *BasicForm.10
               - min: 61
                 max: 65
-                result: *BasicForm11.result
-                icon: *BasicForm11.icon
+                <<: *BasicForm.11
               - min: 66
                 max: 67
-                result: *BasicForm12.result
-                icon: *BasicForm12.icon
+                <<: *BasicForm.12
               - min: 68
                 max: 74
-                result: *BasicForm13.result
-                icon: *BasicForm13.icon
+                <<: *BasicForm.13
               - min: 75
                 max: 81
-                result: *BasicForm14.result
-                icon: *BasicForm14.icon
+                <<: *BasicForm.14
               - min: 82
                 max: 83
-                result: *BasicForm15.result
-                icon: *BasicForm15.icon
+                <<: *BasicForm.15
               - min: 84
                 max: 90
-                result: *BasicForm16.result
-                icon: *BasicForm16.icon
-              - *BasicForm17
+                <<: *BasicForm.16
+              - *BasicForm.17
           liquid:
             name: Liquid
-            # source:
-            #   <<: *Source
             oracle_type: column_simple
-            # color: *color.Liquid
-            icon: *icon.Liquid
+            color: '#0079BB'
+            icon: *Liquid.icon
             # usage:
             #   requires:
             #     attributes:
             #       environment: [liquid]
-            table:
+            rows:
               - min: 1
                 max: 5
-                result: *BasicForm0.result
-                icon: *BasicForm0.icon
+                <<: *BasicForm.0
               - min: 6
                 max: 8
-                result: *BasicForm1.result
-                icon: *BasicForm1.icon
+                <<: *BasicForm.1
               - min: 9
                 max: 11
-                result: *BasicForm2.result
-                icon: *BasicForm2.icon
+                <<: *BasicForm.2
               - min: 12
                 max: 17
-                result: *BasicForm3.result
-                icon: *BasicForm3.icon
+                <<: *BasicForm.3
               - min: 18
                 max: 24
-                result: *BasicForm4.result
-                icon: *BasicForm4.icon
+                <<: *BasicForm.4
               - min: 25
                 max: 39
-                result: *BasicForm5.result
-                icon: *BasicForm5.icon
+                <<: *BasicForm.5
               - min: 40
                 max: 42
-                result: *BasicForm6.result
-                icon: *BasicForm6.icon
+                <<: *BasicForm.6
               - min: 43
                 max: 45
-                result: *BasicForm7.result
-                icon: *BasicForm7.icon
+                <<: *BasicForm.7
               - min: 46
                 max: 53
-                result: *BasicForm8.result
-                icon: *BasicForm8.icon
+                <<: *BasicForm.8
               - min: 54
                 max: 56
-                result: *BasicForm9.result
-                icon: *BasicForm9.icon
+                <<: *BasicForm.9
               - min: 57
                 max: 63
-                result: *BasicForm10.result
-                icon: *BasicForm10.icon
+                <<: *BasicForm.10
               - min: 64
                 max: 68
-                result: *BasicForm11.result
-                icon: *BasicForm11.icon
+                <<: *BasicForm.11
               - min: 69
                 max: 75
-                result: *BasicForm12.result
-                icon: *BasicForm12.icon
+                <<: *BasicForm.12
               - min: 76
                 max: 80
-                result: *BasicForm13.result
-                icon: *BasicForm13.icon
+                <<: *BasicForm.13
               - min: 81
                 max: 82
-                result: *BasicForm14.result
-                icon: *BasicForm14.icon
+                <<: *BasicForm.14
               - min: 83
                 max: 87
-                result: *BasicForm15.result
-                icon: *BasicForm15.icon
+                <<: *BasicForm.15
               - min: 88
                 max: 90
-                result: *BasicForm16.result
-                icon: *BasicForm16.icon
-              - *BasicForm17
+                <<: *BasicForm.16
+              - *BasicForm.17
           air:
             name: Air
-            # source:
-            #   <<: *Source
             oracle_type: column_simple
-            # color: *color.Air
-            icon: *icon.Air
+            color: '#8D1D82'
+            icon: *Air.icon
             # usage:
             #   requires:
             #     attributes:
             #       environment: [air]
-            table:
+            rows:
               - min: 1
                 max: 2
-                result: *BasicForm0.result
-                icon: *BasicForm0.icon
+                <<: *BasicForm.0
               - min: 3
                 max: 12
-                result: *BasicForm1.result
-                icon: *BasicForm1.icon
+                <<: *BasicForm.1
               - min: 13
                 max: 37
-                result: *BasicForm2.result
-                icon: *BasicForm2.icon
+                <<: *BasicForm.2
               - min: 38
                 max: 40
-                result: *BasicForm3.result
-                icon: *BasicForm3.icon
+                <<: *BasicForm.3
               - min: 41
                 max: 42
-                result: *BasicForm4.result
-                icon: *BasicForm4.icon
+                <<: *BasicForm.4
               - min: 43
                 max: 47
-                result: *BasicForm5.result
-                icon: *BasicForm5.icon
+                <<: *BasicForm.5
               - min: 48
                 max: 49
-                result: *BasicForm6.result
-                icon: *BasicForm6.icon
+                <<: *BasicForm.6
               - min: 50
                 max: 51
-                result: *BasicForm7.result
-                icon: *BasicForm7.icon
+                <<: *BasicForm.7
               - min: 52
                 max: 66
-                result: *BasicForm8.result
-                icon: *BasicForm8.icon
+                <<: *BasicForm.8
               - min: 67
                 max: 68
-                result: *BasicForm9.result
-                icon: *BasicForm9.icon
+                <<: *BasicForm.9
               - min: 69
                 max: 70
-                result: *BasicForm10.result
-                icon: *BasicForm10.icon
+                <<: *BasicForm.10
               - min: 71
                 max: 72
-                result: *BasicForm11.result
-                icon: *BasicForm11.icon
+                <<: *BasicForm.11
               - min: 73
                 max: 82
-                result: *BasicForm12.result
-                icon: *BasicForm12.icon
+                <<: *BasicForm.12
               - min: 83
                 max: 84
-                result: *BasicForm13.result
-                icon: *BasicForm13.icon
+                <<: *BasicForm.13
               - min: 85
                 max: 86
-                result: *BasicForm14.result
-                icon: *BasicForm14.icon
+                <<: *BasicForm.14
               - min: 87
                 max: 88
-                result: *BasicForm15.result
-                icon: *BasicForm15.icon
+                <<: *BasicForm.15
               - min: 89
                 max: 90
-                result: *BasicForm16.result
-                icon: *BasicForm16.icon
-              - *BasicForm17
+                <<: *BasicForm.16
+              - *BasicForm.17

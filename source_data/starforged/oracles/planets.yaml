@@ -25,7 +25,7 @@ oracles:
           oracles:
             - starforged/oracles/core/descriptor
         summary: This oracle provides a simple method of generating a planetary class. If this is enough information, stop there and envision the world as appropriate to its type. For a bit more detail, make a roll on the Descriptor oracle and envision how that aspect defines the nature of the planet or a specific planetside location.
-        table:
+        rows:
           - min: 1
             max: 15
             result: '[Desert World](id:starforged/collections/oracles/planets/desert)'
@@ -116,7 +116,7 @@ oracles:
             #   requires: &attr:Life.Lifebearing
             #     attributes:
             #       life: [none, extinct]
-            table: &table:Planets.Peril
+            rows: &table:Planets.Peril
               - min: 1
                 max: 3
                 result: Corrupted or mutated lifeform
@@ -250,7 +250,7 @@ oracles:
             #   requires: &attr:Life.Lifeless
             #     attributes:
             #       life: [none, extinct]
-            table:
+            rows:
               - min: null
                 max: null
                 result: Corrupted or mutated lifeform
@@ -376,7 +376,7 @@ oracles:
             # source: *CollectionSource
             # usage:
             #   requires: *attr:Life.Lifebearing
-            table:
+            rows:
               - min: 1
                 max: 4
                 result: &Opp.0 Clue to a lifeform's nature or vulnerabilities
@@ -469,7 +469,7 @@ oracles:
             # source: *CollectionSource
             # usage:
             #   requires: *attr:Life.Lifeless
-            table:
+            rows:
               - min: null
                 max: null
                 result: *Opp.0

@@ -23,7 +23,7 @@ oracles:
           roll: Roll
           result: Result
           detail: Prompts
-        table:
+        rows:
           - min: 1
             max: 4
             result: Chronicle your Adventures
@@ -150,7 +150,7 @@ oracles:
         source:
           <<: *Source
         summary: Use this table to choose a structured prompt from among the Core oracles (pages 112–115). Roll on each table and interpret the response as appropriate to the question and situation.
-        table:
+        rows:
           - min: 1
             max: 20
             <<: &ActionTheme

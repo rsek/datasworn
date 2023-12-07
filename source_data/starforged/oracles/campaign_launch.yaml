@@ -26,7 +26,7 @@ oracles:
           roll: Roll
           result: Background
           detail: Assets
-        table:
+        rows:
           - min: 1
             max: 5
             result: Battlefield Medic
@@ -221,7 +221,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [event, past]
-        table:
+        rows:
           - min: 1
             max: 7
             result: 'You abandoned your kin after learning a troubling truth'
@@ -278,7 +278,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [event, past]
-        table:
+        rows:
           - min: 1
             max: 8
             result: 'Acquired in trade for a precious family heirloom'
@@ -330,7 +330,7 @@ oracles:
         recommended_rolls:
           min: 1
           max: 2
-        table:
+        rows:
           - min: 1
             max: 5
             result: 'Engine room is scorched with old burn marks'
@@ -400,7 +400,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [peril, event, present]
-        table:
+        rows:
           - min: 1
             max: 5
             result: 'Blockade prevents trade with other sectors'
@@ -486,7 +486,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [objective]
-        table:
+        rows:
           - min: 1
             max: 5
             result: 'Aid a starship caught in a spacetime fracture'

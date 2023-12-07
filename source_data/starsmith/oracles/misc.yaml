@@ -13,7 +13,7 @@ oracles:
       story_complication:
         replaces: starforged/oracles/misc/story_complication
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 4
             result: Crucial equipment or device fails
@@ -284,7 +284,7 @@ oracles:
       story_clue:
         replaces: starforged/oracles/misc/story_clue
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Affirms a previously understood fact or clue
@@ -573,7 +573,7 @@ oracles:
       combat_action:
         replaces: starforged/oracles/misc/combat_action
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Block a path or cut off an objective
@@ -880,7 +880,7 @@ oracles:
       anomaly_effect:
         replaces: starforged/oracles/misc/anomaly_effect
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Alters or focuses gravity
@@ -1188,7 +1188,7 @@ oracles:
         _insert: starforged/oracles/misc/item
         name: Item of Narrative Significance
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: 3D printer with erased logs

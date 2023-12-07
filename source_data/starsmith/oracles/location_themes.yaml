@@ -13,7 +13,7 @@ oracles:
       type:
         replaces: starforged/oracles/location_themes/type
         dice: 1d200
-        table:
+        rows:
           - min: 1
             max: 15
             result: '[Chaotic](starforged/oracles/location_themes/chaotic)'
@@ -94,7 +94,7 @@ oracles:
             _insert: starforged/oracles/location_themes/arid/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Dried wadi awaiting the rainy season
@@ -144,7 +144,7 @@ oracles:
             _insert: starforged/oracles/location_themes/arid/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Billowing sandstorm chokes the air
@@ -190,7 +190,7 @@ oracles:
             _insert: starforged/oracles/location_themes/arid/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Blowing sands reveal rare resource deposit
@@ -213,7 +213,7 @@ oracles:
             _insert: starforged/oracles/location_themes/chronal/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Ambient lifeforms feeding off chronal energy
@@ -257,7 +257,7 @@ oracles:
             _insert: starforged/oracles/location_themes/chronal/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Caught in a time paradox
@@ -303,7 +303,7 @@ oracles:
             _insert: starforged/oracles/location_themes/chronal/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Butterfly point offers a dangerous gamble
@@ -326,7 +326,7 @@ oracles:
             _insert: starforged/oracles/location_themes/inferno/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Ash-covered terrain
@@ -370,7 +370,7 @@ oracles:
             _insert: starforged/oracles/location_themes/inferno/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Ash, soot, and smoke hide dangers
@@ -416,7 +416,7 @@ oracles:
             _insert: starforged/oracles/location_themes/inferno/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Ancient complex that used the heat as a power source
@@ -439,7 +439,7 @@ oracles:
             _insert: starforged/oracles/location_themes/floating/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Areas of variable gravity
@@ -483,7 +483,7 @@ oracles:
             _insert: starforged/oracles/location_themes/floating/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Airborne foe moves to attack
@@ -529,7 +529,7 @@ oracles:
             _insert: starforged/oracles/location_themes/floating/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access to a rare resource
@@ -552,7 +552,7 @@ oracles:
             _insert: starforged/oracles/location_themes/flooded/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Deep and murky waters
@@ -596,7 +596,7 @@ oracles:
             _insert: starforged/oracles/location_themes/flooded/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Eroding passageways
@@ -642,7 +642,7 @@ oracles:
             _insert: starforged/oracles/location_themes/flooded/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Draining water reveals a secret or clue
@@ -665,7 +665,7 @@ oracles:
             _insert: starforged/oracles/location_themes/frozen/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Abandoned equipment frozen solid
@@ -709,7 +709,7 @@ oracles:
             _insert: starforged/oracles/location_themes/frozen/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Avalanche
@@ -755,7 +755,7 @@ oracles:
             _insert: starforged/oracles/location_themes/frozen/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Condensed ice crystal acts as temporary power booster
@@ -778,7 +778,7 @@ oracles:
             _insert: starforged/oracles/location_themes/lifeform/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Bundles of nerve fibers
@@ -822,7 +822,7 @@ oracles:
             _insert: starforged/oracles/location_themes/lifeform/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Acidic digestive juices
@@ -868,7 +868,7 @@ oracles:
             _insert: starforged/oracles/location_themes/lifeform/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access to rare biological resource
@@ -891,7 +891,7 @@ oracles:
             _insert: starforged/oracles/location_themes/mystical/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Accoutrements of ceremony
@@ -935,7 +935,7 @@ oracles:
             _insert: starforged/oracles/location_themes/mystical/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Arcane knowledge in the wrong hands
@@ -981,7 +981,7 @@ oracles:
             _insert: starforged/oracles/location_themes/mystical/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Ability to tap into a ley line's power
@@ -1004,7 +1004,7 @@ oracles:
             _insert: starforged/oracles/location_themes/overgrown/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Cacophony of calls and shrieks
@@ -1048,7 +1048,7 @@ oracles:
             _insert: starforged/oracles/location_themes/overgrown/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Aggressive and armored lifeforms
@@ -1094,7 +1094,7 @@ oracles:
             _insert: starforged/oracles/location_themes/overgrown/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access to area untouched for ages
@@ -1117,7 +1117,7 @@ oracles:
             _insert: starforged/oracles/location_themes/war_zone/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Battle standard or beacon buoy
@@ -1161,7 +1161,7 @@ oracles:
             _insert: starforged/oracles/location_themes/war_zone/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 9
                 result: Ambushed by a lurking foe
@@ -1207,7 +1207,7 @@ oracles:
             _insert: starforged/oracles/location_themes/war_zone/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Helping a combatant in need may yield an ally

@@ -13,7 +13,7 @@ oracles:
       form:
         replaces: starforged/oracles/vaults/form
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 35
             result: Structure
@@ -62,7 +62,7 @@ oracles:
       shape:
         replaces: starforged/oracles/vaults/shape
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 15
             result: Practical or functional
@@ -216,7 +216,7 @@ oracles:
       material:
         replaces: starforged/oracles/vaults/material
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 30
             result: Metallic (industrial)
@@ -316,7 +316,7 @@ oracles:
       first_look:
         replaces: starforged/oracles/vaults/first_look
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Corrupting its environment
@@ -600,7 +600,7 @@ oracles:
           first_look:
             replaces: starforged/oracles/vaults/interior/first_look
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 3
                 result: Abnormal gravity
@@ -892,7 +892,7 @@ oracles:
           feature:
             replaces: starforged/oracles/vaults/interior/feature
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 3
                 result: Ascending or descending path
@@ -1217,7 +1217,7 @@ oracles:
           peril:
             replaces: starforged/oracles/vaults/interior/peril
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 5
                 result: Broken path
@@ -1425,7 +1425,7 @@ oracles:
           opportunity:
             replaces: starforged/oracles/vaults/interior/opportunity
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Clue points the way to your destination or target
@@ -1522,7 +1522,7 @@ oracles:
           purpose:
             replaces: starforged/oracles/vaults/sanctum/purpose
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 3
                 result: Capture or control of other beings
@@ -1802,7 +1802,7 @@ oracles:
           feature:
             replaces: starforged/oracles/vaults/sanctum/feature
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 2
                 result: Abyssal pit or chasm
@@ -2127,7 +2127,7 @@ oracles:
           peril:
             replaces: starforged/oracles/vaults/sanctum/peril
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 5
                 result: Camouflaged or transforming foe reveals itself
@@ -2335,7 +2335,7 @@ oracles:
           opportunity:
             replaces: starforged/oracles/vaults/sanctum/opportunity
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Access to a secret or protected area

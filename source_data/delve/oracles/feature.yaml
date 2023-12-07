@@ -29,7 +29,7 @@ oracles:
         source:
           <<: *Source
           page: 204
-        table:
+        rows:
           - <<: &i18n.adjective
               i18n:
                 result:
@@ -243,7 +243,7 @@ oracles:
         source:
           <<: *Source
           page: 205
-        table:
+        rows:
           - <<: &i18n.common_noun
               i18n:
                 result:

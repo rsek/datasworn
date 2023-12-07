@@ -16,7 +16,7 @@ oracles:
         source: *Source
         oracle_type: table_simple
         name: Action
-        table:
+        rows:
           - min: 1
             max: 1
             result: Abandon
@@ -321,7 +321,7 @@ oracles:
         source: *Source
         oracle_type: table_simple
         name: Theme
-        table:
+        rows:
           - min: 1
             max: 1
             result: Ability
@@ -626,7 +626,7 @@ oracles:
         name: Descriptor
         oracle_type: table_simple
         source: *Source
-        table:
+        rows:
           - min: 1
             max: 1
             result: Abandoned
@@ -931,7 +931,7 @@ oracles:
         name: Focus
         oracle_type: table_simple
         source: *Source
-        table:
+        rows:
           - min: 1
             max: 1
             result: Ammunition

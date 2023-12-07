@@ -19,7 +19,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 2
             result: Accented
@@ -145,7 +145,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 10
             result: Abyssal
@@ -187,7 +187,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 10
             result: Helpful
@@ -230,7 +230,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 5
             result: '[Academic](id:sundered_isles/oracles/characters/roles/academic)'
@@ -332,7 +332,7 @@ oracles:
         source:
           <<: *Source
         oracle_type: table_simple
-        table:
+        rows:
             - min: 1
               max: 2
               result: Animal claw necklace
@@ -494,7 +494,7 @@ oracles:
         source:
           <<: *Source
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 3
             result: Barbed gaff hook
@@ -616,7 +616,7 @@ oracles:
           <<: *Source
         # TODO: curse metadata should note whether it *combines* or *replaces*
         summary: If you roll a Trademark Weapon curse, take your result and give that weapon a cursed aspect from the table below.
-        table:
+        rows:
           - min: 1
             max: 5
             result: Adorned with bone or skull motifs
@@ -677,7 +677,7 @@ oracles:
         source:
           <<: *Source
         summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
-        table:
+        rows:
           - min: 1
             max: 1
             result: Adventurous
@@ -983,7 +983,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 5
             result: Bewitched
@@ -1037,7 +1037,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 2
             result: Acquire knowledge or learning
@@ -1187,7 +1187,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 6
             result: Avert a harrowing prophecy or vision
@@ -1252,7 +1252,7 @@ oracles:
       #   name: Character Name
       #   source:
       #     <<: *Source
-      #   table:
+      #   rows:
 
     collections:
       roles:
@@ -1266,7 +1266,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Archaeologist
@@ -1287,7 +1287,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Assassin
@@ -1309,7 +1309,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Apothecary
@@ -1330,7 +1330,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Duelist
@@ -1352,7 +1352,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Clergy
@@ -1373,7 +1373,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Bricklayer
@@ -1394,7 +1394,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Barkeep
@@ -1415,7 +1415,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Alchemist
@@ -1436,7 +1436,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Apostate
@@ -1472,7 +1472,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Beast Hunter
@@ -1493,7 +1493,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Acrobat
@@ -1514,7 +1514,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Bosun
@@ -1550,7 +1550,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Beachcomber
@@ -1571,7 +1571,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Burglar / Thief
@@ -1607,7 +1607,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Aristocrat
@@ -1643,7 +1643,7 @@ oracles:
             oracle_type: table_simple
             source:
               <<: *Source
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Baker

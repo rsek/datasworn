@@ -18,7 +18,7 @@ oracles:
         name: Location
         oracle_type: table_details
         summary: Roll for a location when learning about a distant settlement. If you come upon a settlement in your travels, you may instead use the context of your current location.
-        table:
+        rows:
           - min: 1
             max: 50
             result: Seafront
@@ -49,7 +49,7 @@ oracles:
         #     detail:
         #       label: Detail
         #       content_type: summary
-        table:
+        rows:
           - min: 1
             max: 10
             result: Ancient
@@ -107,7 +107,7 @@ oracles:
           <<: *Source
         name: First Look
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 2
             result: Adorned with colorful banners
@@ -251,7 +251,7 @@ oracles:
           <<: *Source
         name: Cursed First Look
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 2
             result: Armed with sorcerous weapons
@@ -348,7 +348,7 @@ oracles:
         name: Cursed Focus
         summary: If you roll a [Settlement Focus] curse, take your result on that table and make note that it is cursed. Something about this activity has an uncanny or dreadful aspect. If you investigate or interact further, use the table below to help reveal the industry’s relationship to a cursed power.
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 10
             result: Acting to fulfill a dreadful bargain
@@ -385,7 +385,7 @@ oracles:
         name: Settlement Details
         summary: As you spend time in a settlement, use this table to reveal uncovered aspects and overheard rumors.
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 1
             result: A valuable nearby resource is uncovered, and the race is on to claim or control it
@@ -688,7 +688,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of: sundered_isles/oracles/core/descriptor
-        table:
+        rows:
           - min: 1
             max: 1
             result: Gold coins and a pile of bones sit within the murky waters of an old well
@@ -911,7 +911,7 @@ oracles:
             name: Myriads
             summary: Central Seas
             oracle_type: column_details
-            table:
+            rows:
               - <<: &Size.0
                   result: Village or outpost
                   detail: Dozens
@@ -939,7 +939,7 @@ oracles:
             name: Margins
             summary: Outer Seas
             oracle_type: column_details
-            table:
+            rows:
               - min: 1
                 max: 40
                 <<: *Size.0
@@ -958,7 +958,7 @@ oracles:
             name: Reaches
             summary: Remote Seas
             oracle_type: column_details
-            table:
+            rows:
               - min: 1
                 max: 50
                 <<: *Size.0
@@ -982,7 +982,7 @@ oracles:
               <<: *Source
             name: Disposition
             oracle_type: table_simple
-            table:
+            rows:
               - min: 1
                 max: 5
                 result: Hostile
@@ -1018,7 +1018,7 @@ oracles:
               <<: *Source
             name: Authority
             oracle_type: table_simple
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Ruthless
@@ -1062,7 +1062,7 @@ oracles:
                 name: Myriads
                 summary: Central Seas
                 oracle_type: column_simple
-                table:
+                rows:
                   - min: 1
                     max: 60
                     <<: &ControllingFaction.0
@@ -1089,7 +1089,7 @@ oracles:
                 name: Margins
                 summary: Outer Seas
                 oracle_type: column_simple
-                table:
+                rows:
                   - min: 1
                     max: 45
                     <<: *ControllingFaction.0
@@ -1112,7 +1112,7 @@ oracles:
                 name: Reaches
                 summary: Remote Seas
                 oracle_type: column_simple
-                table:
+                rows:
                   - min: 1
                     max: 30
                     <<: *ControllingFaction.0
@@ -1140,7 +1140,7 @@ oracles:
                 #   <<: *Source
                 name: Seafront
                 oracle_type: column_details
-                table:
+                rows:
                   - min: 1
                     max: 3
                     <<: &Focus.0
@@ -1331,7 +1331,7 @@ oracles:
                 #   <<: *Source
                 name: Inland
                 oracle_type: column_details
-                table:
+                rows:
                   - *Focus.0
                   - *Focus.1
                   - *Focus.2
@@ -1438,7 +1438,7 @@ oracles:
                 #   <<: *Source
                 name: Waterside
                 oracle_type: column_details
-                table:
+                rows:
                   - *Focus.0
                   - *Focus.1
                   - *Focus.2

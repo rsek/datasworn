@@ -28,7 +28,7 @@ oracles:
               summary: |-
                 Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 50
                 result: Corridor
@@ -60,7 +60,7 @@ oracles:
               summary: |-
                 Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.
             source: *CollectionSource
-            table:
+            rows:
               - min: 1
                 max: 5
                 result: Abandoned gear
@@ -134,7 +134,7 @@ oracles:
               summary: |-
                 Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.
             source: *CollectionSource
-            table:
+            rows:
               - &Peril.0
                 min: 1
                 max: 10
@@ -194,7 +194,7 @@ oracles:
               name: Opportunity
               summary: |-
                 Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.
-            table:
+            rows:
               - &Opportunity.0
                 min: 1
                 max: 20
@@ -226,7 +226,7 @@ oracles:
           area:
             <<: *Area
             source: *CollectionSource
-            table:
+            rows:
               - &Area.0
                 min: 1
                 max: 8
@@ -278,7 +278,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - &Feature.0
                 min: 1
                 max: 8
@@ -330,7 +330,7 @@ oracles:
           peril:
             <<: *Peril
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Peril.0
                 result: Biological infestation
               - <<: *Peril.1
@@ -354,7 +354,7 @@ oracles:
           opportunity:
             <<: *Opportunity
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Opportunity.0
                 result: Culturally significant object or artifact
               - <<: *Opportunity.1
@@ -376,7 +376,7 @@ oracles:
           area:
             <<: *Area
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Area.0
                 result: Control room
               - <<: *Area.1
@@ -402,7 +402,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Cluttered workbench
               - <<: *Feature.1
@@ -429,7 +429,7 @@ oracles:
           peril:
             <<: *Peril
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Peril.0
                 result: Corrosive leak
               - <<: *Peril.1
@@ -453,7 +453,7 @@ oracles:
           opportunity:
             <<: *Opportunity
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Opportunity.0
                 result: Advanced or experimental equipment
               - <<: *Opportunity.1
@@ -475,7 +475,7 @@ oracles:
           area:
             <<: *Area
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Area.0
                 result: Food storage
               - <<: *Area.1
@@ -501,7 +501,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Abandoned pet
               - <<: *Feature.1
@@ -528,7 +528,7 @@ oracles:
           peril:
             <<: *Peril
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Peril.0
                 result: Booby trap
               - <<: *Peril.1
@@ -552,7 +552,7 @@ oracles:
           opportunity:
             <<: *Opportunity
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Opportunity.0
                 result: Culturally significant object or artifact
               - <<: *Opportunity.1
@@ -574,7 +574,7 @@ oracles:
           area:
             <<: *Area
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Area.0
                 result: Crematorium
               - <<: *Area.1
@@ -600,7 +600,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Autopsied corpse
               - <<: *Feature.1
@@ -627,7 +627,7 @@ oracles:
           peril:
             <<: *Peril
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Peril.0
                 result: Disgusting sight / smell
               - <<: *Peril.1
@@ -651,7 +651,7 @@ oracles:
           opportunity:
             <<: *Opportunity
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Opportunity.0
                 result: Cache of medicine
               - <<: *Opportunity.1
@@ -673,7 +673,7 @@ oracles:
           area:
             <<: *Area
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Area.0
                 result: Admin or command offices
               - <<: *Area.1
@@ -699,7 +699,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Automated warning
               - <<: *Feature.1
@@ -726,7 +726,7 @@ oracles:
           peril:
             <<: *Peril
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Peril.0
                 result: Automated defenses target you
               - <<: *Peril.1
@@ -750,7 +750,7 @@ oracles:
           opportunity:
             <<: *Opportunity
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Opportunity.0
                 result: Cache of weapons or ammo
               - <<: *Opportunity.1
@@ -772,7 +772,7 @@ oracles:
           area:
             <<: *Area
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Area.0
                 result: Airlock or staging area
               - <<: *Area.1
@@ -798,7 +798,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Cargo lifts
               - <<: *Feature.1
@@ -825,7 +825,7 @@ oracles:
           peril:
             <<: *Peril
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Peril.0
                 result: Claustrophobic spaces
               - <<: *Peril.1
@@ -849,7 +849,7 @@ oracles:
           opportunity:
             <<: *Opportunity
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Opportunity.0
                 result: Helpful vehicle or transport
               - <<: *Opportunity.1
@@ -871,7 +871,7 @@ oracles:
           area:
             <<: *Area
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Area.0
                 result: Clean room
               - <<: *Area.1
@@ -897,7 +897,7 @@ oracles:
           feature:
             <<: *Feature
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Feature.0
                 result: Aquarium or tank
               - <<: *Feature.1
@@ -924,7 +924,7 @@ oracles:
           peril:
             <<: *Peril
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Peril.0
                 result: Automated containment protocols are activated
               - <<: *Peril.1
@@ -948,7 +948,7 @@ oracles:
           opportunity:
             <<: *Opportunity
             source: *CollectionSource
-            table:
+            rows:
               - <<: *Opportunity.0
                 result: Helpful research data
               - <<: *Opportunity.1

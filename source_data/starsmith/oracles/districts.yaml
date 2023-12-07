@@ -15,7 +15,7 @@ oracles:
           url: https://playeveryrole.com/
         name: Zones
         dice: 1d100
-        table:
+        rows:
           - min: 1
             max: 20
             result: '[Community](starforged/oracles/districts/community)'
@@ -45,7 +45,7 @@ oracles:
             _insert: starforged/oracles/districts/access/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Corridor or walkway
@@ -86,7 +86,7 @@ oracles:
             _insert: starforged/oracles/districts/access/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Bright street lights
@@ -133,7 +133,7 @@ oracles:
             _insert: starforged/oracles/districts/access/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Alarm or failsafe triggered
@@ -176,7 +176,7 @@ oracles:
             _insert: starforged/oracles/districts/access/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Directions, shortcut, or alternate path
@@ -199,7 +199,7 @@ oracles:
             _insert: starforged/oracles/districts/community/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Bar or club
@@ -240,7 +240,7 @@ oracles:
             _insert: starforged/oracles/districts/community/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Community event
@@ -281,7 +281,7 @@ oracles:
             _insert: starforged/oracles/districts/community/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Child lost in the crowd
@@ -324,7 +324,7 @@ oracles:
             _insert: starforged/oracles/districts/community/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Available goods or resources
@@ -347,7 +347,7 @@ oracles:
             _insert: starforged/oracles/districts/engineering/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Control room
@@ -388,7 +388,7 @@ oracles:
             _insert: starforged/oracles/districts/engineering/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Containers of fluid or fuel
@@ -429,7 +429,7 @@ oracles:
             _insert: starforged/oracles/districts/engineering/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Corrosive leak
@@ -472,7 +472,7 @@ oracles:
             _insert: starforged/oracles/districts/engineering/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access granted to advanced or experimental equipment
@@ -495,7 +495,7 @@ oracles:
             _insert: starforged/oracles/districts/living/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Communal quarters
@@ -536,7 +536,7 @@ oracles:
             _insert: starforged/oracles/districts/living/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Abandoned pet
@@ -577,7 +577,7 @@ oracles:
             _insert: starforged/oracles/districts/living/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Contaminated water supply
@@ -620,7 +620,7 @@ oracles:
             _insert: starforged/oracles/districts/living/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Eager youth willing to help
@@ -643,7 +643,7 @@ oracles:
             _insert: starforged/oracles/districts/medical/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Crematorium / morgue
@@ -684,7 +684,7 @@ oracles:
             _insert: starforged/oracles/districts/medical/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Decontamination checkpoint
@@ -725,7 +725,7 @@ oracles:
             _insert: starforged/oracles/districts/medical/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Biohazardous material
@@ -768,7 +768,7 @@ oracles:
             _insert: starforged/oracles/districts/medical/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access to quality medical care
@@ -791,7 +791,7 @@ oracles:
             _insert: starforged/oracles/districts/operations/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Administrative offices
@@ -832,7 +832,7 @@ oracles:
             _insert: starforged/oracles/districts/operations/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Automated warning
@@ -873,7 +873,7 @@ oracles:
             _insert: starforged/oracles/districts/operations/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Broken procedures cause red tape
@@ -916,7 +916,7 @@ oracles:
             _insert: starforged/oracles/districts/operations/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access granted to helpful area
@@ -939,7 +939,7 @@ oracles:
             _insert: starforged/oracles/districts/production/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Agricultural center
@@ -980,7 +980,7 @@ oracles:
             _insert: starforged/oracles/districts/production/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Cargo lifts
@@ -1021,7 +1021,7 @@ oracles:
             _insert: starforged/oracles/districts/production/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Dangerous machinery
@@ -1064,7 +1064,7 @@ oracles:
             _insert: starforged/oracles/districts/production/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access to specialized producer
@@ -1087,7 +1087,7 @@ oracles:
             _insert: starforged/oracles/districts/research/area
             name: Area
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Agricultural enhancement
@@ -1128,7 +1128,7 @@ oracles:
             _insert: starforged/oracles/districts/research/feature
             name: Feature
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 8
                 result: Aquarium or tank
@@ -1169,7 +1169,7 @@ oracles:
             _insert: starforged/oracles/districts/research/peril
             name: Peril
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: Accusations of espionage
@@ -1212,7 +1212,7 @@ oracles:
             _insert: starforged/oracles/districts/research/opportunity
             name: Opportunity
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 20
                 result: Access to specialized research tools

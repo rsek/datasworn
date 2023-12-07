@@ -17,7 +17,7 @@ oracles:
           <<: *Source
         name: Begin a Session
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 10
             result: Flashback reveals an aspect of your background or nature
@@ -53,7 +53,7 @@ oracles:
           <<: *Source
         name: Make a Discovery
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 4
             result: Historical archive of a momentous or miraculous event
@@ -123,7 +123,7 @@ oracles:
           <<: *Source
         name: Confront Chaos
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 6
             result: Accursed ship of grim form
@@ -189,7 +189,7 @@ oracles:
           <<: *Source
         name: Take Decisive Action
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 40
             result: 'It’s worse than you thought: Make a [suffer move](id:sundered_isles/collections/moves/suffer) (-2)'
@@ -213,7 +213,7 @@ oracles:
           <<: *Source
         name: Endure Harm
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 10
             result: You suffer mortal harm. [Face Death](id:sundered_isles/moves/threshold/face_death).
@@ -234,7 +234,7 @@ oracles:
           <<: *Source
         name: Endure Stress
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 10
             result: You are overwhelmed. [Face Desolation](id:sundered_isles/moves/threshold/face_desolation).
@@ -252,7 +252,7 @@ oracles:
           <<: *Source
         name: Withstand Damage
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 10
             result: Immediate catastrophic destruction or sinking. You and your allies must [Endure Harm](id:sundered_isles/moves/suffer/endure_harm) or [Face Death](id:sundered_isles/moves/threshold/face_death), as appropriate.
@@ -282,7 +282,7 @@ oracles:
           <<: *Source
         name: Pay the Price
         oracle_type: table_simple
-        table:
+        rows:
           - min: 1
             max: 2
             result: A trusted individual or community acts against you

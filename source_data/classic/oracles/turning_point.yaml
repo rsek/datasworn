@@ -21,7 +21,7 @@ oracles:
         source:
           <<: *Source
           page: 188
-        table:
+        rows:
           - min: 1
             max: 3
             result: 'Compel a surrender.'
@@ -84,7 +84,7 @@ oracles:
           <<: *Source
           page: 189
         summary: Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the [Pay the Price](id:classic/moves/fate/pay_the_price) table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.
-        table:
+        rows:
           - min: 1
             max: 4
             result: 'Your ritual has the opposite affect.'
@@ -173,7 +173,7 @@ oracles:
         source:
           <<: *Source
           page: 190
-        table:
+        rows:
           - min: 1
             max: 5
             result: 'It was all a diversion.'
@@ -248,7 +248,7 @@ oracles:
         source: &CollectionSource
           <<: *Source
           page: 190
-        table:
+        rows:
           - &Troublesome
             min: 1
             max: 20
@@ -288,7 +288,7 @@ oracles:
     #         name: Quest
     #         source: *CollectionSource
     #         oracle_type: column_simple
-    #         table:
+    #         rows:
     #           - &Troublesome
     #             min: 1
     #             max: 20
@@ -318,7 +318,7 @@ oracles:
     #         name: Journey
     #         source: *CollectionSource
     #         oracle_type: column_simple
-    #         table:
+    #         rows:
     #           - <<: *Troublesome
     #             detail: 'Traveling a moderate distance within a single region'
     #           - <<: *Dangerous
@@ -333,7 +333,7 @@ oracles:
     #         name: Foes
     #         source: *CollectionSource
     #         oracle_type: column_simple
-    #         table:
+    #         rows:
     #           - <<: *Troublesome
     #             detail: 'Common enemies'
     #           - <<: *Dangerous

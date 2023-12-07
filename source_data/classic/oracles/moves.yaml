@@ -26,7 +26,7 @@ oracles:
               oracle_type: column_simple
               match:
                 text: On a match, an extreme result or twist has occurred.
-            table:
+            rows:
               - min: 1
                 max: 10
                 result: 'No'
@@ -36,7 +36,7 @@ oracles:
           likely:
             name: Likely
             <<: *AtO
-            table:
+            rows:
               - min: 1
                 max: 25
                 result: 'No'
@@ -46,7 +46,7 @@ oracles:
           fifty_fifty:
             name: 50/50
             <<: *AtO
-            table:
+            rows:
               - min: 1
                 max: 50
                 result: 'No'
@@ -56,7 +56,7 @@ oracles:
           unlikely:
             name: Unlikely
             <<: *AtO
-            table:
+            rows:
               - min: 1
                 max: 75
                 result: 'No'
@@ -66,7 +66,7 @@ oracles:
           small_chance:
             name: Small Chance
             <<: *AtO
-            table:
+            rows:
               - min: 1
                 max: 90
                 result: 'No'
@@ -80,7 +80,7 @@ oracles:
         source:
           <<: *Source
           page: 91
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'The harm is mortal. [Face Death](id:classic/moves/suffer/face_death).'
@@ -102,7 +102,7 @@ oracles:
         source:
           <<: *Source
           page: 93
-        table:
+        rows:
           - min: 1
             max: 10
             result: 'You are overwhelmed. [Face Desolation](id:classic/moves/suffer/face_desolation).'
@@ -121,7 +121,7 @@ oracles:
         source:
           <<: *Source
           page: 105
-        table:
+        rows:
           - min: 1
             max: 2
             result: 'Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure) and make it happen.'

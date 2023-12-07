@@ -18,7 +18,7 @@ oracles:
         name: First Look
         replaces: starforged/oracles/characters/first_look
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 3
             result: Accented
@@ -375,7 +375,7 @@ oracles:
         name: Initial Disposition
         replaces: starforged/oracles/characters/initial_disposition
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 6
             result: Helpful
@@ -489,7 +489,7 @@ oracles:
         name: Character Role
         replaces: starforged/oracles/characters/role
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: Agent
@@ -931,7 +931,7 @@ oracles:
         name: Character Goal
         replaces: starforged/oracles/characters/goal
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 2
             result: Avenge a wrong
@@ -1297,7 +1297,7 @@ oracles:
         name: Revealed Character Aspect
         replaces: starforged/oracles/characters/revealed_aspect
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: Addicted
@@ -2202,7 +2202,7 @@ oracles:
         source: *Source
         name: Random Conversation Topic
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Culture of the community
@@ -2393,7 +2393,7 @@ oracles:
             name: Given Name
             replaces: starforged/oracles/characters/name/given_name
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Akim
@@ -3299,7 +3299,7 @@ oracles:
             name: Family Name
             replaces: starforged/oracles/characters/name/family_name
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Kuzmin
@@ -4205,7 +4205,7 @@ oracles:
             name: Callsign
             replaces: starforged/oracles/characters/name/callsign
             dice: 1d300
-            table:
+            rows:
               - min: 1
                 max: 1
                 result: Albatross
@@ -5115,7 +5115,7 @@ oracles:
             source: *Source
             name: Plot Knowledge Type
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 3
                 result: The location of
@@ -5222,7 +5222,7 @@ oracles:
             source: *Source
             name: Plot Knowledge Topic
             dice: 1d100
-            table:
+            rows:
               - min: 1
                 max: 3
                 result: an enemy spy

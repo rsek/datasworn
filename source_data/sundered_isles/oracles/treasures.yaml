@@ -18,7 +18,7 @@ oracles:
         summary: If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 25
             result: Borne on a [Sailing Ship](id:sundered_isles/collections/oracles/sailing_ships)
@@ -42,7 +42,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 5
             result: Banished to the realm of the dead
@@ -91,7 +91,7 @@ oracles:
         #       label: Examples
         #       content_type: summary
         summary: Choose the scale of the treasure’s repository—small, medium, large, or vast—as appropriate to situation and location. See the examples in the table below. If unsure, roll for the answer. The result helps set the potential Value of the treasure.
-        table:
+        rows:
           - min: 1
             max: 40
             result: Small
@@ -114,7 +114,7 @@ oracles:
         source:
           <<: *Source
         summary: Use this table to reveal characteristics of a treasure or its surroundings. Since the results often introduce twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.
-        table:
+        rows:
           - min: 1
             max: 8
             result: Bears the mark of a notorious figure
@@ -168,7 +168,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 4
             result: Attracts foul creatures or vermin
@@ -235,7 +235,7 @@ oracles:
         source:
           <<: *Source
         summary: Roll or select a number of items on this table as set by the treasure’s Value (page 185). Each result represents a quantity of that item, such as a lockbox filled with pearls, a barrel of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the Tokens table (below).
-        table:
+        rows:
           - min: 1
             max: 20
             result: Cache of coins, gems, and jewels
@@ -319,7 +319,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 1
             result: Ancestral ring with a missing gemstone
@@ -625,7 +625,7 @@ oracles:
         oracle_type: table_simple
         source:
           <<: *Source
-        table:
+        rows:
           - min: 1
             max: 2
             result: Astrolabe with complex workings that signal a portentous cosmic event
@@ -761,7 +761,7 @@ oracles:
           small:
             name: Small
             oracle_type: column_details
-            table:
+            rows:
               - &Value.0
                 min: 1
                 max: 80
@@ -782,7 +782,7 @@ oracles:
           medium:
             name: Medium
             oracle_type: column_details
-            table:
+            rows:
               - <<: *Value.0
                 min: 1
                 max: 60
@@ -794,7 +794,7 @@ oracles:
           large:
             name: Large
             oracle_type: column_details
-            table:
+            rows:
             - <<: *Value.0
               min: 1
               max: 30
@@ -808,7 +808,7 @@ oracles:
           vast:
             name: Vast
             oracle_type: column_details
-            table:
+            rows:
               - <<: *Value.0
                 min: 1
                 max: 30

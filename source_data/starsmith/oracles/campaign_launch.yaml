@@ -14,7 +14,7 @@ oracles:
         name: ''
         replaces: starforged/oracles/campaign_launch/backstory_prompt
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 7
             result: You abandoned your kin after learning a troubling truth
@@ -154,7 +154,7 @@ oracles:
         name: Starship History
         replaces: starforged/oracles/campaign_launch/starship_history
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 8
             result: Acquired in trade for a precious family heirloom
@@ -267,7 +267,7 @@ oracles:
         name: Starship Quirks
         replaces: starforged/oracles/campaign_launch/starship_quirk
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Engine room is scorched with old burn marks
@@ -451,7 +451,7 @@ oracles:
       sector_trouble:
         replaces: starforged/oracles/campaign_launch/sector_trouble
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Blockade prevents trade with other sectors
@@ -635,7 +635,7 @@ oracles:
       inciting_incident:
         replaces: starforged/oracles/campaign_launch/inciting_incident
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 5
             result: Aid a starship caught in a spacetime fracture.

@@ -25,7 +25,7 @@ oracles:
             - starforged/oracles/core/theme
         summary: &ActionThemeSummary |-
           When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) about a goal, situation, or event, roll for an [Action](id:starforged/oracles/core/action) and [Theme](id:starforged/oracles/core/theme). Together, these provide an interpretative verb/noun prompt.
-        table:
+        rows:
           - <<: &i18n.result.verb
               i18n:
                 result:
@@ -439,7 +439,7 @@ oracles:
           oracles:
             - starforged/oracles/core/action
         summary: *ActionThemeSummary
-        table:
+        rows:
           - <<: &i18n.result.common_noun
               i18n:
                 result:
@@ -854,7 +854,7 @@ oracles:
             - starforged/oracles/core/focus
         summary: &DescriptorFocusSummary |-
           When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) to help define the nature of a location, discovery, or encounter, roll for a [Descriptor](id:starforged/oracles/core/descriptor) and a [Focus](id:starforged/oracles/core/focus) for an adjective/noun prompt.
-        table:
+        rows:
           - <<: &i18n.result.adjective
               i18n:
                 result:
@@ -1268,7 +1268,7 @@ oracles:
           oracles:
             - starforged/oracles/core/descriptor
         summary: *DescriptorFocusSummary
-        table:
+        rows:
           - <<: *i18n.result.common_noun
             min: 1
             max: 1

@@ -13,7 +13,7 @@ oracles:
       action:
         replaces: starforged/oracles/core/action
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: Abandon
@@ -917,7 +917,7 @@ oracles:
       theme:
         replaces: starforged/oracles/core/theme
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: Ability
@@ -1821,7 +1821,7 @@ oracles:
       descriptor:
         replaces: starforged/oracles/core/descriptor
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: Abandoned
@@ -2725,7 +2725,7 @@ oracles:
       focus:
         replaces: starforged/oracles/core/focus
         dice: 1d300
-        table:
+        rows:
           - min: 1
             max: 1
             result: Alarm

@@ -24,7 +24,7 @@ oracles:
         source:
           <<: *Source
           page: 174
-        table:
+        rows:
           - min: 1
             max: 1
             result: Scheme
@@ -439,7 +439,7 @@ oracles:
           oracles:
             - classic/oracles/action_and_theme/action
         summary: As with the [Action](id:classic/oracles/action_and_theme/action) oracle, this is an interpretative table which you can use to answer questions or generate new situations. Combined, the Action and Theme tables provide creative prompts suitable for most situations and questions. In fact, with some creative interpretations, it’s entirely possible to play with only these two tables.
-        table:
+        rows:
           - min: 1
             max: 1
             result: Risk
