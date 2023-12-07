@@ -44,6 +44,7 @@ import { TRoot } from '../../schema/datasworn/root/SchemaRoot.js'
 import Log from '../utils/Log.js'
 import { Discriminator, JsonTypeDef, Members } from './symbol.js'
 import * as Assets from '../../schema/datasworn/Assets.js'
+import { defsKey } from '../const.js'
 
 /** Extract metadata from a JSON schema for use in a JTD schema's `metadata` property */
 export function extractMetadata<T extends TAnySchema>(jsonSchema: T) {
@@ -113,7 +114,7 @@ export function toJtdEnum<
 }
 
 export function toJtdRef<T extends TSchema>(schema: TRef<T> | TThis) {
-	const ref = schema.$ref.replace('#/$defs/', '')
+	const ref = schema.$ref.replace(`#/${defsKey}/`, '')
 	type RefName = typeof ref
 
 	return { ref } as unknown as TSchema
@@ -298,32 +299,32 @@ function toJtdForm(schema: TSchema): TSchema | undefined {
 }
 
 export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
-	const definitions = {} as { [K in keyof T['$defs']]: JTD.Schema }
+	const defs = {} as { [K in keyof T[typeof defsKey]]: JTD.Schema }
 
 	const rootType = 'RulesPackage'
 
-	for (const k in schemaRoot.$defs) {
+	for (const k in schemaRoot[defsKey]) {
 		if (k === rootType) continue
 		try {
-			definitions[k] = toJtdForm(schemaRoot.$defs[k])
+			defs[k] = toJtdForm(schemaRoot[defsKey][k])
 		} catch (err) {
-			Log.error(`Couldn't convert ${schemaRoot.$defs[k].$id}`, err)
+			Log.error(`Couldn't convert ${schemaRoot[defsKey][k].$id}`, err)
 		}
 	}
 	// HACK: not sure why this is getting omitted, there's a few places it could happen and i havent tracked it down yet
 
-	definitions.SelectEnhancementFieldChoice = toJtdForm(
+	defs.SelectEnhancementFieldChoice = toJtdForm(
 		omit(Assets.SelectEnhancementFieldChoice, JsonTypeDef)
 	)
 
-	const base = toJtdForm(schemaRoot.$defs[rootType] as any)
+	const base = toJtdForm(schemaRoot[defsKey][rootType] as any)
 
 	if (isUndefined(base))
 		throw new Error('Unable to infer JSON Typedef form of root schema.')
 
 	return {
 		...base,
-		definitions: omitBy(definitions, isUndefined)
+		definitions: omitBy(defs, isUndefined)
 	}
 }
 

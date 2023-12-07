@@ -54,3 +54,11 @@ export const DELVE_SCHEMA_ID =
 
 export const DELVE_SOURCE_ID =
 	'https://ironswornrpg.com/datasworn-delve-source.schema.json'
+
+
+// FIXME: it'd be nice to migrate to https://json-schema.org/draft/2020-12/meta/core some day, but currently vscode doesn't support it very well
+
+/** JSON schema draft used by Datasworn. */
+export const $schema = 'http://json-schema.org/draft-07/schema#' as const
+/** The key for definitions in the  */
+export const defsKey = 'definitions' as const

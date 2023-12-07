@@ -91,6 +91,7 @@ export const OracleRollTemplate = Type.Object(
 	},
 	{
 		$id: 'OracleRollTemplate',
+		releaseStage: 'experimental',
 		description: `Provides string templates that may be used in place of the static row text from \`OracleTableRow#result\`, \`OracleTableRow#detail\`, and \`OracleTableRow#description\`.
 
   These strings are formatted in Markdown, but use a special syntax for their placeholders: \`{{result:some_oracle_table_id}}\`. The placeholder should be replaced with the value of a rolled (or selected) \`OracleTableRow#result\` from the target oracle table ID.`

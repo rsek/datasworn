@@ -1,6 +1,5 @@
 import { type JSONSchema } from 'json-schema-to-typescript'
-
-
+import { defsKey } from '../const.js'
 
 const typeKeys = [
 	'category',
@@ -56,6 +55,7 @@ export const dataSwornKeyOrder: string[] = [
 	'roll',
 	'result',
 	'summary',
+	'detail',
 	'requirement',
 	'features',
 	'dangers',
@@ -163,7 +163,7 @@ const schemaKeyOrder = [
 	'allOf',
 	'anyOf',
 	'oneOf',
-	'$defs'
+	defsKey
 ]
 
 export function sortSchemaKeys<T extends JSONSchema>(schema: T) {

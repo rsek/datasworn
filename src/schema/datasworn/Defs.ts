@@ -20,6 +20,7 @@ import {
 } from './common/index.js'
 import Log from '../../scripts/utils/Log.js'
 import { pickBy } from 'lodash-es'
+import { defsKey } from '../../scripts/const.js'
 
 function validateSchemaDefinitions(defs: Record<string, TSchema>) {
 	const usedRefs = new Set<string>()
@@ -72,7 +73,7 @@ const defsBase = pickBy(
 		if (!TypeGuard.TSchema(schema)) return false
 
 		if (typeof schema.$id !== 'string') {
-			Log.warn(`Schema in $defs, but doesn't have an ID?`, schema)
+			Log.warn(`Schema in #/${defsKey}, but doesn't have an ID?`, schema)
 			return false
 		}
 

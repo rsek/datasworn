@@ -58,7 +58,7 @@ function replacer(k: string, v: unknown) {
 		return undefined
 
 	if (k === '$ref' && typeof v === 'string' && !v.startsWith('http'))
-		return '#/$defs/' + v
+		return `#/${CONST.defsKey}/` + v
 
 	return v
 }

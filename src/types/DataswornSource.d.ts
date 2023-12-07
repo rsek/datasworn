@@ -668,6 +668,9 @@ export interface Source {
 	license: string | null
 }
 
+/**
+ * @unstable
+ */
 export interface Suggestions {
 	oracles?: OracleRollableId[]
 	assets?: AssetId[]
@@ -1641,6 +1644,7 @@ export interface OracleRoll {
  * Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#detail`, and `OracleTableRow#description`.
  *
  *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.
+ * @experimental
  */
 export interface OracleRollTemplate {
 	/**
@@ -1663,7 +1667,7 @@ export interface OracleRollTemplate {
  */
 export type OracleCollection =
 	| OracleTablesCollection
-	| OracleTableSharedRoll
+	| OracleTableSharedRolls
 	| OracleTableSharedResults
 	| OracleTableSharedDetails
 
@@ -1928,14 +1932,6 @@ export interface OracleTableRowDetails {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * @default null
-	 */
-	detail?: MarkdownString | null
-	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
-	 */
-	description?: MarkdownString
-	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
 	oracle_rolls?: OracleRoll[]
@@ -1956,6 +1952,7 @@ export interface OracleTableRowDetails {
 	 * @default null
 	 */
 	max?: number | null
+	detail: MarkdownString
 }
 
 /**
@@ -1971,10 +1968,6 @@ export interface OracleTableRowSimple {
 	 */
 	result: MarkdownString
 	icon?: SvgImageUrl
-	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
-	 */
-	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
@@ -2156,7 +2149,7 @@ export interface OracleTableSharedResults {
 /**
  * An OracleCollection representing a single table with one roll column and multiple `result` columns.
  */
-export interface OracleTableSharedRoll {
+export interface OracleTableSharedRolls {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
@@ -3726,10 +3719,6 @@ export interface TruthOptionTableRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
-	 */
-	description?: MarkdownString
-	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
 	oracle_rolls?: OracleRoll[]
@@ -4151,14 +4140,6 @@ export interface DelveSiteDomainDangerRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * @default null
-	 */
-	detail?: MarkdownString | null
-	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
-	 */
-	description?: MarkdownString
-	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
 	oracle_rolls?: OracleRoll[]
@@ -4192,14 +4173,6 @@ export interface DelveSiteDomainFeatureRow {
 	 */
 	result: MarkdownString
 	icon?: SvgImageUrl
-	/**
-	 * @default null
-	 */
-	detail?: MarkdownString | null
-	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
-	 */
-	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
@@ -4339,14 +4312,6 @@ export interface DelveSiteThemeDangerRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * @default null
-	 */
-	detail?: MarkdownString | null
-	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
-	 */
-	description?: MarkdownString
-	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
 	oracle_rolls?: OracleRoll[]
@@ -4380,14 +4345,6 @@ export interface DelveSiteThemeFeatureRow {
 	 */
 	result: MarkdownString
 	icon?: SvgImageUrl
-	/**
-	 * @default null
-	 */
-	detail?: MarkdownString | null
-	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
-	 */
-	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */

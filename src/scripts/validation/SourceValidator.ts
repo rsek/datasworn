@@ -1,14 +1,14 @@
 import { TypeCompiler } from '@sinclair/typebox/compiler'
 import { DataswornSourceRoot } from '../../schema/datasworn/Root.js'
-import { omit } from 'lodash-es'
+import { defsKey } from '../const.js'
 
 // console.log(
-// 	DataswornSource.$defs.DelveSiteDomain.properties.features.allOf[1].items[9]
+// 	DataswornSource[defsKey].DelveSiteDomain.properties.features.allOf[1].items[9]
 // )
 
 const SourceValidator = TypeCompiler.Compile(
 	DataswornSourceRoot,
-	Object.values(DataswornSourceRoot.$defs)
+	Object.values(DataswornSourceRoot[defsKey])
 )
 
 

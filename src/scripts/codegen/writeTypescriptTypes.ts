@@ -5,7 +5,7 @@ import {
 	DataswornRoot,
 	DataswornSourceRoot
 } from '../../schema/datasworn/Root.js'
-import { ROOT_TYPES_OUT } from '../const.js'
+import { ROOT_TYPES_OUT, defsKey } from '../const.js'
 import { extractDefs } from './schemaToTsDeclaration.js'
 import { writeCode } from '../utils/readWrite.js'
 
@@ -16,10 +16,10 @@ const rootSchemas = {
 
 await fs.emptyDir(ROOT_TYPES_OUT)
 
-for await (const [identifier, { $defs }] of Object.entries(rootSchemas)) {
+for await (const [identifier, value] of Object.entries(rootSchemas)) {
 	const filePath = path.join(ROOT_TYPES_OUT, identifier + '.d.ts')
 
-	const fileContents = Object.values(extractDefs($defs)).join('\n\n')
+	const fileContents = Object.values(extractDefs(value[defsKey])).join('\n\n')
 
 	await writeCode(filePath, fileContents)
 }

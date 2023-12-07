@@ -9,11 +9,13 @@ export namespace Keywords {
 		}
 	)
 	export const i18n = Type.Boolean({ default: false })
+  export const deprecated = Type.Boolean({ default: false })
 }
 
 declare module '@sinclair/typebox' {
 	interface SchemaOptions {
 		releaseStage?: Static<typeof Keywords.releaseStage>
+		deprecated?: Static<typeof Keywords.deprecated>
 	}
 	interface StringOptions extends SchemaOptions {
 		i18n?: Static<typeof Keywords.i18n>

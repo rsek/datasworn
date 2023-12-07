@@ -6,7 +6,8 @@ import {
 	type TObject,
 	type TProperties,
 	type TRef,
-	type TSchema
+	type TSchema,
+	TypeClone
 } from '@sinclair/typebox'
 import { mapValues } from 'lodash-es'
 import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
@@ -24,19 +25,19 @@ const TableRowBase = Type.Object({
 		description: 'The primary text content of this row.'
 	}),
 	icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
-	detail: Utils.Nullable(
-		Type.Ref(Localize.MarkdownString, {
-			description:
-				'Optional secondary text content for this row. Generally, this is longer than `result`.',
-			default: undefined
-		})
-	),
-	description: Type.Optional(
-		Type.Ref(Localize.MarkdownString, {
-			description:
-				'Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.'
-		})
-	),
+	// detail: Utils.Nullable(
+	// 	Type.Ref(Localize.MarkdownString, {
+	// 		description:
+	// 			'Optional secondary text content for this row. Generally, this is longer than `result`.',
+	// 		default: undefined
+	// 	})
+	// ),
+	// description: Type.Optional(
+	// 	Type.Ref(Localize.MarkdownString, {
+	// 		description:
+	// 			'Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.'
+	// 	})
+	// ),
 	oracle_rolls: Type.Optional(
 		Type.Array(Type.Ref(Rolls.OracleRoll), {
 			description: 'Further oracle rolls prompted by this table row.'
@@ -45,11 +46,14 @@ const TableRowBase = Type.Object({
 	suggestions: Type.Optional(Type.Ref(Metadata.Suggestions)),
 	embed_table: Type.Optional(
 		Type.Ref(Id.OracleRollableId, {
+			releaseStage: 'unstable',
 			description:
 				'Hints that the identified table should be rendered inside this table row.'
 		})
 	),
-	template: Type.Optional(Type.Ref(Rolls.OracleRollTemplate)),
+	template: Type.Optional(
+		Type.Ref(Rolls.OracleRollTemplate, { releaseStage: 'unstable' })
+	),
 	i18n: Type.Optional(Type.Ref(Localize.I18nHints))
 })
 
@@ -108,17 +112,27 @@ export function StaticRowPartial<
 }
 export const OracleTableRowSimple = Generic.IdentifiedNode(
 	Type.Ref(Id.OracleTableRowId),
-	Type.Omit(TableRowNullableMixin, ['detail']),
+	TypeClone.Type(TableRowNullableMixin),
 	{
 		$id: 'OracleTableRowSimple',
 		description: 'Represents a row in an oracle table.'
 	}
 )
+
 export type OracleTableRowSimple = Static<typeof OracleTableRowSimple>
 
 export const OracleTableRowDetails = Generic.IdentifiedNode(
 	Type.Ref(Id.OracleTableRowId),
-	TableRowNullableMixin,
+	Utils.Assign([
+		TableRowNullableMixin,
+		Type.Object({
+			detail: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+				default: undefined,
+				description:
+					'The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.'
+			})
+		})
+	]),
 	{
 		$id: 'OracleTableRowDetails',
 		description:

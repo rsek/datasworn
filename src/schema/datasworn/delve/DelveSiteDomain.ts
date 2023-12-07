@@ -33,7 +33,7 @@ const DelveSiteDomainDangers = Type.Array(Type.Ref(DelveSiteDomainDangerRow))
 export const DelveSiteDomain = Generic.SourcedNode(
 	Type.Ref(Id.DelveSiteDomainId),
 	Type.Object({
-		summary: Type.Ref(Localize.MarkdownString),
+		summary: Type.Ref(Localize.MarkdownString, { deprecated: true }),
 		description: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 		name_oracle: Type.Optional(

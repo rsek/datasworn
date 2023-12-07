@@ -145,7 +145,7 @@ export const OracleTableSharedRolls = OracleCollectionBase(
 	Type.Ref(OracleColumnSimple),
 	false,
 	{
-		$id: 'OracleTableSharedRoll',
+		$id: 'OracleTableSharedRolls',
 		description:
 			'An OracleCollection representing a single table with one roll column and multiple `result` columns.'
 	}
