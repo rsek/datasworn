@@ -11,7 +11,7 @@
 				"value": 5,
 				"shared": false,
 				"description": "Health represents your current physical condition and stamina.",
-				"rollable": 0
+				"rollable": true
 			},
 			"spirit": {
 				"label": "spirit",
@@ -20,7 +20,7 @@
 				"value": 5,
 				"shared": false,
 				"description": "Spirit is your current morale and mental state.",
-				"rollable": 0
+				"rollable": true
 			},
 			"supply": {
 				"label": "supply",
@@ -29,7 +29,7 @@
 				"value": 5,
 				"shared": true,
 				"description": "Supply represents your preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.",
-				"rollable": 0
+				"rollable": true
 			}
 		},
 		"impacts": {
@@ -168,6 +168,22 @@
 			"wits": {
 				"label": "wits",
 				"description": "Expertise, knowledge, and observation."
+			}
+		},
+		"tags": {
+			"region": {
+				"description": "This oracle table applies to a specific region of the Forge.",
+				"applies_to": ["oracle_table"],
+				"array": false,
+				"enum": ["terminus", "outlands", "expanse"],
+				"value_type": "enum"
+			},
+			"location": {
+				"description": "This oracle table is specifically for planetside, orbital, or deep space environments.",
+				"applies_to": ["oracle_table"],
+				"array": false,
+				"enum": ["planetside", "orbital", "deep_space"],
+				"value_type": "enum"
 			}
 		}
 	},
@@ -8973,6 +8989,10 @@
 							"id": "starforged/oracles/planets/desert/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/desert/observed_from_space/1-11",
@@ -9068,6 +9088,10 @@
 							"id": "starforged/oracles/planets/desert/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/desert/feature/1-7",
@@ -9300,6 +9324,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -9349,6 +9378,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -9398,6 +9432,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -9638,6 +9677,10 @@
 							"id": "starforged/oracles/planets/furnace/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/furnace/observed_from_space/1-11",
@@ -9733,6 +9776,10 @@
 							"id": "starforged/oracles/planets/furnace/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/furnace/feature/1-7",
@@ -9965,6 +10012,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -10014,6 +10066,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -10063,6 +10120,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -10303,6 +10365,10 @@
 							"id": "starforged/oracles/planets/grave/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/grave/observed_from_space/1-11",
@@ -10398,6 +10464,10 @@
 							"id": "starforged/oracles/planets/grave/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/grave/feature/1-7",
@@ -10630,6 +10700,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -10679,6 +10754,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -10728,6 +10808,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -10968,6 +11053,10 @@
 							"id": "starforged/oracles/planets/ice/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/ice/observed_from_space/1-11",
@@ -11063,6 +11152,10 @@
 							"id": "starforged/oracles/planets/ice/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/ice/feature/1-7",
@@ -11295,6 +11388,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -11344,6 +11442,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -11393,6 +11496,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -11633,6 +11741,10 @@
 							"id": "starforged/oracles/planets/jovian/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/jovian/observed_from_space/1-11",
@@ -11728,6 +11840,10 @@
 							"id": "starforged/oracles/planets/jovian/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/jovian/feature/1-7",
@@ -11960,6 +12076,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -12009,6 +12130,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -12058,6 +12184,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -12298,6 +12429,10 @@
 							"id": "starforged/oracles/planets/jungle/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/jungle/observed_from_space/1-11",
@@ -12393,6 +12528,10 @@
 							"id": "starforged/oracles/planets/jungle/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/jungle/feature/1-7",
@@ -12625,6 +12764,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -12674,6 +12818,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -12723,6 +12872,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -12963,6 +13117,10 @@
 							"id": "starforged/oracles/planets/ocean/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/ocean/observed_from_space/1-11",
@@ -13058,6 +13216,10 @@
 							"id": "starforged/oracles/planets/ocean/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/ocean/feature/1-7",
@@ -13290,6 +13452,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -13339,6 +13506,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -13388,6 +13560,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -13628,6 +13805,10 @@
 							"id": "starforged/oracles/planets/rocky/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/rocky/observed_from_space/1-11",
@@ -13723,6 +13904,10 @@
 							"id": "starforged/oracles/planets/rocky/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/rocky/feature/1-7",
@@ -13955,6 +14140,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -14004,6 +14194,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -14053,6 +14248,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -14293,6 +14493,10 @@
 							"id": "starforged/oracles/planets/shattered/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/shattered/observed_from_space/1-11",
@@ -14388,6 +14592,10 @@
 							"id": "starforged/oracles/planets/shattered/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/shattered/feature/1-7",
@@ -14620,6 +14828,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -14669,6 +14882,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -14718,6 +14936,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -14958,6 +15181,10 @@
 							"id": "starforged/oracles/planets/tainted/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/tainted/observed_from_space/1-11",
@@ -15053,6 +15280,10 @@
 							"id": "starforged/oracles/planets/tainted/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/tainted/feature/1-7",
@@ -15285,6 +15516,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -15334,6 +15570,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -15383,6 +15624,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -15623,6 +15869,10 @@
 							"id": "starforged/oracles/planets/vital/observed_from_space",
 							"name": "Observed From Space",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/vital/observed_from_space/1-11",
@@ -15718,6 +15968,10 @@
 							"id": "starforged/oracles/planets/vital/feature",
 							"name": "Planetside Feature",
 							"dice": "1d100",
+							"recommended_rolls": {
+								"min": 1,
+								"max": 2
+							},
 							"table": [
 								{
 									"id": "starforged/oracles/planets/vital/feature/1-7",
@@ -16289,6 +16543,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "terminus"
+										}
 									}
 								},
 								"outlands": {
@@ -16338,6 +16597,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "outlands"
+										}
 									}
 								},
 								"expanse": {
@@ -16387,6 +16651,11 @@
 										],
 										"license": "https://creativecommons.org/licenses/by/4.0",
 										"url": "https://ironswornrpg.com"
+									},
+									"tags": {
+										"starforged": {
+											"region": "expanse"
+										}
 									}
 								}
 							},
@@ -19591,6 +19860,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"region": "terminus"
+								}
 							}
 						},
 						"outlands": {
@@ -19643,6 +19917,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"region": "outlands"
+								}
 							}
 						},
 						"expanse": {
@@ -19695,6 +19974,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"region": "expanse"
+								}
 							}
 						}
 					},
@@ -21309,6 +21593,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"region": "terminus"
+								}
 							}
 						},
 						"outlands": {
@@ -21548,6 +21837,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"region": "outlands"
+								}
 							}
 						},
 						"expanse": {
@@ -21787,6 +22081,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"region": "expanse"
+								}
 							}
 						}
 					},
@@ -29927,7 +30226,7 @@
 									"auto": false,
 									"duplicates": "reroll",
 									"number_of_rolls": 1,
-									"oracle": "starforged/oracles/factions/leadership"
+									"oracle": "starforged/oracles/factions/dominion_leadership"
 								}
 							]
 						},
@@ -30381,67 +30680,67 @@
 						"url": "https://ironswornrpg.com"
 					}
 				},
-				"leadership": {
-					"id": "starforged/oracles/factions/leadership",
+				"dominion_leadership": {
+					"id": "starforged/oracles/factions/dominion_leadership",
 					"name": "Dominion: Leadership",
 					"dice": "1d100",
 					"table": [
 						{
-							"id": "starforged/oracles/factions/leadership/1-5",
+							"id": "starforged/oracles/factions/dominion_leadership/1-5",
 							"min": 1,
 							"max": 5,
 							"result": "Anarchist"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/6-15",
+							"id": "starforged/oracles/factions/dominion_leadership/6-15",
 							"min": 6,
 							"max": 15,
 							"result": "Disputed leadership"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/16-30",
+							"id": "starforged/oracles/factions/dominion_leadership/16-30",
 							"min": 16,
 							"max": 30,
 							"result": "Authoritarian dictatorship"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/31-45",
+							"id": "starforged/oracles/factions/dominion_leadership/31-45",
 							"min": 31,
 							"max": 45,
 							"result": "Oligarchical elite"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/46-60",
+							"id": "starforged/oracles/factions/dominion_leadership/46-60",
 							"min": 46,
 							"max": 60,
 							"result": "Dynastic lineage"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/61-70",
+							"id": "starforged/oracles/factions/dominion_leadership/61-70",
 							"min": 61,
 							"max": 70,
 							"result": "Fated or prophesied leader"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/71-80",
+							"id": "starforged/oracles/factions/dominion_leadership/71-80",
 							"min": 71,
 							"max": 80,
 							"result": "Clan chiefs or elders"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/81-90",
+							"id": "starforged/oracles/factions/dominion_leadership/81-90",
 							"min": 81,
 							"max": 90,
 							"result": "Elected representatives"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/91-95",
+							"id": "starforged/oracles/factions/dominion_leadership/91-95",
 							"min": 91,
 							"max": 95,
 							"result": "Machine intelligence"
 						},
 						{
-							"id": "starforged/oracles/factions/leadership/96-100",
+							"id": "starforged/oracles/factions/dominion_leadership/96-100",
 							"min": 96,
 							"max": 100,
 							"result": "Varied / decentralized"
@@ -36889,6 +37188,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"location": "planetside"
+								}
 							}
 						},
 						"orbital": {
@@ -36930,6 +37234,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"location": "orbital"
+								}
 							}
 						},
 						"deep_space": {
@@ -36971,6 +37280,11 @@
 								],
 								"license": "https://creativecommons.org/licenses/by/4.0",
 								"url": "https://ironswornrpg.com"
+							},
+							"tags": {
+								"starforged": {
+									"location": "deep_space"
+								}
 							}
 						}
 					},

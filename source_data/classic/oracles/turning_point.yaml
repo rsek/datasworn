@@ -15,6 +15,7 @@ oracles:
     contents:
       combat_action:
         name: Combat Action
+        oracle_type: table_simple
         canonical_name: 'Oracle 16: Combat Action'
         summary: Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.
         source:
@@ -77,6 +78,7 @@ oracles:
             result: 'Take a completely unexpected action.'
       mystic_backlash:
         name: Mystic Backlash
+        oracle_type: table_simple
         canonical_name: 'Oracle 17: Mystic Backlash'
         source:
           <<: *Source
@@ -166,6 +168,7 @@ oracles:
       major_plot_twist:
         canonical_name: 'Oracle 18: Major Plot Twist'
         name: Major Plot Twist
+        oracle_type: table_simple
         summary: Use this oracle to introduce a narrative surprise or revelation. Most of these results have a negative implication, and can be used to resolve a match at a crucial moment in your story. In particular, this is an effective tool to leverage when you make a move with matched 10’s on the challenge dice.
         source:
           <<: *Source
@@ -237,98 +240,107 @@ oracles:
                 duplicates: make_it_worse
               # *result:RollTwice.MakeItWorse
 
-    collections:
       challenge_rank:
         canonical_name: 'Oracle 19: Challenge Rank'
         name: Challenge Rank
-        rendering:
-          style: multi_table
-          columns:
-            roll:
-              label: Roll
-              content_type: roll
-              table_key: quest
-            rank:
-              label: Rank
-              table_key: quest
-              content_type: result
-            quest:
-              label: Quest
-              table_key: quest
-              content_type: summary
-            journey:
-              label: Journey
-              table_key: journey
-              content_type: summary
-            foes:
-              label: Foes
-              table_key: foes
-              content_type: summary
+        oracle_type: table_simple
         summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
         source: &CollectionSource
           <<: *Source
           page: 190
-        contents:
-          quest:
-            name: Quest
-            source: *CollectionSource
-            rendering:
-              style: column
-            table:
-              - &Troublesome
-                min: 1
-                max: 20
-                result: Troublesome
-                summary: 'A challenging quest with a small number of obstacles'
-              - &Dangerous
-                min: 21
-                max: 55
-                result: Dangerous
-                summary: 'An involved quest with several tough obstacles'
-              - &Formidable
-                min: 56
-                max: 80
-                result: Formidable
-                summary: 'A complex quest with many intimidating obstacles'
-              - &Extreme
-                min: 81
-                max: 93
-                result: Extreme
-                summary: 'An overwhelming quest of staggering proportions'
-              - &Epic
-                min: 94
-                max: 100
-                result: Epic
-                summary: 'A life-defining quest of unknowable scope'
-          journey:
-            name: Journey
-            source: *CollectionSource
-            rendering:
-              style: column
-            table:
-              - <<: *Troublesome
-                summary: 'Traveling a moderate distance within a single region'
-              - <<: *Dangerous
-                summary: 'Traveling a long distance within a single region, or across rough terrain'
-              - <<: *Formidable
-                summary: 'Traveling from one region to another, or across especially challenging terrain,'
-              - <<: *Extreme
-                summary: 'Traveling through multiple regions'
-              - <<: *Epic
-                summary: 'Traveling from one end of the Ironlands to another, or to a separate land'
-          foe:
-            name: Foes
-            source: *CollectionSource
-            rendering:
-              style: column
-            table:
-              - <<: *Troublesome
-                summary: 'Common enemies'
-              - <<: *Dangerous
-                summary: 'Capable fighters and deadly creatures'
-              - <<: *Formidable
-                summary: 'Exceptional fighters and mighty creatures'
-              - <<: *Extreme
-                summary: 'Foes of overwhelming skill or power'
-              - <<: *Epic
-                summary: 'Legendary foes of mythic power'
+        table:
+          - &Troublesome
+            min: 1
+            max: 20
+            result: Troublesome
+            # detail: 'A challenging quest with a small number of obstacles'
+          - &Dangerous
+            min: 21
+            max: 55
+            result: Dangerous
+            # detail: 'An involved quest with several tough obstacles'
+          - &Formidable
+            min: 56
+            max: 80
+            result: Formidable
+            # detail: 'A complex quest with many intimidating obstacles'
+          - &Extreme
+            min: 81
+            max: 93
+            result: Extreme
+            # detail: 'An overwhelming quest of staggering proportions'
+          - &Epic
+            min: 94
+            max: 100
+            result: Epic
+            # detail: 'A life-defining quest of unknowable scope'
+    # collections:
+    #   challenge_rank:
+    #     canonical_name: 'Oracle 19: Challenge Rank'
+    #     name: Challenge Rank
+    #     oracle_type: table_shared_roll
+    #     summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
+    #     source: &CollectionSource
+    #       <<: *Source
+    #       page: 190
+    #     contents:
+    #       quest:
+    #         name: Quest
+    #         source: *CollectionSource
+    #         oracle_type: column_simple
+    #         table:
+    #           - &Troublesome
+    #             min: 1
+    #             max: 20
+    #             result: Troublesome
+    #             detail: 'A challenging quest with a small number of obstacles'
+    #           - &Dangerous
+    #             min: 21
+    #             max: 55
+    #             result: Dangerous
+    #             detail: 'An involved quest with several tough obstacles'
+    #           - &Formidable
+    #             min: 56
+    #             max: 80
+    #             result: Formidable
+    #             detail: 'A complex quest with many intimidating obstacles'
+    #           - &Extreme
+    #             min: 81
+    #             max: 93
+    #             result: Extreme
+    #             detail: 'An overwhelming quest of staggering proportions'
+    #           - &Epic
+    #             min: 94
+    #             max: 100
+    #             result: Epic
+    #             detail: 'A life-defining quest of unknowable scope'
+    #       journey:
+    #         name: Journey
+    #         source: *CollectionSource
+    #         oracle_type: column_simple
+    #         table:
+    #           - <<: *Troublesome
+    #             detail: 'Traveling a moderate distance within a single region'
+    #           - <<: *Dangerous
+    #             detail: 'Traveling a long distance within a single region, or across rough terrain'
+    #           - <<: *Formidable
+    #             detail: 'Traveling from one region to another, or across especially challenging terrain,'
+    #           - <<: *Extreme
+    #             detail: 'Traveling through multiple regions'
+    #           - <<: *Epic
+    #             detail: 'Traveling from one end of the Ironlands to another, or to a separate land'
+    #       foe:
+    #         name: Foes
+    #         source: *CollectionSource
+    #         oracle_type: column_simple
+    #         table:
+    #           - <<: *Troublesome
+    #             detail: 'Common enemies'
+    #           - <<: *Dangerous
+    #             detail: 'Capable fighters and deadly creatures'
+    #           - <<: *Formidable
+    #             detail: 'Exceptional fighters and mighty creatures'
+    #           - <<: *Extreme
+    #             detail: 'Foes of overwhelming skill or power'
+    #           - <<: *Epic
+    #             detail: 'Legendary foes of mythic power'

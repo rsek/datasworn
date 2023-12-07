@@ -4,13 +4,13 @@ import { StatRule } from './rules/StatRule.js'
 import { ConditionMeterRule } from './rules/ConditionMeterRule.js'
 import { ImpactCategory } from './rules/ImpactRule.js'
 import { SpecialTrackRule } from './rules/SpecialTrackRule.js'
-import { TagRuleBase } from './rules/TagRule.js'
+import { TagRule } from './rules/TagRule.js'
 
 export * from './rules/StatRule.js'
 export * from './rules/ConditionMeterRule.js'
 export * from './rules/ImpactRule.js'
 export * from './rules/SpecialTrackRule.js'
-// export * from './rules/TagRule.js'
+export * from './rules/TagRule.js'
 
 export const Rules = Type.Object(
 	{
@@ -38,13 +38,17 @@ export const Rules = Type.Object(
 				description:
 					'Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).'
 			}
-		)
-		// tags: Generic.Dictionary(Type.Ref(TagRule))
+		),
+		tags: Generic.Dictionary(Type.Ref(TagRule), {
+			releaseStage: 'experimental',
+			default: {}
+		})
 	},
 	{
 		$id: 'Rules',
 		description:
-			'Describes rules for player characters in this ruleset, such as stats and condition meters.'
+			'Describes rules for player characters in this ruleset, such as stats and condition meters.',
+		releaseStage: 'experimental'
 	}
 )
 export type Rules = Static<typeof Rules>

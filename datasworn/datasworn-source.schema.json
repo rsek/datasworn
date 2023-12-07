@@ -72,7 +72,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleCollection"
+							"$ref": "#/$defs/OracleTablesCollection"
 						}
 					}
 				},
@@ -198,7 +198,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleCollection"
+							"$ref": "#/$defs/OracleTablesCollection"
 						}
 					}
 				},
@@ -319,6 +319,12 @@
 			"description": "A unique ID for an AssetCollection.",
 			"pattern": "^([a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
 		},
+		"AssetCollectionIdWildcard": {
+			"title": "AssetCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple AssetCollections.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/collections\\/assets\\/(\\*|([a-z][a-z_]*))$"
+		},
 		"AssetConditionMeterControlFieldId": {
 			"title": "AssetConditionMeterControlFieldId",
 			"type": "string",
@@ -411,6 +417,12 @@
 			"examples": ["delve/site_domains/shadowfen"],
 			"pattern": "^([a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)$"
 		},
+		"DelveSiteDomainIdWildcard": {
+			"title": "DelveSiteDomainIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple DelveSiteDomains.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/site_domains\\/(\\*|([a-z][a-z_]*))$"
+		},
 		"DelveSiteId": {
 			"title": "DelveSiteId",
 			"type": "string",
@@ -418,12 +430,24 @@
 			"examples": ["delve/delve_sites/alvas_rest"],
 			"pattern": "^([a-z0-9_]{3,})\\/delve_sites\\/([a-z][a-z_]*)$"
 		},
+		"DelveSiteIdWildcard": {
+			"title": "DelveSiteIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple DelveSites.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/delve_sites\\/(\\*|([a-z][a-z_]*))$"
+		},
 		"DelveSiteThemeId": {
 			"title": "DelveSiteThemeId",
 			"type": "string",
 			"description": "A unique ID for a DelveSiteTheme.",
 			"examples": ["delve/site_themes/hallowed"],
 			"pattern": "^([a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)$"
+		},
+		"DelveSiteThemeIdWildcard": {
+			"title": "DelveSiteThemeIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple DelveSiteThemes.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/site_themes\\/(\\*|([a-z][a-z_]*))$"
 		},
 		"DictKey": {
 			"title": "DictKey",
@@ -477,6 +501,12 @@
 			"description": "A unique ID for a MoveCategory.",
 			"examples": ["starforged/collections/moves/adventure"],
 			"pattern": "^([a-z0-9_]{3,})\\/collections\\/moves\\/([a-z][a-z_]*)$"
+		},
+		"MoveCategoryIdWildcard": {
+			"title": "MoveCategoryIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple MoveCategorys.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/collections\\/moves\\/(\\*|([a-z][a-z_]*))$"
 		},
 		"MoveId": {
 			"title": "MoveId",
@@ -532,6 +562,12 @@
 			],
 			"pattern": "^([a-z0-9_]{3,})\\/collections\\/npcs\\/([a-z][a-z_]*)$"
 		},
+		"NpcCollectionIdWildcard": {
+			"title": "NpcCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple NpcCollections.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/collections\\/npcs\\/(\\*|([a-z][a-z_]*))$"
+		},
 		"NpcId": {
 			"title": "NpcId",
 			"type": "string",
@@ -568,13 +604,19 @@
 			],
 			"pattern": "^([a-z0-9_]{3,})\\/collections\\/oracles(\\/([a-z][a-z_]*)){1,3}$"
 		},
-		"OracleTableId": {
-			"title": "OracleTableId",
+		"OracleCollectionIdWildcard": {
+			"title": "OracleCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple OracleCollections.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/collections\\/oracles((\\/([a-z][a-z_]*)){1,3}|\\/\\*\\*|\\/\\*\\*\\/([a-z][a-z_]*)|\\/([a-z][a-z_]*)\\/\\*\\*)$"
+		},
+		"OracleRollableId": {
+			"title": "OracleRollableId",
 			"anyOf": [
 				{
-					"title": "OracleTableId",
+					"title": "OracleRollableId",
 					"type": "string",
-					"description": "A unique ID for an OracleTable.",
+					"description": "A unique ID for an OracleRollable.",
 					"examples": [
 						"starforged/oracles/core/action",
 						"starforged/oracles/character/names/given",
@@ -583,9 +625,9 @@
 					"pattern": "^([a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)$"
 				},
 				{
-					"title": "OracleTableId",
+					"title": "OracleRollableId",
 					"type": "string",
-					"description": "A unique ID for an OracleTable.",
+					"description": "A unique ID for an OracleRollable.",
 					"examples": [
 						"starforged/oracles/core/action",
 						"starforged/oracles/character/names/given",
@@ -600,8 +642,8 @@
 				"starforged/oracles/planets/furnace/settlements/terminus"
 			]
 		},
-		"OracleTableIdWildcard": {
-			"title": "OracleTableIdWildcard",
+		"OracleRollableIdWildcard": {
+			"title": "OracleRollableIdWildcard",
 			"type": "string",
 			"description": "Oracle table wildcards can also use '**' to represent any number of collection levels in the oracle tree.",
 			"examples": [
@@ -609,7 +651,7 @@
 				"starforged/oracles/character/names/*",
 				"starforged/oracles/planets/*/settlements/*"
 			],
-			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/oracles\\/((\\/([a-z][a-z_]*)){1,3}|\\/\\*\\*|\\/\\*\\*\\/([a-z][a-z_]*)|\\/([a-z][a-z_]*)\\/\\*\\*)\\/(\\*|([a-z][a-z_]*))$"
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/oracles((\\/([a-z][a-z_]*)){1,3}|\\/\\*\\*|\\/\\*\\*\\/([a-z][a-z_]*)|\\/([a-z][a-z_]*)\\/\\*\\*)\\/(\\*|([a-z][a-z_]*))$"
 		},
 		"OracleTableRowId": {
 			"title": "OracleTableRowId",
@@ -639,6 +681,12 @@
 			"description": "A unique ID for a Rarity.",
 			"examples": ["classic/rarities/ayethins_journal"],
 			"pattern": "^([a-z0-9_]{3,})\\/rarities\\/([a-z][a-z_]*)$"
+		},
+		"RarityIdWildcard": {
+			"title": "RarityIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple Raritys.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/rarities\\/(\\*|([a-z][a-z_]*))$"
 		},
 		"RulesetId": {
 			"title": "RulesetId",
@@ -682,6 +730,12 @@
 			"description": "A unique ID for a Truth.",
 			"examples": ["classic/truths/iron", "starforged/truths/iron"],
 			"pattern": "^([a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)$"
+		},
+		"TruthIdWildcard": {
+			"title": "TruthIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple Truths.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/truths\\/(\\*|([a-z][a-z_]*))$"
 		},
 		"TruthOptionId": {
 			"title": "TruthOptionId",
@@ -801,7 +855,7 @@
 				"oracles": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/OracleTableId"
+						"$ref": "#/$defs/OracleRollableId"
 					}
 				},
 				"assets": {
@@ -872,7 +926,8 @@
 					"description": "The part of speech for this string."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"releaseStage": "experimental"
 		},
 		"I18nHints": {
 			"title": "I18nHints",
@@ -880,9 +935,6 @@
 			"description": "Internationalization/localization hints for the text content of this object.",
 			"properties": {
 				"result": {
-					"$ref": "#/$defs/I18nHint"
-				},
-				"summary": {
 					"$ref": "#/$defs/I18nHint"
 				},
 				"description": {
@@ -894,16 +946,20 @@
 						"result": {
 							"$ref": "#/$defs/I18nHint"
 						},
-						"summary": {
+						"description": {
 							"$ref": "#/$defs/I18nHint"
 						},
-						"description": {
+						"detail": {
 							"$ref": "#/$defs/I18nHint"
 						}
 					}
+				},
+				"detail": {
+					"$ref": "#/$defs/I18nHint"
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"releaseStage": "experimental"
 		},
 		"InputLabel": {
 			"title": "InputLabel",
@@ -949,6 +1005,20 @@
 			"i18n": true,
 			"releaseStage": "experimental"
 		},
+		"CollectableType": {
+			"title": "CollectableType",
+			"enum": ["oracle_rollable", "move", "asset", "atlas_entry", "npc"]
+		},
+		"CollectionType": {
+			"title": "CollectionType",
+			"enum": [
+				"oracle_collection",
+				"move_category",
+				"asset_collection",
+				"atlas",
+				"npc_collection"
+			]
+		},
 		"ConditionMeterRule": {
 			"title": "ConditionMeterRule",
 			"type": "object",
@@ -982,8 +1052,10 @@
 					"description": "A description of this condition meter."
 				},
 				"rollable": {
-					"type": "integer",
-					"default": 0
+					"type": "boolean",
+					"description": "Is this meter's `value` usable as a stat in an action roll?",
+					"const": true,
+					"default": true
 				}
 			},
 			"additionalProperties": false
@@ -1050,6 +1122,24 @@
 			},
 			"additionalProperties": false
 		},
+		"NonCollectableType": {
+			"title": "NonCollectableType",
+			"enum": ["oracle_rollable", "move", "asset", "atlas_entry", "npc"]
+		},
+		"ObjectType": {
+			"title": "ObjectType",
+			"anyOf": [
+				{
+					"$ref": "#/$defs/CollectableType"
+				},
+				{
+					"$ref": "#/$defs/NonCollectableType"
+				},
+				{
+					"$ref": "#/$defs/CollectionType"
+				}
+			]
+		},
 		"Rules": {
 			"title": "Rules",
 			"type": "object",
@@ -1095,9 +1185,21 @@
 							"$ref": "#/$defs/StatRule"
 						}
 					}
+				},
+				"tags": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"default": {},
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/TagRule"
+						}
+					},
+					"releaseStage": "experimental"
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"releaseStage": "experimental"
 		},
 		"RulesExpansion": {
 			"title": "RulesExpansion",
@@ -1143,9 +1245,21 @@
 							"$ref": "#/$defs/StatRule"
 						}
 					}
+				},
+				"tags": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"default": {},
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/TagRule"
+						}
+					},
+					"releaseStage": "experimental"
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"releaseStage": "experimental"
 		},
 		"SpecialTrackRule": {
 			"title": "SpecialTrackRule",
@@ -1194,6 +1308,966 @@
 				}
 			},
 			"additionalProperties": false
+		},
+		"Tag": {
+			"title": "Tag",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "integer"
+				},
+				{
+					"$ref": "#/$defs/DictKey"
+				},
+				{
+					"$ref": "#/$defs/DiceExpression"
+				},
+				{
+					"$ref": "#/$defs/OracleRollableId"
+				},
+				{
+					"$ref": "#/$defs/MoveId"
+				},
+				{
+					"$ref": "#/$defs/AssetId"
+				},
+				{
+					"$ref": "#/$defs/AtlasEntryId"
+				},
+				{
+					"$ref": "#/$defs/NpcId"
+				},
+				{
+					"$ref": "#/$defs/OracleCollectionId"
+				},
+				{
+					"$ref": "#/$defs/MoveCategoryId"
+				},
+				{
+					"$ref": "#/$defs/AssetCollectionId"
+				},
+				{
+					"$ref": "#/$defs/AtlasId"
+				},
+				{
+					"$ref": "#/$defs/NpcCollectionId"
+				},
+				{
+					"$ref": "#/$defs/DelveSiteId"
+				},
+				{
+					"$ref": "#/$defs/DelveSiteThemeId"
+				},
+				{
+					"$ref": "#/$defs/DelveSiteDomainId"
+				},
+				{
+					"$ref": "#/$defs/TruthId"
+				},
+				{
+					"$ref": "#/$defs/RarityId"
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "#/$defs/OracleRollableIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/MoveIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/AssetIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/AtlasEntryIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/NpcIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/OracleCollectionIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/MoveCategoryIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/AssetCollectionIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/AtlasIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/NpcCollectionIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/DelveSiteIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/DelveSiteThemeIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/DelveSiteDomainIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/TruthIdWildcard"
+							},
+							{
+								"$ref": "#/$defs/RarityIdWildcard"
+							}
+						]
+					}
+				}
+			]
+		},
+		"TagRule": {
+			"title": "TagRule",
+			"type": "object",
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `value_type` property as a discriminator.",
+			"required": ["value_type"],
+			"properties": {
+				"value_type": {
+					"enum": [
+						"boolean",
+						"integer",
+						"oracle_rollable",
+						"move",
+						"asset",
+						"atlas_entry",
+						"npc",
+						"oracle_collection",
+						"move_category",
+						"asset_collection",
+						"atlas",
+						"npc_collection",
+						"delve_site",
+						"delve_site_theme",
+						"delve_site_domain",
+						"truth",
+						"rarity",
+						"enum"
+					]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "boolean",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleBoolean",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"array": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "boolean",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "integer",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleInteger",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"array": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "integer",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "oracle_rollable",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleOracleRollable",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "oracle_rollable",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "move",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleMove",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "move",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "asset",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleAsset",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "asset",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "atlas_entry",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleAtlasEntry",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "atlas_entry",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "npc",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleNpc",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "npc",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "oracle_collection",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleOracleCollection",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "oracle_collection",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "move_category",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleMoveCategory",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "move_category",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "asset_collection",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleAssetCollection",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "asset_collection",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "atlas",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleAtlas",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "atlas",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "npc_collection",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleNpcCollection",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "npc_collection",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "delve_site",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleDelveSite",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "delve_site",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "delve_site_theme",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleDelveSiteTheme",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "delve_site_theme",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "delve_site_domain",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleDelveSiteDomain",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "delve_site_domain",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "truth",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleTruth",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "truth",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "rarity",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleRarity",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "rarity",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "enum",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleEnum",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"array": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "enum",
+								"type": "string"
+							},
+							"enum": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/DictKey"
+								}
+							}
+						},
+						"required": ["description", "value_type", "enum"]
+					}
+				}
+			]
 		},
 		"ChallengeRank": {
 			"title": "ChallengeRank",
@@ -1603,7 +2677,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -1685,7 +2759,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -1748,31 +2822,13 @@
 			"examples": ["1d100", "1d6+2"],
 			"pattern": "([1-9][0-9]*)d([1-9][0-9]*)([+-]([1-9][0-9]*))?"
 		},
-		"OracleRollTemplate": {
-			"title": "OracleRollTemplate",
-			"type": "object",
-			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#summary`, and `OracleTableRow#description`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.",
-			"properties": {
-				"result": {
-					"$ref": "#/$defs/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#result.",
-					"examples": [
-						"{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}"
-					]
-				},
-				"summary": {
-					"$ref": "#/$defs/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#summary."
-				},
-				"description": {
-					"$ref": "#/$defs/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#description."
-				}
-			},
-			"additionalProperties": false
+		"OracleDuplicateBehavior": {
+			"title": "OracleDuplicateBehavior",
+			"description": "Special roll instructions to use when rolling multiple times on a single oracle.\n\n  - `reroll`: Duplicates results should be re-rolled.\n  - `keep`: Duplicates results should be kept.\n  - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.",
+			"enum": ["reroll", "keep", "make_it_worse"]
 		},
-		"OracleTableMatchBehavior": {
-			"title": "OracleTableMatchBehavior",
+		"OracleMatchBehavior": {
+			"title": "OracleMatchBehavior",
 			"type": "object",
 			"required": ["text"],
 			"properties": {
@@ -1782,8 +2838,8 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRoll": {
-			"title": "OracleTableRoll",
+		"OracleRoll": {
+			"title": "OracleRoll",
 			"type": "object",
 			"properties": {
 				"dice": {
@@ -1800,12 +2856,12 @@
 				},
 				"auto": {
 					"type": "boolean",
-					"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as \"Action + Theme\".",
+					"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as \"Action + Theme\" or \"Roll Twice\".",
 					"default": false
 				},
 				"duplicates": {
-					"$ref": "#/$defs/OracleTableRollDuplicates",
-					"description": "Special rules on how to handle duplicate results, when rolling multiple times on this table.",
+					"$ref": "#/$defs/OracleDuplicateBehavior",
+					"description": "Special rules on how to handle duplicate results, when rolling multiple times.",
 					"default": "reroll"
 				},
 				"number_of_rolls": {
@@ -1815,11 +2871,11 @@
 					"minimum": 1
 				},
 				"oracle": {
-					"description": "The ID of the oracle table to be rolled. A `null` value indicates that it's a roll on the same table.",
+					"description": "The ID of the oracle to be rolled. A `null` value indicates that it's a roll on the same table.",
 					"default": null,
 					"anyOf": [
 						{
-							"$ref": "#/$defs/OracleTableId"
+							"$ref": "#/$defs/OracleRollableId"
 						},
 						{
 							"type": "null"
@@ -1829,89 +2885,175 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRollDuplicates": {
-			"title": "OracleTableRollDuplicates",
-			"description": "Special roll instructions to use when rolling multiple times on a single oracle table.\n\n  - `reroll`: Duplicates should be re-rolled.\n  - `keep`: Duplicates should be kept.\n  - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.",
-			"enum": ["reroll", "keep", "make_it_worse"]
+		"OracleRollTemplate": {
+			"title": "OracleRollTemplate",
+			"type": "object",
+			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#detail`, and `OracleTableRow#description`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.",
+			"properties": {
+				"result": {
+					"$ref": "#/$defs/TemplateString",
+					"description": "A string template that may be used in place of OracleTableRow#result.",
+					"examples": [
+						"{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}"
+					]
+				},
+				"description": {
+					"$ref": "#/$defs/TemplateString",
+					"description": "A string template that may be used in place of OracleTableRow#description."
+				},
+				"detail": {
+					"$ref": "#/$defs/TemplateString",
+					"description": "A string template that may be used in place of OracleTableRow#detail."
+				}
+			},
+			"additionalProperties": false
 		},
 		"OracleCollection": {
 			"title": "OracleCollection",
 			"type": "object",
-			"required": ["name", "source"],
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"required": ["oracle_type"],
+			"properties": {
+				"oracle_type": {
+					"enum": [
+						"tables",
+						"table_shared_rolls",
+						"table_shared_results",
+						"table_shared_details"
+					]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "tables",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/OracleTablesCollection"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_shared_rolls",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/OracleTableSharedRoll"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_shared_results",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/OracleTableSharedResults"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_shared_details",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/OracleTableSharedDetails"
+					}
+				}
+			]
+		},
+		"OracleColumnDetails": {
+			"title": "OracleColumnDetails",
+			"type": "object",
+			"required": ["name", "oracle_type", "table"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleCollectionId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
 					"$ref": "#/$defs/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary label at the head of this column."
 				},
-				"canonical_name": {
-					"$ref": "#/$defs/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
-				},
-				"enhances": {
-					"$ref": "#/$defs/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				"oracle_type": {
+					"type": "string",
+					"const": "column_details"
 				},
 				"color": {
 					"$ref": "#/$defs/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
 				},
 				"icon": {
 					"$ref": "#/$defs/SvgImageUrl",
-					"description": "An SVG icon associated with this collection."
+					"description": "An optional icon for this column."
 				},
-				"images": {
-					"type": "array",
-					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
-						"description": "Extra images associated with this collection."
-					}
-				},
-				"rendering": {
-					"$ref": "#/$defs/OracleCollectionRendering",
-					"default": {
-						"style": "tables"
-					}
+				"dice": {
+					"$ref": "#/$defs/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
 				},
 				"summary": {
 					"$ref": "#/$defs/MarkdownString",
-					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
 				},
-				"description": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				"match": {
+					"$ref": "#/$defs/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
-				"contents": {
+				"column_labels": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleTable"
-						}
-					}
-				},
-				"collections": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleCollection"
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"roll": "Roll",
+						"result": "Result",
+						"detail": "Detail"
+					},
+					"required": ["roll", "result", "detail"],
+					"properties": {
+						"roll": {
+							"$ref": "#/$defs/Label",
+							"default": "Roll"
+						},
+						"result": {
+							"$ref": "#/$defs/Label",
+							"default": "Result"
+						},
+						"detail": {
+							"$ref": "#/$defs/Label",
+							"default": "Detail"
 						}
 					}
 				},
 				"suggestions": {
 					"$ref": "#/$defs/Suggestions"
 				},
-				"source": {
-					"$ref": "#/$defs/Source",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				"table": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRowDetails"
+					}
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"$ref": "#/$defs/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
 					"type": "object",
@@ -1921,7 +3063,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -1931,15 +3073,111 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleCollectionRendering": {
-			"title": "OracleCollectionRendering",
+		"OracleColumnSimple": {
+			"title": "OracleColumnSimple",
 			"type": "object",
-			"description": "Describes the presentation of this oracle collection, which might represent a group of separate tables, or a single table with additional columns.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `style` property as a discriminator.",
-			"required": ["style"],
+			"description": "Represents a single column in an OracleCollection.",
+			"required": ["name", "oracle_type", "table"],
 			"properties": {
-				"style": {
-					"enum": ["tables", "multi_table"]
+				"id": {
+					"$ref": "#/$defs/OracleRollableId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/$defs/Label",
+					"description": "The primary label at the head of this column."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "column_simple"
+				},
+				"color": {
+					"$ref": "#/$defs/CssColor",
+					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An optional icon for this column."
+				},
+				"dice": {
+					"$ref": "#/$defs/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+				},
+				"match": {
+					"$ref": "#/$defs/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"column_labels": {
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"roll": "Roll",
+						"result": "Result"
+					},
+					"required": ["roll", "result"],
+					"properties": {
+						"roll": {
+							"$ref": "#/$defs/Label",
+							"default": "Roll"
+						},
+						"result": {
+							"$ref": "#/$defs/Label",
+							"default": "Result"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"table": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRowSimple"
+					}
+				},
+				"replaces": {
+					"$ref": "#/$defs/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/$defs/Tag"
+								}
+							}
+						}
+					},
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleRollable": {
+			"title": "OracleRollable",
+			"type": "object",
+			"description": "A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table.",
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"required": ["oracle_type"],
+			"properties": {
+				"oracle_type": {
+					"default": "table_simple",
+					"enum": [
+						"table_simple",
+						"table_details",
+						"column_simple",
+						"column_details"
+					]
 				}
 			},
 			"additionalProperties": true,
@@ -1947,97 +3185,65 @@
 				{
 					"if": {
 						"properties": {
-							"style": {
-								"const": "tables",
+							"oracle_type": {
+								"const": "table_simple",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleCollectionRenderingTables"
+						"$ref": "#/$defs/OracleTableSimple"
 					}
 				},
 				{
 					"if": {
 						"properties": {
-							"style": {
-								"const": "multi_table",
+							"oracle_type": {
+								"const": "table_details",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleCollectionRenderingMultiTable"
+						"$ref": "#/$defs/OracleTableDetails"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "column_simple",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/OracleColumnSimple"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "column_details",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/$defs/OracleColumnDetails"
 					}
 				}
 			]
 		},
-		"OracleCollectionRenderingMultiTable": {
-			"title": "OracleCollectionRenderingMultiTable",
+		"OracleTableDetails": {
+			"title": "OracleTableDetails",
 			"type": "object",
-			"required": ["style", "columns"],
-			"properties": {
-				"style": {
-					"type": "string",
-					"description": "Presented as a single table, with its OracleTable children rendered as columns.",
-					"const": "multi_table"
-				},
-				"columns": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleCollectionTableColumn"
-						}
-					}
-				}
-			},
-			"additionalProperties": false
-		},
-		"OracleCollectionRenderingTables": {
-			"title": "OracleCollectionRenderingTables",
-			"type": "object",
-			"required": ["style"],
-			"properties": {
-				"style": {
-					"type": "string",
-					"description": "Presented as a collection of separate tables.",
-					"const": "tables"
-				}
-			},
-			"additionalProperties": false
-		},
-		"OracleCollectionTableColumn": {
-			"title": "OracleCollectionTableColumn",
-			"type": "object",
-			"required": ["label", "content_type", "table_key"],
-			"properties": {
-				"label": {
-					"$ref": "#/$defs/Label",
-					"description": "The column's header text."
-				},
-				"content_type": {
-					"$ref": "#/$defs/OracleTableColumnContentKey"
-				},
-				"color": {
-					"$ref": "#/$defs/CssColor",
-					"description": "The thematic color for this column."
-				},
-				"table_key": {
-					"$ref": "#/$defs/DictKey",
-					"description": "The key of the OracleTable (within this collection), whose data is used to render this column."
-				}
-			},
-			"additionalProperties": false
-		},
-		"OracleTable": {
-			"title": "OracleTable",
-			"type": "object",
-			"description": "Represents a single oracle table, or a single table column of a table that has multiple \"Roll\" or \"Result\" columns.",
-			"required": ["name", "table", "source"],
+			"description": "A rollable oracle table with one roll column, one `result` column, and one `detail` column.",
+			"required": ["name", "oracle_type", "table", "source"],
 			"properties": {
 				"id": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
@@ -2048,25 +3254,18 @@
 					"$ref": "#/$defs/Label",
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
+				"oracle_type": {
+					"type": "string",
+					"const": "table_details"
+				},
 				"icon": {
 					"$ref": "#/$defs/SvgImageUrl",
 					"description": "An icon that represents this table."
 				},
-				"images": {
-					"type": "array",
-					"items": {
-						"$ref": "#/$defs/WebpImageUrl",
-						"description": "Extra images associated with this table."
-					}
-				},
 				"dice": {
 					"$ref": "#/$defs/DiceExpression",
-					"description": "The roll used to select a result on this table.",
+					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
-				},
-				"rendering": {
-					"$ref": "#/$defs/OracleTableRendering",
-					"description": "Describes how how to render this table, when presenting it as a standalone table."
 				},
 				"summary": {
 					"$ref": "#/$defs/MarkdownString",
@@ -2077,7 +3276,7 @@
 					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
-					"$ref": "#/$defs/OracleTableMatchBehavior",
+					"$ref": "#/$defs/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
 				"recommended_rolls": {
@@ -2094,14 +3293,38 @@
 						}
 					}
 				},
+				"column_labels": {
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"roll": "Roll",
+						"result": "Result",
+						"detail": "Detail"
+					},
+					"required": ["roll", "result", "detail"],
+					"properties": {
+						"roll": {
+							"$ref": "#/$defs/Label",
+							"default": "Roll"
+						},
+						"result": {
+							"$ref": "#/$defs/Label",
+							"default": "Result"
+						},
+						"detail": {
+							"$ref": "#/$defs/Label",
+							"default": "Detail"
+						}
+					}
+				},
 				"suggestions": {
 					"$ref": "#/$defs/Suggestions"
 				},
 				"table": {
 					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRow",
-						"description": "An array of objects, each representing a single row of the table."
+						"$ref": "#/$defs/OracleTableRowDetails"
 					}
 				},
 				"source": {
@@ -2109,8 +3332,8 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"replaces": {
-					"$ref": "#/$defs/OracleTableId",
-					"description": "Indicates that this table replaces the identified table. References to the replaced table can be considered equivalent to this table."
+					"$ref": "#/$defs/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
 				},
 				"tags": {
 					"type": "object",
@@ -2120,7 +3343,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -2130,66 +3353,15 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableColumn": {
-			"title": "OracleTableColumn",
+		"OracleTableRollable": {
+			"title": "OracleTableRollable",
 			"type": "object",
-			"required": ["label", "content_type"],
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"required": ["oracle_type"],
 			"properties": {
-				"label": {
-					"$ref": "#/$defs/Label",
-					"description": "The column's header text."
-				},
-				"content_type": {
-					"$ref": "#/$defs/OracleTableColumnContentKey"
-				},
-				"color": {
-					"$ref": "#/$defs/CssColor",
-					"description": "The thematic color for this column."
-				}
-			},
-			"additionalProperties": false,
-			"examples": [
-				{
-					"label": "Roll",
-					"content_type": "roll"
-				},
-				{
-					"label": "Result",
-					"content_type": "result"
-				},
-				{
-					"label": "Summary",
-					"content_type": "summary"
-				}
-			]
-		},
-		"OracleTableColumnContentKey": {
-			"title": "OracleTableColumnContentKey",
-			"description": "The value(s) from each OracleTableRow that is rendered in this column.\n\n  - `roll`: Column displays the roll range (`min` and `max`) of each OracleTableRow.\n  - `result`: Column displays the OracleTableRow's `result` key.\n  - `summary`: Column displays the OracleTableRow's `summary` key.\n  - `description`: Column displays the OracleTableRow's `description` key.",
-			"enum": ["roll", "result", "summary", "description"]
-		},
-		"OracleTableRendering": {
-			"title": "OracleTableRendering",
-			"type": "object",
-			"description": "Describes the presentation of this table.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `style` property as a discriminator.",
-			"default": {
-				"style": "standalone",
-				"columns": {
-					"roll": {
-						"label": "Roll",
-						"content_type": "roll"
-					},
-					"result": {
-						"label": "Result",
-						"content_type": "result"
-					}
-				}
-			},
-			"required": ["style"],
-			"properties": {
-				"style": {
-					"enum": ["standalone", "column", "embed_in_row"]
+				"oracle_type": {
+					"default": "table_simple",
+					"enum": ["table_simple", "table_details"]
 				}
 			},
 			"additionalProperties": true,
@@ -2197,104 +3369,115 @@
 				{
 					"if": {
 						"properties": {
-							"style": {
-								"const": "standalone",
+							"oracle_type": {
+								"const": "table_simple",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableRenderingStandalone"
+						"$ref": "#/$defs/OracleTableSimple"
 					}
 				},
 				{
 					"if": {
 						"properties": {
-							"style": {
-								"const": "column",
+							"oracle_type": {
+								"const": "table_details",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/$defs/OracleTableRenderingColumn"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"style": {
-								"const": "embed_in_row",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/$defs/OracleTableRenderingEmbedInRow"
+						"$ref": "#/$defs/OracleTableDetails"
 					}
 				}
 			]
 		},
-		"OracleTableRenderingColumn": {
-			"title": "OracleTableRenderingColumn",
+		"OracleTableRowDetails": {
+			"title": "OracleTableRowDetails",
 			"type": "object",
-			"required": ["style"],
+			"description": "Represents a row in an oracle table that provides additional details.",
+			"required": ["result"],
 			"properties": {
-				"style": {
-					"type": "string",
-					"description": "Render as a single column of a table.",
-					"const": "column"
-				}
-			},
-			"additionalProperties": false
-		},
-		"OracleTableRenderingEmbedInRow": {
-			"title": "OracleTableRenderingEmbedInRow",
-			"type": "object",
-			"required": ["style"],
-			"properties": {
-				"style": {
-					"type": "string",
-					"description": "Render as a table, within a row in another table.",
-					"const": "embed_in_row"
-				}
-			},
-			"additionalProperties": false
-		},
-		"OracleTableRenderingStandalone": {
-			"title": "OracleTableRenderingStandalone",
-			"type": "object",
-			"required": ["style"],
-			"properties": {
-				"style": {
-					"type": "string",
-					"description": "Render as a standalone table.",
-					"const": "standalone"
+				"id": {
+					"$ref": "#/$defs/OracleTableRowId",
+					"description": "The unique Datasworn ID for this item."
 				},
-				"columns": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"default": {
-						"roll": {
-							"label": "Roll",
-							"content_type": "roll"
+				"min": {
+					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"type": "integer",
+							"description": "Low end of the dice range for this table row."
 						},
-						"result": {
-							"label": "Result",
-							"content_type": "result"
+						{
+							"type": "null"
 						}
-					},
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/$defs/OracleTableColumn"
+					]
+				},
+				"max": {
+					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"type": "integer",
+							"description": "High end of the dice range for this table row."
+						},
+						{
+							"type": "null"
 						}
+					]
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl"
+				},
+				"result": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"description": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
+				},
+				"template": {
+					"$ref": "#/$defs/OracleRollTemplate"
+				},
+				"embed_table": {
+					"$ref": "#/$defs/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row."
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"i18n": {
+					"$ref": "#/$defs/I18nHints"
+				},
+				"detail": {
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/$defs/MarkdownString",
+							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/$defs/OracleRoll"
 					}
 				}
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRow": {
-			"title": "OracleTableRow",
+		"OracleTableRowSimple": {
+			"title": "OracleTableRowSimple",
 			"type": "object",
 			"description": "Represents a row in an oracle table.",
 			"required": ["result"],
@@ -2336,19 +3519,15 @@
 					"$ref": "#/$defs/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"summary": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-				},
 				"description": {
 					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
+					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
 				},
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
 				},
 				"suggestions": {
@@ -2361,8 +3540,530 @@
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
+						"$ref": "#/$defs/OracleRoll"
 					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTableSharedDetails": {
+			"title": "OracleTableSharedDetails",
+			"type": "object",
+			"description": "An OracleCollection representing a single table with multiple roll columns, one `result` column, and one `detail` column.",
+			"required": ["name", "oracle_type", "source"],
+			"properties": {
+				"id": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/$defs/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/$defs/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"description": "A table with multiple roll columns, one result column, and one details column.",
+					"const": "table_shared_details"
+				},
+				"enhances": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/$defs/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/OracleColumnDetails"
+						}
+					}
+				},
+				"column_labels": {
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"result": "Result",
+						"detail": "Detail"
+					},
+					"required": ["result", "detail"],
+					"properties": {
+						"result": {
+							"$ref": "#/$defs/Label",
+							"default": "Result"
+						},
+						"detail": {
+							"$ref": "#/$defs/Label",
+							"default": "Detail"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"source": {
+					"$ref": "#/$defs/Source",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"replaces": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/$defs/Tag"
+								}
+							}
+						}
+					},
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTableSharedResults": {
+			"title": "OracleTableSharedResults",
+			"type": "object",
+			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
+			"required": ["name", "oracle_type", "source"],
+			"properties": {
+				"id": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/$defs/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/$defs/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"description": "A table with multiple roll columns and one result column.",
+					"const": "table_shared_results"
+				},
+				"enhances": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/$defs/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/OracleColumnSimple"
+						}
+					}
+				},
+				"column_labels": {
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"result": "Result"
+					},
+					"required": ["result"],
+					"properties": {
+						"result": {
+							"$ref": "#/$defs/Label",
+							"default": "Result"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"source": {
+					"$ref": "#/$defs/Source",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"replaces": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/$defs/Tag"
+								}
+							}
+						}
+					},
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTableSharedRoll": {
+			"title": "OracleTableSharedRoll",
+			"type": "object",
+			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
+			"required": ["name", "source"],
+			"properties": {
+				"id": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/$defs/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/$defs/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"description": "A table with one roll column and multiple result columns.",
+					"const": "table_shared_rolls",
+					"default": "table_shared_rolls"
+				},
+				"enhances": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/$defs/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/OracleColumnSimple"
+						}
+					}
+				},
+				"column_labels": {
+					"type": "object",
+					"description": "Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.",
+					"default": {
+						"roll": "Roll"
+					},
+					"required": ["roll"],
+					"properties": {
+						"roll": {
+							"$ref": "#/$defs/Label",
+							"default": "Roll"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"source": {
+					"$ref": "#/$defs/Source",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"replaces": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/$defs/Tag"
+								}
+							}
+						}
+					},
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTableSimple": {
+			"title": "OracleTableSimple",
+			"type": "object",
+			"description": "Represents a basic rollable oracle table with one roll column and one `result` column.",
+			"required": ["name", "oracle_type", "table", "source"],
+			"properties": {
+				"id": {
+					"$ref": "#/$defs/OracleRollableId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/$defs/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/$defs/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "table_simple"
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An icon that represents this table."
+				},
+				"dice": {
+					"$ref": "#/$defs/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"match": {
+					"$ref": "#/$defs/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
+				"column_labels": {
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"roll": "Roll",
+						"result": "Result"
+					},
+					"required": ["roll", "result"],
+					"properties": {
+						"roll": {
+							"$ref": "#/$defs/Label",
+							"default": "Roll"
+						},
+						"result": {
+							"$ref": "#/$defs/Label",
+							"default": "Result"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"table": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/$defs/OracleTableRowSimple"
+					}
+				},
+				"source": {
+					"$ref": "#/$defs/Source",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"replaces": {
+					"$ref": "#/$defs/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/$defs/Tag"
+								}
+							}
+						}
+					},
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTablesCollection": {
+			"title": "OracleTablesCollection",
+			"type": "object",
+			"description": "An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.",
+			"required": ["name", "source"],
+			"properties": {
+				"id": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/$defs/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/$defs/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"description": "A grouping of separate tables.",
+					"const": "tables",
+					"default": "tables"
+				},
+				"enhances": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/$defs/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/$defs/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/$defs/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/OracleTableRollable"
+						}
+					}
+				},
+				"collections": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/OracleCollection"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/$defs/Suggestions"
+				},
+				"source": {
+					"$ref": "#/$defs/Source",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"replaces": {
+					"$ref": "#/$defs/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"tags": {
+					"type": "object",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/$defs/Tag"
+								}
+							}
+						}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -2493,7 +4194,7 @@
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleTableId"
+						"$ref": "#/$defs/OracleRollableId"
 					}
 				},
 				"suggestions": {
@@ -2515,7 +4216,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -2629,7 +4330,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -2746,7 +4447,7 @@
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleTableId"
+						"$ref": "#/$defs/OracleRollableId"
 					}
 				},
 				"suggestions": {
@@ -2768,7 +4469,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -2819,6 +4520,12 @@
 					"$ref": "#/$defs/MarkdownString",
 					"type": "string",
 					"pattern": "On a __(strong hit|weak hit|miss)__"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/OracleRoll"
+					}
 				}
 			},
 			"additionalProperties": false
@@ -2889,7 +4596,7 @@
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleTableId"
+						"$ref": "#/$defs/OracleRollableId"
 					}
 				},
 				"suggestions": {
@@ -2911,7 +4618,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -3009,7 +4716,7 @@
 					"type": "array",
 					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
 					"items": {
-						"$ref": "#/$defs/OracleTableId"
+						"$ref": "#/$defs/OracleRollableId"
 					}
 				},
 				"suggestions": {
@@ -3031,7 +4738,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -3612,7 +5319,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -3951,7 +5658,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -4037,6 +5744,7 @@
 				},
 				"rollable": {
 					"type": "boolean",
+					"description": "Is this meter's `value` usable as a stat in an action roll?",
 					"const": true,
 					"default": true
 				}
@@ -4362,6 +6070,7 @@
 				},
 				"rollable": {
 					"type": "boolean",
+					"description": "Is this meter's `value` usable as a stat in an action roll?",
 					"const": true,
 					"default": true
 				}
@@ -4967,7 +6676,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -5052,19 +6761,15 @@
 					"$ref": "#/$defs/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"summary": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-				},
 				"description": {
 					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
+					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
 				},
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
 				},
 				"suggestions": {
@@ -5077,7 +6782,7 @@
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
+						"$ref": "#/$defs/OracleRoll"
 					}
 				}
 			},
@@ -5164,7 +6869,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -5226,7 +6931,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -5291,7 +6996,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -5622,7 +7327,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -5993,7 +7698,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				},
 				"name_oracle": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
 				},
 				"tags": {
@@ -6004,7 +7709,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -6039,19 +7744,15 @@
 					"$ref": "#/$defs/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"summary": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-				},
 				"description": {
 					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
+					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
 				},
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
 				},
 				"suggestions": {
@@ -6060,11 +7761,23 @@
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
 				},
+				"detail": {
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/$defs/MarkdownString",
+							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
+						"$ref": "#/$defs/OracleRoll"
 					}
 				}
 			},
@@ -6095,19 +7808,15 @@
 					"$ref": "#/$defs/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"summary": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-				},
 				"description": {
 					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
+					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
 				},
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
 				},
 				"suggestions": {
@@ -6116,11 +7825,23 @@
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
 				},
+				"detail": {
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/$defs/MarkdownString",
+							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
+						"$ref": "#/$defs/OracleRoll"
 					}
 				}
 			},
@@ -6459,7 +8180,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/Tag"
 								}
 							}
 						}
@@ -6494,19 +8215,15 @@
 					"$ref": "#/$defs/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"summary": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-				},
 				"description": {
 					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
+					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
 				},
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
 				},
 				"suggestions": {
@@ -6515,11 +8232,23 @@
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
 				},
+				"detail": {
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/$defs/MarkdownString",
+							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
+						"$ref": "#/$defs/OracleRoll"
 					}
 				}
 			},
@@ -6550,19 +8279,15 @@
 					"$ref": "#/$defs/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"summary": {
-					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
-				},
 				"description": {
 					"$ref": "#/$defs/MarkdownString",
-					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`."
+					"description": "Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`."
 				},
 				"template": {
 					"$ref": "#/$defs/OracleRollTemplate"
 				},
 				"embed_table": {
-					"$ref": "#/$defs/OracleTableId",
+					"$ref": "#/$defs/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row."
 				},
 				"suggestions": {
@@ -6571,11 +8296,23 @@
 				"i18n": {
 					"$ref": "#/$defs/I18nHints"
 				},
+				"detail": {
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/$defs/MarkdownString",
+							"description": "Optional secondary text content for this row. Generally, this is longer than `result`."
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
 				"oracle_rolls": {
 					"type": "array",
 					"description": "Further oracle rolls prompted by this table row.",
 					"items": {
-						"$ref": "#/$defs/OracleTableRoll"
+						"$ref": "#/$defs/OracleRoll"
 					}
 				}
 			},

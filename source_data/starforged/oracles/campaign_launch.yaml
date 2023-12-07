@@ -3,6 +3,7 @@ package_type: ruleset
 oracles:
   campaign_launch:
     name: Campaign Launch
+    oracle_type: tables
     source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -20,23 +21,16 @@ oracles:
           page: 105
         summary: |-
           If you want some direction for your starting paths, roll or pick from the table below and take the two paths associated with your selected background.
-        rendering:
-          style: standalone
-          columns:
-            roll:
-              content_type: roll
-              label: Roll
-            background:
-              content_type: result
-              label: Background
-            assets:
-              content_type: summary
-              label: Assets
+        oracle_type: table_details
+        column_labels:
+          roll: Roll
+          result: Background
+          detail: Assets
         table:
           - min: 1
             max: 5
             result: Battlefield Medic
-            summary: '[Healer](id:starforged/assets/path/healer); [Veteran](id:starforged/assets/path/veteran)'
+            detail: '[Healer](id:starforged/assets/path/healer); [Veteran](id:starforged/assets/path/veteran)'
             <<: &i18n
               i18n:
                 result:
@@ -49,7 +43,7 @@ oracles:
             min: 6
             max: 10
             result: Delegate
-            summary: '[Bannersworn](id:starforged/assets/path/bannersworn); [Diplomat](id:starforged/assets/path/diplomat)'
+            detail: '[Bannersworn](id:starforged/assets/path/bannersworn); [Diplomat](id:starforged/assets/path/diplomat)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/bannersworn
@@ -58,7 +52,7 @@ oracles:
             min: 11
             max: 15
             result: Exobiologist
-            summary: '[Lore Hunter](id:starforged/assets/path/lore_hunter); [Naturalist](id:starforged/assets/path/naturalist)'
+            detail: '[Lore Hunter](id:starforged/assets/path/lore_hunter); [Naturalist](id:starforged/assets/path/naturalist)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/lore_hunter
@@ -67,7 +61,7 @@ oracles:
             min: 16
             max: 20
             result: Far Trader
-            summary: '[Navigator](id:starforged/assets/path/navigator); [Trader](id:starforged/assets/path/trader)'
+            detail: '[Navigator](id:starforged/assets/path/navigator); [Trader](id:starforged/assets/path/trader)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/navigator
@@ -76,7 +70,7 @@ oracles:
             min: 21
             max: 25
             result: Fugitive Hunter
-            summary: '[Armored](id:starforged/assets/path/armored); [Bounty Hunter](id:starforged/assets/path/bounty_hunter)'
+            detail: '[Armored](id:starforged/assets/path/armored); [Bounty Hunter](id:starforged/assets/path/bounty_hunter)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/armored
@@ -85,7 +79,7 @@ oracles:
             min: 26
             max: 30
             result: Hacker
-            summary: '[Infiltrator](id:starforged/assets/path/infiltrator); [Tech](id:starforged/assets/path/tech)'
+            detail: '[Infiltrator](id:starforged/assets/path/infiltrator); [Tech](id:starforged/assets/path/tech)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/infiltrator
@@ -94,7 +88,7 @@ oracles:
             min: 31
             max: 35
             result: Hotshot Pilot
-            summary: '[Ace](id:starforged/assets/path/ace); [Navigator](id:starforged/assets/path/navigator)'
+            detail: '[Ace](id:starforged/assets/path/ace); [Navigator](id:starforged/assets/path/navigator)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/ace
@@ -103,7 +97,7 @@ oracles:
             min: 36
             max: 40
             result: Interstellar Scout
-            summary: '[Explorer](id:starforged/assets/path/explorer); [Voidborn](id:starforged/assets/path/voidborn)'
+            detail: '[Explorer](id:starforged/assets/path/explorer); [Voidborn](id:starforged/assets/path/voidborn)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/explorer
@@ -112,7 +106,7 @@ oracles:
             min: 41
             max: 45
             result: Monster Hunter
-            summary: '[Gunner](id:starforged/assets/path/gunner); [Slayer](id:starforged/assets/path/slayer)'
+            detail: '[Gunner](id:starforged/assets/path/gunner); [Slayer](id:starforged/assets/path/slayer)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/gunner
@@ -121,7 +115,7 @@ oracles:
             min: 46
             max: 50
             result: Occultist
-            summary: '[Outcast](id:starforged/assets/path/outcast); [Shade](id:starforged/assets/path/shade)'
+            detail: '[Outcast](id:starforged/assets/path/outcast); [Shade](id:starforged/assets/path/shade)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/outcast
@@ -130,7 +124,7 @@ oracles:
             min: 51
             max: 55
             result: Operative
-            summary: '[Infiltrator](id:starforged/assets/path/infiltrator); [Blademaster](id:starforged/assets/path/blademaster)'
+            detail: '[Infiltrator](id:starforged/assets/path/infiltrator); [Blademaster](id:starforged/assets/path/blademaster)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/infiltrator
@@ -139,7 +133,7 @@ oracles:
             min: 56
             max: 60
             result: Outlaw
-            summary: '[Fugitive](id:starforged/assets/path/fugitive); [Gunslinger](id:starforged/assets/path/gunslinger)'
+            detail: '[Fugitive](id:starforged/assets/path/fugitive); [Gunslinger](id:starforged/assets/path/gunslinger)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/fugitive
@@ -148,7 +142,7 @@ oracles:
             min: 61
             max: 65
             result: Private Investigator
-            summary: '[Brawler](id:starforged/assets/path/brawler); [Sleuth](id:starforged/assets/path/sleuth)'
+            detail: '[Brawler](id:starforged/assets/path/brawler); [Sleuth](id:starforged/assets/path/sleuth)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/brawler
@@ -157,7 +151,7 @@ oracles:
             min: 66
             max: 70
             result: Prophet
-            summary: '[Devotant](id:starforged/assets/path/devotant); [Seer](id:starforged/assets/path/seer)'
+            detail: '[Devotant](id:starforged/assets/path/devotant); [Seer](id:starforged/assets/path/seer)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/devotant
@@ -166,7 +160,7 @@ oracles:
             min: 71
             max: 75
             result: Psionicist
-            summary: '[Kinetic](id:starforged/assets/path/kinetic); [Vestige](id:starforged/assets/path/vestige)'
+            detail: '[Kinetic](id:starforged/assets/path/kinetic); [Vestige](id:starforged/assets/path/vestige)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/kinetic
@@ -175,7 +169,7 @@ oracles:
             min: 76
             max: 80
             result: Smuggler
-            summary: '[Courier](id:starforged/assets/path/courier); [Scoundrel](id:starforged/assets/path/scoundrel)'
+            detail: '[Courier](id:starforged/assets/path/courier); [Scoundrel](id:starforged/assets/path/scoundrel)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/courier
@@ -184,7 +178,7 @@ oracles:
             min: 81
             max: 85
             result: Spiritualist
-            summary: '[Haunted](id:starforged/assets/path/haunted); [Empath](id:starforged/assets/path/empath)'
+            detail: '[Haunted](id:starforged/assets/path/haunted); [Empath](id:starforged/assets/path/empath)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/haunted
@@ -193,7 +187,7 @@ oracles:
             min: 86
             max: 90
             result: Starship Engineer
-            summary: '[Gearhead](id:starforged/assets/path/gearhead); [Tech](id:starforged/assets/path/tech)'
+            detail: '[Gearhead](id:starforged/assets/path/gearhead); [Tech](id:starforged/assets/path/tech)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/gearhead
@@ -202,7 +196,7 @@ oracles:
             min: 91
             max: 95
             result: Supersoldier
-            summary: '[Augmented](id:starforged/assets/path/augmented); [Mercenary](id:starforged/assets/path/mercenary)'
+            detail: '[Augmented](id:starforged/assets/path/augmented); [Mercenary](id:starforged/assets/path/mercenary)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/augmented
@@ -211,13 +205,14 @@ oracles:
             min: 96
             max: 100
             result: Tomb Raider
-            summary: '[Scavenger](id:starforged/assets/path/scavenger); [Scoundrel](id:starforged/assets/path/scoundrel)'
+            detail: '[Scavenger](id:starforged/assets/path/scavenger); [Scoundrel](id:starforged/assets/path/scoundrel)'
             # suggestions:
             #   assets:
             #     - starforged/assets/path/scavenger
             #     - starforged/assets/path/scoundrel
       backstory_prompts:
         name: Backstory Prompts
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 106
@@ -274,6 +269,7 @@ oracles:
             result: 'Your wanderlust carried you far away'
       starship_history:
         name: Starship History
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 108
@@ -321,6 +317,7 @@ oracles:
             result: 'Won in a bet'
       starship_quirks:
         name: Starship Quirks
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 109
@@ -396,6 +393,7 @@ oracles:
             result: 'Timers and clocks are always just a bit off'
       sector_trouble:
         name: Sector Trouble
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 126
@@ -481,6 +479,7 @@ oracles:
             # suggestions: [*obj:Creature]
       inciting_incident:
         name: Inciting Incident
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 130

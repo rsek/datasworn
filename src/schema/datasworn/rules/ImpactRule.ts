@@ -1,6 +1,6 @@
-import { type Static, Type } from '@sinclair/typebox'
-import { Localize, Id, Player } from '../common/index.js'
+import { Type, type Static } from '@sinclair/typebox'
 import * as Generic from '../Generic.js'
+import { Localize, Player } from '../common/index.js'
 
 export const ImpactRule = Type.Object(
 	{

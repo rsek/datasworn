@@ -107,21 +107,20 @@ rules:
     wits:
       label: wits
       description: Expertise, knowledge, and observation.
-  # tags:
-  #   region:
-  #     id: starforged:region
-  #     schema:
-  #       type: object
-  #       properties:
-  #         value:
-  #           enum:
-  #             - terminus
-  #             - outlands
-  #             - expanse
-  #   life:
-  #     id: starforged:life
-  #     schema:
-  #       type: object
-  #       properties:
-  #         value:
-  #           type: boolean
+  tags:
+    region:
+      description: This oracle applies to a specific region of the Forge.
+      applies_to: [oracle_rollable]
+      value_type: enum
+      enum:
+        - terminus
+        - outlands
+        - expanse
+    location:
+      description: This oracle applies specifically to planetside, orbital, or deep space environments.
+      applies_to: [oracle_rollable]
+      value_type: enum
+      enum:
+        - planetside
+        - orbital
+        - deep_space

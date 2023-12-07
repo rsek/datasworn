@@ -110,7 +110,7 @@ export type Source = Static<typeof Source>
 
 export const Suggestions = Type.Partial(
 	Type.Object({
-		oracles: Type.Array(Type.Ref(Id.OracleTableId)),
+		oracles: Type.Array(Type.Ref(Id.OracleRollableId)),
 		assets: Type.Array(Type.Ref(Id.AssetId)),
 		moves: Type.Array(Type.Ref(Id.MoveId)),
 		site_domains: Type.Array(Type.Ref(Id.DelveSiteDomainId)),

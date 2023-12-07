@@ -26,7 +26,12 @@ export function extractDefs(defs: Record<string, TSchema>) {
 	return mapValues(defs, (v, k) => renderDefinition(k, v))
 }
 
+// keywords where they can be included close to as-is. boolean keywords generally have their value omitted, leaving just the tag: "@i18n" rather than "@i18n true"
 const extractableKeywords: string[] = ['min', 'max', 'i18n']
+
+
+// keywords where a string value is expected, and the string value is the keyword
+const extractableKeywordValues: string[] = ['releaseStage']
 
 function extractKeywords(schema: TSchema) {
 	const jsDoc: string[] = []
@@ -60,11 +65,18 @@ function extractKeywords(schema: TSchema) {
 			jsDoc.push(tag('default', tagContent))
 		}
 	}
+
 	jsDoc.push(
 		...toTags(
 			mapValues(pick(schema, ...extractableKeywords), (v, k) =>
 				v === true ? undefined : v
 			)
+		)
+	)
+
+	jsDoc.push(
+		...Object.values(pick(schema, ...extractableKeywordValues)).map((k) =>
+			tag(k as string)
 		)
 	)
 

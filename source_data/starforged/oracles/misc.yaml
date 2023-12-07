@@ -15,6 +15,7 @@ oracles:
     contents:
       story_complication:
         name: Story Complication
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 380
@@ -122,6 +123,7 @@ oracles:
                 auto: true
       story_clue:
         name: Story Clue
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 381
@@ -232,6 +234,7 @@ oracles:
                 auto: true
       anomaly_effect:
         name: Anomaly Effect
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 382
@@ -345,6 +348,7 @@ oracles:
                 auto: true
       combat_action:
         name: Combat Action
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 383

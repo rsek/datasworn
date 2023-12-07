@@ -15,12 +15,14 @@ oracles:
     collections:
       name:
         name: Faction Name
+        oracle_type: tables
         source: &CollectionSource
           <<: *Source
           page: 344
         contents:
           template:
             name: Faction Name Template
+            oracle_type: table_simple
             source: *CollectionSource
             # content:
             #   tags: [template]
@@ -60,6 +62,7 @@ oracles:
           legacy:
             name: Legacy
             source: *CollectionSource
+            oracle_type: table_simple
             # content:
             #   part_of_speech: [proper noun fragment]
             table:
@@ -268,6 +271,7 @@ oracles:
                 result: Wandering
           affiliation:
             name: Affiliation
+            oracle_type: table_simple
             source:
               <<: *Source
               page: 345
@@ -380,6 +384,7 @@ oracles:
                 result: Union
           identity:
             name: Identity
+            oracle_type: table_simple
             source:
               <<: *Source
               page: 345
@@ -592,29 +597,33 @@ oracles:
         source:
           <<: *Source
           page: 340
-
+        oracle_type: table_details
+        column_labels:
+          roll: Roll
+          result: Result
+          detail: Summary
         # usage:
         #   initial: true
         table:
           - min: 1
             max: 40
             result: '[Dominion](id:starforged/oracles/factions/dominion)'
-            summary: 'Governing power'
+            detail: 'Governing power'
             oracle_rolls:
               - oracle: starforged/oracles/factions/dominion
-              - oracle: starforged/oracles/factions/leadership
+              - oracle: starforged/oracles/factions/dominion_leadership
             # set_attributes: {faction_type: [dominion]}
           - min: 41
             max: 70
             result: '[Guild](id:starforged/oracles/factions/guild)'
-            summary: 'Organization of specialists'
+            detail: 'Organization of specialists'
             oracle_rolls:
               - oracle: starforged/oracles/factions/guild
             # set_attributes: {faction_type: [guild]}
           - min: 71
             max: 100
             result: '[Fringe Group](id:starforged/oracles/factions/fringe_group)'
-            summary: 'Band of outlaws, outcasts, or rogues'
+            detail: 'Band of outlaws, outcasts, or rogues'
             oracle_rolls:
               - oracle: starforged/oracles/factions/fringe_group
             # set_attributes: {faction_type: [fringe_group]}
@@ -623,60 +632,66 @@ oracles:
         source:
           <<: *Source
           page: 340
+        # details_label: summary
+        oracle_type: table_details
+        column_labels:
+          roll: Roll
+          result: Result
+          detail: Summary
         table:
           - <<: *i18n.result.adjective
             min: 1
             max: 10
             result: Forsaken
-            summary: Banished or forgotten
+            detail: Banished or forgotten
             # set_attributes: {influence: [forsaken]}
           - <<: *i18n.result.adjective
             min: 11
             max: 30
             result: Isolated
-            summary: Limited influence in a remote location
+            detail: Limited influence in a remote location
             # set_attributes: {influence: [isolated]}
           - <<: *i18n.result.adjective
             min: 31
             max: 50
             result: Localized
-            summary: Marginal influence in a single sector
+            detail: Marginal influence in a single sector
             # set_attributes: {influence: [localized]}
           - <<: *i18n.result.adjective
             min: 51
             max: 70
             result: Established
-            summary: Strong influence in a single sector
+            detail: Strong influence in a single sector
             # set_attributes: {influence: [established]}
           - <<: *i18n.result.adjective
             min: 71
             max: 85
             result: Notable
-            summary: Dispersed influence across a few sectors
+            detail: Dispersed influence across a few sectors
             # set_attributes: {influence: [notable]}
           - <<: *i18n.result.adjective
             min: 86
             max: 95
             result: Dominant
-            summary: Far-reaching influence across many sectors
+            detail: Far-reaching influence across many sectors
             # set_attributes: {influence: [dominant]}
           - <<: *i18n.result.adjective
             min: 96
             max: 100
             result: Inescapable
-            summary: Pervasive influence across inhabited space
+            detail: Pervasive influence across inhabited space
             # set_attributes: {influence: [inescapable]}
       dominion:
         name: Dominion
-        rendering:
-          style: standalone
+        oracle_type: table_simple
         icon: icons/factions/dominion.svg
         source:
           <<: *Source
           page: 341
         # usage:
         recommended_rolls:
-          max:  3
+          min: 1
+          max: 3
         #   initial: true
         #   requires:
         #     attributes:
@@ -804,8 +819,9 @@ oracles:
             max: 100
             result: Wealth
             # set_attributes: {dominion: [wealth]}
-      leadership:
+      dominion_leadership:
         name: 'Dominion: Leadership'
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 341
@@ -860,8 +876,7 @@ oracles:
             # set_attributes: {leadership: [varied_decentralized]}
       guild:
         name: Guild
-        rendering:
-          style: standalone
+        oracle_type: table_simple
         icon: icons/factions/guild.svg
         source:
           <<: *Source
@@ -953,8 +968,7 @@ oracles:
                 auto: true
       fringe_group:
         name: Fringe Group
-        rendering:
-          style: standalone
+        oracle_type: table_simple
         icon: icons/factions/fringe_group.svg
         source:
           <<: *Source
@@ -1037,8 +1051,10 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [objective]
         # usage:
+        oracle_type: table_simple
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         description: |-
           Pick or roll on this table to reveal the current focus of a faction. Then, use the nature of the organization to help envision the meaning of the project. The result may introduce events that motivate your character to aid or resist the project, or can serve as background detail for your setting. If you would like to track the faction’s progress, set a clock for the project using the campaign clock guidelines on page 235.
         table:
@@ -1152,6 +1168,7 @@ oracles:
         source:
           <<: *Source
           page: 343
+        oracle_type: table_simple
         # content:
         #   part_of_speech: [fragment]
         description: |-
@@ -1249,12 +1266,14 @@ oracles:
         source:
           <<: *Source
           page: 346
+        oracle_type: table_simple
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description]
         # usage:
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         description: |-
           Roll or pick known characteristics of the faction and its members using this table. But keep in mind that even within a small or specialized faction, there are no absolutes. These quirks represent common attitudes, practices, or approaches, but are not universal to every member of that faction. Leave room in your portrayal for diversity and contradictions.
         table:
@@ -1362,12 +1381,14 @@ oracles:
         source:
           <<: *Source
           page: 347
+        oracle_type: table_simple
         # content:
         #   part_of_speech: [fragment]
         #   tags: [event, present]
         # usage:
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         summary: |-
           Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.
         table:

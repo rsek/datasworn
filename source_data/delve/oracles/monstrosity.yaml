@@ -38,6 +38,7 @@ oracles:
       size:
         name: Size
         canonical_name: 'Monstrosity: Size'
+        oracle_type: table_simple
         # usage:
         #   initial: true
         source:
@@ -65,6 +66,7 @@ oracles:
       primary_form:
         name: Primary Form
         canonical_name: 'Monstrosity: Primary Form'
+        oracle_type: table_simple
         summary: |-
           Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
         # usage:
@@ -157,9 +159,10 @@ oracles:
       characteristics:
         name: Characteristics
         canonical_name: 'Monstrosity: Characteristics'
-        # usage:
-        recommended_rolls:
-          max:  4
+        oracle_type: table_simple
+        # recommended_rolls:
+        #   min: 1
+        #   max: 4
         #   initial: true
         summary: Roll up to four times for Characteristics and keep up to three of those results.
         description: |-
@@ -255,9 +258,10 @@ oracles:
       abilities:
         name: Abilities
         canonical_name: 'Monstrosity: Abilities'
-        # usage:
-        recommended_rolls:
-          max:  4
+        oracle_type: table_simple
+        # recommended_rolls:
+        #   min: 1
+        #   max: 4
         #   initial: true
         summary: Roll up to four times for Abilities and keep up to three of those results.
         description: |-

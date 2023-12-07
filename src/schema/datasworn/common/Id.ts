@@ -55,6 +55,11 @@ export const NpcCollectionId = CollectionId(['npcs'], {
 
 export type NpcCollectionId = Opaque<Static<typeof NpcCollectionId>>
 
+export const NpcCollectionIdWildcard = toWildcard(NpcCollectionId, {
+	$id: 'NpcCollectionIdWildcard'
+})
+export type NpcCollectionIdWildcard = Static<typeof NpcCollectionIdWildcard>
+
 export const NpcId = Extend(NpcCollectionId, [Node], {
 	$id: 'NpcId',
 	examples: ['classic/npcs/firstborn/elf', 'starforged/npcs/sample_npcs/chiton']
@@ -78,6 +83,11 @@ export const AssetCollectionId = CollectionId(['assets'], {
 	$id: 'AssetCollectionId'
 })
 export type AssetCollectionId = Opaque<Static<typeof AssetCollectionId>>
+
+export const AssetCollectionIdWildcard = toWildcard(AssetCollectionId, {
+	$id: 'AssetCollectionIdWildcard'
+})
+export type AssetCollectionIdWildcard = Static<typeof AssetCollectionIdWildcard>
 
 export const AssetId = Extend(AssetCollectionId, [Node], {
 	$id: 'AssetId'
@@ -147,6 +157,11 @@ export const DelveSiteId = UncollectableId(['delve_sites'], {
 })
 export type DelveSiteId = Opaque<Static<typeof DelveSiteId>>
 
+export const DelveSiteIdWildcard = toWildcard(DelveSiteId, {
+	$id: 'DelveSiteIdWildcard'
+})
+export type DelveSiteIdWildcard = Static<typeof DelveSiteIdWildcard>
+
 export const DelveSiteDenizenId = Extend(DelveSiteId, ['denizens', DiceRange], {
 	examples: ['delve/delve_sites/alvas_rest/denizens/1-27'],
 	$id: 'DelveSiteDenizenId'
@@ -159,6 +174,10 @@ export const DelveSiteThemeId = UncollectableId(['site_themes'], {
 })
 export type DelveSiteThemeId = Opaque<Static<typeof DelveSiteThemeId>>
 
+export const DelveSiteThemeIdWildcard = toWildcard(DelveSiteThemeId, {
+	$id: 'DelveSiteThemeIdWildcard'
+})
+export type DelveSiteThemeIdWildcard = Static<typeof DelveSiteThemeIdWildcard>
 export const ThemeFeatureRowId = Extend(DelveSiteThemeId, ['features', DiceRange], {
 	$id: 'ThemeFeatureRowId'
 })
@@ -175,14 +194,27 @@ export const DelveSiteDomainId = UncollectableId(['site_domains'], {
 })
 export type DelveSiteDomainId = Opaque<Static<typeof DelveSiteDomainId>>
 
-export const DomainFeatureRowId = Extend(DelveSiteDomainId, ['features', DiceRange], {
-	$id: 'DomainFeatureRowId'
+export const DelveSiteDomainIdWildcard = toWildcard(DelveSiteDomainId, {
+	$id: 'DelveSiteDomainIdWildcard'
 })
+export type DelveSiteDomainIdWildcard = Static<typeof DelveSiteDomainIdWildcard>
+
+export const DomainFeatureRowId = Extend(
+	DelveSiteDomainId,
+	['features', DiceRange],
+	{
+		$id: 'DomainFeatureRowId'
+	}
+)
 export type DomainFeatureRowId = Opaque<Static<typeof DomainFeatureRowId>>
 
-export const DomainDangerRowId = Extend(DelveSiteDomainId, ['dangers', DiceRange], {
-	$id: 'DomainDangerRowId'
-})
+export const DomainDangerRowId = Extend(
+	DelveSiteDomainId,
+	['dangers', DiceRange],
+	{
+		$id: 'DomainDangerRowId'
+	}
+)
 export type DomainDangerRowId = Opaque<Static<typeof DomainDangerRowId>>
 
 export const MoveCategoryId = CollectionId(['moves'], {
@@ -190,6 +222,11 @@ export const MoveCategoryId = CollectionId(['moves'], {
 	$id: 'MoveCategoryId'
 })
 export type MoveCategoryId = Opaque<Static<typeof MoveCategoryId>>
+
+export const MoveCategoryIdWildcard = toWildcard(MoveCategoryId, {
+	$id: 'MoveCategoryIdWildcard'
+})
+export type MoveCategoryIdWildcard = Static<typeof MoveCategoryIdWildcard>
 
 const StandardMoveId = Extend(MoveCategoryId, [Node], {
 	description: 'A move ID for a standard move.',
@@ -234,18 +271,25 @@ export const OracleCollectionId = RecursiveCollectionId(['oracles'], {
 })
 export type OracleCollectionId = Opaque<Static<typeof OracleCollectionId>>
 
-export const OracleTableId = RecursiveCollectableId(['oracles'], {
-	title: 'OracleTableId',
+export const OracleCollectionIdWildcard = toWildcard(OracleCollectionId, {
+	$id: 'OracleCollectionIdWildcard'
+})
+export type OracleCollectionIdWildcard = Static<
+	typeof OracleCollectionIdWildcard
+>
+
+export const OracleRollableId = RecursiveCollectableId(['oracles'], {
+	title: 'OracleRollableId',
 	examples: [
 		'starforged/oracles/core/action',
 		'starforged/oracles/character/names/given',
 		'starforged/oracles/planets/furnace/settlements/terminus'
 	],
-	$id: 'OracleTableId'
+	$id: 'OracleRollableId'
 })
-export type OracleTableId = Opaque<Static<typeof OracleTableId>>
+export type OracleRollableId = Opaque<Static<typeof OracleRollableId>>
 
-export const OracleTableIdWildcard = toWildcard(OracleTableId, {
+export const OracleRollableIdWildcard = toWildcard(OracleRollableId, {
 	description: `Oracle table wildcards can also use '**' to represent any number of collection levels in the oracle tree.`,
 	// For example, 'starforged/oracles/\*\*/location' represents any starforged table with the "location" key.`,
 	// the double asterisk messes with JTD here :thinking:
@@ -254,12 +298,16 @@ export const OracleTableIdWildcard = toWildcard(OracleTableId, {
 		'starforged/oracles/character/names/*',
 		'starforged/oracles/planets/*/settlements/*'
 	],
-	$id: 'OracleTableIdWildcard'
+	$id: 'OracleRollableIdWildcard'
 })
-export type OracleTableIdWildcard = Opaque<Static<typeof OracleTableIdWildcard>>
+export type OracleRollableIdWildcard = Opaque<
+	Static<typeof OracleRollableIdWildcard>
+>
 
-const RowWithRange = Extend(OracleTableId, [DiceRange], { $id: 'RowWithRange' })
-const RowNull = Extend(OracleTableId, [Index], { $id: 'RowNull' })
+const RowWithRange = Extend(OracleRollableId, [DiceRange], {
+	$id: 'RowWithRange'
+})
+const RowNull = Extend(OracleRollableId, [Index], { $id: 'RowNull' })
 
 export const OracleTableRowId = IdUnion([RowWithRange, RowNull], {
 	examples: [
@@ -277,6 +325,11 @@ export const RarityId = UncollectableId(['rarities'], {
 	$id: 'RarityId'
 })
 export type RarityId = Opaque<Static<typeof RarityId>>
+
+export const RarityIdWildcard = toWildcard(RarityId, {
+	$id: 'RarityIdWildcard'
+})
+export type RarityIdWildcard = Static<typeof RarityIdWildcard>
 
 export const AtlasId = CollectionId(['atlas'], {
 	examples: ['classic/collections/atlas/ironlands'],
@@ -305,6 +358,12 @@ export const TruthId = UncollectableId(['truths'], {
 	$id: 'TruthId'
 })
 export type TruthId = Opaque<Static<typeof TruthId>>
+
+export const TruthIdWildcard = toWildcard(TruthId, {
+	$id: 'TruthIdWildcard'
+})
+export type TruthIdWildcard = Static<typeof TruthIdWildcard>
+
 
 export const TruthOptionId = Extend(TruthId, [Index], {
 	examples: ['classic/truths/iron/0', 'starforged/truths/iron/0'],

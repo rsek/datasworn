@@ -21,6 +21,7 @@ oracles:
     contents:
       aspect:
         name: Aspect
+        oracle_type: table_simple
         canonical_name: 'Feature: Aspect'
         suggestions:
           oracles:
@@ -234,6 +235,7 @@ oracles:
             result: Mystical
       focus:
         name: Focus
+        oracle_type: table_simple
         canonical_name: 'Feature: Focus'
         suggestions:
           oracles:

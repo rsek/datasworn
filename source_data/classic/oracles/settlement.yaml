@@ -3,6 +3,7 @@ package_type: ruleset
 oracles:
   settlement:
     name: Settlement Oracles
+    oracle_type: tables
     source: &CollectionSource
       <<: &Source
         authors:
@@ -17,6 +18,7 @@ oracles:
       trouble:
         name: Settlement Trouble
         canonical_name: 'Oracle 9: Settlement Trouble'
+        oracle_type: table_simple
         summary: Use this table to generate a narrative hook for a problem faced by a community. This oracle can help inspire a vow for your character or serve as a prompt for a trouble you encounter when you interact with a settlement.
         source:
           <<: *Source
@@ -165,6 +167,7 @@ oracles:
                 auto: true
       name:
         name: Settlement Name
+        oracle_type: table_simple
         source:
           <<: *CollectionSource
         summary: Ask this oracle for a thematic name for an Ironlander settlement. Roll once for the category, and again to pick from the examples. Alternatively, just roll for the category and come up with a name that fits the theme.
@@ -222,12 +225,14 @@ oracles:
     collections:
       name:
         name: Settlement Name
+        oracle_type: tables
         canonical_name: 'Oracle 7: Settlement Name'
         source: &CollectionSource
           <<: *Source
           page: 178
         contents:
           landscape_feature:
+            oracle_type: table_simple
             source: *CollectionSource
             name: Landscape Feature
             canonical_name: A feature of the landscape
@@ -278,6 +283,7 @@ oracles:
                 result: Three Rivers
           manmade_edifice:
             canonical_name: A manmade edifice
+            oracle_type: table_simple
             source: *CollectionSource
             name: Manmade Edifice
             summary: *Manmade_Edifice
@@ -324,6 +330,7 @@ oracles:
                 result: Fallowfield
           creature:
             canonical_name: A creature
+            oracle_type: table_simple
             source: *CollectionSource
             name: Creature
             summary: *Creature
@@ -370,6 +377,7 @@ oracles:
                 result: Dragonshadow
           historical_event:
             canonical_name: A historical event
+            oracle_type: table_simple
             source: *CollectionSource
             name: Historical Event
             summary: *Historical_Event
@@ -416,6 +424,7 @@ oracles:
                 result: Rockfall
           old_world_language:
             canonical_name: A word in an Old World language
+            oracle_type: table_simple
             source: *CollectionSource
             name: Old World Language
             summary: *Old_World_Language
@@ -462,6 +471,7 @@ oracles:
                 result: Tiza
           environmental_aspect:
             canonical_name: A season or environmental aspect
+            oracle_type: table_simple
             source: *CollectionSource
             name: Environmental Aspect
             summary: *Environmental_Aspect
@@ -507,6 +517,7 @@ oracles:
                 max: 100
                 result: Summersong
           something_else:
+            oracle_type: table_simple
             source: *CollectionSource
             name: Something Else
             table:
@@ -544,21 +555,7 @@ oracles:
         canonical_name: 'Oracle 8: Quick Settlement Name Generator'
         name: Quick Settlement Name Generator
         summary: Use this oracle as a simpler alternative for settlement names. Roll once for the prefix, and once for the suffix. If the combination doesn’t quite work, look at adjacent rows or reverse the digits.
-        rendering:
-          style: multi_table
-          columns:
-            roll:
-              content_type: roll
-              label: Roll
-              table_key: prefix
-            prefix:
-              content_type: result
-              label: Prefix
-              table_key: prefix
-            suffix:
-              content_type: result
-              label: Suffix
-              table_key: suffix
+        oracle_type: table_shared_roll
         # template:
         #   result: '{{result:classic/oracles/settlement/quick_name/prefix}}{{result:classic/oracles/settlement/quick_name/suffix}}'
         source: &CollectionSource
@@ -567,9 +564,8 @@ oracles:
         contents:
           prefix:
             name: Prefix
-            source: *CollectionSource
-            rendering:
-              style: column
+            oracle_type: column_simple
+            # source: *CollectionSource
             table:
               # - [1, 4, Bleak-]
               # - [5, 8, Green-]
@@ -708,9 +704,8 @@ oracles:
                 result: Long
           suffix:
             name: Suffix
-            source: *CollectionSource
-            rendering:
-              style: column
+            oracle_type: column_simple
+            # source: *CollectionSource
             table:
               # - [1, 4, -moor]
               # - [5, 8, -ford]

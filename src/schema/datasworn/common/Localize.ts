@@ -66,19 +66,19 @@ export const I18nHint = Type.Object(
 			})
 		)
 	},
-	{ $id: 'I18nHint' }
+	{ $id: 'I18nHint', releaseStage: 'experimental' }
 )
 export type I18nHint = Static<typeof I18nHint>
 
 export const I18nHints = Type.Object(
 	{
 		result: Type.Optional(Type.Ref(I18nHint)),
-		summary: Type.Optional(Type.Ref(I18nHint)),
+		detail: Type.Optional(Type.Ref(I18nHint)),
 		description: Type.Optional(Type.Ref(I18nHint)),
 		template: Type.Optional(
 			Type.Object({
 				result: Type.Optional(Type.Ref(I18nHint)),
-				summary: Type.Optional(Type.Ref(I18nHint)),
+				detail: Type.Optional(Type.Ref(I18nHint)),
 				description: Type.Optional(Type.Ref(I18nHint))
 			})
 		)
@@ -86,7 +86,8 @@ export const I18nHints = Type.Object(
 	{
 		$id: 'I18nHints',
 		description:
-			'Internationalization/localization hints for the text content of this object.'
+			'Internationalization/localization hints for the text content of this object.',
+		releaseStage: 'experimental'
 	}
 )
 export type I18nHints = Static<typeof I18nHints>

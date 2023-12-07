@@ -11,7 +11,7 @@ import {
 } from './DelveSites.js'
 import { type MoveCategory } from './Moves.js'
 import { type TNpcCollection } from './Npcs.js'
-import { type TOracleCollection } from './Oracles.js'
+import { type TOracleTablesCollection } from './oracles/OracleCollection.js'
 import { type TRarity } from './Rarities.js'
 import { type TRules } from './Rules.js'
 import { type TTruth } from './Truths.js'
@@ -32,11 +32,14 @@ export const Ruleset = Type.Object(
 		package_type: Type.Literal('ruleset'),
 		rules: Utils.SourceOptional(Type.Ref<TRules>('Rules')),
 		oracles: Utils.SourceOptional(
-			Generic.Dictionary(Type.Ref<TOracleCollection>('OracleCollection'), {
-				default: undefined,
-				description:
-					'A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.'
-			})
+			Generic.Dictionary(
+				Type.Ref<TOracleTablesCollection>('OracleTablesCollection'),
+				{
+					default: undefined,
+					description:
+						'A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.'
+				}
+			)
 		),
 		moves: Utils.SourceOptional(
 			Generic.Dictionary(Type.Ref<TUnsafe<MoveCategory>>('MoveCategory'), {

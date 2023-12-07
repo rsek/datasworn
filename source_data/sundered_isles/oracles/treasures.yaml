@@ -14,30 +14,32 @@ oracles:
     contents:
       location:
         name: Location
+        oracle_type: table_simple
         summary: If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.
         source:
           <<: *Source
         table:
           - min: 1
             max: 25
-            result: Borne on a > Sailing Ship; pg 128
+            result: Borne on a [Sailing Ship](id:sundered_isles/collections/oracles/sailing_ships)
           - min: 26
             max: 50
             result: Lost with a > Shipwreck; pg XX
           - min: 51
             max: 70
-            result: Hidden on an > Island; pg 138
+            result: Hidden on an [Island](id:sundered_isles/collections/oracles/islands)
           - min: 71
             max: 85
             result: Sheltered in a > Cave; pg XX
           - min: 86
             max: 95
-            result: Secured in a > Settlement; pg 160
+            result: Secured in a [Settlement](id:sundered_isles/collections/oracles/settlements)
           - min: 96
             max: 100
             result: Preserved in a > Ruin; pg XX
       cursed_location:
         name: Cursed Location
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -73,40 +75,42 @@ oracles:
             result: Sunk to the depths of an abyssal trench
       repository:
         name: Repository
+        oracle_type: table_details
         source:
           <<: *Source
-        rendering:
-          style: standalone
-          columns:
-            roll:
-              label: Roll
-              content_type: roll
-            size:
-              label: Size
-              content_type: result
-            examples:
-              label: Examples
-              content_type: summary
+        # rendering:
+        #   style: standalone
+        #   columns:
+        #     roll:
+        #       label: Roll
+        #       content_type: roll
+        #     size:
+        #       label: Size
+        #       content_type: result
+        #     examples:
+        #       label: Examples
+        #       content_type: summary
         summary: Choose the scale of the treasure’s repository—small, medium, large, or vast—as appropriate to situation and location. See the examples in the table below. If unsure, roll for the answer. The result helps set the potential Value of the treasure.
         table:
           - min: 1
             max: 40
             result: Small
-            summary: Lockbox; desk drawer;  bag or pouch
+            detail: Lockbox; desk drawer; bag or pouch
           - min: 41
             max: 75
             result: Medium
-            summary: Chest; crate; ship cabin;  cave alcove
+            detail: Chest; crate; ship cabin;  cave alcove
           - min: 76
             max: 95
             result: Large
-            summary: Cargo hold; strongroom; cave chamber
+            detail: Cargo hold; strongroom; cave chamber
           - min: 96
             max: 100
             result: Vast
-            summary: Storehouse; great hall; cavern vault
+            detail: Storehouse; great hall; cavern vault
       aspects:
         name: Aspects
+        oracle_type: table_simple
         source:
           <<: *Source
         summary: Use this table to reveal characteristics of a treasure or its surroundings. Since the results often introduce twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.
@@ -161,6 +165,7 @@ oracles:
             result: Shows signs of pilfering or tampering
       cursed_aspects:
         name: Cursed Aspects
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -226,6 +231,7 @@ oracles:
             result: Summons a powerful being or creature
       precious_items:
         name: Precious Items
+        oracle_type: table_simple
         source:
           <<: *Source
         summary: Roll or select a number of items on this table as set by the treasure’s Value (page 185). Each result represents a quantity of that item, such as a lockbox filled with pearls, a barrel of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the Tokens table (below).
@@ -310,6 +316,7 @@ oracles:
             result: '[Token]'
       tokens:
         name: Tokens
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -615,6 +622,7 @@ oracles:
             result: Well-stocked surgeon's bag
       cursed_tokens:
         name: Cursed tokens
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -735,60 +743,45 @@ oracles:
         source:
           <<: *Source
         summary: A trove or hoard contain a vast array of riches. Collecting and transporting a trove requires great effort, while the logistics of gathering a hoard is an inconceivable task.
-        rendering:
-          style: multi_table
-          columns:
-            small:
-              label: Small
-              table_key: small
-              content_type: roll
-            medium:
-              label: Medium
-              table_key: medium
-              content_type: roll
-            large:
-              label: Large
-              table_key: large
-              content_type: roll
-            vast:
-              label: Vast
-              table_key: vast
-              content_type: roll
-            result:
-              table_key: small
-              content_type: result
-              label: Result
+        oracle_type: table_shared_details
+        # rendering:
+        #   columns:
+        #     - table_key: small
+        #       content_type: roll
+        #     - table_key: medium
+        #       content_type: roll
+        #     - table_key: large
+        #       content_type: roll
+        #     - table_key: vast
+        #       content_type: roll
+        #     - table_key: small
+        #       content_type: result
+        #       label: Result
         contents:
           small:
             name: Small
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            oracle_type: column_details
             table:
               - &Value.0
                 min: 1
                 max: 80
                 result: Trifle
-                summary: One [Precious Item](id:sundered_isles/oracles/treasures/precious_item)
+                detail: One [Precious Item](id:sundered_isles/oracles/treasures/precious_item)
               - &Value.1
                 min: 81
                 max: 100
                 result: Stash
                 # TODO: make number of rolls accept dice expressions
-                summary: Roll the action die and reveal that many [Precious Items](id:sundered_isles/oracles/treasures/precious_item)
+                detail: Roll the action die and reveal that many [Precious Items](id:sundered_isles/oracles/treasures/precious_item)
               - &Value.2
                 result: Trove
-                summary: Bountiful riches
+                detail: Bountiful riches
               - &Value.3
                 result: Hoard
-                summary: Immeasurable riches
+                detail: Immeasurable riches
           medium:
             name: Medium
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            oracle_type: column_details
             table:
               - <<: *Value.0
                 min: 1
@@ -800,10 +793,7 @@ oracles:
               - *Value.3
           large:
             name: Large
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            oracle_type: column_details
             table:
             - <<: *Value.0
               min: 1
@@ -817,10 +807,7 @@ oracles:
             - *Value.3
           vast:
             name: Vast
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            oracle_type: column_details
             table:
               - <<: *Value.0
                 min: 1

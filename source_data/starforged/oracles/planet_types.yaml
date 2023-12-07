@@ -14,6 +14,7 @@ oracles:
     collections:
       desert:
         name: Desert World
+        oracle_type: tables
         images:
           - images/planets/desert-01.webp
           - images/planets/desert-02.webp
@@ -23,12 +24,19 @@ oracles:
         summary: A pitiless planet of searing heat, blowing sand, and sunbaked rock.
         collections:
           settlements:
-            name: Settlements
+            <<: &Settlements
+              name: Settlements
+              oracle_type: table_shared_result
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: &OracleTable.Terminus
+                  name: Terminus
+                  oracle_type: column_simple
+                  tags:
+                    starforged:
+                      region: terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 50
@@ -51,8 +59,13 @@ oracles:
                     <<: &Settlements.4
                       result: Settlements in conflict
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: &OracleTable.Outlands
+                  name: Outlands
+                  oracle_type: column_simple
+                  tags:
+                    starforged:
+                      region: outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 75
@@ -70,8 +83,13 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: &OracleTable.Expanse
+                  name: Expanse
+                  oracle_type: column_simple
+                  tags:
+                    starforged:
+                      region: expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 90
@@ -87,8 +105,10 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: &SampleNames
+              name: Sample Names
+              dice: 1d20
+              oracle_type: table_simple
             source: *CollectionSource
             table:
               - min: 1
@@ -152,7 +172,9 @@ oracles:
                 max: 20
                 result: Vermillion
           atmosphere:
-            name: Atmosphere
+            <<: &Atmosphere
+              name: Atmosphere
+              oracle_type: table_simple
             source: *CollectionSource
             table:
               - min: 1
@@ -180,8 +202,13 @@ oracles:
                 <<: &Atmosphere.Ideal
                   result: Ideal
           observed_from_space:
+            <<: &ObservedFromSpace
+              name: Observed From Space
+              oracle_type: table_simple
+              recommended_rolls:
+                min: 1
+                max: 2
             source: *CollectionSource
-            name: Observed From Space
             table:
               - <<: &ObservedFromSpace.0
                   min: 1
@@ -230,7 +257,12 @@ oracles:
                 max: 100
                 result: '[Precursor Vault](id:starforged/collections/oracles/vaults) (orbital)'
           feature:
-            name: Planetside Feature
+            <<: &Feature
+              name: Planetside Feature
+              oracle_type: table_simple
+              recommended_rolls:
+                min: 1
+                max: 2
             source: *CollectionSource
             table:
               - <<: &Feature.0
@@ -294,7 +326,9 @@ oracles:
                 max: 100
                 result: '[Precursor Vault](id:starforged/collections/oracles/vaults) (planetside)'
           life:
-            name: Life
+            <<: &Life
+              name: Life
+              oracle_type: table_simple
             source: *CollectionSource
             table:
               - min: 1
@@ -323,6 +357,7 @@ oracles:
                   result: Overrun
       furnace:
         name: Furnace World
+        oracle_type: tables
         images:
           - images/planets/furnace-01.webp
           - images/planets/furnace-02.webp
@@ -332,12 +367,12 @@ oracles:
         summary: A planet with relentless volcanic activity, wreathed in fire and ash.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 60
@@ -355,8 +390,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 85
@@ -374,8 +409,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 95
@@ -391,8 +426,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -456,7 +490,7 @@ oracles:
                 max: 20
                 result: Vesuvius
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - min: 1
@@ -476,7 +510,7 @@ oracles:
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -498,7 +532,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -530,7 +564,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - min: 1
@@ -553,6 +587,7 @@ oracles:
                 <<: *Life.Overrun
       grave:
         name: Grave World
+        oracle_type: tables
         images:
           - images/planets/grave-01.webp
           - images/planets/grave-02.webp
@@ -562,12 +597,12 @@ oracles:
         summary: A once-thriving world—now a grim monument to a fallen civilization.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 80
@@ -585,8 +620,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 90
@@ -600,8 +635,8 @@ oracles:
                   - *Settlements.3
                   - *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 95
@@ -617,8 +652,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -682,7 +716,7 @@ oracles:
                 max: 20
                 result: Thrace
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - min: 1
@@ -702,7 +736,7 @@ oracles:
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -724,7 +758,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -756,7 +790,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - min: 1
@@ -775,6 +809,7 @@ oracles:
               - *Life.Overrun
       ice:
         name: Ice World
+        oracle_type: tables
         images:
           - images/planets/ice-01.webp
           - images/planets/ice-02.webp
@@ -784,12 +819,12 @@ oracles:
         summary: A rugged, frozen world—locked in an unending winter.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 50
@@ -807,8 +842,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 75
@@ -826,8 +861,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 90
@@ -843,8 +878,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -908,7 +942,7 @@ oracles:
                 max: 20
                 result: Varnholme
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - min: 1
@@ -930,7 +964,7 @@ oracles:
                 max: 100
                 <<: *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -952,7 +986,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -984,7 +1018,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - min: 1
@@ -1007,6 +1041,7 @@ oracles:
                 <<: *Life.Overrun
       jovian:
         name: Jovian World
+        oracle_type: tables
         images:
           - images/planets/jovian-01.webp
           - images/planets/jovian-02.webp
@@ -1016,12 +1051,12 @@ oracles:
         summary: A massive planet with vast layers of dense gases surrounding a rocky core.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 50
@@ -1039,8 +1074,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 75
@@ -1058,8 +1093,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 90
@@ -1075,8 +1110,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -1140,7 +1174,7 @@ oracles:
                 max: 20
                 result: Zephyr
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - *Atmosphere.NoneThin
@@ -1158,7 +1192,7 @@ oracles:
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -1180,7 +1214,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -1212,7 +1246,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - min: 1
@@ -1235,6 +1269,7 @@ oracles:
                 <<: *Life.Overrun
       jungle:
         name: Jungle World
+        oracle_type: tables
         images:
           - images/planets/jungle-01.webp
           - images/planets/jungle-02.webp
@@ -1244,12 +1279,12 @@ oracles:
         summary: A humid, rain-soaked planet that keeps its secrets under a thick canopy of vegetation.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 40
@@ -1267,8 +1302,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 65
@@ -1286,8 +1321,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 85
@@ -1307,8 +1342,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -1372,7 +1406,7 @@ oracles:
                 max: 20
                 result: Viridian
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - *Atmosphere.NoneThin
@@ -1392,7 +1426,7 @@ oracles:
                 max: 100
                 <<: *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -1414,7 +1448,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -1446,7 +1480,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - *Life.None
@@ -1465,6 +1499,7 @@ oracles:
                 <<: *Life.Overrun
       ocean:
         name: Ocean World
+        oracle_type: tables
         images:
           - images/planets/ocean-01.webp
           - images/planets/ocean-02.webp
@@ -1474,12 +1509,12 @@ oracles:
         summary: A planet completely or almost entirely covered by a boundless ocean.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 40
@@ -1497,8 +1532,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 65
@@ -1516,8 +1551,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 85
@@ -1537,8 +1572,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -1602,7 +1636,7 @@ oracles:
                 max: 20
                 result: Triton
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - min: 1
@@ -1624,7 +1658,7 @@ oracles:
                 max: 100
                 <<: *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -1646,7 +1680,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -1678,7 +1712,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - min: 1
@@ -1701,6 +1735,7 @@ oracles:
                 <<: *Life.Overrun
       rocky:
         name: Rocky World
+        oracle_type: tables
         images:
           - images/planets/rocky-01.webp
           - images/planets/rocky-02.webp
@@ -1710,12 +1745,12 @@ oracles:
         summary: A rugged planet scarred by eons of destructive asteroid impacts.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 50
@@ -1733,8 +1768,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 75
@@ -1752,8 +1787,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 90
@@ -1769,8 +1804,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -1834,7 +1868,7 @@ oracles:
                 max: 20
                 result: Umbra
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - min: 1
@@ -1852,7 +1886,7 @@ oracles:
               - *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -1874,7 +1908,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -1906,7 +1940,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - min: 1
@@ -1929,6 +1963,7 @@ oracles:
                 <<: *Life.Overrun
       shattered:
         name: Shattered World
+        oracle_type: tables
         images:
           - images/planets/shattered-01.webp
           - images/planets/shattered-02.webp
@@ -1938,12 +1973,12 @@ oracles:
         summary: A planet sundered by cataclysmic destruction.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 70
@@ -1961,8 +1996,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 85
@@ -1978,8 +2013,8 @@ oracles:
                     <<: *Settlements.3
                   - *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 95
@@ -1995,8 +2030,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -2060,7 +2094,7 @@ oracles:
                 max: 20
                 result: Zix
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - min: 1
@@ -2080,7 +2114,7 @@ oracles:
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -2102,7 +2136,7 @@ oracles:
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -2134,7 +2168,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - min: 1
@@ -2153,6 +2187,7 @@ oracles:
               - *Life.Overrun
       tainted:
         name: Tainted World
+        oracle_type: tables
         images:
           - images/planets/tainted-01.webp
           - images/planets/tainted-02.webp
@@ -2162,12 +2197,12 @@ oracles:
         summary: A foul planet wracked by a poisonous climate and virulent growths.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 80
@@ -2185,8 +2220,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 90
@@ -2200,8 +2235,8 @@ oracles:
                   - *Settlements.3
                   - *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 95
@@ -2217,8 +2252,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -2282,7 +2316,7 @@ oracles:
                 max: 20
                 result: Xanthous
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - *Atmosphere.NoneThin
@@ -2300,7 +2334,7 @@ oracles:
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -2330,7 +2364,7 @@ oracles:
                       auto: true
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -2362,7 +2396,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - *Life.None
@@ -2381,6 +2415,7 @@ oracles:
                 <<: *Life.Overrun
       vital:
         name: Vital World
+        oracle_type: tables
         images:
           - images/planets/vital-01.webp
           - images/planets/vital-02.webp
@@ -2390,12 +2425,12 @@ oracles:
         summary: This diverse, life-bearing planet might provide some small measure of hope.
         collections:
           settlements:
-            name: Settlements
+            <<: *Settlements
             source: *CollectionSource
             contents:
               terminus:
-                name: Terminus
-                source: *CollectionSource
+                <<: *OracleTable.Terminus
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 20
@@ -2413,8 +2448,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               outlands:
-                name: Outlands
-                source: *CollectionSource
+                <<: *OracleTable.Outlands
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 50
@@ -2432,8 +2467,8 @@ oracles:
                     max: 100
                     <<: *Settlements.4
               expanse:
-                name: Expanse
-                source: *CollectionSource
+                <<: *OracleTable.Expanse
+                # source: *CollectionSource
                 table:
                   - min: 1
                     max: 80
@@ -2453,8 +2488,7 @@ oracles:
         contents:
           name:
             # not rendered as a table in the text, but commonly requested
-            name: Sample Names
-            dice: 1d20
+            <<: *SampleNames
             source: *CollectionSource
             table:
               - min: 1
@@ -2518,7 +2552,7 @@ oracles:
                 max: 20
                 result: Valinor
           atmosphere:
-            name: Atmosphere
+            <<: *Atmosphere
             source: *CollectionSource
             table:
               - *Atmosphere.NoneThin
@@ -2534,7 +2568,7 @@ oracles:
                 max: 100
                 <<: *Atmosphere.Ideal
           observed_from_space:
-            name: Observed From Space
+            <<: *ObservedFromSpace
             source: *CollectionSource
             table:
               - <<: *ObservedFromSpace.0
@@ -2564,7 +2598,7 @@ oracles:
                       auto: true
               - *ObservedFromSpace.9
           feature:
-            name: Planetside Feature
+            <<: *Feature
             source: *CollectionSource
             table:
               - <<: *Feature.0
@@ -2596,7 +2630,7 @@ oracles:
               - *Feature.13
               - *Feature.14
           life:
-            name: Life
+            <<: *Life
             source: *CollectionSource
             table:
               - *Life.None
@@ -2615,6 +2649,7 @@ oracles:
                 <<: *Life.Overrun
           diversity:
             name: Diversity
+            oracle_type: table_simple
             source: *CollectionSource
             summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
             table:
@@ -2650,6 +2685,7 @@ oracles:
                     oracle: *biome
           biomes:
             name: Biomes
+            oracle_type: table_simple
             source: *CollectionSource
             table:
               - min: 1

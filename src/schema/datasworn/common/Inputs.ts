@@ -1,29 +1,28 @@
 /** Abstract inputs that are used by option and control fields.  */
 import {
+	Type,
 	type ObjectOptions,
 	type ObjectProperties,
+	type Static,
 	type TInteger,
 	type TLiteral,
 	type TObject,
 	type TRef,
-	type TString,
-	Type,
-	type Static,
-	type TSchema
+	type TSchema,
+	type TString
 } from '@sinclair/typebox'
 import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
 
 import {
 	LiteralZero,
-	type TFuzzySchemaOf,
-	setDescriptions
+	setDescriptions,
+	type TFuzzySchemaOf
 } from '../utils/typebox.js'
 
+import * as Generic from '../Generic.js'
+import * as Utils from '../Utils.js'
 import type * as Id from './Id.js'
 import * as Localize from './Localize.js'
-import * as Utils from '../Utils.js'
-import * as Generic from '../Generic.js'
-import { findLastIndex } from 'lodash-es'
 
 /**
  * @abstract
@@ -198,7 +197,11 @@ export function Meter<Rollable extends TLiteral<boolean>>(
 					description: 'The minimum value of this meter.'
 				}),
 				max: Type.Integer({ description: 'The maximum value of this meter.' }),
-				rollable
+				rollable: {
+					description:
+						"Is this meter's `value` usable as a stat in an action roll?",
+					...rollable
+				}
 			},
 			{
 				...options,

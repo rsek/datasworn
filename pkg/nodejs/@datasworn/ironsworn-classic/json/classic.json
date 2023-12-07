@@ -11,7 +11,7 @@
 				"value": 5,
 				"shared": false,
 				"description": "Health represents your current physical condition and stamina.",
-				"rollable": 0
+				"rollable": true
 			},
 			"spirit": {
 				"label": "spirit",
@@ -20,7 +20,7 @@
 				"value": 5,
 				"shared": false,
 				"description": "Spirit is your current mental state.",
-				"rollable": 0
+				"rollable": true
 			},
 			"supply": {
 				"label": "supply",
@@ -29,7 +29,7 @@
 				"value": 5,
 				"shared": true,
 				"description": "Supply is an abstract representation of your preparedness, including ammo, food, water, and general upkeep.",
-				"rollable": 0
+				"rollable": true
 			}
 		},
 		"impacts": {
@@ -137,7 +137,8 @@
 				"label": "wits",
 				"description": "Expertise, knowledge, and observation."
 			}
-		}
+		},
+		"tags": {}
 	},
 	"oracles": {
 		"moves": {

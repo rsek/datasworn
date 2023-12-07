@@ -15,6 +15,7 @@ oracles:
     collections:
       ironlander:
         name: Ironlander Names
+        oracle_type: tables
         canonical_name: 'Oracle 13: Ironlander Names'
         summary: Use this oracle to quickly generate a name for an Ironlander character. Roll on either table. Surnames are not used in the Ironlands, and names are often gender-neutral.
         source:
@@ -26,6 +27,7 @@ oracles:
               <<: *Source
               page: 184
             name: Table A
+            oracle_type: table_simple
             canonical_name: Ironlander Names
             table:
               - <<: &i18n.proper_noun
@@ -437,6 +439,7 @@ oracles:
               page: 185
             canonical_name: Ironlander Names
             name: Table B
+            oracle_type: table_simple
             table:
               - <<: *i18n.proper_noun
                 min: 1
@@ -842,34 +845,15 @@ oracles:
         name: Other Names
         canonical_name: 'Oracle 15: Other Names'
         summary: Use this oracle to generate names for other firstborn characters.
-        rendering:
-          style: multi_table
-          columns:
-            roll:
-              content_type: roll
-              table_key: giants
-              label: Roll
-            giants:
-              content_type: result
-              table_key: giants
-              label: Giants
-            varou:
-              content_type: result
-              table_key: varou
-              label: Varou
-            trolls:
-              content_type: result
-              table_key: trolls
-              label: Trolls
+        oracle_type: table_shared_roll
         source: &CollectionSource
           <<: *Source
           page: 187
         contents:
           giants:
             name: Giants
-            source: *CollectionSource
-            rendering:
-              style: column
+            oracle_type: column_simple
+            # source: *CollectionSource
             table:
               - <<: *i18n.proper_noun
                 min: 1
@@ -973,9 +957,8 @@ oracles:
                 result: Denua
           varou:
             name: Varou
-            source: *CollectionSource
-            rendering:
-              style: column
+            oracle_type: column_simple
+            # source: *CollectionSource
             table:
               - <<: *i18n.proper_noun
                 min: 1
@@ -1079,9 +1062,8 @@ oracles:
                 result: Vojan
           trolls:
             name: Trolls
-            source: *CollectionSource
-            rendering:
-              style: column
+            oracle_type: column_simple
+            # source: *CollectionSource
             table:
               - <<: *i18n.proper_noun
                 min: 1
@@ -1186,6 +1168,7 @@ oracles:
     contents:
       elf:
         name: Elf Names
+        oracle_type: table_simple
         canonical_name: 'Oracle 14: Elf Names'
         summary: Use this oracle to generate a name for an elf character.
         source:

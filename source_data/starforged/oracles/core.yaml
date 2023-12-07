@@ -3,6 +3,7 @@ package_type: ruleset
 oracles:
   core:
     name: Core Oracles
+    oracle_type: tables
     source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -15,6 +16,7 @@ oracles:
     contents:
       action:
         name: Action
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 296
@@ -429,6 +431,7 @@ oracles:
             result: Withdraw
       theme:
         name: Theme
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 297
@@ -842,6 +845,7 @@ oracles:
             result: World
       descriptor:
         name: Descriptor
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 298
@@ -1256,6 +1260,7 @@ oracles:
             result: Violent
       focus:
         name: Focus
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 299

@@ -29,6 +29,8 @@ oracles:
     contents:
       category:
         name: Category
+        <<: &Threat
+          oracle_type: table_simple
         source:
           <<: *Source
           page: 220
@@ -97,6 +99,7 @@ oracles:
       burgeoning_conflict:
         name: Burgeoning Conflict
         canonical_name: 'Threat: Burgeoning Conflict'
+        <<: *Threat
         source:
           <<: *Source
           page: 221
@@ -134,6 +137,7 @@ oracles:
       cursed_site:
         name: Cursed Site
         canonical_name: 'Threat: Cursed Site'
+        <<: *Threat
         source:
           <<: *Source
           page: 221
@@ -171,6 +175,7 @@ oracles:
       environmental_calamity:
         name: Environmental Calamity
         canonical_name: 'Threat: Environmental Calamity'
+        <<: *Threat
         source:
           <<: *Source
           page: 221
@@ -208,6 +213,7 @@ oracles:
       malignant_plague:
         name: Malignant Plague
         canonical_name: 'Threat: Malignant Plague'
+        <<: *Threat
         source:
           <<: *Source
           page: 222
@@ -245,6 +251,7 @@ oracles:
       rampaging_creature:
         name: Rampaging Creature
         canonical_name: 'Threat: Rampaging Creature'
+        <<: *Threat
         source:
           <<: *Source
           page: 222
@@ -282,6 +289,7 @@ oracles:
       ravaging_horde:
         name: Ravaging Horde
         canonical_name: 'Threat: Ravaging Horde'
+        <<: *Threat
         source:
           <<: *Source
           page: 222
@@ -319,6 +327,7 @@ oracles:
       scheming_leader:
         name: Scheming Leader
         canonical_name: 'Threat: Scheming Leader'
+        <<: *Threat
         source:
           <<: *Source
           page: 223
@@ -356,6 +365,7 @@ oracles:
       power_hungry_mystic:
         name: Power-Hungry Mystic
         canonical_name: 'Threat: Power-Hungry Mystic'
+        <<: *Threat
         source:
           <<: *Source
           page: 223
@@ -393,6 +403,7 @@ oracles:
       zealous_cult:
         name: Zealous Cult
         canonical_name: 'Threat: Zealous Cult'
+        <<: *Threat
         source:
           <<: *Source
           page: 223

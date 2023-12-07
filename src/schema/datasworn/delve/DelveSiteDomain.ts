@@ -37,7 +37,7 @@ export const DelveSiteDomain = Generic.SourcedNode(
 		description: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 		name_oracle: Type.Optional(
-			Type.Ref(Id.OracleTableId, {
+			Type.Ref(Id.OracleRollableId, {
 				description:
 					'An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites.'
 			})

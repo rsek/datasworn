@@ -68,6 +68,7 @@ export type Npc = Static<typeof Npc>
 export const NpcCollection = Generic.Collection(
 	Type.Ref(Id.NpcCollectionId),
 	Type.Ref(Npc),
+	{},
 	{
 		$id: 'NpcCollection'
 	}

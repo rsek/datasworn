@@ -1,12 +1,10 @@
 import {
 	TypeClone,
 	type SchemaOptions,
-	type TSchema,
+	type Static,
 	type TObject,
-	type Static
+	type TSchema
 } from '@sinclair/typebox'
-import { mapValues } from 'lodash-es'
-import { TSelectEnhancementField } from '../common/Fields.js'
 
 /** Symbol indicating that this property is computed at build time, and is therefore optional in DataswornSource */
 export const ComputedPropertyBrand = Symbol('ComputedProperty')

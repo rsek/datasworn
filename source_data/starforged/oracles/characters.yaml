@@ -2,6 +2,7 @@ id: starforged
 package_type: ruleset
 oracles:
   characters:
+    oracle_type: tables
     source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -18,45 +19,26 @@ oracles:
     collections:
       name:
         name: Character Name
+        oracle_type: table_shared_roll
         source:
           <<: *Source
           page: 333
         summary: |-
           Given and family names are presented as a pair, so you may roll once for both or twice to mix-and-match. You can also try reversing given and family names, or use either independently as a standalone name. If you’d like to give a character a callsign, which are the monikers used by spacers, you may roll separately or take the one provided for your rolled name.
-        rendering:
-          style: multi_table
-          columns:
-            roll:
-              content_type: roll
-              table_key: given_name
-              label: Roll
-            given_name:
-              content_type: result
-              table_key: given_name
-              label: Given Name
-            family_name:
-              content_type: result
-              table_key: family_name
-              label: Family Name
-            callsign:
-              content_type: result
-              table_key: callsign
-              label: Callsign
         # usage:
         #   initial: true
         contents:
           given:
             name: Given Name
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
               oracles:
                 - starforged/oracles/characters/name/callsign
                 - starforged/oracles/characters/name/family_name
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - <<: &i18n.proper_noun
                   i18n:
@@ -463,16 +445,15 @@ oracles:
                 result: Zoya
           callsign:
             name: Callsign
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             summary: |-
               Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.
             suggestions:
               oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/family_name
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - <<: *i18n.proper_noun
                 min: 1
@@ -876,16 +857,15 @@ oracles:
                 result: Zephyr
           family_name:
             name: Family Name
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
               oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/callsign
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - <<: *i18n.proper_noun
                 min: 1
@@ -1290,13 +1270,15 @@ oracles:
     contents:
       first_look:
         name: First Look
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 330
         # usage:
         #   initial: true
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         table:
           - <<: &i18n.adjective
               i18n:
@@ -1459,6 +1441,7 @@ oracles:
             result: Youthful
       initial_disposition:
         name: Initial Disposition
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 330
@@ -1515,6 +1498,7 @@ oracles:
             result: Hostile
       role:
         name: Character Role
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 331
@@ -1724,6 +1708,7 @@ oracles:
                   auto: true
       goal:
         name: Character Goal
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 331
@@ -1880,6 +1865,7 @@ oracles:
             <<: *RollTwice
       revealed_aspect:
         name: Revealed Character Aspect
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 332
@@ -1887,7 +1873,8 @@ oracles:
           As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. You may ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         # usage:
         recommended_rolls:
-          max:  3
+          min: 1
+          max: 3
         table:
           - <<: *i18n.adjective
             min: 1

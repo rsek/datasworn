@@ -16,25 +16,7 @@ oracles:
       sighting:
         name: Space Sighting
         source: *CollectionSource
-        rendering:
-          style: multi_table
-          columns:
-            terminus:
-              table_key: terminus
-              label: Terminus
-              content_type: roll
-            outlands:
-              table_key: outlands
-              label: Outlands
-              content_type: roll
-            expanse:
-              table_key: expanse
-              label: Expanse
-              content_type: roll
-            result:
-              table_key: terminus
-              content_type: result
-              label: Result
+        oracle_type: table_shared_result
         # content:
         #   part_of_speech: [fragment]
         summary: |-
@@ -47,13 +29,13 @@ oracles:
         #   repeatable: true
         contents:
           terminus:
-            name: Terminus
-            source: *CollectionSource
-            rendering:
-              style: column
-            tags:
-              starforged:
-                region: terminus
+            <<: &OracleTable.Terminus
+              name: Terminus
+              tags:
+                starforged:
+                  region: terminus
+            # source: *CollectionSource
+            oracle_type: column_simple
             # usage:
             #   requires:
             #     attributes:
@@ -61,74 +43,93 @@ oracles:
             table:
               - min: 1
                 max: 15
-                result: &Sighting.0.result '[Stellar Object](id:starforged/oracles/space/stellar_object)'
-                oracle_rolls:
-                  - oracle: starforged/oracles/space/stellar_object
+                <<: &Sighting.0
+                  result:  '[Stellar Object](id:starforged/oracles/space/stellar_object)'
+                  oracle_rolls:
+                    - oracle: starforged/oracles/space/stellar_object
               - min: 16
                 max: 35
-                result: &Sighting.1.result '[Planet](id:starforged/collections/oracles/planets)'
+                <<: &Sighting.1
+                  result:  '[Planet](id:starforged/collections/oracles/planets)'
                 # game_objects: [*obj:Planet]
               - min: 36
                 max: 40
-                result: &Sighting.2.result '[Settlement](id:starforged/collections/oracles/settlements)'
+                <<: &Sighting.2
+                  result:  '[Settlement](id:starforged/collections/oracles/settlements)'
                 # game_objects: [*obj:Settlement]
               - min: 41
                 max: 47
-                result: &Sighting.3.result '[Starship](id:starforged/collections/oracles/starships)'
+                <<: &Sighting.3
+                  result:  '[Starship](id:starforged/collections/oracles/starships)'
                 # game_objects: [*obj:Starship]
               - min: 48
                 max: 51
-                result: &Sighting.4.result '[Derelict](id:starforged/collections/oracles/derelicts)'
+                <<: &Sighting.4
+                  result:  '[Derelict](id:starforged/collections/oracles/derelicts)'
                 # game_objects: [*obj:Derelict]
               - min: 52
                 max: 53
-                result: &Sighting.5.result '[Precursor Vault](id:starforged/collections/oracles/vaults)'
+                <<: &Sighting.5
+                  result:  '[Precursor Vault](id:starforged/collections/oracles/vaults)'
                 # game_objects: [*obj:Vault]
               - min: 54
                 max: 55
-                result: &Sighting.6.result '[Creature](id:starforged/collections/oracles/creatures)'
+                <<: &Sighting.6
+                  result:  '[Creature](id:starforged/collections/oracles/creatures)'
                 # game_objects: [*obj:Creature]
               - min: 56
                 max: 60
-                result: &Sighting.7.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-                oracle_rolls: &Sighting.7.rolls
-                  - oracle: starforged/oracles/core/descriptor
-                    auto: true
-                  - oracle: starforged/oracles/core/focus
-                    auto: true
+                <<: &Sighting.7
+                  result:  '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  oracle_rolls: &Sighting.7.rolls
+                    - oracle: starforged/oracles/core/descriptor
+                      auto: true
+                    - oracle: starforged/oracles/core/focus
+                      auto: true
               - min: 61
                 max: 65
-                result: &Sighting.8.result 'Debris field: Mineral asteroids'
+                <<: &Sighting.8
+                  result:  'Debris field: Mineral asteroids'
               - min: 66
                 max: 68
-                result: &Sighting.9.result 'Debris field: Frozen asteroids'
+                <<: &Sighting.9
+                  result:  'Debris field: Frozen asteroids'
               - min: 69
                 max: 70
-                result: &Sighting.10.result 'Debris field: Crystalline asteroids'
+                <<: &Sighting.10
+                  result:  'Debris field: Crystalline asteroids'
               - min: 71
                 max: 72
-                result: &Sighting.11.result 'Debris field: Creature boneyard'
+                <<: &Sighting.11
+                  result:  'Debris field: Creature boneyard'
               - min: 73
                 max: 74
-                result: &Sighting.12.result 'Debris field: Metallic wreckage'
+                <<: &Sighting.12
+                  result:  'Debris field: Metallic wreckage'
               - min: 75
                 max: 76
-                result: &Sighting.13.result Large rogue asteroid
+                <<: &Sighting.13
+                  result:  Large rogue asteroid
               - min: 77
                 max: 78
-                result: &Sighting.14.result Comet with a tail of ionized gas
+                <<: &Sighting.14
+                  result:  Comet with a tail of ionized gas
               - min: 79
                 max: 81
-                result: &Sighting.15.result Fiery energy storm
+                <<: &Sighting.15
+                  result:  Fiery energy storm
               - min: 82
                 max: 83
-                result: &Sighting.16.result Chaotic meteoroid storm
+                <<: &Sighting.16
+                  result:  Chaotic meteoroid storm
               - min: 84
                 max: 85
-                result: &Sighting.17.result Turbulent gravitational wave
+                <<: &Sighting.17
+                  result:  Turbulent gravitational wave
               - min: 86
                 max: 93
-                result: &Sighting.18.result Dense nebula cloud
+                <<: &Sighting.18
+                  result:  Dense nebula cloud
               - &Sighting.19
                 min: 94
                 max: 98
@@ -146,13 +147,13 @@ oracles:
                     auto: true
                     duplicates: keep
           outlands:
-            name: Outlands
-            source: *CollectionSource
-            rendering:
-              style: column
-            tags:
-              starforged:
-                region: outlands
+            <<: &OracleTable.Outlands
+              name: Outlands
+              tags:
+                starforged:
+                  region: outlands
+            # source: *CollectionSource
+            oracle_type: column_simple
             # usage:
             #   requires:
             #     attributes:
@@ -160,69 +161,71 @@ oracles:
             table:
               - min: 1
                 max: 15
-                result: *Sighting.0.result
+                <<: *Sighting.0
               - min: 16
                 max: 35
-                result: *Sighting.1.result
+                <<: *Sighting.1
               - min: 36
                 max: 38
-                result: *Sighting.2.result
+                <<: *Sighting.2
               - min: 39
                 max: 43
-                result: *Sighting.3.result
+                <<: *Sighting.3
               - min: 44
                 max: 46
-                result: *Sighting.4.result
+                <<: *Sighting.4
               - min: 47
                 max: 49
-                result: *Sighting.5.result
+                <<: *Sighting.5
               - min: 50
                 max: 52
-                result: *Sighting.6.result
+                <<: *Sighting.6
               - min: 53
                 max: 58
-                result: *Sighting.7.result
-                oracle_rolls: *Sighting.7.rolls
+                <<: *Sighting.7
               - min: 59
                 max: 63
-                result: *Sighting.8.result
+                <<: *Sighting.8
               - min: 64
                 max: 66
-                result: *Sighting.9.result
+                <<: *Sighting.9
               - min: 67
                 max: 68
-                result: *Sighting.10.result
+                <<: *Sighting.10
               - min: 69
                 max: 70
-                result: *Sighting.11.result
+                <<: *Sighting.11
               - min: 71
                 max: 72
-                result: *Sighting.12.result
+                <<: *Sighting.12
               - min: 73
                 max: 74
-                result: *Sighting.13.result
+                <<: *Sighting.13
               - min: 75
                 max: 76
-                result: *Sighting.14.result
+                <<: *Sighting.14
               - min: 77
                 max: 80
-                result: *Sighting.15.result
+                <<: *Sighting.15
               - min: 81
                 max: 82
-                result: *Sighting.16.result
+                <<: *Sighting.16
               - min: 83
                 max: 85
-                result: *Sighting.17.result
+                <<: *Sighting.17
               - min: 86
                 max: 93
-                result: *Sighting.18.result
+                <<: *Sighting.18
               - *Sighting.19
               - *Sighting.20
           expanse:
-            name: Expanse
-            source: *CollectionSource
-            rendering:
-              style: column
+            <<: &OracleTable.Expanse
+              name: Expanse
+              tags:
+                starforged:
+                  region: expanse
+            # source: *CollectionSource
+            oracle_type: column_simple
             # usage:
             #   requires:
             #     attributes:
@@ -233,62 +236,61 @@ oracles:
             table:
               - min: 1
                 max: 15
-                result: *Sighting.0.result
+                <<: *Sighting.0
               - min: 16
                 max: 35
-                result: *Sighting.1.result
+                <<: *Sighting.1
               - min: 36
                 max: 37
-                result: *Sighting.2.result
+                <<: *Sighting.2
               - min: 38
                 max: 39
-                result: *Sighting.3.result
+                <<: *Sighting.3
               - min: 40
                 max: 41
-                result: *Sighting.4.result
+                <<: *Sighting.4
               - min: 42
                 max: 45
-                result: *Sighting.5.result
+                <<: *Sighting.5
               - min: 46
                 max: 49
-                result: *Sighting.6.result
+                <<: *Sighting.6
               - min: 50
                 max: 56
-                result: *Sighting.7.result
-                oracle_rolls: *Sighting.7.rolls
+                <<: *Sighting.7
               - min: 57
                 max: 61
-                result: *Sighting.8.result
+                <<: *Sighting.8
               - min: 62
                 max: 64
-                result: *Sighting.9.result
+                <<: *Sighting.9
               - min: 65
                 max: 66
-                result: *Sighting.10.result
+                <<: *Sighting.10
               - min: 67
                 max: 68
-                result: *Sighting.11.result
+                <<: *Sighting.11
               - min: 69
                 max: 70
-                result: *Sighting.12.result
+                <<: *Sighting.12
               - min: 71
                 max: 72
-                result: *Sighting.13.result
+                <<: *Sighting.13
               - min: 73
                 max: 74
-                result: *Sighting.14.result
+                <<: *Sighting.14
               - min: 75
                 max: 79
-                result: *Sighting.15.result
+                <<: *Sighting.15
               - min: 80
                 max: 81
-                result: *Sighting.16.result
+                <<: *Sighting.16
               - min: 82
                 max: 85
-                result: *Sighting.17.result
+                <<: *Sighting.17
               - min: 86
                 max: 93
-                result: *Sighting.18.result
+                <<: *Sighting.18
               - *Sighting.19
               - *Sighting.20
       sector_name:
@@ -298,29 +300,14 @@ oracles:
           page: 302
         summary: To give a sector or region of space a random name, roll once for the first word and once for the second word.
         description: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
-        rendering:
-          style: multi_table
-          columns:
-            result:
-              content_type: roll
-              table_key: prefix
-              label: Roll
-            prefix:
-              content_type: result
-              table_key: prefix
-              label: Prefix
-            suffix:
-              content_type: result
-              table_key: suffix
-              label: Suffix
+        oracle_type: table_shared_roll
         # template:
         #   result: '{{result:starforged/oracles/space/sector_name/prefix}} {{result:starforged/oracles/space/sector_name/suffix}}'
         contents:
           prefix:
             name: Prefix
-            rendering:
-              style: column
-            source: *CollectionSource
+            oracle_type: column_simple
+            # source: *CollectionSource
             # usage:
             #   initial: true
             suggestions:
@@ -330,218 +317,267 @@ oracles:
             #   part_of_speech: [proper noun fragment]
             #   tags: [template fragment]
             table:
-              - min: 1
-                max: 2
+              - <<: &SectorName.0
+                  min: 1
+                  max: 2
                 result: Accursed
                 i18n: &i18n.result.adjective
                   result:
                     part_of_speech: adjective
-              - min: 3
-                max: 4
+              - <<: &SectorName.1
+                  min: 3
+                  max: 4
                 result: Ashen
                 i18n: *i18n.result.adjective
-              - min: 5
-                max: 6
+              - <<: &SectorName.2
+                  min: 5
+                  max: 6
                 result: Asteria
                 i18n: &i18n.result.adjunct_proper_noun
                   result:
                     part_of_speech: adjunct_proper_noun
-              - min: 7
-                max: 8
+              - <<: &SectorName.3
+                  min: 7
+                  max: 8
                 result: Bitter
                 i18n: *i18n.result.adjective
-              - min: 9
-                max: 10
+              - <<: &SectorName.4
+                  min: 9
+                  max: 10
                 result: Blighted
                 i18n: *i18n.result.adjective
-              - min: 11
-                max: 12
+              - <<: &SectorName.5
+                  min: 11
+                  max: 12
                 result: Bloodied
                 i18n: *i18n.result.adjective
-              - min: 13
-                max: 14
+              - <<: &SectorName.6
+                  min: 13
+                  max: 14
                 result: Boundless
                 i18n: *i18n.result.adjective
-              - min: 15
-                max: 16
+              - <<: &SectorName.7
+                  min: 15
+                  max: 16
                 result: Burning
                 i18n:
                   result:
                     part_of_speech: gerund
-              - min: 17
-                max: 18
+              - <<: &SectorName.8
+                  min: 17
+                  max: 18
                 result: Cortana
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 19
-                max: 20
+              - <<: &SectorName.9
+                  min: 19
+                  max: 20
                 result: Corvus
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 21
-                max: 22
+              - <<: &SectorName.10
+                  min: 21
+                  max: 22
                 result: Crimson
-              - min: 23
-                max: 24
+              - <<: &SectorName.11
+                  min: 23
+                  max: 24
                 result: Cygnus
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 25
-                max: 26
+              - <<: &SectorName.12
+                  min: 25
+                  max: 26
                 result: Delphi
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 27
-                max: 28
+              - <<: &SectorName.13
+                  min: 27
+                  max: 28
                 result: Delphian
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 29
-                max: 30
+              - <<: &SectorName.14
+                  min: 29
+                  max: 30
                 result: Devil's
                 # content: {part_of_speech: [proper noun, possessive case]}
-              - min: 31
-                max: 32
+              - <<: &SectorName.15
+                  min: 31
+                  max: 32
                 result: Ebon
                 i18n: *i18n.result.adjective
-              - min: 33
-                max: 34
+              - <<: &SectorName.16
+                  min: 33
+                  max: 34
                 result: Essus
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 35
-                max: 36
+              - <<: &SectorName.17
+                  min: 35
+                  max: 36
                 i18n: *i18n.result.adjective
                 result: Fallen
-              - min: 37
-                max: 38
+              - <<: &SectorName.18
+                  min: 37
+                  max: 38
                 i18n: *i18n.result.adjective
                 result: Ferrous
-              - min: 39
-                max: 40
+              - <<: &SectorName.19
+                  min: 39
+                  max: 40
                 result: Fool's
                 # content: {part_of_speech: [proper noun, possessive case]}
-              - min: 41
-                max: 42
+              - <<: &SectorName.20
+                  min: 41
+                  max: 42
                 result: Forgotten
                 i18n: *i18n.result.adjective
-              - min: 43
-                max: 44
+              - <<: &SectorName.21
+                  min: 43
+                  max: 44
                 result: Haunted
                 i18n: *i18n.result.adjective
-              - min: 45
-                max: 46
+              - <<: &SectorName.22
+                  min: 45
+                  max: 46
                 result: Hidden
                 i18n: *i18n.result.adjective
-              - min: 47
-                max: 48
+              - <<: &SectorName.23
+                  min: 47
+                  max: 48
                 result: Hollow
                 i18n: *i18n.result.adjective
-              - min: 49
-                max: 50
+              - <<: &SectorName.24
+                  min: 49
+                  max: 50
                 result: Igneous
                 i18n: *i18n.result.adjective
-              - min: 51
-                max: 52
+              - <<: &SectorName.25
+                  min: 51
+                  max: 52
                 result: Infernal
                 i18n: *i18n.result.adjective
-              - min: 53
-                max: 54
+              - <<: &SectorName.26
+                  min: 53
+                  max: 54
                 result: Invidia
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 55
-                max: 56
+              - <<: &SectorName.27
+                  min: 55
+                  max: 56
                 result: Iron
                 i18n: &i18n.result.adjunct_common_noun
                   result:
                     part_of_speech: adjunct_common_noun
-              - min: 57
-                max: 58
+              - <<: &SectorName.28
+                  min: 57
+                  max: 58
                 result: Kalidas
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 59
-                max: 60
+              - <<: &SectorName.29
+                  min: 59
+                  max: 60
                 result: Kronos
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 61
-                max: 62
+              - <<: &SectorName.30
+                  min: 61
+                  max: 62
                 result: Lacuna
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 63
-                max: 64
+              - <<: &SectorName.31
+                  min: 63
+                  max: 64
                 result: Lumen
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 65
-                max: 66
+              - <<: &SectorName.32
+                  min: 65
+                  max: 66
                 result: Mobius
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 67
-                max: 68
+              - <<: &SectorName.33
+                  min: 67
+                  max: 68
                 result: Morien
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 69
-                max: 70
+              - <<: &SectorName.34
+                  min: 69
+                  max: 70
                 result: Onyx
                 i18n: *i18n.result.adjunct_common_noun
-              - min: 71
-                max: 72
+              - <<: &SectorName.35
+                  min: 71
+                  max: 72
                 result: Outer
                 i18n: *i18n.result.adjective
-              - min: 73
-                max: 74
+              - <<: &SectorName.36
+                  min: 73
+                  max: 74
                 result: Sanguis
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 75
-                max: 76
+              - <<: &SectorName.37
+                  min: 75
+                  max: 76
                 result: Scarred
                 i18n: *i18n.result.adjective
-              - min: 77
-                max: 78
+              - <<: &SectorName.38
+                  min: 77
+                  max: 78
                 result: Scorched
                 i18n: *i18n.result.adjective
-              - min: 79
-                max: 80
+              - <<: &SectorName.39
+                  min: 79
+                  max: 80
                 result: Shattered
                 i18n: *i18n.result.adjective
-              - min: 81
-                max: 82
+              - <<: &SectorName.40
+                  min: 81
+                  max: 82
                 result: Shrouded
                 i18n: *i18n.result.adjective
-              - min: 83
-                max: 84
+              - <<: &SectorName.41
+                  min: 83
+                  max: 84
                 result: Sindri
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 85
-                max: 86
+              - <<: &SectorName.42
+                  min: 85
+                  max: 86
                 result: Solana
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 87
-                max: 88
+              - <<: &SectorName.43
+                  min: 87
+                  max: 88
                 result: Stygian
                 i18n: *i18n.result.adjective
-              - min: 89
-                max: 90
+              - <<: &SectorName.44
+                  min: 89
+                  max: 90
                 result: Sulaco
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 91
-                max: 92
+              - <<: &SectorName.45
+                  min: 91
+                  max: 92
                 result: Sundered
                 i18n: *i18n.result.adjective
-              - min: 93
-                max: 94
+              - <<: &SectorName.46
+                  min: 93
+                  max: 94
                 result: Thunor
                 i18n: *i18n.result.adjunct_proper_noun
-              - min: 95
-                max: 96
+              - <<: &SectorName.47
+                  min: 95
+                  max: 96
                 result: Vanguard
                 i18n: *i18n.result.adjective
-              - min: 97
-                max: 98
+              - <<: &SectorName.48
+                  min: 97
+                  max: 98
                 result: Veiled
                 i18n: *i18n.result.adjective
-              - min: 99
-                max: 100
+              - <<: &SectorName.49
+                  min: 99
+                  max: 100
                 result: Wasted
                 i18n: *i18n.result.adjective
           suffix:
             name: Suffix
-            source: *CollectionSource
-            rendering:
-              style: column
+            # source: *CollectionSource
+            oracle_type: column_simple
             summary: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
             # usage:
             #   initial: true
@@ -555,159 +591,162 @@ oracles:
             #   part_of_speech: [proper noun fragment]
             #   tags: [template fragment, place]
             table:
-              - min: 1
-                max: 2
+              - <<: *SectorName.0
+                i18n: &i18n.result.common_noun_as_proper_noun
+                  result:
+                    part_of_speech: common_noun_as_proper_noun
                 result: Abyss
-              - min: 3
-                max: 4
+              - <<: *SectorName.1
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Anvil
-              - min: 5
-                max: 6
+              - <<: *SectorName.2
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Arch
-              - min: 7
-                max: 8
+              - <<: *SectorName.3
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Breach
-              - min: 9
-                max: 10
+              - <<: *SectorName.4
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Chain
-              - min: 11
-                max: 12
+              - <<: *SectorName.5
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Channel
-              - min: 13
-                max: 14
+              - <<: *SectorName.6
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Chasm
-              - min: 15
-                max: 16
+              - <<: *SectorName.7
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Circlet
-              - min: 17
-                max: 18
+              - <<: *SectorName.8
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Cluster
-              - min: 19
-                max: 20
+              - <<: *SectorName.9
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Crossing
-              - min: 21
-                max: 22
+              - <<: *SectorName.10
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Crown
-              - min: 23
-                max: 24
+              - <<: *SectorName.11
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Currents
-              - min: 25
-                max: 26
+              - <<: *SectorName.12
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Deep
-              - min: 27
-                max: 28
+              - <<: *SectorName.13
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Desolation
-              - min: 29
-                max: 30
+              - <<: *SectorName.14
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Drift
-              - min: 31
-                max: 32
+              - <<: *SectorName.15
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Flow
-              - min: 33
-                max: 34
+              - <<: *SectorName.16
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Flux
-              - min: 35
-                max: 36
+              - <<: *SectorName.17
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Gap
-              - min: 37
-                max: 38
+              - <<: *SectorName.18
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Gate
-              - min: 39
-                max: 40
+              - <<: *SectorName.19
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Gyre
-              - min: 41
-                max: 42
+              - <<: *SectorName.20
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Heart
-              - min: 43
-                max: 44
+              - <<: *SectorName.21
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Helix
-              - min: 45
-                max: 46
+              - <<: *SectorName.22
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Juncture
-              - min: 47
-                max: 48
+              - <<: *SectorName.23
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Limits
-              - min: 49
-                max: 50
+              - <<: *SectorName.24
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Locus
-              - min: 51
-                max: 52
+              - <<: *SectorName.25
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Maelstrom
-              - min: 53
-                max: 54
+              - <<: *SectorName.26
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Margin
-              - min: 55
-                max: 56
+              - <<: *SectorName.27
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Maw
-              - min: 57
-                max: 58
+              - <<: *SectorName.28
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Maze
-              - min: 59
-                max: 60
+              - <<: *SectorName.29
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Nexus
-              - min: 61
-                max: 62
+              - <<: *SectorName.30
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Oasis
-              - min: 63
-                max: 64
+              - <<: *SectorName.31
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Pass
-              - min: 65
-                max: 66
+              - <<: *SectorName.32
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Pit
-              - min: 67
-                max: 68
+              - <<: *SectorName.33
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Pyre
-              - min: 69
-                max: 70
+              - <<: *SectorName.34
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Reach
-              - min: 71
-                max: 72
+              - <<: *SectorName.35
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Rest
-              - min: 73
-                max: 74
+              - <<: *SectorName.36
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Rift
-              - min: 75
-                max: 76
+              - <<: *SectorName.37
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Sanctum
-              - min: 77
-                max: 78
+              - <<: *SectorName.38
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Shallows
-              - min: 79
-                max: 80
+              - <<: *SectorName.39
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Shoal
-              - min: 81
-                max: 82
+              - <<: *SectorName.40
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Spine
-              - min: 83
-                max: 84
+              - <<: *SectorName.41
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Straits
-              - min: 85
-                max: 86
+              - <<: *SectorName.42
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Threshold
-              - min: 87
-                max: 88
+              - <<: *SectorName.43
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Tide
-              - min: 89
-                max: 90
+              - <<: *SectorName.44
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Verge
-              - min: 91
-                max: 92
+              - <<: *SectorName.45
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Vertex
-              - min: 93
-                max: 94
+              - <<: *SectorName.46
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Vigil
-              - min: 95
-                max: 96
+              - <<: *SectorName.47
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Void
-              - min: 97
-                max: 98
+              - <<: *SectorName.48
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Web
-              - min: 99
-                max: 100
+              - <<: *SectorName.49
+                i18n: *i18n.result.common_noun_as_proper_noun
                 result: Zenith
     contents:
       stellar_object:
         name: Stellar Object
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 303
@@ -759,6 +798,7 @@ oracles:
           <<: *Source
           page: 304
         name: Spaceborne Peril
+        oracle_type: table_simple
         # usage:
         #   repeatable: true
         #   requires:
@@ -872,12 +912,13 @@ oracles:
             result: Unsettling sounds or disturbances
           - min: 97
             max: 99
-            result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-                auto: true
-              - oracle: starforged/oracles/core/theme
-                auto: true
+            <<: &ActionTheme
+              result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+              oracle_rolls:
+                - oracle: starforged/oracles/core/action
+                  auto: true
+                - oracle: starforged/oracles/core/theme
+                  auto: true
           - min: 100
             max: 100
             result: Roll twice
@@ -885,6 +926,7 @@ oracles:
               - number_of_rolls: 2
                 auto: true
       opportunity:
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 305

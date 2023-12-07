@@ -949,6 +949,10 @@
 			"i18n": true,
 			"releaseStage": "experimental"
 		},
+		"CollectableType": {
+			"title": "CollectableType",
+			"enum": ["move", "asset", "oracle_table", "atlas_entry", "npc"]
+		},
 		"ConditionMeterRule": {
 			"title": "ConditionMeterRule",
 			"type": "object",
@@ -982,8 +986,9 @@
 					"description": "A description of this condition meter."
 				},
 				"rollable": {
-					"type": "integer",
-					"default": 0
+					"type": "boolean",
+					"const": true,
+					"default": true
 				}
 			},
 			"additionalProperties": false
@@ -1050,6 +1055,27 @@
 			},
 			"additionalProperties": false
 		},
+		"NonCollectableType": {
+			"title": "NonCollectableType",
+			"enum": [
+				"delve_site",
+				"delve_site_theme",
+				"delve_site_domain",
+				"truth",
+				"rarity"
+			]
+		},
+		"ObjectType": {
+			"title": "ObjectType",
+			"anyOf": [
+				{
+					"$ref": "#/$defs/CollectableType"
+				},
+				{
+					"$ref": "#/$defs/NonCollectableType"
+				}
+			]
+		},
 		"Rules": {
 			"title": "Rules",
 			"type": "object",
@@ -1095,6 +1121,17 @@
 							"$ref": "#/$defs/StatRule"
 						}
 					}
+				},
+				"tags": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"default": {},
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/TagRule"
+						}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -1143,6 +1180,17 @@
 							"$ref": "#/$defs/StatRule"
 						}
 					}
+				},
+				"tags": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"default": {},
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/$defs/TagRule"
+						}
+					},
+					"releaseStage": "experimental"
 				}
 			},
 			"additionalProperties": false
@@ -1194,6 +1242,673 @@
 				}
 			},
 			"additionalProperties": false
+		},
+		"Tag": {
+			"title": "Tag",
+			"anyOf": [
+				{
+					"$ref": "#/$defs/TagValue"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/TagValue"
+					}
+				}
+			]
+		},
+		"TagRule": {
+			"title": "TagRule",
+			"type": "object",
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `value_type` property as a discriminator.",
+			"required": ["value_type"],
+			"properties": {
+				"value_type": {
+					"enum": [
+						"boolean",
+						"integer",
+						"move",
+						"asset",
+						"oracle_table",
+						"atlas_entry",
+						"npc",
+						"delve_site",
+						"delve_site_theme",
+						"delve_site_domain",
+						"truth",
+						"rarity",
+						"enum"
+					]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "boolean",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleBoolean",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"array": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "boolean",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "integer",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleInteger",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"array": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "integer",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "move",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleMove",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "move",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "asset",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleAsset",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "asset",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "oracle_table",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleOracleTable",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "oracle_table",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "atlas_entry",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleAtlasEntry",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "atlas_entry",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "npc",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleNpc",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "npc",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "delve_site",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleDelveSite",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "delve_site",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "delve_site_theme",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleDelveSiteTheme",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "delve_site_theme",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "delve_site_domain",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleDelveSiteDomain",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "delve_site_domain",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "truth",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleTruth",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "truth",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "rarity",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleRarity",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "rarity",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "enum",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleEnum",
+						"additionalProperties": false,
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/$defs/ObjectType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/$defs/MarkdownString"
+							},
+							"array": {
+								"default": false,
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "enum",
+								"type": "string"
+							},
+							"enum": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/DictKey"
+								}
+							}
+						},
+						"required": ["description", "value_type", "enum"]
+					}
+				}
+			]
+		},
+		"TagValue": {
+			"title": "TagValue",
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "integer"
+				},
+				{
+					"$ref": "#/$defs/DictKey"
+				},
+				{
+					"$ref": "#/$defs/DiceExpression"
+				},
+				{
+					"$ref": "#/$defs/MoveId"
+				},
+				{
+					"$ref": "#/$defs/AssetId"
+				},
+				{
+					"$ref": "#/$defs/OracleTableId"
+				},
+				{
+					"$ref": "#/$defs/AtlasEntryId"
+				},
+				{
+					"$ref": "#/$defs/NpcId"
+				},
+				{
+					"$ref": "#/$defs/DelveSiteId"
+				},
+				{
+					"$ref": "#/$defs/DelveSiteThemeId"
+				},
+				{
+					"$ref": "#/$defs/DelveSiteDomainId"
+				},
+				{
+					"$ref": "#/$defs/TruthId"
+				},
+				{
+					"$ref": "#/$defs/RarityId"
+				}
+			]
 		},
 		"ChallengeRank": {
 			"title": "ChallengeRank",
@@ -1603,7 +2318,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -1685,7 +2400,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -1921,7 +2636,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -2120,7 +2835,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -2515,7 +3230,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -2629,7 +3344,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -2768,7 +3483,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -2911,7 +3626,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -3031,7 +3746,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -3612,7 +4327,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -3951,7 +4666,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -4967,7 +5682,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -5164,7 +5879,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -5226,7 +5941,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -5291,7 +6006,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -5622,7 +6337,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -6004,7 +6719,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}
@@ -6459,7 +7174,7 @@
 							"$comment": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
-									"type": "string"
+									"$ref": "#/$defs/TagValue"
 								}
 							}
 						}

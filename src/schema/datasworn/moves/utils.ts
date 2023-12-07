@@ -34,7 +34,7 @@ const MoveBase = Type.Object({
 		description: 'The complete rules text of the move.'
 	}),
 	oracles: Type.Optional(
-		Type.Array(Type.Ref(Id.OracleTableId), {
+		Type.Array(Type.Ref(Id.OracleRollableId), {
 			description:
 				"Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement."
 		})

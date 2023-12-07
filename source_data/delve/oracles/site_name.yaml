@@ -33,6 +33,7 @@ oracles:
         name: Format
         source: *Source
         canonical_name: 'Site Name: Format'
+        oracle_type: table_simple
         table:
           - <<: &i18n.template.result.proper_noun
               i18n:
@@ -106,6 +107,7 @@ oracles:
               - oracle: delve/oracles/site_name/namesake
       description:
         canonical_name: 'Site Name: Description'
+        oracle_type: table_simple
         name: Description
         source:
           <<: *Source
@@ -319,6 +321,7 @@ oracles:
             result: Ruined
       detail:
         canonical_name: 'Site Name: Detail'
+        oracle_type: table_simple
         name: Detail
         source:
           <<: *Source
@@ -529,6 +532,7 @@ oracles:
             result: Wrath
       namesake:
         canonical_name: 'Site Name: Namesake'
+        oracle_type: table_simple
         name: Namesake
         summary: |-
           You may also use your preferred name randomizer to generate a Namesake for your site. If you want to add details for the Namesake, use the [Character oracles](id:classic/collections/oracles/character) in *Ironsworn Core*. This may help inspire a deeper understanding of the history of the site.
@@ -742,6 +746,7 @@ oracles:
       place:
         name: Place
         canonical_name: 'Site Name: Place'
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 210
@@ -833,6 +838,7 @@ oracles:
     collections:
       place:
         canonical_name: 'Site Name: Place'
+        oracle_type: tables
         name: Place
         source:
           <<: *Source
@@ -840,8 +846,10 @@ oracles:
         contents:
           barrow:
             name: Barrow
-            rendering:
-              style: embed_in_row
+            <<: &Place
+              oracle_type: table_simple
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/1-6
             source:
               <<: *Source
@@ -876,8 +884,9 @@ oracles:
                 result: Barrow
           cavern:
             name: Cavern
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/7-18
             source:
               <<: *Source
@@ -925,8 +934,9 @@ oracles:
                 result: Warren
           frozen_cavern:
             name: Frozen Cavern
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/19-28
             source:
               <<: *Source
@@ -974,8 +984,9 @@ oracles:
                 result: Warren
           icereach:
             name: Icereach
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/29-32
             source:
               <<: *Source
@@ -1007,8 +1018,9 @@ oracles:
                 result: Barrens
           mine:
             name: Mine
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/33-38
             source:
               <<: *Source
@@ -1040,8 +1052,9 @@ oracles:
                 result: Cut
           pass:
             name: Pass
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/39-48
             source:
               <<: *Source
@@ -1089,8 +1102,9 @@ oracles:
                 result: Ridge
           ruin:
             name: Ruin
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/49-58
             source:
               <<: *Source
@@ -1138,8 +1152,9 @@ oracles:
                 result: Tower
           sea_cave:
             name: Sea Cave
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/59-68
             source:
               <<: *Source
@@ -1171,8 +1186,9 @@ oracles:
                 result: Gouge
           shadowfen:
             name: Shadowfen
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/69-78
             source:
               <<: *Source
@@ -1220,8 +1236,9 @@ oracles:
                 result: Wetlands
           stronghold:
             name: Stronghold
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/79-83
             source:
               <<: *Source
@@ -1269,8 +1286,9 @@ oracles:
                 result: Watch
           tanglewood:
             name: Tanglewood
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/84-95
             source:
               <<: *Source
@@ -1310,8 +1328,9 @@ oracles:
                 result: Wood
           underkeep:
             name: Underkeep
-            rendering:
-              style: embed_in_row
+            <<: *Place
+            # rendering:
+            #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/96-100
             source:
               <<: *Source

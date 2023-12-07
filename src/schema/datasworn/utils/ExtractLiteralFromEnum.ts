@@ -1,8 +1,6 @@
 import { Type, type SchemaOptions, type Static } from '@sinclair/typebox'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
-import { type UnionEnumFromRecord } from './UnionEnumFromRecord.js'
 import { EnumDescription } from './UnionEnum.js'
-import { pascalCase } from './string.js'
+import { type UnionEnumFromRecord } from './UnionEnumFromRecord.js'
 
 /** Extracts a literal from a UnionEnum, plus any associated description. */
 

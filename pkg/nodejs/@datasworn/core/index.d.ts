@@ -701,8 +701,16 @@ export type PartOfSpeech =
  * The custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`
  *
  * @i18n
+ * @experimental
  */
 export type TemplateString = string
+
+export type CollectableType =
+	| 'move'
+	| 'asset'
+	| 'oracle_table'
+	| 'atlas_entry'
+	| 'npc'
 
 /**
  * Describes a standard player character condition meter.
@@ -732,10 +740,7 @@ export interface ConditionMeterRule {
 	 * The maximum value of this meter.
 	 */
 	max: number
-	/**
-	 * @default 0
-	 */
-	rollable: number
+	rollable: true
 }
 
 /**
@@ -786,6 +791,15 @@ export interface ImpactRule {
 	permanent: boolean
 }
 
+export type NonCollectableType =
+	| 'delve_site'
+	| 'delve_site_theme'
+	| 'delve_site_domain'
+	| 'truth'
+	| 'rarity'
+
+export type ObjectType = CollectableType | NonCollectableType
+
 /**
  * Describes rules for player characters in this ruleset, such as stats and condition meters.
  */
@@ -810,6 +824,17 @@ export interface Rules {
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	special_tracks: Record<DictKey, SpecialTrackRule>
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
+	 * @experimental
+	 */
+	tags: Record<DictKey, TagRule>
 }
 
 /**
@@ -836,6 +861,17 @@ export interface RulesExpansion {
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	special_tracks?: Record<DictKey, SpecialTrackRule>
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
+	 * @experimental
+	 */
+	tags?: Record<DictKey, TagRule>
 }
 
 /**
@@ -877,6 +913,199 @@ export interface StatRule {
 	 */
 	description: MarkdownString
 }
+
+export type Tag = TagValue | TagValue[]
+
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `value_type` property as a discriminator.
+ */
+export type TagRule =
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			array: boolean
+			value_type: 'boolean'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			array: boolean
+			value_type: 'integer'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'move'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'asset'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'oracle_table'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'atlas_entry'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'npc'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'delve_site'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'delve_site_theme'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'delve_site_domain'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'truth'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'rarity'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			array: boolean
+			value_type: 'enum'
+			enum: DictKey[]
+	  }
+
+export type TagValue =
+	| boolean
+	| number
+	| DictKey
+	| DiceExpression
+	| MoveId
+	| AssetId
+	| OracleTableId
+	| AtlasEntryId
+	| NpcId
+	| DelveSiteId
+	| DelveSiteThemeId
+	| DelveSiteDomainId
+	| TruthId
+	| RarityId
 
 /**
  * Challenge rank, represented as an integer from 1 (troublesome) to 5 (epic).
@@ -1063,7 +1292,10 @@ export interface Npc {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -1100,7 +1332,10 @@ export interface NpcCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1266,7 +1501,10 @@ export interface OracleCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1365,7 +1603,10 @@ export interface OracleTable {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -1610,7 +1851,10 @@ export interface MoveActionRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1668,7 +1912,10 @@ export interface MoveCategory {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1730,7 +1977,10 @@ export interface MoveNoRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1814,7 +2064,10 @@ export interface MoveProgressRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1891,7 +2144,10 @@ export interface MoveSpecialTrack {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2227,7 +2483,10 @@ export interface Asset {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * A localized category label for this asset. This is the surtitle above the asset's name on the card.
 	 * @example "Combat Talent"
@@ -2417,7 +2676,10 @@ export interface AssetCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2476,6 +2738,7 @@ export interface AssetConditionMeter {
 	icon?: SvgImageUrl
 	/**
 	 * Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.
+	 * @unstable
 	 */
 	moves?: {
 		/**
@@ -2847,7 +3110,10 @@ export interface Truth {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	icon?: SvgImageUrl
 	summary?: MarkdownString
 	options: TruthOption[]
@@ -2907,6 +3173,9 @@ export interface TruthOptionTableRow {
 	max: number | null
 }
 
+/**
+ * @experimental
+ */
 export interface Atlas {
 	/**
 	 * The unique Datasworn ID for this item.
@@ -2925,7 +3194,10 @@ export interface Atlas {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2982,7 +3254,10 @@ export interface AtlasEntry {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -3029,7 +3304,10 @@ export interface Rarity {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	/**
 	 * The asset augmented by this rarity.
 	 */
@@ -3068,7 +3346,10 @@ export interface DelveSite {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	icon?: SvgImageUrl
 	rank: ChallengeRank
 	/**
@@ -3190,7 +3471,10 @@ export interface DelveSiteDomain {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
@@ -3379,7 +3663,10 @@ export interface DelveSiteTheme {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, TagValue>>
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl

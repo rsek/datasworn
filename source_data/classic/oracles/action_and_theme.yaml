@@ -15,6 +15,7 @@ oracles:
     contents:
       action:
         name: Action
+        oracle_type: table_simple
         canonical_name: 'Oracle 1: Action'
         suggestions:
           oracles:
@@ -430,6 +431,7 @@ oracles:
       theme:
         name: Theme
         canonical_name: 'Oracle 2: Theme'
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 175

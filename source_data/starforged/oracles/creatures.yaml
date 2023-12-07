@@ -19,6 +19,7 @@ oracles:
         name: Environment
         # usage:
         #   initial: true
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 336
@@ -70,6 +71,7 @@ oracles:
               - oracle: starforged/oracles/creatures/basic_form/air
       scale:
         name: Scale
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 336
@@ -118,6 +120,7 @@ oracles:
                 auto: true
       ultra_scale:
         name: Ultra-scale
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 336
@@ -139,15 +142,17 @@ oracles:
             max: 100
             result: Vast (planet-sized)
             # set_attributes: {creature_scale: [vast]}
-      creature_first_look:
+      first_look:
         name: Creature First Look
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 338
         # usage:
         #   initial: true
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         summary: |-
           Roll for a basic form, and flesh out the creature’s appearance using the First Look table.
         # content:
@@ -306,6 +311,7 @@ oracles:
             result: Visible symbiote
       encountered_behavior:
         name: Encountered Behavior
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 338
@@ -425,8 +431,9 @@ oracles:
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
-      revealed_creature_aspect:
+      revealed_aspect:
         name: Revealed Creature Aspect
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 339
@@ -438,7 +445,8 @@ oracles:
         #   part_of_speech: [fragment]
         # usage:
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         table:
           - min: 1
             max: 2
@@ -593,6 +601,7 @@ oracles:
     collections:
       basic_form:
         name: Creature Basic Form
+        oracle_type: table_shared_result
         source:
           <<: *Source
           page: 337
@@ -603,49 +612,16 @@ oracles:
         #       environment: null
         # content:
         # part_of_speech: [fragment]
-        rendering:
-          style: multi_table
-          columns:
-            space:
-              content_type: roll
-              table_key: space
-              label: Space
-              color: &color.Space '#121b21'
-            interior:
-              content_type: roll
-              table_key: interior
-              label: Interior
-              color: &color.Interior '#707a83'
-            land:
-              content_type: roll
-              table_key: land
-              label: Land
-              color: &color.Land '#ed1a38'
-            liquid:
-              content_type: roll
-              table_key: liquid
-              label: Liquid
-              color: &color.Liquid '#0082bf'
-            air:
-              content_type: roll
-              table_key: air
-              label: Air
-              color: &color.Air '#90278f'
-            result:
-              content_type: result
-              table_key: space
-              label: Result
         summary: |-
           Roll for a basic form, and flesh out the creature’s appearance using the [First Look](id:starforged/oracles/creatures/first_look) table.
         contents:
           space:
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             name: Space
             icon: *icon.Space
             # color: *color.Space
-            rendering:
-              style: column
+            oracle_type: column_simple
             # usage:
             # requires:
             #   attributes:
@@ -728,11 +704,10 @@ oracles:
                     auto: true
           interior:
             name: Interior
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             icon: *icon.Interior
-            rendering:
-              style: column
+            oracle_type: column_simple
               # color: *color.Interior
             # usage:
             #   requires:
@@ -810,12 +785,11 @@ oracles:
               - *BasicForm17
           land:
             name: Land
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             # color: *color.Land
             icon: *icon.Land
-            rendering:
-              style: column
+            oracle_type: column_simple
             # usage:
             #   requires:
             #     attributes:
@@ -892,10 +866,9 @@ oracles:
               - *BasicForm17
           liquid:
             name: Liquid
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            # source:
+            #   <<: *Source
+            oracle_type: column_simple
             # color: *color.Liquid
             icon: *icon.Liquid
             # usage:
@@ -974,10 +947,9 @@ oracles:
               - *BasicForm17
           air:
             name: Air
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            # source:
+            #   <<: *Source
+            oracle_type: column_simple
             # color: *color.Air
             icon: *icon.Air
             # usage:

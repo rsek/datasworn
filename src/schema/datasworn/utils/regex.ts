@@ -1,18 +1,17 @@
 /** Utilities to compose regular expressions for IDs and dictionary keys. */
 
 import {
+	Type,
+	TypeClone,
+	type ObjectOptions,
 	type StringOptions,
 	type TString,
-	Type,
-	type ObjectOptions,
-	type TUnion,
-	TypeClone
+	type TUnion
 } from '@sinclair/typebox'
-import { escapeRegExp, omit, pick } from 'lodash-es'
-import { UnionOneOf } from './UnionOneOf.js'
+import { escapeRegExp, omit } from 'lodash-es'
 import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
-import { GetSourceDataSchema, setSourceDataSchema } from './Computed.js'
-import { SetOptional } from './SetOptional.js'
+import { setSourceDataSchema } from './Computed.js'
+import { type SetOptional } from './SetOptional.js'
 
 const sep = escapeRegExp('/')
 const wc = escapeRegExp('*')
@@ -70,9 +69,16 @@ export function IdUnion(members: TId[], options: ObjectOptions) {
 		)
 	)
 
+	// console.log(jtdRegex.source)
+
 	const extendedOptions = {
 		[JsonTypeDef]: {
-			schema: { type: 'string', metadata: { pattern: `^${jtdRegex.source}$` } }
+			schema: {
+				type: 'string',
+				metadata: {
+					pattern: `^${jtdRegex.source}$`
+				}
+			}
 		},
 		...options
 	}
@@ -83,15 +89,18 @@ export function IdUnion(members: TId[], options: ObjectOptions) {
 export function Id(elements: IdElement[], options: IdOptions) {
 	const targetName = options.$id.replace(/Id$/, '')
 	const indefiniteArticle = targetName.match(/^[AEIOU]/) ? 'an' : 'a'
+	const pattern = new RegExp(
+		`^${getPatternSubstrings(...elements).join('')}$`
+	).source
+		// clean up any lingering doubled slashes
+		.replace('\\/(\\/', '(\\/')
+		.replace('\\/((\\/', '((\\/')
 
-	const result = Type.RegExp(
-		new RegExp(`^${getPatternSubstrings(...elements).join('')}$`),
-		{
-			description: `A unique ID for ${indefiniteArticle} ${targetName}.`,
-			...options,
-			[PatternElements]: elements
-		}
-	) as TId
+	const result = Type.RegExp(pattern, {
+		description: `A unique ID for ${indefiniteArticle} ${targetName}.`,
+		...options,
+		[PatternElements]: elements
+	}) as TId
 
 	return result
 }
@@ -172,7 +181,9 @@ export function toWildcard(
 }
 
 function wildcard(pattern: RegExp) {
-	return oneOf(new RegExp(wc), pattern)
+	const src = oneOf(new RegExp(wc), pattern).source
+
+	return new RegExp(src)
 }
 function group(pattern: RegExp) {
 	return new RegExp(`(${pattern.source})`)
@@ -205,8 +216,13 @@ function getPatternSubstrings(...elements: IdElement[]) {
 	for (let i = 0; i < elements.length; i++) {
 		const element = elements[i]
 
+		const nextElement = elements[i + 1]
+
 		const needsSeparator =
-			i > 0 && (typeof element === 'string' || !noSeparator.includes(element))
+			(typeof element === 'string' || !noSeparator.includes(element as any)) &&
+			i > 0
+		// &&
+		// nextElement?.description?.startsWith('(/')
 
 		if (needsSeparator) idParts.push(sep)
 

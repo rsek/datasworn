@@ -15,62 +15,56 @@ oracles:
       regions:
         source: *Source
         name: Overland Regions
-        rendering:
-          style: standalone
-          columns:
-            roll:
-              label: Roll
-              content_type: roll
-            result:
-              label: Result
-              content_type: result
-            detail:
-              label: Detail
-              content_type: summary
+        oracle_type: table_details
+        column_labels:
+          roll: Roll
+          result: Result
+          detail: Detail
         table:
           - min: 1
             max: 20
             result: '[Highlands]'
-            summary: &highlands.summary Hilly or mountainous terrain
+            detail: &highlands.summary Hilly or mountainous terrain
           - min: 21
             max: 45
             result: '[Jungle]'
-            summary: &jungle.summary Dense tropical rainforest
+            detail: &jungle.summary Dense tropical rainforest
           - min: 46
             max: 50
             result: '[Lava Field]'
-            summary: &lava_field.summary Lands scarred by volcanic eruptions
+            detail: &lava_field.summary Lands scarred by volcanic eruptions
           - min: 51
             max: 55
             result: '[Marsh]'
-            summary: &marsh.summary Waterlogged region with grasses and reeds
+            detail: &marsh.summary Waterlogged region with grasses and reeds
           - min: 56
             max: 60
             result: '[River]'
-            summary: &river.summary Major inland waterway
+            detail: &river.summary Major inland waterway
           - min: 61
             max: 65
             result: '[Scrub]'
-            summary: &scrub.summary Open landscape dominated by grass or shrubs
+            detail: &scrub.summary Open landscape dominated by grass or shrubs
           - min: 66
             max: 75
             result: '[Shore]'
-            summary: &shore.summary Where the land meets the sea
+            detail: &shore.summary Where the land meets the sea
           - min: 76
             max: 85
             result: '[Swamp]'
-            summary: &swamp.summary Flooded forest with thick vegetation
+            detail: &swamp.summary Flooded forest with thick vegetation
           - min: 86
             max: 90
             result: '[Wastes]'
-            summary: &wastes.summary Arid, rocky terrain
+            detail: &wastes.summary Arid, rocky terrain
           - min: 91
             max: 100
             result: '[Woodland]'
-            summary: &woodland.summary Forested lands
-      details:
+            detail: &woodland.summary Forested lands
+      detail:
         source: *Source
         name: Overland Details
+        oracle_type: table_simple
         table:
           - min: 1
             max: 1
@@ -375,6 +369,7 @@ oracles:
       cursed_details:
         source: *Source
         name: Cursed Overland Details
+        oracle_type: table_simple
         table:
           - min: 1
             max: 1
@@ -679,6 +674,7 @@ oracles:
       peril:
         source: *Source
         name: Overland Perils
+        oracle_type: table_simple
         table:
           - min: 1
             max: 3
@@ -795,6 +791,7 @@ oracles:
       opportunity:
         source: *Source
         name: Overland Opportunities
+        oracle_type: table_simple
         table:
           - min: 1
             max: 4
@@ -875,32 +872,12 @@ oracles:
       waypoints:
         source: *Source
         name: Waypoints
-        rendering:
-          style: multi_table
-          columns:
-            myriads:
-              label: Myriads
-              table_key: myriads
-              content_type: roll
-            margins:
-              label: Margins
-              table_key: margins
-              content_type: roll
-            reaches:
-              label: Reaches
-              table_key: reaches
-              content_type: roll
-            result:
-              table_key: myriads
-              content_type: result
-              label: Result
+        oracle_type: table_shared_result
         contents:
           myriads:
-            source: *Source
             name: Myriads
             summary: Central Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 20
@@ -954,11 +931,9 @@ oracles:
                 max: 100
                 <<: *RollTwice
           margins:
-            source: *Source
             name: Margins
             summary: Outer Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 20
@@ -983,11 +958,9 @@ oracles:
                 <<: *Waypoints.6
               - *Waypoints.7
           reaches:
-            source: *Source
             name: Reaches
             summary: Remote Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 20
@@ -1014,662 +987,513 @@ oracles:
       regional_landmarks:
         source: *Source
         name: Regional Landmarks
+        oracle_type: tables
         contents:
           highlands:
             source: *Source
             name: Highlands
+            oracle_type: table_simple
             summary: *highlands.summary
             table:
-              - min: 1
-                max: 5
+              - <<: &Landmark.0
+                  min: 1
+                  max: 5
                 result: Bubbling mountain spring
-              - min: 6
-                max: 10
+              - <<: &Landmark.1
+                  min: 6
+                  max: 10
                 result: Cavernous opening in cliff face
-              - min: 11
-                max: 15
+              - <<: &Landmark.2
+                  min: 11
+                  max: 15
                 result: Constructed bridge over a wide chasm
-              - min: 16
-                max: 20
+              - <<: &Landmark.3
+                  min: 16
+                  max: 20
                 result: Crumbling watchtower atop an overlook
-              - min: 21
-                max: 25
+              - <<: &Landmark.4
+                  min: 21
+                  max: 25
                 result: Fallen tree or stone arch over a gorge
-              - min: 26
-                max: 30
+              - <<: &Landmark.5
+                  min: 26
+                  max: 30
                 result: Intricately stacked cairns
-              - min: 31
-                max: 35
+              - <<: &Landmark.6
+                  min: 31
+                  max: 35
                 result: Mist-shrouded ravine
-              - min: 36
-                max: 40
+              - <<: &Landmark.7
+                  min: 36
+                  max: 40
                 result: Narrow ridgeline trail
-              - min: 41
-                max: 45
+              - <<: &Landmark.8
+                  min: 41
+                  max: 45
                 result: Ornate stone carvings
-              - min: 46
-                max: 50
+              - <<: &Landmark.9
+                  min: 46
+                  max: 50
                 result: River crashing through a narrow gorge
-              - min: 51
-                max: 55
+              - <<: &Landmark.10
+                  min: 51
+                  max: 55
                 result: Scars of a recent landslide
-              - min: 56
-                max: 60
+              - <<: &Landmark.11
+                  min: 56
+                  max: 60
                 result: Sheer precipice
-              - min: 61
-                max: 65
+              - <<: &Landmark.12
+                  min: 61
+                  max: 65
                 result: Sheltered highland lake
-              - min: 66
-                max: 70
+              - <<: &Landmark.13
+                  min: 66
+                  max: 70
                 result: Steep, rocky slope
-              - min: 71
-                max: 75
+              - <<: &Landmark.14
+                  min: 71
+                  max: 75
                 result: Stone stairs carved into a cliff face
-              - min: 76
-                max: 80
+              - <<: &Landmark.15
+                  min: 76
+                  max: 80
                 result: Thundering waterfall
-              - min: 81
-                max: 85
+              - <<: &Landmark.16
+                  min: 81
+                  max: 85
                 result: Towering rock spires
-              - min: 86
-                max: 90
+              - <<: &Landmark.17
+                  min: 86
+                  max: 90
                 result: Vantage point with an expansive view
-              - min: 91
-                max: 95
+              - <<: &Landmark.18
+                  min: 91
+                  max: 95
                 result: Veins of ore
-              - min: 96
-                max: 100
+              - <<: &Landmark.19
+                  min: 96
+                  max: 100
                 result: Winding footpath
           jungle:
             source: *Source
             name: Jungle
+            oracle_type: table_simple
             summary: *jungle.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Ancient tree with a vast canopy
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Branches crowded with colorful birds
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Carved, moss-covered stones
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Cave mouth hung with dripping vines
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Curtains of hanging vines
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Fallen tree bridges a ravine
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Fragrant fruit trees abuzz with insects
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Glade filled with vibrant butterflies
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Majestic falls spill into a rocky gorge
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Narrow path twists through undergrowth
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: River cascading over smooth rocks
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Rocky spires cloaked in greenery
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Rope bridge spans a river gorge
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Rope bridges connect towering trees
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Serene pool below a terraced waterfall
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Tangled thicket of thorny plants
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Unbroken canopy casts deep shade
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Water-filled sinkhole
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Whispering bamboo grove
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Wide, slow-moving river
 
           lava_field:
             source: *Source
             name: Lava Field
+            oracle_type: table_simple
             summary: *lava_field.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Boiling lake
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Bubbling lava pool
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Columns of volcanic rock
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Deep crevice churning with magma
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Devastated structures
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Dunes of volcanic ash
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Erupting lava fissure
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Expanse of glassy lava rock
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Fast-moving river of lava
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Field of cracked, partially solidified lava
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Gouts of steam as lava meets water
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Landscape set ablaze
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Lava tube plunges into darkness
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Roiling ash clouds
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Scorched trees amid an ashy plain
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Smoldering crater
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Steaming hot springs
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Stubborn plantlife emerges from ruin
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Towering cinder cone
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Vents spewing steam and volcanic gases
 
           marsh:
             source: *Source
             name: Marsh
+            oracle_type: table_simple
             summary: *marsh.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Bursts of flaming marsh gas
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Copse of rotted tree trunks
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Dense thicket of of reeds
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Field of flowers upon sodden ground
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Hovels stand precariously on stilts
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Large island of dry land
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Muddy, sinking quagmire
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Nest of slithering serpents
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Nests of squawking waterfowl
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Pools of bubbling marsh gas
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Raised trail winds through a watery maze
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Rotting wooden walkway
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Shallow waterways flanked by tall grass
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Soggy mist-shrouded field
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Tall, rocky hillock
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Thicket of spindly trees atop a low hill
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Toppled stone tower
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Wide channel of deep water
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Wide, algae-covered pond
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Witchlights dance above dark pools
 
           river:
             source: *Source
             name: River
+            oracle_type: table_simple
             summary: *river.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Branching watercourse
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Cascading rapids
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Debris forming a dam
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Eddies swirl in a large, limpid pool
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Flooded riverbanks
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Gulch strewn with mossy boulders
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Landed boat
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Mighty fallen tree spans the river
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Muddy landing
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Old dock perched over the water
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Plunging series of terraced waterfalls
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Remains of an old bridge
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: River-fed lake
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Sandy shoal in the midst of the river
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Shadowy passage flanked by tall cliffs
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Shallow ford
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Snaking, slow-moving watercourse
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Strong current leading to a high waterfall
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Trees crowd the river's edge
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Wrecked ship or boat
 
           scrub:
             source: *Source
             name: Scrub
+            oracle_type: table_simple
             summary: *scrub.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Abandoned homestead
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Cavernous sinkhole
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Craggy outcroppings
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Crumbling stone wall
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Expanse of deep, sucking mud
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Field of blooming wildflowers
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Field of shoulder-high grasses
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Large insect mounds
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Maze of trails through dense shrubs
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Meandering river or stream
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Misty hollow
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Old stone road
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Plain of rugged, exposed rock
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Scattered stones of a fallen structure
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Spring-fed lake or pond
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Stand of spindly trees
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Thorny thicket
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Towering, solitary tree
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Watering hole
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Weathered burial mounds
 
           shore:
             source: *Source
             name: Shore
+            oracle_type: table_simple
             summary: *shore.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Approaching or anchored ship
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Beached shipwreck
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Black sand beach
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Craggy rocks and tide pools
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Geometric columns of volcanic rock
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Grassy dunes
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Landed boat
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Mangrove thicket
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Picturesque sandy beach
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: River outlet
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Rocky shelf with geysering blowholes
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Saltwater gorge
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Sandspit connecting to a rocky islet
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Seals basking on rocky outcroppings
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Squawking seabirds circling tall rocks
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Stormswept debris
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Tall seaside cliffs
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Watery sea cave
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Wave-swept pebble beach
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Wide, saltwater channel
 
           swamp:
             source: *Source
             name: Swamp
+            oracle_type: table_simple
             summary: *swamp.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Abandoned boat or raft
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Ancient tree with sprawling root system
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Barricade of rotting logs
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Crumbling, moss-covered monument
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Dank cave hung with curtains of moss
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Decaying, half-sunk homestead
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Dense canopy of intertwined branches
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Insects swarm above stangnant water
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Large sandy island topped by trees
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Murky waterway through misty woods
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Pond filled with fragrant, floating flowers
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Ramshackle bridges connect dry land
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Rocky hillock
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Slow-moving, muddy channel
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Solitary hut on stilts
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Stirrings of a large creature
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Tangled thicket of tree roots and shrubs
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Thick vegetation in mucky soil
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Watery maze of towering tree trunks
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Wrecked ship or boat
 
           wastes:
             source: *Source
             name: Wastes
+            oracle_type: table_simple
             summary: *wastes.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Carrion birds roosting in a dead tree
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Dried riverbed
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Freshwater spring oasis
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Maze of wind-carved spires
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Narrow trail through steep-sided ravine
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Natural stone bridge spans a canyon
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Parched lakebed
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Petrified forest
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Plain of rocky rubble
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Shadowy cave
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Sprawling skeletal remains
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Expanse of shifting, loose sand
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Towering stone arches
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Abandoned mineshaft
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Fossilized tracks of an ancient beast
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Rainbow-hued rock formations
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Rock walls with ancient petroglyphs
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Half-buried statue
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Sun-bleached bones of a leviathan
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Animal tracks in the sand
 
           woodland:
             source: *Source
             name: Woodland
+            oracle_type: table_simple
             summary: *woodland.summary
             table:
-              - min: 1
-                max: 5
+              - <<: *Landmark.0
                 result: Cave tucked behind a misty waterfall
-              - min: 6
-                max: 10
+              - <<: *Landmark.1
                 result: Game trail leads through dense wood
-              - min: 11
-                max: 15
+              - <<: *Landmark.2
                 result: Gloomy, twisted tree
-              - min: 16
-                max: 20
+              - <<: *Landmark.3
                 result: Grassy glade
-              - min: 21
-                max: 25
+              - <<: *Landmark.4
                 result: Grove of tall ferns
-              - min: 26
-                max: 30
+              - <<: *Landmark.5
                 result: Large, mirror-like lake
-              - min: 31
-                max: 35
+              - <<: *Landmark.6
                 result: Mushrooms thrive in a shadowy thicket
-              - min: 36
-                max: 40
+              - <<: *Landmark.7
                 result: Old stone bridge over a stream
-              - min: 41
-                max: 45
+              - <<: *Landmark.8
                 result: Pond sheltered by close-packed trees
-              - min: 46
-                max: 50
+              - <<: *Landmark.9
                 result: Ring of standing stones
-              - min: 51
-                max: 55
+              - <<: *Landmark.10
                 result: Rocky promontory
-              - min: 56
-                max: 60
+              - <<: *Landmark.11
                 result: Ropes and bridges connect tall trees
-              - min: 61
-                max: 65
+              - <<: *Landmark.12
                 result: Scorched trees and ashy ground
-              - min: 66
-                max: 70
+              - <<: *Landmark.13
                 result: Stand of ancient trees with huge trunks
-              - min: 71
-                max: 75
+              - <<: *Landmark.14
                 result: Towering, lightning-split tree
-              - min: 76
-                max: 80
+              - <<: *Landmark.15
                 result: Tract of barren, clear-cut ground
-              - min: 81
-                max: 85
+              - <<: *Landmark.16
                 result: Trees carved with faces
-              - min: 86
-                max: 90
+              - <<: *Landmark.17
                 result: Widespread thicket of prickly shrubs
-              - min: 91
-                max: 95
+              - <<: *Landmark.18
                 result: Wildflower meadow
-              - min: 96
-                max: 100
+              - <<: *Landmark.19
                 result: Well-used walking path

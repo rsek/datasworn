@@ -16,94 +16,97 @@ oracles:
         source:
           <<: *Source
         name: Location
+        oracle_type: table_details
         summary: Roll for a location when learning about a distant settlement. If you come upon a settlement in your travels, you may instead use the context of your current location.
         table:
           - min: 1
             max: 50
             result: Seafront
-            summary: By the sea
+            detail: By the sea
           - min: 51
             max: 75
             result: Inland
-            summary: Within the island interior
+            detail: Within the island interior
           - min: 76
             max: 100
             result: Waterside
-            summary: By an inland body of water
+            detail: By an inland body of water
       aesthetics:
         source:
           <<: *Source
         name: Aesthetics
+        oracle_type: table_details
         summary: Use this table to reveal the ambiance and architecture of the settlement. Smaller settlements likely have a single style, while larger settlements might have multiple styles across sections or districts.
-        rendering:
-          style: standalone
-          columns:
-            roll:
-              label: Roll
-              content_type: roll
-            result:
-              label: Result
-              content_type: result
-            detail:
-              label: Detail
-              content_type: summary
+        # rendering:
+        #   style: standalone
+        #   columns:
+        #     roll:
+        #       label: Roll
+        #       content_type: roll
+        #     result:
+        #       label: Result
+        #       content_type: result
+        #     detail:
+        #       label: Detail
+        #       content_type: summary
         table:
           - min: 1
             max: 10
             result: Ancient
-            summary: Ancestral structures which have stood the test of time
+            detail: Ancestral structures which have stood the test of time
           - min: 11
             max: 20
             result: Dismal
-            summary: Grimy, tightly-packed structures and shadowed paths
+            detail: Grimy, tightly-packed structures and shadowed paths
           - min: 21
             max: 25
             result: Earthen
-            summary: Carved into the terrain
+            detail: Carved into the terrain
           - min: 26
             max: 35
             result: Foreboding
-            summary: Structures with ornate, dramatic forms and cavernous interiors
+            detail: Structures with ornate, dramatic forms and cavernous interiors
           - min: 36
             max: 45
             result: Fortified
-            summary: Imposing structures hardened against assaults
+            detail: Imposing structures hardened against assaults
           - min: 46
             max: 50
             result: Garish
-            summary: Structures with tacky design and showy adornments
+            detail: Structures with tacky design and showy adornments
           - min: 51
             max: 55
             result: Grand
-            summary: Majestic structures with opulent details
+            detail: Majestic structures with opulent details
           - min: 56
             max: 65
             result: Idyllic
-            summary: Organic forms and materials, at one with the landscape
+            detail: Organic forms and materials, at one with the landscape
           - min: 66
             max: 70
             result: Industrial
-            summary: Grim, utilitarian structures, built for function over form
+            detail: Grim, utilitarian structures, built for function over form
           - min: 71
             max: 75
             result: Makeshift
-            summary: Temporary shelters for nomadic or displaced people
+            detail: Temporary shelters for nomadic or displaced people
           - min: 76
             max: 85
             result: Modest
-            summary: Practical, charming structures
+            detail: Practical, charming structures
           - min: 86
             max: 95
             result: Ramshackle
-            summary: Haphazard structures using scavenged or repurposed materials
+            detail: Haphazard structures using scavenged or repurposed materials
           - min: 96
             max: 100
             result: Wondrous
-            summary: Enigmatic structures of awe-inspiring design or function
+            detail: Enigmatic structures of awe-inspiring design or function
       first_look:
         source:
           <<: *Source
         name: First Look
+        oracle_type: table_simple
         table:
           - min: 1
             max: 2
@@ -247,6 +250,7 @@ oracles:
         source:
           <<: *Source
         name: Cursed First Look
+        oracle_type: table_simple
         table:
           - min: 1
             max: 2
@@ -343,6 +347,7 @@ oracles:
           <<: *Source
         name: Cursed Focus
         summary: If you roll a [Settlement Focus] curse, take your result on that table and make note that it is cursed. Something about this activity has an uncanny or dreadful aspect. If you investigate or interact further, use the table below to help reveal the industry’s relationship to a cursed power.
+        oracle_type: table_simple
         table:
           - min: 1
             max: 10
@@ -374,11 +379,12 @@ oracles:
           - min: 91
             max: 100
             result: Unwittingly helping or unleashing a cursed power
-      details:
+      detail:
         source:
           <<: *Source
         name: Settlement Details
         summary: As you spend time in a settlement, use this table to reveal uncovered aspects and overheard rumors.
+        oracle_type: table_simple
         table:
           - min: 1
             max: 1
@@ -678,6 +684,10 @@ oracles:
         source:
           <<: *Source
         name: Cursed Settlement Details
+        oracle_type: table_simple
+        tags:
+          sundered_isles:
+            cursed_version_of: sundered_isles/oracles/core/descriptor
         table:
           - min: 1
             max: 1
@@ -879,66 +889,56 @@ oracles:
         source:
           <<: *Source
         name: Size
-        rendering:
-          style: multi_table
-          columns:
-            myriads:
-              table_key: myriads
-              content_type: roll
-              label: Myriads
-            margins:
-              table_key: margins
-              content_type: roll
-              label: Margins
-            reaches:
-              table_key: reaches
-              content_type: roll
-              label: Reaches
-            type:
-              table_key: myriads
-              content_type: result
-              label: Type
-            typical_population:
-              label: Typical population
-              content_type: roll
-              table_key: summary
+        oracle_type: table_shared_details
+        # rendering:
+        #   columns:
+        #     - table_key: myriads
+        #       content_type: roll
+        #     - table_key: margins
+        #       content_type: roll
+        #     - table_key: reaches
+        #       content_type: roll
+        #     - table_key: myriads
+        #       content_type: result
+        #       label: Type
+        #     - label: Typical population
+        #       content_type: summary
+        #       table_key: myriads
         contents:
           myriads:
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             name: Myriads
             summary: Central Seas
-            rendering:
-              style: column
+            oracle_type: column_details
             table:
               - <<: &Size.0
                   result: Village or outpost
-                  summary: Dozens
+                  detail: Dozens
                 min: 1
                 max: 30
               - <<: &Size.1
                   result: Town
-                  summary: Hundreds
+                  detail: Hundreds
                 min: 31
                 max: 70
               - <<: &Size.2
                   result: City
-                  summary: Thousands
+                  detail: Thousands
                 min: 71
                 max: 98
               - <<: &Size.3
                   result: City-state
-                  summary: Tens of thousands
+                  detail: Tens of thousands
                 min: 99
                 max: 100
 
           margins:
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             name: Margins
             summary: Outer Seas
-            rendering:
-              style: column
+            oracle_type: column_details
             table:
               - min: 1
                 max: 40
@@ -953,12 +953,11 @@ oracles:
                 max: 100
                 <<: *Size.3
           reaches:
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             name: Reaches
             summary: Remote Seas
-            rendering:
-              style: column
+            oracle_type: column_details
             table:
               - min: 1
                 max: 50
@@ -976,11 +975,13 @@ oracles:
         source:
           <<: *Source
         name: Settlement Identity
+        oracle_type: tables
         contents:
           disposition:
             source:
               <<: *Source
             name: Disposition
+            oracle_type: table_simple
             table:
               - min: 1
                 max: 5
@@ -1016,6 +1017,7 @@ oracles:
             source:
               <<: *Source
             name: Authority
+            oracle_type: table_simple
             table:
               - min: 1
                 max: 10
@@ -1047,39 +1049,19 @@ oracles:
               - min: 91
                 max: 100
                 result: Benevolent
-
         collections:
           controlling_faction:
             source:
               <<: *Source
             name: Controlling Faction
-            rendering:
-              style: multi_table
-              columns:
-                myriads:
-                  table_key: myriads
-                  content_type: roll
-                  label: Myriads
-                margins:
-                  table_key: margins
-                  content_type: roll
-                  label: Margins
-                reaches:
-                  table_key: reaches
-                  content_type: roll
-                  label: Reaches
-                result:
-                  table_key: myriads
-                  content_type: result
-                  label: Result
+            oracle_type: table_shared_result
             contents:
               myriads:
-                source:
-                  <<: *Source
+                # source:
+                #   <<: *Source
                 name: Myriads
                 summary: Central Seas
-                rendering:
-                  style: column
+                oracle_type: column_simple
                 table:
                   - min: 1
                     max: 60
@@ -1102,12 +1084,11 @@ oracles:
                     <<: &ControllingFaction.4
                       result: Factions in conflict
               margins:
-                source:
-                  <<: *Source
+                # source:
+                #   <<: *Source
                 name: Margins
                 summary: Outer Seas
-                rendering:
-                  style: column
+                oracle_type: column_simple
                 table:
                   - min: 1
                     max: 45
@@ -1126,12 +1107,11 @@ oracles:
                     <<: *ControllingFaction.4
 
               reaches:
-                source:
-                  <<: *Source
+                # source:
+                #   <<: *Source
                 name: Reaches
                 summary: Remote Seas
-                rendering:
-                  style: column
+                oracle_type: column_simple
                 table:
                   - min: 1
                     max: 30
@@ -1152,451 +1132,408 @@ oracles:
             source:
               <<: *Source
             name: Settlement Focus
-            summary: &focus.summary Sections of a large city or city-state can contain their own pursuits and industries, and can even span geographies (seafront, inland, or waterside). Revisit this table if you spend time in a place and learn more about its activities.
-            rendering:
-              style: multi_table
-              columns:
-                seafront:
-                  table_key: seafront
-                  label: Seafront
-                  content_type: roll
-                inland:
-                  table_key: inland
-                  label: Inland
-                  content_type: roll
-                waterside:
-                  table_key: waterside
-                  label: Waterside
-                  content_type: roll
-                result:
-                  table_key: seafront
-                  content_type: result
-                  label: Result
+            summary: Sections of a large city or city-state can contain their own pursuits and industries, and can even span geographies (seafront, inland, or waterside). Revisit this table if you spend time in a place and learn more about its activities.
+            oracle_type: table_shared_details
             contents:
               seafront:
-                source:
-                  <<: *Source
+                # source:
+                #   <<: *Source
                 name: Seafront
-                summary: *focus.summary
-                rendering:
-                  style: column
+                oracle_type: column_details
                 table:
                   - min: 1
                     max: 3
-                    <<: &focus.0
+                    <<: &Focus.0
                       result: Piracy
-                      summary: Pirate court, smuggler dens, taverns
+                      detail: Pirate court, smuggler dens, taverns
                   - min: 4
                     max: 9
-                    <<: &focus.1
+                    <<: &Focus.1
                       result: Shipbuilding
-                      summary: Dry docks, lumber mills, shipwrights
+                      detail: Dry docks, lumber mills, shipwrights
                   - min: 10
                     max: 12
-                    <<: &focus.2
+                    <<: &Focus.2
                       result: Whaling
-                      summary: Whaling ships, processing plants, wharfs
+                      detail: Whaling ships, processing plants, wharfs
                   - min: 13
                     max: 14
-                    <<: &focus.3
+                    <<: &Focus.3
                       result: Wrecking
-                      summary: Ship graveyard
+                      detail: Ship graveyard
                   - min: 15
                     max: 22
-                    <<: &focus.4
+                    <<: &Focus.4
                       result: Fishing
-                      summary: Boatwrights, fishmongers, net makers
+                      detail: Boatwrights, fishmongers, net makers
                   - min: 23
                     max: 24
-                    <<: &focus.5
+                    <<: &Focus.5
                       result: Alcohol Production
-                      summary: Breweries, distilleries, wineries
+                      detail: Breweries, distilleries, wineries
                   - min: 25
                     max: 25
-                    <<: &focus.6
+                    <<: &Focus.6
                       result: Archeology
-                      summary: Excavation sites, field camps, relic hunters
+                      detail: Excavation sites, field camps, relic hunters
                   - min: 26
                     max: 27
-                    <<: &focus.7
+                    <<: &Focus.7
                       result: Crafts
-                      summary: Artisans, markets, workshops
+                      detail: Artisans, markets, workshops
                   - min: 28
                     max: 29
-                    <<: &focus.8
+                    <<: &Focus.8
                       result: Culture
-                      summary: Archives, festivals, historical sites
+                      detail: Archives, festivals, historical sites
                   - min: 30
                     max: 35
-                    <<: &focus.9
+                    <<: &Focus.9
                       result: Defense
-                      summary: Armories, fortifications, militia
+                      detail: Armories, fortifications, militia
                   - min: 36
                     max: 36
-                    <<: &focus.10
+                    <<: &Focus.10
                       result: Dueling
-                      summary: Dueling grounds, fencing schools
+                      detail: Dueling grounds, fencing schools
                   - min: 37
                     max: 38
-                    <<: &focus.11
+                    <<: &Focus.11
                       result: Education
-                      summary: Libraries, universities
+                      detail: Libraries, universities
                   - min: 39
                     max: 40
-                    <<: &focus.12
+                    <<: &Focus.12
                       result: Entertainment
-                      summary: Arenas, fairs, street performers, theaters
+                      detail: Arenas, fairs, street performers, theaters
                   - min: 41
                     max: 42
-                    <<: &focus.13
+                    <<: &Focus.13
                       result: Espionage
-                      summary: Assassin guild, spy network
+                      detail: Assassin guild, spy network
                   - min: 43
                     max: 44
-                    <<: &focus.14
+                    <<: &Focus.14
                       result: Exploration
-                      summary: Navigators guild, outfitters, scouts
+                      detail: Navigators guild, outfitters, scouts
                   - min: 45
                     max: 48
-                    <<: &focus.15
+                    <<: &Focus.15
                       result: Farming
-                      summary: Fields, granaries, mills, orchards
+                      detail: Fields, granaries, mills, orchards
                   - min: 49
                     max: 54
-                    <<: &focus.16
+                    <<: &Focus.16
                       result: Hospitality
-                      summary: Bath houses, brothels, inns, taverns
+                      detail: Bath houses, brothels, inns, taverns
                   - min: 55
                     max: 55
-                    <<: &focus.17
+                    <<: &Focus.17
                       result: Hunting
-                      summary: Animal trainers, taxidermists, tanners
+                      detail: Animal trainers, taxidermists, tanners
                   - min: 56
                     max: 57
-                    <<: &focus.18
+                    <<: &Focus.18
                       result: Law
-                      summary: Courts, gallows, patrols, prisons
+                      detail: Courts, gallows, patrols, prisons
                   - min: 58
                     max: 58
-                    <<: &focus.19
+                    <<: &Focus.19
                       result: Livestock / horses
-                      summary: Ranches, slaughterhouses, stables
+                      detail: Ranches, slaughterhouses, stables
                   - min: 59
                     max: 59
-                    <<: &focus.20
+                    <<: &Focus.20
                       result: Logging
-                      summary: Logging camps, sawmills
+                      detail: Logging camps, sawmills
                   - min: 60
                     max: 61
-                    <<: &focus.21
+                    <<: &Focus.21
                       result: Medicine
-                      summary: Apothecaries, herbalists, infirmaries
+                      detail: Apothecaries, herbalists, infirmaries
                   - min: 62
                     max: 62
-                    <<: &focus.22
+                    <<: &Focus.22
                       result: Metalworking
-                      summary: Artificers, blacksmiths, forges
+                      detail: Artificers, blacksmiths, forges
                   - min: 63
                     max: 63
-                    <<: &focus.23
+                    <<: &Focus.23
                       result: Mining
-                      summary: Foundries, mines, smelters
+                      detail: Foundries, mines, smelters
                   - min: 64
                     max: 65
-                    <<: &focus.24
+                    <<: &Focus.24
                       result: Mysticism
-                      summary: Alchemists, curio dealers, enclaves, mystics
+                      detail: Alchemists, curio dealers, enclaves, mystics
                   - min: 66
                     max: 66
-                    <<: &focus.25
+                    <<: &Focus.25
                       result: Nature
-                      summary: Animal sanctuaries, gardens, groves
+                      detail: Animal sanctuaries, gardens, groves
                   - min: 67
                     max: 68
-                    <<: &focus.26
+                    <<: &Focus.26
                       result: Religion
-                      summary: Monasteries, sacred sites, temples
+                      detail: Monasteries, sacred sites, temples
                   - min: 69
                     max: 70
-                    <<: &focus.27
+                    <<: &Focus.27
                       result: Science
-                      summary: Academies, naturalist guild, observatories
+                      detail: Academies, naturalist guild, observatories
                   - min: 71
                     max: 73
-                    <<: &focus.28
+                    <<: &Focus.28
                       result: Smuggling
-                      summary: Black market, fences, smugglers
+                      detail: Black market, fences, smugglers
                   - min: 74
                     max: 75
-                    <<: &focus.29
+                    <<: &Focus.29
                       result: Society
-                      summary: Balls, boutiques, social clubs, tailors
+                      detail: Balls, boutiques, social clubs, tailors
                   - min: 76
                     max: 77
-                    <<: &focus.30
+                    <<: &Focus.30
                       result: Statecraft
-                      summary: Embassies, envoys, court or council
+                      detail: Embassies, envoys, court or council
                   - min: 78
                     max: 78
-                    <<: &focus.31
+                    <<: &Focus.31
                       result: Stoneworking
-                      summary: Masons, quarries, stone yards
+                      detail: Masons, quarries, stone yards
                   - min: 79
                     max: 86
-                    <<: &focus.32
+                    <<: &Focus.32
                       result: Trade
-                      summary: Auction house, markets, merchant guild
+                      detail: Auction house, markets, merchant guild
                   - min: 87
                     max: 89
-                    <<: &focus.33
+                    <<: &Focus.33
                       result: Vices
-                      summary: Brothels, drug dens, gambling halls, taverns
+                      detail: Brothels, drug dens, gambling halls, taverns
                   - min: 90
                     max: 93
-                    <<: &focus.34
+                    <<: &Focus.34
                       result: Warfare
-                      summary: Armies or fleets, command post, forts
+                      detail: Armies or fleets, command post, forts
                   - min: 94
                     max: 95
-                    <<: &focus.35
+                    <<: &Focus.35
                       result: Weaponry
-                      summary: Cannon foundries, gunsmiths, powder mills
-                  - &focus.36
+                      detail: Cannon foundries, gunsmiths, powder mills
+                  - &Focus.36
                     min: 96
                     max: 100
                     <<: *ActionTheme
-
               inland:
-                source:
-                  <<: *Source
+                # source:
+                #   <<: *Source
                 name: Inland
-                summary: *focus.summary
-                rendering:
-                  style: column
+                oracle_type: column_details
                 table:
-                  - min: null
-                    max: null
-                    <<: *focus.0
-                  - min: null
-                    max: null
-                    <<: *focus.1
-                  - min: null
-                    max: null
-                    <<: *focus.2
-                  - min: null
-                    max: null
-                    <<: *focus.3
+                  - *Focus.0
+                  - *Focus.1
+                  - *Focus.2
+                  - *Focus.3
                   - min: 1
                     max: 12
-                    <<: *focus.4
+                    <<: *Focus.4
                   - min: 13
                     max: 14
-                    <<: *focus.5
+                    <<: *Focus.5
                   - min: 15
                     max: 15
-                    <<: *focus.6
+                    <<: *Focus.6
                   - min: 16
                     max: 17
-                    <<: *focus.7
+                    <<: *Focus.7
                   - min: 18
                     max: 20
-                    <<: *focus.8
+                    <<: *Focus.8
                   - min: 21
                     max: 24
-                    <<: *focus.9
+                    <<: *Focus.9
                   - min: 25
                     max: 25
-                    <<: *focus.10
+                    <<: *Focus.10
                   - min: 26
                     max: 27
-                    <<: *focus.11
+                    <<: *Focus.11
                   - min: 28
                     max: 28
-                    <<: *focus.12
+                    <<: *Focus.12
                   - min: 29
                     max: 29
-                    <<: *focus.13
+                    <<: *Focus.13
                   - min: 30
                     max: 31
-                    <<: *focus.14
+                    <<: *Focus.14
                   - min: 32
                     max: 39
-                    <<: *focus.15
+                    <<: *Focus.15
                   - min: 40
                     max: 43
-                    <<: *focus.16
+                    <<: *Focus.16
                   - min: 44
                     max: 46
-                    <<: *focus.17
+                    <<: *Focus.17
                   - min: 47
                     max: 47
-                    <<: *focus.18
+                    <<: *Focus.18
                   - min: 48
                     max: 51
-                    <<: *focus.19
+                    <<: *Focus.19
                   - min: 52
                     max: 57
-                    <<: *focus.20
+                    <<: *Focus.20
                   - min: 58
                     max: 59
-                    <<: *focus.21
+                    <<: *Focus.21
                   - min: 60
                     max: 63
-                    <<: *focus.22
+                    <<: *Focus.22
                   - min: 64
                     max: 67
-                    <<: *focus.23
+                    <<: *Focus.23
                   - min: 68
                     max: 69
-                    <<: *focus.24
+                    <<: *Focus.24
                   - min: 70
                     max: 71
-                    <<: *focus.25
+                    <<: *Focus.25
                   - min: 72
                     max: 73
-                    <<: *focus.26
+                    <<: *Focus.26
                   - min: 74
                     max: 75
-                    <<: *focus.27
+                    <<: *Focus.27
                   - min: 76
                     max: 77
-                    <<: *focus.28
+                    <<: *Focus.28
                   - min: 78
                     max: 78
-                    <<: *focus.29
+                    <<: *Focus.29
                   - min: 79
                     max: 79
-                    <<: *focus.30
+                    <<: *Focus.30
                   - min: 80
                     max: 83
-                    <<: *focus.31
+                    <<: *Focus.31
                   - min: 84
                     max: 89
-                    <<: *focus.32
+                    <<: *Focus.32
                   - min: 90
                     max: 91
-                    <<: *focus.33
+                    <<: *Focus.33
                   - min: 92
                     max: 93
-                    <<: *focus.34
+                    <<: *Focus.34
                   - min: 94
                     max: 95
-                    <<: *focus.35
-                  - *focus.36
+                    <<: *Focus.35
+                  - *Focus.36
               waterside:
-                source:
-                  <<: *Source
+                # source:
+                #   <<: *Source
                 name: Waterside
-                summary: *focus.summary
-                rendering:
-                  style: column
+                oracle_type: column_details
                 table:
-                  - min: null
-                    max: null
-                    <<: *focus.0
-                  - min: null
-                    max: null
-                    <<: *focus.1
-                  - min: null
-                    max: null
-                    <<: *focus.2
-                  - min: null
-                    max: null
-                    <<: *focus.3
-                  - min: null
-                    max: null
-                    <<: *focus.4
+                  - *Focus.0
+                  - *Focus.1
+                  - *Focus.2
+                  - *Focus.3
+                  - *Focus.4
                   - min: 1
                     max: 2
-                    <<: *focus.5
+                    <<: *Focus.5
                   - min: 3
                     max: 3
-                    <<: *focus.6
+                    <<: *Focus.6
                   - min: 4
                     max: 5
-                    <<: *focus.7
+                    <<: *Focus.7
                   - min: 6
                     max: 11
-                    <<: *focus.8
+                    <<: *Focus.8
                   - min: 12
                     max: 13
-                    <<: *focus.9
+                    <<: *Focus.9
                   - min: 14
                     max: 14
-                    <<: *focus.10
+                    <<: *Focus.10
                   - min: 15
                     max: 16
-                    <<: *focus.11
+                    <<: *Focus.11
                   - min: 17
                     max: 17
-                    <<: *focus.12
+                    <<: *Focus.12
                   - min: 18
                     max: 18
-                    <<: *focus.13
+                    <<: *Focus.13
                   - min: 19
                     max: 20
-                    <<: *focus.14
+                    <<: *Focus.14
                   - min: 21
                     max: 32
-                    <<: *focus.15
+                    <<: *Focus.15
                   - min: 33
                     max: 34
-                    <<: *focus.16
+                    <<: *Focus.16
                   - min: 35
                     max: 40
-                    <<: *focus.17
+                    <<: *Focus.17
                   - min: 41
                     max: 41
-                    <<: *focus.18
+                    <<: *Focus.18
                   - min: 42
                     max: 49
-                    <<: *focus.19
+                    <<: *Focus.19
                   - min: 50
                     max: 53
-                    <<: *focus.20
+                    <<: *Focus.20
                   - min: 54
                     max: 55
-                    <<: *focus.21
+                    <<: *Focus.21
                   - min: 56
                     max: 61
-                    <<: *focus.22
+                    <<: *Focus.22
                   - min: 62
                     max: 67
-                    <<: *focus.23
+                    <<: *Focus.23
                   - min: 68
                     max: 69
-                    <<: *focus.24
+                    <<: *Focus.24
                   - min: 70
                     max: 71
-                    <<: *focus.25
+                    <<: *Focus.25
                   - min: 72
                     max: 73
-                    <<: *focus.26
+                    <<: *Focus.26
                   - min: 74
                     max: 75
-                    <<: *focus.27
+                    <<: *Focus.27
                   - min: 76
                     max: 76
-                    <<: *focus.28
+                    <<: *Focus.28
                   - min: 77
                     max: 77
-                    <<: *focus.29
+                    <<: *Focus.29
                   - min: 78
                     max: 78
-                    <<: *focus.30
+                    <<: *Focus.30
                   - min: 79
                     max: 84
-                    <<: *focus.31
+                    <<: *Focus.31
                   - min: 85
                     max: 90
-                    <<: *focus.32
+                    <<: *Focus.32
                   - min: 91
                     max: 91
-                    <<: *focus.33
+                    <<: *Focus.33
                   - min: 92
                     max: 93
-                    <<: *focus.34
+                    <<: *Focus.34
                   - min: 94
                     max: 95
-                    <<: *focus.35
-                  - *focus.36
+                    <<: *Focus.35
+                  - *Focus.36

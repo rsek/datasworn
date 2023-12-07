@@ -69,6 +69,7 @@ export type Asset = Generic.Collectable<
 export const AssetCollection = Generic.Collection(
 	Type.Ref(Id.AssetCollectionId),
 	Type.Ref<TUnsafe<Asset>>('Asset'),
+	{},
 	{
 		$id: 'AssetCollection'
 	}

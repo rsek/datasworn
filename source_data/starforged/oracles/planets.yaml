@@ -15,6 +15,7 @@ oracles:
     contents:
       class:
         name: Planetary Class
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 306
@@ -86,21 +87,16 @@ oracles:
         source: &CollectionSource
           <<: *Source
           page: 320
-        rendering:
-          style: multi_table
-          columns:
-            lifebearing:
-              label: Lifebearing
-              content_type: roll
-              table_key: lifebearing
-            lifeless:
-              label: Lifeless
-              content_type: roll
-              table_key: lifeless
-            result:
-              label: Result
-              content_type: result
-              table_key: lifebearing
+        oracle_type: table_shared_result
+        # rendering:
+        #   columns:
+        #     - content_type: roll
+        #       table_key: lifebearing
+        #     - content_type: roll
+        #       table_key: lifeless
+        #     - label: Result
+        #       content_type: result
+        #       table_key: lifebearing
         # usage:
         #   repeatable: true
         #   requires:
@@ -113,10 +109,9 @@ oracles:
           Choose or roll on this table when you want inspiration for a trouble during planetside exploration or a planetside expedition.
         contents:
           lifebearing:
-            source: *CollectionSource
+            # source: *CollectionSource
             name: Lifebearing
-            rendering:
-              style: column
+            oracle_type: column_simple
             # usage:
             #   requires: &attr:Life.Lifebearing
             #     attributes:
@@ -249,9 +244,8 @@ oracles:
                       auto: true
           lifeless:
             name: Lifeless
-            source: *CollectionSource
-            rendering:
-              style: column
+            # source: *CollectionSource
+            oracle_type: column_simple
             # usage:
             #   requires: &attr:Life.Lifeless
             #     attributes:
@@ -364,21 +358,7 @@ oracles:
         source: &CollectionSource
           <<: *Source
           page: 321
-        rendering:
-          style: multi_table
-          columns:
-            lifebearing:
-              content_type: roll
-              table_key: lifebearing
-              label: Lifebearing
-            lifeless:
-              content_type: roll
-              table_key: lifeless
-              label: Lifeless
-            result:
-              content_type: result
-              table_key: lifebearing
-              label: Result
+        oracle_type: table_shared_result
         # content:
         #   part_of_speech: [fragment]
         #   tags: [opportunity]
@@ -391,10 +371,9 @@ oracles:
           Choose or roll on this table when you want inspiration for a beneficial encounter or event on a planetside journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.
         contents:
           lifebearing:
-            rendering:
-              style: column
+            oracle_type: column_simple
             name: Lifebearing
-            source: *CollectionSource
+            # source: *CollectionSource
             # usage:
             #   requires: *attr:Life.Lifebearing
             table:
@@ -485,10 +464,9 @@ oracles:
                 result: &Opp.24 Vantage point reveals the lay of the land
                 # suggestions: [*roll:Object]
           lifeless:
-            rendering:
-              style: column
+            oracle_type: column_simple
             name: Lifeless
-            source: *CollectionSource
+            # source: *CollectionSource
             # usage:
             #   requires: *attr:Life.Lifeless
             table:

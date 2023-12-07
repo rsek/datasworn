@@ -10,6 +10,7 @@ const typeKeys = [
 	'roll_type',
 	'package_type',
 	'choice_type',
+	'oracle_type',
 	'using'
 ]
 
@@ -83,6 +84,7 @@ export const dataSwornKeyOrder: string[] = [
 	'embed_table',
 	'match',
 	'recommended_rolls',
+	'column_labels',
 	// relationships
 	'oracles',
 	'suggestions',

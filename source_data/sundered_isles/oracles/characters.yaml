@@ -3,6 +3,7 @@ package_type: ruleset
 oracles:
   characters:
     name: Characters
+    oracle_type: tables
     source:
       <<: &Source
         title: Sundered Isles
@@ -15,6 +16,7 @@ oracles:
     contents:
       first_look:
         name: First Look
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -140,6 +142,7 @@ oracles:
             result: Youthful
       cursed_first_look:
         name: Cursed First Look
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -181,6 +184,7 @@ oracles:
             result: Transforming
       initial_disposition:
         name: Initial Dispostion
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -223,6 +227,7 @@ oracles:
       identity:
         name: Identity
         summary: You may envision a character’s role, occupation, or persona using the broad categories below. For more detail, check the related subtable.
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -326,6 +331,7 @@ oracles:
         name: Trademark Accessories
         source:
           <<: *Source
+        oracle_type: table_simple
         table:
             - min: 1
               max: 2
@@ -487,6 +493,7 @@ oracles:
         name: Trademark Weapons
         source:
           <<: *Source
+        oracle_type: table_simple
         table:
           - min: 1
             max: 3
@@ -604,6 +611,7 @@ oracles:
             <<: *RollTwice
       cursed_weapon_detail:
         name: Cursed Weapon Detail
+        oracle_type: table_simple
         source:
           <<: *Source
         # TODO: curse metadata should note whether it *combines* or *replaces*
@@ -665,6 +673,7 @@ oracles:
             result: Wreathed in smoke and ash
       revealed_aspects:
         name: Revealed Aspects
+        oracle_type: table_simple
         source:
           <<: *Source
         summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
@@ -971,6 +980,7 @@ oracles:
             result: Wise
       cursed_aspects:
         name: Cursed Aspects
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -1024,6 +1034,7 @@ oracles:
             result: Vampiric
       goal:
         name: Goal
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -1173,6 +1184,7 @@ oracles:
             <<: *ActionTheme
       cursed_goal:
         name: Cursed Goal
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -1245,11 +1257,13 @@ oracles:
     collections:
       roles:
         name: Roles
+        oracle_type: tables
         source:
           <<: *Source
         contents:
           academic:
             name: Academic
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1270,6 +1284,7 @@ oracles:
                 result: Philosopher
           agent:
             name: Agent
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1291,6 +1306,7 @@ oracles:
 
           caregiver:
             name: Caregiver
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1311,6 +1327,7 @@ oracles:
                 result: Physician
           combatant:
             name: Combatant
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1332,6 +1349,7 @@ oracles:
 
           devotant:
             name: Devotant
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1352,6 +1370,7 @@ oracles:
                 result: Pilgrim
           laborer:
             name: Laborer
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1372,6 +1391,7 @@ oracles:
                 result: Servant
           merchant:
             name: Merchant
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1392,6 +1412,7 @@ oracles:
                 result: Traveling merchant
           mystic:
             name: Mystic
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1412,6 +1433,7 @@ oracles:
                 result: Sorcerer / Shaman
           outcast:
             name: Outcast
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1447,6 +1469,7 @@ oracles:
                 result: Vagabond
           outlander:
             name: Outlander
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1467,6 +1490,7 @@ oracles:
                 result: Scout
           performer:
             name: Performer
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1487,6 +1511,7 @@ oracles:
                 result: Singer
           sailor:
             name: Sailor
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1522,6 +1547,7 @@ oracles:
                 result: Quartermaster
           scavenger:
             name: Scavenger
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1542,6 +1568,7 @@ oracles:
                 result: Wreck diver
           outlaw:
             name: Outlaw
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1577,6 +1604,7 @@ oracles:
                 result: Smuggler
           statesperson:
             name: Statesperson
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -1612,6 +1640,7 @@ oracles:
                 result: Tax collector
           tradesperson:
             name: Tradesperson
+            oracle_type: table_simple
             source:
               <<: *Source
             table:

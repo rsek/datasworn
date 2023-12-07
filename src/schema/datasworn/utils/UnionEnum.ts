@@ -1,15 +1,14 @@
 // adapted from https://github.com/sinclairzx81/typebox/blob/master/examples/prototypes/union-enum.ts
 
 import {
+	Hint,
 	Kind,
+	Type,
+	TypeClone,
 	TypeRegistry,
 	type SchemaOptions,
-	type TSchema,
-	Type,
-	TEnum,
-	Hint,
-	Static,
-	TypeClone
+	type TEnum,
+	type TSchema
 } from '@sinclair/typebox'
 import { isInteger, omit, set } from 'lodash-es'
 import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'

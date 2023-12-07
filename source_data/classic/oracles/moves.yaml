@@ -15,6 +15,7 @@ oracles:
     collections:
       ask_the_oracle:
         name: Ask the Oracle
+        oracle_type: table_shared_result
         source:
           <<: *Source
           page: 107
@@ -22,10 +23,8 @@ oracles:
           almost_certain:
             name: Almost Certain
             <<: &AtO
-              source:
-                <<: *Source
-                page: 107
-              match: &AtO.Match
+              oracle_type: column_simple
+              match:
                 text: On a match, an extreme result or twist has occurred.
             table:
               - min: 1
@@ -77,6 +76,7 @@ oracles:
     contents:
       endure_harm:
         name: Endure Harm
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 91
@@ -98,6 +98,7 @@ oracles:
             result: 'You are battered but still standing.'
       endure_stress:
         name: Endure Stress
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 93
@@ -116,6 +117,7 @@ oracles:
             result: 'You persevere.'
       pay_the_price:
         name: Pay the Price
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 105

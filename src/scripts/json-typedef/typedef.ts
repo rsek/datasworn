@@ -80,6 +80,17 @@ export type Increment<T extends string, B extends Base = Base10> = Reverse<
 export interface Metadata {
 	[name: string]: any
 }
+
+
+// --------------------------------------------------------------------------
+// TAny
+// --------------------------------------------------------------------------
+
+export interface TAny extends Types.TSchema {
+	[Types.Kind]: 'TypeDef:Any'
+	static: any
+}
+
 // --------------------------------------------------------------------------
 // TArray
 // --------------------------------------------------------------------------
@@ -797,6 +808,10 @@ export class TypeDefBuilder {
 	// ------------------------------------------------------------------------
 	// Types
 	// ------------------------------------------------------------------------
+	public Any(metadata: Metadata = {}): TAny {
+		return this.Create({ [Types.Kind]: 'TypeDef:Any' }, metadata)
+	}
+
 	/** [Standard] Creates a Array type */
 	public Array<T extends Types.TSchema>(
 		elements: T,
@@ -816,7 +831,10 @@ export class TypeDefBuilder {
 		values: [...T],
 		metadata: Metadata = {}
 	): TEnum<T> {
-		return this.Create({ [Types.Kind]: 'TypeDef:Enum', enum: values }, metadata)
+		return this.Create(
+			{ [Types.Kind]: 'TypeDef:Enum', enum: Array.from(new Set(values)) },
+			metadata
+		)
 	}
 	/** [Standard] Creates a Float32 type */
 	public Float32(metadata: Metadata = {}): TFloat32 {

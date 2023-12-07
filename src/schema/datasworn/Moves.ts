@@ -51,6 +51,7 @@ export type MoveEnhancement =
 export const MoveCategory = Generic.Collection(
 	Type.Ref(Id.MoveCategoryId),
 	Type.Ref(Move),
+	{},
 	{ $id: 'MoveCategory' }
 )
 export type MoveCategory = Static<typeof MoveCategory>

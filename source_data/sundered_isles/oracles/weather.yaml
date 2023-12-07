@@ -8,38 +8,20 @@ oracles:
         - name: Shawn Tomkin
       license: null
       url: https://ironswornrpg.com
-      date: 2023-09-11
+      date: 2023-11-29
     name: Weather
     collections:
       conditions:
         source: *Source
         name: Weather Conditions
-        rendering:
-          style: multi_table
-          columns:
-            myriads:
-              table_key: myriads
-              label: Myriads
-              content_type: roll
-            margins:
-              table_key: margins
-              label: Margins
-              content_type: roll
-            reaches:
-              table_key: reaches
-              label: Reaches
-              content_type: roll
-            result:
-              table_key: myriads
-              content_type: result
-              label: Result
+        oracle_type: table_shared_result
+        summary: If you’d like to establish the time of day for an encounter or scene, roll a single oracle die. If even, it’s daytime; if odd, it’s night. Higher numbers are later in that period.
         contents:
           myriads:
-            source: *Source
+            # source: *Source
             name: Myriads
             summary: Central Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 70
@@ -54,11 +36,10 @@ oracles:
                       number_of_rolls: 1
                       oracle: sundered_isles/oracles/weather/foul
           margins:
-            source: *Source
+            # source: *Source
             name: Margins
             summary: Outer Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 60
@@ -67,11 +48,10 @@ oracles:
                 max: 100
                 <<: *WeatherConditions.1
           reaches:
-            source: *Source
+            # source: *Source
             name: Reaches
             summary: Remote Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 50
@@ -83,39 +63,48 @@ oracles:
       foul:
         source: *Source
         name: Foul Weather
+        column_labels:
+          roll: Roll
+          result: Result
+          detail: Detail
+        oracle_type: table_details
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/weather/cursed
         table:
           - min: 1
             max: 10
             result: Stifling
-            summary: Windless, oppressive heat
+            detail: Windless, oppressive heat
           - min: 11
             max: 25
             result: Listless
-            summary: Light winds and sweltering heat
+            detail: Light winds and sweltering heat
           - min: 26
             max: 40
             result: Misty
-            summary: Light winds and damp fog
+            detail: Light winds and damp fog
           - min: 41
             max: 55
             result: Foggy
-            summary: Light winds and dense fog
+            detail: Light winds and dense fog
           - min: 56
             max: 75
             result: Heavy
-            summary: High winds, steady rain, and rough waters
+            detail: High winds, steady rain, and rough waters
           - min: 76
             max: 90
             result: Stormy
-            summary: Powerful winds, pelting rain, and high seas
+            detail: Powerful winds, pelting rain, and high seas
           - min: 91
             max: 100
             result: Raging
-            summary: Destructive winds, torrential rain, and monstrous waves
+            detail: Destructive winds, torrential rain, and monstrous waves
       duration:
         source: *Source
         name: Duration of Foul or Cursed Weather
         dice: 1d10
+        oracle_type: table_simple
         table:
           - min: 1
             max: 2
@@ -129,85 +118,93 @@ oracles:
       cursed:
         source: *Source
         name: Cursed Weather
-        # TODO: curse tag
+        oracle_type: table_details
+        column_labels:
+          roll: Roll
+          result: Result
+          detail: Detail
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/weather/foul
         table:
           - min: 1
             max: 5
             result: Ash storm
-            summary: Churning, low-level clouds of gray ash
+            detail: Churning, low-level clouds of gray ash
           - min: 6
             max: 10
             result: Blighting muck
-            summary: Rain of corrosive, mucous-like ooze
+            detail: Rain of corrosive, mucous-like ooze
           - min: 11
             max: 15
             result: Blood rain
-            summary: Ghastly, crimson rain
+            detail: Ghastly, crimson rain
           - min: 16
             max: 20
             result: Cinder rain
-            summary: Storm of fiery rock and ash
+            detail: Storm of fiery rock and ash
           - min: 21
             max: 25
             result: Creeping mist
-            summary: Slithering, grasping fog
+            detail: Slithering, grasping fog
           - min: 26
             max: 30
             result: Crimson mist
-            summary: Slow-moving fog that burns like acid
+            detail: Slow-moving fog that burns like acid
           - min: 31
             max: 35
             result: Dead calm
-            summary: Disquieting stillness
+            detail: Disquieting stillness
           - min: 36
             max: 40
             result: Fisher's Feast
-            summary: Shower of fish
+            detail: Shower of fish
           - min: 41
             max: 45
             result: Forge's Fury
-            summary: Fast-moving storm of scorching heat
+            detail: Fast-moving storm of scorching heat
           - min: 46
             max: 50
             result: Gloam tide
-            summary: Unnatural darkness that moves with the tide
+            detail: Unnatural darkness that moves with the tide
           - min: 51
             max: 55
             result: Ice fall
-            summary: Uncanny cold that leaves surfaces enveloped in thick ice
+            detail: Uncanny cold that leaves surfaces enveloped in thick ice
           - min: 56
             max: 60
             result: Iron wind
-            summary: Strong wind that sends ships along an inevitable, fatebound course
+            detail: Strong wind that sends ships along an inevitable, fatebound course
           - min: 61
             max: 65
             result: Knowing mist
-            summary: Fog that manifests visions of dark secrets and painful memories
+            detail: Fog that manifests visions of dark secrets and painful memories
           - min: 66
             max: 70
             result: Phantom mist
-            summary: Ghost-haunted fog
+            detail: Ghost-haunted fog
           - min: 71
             max: 75
             result: Rot wind
-            summary: Wind that carries the foul stench of death
+            detail: Wind that carries the foul stench of death
           - min: 76
             max: 80
             result: Sand storm
-            summary: Clouds of pelting, stinging sand, ripped from a now-barren island
+            detail: Clouds of pelting, stinging sand, ripped from a now-barren island
           - min: 81
             max: 85
             result: Seeking spouts
-            summary: Waterspouts and tornadoes that move with dreadful purpose
+            detail: Waterspouts and tornadoes that move with dreadful purpose
           - min: 86
             max: 90
             result: Tempest
-            summary: Undying storm that prowls the isles in search of prey
+            detail: Undying storm that prowls the isles in search of prey
           - min: 91
             max: 95
             result: Wailing wind
-            summary: Wind that carries the mournful keen of the lost and the drowned
+            detail: Wind that carries the mournful keen of the lost and the drowned
           - min: 96
             max: 100
             result: Witch fire
-            summary: Low clouds suffused with tendrils of chaotic, mystic energy
+            detail: Low clouds suffused with tendrils of chaotic, mystic energy

@@ -1,8 +1,9 @@
 import { Type, type ObjectOptions, type TObject } from '@sinclair/typebox'
-import { IdentifiedNode, type TIdentifiedNode } from './IdentifiedNode.js'
 import * as Utils from '../Utils.js'
-import { Id, Metadata, Localize } from '../common/index.js'
+import { Id, Localize, Metadata } from '../common/index.js'
+import { type Tag } from '../rules/TagRule.js'
 import { Dictionary } from './Dictionary.js'
+import { IdentifiedNode, type TIdentifiedNode } from './IdentifiedNode.js'
 
 /** Interface shared by objects with source attribute. */
 
@@ -25,7 +26,7 @@ export const SourcedNodeBase = Type.Object(
 		suggestions: Type.Optional(Type.Ref(Metadata.Suggestions)),
 
 		tags: Type.Optional(
-			Type.Record(Id.RulesetId, Dictionary(Type.String()), {
+			Type.Record(Id.RulesetId, Dictionary(Type.Ref<typeof Tag>('Tag')), {
 				releaseStage: 'experimental'
 			})
 		)
@@ -38,14 +39,12 @@ export function SourcedNode<T extends TObject = TObject>(
 	id: Id.TAnyId,
 	schema: T,
 	options: ObjectOptions = {}
-) {
-	const result = IdentifiedNode(
+): TSourcedNode<T> {
+	return IdentifiedNode(
 		id,
 		Utils.Assign([SourcedNodeBase, schema]),
 		options
-	) satisfies TSourcedNode<T>
-
-	return result
+	) as any
 }
 export type TSourcedNode<T extends TObject = TObject> = TIdentifiedNode<
 	TObject<Utils.Assign<(typeof SourcedNodeBase)['properties'], T['properties']>>

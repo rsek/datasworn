@@ -35,6 +35,7 @@ import {
 	omitBy,
 	pick,
 	pickBy,
+	isEqual,
 	set
 } from 'lodash-es'
 import * as Generic from '../../schema/datasworn/Generic.js'
@@ -210,13 +211,19 @@ function toJtdForm(schema: TSchema): TSchema | undefined {
 
 	switch (true) {
 		// @ts-expect-error
-		case schema[JsonTypeDef]?.schema != null:
+		case schema[JsonTypeDef]?.skip:
+			console.log(`skipping ${schema.$id}`)
+			return undefined
+		case schema[JsonTypeDef]?.schema != null ||
+			// @ts-expect-error
+			isEqual(schema[JsonTypeDef]?.schema, {}):
 			// @ts-expect-error
 			return merge(cloneDeep(schema[JsonTypeDef].schema), {
 				metadata: extractMetadata(schema)
 			})
-		// @ts-expect-error
-		case schema[JsonTypeDef]?.skip:
+		case TypeGuard.TAny(schema):
+			result = JtdType.Any()
+			break
 		case TypeGuard.TNull(schema):
 			return undefined
 		case TypeGuard.TLiteralString(schema):

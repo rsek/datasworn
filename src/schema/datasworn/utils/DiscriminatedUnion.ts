@@ -1,23 +1,83 @@
 import {
 	Kind,
-	type TRef,
 	Type,
 	TypeClone,
 	TypeRegistry,
+	type ObjectProperties,
 	type SchemaOptions,
 	type Static,
+	type TLiteral,
 	type TObject,
 	type TPick,
-	type TSchema,
-	TypeGuard
+	type TRef,
+	type TSchema
 } from '@sinclair/typebox'
+import { map, omit, pick, values } from 'lodash-es'
 import {
 	Discriminator,
 	JsonTypeDef,
 	Members
 } from '../../../scripts/json-typedef/symbol.js'
-import { type TUnionEnum, UnionEnum } from './UnionEnum.js'
-import { mapValues, omit, pick } from 'lodash-es'
+import { UnionEnum, type TUnionEnum } from './UnionEnum.js'
+
+export function DiscriminatedUnionFromMapping<
+	TDiscriminator extends string,
+	Mapping extends Record<string, TObject>
+>(
+	discriminator: TDiscriminator,
+	mapping: Mapping,
+	options: SchemaOptions = {}
+) {
+	type Remapping = {
+		[P in string & keyof Mapping]: TDiscriminable<TDiscriminator, P, Mapping[P]>
+	}
+
+	const nuMapping = map(mapping, (v, k: keyof Mapping & string) =>
+		Discriminable(v, discriminator, k)
+	) as unknown as [...Remapping[keyof Remapping][]]
+
+	const schemas = values(nuMapping)
+
+	return DiscriminatedUnion(schemas, discriminator, options)
+}
+
+type TDiscriminable<
+	TDiscriminator extends string,
+	MappingKey extends string = string,
+	T extends TObject = TObject
+> = Omit<T, 'properties' | 'static'> & {
+	properties: ObjectProperties<T> & {
+		[D in TDiscriminator]: TLiteral<MappingKey>
+	}
+	static: Static<T> & { [D in TDiscriminator]: MappingKey }
+	params: unknown[]
+	type: 'object'
+}
+
+export function Discriminable<
+	TDiscriminator extends string,
+	MappingKey extends string,
+	T extends TObject = TObject
+>(
+	base: T,
+	discriminator: TDiscriminator,
+	mappingKey: MappingKey,
+	options = {}
+) {
+	const result = TypeClone.Type(base, options)
+	result.properties[discriminator] = Type.Literal(mappingKey)
+	result.required = [...(result.required ?? []), discriminator]
+
+	return result as any as TDiscriminable<TDiscriminator, MappingKey, T>
+}
+
+export function setDiscriminatorDefault<T extends TDiscriminatedUnion>(
+	schema: T,
+	defaultValue: Static<T>[T[typeof Discriminator]]
+): T {
+	schema.properties[schema[Discriminator]].default = defaultValue
+	return schema
+}
 
 export function DiscriminatedUnion<
 	T extends TObject[],
@@ -47,20 +107,20 @@ export function DiscriminatedUnion<
 		;(member as any)[JsonTypeDef].skip = true
 
 		return result
-	}) as TDiscriminatedUnion<T, TDiscriminator>['anyOf']
+	}) as TDiscriminatedUnion<T, TDiscriminator>['allOf']
 
-	const oneOf = schemas.map((member) => {
-		const result =
-			member.$id == null
-				? TypeClone.Type(member, { additionalProperties: false })
-				: Type.Ref(member)
+	// const oneOf = schemas.map((member) => {
+	// 	const result =
+	// 		member.$id == null
+	// 			? TypeClone.Type(member, { additionalProperties: false })
+	// 			: Type.Ref(member)
 
-		// brand the original member so that JTD schema generation skips them -- they won't need their own definition
-		;(member as any)[JsonTypeDef] ||= {}
-		;(member as any)[JsonTypeDef].skip = true
+	// 	// brand the original member so that JTD schema generation skips them -- they won't need their own definition
+	// 	;(member as any)[JsonTypeDef] ||= {}
+	// 	;(member as any)[JsonTypeDef].skip = true
 
-		return result
-	})
+	// 	return result
+	// })
 
 	type DiscriminatorValueLiteral = Static<T[number]>[TDiscriminator] & string
 
@@ -126,8 +186,9 @@ export function TDiscriminatedUnion<
 }
 
 export interface TDiscriminatedUnion<
-	T extends TObject[],
-	TDiscriminator extends string & keyof Static<T[number]>
+	T extends TObject[] = TObject[],
+	TDiscriminator extends string & keyof Static<T[number]> = string &
+		keyof Static<T[number]>
 > extends TSchema {
 	type: 'object'
 	static: Static<T[number]>
@@ -139,7 +200,7 @@ export interface TDiscriminatedUnion<
 		if: TPick<T[number], TDiscriminator>
 		then: T[number] | TRef<T[number]>
 	}[]
-	oneOf: (T[number] | TRef<T[number]>)[]
+	// oneOf: (T[number] | TRef<T[number]>)[]
 	additionalProperties: true
 	[Kind]: 'DiscriminatedUnion'
 	[Discriminator]: TDiscriminator

@@ -16,25 +16,18 @@ oracles:
       page: 19
     collections:
       delve_the_depths:
-        rendering:
-          style: multi_table
-          columns:
-            edge:
-              label: Edge
-              content_type: roll
-              table_key: edge
-            shadow:
-              label: Shadow
-              content_type: roll
-              table_key: shadow
-            wits:
-              label: Wits
-              content_type: roll
-              table_key: wits
-            weak_hit_result:
-              label: Weak Hit Result
-              table_key: edge
-              content_type: result
+        oracle_type: table_shared_result
+        # rendering:
+        #   columns:
+        #     - content_type: roll
+        #       table_key: edge
+        #     - content_type: roll
+        #       table_key: shadow
+        #     - content_type: roll
+        #       table_key: wits
+        #     - label: Weak Hit Result
+        #       table_key: edge
+        #       content_type: result
         name: Delve the Depths
         # move: delve/moves/delve/delve_the_depths
         source: &CollectionSource
@@ -43,64 +36,67 @@ oracles:
         contents:
           edge:
             name: Edge
-            source: *CollectionSource
+            <<: &DelveTheDepths
+              # source: *CollectionSource
+              oracle_type: column_simple
             table:
               - min: 1
                 max: 45
-                result: &row:Delve_the_Depths_0 'Mark progress and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
+                result: &DelveTheDepths.0 'Mark progress and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
               - min: 46
                 max: 65
-                result: &row:Delve_the_Depths_1 'Mark progress.'
+                result: &DelveTheDepths.1 'Mark progress.'
               - min: 66
                 max: 75
-                result: &row:Delve_the_Depths_2 'Choose one: Mark progress or [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
+                result: &DelveTheDepths.2 'Choose one: Mark progress or [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
               - min: 76
                 max: 80
-                result: &row:Delve_the_Depths_3 'Take both: Mark progress and [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
+                result: &DelveTheDepths.3 'Take both: Mark progress and [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
               - min: 81
                 max: 100
-                result: &row:Delve_the_Depths_4 'Mark progress twice and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
+                result: &DelveTheDepths.4 'Mark progress twice and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
           shadow:
             name: Shadow
-            source: *CollectionSource
+            <<: *DelveTheDepths
             table:
               - min: 1
                 max: 30
-                result: *row:Delve_the_Depths_0
+                result: *DelveTheDepths.0
               - min: 31
                 max: 65
-                result: *row:Delve_the_Depths_1
+                result: *DelveTheDepths.1
               - min: 66
                 max: 90
-                result: *row:Delve_the_Depths_2
+                result: *DelveTheDepths.2
               - min: 91
                 max: 99
-                result: *row:Delve_the_Depths_3
+                result: *DelveTheDepths.3
               - min: 100
                 max: 100
-                result: *row:Delve_the_Depths_4
+                result: *DelveTheDepths.4
           wits:
             name: Wits
-            source: *CollectionSource
+            <<: *DelveTheDepths
             table:
               - min: 1
                 max: 40
-                result: *row:Delve_the_Depths_0
+                result: *DelveTheDepths.0
               - min: 41
                 max: 55
-                result: *row:Delve_the_Depths_1
+                result: *DelveTheDepths.1
               - min: 56
                 max: 80
-                result: *row:Delve_the_Depths_2
+                result: *DelveTheDepths.2
               - min: 81
                 max: 99
-                result: *row:Delve_the_Depths_3
+                result: *DelveTheDepths.3
               - min: 100
                 max: 100
-                result: *row:Delve_the_Depths_4
+                result: *DelveTheDepths.4
     contents:
       find_an_opportunity:
         name: Find an Opportunity
+        oracle_type: table_simple
         # Move: delve/moves/delve/find_an_opportunity
         source:
           <<: *Source
@@ -138,6 +134,7 @@ oracles:
             result: 'You encounter a denizen in need of help.'
       reveal_a_danger:
         name: Reveal a Danger
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 34
@@ -185,6 +182,7 @@ oracles:
       reveal_a_danger_alt:
         name: Reveal a Danger (alternate version)
         replaces: delve/oracles/moves/reveal_a_danger
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 68
@@ -225,6 +223,7 @@ oracles:
                 duplicates: make_it_worse
       advance_a_threat:
         name: Advance a Threat
+        oracle_type: table_simple
         match:
           text: |-
             On a match, this development also exposes a surprising aspect of the threat’s plan or nature.

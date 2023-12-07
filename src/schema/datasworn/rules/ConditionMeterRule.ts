@@ -14,7 +14,7 @@ export const ConditionMeterRule = Utils.Assign(
 				description: 'Is this condition meter shared by all players?'
 			})
 		}),
-		Inputs.Meter(Type.Integer({ default: 0 }), Type.Integer({ default: 5 }))
+		Inputs.Meter(Type.Literal(true))
 	],
 	{
 		$id: 'ConditionMeterRule',

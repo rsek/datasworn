@@ -15,6 +15,7 @@ oracles:
     contents:
       role:
         name: Character Role
+        oracle_type: table_simple
         canonical_name: 'Oracle 10: Character Role'
         summary: Use this oracle to define the background for a character, or to generate a random encounter.
         source:
@@ -152,6 +153,7 @@ oracles:
         name: Character Goal
         canonical_name: 'Oracle 11: Character Goal'
         summary: Use this oracle to define the primary motivation of an NPC or a faction. It can also be used to kick-off a personal quest for your own character.
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 182
@@ -263,8 +265,10 @@ oracles:
         canonical_name: 'Oracle 12: Character Descriptor'
         summary: Use this oracle to help flesh out a character’s personality or physical characteristics. Roll more than once to add additional detail.
         # usage:
+        oracle_type: table_simple
         recommended_rolls:
-          max:  3 # a bit arbitrary, but reasonable
+          min: 1
+          max: 3 # a bit arbitrary, but reasonable
         source:
           <<: *Source
           page: 183

@@ -2,6 +2,7 @@ id: sundered_isles
 package_type: ruleset
 oracles:
   core:
+    oracle_type: tables
     source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -13,6 +14,7 @@ oracles:
     contents:
       action:
         source: *Source
+        oracle_type: table_simple
         name: Action
         table:
           - min: 1
@@ -317,6 +319,7 @@ oracles:
             result: Withdraw
       theme:
         source: *Source
+        oracle_type: table_simple
         name: Theme
         table:
           - min: 1
@@ -621,6 +624,7 @@ oracles:
             result: Weapon
       descriptor:
         name: Descriptor
+        oracle_type: table_simple
         source: *Source
         table:
           - min: 1
@@ -925,6 +929,7 @@ oracles:
             result: Wrecked
       focus:
         name: Focus
+        oracle_type: table_simple
         source: *Source
         table:
           - min: 1

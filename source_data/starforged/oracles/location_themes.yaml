@@ -28,76 +28,83 @@ oracles:
     contents:
       type:
         name: Theme Type
+        oracle_type: table_details
         source:
           <<: *Source
           page: 370
           #   initial: true
         # usage:
+        column_labels:
+          roll: Roll
+          result: Result
+          detail: Summary
         summary: |-
           Choose a theme that supports what you know of that location’s nature. For a random theme, roll on the table above.
         table:
           - min: 1
             max: 15
             result: '[Chaotic](id:starforged/collections/oracles/location_themes/chaotic)'
-            summary: &Chaotic.summary Reality is corrupted or warped in this place.
+            detail: &Chaotic.summary Reality is corrupted or warped in this place.
             icon: &Chaotic.icon icons/location_theme/chaotic.svg
             # set_attributes: {location_theme: [chaotic]}
           - min: 16
             max: 25
             result: '[Fortified](id:starforged/collections/oracles/location_themes/fortified)'
-            summary: &Fortified.summary Enemies defend this place against intruders.
+            detail: &Fortified.summary Enemies defend this place against intruders.
             icon: &Fortified.icon icons/location_theme/fortified.svg
             # set_attributes: {location_theme: [fortified]}
           - min: 26
             max: 35
             result: '[Haunted](id:starforged/collections/oracles/location_themes/haunted)'
-            summary: &Haunted.summary Restless spirits are bound to this place.
+            detail: &Haunted.summary Restless spirits are bound to this place.
             icon: &Haunted.icon icons/location_theme/haunted.svg
             # set_attributes: {location_theme: [haunted]}
           - min: 36
             max: 50
             result: '[Infested](id:starforged/collections/oracles/location_themes/infested)'
-            summary: &Infested.summary Foul creatures have overrun this place.
+            detail: &Infested.summary Foul creatures have overrun this place.
             icon: &Infested.icon icons/location_theme/infested.svg
             # set_attributes: {location_theme: [infested]}
           - min: 51
             max: 60
             result: '[Inhabited](id:starforged/collections/oracles/location_themes/inhabited)'
-            summary: &Inhabited.summary People have built a community in this place.
+            detail: &Inhabited.summary People have built a community in this place.
             icon: &Inhabited.icon icons/location_theme/inhabited.svg
             # set_attributes: {location_theme: [inhabited]}
           - min: 61
             max: 75
             result: '[Mechanical](id:starforged/collections/oracles/location_themes/mechanical)'
-            summary: &Mechanical.summary Machines and technology hold sway in this place.
+            detail: &Mechanical.summary Machines and technology hold sway in this place.
             icon: &Mechanical.icon icons/location_theme/mechanical.svg
             # set_attributes: {location_theme: [mechanical]}
           - min: 76
             max: 90
             result: '[Ruined](id:starforged/collections/oracles/location_themes/ruined)'
-            summary: &Ruined.summary Time, disaster, or war have ravaged this place.
+            detail: &Ruined.summary Time, disaster, or war have ravaged this place.
             icon: &Ruined.icon icons/location_theme/ruined.svg
             # set_attributes: {location_theme: [ruined]}
           - min: 91
             max: 100
             result: '[Sacred](id:starforged/collections/oracles/location_themes/sacred)'
-            summary: &Sacred.summary Worshipers glorify strange powers in this place.
+            detail: &Sacred.summary Worshipers glorify strange powers in this place.
             icon: &Sacred.icon icons/location_theme/sacred.svg
             # set_attributes: {location_theme: [sacred]}
     collections:
       chaotic:
         name: Chaotic
+        oracle_type: tables
         summary: *Chaotic.summary
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 372
+        source: &CollectionSource
+          <<: *Source
+          page: 372
         icon: *Chaotic.icon
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: &Feature.summary Use this table to reveal a new aspect of the location.
+            <<: &Feature
+              name: Feature
+              summary: Use this table to reveal a new aspect of the location.
+              oracle_type: table_simple
+            source: *CollectionSource
             table:
               - &Feature.0
                 min: 1
@@ -158,9 +165,11 @@ oracles:
                   - oracle: starforged/oracles/core/focus
                     auto: true
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: &Peril.summary Use this table to help envision a complication or hazard.
+            <<: &Peril
+              name: Peril
+              summary: Use this table to help envision a complication or hazard.
+              oracle_type: table_simple
+            source: *CollectionSource
             table:
               - &Peril.0
                 min: 1
@@ -220,9 +229,11 @@ oracles:
                   - number_of_rolls: 2
                     auto: true
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: &Opportunity.summary Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.
+            <<: &Opportunity
+              name: Opportunity
+              summary: Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.
+              oracle_type: table_simple
+            source: *CollectionSource
             table:
               - &Opportunity.0
                 min: 1
@@ -246,17 +257,16 @@ oracles:
                 result: Insight into the source or nature of the chaos
       fortified:
         name: Fortified
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 373
-          icon: *Fortified.icon
+        oracle_type: tables
+        source: &CollectionSource
+          <<: *Source
+          page: 373
+        icon: *Fortified.icon
         summary: *Fortified.summary
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: *Feature.summary
+            <<: *Feature
+            source: *CollectionSource
             table:
               - <<: *Feature.0
                 result: Captives or prisoners
@@ -284,9 +294,8 @@ oracles:
                 result: Support personnel at work
               - *Feature.12
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: *Peril.summary
+            <<: *Peril
+            source: *CollectionSource
             table:
               - <<: *Peril.0
                 result: Alarm is triggered
@@ -311,9 +320,8 @@ oracles:
               - *Peril.10
               - *Peril.11
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: *Opportunity.summary
+            <<: *Opportunity
+            source: *CollectionSource
             table:
               - <<: *Opportunity.0
                 result: Insight into the plans or methods of the enemy force
@@ -327,17 +335,16 @@ oracles:
                 result: Access to useful equipment or weapons
       haunted:
         name: Haunted
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 374
-          icon: *Haunted.icon
+        oracle_type: tables
+        source: &CollectionSource
+          <<: *Source
+          page: 374
+        icon: *Haunted.icon
         summary: *Haunted.summary
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: *Feature.summary
+            <<: *Feature
+            source: *CollectionSource
             table:
               - <<: *Feature.0
                 result: Disembodied voices
@@ -365,9 +372,8 @@ oracles:
                 result: Unnatural mists or darkness
               - *Feature.12
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: *Peril.summary
+            <<: *Peril
+            source: *CollectionSource
             table:
               - <<: *Peril.0
                 result: Assailed by an angry or vengeful being
@@ -392,9 +398,8 @@ oracles:
               - *Peril.10
               - *Peril.11
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: *Opportunity.summary
+            <<: *Opportunity
+            source: *CollectionSource
             table:
               - <<: *Opportunity.0
                 result: Encounter with a benign spirit or being
@@ -408,17 +413,16 @@ oracles:
                 result: Useful or interesting artifact or device
       infested:
         name: Infested
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 375
-          icon: *Infested.icon
+        oracle_type: tables
+        source: &CollectionSource
+          <<: *Source
+          page: 375
+        icon: *Infested.icon
         summary: *Infested.summary
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: *Feature.summary
+            <<: *Feature
+            source: *CollectionSource
             table:
               - <<: *Feature.0
                 result: Corpse of an unfortunate victim
@@ -446,9 +450,8 @@ oracles:
                 result: Trail or evidence of a creature's passage
               - *Feature.12
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: *Peril.summary
+            <<: *Peril
+            source: *CollectionSource
             table:
               - <<: *Peril.0
                 result: Creatures attack without warning
@@ -473,9 +476,8 @@ oracles:
               - *Peril.10
               - *Peril.11
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: *Opportunity.summary
+            <<: *Opportunity
+            source: *CollectionSource
             table:
               - <<: *Opportunity.0
                 result: Clue to the nature or vulnerabilities of these creatures
@@ -489,17 +491,16 @@ oracles:
                 result: Helpful resource or equipment
       inhabited:
         name: Inhabited
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 376
-          icon: *Inhabited.icon
+        oracle_type: tables
+        source: &CollectionSource
+          <<: *Source
+          page: 376
+        icon: *Inhabited.icon
         summary: *Inhabited.summary
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: *Feature.summary
+            <<: *Feature
+            source: *CollectionSource
             table:
               - <<: *Feature.0
                 result: Conspicuous patrols or surveillance
@@ -527,9 +528,8 @@ oracles:
                 result: Vendor or merchant hawking their wares
               - *Feature.12
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: *Peril.summary
+            <<: *Peril
+            source: *CollectionSource
             table:
               - <<: *Peril.0
                 result: Announcement or notification brings harrowing news
@@ -554,9 +554,8 @@ oracles:
               - *Peril.10
               - *Peril.11
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: *Opportunity.summary
+            <<: *Opportunity
+            source: *CollectionSource
             table:
               - <<: *Opportunity.0
                 result: Intriguing offer from an unexpected source
@@ -570,17 +569,16 @@ oracles:
                 result: Old friend or connection resurfaces
       mechanical:
         name: Mechanical
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 377
-          icon: *Mechanical.icon
+        oracle_type: tables
+        source: &CollectionSource
+          <<: *Source
+          page: 377
+        icon: *Mechanical.icon
         summary: *Mechanical.summary
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: *Feature.summary
+            <<: *Feature
+            source: *CollectionSource
             table:
               - <<: *Feature.0
                 result: Control station or terminal
@@ -608,9 +606,8 @@ oracles:
                 result: Power source for the machines
               - *Feature.12
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: *Peril.summary
+            <<: *Peril
+            source: *CollectionSource
             table:
               - <<: *Peril.0
                 result: Alarm or warning is triggered
@@ -635,9 +632,8 @@ oracles:
               - *Peril.10
               - *Peril.11
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: *Opportunity.summary
+            <<: *Opportunity
+            source: *CollectionSource
             table:
               - <<: *Opportunity.0
                 result: Helpful device
@@ -651,17 +647,16 @@ oracles:
                 result: Wondrous technology
       ruined:
         name: Ruined
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 378
-          icon: *Ruined.icon
+        oracle_type: tables
+        source: &CollectionSource
+          <<: *Source
+          page: 378
+        icon: *Ruined.icon
         summary: *Ruined.summary
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: *Feature.summary
+            <<: *Feature
+            source: *CollectionSource
             table:
               - <<: *Feature.0
                 result: Collapsed or broken structures or terrain
@@ -689,9 +684,8 @@ oracles:
                 result: Survivors or guardians dwell among the ruins
               - *Feature.12
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: *Peril.summary
+            <<: *Peril
+            source: *CollectionSource
             table:
               - <<: *Peril.0
                 result: Dreadful atmosphere of loss and destruction weighs upon you
@@ -716,9 +710,8 @@ oracles:
               - *Peril.10
               - *Peril.11
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: *Opportunity.summary
+            <<: *Opportunity
+            source: *CollectionSource
             table:
               - <<: *Opportunity.0
                 result: Access to an untouched or preserved area
@@ -732,17 +725,16 @@ oracles:
                 result: Shortcut or passage through the destruction
       sacred:
         name: Sacred
-        <<: &CollectionMeta
-          source:
-            <<: *Source
-            page: 379
-          icon: *Sacred.icon
+        oracle_type: tables
+        source: &CollectionSource
+          <<: *Source
+          page: 379
+        icon: *Sacred.icon
         summary: *Sacred.summary
         contents:
           feature:
-            name: Feature
-            <<: *CollectionMeta
-            summary: *Feature.summary
+            <<: *Feature
+            source: *CollectionSource
             table:
               - <<: *Feature.0
                 result: Adherents performing worship or enacting rituals
@@ -770,9 +762,8 @@ oracles:
                 result: Tokens or motifs representing the faith's domain
               - *Feature.12
           peril:
-            name: Peril
-            <<: *CollectionMeta
-            summary: *Peril.summary
+            <<: *Peril
+            source: *CollectionSource
             table:
               - <<: *Peril.0
                 result: An aspect of the faith beguiles you or lures you into danger
@@ -797,9 +788,8 @@ oracles:
               - *Peril.10
               - *Peril.11
           opportunity:
-            name: Opportunity
-            <<: *CollectionMeta
-            summary: *Opportunity.summary
+            <<: *Opportunity
+            source: *CollectionSource
             table:
               - <<: *Opportunity.0
                 result: Access to a hidden or sealed area

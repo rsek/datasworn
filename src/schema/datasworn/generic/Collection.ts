@@ -1,19 +1,22 @@
 import {
 	Type,
 	TypeClone,
+	type ObjectProperties,
 	type SchemaOptions,
 	type TObject,
 	type TOptional,
+	type TProperties,
 	type TRef
 } from '@sinclair/typebox'
 import type * as TypeFest from 'type-fest'
+import * as Utils from '../Utils.js'
 import type * as Id from '../common/Id.js'
 import * as Localize from '../common/Localize.js'
 import * as Metadata from '../common/Metadata.js'
-import * as Utils from '../Utils.js'
+import { type TFuzzyObject } from '../utils/typebox.js'
 import { Dictionary, type TDictionary } from './Dictionary.js'
-import { SourcedNode, type TSourcedNode } from './SourcedNode.js'
 import { type IdentifiedNode } from './IdentifiedNode.js'
+import { SourcedNode, type TSourcedNode } from './SourcedNode.js'
 
 const CollectionMixin = Type.Object({
 	color: Type.Optional(
@@ -55,12 +58,16 @@ type TCollectionIdMixin<T extends TRef = TRef> = TObject<{
 	contents: TDictionary<T>
 }>
 
-export function Collection<T extends TRef>(
+export function Collection<
+	Collectable extends TRef<TFuzzyObject>,
+	Props extends TProperties
+>(
 	id: TCollectionID,
-	collectable: T,
+	collectable: Collectable,
+	properties: Props,
 	options: SchemaOptions = {}
 ) {
-	const idMixin: TCollectionIdMixin<T> = Type.Object({
+	const generic = {
 		enhances: Type.Optional(
 			TypeClone.Type(id, {
 				description:
@@ -74,38 +81,43 @@ export function Collection<T extends TRef>(
 			})
 		),
 		contents: Type.Optional(Dictionary(collectable))
-	})
-	const base = Utils.Assign([CollectionMixin, idMixin]) as TObject<
-		(typeof CollectionMixin)['properties'] & TCollectionIdMixin<T>['properties']
-	>
+	}
+	const base = Type.Object({
+		...TypeClone.Type(CollectionMixin).properties,
+		...generic,
+		...properties
+	} as ObjectProperties<typeof CollectionMixin> & typeof generic & Props)
 
 	const result = SourcedNode(id, base, {
 		...options,
 		[CollectionBrand]: 'Collection'
-	})
+	}) as TSourcedNode<typeof base> & {
+		[CollectionBrand]: 'Collection'
+	}
 
-	// @ts-expect-error
-	return result as TCollection<T>
+	return result
 }
 
-export type TCollection<T extends TRef> = TSourcedNode<
-	TObject<
-		(typeof CollectionMixin)['properties'] & TCollectionIdMixin<T>['properties']
-	>
-> & { [CollectionBrand]: 'Collection' }
+export type TCollection<
+	Collectable extends TRef<TFuzzyObject>,
+	Props extends TProperties
+> = ReturnType<typeof Collection<Collectable, Props>>
 
-export type Collection<T extends IdentifiedNode = IdentifiedNode> =
-	SourcedNode<{
-		id: string
-		color?: string
-		summary?: string
-		description?: string
-		images?: string[]
-		icon?: string
-		enhances?: string
-		replaces?: string
-		contents: Record<string, T>
-	}>
+export type Collection<
+	Collectable extends IdentifiedNode = IdentifiedNode,
+	Props extends object = object
+> = SourcedNode<{
+	id: string
+	color?: string
+	summary?: string
+	description?: string
+	images?: string[]
+	icon?: string
+	enhances?: string
+	replaces?: string
+	contents: Record<string, Collectable>
+}> &
+	Props
 
 export type CollectionSource<T extends IdentifiedNode = IdentifiedNode> =
 	TypeFest.SetOptional<
@@ -117,10 +129,13 @@ export type CollectionSource<T extends IdentifiedNode = IdentifiedNode> =
 
 export const RecursiveCollectionBrand = Symbol('RecursiveCollection')
 
-export function RecursiveCollection<T extends TCollection<TRef>>(
+export function RecursiveCollection<
+	T extends TCollection<TRef<TFuzzyObject>, TProperties>
+>(
 	collection: T,
 	options: TypeFest.SetRequired<SchemaOptions, '$id'>
-) {
+): TRecursiveCollection<T, 3> {
+	// @ts-expect-error
 	return Type.Recursive(
 		(TThis) =>
 			Utils.Assign([
@@ -134,40 +149,25 @@ export function RecursiveCollection<T extends TCollection<TRef>>(
 			[CollectionBrand]: 'Collection',
 			[RecursiveCollectionBrand]: 'RecursiveCollection'
 		}
-	) as any as TRecursiveCollection<T, 3>
-
-	// @ts-expect-error
-	// return Utils.Assign(
-	// 	[
-	// 		collection,
-	// 		Type.Object({
-	// 			collections: Type.Optional(Dictionary(Type.Ref(options.$id)))
-	// 		})
-	// 	],
-	// 	{
-	// 		...options,
-	// 		[CollectionBrand]: 'Collection',
-	// 		[RecursiveCollectionBrand]: 'RecursiveCollection'
-	// 	}
-	// ) as TRecursiveCollection<T, 3>
+	)
 }
 // based on es2019 FlatArray
 /** Limits recursion to 3 levels (which is the maximum number of times the IDs can recurse through collections) */
 
 export type TRecursiveCollection<
-	T extends TCollection<TRef>,
+	Base extends TCollection<TRef<TFuzzyObject>, TProperties>,
 	Depth extends number = 3
-> = T & {
+> = Base & {
 	[RecursiveCollectionBrand]: 'RecursiveCollection'
 } & {
-		done: T
+		done: Base
 
 		// This should probably be TDictionary<TRecursiveCollection<T>, [-1,-1,0,1][Depth]>, but TS complains about recursion depth even with that
-		recur: TRecursiveCollection<T, [-1, 0, 1, 2][Depth]>
+		recur: TRecursiveCollection<Base, [-1, 0, 1, 2][Depth]>
 	}[Depth extends -1 ? 'done' : 'recur']
 
 export type RecursiveCollection<
-	T extends Collection<IdentifiedNode> = Collection<IdentifiedNode>,
+	T extends Collection<IdentifiedNode>,
 	Depth extends number = 3
 > = {
 	done: T
@@ -178,15 +178,15 @@ export type RecursiveCollection<
 }[Depth extends -1 ? 'done' : 'recur']
 
 export type RecursiveCollectionSource<
-	T extends CollectionSource = CollectionSource,
+	Base extends CollectionSource,
 	Depth extends number = 3
 > = {
-	done: T
-	recur: RecursiveCollectionSource<T, [-1, 0, 1, 2][Depth]> &
-		T & {
+	done: Base
+	recur: RecursiveCollectionSource<Base, [-1, 0, 1, 2][Depth]> &
+		Base & {
 			collections?: Record<
 				string,
-				RecursiveCollectionSource<T, [-1, -1, 0, 1][Depth]>
+				RecursiveCollectionSource<Base, [-1, -1, 0, 1][Depth]>
 			>
 		}
 }[Depth extends -1 ? 'done' : 'recur']

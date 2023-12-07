@@ -17,7 +17,11 @@ export const AtlasEntry = Generic.RecursiveCollectable(
 export type TAtlasEntry = typeof AtlasEntry
 export type AtlasEntry = Static<typeof AtlasEntry>
 
-const AtlasBase = Generic.Collection(Type.Ref(Id.AtlasId), Type.Ref(AtlasEntry))
+const AtlasBase = Generic.Collection(
+	Type.Ref(Id.AtlasId),
+	Type.Ref(AtlasEntry),
+	{}
+)
 
 export const Atlas = Generic.RecursiveCollection(AtlasBase, {
 	$id: 'Atlas',

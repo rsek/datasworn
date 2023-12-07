@@ -18,11 +18,12 @@ oracles:
           <<: *Source
         summary: Use this table to generate the scale of a ship sighting, ranging from a single small ship to a massive armada.
         description: The ship challenge ranks are a starting place. Adjust for the capability of the forces you command and the nature of your objectives. Also, keep in mind that the rank of a ship is relative to other ship-scale vehicles, creatures, or powers. See page 54 for tips on handing naval encounters.
+        oracle_type: table_details
         table:
           - min: 1
             max: 30
             result: Small
-            summary: |-
+            detail: |-
               Rigging: 	One or two masts
               Crew:  	5–50
               Rank:  	Troublesome
@@ -30,7 +31,7 @@ oracles:
           - min: 31
             max: 55
             result: Medium
-            summary: |-
+            detail: |-
               Rigging: 	Two or three masts
               Crew:  	50–200
               Rank:  	Dangerous
@@ -38,7 +39,7 @@ oracles:
           - min: 56
             max: 75
             result: Large
-            summary: |-
+            detail: |-
               Rigging: 	Three or more masts
               Crew:  	200–500
               Rank:  	Formidable
@@ -46,7 +47,7 @@ oracles:
           - min: 76
             max: 85
             result: Colossal
-            summary: |-
+            detail: |-
               Rigging: 	Four or more masts
               Crew:  	500–1000
               Rank:  	Extreme
@@ -54,17 +55,18 @@ oracles:
           - min: 86
             max: 95
             result: Flotilla
-            summary: Medium flagship and a few other ships
+            detail: Medium flagship and a few other ships
           - min: 96
             max: 99
             result: Fleet
-            summary: Large flagship and many other ships
+            detail: Large flagship and many other ships
           - min: 100
             max: 100
             result: Armada
-            summary: Colossal flagship and countless other ships
+            detail: Colossal flagship and countless other ships
       first_look:
         name: First Look
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -184,6 +186,7 @@ oracles:
             result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_first_look:
         name: Cursed First Look
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -285,6 +288,7 @@ oracles:
             result: Shadowed by [Cursed Weather](id:sundered_isles/oracles/weather/cursed)
       symbol:
         name: Symbol
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -434,6 +438,7 @@ oracles:
             result: Roll twice
       cursed_symbol:
         name: Cursed Symbol
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -475,6 +480,7 @@ oracles:
             result: Spider
       cursed_mission:
         name: Cursed Ship Mission
+        oracle_type: table_simple
         source:
           <<: *Source
           # TODO: additive curse
@@ -506,6 +512,7 @@ oracles:
             result: Unwittingly helping or unleashing a cursed power
       revaled_aspects:
         name: Revaled Aspects
+        oracle_type: table_simple
         summary: When upon a ship other than your own—visiting,to reveal new details. exploring, or boarding—use this table.
         source:
           <<: *Source
@@ -626,6 +633,7 @@ oracles:
             result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_aspects:
         name: Cursed Aspects
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -709,6 +717,7 @@ oracles:
             result: Warnings scrawled in blood
       cargo:
         name: Cargo
+        oracle_type: table_simple
         source:
           <<: *Source
         summary: Use this table when surveying a ship’s hold or if coming upon lost or abandoned cargo. Roll or choose a number of items as appropriate to the nature of the find. For example, once for the hold of a typical warship, or up to four times for a fully loaded tradeship. Ships also typically carry basic munitions and provisions for the crew, but this table reveals the details of cargo such as trade goods and plunder.
@@ -853,6 +862,7 @@ oracles:
             result: '[Treasure]'
       cursed_cargo:
         name: Cursed Cargo
+        oracle_type: table_simple
         source:
           <<: *Source
         table:
@@ -918,44 +928,39 @@ oracles:
     collections:
       position:
         name: Position
+        oracle_type: tables
         source:
           <<: *Source
         contents:
           range:
             name: Range
+            oracle_type: table_details
             source:
               <<: *Source
-            rendering:
-              style: standalone
-              columns:
-                roll:
-                  label: Roll
-                  content_type: roll
-                result:
-                  label: Result
-                  content_type: result
-                detail:
-                  label: Detail
-                  content_type: result
+            column_labels:
+              roll: Roll
+              result: Result
+              detail: Detail
             table:
               - min: 1
                 max: 40
                 result: Distant
-                summary: On the horizon and too far to make out details
+                detail: On the horizon and too far to make out details
               - min: 41
                 max: 75
                 result: Far
-                summary: Observable but well beyond weapons range
+                detail: Observable but well beyond weapons range
               - min: 76
                 max: 95
                 result: Medium
-                summary: Easily discernible and nearly within weapons range
+                detail: Easily discernible and nearly within weapons range
               - min: 96
                 max: 100
                 result: Near
-                summary: Sighted or revealed at very close range
+                detail: Sighted or revealed at very close range
           status:
             name: Status
+            oracle_type: table_simple
             source:
               <<: *Source
             table:
@@ -990,33 +995,14 @@ oracles:
         name: Controlling Faction
         source:
           <<: *Source
-        rendering:
-          style: multi_table
-          columns:
-            myriads:
-              label: Myriads
-              table_key: myriads
-              content_type: roll
-            margins:
-              label: Margins
-              table_key: margins
-              content_type: roll
-            reaches:
-              label: Reaches
-              table_key: reaches
-              content_type: roll
-            result:
-              table_key: myriads
-              content_type: result
-              label: Result
+        oracle_type: table_shared_result
         contents:
           myriads:
             name: Myriads
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             summary: Central Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - &ControllingFaction.0
                 min: 1
@@ -1032,11 +1018,10 @@ oracles:
                 result: Independent
           margins:
             name: Margins
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             summary: Outer Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1049,11 +1034,10 @@ oracles:
                 max: 100
           reaches:
             name: Reaches
-            source:
-              <<: *Source
+            # source:
+            #   <<: *Source
             summary: Remote Seas
-            rendering:
-              style: column
+            oracle_type: column_simple
             table:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1069,48 +1053,41 @@ oracles:
         source:
           <<: *Source
         summary: A ship’s faction can reveal its role, such as warship, tradeship, or whaler. If the ship is independent, the faction unknown, or if you simply want more detail, use this table. Alernatively, use the captain’s goal (page 179) to set the ship’s purpose.
-        rendering:
-          style: multi_table
-          columns:
-            small:
-              label: Small
-              table_key: small
-              content_type: roll
-            medium:
-              label: Medium
-              table_key: medium
-              content_type: roll
-            large:
-              label: Large
-              table_key: large
-              content_type: roll
-            huge:
-              label: Huge
-              content_type: roll
-              table_key: huge
-            flotilla:
-              label: Flotilla
-              content_type: roll
-              table_key: flotilla
-            fleet:
-              label: Fleet
-              content_type: roll
-              table_key: fleet
-            armada:
-              label: Armada
-              content_type: roll
-              table_key: armada
-            current_activity:
-              table_key: small
-              content_type: result
-              label: Current Activity
+        oracle_type: table_shared_result
+        # rendering:
+        #   columns:
+        #     - label: Small
+        #       table_key: small
+        #       content_type: roll
+        #     - label: Medium
+        #       table_key: medium
+        #       content_type: roll
+        #     - label: Large
+        #       table_key: large
+        #       content_type: roll
+        #     - label: Huge
+        #       content_type: roll
+        #       table_key: huge
+        #     - label: Flotilla
+        #       content_type: roll
+        #       table_key: flotilla
+        #     - label: Fleet
+        #       content_type: roll
+        #       table_key: fleet
+        #     - label: Armada
+        #       content_type: roll
+        #       table_key: armada
+        #     - table_key: small
+        #       content_type: result
+        #       label: Current Activity
+        column_labels:
+          result: Current Activity
         contents:
           small:
             name: Small
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            # source:
+            #   <<: *Source
+            oracle_type: column_simple
             table:
               - &ShipMission.0
                 result: Blockade a location
@@ -1186,12 +1163,14 @@ oracles:
                 max: 100
                 <<: &ShipMission.18
                   result: Roll twice
+                  oracle_rolls:
+                    - auto: true
+                      number_of_rolls: 2
           medium:
             name: Medium
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            # source:
+            #   <<: *Source
+            oracle_type: column_simple
             table:
               - *ShipMission.0
               - *ShipMission.1
@@ -1244,10 +1223,9 @@ oracles:
                 max: 100
           large:
             name: Large
-            source:
-              <<: *Source
-            rendering:
-              style: column
+            # source:
+            #   <<: *Source
+            oracle_type: column_simple
             table:
               - <<: *ShipMission.0
                 min: 1
@@ -1308,8 +1286,9 @@ oracles:
                 max: 100
           huge:
             name: Huge
-            source:
-              <<: *Source
+            oracle_type: column_simple
+            # source:
+            #   <<: *Source
             table:
               - <<: *ShipMission.0
                 min: 1
@@ -1370,8 +1349,9 @@ oracles:
                 max: 100
           flotilla:
             name: Flotilla
-            source:
-              <<: *Source
+            oracle_type: column_simple
+            # source:
+            #   <<: *Source
             table:
               - <<: *ShipMission.0
                 min: 1
@@ -1432,8 +1412,9 @@ oracles:
                 max: 100
           fleet:
             name: Fleet
-            source:
-              <<: *Source
+            oracle_type: column_simple
+            # source:
+            #   <<: *Source
             table:
               - <<: *ShipMission.0
                 min: 1
@@ -1488,8 +1469,9 @@ oracles:
                 max: 100
           armada:
             name: Armada
-            source:
-              <<: *Source
+            oracle_type: column_simple
+            # source:
+            #   <<: *Source
             table:
               - <<: *ShipMission.0
                 min: 1

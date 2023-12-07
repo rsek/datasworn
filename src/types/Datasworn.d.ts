@@ -19,7 +19,7 @@ export interface Ruleset {
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles: Record<DictKey, OracleCollection>
+	oracles: Record<DictKey, OracleTablesCollection>
 	/**
 	 * A dictionary object containing move categories, which contain moves.
 	 * @remarks Deserialize as a dictionary object.
@@ -75,7 +75,7 @@ export interface Expansion {
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: Record<DictKey, OracleCollection>
+	oracles?: Record<DictKey, OracleTablesCollection>
 	/**
 	 * A dictionary object containing move categories, which contain moves.
 	 * @remarks Deserialize as a dictionary object.
@@ -162,6 +162,14 @@ export type AssetAbilityOptionFieldId = string
  * ```
  */
 export type AssetCollectionId = string
+
+/**
+ * A wildcarded ID that can be used to match multiple AssetCollections.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/collections\/assets\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type AssetCollectionIdWildcard = string
 
 /**
  * A unique ID for an AssetConditionMeterControlField.
@@ -282,6 +290,14 @@ export type DelveSiteDenizenId = string
 export type DelveSiteDomainId = string
 
 /**
+ * A wildcarded ID that can be used to match multiple DelveSiteDomains.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/site_domains\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type DelveSiteDomainIdWildcard = string
+
+/**
  * A unique ID for a DelveSite.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/delve_sites\/([a-z][a-z_]*)$/
@@ -291,6 +307,14 @@ export type DelveSiteDomainId = string
 export type DelveSiteId = string
 
 /**
+ * A wildcarded ID that can be used to match multiple DelveSites.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/delve_sites\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type DelveSiteIdWildcard = string
+
+/**
  * A unique ID for a DelveSiteTheme.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/site_themes\/([a-z][a-z_]*)$/
@@ -298,6 +322,14 @@ export type DelveSiteId = string
  * @example "delve/site_themes/hallowed"
  */
 export type DelveSiteThemeId = string
+
+/**
+ * A wildcarded ID that can be used to match multiple DelveSiteThemes.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/site_themes\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type DelveSiteThemeIdWildcard = string
 
 /**
  * A `snake_case` key used in a Datasworn dictionary object.
@@ -363,6 +395,14 @@ export type ImpactRuleId = string
 export type MoveCategoryId = string
 
 /**
+ * A wildcarded ID that can be used to match multiple MoveCategorys.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/collections\/moves\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type MoveCategoryIdWildcard = string
+
+/**
  * A move ID, for a standard move or a unique asset move
  * @example "classic/moves/combat/strike"
  * @example "starforged/assets/module/grappler/abilities/0/moves/ready_grappler"
@@ -383,6 +423,14 @@ export type MoveIdWildcard = string
  * @example "starforged/collections/npcs/sample_npcs"
  */
 export type NpcCollectionId = string
+
+/**
+ * A wildcarded ID that can be used to match multiple NpcCollections.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/collections\/npcs\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type NpcCollectionIdWildcard = string
 
 /**
  * A unique ID for a Npc.
@@ -423,7 +471,15 @@ export type NpcVariantId = string
 export type OracleCollectionId = string
 
 /**
- * A unique ID for an OracleTable.
+ * A wildcarded ID that can be used to match multiple OracleCollections.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/collections\/oracles((\/([a-z][a-z_]*)){1,3}|\/\*\*|\/\*\*\/([a-z][a-z_]*)|\/([a-z][a-z_]*)\/\*\*)$/
+ * ```
+ */
+export type OracleCollectionIdWildcard = string
+
+/**
+ * A unique ID for an OracleRollable.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/oracles(\/([a-z][a-z_]*)){1,3}\/([a-z][a-z_]*)$/
  * ```
@@ -431,15 +487,15 @@ export type OracleCollectionId = string
  * @example "starforged/oracles/character/names/given"
  * @example "starforged/oracles/planets/furnace/settlements/terminus"
  */
-export type OracleTableId = string
+export type OracleRollableId = string
 
 /**
  * Oracle table wildcards can also use '**' to represent any number of collection levels in the oracle tree.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/oracles\/((\/([a-z][a-z_]*)){1,3}|\/\*\*|\/\*\*\/([a-z][a-z_]*)|\/([a-z][a-z_]*)\/\*\*)\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z0-9_]{3,}))\/oracles((\/([a-z][a-z_]*)){1,3}|\/\*\*|\/\*\*\/([a-z][a-z_]*)|\/([a-z][a-z_]*)\/\*\*)\/(\*|([a-z][a-z_]*))$/
  * ```
  */
-export type OracleTableIdWildcard = string
+export type OracleRollableIdWildcard = string
 
 /**
  * Normally, rows will end with two numbers separated by a dash, indicating their dice range.
@@ -458,6 +514,14 @@ export type OracleTableRowId = string
  * @example "classic/rarities/ayethins_journal"
  */
 export type RarityId = string
+
+/**
+ * A wildcarded ID that can be used to match multiple Raritys.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/rarities\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type RarityIdWildcard = string
 
 /**
  * The ID of standalone Datasworn package that describes its own ruleset.
@@ -513,6 +577,14 @@ export type ThemeFeatureRowId = string
  * @example "starforged/truths/iron"
  */
 export type TruthId = string
+
+/**
+ * A wildcarded ID that can be used to match multiple Truths.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/truths\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type TruthIdWildcard = string
 
 /**
  * A unique ID for a TruthOption.
@@ -601,7 +673,7 @@ export interface Source {
 }
 
 export interface Suggestions {
-	oracles?: OracleTableId[]
+	oracles?: OracleRollableId[]
 	assets?: AssetId[]
 	moves?: MoveId[]
 	site_domains?: DelveSiteDomainId[]
@@ -627,6 +699,9 @@ export type SvgImageUrl = string
  */
 export type WebpImageUrl = string
 
+/**
+ * @experimental
+ */
 export interface I18nHint {
 	/**
 	 * The part of speech for this string.
@@ -636,14 +711,15 @@ export interface I18nHint {
 
 /**
  * Internationalization/localization hints for the text content of this object.
+ * @experimental
  */
 export interface I18nHints {
 	result?: I18nHint
-	summary?: I18nHint
+	detail?: I18nHint
 	description?: I18nHint
 	template?: {
 		result?: I18nHint
-		summary?: I18nHint
+		detail?: I18nHint
 		description?: I18nHint
 	}
 }
@@ -701,8 +777,23 @@ export type PartOfSpeech =
  * The custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`
  *
  * @i18n
+ * @experimental
  */
 export type TemplateString = string
+
+export type CollectableType =
+	| 'oracle_rollable'
+	| 'move'
+	| 'asset'
+	| 'atlas_entry'
+	| 'npc'
+
+export type CollectionType =
+	| 'oracle_collection'
+	| 'move_category'
+	| 'asset_collection'
+	| 'atlas'
+	| 'npc_collection'
 
 /**
  * Describes a standard player character condition meter.
@@ -733,9 +824,9 @@ export interface ConditionMeterRule {
 	 */
 	max: number
 	/**
-	 * @default 0
+	 * Is this meter's `value` usable as a stat in an action roll?
 	 */
-	rollable: number
+	rollable: true
 }
 
 /**
@@ -786,8 +877,18 @@ export interface ImpactRule {
 	permanent: boolean
 }
 
+export type NonCollectableType =
+	| 'oracle_rollable'
+	| 'move'
+	| 'asset'
+	| 'atlas_entry'
+	| 'npc'
+
+export type ObjectType = CollectableType | NonCollectableType | CollectionType
+
 /**
  * Describes rules for player characters in this ruleset, such as stats and condition meters.
+ * @experimental
  */
 export interface Rules {
 	/**
@@ -810,10 +911,22 @@ export interface Rules {
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	special_tracks: Record<DictKey, SpecialTrackRule>
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
+	 * @experimental
+	 */
+	tags: Record<DictKey, TagRule>
 }
 
 /**
  * Describes rules for player characters in this ruleset, such as stats and condition meters.
+ * @experimental
  */
 export interface RulesExpansion {
 	/**
@@ -836,6 +949,17 @@ export interface RulesExpansion {
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	special_tracks?: Record<DictKey, SpecialTrackRule>
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
+	 * @experimental
+	 */
+	tags?: Record<DictKey, TagRule>
 }
 
 /**
@@ -877,6 +1001,299 @@ export interface StatRule {
 	 */
 	description: MarkdownString
 }
+
+export type Tag =
+	| boolean
+	| number
+	| DictKey
+	| DiceExpression
+	| OracleRollableId
+	| MoveId
+	| AssetId
+	| AtlasEntryId
+	| NpcId
+	| OracleCollectionId
+	| MoveCategoryId
+	| AssetCollectionId
+	| AtlasId
+	| NpcCollectionId
+	| DelveSiteId
+	| DelveSiteThemeId
+	| DelveSiteDomainId
+	| TruthId
+	| RarityId
+	| Array<
+			| OracleRollableIdWildcard
+			| MoveIdWildcard
+			| AssetIdWildcard
+			| AtlasEntryIdWildcard
+			| NpcIdWildcard
+			| OracleCollectionIdWildcard
+			| MoveCategoryIdWildcard
+			| AssetCollectionIdWildcard
+			| AtlasIdWildcard
+			| NpcCollectionIdWildcard
+			| DelveSiteIdWildcard
+			| DelveSiteThemeIdWildcard
+			| DelveSiteDomainIdWildcard
+			| TruthIdWildcard
+			| RarityIdWildcard
+	  >
+
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `value_type` property as a discriminator.
+ */
+export type TagRule =
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			array: boolean
+			value_type: 'boolean'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			array: boolean
+			value_type: 'integer'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'oracle_rollable'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'move'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'asset'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'atlas_entry'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'npc'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'oracle_collection'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'move_category'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'asset_collection'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'atlas'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'npc_collection'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'delve_site'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'delve_site_theme'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'delve_site_domain'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'truth'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'rarity'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: ObjectType[] | null
+			description: MarkdownString
+			/**
+			 * @default false
+			 */
+			array: boolean
+			value_type: 'enum'
+			enum: DictKey[]
+	  }
 
 /**
  * Challenge rank, represented as an integer from 1 (troublesome) to 5 (epic).
@@ -1063,7 +1480,10 @@ export interface Npc {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -1100,7 +1520,10 @@ export interface NpcCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1178,46 +1601,34 @@ export interface NpcVariant {
 export type DiceExpression = string
 
 /**
- * Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#summary`, and `OracleTableRow#description`.
+ * Special roll instructions to use when rolling multiple times on a single oracle.
  *
- *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.
+ *   - `reroll`: Duplicates results should be re-rolled.
+ *   - `keep`: Duplicates results should be kept.
+ *   - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.
  */
-export interface OracleRollTemplate {
-	/**
-	 * A string template that may be used in place of OracleTableRow#result.
-	 * @example "{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}"
-	 */
-	result?: TemplateString
-	/**
-	 * A string template that may be used in place of OracleTableRow#summary.
-	 */
-	summary?: TemplateString
-	/**
-	 * A string template that may be used in place of OracleTableRow#description.
-	 */
-	description?: TemplateString
-}
+export type OracleDuplicateBehavior = 'reroll' | 'keep' | 'make_it_worse'
 
-export interface OracleTableMatchBehavior {
+export interface OracleMatchBehavior {
 	text: MarkdownString
 }
 
-export interface OracleTableRoll {
+export interface OracleRoll {
 	/**
-	 * The ID of the oracle table to be rolled. A `null` value indicates that it's a roll on the same table.
+	 * The ID of the oracle to be rolled. A `null` value indicates that it's a roll on the same table.
 	 * @default null
 	 */
-	oracle: OracleTableId | null
+	oracle: OracleRollableId | null
 	/**
-	 * Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as "Action + Theme".
+	 * Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll Twice".
 	 * @default false
 	 */
 	auto: boolean
 	/**
-	 * Special rules on how to handle duplicate results, when rolling multiple times on this table.
+	 * Special rules on how to handle duplicate results, when rolling multiple times.
 	 * @default "reroll"
 	 */
-	duplicates: OracleTableRollDuplicates
+	duplicates: OracleDuplicateBehavior
 	/**
 	 * The dice roll to make on the oracle table. Set it to `null` if you just want the table's default.
 	 * @default null
@@ -1231,24 +1642,370 @@ export interface OracleTableRoll {
 }
 
 /**
- * Special roll instructions to use when rolling multiple times on a single oracle table.
+ * Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#detail`, and `OracleTableRow#description`.
  *
- *   - `reroll`: Duplicates should be re-rolled.
- *   - `keep`: Duplicates should be kept.
- *   - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.
+ *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.
  */
-export type OracleTableRollDuplicates = 'reroll' | 'keep' | 'make_it_worse'
-
-export interface OracleCollection {
+export interface OracleRollTemplate {
 	/**
+	 * A string template that may be used in place of OracleTableRow#result.
+	 * @example "{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}"
+	 */
+	result?: TemplateString
+	/**
+	 * A string template that may be used in place of OracleTableRow#detail.
+	 */
+	detail?: TemplateString
+	/**
+	 * A string template that may be used in place of OracleTableRow#description.
+	 */
+	description?: TemplateString
+}
+
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
+ */
+export type OracleCollection =
+	| OracleTablesCollection
+	| OracleTableSharedRoll
+	| OracleTableSharedResults
+	| OracleTableSharedDetails
+
+export interface OracleColumnDetails {
+	/**
+	 * The unique Datasworn ID for this item.
+	 */
+	id: OracleRollableId
+	/**
+	 * The primary label at the head of this column.
+	 */
+	name: Label
+	/**
+	 * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+	 */
+	summary?: MarkdownString
+	/**
+	 * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
+	 */
+	color?: CssColor
+	/**
+	 * An optional icon for this column.
+	 */
+	icon?: SvgImageUrl
+	/**
+	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
 	 * @default
 	 * ```javascript
 	 * 	{
-	 * 		style: "tables"
+	 * 		roll: "Roll",
+	 * 		result: "Result",
+	 * 		detail: "Detail"
 	 * 	}
 	 * ```
 	 */
-	rendering?: OracleCollectionRendering
+	column_labels: {
+		/**
+		 * @default "Roll"
+		 */
+		roll: Label
+		/**
+		 * @default "Result"
+		 */
+		result: Label
+		/**
+		 * @default "Detail"
+		 */
+		detail: Label
+	}
+	/**
+	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 */
+	replaces?: OracleRollableId
+	/**
+	 * The roll used to select a result on this oracle.
+	 * @default "1d100"
+	 */
+	dice: DiceExpression
+	/**
+	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
+	 */
+	match?: OracleMatchBehavior
+	suggestions?: Suggestions
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
+	/**
+	 * An array of objects, each representing a single row of the table.
+	 */
+	table: OracleTableRowDetails[]
+	oracle_type: 'column_details'
+}
+
+/**
+ * Represents a single column in an OracleCollection.
+ */
+export interface OracleColumnSimple {
+	/**
+	 * The unique Datasworn ID for this item.
+	 */
+	id: OracleRollableId
+	/**
+	 * The primary label at the head of this column.
+	 */
+	name: Label
+	/**
+	 * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+	 */
+	summary?: MarkdownString
+	/**
+	 * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
+	 */
+	color?: CssColor
+	/**
+	 * An optional icon for this column.
+	 */
+	icon?: SvgImageUrl
+	/**
+	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+	 * @default
+	 * ```javascript
+	 * 	{
+	 * 		roll: "Roll",
+	 * 		result: "Result"
+	 * 	}
+	 * ```
+	 */
+	column_labels: {
+		/**
+		 * @default "Roll"
+		 */
+		roll: Label
+		/**
+		 * @default "Result"
+		 */
+		result: Label
+	}
+	/**
+	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 */
+	replaces?: OracleRollableId
+	/**
+	 * The roll used to select a result on this oracle.
+	 * @default "1d100"
+	 */
+	dice: DiceExpression
+	/**
+	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
+	 */
+	match?: OracleMatchBehavior
+	suggestions?: Suggestions
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
+	/**
+	 * An array of objects, each representing a single row of the table.
+	 */
+	table: OracleTableRowSimple[]
+	oracle_type: 'column_simple'
+}
+
+/**
+ * A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table.
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
+ */
+export type OracleRollable =
+	| OracleTableSimple
+	| OracleTableDetails
+	| OracleColumnSimple
+	| OracleColumnDetails
+
+/**
+ * A rollable oracle table with one roll column, one `result` column, and one `detail` column.
+ */
+export interface OracleTableDetails {
+	/**
+	 * The unique Datasworn ID for this item.
+	 */
+	id: OracleRollableId
+	/**
+	 * The primary name/label for this item.
+	 */
+	name: Label
+	/**
+	 * The name of this item as it appears on the page in the book, if it's different from `name`.
+	 */
+	canonical_name?: Label
+	/**
+	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+	 */
+	source: Source
+	suggestions?: Suggestions
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
+	recommended_rolls?: {
+		/**
+		 * @default 1
+		 */
+		min: number
+		/**
+		 * @default 1
+		 */
+		max: number
+	}
+	/**
+	 * An icon that represents this table.
+	 */
+	icon?: SvgImageUrl
+	/**
+	 * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+	 */
+	summary?: MarkdownString
+	/**
+	 * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+	 */
+	description?: MarkdownString
+	/**
+	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+	 * @default
+	 * ```javascript
+	 * 	{
+	 * 		roll: "Roll",
+	 * 		result: "Result",
+	 * 		detail: "Detail"
+	 * 	}
+	 * ```
+	 */
+	column_labels: {
+		/**
+		 * @default "Roll"
+		 */
+		roll: Label
+		/**
+		 * @default "Result"
+		 */
+		result: Label
+		/**
+		 * @default "Detail"
+		 */
+		detail: Label
+	}
+	/**
+	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 */
+	replaces?: OracleRollableId
+	/**
+	 * The roll used to select a result on this oracle.
+	 * @default "1d100"
+	 */
+	dice: DiceExpression
+	/**
+	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
+	 */
+	match?: OracleMatchBehavior
+	/**
+	 * An array of objects, each representing a single row of the table.
+	 */
+	table: OracleTableRowDetails[]
+	oracle_type: 'table_details'
+}
+
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
+ */
+export type OracleTableRollable = OracleTableSimple | OracleTableDetails
+
+/**
+ * Represents a row in an oracle table that provides additional details.
+ */
+export interface OracleTableRowDetails {
+	/**
+	 * The unique Datasworn ID for this item.
+	 */
+	id: OracleTableRowId
+	/**
+	 * The primary text content of this row.
+	 */
+	result: MarkdownString
+	icon?: SvgImageUrl
+	/**
+	 * @default null
+	 */
+	detail: MarkdownString | null
+	/**
+	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
+	 */
+	description?: MarkdownString
+	/**
+	 * Further oracle rolls prompted by this table row.
+	 */
+	oracle_rolls?: OracleRoll[]
+	suggestions?: Suggestions
+	/**
+	 * Hints that the identified table should be rendered inside this table row.
+	 */
+	embed_table?: OracleRollableId
+	template?: OracleRollTemplate
+	i18n?: I18nHints
+	/**
+	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	min: number | null
+	/**
+	 * High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	max: number | null
+}
+
+/**
+ * Represents a row in an oracle table.
+ */
+export interface OracleTableRowSimple {
+	/**
+	 * The unique Datasworn ID for this item.
+	 */
+	id: OracleTableRowId
+	/**
+	 * The primary text content of this row.
+	 */
+	result: MarkdownString
+	icon?: SvgImageUrl
+	/**
+	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
+	 */
+	description?: MarkdownString
+	/**
+	 * Further oracle rolls prompted by this table row.
+	 */
+	oracle_rolls?: OracleRoll[]
+	suggestions?: Suggestions
+	/**
+	 * Hints that the identified table should be rendered inside this table row.
+	 */
+	embed_table?: OracleRollableId
+	template?: OracleRollTemplate
+	i18n?: I18nHints
+	/**
+	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	min: number | null
+	/**
+	 * High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	max: number | null
+}
+
+/**
+ * An OracleCollection representing a single table with multiple roll columns, one `result` column, and one `detail` column.
+ */
+export interface OracleTableSharedDetails {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
@@ -1266,7 +2023,10 @@ export interface OracleCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1295,63 +2055,41 @@ export interface OracleCollection {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?: Record<DictKey, OracleTable>
+	contents?: Record<DictKey, OracleColumnDetails>
 	/**
-	 * @remarks Deserialize as a dictionary object.
+	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+	 * @default
+	 * ```javascript
+	 * 	{
+	 * 		result: "Result",
+	 * 		detail: "Detail"
+	 * 	}
+	 * ```
 	 */
-	collections?: Record<DictKey, OracleCollection>
+	column_labels: {
+		/**
+		 * @default "Result"
+		 */
+		result: Label
+		/**
+		 * @default "Detail"
+		 */
+		detail: Label
+	}
+	/**
+	 * A table with multiple roll columns, one result column, and one details column.
+	 */
+	oracle_type: 'table_shared_details'
 }
 
 /**
- * Describes the presentation of this oracle collection, which might represent a group of separate tables, or a single table with additional columns.
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `style` property as a discriminator.
+ * An OracleCollection representing a single table with multiple roll columns and one `result` column.
  */
-export type OracleCollectionRendering =
-	| OracleCollectionRenderingTables
-	| OracleCollectionRenderingMultiTable
-
-export interface OracleCollectionRenderingMultiTable {
-	/**
-	 * Presented as a single table, with its OracleTable children rendered as columns.
-	 */
-	style: 'multi_table'
-	/**
-	 * @remarks Deserialize as a dictionary object.
-	 */
-	columns: Record<DictKey, OracleCollectionTableColumn>
-}
-
-export interface OracleCollectionRenderingTables {
-	/**
-	 * Presented as a collection of separate tables.
-	 */
-	style: 'tables'
-}
-
-export interface OracleCollectionTableColumn {
-	/**
-	 * The column's header text.
-	 */
-	label: Label
-	content_type: OracleTableColumnContentKey
-	/**
-	 * The thematic color for this column.
-	 */
-	color?: CssColor
-	/**
-	 * The key of the OracleTable (within this collection), whose data is used to render this column.
-	 */
-	table_key: DictKey
-}
-
-/**
- * Represents a single oracle table, or a single table column of a table that has multiple "Roll" or "Result" columns.
- */
-export interface OracleTable {
+export interface OracleTableSharedResults {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id: OracleTableId
+	id: OracleCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -1365,7 +2103,160 @@ export interface OracleTable {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
+	/**
+	 * A thematic color associated with this collection.
+	 */
+	color?: CssColor
+	/**
+	 * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+	 */
+	summary?: MarkdownString
+	/**
+	 * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+	 */
+	description?: MarkdownString
+	images?: WebpImageUrl[]
+	/**
+	 * An SVG icon associated with this collection.
+	 */
+	icon?: SvgImageUrl
+	/**
+	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 */
+	enhances?: OracleCollectionId
+	/**
+	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 */
+	replaces?: OracleCollectionId
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 */
+	contents?: Record<DictKey, OracleColumnSimple>
+	/**
+	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+	 * @default
+	 * ```javascript
+	 * 	{
+	 * 		result: "Result"
+	 * 	}
+	 * ```
+	 */
+	column_labels: {
+		/**
+		 * @default "Result"
+		 */
+		result: Label
+	}
+	/**
+	 * A table with multiple roll columns and one result column.
+	 */
+	oracle_type: 'table_shared_results'
+}
+
+/**
+ * An OracleCollection representing a single table with one roll column and multiple `result` columns.
+ */
+export interface OracleTableSharedRoll {
+	/**
+	 * The unique Datasworn ID for this item.
+	 */
+	id: OracleCollectionId
+	/**
+	 * The primary name/label for this item.
+	 */
+	name: Label
+	/**
+	 * The name of this item as it appears on the page in the book, if it's different from `name`.
+	 */
+	canonical_name?: Label
+	/**
+	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+	 */
+	source: Source
+	suggestions?: Suggestions
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
+	/**
+	 * A thematic color associated with this collection.
+	 */
+	color?: CssColor
+	/**
+	 * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+	 */
+	summary?: MarkdownString
+	/**
+	 * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+	 */
+	description?: MarkdownString
+	images?: WebpImageUrl[]
+	/**
+	 * An SVG icon associated with this collection.
+	 */
+	icon?: SvgImageUrl
+	/**
+	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 */
+	enhances?: OracleCollectionId
+	/**
+	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 */
+	replaces?: OracleCollectionId
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 */
+	contents?: Record<DictKey, OracleColumnSimple>
+	/**
+	 * Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 * 		roll: "Roll"
+	 * 	}
+	 * ```
+	 */
+	column_labels: {
+		/**
+		 * @default "Roll"
+		 */
+		roll: Label
+	}
+	/**
+	 * A table with one roll column and multiple result columns.
+	 */
+	oracle_type: 'table_shared_rolls'
+}
+
+/**
+ * Represents a basic rollable oracle table with one roll column and one `result` column.
+ */
+export interface OracleTableSimple {
+	/**
+	 * The unique Datasworn ID for this item.
+	 */
+	id: OracleRollableId
+	/**
+	 * The primary name/label for this item.
+	 */
+	name: Label
+	/**
+	 * The name of this item as it appears on the page in the book, if it's different from `name`.
+	 */
+	canonical_name?: Label
+	/**
+	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+	 */
+	source: Source
+	suggestions?: Suggestions
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -1377,189 +2268,119 @@ export interface OracleTable {
 		max: number
 	}
 	/**
-	 * The roll used to select a result on this table.
-	 * @default "1d100"
-	 */
-	dice: DiceExpression
-	/**
 	 * An icon that represents this table.
 	 */
 	icon?: SvgImageUrl
-	images?: WebpImageUrl[]
 	/**
 	 * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
 	 */
 	summary?: MarkdownString
 	/**
-	 * Indicates that this table replaces the identified table. References to the replaced table can be considered equivalent to this table.
-	 */
-	replaces?: OracleTableId
-	/**
 	 * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	 */
 	description?: MarkdownString
 	/**
-	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
-	 */
-	match?: OracleTableMatchBehavior
-	table: OracleTableRow[]
-	/**
-	 * Describes how how to render this table, when presenting it as a standalone table.
-	 */
-	rendering?: OracleTableRendering
-}
-
-/**
- * @example ```javascript
- * 	{
- * 		label: "Roll",
- * 		content_type: "roll"
- * 	}
- * ```
- * @example ```javascript
- * 	{
- * 		label: "Result",
- * 		content_type: "result"
- * 	}
- * ```
- * @example ```javascript
- * 	{
- * 		label: "Summary",
- * 		content_type: "summary"
- * 	}
- * ```
- */
-export interface OracleTableColumn {
-	/**
-	 * The column's header text.
-	 */
-	label: Label
-	content_type: OracleTableColumnContentKey
-	/**
-	 * The thematic color for this column.
-	 */
-	color?: CssColor
-}
-
-/**
- * The value(s) from each OracleTableRow that is rendered in this column.
- *
- *   - `roll`: Column displays the roll range (`min` and `max`) of each OracleTableRow.
- *   - `result`: Column displays the OracleTableRow's `result` key.
- *   - `summary`: Column displays the OracleTableRow's `summary` key.
- *   - `description`: Column displays the OracleTableRow's `description` key.
- */
-export type OracleTableColumnContentKey =
-	| 'roll'
-	| 'result'
-	| 'summary'
-	| 'description'
-
-/**
- * Describes the presentation of this table.
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `style` property as a discriminator.
- * @default
- * ```javascript
- * 	{
- * 		style: "standalone",
- * 		columns: {
- * 			roll: {
- * 				label: "Roll",
- * 				content_type: "roll"
- * 			},
- * 			result: {
- * 				label: "Result",
- * 				content_type: "result"
- * 			}
- * 		}
- * 	}
- * ```
- */
-export type OracleTableRendering =
-	| OracleTableRenderingStandalone
-	| OracleTableRenderingColumn
-	| OracleTableRenderingEmbedInRow
-
-export interface OracleTableRenderingColumn {
-	/**
-	 * Render as a single column of a table.
-	 */
-	style: 'column'
-}
-
-export interface OracleTableRenderingEmbedInRow {
-	/**
-	 * Render as a table, within a row in another table.
-	 */
-	style: 'embed_in_row'
-}
-
-export interface OracleTableRenderingStandalone {
-	/**
-	 * Render as a standalone table.
-	 */
-	style: 'standalone'
-	/**
-	 * @remarks Deserialize as a dictionary object.
+	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
 	 * @default
 	 * ```javascript
 	 * 	{
-	 * 		roll: {
-	 * 			label: "Roll",
-	 * 			content_type: "roll"
-	 * 		},
-	 * 		result: {
-	 * 			label: "Result",
-	 * 			content_type: "result"
-	 * 		}
+	 * 		roll: "Roll",
+	 * 		result: "Result"
 	 * 	}
 	 * ```
 	 */
-	columns: Record<DictKey, OracleTableColumn>
+	column_labels: {
+		/**
+		 * @default "Roll"
+		 */
+		roll: Label
+		/**
+		 * @default "Result"
+		 */
+		result: Label
+	}
+	/**
+	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 */
+	replaces?: OracleRollableId
+	/**
+	 * The roll used to select a result on this oracle.
+	 * @default "1d100"
+	 */
+	dice: DiceExpression
+	/**
+	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
+	 */
+	match?: OracleMatchBehavior
+	/**
+	 * An array of objects, each representing a single row of the table.
+	 */
+	table: OracleTableRowSimple[]
+	oracle_type: 'table_simple'
 }
 
 /**
- * Represents a row in an oracle table.
+ * An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.
  */
-export interface OracleTableRow {
+export interface OracleTablesCollection {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id: OracleTableRowId
+	id: OracleCollectionId
 	/**
-	 * The primary text content of this row.
+	 * The primary name/label for this item.
 	 */
-	result: MarkdownString
-	icon?: SvgImageUrl
+	name: Label
 	/**
-	 * Optional secondary text content for this row. Generally, this is longer than `result`.
+	 * The name of this item as it appears on the page in the book, if it's different from `name`.
+	 */
+	canonical_name?: Label
+	/**
+	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+	 */
+	source: Source
+	suggestions?: Suggestions
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
+	/**
+	 * A thematic color associated with this collection.
+	 */
+	color?: CssColor
+	/**
+	 * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
 	 */
 	summary?: MarkdownString
 	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`.
+	 * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	 */
 	description?: MarkdownString
+	images?: WebpImageUrl[]
 	/**
-	 * Further oracle rolls prompted by this table row.
+	 * An SVG icon associated with this collection.
 	 */
-	oracle_rolls?: OracleTableRoll[]
-	suggestions?: Suggestions
+	icon?: SvgImageUrl
 	/**
-	 * Hints that the identified table should be rendered inside this table row.
+	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
 	 */
-	embed_table?: OracleTableId
-	template?: OracleRollTemplate
-	i18n?: I18nHints
+	enhances?: OracleCollectionId
 	/**
-	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
-	 * @default null
+	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
 	 */
-	min: number | null
+	replaces?: OracleCollectionId
 	/**
-	 * High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
-	 * @default null
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	max: number | null
+	contents?: Record<DictKey, OracleTableRollable>
+	/**
+	 * A grouping of separate tables.
+	 */
+	oracle_type: 'tables'
+	/**
+	 * @remarks Deserialize as a dictionary object.
+	 */
+	collections?: Record<DictKey, OracleCollection>
 }
 
 /**
@@ -1610,7 +2431,10 @@ export interface MoveActionRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1622,7 +2446,7 @@ export interface MoveActionRoll {
 	/**
 	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
 	 */
-	oracles?: OracleTableId[]
+	oracles?: OracleRollableId[]
 	/**
 	 * A move that makes an action roll.
 	 */
@@ -1668,7 +2492,10 @@ export interface MoveCategory {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1730,7 +2557,10 @@ export interface MoveNoRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1742,7 +2572,7 @@ export interface MoveNoRoll {
 	/**
 	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
 	 */
-	oracles?: OracleTableId[]
+	oracles?: OracleRollableId[]
 	/**
 	 * A move that makes no action rolls or progress rolls.
 	 */
@@ -1780,6 +2610,7 @@ export interface MoveOutcome {
 	 * ```
 	 */
 	text: MarkdownString
+	oracle_rolls?: OracleRoll[]
 }
 
 /**
@@ -1814,7 +2645,10 @@ export interface MoveProgressRoll {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1826,7 +2660,7 @@ export interface MoveProgressRoll {
 	/**
 	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
 	 */
-	oracles?: OracleTableId[]
+	oracles?: OracleRollableId[]
 	/**
 	 * A progress move that rolls on a standard progress track type (defined by this move).
 	 */
@@ -1891,7 +2725,10 @@ export interface MoveSpecialTrack {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -1903,7 +2740,7 @@ export interface MoveSpecialTrack {
 	/**
 	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
 	 */
-	oracles?: OracleTableId[]
+	oracles?: OracleRollableId[]
 	/**
 	 * A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
 	 */
@@ -2227,7 +3064,10 @@ export interface Asset {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A localized category label for this asset. This is the surtitle above the asset's name on the card.
 	 * @example "Combat Talent"
@@ -2417,7 +3257,10 @@ export interface AssetCollection {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2468,6 +3311,9 @@ export interface AssetConditionMeter {
 	 * The maximum value of this meter.
 	 */
 	max: number
+	/**
+	 * Is this meter's `value` usable as a stat in an action roll?
+	 */
 	rollable: true
 	field_type: 'condition_meter'
 	/**
@@ -2476,6 +3322,7 @@ export interface AssetConditionMeter {
 	icon?: SvgImageUrl
 	/**
 	 * Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.
+	 * @unstable
 	 */
 	moves?: {
 		/**
@@ -2603,6 +3450,9 @@ export interface ConditionMeterField {
 	 * The maximum value of this meter.
 	 */
 	max: number
+	/**
+	 * Is this meter's `value` usable as a stat in an action roll?
+	 */
 	rollable: true
 	field_type: 'condition_meter'
 	/**
@@ -2847,7 +3697,10 @@ export interface Truth {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	icon?: SvgImageUrl
 	summary?: MarkdownString
 	options: TruthOption[]
@@ -2877,22 +3730,18 @@ export interface TruthOptionTableRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * Optional secondary text content for this row. Generally, this is longer than `result`.
-	 */
-	summary?: MarkdownString
-	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`.
+	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
 	 */
 	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	oracle_rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
 	 */
-	embed_table?: OracleTableId
+	embed_table?: OracleRollableId
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -2907,6 +3756,9 @@ export interface TruthOptionTableRow {
 	max: number | null
 }
 
+/**
+ * @experimental
+ */
 export interface Atlas {
 	/**
 	 * The unique Datasworn ID for this item.
@@ -2925,7 +3777,10 @@ export interface Atlas {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2982,7 +3837,10 @@ export interface AtlasEntry {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -3029,7 +3887,10 @@ export interface Rarity {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * The asset augmented by this rarity.
 	 */
@@ -3068,7 +3929,10 @@ export interface DelveSite {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	icon?: SvgImageUrl
 	rank: ChallengeRank
 	/**
@@ -3190,14 +4054,17 @@ export interface DelveSiteDomain {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
 	/**
 	 * An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites.
 	 */
-	name_oracle?: OracleTableId
+	name_oracle?: OracleRollableId
 	features: DelveSiteDomainFeatureRow[] &
 		[
 			{
@@ -3288,22 +4155,22 @@ export interface DelveSiteDomainDangerRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * Optional secondary text content for this row. Generally, this is longer than `result`.
+	 * @default null
 	 */
-	summary?: MarkdownString
+	detail: MarkdownString | null
 	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`.
+	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
 	 */
 	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	oracle_rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
 	 */
-	embed_table?: OracleTableId
+	embed_table?: OracleRollableId
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -3330,22 +4197,22 @@ export interface DelveSiteDomainFeatureRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * Optional secondary text content for this row. Generally, this is longer than `result`.
+	 * @default null
 	 */
-	summary?: MarkdownString
+	detail: MarkdownString | null
 	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`.
+	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
 	 */
 	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	oracle_rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
 	 */
-	embed_table?: OracleTableId
+	embed_table?: OracleRollableId
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -3379,7 +4246,10 @@ export interface DelveSiteTheme {
 	 */
 	source: Source
 	suggestions?: Suggestions
-	tags?: Record<DictKey, Record<DictKey, string>>
+	/**
+	 * @experimental
+	 */
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
@@ -3473,22 +4343,22 @@ export interface DelveSiteThemeDangerRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * Optional secondary text content for this row. Generally, this is longer than `result`.
+	 * @default null
 	 */
-	summary?: MarkdownString
+	detail: MarkdownString | null
 	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`.
+	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
 	 */
 	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	oracle_rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
 	 */
-	embed_table?: OracleTableId
+	embed_table?: OracleRollableId
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**
@@ -3515,22 +4385,22 @@ export interface DelveSiteThemeFeatureRow {
 	result: MarkdownString
 	icon?: SvgImageUrl
 	/**
-	 * Optional secondary text content for this row. Generally, this is longer than `result`.
+	 * @default null
 	 */
-	summary?: MarkdownString
+	detail: MarkdownString | null
 	/**
-	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `summary`.
+	 * Optional tertiary text content for this row. Generally, this is longer than both `result` and `detail`.
 	 */
 	description?: MarkdownString
 	/**
 	 * Further oracle rolls prompted by this table row.
 	 */
-	oracle_rolls?: OracleTableRoll[]
+	oracle_rolls?: OracleRoll[]
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
 	 */
-	embed_table?: OracleTableId
+	embed_table?: OracleRollableId
 	template?: OracleRollTemplate
 	i18n?: I18nHints
 	/**

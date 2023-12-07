@@ -10,6 +10,7 @@ import {
 	type MoveProgressRoll,
 	type MoveSpecialTrack
 } from '../Moves.js'
+import { type TOracleRoll } from '../common/Rolls.js'
 import { Localize } from '../common/index.js'
 import { UnionEnumFromRecord } from '../utils/UnionEnumFromRecord.js'
 
@@ -105,7 +106,8 @@ export const MoveOutcome = Type.Object(
 		text: Type.Ref(Localize.MarkdownString, {
 			type: 'string',
 			pattern: /On a __(strong hit|weak hit|miss)__/.source
-		})
+		}),
+		oracle_rolls: Type.Optional(Type.Array(Type.Ref<TOracleRoll>('OracleRoll')))
 		// count_as: Type.Optional(Type.Ref(MoveOutcomeType))
 	},
 	{ $id: 'MoveOutcome' }

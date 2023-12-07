@@ -13,155 +13,247 @@ oracles:
     name: Seafaring Adventures
     collections:
       waypoints:
-        source: *Source
+        source: &CollectionSource
+          <<: *Source
+          date: 2023-11-29
         name: Seafaring Waypoints
+        oracle_type: tables
         summary: |-
-          Use this table to trigger locations, events, and encounters on a seafaring expedition. If you encounter a cost or opportunity on your expedition, the [Seafaring Peril](id:sundered_isles/oracles/seafaring/peril) and [Seafaring Opportunity](id:sundered_isles/oracles/seafaring/opportunity) tables can help reveal what occurs.
-        rendering:
-          style: multi_table
-          columns:
-            myriads:
-              table_key: myriads
-              content_type: roll
-              label: Myriads
-            margins:
-              table_key: margins
-              content_type: roll
-              label: Margins
-            reaches:
-              table_key: reaches
-              content_type: roll
-              label: Reaches
-            result:
-              table_key: myriads
-              content_type: result
-              label: Result
-        contents:
-          myriads:
-            source: *Source
-            name: Myriads
-            summary: Central Seas
-            rendering:
-              style: column
-            table:
-              - min: 1
-                max: 25
-                <<: &Waypoint.0
-                  result: |-
-                    **Land, ho!**
-                      [Islands](id:sundered_isles/collections/oracles/islands)
-              - min: 26
-                max: 40
-                <<: &Waypoint.1
-                  result: |-
-                    **Sails, ho!**
-                      [Ships](id:sundered_isles/collections/oracles/ships)
-              - min: 41
-                max: 50
-                <<: &Waypoint.2
-                  result: |-
-                    **Changing weather**
-                      [Weather](id:sundered_isles/collections/oracles/weather)
-              - min: 51
-                max: 65
-                <<: &Waypoint.3
-                  result: |-
-                    **Instance (choose one)**
-                      * [Seafaring Details](id:sundered_isles/oracles/seafaring/details)
-                      * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
-                  oracle_rolls:
-                    - oracle: sundered_isles/oracles/seafaring/details
-                    - oracle: sundered_isles/oracles/core/descriptor
-                    - oracle: sundered_isles/oracles/core/focus
-              - min: 66
-                max: 70
-                <<: &Waypoint.4
-                  result: |-
-                    **Lost souls**
-                      [Shipwrecks](id:sundered_isles/collections/oracles/shipwrecks)
-              - min: 71
-                max: 75
-                <<: &Waypoint.5
-                  result: |-
-                    **Relic of the past**
-                      [Ruins](id:sundered_isles/collections/oracles/ruins)
-              - min: 76
-                max: 85
-                <<: &Waypoint.6
-                  result: |-
-                    **Character focus**
-                      [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
-                  oracle_rolls:
-                    - oracle: sundered_isles/oracles/misc/interlude_scene
-              - &Waypoint.7
-                min: 86
-                max: 100
-                result: Roll twice
-                oracle_rolls:
-                  - auto: true
-                    number_of_rolls: 2
-          margins:
-            source: *Source
-            name: Margins
-            summary: Outer Seas
-            rendering:
-              style: column
-            table:
-              - min: 1
-                max: 20
-                <<: *Waypoint.0
-              - min: 21
-                max: 30
-                <<: *Waypoint.1
-              - min: 31
-                max: 42
-                <<: *Waypoint.2
-              - min: 43
-                max: 57
-                <<: *Waypoint.3
-              - min: 58
-                max: 67
-                <<: *Waypoint.4
-              - min: 68
-                max: 75
-                <<: *Waypoint.5
-              - min: 76
-                max: 85
-                <<: *Waypoint.6
-              - *Waypoint.7
-          reaches:
-            source: *Source
-            name: Reaches
-            summary: Remote Seas
-            rendering:
-              style: column
-            table:
-              - min: 1
-                max: 15
-                <<: *Waypoint.0
-              - min: 16
-                max: 20
-                <<: *Waypoint.1
-              - min: 21
-                max: 35
-                <<: *Waypoint.2
-              - min: 36
-                max: 50
-                <<: *Waypoint.3
-              - min: 51
-                max: 65
-                <<: *Waypoint.4
-              - min: 66
-                max: 75
-                <<: *Waypoint.5
-              - min: 76
-                max: 85
-                <<: *Waypoint.6
-              - *Waypoint.7
+          These tables help inspire locations, events, and encounters on a seafaring expedition. Use the [Known Waters](id:sundered_isles/oracles/seafaring/waypoints/known_waters) table if you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition) among or between known islands, such as when following a chart of local islands. Use the [Unknown Waters](id:sundered_isles/oracles/seafaring/waypoints/unknown_waters) table when navigating seas with the prospect of encountering unrevealed islands.
+        collections:
+          known_waters:
+            name: Known Waters
+            oracle_type: table_shared_result
+            source: &TableSource
+              <<: *CollectionSource
+            summary: |-
+              Use the Known Waters table if you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition) among or between known islands, such as when following a chart of local islands.
+            contents:
+              myriads:
+                # source: *TableSource
+                <<: &Myriads
+                  name: Myriads
+                  summary: Central Seas
+                  oracle_type: column_simple
+                table:
+                  - min: 1
+                    max: 25
+                    <<: &WaypointKnown.0
+                      result: |-
+                        **Sails, ho!**
+                          [Sailing Ships](id:sundered_isles/collections/oracles/ships)
+                  - min: 26
+                    max: 35
+                    <<: &WaypointKnown.1
+                      result: |-
+                        **Changing weather**
+                          [Weather](id:sundered_isles/collections/oracles/weather)
+                  - min: 36
+                    max: 55
+                    <<: &WaypointKnown.2
+                      result: |-
+                        **Instance (choose one)**
+                          * [Seafaring Details](id:sundered_isles/oracles/seafaring/details)
+                          * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
+                      oracle_rolls:
+                        - oracle: sundered_isles/oracles/seafaring/details
+                        - oracle: sundered_isles/oracles/core/descriptor
+                        - oracle: sundered_isles/oracles/core/focus
+                  - min: 56
+                    max: 65
+                    <<: &WaypointKnown.3
+                      result: |-
+                        **Lost souls**
+                          [Shipwrecks](id:sundered_isles/collections/oracles/shipwrecks)
+                  - min: 66
+                    max: 70
+                    <<: &WaypointKnown.4
+                      result: |-
+                        **Relic of the past**
+                          [Ruins](id:sundered_isles/collections/oracles/ruins)
+                  - min: 71
+                    max: 85
+                    <<: &WaypointKnown.5
+                      result: |-
+                        **Character focus**
+                          [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
+                      oracle_rolls:
+                        - oracle: sundered_isles/oracles/misc/interlude_scene
+                  - &WaypointKnown.6
+                    min: 86
+                    max: 100
+                    <<: &RollTwice
+                      result: Roll twice
+                      oracle_rolls:
+                        - auto: true
+                          number_of_rolls: 2
+              margins:
+                # source: *TableSource
+                <<: &Margins
+                  name: Margins
+                  summary: Outer Seas
+                  oracle_type: column_simple
+                table:
+                  - min: 1
+                    max: 15
+                    <<: *WaypointKnown.0
+                  - min: 16
+                    max: 30
+                    <<: *WaypointKnown.1
+                  - min: 31
+                    max: 50
+                    <<: *WaypointKnown.2
+                  - min: 51
+                    max: 60
+                    <<: *WaypointKnown.3
+                  - min: 61
+                    max: 70
+                    <<: *WaypointKnown.4
+                  - min: 71
+                    max: 85
+                    <<: *WaypointKnown.5
+                  - min: 86
+                    max: 100
+                    <<: *WaypointKnown.6
+              reaches:
+                # source: *TableSource
+                <<: &Reaches
+                  name: Reaches
+                  summary: Remote Seas
+                  oracle_type: column_simple
+                table:
+                  - min: 1
+                    max: 5
+                    <<: *WaypointKnown.0
+                  - min: 6
+                    max: 25
+                    <<: *WaypointKnown.1
+                  - min: 26
+                    max: 45
+                    <<: *WaypointKnown.2
+                  - min: 46
+                    max: 55
+                    <<: *WaypointKnown.3
+                  - min: 56
+                    max: 70
+                    <<: *WaypointKnown.4
+                  - min: 71
+                    max: 85
+                    <<: *WaypointKnown.5
+                  - min: 86
+                    max: 100
+                    <<: *WaypointKnown.6
+          unknown_waters:
+            name: Unknown Waters
+            oracle_type: table_shared_result
+            source: &TableSource
+              <<: *CollectionSource
+            summary: |-
+              Use the Unknown Waters table when navigating seas with the prospect of encountering unrevealed islands.
+            contents:
+              myriads:
+                <<: *Myriads
+                # source: *TableSource
+                table:
+                  - min: 1
+                    max: 20
+                    <<: &WaypointUnknown.0
+                      result: |-
+                        **Land, ho!**
+                          [Islands](id:sundered_isles/collections/oracles/islands)
+                  - min: 21
+                    max: 35
+                    <<: &WaypointUnknown.1
+                      <<: *WaypointKnown.0
+                  - min: 36
+                    max: 45
+                    <<: &WaypointUnknown.2
+                      <<: *WaypointKnown.1
+                  - min: 46
+                    max: 60
+                    <<: &WaypointUnknown.3
+                      <<: *WaypointKnown.2
+                  - min: 61
+                    max: 70
+                    <<: &WaypointUnknown.4
+                      <<: *WaypointKnown.3
+                  - min: 71
+                    max: 75
+                    <<: &WaypointUnknown.5
+                      <<: *WaypointKnown.4
+                  - min: 76
+                    max: 90
+                    <<: &WaypointUnknown.6
+                      <<: *WaypointKnown.5
+                  - min: 91
+                    max: 100
+                    <<: &WaypointUnknown.7
+                      <<: *WaypointKnown.6
+              margins:
+                <<: *Margins
+                # source: *TableSource
+                table:
+                  - min: 1
+                    max: 15
+                    <<: *WaypointUnknown.0
+                  - min: 16
+                    max: 25
+                    <<: *WaypointUnknown.1
+                  - min: 26
+                    max: 40
+                    <<: *WaypointUnknown.2
+                  - min: 41
+                    max: 55
+                    <<: *WaypointUnknown.3
+                  - min: 56
+                    max: 65
+                    <<: *WaypointUnknown.4
+                  - min: 66
+                    max: 75
+                    <<: *WaypointUnknown.5
+                  - min: 76
+                    max: 90
+                    <<: *WaypointUnknown.6
+                  - min: 91
+                    max: 100
+                    <<: *WaypointUnknown.7
+              reaches:
+                <<: *Reaches
+                # source: *TableSource
+                table:
+                  - min: 1
+                    max: 10
+                    <<: *WaypointUnknown.0
+                  - min: 11
+                    max: 15
+                    <<: *WaypointUnknown.1
+                  - min: 16
+                    max: 35
+                    <<: *WaypointUnknown.2
+                  - min: 36
+                    max: 50
+                    <<: *WaypointUnknown.3
+                  - min: 51
+                    max: 60
+                    <<: *WaypointUnknown.4
+                  - min: 61
+                    max: 75
+                    <<: *WaypointUnknown.5
+                  - min: 76
+                    max: 90
+                    <<: *WaypointUnknown.6
+                  - min: 91
+                    max: 100
+                    <<: *WaypointUnknown.7
     contents:
-      details:
+      detail:
         source: *Source
         name: Seafaring Details
+        oracle_type: table_simple
+        summary: This table reveals occurrences on a seafaring expedition. Possible results include locations, events, sightings, and encounters.
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/seafaring/cursed_details
         table:
           - min: 1
             max: 1
@@ -291,7 +383,7 @@ oracles:
             result: A multitude of jellyfish glimmer like pale lanterns
           - min: 43
             max: 43
-            result: A long line of boats, laden with cargo and passengers, make their way across the
+            result: A long line of boats, laden with cargo and passengers, make their way across the sea
           - min: 44
             max: 44
             result: A settlement stands on an isolated islet
@@ -466,6 +558,11 @@ oracles:
       cursed_details:
         source: *Source
         name: Cursed Seafaring Details
+        oracle_type: table_simple
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/seafaring/details
         table:
           - min: 1
             max: 1
@@ -610,7 +707,7 @@ oracles:
             result: One beast battles another, and the sea churns with blood
           - min: 48
             max: 48
-            result: An unknown island, etched in black ink by an unseen hand, appears on the ship's chart
+            result: An unknown island, etched in black ink by an unseen hand, appears on the ship's charts
           - min: 49
             max: 49
             result: Something knocks insistently against the underside of the hull
@@ -694,7 +791,7 @@ oracles:
             result: A ghostly message, written in blood, appears in the captain's logbook
           - min: 76
             max: 76
-            result: A crewmember, moving as if in a trance, climbs over the gunwales and drops into the sea
+            result: A crewmember, moving as if in a trance, climbs over the gunwales and drops into the s
           - min: 77
             max: 77
             result: Phantom voices carry on the wind, whispering a dreadful premonition
@@ -771,6 +868,7 @@ oracles:
         source: *Source
         name: Seafaring
         summary: Roll or choose on this table when you want inspiration for a trouble during ocean exploration or on a seagoing expedition.
+        oracle_type: table_simple
         table:
           - min: 1
             max: 3
@@ -810,46 +908,46 @@ oracles:
             result: Hostile beast attacks
           - min: 37
             max: 39
-            result: Ill omens cause anxiety
+            result: Hull is fouled or leaking
           - min: 40
             max: 42
-            result: Imperiled ship signals for help
+            result: Ill omens cause anxiety
           - min: 43
             max: 45
-            result: Isolation or fear presses in
+            result: Imperiled ship signals for help
           - min: 46
             max: 48
-            result: Mysterious wreckage portends a new threat
+            result: Isolation or fear presses in
           - min: 49
             max: 51
-            result: Provisions are spoiled or corrupted
+            result: Mysterious wreckage portends a new threat
           - min: 52
             max: 54
-            result: Rigging or equipment is damaged or broken
+            result: Provisions are spoiled or corrupted
           - min: 55
             max: 57
-            result: Rogue wave strikes
+            result: Rigging or equipment is damaged or broken
           - min: 58
             max: 60
-            result: Sabotage is revealed
+            result: Rogue wave strikes
           - min: 61
             max: 63
-            result: Shallow waters or obstructions imperil navigation
+            result: Sabotage is revealed
           - min: 64
             max: 66
-            result: Shipboard fire breaks out
+            result: Shallow waters or obstructions imperil navigation
           - min: 67
             max: 69
-            result: Sickness threatens the health of the crew
+            result: Shipboard fire breaks out
           - min: 70
             max: 72
-            result: Storm looms
+            result: Sickness threatens the health of the crew
           - min: 73
             max: 75
-            result: Stowaway is revealed
+            result: Storm looms
           - min: 76
             max: 78
-            result: The hull is fouled or leaking
+            result: Stowaway is revealed
           - min: 79
             max: 81
             result: True nature of a cargo, crewmember, or passenger is revealed
@@ -879,14 +977,12 @@ oracles:
                   oracle: sundered_isles/oracles/core/theme
           - min: 100
             max: 100
-            result: Roll twice
-            oracle_rolls:
-              - auto: true
-                number_of_rolls: 2
+            <<: *RollTwice
       opportunity:
         source: *Source
         name: Seafaring Opportunities
         summary: Roll or choose on this table when you want inspiration for a beneficial encounter or event on a seagoing journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint) and find an opportunity.
+        oracle_type: table_simple
         table:
           - min: 1
             max: 4
@@ -902,7 +998,7 @@ oracles:
             result: Clue offers insight into a current quest or mystery
           - min: 17
             max: 20
-            result: Clue to a a foe's nature or vulnerabilities
+            result: Clue to a foe's nature or vulnerabilities
           - min: 21
             max: 24
             result: Creatures show the way or offer inspiration
@@ -944,7 +1040,7 @@ oracles:
             result: Message or map with useful information
           - min: 73
             max: 76
-            result: Occasion for celebration or rememberance with the crew
+            result: Occasion for celebration or remembrance with the crew
           - min: 77
             max: 80
             result: Opening to escape or avoid foes

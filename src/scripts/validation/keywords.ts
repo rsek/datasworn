@@ -1,66 +1,12 @@
 import { type KeywordDefinition } from 'ajv'
-import { UnionEnum } from '../../schema/datasworn/utils/UnionEnum.js'
-import { Type } from '@sinclair/typebox'
-import { UnionOneOf } from '../../schema/datasworn/utils/UnionOneOf.js'
+import { Keywords } from '../augmentations.js'
 
 export const KEYWORDS: Record<string, Omit<KeywordDefinition, 'keyword'>> = {
 	releaseStage: {
-		metaSchema: UnionEnum(['unstable', 'experimental', 'release'], {
-			description:
-				"Indicates the release status of this schema.  Non-'release' schema may be stripped from the output.",
-			default: 'release'
-		})
+		metaSchema: Keywords.releaseStage
 	},
 	i18n: {
 		type: 'string',
-		metaSchema: Type.Boolean({
-			description:
-				'Indicates that a string value is localizable, and should be included with internationalization (A.K.A. i18n) data.',
-			default: false
-		})
-	},
-	macro: {
-		metaSchema: Type.Boolean({
-			default: false,
-			description:
-				'If `true`, this schema is used only to compile the JSON, and is removed from the final output schema.'
-		})
-	},
-	isSourcedNode: {
-		type: 'object',
-		metaSchema: Type.Boolean({})
-	},
-	inheritFromCollection: {
-		type: 'object',
-		metaSchema: Type.Array(Type.String(), {
-			description:
-				'Properties that this object can inherit from its most recent Collection ancestor. Those properties can be omitted for data entry.',
-			default: []
-		})
-	},
-	// TODO
-
-	defaultsToValueOf: {
-		metaSchema: Type.String({
-			description: 'This value defaults to the value of the provided property.'
-		})
-	},
-	rollable: {
-		type: 'object',
-		metaSchema: Type.Intersect([
-			Type.Object({
-				tableKey: Type.String({
-					description: 'They property key that contains the row objects.'
-				})
-			}),
-			UnionOneOf([
-				Type.Object({
-					diceKey: Type.String({ description: '' })
-				}),
-				Type.Object({
-					dice: Type.String({ description: '', format: 'dice_notation' })
-				})
-			])
-		])
+		metaSchema: Keywords.i18n
 	}
 }

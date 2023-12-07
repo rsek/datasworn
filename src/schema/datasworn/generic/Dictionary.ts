@@ -3,8 +3,7 @@ import {
 	type ObjectOptions,
 	type TRecord,
 	type TSchema,
-	type TString,
-	type Static
+	type TString
 } from '@sinclair/typebox'
 import * as Id from '../common/Id.js'
 

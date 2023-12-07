@@ -23,6 +23,7 @@ oracles:
       trap:
         name: Event
         canonical_name: 'Trap: Event'
+        oracle_type: table_simple
         suggestions:
           oracles:
             - delve/oracles/trap/component
@@ -136,6 +137,7 @@ oracles:
       component:
         name: Component
         canonical_name: 'Trap: Component'
+        oracle_type: table_simple
         suggestions:
           oracles:
             - delve/oracles/trap/event

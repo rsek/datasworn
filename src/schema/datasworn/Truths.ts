@@ -2,10 +2,15 @@ import { Type, type Static } from '@sinclair/typebox'
 import { Id, Localize, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as Oracles from './Oracles.js'
+import * as TableRow from './oracles/TableRow.js'
 
-export const TruthOptionTableRow = Type.Omit(Oracles.OracleTableRow, ['id'], {
-	$id: 'TruthOptionTableRow'
-})
+export const TruthOptionTableRow = Type.Omit(
+	TableRow.OracleTableRowSimple,
+	['id'],
+	{
+		$id: 'TruthOptionTableRow'
+	}
+)
 export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
 
 export const TruthOption = Generic.IdentifiedNode(

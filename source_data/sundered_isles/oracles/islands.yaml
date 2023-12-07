@@ -13,6 +13,7 @@ oracles:
     contents:
       coastline_aspects:
         name: Coastline Aspects
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 90
@@ -98,6 +99,7 @@ oracles:
       offshore_observations:
         source: *Source
         name: Offshore Observations
+        oracle_type: table_simple
         table:
           - min: 1
             max: 2
@@ -231,6 +233,7 @@ oracles:
       cursed_offshore_observations:
         source: *Source
         name: Cursed Offshore Observations
+        oracle_type: table_simple
         table:
           - min: 1
             max: 3
@@ -356,158 +359,138 @@ oracles:
       landscape:
         source: *Source
         name: Island Landscape
+        oracle_type: tables
         contents:
           size:
             source: *Source
             name: Size
-            rendering:
-              style: standalone
-              columns:
-                roll:
-                  label: Roll
-                  content_type: roll
-                result:
-                  label: Result
-                  content_type: result
-                time:
-                  content_type: summary
-                  label: Time to Walk the Island Circumference
+            oracle_type: table_details
+            # rendering:
+            #   style: standalone
+            #   columns:
+            #     roll:
+            #       label: Roll
+            #       content_type: roll
+            #     result:
+            #       label: Result
+            #       content_type: result
+            #     time:
+            #       content_type: summary
+            #       label: Time to Walk the Island Circumference
+            column_labels:
+              roll: Roll
+              result: Result
+              detail: Time to Walk the Island Circumference
             table:
               - min: 1
                 max: 20
                 result: Small
-                summary: Hour or two
+                detail: Hour or two
               - min: 21
                 max: 50
                 result: Medium
-                summary: Several hours
+                detail: Several hours
               - min: 51
                 max: 90
                 result: Large
-                summary: Days
+                detail: Days
               - min: 91
                 max: 100
                 result: Vast
-                summary: Weeks
+                detail: Weeks
           terrain:
             source: *Source
             name: Terrain
-            rendering:
-              style: standalone
-              columns:
-                roll:
-                  label: Roll
-                  content_type: roll
-                result:
-                  label: Result
-                  content_type: result
-                detail:
-                  label: Detail
-                  content_type: summary
+            oracle_type: table_details
+            column_labels:
+              roll: Roll
+              result: Result
+              detail: Detail
             table:
               - min: 1
                 max: 10
                 result: Sodden
-                summary: Low-lying wetlands
+                detail: Low-lying wetlands
               - min: 11
                 max: 20
                 result: Flat
-                summary: Expansive plains
+                detail: Expansive plains
               - min: 21
                 max: 30
                 result: Rolling
-                summary: Hills or dunes
+                detail: Hills or dunes
               - min: 31
                 max: 40
                 result: Elevated
-                summary: Sheer cliffs rising to a mesa or plateau
+                detail: Sheer cliffs rising to a mesa or plateau
               - min: 41
                 max: 50
                 result: Sloped
-                summary: Terrain rising gradually to a prominent ridge or peak
+                detail: Terrain rising gradually to a prominent ridge or peak
               - min: 51
                 max: 70
                 result: Rugged
-                summary: Varied terrain of craggy hills and dramatic rock formations
+                detail: Varied terrain of craggy hills and dramatic rock formations
               - min: 71
                 max: 90
                 result: Mountainous
-                summary: Imposing heights and deep valleys
+                detail: Imposing heights and deep valleys
               - min: 91
                 max: 100
                 result: Volcanic
-                summary: Active volcanoes and lava fields
+                detail: Active volcanoes and lava fields
         collections:
           vitality:
             source: *Source
             name: Vitality
-            rendering:
-              style: multi_table
-              columns:
-                myriads:
-                  table_key: myriads
-                  label: Myriads
-                  content_type: roll
-                margins:
-                  table_key: margins
-                  label: Margins
-                  content_type: roll
-                reaches:
-                  table_key: reaches
-                  label: Reaches
-                  content_type: roll
-                result:
-                  table_key: myriads
-                  content_type: result
-                  label: Result
-                detail:
-                  table_key: myriads
-                  content_type: summary
-                  label: Detail
+            oracle_type: table_shared_details
+            column_labels:
+              result: Result
+              detail: Detail
             contents:
               myriads:
-                source: *Source
-                name: Myriads
-                summary: Central Seas
-                rendering:
-                  style: column
+                # source: *Source
+                <<: &Myriads
+                  name: Myriads
+                  summary: Central Seas
+                oracle_type: column_details
                 table:
                   - min: 1
                     max: 15
                     <<: &Vitality.0
                       result: Devastated
-                      summary: Ravaged by natural forces or razed by despoilers
+                      detail: Ravaged by natural forces or razed by despoilers
                   - min: 16
                     max: 30
                     <<: &Vitality.1
                       result: Dying
-                      summary: Withered woodlands, blighted scrub, or sickly marshes
+                      detail: Withered woodlands, blighted scrub, or sickly marshes
                   - min: 31
                     max: 40
                     <<: &Vitality.2
                       result: Desolate
-                      summary: Arid wastes
+                      detail: Arid wastes
                   - min: 41
                     max: 50
                     <<: &Vitality.3
                       result: Sparse
-                      summary: Thin woodlands, bleak scrub, or stagnant marshes
+                      detail: Thin woodlands, bleak scrub, or stagnant marshes
                   - min: 51
                     max: 90
                     <<: &Vitality.4
                       result: Lush
-                      summary: Verdant woodlands, dense jungles, or thriving swamps
+                      detail: Verdant woodlands, dense jungles, or thriving swamps
                   - min: 91
                     max: 100
                     <<: &Vitality.5
                       result: Primeval
-                      summary: Ancient jungles or impenetrable swamps
+                      detail: Ancient jungles or impenetrable swamps
               margins:
-                source: *Source
-                name: Margins
-                summary: Outer Seas
-                rendering:
-                  style: column
+                # source: *Source
+                <<: &Margins
+                  name: Margins
+                  summary: Outer Seas
+                oracle_type: column_details
                 table:
                   - min: 1
                     max: 10
@@ -528,11 +511,11 @@ oracles:
                     max: 100
                     <<: *Vitality.5
               reaches:
-                source: *Source
-                name: Reaches
-                summary: Remote Seas
-                rendering:
-                  style: column
+                # source: *Source
+                <<: &Reaches
+                  name: Reaches
+                  summary: Remote Seas
+                oracle_type: column_details
                 table:
                   - min: 1
                     max: 5
@@ -555,32 +538,14 @@ oracles:
       visible_habitation:
         source: *Source
         name: Visible Habitation
-        rendering:
-          style: multi_table
-          columns:
-            myriads:
-              table_key: myriads
-              label: Myriads
-              content_type: roll
-            margins:
-              table_key: margins
-              label: Margins
-              content_type: roll
-            reaches:
-              table_key: reaches
-              label: Reaches
-              content_type: roll
-            result:
-              table_key: myriads
-              content_type: result
-              label: Result
+        oracle_type: table_shared_result
+        column_labels:
+          result: Result
         contents:
           myriads:
-            source: *Source
-            name: Myriads
-            summary: Central Seas
-            rendering:
-              style: column
+            <<: *Myriads
+            # source: *Source
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 35
@@ -607,11 +572,9 @@ oracles:
                 <<: &VisibleHabitation.5
                   result: Mutliple visible communities or extensive cultivation
           margins:
-            source: *Source
-            name: Margins
-            summary: Outer Seas
-            rendering:
-              style: column
+            # source: *Source
+            <<: *Margins
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 50
@@ -632,11 +595,9 @@ oracles:
                 max: 100
                 <<: *VisibleHabitation.5
           reaches:
-            source: *Source
-            name: Reaches
-            summary: Remote Seas
-            rendering:
-              style: column
+            # source: *Source
+            <<: *Reaches
+            oracle_type: column_simple
             table:
               - min: 1
                 max: 65

@@ -8,11 +8,9 @@ import {
 	type TSchema
 } from '@sinclair/typebox'
 import { Members } from '../../../scripts/json-typedef/symbol.js'
-import type * as Generic from '../Generic.js'
 import { type TMoveEnhancement } from '../Moves.js'
 import * as Utils from '../Utils.js'
 import { type TAssetEnhancement } from '../assets/Enhancement.js'
-import type * as Id from './Id.js'
 import * as Base from './Inputs.js'
 import * as Metadata from './Metadata.js'
 import { RollableValue } from './RollableValues.js'

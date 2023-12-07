@@ -18,28 +18,12 @@ oracles:
         source: &CollectionSource
           <<: *Source
           page: 328
-        rendering:
-          style: multi_table
-          columns:
-            terminus:
-              content_type: roll
-              table_key: terminus
-              label: Terminus
-            outlands:
-              content_type: roll
-              table_key: outlands
-              label: Outlands
-            expanse:
-              content_type: roll
-              table_key: expanse
-              label: Expanse
-            mission:
-              content_type: result
-              table_key: terminus
-              label: Mission
+        oracle_type: table_shared_result
         # content:
         #   part_of_speech: [fragment]
         #   tags: [objective]
+        column_labels:
+          result: Mission
         summary: |-
           Use the Starship Mission table when prompted by another oracle, or to flesh out the nature of a ship or fleet which has a flexible or uncertain role. You can also roll to generate the focus of a spaceborne quest.
         # usage:
@@ -48,10 +32,14 @@ oracles:
         #       region: null
         contents:
           terminus:
-            name: Terminus
-            source: *CollectionSource
-            rendering: &display:Mission
-              style: column
+            <<: &OracleTable.Terminus
+              name: Terminus
+              tags:
+                starforged:
+                  region: terminus
+            # source: *CollectionSource
+            oracle_type: column_simple
+            # rendering: &display:Mission
             # usage:
             #   requires:
             #     attributes:
@@ -206,9 +194,14 @@ oracles:
                   - number_of_rolls: 2
                     auto: true
           outlands:
-            name: Outlands
-            source: *CollectionSource
-            rendering: *display:Mission
+            <<: &OracleTable.Outlands
+              name: Outlands
+              tags:
+                starforged:
+                  region: outlands
+            oracle_type: column_simple
+            # source: *CollectionSource
+            # rendering: *display:Mission
             # usage:
             #   requires:
             #     attributes:
@@ -308,9 +301,14 @@ oracles:
               - *Mission.31
 
           expanse:
-            name: Expanse
-            source: *CollectionSource
-            rendering: *display:Mission
+            <<: &OracleTable.Expanse
+              name: Expanse
+              tags:
+                starforged:
+                  region: expanse
+            # source: *CollectionSource
+            oracle_type: column_simple
+            # rendering: *display:Mission
             # usage:
             #   requires:
             #     attributes:
@@ -419,134 +417,126 @@ oracles:
         #   initial: true
         # content:
         #   part_of_speech: [fragment]
-        rendering:
-          style: standalone
-          columns:
-            roll:
-              label: Roll
-              content_type: roll
-            class:
-              label: Class
-              content_type: result
-            typical_role:
-              label: Typical Role
-              content_type: summary
+        oracle_type: table_details
+        column_labels:
+          roll: Roll
+          result: Class
+          detail: Typical Role
         table:
           - min: 1
             max: 2
             result: Carrier
-            summary: Launches fighters
+            detail: Launches fighters
             # set_attributes: {starship_type: [carrier]}
-
             i18n: &i18n.result.common_noun
               result:
                 part_of_speech: common_noun
           - min: 3
             max: 6
             result: Corvette
-            summary: Light attack ship
+            detail: Light attack ship
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [corvette]}
           - min: 7
             max: 11
             result: Courier
-            summary: Fast transport
+            detail: Fast transport
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [courier]}
           - min: 12
             max: 14
             result: Cruiser
-            summary: Medium attack ship
+            detail: Medium attack ship
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [cruiser]}
           - min: 15
             max: 16
             result: Dreadnought
-            summary: Heavy attack ship
+            detail: Heavy attack ship
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [dreadnought]}
           - min: 17
             max: 19
             result: Escape pod
-            summary: Survival craft
+            detail: Survival craft
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [escape]}
           - min: 20
             max: 22
             result: Foundry
-            summary: Mobile construction platform
+            detail: Mobile construction platform
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [foundry]}
           - min: 23
             max: 27
             result: Harvester
-            summary: Fuel or energy excavator
+            detail: Fuel or energy excavator
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [harvester]}
           - min: 28
             max: 33
             result: Hauler
-            summary: Heavy transport
+            detail: Heavy transport
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hauler]}
           - min: 34
             max: 36
             result: Hunter
-            summary: Stealthy attack ship
+            detail: Stealthy attack ship
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hunter]}
           - min: 37
             max: 38
             result: Ironhome
-            summary: Habitat
+            detail: Habitat
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [ironhome]}
           - min: 39
             max: 42
             result: Mender
-            summary: Utility or repair
+            detail: Utility or repair
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [mender]}
           - min: 43
             max: 47
             result: Outbounder
-            summary: Remote survey or research
+            detail: Remote survey or research
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [outbounder]}
           - min: 48
             max: 50
             result: Pennant
-            summary: Command ship
+            detail: Command ship
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [pennant]}
           - min: 51
             max: 56
             result: Prospector
-            summary: Mineral excavator
+            detail: Mineral excavator
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [prospector]}
           - min: 57
             max: 61
             result: Reclaimer
-            summary: Salvage or rescue
+            detail: Salvage or rescue
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [reclaimer]}
           - min: 62
             max: 64
             result: Shuttle
-            summary: Short-range transport
+            detail: Short-range transport
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [shuttle]}
           - min: 65
             max: 67
             result: Snub fighter
-            summary: Small attack craft
+            detail: Small attack craft
             i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [snub_fighter]}
           - min: 68
             max: 82
             result: Multipurpose
-            summary: '[Starship Mission](id:starforged/oracles/starships/mission)'
+            detail: '[Starship Mission](id:starforged/oracles/starships/mission)'
             oracle_rolls:
               - oracle: starforged/oracles/starships/mission
               # set_attributes: {starship_type: [multipurpose]}]
@@ -572,6 +562,7 @@ oracles:
           # TODO: format the above as a 2nd roll of this table + a game object hint
       fleet:
         name: Fleet
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 326
@@ -613,6 +604,7 @@ oracles:
               - oracle: starforged/oracles/starships/mission
       initial_contact:
         name: Initial Contact
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 327
@@ -661,6 +653,7 @@ oracles:
             # *inherit:Derelict.Starship
       first_look:
         name: First Look
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 327
@@ -746,6 +739,7 @@ oracles:
                 auto: true
       starship_name:
         name: Starship Name
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 329

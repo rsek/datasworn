@@ -1,13 +1,8 @@
-import { type ObjectOptions, Type, type Static } from '@sinclair/typebox'
+import { Type, type Static } from '@sinclair/typebox'
 import { type Simplify } from 'type-fest'
 import * as Generic from '../Generic.js'
 import * as Utils from '../Utils.js'
 import { Fields, Id } from '../common/index.js'
-import {
-	SelectEnhancementField,
-	SelectValueField,
-	TextField
-} from '../common/Fields.js'
 
 const AssetBooleanFieldMixin = Type.Object({
 	is_impact: Type.Boolean({
@@ -273,13 +268,13 @@ export const AssetAbilityOptionField = Utils.DiscriminatedUnion(
 export type AssetAbilityOptionField = Static<typeof AssetAbilityOptionField>
 
 export {
-	SelectEnhancementFieldChoice,
-	SelectEnhancementFieldChoiceGroup,
-	SelectValueFieldChoice,
 	ClockField,
 	ConditionMeterField,
 	CounterField,
 	SelectEnhancementField,
+	SelectEnhancementFieldChoice,
+	SelectEnhancementFieldChoiceGroup,
 	SelectValueField,
+	SelectValueFieldChoice,
 	TextField
 } from '../common/Fields.js'

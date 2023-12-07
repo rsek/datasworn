@@ -25,32 +25,16 @@ oracles:
         # usage:
         #   initial: true
         #   requires: *attr:Location.Any
-        rendering:
-          style: multi_table
-          columns:
-            planetside:
-              content_type: roll
-              table_key: planetside
-              label: Planetside
-            orbital:
-              content_type: roll
-              table_key: orbital
-              label: Orbital
-            deep_space:
-              content_type: roll
-              table_key: deep_space
-              label: Deep Space
-            result:
-              content_type: result
-              table_key: planetside
-              label: Result
+        oracle_type: table_shared_result
         contents:
           planetside:
             name: Planetside
-            source: *CollectionSource
+            tags:
+              starforged:
+                location: planetside
+            # source: *CollectionSource
             icon: icon/oracles/location/planetside.svg
-            rendering: &derelictTypeDisplay
-              style: column
+            oracle_type: column_simple
             # usage:
             #   requires: *attr:Location.Planetside
             table:
@@ -70,9 +54,12 @@ oracles:
                 # *attr:DerelictType.Settlement
           orbital:
             name: Orbital
-            source: *CollectionSource
+            tags:
+              starforged:
+                location: orbital
+            # source: *CollectionSource
             icon: icon/oracles/location/orbital.svg
-            rendering: *derelictTypeDisplay
+            oracle_type: column_simple
             # usage:
             #   requires: *attr:Location.Orbital
             table:
@@ -90,10 +77,12 @@ oracles:
                     - starforged/oracles/derelicts/zones/settlement
           deep_space:
             name: Deep Space
-            source: *CollectionSource
+            tags:
+              starforged:
+                location: deep_space
+            # source: *CollectionSource
             icon: icon/oracles/location/deep_space.svg
-            rendering:
-              style: column
+            oracle_type: column_simple
             # usage:
             #   requires: *attr:Location.DeepSpace
             table:
@@ -115,33 +104,13 @@ oracles:
           <<: *Source
           page: 351
         summary: &Zones.Summary If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.
-        rendering:
-          style: multi_table
-          columns:
-            starship:
-              content_type: roll
-              table_key: starship
-              label: Starship
-            settlement:
-              content_type: roll
-              table_key: settlement
-              label: Settlement
-            result:
-              content_type: result
-              table_key: starship
-              label: Result
-        # usage:
-        #   repeatable: true
-        #   requires:
-        #     attributes:
-        #       derelict_type: null
+        oracle_type: table_shared_result
         contents:
           starship:
             name: Starship
-            source: *CollectionSource
+            # source: *CollectionSource
             summary: *Zones.Summary
-            rendering:
-              style: column
+            oracle_type: column_simple
             # usage:
             #   requires:
             #     attributes:
@@ -190,10 +159,9 @@ oracles:
                 # game_objects: *obj:DerelictZone.Research
           settlement:
             name: Settlement
-            source: *CollectionSource
+            # source: *CollectionSource
             summary: *Zones.Summary
-            rendering:
-              style: column
+            oracle_type: column_simple
             # usage:
             #   requires:
             #     attributes:
@@ -231,6 +199,7 @@ oracles:
     contents:
       location:
         name: Location
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 348
@@ -258,6 +227,7 @@ oracles:
                 - starforged/oracles/derelicts/type/deep_space
       condition:
         name: Condition
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 348
@@ -286,6 +256,7 @@ oracles:
             result: Impending destruction
       outer_first_look:
         name: Outer First Look
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 349
@@ -328,6 +299,7 @@ oracles:
             result: Time or reality distortions
       inner_first_look:
         name: Inner First Look
+        oracle_type: table_details
         summary: Use these First Look tables for your initial survey of the derelict's interior.
         source:
           <<: *Source

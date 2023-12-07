@@ -21,31 +21,19 @@ oracles:
         #   requires:
         #     attributes:
         #       region: null
-        rendering:
-          style: multi_table
-          columns:
-            terminus:
-              content_type: roll
-              table_key: terminus
-              label: Terminus
-            outlands:
-              content_type: roll
-              table_key: outlands
-              label: Outlands
-            expanse:
-              content_type: roll
-              table_key: expanse
-              label: Expanse
-            number:
-              content_type: result
-              table_key: terminus
-              label: Number
+        oracle_type: table_shared_result
+        column_labels:
+          result: Number
         contents:
           terminus:
-            name: Terminus
-            source: *CollectionSource
-            rendering: &Pop.rendering
-              style: column
+            <<: &OracleTable.Terminus
+              name: Terminus
+              tags:
+                starforged:
+                  region: terminus
+            # source: *CollectionSource
+            oracle_type: column_simple
+            # rendering: &Pop.rendering
             # usage:
             #   requires:
             #     attributes:
@@ -77,9 +65,14 @@ oracles:
                 result: Tens of thousands
                 # set_attributes: {population: [tens_of_thousands]}
           outlands:
-            name: Outlands
-            source: *CollectionSource
-            rendering: *Pop.rendering
+            oracle_type: column_simple
+            <<: &OracleTable.Outlands
+              name: Outlands
+              tags:
+                starforged:
+                  region: outlands
+            # source: *CollectionSource
+            # rendering: *Pop.rendering
             # usage:
             #   requires:
             #     attributes:
@@ -101,9 +94,14 @@ oracles:
                 max: 100
                 <<: *Pop.4
           expanse:
-            name: Expanse
-            source: *CollectionSource
-            rendering: *Pop.rendering
+            oracle_type: column_simple
+            <<: &OracleTable.Expanse
+              name: Expanse
+              tags:
+                starforged:
+                  region: expanse
+            # source: *CollectionSource
+            # rendering: *Pop.rendering
             # usage:
             #   requires:
             #     attributes:
@@ -127,6 +125,7 @@ oracles:
     contents:
       location:
         name: Location
+        oracle_type: table_simple
         # _templateOracleTable: *template.info:Generic.Location
         source:
           <<: *Source
@@ -148,12 +147,14 @@ oracles:
             icon: icon/oracles/location/deep_space.svg
       first_look:
         name: First Look
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 323
         # usage:
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         #   initial: true
         # content:
         #   part_of_speech: [fragment]
@@ -231,6 +232,7 @@ oracles:
 
       initial_contact:
         name: Initial Contact
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 323
@@ -287,6 +289,7 @@ oracles:
 
       authority:
         name: Authority
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 323
@@ -333,6 +336,7 @@ oracles:
             # set_attributes: {authority: [oppressive]}
       projects:
         name: Settlement Projects
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 324
@@ -340,7 +344,8 @@ oracles:
         #   tags: [abstract noun]
         # usage:
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         summary: |-
           Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.
         table:
@@ -486,12 +491,14 @@ oracles:
                   auto: true
       trouble:
         name: Settlement Trouble
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 324
         # usage:
         recommended_rolls:
-          max:  2
+          min: 1
+          max: 2
         # content:
         #   part_of_speech: [fragment]
         #   tags: [peril, event, present]
@@ -621,6 +628,7 @@ oracles:
             <<: *ActionTheme
       name:
         name: Settlement Name
+        oracle_type: table_simple
         source:
           <<: *Source
           page: 325

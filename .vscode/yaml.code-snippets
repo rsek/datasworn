@@ -135,11 +135,11 @@
 		],
 		"description": "Formats table rows from Okular as YAML data"
 	},
-	"Format table rows (summary)": {
+	"Format table rows (details)": {
 		"scope": "yaml",
-		"prefix": "srows",
+		"prefix": "drows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+)\\s+?(?<summary>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  result: $3\n  summary: $4\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+)\\s+?(?<detail>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  result: $3\n  detail: $4\n/g}"
 		],
 		"description": "Formats table rows from Okular as YAML data"
 	},
@@ -180,81 +180,63 @@
 			"    ${0}"
 		]
 	},
-	"OracleTable": {
+  "OracleCollection": {
 		"scope": "yaml",
-		"prefix": "tbl",
+		"prefix": "oc",
 		"body": [
 			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"  name: ${10:}",
+      "  oracle_type: ${12|tables,table_shared_roll,table_shared_result,table_shared_details|}"
+      "  source:",
+      "    <<: *Source"
+			"  contents:",
+			"    ${0}"
+		]
+  },
+	"OracleRollable": {
+		"scope": "yaml",
+		"prefix": "or",
+		"body": [
+			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
+			"  name: ${10:}",
+      "  oracle_type: ${12|table_simple,table_details,column_simple,column_details|}"
       "  source:",
       "    <<: *Source"
 			"  table:",
 			"    ${0}"
 		]
 	},
-	"OracleTable column": {
+	"3 column table": {
 		"scope": "yaml",
-		"prefix": "tblcol",
-		"body": [
-			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
-			"  label: ${10:}",
-			"  content_type: ${12|roll,result,summary,description|}",
-			"${0}"
-		]
-	},
-	"MultiTable collection (3 roll columns)": {
-		"scope": "yaml",
-		"prefix": "mt3",
+		"prefix": "3col",
 		"body": [
 			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"  name: ${10:}",
-      "  source:",
+      "  source: &CollectionSource",
       "    <<: *Source",
-			"  rendering:",
-			"    style: multi_table",
-			"    columns:",
-			"      ${13}:",
-      "        label: ${12}",
-			"        table_key: ${13}",
-			"        content_type: roll",
-			"      ${15}:",
-      "        label: ${14}",
-			"        table_key: ${15}",
-			"        content_type: roll",
-			"      ${17}:",
-      "        label: ${16}",
-			"        table_key: ${17}",
-			"        content_type: roll",
-			"      result:",
-			"        table_key: ${13}",
-			"        content_type: result",
-			"        label: Result",
+      "  oracle_type: ${12|table_shared_result,table_shared_details,table_shared_roll|}",
 			"  contents:",
-			"    ${13:${12/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
-			"      name: ${12}",
+			"    ${33:${32/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
+			"      name: ${32}",
       "      source:",
-      "        <<: *Source",
-			"      rendering:",
-			"        style: column",
+      "        <<: *CollectionSource",
+      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
 			"      table:",
-			"        ${24}",
-			"    ${15:${14/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
-			"      name: ${14}",
+      "",
+			"    ${35:${34/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
+			"      name: ${34}",
       "      source:",
-      "        <<: *Source",
-			"      rendering:",
-			"        style: column",
+      "        <<: *CollectionSource",
+      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
 			"      table:",
-			"        ${23}",
-			"    ${17:${16/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
-			"      name: ${16}",
+      "",
+			"    ${37:${37/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
+			"      name: ${37}",
       "      source:",
-      "        <<: *Source",
-			"      rendering:",
-			"        style: column",
+      "        <<: *CollectionSource",
+      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
 			"      table:",
-			"        ${22}",
-			"${0}"
+      "${0}"
 		]
 	},
 	"SI Regional table collection": {
@@ -263,55 +245,27 @@
 		"body": [
 			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"  name: ${10:}",
-      "  source:",
+      "  source: &CollectionSource",
       "    <<: *Source",
-			"  rendering:",
-			"    style: multi_table",
-			"    columns:",
-			"      myriads:",
-			"        label: Myriads",
-      "        table_key: myriads",
-			"        content_type: roll",
-			"      margins:",
-			"        label: Margins",
-      "        table_key: margins",
-			"        content_type: roll",
-			"      reaches:",
-			"        label: Reaches",
-      "        table_key: reaches",
-			"        content_type: roll",
-			"      result:",
-			"        table_key: myriads",
-			"        content_type: result",
-			"        label: Result",
+      "  oracle_type: ${12|table_shared_result,table_shared_details|}",
 			"  contents:",
 			"    myriads:",
 			"      name: Myriads",
-			"      source:",
-      "        <<: *Source"
       "      summary: Central Seas",
-			"      rendering:",
-			"        style: column",
+      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
 			"      table:",
-			"        ${24}",
+			"",
 			"    margins:",
 			"      name: Margins",
-			"      source:",
-      "        <<: *Source"
       "      summary: Outer Seas",
-			"      rendering:",
-			"        style: column",
+      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
 			"      table:",
-			"        ${23}",
+			"",
 			"    reaches:",
 			"      name: Reaches",
-			"      source:",
-      "        <<: *Source"
       "      summary: Remote Seas",
-			"      rendering:",
-			"        style: column",
+      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
 			"      table:",
-			"        ${22}",
 			"${0}"
 		]
 	},
