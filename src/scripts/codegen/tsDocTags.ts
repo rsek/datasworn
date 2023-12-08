@@ -38,7 +38,7 @@
 // @typeParam
 
 import { Type } from '@sinclair/typebox'
-import { KeywordDefinition } from 'ajv'
+import { type KeywordDefinition } from 'ajv'
 
 // @virtual
 const tags: Record<string, Omit<KeywordDefinition, 'keyword'>> = {

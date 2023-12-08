@@ -1,32 +1,27 @@
+import { TypeGuard } from '@sinclair/typebox'
 import fastGlob from 'fast-glob'
 import fs from 'fs-extra'
+import { type Draft07 } from 'json-schema-library'
+import { forEach } from 'lodash-es'
 import path from 'path'
+import { RulesExpansion } from '../../schema/datasworn/Rules.js'
 import { type DataPackageConfig } from '../../schema/tools/build/index.js'
 import type * as Datasworn from '../../types/Datasworn.js'
-import type * as DataswornSource from '../../types/DataswornSource.js'
 import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
 import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
-import { loadRulesetFile } from './readRulesetFile.js'
 import { buildRulesetData } from './buildRulesetData.js'
-import { mergeRulesetData } from './mergeRulesetParts.js'
 import { cleanRuleset } from './cleanRuleset.js'
-import { type Draft07 } from 'json-schema-library'
+import { mergeRulesetData } from './mergeRulesetParts.js'
+import { loadRulesetFile } from './readRulesetFile.js'
 import { writeRuleset } from './writeRuleset.js'
-import { SourceInfo } from '../../schema/datasworn/common/Metadata.js'
-import { Type, TypeGuard } from '@sinclair/typebox'
-import { RulesPackage, Ruleset } from '../../schema/datasworn/RulesPackages.js'
-import { PickByType } from '../../schema/datasworn/utils/typebox.js'
-import { forEach } from 'lodash-es'
-import { RulesExpansion } from '../../schema/datasworn/Rules.js'
 
 const metadataKeys: string[] = []
 
 forEach(RulesExpansion.properties, (v, k) => {
 	if (!TypeGuard.TRecord(v)) metadataKeys.push(k)
 })
-
 
 /** Builds all YAML files for a given package configuration */
 export async function buildRuleset(
@@ -130,7 +125,3 @@ export async function buildRuleset(
 
 	Log.info(`✅ Finished writing sourcebook "${id}" to ${formatPath(destDir)}`)
 }
-
-type SourcebookMetadataKeys = (typeof metadataKeys)[number]
-
-type SourcebookMetadata = Pick<Datasworn.RulesPackage, SourcebookMetadataKeys>

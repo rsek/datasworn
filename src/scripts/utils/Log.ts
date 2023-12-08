@@ -1,6 +1,5 @@
-import Winston from 'winston'
 import { type TransformableInfo } from 'logform'
-import { clone, cloneDeep, merge } from 'lodash-es'
+import Winston from 'winston'
 import { PKG_NAME } from '../const.js'
 
 const { combine, timestamp, label, printf, colorize } = Winston.format
