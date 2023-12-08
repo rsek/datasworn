@@ -1,8 +1,13 @@
 import path from 'path'
+import fs from 'fs-extra'
+
+const toolsPkg = fs.readJSONSync(path.join(process.cwd(), 'package.json')) as {
+	version: string
+}
 
 export const PKG_NAME = 'Datasworn'
 
-export const VERSION = '0.0.5'
+export const VERSION = toolsPkg.version
 
 export const PKG_SCOPE_OFFICIAL = '@datasworn'
 export const PKG_SCOPE_COMMUNITY = '@datasworn-community-content'

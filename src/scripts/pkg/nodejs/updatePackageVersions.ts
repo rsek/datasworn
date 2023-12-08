@@ -18,31 +18,32 @@ export async function updatePackageVersions(
   const pattern =
     /^(?<headerText># .+? v)(?<version>(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)/
 
-  for (const filePath of [...pkgs, path.join(process.cwd(), 'package.json')])
-    toWrite.push(
-      fs.readJSON(filePath).then(async (json) => {
-        const oldVersion = json?.version as string
+  for (const filePath of pkgs)
+		toWrite.push(
+			fs.readJSON(filePath).then(async (json) => {
+				const oldVersion = json?.version as string
 
+				if (oldVersion !== newVersion) {
+					Log.info(
+						`Updating from v${oldVersion} to v${newVersion} in ./${path.relative(
+							process.cwd(),
+							filePath
+						)}`
+					)
+					json.version = newVersion
+				}
 
+				const newDependencies = mapValues(
+					json.dependencies as Record<string, string>,
+					(value, key) => (key.startsWith('@datasworn/') ? newVersion : value)
+				)
 
-        if (oldVersion !== newVersion) {
-          Log.info(
-            `Updating from v${oldVersion} to v${newVersion} in ./${path.relative(
-              process.cwd(),
-              filePath
-            )}`
-          )
-          json.version = newVersion
-        }
+				if (!isEqual(json.dependencies, newDependencies))
+					json.dependencies = newDependencies
 
-        const newDependencies = mapValues(json.dependencies as Record<string, string>, (value, key) => key.startsWith('@datasworn/') ? newVersion : value)
-
-        if (!isEqual(json.dependencies, newDependencies))
-          json.dependencies = newDependencies
-
-        return writeJSON(filePath, json)
-      })
-    )
+				return writeJSON(filePath, json)
+			})
+		)
 
   for (const filePath of readmes) {
     toWrite.push(

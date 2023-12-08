@@ -1,5 +1,5 @@
 {
-	"name": "datasworn-tools",
+	"name": "@datasworn/tools",
 	"version": "0.0.5",
 	"description": "",
 	"type": "module",
@@ -9,13 +9,16 @@
 		"build:schema": "ts-node ./src/scripts/schema/buildSchema.ts",
 		"build:jtd": "ts-node ./src/scripts/json-typedef/index.ts",
 		"build:dts": "ts-node ./src/scripts/codegen/writeTypescriptTypes.ts",
-		"build:tools": "tsc --project tsconfig.json ; tsc-alias -p tsconfig.json ./dist",
 		"build:json": "ts-node ./src/scripts/datasworn/writeDatasworn.ts",
 		"build:pkg": "ts-node ./src/scripts/pkg/nodejs/buildPackages.ts",
 		"build": "ts-node ./src/scripts/pkg/nodejs/updatePackageVersions.ts && npm run build:schema && npm run build:jtd && npm run build:dts && npm run build:json && npm run build:pkg",
 		"pkg:node": "ts-node ./src/scripts/pkg/nodejs/publishPackages.ts"
 	},
-	"files": ["docs", "img", "markdown"],
+	"files": [
+		"docs",
+		"img",
+		"markdown"
+	],
 	"directories": {
 		"doc": "./docs"
 	},
@@ -23,7 +26,11 @@
 		"type": "git",
 		"url": "git+https://github.com/rsek/datasworn.git"
 	},
-	"keywords": ["ironsworn", "starforged", "TTRPG"],
+	"keywords": [
+		"ironsworn",
+		"starforged",
+		"TTRPG"
+	],
 	"author": {
 		"name": "rsek",
 		"email": "r.sekouri@gmail.com",
