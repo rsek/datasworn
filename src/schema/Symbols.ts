@@ -11,5 +11,5 @@ export const Discriminator = Symbol('Discriminator')
 /** Stores references to the member schema in  */
 export const Members = Symbol('Members')
 
-/** A less complex alternate version of the schema. */
+/** A less complex alternate version of the schema for use with code generation tools. */
 export const Simplify = Symbol('Simplify')

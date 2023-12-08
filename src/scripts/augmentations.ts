@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox'
 import { UnionEnum } from '../schema/Utils.js'
-import { type JsonTypeDef } from '../schema/Symbols.js'
+import { type Simplify, type JsonTypeDef } from '../schema/Symbols.js'
 import { type Metadata } from './json-typedef/typedef.js'
 
 export namespace Keywords {
@@ -15,7 +15,8 @@ declare module '@sinclair/typebox' {
 	interface SchemaOptions {
 		releaseStage?: Static<typeof Keywords.releaseStage>
 		deprecated?: Static<typeof Keywords.deprecated>
-
+		/** A less complex alternate version of the schema for use with code generation tools. */
+		[Simplify]?: TSchema
 		[JsonTypeDef]?: {
 			/** JTD schema to override the automatic conversion. Schema metadata will automatically be inherited from the JSON schema. */
 			schema?: TSchema & { [Kind]: `TypeDef:${string}` }
