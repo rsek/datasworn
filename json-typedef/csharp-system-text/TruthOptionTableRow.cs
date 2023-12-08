@@ -29,20 +29,12 @@ namespace Datasworn
         public MarkdownString Result { get; set; }
 
         /// <summary>
-        /// Optional tertiary text content for this row. Generally, this is
-        /// longer than both `result` and `summary`.
-        /// </summary>
-        [JsonPropertyName("description")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MarkdownString? Description { get; set; }
-
-        /// <summary>
         /// Hints that the identified table should be rendered inside this table
         /// row.
         /// </summary>
         [JsonPropertyName("embed_table")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleTableId? EmbedTable { get; set; }
+        public OracleRollableId? EmbedTable { get; set; }
 
         [JsonPropertyName("i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -57,19 +49,11 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("oracle_rolls")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<OracleTableRoll> OracleRolls { get; set; }
+        public IList<OracleRoll> OracleRolls { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
-
-        /// <summary>
-        /// Optional secondary text content for this row. Generally, this is
-        /// longer than `result`.
-        /// </summary>
-        [JsonPropertyName("summary")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MarkdownString? Summary { get; set; }
 
         [JsonPropertyName("template")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

@@ -30,6 +30,9 @@ namespace Datasworn
         [JsonPropertyName("min")]
         public sbyte Min { get; set; }
 
+        /// <summary>
+        /// Is this meter's `value` usable as a stat in an action roll?
+        /// </summary>
         [JsonPropertyName("rollable")]
         public bool Rollable { get; set; }
 

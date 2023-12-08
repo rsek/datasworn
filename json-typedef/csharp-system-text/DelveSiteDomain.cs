@@ -33,7 +33,7 @@ namespace Datasworn
         /// this item, including the author and licensing information.
         /// </summary>
         [JsonPropertyName("source")]
-        public Source Source { get; set; }
+        public SourceInfo Source { get; set; }
 
         [JsonPropertyName("summary")]
         public MarkdownString Summary { get; set; }
@@ -64,7 +64,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("name_oracle")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleTableId? NameOracle { get; set; }
+        public OracleRollableId? NameOracle { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -72,6 +72,6 @@ namespace Datasworn
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
+        public IDictionary<string, IDictionary<string, Tag>> Tags { get; set; }
     }
 }

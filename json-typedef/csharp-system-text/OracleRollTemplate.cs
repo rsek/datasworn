@@ -6,7 +6,7 @@ namespace Datasworn
 {
     /// <summary>
     /// Provides string templates that may be used in place of the static
-    /// row text from `OracleTableRow#result`, `OracleTableRow#summary`, and
+    /// row text from `OracleTableRow#result`, `OracleTableRow#detail`, and
     /// `OracleTableRow#description`.
     /// 
     ///   These strings are formatted in Markdown, but use a special syntax
@@ -26,18 +26,18 @@ namespace Datasworn
 
         /// <summary>
         /// A string template that may be used in place of
+        /// OracleTableRow#detail.
+        /// </summary>
+        [JsonPropertyName("detail")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public TemplateString? Detail { get; set; }
+
+        /// <summary>
+        /// A string template that may be used in place of
         /// OracleTableRow#result.
         /// </summary>
         [JsonPropertyName("result")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public TemplateString? Result { get; set; }
-
-        /// <summary>
-        /// A string template that may be used in place of
-        /// OracleTableRow#summary.
-        /// </summary>
-        [JsonPropertyName("summary")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public TemplateString? Summary { get; set; }
     }
 }

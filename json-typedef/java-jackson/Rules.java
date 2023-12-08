@@ -24,6 +24,9 @@ public class Rules {
     @JsonProperty("stats")
     private Map<String, StatRule> stats;
 
+    @JsonProperty("tags")
+    private Map<String, TagRule> tags;
+
     public Rules() {
     }
 
@@ -97,5 +100,19 @@ public class Rules {
      */
     public void setStats(Map<String, StatRule> stats) {
         this.stats = stats;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Map<String, TagRule> getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Map<String, TagRule> tags) {
+        this.tags = tags;
     }
 }

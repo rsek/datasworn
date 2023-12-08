@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A relative URL pointing to a raster image in the WEBP format.
+    /// A relative (local) URL pointing to a raster image in the WEBP format.
     /// </summary>
     [JsonConverter(typeof(WebpImageUrlJsonConverter))]
     public class WebpImageUrl

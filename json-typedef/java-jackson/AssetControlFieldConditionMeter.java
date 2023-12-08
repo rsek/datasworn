@@ -93,6 +93,7 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
 
     /**
      * Getter for rollable.<p>
+     * Is this meter's `value` usable as a stat in an action roll?
      */
     public Boolean getRollable() {
         return rollable;
@@ -100,6 +101,7 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
 
     /**
      * Setter for rollable.<p>
+     * Is this meter's `value` usable as a stat in an action roll?
      */
     public void setRollable(Boolean rollable) {
         this.rollable = rollable;

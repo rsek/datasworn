@@ -43,5 +43,9 @@ namespace Datasworn
         [JsonPropertyName("stats")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public IDictionary<string, StatRule> Stats { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IDictionary<string, TagRule> Tags { get; set; }
     }
 }

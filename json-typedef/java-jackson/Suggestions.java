@@ -27,7 +27,7 @@ public class Suggestions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("oracles")
-    private List<OracleTableId> oracles;
+    private List<OracleRollableId> oracles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("rarities")
@@ -103,14 +103,14 @@ public class Suggestions {
     /**
      * Getter for oracles.<p>
      */
-    public List<OracleTableId> getOracles() {
+    public List<OracleRollableId> getOracles() {
         return oracles;
     }
 
     /**
      * Setter for oracles.<p>
      */
-    public void setOracles(List<OracleTableId> oracles) {
+    public void setOracles(List<OracleRollableId> oracles) {
         this.oracles = oracles;
     }
 

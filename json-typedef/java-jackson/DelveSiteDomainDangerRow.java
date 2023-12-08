@@ -25,12 +25,8 @@ public class DelveSiteDomainDangerRow {
     private MarkdownString result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("description")
-    private MarkdownString description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("embed_table")
-    private OracleTableId embedTable;
+    private OracleRollableId embedTable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("i18n")
@@ -42,15 +38,11 @@ public class DelveSiteDomainDangerRow {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("oracle_rolls")
-    private List<OracleTableRoll> oracleRolls;
+    private List<OracleRoll> oracleRolls;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
     private Suggestions suggestions;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("summary")
-    private MarkdownString summary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("template")
@@ -124,28 +116,10 @@ public class DelveSiteDomainDangerRow {
     }
 
     /**
-     * Getter for description.<p>
-     * Optional tertiary text content for this row. Generally, this is longer
-     * than both `result` and `summary`.
-     */
-    public MarkdownString getDescription() {
-        return description;
-    }
-
-    /**
-     * Setter for description.<p>
-     * Optional tertiary text content for this row. Generally, this is longer
-     * than both `result` and `summary`.
-     */
-    public void setDescription(MarkdownString description) {
-        this.description = description;
-    }
-
-    /**
      * Getter for embedTable.<p>
      * Hints that the identified table should be rendered inside this table row.
      */
-    public OracleTableId getEmbedTable() {
+    public OracleRollableId getEmbedTable() {
         return embedTable;
     }
 
@@ -153,7 +127,7 @@ public class DelveSiteDomainDangerRow {
      * Setter for embedTable.<p>
      * Hints that the identified table should be rendered inside this table row.
      */
-    public void setEmbedTable(OracleTableId embedTable) {
+    public void setEmbedTable(OracleRollableId embedTable) {
         this.embedTable = embedTable;
     }
 
@@ -189,7 +163,7 @@ public class DelveSiteDomainDangerRow {
      * Getter for oracleRolls.<p>
      * Further oracle rolls prompted by this table row.
      */
-    public List<OracleTableRoll> getOracleRolls() {
+    public List<OracleRoll> getOracleRolls() {
         return oracleRolls;
     }
 
@@ -197,7 +171,7 @@ public class DelveSiteDomainDangerRow {
      * Setter for oracleRolls.<p>
      * Further oracle rolls prompted by this table row.
      */
-    public void setOracleRolls(List<OracleTableRoll> oracleRolls) {
+    public void setOracleRolls(List<OracleRoll> oracleRolls) {
         this.oracleRolls = oracleRolls;
     }
 
@@ -213,24 +187,6 @@ public class DelveSiteDomainDangerRow {
      */
     public void setSuggestions(Suggestions suggestions) {
         this.suggestions = suggestions;
-    }
-
-    /**
-     * Getter for summary.<p>
-     * Optional secondary text content for this row. Generally, this is longer
-     * than `result`.
-     */
-    public MarkdownString getSummary() {
-        return summary;
-    }
-
-    /**
-     * Setter for summary.<p>
-     * Optional secondary text content for this row. Generally, this is longer
-     * than `result`.
-     */
-    public void setSummary(MarkdownString summary) {
-        this.summary = summary;
     }
 
     /**

@@ -14,13 +14,13 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public I18nHint? Description { get; set; }
 
+        [JsonPropertyName("detail")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public I18nHint? Detail { get; set; }
+
         [JsonPropertyName("result")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public I18nHint? Result { get; set; }
-
-        [JsonPropertyName("summary")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHint? Summary { get; set; }
 
         [JsonPropertyName("template")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

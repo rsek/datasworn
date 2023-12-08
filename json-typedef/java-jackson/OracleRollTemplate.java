@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * Provides string templates that may be used in place of the static
- * row text from `OracleTableRow#result`, `OracleTableRow#summary`, and
+ * row text from `OracleTableRow#result`, `OracleTableRow#detail`, and
  * `OracleTableRow#description`.
  * 
  *   These strings are formatted in Markdown, but use a special syntax for their
@@ -23,12 +23,12 @@ public class OracleRollTemplate {
     private TemplateString description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("result")
-    private TemplateString result;
+    @JsonProperty("detail")
+    private TemplateString detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("summary")
-    private TemplateString summary;
+    @JsonProperty("result")
+    private TemplateString result;
 
     public OracleRollTemplate() {
     }
@@ -52,6 +52,22 @@ public class OracleRollTemplate {
     }
 
     /**
+     * Getter for detail.<p>
+     * A string template that may be used in place of OracleTableRow#detail.
+     */
+    public TemplateString getDetail() {
+        return detail;
+    }
+
+    /**
+     * Setter for detail.<p>
+     * A string template that may be used in place of OracleTableRow#detail.
+     */
+    public void setDetail(TemplateString detail) {
+        this.detail = detail;
+    }
+
+    /**
      * Getter for result.<p>
      * A string template that may be used in place of OracleTableRow#result.
      */
@@ -65,21 +81,5 @@ public class OracleRollTemplate {
      */
     public void setResult(TemplateString result) {
         this.result = result;
-    }
-
-    /**
-     * Getter for summary.<p>
-     * A string template that may be used in place of OracleTableRow#summary.
-     */
-    public TemplateString getSummary() {
-        return summary;
-    }
-
-    /**
-     * Setter for summary.<p>
-     * A string template that may be used in place of OracleTableRow#summary.
-     */
-    public void setSummary(TemplateString summary) {
-        this.summary = summary;
     }
 }

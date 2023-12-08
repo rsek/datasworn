@@ -5,6 +5,8 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,8 +33,20 @@ public class RulesPackageExpansion extends RulesPackage {
     private Map<String, Atlas> atlas;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("authors")
+    private List<AuthorInfo> authors;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("date")
+    private OffsetDateTime date;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("delve_sites")
     private Map<String, DelveSite> delveSites;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("license")
+    private License license;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("moves")
@@ -44,7 +58,7 @@ public class RulesPackageExpansion extends RulesPackage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("oracles")
-    private Map<String, OracleCollection> oracles;
+    private Map<String, OracleTablesCollection> oracles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("rarities")
@@ -63,8 +77,16 @@ public class RulesPackageExpansion extends RulesPackage {
     private Map<String, DelveSiteTheme> siteThemes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("title")
+    private String title;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("truths")
     private Map<String, Truth> truths;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("url")
+    private WebUrl url;
 
     public RulesPackageExpansion() {
     }
@@ -115,7 +137,7 @@ public class RulesPackageExpansion extends RulesPackage {
 
     /**
      * Getter for assets.<p>
-     * A dictionary object containing asset types, which contain assets.
+     * A dictionary object containing asset collections, which contain assets.
      */
     public Map<String, AssetCollection> getAssets() {
         return assets;
@@ -123,7 +145,7 @@ public class RulesPackageExpansion extends RulesPackage {
 
     /**
      * Setter for assets.<p>
-     * A dictionary object containing asset types, which contain assets.
+     * A dictionary object containing asset collections, which contain assets.
      */
     public void setAssets(Map<String, AssetCollection> assets) {
         this.assets = assets;
@@ -148,6 +170,40 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
+     * Getter for authors.<p>
+     * Lists authors credited by the source material.
+     */
+    public List<AuthorInfo> getAuthors() {
+        return authors;
+    }
+
+    /**
+     * Setter for authors.<p>
+     * Lists authors credited by the source material.
+     */
+    public void setAuthors(List<AuthorInfo> authors) {
+        this.authors = authors;
+    }
+
+    /**
+     * Getter for date.<p>
+     * The date of the source documents's last update, formatted YYYY-MM-DD.
+     * Required because it's used to determine whether the data needs updating.
+     */
+    public OffsetDateTime getDate() {
+        return date;
+    }
+
+    /**
+     * Setter for date.<p>
+     * The date of the source documents's last update, formatted YYYY-MM-DD.
+     * Required because it's used to determine whether the data needs updating.
+     */
+    public void setDate(OffsetDateTime date) {
+        this.date = date;
+    }
+
+    /**
      * Getter for delveSites.<p>
      * A dictionary object of delve sites, like the premade delve sites
      * presented in Ironsworn: Delve
@@ -163,6 +219,20 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setDelveSites(Map<String, DelveSite> delveSites) {
         this.delveSites = delveSites;
+    }
+
+    /**
+     * Getter for license.<p>
+     */
+    public License getLicense() {
+        return license;
+    }
+
+    /**
+     * Setter for license.<p>
+     */
+    public void setLicense(License license) {
+        this.license = license;
     }
 
     /**
@@ -202,7 +272,7 @@ public class RulesPackageExpansion extends RulesPackage {
      * A dictionary object containing oracle collections, which may contain
      * oracle tables and/or oracle collections.
      */
-    public Map<String, OracleCollection> getOracles() {
+    public Map<String, OracleTablesCollection> getOracles() {
         return oracles;
     }
 
@@ -211,7 +281,7 @@ public class RulesPackageExpansion extends RulesPackage {
      * A dictionary object containing oracle collections, which may contain
      * oracle tables and/or oracle collections.
      */
-    public void setOracles(Map<String, OracleCollection> oracles) {
+    public void setOracles(Map<String, OracleTablesCollection> oracles) {
         this.oracles = oracles;
     }
 
@@ -280,6 +350,22 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
+     * Getter for title.<p>
+     * The title of the source document.
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * Setter for title.<p>
+     * The title of the source document.
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
      * Getter for truths.<p>
      * A dictionary object of truth categories.
      */
@@ -293,5 +379,21 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setTruths(Map<String, Truth> truths) {
         this.truths = truths;
+    }
+
+    /**
+     * Getter for url.<p>
+     * A URL where the source document is available.
+     */
+    public WebUrl getUrl() {
+        return url;
+    }
+
+    /**
+     * Setter for url.<p>
+     * A URL where the source document is available.
+     */
+    public void setUrl(WebUrl url) {
+        this.url = url;
     }
 }

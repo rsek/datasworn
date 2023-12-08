@@ -2,13 +2,19 @@
 
 package Datasworn;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class MoveOutcome {
     @JsonProperty("text")
     private MarkdownString text;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("oracle_rolls")
+    private List<OracleRoll> oracleRolls;
 
     public MoveOutcome() {
     }
@@ -25,5 +31,19 @@ public class MoveOutcome {
      */
     public void setText(MarkdownString text) {
         this.text = text;
+    }
+
+    /**
+     * Getter for oracleRolls.<p>
+     */
+    public List<OracleRoll> getOracleRolls() {
+        return oracleRolls;
+    }
+
+    /**
+     * Setter for oracleRolls.<p>
+     */
+    public void setOracleRolls(List<OracleRoll> oracleRolls) {
+        this.oracleRolls = oracleRolls;
     }
 }

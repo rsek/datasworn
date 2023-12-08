@@ -16,12 +16,12 @@ public class I18nHints {
     private I18nHint description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("result")
-    private I18nHint result;
+    @JsonProperty("detail")
+    private I18nHint detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("summary")
-    private I18nHint summary;
+    @JsonProperty("result")
+    private I18nHint result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("template")
@@ -45,6 +45,20 @@ public class I18nHints {
     }
 
     /**
+     * Getter for detail.<p>
+     */
+    public I18nHint getDetail() {
+        return detail;
+    }
+
+    /**
+     * Setter for detail.<p>
+     */
+    public void setDetail(I18nHint detail) {
+        this.detail = detail;
+    }
+
+    /**
      * Getter for result.<p>
      */
     public I18nHint getResult() {
@@ -56,20 +70,6 @@ public class I18nHints {
      */
     public void setResult(I18nHint result) {
         this.result = result;
-    }
-
-    /**
-     * Getter for summary.<p>
-     */
-    public I18nHint getSummary() {
-        return summary;
-    }
-
-    /**
-     * Setter for summary.<p>
-     */
-    public void setSummary(I18nHint summary) {
-        this.summary = summary;
     }
 
     /**

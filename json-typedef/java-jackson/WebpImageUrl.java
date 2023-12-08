@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A relative URL pointing to a raster image in the WEBP format.
+ * A relative (local) URL pointing to a raster image in the WEBP format.
  */
 public class WebpImageUrl {
     @JsonValue

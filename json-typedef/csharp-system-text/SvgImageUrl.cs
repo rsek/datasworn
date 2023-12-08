@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A relative URL pointing to a vector image in the SVG format.
+    /// A relative (local) URL pointing to a vector image in the SVG format.
     /// </summary>
     [JsonConverter(typeof(SvgImageUrlJsonConverter))]
     public class SvgImageUrl

@@ -29,7 +29,7 @@ public class Asset {
     private Boolean shared;
 
     @JsonProperty("source")
-    private Source source;
+    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("attachments")
@@ -65,7 +65,7 @@ public class Asset {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
-    private Map<String, Map<String, String>> tags;
+    private Map<String, Map<String, Tag>> tags;
 
     public Asset() {
     }
@@ -177,7 +177,7 @@ public class Asset {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public Source getSource() {
+    public SourceInfo getSource() {
         return source;
     }
 
@@ -186,7 +186,7 @@ public class Asset {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public void setSource(Source source) {
+    public void setSource(SourceInfo source) {
         this.source = source;
     }
 
@@ -327,14 +327,14 @@ public class Asset {
     /**
      * Getter for tags.<p>
      */
-    public Map<String, Map<String, String>> getTags() {
+    public Map<String, Map<String, Tag>> getTags() {
         return tags;
     }
 
     /**
      * Setter for tags.<p>
      */
-    public void setTags(Map<String, Map<String, String>> tags) {
+    public void setTags(Map<String, Map<String, Tag>> tags) {
         this.tags = tags;
     }
 }

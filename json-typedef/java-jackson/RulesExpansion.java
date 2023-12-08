@@ -29,6 +29,10 @@ public class RulesExpansion {
     @JsonProperty("stats")
     private Map<String, StatRule> stats;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Map<String, TagRule> tags;
+
     public RulesExpansion() {
     }
 
@@ -102,5 +106,19 @@ public class RulesExpansion {
      */
     public void setStats(Map<String, StatRule> stats) {
         this.stats = stats;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Map<String, TagRule> getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Map<String, TagRule> tags) {
+        this.tags = tags;
     }
 }

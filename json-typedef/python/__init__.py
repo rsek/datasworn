@@ -44,7 +44,7 @@ class RulesPackageExpansion(RulesPackage):
     ruleset: 'RulesetID'
     assets: 'Optional[Dict[str, AssetCollection]]'
     """
-    A dictionary object containing asset types, which contain assets.
+    A dictionary object containing asset collections, which contain assets.
     """
 
     atlas: 'Optional[Dict[str, Atlas]]'
@@ -53,12 +53,24 @@ class RulesPackageExpansion(RulesPackage):
     entries.
     """
 
+    authors: 'Optional[List[AuthorInfo]]'
+    """
+    Lists authors credited by the source material.
+    """
+
+    date: 'Optional[datetime]'
+    """
+    The date of the source documents's last update, formatted YYYY-MM-DD.
+    Required because it's used to determine whether the data needs updating.
+    """
+
     delve_sites: 'Optional[Dict[str, DelveSite]]'
     """
     A dictionary object of delve sites, like the premade delve sites presented
     in Ironsworn: Delve
     """
 
+    license: 'Optional[License]'
     moves: 'Optional[Dict[str, MoveCategory]]'
     """
     A dictionary object containing move categories, which contain moves.
@@ -69,7 +81,7 @@ class RulesPackageExpansion(RulesPackage):
     A dictionary object containing NPC collections, which contain NPCs.
     """
 
-    oracles: 'Optional[Dict[str, OracleCollection]]'
+    oracles: 'Optional[Dict[str, OracleTablesCollection]]'
     """
     A dictionary object containing oracle collections, which may contain oracle
     tables and/or oracle collections.
@@ -92,9 +104,19 @@ class RulesPackageExpansion(RulesPackage):
     A dictionary object containing delve site themes.
     """
 
+    title: 'Optional[str]'
+    """
+    The title of the source document.
+    """
+
     truths: 'Optional[Dict[str, Truth]]'
     """
     A dictionary object of truth categories.
+    """
+
+    url: 'Optional[WebURL]'
+    """
+    A URL where the source document is available.
     """
 
 
@@ -107,15 +129,20 @@ class RulesPackageExpansion(RulesPackage):
             _from_json_data(RulesetID, data.get("ruleset")),
             _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("atlas")),
+            _from_json_data(Optional[List[AuthorInfo]], data.get("authors")),
+            _from_json_data(Optional[datetime], data.get("date")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
+            _from_json_data(Optional[License], data.get("license")),
             _from_json_data(Optional[Dict[str, MoveCategory]], data.get("moves")),
             _from_json_data(Optional[Dict[str, NpcCollection]], data.get("npcs")),
-            _from_json_data(Optional[Dict[str, OracleCollection]], data.get("oracles")),
+            _from_json_data(Optional[Dict[str, OracleTablesCollection]], data.get("oracles")),
             _from_json_data(Optional[Dict[str, Rarity]], data.get("rarities")),
             _from_json_data(Optional[RulesExpansion], data.get("rules")),
             _from_json_data(Optional[Dict[str, DelveSiteDomain]], data.get("site_domains")),
             _from_json_data(Optional[Dict[str, DelveSiteTheme]], data.get("site_themes")),
+            _from_json_data(Optional[str], data.get("title")),
             _from_json_data(Optional[Dict[str, Truth]], data.get("truths")),
+            _from_json_data(Optional[WebURL], data.get("url")),
         )
 
     def to_json_data(self) -> Any:
@@ -127,8 +154,14 @@ class RulesPackageExpansion(RulesPackage):
              data["assets"] = _to_json_data(self.assets)
         if self.atlas is not None:
              data["atlas"] = _to_json_data(self.atlas)
+        if self.authors is not None:
+             data["authors"] = _to_json_data(self.authors)
+        if self.date is not None:
+             data["date"] = _to_json_data(self.date)
         if self.delve_sites is not None:
              data["delve_sites"] = _to_json_data(self.delve_sites)
+        if self.license is not None:
+             data["license"] = _to_json_data(self.license)
         if self.moves is not None:
              data["moves"] = _to_json_data(self.moves)
         if self.npcs is not None:
@@ -143,8 +176,12 @@ class RulesPackageExpansion(RulesPackage):
              data["site_domains"] = _to_json_data(self.site_domains)
         if self.site_themes is not None:
              data["site_themes"] = _to_json_data(self.site_themes)
+        if self.title is not None:
+             data["title"] = _to_json_data(self.title)
         if self.truths is not None:
              data["truths"] = _to_json_data(self.truths)
+        if self.url is not None:
+             data["url"] = _to_json_data(self.url)
         return data
 
 @dataclass
@@ -155,7 +192,12 @@ class RulesPackageRuleset(RulesPackage):
 
     assets: 'Dict[str, AssetCollection]'
     """
-    A dictionary object containing asset types, which contain assets.
+    A dictionary object containing asset collections, which contain assets.
+    """
+
+    authors: 'List[AuthorInfo]'
+    """
+    Lists authors credited by the source material.
     """
 
     datasworn_version: 'SemanticVersion'
@@ -163,19 +205,36 @@ class RulesPackageRuleset(RulesPackage):
     The version of the Datasworn format used by this data.
     """
 
+    date: 'datetime'
+    """
+    The date of the source documents's last update, formatted YYYY-MM-DD.
+    Required because it's used to determine whether the data needs updating.
+    """
+
     id: 'RulesetID'
+    license: 'License'
     moves: 'Dict[str, MoveCategory]'
     """
     A dictionary object containing move categories, which contain moves.
     """
 
-    oracles: 'Dict[str, OracleCollection]'
+    oracles: 'Dict[str, OracleTablesCollection]'
     """
     A dictionary object containing oracle collections, which may contain oracle
     tables and/or oracle collections.
     """
 
     rules: 'Rules'
+    title: 'str'
+    """
+    The title of the source document.
+    """
+
+    url: 'WebURL'
+    """
+    A URL where the source document is available.
+    """
+
     atlas: 'Optional[Dict[str, Atlas]]'
     """
     A dictionary object containing atlas collections, which contain atlas
@@ -220,11 +279,16 @@ class RulesPackageRuleset(RulesPackage):
         return cls(
             "ruleset",
             _from_json_data(Dict[str, AssetCollection], data.get("assets")),
+            _from_json_data(List[AuthorInfo], data.get("authors")),
             _from_json_data(SemanticVersion, data.get("datasworn_version")),
+            _from_json_data(datetime, data.get("date")),
             _from_json_data(RulesetID, data.get("id")),
+            _from_json_data(License, data.get("license")),
             _from_json_data(Dict[str, MoveCategory], data.get("moves")),
-            _from_json_data(Dict[str, OracleCollection], data.get("oracles")),
+            _from_json_data(Dict[str, OracleTablesCollection], data.get("oracles")),
             _from_json_data(Rules, data.get("rules")),
+            _from_json_data(str, data.get("title")),
+            _from_json_data(WebURL, data.get("url")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("atlas")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
             _from_json_data(Optional[Dict[str, NpcCollection]], data.get("npcs")),
@@ -237,11 +301,16 @@ class RulesPackageRuleset(RulesPackage):
     def to_json_data(self) -> Any:
         data = { "package_type": "ruleset" }
         data["assets"] = _to_json_data(self.assets)
+        data["authors"] = _to_json_data(self.authors)
         data["datasworn_version"] = _to_json_data(self.datasworn_version)
+        data["date"] = _to_json_data(self.date)
         data["id"] = _to_json_data(self.id)
+        data["license"] = _to_json_data(self.license)
         data["moves"] = _to_json_data(self.moves)
         data["oracles"] = _to_json_data(self.oracles)
         data["rules"] = _to_json_data(self.rules)
+        data["title"] = _to_json_data(self.title)
+        data["url"] = _to_json_data(self.url)
         if self.atlas is not None:
              data["atlas"] = _to_json_data(self.atlas)
         if self.delve_sites is not None:
@@ -333,7 +402,7 @@ class Asset:
     player's allies, too.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -375,7 +444,7 @@ class Asset:
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Asset':
@@ -386,7 +455,7 @@ class Asset:
             _from_json_data(AssetID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(bool, data.get("shared")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[AssetAttachment], data.get("attachments")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -395,7 +464,7 @@ class Asset:
             _from_json_data(Optional[Dict[str, AssetOptionField]], data.get("options")),
             _from_json_data(Optional[MarkdownString], data.get("requirement")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -714,21 +783,6 @@ class AssetAbilityControlFieldText(AssetAbilityControlField):
         return data
 
 @dataclass
-class AssetAbilityControlFieldID:
-    """
-    A unique ID for an AssetAbilityControlField.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetAbilityControlFieldID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class AssetAbilityID:
     """
     A unique ID for an AssetAbility.
@@ -790,21 +844,6 @@ class AssetAbilityOptionFieldText(AssetAbilityOptionField):
         return data
 
 @dataclass
-class AssetAbilityOptionFieldID:
-    """
-    A unique ID for an AssetAbilityOptionField.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetAbilityOptionFieldID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class AssetAttachment:
     """
     Describes which assets can be attached to this asset. Example: Starforged's
@@ -844,7 +883,7 @@ class AssetCollection:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -894,14 +933,14 @@ class AssetCollection:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetCollection':
         return cls(
             _from_json_data(AssetCollectionID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Asset]], data.get("contents")),
@@ -912,7 +951,7 @@ class AssetCollection:
             _from_json_data(Optional[AssetCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -1070,21 +1109,6 @@ class AssetConditionMeterControlFieldCheckbox(AssetConditionMeterControlField):
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         return data
-
-@dataclass
-class AssetConditionMeterControlFieldID:
-    """
-    A unique ID for an AssetConditionMeterControlField.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetConditionMeterControlFieldID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class AssetControlField:
@@ -1252,6 +1276,10 @@ class AssetControlFieldConditionMeter(AssetControlField):
     """
 
     rollable: 'bool'
+    """
+    Is this meter's `value` usable as a stat in an action roll?
+    """
+
     value: 'int'
     """
     The current value of this meter.
@@ -1456,36 +1484,6 @@ class AssetControlFieldEnhancementConditionMeter(AssetControlFieldEnhancement):
         data = { "field_type": "condition_meter" }
         data["max"] = _to_json_data(self.max)
         return data
-
-@dataclass
-class AssetControlFieldID:
-    """
-    A unique ID for an AssetControlField.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetControlFieldID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class AssetControlFieldIDWildcard:
-    """
-    A wildcarded ID that can be used to match multiple AssetControlFields.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetControlFieldIDWildcard':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class AssetEnhancement:
@@ -1778,36 +1776,6 @@ class AssetOptionFieldText(AssetOptionField):
         return data
 
 @dataclass
-class AssetOptionFieldID:
-    """
-    A unique ID for an AssetOptionField.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetOptionFieldID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class AssetOptionFieldIDWildcard:
-    """
-    A wildcarded ID that can be used to match multiple AssetOptionFields.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AssetOptionFieldIDWildcard':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class Atlas:
     id: 'AtlasID'
     """
@@ -1819,7 +1787,7 @@ class Atlas:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -1870,14 +1838,14 @@ class Atlas:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Atlas':
         return cls(
             _from_json_data(AtlasID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -1889,7 +1857,7 @@ class Atlas:
             _from_json_data(Optional[AtlasID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -1942,7 +1910,7 @@ class AtlasEntry:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -1957,7 +1925,7 @@ class AtlasEntry:
     quest_starter: 'Optional[MarkdownString]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
     your_truth: 'Optional[MarkdownString]'
 
     @classmethod
@@ -1967,12 +1935,12 @@ class AtlasEntry:
             _from_json_data(List[MarkdownString], data.get("features")),
             _from_json_data(AtlasEntryID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
             _from_json_data(Optional[MarkdownString], data.get("your_truth")),
         )
 
@@ -2013,21 +1981,6 @@ class AtlasEntryID:
         return _to_json_data(self.value)
 
 @dataclass
-class AtlasEntryIDWildcard:
-    """
-    A wildcarded ID that can be used to match multiple AtlasEntrys.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AtlasEntryIDWildcard':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class AtlasID:
     """
     A unique ID for an Atlas.
@@ -2037,21 +1990,6 @@ class AtlasID:
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AtlasID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class AtlasIDWildcard:
-    """
-    A wildcarded ID that can be used to match multiple Atlass.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AtlasIDWildcard':
         return cls(_from_json_data(str, data))
 
     def to_json_data(self) -> Any:
@@ -2107,69 +2045,6 @@ class ChallengeRank:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-class ConditionMeterFieldFieldType(Enum):
-    CONDITION_METER = "condition_meter"
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ConditionMeterFieldFieldType':
-        return cls(data)
-
-    def to_json_data(self) -> Any:
-        return self.value
-
-@dataclass
-class ConditionMeterField:
-    """
-    A meter with an integer value, bounded by a minimum and maximum.
-    """
-
-    field_type: 'ConditionMeterFieldFieldType'
-    label: 'InputLabel'
-    max: 'int'
-    """
-    The maximum value of this meter.
-    """
-
-    min: 'int'
-    """
-    The minimum value of this meter.
-    """
-
-    rollable: 'bool'
-    value: 'int'
-    """
-    The current value of this meter.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    """
-    An icon associated with this input.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ConditionMeterField':
-        return cls(
-            _from_json_data(ConditionMeterFieldFieldType, data.get("field_type")),
-            _from_json_data(InputLabel, data.get("label")),
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
-            _from_json_data(bool, data.get("rollable")),
-            _from_json_data(int, data.get("value")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["field_type"] = _to_json_data(self.field_type)
-        data["label"] = _to_json_data(self.label)
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
-        data["rollable"] = _to_json_data(self.rollable)
-        data["value"] = _to_json_data(self.value)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        return data
-
 @dataclass
 class ConditionMeterKey:
     """
@@ -2208,6 +2083,10 @@ class ConditionMeterRule:
     """
 
     rollable: 'bool'
+    """
+    Is this meter's `value` usable as a stat in an action roll?
+    """
+
     shared: 'bool'
     """
     Is this condition meter shared by all players?
@@ -2241,21 +2120,6 @@ class ConditionMeterRule:
         data["shared"] = _to_json_data(self.shared)
         data["value"] = _to_json_data(self.value)
         return data
-
-@dataclass
-class ConditionMeterRuleID:
-    """
-    A unique ID for a ConditionMeterRule.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ConditionMeterRuleID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class CSSColor:
@@ -2292,7 +2156,7 @@ class DelveSite:
     """
 
     rank: 'ChallengeRank'
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -2319,7 +2183,7 @@ class DelveSite:
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSite':
@@ -2330,14 +2194,14 @@ class DelveSite:
             _from_json_data(DelveSiteID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(ChallengeRank, data.get("rank")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(DelveSiteThemeID, data.get("theme")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[str], data.get("extra_card")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[AtlasEntryID], data.get("region")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2450,7 +2314,7 @@ class DelveSiteDomain:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -2465,7 +2329,7 @@ class DelveSiteDomain:
 
     description: 'Optional[MarkdownString]'
     icon: 'Optional[SvgImageURL]'
-    name_oracle: 'Optional[OracleTableID]'
+    name_oracle: 'Optional[OracleRollableID]'
     """
     An oracle table ID containing place name elements. For examples, see
     oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in
@@ -2475,7 +2339,7 @@ class DelveSiteDomain:
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomain':
@@ -2484,14 +2348,14 @@ class DelveSiteDomain:
             _from_json_data(List[DelveSiteDomainFeatureRow], data.get("features")),
             _from_json_data(DelveSiteDomainID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("summary")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[OracleTableID], data.get("name_oracle")),
+            _from_json_data(Optional[OracleRollableID], data.get("name_oracle")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2542,31 +2406,19 @@ class DelveSiteDomainDangerRow:
     The primary text content of this row.
     """
 
-    description: 'Optional[MarkdownString]'
-    """
-    Optional tertiary text content for this row. Generally, this is longer than
-    both `result` and `summary`.
-    """
-
-    embed_table: 'Optional[OracleTableID]'
+    embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
 
     suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    Optional secondary text content for this row. Generally, this is longer
-    than `result`.
-    """
-
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -2576,13 +2428,11 @@ class DelveSiteDomainDangerRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[OracleTableID], data.get("embed_table")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -2592,8 +2442,6 @@ class DelveSiteDomainDangerRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
         if self.i18n is not None:
@@ -2604,8 +2452,6 @@ class DelveSiteDomainDangerRow:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -2636,31 +2482,19 @@ class DelveSiteDomainFeatureRow:
     The primary text content of this row.
     """
 
-    description: 'Optional[MarkdownString]'
-    """
-    Optional tertiary text content for this row. Generally, this is longer than
-    both `result` and `summary`.
-    """
-
-    embed_table: 'Optional[OracleTableID]'
+    embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
 
     suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    Optional secondary text content for this row. Generally, this is longer
-    than `result`.
-    """
-
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -2670,13 +2504,11 @@ class DelveSiteDomainFeatureRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[OracleTableID], data.get("embed_table")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -2686,8 +2518,6 @@ class DelveSiteDomainFeatureRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
         if self.i18n is not None:
@@ -2698,8 +2528,6 @@ class DelveSiteDomainFeatureRow:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -2752,7 +2580,7 @@ class DelveSiteTheme:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -2768,7 +2596,7 @@ class DelveSiteTheme:
     description: 'Optional[MarkdownString]'
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteTheme':
@@ -2777,13 +2605,13 @@ class DelveSiteTheme:
             _from_json_data(List[DelveSiteThemeFeatureRow], data.get("features")),
             _from_json_data(DelveSiteThemeID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("summary")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2832,31 +2660,19 @@ class DelveSiteThemeDangerRow:
     The primary text content of this row.
     """
 
-    description: 'Optional[MarkdownString]'
-    """
-    Optional tertiary text content for this row. Generally, this is longer than
-    both `result` and `summary`.
-    """
-
-    embed_table: 'Optional[OracleTableID]'
+    embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
 
     suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    Optional secondary text content for this row. Generally, this is longer
-    than `result`.
-    """
-
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -2866,13 +2682,11 @@ class DelveSiteThemeDangerRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[OracleTableID], data.get("embed_table")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -2882,8 +2696,6 @@ class DelveSiteThemeDangerRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
         if self.i18n is not None:
@@ -2894,8 +2706,6 @@ class DelveSiteThemeDangerRow:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -2926,31 +2736,19 @@ class DelveSiteThemeFeatureRow:
     The primary text content of this row.
     """
 
-    description: 'Optional[MarkdownString]'
-    """
-    Optional tertiary text content for this row. Generally, this is longer than
-    both `result` and `summary`.
-    """
-
-    embed_table: 'Optional[OracleTableID]'
+    embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
 
     suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    Optional secondary text content for this row. Generally, this is longer
-    than `result`.
-    """
-
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -2960,13 +2758,11 @@ class DelveSiteThemeFeatureRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[OracleTableID], data.get("embed_table")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -2976,8 +2772,6 @@ class DelveSiteThemeFeatureRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
         if self.i18n is not None:
@@ -2988,8 +2782,6 @@ class DelveSiteThemeFeatureRow:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -3108,25 +2900,25 @@ class I18nHint:
 @dataclass
 class I18nHintsTemplate:
     description: 'Optional[I18nHint]'
+    detail: 'Optional[I18nHint]'
     result: 'Optional[I18nHint]'
-    summary: 'Optional[I18nHint]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'I18nHintsTemplate':
         return cls(
             _from_json_data(Optional[I18nHint], data.get("description")),
+            _from_json_data(Optional[I18nHint], data.get("detail")),
             _from_json_data(Optional[I18nHint], data.get("result")),
-            _from_json_data(Optional[I18nHint], data.get("summary")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         if self.description is not None:
              data["description"] = _to_json_data(self.description)
+        if self.detail is not None:
+             data["detail"] = _to_json_data(self.detail)
         if self.result is not None:
              data["result"] = _to_json_data(self.result)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         return data
 
 @dataclass
@@ -3136,16 +2928,16 @@ class I18nHints:
     """
 
     description: 'Optional[I18nHint]'
+    detail: 'Optional[I18nHint]'
     result: 'Optional[I18nHint]'
-    summary: 'Optional[I18nHint]'
     template: 'Optional[I18nHintsTemplate]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'I18nHints':
         return cls(
             _from_json_data(Optional[I18nHint], data.get("description")),
+            _from_json_data(Optional[I18nHint], data.get("detail")),
             _from_json_data(Optional[I18nHint], data.get("result")),
-            _from_json_data(Optional[I18nHint], data.get("summary")),
             _from_json_data(Optional[I18nHintsTemplate], data.get("template")),
         )
 
@@ -3153,10 +2945,10 @@ class I18nHints:
         data: Dict[str, Any] = {}
         if self.description is not None:
              data["description"] = _to_json_data(self.description)
+        if self.detail is not None:
+             data["detail"] = _to_json_data(self.detail)
         if self.result is not None:
              data["result"] = _to_json_data(self.result)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -3250,36 +3042,6 @@ class ImpactRule:
         return data
 
 @dataclass
-class ImpactRuleCollectionID:
-    """
-    A unique ID for an ImpactRuleCollection.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ImpactRuleCollectionID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class ImpactRuleID:
-    """
-    A unique ID for an ImpactRule.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ImpactRuleID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class InputLabel:
     """
     A localized label for an input. In some contexts it may be undesirable to
@@ -3307,6 +3069,24 @@ class Label:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Label':
         return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class License:
+    """
+    An URL pointing to the location where this element's license can be found.
+    
+    A `null` here indicates that the content provides __no__ license, and is not
+    intended for redistribution.
+    """
+
+    value: 'WebURL'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'License':
+        return cls(_from_json_data(WebURL, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -3365,7 +3145,7 @@ class MoveActionRoll(Move):
     """
 
     outcomes: 'MoveOutcomes'
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -3387,7 +3167,7 @@ class MoveActionRoll(Move):
     different from `name`.
     """
 
-    oracles: 'Optional[List[OracleTableID]]'
+    oracles: 'Optional[List[OracleRollableID]]'
     """
     Oracles associated with this move. It's not recommended to roll these
     automatically, as almost all moves present them as an option, not a
@@ -3401,7 +3181,7 @@ class MoveActionRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveActionRoll':
@@ -3410,14 +3190,14 @@ class MoveActionRoll(Move):
             _from_json_data(MoveID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerActionRoll, data.get("trigger")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
+            _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3456,7 +3236,7 @@ class MoveNoRoll(Move):
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -3478,7 +3258,7 @@ class MoveNoRoll(Move):
     different from `name`.
     """
 
-    oracles: 'Optional[List[OracleTableID]]'
+    oracles: 'Optional[List[OracleRollableID]]'
     """
     Oracles associated with this move. It's not recommended to roll these
     automatically, as almost all moves present them as an option, not a
@@ -3492,7 +3272,7 @@ class MoveNoRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveNoRoll':
@@ -3500,14 +3280,14 @@ class MoveNoRoll(Move):
             "no_roll",
             _from_json_data(MoveID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerNoRoll, data.get("trigger")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
+            _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3548,7 +3328,7 @@ class MoveProgressRoll(Move):
     """
 
     outcomes: 'MoveOutcomes'
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -3575,7 +3355,7 @@ class MoveProgressRoll(Move):
     different from `name`.
     """
 
-    oracles: 'Optional[List[OracleTableID]]'
+    oracles: 'Optional[List[OracleRollableID]]'
     """
     Oracles associated with this move. It's not recommended to roll these
     automatically, as almost all moves present them as an option, not a
@@ -3589,7 +3369,7 @@ class MoveProgressRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveProgressRoll':
@@ -3598,15 +3378,15 @@ class MoveProgressRoll(Move):
             _from_json_data(MoveID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(ProgressTrackTypeInfo, data.get("tracks")),
             _from_json_data(TriggerProgressRoll, data.get("trigger")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
+            _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3649,7 +3429,7 @@ class MoveSpecialTrack(Move):
     """
 
     outcomes: 'MoveOutcomes'
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -3671,7 +3451,7 @@ class MoveSpecialTrack(Move):
     different from `name`.
     """
 
-    oracles: 'Optional[List[OracleTableID]]'
+    oracles: 'Optional[List[OracleRollableID]]'
     """
     Oracles associated with this move. It's not recommended to roll these
     automatically, as almost all moves present them as an option, not a
@@ -3685,7 +3465,7 @@ class MoveSpecialTrack(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveSpecialTrack':
@@ -3694,14 +3474,14 @@ class MoveSpecialTrack(Move):
             _from_json_data(MoveID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerSpecialTrack, data.get("trigger")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
+            _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3736,7 +3516,7 @@ class MoveCategory:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -3786,14 +3566,14 @@ class MoveCategory:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveCategory':
         return cls(
             _from_json_data(MoveCategoryID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Move]], data.get("contents")),
@@ -3804,7 +3584,7 @@ class MoveCategory:
             _from_json_data(Optional[MoveCategoryID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4006,16 +3786,20 @@ class MoveIDWildcard:
 @dataclass
 class MoveOutcome:
     text: 'MarkdownString'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveOutcome':
         return cls(
             _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["text"] = _to_json_data(self.text)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         return data
 
 @dataclass
@@ -4050,36 +3834,6 @@ class MoveOutcomes:
         data["weak_hit"] = _to_json_data(self.weak_hit)
         return data
 
-class MoveRollType(Enum):
-    ACTION_ROLL = "action_roll"
-    """
-    A move that makes an action roll.
-    """
-
-    NO_ROLL = "no_roll"
-    """
-    A move that makes no action rolls or progress rolls.
-    """
-
-    PROGRESS_ROLL = "progress_roll"
-    """
-    A progress move that rolls on a standard progress track type (defined by
-    this move).
-    """
-
-    SPECIAL_TRACK = "special_track"
-    """
-    A progress move that rolls on one or more special tracks, like Bonds
-    (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
-    """
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MoveRollType':
-        return cls(data)
-
-    def to_json_data(self) -> Any:
-        return self.value
-
 @dataclass
 class Npc:
     """
@@ -4106,7 +3860,7 @@ class Npc:
     The suggested challenge rank for this NPC.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -4122,7 +3876,7 @@ class Npc:
     quest_starter: 'Optional[MarkdownString]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
     variants: 'Optional[Dict[str, NpcVariant]]'
     your_truth: 'Optional[MarkdownString]'
 
@@ -4136,13 +3890,13 @@ class Npc:
             _from_json_data(Label, data.get("name")),
             _from_json_data(NpcNature, data.get("nature")),
             _from_json_data(ChallengeRank, data.get("rank")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(List[MarkdownString], data.get("tactics")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
             _from_json_data(Optional[Dict[str, NpcVariant]], data.get("variants")),
             _from_json_data(Optional[MarkdownString], data.get("your_truth")),
         )
@@ -4186,7 +3940,7 @@ class NpcCollection:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -4236,14 +3990,14 @@ class NpcCollection:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'NpcCollection':
         return cls(
             _from_json_data(NpcCollectionID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Npc]], data.get("contents")),
@@ -4254,7 +4008,7 @@ class NpcCollection:
             _from_json_data(Optional[NpcCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4311,21 +4065,6 @@ class NpcID:
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'NpcID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class NpcIDWildcard:
-    """
-    A wildcarded ID that can be used to match multiple Npcs.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'NpcIDWildcard':
         return cls(_from_json_data(str, data))
 
     def to_json_data(self) -> Any:
@@ -4405,8 +4144,83 @@ class NpcVariantID:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
+class ObjectType(Enum):
+    ASSET = "asset"
+    ASSET_COLLECTION = "asset_collection"
+    ATLAS = "atlas"
+    ATLAS_ENTRY = "atlas_entry"
+    DELVE_SITE = "delve_site"
+    DELVE_SITE_DOMAIN = "delve_site_domain"
+    DELVE_SITE_THEME = "delve_site_theme"
+    MOVE = "move"
+    MOVE_CATEGORY = "move_category"
+    NPC = "npc"
+    NPC_COLLECTION = "npc_collection"
+    ORACLE_COLLECTION = "oracle_collection"
+    ORACLE_ROLLABLE = "oracle_rollable"
+    RARITY = "rarity"
+    TRUTH = "truth"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ObjectType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class OracleCollection:
+    oracle_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollection':
+        variants: Dict[str, Type[OracleCollection]] = {
+            "table_shared_details": OracleCollectionTableSharedDetails,
+            "table_shared_results": OracleCollectionTableSharedResults,
+            "table_shared_rolls": OracleCollectionTableSharedRolls,
+            "tables": OracleCollectionTables,
+        }
+
+        return variants[data["oracle_type"]].from_json_data(data)
+
+    def to_json_data(self) -> Any:
+        pass
+
+@dataclass
+class OracleCollectionTableSharedDetailsColumnLabels:
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    detail: 'Label'
+    result: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedDetailsColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("detail")),
+            _from_json_data(Label, data.get("result")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["detail"] = _to_json_data(self.detail)
+        data["result"] = _to_json_data(self.result)
+        return data
+
+@dataclass
+class OracleCollectionTableSharedDetails(OracleCollection):
+    """
+    An OracleCollection representing a single table with multiple roll columns,
+    one `result` column, and one `detail` column.
+    """
+
+    column_labels: 'OracleCollectionTableSharedDetailsColumnLabels'
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
     id: 'OracleCollectionID'
     """
     The unique Datasworn ID for this item.
@@ -4417,7 +4231,7 @@ class OracleCollection:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -4429,13 +4243,12 @@ class OracleCollection:
     different from `name`.
     """
 
-    collections: 'Optional[Dict[str, OracleCollection]]'
     color: 'Optional[CSSColor]'
     """
     A thematic color associated with this collection.
     """
 
-    contents: 'Optional[Dict[str, OracleTable]]'
+    contents: 'Optional[Dict[str, OracleColumnDetails]]'
     description: 'Optional[MarkdownString]'
     """
     A longer description of this collection, which might include multiple
@@ -4454,7 +4267,6 @@ class OracleCollection:
     """
 
     images: 'Optional[List[WebpImageURL]]'
-    rendering: 'Optional[OracleCollectionRendering]'
     replaces: 'Optional[OracleCollectionID]'
     """
     This collection replaces the identified collection. References to the
@@ -4469,31 +4281,446 @@ class OracleCollection:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollection':
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedDetails':
         return cls(
+            "table_shared_details",
+            _from_json_data(OracleCollectionTableSharedDetailsColumnLabels, data.get("column_labels")),
             _from_json_data(OracleCollectionID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[Dict[str, OracleCollection]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
-            _from_json_data(Optional[Dict[str, OracleTable]], data.get("contents")),
+            _from_json_data(Optional[Dict[str, OracleColumnDetails]], data.get("contents")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
-            _from_json_data(Optional[OracleCollectionRendering], data.get("rendering")),
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "oracle_type": "table_shared_details" }
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["source"] = _to_json_data(self.source)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.color is not None:
+             data["color"] = _to_json_data(self.color)
+        if self.contents is not None:
+             data["contents"] = _to_json_data(self.contents)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.enhances is not None:
+             data["enhances"] = _to_json_data(self.enhances)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.images is not None:
+             data["images"] = _to_json_data(self.images)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+@dataclass
+class OracleCollectionTableSharedResultsColumnLabels:
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    result: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedResultsColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("result")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["result"] = _to_json_data(self.result)
+        return data
+
+@dataclass
+class OracleCollectionTableSharedResults(OracleCollection):
+    """
+    An OracleCollection representing a single table with multiple roll columns
+    and one `result` column.
+    """
+
+    column_labels: 'OracleCollectionTableSharedResultsColumnLabels'
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    color: 'Optional[CSSColor]'
+    """
+    A thematic color associated with this collection.
+    """
+
+    contents: 'Optional[Dict[str, OracleColumnSimple]]'
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of this collection, which might include multiple
+    paragraphs. If it's only a couple sentences, use the `summary` key instead.
+    """
+
+    enhances: 'Optional[OracleCollectionID]'
+    """
+    This collection's content enhances the identified collection, rather than
+    being a standalone collection of its own.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An SVG icon associated with this collection.
+    """
+
+    images: 'Optional[List[WebpImageURL]]'
+    replaces: 'Optional[OracleCollectionID]'
+    """
+    This collection replaces the identified collection. References to the
+    replaced collection can be considered equivalent to this collection.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of this collection, no more than a few sentences in length.
+    This is intended for use in application tooltips and similar sorts of hints.
+    Longer text should use the "description" key instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedResults':
+        return cls(
+            "table_shared_results",
+            _from_json_data(OracleCollectionTableSharedResultsColumnLabels, data.get("column_labels")),
+            _from_json_data(OracleCollectionID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(SourceInfo, data.get("source")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[Dict[str, OracleColumnSimple]], data.get("contents")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
+            _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "oracle_type": "table_shared_results" }
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["source"] = _to_json_data(self.source)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.color is not None:
+             data["color"] = _to_json_data(self.color)
+        if self.contents is not None:
+             data["contents"] = _to_json_data(self.contents)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.enhances is not None:
+             data["enhances"] = _to_json_data(self.enhances)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.images is not None:
+             data["images"] = _to_json_data(self.images)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+@dataclass
+class OracleCollectionTableSharedRollsColumnLabels:
+    """
+    Provides column labels for this table. The `roll` key refers to the roll
+    column showing the dice range (`min` and `max` on each table row). For all
+    other column labels, see the `name` property of each child `OracleColumn`.
+    """
+
+    roll: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedRollsColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("roll")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["roll"] = _to_json_data(self.roll)
+        return data
+
+@dataclass
+class OracleCollectionTableSharedRolls(OracleCollection):
+    """
+    An OracleCollection representing a single table with one roll column and
+    multiple `result` columns.
+    """
+
+    column_labels: 'OracleCollectionTableSharedRollsColumnLabels'
+    """
+    Provides column labels for this table. The `roll` key refers to the roll
+    column showing the dice range (`min` and `max` on each table row). For all
+    other column labels, see the `name` property of each child `OracleColumn`.
+    """
+
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    color: 'Optional[CSSColor]'
+    """
+    A thematic color associated with this collection.
+    """
+
+    contents: 'Optional[Dict[str, OracleColumnSimple]]'
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of this collection, which might include multiple
+    paragraphs. If it's only a couple sentences, use the `summary` key instead.
+    """
+
+    enhances: 'Optional[OracleCollectionID]'
+    """
+    This collection's content enhances the identified collection, rather than
+    being a standalone collection of its own.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An SVG icon associated with this collection.
+    """
+
+    images: 'Optional[List[WebpImageURL]]'
+    replaces: 'Optional[OracleCollectionID]'
+    """
+    This collection replaces the identified collection. References to the
+    replaced collection can be considered equivalent to this collection.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of this collection, no more than a few sentences in length.
+    This is intended for use in application tooltips and similar sorts of hints.
+    Longer text should use the "description" key instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedRolls':
+        return cls(
+            "table_shared_rolls",
+            _from_json_data(OracleCollectionTableSharedRollsColumnLabels, data.get("column_labels")),
+            _from_json_data(OracleCollectionID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(SourceInfo, data.get("source")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[Dict[str, OracleColumnSimple]], data.get("contents")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
+            _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "oracle_type": "table_shared_rolls" }
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["source"] = _to_json_data(self.source)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.color is not None:
+             data["color"] = _to_json_data(self.color)
+        if self.contents is not None:
+             data["contents"] = _to_json_data(self.contents)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.enhances is not None:
+             data["enhances"] = _to_json_data(self.enhances)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.images is not None:
+             data["images"] = _to_json_data(self.images)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+@dataclass
+class OracleCollectionTables(OracleCollection):
+    """
+    An OracleCollection that represents a category or grouping of tables, which
+    may themselves be `OracleTablesCollection`s.
+    """
+
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    collections: 'Optional[Dict[str, OracleCollection]]'
+    color: 'Optional[CSSColor]'
+    """
+    A thematic color associated with this collection.
+    """
+
+    contents: 'Optional[Dict[str, OracleTableRollable]]'
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of this collection, which might include multiple
+    paragraphs. If it's only a couple sentences, use the `summary` key instead.
+    """
+
+    enhances: 'Optional[OracleCollectionID]'
+    """
+    This collection's content enhances the identified collection, rather than
+    being a standalone collection of its own.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An SVG icon associated with this collection.
+    """
+
+    images: 'Optional[List[WebpImageURL]]'
+    replaces: 'Optional[OracleCollectionID]'
+    """
+    This collection replaces the identified collection. References to the
+    replaced collection can be considered equivalent to this collection.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of this collection, no more than a few sentences in length.
+    This is intended for use in application tooltips and similar sorts of hints.
+    Longer text should use the "description" key instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTables':
+        return cls(
+            "tables",
+            _from_json_data(OracleCollectionID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(SourceInfo, data.get("source")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[Dict[str, OracleCollection]], data.get("collections")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[Dict[str, OracleTableRollable]], data.get("contents")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
+            _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "oracle_type": "tables" }
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
@@ -4513,8 +4740,6 @@ class OracleCollection:
              data["icon"] = _to_json_data(self.icon)
         if self.images is not None:
              data["images"] = _to_json_data(self.images)
-        if self.rendering is not None:
-             data["rendering"] = _to_json_data(self.rendering)
         if self.replaces is not None:
              data["replaces"] = _to_json_data(self.replaces)
         if self.suggestions is not None:
@@ -4541,98 +4766,375 @@ class OracleCollectionID:
         return _to_json_data(self.value)
 
 @dataclass
-class OracleCollectionRendering:
+class OracleColumnDetailsColumnLabels:
     """
-    Describes the presentation of this oracle collection, which might represent
-    a group of separate tables, or a single table with additional columns.
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
     """
 
-    style: 'str'
+    detail: 'Label'
+    result: 'Label'
+    roll: 'Label'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollectionRendering':
-        variants: Dict[str, Type[OracleCollectionRendering]] = {
-            "multi_table": OracleCollectionRenderingMultiTable,
-            "tables": OracleCollectionRenderingTables,
-        }
-
-        return variants[data["style"]].from_json_data(data)
-
-    def to_json_data(self) -> Any:
-        pass
-
-@dataclass
-class OracleCollectionRenderingMultiTable(OracleCollectionRendering):
-    columns: 'Dict[str, OracleCollectionTableColumn]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollectionRenderingMultiTable':
+    def from_json_data(cls, data: Any) -> 'OracleColumnDetailsColumnLabels':
         return cls(
-            "multi_table",
-            _from_json_data(Dict[str, OracleCollectionTableColumn], data.get("columns")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "style": "multi_table" }
-        data["columns"] = _to_json_data(self.columns)
-        return data
-
-@dataclass
-class OracleCollectionRenderingTables(OracleCollectionRendering):
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollectionRenderingTables':
-        return cls(
-            "tables",
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "style": "tables" }
-        return data
-
-@dataclass
-class OracleCollectionTableColumn:
-    content_type: 'OracleTableColumnContentKey'
-    label: 'Label'
-    """
-    The column's header text.
-    """
-
-    table_key: 'DictKey'
-    """
-    The key of the OracleTable (within this collection), whose data is used to
-    render this column.
-    """
-
-    color: 'Optional[CSSColor]'
-    """
-    The thematic color for this column.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollectionTableColumn':
-        return cls(
-            _from_json_data(OracleTableColumnContentKey, data.get("content_type")),
-            _from_json_data(Label, data.get("label")),
-            _from_json_data(DictKey, data.get("table_key")),
-            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Label, data.get("detail")),
+            _from_json_data(Label, data.get("result")),
+            _from_json_data(Label, data.get("roll")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["content_type"] = _to_json_data(self.content_type)
-        data["label"] = _to_json_data(self.label)
-        data["table_key"] = _to_json_data(self.table_key)
+        data["detail"] = _to_json_data(self.detail)
+        data["result"] = _to_json_data(self.result)
+        data["roll"] = _to_json_data(self.roll)
+        return data
+
+class OracleColumnDetailsOracleType(Enum):
+    COLUMN_DETAILS = "column_details"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleColumnDetailsOracleType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
+@dataclass
+class OracleColumnDetails:
+    column_labels: 'OracleColumnDetailsColumnLabels'
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    dice: 'DiceExpression'
+    """
+    The roll used to select a result on this oracle.
+    """
+
+    id: 'OracleRollableID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    name: 'Label'
+    """
+    The primary label at the head of this column.
+    """
+
+    oracle_type: 'OracleColumnDetailsOracleType'
+    rows: 'List[OracleTableRowDetails]'
+    """
+    An array of objects, each representing a single row of the table.
+    """
+
+    color: 'Optional[CSSColor]'
+    """
+    An optional thematic color for this column. For an example, see "Basic
+    Creature Form" (Starforged p. 337)
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An optional icon for this column.
+    """
+
+    match: 'Optional[OracleMatchBehavior]'
+    """
+    Most oracle tables are insensitive to matches, but a few define special
+    match behavior.
+    """
+
+    replaces: 'Optional[OracleRollableID]'
+    """
+    Indicates that this object replaces the identified OracleRollable.
+    References to the replaced object can be considered equivalent to this
+    object.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    Optional secondary text at the head of this column. For best results, this
+    should be no more than a few words in length.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleColumnDetails':
+        return cls(
+            _from_json_data(OracleColumnDetailsColumnLabels, data.get("column_labels")),
+            _from_json_data(DiceExpression, data.get("dice")),
+            _from_json_data(OracleRollableID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(OracleColumnDetailsOracleType, data.get("oracle_type")),
+            _from_json_data(List[OracleTableRowDetails], data.get("rows")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
+            _from_json_data(Optional[OracleRollableID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["dice"] = _to_json_data(self.dice)
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["oracle_type"] = _to_json_data(self.oracle_type)
+        data["rows"] = _to_json_data(self.rows)
         if self.color is not None:
              data["color"] = _to_json_data(self.color)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.match is not None:
+             data["match"] = _to_json_data(self.match)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+@dataclass
+class OracleColumnSimpleColumnLabels:
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    result: 'Label'
+    roll: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleColumnSimpleColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("result")),
+            _from_json_data(Label, data.get("roll")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["result"] = _to_json_data(self.result)
+        data["roll"] = _to_json_data(self.roll)
+        return data
+
+class OracleColumnSimpleOracleType(Enum):
+    COLUMN_SIMPLE = "column_simple"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleColumnSimpleOracleType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
+@dataclass
+class OracleColumnSimple:
+    """
+    Represents a single column in an OracleCollection.
+    """
+
+    column_labels: 'OracleColumnSimpleColumnLabels'
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    dice: 'DiceExpression'
+    """
+    The roll used to select a result on this oracle.
+    """
+
+    id: 'OracleRollableID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    name: 'Label'
+    """
+    The primary label at the head of this column.
+    """
+
+    oracle_type: 'OracleColumnSimpleOracleType'
+    rows: 'List[OracleTableRowSimple]'
+    """
+    An array of objects, each representing a single row of the table.
+    """
+
+    color: 'Optional[CSSColor]'
+    """
+    An optional thematic color for this column. For an example, see "Basic
+    Creature Form" (Starforged p. 337)
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An optional icon for this column.
+    """
+
+    match: 'Optional[OracleMatchBehavior]'
+    """
+    Most oracle tables are insensitive to matches, but a few define special
+    match behavior.
+    """
+
+    replaces: 'Optional[OracleRollableID]'
+    """
+    Indicates that this object replaces the identified OracleRollable.
+    References to the replaced object can be considered equivalent to this
+    object.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    Optional secondary text at the head of this column. For best results, this
+    should be no more than a few words in length.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleColumnSimple':
+        return cls(
+            _from_json_data(OracleColumnSimpleColumnLabels, data.get("column_labels")),
+            _from_json_data(DiceExpression, data.get("dice")),
+            _from_json_data(OracleRollableID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(OracleColumnSimpleOracleType, data.get("oracle_type")),
+            _from_json_data(List[OracleTableRowSimple], data.get("rows")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
+            _from_json_data(Optional[OracleRollableID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["dice"] = _to_json_data(self.dice)
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["oracle_type"] = _to_json_data(self.oracle_type)
+        data["rows"] = _to_json_data(self.rows)
+        if self.color is not None:
+             data["color"] = _to_json_data(self.color)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.match is not None:
+             data["match"] = _to_json_data(self.match)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+class OracleDuplicateBehavior(Enum):
+    """
+    Special roll instructions to use when rolling multiple times on a single
+    oracle.
+    """
+
+    KEEP = "keep"
+    """
+    Duplicates results should be kept.
+    """
+
+    MAKE_IT_WORSE = "make_it_worse"
+    """
+    Duplicates should be kept, and they compound to make things worse.
+    """
+
+    REROLL = "reroll"
+    """
+    Duplicates results should be re-rolled.
+    """
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleDuplicateBehavior':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
+@dataclass
+class OracleMatchBehavior:
+    text: 'MarkdownString'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleMatchBehavior':
+        return cls(
+            _from_json_data(MarkdownString, data.get("text")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["text"] = _to_json_data(self.text)
+        return data
+
+@dataclass
+class OracleRoll:
+    auto: 'bool'
+    """
+    Both Ironsworn and Starforged explicitly recommend *against* rolling
+    all details at once. That said, some oracle results only provide useful
+    information once a secondary roll occurs, such as "Action + Theme" or "Roll
+    Twice".
+    """
+
+    dice: 'DiceExpression'
+    duplicates: 'OracleDuplicateBehavior'
+    """
+    Special rules on how to handle duplicate results, when rolling multiple
+    times.
+    """
+
+    number_of_rolls: 'int'
+    """
+    The number of times to roll.
+    """
+
+    oracle: 'OracleRollableID'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleRoll':
+        return cls(
+            _from_json_data(bool, data.get("auto")),
+            _from_json_data(DiceExpression, data.get("dice")),
+            _from_json_data(OracleDuplicateBehavior, data.get("duplicates")),
+            _from_json_data(int, data.get("number_of_rolls")),
+            _from_json_data(OracleRollableID, data.get("oracle")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["auto"] = _to_json_data(self.auto)
+        data["dice"] = _to_json_data(self.dice)
+        data["duplicates"] = _to_json_data(self.duplicates)
+        data["number_of_rolls"] = _to_json_data(self.number_of_rolls)
+        data["oracle"] = _to_json_data(self.oracle)
         return data
 
 @dataclass
 class OracleRollTemplate:
     """
     Provides string templates that may be used in place of the static
-    row text from `OracleTableRow#result`, `OracleTableRow#summary`, and
+    row text from `OracleTableRow#result`, `OracleTableRow#detail`, and
     `OracleTableRow#description`.
     
       These strings are formatted in Markdown, but use a special syntax
@@ -4646,14 +5148,14 @@ class OracleRollTemplate:
     A string template that may be used in place of OracleTableRow#description.
     """
 
+    detail: 'Optional[TemplateString]'
+    """
+    A string template that may be used in place of OracleTableRow#detail.
+    """
+
     result: 'Optional[TemplateString]'
     """
     A string template that may be used in place of OracleTableRow#result.
-    """
-
-    summary: 'Optional[TemplateString]'
-    """
-    A string template that may be used in place of OracleTableRow#summary.
     """
 
 
@@ -4661,27 +5163,84 @@ class OracleRollTemplate:
     def from_json_data(cls, data: Any) -> 'OracleRollTemplate':
         return cls(
             _from_json_data(Optional[TemplateString], data.get("description")),
+            _from_json_data(Optional[TemplateString], data.get("detail")),
             _from_json_data(Optional[TemplateString], data.get("result")),
-            _from_json_data(Optional[TemplateString], data.get("summary")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         if self.description is not None:
              data["description"] = _to_json_data(self.description)
+        if self.detail is not None:
+             data["detail"] = _to_json_data(self.detail)
         if self.result is not None:
              data["result"] = _to_json_data(self.result)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         return data
 
 @dataclass
-class OracleTableRecommendedRolls:
+class OracleRollableID:
+    """
+    A unique ID for an OracleRollable.
+    """
+
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleRollableID':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class OracleTableRollable:
+    oracle_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRollable':
+        variants: Dict[str, Type[OracleTableRollable]] = {
+            "table_details": OracleTableRollableTableDetails,
+            "table_simple": OracleTableRollableTableSimple,
+        }
+
+        return variants[data["oracle_type"]].from_json_data(data)
+
+    def to_json_data(self) -> Any:
+        pass
+
+@dataclass
+class OracleTableRollableTableDetailsColumnLabels:
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    detail: 'Label'
+    result: 'Label'
+    roll: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableDetailsColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("detail")),
+            _from_json_data(Label, data.get("result")),
+            _from_json_data(Label, data.get("roll")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["detail"] = _to_json_data(self.detail)
+        data["result"] = _to_json_data(self.result)
+        data["roll"] = _to_json_data(self.roll)
+        return data
+
+@dataclass
+class OracleTableRollableTableDetailsRecommendedRolls:
     max: 'int'
     min: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRecommendedRolls':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableDetailsRecommendedRolls':
         return cls(
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
@@ -4694,18 +5253,24 @@ class OracleTableRecommendedRolls:
         return data
 
 @dataclass
-class OracleTable:
+class OracleTableRollableTableDetails(OracleTableRollable):
     """
-    Represents a single oracle table, or a single table column of a table that
-    has multiple "Roll" or "Result" columns.
+    A rollable oracle table with one roll column, one `result` column, and one
+    `detail` column.
+    """
+
+    column_labels: 'OracleTableRollableTableDetailsColumnLabels'
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
     """
 
     dice: 'DiceExpression'
     """
-    The roll used to select a result on this table.
+    The roll used to select a result on this oracle.
     """
 
-    id: 'OracleTableID'
+    id: 'OracleRollableID'
     """
     The unique Datasworn ID for this item.
     """
@@ -4715,13 +5280,17 @@ class OracleTable:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    rows: 'List[OracleTableRowDetails]'
+    """
+    An array of objects, each representing a single row of the table.
+    """
+
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
     """
 
-    table: 'List[OracleTableRow]'
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -4740,24 +5309,18 @@ class OracleTable:
     An icon that represents this table.
     """
 
-    images: 'Optional[List[WebpImageURL]]'
-    match: 'Optional[OracleTableMatchBehavior]'
+    match: 'Optional[OracleMatchBehavior]'
     """
     Most oracle tables are insensitive to matches, but a few define special
     match behavior.
     """
 
-    recommended_rolls: 'Optional[OracleTableRecommendedRolls]'
-    rendering: 'Optional[OracleTableRendering]'
+    recommended_rolls: 'Optional[OracleTableRollableTableDetailsRecommendedRolls]'
+    replaces: 'Optional[OracleRollableID]'
     """
-    Describes how how to render this table, when presenting it as a standalone
-    table.
-    """
-
-    replaces: 'Optional[OracleTableID]'
-    """
-    Indicates that this table replaces the identified table. References to the
-    replaced table can be considered equivalent to this table.
+    Indicates that this object replaces the identified OracleRollable.
+    References to the replaced object can be considered equivalent to this
+    object.
     """
 
     suggestions: 'Optional[Suggestions]'
@@ -4769,50 +5332,47 @@ class OracleTable:
     instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTable':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableDetails':
         return cls(
+            "table_details",
+            _from_json_data(OracleTableRollableTableDetailsColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
-            _from_json_data(OracleTableID, data.get("id")),
+            _from_json_data(OracleRollableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
-            _from_json_data(List[OracleTableRow], data.get("table")),
+            _from_json_data(List[OracleTableRowDetails], data.get("rows")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
-            _from_json_data(Optional[OracleTableMatchBehavior], data.get("match")),
-            _from_json_data(Optional[OracleTableRecommendedRolls], data.get("recommended_rolls")),
-            _from_json_data(Optional[OracleTableRendering], data.get("rendering")),
-            _from_json_data(Optional[OracleTableID], data.get("replaces")),
+            _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
+            _from_json_data(Optional[OracleTableRollableTableDetailsRecommendedRolls], data.get("recommended_rolls")),
+            _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
+        data = { "oracle_type": "table_details" }
+        data["column_labels"] = _to_json_data(self.column_labels)
         data["dice"] = _to_json_data(self.dice)
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
+        data["rows"] = _to_json_data(self.rows)
         data["source"] = _to_json_data(self.source)
-        data["table"] = _to_json_data(self.table)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
              data["description"] = _to_json_data(self.description)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
-        if self.images is not None:
-             data["images"] = _to_json_data(self.images)
         if self.match is not None:
              data["match"] = _to_json_data(self.match)
         if self.recommended_rolls is not None:
              data["recommended_rolls"] = _to_json_data(self.recommended_rolls)
-        if self.rendering is not None:
-             data["rendering"] = _to_json_data(self.rendering)
         if self.replaces is not None:
              data["replaces"] = _to_json_data(self.replaces)
         if self.suggestions is not None:
@@ -4824,248 +5384,278 @@ class OracleTable:
         return data
 
 @dataclass
-class OracleTableColumn:
-    content_type: 'OracleTableColumnContentKey'
-    label: 'Label'
+class OracleTableRollableTableSimpleColumnLabels:
     """
-    The column's header text.
-    """
-
-    color: 'Optional[CSSColor]'
-    """
-    The thematic color for this column.
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
     """
 
+    result: 'Label'
+    roll: 'Label'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableColumn':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableSimpleColumnLabels':
         return cls(
-            _from_json_data(OracleTableColumnContentKey, data.get("content_type")),
-            _from_json_data(Label, data.get("label")),
-            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Label, data.get("result")),
+            _from_json_data(Label, data.get("roll")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["content_type"] = _to_json_data(self.content_type)
-        data["label"] = _to_json_data(self.label)
-        if self.color is not None:
-             data["color"] = _to_json_data(self.color)
+        data["result"] = _to_json_data(self.result)
+        data["roll"] = _to_json_data(self.roll)
         return data
 
-class OracleTableColumnContentKey(Enum):
-    """
-    The value(s) from each OracleTableRow that is rendered in this column.
-    """
-
-    DESCRIPTION = "description"
-    """
-    Column displays the OracleTableRow's `description` key.
-    """
-
-    RESULT = "result"
-    """
-    Column displays the OracleTableRow's `result` key.
-    """
-
-    ROLL = "roll"
-    """
-    Column displays the roll range (`min` and `max`) of each OracleTableRow.
-    """
-
-    SUMMARY = "summary"
-    """
-    Column displays the OracleTableRow's `summary` key.
-    """
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableColumnContentKey':
-        return cls(data)
-
-    def to_json_data(self) -> Any:
-        return self.value
-
 @dataclass
-class OracleTableID:
-    """
-    A unique ID for an OracleTable.
-    """
-
-    value: 'str'
+class OracleTableRollableTableSimpleRecommendedRolls:
+    max: 'int'
+    min: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class OracleTableIDWildcard:
-    """
-    Oracle table wildcards can also use '**' to represent any number of
-    collection levels in the oracle tree.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableIDWildcard':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class OracleTableMatchBehavior:
-    text: 'MarkdownString'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableMatchBehavior':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableSimpleRecommendedRolls':
         return cls(
-            _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(int, data.get("max")),
+            _from_json_data(int, data.get("min")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["text"] = _to_json_data(self.text)
+        data["max"] = _to_json_data(self.max)
+        data["min"] = _to_json_data(self.min)
         return data
 
 @dataclass
-class OracleTableRendering:
+class OracleTableRollableTableSimple(OracleTableRollable):
     """
-    Describes the presentation of this table.
+    Represents a basic rollable oracle table with one roll column and one
+    `result` column.
     """
 
-    style: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRendering':
-        variants: Dict[str, Type[OracleTableRendering]] = {
-            "column": OracleTableRenderingColumn,
-            "embed_in_row": OracleTableRenderingEmbedInRow,
-            "standalone": OracleTableRenderingStandalone,
-        }
-
-        return variants[data["style"]].from_json_data(data)
-
-    def to_json_data(self) -> Any:
-        pass
-
-@dataclass
-class OracleTableRenderingColumn(OracleTableRendering):
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRenderingColumn':
-        return cls(
-            "column",
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "style": "column" }
-        return data
-
-@dataclass
-class OracleTableRenderingEmbedInRow(OracleTableRendering):
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRenderingEmbedInRow':
-        return cls(
-            "embed_in_row",
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "style": "embed_in_row" }
-        return data
-
-@dataclass
-class OracleTableRenderingStandalone(OracleTableRendering):
-    columns: 'Dict[str, OracleTableColumn]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRenderingStandalone':
-        return cls(
-            "standalone",
-            _from_json_data(Dict[str, OracleTableColumn], data.get("columns")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "style": "standalone" }
-        data["columns"] = _to_json_data(self.columns)
-        return data
-
-@dataclass
-class OracleTableRoll:
-    auto: 'bool'
+    column_labels: 'OracleTableRollableTableSimpleColumnLabels'
     """
-    Both Ironsworn and Starforged explicitly recommend *against* rolling
-    all details at once. That said, some oracle results only provide useful
-    information once a secondary roll occurs, such as "Action + Theme".
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
     """
 
     dice: 'DiceExpression'
-    duplicates: 'OracleTableRollDuplicates'
     """
-    Special rules on how to handle duplicate results, when rolling multiple
-    times on this table.
+    The roll used to select a result on this oracle.
     """
 
-    number_of_rolls: 'int'
+    id: 'OracleRollableID'
     """
-    The number of times to roll.
+    The unique Datasworn ID for this item.
     """
 
-    oracle: 'OracleTableID'
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    rows: 'List[OracleTableRowSimple]'
+    """
+    An array of objects, each representing a single row of the table.
+    """
+
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of the oracle table's intended usage, which might
+    include multiple paragraphs. If it's only a couple sentences, use the
+    `summary` key instead.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An icon that represents this table.
+    """
+
+    match: 'Optional[OracleMatchBehavior]'
+    """
+    Most oracle tables are insensitive to matches, but a few define special
+    match behavior.
+    """
+
+    recommended_rolls: 'Optional[OracleTableRollableTableSimpleRecommendedRolls]'
+    replaces: 'Optional[OracleRollableID]'
+    """
+    Indicates that this object replaces the identified OracleRollable.
+    References to the replaced object can be considered equivalent to this
+    object.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of the oracle table's intended usage, no more than a few
+    sentences in length. This is intended for use in application tooltips
+    and similar sorts of hints. Longer text should use the "description" key
+    instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRoll':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableSimple':
         return cls(
-            _from_json_data(bool, data.get("auto")),
+            "table_simple",
+            _from_json_data(OracleTableRollableTableSimpleColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
-            _from_json_data(OracleTableRollDuplicates, data.get("duplicates")),
-            _from_json_data(int, data.get("number_of_rolls")),
-            _from_json_data(OracleTableID, data.get("oracle")),
+            _from_json_data(OracleRollableID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(List[OracleTableRowSimple], data.get("rows")),
+            _from_json_data(SourceInfo, data.get("source")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
+            _from_json_data(Optional[OracleTableRollableTableSimpleRecommendedRolls], data.get("recommended_rolls")),
+            _from_json_data(Optional[OracleRollableID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "oracle_type": "table_simple" }
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["dice"] = _to_json_data(self.dice)
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["rows"] = _to_json_data(self.rows)
+        data["source"] = _to_json_data(self.source)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.match is not None:
+             data["match"] = _to_json_data(self.match)
+        if self.recommended_rolls is not None:
+             data["recommended_rolls"] = _to_json_data(self.recommended_rolls)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+@dataclass
+class OracleTableRowDetails:
+    """
+    Represents a row in an oracle table that provides additional details.
+    """
+
+    detail: 'MarkdownString'
+    id: 'OracleTableRowID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    max: 'int'
+    """
+    High end of the dice range for this table row.
+    """
+
+    min: 'int'
+    """
+    Low end of the dice range for this table row.
+    """
+
+    result: 'MarkdownString'
+    """
+    The primary text content of this row.
+    """
+
+    embed_table: 'Optional[OracleRollableID]'
+    """
+    Hints that the identified table should be rendered inside this table row.
+    """
+
+    i18n: 'Optional[I18nHints]'
+    icon: 'Optional[SvgImageURL]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
+    """
+    Further oracle rolls prompted by this table row.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    template: 'Optional[OracleRollTemplate]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRowDetails':
+        return cls(
+            _from_json_data(MarkdownString, data.get("detail")),
+            _from_json_data(OracleTableRowID, data.get("id")),
+            _from_json_data(int, data.get("max")),
+            _from_json_data(int, data.get("min")),
+            _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
+            _from_json_data(Optional[I18nHints], data.get("i18n")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["auto"] = _to_json_data(self.auto)
-        data["dice"] = _to_json_data(self.dice)
-        data["duplicates"] = _to_json_data(self.duplicates)
-        data["number_of_rolls"] = _to_json_data(self.number_of_rolls)
-        data["oracle"] = _to_json_data(self.oracle)
+        data["detail"] = _to_json_data(self.detail)
+        data["id"] = _to_json_data(self.id)
+        data["max"] = _to_json_data(self.max)
+        data["min"] = _to_json_data(self.min)
+        data["result"] = _to_json_data(self.result)
+        if self.embed_table is not None:
+             data["embed_table"] = _to_json_data(self.embed_table)
+        if self.i18n is not None:
+             data["i18n"] = _to_json_data(self.i18n)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.template is not None:
+             data["template"] = _to_json_data(self.template)
         return data
 
-class OracleTableRollDuplicates(Enum):
+@dataclass
+class OracleTableRowID:
     """
-    Special roll instructions to use when rolling multiple times on a single
-    oracle table.
-    """
-
-    KEEP = "keep"
-    """
-    Duplicates should be kept.
-    """
-
-    MAKE_IT_WORSE = "make_it_worse"
-    """
-    Duplicates should be kept, and they compound to make things worse.
+    Normally, rows will end with two numbers separated by a dash, indicating
+    their dice range.
+    
+    Rows with a single number represent unrollable rows that are sometimes
+    included for rendering purposes; in this case, the number represents the
+    row's index.
     """
 
-    REROLL = "reroll"
-    """
-    Duplicates should be re-rolled.
-    """
+    value: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRollDuplicates':
-        return cls(data)
+    def from_json_data(cls, data: Any) -> 'OracleTableRowID':
+        return cls(_from_json_data(str, data))
 
     def to_json_data(self) -> Any:
-        return self.value
+        return _to_json_data(self.value)
 
 @dataclass
-class OracleTableRow:
+class OracleTableRowSimple:
     """
     Represents a row in an oracle table.
     """
@@ -5090,47 +5680,33 @@ class OracleTableRow:
     The primary text content of this row.
     """
 
-    description: 'Optional[MarkdownString]'
-    """
-    Optional tertiary text content for this row. Generally, this is longer than
-    both `result` and `summary`.
-    """
-
-    embed_table: 'Optional[OracleTableID]'
+    embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
 
     suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    Optional secondary text content for this row. Generally, this is longer
-    than `result`.
-    """
-
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRow':
+    def from_json_data(cls, data: Any) -> 'OracleTableRowSimple':
         return cls(
             _from_json_data(OracleTableRowID, data.get("id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[OracleTableID], data.get("embed_table")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -5140,8 +5716,6 @@ class OracleTableRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
         if self.i18n is not None:
@@ -5152,31 +5726,150 @@ class OracleTableRow:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
 
-@dataclass
-class OracleTableRowID:
+class OracleTablesCollectionOracleType(Enum):
     """
-    Normally, rows will end with two numbers separated by a dash, indicating
-    their dice range.
-    
-    Rows with a single number represent unrollable rows that are sometimes
-    included for rendering purposes; in this case, the number represents the
-    row's index.
+    A grouping of separate tables.
     """
 
-    value: 'str'
-
+    TABLES = "tables"
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRowID':
-        return cls(_from_json_data(str, data))
+    def from_json_data(cls, data: Any) -> 'OracleTablesCollectionOracleType':
+        return cls(data)
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        return self.value
+
+@dataclass
+class OracleTablesCollection:
+    """
+    An OracleCollection that represents a category or grouping of tables, which
+    may themselves be `OracleTablesCollection`s.
+    """
+
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    oracle_type: 'OracleTablesCollectionOracleType'
+    """
+    A grouping of separate tables.
+    """
+
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    collections: 'Optional[Dict[str, OracleCollection]]'
+    color: 'Optional[CSSColor]'
+    """
+    A thematic color associated with this collection.
+    """
+
+    contents: 'Optional[Dict[str, OracleTableRollable]]'
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of this collection, which might include multiple
+    paragraphs. If it's only a couple sentences, use the `summary` key instead.
+    """
+
+    enhances: 'Optional[OracleCollectionID]'
+    """
+    This collection's content enhances the identified collection, rather than
+    being a standalone collection of its own.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An SVG icon associated with this collection.
+    """
+
+    images: 'Optional[List[WebpImageURL]]'
+    replaces: 'Optional[OracleCollectionID]'
+    """
+    This collection replaces the identified collection. References to the
+    replaced collection can be considered equivalent to this collection.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of this collection, no more than a few sentences in length.
+    This is intended for use in application tooltips and similar sorts of hints.
+    Longer text should use the "description" key instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTablesCollection':
+        return cls(
+            _from_json_data(OracleCollectionID, data.get("id")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(OracleTablesCollectionOracleType, data.get("oracle_type")),
+            _from_json_data(SourceInfo, data.get("source")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[Dict[str, OracleCollection]], data.get("collections")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[Dict[str, OracleTableRollable]], data.get("contents")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
+            _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["id"] = _to_json_data(self.id)
+        data["name"] = _to_json_data(self.name)
+        data["oracle_type"] = _to_json_data(self.oracle_type)
+        data["source"] = _to_json_data(self.source)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.collections is not None:
+             data["collections"] = _to_json_data(self.collections)
+        if self.color is not None:
+             data["color"] = _to_json_data(self.color)
+        if self.contents is not None:
+             data["contents"] = _to_json_data(self.contents)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.enhances is not None:
+             data["enhances"] = _to_json_data(self.enhances)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.images is not None:
+             data["images"] = _to_json_data(self.images)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
 
 class PartOfSpeech(Enum):
     ADJECTIVE = "adjective"
@@ -5337,7 +6030,7 @@ class Rarity:
     The primary name/label for this item.
     """
 
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -5364,7 +6057,7 @@ class Rarity:
 
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Rarity':
@@ -5373,12 +6066,12 @@ class Rarity:
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(RarityID, data.get("id")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(int, data.get("xp_cost")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5632,6 +6325,7 @@ class Rules:
     Describes the standard stats used by player characters in this ruleset.
     """
 
+    tags: 'Dict[str, TagRule]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Rules':
@@ -5640,6 +6334,7 @@ class Rules:
             _from_json_data(Dict[str, ImpactCategory], data.get("impacts")),
             _from_json_data(Dict[str, SpecialTrackRule], data.get("special_tracks")),
             _from_json_data(Dict[str, StatRule], data.get("stats")),
+            _from_json_data(Dict[str, TagRule], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5648,6 +6343,7 @@ class Rules:
         data["impacts"] = _to_json_data(self.impacts)
         data["special_tracks"] = _to_json_data(self.special_tracks)
         data["stats"] = _to_json_data(self.stats)
+        data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -5680,6 +6376,7 @@ class RulesExpansion:
     Describes the standard stats used by player characters in this ruleset.
     """
 
+    tags: 'Optional[Dict[str, TagRule]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RulesExpansion':
@@ -5688,6 +6385,7 @@ class RulesExpansion:
             _from_json_data(Optional[Dict[str, ImpactCategory]], data.get("impacts")),
             _from_json_data(Optional[Dict[str, SpecialTrackRule]], data.get("special_tracks")),
             _from_json_data(Optional[Dict[str, StatRule]], data.get("stats")),
+            _from_json_data(Optional[Dict[str, TagRule]], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5700,6 +6398,8 @@ class RulesExpansion:
              data["special_tracks"] = _to_json_data(self.special_tracks)
         if self.stats is not None:
              data["stats"] = _to_json_data(self.stats)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -6056,27 +6756,31 @@ class SemanticVersion:
         return _to_json_data(self.value)
 
 @dataclass
-class Source:
+class SourceInfo:
     """
     Metadata describing the original source of this item
     """
 
     authors: 'List[AuthorInfo]'
-    date: 'str'
+    """
+    Lists authors credited by the source material.
+    """
+
+    date: 'datetime'
     """
     The date of the source documents's last update, formatted YYYY-MM-DD.
     Required because it's used to determine whether the data needs updating.
     """
 
-    license: 'str'
+    license: 'License'
     title: 'str'
     """
     The title of the source document.
     """
 
-    url: 'str'
+    url: 'WebURL'
     """
-    An absolute URL where the source document is available.
+    A URL where the source document is available.
     """
 
     page: 'Optional[int]'
@@ -6086,13 +6790,13 @@ class Source:
 
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Source':
+    def from_json_data(cls, data: Any) -> 'SourceInfo':
         return cls(
             _from_json_data(List[AuthorInfo], data.get("authors")),
-            _from_json_data(str, data.get("date")),
-            _from_json_data(str, data.get("license")),
+            _from_json_data(datetime, data.get("date")),
+            _from_json_data(License, data.get("license")),
             _from_json_data(str, data.get("title")),
-            _from_json_data(str, data.get("url")),
+            _from_json_data(WebURL, data.get("url")),
             _from_json_data(Optional[int], data.get("page")),
         )
 
@@ -6196,21 +6900,6 @@ class SpecialTrackRule:
         return data
 
 @dataclass
-class SpecialTrackRuleID:
-    """
-    A unique ID for a SpecialTrackRule.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SpecialTrackRuleID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class SpecialTrackType:
     """
     Special, ruleset-specific progress tracks. Usually, one exists per player
@@ -6279,27 +6968,12 @@ class StatRule:
         return data
 
 @dataclass
-class StatRuleID:
-    """
-    A unique ID for a StatRule.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'StatRuleID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class Suggestions:
     assets: 'Optional[List[AssetID]]'
     atlas: 'Optional[List[AtlasEntryID]]'
     moves: 'Optional[List[MoveID]]'
     npcs: 'Optional[List[NpcID]]'
-    oracles: 'Optional[List[OracleTableID]]'
+    oracles: 'Optional[List[OracleRollableID]]'
     rarities: 'Optional[List[RarityID]]'
     site_domains: 'Optional[List[DelveSiteDomainID]]'
     site_themes: 'Optional[List[DelveSiteThemeID]]'
@@ -6311,7 +6985,7 @@ class Suggestions:
             _from_json_data(Optional[List[AtlasEntryID]], data.get("atlas")),
             _from_json_data(Optional[List[MoveID]], data.get("moves")),
             _from_json_data(Optional[List[NpcID]], data.get("npcs")),
-            _from_json_data(Optional[List[OracleTableID]], data.get("oracles")),
+            _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[List[RarityID]], data.get("rarities")),
             _from_json_data(Optional[List[DelveSiteDomainID]], data.get("site_domains")),
             _from_json_data(Optional[List[DelveSiteThemeID]], data.get("site_themes")),
@@ -6340,7 +7014,7 @@ class Suggestions:
 @dataclass
 class SvgImageURL:
     """
-    A relative URL pointing to a vector image in the SVG format.
+    A relative (local) URL pointing to a vector image in the SVG format.
     """
 
     value: 'str'
@@ -6351,6 +7025,523 @@ class SvgImageURL:
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
+
+@dataclass
+class Tag:
+    value: 'Any'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Tag':
+        return cls(_from_json_data(Any, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class TagRule:
+    value_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRule':
+        variants: Dict[str, Type[TagRule]] = {
+            "asset": TagRuleAsset,
+            "asset_collection": TagRuleAssetCollection,
+            "atlas": TagRuleAtlas,
+            "atlas_entry": TagRuleAtlasEntry,
+            "boolean": TagRuleBoolean,
+            "delve_site": TagRuleDelveSite,
+            "delve_site_domain": TagRuleDelveSiteDomain,
+            "delve_site_theme": TagRuleDelveSiteTheme,
+            "enum": TagRuleEnum,
+            "integer": TagRuleInteger,
+            "move": TagRuleMove,
+            "move_category": TagRuleMoveCategory,
+            "npc": TagRuleNpc,
+            "npc_collection": TagRuleNpcCollection,
+            "oracle_collection": TagRuleOracleCollection,
+            "oracle_rollable": TagRuleOracleRollable,
+            "rarity": TagRuleRarity,
+            "truth": TagRuleTruth,
+        }
+
+        return variants[data["value_type"]].from_json_data(data)
+
+    def to_json_data(self) -> Any:
+        pass
+
+@dataclass
+class TagRuleAsset(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleAsset':
+        return cls(
+            "asset",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "asset" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleAssetCollection(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleAssetCollection':
+        return cls(
+            "asset_collection",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "asset_collection" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleAtlas(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleAtlas':
+        return cls(
+            "atlas",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "atlas" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleAtlasEntry(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleAtlasEntry':
+        return cls(
+            "atlas_entry",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "atlas_entry" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleBoolean(TagRule):
+    applies_to: 'List[ObjectType]'
+    array: 'bool'
+    description: 'MarkdownString'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleBoolean':
+        return cls(
+            "boolean",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(bool, data.get("array")),
+            _from_json_data(MarkdownString, data.get("description")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "boolean" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["array"] = _to_json_data(self.array)
+        data["description"] = _to_json_data(self.description)
+        return data
+
+@dataclass
+class TagRuleDelveSite(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSite':
+        return cls(
+            "delve_site",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "delve_site" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleDelveSiteDomain(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteDomain':
+        return cls(
+            "delve_site_domain",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "delve_site_domain" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleDelveSiteTheme(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteTheme':
+        return cls(
+            "delve_site_theme",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "delve_site_theme" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleEnum(TagRule):
+    applies_to: 'List[ObjectType]'
+    array: 'bool'
+    description: 'MarkdownString'
+    enum: 'List[DictKey]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleEnum':
+        return cls(
+            "enum",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(bool, data.get("array")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(List[DictKey], data.get("enum")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "enum" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["array"] = _to_json_data(self.array)
+        data["description"] = _to_json_data(self.description)
+        data["enum"] = _to_json_data(self.enum)
+        return data
+
+@dataclass
+class TagRuleInteger(TagRule):
+    applies_to: 'List[ObjectType]'
+    array: 'bool'
+    description: 'MarkdownString'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleInteger':
+        return cls(
+            "integer",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(bool, data.get("array")),
+            _from_json_data(MarkdownString, data.get("description")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "integer" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["array"] = _to_json_data(self.array)
+        data["description"] = _to_json_data(self.description)
+        return data
+
+@dataclass
+class TagRuleMove(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleMove':
+        return cls(
+            "move",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "move" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleMoveCategory(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleMoveCategory':
+        return cls(
+            "move_category",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "move_category" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleNpc(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleNpc':
+        return cls(
+            "npc",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "npc" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleNpcCollection(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleNpcCollection':
+        return cls(
+            "npc_collection",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "npc_collection" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleOracleCollection(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleOracleCollection':
+        return cls(
+            "oracle_collection",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "oracle_collection" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleOracleRollable(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleOracleRollable':
+        return cls(
+            "oracle_rollable",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "oracle_rollable" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleRarity(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleRarity':
+        return cls(
+            "rarity",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "rarity" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleTruth(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleTruth':
+        return cls(
+            "truth",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "truth" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
 
 @dataclass
 class TemplateString:
@@ -6910,7 +8101,7 @@ class Truth:
     """
 
     options: 'List[TruthOption]'
-    source: 'Source'
+    source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
@@ -6925,7 +8116,7 @@ class Truth:
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
-    tags: 'Optional[Dict[str, Dict[str, str]]]'
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
     your_character: 'Optional[MarkdownString]'
 
     @classmethod
@@ -6934,12 +8125,12 @@ class Truth:
             _from_json_data(TruthID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[TruthOption], data.get("options")),
-            _from_json_data(Source, data.get("source")),
+            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, str]]], data.get("tags")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
             _from_json_data(Optional[MarkdownString], data.get("your_character")),
         )
 
@@ -7055,31 +8246,19 @@ class TruthOptionTableRow:
     The primary text content of this row.
     """
 
-    description: 'Optional[MarkdownString]'
-    """
-    Optional tertiary text content for this row. Generally, this is longer than
-    both `result` and `summary`.
-    """
-
-    embed_table: 'Optional[OracleTableID]'
+    embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
     i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleTableRoll]]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
     """
     Further oracle rolls prompted by this table row.
     """
 
     suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    Optional secondary text content for this row. Generally, this is longer
-    than `result`.
-    """
-
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -7088,13 +8267,11 @@ class TruthOptionTableRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[OracleTableID], data.get("embed_table")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleTableRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -7103,8 +8280,6 @@ class TruthOptionTableRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
         if self.i18n is not None:
@@ -7115,16 +8290,29 @@ class TruthOptionTableRow:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
 
 @dataclass
+class WebURL:
+    """
+    An absolute URL pointing to a website.
+    """
+
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'WebURL':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class WebpImageURL:
     """
-    A relative URL pointing to a raster image in the WEBP format.
+    A relative (local) URL pointing to a raster image in the WEBP format.
     """
 
     value: 'str'

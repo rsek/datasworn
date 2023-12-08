@@ -25,7 +25,7 @@ namespace Datasworn
 
         [JsonPropertyName("oracles")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<OracleTableId> Oracles { get; set; }
+        public IList<OracleRollableId> Oracles { get; set; }
 
         [JsonPropertyName("rarities")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

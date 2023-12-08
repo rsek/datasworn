@@ -35,7 +35,7 @@ namespace Datasworn
         /// this item, including the author and licensing information.
         /// </summary>
         [JsonPropertyName("source")]
-        public Source Source { get; set; }
+        public SourceInfo Source { get; set; }
 
         /// <summary>
         /// The complete rules text of the move.
@@ -71,7 +71,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("oracles")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<OracleTableId> Oracles { get; set; }
+        public IList<OracleRollableId> Oracles { get; set; }
 
         /// <summary>
         /// Indicates that this move replaces the identified move. References to
@@ -87,6 +87,6 @@ namespace Datasworn
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
+        public IDictionary<string, IDictionary<string, Tag>> Tags { get; set; }
     }
 }

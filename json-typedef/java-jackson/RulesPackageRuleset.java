@@ -5,6 +5,8 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,20 +17,35 @@ public class RulesPackageRuleset extends RulesPackage {
     @JsonProperty("assets")
     private Map<String, AssetCollection> assets;
 
+    @JsonProperty("authors")
+    private List<AuthorInfo> authors;
+
     @JsonProperty("datasworn_version")
     private SemanticVersion dataswornVersion;
 
+    @JsonProperty("date")
+    private OffsetDateTime date;
+
     @JsonProperty("id")
     private RulesetId id;
+
+    @JsonProperty("license")
+    private License license;
 
     @JsonProperty("moves")
     private Map<String, MoveCategory> moves;
 
     @JsonProperty("oracles")
-    private Map<String, OracleCollection> oracles;
+    private Map<String, OracleTablesCollection> oracles;
 
     @JsonProperty("rules")
     private Rules rules;
+
+    @JsonProperty("title")
+    private String title;
+
+    @JsonProperty("url")
+    private WebUrl url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("atlas")
@@ -63,7 +80,7 @@ public class RulesPackageRuleset extends RulesPackage {
 
     /**
      * Getter for assets.<p>
-     * A dictionary object containing asset types, which contain assets.
+     * A dictionary object containing asset collections, which contain assets.
      */
     public Map<String, AssetCollection> getAssets() {
         return assets;
@@ -71,10 +88,26 @@ public class RulesPackageRuleset extends RulesPackage {
 
     /**
      * Setter for assets.<p>
-     * A dictionary object containing asset types, which contain assets.
+     * A dictionary object containing asset collections, which contain assets.
      */
     public void setAssets(Map<String, AssetCollection> assets) {
         this.assets = assets;
+    }
+
+    /**
+     * Getter for authors.<p>
+     * Lists authors credited by the source material.
+     */
+    public List<AuthorInfo> getAuthors() {
+        return authors;
+    }
+
+    /**
+     * Setter for authors.<p>
+     * Lists authors credited by the source material.
+     */
+    public void setAuthors(List<AuthorInfo> authors) {
+        this.authors = authors;
     }
 
     /**
@@ -94,6 +127,24 @@ public class RulesPackageRuleset extends RulesPackage {
     }
 
     /**
+     * Getter for date.<p>
+     * The date of the source documents's last update, formatted YYYY-MM-DD.
+     * Required because it's used to determine whether the data needs updating.
+     */
+    public OffsetDateTime getDate() {
+        return date;
+    }
+
+    /**
+     * Setter for date.<p>
+     * The date of the source documents's last update, formatted YYYY-MM-DD.
+     * Required because it's used to determine whether the data needs updating.
+     */
+    public void setDate(OffsetDateTime date) {
+        this.date = date;
+    }
+
+    /**
      * Getter for id.<p>
      */
     public RulesetId getId() {
@@ -105,6 +156,20 @@ public class RulesPackageRuleset extends RulesPackage {
      */
     public void setId(RulesetId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for license.<p>
+     */
+    public License getLicense() {
+        return license;
+    }
+
+    /**
+     * Setter for license.<p>
+     */
+    public void setLicense(License license) {
+        this.license = license;
     }
 
     /**
@@ -128,7 +193,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * A dictionary object containing oracle collections, which may contain
      * oracle tables and/or oracle collections.
      */
-    public Map<String, OracleCollection> getOracles() {
+    public Map<String, OracleTablesCollection> getOracles() {
         return oracles;
     }
 
@@ -137,7 +202,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * A dictionary object containing oracle collections, which may contain
      * oracle tables and/or oracle collections.
      */
-    public void setOracles(Map<String, OracleCollection> oracles) {
+    public void setOracles(Map<String, OracleTablesCollection> oracles) {
         this.oracles = oracles;
     }
 
@@ -153,6 +218,38 @@ public class RulesPackageRuleset extends RulesPackage {
      */
     public void setRules(Rules rules) {
         this.rules = rules;
+    }
+
+    /**
+     * Getter for title.<p>
+     * The title of the source document.
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * Setter for title.<p>
+     * The title of the source document.
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * Getter for url.<p>
+     * A URL where the source document is available.
+     */
+    public WebUrl getUrl() {
+        return url;
+    }
+
+    /**
+     * Setter for url.<p>
+     * A URL where the source document is available.
+     */
+    public void setUrl(WebUrl url) {
+        this.url = url;
     }
 
     /**

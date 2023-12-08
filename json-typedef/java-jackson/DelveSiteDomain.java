@@ -26,7 +26,7 @@ public class DelveSiteDomain {
     private Label name;
 
     @JsonProperty("source")
-    private Source source;
+    private SourceInfo source;
 
     @JsonProperty("summary")
     private MarkdownString summary;
@@ -45,7 +45,7 @@ public class DelveSiteDomain {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("name_oracle")
-    private OracleTableId nameOracle;
+    private OracleRollableId nameOracle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -53,7 +53,7 @@ public class DelveSiteDomain {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
-    private Map<String, Map<String, String>> tags;
+    private Map<String, Map<String, Tag>> tags;
 
     public DelveSiteDomain() {
     }
@@ -123,7 +123,7 @@ public class DelveSiteDomain {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public Source getSource() {
+    public SourceInfo getSource() {
         return source;
     }
 
@@ -132,7 +132,7 @@ public class DelveSiteDomain {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public void setSource(Source source) {
+    public void setSource(SourceInfo source) {
         this.source = source;
     }
 
@@ -204,7 +204,7 @@ public class DelveSiteDomain {
      * oracles are used by the site name oracle from Ironsworn: Delve (ID:
      * delve/oracles/site_name/format) to create random names for delve sites.
      */
-    public OracleTableId getNameOracle() {
+    public OracleRollableId getNameOracle() {
         return nameOracle;
     }
 
@@ -216,7 +216,7 @@ public class DelveSiteDomain {
      * oracles are used by the site name oracle from Ironsworn: Delve (ID:
      * delve/oracles/site_name/format) to create random names for delve sites.
      */
-    public void setNameOracle(OracleTableId nameOracle) {
+    public void setNameOracle(OracleRollableId nameOracle) {
         this.nameOracle = nameOracle;
     }
 
@@ -237,14 +237,14 @@ public class DelveSiteDomain {
     /**
      * Getter for tags.<p>
      */
-    public Map<String, Map<String, String>> getTags() {
+    public Map<String, Map<String, Tag>> getTags() {
         return tags;
     }
 
     /**
      * Setter for tags.<p>
      */
-    public void setTags(Map<String, Map<String, String>> tags) {
+    public void setTags(Map<String, Map<String, Tag>> tags) {
         this.tags = tags;
     }
 }

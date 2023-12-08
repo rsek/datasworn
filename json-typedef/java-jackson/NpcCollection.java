@@ -17,7 +17,7 @@ public class NpcCollection {
     private Label name;
 
     @JsonProperty("source")
-    private Source source;
+    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -61,7 +61,7 @@ public class NpcCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
-    private Map<String, Map<String, String>> tags;
+    private Map<String, Map<String, Tag>> tags;
 
     public NpcCollection() {
     }
@@ -103,7 +103,7 @@ public class NpcCollection {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public Source getSource() {
+    public SourceInfo getSource() {
         return source;
     }
 
@@ -112,7 +112,7 @@ public class NpcCollection {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public void setSource(Source source) {
+    public void setSource(SourceInfo source) {
         this.source = source;
     }
 
@@ -287,14 +287,14 @@ public class NpcCollection {
     /**
      * Getter for tags.<p>
      */
-    public Map<String, Map<String, String>> getTags() {
+    public Map<String, Map<String, Tag>> getTags() {
         return tags;
     }
 
     /**
      * Setter for tags.<p>
      */
-    public void setTags(Map<String, Map<String, String>> tags) {
+    public void setTags(Map<String, Map<String, Tag>> tags) {
         this.tags = tags;
     }
 }

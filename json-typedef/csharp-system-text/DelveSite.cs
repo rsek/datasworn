@@ -39,7 +39,7 @@ namespace Datasworn
         /// this item, including the author and licensing information.
         /// </summary>
         [JsonPropertyName("source")]
-        public Source Source { get; set; }
+        public SourceInfo Source { get; set; }
 
         [JsonPropertyName("theme")]
         public DelveSiteThemeId Theme { get; set; }
@@ -78,6 +78,6 @@ namespace Datasworn
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
+        public IDictionary<string, IDictionary<string, Tag>> Tags { get; set; }
     }
 }

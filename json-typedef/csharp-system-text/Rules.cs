@@ -39,5 +39,8 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("stats")]
         public IDictionary<string, StatRule> Stats { get; set; }
+
+        [JsonPropertyName("tags")]
+        public IDictionary<string, TagRule> Tags { get; set; }
     }
 }

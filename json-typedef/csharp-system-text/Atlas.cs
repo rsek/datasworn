@@ -24,7 +24,7 @@ namespace Datasworn
         /// this item, including the author and licensing information.
         /// </summary>
         [JsonPropertyName("source")]
-        public Source Source { get; set; }
+        public SourceInfo Source { get; set; }
 
         /// <summary>
         /// The name of this item as it appears on the page in the book, if it's
@@ -102,6 +102,6 @@ namespace Datasworn
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, IDictionary<string, string>> Tags { get; set; }
+        public IDictionary<string, IDictionary<string, Tag>> Tags { get; set; }
     }
 }

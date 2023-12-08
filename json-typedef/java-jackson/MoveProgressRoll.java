@@ -25,7 +25,7 @@ public class MoveProgressRoll extends Move {
     private MoveOutcomes outcomes;
 
     @JsonProperty("source")
-    private Source source;
+    private SourceInfo source;
 
     @JsonProperty("text")
     private MarkdownString text;
@@ -42,7 +42,7 @@ public class MoveProgressRoll extends Move {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("oracles")
-    private List<OracleTableId> oracles;
+    private List<OracleRollableId> oracles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
@@ -54,7 +54,7 @@ public class MoveProgressRoll extends Move {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
-    private Map<String, Map<String, String>> tags;
+    private Map<String, Map<String, Tag>> tags;
 
     public MoveProgressRoll() {
     }
@@ -110,7 +110,7 @@ public class MoveProgressRoll extends Move {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public Source getSource() {
+    public SourceInfo getSource() {
         return source;
     }
 
@@ -119,7 +119,7 @@ public class MoveProgressRoll extends Move {
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
      */
-    public void setSource(Source source) {
+    public void setSource(SourceInfo source) {
         this.source = source;
     }
 
@@ -197,7 +197,7 @@ public class MoveProgressRoll extends Move {
      * automatically, as almost all moves present them as an option, not a
      * requirement.
      */
-    public List<OracleTableId> getOracles() {
+    public List<OracleRollableId> getOracles() {
         return oracles;
     }
 
@@ -207,7 +207,7 @@ public class MoveProgressRoll extends Move {
      * automatically, as almost all moves present them as an option, not a
      * requirement.
      */
-    public void setOracles(List<OracleTableId> oracles) {
+    public void setOracles(List<OracleRollableId> oracles) {
         this.oracles = oracles;
     }
 
@@ -246,14 +246,14 @@ public class MoveProgressRoll extends Move {
     /**
      * Getter for tags.<p>
      */
-    public Map<String, Map<String, String>> getTags() {
+    public Map<String, Map<String, Tag>> getTags() {
         return tags;
     }
 
     /**
      * Setter for tags.<p>
      */
-    public void setTags(Map<String, Map<String, String>> tags) {
+    public void setTags(Map<String, Map<String, Tag>> tags) {
         this.tags = tags;
     }
 }
