@@ -8,6 +8,8 @@
 - [ ] update tools dependencies
 - [ ] generate "a la carte" schema + types for portable standalone objects like assets, tables, etc
   - flag with NonPortable symbol?
+
+## v0.0.7
 - [ ] Provide ID regexes w/ named capture groups for JS/TS
 - [ ] Provide ID generation functions for JS/TS
 - [ ] Provide ID parsing functions
