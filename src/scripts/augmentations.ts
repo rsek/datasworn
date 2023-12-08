@@ -1,15 +1,12 @@
 import { Type } from '@sinclair/typebox'
 import { UnionEnum } from '../schema/datasworn/Utils.js'
-import { JsonTypeDef } from './json-typedef/symbol.js'
-import { Metadata } from './json-typedef/typedef.js'
+import { type JsonTypeDef } from './json-typedef/symbol.js'
+import { type Metadata } from './json-typedef/typedef.js'
 
 export namespace Keywords {
-	export const releaseStage = UnionEnum(
-		['unstable', 'experimental', 'release'],
-		{
-			default: 'release'
-		}
-	)
+	export const releaseStage = UnionEnum(['experimental', 'release'], {
+		default: 'release'
+	})
 	export const i18n = Type.Boolean({ default: false })
 	export const deprecated = Type.Boolean({ default: false })
 }

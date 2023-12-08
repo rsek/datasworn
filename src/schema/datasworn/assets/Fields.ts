@@ -121,7 +121,7 @@ const AssetConditionMeterMixin = Type.Object({
 			{
 				description:
 					'Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.',
-				releaseStage: 'unstable'
+				releaseStage: 'experimental'
 			}
 		)
 	),

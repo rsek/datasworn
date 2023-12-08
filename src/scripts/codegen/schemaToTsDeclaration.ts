@@ -27,7 +27,12 @@ export function extractDefs(defs: Record<string, TSchema>) {
 }
 
 // keywords where they can be included close to as-is. boolean keywords generally have their value omitted, leaving just the tag: "@i18n" rather than "@i18n true"
-const extractableKeywords: string[] = ['min', 'max', 'i18n']
+const extractableKeywords: string[] = [
+	'minimum',
+	'maximum',
+	'i18n',
+	'deprecated'
+]
 
 
 // keywords where a string value is expected, and the string value is the keyword

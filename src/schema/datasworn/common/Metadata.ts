@@ -155,7 +155,7 @@ export const Suggestions = Type.Partial(
 		atlas: Type.Array(Type.Ref(Id.AtlasEntryId)),
 		rarities: Type.Array(Type.Ref(Id.RarityId))
 	}),
-	{ $id: 'Suggestions', releaseStage: 'unstable' }
+	{ $id: 'Suggestions', releaseStage: 'experimental' }
 )
 
 export type Suggestions = Static<typeof Suggestions>

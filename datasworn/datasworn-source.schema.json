@@ -913,7 +913,7 @@
 		"Suggestions": {
 			"title": "Suggestions",
 			"type": "object",
-			"releaseStage": "unstable",
+			"releaseStage": "experimental",
 			"properties": {
 				"oracles": {
 					"type": "array",
@@ -3520,12 +3520,12 @@
 				},
 				"template": {
 					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"embed_table": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -3588,12 +3588,12 @@
 				},
 				"template": {
 					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"embed_table": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -5783,7 +5783,7 @@
 				"moves": {
 					"type": "object",
 					"description": "Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.",
-					"releaseStage": "unstable",
+					"releaseStage": "experimental",
 					"properties": {
 						"recover": {
 							"type": "array",
@@ -6828,12 +6828,12 @@
 				},
 				"template": {
 					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"embed_table": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -7810,12 +7810,12 @@
 				},
 				"template": {
 					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"embed_table": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -7860,12 +7860,12 @@
 				},
 				"template": {
 					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"embed_table": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -8253,12 +8253,12 @@
 				},
 				"template": {
 					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"embed_table": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -8303,12 +8303,12 @@
 				},
 				"template": {
 					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"embed_table": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "unstable"
+					"releaseStage": "experimental"
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"

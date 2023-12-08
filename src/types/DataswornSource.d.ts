@@ -672,6 +672,7 @@ export type License = WebUrl | null
 
 /**
  * Represents a page number in a book.
+ * @minimum 1
  */
 export type PageNumber = number
 
@@ -719,7 +720,7 @@ export interface SourceInfo {
 export type SourceTitle = string
 
 /**
- * @unstable
+ * @experimental
  */
 export interface Suggestions {
 	oracles?: OracleRollableId[]
@@ -1691,6 +1692,7 @@ export interface OracleRoll {
 	/**
 	 * The number of times to roll.
 	 * @default 1
+	 * @minimum 1
 	 */
 	number_of_rolls?: number
 }
@@ -1993,11 +1995,11 @@ export interface OracleTableRowDetails {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
-	 * @unstable
+	 * @experimental
 	 */
 	embed_table?: OracleRollableId
 	/**
-	 * @unstable
+	 * @experimental
 	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
@@ -2037,11 +2039,11 @@ export interface OracleTableRowSimple {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
-	 * @unstable
+	 * @experimental
 	 */
 	embed_table?: OracleRollableId
 	/**
-	 * @unstable
+	 * @experimental
 	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
@@ -3377,7 +3379,7 @@ export interface AssetConditionMeter {
 	icon?: SvgImageUrl
 	/**
 	 * Provides hints for moves that interact with this condition meter, such as suffer and recovery moves.
-	 * @unstable
+	 * @experimental
 	 */
 	moves?: {
 		/**
@@ -3476,6 +3478,7 @@ export interface ClockField {
 	min?: 0
 	/**
 	 * The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments.
+	 * @minimum 2
 	 */
 	max: number
 	rollable?: false
@@ -3791,11 +3794,11 @@ export interface TruthOptionTableRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
-	 * @unstable
+	 * @experimental
 	 */
 	embed_table?: OracleRollableId
 	/**
-	 * @unstable
+	 * @experimental
 	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
@@ -3958,6 +3961,8 @@ export interface Rarity {
 	 *
 	 *       If you are playing solo, and aren’t concerned with the relative balance of rarity abilities, you can ignore these variable costs. If so, spend 3 experience points to purchase a rarity.
 	 * @default 3
+	 * @minimum 3
+	 * @maximum 5
 	 */
 	xp_cost?: number
 	description: MarkdownString
@@ -4113,6 +4118,9 @@ export interface DelveSiteDomain {
 	 * @experimental
 	 */
 	tags?: Record<DictKey, Record<DictKey, Tag>>
+	/**
+	 * @deprecated
+	 */
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
@@ -4216,11 +4224,11 @@ export interface DelveSiteDomainDangerRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
-	 * @unstable
+	 * @experimental
 	 */
 	embed_table?: OracleRollableId
 	/**
-	 * @unstable
+	 * @experimental
 	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
@@ -4254,11 +4262,11 @@ export interface DelveSiteDomainFeatureRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
-	 * @unstable
+	 * @experimental
 	 */
 	embed_table?: OracleRollableId
 	/**
-	 * @unstable
+	 * @experimental
 	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
@@ -4396,11 +4404,11 @@ export interface DelveSiteThemeDangerRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
-	 * @unstable
+	 * @experimental
 	 */
 	embed_table?: OracleRollableId
 	/**
-	 * @unstable
+	 * @experimental
 	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
@@ -4434,11 +4442,11 @@ export interface DelveSiteThemeFeatureRow {
 	suggestions?: Suggestions
 	/**
 	 * Hints that the identified table should be rendered inside this table row.
-	 * @unstable
+	 * @experimental
 	 */
 	embed_table?: OracleRollableId
 	/**
-	 * @unstable
+	 * @experimental
 	 */
 	template?: OracleRollTemplate
 	i18n?: I18nHints
