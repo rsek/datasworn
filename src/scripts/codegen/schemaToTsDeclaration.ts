@@ -20,7 +20,7 @@ import {
 	TDiscriminatedUnion,
 	TNullable,
 	TUnionEnum
-} from '../../schema/datasworn/Utils.js'
+} from '../../schema/Utils.js'
 
 export function extractDefs(defs: Record<string, TSchema>) {
 	return mapValues(defs, (v, k) => renderDefinition(k, v))

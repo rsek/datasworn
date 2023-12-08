@@ -1,10 +1,7 @@
 import fs from 'fs-extra'
 
 import path from 'path'
-import {
-	DataswornRoot,
-	DataswornSourceRoot
-} from '../../schema/datasworn/Root.js'
+import { DataswornRoot, DataswornSourceRoot } from '../../schema/Root.js'
 import { ROOT_TYPES_OUT, defsKey } from '../const.js'
 import { extractDefs } from './schemaToTsDeclaration.js'
 import { writeCode } from '../utils/readWrite.js'

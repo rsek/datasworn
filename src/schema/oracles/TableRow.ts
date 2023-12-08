@@ -10,7 +10,7 @@ import {
 	TypeClone
 } from '@sinclair/typebox'
 import { mapValues } from 'lodash-es'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
+import { JsonTypeDef } from '../Symbols.js'
 import * as Generic from '../Generic.js'
 import * as Utils from '../Utils.js'
 import { Id, Localize, Metadata, Rolls } from '../common/index.js'
@@ -19,7 +19,7 @@ import {
 	setDescriptions,
 	type PickByType
 } from '../utils/typebox.js'
-import JtdType from '../../../scripts/json-typedef/typedef.js'
+import JtdType from '../../scripts/json-typedef/typedef.js'
 
 const TableRowBase = Type.Object({
 	result: Type.Ref(Localize.MarkdownString, {
@@ -166,4 +166,3 @@ export const DetailsRowLabels = ColumnLabels<typeof OracleTableRowDetails>({
 	result: 'Result',
 	detail: 'Detail'
 })
-

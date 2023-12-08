@@ -1,5 +1,5 @@
 import { TypeCompiler } from '@sinclair/typebox/compiler'
-import { DataswornSourceRoot } from '../../schema/datasworn/Root.js'
+import { DataswornSourceRoot } from '../../schema/Root.js'
 import { defsKey } from '../const.js'
 
 // console.log(

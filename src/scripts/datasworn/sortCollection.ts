@@ -1,5 +1,5 @@
 import { cloneDeep, compact, min } from 'lodash-es'
-import type * as Generic from '../../schema/datasworn/Generic.js'
+import type * as Generic from '../../schema/Generic.js'
 import Log from '../utils/Log.js'
 import Assert from './validators.js'
 

@@ -8,7 +8,7 @@ import {
 	type TSchema
 } from '@sinclair/typebox'
 import { Value } from '@sinclair/typebox/value'
-import { Members } from '../../../scripts/json-typedef/symbol.js'
+import { Members } from '../Symbols.js'
 
 export interface TUnionOneOf<T extends TSchema[]> extends TSchema {
 	[Kind]: 'UnionOneOf'

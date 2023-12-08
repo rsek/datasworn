@@ -39,12 +39,12 @@ import {
 	set,
 	isNull
 } from 'lodash-es'
-import * as Generic from '../../schema/datasworn/Generic.js'
-import * as Utils from '../../schema/datasworn/Utils.js'
-import { TRoot } from '../../schema/datasworn/root/SchemaRoot.js'
+import * as Generic from '../../schema/Generic.js'
+import * as Utils from '../../schema/Utils.js'
+import { TRoot } from '../../schema/root/SchemaRoot.js'
 import Log from '../utils/Log.js'
-import { Discriminator, JsonTypeDef, Members } from './symbol.js'
-import * as Assets from '../../schema/datasworn/Assets.js'
+import { Discriminator, JsonTypeDef, Members } from '../../schema/Symbols.js'
+import * as Assets from '../../schema/Assets.js'
 import { defsKey, rootSchemaName } from '../const.js'
 
 /** Extract metadata from a JSON schema for use in a JTD schema's `metadata` property */

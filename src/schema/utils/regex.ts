@@ -9,7 +9,7 @@ import {
 	type TUnion
 } from '@sinclair/typebox'
 import { escapeRegExp, omit } from 'lodash-es'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
+import { JsonTypeDef } from '../Symbols.js'
 import { setSourceDataSchema } from './Computed.js'
 import { type SetOptional } from './SetOptional.js'
 

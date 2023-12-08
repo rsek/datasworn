@@ -4,7 +4,6 @@ import { type TSchema, TypeGuard } from '@sinclair/typebox'
 export function NiceSchema(schema: TSchema) {
 	if (TypeGuard.TObject(schema)) schema.additionalProperties ||= false
 
-	if (schema.$id && !schema.title) schema.title = schema.$id.split('/').pop()
 
 	// if (!schema.title && !('$ref' in schema)) {
 	// 	console.log(schema)

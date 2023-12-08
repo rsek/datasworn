@@ -19,7 +19,7 @@ import * as Utils from './Utils.js'
 import * as Rules from './Rules.js'
 import { SourceInfo } from './common/Metadata.js'
 import { mapValues } from 'lodash-es'
-import * as CONST from '../../scripts/const.js'
+import * as CONST from '../scripts/const.js'
 
 const datasworn_version = Utils.Computed(
 	Type.Ref(Metadata.SemanticVersion, {

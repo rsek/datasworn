@@ -8,7 +8,7 @@ const profiler = Log.startTimer()
 
 Log.info('📖 Reading schema...')
 
-// flush any old schemas
+// flush any old schemata
 AJV.removeSchema()
 
 await loadSourceSchema()

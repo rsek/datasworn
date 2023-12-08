@@ -1,5 +1,5 @@
 import JsonPointer from 'json-pointer'
-import type * as Datasworn from '../../types/Datasworn.js'
+import type * as Datasworn from './../../types/Datasworn.js'
 import {
 	isSortableObjectSchema,
 	sortDataswornKeys,

@@ -1,9 +1,9 @@
 import { type Static, Type } from '@sinclair/typebox'
-import * as Id from '../common/Id.js'
+import * as Id from './Id.js'
 import { Nullable } from '../utils/Nullable.js'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
-import JtdType from '../../../scripts/json-typedef/typedef.js'
-import { extractMetadata } from '../../../scripts/json-typedef/utils.js'
+import { JsonTypeDef } from '../Symbols.js'
+import JtdType from '../../scripts/json-typedef/typedef.js'
+import { extractMetadata } from '../../scripts/json-typedef/utils.js'
 
 export const SvgImageUrl = Type.RegExp(/\.svg$/i, {
 	$id: 'SvgImageUrl',

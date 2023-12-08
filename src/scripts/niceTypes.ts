@@ -1,5 +1,5 @@
 import Codegen from '@sinclair/typebox-codegen'
-import Defs from '../schema/datasworn/Defs.js'
+import Defs from '../schema/Defs.js'
 import fs from 'fs-extra'
 import { isInteger, mapValues, omit, pick } from 'lodash-es'
 import {
@@ -7,7 +7,7 @@ import {
 	TUnionEnum,
 	ToEnum,
 	ToUnion
-} from '../schema/datasworn/Utils.js'
+} from '../schema/Utils.js'
 import { TSchema, Type, TypeClone, TypeGuard } from '@sinclair/typebox'
 // import { CompilerOptions, ScriptTarget } from 'typescript'
 // import { shellify } from '../shellify.js'

@@ -1,4 +1,4 @@
-/** Utilities for manipulating TypeBox schemas. */
+/** Utilities for manipulating TypeBox schemata. */
 import {
 	Type,
 	TypeClone,
@@ -18,11 +18,11 @@ import {
 	type TString
 } from '@sinclair/typebox'
 import { isEmpty, isUndefined } from 'lodash-es'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
+import { JsonTypeDef } from '../Symbols.js'
 import { type TUnionEnum } from './UnionEnum.js'
 import { type TDiscriminatedUnion } from './DiscriminatedUnion.js'
 import { type TNullable } from './Nullable.js'
-import JtdType from '../../../scripts/json-typedef/typedef.js'
+import JtdType from '../../scripts/json-typedef/typedef.js'
 
 export type ExtractKeysOfValueType<ObjectType, ValueType> = {
 	[P in keyof ObjectType]: ObjectType[P] extends ValueType ? P : never
@@ -136,4 +136,3 @@ export type TFuzzyNumber = TFuzzyRef<
 export type TFuzzyOptional<T extends TSchema> = T | TOptional<T>
 
 export type TFuzzyNull<T extends TSchema> = TFuzzyRef<T> | TNullable<T> | TNull
-

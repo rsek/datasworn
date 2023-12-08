@@ -9,10 +9,10 @@ import { getPrettierOptions, writeJSON } from '../utils/readWrite.js'
 import { sortSchemaKeys } from '../datasworn/sort.js'
 import Log from '../utils/Log.js'
 import AJV from '../validation/ajv.js'
-import * as Schema from '../../schema/datasworn/index.js'
+import * as Schema from '../../schema/index.js'
 
 import JSL from 'json-schema-library'
-import { type TRoot } from '../../schema/datasworn/root/SchemaRoot.js'
+import { type TRoot } from '../../schema/root/SchemaRoot.js'
 
 const draft7 = new JSL.Draft07()
 

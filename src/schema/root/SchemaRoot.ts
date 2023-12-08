@@ -2,7 +2,7 @@ import { TypeClone, type SchemaOptions, type TSchema } from '@sinclair/typebox'
 import { mapValues } from 'lodash-es'
 import { SourceData } from './SourceData.js'
 import { type Defs } from '../Defs.js'
-import { defsKey } from '../../../scripts/const.js'
+import { defsKey } from '../../scripts/const.js'
 
 export interface RootOptions
 	extends Required<

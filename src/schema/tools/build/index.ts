@@ -3,7 +3,7 @@ import {
 	PKG_SCOPE_COMMUNITY,
 	PKG_SCOPE_OFFICIAL
 } from '../../../scripts/const.js'
-import { UnionEnumFromRecord } from '../../datasworn/utils/UnionEnumFromRecord.js'
+import { UnionEnumFromRecord } from '../../utils/UnionEnumFromRecord.js'
 
 export const DataPackageConfig = Type.Object({
 	id: Type.String({

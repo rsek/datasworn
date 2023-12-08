@@ -11,7 +11,7 @@ import {
 	type TSchema
 } from '@sinclair/typebox'
 import { isInteger, omit, set } from 'lodash-es'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
+import { JsonTypeDef } from '../Symbols.js'
 
 export const EnumDescription = Symbol('EnumDescription')
 export const Description = Symbol('Description')

@@ -3,7 +3,7 @@ import * as JTD from 'jtd'
 import Log from '../utils/Log.js'
 import { refTracker, toJtdRoot } from './utils.js'
 
-import { DataswornRoot } from '../../schema/datasworn/index.js'
+import { DataswornRoot } from '../../schema/index.js'
 import { isEmpty } from 'lodash-es'
 import { buildTypeDefs } from './buildTypeDefs.js'
 import { JTD_JSON_PATH } from './const.js'

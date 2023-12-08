@@ -13,11 +13,7 @@ import {
 	type TSchema
 } from '@sinclair/typebox'
 import { map, omit, pick, values } from 'lodash-es'
-import {
-	Discriminator,
-	JsonTypeDef,
-	Members
-} from '../../../scripts/json-typedef/symbol.js'
+import { Discriminator, Members } from '../Symbols.js'
 import { UnionEnum, type TUnionEnum } from './UnionEnum.js'
 
 export function DiscriminatedUnionFromMapping<

@@ -5,7 +5,7 @@ import {
 	VERSION,
 	$schema,
 	defsKey
-} from '../../scripts/const.js'
+} from '../scripts/const.js'
 
 import { RulesPackage } from './RulesPackages.js'
 import { SchemaRoot, InputSchemaRoot } from './root/SchemaRoot.js'

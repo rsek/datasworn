@@ -18,9 +18,9 @@ import {
 	Rolls,
 	RollableValues
 } from './common/index.js'
-import Log from '../../scripts/utils/Log.js'
+import Log from '../scripts/utils/Log.js'
 import { pickBy } from 'lodash-es'
-import { defsKey } from '../../scripts/const.js'
+import { defsKey } from '../scripts/const.js'
 
 function validateSchemaDefinitions(defs: Record<string, TSchema>) {
 	const usedRefs = new Set<string>()
@@ -100,7 +100,6 @@ const entries: [string, TSchema][] = Object.values<TSchema>(defsBase).map(
 		return [entry.$id, entry]
 	}
 )
-
 
 const Defs: Defs = Object.fromEntries(entries)
 // await fs.writeJson('baddefs.json', Defs, { spaces: '\t' })

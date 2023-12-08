@@ -11,7 +11,7 @@ import {
 	type TSchema,
 	type TString
 } from '@sinclair/typebox'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
+import { JsonTypeDef } from '../Symbols.js'
 
 import {
 	LiteralZero,
@@ -23,7 +23,7 @@ import * as Generic from '../Generic.js'
 import * as Utils from '../Utils.js'
 import type * as Id from './Id.js'
 import * as Localize from './Localize.js'
-import JtdType from '../../../scripts/json-typedef/typedef.js'
+import JtdType from '../../scripts/json-typedef/typedef.js'
 
 /**
  * @abstract

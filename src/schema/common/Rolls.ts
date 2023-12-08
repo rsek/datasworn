@@ -1,5 +1,5 @@
 import { type TString, Type, type Static } from '@sinclair/typebox'
-import { Id, Localize } from '../common/index.js'
+import { Id, Localize } from './index.js'
 import * as Utils from '../Utils.js'
 
 export const DiceExpression = Type.RegExp(

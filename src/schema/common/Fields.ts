@@ -7,7 +7,7 @@ import {
 	type TRef,
 	type TSchema
 } from '@sinclair/typebox'
-import { Members } from '../../../scripts/json-typedef/symbol.js'
+import { Members } from '../Symbols.js'
 import { type TMoveEnhancement } from '../Moves.js'
 import * as Utils from '../Utils.js'
 import { type TAssetEnhancement } from '../assets/Enhancement.js'

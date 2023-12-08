@@ -1,5 +1,5 @@
 /**
- * TypeBox schema functions representing utility types. Used internally to compose schemas, but not part of the final Datasworn schema output.
+ * TypeBox schema functions representing utility types. Used internally to compose schemata, but not part of the final Datasworn schema output.
  */
 
 export * from './utils/Assign.js'

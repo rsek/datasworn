@@ -1,7 +1,7 @@
 import { type JSONSchema } from 'json-schema-to-typescript'
 import { defsKey } from '../const.js'
-import { SourceInfo } from '../../schema/datasworn/common/Metadata.js'
-import { RulesPackage } from '../../schema/datasworn/RulesPackages.js'
+import { SourceInfo } from '../../schema/common/Metadata.js'
+import { RulesPackage } from '../../schema/RulesPackages.js'
 import Log from '../utils/Log.js'
 import { Keywords } from '../augmentations.js'
 

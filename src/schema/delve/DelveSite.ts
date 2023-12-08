@@ -4,13 +4,13 @@ import {
 	type TObject,
 	type TLiteral
 } from '@sinclair/typebox'
-import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
-import { toJtdElements } from '../../../scripts/json-typedef/utils.js'
+import { JsonTypeDef } from '../Symbols.js'
+import { toJtdElements } from '../../scripts/json-typedef/utils.js'
 import { Id, Localize, Metadata, Progress } from '../common/index.js'
 import { StaticRowPartial } from '../oracles/TableRow.js'
 import * as Utils from '../Utils.js'
 import * as Generic from '../Generic.js'
-import JtdType from '../../../scripts/json-typedef/typedef.js'
+import JtdType from '../../scripts/json-typedef/typedef.js'
 
 export const DelveSiteDenizenFrequency = Utils.UnionEnum(
 	['very_common', 'common', 'uncommon', 'rare', 'unforeseen'],
