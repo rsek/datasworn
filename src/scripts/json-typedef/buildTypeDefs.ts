@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { PKG_NAME } from '../const.js'
+import { PKG_NAME, rootSchemaName } from '../const.js'
 import { shellify, type ShellCommandParams } from '../../shellify.js'
 import { merge } from 'lodash-es'
 import { JTD_JSON_PATH, JTD_TYPES_ROOT } from './const.js'
@@ -38,13 +38,13 @@ type JtdOptions = {
 	/** Output directory for Rust code generation */
 	rustOut: string
 	/** Output directory for TypeScript code generation */
-	typescriptOut: string
+	typescriptOut?: string
 }
 const params: ShellCommandParams<'jtd-codegen', [string], JtdOptions> = {
 	command: 'jtd-codegen',
 	args: [JTD_JSON_PATH],
 	options: {
-		rootName: 'RulesPackage',
+		rootName: rootSchemaName,
 		logFormat: 'pretty',
 		csharpSystemTextNamespace: PKG_NAME,
 		csharpSystemTextOut: path.join(JTD_TYPES_ROOT, 'csharp-system-text'),

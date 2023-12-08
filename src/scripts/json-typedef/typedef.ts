@@ -77,10 +77,34 @@ export type Increment<T extends string, B extends Base = Base10> = Reverse<
 // --------------------------------------------------------------------------
 // SchemaOptions
 // --------------------------------------------------------------------------
-export interface Metadata {
-	[name: string]: any
-}
 
+export type Metadata = {
+	/**
+	 * `description` customizes the documentation comment to put on a type or property in generated code.
+	 */
+	description?: string
+	/** Override for code generation, used as-is. */
+	typescriptType?: string
+	/** Override for code generation, used as-is. */
+	csharpSystemTextType?: string
+	/** Override for code generation, used as-is. */
+	goType?: string
+	/** Override for code generation, used as-is. */
+	javaJacksonType?: string
+	/** Override for code generation, used as-is. */
+	pythonType?: string
+	/** Override for code generation, used as-is. */
+	rubyType?: string
+	/** Override for code generation, used as-is. */
+	rustType?: string
+} & Record<string, unknown>
+
+export type EnumMetadata = Metadata & {
+	/**
+	 * `enumDescription` is like `description`, but for the members of an `enum`. The keys of `enumDescription` should correspond to the values in the schema’s enum, and the values should be descriptions for those values.
+	 */
+	enumDescription?: Record<string, string>
+}
 
 // --------------------------------------------------------------------------
 // TAny
@@ -141,6 +165,7 @@ export interface TEnum<T extends string[] = string[]> extends Types.TSchema {
 	[Types.Kind]: 'TypeDef:Enum'
 	static: T[number]
 	enum: [...T]
+	metadata: EnumMetadata
 }
 // --------------------------------------------------------------------------
 // TFloat32
@@ -255,6 +280,27 @@ export interface TTimestamp extends Types.TSchema {
 	type: 'timestamp'
 	static: string
 }
+
+export interface TRef<T extends Types.TSchema = Types.TSchema>
+	extends Types.TSchema {
+	[Types.Kind]: 'TypeDef:Ref'
+	ref: string
+	static: Static<T>
+}
+
+export type TNullable<T extends Types.TSchema> = Omit<T, 'static'> & {
+	[Types.Kind]: T[typeof Types.Kind]
+	params: T['params']
+	nullable: true
+	static: T['static'] | null
+}
+
+export type TNonNullable<T extends Types.TSchema> = (T extends TNullable<
+	infer U
+>
+	? U
+	: T) & { nullable?: false | undefined }
+
 // --------------------------------------------------------------------------
 // Static
 // --------------------------------------------------------------------------
@@ -523,6 +569,18 @@ export namespace TypeGuard {
 	// ------------------------------------------------------------------------
 	// Types
 	// ------------------------------------------------------------------------
+	export function TNullable(
+		schema: unknown
+	): schema is TNullable<Types.TSchema> {
+		return IsObject(schema) && 'nullable' in schema && schema.nullable === true
+	}
+
+	export function TNonNullable(
+		schema: unknown
+	): schema is TNonNullable<Types.TSchema> {
+		return IsObject(schema) && !TNullable(schema)
+	}
+
 	export function TArray(schema: unknown): schema is TArray {
 		return (
 			IsObject(schema) &&
@@ -548,7 +606,7 @@ export namespace TypeGuard {
 		)
 			return false
 		return globalThis.Object.getOwnPropertyNames(schema['mapping']).every(
-			(key) => TSchema((schema['mapping'] as any)[key])
+			(key) => TNonNullable(TStruct((schema['mapping'] as any)[key]))
 		)
 	}
 	export function TEnum(schema: unknown): schema is TEnum {
@@ -629,6 +687,10 @@ export namespace TypeGuard {
 			schema['type'] === 'string'
 		)
 	}
+	export function TAny(schema: unknown): schema is TAny {
+		return !(IsObject(schema) && schema[Types.Kind] === 'TypeDef:Any')
+	}
+
 	export function TStruct(schema: unknown): schema is TStruct {
 		if (
 			!(
@@ -661,6 +723,15 @@ export namespace TypeGuard {
 			schema['type'] === 'timestamp'
 		)
 	}
+
+	export function TRef(schema: unknown): schema is TRef {
+		return (
+			IsObject(schema) &&
+			schema[Types.Kind] === 'TypeDef:Ref' &&
+			typeof schema['ref'] === 'string'
+		)
+	}
+
 	export function TKind(schema: unknown): schema is Types.TKind {
 		return (
 			IsObject(schema) &&
@@ -671,24 +742,25 @@ export namespace TypeGuard {
 	export function TSchema(schema: unknown): schema is Types.TSchema {
 		// prettier-ignore
 		return (
-      TArray(schema) ||
-      TBoolean(schema) ||
-      TUnion(schema) ||
-      TEnum(schema) ||
-      TFloat32(schema) ||
-      TFloat64(schema) ||
-      TInt8(schema) ||
-      TInt16(schema) ||
-      TInt32(schema) ||
-      TUint8(schema) ||
-      TUint16(schema) ||
-      TUint32(schema) ||
-      TRecord(schema) ||
-      TString(schema) ||
-      TStruct(schema) ||
-      TTimestamp(schema) ||
-      (TKind(schema) && Types.TypeRegistry.Has(schema[Types.Kind]))
-    )
+			TArray(schema) ||
+			TBoolean(schema) ||
+			TUnion(schema) ||
+			TEnum(schema) ||
+			TFloat32(schema) ||
+			TFloat64(schema) ||
+			TInt8(schema) ||
+			TInt16(schema) ||
+			TInt32(schema) ||
+			TUint8(schema) ||
+			TUint16(schema) ||
+			TUint32(schema) ||
+			TRecord(schema) ||
+			TString(schema) ||
+			TStruct(schema) ||
+			TTimestamp(schema) ||
+			TRef(schema) ||
+			(TKind(schema) && Types.TypeRegistry.Has(schema[Types.Kind]))
+		)
 	}
 }
 // --------------------------------------------------------------------------
@@ -733,6 +805,13 @@ Types.TypeRegistry.Set<TStruct>('TypeDef:Struct', (schema, value) =>
 Types.TypeRegistry.Set<TTimestamp>('TypeDef:Timestamp', (schema, value) =>
 	ValueCheck.Check(schema, value)
 )
+Types.TypeRegistry.Set<TRef>('TypeDef:Ref', (schema, value) =>
+	ValueCheck.Check(schema, value)
+)
+Types.TypeRegistry.Set<TAny>('TypeDef:Any', (schema, value) =>
+	ValueCheck.Check(schema, value)
+)
+
 // --------------------------------------------------------------------------
 // TypeSystemErrorFunction
 // --------------------------------------------------------------------------
@@ -764,6 +843,10 @@ TypeSystemErrorFunction.Set((schema, type) => {
 			return 'Expected Struct'
 		case 'TypeDef:Timestamp':
 			return 'Expected Timestamp'
+		case 'TypeDef:Ref':
+			return 'Expected Ref'
+		case 'TypeDef:Any':
+			return 'Expected Any'
 	}
 	return DefaultErrorFunction(schema, type)
 })
@@ -774,10 +857,7 @@ export class TypeDefBuilder {
 	// ------------------------------------------------------------------------
 	// Core
 	// ------------------------------------------------------------------------
-	protected Create(
-		schema: Record<PropertyKey, any>,
-		metadata: Record<keyof any, any>
-	): any {
+	protected Create(schema: Record<PropertyKey, any>, metadata: Metadata): any {
 		const keys = globalThis.Object.getOwnPropertyNames(metadata)
 		return keys.length > 0
 			? { ...schema, metadata: { ...metadata } }
@@ -793,17 +873,17 @@ export class TypeDefBuilder {
 	/** `[Standard]` Creates an Optional property */
 	public Optional<T extends Types.TSchema>(schema: T): Types.TOptional<T> {
 		// return this.Optional(schema)
-		return Type.Optional(schema)
+		return JtdType.Optional(schema)
 	}
 	/** `[Standard]` Creates a Readonly property */
 	public Readonly<T extends Types.TSchema>(schema: T): Types.TReadonly<T> {
 		// return this.Readonly(schema)
-		return Type.Readonly(schema)
+		return JtdType.Readonly(schema)
 	}
-
-	public Nullable<T extends Types.TSchema>(schema: T) {
+	/** `[Standard]` Creates a Nullable schema */
+	public Nullable<T extends Types.TSchema = Types.TSchema>(schema: T) {
 		const newType = { ...Types.TypeClone.Type(schema), nullable: true }
-		return newType as T & { nullable: true }
+		return newType as TNullable<T>
 	}
 	// ------------------------------------------------------------------------
 	// Types
@@ -829,7 +909,7 @@ export class TypeDefBuilder {
 	/** [Standard] Creates a Enum type */
 	public Enum<T extends string[]>(
 		values: [...T],
-		metadata: Metadata = {}
+		metadata: EnumMetadata = {}
 	): TEnum<T> {
 		return this.Create(
 			{ [Types.Kind]: 'TypeDef:Enum', enum: Array.from(new Set(values)) },
@@ -981,7 +1061,21 @@ export class TypeDefBuilder {
 			metadata
 		)
 	}
+
+	public Ref<T extends Types.TSchema = Types.TSchema>(
+		ref: string,
+		metadata: Metadata = {}
+	): TRef<T> {
+		return this.Create(
+			{
+				[Types.Kind]: 'TypeDef:Ref',
+				ref
+			},
+			metadata
+		)
+	}
 }
 
 /** JSON Type Definition Type Builder */
-export const Type = new TypeDefBuilder()
+const JtdType = new TypeDefBuilder()
+export default JtdType

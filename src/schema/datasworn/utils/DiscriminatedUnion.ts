@@ -102,10 +102,6 @@ export function DiscriminatedUnion<
 					: Type.Ref(member)
 		}
 
-		// brand the original member so that JTD schema generation skips them -- they won't need their own definition
-		;(member as any)[JsonTypeDef] ||= {}
-		;(member as any)[JsonTypeDef].skip = true
-
 		return result
 	}) as TDiscriminatedUnion<T, TDiscriminator>['allOf']
 

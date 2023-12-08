@@ -10,6 +10,7 @@ import { Id, Localize, Metadata, Progress } from '../common/index.js'
 import { StaticRowPartial } from '../oracles/TableRow.js'
 import * as Utils from '../Utils.js'
 import * as Generic from '../Generic.js'
+import JtdType from '../../../scripts/json-typedef/typedef.js'
 
 export const DelveSiteDenizenFrequency = Utils.UnionEnum(
 	['very_common', 'common', 'uncommon', 'rare', 'unforeseen'],
@@ -77,7 +78,7 @@ export const DelveSite = Generic.SourcedNode(
 				{
 					description:
 						'An additional theme or domain card ID, for use with optional rules in Ironsworn: Delve.',
-					[JsonTypeDef]: { schema: { type: 'string' } }
+					[JsonTypeDef]: { schema: JtdType.String() }
 				}
 			)
 		),

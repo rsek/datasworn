@@ -23,6 +23,7 @@ import * as Generic from '../Generic.js'
 import * as Utils from '../Utils.js'
 import type * as Id from './Id.js'
 import * as Localize from './Localize.js'
+import JtdType from '../../../scripts/json-typedef/typedef.js'
 
 /**
  * @abstract
@@ -92,11 +93,11 @@ function IntegerInput<
 ) {
 	const mixin = Utils.Assign([
 		Input(
-			Type.Integer({ default: 0, [JsonTypeDef]: { schema: { type: 'int8' } } })
+			Type.Integer({ default: 0, [JsonTypeDef]: { schema: JtdType.Int8() } })
 		),
 		Range({
-			min: { [JsonTypeDef]: { schema: { type: 'int8' } }, ...min },
-			max: { [JsonTypeDef]: { schema: { type: 'int8' } }, ...max }
+			min: { [JsonTypeDef]: { schema: JtdType.Int8() }, ...min },
+			max: { [JsonTypeDef]: { schema: JtdType.Int8() }, ...max }
 		})
 	])
 
@@ -105,7 +106,7 @@ function IntegerInput<
 			mixin,
 			Type.Object({
 				rollable: {
-					[JsonTypeDef]: { schema: { type: 'boolean' } },
+					[JsonTypeDef]: { schema: JtdType.Boolean() },
 					default: rollable.const,
 					...rollable
 				}

@@ -19,6 +19,7 @@ import {
 	setDescriptions,
 	type PickByType
 } from '../utils/typebox.js'
+import JtdType from '../../../scripts/json-typedef/typedef.js'
 
 const TableRowBase = Type.Object({
 	result: Type.Ref(Localize.MarkdownString, {
@@ -63,13 +64,13 @@ export const TableRowMixin = Utils.Assign([
 		min: Type.Integer({
 			description: 'Low end of the dice range for this table row.',
 			[JsonTypeDef]: {
-				schema: { type: 'int16' }
+				schema: JtdType.Int16()
 			}
 		}),
 		max: Type.Integer({
 			description: 'High end of the dice range for this table row.',
 			[JsonTypeDef]: {
-				schema: { type: 'int16' }
+				schema: JtdType.Int16()
 			}
 		})
 	})

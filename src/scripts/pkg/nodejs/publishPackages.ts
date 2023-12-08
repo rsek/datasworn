@@ -34,6 +34,6 @@ for (const command of commands) {
 
 		if (stderr) return Log.error(`stderr: ${stderr}`)
 
-		return Log.info(`stdout: ${stdout}`)
+		return Log.info(stdout)
 	})
 }

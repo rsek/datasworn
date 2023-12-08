@@ -22,6 +22,7 @@ import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
 import { type TUnionEnum } from './UnionEnum.js'
 import { type TDiscriminatedUnion } from './DiscriminatedUnion.js'
 import { type TNullable } from './Nullable.js'
+import JtdType from '../../../scripts/json-typedef/typedef.js'
 
 export type ExtractKeysOfValueType<ObjectType, ValueType> = {
 	[P in keyof ObjectType]: ObjectType[P] extends ValueType ? P : never
@@ -77,7 +78,7 @@ export function WithDefaults<T extends TObject>(
 
 export const LiteralZero = Type.Literal(0, {
 	default: 0,
-	[JsonTypeDef]: { schema: { type: 'int8' } }
+	[JsonTypeDef]: { schema: JtdType.Int8() }
 })
 // manually set to "integer" b/c Type.Literal defaults to "number"
 LiteralZero.type = 'integer'

@@ -19,6 +19,7 @@ import * as Utils from './Utils.js'
 import * as Rules from './Rules.js'
 import { SourceInfo } from './common/Metadata.js'
 import { mapValues } from 'lodash-es'
+import * as CONST from '../../scripts/const.js'
 
 const datasworn_version = Utils.Computed(
 	Type.Ref(Metadata.SemanticVersion, {
@@ -149,8 +150,8 @@ export const RulesPackage = Utils.DiscriminatedUnion(
 	{
 		description:
 			'Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.',
-		title: 'RulesPackage',
-		$id: 'RulesPackage'
+		title: CONST.rootSchemaName,
+		$id: CONST.rootSchemaName
 	}
 )
 export type RulesPackage = Static<typeof RulesPackage>

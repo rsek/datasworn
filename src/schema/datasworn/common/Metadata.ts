@@ -1,6 +1,9 @@
 import { type Static, Type } from '@sinclair/typebox'
 import * as Id from '../common/Id.js'
 import { Nullable } from '../utils/Nullable.js'
+import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
+import JtdType from '../../../scripts/json-typedef/typedef.js'
+import { extractMetadata } from '../../../scripts/json-typedef/utils.js'
 
 export const SvgImageUrl = Type.RegExp(/\.svg$/i, {
 	$id: 'SvgImageUrl',
@@ -97,15 +100,25 @@ export const License = Nullable(Type.Ref(WebUrl), {
 		'https://creativecommons.org/licenses/by/4.0',
 		'https://creativecommons.org/licenses/by-nc-sa/4.0'
 	],
-	$id: 'License'
+	$id: 'License',
+	[JsonTypeDef]: {
+		schema: JtdType.Nullable(JtdType.Ref(WebUrl.$id as string))
+	}
 })
 
 export const SourceInfo = Type.Object(
 	{
-		title: Type.Ref(SourceTitle),
+		title: Type.Ref(SourceTitle, {
+			[JsonTypeDef]: {
+				schema: JtdType.String(extractMetadata(SourceTitle))
+			}
+		}),
 		page: Type.Optional(
 			Type.Ref(PageNumber, {
-				description: 'The page number where this item is described in full.'
+				description: 'The page number where this item is described in full.',
+				[JsonTypeDef]: {
+					schema: Type.Optional(JtdType.Uint16())
+				}
 			})
 		),
 		authors: Type.Array(Type.Ref(AuthorInfo), {
@@ -114,7 +127,8 @@ export const SourceInfo = Type.Object(
 		}),
 		date: Type.Ref(Date, {
 			description:
-				"The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
+				"The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating.",
+			[JsonTypeDef]: { schema: JtdType.Timestamp() }
 		}),
 		url: Type.Ref(WebUrl, {
 			description: 'A URL where the source document is available.',

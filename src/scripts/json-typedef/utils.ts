@@ -20,7 +20,7 @@ import {
 } from '@sinclair/typebox'
 import * as JTD from 'jtd'
 
-import { Type as JtdType } from './typedef.js'
+import JtdType, { Metadata } from './typedef.js'
 
 import { JTDSchemaType, SomeJTDSchemaType } from 'ajv/dist/core.js'
 import {
@@ -36,7 +36,8 @@ import {
 	pick,
 	pickBy,
 	isEqual,
-	set
+	set,
+	isNull
 } from 'lodash-es'
 import * as Generic from '../../schema/datasworn/Generic.js'
 import * as Utils from '../../schema/datasworn/Utils.js'
@@ -44,7 +45,7 @@ import { TRoot } from '../../schema/datasworn/root/SchemaRoot.js'
 import Log from '../utils/Log.js'
 import { Discriminator, JsonTypeDef, Members } from './symbol.js'
 import * as Assets from '../../schema/datasworn/Assets.js'
-import { defsKey } from '../const.js'
+import { defsKey, rootSchemaName } from '../const.js'
 
 /** Extract metadata from a JSON schema for use in a JTD schema's `metadata` property */
 export function extractMetadata<T extends TAnySchema>(jsonSchema: T) {
@@ -67,10 +68,7 @@ export function extractMetadata<T extends TAnySchema>(jsonSchema: T) {
 		'maxItems'
 	]
 
-	let metadata = pick(
-		cloneDeep(jsonSchema),
-		...metadataKeys
-	) as SomeJTDSchemaType['metadata']
+	let metadata = pick(cloneDeep(jsonSchema), ...metadataKeys) as Metadata
 
 	if (jsonSchema[JsonTypeDef]?.metadata)
 		metadata = merge(metadata, omit(jsonSchema[JsonTypeDef].metadata))
@@ -113,9 +111,13 @@ export function toJtdEnum<
 	throw new Error(`Unable to infer schema for enum: ${JSON.stringify(schema)}`)
 }
 
-export function toJtdRef<T extends TSchema>(schema: TRef<T> | TThis) {
+/** Identifiers of all JTD schemas that are referenced */
+export const refTracker = new Set<string>()
+
+export function toJtdRef(schema: TRef | TThis) {
 	const ref = schema.$ref.replace(`#/${defsKey}/`, '')
-	type RefName = typeof ref
+
+	refTracker.add(ref)
 
 	return { ref } as unknown as TSchema
 }
@@ -203,20 +205,17 @@ type TConvertible =
 
 function toJtdForm(
 	schema: TConvertible | Utils.TNullable<TConvertible> | TOptional<TConvertible>
-): TSchema
-function toJtdForm(schema: TNull): undefined
-function toJtdForm(schema: TSchema): TSchema | undefined {
+): JTD.Schema
+function toJtdForm(schema: TNull): null
+function toJtdForm(schema: TSchema): JTD.Schema | null {
 	// console.log(schema)
 
 	let result: TSchema | undefined = undefined
 
 	switch (true) {
-		// @ts-expect-error
 		case schema[JsonTypeDef]?.skip:
-			console.log(`skipping ${schema.$id}`)
-			return undefined
+			return null
 		case schema[JsonTypeDef]?.schema != null ||
-			// @ts-expect-error
 			isEqual(schema[JsonTypeDef]?.schema, {}):
 			// @ts-expect-error
 			return merge(cloneDeep(schema[JsonTypeDef].schema), {
@@ -226,9 +225,9 @@ function toJtdForm(schema: TSchema): TSchema | undefined {
 			result = JtdType.Any()
 			break
 		case TypeGuard.TNull(schema):
-			return undefined
+			return null
 		case TypeGuard.TLiteralString(schema):
-			result = toJtdSingleEnum(schema)
+			result = toJtdSingleEnum(schema as TLiteral<string>)
 			break
 		case TypeGuard.TString(schema):
 			result = JtdType.String()
@@ -250,27 +249,27 @@ function toJtdForm(schema: TSchema): TSchema | undefined {
 			break
 		case TypeGuard.TThis(schema):
 		case TypeGuard.TRef(schema):
-			result = toJtdRef(schema)
+			result = toJtdRef(schema as TThis | TRef)
 			break
 		case TypeGuard.TRecord(schema):
 			// case schema[Generic.DictionaryBrand] === 'Dictionary':
-			result = toJtdValues(schema)
+			result = toJtdValues(schema as TRecord)
 			break
 		case TypeGuard.TArray(schema):
-			result = toJtdElements(schema)
+			result = toJtdElements(schema as TArray)
 			break
 		case TypeGuard.TObject(schema):
 		case schema[Kind] === 'Object':
 			result = toJtdProperties(schema as TObject)
 			break
 		case Utils.TDiscriminatedUnion(schema):
-			result = toJtdDiscriminator(schema)
+			result = toJtdDiscriminator(schema as Utils.TDiscriminatedUnion)
 			break
 		case TypeGuard.TUnion(schema) && schema[Hint] === 'Enum':
-			result = JtdType.Enum(schema.anyOf.map((item) => item.const))
+			result = JtdType.Enum(schema.anyOf.map((item: TLiteral) => item.const))
 			result.metadata = {
 				enumDescription: Object.fromEntries(
-					schema.anyOf.map((item) => [item.const, item.description])
+					schema.anyOf.map((item: TLiteral) => [item.const, item.description])
 				)
 			}
 			break
@@ -299,12 +298,10 @@ function toJtdForm(schema: TSchema): TSchema | undefined {
 }
 
 export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
-	const defs = {} as { [K in keyof T[typeof defsKey]]: JTD.Schema }
-
-	const rootType = 'RulesPackage'
+	const defs = {} as Record<string, JTD.Schema | undefined>
 
 	for (const k in schemaRoot[defsKey]) {
-		if (k === rootType) continue
+		if (k === rootSchemaName) continue
 		try {
 			defs[k] = toJtdForm(schemaRoot[defsKey][k])
 		} catch (err) {
@@ -313,18 +310,31 @@ export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
 	}
 	// HACK: not sure why this is getting omitted, there's a few places it could happen and i havent tracked it down yet
 
-	defs.SelectEnhancementFieldChoice = toJtdForm(
-		omit(Assets.SelectEnhancementFieldChoice, JsonTypeDef)
-	)
+	// defs.SelectEnhancementFieldChoice = toJtdForm(
+	// 	omit(Assets.SelectEnhancementFieldChoice, JsonTypeDef)
+	// )
 
-	const base = toJtdForm(schemaRoot[defsKey][rootType] as any)
+	const base = toJtdForm(schemaRoot[defsKey][rootSchemaName])
 
 	if (isUndefined(base))
-		throw new Error('Unable to infer JSON Typedef form of root schema.')
+		throw new Error(
+			`Unable to infer JSON Typedef form for root schema "${rootSchemaName}".`
+		)
 
 	return {
 		...base,
-		definitions: omitBy(defs, isUndefined)
+		definitions: omitBy(defs, (v, k) => {
+			if (isNull(v)) {
+				Log.info(`Skipping "${k}"`)
+				return true
+			}
+			if (!refTracker.has(k)) {
+				Log.info(`Orphaned definition "${k}" -- skipping`)
+				return true
+			}
+
+			return false
+		})
 	}
 }
 

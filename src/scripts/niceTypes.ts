@@ -82,7 +82,7 @@ export function simplifyRecursive(schema: TSchema, allowNumberEnums = false) {
 // const definitions = mapValues(Defs, simplifyRecursive)
 
 // const result = {
-// 	title: 'RulesPackage',
+// 	title: CONST.rootType,
 
 // 	anyOf: [{ $ref: 'Ruleset' }, { $ref: 'Expansion' }],
 // 	definitions

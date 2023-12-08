@@ -2,7 +2,7 @@ import { Type, type Static } from '@sinclair/typebox'
 import { snakeCase } from 'lodash-es'
 import { type SnakeCase } from 'type-fest'
 import { JsonTypeDef } from '../../../scripts/json-typedef/symbol.js'
-import { Type as JtdType } from '../../../scripts/json-typedef/typedef.js'
+import JtdType from '../../../scripts/json-typedef/typedef.js'
 import * as Utils from '../Utils.js'
 import * as Id from '../common/Id.js'
 import * as Localize from '../common/Localize.js'
@@ -46,7 +46,6 @@ export const CollectionType = Utils.UnionEnum(
 		...SnakeCase<(typeof collectionTypes)[number]>[]
 	],
 	{
-		[JsonTypeDef]: { skip: true },
 		$id: 'CollectionType'
 	}
 )
@@ -57,7 +56,6 @@ export const CollectableType = Utils.UnionEnum(
 		...SnakeCase<(typeof collectableTypes)[number]>[]
 	],
 	{
-		[JsonTypeDef]: { skip: true },
 		$id: 'CollectableType'
 	}
 )
@@ -68,7 +66,6 @@ export const NonCollectableType = Utils.UnionEnum(
 		...SnakeCase<(typeof nonCollectableTypes)[number]>[]
 	],
 	{
-		[JsonTypeDef]: { skip: true },
 		$id: 'NonCollectableType'
 	}
 )
