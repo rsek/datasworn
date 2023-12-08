@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs-extra'
 
 const toolsPkg = fs.readJSONSync(path.join(process.cwd(), 'package.json')) as {
-	version: string
+	version: `${number}.${number}.${number}`
 }
 
 export const PKG_NAME = 'Datasworn'

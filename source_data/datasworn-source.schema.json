@@ -563,13 +563,11 @@
 			],
 			"anyOf": [
 				{
-					"title": "StandardMoveId",
 					"type": "string",
 					"description": "A move ID for a standard move.",
 					"pattern": "^([a-z0-9_]{3,})\\/moves\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
 				},
 				{
-					"title": "AssetMoveId",
 					"type": "string",
 					"description": "A move ID for an asset move.",
 					"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/moves\\/([a-z][a-z_]*)$"
@@ -585,13 +583,11 @@
 			],
 			"anyOf": [
 				{
-					"title": "StandardMoveIdWildcard",
 					"type": "string",
 					"description": "A wildcarded ID that can be used to match multiple StandardMoves.",
 					"pattern": "^(\\*|([a-z0-9_]{3,}))\\/moves\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
 				},
 				{
-					"title": "AssetMoveIdWildcard",
 					"type": "string",
 					"description": "A wildcarded ID that can be used to match multiple AssetMoves.",
 					"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/abilities\\/(\\*|(0|[1-9][0-9]*))\\/moves\\/(\\*|([a-z][a-z_]*))$"
@@ -708,13 +704,11 @@
 			],
 			"anyOf": [
 				{
-					"title": "RowWithRange",
 					"type": "string",
 					"description": "A unique ID for a RowWithRange.",
 					"pattern": "^([a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)\\/([1-9][0-9]*)-([1-9][0-9]*)$"
 				},
 				{
-					"title": "RowNull",
 					"type": "string",
 					"description": "A unique ID for a RowNull.",
 					"pattern": "^([a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)\\/(0|[1-9][0-9]*)$"
@@ -3461,6 +3455,17 @@
 					"then": {
 						"$ref": "#/definitions/OracleTableDetails"
 					}
+				}
+			]
+		},
+		"OracleTableRow": {
+			"title": "OracleTableRow",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleTableRowSimple"
+				},
+				{
+					"$ref": "#/definitions/OracleTableRowDetails"
 				}
 			]
 		},

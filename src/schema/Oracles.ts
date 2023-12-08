@@ -2,5 +2,6 @@ export * from './oracles/OracleCollection.js'
 export * from './oracles/OracleRollable.js'
 export {
 	OracleTableRowSimple,
-	OracleTableRowDetails
+	OracleTableRowDetails,
+	OracleTableRow
 } from './oracles/TableRow.js'

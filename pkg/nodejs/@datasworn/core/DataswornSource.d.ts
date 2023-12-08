@@ -1975,6 +1975,8 @@ export interface OracleTableDetails {
  */
 export type OracleTableRollable = OracleTableSimple | OracleTableDetails
 
+export type OracleTableRow = OracleTableRowSimple | OracleTableRowDetails
+
 /**
  * Represents a row in an oracle table that provides additional details.
  */

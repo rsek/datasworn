@@ -166,3 +166,11 @@ export const DetailsRowLabels = ColumnLabels<typeof OracleTableRowDetails>({
 	result: 'Result',
 	detail: 'Detail'
 })
+
+
+export const OracleTableRow = Type.Union(
+	[Type.Ref(OracleTableRowSimple), Type.Ref(OracleTableRowDetails)],
+	{ $id: 'OracleTableRow' }
+)
+
+export type OracleTableRow = Static<typeof OracleTableRow>

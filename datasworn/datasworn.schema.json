@@ -3469,6 +3469,17 @@
 				}
 			]
 		},
+		"OracleTableRow": {
+			"title": "OracleTableRow",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleTableRowSimple"
+				},
+				{
+					"$ref": "#/definitions/OracleTableRowDetails"
+				}
+			]
+		},
 		"OracleTableRowDetails": {
 			"title": "OracleTableRowDetails",
 			"type": "object",
