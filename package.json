@@ -1,6 +1,6 @@
 {
 	"name": "datasworn-tools",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "",
 	"type": "module",
 	"private": true,
@@ -15,11 +15,7 @@
 		"build": "ts-node ./src/scripts/pkg/nodejs/updatePackageVersions.ts && npm run build:schema && npm run build:jtd && npm run build:dts && npm run build:json && npm run build:pkg",
 		"pkg:node": "ts-node ./src/scripts/pkg/nodejs/publishPackages.ts"
 	},
-	"files": [
-		"docs",
-		"img",
-		"markdown"
-	],
+	"files": ["docs", "img", "markdown"],
 	"directories": {
 		"doc": "./docs"
 	},
@@ -27,11 +23,7 @@
 		"type": "git",
 		"url": "git+https://github.com/rsek/datasworn.git"
 	},
-	"keywords": [
-		"ironsworn",
-		"starforged",
-		"TTRPG"
-	],
+	"keywords": ["ironsworn", "starforged", "TTRPG"],
 	"author": {
 		"name": "rsek",
 		"email": "r.sekouri@gmail.com",
