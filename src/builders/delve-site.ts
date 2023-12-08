@@ -3,7 +3,7 @@ import {
 	type Transformer,
 	transform
 } from './transformer.js'
-import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
+import { type SourcedNode } from '../schema/generic/SourcedNode.js'
 import { trackID } from './id-tracker.js'
 import { cloneDeep } from 'lodash-es'
 import type * as Datasworn from '../types/Datasworn.js'

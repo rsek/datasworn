@@ -7,9 +7,9 @@ import {
 	type Collection,
 	type RecursiveCollection,
 	type CollectionSource
-} from '../schema/datasworn/Generic.js'
-import { type Rules } from '../schema/datasworn/Rules.js'
-import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
+} from '../schema/Generic.js'
+import { type Rules } from '../schema/Rules.js'
+import { type SourcedNode } from '../schema/generic/SourcedNode.js'
 
 type PartialKeys<T, K extends string | number | symbol> = Omit<T, K> &
 	Partial<T>

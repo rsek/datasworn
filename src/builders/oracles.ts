@@ -5,7 +5,7 @@ import {
 	type Transformer,
 	recursiveCollectionTransformer
 } from './transformer.js'
-import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
+import { type SourcedNode } from '../schema/generic/SourcedNode.js'
 
 import { cloneDeep, merge } from 'lodash-es'
 import type * as Datasworn from '../types/Datasworn.js'

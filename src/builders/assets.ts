@@ -10,8 +10,8 @@ import {
 import { cloneDeep, mapValues } from 'lodash-es'
 import { Move } from './moves.js'
 import { trackID } from './id-tracker.js'
-import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
-import type * as Generic from '../schema/datasworn/Generic.js'
+import { type SourcedNode } from '../schema/generic/SourcedNode.js'
+import type * as Generic from '../schema/Generic.js'
 
 export const Asset = sourcedTransformer<
 	DataswornSource.Asset,

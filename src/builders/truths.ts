@@ -6,7 +6,7 @@ import {
 	transform,
 	type Transformer
 } from './transformer.js'
-import { type SourcedNode } from '../schema/datasworn/generic/SourcedNode.js'
+import { type SourcedNode } from '../schema/generic/SourcedNode.js'
 
 export const TruthOption: Transformer<
 	DataswornSource.TruthOption,
