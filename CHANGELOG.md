@@ -1,6 +1,9 @@
-# Changelog
+### Version 0.0.5
 
-## 2.0
+- get version const from tools package
+
+
+## Changes from Dataforged Legacy
 
 ### Breaking changes
 
