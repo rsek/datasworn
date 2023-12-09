@@ -933,11 +933,11 @@ export interface ImpactRule {
 }
 
 export type NonCollectableType =
-	| 'oracle_rollable'
-	| 'move'
-	| 'asset'
-	| 'atlas_entry'
-	| 'npc'
+	| 'delve_site'
+	| 'delve_site_theme'
+	| 'delve_site_domain'
+	| 'truth'
+	| 'rarity'
 
 export type ObjectType = CollectableType | NonCollectableType | CollectionType
 

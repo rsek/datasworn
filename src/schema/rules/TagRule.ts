@@ -62,7 +62,7 @@ export const CollectableType = Utils.UnionEnum(
 export type CollectableType = Static<typeof CollectableType>
 
 export const NonCollectableType = Utils.UnionEnum(
-	collectableTypes.map(snakeCase) as [
+	nonCollectableTypes.map(snakeCase) as [
 		...SnakeCase<(typeof nonCollectableTypes)[number]>[]
 	],
 	{

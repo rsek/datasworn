@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://ironswornrpg.com/datasworn.schema.json",
 	"$ref": "#/definitions/RulesPackage",
-	"title": "Datasworn v0.0.5",
+	"title": "Datasworn v0.0.6",
 	"description": "Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.",
 	"definitions": {
 		"RulesPackage": {
@@ -1183,7 +1183,13 @@
 		},
 		"NonCollectableType": {
 			"title": "NonCollectableType",
-			"enum": ["oracle_rollable", "move", "asset", "atlas_entry", "npc"]
+			"enum": [
+				"delve_site",
+				"delve_site_theme",
+				"delve_site_domain",
+				"truth",
+				"rarity"
+			]
 		},
 		"ObjectType": {
 			"title": "ObjectType",
