@@ -10,11 +10,14 @@ import {
 	type CollectionSubtypeElement,
 	CollectionContentsKey,
 	RecursiveCollectableTypeElement,
-	AnyRecursiveCollection
+	type AnyRecursiveCollection,
+	Sep,
+	CollectionCollectionsKey
 } from './const.js'
 import { getById } from './getById.js'
 import type * as Datasworn from '../types/Datasworn.js'
 import IdElementGuard from './IdElementGuard.js'
+import picomatch from 'picomatch'
 
 export function getByWildcardId<T extends AnyId>(
 	id: T,
@@ -79,6 +82,23 @@ function _getDictionaryMatches<T extends Record<string, any>>(
 		return [dictionary[keyOrWildcard]]
 
 	return []
+}
+
+// could this be made to work with collections too? e.g. checking subtype
+function getParentCollectionId(collectableId: string) {
+	const [pkgId, subtype, ...tail] = collectableId.split(Sep)
+
+	tail.pop()
+
+	return [pkgId, CollectionCollectionsKey, subtype, ...tail].join(Sep)
+}
+
+function _getRecursiveCollectionMatches<T extends AnyRecursiveCollection>(
+	recursiveCollection: T,
+
+	wildcardId: string
+) {
+	const matchId = picomatch(wildcardId)
 }
 
 // function _getRecursiveCollectionMatches<T extends AnyRecursiveCollection>(

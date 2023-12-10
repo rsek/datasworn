@@ -16,7 +16,7 @@ import {
 	CollectionCollectionsKey
 } from './const.js'
 import IdElementGuard from './IdElementGuard.js'
-import { parseId } from './parseId.js'
+import { extractSubtype, parseId } from './parseId.js'
 /**
  * Attempt to retrieve a Datasworn object by its id. This function is for static IDs only; for wildcard IDs, see `getByWildcardId` instead.
  * @param id The ID of the item to retrive.
@@ -55,12 +55,7 @@ export function getById<T extends AnyId>(id: T, tree: DataswornTree) {
 	if (IdElementGuard.NonCollectableTypeElement(type))
 		return _getNonCollectable(data, type, key)
 	if (IdElementGuard.CollectionSubtypeElement(type))
-		return _getCollection(
-			data,
-			IdElementGuard.extractSubtype(type),
-			...path,
-			key
-		)
+		return _getCollection(data, extractSubtype(type), ...path, key)
 
 	throw new Error(`"${String(id)}" appears to be an invalid ID`)
 }
