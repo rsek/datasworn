@@ -99,57 +99,57 @@ export const AssetIdWildcard = toWildcard(AssetId, {
 })
 export type AssetIdWildcard = Opaque<Static<typeof AssetIdWildcard>>
 
-export const AssetOptionFieldId = Extend(AssetId, ['options', Node], {
-	$id: 'AssetOptionFieldId'
-})
-export type AssetOptionFieldId = Opaque<Static<typeof AssetOptionFieldId>>
+// export const AssetOptionFieldId = Extend(AssetId, ['options', Node], {
+// 	$id: 'AssetOptionFieldId'
+// })
+// export type AssetOptionFieldId = Opaque<Static<typeof AssetOptionFieldId>>
 
-export const AssetOptionFieldIdWildcard = toWildcard(AssetOptionFieldId, {
-	$id: 'AssetOptionFieldIdWildcard'
-})
-export type AssetOptionFieldIdWildcard = Static<
-	typeof AssetOptionFieldIdWildcard
->
+// export const AssetOptionFieldIdWildcard = toWildcard(AssetOptionFieldId, {
+// 	$id: 'AssetOptionFieldIdWildcard'
+// })
+// export type AssetOptionFieldIdWildcard = Static<
+// 	typeof AssetOptionFieldIdWildcard
+// >
 
-export const AssetControlFieldId = Extend(AssetId, ['controls', Node], {
-	$id: 'AssetControlFieldId'
-})
-export type AssetControlFieldId = Opaque<Static<typeof AssetControlFieldId>>
+// export const AssetControlFieldId = Extend(AssetId, ['controls', Node], {
+// 	$id: 'AssetControlFieldId'
+// })
+// export type AssetControlFieldId = Opaque<Static<typeof AssetControlFieldId>>
 
-export const AssetControlFieldIdWildcard = toWildcard(AssetControlFieldId, {
-	$id: 'AssetControlFieldIdWildcard'
-})
-export type AssetControlFieldIdWildcard = Static<
-	typeof AssetControlFieldIdWildcard
->
+// export const AssetControlFieldIdWildcard = toWildcard(AssetControlFieldId, {
+// 	$id: 'AssetControlFieldIdWildcard'
+// })
+// export type AssetControlFieldIdWildcard = Static<
+// 	typeof AssetControlFieldIdWildcard
+// >
 
-export const AssetConditionMeterControlFieldId = Extend(
-	AssetControlFieldId,
-	['controls', Node],
-	{ $id: 'AssetConditionMeterControlFieldId' }
-)
-export type AssetConditionMeterControlFieldId = Static<
-	typeof AssetConditionMeterControlFieldId
->
+// export const AssetConditionMeterControlFieldId = Extend(
+// 	AssetControlFieldId,
+// 	['controls', Node],
+// 	{ $id: 'AssetConditionMeterControlFieldId' }
+// )
+// export type AssetConditionMeterControlFieldId = Static<
+// 	typeof AssetConditionMeterControlFieldId
+// >
 
 export const AssetAbilityId = Extend(AssetId, ['abilities', Index], {
 	$id: 'AssetAbilityId'
 })
 export type AssetAbilityId = Opaque<Static<typeof AssetAbilityId>>
 
-export const AssetAbilityOptionFieldId = Extend(AssetAbilityId, ['options', Node], {
-	$id: 'AssetAbilityOptionFieldId'
-})
-export type AssetAbilityOptionFieldId = Opaque<
-	Static<typeof AssetAbilityOptionFieldId>
->
+// export const AssetAbilityOptionFieldId = Extend(AssetAbilityId, ['options', Node], {
+// 	$id: 'AssetAbilityOptionFieldId'
+// })
+// export type AssetAbilityOptionFieldId = Opaque<
+// 	Static<typeof AssetAbilityOptionFieldId>
+// >
 
-export const AssetAbilityControlFieldId = Extend(AssetAbilityId, ['controls', Node], {
-	$id: 'AssetAbilityControlFieldId'
-})
-export type AssetAbilityControlFieldId = Opaque<
-	Static<typeof AssetAbilityControlFieldId>
->
+// export const AssetAbilityControlFieldId = Extend(AssetAbilityId, ['controls', Node], {
+// 	$id: 'AssetAbilityControlFieldId'
+// })
+// export type AssetAbilityControlFieldId = Opaque<
+// 	Static<typeof AssetAbilityControlFieldId>
+// >
 
 export const DelveSiteId = UncollectableId(['delve_sites'], {
 	examples: ['delve/delve_sites/alvas_rest'],

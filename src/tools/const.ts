@@ -1,16 +1,19 @@
-import type * as Types from '../types/Datasworn.js'
+import { type TypesByName } from './types.js'
 
-/** The delimiter character for Datasworn IDs. */
+export const RECURSIVE_PATH_ELEMENTS_MAX = 3
+export const RECURSIVE_PATH_ELEMENTS_MIN = 1
+
+/** The separator character for Datasworn IDs. */
 export const Sep = '/' as const
 export type Sep = typeof Sep
 
-/** The wildcard character for Datasworn IDs. */
+/** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */
 export const Wildcard = '*' as const
 export type Wildcard = typeof Wildcard
 
-/** Represents a wildcard for 1-3 elements in recursive Datasworn IDs. */
-export const RecursiveWildcard = '**' as const
-export type RecursiveWildcard = typeof RecursiveWildcard
+/** A globstar (recursive wildcard) representing any number of levels of in recursive collections. */
+export const Globstar = '**' as const
+export type Globstar = typeof Globstar
 
 /** ID elements representing types that can exist in recursive collections. */
 export const RecursiveCollectableTypeElement = [
@@ -76,39 +79,37 @@ export const NonRecursiveCollectionSubtypeElement =
 export const TypeElement = [
 	...CollectableTypeElement,
 	...NonCollectableTypeElement,
-	...CollectionSubtypeElement
+	CollectionTypeElement
 ] as const satisfies readonly TypeElement[]
 export type TypeElement =
 	| CollectableTypeElement
 	| NonCollectableTypeElement
-	| CollectionSubtypeElement
-type ExtractCollectableTypeElement<T extends CollectableId> =
-	T extends CollectableId<infer U> ? U : never
-type ExtractCollectionTypeElement<T extends CollectionId> =
-	T extends CollectionId<infer U> ? CollectionSubtypeElement<U> : never
-type ExtractNonCollectableTypeElement<T extends NonCollectableId> =
-	T extends NonCollectableId<infer U> ? U : never
-type ExtractCollectedType<T extends CollectionId> = T extends CollectionId<
-	infer U
+	| CollectionTypeElement
+
+export const TypeCompositesByName = {
+	AssetCollection: 'collections/assets',
+	Atlas: 'collections/atlas',
+	MoveCategory: 'collections/moves',
+	NpcCollection: 'collections/npcs',
+	OracleCollection: 'collections/oracles',
+	Asset: 'assets',
+	AtlasEntry: 'atlas',
+	DelveSite: 'delve_sites',
+	Move: 'moves',
+	Npc: 'npcs',
+	OracleRollable: 'oracles',
+	Rarity: 'rarities',
+	DelveSiteDomain: 'site_domains',
+	DelveSiteTheme: 'site_themes',
+	Truth: 'truths'
+} as const satisfies Record<
+	keyof TypesByName,
+	| Exclude<TypeElement, CollectionTypeElement>
+	| `${CollectionTypeElement}${Sep}${CollectableTypeElement}`
 >
-	? U
-	: never
-export type ExtractTypeElement<T extends AnyId> = T extends NonCollectableId
-	? ExtractNonCollectableTypeElement<T>
-	: T extends CollectionId
-	  ? ExtractCollectionTypeElement<T>
-	  : T extends CollectableId
-	    ? ExtractCollectableTypeElement<T>
-	    : never
-export const CollectionCollectionsKey = 'collections' as const
-export type CollectionCollectionsKey = typeof CollectionCollectionsKey
-export const CollectionContentsKey = 'contents' as const
-export type CollectionContentsKey = typeof CollectionContentsKey
+export type TypeCompositesByName = typeof TypeCompositesByName
 
-export type InferTypeFromId<T extends AnyId> =
-	TypeElementMap[ExtractTypeElement<T>]
-
-const TypeElementMap = {
+export const NamesByTypeComposite = {
 	'collections/assets': 'AssetCollection',
 	'collections/atlas': 'Atlas',
 	'collections/moves': 'MoveCategory',
@@ -124,69 +125,20 @@ const TypeElementMap = {
 	site_domains: 'DelveSiteDomain',
 	site_themes: 'DelveSiteTheme',
 	truths: 'Truth'
-} as const satisfies Record<TypeElement, keyof TypeMap>
-type TypeElementMap = {
-	[K in keyof typeof TypeElementMap]: TypeMap[(typeof TypeElementMap)[K]]
+} as const satisfies Record<
+	TypeCompositesByName[keyof TypeCompositesByName],
+	keyof TypeCompositesByName
+>
+export type NamesByTypeComposite = {
+	[K in keyof typeof NamesByTypeComposite]: TypesByName[(typeof NamesByTypeComposite)[K]]
 }
-export type TypeByElement<T extends keyof TypeElementMap> = TypeElementMap[T]
-type TypeByName<T extends keyof TypeMap> = TypeMap[T]
-export type AnyCollection = TypeElementMap[CollectionSubtypeElement]
-export type AnyRecursiveCollection =
-	TypeElementMap[RecursiveCollectableTypeElement] & {
-		[CollectionCollectionsKey]?: Record<
-			string,
-			TypeElementMap[RecursiveCollectableTypeElement]
-		>
-	}
-type AnyCollectable = TypeElementMap[CollectableTypeElement]
-interface TypeMap {
-	AssetCollection: Types.AssetCollection
-	Atlas: Types.Atlas
-	MoveCategory: Types.MoveCategory
-	NpcCollection: Types.NpcCollection
-	OracleCollection: Types.OracleCollection
-	Asset: Types.Asset
-	AtlasEntry: Types.AtlasEntry
-	DelveSite: Types.DelveSite
-	Move: Types.Move
-	Npc: Types.Npc
-	OracleRollable: Types.OracleRollable
-	Rarity: Types.Rarity
-	DelveSiteDomain: Types.DelveSiteDomain
-	DelveSiteTheme: Types.DelveSiteTheme
-	Truth: Types.Truth
-}
-type RecursiveDictKeys =
-	| `${Sep}${DictKey}`
-	| `${Sep}${DictKey}${Sep}${DictKey}`
-	| `${Sep}${DictKey}${Sep}${DictKey}${Sep}${DictKey}`
-export type RulesPackageId = string
-export type DictKey = string
-export type CollectableId<
-	Type extends CollectableTypeElement = CollectableTypeElement
-> = `${RulesPackageId}${Sep}${Type}${Sep}${DictKey}${Sep}${DictKey}`
-type RecursiveCollectableId<
-	Type extends RecursiveCollectableTypeElement = RecursiveCollectableTypeElement
-> = `${RulesPackageId}${Sep}${Type}${RecursiveDictKeys}${Sep}${DictKey}`
-export type CollectionId<
-	Subtype extends CollectableTypeElement = CollectableTypeElement
-> =
-	`${RulesPackageId}${Sep}${CollectionTypeElement}${Sep}${Subtype}${Sep}${DictKey}`
-type RecursiveCollectionId<
-	Subtype extends
-		RecursiveCollectableTypeElement = RecursiveCollectableTypeElement
-> =
-	`${RulesPackageId}${Sep}${CollectionTypeElement}${Sep}${Subtype}${RecursiveDictKeys}`
-export type NonCollectableId<
-	Type extends NonCollectableTypeElement = NonCollectableTypeElement
-> = `${RulesPackageId}${Sep}${Type}${Sep}${DictKey}`
-export type AnyId =
-	| CollectableId
-	| RecursiveCollectableId
-	| CollectionId
-	| RecursiveCollectionId
-	| NonCollectableId
-export type DataswornTree = Record<RulesPackageId, Types.RulesPackage>
 
-export const RECURSIVE_PATH_ELEMENTS_MAX = 3
-export const RECURSIVE_PATH_ELEMENTS_MIN = 1
+// export type IdTypeMap = {[P in keyof TypeMap]: }
+
+/** Key in RecursiveCollection that contains a dictionary object of child collections. */
+export const CollectionsKey = CollectionTypeElement
+export type CollectionsKey = typeof CollectionsKey
+
+/** Key in Collection that contains a dictionary object of collectable items. */
+export const ContentsKey = 'contents' as const
+export type ContentsKey = typeof ContentsKey

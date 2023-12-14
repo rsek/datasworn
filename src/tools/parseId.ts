@@ -3,20 +3,25 @@ import {
 	Sep,
 	CollectionTypeElement,
 	TypeElement,
-	type AnyId,
-	type CollectableId,
-	type CollectionId,
-	type DictKey,
-	type ExtractTypeElement,
-	type NonCollectableId,
-	type RulesPackageId
-} from './const.js'
-import {
 	RECURSIVE_PATH_ELEMENTS_MAX,
 	RECURSIVE_PATH_ELEMENTS_MIN
 } from './const.js'
+import {
+	type RootKeyForTypeElement,
+	type AnyId,
+	type DictKey,
+	type NonCollectableId,
+	type RulesPackageId,
+	type ExtractTypeElements,
+	type RecursiveCollectableId,
+	type NonRecursiveCollectableId,
+	type RecursiveCollectionId,
+	type NonRecursiveCollectionId,
+	type ExtractCollectedTypeElement,
+	type CollectionId
+} from './types.js'
 import { IdError } from './error.js'
-import IdElementGuard from './IdElementGuard.js'
+import ElementGuard from './ElementGuard.js'
 import TypeGuard from './TypeGuard.js'
 
 /**
@@ -27,13 +32,15 @@ import TypeGuard from './TypeGuard.js'
 export function parseId<T extends AnyId>(id: T): ParsedId<T> {
 	if (typeof id !== 'string') throw new IdError(id, `ID must be a string.`)
 
-	let isWildcard = false
+	let wildcard = false
 
-	let [rulesPackage, type, ...path] = id.split(Sep)
+	const [rulesPackage, typeElement, ...collectionKeys] = id.split(Sep)
+
+	const typeElements = [typeElement]
 
 	// first element: RulesPackage identifier
-	if (IdElementGuard.Wildcard(rulesPackage)) {
-		isWildcard = true
+	if (ElementGuard.Wildcard(rulesPackage)) {
+		wildcard = true
 	} else if (!TypeGuard.RulesPackageId(rulesPackage))
 		throw new IdError(
 			id,
@@ -42,84 +49,79 @@ export function parseId<T extends AnyId>(id: T): ParsedId<T> {
 			)}" is not a valid Datasworn RulesPackage identifier.`
 		)
 
-	let subtype
+	// if it's a collection type, move the subtype element from collectionKeys to typeElements
+	if (typeElement === CollectionTypeElement) {
+		const subtype = collectionKeys.shift()
 
-	// if it's a collection ID, validate + assemble the subtype
-	if (type === CollectionTypeElement) {
-		subtype = path.shift()
-
-		if (!IdElementGuard.CollectableTypeElement(subtype))
+		if (!ElementGuard.CollectableTypeElement(subtype))
 			throw new IdError(id, `"${subtype}" not a collectable type.`)
-		type += Sep + subtype
+		typeElements.push(subtype)
 	}
 
-	if (!TypeElement.includes(type as TypeElement))
-		throw new IdError(id, `parseId: "${type}" is not a valid Datasworn type.`)
-
 	// The key for this object in its parent dictionary
-	const key = path.pop() as DictKey
+	const key = collectionKeys.pop() as DictKey
 
 	let min, max: number
-	let isRecursive: boolean
+	let recursive: boolean
 
 	switch (true) {
-		case IdElementGuard.CollectionSubtypeElement(type): {
+		case ElementGuard.CollectionSubtypeElement(typeElement): {
 			// collections use what would otherwise be their last path element as a key -- offset the value
-			isRecursive = IdElementGuard.RecursiveCollectableTypeElement(subtype)
+			recursive = ElementGuard.RecursiveCollectableTypeElement(subtype)
 
-			max = (isRecursive ? RECURSIVE_PATH_ELEMENTS_MAX : 1) - 1
+			max = (recursive ? RECURSIVE_PATH_ELEMENTS_MAX : 1) - 1
 			min = RECURSIVE_PATH_ELEMENTS_MIN - 1
 
 			break
 		}
-		case IdElementGuard.RecursiveCollectableTypeElement(type): {
+		case ElementGuard.RecursiveCollectableTypeElement(typeElement): {
 			// recursive collectables should have 1-3 path elements (plus a key)
-			isRecursive = IdElementGuard.RecursiveCollectableTypeElement(type)
+			recursive = ElementGuard.RecursiveCollectableTypeElement(typeElement)
 
-			max = isRecursive ? RECURSIVE_PATH_ELEMENTS_MAX : 1
+			max = recursive ? RECURSIVE_PATH_ELEMENTS_MAX : 1
 			min = 1
 			break
 		}
-		case IdElementGuard.NonRecursiveCollectableTypeElement(type): {
+		case ElementGuard.NonRecursiveCollectableTypeElement(typeElement): {
 			// other collectables should have 1 path element (plus a key)
-			isRecursive = false
+			recursive = false
 
 			max = 1
 			min = 1
 			break
 		}
 
-		case IdElementGuard.NonCollectableTypeElement(type): {
+		case ElementGuard.NonCollectableType(typeElement): {
 			// non-collectable items should have 0 path elements (plus a key)
-			isRecursive = false
+			recursive = false
 			max = 0
 			min = 0
 			break
 		}
 
 		default:
-			throw new IdError(id, `"${type}" is not a valid Datasworn type.`)
+			throw new IdError(id, `"${typeElement}" is not a valid Datasworn type.`)
 	}
 
-	if (path.length > max || path.length < min)
+	if (collectionKeys.length > max || collectionKeys.length < min)
 		throw new IdError(
 			id,
 			`Expected ${min === max ? min : `${min}-${max}`} path elements, but got ${
-				path.length
+				collectionKeys.length
 			}`
 		)
 
 	// Filter for invalid path elements
-	const badElements = [...path, key].filter((el) => {
-		if (isRecursive && IdElementGuard.RecursiveWildcard(el)) {
-			isWildcard = true
+	const badElements = [...collectionKeys, key].filter((el) => {
+		if (recursive && ElementGuard.Globstar(el)) {
+			wildcard = true
 			return false
 		}
-		if (IdElementGuard.Wildcard(el)) {
-			isWildcard = true
+		if (ElementGuard.Wildcard(el)) {
+			wildcard = true
 			return false
 		}
-		if (IdElementGuard.DictKey(el)) return false
+		if (ElementGuard.DictKey(el)) return false
 		return true
 	})
 
@@ -130,10 +132,22 @@ export function parseId<T extends AnyId>(id: T): ParsedId<T> {
 		)
 
 	// check the final element, which represents the key of the object
-	if (IdElementGuard.Wildcard(key)) {
-		isWildcard = true
-	} else if (!IdElementGuard.DictKey(key))
-		throw new Error(
+	if (ElementGuard.Wildcard(key)) {
+		wildcard = true
+	} else if (ElementGuard.Globstar(key)) {
+		// only recursive collections allow recursive wildcards as a key
+		if (!ElementGuard.RecursiveCollectionSubtypeElement(typeElement))
+			throw new IdError(
+				id,
+				`"${String(
+					key as any
+				)}" may only be used in the last position (the key) by recursive collection wildcards..`
+			)
+
+		wildcard = true
+	} else if (!ElementGuard.DictKey(key))
+		throw new IdError(
+			id,
 			`"${String(key as any)}" is not a valid Datasworn dictionary key.`
 		)
 
@@ -144,53 +158,115 @@ export function parseId<T extends AnyId>(id: T): ParsedId<T> {
 	const parsed = {
 		id,
 		rulesPackage,
-		type,
-		path,
+		typeElements: typeElement,
+		collectionKeys,
 		key,
-		isWildcard
+		wildcard,
+		recursive,
+		dictionaryType
 	} as ParsedId<T>
 
 	return parsed
 }
-export type ParsedId<T extends AnyId = AnyId> = T extends CollectionId
-	? ParsedCollectionId<T>
-	: T extends CollectableId
-	  ? ParsedCollectableId<T>
-	  : T extends NonCollectableId
-	    ? ParsedNonCollectableId<T>
-	    : ParsedAnyId
 
-interface ParsedAnyId<T extends AnyId = AnyId> {
+export type ParsedId<T extends AnyId = AnyId> = T extends RecursiveCollectionId
+	? ParsedRecursiveCollectionId
+	: T extends NonRecursiveCollectionId
+	  ? ParsedNonRecursiveCollectionId
+	  : T extends RecursiveCollectableId
+	    ? ParsedRecursiveCollectableId
+	    : T extends NonRecursiveCollectableId
+	      ? ParsedNonRecursiveCollectableId
+	      : T extends NonCollectableId
+	        ? ParsedNonCollectableId
+	        : AnyParsedId
+
+export type AnyParsedId =
+	| ParsedRecursiveCollectionId
+	| ParsedRecursiveCollectableId
+	| ParsedNonRecursiveCollectionId
+	| ParsedNonRecursiveCollectableId
+	| ParsedNonCollectableId
+
+export type ParsedCollectionId =
+	| ParsedRecursiveCollectionId
+	| ParsedNonRecursiveCollectionId
+export type ParsedCollectableId =
+	| ParsedRecursiveCollectableId
+	| ParsedNonRecursiveCollectableId
+
+type DictionaryType = 'collection' | 'collectable' | 'non_collectable'
+
+export interface ParsedIdBase<T extends AnyId = AnyId> {
 	/** The original ID. */
 	id: T
 	/** The ID of the RulesPackage that contains this ID. */
 	rulesPackage: RulesPackageId
 	/** The type of object that this ID belongs to. */
-	type: ExtractTypeElement<T>
-	/** Path elements indicating the item's parent Collection, if any. */
-	path: DictKey[]
-	/** The key of the item in its parent Dictionary. */
+	typeElements: ExtractTypeElements<T>
+	/** Path elements representing the keys of any ancestor collections. */
+	collectionKeys: DictKey[]
+	/** The key of the identified item in its parent Dictionary. */
 	key: DictKey
-	isWildcard: boolean
-}
-interface ParsedCollectionId<T extends CollectionId> extends ParsedAnyId<T> {
-	path: [] | [DictKey] | [DictKey, DictKey]
-}
-interface ParsedCollectableId<T extends CollectableId> extends ParsedAnyId<T> {
-	path: [DictKey] | [DictKey, DictKey] | [DictKey, DictKey, DictKey]
-}
-interface ParsedNonCollectableId<T extends NonCollectableId>
-	extends ParsedAnyId<T> {
-	path: []
+	recursive: boolean
+	wildcard: boolean
+	collectable: boolean
 }
 
-export function extractSubtype<T extends Const.CollectionSubtypeElement>(
-	str: T
-) {
-	const [_, subtype] = str.split(Const.Sep) as [
+interface ParsedRecursiveCollectionId<
+	T extends RecursiveCollectionId = RecursiveCollectionId
+> extends ParsedIdBase<T> {
+	collectionKeys: [] | [DictKey] | [DictKey, DictKey]
+	recursive: true
+}
+
+interface ParsedRecursiveCollectableId<
+	T extends RecursiveCollectableId = RecursiveCollectableId
+> extends ParsedIdBase<T> {
+	collectionKeys: [DictKey] | [DictKey, DictKey] | [DictKey, DictKey, DictKey]
+	recursive: true
+	collectable: true
+}
+
+interface ParsedNonRecursiveCollectionId<
+	T extends NonRecursiveCollectionId = NonRecursiveCollectionId
+> extends ParsedIdBase<T> {
+	collectionKeys: []
+	recursive: false
+	collectable: false
+}
+
+interface ParsedNonRecursiveCollectableId<
+	T extends NonRecursiveCollectableId = NonRecursiveCollectableId
+> extends ParsedIdBase<T> {
+	collectionKeys: [DictKey]
+	recursive: false
+	collectable: true
+}
+
+interface ParsedNonCollectableId<T extends NonCollectableId = NonCollectableId>
+	extends ParsedIdBase<T> {
+	recursive: false
+	collectionKeys: []
+	collectable: false
+}
+
+export function extractCollectionIdSubtype<T extends CollectionId>(str: T) {
+	const [_pkg, _type, subtype, ..._tail] = str.split(Const.Sep) as [
+		string,
 		Const.CollectionTypeElement,
-		T extends Const.CollectionSubtypeElement<infer U> ? U : never
+		ExtractCollectedTypeElement<T>,
+		...string[]
 	]
 
 	return subtype
+}
+
+export function getRootKeyForType<T extends TypeElement>(
+	typeElement: T
+): RootKeyForTypeElement<T> {
+	if (ElementGuard.CollectionSubtypeElement(typeElement))
+		return extractCollectionIdSubtype(typeElement) as RootKeyForTypeElement<T>
+
+	return typeElement as RootKeyForTypeElement<T>
 }

@@ -35,3 +35,4 @@ declare global {
 		keys<T extends object>(object: T): (keyof T)[]
 	}
 }
+
