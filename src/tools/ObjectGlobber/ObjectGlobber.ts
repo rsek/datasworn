@@ -1,19 +1,8 @@
-import {
-	Wildcard as WildcardString,
-	Globstar as GlobstarString
-} from './const.js'
-import ElementGuard from './ElementGuard.js'
-import { walk, type WalkIteratee } from './walk.js'
-import {
-	type AnyId,
-	CollectionsKey,
-	ContentsKey,
-	type PathForId,
-	type TypeForId
-} from './types.js'
-import { IdParser } from './IdParser.js'
-import { type RulesPackage } from '../types/Datasworn.js'
+import { type RulesPackage } from '../../types/Datasworn.js'
+import type * as Path from './Path.js'
 import { arrayIs } from './arrayIs.js'
+import { type TypeForId } from '../Id/Utils.js'
+import * as Id from '../Id/index.js'
 
 type MatchTest<T = unknown> = (
 	value: T,
@@ -26,11 +15,6 @@ type MatchTest<T = unknown> = (
 class ObjectGlobber<
 	TTuple extends Array<PropertyKey> = Array<PropertyKey>
 > extends Array<TTuple[number]> {
-	/** Represents a glob wildcard path element, usually expressed as `*` */
-	static readonly WILDCARD = Symbol(WildcardString)
-	/** Represents a globstar path element, usually expressed as `**` */
-	static readonly GLOBSTAR = Symbol(GlobstarString)
-
 	constructor(...items: TTuple) {
 		super(...(items.map(ObjectGlobber.replaceGlobString as any) as any))
 	}
@@ -109,7 +93,7 @@ class ObjectGlobber<
 		return matches as T[]
 	}
 
-	walk<T>(from: object, forEach?: WalkIteratee): T {
+	walk<T>(from: object, forEach?: ObjectGlobber.WalkIteratee): T {
 		if (this.wildcard)
 			throw new Error(
 				`Path contains wildcard/globstar elements. Use ${this.constructor.name}#${this.getMatches.name} instead.`
@@ -129,7 +113,9 @@ class ObjectGlobber<
 	}
 
 	static isGlobElement(element: unknown) {
-		return element === this.WILDCARD || element === this.GLOBSTAR
+		return (
+			element === ObjectGlobber.WILDCARD || element === ObjectGlobber.GLOBSTAR
+		)
 	}
 
 	first() {
@@ -148,8 +134,8 @@ class ObjectGlobber<
 		return this.slice(0, -1)
 	}
 
-	static fromId<T extends AnyId>(id: T) {
-		return new IdParser(id).toPath()
+	static fromId<T extends Id.AnyId>(id: T) {
+		return new Id.IdParser(id).toPath()
 	}
 
 	static getMatches(
@@ -197,7 +183,7 @@ class ObjectGlobber<
 			matchTest,
 			includeArrays = false
 		}: {
-			forEachMatch?: WalkIteratee
+			forEachMatch?: ObjectGlobber.WalkIteratee
 			matchTest?: MatchTest
 			includeArrays: boolean
 		} = {
@@ -213,7 +199,7 @@ class ObjectGlobber<
 		const hasMatchTest = typeof matchTest === 'function'
 
 		switch (matchKey) {
-			case this.WILDCARD:
+			case ObjectGlobber.WILDCARD:
 				for (const realKey in from) {
 					if (!Object.hasOwn(from, realKey)) continue
 					const element = from[realKey as keyof typeof from]
@@ -221,7 +207,7 @@ class ObjectGlobber<
 						results.push(element)
 				}
 				break
-			case this.GLOBSTAR:
+			case ObjectGlobber.GLOBSTAR:
 				for (const realKey in from) {
 					// console.log(realKey)
 					if (!Object.hasOwn(from, realKey)) continue
@@ -254,7 +240,7 @@ class ObjectGlobber<
 		return results
 	}
 
-	/** Does this object have recursable keys */
+	/** Is this value an object with recursable keys? */
 	static isWalkable(value: unknown, includeArrays = false) {
 		if (!includeArrays && Array.isArray(value)) return false
 
@@ -270,15 +256,22 @@ class ObjectGlobber<
 		)
 	}
 
-	static walk<T extends AnyId>(
+	/**
+	 * Navigates an object hierarchy by recursively following a series of property keys.
+	 * @param from The object to walk.
+	 * @param path An array of object property to follow.
+	 * @param forEach An optional function to run on every walked value.
+	 * @throws If a key is an invalid type, or if a key can't be found.
+	 */
+	static walk<T extends Id.AnyId>(
 		from: Record<string, RulesPackage>,
-		path: ObjectGlobber<PathForId<T>>,
-		forEach?: WalkIteratee
+		path: ObjectGlobber<Path.PathForId<T>>,
+		forEach?: ObjectGlobber.WalkIteratee
 	): TypeForId<T>
 	static walk(
 		from: object,
 		path: ObjectGlobber,
-		forEach?: WalkIteratee
+		forEach?: ObjectGlobber.WalkIteratee
 	): unknown {
 		if (path.length === 0) return from
 
@@ -307,7 +300,7 @@ class ObjectGlobber<
 		} else nextObject = from[currentKey as keyof typeof from]
 
 		if (path.length === 0) return nextObject
-		else return walk(nextObject, nextPath as any)
+		else return ObjectGlobber.walk(nextObject, nextPath as any)
 	}
 
 	static getObjectPaths(
@@ -335,38 +328,49 @@ class ObjectGlobber<
 		return results
 	}
 
+	/** Replace a wildcard/globstar string with a Symbol */
 	static replaceGlobString<T extends PropertyKey>(
 		item: T
-	): T extends typeof WildcardString
+	): T extends typeof Id.IdElements.WildcardString
 		? (typeof ObjectGlobber)['WILDCARD']
-		: T extends typeof GlobstarString
+		: T extends typeof Id.IdElements.GlobstarString
 		  ? (typeof ObjectGlobber)['GLOBSTAR']
 		  : T {
 		switch (true) {
-			case ElementGuard.Wildcard(item):
-				return this.WILDCARD as any
-			case ElementGuard.Globstar(item):
-				return this.GLOBSTAR as any
+			case Id.IdElements.TypeGuard.Wildcard(item):
+				return ObjectGlobber.WILDCARD as any
+			case Id.IdElements.TypeGuard.Globstar(item):
+				return ObjectGlobber.GLOBSTAR as any
 			default:
 				return item as any
 		}
 	}
 
+	/** Replace a wildcard or globstar Symbol with a string representation. */
 	static replaceGlobSymbol<T extends PropertyKey>(
 		item: T
 	): T extends (typeof ObjectGlobber)['WILDCARD']
-		? typeof WildcardString
+		? typeof Id.IdElements.WildcardString
 		: T extends (typeof ObjectGlobber)['GLOBSTAR']
-		  ? typeof GlobstarString
+		  ? typeof Id.IdElements.GlobstarString
 		  : T {
 		switch (item) {
-			case this.WILDCARD:
-			case this.GLOBSTAR:
+			case ObjectGlobber.WILDCARD:
+			case ObjectGlobber.GLOBSTAR:
 				return (item as any).description()
 			default:
 				return item as any
 		}
 	}
+}
+
+namespace ObjectGlobber {
+	/** Represents a glob wildcard path element, usually expressed as `*` */
+	export const WILDCARD = Symbol(Id.IdElements.WildcardString)
+	/** Represents a globstar (recursive wildcard) path element, usually expressed as `**` */
+	export const GLOBSTAR = Symbol(Id.IdElements.GlobstarString)
+
+	export type WalkIteratee = (value: unknown, path: PropertyKey[]) => void
 }
 
 export default ObjectGlobber

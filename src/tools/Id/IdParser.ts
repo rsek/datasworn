@@ -1,52 +1,34 @@
 import nanomatch from 'nanomatch'
-import { type RulesPackage } from '../schema/RulesPackages.js'
-import ElementGuard from './ElementGuard.js'
-import ObjectGlobber from './ObjectGlobber.js'
-import { CollectionsKey, ContentsKey, Sep, type TypeElement } from './const.js'
-import { IdError } from './error.js'
-import { type ParsedId, type ParsedIdBase } from './parseId.js'
+import type * as Datasworn from '../../types/Datasworn.js'
+import { TypeGuard } from './IdElements/index.js'
+
+import { ParseError } from './Errors.js'
+import * as CONST from './IdElements/const.js'
+
+import ObjectGlobber from '../ObjectGlobber/ObjectGlobber.js'
+import { type PathForId } from '../ObjectGlobber/Path.js'
+import type * as Id from './StringTemplateLiterals.js'
 import {
-	type AnyId,
-	type DictKey,
-	type ExtractCollectedTypeElement,
+	type ExtractIdAncestorKeys,
+	type ExtractRulesPackageId,
+	type ExtractIdSelfKey,
 	type ExtractTypeElements,
-	type PathForId,
 	type RootKeyForId,
-	type RulesPackageId,
-	type TypeForId
-} from './types.js'
-
-type _IdOptions<T extends AnyId> = Pick<
-	ParsedId<T>,
-	'rulesPackage' | 'typeElements' | 'collectionKeys' | 'key'
->
-
-type IdOptions<T extends AnyId> = Partial<{
-	[P in keyof _IdOptions<T>]: _IdOptions<T>[P] extends []
-		? _IdOptions<T>[P]
-		: never
-}> & {
-	[P in keyof _IdOptions<T>]: _IdOptions<T>[P] extends []
-		? never
-		: _IdOptions<T>[P]
-}
+	type TypeForId,
+	type Split,
+	type ExtractCollectedTypeElement
+} from './Utils.js'
+import type * as IdElements from './IdElements/index.js'
 
 // TODO - try this as "extends String" ? not sure it's a good idea -- most string functions don't actually apply here.
-// TODO: add some more constants as statics
-
-export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
-	/** The maximum depth for nesting collections, relative to the root  */
-	static readonly RECURSIVE_MAX_DEPTH = 3 as const
-	/** The separator character for datasworn IDs */
-	static readonly SEP = '/' as const
-
+class IdParser<T extends Id.AnyId = Id.AnyId> implements IdParser.Options<T> {
 	/** An optional reference to the Datasworn tree object. Used as the default value for several traversal methods. */
-	static datasworn: Record<string, RulesPackage> | null = null
+	static datasworn: Record<string, Datasworn.RulesPackage> | null = null
 
-	readonly #source: T | IdOptions<T>
+	readonly #source: T | IdParser.Options<T>
 
 	get id(): T {
-		return this.#elements.join(IdParser.SEP) as T
+		return this.#elements.join(CONST.Sep) as T
 	}
 
 	valueOf() {
@@ -80,19 +62,19 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 	}
 
 	// TODO: setters validate the new value
-	#rulesPackage: ParsedId<T>['rulesPackage']
-	public get rulesPackage(): ParsedId<T>['rulesPackage'] {
+	readonly #rulesPackage: IdParser.Options<T>['rulesPackage']
+	public get rulesPackage(): IdParser.Options<T>['rulesPackage'] {
 		return this.#rulesPackage
 	}
 
-	// public set rulesPackage(value: ParsedId<T>['rulesPackage']) {
+	// public set rulesPackage(value: IdParser.Options<T>['rulesPackage']) {
 	// 	// if (!IdParser.fn(value)) throw new Error()
 	// 	this.#resetLazyProperties()
 	// 	this.#rulesPackage = value
 	// }
 
-	#typeElements: ParsedIdBase<T>['typeElements']
-	public get typeElements(): ParsedIdBase<T>['typeElements'] {
+	readonly #typeElements: IdParser.Options<T>['typeElements']
+	public get typeElements(): IdParser.Options<T>['typeElements'] {
 		return this.#typeElements
 	}
 
@@ -102,23 +84,23 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 	// 	this.#typeElements = value
 	// }
 
-	#collectionKeys: ParsedId<T>['collectionKeys']
-	public get collectionKeys(): ParsedId<T>['collectionKeys'] {
+	readonly #collectionKeys: IdParser.Options<T>['collectionKeys']
+	public get collectionKeys(): IdParser.Options<T>['collectionKeys'] {
 		return this.#collectionKeys
 	}
 
-	// public set collectionKeys(value: ParsedId<T>['collectionKeys']) {
+	// public set collectionKeys(value: IdParser.Options<T>['collectionKeys']) {
 	// 	// if (!IdParser.fn(value)) throw new Error()
 	// 	this.#resetLazyProperties()
 	// 	this.#collectionKeys = value
 	// }
 
-	#key: ParsedId<T>['key']
-	public get key(): ParsedId<T>['key'] {
+	readonly #key: IdParser.Options<T>['key']
+	public get key(): IdParser.Options<T>['key'] {
 		return this.#key
 	}
 
-	// public set key(value: ParsedId<T>['key']) {
+	// public set key(value: IdParser.Options<T>['key']) {
 	// 	// if (!IdParser.fn(value)) throw new Error()
 	// 	this.#resetLazyProperties()
 	// 	this.#key = value
@@ -126,45 +108,47 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 
 	// flag getters
 	get recursive() {
-		return ElementGuard.CollectionType(this.typeElements[0])
-			? ElementGuard.RecursiveCollectionSubtype(this.typeElements)
-			: ElementGuard.RecursiveCollectableType(this.typeElements[0])
+		return TypeGuard.CollectionType(this.typeElements[0])
+			? TypeGuard.RecursiveCollectionSubtype(this.typeElements)
+			: TypeGuard.RecursiveCollectableType(this.typeElements[0])
 	}
 
 	get wildcard() {
-		return this.#elements.some(ElementGuard.AnyWildcard)
+		return this.#elements.some(TypeGuard.AnyWildcard)
 	}
 
-	get collectable() {
-		return ElementGuard.CollectableType(
-			this.typeElements[0]
-		) as ParsedId<T>['collectable']
+	get collectable(): this['typeElements'] extends [
+		IdElements.TypeElements.Collectable.Any
+	]
+		? true
+		: false {
+		return TypeGuard.CollectableType(this.typeElements[0]) as any
 	}
 
 	get collection() {
-		return ElementGuard.CollectionType(this.typeElements[0])
+		return TypeGuard.CollectionType(this.typeElements[0])
 	}
 
 	get typeRootKey(): RootKeyForId<T> {
-		return (
-			this.collection ? this.typeElements[1] : this.typeElements[0]
-		) as any
+		return this.collection
+			? this.typeElements[1]
+			: (this.typeElements[0] as any)
 	}
 
-	#path = null
+	#path: null | ObjectGlobber<PathForId<T>> = null
 
-	toPath() {
+	toPath(): ObjectGlobber<PathForId<T>> {
 		if (this.#path == null) {
 			const path = IdParser.toPath(this)
 			this.#path = path
-			return path
+			return path as any
 		}
 		return this.#path
 	}
 
 	/**
 	 * Retrieves the object referenced by this ID.
-	 * @throws If the ID is a wildcard ID, and if the referenced object doesn't exist.
+	 * @throws If the ID is a wildcard ID (use {@link IdParser.getMatches} instead), or if the referenced object doesn't exist.
 	 */
 	get(tree = IdParser.datasworn): TypeForId<T> {
 		if (tree == null)
@@ -193,15 +177,22 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 
 	/**
 	 *
-	 * @param id The ID string to be parsed, or options for construction an ID.
+	 * @param id The ID string to be parsed.
 	 */
 	constructor(id: T)
-	constructor(id: IdOptions<T>)
-	constructor(id: string | IdOptions<T>) {
-		const parsed = typeof id === 'string' ? IdParser.parse(id as any) : id
-		this.#source = id as any
+	/**
+	 *
+	 * @param options Options for construction an ID.
+	 */
+	constructor(options: IdParser.Options<T>)
+	/**
+	 *
+	 * @param id The ID string to be parsed, or options for construction an ID.
+	 */
+	constructor(id: T | IdParser.Options<T>) {
+		const parsed = typeof id === 'string' ? IdParser.parse(id) : id
+		this.#source = id
 		this.#rulesPackage = parsed.rulesPackage
-		// @ts-expect-error
 		this.#typeElements = parsed.typeElements ?? []
 		this.#collectionKeys = parsed.collectionKeys ?? []
 		this.#key = parsed.key
@@ -211,8 +202,8 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 	 * Get a Datasworn node by its ID.
 	 * @throws If the ID is invalid; if a path to the identified object can't be found.
 	 */
-	static get<Id extends AnyId>(
-		id: Id | ParsedId<Id> | Id<Id>,
+	static get<Id extends Id.AnyId>(
+		id: Id | IdParser.Options<Id> | IdParser<Id>,
 		tree = IdParser.datasworn
 	): TypeForId<Id> {
 		const parsedId = id instanceof IdParser ? id : new IdParser<Id>(id as any)
@@ -221,7 +212,7 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 		return parsedId.toPath().walk(tree)
 	}
 
-	static getMatches<Id extends AnyId>(
+	static getMatches<Id extends Id.AnyId>(
 		id: Id | IdParser<Id>,
 		tree = IdParser.datasworn
 	): TypeForId<Id>[] {
@@ -255,43 +246,42 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 	}
 
 	/**
-	 * Parses a Datasworn string ID into substrings, and
+	 * Parses a Datasworn string ID into substrings and returns an object identifying each substring.
 	 * @param id The Datasworn ID to parse.
 	 */
-	static parse<Id extends AnyId>(id: Id) {
-		const [rulesPackage, typeElement, ...collectionKeys] = id.split(Sep) as [
-			RulesPackageId,
-			TypeElement,
-			...DictKey[]
-		]
+	static parse<Id extends Id.AnyId>(id: Id): IdParser.Options<Id> {
+		const [rulesPackage, typeElement, ...collectionKeys] = id.split(
+			CONST.Sep
+		) as Split<Id, CONST.Sep>
+		// ) as [ExtractRulesPackageId<Id>, AnyPrimary, ...DictKey[]]
 
-		const typeElements = [typeElement] as ExtractTypeElements<Id>
+		const typeElements = [typeElement] as unknown as ExtractTypeElements<Id>
 
 		// validate first element (rules package id)
 		if (
-			!ElementGuard.RulesPackage(rulesPackage) &&
-			!ElementGuard.Wildcard(rulesPackage)
+			!TypeGuard.RulesPackageId(rulesPackage) &&
+			!TypeGuard.Wildcard(rulesPackage)
 		)
-			throw new IdError(
+			throw new ParseError(
 				id,
 				`"${String(rulesPackage as any)}" is not a valid Datasworn package ID.`
 			)
 
 		// validate second element (type)
-		if (!ElementGuard.AnyType(typeElement))
-			throw new IdError(
+		if (!TypeGuard.AnyType(typeElement))
+			throw new ParseError(
 				id,
 				`"${typeElement as any}" is not a valid Datasworn type.`
 			)
 
 		// if it's a collection, validate the next element as the collection subtype
-		if (ElementGuard.CollectionType(typeElement)) {
+		if (TypeGuard.CollectionType(typeElement)) {
 			const subtype =
 				// @ts-expect-error gotta love a type error caused by thorough run-time type checking
 				collectionKeys.shift() as ExtractCollectedTypeElement<Id>
 
-			if (!ElementGuard.CollectableType(subtype))
-				throw new IdError(
+			if (!TypeGuard.CollectableType(subtype))
+				throw new ParseError(
 					id,
 					`"${subtype}" not a valid Datasworn collectable type.`
 				)
@@ -300,30 +290,30 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 		}
 
 		// Extract the key for this object in its parent dictionary, which is always the last element. this gets validated later so that errors are thrown according to their order in the string
-		const key = collectionKeys.pop() as DictKey
+		const key = collectionKeys.pop() as ExtractIdSelfKey<Id>
 
 		// ensure that any remaining collectionKeys are the correct length
 
 		let min, max: number
 
 		switch (true) {
-			case ElementGuard.NonRecursiveCollectableType(typeElement):
+			case TypeGuard.NonRecursiveCollectableType(typeElement):
 				min = max = 1
 				break
-			case ElementGuard.RecursiveCollectableType(typeElement):
+			case TypeGuard.RecursiveCollectableType(typeElement):
 				min = 1
-				max = this.RECURSIVE_MAX_DEPTH
+				max = CONST.RECURSIVE_PATH_ELEMENTS_MAX
 				break
-			case ElementGuard.RecursiveCollectionSubtype(typeElements):
+			case TypeGuard.RecursiveCollectionSubtype(typeElements):
 				min = 0
-				max = this.RECURSIVE_MAX_DEPTH - 1
+				max = CONST.RECURSIVE_PATH_ELEMENTS_MAX - 1
 				break
 			default:
 				min = max = 0
 		}
 
 		if (collectionKeys.length > max || collectionKeys.length < min)
-			throw new IdError(
+			throw new ParseError(
 				id,
 				`Expected ${
 					min === max ? min : `${min}-${max}`
@@ -332,47 +322,46 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 
 		// validate ancestor collection keys
 
-		const collection = ElementGuard.CollectionType(typeElement)
-		const collectable = ElementGuard.CollectableType(typeElement)
+		const collection = TypeGuard.CollectionType(typeElement)
 		const recursive =
-			ElementGuard.RecursiveCollectableType(typeElement) ||
-			ElementGuard.RecursiveCollectionSubtype(typeElements)
+			TypeGuard.RecursiveCollectableType(typeElement) ||
+			TypeGuard.RecursiveCollectionSubtype(typeElements)
 
 		const badCollectionKeys = collectionKeys.filter(
 			(key) => !this.#validateCollectionKey(key, recursive)
 		)
 
 		if (badCollectionKeys.length > 0)
-			throw new IdError(
+			throw new ParseError(
 				id,
 				`Received invalid ancestor collection keys: ${JSON.stringify(
 					badCollectionKeys
 				)}`
 			)
 
-		if (collection && !recursive && ElementGuard.Globstar(key))
-			throw new IdError(
+		if (collection && !recursive && TypeGuard.Globstar(key))
+			throw new ParseError(
 				id,
 				`Received a recursive wildcard as a key for a non-recursive collection type`
 			)
 		else if (!collection && !this.#validateKey(key))
-			throw new IdError(id, `"${key as string}" is not a valid Datasworn key`)
+			throw new ParseError(
+				id,
+				`"${key as string}" is not a valid Datasworn key`
+			)
 
 		return {
 			rulesPackage,
 			typeElements,
-			collectionKeys,
-			key,
-			id,
-			collectable, // TODO: prune these
-			recursive
-		} as ParsedId<Id>
+			collectionKeys: collectionKeys as string[] as ExtractIdAncestorKeys<Id>,
+			key
+		}
 	}
 
 	/** Converts an ID to an array of strings representing the properties needed to reach the identified object. */
-	static toPath<T extends AnyId>(
+	static toPath<T extends Id.AnyId>(
 		id: T | IdParser<T>
-	): ObjectGlobber<PathForId<T> & PropertyKey[]> {
+	): ObjectGlobber<PathForId<T>> {
 		const parsed = id instanceof IdParser ? id : new IdParser(id)
 		const dotPathElements: string[] = []
 
@@ -385,19 +374,16 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 			case parsed.collection:
 				// e.g. "starforged.oracles.planets.collections.furnace"
 				for (const pathElement of parsed.collectionKeys)
-					dotPathElements.push(pathElement, CollectionsKey)
+					dotPathElements.push(pathElement, CONST.CollectionsKey)
 				dotPathElements.push(parsed.key)
-				// special case: key is "**" (a globstar), we need to restrict the results to
-				// if (IdElementGuard.RecursiveWildcard(parsed.key))
-				// 	dotPathElements.push(CollectionsKey, Wildcard)
 				break
 			case parsed.collectable:
 				{
 					// e.g. "starforged.oracles.planets.collections.furnace.contents.life"
 					const parentCollectionKey = parsed.collectionKeys.pop() as string
 					for (const pathElement of parsed.collectionKeys)
-						dotPathElements.push(pathElement, CollectionsKey)
-					dotPathElements.push(parentCollectionKey, ContentsKey)
+						dotPathElements.push(pathElement, CONST.CollectionsKey)
+					dotPathElements.push(parentCollectionKey, CONST.ContentsKey)
 					dotPathElements.push(parsed.key)
 				}
 				break
@@ -411,13 +397,24 @@ export class IdParser<T extends AnyId = AnyId> implements ParsedIdBase<T> {
 		return new ObjectGlobber(...dotPathElements) as any
 	}
 
-	static #validateKey(key: unknown): key is DictKey {
-		return ElementGuard.Wildcard(key) || ElementGuard.DictKey(key)
+	static #validateKey(key: unknown): key is Id.DictKey {
+		return TypeGuard.Wildcard(key) || TypeGuard.DictKey(key)
 	}
 
 	static #validateCollectionKey(key: string, recursive = false) {
 		return recursive
-			? ElementGuard.Globstar(key) || this.#validateKey(key)
+			? TypeGuard.Globstar(key) || this.#validateKey(key)
 			: this.#validateKey(key)
 	}
 }
+
+namespace IdParser {
+	export interface Options<T extends Id.AnyId = Id.AnyId> {
+		rulesPackage: ExtractRulesPackageId<T>
+		typeElements: ExtractTypeElements<T>
+		collectionKeys: ExtractIdAncestorKeys<T>
+		key: ExtractIdSelfKey<T>
+	}
+}
+
+export default IdParser
