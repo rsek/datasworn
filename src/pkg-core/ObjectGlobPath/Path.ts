@@ -1,6 +1,6 @@
-import { type CollectionsKey, type ContentsKey } from '../Id/IdElement/const.js'
-import type ObjectGlobber from '../ObjectGlobber/ObjectGlobber.js'
+import type ObjectGlobPath from './ObjectGlobPath.js'
 import type * as Id from '../Id/index.js'
+import type CONST from '../Id/IdElements/CONST.js'
 
 export type PathForId<T extends Id.AnyId> = (T extends Id.RecursiveCollectionId
 	? RecursiveCollectionPath<T>
@@ -18,9 +18,9 @@ export type PathForId<T extends Id.AnyId> = (T extends Id.RecursiveCollectionId
 export type PathForType<T extends Id.Utils.AnyIdentified> = PathForId<
 	Id.Utils.IdForType<T>
 > // real paths
-type RulesPackageIdWildcard = Id.RulesPackageId | typeof ObjectGlobber.WILDCARD
-type DictKeyWildcard = Id.DictKey | typeof ObjectGlobber.WILDCARD
-type DictKeyGlobstar = Id.DictKey | typeof ObjectGlobber.GLOBSTAR
+type RulesPackageIdWildcard = Id.RulesPackageId | typeof ObjectGlobPath.WILDCARD
+type DictKeyWildcard = Id.DictKey | typeof ObjectGlobPath.WILDCARD
+type DictKeyGlobstar = Id.DictKey | typeof ObjectGlobPath.GLOBSTAR
 
 export type NonCollectablePath<
 	T extends Id.NonCollectableId = Id.NonCollectableId
@@ -44,20 +44,20 @@ export type NonRecursiveCollectablePath<
 	RulesPackageIdWildcard, // pkg key
 	Id.Utils.ExtractCollectableTypeElement<T>,
 	DictKeyWildcard, // parent collection key
-	ContentsKey,
+	CONST.ContentsKey,
 	DictKeyWildcard // collectable's key
 ]
 type RecursiveCollectionKeys =
 	| [DictKeyGlobstar]
-	| [DictKeyWildcard, CollectionsKey, DictKeyGlobstar]
-	| [DictKeyGlobstar, CollectionsKey, DictKeyWildcard]
+	| [DictKeyWildcard, CONST.CollectionsKey, DictKeyGlobstar]
+	| [DictKeyGlobstar, CONST.CollectionsKey, DictKeyWildcard]
 	| [DictKeyWildcard]
-	| [DictKeyWildcard, CollectionsKey, DictKeyWildcard]
+	| [DictKeyWildcard, CONST.CollectionsKey, DictKeyWildcard]
 	| [
 			DictKeyWildcard,
-			CollectionsKey,
+			CONST.CollectionsKey,
 			DictKeyWildcard,
-			CollectionsKey,
+			CONST.CollectionsKey,
 			DictKeyWildcard
 	  ]
 
@@ -75,6 +75,6 @@ export type RecursiveCollectablePath<
 	RulesPackageIdWildcard, // pkg key
 	Id.Utils.ExtractCollectableTypeElement<T>,
 	...RecursiveCollectionKeys, // ancestor collections
-	ContentsKey,
+	CONST.ContentsKey,
 	DictKeyWildcard // collectable's key
 ]

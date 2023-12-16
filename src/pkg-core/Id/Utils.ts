@@ -1,4 +1,4 @@
-import type * as Datasworn from '../../types/Datasworn.js'
+import type * as Datasworn from 'Datasworn.js'
 import type * as Id from './StringTemplateLiterals.js'
 import type * as IdElements from './IdElements/index.js'
 
@@ -38,20 +38,20 @@ export type Split<
 
 export type ExtractRulesPackageId<T extends Id.AnyId> = Split<
 	T,
-	IdElements.Sep
+	IdElements.CONST.Sep
 >[0]
 
 export type ExtractIdAncestorKeys<T extends Id.AnyId> = T extends
 	| Id.CollectableId
 	| Id.CollectionId
-	? Split<T, IdElements.Sep> extends [...infer U extends string[], string]
+	? Split<T, IdElements.CONST.Sep> extends [...infer U extends string[], string]
 		? U
 		: []
 	: string[]
 
 export type ExtractIdSelfKey<T extends Id.AnyId> = Split<
 	T,
-	IdElements.Sep
+	IdElements.CONST.Sep
 > extends [...string[], infer U extends string]
 	? U
 	: string
@@ -76,7 +76,7 @@ export type AnyNonRecursiveCollectable =
 /** Any Collection type that may contain both Collectable objects and further collections. */
 export type AnyRecursiveCollection =
 	NamesByTypeComposite[IdElements.TypeElements.Collectable.Recursive] & {
-		[IdElements.CollectionsKey]?: Record<
+		[IdElements.CONST.CollectionsKey]?: Record<
 			string,
 			NamesByTypeComposite[IdElements.TypeElements.Collectable.Recursive]
 		>

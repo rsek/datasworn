@@ -1,4 +1,4 @@
-import type * as Datasworn from '../../types/Datasworn.js'
+import type * as Datasworn from 'Datasworn.js'
 import type * as Id from './StringTemplateLiterals.js'
 import type * as IdElements from './IdElements/index.js'
 
@@ -58,7 +58,7 @@ export const TypeCompositesByName = {
 			IdElements.TypeElements.AnyPrimary,
 			IdElements.TypeElements.Collection
 	  >
-	| `${IdElements.TypeElements.Collection}${IdElements.Sep}${IdElements.TypeElements.Collectable.Any}`
+	| `${IdElements.TypeElements.Collection}${IdElements.CONST.Sep}${IdElements.TypeElements.Collectable.Any}`
 >
 export type TypeCompositesByName = typeof TypeCompositesByName
 

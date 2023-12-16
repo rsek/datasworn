@@ -3,14 +3,28 @@
 	"version": "0.0.5",
 	"description": "Typings and JSON schema common to Datasworn. This is a pre-release package, provided for developer feedback. It will almost certainly receive breaking changes.",
 	"main": "index.js",
-	"types": "./index.d.ts",
-	"files": ["DataswornSource.d.ts", "index.d.ts", "json"],
+	"module": "index.esm.js",
+	"types": "index.d.ts",
+	"files": [
+		"Datasworn.d.ts",
+		"DataswornSource.d.ts",
+		"tools.js",
+		"tools.esm.js",
+		"tools.d.ts",
+		"index.d.ts",
+		"json"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/rsek/datasworn.git",
 		"directory": "pkg/nodejs/@datasworn/core"
 	},
-	"keywords": ["ironsworn", "datasworn", "dataforged", "TTRPG"],
+	"keywords": [
+		"ironsworn",
+		"datasworn",
+		"dataforged",
+		"TTRPG"
+	],
 	"contributors": [
 		{
 			"name": "rsek",

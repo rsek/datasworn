@@ -6,6 +6,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	plugins: ['@typescript-eslint', 'eslint-plugin-tsdoc'],
 	ignorePatterns: [
+		'pkg',
 		'github',
 		'vscode',
 		'analysis',

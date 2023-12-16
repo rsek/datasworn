@@ -17,7 +17,7 @@ const rootDir = path.join(PKG_DIR_NODE, PKG_SCOPE_OFFICIAL, 'core')
 
 const id = `${PKG_SCOPE_OFFICIAL}/core`
 const jsonDir = path.join(rootDir, 'json')
-const typesPath = path.join(rootDir, 'index.d.ts')
+const typesPath = path.join(rootDir, 'Datasworn.d.ts')
 const sourceTypesPath = path.join(rootDir, 'DataswornSource.d.ts')
 
 export const config = {

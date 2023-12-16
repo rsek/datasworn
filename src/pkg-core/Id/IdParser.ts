@@ -1,12 +1,12 @@
 import nanomatch from 'nanomatch'
-import type * as Datasworn from '../../types/Datasworn.js'
+import type * as Datasworn from 'Datasworn.js'
 import { TypeGuard } from './IdElements/index.js'
 
 import { ParseError } from './Errors.js'
-import * as CONST from './IdElements/const.js'
+import CONST from './IdElements/CONST.js'
 
-import ObjectGlobber from '../ObjectGlobber/ObjectGlobber.js'
-import { type PathForId } from '../ObjectGlobber/Path.js'
+import ObjectGlobPath from '../ObjectGlobPath/ObjectGlobPath.js'
+import { type PathForId } from '../ObjectGlobPath/Path.js'
 import type * as Id from './StringTemplateLiterals.js'
 import {
 	type ExtractIdAncestorKeys,
@@ -135,9 +135,9 @@ class IdParser<T extends Id.AnyId = Id.AnyId> implements IdParser.Options<T> {
 			: (this.typeElements[0] as any)
 	}
 
-	#path: null | ObjectGlobber<PathForId<T>> = null
+	#path: null | ObjectGlobPath<PathForId<T>> = null
 
-	toPath(): ObjectGlobber<PathForId<T>> {
+	toPath(): ObjectGlobPath<PathForId<T>> {
 		if (this.#path == null) {
 			const path = IdParser.toPath(this)
 			this.#path = path
@@ -276,9 +276,9 @@ class IdParser<T extends Id.AnyId = Id.AnyId> implements IdParser.Options<T> {
 
 		// if it's a collection, validate the next element as the collection subtype
 		if (TypeGuard.CollectionType(typeElement)) {
-			const subtype =
-				// @ts-expect-error gotta love a type error caused by thorough run-time type checking
-				collectionKeys.shift() as ExtractCollectedTypeElement<Id>
+			const subtype = collectionKeys.shift() as ExtractCollectedTypeElement<
+				Id & Id.CollectionId
+			>
 
 			if (!TypeGuard.CollectableType(subtype))
 				throw new ParseError(
@@ -361,7 +361,7 @@ class IdParser<T extends Id.AnyId = Id.AnyId> implements IdParser.Options<T> {
 	/** Converts an ID to an array of strings representing the properties needed to reach the identified object. */
 	static toPath<T extends Id.AnyId>(
 		id: T | IdParser<T>
-	): ObjectGlobber<PathForId<T>> {
+	): ObjectGlobPath<PathForId<T>> {
 		const parsed = id instanceof IdParser ? id : new IdParser(id)
 		const dotPathElements: string[] = []
 
@@ -394,7 +394,7 @@ class IdParser<T extends Id.AnyId = Id.AnyId> implements IdParser.Options<T> {
 				dotPathElements.push(parsed.key)
 				break
 		}
-		return new ObjectGlobber(...dotPathElements) as any
+		return new ObjectGlobPath(...dotPathElements) as any
 	}
 
 	static #validateKey(key: unknown): key is Id.DictKey {
