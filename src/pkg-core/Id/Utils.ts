@@ -1,4 +1,4 @@
-import type * as Datasworn from 'Datasworn.js'
+import type * as Datasworn from '../Datasworn.js'
 import type * as Id from './StringTemplateLiterals.js'
 import type * as IdElements from './IdElements/index.js'
 

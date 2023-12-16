@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "ES2016",
+		"module": "CommonJS",
+		"sourceMap": true,
+		"lib": ["es2022"],
+		"skipLibCheck": true,
+		"declaration": true,
+		"outDir": "../../pkg/nodejs/@datasworn/core/dist",
+		"esModuleInterop": true,
+		"declarationMap": false
+	}
+}

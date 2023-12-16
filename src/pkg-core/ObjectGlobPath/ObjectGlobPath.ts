@@ -1,4 +1,4 @@
-import { type RulesPackage } from 'Datasworn.js'
+import { type RulesPackage } from '../Datasworn.js'
 import type * as Path from './Path.js'
 import { arrayIs } from './arrayIs.js'
 import { type TypeForId } from '../Id/Utils.js'
@@ -103,7 +103,7 @@ class ObjectGlobPath<
 		return ObjectGlobPath.walk(from as any, this as any, forEach) as T
 	}
 
-	is<T extends ObjectGlobPath>(path: T): path is T & typeof this {
+	is<T extends ObjectGlobPath>(path: T): path is T & this {
 		if (path instanceof ObjectGlobPath) return false
 
 		return this.every((valueA, i) => {

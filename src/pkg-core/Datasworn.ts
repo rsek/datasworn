@@ -162,28 +162,12 @@ export interface Expansion {
 }
 
 /**
- * A unique ID for an AssetAbilityControlField.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/abilities\/(0|[1-9][0-9]*)\/controls\/([a-z][a-z_]*)$/
- * ```
- */
-export type AssetAbilityControlFieldId = string
-
-/**
  * A unique ID for an AssetAbility.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/abilities\/(0|[1-9][0-9]*)$/
  * ```
  */
 export type AssetAbilityId = string
-
-/**
- * A unique ID for an AssetAbilityOptionField.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/abilities\/(0|[1-9][0-9]*)\/options\/([a-z][a-z_]*)$/
- * ```
- */
-export type AssetAbilityOptionFieldId = string
 
 /**
  * A unique ID for an AssetCollection.
@@ -202,30 +186,6 @@ export type AssetCollectionId = string
 export type AssetCollectionIdWildcard = string
 
 /**
- * A unique ID for an AssetConditionMeterControlField.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/controls\/([a-z][a-z_]*)\/controls\/([a-z][a-z_]*)$/
- * ```
- */
-export type AssetConditionMeterControlFieldId = string
-
-/**
- * A unique ID for an AssetControlField.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/controls\/([a-z][a-z_]*)$/
- * ```
- */
-export type AssetControlFieldId = string
-
-/**
- * A wildcarded ID that can be used to match multiple AssetControlFields.
- * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/assets\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))\/controls\/(\*|([a-z][a-z_]*))$/
- * ```
- */
-export type AssetControlFieldIdWildcard = string
-
-/**
  * A unique ID for an Asset.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
@@ -240,22 +200,6 @@ export type AssetId = string
  * ```
  */
 export type AssetIdWildcard = string
-
-/**
- * A unique ID for an AssetOptionField.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/options\/([a-z][a-z_]*)$/
- * ```
- */
-export type AssetOptionFieldId = string
-
-/**
- * A wildcarded ID that can be used to match multiple AssetOptionFields.
- * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/assets\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))\/options\/(\*|([a-z][a-z_]*))$/
- * ```
- */
-export type AssetOptionFieldIdWildcard = string
 
 /**
  * A unique ID for an AtlasEntry.

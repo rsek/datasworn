@@ -15,8 +15,10 @@ await fs.emptyDir(ROOT_TYPES_OUT)
 
 for await (const [identifier, value] of Object.entries(rootSchemas)) {
 	const filePath = path.join(ROOT_TYPES_OUT, identifier + '.d.ts')
+  const filePath2 = path.join(process.cwd(), 'src/pkg-core', identifier + '.ts')
 
 	const fileContents = Object.values(extractDefs(value[defsKey])).join('\n\n')
 
 	await writeCode(filePath, fileContents)
+	await writeCode(filePath2, fileContents)
 }

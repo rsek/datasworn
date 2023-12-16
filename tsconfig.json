@@ -10,9 +10,16 @@
 	],
 	"compilerOptions": {
 		"paths": {
-			"*": ["./src/types/index.d.ts"],
-			"Datasworn": ["./src/types/Datasworn.d.ts"],
-			"DataswornSource": ["./src/types/DataswornSource.d.ts"]
+			"Datasworn": [
+				"../pkg/nodejs/@datasworn/core/Datasworn.d.ts",
+				"./types/Datasworn.d.ts",
+				"./types/Datasworn.js"
+			],
+			"DataswornSource": [
+				"../pkg/nodejs/@datasworn/core/DataswornSource.d.ts",
+				"./types/DataswornSource.d.ts",
+				"./types/DataswornSource.js"
+			]
 		},
 		"outDir": "dist",
 		"rootDir": "src",

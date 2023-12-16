@@ -2,16 +2,13 @@
 	"name": "@datasworn/core",
 	"version": "0.0.5",
 	"description": "Typings and JSON schema common to Datasworn. This is a pre-release package, provided for developer feedback. It will almost certainly receive breaking changes.",
-	"main": "index.js",
-	"module": "index.esm.js",
-	"types": "index.d.ts",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"files": [
-		"Datasworn.d.ts",
-		"DataswornSource.d.ts",
-		"tools.js",
-		"tools.esm.js",
-		"tools.d.ts",
-		"index.d.ts",
+		"dist/Datasworn.d.ts",
+		"dist/DataswornSource.d.ts",
+		"dist/index.d.ts",
+		"dist/index.js",
 		"json"
 	],
 	"repository": {
@@ -36,5 +33,7 @@
 	"bugs": {
 		"url": "https://github.com/rsek/datasworn/issues"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"nanomatch": "^1.2.13"
+	}
 }

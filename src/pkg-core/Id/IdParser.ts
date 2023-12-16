@@ -1,5 +1,5 @@
 import nanomatch from 'nanomatch'
-import type * as Datasworn from 'Datasworn.js'
+import type * as Datasworn from '../Datasworn.js'
 import { TypeGuard } from './IdElements/index.js'
 
 import { ParseError } from './Errors.js'
@@ -193,8 +193,8 @@ class IdParser<T extends Id.AnyId = Id.AnyId> implements IdParser.Options<T> {
 		const parsed = typeof id === 'string' ? IdParser.parse(id) : id
 		this.#source = id
 		this.#rulesPackage = parsed.rulesPackage
-		this.#typeElements = parsed.typeElements ?? []
-		this.#collectionKeys = parsed.collectionKeys ?? []
+		this.#typeElements = (parsed.typeElements ?? []) as any
+		this.#collectionKeys = (parsed.collectionKeys ?? []) as any
 		this.#key = parsed.key
 	}
 
@@ -208,8 +208,7 @@ class IdParser<T extends Id.AnyId = Id.AnyId> implements IdParser.Options<T> {
 	): TypeForId<Id> {
 		const parsedId = id instanceof IdParser ? id : new IdParser<Id>(id as any)
 
-		// @ts-expect-error ffs
-		return parsedId.toPath().walk(tree)
+		return parsedId.toPath().walk(tree as any)
 	}
 
 	static getMatches<Id extends Id.AnyId>(
