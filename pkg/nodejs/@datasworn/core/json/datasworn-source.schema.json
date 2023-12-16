@@ -341,23 +341,11 @@
 			},
 			"additionalProperties": false
 		},
-		"AssetAbilityControlFieldId": {
-			"title": "AssetAbilityControlFieldId",
-			"type": "string",
-			"description": "A unique ID for an AssetAbilityControlField.",
-			"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/controls\\/([a-z][a-z_]*)$"
-		},
 		"AssetAbilityId": {
 			"title": "AssetAbilityId",
 			"type": "string",
 			"description": "A unique ID for an AssetAbility.",
 			"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)$"
-		},
-		"AssetAbilityOptionFieldId": {
-			"title": "AssetAbilityOptionFieldId",
-			"type": "string",
-			"description": "A unique ID for an AssetAbilityOptionField.",
-			"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/options\\/([a-z][a-z_]*)$"
 		},
 		"AssetCollectionId": {
 			"title": "AssetCollectionId",
@@ -371,24 +359,6 @@
 			"description": "A wildcarded ID that can be used to match multiple AssetCollections.",
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/collections\\/assets\\/(\\*|([a-z][a-z_]*))$"
 		},
-		"AssetConditionMeterControlFieldId": {
-			"title": "AssetConditionMeterControlFieldId",
-			"type": "string",
-			"description": "A unique ID for an AssetConditionMeterControlField.",
-			"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/controls\\/([a-z][a-z_]*)\\/controls\\/([a-z][a-z_]*)$"
-		},
-		"AssetControlFieldId": {
-			"title": "AssetControlFieldId",
-			"type": "string",
-			"description": "A unique ID for an AssetControlField.",
-			"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/controls\\/([a-z][a-z_]*)$"
-		},
-		"AssetControlFieldIdWildcard": {
-			"title": "AssetControlFieldIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AssetControlFields.",
-			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/controls\\/(\\*|([a-z][a-z_]*))$"
-		},
 		"AssetId": {
 			"title": "AssetId",
 			"type": "string",
@@ -400,18 +370,6 @@
 			"type": "string",
 			"description": "A wildcarded ID that can be used to match multiple Assets.",
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
-		},
-		"AssetOptionFieldId": {
-			"title": "AssetOptionFieldId",
-			"type": "string",
-			"description": "A unique ID for an AssetOptionField.",
-			"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/options\\/([a-z][a-z_]*)$"
-		},
-		"AssetOptionFieldIdWildcard": {
-			"title": "AssetOptionFieldIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AssetOptionFields.",
-			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/options\\/(\\*|([a-z][a-z_]*))$"
 		},
 		"AtlasEntryId": {
 			"title": "AtlasEntryId",

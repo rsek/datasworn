@@ -11,32 +11,30 @@ import {
 	TYPES_OUT
 } from '../../const.js'
 import Log from '../../utils/Log.js'
-import { shellify } from '../../../shellify.js'
+import { Compiler } from '@swc/core'
 
-const rootDir = path.join(PKG_DIR_NODE, PKG_SCOPE_OFFICIAL, 'core')
+new Compiler()
+
+const corePkgSrcRoot = path.join('src/pkg-core')
+const corePkgOutRoot = path.join(PKG_DIR_NODE, PKG_SCOPE_OFFICIAL, 'core')
 
 const id = `${PKG_SCOPE_OFFICIAL}/core`
-const jsonDir = path.join(rootDir, 'json')
-const typesPath = path.join(rootDir, 'Datasworn.d.ts')
-const sourceTypesPath = path.join(rootDir, 'DataswornSource.d.ts')
+const jsonDir = path.join(corePkgOutRoot, 'json')
+
+const corePkgDist = path.join(corePkgOutRoot, 'dist')
 
 export const config = {
 	id,
-	rootDir,
-	jsonDir,
-	typesPath
+	corePkgOutRoot,
+	jsonDir
 } as const
 
 /** Assembles the core package from built data, which contains types, schema, and documentation. */
-export async function buildCorePackage({
-	id,
-	jsonDir,
-	typesPath
-}: typeof config = config) {
+export async function buildCorePackage({ id, jsonDir }: typeof config = config) {
 	Log.info(`⚙️  Building ${id}...`)
 
 	await fs.emptyDir(jsonDir)
-
+	await fs.emptyDir(corePkgDist)
 	await Promise.all([
 		fs.copy(SCHEMA_PATH, path.join(jsonDir, 'datasworn.schema.json'), {
 			overwrite: true
@@ -48,10 +46,6 @@ export async function buildCorePackage({
 				overwrite: true
 			}
 		),
-		fs.copy(TYPES_OUT, typesPath, {
-			overwrite: true
-		}),
-		fs.copy(SOURCE_TYPES_OUT, sourceTypesPath, { overwrite: true }),
 		fs.copy(
 			// TODO: script to build the legacy ID map?
 			LEGACY_ID_PATH,
