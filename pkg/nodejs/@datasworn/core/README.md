@@ -1,4 +1,4 @@
-# Datasworn v0.0.5
+# Datasworn v0.0.6
 
 Typings and JSON schema common to Datasworn.
 
