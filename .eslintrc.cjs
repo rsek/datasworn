@@ -34,6 +34,8 @@ module.exports = {
 		// EXPERIMENTAL_useProjectService: true
 	},
 	rules: {
+		'@typescript-eslint/class-literal-property-style': 'off',
+		'@typescript-eslint/prefer-readonly': 'error',
 		'@typescript-eslint/array-type': 'off',
 		'@typescript-eslint/no-redeclare': 'off',
 		// Pretty fraught since there's a few of them in use. Maybe possible to define, but i'm not sure it's worth the effort right now.

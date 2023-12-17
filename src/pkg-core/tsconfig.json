@@ -9,5 +9,24 @@
 		"outDir": "../../pkg/nodejs/@datasworn/core/dist",
 		"esModuleInterop": true,
 		"declarationMap": false
+	},
+	"ts-node": {
+		// It is faster to skip typechecking.
+		// Remove if you want ts-node to do typechecking.
+		"transpileOnly": true,
+		"files": true,
+		"require": ["ts-node/register", "tsconfig-paths/register"],
+		"esm": true,
+		"swc": true,
+		"experimentalSpecifierResolution": "node",
+		"preferTsExts": true,
+		"compilerOptions": {
+			// compilerOptions specified here will override those declared below,
+			// but *only* in ts-node.  Useful if you want ts-node and tsc to use
+			// different options with a single tsconfig.json.
+			"esModuleInterop": true,
+			"moduleResolution": "bundler",
+			"module": "NodeNext"
+		}
 	}
 }
