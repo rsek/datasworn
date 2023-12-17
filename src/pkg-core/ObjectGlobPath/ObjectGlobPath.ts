@@ -136,10 +136,6 @@ class ObjectGlobPath<
 		return this.slice(0, -1)
 	}
 
-	static fromId<T extends Id.AnyId>(id: T) {
-		return new Id.IdParser(id).toPath()
-	}
-
 	static getMatches(
 		from: object,
 		keys: PropertyKey[],

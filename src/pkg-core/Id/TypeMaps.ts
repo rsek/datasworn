@@ -20,16 +20,16 @@ export interface TypesByName {
 	Truth: Datasworn.Truth
 }
 export interface IdsByTypeName extends Record<keyof TypesByName, Id.AnyId> {
-	AssetCollection: Id.AnyCollectionId<'assets'>
-	Atlas: Id.AnyCollectionId<'atlas'>
-	MoveCategory: Id.AnyCollectionId<'moves'>
-	NpcCollection: Id.AnyCollectionId<'npcs'>
-	OracleCollection: Id.AnyCollectionId<'oracles'>
+	AssetCollection: Id.NonRecursiveCollectionId<'assets'>
+	Atlas: Id.RecursiveCollectionId<'atlas'>
+	MoveCategory: Id.NonRecursiveCollectionId<'moves'>
+	NpcCollection: Id.RecursiveCollectionId<'npcs'>
+	OracleCollection: Id.RecursiveCollectionId<'oracles'>
 	Asset: Id.NonRecursiveCollectableId<'assets'>
-	AtlasEntry: Id.NonRecursiveCollectableId<'atlas'>
+	AtlasEntry: Id.RecursiveCollectableId<'atlas'>
 	Move: Id.NonRecursiveCollectableId<'moves'>
-	Npc: Id.NonRecursiveCollectableId<'npcs'>
-	OracleRollable: Id.NonRecursiveCollectableId<'oracles'>
+	Npc: Id.RecursiveCollectableId<'npcs'>
+	OracleRollable: Id.RecursiveCollectableId<'oracles'>
 	DelveSite: Id.NonCollectableId<'delve_sites'>
 	Rarity: Id.NonCollectableId<'rarities'>
 	DelveSiteDomain: Id.NonCollectableId<'site_domains'>
