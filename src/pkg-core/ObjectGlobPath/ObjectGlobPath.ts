@@ -3,7 +3,8 @@ import type * as Path from './Path.js'
 import { arrayIs } from './arrayIs.js'
 import { type TypeForId } from '../Id/Utils.js'
 import * as Id from '../Id/index.js'
-import CONST from '../Id/IdElements/CONST.js'
+import CONST from '../IdElements/CONST.js'
+import TypeGuard from '../IdElements/TypeGuard.js'
 
 type MatchTest<T = unknown> = (
 	value: T,
@@ -335,9 +336,9 @@ class ObjectGlobPath<
 		  ? (typeof ObjectGlobPath)['GLOBSTAR']
 		  : T {
 		switch (true) {
-			case Id.IdElements.TypeGuard.Wildcard(item):
+			case TypeGuard.Wildcard(item):
 				return ObjectGlobPath.WILDCARD as any
-			case Id.IdElements.TypeGuard.Globstar(item):
+			case TypeGuard.Globstar(item):
 				return ObjectGlobPath.GLOBSTAR as any
 			default:
 				return item as any

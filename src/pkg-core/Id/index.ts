@@ -1,5 +1,4 @@
 export * as Errors from './Errors.js'
-export * as IdElements from './IdElements/index.js'
-export * from './StringTemplateLiterals.js'
-export { default as IdParser } from './IdParser/IdParser.js'
+export * from './Strings.js'
 export * as Utils from './Utils.js'
+export * as IdParser from './IdParser/index.js'

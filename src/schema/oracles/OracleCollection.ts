@@ -212,3 +212,4 @@ export const OracleCollection = Utils.DiscriminatedUnion(
 
 export type TOracleCollection = typeof OracleCollection
 export type OracleCollection = Static<TOracleCollection>
+

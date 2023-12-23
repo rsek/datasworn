@@ -6,13 +6,13 @@
 import Regex from './Regex.js'
 import CONST from './CONST.js'
 import TypeElements from './TypeElements.js'
-import type * as Id from '../StringTemplateLiterals.js'
+import type * as Id from '../Id/Strings.js'
 namespace TypeGuard {
 	export function DictKey(value: unknown): value is Id.DictKey {
 		return typeof value === 'string' && Regex.DictKey.test(value)
 	}
 
-	export function RulesPackageId(value: unknown): value is Id.RulesPackageId {
+	export function RulesPackageId(value: unknown): value is Id.RulesPackage {
 		return typeof value === 'string' && Regex.RulesPackageId.test(value)
 	}
 

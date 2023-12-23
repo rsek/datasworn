@@ -1,40 +1,51 @@
 import type * as Datasworn from '../Datasworn.js'
-import type * as Id from './StringTemplateLiterals.js'
-import type * as IdElements from './IdElements/index.js'
+import type * as Id from './Strings.js'
+import type * as IdElements from '../IdElements/index.js'
 
-export interface TypesByName {
+interface CollectionSubtypesByName {
 	AssetCollection: Datasworn.AssetCollection
 	Atlas: Datasworn.Atlas
 	MoveCategory: Datasworn.MoveCategory
 	NpcCollection: Datasworn.NpcCollection
 	OracleCollection: Datasworn.OracleCollection
-	Asset: Datasworn.Asset
-	AtlasEntry: Datasworn.AtlasEntry
-	DelveSite: Datasworn.DelveSite
-	Move: Datasworn.Move
-	Npc: Datasworn.Npc
-	OracleRollable: Datasworn.OracleRollable
+}
+interface NonCollectableTypesByName {
 	Rarity: Datasworn.Rarity
 	DelveSiteDomain: Datasworn.DelveSiteDomain
 	DelveSiteTheme: Datasworn.DelveSiteTheme
 	Truth: Datasworn.Truth
+	DelveSite: Datasworn.DelveSite
 }
+
+interface CollectableTypesByName {
+	Asset: Datasworn.Asset
+	AtlasEntry: Datasworn.AtlasEntry
+	Move: Datasworn.Move
+	Npc: Datasworn.Npc
+	OracleRollable: Datasworn.OracleRollable
+}
+
+export interface TypesByName
+	extends CollectionSubtypesByName,
+		NonCollectableTypesByName,
+		CollectableTypesByName {}
+
 export interface IdsByTypeName extends Record<keyof TypesByName, Id.AnyId> {
-	AssetCollection: Id.NonRecursiveCollectionId<'assets'>
-	Atlas: Id.RecursiveCollectionId<'atlas'>
-	MoveCategory: Id.NonRecursiveCollectionId<'moves'>
-	NpcCollection: Id.RecursiveCollectionId<'npcs'>
-	OracleCollection: Id.RecursiveCollectionId<'oracles'>
-	Asset: Id.NonRecursiveCollectableId<'assets'>
-	AtlasEntry: Id.RecursiveCollectableId<'atlas'>
-	Move: Id.NonRecursiveCollectableId<'moves'>
-	Npc: Id.RecursiveCollectableId<'npcs'>
-	OracleRollable: Id.RecursiveCollectableId<'oracles'>
-	DelveSite: Id.NonCollectableId<'delve_sites'>
-	Rarity: Id.NonCollectableId<'rarities'>
-	DelveSiteDomain: Id.NonCollectableId<'site_domains'>
-	DelveSiteTheme: Id.NonCollectableId<'site_themes'>
-	Truth: Id.NonCollectableId<'truths'>
+	AssetCollection: Id.NonRecursiveCollectionId<string, 'assets'>
+	Atlas: Id.RecursiveCollectionId<string, 'atlas'>
+	MoveCategory: Id.NonRecursiveCollectionId<string, 'moves'>
+	NpcCollection: Id.RecursiveCollectionId<string, 'npcs'>
+	OracleCollection: Id.RecursiveCollectionId<string, 'oracles'>
+	Asset: Id.NonRecursiveCollectableId<string, 'assets'>
+	AtlasEntry: Id.RecursiveCollectableId<string, 'atlas'>
+	Move: Id.NonRecursiveCollectableId<string, 'moves'>
+	Npc: Id.RecursiveCollectableId<string, 'npcs'>
+	OracleRollable: Id.RecursiveCollectableId<string, 'oracles'>
+	DelveSite: Id.NonCollectableId<string, 'delve_sites'>
+	Rarity: Id.NonCollectableId<string, 'rarities'>
+	DelveSiteDomain: Id.NonCollectableId<string, 'site_domains'>
+	DelveSiteTheme: Id.NonCollectableId<string, 'site_themes'>
+	Truth: Id.NonCollectableId<string, 'truths'>
 }
 export const TypeCompositesByName = {
 	AssetCollection: 'collections/assets',
@@ -62,6 +73,58 @@ export const TypeCompositesByName = {
 >
 export type TypeCompositesByName = typeof TypeCompositesByName
 
+export const NamesByCollectionSubtype = {
+	assets: 'AssetCollection',
+	atlas: 'Atlas',
+	moves: 'MoveCategory',
+	npcs: 'NpcCollection',
+	oracles: 'OracleCollection'
+} as const satisfies Record<
+	IdElements.TypeElements.Collectable.Any,
+	keyof CollectionSubtypesByName
+>
+export type CollectionSubtypeMap = {
+	-readonly [K in keyof typeof NamesByCollectionSubtype]: CollectionSubtypesByName[(typeof NamesByCollectionSubtype)[K]]
+}
+export type CollectionSubtype<
+	T extends keyof CollectionSubtypeMap = keyof CollectionSubtypeMap
+> = CollectionSubtypeMap[T]
+
+export const NamesByCollectableType = {
+	assets: 'Asset',
+	atlas: 'AtlasEntry',
+	moves: 'Move',
+	npcs: 'Npc',
+	oracles: 'OracleRollable'
+} as const satisfies Record<
+	IdElements.TypeElements.Collectable.Any,
+	keyof CollectableTypesByName
+>
+export type CollectableTypeMap = {
+	-readonly [K in keyof typeof NamesByCollectableType]: CollectableTypesByName[(typeof NamesByCollectableType)[K]]
+}
+export type CollectableType<
+	T extends keyof CollectableTypeMap = keyof CollectableTypeMap
+> = CollectableTypeMap[T]
+
+export const NamesByNonCollectableType = {
+	delve_sites: 'DelveSite',
+	rarities: 'Rarity',
+	site_domains: 'DelveSiteDomain',
+	site_themes: 'DelveSiteTheme',
+	truths: 'Truth'
+} as const satisfies Record<
+	IdElements.TypeElements.NonCollectable,
+	keyof NonCollectableTypesByName
+>
+
+export type NonCollectableTypeMap = {
+	-readonly [K in keyof typeof NamesByNonCollectableType]: NonCollectableTypesByName[(typeof NamesByNonCollectableType)[K]]
+}
+export type NonCollectableType<
+	T extends keyof NonCollectableTypeMap = keyof NonCollectableTypeMap
+> = NonCollectableTypeMap[T]
+
 export const NamesByTypeComposite = {
 	'collections/assets': 'AssetCollection',
 	'collections/atlas': 'Atlas',
@@ -83,5 +146,5 @@ export const NamesByTypeComposite = {
 	keyof TypeCompositesByName
 >
 export type NamesByTypeComposite = {
-	[K in keyof typeof NamesByTypeComposite]: TypesByName[(typeof NamesByTypeComposite)[K]]
+	-readonly [K in keyof typeof NamesByTypeComposite]: TypesByName[(typeof NamesByTypeComposite)[K]]
 }

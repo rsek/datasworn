@@ -1,6 +1,6 @@
 import type ObjectGlobPath from './ObjectGlobPath.js'
 import type * as Id from '../Id/index.js'
-import type CONST from '../Id/IdElements/CONST.js'
+import type CONST from '../IdElements/CONST.js'
 
 export type PathForId<T extends Id.AnyId> = (T extends Id.RecursiveCollectionId
 	? RecursiveCollectionPath<T>

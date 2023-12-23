@@ -1,3 +1,5 @@
+import { type RulesPackage } from '../Datasworn.js'
+
 /**
  * Datasworn ID elements that represent specific types of Datasworn object.
  */
@@ -51,6 +53,8 @@ namespace TypeElements {
 		Collection
 	] as const satisfies readonly AnyPrimary[]
 	export type AnyPrimary = Collectable.Any | NonCollectable | Collection
+
+	export type AnyTypeRoot = keyof RulesPackage & AnyPrimary
 
 	/** A type element tuple representing a fully-qualified type. The first element is the primary type. Some types have a second element that indicates a subtype.  */
 	export type AnyTuple =
