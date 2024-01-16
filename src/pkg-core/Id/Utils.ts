@@ -229,7 +229,7 @@ export type ExtractPathKeys<T extends Strings.AnyId> =
 		: T extends Strings.RecursiveCollectionId<
 					any,
 					any,
-					infer U extends Strings.CollectionPathKeys
+					infer U extends Strings.CollectionAncestorKeys
 		    >
 		  ? U
 		  : T extends Strings.NonRecursiveCollectionId<
