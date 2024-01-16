@@ -19,7 +19,7 @@ type DataswornTree = Record<string, Datasworn.RulesPackage>
  * @remarks Set the {@linkcode #datasworn} static property to provide a default value for {@link get} and {@link getMatches}
  * @example
  * // create a collectable ID valid as a child of a given collection ID
- * Id.from('my_oracles/collections/core').createChildCollectableId('theme') // returns parser subclass instance for an OracleRollable ID: 'my_oracles/core/theme'
+ * Id.from('my_oracles/collections/oracles/core').createChildCollectableId('theme') // returns parser subclass instance for an OracleRollable ID: 'my_oracles/oracles/core/theme'
  */
 abstract class Id<
 		RulesPackage extends string = string,
