@@ -17,6 +17,9 @@ type DataswornTree = Record<string, Datasworn.RulesPackage>
 /**
  * Creates, parses, and locates Datasworn IDs in the Datasworn tree.
  * @remarks Set the {@linkcode #datasworn} static property to provide a default value for {@link get} and {@link getMatches}
+ * @example
+ * // create a collectable ID from an existing collection ID
+ * Id.from('my_oracles/collections/core').createChildCollectableId('theme') // returns parser subclass instance for an OracleRollable ID: 'my_oracles/core/theme'
  */
 abstract class Id<
 		RulesPackage extends string = string,
