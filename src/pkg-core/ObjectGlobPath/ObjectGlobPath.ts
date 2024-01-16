@@ -6,6 +6,8 @@ import type * as Id from '../Id/index.js'
 import CONST from '../IdElements/CONST.js'
 import TypeGuard from '../IdElements/TypeGuard.js'
 
+// TODO: make this friendly to lookups in Map objects.
+
 /**
  * @internal
  */
