@@ -12,7 +12,7 @@ namespace TypeGuard {
 		return typeof value === 'string' && Regex.DictKey.test(value)
 	}
 
-	export function RulesPackageId(value: unknown): value is Id.RulesPackage {
+	export function RulesPackageId(value: unknown): value is Id.RulesPackageId {
 		return typeof value === 'string' && Regex.RulesPackageId.test(value)
 	}
 

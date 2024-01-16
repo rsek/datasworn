@@ -2,7 +2,7 @@ import { type RulesPackage } from '../Datasworn.js'
 import type * as Path from './Path.js'
 import { arrayIs } from './arrayIs.js'
 import { type TypeForId } from '../Id/Utils.js'
-import * as Id from '../Id/index.js'
+import type * as Id from '../Id/index.js'
 import CONST from '../IdElements/CONST.js'
 import TypeGuard from '../IdElements/TypeGuard.js'
 

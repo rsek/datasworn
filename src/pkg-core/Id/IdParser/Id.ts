@@ -7,8 +7,8 @@ import { ParseError } from '../Errors.js'
 import type * as Strings from '../Strings.js'
 import {
 	type CollectableType,
-	type NonCollectableType,
-	type CollectionSubtype
+	type CollectionSubtype,
+	type TypeForTypeComposite
 } from '../TypeMaps.js'
 import type * as Utils from '../Utils.js'
 
@@ -253,56 +253,55 @@ abstract class Id<
 	}
 
 	/**
-	 * Create an Id parser instance of the appropriate subclass from a string ID.
+	 * Create an Id parser instance of the appropriate subclass from a RecursiveCollectionId.
 	 * @throws If `id` is invalid.
 	 */
 	static from<T extends Strings.RecursiveCollectionId>(
 		id: T
-	): RecursiveCollectionId<
-		Utils.ExtractRulesPackage<T>,
-		Utils.ExtractCollectionSubtype<T> & TypeElements.Collectable.Recursive,
-		Id.DropLast<Utils.ExtractPathKeys<T>>,
-		Utils.ExtractKey<T>
-	> & { id: T }
+	): RecursiveCollectionId.FromString<T>
+
+	/**
+	 * Create an Id parser subclass instance from a NonRecursiveCollectionId.
+	 * @throws If `id` is invalid.
+	 */
 	static from<T extends Strings.NonRecursiveCollectionId>(
 		id: T
-	): NonRecursiveCollectionId<
-		Utils.ExtractRulesPackage<T>,
-		Utils.ExtractCollectionSubtype<T>,
-		Utils.ExtractKey<T>
-	> & { id: T }
-	// @ts-expect-error
+	): NonRecursiveCollectionId.FromString<T>
+	/**
+	 * Create an Id parser subclass instance from a NonCollectableId.
+	 * @throws If `id` is invalid.
+	 */
 	static from<T extends Strings.NonCollectableId>(
 		id: T
-	): NonCollectableId<
-		Utils.ExtractRulesPackage<T>,
-		Utils.ExtractTypeElement<T>,
-		Utils.ExtractKey<T>
-	> & { id: T }
+	): NonCollectableId.FromString<T>
+	/**
+	 * Create an Id parser subclass instance from a RecursiveCollectableId.
+	 * @throws If `id` is invalid.
+	 */
 	static from<T extends Strings.RecursiveCollectableId>(
 		id: T
-	): RecursiveCollectableId<
-		Utils.ExtractRulesPackage<T>,
-		Utils.ExtractCollectableTypeElement<T>,
-		Utils.ExtractCollectionKeys<T>,
-		Utils.ExtractKey<T>
-	> & { id: T }
+	): RecursiveCollectableId.FromString<T>
+	/**
+	 * Create an Id parser subclass instance from a NonRecursiveCollectableId.
+	 * @throws If `id` is invalid.
+	 */
 	static from<T extends Strings.NonRecursiveCollectableId>(
 		id: T
-	): NonRecursiveCollectableId<
-		Utils.ExtractRulesPackage<T>,
-		Utils.ExtractCollectableTypeElement<T>,
-		Utils.ExtractParentCollectionKey<T>,
-		Utils.ExtractKey<T>
-	> & { id: T }
-	static from<T extends Strings.AnyId>(
-		id: T
-	): Id<
-		Utils.ExtractRulesPackage<T>,
-		Utils.ExtractTypeElements<T>,
-		Utils.ExtractPathKeys<T>
-	> & { id: T }
-	static from(id: string): Id {
+	): NonRecursiveCollectableId.FromString<T>
+
+	// static from<T extends Strings.AnyId>(
+	// 	id: T
+	// ): Id<
+	// 	Utils.ExtractRulesPackage<T>,
+	// 	Utils.ExtractTypeElements<T>,
+	// 	Utils.ExtractPathKeys<T>
+	// > & { id: T }
+
+	/**
+	 * Create an Id parser instance of the appropriate subclass from a string ID.
+	 * @throws If `id` is invalid.
+	 */
+	static from(id: Strings.AnyId): Id {
 		const { rulesPackage, typeKeys, pathKeys } = Id.parse(id as any)
 		const [type, subtype] = typeKeys
 
@@ -566,7 +565,7 @@ abstract class Id<
 			options instanceof Id
 				? options
 				: typeof options === 'string'
-				  ? Id.from(options)
+				  ? Id.from(options as any)
 				  : Id.fromOptions(options)
 
 		const dotPathElements: string[] = []
@@ -576,7 +575,8 @@ abstract class Id<
 		// e.g. "starforged.oracles"
 		dotPathElements.push(id.typeRootKey)
 
-		if (id.isRecursive && id.ancestorCollectionKeys.length > 0) {
+		if (id.ancestorCollectionKeys.length > 0) {
+			console.log(id.ancestorCollectionKeys)
 			const [rootAncestor, ...ancestors] = id.ancestorCollectionKeys
 
 			// first ancestor collection key is always a key in the root object for the type
@@ -866,19 +866,25 @@ class NonCollectableId<
 		Type extends TypeElements.NonCollectable = TypeElements.NonCollectable,
 		Key extends string = string
 	>
-	extends Id<RulesPackage, [Type], [Key], NonCollectableType<Type>>
+	extends Id<RulesPackage, [Type], [Key], TypeForTypeComposite<Type>>
 	implements Id.Any
 {
 	constructor(rulesPackage: RulesPackage, type: Type, key: Key) {
 		super({ rulesPackage, typeKeys: [type], pathKeys: [key] })
 	}
 }
-namespace NonCollectableId {}
+namespace NonCollectableId {
+	export type FromString<T extends Strings.NonCollectableId> =
+		T extends `${infer RulesPackage}/${infer Type extends
+			TypeElements.NonCollectable}/${infer Key}`
+			? NonCollectableId<RulesPackage, Type, Key> & { id: T }
+			: never
+}
 interface NonCollectableId<
 	RulesPackage extends string = string,
 	Type extends TypeElements.NonCollectable = TypeElements.NonCollectable,
 	Key extends string = string
-> extends Id<RulesPackage, [Type], [Key], NonCollectableType<Type>> {
+> extends Id<RulesPackage, [Type], [Key], TypeForTypeComposite<Type>> {
 	get elements(): [RulesPackage, Type, Key]
 	get id(): Strings.NonCollectableId<RulesPackage, Type, Key>
 
@@ -930,8 +936,17 @@ interface NonRecursiveCollectableId<
 		Key
 	>
 }
-/** Represents an ID for a {@link MoveCategory} or {@link AssetCollection} */
+namespace NonRecursiveCollectableId {
+	export type FromString<T extends Strings.NonRecursiveCollectableId> =
+		T extends `${infer RulesPackage}/${infer Type extends
+			TypeElements.Collectable.NonRecursive}/${infer ParentKey}/${infer Key}`
+			? NonRecursiveCollectableId<RulesPackage, Type, ParentKey, Key> & {
+					id: T
+			  }
+			: never
+}
 
+/** Represents an ID for a {@link MoveCategory} or {@link AssetCollection} */
 class NonRecursiveCollectionId<
 	RulesPackage extends string,
 	Subtype extends TypeElements.Collectable.NonRecursive,
@@ -954,6 +969,14 @@ interface NonRecursiveCollectionId<
 	get isRecursive(): false
 	get elements(): [RulesPackage, TypeElements.Collection, Subtype, Key]
 	get id(): Strings.NonRecursiveCollectionId<RulesPackage, Subtype, Key>
+}
+
+namespace NonRecursiveCollectionId {
+	export type FromString<T extends Strings.NonRecursiveCollectionId> =
+		T extends `${infer RulesPackage}/${TypeElements.Collection}/${infer Subtype extends
+			TypeElements.Collectable.NonRecursive}/${infer Key}`
+			? NonRecursiveCollectionId<RulesPackage, Subtype, Key> & { id: T }
+			: never
 }
 
 class RecursiveCollectableId<
@@ -989,6 +1012,20 @@ interface RecursiveCollectableId<
 	>
 	get isRecursive(): true
 	get ancestorCollectionKeys(): AncestorKeys
+}
+
+namespace RecursiveCollectableId {
+	export type FromString<T extends Strings.RecursiveCollectableId> =
+		T extends Strings.RecursiveCollectableId<
+			infer RulesPackage,
+			infer Type,
+			infer AncestorKeys,
+			infer Key
+		>
+			? RecursiveCollectableId<RulesPackage, Type, AncestorKeys, Key> & {
+					id: T
+			  }
+			: never
 }
 
 /**
@@ -1095,6 +1132,17 @@ interface RecursiveCollectionId<
 	get isRecursive(): true
 }
 namespace RecursiveCollectionId {
+	export type FromString<T extends Strings.RecursiveCollectionId> =
+		T extends `${infer RulesPackage}/${TypeElements.Collection}/${infer Subtype extends
+			TypeElements.Collectable.Recursive}/${string}`
+			? RecursiveCollectionId<
+					RulesPackage,
+					Subtype,
+					Utils.ExtractAncestorCollectionPathElements<T>,
+					Utils.ExtractKey<T>
+			  > & { id: T }
+			: never
+
 	export interface Options<T extends Strings.RecursiveCollectionId>
 		extends CollectionId.Options<T> {}
 }
@@ -1115,5 +1163,3 @@ export {
 	RecursiveCollectionId
 }
 
-const testParse = Id.from('sundered_isles/oracles/core/action')
-console.log(testParse.toPath())

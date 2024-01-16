@@ -1,5 +1,5 @@
 import type * as IdElements from '../IdElements/index.js'
-import { AnyPathKeys, AnyTypeKeys, type Join } from './Utils.js'
+import { type AnyTypeKeys, type Join } from './Utils.js'
 
 export type RulesPackageId = string
 export type DictKey = string
@@ -97,7 +97,7 @@ export type RecursiveCollectionId<
 	RulesPackage extends RulesPackageId = RulesPackageId,
 	Subtype extends
 		IdElements.TypeElements.Collectable.Recursive = IdElements.TypeElements.Collectable.Recursive,
-	AncestorKeys extends string[] = string[],
+	AncestorKeys extends CollectionAncestorKeys = CollectionAncestorKeys,
 	Key extends string = string
 > = CollectionId<RulesPackage, Subtype, AncestorKeys, Key>
 

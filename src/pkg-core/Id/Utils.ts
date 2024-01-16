@@ -8,8 +8,12 @@ import {
 } from './IdParser/Id.js'
 import {
 	type IdsByTypeName,
-	type NamesByTypeComposite,
-	type TypesByName
+	type NameForTypeComposite,
+	type TypesByName,
+	type AnyCollectionType,
+	type AnyCollectableType,
+	type AnyTypeComposite,
+	type AnyCollectionTypeComposite
 } from './TypeMaps.js'
 
 export type ExtractCollectableTypeElement<T extends Strings.AnyCollectableId> =
@@ -84,7 +88,7 @@ export type ExtractTypeElement<T extends Strings.AnyId> =
 // cribbed from type-fest
 export type Split<
 	S extends string,
-	Delimiter extends string
+	Delimiter extends string = IdElements.CONST.Sep
 > = S extends `${infer Head}${Delimiter}${infer Tail}`
 	? [Head, ...Split<Tail, Delimiter>]
 	: S extends Delimiter
@@ -93,7 +97,7 @@ export type Split<
 
 export type Join<
 	Strings extends string[],
-	Delimiter extends string
+	Delimiter extends string = IdElements.CONST.Sep
 > = Strings extends [infer U extends string]
 	? U
 	: Strings extends [infer Head extends string, ...infer Tail extends string[]]
@@ -158,7 +162,7 @@ export type ExtractCollectionKeys<T extends Strings.AnyId> = T extends
 	  : T extends Strings.NonRecursiveCollectableId<
 					any,
 					IdElements.TypeElements.Collectable.NonRecursive,
-					[infer U extends string],
+					infer U extends string,
 					any
 	      >
 	    ? [U]
@@ -254,37 +258,19 @@ export type ExtractPathKeys<T extends Strings.AnyId> =
 // 	? U
 // 	: never
 
-/** Any Collection type capable of containing Collectable objects. */
-export type AnyCollection = NamesByTypeComposite[Extract<
-	keyof NamesByTypeComposite,
-	`${IdElements.TypeElements.Collection}${IdElements.CONST.Sep}${string}`
->]
-export type CollectionOf<T extends AnyCollectable> = Extract<
-	AnyCollection,
+export type CollectionTypeFor<T extends AnyCollectableType> = Extract<
+	AnyCollectionType,
 	{ contents?: Record<string, T> }
 >
 
-/** Any Collection type that can contain Collectable objects, but never contains further collections. */
-export type AnyNonRecursiveCollection = CollectionOf<
-	NamesByTypeComposite[IdElements.TypeElements.Collectable.NonRecursive]
->
-export type AnyNonRecursiveCollectable =
-	NamesByTypeComposite[IdElements.TypeElements.Collectable.NonRecursive]
-
 /** Any Collection type that may contain both Collectable objects and further collections. */
 export type AnyRecursiveCollection =
-	NamesByTypeComposite[IdElements.TypeElements.Collectable.Recursive] & {
+	NameForTypeComposite<IdElements.TypeElements.Collectable.Recursive> & {
 		[IdElements.CONST.CollectionsKey]?: Record<
 			string,
-			NamesByTypeComposite[IdElements.TypeElements.Collectable.Recursive]
+			NameForTypeComposite<IdElements.TypeElements.Collectable.Recursive>
 		>
 	}
-/** Any object type eligible to be organized in a Collection */
-export type AnyCollectable =
-	NamesByTypeComposite[IdElements.TypeElements.Collectable.Any]
-/** Any object type which is never organized in a Collection */
-export type AnyNonCollectable =
-	NamesByTypeComposite[IdElements.TypeElements.NonCollectable]
 
 type TypeNameById = { [P in keyof IdsByTypeName as IdsByTypeName[P]]: P }
 
@@ -311,11 +297,11 @@ export type TypeForTypeElements<
 	Type extends IdElements.TypeElements.AnyPrimary,
 	Subtype extends Strings.SubtypeOf<Type>
 > = Type extends IdElements.TypeElements.Collection
-	? NamesByTypeComposite[`${Type}/${Subtype}`]
+	? NameForTypeComposite<`${Type}/${Subtype}`>
 	: Type extends
 				| IdElements.TypeElements.Collectable.Any
 				| IdElements.TypeElements.NonCollectable
-	  ? NamesByTypeComposite[Type]
+	  ? NameForTypeComposite<Type>
 	  : never
 
 export type TypeForTypeKeys<T extends AnyTypeKeys> =
@@ -323,7 +309,7 @@ export type TypeForTypeKeys<T extends AnyTypeKeys> =
 
 type NameFromCollectionSubtype<
 	T extends IdElements.TypeElements.Collectable.Any
-> = NamesByTypeComposite[`${IdElements.TypeElements.Collection}/${T}`]
+> = NameForTypeComposite<`${IdElements.TypeElements.Collection}/${T}`>
 
 type CollectionTypeFromSubtype<
 	T extends IdElements.TypeElements.Collectable.Any
@@ -339,17 +325,17 @@ type NameFromTypeKeys<T extends AnyTypeKeys> = T extends [
 					| IdElements.TypeElements.Collectable.Any
 					| IdElements.TypeElements.NonCollectable
 	    ]
-	  ? NamesByTypeComposite[U]
+	  ? NameForTypeComposite<U>
 	  : never
 
-type f = NameFromTypeKeys<['site']>
+type f = NameFromTypeKeys<['delve_sites']>
 
 export type ExtractParentCollectionKey<
 	T extends Strings.NonRecursiveCollectableId
 > = T extends Strings.NonRecursiveCollectableId<
 	any,
 	any,
-	[infer U extends string],
+	infer U extends string,
 	any
 >
 	? U
@@ -426,3 +412,36 @@ export type CollectableParent<T extends Strings.AnyCollectableId> =
 		: never
 
 // T extends `${string}${IdElements.CONST.Sep}${infer Subtype extends IdElements.TypeElements.Collectable.Any}${IdElements.CONST.Sep}${infer CollectionKeyHead}${IdElements.CONST.Sep}${string}`
+
+type ExtractPathElements<T extends string> =
+	T extends `${string}/${AnyCollectionTypeComposite}/${infer U extends string}`
+		? Split<U>
+		: T extends `${string}/${AnyTypeComposite}/${infer U extends string}`
+		  ? Split<U>
+		  : never
+
+export type ExtractAncestorPathElements<
+	T extends Strings.RecursiveCollectableId
+> = ExtractPathElements<T> extends [
+	...infer U extends Strings.CollectionPathKeys,
+	string
+]
+	? U
+	: never
+
+export type ExtractAncestorCollectionPathElements<
+	T extends Strings.RecursiveCollectionId
+> = ExtractPathElements<T> extends [
+	...infer U extends Strings.CollectionAncestorKeys,
+	string
+]
+	? U
+	: never
+
+type fff = ExtractAncestorPathElements<'sundered_isles/oracles/core/action'>
+
+export type {
+	AnyCollectionType as AnyCollection,
+	AnyCollectableType as AnyCollectable,
+	NonCollectableType as AnyNonCollectable
+} from './TypeMaps.js'
