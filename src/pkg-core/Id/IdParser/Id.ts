@@ -2,7 +2,7 @@ import nanomatch from 'nanomatch'
 import type * as Datasworn from '../../Datasworn.js'
 
 import { CONST, TypeElements, TypeGuard } from '../../IdElements/index.js'
-import ObjectGlobPath from '../../ObjectGlobPath/ObjectGlobPath.js'
+import ObjectGlobber from '../../ObjectGlobPath/ObjectGlobber.js'
 import { ParseError } from '../Errors.js'
 import type * as Strings from '../Strings.js'
 import {
@@ -200,9 +200,9 @@ abstract class Id<
 		) as keyof Datasworn.RulesPackage
 	}
 
-	#path: null | ObjectGlobPath = null
+	#path: null | ObjectGlobber = null
 
-	toPath(): ObjectGlobPath {
+	toPath(): ObjectGlobber {
 		if (this.#path == null) {
 			const path = Id.toPath(this)
 			this.#path = path
@@ -560,10 +560,10 @@ abstract class Id<
 	}
 
 	/** Converts an ID to an array of strings representing the property keys that must be traversed to reach the identified object. */
-	static toPath<T extends Strings.AnyId>(id: T): ObjectGlobPath
-	static toPath<T extends Id.AnyParsedId>(options: T): ObjectGlobPath
-	static toPath<T extends Id>(id: T): ObjectGlobPath
-	static toPath(options: Id.AnyParsedId | Strings.AnyId): ObjectGlobPath {
+	static toPath<T extends Strings.AnyId>(id: T): ObjectGlobber
+	static toPath<T extends Id.AnyParsedId>(options: T): ObjectGlobber
+	static toPath<T extends Id>(id: T): ObjectGlobber
+	static toPath(options: Id.AnyParsedId | Strings.AnyId): ObjectGlobber {
 		const id: Id.Any =
 			options instanceof Id
 				? options
@@ -601,7 +601,7 @@ abstract class Id<
 
 		dotPathElements.push(id.key)
 
-		return new ObjectGlobPath(...dotPathElements) as any
+		return new ObjectGlobber(...dotPathElements) as any
 	}
 
 	static #validateKey(
@@ -640,7 +640,7 @@ namespace Id {
 		readonly isCollectable: boolean
 		readonly isCollection: boolean
 		readonly typeRootKey: keyof Datasworn.RulesPackage
-		toPath(): ObjectGlobPath
+		toPath(): ObjectGlobber
 		get(tree?: DataswornTree | null): object
 		getMatches(tree?: DataswornTree | null): object[]
 	}

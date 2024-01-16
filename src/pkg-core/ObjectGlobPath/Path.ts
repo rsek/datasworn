@@ -1,4 +1,4 @@
-import type ObjectGlobPath from './ObjectGlobPath.js'
+import type ObjectGlobber from './ObjectGlobber.js'
 import type * as Id from '../Id/index.js'
 import type CONST from '../IdElements/CONST.js'
 
@@ -18,9 +18,9 @@ export type PathForId<T extends Id.AnyId> = (T extends Id.RecursiveCollectionId
 export type PathForType<T extends Id.Utils.AnyIdentified> = PathForId<
 	Id.Utils.IdForType<T>
 > // real paths
-type RulesPackageIdWildcard = Id.RulesPackageId | typeof ObjectGlobPath.WILDCARD
-type DictKeyWildcard = Id.DictKey | typeof ObjectGlobPath.WILDCARD
-type DictKeyGlobstar = Id.DictKey | typeof ObjectGlobPath.GLOBSTAR
+type RulesPackageIdWildcard = Id.RulesPackageId | typeof ObjectGlobber.WILDCARD
+type DictKeyWildcard = Id.DictKey | typeof ObjectGlobber.WILDCARD
+type DictKeyGlobstar = Id.DictKey | typeof ObjectGlobber.GLOBSTAR
 
 export type NonCollectablePath<
 	T extends Id.NonCollectableId = Id.NonCollectableId

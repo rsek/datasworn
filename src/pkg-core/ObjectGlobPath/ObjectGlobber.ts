@@ -11,45 +11,45 @@ import TypeGuard from '../IdElements/TypeGuard.js'
 /**
  * @internal
  */
-class ObjectGlobPath<
+class ObjectGlobber<
 	TTuple extends Array<PropertyKey> = Array<PropertyKey>
 > extends Array<TTuple[number]> {
 	constructor(...items: TTuple) {
-		super(...(items.map(ObjectGlobPath.replaceGlobString as any) as any))
+		super(...(items.map(ObjectGlobber.replaceGlobString as any) as any))
 	}
 
 	/** Does this path contain any wildcard or globstar elements? */
 	get wildcard() {
-		return this.some(ObjectGlobPath.isGlobElement)
+		return this.some(ObjectGlobber.isGlobElement)
 	}
 
 	toJSON() {
-		return this.map(ObjectGlobPath.replaceGlobSymbol as any)
+		return this.map(ObjectGlobber.replaceGlobSymbol as any)
 	}
 
 	clone() {
-		return new ObjectGlobPath(...this)
+		return new ObjectGlobber(...this)
 	}
 
-	partitionStaticPath(): [ObjectGlobPath, ObjectGlobPath] {
-		if (!this.wildcard) return [this.clone(), new ObjectGlobPath()]
+	partitionStaticPath(): [ObjectGlobber, ObjectGlobber] {
+		if (!this.wildcard) return [this.clone(), new ObjectGlobber()]
 
-		const firstGlobIndex = this.findIndex(ObjectGlobPath.isGlobElement)
+		const firstGlobIndex = this.findIndex(ObjectGlobber.isGlobElement)
 
 		return [
-			new ObjectGlobPath(...this.slice(0, firstGlobIndex)),
-			new ObjectGlobPath(...this.slice(firstGlobIndex))
+			new ObjectGlobber(...this.slice(0, firstGlobIndex)),
+			new ObjectGlobber(...this.slice(firstGlobIndex))
 		]
 	}
 
 	nearestStaticPath() {
 		if (!this.wildcard) return this
-		const pathElements = new ObjectGlobPath<PropertyKey[]>()
+		const pathElements = new ObjectGlobber<PropertyKey[]>()
 
 		for (const element of this) {
 			if (
-				element === ObjectGlobPath.WILDCARD ||
-				element === ObjectGlobPath.GLOBSTAR
+				element === ObjectGlobber.WILDCARD ||
+				element === ObjectGlobber.GLOBSTAR
 			)
 				break
 			else pathElements.push(element)
@@ -60,16 +60,16 @@ class ObjectGlobPath<
 
 	step(steps = 1) {
 		if (steps < 0) throw new Error("steps parameter can't be less than 0")
-		return new ObjectGlobPath(...this.slice(1))
+		return new ObjectGlobber(...this.slice(1))
 	}
 
 	getParent() {
-		return new ObjectGlobPath(...this.slice(0, this.length - 1))
+		return new ObjectGlobber(...this.slice(0, this.length - 1))
 	}
 
 	getMatches<T>(
 		from: object,
-		matchTest?: ObjectGlobPath.MatchTest,
+		matchTest?: ObjectGlobber.MatchTest,
 		matches: unknown[] = [],
 		includeArrays = false
 	): T[] {
@@ -86,22 +86,22 @@ class ObjectGlobPath<
 		}
 
 		matches.push(
-			...ObjectGlobPath.getMatches(from, this, { includeArrays, matchTest })
+			...ObjectGlobber.getMatches(from, this, { includeArrays, matchTest })
 		)
 
 		return matches as T[]
 	}
 
-	walk<T>(from: object, forEach?: ObjectGlobPath.WalkIteratee): T {
+	walk<T>(from: object, forEach?: ObjectGlobber.WalkIteratee): T {
 		if (this.wildcard)
 			throw new Error(
 				`Path contains wildcard/globstar elements. Use ${this.constructor.name}#${this.getMatches.name} instead.`
 			)
-		return ObjectGlobPath.walk(from as any, this as any, forEach) as T
+		return ObjectGlobber.walk(from as any, this as any, forEach) as T
 	}
 
-	is<T extends ObjectGlobPath>(path: T): path is T & this {
-		if (path instanceof ObjectGlobPath) return false
+	is<T extends ObjectGlobber>(path: T): path is T & this {
+		if (path instanceof ObjectGlobber) return false
 
 		return this.every((valueA, i) => {
 			const valueB = path[i]
@@ -113,7 +113,7 @@ class ObjectGlobPath<
 
 	static isGlobElement(element: unknown) {
 		return (
-			element === ObjectGlobPath.WILDCARD || element === ObjectGlobPath.GLOBSTAR
+			element === ObjectGlobber.WILDCARD || element === ObjectGlobber.GLOBSTAR
 		)
 	}
 
@@ -140,7 +140,7 @@ class ObjectGlobPath<
 			matchTest,
 			includeArrays = false
 		}: {
-			matchTest?: ObjectGlobPath.MatchTest
+			matchTest?: ObjectGlobber.MatchTest
 			includeArrays: boolean
 		} = { includeArrays: false }
 	) {
@@ -178,8 +178,8 @@ class ObjectGlobPath<
 			matchTest,
 			includeArrays = false
 		}: {
-			forEachMatch?: ObjectGlobPath.WalkIteratee
-			matchTest?: ObjectGlobPath.MatchTest
+			forEachMatch?: ObjectGlobber.WalkIteratee
+			matchTest?: ObjectGlobber.MatchTest
 			includeArrays: boolean
 		} = {
 			includeArrays: false
@@ -191,36 +191,64 @@ class ObjectGlobPath<
 			)
 
 		const results: unknown[] = []
+
 		const hasMatchTest = typeof matchTest === 'function'
 
+		function iterateWildcardMatch(
+			key: PropertyKey,
+			value: unknown,
+			results: unknown[]
+		) {
+			if (!hasMatchTest || matchTest(value, key, matchKey)) results.push(value)
+		}
+		function iterateGlobstarMatch(
+			key: PropertyKey,
+			value: unknown,
+			results: unknown[]
+		) {
+			iterateWildcardMatch(key, value, results)
+			if (this.isWalkable(value, includeArrays)) {
+				results.push(
+					...this.getKeyMatches(value, matchKey, {
+						matchTest,
+						includeArrays
+					})
+				)
+			}
+		}
+
 		switch (matchKey) {
-			case ObjectGlobPath.WILDCARD:
-				for (const realKey in from) {
-					if (!Object.hasOwn(from, realKey)) continue
-					const element = from[realKey as keyof typeof from]
-					if (!hasMatchTest || matchTest(element, realKey, matchKey))
-						results.push(element)
-				}
-				break
-			case ObjectGlobPath.GLOBSTAR:
-				for (const realKey in from) {
-					// console.log(realKey)
-					if (!Object.hasOwn(from, realKey)) continue
-					const element = from[realKey as keyof typeof from]
-					if (!hasMatchTest || matchTest(element, realKey, matchKey))
-						results.push(element)
-					if (this.isWalkable(element, includeArrays)) {
-						results.push(
-							...this.getKeyMatches(element, matchKey, {
-								matchTest,
-								includeArrays
-							})
-						)
+			case ObjectGlobber.WILDCARD.description:
+			case ObjectGlobber.WILDCARD:
+				if (from instanceof Map) {
+					for (const [key, value] of from)
+						iterateWildcardMatch(key, value, results)
+				} else
+					for (const key in from) {
+						if (!Object.hasOwn(from, key)) continue
+						const value = from[key as keyof typeof from]
+						iterateWildcardMatch(key, value, results)
 					}
-				}
+				break
+			case ObjectGlobber.GLOBSTAR.description:
+			case ObjectGlobber.GLOBSTAR:
+				if (from instanceof Map) {
+					for (const [key, value] of from)
+						iterateGlobstarMatch(key, value, results)
+				} else
+					for (const key in from) {
+						// console.log(realKey)
+						if (!Object.hasOwn(from, key)) continue
+						const value = from[key as keyof typeof from]
+						iterateGlobstarMatch(key, value, results)
+					}
 				break
 			default: {
-				if (!(matchKey in from))
+				let value: unknown
+				if (from instanceof Map) value = from.get(matchKey)
+				else value = from[matchKey]
+
+				if (typeof value === 'undefined')
 					throw new Error(
 						`Unable to find key ${
 							typeof matchKey === 'symbol'
@@ -228,7 +256,9 @@ class ObjectGlobPath<
 								: JSON.stringify(matchKey)
 						}`
 					)
-				results.push(from[matchKey as keyof typeof from])
+
+				results.push(value)
+				break
 			}
 		}
 
@@ -260,13 +290,13 @@ class ObjectGlobPath<
 	 */
 	static walk<T extends Id.AnyId>(
 		from: Record<string, RulesPackage>,
-		path: ObjectGlobPath<Path.PathForId<T>>,
-		forEach?: ObjectGlobPath.WalkIteratee
+		path: ObjectGlobber<Path.PathForId<T>>,
+		forEach?: ObjectGlobber.WalkIteratee
 	): TypeForId<T>
 	static walk(
 		from: object,
-		path: ObjectGlobPath,
-		forEach?: ObjectGlobPath.WalkIteratee
+		path: ObjectGlobber,
+		forEach?: ObjectGlobber.WalkIteratee
 	): unknown {
 		if (path.length === 0) return from
 
@@ -292,28 +322,71 @@ class ObjectGlobPath<
 			if (!Number.isInteger(currentIndex))
 				throw new Error(`Expected an array index but got ${currentIndex}`)
 			nextObject = from[currentIndex]
+		} else if (from instanceof Map) {
+			nextObject = from.get(currentKey)
 		} else nextObject = from[currentKey as keyof typeof from]
 
 		if (path.length === 0) return nextObject
-		else return ObjectGlobPath.walk(nextObject, nextPath as any)
+		else return ObjectGlobber.walk(nextObject, nextPath as any)
 	}
 
+	/** Return all object paths in a given object. Paths that contain only a primitive value (boolean, number, string) are omitted. */
 	static getObjectPaths(
 		object: object,
 		includeArrays = false,
-		currentPath: ObjectGlobPath = new ObjectGlobPath()
+		currentPath: ObjectGlobber = new ObjectGlobber()
 	) {
-		const results: Array<ObjectGlobPath> = []
+		const results: Array<ObjectGlobber> = []
+
+		if (object instanceof Map)
+			results.push(...this.#getMapPaths(object, includeArrays, currentPath))
+		else
+			results.push(
+				...this.#getPlainObjectPaths(object, includeArrays, currentPath)
+			)
+
+		return results
+	}
+
+	static #getPlainObjectPaths(
+		object: object,
+		includeArrays = false,
+		currentPath: ObjectGlobber = new ObjectGlobber()
+	) {
+		const results: Array<ObjectGlobber> = []
+
 		for (const k in object) {
 			if (!Object.hasOwn(object, k)) continue
-
-			const nextObject = object[k as keyof typeof object]
-
+			const nextObject = object[k]
 			if (typeof nextObject !== 'object') continue
 			if (Object.is(nextObject, null)) continue
 			if (!includeArrays && Array.isArray(nextObject)) continue
 
-			const nextPath = new ObjectGlobPath(...currentPath, k)
+			const nextPath = new ObjectGlobber(...currentPath, k)
+
+			results.push(
+				nextPath,
+				...this.getObjectPaths(nextObject, includeArrays, nextPath)
+			)
+		}
+
+		return results
+	}
+
+	static #getMapPaths(
+		object: Map<any, any>,
+		includeArrays = false,
+		currentPath: ObjectGlobber = new ObjectGlobber()
+	) {
+		const results: Array<ObjectGlobber> = []
+
+		for (const [k, nextObject] of object) {
+			if (typeof nextObject !== 'object') continue
+			if (Object.is(nextObject, null)) continue
+			if (!includeArrays && Array.isArray(nextObject)) continue
+
+			const nextPath = new ObjectGlobber(...currentPath, k)
+
 			results.push(
 				nextPath,
 				...this.getObjectPaths(nextObject, includeArrays, nextPath)
@@ -327,15 +400,15 @@ class ObjectGlobPath<
 	static replaceGlobString<T extends PropertyKey>(
 		item: T
 	): T extends typeof CONST.WildcardString
-		? (typeof ObjectGlobPath)['WILDCARD']
+		? (typeof ObjectGlobber)['WILDCARD']
 		: T extends typeof CONST.GlobstarString
-		  ? (typeof ObjectGlobPath)['GLOBSTAR']
+		  ? (typeof ObjectGlobber)['GLOBSTAR']
 		  : T {
 		switch (true) {
 			case TypeGuard.Wildcard(item):
-				return ObjectGlobPath.WILDCARD as any
+				return ObjectGlobber.WILDCARD as any
 			case TypeGuard.Globstar(item):
-				return ObjectGlobPath.GLOBSTAR as any
+				return ObjectGlobber.GLOBSTAR as any
 			default:
 				return item as any
 		}
@@ -344,14 +417,14 @@ class ObjectGlobPath<
 	/** Replace a wildcard or globstar Symbol with a string representation. */
 	static replaceGlobSymbol<T extends PropertyKey>(
 		item: T
-	): T extends (typeof ObjectGlobPath)['WILDCARD']
+	): T extends (typeof ObjectGlobber)['WILDCARD']
 		? typeof CONST.WildcardString
-		: T extends (typeof ObjectGlobPath)['GLOBSTAR']
+		: T extends (typeof ObjectGlobber)['GLOBSTAR']
 		  ? typeof CONST.GlobstarString
 		  : T {
 		switch (item) {
-			case ObjectGlobPath.WILDCARD:
-			case ObjectGlobPath.GLOBSTAR:
+			case ObjectGlobber.WILDCARD:
+			case ObjectGlobber.GLOBSTAR:
 				return (item as any).description()
 			default:
 				return item as any
@@ -359,7 +432,7 @@ class ObjectGlobPath<
 	}
 }
 
-namespace ObjectGlobPath {
+namespace ObjectGlobber {
 	/** Represents a glob wildcard path element, usually expressed as `*` */
 	export const WILDCARD = Symbol(CONST.WildcardString)
 	/** Represents a globstar (recursive wildcard) path element, usually expressed as `**` */
@@ -367,13 +440,11 @@ namespace ObjectGlobPath {
 
 	export type WalkIteratee = (value: unknown, path: PropertyKey[]) => void
 
-
-  export type MatchTest<T = unknown> = (
+	export type MatchTest<T = unknown> = (
 		value: T,
 		thisKey: PropertyKey,
 		matchedWith: PropertyKey
 	) => boolean
-
 }
 
-export default ObjectGlobPath
+export default ObjectGlobber
