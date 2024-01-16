@@ -6,12 +6,6 @@ import type * as Id from '../Id/index.js'
 import CONST from '../IdElements/CONST.js'
 import TypeGuard from '../IdElements/TypeGuard.js'
 
-type MatchTest<T = unknown> = (
-	value: T,
-	thisKey: PropertyKey,
-	matchedWith: PropertyKey
-) => boolean
-
 /**
  * @internal
  */
@@ -73,7 +67,7 @@ class ObjectGlobPath<
 
 	getMatches<T>(
 		from: object,
-		matchTest?: MatchTest,
+		matchTest?: ObjectGlobPath.MatchTest,
 		matches: unknown[] = [],
 		includeArrays = false
 	): T[] {
@@ -144,7 +138,7 @@ class ObjectGlobPath<
 			matchTest,
 			includeArrays = false
 		}: {
-			matchTest?: MatchTest
+			matchTest?: ObjectGlobPath.MatchTest
 			includeArrays: boolean
 		} = { includeArrays: false }
 	) {
@@ -183,7 +177,7 @@ class ObjectGlobPath<
 			includeArrays = false
 		}: {
 			forEachMatch?: ObjectGlobPath.WalkIteratee
-			matchTest?: MatchTest
+			matchTest?: ObjectGlobPath.MatchTest
 			includeArrays: boolean
 		} = {
 			includeArrays: false
@@ -370,6 +364,14 @@ namespace ObjectGlobPath {
 	export const GLOBSTAR = Symbol(CONST.GlobstarString)
 
 	export type WalkIteratee = (value: unknown, path: PropertyKey[]) => void
+
+
+  export type MatchTest<T = unknown> = (
+		value: T,
+		thisKey: PropertyKey,
+		matchedWith: PropertyKey
+	) => boolean
+
 }
 
 export default ObjectGlobPath
