@@ -351,7 +351,7 @@ abstract class IdParser<
 
 	/**
 	 * Get a Datasworn node by its ID.
-	 * @throws If the ID is invalid; if a path to the identified object can't be found.
+	 * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in IdParser.datasworn or as an argument).
 	 */
 	static get<T extends Strings.AnyId>(
 		id: T,
@@ -369,6 +369,28 @@ abstract class IdParser<
 			id instanceof IdParser ? id : (IdParser.from(id as any) as any)
 
 		return parsedId.toPath().walk(tree as any)
+	}
+
+	/**
+	 * Get all nodes that match a wildcard ID.
+	 * @throws If the wildcard ID is invalid; if no Datasworn tree is provided (either in IdParser.datasworn or as an argument).
+	 */
+	static getMatches<T extends Strings.AnyId>(
+		id: T,
+		tree?: (typeof IdParser)['datasworn']
+	): Utils.TypeForId<T>[]
+	static getMatches<T extends IdParser<any, any, any, any>>(
+		id: T,
+		tree?: (typeof IdParser)['datasworn']
+	): ReturnType<T['get']>[]
+	static getMatches<T extends Strings.AnyId | IdParser<any, any, any, any>>(
+		id: T,
+		tree = IdParser.#datasworn
+	): object[] {
+		const parsedId: IdParser<any, any, any, any> =
+			id instanceof IdParser ? id : (IdParser.from(id as any) as any)
+
+		return parsedId.toPath().getMatches(tree as any)
 	}
 
 	static toString<T extends IdParser.AnyParsedId>({

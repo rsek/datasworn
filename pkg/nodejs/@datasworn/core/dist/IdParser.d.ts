@@ -86,10 +86,16 @@ declare abstract class IdParser<RulesPackage extends string = string, TypeKeys e
     static from<T extends Strings.NonRecursiveCollectableId>(id: T): NonRecursiveCollectableId.FromString<T>;
     /**
      * Get a Datasworn node by its ID.
-     * @throws If the ID is invalid; if a path to the identified object can't be found.
+     * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in IdParser.datasworn or as an argument).
      */
     static get<T extends Strings.AnyId>(id: T, tree?: (typeof IdParser)['datasworn']): Utils.TypeForId<T>;
     static get<T extends IdParser<any, any, any, any>>(id: T, tree?: (typeof IdParser)['datasworn']): ReturnType<T['get']>;
+    /**
+     * Get all nodes that match a wildcard ID.
+     * @throws If the wildcard ID is invalid; if no Datasworn tree is provided (either in IdParser.datasworn or as an argument).
+     */
+    static getMatches<T extends Strings.AnyId>(id: T, tree?: (typeof IdParser)['datasworn']): Utils.TypeForId<T>[];
+    static getMatches<T extends IdParser<any, any, any, any>>(id: T, tree?: (typeof IdParser)['datasworn']): ReturnType<T['get']>[];
     static toString<T extends IdParser.AnyParsedId>({ rulesPackage, typeKeys, pathKeys }: T): T extends IdParser.Parsed<infer U extends Strings.AnyId> ? U : Utils.Join<[T["rulesPackage"], ...T["typeKeys"], ...T["pathKeys"]], "/">;
     /**
      * Parses a Datasworn string ID into substrings and returns an object identifying each substring.

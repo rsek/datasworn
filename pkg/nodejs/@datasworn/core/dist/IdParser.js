@@ -238,6 +238,10 @@ class IdParser {
         const parsedId = id instanceof _a ? id : _a.from(id);
         return parsedId.toPath().walk(tree);
     }
+    static getMatches(id, tree = __classPrivateFieldGet(_a, _a, "f", _IdParser_datasworn)) {
+        const parsedId = id instanceof _a ? id : _a.from(id);
+        return parsedId.toPath().getMatches(tree);
+    }
     static toString({ rulesPackage, typeKeys, pathKeys }) {
         return [rulesPackage, ...typeKeys, ...pathKeys].join(index_js_1.CONST.Sep);
     }
