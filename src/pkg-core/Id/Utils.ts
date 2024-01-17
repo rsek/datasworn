@@ -311,12 +311,12 @@ type NameFromCollectionSubtype<
 	T extends IdElements.TypeElements.Collectable.Any
 > = NameForTypeComposite<`${IdElements.TypeElements.Collection}/${T}`>
 
-type CollectionTypeFromSubtype<
+type _CollectionTypeFromSubtype<
 	T extends IdElements.TypeElements.Collectable.Any
 > = TypesByName[NameFromCollectionSubtype<T>]
 
 type NameFromTypeKeys<T extends AnyTypeKeys> = T extends [
-	infer Type extends IdElements.TypeElements.Collection,
+	IdElements.TypeElements.Collection,
 	infer Subtype extends IdElements.TypeElements.Collectable.Any
 ]
 	? NameFromCollectionSubtype<Subtype>
@@ -328,7 +328,7 @@ type NameFromTypeKeys<T extends AnyTypeKeys> = T extends [
 	  ? NameForTypeComposite<U>
 	  : never
 
-type f = NameFromTypeKeys<['delve_sites']>
+type _f = NameFromTypeKeys<['delve_sites']>
 
 export type ExtractParentCollectionKey<
 	T extends Strings.NonRecursiveCollectableId
@@ -449,8 +449,7 @@ export type DropLast<T extends unknown[]> = T extends [T[number]]
 	  ? U
 	  : never
 
-
-type fff = ExtractAncestorPathElements<'sundered_isles/oracles/core/action'>
+type _fff = ExtractAncestorPathElements<'sundered_isles/oracles/core/action'>
 
 export type {
 	AnyCollectionType as AnyCollection,

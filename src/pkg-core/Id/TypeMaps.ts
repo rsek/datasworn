@@ -153,7 +153,6 @@ export interface IdsByTypeName extends Record<AnyTypeName, Id.AnyId> {
 
 export type IdForTypeName<T extends AnyTypeName> = IdsByTypeName[T]
 
-// type NameFromTypeComposite<T extends AnyTypeComposite> =
 
 export const NamesByCollectionSubtype = {
 	assets: 'AssetCollection',

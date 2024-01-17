@@ -35,7 +35,6 @@ exports.NamesByTypeComposite = {
     site_themes: 'DelveSiteTheme',
     truths: 'Truth'
 };
-// type NameFromTypeComposite<T extends AnyTypeComposite> =
 exports.NamesByCollectionSubtype = {
     assets: 'AssetCollection',
     atlas: 'Atlas',

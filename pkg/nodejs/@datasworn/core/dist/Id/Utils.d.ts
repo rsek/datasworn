@@ -53,7 +53,7 @@ export type TypeForTypeElements<Type extends IdElements.TypeElements.AnyPrimary,
 export type TypeForTypeKeys<T extends AnyTypeKeys> = TypesByName[NameFromTypeKeys<T>];
 type NameFromCollectionSubtype<T extends IdElements.TypeElements.Collectable.Any> = NameForTypeComposite<`${IdElements.TypeElements.Collection}/${T}`>;
 type NameFromTypeKeys<T extends AnyTypeKeys> = T extends [
-    infer Type extends IdElements.TypeElements.Collection,
+    IdElements.TypeElements.Collection,
     infer Subtype extends IdElements.TypeElements.Collectable.Any
 ] ? NameFromCollectionSubtype<Subtype> : T extends [
     infer U extends IdElements.TypeElements.Collectable.Any | IdElements.TypeElements.NonCollectable

@@ -56,7 +56,7 @@ export type RecursiveCollectableId<
 	AncestorKeys extends CollectionPathKeys = CollectionPathKeys,
 	Key extends string = string
 > = Id<RulesPackage, [Type], [...AncestorKeys, Key]>
-type AtlasEntryId = RecursiveCollectableId<string, 'atlas'>
+type _AtlasEntryId = RecursiveCollectableId<string, 'atlas'>
 
 export type CollectableId<
 	RulesPackage extends RulesPackageId = RulesPackageId,
@@ -75,7 +75,7 @@ export type NonRecursiveCollectableId<
 	ParentKey extends DictKey = DictKey,
 	Key extends DictKey = DictKey
 > = CollectableId<RulesPackage, Type, [ParentKey], Key>
-type AssetId = NonRecursiveCollectableId<string, 'moves'>
+type _AssetId = NonRecursiveCollectableId<string, 'moves'>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${Type}${IdElements.CONST.Sep}${DictKey}${IdElements.CONST.Sep}${Key}`
 
@@ -101,7 +101,7 @@ export type RecursiveCollectionId<
 	Key extends string = string
 > = CollectionId<RulesPackage, Subtype, AncestorKeys, Key>
 
-type AtlasId = RecursiveCollectionId<string, 'atlas'>
+type _AtlasId = RecursiveCollectionId<string, 'atlas'>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${IdElements.TypeElements.Collection}${IdElements.CONST.Sep}${Subtype}${IdElements.CONST.Sep}${RecursiveCollectionKeysString}`
 export type NonRecursiveCollectionId<
@@ -111,7 +111,7 @@ export type NonRecursiveCollectionId<
 	Key extends DictKey = DictKey
 > = CollectionId<RulesPackage, Subtype, [], Key>
 
-type AssetCollectionId = NonRecursiveCollectionId<string, 'moves'>
+type _AssetCollectionId = NonRecursiveCollectionId<string, 'moves'>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${IdElements.TypeElements.Collection}${IdElements.CONST.Sep}${Subtype}${IdElements.CONST.Sep}${Key}`
 
@@ -122,7 +122,7 @@ export type NonCollectableId<
 	Key extends DictKey = DictKey
 > = Id<RulesPackage, [Type], [Key]>
 
-type TruthId = NonCollectableId<string, 'truths'>
+type _TruthId = NonCollectableId<string, 'truths'>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${Type}${IdElements.CONST.Sep}${Key}`
 
