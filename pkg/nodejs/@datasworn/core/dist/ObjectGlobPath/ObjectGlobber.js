@@ -108,7 +108,10 @@ class ObjectGlobber extends Array {
         const nextPath = keys.slice(1);
         // console.log('next:', nextKey, nextPath)
         if (nextPath.length === 0)
-            return _a.getKeyMatches(from, nextKey, { includeArrays, matchTest });
+            return _a.getKeyMatches(from, nextKey, {
+                includeArrays,
+                matchTest
+            });
         const matches = _a.getKeyMatches(from, nextKey, {
             includeArrays
         });
@@ -121,27 +124,27 @@ class ObjectGlobber extends Array {
         }
         return results;
     }
-    static getKeyMatches(from, matchKey, { forEachMatch, matchTest, includeArrays = false } = {
+    static getKeyMatches(from, matchedKey, { forEachMatch, matchTest, includeArrays = false } = {
         includeArrays: false
     }) {
-        if (!_a.isPropertyKey(matchKey))
-            throw new Error(`Expected a number, string, or symbol key, but got ${typeof matchKey}`);
+        if (!_a.isPropertyKey(matchedKey))
+            throw new Error(`Expected a number, string, or symbol key, but got ${typeof matchedKey}`);
         const results = [];
         const hasMatchTest = typeof matchTest === 'function';
         function iterateWildcardMatch(key, value, results) {
-            if (!hasMatchTest || matchTest(value, key, matchKey))
+            if (!hasMatchTest || matchTest(value, key, matchedKey))
                 results.push(value);
         }
         function iterateGlobstarMatch(key, value, results) {
             iterateWildcardMatch(key, value, results);
             if (_a.isWalkable(value, includeArrays)) {
-                results.push(..._a.getKeyMatches(value, matchKey, {
+                results.push(..._a.getKeyMatches(value, matchedKey, {
                     matchTest,
                     includeArrays
                 }));
             }
         }
-        switch (matchKey) {
+        switch (matchedKey) {
             case _a.WILDCARD.description:
             case _a.WILDCARD:
                 if (from instanceof Map) {
@@ -174,13 +177,14 @@ class ObjectGlobber extends Array {
             default: {
                 let value;
                 if (from instanceof Map)
-                    value = from.get(matchKey);
+                    value = from.get(matchedKey);
                 else
-                    value = from[matchKey];
-                if (typeof value === 'undefined')
-                    throw new Error(`Unable to find key ${typeof matchKey === 'symbol'
-                        ? matchKey.toString()
-                        : JSON.stringify(matchKey)}`);
+                    value = from[matchedKey];
+                if (typeof value === 'undefined' &&
+                    !_a.implicitKeys.includes(matchedKey))
+                    throw new Error(`Unable to find key ${typeof matchedKey === 'symbol'
+                        ? matchedKey.toString()
+                        : JSON.stringify(matchedKey)}`);
                 results.push(value);
                 break;
             }
@@ -289,6 +293,8 @@ _a = ObjectGlobber, _ObjectGlobber_getPlainObjectPaths = function _ObjectGlobber
     }
     return results;
 };
+/** Keys that are part of the real object path, but not part of the ID */
+ObjectGlobber.implicitKeys = ['contents', 'collections'];
 (function (ObjectGlobber) {
     /** Represents a glob wildcard path element, usually expressed as `*` */
     ObjectGlobber.WILDCARD = Symbol(CONST_js_1.default.WildcardString);

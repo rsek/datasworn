@@ -9,6 +9,8 @@ import CONST from '../IdElements/CONST.js';
 declare class ObjectGlobber<TTuple extends Array<PropertyKey> = Array<PropertyKey>> extends Array<TTuple[number]> {
     #private;
     constructor(...items: TTuple);
+    /** Keys that are part of the real object path, but not part of the ID */
+    static readonly implicitKeys: string[];
     /** Does this path contain any wildcard or globstar elements? */
     get wildcard(): boolean;
     toJSON(): unknown[];
@@ -29,7 +31,7 @@ declare class ObjectGlobber<TTuple extends Array<PropertyKey> = Array<PropertyKe
         matchTest?: ObjectGlobber.MatchTest;
         includeArrays: boolean;
     }): unknown[];
-    static getKeyMatches(from: object, matchKey: PropertyKey, { forEachMatch, matchTest, includeArrays }?: {
+    static getKeyMatches(from: object, matchedKey: PropertyKey, { forEachMatch, matchTest, includeArrays }?: {
         forEachMatch?: ObjectGlobber.WalkIteratee;
         matchTest?: ObjectGlobber.MatchTest;
         includeArrays: boolean;

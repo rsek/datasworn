@@ -18,6 +18,9 @@ class ObjectGlobber<
 		super(...(items.map(ObjectGlobber.replaceGlobString as any) as any))
 	}
 
+	/** Keys that are part of the real object path, but not part of the ID */
+	static readonly implicitKeys = ['contents', 'collections']
+
 	/** Does this path contain any wildcard or globstar elements? */
 	get wildcard() {
 		return this.some(ObjectGlobber.isGlobElement)
@@ -150,7 +153,10 @@ class ObjectGlobber<
 		// console.log('next:', nextKey, nextPath)
 
 		if (nextPath.length === 0)
-			return ObjectGlobber.getKeyMatches(from, nextKey, { includeArrays, matchTest })
+			return ObjectGlobber.getKeyMatches(from, nextKey, {
+				includeArrays,
+				matchTest
+			})
 
 		const matches = ObjectGlobber.getKeyMatches(from, nextKey, {
 			includeArrays
@@ -172,7 +178,7 @@ class ObjectGlobber<
 
 	static getKeyMatches(
 		from: object,
-		matchKey: PropertyKey,
+		matchedKey: PropertyKey,
 		{
 			forEachMatch,
 			matchTest,
@@ -185,9 +191,9 @@ class ObjectGlobber<
 			includeArrays: false
 		}
 	): unknown[] {
-		if (!ObjectGlobber.isPropertyKey(matchKey))
+		if (!ObjectGlobber.isPropertyKey(matchedKey))
 			throw new Error(
-				`Expected a number, string, or symbol key, but got ${typeof matchKey}`
+				`Expected a number, string, or symbol key, but got ${typeof matchedKey}`
 			)
 
 		const results: unknown[] = []
@@ -199,7 +205,8 @@ class ObjectGlobber<
 			value: unknown,
 			results: unknown[]
 		) {
-			if (!hasMatchTest || matchTest(value, key, matchKey)) results.push(value)
+			if (!hasMatchTest || matchTest(value, key, matchedKey))
+				results.push(value)
 		}
 		function iterateGlobstarMatch(
 			key: PropertyKey,
@@ -209,7 +216,7 @@ class ObjectGlobber<
 			iterateWildcardMatch(key, value, results)
 			if (ObjectGlobber.isWalkable(value, includeArrays)) {
 				results.push(
-					...ObjectGlobber.getKeyMatches(value, matchKey, {
+					...ObjectGlobber.getKeyMatches(value, matchedKey, {
 						matchTest,
 						includeArrays
 					})
@@ -217,7 +224,7 @@ class ObjectGlobber<
 			}
 		}
 
-		switch (matchKey) {
+		switch (matchedKey) {
 			case ObjectGlobber.WILDCARD.description:
 			case ObjectGlobber.WILDCARD:
 				if (from instanceof Map) {
@@ -245,15 +252,18 @@ class ObjectGlobber<
 				break
 			default: {
 				let value: unknown
-				if (from instanceof Map) value = from.get(matchKey)
-				else value = from[matchKey]
+				if (from instanceof Map) value = from.get(matchedKey)
+				else value = from[matchedKey]
 
-				if (typeof value === 'undefined')
+				if (
+					typeof value === 'undefined' &&
+					!ObjectGlobber.implicitKeys.includes(matchedKey as string)
+				)
 					throw new Error(
 						`Unable to find key ${
-							typeof matchKey === 'symbol'
-								? (matchKey as any).toString()
-								: JSON.stringify(matchKey)
+							typeof matchedKey === 'symbol'
+								? (matchedKey as any).toString()
+								: JSON.stringify(matchedKey)
 						}`
 					)
 
