@@ -360,4 +360,4 @@ declare namespace RecursiveCollectionId {
     interface Options<T extends Strings.RecursiveCollectionId> extends CollectionId.Options<T> {
     }
 }
-export { IdParser as Id, NonCollectableId, NonRecursiveCollectableId, NonRecursiveCollectionId, RecursiveCollectableId, RecursiveCollectionId };
+export { IdParser, NonCollectableId, NonRecursiveCollectableId, NonRecursiveCollectionId, RecursiveCollectableId, RecursiveCollectionId };

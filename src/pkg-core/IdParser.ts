@@ -1168,7 +1168,7 @@ namespace RecursiveCollectionId {
 // })
 
 export {
-	IdParser as Id,
+	IdParser,
 	NonCollectableId,
 	NonRecursiveCollectableId,
 	NonRecursiveCollectionId,

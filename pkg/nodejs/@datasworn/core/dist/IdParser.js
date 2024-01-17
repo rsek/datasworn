@@ -15,7 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 var _IdParser_instances, _a, _IdParser_datasworn, _IdParser_resetCachedProperties, _IdParser_matcher, _IdParser_rulesPackage, _IdParser_typeKeys, _IdParser_pathKeys, _IdParser_path, _IdParser_validateKey, _IdParser_validateRulesPackage, _IdParser_validateCollectionKey;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecursiveCollectionId = exports.RecursiveCollectableId = exports.NonRecursiveCollectionId = exports.NonRecursiveCollectableId = exports.NonCollectableId = exports.Id = void 0;
+exports.RecursiveCollectionId = exports.RecursiveCollectableId = exports.NonRecursiveCollectionId = exports.NonRecursiveCollectableId = exports.NonCollectableId = exports.IdParser = void 0;
 const nanomatch_1 = __importDefault(require("nanomatch"));
 const index_js_1 = require("./IdElements/index.js");
 const ObjectGlobber_js_1 = __importDefault(require("./ObjectGlobPath/ObjectGlobber.js"));
@@ -348,7 +348,7 @@ class IdParser {
         return new ObjectGlobber_js_1.default(...dotPathElements);
     }
 }
-exports.Id = IdParser;
+exports.IdParser = IdParser;
 _a = IdParser, _IdParser_matcher = new WeakMap(), _IdParser_rulesPackage = new WeakMap(), _IdParser_typeKeys = new WeakMap(), _IdParser_pathKeys = new WeakMap(), _IdParser_path = new WeakMap(), _IdParser_instances = new WeakSet(), _IdParser_resetCachedProperties = function _IdParser_resetCachedProperties() {
     __classPrivateFieldSet(this, _IdParser_matcher, null, "f");
     __classPrivateFieldSet(this, _IdParser_path, null, "f");
