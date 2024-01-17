@@ -108,13 +108,13 @@ class ObjectGlobber extends Array {
         const nextPath = keys.slice(1);
         // console.log('next:', nextKey, nextPath)
         if (nextPath.length === 0)
-            return this.getKeyMatches(from, nextKey, { includeArrays, matchTest });
-        const matches = this.getKeyMatches(from, nextKey, {
+            return _a.getKeyMatches(from, nextKey, { includeArrays, matchTest });
+        const matches = _a.getKeyMatches(from, nextKey, {
             includeArrays
         });
         const results = [];
         for (const match of matches) {
-            results.push(...this.getMatches(match, nextPath, {
+            results.push(..._a.getMatches(match, nextPath, {
                 matchTest,
                 includeArrays
             }));
@@ -124,7 +124,7 @@ class ObjectGlobber extends Array {
     static getKeyMatches(from, matchKey, { forEachMatch, matchTest, includeArrays = false } = {
         includeArrays: false
     }) {
-        if (!this.isPropertyKey(matchKey))
+        if (!_a.isPropertyKey(matchKey))
             throw new Error(`Expected a number, string, or symbol key, but got ${typeof matchKey}`);
         const results = [];
         const hasMatchTest = typeof matchTest === 'function';
@@ -134,8 +134,8 @@ class ObjectGlobber extends Array {
         }
         function iterateGlobstarMatch(key, value, results) {
             iterateWildcardMatch(key, value, results);
-            if (this.isWalkable(value, includeArrays)) {
-                results.push(...this.getKeyMatches(value, matchKey, {
+            if (_a.isWalkable(value, includeArrays)) {
+                results.push(..._a.getKeyMatches(value, matchKey, {
                     matchTest,
                     includeArrays
                 }));
@@ -205,7 +205,7 @@ class ObjectGlobber extends Array {
         if (typeof forEach === 'function')
             forEach(from, path);
         const [currentKey, ...nextPath] = path;
-        if (!this.isPropertyKey(currentKey))
+        if (!_a.isPropertyKey(currentKey))
             throw new Error(`Expected a number, string, or symbol key, but got ${typeof currentKey}`);
         if (typeof from !== 'object')
             throw new Error(`Expected an object but got ${typeof from}`);
@@ -232,9 +232,9 @@ class ObjectGlobber extends Array {
     static getObjectPaths(object, includeArrays = false, currentPath = new _a()) {
         const results = [];
         if (object instanceof Map)
-            results.push(...__classPrivateFieldGet(this, _a, "m", _ObjectGlobber_getMapPaths).call(this, object, includeArrays, currentPath));
+            results.push(...__classPrivateFieldGet(_a, _a, "m", _ObjectGlobber_getMapPaths).call(_a, object, includeArrays, currentPath));
         else
-            results.push(...__classPrivateFieldGet(this, _a, "m", _ObjectGlobber_getPlainObjectPaths).call(this, object, includeArrays, currentPath));
+            results.push(...__classPrivateFieldGet(_a, _a, "m", _ObjectGlobber_getPlainObjectPaths).call(_a, object, includeArrays, currentPath));
         return results;
     }
     /** Replace a wildcard/globstar string with a Symbol */
@@ -272,7 +272,7 @@ _a = ObjectGlobber, _ObjectGlobber_getPlainObjectPaths = function _ObjectGlobber
         if (!includeArrays && Array.isArray(nextObject))
             continue;
         const nextPath = new _a(...currentPath, k);
-        results.push(nextPath, ...this.getObjectPaths(nextObject, includeArrays, nextPath));
+        results.push(nextPath, ..._a.getObjectPaths(nextObject, includeArrays, nextPath));
     }
     return results;
 }, _ObjectGlobber_getMapPaths = function _ObjectGlobber_getMapPaths(object, includeArrays = false, currentPath = new _a()) {
@@ -285,7 +285,7 @@ _a = ObjectGlobber, _ObjectGlobber_getPlainObjectPaths = function _ObjectGlobber
         if (!includeArrays && Array.isArray(nextObject))
             continue;
         const nextPath = new _a(...currentPath, k);
-        results.push(nextPath, ...this.getObjectPaths(nextObject, includeArrays, nextPath));
+        results.push(nextPath, ..._a.getObjectPaths(nextObject, includeArrays, nextPath));
     }
     return results;
 };

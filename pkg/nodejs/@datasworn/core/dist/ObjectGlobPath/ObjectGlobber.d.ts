@@ -35,7 +35,7 @@ declare class ObjectGlobber<TTuple extends Array<PropertyKey> = Array<PropertyKe
         includeArrays: boolean;
     }): unknown[];
     /** Is this value an object with recursable keys? */
-    static isWalkable(value: unknown, includeArrays?: boolean): boolean;
+    static isWalkable(value: unknown, includeArrays?: boolean): value is object;
     /** Is the value valid as an object property key? */
     static isPropertyKey(key: unknown): key is PropertyKey;
     /**

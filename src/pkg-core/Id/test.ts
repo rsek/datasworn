@@ -20,3 +20,4 @@ const testParse = [
 ]
 
 for (const id of testParse) console.log(id.toString(), id.toPath().join('.'))
+

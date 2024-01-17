@@ -150,9 +150,9 @@ class ObjectGlobber<
 		// console.log('next:', nextKey, nextPath)
 
 		if (nextPath.length === 0)
-			return this.getKeyMatches(from, nextKey, { includeArrays, matchTest })
+			return ObjectGlobber.getKeyMatches(from, nextKey, { includeArrays, matchTest })
 
-		const matches = this.getKeyMatches(from, nextKey, {
+		const matches = ObjectGlobber.getKeyMatches(from, nextKey, {
 			includeArrays
 		})
 
@@ -160,7 +160,7 @@ class ObjectGlobber<
 
 		for (const match of matches) {
 			results.push(
-				...this.getMatches(match as object, nextPath, {
+				...ObjectGlobber.getMatches(match as object, nextPath, {
 					matchTest,
 					includeArrays
 				})
@@ -185,7 +185,7 @@ class ObjectGlobber<
 			includeArrays: false
 		}
 	): unknown[] {
-		if (!this.isPropertyKey(matchKey))
+		if (!ObjectGlobber.isPropertyKey(matchKey))
 			throw new Error(
 				`Expected a number, string, or symbol key, but got ${typeof matchKey}`
 			)
@@ -207,9 +207,9 @@ class ObjectGlobber<
 			results: unknown[]
 		) {
 			iterateWildcardMatch(key, value, results)
-			if (this.isWalkable(value, includeArrays)) {
+			if (ObjectGlobber.isWalkable(value, includeArrays)) {
 				results.push(
-					...this.getKeyMatches(value, matchKey, {
+					...ObjectGlobber.getKeyMatches(value, matchKey, {
 						matchTest,
 						includeArrays
 					})
@@ -266,7 +266,7 @@ class ObjectGlobber<
 	}
 
 	/** Is this value an object with recursable keys? */
-	static isWalkable(value: unknown, includeArrays = false) {
+	static isWalkable(value: unknown, includeArrays = false): value is object {
 		if (!includeArrays && Array.isArray(value)) return false
 
 		return typeof value === 'object' && !Object.is(value, null)
@@ -304,7 +304,7 @@ class ObjectGlobber<
 
 		const [currentKey, ...nextPath] = path
 
-		if (!this.isPropertyKey(currentKey))
+		if (!ObjectGlobber.isPropertyKey(currentKey))
 			throw new Error(
 				`Expected a number, string, or symbol key, but got ${typeof currentKey}`
 			)
@@ -339,10 +339,16 @@ class ObjectGlobber<
 		const results: Array<ObjectGlobber> = []
 
 		if (object instanceof Map)
-			results.push(...this.#getMapPaths(object, includeArrays, currentPath))
+			results.push(
+				...ObjectGlobber.#getMapPaths(object, includeArrays, currentPath)
+			)
 		else
 			results.push(
-				...this.#getPlainObjectPaths(object, includeArrays, currentPath)
+				...ObjectGlobber.#getPlainObjectPaths(
+					object,
+					includeArrays,
+					currentPath
+				)
 			)
 
 		return results
@@ -366,7 +372,7 @@ class ObjectGlobber<
 
 			results.push(
 				nextPath,
-				...this.getObjectPaths(nextObject, includeArrays, nextPath)
+				...ObjectGlobber.getObjectPaths(nextObject, includeArrays, nextPath)
 			)
 		}
 
@@ -389,7 +395,7 @@ class ObjectGlobber<
 
 			results.push(
 				nextPath,
-				...this.getObjectPaths(nextObject, includeArrays, nextPath)
+				...ObjectGlobber.getObjectPaths(nextObject, includeArrays, nextPath)
 			)
 		}
 
