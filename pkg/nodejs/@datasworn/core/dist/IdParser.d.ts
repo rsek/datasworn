@@ -325,7 +325,7 @@ interface RecursiveCollectableId<RulesPackage extends string = string, Type exte
     get ancestorCollectionKeys(): AncestorKeys;
 }
 declare namespace RecursiveCollectableId {
-    type FromString<T extends Strings.RecursiveCollectableId> = T extends Strings.RecursiveCollectableId<infer RulesPackage, infer Type, infer AncestorKeys, infer Key> ? RecursiveCollectableId<RulesPackage, Type, AncestorKeys, Key> & {
+    type FromString<T extends Strings.RecursiveCollectableId> = T extends `${infer RulesPackage}${CONST.Sep}${infer Type extends TypeElements.Collectable.Recursive}${infer AncestorPath extends `${CONST.Sep}${string}`}${CONST.Sep}${infer Key}` ? RecursiveCollectableId<RulesPackage, Type, Utils.Split<AncestorPath>, Key> & {
         id: T;
     } : never;
 }
