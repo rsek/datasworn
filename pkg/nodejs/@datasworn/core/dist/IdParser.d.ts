@@ -4,7 +4,7 @@ import ObjectGlobber from './ObjectGlobPath/ObjectGlobber.js';
 import type * as Strings from './Id/Strings.js';
 import { type CollectableType, type CollectionSubtype, type TypeForTypeComposite } from './Id/TypeMaps.js';
 import type * as Utils from './Id/Utils.js';
-type DataswornTree = Record<string, Datasworn.RulesPackage> | Map<string, Datasworn.RulesPackage>;
+export type DataswornTree = Record<string, Datasworn.RulesPackage> | Map<string, Datasworn.RulesPackage>;
 /**
  * Creates, parses, and locates Datasworn IDs in the Datasworn tree. Id utilities are collected here as static methods.
  * @see
@@ -159,8 +159,6 @@ declare namespace IdParser {
     };
     type ToStringArray<RulesPackage extends string, TypeKeys extends Utils.AnyTypeKeys, PathKeys extends Utils.AnyPathKeys> = [RulesPackage, ...TypeKeys, ...PathKeys];
     type ToString<RulesPackage extends string, TypeKeys extends Utils.AnyTypeKeys, PathKeys extends Utils.AnyPathKeys> = Utils.Join<ToStringArray<RulesPackage, TypeKeys, PathKeys>, CONST.Sep>;
-    type Last<T extends unknown[]> = T extends [infer U] ? U : T extends [...T[number][], infer U] ? U : never;
-    type DropLast<T extends unknown[]> = T extends [T[number]] ? [] : T extends [...infer U extends T[number][], T[number]] ? U : never;
     type AnyParsedId = IdParser.Parsed<Strings.AnyCollectableId> | IdParser.Parsed<Strings.AnyCollectionId> | IdParser.Parsed<Strings.NonCollectableId>;
 }
 declare abstract class CollectionId<RulesPackage extends string = string, Subtype extends TypeElements.Collectable.Any = TypeElements.Collectable.Any, AncestorKeys extends Strings.DictKey[] | [] = Strings.DictKey[], Key extends Strings.DictKey = Strings.DictKey> extends IdParser<RulesPackage, [
@@ -325,7 +323,7 @@ interface RecursiveCollectableId<RulesPackage extends string = string, Type exte
     get ancestorCollectionKeys(): AncestorKeys;
 }
 declare namespace RecursiveCollectableId {
-    type FromString<T extends Strings.RecursiveCollectableId> = T extends `${infer RulesPackage}${CONST.Sep}${infer Type extends TypeElements.Collectable.Recursive}${infer AncestorPath extends `${CONST.Sep}${string}`}${CONST.Sep}${infer Key}` ? RecursiveCollectableId<RulesPackage, Type, Utils.Split<AncestorPath>, Key> & {
+    type FromString<T extends Strings.RecursiveCollectableId> = T extends `${infer RulesPackage}${CONST.Sep}${infer Type extends TypeElements.Collectable.Recursive}${CONST.Sep}${string}` ? RecursiveCollectableId<RulesPackage, Type, Utils.ExtractAncestorPathElements<T>, Utils.ExtractKey<T>> & {
         id: T;
     } : never;
 }
@@ -350,7 +348,7 @@ declare class RecursiveCollectionId<RulesPackage extends string = string, Subtyp
     /**
      * Returns a new {@link RecursiveCollectionId} instance for the ID of this object's parent RecursiveCollection, if one exists.
      */
-    getParentCollectionId(): AncestorKeys extends [] ? never : RecursiveCollectionId<RulesPackage, Subtype, IdParser.DropLast<AncestorKeys>, IdParser.Last<AncestorKeys>>;
+    getParentCollectionId(): AncestorKeys extends [] ? never : RecursiveCollectionId<RulesPackage, Subtype, Utils.DropLast<AncestorKeys>, Utils.Last<AncestorKeys>>;
     get canHaveCollectionChild(): AncestorKeys extends string[] & {
         length: 1 | 2;
     } ? true : false;

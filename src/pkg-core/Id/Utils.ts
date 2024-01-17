@@ -437,6 +437,19 @@ export type ExtractAncestorCollectionPathElements<
 	? U
 	: never
 
+export type Last<T extends unknown[]> = T extends [infer U]
+	? U
+	: T extends [...T[number][], infer U]
+	  ? U
+	  : never
+
+export type DropLast<T extends unknown[]> = T extends [T[number]]
+	? []
+	: T extends [...infer U extends T[number][], T[number]]
+	  ? U
+	  : never
+
+
 type fff = ExtractAncestorPathElements<'sundered_isles/oracles/core/action'>
 
 export type {

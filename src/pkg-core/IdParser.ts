@@ -12,7 +12,7 @@ import {
 } from './Id/TypeMaps.js'
 import type * as Utils from './Id/Utils.js'
 
-type DataswornTree =
+export type DataswornTree =
 	| Record<string, Datasworn.RulesPackage>
 	| Map<string, Datasworn.RulesPackage>
 
@@ -720,18 +720,6 @@ namespace IdParser {
 		PathKeys extends Utils.AnyPathKeys
 	> = Utils.Join<ToStringArray<RulesPackage, TypeKeys, PathKeys>, CONST.Sep>
 
-	export type Last<T extends unknown[]> = T extends [infer U]
-		? U
-		: T extends [...T[number][], infer U]
-		  ? U
-		  : never
-
-	export type DropLast<T extends unknown[]> = T extends [T[number]]
-		? []
-		: T extends [...infer U extends T[number][], T[number]]
-		  ? U
-		  : never
-
 	export type AnyParsedId =
 		| IdParser.Parsed<Strings.AnyCollectableId>
 		| IdParser.Parsed<Strings.AnyCollectionId>
@@ -1052,13 +1040,12 @@ interface RecursiveCollectableId<
 namespace RecursiveCollectableId {
 	export type FromString<T extends Strings.RecursiveCollectableId> =
 		T extends `${infer RulesPackage}${CONST.Sep}${infer Type extends
-			TypeElements.Collectable.Recursive}${infer AncestorPath extends
-			`${CONST.Sep}${string}`}${CONST.Sep}${infer Key}`
+			TypeElements.Collectable.Recursive}${CONST.Sep}${string}`
 			? RecursiveCollectableId<
 					RulesPackage,
 					Type,
-					Utils.Split<AncestorPath>,
-					Key
+					Utils.ExtractAncestorPathElements<T>,
+					Utils.ExtractKey<T>
 			  > & {
 					id: T
 			  }
@@ -1135,8 +1122,8 @@ class RecursiveCollectionId<
 		const result = new RecursiveCollectionId<
 			RulesPackage,
 			Subtype,
-			IdParser.DropLast<AncestorKeys>,
-			IdParser.Last<AncestorKeys>
+			Utils.DropLast<AncestorKeys>,
+			Utils.Last<AncestorKeys>
 		>(this.rulesPackage, this.subtype, ...(this.ancestorCollectionKeys as any))
 
 		return result as AncestorKeys extends [] ? never : typeof result
