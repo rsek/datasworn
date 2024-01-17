@@ -807,7 +807,7 @@ interface CollectionId<
 namespace CollectionId {
 	/** A lenient typing for a parsed ID representing any collection object. */
 	export interface Any extends IdParser.Any {
-		readonly id: `${string}/${TypeElements.Collection}/${TypeElements.Collectable.Any}/${string}`
+		readonly id: `${string}${CONST.Sep}${TypeElements.Collection}${CONST.Sep}${TypeElements.Collectable.Any}${CONST.Sep}${string}`
 		readonly ancestorCollectionKeys: string[]
 		readonly typeRootKey: TypeElements.Collectable.Any
 		readonly elements: [
@@ -911,8 +911,8 @@ class NonCollectableId<
 }
 namespace NonCollectableId {
 	export type FromString<T extends Strings.NonCollectableId> =
-		T extends `${infer RulesPackage}/${infer Type extends
-			TypeElements.NonCollectable}/${infer Key}`
+		T extends `${infer RulesPackage}${CONST.Sep}${infer Type extends
+			TypeElements.NonCollectable}${CONST.Sep}${infer Key}`
 			? NonCollectableId<RulesPackage, Type, Key> & { id: T }
 			: never
 }
@@ -973,8 +973,8 @@ interface NonRecursiveCollectableId<
 }
 namespace NonRecursiveCollectableId {
 	export type FromString<T extends Strings.NonRecursiveCollectableId> =
-		T extends `${infer RulesPackage}/${infer Type extends
-			TypeElements.Collectable.NonRecursive}/${infer ParentKey}/${infer Key}`
+		T extends `${infer RulesPackage}${CONST.Sep}${infer Type extends
+			TypeElements.Collectable.NonRecursive}${CONST.Sep}${infer ParentKey}${CONST.Sep}${infer Key}`
 			? NonRecursiveCollectableId<RulesPackage, Type, ParentKey, Key> & {
 					id: T
 			  }
@@ -1008,8 +1008,8 @@ interface NonRecursiveCollectionId<
 
 namespace NonRecursiveCollectionId {
 	export type FromString<T extends Strings.NonRecursiveCollectionId> =
-		T extends `${infer RulesPackage}/${TypeElements.Collection}/${infer Subtype extends
-			TypeElements.Collectable.NonRecursive}/${infer Key}`
+		T extends `${infer RulesPackage}${CONST.Sep}${TypeElements.Collection}${CONST.Sep}${infer Subtype extends
+			TypeElements.Collectable.NonRecursive}${CONST.Sep}${infer Key}`
 			? NonRecursiveCollectionId<RulesPackage, Subtype, Key> & { id: T }
 			: never
 }
@@ -1168,8 +1168,8 @@ interface RecursiveCollectionId<
 }
 namespace RecursiveCollectionId {
 	export type FromString<T extends Strings.RecursiveCollectionId> =
-		T extends `${infer RulesPackage}/${TypeElements.Collection}/${infer Subtype extends
-			TypeElements.Collectable.Recursive}/${string}`
+		T extends `${infer RulesPackage}${CONST.Sep}${TypeElements.Collection}${CONST.Sep}${infer Subtype extends
+			TypeElements.Collectable.Recursive}${CONST.Sep}${string}`
 			? RecursiveCollectionId<
 					RulesPackage,
 					Subtype,
