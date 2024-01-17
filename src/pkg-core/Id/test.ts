@@ -1,5 +1,5 @@
-import type * as Strings from '../Strings.js'
-import { Id } from './Id.js'
+import type * as Strings from './Strings.js'
+import { Id } from '../IdParser.js'
 
 const recursiveCollectionId =
 	'sundered_isles/collections/oracles/core' satisfies Strings.RecursiveCollectionId

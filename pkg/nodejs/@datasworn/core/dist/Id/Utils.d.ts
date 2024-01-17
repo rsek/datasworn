@@ -1,7 +1,7 @@
 import type * as Datasworn from '../Datasworn.js';
 import type * as IdElements from '../IdElements/index.js';
 import type * as Strings from './Strings.js';
-import { type NonCollectableId, type NonRecursiveCollectableId } from './IdParser/Id.js';
+import { type NonCollectableId, type NonRecursiveCollectableId } from '../IdParser.js';
 import { type IdsByTypeName, type NameForTypeComposite, type TypesByName, type AnyCollectionType, type AnyCollectableType, type AnyTypeComposite, type AnyCollectionTypeComposite } from './TypeMaps.js';
 export type ExtractCollectableTypeElement<T extends Strings.AnyCollectableId> = T extends Strings.NonRecursiveCollectableId<string, infer Type extends IdElements.TypeElements.Collectable.NonRecursive> ? Type : T extends Strings.RecursiveCollectableId<string, infer Type extends IdElements.TypeElements.Collectable.Recursive> ? Type : never;
 export type ExtractCollectionSubtype<T extends Strings.AnyCollectionId> = T extends Strings.RecursiveCollectionId<string, infer Subtype extends IdElements.TypeElements.Collectable.Recursive> ? Subtype : T extends Strings.NonRecursiveCollectionId<string, infer Subtype extends IdElements.TypeElements.Collectable.NonRecursive> ? Subtype : never;

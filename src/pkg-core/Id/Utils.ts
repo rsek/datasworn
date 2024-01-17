@@ -5,7 +5,7 @@ import type * as Strings from './Strings.js'
 import {
 	type NonCollectableId,
 	type NonRecursiveCollectableId
-} from './IdParser/Id.js'
+} from '../IdParser.js'
 import {
 	type IdsByTypeName,
 	type NameForTypeComposite,

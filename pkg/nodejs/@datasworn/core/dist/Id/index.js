@@ -26,8 +26,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IdParser = exports.Utils = exports.Errors = void 0;
+exports.Utils = exports.Errors = void 0;
 exports.Errors = __importStar(require("./Errors.js"));
 __exportStar(require("./Strings.js"), exports);
 exports.Utils = __importStar(require("./Utils.js"));
-exports.IdParser = __importStar(require("./IdParser/index.js"));

@@ -1,40 +1,41 @@
 import nanomatch from 'nanomatch'
-import type * as Datasworn from '../../Datasworn.js'
+import type * as Datasworn from './Datasworn.js'
 
-import { CONST, TypeElements, TypeGuard } from '../../IdElements/index.js'
-import ObjectGlobber from '../../ObjectGlobPath/ObjectGlobber.js'
-import { ParseError } from '../Errors.js'
-import type * as Strings from '../Strings.js'
+import { CONST, TypeElements, TypeGuard } from './IdElements/index.js'
+import ObjectGlobber from './ObjectGlobPath/ObjectGlobber.js'
+import { ParseError } from './Id/Errors.js'
+import type * as Strings from './Id/Strings.js'
 import {
 	type CollectableType,
 	type CollectionSubtype,
 	type TypeForTypeComposite
-} from '../TypeMaps.js'
-import type * as Utils from '../Utils.js'
+} from './Id/TypeMaps.js'
+import type * as Utils from './Id/Utils.js'
 
 type DataswornTree =
 	| Record<string, Datasworn.RulesPackage>
 	| Map<string, Datasworn.RulesPackage>
 
 /**
- * Creates, parses, and locates Datasworn IDs in the Datasworn tree.
+ * Creates, parses, and locates Datasworn IDs in the Datasworn tree. Id utilities are collected here as static methods.
+ * @see
  * @remarks Set the {@linkcode #datasworn} static property to provide a default value for {@link get} and {@link getMatches}
  * @example
  * // create a collectable ID valid as a child of a given collection ID
- * Id.from('my_oracles/collections/oracles/core').createChildCollectableId('theme') // returns parser subclass instance for an OracleRollable ID: 'my_oracles/oracles/core/theme'
+ * IdParser.from('my_oracles/collections/oracles/core').createChildCollectableId('theme') // returns parser subclass instance for an OracleRollable ID: 'my_oracles/oracles/core/theme'
  */
-abstract class Id<
+abstract class IdParser<
 		RulesPackage extends string = string,
-		TypeKeys extends Id.UnknownTypeKeys = Id.UnknownTypeKeys,
-		PathKeys extends Id.UnknownPathKeys = Id.UnknownPathKeys,
+		TypeKeys extends IdParser.UnknownTypeKeys = IdParser.UnknownTypeKeys,
+		PathKeys extends IdParser.UnknownPathKeys = IdParser.UnknownPathKeys,
 		IdentifiedObject extends object = object
 	>
-	implements Id.Options<RulesPackage, TypeKeys, PathKeys>, Id.Any
+	implements IdParser.Options<RulesPackage, TypeKeys, PathKeys>, IdParser.Any
 {
 	/**
 	 * @param options Options for construction of an ID.
 	 */
-	constructor(options: Id.Options<RulesPackage, TypeKeys, PathKeys>) {
+	constructor(options: IdParser.Options<RulesPackage, TypeKeys, PathKeys>) {
 		// this.#options = options
 		this.#rulesPackage = options.rulesPackage
 		this.#typeKeys = options.typeKeys
@@ -47,11 +48,11 @@ abstract class Id<
 
 	/** An optional reference to the Datasworn tree object, shared by all subclasses. Used as the default value for several traversal methods. */
 	static get datasworn() {
-		return Id.#datasworn
+		return IdParser.#datasworn
 	}
 
 	static set datasworn(value) {
-		Id.#datasworn = value
+		IdParser.#datasworn = value
 	}
 
 	get id(): string {
@@ -108,7 +109,7 @@ abstract class Id<
 	}
 
 	public set rulesPackage(value: RulesPackage) {
-		if (Id.#validateRulesPackage(value))
+		if (IdParser.#validateRulesPackage(value))
 			throw new Error(
 				`${value as any} is not a valid RulesPackageId or wildcard ("*").`
 			)
@@ -206,7 +207,7 @@ abstract class Id<
 
 	toPath(): ObjectGlobber {
 		if (this.#path == null) {
-			const path = Id.toPath(this)
+			const path = IdParser.toPath(this)
 			this.#path = path
 			return path as any
 		}
@@ -217,10 +218,10 @@ abstract class Id<
 	 * Retrieves the object referenced by this ID.
 	 * @throws If the ID is a wildcard ID (use {@link getMatches} instead), or if the referenced object doesn't exist.
 	 */
-	get(tree = Id.datasworn): IdentifiedObject {
+	get(tree = IdParser.datasworn): IdentifiedObject {
 		if (tree == null)
 			throw new Error(
-				`Please set the static (${Id.constructor.name}.datasworn), or provide a Datasworn tree object as an argument.`
+				`Please set the static (${IdParser.constructor.name}.datasworn), or provide a Datasworn tree object as an argument.`
 			)
 		if (this.isWildcard)
 			throw new Error(
@@ -235,10 +236,10 @@ abstract class Id<
 	/**
 	 * Retrieves all objects matched by this wildcard ID.
 	 */
-	getMatches(tree = Id.datasworn): IdentifiedObject[] {
+	getMatches(tree = IdParser.datasworn): IdentifiedObject[] {
 		if (tree == null)
 			throw new Error(
-				`Please set the static (${Id.constructor.name}.datasworn), or provide a Datasworn tree object as an argument.`
+				`Please set the static (${IdParser.constructor.name}.datasworn), or provide a Datasworn tree object as an argument.`
 			)
 
 		// non-wildcarded IDs are technically valid wildcard IDs; if this is the case, wrap it in an array and return it
@@ -306,8 +307,8 @@ abstract class Id<
 	 * Create an Id parser instance of the appropriate subclass from a string ID.
 	 * @throws If `id` is invalid.
 	 */
-	static from(id: Strings.AnyId): Id {
-		const { rulesPackage, typeKeys, pathKeys } = Id.parse(id as any)
+	static from(id: Strings.AnyId): IdParser {
+		const { rulesPackage, typeKeys, pathKeys } = IdParser.parse(id as any)
 		const [type, subtype] = typeKeys
 
 		switch (true) {
@@ -354,30 +355,30 @@ abstract class Id<
 	 */
 	static get<T extends Strings.AnyId>(
 		id: T,
-		tree?: (typeof Id)['datasworn']
+		tree?: (typeof IdParser)['datasworn']
 	): Utils.TypeForId<T>
-	static get<T extends Id<any, any, any, any>>(
+	static get<T extends IdParser<any, any, any, any>>(
 		id: T,
-		tree?: (typeof Id)['datasworn']
+		tree?: (typeof IdParser)['datasworn']
 	): ReturnType<T['get']>
-	static get<T extends Strings.AnyId | Id<any, any, any, any>>(
+	static get<T extends Strings.AnyId | IdParser<any, any, any, any>>(
 		id: T,
-		tree = Id.#datasworn
+		tree = IdParser.#datasworn
 	): object {
-		const parsedId: Id<any, any, any, any> =
-			id instanceof Id ? id : (Id.from(id as any) as any)
+		const parsedId: IdParser<any, any, any, any> =
+			id instanceof IdParser ? id : (IdParser.from(id as any) as any)
 
 		return parsedId.toPath().walk(tree as any)
 	}
 
-	static toString<T extends Id.AnyParsedId>({
+	static toString<T extends IdParser.AnyParsedId>({
 		rulesPackage,
 		typeKeys,
 		pathKeys
 	}: T) {
 		return [rulesPackage, ...typeKeys, ...pathKeys].join(
 			CONST.Sep
-		) as T extends Id.Parsed<infer U>
+		) as T extends IdParser.Parsed<infer U>
 			? U
 			: Utils.Join<
 					[T['rulesPackage'], ...T['typeKeys'], ...T['pathKeys']],
@@ -390,13 +391,21 @@ abstract class Id<
 	 * @param id The Datasworn ID to parse.
 	 * @throws If `id` is an invalid Datasworn ID.
 	 */
-	static parse<T extends Strings.NonRecursiveCollectionId>(id: T): Id.Parsed<T>
-	static parse<T extends Strings.NonRecursiveCollectableId>(id: T): Id.Parsed<T>
-	static parse<T extends Strings.RecursiveCollectionId>(id: T): Id.Parsed<T>
-	static parse<T extends Strings.RecursiveCollectableId>(id: T): Id.Parsed<T>
-	static parse<T extends Strings.NonCollectableId>(id: T): Id.Parsed<T>
-	static parse<T extends Strings.AnyId>(id: T): Id.Parsed<T>
-	static parse(id: string): Id.AnyParsedId {
+	static parse<T extends Strings.NonRecursiveCollectionId>(
+		id: T
+	): IdParser.Parsed<T>
+	static parse<T extends Strings.NonRecursiveCollectableId>(
+		id: T
+	): IdParser.Parsed<T>
+	static parse<T extends Strings.RecursiveCollectionId>(
+		id: T
+	): IdParser.Parsed<T>
+	static parse<T extends Strings.RecursiveCollectableId>(
+		id: T
+	): IdParser.Parsed<T>
+	static parse<T extends Strings.NonCollectableId>(id: T): IdParser.Parsed<T>
+	static parse<T extends Strings.AnyId>(id: T): IdParser.Parsed<T>
+	static parse(id: string): IdParser.AnyParsedId {
 		const [rulesPackage, primaryType, ...pathKeys] = id.split(CONST.Sep) as [
 			string,
 			TypeElements.AnyPrimary,
@@ -500,13 +509,13 @@ abstract class Id<
 		return result as any
 	}
 
-	static fromOptions<T extends Id.AnyParsedId>(
+	static fromOptions<T extends IdParser.AnyParsedId>(
 		options: T
-	): Id<T['rulesPackage'], T['typeKeys'], T['pathKeys']>
+	): IdParser<T['rulesPackage'], T['typeKeys'], T['pathKeys']>
 	static fromOptions<
 		RulesPackage extends string,
-		TypeKeys extends Id.UnknownTypeKeys,
-		PathKeys extends Id.UnknownPathKeys
+		TypeKeys extends IdParser.UnknownTypeKeys,
+		PathKeys extends IdParser.UnknownPathKeys
 	>({
 		rulesPackage,
 		typeKeys,
@@ -515,8 +524,8 @@ abstract class Id<
 		rulesPackage: RulesPackage
 		typeKeys: TypeKeys
 		pathKeys: PathKeys
-	}): Id<RulesPackage, TypeKeys, PathKeys>
-	static fromOptions(options: Id.AnyParsedId): Id {
+	}): IdParser<RulesPackage, TypeKeys, PathKeys>
+	static fromOptions(options: IdParser.AnyParsedId): IdParser {
 		const { rulesPackage, typeKeys, pathKeys } = options
 		const [type, subtype] = typeKeys
 
@@ -555,7 +564,7 @@ abstract class Id<
 				) as any
 			default:
 				throw new ParseError(
-					Id.toString(options),
+					IdParser.toString(options),
 					`Parsed ID doesn't belong to a known ID type, and can't be assigned a subclass.`
 				)
 		}
@@ -563,15 +572,15 @@ abstract class Id<
 
 	/** Converts an ID to an array of strings representing the property keys that must be traversed to reach the identified object. */
 	static toPath<T extends Strings.AnyId>(id: T): ObjectGlobber
-	static toPath<T extends Id.AnyParsedId>(options: T): ObjectGlobber
-	static toPath<T extends Id>(id: T): ObjectGlobber
-	static toPath(options: Id.AnyParsedId | Strings.AnyId): ObjectGlobber {
-		const id: Id.Any =
-			options instanceof Id
+	static toPath<T extends IdParser.AnyParsedId>(options: T): ObjectGlobber
+	static toPath<T extends IdParser>(id: T): ObjectGlobber
+	static toPath(options: IdParser.AnyParsedId | Strings.AnyId): ObjectGlobber {
+		const id: IdParser.Any =
+			options instanceof IdParser
 				? options
 				: typeof options === 'string'
-				  ? Id.from(options as any)
-				  : Id.fromOptions(options)
+				  ? IdParser.from(options as any)
+				  : IdParser.fromOptions(options)
 
 		const dotPathElements: string[] = []
 
@@ -627,9 +636,9 @@ abstract class Id<
 	}
 }
 
-namespace Id {
+namespace IdParser {
 	/** A generic, un-narrowed ID object with lenient typings. */
-	export interface Any extends Id.Options {
+	export interface Any extends IdParser.Options {
 		readonly id: string
 		toString(): string
 		readonly elements: string[]
@@ -702,9 +711,9 @@ namespace Id {
 		  : never
 
 	export type AnyParsedId =
-		| Id.Parsed<Strings.AnyCollectableId>
-		| Id.Parsed<Strings.AnyCollectionId>
-		| Id.Parsed<Strings.NonCollectableId>
+		| IdParser.Parsed<Strings.AnyCollectableId>
+		| IdParser.Parsed<Strings.AnyCollectionId>
+		| IdParser.Parsed<Strings.NonCollectableId>
 }
 
 abstract class CollectionId<
@@ -713,7 +722,7 @@ abstract class CollectionId<
 		AncestorKeys extends Strings.DictKey[] | [] = Strings.DictKey[],
 		Key extends Strings.DictKey = Strings.DictKey
 	>
-	extends Id<
+	extends IdParser<
 		RulesPackage,
 		[TypeElements.Collection, Subtype],
 		[...AncestorKeys, Key],
@@ -740,7 +749,7 @@ abstract class CollectionId<
 namespace CollectionId {
 	export type Options<
 		T extends Strings.AnyCollectionId = Strings.AnyCollectionId
-	> = Omit<Id.Parsed<T>, 'type'>
+	> = Omit<IdParser.Parsed<T>, 'type'>
 	export type CollectionKeys = [] | [string] | [string, string]
 }
 interface CollectionId<
@@ -748,7 +757,7 @@ interface CollectionId<
 	Subtype extends TypeElements.Collectable.Any = TypeElements.Collectable.Any,
 	AncestorKeys extends Strings.DictKey[] | [] = Strings.DictKey[],
 	Key extends Strings.DictKey = Strings.DictKey
-> extends Id<
+> extends IdParser<
 		RulesPackage,
 		[TypeElements.Collection, Subtype],
 		[...AncestorKeys, Key],
@@ -775,7 +784,7 @@ interface CollectionId<
 }
 namespace CollectionId {
 	/** A lenient typing for a parsed ID representing any collection object. */
-	export interface Any extends Id.Any {
+	export interface Any extends IdParser.Any {
 		readonly id: `${string}/${TypeElements.Collection}/${TypeElements.Collectable.Any}/${string}`
 		readonly ancestorCollectionKeys: string[]
 		readonly typeRootKey: TypeElements.Collectable.Any
@@ -801,7 +810,7 @@ abstract class CollectableId<
 		AncestorKeys extends Strings.DictKey[] = Strings.DictKey[],
 		Key extends Strings.DictKey = Strings.DictKey
 	>
-	extends Id<
+	extends IdParser<
 		RulesPackage,
 		[Type],
 		[...AncestorKeys, Key],
@@ -821,7 +830,7 @@ abstract class CollectableId<
 		})
 	}
 
-	/** Returns a new {@link Id} instance for the ID of this object's parent collection, if one exists. */
+	/** Returns a new {@link IdParser} instance for the ID of this object's parent collection, if one exists. */
 	abstract getParentCollectionId(): unknown
 }
 interface CollectableId<
@@ -829,7 +838,7 @@ interface CollectableId<
 	Type extends TypeElements.Collectable.Any = TypeElements.Collectable.Any,
 	AncestorKeys extends Strings.DictKey[] = Strings.DictKey[],
 	Key extends Strings.DictKey = Strings.DictKey
-> extends Id<
+> extends IdParser<
 		RulesPackage,
 		[Type],
 		[...AncestorKeys, Key],
@@ -848,7 +857,7 @@ interface CollectableId<
 }
 namespace CollectableId {
 	/** A lenient typing for a parsed ID representing any collectable object. */
-	export interface Any extends Id.Any {
+	export interface Any extends IdParser.Any {
 		// readonly id: Strings.AnyCollectableId
 		readonly typeKeys: [TypeElements.Collectable.Any]
 		readonly ancestorCollectionKeys: string[]
@@ -871,8 +880,8 @@ class NonCollectableId<
 		Type extends TypeElements.NonCollectable = TypeElements.NonCollectable,
 		Key extends string = string
 	>
-	extends Id<RulesPackage, [Type], [Key], TypeForTypeComposite<Type>>
-	implements Id.Any
+	extends IdParser<RulesPackage, [Type], [Key], TypeForTypeComposite<Type>>
+	implements IdParser.Any
 {
 	constructor(rulesPackage: RulesPackage, type: Type, key: Key) {
 		super({ rulesPackage, typeKeys: [type], pathKeys: [key] })
@@ -889,7 +898,7 @@ interface NonCollectableId<
 	RulesPackage extends string = string,
 	Type extends TypeElements.NonCollectable = TypeElements.NonCollectable,
 	Key extends string = string
-> extends Id<RulesPackage, [Type], [Key], TypeForTypeComposite<Type>> {
+> extends IdParser<RulesPackage, [Type], [Key], TypeForTypeComposite<Type>> {
 	get elements(): [RulesPackage, Type, Key]
 	get id(): Strings.NonCollectableId<RulesPackage, Type, Key>
 
@@ -903,8 +912,7 @@ interface NonCollectableId<
 	get key(): Key
 }
 
-const f = new NonCollectableId('*', 'rarities', '*')
-console.log(f.toPath()) /**
+/**
  * Represents an ID for a {@link Move} or {@link Asset}
  */
 class NonRecursiveCollectableId<
@@ -1103,8 +1111,8 @@ class RecursiveCollectionId<
 		const result = new RecursiveCollectionId<
 			RulesPackage,
 			Subtype,
-			Id.DropLast<AncestorKeys>,
-			Id.Last<AncestorKeys>
+			IdParser.DropLast<AncestorKeys>,
+			IdParser.Last<AncestorKeys>
 		>(this.rulesPackage, this.subtype, ...(this.ancestorCollectionKeys as any))
 
 		return result as AncestorKeys extends [] ? never : typeof result
@@ -1160,11 +1168,10 @@ namespace RecursiveCollectionId {
 // })
 
 export {
-	Id,
+	IdParser as Id,
 	NonCollectableId,
 	NonRecursiveCollectableId,
 	NonRecursiveCollectionId,
 	RecursiveCollectableId,
 	RecursiveCollectionId
 }
-

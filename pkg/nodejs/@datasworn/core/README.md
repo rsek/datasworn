@@ -51,28 +51,28 @@ const rulesPackages = [starforged, classic] as Datasworn.RulesPackage[]
 Once you've got all the rules packages you want properly deserialized, you'll need to create the "tree" object that contains every `RulesPackage` object.
 
 ```typescript
-import { DataswornTree, Id } from '@datasworn/core'
+import { DataswornTree, IdParser } from '@datasworn/core'
 
 const datasworn = new DataswornTree(...rulesPackages)
 
 // Configure the ID parser to use the new tree by default. This is optional, but without it you'll have to specify the tree object every time
-Id.datasworn = datasworn
+IdParser.datasworn = datasworn
 
 ```
 
 ### Lookup by ID
-The simplest way is to use the `Id.get` and `Id.getMatches` static methods. They will attempt to infer the type from the ID.
+The simplest way is to use the `IdParser.get` and `IdParser.getMatches` static methods. They will attempt to infer the type from the ID.
 
 ```typescript
-const oracleRollable = Id.get('starforged/oracles/core/action')
+const oracleRollable = IdParser.get('starforged/oracles/core/action')
 
 ```
 
-Note that for type safety, `Id.get` will throw an error if you call it on a wildcard ID string. This is because wildcard IDs may return multiple results. Use `Id.getMatches` for wildcard IDs.
+Note that for type safety, `IdParser.get` will throw an error if you call it on a wildcard ID string. This is because wildcard IDs may return multiple results. Use `IdParser.getMatches` for wildcard IDs.
 
 ```typescript
-// `Id.getMatches` returns an array of matched items, instead.
-const allOracleRollables = Id.getMatches('*/oracles/**/*') // returns *all* OracleRollable objects!
+// `IdParser.getMatches` returns an array of matched items, instead.
+const allOracleRollables = IdParser.getMatches('*/oracles/**/*') // returns *all* OracleRollable objects!
 ```
 
 ### ID Parser instances
@@ -81,21 +81,21 @@ For more advanced manipulations, you can create and interact with parser instanc
 
 ```typescript
 // create an ID parser instance from a string ID
-const oracleRollableId = Id.from('starforged/oracles/core/action') // returns an instance of the RecursiveCollectableId subclass
+const oracleRollableId = IdParser.from('starforged/oracles/core/action') // returns an instance of the RecursiveCollectableId subclass
 
 // wildcard IDs work too -- they use the same subclasses as regular IDs. This wildcard would match *any* OracleRollable object.
-const anyOracleRollableId = Id.from('*/oracles/**/*')
+const anyOracleRollableId = IdParser.from('*/oracles/**/*')
 
 // Use the instance's `get` method to look up the appropriate item
-const oracleRollable = oracleRollableId.get()
+const oracleRollable = oracleRollableIdParser.get()
 
 // create an ID parser for the *parent* ID
-const oracleRollableParentId = oracleRollableId.getParentCollectionId() // returns an instance of the RecursiveCollectionId subclass
+const oracleRollableParentId = oracleRollableIdParser.getParentCollectionId() // returns an instance of the RecursiveCollectionId subclass
 
 
 // Create a collectable child ID for the parent -- in other words, the sibling ID of `oracleRollableId`
-const oracleRollableId = oracleCollectionId.createChildCollectableId('theme')
-console.log(oracleRollableId.toString()) // 'starforged/oracles/core/theme'
+const oracleRollableId = oracleCollectionIdParser.createChildCollectableId('theme')
+console.log(oracleRollableIdParser.toString()) // 'starforged/oracles/core/theme'
 
 ```
 
