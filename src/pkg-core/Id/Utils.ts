@@ -354,10 +354,9 @@ export type IdForType<T extends AnyIdentified> =
 export type AnyIdentified = TypeForTypeName<AnyTypeName>
 
 // datasworn objects
-export type DataswornTree = Record<
-	Strings.RulesPackageId,
-	Datasworn.RulesPackage
->
+export type DataswornTree =
+	| Record<Strings.RulesPackageId, Datasworn.RulesPackage>
+	| Map<Strings.RulesPackageId, Datasworn.RulesPackage>
 
 // export type CollectionParent<T extends Id.RecursiveCollectionId | Id.AnyCollectableId> = T extends Join<[
 //   infer RulesPackage extends string,

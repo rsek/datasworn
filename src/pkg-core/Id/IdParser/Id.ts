@@ -12,7 +12,9 @@ import {
 } from '../TypeMaps.js'
 import type * as Utils from '../Utils.js'
 
-type DataswornTree = Record<string, Datasworn.RulesPackage>
+type DataswornTree =
+	| Record<string, Datasworn.RulesPackage>
+	| Map<string, Datasworn.RulesPackage>
 
 /**
  * Creates, parses, and locates Datasworn IDs in the Datasworn tree.
