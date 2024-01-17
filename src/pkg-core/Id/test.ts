@@ -1,5 +1,5 @@
 import type * as Strings from './Strings.js'
-import { Id } from '../IdParser.js'
+import { IdParser } from '../IdParser.js'
 
 const recursiveCollectionId =
 	'sundered_isles/collections/oracles/core' satisfies Strings.RecursiveCollectionId
@@ -12,11 +12,11 @@ const nonRecursiveCollectableId =
 const nonCollectableId =
 	'delve/site_themes/hallowed' satisfies Strings.NonCollectableId
 const testParse = [
-	Id.from(recursiveCollectableId),
-	Id.from(nonRecursiveCollectionId),
-	Id.from(recursiveCollectionId),
-	Id.from(nonRecursiveCollectableId),
-	Id.from(nonCollectableId)
+	IdParser.from(recursiveCollectableId),
+	IdParser.from(nonRecursiveCollectionId),
+	IdParser.from(recursiveCollectionId),
+	IdParser.from(nonRecursiveCollectableId),
+	IdParser.from(nonCollectableId)
 ]
 
 for (const id of testParse) console.log(id.toString(), id.toPath().join('.'))

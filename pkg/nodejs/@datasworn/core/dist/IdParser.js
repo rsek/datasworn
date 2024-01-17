@@ -327,7 +327,7 @@ class IdParser {
         // e.g. "starforged.oracles"
         dotPathElements.push(id.typeRootKey);
         if (id.ancestorCollectionKeys.length > 0) {
-            console.log(id.ancestorCollectionKeys);
+            // console.log(id.ancestorCollectionKeys)
             const [rootAncestor, ...ancestors] = id.ancestorCollectionKeys;
             // first ancestor collection key is always a key in the root object for the type
             dotPathElements.push(rootAncestor);

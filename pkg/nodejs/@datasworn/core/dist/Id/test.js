@@ -7,11 +7,11 @@ const nonRecursiveCollectionId = 'starforged/collections/moves/combat';
 const nonRecursiveCollectableId = 'starforged/moves/combat/strike';
 const nonCollectableId = 'delve/site_themes/hallowed';
 const testParse = [
-    IdParser_js_1.Id.from(recursiveCollectableId),
-    IdParser_js_1.Id.from(nonRecursiveCollectionId),
-    IdParser_js_1.Id.from(recursiveCollectionId),
-    IdParser_js_1.Id.from(nonRecursiveCollectableId),
-    IdParser_js_1.Id.from(nonCollectableId)
+    IdParser_js_1.IdParser.from(recursiveCollectableId),
+    IdParser_js_1.IdParser.from(nonRecursiveCollectionId),
+    IdParser_js_1.IdParser.from(recursiveCollectionId),
+    IdParser_js_1.IdParser.from(nonRecursiveCollectableId),
+    IdParser_js_1.IdParser.from(nonCollectableId)
 ];
 for (const id of testParse)
     console.log(id.toString(), id.toPath().join('.'));
