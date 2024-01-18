@@ -172,6 +172,17 @@ assets:
               When you [Strike](id:sundered_isles/moves/combat/strike) a large foe in close quarters, you may drive your harpoon home. If you do, mark progress on a hit. If the fight continues, and you choose to pull the harpoon free, you must [Gain Ground](id:sundered_isles/moves/combat/gain_ground) (+iron), score a hit, and forgo one of the choices awarded by that move.
           - text: |-
               When you [Resupply](id:sundered_isles/moves/recover/resupply) by hunting large game, add +1 and take +1 supply on a hit. On a miss with a match, there’s always a bigger fish; you draw the attention of a notable threat.
+      jinx:
+        name: Jinx
+        category: Path
+        abilities:
+          - enabled: true
+            text: You are cursed by ill luck, but persisting offers its own rewards. If you score a miss with a match, this asset counts as an impact for you and your allies. You may undo this only by scoring a strong hit with a match; if you do, you and your allies each clear the impact and mark 1 tick on your bonds legacy track.
+          - text: When you score a weak hit on a progress move, you may test your luck by reducing the progress score by 1 and rerolling all dice.
+          - text: When you roll matched 1’s on your challenge dice while suffering from this asset’s impact, you may activate this ability at no cost. If you do, good fortune now favors you; you and your allies clear the impact and mark 2 ticks (instead of 1) on your bonds legacy track. Then, discard this asset and permanently increase your momentum reset by 1.
+        source:
+          <<: *Source
+          date: 2023-12-03
       merchant:
         source: *Source
         name: Merchant
