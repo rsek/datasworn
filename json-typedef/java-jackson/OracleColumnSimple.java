@@ -13,9 +13,6 @@ import java.util.Map;
  */
 @JsonSerialize
 public class OracleColumnSimple {
-    @JsonProperty("column_labels")
-    private OracleColumnSimpleColumnLabels columnLabels;
-
     @JsonProperty("dice")
     private DiceExpression dice;
 
@@ -60,24 +57,6 @@ public class OracleColumnSimple {
     private Map<String, Map<String, Tag>> tags;
 
     public OracleColumnSimple() {
-    }
-
-    /**
-     * Getter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
-     */
-    public OracleColumnSimpleColumnLabels getColumnLabels() {
-        return columnLabels;
-    }
-
-    /**
-     * Setter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
-     */
-    public void setColumnLabels(OracleColumnSimpleColumnLabels columnLabels) {
-        this.columnLabels = columnLabels;
     }
 
     /**

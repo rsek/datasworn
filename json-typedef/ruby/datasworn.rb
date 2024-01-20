@@ -3450,30 +3450,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
-  class OracleColumnDetailsColumnLabels
-    attr_accessor :detail
-    attr_accessor :result
-    attr_accessor :roll
-
-    def self.from_json_data(data)
-      out = OracleColumnDetailsColumnLabels.new
-      out.detail = Datasworn::from_json_data(Label, data["detail"])
-      out.result = Datasworn::from_json_data(Label, data["result"])
-      out.roll = Datasworn::from_json_data(Label, data["roll"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["detail"] = Datasworn::to_json_data(detail)
-      data["result"] = Datasworn::to_json_data(result)
-      data["roll"] = Datasworn::to_json_data(roll)
-      data
-    end
-  end
-
   class OracleColumnDetailsOracleType
     attr_accessor :value
 
@@ -3497,10 +3473,6 @@ module Datasworn
   end
 
   class OracleColumnDetails
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
-    attr_accessor :column_labels
-
     # The roll used to select a result on this oracle.
     attr_accessor :dice
 
@@ -3538,7 +3510,6 @@ module Datasworn
 
     def self.from_json_data(data)
       out = OracleColumnDetails.new
-      out.column_labels = Datasworn::from_json_data(OracleColumnDetailsColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.id = Datasworn::from_json_data(OracleRollableID, data["id"])
       out.name = Datasworn::from_json_data(Label, data["name"])
@@ -3556,7 +3527,6 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["dice"] = Datasworn::to_json_data(dice)
       data["id"] = Datasworn::to_json_data(id)
       data["name"] = Datasworn::to_json_data(name)
@@ -3569,27 +3539,6 @@ module Datasworn
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data
-    end
-  end
-
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
-  class OracleColumnSimpleColumnLabels
-    attr_accessor :result
-    attr_accessor :roll
-
-    def self.from_json_data(data)
-      out = OracleColumnSimpleColumnLabels.new
-      out.result = Datasworn::from_json_data(Label, data["result"])
-      out.roll = Datasworn::from_json_data(Label, data["roll"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["result"] = Datasworn::to_json_data(result)
-      data["roll"] = Datasworn::to_json_data(roll)
       data
     end
   end
@@ -3618,10 +3567,6 @@ module Datasworn
 
   # Represents a single column in an OracleCollection.
   class OracleColumnSimple
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
-    attr_accessor :column_labels
-
     # The roll used to select a result on this oracle.
     attr_accessor :dice
 
@@ -3659,7 +3604,6 @@ module Datasworn
 
     def self.from_json_data(data)
       out = OracleColumnSimple.new
-      out.column_labels = Datasworn::from_json_data(OracleColumnSimpleColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.id = Datasworn::from_json_data(OracleRollableID, data["id"])
       out.name = Datasworn::from_json_data(Label, data["name"])
@@ -3677,7 +3621,6 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["dice"] = Datasworn::to_json_data(dice)
       data["id"] = Datasworn::to_json_data(id)
       data["name"] = Datasworn::to_json_data(name)

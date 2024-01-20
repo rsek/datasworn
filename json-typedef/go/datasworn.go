@@ -2347,16 +2347,6 @@ type OracleCollectionTables struct {
 // A unique ID for an OracleCollection.
 type OracleCollectionID = string
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
-type OracleColumnDetailsColumnLabels struct {
-	Detail Label `json:"detail"`
-
-	Result Label `json:"result"`
-
-	Roll Label `json:"roll"`
-}
-
 type OracleColumnDetailsOracleType string
 
 const (
@@ -2364,10 +2354,6 @@ const (
 )
 
 type OracleColumnDetails struct {
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleColumnDetailsColumnLabels `json:"column_labels"`
-
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
@@ -2407,14 +2393,6 @@ type OracleColumnDetails struct {
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
-type OracleColumnSimpleColumnLabels struct {
-	Result Label `json:"result"`
-
-	Roll Label `json:"roll"`
-}
-
 type OracleColumnSimpleOracleType string
 
 const (
@@ -2423,10 +2401,6 @@ const (
 
 // Represents a single column in an OracleCollection.
 type OracleColumnSimple struct {
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleColumnSimpleColumnLabels `json:"column_labels"`
-
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 

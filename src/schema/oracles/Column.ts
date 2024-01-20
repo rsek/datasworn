@@ -3,7 +3,7 @@ import { Localize, Metadata } from '../common/index.js'
 import { type ColumnLabels } from './TableRow.js'
 
 // metadata necessary to render a single column
-const ColumnMeta = Type.Object({
+export const ColumnMixin = Type.Object({
 	name: Type.Ref(Localize.Label, {
 		description: 'The primary label at the head of this column.'
 	}),
@@ -26,12 +26,3 @@ const ColumnMeta = Type.Object({
 		})
 	)
 })
-
-export function ColumnMixin<OracleRow extends TObject>(
-	column_labels: ReturnType<typeof ColumnLabels<OracleRow>>
-) {
-	return Type.Object({
-		...TypeClone.Type(ColumnMeta).properties,
-		column_labels
-	})
-}

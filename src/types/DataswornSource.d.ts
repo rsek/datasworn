@@ -1694,31 +1694,6 @@ export interface OracleColumnDetails {
 	 */
 	icon?: SvgImageUrl
 	/**
-	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-	 * @default
-	 * ```javascript
-	 * 	{
-	 * 		roll: "Roll",
-	 * 		result: "Result",
-	 * 		detail: "Detail"
-	 * 	}
-	 * ```
-	 */
-	column_labels?: {
-		/**
-		 * @default "Roll"
-		 */
-		roll: Label
-		/**
-		 * @default "Result"
-		 */
-		result: Label
-		/**
-		 * @default "Detail"
-		 */
-		detail: Label
-	}
-	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
 	 */
 	replaces?: OracleRollableId
@@ -1767,26 +1742,6 @@ export interface OracleColumnSimple {
 	 * An optional icon for this column.
 	 */
 	icon?: SvgImageUrl
-	/**
-	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-	 * @default
-	 * ```javascript
-	 * 	{
-	 * 		roll: "Roll",
-	 * 		result: "Result"
-	 * 	}
-	 * ```
-	 */
-	column_labels?: {
-		/**
-		 * @default "Roll"
-		 */
-		roll: Label
-		/**
-		 * @default "Result"
-		 */
-		result: Label
-	}
 	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
 	 */

@@ -1205,15 +1205,6 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class OracleColumnDetailsColumnLabels
-    attr_accessor detail: Label
-    attr_accessor result: Label
-    attr_accessor roll: Label
-
-    def self.from_json_data: (untyped) -> OracleColumnDetailsColumnLabels
-    def to_json_data: () -> untyped
-  end
-
   class OracleColumnDetailsOracleType
     attr_accessor value: String
 
@@ -1224,7 +1215,6 @@ module Datasworn
   end
 
   class OracleColumnDetails
-    attr_accessor column_labels: OracleColumnDetailsColumnLabels
     attr_accessor dice: DiceExpression
     attr_accessor id: OracleRollableID
     attr_accessor name: Label
@@ -1242,14 +1232,6 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class OracleColumnSimpleColumnLabels
-    attr_accessor result: Label
-    attr_accessor roll: Label
-
-    def self.from_json_data: (untyped) -> OracleColumnSimpleColumnLabels
-    def to_json_data: () -> untyped
-  end
-
   class OracleColumnSimpleOracleType
     attr_accessor value: String
 
@@ -1260,7 +1242,6 @@ module Datasworn
   end
 
   class OracleColumnSimple
-    attr_accessor column_labels: OracleColumnSimpleColumnLabels
     attr_accessor dice: DiceExpression
     attr_accessor id: OracleRollableID
     attr_accessor name: Label

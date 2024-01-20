@@ -78,12 +78,11 @@ function RollableTable<OracleRow extends TObject>(
 function RollableTableColumn<OracleRow extends TObject>(
 	mappingKey: string,
 	row: TRef<OracleRow>,
-	column_labels: ReturnType<typeof ColumnLabels<OracleRow>>,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
 	const base = Utils.Discriminable(
 		Type.Object({
-			...ColumnMixin<OracleRow>(column_labels).properties,
+			...ColumnMixin.properties,
 			...RollableMixin(row).properties
 		}),
 		'oracle_type',
@@ -171,7 +170,6 @@ export type OracleTableDetails = Static<typeof OracleTableDetails>
 export const OracleColumnSimple = RollableTableColumn(
 	'column_simple',
 	Type.Ref(OracleTableRowSimple),
-	SimpleRowLabels,
 	{
 		$id: 'OracleColumnSimple',
 		description: 'Represents a single column in an OracleCollection.'
@@ -200,7 +198,6 @@ export type OracleColumnSimple = Static<typeof OracleColumnSimple>
 export const OracleColumnDetails = RollableTableColumn(
 	'column_details',
 	Type.Ref(OracleTableRowDetails),
-	DetailsRowLabels,
 	{
 		$id: 'OracleColumnDetails'
 	}

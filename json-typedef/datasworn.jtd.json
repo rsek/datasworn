@@ -2436,22 +2436,6 @@
 						"description": "The primary label at the head of this column."
 					}
 				},
-				"column_labels": {
-					"properties": {
-						"roll": {
-							"ref": "Label"
-						},
-						"result": {
-							"ref": "Label"
-						},
-						"detail": {
-							"ref": "Label"
-						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
-					}
-				},
 				"dice": {
 					"ref": "DiceExpression",
 					"metadata": {
@@ -2534,19 +2518,6 @@
 					"ref": "Label",
 					"metadata": {
 						"description": "The primary label at the head of this column."
-					}
-				},
-				"column_labels": {
-					"properties": {
-						"roll": {
-							"ref": "Label"
-						},
-						"result": {
-							"ref": "Label"
-						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"dice": {

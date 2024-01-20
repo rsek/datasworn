@@ -3749,10 +3749,6 @@
 							"oracle_type": "column_simple",
 							"dice": "1d100",
 							"summary": "Given and family names can be used independently as standalone names. In many cases you can reverse the order.",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"suggestions": {
 								"oracles": [
 									"starforged/oracles/characters/name/callsign",
@@ -4868,10 +4864,6 @@
 							"oracle_type": "column_simple",
 							"dice": "1d100",
 							"summary": "Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"suggestions": {
 								"oracles": [
 									"starforged/oracles/characters/name/given_name",
@@ -5987,10 +5979,6 @@
 							"oracle_type": "column_simple",
 							"dice": "1d100",
 							"summary": "Given and family names can be used independently as standalone names. In many cases you can reverse the order.",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"suggestions": {
 								"oracles": [
 									"starforged/oracles/characters/name/given_name",
@@ -12904,10 +12892,6 @@
 							"color": "#131A1C",
 							"icon": "icons/creature/environment/space.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/space/1-5",
@@ -13052,10 +13036,6 @@
 							"color": "#80868E",
 							"icon": "icons/creature/environment/interior.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/interior/1-3",
@@ -13200,10 +13180,6 @@
 							"color": "#CA181A",
 							"icon": "icons/creature/environment/land.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/land/1-2",
@@ -13348,10 +13324,6 @@
 							"color": "#0079BB",
 							"icon": "icons/creature/environment/liquid.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/liquid/1-5",
@@ -13496,10 +13468,6 @@
 							"color": "#8D1D82",
 							"icon": "icons/creature/environment/air.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/creatures/basic_form/air/1-2",
@@ -17357,10 +17325,6 @@
 							"oracle_type": "column_simple",
 							"icon": "icon/oracles/location/planetside.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"location": "planetside"
@@ -17393,10 +17357,6 @@
 							"oracle_type": "column_simple",
 							"icon": "icon/oracles/location/orbital.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"location": "orbital"
@@ -17429,10 +17389,6 @@
 							"oracle_type": "column_simple",
 							"icon": "icon/oracles/location/deep_space.svg",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"location": "deep_space"
@@ -17488,10 +17444,6 @@
 							"oracle_type": "column_simple",
 							"dice": "1d100",
 							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/zones/starship/0",
@@ -17557,10 +17509,6 @@
 							"oracle_type": "column_simple",
 							"dice": "1d100",
 							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/derelicts/zones/settlement/0",
@@ -25484,10 +25432,6 @@
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
 							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/almost_certain/1-90",
@@ -25510,10 +25454,6 @@
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
-							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
 							},
 							"rows": [
 								{
@@ -25538,10 +25478,6 @@
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
 							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/fifty_fifty/1-50",
@@ -25565,10 +25501,6 @@
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
 							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/moves/ask_the_oracle/unlikely/1-25",
@@ -25591,10 +25523,6 @@
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
-							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
 							},
 							"rows": [
 								{
@@ -26267,10 +26195,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -26314,10 +26238,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -26361,10 +26281,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -26958,10 +26874,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -27005,10 +26917,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -27052,10 +26960,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -27649,10 +27553,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -27696,10 +27596,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -27743,10 +27639,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -28340,10 +28232,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -28387,10 +28275,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -28434,10 +28318,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -29031,10 +28911,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -29078,10 +28954,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -29125,10 +28997,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -29722,10 +29590,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -29769,10 +29633,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -29816,10 +29676,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -30413,10 +30269,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -30460,10 +30312,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -30507,10 +30355,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -31104,10 +30948,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -31151,10 +30991,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -31198,10 +31034,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -31795,10 +31627,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -31842,10 +31670,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -31889,10 +31713,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -32486,10 +32306,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -32533,10 +32349,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -32580,10 +32392,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -33526,10 +33334,6 @@
 									"name": "Terminus",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "terminus"
@@ -33573,10 +33377,6 @@
 									"name": "Outlands",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "outlands"
@@ -33620,10 +33420,6 @@
 									"name": "Expanse",
 									"oracle_type": "column_simple",
 									"dice": "1d100",
-									"column_labels": {
-										"roll": "Roll",
-										"result": "Result"
-									},
 									"tags": {
 										"starforged": {
 											"region": "expanse"
@@ -33704,10 +33500,6 @@
 							"name": "Lifebearing",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/planets/peril/lifebearing/1-3",
@@ -33945,10 +33737,6 @@
 							"name": "Lifeless",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/planets/peril/lifeless/0",
@@ -34209,10 +33997,6 @@
 							"name": "Lifebearing",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/planets/opportunity/lifebearing/1-4",
@@ -34371,10 +34155,6 @@
 							"name": "Lifeless",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "starforged/oracles/planets/opportunity/lifeless/0",
@@ -36759,10 +36539,6 @@
 							"name": "Terminus",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "terminus"
@@ -36806,10 +36582,6 @@
 							"name": "Outlands",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "outlands"
@@ -36853,10 +36625,6 @@
 							"name": "Expanse",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "expanse"
@@ -37476,10 +37244,6 @@
 							"name": "Terminus",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "terminus"
@@ -37662,10 +37426,6 @@
 							"name": "Outlands",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "outlands"
@@ -37848,10 +37608,6 @@
 							"name": "Expanse",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "expanse"
@@ -38058,10 +37814,6 @@
 							"name": "Prefix",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"suggestions": {
 								"oracles": ["starforged/oracles/space/sector_name/suffix"]
 							},
@@ -38609,10 +38361,6 @@
 							"oracle_type": "column_simple",
 							"dice": "1d100",
 							"summary": "To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"suggestions": {
 								"oracles": ["starforged/oracles/space/sector_name/prefix"]
 							},
@@ -40538,10 +40286,6 @@
 							"name": "Terminus",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "terminus"
@@ -40772,10 +40516,6 @@
 							"name": "Outlands",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "outlands"
@@ -41006,10 +40746,6 @@
 							"name": "Expanse",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"tags": {
 								"starforged": {
 									"region": "expanse"

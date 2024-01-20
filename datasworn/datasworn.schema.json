@@ -3002,14 +3002,7 @@
 		"OracleColumnDetails": {
 			"title": "OracleColumnDetails",
 			"type": "object",
-			"required": [
-				"id",
-				"name",
-				"oracle_type",
-				"dice",
-				"column_labels",
-				"rows"
-			],
+			"required": ["id", "name", "oracle_type", "dice", "rows"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3048,30 +3041,6 @@
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 				},
-				"column_labels": {
-					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
-					"default": {
-						"roll": "Roll",
-						"result": "Result",
-						"detail": "Detail"
-					},
-					"required": ["roll", "result", "detail"],
-					"properties": {
-						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
-						},
-						"result": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
-						},
-						"detail": {
-							"$ref": "#/definitions/Label",
-							"default": "Detail"
-						}
-					}
-				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
@@ -3103,14 +3072,7 @@
 			"title": "OracleColumnSimple",
 			"type": "object",
 			"description": "Represents a single column in an OracleCollection.",
-			"required": [
-				"id",
-				"name",
-				"oracle_type",
-				"dice",
-				"column_labels",
-				"rows"
-			],
+			"required": ["id", "name", "oracle_type", "dice", "rows"],
 			"properties": {
 				"id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3148,25 +3110,6 @@
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
-				},
-				"column_labels": {
-					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
-					"default": {
-						"roll": "Roll",
-						"result": "Result"
-					},
-					"required": ["roll", "result"],
-					"properties": {
-						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
-						},
-						"result": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
-						}
-					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"

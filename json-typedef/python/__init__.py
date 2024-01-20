@@ -4765,32 +4765,6 @@ class OracleCollectionID:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-@dataclass
-class OracleColumnDetailsColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
-    detail: 'Label'
-    result: 'Label'
-    roll: 'Label'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleColumnDetailsColumnLabels':
-        return cls(
-            _from_json_data(Label, data.get("detail")),
-            _from_json_data(Label, data.get("result")),
-            _from_json_data(Label, data.get("roll")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["detail"] = _to_json_data(self.detail)
-        data["result"] = _to_json_data(self.result)
-        data["roll"] = _to_json_data(self.roll)
-        return data
-
 class OracleColumnDetailsOracleType(Enum):
     COLUMN_DETAILS = "column_details"
     @classmethod
@@ -4802,12 +4776,6 @@ class OracleColumnDetailsOracleType(Enum):
 
 @dataclass
 class OracleColumnDetails:
-    column_labels: 'OracleColumnDetailsColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -4865,7 +4833,6 @@ class OracleColumnDetails:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleColumnDetails':
         return cls(
-            _from_json_data(OracleColumnDetailsColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(OracleRollableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
@@ -4882,7 +4849,6 @@ class OracleColumnDetails:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["column_labels"] = _to_json_data(self.column_labels)
         data["dice"] = _to_json_data(self.dice)
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
@@ -4904,29 +4870,6 @@ class OracleColumnDetails:
              data["tags"] = _to_json_data(self.tags)
         return data
 
-@dataclass
-class OracleColumnSimpleColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
-    result: 'Label'
-    roll: 'Label'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleColumnSimpleColumnLabels':
-        return cls(
-            _from_json_data(Label, data.get("result")),
-            _from_json_data(Label, data.get("roll")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["result"] = _to_json_data(self.result)
-        data["roll"] = _to_json_data(self.roll)
-        return data
-
 class OracleColumnSimpleOracleType(Enum):
     COLUMN_SIMPLE = "column_simple"
     @classmethod
@@ -4940,12 +4883,6 @@ class OracleColumnSimpleOracleType(Enum):
 class OracleColumnSimple:
     """
     Represents a single column in an OracleCollection.
-    """
-
-    column_labels: 'OracleColumnSimpleColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
     """
 
     dice: 'DiceExpression'
@@ -5005,7 +4942,6 @@ class OracleColumnSimple:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleColumnSimple':
         return cls(
-            _from_json_data(OracleColumnSimpleColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(OracleRollableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
@@ -5022,7 +4958,6 @@ class OracleColumnSimple:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["column_labels"] = _to_json_data(self.column_labels)
         data["dice"] = _to_json_data(self.dice)
         data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)

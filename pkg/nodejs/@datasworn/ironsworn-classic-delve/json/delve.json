@@ -4268,10 +4268,6 @@
 							"name": "Edge",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "delve/oracles/moves/delve_the_depths/edge/1-45",
@@ -4310,10 +4306,6 @@
 							"name": "Shadow",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "delve/oracles/moves/delve_the_depths/shadow/1-30",
@@ -4352,10 +4344,6 @@
 							"name": "Wits",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "delve/oracles/moves/delve_the_depths/wits/1-40",

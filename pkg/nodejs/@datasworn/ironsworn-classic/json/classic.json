@@ -4422,10 +4422,6 @@
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
 							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/moves/ask_the_oracle/almost_certain/1-10",
@@ -4448,10 +4444,6 @@
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
-							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
 							},
 							"rows": [
 								{
@@ -4476,10 +4468,6 @@
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
 							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/moves/ask_the_oracle/fifty_fifty/1-50",
@@ -4503,10 +4491,6 @@
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
 							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/moves/ask_the_oracle/unlikely/1-75",
@@ -4529,10 +4513,6 @@
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
-							},
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
 							},
 							"rows": [
 								{
@@ -7446,10 +7426,6 @@
 							"name": "Giants",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/name/other/giants/1-4",
@@ -7733,10 +7709,6 @@
 							"name": "Varou",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/name/other/varou/1-4",
@@ -8020,10 +7992,6 @@
 							"name": "Trolls",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/name/other/trolls/1-4",
@@ -11202,10 +11170,6 @@
 							"name": "Prefix",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/settlement/quick_name/prefix/1-4",
@@ -11489,10 +11453,6 @@
 							"name": "Suffix",
 							"oracle_type": "column_simple",
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"result": "Result"
-							},
 							"rows": [
 								{
 									"id": "classic/oracles/settlement/quick_name/suffix/1-4",

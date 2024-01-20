@@ -11,14 +11,6 @@ namespace Datasworn
     public class OracleColumnSimple
     {
         /// <summary>
-        /// The label at the head of each table column. The `roll` key refers
-        /// to the roll column showing the dice range (`min` and `max` on each
-        /// table row).
-        /// </summary>
-        [JsonPropertyName("column_labels")]
-        public OracleColumnSimpleColumnLabels ColumnLabels { get; set; }
-
-        /// <summary>
         /// The roll used to select a result on this oracle.
         /// </summary>
         [JsonPropertyName("dice")]

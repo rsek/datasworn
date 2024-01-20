@@ -2743,20 +2743,6 @@ pub struct OracleCollectionTables {
 /// A unique ID for an OracleCollection.
 pub type OracleCollectionId = String;
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
-#[derive(Serialize, Deserialize)]
-pub struct OracleColumnDetailsColumnLabels {
-    #[serde(rename = "detail")]
-    pub detail: Label,
-
-    #[serde(rename = "result")]
-    pub result: Label,
-
-    #[serde(rename = "roll")]
-    pub roll: Label,
-}
-
 #[derive(Serialize, Deserialize)]
 pub enum OracleColumnDetailsOracleType {
     #[serde(rename = "column_details")]
@@ -2765,11 +2751,6 @@ pub enum OracleColumnDetailsOracleType {
 
 #[derive(Serialize, Deserialize)]
 pub struct OracleColumnDetails {
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
-    #[serde(rename = "column_labels")]
-    pub columnLabels: OracleColumnDetailsColumnLabels,
-
     /// The roll used to select a result on this oracle.
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
@@ -2828,17 +2809,6 @@ pub struct OracleColumnDetails {
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
-#[derive(Serialize, Deserialize)]
-pub struct OracleColumnSimpleColumnLabels {
-    #[serde(rename = "result")]
-    pub result: Label,
-
-    #[serde(rename = "roll")]
-    pub roll: Label,
-}
-
 #[derive(Serialize, Deserialize)]
 pub enum OracleColumnSimpleOracleType {
     #[serde(rename = "column_simple")]
@@ -2848,11 +2818,6 @@ pub enum OracleColumnSimpleOracleType {
 /// Represents a single column in an OracleCollection.
 #[derive(Serialize, Deserialize)]
 pub struct OracleColumnSimple {
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
-    #[serde(rename = "column_labels")]
-    pub columnLabels: OracleColumnSimpleColumnLabels,
-
     /// The roll used to select a result on this oracle.
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
