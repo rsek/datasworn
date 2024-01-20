@@ -98,20 +98,44 @@ export function StaticRowPartial<
 		additionalProperties: true
 	})
 }
-export const OracleTableRowSimple = Generic.IdentifiedNode(
-	Type.Ref(Id.OracleTableRowId),
-	TypeClone.Type(TableRowNullableMixin),
-	{
+// export const OracleTableRowSimple = Generic.IdentifiedNode(
+// 	Type.Ref(Id.OracleTableRowId),
+// 	TypeClone.Type(TableRowNullableMixin),
+// 	{
+// 		$id: 'OracleTableRowSimple',
+// 		description: 'Represents a row in an oracle table.'
+// 	}
+// )
+export const OracleTableRowSimple =
+	TypeClone.Type(TableRowNullableMixin,{
 		$id: 'OracleTableRowSimple',
 		description: 'Represents a row in an oracle table.'
 	}
 )
 
+
 export type OracleTableRowSimple = Static<typeof OracleTableRowSimple>
 
-export const OracleTableRowDetails = Generic.IdentifiedNode(
-	Type.Ref(Id.OracleTableRowId),
-	Utils.Assign([
+// export const OracleTableRowDetails = Generic.IdentifiedNode(
+// 	Type.Ref(Id.OracleTableRowId),
+// 	Utils.Assign([
+// 		TableRowNullableMixin,
+// 		Type.Object({
+// 			detail: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+// 				default: undefined,
+// 				description:
+// 					'The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.'
+// 			})
+// 		})
+// 	]),
+// 	{
+// 		$id: 'OracleTableRowDetails',
+// 		description:
+// 			'Represents a row in an oracle table that provides additional details.'
+// 	}
+// )
+export const OracleTableRowDetails = Utils.Assign(
+	[
 		TableRowNullableMixin,
 		Type.Object({
 			detail: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
@@ -120,7 +144,7 @@ export const OracleTableRowDetails = Generic.IdentifiedNode(
 					'The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.'
 			})
 		})
-	]),
+	],
 	{
 		$id: 'OracleTableRowDetails',
 		description:

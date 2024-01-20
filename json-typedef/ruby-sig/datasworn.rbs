@@ -1388,7 +1388,6 @@ module Datasworn
 
   class OracleTableRowDetails
     attr_accessor detail: MarkdownString
-    attr_accessor id: OracleTableRowID
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
@@ -1403,15 +1402,7 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRowID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> OracleTableRowID
-    def to_json_data: () -> untyped
-  end
-
   class OracleTableRowSimple
-    attr_accessor id: OracleTableRowID
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString

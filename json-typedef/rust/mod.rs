@@ -3177,10 +3177,6 @@ pub struct OracleTableRowDetails {
     #[serde(rename = "detail")]
     pub detail: MarkdownString,
 
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleTableRowId,
-
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,
@@ -3221,21 +3217,9 @@ pub struct OracleTableRowDetails {
     pub template: Option<Box<OracleRollTemplate>>,
 }
 
-/// Normally, rows will end with two numbers separated by a dash, indicating
-/// their dice range.
-/// 
-/// Rows with a single number represent unrollable rows that are sometimes
-/// included for rendering purposes; in this case, the number represents the
-/// row's index.
-pub type OracleTableRowId = String;
-
 /// Represents a row in an oracle table.
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableRowSimple {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleTableRowId,
-
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,

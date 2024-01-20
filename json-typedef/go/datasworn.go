@@ -2691,9 +2691,6 @@ type OracleTableRollableTableSimple struct {
 type OracleTableRowDetails struct {
 	Detail MarkdownString `json:"detail"`
 
-	// The unique Datasworn ID for this item.
-	ID OracleTableRowID `json:"id"`
-
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 
@@ -2718,19 +2715,8 @@ type OracleTableRowDetails struct {
 	Template *OracleRollTemplate `json:"template,omitempty"`
 }
 
-// Normally, rows will end with two numbers separated by a dash, indicating
-// their dice range.
-// 
-// Rows with a single number represent unrollable rows that are sometimes
-// included for rendering purposes; in this case, the number represents the
-// row's index.
-type OracleTableRowID = string
-
 // Represents a row in an oracle table.
 type OracleTableRowSimple struct {
-	// The unique Datasworn ID for this item.
-	ID OracleTableRowID `json:"id"`
-
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 

@@ -12,9 +12,6 @@ import java.util.List;
  */
 @JsonSerialize
 public class OracleTableRowSimple {
-    @JsonProperty("id")
-    private OracleTableRowId id;
-
     @JsonProperty("max")
     private Short max;
 
@@ -49,22 +46,6 @@ public class OracleTableRowSimple {
     private OracleRollTemplate template;
 
     public OracleTableRowSimple() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public OracleTableRowId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(OracleTableRowId id) {
-        this.id = id;
     }
 
     /**

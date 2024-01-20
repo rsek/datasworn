@@ -15,9 +15,6 @@ public class OracleTableRowDetails {
     @JsonProperty("detail")
     private MarkdownString detail;
 
-    @JsonProperty("id")
-    private OracleTableRowId id;
-
     @JsonProperty("max")
     private Short max;
 
@@ -66,22 +63,6 @@ public class OracleTableRowDetails {
      */
     public void setDetail(MarkdownString detail) {
         this.detail = detail;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public OracleTableRowId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(OracleTableRowId id) {
-        this.id = id;
     }
 
     /**

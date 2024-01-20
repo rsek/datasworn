@@ -3391,12 +3391,8 @@
 			"title": "OracleTableRowDetails",
 			"type": "object",
 			"description": "Represents a row in an oracle table that provides additional details.",
-			"required": ["id", "min", "max", "result", "detail"],
+			"required": ["min", "max", "result", "detail"],
 			"properties": {
-				"id": {
-					"$ref": "#/definitions/OracleTableRowId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
 					"default": null,
@@ -3469,12 +3465,8 @@
 			"title": "OracleTableRowSimple",
 			"type": "object",
 			"description": "Represents a row in an oracle table.",
-			"required": ["id", "min", "max", "result"],
+			"required": ["min", "max", "result"],
 			"properties": {
-				"id": {
-					"$ref": "#/definitions/OracleTableRowId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
 					"default": null,

@@ -14,12 +14,6 @@ namespace Datasworn
         public MarkdownString Detail { get; set; }
 
         /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public OracleTableRowId Id { get; set; }
-
-        /// <summary>
         /// High end of the dice range for this table row.
         /// </summary>
         [JsonPropertyName("max")]

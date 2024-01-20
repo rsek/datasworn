@@ -1885,10 +1885,6 @@ export type OracleTableRow = OracleTableRowSimple | OracleTableRowDetails
  */
 export interface OracleTableRowDetails {
 	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id: OracleTableRowId
-	/**
 	 * The primary text content of this row.
 	 */
 	result: MarkdownString
@@ -1928,10 +1924,6 @@ export interface OracleTableRowDetails {
  * Represents a row in an oracle table.
  */
 export interface OracleTableRowSimple {
-	/**
-	 * The unique Datasworn ID for this item.
-	 */
-	id: OracleTableRowId
 	/**
 	 * The primary text content of this row.
 	 */

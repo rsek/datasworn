@@ -14,22 +14,22 @@ import type * as DataswornSource from '../types/DataswornSource.js'
 export const OracleTableRow: Transformer<
 	DataswornSource.OracleTableRow,
 	Datasworn.OracleTableRow,
-	Datasworn.OracleTable
+	Datasworn.OracleRollable
 > = {
 	rolls(data, key, parent) {
-		return data.rolls as Datasworn.OracleTableRoll[]
-	},
-	id(
-		data: DataswornSource.OracleTableRow,
-		key: string | number,
-		parent: SourcedNode
-	) {
-		// if the row has a valid range, use that instead of the index
-		if (data.max != null && data.min != null) key = `${data.min}-${data.max}`
-		const id = `${parent.id}/${key}`
-
-		return trackID(id)
+		return data.rolls as Datasworn.OracleRoll[]
 	}
+	// id(
+	// 	data: DataswornSource.OracleTableRow,
+	// 	key: string | number,
+	// 	parent: SourcedNode
+	// ) {
+	// 	// if the row has a valid range, use that instead of the index
+	// 	if (data.max != null && data.min != null) key = `${data.min}-${data.max}`
+	// 	const id = `${parent.id}/${key}`
+
+	// 	return trackID(id)
+	// }
 }
 
 export const OracleTable = sourcedTransformer<

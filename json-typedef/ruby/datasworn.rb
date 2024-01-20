@@ -3993,9 +3993,6 @@ module Datasworn
   class OracleTableRowDetails
     attr_accessor :detail
 
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
-
     # High end of the dice range for this table row.
     attr_accessor :max
 
@@ -4018,7 +4015,6 @@ module Datasworn
     def self.from_json_data(data)
       out = OracleTableRowDetails.new
       out.detail = Datasworn::from_json_data(MarkdownString, data["detail"])
-      out.id = Datasworn::from_json_data(OracleTableRowID, data["id"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.result = Datasworn::from_json_data(MarkdownString, data["result"])
@@ -4034,7 +4030,6 @@ module Datasworn
     def to_json_data
       data = {}
       data["detail"] = Datasworn::to_json_data(detail)
-      data["id"] = Datasworn::to_json_data(id)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["result"] = Datasworn::to_json_data(result)
@@ -4048,31 +4043,8 @@ module Datasworn
     end
   end
 
-  # Normally, rows will end with two numbers separated by a dash, indicating
-  # their dice range.
-  # 
-  # Rows with a single number represent unrollable rows that are sometimes
-  # included for rendering purposes; in this case, the number represents the
-  # row's index.
-  class OracleTableRowID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = OracleTableRowID.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
   # Represents a row in an oracle table.
   class OracleTableRowSimple
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
-
     # High end of the dice range for this table row.
     attr_accessor :max
 
@@ -4094,7 +4066,6 @@ module Datasworn
 
     def self.from_json_data(data)
       out = OracleTableRowSimple.new
-      out.id = Datasworn::from_json_data(OracleTableRowID, data["id"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.result = Datasworn::from_json_data(MarkdownString, data["result"])
@@ -4109,7 +4080,6 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["id"] = Datasworn::to_json_data(id)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["result"] = Datasworn::to_json_data(result)

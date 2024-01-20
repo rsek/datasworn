@@ -5497,11 +5497,6 @@ class OracleTableRowDetails:
     """
 
     detail: 'MarkdownString'
-    id: 'OracleTableRowID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     max: 'int'
     """
     High end of the dice range for this table row.
@@ -5536,7 +5531,6 @@ class OracleTableRowDetails:
     def from_json_data(cls, data: Any) -> 'OracleTableRowDetails':
         return cls(
             _from_json_data(MarkdownString, data.get("detail")),
-            _from_json_data(OracleTableRowID, data.get("id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
@@ -5551,7 +5545,6 @@ class OracleTableRowDetails:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["detail"] = _to_json_data(self.detail)
-        data["id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
@@ -5570,34 +5563,9 @@ class OracleTableRowDetails:
         return data
 
 @dataclass
-class OracleTableRowID:
-    """
-    Normally, rows will end with two numbers separated by a dash, indicating
-    their dice range.
-    
-    Rows with a single number represent unrollable rows that are sometimes
-    included for rendering purposes; in this case, the number represents the
-    row's index.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRowID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class OracleTableRowSimple:
     """
     Represents a row in an oracle table.
-    """
-
-    id: 'OracleTableRowID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     max: 'int'
@@ -5633,7 +5601,6 @@ class OracleTableRowSimple:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRowSimple':
         return cls(
-            _from_json_data(OracleTableRowID, data.get("id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
@@ -5647,7 +5614,6 @@ class OracleTableRowSimple:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
