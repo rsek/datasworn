@@ -43583,8 +43583,8 @@
 					"category": "Command Vehicle",
 					"color": "#9aa3ad",
 					"options": {
-						"label": {
-							"id": "starforged/assets/command_vehicle/starship/options/label",
+						"name": {
+							"id": "starforged/assets/command_vehicle/starship/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -43727,8 +43727,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/banshee/options/label",
+						"name": {
+							"id": "starforged/assets/companion/banshee/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -43850,8 +43850,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/combat_bot/options/label",
+						"name": {
+							"id": "starforged/assets/companion/combat_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -43992,8 +43992,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/glowcat/options/label",
+						"name": {
+							"id": "starforged/assets/companion/glowcat/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -44106,8 +44106,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/protocol_bot/options/label",
+						"name": {
+							"id": "starforged/assets/companion/protocol_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -44205,8 +44205,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/rockhorn/options/label",
+						"name": {
+							"id": "starforged/assets/companion/rockhorn/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -44467,8 +44467,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/sprite/options/label",
+						"name": {
+							"id": "starforged/assets/companion/sprite/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -44569,8 +44569,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/survey_bot/options/label",
+						"name": {
+							"id": "starforged/assets/companion/survey_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -44723,8 +44723,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/symbiote/options/label",
+						"name": {
+							"id": "starforged/assets/companion/symbiote/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -44813,8 +44813,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/utility_bot/options/label",
+						"name": {
+							"id": "starforged/assets/companion/utility_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -44939,8 +44939,8 @@
 					"category": "Companion",
 					"color": "#3d8b8a",
 					"options": {
-						"label": {
-							"id": "starforged/assets/companion/voidglider/options/label",
+						"name": {
+							"id": "starforged/assets/companion/voidglider/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -45197,8 +45197,8 @@
 					"category": "Deed",
 					"color": "#40834f",
 					"options": {
-						"label": {
-							"id": "starforged/assets/deed/homesteader/options/label",
+						"name": {
+							"id": "starforged/assets/deed/homesteader/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
