@@ -122,7 +122,7 @@ export const AssetAbility: Transformer<
 		key: string | number,
 		parent: SourcedNode
 	): Datasworn.AssetEnhancement | undefined {
-		if (data.enhance_moves == null) return undefined
+		if (data.enhance_asset == null) return undefined
 
 		return data.enhance_asset as Datasworn.AssetEnhancement
 	},

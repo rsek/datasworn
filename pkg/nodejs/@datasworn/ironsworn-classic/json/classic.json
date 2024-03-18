@@ -17433,7 +17433,15 @@
 						{
 							"id": "classic/assets/ritual/awakening/abilities/1",
 							"enabled": false,
-							"text": "Your simulacrum has 6 health."
+							"text": "Your simulacrum has 6 health.",
+							"enhance_asset": {
+								"controls": {
+									"health": {
+										"field_type": "condition_meter",
+										"max": 6
+									}
+								}
+							}
 						},
 						{
 							"id": "classic/assets/ritual/awakening/abilities/2",
