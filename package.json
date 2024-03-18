@@ -1,7 +1,7 @@
 {
 	"name": "@datasworn/tools",
-	"version": "0.0.6",
-	"description": "",
+	"version": "0.0.7",
+	"description": "Internal tools used to develop Datasworn packages.",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -13,14 +13,6 @@
 		"build:pkg": "ts-node ./src/scripts/pkg/nodejs/buildPackages.ts && tsc --project ./src/pkg-core/tsconfig.json",
 		"build": "ts-node ./src/scripts/pkg/nodejs/updatePackageVersions.ts && npm run build:schema && npm run build:jtd && npm run build:dts && npm run build:json && npm run build:pkg",
 		"pkg:node": "ts-node ./src/scripts/pkg/nodejs/publishPackages.ts"
-	},
-	"files": [
-		"docs",
-		"img",
-		"markdown"
-	],
-	"directories": {
-		"doc": "./docs"
 	},
 	"repository": {
 		"type": "git",
