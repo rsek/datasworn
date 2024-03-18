@@ -1,4 +1,4 @@
-# Datasworn v0.0.6
+# Datasworn v0.0.7
 
 Traversal utilities, JSON schema, and Typescript declarations common to Datasworn packages.
 

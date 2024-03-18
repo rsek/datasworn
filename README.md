@@ -1,4 +1,4 @@
-# Datasworn v0.0.6
+# Datasworn v0.0.7
 
 [![@datasworn/core on npm](https://img.shields.io/npm/v/@datasworn/core?logo=npm)](https://www.npmjs.com/package/@datasworn/core)
 [![@datasworn/core on npm](https://img.shields.io/npm/dm/@datasworn/core?logo=npm)](https://www.npmjs.com/package/@datasworn/core)
