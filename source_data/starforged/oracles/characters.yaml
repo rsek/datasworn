@@ -1722,7 +1722,7 @@ oracles:
             # suggestions: [*roll:Event]
           - min: 3
             max: 4
-            result: Build a home]
+            result: Build a home
           - min: 5
             max: 7
             result: Build a relationship
@@ -1733,14 +1733,14 @@ oracles:
             # suggestions: [*roll:Object]
           - min: 11
             max: 12
-            result: Collect a debt]
+            result: Collect a debt
           - min: 13
             max: 14
             result: Craft an object
             # suggestions: [*roll:Object]
           - min: 15
             max: 16
-            result: Cure an ill]
+            result: Cure an ill
           - min: 17
             max: 18
             result: Defeat a rival
@@ -1763,10 +1763,10 @@ oracles:
             # suggestions: [*roll:Event]
           - min: 28
             max: 29
-            result: Escape a captor]
+            result: Escape a captor
           - min: 30
             max: 31
-            result: Fight injustice]
+            result: Fight injustice
           - min: 32
             max: 33
             result: Find a person
@@ -1781,10 +1781,10 @@ oracles:
             # suggestions: [*roll:Event]
           - min: 38
             max: 39
-            result: Gain riches]
+            result: Gain riches
           - min: 40
             max: 41
-            result: Maintain order]
+            result: Maintain order
           - min: 42
             max: 43
             result: Make an agreement
@@ -1795,7 +1795,7 @@ oracles:
             # suggestions: [*roll:Object]
           - min: 46
             max: 47
-            result: Pay a debt]
+            result: Pay a debt
           - min: 48
             max: 49
             result: Protect a lifeform
@@ -1848,7 +1848,7 @@ oracles:
             # suggestions: [*roll:Event]
           - min: 75
             max: 76
-            result: Spread faith]
+            result: Spread faith
           - min: 77
             max: 78
             result: Travel to a place
