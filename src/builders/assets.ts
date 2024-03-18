@@ -18,6 +18,15 @@ export const Asset = sourcedTransformer<
 	Datasworn.Asset,
 	Datasworn.AssetCollection
 >({
+	attachments(data, key, parent) {
+		if (data.attachments == null) return undefined
+
+		const attachments = cloneDeep(data.attachments) as Datasworn.AssetAttachment
+
+		if (attachments.max == null) attachments.max = null
+
+		return attachments
+	},
 	options: function (
 		this: SourcedNode,
 		data: DataswornSource.Asset,
@@ -39,7 +48,10 @@ export const Asset = sourcedTransformer<
 	): Record<string, Datasworn.AssetConditionMeterControlField> | undefined {
 		if (data.controls == null) return undefined
 		return mapValues(data.controls, (fieldData, fieldKey) => {
-			const field = cloneDeep(fieldData)
+			const field = cloneDeep(
+				fieldData
+			) as Datasworn.AssetConditionMeterControlField
+
 			field.id = `${this.id}/controls/${fieldKey}`
 
 			if (field.field_type === 'condition_meter' && field.controls != null)
@@ -47,7 +59,7 @@ export const Asset = sourcedTransformer<
 					if (Object.prototype.hasOwnProperty.call(field.controls, k))
 						field.controls[k].id = `${field.id}/controls/${k}`
 
-			return field as Datasworn.AssetConditionMeterControlField
+			return field
 		})
 	},
 	abilities: function (
@@ -97,9 +109,9 @@ export const AssetAbility: Transformer<
 	): Record<string, Datasworn.AssetAbilityOptionField> | undefined {
 		if (data.options == null) return undefined
 		return mapValues(data.options, (fieldData, fieldKey) => {
-			const field = cloneDeep(fieldData)
+			const field = cloneDeep(fieldData) as Datasworn.AssetAbilityOptionField
 			field.id = `${this.id}/options/${fieldKey}`
-			return field as Datasworn.AssetAbilityOptionField
+			return field
 		})
 	},
 	controls: function (
@@ -110,9 +122,9 @@ export const AssetAbility: Transformer<
 	): Record<string, Datasworn.AssetAbilityControlField> | undefined {
 		if (data.controls == null) return undefined
 		return mapValues(data.controls, (fieldData, fieldKey) => {
-			const field = cloneDeep(fieldData)
+			const field = cloneDeep(fieldData) as Datasworn.AssetAbilityControlField
 			field.id = `${this.id}/controls/${fieldKey}`
-			return field as Datasworn.AssetAbilityControlField
+			return field
 		})
 	},
 
