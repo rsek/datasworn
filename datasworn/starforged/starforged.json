@@ -38915,7 +38915,6 @@
 					"color": "#9aa3ad",
 					"options": {
 						"name": {
-							"id": "starforged/assets/command_vehicle/starship/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -38989,7 +38988,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/command_vehicle/starship/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -38998,7 +38996,6 @@
 							"value": 5,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/command_vehicle/starship/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,
@@ -39006,7 +39003,6 @@
 									"disables_asset": false
 								},
 								"cursed": {
-									"id": "starforged/assets/command_vehicle/starship/controls/integrity/controls/cursed",
 									"label": "cursed",
 									"field_type": "checkbox",
 									"value": false,
@@ -39059,7 +39055,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/banshee/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -39140,7 +39135,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/banshee/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -39149,7 +39143,6 @@
 							"value": 4,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/banshee/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -39182,7 +39175,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/combat_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -39282,7 +39274,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/combat_bot/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -39291,7 +39282,6 @@
 							"value": 5,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/combat_bot/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -39324,7 +39314,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/glowcat/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -39396,7 +39385,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/glowcat/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -39405,7 +39393,6 @@
 							"value": 3,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/glowcat/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -39438,7 +39425,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/protocol_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -39495,7 +39481,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/protocol_bot/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -39504,7 +39489,6 @@
 							"value": 3,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/protocol_bot/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -39537,7 +39521,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/rockhorn/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -39615,7 +39598,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/rockhorn/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -39624,7 +39606,6 @@
 							"value": 5,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/rockhorn/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -39657,13 +39638,11 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/sidekick/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
 						},
 						"expertise": {
-							"id": "starforged/assets/companion/sidekick/options/expertise",
 							"label": "expertise",
 							"field_type": "text",
 							"value": null
@@ -39757,7 +39736,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/sidekick/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -39766,7 +39744,6 @@
 							"value": 4,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/sidekick/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -39799,7 +39776,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/sprite/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -39859,7 +39835,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/sprite/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -39868,7 +39843,6 @@
 							"value": 2,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/sprite/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -39901,7 +39875,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/survey_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -40013,7 +39986,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/survey_bot/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -40022,7 +39994,6 @@
 							"value": 3,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/survey_bot/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -40055,7 +40026,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/symbiote/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -40111,7 +40081,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/symbiote/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -40120,7 +40089,6 @@
 							"value": 2,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/symbiote/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -40153,7 +40121,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/utility_bot/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -40237,7 +40204,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/utility_bot/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -40246,7 +40212,6 @@
 							"value": 4,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/utility_bot/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -40279,7 +40244,6 @@
 					"color": "#3d8b8a",
 					"options": {
 						"name": {
-							"id": "starforged/assets/companion/voidglider/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -40365,7 +40329,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "starforged/assets/companion/voidglider/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -40374,7 +40337,6 @@
 							"value": 4,
 							"controls": {
 								"out_of_action": {
-									"id": "starforged/assets/companion/voidglider/controls/health/controls/out_of_action",
 									"label": "out of action",
 									"field_type": "checkbox",
 									"value": false,
@@ -40427,7 +40389,6 @@
 					"color": "#40834f",
 					"options": {
 						"bond_mate": {
-							"id": "starforged/assets/deed/bonded/options/bond_mate",
 							"label": "bond-mate",
 							"field_type": "text",
 							"value": null
@@ -40537,7 +40498,6 @@
 					"color": "#40834f",
 					"options": {
 						"name": {
-							"id": "starforged/assets/deed/homesteader/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -40653,7 +40613,6 @@
 					"color": "#40834f",
 					"options": {
 						"identifier": {
-							"id": "starforged/assets/deed/marked/options/identifier",
 							"label": "identifier",
 							"field_type": "text",
 							"value": null
@@ -40692,7 +40651,6 @@
 							"text": "When you risk your reputation to overcome a miss, reroll any dice. If you score a miss again, fill one segment of a six-segment clock to represent the stain on your reputation. When the clock is filled, discard this asset.",
 							"controls": {
 								"clock": {
-									"id": "starforged/assets/deed/marked/abilities/1/controls/clock",
 									"label": "stained reputation",
 									"field_type": "clock",
 									"rollable": false,
@@ -41201,7 +41159,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/engine_upgrade/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -41277,7 +41234,6 @@
 					],
 					"controls": {
 						"cargo": {
-							"id": "starforged/assets/module/expanded_hold/controls/cargo",
 							"label": "cargo",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -41399,7 +41355,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/grappler/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -41494,7 +41449,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/heavy_cannons/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -41616,7 +41570,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/internal_refit/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -41724,7 +41677,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/medbay/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -41831,7 +41783,6 @@
 					],
 					"controls": {
 						"ammo": {
-							"id": "starforged/assets/module/missile_array/controls/ammo",
 							"label": "ammo",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -41862,7 +41813,6 @@
 					"color": "#7f5a90",
 					"options": {
 						"name": {
-							"id": "starforged/assets/module/overseer/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -41938,7 +41888,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/overseer/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -42029,7 +41978,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/reinforced_hull/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -42149,7 +42097,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/research_lab/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -42283,7 +42230,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/sensor_array/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -42413,7 +42359,6 @@
 					],
 					"controls": {
 						"shields": {
-							"id": "starforged/assets/module/shields/controls/shields",
 							"label": "shields",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -42553,7 +42498,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/stealth_tech/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -42635,7 +42579,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/vehicle_bay/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -42752,7 +42695,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/module/workshop/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -42993,7 +42935,6 @@
 					],
 					"controls": {
 						"ammo": {
-							"id": "starforged/assets/path/archer/controls/ammo",
 							"label": "ammo",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -43080,7 +43021,6 @@
 					],
 					"controls": {
 						"broken": {
-							"id": "starforged/assets/path/armored/controls/broken",
 							"label": "broken",
 							"field_type": "card_flip",
 							"value": false,
@@ -43237,13 +43177,11 @@
 					"color": "#3f7faa",
 					"options": {
 						"one": {
-							"id": "starforged/assets/path/augmented/options/one",
 							"label": "one",
 							"field_type": "text",
 							"value": null
 						},
 						"two": {
-							"id": "starforged/assets/path/augmented/options/two",
 							"label": "two",
 							"field_type": "text",
 							"value": null
@@ -43311,7 +43249,6 @@
 					"color": "#3f7faa",
 					"options": {
 						"ideology": {
-							"id": "starforged/assets/path/bannersworn/options/ideology",
 							"label": "ideology",
 							"field_type": "text",
 							"value": null
@@ -43489,7 +43426,6 @@
 							"enabled": false,
 							"options": {
 								"name": {
-									"id": "starforged/assets/path/blademaster/abilities/2/options/name",
 									"label": "name",
 									"field_type": "text",
 									"value": null
@@ -43498,7 +43434,6 @@
 							"text": "You wield an iconic blade. Give it a name. When you [Swear an Iron Vow](id:starforged/moves/quest/swear_an_iron_vow) by binding your promise to the blade, add +1. On a hit, fill the box below. If you make a move (including a progress move) using this oathbound blade and score a miss, you may clear the box to reroll any dice.",
 							"controls": {
 								"oathbound": {
-									"id": "starforged/assets/path/blademaster/abilities/2/controls/oathbound",
 									"label": "oathbound",
 									"field_type": "checkbox",
 									"value": false,
@@ -43808,7 +43743,6 @@
 					],
 					"controls": {
 						"safety": {
-							"id": "starforged/assets/path/courier/controls/safety",
 							"label": "safety",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -43917,13 +43851,11 @@
 					"color": "#3f7faa",
 					"options": {
 						"name": {
-							"id": "starforged/assets/path/devotant/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
 						},
 						"linked_stat": {
-							"id": "starforged/assets/path/devotant/options/linked_stat",
 							"label": "linked stat",
 							"field_type": "select_value",
 							"choices": {
@@ -44514,7 +44446,6 @@
 					],
 					"controls": {
 						"fire": {
-							"id": "starforged/assets/path/firebrand/controls/fire",
 							"label": "fire",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -44549,7 +44480,6 @@
 							"text": "You are hunted by a power or authority. When you make a move, you may improve the result to a strong hit. If you do, fill one segment of a four-segment clock to represent hunters closing in. When the clock is filled, a notable foe or force has tracked you down. If you overcome them or escape, reset the clock and mark 1 tick on your quests legacy track.",
 							"controls": {
 								"clock": {
-									"id": "starforged/assets/path/fugitive/abilities/0/controls/clock",
 									"label": "notable foe or force tracks you down",
 									"field_type": "clock",
 									"rollable": false,
@@ -44745,7 +44675,6 @@
 							"enabled": false,
 							"options": {
 								"name": {
-									"id": "starforged/assets/path/gunner/abilities/2/options/name",
 									"label": "name",
 									"field_type": "text",
 									"value": null
@@ -46824,7 +46753,6 @@
 					"color": "#3f7faa",
 					"options": {
 						"last_of": {
-							"id": "starforged/assets/path/vestige/options/last_of",
 							"label": "last of",
 							"field_type": "text",
 							"value": null
@@ -46875,7 +46803,6 @@
 							"enabled": false,
 							"options": {
 								"relic": {
-									"id": "starforged/assets/path/vestige/abilities/2/options/relic",
 									"label": "relic",
 									"field_type": "text",
 									"value": null
@@ -47179,7 +47106,6 @@
 					"color": "#495790",
 					"options": {
 						"name": {
-							"id": "starforged/assets/support_vehicle/exosuit/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -47251,7 +47177,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/support_vehicle/exosuit/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -47260,7 +47185,6 @@
 							"value": 6,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/support_vehicle/exosuit/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,
@@ -47293,7 +47217,6 @@
 					"color": "#495790",
 					"options": {
 						"name": {
-							"id": "starforged/assets/support_vehicle/hoverbike/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -47357,7 +47280,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/support_vehicle/hoverbike/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -47366,7 +47288,6 @@
 							"value": 3,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/support_vehicle/hoverbike/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,
@@ -47399,7 +47320,6 @@
 					"color": "#495790",
 					"options": {
 						"name": {
-							"id": "starforged/assets/support_vehicle/rover/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -47489,7 +47409,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/support_vehicle/rover/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -47498,7 +47417,6 @@
 							"value": 5,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/support_vehicle/rover/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,
@@ -47531,7 +47449,6 @@
 					"color": "#495790",
 					"options": {
 						"name": {
-							"id": "starforged/assets/support_vehicle/service_pod/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -47613,7 +47530,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/support_vehicle/service_pod/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -47622,7 +47538,6 @@
 							"value": 4,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/support_vehicle/service_pod/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,
@@ -47655,7 +47570,6 @@
 					"color": "#495790",
 					"options": {
 						"name": {
-							"id": "starforged/assets/support_vehicle/shuttle/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -47715,7 +47629,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/support_vehicle/shuttle/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -47724,7 +47637,6 @@
 							"value": 4,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/support_vehicle/shuttle/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,
@@ -47757,7 +47669,6 @@
 					"color": "#495790",
 					"options": {
 						"name": {
-							"id": "starforged/assets/support_vehicle/skiff/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -47847,7 +47758,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/support_vehicle/skiff/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -47856,7 +47766,6 @@
 							"value": 4,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/support_vehicle/skiff/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,
@@ -47889,7 +47798,6 @@
 					"color": "#495790",
 					"options": {
 						"name": {
-							"id": "starforged/assets/support_vehicle/snub_fighter/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -47953,7 +47861,6 @@
 							"text": "When you personally defeat a notable foe in your snub fighter, envision the victory mark you make on the fuselage. Tally your victories in this box. For every five, mark 2 ticks on your quests legacy track.",
 							"controls": {
 								"victory_marks": {
-									"id": "starforged/assets/support_vehicle/snub_fighter/abilities/2/controls/victory_marks",
 									"label": "victory marks",
 									"field_type": "counter",
 									"rollable": false,
@@ -47966,7 +47873,6 @@
 					],
 					"controls": {
 						"integrity": {
-							"id": "starforged/assets/support_vehicle/snub_fighter/controls/integrity",
 							"label": "integrity",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -47975,7 +47881,6 @@
 							"value": 4,
 							"controls": {
 								"battered": {
-									"id": "starforged/assets/support_vehicle/snub_fighter/controls/integrity/controls/battered",
 									"label": "battered",
 									"field_type": "checkbox",
 									"value": false,

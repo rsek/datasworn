@@ -11878,7 +11878,6 @@
 					],
 					"controls": {
 						"equipped": {
-							"id": "classic/assets/combat_talent/ironclad/controls/equipped",
 							"label": "equipped",
 							"field_type": "select_enhancement",
 							"choices": {
@@ -12556,7 +12555,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/cave_lion/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -12636,7 +12634,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/cave_lion/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -12672,7 +12669,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/giant_spider/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -12758,7 +12754,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/giant_spider/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -12794,7 +12789,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/hawk/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -12901,7 +12895,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/hawk/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -12937,7 +12930,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/horse/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -13033,7 +13025,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/horse/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -13069,7 +13060,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/hound/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -13148,7 +13138,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/hound/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -13184,7 +13173,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/kindred/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -13200,7 +13188,6 @@
 							"enabled": false,
 							"options": {
 								"expertise": {
-									"id": "classic/assets/companion/kindred/abilities/0/options/expertise",
 									"label": "expertise",
 									"field_type": "text",
 									"value": null
@@ -13275,7 +13262,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/kindred/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -13311,7 +13297,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/mammoth/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -13383,7 +13368,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/mammoth/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -13419,7 +13403,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/owl/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -13504,7 +13487,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/owl/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -13540,7 +13522,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/raven/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -13619,7 +13600,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/raven/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -13655,7 +13635,6 @@
 					"category": "Companion",
 					"options": {
 						"name": {
-							"id": "classic/assets/companion/young_wyvern/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -13727,7 +13706,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/companion/young_wyvern/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -14001,7 +13979,6 @@
 					"category": "Path",
 					"options": {
 						"name": {
-							"id": "classic/assets/path/banner_sworn/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -14159,7 +14136,6 @@
 					"category": "Path",
 					"options": {
 						"name": {
-							"id": "classic/assets/path/blade_bound/options/name",
 							"label": "name",
 							"field_type": "text",
 							"value": null
@@ -14385,7 +14361,6 @@
 					],
 					"controls": {
 						"strength": {
-							"id": "classic/assets/path/commander/controls/strength",
 							"label": "strength",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -14552,13 +14527,11 @@
 					"category": "Path",
 					"options": {
 						"gods_name": {
-							"id": "classic/assets/path/devotant/options/gods_name",
 							"label": "god's name",
 							"field_type": "text",
 							"value": null
 						},
 						"stat": {
-							"id": "classic/assets/path/devotant/options/stat",
 							"label": "stat",
 							"field_type": "select_value",
 							"choices": {
@@ -14710,7 +14683,6 @@
 					"category": "Path",
 					"options": {
 						"title_lineage": {
-							"id": "classic/assets/path/empowered/options/title_lineage",
 							"label": "title/lineage",
 							"field_type": "text",
 							"value": null
@@ -14962,7 +14934,6 @@
 					],
 					"controls": {
 						"wealth": {
-							"id": "classic/assets/path/fortune_hunter/controls/wealth",
 							"label": "wealth",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -15528,7 +15499,6 @@
 					"category": "Path",
 					"options": {
 						"material": {
-							"id": "classic/assets/path/masked/options/material",
 							"label": "material",
 							"field_type": "select_value",
 							"choices": {
@@ -17146,7 +17116,6 @@
 					"category": "Path",
 					"options": {
 						"specialty": {
-							"id": "classic/assets/path/wright/options/specialty",
 							"label": "specialty",
 							"field_type": "text",
 							"value": null
@@ -17459,7 +17428,6 @@
 					],
 					"controls": {
 						"health": {
-							"id": "classic/assets/ritual/awakening/controls/health",
 							"label": "health",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -17891,7 +17859,6 @@
 					],
 					"controls": {
 						"essence": {
-							"id": "classic/assets/ritual/invoke/controls/essence",
 							"label": "essence",
 							"field_type": "condition_meter",
 							"rollable": true,
@@ -18206,7 +18173,6 @@
 					],
 					"controls": {
 						"light": {
-							"id": "classic/assets/ritual/lightbearer/controls/light",
 							"label": "light",
 							"field_type": "condition_meter",
 							"rollable": true,
