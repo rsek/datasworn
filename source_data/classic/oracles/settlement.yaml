@@ -175,7 +175,7 @@ oracles:
           - min: 1
             max: 15
             result: &Landscape_Feature |-
-              **A feature of the landscape.** Envision what it is. What makes it unusual or distinctive?
+              __A feature of the landscape.__ Envision what it is. What makes it unusual or distinctive?
             # technically, these embedded tables are all labeled "Examples". should this be structured differently in order to convey this?
             embed_table: classic/oracles/settlement/name/landscape_feature
             oracle_rolls:
@@ -183,35 +183,35 @@ oracles:
           - min: 16
             max: 30
             result: &Manmade_Edifice |-
-              **A manmade edifice.** What is it? Why is it important to this settlement’s history?,
+              __A manmade edifice.__ What is it? Why is it important to this settlement’s history?,
             embed_table: classic/oracles/settlement/name/manmade_edifice
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/manmade_edifice
           - min: 31
             max: 45
             result: &Creature |-
-              **A creature.** Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?
+              __A creature.__ Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?
             embed_table: classic/oracles/settlement/name/creature
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/creature
           - min: 46
             max: 60
             result: &Historical_Event |-
-              **A historical event.** What happened here? What place or practice commemorates this event?
+              __A historical event.__ What happened here? What place or practice commemorates this event?
             embed_table: classic/oracles/settlement/name/historical_event
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/historical_event
           - min: 61
             max: 75
             result: &Old_World_Language |-
-              **A word in an Old World language.** What culture is represented by this word? What does it translate to?
+              __A word in an Old World language.__ What culture is represented by this word? What does it translate to?
             embed_table: classic/oracles/settlement/name/old_world_language
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/old_world_language
           - min: 76
             max: 90
             result: &Environmental_Aspect |-
-              **A season or environmental aspect.** What influence does the weather have on this settlement?
+              __A season or environmental aspect.__ What influence does the weather have on this settlement?
             embed_table: classic/oracles/settlement/name/environmental_aspect
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/environmental_aspect

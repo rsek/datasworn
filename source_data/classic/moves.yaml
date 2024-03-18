@@ -433,20 +433,20 @@ moves:
 
           On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.
 
-          **Clear a Condition**
+          __Clear a Condition__
 
             * Mend: Clear a wounded debility and take +1 health.
             * Hearten: Clear a shaken debility and take +1 spirit.
             * Equip: Clear an unprepared debility and take +1 supply.
 
-          **Recover**
+          __Recover__
 
             * Recuperate: Take +2 health for yourself and any companions.
             * Consort: Take +2 spirit.
             * Provision: Take +2 supply.
             * Plan: Take +2 momentum.
 
-          **Provide Aid**
+          __Provide Aid__
 
             * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1.
 
@@ -458,20 +458,20 @@ moves:
 
               You and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.
 
-              **Clear a Condition**
+              __Clear a Condition__
 
                 * Mend: Clear a wounded debility and take +1 health.
                 * Hearten: Clear a shaken debility and take +1 spirit.
                 * Equip: Clear an unprepared debility and take +1 supply.
 
-              **Recover**
+              __Recover__
 
                 * Recuperate: Take +2 health for yourself and any companions.
                 * Consort: Take +2 spirit.
                 * Provision: Take +2 supply.
                 * Plan: Take +2 momentum.
 
-              **Provide Aid**
+              __Provide Aid__
 
                 * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1.
           weak_hit:
@@ -480,20 +480,20 @@ moves:
 
               You and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.
 
-              **Clear a Condition**
+              __Clear a Condition__
 
                 * Mend: Clear a wounded debility and take +1 health.
                 * Hearten: Clear a shaken debility and take +1 spirit.
                 * Equip: Clear an unprepared debility and take +1 supply.
 
-              **Recover**
+              __Recover__
 
                 * Recuperate: Take +2 health for yourself and any companions.
                 * Consort: Take +2 spirit.
                 * Provision: Take +2 supply.
                 * Plan: Take +2 momentum.
 
-              **Provide Aid**
+              __Provide Aid__
 
                 * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1.
           miss:
@@ -1264,9 +1264,9 @@ moves:
       In guided mode, your GM represents the whims of fate. They can reference these moves as they like, but they can also decide the outcome or direct the question back to you.
 
       There are three key aspects of using the fate moves:
-        * **Instinct:** If an answer to a question or the result of a situation is obvious, interesting and dramatic, make it happen.
-        * **Randomness:** You can roll on random tables to generate a result or answer a question.
-        * **Inspiration:** You can use creative prompts, such as those included in the oracles chapter (page 165) to guide your story.
+        * __Instinct:__ If an answer to a question or the result of a situation is obvious, interesting and dramatic, make it happen.
+        * __Randomness:__ You can roll on random tables to generate a result or answer a question.
+        * __Inspiration:__ You can use creative prompts, such as those included in the oracles chapter (page 165) to guide your story.
     contents:
       pay_the_price:
         name: Pay the Price

@@ -40,19 +40,19 @@ oracles:
                     max: 25
                     <<: &WaypointKnown.0
                       result: |-
-                        **Sails, ho!**
+                        __Sails, ho!__
                           [Sailing Ships](id:sundered_isles/collections/oracles/ships)
                   - min: 26
                     max: 35
                     <<: &WaypointKnown.1
                       result: |-
-                        **Changing weather**
+                        __Changing weather__
                           [Weather](id:sundered_isles/collections/oracles/weather)
                   - min: 36
                     max: 55
                     <<: &WaypointKnown.2
                       result: |-
-                        **Instance (choose one)**
+                        __Instance (choose one)__
                           * [Seafaring Details](id:sundered_isles/oracles/seafaring/details)
                           * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
                       oracle_rolls:
@@ -63,19 +63,19 @@ oracles:
                     max: 65
                     <<: &WaypointKnown.3
                       result: |-
-                        **Lost souls**
+                        __Lost souls__
                           [Shipwrecks](id:sundered_isles/collections/oracles/shipwrecks)
                   - min: 66
                     max: 70
                     <<: &WaypointKnown.4
                       result: |-
-                        **Relic of the past**
+                        __Relic of the past__
                           [Ruins](id:sundered_isles/collections/oracles/ruins)
                   - min: 71
                     max: 85
                     <<: &WaypointKnown.5
                       result: |-
-                        **Character focus**
+                        __Character focus__
                           [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
                       oracle_rolls:
                         - oracle: sundered_isles/oracles/misc/interlude_scene
@@ -159,7 +159,7 @@ oracles:
                     max: 20
                     <<: &WaypointUnknown.0
                       result: |-
-                        **Land, ho!**
+                        __Land, ho!__
                           [Islands](id:sundered_isles/collections/oracles/islands)
                   - min: 21
                     max: 35

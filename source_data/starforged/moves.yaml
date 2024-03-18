@@ -14,7 +14,7 @@ moves:
           - name: Shawn Tomkin
       page: 140
     summary: |-
-      **Session moves** provide methods for setting up content boundaries, adjusting content in the midst of play, and starting and ending your Starforged sessions.
+      __Session moves__ provide methods for setting up content boundaries, adjusting content in the midst of play, and starting and ending your Starforged sessions.
     description: |-
       The __session moves__ fit into the flow of mechanics and fiction before, during, and after play. They provide methods for setting up content boundaries, adjusting content in the midst of play, and starting and ending your Starforged sessions. They are intended for solo, co-op, and guided modes.
 
@@ -28,7 +28,7 @@ moves:
         oracles:
           - starforged/oracles/moves/begin_a_session
         text: |-
-          **When you begin a significant session or chapter of play**, do all of the following.
+          __When you begin a significant session or chapter of play__, do all of the following.
 
             * Identify or adjust flagged content and [Set a Flag](id:starforged/moves/session/set_a_flag).
             * Review or recap what happened last session.
@@ -46,7 +46,7 @@ moves:
         trigger:
           text: When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching...
         text: |-
-          **When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching**, that content is now flagged.
+          __When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching__, that content is now flagged.
 
           When you encounter content flagged as something to approach mindfully, pause to consider or discuss its role in your story. When you come across flagged content that you would rather adjust or omit, [Change Your Fate](id:starforged/moves/session/change_your_fate).
         source:
@@ -58,13 +58,13 @@ moves:
         trigger:
           text: When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment...
         text: |-
-          **When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment**, pause and identify what needs to be changed. Choose as many options as appropriate.
+          __When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment__, pause and identify what needs to be changed. Choose as many options as appropriate.
 
-            * **Reframe:** This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.
-            * **Refocus:** This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.
-            * **Replace:** This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.
-            * **Redirect:** Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.
-            * **Reshape:** The situation changes completely. Envision what happened instead.
+            * __Reframe:__ This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.
+            * __Refocus:__ This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.
+            * __Replace:__ This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.
+            * __Redirect:__ Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.
+            * __Reshape:__ The situation changes completely. Envision what happened instead.
         source:
           <<: *Source
           page: 143
@@ -74,7 +74,7 @@ moves:
         trigger:
           text: When you resolve a progress move or complete an intense scenario...
         text: |-
-          **When you resolve a progress move or complete an intense scenario**, take a few deep breaths and take some time to attend to the needs of your body. Reflect on what just happened and how it made you feel. Then, choose one.
+          __When you resolve a progress move or complete an intense scenario__, take a few deep breaths and take some time to attend to the needs of your body. Reflect on what just happened and how it made you feel. Then, choose one.
 
             * Move on: Continue the session. You or an ally may add +1 on the next move (not a progress move), bolstered by your reflection and past experiences.
             * Stop for now: [End a Session](id:starforged/moves/session/end_a_session).
@@ -87,7 +87,7 @@ moves:
         trigger:
           text: When you end a significant session or chapter of play...
         text: |-
-          **When you end a significant session or chapter of play**, reflect on the events of the game and identify any missed opportunities to mark progress.
+          __When you end a significant session or chapter of play__, reflect on the events of the game and identify any missed opportunities to mark progress.
 
             * If you strengthened your ties to a connection, [Develop Your Relationship](id:starforged/moves/connection/develop_your_relationship).
             * If you moved forward on a quest, [Reach a Milestone](id:starforged/moves/quest/reach_a_milestone).
@@ -139,7 +139,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you attempt something risky or react to an imminent threat**, envision your action and roll. If you act...
+          __When you attempt something risky or react to an imminent threat__, envision your action and roll. If you act...
 
             * With speed, mobility, or agility: Roll +edge
             * With resolve, command, or sociability: Roll +heart
@@ -194,7 +194,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you assess a situation, make preparations, or attempt to gain leverage**, envision your action and roll. If you act...
+          __When you assess a situation, make preparations, or attempt to gain leverage__, envision your action and roll. If you act...
 
             * With speed, mobility, or agility: Roll +edge
             * With resolve, command, or sociability: Roll +heart
@@ -235,7 +235,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you search for clues, conduct an investigation, analyze evidence, or do research**, roll +wits.
+          __When you search for clues, conduct an investigation, analyze evidence, or do research__, roll +wits.
 
           On a __strong hit__, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn. Then, take +2 momentum.
 
@@ -274,7 +274,7 @@ moves:
                 - using: stat
                   stat: shadow
         text: |-
-          **When you try to persuade someone or make them an offer**, envision your approach. If you...
+          __When you try to persuade someone or make them an offer__, envision your approach. If you...
 
             * Charm, pacify, encourage, or barter: Roll +heart
             * Threaten or incite: Roll +iron
@@ -301,7 +301,7 @@ moves:
         trigger:
           text: When you act in direct support of an ally...
         text: |-
-          **When you act in direct support of an ally**, envision how you aid them. Then, [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) to take action. If you score a hit, they (instead of you) take the benefits of the move.
+          __When you act in direct support of an ally__, envision how you aid them. Then, [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) to take action. If you score a hit, they (instead of you) take the benefits of the move.
 
           If you [Gain Ground](id:starforged/moves/combat/gain_ground) and score a strong hit, you are both in control. On a __weak hit__, your ally is in control but you are in a bad spot.
         source:
@@ -318,7 +318,7 @@ moves:
                 - using: condition_meter
                   condition_meter: supply
         text: |-
-          **When you check to see if you have a specific helpful item or resource**, roll +supply.
+          __When you check to see if you have a specific helpful item or resource__, roll +supply.
 
           On a __strong hit__, you have it, and are ready to act. Take +1 momentum.
 
@@ -365,7 +365,7 @@ moves:
                 - using: stat
                   stat: heart
         text: |-
-          **When you swear upon iron to complete a quest**, write your vow and give it a rank. Then, roll +heart. If you swear this vow to a connection, add +1; if you share a bond, add +2.
+          __When you swear upon iron to complete a quest__, write your vow and give it a rank. Then, roll +heart. If you swear this vow to a connection, add +1; if you share a bond, add +2.
 
           On a __strong hit__, you are emboldened and it is clear what you must do next. Take +2 momentum.
 
@@ -388,7 +388,7 @@ moves:
         trigger:
           text: When you make headway in your quest...
         text: |-
-          **When you make headway in your quest** by doing any of the following...
+          __When you make headway in your quest__ by doing any of the following...
 
             * overcoming a critical obstacle
             * gaining meaningful insight
@@ -412,7 +412,7 @@ moves:
             - roll_options:
                 - using: progress_track
         text: |-
-          **When you reach the end of your quest**, roll the challenge dice and compare to your progress.
+          __When you reach the end of your quest__, roll the challenge dice and compare to your progress.
 
           On a __strong hit__, your vow is fulfilled. Mark a reward on your quests legacy track per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this vow also mark the reward.
 
@@ -444,7 +444,7 @@ moves:
         trigger:
           text: When you renounce your quest, betray your promise, or the goal is lost to you...
         text: |-
-          **When you renounce your quest, betray your promise, or the goal is lost to you**, clear the vow.
+          __When you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow.
 
           Then, envision the impact of this failure and choose one or more as appropriate to the nature of the vow. Any allies who shared this vow may also envision a cost.
 
@@ -466,7 +466,7 @@ moves:
     summary: |-
       Make these __connection moves__ when you introduce connections and as you build influence or understanding with them.
     description: |-
-      **Connections** are NPCs (non-player characters) who represent a deep, vital, or interesting relationship in your story. They are your tethers to the people and places of the Forge.
+      __Connections__ are NPCs (non-player characters) who represent a deep, vital, or interesting relationship in your story. They are your tethers to the people and places of the Forge.
 
       Make these __connection moves__ when you introduce connections and as you build influence or understanding with them.
     contents:
@@ -481,7 +481,7 @@ moves:
                 - using: stat
                   stat: heart
         text: |-
-          **When you search out a new relationship or give focus to an existing relationship (not an ally or companion)**, roll +heart.
+          __When you search out a new relationship or give focus to an existing relationship (not an ally or companion)__, roll +heart.
 
           On a __strong hit__, you create a connection. Give them a role and rank. Whenever your connection aids you on a move closely associated with their role, add +1 and take +1 momentum on a hit.
 
@@ -526,7 +526,7 @@ moves:
                   using: custom
                   value: 5
         text: |-
-          **When you reinforce your relationship with a connection** by doing any of the following...
+          __When you reinforce your relationship with a connection__ by doing any of the following...
 
             * swearing a vow to undertake a perilous quest in their service
             * completing a quest to their benefit
@@ -563,7 +563,7 @@ moves:
                 - using: stat
                   stat: heart
         text: |-
-          **When your relationship with a connection is tested through conflict, betrayal, or circumstance**, roll +heart. If you share a bond, add +1.
+          __When your relationship with a connection is tested through conflict, betrayal, or circumstance__, roll +heart. If you share a bond, add +1.
 
           On a __strong hit__, [Develop Your Relationship](id:starforged/moves/connection/develop_your_relationship).
 
@@ -599,7 +599,7 @@ moves:
             - roll_options:
                 - using: progress_track
         text: |-
-          **When your relationship with a connection is ready to evolve**, roll the challenge dice and compare to your progress.
+          __When your relationship with a connection is ready to evolve__, roll the challenge dice and compare to your progress.
 
           On a __strong hit__, you now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.
 
@@ -664,7 +664,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site**, give the expedition a name and rank. Then, for each segment of the expedition, envision your approach. If you...
+          __When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site__, give the expedition a name and rank. Then, for each segment of the expedition, envision your approach. If you...
 
             * Move at speed: Roll +edge
             * Keep under the radar: Roll +shadow
@@ -703,7 +703,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you divert from an expedition to examine a notable location**, roll +wits.
+          __When you divert from an expedition to examine a notable location__, roll +wits.
 
           On a __strong hit__, choose one. On a __strong hit with a match__, you may instead [Make a Discovery](id:starforged/moves/exploration/make_a_discovery).
 
@@ -736,7 +736,7 @@ moves:
         oracles:
           - starforged/oracles/moves/make_a_discovery
         text: |-
-          **When your exploration of a waypoint uncovers something wondrous**, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.
+          __When your exploration of a waypoint uncovers something wondrous__, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.
 
           {{table:starforged/oracles/moves/make_a_discovery}}
         source:
@@ -750,7 +750,7 @@ moves:
         oracles:
           - starforged/oracles/moves/confront_chaos
         text: |-
-          **When your exploration of a waypoint uncovers something dreadful**, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.
+          __When your exploration of a waypoint uncovers something dreadful__, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.
 
           For each result, when you first confront that aspect within the scope of the encounter, you and your allies may mark one tick on your discoveries legacy track.
 
@@ -769,7 +769,7 @@ moves:
             - roll_options:
                 - using: progress_track
         text: |-
-          **When your expedition comes to an end**, roll the challenge dice and compare to your progress.
+          __When your expedition comes to an end__, roll the challenge dice and compare to your progress.
 
           On a __strong hit__, you reach your destination or complete your survey. Mark a reward on your discoveries legacy track per expedition's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this expedition also mark the reward.
 
@@ -805,7 +805,7 @@ moves:
                 - using: condition_meter
                   condition_meter: supply
         text: |-
-          **When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site**, roll +supply.
+          __When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site__, roll +supply.
 
           On a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.
 
@@ -875,7 +875,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you initiate combat or are forced into a fight**, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.
+          __When you initiate combat or are forced into a fight__, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.
 
           Then, roll to see if you are in control. If you are...
 
@@ -937,7 +937,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you are in control and take action in a fight to reinforce your position or move toward an objective**, envision your approach and roll. If you are...
+          __When you are in control and take action in a fight to reinforce your position or move toward an objective__, envision your approach and roll. If you are...
 
             * In pursuit, fleeing, or maneuvering: Roll +edge
             * Charging boldly into action, coming to the aid of others, negotiating, or commanding: Roll +heart
@@ -1004,7 +1004,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle**, envision your approach and roll. If you are...
+          __When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle__, envision your approach and roll. If you are...
 
             * In pursuit, fleeing, dodging, getting back into position, or taking cover: Roll +edge
             * Remaining stalwart against fear or temptation: Roll +heart
@@ -1044,7 +1044,7 @@ moves:
                 - using: stat
                   stat: edge
         text: |-
-          **When you are in control and assault a foe at close quarters**, roll +iron; __when you attack at a distance__, roll +edge.
+          __When you are in control and assault a foe at close quarters__, roll +iron; __when you attack at a distance__, roll +edge.
 
           On a __strong hit__, mark progress twice. You dominate your foe and stay in control.
 
@@ -1078,7 +1078,7 @@ moves:
                 - using: stat
                   stat: edge
         text: |-
-          **When you are in a bad spot and fight back against a foe at close quarters**, roll +iron; __when you exchange fire at a distance__, roll +edge.
+          __When you are in a bad spot and fight back against a foe at close quarters__, roll +iron; __when you exchange fire at a distance__, roll +edge.
 
           On a __strong hit__, mark progress twice. You overwhelm your foe and are in control.
 
@@ -1108,7 +1108,7 @@ moves:
         oracles:
           - starforged/oracles/moves/take_decisive_action
         text: |-
-          **When you seize an objective in a fight**, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.
+          __When you seize an objective in a fight__, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.
 
           If you are in control, check the result as normal. If you are in a bad spot, count a strong hit without a match as a weak hit, and a weak hit as a miss.
 
@@ -1138,7 +1138,7 @@ moves:
         trigger:
           text: When you abandon or are deprived of an objective...
         text: |-
-          **When you abandon or are deprived of an objective**, envision the consequence of this failure, clear the objective, and [Pay the Price](id:starforged/moves/fate/pay_the_price).
+          __When you abandon or are deprived of an objective__, envision the consequence of this failure, clear the objective, and [Pay the Price](id:starforged/moves/fate/pay_the_price).
 
           If the fight continues, you may create a new objective and give it a rank to represent the changing situation. If any objectives remain, the fight continues and you are in a bad spot.
         source:
@@ -1176,7 +1176,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you fight a battle and it happens in a blur**, envision your objective and roll. If you primarily...
+          __When you fight a battle and it happens in a blur__, envision your objective and roll. If you primarily...
 
             * Fight at range, or using your speed and the environment to your advantage: Roll +edge.
             * Fight depending on your courage, leadership, or companions: Roll +heart.
@@ -1216,7 +1216,7 @@ moves:
         trigger:
           text: When you are delayed or disadvantaged...
         text: |-
-          **When you are delayed or disadvantaged**, suffer -1 momentum for a minor setback, -2 for a serious setback, or -3 for a major setback.
+          __When you are delayed or disadvantaged__, suffer -1 momentum for a minor setback, -2 for a serious setback, or -3 for a major setback.
 
           When your momentum is at its minimum (-6) and you must suffer -momentum, choose one.
 
@@ -1240,7 +1240,7 @@ moves:
         oracles:
           - starforged/oracles/moves/endure_harm
         text: |-
-          **When you face physical injury, fatigue, or illness**, suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your health is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining harm.
+          __When you face physical injury, fatigue, or illness__, suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your health is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining harm.
 
           Then, if your health is 0 or you choose to resist the harm, roll +health or +iron, whichever is higher.
 
@@ -1286,7 +1286,7 @@ moves:
         oracles:
           - starforged/oracles/moves/endure_stress
         text: |-
-          **When you face mental strain, shock, or despair**, suffer -1 spirit for minor stress, -2 for serious stress, or -3 for major stress. If your spirit is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining stress.
+          __When you face mental strain, shock, or despair__, suffer -1 spirit for minor stress, -2 for serious stress, or -3 for major stress. If your spirit is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining stress.
 
           Then, if your spirit is 0 or you choose to resist the stress, roll +spirit or +heart, whichever is higher.
 
@@ -1330,7 +1330,7 @@ moves:
                     - '*/assets/companion/*'
                   control: health
         text: |-
-          **When your companion faces physical hardship**, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion's health is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining harm.
+          __When your companion faces physical hardship__, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion's health is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining harm.
 
           Then, if their health is 0 or you choose to test their resilience, roll +your companion's health.
 
@@ -1358,7 +1358,7 @@ moves:
         trigger:
           text: When you lose or consume resources...
         text: |-
-          **When you lose or consume resources**, suffer -1 supply for a minor loss, -2 for a serious loss, or -3 for a major loss.
+          __When you lose or consume resources__, suffer -1 supply for a minor loss, -2 for a serious loss, or -3 for a major loss.
 
           If your supply is exhausted (reduced to 0), mark __unprepared__. When you suffer a loss of resources while unprepared, envision how this causes you hardship and apply the cost to a different suffer move.
         source:
@@ -1381,7 +1381,7 @@ moves:
         oracles:
           - starforged/oracles/moves/withstand_damage
         text: |-
-          **When your vehicle faces a damaging situation or environment**, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining damage.
+          __When your vehicle faces a damaging situation or environment__, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining damage.
 
           Then, if your integrity is 0 or you choose to resist the damage, roll +integrity.
 
@@ -1394,9 +1394,9 @@ moves:
 
           On a __miss__, it’s worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
 
-            * **Command vehicle:** Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
-            * **Support vehicle:** Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed, discard the asset.
-            * **Incidental vehicle:** Roll on the table below.
+            * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
+            * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed, discard the asset.
+            * __Incidental vehicle:__ Roll on the table below.
 
           {{table:starforged/oracles/moves/withstand_damage}}
         outcomes:
@@ -1412,9 +1412,9 @@ moves:
             text: |-
               On a __miss__, it’s worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
 
-                * **Command vehicle:** Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
-                * **Support vehicle:** Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed, discard the asset.
-                * **Incidental vehicle:** Roll on the table below.
+                * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
+                * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed, discard the asset.
+                * __Incidental vehicle:__ Roll on the table below.
 
                 {{table:starforged/oracles/moves/withstand_damage}}
         source:
@@ -1443,7 +1443,7 @@ moves:
                 - using: stat
                   stat: heart
         text: |-
-          **When you spend time recovering within a community**, roll +heart.
+          __When you spend time recovering within a community__, roll +heart.
 
           On a __strong hit__, this is a safe refuge. You and your allies may each choose two recover contents: [Heal](id:starforged/moves/recover/heal), [Hearten](id:starforged/moves/recover/hearten), [Repair](id:starforged/moves/recover/repair), or [Resupply](id:starforged/moves/recover/resupply). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
 
@@ -1498,7 +1498,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you receive medical care or provide treatment**, envision the situation and roll. If you...
+          __When you receive medical care or provide treatment__, envision the situation and roll. If you...
 
             * Receive treatment from someone (not an ally): Roll +iron
             * Mend your own wounds: Roll +iron or +wits, whichever is lower
@@ -1534,7 +1534,7 @@ moves:
                 - using: stat
                   stat: heart
         text: |-
-          **When you socialize, share intimacy, or find a moment of peace**, roll +heart.
+          __When you socialize, share intimacy, or find a moment of peace__, roll +heart.
 
           On a __strong hit__, you find companionship or comfort and your spirit is strengthened. If you are shaken, clear the impact and take +1 spirit. Otherwise, take +2 spirit. If you make this move as you [Sojourn](id:starforged/moves/recover/sojourn), take +1 more.
 
@@ -1581,7 +1581,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you attempt to bolster your readiness**, envision the opportunity and your approach. If you...
+          __When you attempt to bolster your readiness__, envision the opportunity and your approach. If you...
 
             * Barter or make an appeal: Roll +heart
             * Threaten or seize: Roll +iron
@@ -1633,7 +1633,7 @@ moves:
                 - using: condition_meter
                   condition_meter: supply
         text: |-
-          **When you make repairs to your vehicles, modules, mechanical companions, or other devices**, envision the situation and roll. If you...
+          __When you make repairs to your vehicles, modules, mechanical companions, or other devices__, envision the situation and roll. If you...
 
             * Make your own repairs, or direct a companion to make repairs: Roll +wits
             * Obtain repairs from someone (not an ally): Roll +supply
@@ -1726,7 +1726,7 @@ moves:
                 - using: stat
                   stat: heart
         text: |-
-          **When you encounter a situation where death is an immediate and unavoidable outcome**, you are dead. **When you are instead brought to the brink of death with a chance for recovery or redemption**, roll +heart.
+          __When you encounter a situation where death is an immediate and unavoidable outcome__, you are dead. __When you are instead brought to the brink of death with a chance for recovery or redemption__, roll +heart.
 
           On a __strong hit__, you are cast back into the mortal world.
 
@@ -1761,7 +1761,7 @@ moves:
                 - using: stat
                   stat: heart
         text: |-
-          **When you are brought to the brink of desolation**, roll +heart.
+          __When you are brought to the brink of desolation__, roll +heart.
 
           On a __strong hit__, you resist and press on.
 
@@ -1795,7 +1795,7 @@ moves:
               roll_options:
                 - using: bonds_legacy
         text: |-
-          **When your command vehicle is destroyed or irrevocably lost**, you must discard the asset, along with any modules and docked support vehicles.
+          __When your command vehicle is destroyed or irrevocably lost__, you must discard the asset, along with any modules and docked support vehicles.
 
           If you survive, you may use your connections to replace some of what was lost. To learn the cost, roll the challenge dice and compare to the progress on your bonds legacy track.
 
@@ -1846,7 +1846,7 @@ moves:
         trigger:
           text: When you fill a box (four ticks) on any legacy track...
         text: |-
-          **When you fill a box (four ticks) on any legacy track**, take 2 experience. This experience may be spent when you [Advance](id:starforged/moves/legacy/advance).
+          __When you fill a box (four ticks) on any legacy track__, take 2 experience. This experience may be spent when you [Advance](id:starforged/moves/legacy/advance).
 
           Once you completely fill the tenth box on any legacy track, clear that track. You may start again marking progress on the cleared track, but earn experience at a reduced rate of 1 experience (instead of 2) for each filled progress box. If you make a progress roll against this track, resolve the outcome as if at 10 progress.
         source:
@@ -1858,7 +1858,7 @@ moves:
         trigger:
           text: When you develop your abilities, improve your resources, gain a reward, or boost your influence...
         text: |-
-          **When you develop your abilities, improve your resources, gain a reward, or boost your influence**, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.
+          __When you develop your abilities, improve your resources, gain a reward, or boost your influence__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.
 
             * Module: Upgrade your command vehicle
             * Support Vehicle: Acquire or improve a secondary vehicle
@@ -1880,7 +1880,7 @@ moves:
                 - using: bonds_legacy
                 - using: discoveries_legacy
         text: |-
-          **When you retire from your life as Ironsworn, or succumb to death or desolation**, you may create a new character in your established setting. If you do, roll the challenge dice and compare to each of the former character's legacy tracks: quests, bonds, and discoveries (one roll per track).
+          __When you retire from your life as Ironsworn, or succumb to death or desolation__, you may create a new character in your established setting. If you do, roll the challenge dice and compare to each of the former character's legacy tracks: quests, bonds, and discoveries (one roll per track).
 
           For each __strong hit__, choose one from below, or one from the weak hit or miss options.
 
@@ -1965,7 +1965,7 @@ moves:
           - starforged/oracles/moves/ask_the_oracle/likely
           - starforged/oracles/moves/ask_the_oracle/almost_certain
         text: |-
-          **When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events**, you may...
+          __When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events__, you may...
 
             * Draw a conclusion: Decide the answer based on the most interesting and obvious result.
             * Spark an idea: Use an oracle table or other random prompt.
@@ -1993,7 +1993,7 @@ moves:
           - starforged/oracles/moves/pay_the_price
           - starforged/oracles/misc/story_complication
         text: |-
-          **When you suffer the outcome of an action**, choose one.
+          __When you suffer the outcome of an action__, choose one.
 
             * Make the most obvious negative outcome happen.
             * [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.
@@ -2023,7 +2023,7 @@ moves:
         trigger:
           text: When you face an extended or complex challenge...
         text: |-
-          **When you face an extended or complex challenge**, name your objective and choose a rank as appropriate to the situation.
+          __When you face an extended or complex challenge__, name your objective and choose a rank as appropriate to the situation.
 
             * You have a clear advantage: Troublesome
             * You are ready to act: Dangerous
@@ -2066,7 +2066,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you attempt something risky or react to an imminent threat within a scene challenge**, envision your action and roll. If you act...
+          __When you attempt something risky or react to an imminent threat within a scene challenge__, envision your action and roll. If you act...
 
             * With speed, mobility, or agility: Roll +edge
             * With resolve, command, or sociability: Roll +heart
@@ -2122,7 +2122,7 @@ moves:
                 - using: stat
                   stat: wits
         text: |-
-          **When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge**, envision your action and roll. If you act...
+          __When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge__, envision your action and roll. If you act...
 
             * With speed, mobility, or agility: Roll +edge
             * With resolve, command, or sociability: Roll +heart
@@ -2165,7 +2165,7 @@ moves:
             - roll_options:
                 - using: progress_track
         text: |-
-          **When the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion**, roll the challenge dice and compare to your progress.
+          __When the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion__, roll the challenge dice and compare to your progress.
 
           On a __strong hit__, you achieve your objective unconditionally.
 

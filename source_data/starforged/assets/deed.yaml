@@ -15,7 +15,7 @@ assets:
     color: &DeedAsset.color '#40834f'
     # summary: Represent the notable achievement and situations of your story, and how those events change your character.
     description: |-
-      **Deeds** represent the notable achievement and situations of your story, and how those events change your character.
+      __Deeds__ represent the notable achievement and situations of your story, and how those events change your character.
 
       Deeds have a requirement listed at the top of the card, phrased as “Once you \[blank\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character.
     contents:

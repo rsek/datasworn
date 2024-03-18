@@ -15,7 +15,7 @@ assets:
     color: &CompanionAsset.color '#3d8b8a'
     # Summary: NPC helpers, including alien creatures and robots.
     description: |-
-      **Companions** are NPC helpers. When you gain a companion, give them a name and envision their look and personality.
+      __Companions__ are NPC helpers. When you gain a companion, give them a name and envision their look and personality.
 
       Companions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the [Companion Takes a Hit](id:starforged/moves/suffer/companion_takes_a_hit) move. When their health is at 0, they are in danger of being killed or destroyed.
     contents:

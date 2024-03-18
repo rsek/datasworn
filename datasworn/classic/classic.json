@@ -9216,7 +9216,7 @@
 						{
 							"min": 1,
 							"max": 15,
-							"result": "**A feature of the landscape.** Envision what it is. What makes it unusual or distinctive?",
+							"result": "__A feature of the landscape.__ Envision what it is. What makes it unusual or distinctive?",
 							"embed_table": "classic/oracles/settlement/name/landscape_feature",
 							"oracle_rolls": [
 								{
@@ -9231,7 +9231,7 @@
 						{
 							"min": 16,
 							"max": 30,
-							"result": "**A manmade edifice.** What is it? Why is it important to this settlement’s history?,",
+							"result": "__A manmade edifice.__ What is it? Why is it important to this settlement’s history?,",
 							"embed_table": "classic/oracles/settlement/name/manmade_edifice",
 							"oracle_rolls": [
 								{
@@ -9246,7 +9246,7 @@
 						{
 							"min": 31,
 							"max": 45,
-							"result": "**A creature.** Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
+							"result": "__A creature.__ Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
 							"embed_table": "classic/oracles/settlement/name/creature",
 							"oracle_rolls": [
 								{
@@ -9261,7 +9261,7 @@
 						{
 							"min": 46,
 							"max": 60,
-							"result": "**A historical event.** What happened here? What place or practice commemorates this event?",
+							"result": "__A historical event.__ What happened here? What place or practice commemorates this event?",
 							"embed_table": "classic/oracles/settlement/name/historical_event",
 							"oracle_rolls": [
 								{
@@ -9276,7 +9276,7 @@
 						{
 							"min": 61,
 							"max": 75,
-							"result": "**A word in an Old World language.** What culture is represented by this word? What does it translate to?",
+							"result": "__A word in an Old World language.__ What culture is represented by this word? What does it translate to?",
 							"embed_table": "classic/oracles/settlement/name/old_world_language",
 							"oracle_rolls": [
 								{
@@ -9291,7 +9291,7 @@
 						{
 							"min": 76,
 							"max": 90,
-							"result": "**A season or environmental aspect.** What influence does the weather have on this settlement?",
+							"result": "__A season or environmental aspect.__ What influence does the weather have on this settlement?",
 							"embed_table": "classic/oracles/settlement/name/environmental_aspect",
 							"oracle_rolls": [
 								{
@@ -9346,7 +9346,7 @@
 							"canonical_name": "A feature of the landscape",
 							"oracle_type": "table_simple",
 							"dice": "1d100",
-							"summary": "**A feature of the landscape.** Envision what it is. What makes it unusual or distinctive?",
+							"summary": "__A feature of the landscape.__ Envision what it is. What makes it unusual or distinctive?",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
@@ -9472,7 +9472,7 @@
 							"canonical_name": "A manmade edifice",
 							"oracle_type": "table_simple",
 							"dice": "1d100",
-							"summary": "**A manmade edifice.** What is it? Why is it important to this settlement’s history?,",
+							"summary": "__A manmade edifice.__ What is it? Why is it important to this settlement’s history?,",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
@@ -9598,7 +9598,7 @@
 							"canonical_name": "A creature",
 							"oracle_type": "table_simple",
 							"dice": "1d100",
-							"summary": "**A creature.** Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
+							"summary": "__A creature.__ Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
@@ -9724,7 +9724,7 @@
 							"canonical_name": "A historical event",
 							"oracle_type": "table_simple",
 							"dice": "1d100",
-							"summary": "**A historical event.** What happened here? What place or practice commemorates this event?",
+							"summary": "__A historical event.__ What happened here? What place or practice commemorates this event?",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
@@ -9850,7 +9850,7 @@
 							"canonical_name": "A word in an Old World language",
 							"oracle_type": "table_simple",
 							"dice": "1d100",
-							"summary": "**A word in an Old World language.** What culture is represented by this word? What does it translate to?",
+							"summary": "__A word in an Old World language.__ What culture is represented by this word? What does it translate to?",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
@@ -9976,7 +9976,7 @@
 							"canonical_name": "A season or environmental aspect",
 							"oracle_type": "table_simple",
 							"dice": "1d100",
-							"summary": "**A season or environmental aspect.** What influence does the weather have on this settlement?",
+							"summary": "__A season or environmental aspect.__ What influence does the weather have on this settlement?",
 							"column_labels": {
 								"roll": "Roll",
 								"result": "Result"
@@ -11224,7 +11224,7 @@
 		"combat_talent": {
 			"id": "classic/collections/assets/combat_talent",
 			"name": "Combat Talent Assets",
-			"description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform [combat moves](id:classic/collections/moves/combat). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a **Shield-Bearer** and don’t have a shield at the ready, you can’t use the asset’s abilities.",
+			"description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform [combat moves](id:classic/collections/moves/combat). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a [Shield-Bearer](id:classic/assets/combat_talent/shield-bearer) and don’t have a shield at the ready, you can’t use the asset’s abilities.",
 			"contents": {
 				"archer": {
 					"id": "classic/assets/combat_talent/archer",
@@ -19864,13 +19864,13 @@
 						],
 						"text": "When you spend time in a community seeking assistance..."
 					},
-					"text": "When __you spend time in a community seeking assistance__, roll +heart. If you share a bond, add +1. On __strong hit__, you and your allies may each choose two from within the categories below. On a __weak hit__, choose one. If you share a bond, choose one more.\n\nOn a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.\n\n**Clear a Condition**\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply.\n\n**Recover**\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum.\n\n**Provide Aid**\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1.\n\nOn a __miss__, you find no help here. [Pay the Price](id:classic/moves/fate/pay_the_price).",
+					"text": "When __you spend time in a community seeking assistance__, roll +heart. If you share a bond, add +1. On __strong hit__, you and your allies may each choose two from within the categories below. On a __weak hit__, choose one. If you share a bond, choose one more.\n\nOn a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.\n\n__Clear a Condition__\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply.\n\n__Recover__\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum.\n\n__Provide Aid__\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1.\n\nOn a __miss__, you find no help here. [Pay the Price](id:classic/moves/fate/pay_the_price).",
 					"outcomes": {
 						"strong_hit": {
-							"text": "On a __strong hit__, you and your allies may each choose two from within the categories below.\n\nYou and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.\n\n**Clear a Condition**\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply.\n\n**Recover**\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum.\n\n**Provide Aid**\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1."
+							"text": "On a __strong hit__, you and your allies may each choose two from within the categories below.\n\nYou and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.\n\n__Clear a Condition__\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply.\n\n__Recover__\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum.\n\n__Provide Aid__\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1."
 						},
 						"weak_hit": {
-							"text": "On a __weak hit__, you and your allies may each choose one from within the categories below.\n\nYou and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.\n\n**Clear a Condition**\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply.\n\n**Recover**\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum.\n\n**Provide Aid**\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1."
+							"text": "On a __weak hit__, you and your allies may each choose one from within the categories below.\n\nYou and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1. On a __strong hit__, take +2 more for that action. On a __weak hit__, take +1 more. On a __miss__, it goes badly and you lose all benefits for that action.\n\n__Clear a Condition__\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply.\n\n__Recover__\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum.\n\n__Provide Aid__\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure). If you chose to help, [Swear an Iron Vow](id:classic/moves/quest/swear_an_iron_vow) and add +1."
 						},
 						"miss": {
 							"text": "On a __miss__, you find no help here. [Pay the Price](id:classic/moves/fate/pay_the_price)."
@@ -20915,7 +20915,7 @@
 			"id": "classic/collections/moves/fate",
 			"name": "Fate Moves",
 			"summary": "When you face the outcome of a move, want to know what happens next, or have a question about people, places and events external to your character, the fate moves help you discover an answer.",
-			"description": "In solo and co-op play, the fate moves mediate the result of other moves or serve as inspirational prompts for your story. When you face the outcome of a move, want to know what happens next, or have a question about people, places and events external to your character, the fate moves help you discover an answer.\n\nIn guided mode, your GM represents the whims of fate. They can reference these moves as they like, but they can also decide the outcome or direct the question back to you.\n\nThere are three key aspects of using the fate moves:\n  * **Instinct:** If an answer to a question or the result of a situation is obvious, interesting and dramatic, make it happen.\n  * **Randomness:** You can roll on random tables to generate a result or answer a question.\n  * **Inspiration:** You can use creative prompts, such as those included in the oracles chapter (page 165) to guide your story.",
+			"description": "In solo and co-op play, the fate moves mediate the result of other moves or serve as inspirational prompts for your story. When you face the outcome of a move, want to know what happens next, or have a question about people, places and events external to your character, the fate moves help you discover an answer.\n\nIn guided mode, your GM represents the whims of fate. They can reference these moves as they like, but they can also decide the outcome or direct the question back to you.\n\nThere are three key aspects of using the fate moves:\n  * __Instinct:__ If an answer to a question or the result of a situation is obvious, interesting and dramatic, make it happen.\n  * __Randomness:__ You can roll on random tables to generate a result or answer a question.\n  * __Inspiration:__ You can use creative prompts, such as those included in the oracles chapter (page 165) to guide your story.",
 			"contents": {
 				"pay_the_price": {
 					"id": "classic/moves/fate/pay_the_price",
@@ -20990,7 +20990,7 @@
 		"ironlanders": {
 			"id": "classic/collections/npcs/ironlanders",
 			"name": "Ironlanders",
-			"summary": "The **Ironlanders** are the humans who have settled these lands.",
+			"summary": "The __Ironlanders__ are the humans who have settled these lands.",
 			"description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can [Ask the Oracle](id:classic/oracles/turning_point/challenge_rank/foe), or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__.",
 			"contents": {
 				"broken": {
@@ -21175,7 +21175,7 @@
 		"firstborn": {
 			"id": "classic/collections/npcs/firstborn",
 			"name": "Firstborn",
-			"summary": "The **Firstborn** are beings who walked the Ironlands uncountable years before humans arrived.",
+			"summary": "The __Firstborn__ are beings who walked the Ironlands uncountable years before humans arrived.",
 			"description": "The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.",
 			"contents": {
 				"elf": {
@@ -21355,7 +21355,7 @@
 		"animals": {
 			"id": "classic/collections/npcs/animals",
 			"name": "Animals",
-			"summary": "**Animals** are common creatures.",
+			"summary": "__Animals__ are common creatures.",
 			"description": "animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the [Old World](id:classic/truths/old_world).\n\nMost wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, [Resupply](id:classic/moves/adventure/resupply) can represent hunting for deer or small game.\n\nA few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.",
 			"contents": {
 				"bear": {
@@ -21495,7 +21495,7 @@
 		"beasts": {
 			"id": "classic/collections/npcs/beasts",
 			"name": "Beasts",
-			"summary": "**Beasts** are monstrous creatures of unusual size and cunning.",
+			"summary": "__Beasts__ are monstrous creatures of unusual size and cunning.",
 			"description": "Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the [Old World](id:classic/truths/old_world).",
 			"contents": {
 				"basilisk": {
@@ -21700,7 +21700,7 @@
 		"horrors": {
 			"id": "classic/collections/npcs/horrors",
 			"name": "Horrors",
-			"summary": "**Horrors** are supernatural beings.",
+			"summary": "__Horrors__ are supernatural beings.",
 			"description": "Horrors are supernatural entities. In the [Old World](id:classic/truths/old_world), they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.\n\nMany horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.",
 			"contents": {
 				"bonewalker": {

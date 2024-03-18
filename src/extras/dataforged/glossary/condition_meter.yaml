@@ -7,17 +7,17 @@ source: &Source
 Terms:
   - Name: Health
     Description: |-
-      **Health** represents your current physical condition and stamina, ranked from 0 to +5. Health is reduced when you [Endure Harm](id:starforged/moves/suffer/endure_harm), and increased when you rest or receive care through moves such as [Heal](id:starforged/moves/recover/heal).
+      __Health__ represents your current physical condition and stamina, ranked from 0 to +5. Health is reduced when you [Endure Harm](id:starforged/moves/suffer/endure_harm), and increased when you rest or receive care through moves such as [Heal](id:starforged/moves/recover/heal).
 
       If you are at 0 health, scoring a miss when you [Endure Harm](id:starforged/moves/suffer/endure_harm) puts you at risk of suffering an impact (page 46) or dying.
   - Name: Spirit
     Description: |-
-      **Spirit** is your current morale and mental state, ranked from 0 to +5. Spirit is reduced when you [Endure Stress](id:starforged/moves/suffer/endure_stress). It is increased when you find comfort in companionship or relaxed moments through moves such as [Hearten](id:starforged/moves/recover/hearten).
+      __Spirit__ is your current morale and mental state, ranked from 0 to +5. Spirit is reduced when you [Endure Stress](id:starforged/moves/suffer/endure_stress). It is increased when you find comfort in companionship or relaxed moments through moves such as [Hearten](id:starforged/moves/recover/hearten).
 
       If you are at 0 spirit, scoring a miss when you [Endure Stress](id:starforged/moves/suffer/endure_stress) puts you at risk of suffering an impact or falling into desolation.
   - Name: Supply
     Description: |-
-      **Supply** is an abstract representation of your preparedness, including food, water, fuel, ammo, equipment, cargo, money, and general upkeep.
+      __Supply__ is an abstract representation of your preparedness, including food, water, fuel, ammo, equipment, cargo, money, and general upkeep.
 
       Supply is ranked from 0 to +5. It is decreased when you make the [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) move, and is increased when you [Resupply](id:starforged/moves/recover/resupply) to fortify your provisions and readiness.
 

@@ -14,7 +14,7 @@ npcs:
         date: 2019-06-05
         license: https://creativecommons.org/licenses/by-nc-sa/4.0
       page: 138
-    summary: The **Ironlanders** are the humans who have settled these lands.
+    summary: The __Ironlanders__ are the humans who have settled these lands.
     description: |-
       Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.
 
@@ -214,7 +214,7 @@ npcs:
       <<: *Source
       title: Ironsworn Rulebook
       page: 142
-    summary: The **Firstborn** are beings who walked the Ironlands uncountable years before humans arrived.
+    summary: The __Firstborn__ are beings who walked the Ironlands uncountable years before humans arrived.
     description: |-
       The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.
     contents:
@@ -383,7 +383,7 @@ npcs:
       <<: *Source
       title: Ironsworn Rulebook
       page: 147
-    summary: '**Animals** are common creatures.'
+    summary: '__Animals__ are common creatures.'
     description: |-
       animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the [Old World](id:classic/truths/old_world).
 
@@ -539,7 +539,7 @@ npcs:
       <<: *Source
       title: Ironsworn Rulebook
       page: 151
-    summary: '**Beasts** are monstrous creatures of unusual size and cunning.'
+    summary: '__Beasts__ are monstrous creatures of unusual size and cunning.'
     description: |-
       Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the [Old World](id:classic/truths/old_world).
     contents:
@@ -724,7 +724,7 @@ npcs:
       <<: *Source
       title: Ironsworn Rulebook
       page: 157
-    summary: '**Horrors** are supernatural beings.'
+    summary: '__Horrors__ are supernatural beings.'
     description: |-
       Horrors are supernatural entities. In the [Old World](id:classic/truths/old_world), they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.
 
