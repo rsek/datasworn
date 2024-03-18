@@ -28,7 +28,7 @@ assets:
             <<: *Source
             title: 'Ironsworn: Starforged Assets'
           options:
-            label:
+            name:
               field_type: text
               label: name
         # tags: [biological_companion]

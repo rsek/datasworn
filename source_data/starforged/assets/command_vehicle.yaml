@@ -33,7 +33,7 @@ assets:
             assets:
               - '*/assets/module/*'
           options: &Options_Name
-            label:
+            name:
               field_type: text
               label: name
         controls:

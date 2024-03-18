@@ -81,7 +81,7 @@ assets:
         <<: *DeedAsset
         name: Homesteader
         options: &Options_Name
-          label:
+          name:
             label: name
             field_type: text
         requirement: Once you fill 4 boxes on your bonds legacy track...
