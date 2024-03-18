@@ -1,5 +1,5 @@
 import {
-	TypeClone,
+	CloneType,
 	type SchemaOptions,
 	type Static,
 	type TObject,
@@ -30,7 +30,7 @@ export function Computed<
 		[ComputedPropertyBrand]: 'ComputedProperty'
 	}
 ) {
-	return TypeClone.Type(schema, {
+	return CloneType(schema, {
 		...options
 	}) as TComputed<T, ParentObject>
 }
@@ -59,7 +59,7 @@ export function SourceOptional<T extends TSchema>(
 	schema: T,
 	options: SchemaOptions = {}
 ) {
-	return TypeClone.Type(schema, {
+	return CloneType(schema, {
 		...options,
 		[SourceOptionalBrand]: 'SourceOptional'
 	}) as TComputed<T>
@@ -76,7 +76,7 @@ export function setSourceDataSchema<
 	SourceSchema extends TSchema
 >(schema: T, sourceSchema: SourceSchema | ((schema: T) => SourceSchema)) {
 	const base = {
-		...TypeClone.Type(schema),
+		...CloneType(schema),
 		[GetSourceDataSchema]:
 			typeof sourceSchema === 'function' ? sourceSchema : () => sourceSchema
 	} as THasSourceSchema<T, SourceSchema>

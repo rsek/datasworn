@@ -1,7 +1,7 @@
 import {
 	Kind,
 	type TNull,
-	TypeClone,
+	CloneType,
 	type SchemaOptions,
 	type TArray,
 	type TIntersect,
@@ -53,13 +53,13 @@ export function SourceData<T extends TSchema>(
 const transforms: SchemaTransforms = {
 	...SchemaTransforms,
 	Array: <T extends TArray>(schema: T, options: SchemaOptions) => {
-		const result = TypeClone.Type(schema, options)
+		const result = CloneType(schema, options)
 		result.items = SourceData(result.items)
 		return result
 	},
 
 	Intersect: <T extends TIntersect>(schema: T, options: SchemaOptions) => {
-		const result = TypeClone.Type(schema, options)
+		const result = CloneType(schema, options)
 		result.allOf = result.allOf.map((v) => SourceData(v))
 
 		return result
@@ -72,23 +72,23 @@ const transforms: SchemaTransforms = {
 			if (property[ComputedPropertyBrand] || property[SourceOptionalBrand])
 				optionalProps.push(key as any)
 
-		if (optionalProps.length === 0) return TypeClone.Type(schema, options)
+		if (optionalProps.length === 0) return CloneType(schema, options)
 
 		const base = SetOptional(schema, optionalProps)
 
 		const nuOptions = omit(
-			TypeClone.Type(schema, options),
+			CloneType(schema, options),
 			...Object.keys(base),
 			'required'
 		)
 
-		const result = TypeClone.Type(base, nuOptions) as T // defaults arent part of the type data, so it's close enough
+		const result = CloneType(base, nuOptions) as T // defaults arent part of the type data, so it's close enough
 
 		return result
 	},
 
 	Record: <T extends TRecord>(schema: T, options: SchemaOptions) => {
-		const newSchema = TypeClone.Type(schema, options)
+		const newSchema = CloneType(schema, options)
 
 		newSchema.patternProperties = mapValues(newSchema.patternProperties, (v) =>
 			SourceData(v)
@@ -98,7 +98,7 @@ const transforms: SchemaTransforms = {
 	},
 
 	Tuple: <T extends TTuple>(schema: T, options: SchemaOptions) => {
-		const result = TypeClone.Type(schema, options)
+		const result = CloneType(schema, options)
 
 		if (Array.isArray(result.items))
 			result.items = result.items.map((item) => SourceData(item))
@@ -106,7 +106,7 @@ const transforms: SchemaTransforms = {
 		return result
 	},
 	Union: <T extends TUnion>(schema: T, options: SchemaOptions) => {
-		const result = TypeClone.Type(schema, options)
+		const result = CloneType(schema, options)
 
 		result.anyOf = result.anyOf.map((item) => SourceData(item))
 
@@ -114,7 +114,7 @@ const transforms: SchemaTransforms = {
 	},
 
 	Nullable: <T extends TNullable>(schema: T, options: SchemaOptions) => {
-		const result = TypeClone.Type(schema, options)
+		const result = CloneType(schema, options)
 
 		result.anyOf = result.anyOf.map((item) => SourceData(item)) as [
 			TSchema,
@@ -127,7 +127,7 @@ const transforms: SchemaTransforms = {
 		schema: T,
 		options: SchemaOptions
 	) => {
-		const result = TypeClone.Type(schema, options)
+		const result = CloneType(schema, options)
 
 		result.oneOf = result.oneOf.map((item) => SourceData(item))
 
@@ -137,7 +137,7 @@ const transforms: SchemaTransforms = {
 		schema: T,
 		options: SchemaOptions
 	) => {
-		const result = TypeClone.Type(schema, options)
+		const result = CloneType(schema, options)
 
 		result.allOf = result.allOf.map((ifThen) => ({
 			...ifThen,

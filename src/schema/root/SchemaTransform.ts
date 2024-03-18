@@ -1,5 +1,5 @@
 import {
-	TypeClone,
+	CloneType,
 	type SchemaOptions,
 	type TSchema,
 	type TArray,
@@ -14,7 +14,8 @@ import {
 	type TRef,
 	type TString,
 	type TTuple,
-	type TUnion
+	type TUnion,
+	type TRegExp
 } from '@sinclair/typebox'
 import { type TUnionEnum } from '../utils/UnionEnum.js'
 import { type TUnionOneOf } from '../utils/UnionOneOf.js'
@@ -35,6 +36,7 @@ export const SchemaKind = [
 	'String',
 	'Tuple',
 	'Union',
+	'RegExp',
 	// custom types
 	'UnionOneOf',
 	'UnionEnum',
@@ -56,6 +58,7 @@ interface SchemaKindMap extends Record<SchemaKind, TSchema> {
 	String: TString
 	Tuple: TTuple
 	Union: TUnion
+	RegExp: TRegExp
 	// custom types
 	UnionOneOf: TUnionOneOf<TSchema[]>
 	UnionEnum: TUnionEnum
@@ -75,6 +78,6 @@ export const SchemaTransforms = Object.fromEntries(
 	SchemaKind.map((kind) => [
 		kind,
 		(schema: SchemaKindMap[typeof kind], options: SchemaOptions) =>
-			TypeClone.Type(schema, options)
+			CloneType(schema, options)
 	])
 ) as SchemaTransforms

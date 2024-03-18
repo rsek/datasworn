@@ -13,7 +13,7 @@ export function IdentifiedNode<T extends TObject>(
 	// const result =
 	// 	// @ts-expect-error
 	// 	Type.Object(
-	// 		{ id: ComputedProperty(id), ...TypeClone.Type(schema).properties },
+	// 		{ id: ComputedProperty(id), ...CloneType(schema).properties },
 	// 		options
 	// 	) as TIdentifiedNode<T>
 	// console.log('ADDED ID', result)

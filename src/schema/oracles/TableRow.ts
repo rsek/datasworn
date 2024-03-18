@@ -7,7 +7,7 @@ import {
 	type TProperties,
 	type TRef,
 	type TSchema,
-	TypeClone
+	CloneType
 } from '@sinclair/typebox'
 import { mapValues } from 'lodash-es'
 import { JsonTypeDef } from '../Symbols.js'
@@ -100,18 +100,16 @@ export function StaticRowPartial<
 }
 // export const OracleTableRowSimple = Generic.IdentifiedNode(
 // 	Type.Ref(Id.OracleTableRowId),
-// 	TypeClone.Type(TableRowNullableMixin),
+// 	CloneType(TableRowNullableMixin),
 // 	{
 // 		$id: 'OracleTableRowSimple',
 // 		description: 'Represents a row in an oracle table.'
 // 	}
 // )
-export const OracleTableRowSimple =
-	TypeClone.Type(TableRowNullableMixin,{
-		$id: 'OracleTableRowSimple',
-		description: 'Represents a row in an oracle table.'
-	}
-)
+export const OracleTableRowSimple = CloneType(TableRowNullableMixin, {
+	$id: 'OracleTableRowSimple',
+	description: 'Represents a row in an oracle table.'
+})
 
 
 export type OracleTableRowSimple = Static<typeof OracleTableRowSimple>

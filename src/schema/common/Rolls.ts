@@ -2,14 +2,12 @@ import { type TString, Type, type Static } from '@sinclair/typebox'
 import { Id, Localize } from './index.js'
 import * as Utils from '../Utils.js'
 
-export const DiceExpression = Type.RegExp(
-	/([1-9][0-9]*)d([1-9][0-9]*)([+-]([1-9][0-9]*))?/,
-	{
-		$id: 'DiceExpression',
-		description: 'A simple dice roll expression with an optional modifer.',
-		examples: ['1d100', '1d6+2']
-	}
-) as TString & { pattern: string; static: DiceExpression }
+export const DiceExpression = Type.String({
+	pattern: /([1-9][0-9]*)d([1-9][0-9]*)([+-]([1-9][0-9]*))?/.source,
+	$id: 'DiceExpression',
+	description: 'A simple dice roll expression with an optional modifer.',
+	examples: ['1d100', '1d6+2']
+}) as TString & { pattern: string; static: DiceExpression }
 
 export type DiceExpression =
 	| `${number}d${number}`

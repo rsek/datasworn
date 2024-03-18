@@ -8,7 +8,7 @@ import {
 	ToEnum,
 	ToUnion
 } from '../schema/Utils.js'
-import { TSchema, Type, TypeClone, TypeGuard } from '@sinclair/typebox'
+import { TSchema, Type, CloneType, TypeGuard } from '@sinclair/typebox'
 // import { CompilerOptions, ScriptTarget } from 'typescript'
 // import { shellify } from '../shellify.js'
 
@@ -28,20 +28,20 @@ import { TSchema, Type, TypeClone, TypeGuard } from '@sinclair/typebox'
 // all this config/troubleshooting (which isn't complete yet!) makes
 /** Simplifies JSON schema types into types that are less precise, but friendlier to code generation tools like QuickType. */
 export function simplifyRecursive(schema: TSchema, allowNumberEnums = false) {
-	let base = TypeClone.Type(schema)
+	let base = CloneType(schema)
 	if (!base?.title && base?.$id) base.title = base.$id
 	switch (true) {
-		case TypeGuard.TLiteralNumber(base): {
+		case TypeGuard.IsLiteralNumber(base): {
 			return Type.Integer(pick(base, 'description', 'title'))
 		}
-		case TypeGuard.TIntersect(base): {
+		case TypeGuard.IsIntersect(base): {
 			// this is used on DelveSite, DelveSiteDomain, and DelveSiteTheme to describe table rows with static numbers. allOf[0] is an unbounded array, while allOf[1] is a tuple.
 			return simplifyRecursive({
 				...pick(base, 'description', 'title'),
 				...base.allOf[0]
 			})
 		}
-		case TypeGuard.TRecord(base): {
+		case TypeGuard.IsRecord(base): {
 			base.additionalProperties = Object.values(base.patternProperties)[0]
 			return {
 				...pick(base, 'description', 'title'),
@@ -52,7 +52,7 @@ export function simplifyRecursive(schema: TSchema, allowNumberEnums = false) {
 				}
 			}
 		}
-		case TypeGuard.TUnion(base): {
+		case TypeGuard.IsUnion(base): {
 			base.anyOf = base.anyOf.map(simplifyRecursive)
 			return omit(base, 'required')
 		}
@@ -65,12 +65,12 @@ export function simplifyRecursive(schema: TSchema, allowNumberEnums = false) {
 			if (base.enum.every(isInteger) && !allowNumberEnums)
 				return Type.Integer(pick(base, 'description', 'title'))
 			return ToEnum(base as any)
-		case TypeGuard.TObject(base): {
+		case TypeGuard.IsObject(base): {
 			base.properties = mapValues(base.properties, simplifyRecursive)
 			base.additionalProperties ||= false
 			break
 		}
-		case TypeGuard.TArray(base): {
+		case TypeGuard.IsArray(base): {
 			base.items = simplifyRecursive(base.items)
 			break
 		}

@@ -1852,9 +1852,6 @@
 				"name": {
 					"ref": "Label"
 				},
-				"description": {
-					"ref": "MarkdownString"
-				},
 				"rank": {
 					"ref": "ChallengeRank",
 					"metadata": {
@@ -1863,6 +1860,9 @@
 				},
 				"nature": {
 					"ref": "NpcNature"
+				},
+				"description": {
+					"ref": "MarkdownString"
 				}
 			},
 			"optionalProperties": {
@@ -2476,9 +2476,6 @@
 						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 					}
 				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
 				"tags": {
 					"values": {
 						"values": {
@@ -2491,6 +2488,9 @@
 					"metadata": {
 						"propertyPattern": "^([a-z0-9_]{3,})$"
 					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
 				}
 			},
 			"metadata": {}
@@ -2560,9 +2560,6 @@
 						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 					}
 				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
 				"tags": {
 					"values": {
 						"values": {
@@ -2575,6 +2572,9 @@
 					"metadata": {
 						"propertyPattern": "^([a-z0-9_]{3,})$"
 					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
 				}
 			},
 			"metadata": {

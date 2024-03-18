@@ -1,5 +1,5 @@
 import {
-	TypeClone,
+	CloneType,
 	type TObject,
 	type TOptional,
 	type TSchema,
@@ -19,9 +19,9 @@ export function OmitOptional<T extends TObject>(
 	schema: T,
 	options: ObjectOptions = {}
 ) {
-	const base = TypeClone.Type(schema)
+	const base = CloneType(schema)
 
-	base.properties = omitBy(base.properties, (v) => TypeGuard.TOptional(v))
+	base.properties = omitBy(base.properties, (v) => TypeGuard.IsOptional(v))
 
 	return Type.Object(base.properties, options) as TOmitOptional<T>
 }

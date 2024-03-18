@@ -6,7 +6,6 @@ import {
 	type TArray,
 	type TNull,
 	type TSchema,
-	type ObjectProperties,
 	type TObject
 } from '@sinclair/typebox'
 import { Localize } from '../common/index.js'
@@ -107,13 +106,13 @@ export function TriggerConditionEnhancement<T extends TTriggerCondition>(
 	}
 
 	const rollOptionsAreNullable =
-		TypeGuard.TNull(Method) ?? Utils.TNullable(Method)
+		TypeGuard.IsNull(Method) ?? Utils.TNullable(Method)
 
 	const roll_options = rollOptionsAreNullable
 		? RollOptions
 		: Utils.Nullable(RollOptions)
 
-	const methodIsNullable = TypeGuard.TNull(Method) ?? Utils.TNullable(Method)
+	const methodIsNullable = TypeGuard.IsNull(Method) ?? Utils.TNullable(Method)
 
 	const method = methodIsNullable
 		? Method
@@ -157,7 +156,7 @@ export type TTrigger<
 	T extends TFuzzyNull<TArray<TFuzzyRef<TTriggerCondition>>> = TFuzzyNull<
 		TArray<TFuzzyRef<TTriggerCondition>>
 	>
-> = TObject<ObjectProperties<typeof TriggerMixin> & { conditions: T }>
+> = TObject<(typeof TriggerMixin)['properties'] & { conditions: T }>
 
 export type Trigger<
 	T extends TriggerCondition[] | null = TriggerCondition[] | null

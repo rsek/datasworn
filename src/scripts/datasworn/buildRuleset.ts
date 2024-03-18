@@ -20,7 +20,7 @@ import { writeRuleset } from './writeRuleset.js'
 const metadataKeys: string[] = []
 
 forEach(RulesExpansion.properties, (v, k) => {
-	if (!TypeGuard.TRecord(v)) metadataKeys.push(k)
+	if (!TypeGuard.IsRecord(v)) metadataKeys.push(k)
 })
 
 /** Builds all YAML files for a given package configuration */

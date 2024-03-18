@@ -1580,13 +1580,13 @@ export interface NpcVariant {
 	 */
 	id?: NpcVariantId
 	name: Label
-	summary?: MarkdownString
-	description: MarkdownString
 	/**
 	 * The suggested challenge rank for this NPC.
 	 */
 	rank: ChallengeRank
 	nature: NpcNature
+	summary?: MarkdownString
+	description: MarkdownString
 }
 
 /**
@@ -1706,11 +1706,11 @@ export interface OracleColumnDetails {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
-	suggestions?: Suggestions
 	/**
 	 * @experimental
 	 */
 	tags?: Record<DictKey, Record<DictKey, Tag>>
+	suggestions?: Suggestions
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
@@ -1755,11 +1755,11 @@ export interface OracleColumnSimple {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
-	suggestions?: Suggestions
 	/**
 	 * @experimental
 	 */
 	tags?: Record<DictKey, Record<DictKey, Tag>>
+	suggestions?: Suggestions
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
@@ -3303,11 +3303,11 @@ export type AssetConditionMeterControlField =
  * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
  */
 export interface AssetConditionMeterEnhancement {
+	field_type: 'condition_meter'
 	/**
 	 * The maximum value of this meter.
 	 */
 	max: number
-	field_type: 'condition_meter'
 }
 
 /**

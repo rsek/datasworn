@@ -49,7 +49,7 @@ const schemaOptions: SchemaOptions[] = [
 
 const prettierOptions = await getPrettierOptions(CONST.SCHEMA_PATH)
 
-const metadataKeys = []
+const metadataKeys: string[] = []
 
 function replacer(k: string, v: unknown) {
 	if (metadataKeys.includes(k)) return undefined

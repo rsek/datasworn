@@ -139,7 +139,7 @@ export function toJtdProperties<T extends TObject>(schema: T) {
 
 			const base = toJtdForm(subschema as any)
 
-			if (TypeGuard.TOptional(subschema)) return Type.Optional(base)
+			if (TypeGuard.IsOptional(subschema)) return Type.Optional(base)
 
 			return base
 		}),
@@ -221,51 +221,51 @@ function toJtdForm(schema: TSchema): JTD.Schema | null {
 			return merge(cloneDeep(schema[JsonTypeDef].schema), {
 				metadata: extractMetadata(schema)
 			})
-		case TypeGuard.TAny(schema):
+		case TypeGuard.IsAny(schema):
 			result = JtdType.Any()
 			break
-		case TypeGuard.TNull(schema):
+		case TypeGuard.IsNull(schema):
 			return null
-		case TypeGuard.TLiteralString(schema):
+		case TypeGuard.IsLiteralString(schema):
 			result = toJtdSingleEnum(schema as TLiteral<string>)
 			break
-		case TypeGuard.TString(schema):
+		case TypeGuard.IsString(schema):
 			result = JtdType.String()
 			break
-		case TypeGuard.TLiteralBoolean(schema):
-		case TypeGuard.TBoolean(schema):
+		case TypeGuard.IsLiteralBoolean(schema):
+		case TypeGuard.IsBoolean(schema):
 			result = JtdType.Boolean()
 			break
-		case TypeGuard.TLiteralNumber(schema):
-		case TypeGuard.TInteger(schema):
+		case TypeGuard.IsLiteralNumber(schema):
+		case TypeGuard.IsInteger(schema):
 			result = JtdType.Int16()
 			break
-		case TypeGuard.TNumber(schema):
+		case TypeGuard.IsNumber(schema):
 			Log.warn(
 				'Received a number schema. Consider making it an integer instead.',
 				schema
 			)
 			result = JtdType.Float32()
 			break
-		case TypeGuard.TThis(schema):
-		case TypeGuard.TRef(schema):
+		case TypeGuard.IsThis(schema):
+		case TypeGuard.IsRef(schema):
 			result = toJtdRef(schema as TThis | TRef)
 			break
-		case TypeGuard.TRecord(schema):
+		case TypeGuard.IsRecord(schema):
 			// case schema[Generic.DictionaryBrand] === 'Dictionary':
 			result = toJtdValues(schema as TRecord)
 			break
-		case TypeGuard.TArray(schema):
+		case TypeGuard.IsArray(schema):
 			result = toJtdElements(schema as TArray)
 			break
-		case TypeGuard.TObject(schema):
+		case TypeGuard.IsObject(schema):
 		case schema[Kind] === 'Object':
 			result = toJtdProperties(schema as TObject)
 			break
 		case Utils.TDiscriminatedUnion(schema):
 			result = toJtdDiscriminator(schema as Utils.TDiscriminatedUnion)
 			break
-		case TypeGuard.TUnion(schema) && schema[Hint] === 'Enum':
+		case TypeGuard.IsUnion(schema) && schema[Hint] === 'Enum':
 			result = JtdType.Enum(schema.anyOf.map((item: TLiteral) => item.const))
 			result.metadata = {
 				enumDescription: Object.fromEntries(

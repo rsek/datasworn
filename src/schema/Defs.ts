@@ -70,7 +70,7 @@ const defsBase = pickBy(
 		...DelveSites
 	} as Record<string, TSchema>,
 	(schema, key) => {
-		if (!TypeGuard.TSchema(schema)) return false
+		if (!TypeGuard.IsSchema(schema)) return false
 
 		if (typeof schema.$id !== 'string') {
 			Log.warn(`Schema in #/${defsKey}, but doesn't have an ID?`, schema)

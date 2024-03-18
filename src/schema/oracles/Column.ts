@@ -1,4 +1,4 @@
-import { type TObject, Type, TypeClone } from '@sinclair/typebox'
+import { type TObject, Type, CloneType } from '@sinclair/typebox'
 import { Localize, Metadata } from '../common/index.js'
 import { type ColumnLabels } from './TableRow.js'
 

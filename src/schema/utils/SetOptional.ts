@@ -1,6 +1,6 @@
 import {
 	Type,
-	TypeClone,
+	CloneType,
 	TypeGuard,
 	type ObjectOptions,
 	type Static,
@@ -27,7 +27,7 @@ export function SetOptional<
 	T extends TObject,
 	K extends Array<keyof Static<T>>
 >(schema: T, optionalKeys: [...K], options: ObjectOptions = {}) {
-	const base = omit(TypeClone.Type(schema), ['$id']) as T
+	const base = omit(CloneType(schema), ['$id']) as T
 
 	const toRemove: string[] = []
 
@@ -35,7 +35,7 @@ export function SetOptional<
 		// skip if no such prop exists
 		if (base.properties[k] == null) continue
 		// skip if it's already optional
-		if (TypeGuard.TOptional(base.properties[k])) continue
+		if (TypeGuard.IsOptional(base.properties[k])) continue
 		base.properties[k] = Type.Optional(base.properties[k])
 		// flag key for removal from "required" array
 		toRemove.push(k)

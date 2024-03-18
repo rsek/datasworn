@@ -2,7 +2,7 @@
 
 import {
 	Type,
-	TypeClone,
+	CloneType,
 	type ObjectOptions,
 	type StringOptions,
 	type TString,
@@ -96,7 +96,8 @@ export function Id(elements: IdElement[], options: IdOptions) {
 		.replace('\\/(\\/', '(\\/')
 		.replace('\\/((\\/', '((\\/')
 
-	const result = Type.RegExp(pattern, {
+	const result = Type.String({
+		pattern,
 		description: `A unique ID for ${indefiniteArticle} ${targetName}.`,
 		...options,
 		[PatternElements]: elements
@@ -110,9 +111,9 @@ export function RecursiveCollectableId(type: IdElement[], options: IdOptions) {
 		// const nuPattern = Id(['{{COLLECTION}}', Node], options)
 		return IdUnion(
 			[
-				omit(TypeClone.Type(schema), '$id') as TId,
+				omit(CloneType(schema), '$id') as TId,
 				{
-					...omit(TypeClone.Type(schema), '$id')
+					...omit(CloneType(schema), '$id')
 					// ...pick(nuPattern, PatternElements, 'pattern')
 				} as TId
 			],
@@ -130,9 +131,9 @@ export function CollectableId(type: IdElement[], options: IdOptions) {
 		// const nuPattern = Id(['{{COLLECTION}}', Node], options)
 		return IdUnion(
 			[
-				omit(TypeClone.Type(schema), '$id') as TId,
+				omit(CloneType(schema), '$id') as TId,
 				{
-					...omit(TypeClone.Type(schema), '$id')
+					...omit(CloneType(schema), '$id')
 					// ...pick(nuPattern, PatternElements, 'pattern')
 				} as TId
 			],

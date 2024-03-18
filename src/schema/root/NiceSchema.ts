@@ -2,7 +2,7 @@ import { type TSchema, TypeGuard } from '@sinclair/typebox'
 
 /** Mutates schema. */
 export function NiceSchema(schema: TSchema) {
-	if (TypeGuard.TObject(schema)) schema.additionalProperties ||= false
+	if (TypeGuard.IsObject(schema)) schema.additionalProperties ||= false
 
 
 	// if (!schema.title && !('$ref' in schema)) {

@@ -1,5 +1,5 @@
 import {
-	TypeClone,
+	CloneType,
 	type ObjectOptions,
 	type ObjectProperties,
 	type Static,
@@ -12,7 +12,7 @@ export function SetNullable<
 	K extends Array<keyof Static<T>>
 >(schema: T, keys: [...K], options: ObjectOptions = {}) {
 	// @ts-expect-error
-	const base = TypeClone.Type(schema, options) as TSetNullable<T, K>
+	const base = CloneType(schema, options) as TSetNullable<T, K>
 
 	for (const key of keys as Array<keyof T['properties']>) {
 		if (!(key in base.properties)) continue

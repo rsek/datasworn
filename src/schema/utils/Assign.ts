@@ -1,6 +1,6 @@
 import {
 	Type,
-	TypeClone,
+	CloneType,
 	type ObjectOptions,
 	type ObjectProperties,
 	type ObjectPropertyKeys,
@@ -22,7 +22,7 @@ export function Assign<T extends [TObject, TObject]>(
 
 	for (const key of keys) {
 		const target = keysA.includes(key) ? obj1 : obj2
-		properties[key] = TypeClone.Type(Type.Index(target, [key])) as any
+		properties[key] = CloneType(Type.Index(target, [key])) as any
 	}
 
 	// console.log(properties)

@@ -3,7 +3,7 @@ import {
 	type TRef,
 	type TSchema,
 	Type,
-	TypeClone
+	CloneType
 } from '@sinclair/typebox'
 import {
 	forEach,
@@ -29,12 +29,12 @@ import { pascalCase } from './string.js'
 export function generateRulesetSchemas(rulesPackage: string, rules: Rules) {
 	const ConditionMeterKey = UnionEnum(
 		Object.keys(rules.condition_meters),
-		omit(TypeClone.Type(Player.ConditionMeterKey), 'examples', 'type')
+		omit(CloneType(Player.ConditionMeterKey), 'examples', 'type')
 	)
 
 	const StatKey = UnionEnum(
 		Object.keys(rules.stats),
-		omit(TypeClone.Type(Player.StatKey), 'examples', 'type')
+		omit(CloneType(Player.StatKey), 'examples', 'type')
 	)
 
 	return {

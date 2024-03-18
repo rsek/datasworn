@@ -4,7 +4,7 @@ import {
 	Hint,
 	Kind,
 	Type,
-	TypeClone,
+	CloneType,
 	TypeRegistry,
 	type SchemaOptions,
 	type TEnum,
@@ -62,7 +62,7 @@ export function ToEnum<T extends TUnionEnum>(schema: T) {
 	const anyOf = schema.enum.map((value) =>
 		Type.Literal(value, { description: schema[EnumDescription]?.[value] })
 	)
-	const options = omit(TypeClone.Type(schema), [
+	const options = omit(CloneType(schema), [
 		Kind,
 		EnumDescription,
 		Description,

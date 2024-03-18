@@ -8,7 +8,8 @@ export const Label = Type.String({
 })
 export type Label = Static<typeof Label>
 
-export const InputLabel = Type.RegExp(/^[^A-Z]+$/, {
+export const InputLabel = Type.String({
+	pattern: /^[^A-Z]+$/.source,
 	$id: 'InputLabel',
 	description:
 		'A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).',

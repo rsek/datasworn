@@ -102,30 +102,30 @@ function renderJsDoc(lines: string[]) {
 
 function extractType(schema: TSchema): string {
 	switch (true) {
-		case TypeGuard.TThis(schema):
-		case TypeGuard.TRef(schema):
+		case TypeGuard.IsThis(schema):
+		case TypeGuard.IsRef(schema):
 			return schema.$ref
-		case TypeGuard.TLiteral(schema):
+		case TypeGuard.IsLiteral(schema):
 			return JSON.stringify(schema.const)
-		case TypeGuard.TInteger(schema):
+		case TypeGuard.IsInteger(schema):
 			return 'number'
-		case TypeGuard.TString(schema):
-		case TypeGuard.TBoolean(schema):
-		case TypeGuard.TNull(schema):
-		case TypeGuard.TNumber(schema):
+		case TypeGuard.IsString(schema):
+		case TypeGuard.IsBoolean(schema):
+		case TypeGuard.IsNull(schema):
+		case TypeGuard.IsNumber(schema):
 			return schema.type
-		case TypeGuard.TTuple(schema):
+		case TypeGuard.IsTuple(schema):
 			return extractTupleType(schema)
-		case TypeGuard.TArray(schema):
+		case TypeGuard.IsArray(schema):
 			return extractArrayType(schema)
-		case TypeGuard.TObject(schema):
+		case TypeGuard.IsObject(schema):
 			return extractObjectLiteralType(schema)
-		case TypeGuard.TUnion(schema):
+		case TypeGuard.IsUnion(schema):
 		case TNullable(schema):
 			return uniq(schema.anyOf.map(extractType)).join(' | ')
-		case TypeGuard.TIntersect(schema):
+		case TypeGuard.IsIntersect(schema):
 			return uniq(schema.allOf.map(extractType)).join(' & ')
-		case TypeGuard.TRecord(schema):
+		case TypeGuard.IsRecord(schema):
 			return `Record<DictKey, ${extractType(
 				Object.values(schema.patternProperties)[0]
 			)}>`
@@ -163,7 +163,7 @@ function indent(text: string, levels = 1) {
 
 function renderProperty(key: string, schema: TSchema) {
 	let head = key
-	if (TypeGuard.TOptional(schema)) head += '?'
+	if (TypeGuard.IsOptional(schema)) head += '?'
 	const { type, jsDoc } = parseType(schema)
 
 	const lines = []
@@ -223,7 +223,7 @@ function toTags(tags: Record<string, string | undefined>) {
 
 function renderDefinition(identifier: string, schema: TSchema) {
 	switch (true) {
-		case TypeGuard.TObject(schema):
+		case TypeGuard.IsObject(schema):
 			return renderInterface(identifier, schema)
 		default:
 			return renderTypeAlias(identifier, schema)

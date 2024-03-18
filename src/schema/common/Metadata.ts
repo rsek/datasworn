@@ -5,14 +5,16 @@ import { JsonTypeDef } from '../Symbols.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
 import { extractMetadata } from '../../scripts/json-typedef/utils.js'
 
-export const SvgImageUrl = Type.RegExp(/\.svg$/i, {
+export const SvgImageUrl = Type.String({
+	pattern: /\.svg$/i.source,
 	$id: 'SvgImageUrl',
 	format: 'uri-reference',
 	description:
 		'A relative (local) URL pointing to a vector image in the SVG format.'
 })
 export type SvgImageUrl = Static<typeof SvgImageUrl>
-export const WebpImageUrl = Type.RegExp(/\.webp$/i, {
+export const WebpImageUrl = Type.String({
+	pattern: /\.webp$/i.source,
 	$id: 'WebpImageUrl',
 	format: 'uri-reference',
 	description:
@@ -26,12 +28,12 @@ export const CssColor = Type.String({
 })
 export type CssColor = Static<typeof CssColor>
 
-export const SemanticVersion = Type.RegExp(
-	/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/,
-	{
-		$id: 'SemanticVersion'
-	}
-)
+export const SemanticVersion = Type.String({
+	pattern:
+		/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+			.source,
+	$id: 'SemanticVersion'
+})
 export type SemanticVersion = Static<typeof SemanticVersion>
 
 export const AuthorInfo = Type.Object(
@@ -76,15 +78,13 @@ export const PageNumber = Type.Integer({
 	$id: 'PageNumber'
 })
 
-export const Date = Type.RegExp(
-	/[0-9]{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1])/,
-	{
-		format: 'date',
-		$comment: 'You may prefer to deserialize this as a Date object.',
-		description: 'A date formatted YYYY-MM-DD.',
-		$id: 'Date'
-	}
-)
+export const Date = Type.String({
+	pattern: /[0-9]{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1])/.source,
+	format: 'date',
+	$comment: 'You may prefer to deserialize this as a Date object.',
+	description: 'A date formatted YYYY-MM-DD.',
+	$id: 'Date'
+})
 
 export const WebUrl = Type.String({
 	format: 'uri',

@@ -1,7 +1,7 @@
 /** Utilities for manipulating TypeBox schemata. */
 import {
 	Type,
-	TypeClone,
+	CloneType,
 	TypeGuard,
 	type ObjectOptions,
 	type Static,
@@ -40,7 +40,7 @@ export function keysWithDefaults<T extends TObject>(schema: T) {
 
 	for (const [key, subschema] of Object.entries(schema.properties)) {
 		// skip if it's already optional
-		if (TypeGuard.TOptional(subschema)) continue
+		if (TypeGuard.IsOptional(subschema)) continue
 		if (isUndefined(subschema.default)) continue
 
 		keys.push(key)
@@ -53,7 +53,7 @@ export function NoDefaults<T extends TObject>(
 	schema: T,
 	options: ObjectOptions = {}
 ) {
-	const newSchema = TypeClone.Type(schema, options)
+	const newSchema = CloneType(schema, options)
 	for (const key in newSchema.properties)
 		delete newSchema.properties[key]?.default
 
@@ -65,7 +65,7 @@ export function WithDefaults<T extends TObject>(
 	defaults: Partial<Static<T>>,
 	options: ObjectOptions = {}
 ) {
-	const newSchema = TypeClone.Type(schema, options)
+	const newSchema = CloneType(schema, options)
 
 	for (const key in defaults) {
 		newSchema.properties[key] ||= {} as any

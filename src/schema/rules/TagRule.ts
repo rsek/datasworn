@@ -85,7 +85,8 @@ export const ObjectType = Type.Union(
 	}
 )
 
-const TagId = Type.RegExp(/([a-z0-9_]{3,}):([a-z][a-z_]*)/, {
+const TagId = Type.String({
+	pattern: /([a-z0-9_]{3,}):([a-z][a-z_]*)/.source,
 	$id: 'TagId'
 })
 

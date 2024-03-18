@@ -1,7 +1,7 @@
 import {
 	Kind,
 	Type,
-	TypeClone,
+	CloneType,
 	TypeRegistry,
 	type ObjectProperties,
 	type SchemaOptions,
@@ -60,7 +60,7 @@ export function Discriminable<
 	mappingKey: MappingKey,
 	options = {}
 ) {
-	const result = TypeClone.Type(base, options)
+	const result = CloneType(base, options)
 	result.properties[discriminator] = Type.Literal(mappingKey)
 	result.required = [...(result.required ?? []), discriminator]
 
@@ -94,7 +94,7 @@ export function DiscriminatedUnion<
 			// }),
 			then:
 				member.$id == null
-					? TypeClone.Type(member, { additionalProperties: false })
+					? CloneType(member, { additionalProperties: false })
 					: Type.Ref(member)
 		}
 
@@ -104,7 +104,7 @@ export function DiscriminatedUnion<
 	// const oneOf = schemas.map((member) => {
 	// 	const result =
 	// 		member.$id == null
-	// 			? TypeClone.Type(member, { additionalProperties: false })
+	// 			? CloneType(member, { additionalProperties: false })
 	// 			: Type.Ref(member)
 
 	// 	// brand the original member so that JTD schema generation skips them -- they won't need their own definition
@@ -202,7 +202,7 @@ export interface TDiscriminatedUnion<
 export function ToUnion<T extends TObject[]>(
 	schema: TDiscriminatedUnion<T, string>
 ) {
-	const base = omit(TypeClone.Type(schema), [
+	const base = omit(CloneType(schema), [
 		'type',
 		'allOf',
 		'additionalProperties',

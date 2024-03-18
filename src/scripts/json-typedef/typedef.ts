@@ -10,10 +10,12 @@
 
 // adapted from https://github.com/sinclairzx81/typebox/blob/master/examples/typedef/typedef.ts
 
+
 import {
-	TypeSystemErrorFunction,
+	SetErrorFunction,
 	DefaultErrorFunction
-} from '@sinclair/typebox/system'
+} from '@sinclair/typebox/errors'
+import { TypeBoxError } from '@sinclair/typebox'
 import * as Types from '@sinclair/typebox'
 
 // --------------------------------------------------------------------------
@@ -252,15 +254,57 @@ export interface TString extends Types.TSchema {
 	type: 'string'
 	static: string
 }
+
 // --------------------------------------------------------------------------
 // TStruct
 // --------------------------------------------------------------------------
+// used for structural type inference
 type OptionalKeys<T extends TFields> = {
 	[K in keyof T]: T[K] extends Types.TOptional<T[K]> ? T[K] : never
 }
 type RequiredKeys<T extends TFields> = {
 	[K in keyof T]: T[K] extends Types.TOptional<T[K]> ? never : T[K]
 }
+// static inference
+type ReadonlyOptionalPropertyKeys<T extends TFields> = {
+	[K in keyof T]: T[K] extends Types.TReadonly<Types.TSchema>
+		? T[K] extends Types.TOptional<T[K]>
+			? K
+			: never
+		: never
+}[keyof T]
+type ReadonlyPropertyKeys<T extends TFields> = {
+	[K in keyof T]: T[K] extends Types.TReadonly<Types.TSchema>
+		? T[K] extends Types.TOptional<T[K]>
+			? never
+			: K
+		: never
+}[keyof T]
+type OptionalPropertyKeys<T extends TFields> = {
+	[K in keyof T]: T[K] extends Types.TOptional<Types.TSchema>
+		? T[K] extends Types.TReadonly<T[K]>
+			? never
+			: K
+		: never
+}[keyof T]
+type RequiredPropertyKeys<T extends TFields> = keyof Omit<
+	T,
+	| ReadonlyOptionalPropertyKeys<T>
+	| ReadonlyPropertyKeys<T>
+	| OptionalPropertyKeys<T>
+>
+// prettier-ignore
+type StructStaticProperties<T extends TFields, R extends Record<keyof any, unknown>> = Types.Evaluate<(
+  Readonly<Partial<Pick<R, ReadonlyOptionalPropertyKeys<T>>>> &
+  Readonly<Pick<R, ReadonlyPropertyKeys<T>>> &
+  Partial<Pick<R, OptionalPropertyKeys<T>>> &
+  Required<Pick<R, RequiredPropertyKeys<T>>>
+)>
+// prettier-ignore
+export type StructStatic<T extends TFields, P extends unknown[]> = StructStaticProperties<T, {
+  [K in keyof T]: Static<T[K], P>
+}>
+
 export interface StructMetadata extends Metadata {
 	additionalProperties?: boolean
 }
@@ -268,7 +312,7 @@ export interface TStruct<T extends TFields = TFields>
 	extends Types.TSchema,
 		StructMetadata {
 	[Types.Kind]: 'TypeDef:Struct'
-	static: Types.PropertiesReduce<T, this['params']>
+	static: StructStatic<T, this['params']>
 	optionalProperties: { [K in Types.Assert<OptionalKeys<T>, keyof T>]: T[K] }
 	properties: { [K in Types.Assert<RequiredKeys<T>, keyof T>]: T[K] }
 }
@@ -815,8 +859,8 @@ Types.TypeRegistry.Set<TAny>('TypeDef:Any', (schema, value) =>
 // --------------------------------------------------------------------------
 // TypeSystemErrorFunction
 // --------------------------------------------------------------------------
-TypeSystemErrorFunction.Set((schema, type) => {
-	switch (schema[Types.Kind]) {
+SetErrorFunction((error) => {
+	switch (error.schema[Types.Kind]) {
 		case 'TypeDef:Array':
 			return 'Expected Array'
 		case 'TypeDef:Boolean':
@@ -848,7 +892,7 @@ TypeSystemErrorFunction.Set((schema, type) => {
 		case 'TypeDef:Any':
 			return 'Expected Any'
 	}
-	return DefaultErrorFunction(schema, type)
+	return DefaultErrorFunction(error)
 })
 // --------------------------------------------------------------------------
 // TypeDefBuilder
@@ -882,7 +926,7 @@ export class TypeDefBuilder {
 	}
 	/** `[Standard]` Creates a Nullable schema */
 	public Nullable<T extends Types.TSchema = Types.TSchema>(schema: T) {
-		const newType = { ...Types.TypeClone.Type(schema), nullable: true }
+		const newType = { ...Types.CloneType(schema), nullable: true }
 		return newType as TNullable<T>
 	}
 	// ------------------------------------------------------------------------
@@ -992,14 +1036,14 @@ export class TypeDefBuilder {
 			fields
 		).reduce(
 			(acc, key) =>
-				Types.TypeGuard.TOptional(fields[key])
+				Types.TypeGuard.IsOptional(fields[key])
 					? { ...acc, [key]: fields[key] }
 					: { ...acc },
 			{} as TFields
 		)
 		const properties = globalThis.Object.getOwnPropertyNames(fields).reduce(
 			(acc, key) =>
-				Types.TypeGuard.TOptional(fields[key])
+				Types.TypeGuard.IsOptional(fields[key])
 					? { ...acc }
 					: { ...acc, [key]: fields[key] },
 			{} as TFields

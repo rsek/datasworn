@@ -4,7 +4,6 @@
 
 export * from './utils/Assign.js'
 export * from './utils/Computed.js'
-export * from './utils/PartialDeep.js'
 export * from './utils/NonNullable.js'
 export * from './utils/Nullable.js'
 export * from './utils/ObjectLiteral.js'

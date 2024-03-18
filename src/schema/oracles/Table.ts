@@ -1,4 +1,4 @@
-import { Type, TypeClone, type TObject } from '@sinclair/typebox'
+import { Type, CloneType, type TObject } from '@sinclair/typebox'
 import { Localize, Metadata } from '../common/index.js'
 import { type ColumnLabels } from './TableRow.js'
 
@@ -33,7 +33,7 @@ export function TableMixin<OracleRow extends TObject>(
 	column_labels: ReturnType<typeof ColumnLabels<OracleRow>>
 ) {
 	return Type.Object({
-		...TypeClone.Type(TableMeta).properties,
+		...CloneType(TableMeta).properties,
 		column_labels
 	})
 }

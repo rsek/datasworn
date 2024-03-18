@@ -1,6 +1,5 @@
 import { Type, type Static } from '@sinclair/typebox'
 import { NoDefaults } from '../utils/typebox.js'
-import { PartialDeep } from '../utils/PartialDeep.js'
 import { Nullable } from '../utils/Nullable.js'
 import { AssetConditionMeter } from './Fields.js'
 import { AssetPropertiesEnhanceable } from './common.js'
@@ -46,11 +45,9 @@ export const AssetControlFieldEnhancement = DiscriminatedUnion(
 	{ $id: 'AssetControlFieldEnhancement' }
 )
 
-export const AssetEnhancement = PartialDeep(
-	NoDefaults(
-		AssetPropertiesEnhanceable(
-			Type.Optional(Type.Ref(AssetControlFieldEnhancement))
-		)
+export const AssetEnhancement = NoDefaults(
+	Type.Partial(
+		AssetPropertiesEnhanceable(Type.Ref(AssetControlFieldEnhancement))
 	),
 	{
 		description:

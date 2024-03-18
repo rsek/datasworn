@@ -1,6 +1,6 @@
 import {
 	Type,
-	TypeClone,
+	CloneType,
 	type ObjectProperties,
 	type SchemaOptions,
 	type TObject,
@@ -69,13 +69,13 @@ export function Collection<
 ) {
 	const generic = {
 		enhances: Type.Optional(
-			TypeClone.Type(id, {
+			CloneType(id, {
 				description:
 					"This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 			})
 		),
 		replaces: Type.Optional(
-			TypeClone.Type(id, {
+			CloneType(id, {
 				description:
 					'This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.'
 			})
@@ -83,7 +83,7 @@ export function Collection<
 		contents: Type.Optional(Dictionary(collectable))
 	}
 	const base = Type.Object({
-		...TypeClone.Type(CollectionMixin).properties,
+		...CloneType(CollectionMixin).properties,
 		...generic,
 		...properties
 	} as ObjectProperties<typeof CollectionMixin> & typeof generic & Props)
