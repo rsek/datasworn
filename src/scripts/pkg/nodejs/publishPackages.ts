@@ -5,7 +5,7 @@ import { exec } from 'child_process'
 import Log from '../../utils/Log.js'
 import { updatePackageVersions } from './updatePackageVersions.js'
 
-function publishCommand(dir: string, tag: string = 'latest', dryRun = true) {
+function publishCommand(dir: string, tag: string = 'latest', dryRun = false) {
 	let cmd = `npm publish "${dir}" --tag ${tag}`
 	cmd += dryRun ? ' --dry-run' : ' --otp $OTP'
 	// console.log(cmd)
