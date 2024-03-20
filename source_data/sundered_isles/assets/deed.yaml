@@ -3,7 +3,7 @@ package_type: ruleset
 assets:
   deed:
     name: Deed Assets
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin
@@ -12,7 +12,7 @@ assets:
       date: 2023-09-11
     contents:
       cohort:
-        source: *Source
+        _source: *Source
         name: Cohort
         category: Deed
         requirement: Once you [Make a Connection](id:sundered_isles/moves/connection/make_a_connection) and accept them as a crewmate...
@@ -25,7 +25,7 @@ assets:
           - text: |-
               When you [Secure an Advantage](id:sundered_isles/moves/adventure/secure_an_advantage) by gathering your specialists to strategize or problem-solve, you may reroll one die for each participating specialist.
       damned:
-        source: *Source
+        _source: *Source
         name: Damned
         requirement: Once you mark tormented or doomed...
         category: Deed
@@ -42,7 +42,7 @@ assets:
           - text: |-
               When your curse is broken through the fulfillment of a vow or other event, activate this ability at no cost. Discard this asset and any of your damned assets, exchanging them one-for-one for new assets with an equal number of marked abilities. You may then improve one of your stats by +1.
       fleet_commander:
-        source: *Source
+        _source: *Source
         name: Fleet Commander
         requirement: Once you fill 12 legacy track boxes and take command of a mighty fleet...
         category: Deed
@@ -71,7 +71,7 @@ assets:
                 label: wrecked
                 field_type: checkbox
       undead:
-        source: *Source
+        _source: *Source
         name: Undead
         category: Deed
         requirement: Once you die or are cursed with undeath...

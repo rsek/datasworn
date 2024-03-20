@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   location_themes:
     name: Location Themes
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -29,7 +29,7 @@ oracles:
       type:
         name: Theme Type
         oracle_type: table_details
-        source:
+        _source:
           <<: *Source
           page: 370
           #   initial: true
@@ -94,7 +94,7 @@ oracles:
         name: Chaotic
         oracle_type: tables
         summary: *Chaotic.summary
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 372
         icon: *Chaotic.icon
@@ -104,7 +104,7 @@ oracles:
               name: Feature
               summary: Use this table to reveal a new aspect of the location.
               oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - &Feature.0
                 min: 1
@@ -169,7 +169,7 @@ oracles:
               name: Peril
               summary: Use this table to help envision a complication or hazard.
               oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - &Peril.0
                 min: 1
@@ -233,7 +233,7 @@ oracles:
               name: Opportunity
               summary: Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.
               oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - &Opportunity.0
                 min: 1
@@ -258,7 +258,7 @@ oracles:
       fortified:
         name: Fortified
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 373
         icon: *Fortified.icon
@@ -266,7 +266,7 @@ oracles:
         contents:
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Captives or prisoners
@@ -295,7 +295,7 @@ oracles:
               - *Feature.12
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Alarm is triggered
@@ -321,7 +321,7 @@ oracles:
               - *Peril.11
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Insight into the plans or methods of the enemy force
@@ -336,7 +336,7 @@ oracles:
       haunted:
         name: Haunted
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 374
         icon: *Haunted.icon
@@ -344,7 +344,7 @@ oracles:
         contents:
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Disembodied voices
@@ -373,7 +373,7 @@ oracles:
               - *Feature.12
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Assailed by an angry or vengeful being
@@ -399,7 +399,7 @@ oracles:
               - *Peril.11
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Encounter with a benign spirit or being
@@ -414,7 +414,7 @@ oracles:
       infested:
         name: Infested
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 375
         icon: *Infested.icon
@@ -422,7 +422,7 @@ oracles:
         contents:
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Corpse of an unfortunate victim
@@ -451,7 +451,7 @@ oracles:
               - *Feature.12
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Creatures attack without warning
@@ -477,7 +477,7 @@ oracles:
               - *Peril.11
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Clue to the nature or vulnerabilities of these creatures
@@ -492,7 +492,7 @@ oracles:
       inhabited:
         name: Inhabited
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 376
         icon: *Inhabited.icon
@@ -500,7 +500,7 @@ oracles:
         contents:
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Conspicuous patrols or surveillance
@@ -529,7 +529,7 @@ oracles:
               - *Feature.12
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Announcement or notification brings harrowing news
@@ -555,7 +555,7 @@ oracles:
               - *Peril.11
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Intriguing offer from an unexpected source
@@ -570,7 +570,7 @@ oracles:
       mechanical:
         name: Mechanical
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 377
         icon: *Mechanical.icon
@@ -578,7 +578,7 @@ oracles:
         contents:
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Control station or terminal
@@ -607,7 +607,7 @@ oracles:
               - *Feature.12
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Alarm or warning is triggered
@@ -633,7 +633,7 @@ oracles:
               - *Peril.11
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Helpful device
@@ -648,7 +648,7 @@ oracles:
       ruined:
         name: Ruined
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 378
         icon: *Ruined.icon
@@ -656,7 +656,7 @@ oracles:
         contents:
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Collapsed or broken structures or terrain
@@ -685,7 +685,7 @@ oracles:
               - *Feature.12
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Dreadful atmosphere of loss and destruction weighs upon you
@@ -711,7 +711,7 @@ oracles:
               - *Peril.11
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Access to an untouched or preserved area
@@ -726,7 +726,7 @@ oracles:
       sacred:
         name: Sacred
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 379
         icon: *Sacred.icon
@@ -734,7 +734,7 @@ oracles:
         contents:
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Adherents performing worship or enacting rituals
@@ -763,7 +763,7 @@ oracles:
               - *Feature.12
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: An aspect of the faith beguiles you or lures you into danger
@@ -789,7 +789,7 @@ oracles:
               - *Peril.11
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Access to a hidden or sealed area

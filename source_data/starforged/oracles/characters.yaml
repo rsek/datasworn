@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   characters:
     oracle_type: tables
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -20,7 +20,7 @@ oracles:
       name:
         name: Character Name
         oracle_type: table_shared_rolls
-        source:
+        _source:
           <<: *Source
           page: 333
         summary: |-
@@ -1271,7 +1271,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 330
         # usage:
@@ -1445,7 +1445,7 @@ oracles:
       initial_disposition:
         name: Initial Disposition
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 330
         # usage:
@@ -1502,7 +1502,7 @@ oracles:
       role:
         name: Character Role
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 331
         rows:
@@ -1712,7 +1712,7 @@ oracles:
       goal:
         name: Character Goal
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 331
         # content:
@@ -1869,7 +1869,7 @@ oracles:
       revealed_aspect:
         name: Revealed Character Aspect
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 332
         summary: |-

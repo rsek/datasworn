@@ -3,7 +3,7 @@ package_type: ruleset
 assets:
   path:
     name: Path Assets
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin
@@ -12,7 +12,7 @@ assets:
       date: 2023-09-11
     contents:
       automaton:
-        source: *Source
+        _source: *Source
         name: Automaton
         category: Path
         abilities:
@@ -40,7 +40,7 @@ assets:
                 assets:
                   - '*/assets/path/*'
       cannoneer:
-        source: *Source
+        _source: *Source
         name: Cannoneer
         category: Path
         abilities:
@@ -52,7 +52,7 @@ assets:
           - text: |-
               When you [Strike](id:sundered_isles/moves/combat/strike) using a vehicle’s weapons, and hold your fire for maximum effect, decide the amount of momentum you risk (1, 2, or 3) and add +that amount. On a strong hit, mark progress. On a weak hit or miss, [Lose Momentum](id:sundered_isles/moves/suffer/lose_momentum) equal to 1 + the amount risked (in addition to any other cost).
       crew_commander:
-        source: *Source
+        _source: *Source
         name: Crew Commander
         category: Path
         abilities:
@@ -61,7 +61,7 @@ assets:
               You have 2 command; your max is 4. When you or an ally make a move leading or aided by the crew, you may (after rolling) suffer -1 command to improve a miss to a weak hit, or a weak hit to a strong hit. When you [Pay the Price](id:sundered_isles/moves/fate/pay_the_price), you may suffer the cost as -1 command. While at 0 command, this asset counts as an impact. To bolster your crew, provide a notable reward or respite, and roll +heart. On a strong hit, take +4 command. On a weak hit, take +2. On a miss, take +2 but envision a threat to your crew or leadership.
             moves:
               bolster_crew:
-                source: *Source
+                _source: *Source
                 name: Bolster Crew
                 roll_type: action_roll
                 trigger:
@@ -122,7 +122,7 @@ assets:
               recover:
                 - sundered_isles/assets/path/crew_commander/abilities/0/moves/bolster_crew
       cutthroat:
-        source: *Source
+        _source: *Source
         name: Cutthroat
         category: Path
         requirement: If you wield knives...
@@ -135,7 +135,7 @@ assets:
           - text: |-
               When you [End the Fight](id:sundered_isles/moves/combat/end_the_fight) without mercy or restraint, you may reroll one challenge die. If you do, [Endure Stress](id:sundered_isles/moves/suffer/endure_stress) (-2). If you then choose to resist the stress, roll +iron instead of +spirit or +heart.
       deck_clearer:
-        source: *Source
+        _source: *Source
         name: Deck Clearer
         category: Path
         requirement: If you wield a scattergun...
@@ -148,7 +148,7 @@ assets:
           - text: |-
               When you [Take Decisive Action](id:sundered_isles/moves/combat/take_decisive_action) with a devastating shot or by demanding surrender at the point of a readied scattergun, you may reroll one challenge die.
       duelist:
-        source: *Source
+        _source: *Source
         name: Duelist
         category: Path
         abilities:
@@ -160,7 +160,7 @@ assets:
           - text: |-
               When you roll a miss with a match in a situation where your reputation is known, you may suffer the cost by envisioning a notable rival who challenges you to a duel. If you defeat them, mark two ticks on your quests legacy track. If you decline, mark one tick on your bonds legacy track but envision the fallout of this refusal.
       harpooner:
-        source: *Source
+        _source: *Source
         name: Harpooner
         category: Path
         requirement: If you wield a handheld harpoon...
@@ -180,11 +180,11 @@ assets:
             text: You are cursed by ill luck, but persisting offers its own rewards. If you score a miss with a match, this asset counts as an impact for you and your allies. You may undo this only by scoring a strong hit with a match; if you do, you and your allies each clear the impact and mark 1 tick on your bonds legacy track.
           - text: When you score a weak hit on a progress move, you may test your luck by reducing the progress score by 1 and rerolling all dice.
           - text: When you roll matched 1’s on your challenge dice while suffering from this asset’s impact, you may activate this ability at no cost. If you do, good fortune now favors you; you and your allies clear the impact and mark 2 ticks (instead of 1) on your bonds legacy track. Then, discard this asset and permanently increase your momentum reset by 1.
-        source:
+        _source:
           <<: *Source
           date: 2023-12-03
       merchant:
-        source: *Source
+        _source: *Source
         name: Merchant
         category: Path
         abilities:
@@ -199,7 +199,7 @@ assets:
           - text: |-
               When you [Make a Connection](id:sundered_isles/moves/connection/make_a_connection) with a fellow merchant or supplier, or if you [Resupply](id:sundered_isles/moves/recover/resupply) by bartering with them, add +1 and take +1 momentum on a hit.
       musician:
-        source: *Source
+        _source: *Source
         name: Musician
         category: Path
         abilities:
@@ -214,7 +214,7 @@ assets:
                 * Honor the lost: mark 2 ticks on your bonds legacy track.
                 * Offer comfort or inspiration: you and your allies take +2 spirit or +2 momentum.
       musketeer:
-        source: *Source
+        _source: *Source
         name: Musketeer
         category: Path
         abilities:
@@ -226,7 +226,7 @@ assets:
           - text: |-
               When you [Gain Ground](id:sundered_isles/moves/combat/gain_ground) by charging into close quarters with a fixed bayonet, or if you [React Under Fire](id:sundered_isles/moves/combat/react_under_fire) by holding foes at bay or parrying close quarter attacks with your rifle, add +1 and take +1 momentum on a hit.
       necromancer:
-        source: *Source
+        _source: *Source
         name: necromancer
         category: Path
         abilities:
@@ -281,7 +281,7 @@ assets:
                 min: 0
                 max: 4
       overlander:
-        source: *Source
+        _source: *Source
         name: Overlander
         category: Path
         abilities:
@@ -293,7 +293,7 @@ assets:
           - text: |-
               When you [Resupply](id:sundered_isles/moves/recover/resupply) by searching out a source of food, water, or other natural resources in the wilds, add +1. On a strong hit with a match, you encounter an unusual or extraordinary location; you may [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint) (even if not on an expedition) and reroll any dice.
       pirate_captain:
-        source: *Source
+        _source: *Source
         name: Pirate Captain
         category: Path
         abilities:
@@ -307,7 +307,7 @@ assets:
           - text: |-
               You may spend 1 experience to [Sojourn](id:sundered_isles/moves/recover/sojourn) with an automatic strong hit. If you do, you and your allies take one extra recovery move.
       pistoleer:
-        source: *Source
+        _source: *Source
         name: Pistoleer
         category: Path
         abilities:
@@ -319,7 +319,7 @@ assets:
           - text: |-
               When you participate in a charged or antagonistic parlay with your pistols on display, take +2 momentum at the start of the interaction.
       scholar:
-        source: *Source
+        _source: *Source
         name: Scholar
         category: Path
         options:
@@ -338,7 +338,7 @@ assets:
           - text: |-
               You apply yourself to another discipline. Choose a second field of study.
       seadog:
-        source: *Source
+        _source: *Source
         name: Seadog
         category: Path
         abilities:
@@ -350,7 +350,7 @@ assets:
           - text: |-
               When you make a move to hunt, oppose, study, pacify, or gain the favor of a creature of the sea, add +1. On a strong hit with a match, envision the surprising insight you gain into the nature of the creature or its environment; mark one tick on your discoveries legacy track.
       shipwright:
-        source: *Source
+        _source: *Source
         name: Shipwright
         category: Path
         abilities:
@@ -362,7 +362,7 @@ assets:
           - text: |-
               When you [Advance](id:sundered_isles/moves/legacy/advance) by conducting a refit at port, you may purchase or upgrade module assets for 1 less experience.
       socialite:
-        source: *Source
+        _source: *Source
         name: Socialite
         category: Path
         abilities:
@@ -378,7 +378,7 @@ assets:
           - text: |-
               When you [Hearten](id:sundered_isles/moves/recover/hearten) while attending an exclusive social event, reroll any dice. On a strong hit, you and any allies in your company take +1 momentum.
       sorcerer:
-        source: *Source
+        _source: *Source
         name: Sorcerer
         category: Path
         abilities:
@@ -394,7 +394,7 @@ assets:
           - text: |-
               When you [Swear an Iron Vow](id:sundered_isles/moves/quest/swear_an_iron_vow) (extreme or greater) to gather the components and lore of a complex and powerful ritual, reroll any dice. When you [Reach a Milestone](id:sundered_isles/moves/quest/reach_a_milestone) on this quest, take +2 momentum. When you enact the ritual to [Fulfill Your Vow](id:sundered_isles/moves/quest/fulfill_your_vow), you may reroll any challenge dice to draw on unknowable powers at the risk of your soul. If you do, [Face Desolation](id:sundered_isles/moves/threshold/face_desolation).
       spy:
-        source: *Source
+        _source: *Source
         name: Spy
         category: Path
         abilities:
@@ -409,7 +409,7 @@ assets:
                 * Keep the secret: You may reroll one challenge die.
                 * Reveal the truth: On a strong hit, make the legacy reward one rank higher (1 extra box if already epic).
       swashbuckler:
-        source: *Source
+        _source: *Source
         name: Swashbuckler
         category: Path
         abilities:
@@ -421,7 +421,7 @@ assets:
           - text: |-
               When you [React Under Fire](id:sundered_isles/moves/combat/react_under_fire) in close quarters by parrying, and score a strong hit, you counter or turn your foe’s attack against them; mark progress.
       urchin:
-        source: *Source
+        _source: *Source
         name: Urchin
         category: Path
         abilities:
@@ -471,7 +471,7 @@ assets:
           - text: |-
               When you come of age or take on a role beyond your years, gain this ability at no cost. Then, discard this asset and take two others (at no cost) to represent your new status.
       windbinder:
-        source: *Source
+        _source: *Source
         name: Windbinder
         category: Path
         abilities:
@@ -480,7 +480,7 @@ assets:
               When you bind the winds to your will, roll +edge. On a strong hit, the winds are fine; you and your allies take +2 momentum, and may add +1 when you make a move to navigate or maneuver. On a weak hit, the winds are fair; take +2 momentum. On a miss, the winds are foul; you and your allies [Lose Momentum](id:sundered_isles/moves/suffer/lose_momentum) (-2), and should face weather-related hazards and costs as appropriate. No matter the outcome, set the winds to fair after a few hours.
             moves:
               bind_winds:
-                source: *Source
+                _source: *Source
                 name: Bind Winds
                 roll_type: action_roll
                 trigger:

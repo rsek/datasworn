@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   misc:
     name: Miscellaneous Oracles
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles
         date: 2023-11-29
@@ -15,7 +15,7 @@ oracles:
     contents:
       interlude_scenes:
         name: Interlude Scenes
-        source:
+        _source:
           <<: *Source
         oracle_type: table_details
         summary: If you want to explore an interlude scene, or are prompted by another table to trigger an interlude at a waypoint, check the table below for inspiration. To learn more about character interludes, see page 64.
@@ -147,7 +147,7 @@ oracles:
       prompts:
         name: Prompts
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         summary: Use this table to choose a structured prompt from among the Core oracles (pages 112–115). Roll on each table and interpret the response as appropriate to the question and situation.
         rows:

@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   misc:
     name: Miscellaneous Oracles
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -16,7 +16,7 @@ oracles:
       story_complication:
         name: Story Complication
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 380
         # content:
@@ -124,7 +124,7 @@ oracles:
       story_clue:
         name: Story Clue
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 381
         # usage:
@@ -235,7 +235,7 @@ oracles:
       anomaly_effect:
         name: Anomaly Effect
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 382
         # content:
@@ -349,7 +349,7 @@ oracles:
       combat_action:
         name: Combat Action
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 383
         # content:

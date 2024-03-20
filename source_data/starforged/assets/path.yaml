@@ -2,7 +2,7 @@ _id: starforged
 package_type: ruleset
 assets:
   path:
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -24,7 +24,7 @@ assets:
         <<: &PathAsset
           category: Path
           color: *PathAsset.color
-          source: &AssetSource
+          _source: &AssetSource
             <<: *Source
             title: 'Ironsworn: Starforged Assets'
         abilities:
@@ -90,7 +90,7 @@ assets:
             moves:
               craft_projectiles:
                 name: Craft Projectiles
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you replenish your ammo by crafting projectiles...
@@ -204,7 +204,7 @@ assets:
             moves:
               commemorate:
                 name: Commemorate
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you create or perform a significant artistic work as a public memorial or tribute...
@@ -725,7 +725,7 @@ assets:
             moves:
               read_heart:
                 name: Read Heart
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you read the intent, emotions, or memories of a nearby being...
@@ -844,7 +844,7 @@ assets:
             moves:
               gather_energy:
                 name: Gather Energy
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you rest and meditate to gather fiery energy...
@@ -1289,7 +1289,7 @@ assets:
             moves:
               loop_back:
                 name: Loop Back
-                source: *AssetSource
+                _source: *AssetSource
                 # Burn momentum: false
                 #TODO: add to IMove? Move usage?
                 roll_type: action_roll
@@ -1579,7 +1579,7 @@ assets:
             moves:
               scrape_by:
                 name: Scrape By
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and your supply is reduced to 0...
@@ -1762,7 +1762,7 @@ assets:
             moves:
               shroud_in_darkness:
                 name: Shroud in Darkness
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you expand your veil to immerse your surroundings in darkness...
@@ -1872,7 +1872,7 @@ assets:
             moves:
               snipe_minor_foe:
                 name: Snipe Minor Foe
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you target a minor foe from a distance (outside of a fight)...

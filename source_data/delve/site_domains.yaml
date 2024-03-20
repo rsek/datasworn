@@ -6,7 +6,7 @@ site_domains:
     name: Barrow
     name_oracle: delve/oracles/site_name/place/barrow
     # https://game-icons.net/1x1/cathelineau/tumulus.html
-    source:
+    _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -94,7 +94,7 @@ site_domains:
     name: Cavern
     name_oracle: delve/oracles/site_name/place/cavern
     # https://game-icons.net/1x1/lorc/stalagtite.html
-    source:
+    _source:
       <<: *Source
       page: 88
     summary: A place of stone and darkness.
@@ -152,7 +152,7 @@ site_domains:
   frozen_cavern:
     name: Frozen cavern
     name_oracle: delve/oracles/site_name/place/frozen_cavern
-    source:
+    _source:
       <<: *Source
       page: 89
     summary: A place of deep caves and enduring cold.
@@ -210,7 +210,7 @@ site_domains:
   icereach:
     name: Icereach
     name_oracle: delve/oracles/site_name/place/icereach
-    source:
+    _source:
       <<: *Source
       page: 89
     summary: A frigid landscape formed of frozen seas.
@@ -269,7 +269,7 @@ site_domains:
     name: Mine
     name_oracle: delve/oracles/site_name/place/mine
     # https://game-icons.net/1x1/delapouite/stone-pile.html
-    source:
+    _source:
       <<: *Source
       page: 90
     summary: Tunnels dug greedily and deep.
@@ -327,7 +327,7 @@ site_domains:
   pass:
     name: Pass
     name_oracle: delve/oracles/site_name/place/pass
-    source:
+    _source:
       <<: *Source
       page: 90
     summary: Treacherous paths over high mountains.
@@ -386,7 +386,7 @@ site_domains:
     name: Ruin
     name_oracle: delve/oracles/site_name/place/ruin
     # https://game-icons.net/1x1/delapouite/broken-wall.html
-    source:
+    _source:
       <<: *Source
       page: 91
     summary: The crumbling legacy of a dead civilization.
@@ -445,7 +445,7 @@ site_domains:
   sea_cave:
     name: Sea cave
     name_oracle: delve/oracles/site_name/place/sea_cave
-    source:
+    _source:
       <<: *Source
       page: 91
     summary: Stone passages carved by ocean waves.
@@ -503,7 +503,7 @@ site_domains:
   shadowfen:
     name: Shadowfen
     name_oracle: delve/oracles/site_name/place/shadowfen
-    source:
+    _source:
       <<: *Source
       page: 92
     summary: A primeval marsh, cloaked in mist.
@@ -561,7 +561,7 @@ site_domains:
   stronghold:
     name: Stronghold
     name_oracle: delve/oracles/site_name/place/stronghold
-    source:
+    _source:
       <<: *Source
       page: 92
     summary: A fortress secured against trespassers.
@@ -618,7 +618,7 @@ site_domains:
     name: Tanglewood
     name_oracle: delve/oracles/site_name/place/tanglewood
     # https://game-icons.net/1x1/lorc/dead-wood.html
-    source:
+    _source:
       <<: *Source
       page: 93
     summary: A perilous forest of eternal shadow.
@@ -677,7 +677,7 @@ site_domains:
   underkeep:
     name: Underkeep
     name_oracle: delve/oracles/site_name/place/underkeep
-    source:
+    _source:
       <<: *Source
       page: 93
     summary: An age-old subterranean dungeon.

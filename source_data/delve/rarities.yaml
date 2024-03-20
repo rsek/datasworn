@@ -5,7 +5,7 @@ rarities:
   ayethins_journal:
     name: Ayethin’s Journal
     asset: classic/assets/path/alchemist
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Delve'
         authors:
@@ -21,7 +21,7 @@ rarities:
   black_fang:
     name: Black Fang
     asset: classic/assets/path/animal_kin
-    source:
+    _source:
       <<: *Source
       page: 182
     # icon: https://game-icons.net/1x1/lorc/saber-tooth.html
@@ -31,7 +31,7 @@ rarities:
   resolute_banner:
     name: Resolute Banner
     asset: classic/assets/path/banner_sworn
-    source:
+    _source:
       <<: *Source
       page: 182
     # icon: https://game-icons.net/1x1/delapouite/knight-banner.html
@@ -42,7 +42,7 @@ rarities:
   cairn_stone_of_the_sundered:
     name: Cairn Stone of the Sundered
     asset: classic/assets/path/battle_scarred
-    source:
+    _source:
       <<: *Source
       page: 182
     # icon: https://game-icons.net/1x1/lorc/rock.html
@@ -54,7 +54,7 @@ rarities:
   bracer_of_the_first_blood:
     name: Bracer of the First Blood
     asset: classic/assets/path/blade_bound
-    source:
+    _source:
       <<: *Source
       page: 183
     # icon: https://game-icons.net/1x1/delapouite/bracer.html
@@ -66,7 +66,7 @@ rarities:
   waterskin_of_fellowship:
     name: Waterskin of Fellowship
     asset: classic/assets/path/bonded
-    source:
+    _source:
       <<: *Source
       page: 183
     # icon: https://game-icons.net/1x1/delapouite/magic-potion.html
@@ -78,7 +78,7 @@ rarities:
   scarves_of_the_northern_lights:
     name: Scarves of the Northern Lights
     asset: classic/assets/path/dancer
-    source:
+    _source:
       <<: *Source
       page: 183
     # icon: null
@@ -90,7 +90,7 @@ rarities:
   founders_reliquary:
     name: Founder’s Reliquary
     asset: classic/assets/path/devotant
-    source:
+    _source:
       <<: *Source
       page: 184
     # icon: https://game-icons.net/1x1/delapouite/covered-jar.html
@@ -100,7 +100,7 @@ rarities:
   sigil_of_the_broken_circlet:
     name: Sigil of the Broken Circlet
     asset: classic/assets/path/empowered
-    source:
+    _source:
       <<: *Source
       page: 184
     # icon: null
@@ -110,7 +110,7 @@ rarities:
   coin_of_favor:
     name: Coin of Favor
     asset: classic/assets/path/fortune_hunter
-    source:
+    _source:
       <<: *Source
       page: 184
     # icon: https://game-icons.net/1x1/lorc/crown-coin.html
@@ -121,7 +121,7 @@ rarities:
   silverstone_pestle:
     name: Silverstone Pestle
     asset: classic/assets/path/herbalist
-    source:
+    _source:
       <<: *Source
       page: 184
     # icon: null
@@ -131,7 +131,7 @@ rarities:
   unbreakable_torc:
     name: Unbreakable Torc
     asset: classic/assets/path/honorbound
-    source:
+    _source:
       <<: *Source
       page: 185
     # icon: https://game-icons.net/1x1/cathelineau/torc.html
@@ -141,7 +141,7 @@ rarities:
   blackguards_baldric:
     name: Blackguard’s Baldric
     asset: classic/assets/path/improviser
-    source:
+    _source:
       <<: *Source
       page: 185
     # icon: https://game-icons.net/1x1/lucasms/belt.html
@@ -151,7 +151,7 @@ rarities:
   basilisk_cloak:
     name: Basilisk Cloak
     asset: classic/assets/path/infiltrator
-    source:
+    _source:
       <<: *Source
       page: 185
     # icon: null
@@ -161,7 +161,7 @@ rarities:
   horn_of_the_mammoth:
     name: Horn of the Mammoth
     asset: classic/assets/path/loyalist
-    source:
+    _source:
       <<: *Source
       page: 185
     # icon: https://game-icons.net/1x1/lorc/hunting-horn.html
@@ -174,7 +174,7 @@ rarities:
   progenitor_shard:
     name: Progenitor Shard
     asset: classic/assets/path/masked
-    source:
+    _source:
       <<: *Source
       page: 186
     # icon: https://game-icons.net/1x1/lorc/beech.html
@@ -184,7 +184,7 @@ rarities:
   sundered_sword:
     name: Sundered Sword
     asset: classic/assets/path/oathbreaker
-    source:
+    _source:
       <<: *Source
       page: 186
     # icon: null
@@ -194,7 +194,7 @@ rarities:
   mark_of_the_exile:
     name: Mark of the Exile
     asset: classic/assets/path/outcast
-    source:
+    _source:
       <<: *Source
       page: 186
     # icon: null
@@ -206,7 +206,7 @@ rarities:
   tattoo_of_many_faces:
     name: Tattoo of Many Faces
     asset: classic/assets/path/pretender
-    source:
+    _source:
       <<: *Source
       page: 187
     # icon: https://game-icons.net/1x1/lorc/spiked-halo.html
@@ -216,7 +216,7 @@ rarities:
   shroud_of_retribution:
     name: Shroud of Retribution
     asset: classic/assets/path/revenant
-    source:
+    _source:
       <<: *Source
       page: 187
     # icon: https://game-icons.net/1x1/delapouite/rolled-cloth.html
@@ -226,7 +226,7 @@ rarities:
   horsemaster_helm:
     name: Horsemaster Helm
     asset: classic/assets/path/rider
-    source:
+    _source:
       <<: *Source
       page: 187
     # icon: https://game-icons.net/1x1/lorc/crested-helmet.html
@@ -236,7 +236,7 @@ rarities:
   book_of_the_cipher:
     name: Book of the Cipher
     asset: classic/assets/path/ritualist
-    source:
+    _source:
       <<: *Source
       page: 187
     # icon: https://game-icons.net/1x1/delapouite/secret-book.html
@@ -246,7 +246,7 @@ rarities:
   barrow_clasp:
     name: Barrow Clasp
     asset: classic/assets/path/shadow_kin
-    source:
+    _source:
       <<: *Source
       page: 188
     # icon: https://game-icons.net/1x1/delapouite/skeletal-hand.html
@@ -258,7 +258,7 @@ rarities:
   seeing_stone:
     name: Seeing Stone
     asset: classic/assets/path/sighted
-    source:
+    _source:
       <<: *Source
       page: 188
     # icon: null
@@ -268,7 +268,7 @@ rarities:
   slayers_medallion:
     name: Slayer’s Medallion
     asset: classic/assets/path/slayer
-    source:
+    _source:
       <<: *Source
       page: 188
     # icon: https://game-icons.net/1x1/lorc/shining-claw.html
@@ -280,7 +280,7 @@ rarities:
   mirror_of_the_eidolon:
     name: Mirror of the Eidolon
     asset: classic/assets/path/spirit_bound
-    source:
+    _source:
       <<: *Source
       page: 189
     # icon: null
@@ -293,7 +293,7 @@ rarities:
   goldwhyns_denouement:
     name: Goldwhyn’s Denouement
     asset: classic/assets/path/storyweaver
-    source:
+    _source:
       <<: *Source
       page: 189
     # icon: null
@@ -303,7 +303,7 @@ rarities:
   opal_of_whispers:
     name: Opal of Whispers
     asset: classic/assets/path/trickster
-    source:
+    _source:
       <<: *Source
       page: 189
     # icon: https://game-icons.net/1x1/lorc/vibrating-ball.html
@@ -313,7 +313,7 @@ rarities:
   helm_of_the_unbroken:
     name: Helm of the Unbroken
     asset: classic/assets/path/veteran
-    source:
+    _source:
       <<: *Source
       page: 190
     # icon: null
@@ -325,7 +325,7 @@ rarities:
   leviathans_lament:
     name: Leviathan’s Lament
     asset: classic/assets/path/waterborn
-    source:
+    _source:
       <<: *Source
       page: 190
     # icon: null
@@ -337,7 +337,7 @@ rarities:
   bough_of_the_surest_path:
     name: Bough of the Surest Path
     asset: classic/assets/path/wayfinder
-    source:
+    _source:
       <<: *Source
       page: 190
     # icon: null
@@ -350,7 +350,7 @@ rarities:
   whetstone_of_the_bear:
     name: Whetstone of the Bear
     asset: classic/assets/path/weaponmaster
-    source:
+    _source:
       <<: *Source
       page: 191
     # icon: null
@@ -362,7 +362,7 @@ rarities:
   vignette_of_the_weald:
     name: Vignette of the Weald
     asset: classic/assets/path/wildblood
-    source:
+    _source:
       <<: *Source
       page: 191
     # icon: null
@@ -374,7 +374,7 @@ rarities:
   artisans_gloves:
     name: Artisan’s Gloves
     asset: classic/assets/path/wright
-    source:
+    _source:
       <<: *Source
       page: 191
     # icon: https://game-icons.net/1x1/delapouite/gloves.html
@@ -384,7 +384,7 @@ rarities:
   farsight_quiver:
     name: Farsight Quiver
     asset: classic/assets/combat_talent/archer
-    source:
+    _source:
       <<: *Source
       page: 192
     # icon: https://game-icons.net/1x1/lorc/arrow-flights.html
@@ -394,7 +394,7 @@ rarities:
   mantle_of_many_beasts:
     name: Mantle of Many Beasts
     asset: classic/assets/combat_talent/berserker
-    source:
+    _source:
       <<: *Source
       page: 192
     # icon: https://game-icons.net/1x1/lorc/triple-claws.html
@@ -404,7 +404,7 @@ rarities:
   iron_fist:
     name: Iron Fist
     asset: classic/assets/combat_talent/brawler
-    source:
+    _source:
       <<: *Source
       page: 192
     # icon: https://game-icons.net/1x1/lorc/fist.html
@@ -414,7 +414,7 @@ rarities:
   dagger_of_the_blooded:
     name: Dagger of the Blooded
     asset: classic/assets/combat_talent/cutthroat
-    source:
+    _source:
       <<: *Source
       page: 192
     # icon: https://game-icons.net/1x1/lorc/dripping-blade.html
@@ -424,7 +424,7 @@ rarities:
   iron_dyad:
     name: Iron Dyad
     asset: classic/assets/combat_talent/duelist
-    source:
+    _source:
       <<: *Source
       page: 193
     # icon: null
@@ -434,7 +434,7 @@ rarities:
   raptors_talon:
     name: Raptor’s Talon
     asset: classic/assets/combat_talent/fletcher
-    source:
+    _source:
       <<: *Source
       page: 193
     # icon: null
@@ -444,7 +444,7 @@ rarities:
   starfall_hauberk:
     name: Starfall Hauberk
     asset: classic/assets/combat_talent/ironclad
-    source:
+    _source:
       <<: *Source
       page: 193
     # icon: null
@@ -456,7 +456,7 @@ rarities:
   rovers_staff:
     name: Rover’s Staff
     asset: classic/assets/combat_talent/long_arm
-    source:
+    _source:
       <<: *Source
       page: 193
     # icon: null
@@ -467,7 +467,7 @@ rarities:
   heart_of_the_aegis:
     name: Heart of the Aegis
     asset: classic/assets/combat_talent/shield_bearer
-    source:
+    _source:
       <<: *Source
       page: 194
     # icon: null
@@ -477,7 +477,7 @@ rarities:
   dragons_bite:
     name: Dragon’s Bite
     asset: classic/assets/combat_talent/skirmisher
-    source:
+    _source:
       <<: *Source
       page: 194
     # icon: null
@@ -487,7 +487,7 @@ rarities:
   giant_bane:
     name: Giant Bane
     asset: classic/assets/combat_talent/slinger
-    source:
+    _source:
       <<: *Source
       page: 194
     # icon: https://game-icons.net/1x1/lorc/striking-balls.html
@@ -499,7 +499,7 @@ rarities:
   warbringer:
     name: Warbringer
     asset: classic/assets/combat_talent/sunderer
-    source:
+    _source:
       <<: *Source
       page: 194
     # icon: null
@@ -509,7 +509,7 @@ rarities:
   honing_sheath:
     name: Honing Sheath
     asset: classic/assets/combat_talent/swordmaster
-    source:
+    _source:
       <<: *Source
       page: 195
     # icon: null
@@ -520,7 +520,7 @@ rarities:
   hammer_of_reckoning:
     name: Hammer of Reckoning
     asset: classic/assets/combat_talent/thunder_bringer
-    source:
+    _source:
       <<: *Source
       page: 195
     # icon: null
@@ -531,7 +531,7 @@ rarities:
   crows_patron:
     name: Crow’s Patron
     asset: classic/assets/ritual/augur
-    source:
+    _source:
       <<: *Source
       page: 196
     # icon: https://game-icons.net/1x1/lorc/feather.html
@@ -541,7 +541,7 @@ rarities:
   breath_of_life:
     name: Breath of Life
     asset: classic/assets/ritual/awakening
-    source:
+    _source:
       <<: *Source
       page: 196
     # icon: https://game-icons.net/1x1/lorc/bottle-vapors.html
@@ -553,7 +553,7 @@ rarities:
   moonshadow_ring:
     name: Moonshadow Ring
     asset: classic/assets/ritual/bind
-    source:
+    _source:
       <<: *Source
       page: 196
     # icon: https://game-icons.net/1x1/lorc/moon.html
@@ -563,7 +563,7 @@ rarities:
   incense_of_beckoning:
     name: Incense of Beckoning
     asset: classic/assets/ritual/communion
-    source:
+    _source:
       <<: *Source
       page: 196
     # icon: null
@@ -574,7 +574,7 @@ rarities:
   riddlestone:
     name: Riddlestone
     asset: classic/assets/ritual/divination
-    source:
+    _source:
       <<: *Source
       page: 197
     # icon: https://game-icons.net/1x1/lorc/rune-stone.html
@@ -586,7 +586,7 @@ rarities:
   invokers_lodestone:
     name: Invoker’s Lodestone
     asset: classic/assets/ritual/invoke
-    source:
+    _source:
       <<: *Source
       page: 197
     # icon: null
@@ -597,7 +597,7 @@ rarities:
   ravens_song:
     name: Raven’s Song
     asset: classic/assets/ritual/keen
-    source:
+    _source:
       <<: *Source
       page: 197
     # icon: null
@@ -607,7 +607,7 @@ rarities:
   wolfs_feast:
     name: Wolf’s Feast
     asset: classic/assets/ritual/leech
-    source:
+    _source:
       <<: *Source
       page: 197
     # icon: https://game-icons.net/1x1/lorc/wolf-head.html
@@ -617,7 +617,7 @@ rarities:
   daybreak_stone:
     name: Daybreak Stone
     asset: classic/assets/ritual/lightbearer
-    source:
+    _source:
       <<: *Source
       page: 198
     # icon: null
@@ -627,7 +627,7 @@ rarities:
   beholders_dust:
     name: Beholder’s Dust
     asset: classic/assets/ritual/scry
-    source:
+    _source:
       <<: *Source
       page: 198
     # icon: https://game-icons.net/1x1/lorc/celebration-fire.html
@@ -639,7 +639,7 @@ rarities:
   ring_of_secret_paths:
     name: Ring of Secret Paths
     asset: classic/assets/ritual/shadow_walk
-    source:
+    _source:
       <<: *Source
       page: 198
     # icon: https://game-icons.net/1x1/delapouite/ring.html
@@ -649,7 +649,7 @@ rarities:
   chime_of_secrets:
     name: Chime of Secrets
     asset: classic/assets/ritual/sway
-    source:
+    _source:
       <<: *Source
       page: 198
     # icon: https://game-icons.net/1x1/lorc/wind-slap.html
@@ -659,7 +659,7 @@ rarities:
   beads_of_many_domains:
     name: Beads of Many Domains
     asset: classic/assets/ritual/talisman
-    source:
+    _source:
       <<: *Source
       page: 199
     # icon:
@@ -672,7 +672,7 @@ rarities:
   wayfarers_promise:
     name: Wayfarer’s Promise
     asset: classic/assets/ritual/tether
-    source:
+    _source:
       <<: *Source
       page: 199
     # icon: null

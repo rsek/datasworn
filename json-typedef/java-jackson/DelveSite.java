@@ -16,6 +16,9 @@ public class DelveSite {
     @JsonProperty("_id")
     private DelveSiteId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("denizens")
     private List<DelveSiteDenizen> denizens;
 
@@ -30,9 +33,6 @@ public class DelveSite {
 
     @JsonProperty("rank")
     private ChallengeRank rank;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonProperty("theme")
     private DelveSiteThemeId theme;
@@ -78,6 +78,24 @@ public class DelveSite {
      */
     public void setId(DelveSiteId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
     }
 
     /**
@@ -150,24 +168,6 @@ public class DelveSite {
      */
     public void setRank(ChallengeRank rank) {
         this.rank = rank;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   moves:
     name: Move Oracles
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -16,7 +16,7 @@ oracles:
       ask_the_oracle:
         name: Ask the Oracle
         oracle_type: table_shared_results
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 229
         contents:
@@ -83,7 +83,7 @@ oracles:
       begin_a_session:
         name: Begin a Session
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 141
         # content:
@@ -126,7 +126,7 @@ oracles:
       make_a_discovery:
         name: Make a Discovery
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 176
         # content:
@@ -223,7 +223,7 @@ oracles:
       confront_chaos:
         name: Confront Chaos
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 177
         # content:
@@ -309,7 +309,7 @@ oracles:
       take_decisive_action:
         name: Take Decisive Action
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 194
         # content:
@@ -336,7 +336,7 @@ oracles:
       endure_harm:
         name: Endure Harm
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 200
         # content:
@@ -360,7 +360,7 @@ oracles:
       endure_stress:
         name: Endure Stress
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 202
         # content:
@@ -381,7 +381,7 @@ oracles:
       withstand_damage:
         name: Withstand Damage
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 206
         # content:
@@ -414,7 +414,7 @@ oracles:
       pay_the_price:
         name: Pay the Price
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 232
         # content:

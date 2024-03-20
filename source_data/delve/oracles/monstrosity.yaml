@@ -25,7 +25,7 @@ oracles:
         - classic/oracles/character/goal
         - classic/oracles/character/disposition
         - delve/oracles/character/activity
-    source:
+    _source:
       <<:  &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -41,7 +41,7 @@ oracles:
         oracle_type: table_simple
         # usage:
         #   initial: true
-        source:
+        _source:
           <<: *Source
           page: 214
         rows:
@@ -71,7 +71,7 @@ oracles:
           Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
         # usage:
         #   initial: true
-        source:
+        _source:
           <<: *Source
           page: 214
         rows:
@@ -167,7 +167,7 @@ oracles:
         summary: Roll up to four times for Characteristics and keep up to three of those results.
         description: |-
           Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
-        source:
+        _source:
           <<: *Source
           page: 215
         rows:
@@ -268,7 +268,7 @@ oracles:
           Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
 
           You should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.
-        source:
+        _source:
           <<: *Source
           page: 216
         rows:

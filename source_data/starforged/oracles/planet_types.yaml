@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   planets:
     name: Planets
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -18,7 +18,7 @@ oracles:
         images:
           - images/planets/desert-01.webp
           - images/planets/desert-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 308
         summary: A pitiless planet of searing heat, blowing sand, and sunbaked rock.
@@ -27,7 +27,7 @@ oracles:
             <<: &Settlements
               name: Settlements
               oracle_type: table_shared_results
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: &OracleTable.Terminus
@@ -109,7 +109,7 @@ oracles:
               name: Sample Names
               dice: 1d20
               oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -175,7 +175,7 @@ oracles:
             <<: &Atmosphere
               name: Atmosphere
               oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 10
@@ -208,7 +208,7 @@ oracles:
               recommended_rolls:
                 min: 1
                 max: 2
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: &ObservedFromSpace.0
                   min: 1
@@ -263,7 +263,7 @@ oracles:
               recommended_rolls:
                 min: 1
                 max: 2
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: &Feature.0
                   min: 1
@@ -329,7 +329,7 @@ oracles:
             <<: &Life
               name: Life
               oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 20
@@ -361,14 +361,14 @@ oracles:
         images:
           - images/planets/furnace-01.webp
           - images/planets/furnace-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 309
         summary: A planet with relentless volcanic activity, wreathed in fire and ash.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -427,7 +427,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -491,7 +491,7 @@ oracles:
                 result: Vesuvius
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 10
@@ -511,7 +511,7 @@ oracles:
               - *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Fiery world-spanning chasms
@@ -533,7 +533,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Blinding ash storms
@@ -565,7 +565,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 35
@@ -591,14 +591,14 @@ oracles:
         images:
           - images/planets/grave-01.webp
           - images/planets/grave-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 310
         summary: A once-thriving world—now a grim monument to a fallen civilization.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -653,7 +653,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -717,7 +717,7 @@ oracles:
                 result: Thrace
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 10
@@ -737,7 +737,7 @@ oracles:
               - *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Broken moon
@@ -759,7 +759,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Acid pools
@@ -791,7 +791,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 25
@@ -813,14 +813,14 @@ oracles:
         images:
           - images/planets/ice-01.webp
           - images/planets/ice-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 311
         summary: A rugged, frozen world—locked in an unending winter.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -879,7 +879,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -943,7 +943,7 @@ oracles:
                 result: Varnholme
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 15
@@ -965,7 +965,7 @@ oracles:
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Feeble sunlight
@@ -987,7 +987,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Abyssal ice fissures
@@ -1019,7 +1019,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 20
@@ -1045,14 +1045,14 @@ oracles:
         images:
           - images/planets/jovian-01.webp
           - images/planets/jovian-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 312
         summary: A massive planet with vast layers of dense gases surrounding a rocky core.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -1111,7 +1111,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -1175,7 +1175,7 @@ oracles:
                 result: Zephyr
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - *Atmosphere.NoneThin
               - min: 1
@@ -1193,7 +1193,7 @@ oracles:
               - *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Complex ring system
@@ -1215,7 +1215,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Clouds of metal particles
@@ -1247,7 +1247,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 35
@@ -1273,14 +1273,14 @@ oracles:
         images:
           - images/planets/jungle-01.webp
           - images/planets/jungle-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 313
         summary: A humid, rain-soaked planet that keeps its secrets under a thick canopy of vegetation.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -1343,7 +1343,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -1407,7 +1407,7 @@ oracles:
                 result: Viridian
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - *Atmosphere.NoneThin
               - min: 1
@@ -1427,7 +1427,7 @@ oracles:
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Cloud-breaching trees
@@ -1449,7 +1449,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Bioluminescent flora
@@ -1481,7 +1481,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - *Life.None
               - *Life.Extinct
@@ -1503,14 +1503,14 @@ oracles:
         images:
           - images/planets/ocean-01.webp
           - images/planets/ocean-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 314
         summary: A planet completely or almost entirely covered by a boundless ocean.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -1573,7 +1573,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -1637,7 +1637,7 @@ oracles:
                 result: Triton
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 5
@@ -1659,7 +1659,7 @@ oracles:
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Complex reef systems
@@ -1681,7 +1681,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Abyssal trenches
@@ -1713,7 +1713,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 5
@@ -1739,14 +1739,14 @@ oracles:
         images:
           - images/planets/rocky-01.webp
           - images/planets/rocky-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 315
         summary: A rugged planet scarred by eons of destructive asteroid impacts.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -1805,7 +1805,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -1869,7 +1869,7 @@ oracles:
                 result: Umbra
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 65
@@ -1887,7 +1887,7 @@ oracles:
               - *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Barren plains
@@ -1909,7 +1909,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Crystalline formations
@@ -1941,7 +1941,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 65
@@ -1967,14 +1967,14 @@ oracles:
         images:
           - images/planets/shattered-01.webp
           - images/planets/shattered-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 316
         summary: A planet sundered by cataclysmic destruction.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -2031,7 +2031,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -2095,7 +2095,7 @@ oracles:
                 result: Zix
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 93
@@ -2115,7 +2115,7 @@ oracles:
               - *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Demolished space fleet
@@ -2137,7 +2137,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Broken cities
@@ -2169,7 +2169,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 30
@@ -2191,14 +2191,14 @@ oracles:
         images:
           - images/planets/tainted-01.webp
           - images/planets/tainted-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 317
         summary: A foul planet wracked by a poisonous climate and virulent growths.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -2253,7 +2253,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -2317,7 +2317,7 @@ oracles:
                 result: Xanthous
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - *Atmosphere.NoneThin
               - min: 1
@@ -2335,7 +2335,7 @@ oracles:
               - *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Expansive fungal plains
@@ -2365,7 +2365,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Caustic gas storms
@@ -2397,7 +2397,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - *Life.None
               - *Life.Extinct
@@ -2419,14 +2419,14 @@ oracles:
         images:
           - images/planets/vital-01.webp
           - images/planets/vital-02.webp
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 318
         summary: This diverse, life-bearing planet might provide some small measure of hope.
         collections:
           settlements:
             <<: *Settlements
-            source: *CollectionSource
+            _source: *CollectionSource
             contents:
               terminus:
                 <<: *OracleTable.Terminus
@@ -2489,7 +2489,7 @@ oracles:
           name:
             # not rendered as a table in the text, but commonly requested
             <<: *SampleNames
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
@@ -2553,7 +2553,7 @@ oracles:
                 result: Valinor
           atmosphere:
             <<: *Atmosphere
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - *Atmosphere.NoneThin
               - *Atmosphere.Toxic
@@ -2569,7 +2569,7 @@ oracles:
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
                 result: Complex ring system
@@ -2599,7 +2599,7 @@ oracles:
               - *ObservedFromSpace.9
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Background radiation
@@ -2631,7 +2631,7 @@ oracles:
               - *Feature.14
           life:
             <<: *Life
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - *Life.None
               - *Life.Extinct
@@ -2650,7 +2650,7 @@ oracles:
           diversity:
             name: Diversity
             oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
             rows:
               - min: 1
@@ -2686,7 +2686,7 @@ oracles:
           biomes:
             name: Biomes
             oracle_type: table_simple
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 5

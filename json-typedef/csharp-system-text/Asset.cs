@@ -13,6 +13,13 @@ namespace Datasworn
         [JsonPropertyName("_id")]
         public AssetId Id { get; set; }
 
+        /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
         [JsonPropertyName("abilities")]
         public IList<AssetAbility> Abilities { get; set; }
 
@@ -43,13 +50,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("shared")]
         public bool Shared { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         [JsonPropertyName("attachments")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

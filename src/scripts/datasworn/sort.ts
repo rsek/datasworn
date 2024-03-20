@@ -171,7 +171,7 @@ export const dataSwornKeyOrder = [
 	'site_domains',
 	'site_themes',
 	'truths',
-	'source',
+	'_source',
 	'_i18n'
 ] as const
 

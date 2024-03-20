@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   starships:
     name: Starships
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -15,7 +15,7 @@ oracles:
     collections:
       mission:
         name: Starship Mission
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 328
         oracle_type: table_shared_results
@@ -410,7 +410,7 @@ oracles:
       type:
         name: Starship Type
         canonical_name: Type
-        source:
+        _source:
           <<: *Source
           page: 326
         # usage:
@@ -566,7 +566,7 @@ oracles:
       fleet:
         name: Fleet
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 326
         # usage:
@@ -608,7 +608,7 @@ oracles:
       initial_contact:
         name: Initial Contact
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 327
         # usage:
@@ -657,7 +657,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 327
         # usage:
@@ -743,7 +743,7 @@ oracles:
       starship_name:
         name: Starship Name
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 329
         summary: |-

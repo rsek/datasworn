@@ -20,7 +20,7 @@ export const SourcedNodeBase = Type.Object(
 					"The name of this item as it appears on the page in the book, if it's different from `name`."
 			})
 		),
-		source: Type.Ref(Metadata.SourceInfo, {
+		_source: Type.Ref(Metadata.SourceInfo, {
 			description:
 				'Attribution for the original source (such as a book or website) of this item, including the author and licensing information.'
 		}),
@@ -55,6 +55,6 @@ export type TSourcedNode<T extends TObject = TObject> = TIdentifiedNode<
 export type SourcedNode<T extends object = object> = IdentifiedNode<T> & {
 	name: string
 	canonical_name?: string
-	source: Metadata.SourceInfo
+	_source: Metadata.SourceInfo
 	suggestions?: Metadata.Suggestions
 }

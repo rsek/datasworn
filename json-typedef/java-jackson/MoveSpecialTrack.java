@@ -18,14 +18,14 @@ public class MoveSpecialTrack extends Move {
     @JsonProperty("_id")
     private MoveId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("name")
     private Label name;
 
     @JsonProperty("outcomes")
     private MoveOutcomes outcomes;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonProperty("text")
     private MarkdownString text;
@@ -73,6 +73,24 @@ public class MoveSpecialTrack extends Move {
     }
 
     /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
+    }
+
+    /**
      * Getter for name.<p>
      * The primary name/label for this item.
      */
@@ -100,24 +118,6 @@ public class MoveSpecialTrack extends Move {
      */
     public void setOutcomes(MoveOutcomes outcomes) {
         this.outcomes = outcomes;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

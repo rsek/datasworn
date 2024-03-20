@@ -1644,7 +1644,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -1737,7 +1737,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -1978,7 +1978,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -2087,7 +2087,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -2198,7 +2198,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -2309,7 +2309,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -2598,7 +2598,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -2714,7 +2714,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -2944,7 +2944,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3086,7 +3086,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3164,7 +3164,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3239,7 +3239,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3323,7 +3323,7 @@
 								"description": "The primary name/label for this item."
 							}
 						},
-						"source": {
+						"_source": {
 							"ref": "SourceInfo",
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3403,7 +3403,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -3993,7 +3993,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -4368,7 +4368,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -5151,7 +5151,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -5300,7 +5300,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -5406,7 +5406,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -5496,7 +5496,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -5563,7 +5563,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -5684,7 +5684,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
@@ -5876,7 +5876,7 @@
 						"description": "The primary name/label for this item."
 					}
 				},
-				"source": {
+				"_source": {
 					"ref": "SourceInfo",
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."

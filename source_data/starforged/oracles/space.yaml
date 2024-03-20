@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   space:
     name: Space Encounters
-    source: &CollectionSource
+    _source: &CollectionSource
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -15,7 +15,7 @@ oracles:
     collections:
       sighting:
         name: Space Sighting
-        source: *CollectionSource
+        _source: *CollectionSource
         oracle_type: table_shared_results
         # content:
         #   part_of_speech: [fragment]
@@ -295,7 +295,7 @@ oracles:
               - *Sighting.20
       sector_name:
         name: Sector Name
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 302
         summary: To give a sector or region of space a random name, roll once for the first word and once for the second word.
@@ -747,7 +747,7 @@ oracles:
       stellar_object:
         name: Stellar Object
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 303
         # content:
@@ -794,7 +794,7 @@ oracles:
             max: 100
             result: Unstable star showing signs of impending supernova
       peril:
-        source:
+        _source:
           <<: *Source
           page: 304
         name: Spaceborne Peril
@@ -927,7 +927,7 @@ oracles:
                 auto: true
       opportunity:
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 305
         name: Spaceborne Opportunity

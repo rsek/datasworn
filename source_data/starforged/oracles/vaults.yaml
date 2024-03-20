@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   vaults:
     name: Precursor Vaults
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -18,7 +18,7 @@ oracles:
       location:
         name: Location
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 360
         rows:
@@ -37,7 +37,7 @@ oracles:
       scale:
         name: Scale
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 360
         # usage:
@@ -63,7 +63,7 @@ oracles:
       form:
         name: Form
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 360
         # usage:
@@ -96,7 +96,7 @@ oracles:
       shape:
         name: Shape
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 361
         # usage:
@@ -173,7 +173,7 @@ oracles:
       material:
         name: Material
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 361
         # usage:
@@ -226,7 +226,7 @@ oracles:
       outer_first_look:
         name: Outer First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 361
         # content:
@@ -338,7 +338,7 @@ oracles:
       interior:
         name: Interior
         oracle_type: tables
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 364
         summary: If you enter the site, check the [Inner First Look](id:starforged/oracles/vaults/interior/first_look) table for initial impressions of what lies within. If you explore further, use the [Interior Feature](id:starforged/oracles/vaults/interior/feature) table to define what you find or encounter. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) within a vault, check this table if you want help setting the scene for a waypoint.
@@ -347,7 +347,7 @@ oracles:
           first_look:
             oracle_type: table_simple
             name: Inner First Look
-            source: *CollectionSource
+            _source: *CollectionSource
             # usage:
             #   initial: true
             recommended_rolls:
@@ -457,7 +457,7 @@ oracles:
           feature:
             oracle_type: table_simple
             name: Interior Feature
-            source:
+            _source:
               <<: *Source
               page: 366
             # usage:
@@ -576,7 +576,7 @@ oracles:
           peril:
             name: Interior Peril
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
               page: 367
             # usage:
@@ -661,7 +661,7 @@ oracles:
           opportunity:
             name: Interior Opportunity
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
               page: 367
             # usage:
@@ -706,12 +706,12 @@ oracles:
         oracle_type: tables
         summary: As you delve deeper into a vault, the corruption and strangeness of the place takes hold. Use the Sanctum Feature table to represent the aberrant nature of a vault’s depths.
         icon: icons/vaults/sanctum.svg
-        source:
+        _source:
           <<: *Source
           page: 368
         contents:
           purpose:
-            source:
+            _source:
               <<: *Source
               page: 365
             oracle_type: table_simple
@@ -812,7 +812,7 @@ oracles:
                   - number_of_rolls: 2
                     auto: true
           feature:
-            source:
+            _source:
               <<: *Source
               page: 368
             name: Sanctum Feature
@@ -931,7 +931,7 @@ oracles:
                   - number_of_rolls: 2
                     auto: true
           peril:
-            source:
+            _source:
               <<: *Source
               page: 369
             name: Sanctum Peril
@@ -1010,7 +1010,7 @@ oracles:
                     auto: true
           opportunity:
             name: Sanctum Opportunity
-            source:
+            _source:
               <<: *Source
               page: 369
             # usage:

@@ -16,6 +16,13 @@ namespace Datasworn
         [JsonPropertyName("_id")]
         public DelveSiteThemeId Id { get; set; }
 
+        /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
         [JsonPropertyName("dangers")]
         public IList<DelveSiteThemeDangerRow> Dangers { get; set; }
 
@@ -27,13 +34,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         [JsonPropertyName("summary")]
         public MarkdownString Summary { get; set; }

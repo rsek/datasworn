@@ -17,6 +17,9 @@ public class Npc {
     @JsonProperty("_id")
     private NpcId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("description")
     private MarkdownString description;
 
@@ -34,9 +37,6 @@ public class Npc {
 
     @JsonProperty("rank")
     private ChallengeRank rank;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonProperty("tactics")
     private List<MarkdownString> tactics;
@@ -86,6 +86,24 @@ public class Npc {
      */
     public void setId(NpcId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
     }
 
     /**
@@ -174,24 +192,6 @@ public class Npc {
      */
     public void setRank(ChallengeRank rank) {
         this.rank = rank;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

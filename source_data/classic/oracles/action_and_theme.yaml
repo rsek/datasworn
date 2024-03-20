@@ -2,7 +2,7 @@ _id: classic
 package_type: ruleset
 oracles:
   action_and_theme:
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -21,7 +21,7 @@ oracles:
           oracles:
             - classic/oracles/action_and_theme/theme
         summary: Use this table to inspire a discovery, event, character goal, or situation. A roll on this table can be combined with a [Theme](id:classic/oracles/action_and_theme/theme) to provide an action and a subject. Then, interpret the result based on the context of the question and your current situation.
-        source:
+        _source:
           <<: *Source
           page: 174
         rows:
@@ -432,7 +432,7 @@ oracles:
         name: Theme
         canonical_name: 'Oracle 2: Theme'
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 175
         suggestions:

@@ -21,7 +21,7 @@ for (const pkg of Object.values(pkgs)) {
 	await fs.emptyDir(localeDir)
 
 	for (const collection of collections) {
-		const omitKeys: (keyof Datasworn)[] = ['source', '_id']
+		const omitKeys: (keyof Datasworn)[] = ['_source', '_id']
 		const [type] = Object.keys(collection).filter(
 			(k) => !omitKeys.includes(k as any)
 		)

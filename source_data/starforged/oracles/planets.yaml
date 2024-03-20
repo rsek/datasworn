@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   planets:
     name: Planets
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -16,7 +16,7 @@ oracles:
       class:
         name: Planetary Class
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 306
         # usage:
@@ -84,7 +84,7 @@ oracles:
     collections:
       peril:
         name: Planetside Peril
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 320
         oracle_type: table_shared_results
@@ -387,7 +387,7 @@ oracles:
                 <<: *RollTwice
       opportunity:
         name: Planetside Opportunity
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 321
         oracle_type: table_shared_results

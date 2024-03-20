@@ -2,7 +2,7 @@ _id: sundered_isles
 package_type: ruleset
 oracles:
   settlements:
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles Book Preview
         authors:
@@ -13,7 +13,7 @@ oracles:
     name: Settlements
     contents:
       location:
-        source:
+        _source:
           <<: *Source
         name: Location
         oracle_type: table_details
@@ -32,7 +32,7 @@ oracles:
             result: Waterside
             detail: By an inland body of water
       aesthetics:
-        source:
+        _source:
           <<: *Source
         name: Aesthetics
         oracle_type: table_details
@@ -103,7 +103,7 @@ oracles:
             result: Wondrous
             detail: Enigmatic structures of awe-inspiring design or function
       first_look:
-        source:
+        _source:
           <<: *Source
         name: First Look
         oracle_type: table_simple
@@ -247,7 +247,7 @@ oracles:
                 - oracle: sundered_isles/oracles/core/focus
                   auto: true
       cursed_first_look:
-        source:
+        _source:
           <<: *Source
         name: Cursed First Look
         oracle_type: table_simple
@@ -343,7 +343,7 @@ oracles:
             max: 100
             result: '[Cursed Weather]'
       cursed_focus:
-        source:
+        _source:
           <<: *Source
         name: Cursed Focus
         summary: If you roll a [Settlement Focus] curse, take your result on that table and make note that it is cursed. Something about this activity has an uncanny or dreadful aspect. If you investigate or interact further, use the table below to help reveal the industry’s relationship to a cursed power.
@@ -380,7 +380,7 @@ oracles:
             max: 100
             result: Unwittingly helping or unleashing a cursed power
       detail:
-        source:
+        _source:
           <<: *Source
         name: Settlement Details
         summary: As you spend time in a settlement, use this table to reveal uncovered aspects and overheard rumors.
@@ -681,7 +681,7 @@ oracles:
             max: 100
             <<: *DescriptorFocus
       cursed_details:
-        source:
+        _source:
           <<: *Source
         name: Cursed Settlement Details
         oracle_type: table_simple
@@ -886,7 +886,7 @@ oracles:
             result: Large cockroaches boil from hidden spaces
     collections:
       size:
-        source:
+        _source:
           <<: *Source
         name: Size
         oracle_type: table_shared_details
@@ -972,13 +972,13 @@ oracles:
                 max: 100
                 <<: *Size.3
       identity:
-        source:
+        _source:
           <<: *Source
         name: Settlement Identity
         oracle_type: tables
         contents:
           disposition:
-            source:
+            _source:
               <<: *Source
             name: Disposition
             oracle_type: table_simple
@@ -1014,7 +1014,7 @@ oracles:
                 max: 100
                 result: Helpful
           authority:
-            source:
+            _source:
               <<: *Source
             name: Authority
             oracle_type: table_simple
@@ -1051,7 +1051,7 @@ oracles:
                 result: Benevolent
         collections:
           controlling_faction:
-            source:
+            _source:
               <<: *Source
             name: Controlling Faction
             oracle_type: table_shared_results
@@ -1129,7 +1129,7 @@ oracles:
                     max: 100
                     <<: *ControllingFaction.4
           focus:
-            source:
+            _source:
               <<: *Source
             name: Settlement Focus
             summary: Sections of a large city or city-state can contain their own pursuits and industries, and can even span geographies (seafront, inland, or waterside). Revisit this table if you spend time in a place and learn more about its activities.

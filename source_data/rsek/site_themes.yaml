@@ -5,7 +5,7 @@ site_themes:
   morphic:
     name: Morphic
     icon: icons/site_themes/morphic.svg
-    source: &Source
+    _source: &Source
       authors:
         - name: rsek
           email: r.sekouri@gmail.com
@@ -70,7 +70,7 @@ site_themes:
   protean:
     name: Protean
     icon: icons/site_themes/protean.svg
-    source: *Source
+    _source: *Source
     summary: A place of primordial chaos, in constant flux.
     features:
       - min: 1
@@ -128,7 +128,7 @@ site_themes:
   skyborne:
     name: Skyborne
     icon: icons/site_themes/skyborne.svg
-    source: *Source
+    _source: *Source
     summary: A place that soars high above the world below.
     features:
       - min: 1
@@ -187,7 +187,7 @@ site_themes:
   threatened:
     name: Threatened
     icon: icons/site_themes/threatened.svg
-    source: *Source
+    _source: *Source
     summary: This place is on the verge of calamity.
     features:
       - min: 1

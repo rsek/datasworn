@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   sailing_ships:
     name: Sailing Ships
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles
         date: 2023-11-29
@@ -14,7 +14,7 @@ oracles:
     contents:
       size:
         name: Size
-        source:
+        _source:
           <<: *Source
         summary: Use this table to generate the scale of a ship sighting, ranging from a single small ship to a massive armada.
         description: The ship challenge ranks are a starting place. Adjust for the capability of the forces you command and the nature of your objectives. Also, keep in mind that the rank of a ship is relative to other ship-scale vehicles, creatures, or powers. See page 54 for tips on handing naval encounters.
@@ -67,7 +67,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -187,7 +187,7 @@ oracles:
       cursed_first_look:
         name: Cursed First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -289,7 +289,7 @@ oracles:
       symbol:
         name: Symbol
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -439,7 +439,7 @@ oracles:
       cursed_symbol:
         name: Cursed Symbol
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -481,7 +481,7 @@ oracles:
       cursed_mission:
         name: Cursed Ship Mission
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           # TODO: additive curse
         summary: If you roll a Ship Mission curse, take your result on that table and envision an uncanny or dreadful aspect. For details on how the ship or its mission relates to a cursed power, use the table below.
@@ -514,7 +514,7 @@ oracles:
         name: Revaled Aspects
         oracle_type: table_simple
         summary: When upon a ship other than your own—visiting,to reveal new details. exploring, or boarding—use this table.
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -634,7 +634,7 @@ oracles:
       cursed_aspects:
         name: Cursed Aspects
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -718,7 +718,7 @@ oracles:
       cargo:
         name: Cargo
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         summary: Use this table when surveying a ship’s hold or if coming upon lost or abandoned cargo. Roll or choose a number of items as appropriate to the nature of the find. For example, once for the hold of a typical warship, or up to four times for a fully loaded tradeship. Ships also typically carry basic munitions and provisions for the crew, but this table reveals the details of cargo such as trade goods and plunder.
         rows:
@@ -863,7 +863,7 @@ oracles:
       cursed_cargo:
         name: Cursed Cargo
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -916,12 +916,12 @@ oracles:
             result: Trapped undead
       # name:
       #   name: Ship Name
-      #   source:
+      #   _source:
       #     <<: *Source
       #   rows:
       # cursed_name:
       #   name: Cursed Ship Name
-      #   source:
+      #   _source:
       #     <<: *Source
       #   rows:
 
@@ -929,13 +929,13 @@ oracles:
       position:
         name: Position
         oracle_type: tables
-        source:
+        _source:
           <<: *Source
         contents:
           range:
             name: Range
             oracle_type: table_details
-            source:
+            _source:
               <<: *Source
             column_labels:
               roll: Roll
@@ -961,7 +961,7 @@ oracles:
           status:
             name: Status
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -993,7 +993,7 @@ oracles:
                 result: Run aground
       controlling_faction:
         name: Controlling Faction
-        source:
+        _source:
           <<: *Source
         oracle_type: table_shared_results
         contents:
@@ -1050,7 +1050,7 @@ oracles:
                 max: 100
       mission:
         name: Ship Mission
-        source:
+        _source:
           <<: *Source
         summary: A ship’s faction can reveal its role, such as warship, tradeship, or whaler. If the ship is independent, the faction unknown, or if you simply want more detail, use this table. Alernatively, use the captain’s goal (page 179) to set the ship’s purpose.
         oracle_type: table_shared_results

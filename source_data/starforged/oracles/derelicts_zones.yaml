@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   derelicts:
     name: Derelicts
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -17,7 +17,7 @@ oracles:
         name: Access
         oracle_type: tables
         icon: icons/derelicts/access.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 352
         contents:
@@ -27,7 +27,7 @@ oracles:
               name: Area
               summary: |-
                 Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 50
@@ -59,7 +59,7 @@ oracles:
               oracle_type: table_simple
               summary: |-
                 Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - min: 1
                 max: 5
@@ -133,7 +133,7 @@ oracles:
               oracle_type: table_simple
               summary: |-
                 Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - &Peril.0
                 min: 1
@@ -188,7 +188,7 @@ oracles:
                   - number_of_rolls: 2
                     auto: true
           opportunity:
-            source: *CollectionSource
+            _source: *CollectionSource
             <<: &Opportunity
               oracle_type: table_simple
               name: Opportunity
@@ -219,13 +219,13 @@ oracles:
         name: Community
         oracle_type: tables
         icon: icons/derelicts/community.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 353
         contents:
           area:
             <<: *Area
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - &Area.0
                 min: 1
@@ -277,7 +277,7 @@ oracles:
                 result: New zone via [Access](id:starforged/collections/oracles/derelicts/access)
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - &Feature.0
                 min: 1
@@ -329,7 +329,7 @@ oracles:
                 max: 100
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Biological infestation
@@ -353,7 +353,7 @@ oracles:
               - *Peril.10
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Culturally significant object or artifact
@@ -369,13 +369,13 @@ oracles:
         name: Engineering
         oracle_type: tables
         icon: icons/derelicts/engineering.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 354
         contents:
           area:
             <<: *Area
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Area.0
                 result: Control room
@@ -401,7 +401,7 @@ oracles:
               - *Area.11
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Cluttered workbench
@@ -428,7 +428,7 @@ oracles:
               - *Feature.11
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Corrosive leak
@@ -452,7 +452,7 @@ oracles:
               - *Peril.10
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Advanced or experimental equipment
@@ -468,13 +468,13 @@ oracles:
         name: Living
         oracle_type: tables
         icon: icons/derelicts/living.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 355
         contents:
           area:
             <<: *Area
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Area.0
                 result: Food storage
@@ -500,7 +500,7 @@ oracles:
               - *Area.11
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Abandoned pet
@@ -527,7 +527,7 @@ oracles:
               - *Feature.11
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Booby trap
@@ -551,7 +551,7 @@ oracles:
               - *Peril.10
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Culturally significant object or artifact
@@ -567,13 +567,13 @@ oracles:
         name: Medical
         oracle_type: tables
         icon: icons/derelicts/medical.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 356
         contents:
           area:
             <<: *Area
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Area.0
                 result: Crematorium
@@ -599,7 +599,7 @@ oracles:
               - *Area.11
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Autopsied corpse
@@ -626,7 +626,7 @@ oracles:
               - *Feature.11
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Disgusting sight / smell
@@ -650,7 +650,7 @@ oracles:
               - *Peril.10
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Cache of medicine
@@ -666,13 +666,13 @@ oracles:
         name: Operations
         oracle_type: tables
         icon: icons/derelicts/operations.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 357
         contents:
           area:
             <<: *Area
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Area.0
                 result: Admin or command offices
@@ -698,7 +698,7 @@ oracles:
               - *Area.11
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Automated warning
@@ -725,7 +725,7 @@ oracles:
               - *Feature.11
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Automated defenses target you
@@ -749,7 +749,7 @@ oracles:
               - *Peril.10
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Cache of weapons or ammo
@@ -765,13 +765,13 @@ oracles:
         name: Production
         oracle_type: tables
         icon: icons/derelicts/production.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 358
         contents:
           area:
             <<: *Area
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Area.0
                 result: Airlock or staging area
@@ -797,7 +797,7 @@ oracles:
               - *Area.11
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Cargo lifts
@@ -824,7 +824,7 @@ oracles:
               - *Feature.11
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Claustrophobic spaces
@@ -848,7 +848,7 @@ oracles:
               - *Peril.10
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Helpful vehicle or transport
@@ -864,13 +864,13 @@ oracles:
         name: Research
         oracle_type: tables
         icon: icons/derelicts/research.svg
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 359
         contents:
           area:
             <<: *Area
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Area.0
                 result: Clean room
@@ -896,7 +896,7 @@ oracles:
               - *Area.11
           feature:
             <<: *Feature
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Feature.0
                 result: Aquarium or tank
@@ -923,7 +923,7 @@ oracles:
               - *Feature.11
           peril:
             <<: *Peril
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Peril.0
                 result: Automated containment protocols are activated
@@ -947,7 +947,7 @@ oracles:
               - *Peril.10
           opportunity:
             <<: *Opportunity
-            source: *CollectionSource
+            _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
                 result: Helpful research data

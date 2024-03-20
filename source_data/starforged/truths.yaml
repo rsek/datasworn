@@ -12,7 +12,7 @@ truths:
   cataclysm:
     name: Cataclysm
     icon: icons/truths/cataclysm.svg
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -111,7 +111,7 @@ truths:
   exodus:
     name: Exodus
     icon: icons/truths/exodus.svg
-    source:
+    _source:
       <<: *Source
       page: 86
     options:
@@ -141,7 +141,7 @@ truths:
   communities:
     name: Communities
     icon: icons/truths/communities.svg
-    source:
+    _source:
       <<: *Source
       page: 87
     options:
@@ -171,7 +171,7 @@ truths:
   iron:
     name: Iron
     icon: icons/truths/iron.svg
-    source:
+    _source:
       <<: *Source
       page: 88
     options:
@@ -201,7 +201,7 @@ truths:
   laws:
     name: Laws
     icon: icons/truths/laws.svg
-    source:
+    _source:
       <<: *Source
       page: 89
     options:
@@ -231,7 +231,7 @@ truths:
   religion:
     name: Religion
     icon: icons/truths/religion.svg
-    source:
+    _source:
       <<: *Source
       page: 90
     options:
@@ -261,7 +261,7 @@ truths:
   magic:
     name: Magic
     icon: icons/truths/magic.svg
-    source:
+    _source:
       <<: *Source
       page: 91
     options:
@@ -311,7 +311,7 @@ truths:
   communication_and_data:
     name: Communication and Data
     icon: icons/truths/communication_and_data.svg
-    source:
+    _source:
       <<: *Source
       page: 92
     options:
@@ -342,7 +342,7 @@ truths:
   medicine:
     name: Medicine
     icon: icons/truths/medicine.svg
-    source:
+    _source:
       <<: *Source
       page: 93
     options:
@@ -373,7 +373,7 @@ truths:
   artificial_intelligence:
     name: Artificial Intelligence
     icon: icons/truths/artificial_intelligence.svg
-    source:
+    _source:
       <<: *Source
       page: 94
     options:
@@ -418,7 +418,7 @@ truths:
   war:
     name: War
     icon: icons/truths/war.svg
-    source:
+    _source:
       <<: *Source
       page: 95
     options:
@@ -448,7 +448,7 @@ truths:
   lifeforms:
     name: Lifeforms
     icon: icons/truths/lifeforms.svg
-    source:
+    _source:
       <<: *Source
       page: 96
     options:
@@ -478,7 +478,7 @@ truths:
   precursors:
     name: Precursors
     icon: icons/truths/precursors.svg
-    source:
+    _source:
       <<: *Source
       page: 97
     options:
@@ -508,7 +508,7 @@ truths:
   horrors:
     name: Horrors
     icon: icons/truths/horrors.svg
-    source:
+    _source:
       <<: *Source
       page: 98
     options:

@@ -3,7 +3,7 @@ package_type: ruleset
 assets:
   companion:
     name: Companion Assets
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -19,7 +19,7 @@ assets:
     contents:
       cave_lion:
         category: Companion
-        source:
+        _source:
           <<: &AssetSource
             <<: *Source
             title: Ironsworn Assets Master Set
@@ -87,7 +87,7 @@ assets:
                   - classic/moves/relationship/sojourn
       giant_spider:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Giant Spider
@@ -145,7 +145,7 @@ assets:
             value: 4
       hawk:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Hawk
@@ -214,7 +214,7 @@ assets:
                           stat: wits # 'ambushed' is already how +wits is flavoured
       horse:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Horse
@@ -275,7 +275,7 @@ assets:
             value: 5
       hound:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Hound
@@ -328,7 +328,7 @@ assets:
             value: 4
       kindred:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Kindred
@@ -386,7 +386,7 @@ assets:
                 roll_type: action_roll
       mammoth:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Mammoth
@@ -435,7 +435,7 @@ assets:
             value: 5
       owl:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Owl
@@ -495,7 +495,7 @@ assets:
             max: 3
       raven:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 2
         name: Raven
@@ -547,7 +547,7 @@ assets:
             value: 2
       young_wyvern:
         category: Companion
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Young Wyvern

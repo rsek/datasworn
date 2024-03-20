@@ -2,7 +2,7 @@ _id: sundered_isles
 package_type: ruleset
 oracles:
   seafaring:
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles Book Preview
         authors:
@@ -13,7 +13,7 @@ oracles:
     name: Seafaring Adventures
     collections:
       waypoints:
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           date: 2023-11-29
         name: Seafaring Waypoints
@@ -24,7 +24,7 @@ oracles:
           known_waters:
             name: Known Waters
             oracle_type: table_shared_results
-            source: &TableSource
+            _source: &TableSource
               <<: *CollectionSource
             summary: |-
               Use the Known Waters table if you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition) among or between known islands, such as when following a chart of local islands.
@@ -146,7 +146,7 @@ oracles:
           unknown_waters:
             name: Unknown Waters
             oracle_type: table_shared_results
-            source: &TableSource
+            _source: &TableSource
               <<: *CollectionSource
             summary: |-
               Use the Unknown Waters table when navigating seas with the prospect of encountering unrevealed islands.
@@ -247,7 +247,7 @@ oracles:
                     <<: *WaypointUnknown.7
     contents:
       detail:
-        source: *Source
+        _source: *Source
         name: Seafaring Details
         oracle_type: table_simple
         summary: This table reveals occurrences on a seafaring expedition. Possible results include locations, events, sightings, and encounters.
@@ -556,7 +556,7 @@ oracles:
             max: 100
             result: Smoke rises from among a grove of palms on a sandy isle
       cursed_details:
-        source: *Source
+        _source: *Source
         name: Cursed Seafaring Details
         oracle_type: table_simple
         tags:
@@ -865,7 +865,7 @@ oracles:
             max: 100
             result: The rising sun casts a baleful red glow
       peril:
-        source: *Source
+        _source: *Source
         name: Seafaring
         summary: Roll or choose on this table when you want inspiration for a trouble during ocean exploration or on a seagoing expedition.
         oracle_type: table_simple
@@ -979,7 +979,7 @@ oracles:
             max: 100
             <<: *RollTwice
       opportunity:
-        source: *Source
+        _source: *Source
         name: Seafaring Opportunities
         summary: Roll or choose on this table when you want inspiration for a beneficial encounter or event on a seagoing journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint) and find an opportunity.
         oracle_type: table_simple

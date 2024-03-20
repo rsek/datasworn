@@ -13,6 +13,9 @@ public class Asset {
     @JsonProperty("_id")
     private AssetId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("abilities")
     private List<AssetAbility> abilities;
 
@@ -27,9 +30,6 @@ public class Asset {
 
     @JsonProperty("shared")
     private Boolean shared;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("attachments")
@@ -84,6 +84,24 @@ public class Asset {
      */
     public void setId(AssetId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
     }
 
     /**
@@ -170,24 +188,6 @@ public class Asset {
      */
     public void setShared(Boolean shared) {
         this.shared = shared;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

@@ -3,7 +3,7 @@ package_type: expansion
 ruleset: classic
 oracles:
   trap:
-    source:
+    _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -27,7 +27,7 @@ oracles:
         suggestions:
           oracles:
             - delve/oracles/trap/component
-        source:
+        _source:
           <<: *Source
           page: 217
         rows:
@@ -141,7 +141,7 @@ oracles:
         suggestions:
           oracles:
             - delve/oracles/trap/event
-        source:
+        _source:
           <<: *Source
           page: 217
         rows:

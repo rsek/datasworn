@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   turning_point:
     name: Turning Point Oracles
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -18,7 +18,7 @@ oracles:
         oracle_type: table_simple
         canonical_name: 'Oracle 16: Combat Action'
         summary: Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.
-        source:
+        _source:
           <<: *Source
           page: 188
         rows:
@@ -80,7 +80,7 @@ oracles:
         name: Mystic Backlash
         oracle_type: table_simple
         canonical_name: 'Oracle 17: Mystic Backlash'
-        source:
+        _source:
           <<: *Source
           page: 189
         summary: Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the [Pay the Price](id:classic/moves/fate/pay_the_price) table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.
@@ -170,7 +170,7 @@ oracles:
         name: Major Plot Twist
         oracle_type: table_simple
         summary: Use this oracle to introduce a narrative surprise or revelation. Most of these results have a negative implication, and can be used to resolve a match at a crucial moment in your story. In particular, this is an effective tool to leverage when you make a move with matched 10’s on the challenge dice.
-        source:
+        _source:
           <<: *Source
           page: 190
         rows:
@@ -245,7 +245,7 @@ oracles:
         name: Challenge Rank
         oracle_type: table_simple
         summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 190
         rows:
@@ -280,13 +280,13 @@ oracles:
     #     name: Challenge Rank
     #     oracle_type: table_shared_rolls
     #     summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
-    #     source: &CollectionSource
+    #     _source: &CollectionSource
     #       <<: *Source
     #       page: 190
     #     contents:
     #       quest:
     #         name: Quest
-    #         source: *CollectionSource
+    #         _source: *CollectionSource
     #         oracle_type: column_simple
     #         rows:
     #           - &Troublesome
@@ -316,7 +316,7 @@ oracles:
     #             detail: 'A life-defining quest of unknowable scope'
     #       journey:
     #         name: Journey
-    #         source: *CollectionSource
+    #         _source: *CollectionSource
     #         oracle_type: column_simple
     #         rows:
     #           - <<: *Troublesome
@@ -331,7 +331,7 @@ oracles:
     #             detail: 'Traveling from one end of the Ironlands to another, or to a separate land'
     #       foe:
     #         name: Foes
-    #         source: *CollectionSource
+    #         _source: *CollectionSource
     #         oracle_type: column_simple
     #         rows:
     #           - <<: *Troublesome

@@ -17,6 +17,13 @@ namespace Datasworn
         [JsonPropertyName("_id")]
         public AtlasEntryId Id { get; set; }
 
+        /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
 
@@ -28,13 +35,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         /// <summary>
         /// The name of this item as it appears on the page in the book, if it's

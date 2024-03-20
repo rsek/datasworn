@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   move:
     name: Move Oracles
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles Book Preview
         authors:
@@ -13,7 +13,7 @@ oracles:
         date: 2023-09-11
     contents:
       begin_a_session:
-        source:
+        _source:
           <<: *Source
         name: Begin a Session
         oracle_type: table_simple
@@ -49,7 +49,7 @@ oracles:
             max: 100
             result: Unforeseen aid is on the way or within reach
       make_a_discovery:
-        source:
+        _source:
           <<: *Source
         name: Make a Discovery
         oracle_type: table_simple
@@ -119,7 +119,7 @@ oracles:
                 - auto: true
                   number_of_rolls: 2
       confront_chaos:
-        source:
+        _source:
           <<: *Source
         name: Confront Chaos
         oracle_type: table_simple
@@ -185,7 +185,7 @@ oracles:
             max: 100
             result: Wrathful beast of monstrous proportions
       take_decisive_action:
-        source:
+        _source:
           <<: *Source
         name: Take Decisive Action
         oracle_type: table_simple
@@ -209,7 +209,7 @@ oracles:
             max: 100
             result: 'It gets complicated: The true nature of a foe or objective is revealed'
       endure_harm:
-        source:
+        _source:
           <<: *Source
         name: Endure Harm
         oracle_type: table_simple
@@ -230,7 +230,7 @@ oracles:
             max: 100
             result: You are still standing.
       endure_stress:
-        source:
+        _source:
           <<: *Source
         name: Endure Stress
         oracle_type: table_simple
@@ -248,7 +248,7 @@ oracles:
             max: 100
             result: You persevere.
       withstand_damage:
-        source:
+        _source:
           <<: *Source
         name: Withstand Damage
         oracle_type: table_simple
@@ -278,7 +278,7 @@ oracles:
             max: 100
             result: Against all odds, the vehicle holds together.
       pay_the_price:
-        source:
+        _source:
           <<: *Source
         name: Pay the Price
         oracle_type: table_simple

@@ -16,6 +16,13 @@ namespace Datasworn
         [JsonPropertyName("_id")]
         public DelveSiteId Id { get; set; }
 
+        /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
         [JsonPropertyName("denizens")]
         public IList<DelveSiteDenizen> Denizens { get; set; }
 
@@ -33,13 +40,6 @@ namespace Datasworn
 
         [JsonPropertyName("rank")]
         public ChallengeRank Rank { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         [JsonPropertyName("theme")]
         public DelveSiteThemeId Theme { get; set; }

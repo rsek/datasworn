@@ -2,7 +2,7 @@ _id: starforged
 package_type: ruleset
 assets:
   companion:
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -24,7 +24,7 @@ assets:
         <<: &CompanionAsset
           category: Companion
           color: *CompanionAsset.color
-          source:
+          _source:
             <<: *Source
             title: 'Ironsworn: Starforged Assets'
           options:

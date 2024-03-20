@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   creatures:
     name: Creatures
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -20,7 +20,7 @@ oracles:
         # usage:
         #   initial: true
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 336
         summary: |-
@@ -72,7 +72,7 @@ oracles:
       scale:
         name: Scale
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 336
         # usage:
@@ -121,7 +121,7 @@ oracles:
       ultra_scale:
         name: Ultra-scale
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 336
         # usage:
@@ -145,7 +145,7 @@ oracles:
       first_look:
         name: Creature First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 338
         # usage:
@@ -312,7 +312,7 @@ oracles:
       encountered_behavior:
         name: Encountered Behavior
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 338
         summary: |-
@@ -434,7 +434,7 @@ oracles:
       revealed_aspect:
         name: Revealed Creature Aspect
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 339
         summary: |-
@@ -602,7 +602,7 @@ oracles:
       basic_form:
         name: Creature Basic Form
         oracle_type: table_shared_results
-        source:
+        _source:
           <<: *Source
           page: 337
         # usage:

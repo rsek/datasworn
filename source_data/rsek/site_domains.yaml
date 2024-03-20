@@ -4,7 +4,7 @@ ruleset: classic
 site_domains:
   dreamscape:
     name: Dreamscape
-    source: &Source
+    _source: &Source
       authors:
         - name: rsek
           email: r.sekouri@gmail.com
@@ -82,7 +82,7 @@ site_domains:
         result: Denizen intrudes in dreamscape
   infrastructure:
     name: Infrastructure
-    source: *Source
+    _source: *Source
     icon: icons/site_domains/infrastructure.svg
     summary: The substrate of public life or private enterprise.
     features:
@@ -134,7 +134,7 @@ site_domains:
         result: Area contaminated or hazardous
   plains:
     name: Plains
-    source: *Source
+    _source: *Source
     icon: icons/site_domains/plains.svg
     summary: A grassland, steppe, or other open country.
     features:
@@ -186,7 +186,7 @@ site_domains:
         result: Storm or flash flood
   repository:
     name: Repository
-    source: *Source
+    _source: *Source
     icon: icons/site_domains/repository.svg
     summary: A place to store or display precious things.
     features:
@@ -238,7 +238,7 @@ site_domains:
         result: Precarious or unnavigable storage
   revel:
     name: Revel
-    source: *Source
+    _source: *Source
     icon: icons/site_domains/revel.svg
     summary: Functions, festivities, and frolics.
     features:
@@ -290,7 +290,7 @@ site_domains:
         result: Unforeseen guest complicates matters
   wastes:
     name: Wastes
-    source: *Source
+    _source: *Source
     icon: icons/site_domains/wastes.svg
     summary: A badland, desert, tundra, or other barren place.
     features:

@@ -17,11 +17,11 @@ public class OracleCollectionTables extends OracleCollection {
     @JsonProperty("_id")
     private OracleCollectionId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("name")
     private Label name;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -91,22 +91,6 @@ public class OracleCollectionTables extends OracleCollection {
     }
 
     /**
-     * Getter for name.<p>
-     * The primary name/label for this item.
-     */
-    public Label getName() {
-        return name;
-    }
-
-    /**
-     * Setter for name.<p>
-     * The primary name/label for this item.
-     */
-    public void setName(Label name) {
-        this.name = name;
-    }
-
-    /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
      * item, including the author and licensing information.
@@ -122,6 +106,22 @@ public class OracleCollectionTables extends OracleCollection {
      */
     public void setSource(SourceInfo source) {
         this.source = source;
+    }
+
+    /**
+     * Getter for name.<p>
+     * The primary name/label for this item.
+     */
+    public Label getName() {
+        return name;
+    }
+
+    /**
+     * Setter for name.<p>
+     * The primary name/label for this item.
+     */
+    public void setName(Label name) {
+        this.name = name;
     }
 
     /**

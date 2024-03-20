@@ -3,7 +3,7 @@ package_type: ruleset
 assets:
   combat_talent:
     name: Combat Talent Assets
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -19,7 +19,7 @@ assets:
     contents:
       archer:
         category: Combat Talent
-        source:
+        _source:
           <<: &AssetSource
             <<: *Source
             title: Ironsworn Assets Master Set
@@ -81,7 +81,7 @@ assets:
 
       berserker:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Berserker
@@ -131,7 +131,7 @@ assets:
                       method: null
       brawler:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Brawler
@@ -177,7 +177,7 @@ assets:
                       method: null
       cutthroat:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Cutthroat
@@ -234,7 +234,7 @@ assets:
                           stat: shadow
       duelist:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Duelist
@@ -273,7 +273,7 @@ assets:
                 roll_type: action_roll
       fletcher:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Fletcher
@@ -311,7 +311,7 @@ assets:
             moves:
               craft_arrow:
                 name: Craft Arrow
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you craft a single arrow designated for a specific foe...
@@ -339,7 +339,7 @@ assets:
                       On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price).
       ironclad:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Ironclad
@@ -410,7 +410,7 @@ assets:
                       method: null
       long_arm:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 14
         name: Long-Arm
@@ -461,7 +461,7 @@ assets:
 
       shield_bearer:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 14
         name: Shield-Bearer
@@ -508,7 +508,7 @@ assets:
                 roll_type: action_roll
       skirmisher:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 14
         name: Skirmisher
@@ -560,7 +560,7 @@ assets:
                       method: null
       slinger:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 14
         name: Slinger
@@ -606,7 +606,7 @@ assets:
                       method: null
       sunderer:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 14
         name: Sunderer
@@ -644,7 +644,7 @@ assets:
             moves:
               carve_rune:
                 name: Carve Rune
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you make a tribute to a fallen foe (formidable or greater) by carving a rune in the haft of your axe...
@@ -665,7 +665,7 @@ assets:
                   miss: *MoveOutcome.Miss.Generic
       swordmaster:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 14
         name: Swordmaster
@@ -700,7 +700,7 @@ assets:
                       method: null
       thunder_bringer:
         category: Combat Talent
-        source:
+        _source:
           <<: *AssetSource
           page: 14
         name: Thunder-Bringer

@@ -5,7 +5,7 @@ oracles:
   combat_event:
     name: Combat Event
     summary: Determine the actions of a character, creature, or force during a fight.
-    source:
+    _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -31,7 +31,7 @@ oracles:
         suggestions:
           oracles:
             - delve/oracles/combat_event/target
-        source:
+        _source:
           <<: *Source
           page: 218
         rows:
@@ -245,7 +245,7 @@ oracles:
         suggestions:
           oracles:
             - delve/oracles/combat_event/method
-        source:
+        _source:
           <<: *Source
           page: 219
           authors:

@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   derelicts:
     name: Derelicts
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -19,7 +19,7 @@ oracles:
       type:
         name: Derelict Type (by location)
         canonical_name: Type (by location)
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 348
         # usage:
@@ -100,7 +100,7 @@ oracles:
                     - starforged/oracles/derelicts/zones/settlement
       zones:
         name: Derelict Zones
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 351
         summary: &Zones.Summary If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.
@@ -200,7 +200,7 @@ oracles:
       location:
         name: Location
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 348
         rows:
@@ -228,7 +228,7 @@ oracles:
       condition:
         name: Condition
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 348
         # usage:
@@ -257,7 +257,7 @@ oracles:
       outer_first_look:
         name: Outer First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 349
         summary: Use these First Look tables for your initial survey of the derelict.
@@ -301,7 +301,7 @@ oracles:
         name: Inner First Look
         oracle_type: table_simple
         summary: Use these First Look tables for your initial survey of the derelict's interior.
-        source:
+        _source:
           <<: *Source
           page: 349
         # content:

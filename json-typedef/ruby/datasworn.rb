@@ -210,6 +210,10 @@ module Datasworn
   class Asset
     # The unique Datasworn ID for this item.
     attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
     attr_accessor :abilities
 
     # A localized category label for this asset. This is the surtitle above the
@@ -227,10 +231,6 @@ module Datasworn
     # Starforged's module and command vehicle assets) are shared amongst the
     # player's allies, too.
     attr_accessor :shared
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
     attr_accessor :attachments
 
     # The name of this item as it appears on the page in the book, if it's
@@ -261,12 +261,12 @@ module Datasworn
     def self.from_json_data(data)
       out = Asset.new
       out.id = Datasworn::from_json_data(AssetID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.abilities = Datasworn::from_json_data(Array[AssetAbility], data["abilities"])
       out.category = Datasworn::from_json_data(Label, data["category"])
       out.count_as_impact = Datasworn::from_json_data(TrueClass, data["count_as_impact"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.shared = Datasworn::from_json_data(TrueClass, data["shared"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.attachments = Datasworn::from_json_data(AssetAttachment, data["attachments"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -282,12 +282,12 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["abilities"] = Datasworn::to_json_data(abilities)
       data["category"] = Datasworn::to_json_data(category)
       data["count_as_impact"] = Datasworn::to_json_data(count_as_impact)
       data["name"] = Datasworn::to_json_data(name)
       data["shared"] = Datasworn::to_json_data(shared)
-      data["source"] = Datasworn::to_json_data(source)
       data["attachments"] = Datasworn::to_json_data(attachments) unless attachments.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -572,12 +572,12 @@ module Datasworn
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
-    # The primary name/label for this item.
-    attr_accessor :name
-
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
+
+    # The primary name/label for this item.
+    attr_accessor :name
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -614,8 +614,8 @@ module Datasworn
     def self.from_json_data(data)
       out = AssetCollection.new
       out.id = Datasworn::from_json_data(AssetCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, Asset], data["contents"])
@@ -633,8 +633,8 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -1218,12 +1218,12 @@ module Datasworn
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
-    # The primary name/label for this item.
-    attr_accessor :name
-
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
+
+    # The primary name/label for this item.
+    attr_accessor :name
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -1261,8 +1261,8 @@ module Datasworn
     def self.from_json_data(data)
       out = Atlas.new
       out.id = Datasworn::from_json_data(AtlasID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, Atlas], data["collections"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -1281,8 +1281,8 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -1304,15 +1304,15 @@ module Datasworn
   class AtlasEntry
     # The unique Datasworn ID for this item.
     attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
     attr_accessor :description
     attr_accessor :features
 
     # The primary name/label for this item.
     attr_accessor :name
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -1326,10 +1326,10 @@ module Datasworn
     def self.from_json_data(data)
       out = AtlasEntry.new
       out.id = Datasworn::from_json_data(AtlasEntryID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.features = Datasworn::from_json_data(Array[MarkdownString], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -1342,10 +1342,10 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["description"] = Datasworn::to_json_data(description)
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
@@ -1508,6 +1508,10 @@ module Datasworn
   class DelveSite
     # The unique Datasworn ID for this item.
     attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
     attr_accessor :denizens
     attr_accessor :description
     attr_accessor :domain
@@ -1515,10 +1519,6 @@ module Datasworn
     # The primary name/label for this item.
     attr_accessor :name
     attr_accessor :rank
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
     attr_accessor :theme
 
     # The name of this item as it appears on the page in the book, if it's
@@ -1539,12 +1539,12 @@ module Datasworn
     def self.from_json_data(data)
       out = DelveSite.new
       out.id = Datasworn::from_json_data(DelveSiteID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.denizens = Datasworn::from_json_data(Array[DelveSiteDenizen], data["denizens"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.domain = Datasworn::from_json_data(DelveSiteDomainID, data["domain"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.theme = Datasworn::from_json_data(DelveSiteThemeID, data["theme"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.extra_card = Datasworn::from_json_data(String, data["extra_card"])
@@ -1558,12 +1558,12 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["denizens"] = Datasworn::to_json_data(denizens)
       data["description"] = Datasworn::to_json_data(description)
       data["domain"] = Datasworn::to_json_data(domain)
       data["name"] = Datasworn::to_json_data(name)
       data["rank"] = Datasworn::to_json_data(rank)
-      data["source"] = Datasworn::to_json_data(source)
       data["theme"] = Datasworn::to_json_data(theme)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["extra_card"] = Datasworn::to_json_data(extra_card) unless extra_card.nil?
@@ -1658,15 +1658,15 @@ module Datasworn
   class DelveSiteDomain
     # The unique Datasworn ID for this item.
     attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
     attr_accessor :dangers
     attr_accessor :features
 
     # The primary name/label for this item.
     attr_accessor :name
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
     attr_accessor :summary
 
     # The name of this item as it appears on the page in the book, if it's
@@ -1687,10 +1687,10 @@ module Datasworn
     def self.from_json_data(data)
       out = DelveSiteDomain.new
       out.id = Datasworn::from_json_data(DelveSiteDomainID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.dangers = Datasworn::from_json_data(Array[DelveSiteDomainDangerRow], data["dangers"])
       out.features = Datasworn::from_json_data(Array[DelveSiteDomainFeatureRow], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
@@ -1704,10 +1704,10 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["dangers"] = Datasworn::to_json_data(dangers)
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["summary"] = Datasworn::to_json_data(summary)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
@@ -1863,15 +1863,15 @@ module Datasworn
   class DelveSiteTheme
     # The unique Datasworn ID for this item.
     attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
     attr_accessor :dangers
     attr_accessor :features
 
     # The primary name/label for this item.
     attr_accessor :name
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
     attr_accessor :summary
 
     # The name of this item as it appears on the page in the book, if it's
@@ -1885,10 +1885,10 @@ module Datasworn
     def self.from_json_data(data)
       out = DelveSiteTheme.new
       out.id = Datasworn::from_json_data(DelveSiteThemeID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.dangers = Datasworn::from_json_data(Array[DelveSiteThemeDangerRow], data["dangers"])
       out.features = Datasworn::from_json_data(Array[DelveSiteThemeFeatureRow], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
@@ -1901,10 +1901,10 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["dangers"] = Datasworn::to_json_data(dangers)
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["summary"] = Datasworn::to_json_data(summary)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
@@ -2333,9 +2333,9 @@ module Datasworn
   # A move that makes an action roll.
   class MoveActionRoll < Move
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :name
     attr_accessor :outcomes
-    attr_accessor :source
     attr_accessor :text
     attr_accessor :trigger
     attr_accessor :canonical_name
@@ -2348,9 +2348,9 @@ module Datasworn
       out = MoveActionRoll.new
       out.roll_type = "action_roll"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerActionRoll, data["trigger"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -2364,9 +2364,9 @@ module Datasworn
     def to_json_data
       data = { "roll_type" => "action_roll" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["outcomes"] = Datasworn::to_json_data(outcomes)
-      data["source"] = Datasworn::to_json_data(source)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
@@ -2381,8 +2381,8 @@ module Datasworn
   # A move that makes no progress rolls or action rolls.
   class MoveNoRoll < Move
     attr_accessor :id
-    attr_accessor :name
     attr_accessor :source
+    attr_accessor :name
     attr_accessor :text
     attr_accessor :trigger
     attr_accessor :canonical_name
@@ -2395,8 +2395,8 @@ module Datasworn
       out = MoveNoRoll.new
       out.roll_type = "no_roll"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerNoRoll, data["trigger"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -2410,8 +2410,8 @@ module Datasworn
     def to_json_data
       data = { "roll_type" => "no_roll" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
@@ -2428,9 +2428,9 @@ module Datasworn
   # tracks, see MoveSpecialTrack.
   class MoveProgressRoll < Move
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :name
     attr_accessor :outcomes
-    attr_accessor :source
     attr_accessor :text
     attr_accessor :tracks
     attr_accessor :trigger
@@ -2444,9 +2444,9 @@ module Datasworn
       out = MoveProgressRoll.new
       out.roll_type = "progress_roll"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.tracks = Datasworn::from_json_data(ProgressTrackTypeInfo, data["tracks"])
       out.trigger = Datasworn::from_json_data(TriggerProgressRoll, data["trigger"])
@@ -2461,9 +2461,9 @@ module Datasworn
     def to_json_data
       data = { "roll_type" => "progress_roll" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["outcomes"] = Datasworn::to_json_data(outcomes)
-      data["source"] = Datasworn::to_json_data(source)
       data["text"] = Datasworn::to_json_data(text)
       data["tracks"] = Datasworn::to_json_data(tracks)
       data["trigger"] = Datasworn::to_json_data(trigger)
@@ -2481,9 +2481,9 @@ module Datasworn
   # tracks, see MoveProgressRoll instead.
   class MoveSpecialTrack < Move
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :name
     attr_accessor :outcomes
-    attr_accessor :source
     attr_accessor :text
     attr_accessor :trigger
     attr_accessor :canonical_name
@@ -2496,9 +2496,9 @@ module Datasworn
       out = MoveSpecialTrack.new
       out.roll_type = "special_track"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerSpecialTrack, data["trigger"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -2512,9 +2512,9 @@ module Datasworn
     def to_json_data
       data = { "roll_type" => "special_track" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["outcomes"] = Datasworn::to_json_data(outcomes)
-      data["source"] = Datasworn::to_json_data(source)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
@@ -2530,12 +2530,12 @@ module Datasworn
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
-    # The primary name/label for this item.
-    attr_accessor :name
-
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
+
+    # The primary name/label for this item.
+    attr_accessor :name
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -2572,8 +2572,8 @@ module Datasworn
     def self.from_json_data(data)
       out = MoveCategory.new
       out.id = Datasworn::from_json_data(MoveCategoryID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, Move], data["contents"])
@@ -2591,8 +2591,8 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -2812,6 +2812,10 @@ module Datasworn
   class Npc
     # The unique Datasworn ID for this item.
     attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
     attr_accessor :description
     attr_accessor :drives
     attr_accessor :features
@@ -2822,10 +2826,6 @@ module Datasworn
 
     # The suggested challenge rank for this NPC.
     attr_accessor :rank
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
     attr_accessor :tactics
 
     # The name of this item as it appears on the page in the book, if it's
@@ -2841,13 +2841,13 @@ module Datasworn
     def self.from_json_data(data)
       out = Npc.new
       out.id = Datasworn::from_json_data(NpcID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.drives = Datasworn::from_json_data(Array[MarkdownString], data["drives"])
       out.features = Datasworn::from_json_data(Array[MarkdownString], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.nature = Datasworn::from_json_data(NpcNature, data["nature"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.tactics = Datasworn::from_json_data(Array[MarkdownString], data["tactics"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
@@ -2862,13 +2862,13 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["description"] = Datasworn::to_json_data(description)
       data["drives"] = Datasworn::to_json_data(drives)
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
       data["nature"] = Datasworn::to_json_data(nature)
       data["rank"] = Datasworn::to_json_data(rank)
-      data["source"] = Datasworn::to_json_data(source)
       data["tactics"] = Datasworn::to_json_data(tactics)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
@@ -2885,12 +2885,12 @@ module Datasworn
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
-    # The primary name/label for this item.
-    attr_accessor :name
-
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
+
+    # The primary name/label for this item.
+    attr_accessor :name
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -2927,8 +2927,8 @@ module Datasworn
     def self.from_json_data(data)
       out = NpcCollection.new
       out.id = Datasworn::from_json_data(NpcCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, Npc], data["contents"])
@@ -2946,8 +2946,8 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3150,9 +3150,9 @@ module Datasworn
   # one `result` column, and one `detail` column.
   class OracleCollectionTableSharedDetails < OracleCollection
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
-    attr_accessor :source
     attr_accessor :canonical_name
     attr_accessor :color
     attr_accessor :contents
@@ -3169,9 +3169,9 @@ module Datasworn
       out = OracleCollectionTableSharedDetails.new
       out.oracle_type = "table_shared_details"
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedDetailsColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnDetails], data["contents"])
@@ -3189,9 +3189,9 @@ module Datasworn
     def to_json_data
       data = { "oracle_type" => "table_shared_details" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3229,9 +3229,9 @@ module Datasworn
   # and one `result` column.
   class OracleCollectionTableSharedResults < OracleCollection
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
-    attr_accessor :source
     attr_accessor :canonical_name
     attr_accessor :color
     attr_accessor :contents
@@ -3248,9 +3248,9 @@ module Datasworn
       out = OracleCollectionTableSharedResults.new
       out.oracle_type = "table_shared_results"
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedResultsColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnSimple], data["contents"])
@@ -3268,9 +3268,9 @@ module Datasworn
     def to_json_data
       data = { "oracle_type" => "table_shared_results" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3309,9 +3309,9 @@ module Datasworn
   # multiple `result` columns.
   class OracleCollectionTableSharedRolls < OracleCollection
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
-    attr_accessor :source
     attr_accessor :canonical_name
     attr_accessor :color
     attr_accessor :contents
@@ -3328,9 +3328,9 @@ module Datasworn
       out = OracleCollectionTableSharedRolls.new
       out.oracle_type = "table_shared_rolls"
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedRollsColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnSimple], data["contents"])
@@ -3348,9 +3348,9 @@ module Datasworn
     def to_json_data
       data = { "oracle_type" => "table_shared_rolls" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3370,8 +3370,8 @@ module Datasworn
   # may themselves be `OracleTablesCollection`s.
   class OracleCollectionTables < OracleCollection
     attr_accessor :id
-    attr_accessor :name
     attr_accessor :source
+    attr_accessor :name
     attr_accessor :canonical_name
     attr_accessor :collections
     attr_accessor :color
@@ -3389,8 +3389,8 @@ module Datasworn
       out = OracleCollectionTables.new
       out.oracle_type = "tables"
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, OracleCollection], data["collections"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -3409,8 +3409,8 @@ module Datasworn
     def to_json_data
       data = { "oracle_type" => "tables" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -3823,11 +3823,11 @@ module Datasworn
   # `detail` column.
   class OracleTableRollableTableDetails < OracleTableRollable
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
-    attr_accessor :source
     attr_accessor :canonical_name
     attr_accessor :description
     attr_accessor :icon
@@ -3842,11 +3842,11 @@ module Datasworn
       out = OracleTableRollableTableDetails.new
       out.oracle_type = "table_details"
       out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleTableRollableTableDetailsColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowDetails], data["rows"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -3862,11 +3862,11 @@ module Datasworn
     def to_json_data
       data = { "oracle_type" => "table_details" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -3924,11 +3924,11 @@ module Datasworn
   # `result` column.
   class OracleTableRollableTableSimple < OracleTableRollable
     attr_accessor :id
+    attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
-    attr_accessor :source
     attr_accessor :canonical_name
     attr_accessor :description
     attr_accessor :icon
@@ -3943,11 +3943,11 @@ module Datasworn
       out = OracleTableRollableTableSimple.new
       out.oracle_type = "table_simple"
       out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleTableRollableTableSimpleColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowSimple], data["rows"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -3963,11 +3963,11 @@ module Datasworn
     def to_json_data
       data = { "oracle_type" => "table_simple" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -4114,15 +4114,15 @@ module Datasworn
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
     # The primary name/label for this item.
     attr_accessor :name
 
     # A grouping of separate tables.
     attr_accessor :oracle_type
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -4160,9 +4160,9 @@ module Datasworn
     def self.from_json_data(data)
       out = OracleTablesCollection.new
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleTablesCollectionOracleType, data["oracle_type"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, OracleCollection], data["collections"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -4181,9 +4181,9 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["oracle_type"] = Datasworn::to_json_data(oracle_type)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -4359,16 +4359,16 @@ module Datasworn
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
     # The asset augmented by this rarity.
     attr_accessor :asset
     attr_accessor :description
 
     # The primary name/label for this item.
     attr_accessor :name
-
-    # Attribution for the original source (such as a book or website) of this
-    # item, including the author and licensing information.
-    attr_accessor :source
 
     # From Ironsworn: Delve, p. 174:
     # 
@@ -4391,10 +4391,10 @@ module Datasworn
     def self.from_json_data(data)
       out = Rarity.new
       out.id = Datasworn::from_json_data(RarityID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.asset = Datasworn::from_json_data(AssetID, data["asset"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.xp_cost = Datasworn::from_json_data(Integer, data["xp_cost"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -4406,10 +4406,10 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["asset"] = Datasworn::to_json_data(asset)
       data["description"] = Datasworn::to_json_data(description)
       data["name"] = Datasworn::to_json_data(name)
-      data["source"] = Datasworn::to_json_data(source)
       data["xp_cost"] = Datasworn::to_json_data(xp_cost)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -6247,13 +6247,13 @@ module Datasworn
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
-    # The primary name/label for this item.
-    attr_accessor :name
-    attr_accessor :options
-
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :options
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -6267,9 +6267,9 @@ module Datasworn
     def self.from_json_data(data)
       out = Truth.new
       out.id = Datasworn::from_json_data(TruthID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.options = Datasworn::from_json_data(Array[TruthOption], data["options"])
-      out.source = Datasworn::from_json_data(SourceInfo, data["source"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -6282,9 +6282,9 @@ module Datasworn
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["options"] = Datasworn::to_json_data(options)
-      data["source"] = Datasworn::to_json_data(source)
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?

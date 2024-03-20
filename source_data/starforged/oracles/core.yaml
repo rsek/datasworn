@@ -4,7 +4,7 @@ oracles:
   core:
     name: Core Oracles
     oracle_type: tables
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -17,7 +17,7 @@ oracles:
       action:
         name: Action
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 296
         suggestions:
@@ -432,7 +432,7 @@ oracles:
       theme:
         name: Theme
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 297
         suggestions:
@@ -849,7 +849,7 @@ oracles:
       descriptor:
         name: Descriptor
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 298
         suggestions:
@@ -1264,7 +1264,7 @@ oracles:
       focus:
         name: Focus
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 299
         suggestions:

@@ -17,6 +17,13 @@ namespace Datasworn
         public RarityId Id { get; set; }
 
         /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
+        /// <summary>
         /// The asset augmented by this rarity.
         /// </summary>
         [JsonPropertyName("asset")]
@@ -30,13 +37,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         /// <summary>
         /// From Ironsworn: Delve, p. 174:

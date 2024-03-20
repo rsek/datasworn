@@ -237,6 +237,11 @@ pub struct Asset {
     #[serde(rename = "_id")]
     pub id: AssetId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     #[serde(rename = "abilities")]
     pub abilities: Vec<AssetAbility>,
 
@@ -259,11 +264,6 @@ pub struct Asset {
     /// player's allies, too.
     #[serde(rename = "shared")]
     pub shared: bool,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     #[serde(rename = "attachments")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -517,14 +517,14 @@ pub struct AssetCollection {
     #[serde(rename = "_id")]
     pub id: AssetCollectionId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -1002,14 +1002,14 @@ pub struct Atlas {
     #[serde(rename = "_id")]
     pub id: AtlasId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -1082,6 +1082,11 @@ pub struct AtlasEntry {
     #[serde(rename = "_id")]
     pub id: AtlasEntryId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
@@ -1091,11 +1096,6 @@ pub struct AtlasEntry {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -1194,6 +1194,11 @@ pub struct DelveSite {
     #[serde(rename = "_id")]
     pub id: DelveSiteId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     #[serde(rename = "denizens")]
     pub denizens: Vec<DelveSiteDenizen>,
 
@@ -1209,11 +1214,6 @@ pub struct DelveSite {
 
     #[serde(rename = "rank")]
     pub rank: ChallengeRank,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     #[serde(rename = "theme")]
     pub theme: DelveSiteThemeId,
@@ -1302,6 +1302,11 @@ pub struct DelveSiteDomain {
     #[serde(rename = "_id")]
     pub id: DelveSiteDomainId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     #[serde(rename = "dangers")]
     pub dangers: Vec<DelveSiteDomainDangerRow>,
 
@@ -1311,11 +1316,6 @@ pub struct DelveSiteDomain {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     #[serde(rename = "summary")]
     pub summary: MarkdownString,
@@ -1459,6 +1459,11 @@ pub struct DelveSiteTheme {
     #[serde(rename = "_id")]
     pub id: DelveSiteThemeId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     #[serde(rename = "dangers")]
     pub dangers: Vec<DelveSiteThemeDangerRow>,
 
@@ -1468,11 +1473,6 @@ pub struct DelveSiteTheme {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     #[serde(rename = "summary")]
     pub summary: MarkdownString,
@@ -1741,17 +1741,17 @@ pub struct MoveActionRoll {
     #[serde(rename = "_id")]
     pub id: MoveId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
 
     #[serde(rename = "outcomes")]
     pub outcomes: MoveOutcomes,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The complete rules text of the move.
     #[serde(rename = "text")]
@@ -1796,14 +1796,14 @@ pub struct MoveNoRoll {
     #[serde(rename = "_id")]
     pub id: MoveId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The complete rules text of the move.
     #[serde(rename = "text")]
@@ -1850,17 +1850,17 @@ pub struct MoveProgressRoll {
     #[serde(rename = "_id")]
     pub id: MoveId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
 
     #[serde(rename = "outcomes")]
     pub outcomes: MoveOutcomes,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The complete rules text of the move.
     #[serde(rename = "text")]
@@ -1912,17 +1912,17 @@ pub struct MoveSpecialTrack {
     #[serde(rename = "_id")]
     pub id: MoveId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
 
     #[serde(rename = "outcomes")]
     pub outcomes: MoveOutcomes,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The complete rules text of the move.
     #[serde(rename = "text")]
@@ -1966,14 +1966,14 @@ pub struct MoveCategory {
     #[serde(rename = "_id")]
     pub id: MoveCategoryId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2149,6 +2149,11 @@ pub struct Npc {
     #[serde(rename = "_id")]
     pub id: NpcId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
@@ -2168,11 +2173,6 @@ pub struct Npc {
     /// The suggested challenge rank for this NPC.
     #[serde(rename = "rank")]
     pub rank: ChallengeRank,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     #[serde(rename = "tactics")]
     pub tactics: Vec<MarkdownString>,
@@ -2214,14 +2214,14 @@ pub struct NpcCollection {
     #[serde(rename = "_id")]
     pub id: NpcCollectionId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2406,6 +2406,11 @@ pub struct OracleCollectionTableSharedDetails {
     #[serde(rename = "_id")]
     pub id: OracleCollectionId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
@@ -2414,11 +2419,6 @@ pub struct OracleCollectionTableSharedDetails {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2495,6 +2495,11 @@ pub struct OracleCollectionTableSharedResults {
     #[serde(rename = "_id")]
     pub id: OracleCollectionId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
@@ -2503,11 +2508,6 @@ pub struct OracleCollectionTableSharedResults {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2585,6 +2585,11 @@ pub struct OracleCollectionTableSharedRolls {
     #[serde(rename = "_id")]
     pub id: OracleCollectionId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// Provides column labels for this table. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     /// For all other column labels, see the `name` property of each child
@@ -2595,11 +2600,6 @@ pub struct OracleCollectionTableSharedRolls {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2668,14 +2668,14 @@ pub struct OracleCollectionTables {
     #[serde(rename = "_id")]
     pub id: OracleCollectionId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2995,6 +2995,11 @@ pub struct OracleTableRollableTableDetails {
     #[serde(rename = "_id")]
     pub id: OracleRollableId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
@@ -3011,11 +3016,6 @@ pub struct OracleTableRollableTableDetails {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowDetails>,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -3097,6 +3097,11 @@ pub struct OracleTableRollableTableSimple {
     #[serde(rename = "_id")]
     pub id: OracleRollableId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
@@ -3113,11 +3118,6 @@ pub struct OracleTableRollableTableSimple {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowSimple>,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -3275,6 +3275,11 @@ pub struct OracleTablesCollection {
     #[serde(rename = "_id")]
     pub id: OracleCollectionId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
@@ -3282,11 +3287,6 @@ pub struct OracleTablesCollection {
     /// A grouping of separate tables.
     #[serde(rename = "oracle_type")]
     pub oracleType: OracleTablesCollectionOracleType,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -3445,6 +3445,11 @@ pub struct Rarity {
     #[serde(rename = "_id")]
     pub id: RarityId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The asset augmented by this rarity.
     #[serde(rename = "asset")]
     pub asset: AssetId,
@@ -3455,11 +3460,6 @@ pub struct Rarity {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// From Ironsworn: Delve, p. 174:
     /// 
@@ -4560,17 +4560,17 @@ pub struct Truth {
     #[serde(rename = "_id")]
     pub id: TruthId,
 
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
 
     #[serde(rename = "options")]
     pub options: Vec<TruthOption>,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "source")]
-    pub source: SourceInfo,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.

@@ -16,6 +16,9 @@ public class DelveSiteDomain {
     @JsonProperty("_id")
     private DelveSiteDomainId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("dangers")
     private List<DelveSiteDomainDangerRow> dangers;
 
@@ -24,9 +27,6 @@ public class DelveSiteDomain {
 
     @JsonProperty("name")
     private Label name;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonProperty("summary")
     private MarkdownString summary;
@@ -75,6 +75,24 @@ public class DelveSiteDomain {
     }
 
     /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
+    }
+
+    /**
      * Getter for dangers.<p>
      */
     public List<DelveSiteDomainDangerRow> getDangers() {
@@ -116,24 +134,6 @@ public class DelveSiteDomain {
      */
     public void setName(Label name) {
         this.name = name;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

@@ -2,7 +2,7 @@ _id: sundered_isles
 package_type: ruleset
 oracles:
   overland:
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles Book Preview
         authors:
@@ -13,7 +13,7 @@ oracles:
     name: Overland Adventures
     contents:
       regions:
-        source: *Source
+        _source: *Source
         name: Overland Regions
         oracle_type: table_details
         column_labels:
@@ -62,7 +62,7 @@ oracles:
             result: '[Woodland]'
             detail: &woodland.summary Forested lands
       detail:
-        source: *Source
+        _source: *Source
         name: Overland Details
         oracle_type: table_simple
         rows:
@@ -367,7 +367,7 @@ oracles:
             max: 100
             result: This area is adorned with colorful banners
       cursed_details:
-        source: *Source
+        _source: *Source
         name: Cursed Overland Details
         oracle_type: table_simple
         rows:
@@ -672,7 +672,7 @@ oracles:
             max: 100
             result: That’s the third time today you’ve passed that tree—you’re sure of it
       peril:
-        source: *Source
+        _source: *Source
         name: Overland Perils
         oracle_type: table_simple
         rows:
@@ -789,7 +789,7 @@ oracles:
                 - auto: true
                   number_of_rolls: 2
       opportunity:
-        source: *Source
+        _source: *Source
         name: Overland Opportunities
         oracle_type: table_simple
         rows:
@@ -870,7 +870,7 @@ oracles:
             result: Vantage point reveals the lay of the land
     collections:
       waypoints:
-        source: *Source
+        _source: *Source
         name: Waypoints
         oracle_type: table_shared_results
         contents:
@@ -985,12 +985,12 @@ oracles:
                 <<: *Waypoints.6
               - *Waypoints.7
       regional_landmarks:
-        source: *Source
+        _source: *Source
         name: Regional Landmarks
         oracle_type: tables
         contents:
           highlands:
-            source: *Source
+            _source: *Source
             name: Highlands
             oracle_type: table_simple
             summary: *highlands.summary
@@ -1076,7 +1076,7 @@ oracles:
                   max: 100
                 result: Winding footpath
           jungle:
-            source: *Source
+            _source: *Source
             name: Jungle
             oracle_type: table_simple
             summary: *jungle.summary
@@ -1123,7 +1123,7 @@ oracles:
                 result: Wide, slow-moving river
 
           lava_field:
-            source: *Source
+            _source: *Source
             name: Lava Field
             oracle_type: table_simple
             summary: *lava_field.summary
@@ -1170,7 +1170,7 @@ oracles:
                 result: Vents spewing steam and volcanic gases
 
           marsh:
-            source: *Source
+            _source: *Source
             name: Marsh
             oracle_type: table_simple
             summary: *marsh.summary
@@ -1217,7 +1217,7 @@ oracles:
                 result: Witchlights dance above dark pools
 
           river:
-            source: *Source
+            _source: *Source
             name: River
             oracle_type: table_simple
             summary: *river.summary
@@ -1264,7 +1264,7 @@ oracles:
                 result: Wrecked ship or boat
 
           scrub:
-            source: *Source
+            _source: *Source
             name: Scrub
             oracle_type: table_simple
             summary: *scrub.summary
@@ -1311,7 +1311,7 @@ oracles:
                 result: Weathered burial mounds
 
           shore:
-            source: *Source
+            _source: *Source
             name: Shore
             oracle_type: table_simple
             summary: *shore.summary
@@ -1358,7 +1358,7 @@ oracles:
                 result: Wide, saltwater channel
 
           swamp:
-            source: *Source
+            _source: *Source
             name: Swamp
             oracle_type: table_simple
             summary: *swamp.summary
@@ -1405,7 +1405,7 @@ oracles:
                 result: Wrecked ship or boat
 
           wastes:
-            source: *Source
+            _source: *Source
             name: Wastes
             oracle_type: table_simple
             summary: *wastes.summary
@@ -1452,7 +1452,7 @@ oracles:
                 result: Animal tracks in the sand
 
           woodland:
-            source: *Source
+            _source: *Source
             name: Woodland
             oracle_type: table_simple
             summary: *woodland.summary

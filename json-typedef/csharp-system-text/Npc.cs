@@ -17,6 +17,13 @@ namespace Datasworn
         [JsonPropertyName("_id")]
         public NpcId Id { get; set; }
 
+        /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
 
@@ -40,13 +47,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("rank")]
         public ChallengeRank Rank { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         [JsonPropertyName("tactics")]
         public IList<MarkdownString> Tactics { get; set; }

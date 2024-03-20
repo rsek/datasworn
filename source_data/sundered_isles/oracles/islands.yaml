@@ -2,7 +2,7 @@ _id: sundered_isles
 package_type: ruleset
 oracles:
   islands:
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin
@@ -14,7 +14,7 @@ oracles:
       coastline_aspects:
         name: Coastline Aspects
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 90
         rows:
@@ -97,7 +97,7 @@ oracles:
             max: 100
             result: Towering cliffs rise directly from the sea
       offshore_observations:
-        source: *Source
+        _source: *Source
         name: Offshore Observations
         oracle_type: table_simple
         rows:
@@ -231,7 +231,7 @@ oracles:
             max: 100
             result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_offshore_observations:
-        source: *Source
+        _source: *Source
         name: Cursed Offshore Observations
         oracle_type: table_simple
         rows:
@@ -357,12 +357,12 @@ oracles:
             result: '[Cursed Weather]'
     collections:
       landscape:
-        source: *Source
+        _source: *Source
         name: Island Landscape
         oracle_type: tables
         contents:
           size:
-            source: *Source
+            _source: *Source
             name: Size
             oracle_type: table_details
             # rendering:
@@ -399,7 +399,7 @@ oracles:
                 result: Vast
                 detail: Weeks
           terrain:
-            source: *Source
+            _source: *Source
             name: Terrain
             oracle_type: table_details
             column_labels:
@@ -441,7 +441,7 @@ oracles:
                 detail: Active volcanoes and lava fields
         collections:
           vitality:
-            source: *Source
+            _source: *Source
             name: Vitality
             oracle_type: table_shared_details
             column_labels:
@@ -536,7 +536,7 @@ oracles:
                     max: 100
                     <<: *Vitality.5
       visible_habitation:
-        source: *Source
+        _source: *Source
         name: Visible Habitation
         oracle_type: table_shared_results
         column_labels:

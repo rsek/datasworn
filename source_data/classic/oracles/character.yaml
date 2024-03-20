@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   character:
     name: Character
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -18,7 +18,7 @@ oracles:
         oracle_type: table_simple
         canonical_name: 'Oracle 10: Character Role'
         summary: Use this oracle to define the background for a character, or to generate a random encounter.
-        source:
+        _source:
           <<: *Source
           page: 182
         rows:
@@ -154,7 +154,7 @@ oracles:
         canonical_name: 'Oracle 11: Character Goal'
         summary: Use this oracle to define the primary motivation of an NPC or a faction. It can also be used to kick-off a personal quest for your own character.
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 182
         rows:
@@ -269,7 +269,7 @@ oracles:
         recommended_rolls:
           min: 1
           max: 3 # a bit arbitrary, but reasonable
-        source:
+        _source:
           <<: *Source
           page: 183
         rows:

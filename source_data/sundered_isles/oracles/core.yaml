@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   core:
     oracle_type: tables
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin
@@ -13,7 +13,7 @@ oracles:
     name: Core Oracles
     contents:
       action:
-        source: *Source
+        _source: *Source
         oracle_type: table_simple
         name: Action
         rows:
@@ -318,7 +318,7 @@ oracles:
             max: 100
             result: Withdraw
       theme:
-        source: *Source
+        _source: *Source
         oracle_type: table_simple
         name: Theme
         rows:
@@ -625,7 +625,7 @@ oracles:
       descriptor:
         name: Descriptor
         oracle_type: table_simple
-        source: *Source
+        _source: *Source
         rows:
           - min: 1
             max: 1
@@ -930,7 +930,7 @@ oracles:
       focus:
         name: Focus
         oracle_type: table_simple
-        source: *Source
+        _source: *Source
         rows:
           - min: 1
             max: 1

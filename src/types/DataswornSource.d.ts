@@ -1477,7 +1477,7 @@ export interface Npc {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -1517,7 +1517,7 @@ export interface NpcCollection {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -1796,7 +1796,7 @@ export interface OracleTableDetails {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -1971,7 +1971,7 @@ export interface OracleTableSharedDetails {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2051,7 +2051,7 @@ export interface OracleTableSharedResults {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2126,7 +2126,7 @@ export interface OracleTableSharedRolls {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2201,7 +2201,7 @@ export interface OracleTableSimple {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2288,7 +2288,7 @@ export interface OracleTablesCollection {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2379,7 +2379,7 @@ export interface MoveActionRoll {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2440,7 +2440,7 @@ export interface MoveCategory {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2505,7 +2505,7 @@ export interface MoveNoRoll {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2593,7 +2593,7 @@ export interface MoveProgressRoll {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -2673,7 +2673,7 @@ export interface MoveSpecialTrack {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3012,7 +3012,7 @@ export interface Asset {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3205,7 +3205,7 @@ export interface AssetCollection {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3646,7 +3646,7 @@ export interface Truth {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3726,7 +3726,7 @@ export interface Atlas {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3786,7 +3786,7 @@ export interface AtlasEntry {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3836,7 +3836,7 @@ export interface Rarity {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -3880,7 +3880,7 @@ export interface DelveSite {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -4005,7 +4005,7 @@ export interface DelveSiteDomain {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental
@@ -4192,7 +4192,7 @@ export interface DelveSiteTheme {
 	/**
 	 * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
 	 */
-	source: SourceInfo
+	_source: SourceInfo
 	suggestions?: Suggestions
 	/**
 	 * @experimental

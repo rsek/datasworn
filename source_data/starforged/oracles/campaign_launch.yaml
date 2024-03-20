@@ -4,7 +4,7 @@ oracles:
   campaign_launch:
     name: Campaign Launch
     oracle_type: tables
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -16,7 +16,7 @@ oracles:
     contents:
       background_assets:
         name: Background Assets
-        source:
+        _source:
           <<: *Source
           page: 105
         summary: |-
@@ -213,7 +213,7 @@ oracles:
       backstory_prompts:
         name: Backstory Prompts
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 106
         summary: |-
@@ -270,7 +270,7 @@ oracles:
       starship_history:
         name: Starship History
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 108
         summary: |-
@@ -318,7 +318,7 @@ oracles:
       starship_quirks:
         name: Starship Quirks
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 109
         summary: |-
@@ -394,7 +394,7 @@ oracles:
       sector_trouble:
         name: Sector Trouble
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 126
         # content:
@@ -480,7 +480,7 @@ oracles:
       inciting_incident:
         name: Inciting Incident
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 130
         # content:

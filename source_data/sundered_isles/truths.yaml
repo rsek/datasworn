@@ -3,7 +3,7 @@ package_type: ruleset
 truths:
   sundering:
     name: Sundering
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles
         date: 2023-11-29

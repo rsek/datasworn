@@ -4,7 +4,7 @@ ruleset: classic
 moves:
   delve:
     name: Delve Moves
-    source:
+    _source:
       <<:  &Source
         title: 'Ironsworn: Delve'
         authors:
@@ -19,7 +19,7 @@ moves:
       discover_a_site:
         roll_type: no_roll
         name: Discover a Site
-        source:
+        _source:
           <<: *Source
           page: 19
         trigger:
@@ -57,7 +57,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 21
         oracles:
@@ -90,7 +90,7 @@ moves:
 
       find_an_opportunity:
         name: Find an Opportunity
-        source:
+        _source:
           <<: *Source
           page: 30
         roll_type: no_roll
@@ -110,7 +110,7 @@ moves:
       reveal_a_danger:
         name: Reveal a Danger
         roll_type: no_roll
-        source:
+        _source:
           <<: *Source
           page: 34
         trigger:
@@ -131,7 +131,7 @@ moves:
               roll_options:
                 - using: condition_meter
                   condition_meter: supply
-        source:
+        _source:
           <<: *Source
           page: 38
         text: |-
@@ -151,7 +151,7 @@ moves:
             text: On a __miss__, you don’t have it and the situation grows more perilous. [Pay the Price](id:classic/moves/fate/pay_the_price).
       locate_your_objective:
         name: Locate Your Objective
-        source:
+        _source:
           <<: *Source
           page: 40
         roll_type: progress_roll
@@ -215,7 +215,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 42
         text: |-
@@ -263,7 +263,7 @@ moves:
         oracles:
           - delve/oracles/moves/reveal_a_danger_alt
         # optional: true
-        source:
+        _source:
           <<: *Source
           page: 68
         trigger:
@@ -276,7 +276,7 @@ moves:
     name: Failure Moves
     # optional: true
     description: Failure is a key part of your journey within the Ironlands. If you’d like to make those failures a more influential aspect of your character’s evolution—while taking a bit of the sting out of rolling a miss—use these optional mechanics.
-    source:
+    _source:
       <<: *Source
       page: 58
     contents:
@@ -284,7 +284,7 @@ moves:
         roll_type: no_roll
         name: Mark Your Failure
         # optional: true
-        source:
+        _source:
           <<: *Source
           page: 58
         trigger:
@@ -293,7 +293,7 @@ moves:
       learn_from_your_failures:
         name: Learn From Your Failures
         # optional: true
-        source:
+        _source:
           <<: *Source
           page: 59
         roll_type: special_track
@@ -332,7 +332,7 @@ moves:
   threat:
     name: Threat Moves
     # optional: true
-    source:
+    _source:
       <<: *Source
       page: 151
     summary: |-
@@ -346,7 +346,7 @@ moves:
         roll_type: no_roll
         name: Advance a Threat
         # optional: true
-        source:
+        _source:
           <<: *Source
           page: 154
         oracles:
@@ -365,7 +365,7 @@ moves:
         name: Take a Hiatus
         # optional: true
         roll_type: no_roll
-        source:
+        _source:
           <<: *Source
           page: 158
         trigger:
@@ -380,7 +380,7 @@ moves:
           Then, for each active threat, [Advance a Threat](id:delve/moves/legacy/advance_a_threat).
   rarity:
     name: Rarity Moves
-    source:
+    _source:
       <<: *Source
       page: 172
     summary: Rarities are enchanted objects you use to bolster your existing abilities.
@@ -394,7 +394,7 @@ moves:
         roll_type: no_roll # FIXME: not the most intuitive label. could this be done better?
         name: Wield a Rarity
         # optional: true
-        source:
+        _source:
           <<: *Source
           page: 176
         trigger:

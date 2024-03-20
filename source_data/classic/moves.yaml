@@ -3,7 +3,7 @@ package_type: ruleset
 moves:
   adventure:
     name: Adventure Moves
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -46,7 +46,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 60
         text: |-
@@ -112,7 +112,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 61
         text: |-
@@ -153,7 +153,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 62
         text: |-
@@ -188,7 +188,7 @@ moves:
                   stat: iron
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 63
         text: |-
@@ -216,7 +216,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 63
         text: |-
@@ -244,7 +244,7 @@ moves:
               roll_options:
                 - using: condition_meter
                   condition_meter: supply
-        source:
+        _source:
           <<: *Source
           page: 64
         text: |-
@@ -293,7 +293,7 @@ moves:
             # - method: null
             #   text: If you are setting off from a community with which you share a bond
             #   add: 1
-        source:
+        _source:
           <<: *Source
           page: 65
         text: |-
@@ -336,7 +336,7 @@ moves:
           conditions:
             - roll_options:
                 - using: progress_track
-        source:
+        _source:
           <<: *Source
           page: 68
         text: |-
@@ -363,7 +363,7 @@ moves:
                 * Take +1 momentum.
   relationship:
     name: Relationship Moves
-    source:
+    _source:
       <<: *Source
       page: 69
     summary: |-
@@ -390,7 +390,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: shadow
-        source:
+        _source:
           <<: *Source
           page: 69
         text: |-
@@ -425,7 +425,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: heart
-        source:
+        _source:
           <<: *Source
           page: 71
         text: |-
@@ -508,7 +508,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: heart
-        source:
+        _source:
           <<: *Source
           page: 73
         text: |-
@@ -563,7 +563,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: heart
-        source:
+        _source:
           <<: *Source
           page: 74
         text: |-
@@ -600,7 +600,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: heart
-        source:
+        _source:
           <<: *Source
           page: 75
         text: |-
@@ -629,7 +629,7 @@ moves:
               On a __miss__, clear the bond and [Pay the Price](id:classic/moves/fate/pay_the_price).
       aid_your_ally:
         name: Aid Your Ally
-        source:
+        _source:
           <<: *Source
           page: 76
         roll_type: no_roll
@@ -639,7 +639,7 @@ moves:
         # TODO: forward to another move ID?
       write_your_epilogue:
         name: Write Your Epilogue
-        source:
+        _source:
           <<: *Source
           page: 77
         roll_type: special_track
@@ -666,7 +666,7 @@ moves:
             text: On a __miss__, your fears are realized.
   combat:
     name: Combat Moves
-    source:
+    _source:
       <<: *Source
       page: 78
     summary: |-
@@ -693,7 +693,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 78
         text: |-
@@ -746,7 +746,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: edge
-        source:
+        _source:
           <<: *Source
           page: 78
         text: |-
@@ -780,7 +780,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: edge
-        source:
+        _source:
           <<: *Source
           page: 80
         text: |-
@@ -810,7 +810,7 @@ moves:
         roll_type: no_roll
         trigger:
           text: Once per fight, when you risk it all...
-        source:
+        _source:
           <<: *Source
           page: 81
         text: Once per fight, when you __risk it all__, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. [Pay the Price](id:classic/moves/fate/pay_the_price).
@@ -824,7 +824,7 @@ moves:
           conditions:
             - roll_options:
                 - using: progress_track
-        source:
+        _source:
           <<: *Source
           page: 82
         text: |-
@@ -890,7 +890,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: wits
-        source:
+        _source:
           <<: *Source
           page: 84
         text: |-
@@ -916,7 +916,7 @@ moves:
             text: On a __miss__, you are defeated and the objective is lost to you. [Pay the Price](id:classic/moves/fate/pay_the_price).
   suffer:
     name: Suffer Moves
-    source:
+    _source:
       <<: *Source
       page: 90
     summary: |-
@@ -936,7 +936,7 @@ moves:
                   stat: iron
                 - using: condition_meter
                   condition_meter: health
-        source:
+        _source:
           <<: *Source
           page: 91
         text: |-
@@ -977,7 +977,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: heart
-        source:
+        _source:
           <<: *Source
           page: 93
         text: |-
@@ -1016,7 +1016,7 @@ moves:
                   assets:
                     - '*/assets/companion/*'
                   control: health
-        source:
+        _source:
           <<: *Source
           page: 94
         text: |-
@@ -1053,7 +1053,7 @@ moves:
                   stat: heart
                 - using: condition_meter
                   condition_meter: spirit
-        source:
+        _source:
           <<: *Source
           page: 95
         text: |-
@@ -1093,7 +1093,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: heart
-        source:
+        _source:
           <<: *Source
           page: 96
         text: |-
@@ -1120,7 +1120,7 @@ moves:
             text: On a __miss__, you succumb to despair or horror and are lost.
       out_of_supply:
         name: Out of Supply
-        source:
+        _source:
           <<: *Source
           page: 97
         roll_type: no_roll
@@ -1130,7 +1130,7 @@ moves:
       face_a_setback:
         name: Face a Setback
         roll_type: no_roll
-        source:
+        _source:
           <<: *Source
           page: 97
         trigger:
@@ -1142,7 +1142,7 @@ moves:
             * Envision an event or discovery ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional _momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).
   quest:
     name: Quest Moves
-    source:
+    _source:
       <<: *Source
       page: 98
     summary: |-
@@ -1158,7 +1158,7 @@ moves:
               roll_options:
                 - using: stat
                   stat: heart
-        source:
+        _source:
           <<: *Source
           page: 98
         text: |-
@@ -1186,7 +1186,7 @@ moves:
       reach_a_milestone:
         name: Reach a Milestone
         roll_type: no_roll
-        source:
+        _source:
           <<: *Source
           page: 100
         trigger:
@@ -1201,7 +1201,7 @@ moves:
             * Epic quest: Mark 1 tick.
       fulfill_your_vow:
         name: Fulfill Your Vow
-        source:
+        _source:
           <<: *Source
           page: 101
         roll_type: progress_roll
@@ -1236,7 +1236,7 @@ moves:
                 * You give up: [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow).
       forsake_your_vow:
         name: Forsake Your Vow
-        source:
+        _source:
           <<: *Source
           page: 102
         roll_type: no_roll
@@ -1245,7 +1245,7 @@ moves:
         text: When __you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow and [Endure Stress](id:classic/moves/suffer/endure_stress). You suffer _spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.
       advance:
         name: Advance
-        source:
+        _source:
           <<: *Source
           page: 103
         roll_type: no_roll
@@ -1254,7 +1254,7 @@ moves:
         text: When __you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset.
   fate:
     name: Fate Moves
-    source:
+    _source:
       <<: *Source
       page: 98
     summary: When you face the outcome of a move, want to know what happens next, or have a question about people, places and events external to your character, the fate moves help you discover an answer.
@@ -1272,7 +1272,7 @@ moves:
         name: Pay the Price
         oracles:
           - classic/oracles/moves/pay_the_price
-        source:
+        _source:
           <<: *Source
           page: 105
         roll_type: no_roll
@@ -1294,7 +1294,7 @@ moves:
           - classic/oracles/moves/ask_the_oracle/fifty_fifty
           - classic/oracles/moves/ask_the_oracle/likely
           - classic/oracles/moves/ask_the_oracle/almost_certain
-        source:
+        _source:
           <<: *Source
           page: 107
         roll_type: no_roll

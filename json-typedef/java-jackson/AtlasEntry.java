@@ -16,6 +16,9 @@ public class AtlasEntry {
     @JsonProperty("_id")
     private AtlasEntryId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("description")
     private MarkdownString description;
 
@@ -24,9 +27,6 @@ public class AtlasEntry {
 
     @JsonProperty("name")
     private Label name;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -72,6 +72,24 @@ public class AtlasEntry {
     }
 
     /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
+    }
+
+    /**
      * Getter for description.<p>
      */
     public MarkdownString getDescription() {
@@ -113,24 +131,6 @@ public class AtlasEntry {
      */
     public void setName(Label name) {
         this.name = name;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

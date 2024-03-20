@@ -17,7 +17,7 @@ oracles:
       Then, as you [Advance a Threat](id:delve/moves/threat/advance_a_threat), you can roll on the oracle table for your specific threat to generate an action, approach, or complication. Interpret the oracle’s answer as appropriate to the nature of the threat and the current situation.
 
       If you aren’t using the threat mechanics within your campaign, you can use still these oracles to inspire details for enemies, troubles, and complications.
-    source:
+    _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -31,7 +31,7 @@ oracles:
         name: Category
         <<: &Threat
           oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 220
         canonical_name: 'Threat: Category'
@@ -100,7 +100,7 @@ oracles:
         name: Burgeoning Conflict
         canonical_name: 'Threat: Burgeoning Conflict'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 221
         rows:
@@ -138,7 +138,7 @@ oracles:
         name: Cursed Site
         canonical_name: 'Threat: Cursed Site'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 221
         rows:
@@ -176,7 +176,7 @@ oracles:
         name: Environmental Calamity
         canonical_name: 'Threat: Environmental Calamity'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 221
         rows:
@@ -214,7 +214,7 @@ oracles:
         name: Malignant Plague
         canonical_name: 'Threat: Malignant Plague'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 222
         rows:
@@ -252,7 +252,7 @@ oracles:
         name: Rampaging Creature
         canonical_name: 'Threat: Rampaging Creature'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 222
         rows:
@@ -290,7 +290,7 @@ oracles:
         name: Ravaging Horde
         canonical_name: 'Threat: Ravaging Horde'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 222
         rows:
@@ -328,7 +328,7 @@ oracles:
         name: Scheming Leader
         canonical_name: 'Threat: Scheming Leader'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 223
         rows:
@@ -366,7 +366,7 @@ oracles:
         name: Power-Hungry Mystic
         canonical_name: 'Threat: Power-Hungry Mystic'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 223
         rows:
@@ -404,7 +404,7 @@ oracles:
         name: Zealous Cult
         canonical_name: 'Threat: Zealous Cult'
         <<: *Threat
-        source:
+        _source:
           <<: *Source
           page: 223
         rows:

@@ -89,15 +89,18 @@ export function sortCollection<
 }
 
 function compareSourcedNode(a: Generic.SourcedNode, b: Generic.SourcedNode) {
-	if (typeof a.source?.page === 'number' && typeof b.source?.page === 'number')
-		return a.source?.page - b.source?.page
+	if (
+		typeof a._source?.page === 'number' &&
+		typeof b._source?.page === 'number'
+	)
+		return a._source?.page - b._source?.page
 
 	// if (typeof a.name === 'string' && typeof b.name === 'string')
 	// 	return a.name.localeCompare(b.name)
 
 	// console.log(a, b)
 	for (const item of [a, b]) {
-		if (!item.source?.page && item._id?.includes('collections'))
+		if (!item._source?.page && item._id?.includes('collections'))
 			Log.warn(`${item._id} is missing a page number.`)
 	}
 
@@ -110,10 +113,10 @@ function compareCollection(a: Generic.Collection, b: Generic.Collection) {
 
 	// get page numbers of collection children
 	const pagesA = compact(
-		Object.values(a.contents).map((v) => v.source?.page)
+		Object.values(a.contents).map((v) => v._source?.page)
 	) as number[]
 	const pagesB = compact(
-		Object.values(b.contents).map((v) => v.source?.page)
+		Object.values(b.contents).map((v) => v._source?.page)
 	) as number[]
 
 	if (pagesA.length === 0 || pagesB.length === 0) return 0

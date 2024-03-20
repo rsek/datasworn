@@ -2,7 +2,7 @@ _id: starforged
 package_type: ruleset
 assets:
   deed:
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -23,7 +23,7 @@ assets:
         <<: &DeedAsset
           category: Deed
           color: *DeedAsset.color
-          source: &AssetSource
+          _source: &AssetSource
             <<: *Source
             title: 'Ironsworn: Starforged Assets'
         name: Bonded
@@ -304,7 +304,7 @@ assets:
             enabled: true
             moves:
               seek_safe_haven:
-                source: *AssetSource
+                _source: *AssetSource
                 name: Seek Safe Haven
                 roll_type: special_track
                 trigger:

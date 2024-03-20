@@ -6,7 +6,7 @@ oracles:
     enhances: classic/collections/oracles/character
     name: Character
     summary: Set the initial disposition for a character, or reveal what activity they are focused on when you first encounter them.
-    source:
+    _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -25,7 +25,7 @@ oracles:
           oracles:
             - delve/oracles/feature/focus
             - classic/oracles/action_and_theme/theme
-        source:
+        _source:
           <<: *Source
           page: 213
         rows:
@@ -239,7 +239,7 @@ oracles:
         canonical_name: 'Character: Disposition'
         # usage:
         #   initial: true
-        source:
+        _source:
           <<: *Source
           page: 213
         rows:

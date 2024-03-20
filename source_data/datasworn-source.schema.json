@@ -2628,7 +2628,7 @@
 				"drives",
 				"tactics",
 				"description",
-				"source"
+				"_source"
 			],
 			"properties": {
 				"_id": {
@@ -2707,7 +2707,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -2717,7 +2717,7 @@
 		"NpcCollection": {
 			"title": "NpcCollection",
 			"type": "object",
-			"required": ["name", "source"],
+			"required": ["name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/NpcCollectionId",
@@ -2789,7 +2789,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -3225,7 +3225,7 @@
 			"title": "OracleTableDetails",
 			"type": "object",
 			"description": "A rollable oracle table with one roll column, one `result` column, and one `detail` column.",
-			"required": ["name", "oracle_type", "rows", "source"],
+			"required": ["name", "oracle_type", "rows", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3331,7 +3331,7 @@
 						"$ref": "#/definitions/OracleTableRowDetails"
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -3533,7 +3533,7 @@
 			"title": "OracleTableSharedDetails",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with multiple roll columns, one `result` column, and one `detail` column.",
-			"required": ["name", "oracle_type", "source"],
+			"required": ["name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3629,7 +3629,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -3640,7 +3640,7 @@
 			"title": "OracleTableSharedResults",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
-			"required": ["name", "oracle_type", "source"],
+			"required": ["name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3731,7 +3731,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -3742,7 +3742,7 @@
 			"title": "OracleTableSharedRolls",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
-			"required": ["name", "source"],
+			"required": ["name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3834,7 +3834,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -3845,7 +3845,7 @@
 			"title": "OracleTableSimple",
 			"type": "object",
 			"description": "Represents a basic rollable oracle table with one roll column and one `result` column.",
-			"required": ["name", "oracle_type", "rows", "source"],
+			"required": ["name", "oracle_type", "rows", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3946,7 +3946,7 @@
 						"$ref": "#/definitions/OracleTableRowSimple"
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -3957,7 +3957,7 @@
 			"title": "OracleTablesCollection",
 			"type": "object",
 			"description": "An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.",
-			"required": ["name", "source"],
+			"required": ["name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -4044,7 +4044,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -4140,7 +4140,7 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"source"
+				"_source"
 			],
 			"properties": {
 				"_id": {
@@ -4202,7 +4202,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -4244,7 +4244,7 @@
 		"MoveCategory": {
 			"title": "MoveCategory",
 			"type": "object",
-			"required": ["name", "source"],
+			"required": ["name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveCategoryId",
@@ -4316,7 +4316,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -4393,7 +4393,7 @@
 			"title": "MoveNoRoll",
 			"type": "object",
 			"description": "A move that makes no progress rolls or action rolls.",
-			"required": ["name", "roll_type", "trigger", "text", "source"],
+			"required": ["name", "roll_type", "trigger", "text", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
@@ -4455,7 +4455,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -4542,7 +4542,7 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"source"
+				"_source"
 			],
 			"properties": {
 				"_id": {
@@ -4608,7 +4608,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -4662,7 +4662,7 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"source"
+				"_source"
 			],
 			"properties": {
 				"_id": {
@@ -4724,7 +4724,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -5207,7 +5207,7 @@
 		"Asset": {
 			"title": "Asset",
 			"type": "object",
-			"required": ["name", "category", "abilities", "source"],
+			"required": ["name", "category", "abilities", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetId",
@@ -5305,7 +5305,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -5572,7 +5572,7 @@
 		"AssetCollection": {
 			"title": "AssetCollection",
 			"type": "object",
-			"required": ["name", "source"],
+			"required": ["name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetCollectionId",
@@ -5644,7 +5644,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -6618,7 +6618,7 @@
 			"title": "Truth",
 			"type": "object",
 			"description": "A setting truth category.",
-			"required": ["name", "options", "source"],
+			"required": ["name", "options", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/TruthId",
@@ -6665,7 +6665,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -6773,7 +6773,7 @@
 			"title": "Atlas",
 			"type": "object",
 			"releaseStage": "experimental",
-			"required": ["name", "source"],
+			"required": ["name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasId",
@@ -6854,7 +6854,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -6865,7 +6865,7 @@
 			"title": "Atlas entry",
 			"type": "object",
 			"description": "An atlas entry, like the Ironlands region entries found in classic Ironsworn.",
-			"required": ["name", "features", "description", "source"],
+			"required": ["name", "features", "description", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasEntryId",
@@ -6915,7 +6915,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -6938,7 +6938,7 @@
 			"title": "Rarity",
 			"type": "object",
 			"description": "A rarity, as described in Ironsworn: Delve.",
-			"required": ["name", "asset", "description", "source"],
+			"required": ["name", "asset", "description", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/RarityId",
@@ -6987,7 +6987,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -7005,7 +7005,7 @@
 				"rank",
 				"description",
 				"denizens",
-				"source"
+				"_source"
 			],
 			"properties": {
 				"_id": {
@@ -7314,7 +7314,7 @@
 						}
 					]
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -7357,7 +7357,7 @@
 			"title": "DelveSiteDomain",
 			"type": "object",
 			"description": "A delve site Domain card.",
-			"required": ["name", "summary", "features", "dangers", "source"],
+			"required": ["name", "summary", "features", "dangers", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteDomainId",
@@ -7694,7 +7694,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
@@ -7805,7 +7805,7 @@
 			"title": "DelveSiteTheme",
 			"type": "object",
 			"description": "A delve site theme card.",
-			"required": ["name", "summary", "features", "dangers", "source"],
+			"required": ["name", "summary", "features", "dangers", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteThemeId",
@@ -8137,7 +8137,7 @@
 						}
 					}
 				},
-				"source": {
+				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}

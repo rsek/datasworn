@@ -17,14 +17,14 @@ public class OracleCollectionTableSharedResults extends OracleCollection {
     @JsonProperty("_id")
     private OracleCollectionId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("column_labels")
     private OracleCollectionTableSharedResultsColumnLabels columnLabels;
 
     @JsonProperty("name")
     private Label name;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -90,6 +90,24 @@ public class OracleCollectionTableSharedResults extends OracleCollection {
     }
 
     /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
+    }
+
+    /**
      * Getter for columnLabels.<p>
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
@@ -121,24 +139,6 @@ public class OracleCollectionTableSharedResults extends OracleCollection {
      */
     public void setName(Label name) {
         this.name = name;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

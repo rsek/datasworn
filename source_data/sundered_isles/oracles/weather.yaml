@@ -2,7 +2,7 @@ _id: sundered_isles
 package_type: ruleset
 oracles:
   weather:
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin
@@ -12,7 +12,7 @@ oracles:
     name: Weather
     collections:
       conditions:
-        source: *Source
+        _source: *Source
         name: Weather Conditions
         oracle_type: table_shared_results
         summary: If you’d like to establish the time of day for an encounter or scene, roll a single oracle die. If even, it’s daytime; if odd, it’s night. Higher numbers are later in that period.
@@ -61,7 +61,7 @@ oracles:
                 <<: *WeatherConditions.1
     contents:
       foul:
-        source: *Source
+        _source: *Source
         name: Foul Weather
         column_labels:
           roll: Roll
@@ -101,7 +101,7 @@ oracles:
             result: Raging
             detail: Destructive winds, torrential rain, and monstrous waves
       duration:
-        source: *Source
+        _source: *Source
         name: Duration of Foul or Cursed Weather
         dice: 1d10
         oracle_type: table_simple
@@ -116,7 +116,7 @@ oracles:
             max: 10
             result: Relentless (more than a day)
       cursed:
-        source: *Source
+        _source: *Source
         name: Cursed Weather
         oracle_type: table_details
         column_labels:

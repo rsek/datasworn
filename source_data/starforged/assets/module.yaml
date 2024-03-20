@@ -2,7 +2,7 @@ _id: starforged
 package_type: ruleset
 assets:
   module:
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -27,7 +27,7 @@ assets:
           category: Module
           shared: true
           color: *ModuleAsset.color
-          source: &AssetSource
+          _source: &AssetSource
             <<: *Source
             title: 'Ironsworn: Starforged Assets'
           controls:
@@ -132,7 +132,7 @@ assets:
             moves:
               ready_grappler:
                 name: Ready Grappler
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you take a minute or so to ready the grappler...
@@ -239,7 +239,7 @@ assets:
             moves:
               draw_reserves:
                 name: Draw Reserves
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and your supply is reduced to 0...
@@ -587,7 +587,7 @@ assets:
             moves:
               raise_shields:
                 name: Raise Shields
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you raise your shields...

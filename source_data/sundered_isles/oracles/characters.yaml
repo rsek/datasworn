@@ -4,7 +4,7 @@ oracles:
   characters:
     name: Characters
     oracle_type: tables
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles
         date: 2023-11-29
@@ -17,7 +17,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -143,7 +143,7 @@ oracles:
       cursed_first_look:
         name: Cursed First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -185,7 +185,7 @@ oracles:
       initial_disposition:
         name: Initial Dispostion
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -228,7 +228,7 @@ oracles:
         name: Identity
         summary: You may envision a character’s role, occupation, or persona using the broad categories below. For more detail, check the related subtable.
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -329,7 +329,7 @@ oracles:
                   number_of_rolls: 2
       trademark_accessories:
         name: Trademark Accessories
-        source:
+        _source:
           <<: *Source
         oracle_type: table_simple
         rows:
@@ -491,7 +491,7 @@ oracles:
                     oracle: sundered_isles/oracles/core/focus
       trademark_weapons:
         name: Trademark Weapons
-        source:
+        _source:
           <<: *Source
         oracle_type: table_simple
         rows:
@@ -612,7 +612,7 @@ oracles:
       cursed_weapon_detail:
         name: Cursed Weapon Detail
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         # TODO: curse metadata should note whether it *combines* or *replaces*
         summary: If you roll a Trademark Weapon curse, take your result and give that weapon a cursed aspect from the table below.
@@ -674,7 +674,7 @@ oracles:
       revealed_aspects:
         name: Revealed Aspects
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         rows:
@@ -981,7 +981,7 @@ oracles:
       cursed_aspects:
         name: Cursed Aspects
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -1035,7 +1035,7 @@ oracles:
       goal:
         name: Goal
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -1185,7 +1185,7 @@ oracles:
       cursed_goal:
         name: Cursed Goal
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
         rows:
           - min: 1
@@ -1250,7 +1250,7 @@ oracles:
             result: Wreak bloody vengeance
       # name:
       #   name: Character Name
-      #   source:
+      #   _source:
       #     <<: *Source
       #   rows:
 
@@ -1258,13 +1258,13 @@ oracles:
       roles:
         name: Roles
         oracle_type: tables
-        source:
+        _source:
           <<: *Source
         contents:
           academic:
             name: Academic
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1285,7 +1285,7 @@ oracles:
           agent:
             name: Agent
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1307,7 +1307,7 @@ oracles:
           caregiver:
             name: Caregiver
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1328,7 +1328,7 @@ oracles:
           combatant:
             name: Combatant
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1350,7 +1350,7 @@ oracles:
           devotant:
             name: Devotant
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1371,7 +1371,7 @@ oracles:
           laborer:
             name: Laborer
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1392,7 +1392,7 @@ oracles:
           merchant:
             name: Merchant
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1413,7 +1413,7 @@ oracles:
           mystic:
             name: Mystic
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1434,7 +1434,7 @@ oracles:
           outcast:
             name: Outcast
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1470,7 +1470,7 @@ oracles:
           outlander:
             name: Outlander
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1491,7 +1491,7 @@ oracles:
           performer:
             name: Performer
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1512,7 +1512,7 @@ oracles:
           sailor:
             name: Sailor
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1548,7 +1548,7 @@ oracles:
           scavenger:
             name: Scavenger
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1569,7 +1569,7 @@ oracles:
           outlaw:
             name: Outlaw
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1605,7 +1605,7 @@ oracles:
           statesperson:
             name: Statesperson
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1
@@ -1641,7 +1641,7 @@ oracles:
           tradesperson:
             name: Tradesperson
             oracle_type: table_simple
-            source:
+            _source:
               <<: *Source
             rows:
               - min: 1

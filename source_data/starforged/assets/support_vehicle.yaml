@@ -2,7 +2,7 @@ _id: starforged
 package_type: ruleset
 assets:
   support_vehicle:
-    source:
+    _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -25,7 +25,7 @@ assets:
           category: Support Vehicle
           shared: true
           color: *SupportVehicleAsset.color
-          source: &AssetSource
+          _source: &AssetSource
             <<: *Source
             title: 'Ironsworn: Starforged Assets'
           options:

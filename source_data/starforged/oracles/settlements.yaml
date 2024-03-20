@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   settlements:
     name: Settlements
-    source: &CollectionSource
+    _source: &CollectionSource
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
         license: https://creativecommons.org/licenses/by/4.0
@@ -15,7 +15,7 @@ oracles:
     collections:
       population:
         name: Population
-        source: *CollectionSource
+        _source: *CollectionSource
         # usage:
         #   initial: true
         #   requires:
@@ -127,7 +127,7 @@ oracles:
         name: Location
         oracle_type: table_simple
         # _templateOracleTable: *template.info:Generic.Location
-        source:
+        _source:
           <<: *Source
           page: 322
         # _templateTableRows:
@@ -148,7 +148,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 323
         # usage:
@@ -233,7 +233,7 @@ oracles:
       initial_contact:
         name: Initial Contact
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 323
         # usage:
@@ -290,7 +290,7 @@ oracles:
       authority:
         name: Authority
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 323
         # usage:
@@ -337,7 +337,7 @@ oracles:
       projects:
         name: Settlement Projects
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 324
         # content:
@@ -495,7 +495,7 @@ oracles:
       trouble:
         name: Settlement Trouble
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 324
         # usage:
@@ -632,7 +632,7 @@ oracles:
       name:
         name: Settlement Name
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 325
         summary: |-
@@ -1090,7 +1090,7 @@ oracles:
         name: Name tags
         # not technically a table, but might be useful to randomize for settlement names
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 325
         rows:

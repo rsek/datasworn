@@ -3,7 +3,7 @@ package_type: ruleset
 assets:
   path:
     name: Path Assets
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -18,7 +18,7 @@ assets:
     contents:
       alchemist:
         category: Path
-        source:
+        _source:
           <<: &AssetSource
             <<: *Source
             title: Ironsworn Assets Master Set
@@ -32,7 +32,7 @@ assets:
             moves:
               create_elixir:
                 name: Create Elixir
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you create an elixir...
@@ -89,7 +89,7 @@ assets:
                   - classic/assets/path/alchemist/abilities/0/moves/create_elixir
       animal_kin:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Animal Kin
@@ -128,7 +128,7 @@ assets:
 
       banner_sworn:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Banner-Sworn
@@ -181,7 +181,7 @@ assets:
 
       battle_scarred:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Battle-Scarred
@@ -211,7 +211,7 @@ assets:
                           stat: heart
       blade_bound:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Blade-Bound
@@ -256,7 +256,7 @@ assets:
                       method: null
       bonded:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Bonded
@@ -281,7 +281,7 @@ assets:
               - roll_type: action_roll
       commander:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Commander
@@ -340,7 +340,7 @@ assets:
                 - classic/moves/relationship/sojourn
       dancer:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 4
         name: Dancer
@@ -386,7 +386,7 @@ assets:
             moves:
               commemorate:
                 name: Commemorate
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you or an ally make a progress move and score a hit, and you perform a dance to commemorate the event...
@@ -406,7 +406,7 @@ assets:
                   miss: *MoveOutcome.Miss.Generic
       devotant:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Devotant
@@ -501,7 +501,7 @@ assets:
                           option: stat
       empowered:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Empowered
@@ -551,7 +551,7 @@ assets:
                       method: null
       fated:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Fated
@@ -590,7 +590,7 @@ assets:
                 trigger: *FatedVowTrigger
       fortune_hunter:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Fortune Hunter
@@ -643,7 +643,7 @@ assets:
             value: 0
       herbalist:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Herbalist
@@ -700,7 +700,7 @@ assets:
                       method: null
       honorbound:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Honorbound
@@ -734,7 +734,7 @@ assets:
 
       improviser:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Improviser
@@ -776,7 +776,7 @@ assets:
                       method: null
       infiltrator:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Infiltrator
@@ -830,7 +830,7 @@ assets:
                       text: Within an enemy area by scavenging or looting
       lorekeeper:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 6
         name: Lorekeeper
@@ -877,7 +877,7 @@ assets:
               One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or [Face Desolation](id:classic/moves/suffer/face_desolation) (ignoring momentum).
       loyalist:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Loyalist
@@ -918,7 +918,7 @@ assets:
                       text: when you stand with your ally as they make a progress move
       masked:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Masked
@@ -990,7 +990,7 @@ assets:
                       method: player_choice
       oathbreaker:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Oathbreaker
@@ -1032,7 +1032,7 @@ assets:
                 trigger: *objective
       outcast:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Outcast
@@ -1048,7 +1048,7 @@ assets:
             moves:
               scrape_by:
                 name: Scrape By
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When your supply is reduced to 0...
@@ -1079,7 +1079,7 @@ assets:
                   - classic/moves/adventure/reach_your_destination
       pretender:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Pretender
@@ -1092,7 +1092,7 @@ assets:
             moves:
               establish_false_identity:
                 name: Establish False Identity
-                source: *AssetSource
+                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you establish a false identity...
@@ -1139,7 +1139,7 @@ assets:
                       method: null
       revenant:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Revenant
@@ -1183,7 +1183,7 @@ assets:
                       method: null
       rider:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Rider
@@ -1234,7 +1234,7 @@ assets:
 
       ritualist:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Ritualist
@@ -1265,7 +1265,7 @@ assets:
               When you tattoo the essence of a new ritual onto your skin, envision the mark you create. You may then purchase and upgrade that ritual asset for 1 fewer experience.
       shadow_kin:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 8
         name: Shadow-Kin
@@ -1295,7 +1295,7 @@ assets:
                           stat: shadow
       sighted:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Sighted
@@ -1341,7 +1341,7 @@ assets:
 
       slayer:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Slayer
@@ -1407,7 +1407,7 @@ assets:
 
       spirit_bound:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Spirit-Bound
@@ -1453,7 +1453,7 @@ assets:
                       method: null
       storyweaver:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Storyweaver
@@ -1492,7 +1492,7 @@ assets:
                       method: null
       trickster:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Trickster
@@ -1537,7 +1537,7 @@ assets:
                           stat: heart
       veteran:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Veteran
@@ -1580,7 +1580,7 @@ assets:
                       method: null
       waterborn:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Waterborn
@@ -1628,7 +1628,7 @@ assets:
                       method: null
       wayfinder:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Wayfinder
@@ -1672,7 +1672,7 @@ assets:
 
       weaponmaster:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 10
         name: Weaponmaster
@@ -1716,7 +1716,7 @@ assets:
                       method: null
       wildblood:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Wildblood
@@ -1763,7 +1763,7 @@ assets:
                           stat: wits
       wright:
         category: Path
-        source:
+        _source:
           <<: *AssetSource
           page: 12
         name: Wright

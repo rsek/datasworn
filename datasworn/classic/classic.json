@@ -1171,7 +1171,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 174,
 						"authors": [
@@ -2200,7 +2200,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 175,
 						"authors": [
@@ -2214,7 +2214,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 174,
 				"authors": [
@@ -2551,7 +2551,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 182,
 						"authors": [
@@ -2751,7 +2751,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 182,
 						"authors": [
@@ -3781,7 +3781,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 183,
 						"authors": [
@@ -3795,7 +3795,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 182,
 				"authors": [
@@ -3849,7 +3849,7 @@
 							"result": "You are battered but still standing."
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 91,
 						"authors": [
@@ -3893,7 +3893,7 @@
 							"result": "You persevere."
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 93,
 						"authors": [
@@ -4006,7 +4006,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 105,
 						"authors": [
@@ -4135,7 +4135,7 @@
 					"column_labels": {
 						"result": "Result"
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 107,
 						"authors": [
@@ -4149,7 +4149,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 49,
 				"authors": [
@@ -4680,7 +4680,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 186,
 						"authors": [
@@ -5714,7 +5714,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 184,
 								"authors": [
@@ -6739,7 +6739,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 185,
 								"authors": [
@@ -6753,7 +6753,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 184,
 						"authors": [
@@ -7551,7 +7551,7 @@
 					"column_labels": {
 						"roll": "Roll"
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 187,
 						"authors": [
@@ -7565,7 +7565,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 184,
 				"authors": [
@@ -7646,7 +7646,7 @@
 							"result": "Elsewhere"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 176,
 						"authors": [
@@ -8182,7 +8182,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 176,
 						"authors": [
@@ -8378,7 +8378,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 176,
 						"authors": [
@@ -8904,7 +8904,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 177,
 						"authors": [
@@ -8918,7 +8918,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 176,
 				"authors": [
@@ -9189,7 +9189,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 181,
 						"authors": [
@@ -9319,7 +9319,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 178,
 						"authors": [
@@ -9453,7 +9453,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 178,
 								"authors": [
@@ -9579,7 +9579,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 178,
 								"authors": [
@@ -9705,7 +9705,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 178,
 								"authors": [
@@ -9831,7 +9831,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 178,
 								"authors": [
@@ -9957,7 +9957,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 178,
 								"authors": [
@@ -10083,7 +10083,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 178,
 								"authors": [
@@ -10157,7 +10157,7 @@
 									"result": "A negative term (Forsaken)"
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn Rulebook",
 								"page": 178,
 								"authors": [
@@ -10171,7 +10171,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 178,
 						"authors": [
@@ -10711,7 +10711,7 @@
 					"column_labels": {
 						"roll": "Roll"
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 180,
 						"authors": [
@@ -10725,7 +10725,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 178,
 				"authors": [
@@ -10846,7 +10846,7 @@
 							"result": "Take a completely unexpected action."
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 188,
 						"authors": [
@@ -11006,7 +11006,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 189,
 						"authors": [
@@ -11141,7 +11141,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 190,
 						"authors": [
@@ -11192,7 +11192,7 @@
 							"result": "Epic"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 190,
 						"authors": [
@@ -11206,7 +11206,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 188,
 				"authors": [
@@ -11321,7 +11321,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -11409,7 +11409,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -11499,7 +11499,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -11599,7 +11599,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -11671,7 +11671,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -11766,7 +11766,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -11781,7 +11781,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -11899,7 +11899,7 @@
 							"value": null
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -11997,7 +11997,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -12083,7 +12083,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -12174,7 +12174,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -12256,7 +12256,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -12358,7 +12358,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -12373,7 +12373,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -12440,7 +12440,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -12517,7 +12517,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -12531,7 +12531,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 40,
 				"authors": [
@@ -12650,7 +12650,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -12770,7 +12770,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -12911,7 +12911,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -13041,7 +13041,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -13154,7 +13154,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -13278,7 +13278,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -13384,7 +13384,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -13503,7 +13503,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -13616,7 +13616,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 2,
 						"authors": [
@@ -13722,7 +13722,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -13736,7 +13736,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 39,
 				"authors": [
@@ -13838,7 +13838,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -13879,7 +13879,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -13960,7 +13960,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -14056,7 +14056,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -14117,7 +14117,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -14209,7 +14209,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -14266,7 +14266,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -14375,7 +14375,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -14493,7 +14493,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -14508,7 +14508,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 4,
 						"authors": [
@@ -14664,7 +14664,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -14756,7 +14756,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -14840,7 +14840,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -14942,7 +14942,7 @@
 							"value": 0
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -15039,7 +15039,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -15105,7 +15105,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -15193,7 +15193,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -15302,7 +15302,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -15400,7 +15400,7 @@
 							"text": "One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or [Face Desolation](id:classic/moves/suffer/face_desolation) (ignoring momentum)."
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 6,
 						"authors": [
@@ -15480,7 +15480,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -15616,7 +15616,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -15701,7 +15701,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -15762,7 +15762,7 @@
 											"text": "On a __miss__, you are [Out of Supply](id:classic/moves/suffer/out_of_supply)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -15799,7 +15799,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -15854,7 +15854,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -15920,7 +15920,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -16005,7 +16005,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -16096,7 +16096,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -16154,7 +16154,7 @@
 							"text": "When you tattoo the essence of a new ritual onto your skin, envision the mark you create. You may then purchase and upgrade that ritual asset for 1 fewer experience."
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -16216,7 +16216,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 8,
 						"authors": [
@@ -16304,7 +16304,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -16424,7 +16424,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -16508,7 +16508,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -16584,7 +16584,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -16670,7 +16670,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -16749,7 +16749,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -16834,7 +16834,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -16922,7 +16922,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -17004,7 +17004,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 10,
 						"authors": [
@@ -17097,7 +17097,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -17215,7 +17215,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 12,
 						"authors": [
@@ -17229,7 +17229,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 40,
 				"authors": [
@@ -17289,7 +17289,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -17330,7 +17330,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -17385,7 +17385,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -17436,7 +17436,7 @@
 							"value": 3
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 14,
 						"authors": [
@@ -17491,7 +17491,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -17532,7 +17532,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -17587,7 +17587,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -17628,7 +17628,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -17683,7 +17683,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -17724,7 +17724,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -17803,7 +17803,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -17867,7 +17867,7 @@
 							"value": 0
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -17922,7 +17922,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -17963,7 +17963,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -18018,7 +18018,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18059,7 +18059,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -18114,7 +18114,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18186,7 +18186,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -18241,7 +18241,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18282,7 +18282,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -18337,7 +18337,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18378,7 +18378,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 16,
 						"authors": [
@@ -18433,7 +18433,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18474,7 +18474,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 18,
 						"authors": [
@@ -18529,7 +18529,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18570,7 +18570,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 18,
 						"authors": [
@@ -18653,7 +18653,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18701,7 +18701,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 18,
 						"authors": [
@@ -18756,7 +18756,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18797,7 +18797,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 18,
 						"authors": [
@@ -18852,7 +18852,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18893,7 +18893,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 18,
 						"authors": [
@@ -18948,7 +18948,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 										}
 									},
-									"source": {
+									"_source": {
 										"title": "Ironsworn Assets Master Set",
 										"authors": [
 											{
@@ -18989,7 +18989,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Assets Master Set",
 						"page": 18,
 						"authors": [
@@ -19003,7 +19003,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 41,
 				"authors": [
@@ -19040,7 +19040,7 @@
 					],
 					"description": "This long string of islands parallels the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast). They are beautiful, but imposing. The slate-gray cliffs rise dramatically out of the water, topped by treeless moors. Waterfalls, fed by persistent rains, plunge over these cliffs into the raging sea. The winds are fierce and ever-present. In the winter, sleet, snow, and ocean mist can cut visibility to the length of one’s arm.\n\nThe islands are sparsely populated by [Ironlanders](id:classic/collections/npcs/ironlanders), mostly fisher-folk who brave the surrounding waters. Their settlements cling to narrow, rock-strewn shores or lie on high overlooks. At night, the dim lights of their fires and torches glimmer pitifully against the wild, storm-tossed sea.",
 					"quest_starter": "The spectral maiden appears at the bow of your ship, offering to guide you safely through the storm—for a price. What does she demand of you?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 113,
 						"authors": [
@@ -19068,7 +19068,7 @@
 					],
 					"description": "This coast is marked by massive fjords. It is a rugged land of snow-capped cliffs overlooking blue waters.\n\n[Ironlander](id:classic/collections/npcs/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys. From there, both fisher-folk and [raiders](id:classic/npcs/ironlanders/raider) set sail. Their kin gather to see them off, laying wreaths of spruce in their wake.\n\nIn the center of each settlement, at the front of the longhouse, a stack of rune-marked river stones memorialize those who did not return—one stone for each of the lost.",
 					"quest_starter": "A ship which set off from a coastal settlement is found washed up on shore. It is empty. This ship carried something of great importance, now lost. What was it, and why do you swear to recover it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 114,
 						"authors": [
@@ -19097,7 +19097,7 @@
 					],
 					"description": "The Deep Wilds are a vast swath of ancient forest. The ground is a lush carpet of ferns and lichens. The gnarled branches are cloaked in hanging moss. The air is almost perpetually misty and wet. Unlike the bordering regions, heavy snow is rare here. Instead, there is the ceaseless patter of rain dripping from high boughs and the rush of river over rock. The air carries the earthy smells of damp and decay.\n\nA few [Ironlanders](id:classic/collections/npcs/ironlanders) live along the fringes of the Deep Wilds, taking advantage of the relatively temperate climate and abundant game. However, most avoid this region. This is a land of the [firstborn](id:classic/collections/npcs/firstborn), of monstrous [beasts](id:classic/collections/npcs/beasts), of [horrors](id:classic/collections/npcs/horrors) that defy description. This is the world before humans.",
 					"quest_starter": "An [Ironlander](id:classic/collections/npcs/ironlanders) has sided with an enemy in the heart of the Wilds, and is leading attacks against Ironlander settlements. Who is this person? Who have they joined forces with? What will you do to stop these attacks?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 115,
 						"authors": [
@@ -19125,7 +19125,7 @@
 					],
 					"description": "This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. Near the coast, the water is salty and riddled with dead trees. Further north, the morass of forested wetlands and bogs is interspersed with rare patches of higher ground. Through it all, twisting rivers make their sluggish journey to the sea. The smell of these lands is rotten and dank. It is the smell of slow death.\n\nA few hardy [Ironlanders](id:classic/collections/npcs/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands. Most fish and forage, making their way among the waterways on flat-bottomed boats propelled by long poles. Some dig through peat for bog iron—a cold, wet, grueling task.\n\nTravel is precarious here. One step has you on solid ground. The next sends you plunging through a thin layer of peat into a murky bog. Then, bony hands reach out to you, grasping, pulling. “Stay with me,” a voice whispers. “Stay with me here in the dark.”",
 					"quest_starter": "Rising flood waters threaten to overwhelm an Ironlander settlement. Escape by boat is the only option, but there are few boats and many people. What’s more, there is something hungry in the water, waiting to feed.",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 116,
 						"authors": [
@@ -19152,7 +19152,7 @@
 					],
 					"description": "This is an expansive region of forests, rivers, shrubland, and low hills. After an arduous journey, after untold losses, the first Ironlander settlers looked upon the Havens as a fresh start—a relative oasis in a fierce, uncaring land. It gave them hope.\n\nYears later, that hope is fading. Even within the Havens, there is little rest or safety. The winters are long. The harvests are never enough. [Raiders](id:classic/npcs/ironlanders/raider) strike without mercy. The thick woods, deep rivers and dark nights hold secrets and lurking [horrors](id:classic/collections/npcs/horrors). Some say the Ironlands is a living thing, a malevolent spirit, intent on ridding itself of the human invaders. Slowly, season by season, year by year, it is succeeding.\n\nThe [Ironlander](id:classic/collections/npcs/ironlanders) settlements in this region typically stand on hills or at the confluence of rivers. The buildings are made of wood, or sometimes stone, with roofs covered in turf. The central homes and communal structures are protected by an outer palisade fashioned from earth and wood. Outside these walls, from spring through autumn, farmers work the meager fields. In winter, the settlements are smothered by deep snow and oppressive gray clouds.",
 					"quest_starter": "A settlement has fallen under the unjust rule of a cruel leader. What leverage do they hold over these people? What is your connection to the community? What can be done to overthrow this tyrant?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 117,
 						"authors": [
@@ -19179,7 +19179,7 @@
 					],
 					"description": "This high terrain consists of a long string of forested hills.\n\nIsolated [Ironlander](id:classic/collections/npcs/ironlanders) settlements in this region serve primarily as bases for [hunters](id:classic/npcs/ironlanders/hunter) and trappers. A few farmers do the best they can with the rocky soil, but the people depend mostly on meat, mushrooms, berries, and other bounties from the forest to sustain them during the long winters.\n\nThose winters are bitter and harsh. Snow gathers as deep as an Ironlander is tall, or more. Hunters, cloaked in heavy furs, wear snowshoes to navigate across the rough terrain. At night, they make camp. They drink and tell stories. They try to ward away the encroaching darkness with a blazing fire. They cast nervous glances at sounds just beyond the light.\n\nIn the spring and summer, the melting snow feeds tumultuous rivers. The forests burst with rich life. But, always there is a chill in the air. Always there is a reminder of the coming winter.",
 					"quest_starter": "A group of [Ironlanders](id:classic/collections/npcs/ironlanders) have been forced out of their Hinterland settlement. What caused them to leave? With winter coming, and food in short supply, will you attempt to reclaim their settlement or convince someone to take them in?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 118,
 						"authors": [
@@ -19208,7 +19208,7 @@
 					],
 					"description": "These highlands are defined by rugged hills and low mountains, thin conifer woods, and wide, grassy plateaus, leading up to the heights of the [Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains). Through most seasons, the constant ill-winds break against the sides of the hills, screeching and moaning. In the dead of winter, some say these winds carry the names of those fated to die during the long cold season.\n\nNomadic [Ironlanders](id:classic/collections/npcs/ironlanders) live among the hills, herding livestock. In the spring and summer they move among high pastures. In the winter, they find some relief from the brutal weather in sheltered valleys.\n\nOthers live in mining settlements, drawing iron ore from riverbeds and shallow digs. Their furnaces, sending up plumes of black smoke, convert the ore into wrought iron, which is sent south for trade with the [Havens](id:classic/atlas/ironlands/havens).",
 					"quest_starter": "You have come across or learned of a rich source of unclaimed iron and silver among these hills. What hazards must be overcome before a mine can be established? What force opposes you or attempts to establish its own claim?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 119,
 						"authors": [
@@ -19236,7 +19236,7 @@
 					],
 					"description": "Commonly referred to as the Veils, these great mountains mark the northern bounds of the settled lands. They are almost perpetually shrouded in cloud, snow, and mist. On the rare day they are visible to those [Ironlanders](id:classic/collections/npcs/ironlanders) far south in the [Havens](id:classic/atlas/ironlands/havens), the sight of the towering peaks is enough to inspire a mix of fear and awe.\n\nFor a few, that feeling is a call rather than a warning. The Ironlanders who dwell here are mostly members of small mining communities. They seek fortunes in iron or silver, but often find only death in the endless, brutal cold. Even those who manage to eke out some sort of life among the Veils are sure to head south before the onset of winter. Before the long dark takes hold.",
 					"quest_starter": "As winter fast approaches, there is no sign of the [Ironlanders](id:classic/collections/npcs/ironlanders) who live in a small mining community on the flanks of the Veils. They should have been off the mountain weeks ago. Time is running out.",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 120,
 						"authors": [
@@ -19262,7 +19262,7 @@
 					],
 					"description": "To the north of the [Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains) lies the Shattered Wastes, a plain of jagged, broken ice.\n\nNo one knows the bounds of this land or what lies beyond. No [Ironlanders](id:classic/collections/npcs/ironlanders) dwell here, and only a handful have explored the passage into the Wastes through the Veils. Those who survived the journey returned with stories of unimaginable cold and things moving beneath the ice.",
 					"quest_starter": "The traveler returned from his journey into the Shattered Wastes with dead, frostbitten hands and extraordinary stories. The others scoff at him, but you believe. Why? What does he tell you? What compels you to see for yourself?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 121,
 						"authors": [
@@ -19276,7 +19276,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"authors": [
 					{
@@ -19366,7 +19366,7 @@
 							"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 60,
 						"authors": [
@@ -19450,7 +19450,7 @@
 							"text": "On a __miss__, you fail or your assumptions betray you. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 61,
 						"authors": [
@@ -19493,7 +19493,7 @@
 							"text": "On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 62,
 						"authors": [
@@ -19550,7 +19550,7 @@
 							"text": "On a __miss__, your aid is ineffective. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 63,
 						"authors": [
@@ -19593,7 +19593,7 @@
 							"text": "On a __miss__, you find nothing helpful. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 63,
 						"authors": [
@@ -19636,7 +19636,7 @@
 							"text": "On a __miss__, you take no comfort. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 64,
 						"authors": [
@@ -19679,7 +19679,7 @@
 							"text": "On a __miss__, you are waylaid by a perilous event. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 65,
 						"authors": [
@@ -19724,7 +19724,7 @@
 							"text": "On a __miss__, you have gone hopelessly astray, your objective is lost to you, or you were misled about your destination. If your journey continues, clear all but one filled progress, and raise the journey’s rank by one (if not already epic)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 68,
 						"authors": [
@@ -19738,7 +19738,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 60,
 				"authors": [
@@ -19807,7 +19807,7 @@
 							"text": "On a __miss__, they refuse or make a demand which costs you greatly. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 69,
 						"authors": [
@@ -19850,7 +19850,7 @@
 							"text": "On a __miss__, you find no help here. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 71,
 						"authors": [
@@ -19893,7 +19893,7 @@
 							"text": "On a __miss__, you begin the duel at a disadvantage. Your foe has initiative. [Pay the Price](id:classic/moves/fate/pay_the_price).\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 73,
 						"authors": [
@@ -19936,7 +19936,7 @@
 							"text": "On a __miss__, they reject you. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 74,
 						"authors": [
@@ -19979,7 +19979,7 @@
 							"text": "On a __miss__, clear the bond and [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 75,
 						"authors": [
@@ -20002,7 +20002,7 @@
 					},
 					"text": "When __you [Secure an Advantage](id:classic/moves/adventure/secure_an_advantage) in direct support of an ally__, and score a hit, they (instead of you) can take the benefits of the move. If you are in combat and score a strong hit, you and your ally have initiative.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 76,
 						"authors": [
@@ -20044,7 +20044,7 @@
 							"text": "On a __miss__, your fears are realized."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 77,
 						"authors": [
@@ -20058,7 +20058,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 69,
 				"authors": [
@@ -20127,7 +20127,7 @@
 							"text": "On a __miss__, combat begins with you at a disadvantage. [Pay the Price](id:classic/moves/fate/pay_the_price). Your foe has initiative."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 78,
 						"authors": [
@@ -20181,7 +20181,7 @@
 							"text": "On a __miss__, your attack fails and you must [Pay the Price](id:classic/moves/fate/pay_the_price). Your foe has initiative."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 78,
 						"authors": [
@@ -20235,7 +20235,7 @@
 							"text": "On a __miss__, you are outmatched and must [Pay the Price](id:classic/moves/fate/pay_the_price). Your foe has initiative."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 80,
 						"authors": [
@@ -20258,7 +20258,7 @@
 					},
 					"text": "Once per fight, when you __risk it all__, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. [Pay the Price](id:classic/moves/fate/pay_the_price).",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 81,
 						"authors": [
@@ -20303,7 +20303,7 @@
 							"text": "On a __miss__, you have lost this fight. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 82,
 						"authors": [
@@ -20387,7 +20387,7 @@
 							"text": "On a __miss__, you are defeated and the objective is lost to you. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 84,
 						"authors": [
@@ -20401,7 +20401,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 78,
 				"authors": [
@@ -20454,7 +20454,7 @@
 						}
 					},
 					"oracles": ["classic/oracles/moves/endure_harm"],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 91,
 						"authors": [
@@ -20497,7 +20497,7 @@
 							"text": "On a __miss__, you are dead."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 93,
 						"authors": [
@@ -20545,7 +20545,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two.\n\nIf you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 94,
 						"authors": [
@@ -20593,7 +20593,7 @@
 						}
 					},
 					"oracles": ["classic/oracles/moves/endure_stress"],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 95,
 						"authors": [
@@ -20636,7 +20636,7 @@
 							"text": "On a __miss__, you succumb to despair or horror and are lost."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 96,
 						"authors": [
@@ -20659,7 +20659,7 @@
 					},
 					"text": "When __your supply is exhausted__ (reduced to 0), mark unprepared. If you suffer additional -supply while unprepared, you must exchange each additional -supply for any combination of -health, -spirit or -momentum as appropriate to the circumstances.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 97,
 						"authors": [
@@ -20682,7 +20682,7 @@
 					},
 					"text": "When __your momentum is at its minimum__ (-6), and you suffer additional -momentum, choose one.\n\n  * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.\n  * Envision an event or discovery ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional _momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 97,
 						"authors": [
@@ -20696,7 +20696,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 90,
 				"authors": [
@@ -20744,7 +20744,7 @@
 							"text": "On a __miss__, you face a significant obstacle before you can begin your quest. Envision what stands in your way ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 98,
 						"authors": [
@@ -20767,7 +20767,7 @@
 					},
 					"text": "When __you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item__, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 100,
 						"authors": [
@@ -20812,7 +20812,7 @@
 							"text": "On a __miss__, your quest is undone. Envision what happens ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You recommit: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).\n  * You give up: [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 101,
 						"authors": [
@@ -20835,7 +20835,7 @@
 					},
 					"text": "When __you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow and [Endure Stress](id:classic/moves/suffer/endure_stress). You suffer _spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 102,
 						"authors": [
@@ -20858,7 +20858,7 @@
 					},
 					"text": "When __you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 103,
 						"authors": [
@@ -20872,7 +20872,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 98,
 				"authors": [
@@ -20902,7 +20902,7 @@
 					"text": "When __you suffer the outcome of a move__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\n{{table:classic/oracles/moves/pay_the_price}}",
 					"outcomes": null,
 					"oracles": ["classic/oracles/moves/pay_the_price"],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 105,
 						"authors": [
@@ -20932,7 +20932,7 @@
 						"classic/oracles/moves/ask_the_oracle/likely",
 						"classic/oracles/moves/ask_the_oracle/almost_certain"
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 107,
 						"authors": [
@@ -20946,7 +20946,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 98,
 				"authors": [
@@ -20982,7 +20982,7 @@
 					"tactics": ["Spring from hiding", "Ferocious attacks"],
 					"description": "Another people sailed to the Ironlands from the [Old World](id:classic/truths/old_world) long before our kin settled here. Something happened. Something changed them.\n\nWhether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.\n\nWe fear the broken for their savagery. But, more than this, we fear them as a dark portent of what we might one day become.",
 					"quest_starter": "Years ago, an Ironlander child was taken by a broken tribe. Now they are seen living among them. What is your connection to this person? Can they be brought home, or are they forever lost?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 138,
 						"authors": [
@@ -21009,7 +21009,7 @@
 					"tactics": ["Desperate defense", "Stand together"],
 					"description": "Most of us in the Ironlands are common folk. We are farmers, laborers, crafters, sailors, and traders. When trouble comes, we know which way the pointy end goes and we stand together to protect our homes and kin.",
 					"quest_starter": "Two prominent families are at odds. What is the source of the conflict? What is your relationship to them? What danger threatens to destroy their community if they can’t put aside their petty squabble?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 139,
 						"authors": [
@@ -21036,7 +21036,7 @@
 					"tactics": ["Set traps", "Keep to the shadows", "Deadly shot"],
 					"description": "Hunters face brutal weather, difficult terrain, dangerous [animals](id:classic/collections/npcs/animals), and worse. Many never return from their hunts. Others return, but are forever changed.",
 					"quest_starter": "A hunter returns to her village, panic-stricken and pleading for help. The rest of her party is still out there. What happened to them?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 139,
 						"authors": [
@@ -21063,7 +21063,7 @@
 					],
 					"description": "Some say you can tell a mystic by looking them in the eye. They walk in two worlds, and their eyes shimmer with that dark reflection of realms beyond our own. We call it the sight. Some hold that darkness in check. Others are consumed by it.",
 					"quest_starter": "A mystic returns to their home after a years-long journey. They are changed. What new power or knowledge do now they wield? What do they seek to do with it? Why do you oppose them?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 140,
 						"authors": [
@@ -21091,7 +21091,7 @@
 					"description": "Raiders survive by seizing what they need from others. Our grain. Our meat. Our animals. Our iron. They’ll take it all, and leave us facing the long winter with nothing to sustain us but prayers to indifferent gods.",
 					"quest_starter": "You were raised as a raider, born to battle, but long ago left that life. Troubled by your past, you vow to wipe this powerful clan from the Ironlands. How can you defeat them? What will happen when you must face your former shield-kin?",
 					"your_truth": "A large raider clan is known and feared throughout the Ironlands. What is it called? Who leads it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 140,
 						"authors": [
@@ -21119,7 +21119,7 @@
 					"description": "Some Ironlanders, through strength of arms, set themselves apart from the common rabble. They are trained to fight, or simply born to it. For them, a sword, spear or axe is as natural a tool as any hammer or spade.",
 					"quest_starter": "A legendary warrior, now well past their prime, swears to face a daunting foe in one final battle. What help do they ask of you and why? Who is their enemy?",
 					"your_truth": "Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](id:classic/truths/old_world)? If you carry a shield, what is painted on yours?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 141,
 						"authors": [
@@ -21133,7 +21133,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 138,
 				"authors": [
@@ -21175,7 +21175,7 @@
 					"description": "Elves are strange beings of the forest, seldom seen beyond the ancient woods of the [Deep Wilds](id:classic/atlas/ironlands/deep_wilds). They are fiercely protective of their lands and suspicious of humans. Their scouts patrol the borderlands, riding the fearsome mounts we call [gaunts](id:classic/npcs/animals/gaunt). Others of their kind watch us from the shadow of the deep woods, spears and bow at the ready. Some say elven mystics can bind the animals and beasts of the forest to aid in the defense of the Wilds.\n\nA few warn that the elves are biding their time, readying the attack which will drive us from these lands.",
 					"quest_starter": "The leader of an Ironlander community seeks an audience with the elves. For what purpose? Why are you compelled to help?",
 					"your_truth": "Elves conceal their faces behind ornate wooden masks. What do these masks signify?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 142,
 						"authors": [
@@ -21208,7 +21208,7 @@
 					"description": "Giants dwell in the [Tempest Hills](id:classic/atlas/ironlands/tempest_hills) and [Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains). They live a nomadic life alone or in small family units, herding oxen, mountain goats, and sheep. In their own language they are called the Jokul.\n\nMany Ironlanders misinterpret their quiet nature for dullness, but giants are keenly intelligent and observant. They have a great respect for life, even for our kind, and will use trickery and negotiation to avoid a fight. When they are left without other options, an enraged giant is a devastating, relentless force.",
 					"quest_starter": "A pair of giants are raiding human settlements, stealing supplies and livestock. With winter coming, the survival of those settlements is threatened. What is driving the giants down from the hills?",
 					"your_truth": "Every fifth spring, the giant clans meet for a gathering. There, the memory-keepers sing of a great giant hero, revered by all. Who is this hero?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 143,
 						"authors": [
@@ -21235,7 +21235,7 @@
 					"tactics": ["Control the elements", "Destroy with primal rage"],
 					"description": "The primordials, said to be the vestigial spirits of long-forgotten gods, are the most ancient of the firstborn. Each embodies some aspect of the natural world, bound in a form which is a crude mimicry of a human or large animal. A river primordial is a mass of rock, gravel, and flowing water. A forest primordial is comprised of wood, earth, rocks, and plants. A mountain primordial is a lumbering being of glacier stone and ice. A fire primordial, depending on its mood, might take form as embers, ash and smoke—or as a raging pyre.\n\nThey range in size from the height of an Ironlander to half-again as tall as a [giant](id:classic/npcs/firstborn/giant). Rumors persist of primordials who dwell in the deepest parts of the Wilds, or high in the ranges of the [Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains), who are as tall as an ancient tree. Beyond, some suggest, in the [Shattered Wastes](id:classic/atlas/ironlands/shattered_wastes), live primordials who tower into the clouds. Is the sound of distant thunder sometimes the footfalls of mountain-sized primordials who dwell beyond the edges of the known world?\n\nPrimordials are solitary beings and as unpredictable as the natural forces they personify. They might ignore you. They might lurk at a distance, as if observing you. Or, they might attack. They do not speak in any language we can understand. Some suggest they have no intelligence, and are merely a manifestation of the natural world, no different than a winter storm.\n\nHow do you kill an primordial? Most scoff at the idea. You are just as likely to kill the rain or the sea. A mystic might tell you to use a weapon imbued with elemental power. Don’t trust them. If you see a primordial, keep your distance. Better yet, run.",
 					"quest_starter": "In the dead of winter, a fire primordial is razing homes and burning a nearby wood. At night, orange flames light the sky. What can be done to stop this destruction?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 144,
 						"authors": [
@@ -21264,7 +21264,7 @@
 					"tactics": ["Be sneaky", "Bite and claw", "Run and hide"],
 					"description": "Trolls mostly live in the [Flooded Land](id:classic/atlas/ironlands/flooded_lands), but it’s not unusual to encounter one in the [Hinterlands](id:classic/atlas/ironlands/hinterlands) or even in the southern reaches of the [Havens](id:classic/atlas/ironlands/havens). They are solitary creatures, wary of contact with Ironlanders but likely to attack if scared or provoked.\n\nThey move with their back hunched, often skulking on all four gangly limbs. When they stand straight they are much taller than humans—nearly as tall as a giant. Their skin is a sickly pale gray, but they can camouflage themselves by changing it to match their environment.\n\nTrolls collect objects of all sorts, and particularly value Ironlander trinkets. They are tormented by the fear of others stealing their hoard, and are constantly seeking out new, better hiding places. The items are mostly junk to anyone but a troll, but occasionally an object of real value finds its way into the dregs.",
 					"quest_starter": "The villagers tolerate the troll who lives nearby because its presence serves to dissuade a greater threat. They even donate items for its hoard, and put up with its occasional thievery. But now, the troll is missing. What is the looming threat the troll helped avert?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 145,
 						"authors": [
@@ -21299,7 +21299,7 @@
 					"description": "The varou are humanoid beings who dwell within the [Deep Wilds](id:classic/atlas/ironlands/deep_wilds) and in the woods of the [Hinterlands](id:classic/atlas/ironlands/hinterlands). They have fierce, wolf-like features and are broad-shouldered and a head taller than the average Ironlander. Their long hair is ornately groomed and decorated with beads and other trinkets.\n\nThe varou value territory above all things. They often war amongst themselves and against the [elves](id:classic/npcs/firstborn/elf) to gain or defend holdings. They mark their claims by carving clan symbols into trees. Only the foolish ignore the warning of these border signs. Several of our settlements—built too close to varou territory—are now abandoned ruins bearing the mark of a victorious varou clan.",
 					"quest_starter": "A varou clan has carved their mark into the trees surrounding an Ironlander community, claiming it as their territory. An attack is surely imminent. What will you do to prevent it?",
 					"your_truth": "A young varou receives their keth—a curved dagger—before undergoing a rite of passage. What must they do to take their place among the adults of the clan?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 146,
 						"authors": [
@@ -21313,7 +21313,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 142,
 				"authors": [
@@ -21342,7 +21342,7 @@
 					"tactics": ["Roar", "Pin down", "Maul with savage force"],
 					"description": "Most bears are not aggressive. They avoid Ironlanders and are unlikely to attack unless they see you as a threat.\n\nThere are exceptions. The silver bears of the [Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains), which sometimes range as far south as the [Tempest Hills](id:classic/atlas/ironlands/tempest_hills), are territorial, powerful, and aggressive. Likewise, the ash bear, encountered in woodlands through the Ironlands, is known for its ferocity and cunning. If either catch the scent of you on the wind, they are likely to hunt you down and attack.",
 					"quest_starter": "A group of hunters felled a large ash bear with several arrows. It tumbled into a river and was swept away. Unfortunately, the bear they thought dead is now stalking the group as they make their way back home.",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 147,
 						"authors": [
@@ -21365,7 +21365,7 @@
 					"tactics": ["Charge and gore", "Circle and attack again"],
 					"description": "In the [Old World](id:classic/truths/old_world), wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.",
 					"quest_starter": "A boar hunt ends in tragedy when an Ironlander is gored and grievously\nwounded. How do you know this person? What terrible truth do they\nreveal as they lay dying?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 148,
 						"authors": [
@@ -21393,7 +21393,7 @@
 					"description": "A gaunt is a creature unique to the Ironlands. They maneuver across the rough, dense terrain of the [Deep Wilds](id:classic/atlas/ironlands/deep_wilds) and [Hinterlands](id:classic/atlas/ironlands/hinterlands) with uncanny speed and grace. This makes them ideal as mounts for the [elves](id:classic/npcs/firstborn/elf), who breed and train them.\n\nA gaunt will not usually act aggressively without provocation, but they are as deadly as the fiercest warhorse under the command of a talented rider.",
 					"quest_starter": "Villages in the [Hinterlands](id:classic/atlas/ironlands/hinterlands) have fallen prey to a large band of gaunt-riding elves. They attack with sudden and violent force, and are gone before any sort of defense can be mustered. Their leader, a warrior of unmatched skill, rides a distinctive white gaunt. What has driven these elves to strike out against the Ironlanders?",
 					"your_truth": "Some gaunts live in wild herds. They once roamed the wilds in countless numbers, but few now remain. What has happened to thin these herds so dramatically?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 148,
 						"authors": [
@@ -21416,7 +21416,7 @@
 					"tactics": ["Swarm and bite"],
 					"description": "The marsh rat is a rodent of unusual size. They are all-too-common in the [Flooded Lands](id:classic/atlas/ironlands/flooded_lands) or in wetlands within the [Hinterlands](id:classic/atlas/ironlands/hinterlands) and [Deep Wilds](id:classic/atlas/ironlands/deep_wilds).\n\nThey will eat almost anything, including carrion and waste. Our grain stores and pantries are an easy target for a hungry pack, who will dig tunnels or chew through walls to get at the food. They will also try to make a meal out of living prey—deer, cattle, or even an unlucky Ironlander. It is said that a swarm of marsh rats can kill a horse and reduce it to bone in a matter of hours.",
 					"quest_starter": "Marsh rats raided the stores of an isolated settlement. How will you ensure the Ironlanders have enough food to survive the coming winter?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 149,
 						"authors": [
@@ -21439,7 +21439,7 @@
 					"tactics": ["Stalk", "Pack rush", "Drag to the ground"],
 					"description": "The Ironlands are home to several breeds of wolves. Most are not aggressive and stay clear of settlements and travelers. Despite that, attacks against Ironlanders are not unknown. A harsh winter and insufficient prey can drive a pack to hunt livestock or even an unwary Ironlander. As night falls we hear their howls, and hope they are well fed.",
 					"quest_starter": "You find the grisly remains of a pack of wolves. All are dead, even the cubs. What caused this? Why is it a harbinger of a greater danger?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 150,
 						"authors": [
@@ -21453,7 +21453,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 147,
 				"authors": [
@@ -21492,7 +21492,7 @@
 					"description": "Basilisks dwell in the [Flooded Lands](id:classic/atlas/ironlands/flooded_lands), lurking in the murky waters of the swamps or within marshy thickets. There, they wait patiently for prey. They regularly feed on marsh rats or deer, but will eagerly make a meal out of a passing Ironlander.",
 					"quest_starter": "The adventurer set out to slay a basilisk, only to become its next meal. Because the serpent digests its prey slowly, the remains of the adventurer are still undoubtedly within the beast—along with the heirloom sword he wielded. What is your relationship to this person? Why is recovering the sword so important to you?",
 					"your_truth": "Some piece of a basilisk anatomy is prized by the Ironlanders. What is it? How is it used?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 151,
 						"authors": [
@@ -21519,7 +21519,7 @@
 					"description": "Elder beasts—wolves, bears and boars—are huge, monstrous versions of their common kin. They are primarily solitary creatures, though elder wolves have been known to lead a pack of common wolves. They are not aggressive, but are protective of their lands and the creatures within it. Some say they are avatars of the old gods and as long-lived as the oldest trees.",
 					"quest_starter": "An elder wolf, white as snow, appears to you in a dream. When you wake, the memory of its piercing gaze lingers. Is the vision a dark portent or a promise? Why are you compelled to seek this beast out?",
 					"your_truth": "What people of the Ironlands revere and protect the elder beasts? What group hunts them and why?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 152,
 						"authors": [
@@ -21546,7 +21546,7 @@
 					"tactics": ["Drop atop prey", "Bite with pincers", "Trap in webbing"],
 					"description": "These gigantic creatures are a menace in woodlands throughout the Ironlands. Despite their size, they move through high branches with unnatural grace, dropping suddenly to grapple their prey and entomb them in webbing.",
 					"quest_starter": "A brood of harrow spiders attacked a contingent of Ironlanders. The single survivor tells of the horrifying encounter and the monstrous brood mother—a harrow spider larger and stronger than a warhorse. What was this group’s mission? What important item are you sworn to recover from one of the victims?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 153,
 						"authors": [
@@ -21579,7 +21579,7 @@
 					"description": "These massive sea beasts lurk in the darkness of the deepest fjords and in the abyssal depths beyond the [Barrier Islands](id:classic/atlas/ironlands/barrier_islands). They sometimes surface to hunt within shallower waters. They will indiscriminately destroy any Ironlander craft which stray to close to their hunting grounds.\n\nWatchful sailors might catch sight of a leviathan circling their boat, studying them, in the moments before it attacks. Their dagger-shaped head is as tough and destructive as any battering ram, able to shatter a ship in a single blow.",
 					"quest_starter": "A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an [Old World](id:classic/truths/old_world) artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?",
 					"your_truth": "Some coastal people believe leviathans are a manifestation of an ancient spirit. What is it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 154,
 						"authors": [
@@ -21610,7 +21610,7 @@
 					"tactics": ["Form a protective circle", "Charge", "Trample", "Gore"],
 					"description": "These beasts resemble the elephants of the [Old World](id:classic/truths/old_world)’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the [Tempest Hills](id:classic/atlas/ironlands/tempest_hills), migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.\n\nA herd of mammoths is an amazing and humbling sight, but smart Ironlanders keep their distance and stay upwind.",
 					"quest_starter": "A mammoth calf wanders alone into an Ironlander settlement. Why do you swear to reunite it with its herd?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 155,
 						"authors": [
@@ -21644,7 +21644,7 @@
 					"description": "There are several breeds of wyverns in the Ironlands. To the west, tawny wyverns nest in the cliffs of the [Barrier Islands](id:classic/atlas/ironlands/barrier_islands) and [Ragged Coast](id:classic/atlas/ironlands/ragged_coast), diving for fish in the surrounding waters. Inland, the verdant wyverns dwell in forested regions. The largest and most fearsome breed, the iron wyverns, hunt among the [Tempest Hills](id:classic/atlas/ironlands/tempest_hills) and along the flanks of the [Veiled Mountains](classic/atlas/ironlands/veiled_mountains).\n\nAll wyverns have wolfish heads with wide jaws, thick bodies, and sinuous tails. They have short hind limbs and elongated forelimbs which extend along their wings. In flight, they are a terrifying but awe-inspiring creature. On the ground, they lumber heavily on all four limbs, their wings folded back, jaws agape, gaze fixed on their prey. They are the grim cruelty of the Ironlands given form. They are death.",
 					"quest_starter": "Ancient cave paintings in the [Tempest Hills](id:classic/atlas/ironlands/tempest_hills) show humanoids riding atop wyverns. Perhaps these beasts can be tamed. Why are you obsessed with this possibility?",
 					"your_truth": "Rumors persist of a wyvern graveyard where wyverns instinctively go when their death is near. Where is this supposedly located? In what way do Ironlanders make use of wyvern bones?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 156,
 						"authors": [
@@ -21658,7 +21658,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 151,
 				"authors": [
@@ -21695,7 +21695,7 @@
 					],
 					"description": "Bonewalkers are human remains given unnatural life. The source of the dark energy that animates them is a mystery. Some say it is the will of dark gods. Some say an ancient evil permeates this land and seeps into porous bones of the dead. Or, perhaps it is the work of corrupt mystics.\n\nBonewalkers usually roam the location of their final resting place—a burial site, a cursed battlefield, or a settlement blighted by disease or violence. Nothing remains of their previous selves. They are soulless monsters driven only to destroy the living.",
 					"quest_starter": "A horde of bonewalkers marches relentlessly towards the [Havens](id:classic/atlas/ironlands/havens). What dark force has gathered this army of the undead? How will you stop them?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 157,
 						"authors": [
@@ -21723,7 +21723,7 @@
 					"description": "Some who fall prey to the long winters or the wild storms of the northern regions are given a horrible new life as the frostbound. These animated corpses are cursed to forever seek out the warmth their death took from them.",
 					"quest_starter": "A group of frostbound lurk along a mountain trail. This path is the only safe route to the lowlands from a mining village.",
 					"your_truth": "Can creatures other than Ironlanders become frostbound? If so, undeath gives them uncanny strength. Make them one rank higher than their living form.",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 158,
 						"authors": [
@@ -21753,7 +21753,7 @@
 					],
 					"description": "A chimera is the corrupted form of animal flesh given unnatural life. Its body is a collection of various dead creatures, fused together into a twisted, massive entity which knows only pain and hunger. When a dozen blood-tinged eyes focus on you, when its gibbering mouths open at once to scream, your only hope is a quick death.",
 					"quest_starter": "Multiple chimera have spawned from the heart of a deep wood. What evil is at work there?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 158,
 						"authors": [
@@ -21786,7 +21786,7 @@
 					"description": "Haunts are restless spirits bound to this world by a traumatic or unjust death. They may be tied to a location, an object, or even a person.\n\nA haunt who manifests as a physical being can be dispelled by overcoming them in a fight, but only temporarily. They will only be at peace when their death is avenged or resolved. Some say a haunt can be banished, but these rituals are a lost art.",
 					"quest_starter": "You are plagued by a haunt. Who is it? What do they want of you?",
 					"your_truth": "When someone dies a violent death, or at the hand of another, they are often laid to rest using a specific, ceremonial rite. This, it is believed, prevents them from returning as a haunt. What is this ritual? What rare material is required?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 159,
 						"authors": [
@@ -21818,7 +21818,7 @@
 					"description": "It is said that [elves](id:classic/npcs/firstborn/elf) who die an unjust death or have cause to seek retribution can rise as a hollow. Their form is a rippling mass of dead leaves, plants, soil, carrion, and insects. They move with a nightmarish, shambling gait. Their face is the wooden mask they wore in life. Their voice is the rattle of the wind through dry leaves.\n\nAs with [haunts](id:classic/npcs/horrors/haunt), they can be temporarily defeated but cannot be killed by physical means. They are a relentless force. They will not stop until they enact their vengeance.",
 					"quest_starter": "A hollow terrorizes an Ironlander village. What does it seek? What will you do to stop it?",
 					"your_truth": "How do elven communities view a risen hollow? Are they seen as spirits of righteous vengeance or as dangerous aberrations?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 160,
 						"authors": [
@@ -21848,7 +21848,7 @@
 					],
 					"description": "Some vows are held so fiercely that they survive even after death. An iron revenant is an incorporeal force of furious resolve, the unfinished vow of an Ironsworn given horrible form as a construct of metal.\n\nAttacks may slow them down or temporarily break apart their armored form, but they have no flesh to pierce and cannot be killed. An iron revenant will not stop until their vow is fulfilled.",
 					"quest_starter": "Someone you knew has taken form as an iron revenant. Who is it? What is their vow?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 161,
 						"authors": [
@@ -21877,7 +21877,7 @@
 					"description": "A sodden is the restless spirit of someone who drowned or was put to rest in water. They can appear in seas, rivers, lakes, ponds or marshes. It is said that their loneliness compels them to draw living victims into their watery lairs.\n\nA sodden is not confined to its resting place. In fact, some believe that surviving an encounter with a sodden will leave you vulnerable around any body of water until the spirit finishes its work.",
 					"quest_starter": "Someone you know died and appears to you as a sodden. Who are they? Can anything be done to put them to rest?",
 					"your_truth": "Many Ironlanders habitually perform a quick ritual when near a body of water, believing it keeps any lurking sodden at bay. What do they do? Is there any truth to this custom?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn Rulebook",
 						"page": 162,
 						"authors": [
@@ -21891,7 +21891,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 157,
 				"authors": [
@@ -21930,7 +21930,7 @@
 					"quest_starter": "Decades ago, the exodus ended. Since then, no ships have sailed here from the Old World. Until now. Word comes of a single ship, newly arrived across the vast ocean, grounded on the rocks of the Barrier Islands. When you hear the name of this ship, you swear to uncover the fate of its passengers. Why is it so important to you?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 123,
 				"authors": [
@@ -21963,7 +21963,7 @@
 					"quest_starter": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 124,
 				"authors": [
@@ -21996,7 +21996,7 @@
 					"quest_starter": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you."
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 124,
 				"authors": [
@@ -22029,7 +22029,7 @@
 					"quest_starter": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 125,
 				"authors": [
@@ -22062,7 +22062,7 @@
 					"quest_starter": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two when an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 125,
 				"authors": [
@@ -22095,7 +22095,7 @@
 					"quest_starter": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 126,
 				"authors": [
@@ -22128,7 +22128,7 @@
 					"quest_starter": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 127,
 				"authors": [
@@ -22161,7 +22161,7 @@
 					"quest_starter": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 127,
 				"authors": [
@@ -22194,7 +22194,7 @@
 					"quest_starter": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 128,
 				"authors": [
@@ -22227,7 +22227,7 @@
 					"quest_starter": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 128,
 				"authors": [
@@ -22260,7 +22260,7 @@
 					"quest_starter": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn Rulebook",
 				"page": 129,
 				"authors": [

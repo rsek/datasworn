@@ -377,6 +377,12 @@ class Asset:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     abilities: 'List[AssetAbility]'
     category: 'Label'
     """
@@ -400,12 +406,6 @@ class Asset:
     Most assets only benefit to their owner, but certain assets (like
     Starforged's module and command vehicle assets) are shared amongst the
     player's allies, too.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     attachments: 'Optional[AssetAttachment]'
@@ -450,12 +450,12 @@ class Asset:
     def from_json_data(cls, data: Any) -> 'Asset':
         return cls(
             _from_json_data(AssetID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(List[AssetAbility], data.get("abilities")),
             _from_json_data(Label, data.get("category")),
             _from_json_data(bool, data.get("count_as_impact")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(bool, data.get("shared")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[AssetAttachment], data.get("attachments")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -470,12 +470,12 @@ class Asset:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["abilities"] = _to_json_data(self.abilities)
         data["category"] = _to_json_data(self.category)
         data["count_as_impact"] = _to_json_data(self.count_as_impact)
         data["name"] = _to_json_data(self.name)
         data["shared"] = _to_json_data(self.shared)
-        data["source"] = _to_json_data(self.source)
         if self.attachments is not None:
              data["attachments"] = _to_json_data(self.attachments)
         if self.canonical_name is not None:
@@ -878,15 +878,15 @@ class AssetCollection:
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
     """
 
     canonical_name: 'Optional[Label]'
@@ -939,8 +939,8 @@ class AssetCollection:
     def from_json_data(cls, data: Any) -> 'AssetCollection':
         return cls(
             _from_json_data(AssetCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Asset]], data.get("contents")),
@@ -957,8 +957,8 @@ class AssetCollection:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -1782,15 +1782,15 @@ class Atlas:
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
     """
 
     canonical_name: 'Optional[Label]'
@@ -1844,8 +1844,8 @@ class Atlas:
     def from_json_data(cls, data: Any) -> 'Atlas':
         return cls(
             _from_json_data(AtlasID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -1863,8 +1863,8 @@ class Atlas:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.collections is not None:
@@ -1903,17 +1903,17 @@ class AtlasEntry:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     description: 'MarkdownString'
     features: 'List[MarkdownString]'
     name: 'Label'
     """
     The primary name/label for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     canonical_name: 'Optional[Label]'
@@ -1932,10 +1932,10 @@ class AtlasEntry:
     def from_json_data(cls, data: Any) -> 'AtlasEntry':
         return cls(
             _from_json_data(AtlasEntryID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(List[MarkdownString], data.get("features")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -1947,10 +1947,10 @@ class AtlasEntry:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["description"] = _to_json_data(self.description)
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.quest_starter is not None:
@@ -2147,6 +2147,12 @@ class DelveSite:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     denizens: 'List[DelveSiteDenizen]'
     description: 'MarkdownString'
     domain: 'DelveSiteDomainID'
@@ -2156,12 +2162,6 @@ class DelveSite:
     """
 
     rank: 'ChallengeRank'
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
-    """
-
     theme: 'DelveSiteThemeID'
     canonical_name: 'Optional[Label]'
     """
@@ -2189,12 +2189,12 @@ class DelveSite:
     def from_json_data(cls, data: Any) -> 'DelveSite':
         return cls(
             _from_json_data(DelveSiteID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(List[DelveSiteDenizen], data.get("denizens")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(DelveSiteDomainID, data.get("domain")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(ChallengeRank, data.get("rank")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(DelveSiteThemeID, data.get("theme")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[str], data.get("extra_card")),
@@ -2207,12 +2207,12 @@ class DelveSite:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["denizens"] = _to_json_data(self.denizens)
         data["description"] = _to_json_data(self.description)
         data["domain"] = _to_json_data(self.domain)
         data["name"] = _to_json_data(self.name)
         data["rank"] = _to_json_data(self.rank)
-        data["source"] = _to_json_data(self.source)
         data["theme"] = _to_json_data(self.theme)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
@@ -2307,17 +2307,17 @@ class DelveSiteDomain:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     dangers: 'List[DelveSiteDomainDangerRow]'
     features: 'List[DelveSiteDomainFeatureRow]'
     name: 'Label'
     """
     The primary name/label for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     summary: 'MarkdownString'
@@ -2345,10 +2345,10 @@ class DelveSiteDomain:
     def from_json_data(cls, data: Any) -> 'DelveSiteDomain':
         return cls(
             _from_json_data(DelveSiteDomainID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(List[DelveSiteDomainDangerRow], data.get("dangers")),
             _from_json_data(List[DelveSiteDomainFeatureRow], data.get("features")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("summary")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
@@ -2361,10 +2361,10 @@ class DelveSiteDomain:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["dangers"] = _to_json_data(self.dangers)
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         data["summary"] = _to_json_data(self.summary)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
@@ -2573,17 +2573,17 @@ class DelveSiteTheme:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     dangers: 'List[DelveSiteThemeDangerRow]'
     features: 'List[DelveSiteThemeFeatureRow]'
     name: 'Label'
     """
     The primary name/label for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     summary: 'MarkdownString'
@@ -2602,10 +2602,10 @@ class DelveSiteTheme:
     def from_json_data(cls, data: Any) -> 'DelveSiteTheme':
         return cls(
             _from_json_data(DelveSiteThemeID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(List[DelveSiteThemeDangerRow], data.get("dangers")),
             _from_json_data(List[DelveSiteThemeFeatureRow], data.get("features")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("summary")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
@@ -2617,10 +2617,10 @@ class DelveSiteTheme:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["dangers"] = _to_json_data(self.dangers)
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         data["summary"] = _to_json_data(self.summary)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
@@ -3139,18 +3139,18 @@ class MoveActionRoll(Move):
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
-    outcomes: 'MoveOutcomes'
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
     """
 
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    outcomes: 'MoveOutcomes'
     text: 'MarkdownString'
     """
     The complete rules text of the move.
@@ -3188,9 +3188,9 @@ class MoveActionRoll(Move):
         return cls(
             "action_roll",
             _from_json_data(MoveID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerActionRoll, data.get("trigger")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -3203,9 +3203,9 @@ class MoveActionRoll(Move):
     def to_json_data(self) -> Any:
         data = { "roll_type": "action_roll" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
         data["outcomes"] = _to_json_data(self.outcomes)
-        data["source"] = _to_json_data(self.source)
         data["text"] = _to_json_data(self.text)
         data["trigger"] = _to_json_data(self.trigger)
         if self.canonical_name is not None:
@@ -3231,15 +3231,15 @@ class MoveNoRoll(Move):
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
     """
 
     text: 'MarkdownString'
@@ -3279,8 +3279,8 @@ class MoveNoRoll(Move):
         return cls(
             "no_roll",
             _from_json_data(MoveID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerNoRoll, data.get("trigger")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -3293,8 +3293,8 @@ class MoveNoRoll(Move):
     def to_json_data(self) -> Any:
         data = { "roll_type": "no_roll" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         data["text"] = _to_json_data(self.text)
         data["trigger"] = _to_json_data(self.trigger)
         if self.canonical_name is not None:
@@ -3322,18 +3322,18 @@ class MoveProgressRoll(Move):
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
-    outcomes: 'MoveOutcomes'
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
     """
 
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    outcomes: 'MoveOutcomes'
     text: 'MarkdownString'
     """
     The complete rules text of the move.
@@ -3376,9 +3376,9 @@ class MoveProgressRoll(Move):
         return cls(
             "progress_roll",
             _from_json_data(MoveID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(ProgressTrackTypeInfo, data.get("tracks")),
             _from_json_data(TriggerProgressRoll, data.get("trigger")),
@@ -3392,9 +3392,9 @@ class MoveProgressRoll(Move):
     def to_json_data(self) -> Any:
         data = { "roll_type": "progress_roll" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
         data["outcomes"] = _to_json_data(self.outcomes)
-        data["source"] = _to_json_data(self.source)
         data["text"] = _to_json_data(self.text)
         data["tracks"] = _to_json_data(self.tracks)
         data["trigger"] = _to_json_data(self.trigger)
@@ -3423,18 +3423,18 @@ class MoveSpecialTrack(Move):
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
-    outcomes: 'MoveOutcomes'
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
     """
 
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    outcomes: 'MoveOutcomes'
     text: 'MarkdownString'
     """
     The complete rules text of the move.
@@ -3472,9 +3472,9 @@ class MoveSpecialTrack(Move):
         return cls(
             "special_track",
             _from_json_data(MoveID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerSpecialTrack, data.get("trigger")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -3487,9 +3487,9 @@ class MoveSpecialTrack(Move):
     def to_json_data(self) -> Any:
         data = { "roll_type": "special_track" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
         data["outcomes"] = _to_json_data(self.outcomes)
-        data["source"] = _to_json_data(self.source)
         data["text"] = _to_json_data(self.text)
         data["trigger"] = _to_json_data(self.trigger)
         if self.canonical_name is not None:
@@ -3511,15 +3511,15 @@ class MoveCategory:
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
     """
 
     canonical_name: 'Optional[Label]'
@@ -3572,8 +3572,8 @@ class MoveCategory:
     def from_json_data(cls, data: Any) -> 'MoveCategory':
         return cls(
             _from_json_data(MoveCategoryID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Move]], data.get("contents")),
@@ -3590,8 +3590,8 @@ class MoveCategory:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -3846,6 +3846,12 @@ class Npc:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     description: 'MarkdownString'
     drives: 'List[MarkdownString]'
     features: 'List[MarkdownString]'
@@ -3858,12 +3864,6 @@ class Npc:
     rank: 'ChallengeRank'
     """
     The suggested challenge rank for this NPC.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     tactics: 'List[MarkdownString]'
@@ -3884,13 +3884,13 @@ class Npc:
     def from_json_data(cls, data: Any) -> 'Npc':
         return cls(
             _from_json_data(NpcID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(List[MarkdownString], data.get("drives")),
             _from_json_data(List[MarkdownString], data.get("features")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(NpcNature, data.get("nature")),
             _from_json_data(ChallengeRank, data.get("rank")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(List[MarkdownString], data.get("tactics")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
@@ -3904,13 +3904,13 @@ class Npc:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["description"] = _to_json_data(self.description)
         data["drives"] = _to_json_data(self.drives)
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
         data["nature"] = _to_json_data(self.nature)
         data["rank"] = _to_json_data(self.rank)
-        data["source"] = _to_json_data(self.source)
         data["tactics"] = _to_json_data(self.tactics)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
@@ -3935,15 +3935,15 @@ class NpcCollection:
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
     """
 
     canonical_name: 'Optional[Label]'
@@ -3996,8 +3996,8 @@ class NpcCollection:
     def from_json_data(cls, data: Any) -> 'NpcCollection':
         return cls(
             _from_json_data(NpcCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Npc]], data.get("contents")),
@@ -4014,8 +4014,8 @@ class NpcCollection:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4220,6 +4220,12 @@ class OracleCollectionTableSharedDetails(OracleCollection):
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     column_labels: 'OracleCollectionTableSharedDetailsColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
@@ -4229,12 +4235,6 @@ class OracleCollectionTableSharedDetails(OracleCollection):
     name: 'Label'
     """
     The primary name/label for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     canonical_name: 'Optional[Label]'
@@ -4288,9 +4288,9 @@ class OracleCollectionTableSharedDetails(OracleCollection):
         return cls(
             "table_shared_details",
             _from_json_data(OracleCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleCollectionTableSharedDetailsColumnLabels, data.get("column_labels")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, OracleColumnDetails]], data.get("contents")),
@@ -4307,9 +4307,9 @@ class OracleCollectionTableSharedDetails(OracleCollection):
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_shared_details" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4366,6 +4366,12 @@ class OracleCollectionTableSharedResults(OracleCollection):
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     column_labels: 'OracleCollectionTableSharedResultsColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
@@ -4375,12 +4381,6 @@ class OracleCollectionTableSharedResults(OracleCollection):
     name: 'Label'
     """
     The primary name/label for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     canonical_name: 'Optional[Label]'
@@ -4434,9 +4434,9 @@ class OracleCollectionTableSharedResults(OracleCollection):
         return cls(
             "table_shared_results",
             _from_json_data(OracleCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleCollectionTableSharedResultsColumnLabels, data.get("column_labels")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, OracleColumnSimple]], data.get("contents")),
@@ -4453,9 +4453,9 @@ class OracleCollectionTableSharedResults(OracleCollection):
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_shared_results" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4513,6 +4513,12 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     column_labels: 'OracleCollectionTableSharedRollsColumnLabels'
     """
     Provides column labels for this table. The `roll` key refers to the roll
@@ -4523,12 +4529,6 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     name: 'Label'
     """
     The primary name/label for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     canonical_name: 'Optional[Label]'
@@ -4582,9 +4582,9 @@ class OracleCollectionTableSharedRolls(OracleCollection):
         return cls(
             "table_shared_rolls",
             _from_json_data(OracleCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleCollectionTableSharedRollsColumnLabels, data.get("column_labels")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, OracleColumnSimple]], data.get("contents")),
@@ -4601,9 +4601,9 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_shared_rolls" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4640,15 +4640,15 @@ class OracleCollectionTables(OracleCollection):
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
     """
 
     canonical_name: 'Optional[Label]'
@@ -4703,8 +4703,8 @@ class OracleCollectionTables(OracleCollection):
         return cls(
             "tables",
             _from_json_data(OracleCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[Dict[str, OracleCollection]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -4722,8 +4722,8 @@ class OracleCollectionTables(OracleCollection):
     def to_json_data(self) -> Any:
         data = { "oracle_type": "tables" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.collections is not None:
@@ -5199,6 +5199,12 @@ class OracleTableRollableTableDetails(OracleTableRollable):
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     column_labels: 'OracleTableRollableTableDetailsColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
@@ -5218,12 +5224,6 @@ class OracleTableRollableTableDetails(OracleTableRollable):
     rows: 'List[OracleTableRowDetails]'
     """
     An array of objects, each representing a single row of the table.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     canonical_name: 'Optional[Label]'
@@ -5274,11 +5274,11 @@ class OracleTableRollableTableDetails(OracleTableRollable):
         return cls(
             "table_details",
             _from_json_data(OracleRollableID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleTableRollableTableDetailsColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[OracleTableRowDetails], data.get("rows")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -5293,11 +5293,11 @@ class OracleTableRollableTableDetails(OracleTableRollable):
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_details" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["dice"] = _to_json_data(self.dice)
         data["name"] = _to_json_data(self.name)
         data["rows"] = _to_json_data(self.rows)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -5371,6 +5371,12 @@ class OracleTableRollableTableSimple(OracleTableRollable):
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     column_labels: 'OracleTableRollableTableSimpleColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
@@ -5390,12 +5396,6 @@ class OracleTableRollableTableSimple(OracleTableRollable):
     rows: 'List[OracleTableRowSimple]'
     """
     An array of objects, each representing a single row of the table.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     canonical_name: 'Optional[Label]'
@@ -5446,11 +5446,11 @@ class OracleTableRollableTableSimple(OracleTableRollable):
         return cls(
             "table_simple",
             _from_json_data(OracleRollableID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleTableRollableTableSimpleColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[OracleTableRowSimple], data.get("rows")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -5465,11 +5465,11 @@ class OracleTableRollableTableSimple(OracleTableRollable):
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_simple" }
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["dice"] = _to_json_data(self.dice)
         data["name"] = _to_json_data(self.name)
         data["rows"] = _to_json_data(self.rows)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -5656,6 +5656,12 @@ class OracleTablesCollection:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     name: 'Label'
     """
     The primary name/label for this item.
@@ -5664,12 +5670,6 @@ class OracleTablesCollection:
     oracle_type: 'OracleTablesCollectionOracleType'
     """
     A grouping of separate tables.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     canonical_name: 'Optional[Label]'
@@ -5723,9 +5723,9 @@ class OracleTablesCollection:
     def from_json_data(cls, data: Any) -> 'OracleTablesCollection':
         return cls(
             _from_json_data(OracleCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleTablesCollectionOracleType, data.get("oracle_type")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[Dict[str, OracleCollection]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -5743,9 +5743,9 @@ class OracleTablesCollection:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
         data["oracle_type"] = _to_json_data(self.oracle_type)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.collections is not None:
@@ -5921,6 +5921,12 @@ class Rarity:
     The unique Datasworn ID for this item.
     """
 
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
     asset: 'AssetID'
     """
     The asset augmented by this rarity.
@@ -5930,12 +5936,6 @@ class Rarity:
     name: 'Label'
     """
     The primary name/label for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
     """
 
     xp_cost: 'int'
@@ -5965,10 +5965,10 @@ class Rarity:
     def from_json_data(cls, data: Any) -> 'Rarity':
         return cls(
             _from_json_data(RarityID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(AssetID, data.get("asset")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(int, data.get("xp_cost")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -5979,10 +5979,10 @@ class Rarity:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["asset"] = _to_json_data(self.asset)
         data["description"] = _to_json_data(self.description)
         data["name"] = _to_json_data(self.name)
-        data["source"] = _to_json_data(self.source)
         data["xp_cost"] = _to_json_data(self.xp_cost)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
@@ -7997,18 +7997,18 @@ class Truth:
     The unique Datasworn ID for this item.
     """
 
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
-    options: 'List[TruthOption]'
     source: 'SourceInfo'
     """
     Attribution for the original source (such as a book or website) of this
     item, including the author and licensing information.
     """
 
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    options: 'List[TruthOption]'
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -8025,9 +8025,9 @@ class Truth:
     def from_json_data(cls, data: Any) -> 'Truth':
         return cls(
             _from_json_data(TruthID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[TruthOption], data.get("options")),
-            _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -8039,9 +8039,9 @@ class Truth:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
         data["options"] = _to_json_data(self.options)
-        data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.icon is not None:

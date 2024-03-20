@@ -7,7 +7,7 @@ oracles:
     summary: Randomly select a theme and domain for a perilous location.
     description: |-
       Use these oracles to generate a random theme and domain for a site. Alternatively, you can print out the theme and domain cards and draw a random result. Or use the [Site Name oracles](id:delve/collections/oracles/site_name) to inspire the selection of a theme and domain.
-    source:
+    _source:
       <<:  &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -22,7 +22,7 @@ oracles:
         name: Theme
         canonical_name: 'Site Nature: Theme'
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 212
         rows:
@@ -54,7 +54,7 @@ oracles:
         name: Domain
         canonical_name: 'Site Nature: Domain'
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 212
         rows:

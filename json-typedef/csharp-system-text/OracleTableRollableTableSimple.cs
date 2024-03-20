@@ -21,6 +21,13 @@ namespace Datasworn
         public OracleRollableId Id { get; set; }
 
         /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
+        /// <summary>
         /// The label at the head of each table column. The `roll` key refers
         /// to the roll column showing the dice range (`min` and `max` on each
         /// table row).
@@ -45,13 +52,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("rows")]
         public IList<OracleTableRowSimple> Rows { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         /// <summary>
         /// The name of this item as it appears on the page in the book, if it's

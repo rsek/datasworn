@@ -75,12 +75,12 @@ module Datasworn
 
   class Asset
     attr_accessor id: AssetID
+    attr_accessor source: SourceInfo
     attr_accessor abilities: Array[AssetAbility]
     attr_accessor category: Label
     attr_accessor count_as_impact: bool
     attr_accessor name: Label
     attr_accessor shared: bool
-    attr_accessor source: SourceInfo
     attr_accessor attachments: AssetAttachment?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
@@ -194,8 +194,8 @@ module Datasworn
 
   class AssetCollection
     attr_accessor id: AssetCollectionID
-    attr_accessor name: Label
     attr_accessor source: SourceInfo
+    attr_accessor name: Label
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, Asset]?
@@ -434,8 +434,8 @@ module Datasworn
 
   class Atlas
     attr_accessor id: AtlasID
-    attr_accessor name: Label
     attr_accessor source: SourceInfo
+    attr_accessor name: Label
     attr_accessor canonical_name: Label?
     attr_accessor collections: Hash[String, Atlas]?
     attr_accessor color: CSSColor?
@@ -455,10 +455,10 @@ module Datasworn
 
   class AtlasEntry
     attr_accessor id: AtlasEntryID
+    attr_accessor source: SourceInfo
     attr_accessor description: MarkdownString
     attr_accessor features: Array[MarkdownString]
     attr_accessor name: Label
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor quest_starter: MarkdownString?
     attr_accessor suggestions: Suggestions?
@@ -529,12 +529,12 @@ module Datasworn
 
   class DelveSite
     attr_accessor id: DelveSiteID
+    attr_accessor source: SourceInfo
     attr_accessor denizens: Array[DelveSiteDenizen]
     attr_accessor description: MarkdownString
     attr_accessor domain: DelveSiteDomainID
     attr_accessor name: Label
     attr_accessor rank: ChallengeRank
-    attr_accessor source: SourceInfo
     attr_accessor theme: DelveSiteThemeID
     attr_accessor canonical_name: Label?
     attr_accessor extra_card: String?
@@ -581,10 +581,10 @@ module Datasworn
 
   class DelveSiteDomain
     attr_accessor id: DelveSiteDomainID
+    attr_accessor source: SourceInfo
     attr_accessor dangers: Array[DelveSiteDomainDangerRow]
     attr_accessor features: Array[DelveSiteDomainFeatureRow]
     attr_accessor name: Label
-    attr_accessor source: SourceInfo
     attr_accessor summary: MarkdownString
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
@@ -645,10 +645,10 @@ module Datasworn
 
   class DelveSiteTheme
     attr_accessor id: DelveSiteThemeID
+    attr_accessor source: SourceInfo
     attr_accessor dangers: Array[DelveSiteThemeDangerRow]
     attr_accessor features: Array[DelveSiteThemeFeatureRow]
     attr_accessor name: Label
-    attr_accessor source: SourceInfo
     attr_accessor summary: MarkdownString
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
@@ -817,9 +817,9 @@ module Datasworn
 
   class MoveActionRoll < Move
     attr_accessor id: MoveID
+    attr_accessor source: SourceInfo
     attr_accessor name: Label
     attr_accessor outcomes: MoveOutcomes
-    attr_accessor source: SourceInfo
     attr_accessor text: MarkdownString
     attr_accessor trigger: TriggerActionRoll
     attr_accessor canonical_name: Label?
@@ -834,8 +834,8 @@ module Datasworn
 
   class MoveNoRoll < Move
     attr_accessor id: MoveID
-    attr_accessor name: Label
     attr_accessor source: SourceInfo
+    attr_accessor name: Label
     attr_accessor text: MarkdownString
     attr_accessor trigger: TriggerNoRoll
     attr_accessor canonical_name: Label?
@@ -850,9 +850,9 @@ module Datasworn
 
   class MoveProgressRoll < Move
     attr_accessor id: MoveID
+    attr_accessor source: SourceInfo
     attr_accessor name: Label
     attr_accessor outcomes: MoveOutcomes
-    attr_accessor source: SourceInfo
     attr_accessor text: MarkdownString
     attr_accessor tracks: ProgressTrackTypeInfo
     attr_accessor trigger: TriggerProgressRoll
@@ -868,9 +868,9 @@ module Datasworn
 
   class MoveSpecialTrack < Move
     attr_accessor id: MoveID
+    attr_accessor source: SourceInfo
     attr_accessor name: Label
     attr_accessor outcomes: MoveOutcomes
-    attr_accessor source: SourceInfo
     attr_accessor text: MarkdownString
     attr_accessor trigger: TriggerSpecialTrack
     attr_accessor canonical_name: Label?
@@ -885,8 +885,8 @@ module Datasworn
 
   class MoveCategory
     attr_accessor id: MoveCategoryID
-    attr_accessor name: Label
     attr_accessor source: SourceInfo
+    attr_accessor name: Label
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, Move]?
@@ -982,13 +982,13 @@ module Datasworn
 
   class Npc
     attr_accessor id: NpcID
+    attr_accessor source: SourceInfo
     attr_accessor description: MarkdownString
     attr_accessor drives: Array[MarkdownString]
     attr_accessor features: Array[MarkdownString]
     attr_accessor name: Label
     attr_accessor nature: NpcNature
     attr_accessor rank: ChallengeRank
-    attr_accessor source: SourceInfo
     attr_accessor tactics: Array[MarkdownString]
     attr_accessor canonical_name: Label?
     attr_accessor quest_starter: MarkdownString?
@@ -1004,8 +1004,8 @@ module Datasworn
 
   class NpcCollection
     attr_accessor id: NpcCollectionID
-    attr_accessor name: Label
     attr_accessor source: SourceInfo
+    attr_accessor name: Label
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, Npc]?
@@ -1102,9 +1102,9 @@ module Datasworn
 
   class OracleCollectionTableSharedDetails < OracleCollection
     attr_accessor id: OracleCollectionID
+    attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleCollectionTableSharedDetailsColumnLabels
     attr_accessor name: Label
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleColumnDetails]?
@@ -1130,9 +1130,9 @@ module Datasworn
 
   class OracleCollectionTableSharedResults < OracleCollection
     attr_accessor id: OracleCollectionID
+    attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleCollectionTableSharedResultsColumnLabels
     attr_accessor name: Label
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleColumnSimple]?
@@ -1158,9 +1158,9 @@ module Datasworn
 
   class OracleCollectionTableSharedRolls < OracleCollection
     attr_accessor id: OracleCollectionID
+    attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleCollectionTableSharedRollsColumnLabels
     attr_accessor name: Label
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleColumnSimple]?
@@ -1179,8 +1179,8 @@ module Datasworn
 
   class OracleCollectionTables < OracleCollection
     attr_accessor id: OracleCollectionID
-    attr_accessor name: Label
     attr_accessor source: SourceInfo
+    attr_accessor name: Label
     attr_accessor canonical_name: Label?
     attr_accessor collections: Hash[String, OracleCollection]?
     attr_accessor color: CSSColor?
@@ -1330,11 +1330,11 @@ module Datasworn
 
   class OracleTableRollableTableDetails < OracleTableRollable
     attr_accessor id: OracleRollableID
+    attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleTableRollableTableDetailsColumnLabels
     attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor rows: Array[OracleTableRowDetails]
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
     attr_accessor icon: SvgImageURL?
@@ -1367,11 +1367,11 @@ module Datasworn
 
   class OracleTableRollableTableSimple < OracleTableRollable
     attr_accessor id: OracleRollableID
+    attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleTableRollableTableSimpleColumnLabels
     attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor rows: Array[OracleTableRowSimple]
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
     attr_accessor icon: SvgImageURL?
@@ -1428,9 +1428,9 @@ module Datasworn
 
   class OracleTablesCollection
     attr_accessor id: OracleCollectionID
+    attr_accessor source: SourceInfo
     attr_accessor name: Label
     attr_accessor oracle_type: OracleTablesCollectionOracleType
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor collections: Hash[String, OracleCollection]?
     attr_accessor color: CSSColor?
@@ -1504,10 +1504,10 @@ module Datasworn
 
   class Rarity
     attr_accessor id: RarityID
+    attr_accessor source: SourceInfo
     attr_accessor asset: AssetID
     attr_accessor description: MarkdownString
     attr_accessor name: Label
-    attr_accessor source: SourceInfo
     attr_accessor xp_cost: Integer
     attr_accessor canonical_name: Label?
     attr_accessor icon: SvgImageURL?
@@ -2197,9 +2197,9 @@ module Datasworn
 
   class Truth
     attr_accessor id: TruthID
+    attr_accessor source: SourceInfo
     attr_accessor name: Label
     attr_accessor options: Array[TruthOption]
-    attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?

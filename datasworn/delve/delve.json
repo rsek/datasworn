@@ -550,7 +550,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 213,
 						"authors": [
@@ -696,7 +696,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 213,
 						"authors": [
@@ -710,7 +710,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 213,
 				"authors": [
@@ -1245,7 +1245,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 218,
 						"authors": [
@@ -1773,7 +1773,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 219,
 						"authors": [
@@ -1790,7 +1790,7 @@
 			"suggestions": {
 				"oracles": ["classic/oracles/turning_point/combat_action"]
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 218,
 				"authors": [
@@ -2325,7 +2325,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 204,
 						"authors": [
@@ -2853,7 +2853,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 205,
 						"authors": [
@@ -2867,7 +2867,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 204,
 				"authors": [
@@ -2929,7 +2929,7 @@
 							"result": "Titanic (incomprehensible)"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 214,
 						"authors": [
@@ -3139,7 +3139,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 214,
 						"authors": [
@@ -3306,7 +3306,7 @@
 							"result": "Etched with mystic runes"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 215,
 						"authors": [
@@ -3533,7 +3533,7 @@
 							"result": "Control elements"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 216,
 						"authors": [
@@ -3555,7 +3555,7 @@
 					"delve/oracles/character/activity"
 				]
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 214,
 				"authors": [
@@ -3635,7 +3635,7 @@
 							"result": "You encounter a denizen in need of help."
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 30,
 						"authors": [
@@ -3728,7 +3728,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 34,
 						"authors": [
@@ -3812,7 +3812,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 68,
 						"authors": [
@@ -3854,7 +3854,7 @@
 							"result": "The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice."
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 155,
 						"authors": [
@@ -3977,7 +3977,7 @@
 					"column_labels": {
 						"result": "Result"
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 21,
 						"authors": [
@@ -3991,7 +3991,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 19,
 				"authors": [
@@ -4261,7 +4261,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"authors": [
 							{
@@ -4785,7 +4785,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 207,
 						"authors": [
@@ -5310,7 +5310,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 208,
 						"authors": [
@@ -5836,7 +5836,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 209,
 						"authors": [
@@ -6041,7 +6041,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 210,
 						"authors": [
@@ -6133,7 +6133,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 210,
 								"authors": [
@@ -6257,7 +6257,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 210,
 								"authors": [
@@ -6381,7 +6381,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 210,
 								"authors": [
@@ -6465,7 +6465,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 210,
 								"authors": [
@@ -6549,7 +6549,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 210,
 								"authors": [
@@ -6673,7 +6673,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 210,
 								"authors": [
@@ -6797,7 +6797,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 211,
 								"authors": [
@@ -6881,7 +6881,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 211,
 								"authors": [
@@ -7005,7 +7005,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 211,
 								"authors": [
@@ -7129,7 +7129,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 211,
 								"authors": [
@@ -7233,7 +7233,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 211,
 								"authors": [
@@ -7357,7 +7357,7 @@
 									}
 								}
 							],
-							"source": {
+							"_source": {
 								"title": "Ironsworn: Delve",
 								"page": 211,
 								"authors": [
@@ -7371,7 +7371,7 @@
 							}
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 210,
 						"authors": [
@@ -7385,7 +7385,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 206,
 				"authors": [
@@ -7457,7 +7457,7 @@
 							"result": "[Wild](id:delve/site_themes/wild)"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 212,
 						"authors": [
@@ -7542,7 +7542,7 @@
 							"result": "[Underkeep](id:delve/site_domains/underkeep)"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 212,
 						"authors": [
@@ -7556,7 +7556,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 212,
 				"authors": [
@@ -7647,7 +7647,7 @@
 							]
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 220,
 						"authors": [
@@ -7722,7 +7722,7 @@
 							"result": "Introduce a new person or faction to complicate the situation"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 221,
 						"authors": [
@@ -7797,7 +7797,7 @@
 							"result": "Transform its nature"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 221,
 						"authors": [
@@ -7872,7 +7872,7 @@
 							"result": "Disrupt natural ecosystems"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 221,
 						"authors": [
@@ -7947,7 +7947,7 @@
 							"result": "Undermine a potential cure"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 222,
 						"authors": [
@@ -8022,7 +8022,7 @@
 							"result": "Threaten resources"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 222,
 						"authors": [
@@ -8097,7 +8097,7 @@
 							"result": "Employ a new weapon"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 222,
 						"authors": [
@@ -8172,7 +8172,7 @@
 							"result": "Use an unexpected capability or asset"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 223,
 						"authors": [
@@ -8247,7 +8247,7 @@
 							"result": "Use magic to trick or deceive"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 223,
 						"authors": [
@@ -8322,7 +8322,7 @@
 							"result": "Reveal its true nature or goal"
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 223,
 						"authors": [
@@ -8336,7 +8336,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 220,
 				"authors": [
@@ -8621,7 +8621,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 217,
 						"authors": [
@@ -8899,7 +8899,7 @@
 							}
 						}
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 217,
 						"authors": [
@@ -8913,7 +8913,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 217,
 				"authors": [
@@ -8945,7 +8945,7 @@
 					},
 					"text": "When __you resolve to enter a perilous site in pursuit of an objective__, choose the theme and domain which best represent its nature ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure), and give it a rank.\n\n  * Troublesome site: 3 progress per area.\n  * Dangerous site: 2 progress per area.\n  * Formidable site: 1 progress per area.\n  * Extreme site: 2 ticks per area.\n  * Epic site: 1 tick per area.\n\nIf you are returning to a previously explored site, roll both challenge dice, take the lowest value, and clear that number of progress boxes.\n\nThen, [Delve the Depths](id:delve/moves/delve/delve_the_depths) to explore this place.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 19,
 						"authors": [
@@ -9014,7 +9014,7 @@
 						"delve/oracles/moves/delve_the_depths/shadow",
 						"delve/oracles/moves/delve_the_depths/wits"
 					],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 21,
 						"authors": [
@@ -9038,7 +9038,7 @@
 					"text": "When __you encounter a helpful situation or feature within a site__, roll on the following table. If you are making this move as a result of a strong hit on [Delve the Depths](id:delve/moves/delve/delve_the_depths), you may pick or envision an opportunity instead of rolling.\n\nThen, choose one.\n\n  * Gain insight or prepare: Take +1 momentum.\n  * Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.\n\n{{table:delve/oracles/moves/find_an_opportunity}}",
 					"outcomes": null,
 					"oracles": ["delve/oracles/moves/find_an_opportunity"],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 30,
 						"authors": [
@@ -9062,7 +9062,7 @@
 					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table:delve/oracles/moves/reveal_a_danger}}",
 					"outcomes": null,
 					"oracles": ["delve/oracles/moves/reveal_a_danger"],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 34,
 						"authors": [
@@ -9105,7 +9105,7 @@
 							"text": "On a __miss__, you don’t have it and the situation grows more perilous. [Pay the Price](id:classic/moves/fate/pay_the_price)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 38,
 						"authors": [
@@ -9150,7 +9150,7 @@
 							"text": "On a __miss__, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic)."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 40,
 						"authors": [
@@ -9234,7 +9234,7 @@
 							"text": "On a __miss__, a dire threat or imposing obstacle stands in your way. [Reveal a Danger](id:delve/moves/delve/reveal_a_danger). If you survive, you may make your escape."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 42,
 						"authors": [
@@ -9259,7 +9259,7 @@
 					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table:delve/oracles/moves/reveal_a_danger_alt}}",
 					"outcomes": null,
 					"oracles": ["delve/oracles/moves/reveal_a_danger_alt"],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 68,
 						"authors": [
@@ -9273,7 +9273,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 19,
 				"authors": [
@@ -9301,7 +9301,7 @@
 					},
 					"text": "When __you make a move and score a miss__, mark a tick on your failure track. If __you score a miss when making a progress move__, mark two ticks.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 58,
 						"authors": [
@@ -9343,7 +9343,7 @@
 							"text": "On a __miss__, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Then, envision how you set off on an ill-fated path."
 						}
 					},
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 59,
 						"authors": [
@@ -9357,7 +9357,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 58,
 				"authors": [
@@ -9387,7 +9387,7 @@
 					"text": "When __you give ground to a threat through inaction, failure, or delay__, roll on the table below and envision how the change manifests in your world ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure).\n\n{{table:delve/oracles/moves/advance_a_threat}}\n\nOn a match, this development also exposes a surprising aspect of the threat’s plan or nature.\n\nIf __you mark the last box on the threat’s menace track__, the threat achieves its goal, or the final dire outcome occurs. You must [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow).",
 					"outcomes": null,
 					"oracles": ["delve/oracles/moves/advance_a_threat"],
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 154,
 						"authors": [
@@ -9410,7 +9410,7 @@
 					},
 					"text": "When __you spend an extended time recovering in a safe place while a threat is active__, do any of the following.\n\n  * Clear any marked conditions.\n  * Set your health, spirit, supply, and companion health to their maximum values.\n  * Set your momentum to its reset value.\n\nThen, for each active threat, [Advance a Threat](id:delve/moves/legacy/advance_a_threat).",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 158,
 						"authors": [
@@ -9424,7 +9424,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 151,
 				"authors": [
@@ -9453,7 +9453,7 @@
 					},
 					"text": "When __you make a move aided by an augmented asset__, roll your rarity die in place of your action die.\n\nOn __any result__ with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic __strong hit__ and take +1 momentum.\n\nOn a __hit__ with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Take +1 momentum.\n\nOn a __miss__ with 1 showing on the rarity die, the rarity’s power fails or works against you.",
 					"outcomes": null,
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 176,
 						"authors": [
@@ -9467,7 +9467,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 172,
 				"authors": [
@@ -9510,7 +9510,7 @@
 					],
 					"description": "A husk is what remains of an Ironlander whose body, mind, and soul are hollowed out by dark magic. In their unquenchable thirst for power, they use their own essence to power foul rituals. Bit by bit, they give themselves to this ruinous path. They abandon their kin. They forsake their former lives. Their physical form wastes away. Their mind is shattered.\n\nIn time, only the husk is left. They are a needful thing, tormented by the memory of all they have lost, but willing to lose even more in their quest for power.\n\nA husk may make tempting offers of rituals or rarities, but be wary. Their bargains are always in their own favor. When they turn against you, a husk is a cunning foe. They weave dreadful spells, summon swarms of lesser creatures, and unleash a savagery inflamed by their anguish.",
 					"quest_starter": "Someone you are sworn to protect is stricken with a curse and falls into an unending sleep. Slowly, their heartbeat fades. They lie at the threshold between life and death. Your only hope lies with the husk who dwells in a nearby [Infested](id:delve/site_themes/infested) [Shadowfen](id:delve/site_domains/shadowfen). Will they have a cure? What will they demand in return?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 110,
 						"authors": [
@@ -9541,7 +9541,7 @@
 					],
 					"description": "Zealots are those we have lost to their faith. Friends and loved ones are discarded or forgotten. Communities are left behind. Possessions are discarded or turned over to the needs of the sect. They live for one purpose, and all other vows are forsaken. This single-minded devotion changes them, sometimes irrevocably.\n\nSome zealots worship ancient, forgotten gods, and seek to return them to their former horrible glory. Others serve new religious movements, caught up in promises of a better life. Some worship mortal leaders as if they were gods—perhaps even believing them to be the avatar of divinity.\n\nThis sense of belonging, of purpose, can be a powerful lure in this perilous land.",
 					"quest_starter": "You have lost someone to an emerging sect which seeks to unleash a forgotten power or entity. They dwell within a [Hallowed](id:delve/site_themes/hallowed) [Underkeep](id:delve/site_domains/underkeep). What is the nature of their belief? Will you attempt to save this person from their faith, or see them destroyed along with it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 111,
 						"authors": [
@@ -9555,7 +9555,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 110,
 				"authors": [
@@ -9591,7 +9591,7 @@
 					"description": "These people of the sea dwell among the [Barrier Islands](id:classic/atlas/ironlands/barrier_islands), along the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast), and amid the frozen landscapes of the far north. Some live in isolated villages clinging to rugged shores, or as nomads among the icereaches. Others spend their lives aboard finely-crafted vessels called drift-homes. These ships find safe anchorage during the cruelest depths of winter, and return to the sea in calmer months.\n\nThe atanya are a diverse people, but most are well-suited to a life amid the northern climes. They are strong, hardy, and long-lived. Their height and stout forms give them an imposing physical presence, but they are generally good-natured. They have an unnatural sense of the coming weather and an innate understanding of the sea. Some say they once lived in the depths of the ocean, but were cursed by a forsaken god and banished to the world above.",
 					"quest_starter": "A generation ago, one of your kin was rescued at sea by an atanya ship. By their tradition, this incurred a life debt—which went unpaid by your long-dead relative and now passes to you. They ask you to delve into the flooded bowels of a  [Ravaged](id:delve/site_themes/ravaged) [Sea Cave](id:delve/site_domains/sea_cave) to recover a precious item. What is it they seek?",
 					"your_truth": "Atanya ships sometimes sail to the west, and do not return for months or years. Some are never seen again. What is rumored to lie beyond the western horizon?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 112,
 						"authors": [
@@ -9619,7 +9619,7 @@
 					"description": "These semiaquatic beings dwell within coastal waters, sea caves, and saltwater marshes. They are fierce protectors of their realm, driven by a zealous devotion to their gods. Their eyes are large and glossy black. They have hunched forms and long limbs, and move with deadly grace in watery environments. Their language is a cacophony of clicks, low grunts, and whistles.\n\nThey war against the [atanya](id:delve/npcs/firstborn/atanya) clans, rarely interact with other firstborn, and are openly hostile to Ironlanders. They emerge from their sunken lairs to swarm over ships or coastal settlements, dragging their victims into the depths. As night falls, the people of seaside villages light their torches, ward their gates, and keep an eye to the waters.",
 					"quest_starter": "Sailors speak in hushed tones of a large merrow, its skin translucent white, wielding a wicked stone blade. It strikes out from a hidden [Fortified](id:delve/site_themes/fortified) [Sea Cave](id:delve/site_domains/sea_cave) to raid indiscriminately. This merrow and its clan take no prisoners, instead performing bloodletting rituals aboard the ships they attack. What is the origin of this leader? What is the purpose of these violent rituals?",
 					"your_truth": "The merrow worship one god above all others. What form does it take? What does it demand of its supplicants?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 113,
 						"authors": [
@@ -9633,7 +9633,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 112,
 				"authors": [
@@ -9669,7 +9669,7 @@
 					"description": "These carnivorous creatures dwell in caves and ruins, and emerge at night to hunt. They have a lean, angular form, with a wingspan as wide as an Ironlander’s outstretched arms.\n\nThey typically feed on smaller prey, but a pack of hungry bladewings will harass larger victims, diving and slashing in coordinated attacks. During the long nights of winter, swarms of these creatures have descended on Ironlander settlements or unwary travelers.",
 					"quest_starter": "Night after night, a colony of bladewings emerges to prey on a remote settlement. The creatures are rumored to lair in a long-abandoned [Ravaged](id:delve/site_themes/ravaged) [Mine](id:delve/site_domains/mine). What is driving their attacks?",
 					"your_truth": "A clan of hill people conduct ceremonial hunts of the bladewings, and decorate their banners and shields with its form. Their mystics and warriors even wear the leathery wings as ornamentation. What powers or protections do they believe this imparts?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 114,
 						"authors": [
@@ -9701,7 +9701,7 @@
 					"description": "These semiaquatic creatures dwell within the freshwater rivers and subterranean waterways of the Ironlands. They have a long, eel-like body, a flat head, and short, claw-tipped legs.\n\nA mature adult grows to the length of a horse. They are ungainly on land, but fast and agile within the water. They prefer to attack landbound prey by lurking along the water’s edge and waiting for an unfortunate animal (or Ironlander) to come near their hiding spot.\n\nCarrion newts lay their eggs within the carcass of their kills. The rotting body nurtures the eggs and feeds the young newts until they burst forth into the world. If you come upon a corpse at the water’s edge—be cautious. It might be filled with dozens of hungry young newts.",
 					"quest_starter": "In the depths of a [Wild](id:delve/site_themes/wild) [Shadowfen](id:delve/site_domains/shadowfen), the carrion newt they call Old-Gray lurks within a wide, slow river—an important waterway for trade. It is an ancient animal, larger than any newt ever seen. It has one blind eye and ash-colored skin. Recently, a trading boat was attacked and swamped by the creature. Others refuse to make the passage until Old-Gray is dealt with.",
 					"your_truth": "Carrion newt eggs are prized by a specific culture or settlement for some purpose. What is it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 115,
 						"authors": [
@@ -9724,7 +9724,7 @@
 					"tactics": ["Stalk prey", "Leap and bite", "Intimidating roar"],
 					"description": "Cave lions are sleek, powerful creatures who dwell primarily in the [Hinterlands](id:classic/atlas/ironlands/hinterlands) and [Tempest Hills](id:classic/atlas/ironlands/tempest_hills). They lair in caverns and other hidden places, emerging to hunt prey such as deer, boar, and rodents. They are typically solitary creatures, but have been seen working together to bring down larger quarry. Even a [mammoth](id:classic/npcs/beasts/mammoth) is no match for a determined pack of cave lions.",
 					"quest_starter": "A large cave lion kills livestock in outlying Ironlander steadings, and attacked a farmer. It hunts well beyond its usual territory, and is said to lair in a [Wild](id:delve/site_themes/wild) [Cavern](id:delve/site_domains/cavern). What has driven this beast from its hunting grounds?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 116,
 						"authors": [
@@ -9753,7 +9753,7 @@
 					"description": "These foul, oversized rats have squat bodies and stubby tails. They are essentially blind, but navigate through smell and touch.\n\nDeep rats are constantly collecting food and will eat anything even vaguely edible. They often dwell in caves or subterranean structures, digging compulsively to expand their lair. In those places, they serve as fodder for greater creatures.",
 					"quest_starter": "A fallen hero must be laid to rest with their kinfolk, but deep rats have invaded the settlement’s tomb. Within the dark depths of this [Infested](id:delve/site_themes/infested) [Barrow](id:delve/site_domains/barrow) is the massive brood mother, a formidable creature that will fight savagely to protect the horde.",
 					"your_truth": "During the longest night of winter, deep rats swarm the surface world. They are drawn inexorably to a specific place. What is it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 117,
 						"authors": [
@@ -9785,7 +9785,7 @@
 					"description": "Nightmare spiders are monstrous creatures which dwell in caves, ruins, thick woods, and other dark places. They have narrow, translucent bodies, three pairs of black eyes, and long, slender legs. They typically feed on bats and rodents, but are opportunistic hunters and attack anything straying into their path or stumbling into their webbing. Their lairs are often strung with large silk egg sacs.\n\nFor smaller animals, the toxic bite of the nightmare spider causes paralysis. For a typical Ironlander, it dulls the senses and induces vivid hallucinations. It is these frightening, dreamlike visions which earn the creature its name.",
 					"quest_starter": "Within a [Wild](id:delve/site_themes/wild) [Tanglewood](id:delve/site_domains/tanglewood), mystics live in cooperation with the spiders, supplying them with live prey. They’ve abducted someone you care about and will use them as food for these foul creatures. What is the aim of these mystics?",
 					"your_truth": "Nightmare spider toxin is harvested for a specific rite or practice. What is it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 118,
 						"authors": [
@@ -9817,7 +9817,7 @@
 					],
 					"description": "Shroud crabs threaten careless or unlucky Ironlanders along coasts and icereaches. They have long legs, a segmented tail, and large, serrated claws.\n\nTheir carapace changes color to perfectly match their environment, making them nearly invisible among rocks or ice. When potential prey strays near, a shroud crab uses its powerful legs to spring at its victim. Then, it wraps around them in a horrible embrace, stabbing and slashing with its claws and barbed tail.\n\nPacks of shroud crabs are known to work in tandem to bring down large prey. Some report seeing mighty elk engulfed by these voracious creatures. On occasion, the body of a missing Ironlander is found with their flesh picked clean to the bones.",
 					"quest_starter": "A vengeful [husk](id:delve/npcs/ironlanders/husk) curses a seaside settlement and summons a horde of shroud crabs to overrun the place in a flood of clattering legs and snapping claws. The husk dwells within an [Infested](id:delve/site_themes/infested) [Sea Cave](id:delve/site_domains/sea_cave), protected by other shroud crabs. There, she prepares an even more horrible show of her power—one which will threaten villages up and down the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast).",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 119,
 						"authors": [
@@ -9851,7 +9851,7 @@
 					"description": "Trogs are warm-blooded reptilian animals. They dwell in the deepest places of the Ironlands, but have moved closer to the surface in recent years. Some suggest a greater threat in those dark domains is driving them toward the surface. Many a barrow or underkeep has been breached by trogs who tunnel into those spaces.\n\nThey are strong and agile, able to run, climb, and swim with equal speed. When they stand on two legs as a display of aggression, they are nearly as tall as an Ironlander. They have a hunched back lined with a ridge of spines, a long snout, and serrated teeth. Their scales glimmer with a colorful, ghostly light. Their bite is as powerful and unyielding as a hammer blow.",
 					"quest_starter": "Pilgrims to a [Hallowed](id:delve/site_themes/hallowed) [Ruin](id:delve/site_domains/ruin) report the site is overrun by trogs. Within the ruins, an altar to ancient gods is said to bestow fair weather and plentiful crops. Spring is near, and the pilgrims must carry out the rites of the harvest. If they don’t, the will of the people in nearby settlements will falter.",
 					"your_truth": "Some insist that following a trog tunnel into the depths of the earth will eventually lead you to a vast cavern as expansive as the overlands. Is there any truth to this? What secret people or culture lives within this hidden realm?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 120,
 						"authors": [
@@ -9865,7 +9865,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 114,
 				"authors": [
@@ -9897,7 +9897,7 @@
 					],
 					"description": "Chitters are unnaturally large insects which dwell underground, nesting in subterranean caves, ruins and barrows. They stand half the height of an Ironlander, and move on six segmented legs.\n\nThey are primarily scavengers, using their keen sense of smell to locate and retrieve carcasses above or below ground. Instead of eyes, chitters have three thumb-sized holes in the center of their heads through which they issue a distinctive twittering sound. This call is used to communicate with others of its kind and to help visualize their surroundings—much like bats find their way in darkness.\n\nThey are covered in a rigid shell, and their mandibles are as sharp and destructive as a finely forged blade. They are not necessarily hostile, but will aggressively defend their nests or fight to secure a food source.\n\nAs a last resort, a chitter may attack by spewing the contents of its stomach in a noxious spray, leaving all but the hardiest of Ironlanders temporarily blinded and retching.",
 					"quest_starter": "An Ironlander scavenged a relic from an [Ancient](id:delve/site_themes/ancient) [Underkeep](id:delve/site_domains/underkeep), bringing it back to their settlement. Now, as if lured by this object, chitters attack in overwhelming waves. The walls will not hold much longer. What is this object, and what connection does it have to these creatures?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 121,
 						"authors": [
@@ -9925,7 +9925,7 @@
 					"tactics": ["Threatening posture", "Powerful charge", "Stomp"],
 					"description": "Gnarls dwell in woodlands throughout the Ironlands. The tallest of them are nearly the height of towering trees, with a long neck and legs as stout as trunks. Atop their heads are sprays of horns which twist and intertwine like slender branches. They roam the forest alone or in small family groups, feeding on lichen, leaves, and other plants. They are not naturally aggressive, but are mighty foes when threatened.\n\nThe color of a gnarl’s bark-like hide changes through its life, emulating the passage of the seasons. A young gnarl’s hide is the verdant green of spring. As they mature, it transitions to the deeper brown-green of summer, then the burnished amber of fall, and finally the cold gray of winter. To protect itself from potential predators, a gnarl will stand among a copse of trees. It will plant its feet, straighten its back, stretch its neck, and stay perfectly still, blending in with its surroundings.\n\nThe low, resonant call of a gnarl can carry for miles. It is a lonely sound, as evocative and heartrending as the most mournful funeral song.",
 					"quest_starter": "A fire rages within a [Ravaged](id:delve/site_themes/ravaged) [Tanglewood](id:delve/site_domains/tanglewood). In that place dwells an unusually large gnarl, its ancient hide as white as new snow. Why are you sworn to guide this creature safely through the blaze? What was the source of the fire? Who opposes you in this quest?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 122,
 						"authors": [
@@ -9953,7 +9953,7 @@
 					"description": "We don’t know the origin of the Iron Blight, nor do we know its cure. It inflicts creatures of the wilds and transforms their flesh slowly to iron. These pitiful but powerful beasts are scarred by patches of metal flesh within ragged, weeping wounds. The iron is like a parasite, devouring the host as it torments them with unstoppable pain and insatiable hunger. Their howls echo with animalistic agony and the clangor of hammer against anvil.\n\nIn time, the Blight takes too much, and the beast dies while it is still more flesh than iron. We pray a creature never survives beyond that stage. What would it become?",
 					"quest_starter": "Your animal companion is stricken with the Iron Blight. The disease is in its early stages, but time is your enemy. Locals say the origin of the blight lies within a [Corrupted](id:delve/site_themes/corrupted) [Tanglewood](id:delve/site_domains/tanglewood). What will you do to stop the relentless progression of the iron corruption?",
 					"your_truth": "A sect of [zealots](id:delve/npcs/ironlanders/zealot) believe the Iron Blight is a divine manifestation. What god do they worship? What purpose do they believe the disease fulfills, and how to they intend to hasten the will of their god?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 123,
 						"authors": [
@@ -9986,7 +9986,7 @@
 					"description": "The kraken is a sea beast, as large as the mightiest longship. It is octopoid in form, with eight arms, two longer feeding tentacles, and a beak-like mouth. It emerges from the depths to hunt whales, sharks, and other large sea creatures. It is also prone to attack any Ironlander ships which stray into its waters, plucking the crew off the deck and crushing the vessel as easily as one would snap a piece of kindling.",
 					"quest_starter": "A kraken lurks at the mouth of a fjord. Fisher folk refuse to sail those waters, and trade ships rarely survive the passage. The settlement on the fjord cannot survive without resupply, and overland travel is impossible during this harsh winter. Elders tell of the Dawnrunner, a blessed longship of the original settlers, sealed away in a [Hallowed](id:delve/site_themes/hallowed) [Sea Cave](id:delve/site_domains/sea_cave) with the body of its legendary captain. Only this ship, it is said, can outrun the kraken.",
 					"your_truth": "A clan of seafolk conduct a yearly hunt to kill a kraken. Although they have never succeeded, and untold Ironlanders have died in the quest, the practice persists. What event or change do they believe killing the beast will bring about? What venerated weapon do they wield in this hunt?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 124,
 						"authors": [
@@ -10017,7 +10017,7 @@
 					],
 					"description": "What we call the nightspawn are mutated beasts which take a variety of forms. Some are animal-like, or combine the characteristics of different creatures. Others are bizarre aberrations seemingly born of chaos. A few even possess twisted mockeries of human features.\n\nThey are rare beasts, but dwell in every region and environment of the Ironlands, from the dark waters of the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast) to the icy plains of the [Shattered Wastes](id:classic/atlas/ironlands/shattered_wastes). Often, they protect ancient ruins, forgotten relics, and other secrets. They watch and wait, and show no mercy to those who trespass in their domain.\n\nWe do not know the origin of the nightspawn. They are enigmatic creatures, rarely emerging from their dark lairs except during the long nights of winter. Is it the latent magic of these lands which gives them life? Have they passed through the veil from some other realm? Perhaps some questions are best left unanswered.",
 					"quest_starter": "The first settlers, your forebears, told tales of a great nightspawn at the heart of a [Ravaged](id:delve/site_themes/ravaged) [Ruin](id:delve/site_domains/ruin). According to those stories, it guards a pool of life-giving water. Any who have since tried to plunder that place have not returned. Or they have come back broken in mind or body. What now compels you to delve into this site?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 125,
 						"authors": [
@@ -10050,7 +10050,7 @@
 					],
 					"description": "In the language of the [atanya](id:delve/npcs/firstborn/atanya), rhaskar means “white death.” This mighty beast dwells within northern waters and amid frozen icereaches. It hunts along shorelines, lurks beneath ice, or tracks the frigid wastes in search of prey. Some rhaskar have even been known to attack ships in coastal waters. It is a highly territorial creature, and does not abide trespassers within its domain.\n\nWith its mane of dorsal fur and long, angular head, the rhaskar looks like a fusion of shark and bear—and embodies the strength and cunning of both. It is the uncaring ferocity of these cold northern realms given form.",
 					"quest_starter": "Settlements and ships along the northern expanse of the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast) face repeated attacks from a large rhaskar. The creature appears amidst a fierce snowstorm, makes it savage assault, and fades back into the blizzard like a ghost. It seems to act out of a pure compulsion to cause terror and inflict violence rather than any need for food. A hunter tracked it to a [Wild](id:delve/site_themes/wild) [Frozen Cavern](id:delve/site_domains/frozen_cavern). But they heeded the warning of a pile of bones at the entrance and refused to enter that place.",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 126,
 						"authors": [
@@ -10084,7 +10084,7 @@
 					"description": "Wyrms are massive serpentine creatures. They are kin to the wyverns, but are much larger and wingless. Their lairs are found in deep caves, subterranean vaults, or at the heart of dense forests. They hibernate in those places for weeks or months at a time, waking only to satiate their massive appetites. They are low-slung beasts, with short, thick legs, elongated jaws, and a dense hide.\n\nFiercely territorial, a wyrm is sure to attack any who stray into their domain. It can sense movement through vibration, and its golden eyes can pierce the thickest darkness.",
 					"quest_starter": "Last year, a huge white wyrm destroyed several mining camps in the [Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains). Winter has passed, but Ironlander miners are refusing to return to those camps without assurance that the wyrm is dead. Its lair is in an [Ancient](id:delve/site_themes/ancient) [Frozen Cavern](id:delve/site_domains/frozen_cavern) deep within the mountains.",
 					"your_truth": "Tales tell of the World-Eater, the mother of all wyrms, and the great hero who battled her to save an Old World kingdom. Many claim to have relics from that great battle, or to be descended from that hero. But there is only one true legacy which survives today. What is it, and what clans or factions seek to control it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 127,
 						"authors": [
@@ -10098,7 +10098,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 121,
 				"authors": [
@@ -10130,7 +10130,7 @@
 					"tactics": ["Unearthly howl", "Piercing gaze", "Savage bite"],
 					"description": "Blighthounds lurk on blood-soaked battlefields, on the outskirts of settlements destined for famine, or within the dark catacombs of ancient tombs. Drawn to the dead, and foretelling great doom, they are capable predators and grim messengers of death.\n\nThey appear as gaunt, emaciated hounds, often mistaken for starving animals at first glance. Their fiendish form reveals itself in blood-red eyes, sweeping horns, and skin the texture of charred and blistered wood.",
 					"quest_starter": "Every night, a blighthound appears outside a settlement at the edge of a [Wild](id:delve/site_themes/wild) [Tanglewood](id:delve/site_domains/tanglewood), observing silently from within the mist. The people are gripped with a cold fear, wondering what fate will befall them. If any approach the blighthound, it leads them into the depths of the woods...",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 128,
 						"authors": [
@@ -10162,7 +10162,7 @@
 					"description": "Long ago, before we arrived on the shores of the Ironlands, other people lived here. Some of those folk dwelled in what we now call the [Flooded Lands](id:classic/atlas/ironlands/flooded_lands), and laid their kin to rest in the vast peat bogs of that place.\n\nA few of those dead do not rest, and rise as bog rots. They are horrible creatures, with preserved flesh stained and withered like old leather. Their eyes are black pits, and their mouths hang open in a perpetual, silent scream.\n\nIt is said a bog rot can only find rest by committing another victim to the mire. A soul for a soul. In those final moments, the creature whispers of ancient secrets and forbidden lore, as if unloading the burden of that dark knowledge. For those few who escape the grasp of a bog rot, these awful truths are sometimes worse than death.",
 					"quest_starter": "In a [Corrupted](id:delve/site_themes/corrupted) [Shadowfen](id:delve/site_domains/shadowfen), a great battle once took place. Hundreds died amid the morass. Their mummified corpses lie buried in mud and peat, but many do not rest easily. What secret or artifact is said to lie with them? Why are you sworn to seek it out?",
 					"your_truth": "Ironlanders in the [Flooded Lands](id:classic/atlas/ironlands/flooded_lands) enact a particular burial practice to ensure their kin do not someday rise as a bog rot from that baneful soil. What is it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 129,
 						"authors": [
@@ -10193,7 +10193,7 @@
 					],
 					"description": "A bonehorde is a mass of moldering skeletal remains given unnatural life. They are spawned in old battlefields or tombs, but often range beyond those places to seek out new victims. At the heart of a horde, surrounded by layers of clattering bones, are the remains of the spiteful being who gives the horror its cruel intelligence.\n\nIts form varies. In tight spaces, a bonehorde may appear as an amorphous mound or as a spider-like entity with long, skittering limbs. In the open, it can crudely mimic the shape of an animal or person. The bones constantly shift—snapping like dry twigs—to accommodate its environment, propel its movement, and lash out against its victims.",
 					"quest_starter": "For months, someone has been stealing remains from local graves and barrows. Now, a bonehorde emerges from a [Haunted](id:delve/site_themes/haunted) [Tanglewood](id:delve/site_domains/tanglewood) to attack nearby communities and travelers. Who commands this foul aberration, and for what purpose?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 130,
 						"authors": [
@@ -10228,7 +10228,7 @@
 					"description": "A thrall is a living person controlled by the will of a powerful undead spirit. The malignant presence can lie dormant for some time, feeding on the suffering of the host and subtly manipulating them to achieve its mysterious and often malevolent ends. Once the host is weakened, the spirit supplants their will entirely.",
 					"quest_starter": "A spirit has taken possession of someone you care about. They are fading, and will soon be a thrall to its will. Within a [Haunted](id:delve/site_themes/haunted) [Barrow](id:delve/site_domains/barrow), the spirit’s remains lie entombed. What ritual must you enact there to banish this foul presence?",
 					"your_truth": "To detect the presence of a spirit, drawing it out of the thrall for a few moments, mystics must perform a dangerous ritual. What is the nature of this ritual, and what rare or elusive component does it require?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 131,
 						"authors": [
@@ -10259,7 +10259,7 @@
 					],
 					"description": "Wights are beings who carry out their sworn charge—to protect a place, object or person—even beyond death. They retain their reasoning and intelligence, but are driven obsessively by this singular purpose.\n\nA wight’s steadfast will can delay their inevitable physical decay for decades, but they are marked by death nonetheless. They have the pallor of a freshly entombed corpse, with sallow skin stretched thin over bones. They often hide their corrupted features behind iron burial masks.\n\nSome wights wield the armor and weapons they favored in life, and are relentless, unyielding fighters. Others master dark rituals, empowered by the knowledge of what lies beyond our mortal realm.\n\nA wight who forsakes their vow will continue their tortured existence as a bonewalker, fated to lurk forever at the precipice of death.",
 					"quest_starter": "A wight is in search of the person it is sworn to protect, now held in a [Fortified](id:delve/site_themes/fortified) [Stronghold](id:delve/site_domains/stronghold). Who does it seek? Why were they taken? Will you stand against the wight, or help them?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 132,
 						"authors": [
@@ -10273,7 +10273,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 128,
 				"authors": [
@@ -10306,7 +10306,7 @@
 					"description": "A blood thorn is a malignant, carnivorous plant. It seizes its victims with long, creeping tendrils. Then, it leeches their life through hollow thorns, eventually bleeding them dry.\n\nBlood thorns appear in woodland areas throughout the Ironlands. They are especially common in the [Deep Wilds](id:classic/atlas/ironlands/deep_wilds), where they often encircle [elf](id:classic/npcs/firstborn/elf) villages. Some suspect they are cultivated by the elves, or share a symbiotic relationship with them.",
 					"quest_starter": "Ironlanders attempted to found a settlement at the heart of a [Wild](id:delve/site_themes/wild) [Tanglewood](id:delve/site_domains/tanglewood) a decade ago. That place is now abandoned and infested by blood thorns. Why did the settlers try to create a home in such an untamed place? What object or information do you seek there?",
 					"your_truth": "Each spring, a vibrant red flower sprouts from blood thorn branches. This blossom is coveted as an ingredient for alchemical elixirs. What effect does it provide?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 138,
 						"authors": [
@@ -10338,7 +10338,7 @@
 					"description": "The ancient standing stones, crafted long before we settled here, preserve the memories and secrets of the Ironlands.\n\nBecause the stones are often hidden within dense thickets, buried in snow, or obscured by veils of mist, a traveler may find themselves unexpectedly breaking the boundary of a circle. The stones hunger for new knowledge, and our memories are fodder for their insatiable appetites. What they take is sometimes gone forever.\n\nSome Ironlanders enter a circle willingly. Perhaps they hope to abandon a painful memory to the stones, discarding that piece of themselves like slag hammered from wrought iron. Then, there are those who wish to forsake the world and live with their memories. For them, an unreal life within the circle is better than the cruel reality outside of it.\n\nThose in need of information may choose to risk a negotiation within a circle. Knowledge for knowledge is the customary trade, but the stones are cunning and may demand a more horrible price.",
 					"quest_starter": "A clan of Ironlanders protect and worship a circle of stones found in a [Hallowed](id:delve/site_themes/hallowed) [Tanglewood](id:delve/site_domains/tanglewood). What forbidden secrets do these stones offer? How does the price for these secrets threaten you or your kin?",
 					"your_truth": "The stones covet a particular type of memory above all others. What is it, and what do they offer in exchange?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 140,
 						"authors": [
@@ -10369,7 +10369,7 @@
 					"description": "The glimmer are beings of mysterious origin and intent. They are most often encountered as particles of light which coalesce into a luminous humanoid or animal form.\n\nThey are drawn to those who need guidance. For wayward travelers and seekers of hidden things, a glimmer will make a silent offer of passage. Relief from the dangers of the Ironlands or a quick journey to a distant destination is a tempting invitation, but not without its own price.\n\nThe path the glimmer reveals is not wholly of our world. It can descend into the past, or climb into the future. It can wend its way across other lands and through strange realities. These trails are navigated not just by the glimmer, but by ancient, baneful things beyond comprehension.\n\nIf you accept a glimmer’s guidance, steel yourself for the journey. Envision the places and people that give you hope, and you may find yourself among them. But do not be distracted. The temptations and terrors along the way can lead all but the most resolute astray. To be lost along a glimmer’s path is to remain lost—perhaps forever.",
 					"quest_starter": "Someone you love entered a [Corrupted](id:delve/site_themes/corrupted) [Shadowfen](id:delve/site_domains/shadowfen) in search of a glimmer’s aid. They did not return. What did they seek? Can you walk the glimmer’s path and bring them back home?",
 					"your_truth": "If you seek the guidance of a glimmer, you can try summoning one through a specific rite. What must you do? What cost must be paid?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 142,
 						"authors": [
@@ -10398,7 +10398,7 @@
 					"description": "A gloom is a mass of malignant shadow. It dwells in dark places beneath the earth, or in the shadows of thick woods. At twilight and during the long gray days of winter, it emerges from its lightless refuge to sate its hunger.\n\nThe gloom’s amorphous form cannot exert physical force. Instead, it will draw in its victims through illusion, mimicking familiar voices or forms. Or it will use the cover of darkness to ambush unwary prey. Once enveloped, the victim is a captive audience for the gloom’s apparitions, forced to face their innermost doubts and fears. The gloom picks at their sanity like a scavenger cleaning meat from bones. After a time, there is nothing left but an empty shell.\n\nIf trapped within a gloom, let your conviction and courage be your light. Against hopelessness, find hope. Against despair, find peace of mind. Against terror, find faith. In the darkness, it is not the gloom that is your enemy. It is yourself.",
 					"quest_starter": "[Zealots](id:delve/npcs/ironlanders/zealot) nurture a gloom within a [Hallowed](id:delve/site_themes/hallowed) [Underkeep](id:delve/site_domains/underkeep). They believe this anomaly offers true enlightenment, and seek a means to unleash it on the Ironlands. Who is the leader of this sect?",
 					"your_truth": "Is there a benevolent counterpart to a gloom—one which offers light and hope instead of darkness and despair? Is this the cure for someone who suffers the aftermath of a gloom’s visions? What is it called, and where can it be found?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 144,
 						"authors": [
@@ -10431,7 +10431,7 @@
 					"description": "In coastal waters and cavern pools, these swirling vortexes of frigid water drag the unwary into their depths, stealing the breath from their lungs.\n\nMaelstroms often manifest in places of great loss and tragedy, on the sites of shipwrecks or the watery graves of drowned travelers. The debris swept into the maelstrom’s heart batter armor and flesh. The voices of the maelstrom’s victims, ripped from their chests with their dying breaths, cry out from the turbulent water.",
 					"quest_starter": "Within a waterway cutting through a [Ravaged](id:delve/site_themes/ravaged) [Icereach](id:delve/site_domains/icereach), a great maelstrom drew a longship and its crew into the depths. Despite an exhaustive search, no survivors—or even bodies—are found. They are simply gone. Why are you compelled to discover the fate of these victims?",
 					"your_truth": "Some believe that you must cast a particular thing of value into a maelstrom in trade for your life. What is it?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 146,
 						"authors": [
@@ -10463,7 +10463,7 @@
 					"description": "A tempest is a fierce, unnatural storm. It can appear in any season or in any weather, but is larger and more powerful in the depths of winter. It is drawn to the warmth of living beings, and seeks to douse that life as one would snuff out a candle.\n\nA tempest’s true nature is a mystery. Is it intelligent, or just a force of nature? Those who survive an encounter sometimes report hearing hushed voices and seeing strange forms within the whirlwind. Some few tell tales of the eye of the storm, where the colds and wind abate, and where relief from certain death is offered—for a price.",
 					"quest_starter": "In the [Havens](id:classic/atlas/ironlands/havens), a massive, swirling tempest has appeared. It is expanding with grim purpose. A settlement was destroyed, and others are threatened. At the heart of the storm lies an [Ancient](id:delve/site_themes/ancient) [Ruin](id:delve/site_domains/ruin). What force powers this tempest? Can it be stopped, or will it someday cover all the Ironlands in its cold wrath?",
 					"your_truth": "Are there Ironlanders in your world who can foretell or influence the weather? If so, what are they called? What signs do they look for as a portent of a coming tempest?",
-					"source": {
+					"_source": {
 						"title": "Ironsworn: Delve",
 						"page": 148,
 						"authors": [
@@ -10477,7 +10477,7 @@
 					}
 				}
 			},
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 138,
 				"authors": [
@@ -10498,7 +10498,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/path/alchemist",
 			"description": "This ancient tome was originally written by a legendary alchemist. In its curiously well-preserved pages, inscribed in an ink of unnatural intensity, are formulas for alchemical concoctions. New recipes occasionally appear unbidden, although the total number of pages never changes.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 182,
 				"authors": [
@@ -10517,7 +10517,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/animal_kin",
 			"description": "This large tooth of uncertain origin resonates with the power and mystery of the untamed world. When you hold or wear the fang, your eyes take on a slight golden hue, and you feel the call of those wild places.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 182,
 				"authors": [
@@ -10536,7 +10536,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/banner_sworn",
 			"description": "First borne by the surviving members of a warband who stood firm against an enemy onslaught, this banner is scarred by generations of war. When you carry it into battle against an overwhelming foe, you might hear the song of former bearers, or catch glimpses of their spectral presence fighting alongside you.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 182,
 				"authors": [
@@ -10555,7 +10555,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/battle_scarred",
 			"description": "The Sundered, an Ironlands warband, was formed of those who suffered the traumas of battle—but whose fighting spirit remained. Khinara the Half-Handed, a shrewd leader outcast from her former band, brought these misfits together to forge a new path. Their final and most renowned battle was to stand against an overwhelming force of varou at the Siege of Winterhill. Nearly all the Sundered fell in that long day of fighting, but not before saving many Ironlanders from the varou horde.\n\nKhinara and her handful of remaining comrades left the battleground that day and have not been seen since. A simple cairn marked the sacrifice and courage of the Sundered, from which only this small stone remains.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 182,
 				"authors": [
@@ -10574,7 +10574,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/blade_bound",
 			"description": "This simple leather bracer was worn generations ago by the first person killed by your kin-blade. At that time, it was a simple weapon wielded by your ancestor. With their dying breath, the blade’s victim cursed your ancestor to an afterlife of iron servitude, binding them forever to the weapon.\n\nThe bracer is weathered and marred by faded blood stains. When worn on your blade-arm, you feel a stronger connection to your ancestor within the iron. But there is another presence here, and you sense its long-simmering thirst for revenge.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 183,
 				"authors": [
@@ -10593,7 +10593,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/bonded",
 			"description": "Ages ago, this waterskin, filled with wine, was passed among the fighters of a warband on the night before a fateful battle. They drunk heartily, sang hopeful tunes, and swore promises to one another. None would be left behind, they vowed. All would fall or stand together.\n\nBy the dawn, all lie dead. But their loyalty and companionship infused this waterskin with the purity of those vows. Anything it contains—water, wine, or mead—is made sweeter and more refreshing. When you bear the skin, your own nature might change subtly, and others may view you more favorably.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 183,
 				"authors": [
@@ -10612,7 +10612,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/dancer",
 			"description": "These lengths of fabric, bound together with silvery thread, are enchanted with the alluring but dangerous essence of the hyperborean realms.\n\nWhen you dance with the scarves, your movements seem to blur and shimmer, becoming almost ethereal. The fabric casts wavering, prismatic auras into the air. Their beguiling nature is otherworldly.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 183,
 				"authors": [
@@ -10631,7 +10631,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/devotant",
 			"description": "This urn of brassy metal, etched with strange and captivating iconography, contains the ashes and bone fragments of an ancient devotant, the founder of your faith. While carrying this reliquary, you might catch whispers and chants on the wind; echoes of ancient oration.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 184,
 				"authors": [
@@ -10650,7 +10650,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/empowered",
 			"description": "This sigil of simple worked iron bears a gemstone that once adorned a noble circlet. Within its facets, you might glimpse the faces of an ancient ruler whose reign ended with the sundering of their circlet of power. When you bear this sigil, you embody some measure of this ruler’s former authority.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 184,
 				"authors": [
@@ -10669,7 +10669,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/fortune_hunter",
 			"description": "This battered copper coin, emblazoned with the emblem of a forgotten people, appears mundane at first glance—a worthless trinket. But when spun on a surface, flipped into the air, or rolled across knuckles, the coin hums with a strange and discordant tone. Those who understand the coin’s song may find themselves on a path of good fortune.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 184,
 				"authors": [
@@ -10688,7 +10688,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/herbalist",
 			"description": "This obsidian pestle is streaked with shimmering silver. The rounded end is unworn and unstained even after centuries of use. When ground against a mortar, violet smoke wafts from the ingredients, occasionally forming vaguely humanoid figures and bestial shapes. The phantasms are gone to the wind almost as soon as they appear.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 184,
 				"authors": [
@@ -10707,7 +10707,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/honorbound",
 			"description": "Once clasped to your arm, this simple iron bracelet binds itself closed. It cannot be removed, except by lopping off your hand at the wrist. When you stay true to your word, it is said to grant good fortune. But when you tell a lie or forsake an oath, it tightens painfully, like a snake coiling around its prey.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 185,
 				"authors": [
@@ -10726,7 +10726,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/improviser",
 			"description": "An infamous scoundrel wore a wide belt laden with pouches and buckles, from which he drew wondrous implements to aid in his devious work. After his death, the baldric disappeared, but occasionally finds its way into the hands of the clever and the cunning. It’s said that in times of need, one might find their salvation within the many pouches and pockets of the belt.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 185,
 				"authors": [
@@ -10745,7 +10745,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/path/infiltrator",
 			"description": "This leathery cloak and cowl, yellow-brown in hue, is stitched from the hide of a basilisk. When draped over the shoulders, the cloak allows the wearer to embody the stealthy nature of those beasts of the southern marshlands.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 185,
 				"authors": [
@@ -10764,7 +10764,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/loyalist",
 			"description": "This sweeping signal horn, carved from the tusk of a mammoth, is etched with inscrutable runes. When blown, the horn emits the thunderous bellow of a mammoth.\n\nThrough the years, keepers of this mighty horn have rallied allies and summoned aid to their friends. Today, it is imbued with the loyalty and sacrifices of those bearers.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 185,
 				"authors": [
@@ -10783,7 +10783,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/path/masked",
 			"description": "The Progenitor Shard appears as a mundane piece of petrified wood. However, it is a fragment of what the elves call the source tree—the long dead entity from which all other elder trees originate. When pressed to the forehead of an elven mask, the shard sets itself into a hollow and glimmers with ancient power. Then, the mask makes a dramatic change to its features, such as sprouting wooden horns or antlers. A mask with the Progenitor Shard may even display new awareness and intelligence, reacting to others through subtle changes of its once-inert expression.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 186,
 				"authors": [
@@ -10802,7 +10802,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/oathbreaker",
 			"description": "This remnant of an ancient sword consists only of a hilt, bound in decaying leather, and a stunted piece of broken blade. When it was whole, the weapon was wielded by a queen’s guard. That warrior failed in his oath to protect his queen when she was assassinated by a usurper. In honor of his fallen liege, he undertook a new years-long quest that toppled kingdoms and remade the world. At the end of it, he shattered his sword and made no more vows. What’s left of the blade is said to hold an essence of the resolve that set the warrior on his path of retribution.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 186,
 				"authors": [
@@ -10821,7 +10821,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/outcast",
 			"description": "This mark is branded or tattooed onto the flesh of outcasts. It is the sigil of an Old World leader, betrayed by their own kin, who was stripped of their name and banished to the wilderness. They eventually returned to undo the schemes of those who cast them out. But even after they were welcomed back into their community, they chose to disappear again into the wilds—committed to their new life in exile.\n\nNow the sigil, inscribed or branded as part of lengthy ceremony, marks the forsaken or misunderstood among the Ironlanders and gives them the strength to carry on. Only a few still hold the knowledge of the ritual which sets this mark upon your flesh.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 186,
 				"authors": [
@@ -10840,7 +10840,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/path/pretender",
 			"description": "This elaborate tattoo, drawn with blood-infused ink, depicts a face that seems to change subtly each time you look at it. The mystic known as the Gray Lady, who was alive in the Old World and may outlive those not yet born in this new land, grants this mark to those she finds worthy. If you seek to escape your former life by adopting new identities, the cunning magic of this tattoo may aid you in your path.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 187,
 				"authors": [
@@ -10859,7 +10859,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/revenant",
 			"description": "This fragment of woolen cloth is etched with words in a long-forgotten language. It is said to be a piece of the burial shroud of a great warrior who defied death to join her war-kin in one final battle. Those who have seen beyond the veil of our world will feel a kinship to the enduring spirits that lurk within the shroud.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 187,
 				"authors": [
@@ -10878,7 +10878,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/rider",
 			"description": "This helmet with a crest of horsehair was worn by Delkash the Horseborn, a legendary leader who commanded a mighty warband of mounted warriors on the eastern plains of the Old World. She and her band were renowned for their skill in riding and the almost spiritual connection they shared with their horses.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 187,
 				"authors": [
@@ -10897,7 +10897,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/ritualist",
 			"description": "This unassuming tome is plainly bound in leather and clasped in iron. For most folk, the pages within appear blank. For those with the gift of magic, those pages are filled with the writings and illustrations of generations of ritualists. The content is a mix of tempting secrets, indecipherable scrawls, and deranged ramblings. It is a life’s work to draw meaning from it, but even the presence of the book can bring you closer to the powers of the mystic realms.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 187,
 				"authors": [
@@ -10916,7 +10916,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/shadow_kin",
 			"description": "This horrid cloak clasp is fashioned from several interlocking finger bones. It was once worn by Balrick the Bone-Tender, who gathered the bones from crypts across the Old World and believed they whispered of forbidden lore.\n\nWhen you wear the Barrow Clasp, you are marked as someone who has suffered the futility of life, who walks in shadow and embraces the power and secrets of realms beyond our own. For you, the that dark knowledge is not a corruption or a curse. It is a gift.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 188,
 				"authors": [
@@ -10935,7 +10935,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/sighted",
 			"description": "Once owned by a mystic who succumbed to a dark path and became a husk, this glassy stone of volcanic rock is marred by a single hole through its center. Those who carry the Seeing Stone are said to gain clarity and an understanding of mystic forces. Looking through the stone may inspire revelations, but it can also reveal darkness and terrors beyond our understanding. Some secrets are best left unknown.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 188,
 				"authors": [
@@ -10954,7 +10954,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/slayer",
 			"description": "This pendant, fashioned of silver in the shape of a claw, was forged for the famed beast slayer Kodroth in honor of his tenth kill. Unfortunately, Kodroth was devoured on his eleventh hunt, and the medallion sat for a time in the gut of a wyvern. After an unceremonious reintroduction to the world, the Slayer’s Medallion was retrieved and handed from one ill-fated hunter to the next.\n\nThe silver, now gouged by teeth and claw and pitted by digestive juices, is said to hold the hard lessons of every failed bowshot, every clumsy spear thrust, every weakened shield-arm. Perhaps these mistakes will not be your own.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 188,
 				"authors": [
@@ -10973,7 +10973,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/spirit_bound",
 			"description": "Long ago, in the southlands of the Old World, a rich merchant believed he was haunted by the spirit of his beloved dead wife. But the signs of her presence were subtle. The smell of her perfume. An occasional chill. A barely-heard whisper. He longed to see her again, so he gathered the greatest artisans and mystics of the land to create a solution. Years later, they delivered a grand, gold-rimmed mirror that—they said—would reveal worlds and beings beyond the veil. The hopeful merchant had the mirror placed in his chambers and sent his staff away. A day later, a servant returned to find the merchant vanished and the mirror shattered.\n\nThis piece of broken glass, the edges smoothed by time, the surface darkened and tarnished, is all that remains of that ancient mirror. Carrying it with you strengthens the thread between you and those that dwell in the realms between life and death.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 189,
 				"authors": [
@@ -10992,7 +10992,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/storyweaver",
 			"description": "This ornate scroll tube is decorated with delicate silver and gold filigree. It is reputed to contain a single sheet of parchment once belonging to Goldwhyn the Bard, an ancient storyweaver who delighted the most royal of courts and the lowliest of mead halls with tales of adventure and sacrifice. As he lie in his death bed, Goldwhyn wrote one final tale and ordered it sealed away in this scroll tube. It has not been unsealed since, and doing so is said to bring the foulest of luck. Nevertheless, those who carry Goldwhyn’s Denouement are favored with the gift of story and fellowship.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 189,
 				"authors": [
@@ -11011,7 +11011,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/trickster",
 			"description": "This large opal is said to have been enchanted by a cunning mystic who sought to gain influence in court. The gem offers subtle suggestions to help guide conversations or reveal schemes. It is often set within an earring, where its whispers are better heard.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 189,
 				"authors": [
@@ -11030,7 +11030,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/veteran",
 			"description": "The famed warrior Brenna stood against a hundred foes or more before she fell, buying her brothers and sisters in arms the time they needed to retreat through the mountain pass. With blade, axe, and spear, she fought fiercely, her back against the sheer cliffs. Brenna the Unbroken, they call her in songs in the decades since. Her helm is battered and dented, tarnished and stained, but remains whole.\n\nBrenna’s strength, resolve, and sacrifice remain imbued in the iron, the enduring legacy of a noble end.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 190,
 				"authors": [
@@ -11049,7 +11049,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/waterborn",
 			"description": "This pendant, fashioned from the tip of a leviathan’s tooth, is engraved with a depiction of the fateful end of that creature. Pierced by the Abyssal Harpoon, an ancient weapon of unnatural sharpness, the leviathan is shown making a final leap above the waves in its death throes. If you stare at the pendant, you might find the scene revealed in extra clarity. The waves splash and surge, and you can see the mouth of the leviathan opening in a final, defiant roar.\n\nWhen you wear this pendant—whether to honor the passing of this great beast, or as a warning to others of its kind—you are connected to the spirits of the water. If you are lucky, those spirits will favor you with fair winds and calm seas.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 190,
 				"authors": [
@@ -11068,7 +11068,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/wayfinder",
 			"description": "This simple wooden rod, carved from an Old World rowan tree, can help guide travelers to their destination. It is marked with dozens of tiny notches representing successful journeys, and is said to have been used in finding the Ironlands during our escape from the Old World.\n\nWhen you hold the Bough to the horizon, you feel the magnetic pull of the proper course. However, this object sometimes has its own opinions on where you should head, and may lead you to unexpected destinations.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 190,
 				"authors": [
@@ -11087,7 +11087,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/weaponmaster",
 			"description": "This simple whetstone is engraved with a single mark—the bear claw motif of a legendary warrior renowned for their prowess in the fighting arenas of the Old World. This stone was passed from them through successive generations of fighters, and has honed the edge of countless weapons.\n\nEach faint score upon the Whetstone of the Bear is suffused with the courage, skill, and tenacity of the warriors who left that mark. When you use the whetstone, you may hear distant echoes of long-ago battles; when you carry it, you bear the legacy of those brave champions.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 191,
 				"authors": [
@@ -11106,7 +11106,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/path/wildblood",
 			"description": "This small elderwood carving depicts an intricate scene of trees, birds, and woodland animals. Looking at it for a time seems to reveal new or transformed details. A live tree grows where once stood a stump. Eyes look out from the shadows of a hollow, then disappear. A nesting bird takes flight.\n\nWhen you carry this unusual piece of art, you feel kinship with the natural world and a deeper understanding of those wild places. The vignette may even reveal clues which lead you on the proper path through untracked lands and keep you safe from threats.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 191,
 				"authors": [
@@ -11125,7 +11125,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/path/wright",
 			"description": "Once worn by a wright who built the first ship to land on the shore of the Ironlands, these hide gloves, sturdy yet flexible and reinforced with iron studs, allow for great dexterity while also protecting a worker’s hands. The strength, skill, and resilience of dozens of wrights over many decades is worn into the leather.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 191,
 				"authors": [
@@ -11144,7 +11144,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/archer",
 			"description": "This quiver is fashioned from tanned leather, and carved with elaborate, spiraling runes. Despite its age, the leather is as supple as a newly crafted object. Arrows held within are said to be given extra sharpness and accuracy, and the bearer’s sight made more keen. On occasion, an arrow retrieved from the quiver will blossom with a cold blue flame as it flies unerringly to its target.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 192,
 				"authors": [
@@ -11163,7 +11163,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/combat_talent/berserker",
 			"description": "This stitched mantle is a patchwork of different pelts—some recognizable, some less so. When you wear the mantle, the ferocity and resilience of these animals and beasts is with you. Your foes may even look upon you and catch the briefest glimpses of these creatures upon your own form, like phantasms seen in the afterglow of a lightning strike.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 192,
 				"authors": [
@@ -11182,7 +11182,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/combat_talent/brawler",
 			"description": "This band of ridged iron is inscribed with runes and subtly thrums with ancient energy. It fits perfectly in your palm and encircles your closed fist. When wielded in a fight, the crude but effective weapon adds unnatural weight and power to your attacks.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 192,
 				"authors": [
@@ -11201,7 +11201,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/combat_talent/cutthroat",
 			"description": "When you wield this wickedly curved dagger with deadly intent, it almost seems to guide your hand. You can feel its hunger through the leather-wrapped hilt. But the blood it draws can never be completely wiped away. Over time, these stains have darkened the blade nearly to blackness.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 192,
 				"authors": [
@@ -11220,7 +11220,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/combat_talent/duelist",
 			"description": "The greatsword of a fallen warrior was melted down and reforged into this exquisite pair of blades. Each piece in the Iron Dyad is a formidable weapon in its own right, light and well balanced, with a keen edge. Throughout history, these masterworks have been kept apart. Now, reunited in your hands, they whirl in a perfect, synchronous dance, dealing death with grim efficiency.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 193,
 				"authors": [
@@ -11239,7 +11239,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/fletcher",
 			"description": "The wooden hilt of this delicate knife is carved in the form of a diving hawk. When used to fashion arrow shafts or trim fletchings, the blade imparts the speed and deadliness of that majestic creature to the arrow itself. When the arrow flies true, you may even hear it accompanied by the cry of a hawk.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 193,
 				"authors": [
@@ -11258,7 +11258,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/combat_talent/ironclad",
 			"description": "This chain shirt is fashioned from rings of black iron, a starforged metal notoriously difficult to work in such delicate forms. It is as strong and resistant as the sturdiest shield. The glimmering black chain is beautiful to behold—like a clear night sky strung with iridescent stars.\n\nWhen you wear the armor, you are connected to the eternal void beyond our own world. At night, the stars call to you with an alluring song.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 193,
 				"authors": [
@@ -11277,7 +11277,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/combat_talent/long_arm",
 			"description": "Some in the Ironlands speak of a figure known as the Rover, who wandered from settlement to settlement and was said to bring divine fortune. The figure dressed simply, came and went without fanfare or frivolity, and carried a gnarled staff of yew adorned with trinkets and etched with symbols of the firstborn. This staff, worn to a polished shine from decades of use, now fits in your own hand as if designed for it.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 193,
 				"authors": [
@@ -11296,7 +11296,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/shield_bearer",
 			"description": "This metal boss, affixed to the center of uncounted shields over years and generations, shines as bright as the day it was forged. It is said to strengthen both the shield and its wielder—and endures beyond both. Looking into the boss by firelight may reveal fragmentary reflections of battle and sacrifice.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 194,
 				"authors": [
@@ -11315,7 +11315,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/skirmisher",
 			"description": "The name of the warrior who wielded Dragon’s Bite, who felled dragons of old, is lost to time. But the spear, its tip heated in the flames of dragons and quenched in their blood, is legend. The haft of this weapon is simple and mundane, unadorned. The spear’s point is formed with a layer of cold iron around a core of strange black metal. Some say the dark center is fashioned from the fossilized heart of mother dragon, the once-queen of dragonkind.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 194,
 				"authors": [
@@ -11334,7 +11334,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/slinger",
 			"description": "Before the passing of the giants in the Old World, one of their clan terrorized a highland village. For months the people suffered the torment of the giant, until a brave villager felled him with this sling.\n\nToday, untold years later, the leather is still supple, and the weapon imparts the stones unnatural force and precision. The large pouch can hold multiple stones, enabling a skilled slinger to bombard a foe with a flurry of lethal projectiles.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 194,
 				"authors": [
@@ -11353,7 +11353,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/sunderer",
 			"description": "A clan of raiders once terrorized vast swathes of the Old World. The greatest of them was said to wield a wicked axe he called Warbringer. It was forged of the pillaged iron of defeated foes. Following the marauder’s death, the axe passed from one hand to the next—over years and across kingdoms—as if seeking someone worthy of its savage power.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 194,
 				"authors": [
@@ -11372,7 +11372,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/swordmaster",
 			"description": "“May your wits nor your iron never dull,” the runes read, running the length of this worn, dark leather scabbard. Any blade drawn from it hums a harmonious tone, its edge as sharp as the day it was forged.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 195,
 				"authors": [
@@ -11391,7 +11391,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/combat_talent/thunder_bringer",
 			"description": "The simple and brutal form of this great iron hammer belies the legend of its making. Said to have been crafted by the giant smiths of old, the Hammer of Reckoning was a gift bestowed upon an ancient people of the Ironlands. Forged during a great storm, and imbued with the essence of that violent tempest, it is a superbly balanced and destructive weapon. Its mightiest blows are sometimes accompanied by a distant peal of thunder.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 195,
 				"authors": [
@@ -11410,7 +11410,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/ritual/augur",
 			"description": "This unusually large crow feather is adorned with beads and brightly colored string. When you wear or hold the feather and perform the ritual to summon crows, the messages they carry are made more understandable. However, crows are still tricksters, and liable to bring unwelcome news.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 196,
 				"authors": [
@@ -11429,7 +11429,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/ritual/awakening",
 			"description": "This clay decanter once belonged to an ancient mystic who dabbled in the secrets of life and death. Wracked with disease, facing his own mortality, he vowed he would endure. He inscribed the decanter with runes of power, and breathed his dying words into it. In that moment, clinging to the mortal world like a drowning man struggling to stay above the surface, his fear and anger infused the decanter with an unending breath.\n\nWhen you release the stopper to aid the creation of your simulacrum, those last words sometimes escape as whispered curses.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 196,
 				"authors": [
@@ -11448,7 +11448,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/ritual/bind",
 			"description": "This ring of polished wood is engraved with intertwining branches. Set in its center is a lustrous white stone. When the wearer performs the bind ceremony, the stone catches the light of the moon and flares with an unnatural glow. This light casts faint shadows of animals and beasts which dance in rhythm with the ritualist’s steps.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 196,
 				"authors": [
@@ -11467,7 +11467,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/ritual/communion",
 			"description": "When lit, this stick of incense emits a green-yellow smoke which smells faintly of wet earth and moldering things. The swirling incense eases the passage of spirits to our world, and helps bind them to the ritualist’s summoning circle.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 196,
 				"authors": [
@@ -11486,7 +11486,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/ritual/divination",
 			"description": "Carved from a snow-white chunk of alabaster, this runestone of uncertain origin reveals a new inscription each time it is thrown.\n\nThe stone makes some secrets obvious, and teases others through implication. For a particularly dire or surprising reading, it may even show a different surface or texture. For example, you might throw it in its usual alabaster form, and see it land as pitted black pumice. Divining the meaning of this trickery is not always easy—the riddlestone is a notoriously fickle tool.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 197,
 				"authors": [
@@ -11505,7 +11505,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/ritual/invoke",
 			"description": "This arrow-shaped, palm-sized stone seems completely unremarkable. But when you hold it at arm’s length and focus on the weave of power around you, the lodestone can guide you to richer sources of mystic energy. Once those essences are absorbed, the stone shines with a subdued radiance.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 197,
 				"authors": [
@@ -11524,7 +11524,7 @@
 			"xp_cost": 5,
 			"asset": "classic/assets/ritual/keen",
 			"description": "This large raven skull is etched with ornate symbols, and dark gems are set into its eye sockets. It is said the spirit of the raven carries the words of your keen to those who dwell in the world beyond death. As you sing, strange shadows writhe within the smoky glass of the gems, and a layer of frost spreads over the skull.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 197,
 				"authors": [
@@ -11543,7 +11543,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/ritual/leech",
 			"description": "This iron brooch bears an ornate and grisly depiction of a large wolf feeding on a fallen deer. Though the carved motif is worn and lusterless with age, the pin itself glimmers like fresh-forged metal and is as sharp as the finest dagger.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 197,
 				"authors": [
@@ -11562,7 +11562,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/ritual/lightbearer",
 			"description": "In its mundane form, this fist-sized rough-hewn crystal is lusterless and opaque. Once used to capture the essence of light, however, it glows with a purity and brilliance which banishes any aspect of darkness.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 198,
 				"authors": [
@@ -11581,7 +11581,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/ritual/scry",
 			"description": "This simple leather pouch brims with ash and bits of bone—the cremated remains of a powerful seer. When cast into a fire, the ash erupts in brilliantly colored sparks and flames. The sounds and visions within the fire are then made more vibrant.\n\nCuriously, the Beholder’s Dust is never fully consumed by the flames. Each time you return to the pouch, you will find the supply of ash replenished.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 198,
 				"authors": [
@@ -11600,7 +11600,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/ritual/shadow_walk",
 			"description": "The plainness of this gold ring belies the nature of its creation. It was forged in the dark fires of the shadow realm, and is forever connected to the veiled paths beyond our own world. Those who wear the ring are but one step from those hidden lands, but must be cautious not to let the will of the ring subvert their own.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 198,
 				"authors": [
@@ -11619,7 +11619,7 @@
 			"xp_cost": 3,
 			"asset": "classic/assets/ritual/sway",
 			"description": "These small brass tubes hang from a stave of elder wood. When raised to the wind, they ring with a melody which is at first discordant. But then, if the spirits of the wind choose to reveal their secrets, the melody harmonizes and amplifies their words.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 198,
 				"authors": [
@@ -11638,7 +11638,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/ritual/talisman",
 			"description": "Rune-marked beads of vibrant hues adorn a simple corded chain. The colors and materials of each bead represent a different aspect of the natural and unnatural worlds, and glimmer faintly in dark places.\n\nWhen you remove a bead from the chain and add it to a charm, you feel the protection bolstered. Beads sometimes appear or disappear from the chain of their accord, but the particular bead you need for a talisman is generally at hand.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 199,
 				"authors": [
@@ -11657,7 +11657,7 @@
 			"xp_cost": 4,
 			"asset": "classic/assets/ritual/tether",
 			"description": "Before setting off on a perilous voyage, a sailor gifted his husband a piece of string—cut from the thread he used to tie back his hair. “Even when it seems we are apart,” he told him, “we are connected. This will guide me back home. Back to you.”\n\nBut his ship did not return. Weeks passed. Then months. All hope seemed lost. One night, as the mourning husband held the string tight in a closed fist, there came a knock at the door. It was the sailor, with no memory of what brought him there.\n\nCenturies later, these twin strings—passed into legend and now returned—are held in a simple wooden box. When you carry it, you are reminded of the importance of a place and the people there, and it helps set you on the path home.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 199,
 				"authors": [
@@ -11762,7 +11762,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 96,
 				"authors": [
@@ -11865,7 +11865,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 96,
 				"authors": [
@@ -11967,7 +11967,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 97,
 				"authors": [
@@ -12069,7 +12069,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 97,
 				"authors": [
@@ -12171,7 +12171,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 98,
 				"authors": [
@@ -12273,7 +12273,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 98,
 				"authors": [
@@ -12376,7 +12376,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 99,
 				"authors": [
@@ -12479,7 +12479,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 99,
 				"authors": [
@@ -12581,7 +12581,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 100,
 				"authors": [
@@ -12683,7 +12683,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 100,
 				"authors": [
@@ -12784,7 +12784,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 101,
 				"authors": [
@@ -12887,7 +12887,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 101,
 				"authors": [
@@ -12989,7 +12989,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 102,
 				"authors": [
@@ -13090,7 +13090,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 102,
 				"authors": [
@@ -13191,7 +13191,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 103,
 				"authors": [
@@ -13293,7 +13293,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 103,
 				"authors": [
@@ -13396,7 +13396,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 104,
 				"authors": [
@@ -13499,7 +13499,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 104,
 				"authors": [
@@ -13600,7 +13600,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 105,
 				"authors": [
@@ -13702,7 +13702,7 @@
 					"frequency": "unforeseen"
 				}
 			],
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 105,
 				"authors": [
@@ -13847,7 +13847,7 @@
 				}
 			],
 			"description": "In this cruel land, there is no shortage of dead to be put to rest. Some barrows are simple crypts for a family or steading. Others are more elaborate or extensive, plunging well into the depths of the earth. A few inconspicuous mounds, their rock and earth worn by time, mark an entryway into impossibly labyrinthine tombs built by long-forgotten people.\n\nEven the most ancient of these sites still echo with the memory and power of lives once lived, battles once fought, loves gained or lost, and vows unfulfilled.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 88,
 				"authors": [
@@ -13984,7 +13984,7 @@
 				}
 			],
 			"description": "Another world lies beneath our feet. Caverns vein the Ironlands with meandering tunnels, plunging pits, soaring chambers, and absolute darkness. Claustrophobic crawlspaces and crevices may lead to miles-long cave complexes. Underground waterways carve a relentless path through stone.\n\nWhen you enter these sites, you are a trespasser in a hostile domain. What unseen things dwell here, watching and waiting, amidst the depths?",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 88,
 				"authors": [
@@ -14121,7 +14121,7 @@
 				}
 			],
 			"description": "These maze-like tunnels are found in the most inhospitable northern reaches of the Ironlands—carved through glacier, mountain, and hill—or in places of supernatural cold. Their icy depths are a perilous environment of fracturing terrain, shadowy reflections, hollow echoes, and lurking predators.\n\nEntering a frozen cavern is like delving into another world. There is a stark beauty in the icebound passages and glistening chambers. Amazing discoveries, locked in the ice, lie unseen for millennia. But do not be distracted by those enticements. The hazards of this site have no sympathy for the unwary and ill-prepared.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 89,
 				"authors": [
@@ -14258,7 +14258,7 @@
 				}
 			],
 			"description": "An Icereach is an expanse of frozen sea, blue-white and sprawling in all directions. These sites are typically found in the northernmost waters. However, a few vast icereaches—kept perpetually frozen by forces we do not understand—clog the seas in southern regions.\n\nOnly the cruelest, most powerful creatures can survive here. The terrain is rugged and cut-through with unstable ice and frigid waterways. Food is scarce. Bitter winds blast the landscape. The remains of ships, locked within the ice, stand as monuments to those who braved these places and were forever lost.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 89,
 				"authors": [
@@ -14395,7 +14395,7 @@
 				}
 			],
 			"description": "Within the earth, riches await the bold. Some mines are shallow pits worked by pick and shovel. Others are offshoots of existing caverns which pierce deep into hills and mountains. A few are the remains of vast underground complexes built by forgotten cultures.\n\nThe iron and other metals claimed from these sites feed our furnaces. From those fires, we craft tools, armor, weapons, and other precious goods. Our hunger for these resources is never satiated, and we often dig into places best left undisturbed.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 90,
 				"authors": [
@@ -14532,7 +14532,7 @@
 				}
 			],
 			"description": "Winding through highlands and mountain ranges, these sites offer a tempting route over otherwise impassable terrain. But treacherous landscapes, foul weather, and a host of mountain predators offer their own dangers. Raiders and others take advantage of these natural chokepoints to ambush the unwary.\n\nLonely cairns mark the resting places of those who walked these routes undefended or unprepared. Pray that your path here does not end under a pile of mountain stones.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 90,
 				"authors": [
@@ -14675,7 +14675,7 @@
 				}
 			],
 			"description": "These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by [Ironlanders](id:classic/collections/npcs/ironlanders) as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.\n\nNewly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. But most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 91,
 				"authors": [
@@ -14812,7 +14812,7 @@
 				}
 			],
 			"description": "Carved by ocean waves and unyielding currents, the sea caves pockmarking the coasts plunge deep into the land’s dark heart. Deadly creatures or determined foes often lair within, but it is the water that is your ever-present enemy. The chill and damp seep into your bones. The tides and upland flooding can bring a torrent of water with little warning. You plunge desperately through submerged passages, praying that an opening will provide a pocket of air.\n\nThis is a realm of water and stone, cold and darkness. You are not welcome here.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 91,
 				"authors": [
@@ -14949,7 +14949,7 @@
 				}
 			],
 			"description": "These foul sites are cloaked in mist, clogged with muddy peat, and drenched in fetid water. Thickets of gray, skeletal trees conceal stalking creatures. Strange shapes move in the fog and beneath dark, placid water. Narrow trails tease with the promise of passage, but instead lead to hidden quagmires.\n\nBe wary. When you enter a shadowfen, the specter of death is your constant companion.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 92,
 				"authors": [
@@ -15092,7 +15092,7 @@
 				}
 			],
 			"description": "These sites weather storms and sieges alike. Their walls stand firm against the forces of this dark land. They are fortified against attack and rife with guards, traps, and other defenses. For those who dwell within, strongholds provide the comfort of wood and stone, axe and bow. For those who seek to breach the walls, they can be as unyielding and unforgiving as the most stalwart ironbound shield.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 92,
 				"authors": [
@@ -15235,7 +15235,7 @@
 				}
 			],
 			"description": "A tanglewood is a thick wilderness, shrouded in mist. Overhanging, twisted boughs obscure the sky. The ground is snarled with exposed roots. The wind carries foreboding whispers, and branches rattle like old bones.\n\nMany refuse to harvest wood from these places, believing the spirits who reside within will bring a curse upon them and their families. Others fear the creatures and beings which lurk within. For these reasons, even near settled areas, the tangles still stand.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 93,
 				"authors": [
@@ -15378,7 +15378,7 @@
 				}
 			],
 			"description": "These subterranean structures are a mystery. They are inexplicably ancient, older perhaps than even the [Firstborn](id:classic/collections/npcs/firstborn). Their passages and halls hide dangers within unfathomable darkness.\n\nMost [Ironlanders](id:classic/collections/npcs/ironlanders) stay well clear of these places. But some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 93,
 				"authors": [
@@ -15510,7 +15510,7 @@
 				}
 			],
 			"description": "An ancient site contains the mysteries, legacies, and dangers of another age.\n\nWalking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, but those treasures may come with a dire cost. Some secrets are best left buried.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 84,
 				"authors": [
@@ -15640,7 +15640,7 @@
 				}
 			],
 			"description": "A corrupted site is befouled by dark forces. It might be the ancient magic of the Ironlands, or the residue of ancient evils, concentrated here like poisoned water soaked into a sponge. Perhaps a powerful mystic dwells in this place, one who walks a sinister path in search of power.\n\nWhen you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 84,
 				"authors": [
@@ -15776,7 +15776,7 @@
 				}
 			],
 			"description": "A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.\n\nInfiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 85,
 				"authors": [
@@ -15900,7 +15900,7 @@
 				}
 			],
 			"description": "A hallowed site is a place of great reverence, suffused with the power of old gods or the fervency of belief. It might be a location of religious significance, the resting place of legendary relics or figures, or the haven of a religious leader.\n\nHallowed places may be warded by ancient rituals, or imbued with divine energy. But it is the faithful and the zealous who will sacrifice everything to defend this place.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 85,
 				"authors": [
@@ -16024,7 +16024,7 @@
 				}
 			],
 			"description": "Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will when you enter this place, for you walk at the boundary of life and death.\n\nSome lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 86,
 				"authors": [
@@ -16154,7 +16154,7 @@
 				}
 			],
 			"description": "Foul creatures swarm these sites, overwhelming trespassers with sheer numbers and unchecked ferocity. The denizens do little beyond multiplying, feeding, and expanding, ravenous for fresh kills to feed the swarm.\n\nNavigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. But it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 86,
 				"authors": [
@@ -16278,7 +16278,7 @@
 				}
 			],
 			"description": "Time, weather, war, or calamity have laid waste to a ravaged site. The terrain is precarious. Hazards lurk around every corner. You may face glimpses of a former greatness, but this place is a ruined shadow of what it once was.\n\nTraversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 87,
 				"authors": [
@@ -16402,7 +16402,7 @@
 				}
 			],
 			"description": "Despite our attempts to extend our control into untracked reaches, the primal forces of nature still hold sway across the Ironlands. In those wild places, we must test our shields against tooth and claw, our wits against insidious creatures, and our resolve against dangerous terrain and harsh environments.\n\nBe wary when you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.",
-			"source": {
+			"_source": {
 				"title": "Ironsworn: Delve",
 				"page": 87,
 				"authors": [

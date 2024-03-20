@@ -17,6 +17,9 @@ public class OracleTableRollableTableDetails extends OracleTableRollable {
     @JsonProperty("_id")
     private OracleRollableId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("column_labels")
     private OracleTableRollableTableDetailsColumnLabels columnLabels;
 
@@ -28,9 +31,6 @@ public class OracleTableRollableTableDetails extends OracleTableRollable {
 
     @JsonProperty("rows")
     private List<OracleTableRowDetails> rows;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -85,6 +85,24 @@ public class OracleTableRollableTableDetails extends OracleTableRollable {
      */
     public void setId(OracleRollableId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
     }
 
     /**
@@ -151,24 +169,6 @@ public class OracleTableRollableTableDetails extends OracleTableRollable {
      */
     public void setRows(List<OracleTableRowDetails> rows) {
         this.rows = rows;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

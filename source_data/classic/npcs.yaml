@@ -5,7 +5,7 @@ package_type: ruleset
 npcs:
   ironlanders:
     name: Ironlanders
-    source:
+    _source:
       <<: &Source
         title: Ironsworn Rulebook
         url: https://ironswornrpg.com
@@ -28,7 +28,7 @@ npcs:
         name: Broken
         nature: Ironlander
         rank: 1
-        source:
+        _source:
           <<: *Source
           page: 138
         features:
@@ -63,7 +63,7 @@ npcs:
         name: Common Folk
         nature: Ironlander
         rank: 1
-        source:
+        _source:
           <<: *Source
           page: 139
         features:
@@ -87,7 +87,7 @@ npcs:
         name: Hunter
         nature: Ironlander
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 139
         features:
@@ -117,7 +117,7 @@ npcs:
         name: Mystic
         nature: Ironlander
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 140
         features:
@@ -149,7 +149,7 @@ npcs:
         name: Raider
         nature: Ironlander
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 140
         features:
@@ -181,7 +181,7 @@ npcs:
         name: Warrior
         nature: Ironlander
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 141
         features:
@@ -210,7 +210,7 @@ npcs:
           Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](id:classic/truths/old_world)? If you carry a shield, what is painted on yours?
   firstborn:
     name: Firstborn
-    source:
+    _source:
       <<: *Source
       title: Ironsworn Rulebook
       page: 142
@@ -222,7 +222,7 @@ npcs:
         name: Elf
         nature: Firstborn
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 142
         features:
@@ -253,7 +253,7 @@ npcs:
         name: Giant
         nature: Firstborn
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 143
         features:
@@ -284,7 +284,7 @@ npcs:
         name: Primordial
         nature: Firstborn
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 144
         features:
@@ -318,7 +318,7 @@ npcs:
         name: Troll
         nature: Firstborn
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 145
         features:
@@ -350,7 +350,7 @@ npcs:
         name: Varou
         nature: Firstborn
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 146
         features:
@@ -379,7 +379,7 @@ npcs:
           A young varou receives their keth—a curved dagger—before undergoing a rite of passage. What must they do to take their place among the adults of the clan?
   animals:
     name: Animals
-    source:
+    _source:
       <<: *Source
       title: Ironsworn Rulebook
       page: 147
@@ -395,7 +395,7 @@ npcs:
         name: Bear
         nature: Animal
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 147
         features:
@@ -425,7 +425,7 @@ npcs:
         name: Boar
         nature: Animal
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 148
         features:
@@ -455,7 +455,7 @@ npcs:
         name: Gaunt
         nature: Animal
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 148
         features:
@@ -483,7 +483,7 @@ npcs:
         name: Marsh Rat
         nature: Animal
         rank: 1
-        source:
+        _source:
           <<: *Source
           page: 149
         features:
@@ -508,7 +508,7 @@ npcs:
         name: Wolf
         nature: Animal
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 150
         features:
@@ -535,7 +535,7 @@ npcs:
           You find the grisly remains of a pack of wolves. All are dead, even the cubs. What caused this? Why is it a harbinger of a greater danger?
   beasts:
     name: Beasts
-    source:
+    _source:
       <<: *Source
       title: Ironsworn Rulebook
       page: 151
@@ -547,7 +547,7 @@ npcs:
         name: Basilisk
         nature: Beast
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 151
         features:
@@ -575,7 +575,7 @@ npcs:
         name: Elder Beast
         nature: Beast
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 152
         features:
@@ -604,7 +604,7 @@ npcs:
         name: Harrow Spider
         nature: Beast
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 153
         features:
@@ -630,7 +630,7 @@ npcs:
         name: Leviathan
         nature: Beast
         rank: 5
-        source:
+        _source:
           <<: *Source
           page: 154
         features:
@@ -660,7 +660,7 @@ npcs:
         name: Mammoth
         nature: Beast
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 155
         features:
@@ -688,7 +688,7 @@ npcs:
         name: Wyvern
         nature: Beast
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 156
         features:
@@ -720,7 +720,7 @@ npcs:
           Rumors persist of a wyvern graveyard where wyverns instinctively go when their death is near. Where is this supposedly located? In what way do Ironlanders make use of wyvern bones?
   horrors:
     name: Horrors
-    source:
+    _source:
       <<: *Source
       title: Ironsworn Rulebook
       page: 157
@@ -734,7 +734,7 @@ npcs:
         name: Bonewalker
         nature: Horror
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 157
         features:
@@ -766,7 +766,7 @@ npcs:
         name: Frostbound
         nature: Horror
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 158
         features:
@@ -793,7 +793,7 @@ npcs:
         name: Chimera
         nature: Horror
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 158
         features:
@@ -822,7 +822,7 @@ npcs:
         name: Haunt
         nature: Horror
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 159
         features:
@@ -860,7 +860,7 @@ npcs:
         name: Hollow
         nature: Horror
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 160
         features:
@@ -890,7 +890,7 @@ npcs:
         name: Iron Revenant
         nature: Horror
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 161
         features:
@@ -924,7 +924,7 @@ npcs:
         name: Sodden
         nature: Horror
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 162
         features:

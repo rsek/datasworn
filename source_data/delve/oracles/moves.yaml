@@ -5,7 +5,7 @@ oracles:
   moves:
     name: Moves
     enhances: classic/collections/oracles/moves
-    source:
+    _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
         url: https://ironswornrpg.com
@@ -30,7 +30,7 @@ oracles:
         #       content_type: result
         name: Delve the Depths
         # move: delve/moves/delve/delve_the_depths
-        source: &CollectionSource
+        _source: &CollectionSource
           <<: *Source
           page: 21
         contents:
@@ -98,7 +98,7 @@ oracles:
         name: Find an Opportunity
         oracle_type: table_simple
         # Move: delve/moves/delve/find_an_opportunity
-        source:
+        _source:
           <<: *Source
           page: 30
         rows:
@@ -135,7 +135,7 @@ oracles:
       reveal_a_danger:
         name: Reveal a Danger
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 34
         rows:
@@ -183,7 +183,7 @@ oracles:
         name: Reveal a Danger (alternate version)
         replaces: delve/oracles/moves/reveal_a_danger
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 68
         rows:
@@ -227,7 +227,7 @@ oracles:
         match:
           text: |-
             On a match, this development also exposes a surprising aspect of the threat’s plan or nature.
-        source:
+        _source:
           <<: *Source
           page: 155
         rows:

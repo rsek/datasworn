@@ -3,7 +3,7 @@ package_type: ruleset
 assets:
   companion:
     name: Companion Assets
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin

@@ -16,14 +16,14 @@ public class Truth {
     @JsonProperty("_id")
     private TruthId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("name")
     private Label name;
 
     @JsonProperty("options")
     private List<TruthOption> options;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -69,6 +69,24 @@ public class Truth {
     }
 
     /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
+    }
+
+    /**
      * Getter for name.<p>
      * The primary name/label for this item.
      */
@@ -96,24 +114,6 @@ public class Truth {
      */
     public void setOptions(List<TruthOption> options) {
         this.options = options;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

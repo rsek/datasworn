@@ -3,7 +3,7 @@ package_type: ruleset
 assets:
   module:
     name: Module Assets
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin
@@ -22,4 +22,4 @@ assets:
               As above, and if you you use a trophy to reroll all dice and score a strong hit with a match, the legacy of that object favors you; mark two ticks on your bonds legacy track, and do not mark the trophy as spent. If you instead score a miss with a match, envision the cursed legacy that now haunts you.
           - text: |-
               When you give a tour of the vault and make a move in that space to impress or intimidate, add +2 and take +1 momentum on a hit.
-        source: *Source
+        _source: *Source

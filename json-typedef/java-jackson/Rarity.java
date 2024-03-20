@@ -15,6 +15,9 @@ public class Rarity {
     @JsonProperty("_id")
     private RarityId id;
 
+    @JsonProperty("_source")
+    private SourceInfo source;
+
     @JsonProperty("asset")
     private AssetId asset;
 
@@ -23,9 +26,6 @@ public class Rarity {
 
     @JsonProperty("name")
     private Label name;
-
-    @JsonProperty("source")
-    private SourceInfo source;
 
     @JsonProperty("xp_cost")
     private Short xpCost;
@@ -63,6 +63,24 @@ public class Rarity {
      */
     public void setId(RarityId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public SourceInfo getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for source.<p>
+     * Attribution for the original source (such as a book or website) of this
+     * item, including the author and licensing information.
+     */
+    public void setSource(SourceInfo source) {
+        this.source = source;
     }
 
     /**
@@ -109,24 +127,6 @@ public class Rarity {
      */
     public void setName(Label name) {
         this.name = name;
-    }
-
-    /**
-     * Getter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public SourceInfo getSource() {
-        return source;
-    }
-
-    /**
-     * Setter for source.<p>
-     * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
-     */
-    public void setSource(SourceInfo source) {
-        this.source = source;
     }
 
     /**

@@ -75,7 +75,7 @@ export function collectionTransformer<
 ) {
 	let result = {
 		_id: function (data: TIn, key: string | number, parent: TParent): string {
-			const baseId = parent._id.replace('/collections/', '/')
+			const baseId = parent?._id.replace('/collections/', '/') as string
 			const [namespace, _cKey, ...tail] = baseId.split('/')
 
 			const parts = [

@@ -20,6 +20,13 @@ namespace Datasworn
         public MoveId Id { get; set; }
 
         /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
+        /// <summary>
         /// The primary name/label for this item.
         /// </summary>
         [JsonPropertyName("name")]
@@ -27,13 +34,6 @@ namespace Datasworn
 
         [JsonPropertyName("outcomes")]
         public MoveOutcomes Outcomes { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("source")]
-        public SourceInfo Source { get; set; }
 
         /// <summary>
         /// The complete rules text of the move.

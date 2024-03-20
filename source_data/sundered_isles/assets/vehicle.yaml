@@ -2,7 +2,7 @@ _id: sundered_isles
 package_type: ruleset
 assets:
   command_vehicle:
-    source: &Source
+    _source: &Source
       title: Sundered Isles Book Preview
       authors:
         - name: Shawn Tomkin
@@ -52,9 +52,9 @@ assets:
             text: Your seagoing flagship is armed with cannons, transports crew, cargo, and passengers, and can equip support vehicle and module assets. In addition, it has up to 5 hold which acts as supply for you and your allies when taking action or suffering a cost related to cargo and shipwide provisions.
           - text: When you make a move to bargain or gain favor with the promise of resources from your hold, you may add +1 or +2. On a hit, [Sacrifice Resources](id:sundered_isles/moves/suffer/sacrifice_resources), suffering the amount added.
           - text: When you [Finish an Expedition](id:sundered_isles/moves/exploration/finish_an_expedition) (dangerous or greater) on a seagoing journey and score a hit, this expedition strengthened your ties to your ship and crew. You and your allies may mark 1 tick on your bonds legacy track.
-        source: *Source
+        _source: *Source
   incidental_vehicle:
-    source: *Source
+    _source: *Source
     name: Incidental Vehicle Assets
     # TODO: figure out whether this should be represented as multiple assets
     summary: When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to cargo and shipwide provisions.
@@ -105,9 +105,9 @@ assets:
               When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to cargo and shipwide provisions.
 
               The ship cannot be marked as battered or cursed and cannot be enhanced with modules. If it is destroyed, sunk, lost, abandoned, or upgraded to [FLAGSHIP](id:sundered_isles/assets/command_vehicle/flagship) status, discard this card.
-        source: *Source
+        _source: *Source
   support_vehicle:
-    source: *Source
+    _source: *Source
     name: Support Vehicle Assets
     color: &SupportVehicle.color '#495790'
     contents:
@@ -117,7 +117,7 @@ assets:
           options: *Options_Name
           category: Module
           color: *SupportVehicleAsset.color
-          source: *Source
+          _source: *Source
           shared: true
         controls:
           integrity:

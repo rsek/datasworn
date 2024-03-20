@@ -3,7 +3,7 @@ package_type: ruleset
 atlas:
   realms:
     name: Realms
-    source:
+    _source:
       <<: &Source
         title: Sundered Isles
         date: 2023-11-29
@@ -32,7 +32,7 @@ atlas:
 
           Seafarers who chart a course through the isles face unpredictable storms, fierce currents, shifting tides, shallow waters, and lurking marauders. For those who abide and understand the whims of the sea, this realm is home. Those who seek to control the sea, to gain mastery of it, often find only a watery grave.
         # This is the default realm when playing Sundered Isles. You can learn more about the this world on page 30. Depending on the truths you select in the next exercise, your version of the setting can mirror our real-world age of sail, or spotlight more fantastical elements such as supernatural beings, steampunk-style technologies, and monstrous beasts. Your campaign might feature swashbuckling adventure, grim horror, desperate struggles against oppressive empires—or all the above! Ready set sail with the wind in your hair and a vow in your heart? Chart a course for the seafaring realm.
-        source:
+        _source:
           <<: *Source
       skyfaring:
         name: The Skyfaring Realm
@@ -53,7 +53,7 @@ atlas:
 
           Island ecosystems vary by altitude. In the lower regions, rain-soaked islands are covered by impenetrable jungle. Higher, temperate forests and rocky plateaus are shrouded in cold mist. Still higher, some say, icebound islands are locked in an endless winter.
         # When exploring the skyfaring realm, you will often need to interpret oracles and outcomes to fit the setting. For example, when generating a location using the Island oracles (page 138), envision the results as the floating shard of a lost continent. In exchange for this leap of faith, this realm offers interesting possibilities for storytelling. What do settlements look like? What resources do the people trade? How are naval battles undertaken in three dimensions? Ready to soar through the skies and battle with pirates in the dark heart of a thunderclou? Launch your ship into the skyfaring realm.
-        source:
+        _source:
           <<: *Source
       starfaring:
         name: The Starfaring Realm
@@ -72,5 +72,5 @@ atlas:
 
           For bold sailors who set off into this realm, the aether is life. Its starborne currents bear ships and provide breathable air in an otherwise deadly void. But the aether is capricious and ever-changing; navigating its chaotic passages demands skill, courage, and luck in equal measure.
         # The starfaring realm provides the greatest opportunity to freely mix-and-match your Starforged and Sundered Isles assets and oracles. Within this realm, you’ll set a course for distant planets, navigate perilous asteroids fields, encounter extraordinary alien creatures—perhaps even delve ancient precursor vaults. As appropriate to the truths you select in the next exercise, your version of the setting might use technological Starforged assets re-themed as aether-powered technologies. Ready to wade into battle in your ironclad exosuit armed with a blade of scintillating energy? The starfaring realm awaits.
-        source:
+        _source:
           <<: *Source

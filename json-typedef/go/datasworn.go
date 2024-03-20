@@ -203,6 +203,10 @@ type Asset struct {
 	// The unique Datasworn ID for this item.
 	ID AssetID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	Abilities []AssetAbility `json:"abilities"`
 
 	// A localized category label for this asset. This is the surtitle above the
@@ -220,10 +224,6 @@ type Asset struct {
 	// Starforged's module and command vehicle assets) are shared amongst the
 	// player's allies, too.
 	Shared bool `json:"shared"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	Attachments *AssetAttachment `json:"attachments,omitempty"`
 
@@ -473,12 +473,12 @@ type AssetCollection struct {
 	// The unique Datasworn ID for this item.
 	ID AssetCollectionID `json:"_id"`
 
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
+	Source SourceInfo `json:"_source"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1035,12 +1035,12 @@ type Atlas struct {
 	// The unique Datasworn ID for this item.
 	ID AtlasID `json:"_id"`
 
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
+	Source SourceInfo `json:"_source"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1085,16 +1085,16 @@ type AtlasEntry struct {
 	// The unique Datasworn ID for this item.
 	ID AtlasEntryID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	Description MarkdownString `json:"description"`
 
 	Features []MarkdownString `json:"features"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1165,6 +1165,10 @@ type DelveSite struct {
 	// The unique Datasworn ID for this item.
 	ID DelveSiteID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	Denizens []DelveSiteDenizen `json:"denizens"`
 
 	Description MarkdownString `json:"description"`
@@ -1175,10 +1179,6 @@ type DelveSite struct {
 	Name Label `json:"name"`
 
 	Rank ChallengeRank `json:"rank"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	Theme DelveSiteThemeID `json:"theme"`
 
@@ -1239,16 +1239,16 @@ type DelveSiteDomain struct {
 	// The unique Datasworn ID for this item.
 	ID DelveSiteDomainID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	Dangers []DelveSiteDomainDangerRow `json:"dangers"`
 
 	Features []DelveSiteDomainFeatureRow `json:"features"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	Summary MarkdownString `json:"summary"`
 
@@ -1341,16 +1341,16 @@ type DelveSiteTheme struct {
 	// The unique Datasworn ID for this item.
 	ID DelveSiteThemeID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	Dangers []DelveSiteThemeDangerRow `json:"dangers"`
 
 	Features []DelveSiteThemeFeatureRow `json:"features"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	Summary MarkdownString `json:"summary"`
 
@@ -1579,14 +1579,14 @@ type MoveActionRoll struct {
 	// The unique Datasworn ID for this item.
 	ID MoveID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The complete rules text of the move.
 	Text MarkdownString `json:"text"`
@@ -1617,12 +1617,12 @@ type MoveNoRoll struct {
 	// The unique Datasworn ID for this item.
 	ID MoveID `json:"_id"`
 
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
+	Source SourceInfo `json:"_source"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
 
 	// The complete rules text of the move.
 	Text MarkdownString `json:"text"`
@@ -1655,14 +1655,14 @@ type MoveProgressRoll struct {
 	// The unique Datasworn ID for this item.
 	ID MoveID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The complete rules text of the move.
 	Text MarkdownString `json:"text"`
@@ -1698,14 +1698,14 @@ type MoveSpecialTrack struct {
 	// The unique Datasworn ID for this item.
 	ID MoveID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The complete rules text of the move.
 	Text MarkdownString `json:"text"`
@@ -1735,12 +1735,12 @@ type MoveCategory struct {
 	// The unique Datasworn ID for this item.
 	ID MoveCategoryID `json:"_id"`
 
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
+	Source SourceInfo `json:"_source"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1906,6 +1906,10 @@ type Npc struct {
 	// The unique Datasworn ID for this item.
 	ID NpcID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	Description MarkdownString `json:"description"`
 
 	Drives []MarkdownString `json:"drives"`
@@ -1919,10 +1923,6 @@ type Npc struct {
 
 	// The suggested challenge rank for this NPC.
 	Rank ChallengeRank `json:"rank"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	Tactics []MarkdownString `json:"tactics"`
 
@@ -1947,12 +1947,12 @@ type NpcCollection struct {
 	// The unique Datasworn ID for this item.
 	ID NpcCollectionID `json:"_id"`
 
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
+	Source SourceInfo `json:"_source"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2126,16 +2126,16 @@ type OracleCollectionTableSharedDetails struct {
 	// The unique Datasworn ID for this item.
 	ID OracleCollectionID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedDetailsColumnLabels `json:"column_labels"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2185,16 +2185,16 @@ type OracleCollectionTableSharedResults struct {
 	// The unique Datasworn ID for this item.
 	ID OracleCollectionID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedResultsColumnLabels `json:"column_labels"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2245,6 +2245,10 @@ type OracleCollectionTableSharedRolls struct {
 	// The unique Datasworn ID for this item.
 	ID OracleCollectionID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// Provides column labels for this table. The `roll` key refers to the roll
 	// column showing the dice range (`min` and `max` on each table row). For all
 	// other column labels, see the `name` property of each child `OracleColumn`.
@@ -2252,10 +2256,6 @@ type OracleCollectionTableSharedRolls struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2299,12 +2299,12 @@ type OracleCollectionTables struct {
 	// The unique Datasworn ID for this item.
 	ID OracleCollectionID `json:"_id"`
 
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
+	Source SourceInfo `json:"_source"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2565,6 +2565,10 @@ type OracleTableRollableTableDetails struct {
 	// The unique Datasworn ID for this item.
 	ID OracleRollableID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableRollableTableDetailsColumnLabels `json:"column_labels"`
@@ -2577,10 +2581,6 @@ type OracleTableRollableTableDetails struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowDetails `json:"rows"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2636,6 +2636,10 @@ type OracleTableRollableTableSimple struct {
 	// The unique Datasworn ID for this item.
 	ID OracleRollableID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableRollableTableSimpleColumnLabels `json:"column_labels"`
@@ -2648,10 +2652,6 @@ type OracleTableRollableTableSimple struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowSimple `json:"rows"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2754,15 +2754,15 @@ type OracleTablesCollection struct {
 	// The unique Datasworn ID for this item.
 	ID OracleCollectionID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
 	// A grouping of separate tables.
 	OracleType OracleTablesCollectionOracleType `json:"oracle_type"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2876,6 +2876,10 @@ type Rarity struct {
 	// The unique Datasworn ID for this item.
 	ID RarityID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The asset augmented by this rarity.
 	Asset AssetID `json:"asset"`
 
@@ -2883,10 +2887,6 @@ type Rarity struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// From Ironsworn: Delve, p. 174:
 	// 
@@ -3888,14 +3888,14 @@ type Truth struct {
 	// The unique Datasworn ID for this item.
 	ID TruthID `json:"_id"`
 
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
 	Options []TruthOption `json:"options"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"source"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.

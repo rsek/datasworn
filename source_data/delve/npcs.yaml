@@ -5,7 +5,7 @@ npcs:
   ironlanders:
     name: Ironlanders
     enhances: classic/collections/npcs/ironlanders
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -19,7 +19,7 @@ npcs:
         name: Husk
         nature: Ironlander
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 110
         features:
@@ -56,7 +56,7 @@ npcs:
         name: Zealot
         nature: Ironlander
         rank: 1
-        source:
+        _source:
           <<: *Source
           page: 111
         features:
@@ -92,7 +92,7 @@ npcs:
   firstborn:
     name: Firstborn
     enhances: classic/collections/npcs/firstborn
-    source:
+    _source:
       <<: *Source
       page: 112
     contents:
@@ -100,7 +100,7 @@ npcs:
         name: Atanya
         nature: Firstborn
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 112
         features:
@@ -131,7 +131,7 @@ npcs:
         name: Merrow
         nature: Firstborn
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 113
         features:
@@ -162,7 +162,7 @@ npcs:
   animals:
     name: Animals
     enhances: classic/collections/npcs/animals
-    source:
+    _source:
       <<: *Source
       page: 114
     contents:
@@ -170,7 +170,7 @@ npcs:
         name: Bladewing
         nature: Animal
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 114
         features:
@@ -201,7 +201,7 @@ npcs:
         name: Carrion Newt
         nature: Animal
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 115
         features:
@@ -234,7 +234,7 @@ npcs:
         name: Cave Lion
         nature: Animal
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 116
         features:
@@ -260,7 +260,7 @@ npcs:
         name: Deep Rat
         nature: Animal
         rank: 1
-        source:
+        _source:
           <<: *Source
           page: 117
         features:
@@ -291,7 +291,7 @@ npcs:
         name: Nightmare Spider
         nature: Animal
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 118
         features:
@@ -324,7 +324,7 @@ npcs:
         name: Shroud Crab
         nature: Animal
         rank: 1
-        source:
+        _source:
           <<: *Source
           page: 119
         features:
@@ -355,7 +355,7 @@ npcs:
         name: Trog
         nature: Animal
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 120
         features:
@@ -387,7 +387,7 @@ npcs:
   beasts:
     name: Beasts
     enhances: classic/collections/npcs/beasts
-    source:
+    _source:
       <<: *Source
       page: 121
     contents:
@@ -395,7 +395,7 @@ npcs:
         name: Chitter
         nature: Beast
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 121
         features:
@@ -427,7 +427,7 @@ npcs:
         name: Gnarl
         nature: Beast
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 122
         features:
@@ -457,7 +457,7 @@ npcs:
         name: Iron-Wracked Beast
         nature: Beast
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 123
         features:
@@ -491,7 +491,7 @@ npcs:
         name: Kraken
         nature: Beast
         rank: 5
-        source:
+        _source:
           <<: *Source
           page: 124
         features:
@@ -520,7 +520,7 @@ npcs:
         name: Nightspawn
         nature: Beast
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 125
         features:
@@ -555,7 +555,7 @@ npcs:
         name: Rhaskar
         nature: Beast
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 126
         features:
@@ -585,7 +585,7 @@ npcs:
         name: Wyrm
         nature: Beast
         rank: 5
-        source:
+        _source:
           <<: *Source
           page: 127
         features:
@@ -616,7 +616,7 @@ npcs:
   horrors:
     name: Horrors
     enhances: classic/collections/npcs/horrors
-    source:
+    _source:
       <<: *Source
       page: 128
     contents:
@@ -624,7 +624,7 @@ npcs:
         name: Blighthound
         nature: Horror
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 128
         features:
@@ -657,7 +657,7 @@ npcs:
         name: Bog Rot
         nature: Horror
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 129
         features:
@@ -691,7 +691,7 @@ npcs:
         name: Bonehorde
         nature: Horror
         rank: 4
-        source:
+        _source:
           <<: *Source
           page: 130
         features:
@@ -725,7 +725,7 @@ npcs:
         name: Thrall
         nature: Horror
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 131
         features:
@@ -759,7 +759,7 @@ npcs:
         name: Wight
         nature: Horror
         rank: 3
-        source:
+        _source:
           <<: *Source
           page: 132
         features:
@@ -795,7 +795,7 @@ npcs:
           A wight is in search of the person it is sworn to protect, now held in a [Fortified](id:delve/site_themes/fortified) [Stronghold](id:delve/site_domains/stronghold). Who does it seek? Why were they taken? Will you stand against the wight, or help them?
   anomalies:
     name: Anomalies
-    source:
+    _source:
       <<: *Source
       page: 138
     description: Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.
@@ -804,7 +804,7 @@ npcs:
         name: Blood Thorn
         nature: Anomaly
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 138
         features:
@@ -833,7 +833,7 @@ npcs:
         name: Circle of Stones
         nature: Anomaly
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 140
         features:
@@ -870,7 +870,7 @@ npcs:
         name: Glimmer
         nature: Anomaly
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 142
         features:
@@ -908,7 +908,7 @@ npcs:
         name: Gloom
         nature: Anomaly
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 144
         features:
@@ -940,7 +940,7 @@ npcs:
         name: Maelstrom
         nature: Anomaly
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 146
         features:
@@ -972,7 +972,7 @@ npcs:
         name: Tempest
         nature: Anomaly
         rank: 2
-        source:
+        _source:
           <<: *Source
           page: 148
         features:

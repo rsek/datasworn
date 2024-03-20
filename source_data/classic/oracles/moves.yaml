@@ -3,7 +3,7 @@ package_type: ruleset
 oracles:
   moves:
     name: Moves
-    source:
+    _source:
       <<: &Source
         authors:
           - name: Shawn Tomkin
@@ -16,7 +16,7 @@ oracles:
       ask_the_oracle:
         name: Ask the Oracle
         oracle_type: table_shared_results
-        source:
+        _source:
           <<: *Source
           page: 107
         contents:
@@ -77,7 +77,7 @@ oracles:
       endure_harm:
         name: Endure Harm
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 91
         rows:
@@ -99,7 +99,7 @@ oracles:
       endure_stress:
         name: Endure Stress
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 93
         rows:
@@ -118,7 +118,7 @@ oracles:
       pay_the_price:
         name: Pay the Price
         oracle_type: table_simple
-        source:
+        _source:
           <<: *Source
           page: 105
         rows:
