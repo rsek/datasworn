@@ -116,46 +116,53 @@ oracles:
             #     attributes:
             #       derelict_type: [starship]
             rows:
-              - &ZoneRow.0
+              - <<: &ZoneRow.0
+                  result: '[Access](id:starforged/collections/oracles/derelicts/access)'
+                  icon: icons/derelicts/access.svg
                 min: null
                 max: null
-                result: '[Access](id:starforged/collections/oracles/derelicts/access)'
-                icon: icons/derelicts/access.svg
                 # game_objects: *obj:DerelictZone.Access
-              - min: 1
+              - <<: &ZoneRow.1
+                  result: '[Community](id:starforged/collections/oracles/derelicts/community)'
+                  icon: icons/derelicts/community.svg
+                min: 1
                 max: 5
-                result: &ZoneRow.1.result '[Community](id:starforged/collections/oracles/derelicts/community)'
-                icon: &ZoneRow.1.icon icons/derelicts/community.svg
                 # game_objects: *obj:DerelictZone.Community
               - min: 6
                 max: 30
-                result: &ZoneRow.2.result '[Engineering](id:starforged/collections/oracles/derelicts/engineering)'
-                icon: &ZoneRow.2.icon icons/derelicts/engineering.svg
+                <<: &ZoneRow.2
+                  result: '[Engineering](id:starforged/collections/oracles/derelicts/engineering)'
+                  icon: icons/derelicts/engineering.svg
                 # game_objects: *obj:DerelictZone.Engineering
               - min: 31
                 max: 55
-                result: &ZoneRow.3.result '[Living](id:starforged/collections/oracles/derelicts/living)'
-                icon: &ZoneRow.3.icon icons/derelicts/living.svg
-                # game_objects: *obj:DerelictZone.Living
+                <<: &ZoneRow.3
+                  result: '[Living](id:starforged/collections/oracles/derelicts/living)'
+                  icon: icons/derelicts/living.svg
+                  # game_objects: *obj:DerelictZone.Living
               - min: 56
                 max: 65
-                result: &ZoneRow.4.result '[Medical](id:starforged/collections/oracles/derelicts/medical)'
-                icon: &ZoneRow.4.icon icons/derelicts/medical.svg
+                <<: &ZoneRow.4
+                  result: '[Medical](id:starforged/collections/oracles/derelicts/medical)'
+                  icon: icons/derelicts/medical.svg
                 # game_objects: *obj:DerelictZone.Medical
               - min: 66
                 max: 85
-                result: &ZoneRow.5.result '[Operations](id:starforged/collections/oracles/derelicts/operations)'
-                icon: &ZoneRow.5.icon icons/derelicts/operations.svg
+                <<: &ZoneRow.5
+                  result: '[Operations](id:starforged/collections/oracles/derelicts/operations)'
+                  icon: icons/derelicts/operations.svg
                 # game_objects: *obj:DerelictZone.Operations
               - min: 86
                 max: 90
-                result: &ZoneRow.6.result '[Production](id:starforged/collections/oracles/derelicts/production)'
-                icon: &ZoneRow.6.icon icons/derelicts/production.svg
+                <<: &ZoneRow.6
+                  result: '[Production](id:starforged/collections/oracles/derelicts/production)'
+                  icon: icons/derelicts/production.svg
                 # game_objects: *obj:DerelictZone.Production
               - min: 91
                 max: 100
-                result: &ZoneRow.7.result '[Research](id:starforged/collections/oracles/derelicts/research)'
-                icon: &ZoneRow.7.icon icons/derelicts/research.svg
+                <<: &ZoneRow.7
+                  result: '[Research](id:starforged/collections/oracles/derelicts/research)'
+                  icon: icons/derelicts/research.svg
                 # game_objects: *obj:DerelictZone.Research
           settlement:
             name: Settlement
@@ -170,32 +177,25 @@ oracles:
               - *ZoneRow.0
               - min: 1
                 max: 20
-                result: *ZoneRow.1.result
-                icon: *ZoneRow.1.icon
+                <<: *ZoneRow.1
               - min: 21
                 max: 30
-                result: *ZoneRow.2.result
-                icon: *ZoneRow.2.icon
+                <<: *ZoneRow.2
               - min: 31
                 max: 50
-                result: *ZoneRow.3.result
-                icon: *ZoneRow.3.icon
+                <<: *ZoneRow.3
               - min: 51
                 max: 60
-                result: *ZoneRow.4.result
-                icon: *ZoneRow.4.icon
+                <<: *ZoneRow.4
               - min: 61
                 max: 70
-                result: *ZoneRow.5.result
-                icon: *ZoneRow.5.icon
+                <<: *ZoneRow.5
               - min: 71
                 max: 90
-                result: *ZoneRow.6.result
-                icon: *ZoneRow.6.icon
+                <<: *ZoneRow.6
               - min: 91
                 max: 100
-                result: *ZoneRow.7.result
-                icon: *ZoneRow.7.icon
+                <<: *ZoneRow.7
     contents:
       location:
         name: Location
