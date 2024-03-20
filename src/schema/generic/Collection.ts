@@ -1,7 +1,6 @@
 import {
 	Type,
 	CloneType,
-	type ObjectProperties,
 	type SchemaOptions,
 	type TObject,
 	type TOptional,
@@ -17,6 +16,7 @@ import { type TFuzzyObject } from '../utils/typebox.js'
 import { Dictionary, type TDictionary } from './Dictionary.js'
 import { type IdentifiedNode } from './IdentifiedNode.js'
 import { SourcedNode, type TSourcedNode } from './SourcedNode.js'
+import type { ObjectProperties } from '../utils/ObjectProperties.js'
 
 const CollectionMixin = Type.Object({
 	color: Type.Optional(

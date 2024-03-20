@@ -2,11 +2,13 @@ import {
 	Type,
 	CloneType,
 	type ObjectOptions,
-	type ObjectProperties,
-	type ObjectPropertyKeys,
 	type TObject,
 	type TSchema
 } from '@sinclair/typebox'
+import type {
+	ObjectProperties,
+	ObjectPropertyKeys
+} from './ObjectProperties.js'
 
 export function Assign<T extends [TObject, TObject]>(
 	objects: [...T],

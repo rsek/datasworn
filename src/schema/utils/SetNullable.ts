@@ -1,11 +1,11 @@
 import {
 	CloneType,
 	type ObjectOptions,
-	type ObjectProperties,
 	type Static,
 	type TObject
 } from '@sinclair/typebox'
 import { Nullable, type TNullable } from './Nullable.js'
+import type { ObjectProperties } from './ObjectProperties.js'
 
 export function SetNullable<
 	T extends TObject,

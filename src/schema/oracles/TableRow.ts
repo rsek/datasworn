@@ -1,7 +1,6 @@
 import {
 	Type,
 	type ObjectOptions,
-	type ObjectProperties,
 	type Static,
 	type TObject,
 	type TProperties,
@@ -20,6 +19,7 @@ import {
 	type PickByType
 } from '../utils/typebox.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
+import type { ObjectProperties } from '../utils/ObjectProperties.js'
 
 const TableRowBase = Type.Object({
 	result: Type.Ref(Localize.MarkdownString, {

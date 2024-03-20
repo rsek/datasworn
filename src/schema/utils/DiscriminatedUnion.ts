@@ -3,7 +3,6 @@ import {
 	Type,
 	CloneType,
 	TypeRegistry,
-	type ObjectProperties,
 	type SchemaOptions,
 	type Static,
 	type TLiteral,
@@ -15,6 +14,7 @@ import {
 import { map, omit, pick, values } from 'lodash-es'
 import { Discriminator, Members } from '../Symbols.js'
 import { UnionEnum, type TUnionEnum } from './UnionEnum.js'
+import type { ObjectProperties } from './ObjectProperties.js'
 
 export function DiscriminatedUnionFromMapping<
 	TDiscriminator extends string,

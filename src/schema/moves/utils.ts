@@ -5,7 +5,6 @@ import {
 	type TNull,
 	type TRef,
 	type TObject,
-	type ObjectProperties,
 	type TLiteral
 } from '@sinclair/typebox'
 import { ExtractLiteralFromEnum } from '../utils/ExtractLiteralFromEnum.js'
@@ -22,6 +21,7 @@ import {
 } from './common.js'
 import * as Generic from '../Generic.js'
 import * as Utils from '../utils/Assign.js'
+import type { ObjectProperties } from '../utils/ObjectProperties.js'
 
 const MoveBase = Type.Object({
 	replaces: Type.Optional(

@@ -2,7 +2,6 @@
 import {
 	Type,
 	type ObjectOptions,
-	type ObjectProperties,
 	type Static,
 	type TInteger,
 	type TLiteral,
@@ -24,6 +23,7 @@ import * as Utils from '../Utils.js'
 import type * as Id from './Id.js'
 import * as Localize from './Localize.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
+import type { ObjectProperties } from '../utils/ObjectProperties.js'
 
 /**
  * @abstract

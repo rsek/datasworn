@@ -18,4 +18,4 @@ export function OmitMeta<T extends TObject>(schema: T) {
 	return Type.Omit(schema, MetaKeys)
 }
 export type OmitMeta<T> = Omit<T, MetaKeys>
-export type TOmitMeta<T extends TObject> = TOmit<T, MetaKeys>
+export type TOmitMeta<T extends TObject> = TOmit<T, MetaKeys[]>
