@@ -4,6 +4,7 @@ import { Id, Localize, Metadata } from '../common/index.js'
 import { type Tag } from '../rules/TagRule.js'
 import { Dictionary } from './Dictionary.js'
 import { IdentifiedNode, type TIdentifiedNode } from './IdentifiedNode.js'
+import type { ObjectProperties } from '../utils/ObjectProperties.js'
 
 /** Interface shared by objects with source attribute. */
 
@@ -47,7 +48,9 @@ export function SourcedNode<T extends TObject = TObject>(
 	) as any
 }
 export type TSourcedNode<T extends TObject = TObject> = TIdentifiedNode<
-	TObject<Utils.Assign<(typeof SourcedNodeBase)['properties'], T['properties']>>
+	TObject<
+		Utils.Assign<ObjectProperties<typeof SourcedNodeBase>, ObjectProperties<T>>
+	>
 >
 export type SourcedNode<T extends object = object> = IdentifiedNode<T> & {
 	name: string
