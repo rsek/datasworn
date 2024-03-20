@@ -1,4 +1,4 @@
-id: delve
+_id: delve
 package_type: expansion
 ruleset: classic
 oracles:
@@ -30,7 +30,7 @@ oracles:
           page: 213
         rows:
           - <<: &i18n.gerund
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: gerund
             min: 1
@@ -244,7 +244,7 @@ oracles:
           page: 213
         rows:
           - <<: &i18n.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 1

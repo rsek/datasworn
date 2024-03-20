@@ -10,7 +10,7 @@ namespace Datasworn
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
-        [JsonPropertyName("id")]
+        [JsonPropertyName("_id")]
         public AssetCollectionId Id { get; set; }
 
         /// <summary>

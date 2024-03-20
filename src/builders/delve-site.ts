@@ -51,7 +51,7 @@ function featureOrDanger<TCard extends keyof FeatureOrDangerMap>(
 		`${parentID}/${rowType as string}s/${data.min}-${data.max}`
 	)
 	const result = cloneDeep(data) as FeatureOrDangerMap[TCard][typeof rowType]
-	result.id = id
+	result._id = id
 	return result
 }
 
@@ -66,7 +66,7 @@ export const DelveSiteTheme = sourcedTransformer<
 		parent: SourcedNode
 	) {
 		return data.features.map((row) =>
-			featureOrDanger(row, 'feature', this.id)
+			featureOrDanger(row, 'feature', this._id)
 		) as Datasworn.DelveSiteTheme['features']
 	},
 	dangers: function (
@@ -76,7 +76,7 @@ export const DelveSiteTheme = sourcedTransformer<
 		parent: SourcedNode
 	) {
 		return data.dangers.map((row) =>
-			featureOrDanger(row, 'danger', this.id)
+			featureOrDanger(row, 'danger', this._id)
 		) as Datasworn.DelveSiteTheme['dangers']
 	}
 })
@@ -91,7 +91,7 @@ export const DelveSiteDomain = sourcedTransformer<
 		parent: SourcedNode
 	) {
 		return data.features.map((row) =>
-			featureOrDanger(row, 'feature', this.id)
+			featureOrDanger(row, 'feature', this._id)
 		) as Datasworn.DelveSiteDomain['features']
 	},
 	dangers: function (
@@ -101,7 +101,7 @@ export const DelveSiteDomain = sourcedTransformer<
 		parent: SourcedNode
 	) {
 		return data.dangers.map((row) =>
-			featureOrDanger(row, 'danger', this.id)
+			featureOrDanger(row, 'danger', this._id)
 		) as Datasworn.DelveSiteDomain['dangers']
 	}
 })
@@ -121,11 +121,11 @@ export const DelveSiteDenizen: Transformer<
 	DataswornSource.DelveSiteDenizen,
 	Datasworn.DelveSiteDenizen
 > = {
-	id: function (
+	_id: function (
 		data: DataswornSource.DelveSiteDenizen,
 		key: string | number,
 		parent: SourcedNode
 	): string {
-		return trackID(`${parent.id}/denizens/${data.min}-${data.max}`)
+		return trackID(`${parent._id}/denizens/${data.min}-${data.max}`)
 	}
 }

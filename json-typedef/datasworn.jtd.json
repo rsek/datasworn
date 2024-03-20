@@ -3,7 +3,7 @@
 	"mapping": {
 		"ruleset": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "RulesetId"
 				},
 				"datasworn_version": {
@@ -154,7 +154,7 @@
 		},
 		"expansion": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "ExpansionId"
 				},
 				"datasworn_version": {
@@ -1632,7 +1632,7 @@
 		},
 		"Npc": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "NpcId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -1725,7 +1725,7 @@
 		},
 		"NpcCollection": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "NpcCollectionId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -1843,7 +1843,7 @@
 		},
 		"NpcVariant": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "NpcVariantId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -1966,7 +1966,7 @@
 			"mapping": {
 				"tables": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "OracleCollectionId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -2075,7 +2075,7 @@
 				},
 				"table_shared_rolls": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "OracleCollectionId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -2186,7 +2186,7 @@
 				},
 				"table_shared_results": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "OracleCollectionId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -2297,7 +2297,7 @@
 				},
 				"table_shared_details": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "OracleCollectionId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -2413,7 +2413,7 @@
 		},
 		"OracleColumnDetails": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "OracleRollableId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -2497,7 +2497,7 @@
 		},
 		"OracleColumnSimple": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "OracleRollableId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -2586,7 +2586,7 @@
 			"mapping": {
 				"table_simple": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "OracleRollableId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -2702,7 +2702,7 @@
 				},
 				"table_details": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "OracleRollableId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -2869,7 +2869,7 @@
 				"template": {
 					"ref": "OracleRollTemplate"
 				},
-				"i18n": {
+				"_i18n": {
 					"ref": "I18nHints"
 				}
 			},
@@ -2922,7 +2922,7 @@
 				"template": {
 					"ref": "OracleRollTemplate"
 				},
-				"i18n": {
+				"_i18n": {
 					"ref": "I18nHints"
 				}
 			},
@@ -2932,7 +2932,7 @@
 		},
 		"OracleTablesCollection": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "OracleCollectionId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -3074,7 +3074,7 @@
 			"mapping": {
 				"action_roll": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "MoveId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -3152,7 +3152,7 @@
 				},
 				"no_roll": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "MoveId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -3227,7 +3227,7 @@
 				},
 				"progress_roll": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "MoveId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -3311,7 +3311,7 @@
 				},
 				"special_track": {
 					"properties": {
-						"id": {
+						"_id": {
 							"ref": "MoveId",
 							"metadata": {
 								"description": "The unique Datasworn ID for this item."
@@ -3391,7 +3391,7 @@
 		},
 		"MoveCategory": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "MoveCategoryId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -3981,7 +3981,7 @@
 		},
 		"Asset": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "AssetId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -4103,7 +4103,7 @@
 		},
 		"AssetAbility": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "AssetAbilityId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -4356,7 +4356,7 @@
 		},
 		"AssetCollection": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "AssetCollectionId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5139,7 +5139,7 @@
 		},
 		"Truth": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "TruthId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5202,7 +5202,7 @@
 		},
 		"TruthOption": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "TruthOptionId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5278,7 +5278,7 @@
 				"template": {
 					"ref": "OracleRollTemplate"
 				},
-				"i18n": {
+				"_i18n": {
 					"ref": "I18nHints"
 				}
 			},
@@ -5288,7 +5288,7 @@
 		},
 		"Atlas": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "AtlasId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5394,7 +5394,7 @@
 		},
 		"AtlasEntry": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "AtlasEntryId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5484,7 +5484,7 @@
 		},
 		"Rarity": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "RarityId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5551,7 +5551,7 @@
 		},
 		"DelveSite": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "DelveSiteId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5632,7 +5632,7 @@
 		},
 		"DelveSiteDenizen": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "DelveSiteDenizenId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5672,7 +5672,7 @@
 		},
 		"DelveSiteDomain": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "DelveSiteDomainId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5746,7 +5746,7 @@
 		},
 		"DelveSiteDomainDangerRow": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "DomainDangerRowId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5795,7 +5795,7 @@
 				"template": {
 					"ref": "OracleRollTemplate"
 				},
-				"i18n": {
+				"_i18n": {
 					"ref": "I18nHints"
 				}
 			},
@@ -5805,7 +5805,7 @@
 		},
 		"DelveSiteDomainFeatureRow": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "DomainFeatureRowId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5854,7 +5854,7 @@
 				"template": {
 					"ref": "OracleRollTemplate"
 				},
-				"i18n": {
+				"_i18n": {
 					"ref": "I18nHints"
 				}
 			},
@@ -5864,7 +5864,7 @@
 		},
 		"DelveSiteTheme": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "DelveSiteThemeId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5932,7 +5932,7 @@
 		},
 		"DelveSiteThemeDangerRow": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "ThemeDangerRowId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -5981,7 +5981,7 @@
 				"template": {
 					"ref": "OracleRollTemplate"
 				},
-				"i18n": {
+				"_i18n": {
 					"ref": "I18nHints"
 				}
 			},
@@ -5991,7 +5991,7 @@
 		},
 		"DelveSiteThemeFeatureRow": {
 			"properties": {
-				"id": {
+				"_id": {
 					"ref": "ThemeFeatureRowId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
@@ -6040,7 +6040,7 @@
 				"template": {
 					"ref": "OracleRollTemplate"
 				},
-				"i18n": {
+				"_i18n": {
 					"ref": "I18nHints"
 				}
 			},

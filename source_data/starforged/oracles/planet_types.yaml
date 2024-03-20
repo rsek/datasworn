@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   planets:
@@ -2656,7 +2656,7 @@ oracles:
               - min: 1
                 max: 20
                 result: Simple (two biomes)
-                i18n: &i18n.result.adjective
+                _i18n: &i18n.result.adjective
                   result:
                     part_of_speech: adjective
                 oracle_rolls:
@@ -2665,21 +2665,21 @@ oracles:
               - min: 21
                 max: 70
                 result: Diverse (three biomes)
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 3
                     oracle: *biome
               - min: 71
                 max: 90
                 result: Complex (four biomes)
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 4
                     oracle: *biome
               - min: 91
                 max: 100
                 result: Garden world (five or more biomes)
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 5
                     oracle: *biome
@@ -2691,82 +2691,82 @@ oracles:
               - min: 1
                 max: 5
                 result: Caves
-                i18n: &i18n.result.common_noun
+                _i18n: &i18n.result.common_noun
                   result:
                     part_of_speech: common_noun
               - min: 6
                 max: 10
                 result: Cold forest
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 11
                 max: 15
                 result: Fungal
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 16
                 max: 20
                 result: Glacial or snow
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 21
                 max: 25
                 result: Grassland
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 26
                 max: 30
                 result: Islands
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 31
                 max: 35
                 result: Jungle
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 36
                 max: 40
                 result: Mountainous
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 41
                 max: 45
                 result: Ocean
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 46
                 max: 50
                 result: Rocky desert
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 51
                 max: 55
                 result: Sandy desert
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 56
                 max: 60
                 result: Savanna
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 61
                 max: 65
                 result: Shallow seas
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 66
                 max: 70
                 result: Shrubland
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 71
                 max: 75
                 result: Temperate rainforest
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 76
                 max: 80
                 result: Temperate forest
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 81
                 max: 85
                 result: Tundra
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 86
                 max: 90
                 result: Volcanic
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 91
                 max: 95
                 result: Waterways
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun
               - min: 96
                 max: 100
                 result: Wetland
-                i18n: *i18n.result.common_noun
+                _i18n: *i18n.result.common_noun

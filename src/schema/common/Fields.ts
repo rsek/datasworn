@@ -27,7 +27,7 @@ function InputField<
 >(
 	base: T,
 	discriminator: Discriminator,
-	// id: Id.TAnyId,
+	// _id:Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
 	const { description, $comment } = base
@@ -53,7 +53,7 @@ function InputField<
 	// 	Utils.Assign([base, mixin]) as unknown as TObject<
 	// 		T['properties'] & {
 	// 			[DISCRIMINATOR]: TLiteral<Discriminator>
-	// 			id: Id.TAnyId
+	// 			_id:Id.TAnyId
 	// 		}
 	// 	>,
 	// 	{
@@ -66,15 +66,12 @@ function InputField<
 
 	return result
 }
-export type TInputField<
-	T extends Base.TInput<TSchema>,
-	Discriminator extends string
-> =
+export type TInputField<T extends Base.TInput<TSchema>, Discriminator extends string> =
 	// Generic.TIdentifiedNode<
 	TObject<
 		T['properties'] & {
 			[DISCRIMINATOR]: TLiteral<Discriminator>
-			// id: Id.TAnyId
+			// _id:Id.TAnyId
 		}
 	> & {
 		// >
@@ -89,7 +86,7 @@ export type InputField<
 > = Utils.Assign<
 	T,
 	{
-		// id: string
+		// _id:string
 		[DISCRIMINATOR]: Discriminator
 	}
 >
@@ -101,7 +98,7 @@ export function isEnhanceable(
 }
 
 // export function CounterField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	return InputField(
@@ -128,7 +125,7 @@ export type TCounterField = typeof CounterField
 export type CounterField = Static<TCounterField>
 
 // export function ClockField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	const { $comment, description } = Base.Clock
@@ -153,7 +150,7 @@ export type TClockField = typeof ClockField
 export type ClockField = Static<TClockField>
 
 // export function ConditionMeterField() {
-// 	// id: Id.TAnyId
+// 	// _id:Id.TAnyId
 // 	return InputField(
 // 		Base.Meter(Type.Integer({ default: 0 }), Type.Integer()),
 // 		'condition_meter',
@@ -184,7 +181,7 @@ function SelectField<
 >(
 	choiceSchema: Choice,
 	discriminator: Discriminator,
-	// id: Id.TAnyId,
+	// _id:Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
 	return InputField(
@@ -202,7 +199,7 @@ function SelectFieldWithGroups<
 	choiceSchema: Choice,
 	choiceGroupSchema: Base.TSelectChoicesGroup<TRef<Choice>>,
 	discriminator: Discriminator,
-	// id: Id.TAnyId,
+	// _id:Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
 	return InputField(
@@ -220,7 +217,7 @@ export const SelectValueFieldChoice = Utils.DiscriminatedUnion(
 )
 
 // export function SelectValueField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	return SelectField(
@@ -263,7 +260,7 @@ export const SelectEnhancementFieldChoiceGroup = Base.SelectChoicesGroup(
 )
 
 // export function SelectEnhancementField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	return SelectFieldWithGroups(
@@ -293,7 +290,7 @@ export type TSelectEnhancementField = typeof SelectEnhancementField
 export type SelectEnhancementField = Static<TSelectEnhancementField>
 
 // export function CardFlipField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	return InputField(
@@ -329,7 +326,7 @@ export type TCardFlipField = typeof CardFlipField
 export type CardFlipField = Static<TCardFlipField>
 
 // export function CheckboxField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	return InputField(
@@ -350,7 +347,7 @@ export type TCheckboxField = typeof CheckboxField
 export type CheckboxField = Static<TCheckboxField>
 
 // export function TextField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	return InputField(

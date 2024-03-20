@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class DelveSiteDenizen {
+    @JsonProperty("_id")
+    private DelveSiteDenizenId id;
+
     @JsonProperty("frequency")
     private DelveSiteDenizenFrequency frequency;
-
-    @JsonProperty("id")
-    private DelveSiteDenizenId id;
 
     @JsonProperty("max")
     private Short max;
@@ -32,20 +32,6 @@ public class DelveSiteDenizen {
     }
 
     /**
-     * Getter for frequency.<p>
-     */
-    public DelveSiteDenizenFrequency getFrequency() {
-        return frequency;
-    }
-
-    /**
-     * Setter for frequency.<p>
-     */
-    public void setFrequency(DelveSiteDenizenFrequency frequency) {
-        this.frequency = frequency;
-    }
-
-    /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
@@ -59,6 +45,20 @@ public class DelveSiteDenizen {
      */
     public void setId(DelveSiteDenizenId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for frequency.<p>
+     */
+    public DelveSiteDenizenFrequency getFrequency() {
+        return frequency;
+    }
+
+    /**
+     * Setter for frequency.<p>
+     */
+    public void setFrequency(DelveSiteDenizenFrequency frequency) {
+        this.frequency = frequency;
     }
 
     /**

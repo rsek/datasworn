@@ -6,14 +6,14 @@ namespace Datasworn
 {
     public class DelveSiteDenizen
     {
-        [JsonPropertyName("frequency")]
-        public DelveSiteDenizenFrequency Frequency { get; set; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
-        [JsonPropertyName("id")]
+        [JsonPropertyName("_id")]
         public DelveSiteDenizenId Id { get; set; }
+
+        [JsonPropertyName("frequency")]
+        public DelveSiteDenizenFrequency Frequency { get; set; }
 
         [JsonPropertyName("max")]
         public short Max { get; set; }

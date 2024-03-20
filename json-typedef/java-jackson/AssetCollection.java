@@ -10,7 +10,7 @@ import java.util.Map;
 
 @JsonSerialize
 public class AssetCollection {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private AssetCollectionId id;
 
     @JsonProperty("name")

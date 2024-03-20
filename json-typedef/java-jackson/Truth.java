@@ -13,7 +13,7 @@ import java.util.Map;
  */
 @JsonSerialize
 public class Truth {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private TruthId id;
 
     @JsonProperty("name")

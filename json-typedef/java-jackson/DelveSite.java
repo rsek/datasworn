@@ -13,6 +13,9 @@ import java.util.Map;
  */
 @JsonSerialize
 public class DelveSite {
+    @JsonProperty("_id")
+    private DelveSiteId id;
+
     @JsonProperty("denizens")
     private List<DelveSiteDenizen> denizens;
 
@@ -21,9 +24,6 @@ public class DelveSite {
 
     @JsonProperty("domain")
     private DelveSiteDomainId domain;
-
-    @JsonProperty("id")
-    private DelveSiteId id;
 
     @JsonProperty("name")
     private Label name;
@@ -62,6 +62,22 @@ public class DelveSite {
     private Map<String, Map<String, Tag>> tags;
 
     public DelveSite() {
+    }
+
+    /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public DelveSiteId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(DelveSiteId id) {
+        this.id = id;
     }
 
     /**
@@ -104,22 +120,6 @@ public class DelveSite {
      */
     public void setDomain(DelveSiteDomainId domain) {
         this.domain = domain;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public DelveSiteId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(DelveSiteId id) {
-        this.id = id;
     }
 
     /**

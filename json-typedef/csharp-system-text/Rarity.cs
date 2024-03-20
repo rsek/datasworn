@@ -11,6 +11,12 @@ namespace Datasworn
     public class Rarity
     {
         /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public RarityId Id { get; set; }
+
+        /// <summary>
         /// The asset augmented by this rarity.
         /// </summary>
         [JsonPropertyName("asset")]
@@ -18,12 +24,6 @@ namespace Datasworn
 
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public RarityId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

@@ -15,8 +15,8 @@ export const NpcVariant: Transformer<
 	Datasworn.NpcVariant,
 	Datasworn.Npc
 > = {
-	id(data, key, parent) {
-		return `${parent.id}/variants/${key}`
+	_id(data, key, parent) {
+		return `${parent._id}/variants/${key}`
 	}
 }
 

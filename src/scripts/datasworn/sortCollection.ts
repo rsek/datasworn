@@ -97,8 +97,8 @@ function compareSourcedNode(a: Generic.SourcedNode, b: Generic.SourcedNode) {
 
 	// console.log(a, b)
 	for (const item of [a, b]) {
-		if (!item.source?.page && item.id?.includes('collections'))
-			Log.warn(`${item.id} is missing a page number.`)
+		if (!item.source?.page && item._id?.includes('collections'))
+			Log.warn(`${item._id} is missing a page number.`)
 	}
 
 	return 0

@@ -10,6 +10,9 @@ import java.util.Map;
 
 @JsonSerialize
 public class Asset {
+    @JsonProperty("_id")
+    private AssetId id;
+
     @JsonProperty("abilities")
     private List<AssetAbility> abilities;
 
@@ -18,9 +21,6 @@ public class Asset {
 
     @JsonProperty("count_as_impact")
     private Boolean countAsImpact;
-
-    @JsonProperty("id")
-    private AssetId id;
 
     @JsonProperty("name")
     private Label name;
@@ -71,6 +71,22 @@ public class Asset {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public AssetId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(AssetId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for abilities.<p>
      */
     public List<AssetAbility> getAbilities() {
@@ -118,22 +134,6 @@ public class Asset {
      */
     public void setCountAsImpact(Boolean countAsImpact) {
         this.countAsImpact = countAsImpact;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AssetId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AssetId id) {
-        this.id = id;
     }
 
     /**

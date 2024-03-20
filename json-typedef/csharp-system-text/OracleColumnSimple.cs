@@ -11,16 +11,16 @@ namespace Datasworn
     public class OracleColumnSimple
     {
         /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public OracleRollableId Id { get; set; }
+
+        /// <summary>
         /// The roll used to select a result on this oracle.
         /// </summary>
         [JsonPropertyName("dice")]
         public DiceExpression Dice { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public OracleRollableId Id { get; set; }
 
         /// <summary>
         /// The primary label at the head of this column.

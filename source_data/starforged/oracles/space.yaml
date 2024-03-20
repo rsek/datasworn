@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   space:
@@ -321,58 +321,58 @@ oracles:
                   min: 1
                   max: 2
                 result: Accursed
-                i18n: &i18n.result.adjective
+                _i18n: &i18n.result.adjective
                   result:
                     part_of_speech: adjective
               - <<: &SectorName.1
                   min: 3
                   max: 4
                 result: Ashen
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.2
                   min: 5
                   max: 6
                 result: Asteria
-                i18n: &i18n.result.adjunct_proper_noun
+                _i18n: &i18n.result.adjunct_proper_noun
                   result:
                     part_of_speech: adjunct_proper_noun
               - <<: &SectorName.3
                   min: 7
                   max: 8
                 result: Bitter
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.4
                   min: 9
                   max: 10
                 result: Blighted
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.5
                   min: 11
                   max: 12
                 result: Bloodied
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.6
                   min: 13
                   max: 14
                 result: Boundless
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.7
                   min: 15
                   max: 16
                 result: Burning
-                i18n:
+                _i18n:
                   result:
                     part_of_speech: gerund
               - <<: &SectorName.8
                   min: 17
                   max: 18
                 result: Cortana
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.9
                   min: 19
                   max: 20
                 result: Corvus
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.10
                   min: 21
                   max: 22
@@ -381,17 +381,17 @@ oracles:
                   min: 23
                   max: 24
                 result: Cygnus
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.12
                   min: 25
                   max: 26
                 result: Delphi
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.13
                   min: 27
                   max: 28
                 result: Delphian
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.14
                   min: 29
                   max: 30
@@ -401,21 +401,21 @@ oracles:
                   min: 31
                   max: 32
                 result: Ebon
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.16
                   min: 33
                   max: 34
                 result: Essus
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.17
                   min: 35
                   max: 36
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
                 result: Fallen
               - <<: &SectorName.18
                   min: 37
                   max: 38
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
                 result: Ferrous
               - <<: &SectorName.19
                   min: 39
@@ -426,154 +426,154 @@ oracles:
                   min: 41
                   max: 42
                 result: Forgotten
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.21
                   min: 43
                   max: 44
                 result: Haunted
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.22
                   min: 45
                   max: 46
                 result: Hidden
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.23
                   min: 47
                   max: 48
                 result: Hollow
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.24
                   min: 49
                   max: 50
                 result: Igneous
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.25
                   min: 51
                   max: 52
                 result: Infernal
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.26
                   min: 53
                   max: 54
                 result: Invidia
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.27
                   min: 55
                   max: 56
                 result: Iron
-                i18n: &i18n.result.adjunct_common_noun
+                _i18n: &i18n.result.adjunct_common_noun
                   result:
                     part_of_speech: adjunct_common_noun
               - <<: &SectorName.28
                   min: 57
                   max: 58
                 result: Kalidas
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.29
                   min: 59
                   max: 60
                 result: Kronos
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.30
                   min: 61
                   max: 62
                 result: Lacuna
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.31
                   min: 63
                   max: 64
                 result: Lumen
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.32
                   min: 65
                   max: 66
                 result: Mobius
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.33
                   min: 67
                   max: 68
                 result: Morien
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.34
                   min: 69
                   max: 70
                 result: Onyx
-                i18n: *i18n.result.adjunct_common_noun
+                _i18n: *i18n.result.adjunct_common_noun
               - <<: &SectorName.35
                   min: 71
                   max: 72
                 result: Outer
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.36
                   min: 73
                   max: 74
                 result: Sanguis
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.37
                   min: 75
                   max: 76
                 result: Scarred
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.38
                   min: 77
                   max: 78
                 result: Scorched
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.39
                   min: 79
                   max: 80
                 result: Shattered
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.40
                   min: 81
                   max: 82
                 result: Shrouded
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.41
                   min: 83
                   max: 84
                 result: Sindri
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.42
                   min: 85
                   max: 86
                 result: Solana
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.43
                   min: 87
                   max: 88
                 result: Stygian
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.44
                   min: 89
                   max: 90
                 result: Sulaco
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.45
                   min: 91
                   max: 92
                 result: Sundered
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.46
                   min: 93
                   max: 94
                 result: Thunor
-                i18n: *i18n.result.adjunct_proper_noun
+                _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.47
                   min: 95
                   max: 96
                 result: Vanguard
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.48
                   min: 97
                   max: 98
                 result: Veiled
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
               - <<: &SectorName.49
                   min: 99
                   max: 100
                 result: Wasted
-                i18n: *i18n.result.adjective
+                _i18n: *i18n.result.adjective
           suffix:
             name: Suffix
             # source: *CollectionSource
@@ -592,156 +592,156 @@ oracles:
             #   tags: [template fragment, place]
             rows:
               - <<: *SectorName.0
-                i18n: &i18n.result.common_noun_as_proper_noun
+                _i18n: &i18n.result.common_noun_as_proper_noun
                   result:
                     part_of_speech: common_noun_as_proper_noun
                 result: Abyss
               - <<: *SectorName.1
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Anvil
               - <<: *SectorName.2
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Arch
               - <<: *SectorName.3
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Breach
               - <<: *SectorName.4
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Chain
               - <<: *SectorName.5
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Channel
               - <<: *SectorName.6
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Chasm
               - <<: *SectorName.7
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Circlet
               - <<: *SectorName.8
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Cluster
               - <<: *SectorName.9
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Crossing
               - <<: *SectorName.10
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Crown
               - <<: *SectorName.11
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Currents
               - <<: *SectorName.12
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Deep
               - <<: *SectorName.13
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Desolation
               - <<: *SectorName.14
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Drift
               - <<: *SectorName.15
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Flow
               - <<: *SectorName.16
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Flux
               - <<: *SectorName.17
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Gap
               - <<: *SectorName.18
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Gate
               - <<: *SectorName.19
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Gyre
               - <<: *SectorName.20
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Heart
               - <<: *SectorName.21
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Helix
               - <<: *SectorName.22
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Juncture
               - <<: *SectorName.23
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Limits
               - <<: *SectorName.24
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Locus
               - <<: *SectorName.25
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Maelstrom
               - <<: *SectorName.26
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Margin
               - <<: *SectorName.27
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Maw
               - <<: *SectorName.28
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Maze
               - <<: *SectorName.29
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Nexus
               - <<: *SectorName.30
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Oasis
               - <<: *SectorName.31
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Pass
               - <<: *SectorName.32
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Pit
               - <<: *SectorName.33
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Pyre
               - <<: *SectorName.34
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Reach
               - <<: *SectorName.35
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Rest
               - <<: *SectorName.36
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Rift
               - <<: *SectorName.37
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Sanctum
               - <<: *SectorName.38
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Shallows
               - <<: *SectorName.39
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Shoal
               - <<: *SectorName.40
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Spine
               - <<: *SectorName.41
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Straits
               - <<: *SectorName.42
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Threshold
               - <<: *SectorName.43
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Tide
               - <<: *SectorName.44
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Verge
               - <<: *SectorName.45
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Vertex
               - <<: *SectorName.46
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Vigil
               - <<: *SectorName.47
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Void
               - <<: *SectorName.48
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Web
               - <<: *SectorName.49
-                i18n: *i18n.result.common_noun_as_proper_noun
+                _i18n: *i18n.result.common_noun_as_proper_noun
                 result: Zenith
     contents:
       stellar_object:

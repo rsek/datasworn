@@ -21,12 +21,12 @@ pub enum RulesPackage {
 /// ruleset.
 #[derive(Serialize, Deserialize)]
 pub struct RulesPackageExpansion {
+    #[serde(rename = "_id")]
+    pub id: ExpansionId,
+
     /// The version of the Datasworn format used by this data.
     #[serde(rename = "datasworn_version")]
     pub dataswornVersion: SemanticVersion,
-
-    #[serde(rename = "id")]
-    pub id: ExpansionId,
 
     #[serde(rename = "ruleset")]
     pub ruleset: RulesetId,
@@ -118,6 +118,9 @@ pub struct RulesPackageExpansion {
 /// A standalone Datasworn package that describes its own ruleset.
 #[derive(Serialize, Deserialize)]
 pub struct RulesPackageRuleset {
+    #[serde(rename = "_id")]
+    pub id: RulesetId,
+
     /// A dictionary object containing asset collections, which contain assets.
     #[serde(rename = "assets")]
     pub assets: HashMap<String, AssetCollection>,
@@ -134,9 +137,6 @@ pub struct RulesPackageRuleset {
     /// Required because it's used to determine whether the data needs updating.
     #[serde(rename = "date")]
     pub date: DateTime<FixedOffset>,
-
-    #[serde(rename = "id")]
-    pub id: RulesetId,
 
     #[serde(rename = "license")]
     pub license: License,
@@ -233,6 +233,10 @@ pub enum ActionRollMethod {
 
 #[derive(Serialize, Deserialize)]
 pub struct Asset {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: AssetId,
+
     #[serde(rename = "abilities")]
     pub abilities: Vec<AssetAbility>,
 
@@ -245,10 +249,6 @@ pub struct Asset {
     /// (classic Ironsworn).
     #[serde(rename = "count_as_impact")]
     pub countAsImpact: bool,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -317,13 +317,13 @@ pub struct Asset {
 /// have three.
 #[derive(Serialize, Deserialize)]
 pub struct AssetAbility {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: AssetAbilityId,
+
     /// Is this asset ability enabled?
     #[serde(rename = "enabled")]
     pub enabled: bool,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AssetAbilityId,
 
     /// The complete rules text of this asset ability.
     #[serde(rename = "text")]
@@ -514,7 +514,7 @@ pub struct AssetAttachment {
 #[derive(Serialize, Deserialize)]
 pub struct AssetCollection {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: AssetCollectionId,
 
     /// The primary name/label for this item.
@@ -999,7 +999,7 @@ pub struct AssetOptionFieldText {
 #[derive(Serialize, Deserialize)]
 pub struct Atlas {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: AtlasId,
 
     /// The primary name/label for this item.
@@ -1078,15 +1078,15 @@ pub struct Atlas {
 /// Ironsworn.
 #[derive(Serialize, Deserialize)]
 pub struct AtlasEntry {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: AtlasEntryId,
+
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
     #[serde(rename = "features")]
     pub features: Vec<MarkdownString>,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: AtlasEntryId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1190,6 +1190,10 @@ pub type CssColor = String;
 /// A delve site with a theme, domain, and denizens.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSite {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: DelveSiteId,
+
     #[serde(rename = "denizens")]
     pub denizens: Vec<DelveSiteDenizen>,
 
@@ -1198,10 +1202,6 @@ pub struct DelveSite {
 
     #[serde(rename = "domain")]
     pub domain: DelveSiteDomainId,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: DelveSiteId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1251,12 +1251,12 @@ pub struct DelveSite {
 
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDenizen {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: DelveSiteDenizenId,
+
     #[serde(rename = "frequency")]
     pub frequency: DelveSiteDenizenFrequency,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: DelveSiteDenizenId,
 
     #[serde(rename = "max")]
     pub max: i16,
@@ -1298,15 +1298,15 @@ pub type DelveSiteDenizenId = String;
 /// A delve site Domain card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDomain {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: DelveSiteDomainId,
+
     #[serde(rename = "dangers")]
     pub dangers: Vec<DelveSiteDomainDangerRow>,
 
     #[serde(rename = "features")]
     pub features: Vec<DelveSiteDomainFeatureRow>,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: DelveSiteDomainId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1356,7 +1356,7 @@ pub struct DelveSiteDomain {
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDomainDangerRow {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: DomainDangerRowId,
 
     /// High end of the dice range for this table row.
@@ -1371,15 +1371,15 @@ pub struct DelveSiteDomainDangerRow {
     #[serde(rename = "result")]
     pub result: MarkdownString,
 
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
     /// Hints that the identified table should be rendered inside this table
     /// row.
     #[serde(rename = "embed_table")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1403,7 +1403,7 @@ pub struct DelveSiteDomainDangerRow {
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDomainFeatureRow {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: DomainFeatureRowId,
 
     /// High end of the dice range for this table row.
@@ -1418,15 +1418,15 @@ pub struct DelveSiteDomainFeatureRow {
     #[serde(rename = "result")]
     pub result: MarkdownString,
 
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
     /// Hints that the identified table should be rendered inside this table
     /// row.
     #[serde(rename = "embed_table")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1455,15 +1455,15 @@ pub type DelveSiteId = String;
 /// A delve site theme card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteTheme {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: DelveSiteThemeId,
+
     #[serde(rename = "dangers")]
     pub dangers: Vec<DelveSiteThemeDangerRow>,
 
     #[serde(rename = "features")]
     pub features: Vec<DelveSiteThemeFeatureRow>,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: DelveSiteThemeId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1504,7 +1504,7 @@ pub struct DelveSiteTheme {
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteThemeDangerRow {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: ThemeDangerRowId,
 
     /// High end of the dice range for this table row.
@@ -1519,15 +1519,15 @@ pub struct DelveSiteThemeDangerRow {
     #[serde(rename = "result")]
     pub result: MarkdownString,
 
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
     /// Hints that the identified table should be rendered inside this table
     /// row.
     #[serde(rename = "embed_table")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1551,7 +1551,7 @@ pub struct DelveSiteThemeDangerRow {
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteThemeFeatureRow {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: ThemeFeatureRowId,
 
     /// High end of the dice range for this table row.
@@ -1566,15 +1566,15 @@ pub struct DelveSiteThemeFeatureRow {
     #[serde(rename = "result")]
     pub result: MarkdownString,
 
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
     /// Hints that the identified table should be rendered inside this table
     /// row.
     #[serde(rename = "embed_table")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1738,7 +1738,7 @@ pub enum Move {
 #[derive(Serialize, Deserialize)]
 pub struct MoveActionRoll {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: MoveId,
 
     /// The primary name/label for this item.
@@ -1793,7 +1793,7 @@ pub struct MoveActionRoll {
 #[derive(Serialize, Deserialize)]
 pub struct MoveNoRoll {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: MoveId,
 
     /// The primary name/label for this item.
@@ -1847,7 +1847,7 @@ pub struct MoveNoRoll {
 #[derive(Serialize, Deserialize)]
 pub struct MoveProgressRoll {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: MoveId,
 
     /// The primary name/label for this item.
@@ -1909,7 +1909,7 @@ pub struct MoveProgressRoll {
 #[derive(Serialize, Deserialize)]
 pub struct MoveSpecialTrack {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: MoveId,
 
     /// The primary name/label for this item.
@@ -1963,7 +1963,7 @@ pub struct MoveSpecialTrack {
 #[derive(Serialize, Deserialize)]
 pub struct MoveCategory {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: MoveCategoryId,
 
     /// The primary name/label for this item.
@@ -2145,6 +2145,10 @@ pub struct MoveOutcomes {
 /// Rulebook, or Chapter 4 of Starforged.
 #[derive(Serialize, Deserialize)]
 pub struct Npc {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: NpcId,
+
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
@@ -2153,10 +2157,6 @@ pub struct Npc {
 
     #[serde(rename = "features")]
     pub features: Vec<MarkdownString>,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: NpcId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -2211,7 +2211,7 @@ pub struct Npc {
 #[derive(Serialize, Deserialize)]
 pub struct NpcCollection {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: NpcCollectionId,
 
     /// The primary name/label for this item.
@@ -2298,12 +2298,12 @@ pub type NpcNature = Label;
 
 #[derive(Serialize, Deserialize)]
 pub struct NpcVariant {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: NpcVariantId,
+
     #[serde(rename = "description")]
     pub description: MarkdownString,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: NpcVariantId,
 
     #[serde(rename = "name")]
     pub name: Label,
@@ -2402,14 +2402,14 @@ pub struct OracleCollectionTableSharedDetailsColumnLabels {
 /// one `result` column, and one `detail` column.
 #[derive(Serialize, Deserialize)]
 pub struct OracleCollectionTableSharedDetails {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleCollectionTableSharedDetailsColumnLabels,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleCollectionId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -2491,14 +2491,14 @@ pub struct OracleCollectionTableSharedResultsColumnLabels {
 /// and one `result` column.
 #[derive(Serialize, Deserialize)]
 pub struct OracleCollectionTableSharedResults {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleCollectionTableSharedResultsColumnLabels,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleCollectionId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -2581,16 +2581,16 @@ pub struct OracleCollectionTableSharedRollsColumnLabels {
 /// multiple `result` columns.
 #[derive(Serialize, Deserialize)]
 pub struct OracleCollectionTableSharedRolls {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
     /// Provides column labels for this table. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     /// For all other column labels, see the `name` property of each child
     /// `OracleColumn`.
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleCollectionTableSharedRollsColumnLabels,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleCollectionId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -2665,7 +2665,7 @@ pub struct OracleCollectionTableSharedRolls {
 #[derive(Serialize, Deserialize)]
 pub struct OracleCollectionTables {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: OracleCollectionId,
 
     /// The primary name/label for this item.
@@ -2751,13 +2751,13 @@ pub enum OracleColumnDetailsOracleType {
 
 #[derive(Serialize, Deserialize)]
 pub struct OracleColumnDetails {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
     /// The roll used to select a result on this oracle.
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleRollableId,
 
     /// The primary label at the head of this column.
     #[serde(rename = "name")]
@@ -2818,13 +2818,13 @@ pub enum OracleColumnSimpleOracleType {
 /// Represents a single column in an OracleCollection.
 #[derive(Serialize, Deserialize)]
 pub struct OracleColumnSimple {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
     /// The roll used to select a result on this oracle.
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleRollableId,
 
     /// The primary label at the head of this column.
     #[serde(rename = "name")]
@@ -2991,6 +2991,10 @@ pub struct OracleTableRollableTableDetailsRecommendedRolls {
 /// `detail` column.
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableRollableTableDetails {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
@@ -2999,10 +3003,6 @@ pub struct OracleTableRollableTableDetails {
     /// The roll used to select a result on this oracle.
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleRollableId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -3093,6 +3093,10 @@ pub struct OracleTableRollableTableSimpleRecommendedRolls {
 /// `result` column.
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableRollableTableSimple {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
@@ -3101,10 +3105,6 @@ pub struct OracleTableRollableTableSimple {
     /// The roll used to select a result on this oracle.
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: OracleRollableId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -3189,15 +3189,15 @@ pub struct OracleTableRowDetails {
     #[serde(rename = "result")]
     pub result: MarkdownString,
 
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
     /// Hints that the identified table should be rendered inside this table
     /// row.
     #[serde(rename = "embed_table")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3232,15 +3232,15 @@ pub struct OracleTableRowSimple {
     #[serde(rename = "result")]
     pub result: MarkdownString,
 
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
     /// Hints that the identified table should be rendered inside this table
     /// row.
     #[serde(rename = "embed_table")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3272,7 +3272,7 @@ pub enum OracleTablesCollectionOracleType {
 #[derive(Serialize, Deserialize)]
 pub struct OracleTablesCollection {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: OracleCollectionId,
 
     /// The primary name/label for this item.
@@ -3440,16 +3440,16 @@ pub struct ProgressTrackTypeInfo {
 /// A rarity, as described in Ironsworn: Delve.
 #[derive(Serialize, Deserialize)]
 pub struct Rarity {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: RarityId,
+
     /// The asset augmented by this rarity.
     #[serde(rename = "asset")]
     pub asset: AssetId,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: RarityId,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -4556,7 +4556,7 @@ pub struct TriggerSpecialTrackEnhancement {
 #[derive(Serialize, Deserialize)]
 pub struct Truth {
     /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
+    #[serde(rename = "_id")]
     pub id: TruthId,
 
     /// The primary name/label for this item.
@@ -4603,12 +4603,12 @@ pub type TruthId = String;
 
 #[derive(Serialize, Deserialize)]
 pub struct TruthOption {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: TruthOptionId,
+
     #[serde(rename = "description")]
     pub description: MarkdownString,
-
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "id")]
-    pub id: TruthOptionId,
 
     #[serde(rename = "quest_starter")]
     pub questStarter: MarkdownString,
@@ -4648,15 +4648,15 @@ pub struct TruthOptionTableRow {
     #[serde(rename = "result")]
     pub result: MarkdownString,
 
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
     /// Hints that the identified table should be rendered inside this table
     /// row.
     #[serde(rename = "embed_table")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
 
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]

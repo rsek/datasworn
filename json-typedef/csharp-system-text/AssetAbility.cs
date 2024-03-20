@@ -12,16 +12,16 @@ namespace Datasworn
     public class AssetAbility
     {
         /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public AssetAbilityId Id { get; set; }
+
+        /// <summary>
         /// Is this asset ability enabled?
         /// </summary>
         [JsonPropertyName("enabled")]
         public bool Enabled { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetAbilityId Id { get; set; }
 
         /// <summary>
         /// The complete rules text of this asset ability.

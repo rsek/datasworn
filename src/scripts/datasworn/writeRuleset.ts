@@ -3,7 +3,8 @@ import Log from '../utils/Log.js'
 import { formatPath } from '../../utils.js'
 import { writeJSON } from '../utils/readWrite.js'
 
-const isMacroKey = (key: string) => key.startsWith('_')
+// const isMacroKey = (key: string) => key.startsWith('_')
+const isMacroKey = (key: string) => false
 const replacer = (k: string, v: unknown) => (isMacroKey(k) ? undefined : v)
 
 export async function writeRuleset(outPath: string, data: unknown) {

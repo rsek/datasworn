@@ -25,13 +25,13 @@ forEach(RulesExpansion.properties, (v, k) => {
 
 /** Builds all YAML files for a given package configuration */
 export async function buildRuleset(
-	{ id, paths, pkg }: DataPackageConfig,
+	{ id: _id, paths, pkg }: DataPackageConfig,
 	ajv: typeof AJV,
 	jsl: Draft07
 ) {
-	Log.info(`⚙️  Building ruleset: ${id}`)
+	Log.info(`⚙️  Building ruleset: ${_id}`)
 
-	const destDir = path.join(ROOT_OUTPUT, id)
+	const destDir = path.join(ROOT_OUTPUT, _id)
 
 	const sourceFilesGlob = `${paths.source}/**/*.yaml`
 	const oldErrorFilesGlob = `${paths.source}/**/*.error.json`
@@ -47,7 +47,7 @@ export async function buildRuleset(
 	Log.info(
 		`🔍 Found ${
 			sourceFiles?.length ?? 0
-		} YAML files for "${id}" in ${formatPath(paths.source)}`
+		} YAML files for "${_id}" in ${formatPath(paths.source)}`
 	)
 
 	if (sourceFiles?.length === 0)
@@ -88,7 +88,7 @@ export async function buildRuleset(
 	// console.log(ruleset)
 
 	const toWrite: Array<Promise<any>> = [
-		writeRuleset(path.join(destDir, `${ruleset.id}.json`), ruleset)
+		writeRuleset(path.join(destDir, `${ruleset._id}.json`), ruleset)
 	]
 
 	/** JSON transformer to strip underscore (macro) properties */
@@ -123,5 +123,5 @@ export async function buildRuleset(
 
 	await Promise.all(toWrite)
 
-	Log.info(`✅ Finished writing sourcebook "${id}" to ${formatPath(destDir)}`)
+	Log.info(`✅ Finished writing sourcebook "${_id}" to ${formatPath(destDir)}`)
 }

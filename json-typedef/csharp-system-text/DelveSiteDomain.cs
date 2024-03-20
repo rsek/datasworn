@@ -10,17 +10,17 @@ namespace Datasworn
     /// </summary>
     public class DelveSiteDomain
     {
+        /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public DelveSiteDomainId Id { get; set; }
+
         [JsonPropertyName("dangers")]
         public IList<DelveSiteDomainDangerRow> Dangers { get; set; }
 
         [JsonPropertyName("features")]
         public IList<DelveSiteDomainFeatureRow> Features { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public DelveSiteDomainId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

@@ -15,6 +15,12 @@ namespace Datasworn
         public string OracleType { get => "table_details"; }
 
         /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public OracleRollableId Id { get; set; }
+
+        /// <summary>
         /// The label at the head of each table column. The `roll` key refers
         /// to the roll column showing the dice range (`min` and `max` on each
         /// table row).
@@ -27,12 +33,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("dice")]
         public DiceExpression Dice { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public OracleRollableId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

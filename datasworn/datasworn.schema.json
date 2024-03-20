@@ -51,7 +51,7 @@
 			"type": "object",
 			"description": "A standalone Datasworn package that describes its own ruleset.",
 			"required": [
-				"id",
+				"_id",
 				"title",
 				"datasworn_version",
 				"package_type",
@@ -65,7 +65,7 @@
 				"moves"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/RulesetId"
 				},
 				"title": {
@@ -208,9 +208,9 @@
 			"title": "Expansion",
 			"type": "object",
 			"description": "A Datasworn package that relies on an external package to provide its ruleset.",
-			"required": ["id", "datasworn_version", "package_type", "ruleset"],
+			"required": ["_id", "datasworn_version", "package_type", "ruleset"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/ExpansionId"
 				},
 				"title": {
@@ -2617,7 +2617,7 @@
 			"type": "object",
 			"description": "A non-player character entry, similar to those in Chapter 5 of the Ironsworn Rulebook, or Chapter 4 of Starforged.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"rank",
 				"nature",
@@ -2628,7 +2628,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/NpcId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -2713,9 +2713,9 @@
 		"NpcCollection": {
 			"title": "NpcCollection",
 			"type": "object",
-			"required": ["id", "name", "source"],
+			"required": ["_id", "name", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/NpcCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -2812,9 +2812,9 @@
 		"NpcVariant": {
 			"title": "NpcVariant",
 			"type": "object",
-			"required": ["id", "name", "rank", "nature", "description"],
+			"required": ["_id", "name", "rank", "nature", "description"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/NpcVariantId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3002,9 +3002,9 @@
 		"OracleColumnDetails": {
 			"title": "OracleColumnDetails",
 			"type": "object",
-			"required": ["id", "name", "oracle_type", "dice", "rows"],
+			"required": ["_id", "name", "oracle_type", "dice", "rows"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3072,9 +3072,9 @@
 			"title": "OracleColumnSimple",
 			"type": "object",
 			"description": "Represents a single column in an OracleCollection.",
-			"required": ["id", "name", "oracle_type", "dice", "rows"],
+			"required": ["_id", "name", "oracle_type", "dice", "rows"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3216,7 +3216,7 @@
 			"type": "object",
 			"description": "A rollable oracle table with one roll column, one `result` column, and one `detail` column.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"oracle_type",
 				"dice",
@@ -3225,7 +3225,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3456,7 +3456,7 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
-				"i18n": {
+				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
 				}
 			}
@@ -3519,7 +3519,7 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
-				"i18n": {
+				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
 				}
 			}
@@ -3528,9 +3528,9 @@
 			"title": "OracleTableSharedDetails",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with multiple roll columns, one `result` column, and one `detail` column.",
-			"required": ["id", "name", "oracle_type", "column_labels", "source"],
+			"required": ["_id", "name", "oracle_type", "column_labels", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3634,9 +3634,9 @@
 			"title": "OracleTableSharedResults",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
-			"required": ["id", "name", "oracle_type", "column_labels", "source"],
+			"required": ["_id", "name", "oracle_type", "column_labels", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3735,9 +3735,9 @@
 			"title": "OracleTableSharedRolls",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
-			"required": ["id", "name", "oracle_type", "column_labels", "source"],
+			"required": ["_id", "name", "oracle_type", "column_labels", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3838,7 +3838,7 @@
 			"type": "object",
 			"description": "Represents a basic rollable oracle table with one roll column and one `result` column.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"oracle_type",
 				"dice",
@@ -3847,7 +3847,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -3956,9 +3956,9 @@
 			"title": "OracleTablesCollection",
 			"type": "object",
 			"description": "An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.",
-			"required": ["id", "name", "oracle_type", "source"],
+			"required": ["_id", "name", "oracle_type", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -4133,7 +4133,7 @@
 			"type": "object",
 			"description": "A move that makes an action roll.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"roll_type",
 				"trigger",
@@ -4142,7 +4142,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -4241,9 +4241,9 @@
 		"MoveCategory": {
 			"title": "MoveCategory",
 			"type": "object",
-			"required": ["id", "name", "source"],
+			"required": ["_id", "name", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/MoveCategoryId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -4390,7 +4390,7 @@
 			"type": "object",
 			"description": "A move that makes no progress rolls or action rolls.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"roll_type",
 				"trigger",
@@ -4399,7 +4399,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -4536,7 +4536,7 @@
 			"type": "object",
 			"description": "A progress move that rolls on a standard progress track type (whose features are defined by this move object). For progress rolls that use special tracks, see MoveSpecialTrack.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"roll_type",
 				"tracks",
@@ -4546,7 +4546,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -4656,7 +4656,7 @@
 			"type": "object",
 			"description": "A progress move that rolls on a special track, such as Legacies (Starforged) or Bonds (classic Ironsworn). For progress moves that use standard progress tracks, see MoveProgressRoll instead.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"roll_type",
 				"trigger",
@@ -4665,7 +4665,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -5193,7 +5193,7 @@
 			"title": "Asset",
 			"type": "object",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"category",
 				"count_as_impact",
@@ -5202,7 +5202,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/AssetId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -5308,9 +5308,9 @@
 			"title": "AssetAbility",
 			"type": "object",
 			"description": "An asset ability: one of the purchasable features of an asset. Most assets have three.",
-			"required": ["id", "enabled", "text"],
+			"required": ["_id", "enabled", "text"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/AssetAbilityId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -5572,9 +5572,9 @@
 		"AssetCollection": {
 			"title": "AssetCollection",
 			"type": "object",
-			"required": ["id", "name", "source"],
+			"required": ["_id", "name", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/AssetCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -6606,9 +6606,9 @@
 			"title": "Truth",
 			"type": "object",
 			"description": "A setting truth category.",
-			"required": ["id", "name", "options", "source"],
+			"required": ["_id", "name", "options", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/TruthId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -6662,9 +6662,9 @@
 		"TruthOption": {
 			"title": "TruthOption",
 			"type": "object",
-			"required": ["id", "description", "quest_starter"],
+			"required": ["_id", "description", "quest_starter"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/TruthOptionId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -6749,7 +6749,7 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
-				"i18n": {
+				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
 				}
 			}
@@ -6758,9 +6758,9 @@
 			"title": "Atlas",
 			"type": "object",
 			"releaseStage": "experimental",
-			"required": ["id", "name", "source"],
+			"required": ["_id", "name", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/AtlasId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -6849,9 +6849,9 @@
 			"title": "AtlasEntry",
 			"type": "object",
 			"description": "An atlas entry, like the Ironlands region entries found in classic Ironsworn.",
-			"required": ["id", "name", "features", "description", "source"],
+			"required": ["_id", "name", "features", "description", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/AtlasEntryId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -6921,9 +6921,9 @@
 			"title": "Rarity",
 			"type": "object",
 			"description": "A rarity, as described in Ironsworn: Delve.",
-			"required": ["id", "name", "xp_cost", "asset", "description", "source"],
+			"required": ["_id", "name", "xp_cost", "asset", "description", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/RarityId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -6981,7 +6981,7 @@
 			"type": "object",
 			"description": "A delve site with a theme, domain, and denizens.",
 			"required": [
-				"id",
+				"_id",
 				"name",
 				"theme",
 				"domain",
@@ -6991,7 +6991,7 @@
 				"source"
 			],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/DelveSiteId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -7306,9 +7306,9 @@
 		"DelveSiteDenizen": {
 			"title": "DelveSiteDenizen",
 			"type": "object",
-			"required": ["id", "min", "max", "frequency"],
+			"required": ["_id", "min", "max", "frequency"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/DelveSiteDenizenId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -7338,9 +7338,9 @@
 			"title": "DelveSiteDomain",
 			"type": "object",
 			"description": "A delve site Domain card.",
-			"required": ["id", "name", "summary", "features", "dangers", "source"],
+			"required": ["_id", "name", "summary", "features", "dangers", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/DelveSiteDomainId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -7685,9 +7685,9 @@
 			"title": "DelveSiteDomainDangerRow",
 			"type": "object",
 			"description": "Represents a single Danger entry from a delve site Domain card.",
-			"required": ["id", "min", "max", "result"],
+			"required": ["_id", "min", "max", "result"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/DomainDangerRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -7725,7 +7725,7 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
-				"i18n": {
+				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
 				}
 			}
@@ -7734,9 +7734,9 @@
 			"title": "DelveSiteDomainFeatureRow",
 			"type": "object",
 			"description": "Represents a single Feature entry from a delve site Domain card.",
-			"required": ["id", "min", "max", "result"],
+			"required": ["_id", "min", "max", "result"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/DomainFeatureRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -7774,7 +7774,7 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
-				"i18n": {
+				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
 				}
 			}
@@ -7783,9 +7783,9 @@
 			"title": "DelveSiteTheme",
 			"type": "object",
 			"description": "A delve site theme card.",
-			"required": ["id", "name", "summary", "features", "dangers", "source"],
+			"required": ["_id", "name", "summary", "features", "dangers", "source"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/DelveSiteThemeId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -8125,9 +8125,9 @@
 			"title": "DelveSiteThemeDangerRow",
 			"type": "object",
 			"description": "Represents a single Danger entry from a delve site Theme card.",
-			"required": ["id", "min", "max", "result"],
+			"required": ["_id", "min", "max", "result"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/ThemeDangerRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -8165,7 +8165,7 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
-				"i18n": {
+				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
 				}
 			}
@@ -8174,9 +8174,9 @@
 			"title": "DelveSiteThemeFeatureRow",
 			"type": "object",
 			"description": "Represents a single Feature entry from a delve site Theme card.",
-			"required": ["id", "min", "max", "result"],
+			"required": ["_id", "min", "max", "result"],
 			"properties": {
-				"id": {
+				"_id": {
 					"$ref": "#/definitions/ThemeFeatureRowId",
 					"description": "The unique Datasworn ID for this item."
 				},
@@ -8214,7 +8214,7 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
-				"i18n": {
+				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
 				}
 			}

@@ -10,11 +10,11 @@ import java.util.Map;
 
 @JsonSerialize
 public class OracleColumnDetails {
+    @JsonProperty("_id")
+    private OracleRollableId id;
+
     @JsonProperty("dice")
     private DiceExpression dice;
-
-    @JsonProperty("id")
-    private OracleRollableId id;
 
     @JsonProperty("name")
     private Label name;
@@ -57,22 +57,6 @@ public class OracleColumnDetails {
     }
 
     /**
-     * Getter for dice.<p>
-     * The roll used to select a result on this oracle.
-     */
-    public DiceExpression getDice() {
-        return dice;
-    }
-
-    /**
-     * Setter for dice.<p>
-     * The roll used to select a result on this oracle.
-     */
-    public void setDice(DiceExpression dice) {
-        this.dice = dice;
-    }
-
-    /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
@@ -86,6 +70,22 @@ public class OracleColumnDetails {
      */
     public void setId(OracleRollableId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for dice.<p>
+     * The roll used to select a result on this oracle.
+     */
+    public DiceExpression getDice() {
+        return dice;
+    }
+
+    /**
+     * Setter for dice.<p>
+     * The roll used to select a result on this oracle.
+     */
+    public void setDice(DiceExpression dice) {
+        this.dice = dice;
     }
 
     /**

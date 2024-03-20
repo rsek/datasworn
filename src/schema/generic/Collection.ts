@@ -62,20 +62,20 @@ export function Collection<
 	Collectable extends TRef<TFuzzyObject>,
 	Props extends TProperties
 >(
-	id: TCollectionID,
+	_id: TCollectionID,
 	collectable: Collectable,
 	properties: Props,
 	options: SchemaOptions = {}
 ) {
 	const generic = {
 		enhances: Type.Optional(
-			CloneType(id, {
+			CloneType(_id, {
 				description:
 					"This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 			})
 		),
 		replaces: Type.Optional(
-			CloneType(id, {
+			CloneType(_id, {
 				description:
 					'This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.'
 			})
@@ -88,7 +88,7 @@ export function Collection<
 		...properties
 	} as ObjectProperties<typeof CollectionMixin> & typeof generic & Props)
 
-	const result = SourcedNode(id, base, {
+	const result = SourcedNode(_id, base, {
 		...options,
 		[CollectionBrand]: 'Collection'
 	}) as TSourcedNode<typeof base> & {
@@ -107,7 +107,7 @@ export type Collection<
 	Collectable extends IdentifiedNode = IdentifiedNode,
 	Props extends object = object
 > = SourcedNode<{
-	id: string
+	_id: string
 	color?: string
 	summary?: string
 	description?: string
@@ -122,9 +122,9 @@ export type Collection<
 export type CollectionSource<T extends IdentifiedNode = IdentifiedNode> =
 	TypeFest.SetOptional<
 		Omit<Collection<T>, 'contents'> & {
-			contents?: Record<string, TypeFest.SetOptional<T, 'id'>>
+			contents?: Record<string, TypeFest.SetOptional<T, '_id'>>
 		},
-		'id'
+		'_id'
 	>
 
 export const RecursiveCollectionBrand = Symbol('RecursiveCollection')

@@ -11,6 +11,12 @@ namespace Datasworn
     /// </summary>
     public class Npc
     {
+        /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public NpcId Id { get; set; }
+
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
 
@@ -19,12 +25,6 @@ namespace Datasworn
 
         [JsonPropertyName("features")]
         public IList<MarkdownString> Features { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public NpcId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

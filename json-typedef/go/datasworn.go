@@ -56,10 +56,10 @@ func (v *RulesPackage) UnmarshalJSON(b []byte) error {
 // A Datasworn package that relies on an external package to provide its
 // ruleset.
 type RulesPackageExpansion struct {
+	ID ExpansionID `json:"_id"`
+
 	// The version of the Datasworn format used by this data.
 	DataswornVersion SemanticVersion `json:"datasworn_version"`
-
-	ID ExpansionID `json:"id"`
 
 	Ruleset RulesetID `json:"ruleset"`
 
@@ -117,6 +117,8 @@ type RulesPackageExpansion struct {
 
 // A standalone Datasworn package that describes its own ruleset.
 type RulesPackageRuleset struct {
+	ID RulesetID `json:"_id"`
+
 	// A dictionary object containing asset collections, which contain assets.
 	Assets map[string]AssetCollection `json:"assets"`
 
@@ -129,8 +131,6 @@ type RulesPackageRuleset struct {
 	// The date of the source documents's last update, formatted YYYY-MM-DD.
 	// Required because it's used to determine whether the data needs updating.
 	Date time.Time `json:"date"`
-
-	ID RulesetID `json:"id"`
 
 	License License `json:"license"`
 
@@ -200,6 +200,9 @@ const (
 )
 
 type Asset struct {
+	// The unique Datasworn ID for this item.
+	ID AssetID `json:"_id"`
+
 	Abilities []AssetAbility `json:"abilities"`
 
 	// A localized category label for this asset. This is the surtitle above the
@@ -209,9 +212,6 @@ type Asset struct {
 	// If `true`, this asset counts as an impact (Starforged) or a debility
 	// (classic Ironsworn).
 	CountAsImpact bool `json:"count_as_impact"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -257,11 +257,11 @@ type Asset struct {
 // An asset ability: one of the purchasable features of an asset. Most assets
 // have three.
 type AssetAbility struct {
+	// The unique Datasworn ID for this item.
+	ID AssetAbilityID `json:"_id"`
+
 	// Is this asset ability enabled?
 	Enabled bool `json:"enabled"`
-
-	// The unique Datasworn ID for this item.
-	ID AssetAbilityID `json:"id"`
 
 	// The complete rules text of this asset ability.
 	Text MarkdownString `json:"text"`
@@ -471,7 +471,7 @@ type AssetAttachment struct {
 
 type AssetCollection struct {
 	// The unique Datasworn ID for this item.
-	ID AssetCollectionID `json:"id"`
+	ID AssetCollectionID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1033,7 +1033,7 @@ type AssetOptionFieldText struct {
 
 type Atlas struct {
 	// The unique Datasworn ID for this item.
-	ID AtlasID `json:"id"`
+	ID AtlasID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1082,12 +1082,12 @@ type Atlas struct {
 
 // An atlas entry, like the Ironlands region entries found in classic Ironsworn.
 type AtlasEntry struct {
+	// The unique Datasworn ID for this item.
+	ID AtlasEntryID `json:"_id"`
+
 	Description MarkdownString `json:"description"`
 
 	Features []MarkdownString `json:"features"`
-
-	// The unique Datasworn ID for this item.
-	ID AtlasEntryID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1162,14 +1162,14 @@ type CSSColor = string
 
 // A delve site with a theme, domain, and denizens.
 type DelveSite struct {
+	// The unique Datasworn ID for this item.
+	ID DelveSiteID `json:"_id"`
+
 	Denizens []DelveSiteDenizen `json:"denizens"`
 
 	Description MarkdownString `json:"description"`
 
 	Domain DelveSiteDomainID `json:"domain"`
-
-	// The unique Datasworn ID for this item.
-	ID DelveSiteID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1202,10 +1202,10 @@ type DelveSite struct {
 }
 
 type DelveSiteDenizen struct {
-	Frequency DelveSiteDenizenFrequency `json:"frequency"`
-
 	// The unique Datasworn ID for this item.
-	ID DelveSiteDenizenID `json:"id"`
+	ID DelveSiteDenizenID `json:"_id"`
+
+	Frequency DelveSiteDenizenFrequency `json:"frequency"`
 
 	Max int16 `json:"max"`
 
@@ -1236,12 +1236,12 @@ type DelveSiteDenizenID = string
 
 // A delve site Domain card.
 type DelveSiteDomain struct {
+	// The unique Datasworn ID for this item.
+	ID DelveSiteDomainID `json:"_id"`
+
 	Dangers []DelveSiteDomainDangerRow `json:"dangers"`
 
 	Features []DelveSiteDomainFeatureRow `json:"features"`
-
-	// The unique Datasworn ID for this item.
-	ID DelveSiteDomainID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1275,7 +1275,7 @@ type DelveSiteDomain struct {
 // Represents a single Danger entry from a delve site Domain card.
 type DelveSiteDomainDangerRow struct {
 	// The unique Datasworn ID for this item.
-	ID DomainDangerRowID `json:"id"`
+	ID DomainDangerRowID `json:"_id"`
 
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
@@ -1286,10 +1286,10 @@ type DelveSiteDomainDangerRow struct {
 	// The primary text content of this row.
 	Result MarkdownString `json:"result"`
 
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
 	// Hints that the identified table should be rendered inside this table row.
 	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	I18n *I18nHints `json:"i18n,omitempty"`
 
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
@@ -1304,7 +1304,7 @@ type DelveSiteDomainDangerRow struct {
 // Represents a single Feature entry from a delve site Domain card.
 type DelveSiteDomainFeatureRow struct {
 	// The unique Datasworn ID for this item.
-	ID DomainFeatureRowID `json:"id"`
+	ID DomainFeatureRowID `json:"_id"`
 
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
@@ -1315,10 +1315,10 @@ type DelveSiteDomainFeatureRow struct {
 	// The primary text content of this row.
 	Result MarkdownString `json:"result"`
 
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
 	// Hints that the identified table should be rendered inside this table row.
 	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	I18n *I18nHints `json:"i18n,omitempty"`
 
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
@@ -1338,12 +1338,12 @@ type DelveSiteID = string
 
 // A delve site theme card.
 type DelveSiteTheme struct {
+	// The unique Datasworn ID for this item.
+	ID DelveSiteThemeID `json:"_id"`
+
 	Dangers []DelveSiteThemeDangerRow `json:"dangers"`
 
 	Features []DelveSiteThemeFeatureRow `json:"features"`
-
-	// The unique Datasworn ID for this item.
-	ID DelveSiteThemeID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1370,7 +1370,7 @@ type DelveSiteTheme struct {
 // Represents a single Danger entry from a delve site Theme card.
 type DelveSiteThemeDangerRow struct {
 	// The unique Datasworn ID for this item.
-	ID ThemeDangerRowID `json:"id"`
+	ID ThemeDangerRowID `json:"_id"`
 
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
@@ -1381,10 +1381,10 @@ type DelveSiteThemeDangerRow struct {
 	// The primary text content of this row.
 	Result MarkdownString `json:"result"`
 
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
 	// Hints that the identified table should be rendered inside this table row.
 	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	I18n *I18nHints `json:"i18n,omitempty"`
 
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
@@ -1399,7 +1399,7 @@ type DelveSiteThemeDangerRow struct {
 // Represents a single Feature entry from a delve site Theme card.
 type DelveSiteThemeFeatureRow struct {
 	// The unique Datasworn ID for this item.
-	ID ThemeFeatureRowID `json:"id"`
+	ID ThemeFeatureRowID `json:"_id"`
 
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
@@ -1410,10 +1410,10 @@ type DelveSiteThemeFeatureRow struct {
 	// The primary text content of this row.
 	Result MarkdownString `json:"result"`
 
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
 	// Hints that the identified table should be rendered inside this table row.
 	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	I18n *I18nHints `json:"i18n,omitempty"`
 
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
@@ -1577,7 +1577,7 @@ func (v *Move) UnmarshalJSON(b []byte) error {
 // A move that makes an action roll.
 type MoveActionRoll struct {
 	// The unique Datasworn ID for this item.
-	ID MoveID `json:"id"`
+	ID MoveID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1615,7 +1615,7 @@ type MoveActionRoll struct {
 // A move that makes no progress rolls or action rolls.
 type MoveNoRoll struct {
 	// The unique Datasworn ID for this item.
-	ID MoveID `json:"id"`
+	ID MoveID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1653,7 +1653,7 @@ type MoveNoRoll struct {
 // see MoveSpecialTrack.
 type MoveProgressRoll struct {
 	// The unique Datasworn ID for this item.
-	ID MoveID `json:"id"`
+	ID MoveID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1696,7 +1696,7 @@ type MoveProgressRoll struct {
 // tracks, see MoveProgressRoll instead.
 type MoveSpecialTrack struct {
 	// The unique Datasworn ID for this item.
-	ID MoveID `json:"id"`
+	ID MoveID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1733,7 +1733,7 @@ type MoveSpecialTrack struct {
 
 type MoveCategory struct {
 	// The unique Datasworn ID for this item.
-	ID MoveCategoryID `json:"id"`
+	ID MoveCategoryID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1903,14 +1903,14 @@ type MoveOutcomes struct {
 // A non-player character entry, similar to those in Chapter 5 of the Ironsworn
 // Rulebook, or Chapter 4 of Starforged.
 type Npc struct {
+	// The unique Datasworn ID for this item.
+	ID NpcID `json:"_id"`
+
 	Description MarkdownString `json:"description"`
 
 	Drives []MarkdownString `json:"drives"`
 
 	Features []MarkdownString `json:"features"`
-
-	// The unique Datasworn ID for this item.
-	ID NpcID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1945,7 +1945,7 @@ type Npc struct {
 
 type NpcCollection struct {
 	// The unique Datasworn ID for this item.
-	ID NpcCollectionID `json:"id"`
+	ID NpcCollectionID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2005,10 +2005,10 @@ type NpcID = string
 type NpcNature = Label
 
 type NpcVariant struct {
-	Description MarkdownString `json:"description"`
-
 	// The unique Datasworn ID for this item.
-	ID NpcVariantID `json:"id"`
+	ID NpcVariantID `json:"_id"`
+
+	Description MarkdownString `json:"description"`
 
 	Name Label `json:"name"`
 
@@ -2123,12 +2123,12 @@ type OracleCollectionTableSharedDetailsColumnLabels struct {
 // An OracleCollection representing a single table with multiple roll columns,
 // one `result` column, and one `detail` column.
 type OracleCollectionTableSharedDetails struct {
+	// The unique Datasworn ID for this item.
+	ID OracleCollectionID `json:"_id"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedDetailsColumnLabels `json:"column_labels"`
-
-	// The unique Datasworn ID for this item.
-	ID OracleCollectionID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2182,12 +2182,12 @@ type OracleCollectionTableSharedResultsColumnLabels struct {
 // An OracleCollection representing a single table with multiple roll columns
 // and one `result` column.
 type OracleCollectionTableSharedResults struct {
+	// The unique Datasworn ID for this item.
+	ID OracleCollectionID `json:"_id"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedResultsColumnLabels `json:"column_labels"`
-
-	// The unique Datasworn ID for this item.
-	ID OracleCollectionID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2242,13 +2242,13 @@ type OracleCollectionTableSharedRollsColumnLabels struct {
 // An OracleCollection representing a single table with one roll column and
 // multiple `result` columns.
 type OracleCollectionTableSharedRolls struct {
+	// The unique Datasworn ID for this item.
+	ID OracleCollectionID `json:"_id"`
+
 	// Provides column labels for this table. The `roll` key refers to the roll
 	// column showing the dice range (`min` and `max` on each table row). For all
 	// other column labels, see the `name` property of each child `OracleColumn`.
 	ColumnLabels OracleCollectionTableSharedRollsColumnLabels `json:"column_labels"`
-
-	// The unique Datasworn ID for this item.
-	ID OracleCollectionID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2297,7 +2297,7 @@ type OracleCollectionTableSharedRolls struct {
 // may themselves be `OracleTablesCollection`s.
 type OracleCollectionTables struct {
 	// The unique Datasworn ID for this item.
-	ID OracleCollectionID `json:"id"`
+	ID OracleCollectionID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2354,11 +2354,11 @@ const (
 )
 
 type OracleColumnDetails struct {
+	// The unique Datasworn ID for this item.
+	ID OracleRollableID `json:"_id"`
+
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
-
-	// The unique Datasworn ID for this item.
-	ID OracleRollableID `json:"id"`
 
 	// The primary label at the head of this column.
 	Name Label `json:"name"`
@@ -2401,11 +2401,11 @@ const (
 
 // Represents a single column in an OracleCollection.
 type OracleColumnSimple struct {
+	// The unique Datasworn ID for this item.
+	ID OracleRollableID `json:"_id"`
+
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
-
-	// The unique Datasworn ID for this item.
-	ID OracleRollableID `json:"id"`
 
 	// The primary label at the head of this column.
 	Name Label `json:"name"`
@@ -2562,15 +2562,15 @@ type OracleTableRollableTableDetailsRecommendedRolls struct {
 // A rollable oracle table with one roll column, one `result` column, and one
 // `detail` column.
 type OracleTableRollableTableDetails struct {
+	// The unique Datasworn ID for this item.
+	ID OracleRollableID `json:"_id"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableRollableTableDetailsColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
-
-	// The unique Datasworn ID for this item.
-	ID OracleRollableID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2633,15 +2633,15 @@ type OracleTableRollableTableSimpleRecommendedRolls struct {
 // Represents a basic rollable oracle table with one roll column and one
 // `result` column.
 type OracleTableRollableTableSimple struct {
+	// The unique Datasworn ID for this item.
+	ID OracleRollableID `json:"_id"`
+
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableRollableTableSimpleColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
-
-	// The unique Datasworn ID for this item.
-	ID OracleRollableID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2700,10 +2700,10 @@ type OracleTableRowDetails struct {
 	// The primary text content of this row.
 	Result MarkdownString `json:"result"`
 
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
 	// Hints that the identified table should be rendered inside this table row.
 	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	I18n *I18nHints `json:"i18n,omitempty"`
 
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
@@ -2726,10 +2726,10 @@ type OracleTableRowSimple struct {
 	// The primary text content of this row.
 	Result MarkdownString `json:"result"`
 
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
 	// Hints that the identified table should be rendered inside this table row.
 	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	I18n *I18nHints `json:"i18n,omitempty"`
 
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
@@ -2752,7 +2752,7 @@ const (
 // may themselves be `OracleTablesCollection`s.
 type OracleTablesCollection struct {
 	// The unique Datasworn ID for this item.
-	ID OracleCollectionID `json:"id"`
+	ID OracleCollectionID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -2872,13 +2872,13 @@ type ProgressTrackTypeInfo struct {
 
 // A rarity, as described in Ironsworn: Delve.
 type Rarity struct {
+	// The unique Datasworn ID for this item.
+	ID RarityID `json:"_id"`
+
 	// The asset augmented by this rarity.
 	Asset AssetID `json:"asset"`
 
 	Description MarkdownString `json:"description"`
-
-	// The unique Datasworn ID for this item.
-	ID RarityID `json:"id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -3885,7 +3885,7 @@ type TriggerSpecialTrackEnhancement struct {
 // A setting truth category.
 type Truth struct {
 	// The unique Datasworn ID for this item.
-	ID TruthID `json:"id"`
+	ID TruthID `json:"_id"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -3915,10 +3915,10 @@ type Truth struct {
 type TruthID = string
 
 type TruthOption struct {
-	Description MarkdownString `json:"description"`
-
 	// The unique Datasworn ID for this item.
-	ID TruthOptionID `json:"id"`
+	ID TruthOptionID `json:"_id"`
+
+	Description MarkdownString `json:"description"`
 
 	QuestStarter MarkdownString `json:"quest_starter"`
 
@@ -3945,10 +3945,10 @@ type TruthOptionTableRow struct {
 	// The primary text content of this row.
 	Result MarkdownString `json:"result"`
 
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
 	// Hints that the identified table should be rendered inside this table row.
 	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	I18n *I18nHints `json:"i18n,omitempty"`
 
 	Icon *SvgImageURL `json:"icon,omitempty"`
 

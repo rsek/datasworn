@@ -76,7 +76,7 @@ export const RulesPackage = sourcedTransformer<
 		parent: null
 	) {
 		return mapValues(data.truths, (v, k) =>
-			transform(v, k, { id: `${data.id}/truths` }, Truth)
+			transform(v, k, { _id: `${data._id}/truths` }, Truth)
 		)
 	},
 
@@ -95,7 +95,7 @@ export const RulesPackage = sourcedTransformer<
 		parent: null
 	) {
 		return mapValues(data.rarities, (v, k) =>
-			transform(v, k, { id: `${data.id}/rarities` }, Rarity)
+			transform(v, k, { _id: `${data._id}/rarities` }, Rarity)
 		)
 	},
 	delve_sites: function (
@@ -105,7 +105,7 @@ export const RulesPackage = sourcedTransformer<
 		parent: null
 	) {
 		return mapValues(data.delve_sites, (v, k) =>
-			transform(v, k, { id: `${data.id}/delve_sites` }, DelveSite)
+			transform(v, k, { _id: `${data._id}/delve_sites` }, DelveSite)
 		)
 	},
 	site_themes: function (
@@ -115,7 +115,7 @@ export const RulesPackage = sourcedTransformer<
 		parent: null
 	) {
 		return mapValues(data.site_themes, (v, k) =>
-			transform(v, k, { id: `${data.id}/site_themes` }, DelveSiteTheme)
+			transform(v, k, { _id: `${data._id}/site_themes` }, DelveSiteTheme)
 		)
 	},
 	site_domains: function (
@@ -125,7 +125,7 @@ export const RulesPackage = sourcedTransformer<
 		parent: null
 	) {
 		return mapValues(data.site_domains, (v, k) =>
-			transform(v, k, { id: `${data.id}/site_domains` }, DelveSiteDomain)
+			transform(v, k, { _id: `${data._id}/site_domains` }, DelveSiteDomain)
 		)
 	}
 })

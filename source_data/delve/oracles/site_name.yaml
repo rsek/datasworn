@@ -1,4 +1,4 @@
-id: delve
+_id: delve
 package_type: expansion
 ruleset: classic
 oracles:
@@ -36,7 +36,7 @@ oracles:
         oracle_type: table_simple
         rows:
           - <<: &i18n.template.result.proper_noun
-              i18n:
+              _i18n:
                 template:
                   result:
                     part_of_speech: proper_noun
@@ -114,7 +114,7 @@ oracles:
           page: 207
         rows:
           - <<: &i18n.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 1
@@ -161,7 +161,7 @@ oracles:
             max: 22
             result: Sunken
           - <<: &i18n.adjunct_common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjunct_common_noun
             min: 23
@@ -328,7 +328,7 @@ oracles:
           page: 208
         rows:
           - <<: &i18n.common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             min: 1
@@ -541,7 +541,7 @@ oracles:
           page: 209
         rows:
           - <<: &i18n.proper_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: proper_noun
             min: 1
@@ -856,7 +856,7 @@ oracles:
               page: 210
             rows:
               - <<: &i18n.common_noun
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: common_noun
                 min: 1

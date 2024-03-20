@@ -10,6 +10,12 @@ namespace Datasworn
     /// </summary>
     public class DelveSite
     {
+        /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public DelveSiteId Id { get; set; }
+
         [JsonPropertyName("denizens")]
         public IList<DelveSiteDenizen> Denizens { get; set; }
 
@@ -18,12 +24,6 @@ namespace Datasworn
 
         [JsonPropertyName("domain")]
         public DelveSiteDomainId Domain { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public DelveSiteId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

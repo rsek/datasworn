@@ -10,7 +10,7 @@ import java.util.Map;
 
 @JsonSerialize
 public class NpcCollection {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private NpcCollectionId id;
 
     @JsonProperty("name")

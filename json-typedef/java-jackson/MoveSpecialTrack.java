@@ -15,7 +15,7 @@ import java.util.Map;
  */
 @JsonSerialize
 public class MoveSpecialTrack extends Move {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private MoveId id;
 
     @JsonProperty("name")

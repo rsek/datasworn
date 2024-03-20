@@ -21,7 +21,7 @@ for (const pkg of Object.values(pkgs)) {
 	await fs.emptyDir(localeDir)
 
 	for (const collection of collections) {
-		const omitKeys: (keyof Datasworn)[] = ['source', 'id']
+		const omitKeys: (keyof Datasworn)[] = ['source', '_id']
 		const [type] = Object.keys(collection).filter(
 			(k) => !omitKeys.includes(k as any)
 		)
@@ -35,7 +35,7 @@ for (const pkg of Object.values(pkgs)) {
 
 		for (const [text, sources] of result) data.push({ text, sources })
 
-		const dest = path.join(localeDir, `${type}.json`)
+		const dest = path.join(localeDir, `${String(type)}.json`)
 
 		void fs.writeJSON(dest, data, { encoding: 'utf-8', spaces: '\t' })
 	}

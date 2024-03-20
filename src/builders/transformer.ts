@@ -14,8 +14,8 @@ import { type SourcedNode } from '../schema/generic/SourcedNode.js'
 type PartialKeys<T, K extends string | number | symbol> = Omit<T, K> &
 	Partial<T>
 
-type SourceData<T extends object> = 'id' extends keyof T
-	? SetOptional<T, 'id'>
+type SourceData<T extends object> = '_id' extends keyof T
+	? SetOptional<T, '_id'>
 	: T
 
 export function sourcedTransformer<
@@ -25,23 +25,23 @@ export function sourcedTransformer<
 >(
 	partialTransformer: PartialKeys<
 		Transformer<TIn, TOut, TParent>,
-		'id' | 'source'
+		'_id' | 'source'
 	>
 ) {
 	return {
-		id: function (
+		_id: function (
 			data: TIn,
 			key: string | number,
 			parent: SourcedNode | null
 		): string {
-			if (data.id != null) return trackID(data.id)
+			if (data._id != null) return trackID(data._id)
 
 			if (parent == null)
 				throw new Error(
 					'Data has no ID of its own, and no parent to generate its own ID from'
 				)
 
-			return trackID(parent.id.replace('/collections/', '/') + `/${key}`)
+			return trackID(parent._id.replace('/collections/', '/') + `/${key}`)
 		},
 		// source: function (
 		// 	data: TIn,
@@ -69,13 +69,13 @@ export function collectionTransformer<
 	itemTransformer: Transformer<Collected<TIn>, Collected<TOut>, TOut>,
 	partialTransformer: Omit<
 		Transformer<TIn, TOut, TParent>,
-		'source' | 'id' | 'contents'
+		'source' | '_id' | 'contents'
 	>,
 	isRecursive = false
 ) {
 	let result = {
-		id: function (data: TIn, key: string | number, parent: TParent): string {
-			const baseId = parent.id.replace('/collections/', '/')
+		_id: function (data: TIn, key: string | number, parent: TParent): string {
+			const baseId = parent._id.replace('/collections/', '/')
 			const [namespace, _cKey, ...tail] = baseId.split('/')
 
 			const parts = [
@@ -130,7 +130,7 @@ export function recursiveCollectionTransformer<
 	itemTransformer: TItemTransformer,
 	partialTransformer: Omit<
 		Transformer<TIn, TOut, TParent>,
-		'source' | 'id' | 'contents'
+		'source' | '_id' | 'contents'
 	>
 ) {
 	const result = collectionTransformer<TIn, TOut, TParent>(
@@ -161,17 +161,13 @@ export function recursiveCollectionTransformer<
 	return result
 }
 
-export type Transformer<
-	TIn,
-	TOut,
-	TParent extends SourcedNode | Rules | null
-> = {
+export type Transformer<TIn, TOut, TParent extends SourcedNode | Rules | null> = {
 	[K in keyof Required<TOut> as K extends keyof TIn
 		? K extends InitialKeys
 			? K
 			: TIn[K] extends Partial<TOut>[K]
-			  ? never
-			  : K
+				? never
+				: K
 		: K]: K extends InitialKeys
 		? (data: TIn, key: string | number, parent: TParent) => TOut[K]
 		: (
@@ -179,10 +175,10 @@ export type Transformer<
 				data: TIn,
 				key: string | number,
 				parent: TParent
-		  ) => TOut[K] // if they both have the key and it's the same type value, omit -- it doesn't need transforming
+			) => TOut[K] // if they both have the key and it's the same type value, omit -- it doesn't need transforming
 }
 
-type InitialKeys = 'id' | 'source'
+type InitialKeys = '_id' | 'source'
 
 export function transform<
 	TIn,
@@ -196,7 +192,7 @@ export function transform<
 ): TOut {
 	const result = cloneDeep(data) as Partial<TOut>
 
-	const initialKeys: InitialKeys[] = ['id', 'source']
+	const initialKeys: InitialKeys[] = ['_id', 'source']
 
 	initialKeys.forEach((initialKey) => {
 		if ((transformer as any)[initialKey] != null) {

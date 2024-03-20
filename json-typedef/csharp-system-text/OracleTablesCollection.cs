@@ -14,7 +14,7 @@ namespace Datasworn
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
-        [JsonPropertyName("id")]
+        [JsonPropertyName("_id")]
         public OracleCollectionId Id { get; set; }
 
         /// <summary>

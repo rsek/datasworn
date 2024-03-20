@@ -14,14 +14,14 @@ import java.util.Map;
  */
 @JsonSerialize
 public class OracleTableRollableTableSimple extends OracleTableRollable {
+    @JsonProperty("_id")
+    private OracleRollableId id;
+
     @JsonProperty("column_labels")
     private OracleTableRollableTableSimpleColumnLabels columnLabels;
 
     @JsonProperty("dice")
     private DiceExpression dice;
-
-    @JsonProperty("id")
-    private OracleRollableId id;
 
     @JsonProperty("name")
     private Label name;
@@ -72,6 +72,22 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public OracleRollableId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(OracleRollableId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for columnLabels.<p>
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
@@ -103,22 +119,6 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
      */
     public void setDice(DiceExpression dice) {
         this.dice = dice;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public OracleRollableId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(OracleRollableId id) {
-        this.id = id;
     }
 
     /**

@@ -8,7 +8,7 @@ export type RulesPackage = Ruleset | Expansion
  * A standalone Datasworn package that describes its own ruleset.
  */
 export interface Ruleset {
-	id: RulesetId
+	_id: RulesetId
 	package_type: 'ruleset'
 	/**
 	 * The version of the Datasworn format used by this data.
@@ -151,7 +151,7 @@ export interface Expansion {
 	 * @remarks Deserialize as a dictionary object.
 	 */
 	site_domains?: Record<DictKey, DelveSiteDomain>
-	id: ExpansionId
+	_id: ExpansionId
 	package_type: 'expansion'
 	/**
 	 * The version of the Datasworn format used by this data.
@@ -1465,7 +1465,7 @@ export interface Npc {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: NpcId
+	_id?: NpcId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -1505,7 +1505,7 @@ export interface NpcCollection {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: NpcCollectionId
+	_id?: NpcCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -1578,7 +1578,7 @@ export interface NpcVariant {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: NpcVariantId
+	_id?: NpcVariantId
 	name: Label
 	/**
 	 * The suggested challenge rank for this NPC.
@@ -1676,7 +1676,7 @@ export interface OracleColumnDetails {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleRollableId
+	_id?: OracleRollableId
 	/**
 	 * The primary label at the head of this column.
 	 */
@@ -1725,7 +1725,7 @@ export interface OracleColumnSimple {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleRollableId
+	_id?: OracleRollableId
 	/**
 	 * The primary label at the head of this column.
 	 */
@@ -1784,7 +1784,7 @@ export interface OracleTableDetails {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleRollableId
+	_id?: OracleRollableId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -1899,7 +1899,7 @@ export interface OracleTableRowDetails {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
-	i18n?: I18nHints
+	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
 	 * @default null
@@ -1939,7 +1939,7 @@ export interface OracleTableRowSimple {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
-	i18n?: I18nHints
+	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
 	 * @default null
@@ -1959,7 +1959,7 @@ export interface OracleTableSharedDetails {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleCollectionId
+	_id?: OracleCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2039,7 +2039,7 @@ export interface OracleTableSharedResults {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleCollectionId
+	_id?: OracleCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2114,7 +2114,7 @@ export interface OracleTableSharedRolls {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleCollectionId
+	_id?: OracleCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2189,7 +2189,7 @@ export interface OracleTableSimple {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleRollableId
+	_id?: OracleRollableId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2276,7 +2276,7 @@ export interface OracleTablesCollection {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: OracleCollectionId
+	_id?: OracleCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2367,7 +2367,7 @@ export interface MoveActionRoll {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: MoveId
+	_id?: MoveId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2428,7 +2428,7 @@ export interface MoveCategory {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: MoveCategoryId
+	_id?: MoveCategoryId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2493,7 +2493,7 @@ export interface MoveNoRoll {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: MoveId
+	_id?: MoveId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2581,7 +2581,7 @@ export interface MoveProgressRoll {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: MoveId
+	_id?: MoveId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -2661,7 +2661,7 @@ export interface MoveSpecialTrack {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: MoveId
+	_id?: MoveId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3000,7 +3000,7 @@ export interface Asset {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: AssetId
+	_id?: AssetId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3073,7 +3073,7 @@ export interface AssetAbility {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: AssetAbilityId
+	_id?: AssetAbilityId
 	/**
 	 * A handful of asset abilities have a label/name, for instance classic Ironsworn companion assets. Most canonical assets omit this property.
 	 */
@@ -3193,7 +3193,7 @@ export interface AssetCollection {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: AssetCollectionId
+	_id?: AssetCollectionId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3634,7 +3634,7 @@ export interface Truth {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: TruthId
+	_id?: TruthId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3662,7 +3662,7 @@ export interface TruthOption {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: TruthOptionId
+	_id?: TruthOptionId
 	min?: number
 	max?: number
 	summary?: MarkdownString
@@ -3694,7 +3694,7 @@ export interface TruthOptionTableRow {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
-	i18n?: I18nHints
+	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
 	 * @default null
@@ -3714,7 +3714,7 @@ export interface Atlas {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: AtlasId
+	_id?: AtlasId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3774,7 +3774,7 @@ export interface AtlasEntry {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: AtlasEntryId
+	_id?: AtlasEntryId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3824,7 +3824,7 @@ export interface Rarity {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: RarityId
+	_id?: RarityId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3868,7 +3868,7 @@ export interface DelveSite {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: DelveSiteId
+	_id?: DelveSiteId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -3968,7 +3968,7 @@ export interface DelveSiteDenizen {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: DelveSiteDenizenId
+	_id?: DelveSiteDenizenId
 	name?: Label
 	min: number
 	max: number
@@ -3993,7 +3993,7 @@ export interface DelveSiteDomain {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: DelveSiteDomainId
+	_id?: DelveSiteDomainId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -4104,7 +4104,7 @@ export interface DelveSiteDomainDangerRow {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: DomainDangerRowId
+	_id?: DomainDangerRowId
 	/**
 	 * The primary text content of this row.
 	 */
@@ -4124,7 +4124,7 @@ export interface DelveSiteDomainDangerRow {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
-	i18n?: I18nHints
+	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row.
 	 */
@@ -4142,7 +4142,7 @@ export interface DelveSiteDomainFeatureRow {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: DomainFeatureRowId
+	_id?: DomainFeatureRowId
 	/**
 	 * The primary text content of this row.
 	 */
@@ -4162,7 +4162,7 @@ export interface DelveSiteDomainFeatureRow {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
-	i18n?: I18nHints
+	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row.
 	 */
@@ -4180,7 +4180,7 @@ export interface DelveSiteTheme {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: DelveSiteThemeId
+	_id?: DelveSiteThemeId
 	/**
 	 * The primary name/label for this item.
 	 */
@@ -4284,7 +4284,7 @@ export interface DelveSiteThemeDangerRow {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: ThemeDangerRowId
+	_id?: ThemeDangerRowId
 	/**
 	 * The primary text content of this row.
 	 */
@@ -4304,7 +4304,7 @@ export interface DelveSiteThemeDangerRow {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
-	i18n?: I18nHints
+	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row.
 	 */
@@ -4322,7 +4322,7 @@ export interface DelveSiteThemeFeatureRow {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	id?: ThemeFeatureRowId
+	_id?: ThemeFeatureRowId
 	/**
 	 * The primary text content of this row.
 	 */
@@ -4342,7 +4342,7 @@ export interface DelveSiteThemeFeatureRow {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
-	i18n?: I18nHints
+	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row.
 	 */

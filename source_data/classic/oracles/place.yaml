@@ -1,4 +1,4 @@
-id: classic
+_id: classic
 package_type: ruleset
 oracles:
   place:
@@ -64,7 +64,7 @@ oracles:
           page: 176
         rows:
           - <<: &i18n.common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             min: 1
@@ -359,7 +359,7 @@ oracles:
           page: 177
         rows:
           - <<: &i18n.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 1

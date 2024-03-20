@@ -9,11 +9,11 @@ import java.util.List;
 
 @JsonSerialize
 public class TruthOption {
+    @JsonProperty("_id")
+    private TruthOptionId id;
+
     @JsonProperty("description")
     private MarkdownString description;
-
-    @JsonProperty("id")
-    private TruthOptionId id;
 
     @JsonProperty("quest_starter")
     private MarkdownString questStarter;
@@ -38,20 +38,6 @@ public class TruthOption {
     }
 
     /**
-     * Getter for description.<p>
-     */
-    public MarkdownString getDescription() {
-        return description;
-    }
-
-    /**
-     * Setter for description.<p>
-     */
-    public void setDescription(MarkdownString description) {
-        this.description = description;
-    }
-
-    /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
@@ -65,6 +51,20 @@ public class TruthOption {
      */
     public void setId(TruthOptionId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for description.<p>
+     */
+    public MarkdownString getDescription() {
+        return description;
+    }
+
+    /**
+     * Setter for description.<p>
+     */
+    public void setDescription(MarkdownString description) {
+        this.description = description;
     }
 
     /**

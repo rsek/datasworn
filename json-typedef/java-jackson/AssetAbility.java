@@ -14,11 +14,11 @@ import java.util.Map;
  */
 @JsonSerialize
 public class AssetAbility {
+    @JsonProperty("_id")
+    private AssetAbilityId id;
+
     @JsonProperty("enabled")
     private Boolean enabled;
-
-    @JsonProperty("id")
-    private AssetAbilityId id;
 
     @JsonProperty("text")
     private MarkdownString text;
@@ -51,22 +51,6 @@ public class AssetAbility {
     }
 
     /**
-     * Getter for enabled.<p>
-     * Is this asset ability enabled?
-     */
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    /**
-     * Setter for enabled.<p>
-     * Is this asset ability enabled?
-     */
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
@@ -80,6 +64,22 @@ public class AssetAbility {
      */
     public void setId(AssetAbilityId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for enabled.<p>
+     * Is this asset ability enabled?
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    /**
+     * Setter for enabled.<p>
+     * Is this asset ability enabled?
+     */
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     /**

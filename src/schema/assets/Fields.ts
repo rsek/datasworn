@@ -18,7 +18,7 @@ const AssetBooleanFieldMixin = Type.Object({
 })
 
 // function AssetCheckboxField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	const base = Fields.CheckboxField
@@ -40,7 +40,7 @@ const AssetBooleanFieldMixin = Type.Object({
 // 	)
 // }
 // function AssetCardFlipField(
-// 	// id: Id.TAnyId,
+// 	// _id:Id.TAnyId,
 // 	options: ObjectOptions = {}
 // ) {
 // 	const base = Fields

@@ -14,7 +14,7 @@ import java.util.Map;
  */
 @JsonSerialize
 public class OracleTablesCollection {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private OracleCollectionId id;
 
     @JsonProperty("name")

@@ -87,16 +87,15 @@ export function extractMetadata<T extends TAnySchema>(jsonSchema: T) {
 	return metadata
 }
 
-export function setIdRef<T extends { id: string }, R extends string>(
+export function setIdRef<T extends { _id: string }, R extends string>(
 	schema: JTDSchemaType<T>,
 	ref: R
 ) {
 	type NewRef = { [P in R]: string }
-	type RefRecord = typeof schema extends JTDSchemaType<T, infer U>
-		? U & NewRef
-		: NewRef
-	return set(schema, 'properties.id.ref', ref) as unknown as JTDSchemaType<
-		T & { id: R },
+	type RefRecord =
+		typeof schema extends JTDSchemaType<T, infer U> ? U & NewRef : NewRef
+	return set(schema, 'properties._id.ref', ref) as unknown as JTDSchemaType<
+		T & { _id: R },
 		RefRecord
 	>
 }

@@ -36,7 +36,7 @@ export const Asset = sourcedTransformer<
 		if (data.options == null) return undefined
 		return mapValues(data.options, (fieldData, fieldKey) => {
 			const field = cloneDeep(fieldData) as Datasworn.AssetOptionField
-			// field.id = `${this.id}/options/${fieldKey}`
+			// field._id = `${this._id}/options/${fieldKey}`
 			return field
 		})
 	},
@@ -52,12 +52,12 @@ export const Asset = sourcedTransformer<
 				fieldData
 			) as Datasworn.AssetConditionMeterControlField
 
-			// field.id = `${this.id}/controls/${fieldKey}`
+			// field._id = `${this._id}/controls/${fieldKey}`
 
 			// if (field.field_type === 'condition_meter' && field.controls != null)
 			// 	for (const k in field.controls)
 			// if (Object.prototype.hasOwnProperty.call(field.controls, k))
-			// 	field.controls[k].id = `${field.id}/controls/${k}`
+			// 	field.controls[k]._id = `${field._id}/controls/${k}`
 
 			return field
 		})
@@ -83,12 +83,12 @@ export const AssetAbility: Transformer<
 	Datasworn.AssetAbility,
 	Datasworn.Asset
 > = {
-	id: function (
+	_id: function (
 		data: DataswornSource.AssetAbility,
 		key: string | number,
 		parent: SourcedNode
 	): string {
-		return trackID(`${parent.id}/abilities/${key}`)
+		return trackID(`${parent._id}/abilities/${key}`)
 	},
 	moves: function (
 		this: SourcedNode,
@@ -98,7 +98,7 @@ export const AssetAbility: Transformer<
 	): Record<string, Datasworn.Move> | undefined {
 		if (data.moves == null) return
 		return mapValues(data.moves, (moveData, moveKey) =>
-			transform(moveData, moveKey, { id: `${this.id}/moves` }, Move)
+			transform(moveData, moveKey, { _id: `${this._id}/moves` }, Move)
 		)
 	},
 	options: function (
@@ -110,7 +110,7 @@ export const AssetAbility: Transformer<
 		if (data.options == null) return undefined
 		return mapValues(data.options, (fieldData, fieldKey) => {
 			const field = cloneDeep(fieldData) as Datasworn.AssetAbilityOptionField
-			// field.id = `${this.id}/options/${fieldKey}`
+			// field._id = `${this._id}/options/${fieldKey}`
 			return field
 		})
 	},
@@ -123,7 +123,7 @@ export const AssetAbility: Transformer<
 		if (data.controls == null) return undefined
 		return mapValues(data.controls, (fieldData, fieldKey) => {
 			const field = cloneDeep(fieldData) as Datasworn.AssetAbilityControlField
-			// field.id = `${this.id}/controls/${fieldKey}`
+			// field._id = `${this._id}/controls/${fieldKey}`
 			return field
 		})
 	},

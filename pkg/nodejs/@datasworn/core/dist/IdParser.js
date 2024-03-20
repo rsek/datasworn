@@ -195,21 +195,21 @@ class IdParser {
         return this.toPath().getMatches(tree, (value) => {
             if (typeof value !== 'object' || value == null)
                 return false;
-            if (!('id' in value))
+            if (!('_id' in value))
                 return false;
-            const { id } = value;
-            if (typeof id !== 'string')
+            const { _id } = value;
+            if (typeof _id !== 'string')
                 return false;
-            return this.matcher(id);
+            return this.matcher(_id);
         });
     }
     // static from<T extends Strings.AnyId>(
-    // 	id: T
+    // 	_id:T
     // ): Id<
     // 	Utils.ExtractRulesPackage<T>,
     // 	Utils.ExtractTypeElements<T>,
     // 	Utils.ExtractPathKeys<T>
-    // > & { id: T }
+    // > & { _id:T }
     /**
      * Create an Id parser instance of the appropriate subclass from a string ID.
      * @throws If `id` is invalid.
@@ -331,7 +331,7 @@ class IdParser {
         // e.g. "starforged.oracles"
         dotPathElements.push(id.typeRootKey);
         if (id.ancestorCollectionKeys.length > 0) {
-            // console.log(id.ancestorCollectionKeys)
+            // console.log(_id.ancestorCollectionKeys)
             const [rootAncestor, ...ancestors] = id.ancestorCollectionKeys;
             // first ancestor collection key is always a key in the root object for the type
             dotPathElements.push(rootAncestor);

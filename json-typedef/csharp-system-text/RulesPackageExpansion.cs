@@ -15,14 +15,14 @@ namespace Datasworn
         [JsonPropertyName("package_type")]
         public string PackageType { get => "expansion"; }
 
+        [JsonPropertyName("_id")]
+        public ExpansionId Id { get; set; }
+
         /// <summary>
         /// The version of the Datasworn format used by this data.
         /// </summary>
         [JsonPropertyName("datasworn_version")]
         public SemanticVersion DataswornVersion { get; set; }
-
-        [JsonPropertyName("id")]
-        public ExpansionId Id { get; set; }
 
         [JsonPropertyName("ruleset")]
         public RulesetId Ruleset { get; set; }

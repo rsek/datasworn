@@ -1,4 +1,4 @@
-id: classic
+_id: classic
 package_type: ruleset
 oracles:
   name:
@@ -31,7 +31,7 @@ oracles:
             canonical_name: Ironlander Names
             rows:
               - <<: &i18n.proper_noun
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: proper_noun
                 min: 1

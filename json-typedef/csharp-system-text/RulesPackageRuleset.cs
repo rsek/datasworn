@@ -14,6 +14,9 @@ namespace Datasworn
         [JsonPropertyName("package_type")]
         public string PackageType { get => "ruleset"; }
 
+        [JsonPropertyName("_id")]
+        public RulesetId Id { get; set; }
+
         /// <summary>
         /// A dictionary object containing asset collections, which contain
         /// assets.
@@ -40,9 +43,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("date")]
         public DateTimeOffset Date { get; set; }
-
-        [JsonPropertyName("id")]
-        public RulesetId Id { get; set; }
 
         [JsonPropertyName("license")]
         public License License { get; set; }

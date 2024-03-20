@@ -1,7 +1,7 @@
 import { Type, type TObject, type TOmit } from '@sinclair/typebox'
 
 const MetaKeys = [
-	'id',
+	'_id',
 	'source',
 	'rendering',
 	'name',

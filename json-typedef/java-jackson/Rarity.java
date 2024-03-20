@@ -12,14 +12,14 @@ import java.util.Map;
  */
 @JsonSerialize
 public class Rarity {
+    @JsonProperty("_id")
+    private RarityId id;
+
     @JsonProperty("asset")
     private AssetId asset;
 
     @JsonProperty("description")
     private MarkdownString description;
-
-    @JsonProperty("id")
-    private RarityId id;
 
     @JsonProperty("name")
     private Label name;
@@ -50,6 +50,22 @@ public class Rarity {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public RarityId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(RarityId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for asset.<p>
      * The asset augmented by this rarity.
      */
@@ -77,22 +93,6 @@ public class Rarity {
      */
     public void setDescription(MarkdownString description) {
         this.description = description;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public RarityId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(RarityId id) {
-        this.id = id;
     }
 
     /**

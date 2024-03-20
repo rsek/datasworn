@@ -37,7 +37,7 @@ const RulesPackageMetaProps = {
 export const Ruleset = Type.Object(
 	{
 		// ruleset ID isn't optional in source, so we don't flag it with IdentifiedNode
-		id: Type.Ref<typeof Id.RulesetId>('RulesetId'),
+		_id: Type.Ref<typeof Id.RulesetId>('RulesetId'),
 		package_type: Type.Literal('ruleset'),
 		...RulesPackageMetaProps,
 		rules: Utils.SourceOptional(Type.Ref<TRules>('Rules')),
@@ -123,13 +123,13 @@ export type Ruleset = Static<typeof Ruleset>
 export const Expansion = Utils.Assign(
 	[
 		Type.Omit(Type.Partial(Ruleset), [
-			'id',
+			'_id',
 			'package_type',
 			'rules',
 			'datasworn_version'
 		]),
 		Type.Object({
-			id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
+			_id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
 			package_type: Type.Literal('expansion'),
 			...RulesPackageMetaProps,
 			ruleset: Type.Ref<typeof Id.RulesetId>('RulesetId'),

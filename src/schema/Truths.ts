@@ -5,7 +5,7 @@ import * as TableRow from './oracles/TableRow.js'
 
 export const TruthOptionTableRow = Type.Omit(
 	TableRow.OracleTableRowSimple,
-	['id'],
+	['_id'],
 	{
 		$id: 'TruthOptionTableRow'
 	}

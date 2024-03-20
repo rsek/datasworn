@@ -251,10 +251,10 @@ abstract class IdParser<
 			}
 		return this.toPath().getMatches(tree, (value) => {
 			if (typeof value !== 'object' || value == null) return false
-			if (!('id' in value)) return false
-			const { id } = value
-			if (typeof id !== 'string') return false
-			return this.matcher(id)
+			if (!('_id' in value)) return false
+			const { _id } = value
+			if (typeof _id !== 'string') return false
+			return this.matcher(_id)
 		})
 	}
 
@@ -296,12 +296,12 @@ abstract class IdParser<
 	): NonRecursiveCollectableId.FromString<T>
 
 	// static from<T extends Strings.AnyId>(
-	// 	id: T
+	// 	_id:T
 	// ): Id<
 	// 	Utils.ExtractRulesPackage<T>,
 	// 	Utils.ExtractTypeElements<T>,
 	// 	Utils.ExtractPathKeys<T>
-	// > & { id: T }
+	// > & { _id:T }
 
 	/**
 	 * Create an Id parser instance of the appropriate subclass from a string ID.
@@ -405,7 +405,7 @@ abstract class IdParser<
 			: Utils.Join<
 					[T['rulesPackage'], ...T['typeKeys'], ...T['pathKeys']],
 					CONST.Sep
-			  >
+				>
 	}
 
 	/**
@@ -601,8 +601,8 @@ abstract class IdParser<
 			options instanceof IdParser
 				? options
 				: typeof options === 'string'
-				  ? IdParser.from(options as any)
-				  : IdParser.fromOptions(options)
+					? IdParser.from(options as any)
+					: IdParser.fromOptions(options)
 
 		const dotPathElements: string[] = []
 
@@ -612,7 +612,7 @@ abstract class IdParser<
 		dotPathElements.push(id.typeRootKey)
 
 		if (id.ancestorCollectionKeys.length > 0) {
-			// console.log(id.ancestorCollectionKeys)
+			// console.log(_id.ancestorCollectionKeys)
 			const [rootAncestor, ...ancestors] = id.ancestorCollectionKeys
 
 			// first ancestor collection key is always a key in the root object for the type
@@ -868,7 +868,7 @@ interface CollectableId<
 namespace CollectableId {
 	/** A lenient typing for a parsed ID representing any collectable object. */
 	export interface Any extends IdParser.Any {
-		// readonly id: Strings.AnyCollectableId
+		// readonly _id:Strings.AnyCollectableId
 		readonly typeKeys: [TypeElements.Collectable.Any]
 		readonly ancestorCollectionKeys: string[]
 		readonly type: TypeElements.Collectable.Any
@@ -965,7 +965,7 @@ namespace NonRecursiveCollectableId {
 			TypeElements.Collectable.NonRecursive}${CONST.Sep}${infer ParentKey}${CONST.Sep}${infer Key}`
 			? NonRecursiveCollectableId<RulesPackage, Type, ParentKey, Key> & {
 					id: T
-			  }
+				}
 			: never
 }
 
@@ -1046,9 +1046,9 @@ namespace RecursiveCollectableId {
 					Type,
 					Utils.ExtractAncestorPathElements<T>,
 					Utils.ExtractKey<T>
-			  > & {
+				> & {
 					id: T
-			  }
+				}
 			: never
 }
 
@@ -1095,7 +1095,7 @@ class RecursiveCollectionId<
 				Subtype,
 				AncestorKeys extends [string] | [] ? [...AncestorKeys, Key] : never,
 				ChildKey
-		  >
+			>
 		: never {
 		if (this.pathKeys.length >= CONST.RECURSIVE_PATH_ELEMENTS_MAX)
 			throw new Error(
@@ -1164,7 +1164,7 @@ namespace RecursiveCollectionId {
 					Subtype,
 					Utils.ExtractAncestorCollectionPathElements<T>,
 					Utils.ExtractKey<T>
-			  > & { id: T }
+				> & { id: T }
 			: never
 
 	export interface Options<T extends Strings.RecursiveCollectionId>

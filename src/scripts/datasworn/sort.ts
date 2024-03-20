@@ -29,7 +29,7 @@ export const unsortableKeys = [
 	'choices'
 ] as const
 
-const idKeys = ['id'] as const
+const idKeys = ['_id', '_key'] as const
 
 const relationshipKeys = [
 	'replaces',
@@ -172,7 +172,7 @@ export const dataSwornKeyOrder = [
 	'site_themes',
 	'truths',
 	'source',
-	'i18n'
+	'_i18n'
 ] as const
 
 const warnedKeys = new Set<string>()

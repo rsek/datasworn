@@ -14,6 +14,9 @@ import java.util.Map;
  */
 @JsonSerialize
 public class RulesPackageRuleset extends RulesPackage {
+    @JsonProperty("_id")
+    private RulesetId id;
+
     @JsonProperty("assets")
     private Map<String, AssetCollection> assets;
 
@@ -25,9 +28,6 @@ public class RulesPackageRuleset extends RulesPackage {
 
     @JsonProperty("date")
     private OffsetDateTime date;
-
-    @JsonProperty("id")
-    private RulesetId id;
 
     @JsonProperty("license")
     private License license;
@@ -76,6 +76,20 @@ public class RulesPackageRuleset extends RulesPackage {
     private Map<String, Truth> truths;
 
     public RulesPackageRuleset() {
+    }
+
+    /**
+     * Getter for id.<p>
+     */
+    public RulesetId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     */
+    public void setId(RulesetId id) {
+        this.id = id;
     }
 
     /**
@@ -142,20 +156,6 @@ public class RulesPackageRuleset extends RulesPackage {
      */
     public void setDate(OffsetDateTime date) {
         this.date = date;
-    }
-
-    /**
-     * Getter for id.<p>
-     */
-    public RulesetId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     */
-    public void setId(RulesetId id) {
-        this.id = id;
     }
 
     /**

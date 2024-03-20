@@ -9,7 +9,7 @@ import { IdentifiedNode, type TIdentifiedNode } from './IdentifiedNode.js'
 
 export const SourcedNodeBase = Type.Object(
 	{
-		id: Type.String(),
+		_id: Type.String(),
 		name: Type.Ref(Localize.Label, {
 			description: 'The primary name/label for this item.'
 		}),
@@ -36,12 +36,12 @@ export const SourcedNodeBase = Type.Object(
 	{ additionalProperties: true }
 )
 export function SourcedNode<T extends TObject = TObject>(
-	id: Id.TAnyId,
+	_id: Id.TAnyId,
 	schema: T,
 	options: ObjectOptions = {}
 ): TSourcedNode<T> {
 	return IdentifiedNode(
-		id,
+		_id,
 		Utils.Assign([SourcedNodeBase, schema]),
 		options
 	) as any

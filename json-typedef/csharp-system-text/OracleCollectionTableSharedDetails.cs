@@ -15,18 +15,18 @@ namespace Datasworn
         public string OracleType { get => "table_shared_details"; }
 
         /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public OracleCollectionId Id { get; set; }
+
+        /// <summary>
         /// The label at the head of each table column. The `roll` key refers
         /// to the roll column showing the dice range (`min` and `max` on each
         /// table row).
         /// </summary>
         [JsonPropertyName("column_labels")]
         public OracleCollectionTableSharedDetailsColumnLabels ColumnLabels { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public OracleCollectionId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

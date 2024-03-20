@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   starships:
@@ -428,110 +428,110 @@ oracles:
             result: Carrier
             detail: Launches fighters
             # set_attributes: {starship_type: [carrier]}
-            i18n: &i18n.result.common_noun
+            _i18n: &i18n.result.common_noun
               result:
                 part_of_speech: common_noun
           - min: 3
             max: 6
             result: Corvette
             detail: Light attack ship
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [corvette]}
           - min: 7
             max: 11
             result: Courier
             detail: Fast transport
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [courier]}
           - min: 12
             max: 14
             result: Cruiser
             detail: Medium attack ship
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [cruiser]}
           - min: 15
             max: 16
             result: Dreadnought
             detail: Heavy attack ship
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [dreadnought]}
           - min: 17
             max: 19
             result: Escape pod
             detail: Survival craft
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [escape]}
           - min: 20
             max: 22
             result: Foundry
             detail: Mobile construction platform
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [foundry]}
           - min: 23
             max: 27
             result: Harvester
             detail: Fuel or energy excavator
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [harvester]}
           - min: 28
             max: 33
             result: Hauler
             detail: Heavy transport
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hauler]}
           - min: 34
             max: 36
             result: Hunter
             detail: Stealthy attack ship
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hunter]}
           - min: 37
             max: 38
             result: Ironhome
             detail: Habitat
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [ironhome]}
           - min: 39
             max: 42
             result: Mender
             detail: Utility or repair
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [mender]}
           - min: 43
             max: 47
             result: Outbounder
             detail: Remote survey or research
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [outbounder]}
           - min: 48
             max: 50
             result: Pennant
             detail: Command ship
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [pennant]}
           - min: 51
             max: 56
             result: Prospector
             detail: Mineral excavator
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [prospector]}
           - min: 57
             max: 61
             result: Reclaimer
             detail: Salvage or rescue
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [reclaimer]}
           - min: 62
             max: 64
             result: Shuttle
             detail: Short-range transport
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [shuttle]}
           - min: 65
             max: 67
             result: Snub fighter
             detail: Small attack craft
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [snub_fighter]}
           - min: 68
             max: 82
@@ -540,14 +540,14 @@ oracles:
             oracle_rolls:
               - oracle: starforged/oracles/starships/mission
               # set_attributes: {starship_type: [multipurpose]}]
-            i18n: &i18n.result.adjective
+            _i18n: &i18n.result.adjective
               result:
                 part_of_speech: adjective
           - min: 83
             max: 84
             result: Unusual or unknown
             detail: null
-            i18n: *i18n.result.adjective
+            _i18n: *i18n.result.adjective
           - min: 85
             max: 94
             result: '[Fleet](id:starforged/oracles/starships/fleet)'
@@ -575,31 +575,31 @@ oracles:
           - min: 1
             max: 10
             result: Battle fleet
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
           - min: 11
             max: 25
             result: Pirate wing
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
           - min: 26
             max: 35
             result: Raider horde
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
           - min: 36
             max: 50
             result: Salvager hive
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
           - min: 51
             max: 60
             result: Settler caravan
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
           - min: 61
             max: 70
             result: Trade caravan
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
           - min: 71
             max: 90
             result: Transport and escorts
-            i18n: *i18n.result.common_noun
+            _i18n: *i18n.result.common_noun
           - min: 91
             max: 100
             result: '[Starship Mission](id:starforged/oracles/starships/mission)'

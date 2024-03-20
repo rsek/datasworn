@@ -7,14 +7,14 @@ namespace Datasworn
 {
     public class TruthOption
     {
-        [JsonPropertyName("description")]
-        public MarkdownString Description { get; set; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
-        [JsonPropertyName("id")]
+        [JsonPropertyName("_id")]
         public TruthOptionId Id { get; set; }
+
+        [JsonPropertyName("description")]
+        public MarkdownString Description { get; set; }
 
         [JsonPropertyName("quest_starter")]
         public MarkdownString QuestStarter { get; set; }

@@ -35,12 +35,12 @@ class RulesPackageExpansion(RulesPackage):
     ruleset.
     """
 
+    id: 'ExpansionID'
     datasworn_version: 'SemanticVersion'
     """
     The version of the Datasworn format used by this data.
     """
 
-    id: 'ExpansionID'
     ruleset: 'RulesetID'
     assets: 'Optional[Dict[str, AssetCollection]]'
     """
@@ -124,8 +124,8 @@ class RulesPackageExpansion(RulesPackage):
     def from_json_data(cls, data: Any) -> 'RulesPackageExpansion':
         return cls(
             "expansion",
+            _from_json_data(ExpansionID, data.get("_id")),
             _from_json_data(SemanticVersion, data.get("datasworn_version")),
-            _from_json_data(ExpansionID, data.get("id")),
             _from_json_data(RulesetID, data.get("ruleset")),
             _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("atlas")),
@@ -147,8 +147,8 @@ class RulesPackageExpansion(RulesPackage):
 
     def to_json_data(self) -> Any:
         data = { "package_type": "expansion" }
+        data["_id"] = _to_json_data(self.id)
         data["datasworn_version"] = _to_json_data(self.datasworn_version)
-        data["id"] = _to_json_data(self.id)
         data["ruleset"] = _to_json_data(self.ruleset)
         if self.assets is not None:
              data["assets"] = _to_json_data(self.assets)
@@ -190,6 +190,7 @@ class RulesPackageRuleset(RulesPackage):
     A standalone Datasworn package that describes its own ruleset.
     """
 
+    id: 'RulesetID'
     assets: 'Dict[str, AssetCollection]'
     """
     A dictionary object containing asset collections, which contain assets.
@@ -211,7 +212,6 @@ class RulesPackageRuleset(RulesPackage):
     Required because it's used to determine whether the data needs updating.
     """
 
-    id: 'RulesetID'
     license: 'License'
     moves: 'Dict[str, MoveCategory]'
     """
@@ -278,11 +278,11 @@ class RulesPackageRuleset(RulesPackage):
     def from_json_data(cls, data: Any) -> 'RulesPackageRuleset':
         return cls(
             "ruleset",
+            _from_json_data(RulesetID, data.get("_id")),
             _from_json_data(Dict[str, AssetCollection], data.get("assets")),
             _from_json_data(List[AuthorInfo], data.get("authors")),
             _from_json_data(SemanticVersion, data.get("datasworn_version")),
             _from_json_data(datetime, data.get("date")),
-            _from_json_data(RulesetID, data.get("id")),
             _from_json_data(License, data.get("license")),
             _from_json_data(Dict[str, MoveCategory], data.get("moves")),
             _from_json_data(Dict[str, OracleTablesCollection], data.get("oracles")),
@@ -300,11 +300,11 @@ class RulesPackageRuleset(RulesPackage):
 
     def to_json_data(self) -> Any:
         data = { "package_type": "ruleset" }
+        data["_id"] = _to_json_data(self.id)
         data["assets"] = _to_json_data(self.assets)
         data["authors"] = _to_json_data(self.authors)
         data["datasworn_version"] = _to_json_data(self.datasworn_version)
         data["date"] = _to_json_data(self.date)
-        data["id"] = _to_json_data(self.id)
         data["license"] = _to_json_data(self.license)
         data["moves"] = _to_json_data(self.moves)
         data["oracles"] = _to_json_data(self.oracles)
@@ -372,6 +372,11 @@ class ActionRollMethod(Enum):
 
 @dataclass
 class Asset:
+    id: 'AssetID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
     abilities: 'List[AssetAbility]'
     category: 'Label'
     """
@@ -383,11 +388,6 @@ class Asset:
     """
     If `true`, this asset counts as an impact (Starforged) or a debility
     (classic Ironsworn).
-    """
-
-    id: 'AssetID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     name: 'Label'
@@ -449,10 +449,10 @@ class Asset:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Asset':
         return cls(
+            _from_json_data(AssetID, data.get("_id")),
             _from_json_data(List[AssetAbility], data.get("abilities")),
             _from_json_data(Label, data.get("category")),
             _from_json_data(bool, data.get("count_as_impact")),
-            _from_json_data(AssetID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(bool, data.get("shared")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -469,10 +469,10 @@ class Asset:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["abilities"] = _to_json_data(self.abilities)
         data["category"] = _to_json_data(self.category)
         data["count_as_impact"] = _to_json_data(self.count_as_impact)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["shared"] = _to_json_data(self.shared)
         data["source"] = _to_json_data(self.source)
@@ -503,14 +503,14 @@ class AssetAbility:
     have three.
     """
 
-    enabled: 'bool'
-    """
-    Is this asset ability enabled?
-    """
-
     id: 'AssetAbilityID'
     """
     The unique Datasworn ID for this item.
+    """
+
+    enabled: 'bool'
+    """
+    Is this asset ability enabled?
     """
 
     text: 'MarkdownString'
@@ -555,8 +555,8 @@ class AssetAbility:
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetAbility':
         return cls(
+            _from_json_data(AssetAbilityID, data.get("_id")),
             _from_json_data(bool, data.get("enabled")),
-            _from_json_data(AssetAbilityID, data.get("id")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(Optional[Dict[str, AssetAbilityControlField]], data.get("controls")),
             _from_json_data(Optional[AssetEnhancement], data.get("enhance_asset")),
@@ -568,8 +568,8 @@ class AssetAbility:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["enabled"] = _to_json_data(self.enabled)
-        data["id"] = _to_json_data(self.id)
         data["text"] = _to_json_data(self.text)
         if self.controls is not None:
              data["controls"] = _to_json_data(self.controls)
@@ -938,7 +938,7 @@ class AssetCollection:
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetCollection':
         return cls(
-            _from_json_data(AssetCollectionID, data.get("id")),
+            _from_json_data(AssetCollectionID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -956,7 +956,7 @@ class AssetCollection:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -1843,7 +1843,7 @@ class Atlas:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Atlas':
         return cls(
-            _from_json_data(AtlasID, data.get("id")),
+            _from_json_data(AtlasID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -1862,7 +1862,7 @@ class Atlas:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -1898,13 +1898,13 @@ class AtlasEntry:
     Ironsworn.
     """
 
-    description: 'MarkdownString'
-    features: 'List[MarkdownString]'
     id: 'AtlasEntryID'
     """
     The unique Datasworn ID for this item.
     """
 
+    description: 'MarkdownString'
+    features: 'List[MarkdownString]'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -1931,9 +1931,9 @@ class AtlasEntry:
     @classmethod
     def from_json_data(cls, data: Any) -> 'AtlasEntry':
         return cls(
+            _from_json_data(AtlasEntryID, data.get("_id")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(List[MarkdownString], data.get("features")),
-            _from_json_data(AtlasEntryID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -1946,9 +1946,9 @@ class AtlasEntry:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["description"] = _to_json_data(self.description)
         data["features"] = _to_json_data(self.features)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -2142,14 +2142,14 @@ class DelveSite:
     A delve site with a theme, domain, and denizens.
     """
 
-    denizens: 'List[DelveSiteDenizen]'
-    description: 'MarkdownString'
-    domain: 'DelveSiteDomainID'
     id: 'DelveSiteID'
     """
     The unique Datasworn ID for this item.
     """
 
+    denizens: 'List[DelveSiteDenizen]'
+    description: 'MarkdownString'
+    domain: 'DelveSiteDomainID'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -2188,10 +2188,10 @@ class DelveSite:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSite':
         return cls(
+            _from_json_data(DelveSiteID, data.get("_id")),
             _from_json_data(List[DelveSiteDenizen], data.get("denizens")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(DelveSiteDomainID, data.get("domain")),
-            _from_json_data(DelveSiteID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(ChallengeRank, data.get("rank")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -2206,10 +2206,10 @@ class DelveSite:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["denizens"] = _to_json_data(self.denizens)
         data["description"] = _to_json_data(self.description)
         data["domain"] = _to_json_data(self.domain)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["rank"] = _to_json_data(self.rank)
         data["source"] = _to_json_data(self.source)
@@ -2230,12 +2230,12 @@ class DelveSite:
 
 @dataclass
 class DelveSiteDenizen:
-    frequency: 'DelveSiteDenizenFrequency'
     id: 'DelveSiteDenizenID'
     """
     The unique Datasworn ID for this item.
     """
 
+    frequency: 'DelveSiteDenizenFrequency'
     max: 'int'
     min: 'int'
     name: 'Optional[Label]'
@@ -2248,8 +2248,8 @@ class DelveSiteDenizen:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDenizen':
         return cls(
+            _from_json_data(DelveSiteDenizenID, data.get("_id")),
             _from_json_data(DelveSiteDenizenFrequency, data.get("frequency")),
-            _from_json_data(DelveSiteDenizenID, data.get("id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(Optional[Label], data.get("name")),
@@ -2258,8 +2258,8 @@ class DelveSiteDenizen:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["frequency"] = _to_json_data(self.frequency)
-        data["id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         if self.name is not None:
@@ -2302,13 +2302,13 @@ class DelveSiteDomain:
     A delve site Domain card.
     """
 
-    dangers: 'List[DelveSiteDomainDangerRow]'
-    features: 'List[DelveSiteDomainFeatureRow]'
     id: 'DelveSiteDomainID'
     """
     The unique Datasworn ID for this item.
     """
 
+    dangers: 'List[DelveSiteDomainDangerRow]'
+    features: 'List[DelveSiteDomainFeatureRow]'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -2344,9 +2344,9 @@ class DelveSiteDomain:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomain':
         return cls(
+            _from_json_data(DelveSiteDomainID, data.get("_id")),
             _from_json_data(List[DelveSiteDomainDangerRow], data.get("dangers")),
             _from_json_data(List[DelveSiteDomainFeatureRow], data.get("features")),
-            _from_json_data(DelveSiteDomainID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("summary")),
@@ -2360,9 +2360,9 @@ class DelveSiteDomain:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["dangers"] = _to_json_data(self.dangers)
         data["features"] = _to_json_data(self.features)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         data["summary"] = _to_json_data(self.summary)
@@ -2406,12 +2406,12 @@ class DelveSiteDomainDangerRow:
     The primary text content of this row.
     """
 
+    i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
-    i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
     oracle_rolls: 'Optional[List[OracleRoll]]'
     """
@@ -2424,12 +2424,12 @@ class DelveSiteDomainDangerRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomainDangerRow':
         return cls(
-            _from_json_data(DomainDangerRowID, data.get("id")),
+            _from_json_data(DomainDangerRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -2438,14 +2438,14 @@ class DelveSiteDomainDangerRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
-        if self.i18n is not None:
-             data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.oracle_rolls is not None:
@@ -2482,12 +2482,12 @@ class DelveSiteDomainFeatureRow:
     The primary text content of this row.
     """
 
+    i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
-    i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
     oracle_rolls: 'Optional[List[OracleRoll]]'
     """
@@ -2500,12 +2500,12 @@ class DelveSiteDomainFeatureRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomainFeatureRow':
         return cls(
-            _from_json_data(DomainFeatureRowID, data.get("id")),
+            _from_json_data(DomainFeatureRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -2514,14 +2514,14 @@ class DelveSiteDomainFeatureRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
-        if self.i18n is not None:
-             data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.oracle_rolls is not None:
@@ -2568,13 +2568,13 @@ class DelveSiteTheme:
     A delve site theme card.
     """
 
-    dangers: 'List[DelveSiteThemeDangerRow]'
-    features: 'List[DelveSiteThemeFeatureRow]'
     id: 'DelveSiteThemeID'
     """
     The unique Datasworn ID for this item.
     """
 
+    dangers: 'List[DelveSiteThemeDangerRow]'
+    features: 'List[DelveSiteThemeFeatureRow]'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -2601,9 +2601,9 @@ class DelveSiteTheme:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteTheme':
         return cls(
+            _from_json_data(DelveSiteThemeID, data.get("_id")),
             _from_json_data(List[DelveSiteThemeDangerRow], data.get("dangers")),
             _from_json_data(List[DelveSiteThemeFeatureRow], data.get("features")),
-            _from_json_data(DelveSiteThemeID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("summary")),
@@ -2616,9 +2616,9 @@ class DelveSiteTheme:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["dangers"] = _to_json_data(self.dangers)
         data["features"] = _to_json_data(self.features)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         data["summary"] = _to_json_data(self.summary)
@@ -2660,12 +2660,12 @@ class DelveSiteThemeDangerRow:
     The primary text content of this row.
     """
 
+    i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
-    i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
     oracle_rolls: 'Optional[List[OracleRoll]]'
     """
@@ -2678,12 +2678,12 @@ class DelveSiteThemeDangerRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteThemeDangerRow':
         return cls(
-            _from_json_data(ThemeDangerRowID, data.get("id")),
+            _from_json_data(ThemeDangerRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -2692,14 +2692,14 @@ class DelveSiteThemeDangerRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
-        if self.i18n is not None:
-             data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.oracle_rolls is not None:
@@ -2736,12 +2736,12 @@ class DelveSiteThemeFeatureRow:
     The primary text content of this row.
     """
 
+    i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
-    i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
     oracle_rolls: 'Optional[List[OracleRoll]]'
     """
@@ -2754,12 +2754,12 @@ class DelveSiteThemeFeatureRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteThemeFeatureRow':
         return cls(
-            _from_json_data(ThemeFeatureRowID, data.get("id")),
+            _from_json_data(ThemeFeatureRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -2768,14 +2768,14 @@ class DelveSiteThemeFeatureRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
-        if self.i18n is not None:
-             data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.oracle_rolls is not None:
@@ -3187,7 +3187,7 @@ class MoveActionRoll(Move):
     def from_json_data(cls, data: Any) -> 'MoveActionRoll':
         return cls(
             "action_roll",
-            _from_json_data(MoveID, data.get("id")),
+            _from_json_data(MoveID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -3202,7 +3202,7 @@ class MoveActionRoll(Move):
 
     def to_json_data(self) -> Any:
         data = { "roll_type": "action_roll" }
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["outcomes"] = _to_json_data(self.outcomes)
         data["source"] = _to_json_data(self.source)
@@ -3278,7 +3278,7 @@ class MoveNoRoll(Move):
     def from_json_data(cls, data: Any) -> 'MoveNoRoll':
         return cls(
             "no_roll",
-            _from_json_data(MoveID, data.get("id")),
+            _from_json_data(MoveID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(MarkdownString, data.get("text")),
@@ -3292,7 +3292,7 @@ class MoveNoRoll(Move):
 
     def to_json_data(self) -> Any:
         data = { "roll_type": "no_roll" }
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         data["text"] = _to_json_data(self.text)
@@ -3375,7 +3375,7 @@ class MoveProgressRoll(Move):
     def from_json_data(cls, data: Any) -> 'MoveProgressRoll':
         return cls(
             "progress_roll",
-            _from_json_data(MoveID, data.get("id")),
+            _from_json_data(MoveID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -3391,7 +3391,7 @@ class MoveProgressRoll(Move):
 
     def to_json_data(self) -> Any:
         data = { "roll_type": "progress_roll" }
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["outcomes"] = _to_json_data(self.outcomes)
         data["source"] = _to_json_data(self.source)
@@ -3471,7 +3471,7 @@ class MoveSpecialTrack(Move):
     def from_json_data(cls, data: Any) -> 'MoveSpecialTrack':
         return cls(
             "special_track",
-            _from_json_data(MoveID, data.get("id")),
+            _from_json_data(MoveID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MoveOutcomes, data.get("outcomes")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -3486,7 +3486,7 @@ class MoveSpecialTrack(Move):
 
     def to_json_data(self) -> Any:
         data = { "roll_type": "special_track" }
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["outcomes"] = _to_json_data(self.outcomes)
         data["source"] = _to_json_data(self.source)
@@ -3571,7 +3571,7 @@ class MoveCategory:
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveCategory':
         return cls(
-            _from_json_data(MoveCategoryID, data.get("id")),
+            _from_json_data(MoveCategoryID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -3589,7 +3589,7 @@ class MoveCategory:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -3841,14 +3841,14 @@ class Npc:
     Rulebook, or Chapter 4 of Starforged.
     """
 
-    description: 'MarkdownString'
-    drives: 'List[MarkdownString]'
-    features: 'List[MarkdownString]'
     id: 'NpcID'
     """
     The unique Datasworn ID for this item.
     """
 
+    description: 'MarkdownString'
+    drives: 'List[MarkdownString]'
+    features: 'List[MarkdownString]'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -3883,10 +3883,10 @@ class Npc:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Npc':
         return cls(
+            _from_json_data(NpcID, data.get("_id")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(List[MarkdownString], data.get("drives")),
             _from_json_data(List[MarkdownString], data.get("features")),
-            _from_json_data(NpcID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(NpcNature, data.get("nature")),
             _from_json_data(ChallengeRank, data.get("rank")),
@@ -3903,10 +3903,10 @@ class Npc:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["description"] = _to_json_data(self.description)
         data["drives"] = _to_json_data(self.drives)
         data["features"] = _to_json_data(self.features)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["nature"] = _to_json_data(self.nature)
         data["rank"] = _to_json_data(self.rank)
@@ -3995,7 +3995,7 @@ class NpcCollection:
     @classmethod
     def from_json_data(cls, data: Any) -> 'NpcCollection':
         return cls(
-            _from_json_data(NpcCollectionID, data.get("id")),
+            _from_json_data(NpcCollectionID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -4013,7 +4013,7 @@ class NpcCollection:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -4092,12 +4092,12 @@ class NpcNature:
 
 @dataclass
 class NpcVariant:
-    description: 'MarkdownString'
     id: 'NpcVariantID'
     """
     The unique Datasworn ID for this item.
     """
 
+    description: 'MarkdownString'
     name: 'Label'
     nature: 'NpcNature'
     rank: 'ChallengeRank'
@@ -4110,8 +4110,8 @@ class NpcVariant:
     @classmethod
     def from_json_data(cls, data: Any) -> 'NpcVariant':
         return cls(
+            _from_json_data(NpcVariantID, data.get("_id")),
             _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(NpcVariantID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(NpcNature, data.get("nature")),
             _from_json_data(ChallengeRank, data.get("rank")),
@@ -4120,8 +4120,8 @@ class NpcVariant:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["description"] = _to_json_data(self.description)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["nature"] = _to_json_data(self.nature)
         data["rank"] = _to_json_data(self.rank)
@@ -4215,15 +4215,15 @@ class OracleCollectionTableSharedDetails(OracleCollection):
     one `result` column, and one `detail` column.
     """
 
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
     column_labels: 'OracleCollectionTableSharedDetailsColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
     roll column showing the dice range (`min` and `max` on each table row).
-    """
-
-    id: 'OracleCollectionID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     name: 'Label'
@@ -4287,8 +4287,8 @@ class OracleCollectionTableSharedDetails(OracleCollection):
     def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedDetails':
         return cls(
             "table_shared_details",
+            _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(OracleCollectionTableSharedDetailsColumnLabels, data.get("column_labels")),
-            _from_json_data(OracleCollectionID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -4306,8 +4306,8 @@ class OracleCollectionTableSharedDetails(OracleCollection):
 
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_shared_details" }
+        data["_id"] = _to_json_data(self.id)
         data["column_labels"] = _to_json_data(self.column_labels)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -4361,15 +4361,15 @@ class OracleCollectionTableSharedResults(OracleCollection):
     and one `result` column.
     """
 
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
     column_labels: 'OracleCollectionTableSharedResultsColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
     roll column showing the dice range (`min` and `max` on each table row).
-    """
-
-    id: 'OracleCollectionID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     name: 'Label'
@@ -4433,8 +4433,8 @@ class OracleCollectionTableSharedResults(OracleCollection):
     def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedResults':
         return cls(
             "table_shared_results",
+            _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(OracleCollectionTableSharedResultsColumnLabels, data.get("column_labels")),
-            _from_json_data(OracleCollectionID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -4452,8 +4452,8 @@ class OracleCollectionTableSharedResults(OracleCollection):
 
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_shared_results" }
+        data["_id"] = _to_json_data(self.id)
         data["column_labels"] = _to_json_data(self.column_labels)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -4508,16 +4508,16 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     multiple `result` columns.
     """
 
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
     column_labels: 'OracleCollectionTableSharedRollsColumnLabels'
     """
     Provides column labels for this table. The `roll` key refers to the roll
     column showing the dice range (`min` and `max` on each table row). For all
     other column labels, see the `name` property of each child `OracleColumn`.
-    """
-
-    id: 'OracleCollectionID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     name: 'Label'
@@ -4581,8 +4581,8 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedRolls':
         return cls(
             "table_shared_rolls",
+            _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(OracleCollectionTableSharedRollsColumnLabels, data.get("column_labels")),
-            _from_json_data(OracleCollectionID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -4600,8 +4600,8 @@ class OracleCollectionTableSharedRolls(OracleCollection):
 
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_shared_rolls" }
+        data["_id"] = _to_json_data(self.id)
         data["column_labels"] = _to_json_data(self.column_labels)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -4702,7 +4702,7 @@ class OracleCollectionTables(OracleCollection):
     def from_json_data(cls, data: Any) -> 'OracleCollectionTables':
         return cls(
             "tables",
-            _from_json_data(OracleCollectionID, data.get("id")),
+            _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -4721,7 +4721,7 @@ class OracleCollectionTables(OracleCollection):
 
     def to_json_data(self) -> Any:
         data = { "oracle_type": "tables" }
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         if self.canonical_name is not None:
@@ -4776,14 +4776,14 @@ class OracleColumnDetailsOracleType(Enum):
 
 @dataclass
 class OracleColumnDetails:
-    dice: 'DiceExpression'
-    """
-    The roll used to select a result on this oracle.
-    """
-
     id: 'OracleRollableID'
     """
     The unique Datasworn ID for this item.
+    """
+
+    dice: 'DiceExpression'
+    """
+    The roll used to select a result on this oracle.
     """
 
     name: 'Label'
@@ -4833,8 +4833,8 @@ class OracleColumnDetails:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleColumnDetails':
         return cls(
+            _from_json_data(OracleRollableID, data.get("_id")),
             _from_json_data(DiceExpression, data.get("dice")),
-            _from_json_data(OracleRollableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleColumnDetailsOracleType, data.get("oracle_type")),
             _from_json_data(List[OracleTableRowDetails], data.get("rows")),
@@ -4849,8 +4849,8 @@ class OracleColumnDetails:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["dice"] = _to_json_data(self.dice)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["oracle_type"] = _to_json_data(self.oracle_type)
         data["rows"] = _to_json_data(self.rows)
@@ -4885,14 +4885,14 @@ class OracleColumnSimple:
     Represents a single column in an OracleCollection.
     """
 
-    dice: 'DiceExpression'
-    """
-    The roll used to select a result on this oracle.
-    """
-
     id: 'OracleRollableID'
     """
     The unique Datasworn ID for this item.
+    """
+
+    dice: 'DiceExpression'
+    """
+    The roll used to select a result on this oracle.
     """
 
     name: 'Label'
@@ -4942,8 +4942,8 @@ class OracleColumnSimple:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleColumnSimple':
         return cls(
+            _from_json_data(OracleRollableID, data.get("_id")),
             _from_json_data(DiceExpression, data.get("dice")),
-            _from_json_data(OracleRollableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleColumnSimpleOracleType, data.get("oracle_type")),
             _from_json_data(List[OracleTableRowSimple], data.get("rows")),
@@ -4958,8 +4958,8 @@ class OracleColumnSimple:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["dice"] = _to_json_data(self.dice)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["oracle_type"] = _to_json_data(self.oracle_type)
         data["rows"] = _to_json_data(self.rows)
@@ -5194,6 +5194,11 @@ class OracleTableRollableTableDetails(OracleTableRollable):
     `detail` column.
     """
 
+    id: 'OracleRollableID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
     column_labels: 'OracleTableRollableTableDetailsColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
@@ -5203,11 +5208,6 @@ class OracleTableRollableTableDetails(OracleTableRollable):
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
-    """
-
-    id: 'OracleRollableID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     name: 'Label'
@@ -5273,9 +5273,9 @@ class OracleTableRollableTableDetails(OracleTableRollable):
     def from_json_data(cls, data: Any) -> 'OracleTableRollableTableDetails':
         return cls(
             "table_details",
+            _from_json_data(OracleRollableID, data.get("_id")),
             _from_json_data(OracleTableRollableTableDetailsColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
-            _from_json_data(OracleRollableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[OracleTableRowDetails], data.get("rows")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -5292,9 +5292,9 @@ class OracleTableRollableTableDetails(OracleTableRollable):
 
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_details" }
+        data["_id"] = _to_json_data(self.id)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["dice"] = _to_json_data(self.dice)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["rows"] = _to_json_data(self.rows)
         data["source"] = _to_json_data(self.source)
@@ -5366,6 +5366,11 @@ class OracleTableRollableTableSimple(OracleTableRollable):
     `result` column.
     """
 
+    id: 'OracleRollableID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
     column_labels: 'OracleTableRollableTableSimpleColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
@@ -5375,11 +5380,6 @@ class OracleTableRollableTableSimple(OracleTableRollable):
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
-    """
-
-    id: 'OracleRollableID'
-    """
-    The unique Datasworn ID for this item.
     """
 
     name: 'Label'
@@ -5445,9 +5445,9 @@ class OracleTableRollableTableSimple(OracleTableRollable):
     def from_json_data(cls, data: Any) -> 'OracleTableRollableTableSimple':
         return cls(
             "table_simple",
+            _from_json_data(OracleRollableID, data.get("_id")),
             _from_json_data(OracleTableRollableTableSimpleColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
-            _from_json_data(OracleRollableID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[OracleTableRowSimple], data.get("rows")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -5464,9 +5464,9 @@ class OracleTableRollableTableSimple(OracleTableRollable):
 
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_simple" }
+        data["_id"] = _to_json_data(self.id)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["dice"] = _to_json_data(self.dice)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["rows"] = _to_json_data(self.rows)
         data["source"] = _to_json_data(self.source)
@@ -5512,12 +5512,12 @@ class OracleTableRowDetails:
     The primary text content of this row.
     """
 
+    i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
-    i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
     oracle_rolls: 'Optional[List[OracleRoll]]'
     """
@@ -5534,8 +5534,8 @@ class OracleTableRowDetails:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -5548,10 +5548,10 @@ class OracleTableRowDetails:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
-        if self.i18n is not None:
-             data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.oracle_rolls is not None:
@@ -5583,12 +5583,12 @@ class OracleTableRowSimple:
     The primary text content of this row.
     """
 
+    i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
-    i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
     oracle_rolls: 'Optional[List[OracleRoll]]'
     """
@@ -5604,8 +5604,8 @@ class OracleTableRowSimple:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -5617,10 +5617,10 @@ class OracleTableRowSimple:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
-        if self.i18n is not None:
-             data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.oracle_rolls is not None:
@@ -5722,7 +5722,7 @@ class OracleTablesCollection:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTablesCollection':
         return cls(
-            _from_json_data(OracleCollectionID, data.get("id")),
+            _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleTablesCollectionOracleType, data.get("oracle_type")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -5742,7 +5742,7 @@ class OracleTablesCollection:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["oracle_type"] = _to_json_data(self.oracle_type)
         data["source"] = _to_json_data(self.source)
@@ -5915,17 +5915,17 @@ class Rarity:
     A rarity, as described in Ironsworn: Delve.
     """
 
+    id: 'RarityID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
     asset: 'AssetID'
     """
     The asset augmented by this rarity.
     """
 
     description: 'MarkdownString'
-    id: 'RarityID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     name: 'Label'
     """
     The primary name/label for this item.
@@ -5963,9 +5963,9 @@ class Rarity:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Rarity':
         return cls(
+            _from_json_data(RarityID, data.get("_id")),
             _from_json_data(AssetID, data.get("asset")),
             _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(RarityID, data.get("id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(SourceInfo, data.get("source")),
             _from_json_data(int, data.get("xp_cost")),
@@ -5977,9 +5977,9 @@ class Rarity:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["asset"] = _to_json_data(self.asset)
         data["description"] = _to_json_data(self.description)
-        data["id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["source"] = _to_json_data(self.source)
         data["xp_cost"] = _to_json_data(self.xp_cost)
@@ -8023,7 +8023,7 @@ class Truth:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Truth':
         return cls(
-            _from_json_data(TruthID, data.get("id")),
+            _from_json_data(TruthID, data.get("_id")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[TruthOption], data.get("options")),
             _from_json_data(SourceInfo, data.get("source")),
@@ -8037,7 +8037,7 @@ class Truth:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["id"] = _to_json_data(self.id)
+        data["_id"] = _to_json_data(self.id)
         data["name"] = _to_json_data(self.name)
         data["options"] = _to_json_data(self.options)
         data["source"] = _to_json_data(self.source)
@@ -8072,12 +8072,12 @@ class TruthID:
 
 @dataclass
 class TruthOption:
-    description: 'MarkdownString'
     id: 'TruthOptionID'
     """
     The unique Datasworn ID for this item.
     """
 
+    description: 'MarkdownString'
     quest_starter: 'MarkdownString'
     max: 'Optional[int]'
     min: 'Optional[int]'
@@ -8087,8 +8087,8 @@ class TruthOption:
     @classmethod
     def from_json_data(cls, data: Any) -> 'TruthOption':
         return cls(
+            _from_json_data(TruthOptionID, data.get("_id")),
             _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(TruthOptionID, data.get("id")),
             _from_json_data(MarkdownString, data.get("quest_starter")),
             _from_json_data(Optional[int], data.get("max")),
             _from_json_data(Optional[int], data.get("min")),
@@ -8098,8 +8098,8 @@ class TruthOption:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["description"] = _to_json_data(self.description)
-        data["id"] = _to_json_data(self.id)
         data["quest_starter"] = _to_json_data(self.quest_starter)
         if self.max is not None:
              data["max"] = _to_json_data(self.max)
@@ -8147,12 +8147,12 @@ class TruthOptionTableRow:
     The primary text content of this row.
     """
 
+    i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
     Hints that the identified table should be rendered inside this table row.
     """
 
-    i18n: 'Optional[I18nHints]'
     icon: 'Optional[SvgImageURL]'
     oracle_rolls: 'Optional[List[OracleRoll]]'
     """
@@ -8168,8 +8168,8 @@ class TruthOptionTableRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("result")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[I18nHints], data.get("i18n")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -8181,10 +8181,10 @@ class TruthOptionTableRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["result"] = _to_json_data(self.result)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
              data["embed_table"] = _to_json_data(self.embed_table)
-        if self.i18n is not None:
-             data["i18n"] = _to_json_data(self.i18n)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.oracle_rolls is not None:

@@ -7,6 +7,12 @@ namespace Datasworn
 {
     public class Asset
     {
+        /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public AssetId Id { get; set; }
+
         [JsonPropertyName("abilities")]
         public IList<AssetAbility> Abilities { get; set; }
 
@@ -23,12 +29,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("count_as_impact")]
         public bool CountAsImpact { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AssetId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

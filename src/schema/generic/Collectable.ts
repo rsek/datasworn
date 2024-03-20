@@ -7,11 +7,11 @@ export const RecursiveCollectableBrand = Symbol('RecursiveCollectable')
 type CollectableID = TAnyId
 
 export function Collectable<T extends TObject>(
-	id: CollectableID,
+	_id: CollectableID,
 	schema: T,
 	options: ObjectOptions = {}
 ) {
-	return SourcedNode(id, schema, {
+	return SourcedNode(_id, schema, {
 		...options,
 		[CollectableBrand]: 'Collectable'
 	}) as TCollectable<T> satisfies TSourcedNode<T>
@@ -27,11 +27,11 @@ export type TCollectable<T extends TObject> = ReturnType<
 type RecursiveCollectableID = TAnyId
 
 export function RecursiveCollectable<T extends TObject>(
-	id: RecursiveCollectableID,
+	_id: RecursiveCollectableID,
 	schema: T,
 	options: ObjectOptions = {}
 ) {
-	return Collectable(id, schema, {
+	return Collectable(_id, schema, {
 		...options,
 		[CollectableBrand]: 'Collectable',
 		[RecursiveCollectableBrand]: 'RecursiveCollectable'

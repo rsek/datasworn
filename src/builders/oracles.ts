@@ -19,14 +19,14 @@ export const OracleTableRow: Transformer<
 	rolls(data, key, parent) {
 		return data.rolls as Datasworn.OracleRoll[]
 	}
-	// id(
+	// _id(
 	// 	data: DataswornSource.OracleTableRow,
 	// 	key: string | number,
 	// 	parent: SourcedNode
 	// ) {
 	// 	// if the row has a valid range, use that instead of the index
 	// 	if (data.max != null && data.min != null) key = `${data.min}-${data.max}`
-	// 	const id = `${parent.id}/${key}`
+	// 	const id = `${parent._id}/${key}`
 
 	// 	return trackID(id)
 	// }

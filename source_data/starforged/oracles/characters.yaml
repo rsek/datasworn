@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   characters:
@@ -41,7 +41,7 @@ oracles:
             oracle_type: column_simple
             rows:
               - <<: &i18n.proper_noun
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: proper_noun
                 min: 1
@@ -1281,7 +1281,7 @@ oracles:
           max: 2
         rows:
           - <<: &i18n.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 1
@@ -1504,7 +1504,7 @@ oracles:
           page: 331
         rows:
           - <<: &i18n.common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             min: 1

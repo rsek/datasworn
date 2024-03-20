@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   settlements:
@@ -297,7 +297,7 @@ oracles:
         #   initial: true
         rows:
           - <<: &i18n.result.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 1
@@ -350,7 +350,7 @@ oracles:
           Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.
         rows:
           - <<: &i18n.result.common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             min: 1
@@ -641,7 +641,7 @@ oracles:
         rows:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
           - <<: &i18n.result.proper_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: proper_noun
             min: 1

@@ -13,14 +13,14 @@ import java.util.Map;
  */
 @JsonSerialize
 public class AtlasEntry {
+    @JsonProperty("_id")
+    private AtlasEntryId id;
+
     @JsonProperty("description")
     private MarkdownString description;
 
     @JsonProperty("features")
     private List<MarkdownString> features;
-
-    @JsonProperty("id")
-    private AtlasEntryId id;
 
     @JsonProperty("name")
     private Label name;
@@ -56,6 +56,22 @@ public class AtlasEntry {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public AtlasEntryId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(AtlasEntryId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for description.<p>
      */
     public MarkdownString getDescription() {
@@ -81,22 +97,6 @@ public class AtlasEntry {
      */
     public void setFeatures(List<MarkdownString> features) {
         this.features = features;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public AtlasEntryId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(AtlasEntryId id) {
-        this.id = id;
     }
 
     /**

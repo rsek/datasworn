@@ -1,4 +1,4 @@
-id: delve
+_id: delve
 package_type: expansion
 ruleset: classic
 oracles:
@@ -76,7 +76,7 @@ oracles:
           page: 214
         rows:
           - <<: &i18n.adjunct_common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjunct_common_noun
             min: 1
@@ -111,7 +111,7 @@ oracles:
             max: 61
             result: Insect
           - <<: &i18n.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 62

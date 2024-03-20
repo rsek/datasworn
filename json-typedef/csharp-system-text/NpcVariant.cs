@@ -6,14 +6,14 @@ namespace Datasworn
 {
     public class NpcVariant
     {
-        [JsonPropertyName("description")]
-        public MarkdownString Description { get; set; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
-        [JsonPropertyName("id")]
+        [JsonPropertyName("_id")]
         public NpcVariantId Id { get; set; }
+
+        [JsonPropertyName("description")]
+        public MarkdownString Description { get; set; }
 
         [JsonPropertyName("name")]
         public Label Name { get; set; }

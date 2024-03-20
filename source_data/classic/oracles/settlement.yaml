@@ -1,4 +1,4 @@
-id: classic
+_id: classic
 package_type: ruleset
 oracles:
   settlement:
@@ -239,7 +239,7 @@ oracles:
             summary: *Landscape_Feature
             rows:
               - <<: &i18n.proper_noun
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: proper_noun
                 min: 1
@@ -594,7 +594,7 @@ oracles:
               # - [97, 100, Long-]
 
               - <<: &i18n.adjective
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: adjective
                 min: 1
@@ -605,7 +605,7 @@ oracles:
                 max: 8
                 result: Green
               - <<: &i18n.adjunct_common_noun
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: adjunct_common_noun
                 min: 9
@@ -652,7 +652,7 @@ oracles:
                 max: 52
                 result: Black
               - <<: &i18n.attributive_verb
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: attributive_verb
                 min: 53
@@ -733,7 +733,7 @@ oracles:
               # - [93, 96, -home]
               # - [97, 100, -wick]
               - <<: &i18n.common_noun
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: common_noun
                 min: 1

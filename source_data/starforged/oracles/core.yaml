@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   core:
@@ -27,7 +27,7 @@ oracles:
           When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) about a goal, situation, or event, roll for an [Action](id:starforged/oracles/core/action) and [Theme](id:starforged/oracles/core/theme). Together, these provide an interpretative verb/noun prompt.
         rows:
           - <<: &i18n.result.verb
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: verb
             min: 1
@@ -441,7 +441,7 @@ oracles:
         summary: *ActionThemeSummary
         rows:
           - <<: &i18n.result.common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             min: 1
@@ -856,7 +856,7 @@ oracles:
           When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) to help define the nature of a location, discovery, or encounter, roll for a [Descriptor](id:starforged/oracles/core/descriptor) and a [Focus](id:starforged/oracles/core/focus) for an adjective/noun prompt.
         rows:
           - <<: &i18n.result.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 1

@@ -5,8 +5,8 @@ import { type Id } from '../common/index.js'
 import { TableRowMixin } from '../oracles/TableRow.js'
 
 export function DelveCardRow(
-	id: Id.TAnyId,
+	_id: Id.TAnyId,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
-	return Generic.IdentifiedNode(id, TableRowMixin, options)
+	return Generic.IdentifiedNode(_id, TableRowMixin, options)
 }

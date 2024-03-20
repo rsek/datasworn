@@ -42,7 +42,7 @@ const TableRowBase = Type.Object({
 	template: Type.Optional(
 		Type.Ref(Rolls.OracleRollTemplate, { releaseStage: 'experimental' })
 	),
-	i18n: Type.Optional(Type.Ref(Localize.I18nHints))
+	_i18n: Type.Optional(Type.Ref(Localize.I18nHints))
 })
 
 export const TableRowMixin = Utils.Assign([

@@ -24,11 +24,11 @@ export function cleanRuleset(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
 
 		if (nicePointer === sep) return
 
-		// if (value?.id) console.log(value.id, '=>', nicePointer)
+		// if (value?._id) console.log(value._id, '=>', nicePointer)
 
 		if (
 			value != null &&
-			!unsortableKeys.includes(key) &&
+			!unsortableKeys.includes(key as any) &&
 			isSortableObjectSchema(schema)
 		)
 			sortedPointers[nicePointer] = sortDataswornKeys(value)
@@ -64,7 +64,7 @@ export function cleanRuleset(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
 }
 
 function replacer(key: string, value: unknown) {
-	if (key.startsWith('_')) return undefined
+	// if (key.startsWith('_')) return undefined
 	if (['number', 'boolean', 'string', 'undefined'].includes(typeof value))
 		return value
 	if (Array.isArray(value)) return value

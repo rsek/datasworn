@@ -29,8 +29,8 @@ function synthesizeId(
 
 	parts.unshift(key as string)
 
-	if (typeof parent.id === 'string')
-		return [parent.id as string, ...parts].join('.')
+	if (typeof parent._id === 'string')
+		return [parent._id as string, ...parts].join('.')
 
 	return synthesizeId(parentPointer, source, parts)
 }

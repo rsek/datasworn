@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   creatures:
@@ -27,7 +27,7 @@ oracles:
           Choose the closest match for your location. Or roll to identify the primary habitat of a creature.
         rows:
           - <<: &i18n.result.common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             min: 1
@@ -79,7 +79,7 @@ oracles:
         #   initial: true
         rows:
           - <<: &i18n.result.adjective
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: adjective
             min: 1
@@ -322,7 +322,7 @@ oracles:
         #   initial: true
         rows:
           - <<: &i18n.result.common_noun
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             min: 1

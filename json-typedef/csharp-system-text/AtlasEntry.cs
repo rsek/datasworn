@@ -11,17 +11,17 @@ namespace Datasworn
     /// </summary>
     public class AtlasEntry
     {
+        /// <summary>
+        /// The unique Datasworn ID for this item.
+        /// </summary>
+        [JsonPropertyName("_id")]
+        public AtlasEntryId Id { get; set; }
+
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
 
         [JsonPropertyName("features")]
         public IList<MarkdownString> Features { get; set; }
-
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public AtlasEntryId Id { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.

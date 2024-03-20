@@ -10,12 +10,12 @@ class DataswornTree extends Map {
     /** Adds rules packages to the tree, using their id property as the key. */
     add(...rulesPackages) {
         for (const rulesPackage of rulesPackages)
-            this.set(rulesPackage.id, rulesPackage);
+            this.set(rulesPackage._id, rulesPackage);
         return this;
     }
     set(key, value) {
-        if (value.id !== key)
-            throw new Error(`Expected a Datasworn RulesPackage object with ID "${key}", but the RulesPackage ID is ${value.id}`);
+        if (value._id !== key)
+            throw new Error(`Expected a Datasworn RulesPackage object with ID "${key}", but the RulesPackage ID is ${value._id}`);
         return super.set(key, value);
     }
 }

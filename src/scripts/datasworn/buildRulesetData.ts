@@ -14,7 +14,7 @@ export async function buildRulesetData(
 		unknown
 	>(
 		sourceData,
-		sourceData.id,
+		sourceData._id,
 		sourceData as DataswornSource.RulesPackage & Generic.SourcedNode,
 		DataswornBuilder as any
 	)

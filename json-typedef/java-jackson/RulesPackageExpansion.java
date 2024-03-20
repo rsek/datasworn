@@ -15,11 +15,11 @@ import java.util.Map;
  */
 @JsonSerialize
 public class RulesPackageExpansion extends RulesPackage {
+    @JsonProperty("_id")
+    private ExpansionId id;
+
     @JsonProperty("datasworn_version")
     private SemanticVersion dataswornVersion;
-
-    @JsonProperty("id")
-    private ExpansionId id;
 
     @JsonProperty("ruleset")
     private RulesetId ruleset;
@@ -92,6 +92,20 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
+     * Getter for id.<p>
+     */
+    public ExpansionId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     */
+    public void setId(ExpansionId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for dataswornVersion.<p>
      * The version of the Datasworn format used by this data.
      */
@@ -105,20 +119,6 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setDataswornVersion(SemanticVersion dataswornVersion) {
         this.dataswornVersion = dataswornVersion;
-    }
-
-    /**
-     * Getter for id.<p>
-     */
-    public ExpansionId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     */
-    public void setId(ExpansionId id) {
-        this.id = id;
     }
 
     /**

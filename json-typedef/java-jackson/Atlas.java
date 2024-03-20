@@ -10,7 +10,7 @@ import java.util.Map;
 
 @JsonSerialize
 public class Atlas {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private AtlasId id;
 
     @JsonProperty("name")

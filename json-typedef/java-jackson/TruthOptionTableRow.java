@@ -22,12 +22,12 @@ public class TruthOptionTableRow {
     private MarkdownString result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("embed_table")
-    private OracleRollableId embedTable;
+    @JsonProperty("_i18n")
+    private I18nHints i18n;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("i18n")
-    private I18nHints i18n;
+    @JsonProperty("embed_table")
+    private OracleRollableId embedTable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
@@ -97,6 +97,20 @@ public class TruthOptionTableRow {
     }
 
     /**
+     * Getter for i18n.<p>
+     */
+    public I18nHints getI18n() {
+        return i18n;
+    }
+
+    /**
+     * Setter for i18n.<p>
+     */
+    public void setI18n(I18nHints i18n) {
+        this.i18n = i18n;
+    }
+
+    /**
      * Getter for embedTable.<p>
      * Hints that the identified table should be rendered inside this table row.
      */
@@ -110,20 +124,6 @@ public class TruthOptionTableRow {
      */
     public void setEmbedTable(OracleRollableId embedTable) {
         this.embedTable = embedTable;
-    }
-
-    /**
-     * Getter for i18n.<p>
-     */
-    public I18nHints getI18n() {
-        return i18n;
-    }
-
-    /**
-     * Setter for i18n.<p>
-     */
-    public void setI18n(I18nHints i18n) {
-        this.i18n = i18n;
     }
 
     /**

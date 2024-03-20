@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   campaign_launch:
@@ -32,7 +32,7 @@ oracles:
             result: Battlefield Medic
             detail: '[Healer](id:starforged/assets/path/healer); [Veteran](id:starforged/assets/path/veteran)'
             <<: &i18n
-              i18n:
+              _i18n:
                 result:
                   part_of_speech: common_noun
             # suggestions:

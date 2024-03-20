@@ -13,14 +13,14 @@ import java.util.Map;
  */
 @JsonSerialize
 public class DelveSiteTheme {
+    @JsonProperty("_id")
+    private DelveSiteThemeId id;
+
     @JsonProperty("dangers")
     private List<DelveSiteThemeDangerRow> dangers;
 
     @JsonProperty("features")
     private List<DelveSiteThemeFeatureRow> features;
-
-    @JsonProperty("id")
-    private DelveSiteThemeId id;
 
     @JsonProperty("name")
     private Label name;
@@ -55,6 +55,22 @@ public class DelveSiteTheme {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public DelveSiteThemeId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(DelveSiteThemeId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for dangers.<p>
      */
     public List<DelveSiteThemeDangerRow> getDangers() {
@@ -80,22 +96,6 @@ public class DelveSiteTheme {
      */
     public void setFeatures(List<DelveSiteThemeFeatureRow> features) {
         this.features = features;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public DelveSiteThemeId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(DelveSiteThemeId id) {
-        this.id = id;
     }
 
     /**

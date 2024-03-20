@@ -14,11 +14,11 @@ import java.util.Map;
  */
 @JsonSerialize
 public class OracleCollectionTableSharedResults extends OracleCollection {
+    @JsonProperty("_id")
+    private OracleCollectionId id;
+
     @JsonProperty("column_labels")
     private OracleCollectionTableSharedResultsColumnLabels columnLabels;
-
-    @JsonProperty("id")
-    private OracleCollectionId id;
 
     @JsonProperty("name")
     private Label name;
@@ -74,6 +74,22 @@ public class OracleCollectionTableSharedResults extends OracleCollection {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public OracleCollectionId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(OracleCollectionId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for columnLabels.<p>
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
@@ -89,22 +105,6 @@ public class OracleCollectionTableSharedResults extends OracleCollection {
      */
     public void setColumnLabels(OracleCollectionTableSharedResultsColumnLabels columnLabels) {
         this.columnLabels = columnLabels;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public OracleCollectionId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(OracleCollectionId id) {
-        this.id = id;
     }
 
     /**

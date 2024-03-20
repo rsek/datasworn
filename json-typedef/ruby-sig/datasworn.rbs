@@ -10,8 +10,8 @@ module Datasworn
   end
 
   class RulesPackageExpansion < RulesPackage
-    attr_accessor datasworn_version: SemanticVersion
     attr_accessor id: ExpansionID
+    attr_accessor datasworn_version: SemanticVersion
     attr_accessor ruleset: RulesetID
     attr_accessor assets: Hash[String, AssetCollection]?
     attr_accessor atlas: Hash[String, Atlas]?
@@ -35,11 +35,11 @@ module Datasworn
   end
 
   class RulesPackageRuleset < RulesPackage
+    attr_accessor id: RulesetID
     attr_accessor assets: Hash[String, AssetCollection]
     attr_accessor authors: Array[AuthorInfo]
     attr_accessor datasworn_version: SemanticVersion
     attr_accessor date: DateTime
-    attr_accessor id: RulesetID
     attr_accessor license: License
     attr_accessor moves: Hash[String, MoveCategory]
     attr_accessor oracles: Hash[String, OracleTablesCollection]
@@ -74,10 +74,10 @@ module Datasworn
   end
 
   class Asset
+    attr_accessor id: AssetID
     attr_accessor abilities: Array[AssetAbility]
     attr_accessor category: Label
     attr_accessor count_as_impact: bool
-    attr_accessor id: AssetID
     attr_accessor name: Label
     attr_accessor shared: bool
     attr_accessor source: SourceInfo
@@ -96,8 +96,8 @@ module Datasworn
   end
 
   class AssetAbility
-    attr_accessor enabled: bool
     attr_accessor id: AssetAbilityID
+    attr_accessor enabled: bool
     attr_accessor text: MarkdownString
     attr_accessor controls: Hash[String, AssetAbilityControlField]?
     attr_accessor enhance_asset: AssetEnhancement?
@@ -454,9 +454,9 @@ module Datasworn
   end
 
   class AtlasEntry
+    attr_accessor id: AtlasEntryID
     attr_accessor description: MarkdownString
     attr_accessor features: Array[MarkdownString]
-    attr_accessor id: AtlasEntryID
     attr_accessor name: Label
     attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
@@ -528,10 +528,10 @@ module Datasworn
   end
 
   class DelveSite
+    attr_accessor id: DelveSiteID
     attr_accessor denizens: Array[DelveSiteDenizen]
     attr_accessor description: MarkdownString
     attr_accessor domain: DelveSiteDomainID
-    attr_accessor id: DelveSiteID
     attr_accessor name: Label
     attr_accessor rank: ChallengeRank
     attr_accessor source: SourceInfo
@@ -548,8 +548,8 @@ module Datasworn
   end
 
   class DelveSiteDenizen
-    attr_accessor frequency: DelveSiteDenizenFrequency
     attr_accessor id: DelveSiteDenizenID
+    attr_accessor frequency: DelveSiteDenizenFrequency
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor name: Label?
@@ -580,9 +580,9 @@ module Datasworn
   end
 
   class DelveSiteDomain
+    attr_accessor id: DelveSiteDomainID
     attr_accessor dangers: Array[DelveSiteDomainDangerRow]
     attr_accessor features: Array[DelveSiteDomainFeatureRow]
-    attr_accessor id: DelveSiteDomainID
     attr_accessor name: Label
     attr_accessor source: SourceInfo
     attr_accessor summary: MarkdownString
@@ -602,8 +602,8 @@ module Datasworn
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
-    attr_accessor embed_table: OracleRollableID?
     attr_accessor i18n: I18nHints?
+    attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
@@ -618,8 +618,8 @@ module Datasworn
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
-    attr_accessor embed_table: OracleRollableID?
     attr_accessor i18n: I18nHints?
+    attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
@@ -644,9 +644,9 @@ module Datasworn
   end
 
   class DelveSiteTheme
+    attr_accessor id: DelveSiteThemeID
     attr_accessor dangers: Array[DelveSiteThemeDangerRow]
     attr_accessor features: Array[DelveSiteThemeFeatureRow]
-    attr_accessor id: DelveSiteThemeID
     attr_accessor name: Label
     attr_accessor source: SourceInfo
     attr_accessor summary: MarkdownString
@@ -665,8 +665,8 @@ module Datasworn
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
-    attr_accessor embed_table: OracleRollableID?
     attr_accessor i18n: I18nHints?
+    attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
@@ -681,8 +681,8 @@ module Datasworn
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
-    attr_accessor embed_table: OracleRollableID?
     attr_accessor i18n: I18nHints?
+    attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
@@ -981,10 +981,10 @@ module Datasworn
   end
 
   class Npc
+    attr_accessor id: NpcID
     attr_accessor description: MarkdownString
     attr_accessor drives: Array[MarkdownString]
     attr_accessor features: Array[MarkdownString]
-    attr_accessor id: NpcID
     attr_accessor name: Label
     attr_accessor nature: NpcNature
     attr_accessor rank: ChallengeRank
@@ -1044,8 +1044,8 @@ module Datasworn
   end
 
   class NpcVariant
-    attr_accessor description: MarkdownString
     attr_accessor id: NpcVariantID
+    attr_accessor description: MarkdownString
     attr_accessor name: Label
     attr_accessor nature: NpcNature
     attr_accessor rank: ChallengeRank
@@ -1101,8 +1101,8 @@ module Datasworn
   end
 
   class OracleCollectionTableSharedDetails < OracleCollection
-    attr_accessor column_labels: OracleCollectionTableSharedDetailsColumnLabels
     attr_accessor id: OracleCollectionID
+    attr_accessor column_labels: OracleCollectionTableSharedDetailsColumnLabels
     attr_accessor name: Label
     attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
@@ -1129,8 +1129,8 @@ module Datasworn
   end
 
   class OracleCollectionTableSharedResults < OracleCollection
-    attr_accessor column_labels: OracleCollectionTableSharedResultsColumnLabels
     attr_accessor id: OracleCollectionID
+    attr_accessor column_labels: OracleCollectionTableSharedResultsColumnLabels
     attr_accessor name: Label
     attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
@@ -1157,8 +1157,8 @@ module Datasworn
   end
 
   class OracleCollectionTableSharedRolls < OracleCollection
-    attr_accessor column_labels: OracleCollectionTableSharedRollsColumnLabels
     attr_accessor id: OracleCollectionID
+    attr_accessor column_labels: OracleCollectionTableSharedRollsColumnLabels
     attr_accessor name: Label
     attr_accessor source: SourceInfo
     attr_accessor canonical_name: Label?
@@ -1215,8 +1215,8 @@ module Datasworn
   end
 
   class OracleColumnDetails
-    attr_accessor dice: DiceExpression
     attr_accessor id: OracleRollableID
+    attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor oracle_type: OracleColumnDetailsOracleType
     attr_accessor rows: Array[OracleTableRowDetails]
@@ -1242,8 +1242,8 @@ module Datasworn
   end
 
   class OracleColumnSimple
-    attr_accessor dice: DiceExpression
     attr_accessor id: OracleRollableID
+    attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor oracle_type: OracleColumnSimpleOracleType
     attr_accessor rows: Array[OracleTableRowSimple]
@@ -1329,9 +1329,9 @@ module Datasworn
   end
 
   class OracleTableRollableTableDetails < OracleTableRollable
+    attr_accessor id: OracleRollableID
     attr_accessor column_labels: OracleTableRollableTableDetailsColumnLabels
     attr_accessor dice: DiceExpression
-    attr_accessor id: OracleRollableID
     attr_accessor name: Label
     attr_accessor rows: Array[OracleTableRowDetails]
     attr_accessor source: SourceInfo
@@ -1366,9 +1366,9 @@ module Datasworn
   end
 
   class OracleTableRollableTableSimple < OracleTableRollable
+    attr_accessor id: OracleRollableID
     attr_accessor column_labels: OracleTableRollableTableSimpleColumnLabels
     attr_accessor dice: DiceExpression
-    attr_accessor id: OracleRollableID
     attr_accessor name: Label
     attr_accessor rows: Array[OracleTableRowSimple]
     attr_accessor source: SourceInfo
@@ -1391,8 +1391,8 @@ module Datasworn
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
-    attr_accessor embed_table: OracleRollableID?
     attr_accessor i18n: I18nHints?
+    attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
@@ -1406,8 +1406,8 @@ module Datasworn
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
-    attr_accessor embed_table: OracleRollableID?
     attr_accessor i18n: I18nHints?
+    attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
@@ -1503,9 +1503,9 @@ module Datasworn
   end
 
   class Rarity
+    attr_accessor id: RarityID
     attr_accessor asset: AssetID
     attr_accessor description: MarkdownString
-    attr_accessor id: RarityID
     attr_accessor name: Label
     attr_accessor source: SourceInfo
     attr_accessor xp_cost: Integer
@@ -2219,8 +2219,8 @@ module Datasworn
   end
 
   class TruthOption
-    attr_accessor description: MarkdownString
     attr_accessor id: TruthOptionID
+    attr_accessor description: MarkdownString
     attr_accessor quest_starter: MarkdownString
     attr_accessor max: Integer?
     attr_accessor min: Integer?
@@ -2242,8 +2242,8 @@ module Datasworn
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor result: MarkdownString
-    attr_accessor embed_table: OracleRollableID?
     attr_accessor i18n: I18nHints?
+    attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?

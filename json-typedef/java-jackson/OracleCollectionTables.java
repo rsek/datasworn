@@ -14,7 +14,7 @@ import java.util.Map;
  */
 @JsonSerialize
 public class OracleCollectionTables extends OracleCollection {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private OracleCollectionId id;
 
     @JsonProperty("name")

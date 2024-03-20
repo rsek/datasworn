@@ -28,6 +28,10 @@ namespace Datasworn
         [JsonPropertyName("result")]
         public MarkdownString Result { get; set; }
 
+        [JsonPropertyName("_i18n")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public I18nHints? I18n { get; set; }
+
         /// <summary>
         /// Hints that the identified table should be rendered inside this table
         /// row.
@@ -35,10 +39,6 @@ namespace Datasworn
         [JsonPropertyName("embed_table")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public OracleRollableId? EmbedTable { get; set; }
-
-        [JsonPropertyName("i18n")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHints? I18n { get; set; }
 
         [JsonPropertyName("icon")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

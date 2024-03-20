@@ -1,4 +1,4 @@
-id: starforged
+_id: starforged
 package_type: ruleset
 oracles:
   factions:
@@ -32,7 +32,7 @@ oracles:
               An alternative approach to generating a faction from scratch is to start with a random name. Then, consider what the name evokes and choose an appropriate faction type instead of rolling on those tables. For example, “Bloody Ravens” might suggest a mercenary guild, while the “Republic of the Radiant Servants” brings to mind a dominion built upon a religion, or one that idolizes a prophesied leader. If a result doesn’t inspire anything interesting, roll again or pick.
             rows:
               - <<: &i18n.template.result.proper_noun
-                  i18n:
+                  _i18n:
                     template:
                       result:
                         part_of_speech: proper_noun
@@ -67,7 +67,7 @@ oracles:
             #   part_of_speech: [proper noun fragment]
             rows:
               - <<: &i18n.result.adjective
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: adjective
                 min: 1
@@ -280,7 +280,7 @@ oracles:
             #   tags: [organization, actor]
             rows:
               - <<: &i18n.result.common_noun
-                  i18n:
+                  _i18n:
                     result:
                       part_of_speech: common_noun
                 min: 1

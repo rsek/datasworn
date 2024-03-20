@@ -10,7 +10,7 @@ import java.util.Map;
 
 @JsonSerialize
 public class MoveCategory {
-    @JsonProperty("id")
+    @JsonProperty("_id")
     private MoveCategoryId id;
 
     @JsonProperty("name")

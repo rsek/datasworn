@@ -14,6 +14,9 @@ import java.util.Map;
  */
 @JsonSerialize
 public class Npc {
+    @JsonProperty("_id")
+    private NpcId id;
+
     @JsonProperty("description")
     private MarkdownString description;
 
@@ -22,9 +25,6 @@ public class Npc {
 
     @JsonProperty("features")
     private List<MarkdownString> features;
-
-    @JsonProperty("id")
-    private NpcId id;
 
     @JsonProperty("name")
     private Label name;
@@ -73,6 +73,22 @@ public class Npc {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public NpcId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(NpcId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for description.<p>
      */
     public MarkdownString getDescription() {
@@ -112,22 +128,6 @@ public class Npc {
      */
     public void setFeatures(List<MarkdownString> features) {
         this.features = features;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public NpcId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(NpcId id) {
-        this.id = id;
     }
 
     /**

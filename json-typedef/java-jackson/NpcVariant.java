@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class NpcVariant {
+    @JsonProperty("_id")
+    private NpcVariantId id;
+
     @JsonProperty("description")
     private MarkdownString description;
-
-    @JsonProperty("id")
-    private NpcVariantId id;
 
     @JsonProperty("name")
     private Label name;
@@ -31,20 +31,6 @@ public class NpcVariant {
     }
 
     /**
-     * Getter for description.<p>
-     */
-    public MarkdownString getDescription() {
-        return description;
-    }
-
-    /**
-     * Setter for description.<p>
-     */
-    public void setDescription(MarkdownString description) {
-        this.description = description;
-    }
-
-    /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
@@ -58,6 +44,20 @@ public class NpcVariant {
      */
     public void setId(NpcVariantId id) {
         this.id = id;
+    }
+
+    /**
+     * Getter for description.<p>
+     */
+    public MarkdownString getDescription() {
+        return description;
+    }
+
+    /**
+     * Setter for description.<p>
+     */
+    public void setDescription(MarkdownString description) {
+        this.description = description;
     }
 
     /**

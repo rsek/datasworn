@@ -13,14 +13,14 @@ import java.util.Map;
  */
 @JsonSerialize
 public class DelveSiteDomain {
+    @JsonProperty("_id")
+    private DelveSiteDomainId id;
+
     @JsonProperty("dangers")
     private List<DelveSiteDomainDangerRow> dangers;
 
     @JsonProperty("features")
     private List<DelveSiteDomainFeatureRow> features;
-
-    @JsonProperty("id")
-    private DelveSiteDomainId id;
 
     @JsonProperty("name")
     private Label name;
@@ -59,6 +59,22 @@ public class DelveSiteDomain {
     }
 
     /**
+     * Getter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public DelveSiteDomainId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     * The unique Datasworn ID for this item.
+     */
+    public void setId(DelveSiteDomainId id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for dangers.<p>
      */
     public List<DelveSiteDomainDangerRow> getDangers() {
@@ -84,22 +100,6 @@ public class DelveSiteDomain {
      */
     public void setFeatures(List<DelveSiteDomainFeatureRow> features) {
         this.features = features;
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public DelveSiteDomainId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(DelveSiteDomainId id) {
-        this.id = id;
     }
 
     /**
