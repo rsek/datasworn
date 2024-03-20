@@ -2826,7 +2826,8 @@ const (
 // An common noun used as a proper noun.
 	PartOfSpeechCommonNounAsProperNoun PartOfSpeech = "common_noun_as_proper_noun"
 
-// Gerund or present participle of a verb, e.g. "going", "seeing", "waving"
+// Gerund or present participle of a verb, e.g. "going", "seeing", "waving". Can
+// function as a noun, an adjective, or a progressive verb.
 	PartOfSpeechGerund PartOfSpeech = "gerund"
 
 // A proper noun.

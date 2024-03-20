@@ -46,7 +46,8 @@ namespace Datasworn
 
         /// <summary>
         /// Gerund or present participle of a verb, e.g. "going", "seeing",
-        /// "waving"
+        /// "waving". Can function as a noun, an adjective, or a progressive
+        /// verb.
         /// </summary>
         Gerund,
 

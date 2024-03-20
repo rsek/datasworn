@@ -4230,7 +4230,8 @@ module Datasworn
     # An common noun used as a proper noun.
     COMMON_NOUN_AS_PROPER_NOUN = new("common_noun_as_proper_noun")
 
-    # Gerund or present participle of a verb, e.g. "going", "seeing", "waving"
+    # Gerund or present participle of a verb, e.g. "going", "seeing", "waving".
+    # Can function as a noun, an adjective, or a progressive verb.
     GERUND = new("gerund")
 
     # A proper noun.

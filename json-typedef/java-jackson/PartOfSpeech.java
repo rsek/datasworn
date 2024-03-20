@@ -48,7 +48,8 @@ public enum PartOfSpeech {
     COMMON_NOUN_AS_PROPER_NOUN,
 
     /**
-     * Gerund or present participle of a verb, e.g. "going", "seeing", "waving"
+     * Gerund or present participle of a verb, e.g. "going", "seeing", "waving".
+     * Can function as a noun, an adjective, or a progressive verb.
      */
     @JsonProperty("gerund")
     GERUND,

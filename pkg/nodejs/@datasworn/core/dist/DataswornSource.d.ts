@@ -685,7 +685,7 @@ export type MarkdownString = string;
  *   - `adjunct_common_noun`: A common noun used as an adjective, to modify another noun.
  *   - `adjunct_proper_noun`: A proper noun used as an adjective, to modify another noun.
  *   - `verb`: A verb in present tense
- *   - `gerund`: Gerund or present participle of a verb, e.g. "going", "seeing", "waving"
+ *   - `gerund`: Gerund or present participle of a verb, e.g. "going", "seeing", "waving". Can function as a noun, an adjective, or a progressive verb.
  *   - `adjective`: An adjective.
  *   - `attributive_verb`: A verb used as an adjective, to modify a noun.
  *   - `adjective_as_proper_noun`: An adjective used as a proper noun.

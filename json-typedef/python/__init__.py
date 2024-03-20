@@ -5810,7 +5810,8 @@ class PartOfSpeech(Enum):
 
     GERUND = "gerund"
     """
-    Gerund or present participle of a verb, e.g. "going", "seeing", "waving"
+    Gerund or present participle of a verb, e.g. "going", "seeing", "waving".
+    Can function as a noun, an adjective, or a progressive verb.
     """
 
     PROPER_NOUN = "proper_noun"

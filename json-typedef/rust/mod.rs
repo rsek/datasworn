@@ -3381,7 +3381,8 @@ pub enum PartOfSpeech {
     #[serde(rename = "common_noun_as_proper_noun")]
     CommonNounAsProperNoun,
 
-    /// Gerund or present participle of a verb, e.g. "going", "seeing", "waving"
+    /// Gerund or present participle of a verb, e.g. "going", "seeing",
+    /// "waving". Can function as a noun, an adjective, or a progressive verb.
     #[serde(rename = "gerund")]
     Gerund,
 
