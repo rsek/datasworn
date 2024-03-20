@@ -468,7 +468,10 @@ oracles:
             min: 48
             max: 48
             result: Kind
-          - <<: *i18n.adjective
+          - <<: &i18n.gerund
+              _i18n:
+                result:
+                  part_of_speech: gerund
             min: 49
             max: 49
             result: Charming
@@ -528,7 +531,7 @@ oracles:
             min: 63
             max: 63
             result: Infamous
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 64
             max: 64
             result: Dying

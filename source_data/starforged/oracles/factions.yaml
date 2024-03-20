@@ -109,7 +109,10 @@ oracles:
                 min: 19
                 max: 20
                 result: Cursed
-              - <<: *i18n.result.adjective
+              - <<: &i18n.result.gerund
+                  _i18n:
+                    result:
+                      part_of_speech: gerund
                 min: 21
                 max: 22
                 result: Dawning
@@ -125,7 +128,7 @@ oracles:
                 min: 27
                 max: 28
                 result: Elder
-              - <<: *i18n.result.adjective
+              - <<: *i18n.result.gerund
                 min: 29
                 max: 30
                 result: Enduring
@@ -157,7 +160,7 @@ oracles:
                 min: 43
                 max: 44
                 result: Forsaken
-              - <<: *i18n.result.adjective
+              - <<: *i18n.result.gerund
                 min: 45
                 max: 46
                 result: Gloaming
@@ -217,7 +220,7 @@ oracles:
                 min: 73
                 max: 74
                 result: Shattered
-              - <<: *i18n.result.adjective
+              - <<: *i18n.result.gerund
                 min: 75
                 max: 76
                 result: Shining
@@ -245,7 +248,7 @@ oracles:
                 min: 87
                 max: 88
                 result: Supreme
-              - <<: *i18n.result.adjective
+              - <<: *i18n.result.gerund
                 min: 89
                 max: 90
                 result: Undying
@@ -265,7 +268,7 @@ oracles:
                 min: 97
                 max: 98
                 result: Veiled
-              - <<: *i18n.result.adjective
+              - <<: *i18n.result.gerund
                 min: 99
                 max: 100
                 result: Wandering

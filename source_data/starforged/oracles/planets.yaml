@@ -119,113 +119,145 @@ oracles:
             rows: &table:Planets.Peril
               - min: 1
                 max: 3
-                result: Corrupted or mutated lifeform
+                <<: &PlanetPeril.0
+                  result: Corrupted or mutated lifeform
                 # suggestions: [*obj:Creature]
               # TODO: suggest chaotic theme?
               - min: 4
                 max: 6
-                result: Signs of a lifeform's power or cunning
+                <<: &PlanetPeril.1
+                  result: Signs of a lifeform's power or cunning
                 # suggestions: [*obj:Creature]
               - min: 7
                 max: 9
-                result: Hazardous plant life or malignant spores
+                <<: &PlanetPeril.2
+                  result: Hazardous plant life or malignant spores
               - min: 10
                 max: 12
-                result: Lifeform hunts for prey
+                <<: &PlanetPeril.3
+                  result: Lifeform hunts for prey
                 # suggestions: [*obj:Creature]
               - min: 13
                 max: 15
-                result: Lifeform lairs here
+                <<: &PlanetPeril.4
+                  result: Lifeform lairs here
                 # suggestions: [*obj:Creature]
               - min: 16
                 max: 18
-                result: Lifeforms guided by a greater threat
+                <<: &PlanetPeril.5
+                  result: Lifeforms guided by a greater threat
                 # suggestions: [*obj:Creature]
               - min: 19
                 max: 21
-                result: Lifeforms spooked or stampeding
+                <<: &PlanetPeril.6
+                  result: Lifeforms spooked or stampeding
                 # suggestions: [*obj:Creature]
               - min: 22
                 max: 24
-                result: Threatening lifeform draws near
+                <<: &PlanetPeril.7
+                  result: Threatening lifeform draws near
                 # suggestions: [*obj:Creature]
               - min: 25
                 max: 27
-                result: Life is revealed or takes an unexpected form
+                <<: &PlanetPeril.8
+                  result: Life is revealed or takes an unexpected form
                 # suggestions: [*obj:Creature]
               - min: 28
                 max: 30
-                result: Blocked or impassible path
+                <<: &PlanetPeril.9
+                  result: Blocked or impassible path
               - min: 31
                 max: 33
-                result: Corrosive substance or environment
+                <<: &PlanetPeril.10
+                  result: Corrosive substance or environment
               - min: 34
                 max: 36
-                result: Disturbing remains or evidence of death
+                <<: &PlanetPeril.11
+                  result: Disturbing remains or evidence of death
               - min: 37
                 max: 39
-                result: Drastic environmental change
+                <<: &PlanetPeril.12
+                  result: Drastic environmental change
               - min: 40
                 max: 42
-                result: Enemy holds this area
+                <<: &PlanetPeril.13
+                  result: Enemy holds this area
                 # suggestions: [*obj:LocationTheme.Fortified]
               - min: 43
                 max: 45
-                result: Entangling or engulfing hazard
+                <<: &PlanetPeril.14
+                  result: Entangling or engulfing hazard
               - min: 46
                 max: 48
-                result: Equipment fails or malfunctions
+                <<: &PlanetPeril.15
+                  result: Equipment fails or malfunctions
               - min: 49
                 max: 51
-                result: Guarded or patrolled path
+                <<: &PlanetPeril.16
+                  result: Guarded or patrolled path
                 # suggestions: [*obj:LocationTheme.Fortified]
               - min: 52
                 max: 54
-                result: Led astray
+                <<: &PlanetPeril.17
+                  result: Led astray
               - min: 55
                 max: 57
-                result: Lost the path
+                <<: &PlanetPeril.18
+                  result: Lost the path
               - min: 58
                 max: 60
-                result: Meteorites fall from the sky
+                <<: &PlanetPeril.19
+                  result: Meteorites fall from the sky
               - min: 61
                 max: 63
-                result: Irradiated area or object
+                <<: &PlanetPeril.20
+                  result: Irradiated area or object
               - min: 64
                 max: 66
-                result: Realization that something was left behind
+                <<: &PlanetPeril.21
+                  result: Realization that something was left behind
               - min: 67
                 max: 69
-                result: Seismic or volcanic upheaval
+                <<: &PlanetPeril.22
+                  result: Seismic or volcanic upheaval
               - min: 70
                 max: 72
-                result: Signs of a lurking or trailing foe
+                <<: &PlanetPeril.23
+                  result: Signs of a lurking or trailing foe
               - min: 73
                 max: 75
-                result: Storm or atmospheric disruption
+                <<: &PlanetPeril.24
+                  result: Storm or atmospheric disruption
               - min: 76
                 max: 78
-                result: Toxic or sickening environment
+                <<: &PlanetPeril.25
+                  result: Toxic or sickening environment
               - min: 79
                 max: 81
-                result: Trap or alarm
+                <<: &PlanetPeril.26
+                  result: Trap or alarm
               - min: 82
                 max: 84
-                result: Treacherous or arduous path
+                <<: &PlanetPeril.27
+                  result: Treacherous or arduous path
               - min: 85
                 max: 87
-                result: Troubling visions or apparitions
+                <<: &PlanetPeril.28
+                  result: Troubling visions or apparitions
                 # suggestions: [*obj:LocationTheme.Haunted]
               - min: 88
                 max: 90
-                result: Visibility hindered by atmospheric effects
+                <<: &PlanetPeril.29
+                  result: Visibility hindered by atmospheric effects
               - min: 91
                 max: 93
-                result: Worrying arrival of a ship or vehicle
+                <<: &PlanetPeril.30
+                  result: Worrying arrival of a ship or vehicle
                 # suggestions: [*obj:Starship]
               - min: 94
                 max: 96
-                result: Wreckage or ruins portend a new threat
+                <<: &PlanetPeril.31
+                  result: Wreckage or ruins portend a new threat
               - min: 97
                 max: 99
                 <<: &ActionTheme
@@ -253,100 +285,100 @@ oracles:
             rows:
               - min: null
                 max: null
-                result: Corrupted or mutated lifeform
+                <<: *PlanetPeril.0
               - min: null
                 max: null
-                result: Signs of a lifeform's power or cunning
+                <<: *PlanetPeril.1
               - min: null
                 max: null
-                result: Hazardous plant life or malignant spores
+                <<: *PlanetPeril.2
               - min: null
                 max: null
-                result: Lifeform hunts for prey
+                <<: *PlanetPeril.3
               - min: null
                 max: null
-                result: Lifeform lairs here
+                <<: *PlanetPeril.4
               - min: null
                 max: null
-                result: Lifeforms guided by a greater threat
+                <<: *PlanetPeril.5
               - min: null
                 max: null
-                result: Lifeforms spooked or stampeding
+                <<: *PlanetPeril.6
               - min: null
                 max: null
-                result: Threatening lifeform draws near
+                <<: *PlanetPeril.7
               - min: 1
                 max: 3
-                result: Life is revealed or takes an unexpected form
+                <<: *PlanetPeril.8
               - min: 4
                 max: 7
-                result: Blocked or impassible path
+                <<: *PlanetPeril.9
               - min: 8
                 max: 11
-                result: Corrosive substance or environment
+                <<: *PlanetPeril.10
               - min: 12
                 max: 15
-                result: Disturbing remains or evidence of death
+                <<: *PlanetPeril.11
               - min: 16
                 max: 19
-                result: Drastic environmental change
+                <<: *PlanetPeril.12
               - min: 20
                 max: 23
-                result: Enemy holds this area
+                <<: *PlanetPeril.13
               - min: 24
                 max: 27
-                result: Entangling or engulfing hazard
+                <<: *PlanetPeril.14
               - min: 28
                 max: 31
-                result: Equipment fails or malfunctions
+                <<: *PlanetPeril.15
               - min: 32
                 max: 35
-                result: Guarded or patrolled path
+                <<: *PlanetPeril.16
               - min: 36
                 max: 39
-                result: Led astray
+                <<: *PlanetPeril.17
               - min: 40
                 max: 43
-                result: Lost the path
+                <<: *PlanetPeril.18
               - min: 44
                 max: 47
-                result: Meteorites fall from the sky
+                <<: *PlanetPeril.19
               - min: 48
                 max: 51
-                result: Irradiated area or object
+                <<: *PlanetPeril.20
               - min: 52
                 max: 55
-                result: Realization that something was left behind
+                <<: *PlanetPeril.21
               - min: 56
                 max: 59
-                result: Seismic or volcanic upheaval
+                <<: *PlanetPeril.22
               - min: 60
                 max: 63
-                result: Signs of a lurking or trailing foe
+                <<: *PlanetPeril.23
               - min: 64
                 max: 67
-                result: Storm or atmospheric disruption
+                <<: *PlanetPeril.24
               - min: 68
                 max: 71
-                result: Toxic or sickening environment
+                <<: *PlanetPeril.25
               - min: 72
                 max: 75
-                result: Trap or alarm
+                <<: *PlanetPeril.26
               - min: 76
                 max: 79
-                result: Treacherous or arduous path
+                <<: *PlanetPeril.27
               - min: 80
                 max: 83
-                result: Troubling visions or apparitions
+                <<: *PlanetPeril.28
               - min: 84
                 max: 87
-                result: Visibility hindered by atmospheric effects
+                <<: *PlanetPeril.29
               - min: 88
                 max: 91
-                result: Worrying arrival of a ship or vehicle
+                <<: *PlanetPeril.30
               - min: 92
                 max: 95
-                result: Wreckage or ruins portend a new threat
+                <<: *PlanetPeril.31
               - min: 96
                 max: 99
                 <<: *ActionTheme

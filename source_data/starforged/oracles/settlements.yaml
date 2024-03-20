@@ -380,7 +380,10 @@ oracles:
             min: 18
             max: 22
             result: Energy
-          - <<: *i18n.result.common_noun
+          - <<: &i18n.result.gerund
+              _i18n:
+                result:
+                  part_of_speech: gerund
             min: 23
             max: 25
             result: Engineering
@@ -412,11 +415,11 @@ oracles:
             min: 40
             max: 41
             result: History
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 42
             max: 43
             result: Hunting
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 44
             max: 46
             result: Manufacturing
@@ -428,7 +431,7 @@ oracles:
             min: 50
             max: 51
             result: Migration
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 52
             max: 57
             result: Mining
@@ -436,7 +439,7 @@ oracles:
             min: 58
             max: 59
             result: Pacifism
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 60
             max: 62
             result: Raiding
@@ -452,7 +455,7 @@ oracles:
             min: 70
             max: 72
             result: Secrecy
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 73
             max: 75
             result: Shipbuilding
@@ -468,7 +471,7 @@ oracles:
             min: 85
             max: 86
             result: Surveillance
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 87
             max: 88
             result: Terraforming
@@ -1083,3 +1086,41 @@ oracles:
             min: 100
             max: 100
             result: Wreck
+      name_tags:
+        name: Name tags
+        # not technically a table, but might be useful to randomize for settlement names
+        oracle_type: table_simple
+        source:
+          <<: *Source
+          page: 325
+        rows:
+          - min: 1
+            max: 1
+            result: Base
+          - min: 2
+            max: 2
+            result: Citadel
+          - min: 3
+            max: 3
+            result: Depot
+          - min: 4
+            max: 4
+            result: Fortress
+          - min: 5
+            max: 5
+            result: Hold
+          - min: 6
+            max: 6
+            result: Landing
+          - min: 7
+            max: 7
+            result: Outpost
+          - min: 8
+            max: 8
+            result: Port
+          - min: 9
+            max: 9
+            result: Station
+          - min: 10
+            max: 10
+            result: Terminal

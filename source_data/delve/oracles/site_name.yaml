@@ -203,11 +203,14 @@ oracles:
             min: 41
             max: 42
             result: Endless
-          - <<: *i18n.adjective
+          - <<: &i18n.gerund
+              _i18n:
+                result:
+                  part_of_speech: gerund
             min: 43
             max: 44
             result: Crumbling
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 45
             max: 46
             result: Undying

@@ -49,7 +49,7 @@ export const PartOfSpeech = UnionEnumFromRecord(
 			'A proper noun used as an adjective, to modify another noun.',
 		verb: 'A verb in present tense',
 		gerund:
-			'Gerund or present participle of a verb, e.g. "going", "seeing", "waving"',
+			'Gerund or present participle of a verb, e.g. "going", "seeing", "waving". Can function as a noun, an adjective, or a progressive verb.',
 		adjective: 'An adjective.',
 		attributive_verb: 'A verb used as an adjective, to modify a noun.',
 		adjective_as_proper_noun: 'An adjective used as a proper noun.',

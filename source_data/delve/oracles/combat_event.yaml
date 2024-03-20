@@ -294,7 +294,10 @@ oracles:
             min: 17
             max: 18
             result: Weakness
-          - <<: *i18n.common_noun
+          - <<: &i18n.gerund
+              _i18n:
+                result:
+                  part_of_speech: gerund
             min: 19
             max: 20
             result: Opening
@@ -306,7 +309,7 @@ oracles:
             min: 23
             max: 24
             result: Instinct
-          - <<: *i18n.common_noun
+          - <<: *i18n.gerund
             min: 25
             max: 26
             result: Footing

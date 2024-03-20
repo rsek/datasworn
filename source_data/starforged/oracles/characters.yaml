@@ -1299,7 +1299,10 @@ oracles:
             min: 9
             max: 11
             result: Aged
-          - <<: *i18n.adjective
+          - <<: &i18n.gerund
+              _i18n:
+                result:
+                  part_of_speech: gerund
             min: 12
             max: 13
             result: Alluring
@@ -1359,7 +1362,7 @@ oracles:
             min: 47
             max: 49
             result: Ill-equipped
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 50
             max: 52
             result: Imposing
@@ -1399,7 +1402,7 @@ oracles:
             min: 74
             max: 76
             result: Slight
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 77
             max: 78
             result: Swaggering
@@ -1472,7 +1475,7 @@ oracles:
             min: 41
             max: 50
             result: Suspicious
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 51
             max: 60
             result: Wanting
@@ -1480,7 +1483,7 @@ oracles:
             min: 61
             max: 70
             result: Desperate
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 71
             max: 78
             result: Demanding
@@ -1488,7 +1491,7 @@ oracles:
             min: 79
             max: 86
             result: Unfriendly
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 87
             max: 94
             result: Threatening

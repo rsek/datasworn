@@ -69,7 +69,10 @@ oracles:
             min: 17
             max: 18
             result: Defended
-          - <<: *i18n.adjective
+          - <<: &i18n.gerund
+              _i18n:
+                result:
+                  part_of_speech: gerund
             min: 19
             max: 20
             result: Decaying
@@ -85,7 +88,7 @@ oracles:
             min: 25
             max: 26
             result: Inaccessible
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 27
             max: 28
             result: Foreboding
@@ -109,7 +112,7 @@ oracles:
             min: 37
             max: 38
             result: Elevated
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 39
             max: 40
             result: Moving
@@ -185,7 +188,7 @@ oracles:
             min: 75
             max: 76
             result: Broken
-          - <<: *i18n.adjective
+          - <<: *i18n.gerund
             min: 77
             max: 78
             result: Ensnaring
@@ -271,7 +274,7 @@ oracles:
             min: 11
             max: 12
             result: Passage
-          - <<: *i18n.common_noun
+          - <<: *i18n.gerund
             min: 13
             max: 14
             result: Crossing
@@ -371,7 +374,7 @@ oracles:
             min: 61
             max: 62
             result: Darkness
-          - <<: *i18n.common_noun
+          - <<: *i18n.gerund
             min: 63
             max: 64
             result: Opening

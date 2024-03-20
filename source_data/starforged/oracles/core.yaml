@@ -823,7 +823,10 @@ oracles:
             min: 95
             max: 95
             result: War
-          - <<: *i18n.result.common_noun
+          - <<: &i18n.result.gerund
+              _i18n:
+                result:
+                  part_of_speech: gerund
             min: 96
             max: 96
             result: Warning
@@ -970,7 +973,7 @@ oracles:
             min: 28
             max: 28
             result: Deadly
-          - <<: *i18n.result.adjective
+          - <<: *i18n.result.gerund
             min: 29
             max: 29
             result: Decaying
@@ -1002,7 +1005,7 @@ oracles:
             min: 36
             max: 36
             result: Engulfed
-          - <<: *i18n.result.adjective
+          - <<: *i18n.result.gerund
             min: 37
             max: 37
             result: Ensnaring
@@ -1018,7 +1021,7 @@ oracles:
             min: 40
             max: 40
             result: Fiery
-          - <<: *i18n.result.adjective
+          - <<: *i18n.result.gerund
             min: 41
             max: 41
             result: Foreboding
@@ -1094,7 +1097,7 @@ oracles:
             min: 59
             max: 59
             result: Isolated
-          - <<: *i18n.result.adjective
+          - <<: *i18n.result.gerund
             min: 60
             max: 60
             result: Living
@@ -1114,11 +1117,11 @@ oracles:
             min: 64
             max: 64
             result: Mechanical
-          - <<: *i18n.result.adjective
+          - <<: *i18n.result.gerund
             min: 65
             max: 65
             result: Misleading
-          - <<: *i18n.result.adjective
+          - <<: *i18n.result.gerund
             min: 66
             max: 66
             result: Moving
@@ -1305,7 +1308,7 @@ oracles:
             min: 9
             max: 9
             result: Beacon
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 10
             max: 10
             result: Being
@@ -1349,7 +1352,7 @@ oracles:
             min: 20
             max: 20
             result: Creature
-          - <<: *i18n.result.common_noun
+          - <<: *i18n.result.gerund
             min: 21
             max: 21
             result: Crossing
