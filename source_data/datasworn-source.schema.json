@@ -784,7 +784,7 @@
 			"description": "A date formatted YYYY-MM-DD.",
 			"$comment": "You may prefer to deserialize this as a Date object.",
 			"format": "date",
-			"pattern": "[0-9]{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1])"
+			"pattern": "[0-9]{4}-((0[0-9])|(1[0-2]))-(([0-2][0-9])|(3[0-1]))"
 		},
 		"License": {
 			"title": "License",
