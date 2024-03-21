@@ -1,0 +1,1165 @@
+_id: sundered_isles
+package_type: ruleset
+oracles:
+  caves:
+    name: Cave Oracles
+    oracle_type: tables
+    _source: &Source
+      title: Sundered Isles Book Preview
+      authors:
+        - name: Shawn Tomkin
+      license: null
+      url: https://ironswornrpg.com
+      date: 2024-03-10
+    contents:
+      type:
+        name: Cave Type
+        oracle_type: table_text2
+        _source:
+          <<: *Source
+        rows:
+        # TODO: row numbers in marge PDF are wrong
+          - text: Sea Cave
+            text2: Caves of watery passages; carved by the tides
+          - text: Inland Cave
+            text2: Caves of echoing stone; plunging deep into the earth
+      threshold:
+        name: Cave Threshold
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/caves/cursed_threshold
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+        rows:
+          - min: 1
+            max: 6
+            text: Archway of carved stone
+          - min: 7
+            max: 12
+            text: Barricaded or blocked
+          - min: 13
+            max: 19
+            text: Behind a waterfall
+          - min: 20
+            max: 25
+            text: Flanked by statues or monuments
+          - min: 26
+            max: 31
+            text: Fronted by carved stairs
+          - min: 32
+            max: 38
+            text: Immense entrance
+          - min: 39
+            max: 44
+            text: Marked with a message or warning
+          - min: 45
+            max: 50
+            text: Nearby camp, ship, or landed boat
+          - min: 51
+            max: 56
+            text: Overgrown with plants
+          - min: 57
+            max: 62
+            text: Perched high on a cliff face
+          - min: 63
+            max: 68
+            text: Sealed with a door or gate
+          - min: 69
+            max: 75
+            text: Swarming with bats
+          - min: 76
+            max: 81
+            text: Tight squeeze
+          - min: 82
+            max: 88
+            text: Vertical shaft
+          - min: 89
+            max: 94
+            text: Well-used path
+          - min: 95
+            max: 100
+            text: "[Descriptor + Focus]"
+      cursed_threshold:
+        name: Cursed Cave Threshold
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of: sundered_isles/oracles/caves/threshold
+        _source:
+          <<: *Source
+        rows:
+          - min: 1
+            max: 7
+            text: Bloody trail leading inside
+          - min: 8
+            max: 14
+            text: Carved with eldritch symbols
+          - min: 15
+            max: 21
+            text: Glimpses of a spectral form
+          - min: 22
+            max: 28
+            text: Guarded by a monstrous creature
+          - min: 29
+            max: 35
+            text: Hung with webs or mucus
+          - min: 36
+            max: 43
+            text: Littered with bones
+          - min: 44
+            max: 50
+            text: Marked with a foreboding warning
+          - min: 51
+            max: 57
+            text: Monstrous howls or roars from within
+          - min: 58
+            max: 64
+            text: Shrouded in unnatural fog
+          - min: 65
+            max: 72
+            text: Skull-shaped edifice
+          - min: 73
+            max: 79
+            text: Stench of death
+          - min: 80
+            max: 86
+            text: Surrounded by blighted terrain
+          - min: 87
+            max: 93
+            text: Unnerving sense of being watched
+          - min: 94
+            max: 100
+            text: Unnerving stillness or quiet
+      lurking_threat:
+        name: Lurking Threat
+        oracle_type: table_text3
+        column_labels: &LurkingThreatColumnLabels
+          roll: Roll
+          text: Threat
+          text2: When the clock advances...
+          text3: When the clock is filled...
+        _source:
+          <<: *Source
+        rows:
+          - min: 1
+            max: 15
+            text: Chilling cold
+            text2: Creeping numbness; teeth-  chattering shivers
+            text3: You are chilled to the bone!
+          - min: 16
+            max: 25
+            text: Devious trap
+            text2: Minor puzzle; portentous clues
+            text3: You face a confounding trap!
+          - min: 26
+            max: 35
+            text: Flash flood
+            text2: Dripping water; rumbling echoes
+            text3: A torrent of water floods in!
+          - min: 36
+            max: 50
+            text: Oppressive  confinement
+            text2: Suffocating passages;  deepening darkness
+            text3: You face confusion or panic!
+          - min: 51
+            max: 60
+            text: Restless magma
+            text2: Stifling heat; venting steam
+            text3: Magma causes destruction!
+          - min: 61
+            max: 70
+            text: Rising water
+            text2: Surging current; flooding spaces
+            text3: The path is submerged!
+          - min: 71
+            max: 80
+            text: Rival explorers
+            text2: Echoing sounds; signs they  passed this way
+            text3: Your rivals make their move!
+          - min: 81
+            max: 90
+            text: Stalking predator
+            text2: Glimpses of the creature;  remains of previous kills
+            text3: The predator attacks!
+          - min: 91
+            max: 100
+            text: Unstable caves
+            text2: Tremors; minor rockfalls
+            text3: The cave collapses!
+      cursed_lurking_threat:
+        name: Cursed Lurking Threat
+        oracle_type: table_text3
+        column_labels: *LurkingThreatColumnLabels
+        _source:
+          <<: *Source
+        rows:
+          - min: 1
+            max: 25
+            text: Dark-dwelling beings
+            text2: Sense of being watched;  skulking shadows
+            text3: Denizens defend their domain!
+          - min: 26
+            max: 50
+            text: Eldritch cultists
+            text2: Accursed symbols; ritualistic  artifacts or remains
+            text3: The cultists strike!
+          - min: 51
+            max: 70
+            text: Mighty beast
+            text2: Territorial markings; signs or  sounds of a beast on the hunt
+            text3: The beast attacks!
+          - min: 71
+            max: 85
+            text: Monstrous infestation
+            text2: Skitters or splashes; foul nests
+            text3: A vile swarm appears!
+          - min: 86
+            max: 100
+            text: Restless dead
+            text2: Phantom whispers; glimpses of  spectral forms
+            text3: The wrathful dead manifest!
+
+    collections:
+      scale:
+        name: Cave Scale
+        oracle_type: table_shared_text2
+        _source:
+          <<: *Source
+        contents:
+          sea_cave:
+            name: Sea Cave
+            oracle_type: column_text2
+            rows:
+              - min: 1
+                max: 30
+                <<: &Scale.0
+                  text: Troublesome
+                  text2: Minor cave system
+              - min: 31
+                max: 70
+                <<: &Scale.1
+                  text: Dangerous
+                  text2: Limited cave system
+              - min: 71
+                max: 85
+                <<: &Scale.2
+                  text: Formidable
+                  text2: Extensive cave system
+              - min: 86
+                max: 95
+                <<: &Scale.3
+                  text: Extreme
+                  text2: Vast cave system
+              - min: 96
+                max: 100
+                <<: &Scale.4
+                  text: Epic
+                  text2: Fathomless cave system
+          inland_cave:
+            name: Inland Cave
+            oracle_type: column_text2
+            rows:
+              - <<: *Scale.0
+                min: 1
+                max: 20
+              - <<: *Scale.1
+                min: 21
+                max: 50
+              - <<: *Scale.2
+                min: 51
+                max: 75
+              - <<: *Scale.3
+                min: 76
+                max: 90
+              - <<: *Scale.4
+                min: 91
+                max: 100
+      sea_cave:
+        name: Sea Cave Details
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          features:
+            name: Sea Cave Features
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            tags:
+              sundered_isles:
+                cursed_version: sundered_isles/oracles/caves/sea_cave/cursed_features
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max:
+                text: Abandoned boat
+              - min: 2
+                max:
+                text: Abandoned waterside camp
+              - min: 3
+                max:
+                text: Ancient carvings or statues
+              - min: 4
+                max:
+                text: Bat colony
+              - min: 5
+                max:
+                text: Boat landing or dock
+              - min: 6
+                max:
+                text: Bobbing bottle with enclosed message
+              - min: 7
+                max:
+                text: Briny pool with dead coral
+              - min: 8
+                max:
+                text: Bubbling vents
+              - min: 9
+                max:
+                text: Carcass of a washed up sea creature
+              - min: 10
+                max:
+                text: Carved arch leading onwards
+              - min: 11
+                max:
+                text: Coral garden nurtured by shafts of light
+              - min: 12
+                max:
+                text: Curtains of falling water
+              - min: 13
+                max:
+                text: Darting schools of pale fish
+              - min: 14
+                max:
+                text: Deep, placid pool
+              - min: 15
+                max:
+                text: Dry alcove
+              - min: 16
+                max:
+                text: Dry tunnel above the tide
+              - min: 17
+                max:
+                text: Excavated or constructed waterway
+              - min: 18
+                max:
+                text: Flooded lava tube
+              - min: 19
+                max:
+                text: Flooded shaft or sinkhole
+              - min: 20
+                max:
+                text: Freshwater inlet
+              - min: 21
+                max:
+                text: Incessant dripping
+              - min: 22
+                max:
+                text: Jagged oyster beds
+              - min: 23
+                max:
+                text: Luminescent algae
+              - min: 24
+                max:
+                text: Luminescent jellyfish
+              - min: 25
+                max:
+                text: Luminescent water
+              - min: 26
+                max:
+                text: Message carved into wet stone
+              - min: 27
+                max:
+                text: Morass of rotting seaweed
+              - min: 28
+                max:
+                text: Mounds of fallen boulders
+              - min: 29
+                max:
+                text: Muddy waterway
+              - min: 30
+                max:
+                text: Overwhelming briny stench
+              - min: 31
+                max:
+                text: Piles of crushed shells
+              - min: 32
+                max:
+                text: Rock bridge
+              - min: 33
+                max:
+                text: Scattered, silt-covered bones
+              - min: 34
+                max:
+                text: Shadowy tentacles in dark water
+              - min: 35
+                max:
+                text: Sound of rushing water
+              - min: 36
+                max:
+                text: Sound of voices
+              - min: 37
+                max:
+                text: Steaming hot springs
+              - min: 38
+                max:
+                text: Triangular fin circling in deep water
+              - min: 39
+                max:
+                text: Wet tracks at water's edge
+              - min: 40
+                max: 41
+                text: Branching waterway
+              - min: 42
+                max: 43
+                text: Dam of waterborne debris
+              - min: 44
+                max: 45
+                text: Freshwater falls pouring from above
+              - min: 46
+                max: 47
+                text: Fully submerged passage
+              - min: 48
+                max: 49
+                text: Glimmer of metal in the water
+              - min: 50
+                max: 51
+                text: Hordes of scuttling crabs
+              - min: 52
+                max: 53
+                text: Idyllic pool with bountiful sea life
+              - min: 54
+                max: 55
+                text: Intricate lava formations
+              - min: 56
+                max: 57
+                text: Low-hanging rock formations
+              - min: 58
+                max: 59
+                text: Low-lying mist
+              - min: 60
+                max: 61
+                text: Massive, watery cavern
+              - min: 62
+                max: 63
+                text: Perfectly crystalline water
+              - min: 64
+                max: 65
+                text: Plunging series of terraced waterfalls
+              - min: 66
+                max: 67
+                text: Rocky island surrounded by water
+              - min: 68
+                max: 69
+                text: Shafts of natural light
+              - min: 70
+                max: 71
+                text: Shallow pools and algae-covered rocks
+              - min: 72
+                max: 73
+                text: Silt-clouded waters
+              - min: 74
+                max: 75
+                text: Skeletal corpse
+              - min: 76
+                max: 77
+                text: Sound of watery movement or splashes
+              - min: 78
+                max: 79
+                text: Stirrings of a large creature
+              - min: 80
+                max: 81
+                text: Surfaces encrusted with sea life
+              - min: 82
+                max: 83
+                text: Surging waterway
+              - min: 84
+                max: 85
+                text: Swirling whirlpool
+              - min: 86
+                max: 87
+                text: Tight squeeze through narrowing tunnel
+              - min: 88
+                max: 89
+                text: Waterlogged corpse
+              - min: 90
+                max: 91
+                text: Wrecked or sunken boat
+              - min: 92
+                max: 93
+                text: Corpse clutching a > Token; pg 217
+              - min: 94
+                max: 95
+                text: Connection to an > Inland Cave; pg 210
+              - min: 96
+                max: 100
+                text: Descriptor + Focus; pg 120–121
+
+          cursed_features:
+            name: Sea Cave Cursed Features
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                cursed_version_of: sundered_isles/oracles/caves/sea_cave/features
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 5
+                text: Bewitching illusion
+              - min: 6
+                max: 10
+                text: Bloody water
+              - min: 11
+                max: 15
+                text: Bones of a colossal beast
+              - min: 16
+                max: 20
+                text: Corpses encrusted with sea life
+              - min: 21
+                max: 25
+                text: Creepy echoes
+              - min: 26
+                max: 30
+                text: Drowned corpses come to life
+              - min: 31
+                max: 35
+                text: Eldritch symbols
+              - min: 36
+                max: 40
+                text: Fouled water
+              - min: 41
+                max: 45
+                text: Frozen water
+              - min: 46
+                max: 50
+                text: Ghastly reflections in the water
+              - min: 51
+                max: 55
+                text: Impenetrable darkness
+              - min: 56
+                max: 60
+                text: Lights snuffed out
+              - min: 61
+                max: 65
+                text: Monstrous water-dwelling predator
+              - min: 66
+                max: 70
+                text: Rotting stench
+              - min: 71
+                max: 75
+                text: Sea creatures mutated by darkness
+              - min: 76
+                max: 80
+                text: Spectral manifestation
+              - min: 81
+                max: 85
+                text: Unnatural cold
+              - min: 86
+                max: 90
+                text: Unnaturally rising water
+              - min: 91
+                max: 95
+                text: Unseen entities grab hold
+              - min: 96
+                max: 100
+                text: Water above, stone below
+
+          perils:
+            name: Sea Cave Perils
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 20
+                text: '[Lurking Threat]'
+              - min: 21
+                max: 24
+                text: Aggressive creature
+              - min: 25
+                max: 28
+                text: Bewildering paths
+              - min: 29
+                max: 32
+                text: Blocked or barricaded path
+              - min: 33
+                max: 35
+                text: Confounding puzzle
+              - min: 36
+                max: 39
+                text: Difficult squeeze through flooded area
+              - min: 40
+                max: 43
+                text: Equipment or boat suffers damage
+              - min: 44
+                max: 47
+                text: Falling rocks
+              - min: 48
+                max: 51
+                text: Fierce current
+              - min: 52
+                max: 55
+                text: Grueling conditions
+              - min: 56
+                max: 58
+                text: Hindered visibility
+              - min: 59
+                max: 62
+                text: Lengthy submerged passage
+              - min: 63
+                max: 66
+                text: Lost gear or supplies
+              - min: 67
+                max: 69
+                text: Party member causes trouble
+              - min: 70
+                max: 73
+                text: Quickly rising waters
+              - min: 74
+                max: 76
+                text: Swarming creatures
+              - min: 77
+                max: 79
+                text: Toxic or corrosive environment
+              - min: 80
+                max: 82
+                text: Trap or alarm
+              - min: 83
+                max: 85
+                text: Unfriendly explorers
+              - min: 86
+                max: 88
+                text: Venomous creature
+              - min: 89
+                max: 94
+                text: '[Action] + [Theme]'
+              - min: 95
+                max: 100
+                text: Roll twice
+
+          opportunities:
+            name: Sea Cave Opportunities
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 10
+                text: Advance warning of a danger
+              - min: 11
+                max: 20
+                text: Breathtaking natural feature
+              - min: 21
+                max: 30
+                text: Clue points the way forward
+              - min: 31
+                max: 40
+                text: Friendly denizen or explorer
+              - min: 41
+                max: 50
+                text: Helpful shortcut or detour
+              - min: 51
+                max: 60
+                text: Safe refuge
+              - min: 61
+                max: 70
+                text: Useful equipment or supplies
+              - min: 71
+                max: 80
+                text: Washed up or lost [Cargo]
+              - min: 81
+                max: 90
+                text: '[Treasure] (small repository)'
+              - min: 91
+                max: 100
+                text: '[Treasure] (medium repository)'
+
+          heart:
+            name: Sea Cave Heart
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 10
+                text: Elaborate trap or puzzle
+              - min: 11
+                max: 20
+                text: Lair of a beast
+              - min: 21
+                max: 30
+                text: Sacred or fabled artifact
+              - min: 31
+                max: 40
+                text: Secret hideout or refuge
+              - min: 41
+                max: 50
+                text: Wondrous natural environment
+              - min: 51
+                max: 60
+                text: "[Ruin]"
+              - min: 61
+                max: 70
+                text: "[Sailing Ship]"
+              - min: 71
+                max: 80
+                text: "[Shipwreck]"
+              - min: 81
+                max: 90
+                text: "[Treasure] (large repository)"
+              - min: 91
+                max: 100
+                text: "[Treasure] (vast repository)"
+
+      inland_cave:
+        name: Inland Cave Details
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          features:
+            name: Inland Cave Features
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            tags:
+              sundered_isles:
+                cursed_version: sundered_isles/oracles/caves/inland_cave/cursed_features
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max:
+                text: Abandoned camp
+              - min: 2
+                max:
+                text: Abandoned mineworks
+              - min: 3
+                max:
+                text: Ancient carvings or statues
+              - min: 4
+                max:
+                text: Ancient cave paintings
+              - min: 5
+                max:
+                text: Blind rodents
+              - min: 6
+                max:
+                text: Cairn-marked grave
+              - min: 7
+                max:
+                text: Carpet of crushed bone
+              - min: 8
+                max:
+                text: Chiseled stairway
+              - min: 9
+                max:
+                text: Churning magma pools
+              - min: 10
+                max:
+                text: Clouds of ash or dust
+              - min: 11
+                max:
+                text: Constructed bridge
+              - min: 12
+                max:
+                text: Crystalline formations
+              - min: 13
+                max:
+                text: Dangling ladder or rope
+              - min: 14
+                max:
+                text: Excavated chamber
+              - min: 15
+                max:
+                text: Excavated tunnel
+              - min: 16
+                max:
+                text: Fossilized bones
+              - min: 17
+                max:
+                text: Fungi forest
+              - min: 18
+                max:
+                text: Glassy lava tube
+              - min: 19
+                max:
+                text: Humid, dripping environment
+              - min: 20
+                max:
+                text: Magma lake
+              - min: 21
+                max:
+                text: Magma river
+              - min: 22
+                max:
+                text: Maze of intersecting passages
+              - min: 23
+                max:
+                text: Message carved or scrawled on stone
+              - min: 24
+                max:
+                text: Multilevel cavern
+              - min: 25
+                max:
+                text: Mummified corpse
+              - min: 26
+                max:
+                text: Narrow ledge over a chasm
+              - min: 27
+                max:
+                text: Natural bridge
+              - min: 28
+                max:
+                text: Perfectly geometric columns
+              - min: 29
+                max:
+                text: Pile of bones and offal
+              - min: 30
+                max:
+                text: Rush of hot air
+              - min: 31
+                max:
+                text: Smoking fissures
+              - min: 32
+                max:
+                text: Sound of heavy movement
+              - min: 33
+                max:
+                text: Sound of voices
+              - min: 34
+                max:
+                text: Surfaces covered in flourishing fungi
+              - min: 35
+                max:
+                text: Surfaces honeycombed with holes
+              - min: 36
+                max:
+                text: Tracks through dust or muck
+              - min: 37
+                max:
+                text: Trail of scattered coins
+              - min: 38
+                max:
+                text: Underground lake with isolated island
+              - min: 39
+                max:
+                text: Veins of ore
+              - min: 40
+                max: 41
+                text: Bat colony
+              - min: 42
+                max: 43
+                text: Bioluminescent fungi
+              - min: 44
+                max: 45
+                text: Boiling mud pits
+              - min: 46
+                max: 47
+                text: Carpet of lichen
+              - min: 48
+                max: 49
+                text: Clinging webs
+              - min: 50
+                max: 51
+                text: Collapsed rubble
+              - min: 52
+                max: 53
+                text: Crawling-height tunnel
+              - min: 54
+                max: 55
+                text: Curtains of dangling roots or vines
+              - min: 56
+                max: 57
+                text: Domed cavern
+              - min: 58
+                max: 59
+                text: Earth-shaking tremor
+              - min: 60
+                max: 61
+                text: Elaborate stone formations
+              - min: 62
+                max: 63
+                text: Flooded shaft or sinkhole
+              - min: 64
+                max: 65
+                text: Flooded tunnel
+              - min: 66
+                max: 67
+                text: Labyrinth of stone formations
+              - min: 68
+                max: 69
+                text: Massive, cathedral-like cavern
+              - min: 70
+                max: 71
+                text: Moldering corpse
+              - min: 72
+                max: 73
+                text: Plunging shaft leading downwards
+              - min: 74
+                max: 75
+                text: Shafts of natural light
+              - min: 76
+                max: 77
+                text: Skeletal corpse
+              - min: 78
+                max: 79
+                text: Steaming hot springs
+              - min: 80
+                max: 81
+                text: Steep escarpment
+              - min: 82
+                max: 83
+                text: Thundering waterfall
+              - min: 84
+                max: 85
+                text: Tight squeeze
+              - min: 86
+                max: 87
+                text: Trail or splashes of blood
+              - min: 88
+                max: 89
+                text: Underground lake
+              - min: 90
+                max: 91
+                text: Underground river
+              - min: 92
+                max: 93
+                text: Vertical chimney leading upward
+              - min: 94
+                max: 95
+                text: Corpse clutching a > Token; pg 217
+              - min: 96
+                max: 100
+                text: Descriptor + Focus; pg 120–121
+
+          cursed_features:
+            name: Inland Cave Cursed Features
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                cursed_version_of: sundered_isles/oracles/caves/inland_cave/features
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 5
+                text: Bewitching illusion
+              - min: 6
+                max: 10
+                text: Bones of a colossal beast
+              - min: 11
+                max: 15
+                text: Corpses come to life
+              - min: 16
+                max: 20
+                text: Corpses entombed within stone
+              - min: 21
+                max: 25
+                text: Creepy echoes
+              - min: 26
+                max: 30
+                text: Eldritch shrine or monument
+              - min: 31
+                max: 35
+                text: Impenetrable darkness
+              - min: 36
+                max: 40
+                text: Lights snuffed out
+              - min: 41
+                max: 45
+                text: Monstrous predator
+              - min: 46
+                max: 50
+                text: Oversized eggs
+              - min: 51
+                max: 55
+                text: Passage carved by a burrowing beast
+              - min: 56
+                max: 60
+                text: Rotting stench
+              - min: 61
+                max: 65
+                text: Spectral manifestation
+              - min: 66
+                max: 70
+                text: Surfaces covered by cyst-like growths
+              - min: 71
+                max: 75
+                text: Trail of ooze
+              - min: 76
+                max: 80
+                text: Unnatural cold
+              - min: 81
+                max: 85
+                text: Unnaturally aggressive insects or vermin
+              - min: 86
+                max: 90
+                text: Unnaturally thick webbing
+              - min: 91
+                max: 95
+                text: Unnerving howls or roars
+              - min: 96
+                max: 100
+                text: Webbed or cocooned corpses
+
+          perils:
+            name: Inland Cave Perils
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 20
+                text: Lurking Threat; pg 207
+              - min: 21
+                max: 24
+                text: Aggressive creature
+              - min: 25
+                max: 28
+                text: Bewildering paths
+              - min: 29
+                max: 32
+                text: Blocked or barricaded path
+              - min: 33
+                max: 36
+                text: Cleverly camouflaged predator
+              - min: 37
+                max: 39
+                text: Confounding puzzle
+              - min: 40
+                max: 43
+                text: Crumbling cave floor
+              - min: 44
+                max: 46
+                text: Disorienting smoke or steam
+              - min: 47
+                max: 50
+                text: Falling rocks
+              - min: 51
+                max: 54
+                text: Flooding
+              - min: 55
+                max: 58
+                text: Grueling conditions
+              - min: 59
+                max: 62
+                text: Lost gear or supplies
+              - min: 63
+                max: 65
+                text: Party member causes trouble
+              - min: 66
+                max: 69
+                text: Precipitous climb or descent
+              - min: 70
+                max: 72
+                text: Swarming creatures
+              - min: 73
+                max: 75
+                text: Toxic or corrosive environment
+              - min: 76
+                max: 78
+                text: Trap or alarm
+              - min: 79
+                max: 82
+                text: Treacherous footing
+              - min: 83
+                max: 85
+                text: Unfriendly explorers
+              - min: 86
+                max: 88
+                text: Venomous creature
+              - min: 89
+                max: 94
+                text: Action + Theme; pg 118–119
+              - min: 95
+                max: 100
+                text: Roll twice
+
+          opportunities:
+            name: Inland Cave Opportunities
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 10
+                text: Advance warning of a danger
+              - min: 11
+                max: 20
+                text: Breathtaking natural feature
+              - min: 21
+                max: 30
+                text: Clue points the way forward
+              - min: 31
+                max: 40
+                text: Friendly denizen or explorer
+              - min: 41
+                max: 50
+                text: Helpful shortcut or detour
+              - min: 51
+                max: 60
+                text: Rare resource
+              - min: 61
+                max: 70
+                text: Safe refuge
+              - min: 71
+                max: 80
+                text: Useful equipment or supplies
+              - min: 81
+                max: 90
+                text: Treasure; pg 215 (small repository)
+              - min: 91
+                max: 100
+                text: Treasure; pg 215 (medium repository)
+
+          heart:
+            name: Inland Cave Heart
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 10
+                text: Ancient Tomb
+              - min: 11
+                max: 20
+                text: Breathtaking natural environment
+              - min: 21
+                max: 30
+                text: Elaborate trap or puzzle
+              - min: 31
+                max: 40
+                text: Lair of a beast
+              - min: 41
+                max: 50
+                text: Rare or valuable ore
+              - min: 51
+                max: 60
+                text: Sacred or fabled artifact
+              - min: 61
+                max: 70
+                text: Secret hideout or refuge
+              - min: 71
+                max: 80
+                text: Ruin; pg XX
+              - min: 81
+                max: 90
+                text: Treasure; pg 215 (large repository)
+              - min: 91
+                max: 100
+                text: Treasure; pg 215 (vast repository)
