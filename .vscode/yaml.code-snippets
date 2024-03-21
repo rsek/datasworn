@@ -127,6 +127,24 @@
 			"$0${CLIPBOARD/(\\s*[A-Z].+)(\n)/${2:+          }- text: |-\n              $1\n/g}"
 		]
 	},
+  "Cursed Version": {
+    "scope": "yaml",
+    "prefix": "tag1",
+    "body": [
+      "tags:",
+      "  sundered_isles:",
+      "    cursed_version: sundered_isles/oracles/$0"
+    ]
+  },
+  "Cursed Version Of": {
+    "scope": "yaml",
+    "prefix": "tag2",
+    "body": [
+      "tags:",
+      "  sundered_isles:",
+      "    cursed_version_of: sundered_isles/oracles/$0"
+    ]
+  },
 	"Format simple table rows": {
 		"scope": "yaml",
 		"prefix": "rows",
@@ -147,7 +165,7 @@
 		"scope": "yaml",
 		"prefix": "rows3",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+\\s+?(?<text3>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  text: $3\n  text2: $4\ntext3: $5/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+)\\s+?(?<text3>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  text: $3\n  text2: $4\n  text3: $5\n/g}"
 		],
 		"description": "Formats table rows from copied from Okular as YAML data"
 	},
