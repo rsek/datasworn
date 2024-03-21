@@ -717,13 +717,13 @@ export interface I18nHint {
  * @experimental
  */
 export interface I18nHints {
-	result?: I18nHint
-	detail?: I18nHint
-	description?: I18nHint
+	text?: I18nHint
+	text2?: I18nHint
+	text3?: I18nHint
 	template?: {
-		result?: I18nHint
-		detail?: I18nHint
-		description?: I18nHint
+		text?: I18nHint
+		text2?: I18nHint
+		text3?: I18nHint
 	}
 }
 

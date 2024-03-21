@@ -298,7 +298,7 @@ oracles:
         rows:
           - <<: &i18n.result.adjective
               _i18n:
-                result:
+                text:
                   part_of_speech: adjective
             min: 1
             max: 15
@@ -351,7 +351,7 @@ oracles:
         rows:
           - <<: &i18n.result.common_noun
               _i18n:
-                result:
+                text:
                   part_of_speech: common_noun
             min: 1
             max: 5
@@ -382,7 +382,7 @@ oracles:
             text: Energy
           - <<: &i18n.result.gerund
               _i18n:
-                result:
+                text:
                   part_of_speech: gerund
             min: 23
             max: 25
@@ -645,7 +645,7 @@ oracles:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
           - <<: &i18n.result.proper_noun
               _i18n:
-                result:
+                text:
                   part_of_speech: proper_noun
             min: 1
             max: 1

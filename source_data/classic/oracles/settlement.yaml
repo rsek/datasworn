@@ -240,7 +240,7 @@ oracles:
             rows:
               - <<: &i18n.proper_noun
                   _i18n:
-                    result:
+                    text:
                       part_of_speech: proper_noun
                 min: 1
                 max: 10
@@ -557,7 +557,7 @@ oracles:
         summary: Use this oracle as a simpler alternative for settlement names. Roll once for the prefix, and once for the suffix. If the combination doesn’t quite work, look at adjacent rows or reverse the digits.
         oracle_type: table_shared_rolls
         # template:
-        #   text: '{{result:classic/oracles/settlement/quick_name/prefix}}{{result:classic/oracles/settlement/quick_name/suffix}}'
+        #   text: '{{text:classic/oracles/settlement/quick_name/prefix}}{{text:classic/oracles/settlement/quick_name/suffix}}'
         _source: &CollectionSource
           <<: *Source
           page: 180
@@ -595,7 +595,7 @@ oracles:
 
               - <<: &i18n.adjective
                   _i18n:
-                    result:
+                    text:
                       part_of_speech: adjective
                 min: 1
                 max: 4
@@ -606,7 +606,7 @@ oracles:
                 text: Green
               - <<: &i18n.adjunct_common_noun
                   _i18n:
-                    result:
+                    text:
                       part_of_speech: adjunct_common_noun
                 min: 9
                 max: 12
@@ -653,7 +653,7 @@ oracles:
                 text: Black
               - <<: &i18n.attributive_verb
                   _i18n:
-                    result:
+                    text:
                       part_of_speech: attributive_verb
                 min: 53
                 max: 56
@@ -734,7 +734,7 @@ oracles:
               # - [97, 100, -wick]
               - <<: &i18n.common_noun
                   _i18n:
-                    result:
+                    text:
                       part_of_speech: common_noun
                 min: 1
                 max: 4

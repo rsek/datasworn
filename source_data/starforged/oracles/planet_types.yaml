@@ -2657,7 +2657,7 @@ oracles:
                 max: 20
                 text: Simple (two biomes)
                 _i18n: &i18n.result.adjective
-                  result:
+                  text:
                     part_of_speech: adjective
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -2692,7 +2692,7 @@ oracles:
                 max: 5
                 text: Caves
                 _i18n: &i18n.result.common_noun
-                  result:
+                  text:
                     part_of_speech: common_noun
               - min: 6
                 max: 10

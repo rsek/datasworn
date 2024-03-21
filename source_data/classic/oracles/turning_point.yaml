@@ -238,7 +238,7 @@ oracles:
               - number_of_rolls: 2
                 auto: true
                 duplicates: make_it_worse
-              # *result:RollTwice.MakeItWorse
+              # *text:RollTwice.MakeItWorse
 
       challenge_rank:
         canonical_name: 'Oracle 19: Challenge Rank'

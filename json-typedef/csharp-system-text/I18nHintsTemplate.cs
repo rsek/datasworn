@@ -6,16 +6,16 @@ namespace Datasworn
 {
     public class I18nHintsTemplate
     {
-        [JsonPropertyName("description")]
+        [JsonPropertyName("text")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHint? Description { get; set; }
+        public I18nHint? Text { get; set; }
 
-        [JsonPropertyName("detail")]
+        [JsonPropertyName("text2")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHint? Detail { get; set; }
+        public I18nHint? Text2 { get; set; }
 
-        [JsonPropertyName("result")]
+        [JsonPropertyName("text3")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHint? Result { get; set; }
+        public I18nHint? Text3 { get; set; }
     }
 }

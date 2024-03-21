@@ -32,7 +32,7 @@ oracles:
         rows:
           - <<: &i18n.adjective
               _i18n:
-                result:
+                text:
                   part_of_speech: adjective
             min: 1
             max: 2
@@ -71,7 +71,7 @@ oracles:
             text: Defended
           - <<: &i18n.gerund
               _i18n:
-                result:
+                text:
                   part_of_speech: gerund
             min: 19
             max: 20
@@ -249,7 +249,7 @@ oracles:
         rows:
           - <<: &i18n.common_noun
               _i18n:
-                result:
+                text:
                   part_of_speech: common_noun
             min: 1
             max: 2

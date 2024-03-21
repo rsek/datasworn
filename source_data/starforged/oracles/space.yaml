@@ -302,7 +302,7 @@ oracles:
         description: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
         oracle_type: table_shared_rolls
         # template:
-        #   text: '{{result:starforged/oracles/space/sector_name/prefix}} {{result:starforged/oracles/space/sector_name/suffix}}'
+        #   text: '{{text:starforged/oracles/space/sector_name/prefix}} {{text:starforged/oracles/space/sector_name/suffix}}'
         contents:
           prefix:
             name: Prefix
@@ -322,7 +322,7 @@ oracles:
                   max: 2
                 text: Accursed
                 _i18n: &i18n.result.adjective
-                  result:
+                  text:
                     part_of_speech: adjective
               - <<: &SectorName.1
                   min: 3
@@ -334,7 +334,7 @@ oracles:
                   max: 6
                 text: Asteria
                 _i18n: &i18n.result.adjunct_proper_noun
-                  result:
+                  text:
                     part_of_speech: adjunct_proper_noun
               - <<: &SectorName.3
                   min: 7
@@ -361,7 +361,7 @@ oracles:
                   max: 16
                 text: Burning
                 _i18n:
-                  result:
+                  text:
                     part_of_speech: gerund
               - <<: &SectorName.8
                   min: 17
@@ -462,7 +462,7 @@ oracles:
                   max: 56
                 text: Iron
                 _i18n: &i18n.result.adjunct_common_noun
-                  result:
+                  text:
                     part_of_speech: adjunct_common_noun
               - <<: &SectorName.28
                   min: 57
@@ -585,7 +585,7 @@ oracles:
               oracles:
                 - starforged/oracles/space/sector_name/prefix
             # _i18n:
-            #   result:
+            #   text:
             #     part_of_speech: common_noun
             # content:
             #   part_of_speech: [proper noun fragment]
@@ -593,7 +593,7 @@ oracles:
             rows:
               - <<: *SectorName.0
                 _i18n: &i18n.result.common_noun_as_proper_noun
-                  result:
+                  text:
                     part_of_speech: common_noun_as_proper_noun
                 text: Abyss
               - <<: *SectorName.1

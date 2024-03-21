@@ -73,7 +73,7 @@ oracles:
             max: 35
             text: Structure
             _i18n: &i18n.result.common_noun
-              result:
+              text:
                 part_of_speech: common_noun
           - min: 36
             max: 60
@@ -91,7 +91,7 @@ oracles:
             max: 100
             text: Incomprehensible
             _i18n: &i18n.result.adjective
-              result:
+              text:
                 part_of_speech: adjective
       shape:
         name: Shape
@@ -161,7 +161,7 @@ oracles:
             max: 85
             text: Transforming
             _i18n:
-              result:
+              text:
                 part_of_speech: gerund
           - min: 86
             max: 100
@@ -211,7 +211,7 @@ oracles:
             max: 88
             text: Energy
             _i18n: &i18n.result.adjunct_common_noun
-              result:
+              text:
                 part_of_speech: adjunct_common_noun
           - min: 89
             max: 90

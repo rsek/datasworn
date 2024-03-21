@@ -73,14 +73,14 @@ export type I18nHint = Static<typeof I18nHint>
 
 export const I18nHints = Type.Object(
 	{
-		result: Type.Optional(Type.Ref(I18nHint)),
-		detail: Type.Optional(Type.Ref(I18nHint)),
-		description: Type.Optional(Type.Ref(I18nHint)),
+		text: Type.Optional(Type.Ref(I18nHint)),
+		text2: Type.Optional(Type.Ref(I18nHint)),
+		text3: Type.Optional(Type.Ref(I18nHint)),
 		template: Type.Optional(
 			Type.Object({
-				result: Type.Optional(Type.Ref(I18nHint)),
-				detail: Type.Optional(Type.Ref(I18nHint)),
-				description: Type.Optional(Type.Ref(I18nHint))
+				text: Type.Optional(Type.Ref(I18nHint)),
+				text2: Type.Optional(Type.Ref(I18nHint)),
+				text3: Type.Optional(Type.Ref(I18nHint))
 			})
 		)
 	},

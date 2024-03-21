@@ -10,20 +10,20 @@ namespace Datasworn
     /// </summary>
     public class I18nHints
     {
-        [JsonPropertyName("description")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHint? Description { get; set; }
-
-        [JsonPropertyName("detail")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHint? Detail { get; set; }
-
-        [JsonPropertyName("result")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public I18nHint? Result { get; set; }
-
         [JsonPropertyName("template")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public I18nHintsTemplate Template { get; set; }
+
+        [JsonPropertyName("text")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public I18nHint? Text { get; set; }
+
+        [JsonPropertyName("text2")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public I18nHint? Text2 { get; set; }
+
+        [JsonPropertyName("text3")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public I18nHint? Text3 { get; set; }
     }
 }

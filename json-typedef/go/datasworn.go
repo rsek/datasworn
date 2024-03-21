@@ -1450,22 +1450,22 @@ type I18nHint struct {
 }
 
 type I18nHintsTemplate struct {
-	Description *I18nHint `json:"description,omitempty"`
+	Text *I18nHint `json:"text,omitempty"`
 
-	Detail *I18nHint `json:"detail,omitempty"`
+	Text2 *I18nHint `json:"text2,omitempty"`
 
-	Result *I18nHint `json:"result,omitempty"`
+	Text3 *I18nHint `json:"text3,omitempty"`
 }
 
 // Internationalization/localization hints for the text content of this object.
 type I18nHints struct {
-	Description *I18nHint `json:"description,omitempty"`
-
-	Detail *I18nHint `json:"detail,omitempty"`
-
-	Result *I18nHint `json:"result,omitempty"`
-
 	Template *I18nHintsTemplate `json:"template,omitempty"`
+
+	Text *I18nHint `json:"text,omitempty"`
+
+	Text2 *I18nHint `json:"text2,omitempty"`
+
+	Text3 *I18nHint `json:"text3,omitempty"`
 }
 
 // Describes a category of standard impacts/debilities.

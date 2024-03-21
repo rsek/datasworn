@@ -2134,49 +2134,49 @@ module Datasworn
   end
 
   class I18nHintsTemplate
-    attr_accessor :description
-    attr_accessor :detail
-    attr_accessor :result
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :text3
 
     def self.from_json_data(data)
       out = I18nHintsTemplate.new
-      out.description = Datasworn::from_json_data(I18nHint, data["description"])
-      out.detail = Datasworn::from_json_data(I18nHint, data["detail"])
-      out.result = Datasworn::from_json_data(I18nHint, data["result"])
+      out.text = Datasworn::from_json_data(I18nHint, data["text"])
+      out.text2 = Datasworn::from_json_data(I18nHint, data["text2"])
+      out.text3 = Datasworn::from_json_data(I18nHint, data["text3"])
       out
     end
 
     def to_json_data
       data = {}
-      data["description"] = Datasworn::to_json_data(description) unless description.nil?
-      data["detail"] = Datasworn::to_json_data(detail) unless detail.nil?
-      data["result"] = Datasworn::to_json_data(result) unless result.nil?
+      data["text"] = Datasworn::to_json_data(text) unless text.nil?
+      data["text2"] = Datasworn::to_json_data(text2) unless text2.nil?
+      data["text3"] = Datasworn::to_json_data(text3) unless text3.nil?
       data
     end
   end
 
   # Internationalization/localization hints for the text content of this object.
   class I18nHints
-    attr_accessor :description
-    attr_accessor :detail
-    attr_accessor :result
     attr_accessor :template
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :text3
 
     def self.from_json_data(data)
       out = I18nHints.new
-      out.description = Datasworn::from_json_data(I18nHint, data["description"])
-      out.detail = Datasworn::from_json_data(I18nHint, data["detail"])
-      out.result = Datasworn::from_json_data(I18nHint, data["result"])
       out.template = Datasworn::from_json_data(I18nHintsTemplate, data["template"])
+      out.text = Datasworn::from_json_data(I18nHint, data["text"])
+      out.text2 = Datasworn::from_json_data(I18nHint, data["text2"])
+      out.text3 = Datasworn::from_json_data(I18nHint, data["text3"])
       out
     end
 
     def to_json_data
       data = {}
-      data["description"] = Datasworn::to_json_data(description) unless description.nil?
-      data["detail"] = Datasworn::to_json_data(detail) unless detail.nil?
-      data["result"] = Datasworn::to_json_data(result) unless result.nil?
       data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data["text"] = Datasworn::to_json_data(text) unless text.nil?
+      data["text2"] = Datasworn::to_json_data(text2) unless text2.nil?
+      data["text3"] = Datasworn::to_json_data(text3) unless text3.nil?
       data
     end
   end

@@ -28,7 +28,7 @@ oracles:
         rows:
           - <<: &i18n.result.common_noun
               _i18n:
-                result:
+                text:
                   part_of_speech: common_noun
             min: 1
             max: 5
@@ -80,7 +80,7 @@ oracles:
         rows:
           - <<: &i18n.result.adjective
               _i18n:
-                result:
+                text:
                   part_of_speech: adjective
             min: 1
             max: 3
@@ -323,7 +323,7 @@ oracles:
         rows:
           - <<: &i18n.result.common_noun
               _i18n:
-                result:
+                text:
                   part_of_speech: common_noun
             min: 1
             max: 5

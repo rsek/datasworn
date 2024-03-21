@@ -77,7 +77,7 @@ oracles:
         rows:
           - <<: &i18n.adjunct_common_noun
               _i18n:
-                result:
+                text:
                   part_of_speech: adjunct_common_noun
             min: 1
             max: 15
@@ -112,7 +112,7 @@ oracles:
             text: Insect
           - <<: &i18n.adjective
               _i18n:
-                result:
+                text:
                   part_of_speech: adjective
             min: 62
             max: 66
@@ -155,7 +155,7 @@ oracles:
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
-            # *result:RollTwice
+            # *text:RollTwice
       characteristics:
         name: Characteristics
         canonical_name: 'Monstrosity: Characteristics'

@@ -30,7 +30,7 @@ oracles:
             text: Scheme
             <<: &i18n.verb
               _i18n:
-                result:
+                text:
                   part_of_speech: verb
           - min: 2
             max: 2
@@ -445,7 +445,7 @@ oracles:
             text: Risk
             <<: &i18n.common_noun
               _i18n:
-                result:
+                text:
                   part_of_speech: common_noun
           - min: 2
             max: 2

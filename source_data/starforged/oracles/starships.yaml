@@ -429,7 +429,7 @@ oracles:
             text2: Launches fighters
             # set_attributes: {starship_type: [carrier]}
             _i18n: &i18n.result.common_noun
-              result:
+              text:
                 part_of_speech: common_noun
           - min: 3
             max: 6
@@ -541,7 +541,7 @@ oracles:
               - oracle: starforged/oracles/starships/mission
               # set_attributes: {starship_type: [multipurpose]}]
             _i18n: &i18n.result.adjective
-              result:
+              text:
                 part_of_speech: adjective
           - min: 83
             max: 84
@@ -751,7 +751,7 @@ oracles:
         # content:
         #   tags: [name]
         # _i18n:
-        #   result:
+        #   text:
         #     part_of_speech: proper_noun
         rows:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.

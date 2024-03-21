@@ -1623,37 +1623,37 @@ pub struct I18nHint {
 
 #[derive(Serialize, Deserialize)]
 pub struct I18nHintsTemplate {
-    #[serde(rename = "description")]
+    #[serde(rename = "text")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub description: Option<Box<I18nHint>>,
+    pub text: Option<Box<I18nHint>>,
 
-    #[serde(rename = "detail")]
+    #[serde(rename = "text2")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub detail: Option<Box<I18nHint>>,
+    pub text2: Option<Box<I18nHint>>,
 
-    #[serde(rename = "result")]
+    #[serde(rename = "text3")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub result: Option<Box<I18nHint>>,
+    pub text3: Option<Box<I18nHint>>,
 }
 
 /// Internationalization/localization hints for the text content of this object.
 #[derive(Serialize, Deserialize)]
 pub struct I18nHints {
-    #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub description: Option<Box<I18nHint>>,
-
-    #[serde(rename = "detail")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub detail: Option<Box<I18nHint>>,
-
-    #[serde(rename = "result")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub result: Option<Box<I18nHint>>,
-
     #[serde(rename = "template")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub template: Option<Box<I18nHintsTemplate>>,
+
+    #[serde(rename = "text")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub text: Option<Box<I18nHint>>,
+
+    #[serde(rename = "text2")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub text2: Option<Box<I18nHint>>,
+
+    #[serde(rename = "text3")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub text3: Option<Box<I18nHint>>,
 }
 
 /// Describes a category of standard impacts/debilities.

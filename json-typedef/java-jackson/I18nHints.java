@@ -12,64 +12,22 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class I18nHints {
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("description")
-    private I18nHint description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("detail")
-    private I18nHint detail;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("result")
-    private I18nHint result;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("template")
     private I18nHintsTemplate template;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("text")
+    private I18nHint text;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("text2")
+    private I18nHint text2;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("text3")
+    private I18nHint text3;
+
     public I18nHints() {
-    }
-
-    /**
-     * Getter for description.<p>
-     */
-    public I18nHint getDescription() {
-        return description;
-    }
-
-    /**
-     * Setter for description.<p>
-     */
-    public void setDescription(I18nHint description) {
-        this.description = description;
-    }
-
-    /**
-     * Getter for detail.<p>
-     */
-    public I18nHint getDetail() {
-        return detail;
-    }
-
-    /**
-     * Setter for detail.<p>
-     */
-    public void setDetail(I18nHint detail) {
-        this.detail = detail;
-    }
-
-    /**
-     * Getter for result.<p>
-     */
-    public I18nHint getResult() {
-        return result;
-    }
-
-    /**
-     * Setter for result.<p>
-     */
-    public void setResult(I18nHint result) {
-        this.result = result;
     }
 
     /**
@@ -84,5 +42,47 @@ public class I18nHints {
      */
     public void setTemplate(I18nHintsTemplate template) {
         this.template = template;
+    }
+
+    /**
+     * Getter for text.<p>
+     */
+    public I18nHint getText() {
+        return text;
+    }
+
+    /**
+     * Setter for text.<p>
+     */
+    public void setText(I18nHint text) {
+        this.text = text;
+    }
+
+    /**
+     * Getter for text2.<p>
+     */
+    public I18nHint getText2() {
+        return text2;
+    }
+
+    /**
+     * Setter for text2.<p>
+     */
+    public void setText2(I18nHint text2) {
+        this.text2 = text2;
+    }
+
+    /**
+     * Getter for text3.<p>
+     */
+    public I18nHint getText3() {
+        return text3;
+    }
+
+    /**
+     * Setter for text3.<p>
+     */
+    public void setText3(I18nHint text3) {
+        this.text3 = text3;
     }
 }

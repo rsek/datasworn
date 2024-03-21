@@ -32,7 +32,7 @@ oracles:
             rows:
               - <<: &i18n.proper_noun
                   _i18n:
-                    result:
+                    text:
                       part_of_speech: proper_noun
                 min: 1
                 max: 1

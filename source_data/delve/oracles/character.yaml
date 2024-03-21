@@ -31,7 +31,7 @@ oracles:
         rows:
           - <<: &i18n.gerund
               _i18n:
-                result:
+                text:
                   part_of_speech: gerund
             min: 1
             max: 2
@@ -245,7 +245,7 @@ oracles:
         rows:
           - <<: &i18n.adjective
               _i18n:
-                result:
+                text:
                   part_of_speech: adjective
             min: 1
             max: 6

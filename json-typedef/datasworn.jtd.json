@@ -768,24 +768,24 @@
 		},
 		"I18nHints": {
 			"optionalProperties": {
-				"result": {
+				"text": {
 					"ref": "I18nHint"
 				},
-				"detail": {
+				"text2": {
 					"ref": "I18nHint"
 				},
-				"description": {
+				"text3": {
 					"ref": "I18nHint"
 				},
 				"template": {
 					"optionalProperties": {
-						"result": {
+						"text": {
 							"ref": "I18nHint"
 						},
-						"detail": {
+						"text2": {
 							"ref": "I18nHint"
 						},
-						"description": {
+						"text3": {
 							"ref": "I18nHint"
 						}
 					}

@@ -9,59 +9,59 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class I18nHintsTemplate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("description")
-    private I18nHint description;
+    @JsonProperty("text")
+    private I18nHint text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("detail")
-    private I18nHint detail;
+    @JsonProperty("text2")
+    private I18nHint text2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("result")
-    private I18nHint result;
+    @JsonProperty("text3")
+    private I18nHint text3;
 
     public I18nHintsTemplate() {
     }
 
     /**
-     * Getter for description.<p>
+     * Getter for text.<p>
      */
-    public I18nHint getDescription() {
-        return description;
+    public I18nHint getText() {
+        return text;
     }
 
     /**
-     * Setter for description.<p>
+     * Setter for text.<p>
      */
-    public void setDescription(I18nHint description) {
-        this.description = description;
+    public void setText(I18nHint text) {
+        this.text = text;
     }
 
     /**
-     * Getter for detail.<p>
+     * Getter for text2.<p>
      */
-    public I18nHint getDetail() {
-        return detail;
+    public I18nHint getText2() {
+        return text2;
     }
 
     /**
-     * Setter for detail.<p>
+     * Setter for text2.<p>
      */
-    public void setDetail(I18nHint detail) {
-        this.detail = detail;
+    public void setText2(I18nHint text2) {
+        this.text2 = text2;
     }
 
     /**
-     * Getter for result.<p>
+     * Getter for text3.<p>
      */
-    public I18nHint getResult() {
-        return result;
+    public I18nHint getText3() {
+        return text3;
     }
 
     /**
-     * Setter for result.<p>
+     * Setter for text3.<p>
      */
-    public void setResult(I18nHint result) {
-        this.result = result;
+    public void setText3(I18nHint text3) {
+        this.text3 = text3;
     }
 }

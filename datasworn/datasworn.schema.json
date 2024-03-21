@@ -942,25 +942,25 @@
 			"description": "Internationalization/localization hints for the text content of this object.",
 			"releaseStage": "experimental",
 			"properties": {
-				"result": {
+				"text": {
 					"$ref": "#/definitions/I18nHint"
 				},
-				"detail": {
+				"text2": {
 					"$ref": "#/definitions/I18nHint"
 				},
-				"description": {
+				"text3": {
 					"$ref": "#/definitions/I18nHint"
 				},
 				"template": {
 					"type": "object",
 					"properties": {
-						"result": {
+						"text": {
 							"$ref": "#/definitions/I18nHint"
 						},
-						"detail": {
+						"text2": {
 							"$ref": "#/definitions/I18nHint"
 						},
-						"description": {
+						"text3": {
 							"$ref": "#/definitions/I18nHint"
 						}
 					}

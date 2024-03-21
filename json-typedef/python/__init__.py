@@ -2899,26 +2899,26 @@ class I18nHint:
 
 @dataclass
 class I18nHintsTemplate:
-    description: 'Optional[I18nHint]'
-    detail: 'Optional[I18nHint]'
-    result: 'Optional[I18nHint]'
+    text: 'Optional[I18nHint]'
+    text2: 'Optional[I18nHint]'
+    text3: 'Optional[I18nHint]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'I18nHintsTemplate':
         return cls(
-            _from_json_data(Optional[I18nHint], data.get("description")),
-            _from_json_data(Optional[I18nHint], data.get("detail")),
-            _from_json_data(Optional[I18nHint], data.get("result")),
+            _from_json_data(Optional[I18nHint], data.get("text")),
+            _from_json_data(Optional[I18nHint], data.get("text2")),
+            _from_json_data(Optional[I18nHint], data.get("text3")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
-        if self.detail is not None:
-             data["detail"] = _to_json_data(self.detail)
-        if self.result is not None:
-             data["result"] = _to_json_data(self.result)
+        if self.text is not None:
+             data["text"] = _to_json_data(self.text)
+        if self.text2 is not None:
+             data["text2"] = _to_json_data(self.text2)
+        if self.text3 is not None:
+             data["text3"] = _to_json_data(self.text3)
         return data
 
 @dataclass
@@ -2927,30 +2927,30 @@ class I18nHints:
     Internationalization/localization hints for the text content of this object.
     """
 
-    description: 'Optional[I18nHint]'
-    detail: 'Optional[I18nHint]'
-    result: 'Optional[I18nHint]'
     template: 'Optional[I18nHintsTemplate]'
+    text: 'Optional[I18nHint]'
+    text2: 'Optional[I18nHint]'
+    text3: 'Optional[I18nHint]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'I18nHints':
         return cls(
-            _from_json_data(Optional[I18nHint], data.get("description")),
-            _from_json_data(Optional[I18nHint], data.get("detail")),
-            _from_json_data(Optional[I18nHint], data.get("result")),
             _from_json_data(Optional[I18nHintsTemplate], data.get("template")),
+            _from_json_data(Optional[I18nHint], data.get("text")),
+            _from_json_data(Optional[I18nHint], data.get("text2")),
+            _from_json_data(Optional[I18nHint], data.get("text3")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
-        if self.detail is not None:
-             data["detail"] = _to_json_data(self.detail)
-        if self.result is not None:
-             data["result"] = _to_json_data(self.result)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
+        if self.text is not None:
+             data["text"] = _to_json_data(self.text)
+        if self.text2 is not None:
+             data["text2"] = _to_json_data(self.text2)
+        if self.text3 is not None:
+             data["text3"] = _to_json_data(self.text3)
         return data
 
 @dataclass

@@ -742,19 +742,19 @@ module Datasworn
   end
 
   class I18nHintsTemplate
-    attr_accessor description: I18nHint?
-    attr_accessor detail: I18nHint?
-    attr_accessor result: I18nHint?
+    attr_accessor text: I18nHint?
+    attr_accessor text2: I18nHint?
+    attr_accessor text3: I18nHint?
 
     def self.from_json_data: (untyped) -> I18nHintsTemplate
     def to_json_data: () -> untyped
   end
 
   class I18nHints
-    attr_accessor description: I18nHint?
-    attr_accessor detail: I18nHint?
-    attr_accessor result: I18nHint?
     attr_accessor template: I18nHintsTemplate?
+    attr_accessor text: I18nHint?
+    attr_accessor text2: I18nHint?
+    attr_accessor text3: I18nHint?
 
     def self.from_json_data: (untyped) -> I18nHints
     def to_json_data: () -> untyped

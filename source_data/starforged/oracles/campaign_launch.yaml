@@ -33,7 +33,7 @@ oracles:
             text2: '[Healer](id:starforged/assets/path/healer); [Veteran](id:starforged/assets/path/veteran)'
             <<: &i18n
               _i18n:
-                result:
+                text:
                   part_of_speech: common_noun
             # suggestions:
             #   assets:
