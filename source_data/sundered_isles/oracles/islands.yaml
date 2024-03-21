@@ -443,7 +443,7 @@ oracles:
           vitality:
             _source: *Source
             name: Vitality
-            oracle_type: table_shared_details
+            oracle_type: table_shared_text2
             column_labels:
               text: Result
               text2: Detail
@@ -453,7 +453,7 @@ oracles:
                 <<: &Myriads
                   name: Myriads
                   summary: Central Seas
-                oracle_type: column_details
+                oracle_type: column_text2
                 rows:
                   - min: 1
                     max: 15
@@ -490,7 +490,7 @@ oracles:
                 <<: &Margins
                   name: Margins
                   summary: Outer Seas
-                oracle_type: column_details
+                oracle_type: column_text2
                 rows:
                   - min: 1
                     max: 10
@@ -515,7 +515,7 @@ oracles:
                 <<: &Reaches
                   name: Reaches
                   summary: Remote Seas
-                oracle_type: column_details
+                oracle_type: column_text2
                 rows:
                   - min: 1
                     max: 5

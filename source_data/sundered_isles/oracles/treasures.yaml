@@ -743,7 +743,7 @@ oracles:
         _source:
           <<: *Source
         summary: A trove or hoard contain a vast array of riches. Collecting and transporting a trove requires great effort, while the logistics of gathering a hoard is an inconceivable task.
-        oracle_type: table_shared_details
+        oracle_type: table_shared_text2
         # rendering:
         #   columns:
         #     - table_key: small
@@ -760,7 +760,7 @@ oracles:
         contents:
           small:
             name: Small
-            oracle_type: column_details
+            oracle_type: column_text2
             rows:
               - &Value.0
                 min: 1
@@ -781,7 +781,7 @@ oracles:
                 text2: Immeasurable riches
           medium:
             name: Medium
-            oracle_type: column_details
+            oracle_type: column_text2
             rows:
               - <<: *Value.0
                 min: 1
@@ -793,7 +793,7 @@ oracles:
               - *Value.3
           large:
             name: Large
-            oracle_type: column_details
+            oracle_type: column_text2
             rows:
             - <<: *Value.0
               min: 1
@@ -807,7 +807,7 @@ oracles:
             - *Value.3
           vast:
             name: Vast
-            oracle_type: column_details
+            oracle_type: column_text2
             rows:
               - <<: *Value.0
                 min: 1

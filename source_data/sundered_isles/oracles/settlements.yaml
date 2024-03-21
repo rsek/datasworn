@@ -889,7 +889,7 @@ oracles:
         _source:
           <<: *Source
         name: Size
-        oracle_type: table_shared_details
+        oracle_type: table_shared_text2
         # rendering:
         #   columns:
         #     - table_key: myriads
@@ -910,7 +910,7 @@ oracles:
             #   <<: *Source
             name: Myriads
             summary: Central Seas
-            oracle_type: column_details
+            oracle_type: column_text2
             rows:
               - <<: &Size.0
                   text: Village or outpost
@@ -938,7 +938,7 @@ oracles:
             #   <<: *Source
             name: Margins
             summary: Outer Seas
-            oracle_type: column_details
+            oracle_type: column_text2
             rows:
               - min: 1
                 max: 40
@@ -957,7 +957,7 @@ oracles:
             #   <<: *Source
             name: Reaches
             summary: Remote Seas
-            oracle_type: column_details
+            oracle_type: column_text2
             rows:
               - min: 1
                 max: 50
@@ -1133,13 +1133,13 @@ oracles:
               <<: *Source
             name: Settlement Focus
             summary: Sections of a large city or city-state can contain their own pursuits and industries, and can even span geographies (seafront, inland, or waterside). Revisit this table if you spend time in a place and learn more about its activities.
-            oracle_type: table_shared_details
+            oracle_type: table_shared_text2
             contents:
               seafront:
                 # source:
                 #   <<: *Source
                 name: Seafront
-                oracle_type: column_details
+                oracle_type: column_text2
                 rows:
                   - min: 1
                     max: 3
@@ -1330,7 +1330,7 @@ oracles:
                 # source:
                 #   <<: *Source
                 name: Inland
-                oracle_type: column_details
+                oracle_type: column_text2
                 rows:
                   - *Focus.0
                   - *Focus.1
@@ -1437,7 +1437,7 @@ oracles:
                 # source:
                 #   <<: *Source
                 name: Waterside
-                oracle_type: column_details
+                oracle_type: column_text2
                 rows:
                   - *Focus.0
                   - *Focus.1
