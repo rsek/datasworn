@@ -103,7 +103,7 @@ oracles:
             <<: &Feature
               name: Feature
               summary: Use this table to reveal a new aspect of the location.
-              oracle_type: table_basic
+              oracle_type: table_text
             _source: *CollectionSource
             rows:
               - &Feature.0
@@ -168,7 +168,7 @@ oracles:
             <<: &Peril
               name: Peril
               summary: Use this table to help envision a complication or hazard.
-              oracle_type: table_basic
+              oracle_type: table_text
             _source: *CollectionSource
             rows:
               - &Peril.0
@@ -232,7 +232,7 @@ oracles:
             <<: &Opportunity
               name: Opportunity
               summary: Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.
-              oracle_type: table_basic
+              oracle_type: table_text
             _source: *CollectionSource
             rows:
               - &Opportunity.0

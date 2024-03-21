@@ -15,7 +15,7 @@ oracles:
     contents:
       class:
         name: Planetary Class
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 306
@@ -111,7 +111,7 @@ oracles:
           lifebearing:
             # source: *CollectionSource
             name: Lifebearing
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires: &attr:Life.Lifebearing
             #     attributes:
@@ -277,7 +277,7 @@ oracles:
           lifeless:
             name: Lifeless
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires: &attr:Life.Lifeless
             #     attributes:
@@ -403,7 +403,7 @@ oracles:
           Choose or roll on this table when you want inspiration for a beneficial encounter or event on a planetside journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.
         contents:
           lifebearing:
-            oracle_type: column_basic
+            oracle_type: column_text
             name: Lifebearing
             # source: *CollectionSource
             # usage:
@@ -496,7 +496,7 @@ oracles:
                 text: &Opp.24 Vantage point reveals the lay of the land
                 # suggestions: [*roll:Object]
           lifeless:
-            oracle_type: column_basic
+            oracle_type: column_text
             name: Lifeless
             # source: *CollectionSource
             # usage:

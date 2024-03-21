@@ -16,7 +16,7 @@ oracles:
         _source:
           <<: *Source
         name: Begin a Session
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 10
@@ -52,7 +52,7 @@ oracles:
         _source:
           <<: *Source
         name: Make a Discovery
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 4
@@ -122,7 +122,7 @@ oracles:
         _source:
           <<: *Source
         name: Confront Chaos
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 6
@@ -188,7 +188,7 @@ oracles:
         _source:
           <<: *Source
         name: Take Decisive Action
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 40
@@ -212,7 +212,7 @@ oracles:
         _source:
           <<: *Source
         name: Endure Harm
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 10
@@ -233,7 +233,7 @@ oracles:
         _source:
           <<: *Source
         name: Endure Stress
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 10
@@ -251,7 +251,7 @@ oracles:
         _source:
           <<: *Source
         name: Withstand Damage
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 10
@@ -281,7 +281,7 @@ oracles:
         _source:
           <<: *Source
         name: Pay the Price
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 2

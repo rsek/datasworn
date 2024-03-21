@@ -32,7 +32,7 @@ oracles:
                 starforged:
                   region: terminus
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             # rendering: &Pop.rendering
             # usage:
             #   requires:
@@ -65,7 +65,7 @@ oracles:
                 text: Tens of thousands
                 # set_attributes: {population: [tens_of_thousands]}
           outlands:
-            oracle_type: column_basic
+            oracle_type: column_text
             <<: &OracleTable.Outlands
               name: Outlands
               tags:
@@ -94,7 +94,7 @@ oracles:
                 max: 100
                 <<: *Pop.4
           expanse:
-            oracle_type: column_basic
+            oracle_type: column_text
             <<: &OracleTable.Expanse
               name: Expanse
               tags:
@@ -125,7 +125,7 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_basic
+        oracle_type: table_text
         # _templateOracleTable: *template.info:Generic.Location
         _source:
           <<: *Source
@@ -147,7 +147,7 @@ oracles:
             icon: icon/oracles/location/deep_space.svg
       first_look:
         name: First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 323
@@ -232,7 +232,7 @@ oracles:
 
       initial_contact:
         name: Initial Contact
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 323
@@ -289,7 +289,7 @@ oracles:
 
       authority:
         name: Authority
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 323
@@ -336,7 +336,7 @@ oracles:
             # set_attributes: {authority: [oppressive]}
       projects:
         name: Settlement Projects
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 324
@@ -494,7 +494,7 @@ oracles:
                   auto: true
       trouble:
         name: Settlement Trouble
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 324
@@ -631,7 +631,7 @@ oracles:
             <<: *ActionTheme
       name:
         name: Settlement Name
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 325
@@ -1089,7 +1089,8 @@ oracles:
       name_tags:
         name: Name tags
         # not technically a table, but might be useful to randomize for settlement names
-        oracle_type: table_basic
+        dice: 1d10
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 325

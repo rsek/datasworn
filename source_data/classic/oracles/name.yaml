@@ -27,7 +27,7 @@ oracles:
               <<: *Source
               page: 184
             name: Table A
-            oracle_type: table_basic
+            oracle_type: table_text
             canonical_name: Ironlander Names
             rows:
               - <<: &i18n.proper_noun
@@ -439,7 +439,7 @@ oracles:
               page: 185
             canonical_name: Ironlander Names
             name: Table B
-            oracle_type: table_basic
+            oracle_type: table_text
             rows:
               - <<: *i18n.proper_noun
                 min: 1
@@ -852,7 +852,7 @@ oracles:
         contents:
           giants:
             name: Giants
-            oracle_type: column_basic
+            oracle_type: column_text
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
@@ -957,7 +957,7 @@ oracles:
                 text: Denua
           varou:
             name: Varou
-            oracle_type: column_basic
+            oracle_type: column_text
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
@@ -1062,7 +1062,7 @@ oracles:
                 text: Vojan
           trolls:
             name: Trolls
-            oracle_type: column_basic
+            oracle_type: column_text
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
@@ -1168,7 +1168,7 @@ oracles:
     contents:
       elf:
         name: Elf Names
-        oracle_type: table_basic
+        oracle_type: table_text
         canonical_name: 'Oracle 14: Elf Names'
         summary: Use this oracle to generate a name for an elf character.
         _source:

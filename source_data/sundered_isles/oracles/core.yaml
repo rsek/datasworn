@@ -14,7 +14,7 @@ oracles:
     contents:
       action:
         _source: *Source
-        oracle_type: table_basic
+        oracle_type: table_text
         name: Action
         rows:
           - min: 1
@@ -319,7 +319,7 @@ oracles:
             text: Withdraw
       theme:
         _source: *Source
-        oracle_type: table_basic
+        oracle_type: table_text
         name: Theme
         rows:
           - min: 1
@@ -624,7 +624,7 @@ oracles:
             text: Weapon
       descriptor:
         name: Descriptor
-        oracle_type: table_basic
+        oracle_type: table_text
         _source: *Source
         rows:
           - min: 1
@@ -929,7 +929,7 @@ oracles:
             text: Wrecked
       focus:
         name: Focus
-        oracle_type: table_basic
+        oracle_type: table_text
         _source: *Source
         rows:
           - min: 1

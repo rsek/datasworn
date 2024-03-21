@@ -50,7 +50,7 @@ namespace Datasworn
         /// An array of objects, each representing a single row of the table.
         /// </summary>
         [JsonPropertyName("rows")]
-        public IList<OracleTableRow2textCells> Rows { get; set; }
+        public IList<OracleTableRowText2> Rows { get; set; }
 
         /// <summary>
         /// The name of this item as it appears on the page in the book, if it's

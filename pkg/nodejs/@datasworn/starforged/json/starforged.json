@@ -451,7 +451,7 @@
 				"backstory_prompts": {
 					"_id": "starforged/oracles/campaign_launch/backstory_prompts",
 					"name": "Backstory Prompts",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "For some backstory inspiration, roll or pick from the table below. Then, take a moment to elaborate on the suggestion. Or just leave it a bit vague and mysterious for now; you can flesh it out in play.",
 					"column_labels": {
@@ -551,7 +551,7 @@
 				"starship_history": {
 					"_id": "starforged/oracles/campaign_launch/starship_history",
 					"name": "Starship History",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Envision how you obtained or earned this ship. You can come up with your own origin, or roll or pick from the table below. If you use a result from the table, take a moment to consider and elaborate on the suggestion.",
 					"column_labels": {
@@ -636,7 +636,7 @@
 				"starship_quirks": {
 					"_id": "starforged/oracles/campaign_launch/starship_quirks",
 					"name": "Starship Quirks",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Your ship is an important aspect of your character—and a character in its own right. What does it look like? What makes it interesting or uniquely yours? Does it have any particular quirks? If nothing occurs to you now, you can flesh it out in play, or roll once or twice on the table below.",
 					"recommended_rolls": {
@@ -765,7 +765,7 @@
 				"sector_trouble": {
 					"_id": "starforged/oracles/campaign_launch/sector_trouble",
 					"name": "Sector Trouble",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -889,7 +889,7 @@
 				"inciting_incident": {
 					"_id": "starforged/oracles/campaign_launch/inciting_incident",
 					"name": "Inciting Incident",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -1033,7 +1033,7 @@
 				"first_look": {
 					"_id": "starforged/oracles/characters/first_look",
 					"name": "First Look",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"recommended_rolls": {
 						"min": 1,
@@ -1451,7 +1451,7 @@
 				"initial_disposition": {
 					"_id": "starforged/oracles/characters/initial_disposition",
 					"name": "Initial Disposition",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -1595,7 +1595,7 @@
 				"role": {
 					"_id": "starforged/oracles/characters/role",
 					"name": "Character Role",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -2114,7 +2114,7 @@
 				"goal": {
 					"_id": "starforged/oracles/characters/goal",
 					"name": "Character Goal",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -2363,7 +2363,7 @@
 				"revealed_aspect": {
 					"_id": "starforged/oracles/characters/revealed_aspect",
 					"name": "Revealed Character Aspect",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. You may ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.",
 					"recommended_rolls": {
@@ -3400,7 +3400,7 @@
 						"given": {
 							"_id": "starforged/oracles/characters/name/given",
 							"name": "Given Name",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"summary": "Given and family names can be used independently as standalone names. In many cases you can reverse the order.",
 							"suggestions": {
@@ -4415,7 +4415,7 @@
 						"callsign": {
 							"_id": "starforged/oracles/characters/name/callsign",
 							"name": "Callsign",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"summary": "Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.",
 							"suggestions": {
@@ -5430,7 +5430,7 @@
 						"family_name": {
 							"_id": "starforged/oracles/characters/name/family_name",
 							"name": "Family Name",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"summary": "Given and family names can be used independently as standalone names. In many cases you can reverse the order.",
 							"suggestions": {
@@ -6481,7 +6481,7 @@
 				"action": {
 					"_id": "starforged/oracles/core/action",
 					"name": "Action",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) about a goal, situation, or event, roll for an [Action](id:starforged/oracles/core/action) and [Theme](id:starforged/oracles/core/theme). Together, these provide an interpretative verb/noun prompt.",
 					"column_labels": {
@@ -7509,7 +7509,7 @@
 				"theme": {
 					"_id": "starforged/oracles/core/theme",
 					"name": "Theme",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) about a goal, situation, or event, roll for an [Action](id:starforged/oracles/core/action) and [Theme](id:starforged/oracles/core/theme). Together, these provide an interpretative verb/noun prompt.",
 					"column_labels": {
@@ -8537,7 +8537,7 @@
 				"descriptor": {
 					"_id": "starforged/oracles/core/descriptor",
 					"name": "Descriptor",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) to help define the nature of a location, discovery, or encounter, roll for a [Descriptor](id:starforged/oracles/core/descriptor) and a [Focus](id:starforged/oracles/core/focus) for an adjective/noun prompt.",
 					"column_labels": {
@@ -9565,7 +9565,7 @@
 				"focus": {
 					"_id": "starforged/oracles/core/focus",
 					"name": "Focus",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) to help define the nature of a location, discovery, or encounter, roll for a [Descriptor](id:starforged/oracles/core/descriptor) and a [Focus](id:starforged/oracles/core/focus) for an adjective/noun prompt.",
 					"column_labels": {
@@ -10613,7 +10613,7 @@
 				"environment": {
 					"_id": "starforged/oracles/creatures/environment",
 					"name": "Environment",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Choose the closest match for your location. Or roll to identify the primary habitat of a creature.",
 					"column_labels": {
@@ -10738,7 +10738,7 @@
 				"scale": {
 					"_id": "starforged/oracles/creatures/scale",
 					"name": "Scale",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -10841,7 +10841,7 @@
 				"ultra_scale": {
 					"_id": "starforged/oracles/creatures/ultra_scale",
 					"name": "Ultra-scale",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -10895,7 +10895,7 @@
 				"first_look": {
 					"_id": "starforged/oracles/creatures/first_look",
 					"name": "Creature First Look",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Roll for a basic form, and flesh out the creature’s appearance using the First Look table.",
 					"recommended_rolls": {
@@ -11174,7 +11174,7 @@
 				"encountered_behavior": {
 					"_id": "starforged/oracles/creatures/encountered_behavior",
 					"name": "Encountered Behavior",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Roll once on the Encountered Behavior table to define this creature’s motivation and frame how the encounter begins.",
 					"column_labels": {
@@ -11418,7 +11418,7 @@
 				"revealed_aspect": {
 					"_id": "starforged/oracles/creatures/revealed_aspect",
 					"name": "Revealed Creature Aspect",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Roll on this table as you interact with the creature to introduce new features or behaviors.",
 					"description": "Roll on this table as you interact with the creature to introduce new features or behaviors. Some results may contradict the established nature of a creature. For example, an amorphous creature that you envisioned as a mass of pure energy would not have typical physical features. If a result doesn’t fit, feel free to ignore, reroll, or adjust. Or envision how this contradiction signals a new understanding or unexpected transformation.",
@@ -11706,7 +11706,7 @@
 						"space": {
 							"_id": "starforged/oracles/creatures/basic_form/space",
 							"name": "Space",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"color": "#131A1C",
 							"icon": "icons/creature/environment/space.svg",
 							"dice": "1d100",
@@ -11832,7 +11832,7 @@
 						"interior": {
 							"_id": "starforged/oracles/creatures/basic_form/interior",
 							"name": "Interior",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"color": "#80868E",
 							"icon": "icons/creature/environment/interior.svg",
 							"dice": "1d100",
@@ -11958,7 +11958,7 @@
 						"land": {
 							"_id": "starforged/oracles/creatures/basic_form/land",
 							"name": "Land",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"color": "#CA181A",
 							"icon": "icons/creature/environment/land.svg",
 							"dice": "1d100",
@@ -12084,7 +12084,7 @@
 						"liquid": {
 							"_id": "starforged/oracles/creatures/basic_form/liquid",
 							"name": "Liquid",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"color": "#0079BB",
 							"icon": "icons/creature/environment/liquid.svg",
 							"dice": "1d100",
@@ -12210,7 +12210,7 @@
 						"air": {
 							"_id": "starforged/oracles/creatures/basic_form/air",
 							"name": "Air",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"color": "#8D1D82",
 							"icon": "icons/creature/environment/air.svg",
 							"dice": "1d100",
@@ -12374,7 +12374,7 @@
 				"location": {
 					"_id": "starforged/oracles/derelicts/location",
 					"name": "Location",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -12425,7 +12425,7 @@
 				"condition": {
 					"_id": "starforged/oracles/derelicts/condition",
 					"name": "Condition",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -12479,7 +12479,7 @@
 				"outer_first_look": {
 					"_id": "starforged/oracles/derelicts/outer_first_look",
 					"name": "Outer First Look",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use these First Look tables for your initial survey of the derelict.",
 					"column_labels": {
@@ -12554,7 +12554,7 @@
 				"inner_first_look": {
 					"_id": "starforged/oracles/derelicts/inner_first_look",
 					"name": "Inner First Look",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use these First Look tables for your initial survey of the derelict's interior.",
 					"recommended_rolls": {
@@ -12767,7 +12767,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/access/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -12832,7 +12832,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/access/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -12973,7 +12973,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/access/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -13078,7 +13078,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/access/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -13148,7 +13148,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/community/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -13233,7 +13233,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/community/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -13334,7 +13334,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/community/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -13439,7 +13439,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/community/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -13509,7 +13509,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/engineering/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -13594,7 +13594,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/engineering/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -13695,7 +13695,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/engineering/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -13800,7 +13800,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/engineering/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -13870,7 +13870,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/living/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -13955,7 +13955,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/living/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -14056,7 +14056,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/living/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -14161,7 +14161,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/living/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -14231,7 +14231,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/medical/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -14316,7 +14316,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/medical/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -14417,7 +14417,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/medical/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -14522,7 +14522,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/medical/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -14592,7 +14592,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/operations/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -14677,7 +14677,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/operations/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -14778,7 +14778,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/operations/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -14883,7 +14883,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/operations/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -14953,7 +14953,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/production/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -15038,7 +15038,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/production/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -15139,7 +15139,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/production/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -15244,7 +15244,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/production/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -15314,7 +15314,7 @@
 						"area": {
 							"_id": "starforged/oracles/derelicts/research/area",
 							"name": "Area",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.",
 							"column_labels": {
@@ -15399,7 +15399,7 @@
 						"feature": {
 							"_id": "starforged/oracles/derelicts/research/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.",
 							"column_labels": {
@@ -15500,7 +15500,7 @@
 						"peril": {
 							"_id": "starforged/oracles/derelicts/research/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.",
 							"column_labels": {
@@ -15605,7 +15605,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/research/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 							"column_labels": {
@@ -15675,7 +15675,7 @@
 						"planetside": {
 							"_id": "starforged/oracles/derelicts/type/planetside",
 							"name": "Planetside",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"icon": "icon/oracles/location/planetside.svg",
 							"dice": "1d100",
 							"tags": {
@@ -15705,7 +15705,7 @@
 						"orbital": {
 							"_id": "starforged/oracles/derelicts/type/orbital",
 							"name": "Orbital",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"icon": "icon/oracles/location/orbital.svg",
 							"dice": "1d100",
 							"tags": {
@@ -15735,7 +15735,7 @@
 						"deep_space": {
 							"_id": "starforged/oracles/derelicts/type/deep_space",
 							"name": "Deep Space",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"icon": "icon/oracles/location/deep_space.svg",
 							"dice": "1d100",
 							"tags": {
@@ -15788,7 +15788,7 @@
 						"starship": {
 							"_id": "starforged/oracles/derelicts/zones/starship",
 							"name": "Starship",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
 							"rows": [
@@ -15845,7 +15845,7 @@
 						"settlement": {
 							"_id": "starforged/oracles/derelicts/zones/settlement",
 							"name": "Settlement",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
 							"rows": [
@@ -16117,7 +16117,7 @@
 				"dominion": {
 					"_id": "starforged/oracles/factions/dominion",
 					"name": "Dominion",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"icon": "icons/factions/dominion.svg",
 					"dice": "1d100",
 					"recommended_rolls": {
@@ -16386,7 +16386,7 @@
 				"dominion_leadership": {
 					"_id": "starforged/oracles/factions/dominion_leadership",
 					"name": "Dominion: Leadership",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -16460,7 +16460,7 @@
 				"guild": {
 					"_id": "starforged/oracles/factions/guild",
 					"name": "Guild",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"icon": "icons/factions/guild.svg",
 					"dice": "1d100",
 					"column_labels": {
@@ -16644,7 +16644,7 @@
 				"fringe_group": {
 					"_id": "starforged/oracles/factions/fringe_group",
 					"name": "Fringe Group",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"icon": "icons/factions/fringe_group.svg",
 					"dice": "1d100",
 					"column_labels": {
@@ -16798,7 +16798,7 @@
 				"projects": {
 					"_id": "starforged/oracles/factions/projects",
 					"name": "Faction",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"description": "Pick or roll on this table to reveal the current focus of a faction. Then, use the nature of the organization to help envision the meaning of the project. The result may introduce events that motivate your character to aid or resist the project, or can serve as background detail for your setting. If you would like to track the faction’s progress, set a clock for the project using the campaign clock guidelines on page 235.",
 					"recommended_rolls": {
@@ -17008,7 +17008,7 @@
 				"relationships": {
 					"_id": "starforged/oracles/factions/relationships",
 					"name": "Faction Relationships",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"description": "Factions add scale and narrative opportunities to your setting. But keep it manageable. Don’t overload your campaign with factions. Instead, focus on your interactions and entanglements with members of a few interesting factions. Then, when you have a question about the relationship of one faction to another, use this table. The result is the commonly understood connection between those factions. Further investigations or events may reveal a deeper or alternate truth.",
 					"column_labels": {
@@ -17182,7 +17182,7 @@
 				"quirks": {
 					"_id": "starforged/oracles/factions/quirks",
 					"name": "Faction Quirks",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"description": "Roll or pick known characteristics of the faction and its members using this table. But keep in mind that even within a small or specialized faction, there are no absolutes. These quirks represent common attitudes, practices, or approaches, but are not universal to every member of that faction. Leave room in your portrayal for diversity and contradictions.",
 					"recommended_rolls": {
@@ -17392,7 +17392,7 @@
 				"rumors": {
 					"_id": "starforged/oracles/factions/rumors",
 					"name": "Faction Rumors",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.",
 					"recommended_rolls": {
@@ -17609,7 +17609,7 @@
 						"template": {
 							"_id": "starforged/oracles/factions/name/template",
 							"name": "Faction Name Template",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"description": "To generate a faction name, first roll or choose the name template. Then, follow the structure of the template to build the name from individual tables. If you’ve already set the faction type, picking from the tables (instead of rolling) will likely provide a more appropriate result. For example, “Silver Jackals” is a fitting name for a criminal organization. The “Empire of the Undying Suns” is a less apt name for that gang—unless their leader is prone to delusions of grandeur. In short, choosing a name will give you more control. Rolling might give you a result that doesn’t square with known aspects, but those contradictions may prove inspiring.\n\nAn alternative approach to generating a faction from scratch is to start with a random name. Then, consider what the name evokes and choose an appropriate faction type instead of rolling on those tables. For example, “Bloody Ravens” might suggest a mercenary guild, while the “Republic of the Radiant Servants” brings to mind a dominion built upon a religion, or one that idolizes a prophesied leader. If a result doesn’t inspire anything interesting, roll again or pick.",
 							"column_labels": {
@@ -17694,7 +17694,7 @@
 						"legacy": {
 							"_id": "starforged/oracles/factions/name/legacy",
 							"name": "Legacy",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -18218,7 +18218,7 @@
 						"affiliation": {
 							"_id": "starforged/oracles/factions/name/affiliation",
 							"name": "Affiliation",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -18492,7 +18492,7 @@
 						"identity": {
 							"_id": "starforged/oracles/factions/name/identity",
 							"name": "Identity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -19142,7 +19142,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/chaotic/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -19248,7 +19248,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/chaotic/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -19358,7 +19358,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/chaotic/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -19429,7 +19429,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/fortified/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -19535,7 +19535,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/fortified/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -19645,7 +19645,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/fortified/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -19716,7 +19716,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/haunted/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -19822,7 +19822,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/haunted/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -19932,7 +19932,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/haunted/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -20003,7 +20003,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/infested/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -20109,7 +20109,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/infested/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -20219,7 +20219,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/infested/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -20290,7 +20290,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/inhabited/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -20396,7 +20396,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/inhabited/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -20506,7 +20506,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/inhabited/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -20577,7 +20577,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/mechanical/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -20683,7 +20683,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/mechanical/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -20793,7 +20793,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/mechanical/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -20864,7 +20864,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/ruined/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -20970,7 +20970,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/ruined/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -21080,7 +21080,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/ruined/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -21151,7 +21151,7 @@
 						"feature": {
 							"_id": "starforged/oracles/location_themes/sacred/feature",
 							"name": "Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal a new aspect of the location.",
 							"column_labels": {
@@ -21257,7 +21257,7 @@
 						"peril": {
 							"_id": "starforged/oracles/location_themes/sacred/peril",
 							"name": "Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication or hazard.",
 							"column_labels": {
@@ -21367,7 +21367,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/sacred/opportunity",
 							"name": "Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
 							"column_labels": {
@@ -21450,7 +21450,7 @@
 				"story_complication": {
 					"_id": "starforged/oracles/misc/story_complication",
 					"name": "Story Complication",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](id:starforged/moves/fate/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.",
 					"column_labels": {
@@ -21629,7 +21629,7 @@
 				"story_clue": {
 					"_id": "starforged/oracles/misc/story_clue",
 					"name": "Story Clue",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "When you [Gather Information](id:starforged/moves/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](id:starforged/moves/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.",
 					"recommended_rolls": {
@@ -21829,7 +21829,7 @@
 				"anomaly_effect": {
 					"_id": "starforged/oracles/misc/anomaly_effect",
 					"name": "Anomaly Effect",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Meddling with alien artifacts or forbidden magic may put you at the mercy of chaos. Use this table to resolve the effects of ancient tech, rituals, or other strange forces. Results on this table may have devastating implications, so use it only in rare and dramatic moments.",
 					"column_labels": {
@@ -22028,7 +22028,7 @@
 				"combat_action": {
 					"_id": "starforged/oracles/misc/combat_action",
 					"name": "Combat Action",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and your objective.",
 					"column_labels": {
@@ -22246,7 +22246,7 @@
 				"begin_a_session": {
 					"_id": "starforged/oracles/moves/begin_a_session",
 					"name": "Begin a Session",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22320,7 +22320,7 @@
 				"make_a_discovery": {
 					"_id": "starforged/oracles/moves/make_a_discovery",
 					"name": "Make a Discovery",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22468,7 +22468,7 @@
 				"confront_chaos": {
 					"_id": "starforged/oracles/moves/confront_chaos",
 					"name": "Confront Chaos",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22607,7 +22607,7 @@
 				"take_decisive_action": {
 					"_id": "starforged/oracles/moves/take_decisive_action",
 					"name": "Take Decisive Action",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22661,7 +22661,7 @@
 				"endure_harm": {
 					"_id": "starforged/oracles/moves/endure_harm",
 					"name": "Endure Harm",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22710,7 +22710,7 @@
 				"endure_stress": {
 					"_id": "starforged/oracles/moves/endure_stress",
 					"name": "Endure Stress",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22754,7 +22754,7 @@
 				"withstand_damage": {
 					"_id": "starforged/oracles/moves/withstand_damage",
 					"name": "Withstand Damage",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22818,7 +22818,7 @@
 				"pay_the_price": {
 					"_id": "starforged/oracles/moves/pay_the_price",
 					"name": "Pay the Price",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -22958,7 +22958,7 @@
 						"almost_certain": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/almost_certain",
 							"name": "Almost Certain",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
@@ -22979,7 +22979,7 @@
 						"likely": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/likely",
 							"name": "Likely",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
@@ -23000,7 +23000,7 @@
 						"fifty_fifty": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/fifty_fifty",
 							"name": "50/50",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
@@ -23021,7 +23021,7 @@
 						"unlikely": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/unlikely",
 							"name": "Unlikely",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
@@ -23042,7 +23042,7 @@
 						"small_chance": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/small_chance",
 							"name": "Small Chance",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, envision an extreme result or twist."
@@ -23099,7 +23099,7 @@
 				"class": {
 					"_id": "starforged/oracles/planets/class",
 					"name": "Planetary Class",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "This oracle provides a simple method of generating a planetary class. If this is enough information, stop there and envision the world as appropriate to its type. For a bit more detail, make a roll on the Descriptor oracle and envision how that aspect defines the nature of the planet or a specific planetside location.",
 					"column_labels": {
@@ -23194,7 +23194,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/desert/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -23318,7 +23318,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/desert/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -23372,7 +23372,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/desert/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -23466,7 +23466,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/desert/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -23585,7 +23585,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/desert/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -23646,7 +23646,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/desert/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -23684,7 +23684,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/desert/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -23722,7 +23722,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/desert/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -23801,7 +23801,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/furnace/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -23925,7 +23925,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/furnace/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -23979,7 +23979,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/furnace/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -24073,7 +24073,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/furnace/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -24192,7 +24192,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/furnace/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -24253,7 +24253,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/furnace/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -24291,7 +24291,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/furnace/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -24329,7 +24329,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/furnace/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -24408,7 +24408,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/grave/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -24532,7 +24532,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/grave/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -24586,7 +24586,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/grave/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -24680,7 +24680,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/grave/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -24799,7 +24799,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/grave/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -24860,7 +24860,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/grave/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -24898,7 +24898,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/grave/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -24936,7 +24936,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/grave/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -25015,7 +25015,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/ice/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -25139,7 +25139,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/ice/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -25193,7 +25193,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/ice/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -25287,7 +25287,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/ice/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -25406,7 +25406,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/ice/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -25467,7 +25467,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/ice/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -25505,7 +25505,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/ice/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -25543,7 +25543,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/ice/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -25622,7 +25622,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/jovian/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -25746,7 +25746,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/jovian/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -25800,7 +25800,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/jovian/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -25894,7 +25894,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/jovian/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -26013,7 +26013,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/jovian/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -26074,7 +26074,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/jovian/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -26112,7 +26112,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/jovian/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -26150,7 +26150,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/jovian/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -26229,7 +26229,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/jungle/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -26353,7 +26353,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/jungle/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -26407,7 +26407,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/jungle/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -26501,7 +26501,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/jungle/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -26620,7 +26620,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/jungle/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -26681,7 +26681,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/jungle/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -26719,7 +26719,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/jungle/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -26757,7 +26757,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/jungle/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -26836,7 +26836,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/ocean/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -26960,7 +26960,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/ocean/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -27014,7 +27014,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/ocean/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -27108,7 +27108,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/ocean/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -27227,7 +27227,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/ocean/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -27288,7 +27288,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/ocean/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -27326,7 +27326,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/ocean/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -27364,7 +27364,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/ocean/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -27443,7 +27443,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/rocky/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -27567,7 +27567,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/rocky/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -27621,7 +27621,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/rocky/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -27715,7 +27715,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/rocky/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -27834,7 +27834,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/rocky/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -27895,7 +27895,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/rocky/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -27933,7 +27933,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/rocky/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -27971,7 +27971,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/rocky/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -28050,7 +28050,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/shattered/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -28174,7 +28174,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/shattered/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -28228,7 +28228,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/shattered/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -28322,7 +28322,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/shattered/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -28441,7 +28441,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/shattered/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -28502,7 +28502,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/shattered/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -28540,7 +28540,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/shattered/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -28578,7 +28578,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/shattered/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -28657,7 +28657,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/tainted/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -28781,7 +28781,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/tainted/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -28835,7 +28835,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/tainted/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -28929,7 +28929,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/tainted/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -29048,7 +29048,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/tainted/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -29109,7 +29109,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/tainted/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -29147,7 +29147,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/tainted/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -29185,7 +29185,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/tainted/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -29264,7 +29264,7 @@
 						"name": {
 							"_id": "starforged/oracles/planets/vital/name",
 							"name": "Sample Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d20",
 							"column_labels": {
 								"roll": "Roll",
@@ -29388,7 +29388,7 @@
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/vital/atmosphere",
 							"name": "Atmosphere",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -29442,7 +29442,7 @@
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/vital/observed_from_space",
 							"name": "Observed From Space",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -29536,7 +29536,7 @@
 						"feature": {
 							"_id": "starforged/oracles/planets/vital/feature",
 							"name": "Planetside Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"recommended_rolls": {
 								"min": 1,
@@ -29655,7 +29655,7 @@
 						"life": {
 							"_id": "starforged/oracles/planets/vital/life",
 							"name": "Life",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -29709,7 +29709,7 @@
 						"diversity": {
 							"_id": "starforged/oracles/planets/vital/diversity",
 							"name": "Diversity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.",
 							"column_labels": {
@@ -29810,7 +29810,7 @@
 						"biomes": {
 							"_id": "starforged/oracles/planets/vital/biomes",
 							"name": "Biomes",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -30041,7 +30041,7 @@
 								"terminus": {
 									"_id": "starforged/oracles/planets/vital/settlements/terminus",
 									"name": "Terminus",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -30079,7 +30079,7 @@
 								"outlands": {
 									"_id": "starforged/oracles/planets/vital/settlements/outlands",
 									"name": "Outlands",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -30117,7 +30117,7 @@
 								"expanse": {
 									"_id": "starforged/oracles/planets/vital/settlements/expanse",
 									"name": "Expanse",
-									"oracle_type": "column_basic",
+									"oracle_type": "column_text",
 									"dice": "1d100",
 									"tags": {
 										"starforged": {
@@ -30192,7 +30192,7 @@
 						"lifebearing": {
 							"_id": "starforged/oracles/planets/peril/lifebearing",
 							"name": "Lifebearing",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -30395,7 +30395,7 @@
 						"lifeless": {
 							"_id": "starforged/oracles/planets/peril/lifeless",
 							"name": "Lifeless",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -30621,7 +30621,7 @@
 						"lifebearing": {
 							"_id": "starforged/oracles/planets/opportunity/lifebearing",
 							"name": "Lifebearing",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -30754,7 +30754,7 @@
 						"lifeless": {
 							"_id": "starforged/oracles/planets/opportunity/lifeless",
 							"name": "Lifeless",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -30923,7 +30923,7 @@
 				"location": {
 					"_id": "starforged/oracles/settlements/location",
 					"name": "Location",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -30965,7 +30965,7 @@
 				"first_look": {
 					"_id": "starforged/oracles/settlements/first_look",
 					"name": "First Look",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"recommended_rolls": {
 						"min": 1,
@@ -31114,7 +31114,7 @@
 				"initial_contact": {
 					"_id": "starforged/oracles/settlements/initial_contact",
 					"name": "Initial Contact",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -31193,7 +31193,7 @@
 				"authority": {
 					"_id": "starforged/oracles/settlements/authority",
 					"name": "Authority",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -31287,7 +31287,7 @@
 				"projects": {
 					"_id": "starforged/oracles/settlements/projects",
 					"name": "Settlement Projects",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.",
 					"recommended_rolls": {
@@ -31657,7 +31657,7 @@
 				"trouble": {
 					"_id": "starforged/oracles/settlements/trouble",
 					"name": "Settlement Trouble",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Check the Settlement Trouble table when it’s appropriate for your character to know or uncover these details. The Settlement Trouble table provides a broad description of the site’s most dramatic current issue.",
 					"recommended_rolls": {
@@ -31872,7 +31872,7 @@
 				"name": {
 					"_id": "starforged/oracles/settlements/name",
 					"name": "Settlement Name",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Choose a name appropriate to the nature of the settlement, or roll for a random result. You can let the name stand alone, or pair it with one of the following tags: Base, Citadel, Depot, Fortress, Hold, Landing, Outpost, Port, Station, Terminal.",
 					"column_labels": {
@@ -32897,8 +32897,8 @@
 				"name_tags": {
 					"_id": "starforged/oracles/settlements/name_tags",
 					"name": "Name tags",
-					"oracle_type": "table_basic",
-					"dice": "1d100",
+					"oracle_type": "table_text",
+					"dice": "1d10",
 					"column_labels": {
 						"roll": "Roll",
 						"text": "Result"
@@ -32978,7 +32978,7 @@
 						"terminus": {
 							"_id": "starforged/oracles/settlements/population/terminus",
 							"name": "Terminus",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -33016,7 +33016,7 @@
 						"outlands": {
 							"_id": "starforged/oracles/settlements/population/outlands",
 							"name": "Outlands",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -33054,7 +33054,7 @@
 						"expanse": {
 							"_id": "starforged/oracles/settlements/population/expanse",
 							"name": "Expanse",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -33128,7 +33128,7 @@
 				"stellar_object": {
 					"_id": "starforged/oracles/space/stellar_object",
 					"name": "Stellar Object",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use the Stellar Object oracle to learn more about the primary star at a location. This is mostly to help you visualize your surroundings, but the strange or hazardous nature of some rare stars can incite new adventures.",
 					"column_labels": {
@@ -33218,7 +33218,7 @@
 				"peril": {
 					"_id": "starforged/oracles/space/peril",
 					"name": "Spaceborne Peril",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Choose or roll on this table when you want inspiration for a trouble during spaceborne exploration or on an interstellar expedition.",
 					"column_labels": {
@@ -33438,7 +33438,7 @@
 				"opportunity": {
 					"_id": "starforged/oracles/space/opportunity",
 					"name": "Spaceborne Opportunity",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 					"column_labels": {
@@ -33596,7 +33596,7 @@
 						"terminus": {
 							"_id": "starforged/oracles/space/sighting/terminus",
 							"name": "Terminus",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -33757,7 +33757,7 @@
 						"outlands": {
 							"_id": "starforged/oracles/space/sighting/outlands",
 							"name": "Outlands",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -33918,7 +33918,7 @@
 						"expanse": {
 							"_id": "starforged/oracles/space/sighting/expanse",
 							"name": "Expanse",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -34103,7 +34103,7 @@
 						"prefix": {
 							"_id": "starforged/oracles/space/sector_name/prefix",
 							"name": "Prefix",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"suggestions": {
 								"oracles": ["starforged/oracles/space/sector_name/suffix"]
@@ -34599,7 +34599,7 @@
 						"suffix": {
 							"_id": "starforged/oracles/space/sector_name/suffix",
 							"name": "Suffix",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"summary": "To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.",
 							"suggestions": {
@@ -35432,7 +35432,7 @@
 				"fleet": {
 					"_id": "starforged/oracles/starships/fleet",
 					"name": "Fleet",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -35540,7 +35540,7 @@
 				"initial_contact": {
 					"_id": "starforged/oracles/starships/initial_contact",
 					"name": "Initial Contact",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -35624,7 +35624,7 @@
 				"first_look": {
 					"_id": "starforged/oracles/starships/first_look",
 					"name": "First Look",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"recommended_rolls": {
 						"min": 1,
@@ -35778,7 +35778,7 @@
 				"starship_name": {
 					"_id": "starforged/oracles/starships/starship_name",
 					"name": "Starship Name",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Give a starship a name when it has an important role in your story. Scan this table and select a name which fits what you know of the ship’s appearance and role. Or generate a random result and let any contradictions contribute to the ship’s history or nature.",
 					"column_labels": {
@@ -36311,7 +36311,7 @@
 						"terminus": {
 							"_id": "starforged/oracles/starships/mission/terminus",
 							"name": "Terminus",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -36509,7 +36509,7 @@
 						"outlands": {
 							"_id": "starforged/oracles/starships/mission/outlands",
 							"name": "Outlands",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -36707,7 +36707,7 @@
 						"expanse": {
 							"_id": "starforged/oracles/starships/mission/expanse",
 							"name": "Expanse",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"tags": {
 								"starforged": {
@@ -36942,7 +36942,7 @@
 				"location": {
 					"_id": "starforged/oracles/vaults/location",
 					"name": "Location",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -36984,7 +36984,7 @@
 				"scale": {
 					"_id": "starforged/oracles/vaults/scale",
 					"name": "Scale",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -37033,7 +37033,7 @@
 				"form": {
 					"_id": "starforged/oracles/vaults/form",
 					"name": "Form",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -37107,7 +37107,7 @@
 				"shape": {
 					"_id": "starforged/oracles/vaults/shape",
 					"name": "Shape",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -37290,7 +37290,7 @@
 				"material": {
 					"_id": "starforged/oracles/vaults/material",
 					"name": "Material",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -37418,7 +37418,7 @@
 				"outer_first_look": {
 					"_id": "starforged/oracles/vaults/outer_first_look",
 					"name": "Outer First Look",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"recommended_rolls": {
 						"min": 1,
@@ -37621,7 +37621,7 @@
 						"first_look": {
 							"_id": "starforged/oracles/vaults/interior/first_look",
 							"name": "Inner First Look",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to reveal what you see or encounter when first entering the site. These aspects, combined with the exterior features, will help you envision the nature and condition of the vault and provide context for the rest of your exploration.",
 							"recommended_rolls": {
@@ -37826,7 +37826,7 @@
 						"feature": {
 							"_id": "starforged/oracles/vaults/interior/feature",
 							"name": "Interior Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -38050,7 +38050,7 @@
 						"peril": {
 							"_id": "starforged/oracles/vaults/interior/peril",
 							"name": "Interior Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a complication within a vault, such as when you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and are prompted to envision a peril.",
 							"column_labels": {
@@ -38205,7 +38205,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/vaults/interior/opportunity",
 							"name": "Interior Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Use this table to help envision a favorable circumstance within a vault, such as when you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and are prompted to envision an opportunity.",
 							"column_labels": {
@@ -38301,7 +38301,7 @@
 						"purpose": {
 							"_id": "starforged/oracles/vaults/sanctum/purpose",
 							"name": "Vault Purpose",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "Because precursor vaults are alien and enigmatic, understanding their ultimate purpose requires investigation and exploration. Use this table to reveal the vault’s original function or role at an appropriate point in your survey. This can come as an outcome of completing an expedition, or when your story naturally leads you to a revelation of the site’s nature.",
 							"column_labels": {
@@ -38496,7 +38496,7 @@
 						"feature": {
 							"_id": "starforged/oracles/vaults/sanctum/feature",
 							"name": "Sanctum Feature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -38720,7 +38720,7 @@
 						"peril": {
 							"_id": "starforged/oracles/vaults/sanctum/peril",
 							"name": "Sanctum Peril",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -38874,7 +38874,7 @@
 						"opportunity": {
 							"_id": "starforged/oracles/vaults/sanctum/opportunity",
 							"name": "Sanctum Opportunity",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",

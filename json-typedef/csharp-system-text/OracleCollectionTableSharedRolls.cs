@@ -59,7 +59,7 @@ namespace Datasworn
 
         [JsonPropertyName("contents")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, OracleColumnSimple> Contents { get; set; }
+        public IDictionary<string, OracleColumnText> Contents { get; set; }
 
         /// <summary>
         /// A longer description of this collection, which might include

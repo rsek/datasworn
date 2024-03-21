@@ -22,7 +22,7 @@ oracles:
         contents:
           template:
             name: Faction Name Template
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             # content:
             #   tags: [template]
@@ -62,7 +62,7 @@ oracles:
           legacy:
             name: Legacy
             _source: *CollectionSource
-            oracle_type: table_basic
+            oracle_type: table_text
             # content:
             #   part_of_speech: [proper noun fragment]
             rows:
@@ -274,7 +274,7 @@ oracles:
                 text: Wandering
           affiliation:
             name: Affiliation
-            oracle_type: table_basic
+            oracle_type: table_text
             _source:
               <<: *Source
               page: 345
@@ -387,7 +387,7 @@ oracles:
                 text: Union
           identity:
             name: Identity
-            oracle_type: table_basic
+            oracle_type: table_text
             _source:
               <<: *Source
               page: 345
@@ -686,7 +686,7 @@ oracles:
             # set_attributes: {influence: [inescapable]}
       dominion:
         name: Dominion
-        oracle_type: table_basic
+        oracle_type: table_text
         icon: icons/factions/dominion.svg
         _source:
           <<: *Source
@@ -824,7 +824,7 @@ oracles:
             # set_attributes: {dominion: [wealth]}
       dominion_leadership:
         name: 'Dominion: Leadership'
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 341
@@ -879,7 +879,7 @@ oracles:
             # set_attributes: {leadership: [varied_decentralized]}
       guild:
         name: Guild
-        oracle_type: table_basic
+        oracle_type: table_text
         icon: icons/factions/guild.svg
         _source:
           <<: *Source
@@ -971,7 +971,7 @@ oracles:
                 auto: true
       fringe_group:
         name: Fringe Group
-        oracle_type: table_basic
+        oracle_type: table_text
         icon: icons/factions/fringe_group.svg
         _source:
           <<: *Source
@@ -1054,7 +1054,7 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [objective]
         # usage:
-        oracle_type: table_basic
+        oracle_type: table_text
         recommended_rolls:
           min: 1
           max: 2
@@ -1171,7 +1171,7 @@ oracles:
         _source:
           <<: *Source
           page: 343
-        oracle_type: table_basic
+        oracle_type: table_text
         # content:
         #   part_of_speech: [fragment]
         description: |-
@@ -1269,7 +1269,7 @@ oracles:
         _source:
           <<: *Source
           page: 346
-        oracle_type: table_basic
+        oracle_type: table_text
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description]
@@ -1384,7 +1384,7 @@ oracles:
         _source:
           <<: *Source
           page: 347
-        oracle_type: table_basic
+        oracle_type: table_text
         # content:
         #   part_of_speech: [fragment]
         #   tags: [event, present]

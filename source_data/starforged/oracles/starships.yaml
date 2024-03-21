@@ -38,7 +38,7 @@ oracles:
                 starforged:
                   region: terminus
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             # rendering: &display:Mission
             # usage:
             #   requires:
@@ -199,7 +199,7 @@ oracles:
               tags:
                 starforged:
                   region: outlands
-            oracle_type: column_basic
+            oracle_type: column_text
             # source: *CollectionSource
             # rendering: *display:Mission
             # usage:
@@ -307,7 +307,7 @@ oracles:
                 starforged:
                   region: expanse
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             # rendering: *display:Mission
             # usage:
             #   requires:
@@ -565,7 +565,7 @@ oracles:
           # TODO: format the above as a 2nd roll of this table + a game object hint
       fleet:
         name: Fleet
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 326
@@ -607,7 +607,7 @@ oracles:
               - oracle: starforged/oracles/starships/mission
       initial_contact:
         name: Initial Contact
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 327
@@ -656,7 +656,7 @@ oracles:
             # *inherit:Derelict.Starship
       first_look:
         name: First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 327
@@ -742,7 +742,7 @@ oracles:
                 auto: true
       starship_name:
         name: Starship Name
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 329

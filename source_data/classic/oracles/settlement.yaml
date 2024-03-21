@@ -18,7 +18,7 @@ oracles:
       trouble:
         name: Settlement Trouble
         canonical_name: 'Oracle 9: Settlement Trouble'
-        oracle_type: table_basic
+        oracle_type: table_text
         summary: Use this table to generate a narrative hook for a problem faced by a community. This oracle can help inspire a vow for your character or serve as a prompt for a trouble you encounter when you interact with a settlement.
         _source:
           <<: *Source
@@ -167,7 +167,7 @@ oracles:
                 auto: true
       name:
         name: Settlement Name
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *CollectionSource
         summary: Ask this oracle for a thematic name for an Ironlander settlement. Roll once for the category, and again to pick from the examples. Alternatively, just roll for the category and come up with a name that fits the theme.
@@ -232,7 +232,7 @@ oracles:
           page: 178
         contents:
           landscape_feature:
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             name: Landscape Feature
             canonical_name: A feature of the landscape
@@ -283,7 +283,7 @@ oracles:
                 text: Three Rivers
           manmade_edifice:
             canonical_name: A manmade edifice
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             name: Manmade Edifice
             summary: *Manmade_Edifice
@@ -330,7 +330,7 @@ oracles:
                 text: Fallowfield
           creature:
             canonical_name: A creature
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             name: Creature
             summary: *Creature
@@ -377,7 +377,7 @@ oracles:
                 text: Dragonshadow
           historical_event:
             canonical_name: A historical event
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             name: Historical Event
             summary: *Historical_Event
@@ -424,7 +424,7 @@ oracles:
                 text: Rockfall
           old_world_language:
             canonical_name: A word in an Old World language
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             name: Old World Language
             summary: *Old_World_Language
@@ -471,7 +471,7 @@ oracles:
                 text: Tiza
           environmental_aspect:
             canonical_name: A season or environmental aspect
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             name: Environmental Aspect
             summary: *Environmental_Aspect
@@ -517,7 +517,7 @@ oracles:
                 max: 100
                 text: Summersong
           something_else:
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             name: Something Else
             rows:
@@ -564,7 +564,7 @@ oracles:
         contents:
           prefix:
             name: Prefix
-            oracle_type: column_basic
+            oracle_type: column_text
             # source: *CollectionSource
             rows:
               # - [1, 4, Bleak-]
@@ -704,7 +704,7 @@ oracles:
                 text: Long
           suffix:
             name: Suffix
-            oracle_type: column_basic
+            oracle_type: column_text
             # source: *CollectionSource
             rows:
               # - [1, 4, -moor]

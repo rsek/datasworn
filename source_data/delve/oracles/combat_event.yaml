@@ -26,7 +26,7 @@ oracles:
     contents:
       method:
         name: Method
-        oracle_type: table_basic
+        oracle_type: table_text
         canonical_name: 'Combat Event: Method'
         suggestions:
           oracles:
@@ -240,7 +240,7 @@ oracles:
             text: Overrun
       target:
         name: Target
-        oracle_type: table_basic
+        oracle_type: table_text
         canonical_name: 'Combat Event: Target'
         suggestions:
           oracles:

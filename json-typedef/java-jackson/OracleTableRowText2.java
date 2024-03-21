@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * Represents a row in an oracle table with 3 text cells.
+ * Represents a row in an oracle table that provides additional details.
  */
 @JsonSerialize
-public class OracleTableRow3textCells {
+public class OracleTableRowText2 {
     @JsonProperty("max")
     private Short max;
 
@@ -23,9 +23,6 @@ public class OracleTableRow3textCells {
 
     @JsonProperty("text2")
     private MarkdownString text2;
-
-    @JsonProperty("text3")
-    private MarkdownString text3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_i18n")
@@ -51,7 +48,7 @@ public class OracleTableRow3textCells {
     @JsonProperty("template")
     private OracleRollTemplate template;
 
-    public OracleTableRow3textCells() {
+    public OracleTableRowText2() {
     }
 
     /**
@@ -114,20 +111,6 @@ public class OracleTableRow3textCells {
      */
     public void setText2(MarkdownString text2) {
         this.text2 = text2;
-    }
-
-    /**
-     * Getter for text3.<p>
-     */
-    public MarkdownString getText3() {
-        return text3;
-    }
-
-    /**
-     * Setter for text3.<p>
-     */
-    public void setText3(MarkdownString text3) {
-        this.text3 = text3;
     }
 
     /**

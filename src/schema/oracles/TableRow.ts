@@ -106,12 +106,12 @@ export function StaticRowPartial<
 // 		description: 'Represents a row in an oracle table.'
 // 	}
 // )
-export const OracleTableRowBasic = CloneType(TableRowNullableMixin, {
-	$id: 'OracleTableRowBasic',
+export const OracleTableRowText = CloneType(TableRowNullableMixin, {
+	$id: 'OracleTableRowText',
 	description: 'Represents a row in an oracle table, with a single text cell.'
 })
 
-export type OracleTableRowBasic = Static<typeof OracleTableRowBasic>
+export type OracleTableRowText = Static<typeof OracleTableRowText>
 
 // export const OracleTableRowDetails = Generic.IdentifiedNode(
 // 	Type.Ref(Id.OracleTableRowId),
@@ -131,7 +131,7 @@ export type OracleTableRowBasic = Static<typeof OracleTableRowBasic>
 // 			'Represents a row in an oracle table that provides additional details.'
 // 	}
 // )
-export const OracleTableRow2TextCells = Utils.Assign(
+export const OracleTableRowText2 = Utils.Assign(
 	[
 		TableRowNullableMixin,
 		Type.Object({
@@ -143,14 +143,14 @@ export const OracleTableRow2TextCells = Utils.Assign(
 		})
 	],
 	{
-		$id: 'OracleTableRow2TextCells',
+		$id: 'OracleTableRowText2',
 		description:
 			'Represents a row in an oracle table that provides additional details.'
 	}
 )
-export type OracleTableRow2TextCells = Static<typeof OracleTableRow2TextCells>
+export type OracleTableRowText2 = Static<typeof OracleTableRowText2>
 
-export const OracleTableRow3TextCells = Utils.Assign(
+export const OracleTableRowText3 = Utils.Assign(
 	[
 		TableRowNullableMixin,
 		Type.Object({
@@ -167,11 +167,11 @@ export const OracleTableRow3TextCells = Utils.Assign(
 		})
 	],
 	{
-		$id: 'OracleTableRow3TextCells',
+		$id: 'OracleTableRowText3',
 		description: 'Represents a row in an oracle table with 3 text cells.'
 	}
 )
-export type OracleTableRow3TextCells = Static<typeof OracleTableRow3TextCells>
+export type OracleTableRowText3 = Static<typeof OracleTableRowText3>
 
 type StringDefaultsFor<T extends TObject> = {
 	[K in
@@ -201,17 +201,18 @@ export function ColumnLabels<
 	)
 }
 
-export const SimpleColumnLabels = ColumnLabels<typeof OracleTableRowBasic>({
+export const TextColumnLabels = ColumnLabels<typeof OracleTableRowText>({
 	roll: 'Roll',
 	text: 'Result'
 })
-export const DetailsColumnLabels = ColumnLabels<typeof OracleTableRow2TextCells>({
+export const Text2ColumnLabels = ColumnLabels<typeof OracleTableRowText2>({
 	roll: 'Roll',
 	text: 'Result',
 	text2: 'Details'
 })
 
-export const Text3ColumnLabels = ColumnLabels<typeof OracleTableRow3TextCells>({
+export const Text3ColumnLabels = ColumnLabels<typeof OracleTableRowText3>({
+	// purposefully undefined, not really any *common* use cases we can make assumptions about
 	roll: 'Roll',
 	text: undefined,
 	text2: undefined,
@@ -219,7 +220,11 @@ export const Text3ColumnLabels = ColumnLabels<typeof OracleTableRow3TextCells>({
 })
 
 export const OracleTableRow = Type.Union(
-	[Type.Ref(OracleTableRowBasic), Type.Ref(OracleTableRow2TextCells)],
+	[
+		Type.Ref(OracleTableRowText),
+		Type.Ref(OracleTableRowText2),
+		Type.Ref(OracleTableRowText3)
+	],
 	{ $id: 'OracleTableRow' }
 )
 

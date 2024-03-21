@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Represents a basic rollable oracle table with one roll column and one
- * `result` column.
+ * Represents a basic rollable oracle table with one roll column and one text
+ * result column.
  */
 @JsonSerialize
-public class OracleTableRollableTableBasic extends OracleTableRollable {
+public class OracleTableRollableTableText extends OracleTableRollable {
     @JsonProperty("_id")
     private OracleRollableId id;
 
@@ -21,7 +21,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
     private SourceInfo source;
 
     @JsonProperty("column_labels")
-    private OracleTableRollableTableBasicColumnLabels columnLabels;
+    private OracleTableRollableTableTextColumnLabels columnLabels;
 
     @JsonProperty("dice")
     private DiceExpression dice;
@@ -30,7 +30,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
     private Label name;
 
     @JsonProperty("rows")
-    private List<OracleTableRowBasic> rows;
+    private List<OracleTableRowText> rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
@@ -50,7 +50,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("recommended_rolls")
-    private OracleTableRollableTableBasicRecommendedRolls recommendedRolls;
+    private OracleTableRollableTableTextRecommendedRolls recommendedRolls;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
@@ -68,7 +68,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
     @JsonProperty("tags")
     private Map<String, Map<String, Tag>> tags;
 
-    public OracleTableRollableTableBasic() {
+    public OracleTableRollableTableText() {
     }
 
     /**
@@ -110,7 +110,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public OracleTableRollableTableBasicColumnLabels getColumnLabels() {
+    public OracleTableRollableTableTextColumnLabels getColumnLabels() {
         return columnLabels;
     }
 
@@ -119,7 +119,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public void setColumnLabels(OracleTableRollableTableBasicColumnLabels columnLabels) {
+    public void setColumnLabels(OracleTableRollableTableTextColumnLabels columnLabels) {
         this.columnLabels = columnLabels;
     }
 
@@ -159,7 +159,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRowBasic> getRows() {
+    public List<OracleTableRowText> getRows() {
         return rows;
     }
 
@@ -167,7 +167,7 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRowBasic> rows) {
+    public void setRows(List<OracleTableRowText> rows) {
         this.rows = rows;
     }
 
@@ -246,14 +246,14 @@ public class OracleTableRollableTableBasic extends OracleTableRollable {
     /**
      * Getter for recommendedRolls.<p>
      */
-    public OracleTableRollableTableBasicRecommendedRolls getRecommendedRolls() {
+    public OracleTableRollableTableTextRecommendedRolls getRecommendedRolls() {
         return recommendedRolls;
     }
 
     /**
      * Setter for recommendedRolls.<p>
      */
-    public void setRecommendedRolls(OracleTableRollableTableBasicRecommendedRolls recommendedRolls) {
+    public void setRecommendedRolls(OracleTableRollableTableTextRecommendedRolls recommendedRolls) {
         this.recommendedRolls = recommendedRolls;
     }
 

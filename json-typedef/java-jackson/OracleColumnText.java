@@ -8,8 +8,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Represents a single column in an OracleCollection.
+ */
 @JsonSerialize
-public class OracleColumn2textCells {
+public class OracleColumnText {
     @JsonProperty("_id")
     private OracleRollableId id;
 
@@ -20,10 +23,10 @@ public class OracleColumn2textCells {
     private Label name;
 
     @JsonProperty("oracle_type")
-    private OracleColumn2textCellsOracleType oracleType;
+    private OracleColumnTextOracleType oracleType;
 
     @JsonProperty("rows")
-    private List<OracleTableRow2textCells> rows;
+    private List<OracleTableRowText> rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("color")
@@ -53,7 +56,7 @@ public class OracleColumn2textCells {
     @JsonProperty("tags")
     private Map<String, Map<String, Tag>> tags;
 
-    public OracleColumn2textCells() {
+    public OracleColumnText() {
     }
 
     /**
@@ -107,14 +110,14 @@ public class OracleColumn2textCells {
     /**
      * Getter for oracleType.<p>
      */
-    public OracleColumn2textCellsOracleType getOracleType() {
+    public OracleColumnTextOracleType getOracleType() {
         return oracleType;
     }
 
     /**
      * Setter for oracleType.<p>
      */
-    public void setOracleType(OracleColumn2textCellsOracleType oracleType) {
+    public void setOracleType(OracleColumnTextOracleType oracleType) {
         this.oracleType = oracleType;
     }
 
@@ -122,7 +125,7 @@ public class OracleColumn2textCells {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRow2textCells> getRows() {
+    public List<OracleTableRowText> getRows() {
         return rows;
     }
 
@@ -130,7 +133,7 @@ public class OracleColumn2textCells {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRow2textCells> rows) {
+    public void setRows(List<OracleTableRowText> rows) {
         this.rows = rows;
     }
 

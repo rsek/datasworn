@@ -6,9 +6,9 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Represents a row in an oracle table, with a single text cell.
+    /// Represents a row in an oracle table that provides additional details.
     /// </summary>
-    public class OracleTableRowBasic
+    public class OracleTableRowText2
     {
         /// <summary>
         /// High end of the dice range for this table row.
@@ -27,6 +27,9 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("text")]
         public MarkdownString Text { get; set; }
+
+        [JsonPropertyName("text2")]
+        public MarkdownString Text2 { get; set; }
 
         [JsonPropertyName("_i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

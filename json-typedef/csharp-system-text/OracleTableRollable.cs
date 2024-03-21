@@ -20,10 +20,12 @@ namespace Datasworn
 
             switch (tagValue)
             {
-                case "table_basic":
-                    return JsonSerializer.Deserialize<OracleTableRollableTableBasic>(ref readerCopy, options);
+                case "table_text":
+                    return JsonSerializer.Deserialize<OracleTableRollableTableText>(ref readerCopy, options);
                 case "table_text2":
                     return JsonSerializer.Deserialize<OracleTableRollableTableText2>(ref readerCopy, options);
+                case "table_text3":
+                    return JsonSerializer.Deserialize<OracleTableRollableTableText3>(ref readerCopy, options);
                 default:
                     throw new ArgumentException(String.Format("Bad OracleType value: {0}", tagValue));
             }

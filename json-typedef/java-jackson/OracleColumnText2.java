@@ -8,11 +8,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Represents a single column in an OracleCollection.
- */
 @JsonSerialize
-public class OracleColumnSimple {
+public class OracleColumnText2 {
     @JsonProperty("_id")
     private OracleRollableId id;
 
@@ -23,10 +20,10 @@ public class OracleColumnSimple {
     private Label name;
 
     @JsonProperty("oracle_type")
-    private OracleColumnSimpleOracleType oracleType;
+    private OracleColumnText2OracleType oracleType;
 
     @JsonProperty("rows")
-    private List<OracleTableRowBasic> rows;
+    private List<OracleTableRowText2> rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("color")
@@ -56,7 +53,7 @@ public class OracleColumnSimple {
     @JsonProperty("tags")
     private Map<String, Map<String, Tag>> tags;
 
-    public OracleColumnSimple() {
+    public OracleColumnText2() {
     }
 
     /**
@@ -110,14 +107,14 @@ public class OracleColumnSimple {
     /**
      * Getter for oracleType.<p>
      */
-    public OracleColumnSimpleOracleType getOracleType() {
+    public OracleColumnText2OracleType getOracleType() {
         return oracleType;
     }
 
     /**
      * Setter for oracleType.<p>
      */
-    public void setOracleType(OracleColumnSimpleOracleType oracleType) {
+    public void setOracleType(OracleColumnText2OracleType oracleType) {
         this.oracleType = oracleType;
     }
 
@@ -125,7 +122,7 @@ public class OracleColumnSimple {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRowBasic> getRows() {
+    public List<OracleTableRowText2> getRows() {
         return rows;
     }
 
@@ -133,7 +130,7 @@ public class OracleColumnSimple {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRowBasic> rows) {
+    public void setRows(List<OracleTableRowText2> rows) {
         this.rows = rows;
     }
 

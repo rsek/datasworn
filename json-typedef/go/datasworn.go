@@ -2150,7 +2150,7 @@ type OracleCollectionTableSharedRolls struct {
 	// A thematic color associated with this collection.
 	Color *CSSColor `json:"color,omitempty"`
 
-	Contents map[string]OracleColumnSimple `json:"contents,omitempty"`
+	Contents map[string]OracleColumnText `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
@@ -2209,7 +2209,7 @@ type OracleCollectionTableSharedText struct {
 	// A thematic color associated with this collection.
 	Color *CSSColor `json:"color,omitempty"`
 
-	Contents map[string]OracleColumnSimple `json:"contents,omitempty"`
+	Contents map[string]OracleColumnText `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
@@ -2270,7 +2270,7 @@ type OracleCollectionTableSharedText2 struct {
 	// A thematic color associated with this collection.
 	Color *CSSColor `json:"color,omitempty"`
 
-	Contents map[string]OracleColumn2textCells `json:"contents,omitempty"`
+	Contents map[string]OracleColumnText2 `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
@@ -2329,7 +2329,7 @@ type OracleCollectionTableSharedText3 struct {
 	// A thematic color associated with this collection.
 	Color *CSSColor `json:"color,omitempty"`
 
-	Contents map[string]OracleColumn2textCells `json:"contents,omitempty"`
+	Contents map[string]OracleColumnText2 `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
@@ -2412,13 +2412,14 @@ type OracleCollectionTables struct {
 // A unique ID for an OracleCollection.
 type OracleCollectionID = string
 
-type OracleColumn2textCellsOracleType string
+type OracleColumnTextOracleType string
 
 const (
-	OracleColumn2textCellsOracleTypeColumnText2 OracleColumn2textCellsOracleType = "column_text2"
+	OracleColumnTextOracleTypeColumnText OracleColumnTextOracleType = "column_text"
 )
 
-type OracleColumn2textCells struct {
+// Represents a single column in an OracleCollection.
+type OracleColumnText struct {
 	// The unique Datasworn ID for this item.
 	ID OracleRollableID `json:"_id"`
 
@@ -2428,10 +2429,10 @@ type OracleColumn2textCells struct {
 	// The primary label at the head of this column.
 	Name Label `json:"name"`
 
-	OracleType OracleColumn2textCellsOracleType `json:"oracle_type"`
+	OracleType OracleColumnTextOracleType `json:"oracle_type"`
 
 	// An array of objects, each representing a single row of the table.
-	Rows []OracleTableRow2textCells `json:"rows"`
+	Rows []OracleTableRowText `json:"rows"`
 
 	// An optional thematic color for this column. For an example, see "Basic
 	// Creature Form" (Starforged p. 337)
@@ -2458,14 +2459,13 @@ type OracleColumn2textCells struct {
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
-type OracleColumnSimpleOracleType string
+type OracleColumnText2OracleType string
 
 const (
-	OracleColumnSimpleOracleTypeColumnBasic OracleColumnSimpleOracleType = "column_basic"
+	OracleColumnText2OracleTypeColumnText2 OracleColumnText2OracleType = "column_text2"
 )
 
-// Represents a single column in an OracleCollection.
-type OracleColumnSimple struct {
+type OracleColumnText2 struct {
 	// The unique Datasworn ID for this item.
 	ID OracleRollableID `json:"_id"`
 
@@ -2475,10 +2475,10 @@ type OracleColumnSimple struct {
 	// The primary label at the head of this column.
 	Name Label `json:"name"`
 
-	OracleType OracleColumnSimpleOracleType `json:"oracle_type"`
+	OracleType OracleColumnText2OracleType `json:"oracle_type"`
 
 	// An array of objects, each representing a single row of the table.
-	Rows []OracleTableRowBasic `json:"rows"`
+	Rows []OracleTableRowText2 `json:"rows"`
 
 	// An optional thematic color for this column. For an example, see "Basic
 	// Creature Form" (Starforged p. 337)
@@ -2567,17 +2567,21 @@ type OracleRollableID = string
 type OracleTableRollable struct {
 	OracleType string
 
-	TableBasic OracleTableRollableTableBasic
+	TableText OracleTableRollableTableText
 
 	TableText2 OracleTableRollableTableText2
+
+	TableText3 OracleTableRollableTableText3
 }
 
 func (v OracleTableRollable) MarshalJSON() ([]byte, error) {
 	switch v.OracleType {
-	case "table_basic":
-		return json.Marshal(struct { T string `json:"oracle_type"`; OracleTableRollableTableBasic }{ v.OracleType, v.TableBasic })
+	case "table_text":
+		return json.Marshal(struct { T string `json:"oracle_type"`; OracleTableRollableTableText }{ v.OracleType, v.TableText })
 	case "table_text2":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleTableRollableTableText2 }{ v.OracleType, v.TableText2 })
+	case "table_text3":
+		return json.Marshal(struct { T string `json:"oracle_type"`; OracleTableRollableTableText3 }{ v.OracleType, v.TableText3 })
 	}
 
 	return nil, fmt.Errorf("bad OracleType value: %s", v.OracleType)
@@ -2591,10 +2595,12 @@ func (v *OracleTableRollable) UnmarshalJSON(b []byte) error {
 
 	var err error
 	switch t.T {
-	case "table_basic":
-		err = json.Unmarshal(b, &v.TableBasic)
+	case "table_text":
+		err = json.Unmarshal(b, &v.TableText)
 	case "table_text2":
 		err = json.Unmarshal(b, &v.TableText2)
+	case "table_text3":
+		err = json.Unmarshal(b, &v.TableText3)
 	default:
 		err = fmt.Errorf("bad OracleType value: %s", t.T)
 	}
@@ -2609,21 +2615,21 @@ func (v *OracleTableRollable) UnmarshalJSON(b []byte) error {
 
 // The label at the head of each table column. The `roll` key refers to the roll
 // column showing the dice range (`min` and `max` on each table row).
-type OracleTableRollableTableBasicColumnLabels struct {
+type OracleTableRollableTableTextColumnLabels struct {
 	Roll Label `json:"roll"`
 
 	Text Label `json:"text"`
 }
 
-type OracleTableRollableTableBasicRecommendedRolls struct {
+type OracleTableRollableTableTextRecommendedRolls struct {
 	Max int16 `json:"max"`
 
 	Min int16 `json:"min"`
 }
 
-// Represents a basic rollable oracle table with one roll column and one
-// `result` column.
-type OracleTableRollableTableBasic struct {
+// Represents a basic rollable oracle table with one roll column and one text
+// result column.
+type OracleTableRollableTableText struct {
 	// The unique Datasworn ID for this item.
 	ID OracleRollableID `json:"_id"`
 
@@ -2633,7 +2639,7 @@ type OracleTableRollableTableBasic struct {
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleTableRollableTableBasicColumnLabels `json:"column_labels"`
+	ColumnLabels OracleTableRollableTableTextColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
@@ -2642,7 +2648,7 @@ type OracleTableRollableTableBasic struct {
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
-	Rows []OracleTableRowBasic `json:"rows"`
+	Rows []OracleTableRowText `json:"rows"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2660,7 +2666,7 @@ type OracleTableRollableTableBasic struct {
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	RecommendedRolls *OracleTableRollableTableBasicRecommendedRolls `json:"recommended_rolls,omitempty"`
+	RecommendedRolls *OracleTableRollableTableTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
 	// Indicates that this object replaces the identified OracleRollable.
 	// References to the replaced object can be considered equivalent to this
@@ -2714,7 +2720,7 @@ type OracleTableRollableTableText2 struct {
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
-	Rows []OracleTableRow2textCells `json:"rows"`
+	Rows []OracleTableRowText2 `json:"rows"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2750,8 +2756,108 @@ type OracleTableRollableTableText2 struct {
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
+// The label at the head of each table column. The `roll` key refers to the roll
+// column showing the dice range (`min` and `max` on each table row).
+type OracleTableRollableTableText3ColumnLabels struct {
+	Roll Label `json:"roll"`
+
+	Text Label `json:"text"`
+
+	Text2 Label `json:"text2"`
+
+	Text3 Label `json:"text3"`
+}
+
+type OracleTableRollableTableText3RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
+// A rollable oracle table with one roll column and 3 text columns.
+type OracleTableRollableTableText3 struct {
+	// The unique Datasworn ID for this item.
+	ID OracleRollableID `json:"_id"`
+
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
+	// The label at the head of each table column. The `roll` key refers to the
+	// roll column showing the dice range (`min` and `max` on each table row).
+	ColumnLabels OracleTableRollableTableText3ColumnLabels `json:"column_labels"`
+
+	// The roll used to select a result on this oracle.
+	Dice DiceExpression `json:"dice"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
+
+	// An array of objects, each representing a single row of the table.
+	Rows []OracleTableRowText3 `json:"rows"`
+
+	// The name of this item as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A longer description of the oracle table's intended usage, which might
+	// include multiple paragraphs. If it's only a couple sentences, use the
+	// `summary` key instead.
+	Description *MarkdownString `json:"description,omitempty"`
+
+	// An icon that represents this table.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	// Most oracle tables are insensitive to matches, but a few define special
+	// match behavior.
+	Match *OracleMatchBehavior `json:"match,omitempty"`
+
+	RecommendedRolls *OracleTableRollableTableText3RecommendedRolls `json:"recommended_rolls,omitempty"`
+
+	// Indicates that this object replaces the identified OracleRollable.
+	// References to the replaced object can be considered equivalent to this
+	// object.
+	Replaces *OracleRollableID `json:"replaces,omitempty"`
+
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	// A brief summary of the oracle table's intended usage, no more than a few
+	// sentences in length. This is intended for use in application tooltips
+	// and similar sorts of hints. Longer text should use the "description" key
+	// instead.
+	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+}
+
+// Represents a row in an oracle table, with a single text cell.
+type OracleTableRowText struct {
+	// High end of the dice range for this table row.
+	Max int16 `json:"max"`
+
+	// Low end of the dice range for this table row.
+	Min int16 `json:"min"`
+
+	// The primary text content of this row.
+	Text MarkdownString `json:"text"`
+
+	I18n *I18nHints `json:"_i18n,omitempty"`
+
+	// Hints that the identified table should be rendered inside this table row.
+	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
+
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	// Further oracle rolls prompted by this table row.
+	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
+
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Template *OracleRollTemplate `json:"template,omitempty"`
+}
+
 // Represents a row in an oracle table that provides additional details.
-type OracleTableRow2textCells struct {
+type OracleTableRowText2 struct {
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 
@@ -2779,7 +2885,7 @@ type OracleTableRow2textCells struct {
 }
 
 // Represents a row in an oracle table with 3 text cells.
-type OracleTableRow3textCells struct {
+type OracleTableRowText3 struct {
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 
@@ -2792,32 +2898,6 @@ type OracleTableRow3textCells struct {
 	Text2 MarkdownString `json:"text2"`
 
 	Text3 MarkdownString `json:"text3"`
-
-	I18n *I18nHints `json:"_i18n,omitempty"`
-
-	// Hints that the identified table should be rendered inside this table row.
-	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	// Further oracle rolls prompted by this table row.
-	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	Template *OracleRollTemplate `json:"template,omitempty"`
-}
-
-// Represents a row in an oracle table, with a single text cell.
-type OracleTableRowBasic struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
-
-	// The primary text content of this row.
-	Text MarkdownString `json:"text"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 

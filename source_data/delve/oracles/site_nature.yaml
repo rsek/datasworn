@@ -21,7 +21,7 @@ oracles:
       theme:
         name: Theme
         canonical_name: 'Site Nature: Theme'
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 212
@@ -53,7 +53,7 @@ oracles:
       domain:
         name: Domain
         canonical_name: 'Site Nature: Domain'
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 212

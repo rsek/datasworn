@@ -38,7 +38,7 @@ oracles:
               oracles:
                 - starforged/oracles/characters/name/callsign
                 - starforged/oracles/characters/name/family_name
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - <<: &i18n.proper_noun
                   _i18n:
@@ -453,7 +453,7 @@ oracles:
               oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/family_name
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - <<: *i18n.proper_noun
                 min: 1
@@ -865,7 +865,7 @@ oracles:
               oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/callsign
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - <<: *i18n.proper_noun
                 min: 1
@@ -1270,7 +1270,7 @@ oracles:
     contents:
       first_look:
         name: First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 330
@@ -1444,7 +1444,7 @@ oracles:
             text: Youthful
       initial_disposition:
         name: Initial Disposition
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 330
@@ -1501,7 +1501,7 @@ oracles:
             text: Hostile
       role:
         name: Character Role
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 331
@@ -1711,7 +1711,7 @@ oracles:
                   auto: true
       goal:
         name: Character Goal
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 331
@@ -1868,7 +1868,7 @@ oracles:
             <<: *RollTwice
       revealed_aspect:
         name: Revealed Character Aspect
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 332

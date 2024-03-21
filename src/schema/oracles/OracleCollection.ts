@@ -11,15 +11,15 @@ import * as Utils from '../Utils.js'
 import { Id, Metadata } from '../common/index.js'
 import { type TFuzzyObject } from '../utils/typebox.js'
 import {
-	OracleColumn2TextCells,
-	OracleColumnSimple,
+	OracleColumnText2,
+	OracleColumnText,
 	OracleTableRollable
 } from './OracleRollable.js'
 import {
 	ColumnLabels,
-	type OracleTableRow2TextCells,
-	type OracleTableRow3TextCells,
-	type OracleTableRowBasic
+	type OracleTableRowText2,
+	type OracleTableRowText3,
+	type OracleTableRowText
 } from './TableRow.js'
 
 const OracleCollectionType = Utils.UnionEnumFromRecord(
@@ -132,7 +132,7 @@ export type OracleTablesCollection = Static<TOracleTablesCollection>
 
 export const OracleTableSharedRolls = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleColumnSimple>(
+		column_labels: ColumnLabels<typeof OracleColumnText>(
 			{ roll: 'Roll' },
 			{
 				description:
@@ -145,7 +145,7 @@ export const OracleTableSharedRolls = OracleCollectionBase(
 			{ default: 'table_shared_rolls' }
 		)
 	},
-	Type.Ref(OracleColumnSimple),
+	Type.Ref(OracleColumnText),
 	false,
 	{
 		$id: 'OracleTableSharedRolls',
@@ -159,7 +159,7 @@ export type OracleTableSharedRolls = Static<TOracleTableSharedRolls>
 
 export const OracleTableSharedTextColumn = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRowBasic>({
+		column_labels: ColumnLabels<typeof OracleTableRowText>({
 			text: 'Result'
 		}),
 		oracle_type: Utils.ExtractLiteralFromEnum(
@@ -167,7 +167,7 @@ export const OracleTableSharedTextColumn = OracleCollectionBase(
 			'table_shared_text'
 		)
 	},
-	Type.Ref(OracleColumnSimple),
+	Type.Ref(OracleColumnText),
 	false,
 	{
 		$id: 'OracleTableSharedTextColumn',
@@ -181,7 +181,7 @@ export type OracleTableSharedTextColumn = Static<TOracleTableSharedTextColumn>
 
 export const OracleTableShared2TextColumns = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRow2TextCells>({
+		column_labels: ColumnLabels<typeof OracleTableRowText2>({
 			text: 'Result',
 			text2: 'Details'
 		}),
@@ -190,7 +190,7 @@ export const OracleTableShared2TextColumns = OracleCollectionBase(
 			'table_shared_text2'
 		)
 	},
-	Type.Ref(OracleColumn2TextCells),
+	Type.Ref(OracleColumnText2),
 	false,
 	{
 		$id: 'OracleTableShared2TextColumns',
@@ -206,7 +206,7 @@ export type OracleTableShared2TextColumns =
 
 export const OracleTableShared3TextColumns = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRow3TextCells>({
+		column_labels: ColumnLabels<typeof OracleTableRowText3>({
 			text: 'Result'
 		}),
 		oracle_type: Utils.ExtractLiteralFromEnum(
@@ -214,7 +214,7 @@ export const OracleTableShared3TextColumns = OracleCollectionBase(
 			'table_shared_text3'
 		)
 	},
-	Type.Ref(OracleColumn2TextCells),
+	Type.Ref(OracleColumnText2),
 	false,
 	{
 		$id: 'OracleTableShared3TextColumns',

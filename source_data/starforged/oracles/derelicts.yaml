@@ -34,7 +34,7 @@ oracles:
                 location: planetside
             # source: *CollectionSource
             icon: icon/oracles/location/planetside.svg
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires: *attr:Location.Planetside
             rows:
@@ -59,7 +59,7 @@ oracles:
                 location: orbital
             # source: *CollectionSource
             icon: icon/oracles/location/orbital.svg
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires: *attr:Location.Orbital
             rows:
@@ -82,7 +82,7 @@ oracles:
                 location: deep_space
             # source: *CollectionSource
             icon: icon/oracles/location/deep_space.svg
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires: *attr:Location.DeepSpace
             rows:
@@ -110,7 +110,7 @@ oracles:
             name: Starship
             # source: *CollectionSource
             summary: *Zones.Summary
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires:
             #     attributes:
@@ -168,7 +168,7 @@ oracles:
             name: Settlement
             # source: *CollectionSource
             summary: *Zones.Summary
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires:
             #     attributes:
@@ -199,7 +199,7 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 348
@@ -227,7 +227,7 @@ oracles:
                 - starforged/oracles/derelicts/type/deep_space
       condition:
         name: Condition
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 348
@@ -256,7 +256,7 @@ oracles:
             text: Impending destruction
       outer_first_look:
         name: Outer First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 349
@@ -299,7 +299,7 @@ oracles:
             text: Time or reality distortions
       inner_first_look:
         name: Inner First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         summary: Use these First Look tables for your initial survey of the derelict's interior.
         _source:
           <<: *Source

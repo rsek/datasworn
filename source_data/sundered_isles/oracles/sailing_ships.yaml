@@ -66,7 +66,7 @@ oracles:
             text2: Colossal flagship and countless other ships
       first_look:
         name: First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -186,7 +186,7 @@ oracles:
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_first_look:
         name: Cursed First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -288,7 +288,7 @@ oracles:
             text: Shadowed by [Cursed Weather](id:sundered_isles/oracles/weather/cursed)
       symbol:
         name: Symbol
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -438,7 +438,7 @@ oracles:
             text: Roll twice
       cursed_symbol:
         name: Cursed Symbol
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -480,7 +480,7 @@ oracles:
             text: Spider
       cursed_mission:
         name: Cursed Ship Mission
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           # TODO: additive curse
@@ -512,7 +512,7 @@ oracles:
             text: Unwittingly helping or unleashing a cursed power
       revaled_aspects:
         name: Revaled Aspects
-        oracle_type: table_basic
+        oracle_type: table_text
         summary: When upon a ship other than your own—visiting,to reveal new details. exploring, or boarding—use this table.
         _source:
           <<: *Source
@@ -633,7 +633,7 @@ oracles:
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_aspects:
         name: Cursed Aspects
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -717,7 +717,7 @@ oracles:
             text: Warnings scrawled in blood
       cargo:
         name: Cargo
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         summary: Use this table when surveying a ship’s hold or if coming upon lost or abandoned cargo. Roll or choose a number of items as appropriate to the nature of the find. For example, once for the hold of a typical warship, or up to four times for a fully loaded tradeship. Ships also typically carry basic munitions and provisions for the crew, but this table reveals the details of cargo such as trade goods and plunder.
@@ -862,7 +862,7 @@ oracles:
             text: '[Treasure]'
       cursed_cargo:
         name: Cursed Cargo
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -960,7 +960,7 @@ oracles:
                 text2: Sighted or revealed at very close range
           status:
             name: Status
-            oracle_type: table_basic
+            oracle_type: table_text
             _source:
               <<: *Source
             rows:
@@ -1002,7 +1002,7 @@ oracles:
             # source:
             #   <<: *Source
             summary: Central Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - &ControllingFaction.0
                 min: 1
@@ -1021,7 +1021,7 @@ oracles:
             # source:
             #   <<: *Source
             summary: Outer Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1037,7 +1037,7 @@ oracles:
             # source:
             #   <<: *Source
             summary: Remote Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1087,7 +1087,7 @@ oracles:
             name: Small
             # source:
             #   <<: *Source
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - &ShipMission.0
                 text: Blockade a location
@@ -1170,7 +1170,7 @@ oracles:
             name: Medium
             # source:
             #   <<: *Source
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - *ShipMission.0
               - *ShipMission.1
@@ -1225,7 +1225,7 @@ oracles:
             name: Large
             # source:
             #   <<: *Source
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - <<: *ShipMission.0
                 min: 1
@@ -1286,7 +1286,7 @@ oracles:
                 max: 100
           huge:
             name: Huge
-            oracle_type: column_basic
+            oracle_type: column_text
             # source:
             #   <<: *Source
             rows:
@@ -1349,7 +1349,7 @@ oracles:
                 max: 100
           flotilla:
             name: Flotilla
-            oracle_type: column_basic
+            oracle_type: column_text
             # source:
             #   <<: *Source
             rows:
@@ -1412,7 +1412,7 @@ oracles:
                 max: 100
           fleet:
             name: Fleet
-            oracle_type: column_basic
+            oracle_type: column_text
             # source:
             #   <<: *Source
             rows:
@@ -1469,7 +1469,7 @@ oracles:
                 max: 100
           armada:
             name: Armada
-            oracle_type: column_basic
+            oracle_type: column_text
             # source:
             #   <<: *Source
             rows:

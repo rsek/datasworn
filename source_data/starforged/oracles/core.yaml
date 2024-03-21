@@ -16,7 +16,7 @@ oracles:
     contents:
       action:
         name: Action
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 296
@@ -431,7 +431,7 @@ oracles:
             text: Withdraw
       theme:
         name: Theme
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 297
@@ -848,7 +848,7 @@ oracles:
             text: World
       descriptor:
         name: Descriptor
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 298
@@ -1263,7 +1263,7 @@ oracles:
             text: Violent
       focus:
         name: Focus
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 299

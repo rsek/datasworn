@@ -17,7 +17,7 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 360
@@ -36,7 +36,7 @@ oracles:
             icon: icon/oracles/location/deep_space.svg
       scale:
         name: Scale
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 360
@@ -62,7 +62,7 @@ oracles:
             text: World-spanning site or megastructure
       form:
         name: Form
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 360
@@ -95,7 +95,7 @@ oracles:
                 part_of_speech: adjective
       shape:
         name: Shape
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 361
@@ -172,7 +172,7 @@ oracles:
 
       material:
         name: Material
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 361
@@ -225,7 +225,7 @@ oracles:
                 auto: true
       outer_first_look:
         name: Outer First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 361
@@ -345,7 +345,7 @@ oracles:
         icon: icons/vaults/interior.svg
         contents:
           first_look:
-            oracle_type: table_basic
+            oracle_type: table_text
             name: Inner First Look
             _source: *CollectionSource
             # usage:
@@ -455,7 +455,7 @@ oracles:
                 max: 100
                 <<: *DescriptorFocus
           feature:
-            oracle_type: table_basic
+            oracle_type: table_text
             name: Interior Feature
             _source:
               <<: *Source
@@ -575,7 +575,7 @@ oracles:
                     auto: true
           peril:
             name: Interior Peril
-            oracle_type: table_basic
+            oracle_type: table_text
             _source:
               <<: *Source
               page: 367
@@ -660,7 +660,7 @@ oracles:
                     auto: true
           opportunity:
             name: Interior Opportunity
-            oracle_type: table_basic
+            oracle_type: table_text
             _source:
               <<: *Source
               page: 367
@@ -714,7 +714,7 @@ oracles:
             _source:
               <<: *Source
               page: 365
-            oracle_type: table_basic
+            oracle_type: table_text
             name: Vault Purpose
             # content:
             #   part_of_speech: [fragment]
@@ -816,7 +816,7 @@ oracles:
               <<: *Source
               page: 368
             name: Sanctum Feature
-            oracle_type: table_basic
+            oracle_type: table_text
             # usage:
             #   repeatable: true
             # content:
@@ -935,7 +935,7 @@ oracles:
               <<: *Source
               page: 369
             name: Sanctum Peril
-            oracle_type: table_basic
+            oracle_type: table_text
             # usage:
             #   repeatable: true
             # content:
@@ -1018,7 +1018,7 @@ oracles:
             # content:
             #   part_of_speech: [fragment]
             #   tags: [opportunity]
-            oracle_type: table_basic
+            oracle_type: table_text
             rows:
               - min: 1
                 max: 10

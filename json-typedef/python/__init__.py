@@ -4248,7 +4248,7 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     A thematic color associated with this collection.
     """
 
-    contents: 'Optional[Dict[str, OracleColumnSimple]]'
+    contents: 'Optional[Dict[str, OracleColumnText]]'
     description: 'Optional[MarkdownString]'
     """
     A longer description of this collection, which might include multiple
@@ -4293,7 +4293,7 @@ class OracleCollectionTableSharedRolls(OracleCollection):
             _from_json_data(Label, data.get("name")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
-            _from_json_data(Optional[Dict[str, OracleColumnSimple]], data.get("contents")),
+            _from_json_data(Optional[Dict[str, OracleColumnText]], data.get("contents")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -4394,7 +4394,7 @@ class OracleCollectionTableSharedText(OracleCollection):
     A thematic color associated with this collection.
     """
 
-    contents: 'Optional[Dict[str, OracleColumnSimple]]'
+    contents: 'Optional[Dict[str, OracleColumnText]]'
     description: 'Optional[MarkdownString]'
     """
     A longer description of this collection, which might include multiple
@@ -4439,7 +4439,7 @@ class OracleCollectionTableSharedText(OracleCollection):
             _from_json_data(Label, data.get("name")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
-            _from_json_data(Optional[Dict[str, OracleColumnSimple]], data.get("contents")),
+            _from_json_data(Optional[Dict[str, OracleColumnText]], data.get("contents")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -4543,7 +4543,7 @@ class OracleCollectionTableSharedText2(OracleCollection):
     A thematic color associated with this collection.
     """
 
-    contents: 'Optional[Dict[str, OracleColumn2textCells]]'
+    contents: 'Optional[Dict[str, OracleColumnText2]]'
     description: 'Optional[MarkdownString]'
     """
     A longer description of this collection, which might include multiple
@@ -4588,7 +4588,7 @@ class OracleCollectionTableSharedText2(OracleCollection):
             _from_json_data(Label, data.get("name")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
-            _from_json_data(Optional[Dict[str, OracleColumn2textCells]], data.get("contents")),
+            _from_json_data(Optional[Dict[str, OracleColumnText2]], data.get("contents")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -4689,7 +4689,7 @@ class OracleCollectionTableSharedText3(OracleCollection):
     A thematic color associated with this collection.
     """
 
-    contents: 'Optional[Dict[str, OracleColumn2textCells]]'
+    contents: 'Optional[Dict[str, OracleColumnText2]]'
     description: 'Optional[MarkdownString]'
     """
     A longer description of this collection, which might include multiple
@@ -4734,7 +4734,7 @@ class OracleCollectionTableSharedText3(OracleCollection):
             _from_json_data(Label, data.get("name")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
-            _from_json_data(Optional[Dict[str, OracleColumn2textCells]], data.get("contents")),
+            _from_json_data(Optional[Dict[str, OracleColumnText2]], data.get("contents")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -4912,17 +4912,21 @@ class OracleCollectionID:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-class OracleColumn2textCellsOracleType(Enum):
-    COLUMN_TEXT2 = "column_text2"
+class OracleColumnTextOracleType(Enum):
+    COLUMN_TEXT = "column_text"
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleColumn2textCellsOracleType':
+    def from_json_data(cls, data: Any) -> 'OracleColumnTextOracleType':
         return cls(data)
 
     def to_json_data(self) -> Any:
         return self.value
 
 @dataclass
-class OracleColumn2textCells:
+class OracleColumnText:
+    """
+    Represents a single column in an OracleCollection.
+    """
+
     id: 'OracleRollableID'
     """
     The unique Datasworn ID for this item.
@@ -4938,8 +4942,8 @@ class OracleColumn2textCells:
     The primary label at the head of this column.
     """
 
-    oracle_type: 'OracleColumn2textCellsOracleType'
-    rows: 'List[OracleTableRow2textCells]'
+    oracle_type: 'OracleColumnTextOracleType'
+    rows: 'List[OracleTableRowText]'
     """
     An array of objects, each representing a single row of the table.
     """
@@ -4978,13 +4982,13 @@ class OracleColumn2textCells:
     tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleColumn2textCells':
+    def from_json_data(cls, data: Any) -> 'OracleColumnText':
         return cls(
             _from_json_data(OracleRollableID, data.get("_id")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(OracleColumn2textCellsOracleType, data.get("oracle_type")),
-            _from_json_data(List[OracleTableRow2textCells], data.get("rows")),
+            _from_json_data(OracleColumnTextOracleType, data.get("oracle_type")),
+            _from_json_data(List[OracleTableRowText], data.get("rows")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
@@ -5017,21 +5021,17 @@ class OracleColumn2textCells:
              data["tags"] = _to_json_data(self.tags)
         return data
 
-class OracleColumnSimpleOracleType(Enum):
-    COLUMN_BASIC = "column_basic"
+class OracleColumnText2OracleType(Enum):
+    COLUMN_TEXT2 = "column_text2"
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleColumnSimpleOracleType':
+    def from_json_data(cls, data: Any) -> 'OracleColumnText2OracleType':
         return cls(data)
 
     def to_json_data(self) -> Any:
         return self.value
 
 @dataclass
-class OracleColumnSimple:
-    """
-    Represents a single column in an OracleCollection.
-    """
-
+class OracleColumnText2:
     id: 'OracleRollableID'
     """
     The unique Datasworn ID for this item.
@@ -5047,8 +5047,8 @@ class OracleColumnSimple:
     The primary label at the head of this column.
     """
 
-    oracle_type: 'OracleColumnSimpleOracleType'
-    rows: 'List[OracleTableRowBasic]'
+    oracle_type: 'OracleColumnText2OracleType'
+    rows: 'List[OracleTableRowText2]'
     """
     An array of objects, each representing a single row of the table.
     """
@@ -5087,13 +5087,13 @@ class OracleColumnSimple:
     tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleColumnSimple':
+    def from_json_data(cls, data: Any) -> 'OracleColumnText2':
         return cls(
             _from_json_data(OracleRollableID, data.get("_id")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(OracleColumnSimpleOracleType, data.get("oracle_type")),
-            _from_json_data(List[OracleTableRowBasic], data.get("rows")),
+            _from_json_data(OracleColumnText2OracleType, data.get("oracle_type")),
+            _from_json_data(List[OracleTableRowText2], data.get("rows")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
@@ -5280,8 +5280,9 @@ class OracleTableRollable:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRollable':
         variants: Dict[str, Type[OracleTableRollable]] = {
-            "table_basic": OracleTableRollableTableBasic,
+            "table_text": OracleTableRollableTableText,
             "table_text2": OracleTableRollableTableText2,
+            "table_text3": OracleTableRollableTableText3,
         }
 
         return variants[data["oracle_type"]].from_json_data(data)
@@ -5290,7 +5291,7 @@ class OracleTableRollable:
         pass
 
 @dataclass
-class OracleTableRollableTableBasicColumnLabels:
+class OracleTableRollableTableTextColumnLabels:
     """
     The label at the head of each table column. The `roll` key refers to the
     roll column showing the dice range (`min` and `max` on each table row).
@@ -5300,7 +5301,7 @@ class OracleTableRollableTableBasicColumnLabels:
     text: 'Label'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableBasicColumnLabels':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableTextColumnLabels':
         return cls(
             _from_json_data(Label, data.get("roll")),
             _from_json_data(Label, data.get("text")),
@@ -5313,12 +5314,12 @@ class OracleTableRollableTableBasicColumnLabels:
         return data
 
 @dataclass
-class OracleTableRollableTableBasicRecommendedRolls:
+class OracleTableRollableTableTextRecommendedRolls:
     max: 'int'
     min: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableBasicRecommendedRolls':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableTextRecommendedRolls':
         return cls(
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
@@ -5331,10 +5332,10 @@ class OracleTableRollableTableBasicRecommendedRolls:
         return data
 
 @dataclass
-class OracleTableRollableTableBasic(OracleTableRollable):
+class OracleTableRollableTableText(OracleTableRollable):
     """
-    Represents a basic rollable oracle table with one roll column and one
-    `result` column.
+    Represents a basic rollable oracle table with one roll column and one text
+    result column.
     """
 
     id: 'OracleRollableID'
@@ -5348,7 +5349,7 @@ class OracleTableRollableTableBasic(OracleTableRollable):
     item, including the author and licensing information.
     """
 
-    column_labels: 'OracleTableRollableTableBasicColumnLabels'
+    column_labels: 'OracleTableRollableTableTextColumnLabels'
     """
     The label at the head of each table column. The `roll` key refers to the
     roll column showing the dice range (`min` and `max` on each table row).
@@ -5364,7 +5365,7 @@ class OracleTableRollableTableBasic(OracleTableRollable):
     The primary name/label for this item.
     """
 
-    rows: 'List[OracleTableRowBasic]'
+    rows: 'List[OracleTableRowText]'
     """
     An array of objects, each representing a single row of the table.
     """
@@ -5393,7 +5394,7 @@ class OracleTableRollableTableBasic(OracleTableRollable):
     match behavior.
     """
 
-    recommended_rolls: 'Optional[OracleTableRollableTableBasicRecommendedRolls]'
+    recommended_rolls: 'Optional[OracleTableRollableTableTextRecommendedRolls]'
     replaces: 'Optional[OracleRollableID]'
     """
     Indicates that this object replaces the identified OracleRollable.
@@ -5413,20 +5414,20 @@ class OracleTableRollableTableBasic(OracleTableRollable):
     tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableBasic':
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableText':
         return cls(
-            "table_basic",
+            "table_text",
             _from_json_data(OracleRollableID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
-            _from_json_data(OracleTableRollableTableBasicColumnLabels, data.get("column_labels")),
+            _from_json_data(OracleTableRollableTableTextColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(List[OracleTableRowBasic], data.get("rows")),
+            _from_json_data(List[OracleTableRowText], data.get("rows")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
-            _from_json_data(Optional[OracleTableRollableTableBasicRecommendedRolls], data.get("recommended_rolls")),
+            _from_json_data(Optional[OracleTableRollableTableTextRecommendedRolls], data.get("recommended_rolls")),
             _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
@@ -5434,7 +5435,7 @@ class OracleTableRollableTableBasic(OracleTableRollable):
         )
 
     def to_json_data(self) -> Any:
-        data = { "oracle_type": "table_basic" }
+        data = { "oracle_type": "table_text" }
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
@@ -5538,7 +5539,7 @@ class OracleTableRollableTableText2(OracleTableRollable):
     The primary name/label for this item.
     """
 
-    rows: 'List[OracleTableRow2textCells]'
+    rows: 'List[OracleTableRowText2]'
     """
     An array of objects, each representing a single row of the table.
     """
@@ -5595,7 +5596,7 @@ class OracleTableRollableTableText2(OracleTableRollable):
             _from_json_data(OracleTableRollableTableText2ColumnLabels, data.get("column_labels")),
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(List[OracleTableRow2textCells], data.get("rows")),
+            _from_json_data(List[OracleTableRowText2], data.get("rows")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -5636,7 +5637,253 @@ class OracleTableRollableTableText2(OracleTableRollable):
         return data
 
 @dataclass
-class OracleTableRow2textCells:
+class OracleTableRollableTableText3ColumnLabels:
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    roll: 'Label'
+    text: 'Label'
+    text2: 'Label'
+    text3: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableText3ColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("roll")),
+            _from_json_data(Label, data.get("text")),
+            _from_json_data(Label, data.get("text2")),
+            _from_json_data(Label, data.get("text3")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["roll"] = _to_json_data(self.roll)
+        data["text"] = _to_json_data(self.text)
+        data["text2"] = _to_json_data(self.text2)
+        data["text3"] = _to_json_data(self.text3)
+        return data
+
+@dataclass
+class OracleTableRollableTableText3RecommendedRolls:
+    max: 'int'
+    min: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableText3RecommendedRolls':
+        return cls(
+            _from_json_data(int, data.get("max")),
+            _from_json_data(int, data.get("min")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["max"] = _to_json_data(self.max)
+        data["min"] = _to_json_data(self.min)
+        return data
+
+@dataclass
+class OracleTableRollableTableText3(OracleTableRollable):
+    """
+    A rollable oracle table with one roll column and 3 text columns.
+    """
+
+    id: 'OracleRollableID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    column_labels: 'OracleTableRollableTableText3ColumnLabels'
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    dice: 'DiceExpression'
+    """
+    The roll used to select a result on this oracle.
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    rows: 'List[OracleTableRowText3]'
+    """
+    An array of objects, each representing a single row of the table.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of the oracle table's intended usage, which might
+    include multiple paragraphs. If it's only a couple sentences, use the
+    `summary` key instead.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An icon that represents this table.
+    """
+
+    match: 'Optional[OracleMatchBehavior]'
+    """
+    Most oracle tables are insensitive to matches, but a few define special
+    match behavior.
+    """
+
+    recommended_rolls: 'Optional[OracleTableRollableTableText3RecommendedRolls]'
+    replaces: 'Optional[OracleRollableID]'
+    """
+    Indicates that this object replaces the identified OracleRollable.
+    References to the replaced object can be considered equivalent to this
+    object.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of the oracle table's intended usage, no more than a few
+    sentences in length. This is intended for use in application tooltips
+    and similar sorts of hints. Longer text should use the "description" key
+    instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRollableTableText3':
+        return cls(
+            "table_text3",
+            _from_json_data(OracleRollableID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
+            _from_json_data(OracleTableRollableTableText3ColumnLabels, data.get("column_labels")),
+            _from_json_data(DiceExpression, data.get("dice")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(List[OracleTableRowText3], data.get("rows")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
+            _from_json_data(Optional[OracleTableRollableTableText3RecommendedRolls], data.get("recommended_rolls")),
+            _from_json_data(Optional[OracleRollableID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "oracle_type": "table_text3" }
+        data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["dice"] = _to_json_data(self.dice)
+        data["name"] = _to_json_data(self.name)
+        data["rows"] = _to_json_data(self.rows)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.match is not None:
+             data["match"] = _to_json_data(self.match)
+        if self.recommended_rolls is not None:
+             data["recommended_rolls"] = _to_json_data(self.recommended_rolls)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
+
+@dataclass
+class OracleTableRowText:
+    """
+    Represents a row in an oracle table, with a single text cell.
+    """
+
+    max: 'int'
+    """
+    High end of the dice range for this table row.
+    """
+
+    min: 'int'
+    """
+    Low end of the dice range for this table row.
+    """
+
+    text: 'MarkdownString'
+    """
+    The primary text content of this row.
+    """
+
+    i18n: 'Optional[I18nHints]'
+    embed_table: 'Optional[OracleRollableID]'
+    """
+    Hints that the identified table should be rendered inside this table row.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    oracle_rolls: 'Optional[List[OracleRoll]]'
+    """
+    Further oracle rolls prompted by this table row.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    template: 'Optional[OracleRollTemplate]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableRowText':
+        return cls(
+            _from_json_data(int, data.get("max")),
+            _from_json_data(int, data.get("min")),
+            _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(Optional[I18nHints], data.get("_i18n")),
+            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[OracleRollTemplate], data.get("template")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["max"] = _to_json_data(self.max)
+        data["min"] = _to_json_data(self.min)
+        data["text"] = _to_json_data(self.text)
+        if self.i18n is not None:
+             data["_i18n"] = _to_json_data(self.i18n)
+        if self.embed_table is not None:
+             data["embed_table"] = _to_json_data(self.embed_table)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.oracle_rolls is not None:
+             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.template is not None:
+             data["template"] = _to_json_data(self.template)
+        return data
+
+@dataclass
+class OracleTableRowText2:
     """
     Represents a row in an oracle table that provides additional details.
     """
@@ -5673,7 +5920,7 @@ class OracleTableRow2textCells:
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRow2textCells':
+    def from_json_data(cls, data: Any) -> 'OracleTableRowText2':
         return cls(
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
@@ -5708,7 +5955,7 @@ class OracleTableRow2textCells:
         return data
 
 @dataclass
-class OracleTableRow3textCells:
+class OracleTableRowText3:
     """
     Represents a row in an oracle table with 3 text cells.
     """
@@ -5746,7 +5993,7 @@ class OracleTableRow3textCells:
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRow3textCells':
+    def from_json_data(cls, data: Any) -> 'OracleTableRowText3':
         return cls(
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
@@ -5768,75 +6015,6 @@ class OracleTableRow3textCells:
         data["text"] = _to_json_data(self.text)
         data["text2"] = _to_json_data(self.text2)
         data["text3"] = _to_json_data(self.text3)
-        if self.i18n is not None:
-             data["_i18n"] = _to_json_data(self.i18n)
-        if self.embed_table is not None:
-             data["embed_table"] = _to_json_data(self.embed_table)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        if self.oracle_rolls is not None:
-             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
-        if self.suggestions is not None:
-             data["suggestions"] = _to_json_data(self.suggestions)
-        if self.template is not None:
-             data["template"] = _to_json_data(self.template)
-        return data
-
-@dataclass
-class OracleTableRowBasic:
-    """
-    Represents a row in an oracle table, with a single text cell.
-    """
-
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
-    text: 'MarkdownString'
-    """
-    The primary text content of this row.
-    """
-
-    i18n: 'Optional[I18nHints]'
-    embed_table: 'Optional[OracleRollableID]'
-    """
-    Hints that the identified table should be rendered inside this table row.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleRoll]]'
-    """
-    Further oracle rolls prompted by this table row.
-    """
-
-    suggestions: 'Optional[Suggestions]'
-    template: 'Optional[OracleRollTemplate]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleTableRowBasic':
-        return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
-            _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[I18nHints], data.get("_i18n")),
-            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
-            _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[OracleRollTemplate], data.get("template")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
-        data["text"] = _to_json_data(self.text)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:

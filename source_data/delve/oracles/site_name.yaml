@@ -33,7 +33,7 @@ oracles:
         name: Format
         _source: *Source
         canonical_name: 'Site Name: Format'
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - <<: &i18n.template.result.proper_noun
               _i18n:
@@ -107,7 +107,7 @@ oracles:
               - oracle: delve/oracles/site_name/namesake
       description:
         canonical_name: 'Site Name: Description'
-        oracle_type: table_basic
+        oracle_type: table_text
         name: Description
         _source:
           <<: *Source
@@ -324,7 +324,7 @@ oracles:
             text: Ruined
       detail:
         canonical_name: 'Site Name: Detail'
-        oracle_type: table_basic
+        oracle_type: table_text
         name: Detail
         _source:
           <<: *Source
@@ -535,7 +535,7 @@ oracles:
             text: Wrath
       namesake:
         canonical_name: 'Site Name: Namesake'
-        oracle_type: table_basic
+        oracle_type: table_text
         name: Namesake
         summary: |-
           You may also use your preferred name randomizer to generate a Namesake for your site. If you want to add details for the Namesake, use the [Character oracles](id:classic/collections/oracles/character) in *Ironsworn Core*. This may help inspire a deeper understanding of the history of the site.
@@ -749,7 +749,7 @@ oracles:
       place:
         name: Place
         canonical_name: 'Site Name: Place'
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 210
@@ -850,7 +850,7 @@ oracles:
           barrow:
             name: Barrow
             <<: &Place
-              oracle_type: table_basic
+              oracle_type: table_text
             # rendering:
             #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/1-6

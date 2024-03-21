@@ -212,7 +212,7 @@ oracles:
             #     - starforged/assets/path/scoundrel
       backstory_prompts:
         name: Backstory Prompts
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 106
@@ -269,7 +269,7 @@ oracles:
             text: 'Your wanderlust carried you far away'
       starship_history:
         name: Starship History
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 108
@@ -317,7 +317,7 @@ oracles:
             text: 'Won in a bet'
       starship_quirks:
         name: Starship Quirks
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 109
@@ -393,7 +393,7 @@ oracles:
             text: 'Timers and clocks are always just a bit off'
       sector_trouble:
         name: Sector Trouble
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 126
@@ -479,7 +479,7 @@ oracles:
             # suggestions: [*obj:Creature]
       inciting_incident:
         name: Inciting Incident
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 130

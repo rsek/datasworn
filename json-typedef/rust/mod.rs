@@ -2436,7 +2436,7 @@ pub struct OracleCollectionTableSharedRolls {
 
     #[serde(rename = "contents")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<Box<HashMap<String, OracleColumnSimple>>>,
+    pub contents: Option<Box<HashMap<String, OracleColumnText>>>,
 
     /// A longer description of this collection, which might include multiple
     /// paragraphs. If it's only a couple sentences, use the `summary` key
@@ -2525,7 +2525,7 @@ pub struct OracleCollectionTableSharedText {
 
     #[serde(rename = "contents")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<Box<HashMap<String, OracleColumnSimple>>>,
+    pub contents: Option<Box<HashMap<String, OracleColumnText>>>,
 
     /// A longer description of this collection, which might include multiple
     /// paragraphs. If it's only a couple sentences, use the `summary` key
@@ -2617,7 +2617,7 @@ pub struct OracleCollectionTableSharedText2 {
 
     #[serde(rename = "contents")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<Box<HashMap<String, OracleColumn2textCells>>>,
+    pub contents: Option<Box<HashMap<String, OracleColumnText2>>>,
 
     /// A longer description of this collection, which might include multiple
     /// paragraphs. If it's only a couple sentences, use the `summary` key
@@ -2706,7 +2706,7 @@ pub struct OracleCollectionTableSharedText3 {
 
     #[serde(rename = "contents")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<Box<HashMap<String, OracleColumn2textCells>>>,
+    pub contents: Option<Box<HashMap<String, OracleColumnText2>>>,
 
     /// A longer description of this collection, which might include multiple
     /// paragraphs. If it's only a couple sentences, use the `summary` key
@@ -2836,13 +2836,14 @@ pub struct OracleCollectionTables {
 pub type OracleCollectionId = String;
 
 #[derive(Serialize, Deserialize)]
-pub enum OracleColumn2textCellsOracleType {
-    #[serde(rename = "column_text2")]
-    ColumnText2,
+pub enum OracleColumnTextOracleType {
+    #[serde(rename = "column_text")]
+    ColumnText,
 }
 
+/// Represents a single column in an OracleCollection.
 #[derive(Serialize, Deserialize)]
-pub struct OracleColumn2textCells {
+pub struct OracleColumnText {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
     pub id: OracleRollableId,
@@ -2856,11 +2857,11 @@ pub struct OracleColumn2textCells {
     pub name: Label,
 
     #[serde(rename = "oracle_type")]
-    pub oracleType: OracleColumn2textCellsOracleType,
+    pub oracleType: OracleColumnTextOracleType,
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRow2textCells>,
+    pub rows: Vec<OracleTableRowText>,
 
     /// An optional thematic color for this column. For an example, see "Basic
     /// Creature Form" (Starforged p. 337)
@@ -2902,14 +2903,13 @@ pub struct OracleColumn2textCells {
 }
 
 #[derive(Serialize, Deserialize)]
-pub enum OracleColumnSimpleOracleType {
-    #[serde(rename = "column_basic")]
-    ColumnBasic,
+pub enum OracleColumnText2OracleType {
+    #[serde(rename = "column_text2")]
+    ColumnText2,
 }
 
-/// Represents a single column in an OracleCollection.
 #[derive(Serialize, Deserialize)]
-pub struct OracleColumnSimple {
+pub struct OracleColumnText2 {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
     pub id: OracleRollableId,
@@ -2923,11 +2923,11 @@ pub struct OracleColumnSimple {
     pub name: Label,
 
     #[serde(rename = "oracle_type")]
-    pub oracleType: OracleColumnSimpleOracleType,
+    pub oracleType: OracleColumnText2OracleType,
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowBasic>,
+    pub rows: Vec<OracleTableRowText2>,
 
     /// An optional thematic color for this column. For an example, see "Basic
     /// Creature Form" (Starforged p. 337)
@@ -3049,17 +3049,20 @@ pub type OracleRollableId = String;
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "oracle_type")]
 pub enum OracleTableRollable {
-    #[serde(rename = "table_basic")]
-    TableBasic(OracleTableRollableTableBasic),
+    #[serde(rename = "table_text")]
+    TableText(OracleTableRollableTableText),
 
     #[serde(rename = "table_text2")]
     TableText2(OracleTableRollableTableText2),
+
+    #[serde(rename = "table_text3")]
+    TableText3(OracleTableRollableTableText3),
 }
 
 /// The label at the head of each table column. The `roll` key refers to the
 /// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRollableTableBasicColumnLabels {
+pub struct OracleTableRollableTableTextColumnLabels {
     #[serde(rename = "roll")]
     pub roll: Label,
 
@@ -3068,7 +3071,7 @@ pub struct OracleTableRollableTableBasicColumnLabels {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRollableTableBasicRecommendedRolls {
+pub struct OracleTableRollableTableTextRecommendedRolls {
     #[serde(rename = "max")]
     pub max: i16,
 
@@ -3076,10 +3079,10 @@ pub struct OracleTableRollableTableBasicRecommendedRolls {
     pub min: i16,
 }
 
-/// Represents a basic rollable oracle table with one roll column and one
-/// `result` column.
+/// Represents a basic rollable oracle table with one roll column and one text
+/// result column.
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRollableTableBasic {
+pub struct OracleTableRollableTableText {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
     pub id: OracleRollableId,
@@ -3092,7 +3095,7 @@ pub struct OracleTableRollableTableBasic {
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
-    pub columnLabels: OracleTableRollableTableBasicColumnLabels,
+    pub columnLabels: OracleTableRollableTableTextColumnLabels,
 
     /// The roll used to select a result on this oracle.
     #[serde(rename = "dice")]
@@ -3104,7 +3107,7 @@ pub struct OracleTableRollableTableBasic {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowBasic>,
+    pub rows: Vec<OracleTableRowText>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -3132,7 +3135,7 @@ pub struct OracleTableRollableTableBasic {
 
     #[serde(rename = "recommended_rolls")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub recommendedRolls: Option<Box<OracleTableRollableTableBasicRecommendedRolls>>,
+    pub recommendedRolls: Option<Box<OracleTableRollableTableTextRecommendedRolls>>,
 
     /// Indicates that this object replaces the identified OracleRollable.
     /// References to the replaced object can be considered equivalent to this
@@ -3208,7 +3211,7 @@ pub struct OracleTableRollableTableText2 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRow2textCells>,
+    pub rows: Vec<OracleTableRowText2>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -3262,9 +3265,159 @@ pub struct OracleTableRollableTableText2 {
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableRollableTableText3ColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+
+    #[serde(rename = "text3")]
+    pub text3: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableRollableTableText3RecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+/// A rollable oracle table with one roll column and 3 text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableRollableTableText3 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableRollableTableText3ColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleTableRowText3>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleTableRollableTableText3RecommendedRolls>>,
+
+    /// Indicates that this object replaces the identified OracleRollable.
+    /// References to the replaced object can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+}
+
+/// Represents a row in an oracle table, with a single text cell.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableRowText {
+    /// High end of the dice range for this table row.
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    /// Low end of the dice range for this table row.
+    #[serde(rename = "min")]
+    pub min: i16,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
+
 /// Represents a row in an oracle table that provides additional details.
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRow2textCells {
+pub struct OracleTableRowText2 {
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,
@@ -3310,7 +3463,7 @@ pub struct OracleTableRow2textCells {
 
 /// Represents a row in an oracle table with 3 text cells.
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRow3textCells {
+pub struct OracleTableRowText3 {
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,
@@ -3328,49 +3481,6 @@ pub struct OracleTableRow3textCells {
 
     #[serde(rename = "text3")]
     pub text3: MarkdownString,
-
-    #[serde(rename = "_i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
-
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
-}
-
-/// Represents a row in an oracle table, with a single text cell.
-#[derive(Serialize, Deserialize)]
-pub struct OracleTableRowBasic {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
-
-    /// The primary text content of this row.
-    #[serde(rename = "text")]
-    pub text: MarkdownString,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    public class OracleColumn2textCells
+    public class OracleColumnText2
     {
         /// <summary>
         /// The unique Datasworn ID for this item.
@@ -26,13 +26,13 @@ namespace Datasworn
         public Label Name { get; set; }
 
         [JsonPropertyName("oracle_type")]
-        public OracleColumn2textCellsOracleType OracleType { get; set; }
+        public OracleColumnText2OracleType OracleType { get; set; }
 
         /// <summary>
         /// An array of objects, each representing a single row of the table.
         /// </summary>
         [JsonPropertyName("rows")]
-        public IList<OracleTableRow2textCells> Rows { get; set; }
+        public IList<OracleTableRowText2> Rows { get; set; }
 
         /// <summary>
         /// An optional thematic color for this column. For an example, see

@@ -35,7 +35,7 @@
 					"_id": "delve/oracles/character/activity",
 					"name": "Activity",
 					"canonical_name": "Character: Activity",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the [Focus](id:delve/oracles/feature/focus) oracle or [Theme](id:classic/oracles/action_and_theme/theme) oracle.",
 					"column_labels": {
@@ -567,7 +567,7 @@
 					"_id": "delve/oracles/character/disposition",
 					"name": "Disposition",
 					"canonical_name": "Character: Disposition",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle when you want to define the initial tone of an encounter with an NPC or faction.",
 					"column_labels": {
@@ -734,7 +734,7 @@
 					"_id": "delve/oracles/combat_event/method",
 					"name": "Method",
 					"canonical_name": "Combat Event: Method",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -1262,7 +1262,7 @@
 					"_id": "delve/oracles/combat_event/target",
 					"name": "Target",
 					"canonical_name": "Combat Event: Target",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -1814,7 +1814,7 @@
 					"_id": "delve/oracles/feature/aspect",
 					"name": "Aspect",
 					"canonical_name": "Feature: Aspect",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -2342,7 +2342,7 @@
 					"_id": "delve/oracles/feature/focus",
 					"name": "Focus",
 					"canonical_name": "Feature: Focus",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -2891,7 +2891,7 @@
 					"_id": "delve/oracles/monstrosity/size",
 					"name": "Size",
 					"canonical_name": "Monstrosity: Size",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -2946,7 +2946,7 @@
 					"_id": "delve/oracles/monstrosity/primary_form",
 					"name": "Primary Form",
 					"canonical_name": "Monstrosity: Primary Form",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!",
 					"column_labels": {
@@ -3156,7 +3156,7 @@
 					"_id": "delve/oracles/monstrosity/characteristics",
 					"name": "Characteristics",
 					"canonical_name": "Monstrosity: Characteristics",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Roll up to four times for Characteristics and keep up to three of those results.",
 					"description": "Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!",
@@ -3323,7 +3323,7 @@
 					"_id": "delve/oracles/monstrosity/abilities",
 					"name": "Abilities",
 					"canonical_name": "Monstrosity: Abilities",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Roll up to four times for Abilities and keep up to three of those results.",
 					"description": "Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!\n\nYou should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.",
@@ -3577,7 +3577,7 @@
 				"find_an_opportunity": {
 					"_id": "delve/oracles/moves/find_an_opportunity",
 					"name": "Find an Opportunity",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -3651,7 +3651,7 @@
 				"reveal_a_danger": {
 					"_id": "delve/oracles/moves/reveal_a_danger",
 					"name": "Reveal a Danger",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -3744,7 +3744,7 @@
 				"reveal_a_danger_alt": {
 					"_id": "delve/oracles/moves/reveal_a_danger_alt",
 					"name": "Reveal a Danger (alternate version)",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"replaces": "delve/oracles/moves/reveal_a_danger",
 					"dice": "1d100",
 					"column_labels": {
@@ -3828,7 +3828,7 @@
 				"advance_a_threat": {
 					"_id": "delve/oracles/moves/advance_a_threat",
 					"name": "Advance a Threat",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"match": {
 						"text": "On a match, this development also exposes a surprising aspect of the threat’s plan or nature."
@@ -3877,7 +3877,7 @@
 						"edge": {
 							"_id": "delve/oracles/moves/delve_the_depths/edge",
 							"name": "Edge",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -3910,7 +3910,7 @@
 						"shadow": {
 							"_id": "delve/oracles/moves/delve_the_depths/shadow",
 							"name": "Shadow",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -3943,7 +3943,7 @@
 						"wits": {
 							"_id": "delve/oracles/moves/delve_the_depths/wits",
 							"name": "Wits",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -4015,7 +4015,7 @@
 					"_id": "delve/oracles/site_name/format",
 					"name": "Format",
 					"canonical_name": "Site Name: Format",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -4277,7 +4277,7 @@
 					"_id": "delve/oracles/site_name/description",
 					"name": "Description",
 					"canonical_name": "Site Name: Description",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -4802,7 +4802,7 @@
 					"_id": "delve/oracles/site_name/detail",
 					"name": "Detail",
 					"canonical_name": "Site Name: Detail",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -5327,7 +5327,7 @@
 					"_id": "delve/oracles/site_name/namesake",
 					"name": "Namesake",
 					"canonical_name": "Site Name: Namesake",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "You may also use your preferred name randomizer to generate a Namesake for your site. If you want to add details for the Namesake, use the [Character oracles](id:classic/collections/oracles/character) in *Ironsworn Core*. This may help inspire a deeper understanding of the history of the site.",
 					"column_labels": {
@@ -5853,7 +5853,7 @@
 					"_id": "delve/oracles/site_name/place",
 					"name": "Place",
 					"canonical_name": "Site Name: Place",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -6065,7 +6065,7 @@
 						"barrow": {
 							"_id": "delve/oracles/site_name/place/barrow",
 							"name": "Barrow",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6149,7 +6149,7 @@
 						"cavern": {
 							"_id": "delve/oracles/site_name/place/cavern",
 							"name": "Cavern",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6273,7 +6273,7 @@
 						"frozen_cavern": {
 							"_id": "delve/oracles/site_name/place/frozen_cavern",
 							"name": "Frozen Cavern",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6397,7 +6397,7 @@
 						"icereach": {
 							"_id": "delve/oracles/site_name/place/icereach",
 							"name": "Icereach",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6481,7 +6481,7 @@
 						"mine": {
 							"_id": "delve/oracles/site_name/place/mine",
 							"name": "Mine",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6565,7 +6565,7 @@
 						"pass": {
 							"_id": "delve/oracles/site_name/place/pass",
 							"name": "Pass",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6689,7 +6689,7 @@
 						"ruin": {
 							"_id": "delve/oracles/site_name/place/ruin",
 							"name": "Ruin",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6813,7 +6813,7 @@
 						"sea_cave": {
 							"_id": "delve/oracles/site_name/place/sea_cave",
 							"name": "Sea Cave",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6897,7 +6897,7 @@
 						"shadowfen": {
 							"_id": "delve/oracles/site_name/place/shadowfen",
 							"name": "Shadowfen",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -7021,7 +7021,7 @@
 						"stronghold": {
 							"_id": "delve/oracles/site_name/place/stronghold",
 							"name": "Stronghold",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -7145,7 +7145,7 @@
 						"tanglewood": {
 							"_id": "delve/oracles/site_name/place/tanglewood",
 							"name": "Tanglewood",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -7249,7 +7249,7 @@
 						"underkeep": {
 							"_id": "delve/oracles/site_name/place/underkeep",
 							"name": "Underkeep",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -7409,7 +7409,7 @@
 					"_id": "delve/oracles/site_nature/theme",
 					"name": "Theme",
 					"canonical_name": "Site Nature: Theme",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -7474,7 +7474,7 @@
 					"_id": "delve/oracles/site_nature/domain",
 					"name": "Domain",
 					"canonical_name": "Site Nature: Domain",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -7580,7 +7580,7 @@
 					"_id": "delve/oracles/threat/category",
 					"name": "Category",
 					"canonical_name": "Threat: Category",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -7664,7 +7664,7 @@
 					"_id": "delve/oracles/threat/burgeoning_conflict",
 					"name": "Burgeoning Conflict",
 					"canonical_name": "Threat: Burgeoning Conflict",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -7739,7 +7739,7 @@
 					"_id": "delve/oracles/threat/cursed_site",
 					"name": "Cursed Site",
 					"canonical_name": "Threat: Cursed Site",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -7814,7 +7814,7 @@
 					"_id": "delve/oracles/threat/environmental_calamity",
 					"name": "Environmental Calamity",
 					"canonical_name": "Threat: Environmental Calamity",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -7889,7 +7889,7 @@
 					"_id": "delve/oracles/threat/malignant_plague",
 					"name": "Malignant Plague",
 					"canonical_name": "Threat: Malignant Plague",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -7964,7 +7964,7 @@
 					"_id": "delve/oracles/threat/rampaging_creature",
 					"name": "Rampaging Creature",
 					"canonical_name": "Threat: Rampaging Creature",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -8039,7 +8039,7 @@
 					"_id": "delve/oracles/threat/ravaging_horde",
 					"name": "Ravaging Horde",
 					"canonical_name": "Threat: Ravaging Horde",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -8114,7 +8114,7 @@
 					"_id": "delve/oracles/threat/scheming_leader",
 					"name": "Scheming Leader",
 					"canonical_name": "Threat: Scheming Leader",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -8189,7 +8189,7 @@
 					"_id": "delve/oracles/threat/power_hungry_mystic",
 					"name": "Power-Hungry Mystic",
 					"canonical_name": "Threat: Power-Hungry Mystic",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -8264,7 +8264,7 @@
 					"_id": "delve/oracles/threat/zealous_cult",
 					"name": "Zealous Cult",
 					"canonical_name": "Threat: Zealous Cult",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -8360,7 +8360,7 @@
 					"_id": "delve/oracles/trap/trap",
 					"name": "Event",
 					"canonical_name": "Trap: Event",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -8638,7 +8638,7 @@
 					"_id": "delve/oracles/trap/component",
 					"name": "Component",
 					"canonical_name": "Trap: Component",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",

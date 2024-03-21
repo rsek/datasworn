@@ -32,7 +32,7 @@ oracles:
               terminus:
                 <<: &OracleTable.Terminus
                   name: Terminus
-                  oracle_type: column_basic
+                  oracle_type: column_text
                   tags:
                     starforged:
                       region: terminus
@@ -61,7 +61,7 @@ oracles:
               outlands:
                 <<: &OracleTable.Outlands
                   name: Outlands
-                  oracle_type: column_basic
+                  oracle_type: column_text
                   tags:
                     starforged:
                       region: outlands
@@ -85,7 +85,7 @@ oracles:
               expanse:
                 <<: &OracleTable.Expanse
                   name: Expanse
-                  oracle_type: column_basic
+                  oracle_type: column_text
                   tags:
                     starforged:
                       region: expanse
@@ -108,7 +108,7 @@ oracles:
             <<: &SampleNames
               name: Sample Names
               dice: 1d20
-              oracle_type: table_basic
+              oracle_type: table_text
             _source: *CollectionSource
             rows:
               - min: 1
@@ -174,7 +174,7 @@ oracles:
           atmosphere:
             <<: &Atmosphere
               name: Atmosphere
-              oracle_type: table_basic
+              oracle_type: table_text
             _source: *CollectionSource
             rows:
               - min: 1
@@ -204,7 +204,7 @@ oracles:
           observed_from_space:
             <<: &ObservedFromSpace
               name: Observed From Space
-              oracle_type: table_basic
+              oracle_type: table_text
               recommended_rolls:
                 min: 1
                 max: 2
@@ -259,7 +259,7 @@ oracles:
           feature:
             <<: &Feature
               name: Planetside Feature
-              oracle_type: table_basic
+              oracle_type: table_text
               recommended_rolls:
                 min: 1
                 max: 2
@@ -328,7 +328,7 @@ oracles:
           life:
             <<: &Life
               name: Life
-              oracle_type: table_basic
+              oracle_type: table_text
             _source: *CollectionSource
             rows:
               - min: 1
@@ -2649,7 +2649,7 @@ oracles:
                 <<: *Life.Overrun
           diversity:
             name: Diversity
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
             rows:
@@ -2685,7 +2685,7 @@ oracles:
                     oracle: *biome
           biomes:
             name: Biomes
-            oracle_type: table_basic
+            oracle_type: table_text
             _source: *CollectionSource
             rows:
               - min: 1

@@ -38,7 +38,7 @@ oracles:
             name: Edge
             <<: &DelveTheDepths
               # source: *CollectionSource
-              oracle_type: column_basic
+              oracle_type: column_text
             rows:
               - min: 1
                 max: 45
@@ -96,7 +96,7 @@ oracles:
     contents:
       find_an_opportunity:
         name: Find an Opportunity
-        oracle_type: table_basic
+        oracle_type: table_text
         # Move: delve/moves/delve/find_an_opportunity
         _source:
           <<: *Source
@@ -134,7 +134,7 @@ oracles:
             text: 'You encounter a denizen in need of help.'
       reveal_a_danger:
         name: Reveal a Danger
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 34
@@ -182,7 +182,7 @@ oracles:
       reveal_a_danger_alt:
         name: Reveal a Danger (alternate version)
         replaces: delve/oracles/moves/reveal_a_danger
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 68
@@ -223,7 +223,7 @@ oracles:
                 duplicates: make_it_worse
       advance_a_threat:
         name: Advance a Threat
-        oracle_type: table_basic
+        oracle_type: table_text
         match:
           text: |-
             On a match, this development also exposes a surprising aspect of the threat’s plan or nature.

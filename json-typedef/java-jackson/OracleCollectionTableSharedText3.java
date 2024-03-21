@@ -36,7 +36,7 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("contents")
-    private Map<String, OracleColumn2textCells> contents;
+    private Map<String, OracleColumnText2> contents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("description")
@@ -178,14 +178,14 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     /**
      * Getter for contents.<p>
      */
-    public Map<String, OracleColumn2textCells> getContents() {
+    public Map<String, OracleColumnText2> getContents() {
         return contents;
     }
 
     /**
      * Setter for contents.<p>
      */
-    public void setContents(Map<String, OracleColumn2textCells> contents) {
+    public void setContents(Map<String, OracleColumnText2> contents) {
         this.contents = contents;
     }
 

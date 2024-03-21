@@ -64,7 +64,7 @@ oracles:
       detail:
         _source: *Source
         name: Overland Details
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 1
@@ -369,7 +369,7 @@ oracles:
       cursed_details:
         _source: *Source
         name: Cursed Overland Details
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 1
@@ -674,7 +674,7 @@ oracles:
       peril:
         _source: *Source
         name: Overland Perils
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 3
@@ -791,7 +791,7 @@ oracles:
       opportunity:
         _source: *Source
         name: Overland Opportunities
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 4
@@ -877,7 +877,7 @@ oracles:
           myriads:
             name: Myriads
             summary: Central Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - min: 1
                 max: 20
@@ -933,7 +933,7 @@ oracles:
           margins:
             name: Margins
             summary: Outer Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - min: 1
                 max: 20
@@ -960,7 +960,7 @@ oracles:
           reaches:
             name: Reaches
             summary: Remote Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - min: 1
                 max: 20
@@ -992,7 +992,7 @@ oracles:
           highlands:
             _source: *Source
             name: Highlands
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *highlands.summary
             rows:
               - <<: &Landmark.0
@@ -1078,7 +1078,7 @@ oracles:
           jungle:
             _source: *Source
             name: Jungle
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *jungle.summary
             rows:
               - <<: *Landmark.0
@@ -1125,7 +1125,7 @@ oracles:
           lava_field:
             _source: *Source
             name: Lava Field
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *lava_field.summary
             rows:
               - <<: *Landmark.0
@@ -1172,7 +1172,7 @@ oracles:
           marsh:
             _source: *Source
             name: Marsh
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *marsh.summary
             rows:
               - <<: *Landmark.0
@@ -1219,7 +1219,7 @@ oracles:
           river:
             _source: *Source
             name: River
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *river.summary
             rows:
               - <<: *Landmark.0
@@ -1266,7 +1266,7 @@ oracles:
           scrub:
             _source: *Source
             name: Scrub
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *scrub.summary
             rows:
               - <<: *Landmark.0
@@ -1313,7 +1313,7 @@ oracles:
           shore:
             _source: *Source
             name: Shore
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *shore.summary
             rows:
               - <<: *Landmark.0
@@ -1360,7 +1360,7 @@ oracles:
           swamp:
             _source: *Source
             name: Swamp
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *swamp.summary
             rows:
               - <<: *Landmark.0
@@ -1407,7 +1407,7 @@ oracles:
           wastes:
             _source: *Source
             name: Wastes
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *wastes.summary
             rows:
               - <<: *Landmark.0
@@ -1454,7 +1454,7 @@ oracles:
           woodland:
             _source: *Source
             name: Woodland
-            oracle_type: table_basic
+            oracle_type: table_text
             summary: *woodland.summary
             rows:
               - <<: *Landmark.0

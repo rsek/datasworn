@@ -21,7 +21,7 @@ oracles:
     contents:
       aspect:
         name: Aspect
-        oracle_type: table_basic
+        oracle_type: table_text
         canonical_name: 'Feature: Aspect'
         suggestions:
           oracles:
@@ -238,7 +238,7 @@ oracles:
             text: Mystical
       focus:
         name: Focus
-        oracle_type: table_basic
+        oracle_type: table_text
         canonical_name: 'Feature: Focus'
         suggestions:
           oracles:

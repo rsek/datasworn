@@ -14,7 +14,7 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_basic
+        oracle_type: table_text
         summary: If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.
         _source:
           <<: *Source
@@ -39,7 +39,7 @@ oracles:
             text: Preserved in a > Ruin; pg XX
       cursed_location:
         name: Cursed Location
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -110,7 +110,7 @@ oracles:
             text2: Storehouse; great hall; cavern vault
       aspects:
         name: Aspects
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         summary: Use this table to reveal characteristics of a treasure or its surroundings. Since the results often introduce twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.
@@ -165,7 +165,7 @@ oracles:
             text: Shows signs of pilfering or tampering
       cursed_aspects:
         name: Cursed Aspects
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -231,7 +231,7 @@ oracles:
             text: Summons a powerful being or creature
       precious_items:
         name: Precious Items
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         summary: Roll or select a number of items on this table as set by the treasure’s Value (page 185). Each result represents a quantity of that item, such as a lockbox filled with pearls, a barrel of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the Tokens table (below).
@@ -316,7 +316,7 @@ oracles:
             text: '[Token]'
       tokens:
         name: Tokens
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:
@@ -622,7 +622,7 @@ oracles:
             text: Well-stocked surgeon's bag
       cursed_tokens:
         name: Cursed tokens
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         rows:

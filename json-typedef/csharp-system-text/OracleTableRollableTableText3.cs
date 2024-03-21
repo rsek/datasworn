@@ -6,15 +6,33 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Represents a single column in an OracleCollection.
+    /// A rollable oracle table with one roll column and 3 text columns.
     /// </summary>
-    public class OracleColumnSimple
+    public class OracleTableRollableTableText3 : OracleTableRollable
     {
+        [JsonPropertyName("oracle_type")]
+        public string OracleType { get => "table_text3"; }
+
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
         [JsonPropertyName("_id")]
         public OracleRollableId Id { get; set; }
+
+        /// <summary>
+        /// Attribution for the original source (such as a book or website) of
+        /// this item, including the author and licensing information.
+        /// </summary>
+        [JsonPropertyName("_source")]
+        public SourceInfo Source { get; set; }
+
+        /// <summary>
+        /// The label at the head of each table column. The `roll` key refers
+        /// to the roll column showing the dice range (`min` and `max` on each
+        /// table row).
+        /// </summary>
+        [JsonPropertyName("column_labels")]
+        public OracleTableRollableTableText3ColumnLabels ColumnLabels { get; set; }
 
         /// <summary>
         /// The roll used to select a result on this oracle.
@@ -23,30 +41,36 @@ namespace Datasworn
         public DiceExpression Dice { get; set; }
 
         /// <summary>
-        /// The primary label at the head of this column.
+        /// The primary name/label for this item.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
-
-        [JsonPropertyName("oracle_type")]
-        public OracleColumnSimpleOracleType OracleType { get; set; }
 
         /// <summary>
         /// An array of objects, each representing a single row of the table.
         /// </summary>
         [JsonPropertyName("rows")]
-        public IList<OracleTableRowBasic> Rows { get; set; }
+        public IList<OracleTableRowText3> Rows { get; set; }
 
         /// <summary>
-        /// An optional thematic color for this column. For an example, see
-        /// "Basic Creature Form" (Starforged p. 337)
+        /// The name of this item as it appears on the page in the book, if it's
+        /// different from `name`.
         /// </summary>
-        [JsonPropertyName("color")]
+        [JsonPropertyName("canonical_name")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public CssColor? Color { get; set; }
+        public Label? CanonicalName { get; set; }
 
         /// <summary>
-        /// An optional icon for this column.
+        /// A longer description of the oracle table's intended usage, which
+        /// might include multiple paragraphs. If it's only a couple sentences,
+        /// use the `summary` key instead.
+        /// </summary>
+        [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public MarkdownString? Description { get; set; }
+
+        /// <summary>
+        /// An icon that represents this table.
         /// </summary>
         [JsonPropertyName("icon")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -59,6 +83,10 @@ namespace Datasworn
         [JsonPropertyName("match")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public OracleMatchBehavior? Match { get; set; }
+
+        [JsonPropertyName("recommended_rolls")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public OracleTableRollableTableText3RecommendedRolls RecommendedRolls { get; set; }
 
         /// <summary>
         /// Indicates that this object replaces the identified OracleRollable.
@@ -74,8 +102,10 @@ namespace Datasworn
         public Suggestions? Suggestions { get; set; }
 
         /// <summary>
-        /// Optional secondary text at the head of this column. For best
-        /// results, this should be no more than a few words in length.
+        /// A brief summary of the oracle table's intended usage, no more than
+        /// a few sentences in length. This is intended for use in application
+        /// tooltips and similar sorts of hints. Longer text should use the
+        /// "description" key instead.
         /// </summary>
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

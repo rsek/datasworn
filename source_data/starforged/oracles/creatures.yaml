@@ -19,7 +19,7 @@ oracles:
         name: Environment
         # usage:
         #   initial: true
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 336
@@ -71,7 +71,7 @@ oracles:
               - oracle: starforged/oracles/creatures/basic_form/air
       scale:
         name: Scale
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 336
@@ -120,7 +120,7 @@ oracles:
                 auto: true
       ultra_scale:
         name: Ultra-scale
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 336
@@ -144,7 +144,7 @@ oracles:
             # set_attributes: {creature_scale: [vast]}
       first_look:
         name: Creature First Look
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 338
@@ -311,7 +311,7 @@ oracles:
             text: Visible symbiote
       encountered_behavior:
         name: Encountered Behavior
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 338
@@ -433,7 +433,7 @@ oracles:
                 auto: true
       revealed_aspect:
         name: Revealed Creature Aspect
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 339
@@ -619,7 +619,7 @@ oracles:
             name: Space
             icon: *Space.icon
             color: '#131A1C'
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             # requires:
             #   attributes:
@@ -720,7 +720,7 @@ oracles:
           interior:
             name: Interior
             icon: *Interior.icon
-            oracle_type: column_basic
+            oracle_type: column_text
             color: '#80868E'
             # usage:
             #   requires:
@@ -783,7 +783,7 @@ oracles:
             name: Land
             color: '#CA181A'
             icon: *Land.icon
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires:
             #     attributes:
@@ -843,7 +843,7 @@ oracles:
               - *BasicForm.17
           liquid:
             name: Liquid
-            oracle_type: column_basic
+            oracle_type: column_text
             color: '#0079BB'
             icon: *Liquid.icon
             # usage:
@@ -905,7 +905,7 @@ oracles:
               - *BasicForm.17
           air:
             name: Air
-            oracle_type: column_basic
+            oracle_type: column_text
             color: '#8D1D82'
             icon: *Air.icon
             # usage:

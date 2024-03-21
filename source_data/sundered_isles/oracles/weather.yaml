@@ -21,7 +21,7 @@ oracles:
             # source: *Source
             name: Myriads
             summary: Central Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - min: 1
                 max: 70
@@ -39,7 +39,7 @@ oracles:
             # source: *Source
             name: Margins
             summary: Outer Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - min: 1
                 max: 60
@@ -51,7 +51,7 @@ oracles:
             # source: *Source
             name: Reaches
             summary: Remote Seas
-            oracle_type: column_basic
+            oracle_type: column_text
             rows:
               - min: 1
                 max: 50
@@ -104,7 +104,7 @@ oracles:
         _source: *Source
         name: Duration of Foul or Cursed Weather
         dice: 1d10
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 2

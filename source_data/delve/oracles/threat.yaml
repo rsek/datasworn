@@ -30,7 +30,7 @@ oracles:
       category:
         name: Category
         <<: &Threat
-          oracle_type: table_basic
+          oracle_type: table_text
         _source:
           <<: *Source
           page: 220

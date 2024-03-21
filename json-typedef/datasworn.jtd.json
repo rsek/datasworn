@@ -2173,7 +2173,7 @@
 						},
 						"contents": {
 							"values": {
-								"ref": "OracleColumnSimple"
+								"ref": "OracleColumnText"
 							},
 							"metadata": {
 								"propertyPattern": "^([a-z][a-z_]*)$"
@@ -2284,7 +2284,7 @@
 						},
 						"contents": {
 							"values": {
-								"ref": "OracleColumnSimple"
+								"ref": "OracleColumnText"
 							},
 							"metadata": {
 								"propertyPattern": "^([a-z][a-z_]*)$"
@@ -2398,7 +2398,7 @@
 						},
 						"contents": {
 							"values": {
-								"ref": "OracleColumn2TextCells"
+								"ref": "OracleColumnText2"
 							},
 							"metadata": {
 								"propertyPattern": "^([a-z][a-z_]*)$"
@@ -2509,7 +2509,7 @@
 						},
 						"contents": {
 							"values": {
-								"ref": "OracleColumn2TextCells"
+								"ref": "OracleColumnText2"
 							},
 							"metadata": {
 								"propertyPattern": "^([a-z][a-z_]*)$"
@@ -2522,7 +2522,7 @@
 				}
 			}
 		},
-		"OracleColumn2TextCells": {
+		"OracleColumnText": {
 			"properties": {
 				"_id": {
 					"ref": "OracleRollableId",
@@ -2544,7 +2544,93 @@
 				},
 				"rows": {
 					"elements": {
-						"ref": "OracleTableRow2TextCells"
+						"ref": "OracleTableRowText"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"column_text"
+					]
+				}
+			},
+			"optionalProperties": {
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+					}
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An optional icon for this column."
+					}
+				},
+				"replaces": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"ref": "Tag"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				}
+			},
+			"metadata": {
+				"description": "Represents a single column in an OracleCollection."
+			}
+		},
+		"OracleColumnText2": {
+			"properties": {
+				"_id": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary label at the head of this column."
+					}
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleTableRowText2"
 					},
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
@@ -2606,96 +2692,10 @@
 			},
 			"metadata": {}
 		},
-		"OracleColumnSimple": {
-			"properties": {
-				"_id": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
-				"name": {
-					"ref": "Label",
-					"metadata": {
-						"description": "The primary label at the head of this column."
-					}
-				},
-				"dice": {
-					"ref": "DiceExpression",
-					"metadata": {
-						"description": "The roll used to select a result on this oracle."
-					}
-				},
-				"rows": {
-					"elements": {
-						"ref": "OracleTableRowBasic"
-					},
-					"metadata": {
-						"description": "An array of objects, each representing a single row of the table."
-					}
-				},
-				"oracle_type": {
-					"enum": [
-						"column_basic"
-					]
-				}
-			},
-			"optionalProperties": {
-				"summary": {
-					"ref": "MarkdownString",
-					"metadata": {
-						"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
-					}
-				},
-				"color": {
-					"ref": "CssColor",
-					"metadata": {
-						"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
-					}
-				},
-				"icon": {
-					"ref": "SvgImageUrl",
-					"metadata": {
-						"description": "An optional icon for this column."
-					}
-				},
-				"replaces": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-					}
-				},
-				"match": {
-					"ref": "OracleMatchBehavior",
-					"metadata": {
-						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
-					}
-				},
-				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				}
-			},
-			"metadata": {
-				"description": "Represents a single column in an OracleCollection."
-			}
-		},
 		"OracleTableRollable": {
 			"discriminator": "oracle_type",
 			"mapping": {
-				"table_basic": {
+				"table_text": {
 					"properties": {
 						"_id": {
 							"ref": "OracleRollableId",
@@ -2736,7 +2736,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowBasic"
+								"ref": "OracleTableRowText"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2808,7 +2808,7 @@
 						}
 					},
 					"metadata": {
-						"description": "Represents a basic rollable oracle table with one roll column and one `result` column."
+						"description": "Represents a basic rollable oracle table with one roll column and one text result column."
 					}
 				},
 				"table_text2": {
@@ -2855,7 +2855,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRow2TextCells"
+								"ref": "OracleTableRowText2"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2929,10 +2929,185 @@
 					"metadata": {
 						"description": "A rollable oracle table with one roll column and two text columns."
 					}
+				},
+				"table_text3": {
+					"properties": {
+						"_id": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "The unique Datasworn ID for this item."
+							}
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"_source": {
+							"ref": "SourceInfo",
+							"metadata": {
+								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								},
+								"text3": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText3"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"optionalProperties": {
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"values": {
+								"values": {
+									"ref": "Tag"
+								},
+								"metadata": {
+									"propertyPattern": "^([a-z][a-z_]*)$"
+								}
+							},
+							"metadata": {
+								"propertyPattern": "^([a-z0-9_]{3,})$"
+							}
+						},
+						"recommended_rolls": {
+							"properties": {
+								"min": {
+									"type": "int16"
+								},
+								"max": {
+									"type": "int16"
+								}
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon that represents this table."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+							}
+						},
+						"description": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+							}
+						},
+						"replaces": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						}
+					},
+					"metadata": {
+						"description": "A rollable oracle table with one roll column and 3 text columns."
+					}
 				}
 			}
 		},
-		"OracleTableRow2TextCells": {
+		"OracleTableRowText": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"min": {
+					"type": "int16",
+					"metadata": {
+						"description": "Low end of the dice range for this table row."
+					}
+				},
+				"max": {
+					"type": "int16",
+					"metadata": {
+						"description": "High end of the dice range for this table row."
+					}
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				}
+			},
+			"metadata": {
+				"description": "Represents a row in an oracle table, with a single text cell."
+			}
+		},
+		"OracleTableRowText2": {
 			"properties": {
 				"text": {
 					"ref": "MarkdownString",
@@ -2988,7 +3163,7 @@
 				"description": "Represents a row in an oracle table that provides additional details."
 			}
 		},
-		"OracleTableRow3TextCells": {
+		"OracleTableRowText3": {
 			"properties": {
 				"text": {
 					"ref": "MarkdownString",
@@ -3045,59 +3220,6 @@
 			},
 			"metadata": {
 				"description": "Represents a row in an oracle table with 3 text cells."
-			}
-		},
-		"OracleTableRowBasic": {
-			"properties": {
-				"text": {
-					"ref": "MarkdownString",
-					"metadata": {
-						"description": "The primary text content of this row."
-					}
-				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
-				}
-			},
-			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
-					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				}
-			},
-			"metadata": {
-				"description": "Represents a row in an oracle table, with a single text cell."
 			}
 		},
 		"OracleTablesCollection": {

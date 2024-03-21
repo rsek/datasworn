@@ -35,7 +35,7 @@ oracles:
                 starforged:
                   region: terminus
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires:
             #     attributes:
@@ -153,7 +153,7 @@ oracles:
                 starforged:
                   region: outlands
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires:
             #     attributes:
@@ -225,7 +225,7 @@ oracles:
                 starforged:
                   region: expanse
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             # usage:
             #   requires:
             #     attributes:
@@ -306,7 +306,7 @@ oracles:
         contents:
           prefix:
             name: Prefix
-            oracle_type: column_basic
+            oracle_type: column_text
             # source: *CollectionSource
             # usage:
             #   initial: true
@@ -577,7 +577,7 @@ oracles:
           suffix:
             name: Suffix
             # source: *CollectionSource
-            oracle_type: column_basic
+            oracle_type: column_text
             summary: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
             # usage:
             #   initial: true
@@ -746,7 +746,7 @@ oracles:
     contents:
       stellar_object:
         name: Stellar Object
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 303
@@ -798,7 +798,7 @@ oracles:
           <<: *Source
           page: 304
         name: Spaceborne Peril
-        oracle_type: table_basic
+        oracle_type: table_text
         # usage:
         #   repeatable: true
         #   requires:
@@ -926,7 +926,7 @@ oracles:
               - number_of_rolls: 2
                 auto: true
       opportunity:
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 305

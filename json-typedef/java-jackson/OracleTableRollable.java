@@ -7,8 +7,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "oracle_type")
 @JsonSubTypes({
-    @JsonSubTypes.Type(name = "table_basic", value = OracleTableRollableTableBasic.class),
+    @JsonSubTypes.Type(name = "table_text", value = OracleTableRollableTableText.class),
     @JsonSubTypes.Type(name = "table_text2", value = OracleTableRollableTableText2.class),
+    @JsonSubTypes.Type(name = "table_text3", value = OracleTableRollableTableText3.class),
 })
 public abstract class OracleTableRollable {
 }

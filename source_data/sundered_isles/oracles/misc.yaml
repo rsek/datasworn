@@ -146,7 +146,7 @@ oracles:
             text2: What solitary chore do you perform? What do you daydream about as you work?
       prompts:
         name: Prompts
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
         summary: Use this table to choose a structured prompt from among the Core oracles (pages 112–115). Roll on each table and interpret the response as appropriate to the question and situation.

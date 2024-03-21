@@ -23,7 +23,7 @@ oracles:
           almost_certain:
             name: Almost Certain
             <<: &AtO
-              oracle_type: column_basic
+              oracle_type: column_text
               match:
                 text: On a match, an extreme result or twist has occurred.
             rows:
@@ -76,7 +76,7 @@ oracles:
     contents:
       endure_harm:
         name: Endure Harm
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 91
@@ -98,7 +98,7 @@ oracles:
             text: 'You are battered but still standing.'
       endure_stress:
         name: Endure Stress
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 93
@@ -117,7 +117,7 @@ oracles:
             text: 'You persevere.'
       pay_the_price:
         name: Pay the Price
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 105

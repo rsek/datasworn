@@ -12,9 +12,62 @@ oracles:
       date: 2023-09-11
     name: Factions
     contents:
+      type:
+        name: Faction Type
+        oracle_type: table_text2
+        _source:
+          <<: *Source
+        rows:
+          - min: 1
+            max: 50
+            text: Society
+            text2: People who share traditions and a way of life
+          - min: 51
+            max: 80
+            text: Organization
+            text2: People joined in a collective trade, pursuit, or goal
+          - min: 81
+            max: 100
+            text: Empire
+            text2: People seeking dominion over the isles
+      influence:
+        name: Faction Influence
+        oracle_type: table_text2
+        _source:
+          <<: *Source
+        rows:
+          - min: 1
+            max: 10
+            text: Forsaken
+            text2: Banished or forgotten
+          - min: 11
+            max: 30
+            text: Isolated
+            text2: Limited influence in a remote location
+          - min: 31
+            max: 50
+            text: Localized
+            text2: Marginal influence in a small area
+          - min: 51
+            max: 70
+            text: Established
+            text2: Strong influence in a small area
+          - min: 71
+            max: 85
+            text: Notable
+            text2: Dispersed influence across a moderate area
+          - min: 86
+            max: 95
+            text: Dominant
+            text2: Far-reaching influence across a large area
+          - min: 96
+            max: 100
+            text: Inescapable
+            text2: Pervasive influence across a vast area
+
       relationships:
         _source: *Source
-        oracle_type: table_basic
+        oracle_type: table_text
         name: Faction Relationships
         rows:
           - min: 1

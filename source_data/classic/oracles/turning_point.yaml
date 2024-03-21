@@ -15,7 +15,7 @@ oracles:
     contents:
       combat_action:
         name: Combat Action
-        oracle_type: table_basic
+        oracle_type: table_text
         canonical_name: 'Oracle 16: Combat Action'
         summary: Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.
         _source:
@@ -78,7 +78,7 @@ oracles:
             text: 'Take a completely unexpected action.'
       mystic_backlash:
         name: Mystic Backlash
-        oracle_type: table_basic
+        oracle_type: table_text
         canonical_name: 'Oracle 17: Mystic Backlash'
         _source:
           <<: *Source
@@ -168,7 +168,7 @@ oracles:
       major_plot_twist:
         canonical_name: 'Oracle 18: Major Plot Twist'
         name: Major Plot Twist
-        oracle_type: table_basic
+        oracle_type: table_text
         summary: Use this oracle to introduce a narrative surprise or revelation. Most of these results have a negative implication, and can be used to resolve a match at a crucial moment in your story. In particular, this is an effective tool to leverage when you make a move with matched 10’s on the challenge dice.
         _source:
           <<: *Source
@@ -243,7 +243,7 @@ oracles:
       challenge_rank:
         canonical_name: 'Oracle 19: Challenge Rank'
         name: Challenge Rank
-        oracle_type: table_basic
+        oracle_type: table_text
         summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
         _source: &CollectionSource
           <<: *Source
@@ -287,7 +287,7 @@ oracles:
     #       quest:
     #         name: Quest
     #         _source: *CollectionSource
-    #         oracle_type: column_basic
+    #         oracle_type: column_text
     #         rows:
     #           - &Troublesome
     #             min: 1
@@ -317,7 +317,7 @@ oracles:
     #       journey:
     #         name: Journey
     #         _source: *CollectionSource
-    #         oracle_type: column_basic
+    #         oracle_type: column_text
     #         rows:
     #           - <<: *Troublesome
     #             text2: 'Traveling a moderate distance within a single region'
@@ -332,7 +332,7 @@ oracles:
     #       foe:
     #         name: Foes
     #         _source: *CollectionSource
-    #         oracle_type: column_basic
+    #         oracle_type: column_text
     #         rows:
     #           - <<: *Troublesome
     #             text2: 'Common enemies'

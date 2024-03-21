@@ -34,7 +34,7 @@ oracles:
                 <<: &Myriads
                   name: Myriads
                   summary: Central Seas
-                  oracle_type: column_basic
+                  oracle_type: column_text
                 rows:
                   - min: 1
                     max: 25
@@ -92,7 +92,7 @@ oracles:
                 <<: &Margins
                   name: Margins
                   summary: Outer Seas
-                  oracle_type: column_basic
+                  oracle_type: column_text
                 rows:
                   - min: 1
                     max: 15
@@ -120,7 +120,7 @@ oracles:
                 <<: &Reaches
                   name: Reaches
                   summary: Remote Seas
-                  oracle_type: column_basic
+                  oracle_type: column_text
                 rows:
                   - min: 1
                     max: 5
@@ -249,7 +249,7 @@ oracles:
       detail:
         _source: *Source
         name: Seafaring Details
-        oracle_type: table_basic
+        oracle_type: table_text
         summary: This table reveals occurrences on a seafaring expedition. Possible results include locations, events, sightings, and encounters.
         tags:
           sundered_isles:
@@ -558,7 +558,7 @@ oracles:
       cursed_details:
         _source: *Source
         name: Cursed Seafaring Details
-        oracle_type: table_basic
+        oracle_type: table_text
         tags:
           sundered_isles:
             cursed_version_of:
@@ -868,7 +868,7 @@ oracles:
         _source: *Source
         name: Seafaring
         summary: Roll or choose on this table when you want inspiration for a trouble during ocean exploration or on a seagoing expedition.
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 3
@@ -982,7 +982,7 @@ oracles:
         _source: *Source
         name: Seafaring Opportunities
         summary: Roll or choose on this table when you want inspiration for a beneficial encounter or event on a seagoing journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint) and find an opportunity.
-        oracle_type: table_basic
+        oracle_type: table_text
         rows:
           - min: 1
             max: 4

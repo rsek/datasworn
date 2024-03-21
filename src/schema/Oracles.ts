@@ -1,8 +1,8 @@
 export * from './oracles/OracleCollection.js'
 export * from './oracles/OracleRollable.js'
 export {
-	OracleTableRowBasic,
-	OracleTableRow2TextCells,
-	OracleTableRow3TextCells,
+	OracleTableRowText,
+	OracleTableRowText2,
+	OracleTableRowText3,
 	OracleTableRow
 } from './oracles/TableRow.js'

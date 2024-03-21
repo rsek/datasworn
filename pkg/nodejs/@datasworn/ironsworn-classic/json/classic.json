@@ -159,7 +159,7 @@
 					"_id": "classic/oracles/action_and_theme/action",
 					"name": "Action",
 					"canonical_name": "Oracle 1: Action",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this table to inspire a discovery, event, character goal, or situation. A roll on this table can be combined with a [Theme](id:classic/oracles/action_and_theme/theme) to provide an action and a subject. Then, interpret the result based on the context of the question and your current situation.",
 					"column_labels": {
@@ -1188,7 +1188,7 @@
 					"_id": "classic/oracles/action_and_theme/theme",
 					"name": "Theme",
 					"canonical_name": "Oracle 2: Theme",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "As with the [Action](id:classic/oracles/action_and_theme/action) oracle, this is an interpretative table which you can use to answer questions or generate new situations. Combined, the Action and Theme tables provide creative prompts suitable for most situations and questions. In fact, with some creative interpretations, it’s entirely possible to play with only these two tables.",
 					"column_labels": {
@@ -2236,7 +2236,7 @@
 					"_id": "classic/oracles/character/role",
 					"name": "Character Role",
 					"canonical_name": "Oracle 10: Character Role",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to define the background for a character, or to generate a random encounter.",
 					"column_labels": {
@@ -2568,7 +2568,7 @@
 					"_id": "classic/oracles/character/goal",
 					"name": "Character Goal",
 					"canonical_name": "Oracle 11: Character Goal",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to define the primary motivation of an NPC or a faction. It can also be used to kick-off a personal quest for your own character.",
 					"column_labels": {
@@ -2768,7 +2768,7 @@
 					"_id": "classic/oracles/character/descriptor",
 					"name": "Character Descriptor",
 					"canonical_name": "Oracle 12: Character Descriptor",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to help flesh out a character’s personality or physical characteristics. Roll more than once to add additional detail.",
 					"recommended_rolls": {
@@ -3816,7 +3816,7 @@
 				"endure_harm": {
 					"_id": "classic/oracles/moves/endure_harm",
 					"name": "Endure Harm",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -3865,7 +3865,7 @@
 				"endure_stress": {
 					"_id": "classic/oracles/moves/endure_stress",
 					"name": "Endure Stress",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -3909,7 +3909,7 @@
 				"pay_the_price": {
 					"_id": "classic/oracles/moves/pay_the_price",
 					"name": "Pay the Price",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"column_labels": {
 						"roll": "Roll",
@@ -4029,7 +4029,7 @@
 						"almost_certain": {
 							"_id": "classic/oracles/moves/ask_the_oracle/almost_certain",
 							"name": "Almost Certain",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
@@ -4050,7 +4050,7 @@
 						"likely": {
 							"_id": "classic/oracles/moves/ask_the_oracle/likely",
 							"name": "Likely",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
@@ -4071,7 +4071,7 @@
 						"fifty_fifty": {
 							"_id": "classic/oracles/moves/ask_the_oracle/fifty_fifty",
 							"name": "50/50",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
@@ -4092,7 +4092,7 @@
 						"unlikely": {
 							"_id": "classic/oracles/moves/ask_the_oracle/unlikely",
 							"name": "Unlikely",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
@@ -4113,7 +4113,7 @@
 						"small_chance": {
 							"_id": "classic/oracles/moves/ask_the_oracle/small_chance",
 							"name": "Small Chance",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"match": {
 								"text": "On a match, an extreme result or twist has occurred."
@@ -4171,7 +4171,7 @@
 					"_id": "classic/oracles/name/elf",
 					"name": "Elf Names",
 					"canonical_name": "Oracle 14: Elf Names",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to generate a name for an elf character.",
 					"column_labels": {
@@ -4706,7 +4706,7 @@
 							"_id": "classic/oracles/name/ironlander/a",
 							"name": "Table A",
 							"canonical_name": "Ironlander Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -5731,7 +5731,7 @@
 							"_id": "classic/oracles/name/ironlander/b",
 							"name": "Table B",
 							"canonical_name": "Ironlander Names",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -6776,7 +6776,7 @@
 						"giants": {
 							"_id": "classic/oracles/name/other/giants",
 							"name": "Giants",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -7034,7 +7034,7 @@
 						"varou": {
 							"_id": "classic/oracles/name/other/varou",
 							"name": "Varou",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -7292,7 +7292,7 @@
 						"trolls": {
 							"_id": "classic/oracles/name/other/trolls",
 							"name": "Trolls",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -7587,7 +7587,7 @@
 					"_id": "classic/oracles/place/region",
 					"name": "Region",
 					"canonical_name": "Oracle 3: Region",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle when you want to randomly select a region with the Ironlands.",
 					"column_labels": {
@@ -7663,7 +7663,7 @@
 					"_id": "classic/oracles/place/location",
 					"name": "Location",
 					"canonical_name": "Oracle 4: Location",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle when traveling to generate a point-of-interest or to answer a question about a place where someone or something can be found.",
 					"column_labels": {
@@ -8199,7 +8199,7 @@
 					"_id": "classic/oracles/place/coastal_waters_location",
 					"name": "Coastal Waters Location",
 					"canonical_name": "Oracle 5: Coastal Waters Location",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to identify a point-of-interest or destination when you are traveling by ship or boat.",
 					"column_labels": {
@@ -8395,7 +8395,7 @@
 					"_id": "classic/oracles/place/descriptor",
 					"name": "Location Descriptor",
 					"canonical_name": "Oracle 6: Location Descriptor",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to add detail to the [Location](id:classic/oracles/place/location) or [Coastal Waters Location](id:classic/oracles/place/coastal_waters_location) oracles, or by itself to generate a description of a location. Roll more than once for extra detail.",
 					"column_labels": {
@@ -8941,7 +8941,7 @@
 					"_id": "classic/oracles/settlement/trouble",
 					"name": "Settlement Trouble",
 					"canonical_name": "Oracle 9: Settlement Trouble",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this table to generate a narrative hook for a problem faced by a community. This oracle can help inspire a vow for your character or serve as a prompt for a trouble you encounter when you interact with a settlement.",
 					"column_labels": {
@@ -9205,7 +9205,7 @@
 				"name": {
 					"_id": "classic/oracles/settlement/name",
 					"name": "Settlement Name",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Ask this oracle for a thematic name for an Ironlander settlement. Roll once for the category, and again to pick from the examples. Alternatively, just roll for the category and come up with a name that fits the theme.",
 					"column_labels": {
@@ -9344,7 +9344,7 @@
 							"_id": "classic/oracles/settlement/name/landscape_feature",
 							"name": "Landscape Feature",
 							"canonical_name": "A feature of the landscape",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "__A feature of the landscape.__ Envision what it is. What makes it unusual or distinctive?",
 							"column_labels": {
@@ -9470,7 +9470,7 @@
 							"_id": "classic/oracles/settlement/name/manmade_edifice",
 							"name": "Manmade Edifice",
 							"canonical_name": "A manmade edifice",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "__A manmade edifice.__ What is it? Why is it important to this settlement’s history?,",
 							"column_labels": {
@@ -9596,7 +9596,7 @@
 							"_id": "classic/oracles/settlement/name/creature",
 							"name": "Creature",
 							"canonical_name": "A creature",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "__A creature.__ Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?",
 							"column_labels": {
@@ -9722,7 +9722,7 @@
 							"_id": "classic/oracles/settlement/name/historical_event",
 							"name": "Historical Event",
 							"canonical_name": "A historical event",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "__A historical event.__ What happened here? What place or practice commemorates this event?",
 							"column_labels": {
@@ -9848,7 +9848,7 @@
 							"_id": "classic/oracles/settlement/name/old_world_language",
 							"name": "Old World Language",
 							"canonical_name": "A word in an Old World language",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "__A word in an Old World language.__ What culture is represented by this word? What does it translate to?",
 							"column_labels": {
@@ -9974,7 +9974,7 @@
 							"_id": "classic/oracles/settlement/name/environmental_aspect",
 							"name": "Environmental Aspect",
 							"canonical_name": "A season or environmental aspect",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"summary": "__A season or environmental aspect.__ What influence does the weather have on this settlement?",
 							"column_labels": {
@@ -10099,7 +10099,7 @@
 						"something_else": {
 							"_id": "classic/oracles/settlement/name/something_else",
 							"name": "Something Else",
-							"oracle_type": "table_basic",
+							"oracle_type": "table_text",
 							"dice": "1d100",
 							"column_labels": {
 								"roll": "Roll",
@@ -10194,7 +10194,7 @@
 						"prefix": {
 							"_id": "classic/oracles/settlement/quick_name/prefix",
 							"name": "Prefix",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -10452,7 +10452,7 @@
 						"suffix": {
 							"_id": "classic/oracles/settlement/quick_name/suffix",
 							"name": "Suffix",
-							"oracle_type": "column_basic",
+							"oracle_type": "column_text",
 							"dice": "1d100",
 							"rows": [
 								{
@@ -10747,7 +10747,7 @@
 					"_id": "classic/oracles/turning_point/combat_action",
 					"name": "Combat Action",
 					"canonical_name": "Oracle 16: Combat Action",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.",
 					"column_labels": {
@@ -10863,7 +10863,7 @@
 					"_id": "classic/oracles/turning_point/mystic_backlash",
 					"name": "Mystic Backlash",
 					"canonical_name": "Oracle 17: Mystic Backlash",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the [Pay the Price](id:classic/moves/fate/pay_the_price) table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.",
 					"column_labels": {
@@ -11023,7 +11023,7 @@
 					"_id": "classic/oracles/turning_point/major_plot_twist",
 					"name": "Major Plot Twist",
 					"canonical_name": "Oracle 18: Major Plot Twist",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle to introduce a narrative surprise or revelation. Most of these results have a negative implication, and can be used to resolve a match at a crucial moment in your story. In particular, this is an effective tool to leverage when you make a move with matched 10’s on the challenge dice.",
 					"column_labels": {
@@ -11158,7 +11158,7 @@
 					"_id": "classic/oracles/turning_point/challenge_rank",
 					"name": "Challenge Rank",
 					"canonical_name": "Oracle 19: Challenge Rank",
-					"oracle_type": "table_basic",
+					"oracle_type": "table_text",
 					"dice": "1d100",
 					"summary": "Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.",
 					"column_labels": {

@@ -6,34 +6,15 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Represents a basic rollable oracle table with one roll column and one
-    /// `result` column.
+    /// Represents a single column in an OracleCollection.
     /// </summary>
-    public class OracleTableRollableTableBasic : OracleTableRollable
+    public class OracleColumnText
     {
-        [JsonPropertyName("oracle_type")]
-        public string OracleType { get => "table_basic"; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
         [JsonPropertyName("_id")]
         public OracleRollableId Id { get; set; }
-
-        /// <summary>
-        /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
-        /// </summary>
-        [JsonPropertyName("_source")]
-        public SourceInfo Source { get; set; }
-
-        /// <summary>
-        /// The label at the head of each table column. The `roll` key refers
-        /// to the roll column showing the dice range (`min` and `max` on each
-        /// table row).
-        /// </summary>
-        [JsonPropertyName("column_labels")]
-        public OracleTableRollableTableBasicColumnLabels ColumnLabels { get; set; }
 
         /// <summary>
         /// The roll used to select a result on this oracle.
@@ -42,36 +23,30 @@ namespace Datasworn
         public DiceExpression Dice { get; set; }
 
         /// <summary>
-        /// The primary name/label for this item.
+        /// The primary label at the head of this column.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
+
+        [JsonPropertyName("oracle_type")]
+        public OracleColumnTextOracleType OracleType { get; set; }
 
         /// <summary>
         /// An array of objects, each representing a single row of the table.
         /// </summary>
         [JsonPropertyName("rows")]
-        public IList<OracleTableRowBasic> Rows { get; set; }
+        public IList<OracleTableRowText> Rows { get; set; }
 
         /// <summary>
-        /// The name of this item as it appears on the page in the book, if it's
-        /// different from `name`.
+        /// An optional thematic color for this column. For an example, see
+        /// "Basic Creature Form" (Starforged p. 337)
         /// </summary>
-        [JsonPropertyName("canonical_name")]
+        [JsonPropertyName("color")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public Label? CanonicalName { get; set; }
+        public CssColor? Color { get; set; }
 
         /// <summary>
-        /// A longer description of the oracle table's intended usage, which
-        /// might include multiple paragraphs. If it's only a couple sentences,
-        /// use the `summary` key instead.
-        /// </summary>
-        [JsonPropertyName("description")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MarkdownString? Description { get; set; }
-
-        /// <summary>
-        /// An icon that represents this table.
+        /// An optional icon for this column.
         /// </summary>
         [JsonPropertyName("icon")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -84,10 +59,6 @@ namespace Datasworn
         [JsonPropertyName("match")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public OracleMatchBehavior? Match { get; set; }
-
-        [JsonPropertyName("recommended_rolls")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleTableRollableTableBasicRecommendedRolls RecommendedRolls { get; set; }
 
         /// <summary>
         /// Indicates that this object replaces the identified OracleRollable.
@@ -103,10 +74,8 @@ namespace Datasworn
         public Suggestions? Suggestions { get; set; }
 
         /// <summary>
-        /// A brief summary of the oracle table's intended usage, no more than
-        /// a few sentences in length. This is intended for use in application
-        /// tooltips and similar sorts of hints. Longer text should use the
-        /// "description" key instead.
+        /// Optional secondary text at the head of this column. For best
+        /// results, this should be no more than a few words in length.
         /// </summary>
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

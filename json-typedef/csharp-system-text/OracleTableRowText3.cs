@@ -8,7 +8,7 @@ namespace Datasworn
     /// <summary>
     /// Represents a row in an oracle table with 3 text cells.
     /// </summary>
-    public class OracleTableRow3textCells
+    public class OracleTableRowText3
     {
         /// <summary>
         /// High end of the dice range for this table row.

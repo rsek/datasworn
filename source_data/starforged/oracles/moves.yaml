@@ -26,7 +26,7 @@ oracles:
               # source: *CollectionSource
               match:
                 text: On a match, envision an extreme result or twist.
-              oracle_type: column_basic
+              oracle_type: column_text
             # Aliases: ["90"]
             rows:
               - min: 1
@@ -82,7 +82,7 @@ oracles:
     contents:
       begin_a_session:
         name: Begin a Session
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 141
@@ -125,7 +125,7 @@ oracles:
             text: 'Unforeseen aid is on the way or within reach'
       make_a_discovery:
         name: Make a Discovery
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 176
@@ -222,7 +222,7 @@ oracles:
                   auto: true
       confront_chaos:
         name: Confront Chaos
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 177
@@ -308,7 +308,7 @@ oracles:
             text: Worshipers of great and malevolent powers
       take_decisive_action:
         name: Take Decisive Action
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 194
@@ -335,7 +335,7 @@ oracles:
             text: 'It gets complicated: The true nature of a foe or objective is revealed'
       endure_harm:
         name: Endure Harm
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 200
@@ -359,7 +359,7 @@ oracles:
             text: You are still standing.
       endure_stress:
         name: Endure Stress
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 202
@@ -380,7 +380,7 @@ oracles:
             text: You persevere.
       withstand_damage:
         name: Withstand Damage
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 206
@@ -413,7 +413,7 @@ oracles:
             text: 'Against all odds, the vehicle holds together.'
       pay_the_price:
         name: Pay the Price
-        oracle_type: table_basic
+        oracle_type: table_text
         _source:
           <<: *Source
           page: 232
