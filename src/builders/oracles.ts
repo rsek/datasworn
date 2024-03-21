@@ -42,7 +42,7 @@ export const OracleTable = sourcedTransformer<
 		data: DataswornSource.OracleRollable,
 		key: string | number,
 		parent: SourcedNode
-	): Datasworn.OracleTableRowDetails | Datasworn.OracleTableRowSimple[] {
+	): Datasworn.OracleTableRowDetails | Datasworn.OracleTableRowBasic[] {
 		return data.rows.map((row, i) => {
 			return transform(row, i, this, OracleTableRow)
 		})

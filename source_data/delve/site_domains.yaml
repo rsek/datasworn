@@ -23,35 +23,35 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Burial chambers
+        text: Burial chambers
       - min: 44
         max: 56
-        result: Maze of narrow passages
+        text: Maze of narrow passages
       - min: 57
         max: 64
-        result: Shrine
+        text: Shrine
       - min: 65
         max: 68
-        result: Stately vault
+        text: Stately vault
       - min: 69
         max: 72
-        result: Offerings to the dead
+        text: Offerings to the dead
       - min: 73
         max: 76
-        result: Statuary or tapestries
+        text: Statuary or tapestries
       - min: 77
         max: 80
-        result: Remains of a grave robber
+        text: Remains of a grave robber
       - min: 81
         max: 84
-        result: Mass grave
+        text: Mass grave
       - min: 85
         max: 88
-        result: Exhumed corpses
+        text: Exhumed corpses
       - &Row.UnusualOrUnexpected
         min: 89
         max: 98
-        result: Something unusual or unexpected
+        text: Something unusual or unexpected
         suggestions:
           oracles:
             - delve/oracles/feature/aspect
@@ -59,37 +59,37 @@ site_domains:
       - &Row.NewTheme
         min: 99
         max: 99
-        result: You transition into a new theme
+        text: You transition into a new theme
         suggestions:
           oracles:
             - delve/oracles/site_nature/theme
       - &Row.NewDomain
         min: 100
         max: 100
-        result: You transition into a new domain
+        text: You transition into a new domain
         suggestions:
           oracles:
             - delve/oracles/site_nature/domain
     dangers:
       - min: 31
         max: 33
-        result: Denizen guards this area
+        text: Denizen guards this area
       - min: 34
         max: 36
-        result: Trap
+        text: Trap
         suggestions: &SuggestTrap
           oracles:
             - delve/oracles/trap/event
             - delve/oracles/trap/component
       - min: 37
         max: 39
-        result: Death makes its presence known
+        text: Death makes its presence known
       - min: 40
         max: 42
-        result: Crumbling architecture
+        text: Crumbling architecture
       - min: 43
         max: 45
-        result: Grave goods with hidden dangers
+        text: Grave goods with hidden dangers
   cavern:
     name: Cavern
     name_oracle: delve/oracles/site_name/place/cavern
@@ -105,50 +105,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Twisting passages
+        text: Twisting passages
       - min: 44
         max: 56
-        result: Cramped caves
+        text: Cramped caves
       - min: 57
         max: 64
-        result: Vast chamber
+        text: Vast chamber
       - min: 65
         max: 68
-        result: Subterranean waterway
+        text: Subterranean waterway
       - min: 69
         max: 72
-        result: Cave pool
+        text: Cave pool
       - min: 73
         max: 76
-        result: Natural bridge
+        text: Natural bridge
       - min: 77
         max: 80
-        result: Towering stone formations
+        text: Towering stone formations
       - min: 81
         max: 84
-        result: Natural illumination
+        text: Natural illumination
       - min: 85
         max: 88
-        result: Dark pit
+        text: Dark pit
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen lairs here
+        text: Denizen lairs here
       - min: 34
         max: 36
-        result: Cave-in
+        text: Cave-in
       - min: 37
         max: 39
-        result: Flooding
+        text: Flooding
       - min: 40
         max: 42
-        result: Perilous climb or descent
+        text: Perilous climb or descent
       - min: 43
         max: 45
-        result: Fissure or sinkhole
+        text: Fissure or sinkhole
   frozen_cavern:
     name: Frozen cavern
     name_oracle: delve/oracles/site_name/place/frozen_cavern
@@ -163,50 +163,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Maze of icy tunnels
+        text: Maze of icy tunnels
       - min: 44
         max: 56
-        result: Glistening cave
+        text: Glistening cave
       - min: 57
         max: 64
-        result: Vast chamber
+        text: Vast chamber
       - min: 65
         max: 68
-        result: Frigid waterway
+        text: Frigid waterway
       - min: 69
         max: 72
-        result: Icy pools
+        text: Icy pools
       - min: 73
         max: 76
-        result: Magnificent ice formations
+        text: Magnificent ice formations
       - min: 77
         max: 80
-        result: Frozen waterfall
+        text: Frozen waterfall
       - min: 81
         max: 84
-        result: Deep crevasses
+        text: Deep crevasses
       - min: 85
         max: 88
-        result: Discovery locked in the ice
+        text: Discovery locked in the ice
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen lairs here
+        text: Denizen lairs here
       - min: 34
         max: 36
-        result: Fracturing ice
+        text: Fracturing ice
       - min: 37
         max: 39
-        result: Crumbling chasm
+        text: Crumbling chasm
       - min: 40
         max: 42
-        result: Bitter chill
+        text: Bitter chill
       - min: 43
         max: 45
-        result: Disorienting reflections
+        text: Disorienting reflections
   icereach:
     name: Icereach
     name_oracle: delve/oracles/site_name/place/icereach
@@ -221,50 +221,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Plains of ice and snow
+        text: Plains of ice and snow
       - min: 44
         max: 56
-        result: Seawater channel
+        text: Seawater channel
       - min: 57
         max: 64
-        result: Icy highlands
+        text: Icy highlands
       - min: 65
         max: 68
-        result: Crevasse
+        text: Crevasse
       - min: 69
         max: 72
-        result: Ice floes
+        text: Ice floes
       - min: 73
         max: 76
-        result: Ship trapped in ice
+        text: Ship trapped in ice
       - min: 77
         max: 80
-        result: Animal herd or habitat
+        text: Animal herd or habitat
       - min: 81
         max: 84
-        result: Frozen carcass
+        text: Frozen carcass
       - min: 85
         max: 88
-        result: Camp or
+        text: Camp or
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen hunts
+        text: Denizen hunts
       - min: 34
         max: 36
-        result: Fragile ice above watery depths
+        text: Fragile ice above watery depths
       - min: 37
         max: 39
-        result: Perilous climb or descent
+        text: Perilous climb or descent
       - min: 40
         max: 42
-        result: Avalanche or icefall
+        text: Avalanche or icefall
       - min: 43
         max: 45
-        result: Foul weather
+        text: Foul weather
   mine:
     name: Mine
     name_oracle: delve/oracles/site_name/place/mine
@@ -280,50 +280,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Cramped tunnels
+        text: Cramped tunnels
       - min: 44
         max: 56
-        result: Mine works
+        text: Mine works
       - min: 57
         max: 64
-        result: Excavated chamber
+        text: Excavated chamber
       - min: 65
         max: 68
-        result: Mineshaft
+        text: Mineshaft
       - min: 69
         max: 72
-        result: Collapsed tunnel
+        text: Collapsed tunnel
       - min: 73
         max: 76
-        result: Cluttered storage
+        text: Cluttered storage
       - min: 77
         max: 80
-        result: Housing or common areas
+        text: Housing or common areas
       - min: 81
         max: 84
-        result: Flooded chamber
+        text: Flooded chamber
       - min: 85
         max: 88
-        result: Unearthed secret
+        text: Unearthed secret
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Cave-in
+        text: Cave-in
       - min: 34
         max: 36
-        result: Flooding
+        text: Flooding
       - min: 37
         max: 39
-        result: Unstable platforms or architecture
+        text: Unstable platforms or architecture
       - min: 40
         max: 42
-        result: Hazardous gas pocket
+        text: Hazardous gas pocket
       - min: 43
         max: 45
-        result: Weakened terrain
+        text: Weakened terrain
   pass:
     name: Pass
     name_oracle: delve/oracles/site_name/place/pass
@@ -338,50 +338,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Winding mountain path
+        text: Winding mountain path
       - min: 44
         max: 56
-        result: Snowfield or glacial rocks
+        text: Snowfield or glacial rocks
       - min: 57
         max: 64
-        result: River gorge
+        text: River gorge
       - min: 65
         max: 68
-        result: Crashing waterfall
+        text: Crashing waterfall
       - min: 69
         max: 72
-        result: Highland lake
+        text: Highland lake
       - min: 73
         max: 76
-        result: Forgotten cairn
+        text: Forgotten cairn
       - min: 77
         max: 80
-        result: Bridge
+        text: Bridge
       - min: 81
         max: 84
-        result: Overlook
+        text: Overlook
       - min: 85
         max: 88
-        result: Camp or outpost
+        text: Camp or outpost
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen lairs here
+        text: Denizen lairs here
       - min: 34
         max: 36
-        result: Denizen hunts
+        text: Denizen hunts
       - min: 37
         max: 39
-        result: Perilous climb or descent
+        text: Perilous climb or descent
       - min: 40
         max: 42
-        result: Avalanche or rockslide
+        text: Avalanche or rockslide
       - min: 43
         max: 45
-        result: Foul weather
+        text: Foul weather
   ruin:
     name: Ruin
     name_oracle: delve/oracles/site_name/place/ruin
@@ -397,51 +397,51 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Crumbling corridors and chambers
+        text: Crumbling corridors and chambers
       - min: 44
         max: 56
-        result: Collapsed architecture
+        text: Collapsed architecture
       - min: 57
         max: 64
-        result: Rubble-choked hall
+        text: Rubble-choked hall
       - min: 65
         max: 68
-        result: Courtyard
+        text: Courtyard
       - min: 69
         max: 72
-        result: Archive or library
+        text: Archive or library
       - min: 73
         max: 76
-        result: Broken statuary or fading murals
+        text: Broken statuary or fading murals
       - min: 77
         max: 80
-        result: Preserved vault
+        text: Preserved vault
       - min: 81
         max: 84
-        result: Temple to forgotten gods
+        text: Temple to forgotten gods
       - min: 85
         max: 88
-        result: Mausoleum
+        text: Mausoleum
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Ancient mechanism or trap
+        text: Ancient mechanism or trap
         suggestions: *SuggestTrap
       - min: 34
         max: 36
-        result: Collapsing wall or ceiling
+        text: Collapsing wall or ceiling
       - min: 37
         max: 39
-        result: Blocked or broken passage
+        text: Blocked or broken passage
       - min: 40
         max: 42
-        result: Unstable floor above a new danger
+        text: Unstable floor above a new danger
       - min: 43
         max: 45
-        result: Ancient secrets best left buried
+        text: Ancient secrets best left buried
   sea_cave:
     name: Sea cave
     name_oracle: delve/oracles/site_name/place/sea_cave
@@ -456,50 +456,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Watery tunnels
+        text: Watery tunnels
       - min: 44
         max: 56
-        result: Eroded chamber
+        text: Eroded chamber
       - min: 57
         max: 64
-        result: Flooded chamber
+        text: Flooded chamber
       - min: 65
         max: 68
-        result: Vast chamber
+        text: Vast chamber
       - min: 69
         max: 72
-        result: Dry passages
+        text: Dry passages
       - min: 73
         max: 76
-        result: Freshwater inlet
+        text: Freshwater inlet
       - min: 77
         max: 80
-        result: Rocky island
+        text: Rocky island
       - min: 81
         max: 84
-        result: Waterborne debris
+        text: Waterborne debris
       - min: 85
         max: 88
-        result: Shipwreck or boat
+        text: Shipwreck or boat
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen strikes without warning
+        text: Denizen strikes without warning
       - min: 34
         max: 36
-        result: Denizen lurks below
+        text: Denizen lurks below
       - min: 37
         max: 39
-        result: Flooding
+        text: Flooding
       - min: 40
         max: 42
-        result: Rushing current
+        text: Rushing current
       - min: 43
         max: 45
-        result: Claustrophobic squeeze
+        text: Claustrophobic squeeze
   shadowfen:
     name: Shadowfen
     name_oracle: delve/oracles/site_name/place/shadowfen
@@ -514,50 +514,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Narrow path through a fetid bog
+        text: Narrow path through a fetid bog
       - min: 44
         max: 56
-        result: Stagnant waterway
+        text: Stagnant waterway
       - min: 57
         max: 64
-        result: Flooded thicket
+        text: Flooded thicket
       - min: 65
         max: 68
-        result: Island of dry land
+        text: Island of dry land
       - min: 69
         max: 72
-        result: Submerged discovery
+        text: Submerged discovery
       - min: 73
         max: 76
-        result: Preserved corpses
+        text: Preserved corpses
       - min: 77
         max: 80
-        result: Overgrown structure
+        text: Overgrown structure
       - min: 81
         max: 84
-        result: Tall reeds
+        text: Tall reeds
       - min: 85
         max: 88
-        result: Camp or outpost
+        text: Camp or outpost
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen hunts
+        text: Denizen hunts
       - min: 34
         max: 36
-        result: Deep water blocks the path
+        text: Deep water blocks the path
       - min: 37
         max: 39
-        result: Toxic environment
+        text: Toxic environment
       - min: 40
         max: 42
-        result: Concealing or disorienting mist
+        text: Concealing or disorienting mist
       - min: 43
         max: 45
-        result: Hidden quagmire
+        text: Hidden quagmire
   stronghold:
     name: Stronghold
     name_oracle: delve/oracles/site_name/place/stronghold
@@ -569,51 +569,51 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Connecting passageways
+        text: Connecting passageways
       - min: 44
         max: 56
-        result: Barracks or common quarters
+        text: Barracks or common quarters
       - min: 57
         max: 64
-        result: Large hall
+        text: Large hall
       - min: 65
         max: 68
-        result: Workshop or library
+        text: Workshop or library
       - min: 69
         max: 72
-        result: Command center or leadership
+        text: Command center or leadership
       - min: 73
         max: 76
-        result: Ladder or stairwell
+        text: Ladder or stairwell
       - min: 77
         max: 80
-        result: Storage
+        text: Storage
       - min: 81
         max: 84
-        result: Kitchen or larder
+        text: Kitchen or larder
       - min: 85
         max: 88
-        result: Courtyard
+        text: Courtyard
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Blocked or guarded path
+        text: Blocked or guarded path
       - min: 34
         max: 36
-        result: Caught in the open
+        text: Caught in the open
       - min: 37
         max: 39
-        result: Chokepoint
+        text: Chokepoint
       - min: 40
         max: 42
-        result: Trap
+        text: Trap
         suggestions: *SuggestTrap
       - min: 43
         max: 45
-        result: Alarm trigger
+        text: Alarm trigger
   tanglewood:
     name: Tanglewood
     name_oracle: delve/oracles/site_name/place/tanglewood
@@ -629,51 +629,51 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Dense thicket
+        text: Dense thicket
       - min: 44
         max: 56
-        result: Overgrown path
+        text: Overgrown path
       - min: 57
         max: 64
-        result: Waterway
+        text: Waterway
       - min: 65
         max: 68
-        result: Clearing
+        text: Clearing
       - min: 69
         max: 72
-        result: Elder tree
+        text: Elder tree
       - min: 73
         max: 76
-        result: Brambles
+        text: Brambles
       - min: 77
         max: 80
-        result: Overgrown structure
+        text: Overgrown structure
       - min: 81
         max: 84
-        result: Rocky outcrop
+        text: Rocky outcrop
       - min: 85
         max: 88
-        result: Camp or outpost
+        text: Camp or outpost
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen hunts
+        text: Denizen hunts
       - min: 34
         max: 36
-        result: Denizen lairs here
+        text: Denizen lairs here
       - min: 37
         max: 39
-        result: Trap or snare
+        text: Trap or snare
         suggestions: *SuggestTrap
       - min: 40
         max: 42
-        result: Path leads you astray
+        text: Path leads you astray
       - min: 43
         max: 45
-        result: Entangling plant life
+        text: Entangling plant life
   underkeep:
     name: Underkeep
     name_oracle: delve/oracles/site_name/place/underkeep
@@ -688,48 +688,48 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Carved passages
+        text: Carved passages
       - min: 44
         max: 56
-        result: Hall or chamber
+        text: Hall or chamber
       - min: 57
         max: 64
-        result: Stairs into the depths
+        text: Stairs into the depths
       - min: 65
         max: 68
-        result: Grand doorway or entrance
+        text: Grand doorway or entrance
       - min: 69
         max: 72
-        result: Tomb or catacombs
+        text: Tomb or catacombs
       - min: 73
         max: 76
-        result: Rough-hewn cave
+        text: Rough-hewn cave
       - min: 77
         max: 80
-        result: Foundry or workshop
+        text: Foundry or workshop
       - min: 81
         max: 84
-        result: Shrine or temple
+        text: Shrine or temple
       - min: 85
         max: 88
-        result: Imposing architecture or artistry
+        text: Imposing architecture or artistry
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
       - min: 31
         max: 33
-        result: Ancient mechanism or trap
+        text: Ancient mechanism or trap
         suggestions: *SuggestTrap
       - min: 34
         max: 36
-        result: Crumbling architecture
+        text: Crumbling architecture
       - min: 37
         max: 39
-        result: Blocked or broken passage
+        text: Blocked or broken passage
       - min: 40
         max: 42
-        result: Artifact with a hidden danger
+        text: Artifact with a hidden danger
       - min: 43
         max: 45
-        result: Denizen lurks in darkness
+        text: Denizen lurks in darkness

@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Represents a row in an oracle table.
+    /// Represents a row in an oracle table, with a single text cell.
     /// </summary>
     public class TruthOptionTableRow
     {
@@ -25,8 +25,8 @@ namespace Datasworn
         /// <summary>
         /// The primary text content of this row.
         /// </summary>
-        [JsonPropertyName("result")]
-        public MarkdownString Result { get; set; }
+        [JsonPropertyName("text")]
+        public MarkdownString Text { get; set; }
 
         [JsonPropertyName("_i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

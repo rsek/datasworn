@@ -15,11 +15,13 @@ import { Id, Rolls } from '../common/index.js'
 import { ColumnMixin } from './Column.js'
 import { TableMeta, TableMixin } from './Table.js'
 import {
-	DetailsRowLabels,
-	OracleTableRowDetails,
-	OracleTableRowSimple,
-	SimpleRowLabels,
-	type ColumnLabels
+	DetailsColumnLabels,
+	OracleTableRow2TextCells,
+	OracleTableRowBasic,
+	SimpleColumnLabels,
+	type ColumnLabels,
+	OracleTableRow3TextCells,
+	Text3ColumnLabels
 } from './TableRow.js'
 
 // metadata necessary to generate a roll result from an OracleRollable
@@ -129,9 +131,9 @@ function OracleColumnBase<
 }
 
 export const OracleTableSimple = RollableTable(
-	'table_simple',
-	Type.Ref(OracleTableRowSimple),
-	SimpleRowLabels,
+	'table_basic',
+	Type.Ref(OracleTableRowBasic),
+	SimpleColumnLabels,
 	{
 		$id: 'OracleTableSimple',
 		description:
@@ -141,34 +143,35 @@ export const OracleTableSimple = RollableTable(
 export type TOracleTableSimple = typeof OracleTableSimple
 export type OracleTableSimple = Static<typeof OracleTableSimple>
 
-export const OracleTableDetails = RollableTable(
-	'table_details',
-	Type.Ref(OracleTableRowDetails),
-	DetailsRowLabels,
+export const OracleTable2TextColumns = RollableTable(
+	'table_text2',
+	Type.Ref(OracleTableRow2TextCells),
+	DetailsColumnLabels,
 	{
-		$id: 'OracleTableDetails',
+		$id: 'OracleTable2TextColumns',
 		description:
-			'A rollable oracle table with one roll column, one `result` column, and one `detail` column.'
+			'A rollable oracle table with one roll column and two text columns.'
 	}
 )
-export type TOracleTableDetails = typeof OracleTableDetails
-export type OracleTableDetails = Static<typeof OracleTableDetails>
+export type TOracleTable2TextColumns = typeof OracleTable2TextColumns
+export type OracleTable2TextColumns = Static<typeof OracleTable2TextColumns>
 
-// Utils.Discriminable(
-// 	OracleRollableBase(Type.Ref(OracleTableRowSimple), {
-// 		column_labels: ColumnLabels({ roll: 'Roll', result: 'Result' })
-// 	}),
-// 	'oracle_type',
-// 	'table_simple',
-// 	{
-// 		$id: 'OracleTableSimple',
-// 		description:
-// 			'Represents a basic oracle table with one roll column and one result column.'
-// 	}
-// )
+export const OracleTable3TextColumns = RollableTable(
+	'table_3_text_columns',
+	Type.Ref(OracleTableRow3TextCells),
+	Text3ColumnLabels,
+	{
+		$id: 'OracleTable3TextColumns',
+		description:
+			'A rollable oracle table with one roll column and 3 text columns.'
+	}
+)
+export type TOracleTable3TextColumns = typeof OracleTable3TextColumns
+export type OracleTable3TextColumns = Static<typeof OracleTable2TextColumns>
+
 export const OracleColumnSimple = RollableTableColumn(
-	'column_simple',
-	Type.Ref(OracleTableRowSimple),
+	'column_basic',
+	Type.Ref(OracleTableRowBasic),
 	{
 		$id: 'OracleColumnSimple',
 		description: 'Represents a single column in an OracleCollection.'
@@ -177,41 +180,37 @@ export const OracleColumnSimple = RollableTableColumn(
 export type TOracleColumnSimple = typeof OracleColumnSimple
 export type OracleColumnSimple = Static<typeof OracleColumnSimple>
 
-// export const OracleTableDetails = Utils.Discriminable(
-// 	OracleRollableBase(Type.Ref(OracleTableRowDetails), {
-// 		column_labels: ColumnLabels({
-// 			roll: 'Roll',
-// 			result: 'Result',
-// 			details: 'Detail'
-// 		})
-// 	}),
-// 	'oracle_type',
-// 	'details',
-// 	{
-// 		$id: 'OracleTableDetails',
-// 		description:
-// 			'An oracle table with one roll column, one `result` column, and one `detail` column.'
-// 	}
-// )
-
-export const OracleColumnDetails = RollableTableColumn(
-	'column_details',
-	Type.Ref(OracleTableRowDetails),
+export const OracleColumn2TextCells = RollableTableColumn(
+	'column_text2',
+	Type.Ref(OracleTableRow2TextCells),
 	{
-		$id: 'OracleColumnDetails'
+		$id: 'OracleColumn2TextCells'
 	}
 )
 
-export type TOracleColumnDetails = typeof OracleColumnDetails
-export type OracleColumnDetails = Static<typeof OracleColumnDetails>
+export type TOracleColumn2TextCells = typeof OracleColumn2TextCells
+export type OracleColumn2TextCells = Static<typeof OracleColumn2TextCells>
+
+export const OracleColumn3TextCells = RollableTableColumn(
+	'column_3_text_cells',
+	Type.Ref(OracleTableRow3TextCells),
+	{
+		$id: 'OracleColumn3TextCells'
+	}
+)
+
+export type TOracleColumn3TextCells = typeof OracleColumn3TextCells
+export type OracleColumn3TextCells = Static<typeof OracleColumn2TextCells>
 
 export const OracleRollable = Utils.setDiscriminatorDefault(
 	Utils.DiscriminatedUnion(
 		[
 			OracleTableSimple,
-			OracleTableDetails,
+			OracleTable2TextColumns,
+			OracleTable3TextColumns,
 			OracleColumnSimple,
-			OracleColumnDetails
+			OracleColumn2TextCells,
+			OracleColumn3TextCells
 		],
 		'oracle_type',
 		{
@@ -220,7 +219,7 @@ export const OracleRollable = Utils.setDiscriminatorDefault(
 				'A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table.'
 		}
 	),
-	'table_simple'
+	'table_basic'
 )
 
 export type OracleRollable = Static<typeof OracleRollable>
@@ -228,13 +227,13 @@ export type TOracleRollable = typeof OracleRollable
 
 export const OracleTableRollable = Utils.setDiscriminatorDefault(
 	Utils.DiscriminatedUnion(
-		[OracleTableSimple, OracleTableDetails],
+		[OracleTableSimple, OracleTable2TextColumns],
 		'oracle_type',
 		{
 			$id: 'OracleTableRollable'
 		}
 	),
-	'table_simple'
+	'table_basic'
 )
 
 export type OracleTableRollable = Static<typeof OracleTableRollable>

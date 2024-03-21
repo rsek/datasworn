@@ -11,7 +11,7 @@ import java.util.List;
  * Represents a row in an oracle table, with a single text cell.
  */
 @JsonSerialize
-public class TruthOptionTableRow {
+public class OracleTableRowBasic {
     @JsonProperty("max")
     private Short max;
 
@@ -45,7 +45,7 @@ public class TruthOptionTableRow {
     @JsonProperty("template")
     private OracleRollTemplate template;
 
-    public TruthOptionTableRow() {
+    public OracleTableRowBasic() {
     }
 
     /**

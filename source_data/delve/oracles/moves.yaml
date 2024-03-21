@@ -16,7 +16,7 @@ oracles:
       page: 19
     collections:
       delve_the_depths:
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         # rendering:
         #   columns:
         #     - content_type: roll
@@ -38,65 +38,65 @@ oracles:
             name: Edge
             <<: &DelveTheDepths
               # source: *CollectionSource
-              oracle_type: column_simple
+              oracle_type: column_basic
             rows:
               - min: 1
                 max: 45
-                result: &DelveTheDepths.0 'Mark progress and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
+                text: &DelveTheDepths.0 'Mark progress and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
               - min: 46
                 max: 65
-                result: &DelveTheDepths.1 'Mark progress.'
+                text: &DelveTheDepths.1 'Mark progress.'
               - min: 66
                 max: 75
-                result: &DelveTheDepths.2 'Choose one: Mark progress or [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
+                text: &DelveTheDepths.2 'Choose one: Mark progress or [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
               - min: 76
                 max: 80
-                result: &DelveTheDepths.3 'Take both: Mark progress and [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
+                text: &DelveTheDepths.3 'Take both: Mark progress and [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
               - min: 81
                 max: 100
-                result: &DelveTheDepths.4 'Mark progress twice and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
+                text: &DelveTheDepths.4 'Mark progress twice and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
           shadow:
             name: Shadow
             <<: *DelveTheDepths
             rows:
               - min: 1
                 max: 30
-                result: *DelveTheDepths.0
+                text: *DelveTheDepths.0
               - min: 31
                 max: 65
-                result: *DelveTheDepths.1
+                text: *DelveTheDepths.1
               - min: 66
                 max: 90
-                result: *DelveTheDepths.2
+                text: *DelveTheDepths.2
               - min: 91
                 max: 99
-                result: *DelveTheDepths.3
+                text: *DelveTheDepths.3
               - min: 100
                 max: 100
-                result: *DelveTheDepths.4
+                text: *DelveTheDepths.4
           wits:
             name: Wits
             <<: *DelveTheDepths
             rows:
               - min: 1
                 max: 40
-                result: *DelveTheDepths.0
+                text: *DelveTheDepths.0
               - min: 41
                 max: 55
-                result: *DelveTheDepths.1
+                text: *DelveTheDepths.1
               - min: 56
                 max: 80
-                result: *DelveTheDepths.2
+                text: *DelveTheDepths.2
               - min: 81
                 max: 99
-                result: *DelveTheDepths.3
+                text: *DelveTheDepths.3
               - min: 100
                 max: 100
-                result: *DelveTheDepths.4
+                text: *DelveTheDepths.4
     contents:
       find_an_opportunity:
         name: Find an Opportunity
-        oracle_type: table_simple
+        oracle_type: table_basic
         # Move: delve/moves/delve/find_an_opportunity
         _source:
           <<: *Source
@@ -104,77 +104,77 @@ oracles:
         rows:
           - min: 1
             max: 25
-            result: 'The terrain favors you, or you find a hidden path.'
+            text: 'The terrain favors you, or you find a hidden path.'
           - min: 26
             max: 45
-            result: 'An aspect of the history or nature of this place is revealed.'
+            text: 'An aspect of the history or nature of this place is revealed.'
           - min: 46
             max: 57
-            result: 'You locate a secure area.'
+            text: 'You locate a secure area.'
           - min: 58
             max: 68
-            result: 'A clue offers insight or direction.'
+            text: 'A clue offers insight or direction.'
           - min: 69
             max: 78
-            result: 'You get the drop on a denizen.'
+            text: 'You get the drop on a denizen.'
           - min: 79
             max: 86
-            result: 'This area provides an opportunity to scavenge, forage, or hunt.'
+            text: 'This area provides an opportunity to scavenge, forage, or hunt.'
           - min: 87
             max: 90
-            result: 'You locate an interesting or helpful object.'
+            text: 'You locate an interesting or helpful object.'
           - min: 91
             max: 94
-            result: 'You are alerted to a potential threat.'
+            text: 'You are alerted to a potential threat.'
           - min: 95
             max: 98
-            result: 'You encounter a denizen who might support you.'
+            text: 'You encounter a denizen who might support you.'
           - min: 99
             max: 100
-            result: 'You encounter a denizen in need of help.'
+            text: 'You encounter a denizen in need of help.'
       reveal_a_danger:
         name: Reveal a Danger
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 34
         rows:
           - min: 1
             max: 30
-            result: 'Check the theme card.'
+            text: 'Check the theme card.'
           - min: 31
             max: 45
-            result: 'Check the domain card.'
+            text: 'Check the domain card.'
           - min: 46
             max: 57
-            result: &Reveal_a_Danger_1 'You encounter a hostile denizen.'
+            text: &Reveal_a_Danger_1 'You encounter a hostile denizen.'
           - min: 58
             max: 68
-            result: &Reveal_a_Danger_2 'You face an environmental or architectural hazard.'
+            text: &Reveal_a_Danger_2 'You face an environmental or architectural hazard.'
           - min: 69
             max: 76
-            result: &Reveal_a_Danger_3 'A discovery undermines or complicates your quest.'
+            text: &Reveal_a_Danger_3 'A discovery undermines or complicates your quest.'
           - min: 77
             max: 79
-            result: &Reveal_a_Danger_4 'You confront a harrowing situation or sensation.'
+            text: &Reveal_a_Danger_4 'You confront a harrowing situation or sensation.'
           - min: 80
             max: 82
-            result: &Reveal_a_Danger_5 'You face the consequences of an earlier choice or approach.'
+            text: &Reveal_a_Danger_5 'You face the consequences of an earlier choice or approach.'
           - min: 83
             max: 85
-            result: &Reveal_a_Danger_6 'Your way is blocked or trapped.'
+            text: &Reveal_a_Danger_6 'Your way is blocked or trapped.'
           - min: 86
             max: 88
-            result: &Reveal_a_Danger_7 'A resource is diminished, broken, or lost.'
+            text: &Reveal_a_Danger_7 'A resource is diminished, broken, or lost.'
           - min: 89
             max: 91
-            result: &Reveal_a_Danger_8 'You face a perplexing mystery or tough choice.'
+            text: &Reveal_a_Danger_8 'You face a perplexing mystery or tough choice.'
           - min: 92
             max: 94
-            result: &Reveal_a_Danger_9 'You lose your way or are delayed.'
+            text: &Reveal_a_Danger_9 'You lose your way or are delayed.'
           - min: 95
             max: 100
-            result: &Reveal_a_Danger_10 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
+            text: &Reveal_a_Danger_10 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
@@ -182,48 +182,48 @@ oracles:
       reveal_a_danger_alt:
         name: Reveal a Danger (alternate version)
         replaces: delve/oracles/moves/reveal_a_danger
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 68
         rows:
           - min: 1
             max: 22
-            result: *Reveal_a_Danger_1
+            text: *Reveal_a_Danger_1
           - min: 23
             max: 42
-            result: *Reveal_a_Danger_2
+            text: *Reveal_a_Danger_2
           - min: 43
             max: 58
-            result: *Reveal_a_Danger_3
+            text: *Reveal_a_Danger_3
           - min: 59
             max: 64
-            result: *Reveal_a_Danger_4
+            text: *Reveal_a_Danger_4
           - min: 65
             max: 70
-            result: *Reveal_a_Danger_5
+            text: *Reveal_a_Danger_5
           - min: 71
             max: 76
-            result: *Reveal_a_Danger_6
+            text: *Reveal_a_Danger_6
           - min: 77
             max: 82
-            result: *Reveal_a_Danger_7
+            text: *Reveal_a_Danger_7
           - min: 83
             max: 88
-            result: *Reveal_a_Danger_8
+            text: *Reveal_a_Danger_8
           - min: 89
             max: 94
-            result: *Reveal_a_Danger_9
+            text: *Reveal_a_Danger_9
           - min: 95
             max: 100
-            result: *Reveal_a_Danger_10
+            text: *Reveal_a_Danger_10
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
                 duplicates: make_it_worse
       advance_a_threat:
         name: Advance a Threat
-        oracle_type: table_simple
+        oracle_type: table_basic
         match:
           text: |-
             On a match, this development also exposes a surprising aspect of the threat’s plan or nature.
@@ -233,10 +233,10 @@ oracles:
         rows:
           - min: 1
             max: 30
-            result: 'The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, [Reach a Milestone](id:classic/moves/quest/reach_a_milestone). Otherwise, mark menace.'
+            text: 'The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, [Reach a Milestone](id:classic/moves/quest/reach_a_milestone). Otherwise, mark menace.'
           - min: 31
             max: 70
-            result: 'The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.'
+            text: 'The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.'
           - min: 71
             max: 100
-            result: 'The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.'
+            text: 'The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.'

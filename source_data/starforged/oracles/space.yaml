@@ -16,7 +16,7 @@ oracles:
       sighting:
         name: Space Sighting
         _source: *CollectionSource
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         # content:
         #   part_of_speech: [fragment]
         summary: |-
@@ -35,7 +35,7 @@ oracles:
                 starforged:
                   region: terminus
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires:
             #     attributes:
@@ -44,43 +44,43 @@ oracles:
               - min: 1
                 max: 15
                 <<: &Sighting.0
-                  result:  '[Stellar Object](id:starforged/oracles/space/stellar_object)'
+                  text:  '[Stellar Object](id:starforged/oracles/space/stellar_object)'
                   oracle_rolls:
                     - oracle: starforged/oracles/space/stellar_object
               - min: 16
                 max: 35
                 <<: &Sighting.1
-                  result:  '[Planet](id:starforged/collections/oracles/planets)'
+                  text:  '[Planet](id:starforged/collections/oracles/planets)'
                 # game_objects: [*obj:Planet]
               - min: 36
                 max: 40
                 <<: &Sighting.2
-                  result:  '[Settlement](id:starforged/collections/oracles/settlements)'
+                  text:  '[Settlement](id:starforged/collections/oracles/settlements)'
                 # game_objects: [*obj:Settlement]
               - min: 41
                 max: 47
                 <<: &Sighting.3
-                  result:  '[Starship](id:starforged/collections/oracles/starships)'
+                  text:  '[Starship](id:starforged/collections/oracles/starships)'
                 # game_objects: [*obj:Starship]
               - min: 48
                 max: 51
                 <<: &Sighting.4
-                  result:  '[Derelict](id:starforged/collections/oracles/derelicts)'
+                  text:  '[Derelict](id:starforged/collections/oracles/derelicts)'
                 # game_objects: [*obj:Derelict]
               - min: 52
                 max: 53
                 <<: &Sighting.5
-                  result:  '[Precursor Vault](id:starforged/collections/oracles/vaults)'
+                  text:  '[Precursor Vault](id:starforged/collections/oracles/vaults)'
                 # game_objects: [*obj:Vault]
               - min: 54
                 max: 55
                 <<: &Sighting.6
-                  result:  '[Creature](id:starforged/collections/oracles/creatures)'
+                  text:  '[Creature](id:starforged/collections/oracles/creatures)'
                 # game_objects: [*obj:Creature]
               - min: 56
                 max: 60
                 <<: &Sighting.7
-                  result:  '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text:  '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls: &Sighting.7.rolls
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
@@ -89,51 +89,51 @@ oracles:
               - min: 61
                 max: 65
                 <<: &Sighting.8
-                  result:  'Debris field: Mineral asteroids'
+                  text:  'Debris field: Mineral asteroids'
               - min: 66
                 max: 68
                 <<: &Sighting.9
-                  result:  'Debris field: Frozen asteroids'
+                  text:  'Debris field: Frozen asteroids'
               - min: 69
                 max: 70
                 <<: &Sighting.10
-                  result:  'Debris field: Crystalline asteroids'
+                  text:  'Debris field: Crystalline asteroids'
               - min: 71
                 max: 72
                 <<: &Sighting.11
-                  result:  'Debris field: Creature boneyard'
+                  text:  'Debris field: Creature boneyard'
               - min: 73
                 max: 74
                 <<: &Sighting.12
-                  result:  'Debris field: Metallic wreckage'
+                  text:  'Debris field: Metallic wreckage'
               - min: 75
                 max: 76
                 <<: &Sighting.13
-                  result:  Large rogue asteroid
+                  text:  Large rogue asteroid
               - min: 77
                 max: 78
                 <<: &Sighting.14
-                  result:  Comet with a tail of ionized gas
+                  text:  Comet with a tail of ionized gas
               - min: 79
                 max: 81
                 <<: &Sighting.15
-                  result:  Fiery energy storm
+                  text:  Fiery energy storm
               - min: 82
                 max: 83
                 <<: &Sighting.16
-                  result:  Chaotic meteoroid storm
+                  text:  Chaotic meteoroid storm
               - min: 84
                 max: 85
                 <<: &Sighting.17
-                  result:  Turbulent gravitational wave
+                  text:  Turbulent gravitational wave
               - min: 86
                 max: 93
                 <<: &Sighting.18
-                  result:  Dense nebula cloud
+                  text:  Dense nebula cloud
               - &Sighting.19
                 min: 94
                 max: 98
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
@@ -141,7 +141,7 @@ oracles:
               - &Sighting.20
                 min: 99
                 max: 100
-                result: Roll three times
+                text: Roll three times
                 oracle_rolls:
                   - number_of_rolls: 3
                     auto: true
@@ -153,7 +153,7 @@ oracles:
                 starforged:
                   region: outlands
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires:
             #     attributes:
@@ -225,7 +225,7 @@ oracles:
                 starforged:
                   region: expanse
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires:
             #     attributes:
@@ -302,11 +302,11 @@ oracles:
         description: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
         oracle_type: table_shared_rolls
         # template:
-        #   result: '{{result:starforged/oracles/space/sector_name/prefix}} {{result:starforged/oracles/space/sector_name/suffix}}'
+        #   text: '{{result:starforged/oracles/space/sector_name/prefix}} {{result:starforged/oracles/space/sector_name/suffix}}'
         contents:
           prefix:
             name: Prefix
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source: *CollectionSource
             # usage:
             #   initial: true
@@ -320,264 +320,264 @@ oracles:
               - <<: &SectorName.0
                   min: 1
                   max: 2
-                result: Accursed
+                text: Accursed
                 _i18n: &i18n.result.adjective
                   result:
                     part_of_speech: adjective
               - <<: &SectorName.1
                   min: 3
                   max: 4
-                result: Ashen
+                text: Ashen
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.2
                   min: 5
                   max: 6
-                result: Asteria
+                text: Asteria
                 _i18n: &i18n.result.adjunct_proper_noun
                   result:
                     part_of_speech: adjunct_proper_noun
               - <<: &SectorName.3
                   min: 7
                   max: 8
-                result: Bitter
+                text: Bitter
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.4
                   min: 9
                   max: 10
-                result: Blighted
+                text: Blighted
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.5
                   min: 11
                   max: 12
-                result: Bloodied
+                text: Bloodied
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.6
                   min: 13
                   max: 14
-                result: Boundless
+                text: Boundless
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.7
                   min: 15
                   max: 16
-                result: Burning
+                text: Burning
                 _i18n:
                   result:
                     part_of_speech: gerund
               - <<: &SectorName.8
                   min: 17
                   max: 18
-                result: Cortana
+                text: Cortana
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.9
                   min: 19
                   max: 20
-                result: Corvus
+                text: Corvus
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.10
                   min: 21
                   max: 22
-                result: Crimson
+                text: Crimson
               - <<: &SectorName.11
                   min: 23
                   max: 24
-                result: Cygnus
+                text: Cygnus
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.12
                   min: 25
                   max: 26
-                result: Delphi
+                text: Delphi
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.13
                   min: 27
                   max: 28
-                result: Delphian
+                text: Delphian
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.14
                   min: 29
                   max: 30
-                result: Devil's
+                text: Devil's
                 # content: {part_of_speech: [proper noun, possessive case]}
               - <<: &SectorName.15
                   min: 31
                   max: 32
-                result: Ebon
+                text: Ebon
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.16
                   min: 33
                   max: 34
-                result: Essus
+                text: Essus
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.17
                   min: 35
                   max: 36
                 _i18n: *i18n.result.adjective
-                result: Fallen
+                text: Fallen
               - <<: &SectorName.18
                   min: 37
                   max: 38
                 _i18n: *i18n.result.adjective
-                result: Ferrous
+                text: Ferrous
               - <<: &SectorName.19
                   min: 39
                   max: 40
-                result: Fool's
+                text: Fool's
                 # content: {part_of_speech: [proper noun, possessive case]}
               - <<: &SectorName.20
                   min: 41
                   max: 42
-                result: Forgotten
+                text: Forgotten
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.21
                   min: 43
                   max: 44
-                result: Haunted
+                text: Haunted
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.22
                   min: 45
                   max: 46
-                result: Hidden
+                text: Hidden
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.23
                   min: 47
                   max: 48
-                result: Hollow
+                text: Hollow
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.24
                   min: 49
                   max: 50
-                result: Igneous
+                text: Igneous
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.25
                   min: 51
                   max: 52
-                result: Infernal
+                text: Infernal
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.26
                   min: 53
                   max: 54
-                result: Invidia
+                text: Invidia
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.27
                   min: 55
                   max: 56
-                result: Iron
+                text: Iron
                 _i18n: &i18n.result.adjunct_common_noun
                   result:
                     part_of_speech: adjunct_common_noun
               - <<: &SectorName.28
                   min: 57
                   max: 58
-                result: Kalidas
+                text: Kalidas
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.29
                   min: 59
                   max: 60
-                result: Kronos
+                text: Kronos
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.30
                   min: 61
                   max: 62
-                result: Lacuna
+                text: Lacuna
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.31
                   min: 63
                   max: 64
-                result: Lumen
+                text: Lumen
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.32
                   min: 65
                   max: 66
-                result: Mobius
+                text: Mobius
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.33
                   min: 67
                   max: 68
-                result: Morien
+                text: Morien
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.34
                   min: 69
                   max: 70
-                result: Onyx
+                text: Onyx
                 _i18n: *i18n.result.adjunct_common_noun
               - <<: &SectorName.35
                   min: 71
                   max: 72
-                result: Outer
+                text: Outer
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.36
                   min: 73
                   max: 74
-                result: Sanguis
+                text: Sanguis
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.37
                   min: 75
                   max: 76
-                result: Scarred
+                text: Scarred
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.38
                   min: 77
                   max: 78
-                result: Scorched
+                text: Scorched
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.39
                   min: 79
                   max: 80
-                result: Shattered
+                text: Shattered
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.40
                   min: 81
                   max: 82
-                result: Shrouded
+                text: Shrouded
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.41
                   min: 83
                   max: 84
-                result: Sindri
+                text: Sindri
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.42
                   min: 85
                   max: 86
-                result: Solana
+                text: Solana
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.43
                   min: 87
                   max: 88
-                result: Stygian
+                text: Stygian
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.44
                   min: 89
                   max: 90
-                result: Sulaco
+                text: Sulaco
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.45
                   min: 91
                   max: 92
-                result: Sundered
+                text: Sundered
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.46
                   min: 93
                   max: 94
-                result: Thunor
+                text: Thunor
                 _i18n: *i18n.result.adjunct_proper_noun
               - <<: &SectorName.47
                   min: 95
                   max: 96
-                result: Vanguard
+                text: Vanguard
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.48
                   min: 97
                   max: 98
-                result: Veiled
+                text: Veiled
                 _i18n: *i18n.result.adjective
               - <<: &SectorName.49
                   min: 99
                   max: 100
-                result: Wasted
+                text: Wasted
                 _i18n: *i18n.result.adjective
           suffix:
             name: Suffix
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             summary: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
             # usage:
             #   initial: true
@@ -595,158 +595,158 @@ oracles:
                 _i18n: &i18n.result.common_noun_as_proper_noun
                   result:
                     part_of_speech: common_noun_as_proper_noun
-                result: Abyss
+                text: Abyss
               - <<: *SectorName.1
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Anvil
+                text: Anvil
               - <<: *SectorName.2
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Arch
+                text: Arch
               - <<: *SectorName.3
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Breach
+                text: Breach
               - <<: *SectorName.4
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Chain
+                text: Chain
               - <<: *SectorName.5
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Channel
+                text: Channel
               - <<: *SectorName.6
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Chasm
+                text: Chasm
               - <<: *SectorName.7
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Circlet
+                text: Circlet
               - <<: *SectorName.8
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Cluster
+                text: Cluster
               - <<: *SectorName.9
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Crossing
+                text: Crossing
               - <<: *SectorName.10
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Crown
+                text: Crown
               - <<: *SectorName.11
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Currents
+                text: Currents
               - <<: *SectorName.12
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Deep
+                text: Deep
               - <<: *SectorName.13
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Desolation
+                text: Desolation
               - <<: *SectorName.14
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Drift
+                text: Drift
               - <<: *SectorName.15
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Flow
+                text: Flow
               - <<: *SectorName.16
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Flux
+                text: Flux
               - <<: *SectorName.17
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Gap
+                text: Gap
               - <<: *SectorName.18
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Gate
+                text: Gate
               - <<: *SectorName.19
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Gyre
+                text: Gyre
               - <<: *SectorName.20
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Heart
+                text: Heart
               - <<: *SectorName.21
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Helix
+                text: Helix
               - <<: *SectorName.22
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Juncture
+                text: Juncture
               - <<: *SectorName.23
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Limits
+                text: Limits
               - <<: *SectorName.24
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Locus
+                text: Locus
               - <<: *SectorName.25
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Maelstrom
+                text: Maelstrom
               - <<: *SectorName.26
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Margin
+                text: Margin
               - <<: *SectorName.27
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Maw
+                text: Maw
               - <<: *SectorName.28
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Maze
+                text: Maze
               - <<: *SectorName.29
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Nexus
+                text: Nexus
               - <<: *SectorName.30
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Oasis
+                text: Oasis
               - <<: *SectorName.31
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Pass
+                text: Pass
               - <<: *SectorName.32
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Pit
+                text: Pit
               - <<: *SectorName.33
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Pyre
+                text: Pyre
               - <<: *SectorName.34
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Reach
+                text: Reach
               - <<: *SectorName.35
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Rest
+                text: Rest
               - <<: *SectorName.36
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Rift
+                text: Rift
               - <<: *SectorName.37
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Sanctum
+                text: Sanctum
               - <<: *SectorName.38
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Shallows
+                text: Shallows
               - <<: *SectorName.39
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Shoal
+                text: Shoal
               - <<: *SectorName.40
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Spine
+                text: Spine
               - <<: *SectorName.41
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Straits
+                text: Straits
               - <<: *SectorName.42
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Threshold
+                text: Threshold
               - <<: *SectorName.43
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Tide
+                text: Tide
               - <<: *SectorName.44
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Verge
+                text: Verge
               - <<: *SectorName.45
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Vertex
+                text: Vertex
               - <<: *SectorName.46
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Vigil
+                text: Vigil
               - <<: *SectorName.47
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Void
+                text: Void
               - <<: *SectorName.48
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Web
+                text: Web
               - <<: *SectorName.49
                 _i18n: *i18n.result.common_noun_as_proper_noun
-                result: Zenith
+                text: Zenith
     contents:
       stellar_object:
         name: Stellar Object
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 303
@@ -756,49 +756,49 @@ oracles:
         rows:
           - min: 1
             max: 15
-            result: Smoldering red star
+            text: Smoldering red star
           - min: 16
             max: 30
-            result: Glowing orange star
+            text: Glowing orange star
           - min: 31
             max: 45
-            result: Burning yellow star
+            text: Burning yellow star
           - min: 46
             max: 50
-            result: Blazing blue star
+            text: Blazing blue star
           - min: 51
             max: 60
-            result: Young star incubating in a molecular cloud
+            text: Young star incubating in a molecular cloud
           - min: 61
             max: 70
-            result: White dwarf shining with spectral light
+            text: White dwarf shining with spectral light
           - min: 71
             max: 75
-            result: Corrupted star radiating with unnatural light
+            text: Corrupted star radiating with unnatural light
           - min: 76
             max: 80
-            result: Neutron star surrounded by intense magnetic fields
+            text: Neutron star surrounded by intense magnetic fields
           - min: 81
             max: 85
-            result: Two stars in close orbit connected by fiery tendrils of energy
+            text: Two stars in close orbit connected by fiery tendrils of energy
           - min: 86
             max: 90
-            result: Black hole allows nothing to escape—not even light
+            text: Black hole allows nothing to escape—not even light
           - min: 91
             max: 98
-            result: Hypergiant star generating turbulent solar winds
+            text: Hypergiant star generating turbulent solar winds
           - min: 99
             max: 99
-            result: Artificial star constructed by a long-dead civilization
+            text: Artificial star constructed by a long-dead civilization
           - min: 100
             max: 100
-            result: Unstable star showing signs of impending supernova
+            text: Unstable star showing signs of impending supernova
       peril:
         _source:
           <<: *Source
           page: 304
         name: Spaceborne Peril
-        oracle_type: table_simple
+        oracle_type: table_basic
         # usage:
         #   repeatable: true
         #   requires:
@@ -811,109 +811,109 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: Artificial gravity generator malfunctions
+            text: Artificial gravity generator malfunctions
           - min: 4
             max: 6
-            result: Automated defenses or mines protect this area
+            text: Automated defenses or mines protect this area
           - min: 7
             max: 9
-            result: Compartment catches fire or is breached
+            text: Compartment catches fire or is breached
           - min: 10
             max: 12
-            result: Contagion or illness threatens to take hold
+            text: Contagion or illness threatens to take hold
           - min: 13
             max: 15
-            result: Dust clouds imperil navigation or conceal foes
+            text: Dust clouds imperil navigation or conceal foes
           - min: 16
             max: 18
-            result: Energy storm looms
+            text: Energy storm looms
           - min: 19
             max: 21
-            result: Familiar foe appears or sends an ominous message
+            text: Familiar foe appears or sends an ominous message
           - min: 22
             max: 24
-            result: Gravity well or vortex takes hold
+            text: Gravity well or vortex takes hold
           - min: 25
             max: 27
-            result: Imperiled ship calls for help
+            text: Imperiled ship calls for help
             # suggestions: [*obj:Starship]
           - min: 28
             max: 30
-            result: Important device fails or malfunctions
+            text: Important device fails or malfunctions
           - min: 31
             max: 33
-            result: Infestation is revealed
+            text: Infestation is revealed
             # suggestions: [*obj:Creature]
           - min: 34
             max: 36
-            result: Intruder or stowaway creates trouble
+            text: Intruder or stowaway creates trouble
           - min: 37
             max: 39
-            result: Isolation or fear presses in
+            text: Isolation or fear presses in
           - min: 40
             max: 42
-            result: Life support system malfunctions
+            text: Life support system malfunctions
           - min: 43
             max: 45
-            result: Meteoroid storm fills the sky
+            text: Meteoroid storm fills the sky
           - min: 46
             max: 48
-            result: Mysterious wreckage portends a new threat
+            text: Mysterious wreckage portends a new threat
             # suggestions: [*obj:Derelict.Starship]
           - min: 49
             max: 51
-            result: Nearby settlement calls for help
+            text: Nearby settlement calls for help
             # suggestions: [*obj:Settlement]
           - min: 52
             max: 54
-            result: Old repair or patch fails
+            text: Old repair or patch fails
           - min: 55
             max: 57
-            result: Onboard dispute or inner turmoil causes a disruption
+            text: Onboard dispute or inner turmoil causes a disruption
           - min: 58
             max: 60
-            result: Others obstruct your path or form a blockade
+            text: Others obstruct your path or form a blockade
           - min: 61
             max: 63
-            result: Phantom signals suggest a lurking foe
+            text: Phantom signals suggest a lurking foe
           - min: 64
             max: 66
-            result: Pirates hunt for prey
+            text: Pirates hunt for prey
           - min: 67
             max: 69
-            result: Power fails
+            text: Power fails
           - min: 70
             max: 72
-            result: Primary drive or generator malfunctions
+            text: Primary drive or generator malfunctions
           - min: 73
             max: 75
-            result: Sabotage is revealed
+            text: Sabotage is revealed
           - min: 76
             max: 78
-            result: Shockwave or gravity wave approaches
+            text: Shockwave or gravity wave approaches
           - min: 79
             max: 81
-            result: Someone questions your presence here
+            text: Someone questions your presence here
           - min: 82
             max: 84
-            result: Stellar anomaly emits hazardous energies
+            text: Stellar anomaly emits hazardous energies
           - min: 85
             max: 87
-            result: Threatening lifeform draws near
+            text: Threatening lifeform draws near
             # suggestions: [*obj:Creature]
           - min: 88
             max: 90
-            result: Troubling visions or apparitions
+            text: Troubling visions or apparitions
           - min: 91
             max: 93
-            result: 'True nature of a cargo, occupant, or passenger is revealed'
+            text: 'True nature of a cargo, occupant, or passenger is revealed'
           - min: 94
             max: 96
-            result: Unsettling sounds or disturbances
+            text: Unsettling sounds or disturbances
           - min: 97
             max: 99
             <<: &ActionTheme
-              result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+              text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
               oracle_rolls:
                 - oracle: starforged/oracles/core/action
                   auto: true
@@ -921,12 +921,12 @@ oracles:
                   auto: true
           - min: 100
             max: 100
-            result: Roll twice
+            text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
       opportunity:
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 305
@@ -943,83 +943,83 @@ oracles:
         rows:
           - min: 1
             max: 4
-            result: Advance warning of an environmental threat
+            text: Advance warning of an environmental threat
           - min: 5
             max: 8
-            result: Automated signal offers a helpful message or warning
+            text: Automated signal offers a helpful message or warning
           - min: 9
             max: 12
-            result: Cache of cargo or supplies
+            text: Cache of cargo or supplies
             # suggestions: [*roll:Object]
           - min: 13
             max: 16
-            result: Chance for fellowship or a moment of inner peace
+            text: Chance for fellowship or a moment of inner peace
           - min: 17
             max: 20
-            result: Clear path through otherwise perilous space
+            text: Clear path through otherwise perilous space
           - min: 21
             max: 24
-            result: Clue offers insight into a current quest or mystery
+            text: Clue offers insight into a current quest or mystery
           - min: 25
             max: 28
-            result: Clue to a lifeform's nature or vulnerabilities
+            text: Clue to a lifeform's nature or vulnerabilities
           - min: 29
             max: 32
-            result: Derelict ripe for the picking
+            text: Derelict ripe for the picking
             # suggestions: [*obj:Derelict]
           - min: 33
             max: 36
-            result: Foe inadvertently reveals themselves or tips their hand
+            text: Foe inadvertently reveals themselves or tips their hand
           - min: 37
             max: 40
-            result: Friendly interaction with a benign lifeform
+            text: Friendly interaction with a benign lifeform
             # suggestions: [*obj:Creature]
           - min: 41
             max: 44
-            result: Friendly settlement in range
+            text: Friendly settlement in range
             # suggestions: [*obj:Settlement]
           - min: 45
             max: 48
-            result: Friendly spacers at work here
+            text: Friendly spacers at work here
             # suggestions: [*obj:Npc]
           - min: 49
             max: 52
-            result: Friendly starship crosses your path
+            text: Friendly starship crosses your path
             # suggestions: [*obj:Starship]
           - min: 53
             max: 56
-            result: Helpful or encouraging message from an acquaintance
+            text: Helpful or encouraging message from an acquaintance
           - min: 57
             max: 60
-            result: Impressive vista offers comfort or inspiration
+            text: Impressive vista offers comfort or inspiration
           - min: 61
             max: 64
-            result: Interesting site offers opportunities for exploration
+            text: Interesting site offers opportunities for exploration
           - min: 65
             max: 68
-            result: Mineral or energy resource detected
+            text: Mineral or energy resource detected
           - min: 69
             max: 72
-            result: Navigational or environmental hazard is left behind
+            text: Navigational or environmental hazard is left behind
           - min: 73
             max: 76
-            result: Opening to escape or avoid foes
+            text: Opening to escape or avoid foes
           - min: 77
             max: 80
-            result: Plea for help from a potential benefactor
+            text: Plea for help from a potential benefactor
             # suggestions: [*obj:Npc]
           - min: 81
             max: 84
-            result: Probe or beacon with useful data
+            text: Probe or beacon with useful data
           - min: 85
             max: 88
-            result: 'Refuge offers a place to hide, plan, or recover'
+            text: 'Refuge offers a place to hide, plan, or recover'
           - min: 89
             max: 92
-            result: Sensors pinpoint a lurking foe
+            text: Sensors pinpoint a lurking foe
           - min: 93
             max: 96
-            result: Sensors reveal helpful or interesting environmental data
+            text: Sensors reveal helpful or interesting environmental data
           - min: 97
             max: 100
-            result: Vehicle or equipment performs beyond expectations
+            text: Vehicle or equipment performs beyond expectations

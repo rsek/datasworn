@@ -8,7 +8,7 @@ namespace Datasworn
     {
         /// <summary>
         /// Both Ironsworn and Starforged explicitly recommend *against* rolling
-        /// all details at once. That said, some oracle results only provide
+        /// all details at once. That said, some oracle texts only provide
         /// useful information once a secondary roll occurs, such as "Action +
         /// Theme" or "Roll Twice".
         /// </summary>
@@ -19,7 +19,7 @@ namespace Datasworn
         public DiceExpression Dice { get; set; }
 
         /// <summary>
-        /// Special rules on how to handle duplicate results, when rolling
+        /// Special rules on how to handle duplicate texts, when rolling
         /// multiple times.
         /// </summary>
         [JsonPropertyName("duplicates")]

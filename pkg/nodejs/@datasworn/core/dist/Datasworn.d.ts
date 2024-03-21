@@ -1422,9 +1422,9 @@ export type DiceExpression = string;
 /**
  * Special roll instructions to use when rolling multiple times on a single oracle.
  *
- *   - `reroll`: Duplicates results should be re-rolled.
+ *   - `reroll`: Duplicate results should be re-rolled.
  *   - `keep`: Duplicates results should be kept.
- *   - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.
+ *   - `make_it_worse`: Duplicate results should be kept, and they compound to make things worse.
  */
 export type OracleDuplicateBehavior = 'reroll' | 'keep' | 'make_it_worse';
 export interface OracleMatchBehavior {
@@ -1437,12 +1437,12 @@ export interface OracleRoll {
      */
     oracle: OracleRollableId | null;
     /**
-     * Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll Twice".
+     * Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle texts only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll Twice".
      * @default false
      */
     auto: boolean;
     /**
-     * Special rules on how to handle duplicate results, when rolling multiple times.
+     * Special rules on how to handle duplicate texts, when rolling multiple times.
      * @default "reroll"
      */
     duplicates: OracleDuplicateBehavior;
@@ -1459,31 +1459,31 @@ export interface OracleRoll {
     number_of_rolls: number;
 }
 /**
- * Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#detail`, and `OracleTableRow#description`.
+ * Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.
  *
- *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.
+ *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID.
  * @experimental
  */
 export interface OracleRollTemplate {
     /**
-     * A string template that may be used in place of OracleTableRow#result.
-     * @example "{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}"
+     * A string template that may be used in place of OracleTableRow#text.
+     * @example "{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
      */
-    result?: TemplateString;
+    text?: TemplateString;
     /**
-     * A string template that may be used in place of OracleTableRow#detail.
+     * A string template that may be used in place of OracleTableRow#text2.
      */
-    detail?: TemplateString;
+    text2?: TemplateString;
     /**
-     * A string template that may be used in place of OracleTableRow#description.
+     * A string template that may be used in place of OracleTableRow#text3.
      */
-    description?: TemplateString;
+    text3?: TemplateString;
 }
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
  */
-export type OracleCollection = OracleTablesCollection | OracleTableSharedRolls | OracleTableSharedResults | OracleTableSharedDetails;
-export interface OracleColumnDetails {
+export type OracleCollection = OracleTablesCollection | OracleTableSharedRolls | OracleTableSharedTextColumn | OracleTableShared2TextColumns | OracleTableShared3TextColumns;
+export interface OracleColumn2TextCells {
     /**
      * The unique Datasworn ID for this item.
      */
@@ -1525,8 +1525,53 @@ export interface OracleColumnDetails {
     /**
      * An array of objects, each representing a single row of the table.
      */
-    rows: OracleTableRowDetails[];
-    oracle_type: 'column_details';
+    rows: Array<OracleTableRow2TextCells>;
+    oracle_type: 'column_text2';
+}
+export interface OracleColumn3TextCells {
+    /**
+     * The unique Datasworn ID for this item.
+     */
+    _id: OracleRollableId;
+    /**
+     * The primary label at the head of this column.
+     */
+    name: Label;
+    /**
+     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+     */
+    summary?: MarkdownString;
+    /**
+     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
+     */
+    color?: CssColor;
+    /**
+     * An optional icon for this column.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+     */
+    replaces?: OracleRollableId;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    /**
+     * @experimental
+     */
+    tags?: Record<DictKey, Record<DictKey, Tag>>;
+    suggestions?: Suggestions;
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRow3TextCells>;
+    oracle_type: 'column_3_text_cells';
 }
 /**
  * Represents a single column in an OracleCollection.
@@ -1573,18 +1618,18 @@ export interface OracleColumnSimple {
     /**
      * An array of objects, each representing a single row of the table.
      */
-    rows: OracleTableRowSimple[];
-    oracle_type: 'column_simple';
+    rows: OracleTableRowBasic[];
+    oracle_type: 'column_basic';
 }
 /**
  * A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table.
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
  */
-export type OracleRollable = OracleTableSimple | OracleTableDetails | OracleColumnSimple | OracleColumnDetails;
+export type OracleRollable = OracleTableSimple | OracleTable2TextColumns | OracleTable3TextColumns | OracleColumnSimple | OracleColumn2TextCells | OracleColumn3TextCells;
 /**
- * A rollable oracle table with one roll column, one `result` column, and one `detail` column.
+ * A rollable oracle table with one roll column and two text columns.
  */
-export interface OracleTableDetails {
+export interface OracleTable2TextColumns {
     /**
      * The unique Datasworn ID for this item.
      */
@@ -1634,8 +1679,8 @@ export interface OracleTableDetails {
      * ```javascript
      * 	{
      * 		roll: "Roll",
-     * 		result: "Result",
-     * 		detail: "Detail"
+     * 		text: "Result",
+     * 		text2: "Details"
      * 	}
      * ```
      */
@@ -1647,11 +1692,11 @@ export interface OracleTableDetails {
         /**
          * @default "Result"
          */
-        result: Label;
+        text: Label;
         /**
-         * @default "Detail"
+         * @default "Details"
          */
-        detail: Label;
+        text2: Label;
     };
     /**
      * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -1669,22 +1714,109 @@ export interface OracleTableDetails {
     /**
      * An array of objects, each representing a single row of the table.
      */
-    rows: OracleTableRowDetails[];
-    oracle_type: 'table_details';
+    rows: Array<OracleTableRow2TextCells>;
+    oracle_type: 'table_text2';
+}
+/**
+ * A rollable oracle table with one roll column and 3 text columns.
+ */
+export interface OracleTable3TextColumns {
+    /**
+     * The unique Datasworn ID for this item.
+     */
+    _id: OracleRollableId;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    /**
+     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     */
+    _source: SourceInfo;
+    suggestions?: Suggestions;
+    /**
+     * @experimental
+     */
+    tags?: Record<DictKey, Record<DictKey, Tag>>;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
+    /**
+     * An icon that represents this table.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     */
+    summary?: MarkdownString;
+    /**
+     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     */
+    description?: MarkdownString;
+    /**
+     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+     * @default
+     * ```javascript
+     * 	{
+     * 		roll: "Roll",
+     * 		text: undefined,
+     * 		text2: undefined,
+     * 		text3: undefined
+     * 	}
+     * ```
+     */
+    column_labels: {
+        /**
+         * @default "Roll"
+         */
+        roll: Label;
+        text: Label;
+        text2: Label;
+        text3: Label;
+    };
+    /**
+     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+     */
+    replaces?: OracleRollableId;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRow3TextCells>;
+    oracle_type: 'table_3_text_columns';
 }
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
  */
-export type OracleTableRollable = OracleTableSimple | OracleTableDetails;
-export type OracleTableRow = OracleTableRowSimple | OracleTableRowDetails;
+export type OracleTableRollable = OracleTableSimple | OracleTable2TextColumns;
+export type OracleTableRow = OracleTableRowBasic | OracleTableRow2TextCells;
 /**
  * Represents a row in an oracle table that provides additional details.
  */
-export interface OracleTableRowDetails {
+export interface OracleTableRow2TextCells {
     /**
      * The primary text content of this row.
      */
-    result: MarkdownString;
+    text: MarkdownString;
     icon?: SvgImageUrl;
     /**
      * Further oracle rolls prompted by this table row.
@@ -1714,16 +1846,59 @@ export interface OracleTableRowDetails {
     /**
      * The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.
      */
-    detail: MarkdownString | null;
+    text2: MarkdownString | null;
 }
 /**
- * Represents a row in an oracle table.
+ * Represents a row in an oracle table with 3 text cells.
  */
-export interface OracleTableRowSimple {
+export interface OracleTableRow3TextCells {
     /**
      * The primary text content of this row.
      */
-    result: MarkdownString;
+    text: MarkdownString;
+    icon?: SvgImageUrl;
+    /**
+     * Further oracle rolls prompted by this table row.
+     */
+    oracle_rolls?: OracleRoll[];
+    suggestions?: Suggestions;
+    /**
+     * Hints that the identified table should be rendered inside this table row.
+     * @experimental
+     */
+    embed_table?: OracleRollableId;
+    /**
+     * @experimental
+     */
+    template?: OracleRollTemplate;
+    _i18n?: I18nHints;
+    /**
+     * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+     * @default null
+     */
+    min: number | null;
+    /**
+     * High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+     * @default null
+     */
+    max: number | null;
+    /**
+     * The second text column for this row. Use `null` to represent a cell with a blank or empty vlue.
+     */
+    text2: MarkdownString | null;
+    /**
+     * The third text column for this row. Use `null` to represent a cell with a blank or empty vlue.
+     */
+    text3: MarkdownString | null;
+}
+/**
+ * Represents a row in an oracle table, with a single text cell.
+ */
+export interface OracleTableRowBasic {
+    /**
+     * The primary text content of this row.
+     */
+    text: MarkdownString;
     icon?: SvgImageUrl;
     /**
      * Further oracle rolls prompted by this table row.
@@ -1752,9 +1927,9 @@ export interface OracleTableRowSimple {
     max: number | null;
 }
 /**
- * An OracleCollection representing a single table with multiple roll columns, one `result` column, and one `detail` column.
+ * An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.
  */
-export interface OracleTableSharedDetails {
+export interface OracleTableShared2TextColumns {
     /**
      * The unique Datasworn ID for this item.
      */
@@ -1804,14 +1979,14 @@ export interface OracleTableSharedDetails {
     /**
      * @remarks Deserialize as a dictionary object.
      */
-    contents?: Record<DictKey, OracleColumnDetails>;
+    contents?: Record<DictKey, OracleColumn2TextCells>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default
      * ```javascript
      * 	{
-     * 		result: "Result",
-     * 		detail: "Detail"
+     * 		text: "Result",
+     * 		text2: "Details"
      * 	}
      * ```
      */
@@ -1819,21 +1994,21 @@ export interface OracleTableSharedDetails {
         /**
          * @default "Result"
          */
-        result: Label;
+        text: Label;
         /**
-         * @default "Detail"
+         * @default "Details"
          */
-        detail: Label;
+        text2: Label;
     };
     /**
-     * A table with multiple roll columns, one result column, and one details column.
+     * A table with multiple unique roll columns, and 2 shared text columns.
      */
-    oracle_type: 'table_shared_details';
+    oracle_type: 'table_shared_text2';
 }
 /**
- * An OracleCollection representing a single table with multiple roll columns and one `result` column.
+ * An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.
  */
-export interface OracleTableSharedResults {
+export interface OracleTableShared3TextColumns {
     /**
      * The unique Datasworn ID for this item.
      */
@@ -1883,13 +2058,13 @@ export interface OracleTableSharedResults {
     /**
      * @remarks Deserialize as a dictionary object.
      */
-    contents?: Record<DictKey, OracleColumnSimple>;
+    contents?: Record<DictKey, OracleColumn2TextCells>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default
      * ```javascript
      * 	{
-     * 		result: "Result"
+     * 		text: "Result"
      * 	}
      * ```
      */
@@ -1897,12 +2072,12 @@ export interface OracleTableSharedResults {
         /**
          * @default "Result"
          */
-        result: Label;
+        text: Label;
     };
     /**
-     * A table with multiple roll columns and one result column.
+     * A table with multiple unique roll columns, and 3 shared text columns.
      */
-    oracle_type: 'table_shared_results';
+    oracle_type: 'table_shared_text3';
 }
 /**
  * An OracleCollection representing a single table with one roll column and multiple `result` columns.
@@ -1974,9 +2149,83 @@ export interface OracleTableSharedRolls {
         roll: Label;
     };
     /**
-     * A table with one roll column and multiple result columns.
+     * A table with one shared roll column, and multiple unique text columns.
      */
     oracle_type: 'table_shared_rolls';
+}
+/**
+ * An OracleCollection representing a single table with multiple roll columns and one `result` column.
+ */
+export interface OracleTableSharedTextColumn {
+    /**
+     * The unique Datasworn ID for this item.
+     */
+    _id: OracleCollectionId;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    /**
+     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     */
+    _source: SourceInfo;
+    suggestions?: Suggestions;
+    /**
+     * @experimental
+     */
+    tags?: Record<DictKey, Record<DictKey, Tag>>;
+    /**
+     * A thematic color associated with this collection.
+     */
+    color?: CssColor;
+    /**
+     * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     */
+    summary?: MarkdownString;
+    /**
+     * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     */
+    description?: MarkdownString;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+     */
+    enhances?: OracleCollectionId;
+    /**
+     * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+     */
+    replaces?: OracleCollectionId;
+    /**
+     * @remarks Deserialize as a dictionary object.
+     */
+    contents?: Record<DictKey, OracleColumnSimple>;
+    /**
+     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+     * @default
+     * ```javascript
+     * 	{
+     * 		text: "Result"
+     * 	}
+     * ```
+     */
+    column_labels: {
+        /**
+         * @default "Result"
+         */
+        text: Label;
+    };
+    /**
+     * A table with multiple unique roll columns, and one shared text column.
+     */
+    oracle_type: 'table_shared_text';
 }
 /**
  * Represents a basic rollable oracle table with one roll column and one `result` column.
@@ -2031,7 +2280,7 @@ export interface OracleTableSimple {
      * ```javascript
      * 	{
      * 		roll: "Roll",
-     * 		result: "Result"
+     * 		text: "Result"
      * 	}
      * ```
      */
@@ -2043,7 +2292,7 @@ export interface OracleTableSimple {
         /**
          * @default "Result"
          */
-        result: Label;
+        text: Label;
     };
     /**
      * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -2061,8 +2310,8 @@ export interface OracleTableSimple {
     /**
      * An array of objects, each representing a single row of the table.
      */
-    rows: OracleTableRowSimple[];
-    oracle_type: 'table_simple';
+    rows: OracleTableRowBasic[];
+    oracle_type: 'table_basic';
 }
 /**
  * An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.
@@ -3352,13 +3601,13 @@ export interface TruthOption {
     table?: TruthOptionTableRow[];
 }
 /**
- * Represents a row in an oracle table.
+ * Represents a row in an oracle table, with a single text cell.
  */
 export interface TruthOptionTableRow {
     /**
      * The primary text content of this row.
      */
-    result: MarkdownString;
+    text: MarkdownString;
     icon?: SvgImageUrl;
     /**
      * Further oracle rolls prompted by this table row.
@@ -3770,7 +4019,7 @@ export interface DelveSiteDomainDangerRow {
     /**
      * The primary text content of this row.
      */
-    result: MarkdownString;
+    text: MarkdownString;
     icon?: SvgImageUrl;
     /**
      * Further oracle rolls prompted by this table row.
@@ -3807,7 +4056,7 @@ export interface DelveSiteDomainFeatureRow {
     /**
      * The primary text content of this row.
      */
-    result: MarkdownString;
+    text: MarkdownString;
     icon?: SvgImageUrl;
     /**
      * Further oracle rolls prompted by this table row.
@@ -3945,7 +4194,7 @@ export interface DelveSiteThemeDangerRow {
     /**
      * The primary text content of this row.
      */
-    result: MarkdownString;
+    text: MarkdownString;
     icon?: SvgImageUrl;
     /**
      * Further oracle rolls prompted by this table row.
@@ -3982,7 +4231,7 @@ export interface DelveSiteThemeFeatureRow {
     /**
      * The primary text content of this row.
      */
-    result: MarkdownString;
+    text: MarkdownString;
     icon?: SvgImageUrl;
     /**
      * Further oracle rolls prompted by this table row.

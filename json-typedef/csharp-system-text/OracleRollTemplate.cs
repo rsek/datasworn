@@ -6,38 +6,35 @@ namespace Datasworn
 {
     /// <summary>
     /// Provides string templates that may be used in place of the static
-    /// row text from `OracleTableRow#result`, `OracleTableRow#detail`, and
-    /// `OracleTableRow#description`.
+    /// row text from `OracleTableRow#text`, `OracleTableRow#text2`, and
+    /// `OracleTableRow#text3`.
     /// 
-    ///   These strings are formatted in Markdown, but use a special syntax
-    /// for their placeholders: `{{result:some_oracle_table_id}}`. The
+    ///   These strings are formatted in Markdown, but use a special
+    /// syntax for their placeholders: `{{text:some_oracle_table_id}}`. The
     /// placeholder should be replaced with the value of a rolled (or selected)
-    /// `OracleTableRow#result` from the target oracle table ID.
+    /// `OracleTableRow#text` from the target oracle table ID.
     /// </summary>
     public class OracleRollTemplate
     {
         /// <summary>
-        /// A string template that may be used in place of
-        /// OracleTableRow#description.
+        /// A string template that may be used in place of OracleTableRow#text.
         /// </summary>
-        [JsonPropertyName("description")]
+        [JsonPropertyName("text")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public TemplateString? Description { get; set; }
+        public TemplateString? Text { get; set; }
 
         /// <summary>
-        /// A string template that may be used in place of
-        /// OracleTableRow#detail.
+        /// A string template that may be used in place of OracleTableRow#text2.
         /// </summary>
-        [JsonPropertyName("detail")]
+        [JsonPropertyName("text2")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public TemplateString? Detail { get; set; }
+        public TemplateString? Text2 { get; set; }
 
         /// <summary>
-        /// A string template that may be used in place of
-        /// OracleTableRow#result.
+        /// A string template that may be used in place of OracleTableRow#text3.
         /// </summary>
-        [JsonPropertyName("result")]
+        [JsonPropertyName("text3")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public TemplateString? Result { get; set; }
+        public TemplateString? Text3 { get; set; }
     }
 }

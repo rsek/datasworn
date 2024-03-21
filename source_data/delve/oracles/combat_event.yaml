@@ -26,7 +26,7 @@ oracles:
     contents:
       method:
         name: Method
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Combat Event: Method'
         suggestions:
           oracles:
@@ -41,206 +41,206 @@ oracles:
                   part_of_speech: verb
             min: 1
             max: 2
-            result: Defy
+            text: Defy
           - <<: *i18n.verb
             min: 3
             max: 4
-            result: Break
+            text: Break
           - <<: *i18n.verb
             min: 5
             max: 6
-            result: Trick
+            text: Trick
           - <<: *i18n.verb
             min: 7
             max: 8
-            result: Evade
+            text: Evade
           - <<: *i18n.verb
             min: 9
             max: 10
-            result: Protect
+            text: Protect
           - <<: *i18n.verb
             min: 11
             max: 12
-            result: Overwhelm
+            text: Overwhelm
           - <<: *i18n.verb
             min: 13
             max: 14
-            result: Persevere
+            text: Persevere
           - <<: *i18n.verb
             min: 15
             max: 16
-            result: Assist
+            text: Assist
           - <<: *i18n.verb
             min: 17
             max: 18
-            result: Await
+            text: Await
           - <<: *i18n.verb
             min: 19
             max: 20
-            result: Abort
+            text: Abort
           - <<: *i18n.verb
             min: 21
             max: 22
-            result: Block
+            text: Block
           - <<: *i18n.verb
             min: 23
             max: 24
-            result: Collide
+            text: Collide
           - <<: *i18n.verb
             min: 25
             max: 26
-            result: Focus
+            text: Focus
           - <<: *i18n.verb
             min: 27
             max: 28
-            result: Advance
+            text: Advance
           - <<: *i18n.verb
             min: 29
             max: 30
-            result: Breach
+            text: Breach
           - <<: *i18n.verb
             min: 31
             max: 32
-            result: Endure
+            text: Endure
           - <<: *i18n.verb
             min: 33
             max: 34
-            result: Assault
+            text: Assault
           - <<: *i18n.verb
             min: 35
             max: 36
-            result: Charge
+            text: Charge
           - <<: *i18n.verb
             min: 37
             max: 38
-            result: Escalate
+            text: Escalate
           - <<: *i18n.verb
             min: 39
             max: 40
-            result: Sunder
+            text: Sunder
           - <<: *i18n.verb
             min: 41
             max: 42
-            result: Shatter
+            text: Shatter
           - <<: *i18n.verb
             min: 43
             max: 44
-            result: Aim
+            text: Aim
           - <<: *i18n.verb
             min: 45
             max: 46
-            result: Stagger
+            text: Stagger
           - <<: *i18n.verb
             min: 47
             max: 48
-            result: Counter
+            text: Counter
           - <<: *i18n.verb
             min: 49
             max: 50
-            result: Seize
+            text: Seize
           - <<: *i18n.verb
             min: 51
             max: 52
-            result: Impact
+            text: Impact
           - <<: *i18n.verb
             min: 53
             max: 54
-            result: Entangle
+            text: Entangle
           - <<: *i18n.verb
             min: 55
             max: 56
-            result: Hold
+            text: Hold
           - <<: *i18n.verb
             min: 57
             max: 58
-            result: Deflect
+            text: Deflect
           - <<: *i18n.verb
             min: 59
             max: 60
-            result: Drop
+            text: Drop
           - <<: *i18n.verb
             min: 61
             max: 62
-            result: Lose
+            text: Lose
           - <<: *i18n.verb
             min: 63
             max: 64
-            result: Sweep
+            text: Sweep
           - <<: *i18n.verb
             min: 65
             max: 66
-            result: Secure
+            text: Secure
           - <<: *i18n.verb
             min: 67
             max: 68
-            result: Cover
+            text: Cover
           - <<: *i18n.verb
             min: 69
             max: 70
-            result: Withdraw
+            text: Withdraw
           - <<: *i18n.verb
             min: 71
             max: 72
-            result: Clash
+            text: Clash
           - <<: *i18n.verb
             min: 73
             max: 74
-            result: Amplify
+            text: Amplify
           - <<: *i18n.verb
             min: 75
             max: 76
-            result: Batter
+            text: Batter
           - <<: *i18n.verb
             min: 77
             max: 78
-            result: Feint
+            text: Feint
           - <<: *i18n.verb
             min: 79
             max: 80
-            result: Shove
+            text: Shove
           - <<: *i18n.verb
             min: 81
             max: 82
-            result: Embed
+            text: Embed
           - <<: *i18n.verb
             min: 83
             max: 84
-            result: Affect
+            text: Affect
           - <<: *i18n.verb
             min: 85
             max: 86
-            result: Probe
+            text: Probe
           - <<: *i18n.verb
             min: 87
             max: 88
-            result: Force
+            text: Force
           - <<: *i18n.verb
             min: 89
             max: 90
-            result: Intensify
+            text: Intensify
           - <<: *i18n.verb
             min: 91
             max: 92
-            result: Distract
+            text: Distract
           - <<: *i18n.verb
             min: 93
             max: 94
-            result: Challenge
+            text: Challenge
           - <<: *i18n.verb
             min: 95
             max: 96
-            result: Brawl
+            text: Brawl
           - <<: *i18n.verb
             min: 97
             max: 98
-            result: Coordinate
+            text: Coordinate
           - <<: *i18n.verb
             min: 99
             max: 100
-            result: Overrun
+            text: Overrun
       target:
         name: Target
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Combat Event: Target'
         suggestions:
           oracles:
@@ -261,203 +261,203 @@ oracles:
                   part_of_speech: common_noun
             min: 1
             max: 2
-            result: Control
+            text: Control
           - <<: *i18n.common_noun
             min: 3
             max: 4
-            result: Defense
+            text: Defense
           - <<: *i18n.common_noun
             min: 5
             max: 6
-            result: Limbs
+            text: Limbs
           - <<: *i18n.common_noun
             min: 7
             max: 8
-            result: Focus
+            text: Focus
           - <<: *i18n.common_noun
             min: 9
             max: 10
-            result: Advantage
+            text: Advantage
           - <<: *i18n.common_noun
             min: 11
             max: 12
-            result: Range
+            text: Range
           - <<: *i18n.common_noun
             min: 13
             max: 14
-            result: Stress
+            text: Stress
           - <<: *i18n.common_noun
             min: 15
             max: 16
-            result: Sense
+            text: Sense
           - <<: *i18n.common_noun
             min: 17
             max: 18
-            result: Weakness
+            text: Weakness
           - <<: &i18n.gerund
               _i18n:
                 result:
                   part_of_speech: gerund
             min: 19
             max: 20
-            result: Opening
+            text: Opening
           - <<: *i18n.common_noun
             min: 21
             max: 22
-            result: Fear
+            text: Fear
           - <<: *i18n.common_noun
             min: 23
             max: 24
-            result: Instinct
+            text: Instinct
           - <<: *i18n.gerund
             min: 25
             max: 26
-            result: Footing
+            text: Footing
           - <<: *i18n.common_noun
             min: 27
             max: 28
-            result: Maneuver
+            text: Maneuver
           - <<: *i18n.common_noun
             min: 29
             max: 30
-            result: Reach
+            text: Reach
           - <<: *i18n.common_noun
             min: 31
             max: 32
-            result: Harm
+            text: Harm
           - <<: *i18n.common_noun
             min: 33
             max: 34
-            result: Finesse
+            text: Finesse
           - <<: *i18n.common_noun
             min: 35
             max: 36
-            result: Weapon
+            text: Weapon
           - <<: *i18n.common_noun
             min: 37
             max: 38
-            result: Environment
+            text: Environment
           - <<: *i18n.common_noun
             min: 39
             max: 40
-            result: Technique
+            text: Technique
           - <<: *i18n.common_noun
             min: 41
             max: 42
-            result: Surprise
+            text: Surprise
           - <<: *i18n.common_noun
             min: 43
             max: 44
-            result: Pride
+            text: Pride
           - <<: *i18n.common_noun
             min: 45
             max: 46
-            result: Wound
+            text: Wound
           - <<: *i18n.common_noun
             min: 47
             max: 48
-            result: Precision
+            text: Precision
           - <<: *i18n.common_noun
             min: 49
             max: 50
-            result: Ally
+            text: Ally
           - <<: *i18n.common_noun
             min: 51
             max: 52
-            result: Ground
+            text: Ground
           - <<: *i18n.common_noun
             min: 53
             max: 54
-            result: Courage
+            text: Courage
           - <<: *i18n.common_noun
             min: 55
             max: 56
-            result: Companion
+            text: Companion
           - <<: *i18n.common_noun
             min: 57
             max: 58
-            result: Object
+            text: Object
           - <<: *i18n.common_noun
             min: 59
             max: 60
-            result: Momentum
+            text: Momentum
           - <<: *i18n.common_noun
             min: 61
             max: 62
-            result: Speed
+            text: Speed
           - <<: *i18n.common_noun
             min: 63
             max: 64
-            result: Strength
+            text: Strength
           - <<: *i18n.common_noun
             min: 65
             max: 66
-            result: Supply
+            text: Supply
           - <<: *i18n.common_noun
             min: 67
             max: 68
-            result: Terrain
+            text: Terrain
           - <<: *i18n.common_noun
             min: 69
             max: 70
-            result: Armor
+            text: Armor
           - <<: *i18n.common_noun
             min: 71
             max: 72
-            result: Skill
+            text: Skill
           - <<: *i18n.common_noun
             min: 73
             max: 74
-            result: Body
+            text: Body
           - <<: *i18n.common_noun
             min: 75
             max: 76
-            result: Protection
+            text: Protection
           - <<: *i18n.common_noun
             min: 77
             max: 78
-            result: Resolve
+            text: Resolve
           - <<: *i18n.common_noun
             min: 79
             max: 80
-            result: Ferocity
+            text: Ferocity
           - <<: *i18n.common_noun
             min: 81
             max: 82
-            result: Shield
+            text: Shield
           - <<: *i18n.common_noun
             min: 83
             max: 84
-            result: Ammo
+            text: Ammo
           - <<: *i18n.common_noun
             min: 85
             max: 86
-            result: Anger
+            text: Anger
           - <<: *i18n.common_noun
             min: 87
             max: 88
-            result: Opportunity
+            text: Opportunity
           - <<: *i18n.common_noun
             min: 89
             max: 90
-            result: Balance
+            text: Balance
           - <<: *i18n.common_noun
             min: 91
             max: 92
-            result: Position
+            text: Position
           - <<: *i18n.common_noun
             min: 93
             max: 94
-            result: Barrier
+            text: Barrier
           - <<: *i18n.common_noun
             min: 95
             max: 96
-            result: Strategy
+            text: Strategy
           - <<: *i18n.common_noun
             min: 97
             max: 98
-            result: Grasp
+            text: Grasp
           - <<: *i18n.common_noun
             min: 99
             max: 100
-            result: Power
+            text: Power

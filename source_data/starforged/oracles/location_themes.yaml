@@ -28,7 +28,7 @@ oracles:
     contents:
       type:
         name: Theme Type
-        oracle_type: table_details
+        oracle_type: table_text2
         _source:
           <<: *Source
           page: 370
@@ -36,57 +36,57 @@ oracles:
         # usage:
         column_labels:
           roll: Roll
-          result: Result
-          detail: Summary
+          text: Result
+          text2: Summary
         summary: |-
           Choose a theme that supports what you know of that location’s nature. For a random theme, roll on the table above.
         rows:
           - min: 1
             max: 15
-            result: '[Chaotic](id:starforged/collections/oracles/location_themes/chaotic)'
-            detail: &Chaotic.summary Reality is corrupted or warped in this place.
+            text: '[Chaotic](id:starforged/collections/oracles/location_themes/chaotic)'
+            text2: &Chaotic.summary Reality is corrupted or warped in this place.
             icon: &Chaotic.icon icons/location_theme/chaotic.svg
             # set_attributes: {location_theme: [chaotic]}
           - min: 16
             max: 25
-            result: '[Fortified](id:starforged/collections/oracles/location_themes/fortified)'
-            detail: &Fortified.summary Enemies defend this place against intruders.
+            text: '[Fortified](id:starforged/collections/oracles/location_themes/fortified)'
+            text2: &Fortified.summary Enemies defend this place against intruders.
             icon: &Fortified.icon icons/location_theme/fortified.svg
             # set_attributes: {location_theme: [fortified]}
           - min: 26
             max: 35
-            result: '[Haunted](id:starforged/collections/oracles/location_themes/haunted)'
-            detail: &Haunted.summary Restless spirits are bound to this place.
+            text: '[Haunted](id:starforged/collections/oracles/location_themes/haunted)'
+            text2: &Haunted.summary Restless spirits are bound to this place.
             icon: &Haunted.icon icons/location_theme/haunted.svg
             # set_attributes: {location_theme: [haunted]}
           - min: 36
             max: 50
-            result: '[Infested](id:starforged/collections/oracles/location_themes/infested)'
-            detail: &Infested.summary Foul creatures have overrun this place.
+            text: '[Infested](id:starforged/collections/oracles/location_themes/infested)'
+            text2: &Infested.summary Foul creatures have overrun this place.
             icon: &Infested.icon icons/location_theme/infested.svg
             # set_attributes: {location_theme: [infested]}
           - min: 51
             max: 60
-            result: '[Inhabited](id:starforged/collections/oracles/location_themes/inhabited)'
-            detail: &Inhabited.summary People have built a community in this place.
+            text: '[Inhabited](id:starforged/collections/oracles/location_themes/inhabited)'
+            text2: &Inhabited.summary People have built a community in this place.
             icon: &Inhabited.icon icons/location_theme/inhabited.svg
             # set_attributes: {location_theme: [inhabited]}
           - min: 61
             max: 75
-            result: '[Mechanical](id:starforged/collections/oracles/location_themes/mechanical)'
-            detail: &Mechanical.summary Machines and technology hold sway in this place.
+            text: '[Mechanical](id:starforged/collections/oracles/location_themes/mechanical)'
+            text2: &Mechanical.summary Machines and technology hold sway in this place.
             icon: &Mechanical.icon icons/location_theme/mechanical.svg
             # set_attributes: {location_theme: [mechanical]}
           - min: 76
             max: 90
-            result: '[Ruined](id:starforged/collections/oracles/location_themes/ruined)'
-            detail: &Ruined.summary Time, disaster, or war have ravaged this place.
+            text: '[Ruined](id:starforged/collections/oracles/location_themes/ruined)'
+            text2: &Ruined.summary Time, disaster, or war have ravaged this place.
             icon: &Ruined.icon icons/location_theme/ruined.svg
             # set_attributes: {location_theme: [ruined]}
           - min: 91
             max: 100
-            result: '[Sacred](id:starforged/collections/oracles/location_themes/sacred)'
-            detail: &Sacred.summary Worshipers glorify strange powers in this place.
+            text: '[Sacred](id:starforged/collections/oracles/location_themes/sacred)'
+            text2: &Sacred.summary Worshipers glorify strange powers in this place.
             icon: &Sacred.icon icons/location_theme/sacred.svg
             # set_attributes: {location_theme: [sacred]}
     collections:
@@ -103,61 +103,61 @@ oracles:
             <<: &Feature
               name: Feature
               summary: Use this table to reveal a new aspect of the location.
-              oracle_type: table_simple
+              oracle_type: table_basic
             _source: *CollectionSource
             rows:
               - &Feature.0
                 min: 1
                 max: 8
-                result: Alterations in the flow of time
+                text: Alterations in the flow of time
               - &Feature.1
                 min: 9
                 max: 16
-                result: 'Chaotic portal, focus, or conduit'
+                text: 'Chaotic portal, focus, or conduit'
               - &Feature.2
                 min: 17
                 max: 24
-                result: Corrupted or warped architecture or terrain
+                text: Corrupted or warped architecture or terrain
               - &Feature.3
                 min: 25
                 max: 32
-                result: Corrupted or warped environment or ecosystem
+                text: Corrupted or warped environment or ecosystem
               - &Feature.4
                 min: 33
                 max: 40
-                result: Corrupted or warped technology
+                text: Corrupted or warped technology
               - &Feature.5
                 min: 41
                 max: 48
-                result: Cryptic device harnesses or powers chaos
+                text: Cryptic device harnesses or powers chaos
               - &Feature.6
                 min: 49
                 max: 56
-                result: Distortions of gravity or other natural forces
+                text: Distortions of gravity or other natural forces
               - &Feature.7
                 min: 57
                 max: 64
-                result: Energy field or barrier
+                text: Energy field or barrier
               - &Feature.8
                 min: 65
                 max: 72
-                result: Glimpses of alternate realities
+                text: Glimpses of alternate realities
               - &Feature.9
                 min: 73
                 max: 80
-                result: Lifeforms mutated or altered by chaos
+                text: Lifeforms mutated or altered by chaos
               - &Feature.10
                 min: 81
                 max: 88
-                result: Lifeforms spawned from chaos
+                text: Lifeforms spawned from chaos
               - &Feature.11
                 min: 89
                 max: 96
-                result: Visions of your past or future
+                text: Visions of your past or future
               - &Feature.12
                 min: 97
                 max: 100
-                result: |-
+                text: |-
                   [Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)
                 oracle_rolls:
                   - oracle: starforged/oracles/core/descriptor
@@ -168,53 +168,53 @@ oracles:
             <<: &Peril
               name: Peril
               summary: Use this table to help envision a complication or hazard.
-              oracle_type: table_simple
+              oracle_type: table_basic
             _source: *CollectionSource
             rows:
               - &Peril.0
                 min: 1
                 max: 9
-                result: Chaos makes its mark upon you
+                text: Chaos makes its mark upon you
               - &Peril.1
                 min: 10
                 max: 18
-                result: Chaos spreads or intensifies
+                text: Chaos spreads or intensifies
               - &Peril.2
                 min: 19
                 max: 27
-                result: Chaos tempts or lures you
+                text: Chaos tempts or lures you
               - &Peril.3
                 min: 28
                 max: 36
-                result: Chaotic energies block the path or assail you
+                text: Chaotic energies block the path or assail you
               - &Peril.4
                 min: 37
                 max: 45
-                result: Disorienting changes in time or location
+                text: Disorienting changes in time or location
               - &Peril.5
                 min: 46
                 max: 54
-                result: Dreadful scene of those who fell prey to chaos
+                text: Dreadful scene of those who fell prey to chaos
               - &Peril.6
                 min: 55
                 max: 63
-                result: Equipment is made unstable or dangerous
+                text: Equipment is made unstable or dangerous
               - &Peril.7
                 min: 64
                 max: 72
-                result: Foes harness or wield chaos
+                text: Foes harness or wield chaos
               - &Peril.8
                 min: 73
                 max: 81
-                result: Hazardous environmental changes
+                text: Hazardous environmental changes
               - &Peril.9
                 min: 82
                 max: 90
-                result: Lifeforms made hostile by chaos
+                text: Lifeforms made hostile by chaos
               - &Peril.10
                 min: 91
                 max: 98
-                result: |-
+                text: |-
                   [Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
@@ -224,7 +224,7 @@ oracles:
               - &Peril.11
                 min: 99
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
@@ -232,29 +232,29 @@ oracles:
             <<: &Opportunity
               name: Opportunity
               summary: Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.
-              oracle_type: table_simple
+              oracle_type: table_basic
             _source: *CollectionSource
             rows:
               - &Opportunity.0
                 min: 1
                 max: 20
-                result: Chaos ebbs or withdraws for a time
+                text: Chaos ebbs or withdraws for a time
               - &Opportunity.1
                 min: 21
                 max: 40
-                result: Chaos empowers you with strange but useful abilities
+                text: Chaos empowers you with strange but useful abilities
               - &Opportunity.2
                 min: 41
                 max: 60
-                result: Chaos manifests as comforting or inspiring visions
+                text: Chaos manifests as comforting or inspiring visions
               - &Opportunity.3
                 min: 61
                 max: 80
-                result: Chaotic changes hamper your foes
+                text: Chaotic changes hamper your foes
               - &Opportunity.4
                 min: 81
                 max: 100
-                result: Insight into the source or nature of the chaos
+                text: Insight into the source or nature of the chaos
       fortified:
         name: Fortified
         oracle_type: tables
@@ -269,54 +269,54 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Captives or prisoners
+                text: Captives or prisoners
               - <<: *Feature.1
-                result: Control area or terminal
+                text: Control area or terminal
               - <<: *Feature.2
-                result: Empty or inactive area
+                text: Empty or inactive area
               - <<: *Feature.3
-                result: Enemy forces assembled for an event
+                text: Enemy forces assembled for an event
               - <<: *Feature.4
-                result: Enemy forces off-duty or at leisure
+                text: Enemy forces off-duty or at leisure
               - <<: *Feature.5
-                result: Enemy forces on guard
+                text: Enemy forces on guard
               - <<: *Feature.6
-                result: Enemy forces on patrol
+                text: Enemy forces on patrol
               - <<: *Feature.7
-                result: Enemy forces transporting supplies or equipment
+                text: Enemy forces transporting supplies or equipment
               - <<: *Feature.8
-                result: Enemy leader makes an inspection
+                text: Enemy leader makes an inspection
               - <<: *Feature.9
-                result: Prototype technology or equipment
+                text: Prototype technology or equipment
               - <<: *Feature.10
-                result: Robotic assistant or watchful AI
+                text: Robotic assistant or watchful AI
               - <<: *Feature.11
-                result: Support personnel at work
+                text: Support personnel at work
               - *Feature.12
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Alarm is triggered
+                text: Alarm is triggered
               - <<: *Peril.1
-                result: Automated security or weapons target you
+                text: Automated security or weapons target you
               - <<: *Peril.2
-                result: Checkpoint or path with restricted access
+                text: Checkpoint or path with restricted access
               - <<: *Peril.3
-                result: Enemies converge on this area
+                text: Enemies converge on this area
               - <<: *Peril.4
-                result: Enemies reveal new capabilities or technology
+                text: Enemies reveal new capabilities or technology
               - <<: *Peril.5
-                result: Enemies trick you or lure you into a trap
+                text: Enemies trick you or lure you into a trap
               - <<: *Peril.6
-                result: Powerful enemy appears
+                text: Powerful enemy appears
               - <<: *Peril.7
-                result: Problematic alliance or affiliation is revealed
+                text: Problematic alliance or affiliation is revealed
               - <<: *Peril.8
-                result: Revealed schemes of an enemy leader create new urgency
+                text: Revealed schemes of an enemy leader create new urgency
               - <<: *Peril.9
-                result: Your plan is undone by an unexpected complication
+                text: Your plan is undone by an unexpected complication
               - *Peril.10
               - *Peril.11
           opportunity:
@@ -324,15 +324,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Insight into the plans or methods of the enemy force
+                text: Insight into the plans or methods of the enemy force
               - <<: *Opportunity.1
-                result: Opening to get the drop on an enemy
+                text: Opening to get the drop on an enemy
               - <<: *Opportunity.2
-                result: Opening to outmaneuver or escape enemies
+                text: Opening to outmaneuver or escape enemies
               - <<: *Opportunity.3
-                result: Potential collaborator or informant reveals themselves
+                text: Potential collaborator or informant reveals themselves
               - <<: *Opportunity.4
-                result: Access to useful equipment or weapons
+                text: Access to useful equipment or weapons
       haunted:
         name: Haunted
         oracle_type: tables
@@ -347,54 +347,54 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Disembodied voices
+                text: Disembodied voices
               - <<: *Feature.1
-                result: Eerie cold
+                text: Eerie cold
               - <<: *Feature.2
-                result: Foreboding omen or message
+                text: Foreboding omen or message
               - <<: *Feature.3
-                result: Ghostly visions of this place in another time
+                text: Ghostly visions of this place in another time
               - <<: *Feature.4
-                result: Glimpses of shadowy movement
+                text: Glimpses of shadowy movement
               - <<: *Feature.5
-                result: Objects move of their own accord
+                text: Objects move of their own accord
               - <<: *Feature.6
-                result: Sensation of being watched
+                text: Sensation of being watched
               - <<: *Feature.7
-                result: Signs of death or violence
+                text: Signs of death or violence
               - <<: *Feature.8
-                result: Spectral sounds
+                text: Spectral sounds
               - <<: *Feature.9
-                result: Twisted or altered architecture or terrain
+                text: Twisted or altered architecture or terrain
               - <<: *Feature.10
-                result: 'Unnatural blight, decay, or ruin'
+                text: 'Unnatural blight, decay, or ruin'
               - <<: *Feature.11
-                result: Unnatural mists or darkness
+                text: Unnatural mists or darkness
               - *Feature.12
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Assailed by an angry or vengeful being
+                text: Assailed by an angry or vengeful being
               - <<: *Peril.1
-                result: Beguiling illusions tempt you to linger or stay
+                text: Beguiling illusions tempt you to linger or stay
               - <<: *Peril.2
-                result: Besieged by frightening sensations
+                text: Besieged by frightening sensations
               - <<: *Peril.3
-                result: Equipment is plagued by unexplainable malfunctions
+                text: Equipment is plagued by unexplainable malfunctions
               - <<: *Peril.4
-                result: Plunged into disorienting darkness or illusionary surroundings
+                text: Plunged into disorienting darkness or illusionary surroundings
               - <<: *Peril.5
-                result: Spectral manifestations of your fears
+                text: Spectral manifestations of your fears
               - <<: *Peril.6
-                result: Spirits or undead reveal surprising abilities or motivations
+                text: Spirits or undead reveal surprising abilities or motivations
               - <<: *Peril.7
-                result: 'Sudden, shocking reveal of a ghostly manifestation or undead form'
+                text: 'Sudden, shocking reveal of a ghostly manifestation or undead form'
               - <<: *Peril.8
-                result: Trickery leads you into danger
+                text: Trickery leads you into danger
               - <<: *Peril.9
-                result: Visions reveal a horrifying aspect of this place
+                text: Visions reveal a horrifying aspect of this place
               - *Peril.10
               - *Peril.11
           opportunity:
@@ -402,15 +402,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Encounter with a benign spirit or being
+                text: Encounter with a benign spirit or being
               - <<: *Opportunity.1
-                result: Helpful vision of past events
+                text: Helpful vision of past events
               - <<: *Opportunity.2
-                result: Message or clue offers insight into the nature of this haunting
+                text: Message or clue offers insight into the nature of this haunting
               - <<: *Opportunity.3
-                result: Secret area or path is revealed
+                text: Secret area or path is revealed
               - <<: *Opportunity.4
-                result: Useful or interesting artifact or device
+                text: Useful or interesting artifact or device
       infested:
         name: Infested
         oracle_type: tables
@@ -425,54 +425,54 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Corpse of an unfortunate victim
+                text: Corpse of an unfortunate victim
               - <<: *Feature.1
-                result: 'Eggs, cocoons, or nest'
+                text: 'Eggs, cocoons, or nest'
               - <<: *Feature.2
-                result: Environment corrupted by the infestation
+                text: Environment corrupted by the infestation
               - <<: *Feature.3
-                result: Evidence of a lurking creature
+                text: Evidence of a lurking creature
               - <<: *Feature.4
-                result: Evidence of an ill-fated victim
+                text: Evidence of an ill-fated victim
               - <<: *Feature.5
-                result: Hoarded food
+                text: Hoarded food
               - <<: *Feature.6
-                result: Indistinct movement or sounds
+                text: Indistinct movement or sounds
               - <<: *Feature.7
-                result: Lair of lesser creatures
+                text: Lair of lesser creatures
               - <<: *Feature.8
-                result: Ravaged supplies or equipment
+                text: Ravaged supplies or equipment
               - <<: *Feature.9
-                result: Remains of a creature or remnants of a previous form
+                text: Remains of a creature or remnants of a previous form
               - <<: *Feature.10
-                result: Territorial markings
+                text: Territorial markings
               - <<: *Feature.11
-                result: Trail or evidence of a creature's passage
+                text: Trail or evidence of a creature's passage
               - *Feature.12
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Creatures attack without warning
+                text: Creatures attack without warning
               - <<: *Peril.1
-                result: Creatures guided or controlled by a greater threat
+                text: Creatures guided or controlled by a greater threat
               - <<: *Peril.2
-                result: Creatures reveal new aspects or abilities
+                text: Creatures reveal new aspects or abilities
               - <<: *Peril.3
-                result: Creatures reveal surprising cleverness
+                text: Creatures reveal surprising cleverness
               - <<: *Peril.4
-                result: Creatures take or destroy something important
+                text: Creatures take or destroy something important
               - <<: *Peril.5
-                result: Discovery of a live but threatened victim
+                text: Discovery of a live but threatened victim
               - <<: *Peril.6
-                result: Hazardous architecture or terrain
+                text: Hazardous architecture or terrain
               - <<: *Peril.7
-                result: Lured or driven into a trap or dead-end
+                text: Lured or driven into a trap or dead-end
               - <<: *Peril.8
-                result: Powerful or dominant creature reveals itself
+                text: Powerful or dominant creature reveals itself
               - <<: *Peril.9
-                result: Toxic or sickening environment
+                text: Toxic or sickening environment
               - *Peril.10
               - *Peril.11
           opportunity:
@@ -480,15 +480,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Clue to the nature or vulnerabilities of these creatures
+                text: Clue to the nature or vulnerabilities of these creatures
               - <<: *Opportunity.1
-                result: Creatures turn on each other
+                text: Creatures turn on each other
               - <<: *Opportunity.2
-                result: Early warning of an attack or ambush
+                text: Early warning of an attack or ambush
               - <<: *Opportunity.3
-                result: External event provides a helpful distraction
+                text: External event provides a helpful distraction
               - <<: *Opportunity.4
-                result: Helpful resource or equipment
+                text: Helpful resource or equipment
       inhabited:
         name: Inhabited
         oracle_type: tables
@@ -503,54 +503,54 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Conspicuous patrols or surveillance
+                text: Conspicuous patrols or surveillance
               - <<: *Feature.1
-                result: Crews at work
+                text: Crews at work
               - <<: *Feature.2
-                result: Display or monument honors a notable cultural event
+                text: Display or monument honors a notable cultural event
               - <<: *Feature.3
-                result: Emergency teams responding to an incident or crisis
+                text: Emergency teams responding to an incident or crisis
               - <<: *Feature.4
-                result: Families gathering or children playing
+                text: Families gathering or children playing
               - <<: *Feature.5
-                result: 'Festival, celebration, or observance'
+                text: 'Festival, celebration, or observance'
               - <<: *Feature.6
-                result: Fight breaks out
+                text: Fight breaks out
               - <<: *Feature.7
-                result: Notable figure stands out from the crowd
+                text: Notable figure stands out from the crowd
               - <<: *Feature.8
-                result: Protest or strike
+                text: Protest or strike
               - <<: *Feature.9
-                result: Unrepaired damage
+                text: Unrepaired damage
               - <<: *Feature.10
-                result: Unusually empty or quiet area
+                text: Unusually empty or quiet area
               - <<: *Feature.11
-                result: Vendor or merchant hawking their wares
+                text: Vendor or merchant hawking their wares
               - *Feature.12
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Announcement or notification brings harrowing news
+                text: Announcement or notification brings harrowing news
               - <<: *Peril.1
-                result: Arrival of a foe or rival
+                text: Arrival of a foe or rival
               - <<: *Peril.2
-                result: Blockade or security cordon cuts off needed access
+                text: Blockade or security cordon cuts off needed access
               - <<: *Peril.3
-                result: Caught in the crossfire of a dispute
+                text: Caught in the crossfire of a dispute
               - <<: *Peril.4
-                result: Disturbing evidence of exploitive conditions
+                text: Disturbing evidence of exploitive conditions
               - <<: *Peril.5
-                result: Lured into danger
+                text: Lured into danger
               - <<: *Peril.6
-                result: 'Signs of disease, infestation, or toxic environment'
+                text: 'Signs of disease, infestation, or toxic environment'
               - <<: *Peril.7
-                result: Signs of unrest or rebellion
+                text: Signs of unrest or rebellion
               - <<: *Peril.8
-                result: Signs that you are being watched or followed
+                text: Signs that you are being watched or followed
               - <<: *Peril.9
-                result: Unwanted attention from authority or enemies
+                text: Unwanted attention from authority or enemies
               - *Peril.10
               - *Peril.11
           opportunity:
@@ -558,15 +558,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Intriguing offer from an unexpected source
+                text: Intriguing offer from an unexpected source
               - <<: *Opportunity.1
-                result: Lively festival or gathering place provides a chance to socialize
+                text: Lively festival or gathering place provides a chance to socialize
               - <<: *Opportunity.2
-                result: Local gossip proves interesting or helpful
+                text: Local gossip proves interesting or helpful
               - <<: *Opportunity.3
-                result: 'Needed item, resource, or buyer is available'
+                text: 'Needed item, resource, or buyer is available'
               - <<: *Opportunity.4
-                result: Old friend or connection resurfaces
+                text: Old friend or connection resurfaces
       mechanical:
         name: Mechanical
         oracle_type: tables
@@ -581,54 +581,54 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Control station or terminal
+                text: Control station or terminal
               - <<: *Feature.1
-                result: Device or technology with a mysterious function
+                text: Device or technology with a mysterious function
               - <<: *Feature.2
-                result: Disassembled machinery or parts
+                text: Disassembled machinery or parts
               - <<: *Feature.3
-                result: Heavy machinery at work
+                text: Heavy machinery at work
               - <<: *Feature.4
-                result: Machine fabrication or repair
+                text: Machine fabrication or repair
               - <<: *Feature.5
-                result: Machines emulating or fusing with biological life
+                text: Machines emulating or fusing with biological life
               - <<: *Feature.6
-                result: Machines in stasis or powered down
+                text: Machines in stasis or powered down
               - <<: *Feature.7
-                result: Machines single-mindedly executing a function or program
+                text: Machines single-mindedly executing a function or program
               - <<: *Feature.8
-                result: Major project under construction
+                text: Major project under construction
               - <<: *Feature.9
-                result: Mechanical environment in motion or transforming
+                text: Mechanical environment in motion or transforming
               - <<: *Feature.10
-                result: Mechanical wreckage or destruction
+                text: Mechanical wreckage or destruction
               - <<: *Feature.11
-                result: Power source for the machines
+                text: Power source for the machines
               - *Feature.12
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Alarm or warning is triggered
+                text: Alarm or warning is triggered
               - <<: *Peril.1
-                result: Automated weapon or trap is activated
+                text: Automated weapon or trap is activated
               - <<: *Peril.2
-                result: Environment made unsuitable for life
+                text: Environment made unsuitable for life
               - <<: *Peril.3
-                result: Hostile machines on patrol
+                text: Hostile machines on patrol
               - <<: *Peril.4
-                result: Machines transform to reveal new capabilities
+                text: Machines transform to reveal new capabilities
               - <<: *Peril.5
-                result: Machines with corrupted or hacked programming
+                text: Machines with corrupted or hacked programming
               - <<: *Peril.6
-                result: Malfunctioning machines or technology
+                text: Malfunctioning machines or technology
               - <<: *Peril.7
-                result: Moving machinery creates a danger or obstacle
+                text: Moving machinery creates a danger or obstacle
               - <<: *Peril.8
-                result: Under surveillance by a central machine intelligence
+                text: Under surveillance by a central machine intelligence
               - <<: *Peril.9
-                result: Volatile technology
+                text: Volatile technology
               - *Peril.10
               - *Peril.11
           opportunity:
@@ -636,15 +636,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Helpful device
+                text: Helpful device
               - <<: *Opportunity.1
-                result: Insight into the workings or purpose of the machines
+                text: Insight into the workings or purpose of the machines
               - <<: *Opportunity.2
-                result: Intelligent machine offers aid
+                text: Intelligent machine offers aid
               - <<: *Opportunity.3
-                result: Salvageable resource
+                text: Salvageable resource
               - <<: *Opportunity.4
-                result: Wondrous technology
+                text: Wondrous technology
       ruined:
         name: Ruined
         oracle_type: tables
@@ -659,54 +659,54 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Collapsed or broken structures or terrain
+                text: Collapsed or broken structures or terrain
               - <<: *Feature.1
-                result: Device or artifact with residual power or function
+                text: Device or artifact with residual power or function
               - <<: *Feature.2
-                result: Focal point or nexus of the destruction
+                text: Focal point or nexus of the destruction
               - <<: *Feature.3
-                result: Graves or corpses
+                text: Graves or corpses
               - <<: *Feature.4
-                result: Innermost or hidden spaces laid bare by the destruction
+                text: Innermost or hidden spaces laid bare by the destruction
               - <<: *Feature.5
-                result: Message or recording from before the fall
+                text: Message or recording from before the fall
               - <<: *Feature.6
-                result: Overgrown or entombed spaces
+                text: Overgrown or entombed spaces
               - <<: *Feature.7
-                result: Rubble-strewn paths
+                text: Rubble-strewn paths
               - <<: *Feature.8
-                result: Sad memento of a lost life
+                text: Sad memento of a lost life
               - <<: *Feature.9
-                result: Sights or sounds of structural instability
+                text: Sights or sounds of structural instability
               - <<: *Feature.10
-                result: Signs of looting or scavenging
+                text: Signs of looting or scavenging
               - <<: *Feature.11
-                result: Survivors or guardians dwell among the ruins
+                text: Survivors or guardians dwell among the ruins
               - *Feature.12
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Dreadful atmosphere of loss and destruction weighs upon you
+                text: Dreadful atmosphere of loss and destruction weighs upon you
               - <<: *Peril.1
-                result: Evidence of a horrible fate for others who passed this way
+                text: Evidence of a horrible fate for others who passed this way
               - <<: *Peril.2
-                result: Hazardous atmosphere or environment
+                text: Hazardous atmosphere or environment
               - <<: *Peril.3
-                result: Hostile creature has staked out their territory
+                text: Hostile creature has staked out their territory
               - <<: *Peril.4
-                result: Imminent collapse or destruction
+                text: Imminent collapse or destruction
               - <<: *Peril.5
-                result: Lured into a trap or targeted by automated defenses
+                text: Lured into a trap or targeted by automated defenses
               - <<: *Peril.6
-                result: Source of the destruction persists or returns anew
+                text: Source of the destruction persists or returns anew
               - <<: *Peril.7
-                result: Unearthed secrets best left buried
+                text: Unearthed secrets best left buried
               - <<: *Peril.8
-                result: Unstable or broken path
+                text: Unstable or broken path
               - <<: *Peril.9
-                result: Volatile device or artifact
+                text: Volatile device or artifact
               - *Peril.10
               - *Peril.11
           opportunity:
@@ -714,15 +714,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Access to an untouched or preserved area
+                text: Access to an untouched or preserved area
               - <<: *Opportunity.1
-                result: Insight into what brought this place to ruin
+                text: Insight into what brought this place to ruin
               - <<: *Opportunity.2
-                result: Interesting or useful device or artifact
+                text: Interesting or useful device or artifact
               - <<: *Opportunity.3
-                result: Salvageable equipment or resources
+                text: Salvageable equipment or resources
               - <<: *Opportunity.4
-                result: Shortcut or passage through the destruction
+                text: Shortcut or passage through the destruction
       sacred:
         name: Sacred
         oracle_type: tables
@@ -737,54 +737,54 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Adherents performing worship or enacting rituals
+                text: Adherents performing worship or enacting rituals
               - <<: *Feature.1
-                result: Altar or temple
+                text: Altar or temple
               - <<: *Feature.2
-                result: Dwellings for the faithful
+                text: Dwellings for the faithful
               - <<: *Feature.3
-                result: Enigmatic symbols
+                text: Enigmatic symbols
               - <<: *Feature.4
-                result: Graves or remains of glorified disciples
+                text: Graves or remains of glorified disciples
               - <<: *Feature.5
-                result: Holy text or archives
+                text: Holy text or archives
               - <<: *Feature.6
-                result: Offerings or atonements
+                text: Offerings or atonements
               - <<: *Feature.7
-                result: Pilgrims arriving to pay homage
+                text: Pilgrims arriving to pay homage
               - <<: *Feature.8
-                result: Protected reliquary of an artifact or token
+                text: Protected reliquary of an artifact or token
               - <<: *Feature.9
-                result: Religious art or idols
+                text: Religious art or idols
               - <<: *Feature.10
-                result: Subtle manifestations of mystical power or visions
+                text: Subtle manifestations of mystical power or visions
               - <<: *Feature.11
-                result: Tokens or motifs representing the faith's domain
+                text: Tokens or motifs representing the faith's domain
               - *Feature.12
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: An aspect of the faith beguiles you or lures you into danger
+                text: An aspect of the faith beguiles you or lures you into danger
               - <<: *Peril.1
-                result: Dreadful aspects or powers of the faith are revealed
+                text: Dreadful aspects or powers of the faith are revealed
               - <<: *Peril.2
-                result: Embodiment of a god or power is given corrupted form or purpose
+                text: Embodiment of a god or power is given corrupted form or purpose
               - <<: *Peril.3
-                result: Guardians seek martyrdom in defense of this place
+                text: Guardians seek martyrdom in defense of this place
               - <<: *Peril.4
-                result: Leaders corrupt or exploit their followers to oppose you
+                text: Leaders corrupt or exploit their followers to oppose you
               - <<: *Peril.5
-                result: Prophecies portend a dire threat
+                text: Prophecies portend a dire threat
               - <<: *Peril.6
-                result: Protective ward or enigmatic puzzle blocks the way
+                text: Protective ward or enigmatic puzzle blocks the way
               - <<: *Peril.7
-                result: Religious artifact evokes unnerving power
+                text: Religious artifact evokes unnerving power
               - <<: *Peril.8
-                result: Unnatural corruption or decay fouls the environment
+                text: Unnatural corruption or decay fouls the environment
               - <<: *Peril.9
-                result: Zealots enact a ceremony to unlock forbidden powers
+                text: Zealots enact a ceremony to unlock forbidden powers
               - *Peril.10
               - *Peril.11
           opportunity:
@@ -792,12 +792,12 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Access to a hidden or sealed area
+                text: Access to a hidden or sealed area
               - <<: *Opportunity.1
-                result: Encounter with a helpful adherent or heretic
+                text: Encounter with a helpful adherent or heretic
               - <<: *Opportunity.2
-                result: Insight into the nature or history of the faith
+                text: Insight into the nature or history of the faith
               - <<: *Opportunity.3
-                result: Insight into the schemes or methods of religious zealots
+                text: Insight into the schemes or methods of religious zealots
               - <<: *Opportunity.4
-                result: Interesting or valuable artifact or device
+                text: Interesting or valuable artifact or device

@@ -21,7 +21,7 @@ oracles:
     contents:
       aspect:
         name: Aspect
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Feature: Aspect'
         suggestions:
           oracles:
@@ -36,209 +36,209 @@ oracles:
                   part_of_speech: adjective
             min: 1
             max: 2
-            result: Blocked
+            text: Blocked
           - <<: *i18n.adjective
             min: 3
             max: 4
-            result: Crafted
+            text: Crafted
           - <<: *i18n.adjective
             min: 5
             max: 6
-            result: Ancient
+            text: Ancient
           - <<: *i18n.adjective
             min: 7
             max: 8
-            result: Sunken
+            text: Sunken
           - <<: *i18n.adjective
             min: 9
             max: 10
-            result: Trapped
+            text: Trapped
           - <<: *i18n.adjective
             min: 11
             max: 12
-            result: Secret
+            text: Secret
           - <<: *i18n.adjective
             min: 13
             max: 14
-            result: Toxic
+            text: Toxic
           - <<: *i18n.adjective
             min: 15
             max: 16
-            result: Ruined
+            text: Ruined
           - <<: *i18n.adjective
             min: 17
             max: 18
-            result: Defended
+            text: Defended
           - <<: &i18n.gerund
               _i18n:
                 result:
                   part_of_speech: gerund
             min: 19
             max: 20
-            result: Decaying
+            text: Decaying
           - <<: *i18n.adjective
             min: 21
             max: 22
-            result: Marked
+            text: Marked
           - <<: *i18n.adjective
             min: 23
             max: 24
-            result: Guarded
+            text: Guarded
           - <<: *i18n.adjective
             min: 25
             max: 26
-            result: Inaccessible
+            text: Inaccessible
           - <<: *i18n.gerund
             min: 27
             max: 28
-            result: Foreboding
+            text: Foreboding
           - <<: *i18n.adjective
             min: 29
             max: 30
-            result: Veiled
+            text: Veiled
           - <<: *i18n.adjective
             min: 31
             max: 32
-            result: Deep
+            text: Deep
           - <<: *i18n.adjective
             min: 33
             max: 34
-            result: Depleted
+            text: Depleted
           - <<: *i18n.adjective
             min: 35
             max: 36
-            result: Foul
+            text: Foul
           - <<: *i18n.adjective
             min: 37
             max: 38
-            result: Elevated
+            text: Elevated
           - <<: *i18n.gerund
             min: 39
             max: 40
-            result: Moving
+            text: Moving
           - <<: *i18n.adjective
             min: 41
             max: 42
-            result: Unnatural
+            text: Unnatural
           - <<: *i18n.adjective
             min: 43
             max: 44
-            result: Active
+            text: Active
           - <<: *i18n.adjective
             min: 45
             max: 46
-            result: Confined
+            text: Confined
           - <<: *i18n.adjective
             min: 47
             max: 48
-            result: Fortified
+            text: Fortified
           - <<: *i18n.adjective
             min: 49
             max: 50
-            result: Collapsed
+            text: Collapsed
           - <<: *i18n.adjective
             min: 51
             max: 52
-            result: Isolated
+            text: Isolated
           - <<: *i18n.adjective
             min: 53
             max: 54
-            result: Destroyed
+            text: Destroyed
           - <<: *i18n.adjective
             min: 55
             max: 56
-            result: Open
+            text: Open
           - <<: *i18n.adjective
             min: 57
             max: 58
-            result: Sacred
+            text: Sacred
           - <<: *i18n.adjective
             min: 59
             max: 60
-            result: Flooded
+            text: Flooded
           - <<: *i18n.adjective
             min: 61
             max: 62
-            result: Complex
+            text: Complex
           - <<: *i18n.adjective
             min: 63
             max: 64
-            result: Abundant
+            text: Abundant
           - <<: *i18n.adjective
             min: 65
             max: 66
-            result: Hidden
+            text: Hidden
           - <<: *i18n.adjective
             min: 67
             max: 68
-            result: Expansive
+            text: Expansive
           - <<: *i18n.adjective
             min: 69
             max: 70
-            result: Mysterious
+            text: Mysterious
           - <<: *i18n.adjective
             min: 71
             max: 72
-            result: Unstable
+            text: Unstable
           - <<: *i18n.adjective
             min: 73
             max: 74
-            result: Fragile
+            text: Fragile
           - <<: *i18n.adjective
             min: 75
             max: 76
-            result: Broken
+            text: Broken
           - <<: *i18n.gerund
             min: 77
             max: 78
-            result: Ensnaring
+            text: Ensnaring
           - <<: *i18n.adjective
             min: 79
             max: 80
-            result: Pillaged
+            text: Pillaged
           - <<: *i18n.adjective
             min: 81
             max: 82
-            result: Sealed
+            text: Sealed
           - <<: *i18n.adjective
             min: 83
             max: 84
-            result: Makeshift
+            text: Makeshift
           - <<: *i18n.adjective
             min: 85
             max: 86
-            result: Treacherous
+            text: Treacherous
           - <<: *i18n.adjective
             min: 87
             max: 88
-            result: Natural
+            text: Natural
           - <<: *i18n.adjective
             min: 89
             max: 90
-            result: Dead
+            text: Dead
           - <<: *i18n.adjective
             min: 91
             max: 92
-            result: Unusual
+            text: Unusual
           - <<: *i18n.adjective
             min: 93
             max: 94
-            result: Abandoned
+            text: Abandoned
           - <<: *i18n.adjective
             min: 95
             max: 96
-            result: Deadly
+            text: Deadly
           - <<: *i18n.adjective
             min: 97
             max: 98
-            result: Forgotten
+            text: Forgotten
           - <<: *i18n.adjective
             min: 99
             max: 100
-            result: Mystical
+            text: Mystical
       focus:
         name: Focus
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Feature: Focus'
         suggestions:
           oracles:
@@ -253,200 +253,200 @@ oracles:
                   part_of_speech: common_noun
             min: 1
             max: 2
-            result: Attack
+            text: Attack
           - <<: *i18n.common_noun
             min: 3
             max: 4
-            result: Threshold
+            text: Threshold
           - <<: *i18n.common_noun
             min: 5
             max: 6
-            result: Boundary
+            text: Boundary
           - <<: *i18n.common_noun
             min: 7
             max: 8
-            result: Alarm
+            text: Alarm
           - <<: *i18n.common_noun
             min: 9
             max: 10
-            result: Exit
+            text: Exit
           - <<: *i18n.common_noun
             min: 11
             max: 12
-            result: Passage
+            text: Passage
           - <<: *i18n.gerund
             min: 13
             max: 14
-            result: Crossing
+            text: Crossing
           - <<: *i18n.common_noun
             min: 15
             max: 16
-            result: Trigger
+            text: Trigger
           - <<: *i18n.common_noun
             min: 17
             max: 18
-            result: Trap
+            text: Trap
           - <<: *i18n.common_noun
             min: 19
             max: 20
-            result: Hideaway
+            text: Hideaway
           - <<: *i18n.common_noun
             min: 21
             max: 22
-            result: Nature
+            text: Nature
           - <<: *i18n.common_noun
             min: 23
             max: 24
-            result: Sign
+            text: Sign
           - <<: *i18n.common_noun
             min: 25
             max: 26
-            result: Refuge
+            text: Refuge
           - <<: *i18n.common_noun
             min: 27
             max: 28
-            result: Valuables
+            text: Valuables
           - <<: *i18n.common_noun
             min: 29
             max: 30
-            result: Breach
+            text: Breach
           - <<: *i18n.common_noun
             min: 31
             max: 32
-            result: Route
+            text: Route
           - <<: *i18n.common_noun
             min: 33
             max: 34
-            result: Location
+            text: Location
           - <<: *i18n.common_noun
             min: 35
             max: 36
-            result: Trail
+            text: Trail
           - <<: *i18n.common_noun
             min: 37
             max: 38
-            result: Supply
+            text: Supply
           - <<: *i18n.common_noun
             min: 39
             max: 40
-            result: History
+            text: History
           - <<: *i18n.common_noun
             min: 41
             max: 42
-            result: Prisoner
+            text: Prisoner
           - <<: *i18n.common_noun
             min: 43
             max: 44
-            result: Habitation
+            text: Habitation
           - <<: *i18n.common_noun
             min: 45
             max: 46
-            result: Debris
+            text: Debris
           - <<: *i18n.common_noun
             min: 47
             max: 48
-            result: Creature
+            text: Creature
           - <<: *i18n.common_noun
             min: 49
             max: 50
-            result: Lair
+            text: Lair
           - <<: *i18n.common_noun
             min: 51
             max: 52
-            result: Person
+            text: Person
           - <<: *i18n.common_noun
             min: 53
             max: 54
-            result: Enclosure
+            text: Enclosure
           - <<: *i18n.common_noun
             min: 55
             max: 56
-            result: Remains
+            text: Remains
           - <<: *i18n.common_noun
             min: 57
             max: 58
-            result: Water
+            text: Water
           - <<: *i18n.common_noun
             min: 59
             max: 60
-            result: Message
+            text: Message
           - <<: *i18n.common_noun
             min: 61
             max: 62
-            result: Darkness
+            text: Darkness
           - <<: *i18n.gerund
             min: 63
             max: 64
-            result: Opening
+            text: Opening
           - <<: *i18n.common_noun
             min: 65
             max: 66
-            result: Weapon
+            text: Weapon
           - <<: *i18n.common_noun
             min: 67
             max: 68
-            result: Entry
+            text: Entry
           - <<: *i18n.common_noun
             min: 69
             max: 70
-            result: Illumination
+            text: Illumination
           - <<: *i18n.common_noun
             min: 71
             max: 72
-            result: Obstacle
+            text: Obstacle
           - <<: *i18n.common_noun
             min: 73
             max: 74
-            result: Craft
+            text: Craft
           - <<: *i18n.common_noun
             min: 75
             max: 76
-            result: Container
+            text: Container
           - <<: *i18n.common_noun
             min: 77
             max: 78
-            result: Information
+            text: Information
           - <<: *i18n.common_noun
             min: 79
             max: 80
-            result: Grave
+            text: Grave
           - <<: *i18n.common_noun
             min: 81
             max: 82
-            result: Equipment
+            text: Equipment
           - <<: *i18n.common_noun
             min: 83
             max: 84
-            result: Shelter
+            text: Shelter
           - <<: *i18n.common_noun
             min: 85
             max: 86
-            result: Denizen
+            text: Denizen
           - <<: *i18n.common_noun
             min: 87
             max: 88
-            result: Environment
+            text: Environment
           - <<: *i18n.common_noun
             min: 89
             max: 90
-            result: Material
+            text: Material
           - <<: *i18n.common_noun
             min: 91
             max: 92
-            result: Resource
+            text: Resource
           - <<: *i18n.common_noun
             min: 93
             max: 94
-            result: Corruption
+            text: Corruption
           - <<: *i18n.common_noun
             min: 95
             max: 96
-            result: Death
+            text: Death
           - <<: *i18n.common_noun
             min: 97
             max: 98
-            result: Function
+            text: Function
           - <<: *i18n.common_noun
             min: 99
             max: 100
-            result: Power
+            text: Power

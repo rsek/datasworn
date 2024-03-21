@@ -23,7 +23,7 @@ oracles:
         collections:
           known_waters:
             name: Known Waters
-            oracle_type: table_shared_results
+            oracle_type: table_shared_text
             _source: &TableSource
               <<: *CollectionSource
             summary: |-
@@ -34,24 +34,24 @@ oracles:
                 <<: &Myriads
                   name: Myriads
                   summary: Central Seas
-                  oracle_type: column_simple
+                  oracle_type: column_basic
                 rows:
                   - min: 1
                     max: 25
                     <<: &WaypointKnown.0
-                      result: |-
+                      text: |-
                         __Sails, ho!__
                           [Sailing Ships](id:sundered_isles/collections/oracles/ships)
                   - min: 26
                     max: 35
                     <<: &WaypointKnown.1
-                      result: |-
+                      text: |-
                         __Changing weather__
                           [Weather](id:sundered_isles/collections/oracles/weather)
                   - min: 36
                     max: 55
                     <<: &WaypointKnown.2
-                      result: |-
+                      text: |-
                         __Instance (choose one)__
                           * [Seafaring Details](id:sundered_isles/oracles/seafaring/details)
                           * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
@@ -62,19 +62,19 @@ oracles:
                   - min: 56
                     max: 65
                     <<: &WaypointKnown.3
-                      result: |-
+                      text: |-
                         __Lost souls__
                           [Shipwrecks](id:sundered_isles/collections/oracles/shipwrecks)
                   - min: 66
                     max: 70
                     <<: &WaypointKnown.4
-                      result: |-
+                      text: |-
                         __Relic of the past__
                           [Ruins](id:sundered_isles/collections/oracles/ruins)
                   - min: 71
                     max: 85
                     <<: &WaypointKnown.5
-                      result: |-
+                      text: |-
                         __Character focus__
                           [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
                       oracle_rolls:
@@ -83,7 +83,7 @@ oracles:
                     min: 86
                     max: 100
                     <<: &RollTwice
-                      result: Roll twice
+                      text: Roll twice
                       oracle_rolls:
                         - auto: true
                           number_of_rolls: 2
@@ -92,7 +92,7 @@ oracles:
                 <<: &Margins
                   name: Margins
                   summary: Outer Seas
-                  oracle_type: column_simple
+                  oracle_type: column_basic
                 rows:
                   - min: 1
                     max: 15
@@ -120,7 +120,7 @@ oracles:
                 <<: &Reaches
                   name: Reaches
                   summary: Remote Seas
-                  oracle_type: column_simple
+                  oracle_type: column_basic
                 rows:
                   - min: 1
                     max: 5
@@ -145,7 +145,7 @@ oracles:
                     <<: *WaypointKnown.6
           unknown_waters:
             name: Unknown Waters
-            oracle_type: table_shared_results
+            oracle_type: table_shared_text
             _source: &TableSource
               <<: *CollectionSource
             summary: |-
@@ -158,7 +158,7 @@ oracles:
                   - min: 1
                     max: 20
                     <<: &WaypointUnknown.0
-                      result: |-
+                      text: |-
                         __Land, ho!__
                           [Islands](id:sundered_isles/collections/oracles/islands)
                   - min: 21
@@ -249,7 +249,7 @@ oracles:
       detail:
         _source: *Source
         name: Seafaring Details
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: This table reveals occurrences on a seafaring expedition. Possible results include locations, events, sightings, and encounters.
         tags:
           sundered_isles:
@@ -257,308 +257,308 @@ oracles:
         rows:
           - min: 1
             max: 1
-            result: A plume of smoke rises on the horizon
+            text: A plume of smoke rises on the horizon
           - min: 2
             max: 2
-            result: Carved monoliths, taller than your ship, form a circle large enough to sail through
+            text: Carved monoliths, taller than your ship, form a circle large enough to sail through
           - min: 3
             max: 3
-            result: An albatross alights on the yardarm; it surveys the ship dispassionately
+            text: An albatross alights on the yardarm; it surveys the ship dispassionately
           - min: 4
             max: 4
-            result: A large plank of driftwood bears a carved message
+            text: A large plank of driftwood bears a carved message
           - min: 5
             max: 5
-            result: Buoys mark hazardous waters
+            text: Buoys mark hazardous waters
           - min: 6
             max: 6
-            result: Beast hunters, sailing a sleek-hulled ship, chase their quarry
+            text: Beast hunters, sailing a sleek-hulled ship, chase their quarry
           - min: 7
             max: 7
-            result: Sea caves pocket the steep flanks of a rocky islet
+            text: Sea caves pocket the steep flanks of a rocky islet
           - min: 8
             max: 8
-            result: A rogue wave rises on the horizon
+            text: A rogue wave rises on the horizon
           - min: 9
             max: 9
-            result: Dagger-like rocks rise out of the sea
+            text: Dagger-like rocks rise out of the sea
           - min: 10
             max: 10
-            result: Flags of unknown heraldry fly from a partially collapsed fort
+            text: Flags of unknown heraldry fly from a partially collapsed fort
           - min: 11
             max: 11
-            result: A massive storm wall gathers in the distance, lighting flashing
+            text: A massive storm wall gathers in the distance, lighting flashing
           - min: 12
             max: 12
-            result: Waves surge against an exposed reef
+            text: Waves surge against an exposed reef
           - min: 13
             max: 13
-            result: A gull lands on the deck, a rolled slip of paper tied to its leg
+            text: A gull lands on the deck, a rolled slip of paper tied to its leg
           - min: 14
             max: 14
-            result: A ship flounders on high seas, listing dangerously to one side
+            text: A ship flounders on high seas, listing dangerously to one side
           - min: 15
             max: 15
-            result: Rusted anchors, hung like trophies from a rocky mount, clatter in the wind
+            text: Rusted anchors, hung like trophies from a rocky mount, clatter in the wind
           - min: 16
             max: 16
-            result: Labyrinthine mangroves sprawl along the shore of a tiny islet
+            text: Labyrinthine mangroves sprawl along the shore of a tiny islet
           - min: 17
             max: 17
-            result: Survivors aboard a meager raft desperately flag you down
+            text: Survivors aboard a meager raft desperately flag you down
           - min: 18
             max: 18
-            result: Clusters of jagged rocks lurk just below the ocean waves
+            text: Clusters of jagged rocks lurk just below the ocean waves
           - min: 19
             max: 19
-            result: A crew struggles to refloat their ship, which is run aground on a sandbank
+            text: A crew struggles to refloat their ship, which is run aground on a sandbank
           - min: 20
             max: 20
-            result: Stone ruins lie just beneath the surface
+            text: Stone ruins lie just beneath the surface
           - min: 21
             max: 21
-            result: Waves pummel a shipwreck that lies split in two upon the rocks
+            text: Waves pummel a shipwreck that lies split in two upon the rocks
           - min: 22
             max: 22
-            result: A battered, drifting flag bears a familiar emblem
+            text: A battered, drifting flag bears a familiar emblem
           - min: 23
             max: 23
-            result: The air smells of smoke, and ash drifts on the wind
+            text: The air smells of smoke, and ash drifts on the wind
           - min: 24
             max: 24
-            result: A battered, oarless longboat floats on the open sea
+            text: A battered, oarless longboat floats on the open sea
           - min: 25
             max: 25
-            result: A planted flag and a lonely cairn stand atop a tiny rocky islet
+            text: A planted flag and a lonely cairn stand atop a tiny rocky islet
           - min: 26
             max: 26
-            result: Something massive brushes against the hull before diving out of sight
+            text: Something massive brushes against the hull before diving out of sight
           - min: 27
             max: 27
-            result: The sound of distant cannon fire echoes across the sea
+            text: The sound of distant cannon fire echoes across the sea
           - min: 28
             max: 28
-            result: Water churns as a large school of fish flees a predator
+            text: Water churns as a large school of fish flees a predator
           - min: 29
             max: 29
-            result: Lashed-together shipwrecks, anchored to the sea floor, form a ramshackle floating home
+            text: Lashed-together shipwrecks, anchored to the sea floor, form a ramshackle floating home
           - min: 30
             max: 30
-            result: A massive school of rays forms a roving shadow just below the surface
+            text: A massive school of rays forms a roving shadow just below the surface
           - min: 31
             max: 31
-            result: Large sharks circle the ship
+            text: Large sharks circle the ship
           - min: 32
             max: 32
-            result: Whales crest the surface, misting the air with saltwater spray
+            text: Whales crest the surface, misting the air with saltwater spray
           - min: 33
             max: 33
-            result: Dolphins spin and jump at the bow
+            text: Dolphins spin and jump at the bow
           - min: 34
             max: 34
-            result: A giant whale, its back pierced by a wicked-looking harpoon, breaks the surface
+            text: A giant whale, its back pierced by a wicked-looking harpoon, breaks the surface
           - min: 35
             max: 35
-            result: A half-sunk rowboat, burdened with chests and barrels, bobs on the sea
+            text: A half-sunk rowboat, burdened with chests and barrels, bobs on the sea
           - min: 36
             max: 36
-            result: A vast volcano dome, belching steam, sits just above the waves
+            text: A vast volcano dome, belching steam, sits just above the waves
           - min: 37
             max: 37
-            result: A massive stone statue, cracked and worn by age, stands atop an eroded rock
+            text: A massive stone statue, cracked and worn by age, stands atop an eroded rock
           - min: 38
             max: 38
-            result: A broken spire stands atop a lonely rock
+            text: A broken spire stands atop a lonely rock
           - min: 39
             max: 39
-            result: A solitary mariner watches you from the deck of their single-masted boat
+            text: A solitary mariner watches you from the deck of their single-masted boat
           - min: 40
             max: 40
-            result: Rocks and seabed muck, laid bare by a low tide, surround a narrow waterway
+            text: Rocks and seabed muck, laid bare by a low tide, surround a narrow waterway
           - min: 41
             max: 41
-            result: A brief, passing squall batters the ship with wind and rain
+            text: A brief, passing squall batters the ship with wind and rain
           - min: 42
             max: 42
-            result: A multitude of jellyfish glimmer like pale lanterns
+            text: A multitude of jellyfish glimmer like pale lanterns
           - min: 43
             max: 43
-            result: A long line of boats, laden with cargo and passengers, make their way across the sea
+            text: A long line of boats, laden with cargo and passengers, make their way across the sea
           - min: 44
             max: 44
-            result: A settlement stands on an isolated islet
+            text: A settlement stands on an isolated islet
           - min: 45
             max: 45
-            result: A massive stone statue, weathered and worn, stands atop an eroded rock
+            text: A massive stone statue, weathered and worn, stands atop an eroded rock
           - min: 46
             max: 46
-            result: A rocky mount shelters a deep-water harbor
+            text: A rocky mount shelters a deep-water harbor
           - min: 47
             max: 47
-            result: A graveyard of sun-bleached whale bones lies atop scattered shoals
+            text: A graveyard of sun-bleached whale bones lies atop scattered shoals
           - min: 48
             max: 48
-            result: A crumbling stone bridge spans the gap between two rocky islets
+            text: A crumbling stone bridge spans the gap between two rocky islets
           - min: 49
             max: 49
-            result: Abundant sea life is visible in these crystal-clear shallows
+            text: Abundant sea life is visible in these crystal-clear shallows
           - min: 50
             max: 50
-            result: A formation of sleek coastal boats race swiftly across the waves
+            text: A formation of sleek coastal boats race swiftly across the waves
           - min: 51
             max: 51
-            result: A ship riddled with damage drifts past, seemingly uncrewed
+            text: A ship riddled with damage drifts past, seemingly uncrewed
           - min: 52
             max: 52
-            result: A trade ship struggles at the edge of an expanding whirlpool
+            text: A trade ship struggles at the edge of an expanding whirlpool
           - min: 53
             max: 53
-            result: Shattered debris drifts past
+            text: Shattered debris drifts past
           - min: 54
             max: 54
-            result: A stranded mariner waves from a tiny islet
+            text: A stranded mariner waves from a tiny islet
           - min: 55
             max: 55
-            result: A storm of falling stars streaks through the sky
+            text: A storm of falling stars streaks through the sky
           - min: 56
             max: 56
-            result: A ship lies at anchor; its crew busily repairs torn sails and broken spars
+            text: A ship lies at anchor; its crew busily repairs torn sails and broken spars
           - min: 57
             max: 57
-            result: A lone survivor clings to a floating crate
+            text: A lone survivor clings to a floating crate
           - min: 58
             max: 58
-            result: Sea turtles swim in a lazy circle over a deep blue marine sinkhole
+            text: Sea turtles swim in a lazy circle over a deep blue marine sinkhole
           - min: 59
             max: 59
-            result: A long line of sails dot the horizon
+            text: A long line of sails dot the horizon
           - min: 60
             max: 60
-            result: A heavy chain is strung between rocks just below the waterline
+            text: A heavy chain is strung between rocks just below the waterline
           - min: 61
             max: 61
-            result: Sinking ships and struggling survivors mark the scene of a recent battle
+            text: Sinking ships and struggling survivors mark the scene of a recent battle
           - min: 62
             max: 62
-            result: A ravaged ship, burnt nearly to the waterline, floats aimlessly
+            text: A ravaged ship, burnt nearly to the waterline, floats aimlessly
           - min: 63
             max: 63
-            result: A powerful current sweeps through a passage bounded by rocky shoals
+            text: A powerful current sweeps through a passage bounded by rocky shoals
           - min: 64
             max: 64
-            result: Wind-beaten trees cling precariously to a rocky mount
+            text: Wind-beaten trees cling precariously to a rocky mount
           - min: 65
             max: 65
-            result: Submerged heat vents send up roiling water and plumes of steam
+            text: Submerged heat vents send up roiling water and plumes of steam
           - min: 66
             max: 66
-            result: A sudden gust pulls the sails and rigging taught, an omen of changing weather
+            text: A sudden gust pulls the sails and rigging taught, an omen of changing weather
           - min: 67
             max: 67
-            result: Boats gather in a circle as their passengers toss flowers into the sea
+            text: Boats gather in a circle as their passengers toss flowers into the sea
           - min: 68
             max: 68
-            result: A glass bottle with a message bobs on the waves
+            text: A glass bottle with a message bobs on the waves
           - min: 69
             max: 69
-            result: Whales congregate amid deep waters
+            text: Whales congregate amid deep waters
           - min: 70
             max: 70
-            result: A vibrantly-painted merchant vessel sends up a flag of welcome
+            text: A vibrantly-painted merchant vessel sends up a flag of welcome
           - min: 71
             max: 71
-            result: A flurry of cannon fire flashes within a fog bank
+            text: A flurry of cannon fire flashes within a fog bank
           - min: 72
             max: 72
-            result: Sandbars are scattered across shallow waters
+            text: Sandbars are scattered across shallow waters
           - min: 73
             max: 73
-            result: Fruit trees cling to a grassy islet
+            text: Fruit trees cling to a grassy islet
           - min: 74
             max: 74
-            result: A tangle of sea plants, muck, and debris spin slowly in a wide gyre
+            text: A tangle of sea plants, muck, and debris spin slowly in a wide gyre
           - min: 75
             max: 75
-            result: A massive fog bank stretches the length of the horizon
+            text: A massive fog bank stretches the length of the horizon
           - min: 76
             max: 76
-            result: A small fleet of fishing boats head for deeper waters
+            text: A small fleet of fishing boats head for deeper waters
           - min: 77
             max: 77
-            result: Sunken metal catches the light within clear waters
+            text: Sunken metal catches the light within clear waters
           - min: 78
             max: 78
-            result: Large lizards scamper along the narrow shore of a rocky islet
+            text: Large lizards scamper along the narrow shore of a rocky islet
           - min: 79
             max: 79
-            result: Two ships sit side-by-side at anchor; crews move cargo from one to the other
+            text: Two ships sit side-by-side at anchor; crews move cargo from one to the other
           - min: 80
             max: 80
-            result: Flagged buoys mark a faction's claimed territory
+            text: Flagged buoys mark a faction's claimed territory
           - min: 81
             max: 81
-            result: A dark cave sits high above the waterline on a rocky pillar
+            text: A dark cave sits high above the waterline on a rocky pillar
           - min: 82
             max: 82
-            result: Thickly-packed seaweed carpets the water
+            text: Thickly-packed seaweed carpets the water
           - min: 83
             max: 83
-            result: Ships exchange cannon fire in the distance; acrid smoke drifts for leagues
+            text: Ships exchange cannon fire in the distance; acrid smoke drifts for leagues
           - min: 84
             max: 84
-            result: Coral reefs lie in shallow, crystalline waters
+            text: Coral reefs lie in shallow, crystalline waters
           - min: 85
             max: 85
-            result: Swarms of sharks feed on a dead whale carcass
+            text: Swarms of sharks feed on a dead whale carcass
           - min: 86
             max: 86
-            result: A small grove of palm trees and a simple hut stand atop a sandy islet
+            text: A small grove of palm trees and a simple hut stand atop a sandy islet
           - min: 87
             max: 87
-            result: Hordes of seabirds nest among a long row of guano-spattered sea stacks
+            text: Hordes of seabirds nest among a long row of guano-spattered sea stacks
           - min: 88
             max: 88
-            result: Manatees graze among a field of tall sea grass in shallow waters
+            text: Manatees graze among a field of tall sea grass in shallow waters
           - min: 89
             max: 89
-            result: On a moonless, cloudy night, deep darkness falls over the sea
+            text: On a moonless, cloudy night, deep darkness falls over the sea
           - min: 90
             max: 90
-            result: The crew of a fishing boat struggles with a mighty catch
+            text: The crew of a fishing boat struggles with a mighty catch
           - min: 91
             max: 91
-            result: Survivors wave from the deck of a sinking ship
+            text: Survivors wave from the deck of a sinking ship
           - min: 92
             max: 92
-            result: A flash of reflected sunlight gleams from glass or metal in the distance
+            text: A flash of reflected sunlight gleams from glass or metal in the distance
           - min: 93
             max: 93
-            result: Shrubs and colorful flowers carpet a rocky islet
+            text: Shrubs and colorful flowers carpet a rocky islet
           - min: 94
             max: 94
-            result: A lone chest bobs in the waves
+            text: A lone chest bobs in the waves
           - min: 95
             max: 95
-            result: Seals rest on the exposed keel of a capsized ship, barking as you come near
+            text: Seals rest on the exposed keel of a capsized ship, barking as you come near
           - min: 96
             max: 96
-            result: Whale song, tinged with sadness, echoes across the sea
+            text: Whale song, tinged with sadness, echoes across the sea
           - min: 97
             max: 97
-            result: An imposing fort dominates the terrain of a rocky islet
+            text: An imposing fort dominates the terrain of a rocky islet
           - min: 98
             max: 98
-            result: A heap of flotsam and jetsam grinds against the shore of a rocky islet
+            text: A heap of flotsam and jetsam grinds against the shore of a rocky islet
           - min: 99
             max: 99
-            result: A distant signal or beacon flares to life
+            text: A distant signal or beacon flares to life
           - min: 100
             max: 100
-            result: Smoke rises from among a grove of palms on a sandy isle
+            text: Smoke rises from among a grove of palms on a sandy isle
       cursed_details:
         _source: *Source
         name: Cursed Seafaring Details
-        oracle_type: table_simple
+        oracle_type: table_basic
         tags:
           sundered_isles:
             cursed_version_of:
@@ -566,410 +566,410 @@ oracles:
         rows:
           - min: 1
             max: 1
-            result: An exodus of panicked birds darken the sky
+            text: An exodus of panicked birds darken the sky
           - min: 2
             max: 2
-            result: The shadowy silhouette of a flying beast, barely visible in the mist, passes overhead
+            text: The shadowy silhouette of a flying beast, barely visible in the mist, passes overhead
           - min: 3
             max: 3
-            result: A maelstrom shimmers with mystic energies
+            text: A maelstrom shimmers with mystic energies
           - min: 4
             max: 4
-            result: Iron fittings spontaneously rust and corrode
+            text: Iron fittings spontaneously rust and corrode
           - min: 5
             max: 5
-            result: A ship is sighted but disappears if you look directly at it
+            text: A ship is sighted but disappears if you look directly at it
           - min: 6
             max: 6
-            result: Pale sea turtles, their shells carved with strange runes, circle the ship
+            text: Pale sea turtles, their shells carved with strange runes, circle the ship
           - min: 7
             max: 7
-            result: Ragged slashes, as if from claws, appear in the sails
+            text: Ragged slashes, as if from claws, appear in the sails
           - min: 8
             max: 8
-            result: A parrot lands on a spar, squawks a foreboding message, and flies off
+            text: A parrot lands on a spar, squawks a foreboding message, and flies off
           - min: 9
             max: 9
-            result: Iron cages, each housing a sun-dried corpse, hang from a rocky mount
+            text: Iron cages, each housing a sun-dried corpse, hang from a rocky mount
           - min: 10
             max: 10
-            result: A titanic, sinuous skeleton lies atop a rocky shoal
+            text: A titanic, sinuous skeleton lies atop a rocky shoal
           - min: 11
             max: 11
-            result: A ship is spotted, identical to your own
+            text: A ship is spotted, identical to your own
           - min: 12
             max: 12
-            result: Elaborate and unsettling symbols mar the stone of a rocky islet
+            text: Elaborate and unsettling symbols mar the stone of a rocky islet
           - min: 13
             max: 13
-            result: Strands of kelp rise from the water, creeping and grasping
+            text: Strands of kelp rise from the water, creeping and grasping
           - min: 14
             max: 14
-            result: An eclipse overtakes the sun, stealing away the day
+            text: An eclipse overtakes the sun, stealing away the day
           - min: 15
             max: 15
-            result: The sea suddenly smells of rot
+            text: The sea suddenly smells of rot
           - min: 16
             max: 16
-            result: Countless dead fish float on the surface
+            text: Countless dead fish float on the surface
           - min: 17
             max: 17
-            result: A single albatross alights on the yardarm, then falls instantly dead
+            text: A single albatross alights on the yardarm, then falls instantly dead
           - min: 18
             max: 18
-            result: A perpetual fog bank, as still as a stone wall, lies ahead
+            text: A perpetual fog bank, as still as a stone wall, lies ahead
           - min: 19
             max: 19
-            result: A dark swarm of giant bats circles the ship
+            text: A dark swarm of giant bats circles the ship
           - min: 20
             max: 20
-            result: A monstrous sea beast appears, trailing the ship with an inexorable purpose
+            text: A monstrous sea beast appears, trailing the ship with an inexorable purpose
           - min: 21
             max: 21
-            result: The ship's bell rings of its own accord
+            text: The ship's bell rings of its own accord
           - min: 22
             max: 22
-            result: Your ship comes to a sudden and shuddering stop in deep waters
+            text: Your ship comes to a sudden and shuddering stop in deep waters
           - min: 23
             max: 23
-            result: The sea boils, sending up gouts of steam
+            text: The sea boils, sending up gouts of steam
           - min: 24
             max: 24
-            result: Tentacles, dripping with slimy brine, curl over the gunwales
+            text: Tentacles, dripping with slimy brine, curl over the gunwales
           - min: 25
             max: 25
-            result: A vast field of algae-covered bones lies scattered in shallow waters
+            text: A vast field of algae-covered bones lies scattered in shallow waters
           - min: 26
             max: 26
-            result: The bloated corpse of an enormous beast floats past, a grisly bitemark in its flank
+            text: The bloated corpse of an enormous beast floats past, a grisly bitemark in its flank
           - min: 27
             max: 27
-            result: Hundreds of carrion birds settle onto spars and rigging, waiting expectantly
+            text: Hundreds of carrion birds settle onto spars and rigging, waiting expectantly
           - min: 28
             max: 28
-            result: An unblemished iron pillar stands in shallow waters
+            text: An unblemished iron pillar stands in shallow waters
           - min: 29
             max: 29
-            result: Crewmembers are plagued by horrific visions or dreams
+            text: Crewmembers are plagued by horrific visions or dreams
           - min: 30
             max: 30
-            result: A narrow passage cuts through a churning, green fog
+            text: A narrow passage cuts through a churning, green fog
           - min: 31
             max: 31
-            result: The sea spills like a waterfall into an unnatural chasm
+            text: The sea spills like a waterfall into an unnatural chasm
           - min: 32
             max: 32
-            result: A vast whirlpool opens ahead of the ship
+            text: A vast whirlpool opens ahead of the ship
           - min: 33
             max: 33
-            result: Strange shapes move within an approaching fog bank
+            text: Strange shapes move within an approaching fog bank
           - min: 34
             max: 34
-            result: All at once, the ship's lanterns go dark
+            text: All at once, the ship's lanterns go dark
           - min: 35
             max: 35
-            result: The roar of a monstrous beast rises from a fog-shrouded islet
+            text: The roar of a monstrous beast rises from a fog-shrouded islet
           - min: 36
             max: 36
-            result: Countless shipwrecks float in a tangle, drawn together by uncanny forces
+            text: Countless shipwrecks float in a tangle, drawn together by uncanny forces
           - min: 37
             max: 37
-            result: The compass spins wildly
+            text: The compass spins wildly
           - min: 38
             max: 38
-            result: A tangled net holds the corpse of a ghastly, mutated creature
+            text: A tangled net holds the corpse of a ghastly, mutated creature
           - min: 39
             max: 39
-            result: A cloaked figure stands in a boat that moves without oar or sail
+            text: A cloaked figure stands in a boat that moves without oar or sail
           - min: 40
             max: 40
-            result: A procession of oarless boats, hung with pale lanterns, hold silent figures
+            text: A procession of oarless boats, hung with pale lanterns, hold silent figures
           - min: 41
             max: 41
-            result: A day passes, but you and the crew have no memory of it
+            text: A day passes, but you and the crew have no memory of it
           - min: 42
             max: 42
-            result: Hordes of panicked rats emerge from the lower decks
+            text: Hordes of panicked rats emerge from the lower decks
           - min: 43
             max: 43
-            result: Bladelike iron shapes, carved with faintly-glowing symbols, jut from the sea
+            text: Bladelike iron shapes, carved with faintly-glowing symbols, jut from the sea
           - min: 44
             max: 44
-            result: The seawater turns red and smells of blood
+            text: The seawater turns red and smells of blood
           - min: 45
             max: 45
-            result: The ship's wheel turns of its own accord and then holds fast, setting a new course
+            text: The ship's wheel turns of its own accord and then holds fast, setting a new course
           - min: 46
             max: 46
-            result: Mangled corpses, too many to count, drift on the water
+            text: Mangled corpses, too many to count, drift on the water
           - min: 47
             max: 47
-            result: One beast battles another, and the sea churns with blood
+            text: One beast battles another, and the sea churns with blood
           - min: 48
             max: 48
-            result: An unknown island, etched in black ink by an unseen hand, appears on the ship's charts
+            text: An unknown island, etched in black ink by an unseen hand, appears on the ship's charts
           - min: 49
             max: 49
-            result: Something knocks insistently against the underside of the hull
+            text: Something knocks insistently against the underside of the hull
           - min: 50
             max: 50
-            result: A monstrous beast stalks the ship
+            text: A monstrous beast stalks the ship
           - min: 51
             max: 51
-            result: Alluring songs beckon from among the rocks
+            text: Alluring songs beckon from among the rocks
           - min: 52
             max: 52
-            result: A pale child stands on the shore of an otherwise deserted islet, smiling blankly
+            text: A pale child stands on the shore of an otherwise deserted islet, smiling blankly
           - min: 53
             max: 53
-            result: A giant mangrove, home to strange birdlike creatures, stands in stagnant waters
+            text: A giant mangrove, home to strange birdlike creatures, stands in stagnant waters
           - min: 54
             max: 54
-            result: An unnatural current sweeps the ship onto a new course
+            text: An unnatural current sweeps the ship onto a new course
           - min: 55
             max: 55
-            result: Hordes of scrabbling bone-white crabs climb the ship's hull
+            text: Hordes of scrabbling bone-white crabs climb the ship's hull
           - min: 56
             max: 56
-            result: The shadowy outline of a frozen ship sits within an enormous wandering iceberg
+            text: The shadowy outline of a frozen ship sits within an enormous wandering iceberg
           - min: 57
             max: 57
-            result: A tattoo spontaneously appears on your forearm
+            text: A tattoo spontaneously appears on your forearm
           - min: 58
             max: 58
-            result: A burning map, inscribed by an unseen hand, is scorched into the planks of the deck
+            text: A burning map, inscribed by an unseen hand, is scorched into the planks of the deck
           - min: 59
             max: 59
-            result: Fields of dead coral lay within foul-smelling waters
+            text: Fields of dead coral lay within foul-smelling waters
           - min: 60
             max: 60
-            result: A tall mound of skulls sits upon a rocky islet
+            text: A tall mound of skulls sits upon a rocky islet
           - min: 61
             max: 61
-            result: In the hold, frantic scratching emanates from within an unassuming crate
+            text: In the hold, frantic scratching emanates from within an unassuming crate
           - min: 62
             max: 62
-            result: Alluring lights glimmer beyond a gigantic stone archway
+            text: Alluring lights glimmer beyond a gigantic stone archway
           - min: 63
             max: 63
-            result: Cockroaches swarm the deck
+            text: Cockroaches swarm the deck
           - min: 64
             max: 64
-            result: The sea ahead is a frozen sheet
+            text: The sea ahead is a frozen sheet
           - min: 65
             max: 65
-            result: A graveyard of dead ships lies trapped within a sargassum sea
+            text: A graveyard of dead ships lies trapped within a sargassum sea
           - min: 66
             max: 66
-            result: A large blood slick covers the water
+            text: A large blood slick covers the water
           - min: 67
             max: 67
-            result: A watertight compartment spontaneously floods with seawater
+            text: A watertight compartment spontaneously floods with seawater
           - min: 68
             max: 68
-            result: A sorrowful shanty, seemingly without a source, echoes across the waters
+            text: A sorrowful shanty, seemingly without a source, echoes across the waters
           - min: 69
             max: 69
-            result: A massive shape passes beneath your ship, sending it listing to one side
+            text: A massive shape passes beneath your ship, sending it listing to one side
           - min: 70
             max: 70
-            result: Shadowy, vaporous ships cruise along the horizon
+            text: Shadowy, vaporous ships cruise along the horizon
           - min: 71
             max: 71
-            result: The tide slips away with unnatural speed, revealing patches of seafloor
+            text: The tide slips away with unnatural speed, revealing patches of seafloor
           - min: 72
             max: 72
-            result: A large winged form, cloaked in shadow, perches atop the main mast
+            text: A large winged form, cloaked in shadow, perches atop the main mast
           - min: 73
             max: 73
-            result: A coffin, nailed shut and marked with cryptic symbols, bobs on the water
+            text: A coffin, nailed shut and marked with cryptic symbols, bobs on the water
           - min: 74
             max: 74
-            result: Waking from a dream, you find yourself clutching a paper marked with a black spot
+            text: Waking from a dream, you find yourself clutching a paper marked with a black spot
           - min: 75
             max: 75
-            result: A ghostly message, written in blood, appears in the captain's logbook
+            text: A ghostly message, written in blood, appears in the captain's logbook
           - min: 76
             max: 76
-            result: A crewmember, moving as if in a trance, climbs over the gunwales and drops into the s
+            text: A crewmember, moving as if in a trance, climbs over the gunwales and drops into the s
           - min: 77
             max: 77
-            result: Phantom voices carry on the wind, whispering a dreadful premonition
+            text: Phantom voices carry on the wind, whispering a dreadful premonition
           - min: 78
             max: 78
-            result: Skeletal figures, welding corroded blades, clamber over the gunwales
+            text: Skeletal figures, welding corroded blades, clamber over the gunwales
           - min: 79
             max: 79
-            result: Bizarre jellyfish float through the air
+            text: Bizarre jellyfish float through the air
           - min: 80
             max: 80
-            result: The apparition of someone you knew delivers a warning before fading away
+            text: The apparition of someone you knew delivers a warning before fading away
           - min: 81
             max: 81
-            result: An enormous pale light rises from the murky depths
+            text: An enormous pale light rises from the murky depths
           - min: 82
             max: 82
-            result: A crewmember is stricken with a hideous sickness
+            text: A crewmember is stricken with a hideous sickness
           - min: 83
             max: 83
-            result: Among the ship's stores, fresh water and wine turn to brine
+            text: Among the ship's stores, fresh water and wine turn to brine
           - min: 84
             max: 84
-            result: Flocks of birds fling themselves carelessly against the hull and sails
+            text: Flocks of birds fling themselves carelessly against the hull and sails
           - min: 85
             max: 85
-            result: Ghostly figures stand motionless and silent on the shore of a rocky islet
+            text: Ghostly figures stand motionless and silent on the shore of a rocky islet
           - min: 86
             max: 86
-            result: A wandering iceberg holds a tentacled form within its crystalline core
+            text: A wandering iceberg holds a tentacled form within its crystalline core
           - min: 87
             max: 87
-            result: A leviathan's corpse bobs to the surface, its desiccated skull gaping
+            text: A leviathan's corpse bobs to the surface, its desiccated skull gaping
           - min: 88
             max: 88
-            result: A spectral figure stands at the bow, pointing insistently at the horizon
+            text: A spectral figure stands at the bow, pointing insistently at the horizon
           - min: 89
             max: 89
-            result: Objects fly through the air as if amid a whirlwind
+            text: Objects fly through the air as if amid a whirlwind
           - min: 90
             max: 90
-            result: Perishable provisions turn to ash
+            text: Perishable provisions turn to ash
           - min: 91
             max: 91
-            result: Barnacles foul the hull and deck, growing and spreading with uncanny speed
+            text: Barnacles foul the hull and deck, growing and spreading with uncanny speed
           - min: 92
             max: 92
-            result: The sea turns dark, and something stirs within
+            text: The sea turns dark, and something stirs within
           - min: 93
             max: 93
-            result: Monstrous eyes glimmer within the shadowy depths of an islet sea cave
+            text: Monstrous eyes glimmer within the shadowy depths of an islet sea cave
           - min: 94
             max: 94
-            result: Wet footprints and sea muck trace a path on the deck
+            text: Wet footprints and sea muck trace a path on the deck
           - min: 95
             max: 95
-            result: Spectral forms with hollow eyes drift just below the water's surface
+            text: Spectral forms with hollow eyes drift just below the water's surface
           - min: 96
             max: 96
-            result: A distant ship floats above the water
+            text: A distant ship floats above the water
           - min: 97
             max: 97
-            result: A lone figure strides across the water with an unnatural gait
+            text: A lone figure strides across the water with an unnatural gait
           - min: 98
             max: 98
-            result: An unmoving fog clings to a rocky islet, shrouding all but the peak of a barren hill
+            text: An unmoving fog clings to a rocky islet, shrouding all but the peak of a barren hill
           - min: 99
             max: 99
-            result: The sound of sobbing echoes across mist-shrouded seas
+            text: The sound of sobbing echoes across mist-shrouded seas
           - min: 100
             max: 100
-            result: The rising sun casts a baleful red glow
+            text: The rising sun casts a baleful red glow
       peril:
         _source: *Source
         name: Seafaring
         summary: Roll or choose on this table when you want inspiration for a trouble during ocean exploration or on a seagoing expedition.
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 3
-            result: Boarders strike without warning
+            text: Boarders strike without warning
           - min: 4
             max: 6
-            result: Crewmember goes missing
+            text: Crewmember goes missing
           - min: 7
             max: 9
-            result: Crewmember is found dead
+            text: Crewmember is found dead
           - min: 10
             max: 12
-            result: Crewmember is injured
+            text: Crewmember is injured
           - min: 13
             max: 15
-            result: Crewmembers argue or brawl
+            text: Crewmembers argue or brawl
           - min: 16
             max: 18
-            result: Crewmembers challenge your decisions or command
+            text: Crewmembers challenge your decisions or command
           - min: 19
             max: 21
-            result: Crewmembers grow bored or restless
+            text: Crewmembers grow bored or restless
           - min: 22
             max: 24
-            result: Crewmembers grow suspicious of each other
+            text: Crewmembers grow suspicious of each other
           - min: 25
             max: 27
-            result: Dangerous current or whirlpool takes hold
+            text: Dangerous current or whirlpool takes hold
           - min: 28
             max: 30
-            result: Enemies form a blockade
+            text: Enemies form a blockade
           - min: 31
             max: 33
-            result: Enemy ship is sighted
+            text: Enemy ship is sighted
           - min: 34
             max: 36
-            result: Hostile beast attacks
+            text: Hostile beast attacks
           - min: 37
             max: 39
-            result: Hull is fouled or leaking
+            text: Hull is fouled or leaking
           - min: 40
             max: 42
-            result: Ill omens cause anxiety
+            text: Ill omens cause anxiety
           - min: 43
             max: 45
-            result: Imperiled ship signals for help
+            text: Imperiled ship signals for help
           - min: 46
             max: 48
-            result: Isolation or fear presses in
+            text: Isolation or fear presses in
           - min: 49
             max: 51
-            result: Mysterious wreckage portends a new threat
+            text: Mysterious wreckage portends a new threat
           - min: 52
             max: 54
-            result: Provisions are spoiled or corrupted
+            text: Provisions are spoiled or corrupted
           - min: 55
             max: 57
-            result: Rigging or equipment is damaged or broken
+            text: Rigging or equipment is damaged or broken
           - min: 58
             max: 60
-            result: Rogue wave strikes
+            text: Rogue wave strikes
           - min: 61
             max: 63
-            result: Sabotage is revealed
+            text: Sabotage is revealed
           - min: 64
             max: 66
-            result: Shallow waters or obstructions imperil navigation
+            text: Shallow waters or obstructions imperil navigation
           - min: 67
             max: 69
-            result: Shipboard fire breaks out
+            text: Shipboard fire breaks out
           - min: 70
             max: 72
-            result: Sickness threatens the health of the crew
+            text: Sickness threatens the health of the crew
           - min: 73
             max: 75
-            result: Storm looms
+            text: Storm looms
           - min: 76
             max: 78
-            result: Stowaway is revealed
+            text: Stowaway is revealed
           - min: 79
             max: 81
-            result: True nature of a cargo, crewmember, or passenger is revealed
+            text: True nature of a cargo, crewmember, or passenger is revealed
           - min: 82
             max: 84
-            result: Valuable cargo or provisions go missing
+            text: Valuable cargo or provisions go missing
           - min: 85
             max: 87
-            result: Vermins infest spaces below decks
+            text: Vermins infest spaces below decks
           - min: 88
             max: 90
-            result: Weather changes for the worse
+            text: Weather changes for the worse
           - min: 91
             max: 93
-            result: Wind recedes, and the sails fall slack
+            text: Wind recedes, and the sails fall slack
           - min: 94
             max: 96
-            result: You are lost or off course
+            text: You are lost or off course
           - min: 97
             max: 99
             <<: &ActionTheme
-              result: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+              text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
@@ -982,80 +982,80 @@ oracles:
         _source: *Source
         name: Seafaring Opportunities
         summary: Roll or choose on this table when you want inspiration for a beneficial encounter or event on a seagoing journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint) and find an opportunity.
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 4
-            result: Cache of cargo or supplies
+            text: Cache of cargo or supplies
           - min: 5
             max: 8
-            result: Chance for a moment of inner peace
+            text: Chance for a moment of inner peace
           - min: 9
             max: 12
-            result: Clear passage through otherwise perilous seas
+            text: Clear passage through otherwise perilous seas
           - min: 13
             max: 16
-            result: Clue offers insight into a current quest or mystery
+            text: Clue offers insight into a current quest or mystery
           - min: 17
             max: 20
-            result: Clue to a foe's nature or vulnerabilities
+            text: Clue to a foe's nature or vulnerabilities
           - min: 21
             max: 24
-            result: Creatures show the way or offer inspiration
+            text: Creatures show the way or offer inspiration
           - min: 25
             max: 28
-            result: Crewmember offers insight or proposes a clever plan
+            text: Crewmember offers insight or proposes a clever plan
           - min: 29
             max: 32
-            result: Crewmember reveals a helpful skill or background
+            text: Crewmember reveals a helpful skill or background
           - min: 33
             max: 36
-            result: Crewmembers support or validate your leadership
+            text: Crewmembers support or validate your leadership
           - min: 37
             max: 40
-            result: Foe inadvertently reveals themselves or tips their hand
+            text: Foe inadvertently reveals themselves or tips their hand
           - min: 41
             max: 44
-            result: Fortuitous wind or current speeds your way
+            text: Fortuitous wind or current speeds your way
           - min: 45
             max: 48
-            result: Friendly community in sight
+            text: Friendly community in sight
           - min: 49
             max: 52
-            result: Friendly ship crosses your path
+            text: Friendly ship crosses your path
           - min: 53
             max: 56
-            result: Good omens offer encouragement
+            text: Good omens offer encouragement
           - min: 57
             max: 60
-            result: Ideal weather takes hold
+            text: Ideal weather takes hold
           - min: 61
             max: 64
-            result: Impressive vista offers comfort or inspiration
+            text: Impressive vista offers comfort or inspiration
           - min: 65
             max: 68
-            result: Lookout pinpoints a lurking foe
+            text: Lookout pinpoints a lurking foe
           - min: 69
             max: 72
-            result: Message or map with useful information
+            text: Message or map with useful information
           - min: 73
             max: 76
-            result: Occasion for celebration or remembrance with the crew
+            text: Occasion for celebration or remembrance with the crew
           - min: 77
             max: 80
-            result: Opening to escape or avoid foes
+            text: Opening to escape or avoid foes
           - min: 81
             max: 84
-            result: Plea for help from a potential benefactor
+            text: Plea for help from a potential benefactor
           - min: 85
             max: 88
-            result: Refuge offers a place to hide, plan, or recover
+            text: Refuge offers a place to hide, plan, or recover
           - min: 89
             max: 92
-            result: Ship and crew perform beyond expectations
+            text: Ship and crew perform beyond expectations
           - min: 93
             max: 96
-            result: Shipwreck or derelict ripe for the picking
+            text: Shipwreck or derelict ripe for the picking
           - min: 97
             max: 100
-            result: Source of fresh provisions
+            text: Source of fresh provisions

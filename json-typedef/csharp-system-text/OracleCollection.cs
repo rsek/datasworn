@@ -20,12 +20,14 @@ namespace Datasworn
 
             switch (tagValue)
             {
-                case "table_shared_details":
-                    return JsonSerializer.Deserialize<OracleCollectionTableSharedDetails>(ref readerCopy, options);
-                case "table_shared_results":
-                    return JsonSerializer.Deserialize<OracleCollectionTableSharedResults>(ref readerCopy, options);
                 case "table_shared_rolls":
                     return JsonSerializer.Deserialize<OracleCollectionTableSharedRolls>(ref readerCopy, options);
+                case "table_shared_text":
+                    return JsonSerializer.Deserialize<OracleCollectionTableSharedText>(ref readerCopy, options);
+                case "table_shared_text2":
+                    return JsonSerializer.Deserialize<OracleCollectionTableSharedText2>(ref readerCopy, options);
+                case "table_shared_text3":
+                    return JsonSerializer.Deserialize<OracleCollectionTableSharedText3>(ref readerCopy, options);
                 case "tables":
                     return JsonSerializer.Deserialize<OracleCollectionTables>(ref readerCopy, options);
                 default:

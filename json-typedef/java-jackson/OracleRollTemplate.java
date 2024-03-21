@@ -8,78 +8,76 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * Provides string templates that may be used in place of the static
- * row text from `OracleTableRow#result`, `OracleTableRow#detail`, and
- * `OracleTableRow#description`.
+ * row text from `OracleTableRow#text`, `OracleTableRow#text2`, and
+ * `OracleTableRow#text3`.
  * 
  *   These strings are formatted in Markdown, but use a special syntax for their
- * placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be
- * replaced with the value of a rolled (or selected) `OracleTableRow#result`
- * from the target oracle table ID.
+ * placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be
+ * replaced with the value of a rolled (or selected) `OracleTableRow#text` from
+ * the target oracle table ID.
  */
 @JsonSerialize
 public class OracleRollTemplate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("description")
-    private TemplateString description;
+    @JsonProperty("text")
+    private TemplateString text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("detail")
-    private TemplateString detail;
+    @JsonProperty("text2")
+    private TemplateString text2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("result")
-    private TemplateString result;
+    @JsonProperty("text3")
+    private TemplateString text3;
 
     public OracleRollTemplate() {
     }
 
     /**
-     * Getter for description.<p>
-     * A string template that may be used in place of
-     * OracleTableRow#description.
+     * Getter for text.<p>
+     * A string template that may be used in place of OracleTableRow#text.
      */
-    public TemplateString getDescription() {
-        return description;
+    public TemplateString getText() {
+        return text;
     }
 
     /**
-     * Setter for description.<p>
-     * A string template that may be used in place of
-     * OracleTableRow#description.
+     * Setter for text.<p>
+     * A string template that may be used in place of OracleTableRow#text.
      */
-    public void setDescription(TemplateString description) {
-        this.description = description;
+    public void setText(TemplateString text) {
+        this.text = text;
     }
 
     /**
-     * Getter for detail.<p>
-     * A string template that may be used in place of OracleTableRow#detail.
+     * Getter for text2.<p>
+     * A string template that may be used in place of OracleTableRow#text2.
      */
-    public TemplateString getDetail() {
-        return detail;
+    public TemplateString getText2() {
+        return text2;
     }
 
     /**
-     * Setter for detail.<p>
-     * A string template that may be used in place of OracleTableRow#detail.
+     * Setter for text2.<p>
+     * A string template that may be used in place of OracleTableRow#text2.
      */
-    public void setDetail(TemplateString detail) {
-        this.detail = detail;
+    public void setText2(TemplateString text2) {
+        this.text2 = text2;
     }
 
     /**
-     * Getter for result.<p>
-     * A string template that may be used in place of OracleTableRow#result.
+     * Getter for text3.<p>
+     * A string template that may be used in place of OracleTableRow#text3.
      */
-    public TemplateString getResult() {
-        return result;
+    public TemplateString getText3() {
+        return text3;
     }
 
     /**
-     * Setter for result.<p>
-     * A string template that may be used in place of OracleTableRow#result.
+     * Setter for text3.<p>
+     * A string template that may be used in place of OracleTableRow#text3.
      */
-    public void setResult(TemplateString result) {
-        this.result = result;
+    public void setText3(TemplateString text3) {
+        this.text3 = text3;
     }
 }

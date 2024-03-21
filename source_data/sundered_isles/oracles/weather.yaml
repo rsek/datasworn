@@ -14,23 +14,23 @@ oracles:
       conditions:
         _source: *Source
         name: Weather Conditions
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         summary: If you’d like to establish the time of day for an encounter or scene, roll a single oracle die. If even, it’s daytime; if odd, it’s night. Higher numbers are later in that period.
         contents:
           myriads:
             # source: *Source
             name: Myriads
             summary: Central Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 70
                 <<: &WeatherConditions.0
-                  result: Fair Weather
+                  text: Fair Weather
               - min: 71
                 max: 100
                 <<: &WeatherConditions.1
-                  result: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
+                  text: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
                   oracle_rolls:
                     - auto: false
                       number_of_rolls: 1
@@ -39,7 +39,7 @@ oracles:
             # source: *Source
             name: Margins
             summary: Outer Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 60
@@ -51,7 +51,7 @@ oracles:
             # source: *Source
             name: Reaches
             summary: Remote Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 50
@@ -65,64 +65,64 @@ oracles:
         name: Foul Weather
         column_labels:
           roll: Roll
-          result: Result
-          detail: Detail
-        oracle_type: table_details
+          text: Result
+          text2: Detail
+        oracle_type: table_text2
         tags:
           sundered_isles:
             cursed_by: sundered_isles/oracles/weather/cursed
         rows:
           - min: 1
             max: 10
-            result: Stifling
-            detail: Windless, oppressive heat
+            text: Stifling
+            text2: Windless, oppressive heat
           - min: 11
             max: 25
-            result: Listless
-            detail: Light winds and sweltering heat
+            text: Listless
+            text2: Light winds and sweltering heat
           - min: 26
             max: 40
-            result: Misty
-            detail: Light winds and damp fog
+            text: Misty
+            text2: Light winds and damp fog
           - min: 41
             max: 55
-            result: Foggy
-            detail: Light winds and dense fog
+            text: Foggy
+            text2: Light winds and dense fog
           - min: 56
             max: 75
-            result: Heavy
-            detail: High winds, steady rain, and rough waters
+            text: Heavy
+            text2: High winds, steady rain, and rough waters
           - min: 76
             max: 90
-            result: Stormy
-            detail: Powerful winds, pelting rain, and high seas
+            text: Stormy
+            text2: Powerful winds, pelting rain, and high seas
           - min: 91
             max: 100
-            result: Raging
-            detail: Destructive winds, torrential rain, and monstrous waves
+            text: Raging
+            text2: Destructive winds, torrential rain, and monstrous waves
       duration:
         _source: *Source
         name: Duration of Foul or Cursed Weather
         dice: 1d10
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 2
-            result: Fleeting (less than an hour)
+            text: Fleeting (less than an hour)
           - min: 3
             max: 9
-            result: Persistent (several hours)
+            text: Persistent (several hours)
           - min: 10
             max: 10
-            result: Relentless (more than a day)
+            text: Relentless (more than a day)
       cursed:
         _source: *Source
         name: Cursed Weather
-        oracle_type: table_details
+        oracle_type: table_text2
         column_labels:
           roll: Roll
-          result: Result
-          detail: Detail
+          text: Result
+          text2: Detail
         tags:
           sundered_isles:
             cursed_version_of:
@@ -130,81 +130,81 @@ oracles:
         rows:
           - min: 1
             max: 5
-            result: Ash storm
-            detail: Churning, low-level clouds of gray ash
+            text: Ash storm
+            text2: Churning, low-level clouds of gray ash
           - min: 6
             max: 10
-            result: Blighting muck
-            detail: Rain of corrosive, mucous-like ooze
+            text: Blighting muck
+            text2: Rain of corrosive, mucous-like ooze
           - min: 11
             max: 15
-            result: Blood rain
-            detail: Ghastly, crimson rain
+            text: Blood rain
+            text2: Ghastly, crimson rain
           - min: 16
             max: 20
-            result: Cinder rain
-            detail: Storm of fiery rock and ash
+            text: Cinder rain
+            text2: Storm of fiery rock and ash
           - min: 21
             max: 25
-            result: Creeping mist
-            detail: Slithering, grasping fog
+            text: Creeping mist
+            text2: Slithering, grasping fog
           - min: 26
             max: 30
-            result: Crimson mist
-            detail: Slow-moving fog that burns like acid
+            text: Crimson mist
+            text2: Slow-moving fog that burns like acid
           - min: 31
             max: 35
-            result: Dead calm
-            detail: Disquieting stillness
+            text: Dead calm
+            text2: Disquieting stillness
           - min: 36
             max: 40
-            result: Fisher's Feast
-            detail: Shower of fish
+            text: Fisher's Feast
+            text2: Shower of fish
           - min: 41
             max: 45
-            result: Forge's Fury
-            detail: Fast-moving storm of scorching heat
+            text: Forge's Fury
+            text2: Fast-moving storm of scorching heat
           - min: 46
             max: 50
-            result: Gloam tide
-            detail: Unnatural darkness that moves with the tide
+            text: Gloam tide
+            text2: Unnatural darkness that moves with the tide
           - min: 51
             max: 55
-            result: Ice fall
-            detail: Uncanny cold that leaves surfaces enveloped in thick ice
+            text: Ice fall
+            text2: Uncanny cold that leaves surfaces enveloped in thick ice
           - min: 56
             max: 60
-            result: Iron wind
-            detail: Strong wind that sends ships along an inevitable, fatebound course
+            text: Iron wind
+            text2: Strong wind that sends ships along an inevitable, fatebound course
           - min: 61
             max: 65
-            result: Knowing mist
-            detail: Fog that manifests visions of dark secrets and painful memories
+            text: Knowing mist
+            text2: Fog that manifests visions of dark secrets and painful memories
           - min: 66
             max: 70
-            result: Phantom mist
-            detail: Ghost-haunted fog
+            text: Phantom mist
+            text2: Ghost-haunted fog
           - min: 71
             max: 75
-            result: Rot wind
-            detail: Wind that carries the foul stench of death
+            text: Rot wind
+            text2: Wind that carries the foul stench of death
           - min: 76
             max: 80
-            result: Sand storm
-            detail: Clouds of pelting, stinging sand, ripped from a now-barren island
+            text: Sand storm
+            text2: Clouds of pelting, stinging sand, ripped from a now-barren island
           - min: 81
             max: 85
-            result: Seeking spouts
-            detail: Waterspouts and tornadoes that move with dreadful purpose
+            text: Seeking spouts
+            text2: Waterspouts and tornadoes that move with dreadful purpose
           - min: 86
             max: 90
-            result: Tempest
-            detail: Undying storm that prowls the isles in search of prey
+            text: Tempest
+            text2: Undying storm that prowls the isles in search of prey
           - min: 91
             max: 95
-            result: Wailing wind
-            detail: Wind that carries the mournful keen of the lost and the drowned
+            text: Wailing wind
+            text2: Wind that carries the mournful keen of the lost and the drowned
           - min: 96
             max: 100
-            result: Witch fire
-            detail: Low clouds suffused with tendrils of chaotic, mystic energy
+            text: Witch fire
+            text2: Low clouds suffused with tendrils of chaotic, mystic energy

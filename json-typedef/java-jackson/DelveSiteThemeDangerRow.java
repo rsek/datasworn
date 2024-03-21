@@ -21,8 +21,8 @@ public class DelveSiteThemeDangerRow {
     @JsonProperty("min")
     private Short min;
 
-    @JsonProperty("result")
-    private MarkdownString result;
+    @JsonProperty("text")
+    private MarkdownString text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_i18n")
@@ -100,19 +100,19 @@ public class DelveSiteThemeDangerRow {
     }
 
     /**
-     * Getter for result.<p>
+     * Getter for text.<p>
      * The primary text content of this row.
      */
-    public MarkdownString getResult() {
-        return result;
+    public MarkdownString getText() {
+        return text;
     }
 
     /**
-     * Setter for result.<p>
+     * Setter for text.<p>
      * The primary text content of this row.
      */
-    public void setResult(MarkdownString result) {
-        this.result = result;
+    public void setText(MarkdownString text) {
+        this.text = text;
     }
 
     /**

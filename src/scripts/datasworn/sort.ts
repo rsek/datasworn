@@ -15,6 +15,7 @@ const discriminatorKeys = [
 	'package_type',
 	'choice_type',
 	'oracle_type',
+	'value_type',
 	'using'
 ] as const
 
@@ -67,7 +68,13 @@ const shortDescriptionKeys = [
 	'drives',
 	'tactics'
 ]
-const longDescriptionKeys = ['description', 'text', 'your_character']
+const longDescriptionKeys = [
+	'text',
+	'text2',
+	'text3',
+	'description',
+	'your_character'
+]
 const longArrayKeys = ['denizens', 'enhance_moves', 'rows', 'table']
 
 const numericKeys = ['min', 'max', 'value', 'rank']

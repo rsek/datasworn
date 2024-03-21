@@ -17,26 +17,26 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 360
         rows:
           - min: 1
             max: 50
-            result: Planetside
+            text: Planetside
             icon: icon/oracles/location/planetside.svg
           - min: 51
             max: 75
-            result: Orbital
+            text: Orbital
             icon: icon/oracles/location/orbital.svg
           - min: 76
             max: 100
-            result: Deep Space
+            text: Deep Space
             icon: icon/oracles/location/deep_space.svg
       scale:
         name: Scale
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 360
@@ -47,22 +47,22 @@ oracles:
         rows:
           - min: 1
             max: 30
-            result: 'Minor, confined site'
+            text: 'Minor, confined site'
           - min: 31
             max: 65
-            result: Typical site of limited scope
+            text: Typical site of limited scope
           - min: 66
             max: 90
-            result: 'Large, elaborate site'
+            text: 'Large, elaborate site'
           - min: 91
             max: 99
-            result: Vast site of unfathomable complexity
+            text: Vast site of unfathomable complexity
           - min: 100
             max: 100
-            result: World-spanning site or megastructure
+            text: World-spanning site or megastructure
       form:
         name: Form
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 360
@@ -71,31 +71,31 @@ oracles:
         rows:
           - min: 1
             max: 35
-            result: Structure
+            text: Structure
             _i18n: &i18n.result.common_noun
               result:
                 part_of_speech: common_noun
           - min: 36
             max: 60
-            result: Vessel
+            text: Vessel
             _i18n: *i18n.result.common_noun
           - min: 61
             max: 80
-            result: Monument
+            text: Monument
             _i18n: *i18n.result.common_noun
           - min: 81
             max: 95
-            result: Machine
+            text: Machine
             _i18n: *i18n.result.common_noun
           - min: 96
             max: 100
-            result: Incomprehensible
+            text: Incomprehensible
             _i18n: &i18n.result.adjective
               result:
                 part_of_speech: adjective
       shape:
         name: Shape
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 361
@@ -104,75 +104,75 @@ oracles:
         rows:
           - min: 1
             max: 15
-            result: Practical or functional
+            text: Practical or functional
             _i18n: *i18n.result.adjective
           - min: 16
             max: 20
-            result: Geometric (complex shape)
+            text: Geometric (complex shape)
             _i18n: *i18n.result.adjective
           - min: 21
             max: 25
-            result: Geometric (cube)
+            text: Geometric (cube)
             _i18n: *i18n.result.adjective
           - min: 26
             max: 30
-            result: Geometric (obelisk)
+            text: Geometric (obelisk)
             _i18n: *i18n.result.adjective
           - min: 31
             max: 35
-            result: Geometric (pyramid)
+            text: Geometric (pyramid)
             _i18n: *i18n.result.adjective
           - min: 36
             max: 40
-            result: Geometric (ring or torus)
+            text: Geometric (ring or torus)
             _i18n: *i18n.result.adjective
           - min: 41
             max: 45
-            result: Geometric (sphere)
+            text: Geometric (sphere)
             _i18n: *i18n.result.adjective
           - min: 46
             max: 55
-            result: Organic or curved
+            text: Organic or curved
             _i18n: *i18n.result.adjective
           - min: 56
             max: 60
-            result: Platform or disc
+            text: Platform or disc
             _i18n: *i18n.result.common_noun
           - min: 61
             max: 65
-            result: Spires or towers
+            text: Spires or towers
             _i18n: *i18n.result.common_noun
           - min: 66
             max: 68
-            result: Domed
+            text: Domed
             _i18n: *i18n.result.adjective
           - min: 69
             max: 73
-            result: Spiky
+            text: Spiky
             _i18n: *i18n.result.adjective
           - min: 74
             max: 76
-            result: Sculptural or effigy
+            text: Sculptural or effigy
           - min: 77
             max: 79
-            result: Amorphous
+            text: Amorphous
             _i18n: *i18n.result.adjective
           - min: 80
             max: 85
-            result: Transforming
+            text: Transforming
             _i18n:
               result:
                 part_of_speech: gerund
           - min: 86
             max: 100
-            result: Roll twice
+            text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
 
       material:
         name: Material
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 361
@@ -181,51 +181,51 @@ oracles:
         rows:
           - min: 1
             max: 30
-            result: Metallic (industrial)
+            text: Metallic (industrial)
             _i18n: *i18n.result.adjective
           - min: 31
             max: 60
-            result: Metallic (smooth)
+            text: Metallic (smooth)
             _i18n: *i18n.result.adjective
           - min: 61
             max: 70
-            result: Rocky or stone-like
+            text: Rocky or stone-like
             _i18n: *i18n.result.adjective
           - min: 71
             max: 74
-            result: Crystalline or glass-like
+            text: Crystalline or glass-like
             _i18n: *i18n.result.adjective
           - min: 75
             max: 78
-            result: Bone-like
+            text: Bone-like
             _i18n: *i18n.result.adjective
           - min: 79
             max: 82
-            result: Flesh-like
+            text: Flesh-like
             _i18n: *i18n.result.adjective
           - min: 83
             max: 86
-            result: Plant-like
+            text: Plant-like
             _i18n: *i18n.result.adjective
           - min: 87
             max: 88
-            result: Energy
+            text: Energy
             _i18n: &i18n.result.adjunct_common_noun
               result:
                 part_of_speech: adjunct_common_noun
           - min: 89
             max: 90
-            result: Liquid
+            text: Liquid
             _i18n: *i18n.result.adjunct_common_noun
           - min: 91
             max: 100
-            result: Roll twice
+            text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
       outer_first_look:
         name: Outer First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 361
@@ -240,95 +240,95 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: Corrupting its environment # is
+            text: Corrupting its environment # is
           - min: 4
             max: 7
-            result: Automated defenses # has
+            text: Automated defenses # has
           - min: 8
             max: 10
-            result: Breached exterior # has
+            text: Breached exterior # has
           - min: 11
             max: 14
-            result: Broken or fragmented # is
+            text: Broken or fragmented # is
           - min: 15
             max: 17
-            result: Camouflaged or hidden # is
+            text: Camouflaged or hidden # is
           - min: 18
             max: 20
-            result: Cavernous opening # has
+            text: Cavernous opening # has
           - min: 21
             max: 23
-            result: Dispersed structures # has
+            text: Dispersed structures # has
           - min: 24
             max: 26
-            result: Dreadful premonitions # emits
+            text: Dreadful premonitions # emits
           - min: 27
             max: 30
-            result: Electromagnetic field # has? emits?
+            text: Electromagnetic field # has? emits?
           - min: 31
             max: 33
-            result: Embedded within terrain # is
+            text: Embedded within terrain # is
           - min: 34
             max: 36
-            result: Encased in an energy field # is
+            text: Encased in an energy field # is
           - min: 37
             max: 40
-            result: Energy core or conduit # has
+            text: Energy core or conduit # has
           - min: 41
             max: 43
-            result: Fractal patterns # has
+            text: Fractal patterns # has
           - min: 44
             max: 47
-            result: Glyphs or symbols # has
+            text: Glyphs or symbols # has
           - min: 48
             max: 51
-            result: Hazardous readings # emits? has?
+            text: Hazardous readings # emits? has?
           - min: 52
             max: 54
-            result: Levitating or in motion # is
+            text: Levitating or in motion # is
           - min: 55
             max: 58
-            result: Lighted or illuminated # is
+            text: Lighted or illuminated # is
           - min: 59
             max: 61
-            result: No obvious point of entry # has
+            text: No obvious point of entry # has
           - min: 62
             max: 64
-            result: Overgrown or entangled # is
+            text: Overgrown or entangled # is
           - min: 65
             max: 67
-            result: Perfectly preserved # is
+            text: Perfectly preserved # is
           - min: 68
             max: 70
-            result: Phasing in and out of reality # is
+            text: Phasing in and out of reality # is
           - min: 71
             max: 73
-            result: Physical barrier # has
+            text: Physical barrier # has
           - min: 74
             max: 76
-            result: Pitted or scarred # is
+            text: Pitted or scarred # is
           - min: 77
             max: 79
-            result: Scaled for outsized beings # is
+            text: Scaled for outsized beings # is
           - min: 80
             max: 82
-            result: Shrouded in mist or haze # is
+            text: Shrouded in mist or haze # is
           - min: 83
             max: 85
-            result: Signs of invaders # has? bearing?
+            text: Signs of invaders # has? bearing?
           - min: 86
             max: 89
-            result: Sound or signal # emits?
+            text: Sound or signal # emits?
           - min: 90
             max: 92
-            result: Strong gravity well # has
+            text: Strong gravity well # has
           - min: 93
             max: 95
-            result: Surrounded by destruction # is
+            text: Surrounded by destruction # is
           - min: 96
             max: 100
             <<: &DescriptorFocus
-              result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+              text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
               oracle_rolls:
                 - oracle: starforged/oracles/core/descriptor
                   auto: true
@@ -345,7 +345,7 @@ oracles:
         icon: icons/vaults/interior.svg
         contents:
           first_look:
-            oracle_type: table_simple
+            oracle_type: table_basic
             name: Inner First Look
             _source: *CollectionSource
             # usage:
@@ -360,102 +360,102 @@ oracles:
             rows:
               - min: 1
                 max: 3
-                result: Abnormal gravity
+                text: Abnormal gravity
               - min: 4
                 max: 6
-                result: Automated defenses
+                text: Automated defenses
               - min: 7
                 max: 9
-                result: Biological infestation
+                text: Biological infestation
               - min: 10
                 max: 12
-                result: Carried tech is disrupted
+                text: Carried tech is disrupted
               - min: 13
                 max: 15
-                result: Complex textures or patterns
+                text: Complex textures or patterns
               - min: 16
                 max: 18
-                result: Corpses of intruders
+                text: Corpses of intruders
               - min: 19
                 max: 21
-                result: Damage and debris
+                text: Damage and debris
               - min: 22
                 max: 24
-                result: Deteriorating spaces
+                text: Deteriorating spaces
               - min: 25
                 max: 27
-                result: Dissonant tones or music
+                text: Dissonant tones or music
               - min: 28
                 max: 30
-                result: Energy surges
+                text: Energy surges
               - min: 31
                 max: 33
-                result: Environment reacts to your presence
+                text: Environment reacts to your presence
               - min: 34
                 max: 36
-                result: Evidence of looting or scavenging
+                text: Evidence of looting or scavenging
               - min: 37
                 max: 39
-                result: Excessive cold
+                text: Excessive cold
               - min: 40
                 max: 42
-                result: Excessive heat
+                text: Excessive heat
               - min: 43
                 max: 45
-                result: Faint ambient lighting
+                text: Faint ambient lighting
               - min: 46
                 max: 48
-                result: Impenetrable darkness
+                text: Impenetrable darkness
               - min: 49
                 max: 51
-                result: Intense smell
+                text: Intense smell
               - min: 52
                 max: 54
-                result: Magnetic surfaces
+                text: Magnetic surfaces
               - min: 55
                 max: 57
-                result: Material does not match exterior
+                text: Material does not match exterior
               - min: 58
                 max: 60
-                result: Ornate markings or symbols
+                text: Ornate markings or symbols
               - min: 61
                 max: 63
-                result: Reactive lighting responds to your presence
+                text: Reactive lighting responds to your presence
               - min: 64
                 max: 66
-                result: Scale does not match exterior
+                text: Scale does not match exterior
               - min: 67
                 max: 69
-                result: Signs of invasive lifeforms
+                text: Signs of invasive lifeforms
               - min: 70
                 max: 72
-                result: Surfaces respond to touch
+                text: Surfaces respond to touch
               - min: 73
                 max: 75
-                result: Thick haze or smoke
+                text: Thick haze or smoke
               - min: 76
                 max: 78
-                result: Thick or fluid atmosphere
+                text: Thick or fluid atmosphere
               - min: 79
                 max: 81
-                result: Thrumming or droning sound
+                text: Thrumming or droning sound
               - min: 82
                 max: 84
-                result: Toxic atmosphere
+                text: Toxic atmosphere
               - min: 85
                 max: 87
-                result: Toxic residue
+                text: Toxic residue
               - min: 88
                 max: 90
-                result: Well-preserved
+                text: Well-preserved
               - min: 91
                 max: 93
-                result: Wet or humid
+                text: Wet or humid
               - min: 94
                 max: 100
                 <<: *DescriptorFocus
           feature:
-            oracle_type: table_simple
+            oracle_type: table_basic
             name: Interior Feature
             _source:
               <<: *Source
@@ -467,115 +467,115 @@ oracles:
             rows:
               - min: 1
                 max: 3
-                result: Ascending or descending path
+                text: Ascending or descending path
               - min: 4
                 max: 6
-                result: Biological growths
+                text: Biological growths
               - min: 7
                 max: 8
-                result: Blood trail
+                text: Blood trail
               - min: 9
                 max: 10
-                result: Breached or ruptured area
+                text: Breached or ruptured area
               - min: 11
                 max: 13
-                result: Broken or inactive machinery
+                text: Broken or inactive machinery
               - min: 14
                 max: 15
-                result: Clinging mist
+                text: Clinging mist
               - min: 16
                 max: 18
-                result: Damage or debris
+                text: Damage or debris
               - min: 19
                 max: 20
-                result: Echoing noises
+                text: Echoing noises
               - min: 21
                 max: 22
-                result: Elevated path over chasm or shaft
+                text: Elevated path over chasm or shaft
               - min: 23
                 max: 25
-                result: Energy discharges
+                text: Energy discharges
               - min: 26
                 max: 28
-                result: Enigmatic controls or terminal
+                text: Enigmatic controls or terminal
               - min: 29
                 max: 30
-                result: Garden or invasive plant life
+                text: Garden or invasive plant life
               - min: 31
                 max: 32
-                result: Inscrutable object lies dark and silent
+                text: Inscrutable object lies dark and silent
               - min: 33
                 max: 35
-                result: Intersection or hub
+                text: Intersection or hub
               - min: 36
                 max: 38
-                result: Intricate symbols or pictographs
+                text: Intricate symbols or pictographs
               - min: 39
                 max: 41
-                result: Looted or dismantled technology
+                text: Looted or dismantled technology
               - min: 42
                 max: 44
-                result: Looted or empty containers
+                text: Looted or empty containers
               - min: 45
                 max: 47
-                result: Mazelike passages
+                text: Mazelike passages
               - min: 48
                 max: 49
-                result: Moving platform or lift
+                text: Moving platform or lift
               - min: 50
                 max: 52
-                result: Mummified or decayed corpses
+                text: Mummified or decayed corpses
               - min: 53
                 max: 55
-                result: Narrowing or widening path
+                text: Narrowing or widening path
               - min: 56
                 max: 58
-                result: Pooled liquid
+                text: Pooled liquid
               - min: 59
                 max: 61
-                result: Remains of intruders
+                text: Remains of intruders
               - min: 62
                 max: 63
-                result: Scattered bones
+                text: Scattered bones
               - min: 64
                 max: 66
-                result: Scrawled markings
+                text: Scrawled markings
               - min: 67
                 max: 68
-                result: Signs of an attack or battle
+                text: Signs of an attack or battle
               - min: 69
                 max: 71
-                result: Signs of invasive creatures
+                text: Signs of invasive creatures
               - min: 72
                 max: 73
-                result: Surfaces honeycombed with openings
+                text: Surfaces honeycombed with openings
               - min: 74
                 max: 76
-                result: Unintelligible recorded message
+                text: Unintelligible recorded message
               - min: 77
                 max: 79
-                result: Unintelligible whispers
+                text: Unintelligible whispers
               - min: 80
                 max: 82
-                result: Vaulted chamber
+                text: Vaulted chamber
               - min: 83
                 max: 85
-                result: Vertical shaft
+                text: Vertical shaft
               - min: 86
                 max: 90
-                result: 'Transition into the [Sanctum](id:starforged/oracles/vaults/sanctum)'
+                text: 'Transition into the [Sanctum](id:starforged/oracles/vaults/sanctum)'
               - min: 91
                 max: 95
                 <<: *DescriptorFocus
               - min: 96
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
           peril:
             name: Interior Peril
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
               page: 367
@@ -588,65 +588,65 @@ oracles:
             rows:
               - min: 1
                 max: 5
-                result: Broken path
+                text: Broken path
               - min: 6
                 max: 10
-                result: Change in atmosphere or environment
+                text: Change in atmosphere or environment
               - min: 11
                 max: 15
-                result: Corrosive environment
+                text: Corrosive environment
               - min: 16
                 max: 20
-                result: Dire warning left by other explorers
+                text: Dire warning left by other explorers
               - min: 21
                 max: 25
-                result: Foes close in
+                text: Foes close in
               - min: 26
                 max: 30
-                result: Fragile structural integrity
+                text: Fragile structural integrity
               - min: 31
                 max: 35
-                result: Hazardous path designed for traversal by other beings
+                text: Hazardous path designed for traversal by other beings
               - min: 36
                 max: 40
-                result: Important gear malfunctions
+                text: Important gear malfunctions
               - min: 41
                 max: 45
-                result: Isolation or fear presses in
+                text: Isolation or fear presses in
               - min: 46
                 max: 50
-                result: Mechanical trap
+                text: Mechanical trap
               - min: 51
                 max: 55
-                result: Mist or darkness conceals dangers
+                text: Mist or darkness conceals dangers
               - min: 56
                 max: 60
-                result: Puzzling mystery blocks the way
+                text: Puzzling mystery blocks the way
               - min: 61
                 max: 65
-                result: Radioactive hot spot
+                text: Radioactive hot spot
               - min: 66
                 max: 70
-                result: Rivals seek what lay within
+                text: Rivals seek what lay within
               - min: 71
                 max: 75
-                result: Signs of a contagion
+                text: Signs of a contagion
               - min: 76
                 max: 80
-                result: Signs of a lurking foe
+                text: Signs of a lurking foe
               - min: 81
                 max: 85
-                result: Tempting location or object holds hidden dangers
+                text: Tempting location or object holds hidden dangers
               - min: 86
                 max: 90
-                result: Toxic atmosphere
+                text: Toxic atmosphere
               - min: 91
                 max: 95
-                result: Unnerving sound or sensation
+                text: Unnerving sound or sensation
               - min: 96
                 max: 99
                 <<: &ActionTheme
-                  result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+                  text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
                   oracle_rolls:
                     - oracle: starforged/oracles/core/action
                       auto: true
@@ -654,13 +654,13 @@ oracles:
                       auto: true
               - min: 100
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
           opportunity:
             name: Interior Opportunity
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
               page: 367
@@ -673,34 +673,34 @@ oracles:
             rows:
               - min: 1
                 max: 10
-                result: Clue points the way to your destination or target
+                text: Clue points the way to your destination or target
               - min: 11
                 max: 20
-                result: Clue to a lifeform's nature or vulnerabilities
+                text: Clue to a lifeform's nature or vulnerabilities
               - min: 21
                 max: 30
-                result: Helpful gear left by another explorer
+                text: Helpful gear left by another explorer
               - min: 31
                 max: 40
-                result: Insight into the nature or history of this site
+                text: Insight into the nature or history of this site
               - min: 41
                 max: 50
-                result: Intriguing device or artifact
+                text: Intriguing device or artifact
               - min: 51
                 max: 60
-                result: Opening to get the drop on a foe
+                text: Opening to get the drop on a foe
               - min: 61
                 max: 70
-                result: Opening to outmaneuver or escape a threat or foe
+                text: Opening to outmaneuver or escape a threat or foe
               - min: 71
                 max: 80
-                result: Salvageable resource
+                text: Salvageable resource
               - min: 81
                 max: 90
-                result: Secure area offers a moment of peace
+                text: Secure area offers a moment of peace
               - min: 91
                 max: 100
-                result: Shortcut or less perilous path speeds your way
+                text: Shortcut or less perilous path speeds your way
       sanctum:
         name: Sanctum
         oracle_type: tables
@@ -714,7 +714,7 @@ oracles:
             _source:
               <<: *Source
               page: 365
-            oracle_type: table_simple
+            oracle_type: table_basic
             name: Vault Purpose
             # content:
             #   part_of_speech: [fragment]
@@ -723,91 +723,91 @@ oracles:
             rows:
               - min: 1
                 max: 3
-                result: Capture or control of other beings
+                text: Capture or control of other beings
               - min: 4
                 max: 6
-                result: Command or communication relay
+                text: Command or communication relay
               - min: 7
                 max: 9
-                result: Commemoration of an event
+                text: Commemoration of an event
               - min: 10
                 max: 12
-                result: Conduit to mystical powers
+                text: Conduit to mystical powers
               - min: 13
                 max: 16
-                result: Conservation of living specimens
+                text: Conservation of living specimens
               - min: 17
                 max: 20
-                result: Containment of a powerful being
+                text: Containment of a powerful being
               - min: 21
                 max: 24
-                result: Containment of dangerous creatures
+                text: Containment of dangerous creatures
               - min: 25
                 max: 27
-                result: Containment of weapons
+                text: Containment of weapons
               - min: 28
                 max: 31
-                result: Control of a destructive weapon
+                text: Control of a destructive weapon
               - min: 32
                 max: 34
-                result: Generation of defenses or barriers
+                text: Generation of defenses or barriers
               - min: 35
                 max: 38
-                result: Generation or transformation of energy
+                text: Generation or transformation of energy
               - min: 39
                 max: 41
-                result: Harvesting of resources
+                text: Harvesting of resources
               - min: 42
                 max: 44
-                result: Interment of the dead
+                text: Interment of the dead
               - min: 45
                 max: 47
-                result: Manipulation of spacetime
+                text: Manipulation of spacetime
               - min: 48
                 max: 50
-                result: Manufacturing of lifeforms
+                text: Manufacturing of lifeforms
               - min: 51
                 max: 53
-                result: Manufacturing of machines or devices
+                text: Manufacturing of machines or devices
               - min: 54
                 max: 56
-                result: Passage to another location
+                text: Passage to another location
               - min: 57
                 max: 59
-                result: Preservation of an ancient intelligence
+                text: Preservation of an ancient intelligence
               - min: 60
                 max: 62
-                result: Preservation of maps or navigational data
+                text: Preservation of maps or navigational data
               - min: 63
                 max: 66
-                result: Protection of a sacred artifact
+                text: Protection of a sacred artifact
               - min: 67
                 max: 69
-                result: Researching science or technology
+                text: Researching science or technology
               - min: 70
                 max: 73
-                result: Safekeeping of cultural records or memories
+                text: Safekeeping of cultural records or memories
               - min: 74
                 max: 77
-                result: Shelter for inhabitants
+                text: Shelter for inhabitants
               - min: 78
                 max: 80
-                result: Stockpiling of resources
+                text: Stockpiling of resources
               - min: 81
                 max: 83
-                result: Surveying or monitoring of a location
+                text: Surveying or monitoring of a location
               - min: 84
                 max: 87
-                result: Transformation of terrain or environments
+                text: Transformation of terrain or environments
               - min: 88
                 max: 90
-                result: Worship of a god or being
+                text: Worship of a god or being
               - min: 91
                 max: 95
                 <<: *ActionTheme
               - min: 96
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
@@ -816,7 +816,7 @@ oracles:
               <<: *Source
               page: 368
             name: Sanctum Feature
-            oracle_type: table_simple
+            oracle_type: table_basic
             # usage:
             #   repeatable: true
             # content:
@@ -824,109 +824,109 @@ oracles:
             rows:
               - min: 1
                 max: 2
-                result: Abyssal pit or chasm
+                text: Abyssal pit or chasm
               - min: 3
                 max: 5
-                result: Altered gravity
+                text: Altered gravity
               - min: 6
                 max: 7
-                result: Area filled with strange liquid
+                text: Area filled with strange liquid
               - min: 8
                 max: 10
-                result: Area humming with aberrant energy
+                text: Area humming with aberrant energy
               - min: 11
                 max: 13
-                result: Blasted or wrecked area
+                text: Blasted or wrecked area
               - min: 14
                 max: 16
-                result: Central chamber of immense proportions or grandeur
+                text: Central chamber of immense proportions or grandeur
               - min: 17
                 max: 19
-                result: Colossal machine
+                text: Colossal machine
               - min: 20
                 max: 21
-                result: Corrupted plant life
+                text: Corrupted plant life
               - min: 22
                 max: 24
-                result: Enigmatic mechanisms come to life
+                text: Enigmatic mechanisms come to life
               - min: 25
                 max: 26
-                result: Haze of spores or nanomachines
+                text: Haze of spores or nanomachines
               - min: 27
                 max: 28
-                result: Incomprehensible architecture or geometry
+                text: Incomprehensible architecture or geometry
               - min: 29
                 max: 31
-                result: Incongruent space contradicts the nature of this site
+                text: Incongruent space contradicts the nature of this site
               - min: 32
                 max: 34
-                result: Inscrutable object emits sound and energy
+                text: Inscrutable object emits sound and energy
               - min: 35
                 max: 37
-                result: Machinery fused with organic growths
+                text: Machinery fused with organic growths
               - min: 38
                 max: 40
-                result: Moving chamber or passage
+                text: Moving chamber or passage
               - min: 41
                 max: 43
-                result: Mutated remains of the dead
+                text: Mutated remains of the dead
               - min: 44
                 max: 46
-                result: Nest of invasive creatures
+                text: Nest of invasive creatures
               - min: 47
                 max: 49
-                result: Pockets or layers of altered atmosphere
+                text: Pockets or layers of altered atmosphere
               - min: 50
                 max: 51
-                result: Pods or chambers with preserved corpses
+                text: Pods or chambers with preserved corpses
               - min: 52
                 max: 54
-                result: Pools of strange liquid
+                text: Pools of strange liquid
               - min: 55
                 max: 57
-                result: Pulsating surfaces
+                text: Pulsating surfaces
               - min: 58
                 max: 60
-                result: Rampant biological infestation
+                text: Rampant biological infestation
               - min: 61
                 max: 63
-                result: Repository of biological specimens
+                text: Repository of biological specimens
               - min: 64
                 max: 66
-                result: Sealed chamber
+                text: Sealed chamber
               - min: 67
                 max: 69
-                result: Sealed containers of inscrutable purpose
+                text: Sealed containers of inscrutable purpose
               - min: 70
                 max: 72
-                result: Simulated or illusionary environment
+                text: Simulated or illusionary environment
               - min: 73
                 max: 74
-                result: Surfaces covered in slime or fungus
+                text: Surfaces covered in slime or fungus
               - min: 75
                 max: 76
-                result: Temporal distortions
+                text: Temporal distortions
               - min: 77
                 max: 79
-                result: Transforming spaces
+                text: Transforming spaces
               - min: 80
                 max: 82
-                result: Visions of this place in another time
+                text: Visions of this place in another time
               - min: 83
                 max: 85
-                result: Visions or reflections of another reality
+                text: Visions or reflections of another reality
               - min: 86
                 max: 88
-                result: Warped or misshapen spaces
+                text: Warped or misshapen spaces
               - min: 89
                 max: 90
-                result: Whispering voices speak to you
+                text: Whispering voices speak to you
               - min: 91
                 max: 95
                 <<: *DescriptorFocus
               - min: 96
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
@@ -935,7 +935,7 @@ oracles:
               <<: *Source
               page: 369
             name: Sanctum Peril
-            oracle_type: table_simple
+            oracle_type: table_basic
             # usage:
             #   repeatable: true
             # content:
@@ -944,67 +944,67 @@ oracles:
             rows:
               - min: 1
                 max: 5
-                result: Camouflaged or transforming foe reveals itself
+                text: Camouflaged or transforming foe reveals itself
               - min: 6
                 max: 10
-                result: Confounding distortions of the timestream
+                text: Confounding distortions of the timestream
               - min: 11
                 max: 15
-                result: Destructive environmental disturbance
+                text: Destructive environmental disturbance
               - min: 16
                 max: 20
-                result: Horrifying fate for a previous intruder
+                text: Horrifying fate for a previous intruder
               - min: 21
                 max: 25
-                result: Important equipment rendered useless
+                text: Important equipment rendered useless
               - min: 26
                 max: 30
-                result: Led astray or lured into danger by a manifestation or illusion
+                text: Led astray or lured into danger by a manifestation or illusion
               - min: 31
                 max: 35
-                result: Lost the way or separated from others
+                text: Lost the way or separated from others
               - min: 36
                 max: 40
-                result: Manifestations prey upon your weaknesses or worries
+                text: Manifestations prey upon your weaknesses or worries
               - min: 41
                 max: 45
-                result: Other intruders have been corrupted or mutated by this place
+                text: Other intruders have been corrupted or mutated by this place
               - min: 46
                 max: 50
-                result: Paranoia or suspicion takes hold
+                text: Paranoia or suspicion takes hold
               - min: 51
                 max: 55
-                result: Path behind you is sealed
+                text: Path behind you is sealed
               - min: 56
                 max: 60
-                result: Powerful foe strikes without warning
+                text: Powerful foe strikes without warning
               - min: 61
                 max: 65
-                result: Restless dead awaken
+                text: Restless dead awaken
               - min: 66
                 max: 70
-                result: Scene of hideous violence or death
+                text: Scene of hideous violence or death
               - min: 71
                 max: 75
-                result: Snared in an unnatural trap
+                text: Snared in an unnatural trap
               - min: 76
                 max: 80
-                result: Spawning or swarming foes surround you
+                text: Spawning or swarming foes surround you
               - min: 81
                 max: 85
-                result: Sudden structural collapse or failure
+                text: Sudden structural collapse or failure
               - min: 86
                 max: 90
-                result: Temptations to linger or remain in this site
+                text: Temptations to linger or remain in this site
               - min: 91
                 max: 95
-                result: You are marked by physical corruption or mutation
+                text: You are marked by physical corruption or mutation
               - min: 96
                 max: 99
                 <<: *ActionTheme
               - min: 100
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
@@ -1018,35 +1018,35 @@ oracles:
             # content:
             #   part_of_speech: [fragment]
             #   tags: [opportunity]
-            oracle_type: table_simple
+            oracle_type: table_basic
             rows:
               - min: 1
                 max: 10
-                result: Access to a secret or protected area
+                text: Access to a secret or protected area
               - min: 11
                 max: 20
-                result: Clue points the way to your destination or target
+                text: Clue points the way to your destination or target
               - min: 21
                 max: 30
-                result: Comforting illusion or vision
+                text: Comforting illusion or vision
               - min: 31
                 max: 40
-                result: Control or terminal adjusts to accept your input
+                text: Control or terminal adjusts to accept your input
               - min: 41
                 max: 50
-                result: Deeper insight into the history or nature of this site
+                text: Deeper insight into the history or nature of this site
               - min: 51
                 max: 60
-                result: Device or artifact reveals its purpose
+                text: Device or artifact reveals its purpose
               - min: 61
                 max: 70
-                result: Environment adjusts to better suit you
+                text: Environment adjusts to better suit you
               - min: 71
                 max: 80
-                result: Foes stand down or give way
+                text: Foes stand down or give way
               - min: 81
                 max: 90
-                result: Key offers control of a function or aspect of this site
+                text: Key offers control of a function or aspect of this site
               - min: 91
                 max: 100
-                result: Shortcut or less perilous path speeds your way
+                text: Shortcut or less perilous path speeds your way

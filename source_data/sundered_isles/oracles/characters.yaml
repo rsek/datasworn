@@ -16,305 +16,305 @@ oracles:
     contents:
       first_look:
         name: First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 2
-            result: Accented
+            text: Accented
           - min: 3
             max: 5
-            result: Aged
+            text: Aged
           - min: 6
             max: 8
-            result: Alluring
+            text: Alluring
           - min: 9
             max: 11
-            result: Attractive
+            text: Attractive
           - min: 12
             max: 14
-            result: Brutish
+            text: Brutish
           - min: 15
             max: 17
-            result: Commanding
+            text: Commanding
           - min: 18
             max: 20
-            result: Concealed
+            text: Concealed
           - min: 21
             max: 22
-            result: Distinguished
+            text: Distinguished
           - min: 23
             max: 25
-            result: Distressed
+            text: Distressed
           - min: 26
             max: 28
-            result: Drunk
+            text: Drunk
           - min: 29
             max: 30
-            result: Encumbered
+            text: Encumbered
           - min: 31
             max: 32
-            result: Fearsome
+            text: Fearsome
           - min: 33
             max: 34
-            result: Fit
+            text: Fit
           - min: 35
             max: 37
-            result: Flashy
+            text: Flashy
           - min: 38
             max: 39
-            result: Furtive
+            text: Furtive
           - min: 40
             max: 41
-            result: Graceful
+            text: Graceful
           - min: 42
             max: 43
-            result: Grim
+            text: Grim
           - min: 44
             max: 45
-            result: Guarded
+            text: Guarded
           - min: 46
             max: 47
-            result: Haggard
+            text: Haggard
           - min: 48
             max: 49
-            result: Ill-equipped
+            text: Ill-equipped
           - min: 50
             max: 52
-            result: Imposing
+            text: Imposing
           - min: 53
             max: 55
-            result: Mysterious
+            text: Mysterious
           - min: 56
             max: 57
-            result: Mystical
+            text: Mystical
           - min: 58
             max: 59
-            result: Poised
+            text: Poised
           - min: 60
             max: 61
-            result: Purposeful
+            text: Purposeful
           - min: 62
             max: 63
-            result: Pursued
+            text: Pursued
           - min: 64
             max: 66
-            result: Scarred
+            text: Scarred
           - min: 67
             max: 68
-            result: Sickly
+            text: Sickly
           - min: 69
             max: 70
-            result: Slight
+            text: Slight
           - min: 71
             max: 72
-            result: Stout
+            text: Stout
           - min: 73
             max: 74
-            result: Swaggering
+            text: Swaggering
           - min: 75
             max: 77
-            result: Tattooed
+            text: Tattooed
           - min: 78
             max: 80
-            result: Theatrical
+            text: Theatrical
           - min: 81
             max: 83
-            result: Threatened
+            text: Threatened
           - min: 84
             max: 85
-            result: Unassuming
+            text: Unassuming
           - min: 86
             max: 88
-            result: Uniformed
+            text: Uniformed
           - min: 89
             max: 91
-            result: Visibly disabled
+            text: Visibly disabled
           - min: 92
             max: 94
-            result: Well-armed
+            text: Well-armed
           - min: 95
             max: 97
-            result: Wounded
+            text: Wounded
           - min: 98
             max: 100
-            result: Youthful
+            text: Youthful
       cursed_first_look:
         name: Cursed First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 10
-            result: Abyssal
+            text: Abyssal
           - min: 11
             max: 15
-            result: Aflame
+            text: Aflame
           - min: 16
             max: 20
-            result: Beastly
+            text: Beastly
           - min: 21
             max: 30
-            result: Decaying
+            text: Decaying
           - min: 31
             max: 45
-            result: Eerie
+            text: Eerie
           - min: 46
             max: 55
-            result: Ghostly
+            text: Ghostly
           - min: 56
             max: 65
-            result: Grotesque
+            text: Grotesque
           - min: 66
             max: 75
-            result: Mechanical
+            text: Mechanical
           - min: 76
             max: 80
-            result: Shadowy
+            text: Shadowy
           - min: 81
             max: 85
-            result: Sinister
+            text: Sinister
           - min: 86
             max: 95
-            result: Sorcerous
+            text: Sorcerous
           - min: 96
             max: 100
-            result: Transforming
+            text: Transforming
       initial_disposition:
         name: Initial Dispostion
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 10
-            result: Helpful
+            text: Helpful
           - min: 11
             max: 15
-            result: Friendly
+            text: Friendly
           - min: 16
             max: 20
-            result: Persuadable
+            text: Persuadable
           - min: 21
             max: 30
-            result: Curious
+            text: Curious
           - min: 31
             max: 45
-            result: Indifferent
+            text: Indifferent
           - min: 46
             max: 55
-            result: Suspicious
+            text: Suspicious
           - min: 56
             max: 65
-            result: Wanting
+            text: Wanting
           - min: 66
             max: 75
-            result: Desperate
+            text: Desperate
           - min: 76
             max: 80
-            result: Demanding
+            text: Demanding
           - min: 81
             max: 85
-            result: Unfriendly
+            text: Unfriendly
           - min: 86
             max: 95
-            result: Threatening
+            text: Threatening
           - min: 96
             max: 100
-            result: Hostile
+            text: Hostile
       identity:
         name: Identity
         summary: You may envision a character’s role, occupation, or persona using the broad categories below. For more detail, check the related subtable.
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 5
-            result: '[Academic](id:sundered_isles/oracles/characters/roles/academic)'
+            text: '[Academic](id:sundered_isles/oracles/characters/roles/academic)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/academic
           - min: 6
             max: 10
-            result: '[Agent](id:sundered_isles/oracles/characters/roles/agent)'
+            text: '[Agent](id:sundered_isles/oracles/characters/roles/agent)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/agent
           - min: 11
             max: 15
-            result: '[Caregiver](id:sundered_isles/oracles/characters/roles/caregiver)'
+            text: '[Caregiver](id:sundered_isles/oracles/characters/roles/caregiver)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/caregiver
           - min: 16
             max: 20
-            result: '[Combatant](id:sundered_isles/oracles/characters/roles/combatant)'
+            text: '[Combatant](id:sundered_isles/oracles/characters/roles/combatant)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/combatant
           - min: 21
             max: 25
-            result: '[Devotant](id:sundered_isles/oracles/characters/roles/devotant)'
+            text: '[Devotant](id:sundered_isles/oracles/characters/roles/devotant)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/devotant
           - min: 26
             max: 30
-            result: '[Laborer](id:sundered_isles/oracles/characters/roles/laborer)'
+            text: '[Laborer](id:sundered_isles/oracles/characters/roles/laborer)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/laborer
           - min: 31
             max: 35
-            result: '[Merchant](id:sundered_isles/oracles/characters/roles/merchant)'
+            text: '[Merchant](id:sundered_isles/oracles/characters/roles/merchant)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/merchant
           - min: 36
             max: 40
-            result: '[Mystic](id:sundered_isles/oracles/characters/roles/mystic)'
+            text: '[Mystic](id:sundered_isles/oracles/characters/roles/mystic)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/mystic
           - min: 41
             max: 45
-            result: '[Outcast](id:sundered_isles/oracles/characters/roles/outcast)'
+            text: '[Outcast](id:sundered_isles/oracles/characters/roles/outcast)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/outcast
           - min: 46
             max: 50
-            result: '[Outlander](id:sundered_isles/oracles/characters/roles/outlander)'
+            text: '[Outlander](id:sundered_isles/oracles/characters/roles/outlander)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/outlander
           - min: 51
             max: 55
-            result: '[Outlaw](id:sundered_isles/oracles/characters/roles/outlaw)'
+            text: '[Outlaw](id:sundered_isles/oracles/characters/roles/outlaw)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/outlaw
           - min: 56
             max: 60
-            result: '[Performer](id:sundered_isles/oracles/characters/roles/performer)'
+            text: '[Performer](id:sundered_isles/oracles/characters/roles/performer)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/performer
           - min: 61
             max: 65
-            result: '[Sailor](id:sundered_isles/oracles/characters/roles/sailor)'
+            text: '[Sailor](id:sundered_isles/oracles/characters/roles/sailor)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/sailor
           - min: 66
             max: 70
-            result: '[Scavenger](id:sundered_isles/oracles/characters/roles/scavenger)'
+            text: '[Scavenger](id:sundered_isles/oracles/characters/roles/scavenger)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/scavenger
           - min: 71
             max: 75
-            result: '[Statesperson](id:sundered_isles/oracles/characters/roles/statesperson)'
+            text: '[Statesperson](id:sundered_isles/oracles/characters/roles/statesperson)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/statesperson
           - min: 76
             max: 80
-            result: '[Tradesperson](id:sundered_isles/oracles/characters/roles/tradesperson)'
+            text: '[Tradesperson](id:sundered_isles/oracles/characters/roles/tradesperson)'
             oracle_rolls:
               - oracle: sundered_isles/oracles/characters/roles/tradesperson
           - min: 81
             max: 90
             <<: &ActionTheme
-              result: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+              text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
@@ -323,7 +323,7 @@ oracles:
           - min: 91
             max: 100
             <<: &RollTwice
-              result: Roll twice
+              text: Roll twice
               oracle_rolls:
                 - auto: true
                   number_of_rolls: 2
@@ -331,159 +331,159 @@ oracles:
         name: Trademark Accessories
         _source:
           <<: *Source
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
             - min: 1
               max: 2
-              result: Animal claw necklace
+              text: Animal claw necklace
             - min: 3
               max: 4
-              result: Array of colorful sashes
+              text: Array of colorful sashes
             - min: 5
               max: 6
-              result: Baldric with a buckle of a monstrous face
+              text: Baldric with a buckle of a monstrous face
             - min: 7
               max: 8
-              result: Bandolier stocked with vials and flasks
+              text: Bandolier stocked with vials and flasks
             - min: 9
               max: 10
-              result: Battle-scarred breastplate
+              text: Battle-scarred breastplate
             - min: 11
               max: 12
-              result: Bloodied tunic
+              text: Bloodied tunic
             - min: 13
               max: 14
-              result: Braids strung with colorful beads
+              text: Braids strung with colorful beads
             - min: 15
               max: 16
-              result: Buckled corset
+              text: Buckled corset
             - min: 17
               max: 18
-              result: Collection of keys hung from an iron ring
+              text: Collection of keys hung from an iron ring
             - min: 19
               max: 20
-              result: Colorful skirt or kilt
+              text: Colorful skirt or kilt
             - min: 21
               max: 22
-              result: Cracked spectacles or goggles
+              text: Cracked spectacles or goggles
             - min: 23
               max: 24
-              result: Dark hooded cloak
+              text: Dark hooded cloak
             - min: 25
               max: 26
-              result: Dramatic cape
+              text: Dramatic cape
             - min: 27
               max: 28
-              result: Ear pendant with a glimmering gem
+              text: Ear pendant with a glimmering gem
             - min: 29
               max: 30
-              result: Elaborate masquerade mask
+              text: Elaborate masquerade mask
             - min: 31
               max: 32
-              result: Enormous shark tooth pendant
+              text: Enormous shark tooth pendant
             - min: 33
               max: 34
-              result: Face-concealing veil or bandana
+              text: Face-concealing veil or bandana
             - min: 35
               max: 36
-              result: False eye carved from a gemstone
+              text: False eye carved from a gemstone
             - min: 37
               max: 38
-              result: Fancy wig
+              text: Fancy wig
             - min: 39
               max: 40
-              result: Flamboyant feathered hat
+              text: Flamboyant feathered hat
             - min: 41
               max: 42
-              result: Frayed straw hat
+              text: Frayed straw hat
             - min: 43
               max: 44
-              result: Grand signet ring
+              text: Grand signet ring
             - min: 45
               max: 46
-              result: Heirloom fiddle with brass gilding
+              text: Heirloom fiddle with brass gilding
             - min: 47
               max: 48
-              result: Hook hand
+              text: Hook hand
             - min: 49
               max: 50
-              result: Immaculate frilled shirt
+              text: Immaculate frilled shirt
             - min: 51
               max: 52
-              result: Inscrutable iron mask
+              text: Inscrutable iron mask
             - min: 53
               max: 54
-              result: Intricate mechanical prosthetic
+              text: Intricate mechanical prosthetic
             - min: 55
               max: 56
-              result: Jewel-encrusted pendant
+              text: Jewel-encrusted pendant
             - min: 57
               max: 58
-              result: Jeweled eye patch
+              text: Jeweled eye patch
             - min: 59
               max: 60
-              result: Knee-high leather boots
+              text: Knee-high leather boots
             - min: 61
               max: 62
-              result: Large tattoo of a legendary beast
+              text: Large tattoo of a legendary beast
             - min: 63
               max: 64
-              result: Leather long coat
+              text: Leather long coat
             - min: 65
               max: 66
-              result: Length of coiled rope
+              text: Length of coiled rope
             - min: 67
               max: 68
-              result: Loyal animal companion
+              text: Loyal animal companion
             - min: 69
               max: 70
-              result: Metal teeth
+              text: Metal teeth
             - min: 71
               max: 72
-              result: Old wounds patched with metal
+              text: Old wounds patched with metal
             - min: 73
               max: 74
-              result: Ornately carved wooden pegleg
+              text: Ornately carved wooden pegleg
             - min: 75
               max: 76
-              result: Ostentatious cane
+              text: Ostentatious cane
             - min: 77
               max: 78
-              result: Out of tune squeeze box
+              text: Out of tune squeeze box
             - min: 79
               max: 80
-              result: Oversized spyglass
+              text: Oversized spyglass
             - min: 81
               max: 82
-              result: Rakish, wide-brimmed hat
+              text: Rakish, wide-brimmed hat
             - min: 83
               max: 84
-              result: Rows of military medals
+              text: Rows of military medals
             - min: 85
               max: 86
-              result: Satchel of tools
+              text: Satchel of tools
             - min: 87
               max: 88
-              result: Sharkhide cuirass
+              text: Sharkhide cuirass
             - min: 89
               max: 90
-              result: Shoulder-slung map case
+              text: Shoulder-slung map case
             - min: 91
               max: 92
-              result: Skull-like mask
+              text: Skull-like mask
             - min: 93
               max: 94
-              result: Tailcoat with gold trim and epaulets
+              text: Tailcoat with gold trim and epaulets
             - min: 95
               max: 96
-              result: Tricorn hat with holes from near misses
+              text: Tricorn hat with holes from near misses
             - min: 97
               max: 98
-              result: Wooden religious medallion
+              text: Wooden religious medallion
             - min: 99
               max: 100
               <<: &DescriptorFocus
-                result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+                text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
                 oracle_rolls:
                   - auto: true
                     oracle: sundered_isles/oracles/core/descriptor
@@ -493,125 +493,125 @@ oracles:
         name: Trademark Weapons
         _source:
           <<: *Source
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 3
-            result: Barbed gaff hook
+            text: Barbed gaff hook
           - min: 4
             max: 6
-            result: Battle-worn boarding axe
+            text: Battle-worn boarding axe
           - min: 7
             max: 9
-            result: Bloodied belaying pin
+            text: Bloodied belaying pin
           - min: 10
             max: 12
-            result: Brace of pearl-handled pistols
+            text: Brace of pearl-handled pistols
           - min: 13
             max: 15
-            result: Brace of throwing knives
+            text: Brace of throwing knives
           - min: 16
             max: 17
-            result: Brass knuckle dusters
+            text: Brass knuckle dusters
           - min: 18
             max: 19
-            result: Broad-bladed machete
+            text: Broad-bladed machete
           - min: 20
             max: 22
-            result: Cannon ball flail
+            text: Cannon ball flail
           - min: 23
             max: 25
-            result: Cavalry sabre
+            text: Cavalry sabre
           - min: 26
             max: 27
-            result: Collapsible boarding pike
+            text: Collapsible boarding pike
           - min: 28
             max: 30
-            result: Double-barreled pistol
+            text: Double-barreled pistol
           - min: 31
             max: 33
-            result: Fancy rapier with silver-etched hilt
+            text: Fancy rapier with silver-etched hilt
           - min: 34
             max: 35
-            result: Gilded heirloom crossbow
+            text: Gilded heirloom crossbow
           - min: 36
             max: 37
-            result: Grappling hook and frayed rope
+            text: Grappling hook and frayed rope
           - min: 38
             max: 39
-            result: Handheld swivel cannon
+            text: Handheld swivel cannon
           - min: 40
             max: 42
-            result: Harpoon notched with victory marks
+            text: Harpoon notched with victory marks
           - min: 43
             max: 44
-            result: Hunting knife with antler handle
+            text: Hunting knife with antler handle
           - min: 45
             max: 47
-            result: Iron-shod staff
+            text: Iron-shod staff
           - min: 48
             max: 50
-            result: Large bore blunderbuss
+            text: Large bore blunderbuss
           - min: 51
             max: 52
-            result: Leather whip
+            text: Leather whip
           - min: 53
             max: 55
-            result: Military cutlass
+            text: Military cutlass
           - min: 56
             max: 58
-            result: Musket with keen-edged bayonet
+            text: Musket with keen-edged bayonet
           - min: 59
             max: 61
-            result: Pair of hooked swords
+            text: Pair of hooked swords
           - min: 62
             max: 63
-            result: Pair of matching hatchets
+            text: Pair of matching hatchets
           - min: 64
             max: 65
-            result: Paired rapier and dirk
+            text: Paired rapier and dirk
           - min: 66
             max: 68
-            result: Poisoned dagger with obsidian handle
+            text: Poisoned dagger with obsidian handle
           - min: 69
             max: 70
-            result: Rusted iron chain
+            text: Rusted iron chain
           - min: 71
             max: 72
-            result: Scrimshaw handle dirk
+            text: Scrimshaw handle dirk
           - min: 73
             max: 75
-            result: Serrated, blade-breaking sword
+            text: Serrated, blade-breaking sword
           - min: 76
             max: 78
-            result: Shark tooth club
+            text: Shark tooth club
           - min: 79
             max: 81
-            result: Shipwright's hammer
+            text: Shipwright's hammer
           - min: 82
             max: 84
-            result: Shrapnel-filled iron grenades
+            text: Shrapnel-filled iron grenades
           - min: 85
             max: 86
-            result: Spring-loaded gauntlet blade
+            text: Spring-loaded gauntlet blade
           - min: 87
             max: 89
-            result: Sword cane
+            text: Sword cane
           - min: 90
             max: 92
-            result: Toxic stinkpot grenades
+            text: Toxic stinkpot grenades
           - min: 93
             max: 95
-            result: Whale bone club
+            text: Whale bone club
           - min: 96
             max: 97
-            result: Wooden bow
+            text: Wooden bow
           - min: 98
             max: 100
             <<: *RollTwice
       cursed_weapon_detail:
         name: Cursed Weapon Detail
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         # TODO: curse metadata should note whether it *combines* or *replaces*
@@ -619,635 +619,635 @@ oracles:
         rows:
           - min: 1
             max: 5
-            result: Adorned with bone or skull motifs
+            text: Adorned with bone or skull motifs
           - min: 6
             max: 15
-            result: Bound to a vengeful spirit
+            text: Bound to a vengeful spirit
           - min: 16
             max: 20
-            result: Burning with intense flame
+            text: Burning with intense flame
           - min: 21
             max: 25
-            result: Charged with sorcerous energy
+            text: Charged with sorcerous energy
           - min: 26
             max: 30
-            result: Consumes the souls of its victims
+            text: Consumes the souls of its victims
           - min: 31
             max: 35
-            result: Dripping with foul ichor
+            text: Dripping with foul ichor
           - min: 36
             max: 40
-            result: Enveloped in icy frost
+            text: Enveloped in icy frost
           - min: 41
             max: 45
-            result: Etched with sinister glyphs
+            text: Etched with sinister glyphs
           - min: 46
             max: 50
-            result: Feeding upon the lifeforce of its wielder
+            text: Feeding upon the lifeforce of its wielder
           - min: 51
             max: 55
-            result: Inflicts festering wounds
+            text: Inflicts festering wounds
           - min: 56
             max: 60
-            result: Oozing with corrosive venom
+            text: Oozing with corrosive venom
           - min: 61
             max: 65
-            result: Powered by strange mechanisms
+            text: Powered by strange mechanisms
           - min: 66
             max: 70
-            result: Radiating a sickly light
+            text: Radiating a sickly light
           - min: 71
             max: 75
-            result: Summoned out of thin air
+            text: Summoned out of thin air
           - min: 76
             max: 80
-            result: Tarnished with unnatural decay
+            text: Tarnished with unnatural decay
           - min: 81
             max: 85
-            result: Transforms its wielder
+            text: Transforms its wielder
           - min: 86
             max: 95
-            result: Whispering irresistible commands
+            text: Whispering irresistible commands
           - min: 96
             max: 100
-            result: Wreathed in smoke and ash
+            text: Wreathed in smoke and ash
       revealed_aspects:
         name: Revealed Aspects
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         rows:
           - min: 1
             max: 1
-            result: Adventurous
+            text: Adventurous
           - min: 2
             max: 2
-            result: Afflicted
+            text: Afflicted
           - min: 3
             max: 3
-            result: Aggressive
+            text: Aggressive
           - min: 4
             max: 4
-            result: Ambitious
+            text: Ambitious
           - min: 5
             max: 5
-            result: Anxious
+            text: Anxious
           - min: 6
             max: 6
-            result: Apathetic
+            text: Apathetic
           - min: 7
             max: 7
-            result: Artistic
+            text: Artistic
           - min: 8
             max: 8
-            result: Bitter
+            text: Bitter
           - min: 9
             max: 9
-            result: Black-hearted
+            text: Black-hearted
           - min: 10
             max: 10
-            result: Boastful
+            text: Boastful
           - min: 11
             max: 11
-            result: Boisterous
+            text: Boisterous
           - min: 12
             max: 12
-            result: Bold
+            text: Bold
           - min: 13
             max: 13
-            result: Brave
+            text: Brave
           - min: 14
             max: 14
-            result: Cautious
+            text: Cautious
           - min: 15
             max: 15
-            result: Charismatic
+            text: Charismatic
           - min: 16
             max: 16
-            result: Compassionate
+            text: Compassionate
           - min: 17
             max: 17
-            result: Conceited
+            text: Conceited
           - min: 18
             max: 18
-            result: Confident
+            text: Confident
           - min: 19
             max: 19
-            result: Connected
+            text: Connected
           - min: 20
             max: 20
-            result: Cowardly
+            text: Cowardly
           - min: 21
             max: 21
-            result: Criminal
+            text: Criminal
           - min: 22
             max: 22
-            result: Critical
+            text: Critical
           - min: 23
             max: 23
-            result: Cunning
+            text: Cunning
           - min: 24
             max: 24
-            result: Curious
+            text: Curious
           - min: 25
             max: 25
-            result: Dangerous
+            text: Dangerous
           - min: 26
             max: 26
-            result: Deceitful
+            text: Deceitful
           - min: 27
             max: 27
-            result: Defiant
+            text: Defiant
           - min: 28
             max: 28
-            result: Determined
+            text: Determined
           - min: 29
             max: 29
-            result: Disabled
+            text: Disabled
           - min: 30
             max: 30
-            result: Disguised
+            text: Disguised
           - min: 31
             max: 31
-            result: Driven
+            text: Driven
           - min: 32
             max: 32
-            result: Dying
+            text: Dying
           - min: 33
             max: 33
-            result: Envious
+            text: Envious
           - min: 34
             max: 34
-            result: Experienced
+            text: Experienced
           - min: 35
             max: 35
-            result: Faithful
+            text: Faithful
           - min: 36
             max: 36
-            result: Faithless
+            text: Faithless
           - min: 37
             max: 37
-            result: Flirtatious
+            text: Flirtatious
           - min: 38
             max: 38
-            result: Generous
+            text: Generous
           - min: 39
             max: 39
-            result: Gifted
+            text: Gifted
           - min: 40
             max: 40
-            result: Greedy
+            text: Greedy
           - min: 41
             max: 41
-            result: Grief-stricken
+            text: Grief-stricken
           - min: 42
             max: 42
-            result: Hardhearted
+            text: Hardhearted
           - min: 43
             max: 43
-            result: Heartbroken
+            text: Heartbroken
           - min: 44
             max: 44
-            result: Honorable
+            text: Honorable
           - min: 45
             max: 45
-            result: Hot-tempered
+            text: Hot-tempered
           - min: 46
             max: 46
-            result: Hunted
+            text: Hunted
           - min: 47
             max: 47
-            result: Impulsive
+            text: Impulsive
           - min: 48
             max: 48
-            result: Incompetent
+            text: Incompetent
           - min: 49
             max: 49
-            result: Indebted
+            text: Indebted
           - min: 50
             max: 50
-            result: Independent
+            text: Independent
           - min: 51
             max: 51
-            result: Indulgent
+            text: Indulgent
           - min: 52
             max: 52
-            result: Infamous
+            text: Infamous
           - min: 53
             max: 53
-            result: Influential
+            text: Influential
           - min: 54
             max: 54
-            result: Insensitive
+            text: Insensitive
           - min: 55
             max: 55
-            result: Insightful
+            text: Insightful
           - min: 56
             max: 56
-            result: Intelligent
+            text: Intelligent
           - min: 57
             max: 57
-            result: Intolerant
+            text: Intolerant
           - min: 58
             max: 58
-            result: Ironsworn
+            text: Ironsworn
           - min: 59
             max: 59
-            result: Kind
+            text: Kind
           - min: 60
             max: 60
-            result: Lonely
+            text: Lonely
           - min: 61
             max: 61
-            result: Loving
+            text: Loving
           - min: 62
             max: 62
-            result: Loyal
+            text: Loyal
           - min: 63
             max: 63
-            result: Manipulative
+            text: Manipulative
           - min: 64
             max: 64
-            result: Misled
+            text: Misled
           - min: 65
             max: 65
-            result: Oblivious
+            text: Oblivious
           - min: 66
             max: 66
-            result: Obsessed
+            text: Obsessed
           - min: 67
             max: 67
-            result: Oppressed
+            text: Oppressed
           - min: 68
             max: 68
-            result: Powerful
+            text: Powerful
           - min: 69
             max: 69
-            result: Proud
+            text: Proud
           - min: 70
             max: 70
-            result: Quiet
+            text: Quiet
           - min: 71
             max: 71
-            result: Quirky
+            text: Quirky
           - min: 72
             max: 72
-            result: Rebellious
+            text: Rebellious
           - min: 73
             max: 73
-            result: Reclusive
+            text: Reclusive
           - min: 74
             max: 74
-            result: Relaxed
+            text: Relaxed
           - min: 75
             max: 75
-            result: Remorseful
+            text: Remorseful
           - min: 76
             max: 76
-            result: Resourceful
+            text: Resourceful
           - min: 77
             max: 77
-            result: Ruthless
+            text: Ruthless
           - min: 78
             max: 78
-            result: Secretive
+            text: Secretive
           - min: 79
             max: 79
-            result: Selfish
+            text: Selfish
           - min: 80
             max: 80
-            result: Sociable
+            text: Sociable
           - min: 81
             max: 81
-            result: Stealthy
+            text: Stealthy
           - min: 82
             max: 82
-            result: Stern
+            text: Stern
           - min: 83
             max: 83
-            result: Stingy
+            text: Stingy
           - min: 84
             max: 84
-            result: Stoic
+            text: Stoic
           - min: 85
             max: 85
-            result: Strong
+            text: Strong
           - min: 86
             max: 86
-            result: Stubborn
+            text: Stubborn
           - min: 87
             max: 87
-            result: Successful
+            text: Successful
           - min: 88
             max: 88
-            result: Superstitious
+            text: Superstitious
           - min: 89
             max: 89
-            result: Suspicious
+            text: Suspicious
           - min: 90
             max: 90
-            result: Talented
+            text: Talented
           - min: 91
             max: 91
-            result: Tough
+            text: Tough
           - min: 92
             max: 92
-            result: Traitorous
+            text: Traitorous
           - min: 93
             max: 93
-            result: Vengeful
+            text: Vengeful
           - min: 94
             max: 94
-            result: Villainous
+            text: Villainous
           - min: 95
             max: 95
-            result: Violent
+            text: Violent
           - min: 96
             max: 96
-            result: Wary
+            text: Wary
           - min: 97
             max: 97
-            result: Weak
+            text: Weak
           - min: 98
             max: 98
-            result: Weary
+            text: Weary
           - min: 99
             max: 99
-            result: Wild
+            text: Wild
           - min: 100
             max: 100
-            result: Wise
+            text: Wise
       cursed_aspects:
         name: Cursed Aspects
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 5
-            result: Bewitched
+            text: Bewitched
           - min: 6
             max: 10
-            result: Corrupted
+            text: Corrupted
           - min: 11
             max: 15
-            result: Deep-dwelling
+            text: Deep-dwelling
           - min: 16
             max: 25
-            result: Doomed
+            text: Doomed
           - min: 26
             max: 30
-            result: Eldritch
+            text: Eldritch
           - min: 31
             max: 40
-            result: Haunted
+            text: Haunted
           - min: 41
             max: 45
-            result: Illusory
+            text: Illusory
           - min: 46
             max: 50
-            result: Inhuman
+            text: Inhuman
           - min: 51
             max: 55
-            result: Jinxed
+            text: Jinxed
           - min: 56
             max: 60
-            result: Lycanthropic
+            text: Lycanthropic
           - min: 61
             max: 65
-            result: Possessed
+            text: Possessed
           - min: 66
             max: 70
-            result: Resurrected
+            text: Resurrected
           - min: 71
             max: 80
-            result: Sorcerous
+            text: Sorcerous
           - min: 81
             max: 90
-            result: Tormented
+            text: Tormented
           - min: 91
             max: 95
-            result: Undying
+            text: Undying
           - min: 96
             max: 100
-            result: Vampiric
+            text: Vampiric
       goal:
         name: Goal
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 2
-            result: Acquire knowledge or learning
+            text: Acquire knowledge or learning
           - min: 3
             max: 4
-            result: Acquire territory or dominion
+            text: Acquire territory or dominion
           - min: 5
             max: 6
-            result: Amass wealth
+            text: Amass wealth
           - min: 7
             max: 8
-            result: Avenge a betrayal
+            text: Avenge a betrayal
           - min: 9
             max: 10
-            result: Avenge a death
+            text: Avenge a death
           - min: 11
             max: 12
-            result: Claim a lost or stolen treasure
+            text: Claim a lost or stolen treasure
           - min: 13
             max: 14
-            result: Claim a ship or command
+            text: Claim a ship or command
           - min: 15
             max: 16
-            result: Collect a debt
+            text: Collect a debt
           - min: 17
             max: 18
-            result: Complete a work of artistry or craft
+            text: Complete a work of artistry or craft
           - min: 19
             max: 20
-            result: Conceal a true identity
+            text: Conceal a true identity
           - min: 21
             max: 22
-            result: Cure a sickness
+            text: Cure a sickness
           - min: 23
             max: 24
-            result: Defeat a rival
+            text: Defeat a rival
           - min: 25
             max: 26
-            result: Defeat or undermine a faction
+            text: Defeat or undermine a faction
           - min: 27
             max: 28
-            result: Dismantle an unjust power
+            text: Dismantle an unjust power
           - min: 29
             max: 30
-            result: Escape a captor or oppressor
+            text: Escape a captor or oppressor
           - min: 31
             max: 32
-            result: Escape or prevent a looming calamity
+            text: Escape or prevent a looming calamity
           - min: 33
             max: 34
-            result: Explore far and wide
+            text: Explore far and wide
           - min: 35
             max: 36
-            result: Find a lost or hidden treasure
+            text: Find a lost or hidden treasure
           - min: 37
             max: 38
-            result: Find or build a home
+            text: Find or build a home
           - min: 39
             max: 40
-            result: Find or rescue a person
+            text: Find or rescue a person
           - min: 41
             max: 42
-            result: Follow the tenets of a faith
+            text: Follow the tenets of a faith
           - min: 43
             max: 44
-            result: Forge an alliance
+            text: Forge an alliance
           - min: 45
             max: 46
-            result: Gain glory or fame
+            text: Gain glory or fame
           - min: 47
             max: 48
-            result: Gain power within a faction
+            text: Gain power within a faction
           - min: 49
             max: 50
-            result: Incite conflict between factions
+            text: Incite conflict between factions
           - min: 51
             max: 52
-            result: Infiltrate a faction
+            text: Infiltrate a faction
           - min: 53
             max: 54
-            result: Master a skill or trade
+            text: Master a skill or trade
           - min: 55
             max: 56
-            result: Preserve the legacy of a forebear
+            text: Preserve the legacy of a forebear
           - min: 57
             max: 58
-            result: Prevent conflict between factions
+            text: Prevent conflict between factions
           - min: 59
             max: 60
-            result: Protect a secret
+            text: Protect a secret
           - min: 61
             max: 62
-            result: Protect a threatened location
+            text: Protect a threatened location
           - min: 63
             max: 64
-            result: Protect or support a family or community
+            text: Protect or support a family or community
           - min: 65
             max: 66
-            result: Protect or support a person
+            text: Protect or support a person
           - min: 67
             max: 68
-            result: Recover a stolen object
+            text: Recover a stolen object
           - min: 69
             max: 70
-            result: Refute a falsehood
+            text: Refute a falsehood
           - min: 71
             max: 72
-            result: Repay a debt
+            text: Repay a debt
           - min: 73
             max: 74
-            result: Resist laws or authority
+            text: Resist laws or authority
           - min: 75
             max: 76
-            result: Search out the truth of a legend
+            text: Search out the truth of a legend
           - min: 77
             max: 78
-            result: Seek redemption for past wrongs
+            text: Seek redemption for past wrongs
           - min: 79
             max: 80
-            result: Seek the favor of a person
+            text: Seek the favor of a person
           - min: 81
             max: 82
-            result: Serve the will of a leader
+            text: Serve the will of a leader
           - min: 83
             max: 84
-            result: Settle a dispute or rivalry
+            text: Settle a dispute or rivalry
           - min: 85
             max: 86
-            result: Slay a creature
+            text: Slay a creature
           - min: 87
             max: 88
-            result: Solve a mysterious murder
+            text: Solve a mysterious murder
           - min: 89
             max: 90
-            result: Steal a valuable object
+            text: Steal a valuable object
           - min: 91
             max: 92
-            result: Travel to a location
+            text: Travel to a location
           - min: 93
             max: 94
-            result: Uphold or enforce laws
+            text: Uphold or enforce laws
           - min: 95
             max: 100
             <<: *ActionTheme
       cursed_goal:
         name: Cursed Goal
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 6
-            result: Avert a harrowing prophecy or vision
+            text: Avert a harrowing prophecy or vision
           - min: 7
             max: 12
-            result: Awaken an ancient evil
+            text: Awaken an ancient evil
           - min: 13
             max: 18
-            result: Banish a restless spirit
+            text: Banish a restless spirit
           - min: 19
             max: 24
-            result: Bring about an unspeakable prophecy
+            text: Bring about an unspeakable prophecy
           - min: 25
             max: 28
-            result: Control a monstrous beast
+            text: Control a monstrous beast
           - min: 29
             max: 32
-            result: Destroy an object of terrifying power
+            text: Destroy an object of terrifying power
           - min: 33
             max: 38
-            result: Escape or undo a curse
+            text: Escape or undo a curse
           - min: 39
             max: 42
-            result: Find the truth of a nightmarish legend
+            text: Find the truth of a nightmarish legend
           - min: 43
             max: 46
-            result: Gather components of a baleful ritual
+            text: Gather components of a baleful ritual
           - min: 47
             max: 50
-            result: Gather supplicants for a dreadful faith
+            text: Gather supplicants for a dreadful faith
           - min: 51
             max: 56
-            result: Infiltrate a forsaken location
+            text: Infiltrate a forsaken location
           - min: 57
             max: 62
-            result: Inflict a curse or corruption upon others
+            text: Inflict a curse or corruption upon others
           - min: 63
             max: 66
-            result: Resist the call of a malevolent power
+            text: Resist the call of a malevolent power
           - min: 67
             max: 72
-            result: Restore own humanity or mortality
+            text: Restore own humanity or mortality
           - min: 73
             max: 76
-            result: Return a lost loved one to life
+            text: Return a lost loved one to life
           - min: 77
             max: 80
-            result: Serve a black-hearted overlord
+            text: Serve a black-hearted overlord
           - min: 81
             max: 86
-            result: Slay a monstrous beast
+            text: Slay a monstrous beast
           - min: 87
             max: 90
-            result: Unlock the secret of immortality
+            text: Unlock the secret of immortality
           - min: 91
             max: 94
-            result: Wield an object of terrifying power
+            text: Wield an object of terrifying power
           - min: 95
             max: 100
-            result: Wreak bloody vengeance
+            text: Wreak bloody vengeance
       # name:
       #   name: Character Name
       #   _source:
@@ -1263,414 +1263,414 @@ oracles:
         contents:
           academic:
             name: Academic
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Archaeologist
+                text: Archaeologist
               - min: 21
                 max: 40
-                result: Cartographer
+                text: Cartographer
               - min: 41
                 max: 60
-                result: Historian
+                text: Historian
               - min: 61
                 max: 80
-                result: Naturalist
+                text: Naturalist
               - min: 81
                 max: 100
-                result: Philosopher
+                text: Philosopher
           agent:
             name: Agent
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Assassin
+                text: Assassin
               - min: 21
                 max: 40
-                result: Bounty Hunter / Pirate hunter
+                text: Bounty Hunter / Pirate hunter
               - min: 41
                 max: 60
-                result: Courier
+                text: Courier
               - min: 61
                 max: 80
-                result: Investigator
+                text: Investigator
               - min: 81
                 max: 100
-                result: Spy
+                text: Spy
 
           caregiver:
             name: Caregiver
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Apothecary
+                text: Apothecary
               - min: 21
                 max: 40
-                result: Herbalist
+                text: Herbalist
               - min: 41
                 max: 60
-                result: Surgeon
+                text: Surgeon
               - min: 61
                 max: 80
-                result: Midwife
+                text: Midwife
               - min: 81
                 max: 100
-                result: Physician
+                text: Physician
           combatant:
             name: Combatant
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Duelist
+                text: Duelist
               - min: 21
                 max: 40
-                result: Guard / Militia
+                text: Guard / Militia
               - min: 41
                 max: 60
-                result: Mercenary
+                text: Mercenary
               - min: 61
                 max: 80
-                result: Soldier
+                text: Soldier
               - min: 81
                 max: 100
-                result: Vigilante
+                text: Vigilante
 
           devotant:
             name: Devotant
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Clergy
+                text: Clergy
               - min: 21
                 max: 40
-                result: Cultist
+                text: Cultist
               - min: 41
                 max: 60
-                result: Inquisitor
+                text: Inquisitor
               - min: 61
                 max: 80
-                result: Monk
+                text: Monk
               - min: 81
                 max: 100
-                result: Pilgrim
+                text: Pilgrim
           laborer:
             name: Laborer
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Bricklayer
+                text: Bricklayer
               - min: 21
                 max: 40
-                result: Farmer
+                text: Farmer
               - min: 41
                 max: 60
-                result: Lumberer
+                text: Lumberer
               - min: 61
                 max: 80
-                result: Miner
+                text: Miner
               - min: 81
                 max: 100
-                result: Servant
+                text: Servant
           merchant:
             name: Merchant
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Barkeep
+                text: Barkeep
               - min: 21
                 max: 40
-                result: Fence
+                text: Fence
               - min: 41
                 max: 60
-                result: Moneylender
+                text: Moneylender
               - min: 61
                 max: 80
-                result: Shopkeeper
+                text: Shopkeeper
               - min: 81
                 max: 100
-                result: Traveling merchant
+                text: Traveling merchant
           mystic:
             name: Mystic
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Alchemist
+                text: Alchemist
               - min: 21
                 max: 40
-                result: Elementalist
+                text: Elementalist
               - min: 41
                 max: 60
-                result: Necromancer
+                text: Necromancer
               - min: 61
                 max: 80
-                result: Seer
+                text: Seer
               - min: 81
                 max: 100
-                result: Sorcerer / Shaman
+                text: Sorcerer / Shaman
           outcast:
             name: Outcast
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 10
-                result: Apostate
+                text: Apostate
               - min: 11
                 max: 20
-                result: Castaway
+                text: Castaway
               - min: 21
                 max: 30
-                result: Deserter / Mutineer
+                text: Deserter / Mutineer
               - min: 31
                 max: 40
-                result: Exile
+                text: Exile
               - min: 41
                 max: 50
-                result: Fugitive
+                text: Fugitive
               - min: 51
                 max: 60
-                result: Hermit
+                text: Hermit
               - min: 61
                 max: 70
-                result: Orphan
+                text: Orphan
               - min: 71
                 max: 80
-                result: Refugee
+                text: Refugee
               - min: 81
                 max: 90
-                result: Urchin
+                text: Urchin
               - min: 91
                 max: 100
-                result: Vagabond
+                text: Vagabond
           outlander:
             name: Outlander
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Beast Hunter
+                text: Beast Hunter
               - min: 21
                 max: 40
-                result: Explorer
+                text: Explorer
               - min: 41
                 max: 60
-                result: Fisher / Hunter / Trapper
+                text: Fisher / Hunter / Trapper
               - min: 61
                 max: 80
-                result: Navigator / Guide
+                text: Navigator / Guide
               - min: 81
                 max: 100
-                result: Scout
+                text: Scout
           performer:
             name: Performer
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Acrobat
+                text: Acrobat
               - min: 21
                 max: 40
-                result: Actor
+                text: Actor
               - min: 41
                 max: 60
-                result: Dancer
+                text: Dancer
               - min: 61
                 max: 80
-                result: Musician
+                text: Musician
               - min: 81
                 max: 100
-                result: Singer
+                text: Singer
           sailor:
             name: Sailor
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 10
-                result: Bosun
+                text: Bosun
               - min: 11
                 max: 20
-                result: Captain
+                text: Captain
               - min: 21
                 max: 30
-                result: Carpenter
+                text: Carpenter
               - min: 31
                 max: 40
-                result: Cook
+                text: Cook
               - min: 41
                 max: 50
-                result: Deckhand
+                text: Deckhand
               - min: 51
                 max: 60
-                result: First Mate
+                text: First Mate
               - min: 61
                 max: 70
-                result: Gunner
+                text: Gunner
               - min: 71
                 max: 80
-                result: Marine
+                text: Marine
               - min: 81
                 max: 90
-                result: Master-at-arms
+                text: Master-at-arms
               - min: 91
                 max: 100
-                result: Quartermaster
+                text: Quartermaster
           scavenger:
             name: Scavenger
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 20
-                result: Beachcomber
+                text: Beachcomber
               - min: 21
                 max: 40
-                result: Grave Robber
+                text: Grave Robber
               - min: 41
                 max: 60
-                result: Relic hunter
+                text: Relic hunter
               - min: 61
                 max: 80
-                result: Shipbreaker
+                text: Shipbreaker
               - min: 81
                 max: 100
-                result: Wreck diver
+                text: Wreck diver
           outlaw:
             name: Outlaw
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 10
-                result: Burglar / Thief
+                text: Burglar / Thief
               - min: 11
                 max: 20
-                result: Charlatan
+                text: Charlatan
               - min: 21
                 max: 30
-                result: Crime boss
+                text: Crime boss
               - min: 31
                 max: 40
-                result: Forger
+                text: Forger
               - min: 41
                 max: 50
-                result: Gambler
+                text: Gambler
               - min: 51
                 max: 60
-                result: Insurgent
+                text: Insurgent
               - min: 61
                 max: 70
-                result: Pirate
+                text: Pirate
               - min: 71
                 max: 80
-                result: Raider
+                text: Raider
               - min: 81
                 max: 90
-                result: Ruffian
+                text: Ruffian
               - min: 91
                 max: 100
-                result: Smuggler
+                text: Smuggler
           statesperson:
             name: Statesperson
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 10
-                result: Aristocrat
+                text: Aristocrat
               - min: 11
                 max: 20
-                result: Bureaucrat
+                text: Bureaucrat
               - min: 21
                 max: 30
-                result: Commander
+                text: Commander
               - min: 31
                 max: 40
-                result: Courtesan
+                text: Courtesan
               - min: 41
                 max: 50
-                result: Courtier
+                text: Courtier
               - min: 51
                 max: 60
-                result: Diplomat
+                text: Diplomat
               - min: 61
                 max: 70
-                result: Interpreter
+                text: Interpreter
               - min: 71
                 max: 80
-                result: Lawkeeper
+                text: Lawkeeper
               - min: 81
                 max: 90
-                result: Politician
+                text: Politician
               - min: 91
                 max: 100
-                result: Tax collector
+                text: Tax collector
           tradesperson:
             name: Tradesperson
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 10
-                result: Baker
+                text: Baker
               - min: 11
                 max: 20
-                result: Brewer / Winemaker
+                text: Brewer / Winemaker
               - min: 21
                 max: 30
-                result: Butcher
+                text: Butcher
               - min: 31
                 max: 40
-                result: Mason
+                text: Mason
               - min: 41
                 max: 50
-                result: Metal worker
+                text: Metal worker
               - min: 51
                 max: 60
-                result: Shipwright / boatwright
+                text: Shipwright / boatwright
               - min: 61
                 max: 70
-                result: Tattooist
+                text: Tattooist
               - min: 71
                 max: 80
-                result: Tinker / Engineer
+                text: Tinker / Engineer
               - min: 81
                 max: 90
-                result: Undertaker
+                text: Undertaker
               - min: 91
                 max: 100
-                result: Woodworker
+                text: Woodworker

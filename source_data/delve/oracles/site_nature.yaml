@@ -21,76 +21,76 @@ oracles:
       theme:
         name: Theme
         canonical_name: 'Site Nature: Theme'
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 212
         rows:
           - min: 1
             max: 11
-            result: '[Ancient](id:delve/site_themes/ancient)'
+            text: '[Ancient](id:delve/site_themes/ancient)'
           - min: 12
             max: 23
-            result: '[Corrupted](id:delve/site_themes/corrupted)'
+            text: '[Corrupted](id:delve/site_themes/corrupted)'
           - min: 24
             max: 35
-            result: '[Fortified](id:delve/site_themes/fortified)'
+            text: '[Fortified](id:delve/site_themes/fortified)'
           - min: 36
             max: 48
-            result: '[Hallowed](id:delve/site_themes/hallowed)'
+            text: '[Hallowed](id:delve/site_themes/hallowed)'
           - min: 49
             max: 61
-            result: '[Haunted](id:delve/site_themes/haunted)'
+            text: '[Haunted](id:delve/site_themes/haunted)'
           - min: 62
             max: 74
-            result: '[Infested](id:delve/site_themes/infested)'
+            text: '[Infested](id:delve/site_themes/infested)'
           - min: 75
             max: 87
-            result: '[Ravaged](id:delve/site_themes/ravaged)'
+            text: '[Ravaged](id:delve/site_themes/ravaged)'
           - min: 88
             max: 100
-            result: '[Wild](id:delve/site_themes/wild)'
+            text: '[Wild](id:delve/site_themes/wild)'
       domain:
         name: Domain
         canonical_name: 'Site Nature: Domain'
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 212
         rows:
           - min: 1
             max: 6
-            result: '[Barrow](id:delve/site_domains/barrow)'
+            text: '[Barrow](id:delve/site_domains/barrow)'
           - min: 7
             max: 18
-            result: '[Cavern](id:delve/site_domains/cavern)'
+            text: '[Cavern](id:delve/site_domains/cavern)'
           - min: 19
             max: 28
-            result: '[Frozen Cavern](id:delve/site_domains/frozen_cavern)'
+            text: '[Frozen Cavern](id:delve/site_domains/frozen_cavern)'
           - min: 29
             max: 32
-            result: '[Icereach](id:delve/site_domains/icereach)'
+            text: '[Icereach](id:delve/site_domains/icereach)'
           - min: 33
             max: 38
-            result: '[Mine](id:delve/site_domains/mine)'
+            text: '[Mine](id:delve/site_domains/mine)'
           - min: 39
             max: 48
-            result: '[Pass](id:delve/site_domains/pass)'
+            text: '[Pass](id:delve/site_domains/pass)'
           - min: 49
             max: 58
-            result: '[Ruin](id:delve/site_domains/ruin)'
+            text: '[Ruin](id:delve/site_domains/ruin)'
           - min: 59
             max: 68
-            result: '[Sea Cave](id:delve/site_domains/sea_cave)'
+            text: '[Sea Cave](id:delve/site_domains/sea_cave)'
           - min: 69
             max: 78
-            result: '[Shadowfen](id:delve/site_domains/shadowfen)'
+            text: '[Shadowfen](id:delve/site_domains/shadowfen)'
           - min: 79
             max: 83
-            result: '[Stronghold](id:delve/site_domains/stronghold)'
+            text: '[Stronghold](id:delve/site_domains/stronghold)'
           - min: 84
             max: 95
-            result: '[Tanglewood](id:delve/site_domains/tanglewood)'
+            text: '[Tanglewood](id:delve/site_domains/tanglewood)'
           - min: 96
             max: 100
-            result: '[Underkeep](id:delve/site_domains/underkeep)'
+            text: '[Underkeep](id:delve/site_domains/underkeep)'

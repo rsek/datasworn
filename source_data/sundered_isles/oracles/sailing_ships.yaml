@@ -18,469 +18,469 @@ oracles:
           <<: *Source
         summary: Use this table to generate the scale of a ship sighting, ranging from a single small ship to a massive armada.
         description: The ship challenge ranks are a starting place. Adjust for the capability of the forces you command and the nature of your objectives. Also, keep in mind that the rank of a ship is relative to other ship-scale vehicles, creatures, or powers. See page 54 for tips on handing naval encounters.
-        oracle_type: table_details
+        oracle_type: table_text2
         rows:
           - min: 1
             max: 30
-            result: Small
-            detail: |-
+            text: Small
+            text2: |-
               Rigging: 	One or two masts
               Crew:  	5–50
               Rank:  	Troublesome
               Examples:	 Cutter, Sloop
           - min: 31
             max: 55
-            result: Medium
-            detail: |-
+            text: Medium
+            text2: |-
               Rigging: 	Two or three masts
               Crew:  	50–200
               Rank:  	Dangerous
               Examples: 	Corvette, Schooner
           - min: 56
             max: 75
-            result: Large
-            detail: |-
+            text: Large
+            text2: |-
               Rigging: 	Three or more masts
               Crew:  	200–500
               Rank:  	Formidable
               Examples:	 Frigate, Galleon
           - min: 76
             max: 85
-            result: Colossal
-            detail: |-
+            text: Colossal
+            text2: |-
               Rigging: 	Four or more masts
               Crew:  	500–1000
               Rank:  	Extreme
               Examples:	 Dreadnought, Titan
           - min: 86
             max: 95
-            result: Flotilla
-            detail: Medium flagship and a few other ships
+            text: Flotilla
+            text2: Medium flagship and a few other ships
           - min: 96
             max: 99
-            result: Fleet
-            detail: Large flagship and many other ships
+            text: Fleet
+            text2: Large flagship and many other ships
           - min: 100
             max: 100
-            result: Armada
-            detail: Colossal flagship and countless other ships
+            text: Armada
+            text2: Colossal flagship and countless other ships
       first_look:
         name: First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 2
-            result: Accompanied by creatures
+            text: Accompanied by creatures
           - min: 3
             max: 5
-            result: Adorned with colorful banners
+            text: Adorned with colorful banners
           - min: 6
             max: 8
-            result: Armed with archaic weapons
+            text: Armed with archaic weapons
           - min: 9
             max: 10
-            result: Armed with mechanized weapons
+            text: Armed with mechanized weapons
           - min: 11
             max: 13
-            result: Armored prow or ram
+            text: Armored prow or ram
           - min: 14
             max: 16
-            result: Battle-scarred hull
+            text: Battle-scarred hull
           - min: 17
             max: 18
-            result: Beast-hide sails
+            text: Beast-hide sails
           - min: 19
             max: 21
-            result: Black hull and sails
+            text: Black hull and sails
           - min: 22
             max: 24
-            result: Blood-red sails
+            text: Blood-red sails
           - min: 25
             max: 27
-            result: Boarding prow or ramp
+            text: Boarding prow or ramp
           - min: 28
             max: 30
-            result: Brightly-colored sails
+            text: Brightly-colored sails
           - min: 31
             max: 32
-            result: Constructed of unusual wood
+            text: Constructed of unusual wood
           - min: 33
             max: 34
-            result: Displaying trophies of defeated foes
+            text: Displaying trophies of defeated foes
           - min: 35
             max: 37
-            result: Elaborately carved hull
+            text: Elaborately carved hull
           - min: 38
             max: 40
-            result: Famous or infamous vessel
+            text: Famous or infamous vessel
           - min: 41
             max: 43
-            result: Gilded adornments and fittings
+            text: Gilded adornments and fittings
           - min: 44
             max: 46
-            result: Grandiose or imposing figurehead
+            text: Grandiose or imposing figurehead
           - min: 47
             max: 48
-            result: Hidden gunports
+            text: Hidden gunports
           - min: 49
             max: 50
-            result: Hung with lanterns
+            text: Hung with lanterns
           - min: 51
             max: 52
-            result: Ironclad hull
+            text: Ironclad hull
           - min: 53
             max: 55
-            result: Large harpoon cannon
+            text: Large harpoon cannon
           - min: 56
             max: 57
-            result: Low-profile or shallow draft
+            text: Low-profile or shallow draft
           - min: 58
             max: 59
-            result: Mechanized propulsion
+            text: Mechanized propulsion
           - min: 60
             max: 61
-            result: Numerous launch boats
+            text: Numerous launch boats
           - min: 62
             max: 64
-            result: Overgunned
+            text: Overgunned
           - min: 65
             max: 66
-            result: Overloaded or deep draft
+            text: Overloaded or deep draft
           - min: 67
             max: 69
-            result: Painted hull
+            text: Painted hull
           - min: 70
             max: 71
-            result: Propelled or aided by oars
+            text: Propelled or aided by oars
           - min: 72
             max: 74
-            result: Ramshackle construction or repairs
+            text: Ramshackle construction or repairs
           - min: 75
             max: 76
-            result: Ravaged by fire
+            text: Ravaged by fire
           - min: 77
             max: 79
-            result: Sails emblazoned with insignias
+            text: Sails emblazoned with insignias
           - min: 80
             max: 81
-            result: Submersible
+            text: Submersible
           - min: 82
             max: 84
-            result: Tall enclosed superstructure
+            text: Tall enclosed superstructure
           - min: 85
             max: 87
-            result: Torn sails and broken rigging
+            text: Torn sails and broken rigging
           - min: 88
             max: 89
-            result: Towing another ship
+            text: Towing another ship
           - min: 90
             max: 92
-            result: Twin-hulled (catamaran)
+            text: Twin-hulled (catamaran)
           - min: 93
             max: 95
-            result: Undergunned or unarmed
+            text: Undergunned or unarmed
           - min: 96
             max: 100
-            result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_first_look:
         name: Cursed First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 3
-            result: Accompanied by a monstrous beast
+            text: Accompanied by a monstrous beast
           - min: 4
             max: 6
-            result: Adorned with arcane symbols
+            text: Adorned with arcane symbols
           - min: 7
             max: 9
-            result: Alight with unnatural flames
+            text: Alight with unnatural flames
           - min: 10
             max: 12
-            result: Animate figurehead
+            text: Animate figurehead
           - min: 13
             max: 15
-            result: Arcane propulsion
+            text: Arcane propulsion
           - min: 16
             max: 18
-            result: Bone-wrought hull
+            text: Bone-wrought hull
           - min: 19
             max: 21
-            result: Cloaked by smoke and ash
+            text: Cloaked by smoke and ash
           - min: 22
             max: 24
-            result: Corpses hung from the rigging
+            text: Corpses hung from the rigging
           - min: 25
             max: 27
-            result: Draped with seawood
+            text: Draped with seawood
           - min: 28
             max: 30
-            result: Drowned or abyssal crew
+            text: Drowned or abyssal crew
           - min: 31
             max: 33
-            result: Eerie green illumination
+            text: Eerie green illumination
           - min: 34
             max: 36
-            result: Encrusted with sea life
+            text: Encrusted with sea life
           - min: 37
             max: 39
-            result: Festooned with bones or skulls
+            text: Festooned with bones or skulls
           - min: 40
             max: 42
-            result: Flying or floating
+            text: Flying or floating
           - min: 43
             max: 45
-            result: Illusionary or spectral form
+            text: Illusionary or spectral form
           - min: 46
             max: 48
-            result: Malignant growths
+            text: Malignant growths
           - min: 49
             max: 51
-            result: Maw-like prow
+            text: Maw-like prow
           - min: 52
             max: 54
-            result: Mechanized transformation
+            text: Mechanized transformation
           - min: 55
             max: 57
-            result: Mechanized weaponry
+            text: Mechanized weaponry
           - min: 58
             max: 60
-            result: Mistlike sails
+            text: Mistlike sails
           - min: 61
             max: 63
-            result: Overpowering stench of decay
+            text: Overpowering stench of decay
           - min: 64
             max: 67
-            result: Rotting hull and sails
+            text: Rotting hull and sails
           - min: 68
             max: 70
-            result: Sailing without a crew
+            text: Sailing without a crew
           - min: 71
             max: 74
-            result: Sinister songs or chants
+            text: Sinister songs or chants
           - min: 75
             max: 77
-            result: Sorcerous weaponry
+            text: Sorcerous weaponry
           - min: 78
             max: 80
-            result: Swarming with bats or carrion birds
+            text: Swarming with bats or carrion birds
           - min: 81
             max: 83
-            result: Tattered sails
+            text: Tattered sails
           - min: 84
             max: 87
-            result: Teleporting
+            text: Teleporting
           - min: 88
             max: 90
-            result: Trail of blood in its wake
+            text: Trail of blood in its wake
           - min: 91
             max: 93
-            result: Undead crew
+            text: Undead crew
           - min: 94
             max: 97
-            result: Wreathed in misty cold
+            text: Wreathed in misty cold
           - min: 98
             max: 100
-            result: Shadowed by [Cursed Weather](id:sundered_isles/oracles/weather/cursed)
+            text: Shadowed by [Cursed Weather](id:sundered_isles/oracles/weather/cursed)
       symbol:
         name: Symbol
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 2
-            result: Albatross or gull
+            text: Albatross or gull
           - min: 3
             max: 4
-            result: Angelic figure
+            text: Angelic figure
           - min: 5
             max: 6
-            result: Bear
+            text: Bear
           - min: 7
             max: 8
-            result: Bull
+            text: Bull
           - min: 9
             max: 10
-            result: Celestial object
+            text: Celestial object
           - min: 11
             max: 12
-            result: Crossed weapons
+            text: Crossed weapons
           - min: 13
             max: 14
-            result: Crown or crest
+            text: Crown or crest
           - min: 15
             max: 16
-            result: Divine figure
+            text: Divine figure
           - min: 17
             max: 18
-            result: Dolphin or porpoise
+            text: Dolphin or porpoise
           - min: 19
             max: 20
-            result: Dragon
+            text: Dragon
           - min: 21
             max: 22
-            result: Eagle or hawk
+            text: Eagle or hawk
           - min: 23
             max: 24
-            result: Fish
+            text: Fish
           - min: 25
             max: 26
-            result: Flames
+            text: Flames
           - min: 27
             max: 28
-            result: Gorgon
+            text: Gorgon
           - min: 29
             max: 30
-            result: Griffin
+            text: Griffin
           - min: 31
             max: 32
-            result: Holy symbol
+            text: Holy symbol
           - min: 33
             max: 34
-            result: Horse
+            text: Horse
           - min: 35
             max: 36
-            result: Hound
+            text: Hound
           - min: 37
             max: 38
-            result: Jungle cat
+            text: Jungle cat
           - min: 39
             max: 40
-            result: Lion
+            text: Lion
           - min: 41
             max: 42
-            result: Maiden Figure
+            text: Maiden Figure
           - min: 43
             max: 44
-            result: Martyred figure
+            text: Martyred figure
           - min: 45
             max: 46
-            result: Memorialized figure
+            text: Memorialized figure
           - min: 47
             max: 48
-            result: Mermaid
+            text: Mermaid
           - min: 49
             max: 50
-            result: Multi-headed hydra
+            text: Multi-headed hydra
           - min: 51
             max: 52
-            result: Mystical Figure
+            text: Mystical Figure
           - min: 53
             max: 54
-            result: Noble figure
+            text: Noble figure
           - min: 55
             max: 56
-            result: Octopus or squid
+            text: Octopus or squid
           - min: 57
             max: 58
-            result: Phoenix
+            text: Phoenix
           - min: 59
             max: 60
-            result: Ram
+            text: Ram
           - min: 61
             max: 62
-            result: Raven or crow
+            text: Raven or crow
           - min: 63
             max: 64
-            result: Scorpion
+            text: Scorpion
           - min: 65
             max: 66
-            result: Sea turtle
+            text: Sea turtle
           - min: 67
             max: 68
-            result: Seahorse
+            text: Seahorse
           - min: 69
             max: 70
-            result: Serpent
+            text: Serpent
           - min: 71
             max: 72
-            result: Shark
+            text: Shark
           - min: 73
             max: 74
-            result: Shield
+            text: Shield
           - min: 75
             max: 76
-            result: Skull and bones
+            text: Skull and bones
           - min: 77
             max: 78
-            result: Swan
+            text: Swan
           - min: 79
             max: 80
-            result: Tree
+            text: Tree
           - min: 81
             max: 82
-            result: Unicorn
+            text: Unicorn
           - min: 83
             max: 84
-            result: Vulture
+            text: Vulture
           - min: 85
             max: 86
-            result: Warrior Figure
+            text: Warrior Figure
           - min: 87
             max: 88
-            result: Waves
+            text: Waves
           - min: 89
             max: 90
-            result: Whale
+            text: Whale
           - min: 91
             max: 92
-            result: Winged horse
+            text: Winged horse
           - min: 93
             max: 94
-            result: Wolf
+            text: Wolf
           - min: 95
             max: 100
-            result: Roll twice
+            text: Roll twice
       cursed_symbol:
         name: Cursed Symbol
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 10
-            result: Demonic figure
+            text: Demonic figure
           - min: 11
             max: 20
-            result: Eldritch being
+            text: Eldritch being
           - min: 21
             max: 30
-            result: Fanged skull
+            text: Fanged skull
           - min: 31
             max: 35
-            result: Gargoyle
+            text: Gargoyle
           - min: 36
             max: 45
-            result: Grim reaper
+            text: Grim reaper
           - min: 46
             max: 50
-            result: Headless figure
+            text: Headless figure
           - min: 51
             max: 60
-            result: Kraken or tentacles
+            text: Kraken or tentacles
           - min: 61
             max: 70
-            result: Menacing Skeleton
+            text: Menacing Skeleton
           - min: 71
             max: 80
-            result: Monstrous claw
+            text: Monstrous claw
           - min: 81
             max: 85
-            result: Monstrous eye
+            text: Monstrous eye
           - min: 86
             max: 95
-            result: Monstrous skull or jaws
+            text: Monstrous skull or jaws
           - min: 96
             max: 100
-            result: Spider
+            text: Spider
       cursed_mission:
         name: Cursed Ship Mission
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           # TODO: additive curse
@@ -488,370 +488,370 @@ oracles:
         rows:
           - min: 1
             max: 15
-            result: Acting to fulfill a dreadful bargain
+            text: Acting to fulfill a dreadful bargain
           - min: 16
             max: 25
-            result: Bound unwillingly to the service of a cursed power
+            text: Bound unwillingly to the service of a cursed power
           - min: 26
             max: 35
-            result: Corrupted or sickened by the effects of a cursed ship or relic
+            text: Corrupted or sickened by the effects of a cursed ship or relic
           - min: 36
             max: 50
-            result: Desperately working in defiance of a cursed power
+            text: Desperately working in defiance of a cursed power
           - min: 51
             max: 60
-            result: Granted unusual abilities or resources by a cursed power
+            text: Granted unusual abilities or resources by a cursed power
           - min: 61
             max: 75
-            result: In zealous service of a cursed power
+            text: In zealous service of a cursed power
           - min: 76
             max: 90
-            result: Suffering under the deprivations of a cursed captain
+            text: Suffering under the deprivations of a cursed captain
           - min: 91
             max: 100
-            result: Unwittingly helping or unleashing a cursed power
+            text: Unwittingly helping or unleashing a cursed power
       revaled_aspects:
         name: Revaled Aspects
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: When upon a ship other than your own—visiting,to reveal new details. exploring, or boarding—use this table.
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 3
-            result: Animal mascot
+            text: Animal mascot
           - min: 4
             max: 5
-            result: Archive of books and charts
+            text: Archive of books and charts
           - min: 6
             max: 8
-            result: Bloodstained deck
+            text: Bloodstained deck
           - min: 9
             max: 11
-            result: Booby-trapped
+            text: Booby-trapped
           - min: 12
             max: 14
-            result: Carrying passengers
+            text: Carrying passengers
           - min: 15
             max: 16
-            result: Deck-clearing swivel cannons
+            text: Deck-clearing swivel cannons
           - min: 17
             max: 19
-            result: Empty cargo hold
+            text: Empty cargo hold
           - min: 20
             max: 21
-            result: Extravagant furnishings and fittings
+            text: Extravagant furnishings and fittings
           - min: 22
             max: 24
-            result: Famed mariner serving aboard
+            text: Famed mariner serving aboard
           - min: 25
             max: 26
-            result: Fanatically loyal crew
+            text: Fanatically loyal crew
           - min: 27
             max: 29
-            result: Full cargo hold
+            text: Full cargo hold
           - min: 30
             max: 32
-            result: Hidden cargo
+            text: Hidden cargo
           - min: 33
             max: 34
-            result: Hidden reinforcements
+            text: Hidden reinforcements
           - min: 35
             max: 36
-            result: Hidden stowaway
+            text: Hidden stowaway
           - min: 37
             max: 39
-            result: Hidden workings or capabilities
+            text: Hidden workings or capabilities
           - min: 40
             max: 41
-            result: Holding prisoners
+            text: Holding prisoners
           - min: 42
             max: 43
-            result: Hung with charms and talismans
+            text: Hung with charms and talismans
           - min: 44
             max: 45
-            result: Immaculately maintained
+            text: Immaculately maintained
           - min: 46
             max: 48
-            result: In general disrepair
+            text: In general disrepair
           - min: 49
             max: 51
-            result: Infamous or famous captain
+            text: Infamous or famous captain
           - min: 52
             max: 54
-            result: Locked or barred compartments
+            text: Locked or barred compartments
           - min: 55
             max: 57
-            result: Low on provisions
+            text: Low on provisions
           - min: 58
             max: 60
-            result: Mutinous crew
+            text: Mutinous crew
           - min: 61
             max: 62
-            result: Operating as a diversion
+            text: Operating as a diversion
           - min: 63
             max: 64
-            result: Operating under a false identity
+            text: Operating under a false identity
           - min: 65
             max: 66
-            result: Overcrowded sickbay
+            text: Overcrowded sickbay
           - min: 67
             max: 69
-            result: Palatial captain's cabin
+            text: Palatial captain's cabin
           - min: 70
             max: 72
-            result: Plentiful provisions
+            text: Plentiful provisions
           - min: 73
             max: 74
-            result: Stolen or captured ship
+            text: Stolen or captured ship
           - min: 75
             max: 76
-            result: Strife among the crew
+            text: Strife among the crew
           - min: 77
             max: 78
-            result: Undermanned
+            text: Undermanned
           - min: 79
             max: 80
-            result: Unexpected reveal of an acquaintance
+            text: Unexpected reveal of an acquaintance
           - min: 81
             max: 82
-            result: Venerable ship with a long history
+            text: Venerable ship with a long history
           - min: 83
             max: 84
-            result: Well-stocked armory
+            text: Well-stocked armory
           - min: 85
             max: 87
-            result: Without a commander
+            text: Without a commander
           - min: 88
             max: 91
-            result: Unexpected [Mission]
+            text: Unexpected [Mission]
           - min: 92
             max: 95
-            result: '[Ship Damage]'
+            text: '[Ship Damage]'
           - min: 96
             max: 100
-            result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_aspects:
         name: Cursed Aspects
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 5
-            result: Bloody trail leads belowdecks
+            text: Bloody trail leads belowdecks
           - min: 6
             max: 10
-            result: Crawling with insects
+            text: Crawling with insects
           - min: 11
             max: 15
-            result: Crew held in thrall to sorcerous powers
+            text: Crew held in thrall to sorcerous powers
           - min: 16
             max: 20
-            result: Diseased or corrupted crew
+            text: Diseased or corrupted crew
           - min: 21
             max: 23
-            result: Dreadful phantom whispers
+            text: Dreadful phantom whispers
           - min: 24
             max: 26
-            result: Fearsome creatures among the shadows
+            text: Fearsome creatures among the shadows
           - min: 27
             max: 29
-            result: Illusionary facade
+            text: Illusionary facade
           - min: 30
             max: 32
-            result: Lower decks strung with webs
+            text: Lower decks strung with webs
           - min: 33
             max: 35
-            result: Marked with sorcerous glyphs
+            text: Marked with sorcerous glyphs
           - min: 36
             max: 40
-            result: Protected by a monstrous beast
+            text: Protected by a monstrous beast
           - min: 41
             max: 45
-            result: Putrefied provisions
+            text: Putrefied provisions
           - min: 46
             max: 48
-            result: Reanimating crew
+            text: Reanimating crew
           - min: 49
             max: 53
-            result: Ritual circle or altar
+            text: Ritual circle or altar
           - min: 54
             max: 56
-            result: Rotten stench
+            text: Rotten stench
           - min: 57
             max: 59
-            result: Scorched black by fire
+            text: Scorched black by fire
           - min: 60
             max: 62
-            result: Sentient or living ship
+            text: Sentient or living ship
           - min: 63
             max: 65
-            result: Sorcerous commander
+            text: Sorcerous commander
           - min: 66
             max: 68
-            result: Sorcerous trap
+            text: Sorcerous trap
           - min: 69
             max: 73
-            result: Spectral haunts
+            text: Spectral haunts
           - min: 74
             max: 76
-            result: Spreading decay
+            text: Spreading decay
           - min: 77
             max: 79
-            result: Strewn with rusting cages and chains
+            text: Strewn with rusting cages and chains
           - min: 80
             max: 84
-            result: Swarming with large rats
+            text: Swarming with large rats
           - min: 85
             max: 87
-            result: Transforming crew
+            text: Transforming crew
           - min: 88
             max: 92
-            result: Truth revealed under moonlight
+            text: Truth revealed under moonlight
           - min: 93
             max: 95
-            result: Victims entombed within ship structure
+            text: Victims entombed within ship structure
           - min: 96
             max: 100
-            result: Warnings scrawled in blood
+            text: Warnings scrawled in blood
       cargo:
         name: Cargo
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         summary: Use this table when surveying a ship’s hold or if coming upon lost or abandoned cargo. Roll or choose a number of items as appropriate to the nature of the find. For example, once for the hold of a typical warship, or up to four times for a fully loaded tradeship. Ships also typically carry basic munitions and provisions for the crew, but this table reveals the details of cargo such as trade goods and plunder.
         rows:
           - min: 1
             max: 2
-            result: Ammunition
+            text: Ammunition
           - min: 3
             max: 4
-            result: Artisan goods
+            text: Artisan goods
           - min: 5
             max: 6
-            result: Artwork or antiques
+            text: Artwork or antiques
           - min: 7
             max: 8
-            result: Beast bones
+            text: Beast bones
           - min: 9
             max: 10
-            result: Books or documents
+            text: Books or documents
           - min: 11
             max: 12
-            result: Cheese
+            text: Cheese
           - min: 13
             max: 14
-            result: Cocoa
+            text: Cocoa
           - min: 15
             max: 16
-            result: Coffee
+            text: Coffee
           - min: 17
             max: 18
-            result: Dyes
+            text: Dyes
           - min: 19
             max: 21
-            result: Fish
+            text: Fish
           - min: 22
             max: 24
-            result: Fresh water
+            text: Fresh water
           - min: 25
             max: 26
-            result: Fruit or vegetables
+            text: Fruit or vegetables
           - min: 27
             max: 29
-            result: Grain or rice
+            text: Grain or rice
           - min: 30
             max: 32
-            result: Gunpowder
+            text: Gunpowder
           - min: 33
             max: 34
-            result: Hides or furs
+            text: Hides or furs
           - min: 35
             max: 36
-            result: Hunting trophies
+            text: Hunting trophies
           - min: 37
             max: 38
-            result: Illicit drugs
+            text: Illicit drugs
           - min: 39
             max: 40
-            result: Livestock
+            text: Livestock
           - min: 41
             max: 42
-            result: Logs and charts
+            text: Logs and charts
           - min: 43
             max: 44
-            result: Lumber or timber
+            text: Lumber or timber
           - min: 45
             max: 46
-            result: Machinery
+            text: Machinery
           - min: 47
             max: 48
-            result: Mead
+            text: Mead
           - min: 49
             max: 50
-            result: Meat
+            text: Meat
           - min: 51
             max: 52
-            result: Medical supplies
+            text: Medical supplies
           - min: 53
             max: 54
-            result: Medicinal herbs
+            text: Medicinal herbs
           - min: 55
             max: 56
-            result: Metals
+            text: Metals
           - min: 57
             max: 58
-            result: Mining equipment
+            text: Mining equipment
           - min: 59
             max: 60
-            result: Perfume
+            text: Perfume
           - min: 61
             max: 63
-            result: Raw ore
+            text: Raw ore
           - min: 64
             max: 65
-            result: Rope or hemp
+            text: Rope or hemp
           - min: 66
             max: 68
-            result: Rum or grog
+            text: Rum or grog
           - min: 69
             max: 71
-            result: Sailcloth
+            text: Sailcloth
           - min: 72
             max: 73
-            result: Scavenged ship parts
+            text: Scavenged ship parts
           - min: 74
             max: 75
-            result: Spices
+            text: Spices
           - min: 76
             max: 77
-            result: Sugar or molasses
+            text: Sugar or molasses
           - min: 78
             max: 80
-            result: Tea
+            text: Tea
           - min: 81
             max: 82
-            result: Textiles
+            text: Textiles
           - min: 83
             max: 85
-            result: Tobacco
+            text: Tobacco
           - min: 86
             max: 88
-            result: Weapons
+            text: Weapons
           - min: 89
             max: 91
-            result: Whale oil
+            text: Whale oil
           - min: 92
             max: 93
-            result: Wild animals
+            text: Wild animals
           - min: 94
             max: 95
-            result: Wine
+            text: Wine
           - min: 96
             max: 99
             <<: &DescriptorFocus
-              result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+              text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
               oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/descriptor
@@ -859,61 +859,61 @@ oracles:
                   oracle: sundered_isles/oracles/core/focus
           - min: 100
             max: 100
-            result: '[Treasure]'
+            text: '[Treasure]'
       cursed_cargo:
         name: Cursed Cargo
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 5
-            result: Ancient sarcophagi
+            text: Ancient sarcophagi
           - min: 6
             max: 12
-            result: Autonomous mechanical constructs
+            text: Autonomous mechanical constructs
           - min: 13
             max: 17
-            result: Barrels of foul ichor
+            text: Barrels of foul ichor
           - min: 18
             max: 24
-            result: Chained beast
+            text: Chained beast
           - min: 25
             max: 31
-            result: Cocooned victims
+            text: Cocooned victims
           - min: 32
             max: 36
-            result: Human bones
+            text: Human bones
           - min: 37
             max: 43
-            result: Illusionary treasure
+            text: Illusionary treasure
           - min: 44
             max: 48
-            result: Infernal weapons
+            text: Infernal weapons
           - min: 49
             max: 53
-            result: Maggot-infested meat
+            text: Maggot-infested meat
           - min: 54
             max: 60
-            result: Monstrous hunting trophies
+            text: Monstrous hunting trophies
           - min: 61
             max: 65
-            result: Mutated animals
+            text: Mutated animals
           - min: 66
             max: 72
-            result: Poisoned grog
+            text: Poisoned grog
           - min: 73
             max: 79
-            result: Rotting corpses
+            text: Rotting corpses
           - min: 80
             max: 86
-            result: Sorcerous tomes
+            text: Sorcerous tomes
           - min: 87
             max: 93
-            result: Soul jars
+            text: Soul jars
           - min: 94
             max: 100
-            result: Trapped undead
+            text: Trapped undead
       # name:
       #   name: Ship Name
       #   _source:
@@ -934,94 +934,94 @@ oracles:
         contents:
           range:
             name: Range
-            oracle_type: table_details
+            oracle_type: table_text2
             _source:
               <<: *Source
             column_labels:
               roll: Roll
-              result: Result
-              detail: Detail
+              text: Result
+              text2: Detail
             rows:
               - min: 1
                 max: 40
-                result: Distant
-                detail: On the horizon and too far to make out details
+                text: Distant
+                text2: On the horizon and too far to make out details
               - min: 41
                 max: 75
-                result: Far
-                detail: Observable but well beyond weapons range
+                text: Far
+                text2: Observable but well beyond weapons range
               - min: 76
                 max: 95
-                result: Medium
-                detail: Easily discernible and nearly within weapons range
+                text: Medium
+                text2: Easily discernible and nearly within weapons range
               - min: 96
                 max: 100
-                result: Near
-                detail: Sighted or revealed at very close range
+                text: Near
+                text2: Sighted or revealed at very close range
           status:
             name: Status
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source:
               <<: *Source
             rows:
               - min: 1
                 max: 10
-                result: In Battle
+                text: In Battle
               - min: 11
                 max: 25
-                result: Anchored
+                text: Anchored
               - min: 26
                 max: 35
-                result: Getting underway
+                text: Getting underway
               - min: 36
                 max: 60
-                result: Underway (approaching)
+                text: Underway (approaching)
               - min: 61
                 max: 75
-                result: Underway (outbound)
+                text: Underway (outbound)
               - min: 76
                 max: 85
-                result: Underway (parallel)
+                text: Underway (parallel)
               - min: 86
                 max: 95
-                result: In distress
+                text: In distress
               - min: 96
                 max: 98
-                result: Adrift
+                text: Adrift
               - min: 99
                 max: 100
-                result: Run aground
+                text: Run aground
       controlling_faction:
         name: Controlling Faction
         _source:
           <<: *Source
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         contents:
           myriads:
             name: Myriads
             # source:
             #   <<: *Source
             summary: Central Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - &ControllingFaction.0
                 min: 1
                 max: 60
-                result: Known faction
+                text: Known faction
               - &ControllingFaction.1
                 min: 61
                 max: 75
-                result: Unknown faction
+                text: Unknown faction
               - &ControllingFaction.2
                 min: 76
                 max: 100
-                result: Independent
+                text: Independent
           margins:
             name: Margins
             # source:
             #   <<: *Source
             summary: Outer Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1037,7 +1037,7 @@ oracles:
             # source:
             #   <<: *Source
             summary: Remote Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1053,7 +1053,7 @@ oracles:
         _source:
           <<: *Source
         summary: A ship’s faction can reveal its role, such as warship, tradeship, or whaler. If the ship is independent, the faction unknown, or if you simply want more detail, use this table. Alernatively, use the captain’s goal (page 179) to set the ship’s purpose.
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         # rendering:
         #   columns:
         #     - label: Small
@@ -1081,79 +1081,79 @@ oracles:
         #       content_type: result
         #       label: Current Activity
         column_labels:
-          result: Current Activity
+          text: Current Activity
         contents:
           small:
             name: Small
             # source:
             #   <<: *Source
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - &ShipMission.0
-                result: Blockade a location
+                text: Blockade a location
               - &ShipMission.1
-                result: Break a blockade
+                text: Break a blockade
               - &ShipMission.2
-                result: Attack a Location
+                text: Attack a Location
               - &ShipMission.3
-                result: Evacuate a location
+                text: Evacuate a location
               - min: 1
                 max: 4
                 <<: &ShipMission.4
-                  result: Transport people
+                  text: Transport people
               - min: 5
                 max: 8
                 <<: &ShipMission.5
-                  result: Transport cargo
+                  text: Transport cargo
               - min: 9
                 max: 14
                 <<: &ShipMission.6
-                  result: Conduct trade
+                  text: Conduct trade
               - min: 15
                 max: 18
                 <<: &ShipMission.7
-                  result: Hunt creatures
+                  text: Hunt creatures
               - min: 19
                 max: 22
                 <<: &ShipMission.8
-                  result: Patrol an area
+                  text: Patrol an area
               - min: 23
                 max: 32
                 <<: &ShipMission.9
-                  result: Explore or travel to an area
+                  text: Explore or travel to an area
               - min: 33
                 max: 38
                 <<: &ShipMission.10
-                  result: Engage an enemy
+                  text: Engage an enemy
               - min: 39
                 max: 48
                 <<: &ShipMission.11
-                  result: Conduct piracy
+                  text: Conduct piracy
               - min: 49
                 max: 56
                 <<: &ShipMission.12
-                  result: Conduct diplomacy
+                  text: Conduct diplomacy
               - min: 57
                 max: 64
                 <<: &ShipMission.13
-                  result: Conduct espionage
+                  text: Conduct espionage
               - min: 65
                 max: 68
                 <<: &ShipMission.14
-                  result: Conduct research
+                  text: Conduct research
               - min: 69
                 max: 74
                 <<: &ShipMission.15
-                  result: Deliver item or message
+                  text: Deliver item or message
               - min: 75
                 max: 84
                 <<: &ShipMission.16
-                  result: Smuggle contraband
+                  text: Smuggle contraband
               - min: 85
                 max: 94
                 <<: &ShipMission.17
                   <<: &ActionTheme
-                    result: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+                    text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
                     oracle_rolls:
                       - auto: true
                         oracle: sundered_isles/oracles/core/action
@@ -1162,7 +1162,7 @@ oracles:
               - min: 95
                 max: 100
                 <<: &ShipMission.18
-                  result: Roll twice
+                  text: Roll twice
                   oracle_rolls:
                     - auto: true
                       number_of_rolls: 2
@@ -1170,7 +1170,7 @@ oracles:
             name: Medium
             # source:
             #   <<: *Source
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - *ShipMission.0
               - *ShipMission.1
@@ -1225,7 +1225,7 @@ oracles:
             name: Large
             # source:
             #   <<: *Source
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - <<: *ShipMission.0
                 min: 1
@@ -1286,7 +1286,7 @@ oracles:
                 max: 100
           huge:
             name: Huge
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source:
             #   <<: *Source
             rows:
@@ -1349,7 +1349,7 @@ oracles:
                 max: 100
           flotilla:
             name: Flotilla
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source:
             #   <<: *Source
             rows:
@@ -1412,7 +1412,7 @@ oracles:
                 max: 100
           fleet:
             name: Fleet
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source:
             #   <<: *Source
             rows:
@@ -1469,7 +1469,7 @@ oracles:
                 max: 100
           armada:
             name: Armada
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source:
             #   <<: *Source
             rows:

@@ -14,39 +14,39 @@ oracles:
     contents:
       relationships:
         _source: *Source
-        oracle_type: table_simple
+        oracle_type: table_basic
         name: Faction Relationships
         rows:
           - min: 1
             max: 10
-            result: Antagonistic or at war with
+            text: Antagonistic or at war with
           - min: 11
             max: 20
-            result: Friendly or allied with
+            text: Friendly or allied with
           - min: 21
             max: 30
-            result: Holds leverage over
+            text: Holds leverage over
           - min: 31
             max: 40
-            result: Indebted to
+            text: Indebted to
           - min: 41
             max: 50
-            result: Maneuvering against
+            text: Maneuvering against
           - min: 51
             max: 60
-            result: Requires support from
+            text: Requires support from
           - min: 61
             max: 70
-            result: Shares a rivalry with
+            text: Shares a rivalry with
           - min: 71
             max: 80
-            result: Shares power with
+            text: Shares power with
           - min: 81
             max: 90
-            result: Splintered from
+            text: Splintered from
           - min: 91
             max: 100
-            result: Trades resources or favors with
+            text: Trades resources or favors with
     collections:
       inspiration:
         _source: *Source
@@ -56,7 +56,7 @@ oracles:
           nations_and_cultures:
             _source: *Source
             name: Nations and Cultures
-            oracle_type: table_details
+            oracle_type: table_text2
             # rendering:
             #   style: standalone
             #   columns:
@@ -69,48 +69,48 @@ oracles:
             rows:
               - min: 1
                 max: 10
-                result: Akiya
-                detail: Alliance of clans known for their sleek and speedy ships; they gather each year to celebrate the ebb of the storm season, and hang rows of vibrantly colored flags from their ship’s rigging to honor the dead
+                text: Akiya
+                text2: Alliance of clans known for their sleek and speedy ships; they gather each year to celebrate the ebb of the storm season, and hang rows of vibrantly colored flags from their ship’s rigging to honor the dead
               - min: 11
                 max: 20
-                result: Arsu / Azizos
-                detail: Swearing fealty to a pair of rulers descended from rival heirs, these people often war against each other, but now have a fragile alliance against a mutual foe
+                text: Arsu / Azizos
+                text2: Swearing fealty to a pair of rulers descended from rival heirs, these people often war against each other, but now have a fragile alliance against a mutual foe
               - min: 21
                 max: 30
-                result: Kai
-                detail: Builds their homes and ships from luminous glimmerwood, harvested from the coastal marshes of their homeland—an environment which is under threat of destruction
+                text: Kai
+                text2: Builds their homes and ships from luminous glimmerwood, harvested from the coastal marshes of their homeland—an environment which is under threat of destruction
               - min: 31
                 max: 40
-                result: Khazeera
-                detail: Inhabits an enduring city-state at the edge of an active volcano; molten rock and slag from this sacred volcano is used in the heated shot for their destructive cannonry, and their soldiers and soldiers wield blades forged in its fires
+                text: Khazeera
+                text2: Inhabits an enduring city-state at the edge of an active volcano; molten rock and slag from this sacred volcano is used in the heated shot for their destructive cannonry, and their soldiers and soldiers wield blades forged in its fires
               - min: 41
                 max: 50
-                result: Morien
-                detail: Seafolk who forsake cannons and muskets; they sail low-profile catamarans and set upon their foes with stealthy ambushes
+                text: Morien
+                text2: Seafolk who forsake cannons and muskets; they sail low-profile catamarans and set upon their foes with stealthy ambushes
               - min: 51
                 max: 60
-                result: Otani
-                detail: People who dwell in island highlands. They largely forsake the sea, but send out envoys to build ties with other communities
+                text: Otani
+                text2: People who dwell in island highlands. They largely forsake the sea, but send out envoys to build ties with other communities
               - min: 61
                 max: 70
-                result: Sularia
-                detail: Beast-bonded people who commune with and sail alongside magnificent elder rays, and are sworn to protect the seas from hunters and despoilers
+                text: Sularia
+                text2: Beast-bonded people who commune with and sail alongside magnificent elder rays, and are sworn to protect the seas from hunters and despoilers
               - min: 71
                 max: 80
-                result: Talan
-                detail: Scrappy seafolk who range far among the islands; they maintain a floating trade settlement open to any who visit with shuttered gunports
+                text: Talan
+                text2: Scrappy seafolk who range far among the islands; they maintain a floating trade settlement open to any who visit with shuttered gunports
               - min: 81
                 max: 90
-                result: Thalassa
-                detail: Recent refugees of a cataclysmic war in a far-off land, desperate to gain support against the enemy they believe will follow them to the isles
+                text: Thalassa
+                text2: Recent refugees of a cataclysmic war in a far-off land, desperate to gain support against the enemy they believe will follow them to the isles
               - min: 91
                 max: 100
-                result: Uktanu
-                detail: Reclusive people who trace their lineage to the first inhabitants of the isles; they are sworn to protect the sacred sites and relics of their ancient forebears
+                text: Uktanu
+                text2: Reclusive people who trace their lineage to the first inhabitants of the isles; they are sworn to protect the sacred sites and relics of their ancient forebears
           organizations_and_identities:
             _source: *Source
             name: Organizations and Identities
-            oracle_type: table_details
+            oracle_type: table_text2
             # rendering:
             #   style: standalone
             #   columns:
@@ -123,48 +123,48 @@ oracles:
             rows:
               - min: 1
                 max: 10
-                result: Bloody Skulls
-                detail: Bands of shipwreckers and scavengers who lie in wait along hazardous passages; they believe that painting their faces with a death-like visage will protect against retribution by spirits of the dead
+                text: Bloody Skulls
+                text2: Bands of shipwreckers and scavengers who lie in wait along hazardous passages; they believe that painting their faces with a death-like visage will protect against retribution by spirits of the dead
               - min: 11
                 max: 20
-                result: Cynosure Society
-                detail: League of scientists and naturalists who record their findings in exhaustively-detailed journals, which are then copied and recorded by archivists at a grand central library
+                text: Cynosure Society
+                text2: League of scientists and naturalists who record their findings in exhaustively-detailed journals, which are then copied and recorded by archivists at a grand central library
               - min: 21
                 max: 30
-                result: Ebb Tide
-                detail: Covert insurgency of spies and saboteurs; they seek to cripple imperial ambitions from within, and use trained gulls to carry messages to collaborators
+                text: Ebb Tide
+                text2: Covert insurgency of spies and saboteurs; they seek to cripple imperial ambitions from within, and use trained gulls to carry messages to collaborators
               - min: 31
                 max: 40
-                result: Faceless Accord
-                detail: Turncoat imperials sailing in defiance of colonial powers; they conceal their identities behind iron masks to protect kinfolk still under imperial rule
+                text: Faceless Accord
+                text2: Turncoat imperials sailing in defiance of colonial powers; they conceal their identities behind iron masks to protect kinfolk still under imperial rule
               - min: 41
                 max: 50
-                result: Forsaken Fleet 	Powerful clan of pirates led by a marauder known as the Raven
-                detail: Queen; they recently sacked and seized a major port town and made it a refuge for outlaws and outcasts
+                text: Forsaken Fleet 	Powerful clan of pirates led by a marauder known as the Raven
+                text2: Queen; they recently sacked and seized a major port town and made it a refuge for outlaws and outcasts
               - min: 51
                 max: 60
-                result: Harbingers
-                detail: Ancient sorcerous order that bind their vows and channel their magic through ornate iron staves; they recruit talented initiates from across the isles
+                text: Harbingers
+                text2: Ancient sorcerous order that bind their vows and channel their magic through ornate iron staves; they recruit talented initiates from across the isles
               - min: 61
                 max: 70
-                result: Ironmongers
-                detail: Guild of shipbuilders and arms manufacturers who supply their destructive wares to the highest bidder; they secretly incite wars to build business
+                text: Ironmongers
+                text2: Guild of shipbuilders and arms manufacturers who supply their destructive wares to the highest bidder; they secretly incite wars to build business
               - min: 71
                 max: 80
-                result: Starmarked
-                detail: Guild of navigators who preserve age-old astronomical charts on their bodies as tattoos, etched in phosphorescent ink
+                text: Starmarked
+                text2: Guild of navigators who preserve age-old astronomical charts on their bodies as tattoos, etched in phosphorescent ink
               - min: 81
                 max: 90
-                result: Tide Runners
-                detail: Smugglers who rely on speed, stealth, and the cover of foul weather or moonless nights to ferry their ill-gotten goods from island to island
+                text: Tide Runners
+                text2: Smugglers who rely on speed, stealth, and the cover of foul weather or moonless nights to ferry their ill-gotten goods from island to island
               - min: 91
                 max: 100
-                result: Wayfarers
-                detail: Independent merchants who range across the isles and beyond, transporting rare and unusual cargo aboard their vibrantly painted ships
+                text: Wayfarers
+                text2: Independent merchants who range across the isles and beyond, transporting rare and unusual cargo aboard their vibrantly painted ships
           empires:
             _source: *Source
             name: Empires
-            oracle_type: table_details
+            oracle_type: table_text2
             # rendering:
             #   style: standalone
             #   columns:
@@ -177,48 +177,48 @@ oracles:
             rows:
               - min: 1
                 max: 10
-                result: Argosy Company
-                detail: Trade company which commands a fleet of beast- hunting ships and pays bounties on beasts to independent ships; their unscrupulous merchants deal in trophies and resources gathered from slain creatures
+                text: Argosy Company
+                text2: Trade company which commands a fleet of beast- hunting ships and pays bounties on beasts to independent ships; their unscrupulous merchants deal in trophies and resources gathered from slain creatures
               - min: 11
                 max: 20
-                result: Eldarian Remnants
-                detail: Loyalists of a fallen empire who seek to rebuild their former glory among the isles; the sails of their ships are emblazoned with a rising sun
+                text: Eldarian Remnants
+                text2: Loyalists of a fallen empire who seek to rebuild their former glory among the isles; the sails of their ships are emblazoned with a rising sun
               - min: 21
                 max: 30
-                result: Empire of Solas
-                detail: Age-old dominion ruled by an immortal god- emperor; their ostentatious ships are adorned with gold metalwork and filigreed sails
+                text: Empire of Solas
+                text2: Age-old dominion ruled by an immortal god- emperor; their ostentatious ships are adorned with gold metalwork and filigreed sails
               - min: 31
                 max: 40
-                result: Firgovian Regency
-                detail: Fracturing empire facing a succession crisis in the aftermath of the monarch’s assassination; rival claimants gather their armies and navies to take the crown by force
+                text: Firgovian Regency
+                text2: Fracturing empire facing a succession crisis in the aftermath of the monarch’s assassination; rival claimants gather their armies and navies to take the crown by force
               - min: 41
                 max: 50
-                result: Hand of Theya
-                detail: Iron-fisted theocracy under the rule of a council of priests; their mandates are enforced by red-robed inquisitors
+                text: Hand of Theya
+                text2: Iron-fisted theocracy under the rule of a council of priests; their mandates are enforced by red-robed inquisitors
               - min: 51
                 max: 60
-                result: Kyrody Dominion
-                detail: Expansive empire with far-flung territories; their holdings within the isles are overseen by corrupt and squabbling governors, each vying for greater power and wealth
+                text: Kyrody Dominion
+                text2: Expansive empire with far-flung territories; their holdings within the isles are overseen by corrupt and squabbling governors, each vying for greater power and wealth
               - min: 61
                 max: 70
-                result: Meridian Company
-                detail: Powerful trade company with diverse holdings and boundless political influence; they function as the shadow government behind other powers
+                text: Meridian Company
+                text2: Powerful trade company with diverse holdings and boundless political influence; they function as the shadow government behind other powers
               - min: 71
                 max: 80
-                result: Norish Empire
-                detail: Ambitious empire which wields a powerful military, including the elite dragon-riders of the Crimson Guard
+                text: Norish Empire
+                text2: Ambitious empire which wields a powerful military, including the elite dragon-riders of the Crimson Guard
               - min: 81
                 max: 90
-                result: Skulde Alliance
-                detail: War-mongering clans newly united under a powerful warlord; their warships are fitted with imposing rams and heavy boarding ramps
+                text: Skulde Alliance
+                text2: War-mongering clans newly united under a powerful warlord; their warships are fitted with imposing rams and heavy boarding ramps
               - min: 91
                 max: 100
-                result: Sovereign States
-                detail: Industrialist power formed from the remnants of warring nations; governed by an oligarchical council whose members scheme to serve their own interests
+                text: Sovereign States
+                text2: Industrialist power formed from the remnants of warring nations; governed by an oligarchical council whose members scheme to serve their own interests
           the_cursed:
             _source: *Source
             name: The Cursed
-            oracle_type: table_details
+            oracle_type: table_text2
             # rendering:
             #   style: standalone
             #   columns:
@@ -231,41 +231,41 @@ oracles:
             rows:
               - min: 1
                 max: 10
-                result: Acheron's Armada
-                detail: Ghost ships under the command of an undead imperial admiral; this vengeful wraith seeks to carry on the war that cost them their life
+                text: Acheron's Armada
+                text2: Ghost ships under the command of an undead imperial admiral; this vengeful wraith seeks to carry on the war that cost them their life
               - min: 11
                 max: 20
-                result: Blighthulk
-                detail: Titanic ship cursed with incessant corrosion and rot; its crew must constantly add wood, sails, and fittings from salvaged wrecks or defeated foes into this massive and unnerving chimera-craft
+                text: Blighthulk
+                text2: Titanic ship cursed with incessant corrosion and rot; its crew must constantly add wood, sails, and fittings from salvaged wrecks or defeated foes into this massive and unnerving chimera-craft
               - min: 21
                 max: 30
-                result: Bloodborn Raiders
-                detail: Clan of marauders who take on bestial forms, attacking ships and settlements under the light of the moon
+                text: Bloodborn Raiders
+                text2: Clan of marauders who take on bestial forms, attacking ships and settlements under the light of the moon
               - min: 31
                 max: 40
-                result: Brineblessed
-                detail: Cult of sailors cursed by a drowned god; their bodies and ships are corrupted by horrible aspects of the sea
+                text: Brineblessed
+                text2: Cult of sailors cursed by a drowned god; their bodies and ships are corrupted by horrible aspects of the sea
               - min: 41
                 max: 50
-                result: Carrion Fleet
-                detail: Fleet under the command of a necromancer; the dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth
+                text: Carrion Fleet
+                text2: Fleet under the command of a necromancer; the dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth
               - min: 51
                 max: 60
-                result: Fireships
-                detail: Ships burning with unquenchable fire and crewed by bone-scorched undead; the flagship was set aflame by marauders in a port attack, and its commander seeks to spread the fire to other vessels and expand the accursed fleet
+                text: Fireships
+                text2: Ships burning with unquenchable fire and crewed by bone-scorched undead; the flagship was set aflame by marauders in a port attack, and its commander seeks to spread the fire to other vessels and expand the accursed fleet
               - min: 61
                 max: 70
-                result: Forgeborn
-                detail: Uncanny automatons who are said to embody the stolen souls of dead mariners; they cruise the isles in ironclad ships
+                text: Forgeborn
+                text2: Uncanny automatons who are said to embody the stolen souls of dead mariners; they cruise the isles in ironclad ships
               - min: 71
                 max: 80
-                result: Gilded Fleet
-                detail: Pirates who seized a forbidden treasure, and are now cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles
+                text: Gilded Fleet
+                text2: Pirates who seized a forbidden treasure, and are now cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles
               - min: 81
                 max: 90
-                result: Nightships
-                detail: Dread ships of the vampire clans, shrouded in an eternal gloom; their soulless crews leave only wrecks and blood-drained corpses in their wake
+                text: Nightships
+                text2: Dread ships of the vampire clans, shrouded in an eternal gloom; their soulless crews leave only wrecks and blood-drained corpses in their wake
               - min: 91
                 max: 100
-                result: Tidebound
-                detail: Devout followers of an ancient seafarer faith, granted eternal life to serve their patron god— but they must not tarry on land or at anchor, lest death catches up with them to take its toll
+                text: Tidebound
+                text2: Devout followers of an ancient seafarer faith, granted eternal life to serve their patron god— but they must not tarry on land or at anchor, lest death catches up with them to take its toll

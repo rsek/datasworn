@@ -6,7 +6,7 @@
       "${1|summary|}: |-",
       "  ${CLIPBOARD/(.+)\n(.+)\n(.+)/${1}/m}",
       "${2|description|}: |-",
-      "  ${CLIPBOARD/(.+)\n(.+)\n(.+)/${2}/m}"
+      "  ${CLIPBOARD/(.+)\n(.+)\n(.+)/${2}/m}",
       "${3|quest_starter|}: |-",
       "  ${CLIPBOARD/(.+)\n(.+)\n(.+)/${3}/m}"
     ],
@@ -41,7 +41,7 @@
     "body": [
       "enhance_moves:",
       "  - enhances:",
-      "      - ${CLIPBOARD}"
+      "      - ${CLIPBOARD}",
       "    roll_type: ${1|action_roll,no_roll,progress_roll,special_track|}",
       "    trigger:",
       "      conditions:",
@@ -68,7 +68,7 @@
     "prefix": "emv",
     "body": [
       "- enhances:",
-      "    - ${CLIPBOARD}"
+      "    - ${CLIPBOARD}",
       "  roll_type: ${1|action_roll,no_roll,progress_roll,special_track|}",
       "  trigger:",
       "    conditions:",
@@ -122,51 +122,59 @@
 		"body": [
 			"${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}:",
 			"  name: ${10:}",
-      "  asset_type: ${11|Module,Support Vehicle,Companion,Path,Deed,Command Vehicle,Incidental Vehicle|}"
+      "  asset_type: ${11|Module,Support Vehicle,Companion,Path,Deed,Command Vehicle,Incidental Vehicle|}",
 			"  abilities:",
 			"$0${CLIPBOARD/(\\s*[A-Z].+)(\n)/${2:+          }- text: |-\n              $1\n/g}"
 		]
 	},
-	"Format table rows": {
+	"Format simple table rows": {
 		"scope": "yaml",
 		"prefix": "rows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+|> [A-Z].+)\\s*\\n/  - min: $1\n    max: $2\n    result: $3\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+|> [A-Z].+)\\s*\\n/  - min: $1\n    max: $2\n    text: $3\n/g}"
 		],
-		"description": "Formats table rows from Okular as YAML data"
+		"description": "Formats table rows from copied from Okular as YAML data"
 	},
-	"Format table rows (details)": {
+	"Format table rows (2 text cells)": {
 		"scope": "yaml",
-		"prefix": "drows",
+		"prefix": "rows2",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+)\\s+?(?<detail>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  result: $3\n  detail: $4\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  text: $3\n  text2: $4\n/g}"
 		],
-		"description": "Formats table rows from Okular as YAML data"
+		"description": "Formats table rows from copied from Okular as YAML data"
+	},
+	"Format table rows (3 text cells)": {
+		"scope": "yaml",
+		"prefix": "rows3",
+		"body": [
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+\\s+?(?<text3>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  text: $3\n  text2: $4\ntext3: $5/g}"
+		],
+		"description": "Formats table rows from copied from Okular as YAML data"
 	},
 	"Format table rows (blank)": {
 		"scope": "yaml",
 		"prefix": "brows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*\\n/- min: $1\n  max: $2\n  result:\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*\\n/- min: $1\n  max: $2\n  text:\n/g}"
 		],
-		"description": "Formats table rows from Okular as YAML data"
+		"description": "Formats table rows from copied from Okular as YAML data"
 	},
 
-	"Format single number rows": {
+	"Format single number range rows": {
 		"scope": "yaml",
-		"prefix": "1rows",
+		"prefix": "r1rows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)-?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+)\\s*\\n/- min: $1\n  max: $1\n  result: $3\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)-?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+)\\s*\\n/- min: $1\n  max: $1\n  text: $3\n/g}"
 		],
-		"description": "Formats table rows from Okular as YAML data"
+		"description": "Formats table rows from copied from Okular as YAML data"
 	},
 	"Format unrollable/null rows": {
 		"scope": "yaml",
 		"prefix": "nrows",
 		"body": [
-			"${CLIPBOARD/(.*)\\n/- result: $1\n/g}"
+			"${CLIPBOARD/(.*)\\n/- text: $1\n/g}"
 		],
-		"description": "Formats table rows from Okular as YAML data"
+		"description": "Formats table rows from copied from Okular as YAML data"
 	},
 	"Collection": {
 		"scope": "yaml",
@@ -175,7 +183,7 @@
 			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"  name: ${10:}",
       "  source:",
-      "    <<: *Source"
+      "    <<: *Source",
 			"  contents:",
 			"    ${0}"
 		]
@@ -186,9 +194,9 @@
 		"body": [
 			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"  name: ${10:}",
-      "  oracle_type: ${12|tables,table_shared_roll,table_shared_result,table_shared_details|}"
+      "  oracle_type: ${12|tables,table_shared_roll,table_shared_text,table_shared_text2,table_shared_text3|}",
       "  source:",
-      "    <<: *Source"
+      "    <<: *Source",
 			"  contents:",
 			"    ${0}"
 		]
@@ -199,10 +207,10 @@
 		"body": [
 			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"  name: ${10:}",
-      "  oracle_type: ${12|table_simple,table_details,column_simple,column_details|}"
+      "  oracle_type: ${12|table_simple,table_text2,table_text3,column_simple,column_text2,column_text3|}",
       "  source:",
-      "    <<: *Source"
-			"  table:",
+      "    <<: *Source",
+			"  rows:",
 			"    ${0}"
 		]
 	},
@@ -214,28 +222,28 @@
 			"  name: ${10:}",
       "  source: &CollectionSource",
       "    <<: *Source",
-      "  oracle_type: ${12|table_shared_result,table_shared_details,table_shared_roll|}",
+      "  oracle_type: ${12|table_shared_text,table_shared_text2,table_shared_text3|}",
 			"  contents:",
 			"    ${33:${32/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"      name: ${32}",
       "      source:",
       "        <<: *CollectionSource",
-      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
-			"      table:",
+      "      oracle_type: ${14|column_basic,column_text2,column_text3|}",
+			"      rows:",
       "",
 			"    ${35:${34/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"      name: ${34}",
       "      source:",
       "        <<: *CollectionSource",
-      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
-			"      table:",
+      "      oracle_type: ${14}",
+			"      rows:",
       "",
-			"    ${37:${37/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
-			"      name: ${37}",
+			"    ${37:${36/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
+			"      name: ${36}",
       "      source:",
       "        <<: *CollectionSource",
-      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
-			"      table:",
+      "      oracle_type: ${14}",
+			"      rows:",
       "${0}"
 		]
 	},
@@ -247,25 +255,25 @@
 			"  name: ${10:}",
       "  source: &CollectionSource",
       "    <<: *Source",
-      "  oracle_type: ${12|table_shared_result,table_shared_details|}",
+      "  oracle_type: ${12|table_shared_text,table_shared_text2,table_shared_text3|}",
 			"  contents:",
 			"    myriads:",
 			"      name: Myriads",
       "      summary: Central Seas",
-      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
-			"      table:",
+      "      oracle_type: ${13|column_basic,column_text2,column_text3|}",
+			"      rows:",
 			"",
 			"    margins:",
 			"      name: Margins",
       "      summary: Outer Seas",
-      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
-			"      table:",
+      "      oracle_type: ${13}",
+			"      rows:",
 			"",
 			"    reaches:",
 			"      name: Reaches",
       "      summary: Remote Seas",
-      "      oracle_type: ${12/table_shared(_(details))?(?:_result|_roll)/column${1}/g}"
-			"      table:",
+      "      oracle_type: ${13}",
+			"      rows:",
 			"${0}"
 		]
 	},

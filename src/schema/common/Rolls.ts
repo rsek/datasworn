@@ -15,10 +15,10 @@ export type DiceExpression =
 
 export const OracleDuplicateBehavior = Utils.UnionEnumFromRecord(
 	{
-		reroll: 'Duplicates results should be re-rolled.',
+		reroll: 'Duplicate results should be re-rolled.',
 		keep: 'Duplicates results should be kept.',
 		make_it_worse:
-			'Duplicates should be kept, and they compound to make things worse.'
+			'Duplicate results should be kept, and they compound to make things worse.'
 	},
 	{
 		$id: 'OracleDuplicateBehavior',
@@ -38,11 +38,11 @@ export const OracleRoll = Type.Object(
 		auto: Type.Boolean({
 			default: false,
 			description:
-				'Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll Twice".'
+				'Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle texts only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll Twice".'
 		}),
 		duplicates: Type.Ref(OracleDuplicateBehavior, {
 			description:
-				'Special rules on how to handle duplicate results, when rolling multiple times.',
+				'Special rules on how to handle duplicate texts, when rolling multiple times.',
 			default: 'reroll'
 		}),
 		dice: Utils.Nullable(Type.Ref(DiceExpression), {
@@ -65,34 +65,34 @@ export type TOracleRoll = typeof OracleRoll
 
 export const OracleRollTemplate = Type.Object(
 	{
-		result: Type.Optional(
+		text: Type.Optional(
 			Type.Ref(Localize.TemplateString, {
 				description:
-					'A string template that may be used in place of OracleTableRow#result.',
+					'A string template that may be used in place of OracleTableRow#text.',
 				examples: [
-					'{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}'
+					'{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}'
 				]
 			})
 		),
-		detail: Type.Optional(
+		text2: Type.Optional(
 			Type.Ref(Localize.TemplateString, {
 				description:
-					'A string template that may be used in place of OracleTableRow#detail.'
+					'A string template that may be used in place of OracleTableRow#text2.'
 			})
 		),
-		description: Type.Optional(
+		text3: Type.Optional(
 			Type.Ref(Localize.TemplateString, {
 				description:
-					'A string template that may be used in place of OracleTableRow#description.'
+					'A string template that may be used in place of OracleTableRow#text3.'
 			})
 		)
 	},
 	{
 		$id: 'OracleRollTemplate',
 		releaseStage: 'experimental',
-		description: `Provides string templates that may be used in place of the static row text from \`OracleTableRow#result\`, \`OracleTableRow#detail\`, and \`OracleTableRow#description\`.
+		description: `Provides string templates that may be used in place of the static row text from \`OracleTableRow#text\`, \`OracleTableRow#text2\`, and \`OracleTableRow#text3\`.
 
-  These strings are formatted in Markdown, but use a special syntax for their placeholders: \`{{result:some_oracle_table_id}}\`. The placeholder should be replaced with the value of a rolled (or selected) \`OracleTableRow#result\` from the target oracle table ID.`
+  These strings are formatted in Markdown, but use a special syntax for their placeholders: \`{{text:some_oracle_table_id}}\`. The placeholder should be replaced with the value of a rolled (or selected) \`OracleTableRow#text\` from the target oracle table ID.`
 	}
 )
 export type OracleRollTemplate = Static<typeof OracleRollTemplate>

@@ -9,7 +9,7 @@ namespace Datasworn
     [JsonConverter(typeof(OracleColumnSimpleOracleTypeJsonConverter))]
     public enum OracleColumnSimpleOracleType
     {
-        ColumnSimple,
+        ColumnBasic,
     }
     public class OracleColumnSimpleOracleTypeJsonConverter : JsonConverter<OracleColumnSimpleOracleType>
     {
@@ -18,8 +18,8 @@ namespace Datasworn
             string value = JsonSerializer.Deserialize<string>(ref reader, options);
             switch (value)
             {
-                case "column_simple":
-                    return OracleColumnSimpleOracleType.ColumnSimple;
+                case "column_basic":
+                    return OracleColumnSimpleOracleType.ColumnBasic;
                 default:
                     throw new ArgumentException(String.Format("Bad OracleColumnSimpleOracleType value: {0}", value));
             }
@@ -29,8 +29,8 @@ namespace Datasworn
         {
             switch (value)
             {
-                case OracleColumnSimpleOracleType.ColumnSimple:
-                    JsonSerializer.Serialize<string>(writer, "column_simple", options);
+                case OracleColumnSimpleOracleType.ColumnBasic:
+                    JsonSerializer.Serialize<string>(writer, "column_basic", options);
                     return;
             }
         }

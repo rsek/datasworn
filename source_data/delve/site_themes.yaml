@@ -22,60 +22,60 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Evidence of lost knowledge
+        text: Evidence of lost knowledge
       - min: 5
         max: 8
-        result: Inscrutable relics
+        text: Inscrutable relics
       - min: 9
         max: 12
-        result: Ancient artistry or craft
+        text: Ancient artistry or craft
       - min: 13
         max: 16
-        result: Preserved corpses or fossils
+        text: Preserved corpses or fossils
       - min: 17
         max: 20
-        result: Visions of this place in another time
+        text: Visions of this place in another time
     dangers:
       - min: 1
         max: 5
-        result: Ancient trap
+        text: Ancient trap
         suggestions: &SuggestTrap
           oracles:
             - classic/oracles/trap/event
             - classic/oracles/trap/component
       - min: 6
         max: 10
-        result: Hazardous architecture or terrain
+        text: Hazardous architecture or terrain
       - min: 11
         max: 12
-        result: Blocked or broken path
+        text: Blocked or broken path
       - min: 13
         max: 14
-        result: Denizen protects an ancient secret
+        text: Denizen protects an ancient secret
       - min: 15
         max: 16
-        result: Denizen reveres an ancient power
+        text: Denizen reveres an ancient power
       - min: 17
         max: 18
-        result: Living relics of a lost age
+        text: Living relics of a lost age
       - min: 19
         max: 20
-        result: Ancient evil resurgent
+        text: Ancient evil resurgent
       - min: 21
         max: 22
-        result: Dire warnings of a long-buried danger
+        text: Dire warnings of a long-buried danger
       - min: 23
         max: 24
-        result: Ancient disease or contamination
+        text: Ancient disease or contamination
       - min: 25
         max: 26
-        result: Artifact of terrible meaning or power
+        text: Artifact of terrible meaning or power
       - min: 27
         max: 28
-        result: Disturbing evidence of ancient wrongs
+        text: Disturbing evidence of ancient wrongs
       - min: 29
         max: 30
-        result: Others seek power or knowledge
+        text: Others seek power or knowledge
   corrupted:
     name: Corrupted
     # https://game-icons.net/1x1/lorc/tentacle-strike.html
@@ -90,57 +90,57 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Mystic focus or conduit
+        text: Mystic focus or conduit
       - min: 5
         max: 8
-        result: Strange environmental disturbances
+        text: Strange environmental disturbances
       - min: 9
         max: 12
-        result: Mystic runes or markings
+        text: Mystic runes or markings
       - min: 13
         max: 16
-        result: Blight or decay
+        text: Blight or decay
       - min: 17
         max: 20
-        result: Evidence of a foul ritual
+        text: Evidence of a foul ritual
     dangers:
       - min: 1
         max: 5
-        result: Denizen spawned from dark magic
+        text: Denizen spawned from dark magic
       - min: 6
         max: 10
-        result: Denizen controls dark magic
+        text: Denizen controls dark magic
       - min: 11
         max: 12
-        result: Denizen corrupted by dark magic
+        text: Denizen corrupted by dark magic
       - min: 13
         max: 14
-        result: Corruption marks you
+        text: Corruption marks you
       - min: 15
         max: 16
-        result: Innocents held in thrall
+        text: Innocents held in thrall
       - min: 17
         max: 18
-        result: Revelations of a terrible truth
+        text: Revelations of a terrible truth
       - min: 19
         max: 20
-        result: Mystic trap or trigger
+        text: Mystic trap or trigger
         suggestions: *SuggestTrap
       - min: 21
         max: 22
-        result: Mystic barrier or ward
+        text: Mystic barrier or ward
       - min: 23
         max: 24
-        result: Illusions lead you astray
+        text: Illusions lead you astray
       - min: 25
         max: 26
-        result: Dark ritual in progress
+        text: Dark ritual in progress
       - min: 27
         max: 28
-        result: Lingering effects of a dark ritual
+        text: Lingering effects of a dark ritual
       - min: 29
         max: 30
-        result: Dread harbingers of a greater magic
+        text: Dread harbingers of a greater magic
   fortified:
     name: Fortified
     # https://game-icons.net/1x1/lorc/barbed-sun.html
@@ -155,58 +155,58 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Camp or quarters
+        text: Camp or quarters
       - min: 5
         max: 8
-        result: Guarded location
+        text: Guarded location
       - min: 9
         max: 12
-        result: Storage or repository
+        text: Storage or repository
       - min: 13
         max: 16
-        result: Work or training area
+        text: Work or training area
       - min: 17
         max: 20
-        result: Command center or leadership
+        text: Command center or leadership
     dangers:
       - min: 1
         max: 5
-        result: Denizen patrols the area
+        text: Denizen patrols the area
       - min: 6
         max: 10
-        result: Denizen on guard
+        text: Denizen on guard
       - min: 11
         max: 12
-        result: Denizen ready to sound the alarm
+        text: Denizen ready to sound the alarm
       - min: 13
         max: 14
-        result: Denizen sets an ambush
+        text: Denizen sets an ambush
       - min: 15
         max: 16
-        result: Denizen lures you into a trap
+        text: Denizen lures you into a trap
         suggestions: *SuggestTrap
       - min: 17
         max: 18
-        result: Denizens converge on this area
+        text: Denizens converge on this area
       - min: 19
         max: 20
-        result: Pets or underlings
+        text: Pets or underlings
       - min: 21
         max: 22
-        result: Unexpected alliance revealed
+        text: Unexpected alliance revealed
       - min: 23
         max: 24
-        result: Nefarious plans revealed
+        text: Nefarious plans revealed
       - min: 25
         max: 26
-        result: Unexpected leader revealed
+        text: Unexpected leader revealed
       - min: 27
         max: 28
-        result: Trap
+        text: Trap
         suggestions: *SuggestTrap
       - min: 29
         max: 30
-        result: Alarm trigger
+        text: Alarm trigger
   hallowed:
     name: Hallowed
     # https://game-icons.net/1x1/lorc/fire-ring.html
@@ -221,56 +221,56 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Temple or altar
+        text: Temple or altar
       - min: 5
         max: 8
-        result: Offerings or atonements
+        text: Offerings or atonements
       - min: 9
         max: 12
-        result: Religious relic or idol
+        text: Religious relic or idol
       - min: 13
         max: 16
-        result: Consecrated ground
+        text: Consecrated ground
       - min: 17
         max: 20
-        result: Dwellings or gathering place
+        text: Dwellings or gathering place
     dangers:
       - min: 1
         max: 5
-        result: Denizen defends their sanctum
+        text: Denizen defends their sanctum
       - min: 6
         max: 10
-        result: Denizen enacts the will of their god
+        text: Denizen enacts the will of their god
       - min: 11
         max: 12
-        result: Denizen seeks martyrdom
+        text: Denizen seeks martyrdom
       - min: 13
         max: 14
-        result: Secret of the faith is revealed
+        text: Secret of the faith is revealed
       - min: 15
         max: 16
-        result: Greater purpose is revealed
+        text: Greater purpose is revealed
       - min: 17
         max: 18
-        result: Unexpected disciples are revealed
+        text: Unexpected disciples are revealed
       - min: 19
         max: 20
-        result: Divine manifestations
+        text: Divine manifestations
       - min: 21
         max: 22
-        result: Aspect of the faith beguiles you
+        text: Aspect of the faith beguiles you
       - min: 23
         max: 24
-        result: Unexpected leader is revealed
+        text: Unexpected leader is revealed
       - min: 25
         max: 26
-        result: Embodiment of a god or myth
+        text: Embodiment of a god or myth
       - min: 27
         max: 28
-        result: Protective ward or barrier
+        text: Protective ward or barrier
       - min: 29
         max: 30
-        result: Prophecies reveal a dark fate
+        text: Prophecies reveal a dark fate
   haunted:
     name: Haunted
     _source:
@@ -284,56 +284,56 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Tomb or burial site
+        text: Tomb or burial site
       - min: 5
         max: 8
-        result: Blood was spilled here
+        text: Blood was spilled here
       - min: 9
         max: 12
-        result: Unnatural mists or darkness
+        text: Unnatural mists or darkness
       - min: 13
         max: 16
-        result: Messages from beyond the grave
+        text: Messages from beyond the grave
       - min: 17
         max: 20
-        result: Apparitions of a person or event
+        text: Apparitions of a person or event
     dangers:
       - min: 1
         max: 5
-        result: Denizen haunts this area
+        text: Denizen haunts this area
       - min: 6
         max: 10
-        result: Unsettling sounds or foreboding signs
+        text: Unsettling sounds or foreboding signs
       - min: 11
         max: 12
-        result: Denizen attacks without warning
+        text: Denizen attacks without warning
       - min: 13
         max: 14
-        result: Denizen makes a costly demand
+        text: Denizen makes a costly demand
       - min: 15
         max: 16
-        result: Denizen seizes your body or mind
+        text: Denizen seizes your body or mind
       - min: 17
         max: 18
-        result: Denizen taunts or lures you
+        text: Denizen taunts or lures you
       - min: 19
         max: 20
-        result: A disturbing truth is revealed
+        text: A disturbing truth is revealed
       - min: 21
         max: 22
-        result: Frightening visions
+        text: Frightening visions
       - min: 23
         max: 24
-        result: The environment is used against you
+        text: The environment is used against you
       - min: 25
         max: 26
-        result: Trickery leads you astray
+        text: Trickery leads you astray
       - min: 27
         max: 28
-        result: True nature of this place is revealed
+        text: True nature of this place is revealed
       - min: 29
         max: 30
-        result: Sudden, shocking manifestation
+        text: Sudden, shocking manifestation
   infested:
     name: Infested
     # https://game-icons.net/1x1/lorc/lamprey-mouth.html
@@ -348,57 +348,57 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Inhabited nest
+        text: Inhabited nest
       - min: 5
         max: 8
-        result: Abandoned nest
+        text: Abandoned nest
       - min: 9
         max: 12
-        result: Ravaged terrain or architecture
+        text: Ravaged terrain or architecture
       - min: 13
         max: 16
-        result: Remains or carrion
+        text: Remains or carrion
       - min: 17
         max: 20
-        result: Hoarded food
+        text: Hoarded food
     dangers:
       - min: 1
         max: 5
-        result: Denizens swarm and attack
+        text: Denizens swarm and attack
       - min: 6
         max: 10
-        result: Toxic or sickening environment
+        text: Toxic or sickening environment
       - min: 11
         max: 12
-        result: Denizen stalks you
+        text: Denizen stalks you
       - min: 13
         max: 14
-        result: Denizen takes or destroys something
+        text: Denizen takes or destroys something
       - min: 15
         max: 16
-        result: Denizen reveals surprising cleverness
+        text: Denizen reveals surprising cleverness
       - min: 17
         max: 18
-        result: Denizen guided by a greater threat
+        text: Denizen guided by a greater threat
       - min: 19
         max: 20
-        result: Denizen blocks the path
+        text: Denizen blocks the path
       - min: 21
         max: 22
-        result: Denizen funnels you down a new path
+        text: Denizen funnels you down a new path
       - min: 23
         max: 24
-        result: Denizen undermines the path
+        text: Denizen undermines the path
       - min: 25
         max: 26
-        result: Denizen lays in wait
+        text: Denizen lays in wait
       - min: 27
         max: 28
-        result: Trap or snare
+        text: Trap or snare
         suggestions: *SuggestTrap
       - min: 29
         max: 30
-        result: Victim’s horrible fate is revealed
+        text: Victim’s horrible fate is revealed
   ravaged:
     name: Ravaged
     # https://game-icons.net/1x1/lorc/wind-hole.html
@@ -413,56 +413,56 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Path of destruction
+        text: Path of destruction
       - min: 5
         max: 8
-        result: Abandoned or ruined dwelling
+        text: Abandoned or ruined dwelling
       - min: 9
         max: 12
-        result: Untouched or preserved area
+        text: Untouched or preserved area
       - min: 13
         max: 16
-        result: Traces of what was lost
+        text: Traces of what was lost
       - min: 17
         max: 20
-        result: Ill-fated victims
+        text: Ill-fated victims
     dangers:
       - min: 1
         max: 5
-        result: Precarious architecture or terrain
+        text: Precarious architecture or terrain
       - min: 6
         max: 10
-        result: Imminent collapse or destruction
+        text: Imminent collapse or destruction
       - min: 11
         max: 12
-        result: Path undermined
+        text: Path undermined
       - min: 13
         max: 14
-        result: Blocked or broken path
+        text: Blocked or broken path
       - min: 15
         max: 16
-        result: Vestiges of a destructive force
+        text: Vestiges of a destructive force
       - min: 17
         max: 18
-        result: Unexpected environmental threat
+        text: Unexpected environmental threat
       - min: 19
         max: 20
-        result: Echoes of a troubling past
+        text: Echoes of a troubling past
       - min: 21
         max: 22
-        result: Signs of a horrible fate
+        text: Signs of a horrible fate
       - min: 23
         max: 24
-        result: Denizen seeks retribution
+        text: Denizen seeks retribution
       - min: 25
         max: 26
-        result: Denizen leverages the environment
+        text: Denizen leverages the environment
       - min: 27
         max: 28
-        result: Denizen restores what was lost
+        text: Denizen restores what was lost
       - min: 29
         max: 30
-        result: Ravages return anew
+        text: Ravages return anew
   wild:
     name: Wild
     # https://game-icons.net/1x1/skoll/fangs.html
@@ -477,53 +477,53 @@ site_themes:
     features:
       - min: 1
         max: 4
-        result: Denizen’s lair
+        text: Denizen’s lair
       - min: 5
         max: 8
-        result: Territorial markings
+        text: Territorial markings
       - min: 9
         max: 12
-        result: Impressive flora or fauna
+        text: Impressive flora or fauna
       - min: 13
         max: 16
-        result: Hunting ground or watering hole
+        text: Hunting ground or watering hole
       - min: 17
         max: 20
-        result: Remains or carrion
+        text: Remains or carrion
     dangers:
       - min: 1
         max: 5
-        result: Denizen hunts
+        text: Denizen hunts
       - min: 6
         max: 10
-        result: Denizen strikes without warning
+        text: Denizen strikes without warning
       - min: 11
         max: 12
-        result: Denizen leverages the environment
+        text: Denizen leverages the environment
       - min: 13
         max: 14
-        result: Denizen wields unexpected abilities
+        text: Denizen wields unexpected abilities
       - min: 15
         max: 16
-        result: Denizen guided by a greater threat
+        text: Denizen guided by a greater threat
       - min: 17
         max: 18
-        result: Denizen protects something
+        text: Denizen protects something
       - min: 19
         max: 20
-        result: Hazardous terrain
+        text: Hazardous terrain
       - min: 21
         max: 22
-        result: Weather or environmental threat
+        text: Weather or environmental threat
       - min: 23
         max: 24
-        result: Benign aspect becomes a threat
+        text: Benign aspect becomes a threat
       - min: 25
         max: 26
-        result: Overzealous hunter
+        text: Overzealous hunter
       - min: 27
         max: 28
-        result: Disturbing evidence of a victim’s fate
+        text: Disturbing evidence of a victim’s fate
       - min: 29
         max: 30
-        result: Ill-fated victim in danger
+        text: Ill-fated victim in danger

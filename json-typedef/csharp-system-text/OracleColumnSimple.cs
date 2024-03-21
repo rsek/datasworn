@@ -35,7 +35,7 @@ namespace Datasworn
         /// An array of objects, each representing a single row of the table.
         /// </summary>
         [JsonPropertyName("rows")]
-        public IList<OracleTableRowSimple> Rows { get; set; }
+        public IList<OracleTableRowBasic> Rows { get; set; }
 
         /// <summary>
         /// An optional thematic color for this column. For an example, see

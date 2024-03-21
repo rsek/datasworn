@@ -26,13 +26,13 @@ oracles:
           settlements:
             <<: &Settlements
               name: Settlements
-              oracle_type: table_shared_results
+              oracle_type: table_shared_text
             _source: *CollectionSource
             contents:
               terminus:
                 <<: &OracleTable.Terminus
                   name: Terminus
-                  oracle_type: column_simple
+                  oracle_type: column_basic
                   tags:
                     starforged:
                       region: terminus
@@ -41,27 +41,27 @@ oracles:
                   - min: 1
                     max: 50
                     <<: &Settlements.0
-                      result: None
+                      text: None
                   - min: 51
                     max: 60
                     <<: &Settlements.1
-                      result: Orbital settlement
+                      text: Orbital settlement
                   - min: 61
                     max: 80
                     <<: &Settlements.2
-                      result: Planetside settlement
+                      text: Planetside settlement
                   - min: 81
                     max: 92
                     <<: &Settlements.3
-                      result: Multiple settlements
+                      text: Multiple settlements
                   - min: 93
                     max: 100
                     <<: &Settlements.4
-                      result: Settlements in conflict
+                      text: Settlements in conflict
               outlands:
                 <<: &OracleTable.Outlands
                   name: Outlands
-                  oracle_type: column_simple
+                  oracle_type: column_basic
                   tags:
                     starforged:
                       region: outlands
@@ -85,7 +85,7 @@ oracles:
               expanse:
                 <<: &OracleTable.Expanse
                   name: Expanse
-                  oracle_type: column_simple
+                  oracle_type: column_basic
                   tags:
                     starforged:
                       region: expanse
@@ -108,103 +108,103 @@ oracles:
             <<: &SampleNames
               name: Sample Names
               dice: 1d20
-              oracle_type: table_simple
+              oracle_type: table_basic
             _source: *CollectionSource
             rows:
               - min: 1
                 max: 1
-                result: Abalos
+                text: Abalos
               - min: 2
                 max: 2
-                result: Audun
+                text: Audun
               - min: 3
                 max: 3
-                result: Bishop
+                text: Bishop
               - min: 4
                 max: 4
-                result: Desolation
+                text: Desolation
               - min: 5
                 max: 5
-                result: Dykuma
+                text: Dykuma
               - min: 6
                 max: 6
-                result: Fallow
+                text: Fallow
               - min: 7
                 max: 7
-                result: Helios
+                text: Helios
               - min: 8
                 max: 8
-                result: Mirage
+                text: Mirage
               - min: 9
                 max: 9
-                result: Morricone
+                text: Morricone
               - min: 10
                 max: 10
-                result: Nux
+                text: Nux
               - min: 11
                 max: 11
-                result: Ordos
+                text: Ordos
               - min: 12
                 max: 12
-                result: Petra
+                text: Petra
               - min: 13
                 max: 13
-                result: Pyla
+                text: Pyla
               - min: 14
                 max: 14
-                result: Sabulo
+                text: Sabulo
               - min: 15
                 max: 15
-                result: Saffron
+                text: Saffron
               - min: 16
                 max: 16
-                result: Sirocco
+                text: Sirocco
               - min: 17
                 max: 17
-                result: Sulis
+                text: Sulis
               - min: 18
                 max: 18
-                result: Torrid
+                text: Torrid
               - min: 19
                 max: 19
-                result: Umber
+                text: Umber
               - min: 20
                 max: 20
-                result: Vermillion
+                text: Vermillion
           atmosphere:
             <<: &Atmosphere
               name: Atmosphere
-              oracle_type: table_simple
+              oracle_type: table_basic
             _source: *CollectionSource
             rows:
               - min: 1
                 max: 10
                 <<: &Atmosphere.NoneThin
-                  result: None / thin
+                  text: None / thin
               - min: 11
                 max: 25
                 <<: &Atmosphere.Toxic
-                  result: Toxic
+                  text: Toxic
               - min: 26
                 max: 40
                 <<: &Atmosphere.Corrosive
-                  result: Corrosive
+                  text: Corrosive
               - min: 41
                 max: 70
                 <<: &Atmosphere.Marginal
-                  result: Marginal
+                  text: Marginal
               - min: 71
                 max: 95
                 <<: &Atmosphere.Breathable
-                  result: Breathable
+                  text: Breathable
               - min: 96
                 max: 100
                 <<: &Atmosphere.Ideal
-                  result: Ideal
+                  text: Ideal
           observed_from_space:
             <<: &ObservedFromSpace
               name: Observed From Space
-              oracle_type: table_simple
+              oracle_type: table_basic
               recommended_rolls:
                 min: 1
                 max: 2
@@ -213,40 +213,40 @@ oracles:
               - <<: &ObservedFromSpace.0
                   min: 1
                   max: 11
-                result: Dry seabeds
+                text: Dry seabeds
               - <<: &ObservedFromSpace.1
                   min: 12
                   max: 22
-                result: Expansive dune seas
+                text: Expansive dune seas
               - <<: &ObservedFromSpace.2
                   min: 23
                   max: 33
-                result: Massive canyons
+                text: Massive canyons
               - <<: &ObservedFromSpace.3
                   min: 34
                   max: 44
-                result: Perpetual daylight
+                text: Perpetual daylight
               - <<: &ObservedFromSpace.4
                   min: 45
                   max: 55
-                result: Rugged mountains
+                text: Rugged mountains
               - <<: &ObservedFromSpace.5
                   min: 56
                   max: 66
-                result: Sprawling salt flats
+                text: Sprawling salt flats
               - <<: &ObservedFromSpace.6
                   min: 67
                   max: 77
-                result: Vast plateaus
+                text: Vast plateaus
               - <<: &ObservedFromSpace.7
                   min: 78
                   max: 88
-                result: Vibrant terrain colors
+                text: Vibrant terrain colors
               - &ObservedFromSpace.8
                 min: 89
                 max: 98
                 <<: &DescriptorFocus
-                  result: &DF.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text: &DF.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls: &DF.rolls
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
@@ -255,11 +255,11 @@ oracles:
               - &ObservedFromSpace.9
                 min: 99
                 max: 100
-                result: '[Precursor Vault](id:starforged/collections/oracles/vaults) (orbital)'
+                text: '[Precursor Vault](id:starforged/collections/oracles/vaults) (orbital)'
           feature:
             <<: &Feature
               name: Planetside Feature
-              oracle_type: table_simple
+              oracle_type: table_basic
               recommended_rolls:
                 min: 1
                 max: 2
@@ -268,55 +268,55 @@ oracles:
               - <<: &Feature.0
                   min: 1
                   max: 7
-                result: Cavernous sinkholes
+                text: Cavernous sinkholes
               - <<: &Feature.1
                   min: 8
                   max: 14
-                result: Engulfing sandstorms
+                text: Engulfing sandstorms
               - <<: &Feature.2
                   min: 15
                   max: 21
-                result: Fleeting rainstorms and flash floods
+                text: Fleeting rainstorms and flash floods
               - <<: &Feature.3
                   min: 22
                   max: 28
-                result: Flooded grottos
+                text: Flooded grottos
               - <<: &Feature.4
                   min: 29
                   max: 35
-                result: Petrified forest
+                text: Petrified forest
               - <<: &Feature.5
                   min: 36
                   max: 42
-                result: Rampaging whirlwinds
+                text: Rampaging whirlwinds
               - <<: &Feature.6
                   min: 43
                   max: 49
-                result: Scorched glass plains
+                text: Scorched glass plains
               - <<: &Feature.7
                   min: 50
                   max: 56
-                result: Severe temperature fluctuations
+                text: Severe temperature fluctuations
               - <<: &Feature.8
                   min: 57
                   max: 63
-                result: Sunbaked bones of titanic creatures
+                text: Sunbaked bones of titanic creatures
               - <<: &Feature.9
                   min: 64
                   max: 70
-                result: Timeworn cliffside caves
+                text: Timeworn cliffside caves
               - <<: &Feature.10
                   min: 71
                   max: 77
-                result: Towering rock formations
+                text: Towering rock formations
               - <<: &Feature.11
                   min: 78
                   max: 84
-                result: Violent electrical storms
+                text: Violent electrical storms
               - <<: &Feature.12
                   min: 85
                   max: 91
-                result: Windborne metallic sand
+                text: Windborne metallic sand
               - &Feature.13
                 min: 92
                 max: 98
@@ -324,37 +324,37 @@ oracles:
               - &Feature.14
                 min: 99
                 max: 100
-                result: '[Precursor Vault](id:starforged/collections/oracles/vaults) (planetside)'
+                text: '[Precursor Vault](id:starforged/collections/oracles/vaults) (planetside)'
           life:
             <<: &Life
               name: Life
-              oracle_type: table_simple
+              oracle_type: table_basic
             _source: *CollectionSource
             rows:
               - min: 1
                 max: 20
                 <<: &Life.None
-                  result: None
+                  text: None
               - min: 21
                 max: 40
                 <<: &Life.Extinct
-                  result: Extinct
+                  text: Extinct
               - min: 41
                 max: 70
                 <<: &Life.Scarce
-                  result: Scarce
+                  text: Scarce
               - min: 71
                 max: 90
                 <<: &Life.Diverse
-                  result: Diverse
+                  text: Diverse
               - min: 91
                 max: 97
                 <<: &Life.Bountiful
-                  result: Bountiful
+                  text: Bountiful
               - min: 98
                 max: 100
                 <<: &Life.Overrun
-                  result: Overrun
+                  text: Overrun
       furnace:
         name: Furnace World
         oracle_type: tables
@@ -431,64 +431,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Ash
+                text: Ash
               - min: 2
                 max: 2
-                result: Azula
+                text: Azula
               - min: 3
                 max: 3
-                result: Cinder
+                text: Cinder
               - min: 4
                 max: 4
-                result: Cyrus
+                text: Cyrus
               - min: 5
                 max: 5
-                result: Draconus
+                text: Draconus
               - min: 6
                 max: 6
-                result: Effigy
+                text: Effigy
               - min: 7
                 max: 7
-                result: Ember
+                text: Ember
               - min: 8
                 max: 8
-                result: Flint
+                text: Flint
               - min: 9
                 max: 9
-                result: Hades
+                text: Hades
               - min: 10
                 max: 10
-                result: Hera
+                text: Hera
               - min: 11
                 max: 11
-                result: Ignis
+                text: Ignis
               - min: 12
                 max: 12
-                result: Inferno
+                text: Inferno
               - min: 13
                 max: 13
-                result: Ishum
+                text: Ishum
               - min: 14
                 max: 14
-                result: Kresnik
+                text: Kresnik
               - min: 15
                 max: 15
-                result: Nemesis
+                text: Nemesis
               - min: 16
                 max: 16
-                result: Obsidian
+                text: Obsidian
               - min: 17
                 max: 17
-                result: Scorch
+                text: Scorch
               - min: 18
                 max: 18
-                result: Tana
+                text: Tana
               - min: 19
                 max: 19
-                result: Vesta
+                text: Vesta
               - min: 20
                 max: 20
-                result: Vesuvius
+                text: Vesuvius
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -514,21 +514,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Fiery world-spanning chasms
+                text: Fiery world-spanning chasms
               - <<: *ObservedFromSpace.1
-                result: Glowing rivers of lava
+                text: Glowing rivers of lava
               - <<: *ObservedFromSpace.2
-                result: Lightning-wracked ash clouds
+                text: Lightning-wracked ash clouds
               - <<: *ObservedFromSpace.3
-                result: Magma seas
+                text: Magma seas
               - <<: *ObservedFromSpace.4
-                result: Massive supervolcano
+                text: Massive supervolcano
               - <<: *ObservedFromSpace.5
-                result: Once verdant terrain
+                text: Once verdant terrain
               - <<: *ObservedFromSpace.6
-                result: Towering mountain ranges
+                text: Towering mountain ranges
               - <<: *ObservedFromSpace.7
-                result: World-spanning fissures
+                text: World-spanning fissures
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -536,31 +536,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Blinding ash storms
+                text: Blinding ash storms
               - <<: *Feature.1
-                result: Catastrophic earthquakes
+                text: Catastrophic earthquakes
               - <<: *Feature.2
-                result: Colorful geothermal springs
+                text: Colorful geothermal springs
               - <<: *Feature.3
-                result: Intricate volcanic rock formations
+                text: Intricate volcanic rock formations
               - <<: *Feature.4
-                result: Lava tube tunnel networks
+                text: Lava tube tunnel networks
               - <<: *Feature.5
-                result: Masses of scorched bones
+                text: Masses of scorched bones
               - <<: *Feature.6
-                result: Plains of volcanic glass
+                text: Plains of volcanic glass
               - <<: *Feature.7
-                result: Pools of liquid metal
+                text: Pools of liquid metal
               - <<: *Feature.8
-                result: Rocky islands adrift on magma
+                text: Rocky islands adrift on magma
               - <<: *Feature.9
-                result: Roiling clouds of superheated gas
+                text: Roiling clouds of superheated gas
               - <<: *Feature.10
-                result: Scalding geysers
+                text: Scalding geysers
               - <<: *Feature.11
-                result: Silica or metal storms
+                text: Silica or metal storms
               - <<: *Feature.12
-                result: Steaming mudflats
+                text: Steaming mudflats
               - *Feature.13
               - *Feature.14
           life:
@@ -657,64 +657,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Anubis
+                text: Anubis
               - min: 2
                 max: 2
-                result: Banshee
+                text: Banshee
               - min: 3
                 max: 3
-                result: Barrow
+                text: Barrow
               - min: 4
                 max: 4
-                result: Cairn
+                text: Cairn
               - min: 5
                 max: 5
-                result: Cerberus
+                text: Cerberus
               - min: 6
                 max: 6
-                result: Charon
+                text: Charon
               - min: 7
                 max: 7
-                result: Elysia
+                text: Elysia
               - min: 8
                 max: 8
-                result: Keen
+                text: Keen
               - min: 9
                 max: 9
-                result: Kur
+                text: Kur
               - min: 10
                 max: 10
-                result: Lament
+                text: Lament
               - min: 11
                 max: 11
-                result: Mantus
+                text: Mantus
               - min: 12
                 max: 12
-                result: Morrigan
+                text: Morrigan
               - min: 13
                 max: 13
-                result: Mourn
+                text: Mourn
               - min: 14
                 max: 14
-                result: Necropolis
+                text: Necropolis
               - min: 15
                 max: 15
-                result: Orcus
+                text: Orcus
               - min: 16
                 max: 16
-                result: Osiris
+                text: Osiris
               - min: 17
                 max: 17
-                result: Requiem
+                text: Requiem
               - min: 18
                 max: 18
-                result: Stygia
+                text: Stygia
               - min: 19
                 max: 19
-                result: Tartarus
+                text: Tartarus
               - min: 20
                 max: 20
-                result: Thrace
+                text: Thrace
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -740,21 +740,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Broken moon
+                text: Broken moon
               - <<: *ObservedFromSpace.1
-                result: Perpetual overcast
+                text: Perpetual overcast
               - <<: *ObservedFromSpace.2
-                result: Cratered surface
+                text: Cratered surface
               - <<: *ObservedFromSpace.3
-                result: Sky-breaching ruins
+                text: Sky-breaching ruins
               - <<: *ObservedFromSpace.4
-                result: Dry seabeds
+                text: Dry seabeds
               - <<: *ObservedFromSpace.5
-                result: Vast wastelands
+                text: Vast wastelands
               - <<: *ObservedFromSpace.6
-                result: Irradiated atmosphere
+                text: Irradiated atmosphere
               - <<: *ObservedFromSpace.7
-                result: Orbiting ship graveyard
+                text: Orbiting ship graveyard
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -762,31 +762,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Acid pools
+                text: Acid pools
               - <<: *Feature.1
-                result: Ash dunes
+                text: Ash dunes
               - <<: *Feature.2
-                result: Corrosive rains
+                text: Corrosive rains
               - <<: *Feature.3
-                result: Dead forests
+                text: Dead forests
               - <<: *Feature.4
-                result: Fetid mudflats
+                text: Fetid mudflats
               - <<: *Feature.5
-                result: Mass graves
+                text: Mass graves
               - <<: *Feature.6
-                result: Moldering bones
+                text: Moldering bones
               - <<: *Feature.7
-                result: Noxious fog
+                text: Noxious fog
               - <<: *Feature.8
-                result: Radioactive hotspots
+                text: Radioactive hotspots
               - <<: *Feature.9
-                result: Ravaged cities
+                text: Ravaged cities
               - <<: *Feature.10
-                result: Scarred battlefields
+                text: Scarred battlefields
               - <<: *Feature.11
-                result: Ship graveyards
+                text: Ship graveyards
               - <<: *Feature.12
-                result: Whispers of the dead
+                text: Whispers of the dead
               - *Feature.13
               - *Feature.14
           life:
@@ -883,64 +883,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Beira
+                text: Beira
               - min: 2
                 max: 2
-                result: Boreas
+                text: Boreas
               - min: 3
                 max: 3
-                result: Caradhras
+                text: Caradhras
               - min: 4
                 max: 4
-                result: Cicero
+                text: Cicero
               - min: 5
                 max: 5
-                result: Demetria
+                text: Demetria
               - min: 6
                 max: 6
-                result: Enten
+                text: Enten
               - min: 7
                 max: 7
-                result: Fissure
+                text: Fissure
               - min: 8
                 max: 8
-                result: Frost
+                text: Frost
               - min: 9
                 max: 9
-                result: Gelida
+                text: Gelida
               - min: 10
                 max: 10
-                result: Jotunn
+                text: Jotunn
               - min: 11
                 max: 11
-                result: Kanna
+                text: Kanna
               - min: 12
                 max: 12
-                result: Karn
+                text: Karn
               - min: 13
                 max: 13
-                result: Kheimon
+                text: Kheimon
               - min: 14
                 max: 14
-                result: Moroz
+                text: Moroz
               - min: 15
                 max: 15
-                result: Nix
+                text: Nix
               - min: 16
                 max: 16
-                result: Olwen
+                text: Olwen
               - min: 17
                 max: 17
-                result: Osolok
+                text: Osolok
               - min: 18
                 max: 18
-                result: Taiga
+                text: Taiga
               - min: 19
                 max: 19
-                result: Thule
+                text: Thule
               - min: 20
                 max: 20
-                result: Varnholme
+                text: Varnholme
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -968,21 +968,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Feeble sunlight
+                text: Feeble sunlight
               - <<: *ObservedFromSpace.1
-                result: Supersized ice volcano
+                text: Supersized ice volcano
               - <<: *ObservedFromSpace.2
-                result: Frozen oceans
+                text: Frozen oceans
               - <<: *ObservedFromSpace.3
-                result: Vibrantly colored ice
+                text: Vibrantly colored ice
               - <<: *ObservedFromSpace.4
-                result: Rocky glacial islands
+                text: Rocky glacial islands
               - <<: *ObservedFromSpace.5
-                result: World-spanning ice canyon
+                text: World-spanning ice canyon
               - <<: *ObservedFromSpace.6
-                result: Snowbound mountains
+                text: Snowbound mountains
               - <<: *ObservedFromSpace.7
-                result: Sky-breaching geysers
+                text: Sky-breaching geysers
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -990,31 +990,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Abyssal ice fissures
+                text: Abyssal ice fissures
               - <<: *Feature.1
-                result: Blinding snow storms
+                text: Blinding snow storms
               - <<: *Feature.2
-                result: Clusters of ice spikes
+                text: Clusters of ice spikes
               - <<: *Feature.3
-                result: Colossal ice caves
+                text: Colossal ice caves
               - <<: *Feature.4
-                result: Glistening ice spires
+                text: Glistening ice spires
               - <<: *Feature.5
-                result: Massive snow drifts
+                text: Massive snow drifts
               - <<: *Feature.6
-                result: Preserved carcasses
+                text: Preserved carcasses
               - <<: *Feature.7
-                result: Rocky islands amid icy wastes
+                text: Rocky islands amid icy wastes
               - <<: *Feature.8
-                result: Shattered plains of pack ice
+                text: Shattered plains of pack ice
               - <<: *Feature.9
-                result: Steaming hot springs
+                text: Steaming hot springs
               - <<: *Feature.10
-                result: Subsurface liquid oceans
+                text: Subsurface liquid oceans
               - <<: *Feature.11
-                result: Vibrant auroras
+                text: Vibrant auroras
               - <<: *Feature.12
-                result: Wind-carved ice formations
+                text: Wind-carved ice formations
               - *Feature.13
               - *Feature.14
           life:
@@ -1115,64 +1115,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Aether
+                text: Aether
               - min: 2
                 max: 2
-                result: Arrokoth
+                text: Arrokoth
               - min: 3
                 max: 3
-                result: Esen
+                text: Esen
               - min: 4
                 max: 4
-                result: Hanish
+                text: Hanish
               - min: 5
                 max: 5
-                result: Magnus
+                text: Magnus
               - min: 6
                 max: 6
-                result: Magonia
+                text: Magonia
               - min: 7
                 max: 7
-                result: Mistral
+                text: Mistral
               - min: 8
                 max: 8
-                result: Nephele
+                text: Nephele
               - min: 9
                 max: 9
-                result: Nimbus
+                text: Nimbus
               - min: 10
                 max: 10
-                result: Nuada
+                text: Nuada
               - min: 11
                 max: 11
-                result: Nubium
+                text: Nubium
               - min: 12
                 max: 12
-                result: Serein
+                text: Serein
               - min: 13
                 max: 13
-                result: Stratus
+                text: Stratus
               - min: 14
                 max: 14
-                result: Taranis
+                text: Taranis
               - min: 15
                 max: 15
-                result: Tempest
+                text: Tempest
               - min: 16
                 max: 16
-                result: Tenzin
+                text: Tenzin
               - min: 17
                 max: 17
-                result: Tyr
+                text: Tyr
               - min: 18
                 max: 18
-                result: Veil
+                text: Veil
               - min: 19
                 max: 19
-                result: Velum
+                text: Velum
               - min: 20
                 max: 20
-                result: Zephyr
+                text: Zephyr
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -1196,21 +1196,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Complex ring system
+                text: Complex ring system
               - <<: *ObservedFromSpace.1
-                result: Intense gravity well
+                text: Intense gravity well
               - <<: *ObservedFromSpace.2
-                result: Numerous moons
+                text: Numerous moons
               - <<: *ObservedFromSpace.3
-                result: Perpetual superstorm
+                text: Perpetual superstorm
               - <<: *ObservedFromSpace.4
-                result: Powerful magnetic field
+                text: Powerful magnetic field
               - <<: *ObservedFromSpace.5
-                result: Severe electrical storms
+                text: Severe electrical storms
               - <<: *ObservedFromSpace.6
-                result: Superheated atmosphere
+                text: Superheated atmosphere
               - <<: *ObservedFromSpace.7
-                result: Unusual atmospheric colors
+                text: Unusual atmospheric colors
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -1218,31 +1218,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Clouds of metal particles
+                text: Clouds of metal particles
               - <<: *Feature.1
-                result: Crystalline rains
+                text: Crystalline rains
               - <<: *Feature.2
-                result: Floating glaciers
+                text: Floating glaciers
               - <<: *Feature.3
-                result: Floating islands
+                text: Floating islands
               - <<: *Feature.4
-                result: Layer of suspended liquid
+                text: Layer of suspended liquid
               - <<: *Feature.5
-                result: Pockets of explosive gases
+                text: Pockets of explosive gases
               - <<: *Feature.6
-                result: Powerful vortexes
+                text: Powerful vortexes
               - <<: *Feature.7
-                result: Radiation fields
+                text: Radiation fields
               - <<: *Feature.8
-                result: Storm-swept rocky debris
+                text: Storm-swept rocky debris
               - <<: *Feature.9
-                result: Torrential rain
+                text: Torrential rain
               - <<: *Feature.10
-                result: Towering thunderheads
+                text: Towering thunderheads
               - <<: *Feature.11
-                result: Violent turbulence
+                text: Violent turbulence
               - <<: *Feature.12
-                result: Zones of localized atmosphere
+                text: Zones of localized atmosphere
               - *Feature.13
               - *Feature.14
           life:
@@ -1347,64 +1347,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Acacia
+                text: Acacia
               - min: 2
                 max: 2
-                result: Aster
+                text: Aster
               - min: 3
                 max: 3
-                result: Beryl
+                text: Beryl
               - min: 4
                 max: 4
-                result: Celadon
+                text: Celadon
               - min: 5
                 max: 5
-                result: Ceres
+                text: Ceres
               - min: 6
                 max: 6
-                result: Damu
+                text: Damu
               - min: 7
                 max: 7
-                result: Dryad
+                text: Dryad
               - min: 8
                 max: 8
-                result: Flora
+                text: Flora
               - min: 9
                 max: 9
-                result: Iridum
+                text: Iridum
               - min: 10
                 max: 10
-                result: Iris
+                text: Iris
               - min: 11
                 max: 11
-                result: Kishar
+                text: Kishar
               - min: 12
                 max: 12
-                result: Penumbra
+                text: Penumbra
               - min: 13
                 max: 13
-                result: Roris
+                text: Roris
               - min: 14
                 max: 14
-                result: Sylva
+                text: Sylva
               - min: 15
                 max: 15
-                result: Tangle
+                text: Tangle
               - min: 16
                 max: 16
-                result: Thorn
+                text: Thorn
               - min: 17
                 max: 17
-                result: Venom
+                text: Venom
               - min: 18
                 max: 18
-                result: Verdure
+                text: Verdure
               - min: 19
                 max: 19
-                result: Veris
+                text: Veris
               - min: 20
                 max: 20
-                result: Viridian
+                text: Viridian
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -1430,21 +1430,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Cloud-breaching trees
+                text: Cloud-breaching trees
               - <<: *ObservedFromSpace.1
-                result: Towering mountains
+                text: Towering mountains
               - <<: *ObservedFromSpace.2
-                result: Expansive rivers or wetlands
+                text: Expansive rivers or wetlands
               - <<: *ObservedFromSpace.3
-                result: Unbroken canopy
+                text: Unbroken canopy
               - <<: *ObservedFromSpace.4
-                result: Inland seas
+                text: Inland seas
               - <<: *ObservedFromSpace.5
-                result: Unusual vegetation color
+                text: Unusual vegetation color
               - <<: *ObservedFromSpace.6
-                result: Massive canyons
+                text: Massive canyons
               - <<: *ObservedFromSpace.7
-                result: Persistent cloud cover
+                text: Persistent cloud cover
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -1452,31 +1452,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Bioluminescent flora
+                text: Bioluminescent flora
               - <<: *Feature.1
-                result: Deep river gorges
+                text: Deep river gorges
               - <<: *Feature.2
-                result: Extensive exposed root systems
+                text: Extensive exposed root systems
               - <<: *Feature.3
-                result: Immense tiered waterfalls
+                text: Immense tiered waterfalls
               - <<: *Feature.4
-                result: Languid rivers
+                text: Languid rivers
               - <<: *Feature.5
-                result: Low-lying fog
+                text: Low-lying fog
               - <<: *Feature.6
-                result: Plunging sinkholes
+                text: Plunging sinkholes
               - <<: *Feature.7
-                result: Scarred clearings
+                text: Scarred clearings
               - <<: *Feature.8
-                result: Sinking quagmires
+                text: Sinking quagmires
               - <<: *Feature.9
-                result: Surging rivers
+                text: Surging rivers
               - <<: *Feature.10
-                result: Torrential rainstorms
+                text: Torrential rainstorms
               - <<: *Feature.11
-                result: Violent electrical storms
+                text: Violent electrical storms
               - <<: *Feature.12
-                result: Waterlogged caves
+                text: Waterlogged caves
               - *Feature.13
               - *Feature.14
           life:
@@ -1577,64 +1577,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Aegir
+                text: Aegir
               - min: 2
                 max: 2
-                result: Alon
+                text: Alon
               - min: 3
                 max: 3
-                result: Clarion
+                text: Clarion
               - min: 4
                 max: 4
-                result: Darya
+                text: Darya
               - min: 5
                 max: 5
-                result: Eldoris
+                text: Eldoris
               - min: 6
                 max: 6
-                result: Horizon
+                text: Horizon
               - min: 7
                 max: 7
-                result: Hydra
+                text: Hydra
               - min: 8
                 max: 8
-                result: Kai
+                text: Kai
               - min: 9
                 max: 9
-                result: Larimar
+                text: Larimar
               - min: 10
                 max: 10
-                result: Lotan
+                text: Lotan
               - min: 11
                 max: 11
-                result: Mira
+                text: Mira
               - min: 12
                 max: 12
-                result: Navini
+                text: Navini
               - min: 13
                 max: 13
-                result: Nerida
+                text: Nerida
               - min: 14
                 max: 14
-                result: Oceanus
+                text: Oceanus
               - min: 15
                 max: 15
-                result: Pelagic
+                text: Pelagic
               - min: 16
                 max: 16
-                result: Proteus
+                text: Proteus
               - min: 17
                 max: 17
-                result: Russalka
+                text: Russalka
               - min: 18
                 max: 18
-                result: Siren
+                text: Siren
               - min: 19
                 max: 19
-                result: Thalassa
+                text: Thalassa
               - min: 20
                 max: 20
-                result: Triton
+                text: Triton
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -1662,21 +1662,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Complex reef systems
+                text: Complex reef systems
               - <<: *ObservedFromSpace.1
-                result: Emerging volcanoes
+                text: Emerging volcanoes
               - <<: *ObservedFromSpace.2
-                result: Floating forests
+                text: Floating forests
               - <<: *ObservedFromSpace.3
-                result: Global hurricanes
+                text: Global hurricanes
               - <<: *ObservedFromSpace.4
-                result: Large moon and strong tides
+                text: Large moon and strong tides
               - <<: *ObservedFromSpace.5
-                result: Scattered islands
+                text: Scattered islands
               - <<: *ObservedFromSpace.6
-                result: Semi-frozen oceans
+                text: Semi-frozen oceans
               - <<: *ObservedFromSpace.7
-                result: Unusual water color
+                text: Unusual water color
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -1684,31 +1684,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Abyssal trenches
+                text: Abyssal trenches
               - <<: *Feature.1
-                result: Living islands
+                text: Living islands
               - <<: *Feature.2
-                result: Luminescent seas
+                text: Luminescent seas
               - <<: *Feature.3
-                result: Roaming icebergs
+                text: Roaming icebergs
               - <<: *Feature.4
-                result: Shallow-water plains
+                text: Shallow-water plains
               - <<: *Feature.5
-                result: Subsurface volcanoes
+                text: Subsurface volcanoes
               - <<: *Feature.6
-                result: Titanic waves
+                text: Titanic waves
               - <<: *Feature.7
-                result: Undersea air pockets
+                text: Undersea air pockets
               - <<: *Feature.8
-                result: Undersea caves
+                text: Undersea caves
               - <<: *Feature.9
-                result: Undersea forests
+                text: Undersea forests
               - <<: *Feature.10
-                result: Unrelenting rainfall
+                text: Unrelenting rainfall
               - <<: *Feature.11
-                result: Violent currents
+                text: Violent currents
               - <<: *Feature.12
-                result: Windborne waterspouts
+                text: Windborne waterspouts
               - *Feature.13
               - *Feature.14
           life:
@@ -1809,64 +1809,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Aphelion
+                text: Aphelion
               - min: 2
                 max: 2
-                result: Artemis
+                text: Artemis
               - min: 3
                 max: 3
-                result: Capella
+                text: Capella
               - min: 4
                 max: 4
-                result: Cobalt
+                text: Cobalt
               - min: 5
                 max: 5
-                result: Crag
+                text: Crag
               - min: 6
                 max: 6
-                result: Dusk
+                text: Dusk
               - min: 7
                 max: 7
-                result: Eos
+                text: Eos
               - min: 8
                 max: 8
-                result: Hecate
+                text: Hecate
               - min: 9
                 max: 9
-                result: Imbrium
+                text: Imbrium
               - min: 10
                 max: 10
-                result: Latona
+                text: Latona
               - min: 11
                 max: 11
-                result: Losna
+                text: Losna
               - min: 12
                 max: 12
-                result: Orpheus
+                text: Orpheus
               - min: 13
                 max: 13
-                result: Ory
+                text: Ory
               - min: 14
                 max: 14
-                result: Quietus
+                text: Quietus
               - min: 15
                 max: 15
-                result: Selene
+                text: Selene
               - min: 16
                 max: 16
-                result: Silas
+                text: Silas
               - min: 17
                 max: 17
-                result: Silex
+                text: Silex
               - min: 18
                 max: 18
-                result: Slate
+                text: Slate
               - min: 19
                 max: 19
-                result: Themis
+                text: Themis
               - min: 20
                 max: 20
-                result: Umbra
+                text: Umbra
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -1890,21 +1890,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Barren plains
+                text: Barren plains
               - <<: *ObservedFromSpace.1
-                result: Constant asteroid strikes
+                text: Constant asteroid strikes
               - <<: *ObservedFromSpace.2
-                result: Dense ring system
+                text: Dense ring system
               - <<: *ObservedFromSpace.3
-                result: Jagged mountains
+                text: Jagged mountains
               - <<: *ObservedFromSpace.4
-                result: Massive impact crater
+                text: Massive impact crater
               - <<: *ObservedFromSpace.5
-                result: Misshapen form (low gravity)
+                text: Misshapen form (low gravity)
               - <<: *ObservedFromSpace.6
-                result: Perpetual night
+                text: Perpetual night
               - <<: *ObservedFromSpace.7
-                result: Towering plateaus
+                text: Towering plateaus
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -1912,31 +1912,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Crystalline formations
+                text: Crystalline formations
               - <<: *Feature.1
-                result: Crystalline caves
+                text: Crystalline caves
               - <<: *Feature.2
-                result: Exposed mineral deposits
+                text: Exposed mineral deposits
               - <<: *Feature.3
-                result: Geometric terrain features
+                text: Geometric terrain features
               - <<: *Feature.4
-                result: Geothermal vents
+                text: Geothermal vents
               - <<: *Feature.5
-                result: Glassy impact craters
+                text: Glassy impact craters
               - <<: *Feature.6
-                result: Massive dust dunes
+                text: Massive dust dunes
               - <<: *Feature.7
-                result: Powerful magnetic fields
+                text: Powerful magnetic fields
               - <<: *Feature.8
-                result: Rubble-strewn lava fields
+                text: Rubble-strewn lava fields
               - <<: *Feature.9
-                result: Steam-heated caves
+                text: Steam-heated caves
               - <<: *Feature.10
-                result: Subsurface magma flows
+                text: Subsurface magma flows
               - <<: *Feature.11
-                result: Swirling low-lying gases
+                text: Swirling low-lying gases
               - <<: *Feature.12
-                result: Towering rocky spires
+                text: Towering rocky spires
               - *Feature.13
               - *Feature.14
           life:
@@ -2035,64 +2035,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Cavus
+                text: Cavus
               - min: 2
                 max: 2
-                result: Chrysalis
+                text: Chrysalis
               - min: 3
                 max: 3
-                result: Fragment
+                text: Fragment
               - min: 4
                 max: 4
-                result: Havoc
+                text: Havoc
               - min: 5
                 max: 5
-                result: Keres
+                text: Keres
               - min: 6
                 max: 6
-                result: Lux
+                text: Lux
               - min: 7
                 max: 7
-                result: Nemain
+                text: Nemain
               - min: 8
                 max: 8
-                result: Praxis
+                text: Praxis
               - min: 9
                 max: 9
-                result: Riven
+                text: Riven
               - min: 10
                 max: 10
-                result: Schism
+                text: Schism
               - min: 11
                 max: 11
-                result: Shell
+                text: Shell
               - min: 12
                 max: 12
-                result: Slag
+                text: Slag
               - min: 13
                 max: 13
-                result: Sliver
+                text: Sliver
               - min: 14
                 max: 14
-                result: Sunder
+                text: Sunder
               - min: 15
                 max: 15
-                result: Torment
+                text: Torment
               - min: 16
                 max: 16
-                result: Vestige
+                text: Vestige
               - min: 17
                 max: 17
-                result: Vigrid
+                text: Vigrid
               - min: 18
                 max: 18
-                result: Vortex
+                text: Vortex
               - min: 19
                 max: 19
-                result: Wrath
+                text: Wrath
               - min: 20
                 max: 20
-                result: Zix
+                text: Zix
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -2118,21 +2118,21 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Demolished space fleet
+                text: Demolished space fleet
               - <<: *ObservedFromSpace.1
-                result: Preserved planetary fragment
+                text: Preserved planetary fragment
               - <<: *ObservedFromSpace.2
-                result: Dense ring system
+                text: Dense ring system
               - <<: *ObservedFromSpace.3
-                result: Swirling debris field
+                text: Swirling debris field
               - <<: *ObservedFromSpace.4
-                result: Fiery planetary core
+                text: Fiery planetary core
               - <<: *ObservedFromSpace.5
-                result: Unbroken moon
+                text: Unbroken moon
               - <<: *ObservedFromSpace.6
-                result: Geomagnetic storms
+                text: Geomagnetic storms
               - <<: *ObservedFromSpace.7
-                result: Intense solar radiation
+                text: Intense solar radiation
               - *ObservedFromSpace.8
               - *ObservedFromSpace.9
           feature:
@@ -2140,31 +2140,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Broken cities
+                text: Broken cities
               - <<: *Feature.1
-                result: Colliding fragments
+                text: Colliding fragments
               - <<: *Feature.2
-                result: Energy storms
+                text: Energy storms
               - <<: *Feature.3
-                result: Exposed caverns
+                text: Exposed caverns
               - <<: *Feature.4
-                result: Fluctuating gravity
+                text: Fluctuating gravity
               - <<: *Feature.5
-                result: Magnetic disturbances
+                text: Magnetic disturbances
               - <<: *Feature.6
-                result: Molten fissures
+                text: Molten fissures
               - <<: *Feature.7
-                result: Phantom visions of the past
+                text: Phantom visions of the past
               - <<: *Feature.8
-                result: Pocket atmosphere
+                text: Pocket atmosphere
               - <<: *Feature.9
-                result: Residual energy storms
+                text: Residual energy storms
               - <<: *Feature.10
-                result: Swirling corrosive gases
+                text: Swirling corrosive gases
               - <<: *Feature.11
-                result: Unstable and fracturing terrain
+                text: Unstable and fracturing terrain
               - <<: *Feature.12
-                result: Venting magma
+                text: Venting magma
               - *Feature.13
               - *Feature.14
           life:
@@ -2257,64 +2257,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Achlys
+                text: Achlys
               - min: 2
                 max: 2
-                result: Animus
+                text: Animus
               - min: 3
                 max: 3
-                result: Bane
+                text: Bane
               - min: 4
                 max: 4
-                result: Blight
+                text: Blight
               - min: 5
                 max: 5
-                result: Carrion
+                text: Carrion
               - min: 6
                 max: 6
-                result: Chitin
+                text: Chitin
               - min: 7
                 max: 7
-                result: Datura
+                text: Datura
               - min: 8
                 max: 8
-                result: Dreck
+                text: Dreck
               - min: 9
                 max: 9
-                result: Erra
+                text: Erra
               - min: 10
                 max: 10
-                result: Febris
+                text: Febris
               - min: 11
                 max: 11
-                result: Malacia
+                text: Malacia
               - min: 12
                 max: 12
-                result: Miasma
+                text: Miasma
               - min: 13
                 max: 13
-                result: Morbus
+                text: Morbus
               - min: 14
                 max: 14
-                result: Pathosis
+                text: Pathosis
               - min: 15
                 max: 15
-                result: Pestis
+                text: Pestis
               - min: 16
                 max: 16
-                result: Scourge
+                text: Scourge
               - min: 17
                 max: 17
-                result: Telium
+                text: Telium
               - min: 18
                 max: 18
-                result: Timoris
+                text: Timoris
               - min: 19
                 max: 19
-                result: Verus
+                text: Verus
               - min: 20
                 max: 20
-                result: Xanthous
+                text: Xanthous
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -2338,25 +2338,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Expansive fungal plains
+                text: Expansive fungal plains
               - <<: *ObservedFromSpace.1
-                result: Stagnant cloud cover
+                text: Stagnant cloud cover
               - <<: *ObservedFromSpace.2
-                result: Fungal forests
+                text: Fungal forests
               - <<: *ObservedFromSpace.3
-                result: Thick, murky atmosphere
+                text: Thick, murky atmosphere
               - <<: *ObservedFromSpace.4
-                result: Scabrous, infected terrain
+                text: Scabrous, infected terrain
               - <<: *ObservedFromSpace.5
-                result: Toxic seas
+                text: Toxic seas
               - <<: *ObservedFromSpace.6
-                result: Sky-breaching fungus
+                text: Sky-breaching fungus
               - <<: *ObservedFromSpace.7
-                result: Sludge-filled river networks
+                text: Sludge-filled river networks
               - min: 89
                 max: 98
                 <<: &DescriptorFocus
-                  result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls:
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
@@ -2368,31 +2368,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Caustic gas storms
+                text: Caustic gas storms
               - <<: *Feature.1
-                result: Corrosive, low-lying fog
+                text: Corrosive, low-lying fog
               - <<: *Feature.2
-                result: Fungus-encrusted caves
+                text: Fungus-encrusted caves
               - <<: *Feature.3
-                result: Gelatinous ponds
+                text: Gelatinous ponds
               - <<: *Feature.4
-                result: Hallucinogenic toxins
+                text: Hallucinogenic toxins
               - <<: *Feature.5
-                result: Layers of fast-growing lichen
+                text: Layers of fast-growing lichen
               - <<: *Feature.6
-                result: Moldering bones
+                text: Moldering bones
               - <<: *Feature.7
-                result: Mutated flora
+                text: Mutated flora
               - <<: *Feature.8
-                result: Poisonous gas vents
+                text: Poisonous gas vents
               - <<: *Feature.9
-                result: Spore clouds
+                text: Spore clouds
               - <<: *Feature.10
-                result: Terrain marred by fleshy pustules
+                text: Terrain marred by fleshy pustules
               - <<: *Feature.11
-                result: Toxic rain
+                text: Toxic rain
               - <<: *Feature.12
-                result: Virulent fungal infestations
+                text: Virulent fungal infestations
               - *Feature.13
               - *Feature.14
           life:
@@ -2493,64 +2493,64 @@ oracles:
             rows:
               - min: 1
                 max: 1
-                result: Chiron
+                text: Chiron
               - min: 2
                 max: 2
-                result: Demeter
+                text: Demeter
               - min: 3
                 max: 3
-                result: Erebos
+                text: Erebos
               - min: 4
                 max: 4
-                result: Erembour
+                text: Erembour
               - min: 5
                 max: 5
-                result: Feronia
+                text: Feronia
               - min: 6
                 max: 6
-                result: Fortuna
+                text: Fortuna
               - min: 7
                 max: 7
-                result: Gaia
+                text: Gaia
               - min: 8
                 max: 8
-                result: Harbinger
+                text: Harbinger
               - min: 9
                 max: 9
-                result: Haven
+                text: Haven
               - min: 10
                 max: 10
-                result: Hope
+                text: Hope
               - min: 11
                 max: 11
-                result: Morpheus
+                text: Morpheus
               - min: 12
                 max: 12
-                result: Nemus
+                text: Nemus
               - min: 13
                 max: 13
-                result: Sapphire
+                text: Sapphire
               - min: 14
                 max: 14
-                result: Serenity
+                text: Serenity
               - min: 15
                 max: 15
-                result: Sif
+                text: Sif
               - min: 16
                 max: 16
-                result: Silva
+                text: Silva
               - min: 17
                 max: 17
-                result: Sirona
+                text: Sirona
               - min: 18
                 max: 18
-                result: Solstice
+                text: Solstice
               - min: 19
                 max: 19
-                result: Vale
+                text: Vale
               - min: 20
                 max: 20
-                result: Valinor
+                text: Valinor
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
@@ -2572,25 +2572,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *ObservedFromSpace.0
-                result: Complex ring system
+                text: Complex ring system
               - <<: *ObservedFromSpace.1
-                result: Numerous small moons
+                text: Numerous small moons
               - <<: *ObservedFromSpace.2
-                result: Dramatic seasonal variation
+                text: Dramatic seasonal variation
               - <<: *ObservedFromSpace.3
-                result: Unusual day or night cycle
+                text: Unusual day or night cycle
               - <<: *ObservedFromSpace.4
-                result: High gravity
+                text: High gravity
               - <<: *ObservedFromSpace.5
-                result: Vibrantly colored landscapes
+                text: Vibrantly colored landscapes
               - <<: *ObservedFromSpace.6
-                result: Large moon
+                text: Large moon
               - <<: *ObservedFromSpace.7
-                result: Narrow livable band
+                text: Narrow livable band
               - min: 89
                 max: 98
                 <<: &DescriptorFocus
-                  result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls:
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
@@ -2602,31 +2602,31 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Background radiation
+                text: Background radiation
               - <<: *Feature.1
-                result: Chaotically juxtaposed biomes
+                text: Chaotically juxtaposed biomes
               - <<: *Feature.2
-                result: Creature boneyards
+                text: Creature boneyards
               - <<: *Feature.3
-                result: Creature lairs or watering holes
+                text: Creature lairs or watering holes
               - <<: *Feature.4
-                result: Crystalline formations
+                text: Crystalline formations
               - <<: *Feature.5
-                result: Fierce electrical storms
+                text: Fierce electrical storms
               - <<: *Feature.6
-                result: Floating terrain
+                text: Floating terrain
               - <<: *Feature.7
-                result: Frequent seismic activity
+                text: Frequent seismic activity
               - <<: *Feature.8
-                result: Magnetic disturbances
+                text: Magnetic disturbances
               - <<: *Feature.9
-                result: Scarred or excavated terrain
+                text: Scarred or excavated terrain
               - <<: *Feature.10
-                result: Signs of an engineered biosphere
+                text: Signs of an engineered biosphere
               - <<: *Feature.11
-                result: Sudden weather fluctuations
+                text: Sudden weather fluctuations
               - <<: *Feature.12
-                result: Towering geological formations
+                text: Towering geological formations
               - *Feature.13
               - *Feature.14
           life:
@@ -2649,13 +2649,13 @@ oracles:
                 <<: *Life.Overrun
           diversity:
             name: Diversity
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
             rows:
               - min: 1
                 max: 20
-                result: Simple (two biomes)
+                text: Simple (two biomes)
                 _i18n: &i18n.result.adjective
                   result:
                     part_of_speech: adjective
@@ -2664,109 +2664,109 @@ oracles:
                     oracle: &biome starforged/oracles/planets/vital/biomes
               - min: 21
                 max: 70
-                result: Diverse (three biomes)
+                text: Diverse (three biomes)
                 _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 3
                     oracle: *biome
               - min: 71
                 max: 90
-                result: Complex (four biomes)
+                text: Complex (four biomes)
                 _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 4
                     oracle: *biome
               - min: 91
                 max: 100
-                result: Garden world (five or more biomes)
+                text: Garden world (five or more biomes)
                 _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 5
                     oracle: *biome
           biomes:
             name: Biomes
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             rows:
               - min: 1
                 max: 5
-                result: Caves
+                text: Caves
                 _i18n: &i18n.result.common_noun
                   result:
                     part_of_speech: common_noun
               - min: 6
                 max: 10
-                result: Cold forest
+                text: Cold forest
                 _i18n: *i18n.result.common_noun
               - min: 11
                 max: 15
-                result: Fungal
+                text: Fungal
                 _i18n: *i18n.result.common_noun
               - min: 16
                 max: 20
-                result: Glacial or snow
+                text: Glacial or snow
                 _i18n: *i18n.result.common_noun
               - min: 21
                 max: 25
-                result: Grassland
+                text: Grassland
                 _i18n: *i18n.result.common_noun
               - min: 26
                 max: 30
-                result: Islands
+                text: Islands
                 _i18n: *i18n.result.common_noun
               - min: 31
                 max: 35
-                result: Jungle
+                text: Jungle
                 _i18n: *i18n.result.common_noun
               - min: 36
                 max: 40
-                result: Mountainous
+                text: Mountainous
                 _i18n: *i18n.result.common_noun
               - min: 41
                 max: 45
-                result: Ocean
+                text: Ocean
                 _i18n: *i18n.result.common_noun
               - min: 46
                 max: 50
-                result: Rocky desert
+                text: Rocky desert
                 _i18n: *i18n.result.common_noun
               - min: 51
                 max: 55
-                result: Sandy desert
+                text: Sandy desert
                 _i18n: *i18n.result.common_noun
               - min: 56
                 max: 60
-                result: Savanna
+                text: Savanna
                 _i18n: *i18n.result.common_noun
               - min: 61
                 max: 65
-                result: Shallow seas
+                text: Shallow seas
                 _i18n: *i18n.result.common_noun
               - min: 66
                 max: 70
-                result: Shrubland
+                text: Shrubland
                 _i18n: *i18n.result.common_noun
               - min: 71
                 max: 75
-                result: Temperate rainforest
+                text: Temperate rainforest
                 _i18n: *i18n.result.common_noun
               - min: 76
                 max: 80
-                result: Temperate forest
+                text: Temperate forest
                 _i18n: *i18n.result.common_noun
               - min: 81
                 max: 85
-                result: Tundra
+                text: Tundra
                 _i18n: *i18n.result.common_noun
               - min: 86
                 max: 90
-                result: Volcanic
+                text: Volcanic
                 _i18n: *i18n.result.common_noun
               - min: 91
                 max: 95
-                result: Waterways
+                text: Waterways
                 _i18n: *i18n.result.common_noun
               - min: 96
                 max: 100
-                result: Wetland
+                text: Wetland
                 _i18n: *i18n.result.common_noun

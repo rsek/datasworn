@@ -9,52 +9,54 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Represents a basic rollable oracle table with one roll column and one
- * `result` column.
+ * An OracleCollection representing a single table with multiple roll columns,
+ * and 2 shared text columns.
  */
 @JsonSerialize
-public class OracleTableRollableTableSimple extends OracleTableRollable {
+public class OracleCollectionTableSharedText2 extends OracleCollection {
     @JsonProperty("_id")
-    private OracleRollableId id;
+    private OracleCollectionId id;
 
     @JsonProperty("_source")
     private SourceInfo source;
 
     @JsonProperty("column_labels")
-    private OracleTableRollableTableSimpleColumnLabels columnLabels;
-
-    @JsonProperty("dice")
-    private DiceExpression dice;
+    private OracleCollectionTableSharedText2ColumnLabels columnLabels;
 
     @JsonProperty("name")
     private Label name;
-
-    @JsonProperty("rows")
-    private List<OracleTableRowSimple> rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("color")
+    private CssColor color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("contents")
+    private Map<String, OracleColumn2textCells> contents;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("description")
     private MarkdownString description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("enhances")
+    private OracleCollectionId enhances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
     private SvgImageUrl icon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("match")
-    private OracleMatchBehavior match;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("recommended_rolls")
-    private OracleTableRollableTableSimpleRecommendedRolls recommendedRolls;
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private OracleRollableId replaces;
+    private OracleCollectionId replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -68,14 +70,14 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
     @JsonProperty("tags")
     private Map<String, Map<String, Tag>> tags;
 
-    public OracleTableRollableTableSimple() {
+    public OracleCollectionTableSharedText2() {
     }
 
     /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
-    public OracleRollableId getId() {
+    public OracleCollectionId getId() {
         return id;
     }
 
@@ -83,7 +85,7 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
      * Setter for id.<p>
      * The unique Datasworn ID for this item.
      */
-    public void setId(OracleRollableId id) {
+    public void setId(OracleCollectionId id) {
         this.id = id;
     }
 
@@ -110,7 +112,7 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public OracleTableRollableTableSimpleColumnLabels getColumnLabels() {
+    public OracleCollectionTableSharedText2ColumnLabels getColumnLabels() {
         return columnLabels;
     }
 
@@ -119,24 +121,8 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public void setColumnLabels(OracleTableRollableTableSimpleColumnLabels columnLabels) {
+    public void setColumnLabels(OracleCollectionTableSharedText2ColumnLabels columnLabels) {
         this.columnLabels = columnLabels;
-    }
-
-    /**
-     * Getter for dice.<p>
-     * The roll used to select a result on this oracle.
-     */
-    public DiceExpression getDice() {
-        return dice;
-    }
-
-    /**
-     * Setter for dice.<p>
-     * The roll used to select a result on this oracle.
-     */
-    public void setDice(DiceExpression dice) {
-        this.dice = dice;
     }
 
     /**
@@ -153,22 +139,6 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
      */
     public void setName(Label name) {
         this.name = name;
-    }
-
-    /**
-     * Getter for rows.<p>
-     * An array of objects, each representing a single row of the table.
-     */
-    public List<OracleTableRowSimple> getRows() {
-        return rows;
-    }
-
-    /**
-     * Setter for rows.<p>
-     * An array of objects, each representing a single row of the table.
-     */
-    public void setRows(List<OracleTableRowSimple> rows) {
-        this.rows = rows;
     }
 
     /**
@@ -190,10 +160,40 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
     }
 
     /**
+     * Getter for color.<p>
+     * A thematic color associated with this collection.
+     */
+    public CssColor getColor() {
+        return color;
+    }
+
+    /**
+     * Setter for color.<p>
+     * A thematic color associated with this collection.
+     */
+    public void setColor(CssColor color) {
+        this.color = color;
+    }
+
+    /**
+     * Getter for contents.<p>
+     */
+    public Map<String, OracleColumn2textCells> getContents() {
+        return contents;
+    }
+
+    /**
+     * Setter for contents.<p>
+     */
+    public void setContents(Map<String, OracleColumn2textCells> contents) {
+        this.contents = contents;
+    }
+
+    /**
      * Getter for description.<p>
-     * A longer description of the oracle table's intended usage, which might
-     * include multiple paragraphs. If it's only a couple sentences, use the
-     * `summary` key instead.
+     * A longer description of this collection, which might include multiple
+     * paragraphs. If it's only a couple sentences, use the `summary` key
+     * instead.
      */
     public MarkdownString getDescription() {
         return description;
@@ -201,17 +201,35 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
 
     /**
      * Setter for description.<p>
-     * A longer description of the oracle table's intended usage, which might
-     * include multiple paragraphs. If it's only a couple sentences, use the
-     * `summary` key instead.
+     * A longer description of this collection, which might include multiple
+     * paragraphs. If it's only a couple sentences, use the `summary` key
+     * instead.
      */
     public void setDescription(MarkdownString description) {
         this.description = description;
     }
 
     /**
+     * Getter for enhances.<p>
+     * This collection's content enhances the identified collection, rather than
+     * being a standalone collection of its own.
+     */
+    public OracleCollectionId getEnhances() {
+        return enhances;
+    }
+
+    /**
+     * Setter for enhances.<p>
+     * This collection's content enhances the identified collection, rather than
+     * being a standalone collection of its own.
+     */
+    public void setEnhances(OracleCollectionId enhances) {
+        this.enhances = enhances;
+    }
+
+    /**
      * Getter for icon.<p>
-     * An icon that represents this table.
+     * An SVG icon associated with this collection.
      */
     public SvgImageUrl getIcon() {
         return icon;
@@ -219,61 +237,41 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
 
     /**
      * Setter for icon.<p>
-     * An icon that represents this table.
+     * An SVG icon associated with this collection.
      */
     public void setIcon(SvgImageUrl icon) {
         this.icon = icon;
     }
 
     /**
-     * Getter for match.<p>
-     * Most oracle tables are insensitive to matches, but a few define special
-     * match behavior.
+     * Getter for images.<p>
      */
-    public OracleMatchBehavior getMatch() {
-        return match;
+    public List<WebpImageUrl> getImages() {
+        return images;
     }
 
     /**
-     * Setter for match.<p>
-     * Most oracle tables are insensitive to matches, but a few define special
-     * match behavior.
+     * Setter for images.<p>
      */
-    public void setMatch(OracleMatchBehavior match) {
-        this.match = match;
-    }
-
-    /**
-     * Getter for recommendedRolls.<p>
-     */
-    public OracleTableRollableTableSimpleRecommendedRolls getRecommendedRolls() {
-        return recommendedRolls;
-    }
-
-    /**
-     * Setter for recommendedRolls.<p>
-     */
-    public void setRecommendedRolls(OracleTableRollableTableSimpleRecommendedRolls recommendedRolls) {
-        this.recommendedRolls = recommendedRolls;
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**
      * Getter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollable.
-     * References to the replaced object can be considered equivalent to this
-     * object.
+     * This collection replaces the identified collection. References to the
+     * replaced collection can be considered equivalent to this collection.
      */
-    public OracleRollableId getReplaces() {
+    public OracleCollectionId getReplaces() {
         return replaces;
     }
 
     /**
      * Setter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollable.
-     * References to the replaced object can be considered equivalent to this
-     * object.
+     * This collection replaces the identified collection. References to the
+     * replaced collection can be considered equivalent to this collection.
      */
-    public void setReplaces(OracleRollableId replaces) {
+    public void setReplaces(OracleCollectionId replaces) {
         this.replaces = replaces;
     }
 
@@ -293,10 +291,9 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
 
     /**
      * Getter for summary.<p>
-     * A brief summary of the oracle table's intended usage, no more than a few
-     * sentences in length. This is intended for use in application tooltips
-     * and similar sorts of hints. Longer text should use the "description"
-     * key instead.
+     * A brief summary of this collection, no more than a few sentences in
+     * length. This is intended for use in application tooltips and similar
+     * sorts of hints. Longer text should use the "description" key instead.
      */
     public MarkdownString getSummary() {
         return summary;
@@ -304,10 +301,9 @@ public class OracleTableRollableTableSimple extends OracleTableRollable {
 
     /**
      * Setter for summary.<p>
-     * A brief summary of the oracle table's intended usage, no more than a few
-     * sentences in length. This is intended for use in application tooltips
-     * and similar sorts of hints. Longer text should use the "description"
-     * key instead.
+     * A brief summary of this collection, no more than a few sentences in
+     * length. This is intended for use in application tooltips and similar
+     * sorts of hints. Longer text should use the "description" key instead.
      */
     public void setSummary(MarkdownString summary) {
         this.summary = summary;

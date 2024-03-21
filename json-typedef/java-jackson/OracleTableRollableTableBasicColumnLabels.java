@@ -10,28 +10,14 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * column showing the dice range (`min` and `max` on each table row).
  */
 @JsonSerialize
-public class OracleTableRollableTableSimpleColumnLabels {
-    @JsonProperty("result")
-    private Label result;
-
+public class OracleTableRollableTableBasicColumnLabels {
     @JsonProperty("roll")
     private Label roll;
 
-    public OracleTableRollableTableSimpleColumnLabels() {
-    }
+    @JsonProperty("text")
+    private Label text;
 
-    /**
-     * Getter for result.<p>
-     */
-    public Label getResult() {
-        return result;
-    }
-
-    /**
-     * Setter for result.<p>
-     */
-    public void setResult(Label result) {
-        this.result = result;
+    public OracleTableRollableTableBasicColumnLabels() {
     }
 
     /**
@@ -46,5 +32,19 @@ public class OracleTableRollableTableSimpleColumnLabels {
      */
     public void setRoll(Label roll) {
         this.roll = roll;
+    }
+
+    /**
+     * Getter for text.<p>
+     */
+    public Label getText() {
+        return text;
+    }
+
+    /**
+     * Setter for text.<p>
+     */
+    public void setText(Label text) {
+        this.text = text;
     }
 }

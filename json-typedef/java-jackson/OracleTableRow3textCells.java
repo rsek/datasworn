@@ -8,21 +8,24 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * Represents a row in an oracle table that provides additional details.
+ * Represents a row in an oracle table with 3 text cells.
  */
 @JsonSerialize
-public class OracleTableRowDetails {
-    @JsonProperty("detail")
-    private MarkdownString detail;
-
+public class OracleTableRow3textCells {
     @JsonProperty("max")
     private Short max;
 
     @JsonProperty("min")
     private Short min;
 
-    @JsonProperty("result")
-    private MarkdownString result;
+    @JsonProperty("text")
+    private MarkdownString text;
+
+    @JsonProperty("text2")
+    private MarkdownString text2;
+
+    @JsonProperty("text3")
+    private MarkdownString text3;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_i18n")
@@ -48,21 +51,7 @@ public class OracleTableRowDetails {
     @JsonProperty("template")
     private OracleRollTemplate template;
 
-    public OracleTableRowDetails() {
-    }
-
-    /**
-     * Getter for detail.<p>
-     */
-    public MarkdownString getDetail() {
-        return detail;
-    }
-
-    /**
-     * Setter for detail.<p>
-     */
-    public void setDetail(MarkdownString detail) {
-        this.detail = detail;
+    public OracleTableRow3textCells() {
     }
 
     /**
@@ -98,19 +87,47 @@ public class OracleTableRowDetails {
     }
 
     /**
-     * Getter for result.<p>
+     * Getter for text.<p>
      * The primary text content of this row.
      */
-    public MarkdownString getResult() {
-        return result;
+    public MarkdownString getText() {
+        return text;
     }
 
     /**
-     * Setter for result.<p>
+     * Setter for text.<p>
      * The primary text content of this row.
      */
-    public void setResult(MarkdownString result) {
-        this.result = result;
+    public void setText(MarkdownString text) {
+        this.text = text;
+    }
+
+    /**
+     * Getter for text2.<p>
+     */
+    public MarkdownString getText2() {
+        return text2;
+    }
+
+    /**
+     * Setter for text2.<p>
+     */
+    public void setText2(MarkdownString text2) {
+        this.text2 = text2;
+    }
+
+    /**
+     * Getter for text3.<p>
+     */
+    public MarkdownString getText3() {
+        return text3;
+    }
+
+    /**
+     * Setter for text3.<p>
+     */
+    public void setText3(MarkdownString text3) {
+        this.text3 = text3;
     }
 
     /**

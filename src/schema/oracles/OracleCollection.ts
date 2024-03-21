@@ -11,25 +11,28 @@ import * as Utils from '../Utils.js'
 import { Id, Metadata } from '../common/index.js'
 import { type TFuzzyObject } from '../utils/typebox.js'
 import {
-	OracleColumnDetails,
+	OracleColumn2TextCells,
 	OracleColumnSimple,
 	OracleTableRollable
 } from './OracleRollable.js'
 import {
 	ColumnLabels,
-	type OracleTableRowDetails,
-	type OracleTableRowSimple
+	type OracleTableRow2TextCells,
+	type OracleTableRow3TextCells,
+	type OracleTableRowBasic
 } from './TableRow.js'
 
 const OracleCollectionType = Utils.UnionEnumFromRecord(
 	{
 		tables: 'A grouping of separate tables.',
 		table_shared_rolls:
-			'A table with one roll column and multiple result columns.',
-		table_shared_results:
-			'A table with multiple roll columns and one result column.',
-		table_shared_details:
-			'A table with multiple roll columns, one result column, and one details column.'
+			'A table with one shared roll column, and multiple unique text columns.',
+		table_shared_text:
+			'A table with multiple unique roll columns, and one shared text column.',
+		table_shared_text2:
+			'A table with multiple unique roll columns, and 2 shared text columns.',
+		table_shared_text3:
+			'A table with multiple unique roll columns, and 3 shared text columns.'
 	},
 	{
 		$id: 'OracleCollectionType'
@@ -154,57 +157,84 @@ export const OracleTableSharedRolls = OracleCollectionBase(
 export type TOracleTableSharedRolls = typeof OracleTableSharedRolls
 export type OracleTableSharedRolls = Static<TOracleTableSharedRolls>
 
-export const OracleTableSharedResults = OracleCollectionBase(
+export const OracleTableSharedTextColumn = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRowSimple>({
-			result: 'Result'
+		column_labels: ColumnLabels<typeof OracleTableRowBasic>({
+			text: 'Result'
 		}),
 		oracle_type: Utils.ExtractLiteralFromEnum(
 			OracleCollectionType,
-			'table_shared_results'
+			'table_shared_text'
 		)
 	},
 	Type.Ref(OracleColumnSimple),
 	false,
 	{
-		$id: 'OracleTableSharedResults',
+		$id: 'OracleTableSharedTextColumn',
 		description:
 			'An OracleCollection representing a single table with multiple roll columns and one `result` column.'
 	}
 )
 
-export type TOracleTableSharedResults = typeof OracleTableSharedResults
-export type OracleTableSharedResults = Static<TOracleTableSharedResults>
+export type TOracleTableSharedTextColumn = typeof OracleTableSharedTextColumn
+export type OracleTableSharedTextColumn = Static<TOracleTableSharedTextColumn>
 
-export const OracleTableSharedDetails = OracleCollectionBase(
+export const OracleTableShared2TextColumns = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRowDetails>({
-			result: 'Result',
-			detail: 'Detail'
+		column_labels: ColumnLabels<typeof OracleTableRow2TextCells>({
+			text: 'Result',
+			text2: 'Details'
 		}),
 		oracle_type: Utils.ExtractLiteralFromEnum(
 			OracleCollectionType,
-			'table_shared_details'
+			'table_shared_text2'
 		)
 	},
-	Type.Ref(OracleColumnDetails),
+	Type.Ref(OracleColumn2TextCells),
 	false,
 	{
-		$id: 'OracleTableSharedDetails',
+		$id: 'OracleTableShared2TextColumns',
 		description:
-			'An OracleCollection representing a single table with multiple roll columns, one `result` column, and one `detail` column.'
+			'An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.'
 	}
 )
 
-export type TOracleTableSharedDetails = typeof OracleTableSharedDetails
-export type OracleTableSharedDetails = Static<TOracleTableSharedDetails>
+export type TOracleTableShared2TextColumns =
+	typeof OracleTableShared2TextColumns
+export type OracleTableShared2TextColumns =
+	Static<TOracleTableShared2TextColumns>
+
+export const OracleTableShared3TextColumns = OracleCollectionBase(
+	{
+		column_labels: ColumnLabels<typeof OracleTableRow3TextCells>({
+			text: 'Result'
+		}),
+		oracle_type: Utils.ExtractLiteralFromEnum(
+			OracleCollectionType,
+			'table_shared_text3'
+		)
+	},
+	Type.Ref(OracleColumn2TextCells),
+	false,
+	{
+		$id: 'OracleTableShared3TextColumns',
+		description:
+			'An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.'
+	}
+)
+
+export type TOracleTableShared3TextColumns =
+	typeof OracleTableShared3TextColumns
+export type OracleTableShared3TextColumns =
+	Static<TOracleTableShared3TextColumns>
 
 export const OracleCollection = Utils.DiscriminatedUnion(
 	[
 		OracleTablesCollection,
 		OracleTableSharedRolls,
-		OracleTableSharedResults,
-		OracleTableSharedDetails
+		OracleTableSharedTextColumn,
+		OracleTableShared2TextColumns,
+		OracleTableShared3TextColumns
 	],
 	'oracle_type',
 	{ $id: 'OracleCollection' }

@@ -16,7 +16,7 @@ oracles:
     contents:
       action:
         name: Action
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 296
@@ -32,406 +32,406 @@ oracles:
                   part_of_speech: verb
             min: 1
             max: 1
-            result: Abandon
+            text: Abandon
           - <<: *i18n.result.verb
             min: 2
             max: 2
-            result: Acquire
+            text: Acquire
           - <<: *i18n.result.verb
             min: 3
             max: 3
-            result: Advance
+            text: Advance
           - <<: *i18n.result.verb
             min: 4
             max: 4
-            result: Affect
+            text: Affect
           - <<: *i18n.result.verb
             min: 5
             max: 5
-            result: Aid
+            text: Aid
           - <<: *i18n.result.verb
             min: 6
             max: 6
-            result: Arrive
+            text: Arrive
           - <<: *i18n.result.verb
             min: 7
             max: 7
-            result: Assault
+            text: Assault
           - <<: *i18n.result.verb
             min: 8
             max: 8
-            result: Attack
+            text: Attack
           - <<: *i18n.result.verb
             min: 9
             max: 9
-            result: Avenge
+            text: Avenge
           - <<: *i18n.result.verb
             min: 10
             max: 10
-            result: Avoid
+            text: Avoid
           - <<: *i18n.result.verb
             min: 11
             max: 11
-            result: Await
+            text: Await
           - <<: *i18n.result.verb
             min: 12
             max: 12
-            result: Begin
+            text: Begin
           - <<: *i18n.result.verb
             min: 13
             max: 13
-            result: Betray
+            text: Betray
           - <<: *i18n.result.verb
             min: 14
             max: 14
-            result: Bolster
+            text: Bolster
           - <<: *i18n.result.verb
             min: 15
             max: 15
-            result: Breach
+            text: Breach
           - <<: *i18n.result.verb
             min: 16
             max: 16
-            result: Break
+            text: Break
           - <<: *i18n.result.verb
             min: 17
             max: 17
-            result: Capture
+            text: Capture
           - <<: *i18n.result.verb
             min: 18
             max: 18
-            result: Challenge
+            text: Challenge
           - <<: *i18n.result.verb
             min: 19
             max: 19
-            result: Change
+            text: Change
           - <<: *i18n.result.verb
             min: 20
             max: 20
-            result: Charge
+            text: Charge
           - <<: *i18n.result.verb
             min: 21
             max: 21
-            result: Clash
+            text: Clash
           - <<: *i18n.result.verb
             min: 22
             max: 22
-            result: Command
+            text: Command
           - <<: *i18n.result.verb
             min: 23
             max: 23
-            result: Communicate
+            text: Communicate
           - <<: *i18n.result.verb
             min: 24
             max: 24
-            result: Construct
+            text: Construct
           - <<: *i18n.result.verb
             min: 25
             max: 25
-            result: Control
+            text: Control
           - <<: *i18n.result.verb
             min: 26
             max: 26
-            result: Coordinate
+            text: Coordinate
           - <<: *i18n.result.verb
             min: 27
             max: 27
-            result: Create
+            text: Create
           - <<: *i18n.result.verb
             min: 28
             max: 28
-            result: Debate
+            text: Debate
           - <<: *i18n.result.verb
             min: 29
             max: 29
-            result: Defeat
+            text: Defeat
           - <<: *i18n.result.verb
             min: 30
             max: 30
-            result: Defend
+            text: Defend
           - <<: *i18n.result.verb
             min: 31
             max: 31
-            result: Deflect
+            text: Deflect
           - <<: *i18n.result.verb
             min: 32
             max: 32
-            result: Defy
+            text: Defy
           - <<: *i18n.result.verb
             min: 33
             max: 33
-            result: Deliver
+            text: Deliver
           - <<: *i18n.result.verb
             min: 34
             max: 34
-            result: Demand
+            text: Demand
           - <<: *i18n.result.verb
             min: 35
             max: 35
-            result: Depart
+            text: Depart
           - <<: *i18n.result.verb
             min: 36
             max: 36
-            result: Destroy
+            text: Destroy
           - <<: *i18n.result.verb
             min: 37
             max: 37
-            result: Distract
+            text: Distract
           - <<: *i18n.result.verb
             min: 38
             max: 38
-            result: Eliminate
+            text: Eliminate
           - <<: *i18n.result.verb
             min: 39
             max: 39
-            result: Endure
+            text: Endure
           - <<: *i18n.result.verb
             min: 40
             max: 40
-            result: Escalate
+            text: Escalate
           - <<: *i18n.result.verb
             min: 41
             max: 41
-            result: Escort
+            text: Escort
           - <<: *i18n.result.verb
             min: 42
             max: 42
-            result: Evade
+            text: Evade
           - <<: *i18n.result.verb
             min: 43
             max: 43
-            result: Explore
+            text: Explore
           - <<: *i18n.result.verb
             min: 44
             max: 44
-            result: Falter
+            text: Falter
           - <<: *i18n.result.verb
             min: 45
             max: 45
-            result: Find
+            text: Find
           - <<: *i18n.result.verb
             min: 46
             max: 46
-            result: Finish
+            text: Finish
           - <<: *i18n.result.verb
             min: 47
             max: 47
-            result: Focus
+            text: Focus
           - <<: *i18n.result.verb
             min: 48
             max: 48
-            result: Follow
+            text: Follow
           - <<: *i18n.result.verb
             min: 49
             max: 49
-            result: Fortify
+            text: Fortify
           - <<: *i18n.result.verb
             min: 50
             max: 50
-            result: Gather
+            text: Gather
           - <<: *i18n.result.verb
             min: 51
             max: 51
-            result: Guard
+            text: Guard
           - <<: *i18n.result.verb
             min: 52
             max: 52
-            result: Hide
+            text: Hide
           - <<: *i18n.result.verb
             min: 53
             max: 53
-            result: Hold
+            text: Hold
           - <<: *i18n.result.verb
             min: 54
             max: 54
-            result: Hunt
+            text: Hunt
           - <<: *i18n.result.verb
             min: 55
             max: 55
-            result: Impress
+            text: Impress
           - <<: *i18n.result.verb
             min: 56
             max: 56
-            result: Initiate
+            text: Initiate
           - <<: *i18n.result.verb
             min: 57
             max: 57
-            result: Inspect
+            text: Inspect
           - <<: *i18n.result.verb
             min: 58
             max: 58
-            result: Investigate
+            text: Investigate
           - <<: *i18n.result.verb
             min: 59
             max: 59
-            result: Journey
+            text: Journey
           - <<: *i18n.result.verb
             min: 60
             max: 60
-            result: Learn
+            text: Learn
           - <<: *i18n.result.verb
             min: 61
             max: 61
-            result: Leave
+            text: Leave
           - <<: *i18n.result.verb
             min: 62
             max: 62
-            result: Locate
+            text: Locate
           - <<: *i18n.result.verb
             min: 63
             max: 63
-            result: Lose
+            text: Lose
           - <<: *i18n.result.verb
             min: 64
             max: 64
-            result: Manipulate
+            text: Manipulate
           - <<: *i18n.result.verb
             min: 65
             max: 65
-            result: Mourn
+            text: Mourn
           - <<: *i18n.result.verb
             min: 66
             max: 66
-            result: Move
+            text: Move
           - <<: *i18n.result.verb
             min: 67
             max: 67
-            result: Oppose
+            text: Oppose
           - <<: *i18n.result.verb
             min: 68
             max: 68
-            result: Overwhelm
+            text: Overwhelm
           - <<: *i18n.result.verb
             min: 69
             max: 69
-            result: Persevere
+            text: Persevere
           - <<: *i18n.result.verb
             min: 70
             max: 70
-            result: Preserve
+            text: Preserve
           - <<: *i18n.result.verb
             min: 71
             max: 71
-            result: Protect
+            text: Protect
           - <<: *i18n.result.verb
             min: 72
             max: 72
-            result: Raid
+            text: Raid
           - <<: *i18n.result.verb
             min: 73
             max: 73
-            result: Reduce
+            text: Reduce
           - <<: *i18n.result.verb
             min: 74
             max: 74
-            result: Refuse
+            text: Refuse
           - <<: *i18n.result.verb
             min: 75
             max: 75
-            result: Reject
+            text: Reject
           - <<: *i18n.result.verb
             min: 76
             max: 76
-            result: Release
+            text: Release
           - <<: *i18n.result.verb
             min: 77
             max: 77
-            result: Remove
+            text: Remove
           - <<: *i18n.result.verb
             min: 78
             max: 78
-            result: Research
+            text: Research
           - <<: *i18n.result.verb
             min: 79
             max: 79
-            result: Resist
+            text: Resist
           - <<: *i18n.result.verb
             min: 80
             max: 80
-            result: Restore
+            text: Restore
           - <<: *i18n.result.verb
             min: 81
             max: 81
-            result: Reveal
+            text: Reveal
           - <<: *i18n.result.verb
             min: 82
             max: 82
-            result: Risk
+            text: Risk
           - <<: *i18n.result.verb
             min: 83
             max: 83
-            result: Scheme
+            text: Scheme
           - <<: *i18n.result.verb
             min: 84
             max: 84
-            result: Search
+            text: Search
           - <<: *i18n.result.verb
             min: 85
             max: 85
-            result: Secure
+            text: Secure
           - <<: *i18n.result.verb
             min: 86
             max: 86
-            result: Seize
+            text: Seize
           - <<: *i18n.result.verb
             min: 87
             max: 87
-            result: Serve
+            text: Serve
           - <<: *i18n.result.verb
             min: 88
             max: 88
-            result: Share
+            text: Share
           - <<: *i18n.result.verb
             min: 89
             max: 89
-            result: Strengthen
+            text: Strengthen
           - <<: *i18n.result.verb
             min: 90
             max: 90
-            result: Summon
+            text: Summon
           - <<: *i18n.result.verb
             min: 91
             max: 91
-            result: Support
+            text: Support
           - <<: *i18n.result.verb
             min: 92
             max: 92
-            result: Suppress
+            text: Suppress
           - <<: *i18n.result.verb
             min: 93
             max: 93
-            result: Surrender
+            text: Surrender
           - <<: *i18n.result.verb
             min: 94
             max: 94
-            result: Swear
+            text: Swear
           - <<: *i18n.result.verb
             min: 95
             max: 95
-            result: Threaten
+            text: Threaten
           - <<: *i18n.result.verb
             min: 96
             max: 96
-            result: Transform
+            text: Transform
           - <<: *i18n.result.verb
             min: 97
             max: 97
-            result: Uncover
+            text: Uncover
           - <<: *i18n.result.verb
             min: 98
             max: 98
-            result: Uphold
+            text: Uphold
           - <<: *i18n.result.verb
             min: 99
             max: 99
-            result: Weaken
+            text: Weaken
           - <<: *i18n.result.verb
             min: 100
             max: 100
-            result: Withdraw
+            text: Withdraw
       theme:
         name: Theme
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 297
@@ -446,409 +446,409 @@ oracles:
                   part_of_speech: common_noun
             min: 1
             max: 1
-            result: Ability
+            text: Ability
           - <<: *i18n.result.common_noun
             min: 2
             max: 2
-            result: Advantage
+            text: Advantage
           - <<: *i18n.result.common_noun
             min: 3
             max: 3
-            result: Alliance
+            text: Alliance
           - <<: *i18n.result.common_noun
             min: 4
             max: 4
-            result: Authority
+            text: Authority
           - <<: *i18n.result.common_noun
             min: 5
             max: 5
-            result: Balance
+            text: Balance
           - <<: *i18n.result.common_noun
             min: 6
             max: 6
-            result: Barrier
+            text: Barrier
           - <<: *i18n.result.common_noun
             min: 7
             max: 7
-            result: Belief
+            text: Belief
           - <<: *i18n.result.common_noun
             min: 8
             max: 8
-            result: Blood
+            text: Blood
           - <<: *i18n.result.common_noun
             min: 9
             max: 9
-            result: Bond
+            text: Bond
           - <<: *i18n.result.common_noun
             min: 10
             max: 10
-            result: Burden
+            text: Burden
           - <<: *i18n.result.common_noun
             min: 11
             max: 11
-            result: Commerce
+            text: Commerce
           - <<: *i18n.result.common_noun
             min: 12
             max: 12
-            result: Community
+            text: Community
           - <<: *i18n.result.common_noun
             min: 13
             max: 13
-            result: Corruption
+            text: Corruption
           - <<: *i18n.result.common_noun
             min: 14
             max: 14
-            result: Creation
+            text: Creation
           - <<: *i18n.result.common_noun
             min: 15
             max: 15
-            result: Crime
+            text: Crime
           - <<: *i18n.result.common_noun
             min: 16
             max: 16
-            result: Culture
+            text: Culture
           - <<: *i18n.result.common_noun
             min: 17
             max: 17
-            result: Cure
+            text: Cure
           - <<: *i18n.result.common_noun
             min: 18
             max: 18
-            result: Danger
+            text: Danger
           - <<: *i18n.result.common_noun
             min: 19
             max: 19
-            result: Death
+            text: Death
           - <<: *i18n.result.common_noun
             min: 20
             max: 20
-            result: Debt
+            text: Debt
           - <<: *i18n.result.common_noun
             min: 21
             max: 21
-            result: Decay
+            text: Decay
           - <<: *i18n.result.common_noun
             min: 22
             max: 22
-            result: Deception
+            text: Deception
           - <<: *i18n.result.common_noun
             min: 23
             max: 23
-            result: Defense
+            text: Defense
           - <<: *i18n.result.common_noun
             min: 24
             max: 24
-            result: Destiny
+            text: Destiny
           - <<: *i18n.result.common_noun
             min: 25
             max: 25
-            result: Disaster
+            text: Disaster
           - <<: *i18n.result.common_noun
             min: 26
             max: 26
-            result: Discovery
+            text: Discovery
           - <<: *i18n.result.common_noun
             min: 27
             max: 27
-            result: Disease
+            text: Disease
           - <<: *i18n.result.common_noun
             min: 28
             max: 28
-            result: Dominion
+            text: Dominion
           - <<: *i18n.result.common_noun
             min: 29
             max: 29
-            result: Dream
+            text: Dream
           - <<: *i18n.result.common_noun
             min: 30
             max: 30
-            result: Duty
+            text: Duty
           - <<: *i18n.result.common_noun
             min: 31
             max: 31
-            result: Enemy
+            text: Enemy
           - <<: *i18n.result.common_noun
             min: 32
             max: 32
-            result: Expedition
+            text: Expedition
           - <<: *i18n.result.common_noun
             min: 33
             max: 33
-            result: Faction
+            text: Faction
           - <<: *i18n.result.common_noun
             min: 34
             max: 34
-            result: Fame
+            text: Fame
           - <<: *i18n.result.common_noun
             min: 35
             max: 35
-            result: Family
+            text: Family
           - <<: *i18n.result.common_noun
             min: 36
             max: 36
-            result: Fear
+            text: Fear
           - <<: *i18n.result.common_noun
             min: 37
             max: 37
-            result: Fellowship
+            text: Fellowship
           - <<: *i18n.result.common_noun
             min: 38
             max: 38
-            result: Freedom
+            text: Freedom
           - <<: *i18n.result.common_noun
             min: 39
             max: 39
-            result: Greed
+            text: Greed
           - <<: *i18n.result.common_noun
             min: 40
             max: 40
-            result: Hardship
+            text: Hardship
           - <<: *i18n.result.common_noun
             min: 41
             max: 41
-            result: Hate
+            text: Hate
           - <<: *i18n.result.common_noun
             min: 42
             max: 42
-            result: Health
+            text: Health
           - <<: *i18n.result.common_noun
             min: 43
             max: 43
-            result: History
+            text: History
           - <<: *i18n.result.common_noun
             min: 44
             max: 44
-            result: Home
+            text: Home
           - <<: *i18n.result.common_noun
             min: 45
             max: 45
-            result: Honor
+            text: Honor
           - <<: *i18n.result.common_noun
             min: 46
             max: 46
-            result: Hope
+            text: Hope
           - <<: *i18n.result.common_noun
             min: 47
             max: 47
-            result: Humanity
+            text: Humanity
           - <<: *i18n.result.common_noun
             min: 48
             max: 48
-            result: Innocence
+            text: Innocence
           - <<: *i18n.result.common_noun
             min: 49
             max: 49
-            result: Knowledge
+            text: Knowledge
           - <<: *i18n.result.common_noun
             min: 50
             max: 50
-            result: Labor
+            text: Labor
           - <<: *i18n.result.common_noun
             min: 51
             max: 51
-            result: Language
+            text: Language
           - <<: *i18n.result.common_noun
             min: 52
             max: 52
-            result: Law
+            text: Law
           - <<: *i18n.result.common_noun
             min: 53
             max: 53
-            result: Legacy
+            text: Legacy
           - <<: *i18n.result.common_noun
             min: 54
             max: 54
-            result: Life
+            text: Life
           - <<: *i18n.result.common_noun
             min: 55
             max: 55
-            result: Love
+            text: Love
           - <<: *i18n.result.common_noun
             min: 56
             max: 56
-            result: Memory
+            text: Memory
           - <<: *i18n.result.common_noun
             min: 57
             max: 57
-            result: Nature
+            text: Nature
           - <<: *i18n.result.common_noun
             min: 58
             max: 58
-            result: Opportunity
+            text: Opportunity
           - <<: *i18n.result.common_noun
             min: 59
             max: 59
-            result: Passage
+            text: Passage
           - <<: *i18n.result.common_noun
             min: 60
             max: 60
-            result: Peace
+            text: Peace
           - <<: *i18n.result.common_noun
             min: 61
             max: 61
-            result: Phenomenon
+            text: Phenomenon
           - <<: *i18n.result.common_noun
             min: 62
             max: 62
-            result: Possession
+            text: Possession
           - <<: *i18n.result.common_noun
             min: 63
             max: 63
-            result: Power
+            text: Power
           - <<: *i18n.result.common_noun
             min: 64
             max: 64
-            result: Price
+            text: Price
           - <<: *i18n.result.common_noun
             min: 65
             max: 65
-            result: Pride
+            text: Pride
           - <<: *i18n.result.common_noun
             min: 66
             max: 66
-            result: Prize
+            text: Prize
           - <<: *i18n.result.common_noun
             min: 67
             max: 67
-            result: Prophesy
+            text: Prophesy
           - <<: *i18n.result.common_noun
             min: 68
             max: 68
-            result: Protection
+            text: Protection
           - <<: *i18n.result.common_noun
             min: 69
             max: 69
-            result: Quest
+            text: Quest
           - <<: *i18n.result.common_noun
             min: 70
             max: 70
-            result: Relationship
+            text: Relationship
           - <<: *i18n.result.common_noun
             min: 71
             max: 71
-            result: Religion
+            text: Religion
           - <<: *i18n.result.common_noun
             min: 72
             max: 72
-            result: Reputation
+            text: Reputation
           - <<: *i18n.result.common_noun
             min: 73
             max: 73
-            result: Resource
+            text: Resource
           - <<: *i18n.result.common_noun
             min: 74
             max: 74
-            result: Revenge
+            text: Revenge
           - <<: *i18n.result.common_noun
             min: 75
             max: 75
-            result: Rival
+            text: Rival
           - <<: *i18n.result.common_noun
             min: 76
             max: 76
-            result: Rumor
+            text: Rumor
           - <<: *i18n.result.common_noun
             min: 77
             max: 77
-            result: Safety
+            text: Safety
           - <<: *i18n.result.common_noun
             min: 78
             max: 78
-            result: Sanctuary
+            text: Sanctuary
           - <<: *i18n.result.common_noun
             min: 79
             max: 79
-            result: Secret
+            text: Secret
           - <<: *i18n.result.common_noun
             min: 80
             max: 80
-            result: Solution
+            text: Solution
           - <<: *i18n.result.common_noun
             min: 81
             max: 81
-            result: Spirit
+            text: Spirit
           - <<: *i18n.result.common_noun
             min: 82
             max: 82
-            result: Stranger
+            text: Stranger
           - <<: *i18n.result.common_noun
             min: 83
             max: 83
-            result: Strategy
+            text: Strategy
           - <<: *i18n.result.common_noun
             min: 84
             max: 84
-            result: Strength
+            text: Strength
           - <<: *i18n.result.common_noun
             min: 85
             max: 85
-            result: Superstition
+            text: Superstition
           - <<: *i18n.result.common_noun
             min: 86
             max: 86
-            result: Supply
+            text: Supply
           - <<: *i18n.result.common_noun
             min: 87
             max: 87
-            result: Survival
+            text: Survival
           - <<: *i18n.result.common_noun
             min: 88
             max: 88
-            result: Technology
+            text: Technology
           - <<: *i18n.result.common_noun
             min: 89
             max: 89
-            result: Time
+            text: Time
           - <<: *i18n.result.common_noun
             min: 90
             max: 90
-            result: Tool
+            text: Tool
           - <<: *i18n.result.common_noun
             min: 91
             max: 91
-            result: Trade
+            text: Trade
           - <<: *i18n.result.common_noun
             min: 92
             max: 92
-            result: Truth
+            text: Truth
           - <<: *i18n.result.common_noun
             min: 93
             max: 93
-            result: Vengeance
+            text: Vengeance
           - <<: *i18n.result.common_noun
             min: 94
             max: 94
-            result: Vow
+            text: Vow
           - <<: *i18n.result.common_noun
             min: 95
             max: 95
-            result: War
+            text: War
           - <<: &i18n.result.gerund
               _i18n:
                 result:
                   part_of_speech: gerund
             min: 96
             max: 96
-            result: Warning
+            text: Warning
           - <<: *i18n.result.common_noun
             min: 97
             max: 97
-            result: Weakness
+            text: Weakness
           - <<: *i18n.result.common_noun
             min: 98
             max: 98
-            result: Wealth
+            text: Wealth
           - <<: *i18n.result.common_noun
             min: 99
             max: 99
-            result: Weapon
+            text: Weapon
           - <<: *i18n.result.common_noun
             min: 100
             max: 100
-            result: World
+            text: World
       descriptor:
         name: Descriptor
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 298
@@ -864,406 +864,406 @@ oracles:
                   part_of_speech: adjective
             min: 1
             max: 1
-            result: Abandoned
+            text: Abandoned
           - <<: *i18n.result.adjective
             min: 2
             max: 2
-            result: Abundant
+            text: Abundant
           - <<: *i18n.result.adjective
             min: 3
             max: 3
-            result: Active
+            text: Active
           - <<: *i18n.result.adjective
             min: 4
             max: 4
-            result: Advanced
+            text: Advanced
           - <<: *i18n.result.adjective
             min: 5
             max: 5
-            result: Alien
+            text: Alien
           - <<: *i18n.result.adjective
             min: 6
             max: 6
-            result: Ancient
+            text: Ancient
           - <<: *i18n.result.adjective
             min: 7
             max: 7
-            result: Archaic
+            text: Archaic
           - <<: *i18n.result.adjective
             min: 8
             max: 8
-            result: Automated
+            text: Automated
           - <<: *i18n.result.adjective
             min: 9
             max: 9
-            result: Barren
+            text: Barren
           - <<: *i18n.result.adjective
             min: 10
             max: 10
-            result: Biological
+            text: Biological
           - <<: *i18n.result.adjective
             min: 11
             max: 11
-            result: Blighted
+            text: Blighted
           - <<: *i18n.result.adjective
             min: 12
             max: 12
-            result: Blocked
+            text: Blocked
           - <<: *i18n.result.adjective
             min: 13
             max: 13
-            result: Breached
+            text: Breached
           - <<: *i18n.result.adjective
             min: 14
             max: 14
-            result: Broken
+            text: Broken
           - <<: *i18n.result.adjective
             min: 15
             max: 15
-            result: Captured
+            text: Captured
           - <<: *i18n.result.adjective
             min: 16
             max: 16
-            result: Chaotic
+            text: Chaotic
           - <<: *i18n.result.adjective
             min: 17
             max: 17
-            result: Civilized
+            text: Civilized
           - <<: *i18n.result.adjective
             min: 18
             max: 18
-            result: Collapsed
+            text: Collapsed
           - <<: *i18n.result.adjective
             min: 19
             max: 19
-            result: Colossal
+            text: Colossal
           - <<: *i18n.result.adjective
             min: 20
             max: 20
-            result: Confined
+            text: Confined
           - <<: *i18n.result.adjective
             min: 21
             max: 21
-            result: Conspicuous
+            text: Conspicuous
           - <<: *i18n.result.adjective
             min: 22
             max: 22
-            result: Constructed
+            text: Constructed
           - <<: *i18n.result.adjective
             min: 23
             max: 23
-            result: Contested
+            text: Contested
           - <<: *i18n.result.adjective
             min: 24
             max: 24
-            result: Corrupted
+            text: Corrupted
           - <<: *i18n.result.adjective
             min: 25
             max: 25
-            result: Created
+            text: Created
           - <<: *i18n.result.adjective
             min: 26
             max: 26
-            result: Damaged
+            text: Damaged
           - <<: *i18n.result.adjective
             min: 27
             max: 27
-            result: Dead
+            text: Dead
           - <<: *i18n.result.adjective
             min: 28
             max: 28
-            result: Deadly
+            text: Deadly
           - <<: *i18n.result.gerund
             min: 29
             max: 29
-            result: Decaying
+            text: Decaying
           - <<: *i18n.result.adjective
             min: 30
             max: 30
-            result: Defended
+            text: Defended
           - <<: *i18n.result.adjective
             min: 31
             max: 31
-            result: Depleted
+            text: Depleted
           - <<: *i18n.result.adjective
             min: 32
             max: 32
-            result: Desolate
+            text: Desolate
           - <<: *i18n.result.adjective
             min: 33
             max: 33
-            result: Destroyed
+            text: Destroyed
           - <<: *i18n.result.adjective
             min: 34
             max: 34
-            result: Diverse
+            text: Diverse
           - <<: *i18n.result.adjective
             min: 35
             max: 35
-            result: Empty
+            text: Empty
           - <<: *i18n.result.adjective
             min: 36
             max: 36
-            result: Engulfed
+            text: Engulfed
           - <<: *i18n.result.gerund
             min: 37
             max: 37
-            result: Ensnaring
+            text: Ensnaring
           - <<: *i18n.result.adjective
             min: 38
             max: 38
-            result: Expansive
+            text: Expansive
           - <<: *i18n.result.adjective
             min: 39
             max: 39
-            result: Exposed
+            text: Exposed
           - <<: *i18n.result.adjective
             min: 40
             max: 40
-            result: Fiery
+            text: Fiery
           - <<: *i18n.result.gerund
             min: 41
             max: 41
-            result: Foreboding
+            text: Foreboding
           - <<: *i18n.result.adjective
             min: 42
             max: 42
-            result: Forgotten
+            text: Forgotten
           - <<: *i18n.result.adjective
             min: 43
             max: 43
-            result: Forsaken
+            text: Forsaken
           - <<: *i18n.result.adjective
             min: 44
             max: 44
-            result: Fortified
+            text: Fortified
           - <<: *i18n.result.adjective
             min: 45
             max: 45
-            result: Foul
+            text: Foul
           - <<: *i18n.result.adjective
             min: 46
             max: 46
-            result: Fragile
+            text: Fragile
           - <<: *i18n.result.adjective
             min: 47
             max: 47
-            result: Frozen
+            text: Frozen
           - <<: *i18n.result.adjective
             min: 48
             max: 48
-            result: Functional
+            text: Functional
           - <<: *i18n.result.adjective
             min: 49
             max: 49
-            result: Grim
+            text: Grim
           - <<: *i18n.result.adjective
             min: 50
             max: 50
-            result: Guarded
+            text: Guarded
           - <<: *i18n.result.adjective
             min: 51
             max: 51
-            result: Haunted
+            text: Haunted
           - <<: *i18n.result.adjective
             min: 52
             max: 52
-            result: Hidden
+            text: Hidden
           - <<: *i18n.result.adjective
             min: 53
             max: 53
-            result: Hoarded
+            text: Hoarded
           - <<: *i18n.result.adjective
             min: 54
             max: 54
-            result: Hostile
+            text: Hostile
           - <<: *i18n.result.adjective
             min: 55
             max: 55
-            result: Immersed
+            text: Immersed
           - <<: *i18n.result.adjective
             min: 56
             max: 56
-            result: Inaccessible
+            text: Inaccessible
           - <<: *i18n.result.adjective
             min: 57
             max: 57
-            result: Infested
+            text: Infested
           - <<: *i18n.result.adjective
             min: 58
             max: 58
-            result: Inhabited
+            text: Inhabited
           - <<: *i18n.result.adjective
             min: 59
             max: 59
-            result: Isolated
+            text: Isolated
           - <<: *i18n.result.gerund
             min: 60
             max: 60
-            result: Living
+            text: Living
           - <<: *i18n.result.adjective
             min: 61
             max: 61
-            result: Lost
+            text: Lost
           - <<: *i18n.result.adjective
             min: 62
             max: 62
-            result: Lush
+            text: Lush
           - <<: *i18n.result.adjective
             min: 63
             max: 63
-            result: Makeshift
+            text: Makeshift
           - <<: *i18n.result.adjective
             min: 64
             max: 64
-            result: Mechanical
+            text: Mechanical
           - <<: *i18n.result.gerund
             min: 65
             max: 65
-            result: Misleading
+            text: Misleading
           - <<: *i18n.result.gerund
             min: 66
             max: 66
-            result: Moving
+            text: Moving
           - <<: *i18n.result.adjective
             min: 67
             max: 67
-            result: Mysterious
+            text: Mysterious
           - <<: *i18n.result.adjective
             min: 68
             max: 68
-            result: Natural
+            text: Natural
           - <<: *i18n.result.adjective
             min: 69
             max: 69
-            result: New
+            text: New
           - <<: *i18n.result.adjective
             min: 70
             max: 70
-            result: Obscured
+            text: Obscured
           - <<: *i18n.result.adjective
             min: 71
             max: 71
-            result: Open
+            text: Open
           - <<: *i18n.result.adjective
             min: 72
             max: 72
-            result: Peaceful
+            text: Peaceful
           - <<: *i18n.result.adjective
             min: 73
             max: 73
-            result: Perilous
+            text: Perilous
           - <<: *i18n.result.adjective
             min: 74
             max: 74
-            result: Pillaged
+            text: Pillaged
           - <<: *i18n.result.adjective
             min: 75
             max: 75
-            result: Powerful
+            text: Powerful
           - <<: *i18n.result.adjective
             min: 76
             max: 76
-            result: Preserved
+            text: Preserved
           - <<: *i18n.result.adjective
             min: 77
             max: 77
-            result: Prominent
+            text: Prominent
           - <<: *i18n.result.adjective
             min: 78
             max: 78
-            result: Protected
+            text: Protected
           - <<: *i18n.result.adjective
             min: 79
             max: 79
-            result: Radiant
+            text: Radiant
           - <<: *i18n.result.adjective
             min: 80
             max: 80
-            result: Rare
+            text: Rare
           - <<: *i18n.result.adjective
             min: 81
             max: 81
-            result: Remote
+            text: Remote
           - <<: *i18n.result.adjective
             min: 82
             max: 82
-            result: Rich
+            text: Rich
           - <<: *i18n.result.adjective
             min: 83
             max: 83
-            result: Ruined
+            text: Ruined
           - <<: *i18n.result.adjective
             min: 84
             max: 84
-            result: Sacred
+            text: Sacred
           - <<: *i18n.result.adjective
             min: 85
             max: 85
-            result: Safe
+            text: Safe
           - <<: *i18n.result.adjective
             min: 86
             max: 86
-            result: Sealed
+            text: Sealed
           - <<: *i18n.result.adjective
             min: 87
             max: 87
-            result: Secret
+            text: Secret
           - <<: *i18n.result.adjective
             min: 88
             max: 88
-            result: Settled
+            text: Settled
           - <<: *i18n.result.adjective
             min: 89
             max: 89
-            result: Shrouded
+            text: Shrouded
           - <<: *i18n.result.adjective
             min: 90
             max: 90
-            result: Stolen
+            text: Stolen
           - <<: *i18n.result.adjective
             min: 91
             max: 91
-            result: Strange
+            text: Strange
           - <<: *i18n.result.adjective
             min: 92
             max: 92
-            result: Subsurface
+            text: Subsurface
           - <<: *i18n.result.adjective
             min: 93
             max: 93
-            result: Toxic
+            text: Toxic
           - <<: *i18n.result.adjective
             min: 94
             max: 94
-            result: Trapped
+            text: Trapped
           - <<: *i18n.result.adjective
             min: 95
             max: 95
-            result: Undiscovered
+            text: Undiscovered
           - <<: *i18n.result.adjective
             min: 96
             max: 96
-            result: Unnatural
+            text: Unnatural
           - <<: *i18n.result.adjective
             min: 97
             max: 97
-            result: Unstable
+            text: Unstable
           - <<: *i18n.result.adjective
             min: 98
             max: 98
-            result: Untamed
+            text: Untamed
           - <<: *i18n.result.adjective
             min: 99
             max: 99
-            result: Valuable
+            text: Valuable
           - <<: *i18n.result.adjective
             min: 100
             max: 100
-            result: Violent
+            text: Violent
       focus:
         name: Focus
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 299
@@ -1275,400 +1275,400 @@ oracles:
           - <<: *i18n.result.common_noun
             min: 1
             max: 1
-            result: Alarm
+            text: Alarm
           - <<: *i18n.result.common_noun
             min: 2
             max: 2
-            result: Anomaly
+            text: Anomaly
           - <<: *i18n.result.common_noun
             min: 3
             max: 3
-            result: Apparition
+            text: Apparition
           - <<: *i18n.result.common_noun
             min: 4
             max: 4
-            result: Archive
+            text: Archive
           - <<: *i18n.result.common_noun
             min: 5
             max: 5
-            result: Art
+            text: Art
           - <<: *i18n.result.common_noun
             min: 6
             max: 6
-            result: Artifact
+            text: Artifact
           - <<: *i18n.result.common_noun
             min: 7
             max: 7
-            result: Atmosphere
+            text: Atmosphere
           - <<: *i18n.result.common_noun
             min: 8
             max: 8
-            result: Battleground
+            text: Battleground
           - <<: *i18n.result.common_noun
             min: 9
             max: 9
-            result: Beacon
+            text: Beacon
           - <<: *i18n.result.gerund
             min: 10
             max: 10
-            result: Being
+            text: Being
           - <<: *i18n.result.common_noun
             min: 11
             max: 11
-            result: Blockade
+            text: Blockade
           - <<: *i18n.result.common_noun
             min: 12
             max: 12
-            result: Boundary
+            text: Boundary
           - <<: *i18n.result.common_noun
             min: 13
             max: 13
-            result: Cache
+            text: Cache
           - <<: *i18n.result.common_noun
             min: 14
             max: 14
-            result: Cargo
+            text: Cargo
           - <<: *i18n.result.common_noun
             min: 15
             max: 15
-            result: Commodity
+            text: Commodity
           - <<: *i18n.result.common_noun
             min: 16
             max: 16
-            result: Confinement
+            text: Confinement
           - <<: *i18n.result.common_noun
             min: 17
             max: 17
-            result: Connection
+            text: Connection
           - <<: *i18n.result.common_noun
             min: 18
             max: 18
-            result: Container
+            text: Container
           - <<: *i18n.result.common_noun
             min: 19
             max: 19
-            result: Creation
+            text: Creation
           - <<: *i18n.result.common_noun
             min: 20
             max: 20
-            result: Creature
+            text: Creature
           - <<: *i18n.result.gerund
             min: 21
             max: 21
-            result: Crossing
+            text: Crossing
           - <<: *i18n.result.common_noun
             min: 22
             max: 22
-            result: Data
+            text: Data
           - <<: *i18n.result.common_noun
             min: 23
             max: 23
-            result: Debris
+            text: Debris
           - <<: *i18n.result.common_noun
             min: 24
             max: 24
-            result: Device
+            text: Device
           - <<: *i18n.result.common_noun
             min: 25
             max: 25
-            result: Dimension
+            text: Dimension
           - <<: *i18n.result.common_noun
             min: 26
             max: 26
-            result: Discovery
+            text: Discovery
           - <<: *i18n.result.common_noun
             min: 27
             max: 27
-            result: Ecosystem
+            text: Ecosystem
           - <<: *i18n.result.common_noun
             min: 28
             max: 28
-            result: Enclosure
+            text: Enclosure
           - <<: *i18n.result.common_noun
             min: 29
             max: 29
-            result: Energy
+            text: Energy
           - <<: *i18n.result.common_noun
             min: 30
             max: 30
-            result: Environment
+            text: Environment
           - <<: *i18n.result.common_noun
             min: 31
             max: 31
-            result: Equipment
+            text: Equipment
           - <<: *i18n.result.common_noun
             min: 32
             max: 32
-            result: Experiment
+            text: Experiment
           - <<: *i18n.result.common_noun
             min: 33
             max: 33
-            result: Facility
+            text: Facility
           - <<: *i18n.result.common_noun
             min: 34
             max: 34
-            result: Faction
+            text: Faction
           - <<: *i18n.result.common_noun
             min: 35
             max: 35
-            result: Fleet
+            text: Fleet
           - <<: *i18n.result.common_noun
             min: 36
             max: 36
-            result: Force
+            text: Force
           - <<: *i18n.result.common_noun
             min: 37
             max: 37
-            result: Fortification
+            text: Fortification
           - <<: *i18n.result.common_noun
             min: 38
             max: 38
-            result: Gas
+            text: Gas
           - <<: *i18n.result.common_noun
             min: 39
             max: 39
-            result: Grave
+            text: Grave
           - <<: *i18n.result.common_noun
             min: 40
             max: 40
-            result: Habitat
+            text: Habitat
           - <<: *i18n.result.common_noun
             min: 41
             max: 41
-            result: Hazard
+            text: Hazard
           - <<: *i18n.result.common_noun
             min: 42
             max: 42
-            result: Hideaway
+            text: Hideaway
           - <<: *i18n.result.common_noun
             min: 43
             max: 43
-            result: Home
+            text: Home
           - <<: *i18n.result.common_noun
             min: 44
             max: 44
-            result: Illusion
+            text: Illusion
           - <<: *i18n.result.common_noun
             min: 45
             max: 45
-            result: Industry
+            text: Industry
           - <<: *i18n.result.common_noun
             min: 46
             max: 46
-            result: Intelligence
+            text: Intelligence
           - <<: *i18n.result.common_noun
             min: 47
             max: 47
-            result: Lair
+            text: Lair
           - <<: *i18n.result.common_noun
             min: 48
             max: 48
-            result: Lifeform
+            text: Lifeform
           - <<: *i18n.result.common_noun
             min: 49
             max: 49
-            result: Liquid
+            text: Liquid
           - <<: *i18n.result.common_noun
             min: 50
             max: 50
-            result: Machine
+            text: Machine
           - <<: *i18n.result.common_noun
             min: 51
             max: 51
-            result: Material
+            text: Material
           - <<: *i18n.result.common_noun
             min: 52
             max: 52
-            result: Mechanism
+            text: Mechanism
           - <<: *i18n.result.common_noun
             min: 53
             max: 53
-            result: Message
+            text: Message
           - <<: *i18n.result.common_noun
             min: 54
             max: 54
-            result: Mineral
+            text: Mineral
           - <<: *i18n.result.common_noun
             min: 55
             max: 55
-            result: Monument
+            text: Monument
           - <<: *i18n.result.common_noun
             min: 56
             max: 56
-            result: Obstacle
+            text: Obstacle
           - <<: *i18n.result.common_noun
             min: 57
             max: 57
-            result: Organism
+            text: Organism
           - <<: *i18n.result.common_noun
             min: 58
             max: 58
-            result: Outbreak
+            text: Outbreak
           - <<: *i18n.result.common_noun
             min: 59
             max: 59
-            result: Outpost
+            text: Outpost
           - <<: *i18n.result.common_noun
             min: 60
             max: 60
-            result: Path
+            text: Path
           - <<: *i18n.result.common_noun
             min: 61
             max: 61
-            result: People
+            text: People
           - <<: *i18n.result.common_noun
             min: 62
             max: 62
-            result: Person
+            text: Person
           - <<: *i18n.result.common_noun
             min: 63
             max: 63
-            result: Plant
+            text: Plant
           - <<: *i18n.result.common_noun
             min: 64
             max: 64
-            result: Portal
+            text: Portal
           - <<: *i18n.result.common_noun
             min: 65
             max: 65
-            result: Reality
+            text: Reality
           - <<: *i18n.result.common_noun
             min: 66
             max: 66
-            result: Refuge
+            text: Refuge
           - <<: *i18n.result.common_noun
             min: 67
             max: 67
-            result: Relic
+            text: Relic
           - <<: *i18n.result.common_noun
             min: 68
             max: 68
-            result: Remains
+            text: Remains
           - <<: *i18n.result.common_noun
             min: 69
             max: 69
-            result: Rendezvous
+            text: Rendezvous
           - <<: *i18n.result.common_noun
             min: 70
             max: 70
-            result: Resource
+            text: Resource
           - <<: *i18n.result.common_noun
             min: 71
             max: 71
-            result: Route
+            text: Route
           - <<: *i18n.result.common_noun
             min: 72
             max: 72
-            result: Ruins
+            text: Ruins
           - <<: *i18n.result.common_noun
             min: 73
             max: 73
-            result: Salvage
+            text: Salvage
           - <<: *i18n.result.common_noun
             min: 74
             max: 74
-            result: Settlement
+            text: Settlement
           - <<: *i18n.result.common_noun
             min: 75
             max: 75
-            result: Shelter
+            text: Shelter
           - <<: *i18n.result.common_noun
             min: 76
             max: 76
-            result: Ship
+            text: Ship
           - <<: *i18n.result.common_noun
             min: 77
             max: 77
-            result: Shortcut
+            text: Shortcut
           - <<: *i18n.result.common_noun
             min: 78
             max: 78
-            result: Signal
+            text: Signal
           - <<: *i18n.result.common_noun
             min: 79
             max: 79
-            result: Sound
+            text: Sound
           - <<: *i18n.result.common_noun
             min: 80
             max: 80
-            result: Storage
+            text: Storage
           - <<: *i18n.result.common_noun
             min: 81
             max: 81
-            result: Storm
+            text: Storm
           - <<: *i18n.result.common_noun
             min: 82
             max: 82
-            result: Structure
+            text: Structure
           - <<: *i18n.result.common_noun
             min: 83
             max: 83
-            result: Supply
+            text: Supply
           - <<: *i18n.result.common_noun
             min: 84
             max: 84
-            result: Symbol
+            text: Symbol
           - <<: *i18n.result.common_noun
             min: 85
             max: 85
-            result: System
+            text: System
           - <<: *i18n.result.common_noun
             min: 86
             max: 86
-            result: Technology
+            text: Technology
           - <<: *i18n.result.common_noun
             min: 87
             max: 87
-            result: Terrain
+            text: Terrain
           - <<: *i18n.result.common_noun
             min: 88
             max: 88
-            result: Territory
+            text: Territory
           - <<: *i18n.result.common_noun
             min: 89
             max: 89
-            result: Threshold
+            text: Threshold
           - <<: *i18n.result.common_noun
             min: 90
             max: 90
-            result: Time
+            text: Time
           - <<: *i18n.result.common_noun
             min: 91
             max: 91
-            result: Transport
+            text: Transport
           - <<: *i18n.result.common_noun
             min: 92
             max: 92
-            result: Trap
+            text: Trap
           - <<: *i18n.result.common_noun
             min: 93
             max: 93
-            result: Treasure
+            text: Treasure
           - <<: *i18n.result.common_noun
             min: 94
             max: 94
-            result: Vault
+            text: Vault
           - <<: *i18n.result.common_noun
             min: 95
             max: 95
-            result: Vehicle
+            text: Vehicle
           - <<: *i18n.result.common_noun
             min: 96
             max: 96
-            result: Viewpoint
+            text: Viewpoint
           - <<: *i18n.result.common_noun
             min: 97
             max: 97
-            result: Void
+            text: Void
           - <<: *i18n.result.common_noun
             min: 98
             max: 98
-            result: Weapon
+            text: Weapon
           - <<: *i18n.result.common_noun
             min: 99
             max: 99
-            result: World
+            text: World
           - <<: *i18n.result.common_noun
             min: 100
             max: 100
-            result: Wreckage
+            text: Wreckage

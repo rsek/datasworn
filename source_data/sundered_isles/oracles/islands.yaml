@@ -13,348 +13,348 @@ oracles:
     contents:
       coastline_aspects:
         name: Coastline Aspects
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 90
         rows:
           - min: 1
             max: 2
-            result: Broad bay protected by offshore islet
+            text: Broad bay protected by offshore islet
           - min: 3
             max: 8
-            result: Channel separates a neighboring island
+            text: Channel separates a neighboring island
           - min: 9
             max: 10
-            result: Dramatic columns of volcanic rock
+            text: Dramatic columns of volcanic rock
           - min: 11
             max: 14
-            result: Deep harbor within artificial breakwater
+            text: Deep harbor within artificial breakwater
           - min: 15
             max: 16
-            result: Expansive, gently-sloped beach
+            text: Expansive, gently-sloped beach
           - min: 17
             max: 26
-            result: Exposed mudflats
+            text: Exposed mudflats
           - min: 27
             max: 28
-            result: Fringing reef and lagoon
+            text: Fringing reef and lagoon
           - min: 29
             max: 34
-            result: Inundated by tidal flooding
+            text: Inundated by tidal flooding
           - min: 35
             max: 38
-            result: Jagged outcroppings
+            text: Jagged outcroppings
           - min: 39
             max: 42
-            result: Marshy sloughs
+            text: Marshy sloughs
           - min: 43
             max: 44
-            result: Narrow inlet into sheltered cove
+            text: Narrow inlet into sheltered cove
           - min: 45
             max: 46
-            result: Numerous small beaches
+            text: Numerous small beaches
           - min: 47
             max: 50
-            result: Remains of old seawall
+            text: Remains of old seawall
           - min: 51
             max: 52
-            result: River estuary
+            text: River estuary
           - min: 53
             max: 56
-            result: Rocky ledges beneath stone bluffs
+            text: Rocky ledges beneath stone bluffs
           - min: 57
             max: 58
-            result: Rocky promontory extends far out to sea
+            text: Rocky promontory extends far out to sea
           - min: 59
             max: 62
-            result: Rocky shoals within shallow waters
+            text: Rocky shoals within shallow waters
           - min: 63
             max: 66
-            result: Rugged boulder beaches
+            text: Rugged boulder beaches
           - min: 67
             max: 72
-            result: Sandy beaches and dunes
+            text: Sandy beaches and dunes
           - min: 73
             max: 78
-            result: Sea caves
+            text: Sea caves
           - min: 79
             max: 80
-            result: Sea stacks
+            text: Sea stacks
           - min: 81
             max: 84
-            result: Shallow waters sheltered by sandbars
+            text: Shallow waters sheltered by sandbars
           - min: 85
             max: 88
-            result: Steep-sided gorge
+            text: Steep-sided gorge
           - min: 89
             max: 94
-            result: Swampy mangrove thickets
+            text: Swampy mangrove thickets
           - min: 95
             max: 98
-            result: Tall headlands surround pocket beach
+            text: Tall headlands surround pocket beach
           - min: 99
             max: 100
-            result: Towering cliffs rise directly from the sea
+            text: Towering cliffs rise directly from the sea
       offshore_observations:
         _source: *Source
         name: Offshore Observations
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 2
-            result: Active lava flow
+            text: Active lava flow
           - min: 3
             max: 4
-            result: Among a densely clustered island chain
+            text: Among a densely clustered island chain
           - min: 5
             max: 6
-            result: Beached sea beast
+            text: Beached sea beast
           - min: 7
             max: 8
-            result: Bobbing cargo just offshore
+            text: Bobbing cargo just offshore
           - min: 9
             max: 10
-            result: Buoy with a message or warning
+            text: Buoy with a message or warning
           - min: 11
             max: 12
-            result: Burning landscape
+            text: Burning landscape
           - min: 13
             max: 14
-            result: Cooling lava flow
+            text: Cooling lava flow
           - min: 15
             max: 16
-            result: Crystal-clear coastal waters
+            text: Crystal-clear coastal waters
           - min: 17
             max: 18
-            result: Dead reef system
+            text: Dead reef system
           - min: 19
             max: 20
-            result: Distress signal
+            text: Distress signal
           - min: 21
             max: 22
-            result: Diverse wildlife
+            text: Diverse wildlife
           - min: 23
             max: 24
-            result: Dolphins frolic in offshore waters
+            text: Dolphins frolic in offshore waters
           - min: 25
             max: 26
-            result: Enormous sea cave
+            text: Enormous sea cave
           - min: 27
             max: 28
-            result: Flocks of migrating birds
+            text: Flocks of migrating birds
           - min: 29
             max: 30
-            result: Fragrant scents
+            text: Fragrant scents
           - min: 31
             max: 32
-            result: Geysering blowholes
+            text: Geysering blowholes
           - min: 33
             max: 34
-            result: Gleam of a spyglass
+            text: Gleam of a spyglass
           - min: 35
             max: 36
-            result: Landed or anchored boats
+            text: Landed or anchored boats
           - min: 37
             max: 38
-            result: Linked to an islet by a land bridge
+            text: Linked to an islet by a land bridge
           - min: 39
             max: 40
-            result: Majestic seaside waterfall
+            text: Majestic seaside waterfall
           - min: 41
             max: 42
-            result: Obscuring mist
+            text: Obscuring mist
           - min: 43
             max: 44
-            result: Old, crumbling dock
+            text: Old, crumbling dock
           - min: 45
             max: 46
-            result: Powerful shorebreaking waves
+            text: Powerful shorebreaking waves
           - min: 47
             max: 48
-            result: Scars of recent storm damage
+            text: Scars of recent storm damage
           - min: 49
             max: 50
-            result: Sharks prowl coastal waters
+            text: Sharks prowl coastal waters
           - min: 51
             max: 52
-            result: Signs of a recent battle
+            text: Signs of a recent battle
           - min: 53
             max: 54
-            result: Sounds of distant gunfire
+            text: Sounds of distant gunfire
           - min: 55
             max: 56
-            result: Sounds of far-off music
+            text: Sounds of far-off music
           - min: 57
             max: 58
-            result: Stirrings of a large sea creature
+            text: Stirrings of a large sea creature
           - min: 59
             max: 60
-            result: Strong coastal currents
+            text: Strong coastal currents
           - min: 61
             max: 62
-            result: Sunken wrecks form an artificial reef
+            text: Sunken wrecks form an artificial reef
           - min: 63
             max: 64
-            result: Thick kelp forests under the surface
+            text: Thick kelp forests under the surface
           - min: 65
             max: 66
-            result: Towering natural rock arch
+            text: Towering natural rock arch
           - min: 67
             max: 68
-            result: Unusual color beaches or terrain
+            text: Unusual color beaches or terrain
           - min: 69
             max: 70
-            result: Vibrant offshore coral
+            text: Vibrant offshore coral
           - min: 71
             max: 72
-            result: Walled shoreline
+            text: Walled shoreline
           - min: 73
             max: 74
-            result: Waters clogged with debris
+            text: Waters clogged with debris
           - min: 75
             max: 76
-            result: Whales congregate in coastal waters
+            text: Whales congregate in coastal waters
           - min: 77
             max: 80
             # FIXME
-            result: '[Ship](id:sundered_isles/collections/oracles/ship) (at anchor)'
+            text: '[Ship](id:sundered_isles/collections/oracles/ship) (at anchor)'
           - min: 81
             max: 86
             # FIXME
-            result: '[Wreck](id:sundered_isles/collections/oracles/wreck)'
+            text: '[Wreck](id:sundered_isles/collections/oracles/wreck)'
           - min: 87
             max: 90
             # FIXME
-            result: '[Ruins](id:sundered_isles/collections/oracles/ruins)'
+            text: '[Ruins](id:sundered_isles/collections/oracles/ruins)'
           - min: 91
             max: 100
-            result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_offshore_observations:
         _source: *Source
         name: Cursed Offshore Observations
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 3
-            result: Alluring illusion
+            text: Alluring illusion
           - min: 4
             max: 5
-            result: Bloody coastal waters
+            text: Bloody coastal waters
           - min: 6
             max: 7
-            result: Bone reef
+            text: Bone reef
           - min: 8
             max: 10
-            result: Bone-covered beach
+            text: Bone-covered beach
           - min: 11
             max: 12
-            result: Bound in snow or ice
+            text: Bound in snow or ice
           - min: 13
             max: 14
-            result: Dead sea life
+            text: Dead sea life
           - min: 15
             max: 16
-            result: Devoid of wildlife
+            text: Devoid of wildlife
           - min: 17
             max: 18
-            result: Eerie singing or chants
+            text: Eerie singing or chants
           - min: 19
             max: 21
-            result: Glimpses of ghostly forms
+            text: Glimpses of ghostly forms
           - min: 22
             max: 23
-            result: Heaped tangle of wrecked ships
+            text: Heaped tangle of wrecked ships
           - min: 24
             max: 25
-            result: Hordes of fleeing birds
+            text: Hordes of fleeing birds
           - min: 26
             max: 28
-            result: Monstrous beast
+            text: Monstrous beast
           - min: 29
             max: 30
-            result: Nightmarish or unearthly wildlife
+            text: Nightmarish or unearthly wildlife
           - min: 31
             max: 32
-            result: Ominous, beastly howls
+            text: Ominous, beastly howls
           - min: 33
             max: 34
-            result: Oversized plants or wildlife
+            text: Oversized plants or wildlife
           - min: 35
             max: 37
-            result: Phantom ship at anchor
+            text: Phantom ship at anchor
           - min: 38
             max: 39
-            result: Phantom whispers
+            text: Phantom whispers
           - min: 40
             max: 41
-            result: Plants or creatures from out of time
+            text: Plants or creatures from out of time
           - min: 42
             max: 43
-            result: Resounding, titanic footfalls
+            text: Resounding, titanic footfalls
           - min: 44
             max: 45
-            result: Rotting vegetation
+            text: Rotting vegetation
           - min: 46
             max: 47
-            result: Shifting or changing terrain
+            text: Shifting or changing terrain
           - min: 48
             max: 52
-            result: Ship graveyard
+            text: Ship graveyard
           - min: 53
             max: 55
-            result: Sinister warnings carved in rocks
+            text: Sinister warnings carved in rocks
           - min: 56
             max: 57
-            result: Skeletal corpses chained to rocks
+            text: Skeletal corpses chained to rocks
           - min: 58
             max: 61
-            result: Skull-shaped terrain feature
+            text: Skull-shaped terrain feature
           - min: 62
             max: 63
-            result: Spectral lights
+            text: Spectral lights
           - min: 64
             max: 65
-            result: Stagnant, foul-smelling coastal waters
+            text: Stagnant, foul-smelling coastal waters
           - min: 66
             max: 68
-            result: Stench of death
+            text: Stench of death
           - min: 69
             max: 70
-            result: Surrounded by arcane barrier
+            text: Surrounded by arcane barrier
           - min: 71
             max: 72
-            result: Terrain or vegetation draped with webs
+            text: Terrain or vegetation draped with webs
           - min: 73
             max: 74
-            result: Titanic skeleton
+            text: Titanic skeleton
           - min: 75
             max: 76
-            result: Undead wildlife
+            text: Undead wildlife
           - min: 77
             max: 80
-            result: Unmoving fog
+            text: Unmoving fog
           - min: 81
             max: 82
-            result: Unnatural darkness
+            text: Unnatural darkness
           - min: 83
             max: 85
-            result: Unnaturally aggressive wildlife
+            text: Unnaturally aggressive wildlife
           - min: 86
             max: 88
-            result: Unnerving sense of being watched
+            text: Unnerving sense of being watched
           - min: 89
             max: 91
-            result: Unsettling quiet
+            text: Unsettling quiet
           - min: 92
             max: 93
-            result: Uprooted or broken vegetation
+            text: Uprooted or broken vegetation
           - min: 94
             max: 95
-            result: Washed-up corpses
+            text: Washed-up corpses
           - min: 97
             max: 100
-            result: '[Cursed Weather]'
+            text: '[Cursed Weather]'
     collections:
       landscape:
         _source: *Source
@@ -364,7 +364,7 @@ oracles:
           size:
             _source: *Source
             name: Size
-            oracle_type: table_details
+            oracle_type: table_text2
             # rendering:
             #   style: standalone
             #   columns:
@@ -379,74 +379,74 @@ oracles:
             #       label: Time to Walk the Island Circumference
             column_labels:
               roll: Roll
-              result: Result
-              detail: Time to Walk the Island Circumference
+              text: Result
+              text2: Time to Walk the Island Circumference
             rows:
               - min: 1
                 max: 20
-                result: Small
-                detail: Hour or two
+                text: Small
+                text2: Hour or two
               - min: 21
                 max: 50
-                result: Medium
-                detail: Several hours
+                text: Medium
+                text2: Several hours
               - min: 51
                 max: 90
-                result: Large
-                detail: Days
+                text: Large
+                text2: Days
               - min: 91
                 max: 100
-                result: Vast
-                detail: Weeks
+                text: Vast
+                text2: Weeks
           terrain:
             _source: *Source
             name: Terrain
-            oracle_type: table_details
+            oracle_type: table_text2
             column_labels:
               roll: Roll
-              result: Result
-              detail: Detail
+              text: Result
+              text2: Detail
             rows:
               - min: 1
                 max: 10
-                result: Sodden
-                detail: Low-lying wetlands
+                text: Sodden
+                text2: Low-lying wetlands
               - min: 11
                 max: 20
-                result: Flat
-                detail: Expansive plains
+                text: Flat
+                text2: Expansive plains
               - min: 21
                 max: 30
-                result: Rolling
-                detail: Hills or dunes
+                text: Rolling
+                text2: Hills or dunes
               - min: 31
                 max: 40
-                result: Elevated
-                detail: Sheer cliffs rising to a mesa or plateau
+                text: Elevated
+                text2: Sheer cliffs rising to a mesa or plateau
               - min: 41
                 max: 50
-                result: Sloped
-                detail: Terrain rising gradually to a prominent ridge or peak
+                text: Sloped
+                text2: Terrain rising gradually to a prominent ridge or peak
               - min: 51
                 max: 70
-                result: Rugged
-                detail: Varied terrain of craggy hills and dramatic rock formations
+                text: Rugged
+                text2: Varied terrain of craggy hills and dramatic rock formations
               - min: 71
                 max: 90
-                result: Mountainous
-                detail: Imposing heights and deep valleys
+                text: Mountainous
+                text2: Imposing heights and deep valleys
               - min: 91
                 max: 100
-                result: Volcanic
-                detail: Active volcanoes and lava fields
+                text: Volcanic
+                text2: Active volcanoes and lava fields
         collections:
           vitality:
             _source: *Source
             name: Vitality
             oracle_type: table_shared_details
             column_labels:
-              result: Result
-              detail: Detail
+              text: Result
+              text2: Detail
             contents:
               myriads:
                 # source: *Source
@@ -458,33 +458,33 @@ oracles:
                   - min: 1
                     max: 15
                     <<: &Vitality.0
-                      result: Devastated
-                      detail: Ravaged by natural forces or razed by despoilers
+                      text: Devastated
+                      text2: Ravaged by natural forces or razed by despoilers
                   - min: 16
                     max: 30
                     <<: &Vitality.1
-                      result: Dying
-                      detail: Withered woodlands, blighted scrub, or sickly marshes
+                      text: Dying
+                      text2: Withered woodlands, blighted scrub, or sickly marshes
                   - min: 31
                     max: 40
                     <<: &Vitality.2
-                      result: Desolate
-                      detail: Arid wastes
+                      text: Desolate
+                      text2: Arid wastes
                   - min: 41
                     max: 50
                     <<: &Vitality.3
-                      result: Sparse
-                      detail: Thin woodlands, bleak scrub, or stagnant marshes
+                      text: Sparse
+                      text2: Thin woodlands, bleak scrub, or stagnant marshes
                   - min: 51
                     max: 90
                     <<: &Vitality.4
-                      result: Lush
-                      detail: Verdant woodlands, dense jungles, or thriving swamps
+                      text: Lush
+                      text2: Verdant woodlands, dense jungles, or thriving swamps
                   - min: 91
                     max: 100
                     <<: &Vitality.5
-                      result: Primeval
-                      detail: Ancient jungles or impenetrable swamps
+                      text: Primeval
+                      text2: Ancient jungles or impenetrable swamps
               margins:
                 # source: *Source
                 <<: &Margins
@@ -538,43 +538,43 @@ oracles:
       visible_habitation:
         _source: *Source
         name: Visible Habitation
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         column_labels:
-          result: Result
+          text: Result
         contents:
           myriads:
             <<: *Myriads
             # source: *Source
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 35
                 <<: &VisibleHabitation.0
-                  result: No signs of habitation
+                  text: No signs of habitation
               - min: 36
                 max: 40
                 <<: &VisibleHabitation.1
-                  result: Inland smoke
+                  text: Inland smoke
               - min: 41
                 max: 45
                 <<: &VisibleHabitation.2
-                  result: Costal boats
+                  text: Costal boats
               - min: 46
                 max: 50
                 <<: &VisibleHabitation.3
-                  result: Seaside camp
+                  text: Seaside camp
               - min: 51
                 max: 85
                 <<: &VisibleHabitation.4
-                  result: Seaside settlement
+                  text: Seaside settlement
               - min: 86
                 max: 100
                 <<: &VisibleHabitation.5
-                  result: Mutliple visible communities or extensive cultivation
+                  text: Mutliple visible communities or extensive cultivation
           margins:
             # source: *Source
             <<: *Margins
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 50
@@ -597,7 +597,7 @@ oracles:
           reaches:
             # source: *Source
             <<: *Reaches
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 65

@@ -15,7 +15,7 @@ oracles:
     contents:
       combat_action:
         name: Combat Action
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 16: Combat Action'
         summary: Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.
         _source:
@@ -24,61 +24,61 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: 'Compel a surrender.'
+            text: 'Compel a surrender.'
           - min: 4
             max: 6
-            result: 'Coordinate with allies.'
+            text: 'Coordinate with allies.'
           - min: 7
             max: 9
-            result: 'Gather reinforcements.'
+            text: 'Gather reinforcements.'
           - min: 10
             max: 13
-            result: 'Seize something or someone.'
+            text: 'Seize something or someone.'
           - min: 14
             max: 17
-            result: 'Provoke a reckless response.'
+            text: 'Provoke a reckless response.'
           - min: 18
             max: 21
-            result: 'Intimidate or frighten.'
+            text: 'Intimidate or frighten.'
           - min: 22
             max: 25
-            result: 'Reveal a surprising truth.'
+            text: 'Reveal a surprising truth.'
           - min: 26
             max: 29
-            result: 'Shift focus to someone or something else.'
+            text: 'Shift focus to someone or something else.'
           - min: 30
             max: 33
-            result: 'Destroy something, or render it useless.'
+            text: 'Destroy something, or render it useless.'
           - min: 34
             max: 39
-            result: 'Take a decisive action.'
+            text: 'Take a decisive action.'
           - min: 40
             max: 45
-            result: 'Reinforce defenses.'
+            text: 'Reinforce defenses.'
           - min: 46
             max: 52
-            result: 'Ready an action.'
+            text: 'Ready an action.'
           - min: 53
             max: 60
-            result: 'Use the terrain to gain advantage.'
+            text: 'Use the terrain to gain advantage.'
           - min: 61
             max: 68
-            result: 'Leverage the advantage of a weapon or ability.'
+            text: 'Leverage the advantage of a weapon or ability.'
           - min: 69
             max: 78
-            result: 'Create an opportunity.'
+            text: 'Create an opportunity.'
           - min: 79
             max: 89
-            result: 'Attack with precision.'
+            text: 'Attack with precision.'
           - min: 90
             max: 99
-            result: 'Attack with power.'
+            text: 'Attack with power.'
           - min: 100
             max: 100
-            result: 'Take a completely unexpected action.'
+            text: 'Take a completely unexpected action.'
       mystic_backlash:
         name: Mystic Backlash
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 17: Mystic Backlash'
         _source:
           <<: *Source
@@ -87,79 +87,79 @@ oracles:
         rows:
           - min: 1
             max: 4
-            result: 'Your ritual has the opposite affect.'
+            text: 'Your ritual has the opposite affect.'
           - min: 5
             max: 8
-            result: 'You are sapped of strength.'
+            text: 'You are sapped of strength.'
           - min: 9
             max: 12
-            result: 'Your friend, ally, or companion is adversely affected.'
+            text: 'Your friend, ally, or companion is adversely affected.'
           - min: 13
             max: 16
-            result: 'You destroy an important object.'
+            text: 'You destroy an important object.'
           - min: 17
             max: 20
-            result: 'You inadvertently summon a horror.'
+            text: 'You inadvertently summon a horror.'
           - min: 21
             max: 24
-            result: 'You collapse, and drift into a troubled sleep.'
+            text: 'You collapse, and drift into a troubled sleep.'
           - min: 25
             max: 28
-            result: 'You undergo a physical torment which leaves its mark upon you.'
+            text: 'You undergo a physical torment which leaves its mark upon you.'
           - min: 29
             max: 32
-            result: 'You hear ghostly voices whispering of dark portents.'
+            text: 'You hear ghostly voices whispering of dark portents.'
           - min: 33
             max: 36
-            result: 'You are lost in shadow, and find yourself in another place without memory of how you got there.'
+            text: 'You are lost in shadow, and find yourself in another place without memory of how you got there.'
           - min: 37
             max: 40
-            result: 'You alert someone or something to your presence.'
+            text: 'You alert someone or something to your presence.'
           - min: 41
             max: 44
-            result: 'You are not yourself, and act against a friend, ally, or companion.'
+            text: 'You are not yourself, and act against a friend, ally, or companion.'
           - min: 45
             max: 48
-            result: 'You affect or damage your surroundings, causing a disturbance or potential harm.'
+            text: 'You affect or damage your surroundings, causing a disturbance or potential harm.'
           - min: 49
             max: 52
-            result: 'You waste resources.'
+            text: 'You waste resources.'
           - min: 53
             max: 56
-            result: 'You suffer the loss of a sense for several hours.'
+            text: 'You suffer the loss of a sense for several hours.'
           - min: 57
             max: 60
-            result: 'You lose your connection to magic for a day or so, and cannot perform rituals.'
+            text: 'You lose your connection to magic for a day or so, and cannot perform rituals.'
           - min: 61
             max: 64
-            result: 'Your ritual affects the target in an unexpected and problematic way.'
+            text: 'Your ritual affects the target in an unexpected and problematic way.'
           - min: 65
             max: 68
-            result: 'Your ritual reveals a surprising and troubling truth.'
+            text: 'Your ritual reveals a surprising and troubling truth.'
           - min: 69
             max: 72
-            result: 'You are tempted by dark powers.'
+            text: 'You are tempted by dark powers.'
           - min: 73
             max: 76
-            result: 'You see a troubling vision of your future.'
+            text: 'You see a troubling vision of your future.'
           - min: 77
             max: 80
-            result: "You can't perform this ritual again until you acquire an important component."
+            text: "You can't perform this ritual again until you acquire an important component."
           - min: 81
             max: 84
-            result: 'You develop a strange fear or compulsion.'
+            text: 'You develop a strange fear or compulsion.'
           - min: 85
             max: 88
-            result: 'Your ritual causes creatures to exhibit strange or aggressive behavior.'
+            text: 'Your ritual causes creatures to exhibit strange or aggressive behavior.'
           - min: 89
             max: 92
-            result: 'You are tormented by an apparition from your past.'
+            text: 'You are tormented by an apparition from your past.'
           - min: 93
             max: 96
-            result: 'You are wracked with sudden sickness.'
+            text: 'You are wracked with sudden sickness.'
           - min: 97
             max: 100
-            result: 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
+            text: 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
@@ -168,7 +168,7 @@ oracles:
       major_plot_twist:
         canonical_name: 'Oracle 18: Major Plot Twist'
         name: Major Plot Twist
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: Use this oracle to introduce a narrative surprise or revelation. Most of these results have a negative implication, and can be used to resolve a match at a crucial moment in your story. In particular, this is an effective tool to leverage when you make a move with matched 10’s on the challenge dice.
         _source:
           <<: *Source
@@ -176,64 +176,64 @@ oracles:
         rows:
           - min: 1
             max: 5
-            result: 'It was all a diversion.'
+            text: 'It was all a diversion.'
           - min: 6
             max: 10
-            result: 'A dark secret is revealed.'
+            text: 'A dark secret is revealed.'
           - min: 11
             max: 15
-            result: 'A trap is sprung.'
+            text: 'A trap is sprung.'
           - min: 16
             max: 20
-            result: 'An assumption is revealed to be false.'
+            text: 'An assumption is revealed to be false.'
           - min: 21
             max: 25
-            result: 'A secret alliance is revealed.'
+            text: 'A secret alliance is revealed.'
           - min: 26
             max: 30
-            result: 'Your actions benefit an enemy.'
+            text: 'Your actions benefit an enemy.'
           - min: 31
             max: 35
-            result: 'Someone returns unexpectedly.'
+            text: 'Someone returns unexpectedly.'
           - min: 36
             max: 40
-            result: 'A more dangerous foe is revealed.'
+            text: 'A more dangerous foe is revealed.'
           - min: 41
             max: 45
-            result: 'You and an enemy share a common goal.'
+            text: 'You and an enemy share a common goal.'
           - min: 46
             max: 50
-            result: 'A true identity is revealed.'
+            text: 'A true identity is revealed.'
           - min: 51
             max: 55
-            result: 'You are betrayed by someone who was trusted.'
+            text: 'You are betrayed by someone who was trusted.'
           - min: 56
             max: 60
-            result: 'You are too late.'
+            text: 'You are too late.'
           - min: 61
             max: 65
-            result: 'The true enemy is revealed.'
+            text: 'The true enemy is revealed.'
           - min: 66
             max: 70
-            result: 'The enemy gains new allies.'
+            text: 'The enemy gains new allies.'
           - min: 71
             max: 75
-            result: 'A new danger appears.'
+            text: 'A new danger appears.'
           - min: 76
             max: 80
-            result: 'Someone or something goes missing.'
+            text: 'Someone or something goes missing.'
           - min: 81
             max: 85
-            result: 'The truth of a relationship is revealed.'
+            text: 'The truth of a relationship is revealed.'
           - min: 86
             max: 90
-            result: 'Two seemingly unrelated situations are shown to be connected.'
+            text: 'Two seemingly unrelated situations are shown to be connected.'
           - min: 91
             max: 95
-            result: 'Unexpected powers or abilities are revealed.'
+            text: 'Unexpected powers or abilities are revealed.'
           - min: 96
             max: 100
-            result: 'Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.'
+            text: 'Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.'
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
@@ -243,7 +243,7 @@ oracles:
       challenge_rank:
         canonical_name: 'Oracle 19: Challenge Rank'
         name: Challenge Rank
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
         _source: &CollectionSource
           <<: *Source
@@ -252,28 +252,28 @@ oracles:
           - &Troublesome
             min: 1
             max: 20
-            result: Troublesome
-            # detail: 'A challenging quest with a small number of obstacles'
+            text: Troublesome
+            # text2: 'A challenging quest with a small number of obstacles'
           - &Dangerous
             min: 21
             max: 55
-            result: Dangerous
-            # detail: 'An involved quest with several tough obstacles'
+            text: Dangerous
+            # text2: 'An involved quest with several tough obstacles'
           - &Formidable
             min: 56
             max: 80
-            result: Formidable
-            # detail: 'A complex quest with many intimidating obstacles'
+            text: Formidable
+            # text2: 'A complex quest with many intimidating obstacles'
           - &Extreme
             min: 81
             max: 93
-            result: Extreme
-            # detail: 'An overwhelming quest of staggering proportions'
+            text: Extreme
+            # text2: 'An overwhelming quest of staggering proportions'
           - &Epic
             min: 94
             max: 100
-            result: Epic
-            # detail: 'A life-defining quest of unknowable scope'
+            text: Epic
+            # text2: 'A life-defining quest of unknowable scope'
     # collections:
     #   challenge_rank:
     #     canonical_name: 'Oracle 19: Challenge Rank'
@@ -287,60 +287,60 @@ oracles:
     #       quest:
     #         name: Quest
     #         _source: *CollectionSource
-    #         oracle_type: column_simple
+    #         oracle_type: column_basic
     #         rows:
     #           - &Troublesome
     #             min: 1
     #             max: 20
-    #             result: Troublesome
-    #             detail: 'A challenging quest with a small number of obstacles'
+    #             text: Troublesome
+    #             text2: 'A challenging quest with a small number of obstacles'
     #           - &Dangerous
     #             min: 21
     #             max: 55
-    #             result: Dangerous
-    #             detail: 'An involved quest with several tough obstacles'
+    #             text: Dangerous
+    #             text2: 'An involved quest with several tough obstacles'
     #           - &Formidable
     #             min: 56
     #             max: 80
-    #             result: Formidable
-    #             detail: 'A complex quest with many intimidating obstacles'
+    #             text: Formidable
+    #             text2: 'A complex quest with many intimidating obstacles'
     #           - &Extreme
     #             min: 81
     #             max: 93
-    #             result: Extreme
-    #             detail: 'An overwhelming quest of staggering proportions'
+    #             text: Extreme
+    #             text2: 'An overwhelming quest of staggering proportions'
     #           - &Epic
     #             min: 94
     #             max: 100
-    #             result: Epic
-    #             detail: 'A life-defining quest of unknowable scope'
+    #             text: Epic
+    #             text2: 'A life-defining quest of unknowable scope'
     #       journey:
     #         name: Journey
     #         _source: *CollectionSource
-    #         oracle_type: column_simple
+    #         oracle_type: column_basic
     #         rows:
     #           - <<: *Troublesome
-    #             detail: 'Traveling a moderate distance within a single region'
+    #             text2: 'Traveling a moderate distance within a single region'
     #           - <<: *Dangerous
-    #             detail: 'Traveling a long distance within a single region, or across rough terrain'
+    #             text2: 'Traveling a long distance within a single region, or across rough terrain'
     #           - <<: *Formidable
-    #             detail: 'Traveling from one region to another, or across especially challenging terrain,'
+    #             text2: 'Traveling from one region to another, or across especially challenging terrain,'
     #           - <<: *Extreme
-    #             detail: 'Traveling through multiple regions'
+    #             text2: 'Traveling through multiple regions'
     #           - <<: *Epic
-    #             detail: 'Traveling from one end of the Ironlands to another, or to a separate land'
+    #             text2: 'Traveling from one end of the Ironlands to another, or to a separate land'
     #       foe:
     #         name: Foes
     #         _source: *CollectionSource
-    #         oracle_type: column_simple
+    #         oracle_type: column_basic
     #         rows:
     #           - <<: *Troublesome
-    #             detail: 'Common enemies'
+    #             text2: 'Common enemies'
     #           - <<: *Dangerous
-    #             detail: 'Capable fighters and deadly creatures'
+    #             text2: 'Capable fighters and deadly creatures'
     #           - <<: *Formidable
-    #             detail: 'Exceptional fighters and mighty creatures'
+    #             text2: 'Exceptional fighters and mighty creatures'
     #           - <<: *Extreme
-    #             detail: 'Foes of overwhelming skill or power'
+    #             text2: 'Foes of overwhelming skill or power'
     #           - <<: *Epic
-    #             detail: 'Legendary foes of mythic power'
+    #             text2: 'Legendary foes of mythic power'

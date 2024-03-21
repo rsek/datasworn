@@ -18,7 +18,7 @@ oracles:
       trouble:
         name: Settlement Trouble
         canonical_name: 'Oracle 9: Settlement Trouble'
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: Use this table to generate a narrative hook for a problem faced by a community. This oracle can help inspire a vow for your character or serve as a prompt for a trouble you encounter when you interact with a settlement.
         _source:
           <<: *Source
@@ -26,155 +26,155 @@ oracles:
         rows:
           - min: 1
             max: 2
-            result: Outsiders rejected
+            text: Outsiders rejected
           - min: 3
             max: 4
-            result: Dangerous discovery
+            text: Dangerous discovery
           - min: 5
             max: 6
-            result: Dreadful omens
+            text: Dreadful omens
           - min: 7
             max: 8
-            result: Natural disaster
+            text: Natural disaster
           - min: 9
             max: 10
-            result: Old wounds reopened
+            text: Old wounds reopened
           - min: 11
             max: 12
-            result: Important object is lost
+            text: Important object is lost
           - min: 13
             max: 14
-            result: Someone is captured
+            text: Someone is captured
           - min: 15
             max: 16
-            result: Mysterious phenomenon
+            text: Mysterious phenomenon
           - min: 17
             max: 18
-            result: Revolt against a leader
+            text: Revolt against a leader
           - min: 19
             max: 20
-            result: Vengeful outcast
+            text: Vengeful outcast
           - min: 21
             max: 22
-            result: Rival settlement
+            text: Rival settlement
           - min: 23
             max: 24
-            result: Nature strikes back
+            text: Nature strikes back
           - min: 25
             max: 26
-            result: Someone is missing
+            text: Someone is missing
           - min: 27
             max: 28
-            result: Production halts
+            text: Production halts
           - min: 29
             max: 30
-            result: Mysterious murders
+            text: Mysterious murders
           - min: 31
             max: 32
-            result: Debt comes due
+            text: Debt comes due
           - min: 33
             max: 34
-            result: Unjust leadership
+            text: Unjust leadership
           - min: 35
             max: 36
-            result: Disastrous accident
+            text: Disastrous accident
           - min: 37
             max: 38
-            result: In league with the enemy
+            text: In league with the enemy
           - min: 39
             max: 40
-            result: Raiders prey on the weak
+            text: Raiders prey on the weak
           - min: 41
             max: 42
-            result: Cursed past
+            text: Cursed past
           - min: 43
             max: 44
-            result: An innocent is accused
+            text: An innocent is accused
           - min: 45
             max: 46
-            result: Corrupted by dark magic
+            text: Corrupted by dark magic
           - min: 47
             max: 48
-            result: Isolated by brutal weather
+            text: Isolated by brutal weather
           - min: 49
             max: 50
-            result: Provisions are scarce
+            text: Provisions are scarce
           - min: 51
             max: 52
-            result: Sickness run amok
+            text: Sickness run amok
           - min: 53
             max: 54
-            result: Allies become enemies
+            text: Allies become enemies
           - min: 55
             max: 56
-            result: Attack is imminent
+            text: Attack is imminent
           - min: 57
             max: 58
-            result: Lost caravan
+            text: Lost caravan
           - min: 59
             max: 60
-            result: Dark secret revealed
+            text: Dark secret revealed
           - min: 61
             max: 62
-            result: Urgent expedition
+            text: Urgent expedition
           - min: 63
             max: 64
-            result: A leader falls
+            text: A leader falls
           - min: 65
             max: 66
-            result: Families in conflict
+            text: Families in conflict
           - min: 67
             max: 68
-            result: Incompetent leadership
+            text: Incompetent leadership
           - min: 69
             max: 70
-            result: Reckless warmongering
+            text: Reckless warmongering
           - min: 71
             max: 72
-            result: Beast on the hunt
+            text: Beast on the hunt
           - min: 73
             max: 74
-            result: Betrayed from within
+            text: Betrayed from within
           - min: 75
             max: 76
-            result: Broken truce
+            text: Broken truce
           - min: 77
             max: 78
-            result: Wrathful haunt
+            text: Wrathful haunt
           - min: 79
             max: 80
-            result: Conflict with firstborn
+            text: Conflict with firstborn
           - min: 81
             max: 82
-            result: Trade route blocked
+            text: Trade route blocked
           - min: 83
             max: 84
-            result: In the crossfire
+            text: In the crossfire
           - min: 85
             max: 86
-            result: Stranger causes discord
+            text: Stranger causes discord
           - min: 87
             max: 88
-            result: Important event threatened
+            text: Important event threatened
           - min: 89
             max: 90
-            result: Dangerous tradition
+            text: Dangerous tradition
           - min: 91
             max: 100
-            result: Roll twice
+            text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
       name:
         name: Settlement Name
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *CollectionSource
         summary: Ask this oracle for a thematic name for an Ironlander settlement. Roll once for the category, and again to pick from the examples. Alternatively, just roll for the category and come up with a name that fits the theme.
         rows:
           - min: 1
             max: 15
-            result: &Landscape_Feature |-
+            text: &Landscape_Feature |-
               __A feature of the landscape.__ Envision what it is. What makes it unusual or distinctive?
             # technically, these embedded tables are all labeled "Examples". should this be structured differently in order to convey this?
             embed_table: classic/oracles/settlement/name/landscape_feature
@@ -182,42 +182,42 @@ oracles:
               - oracle: classic/oracles/settlement/name/landscape_feature
           - min: 16
             max: 30
-            result: &Manmade_Edifice |-
+            text: &Manmade_Edifice |-
               __A manmade edifice.__ What is it? Why is it important to this settlement’s history?,
             embed_table: classic/oracles/settlement/name/manmade_edifice
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/manmade_edifice
           - min: 31
             max: 45
-            result: &Creature |-
+            text: &Creature |-
               __A creature.__ Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?
             embed_table: classic/oracles/settlement/name/creature
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/creature
           - min: 46
             max: 60
-            result: &Historical_Event |-
+            text: &Historical_Event |-
               __A historical event.__ What happened here? What place or practice commemorates this event?
             embed_table: classic/oracles/settlement/name/historical_event
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/historical_event
           - min: 61
             max: 75
-            result: &Old_World_Language |-
+            text: &Old_World_Language |-
               __A word in an Old World language.__ What culture is represented by this word? What does it translate to?
             embed_table: classic/oracles/settlement/name/old_world_language
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/old_world_language
           - min: 76
             max: 90
-            result: &Environmental_Aspect |-
+            text: &Environmental_Aspect |-
               __A season or environmental aspect.__ What influence does the weather have on this settlement?
             embed_table: classic/oracles/settlement/name/environmental_aspect
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/environmental_aspect
           - min: 91
             max: 100
-            result: 'Something Else...'
+            text: 'Something Else...'
             embed_table: classic/oracles/settlement/name/something_else
             oracle_rolls:
               - oracle: classic/oracles/settlement/name/something_else
@@ -232,7 +232,7 @@ oracles:
           page: 178
         contents:
           landscape_feature:
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             name: Landscape Feature
             canonical_name: A feature of the landscape
@@ -244,46 +244,46 @@ oracles:
                       part_of_speech: proper_noun
                 min: 1
                 max: 10
-                result: Highmount
+                text: Highmount
               - <<: *i18n.proper_noun
                 min: 11
                 max: 20
-                result: Brackwater
+                text: Brackwater
               - <<: *i18n.proper_noun
                 min: 21
                 max: 30
-                result: Frostwood
+                text: Frostwood
               - <<: *i18n.proper_noun
                 min: 31
                 max: 40
-                result: Redcrest
+                text: Redcrest
               - <<: *i18n.proper_noun
                 min: 41
                 max: 50
-                result: Grimtree
+                text: Grimtree
               - <<: *i18n.proper_noun
                 min: 51
                 max: 60
-                result: Stoneford
+                text: Stoneford
               - <<: *i18n.proper_noun
                 min: 61
                 max: 70
-                result: Deepwater
+                text: Deepwater
               - <<: *i18n.proper_noun
                 min: 71
                 max: 80
-                result: Whitefall
+                text: Whitefall
               - <<: *i18n.proper_noun
                 min: 81
                 max: 90
-                result: Graycliff
+                text: Graycliff
               - <<: *i18n.proper_noun
                 min: 91
                 max: 100
-                result: Three Rivers
+                text: Three Rivers
           manmade_edifice:
             canonical_name: A manmade edifice
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             name: Manmade Edifice
             summary: *Manmade_Edifice
@@ -291,46 +291,46 @@ oracles:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 10
-                result: Whitebridge
+                text: Whitebridge
               - <<: *i18n.proper_noun
                 min: 11
                 max: 20
-                result: Lonefort
+                text: Lonefort
               - <<: *i18n.proper_noun
                 min: 21
                 max: 30
-                result: Highcairn
+                text: Highcairn
               - <<: *i18n.proper_noun
                 min: 31
                 max: 40
-                result: Redhall
+                text: Redhall
               - <<: *i18n.proper_noun
                 min: 41
                 max: 50
-                result: Darkwell
+                text: Darkwell
               - <<: *i18n.proper_noun
                 min: 51
                 max: 60
-                result: Timberwall
+                text: Timberwall
               - <<: *i18n.proper_noun
                 min: 61
                 max: 70
-                result: Stonetower
+                text: Stonetower
               - <<: *i18n.proper_noun
                 min: 71
                 max: 80
-                result: Thornhall
+                text: Thornhall
               - <<: *i18n.proper_noun
                 min: 81
                 max: 90
-                result: Cinderhome
+                text: Cinderhome
               - <<: *i18n.proper_noun
                 min: 91
                 max: 100
-                result: Fallowfield
+                text: Fallowfield
           creature:
             canonical_name: A creature
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             name: Creature
             summary: *Creature
@@ -338,46 +338,46 @@ oracles:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 10
-                result: Ravencliff
+                text: Ravencliff
               - <<: *i18n.proper_noun
                 min: 11
                 max: 20
-                result: Bearmark
+                text: Bearmark
               - <<: *i18n.proper_noun
                 min: 21
                 max: 30
-                result: Wolfcrag
+                text: Wolfcrag
               - <<: *i18n.proper_noun
                 min: 31
                 max: 40
-                result: Eaglespire
+                text: Eaglespire
               - <<: *i18n.proper_noun
                 min: 41
                 max: 50
-                result: Wyvern's Rest
+                text: Wyvern's Rest
               - <<: *i18n.proper_noun
                 min: 51
                 max: 60
-                result: Boarwood
+                text: Boarwood
               - <<: *i18n.proper_noun
                 min: 61
                 max: 70
-                result: Foxhollow
+                text: Foxhollow
               - <<: *i18n.proper_noun
                 min: 71
                 max: 80
-                result: Elderwatch
+                text: Elderwatch
               - <<: *i18n.proper_noun
                 min: 81
                 max: 90
-                result: Elkfield
+                text: Elkfield
               - <<: *i18n.proper_noun
                 min: 91
                 max: 100
-                result: Dragonshadow
+                text: Dragonshadow
           historical_event:
             canonical_name: A historical event
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             name: Historical Event
             summary: *Historical_Event
@@ -385,46 +385,46 @@ oracles:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 10
-                result: Swordbreak
+                text: Swordbreak
               - <<: *i18n.proper_noun
                 min: 11
                 max: 20
-                result: Fool's Fall
+                text: Fool's Fall
               - <<: *i18n.proper_noun
                 min: 21
                 max: 30
-                result: Firstmeet
+                text: Firstmeet
               - <<: *i18n.proper_noun
                 min: 31
                 max: 40
-                result: Brokenhelm
+                text: Brokenhelm
               - <<: *i18n.proper_noun
                 min: 41
                 max: 50
-                result: Mournhaunt
+                text: Mournhaunt
               - <<: *i18n.proper_noun
                 min: 51
                 max: 60
-                result: Olgar's Stand
+                text: Olgar's Stand
               - <<: *i18n.proper_noun
                 min: 61
                 max: 70
-                result: Lostwater
+                text: Lostwater
               - <<: *i18n.proper_noun
                 min: 71
                 max: 80
-                result: Rojirra's Lament
+                text: Rojirra's Lament
               - <<: *i18n.proper_noun
                 min: 81
                 max: 90
-                result: Lastmarch
+                text: Lastmarch
               - <<: *i18n.proper_noun
                 min: 91
                 max: 100
-                result: Rockfall
+                text: Rockfall
           old_world_language:
             canonical_name: A word in an Old World language
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             name: Old World Language
             summary: *Old_World_Language
@@ -432,46 +432,46 @@ oracles:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 10
-                result: Abon
+                text: Abon
               - <<: *i18n.proper_noun
                 min: 11
                 max: 20
-                result: Daveza
+                text: Daveza
               - <<: *i18n.proper_noun
                 min: 21
                 max: 30
-                result: Damula
+                text: Damula
               - <<: *i18n.proper_noun
                 min: 31
                 max: 40
-                result: Essus
+                text: Essus
               - <<: *i18n.proper_noun
                 min: 41
                 max: 50
-                result: Sina
+                text: Sina
               - <<: *i18n.proper_noun
                 min: 51
                 max: 60
-                result: Kazeera
+                text: Kazeera
               - <<: *i18n.proper_noun
                 min: 61
                 max: 70
-                result: Khazu
+                text: Khazu
               - <<: *i18n.proper_noun
                 min: 71
                 max: 80
-                result: Sova
+                text: Sova
               - <<: *i18n.proper_noun
                 min: 81
                 max: 90
-                result: Nabuma
+                text: Nabuma
               - <<: *i18n.proper_noun
                 min: 91
                 max: 100
-                result: Tiza
+                text: Tiza
           environmental_aspect:
             canonical_name: A season or environmental aspect
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             name: Environmental Aspect
             summary: *Environmental_Aspect
@@ -479,92 +479,92 @@ oracles:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 10
-                result: Winterhome
+                text: Winterhome
               - <<: *i18n.proper_noun
                 min: 11
                 max: 20
-                result: Windhaven
+                text: Windhaven
               - <<: *i18n.proper_noun
                 min: 21
                 max: 30
-                result: Stormrest
+                text: Stormrest
               - <<: *i18n.proper_noun
                 min: 31
                 max: 40
-                result: Bleakfrost
+                text: Bleakfrost
               - <<: *i18n.proper_noun
                 min: 41
                 max: 50
-                result: Springtide
+                text: Springtide
               - <<: *i18n.proper_noun
                 min: 51
                 max: 60
-                result: Duskmoor
+                text: Duskmoor
               - <<: *i18n.proper_noun
                 min: 61
                 max: 70
-                result: Frostcrag
+                text: Frostcrag
               - <<: *i18n.proper_noun
                 min: 71
                 max: 80
-                result: Springbrook
+                text: Springbrook
               - <<: *i18n.proper_noun
                 min: 81
                 max: 90
-                result: Icebreak
+                text: Icebreak
               - <<: *i18n.proper_noun
                 min: 91
                 max: 100
-                result: Summersong
+                text: Summersong
           something_else:
-            oracle_type: table_simple
+            oracle_type: table_basic
             _source: *CollectionSource
             name: Something Else
             rows:
               - min: 1
                 max: 10
-                result: A trade good (Ironhome)
+                text: A trade good (Ironhome)
               - min: 11
                 max: 20
-                result: An Old World city (New Arkesh)
+                text: An Old World city (New Arkesh)
               - min: 21
                 max: 30
-                result: A founder or famous settler (Kei's Hall)
+                text: A founder or famous settler (Kei's Hall)
               - min: 31
                 max: 40
-                result: A god (Elisora)
+                text: A god (Elisora)
               - min: 41
                 max: 50
-                result: A historical item (Blackhelm)
+                text: A historical item (Blackhelm)
               - min: 51
                 max: 60
-                result: A firstborn race (Elfbrook)
+                text: A firstborn race (Elfbrook)
               - min: 61
                 max: 70
-                result: An elvish word or name (Nessana)
+                text: An elvish word or name (Nessana)
               - min: 71
                 max: 80
-                result: A mythic belief or event (Ghostwalk)
+                text: A mythic belief or event (Ghostwalk)
               - min: 81
                 max: 90
-                result: A positive term (Hope)
+                text: A positive term (Hope)
               - min: 91
                 max: 100
-                result: A negative term (Forsaken)
+                text: A negative term (Forsaken)
       quick_name:
         canonical_name: 'Oracle 8: Quick Settlement Name Generator'
         name: Quick Settlement Name Generator
         summary: Use this oracle as a simpler alternative for settlement names. Roll once for the prefix, and once for the suffix. If the combination doesn’t quite work, look at adjacent rows or reverse the digits.
         oracle_type: table_shared_rolls
         # template:
-        #   result: '{{result:classic/oracles/settlement/quick_name/prefix}}{{result:classic/oracles/settlement/quick_name/suffix}}'
+        #   text: '{{result:classic/oracles/settlement/quick_name/prefix}}{{result:classic/oracles/settlement/quick_name/suffix}}'
         _source: &CollectionSource
           <<: *Source
           page: 180
         contents:
           prefix:
             name: Prefix
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source: *CollectionSource
             rows:
               # - [1, 4, Bleak-]
@@ -599,112 +599,112 @@ oracles:
                       part_of_speech: adjective
                 min: 1
                 max: 4
-                result: Bleak
+                text: Bleak
               - <<: *i18n.adjective
                 min: 5
                 max: 8
-                result: Green
+                text: Green
               - <<: &i18n.adjunct_common_noun
                   _i18n:
                     result:
                       part_of_speech: adjunct_common_noun
                 min: 9
                 max: 12
-                result: Wolf
+                text: Wolf
               - <<: *i18n.adjunct_common_noun
                 min: 13
                 max: 16
-                result: Raven
+                text: Raven
               - <<: *i18n.adjective
                 min: 17
                 max: 20
-                result: Gray
+                text: Gray
               - <<: *i18n.adjective
                 min: 21
                 max: 24
-                result: Red
+                text: Red
               - <<: *i18n.adjunct_common_noun
                 min: 25
                 max: 28
-                result: Axe
+                text: Axe
               - <<: *i18n.adjective
                 min: 29
                 max: 32
-                result: Great
+                text: Great
               - <<: *i18n.adjunct_common_noun
                 min: 33
                 max: 36
-                result: Wood
+                text: Wood
               - <<: *i18n.adjective
                 min: 37
                 max: 40
-                result: Low
+                text: Low
               - <<: *i18n.adjective
                 min: 41
                 max: 44
-                result: White
+                text: White
               - <<: *i18n.adjunct_common_noun
                 min: 45
                 max: 48
-                result: Storm
+                text: Storm
               - <<: *i18n.adjective
                 min: 49
                 max: 52
-                result: Black
+                text: Black
               - <<: &i18n.attributive_verb
                   _i18n:
                     result:
                       part_of_speech: attributive_verb
                 min: 53
                 max: 56
-                result: Mourn
+                text: Mourn
               - <<: *i18n.adjective
                 min: 57
                 max: 60
-                result: New
+                text: New
               - <<: *i18n.adjunct_common_noun
                 min: 61
                 max: 64
-                result: Stone
+                text: Stone
               - <<: *i18n.adjective
                 min: 65
                 max: 68
-                result: Grim
+                text: Grim
               - <<: *i18n.adjective
                 min: 69
                 max: 72
-                result: Lost
+                text: Lost
               - <<: *i18n.adjective
                 min: 73
                 max: 76
-                result: High
+                text: High
               - <<: *i18n.adjunct_common_noun
                 min: 77
                 max: 80
-                result: Rock
+                text: Rock
               - <<: *i18n.adjunct_common_noun
                 min: 81
                 max: 84
-                result: Shield
+                text: Shield
               - <<: *i18n.adjunct_common_noun
                 min: 85
                 max: 88
-                result: Sword
+                text: Sword
               - <<: *i18n.adjunct_common_noun
                 min: 89
                 max: 92
-                result: Frost
+                text: Frost
               - <<: *i18n.adjunct_common_noun
                 min: 93
                 max: 96
-                result: Thorn
+                text: Thorn
               - <<: *i18n.adjective
                 min: 97
                 max: 100
-                result: Long
+                text: Long
           suffix:
             name: Suffix
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source: *CollectionSource
             rows:
               # - [1, 4, -moor]
@@ -738,100 +738,100 @@ oracles:
                       part_of_speech: common_noun
                 min: 1
                 max: 4
-                result: moor
+                text: moor
               - <<: *i18n.common_noun
                 min: 5
                 max: 8
-                result: ford
+                text: ford
               - <<: *i18n.common_noun
                 min: 9
                 max: 12
-                result: crag
+                text: crag
               - <<: *i18n.common_noun
                 min: 13
                 max: 16
-                result: watch
+                text: watch
               - <<: *i18n.common_noun
                 min: 17
                 max: 20
-                result: hope
+                text: hope
               - <<: *i18n.common_noun
                 min: 21
                 max: 24
-                result: wood
+                text: wood
               - <<: *i18n.common_noun
                 min: 25
                 max: 28
-                result: ridge
+                text: ridge
               - <<: *i18n.common_noun
                 min: 29
                 max: 32
-                result: stone
+                text: stone
               - <<: *i18n.common_noun
                 min: 33
                 max: 36
-                result: haven
+                text: haven
               - <<: *i18n.common_noun
                 min: 37
                 max: 40
-                result: fall(s)
+                text: fall(s)
               - <<: *i18n.common_noun
                 min: 41
                 max: 44
-                result: river
+                text: river
               - <<: *i18n.common_noun
                 min: 45
                 max: 48
-                result: field
+                text: field
               - <<: *i18n.common_noun
                 min: 49
                 max: 52
-                result: hill
+                text: hill
               - <<: *i18n.common_noun
                 min: 53
                 max: 56
-                result: bridge
+                text: bridge
               - <<: *i18n.common_noun
                 min: 57
                 max: 60
-                result: mark
+                text: mark
               - <<: *i18n.common_noun
                 min: 61
                 max: 64
-                result: cairn
+                text: cairn
               - <<: *i18n.common_noun
                 min: 65
                 max: 68
-                result: land
+                text: land
               - <<: *i18n.common_noun
                 min: 69
                 max: 72
-                result: hall
+                text: hall
               - <<: *i18n.common_noun
                 min: 73
                 max: 76
-                result: mount
+                text: mount
               - <<: *i18n.common_noun
                 min: 77
                 max: 80
-                result: rock
+                text: rock
               - <<: *i18n.common_noun
                 min: 81
                 max: 84
-                result: brook
+                text: brook
               - <<: *i18n.common_noun
                 min: 85
                 max: 88
-                result: barrow
+                text: barrow
               - <<: *i18n.common_noun
                 min: 89
                 max: 92
-                result: stead
+                text: stead
               - <<: *i18n.common_noun
                 min: 93
                 max: 96
-                result: home
+                text: home
               - <<: *i18n.common_noun
                 min: 97
                 max: 100
-                result: wick
+                text: wick

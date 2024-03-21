@@ -15,7 +15,7 @@ oracles:
     contents:
       class:
         name: Planetary Class
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 306
@@ -28,57 +28,57 @@ oracles:
         rows:
           - min: 1
             max: 15
-            result: '[Desert World](id:starforged/collections/oracles/planets/desert)'
+            text: '[Desert World](id:starforged/collections/oracles/planets/desert)'
             # game_objects: *obj:Planet.Desert
             # images: *images:DesertWorld
           - min: 16
             max: 30
-            result: '[Furnace World](id:starforged/collections/oracles/planets/furnace)'
+            text: '[Furnace World](id:starforged/collections/oracles/planets/furnace)'
             # game_objects: *obj:Planet.Furnace
             # images: *images:FurnaceWorld
           - min: 31
             max: 35
-            result: '[Grave World](id:starforged/collections/oracles/planets/grave)'
+            text: '[Grave World](id:starforged/collections/oracles/planets/grave)'
             # game_objects: *obj:Planet.Grave
             # images: *images:GraveWorld
           - min: 36
             max: 50
-            result: '[Ice World](id:starforged/collections/oracles/planets/ice)'
+            text: '[Ice World](id:starforged/collections/oracles/planets/ice)'
             # game_objects: *obj:Planet.Ice
             # images: *images:IceWorld
           - min: 51
             max: 65
-            result: '[Jovian World](id:starforged/collections/oracles/planets/jovian)'
+            text: '[Jovian World](id:starforged/collections/oracles/planets/jovian)'
             # game_objects: *obj:Planet.Jovian
             # images: *images:JovianWorld
           - min: 66
             max: 70
-            result: '[Jungle World](id:starforged/collections/oracles/planets/jungle)'
+            text: '[Jungle World](id:starforged/collections/oracles/planets/jungle)'
             # game_objects: *obj:Planet.Jungle
             # images: *images:JungleWorld
           - min: 71
             max: 75
-            result: '[Ocean World](id:starforged/collections/oracles/planets/ocean)'
+            text: '[Ocean World](id:starforged/collections/oracles/planets/ocean)'
             # game_objects: *obj:Planet.Ocean
             # images: *images:OceanWorld
           - min: 76
             max: 90
-            result: '[Rocky World](id:starforged/collections/oracles/planets/rocky)'
+            text: '[Rocky World](id:starforged/collections/oracles/planets/rocky)'
             # game_objects: *obj:Planet.Rocky
             # images: *images:RockyWorld
           - min: 91
             max: 92
-            result: '[Shattered World](id:starforged/collections/oracles/planets/shattered)'
+            text: '[Shattered World](id:starforged/collections/oracles/planets/shattered)'
             # game_objects: *obj:Planet.Shattered
             # images: *images:ShatteredWorld
           - min: 93
             max: 98
-            result: '[Tainted World](id:starforged/collections/oracles/planets/tainted)'
+            text: '[Tainted World](id:starforged/collections/oracles/planets/tainted)'
             # game_objects: *obj:Planet.Tainted
             # images: *images:TaintedWorld
           - min: 99
             max: 100
-            result: '[Vital World](id:starforged/collections/oracles/planets/vital)'
+            text: '[Vital World](id:starforged/collections/oracles/planets/vital)'
             # game_objects: *obj:Planet.Vital
             # images: *images:VitalWorld
     collections:
@@ -87,7 +87,7 @@ oracles:
         _source: &CollectionSource
           <<: *Source
           page: 320
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         # rendering:
         #   columns:
         #     - content_type: roll
@@ -111,7 +111,7 @@ oracles:
           lifebearing:
             # source: *CollectionSource
             name: Lifebearing
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires: &attr:Life.Lifebearing
             #     attributes:
@@ -120,148 +120,148 @@ oracles:
               - min: 1
                 max: 3
                 <<: &PlanetPeril.0
-                  result: Corrupted or mutated lifeform
+                  text: Corrupted or mutated lifeform
                 # suggestions: [*obj:Creature]
               # TODO: suggest chaotic theme?
               - min: 4
                 max: 6
                 <<: &PlanetPeril.1
-                  result: Signs of a lifeform's power or cunning
+                  text: Signs of a lifeform's power or cunning
                 # suggestions: [*obj:Creature]
               - min: 7
                 max: 9
                 <<: &PlanetPeril.2
-                  result: Hazardous plant life or malignant spores
+                  text: Hazardous plant life or malignant spores
               - min: 10
                 max: 12
                 <<: &PlanetPeril.3
-                  result: Lifeform hunts for prey
+                  text: Lifeform hunts for prey
                 # suggestions: [*obj:Creature]
               - min: 13
                 max: 15
                 <<: &PlanetPeril.4
-                  result: Lifeform lairs here
+                  text: Lifeform lairs here
                 # suggestions: [*obj:Creature]
               - min: 16
                 max: 18
                 <<: &PlanetPeril.5
-                  result: Lifeforms guided by a greater threat
+                  text: Lifeforms guided by a greater threat
                 # suggestions: [*obj:Creature]
               - min: 19
                 max: 21
                 <<: &PlanetPeril.6
-                  result: Lifeforms spooked or stampeding
+                  text: Lifeforms spooked or stampeding
                 # suggestions: [*obj:Creature]
               - min: 22
                 max: 24
                 <<: &PlanetPeril.7
-                  result: Threatening lifeform draws near
+                  text: Threatening lifeform draws near
                 # suggestions: [*obj:Creature]
               - min: 25
                 max: 27
                 <<: &PlanetPeril.8
-                  result: Life is revealed or takes an unexpected form
+                  text: Life is revealed or takes an unexpected form
                 # suggestions: [*obj:Creature]
               - min: 28
                 max: 30
                 <<: &PlanetPeril.9
-                  result: Blocked or impassible path
+                  text: Blocked or impassible path
               - min: 31
                 max: 33
                 <<: &PlanetPeril.10
-                  result: Corrosive substance or environment
+                  text: Corrosive substance or environment
               - min: 34
                 max: 36
                 <<: &PlanetPeril.11
-                  result: Disturbing remains or evidence of death
+                  text: Disturbing remains or evidence of death
               - min: 37
                 max: 39
                 <<: &PlanetPeril.12
-                  result: Drastic environmental change
+                  text: Drastic environmental change
               - min: 40
                 max: 42
                 <<: &PlanetPeril.13
-                  result: Enemy holds this area
+                  text: Enemy holds this area
                 # suggestions: [*obj:LocationTheme.Fortified]
               - min: 43
                 max: 45
                 <<: &PlanetPeril.14
-                  result: Entangling or engulfing hazard
+                  text: Entangling or engulfing hazard
               - min: 46
                 max: 48
                 <<: &PlanetPeril.15
-                  result: Equipment fails or malfunctions
+                  text: Equipment fails or malfunctions
               - min: 49
                 max: 51
                 <<: &PlanetPeril.16
-                  result: Guarded or patrolled path
+                  text: Guarded or patrolled path
                 # suggestions: [*obj:LocationTheme.Fortified]
               - min: 52
                 max: 54
                 <<: &PlanetPeril.17
-                  result: Led astray
+                  text: Led astray
               - min: 55
                 max: 57
                 <<: &PlanetPeril.18
-                  result: Lost the path
+                  text: Lost the path
               - min: 58
                 max: 60
                 <<: &PlanetPeril.19
-                  result: Meteorites fall from the sky
+                  text: Meteorites fall from the sky
               - min: 61
                 max: 63
                 <<: &PlanetPeril.20
-                  result: Irradiated area or object
+                  text: Irradiated area or object
               - min: 64
                 max: 66
                 <<: &PlanetPeril.21
-                  result: Realization that something was left behind
+                  text: Realization that something was left behind
               - min: 67
                 max: 69
                 <<: &PlanetPeril.22
-                  result: Seismic or volcanic upheaval
+                  text: Seismic or volcanic upheaval
               - min: 70
                 max: 72
                 <<: &PlanetPeril.23
-                  result: Signs of a lurking or trailing foe
+                  text: Signs of a lurking or trailing foe
               - min: 73
                 max: 75
                 <<: &PlanetPeril.24
-                  result: Storm or atmospheric disruption
+                  text: Storm or atmospheric disruption
               - min: 76
                 max: 78
                 <<: &PlanetPeril.25
-                  result: Toxic or sickening environment
+                  text: Toxic or sickening environment
               - min: 79
                 max: 81
                 <<: &PlanetPeril.26
-                  result: Trap or alarm
+                  text: Trap or alarm
               - min: 82
                 max: 84
                 <<: &PlanetPeril.27
-                  result: Treacherous or arduous path
+                  text: Treacherous or arduous path
               - min: 85
                 max: 87
                 <<: &PlanetPeril.28
-                  result: Troubling visions or apparitions
+                  text: Troubling visions or apparitions
                 # suggestions: [*obj:LocationTheme.Haunted]
               - min: 88
                 max: 90
                 <<: &PlanetPeril.29
-                  result: Visibility hindered by atmospheric effects
+                  text: Visibility hindered by atmospheric effects
               - min: 91
                 max: 93
                 <<: &PlanetPeril.30
-                  result: Worrying arrival of a ship or vehicle
+                  text: Worrying arrival of a ship or vehicle
                 # suggestions: [*obj:Starship]
               - min: 94
                 max: 96
                 <<: &PlanetPeril.31
-                  result: Wreckage or ruins portend a new threat
+                  text: Wreckage or ruins portend a new threat
               - min: 97
                 max: 99
                 <<: &ActionTheme
-                  result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+                  text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
                   oracle_rolls:
                     - oracle: starforged/oracles/core/action
                       auto: true
@@ -270,14 +270,14 @@ oracles:
               - min: 100
                 max: 100
                 <<: &RollTwice
-                  result: Roll twice
+                  text: Roll twice
                   oracle_rolls:
                     - number_of_rolls: 2
                       auto: true
           lifeless:
             name: Lifeless
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires: &attr:Life.Lifeless
             #     attributes:
@@ -390,7 +390,7 @@ oracles:
         _source: &CollectionSource
           <<: *Source
           page: 321
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         # content:
         #   part_of_speech: [fragment]
         #   tags: [opportunity]
@@ -403,7 +403,7 @@ oracles:
           Choose or roll on this table when you want inspiration for a beneficial encounter or event on a planetside journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.
         contents:
           lifebearing:
-            oracle_type: column_simple
+            oracle_type: column_basic
             name: Lifebearing
             # source: *CollectionSource
             # usage:
@@ -411,92 +411,92 @@ oracles:
             rows:
               - min: 1
                 max: 4
-                result: &Opp.0 Clue to a lifeform's nature or vulnerabilities
+                text: &Opp.0 Clue to a lifeform's nature or vulnerabilities
                 # suggestions: [*obj:Creature]
               - min: 5
                 max: 8
-                result: &Opp.1 Friendly interaction with a benign lifeform
+                text: &Opp.1 Friendly interaction with a benign lifeform
                 # suggestions: [*obj:Creature]
               - min: 9
                 max: 12
-                result: &Opp.2 Hunting or foraging opportunities are plentiful
+                text: &Opp.2 Hunting or foraging opportunities are plentiful
               - min: 13
                 max: 16
-                result: &Opp.3 Interesting or helpful aspect of benign creatures
+                text: &Opp.3 Interesting or helpful aspect of benign creatures
                 # suggestions: [*obj:Creature]
               - min: 17
                 max: 20
-                result: &Opp.4 Interesting or helpful aspect of local plant life
+                text: &Opp.4 Interesting or helpful aspect of local plant life
               - min: 21
                 max: 24
-                result: &Opp.5 Encounter reveals unexpected benign lifeforms
+                text: &Opp.5 Encounter reveals unexpected benign lifeforms
                 # suggestions: [*obj:Creature]
               - min: 25
                 max: 28
-                result: &Opp.6 Abandoned camp or vehicle
+                text: &Opp.6 Abandoned camp or vehicle
                 # suggestions: [*roll:Object]
               - min: 29
                 max: 32
-                result: &Opp.7 Advance warning of an environmental threat
+                text: &Opp.7 Advance warning of an environmental threat
               - min: 33
                 max: 36
-                result: &Opp.8 Clear path through otherwise perilous terrain
+                text: &Opp.8 Clear path through otherwise perilous terrain
               - min: 37
                 max: 40
-                result: &Opp.9 Clue offers insight into a current quest or mystery
+                text: &Opp.9 Clue offers insight into a current quest or mystery
               - min: 41
                 max: 44
-                result: &Opp.10 Clue to the history or nature of this place
+                text: &Opp.10 Clue to the history or nature of this place
               - min: 45
                 max: 48
-                result: &Opp.11 Evidence that others have passed this way
+                text: &Opp.11 Evidence that others have passed this way
               - min: 49
                 max: 52
-                result: &Opp.12 Foe reveals themselves or tips their hand
+                text: &Opp.12 Foe reveals themselves or tips their hand
               - min: 53
                 max: 56
-                result: &Opp.13 Fortuitous change in the weather or atmosphere
+                text: &Opp.13 Fortuitous change in the weather or atmosphere
               - min: 57
                 max: 60
-                result: &Opp.14 Friendly traveler crosses your path
+                text: &Opp.14 Friendly traveler crosses your path
               - min: 61
                 max: 64
-                result: &Opp.15 Helpful resource is in ample supply
+                text: &Opp.15 Helpful resource is in ample supply
                 # suggestions: [*roll:Object]
               - min: 65
                 max: 68
-                result: &Opp.16 Impressive vista offers comfort or inspiration
+                text: &Opp.16 Impressive vista offers comfort or inspiration
               - min: 69
                 max: 72
-                result: &Opp.17 Interesting artifact or device
+                text: &Opp.17 Interesting artifact or device
                 # suggestions: [*roll:Object]
               - min: 73
                 max: 76
-                result: &Opp.18 Interesting site offers opportunities for exploration
+                text: &Opp.18 Interesting site offers opportunities for exploration
                 # suggestions: [*roll:Object]
               - min: 77
                 max: 80
-                result: &Opp.19 Moment of fellowship or inner peace
+                text: &Opp.19 Moment of fellowship or inner peace
               - min: 81
                 max: 84
-                result: &Opp.20 'Opening to distract, escape, or avoid foes'
+                text: &Opp.20 'Opening to distract, escape, or avoid foes'
               - min: 85
                 max: 88
-                result: &Opp.21 Opening to get the drop on a foe
+                text: &Opp.21 Opening to get the drop on a foe
               - min: 89
                 max: 92
-                result: &Opp.22 Plea for help from a potential benefactor
+                text: &Opp.22 Plea for help from a potential benefactor
                 # suggestions: [*obj:Npc]
               - min: 93
                 max: 96
-                result: &Opp.23 'Refuge offers a place to hide, plan, or recover'
+                text: &Opp.23 'Refuge offers a place to hide, plan, or recover'
                 # suggestions: [*roll:Object]
               - min: 97
                 max: 100
-                result: &Opp.24 Vantage point reveals the lay of the land
+                text: &Opp.24 Vantage point reveals the lay of the land
                 # suggestions: [*roll:Object]
           lifeless:
-            oracle_type: column_simple
+            oracle_type: column_basic
             name: Lifeless
             # source: *CollectionSource
             # usage:
@@ -504,76 +504,76 @@ oracles:
             rows:
               - min: null
                 max: null
-                result: *Opp.0
+                text: *Opp.0
               - min: null
                 max: null
-                result: *Opp.1
+                text: *Opp.1
               - min: null
                 max: null
-                result: *Opp.2
+                text: *Opp.2
               - min: null
                 max: null
-                result: *Opp.3
+                text: *Opp.3
               - min: null
                 max: null
-                result: *Opp.4
+                text: *Opp.4
               - min: 1
                 max: 5
-                result: *Opp.5
+                text: *Opp.5
               - min: 6
                 max: 10
-                result: *Opp.6
+                text: *Opp.6
               - min: 11
                 max: 15
-                result: *Opp.7
+                text: *Opp.7
               - min: 16
                 max: 20
-                result: *Opp.8
+                text: *Opp.8
               - min: 21
                 max: 25
-                result: *Opp.9
+                text: *Opp.9
               - min: 26
                 max: 30
-                result: *Opp.10
+                text: *Opp.10
               - min: 31
                 max: 35
-                result: *Opp.11
+                text: *Opp.11
               - min: 36
                 max: 40
-                result: *Opp.12
+                text: *Opp.12
               - min: 41
                 max: 45
-                result: *Opp.13
+                text: *Opp.13
               - min: 46
                 max: 50
-                result: *Opp.14
+                text: *Opp.14
               - min: 51
                 max: 55
-                result: *Opp.15
+                text: *Opp.15
               - min: 56
                 max: 60
-                result: *Opp.16
+                text: *Opp.16
               - min: 61
                 max: 65
-                result: *Opp.17
+                text: *Opp.17
               - min: 66
                 max: 70
-                result: *Opp.18
+                text: *Opp.18
               - min: 71
                 max: 75
-                result: *Opp.19
+                text: *Opp.19
               - min: 76
                 max: 80
-                result: *Opp.20
+                text: *Opp.20
               - min: 81
                 max: 85
-                result: *Opp.21
+                text: *Opp.21
               - min: 86
                 max: 90
-                result: *Opp.22
+                text: *Opp.22
               - min: 91
                 max: 95
-                result: *Opp.23
+                text: *Opp.23
               - min: 96
                 max: 100
-                result: *Opp.24
+                text: *Opp.24

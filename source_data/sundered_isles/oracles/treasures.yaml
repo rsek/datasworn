@@ -14,68 +14,68 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 25
-            result: Borne on a [Sailing Ship](id:sundered_isles/collections/oracles/sailing_ships)
+            text: Borne on a [Sailing Ship](id:sundered_isles/collections/oracles/sailing_ships)
           - min: 26
             max: 50
-            result: Lost with a > Shipwreck; pg XX
+            text: Lost with a > Shipwreck; pg XX
           - min: 51
             max: 70
-            result: Hidden on an [Island](id:sundered_isles/collections/oracles/islands)
+            text: Hidden on an [Island](id:sundered_isles/collections/oracles/islands)
           - min: 71
             max: 85
-            result: Sheltered in a > Cave; pg XX
+            text: Sheltered in a > Cave; pg XX
           - min: 86
             max: 95
-            result: Secured in a [Settlement](id:sundered_isles/collections/oracles/settlements)
+            text: Secured in a [Settlement](id:sundered_isles/collections/oracles/settlements)
           - min: 96
             max: 100
-            result: Preserved in a > Ruin; pg XX
+            text: Preserved in a > Ruin; pg XX
       cursed_location:
         name: Cursed Location
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 5
-            result: Banished to the realm of the dead
+            text: Banished to the realm of the dead
           - min: 6
             max: 10
-            result: Consumed by a monstrous beast
+            text: Consumed by a monstrous beast
           - min: 11
             max: 15
-            result: Entombed in a crypt or graveyard
+            text: Entombed in a crypt or graveyard
           - min: 16
             max: 30
-            result: Held aboard a cursed ship
+            text: Held aboard a cursed ship
           - min: 31
             max: 35
-            result: Locked in a mechanized vault
+            text: Locked in a mechanized vault
           - min: 36
             max: 50
-            result: Lost in the heart of a trackless jungle
+            text: Lost in the heart of a trackless jungle
           - min: 51
             max: 65
-            result: Mired in a forsaken swamp
+            text: Mired in a forsaken swamp
           - min: 66
             max: 80
-            result: Safeguarded in a monstrous beast's lair
+            text: Safeguarded in a monstrous beast's lair
           - min: 81
             max: 90
-            result: Sealed in the bowels of a raging volcano
+            text: Sealed in the bowels of a raging volcano
           - min: 91
             max: 100
-            result: Sunk to the depths of an abyssal trench
+            text: Sunk to the depths of an abyssal trench
       repository:
         name: Repository
-        oracle_type: table_details
+        oracle_type: table_text2
         _source:
           <<: *Source
         # rendering:
@@ -94,218 +94,218 @@ oracles:
         rows:
           - min: 1
             max: 40
-            result: Small
-            detail: Lockbox; desk drawer; bag or pouch
+            text: Small
+            text2: Lockbox; desk drawer; bag or pouch
           - min: 41
             max: 75
-            result: Medium
-            detail: Chest; crate; ship cabin;  cave alcove
+            text: Medium
+            text2: Chest; crate; ship cabin;  cave alcove
           - min: 76
             max: 95
-            result: Large
-            detail: Cargo hold; strongroom; cave chamber
+            text: Large
+            text2: Cargo hold; strongroom; cave chamber
           - min: 96
             max: 100
-            result: Vast
-            detail: Storehouse; great hall; cavern vault
+            text: Vast
+            text2: Storehouse; great hall; cavern vault
       aspects:
         name: Aspects
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         summary: Use this table to reveal characteristics of a treasure or its surroundings. Since the results often introduce twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.
         rows:
           - min: 1
             max: 8
-            result: Bears the mark of a notorious figure
+            text: Bears the mark of a notorious figure
           - min: 9
             max: 16
-            result: Contains a long-lost object or artifact
+            text: Contains a long-lost object or artifact
           - min: 17
             max: 20
-            result: Coveted by a newly-revealed rival
+            text: Coveted by a newly-revealed rival
           - min: 21
             max: 24
-            result: Guarded by a sentry or caretaker
+            text: Guarded by a sentry or caretaker
           - min: 25
             max: 28
-            result: Held in a vulnerable repository
+            text: Held in a vulnerable repository
           - min: 29
             max: 32
-            result: Hidden among worthless items
+            text: Hidden among worthless items
           - min: 33
             max: 40
-            result: Holds a clue to a greater treasure
+            text: Holds a clue to a greater treasure
           - min: 41
             max: 48
-            result: Hunted by a foe or faction
+            text: Hunted by a foe or faction
           - min: 49
             max: 56
-            result: Includes counterfeit valuables
+            text: Includes counterfeit valuables
           - min: 57
             max: 64
-            result: Marked with a menacing warning
+            text: Marked with a menacing warning
           - min: 65
             max: 72
-            result: Once claimed as pillage or spoils
+            text: Once claimed as pillage or spoils
           - min: 73
             max: 76
-            result: Planted as a lure for the unwary
+            text: Planted as a lure for the unwary
           - min: 77
             max: 84
-            result: Protected by a clever trap
+            text: Protected by a clever trap
           - min: 85
             max: 88
-            result: Put out-of-reach by a barrier or obstacle
+            text: Put out-of-reach by a barrier or obstacle
           - min: 89
             max: 96
-            result: Secured by a complex lock
+            text: Secured by a complex lock
           - min: 97
             max: 100
-            result: Shows signs of pilfering or tampering
+            text: Shows signs of pilfering or tampering
       cursed_aspects:
         name: Cursed Aspects
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 4
-            result: Attracts foul creatures or vermin
+            text: Attracts foul creatures or vermin
           - min: 5
             max: 12
-            result: Awakens the dead
+            text: Awakens the dead
           - min: 13
             max: 16
-            result: Blighted by unnatural decay
+            text: Blighted by unnatural decay
           - min: 17
             max: 24
-            result: Causes foul luck
+            text: Causes foul luck
           - min: 25
             max: 28
-            result: Haunted by former keepers or victims
+            text: Haunted by former keepers or victims
           - min: 29
             max: 32
-            result: Illusions conceal its true nature
+            text: Illusions conceal its true nature
           - min: 33
             max: 40
-            result: Imbued with a whispering sentience
+            text: Imbued with a whispering sentience
           - min: 41
             max: 44
-            result: Incites a possessive obsession
+            text: Incites a possessive obsession
           - min: 45
             max: 48
-            result: Inflicts a dreadful transformation
+            text: Inflicts a dreadful transformation
           - min: 49
             max: 52
-            result: Inflicts a sickness or wasting
+            text: Inflicts a sickness or wasting
           - min: 53
             max: 56
-            result: Marked with indelible bloodstains
+            text: Marked with indelible bloodstains
           - min: 57
             max: 60
-            result: Marked with sinister glyphs
+            text: Marked with sinister glyphs
           - min: 61
             max: 64
-            result: Mystically bound to a location
+            text: Mystically bound to a location
           - min: 65
             max: 68
-            result: Mystically bound to a person
+            text: Mystically bound to a person
           - min: 69
             max: 72
-            result: Protected by a monstrous guardian
+            text: Protected by a monstrous guardian
           - min: 73
             max: 80
-            result: Protected by a sorcerous spell
+            text: Protected by a sorcerous spell
           - min: 81
             max: 84
-            result: Provokes dreadful visions or dreams
+            text: Provokes dreadful visions or dreams
           - min: 85
             max: 92
-            result: Radiates a foul aura
+            text: Radiates a foul aura
           - min: 93
             max: 96
-            result: Sought after by a dreadful foe
+            text: Sought after by a dreadful foe
           - min: 97
             max: 100
-            result: Summons a powerful being or creature
+            text: Summons a powerful being or creature
       precious_items:
         name: Precious Items
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         summary: Roll or select a number of items on this table as set by the treasure’s Value (page 185). Each result represents a quantity of that item, such as a lockbox filled with pearls, a barrel of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the Tokens table (below).
         rows:
           - min: 1
             max: 20
-            result: Cache of coins, gems, and jewels
+            text: Cache of coins, gems, and jewels
           - min: 21
             max: 24
-            result: Aged rum
+            text: Aged rum
           - min: 25
             max: 28
-            result: Ancient artifacts
+            text: Ancient artifacts
           - min: 29
             max: 30
-            result: Fine art
+            text: Fine art
           - min: 31
             max: 32
-            result: Fine wine
+            text: Fine wine
           - min: 33
             max: 36
-            result: Gilded imperial regalia
+            text: Gilded imperial regalia
           - min: 37
             max: 40
-            result: Glittering gemstones
+            text: Glittering gemstones
           - min: 41
             max: 44
-            result: Gold coins
+            text: Gold coins
           - min: 45
             max: 46
-            result: Intricate mechanical devices
+            text: Intricate mechanical devices
           - min: 47
             max: 50
-            result: Lustrous pearls
+            text: Lustrous pearls
           - min: 51
             max: 54
-            result: Masterwork weapons
+            text: Masterwork weapons
           - min: 55
             max: 58
-            result: Precious metal ingots
+            text: Precious metal ingots
           - min: 59
             max: 60
-            result: Rare books
+            text: Rare books
           - min: 61
             max: 62
-            result: Rare fossils
+            text: Rare fossils
           - min: 63
             max: 64
-            result: Rare hides or furs
+            text: Rare hides or furs
           - min: 65
             max: 66
-            result: Rare maps
+            text: Rare maps
           - min: 67
             max: 68
-            result: Rare medicinal herbs or compounds
+            text: Rare medicinal herbs or compounds
           - min: 69
             max: 72
-            result: Rare spices
+            text: Rare spices
           - min: 73
             max: 74
-            result: Rare toxins or poisons
+            text: Rare toxins or poisons
           - min: 75
             max: 76
-            result: Sacred relics
+            text: Sacred relics
           - min: 77
             max: 80
-            result: Secret documents
+            text: Secret documents
           - min: 81
             max: 84
-            result: Unworked gemstones
+            text: Unworked gemstones
           - min: 85
             max: 88
             <<: &DescriptorFocus
-              result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+              text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
               oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/descriptor
@@ -313,430 +313,430 @@ oracles:
                   oracle: sundered_isles/oracles/core/focus
           - min: 89
             max: 100
-            result: '[Token]'
+            text: '[Token]'
       tokens:
         name: Tokens
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 1
-            result: Ancestral ring with a missing gemstone
+            text: Ancestral ring with a missing gemstone
           - min: 2
             max: 2
-            result: Ancient codex with cryptic secrets
+            text: Ancient codex with cryptic secrets
           - min: 3
             max: 3
-            result: Ancient gold coin hung on a chain
+            text: Ancient gold coin hung on a chain
           - min: 4
             max: 4
-            result: Animal figurine carved from amber
+            text: Animal figurine carved from amber
           - min: 5
             max: 5
-            result: Antique brass sextant
+            text: Antique brass sextant
           - min: 6
             max: 6
-            result: Beautiful dress wrapped in silk paper
+            text: Beautiful dress wrapped in silk paper
           - min: 7
             max: 7
-            result: Bloodstained map of an unknown island
+            text: Bloodstained map of an unknown island
           - min: 8
             max: 8
-            result: Book of scripture with ragged pages
+            text: Book of scripture with ragged pages
           - min: 9
             max: 9
-            result: Bottle of very old wine
+            text: Bottle of very old wine
           - min: 10
             max: 10
-            result: Brass lockbox filled with bloodied rings
+            text: Brass lockbox filled with bloodied rings
           - min: 11
             max: 11
-            result: Broken manacles
+            text: Broken manacles
           - min: 12
             max: 12
-            result: Cameo portrait of a feminine figure
+            text: Cameo portrait of a feminine figure
           - min: 13
             max: 13
-            result: Carefully folded flag
+            text: Carefully folded flag
           - min: 14
             max: 14
-            result: Carved driftwood totem of a sea god
+            text: Carved driftwood totem of a sea god
           - min: 15
             max: 15
-            result: Ceremonial wooden mask
+            text: Ceremonial wooden mask
           - min: 16
             max: 16
-            result: Clay jars filled with alchemical agents
+            text: Clay jars filled with alchemical agents
           - min: 17
             max: 17
-            result: Cleaved fragment of a ship's figurehead
+            text: Cleaved fragment of a ship's figurehead
           - min: 18
             max: 18
-            result: Coral and pearl bracelet
+            text: Coral and pearl bracelet
           - min: 19
             max: 19
-            result: Crystalline flute
+            text: Crystalline flute
           - min: 20
             max: 20
-            result: Deck of marked playing cards
+            text: Deck of marked playing cards
           - min: 21
             max: 21
-            result: Elaborate clockwork puzzle box
+            text: Elaborate clockwork puzzle box
           - min: 22
             max: 22
-            result: Embroidered silk handkerchief
+            text: Embroidered silk handkerchief
           - min: 23
             max: 23
-            result: Exquisite sword in a velvet-lined case
+            text: Exquisite sword in a velvet-lined case
           - min: 24
             max: 24
-            result: Finely-crafted compass in a leather case
+            text: Finely-crafted compass in a leather case
           - min: 25
             max: 25
-            result: Flask of aged rum
+            text: Flask of aged rum
           - min: 26
             max: 26
-            result: Folded note with scrawled coordinates
+            text: Folded note with scrawled coordinates
           - min: 27
             max: 27
-            result: Forgery kit
+            text: Forgery kit
           - min: 28
             max: 28
-            result: Gilded cage with a clockwork bird
+            text: Gilded cage with a clockwork bird
           - min: 29
             max: 29
-            result: Gold key
+            text: Gold key
           - min: 30
             max: 30
-            result: Gold locket with a lock of hair
+            text: Gold locket with a lock of hair
           - min: 31
             max: 31
-            result: Gold reliquary filled with ash
+            text: Gold reliquary filled with ash
           - min: 32
             max: 32
-            result: Gold ring hung on an iron chain
+            text: Gold ring hung on an iron chain
           - min: 33
             max: 33
-            result: Hand-drawn celestial chart
+            text: Hand-drawn celestial chart
           - min: 34
             max: 34
-            result: Handwritten sheet music
+            text: Handwritten sheet music
           - min: 35
             max: 35
-            result: Intricate brass and silver astrolabe
+            text: Intricate brass and silver astrolabe
           - min: 36
             max: 36
-            result: Iron medallion with a compass rose motif
+            text: Iron medallion with a compass rose motif
           - min: 37
             max: 37
-            result: Ivory smoking pipe
+            text: Ivory smoking pipe
           - min: 38
             max: 38
-            result: Jade mortar and pestle
+            text: Jade mortar and pestle
           - min: 39
             max: 39
-            result: Jar of dirt
+            text: Jar of dirt
           - min: 40
             max: 40
-            result: Jeweled chalice
+            text: Jeweled chalice
           - min: 41
             max: 41
-            result: Jeweled hair comb
+            text: Jeweled hair comb
           - min: 42
             max: 42
-            result: Journal filled with notes and sketches
+            text: Journal filled with notes and sketches
           - min: 43
             max: 43
-            result: Large, flawless diamond
+            text: Large, flawless diamond
           - min: 44
             max: 44
-            result: Leather-wrapped forge hammer
+            text: Leather-wrapped forge hammer
           - min: 45
             max: 45
-            result: Leatherbound codebook
+            text: Leatherbound codebook
           - min: 46
             max: 46
-            result: Letter of marque signed with blood
+            text: Letter of marque signed with blood
           - min: 47
             max: 47
-            result: Letter of pardon
+            text: Letter of pardon
           - min: 48
             max: 48
-            result: Letter opener stained with dried blood
+            text: Letter opener stained with dried blood
           - min: 49
             max: 49
-            result: Locket with a faded portrait
+            text: Locket with a faded portrait
           - min: 50
             max: 50
-            result: Message in a bottle
+            text: Message in a bottle
           - min: 51
             max: 51
-            result: Military medal hung on a silk ribbon
+            text: Military medal hung on a silk ribbon
           - min: 52
             max: 52
-            result: Music box
+            text: Music box
           - min: 53
             max: 53
-            result: Old chart with hand-drawn corrections
+            text: Old chart with hand-drawn corrections
           - min: 54
             max: 54
-            result: One-half of a sundered crown
+            text: One-half of a sundered crown
           - min: 55
             max: 55
-            result: One-half of a treasure map
+            text: One-half of a treasure map
           - min: 56
             max: 56
-            result: One-half of an ancient medallion
+            text: One-half of an ancient medallion
           - min: 57
             max: 57
-            result: Ornate hilt with a broken blade
+            text: Ornate hilt with a broken blade
           - min: 58
             max: 58
-            result: Ornate jeweled lockbox
+            text: Ornate jeweled lockbox
           - min: 59
             max: 59
-            result: Oversized pearl
+            text: Oversized pearl
           - min: 60
             max: 60
-            result: Padlocked book
+            text: Padlocked book
           - min: 61
             max: 61
-            result: Painted portrait of a heroic figure
+            text: Painted portrait of a heroic figure
           - min: 62
             max: 62
-            result: Pair of bone-carved dice
+            text: Pair of bone-carved dice
           - min: 63
             max: 63
-            result: Perfumed letter
+            text: Perfumed letter
           - min: 64
             max: 64
-            result: Platinum circlet set with a large ruby
+            text: Platinum circlet set with a large ruby
           - min: 65
             max: 65
-            result: Pocket spyglass of wood and bronze
+            text: Pocket spyglass of wood and bronze
           - min: 66
             max: 66
-            result: Pocket watch with a personal engraving
+            text: Pocket watch with a personal engraving
           - min: 67
             max: 67
-            result: Pouch of silver musket balls
+            text: Pouch of silver musket balls
           - min: 68
             max: 68
-            result: Rare flowers pressed in a journal
+            text: Rare flowers pressed in a journal
           - min: 69
             max: 69
-            result: Rough-hewn stone key
+            text: Rough-hewn stone key
           - min: 70
             max: 70
-            result: Sailor's journal filled with sea shanties
+            text: Sailor's journal filled with sea shanties
           - min: 71
             max: 71
-            result: Scrimshaw carving of a sea monster
+            text: Scrimshaw carving of a sea monster
           - min: 72
             max: 72
-            result: Sealed envelope with a black spot
+            text: Sealed envelope with a black spot
           - min: 73
             max: 73
-            result: Set of crystal and obsidian chess pieces
+            text: Set of crystal and obsidian chess pieces
           - min: 74
             max: 74
-            result: Set of metal lockpicks
+            text: Set of metal lockpicks
           - min: 75
             max: 75
-            result: Set of onyx divination stones
+            text: Set of onyx divination stones
           - min: 76
             max: 76
-            result: Shard of an iron meteorite
+            text: Shard of an iron meteorite
           - min: 77
             max: 77
-            result: Sheaf of wanted posters
+            text: Sheaf of wanted posters
           - min: 78
             max: 78
-            result: Ship in a bottle
+            text: Ship in a bottle
           - min: 79
             max: 79
-            result: Ship's bell dented by musket shot
+            text: Ship's bell dented by musket shot
           - min: 80
             max: 80
-            result: Ship's drum with a shark skin drumhead
+            text: Ship's drum with a shark skin drumhead
           - min: 81
             max: 81
-            result: Silver coin cut into eight fragments
+            text: Silver coin cut into eight fragments
           - min: 82
             max: 82
-            result: Silver harmonica
+            text: Silver harmonica
           - min: 83
             max: 83
-            result: Single entry torn from a ship's log
+            text: Single entry torn from a ship's log
           - min: 84
             max: 84
-            result: Single musket ball in a gold snuffbox
+            text: Single musket ball in a gold snuffbox
           - min: 85
             max: 85
-            result: Skeleton key
+            text: Skeleton key
           - min: 86
             max: 86
-            result: Skull carved with an intricate map
+            text: Skull carved with an intricate map
           - min: 87
             max: 87
-            result: Skull of a rare or extinct creature
+            text: Skull of a rare or extinct creature
           - min: 88
             max: 88
-            result: Small clay urn filled with gold teeth
+            text: Small clay urn filled with gold teeth
           - min: 89
             max: 89
-            result: Stoppered flask containing dark liquid
+            text: Stoppered flask containing dark liquid
           - min: 90
             max: 90
-            result: Strip of cloth torn from a black flag
+            text: Strip of cloth torn from a black flag
           - min: 91
             max: 91
-            result: Tea leaves in an embellished wood box
+            text: Tea leaves in an embellished wood box
           - min: 92
             max: 92
-            result: Timeworn bronze sundial
+            text: Timeworn bronze sundial
           - min: 93
             max: 93
-            result: Unadorned iron box with a complex lock
+            text: Unadorned iron box with a complex lock
           - min: 94
             max: 94
-            result: Velvet pouch filled with shark teeth
+            text: Velvet pouch filled with shark teeth
           - min: 95
             max: 95
-            result: Vial of cloudy seawater
+            text: Vial of cloudy seawater
           - min: 96
             max: 96
-            result: Vial of coagulated blood
+            text: Vial of coagulated blood
           - min: 97
             max: 97
-            result: Water-stained love letter
+            text: Water-stained love letter
           - min: 98
             max: 98
-            result: Wax seal ring with a royal crest
+            text: Wax seal ring with a royal crest
           - min: 99
             max: 99
-            result: Weathered nameplate of a long-lost ship
+            text: Weathered nameplate of a long-lost ship
           - min: 100
             max: 100
-            result: Well-stocked surgeon's bag
+            text: Well-stocked surgeon's bag
       cursed_tokens:
         name: Cursed tokens
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 2
-            result: Astrolabe with complex workings that signal a portentous cosmic event
+            text: Astrolabe with complex workings that signal a portentous cosmic event
           - min: 3
             max: 4
-            result: Black candle that reveals shadowy forms in its sputtering light
+            text: Black candle that reveals shadowy forms in its sputtering light
           - min: 5
             max: 7
-            result: Boatswain’s whistle that echoes with the cries of doomed mariners
+            text: Boatswain’s whistle that echoes with the cries of doomed mariners
           - min: 8
             max: 10
-            result: Chattering skull with dark gems fitted into its eye sockets
+            text: Chattering skull with dark gems fitted into its eye sockets
           - min: 11
             max: 13
-            result: Compass that stubbornly points at an unknown destination
+            text: Compass that stubbornly points at an unknown destination
           - min: 14
             max: 16
-            result: Conch shell that whispers enticingly of distant seas
+            text: Conch shell that whispers enticingly of distant seas
           - min: 17
             max: 19
-            result: Corroded chronometer that offers glimpses of the past
+            text: Corroded chronometer that offers glimpses of the past
           - min: 20
             max: 22
-            result: Cracked lantern that draws a beast of the abyssal depths to its pallid light
+            text: Cracked lantern that draws a beast of the abyssal depths to its pallid light
           - min: 23
             max: 24
-            result: Crown of jagged seashells and sharp coral that binds its wearer to the sea
+            text: Crown of jagged seashells and sharp coral that binds its wearer to the sea
           - min: 25
             max: 27
-            result: Dark cloak that transforms the look of the wearer
+            text: Dark cloak that transforms the look of the wearer
           - min: 28
             max: 29
-            result: Dueling sword that whispers of vengeful need
+            text: Dueling sword that whispers of vengeful need
           - min: 30
             max: 32
-            result: Enigmatic map carved into a leathery sea serpent scale
+            text: Enigmatic map carved into a leathery sea serpent scale
           - min: 33
             max: 34
-            result: Fiddle of dark wood that—when played—evokes profound melancholy
+            text: Fiddle of dark wood that—when played—evokes profound melancholy
           - min: 35
             max: 37
-            result: Fiendish puzzle box that compels its keeper to solve the riddle
+            text: Fiendish puzzle box that compels its keeper to solve the riddle
           - min: 38
             max: 39
-            result: Filthy burial shroud that takes the shape of its former occupant on moonless nights
+            text: Filthy burial shroud that takes the shape of its former occupant on moonless nights
           - min: 40
             max: 41
-            result: Flask of green glass that releases a torrent of brackish seawater when unstoppered
+            text: Flask of green glass that releases a torrent of brackish seawater when unstoppered
           - min: 42
             max: 43
-            result: Frayed and bloodied rope that slithers and coils of its own accord
+            text: Frayed and bloodied rope that slithers and coils of its own accord
           - min: 44
             max: 46
-            result: Glass eye that peers into the realm of the dead
+            text: Glass eye that peers into the realm of the dead
           - min: 47
             max: 49
-            result: Iron mask that—when sworn upon—cannot be removed until the vow is fulfilled
+            text: Iron mask that—when sworn upon—cannot be removed until the vow is fulfilled
           - min: 50
             max: 52
-            result: Jagged obsidian dagger marked with everlasting bloodstains
+            text: Jagged obsidian dagger marked with everlasting bloodstains
           - min: 53
             max: 54
-            result: Large, leathery egg that pulses and shudders
+            text: Large, leathery egg that pulses and shudders
           - min: 55
             max: 57
-            result: Leatherbound tome filled with maddening, ever-changing glyphs
+            text: Leatherbound tome filled with maddening, ever-changing glyphs
           - min: 58
             max: 60
-            result: Lockbox containing a still-beating heart
+            text: Lockbox containing a still-beating heart
           - min: 61
             max: 63
-            result: Logbook filled with the rantings of a tormented captain
+            text: Logbook filled with the rantings of a tormented captain
           - min: 64
             max: 66
-            result: Macabre tarot cards with shifting illustrations
+            text: Macabre tarot cards with shifting illustrations
           - min: 67
             max: 69
-            result: Magnetic lodestone that reveals messages within iron shavings
+            text: Magnetic lodestone that reveals messages within iron shavings
           - min: 70
             max: 71
-            result: Mechanical scarab that skitters, flies, and burrows
+            text: Mechanical scarab that skitters, flies, and burrows
           - min: 72
             max: 74
-            result: Mirror that reveals a cadaverous visage of its subject
+            text: Mirror that reveals a cadaverous visage of its subject
           - min: 75
             max: 77
-            result: Mummified hand whose grip is locked tight around a gold coin
+            text: Mummified hand whose grip is locked tight around a gold coin
           - min: 78
             max: 80
-            result: Ornate silver chalice that turns its contents to poison
+            text: Ornate silver chalice that turns its contents to poison
           - min: 81
             max: 82
-            result: Ragged ship's flag that—when raised—summons an infamous cursed vessel
+            text: Ragged ship's flag that—when raised—summons an infamous cursed vessel
           - min: 83
             max: 85
-            result: Rusted iron sextant that reveals an unfamiliar sky in its silvered mirror
+            text: Rusted iron sextant that reveals an unfamiliar sky in its silvered mirror
           - min: 86
             max: 88
-            result: Ship in a bottle that flounders upon a storm-tossed sea
+            text: Ship in a bottle that flounders upon a storm-tossed sea
           - min: 89
             max: 91
-            result: Spyglass that offers glimpses of faraway seas through a cracked lens
+            text: Spyglass that offers glimpses of faraway seas through a cracked lens
           - min: 92
             max: 94
-            result: Tarnished ship's bell that calls to the spirits of drowned mariners
+            text: Tarnished ship's bell that calls to the spirits of drowned mariners
           - min: 95
             max: 97
-            result: Tattered map that reveals its secrets under moonlight
+            text: Tattered map that reveals its secrets under moonlight
           - min: 98
             max: 100
-            result: Whalebone staff that resonates with dormant power
+            text: Whalebone staff that resonates with dormant power
     collections:
       value:
         name: Value
@@ -765,20 +765,20 @@ oracles:
               - &Value.0
                 min: 1
                 max: 80
-                result: Trifle
-                detail: One [Precious Item](id:sundered_isles/oracles/treasures/precious_item)
+                text: Trifle
+                text2: One [Precious Item](id:sundered_isles/oracles/treasures/precious_item)
               - &Value.1
                 min: 81
                 max: 100
-                result: Stash
+                text: Stash
                 # TODO: make number of rolls accept dice expressions
-                detail: Roll the action die and reveal that many [Precious Items](id:sundered_isles/oracles/treasures/precious_item)
+                text2: Roll the action die and reveal that many [Precious Items](id:sundered_isles/oracles/treasures/precious_item)
               - &Value.2
-                result: Trove
-                detail: Bountiful riches
+                text: Trove
+                text2: Bountiful riches
               - &Value.3
-                result: Hoard
-                detail: Immeasurable riches
+                text: Hoard
+                text2: Immeasurable riches
           medium:
             name: Medium
             oracle_type: column_details

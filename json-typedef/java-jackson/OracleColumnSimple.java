@@ -26,7 +26,7 @@ public class OracleColumnSimple {
     private OracleColumnSimpleOracleType oracleType;
 
     @JsonProperty("rows")
-    private List<OracleTableRowSimple> rows;
+    private List<OracleTableRowBasic> rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("color")
@@ -125,7 +125,7 @@ public class OracleColumnSimple {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRowSimple> getRows() {
+    public List<OracleTableRowBasic> getRows() {
         return rows;
     }
 
@@ -133,7 +133,7 @@ public class OracleColumnSimple {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRowSimple> rows) {
+    public void setRows(List<OracleTableRowBasic> rows) {
         this.rows = rows;
     }
 

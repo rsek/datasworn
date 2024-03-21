@@ -15,767 +15,767 @@ oracles:
       regions:
         _source: *Source
         name: Overland Regions
-        oracle_type: table_details
+        oracle_type: table_text2
         column_labels:
           roll: Roll
-          result: Result
-          detail: Detail
+          text: Result
+          text2: Detail
         rows:
           - min: 1
             max: 20
-            result: '[Highlands]'
-            detail: &highlands.summary Hilly or mountainous terrain
+            text: '[Highlands]'
+            text2: &highlands.summary Hilly or mountainous terrain
           - min: 21
             max: 45
-            result: '[Jungle]'
-            detail: &jungle.summary Dense tropical rainforest
+            text: '[Jungle]'
+            text2: &jungle.summary Dense tropical rainforest
           - min: 46
             max: 50
-            result: '[Lava Field]'
-            detail: &lava_field.summary Lands scarred by volcanic eruptions
+            text: '[Lava Field]'
+            text2: &lava_field.summary Lands scarred by volcanic eruptions
           - min: 51
             max: 55
-            result: '[Marsh]'
-            detail: &marsh.summary Waterlogged region with grasses and reeds
+            text: '[Marsh]'
+            text2: &marsh.summary Waterlogged region with grasses and reeds
           - min: 56
             max: 60
-            result: '[River]'
-            detail: &river.summary Major inland waterway
+            text: '[River]'
+            text2: &river.summary Major inland waterway
           - min: 61
             max: 65
-            result: '[Scrub]'
-            detail: &scrub.summary Open landscape dominated by grass or shrubs
+            text: '[Scrub]'
+            text2: &scrub.summary Open landscape dominated by grass or shrubs
           - min: 66
             max: 75
-            result: '[Shore]'
-            detail: &shore.summary Where the land meets the sea
+            text: '[Shore]'
+            text2: &shore.summary Where the land meets the sea
           - min: 76
             max: 85
-            result: '[Swamp]'
-            detail: &swamp.summary Flooded forest with thick vegetation
+            text: '[Swamp]'
+            text2: &swamp.summary Flooded forest with thick vegetation
           - min: 86
             max: 90
-            result: '[Wastes]'
-            detail: &wastes.summary Arid, rocky terrain
+            text: '[Wastes]'
+            text2: &wastes.summary Arid, rocky terrain
           - min: 91
             max: 100
-            result: '[Woodland]'
-            detail: &woodland.summary Forested lands
+            text: '[Woodland]'
+            text2: &woodland.summary Forested lands
       detail:
         _source: *Source
         name: Overland Details
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 1
-            result: A tree trunk bears a crudely carved message
+            text: A tree trunk bears a crudely carved message
           - min: 2
             max: 2
-            result: You reach a vantage point, and catch sight of a beckoning sea
+            text: You reach a vantage point, and catch sight of a beckoning sea
           - min: 3
             max: 3
-            result: Fossilized bones, the ribs of some ancient beast, arch over your path
+            text: Fossilized bones, the ribs of some ancient beast, arch over your path
           - min: 4
             max: 4
-            result: A freshwater spring sits within a rocky nook
+            text: A freshwater spring sits within a rocky nook
           - min: 5
             max: 5
-            result: Gunfire and the clash of steel signal the presence of a nearby battle
+            text: Gunfire and the clash of steel signal the presence of a nearby battle
           - min: 6
             max: 6
-            result: A large snake, its belly swollen with a recent meal, slithers across your path
+            text: A large snake, its belly swollen with a recent meal, slithers across your path
           - min: 7
             max: 7
-            result: A ransacked camp sits empty
+            text: A ransacked camp sits empty
           - min: 8
             max: 8
-            result: A stone arch marks the entrance of a burial mound
+            text: A stone arch marks the entrance of a burial mound
           - min: 9
             max: 9
-            result: You cross paths with a lone traveller who is leading a heavily-burdened pack animal
+            text: You cross paths with a lone traveller who is leading a heavily-burdened pack animal
           - min: 10
             max: 10
-            result: Rodents of unusual size appear
+            text: Rodents of unusual size appear
           - min: 11
             max: 11
-            result: An empty chest, its lock smashed and lid opened, sits abandoned in a recently-dug hole
+            text: An empty chest, its lock smashed and lid opened, sits abandoned in a recently-dug hole
           - min: 12
             max: 12
-            result: You hear the faint sound of distant music or singing
+            text: You hear the faint sound of distant music or singing
           - min: 13
             max: 13
-            result: The landscape bears the scars of a destructive fire
+            text: The landscape bears the scars of a destructive fire
           - min: 14
             max: 14
-            result: A procession of haggard refugees crosses your path
+            text: A procession of haggard refugees crosses your path
           - min: 15
             max: 15
-            result: Wildlife gathers around a watering hole
+            text: Wildlife gathers around a watering hole
           - min: 16
             max: 16
-            result: Darkness beckons from within a deep cave
+            text: Darkness beckons from within a deep cave
           - min: 17
             max: 17
-            result: A chasm divides the landscape
+            text: A chasm divides the landscape
           - min: 18
             max: 18
-            result: An enormous pile of scat marks the presence of a large creature
+            text: An enormous pile of scat marks the presence of a large creature
           - min: 19
             max: 19
-            result: An animal is caught in a trap
+            text: An animal is caught in a trap
           - min: 20
             max: 20
-            result: A ramshackle wooden barricade blocks your path
+            text: A ramshackle wooden barricade blocks your path
           - min: 21
             max: 21
-            result: A cache of abandoned supplies is tucked under a nearby tree or overhang
+            text: A cache of abandoned supplies is tucked under a nearby tree or overhang
           - min: 22
             max: 22
-            result: Lights glimmers in the distance
+            text: Lights glimmers in the distance
           - min: 23
             max: 23
-            result: A swaying rope bridge spans a gap in the terrain
+            text: A swaying rope bridge spans a gap in the terrain
           - min: 24
             max: 24
-            result: Something stirs in nearby water, disturbing the placid surface
+            text: Something stirs in nearby water, disturbing the placid surface
           - min: 25
             max: 25
-            result: A trail of blood leads off the path
+            text: A trail of blood leads off the path
           - min: 26
             max: 26
-            result: A little ways off the path, a large animal keeps pace with you
+            text: A little ways off the path, a large animal keeps pace with you
           - min: 27
             max: 27
-            result: Figures move across a distant ridge
+            text: Figures move across a distant ridge
           - min: 28
             max: 28
-            result: An ancient mechanism grinds to life
+            text: An ancient mechanism grinds to life
           - min: 29
             max: 29
-            result: Large insect mounds blot the landscape
+            text: Large insect mounds blot the landscape
           - min: 30
             max: 30
-            result: You encounter a wounded or sick stranger
+            text: You encounter a wounded or sick stranger
           - min: 31
             max: 31
-            result: Dirt is mounded atop a freshly dug hole
+            text: Dirt is mounded atop a freshly dug hole
           - min: 32
             max: 32
-            result: Carrion animals pick at the remains of a dead creature
+            text: Carrion animals pick at the remains of a dead creature
           - min: 33
             max: 33
-            result: You come upon the scene of a recent battle and spot a single, gravely-wounded survivor
+            text: You come upon the scene of a recent battle and spot a single, gravely-wounded survivor
           - min: 34
             max: 34
-            result: A weathered flag is staked into the ground of a burial site
+            text: A weathered flag is staked into the ground of a burial site
           - min: 35
             max: 35
-            result: Recently-dug holes pockmark the ground
+            text: Recently-dug holes pockmark the ground
           - min: 36
             max: 36
-            result: A recent landslide, collapse, or rockfall scars the landscape
+            text: A recent landslide, collapse, or rockfall scars the landscape
           - min: 37
             max: 37
-            result: An X is carved into the terrain
+            text: An X is carved into the terrain
           - min: 38
             max: 38
-            result: A corroded ship's bell hangs from a wooden post
+            text: A corroded ship's bell hangs from a wooden post
           - min: 39
             max: 39
-            result: A thin column of smoke rises in the distance
+            text: A thin column of smoke rises in the distance
           - min: 40
             max: 40
-            result: A skeleton lies half-buried or tangled in the terrain
+            text: A skeleton lies half-buried or tangled in the terrain
           - min: 41
             max: 41
-            result: The clank of equipment and shouts of command signals an approaching armed patrol
+            text: The clank of equipment and shouts of command signals an approaching armed patrol
           - min: 42
             max: 42
-            result: The scorched path of a large meteorite is carved into the terrain
+            text: The scorched path of a large meteorite is carved into the terrain
           - min: 43
             max: 43
-            result: In the distance, circling carrion birds mark the site of a kill
+            text: In the distance, circling carrion birds mark the site of a kill
           - min: 44
             max: 44
-            result: Drag marks and blood mar the ground
+            text: Drag marks and blood mar the ground
           - min: 45
             max: 45
-            result: Insects swarm protectively from their nest
+            text: Insects swarm protectively from their nest
           - min: 46
             max: 46
-            result: A sign warns away trespassers
+            text: A sign warns away trespassers
           - min: 47
             max: 47
-            result: Broken bones lay within an unearthed grave
+            text: Broken bones lay within an unearthed grave
           - min: 48
             max: 48
-            result: The air smells of smoke, and ash drifts on the wind
+            text: The air smells of smoke, and ash drifts on the wind
           - min: 49
             max: 49
-            result: The landscape takes on an unusual color
+            text: The landscape takes on an unusual color
           - min: 50
             max: 50
-            result: The path bears remnants of an old stone road
+            text: The path bears remnants of an old stone road
           - min: 51
             max: 51
-            result: A distant volcano erupts, sending up plumes of smoke and ash
+            text: A distant volcano erupts, sending up plumes of smoke and ash
           - min: 52
             max: 52
-            result: An animal is cornered by a larger predator
+            text: An animal is cornered by a larger predator
           - min: 53
             max: 53
-            result: The air is suddenly filled with flying arrows from unseen assailants
+            text: The air is suddenly filled with flying arrows from unseen assailants
           - min: 54
             max: 54
-            result: An abandoned cart or wagon lies broken, its contents spilled across the ground
+            text: An abandoned cart or wagon lies broken, its contents spilled across the ground
           - min: 55
             max: 55
-            result: A crude map is scrawled on a rock
+            text: A crude map is scrawled on a rock
           - min: 56
             max: 56
-            result: An intricate pattern of carved stones is laid into the ground
+            text: An intricate pattern of carved stones is laid into the ground
           - min: 57
             max: 57
-            result: A rocky cairn and planted sword mark a lonely gravesite
+            text: A rocky cairn and planted sword mark a lonely gravesite
           - min: 58
             max: 58
-            result: Partially buried weapons, armor, and bones mark the site of a long-ago battle
+            text: Partially buried weapons, armor, and bones mark the site of a long-ago battle
           - min: 59
             max: 59
-            result: You catch sight of a glimmer of metal within the undergrowth
+            text: You catch sight of a glimmer of metal within the undergrowth
           - min: 60
             max: 60
-            result: A flag bearing a familiar symbol hangs from a tall wooden pole
+            text: A flag bearing a familiar symbol hangs from a tall wooden pole
           - min: 61
             max: 61
-            result: The ground bears the tracks or markings of a large animal
+            text: The ground bears the tracks or markings of a large animal
           - min: 62
             max: 62
-            result: A skeletal corpse wears the decaying remains of an elaborate uniform
+            text: A skeletal corpse wears the decaying remains of an elaborate uniform
           - min: 63
             max: 63
-            result: Carefully stacked stones mark a gravesite
+            text: Carefully stacked stones mark a gravesite
           - min: 64
             max: 64
-            result: Flocks of birds nest here; they squawk and chatter noisily
+            text: Flocks of birds nest here; they squawk and chatter noisily
           - min: 65
             max: 65
-            result: Ash surrounds a long-cold funeral pyre
+            text: Ash surrounds a long-cold funeral pyre
           - min: 66
             max: 66
-            result: An enormous red lizard basks lazily on a rocky ledge
+            text: An enormous red lizard basks lazily on a rocky ledge
           - min: 67
             max: 67
-            result: A herd of wildlife cuts across your path
+            text: A herd of wildlife cuts across your path
           - min: 68
             max: 68
-            result: You encounter a panicked stranger who is fleeing a pursuer
+            text: You encounter a panicked stranger who is fleeing a pursuer
           - min: 69
             max: 69
-            result: A flash of reflected sunlight gleams from glass or metal in the distance
+            text: A flash of reflected sunlight gleams from glass or metal in the distance
           - min: 70
             max: 70
-            result: In the distance, a colossal tree dominates the landscape
+            text: In the distance, a colossal tree dominates the landscape
           - min: 71
             max: 71
-            result: A tripwire is strung across your path
+            text: A tripwire is strung across your path
           - min: 72
             max: 72
-            result: A set of roughly-chiseled headstones stand like broken teeth
+            text: A set of roughly-chiseled headstones stand like broken teeth
           - min: 73
             max: 73
-            result: An abandoned camp sits quiet
+            text: An abandoned camp sits quiet
           - min: 74
             max: 74
-            result: An abandoned campfire still smolders
+            text: An abandoned campfire still smolders
           - min: 75
             max: 75
-            result: Crushed and broken vegetation marks the path of a large creature
+            text: Crushed and broken vegetation marks the path of a large creature
           - min: 76
             max: 76
-            result: The smell of cooking and the sound of conversation indicates the presence ofcamp a nearby
+            text: The smell of cooking and the sound of conversation indicates the presence ofcamp a nearby
           - min: 77
             max: 77
-            result: Ruins rise above the distant terrain
+            text: Ruins rise above the distant terrain
           - min: 78
             max: 78
-            result: Swarms of colorful butterflies surround you
+            text: Swarms of colorful butterflies surround you
           - min: 79
             max: 79
-            result: A large deer appears, watching you with an impassive but intelligent gaze
+            text: A large deer appears, watching you with an impassive but intelligent gaze
           - min: 80
             max: 80
-            result: Flies swirl around a partially-devoured animal carcass
+            text: Flies swirl around a partially-devoured animal carcass
           - min: 81
             max: 81
-            result: A vast field of animal bones litter the ground
+            text: A vast field of animal bones litter the ground
           - min: 82
             max: 82
-            result: A solitary statue stands tall over the terrain
+            text: A solitary statue stands tall over the terrain
           - min: 83
             max: 83
-            result: Great plumes of smoke and fire rise in the distance
+            text: Great plumes of smoke and fire rise in the distance
           - min: 84
             max: 84
-            result: A long-dead corpse lies at the bottom of a pit
+            text: A long-dead corpse lies at the bottom of a pit
           - min: 85
             max: 85
-            result: Crystal-clear water glimmers within a sinkhole
+            text: Crystal-clear water glimmers within a sinkhole
           - min: 86
             max: 86
-            result: A series of rope bridges connect trees or high terrain
+            text: A series of rope bridges connect trees or high terrain
           - min: 87
             max: 87
-            result: Two formidable animals engage in battle
+            text: Two formidable animals engage in battle
           - min: 88
             max: 88
-            result: An infant animal, abandoned or lost, mewls for its mother
+            text: An infant animal, abandoned or lost, mewls for its mother
           - min: 89
             max: 89
-            result: The ground trembles with the movement of a large creature or herd of animals
+            text: The ground trembles with the movement of a large creature or herd of animals
           - min: 90
             max: 90
-            result: A statue lies broken and scattered across your path
+            text: A statue lies broken and scattered across your path
           - min: 91
             max: 91
-            result: Ornamental windchimes, clacking melodically, hang from tree branches
+            text: Ornamental windchimes, clacking melodically, hang from tree branches
           - min: 92
             max: 92
-            result: A worksite lies dormant, its equipment and supplies abandoned
+            text: A worksite lies dormant, its equipment and supplies abandoned
           - min: 93
             max: 93
-            result: You hear a crack of gunfire, and a musket shot buzzes past
+            text: You hear a crack of gunfire, and a musket shot buzzes past
           - min: 94
             max: 94
-            result: Someone calls out for help
+            text: Someone calls out for help
           - min: 95
             max: 95
-            result: A settlement sits upon a distant hill
+            text: A settlement sits upon a distant hill
           - min: 96
             max: 96
-            result: Ladders or ropes lead to higher terrain
+            text: Ladders or ropes lead to higher terrain
           - min: 97
             max: 97
-            result: Footprints mark the path of a recent traveler
+            text: Footprints mark the path of a recent traveler
           - min: 98
             max: 98
-            result: A noisy parrot squawks, whistles, and sings, as if putting on a performance
+            text: A noisy parrot squawks, whistles, and sings, as if putting on a performance
           - min: 99
             max: 99
-            result: Carved stones mark an old boundary line
+            text: Carved stones mark an old boundary line
           - min: 100
             max: 100
-            result: This area is adorned with colorful banners
+            text: This area is adorned with colorful banners
       cursed_details:
         _source: *Source
         name: Cursed Overland Details
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 1
-            result: Your breath escapes in wisps of fog as an uncanny chill takes hold
+            text: Your breath escapes in wisps of fog as an uncanny chill takes hold
           - min: 2
             max: 2
-            result: A chaotic whirlwind scours the terrain
+            text: A chaotic whirlwind scours the terrain
           - min: 3
             max: 3
-            result: Insects boil from blisters of oozing, corrupted terrain
+            text: Insects boil from blisters of oozing, corrupted terrain
           - min: 4
             max: 4
-            result: The apparition of someone you knew delivers a warning before fading away
+            text: The apparition of someone you knew delivers a warning before fading away
           - min: 5
             max: 5
-            result: The earth trembles as one beast battles another
+            text: The earth trembles as one beast battles another
           - min: 6
             max: 6
-            result: A skull with a gemstone in its mouth watches over the path—as you approach, it speaks
+            text: A skull with a gemstone in its mouth watches over the path—as you approach, it speaks
           - min: 7
             max: 7
-            result: Unnatural darkness envelops your surroundings
+            text: Unnatural darkness envelops your surroundings
           - min: 8
             max: 8
-            result: In the distance, a great skull-shaped edifice rises above the terrain
+            text: In the distance, a great skull-shaped edifice rises above the terrain
           - min: 9
             max: 9
-            result: A member of the party, muttering dreamily as if in a trance, leaves the path
+            text: A member of the party, muttering dreamily as if in a trance, leaves the path
           - min: 10
             max: 10
-            result: An unending storm plagues the land ahead
+            text: An unending storm plagues the land ahead
           - min: 11
             max: 11
-            result: Gigantic insect husks litter the ground
+            text: Gigantic insect husks litter the ground
           - min: 12
             max: 12
-            result: An ancient stone statue comes to life
+            text: An ancient stone statue comes to life
           - min: 13
             max: 13
-            result: A standing stone is carved in the likeness of a horrific creature
+            text: A standing stone is carved in the likeness of a horrific creature
           - min: 14
             max: 14
-            result: Nearby water ripples with the approach of something massive
+            text: Nearby water ripples with the approach of something massive
           - min: 15
             max: 15
-            result: You come upon a recently-killed traveler; their last words are written in blood
+            text: You come upon a recently-killed traveler; their last words are written in blood
           - min: 16
             max: 16
-            result: A crudely-fashioned effigy bears the likeness of someone you know
+            text: A crudely-fashioned effigy bears the likeness of someone you know
           - min: 17
             max: 17
-            result: A torrent of seawater crashes into view, bearing a barnacle-encrusted ship
+            text: A torrent of seawater crashes into view, bearing a barnacle-encrusted ship
           - min: 18
             max: 18
-            result: Cocooned corpses hang from tree branches
+            text: Cocooned corpses hang from tree branches
           - min: 19
             max: 19
-            result: An unearthly shriek pierces the air
+            text: An unearthly shriek pierces the air
           - min: 20
             max: 20
-            result: Ghostly figures stand in the path ahead, waiting
+            text: Ghostly figures stand in the path ahead, waiting
           - min: 21
             max: 21
-            result: Oversized insects swarm from a gigantic nest
+            text: Oversized insects swarm from a gigantic nest
           - min: 22
             max: 22
-            result: The bones of dead beasts litter the ground
+            text: The bones of dead beasts litter the ground
           - min: 23
             max: 23
-            result: A massive pile of bones lies in a dark pit
+            text: A massive pile of bones lies in a dark pit
           - min: 24
             max: 24
-            result: A procession of silent spirits crosses your path
+            text: A procession of silent spirits crosses your path
           - min: 25
             max: 25
-            result: A monstrous flying beast circles overhead
+            text: A monstrous flying beast circles overhead
           - min: 26
             max: 26
-            result: Fractured terrain floats in mid-air
+            text: Fractured terrain floats in mid-air
           - min: 27
             max: 27
-            result: Something rumbles deep in the earth beneath you
+            text: Something rumbles deep in the earth beneath you
           - min: 28
             max: 28
-            result: Blood and bodies are strewn across a campsite
+            text: Blood and bodies are strewn across a campsite
           - min: 29
             max: 29
-            result: A rotting chest flies open, spilling forth a horrific creature
+            text: A rotting chest flies open, spilling forth a horrific creature
           - min: 30
             max: 30
-            result: A heavy iron door stands at the entrance of a cave mouth; within, something knocks
+            text: A heavy iron door stands at the entrance of a cave mouth; within, something knocks
           - min: 31
             max: 31
-            result: An eclipse overtakes the sun, stealing away the day
+            text: An eclipse overtakes the sun, stealing away the day
           - min: 32
             max: 32
-            result: A skeletal figure lurches from the shadows, eye sockets ablaze
+            text: A skeletal figure lurches from the shadows, eye sockets ablaze
           - min: 33
             max: 33
-            result: Dozens of fish flop and struggle for breath on dry ground
+            text: Dozens of fish flop and struggle for breath on dry ground
           - min: 34
             max: 34
-            result: A black iron pillar floats above the ground, humming softly
+            text: A black iron pillar floats above the ground, humming softly
           - min: 35
             max: 35
-            result: Dozens of carrion birds settle into the trees around you, waiting expectantly
+            text: Dozens of carrion birds settle into the trees around you, waiting expectantly
           - min: 36
             max: 36
-            result: Thick strands of webbing stretch across the terrain
+            text: Thick strands of webbing stretch across the terrain
           - min: 37
             max: 37
-            result: A single step takes you into a new landscape or environment
+            text: A single step takes you into a new landscape or environment
           - min: 38
             max: 38
-            result: Briny water rises from the ground, quickly engulfing this area
+            text: Briny water rises from the ground, quickly engulfing this area
           - min: 39
             max: 39
-            result: You are overcome with a sense of deja vu; you have walked this path before
+            text: You are overcome with a sense of deja vu; you have walked this path before
           - min: 40
             max: 40
-            result: Eerie howls echo from the depths of a cave
+            text: Eerie howls echo from the depths of a cave
           - min: 41
             max: 41
-            result: The wind carries the smell of rot
+            text: The wind carries the smell of rot
           - min: 42
             max: 42
-            result: Coins emblazoned with skulls gleam from the bottom of a nearby pool
+            text: Coins emblazoned with skulls gleam from the bottom of a nearby pool
           - min: 43
             max: 43
-            result: Vegetation wilts and decays before your eyes
+            text: Vegetation wilts and decays before your eyes
           - min: 44
             max: 44
-            result: Hordes of panicked birds and animals burst onto the scene, fleeing an unseen threat
+            text: Hordes of panicked birds and animals burst onto the scene, fleeing an unseen threat
           - min: 45
             max: 45
-            result: A pile of bones, each inscribed with elaborate sigils, is carefully arranged
+            text: A pile of bones, each inscribed with elaborate sigils, is carefully arranged
           - min: 46
             max: 46
-            result: Ahead, footprints with no visible source spontaneously appear
+            text: Ahead, footprints with no visible source spontaneously appear
           - min: 47
             max: 47
-            result: A toppled statue speaks a foreboding message
+            text: A toppled statue speaks a foreboding message
           - min: 48
             max: 48
-            result: A prominent statue is vandalized and broken, its subject now forsaken by the inhabitants
+            text: A prominent statue is vandalized and broken, its subject now forsaken by the inhabitants
           - min: 49
             max: 49
-            result: An enormous beast lies dead, a grisly bite mark on its flank
+            text: An enormous beast lies dead, a grisly bite mark on its flank
           - min: 50
             max: 50
-            result: You come upon an animal carcass; something moves within its bloated gut
+            text: You come upon an animal carcass; something moves within its bloated gut
           - min: 51
             max: 51
-            result: This area is bound in unnatural cold and ice
+            text: This area is bound in unnatural cold and ice
           - min: 52
             max: 52
-            result: Jagged, glassy rock reflects an unseen truth
+            text: Jagged, glassy rock reflects an unseen truth
           - min: 53
             max: 53
-            result: Strange energies glimmer within a stone arch
+            text: Strange energies glimmer within a stone arch
           - min: 54
             max: 54
-            result: Time passes, but you and others in your party have no memory of it
+            text: Time passes, but you and others in your party have no memory of it
           - min: 55
             max: 55
-            result: The terrain here is a confounding labyrinth
+            text: The terrain here is a confounding labyrinth
           - min: 56
             max: 56
-            result: At the edges of your vision, shadows lurk
+            text: At the edges of your vision, shadows lurk
           - min: 57
             max: 57
-            result: A party member is stricken with a hideous sickness
+            text: A party member is stricken with a hideous sickness
           - min: 58
             max: 58
-            result: A sinister effigy of a human figure, crafted from dead wood, towers above the landcape
+            text: A sinister effigy of a human figure, crafted from dead wood, towers above the landcape
           - min: 59
             max: 59
-            result: A sorrowful song, seemingly without a source, echoes across the landscape
+            text: A sorrowful song, seemingly without a source, echoes across the landscape
           - min: 60
             max: 60
-            result: The ground shakes with the movement of a titanic beast
+            text: The ground shakes with the movement of a titanic beast
           - min: 61
             max: 61
-            result: You hear sinister chants—a portent of a nearby ritual in progress
+            text: You hear sinister chants—a portent of a nearby ritual in progress
           - min: 62
             max: 62
-            result: A stone slab bears the remains of a horrific ritual
+            text: A stone slab bears the remains of a horrific ritual
           - min: 63
             max: 63
-            result: An unmoving fog clings to the terrain ahead
+            text: An unmoving fog clings to the terrain ahead
           - min: 64
             max: 64
-            result: A massive, molted snakeskin is draped over a tree branch
+            text: A massive, molted snakeskin is draped over a tree branch
           - min: 65
             max: 65
-            result: Thick webs form a shroud over an earthen pit
+            text: Thick webs form a shroud over an earthen pit
           - min: 66
             max: 66
-            result: A sword is planted blade-down into the ribcage of a skeletal corpse; as you approach,whispers to you 	it
+            text: A sword is planted blade-down into the ribcage of a skeletal corpse; as you approach,whispers to you 	it
           - min: 67
             max: 67
-            result: Virulent fungal growths engulf the landscape
+            text: Virulent fungal growths engulf the landscape
           - min: 68
             max: 68
-            result: Pale hands reach out of a dark body of water
+            text: Pale hands reach out of a dark body of water
           - min: 69
             max: 69
-            result: A blood-red waterway carves a path through the terrain
+            text: A blood-red waterway carves a path through the terrain
           - min: 70
             max: 70
-            result: A spectral figure appears, pointing insistently at a distant landmark
+            text: A spectral figure appears, pointing insistently at a distant landmark
           - min: 71
             max: 71
-            result: The path leads through a churning, green fog
+            text: The path leads through a churning, green fog
           - min: 72
             max: 72
-            result: Clattering skulls hang like ornaments from a dead tree
+            text: Clattering skulls hang like ornaments from a dead tree
           - min: 73
             max: 73
-            result: An unsettling quiet descends over this area
+            text: An unsettling quiet descends over this area
           - min: 74
             max: 74
-            result: Corrupted or mutated creatures appear
+            text: Corrupted or mutated creatures appear
           - min: 75
             max: 75
-            result: Horrific visions or dreams plague the party members
+            text: Horrific visions or dreams plague the party members
           - min: 76
             max: 76
-            result: You glimpse a ship sailing among the clouds
+            text: You glimpse a ship sailing among the clouds
           - min: 77
             max: 77
-            result: Countless dead animals litter the ground
+            text: Countless dead animals litter the ground
           - min: 78
             max: 78
-            result: A creature with uncanny camouflage makes itself visible
+            text: A creature with uncanny camouflage makes itself visible
           - min: 79
             max: 79
-            result: Visions or apparitions reveal this land in another time
+            text: Visions or apparitions reveal this land in another time
           - min: 80
             max: 80
-            result: Carrion birds circle just overhead, keeping pace as you travel
+            text: Carrion birds circle just overhead, keeping pace as you travel
           - min: 81
             max: 81
-            result: An undead beast, its form corrupted by wounds and rot, stalks this area
+            text: An undead beast, its form corrupted by wounds and rot, stalks this area
           - min: 82
             max: 82
-            result: A grim, cloaked figure appears; it raises a skeletal hand to point at a distant landmark
+            text: A grim, cloaked figure appears; it raises a skeletal hand to point at a distant landmark
           - min: 83
             max: 83
-            result: Carnivorous plants consume a corpse
+            text: Carnivorous plants consume a corpse
           - min: 84
             max: 84
-            result: A circle of cracked, lifeless ground surrounds an enigmatic stone pillar
+            text: A circle of cracked, lifeless ground surrounds an enigmatic stone pillar
           - min: 85
             max: 85
-            result: This place is home to creatures and plants from out of time
+            text: This place is home to creatures and plants from out of time
           - min: 86
             max: 86
-            result: Hundreds—maybe thousands—of cracked and broken skulls litter the ground
+            text: Hundreds—maybe thousands—of cracked and broken skulls litter the ground
           - min: 87
             max: 87
-            result: Skeletal corpses claw their way out of the ground
+            text: Skeletal corpses claw their way out of the ground
           - min: 88
             max: 88
-            result: Phantom voices carry on the wind, whispering a dreadful premonition
+            text: Phantom voices carry on the wind, whispering a dreadful premonition
           - min: 89
             max: 89
-            result: Hundreds of stacked skulls form a tall cairn
+            text: Hundreds of stacked skulls form a tall cairn
           - min: 90
             max: 90
-            result: A shipwreck sits precariously and improbably on high ground
+            text: A shipwreck sits precariously and improbably on high ground
           - min: 91
             max: 91
-            result: You stumble upon a nest of massive eggs—within one of them, something stirs
+            text: You stumble upon a nest of massive eggs—within one of them, something stirs
           - min: 92
             max: 92
-            result: Blood drips from an overhang or branch
+            text: Blood drips from an overhang or branch
           - min: 93
             max: 93
-            result: A gigantic weapon is half-buried in the terrain
+            text: A gigantic weapon is half-buried in the terrain
           - min: 94
             max: 94
-            result: Vines or branches come to life, creeping and grasping
+            text: Vines or branches come to life, creeping and grasping
           - min: 95
             max: 95
-            result: Carried provisions suddenly turn foul
+            text: Carried provisions suddenly turn foul
           - min: 96
             max: 96
-            result: An illusionary path beckons
+            text: An illusionary path beckons
           - min: 97
             max: 97
-            result: A swarm of enormous bats emerge from a dark cave
+            text: A swarm of enormous bats emerge from a dark cave
           - min: 98
             max: 98
-            result: Furrowed ground and broken trees mark the path of a monstrous beast
+            text: Furrowed ground and broken trees mark the path of a monstrous beast
           - min: 99
             max: 99
-            result: A hulking, beastial form emerges from a dark cave
+            text: A hulking, beastial form emerges from a dark cave
           - min: 100
             max: 100
-            result: That’s the third time today you’ve passed that tree—you’re sure of it
+            text: That’s the third time today you’ve passed that tree—you’re sure of it
       peril:
         _source: *Source
         name: Overland Perils
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 3
-            result: Caught in a flood or forced to navigate a perilous waterway
+            text: Caught in a flood or forced to navigate a perilous waterway
           - min: 4
             max: 6
-            result: Cleverly camouflaged predator
+            text: Cleverly camouflaged predator
           - min: 7
             max: 9
-            result: Aggressive creature appears without warning
+            text: Aggressive creature appears without warning
           - min: 10
             max: 12
-            result: Creatures spooked or stampeding
+            text: Creatures spooked or stampeding
           - min: 13
             max: 15
-            result: Disturbing remains or evidence of death
+            text: Disturbing remains or evidence of death
           - min: 16
             max: 18
-            result: Enemy faction holds this area
+            text: Enemy faction holds this area
           - min: 19
             max: 21
-            result: Equipment is damaged or lost
+            text: Equipment is damaged or lost
           - min: 22
             max: 24
-            result: Glimpses of a lurking or trailing foe
+            text: Glimpses of a lurking or trailing foe
           - min: 25
             max: 27
-            result: Grueling terrain or environment tests endurance
+            text: Grueling terrain or environment tests endurance
           - min: 28
             max: 30
-            result: Guarded or patrolled path
+            text: Guarded or patrolled path
           - min: 31
             max: 33
-            result: Hidden pit or sinkhole
+            text: Hidden pit or sinkhole
           - min: 34
             max: 36
-            result: Impassable terrain blocks the way
+            text: Impassable terrain blocks the way
           - min: 37
             max: 39
-            result: Landslide or rockfall
+            text: Landslide or rockfall
           - min: 40
             max: 42
-            result: Lost the path or took a wrong turn
+            text: Lost the path or took a wrong turn
           - min: 43
             max: 45
-            result: Party member is sickened or injured
+            text: Party member is sickened or injured
           - min: 46
             max: 48
-            result: Party member stumbles into harm's way or draws attention
+            text: Party member stumbles into harm's way or draws attention
           - min: 49
             max: 51
-            result: Perilous ascent or descent
+            text: Perilous ascent or descent
           - min: 52
             max: 54
-            result: Poisonous flora or venomous fauna
+            text: Poisonous flora or venomous fauna
           - min: 55
             max: 57
-            result: Precipitous crossing or rickety bridge
+            text: Precipitous crossing or rickety bridge
           - min: 58
             max: 60
-            result: Provisions are wasted or lost
+            text: Provisions are wasted or lost
           - min: 61
             max: 63
-            result: Raging fire
+            text: Raging fire
           - min: 64
             max: 66
-            result: Seismic or volcanic upheaval
+            text: Seismic or volcanic upheaval
           - min: 67
             max: 69
-            result: Sense of being watched
+            text: Sense of being watched
           - min: 70
             max: 72
-            result: Signs of a predator on the hunt
+            text: Signs of a predator on the hunt
           - min: 73
             max: 75
-            result: Swarming creatures or insects attack
+            text: Swarming creatures or insects attack
           - min: 76
             max: 78
-            result: Terrain or obstacles force a risky detour
+            text: Terrain or obstacles force a risky detour
           - min: 79
             max: 81
-            result: Trap is set or alarm is raised
+            text: Trap is set or alarm is raised
           - min: 82
             max: 84
-            result: Unfriendly travelers cross your path
+            text: Unfriendly travelers cross your path
           - min: 85
             max: 87
-            result: Unstable ground gives way
+            text: Unstable ground gives way
           - min: 88
             max: 90
-            result: Visibility hindered by smoke, fog, or darkness
+            text: Visibility hindered by smoke, fog, or darkness
           - min: 91
             max: 93
-            result: Wander into or near the lair of a predator
+            text: Wander into or near the lair of a predator
           - min: 94
             max: 96
-            result: Weather changes for the worse
+            text: Weather changes for the worse
           - min: 97
             max: 99
             <<: &ActionTheme
-              result: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+              text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
                 - auto: true
                   oracle: sundered_isles/oracles/core/action
@@ -784,123 +784,123 @@ oracles:
           - min: 100
             max: 100
             <<: &RollTwice
-              result: Roll twice
+              text: Roll twice
               oracle_rolls:
                 - auto: true
                   number_of_rolls: 2
       opportunity:
         _source: *Source
         name: Overland Opportunities
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 4
-            result: Advance warning of an ambush or lurking foe
+            text: Advance warning of an ambush or lurking foe
           - min: 5
             max: 8
-            result: Cache of supplies
+            text: Cache of supplies
           - min: 9
             max: 12
-            result: Clear path through otherwise difficult terrain
+            text: Clear path through otherwise difficult terrain
           - min: 13
             max: 16
-            result: Clue offers insight into a current quest or mystery
+            text: Clue offers insight into a current quest or mystery
           - min: 17
             max: 20
-            result: Clue to a a foe's nature or vulnerabilities
+            text: Clue to a a foe's nature or vulnerabilities
           - min: 21
             max: 24
-            result: Clue to the history or nature of this land
+            text: Clue to the history or nature of this land
           - min: 25
             max: 28
-            result: Creatures show the way or offer inspiration
+            text: Creatures show the way or offer inspiration
           - min: 29
             max: 32
-            result: Evidence that others have passed this way
+            text: Evidence that others have passed this way
           - min: 33
             max: 36
-            result: Foe inadvertently reveals themselves or tips their hand
+            text: Foe inadvertently reveals themselves or tips their hand
           - min: 37
             max: 40
-            result: Friendly community in sight
+            text: Friendly community in sight
           - min: 41
             max: 44
-            result: Helpful traveler crosses your path
+            text: Helpful traveler crosses your path
           - min: 45
             max: 48
-            result: Ideal weather takes hold
+            text: Ideal weather takes hold
           - min: 49
             max: 52
-            result: Impressive vista offers comfort or inspiration
+            text: Impressive vista offers comfort or inspiration
           - min: 53
             max: 56
-            result: Moment of fellowship or inner peace
+            text: Moment of fellowship or inner peace
           - min: 57
             max: 60
-            result: Opening to distract, escape, or avoid foes
+            text: Opening to distract, escape, or avoid foes
           - min: 61
             max: 64
-            result: Opening to get the drop on a foe
+            text: Opening to get the drop on a foe
           - min: 65
             max: 68
-            result: Path transitions into favorable terrain
+            text: Path transitions into favorable terrain
           - min: 69
             max: 72
-            result: Plants or herbs with helpful qualities
+            text: Plants or herbs with helpful qualities
           - min: 73
             max: 76
-            result: Plea for help from a potential benefactor
+            text: Plea for help from a potential benefactor
           - min: 77
             max: 80
-            result: Plentiful hunting or foraging opportunities
+            text: Plentiful hunting or foraging opportunities
           - min: 81
             max: 84
-            result: Refuge offers a place to hide, plan, or recover
+            text: Refuge offers a place to hide, plan, or recover
           - min: 85
             max: 88
-            result: Signpost or marker provides guidance
+            text: Signpost or marker provides guidance
           - min: 89
             max: 92
-            result: Source of fresh water
+            text: Source of fresh water
           - min: 93
             max: 96
-            result: Unusual location offers opportunities for exploration
+            text: Unusual location offers opportunities for exploration
           - min: 97
             max: 100
-            result: Vantage point reveals the lay of the land
+            text: Vantage point reveals the lay of the land
     collections:
       waypoints:
         _source: *Source
         name: Waypoints
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         contents:
           myriads:
             name: Myriads
             summary: Central Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 20
                 <<: &Waypoints.0
-                  result: |-
+                  text: |-
                     Feature of the landscape
                       [Region Landmarks]
               - min: 21
                 max: 30
                 <<: &Waypoints.1
-                  result: |-
+                  text: |-
                     Changing landscape
                       [Overland Regions](id:sundered_isles/oracles/overland/regions)
               - min: 31
                 max: 35
                 <<: &Waypoints.2
-                  result: |-
+                  text: |-
                     Changing weather
                       [Weather](id:sundered_isles/collections/oracles/weather)
               - min: 36
                 max: 55
                 <<: &Waypoints.3
-                  result: |-
+                  text: |-
                     Instance (choose one)
                       * [Overland Details](id:sundered_isles/oracles/overland/details)
                       * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
@@ -911,19 +911,19 @@ oracles:
               - min: 56
                 max: 70
                 <<: &Waypoints.4
-                  result: |-
+                  text: |-
                     Inland community
                       [Settlements](id:sundered_isles/collections/oracles/settlements)
               - min: 71
                 max: 75
                 <<: &Waypoints.5
-                  result: |-
+                  text: |-
                     Relic of the past
                       [Ruins](id:sundered_isles/collections/oracles/ruins)
               - min: 76
                 max: 85
                 <<: &Waypoints.6
-                  result: |-
+                  text: |-
                     Character focus
                       [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
               - &Waypoints.7
@@ -933,7 +933,7 @@ oracles:
           margins:
             name: Margins
             summary: Outer Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 20
@@ -960,7 +960,7 @@ oracles:
           reaches:
             name: Reaches
             summary: Remote Seas
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - min: 1
                 max: 20
@@ -992,508 +992,508 @@ oracles:
           highlands:
             _source: *Source
             name: Highlands
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *highlands.summary
             rows:
               - <<: &Landmark.0
                   min: 1
                   max: 5
-                result: Bubbling mountain spring
+                text: Bubbling mountain spring
               - <<: &Landmark.1
                   min: 6
                   max: 10
-                result: Cavernous opening in cliff face
+                text: Cavernous opening in cliff face
               - <<: &Landmark.2
                   min: 11
                   max: 15
-                result: Constructed bridge over a wide chasm
+                text: Constructed bridge over a wide chasm
               - <<: &Landmark.3
                   min: 16
                   max: 20
-                result: Crumbling watchtower atop an overlook
+                text: Crumbling watchtower atop an overlook
               - <<: &Landmark.4
                   min: 21
                   max: 25
-                result: Fallen tree or stone arch over a gorge
+                text: Fallen tree or stone arch over a gorge
               - <<: &Landmark.5
                   min: 26
                   max: 30
-                result: Intricately stacked cairns
+                text: Intricately stacked cairns
               - <<: &Landmark.6
                   min: 31
                   max: 35
-                result: Mist-shrouded ravine
+                text: Mist-shrouded ravine
               - <<: &Landmark.7
                   min: 36
                   max: 40
-                result: Narrow ridgeline trail
+                text: Narrow ridgeline trail
               - <<: &Landmark.8
                   min: 41
                   max: 45
-                result: Ornate stone carvings
+                text: Ornate stone carvings
               - <<: &Landmark.9
                   min: 46
                   max: 50
-                result: River crashing through a narrow gorge
+                text: River crashing through a narrow gorge
               - <<: &Landmark.10
                   min: 51
                   max: 55
-                result: Scars of a recent landslide
+                text: Scars of a recent landslide
               - <<: &Landmark.11
                   min: 56
                   max: 60
-                result: Sheer precipice
+                text: Sheer precipice
               - <<: &Landmark.12
                   min: 61
                   max: 65
-                result: Sheltered highland lake
+                text: Sheltered highland lake
               - <<: &Landmark.13
                   min: 66
                   max: 70
-                result: Steep, rocky slope
+                text: Steep, rocky slope
               - <<: &Landmark.14
                   min: 71
                   max: 75
-                result: Stone stairs carved into a cliff face
+                text: Stone stairs carved into a cliff face
               - <<: &Landmark.15
                   min: 76
                   max: 80
-                result: Thundering waterfall
+                text: Thundering waterfall
               - <<: &Landmark.16
                   min: 81
                   max: 85
-                result: Towering rock spires
+                text: Towering rock spires
               - <<: &Landmark.17
                   min: 86
                   max: 90
-                result: Vantage point with an expansive view
+                text: Vantage point with an expansive view
               - <<: &Landmark.18
                   min: 91
                   max: 95
-                result: Veins of ore
+                text: Veins of ore
               - <<: &Landmark.19
                   min: 96
                   max: 100
-                result: Winding footpath
+                text: Winding footpath
           jungle:
             _source: *Source
             name: Jungle
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *jungle.summary
             rows:
               - <<: *Landmark.0
-                result: Ancient tree with a vast canopy
+                text: Ancient tree with a vast canopy
               - <<: *Landmark.1
-                result: Branches crowded with colorful birds
+                text: Branches crowded with colorful birds
               - <<: *Landmark.2
-                result: Carved, moss-covered stones
+                text: Carved, moss-covered stones
               - <<: *Landmark.3
-                result: Cave mouth hung with dripping vines
+                text: Cave mouth hung with dripping vines
               - <<: *Landmark.4
-                result: Curtains of hanging vines
+                text: Curtains of hanging vines
               - <<: *Landmark.5
-                result: Fallen tree bridges a ravine
+                text: Fallen tree bridges a ravine
               - <<: *Landmark.6
-                result: Fragrant fruit trees abuzz with insects
+                text: Fragrant fruit trees abuzz with insects
               - <<: *Landmark.7
-                result: Glade filled with vibrant butterflies
+                text: Glade filled with vibrant butterflies
               - <<: *Landmark.8
-                result: Majestic falls spill into a rocky gorge
+                text: Majestic falls spill into a rocky gorge
               - <<: *Landmark.9
-                result: Narrow path twists through undergrowth
+                text: Narrow path twists through undergrowth
               - <<: *Landmark.10
-                result: River cascading over smooth rocks
+                text: River cascading over smooth rocks
               - <<: *Landmark.11
-                result: Rocky spires cloaked in greenery
+                text: Rocky spires cloaked in greenery
               - <<: *Landmark.12
-                result: Rope bridge spans a river gorge
+                text: Rope bridge spans a river gorge
               - <<: *Landmark.13
-                result: Rope bridges connect towering trees
+                text: Rope bridges connect towering trees
               - <<: *Landmark.14
-                result: Serene pool below a terraced waterfall
+                text: Serene pool below a terraced waterfall
               - <<: *Landmark.15
-                result: Tangled thicket of thorny plants
+                text: Tangled thicket of thorny plants
               - <<: *Landmark.16
-                result: Unbroken canopy casts deep shade
+                text: Unbroken canopy casts deep shade
               - <<: *Landmark.17
-                result: Water-filled sinkhole
+                text: Water-filled sinkhole
               - <<: *Landmark.18
-                result: Whispering bamboo grove
+                text: Whispering bamboo grove
               - <<: *Landmark.19
-                result: Wide, slow-moving river
+                text: Wide, slow-moving river
 
           lava_field:
             _source: *Source
             name: Lava Field
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *lava_field.summary
             rows:
               - <<: *Landmark.0
-                result: Boiling lake
+                text: Boiling lake
               - <<: *Landmark.1
-                result: Bubbling lava pool
+                text: Bubbling lava pool
               - <<: *Landmark.2
-                result: Columns of volcanic rock
+                text: Columns of volcanic rock
               - <<: *Landmark.3
-                result: Deep crevice churning with magma
+                text: Deep crevice churning with magma
               - <<: *Landmark.4
-                result: Devastated structures
+                text: Devastated structures
               - <<: *Landmark.5
-                result: Dunes of volcanic ash
+                text: Dunes of volcanic ash
               - <<: *Landmark.6
-                result: Erupting lava fissure
+                text: Erupting lava fissure
               - <<: *Landmark.7
-                result: Expanse of glassy lava rock
+                text: Expanse of glassy lava rock
               - <<: *Landmark.8
-                result: Fast-moving river of lava
+                text: Fast-moving river of lava
               - <<: *Landmark.9
-                result: Field of cracked, partially solidified lava
+                text: Field of cracked, partially solidified lava
               - <<: *Landmark.10
-                result: Gouts of steam as lava meets water
+                text: Gouts of steam as lava meets water
               - <<: *Landmark.11
-                result: Landscape set ablaze
+                text: Landscape set ablaze
               - <<: *Landmark.12
-                result: Lava tube plunges into darkness
+                text: Lava tube plunges into darkness
               - <<: *Landmark.13
-                result: Roiling ash clouds
+                text: Roiling ash clouds
               - <<: *Landmark.14
-                result: Scorched trees amid an ashy plain
+                text: Scorched trees amid an ashy plain
               - <<: *Landmark.15
-                result: Smoldering crater
+                text: Smoldering crater
               - <<: *Landmark.16
-                result: Steaming hot springs
+                text: Steaming hot springs
               - <<: *Landmark.17
-                result: Stubborn plantlife emerges from ruin
+                text: Stubborn plantlife emerges from ruin
               - <<: *Landmark.18
-                result: Towering cinder cone
+                text: Towering cinder cone
               - <<: *Landmark.19
-                result: Vents spewing steam and volcanic gases
+                text: Vents spewing steam and volcanic gases
 
           marsh:
             _source: *Source
             name: Marsh
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *marsh.summary
             rows:
               - <<: *Landmark.0
-                result: Bursts of flaming marsh gas
+                text: Bursts of flaming marsh gas
               - <<: *Landmark.1
-                result: Copse of rotted tree trunks
+                text: Copse of rotted tree trunks
               - <<: *Landmark.2
-                result: Dense thicket of of reeds
+                text: Dense thicket of of reeds
               - <<: *Landmark.3
-                result: Field of flowers upon sodden ground
+                text: Field of flowers upon sodden ground
               - <<: *Landmark.4
-                result: Hovels stand precariously on stilts
+                text: Hovels stand precariously on stilts
               - <<: *Landmark.5
-                result: Large island of dry land
+                text: Large island of dry land
               - <<: *Landmark.6
-                result: Muddy, sinking quagmire
+                text: Muddy, sinking quagmire
               - <<: *Landmark.7
-                result: Nest of slithering serpents
+                text: Nest of slithering serpents
               - <<: *Landmark.8
-                result: Nests of squawking waterfowl
+                text: Nests of squawking waterfowl
               - <<: *Landmark.9
-                result: Pools of bubbling marsh gas
+                text: Pools of bubbling marsh gas
               - <<: *Landmark.10
-                result: Raised trail winds through a watery maze
+                text: Raised trail winds through a watery maze
               - <<: *Landmark.11
-                result: Rotting wooden walkway
+                text: Rotting wooden walkway
               - <<: *Landmark.12
-                result: Shallow waterways flanked by tall grass
+                text: Shallow waterways flanked by tall grass
               - <<: *Landmark.13
-                result: Soggy mist-shrouded field
+                text: Soggy mist-shrouded field
               - <<: *Landmark.14
-                result: Tall, rocky hillock
+                text: Tall, rocky hillock
               - <<: *Landmark.15
-                result: Thicket of spindly trees atop a low hill
+                text: Thicket of spindly trees atop a low hill
               - <<: *Landmark.16
-                result: Toppled stone tower
+                text: Toppled stone tower
               - <<: *Landmark.17
-                result: Wide channel of deep water
+                text: Wide channel of deep water
               - <<: *Landmark.18
-                result: Wide, algae-covered pond
+                text: Wide, algae-covered pond
               - <<: *Landmark.19
-                result: Witchlights dance above dark pools
+                text: Witchlights dance above dark pools
 
           river:
             _source: *Source
             name: River
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *river.summary
             rows:
               - <<: *Landmark.0
-                result: Branching watercourse
+                text: Branching watercourse
               - <<: *Landmark.1
-                result: Cascading rapids
+                text: Cascading rapids
               - <<: *Landmark.2
-                result: Debris forming a dam
+                text: Debris forming a dam
               - <<: *Landmark.3
-                result: Eddies swirl in a large, limpid pool
+                text: Eddies swirl in a large, limpid pool
               - <<: *Landmark.4
-                result: Flooded riverbanks
+                text: Flooded riverbanks
               - <<: *Landmark.5
-                result: Gulch strewn with mossy boulders
+                text: Gulch strewn with mossy boulders
               - <<: *Landmark.6
-                result: Landed boat
+                text: Landed boat
               - <<: *Landmark.7
-                result: Mighty fallen tree spans the river
+                text: Mighty fallen tree spans the river
               - <<: *Landmark.8
-                result: Muddy landing
+                text: Muddy landing
               - <<: *Landmark.9
-                result: Old dock perched over the water
+                text: Old dock perched over the water
               - <<: *Landmark.10
-                result: Plunging series of terraced waterfalls
+                text: Plunging series of terraced waterfalls
               - <<: *Landmark.11
-                result: Remains of an old bridge
+                text: Remains of an old bridge
               - <<: *Landmark.12
-                result: River-fed lake
+                text: River-fed lake
               - <<: *Landmark.13
-                result: Sandy shoal in the midst of the river
+                text: Sandy shoal in the midst of the river
               - <<: *Landmark.14
-                result: Shadowy passage flanked by tall cliffs
+                text: Shadowy passage flanked by tall cliffs
               - <<: *Landmark.15
-                result: Shallow ford
+                text: Shallow ford
               - <<: *Landmark.16
-                result: Snaking, slow-moving watercourse
+                text: Snaking, slow-moving watercourse
               - <<: *Landmark.17
-                result: Strong current leading to a high waterfall
+                text: Strong current leading to a high waterfall
               - <<: *Landmark.18
-                result: Trees crowd the river's edge
+                text: Trees crowd the river's edge
               - <<: *Landmark.19
-                result: Wrecked ship or boat
+                text: Wrecked ship or boat
 
           scrub:
             _source: *Source
             name: Scrub
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *scrub.summary
             rows:
               - <<: *Landmark.0
-                result: Abandoned homestead
+                text: Abandoned homestead
               - <<: *Landmark.1
-                result: Cavernous sinkhole
+                text: Cavernous sinkhole
               - <<: *Landmark.2
-                result: Craggy outcroppings
+                text: Craggy outcroppings
               - <<: *Landmark.3
-                result: Crumbling stone wall
+                text: Crumbling stone wall
               - <<: *Landmark.4
-                result: Expanse of deep, sucking mud
+                text: Expanse of deep, sucking mud
               - <<: *Landmark.5
-                result: Field of blooming wildflowers
+                text: Field of blooming wildflowers
               - <<: *Landmark.6
-                result: Field of shoulder-high grasses
+                text: Field of shoulder-high grasses
               - <<: *Landmark.7
-                result: Large insect mounds
+                text: Large insect mounds
               - <<: *Landmark.8
-                result: Maze of trails through dense shrubs
+                text: Maze of trails through dense shrubs
               - <<: *Landmark.9
-                result: Meandering river or stream
+                text: Meandering river or stream
               - <<: *Landmark.10
-                result: Misty hollow
+                text: Misty hollow
               - <<: *Landmark.11
-                result: Old stone road
+                text: Old stone road
               - <<: *Landmark.12
-                result: Plain of rugged, exposed rock
+                text: Plain of rugged, exposed rock
               - <<: *Landmark.13
-                result: Scattered stones of a fallen structure
+                text: Scattered stones of a fallen structure
               - <<: *Landmark.14
-                result: Spring-fed lake or pond
+                text: Spring-fed lake or pond
               - <<: *Landmark.15
-                result: Stand of spindly trees
+                text: Stand of spindly trees
               - <<: *Landmark.16
-                result: Thorny thicket
+                text: Thorny thicket
               - <<: *Landmark.17
-                result: Towering, solitary tree
+                text: Towering, solitary tree
               - <<: *Landmark.18
-                result: Watering hole
+                text: Watering hole
               - <<: *Landmark.19
-                result: Weathered burial mounds
+                text: Weathered burial mounds
 
           shore:
             _source: *Source
             name: Shore
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *shore.summary
             rows:
               - <<: *Landmark.0
-                result: Approaching or anchored ship
+                text: Approaching or anchored ship
               - <<: *Landmark.1
-                result: Beached shipwreck
+                text: Beached shipwreck
               - <<: *Landmark.2
-                result: Black sand beach
+                text: Black sand beach
               - <<: *Landmark.3
-                result: Craggy rocks and tide pools
+                text: Craggy rocks and tide pools
               - <<: *Landmark.4
-                result: Geometric columns of volcanic rock
+                text: Geometric columns of volcanic rock
               - <<: *Landmark.5
-                result: Grassy dunes
+                text: Grassy dunes
               - <<: *Landmark.6
-                result: Landed boat
+                text: Landed boat
               - <<: *Landmark.7
-                result: Mangrove thicket
+                text: Mangrove thicket
               - <<: *Landmark.8
-                result: Picturesque sandy beach
+                text: Picturesque sandy beach
               - <<: *Landmark.9
-                result: River outlet
+                text: River outlet
               - <<: *Landmark.10
-                result: Rocky shelf with geysering blowholes
+                text: Rocky shelf with geysering blowholes
               - <<: *Landmark.11
-                result: Saltwater gorge
+                text: Saltwater gorge
               - <<: *Landmark.12
-                result: Sandspit connecting to a rocky islet
+                text: Sandspit connecting to a rocky islet
               - <<: *Landmark.13
-                result: Seals basking on rocky outcroppings
+                text: Seals basking on rocky outcroppings
               - <<: *Landmark.14
-                result: Squawking seabirds circling tall rocks
+                text: Squawking seabirds circling tall rocks
               - <<: *Landmark.15
-                result: Stormswept debris
+                text: Stormswept debris
               - <<: *Landmark.16
-                result: Tall seaside cliffs
+                text: Tall seaside cliffs
               - <<: *Landmark.17
-                result: Watery sea cave
+                text: Watery sea cave
               - <<: *Landmark.18
-                result: Wave-swept pebble beach
+                text: Wave-swept pebble beach
               - <<: *Landmark.19
-                result: Wide, saltwater channel
+                text: Wide, saltwater channel
 
           swamp:
             _source: *Source
             name: Swamp
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *swamp.summary
             rows:
               - <<: *Landmark.0
-                result: Abandoned boat or raft
+                text: Abandoned boat or raft
               - <<: *Landmark.1
-                result: Ancient tree with sprawling root system
+                text: Ancient tree with sprawling root system
               - <<: *Landmark.2
-                result: Barricade of rotting logs
+                text: Barricade of rotting logs
               - <<: *Landmark.3
-                result: Crumbling, moss-covered monument
+                text: Crumbling, moss-covered monument
               - <<: *Landmark.4
-                result: Dank cave hung with curtains of moss
+                text: Dank cave hung with curtains of moss
               - <<: *Landmark.5
-                result: Decaying, half-sunk homestead
+                text: Decaying, half-sunk homestead
               - <<: *Landmark.6
-                result: Dense canopy of intertwined branches
+                text: Dense canopy of intertwined branches
               - <<: *Landmark.7
-                result: Insects swarm above stangnant water
+                text: Insects swarm above stangnant water
               - <<: *Landmark.8
-                result: Large sandy island topped by trees
+                text: Large sandy island topped by trees
               - <<: *Landmark.9
-                result: Murky waterway through misty woods
+                text: Murky waterway through misty woods
               - <<: *Landmark.10
-                result: Pond filled with fragrant, floating flowers
+                text: Pond filled with fragrant, floating flowers
               - <<: *Landmark.11
-                result: Ramshackle bridges connect dry land
+                text: Ramshackle bridges connect dry land
               - <<: *Landmark.12
-                result: Rocky hillock
+                text: Rocky hillock
               - <<: *Landmark.13
-                result: Slow-moving, muddy channel
+                text: Slow-moving, muddy channel
               - <<: *Landmark.14
-                result: Solitary hut on stilts
+                text: Solitary hut on stilts
               - <<: *Landmark.15
-                result: Stirrings of a large creature
+                text: Stirrings of a large creature
               - <<: *Landmark.16
-                result: Tangled thicket of tree roots and shrubs
+                text: Tangled thicket of tree roots and shrubs
               - <<: *Landmark.17
-                result: Thick vegetation in mucky soil
+                text: Thick vegetation in mucky soil
               - <<: *Landmark.18
-                result: Watery maze of towering tree trunks
+                text: Watery maze of towering tree trunks
               - <<: *Landmark.19
-                result: Wrecked ship or boat
+                text: Wrecked ship or boat
 
           wastes:
             _source: *Source
             name: Wastes
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *wastes.summary
             rows:
               - <<: *Landmark.0
-                result: Carrion birds roosting in a dead tree
+                text: Carrion birds roosting in a dead tree
               - <<: *Landmark.1
-                result: Dried riverbed
+                text: Dried riverbed
               - <<: *Landmark.2
-                result: Freshwater spring oasis
+                text: Freshwater spring oasis
               - <<: *Landmark.3
-                result: Maze of wind-carved spires
+                text: Maze of wind-carved spires
               - <<: *Landmark.4
-                result: Narrow trail through steep-sided ravine
+                text: Narrow trail through steep-sided ravine
               - <<: *Landmark.5
-                result: Natural stone bridge spans a canyon
+                text: Natural stone bridge spans a canyon
               - <<: *Landmark.6
-                result: Parched lakebed
+                text: Parched lakebed
               - <<: *Landmark.7
-                result: Petrified forest
+                text: Petrified forest
               - <<: *Landmark.8
-                result: Plain of rocky rubble
+                text: Plain of rocky rubble
               - <<: *Landmark.9
-                result: Shadowy cave
+                text: Shadowy cave
               - <<: *Landmark.10
-                result: Sprawling skeletal remains
+                text: Sprawling skeletal remains
               - <<: *Landmark.11
-                result: Expanse of shifting, loose sand
+                text: Expanse of shifting, loose sand
               - <<: *Landmark.12
-                result: Towering stone arches
+                text: Towering stone arches
               - <<: *Landmark.13
-                result: Abandoned mineshaft
+                text: Abandoned mineshaft
               - <<: *Landmark.14
-                result: Fossilized tracks of an ancient beast
+                text: Fossilized tracks of an ancient beast
               - <<: *Landmark.15
-                result: Rainbow-hued rock formations
+                text: Rainbow-hued rock formations
               - <<: *Landmark.16
-                result: Rock walls with ancient petroglyphs
+                text: Rock walls with ancient petroglyphs
               - <<: *Landmark.17
-                result: Half-buried statue
+                text: Half-buried statue
               - <<: *Landmark.18
-                result: Sun-bleached bones of a leviathan
+                text: Sun-bleached bones of a leviathan
               - <<: *Landmark.19
-                result: Animal tracks in the sand
+                text: Animal tracks in the sand
 
           woodland:
             _source: *Source
             name: Woodland
-            oracle_type: table_simple
+            oracle_type: table_basic
             summary: *woodland.summary
             rows:
               - <<: *Landmark.0
-                result: Cave tucked behind a misty waterfall
+                text: Cave tucked behind a misty waterfall
               - <<: *Landmark.1
-                result: Game trail leads through dense wood
+                text: Game trail leads through dense wood
               - <<: *Landmark.2
-                result: Gloomy, twisted tree
+                text: Gloomy, twisted tree
               - <<: *Landmark.3
-                result: Grassy glade
+                text: Grassy glade
               - <<: *Landmark.4
-                result: Grove of tall ferns
+                text: Grove of tall ferns
               - <<: *Landmark.5
-                result: Large, mirror-like lake
+                text: Large, mirror-like lake
               - <<: *Landmark.6
-                result: Mushrooms thrive in a shadowy thicket
+                text: Mushrooms thrive in a shadowy thicket
               - <<: *Landmark.7
-                result: Old stone bridge over a stream
+                text: Old stone bridge over a stream
               - <<: *Landmark.8
-                result: Pond sheltered by close-packed trees
+                text: Pond sheltered by close-packed trees
               - <<: *Landmark.9
-                result: Ring of standing stones
+                text: Ring of standing stones
               - <<: *Landmark.10
-                result: Rocky promontory
+                text: Rocky promontory
               - <<: *Landmark.11
-                result: Ropes and bridges connect tall trees
+                text: Ropes and bridges connect tall trees
               - <<: *Landmark.12
-                result: Scorched trees and ashy ground
+                text: Scorched trees and ashy ground
               - <<: *Landmark.13
-                result: Stand of ancient trees with huge trunks
+                text: Stand of ancient trees with huge trunks
               - <<: *Landmark.14
-                result: Towering, lightning-split tree
+                text: Towering, lightning-split tree
               - <<: *Landmark.15
-                result: Tract of barren, clear-cut ground
+                text: Tract of barren, clear-cut ground
               - <<: *Landmark.16
-                result: Trees carved with faces
+                text: Trees carved with faces
               - <<: *Landmark.17
-                result: Widespread thicket of prickly shrubs
+                text: Widespread thicket of prickly shrubs
               - <<: *Landmark.18
-                result: Wildflower meadow
+                text: Wildflower meadow
               - <<: *Landmark.19
-                result: Well-used walking path
+                text: Well-used walking path

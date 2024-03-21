@@ -25,7 +25,7 @@ oracles:
         # usage:
         #   initial: true
         #   requires: *attr:Location.Any
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         contents:
           planetside:
             name: Planetside
@@ -34,20 +34,20 @@ oracles:
                 location: planetside
             # source: *CollectionSource
             icon: icon/oracles/location/planetside.svg
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires: *attr:Location.Planetside
             rows:
               - min: 1
                 max: 25
-                result: Starship
+                text: Starship
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/starship
                 # *attr:DerelictType.Starship
               - min: 26
                 max: 100
-                result: Settlement
+                text: Settlement
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/settlement
@@ -59,19 +59,19 @@ oracles:
                 location: orbital
             # source: *CollectionSource
             icon: icon/oracles/location/orbital.svg
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires: *attr:Location.Orbital
             rows:
               - min: 1
                 max: 40
-                result: Starship
+                text: Starship
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/starship
               - min: 41
                 max: 100
-                result: Settlement
+                text: Settlement
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/settlement
@@ -82,19 +82,19 @@ oracles:
                 location: deep_space
             # source: *CollectionSource
             icon: icon/oracles/location/deep_space.svg
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires: *attr:Location.DeepSpace
             rows:
               - min: 1
                 max: 75
-                result: Starship
+                text: Starship
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/starship
               - min: 76
                 max: 100
-                result: Settlement
+                text: Settlement
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/settlement
@@ -104,26 +104,26 @@ oracles:
           <<: *Source
           page: 351
         summary: &Zones.Summary If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         contents:
           starship:
             name: Starship
             # source: *CollectionSource
             summary: *Zones.Summary
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires:
             #     attributes:
             #       derelict_type: [starship]
             rows:
               - <<: &ZoneRow.0
-                  result: '[Access](id:starforged/collections/oracles/derelicts/access)'
+                  text: '[Access](id:starforged/collections/oracles/derelicts/access)'
                   icon: icons/derelicts/access.svg
                 min: null
                 max: null
                 # game_objects: *obj:DerelictZone.Access
               - <<: &ZoneRow.1
-                  result: '[Community](id:starforged/collections/oracles/derelicts/community)'
+                  text: '[Community](id:starforged/collections/oracles/derelicts/community)'
                   icon: icons/derelicts/community.svg
                 min: 1
                 max: 5
@@ -131,44 +131,44 @@ oracles:
               - min: 6
                 max: 30
                 <<: &ZoneRow.2
-                  result: '[Engineering](id:starforged/collections/oracles/derelicts/engineering)'
+                  text: '[Engineering](id:starforged/collections/oracles/derelicts/engineering)'
                   icon: icons/derelicts/engineering.svg
                 # game_objects: *obj:DerelictZone.Engineering
               - min: 31
                 max: 55
                 <<: &ZoneRow.3
-                  result: '[Living](id:starforged/collections/oracles/derelicts/living)'
+                  text: '[Living](id:starforged/collections/oracles/derelicts/living)'
                   icon: icons/derelicts/living.svg
                   # game_objects: *obj:DerelictZone.Living
               - min: 56
                 max: 65
                 <<: &ZoneRow.4
-                  result: '[Medical](id:starforged/collections/oracles/derelicts/medical)'
+                  text: '[Medical](id:starforged/collections/oracles/derelicts/medical)'
                   icon: icons/derelicts/medical.svg
                 # game_objects: *obj:DerelictZone.Medical
               - min: 66
                 max: 85
                 <<: &ZoneRow.5
-                  result: '[Operations](id:starforged/collections/oracles/derelicts/operations)'
+                  text: '[Operations](id:starforged/collections/oracles/derelicts/operations)'
                   icon: icons/derelicts/operations.svg
                 # game_objects: *obj:DerelictZone.Operations
               - min: 86
                 max: 90
                 <<: &ZoneRow.6
-                  result: '[Production](id:starforged/collections/oracles/derelicts/production)'
+                  text: '[Production](id:starforged/collections/oracles/derelicts/production)'
                   icon: icons/derelicts/production.svg
                 # game_objects: *obj:DerelictZone.Production
               - min: 91
                 max: 100
                 <<: &ZoneRow.7
-                  result: '[Research](id:starforged/collections/oracles/derelicts/research)'
+                  text: '[Research](id:starforged/collections/oracles/derelicts/research)'
                   icon: icons/derelicts/research.svg
                 # game_objects: *obj:DerelictZone.Research
           settlement:
             name: Settlement
             # source: *CollectionSource
             summary: *Zones.Summary
-            oracle_type: column_simple
+            oracle_type: column_basic
             # usage:
             #   requires:
             #     attributes:
@@ -199,35 +199,35 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 348
         rows:
           - min: 1
             max: 40
-            result: Planetside
+            text: Planetside
             icon: icon/oracles/location/planetside.svg
             suggestions:
               oracles:
                 - starforged/oracles/derelicts/type/planetside
           - min: 41
             max: 60
-            result: Orbital
+            text: Orbital
             icon: icon/oracles/location/orbital.svg
             suggestions:
               oracles:
                 - starforged/oracles/derelicts/type/orbital
           - min: 61
             max: 100
-            result: Deep Space
+            text: Deep Space
             icon: icon/oracles/location/deep_space.svg
             suggestions:
               oracles:
                 - starforged/oracles/derelicts/type/deep_space
       condition:
         name: Condition
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 348
@@ -238,25 +238,25 @@ oracles:
         rows:
           - min: 1
             max: 10
-            result: Functional
+            text: Functional
           - min: 11
             max: 30
-            result: Limited power
+            text: Limited power
           - min: 31
             max: 60
-            result: Cold and dark
+            text: Cold and dark
           - min: 61
             max: 90
-            result: Damaged or breached
+            text: Damaged or breached
           - min: 91
             max: 98
-            result: Heavily damaged
+            text: Heavily damaged
           - min: 99
             max: 100
-            result: Impending destruction
+            text: Impending destruction
       outer_first_look:
         name: Outer First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 349
@@ -269,37 +269,37 @@ oracles:
         rows:
           - min: 1
             max: 15
-            result: Blocked access
+            text: Blocked access
           - min: 16
             max: 30
-            result: Corpses
+            text: Corpses
           - min: 31
             max: 45
-            result: Hazardous readings
+            text: Hazardous readings
           - min: 46
             max: 50
-            result: Mutated structure
+            text: Mutated structure
           - min: 51
             max: 60
-            result: Odd orientation
+            text: Odd orientation
           - min: 61
             max: 65
-            result: Overgrown or entangled
+            text: Overgrown or entangled
           - min: 66
             max: 80
-            result: Sending a signal or message
+            text: Sending a signal or message
           - min: 81
             max: 85
-            result: Signs that others are here
+            text: Signs that others are here
           - min: 86
             max: 95
-            result: Stripped exterior
+            text: Stripped exterior
           - min: 96
             max: 100
-            result: Time or reality distortions
+            text: Time or reality distortions
       inner_first_look:
         name: Inner First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: Use these First Look tables for your initial survey of the derelict's interior.
         _source:
           <<: *Source
@@ -314,100 +314,100 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: Abnormal gravity
+            text: Abnormal gravity
           - min: 4
             max: 6
-            result: Active bots
+            text: Active bots
           - min: 7
             max: 9
-            result: Archaic equipment
+            text: Archaic equipment
           - min: 10
             max: 12
-            result: Automated announcements
+            text: Automated announcements
           - min: 13
             max: 15
-            result: Biological infestation
+            text: Biological infestation
           - min: 16
             max: 18
-            result: Charred surfaces
+            text: Charred surfaces
           - min: 19
             max: 21
-            result: Claw marks
+            text: Claw marks
           - min: 22
             max: 24
-            result: Cluttered with debris
+            text: Cluttered with debris
           - min: 25
             max: 27
-            result: Corroded surfaces
+            text: Corroded surfaces
           - min: 28
             max: 30
-            result: Cramped spaces
+            text: Cramped spaces
           - min: 31
             max: 33
-            result: Creaking hull
+            text: Creaking hull
           - min: 34
             max: 36
-            result: Esoteric writing or symbols
+            text: Esoteric writing or symbols
           - min: 37
             max: 39
-            result: Evidence of new inhabitants
+            text: Evidence of new inhabitants
           - min: 40
             max: 42
-            result: Exposed wiring or conduits
+            text: Exposed wiring or conduits
           - min: 43
             max: 45
-            result: Flashing strobe lights
+            text: Flashing strobe lights
           - min: 46
             max: 48
-            result: Fluctuating power
+            text: Fluctuating power
           - min: 49
             max: 51
-            result: Haunting visions of the dead
+            text: Haunting visions of the dead
           - min: 52
             max: 54
-            result: Hazardous temperature
+            text: Hazardous temperature
           - min: 55
             max: 57
-            result: Heavy steam or moisture
+            text: Heavy steam or moisture
           - min: 58
             max: 60
-            result: Littered with corpses
+            text: Littered with corpses
           - min: 61
             max: 63
-            result: Nesting or feeding creatures
+            text: Nesting or feeding creatures
           - min: 64
             max: 66
-            result: Ornate furnishings
+            text: Ornate furnishings
           - min: 67
             max: 69
-            result: Scarred by gunfire
+            text: Scarred by gunfire
           - min: 70
             max: 72
-            result: Sealed against intruders
+            text: Sealed against intruders
           - min: 73
             max: 75
-            result: Signs of looting or scavenging
+            text: Signs of looting or scavenging
           - min: 76
             max: 78
-            result: Smell of decay
+            text: Smell of decay
           - min: 79
             max: 81
-            result: Splattered with blood
+            text: Splattered with blood
           - min: 82
             max: 84
-            result: Temporal distortions
+            text: Temporal distortions
           - min: 85
             max: 87
-            result: Thick haze or smoke
+            text: Thick haze or smoke
           - min: 88
             max: 90
-            result: Unstable energy surges
+            text: Unstable energy surges
           - min: 91
             max: 93
-            result: Watchful AI
+            text: Watchful AI
           - min: 94
             max: 100
-            result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+            text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
             oracle_rolls:
               - oracle: starforged/oracles/core/descriptor
                 auto: true

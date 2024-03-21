@@ -16,13 +16,13 @@ public enum OracleDuplicateBehavior {
     KEEP,
 
     /**
-     * Duplicates should be kept, and they compound to make things worse.
+     * Duplicate results should be kept, and they compound to make things worse.
      */
     @JsonProperty("make_it_worse")
     MAKE_IT_WORSE,
 
     /**
-     * Duplicates results should be re-rolled.
+     * Duplicate results should be re-rolled.
      */
     @JsonProperty("reroll")
     REROLL,

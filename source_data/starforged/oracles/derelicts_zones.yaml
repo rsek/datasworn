@@ -23,7 +23,7 @@ oracles:
         contents:
           area:
             <<: &Area
-              oracle_type: table_simple
+              oracle_type: table_basic
               name: Area
               summary: |-
                 Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.
@@ -31,97 +31,97 @@ oracles:
             rows:
               - min: 1
                 max: 50
-                result: Corridor
+                text: Corridor
               - min: 51
                 max: 60
-                result: Stairs
+                text: Stairs
               - min: 61
                 max: 70
-                result: Lift or elevator
+                text: Lift or elevator
               - min: 71
                 max: 80
-                result: Catwalk or bridge
+                text: Catwalk or bridge
               - min: 81
                 max: 85
-                result: Vertical shaft or ladder
+                text: Vertical shaft or ladder
               - min: 86
                 max: 90
-                result: Hub or intersection
+                text: Hub or intersection
               - min: 91
                 max: 95
-                result: Crawl space or duct
+                text: Crawl space or duct
               - min: 96
                 max: 100
-                result: Airlock or external
+                text: Airlock or external
           feature:
             <<: &Feature
               name: Feature
-              oracle_type: table_simple
+              oracle_type: table_basic
               summary: |-
                 Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.
             _source: *CollectionSource
             rows:
               - min: 1
                 max: 5
-                result: Abandoned gear
+                text: Abandoned gear
               - min: 6
                 max: 10
-                result: Blood trail
+                text: Blood trail
               - min: 11
                 max: 15
-                result: Breached door or hatch
+                text: Breached door or hatch
               - min: 16
                 max: 20
-                result: Control or terminal station
+                text: Control or terminal station
               - min: 21
                 max: 25
-                result: Corpse
+                text: Corpse
               - min: 26
                 max: 30
-                result: Dismantled equipment
+                text: Dismantled equipment
               - min: 31
                 max: 35
-                result: Flashing strobes
+                text: Flashing strobes
               - min: 36
                 max: 40
-                result: Leaking pipes
+                text: Leaking pipes
               - min: 41
                 max: 45
-                result: Makeshift barricade
+                text: Makeshift barricade
               - min: 46
                 max: 50
-                result: Opened or missing panels
+                text: Opened or missing panels
               - min: 51
                 max: 55
-                result: Organic growths
+                text: Organic growths
               - min: 56
                 max: 60
-                result: Ruined bot
+                text: Ruined bot
               - min: 61
                 max: 65
-                result: Scrawled warning
+                text: Scrawled warning
               - min: 66
                 max: 70
-                result: Sealed breach
+                text: Sealed breach
               - min: 71
                 max: 75
-                result: Sounds of movement
+                text: Sounds of movement
               - min: 76
                 max: 80
-                result: Steam or smoke
+                text: Steam or smoke
               - min: 81
                 max: 85
-                result: Wandering bot
+                text: Wandering bot
               - min: 86
                 max: 90
-                result: Windows or viewports
+                text: Windows or viewports
               - min: 91
                 max: 95
-                result: Wrecked passage or debris
+                text: Wrecked passage or debris
               - min: 96
                 max: 100
                 <<: &DescriptorFocus
-                  result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls:
                     - oracle: starforged/oracles/core/descriptor
                       auto: true
@@ -130,7 +130,7 @@ oracles:
           peril:
             <<: &Peril
               name: Peril
-              oracle_type: table_simple
+              oracle_type: table_basic
               summary: |-
                 Roll on this table when you want help envisioning a complication or danger within a zone, such as when suffering a cost as an outcome of your exploration.
             _source: *CollectionSource
@@ -138,43 +138,43 @@ oracles:
               - &Peril.0
                 min: 1
                 max: 10
-                result: Alarm or failsafe is triggered
+                text: Alarm or failsafe is triggered
               - &Peril.1
                 min: 11
                 max: 20
-                result: Automated defenses
+                text: Automated defenses
               - &Peril.2
                 min: 21
                 max: 30
-                result: Blocked or sealed path
+                text: Blocked or sealed path
               - &Peril.3
                 min: 31
                 max: 40
-                result: Dreadful scene of death or violence
+                text: Dreadful scene of death or violence
               - &Peril.4
                 min: 41
                 max: 50
-                result: Foe closes in
+                text: Foe closes in
               - &Peril.5
                 min: 51
                 max: 60
-                result: Gear is failing or broken
+                text: Gear is failing or broken
               - &Peril.6
                 min: 61
                 max: 70
-                result: Hazardous environmental change
+                text: Hazardous environmental change
               - &Peril.7
                 min: 71
                 max: 80
-                result: Path is trapped
+                text: Path is trapped
               - &Peril.8
                 min: 81
                 max: 90
-                result: Unsettling sound or disturbance
+                text: Unsettling sound or disturbance
               - &Peril.9
                 min: 91
                 max: 98
-                result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+                text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                     auto: true
@@ -183,14 +183,14 @@ oracles:
               - &Peril.10
                 min: 99
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
           opportunity:
             _source: *CollectionSource
             <<: &Opportunity
-              oracle_type: table_simple
+              oracle_type: table_basic
               name: Opportunity
               summary: |-
                 Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.
@@ -198,23 +198,23 @@ oracles:
               - &Opportunity.0
                 min: 1
                 max: 20
-                result: Directions, shortcut, or alternate path
+                text: Directions, shortcut, or alternate path
               - &Opportunity.1
                 min: 21
                 max: 40
-                result: Encounter with a friendly survivor, explorer, or denizen
+                text: Encounter with a friendly survivor, explorer, or denizen
               - &Opportunity.2
                 min: 41
                 max: 60
-                result: Hopeful signs of life
+                text: Hopeful signs of life
               - &Opportunity.3
                 min: 61
                 max: 80
-                result: Opening to outmaneuver or escape a threat or foe
+                text: Opening to outmaneuver or escape a threat or foe
               - &Opportunity.4
                 min: 81
                 max: 100
-                result: Useful equipment
+                text: Useful equipment
       community:
         name: Community
         oracle_type: tables
@@ -230,51 +230,51 @@ oracles:
               - &Area.0
                 min: 1
                 max: 8
-                result: Bar or club
+                text: Bar or club
               - &Area.1
                 min: 9
                 max: 16
-                result: Classroom or education
+                text: Classroom or education
               - &Area.2
                 min: 17
                 max: 24
-                result: Concourse or hub
+                text: Concourse or hub
               - &Area.3
                 min: 25
                 max: 32
-                result: Entertainment
+                text: Entertainment
               - &Area.4
                 min: 33
                 max: 40
-                result: Gym or fitness
+                text: Gym or fitness
               - &Area.5
                 min: 41
                 max: 48
-                result: Market or trade
+                text: Market or trade
               - &Area.6
                 min: 49
                 max: 56
-                result: Park or garden
+                text: Park or garden
               - &Area.7
                 min: 57
                 max: 64
-                result: Promenade or overlook
+                text: Promenade or overlook
               - &Area.8
                 min: 65
                 max: 72
-                result: Restaurant or dining
+                text: Restaurant or dining
               - &Area.9
                 min: 73
                 max: 80
-                result: Temple or chapel
+                text: Temple or chapel
               - &Area.10
                 min: 81
                 max: 85
-                result: New zone
+                text: New zone
               - &Area.11
                 min: 86
                 max: 100
-                result: New zone via [Access](id:starforged/collections/oracles/derelicts/access)
+                text: New zone via [Access](id:starforged/collections/oracles/derelicts/access)
           feature:
             <<: *Feature
             _source: *CollectionSource
@@ -282,47 +282,47 @@ oracles:
               - &Feature.0
                 min: 1
                 max: 8
-                result: Ad-hoc memorials
+                text: Ad-hoc memorials
               - &Feature.1
                 min: 9
                 max: 16
-                result: Art depicting historic event
+                text: Art depicting historic event
               - &Feature.2
                 min: 17
                 max: 24
-                result: Artificial environment
+                text: Artificial environment
               - &Feature.3
                 min: 25
                 max: 32
-                result: Automated announcements
+                text: Automated announcements
               - &Feature.4
                 min: 33
                 max: 40
-                result: Barricaded area
+                text: Barricaded area
               - &Feature.5
                 min: 41
                 max: 48
-                result: Gaming devices or interfaces
+                text: Gaming devices or interfaces
               - &Feature.6
                 min: 49
                 max: 56
-                result: Graffiti or vandalization
+                text: Graffiti or vandalization
               - &Feature.7
                 min: 57
                 max: 64
-                result: Guard post or surveillance
+                text: Guard post or surveillance
               - &Feature.8
                 min: 65
                 max: 72
-                result: Mass grave or corpses
+                text: Mass grave or corpses
               - &Feature.9
                 min: 73
                 max: 80
-                result: Panoramic viewport
+                text: Panoramic viewport
               - &Feature.10
                 min: 81
                 max: 88
-                result: Rubble or debris
+                text: Rubble or debris
               - &Feature.11
                 <<: *DescriptorFocus
                 min: 89
@@ -332,23 +332,23 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Biological infestation
+                text: Biological infestation
               - <<: *Peril.1
-                result: Breached or broken structure
+                text: Breached or broken structure
               - <<: *Peril.2
-                result: Distressing signs of mass violence or death
+                text: Distressing signs of mass violence or death
               - <<: *Peril.3
-                result: Flooded environment
+                text: Flooded environment
               - <<: *Peril.4
-                result: Foe lurks within concealment
+                text: Foe lurks within concealment
               - <<: *Peril.5
-                result: Fragile structural integrity
+                text: Fragile structural integrity
               - <<: *Peril.6
-                result: Haunting vision of life here before the fall
+                text: Haunting vision of life here before the fall
               - <<: *Peril.7
-                result: Hazardous environmental change
+                text: Hazardous environmental change
               - <<: *Peril.8
-                result: Heartbreaking memento of lost lives
+                text: Heartbreaking memento of lost lives
               - *Peril.9
               - *Peril.10
           opportunity:
@@ -356,15 +356,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Culturally significant object or artifact
+                text: Culturally significant object or artifact
               - <<: *Opportunity.1
-                result: Salvageable goods or resources
+                text: Salvageable goods or resources
               - <<: *Opportunity.2
-                result: Secure area offers a moment of peace
+                text: Secure area offers a moment of peace
               - <<: *Opportunity.3
-                result: Terminal with access to site details
+                text: Terminal with access to site details
               - <<: *Opportunity.4
-                result: Valuable item
+                text: Valuable item
       engineering:
         name: Engineering
         oracle_type: tables
@@ -378,25 +378,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Area.0
-                result: Control room
+                text: Control room
               - <<: *Area.1
-                result: Engine room or power core
+                text: Engine room or power core
               - <<: *Area.2
-                result: Engineering offices
+                text: Engineering offices
               - <<: *Area.3
-                result: Equipment storage
+                text: Equipment storage
               - <<: *Area.4
-                result: Fuel or coolant tanks
+                text: Fuel or coolant tanks
               - <<: *Area.5
-                result: Life support
+                text: Life support
               - <<: *Area.6
-                result: Maintenance tube
+                text: Maintenance tube
               - <<: *Area.7
-                result: Vehicle bay or garage
+                text: Vehicle bay or garage
               - <<: *Area.8
-                result: Water processing
+                text: Water processing
               - <<: *Area.9
-                result: Workshop
+                text: Workshop
               - *Area.10
               - *Area.11
           feature:
@@ -404,50 +404,50 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Cluttered workbench
+                text: Cluttered workbench
               - <<: *Feature.1
-                result: Control terminal
+                text: Control terminal
               - <<: *Feature.2
-                result: Crane or lift
+                text: Crane or lift
               - <<: *Feature.3
-                result: Disassembled equipment
+                text: Disassembled equipment
               - <<: *Feature.4
-                result: Flickering status monitors
+                text: Flickering status monitors
               - <<: *Feature.5
-                result: Jury-rigged equipment
+                text: Jury-rigged equipment
               - <<: *Feature.6
-                result: Multilevel layout
+                text: Multilevel layout
               - <<: *Feature.7
-                result: Pipes and valves
+                text: Pipes and valves
               - <<: *Feature.8
-                result: Sharp ozone smell
+                text: Sharp ozone smell
               - <<: *Feature.9
-                result: Unfinished project
+                text: Unfinished project
               - <<: *Feature.10
-                result: Utility bots
+                text: Utility bots
               - *Feature.11
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Corrosive leak
+                text: Corrosive leak
               - <<: *Peril.1
-                result: Erratic utility bots
+                text: Erratic utility bots
               - <<: *Peril.2
-                result: Failing equipment requires a specific part or skill
+                text: Failing equipment requires a specific part or skill
               - <<: *Peril.3
-                result: Fire or energy surge
+                text: Fire or energy surge
               - <<: *Peril.4
-                result: Precarious or broken path
+                text: Precarious or broken path
               - <<: *Peril.5
-                result: Radioactive hotspot
+                text: Radioactive hotspot
               - <<: *Peril.6
-                result: Sabotaged equipment
+                text: Sabotaged equipment
               - <<: *Peril.7
-                result: Shrouded atmosphere conceals a lurking foe
+                text: Shrouded atmosphere conceals a lurking foe
               - <<: *Peril.8
-                result: Unstable or failing power core
+                text: Unstable or failing power core
               - *Peril.9
               - *Peril.10
           opportunity:
@@ -455,15 +455,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Advanced or experimental equipment
+                text: Advanced or experimental equipment
               - <<: *Opportunity.1
-                result: Chance to restore power or function
+                text: Chance to restore power or function
               - <<: *Opportunity.2
-                result: Helpful plans or schematics
+                text: Helpful plans or schematics
               - <<: *Opportunity.3
-                result: Helpful utility bot
+                text: Helpful utility bot
               - <<: *Opportunity.4
-                result: Useful tool or device
+                text: Useful tool or device
       living:
         name: Living
         oracle_type: tables
@@ -477,25 +477,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Area.0
-                result: Food storage
+                text: Food storage
               - <<: *Area.1
-                result: Galley or kitchen
+                text: Galley or kitchen
               - <<: *Area.2
-                result: Laundry
+                text: Laundry
               - <<: *Area.3
-                result: Locker room or storage
+                text: Locker room or storage
               - <<: *Area.4
-                result: Mess hall or dining
+                text: Mess hall or dining
               - <<: *Area.5
-                result: Observation lounge
+                text: Observation lounge
               - <<: *Area.6
-                result: Quarters (communal)
+                text: Quarters (communal)
               - <<: *Area.7
-                result: Quarters (individual)
+                text: Quarters (individual)
               - <<: *Area.8
-                result: Restroom or showers
+                text: Restroom or showers
               - <<: *Area.9
-                result: Sleeping pods
+                text: Sleeping pods
               - *Area.10
               - *Area.11
           feature:
@@ -503,50 +503,50 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Abandoned pet
+                text: Abandoned pet
               - <<: *Feature.1
-                result: Audible music
+                text: Audible music
               - <<: *Feature.2
-                result: Cherished personal item
+                text: Cherished personal item
               - <<: *Feature.3
-                result: Failed barricade
+                text: Failed barricade
               - <<: *Feature.4
-                result: Half-eaten food
+                text: Half-eaten food
               - <<: *Feature.5
-                result: Messages from loved ones
+                text: Messages from loved ones
               - <<: *Feature.6
-                result: Ransacked belongings
+                text: Ransacked belongings
               - <<: *Feature.7
-                result: Remains of the dead
+                text: Remains of the dead
               - <<: *Feature.8
-                result: Scuttling vermin
+                text: Scuttling vermin
               - <<: *Feature.9
-                result: Shrine or altar
+                text: Shrine or altar
               - <<: *Feature.10
-                result: Unusual art
+                text: Unusual art
               - *Feature.11
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Booby trap
+                text: Booby trap
               - <<: *Peril.1
-                result: Distressing written message
+                text: Distressing written message
               - <<: *Peril.2
-                result: Disturbing evidence of exploitive living conditions
+                text: Disturbing evidence of exploitive living conditions
               - <<: *Peril.3
-                result: Dreadful scene of death or violence
+                text: Dreadful scene of death or violence
               - <<: *Peril.4
-                result: Lured into danger by signs of life
+                text: Lured into danger by signs of life
               - <<: *Peril.5
-                result: Recorded message reveals a threat or complication
+                text: Recorded message reveals a threat or complication
               - <<: *Peril.6
-                result: Sealed door or hatch blocks access
+                text: Sealed door or hatch blocks access
               - <<: *Peril.7
-                result: Signs of unwelcome invaders
+                text: Signs of unwelcome invaders
               - <<: *Peril.8
-                result: Unsettling sound or disturbance
+                text: Unsettling sound or disturbance
               - *Peril.9
               - *Peril.10
           opportunity:
@@ -554,15 +554,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Culturally significant object or artifact
+                text: Culturally significant object or artifact
               - <<: *Opportunity.1
-                result: Hidden stash of valuable contraband
+                text: Hidden stash of valuable contraband
               - <<: *Opportunity.2
-                result: Intact barricade or protected area
+                text: Intact barricade or protected area
               - <<: *Opportunity.3
-                result: Recorded message reveals helpful aspects of this site
+                text: Recorded message reveals helpful aspects of this site
               - <<: *Opportunity.4
-                result: Useful personal gear
+                text: Useful personal gear
       medical:
         name: Medical
         oracle_type: tables
@@ -576,25 +576,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Area.0
-                result: Crematorium
+                text: Crematorium
               - <<: *Area.1
-                result: Emergency or triage
+                text: Emergency or triage
               - <<: *Area.2
-                result: Isolation or containment
+                text: Isolation or containment
               - <<: *Area.3
-                result: Medical lab
+                text: Medical lab
               - <<: *Area.4
-                result: Medical offices
+                text: Medical offices
               - <<: *Area.5
-                result: Morgue
+                text: Morgue
               - <<: *Area.6
-                result: Operating room
+                text: Operating room
               - <<: *Area.7
-                result: Pharmacy or drug locker
+                text: Pharmacy or drug locker
               - <<: *Area.8
-                result: Prosthetics workshop
+                text: Prosthetics workshop
               - <<: *Area.9
-                result: Ward or clinic
+                text: Ward or clinic
               - *Area.10
               - *Area.11
           feature:
@@ -602,50 +602,50 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Autopsied corpse
+                text: Autopsied corpse
               - <<: *Feature.1
-                result: Biological specimens
+                text: Biological specimens
               - <<: *Feature.2
-                result: Blood spatter or pools
+                text: Blood spatter or pools
               - <<: *Feature.3
-                result: Bloody medical supplies
+                text: Bloody medical supplies
               - <<: *Feature.4
-                result: Broken prosthetics
+                text: Broken prosthetics
               - <<: *Feature.5
-                result: Corpse of a healer
+                text: Corpse of a healer
               - <<: *Feature.6
-                result: Dissected specimen
+                text: Dissected specimen
               - <<: *Feature.7
-                result: Improvised overflow beds
+                text: Improvised overflow beds
               - <<: *Feature.8
-                result: Medical monitors
+                text: Medical monitors
               - <<: *Feature.9
-                result: Medical records or scans
+                text: Medical records or scans
               - <<: *Feature.10
-                result: Stacks of body bags
+                text: Stacks of body bags
               - *Feature.11
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Disgusting sight / smell
+                text: Disgusting sight / smell
               - <<: *Peril.1
-                result: Disturbing evidence of medical misconduct
+                text: Disturbing evidence of medical misconduct
               - <<: *Peril.2
-                result: Erratic medical bots
+                text: Erratic medical bots
               - <<: *Peril.3
-                result: Evidence of a virulent disease
+                text: Evidence of a virulent disease
               - <<: *Peril.4
-                result: Malfunctioning medical equipment
+                text: Malfunctioning medical equipment
               - <<: *Peril.5
-                result: Repercussions of a medical experiment
+                text: Repercussions of a medical experiment
               - <<: *Peril.6
-                result: Restless dead
+                text: Restless dead
               - <<: *Peril.7
-                result: Signs of a horrific death
+                text: Signs of a horrific death
               - <<: *Peril.8
-                result: Signs of broken quarantine
+                text: Signs of broken quarantine
               - *Peril.9
               - *Peril.10
           opportunity:
@@ -653,15 +653,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Cache of medicine
+                text: Cache of medicine
               - <<: *Opportunity.1
-                result: Clues to a medical mystery
+                text: Clues to a medical mystery
               - <<: *Opportunity.2
-                result: Helpful medical bot
+                text: Helpful medical bot
               - <<: *Opportunity.3
-                result: Unusual or rare specimen
+                text: Unusual or rare specimen
               - <<: *Opportunity.4
-                result: Useful medical equipment
+                text: Useful medical equipment
       operations:
         name: Operations
         oracle_type: tables
@@ -675,25 +675,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Area.0
-                result: Admin or command offices
+                text: Admin or command offices
               - <<: *Area.1
-                result: Armory
+                text: Armory
               - <<: *Area.2
-                result: Bridge or command center
+                text: Bridge or command center
               - <<: *Area.3
-                result: Brig or cells
+                text: Brig or cells
               - <<: *Area.4
-                result: Comms center
+                text: Comms center
               - <<: *Area.5
-                result: Computer core
+                text: Computer core
               - <<: *Area.6
-                result: Conference or briefing room
+                text: Conference or briefing room
               - <<: *Area.7
-                result: Landing bay or hangar
+                text: Landing bay or hangar
               - <<: *Area.8
-                result: Lounge
+                text: Lounge
               - <<: *Area.9
-                result: Security
+                text: Security
               - *Area.10
               - *Area.11
           feature:
@@ -701,50 +701,50 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Automated warning
+                text: Automated warning
               - <<: *Feature.1
-                result: Buckled blast doors
+                text: Buckled blast doors
               - <<: *Feature.2
-                result: Control terminal
+                text: Control terminal
               - <<: *Feature.3
-                result: Emergency lighting
+                text: Emergency lighting
               - <<: *Feature.4
-                result: EV suit storage
+                text: EV suit storage
               - <<: *Feature.5
-                result: Hissing comms channel
+                text: Hissing comms channel
               - <<: *Feature.6
-                result: Intricate control panels
+                text: Intricate control panels
               - <<: *Feature.7
-                result: Map of the site
+                text: Map of the site
               - <<: *Feature.8
-                result: Recorded message
+                text: Recorded message
               - <<: *Feature.9
-                result: Video surveillance monitors
+                text: Video surveillance monitors
               - <<: *Feature.10
-                result: Written logs
+                text: Written logs
               - *Feature.11
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Automated defenses target you
+                text: Automated defenses target you
               - <<: *Peril.1
-                result: Broken equipment limits control
+                text: Broken equipment limits control
               - <<: *Peril.2
-                result: Coded message or puzzling security device
+                text: Coded message or puzzling security device
               - <<: *Peril.3
-                result: Discouraging evidence of failed plans or defenses
+                text: Discouraging evidence of failed plans or defenses
               - <<: *Peril.4
-                result: Displays reveal a new threat elsewhere in this site
+                text: Displays reveal a new threat elsewhere in this site
               - <<: *Peril.5
-                result: Failing power
+                text: Failing power
               - <<: *Peril.6
-                result: Hostile AI
+                text: Hostile AI
               - <<: *Peril.7
-                result: Sealed blast doors block access
+                text: Sealed blast doors block access
               - <<: *Peril.8
-                result: Sensors indicate the arrival of an external threat
+                text: Sensors indicate the arrival of an external threat
               - *Peril.9
               - *Peril.10
           opportunity:
@@ -752,15 +752,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Cache of weapons or ammo
+                text: Cache of weapons or ammo
               - <<: *Opportunity.1
-                result: Helpful AI
+                text: Helpful AI
               - <<: *Opportunity.2
-                result: Keycard or access code
+                text: Keycard or access code
               - <<: *Opportunity.3
-                result: Log offers insight into this site's downfall
+                text: Log offers insight into this site's downfall
               - <<: *Opportunity.4
-                result: Secure area offers a moment of peace
+                text: Secure area offers a moment of peace
       production:
         name: Production
         oracle_type: tables
@@ -774,25 +774,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Area.0
-                result: Airlock or staging area
+                text: Airlock or staging area
               - <<: *Area.1
-                result: Assembly or processing
+                text: Assembly or processing
               - <<: *Area.2
-                result: Cargo bay
+                text: Cargo bay
               - <<: *Area.3
-                result: Equipment storage
+                text: Equipment storage
               - <<: *Area.4
-                result: Exosuit bay
+                text: Exosuit bay
               - <<: *Area.5
-                result: Harvesting or mining platform
+                text: Harvesting or mining platform
               - <<: *Area.6
-                result: Monitoring or control room
+                text: Monitoring or control room
               - <<: *Area.7
-                result: Processed goods storage
+                text: Processed goods storage
               - <<: *Area.8
-                result: Raw materials storage
+                text: Raw materials storage
               - <<: *Area.9
-                result: Scrapyard
+                text: Scrapyard
               - *Area.10
               - *Area.11
           feature:
@@ -800,50 +800,50 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Cargo lifts
+                text: Cargo lifts
               - <<: *Feature.1
-                result: Control panels
+                text: Control panels
               - <<: *Feature.2
-                result: Disassembled machinery
+                text: Disassembled machinery
               - <<: *Feature.3
-                result: Elevated walkways
+                text: Elevated walkways
               - <<: *Feature.4
-                result: Environment suits
+                text: Environment suits
               - <<: *Feature.5
-                result: Ill-fated workers
+                text: Ill-fated workers
               - <<: *Feature.6
-                result: Immense machinery
+                text: Immense machinery
               - <<: *Feature.7
-                result: Sealed or locked containers
+                text: Sealed or locked containers
               - <<: *Feature.8
-                result: Tools
+                text: Tools
               - <<: *Feature.9
-                result: Vats of chemicals or gas
+                text: Vats of chemicals or gas
               - <<: *Feature.10
-                result: Written manifest
+                text: Written manifest
               - *Feature.11
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Claustrophobic spaces
+                text: Claustrophobic spaces
               - <<: *Peril.1
-                result: Dangerous machinery
+                text: Dangerous machinery
               - <<: *Peril.2
-                result: Disturbing evidence of exploited labor
+                text: Disturbing evidence of exploited labor
               - <<: *Peril.3
-                result: Extreme temperatures
+                text: Extreme temperatures
               - <<: *Peril.4
-                result: Hazardous materials
+                text: Hazardous materials
               - <<: *Peril.5
-                result: Impending industrial disaster
+                text: Impending industrial disaster
               - <<: *Peril.6
-                result: Malfunctioning automation
+                text: Malfunctioning automation
               - <<: *Peril.7
-                result: Rivals seek to secure these resources
+                text: Rivals seek to secure these resources
               - <<: *Peril.8
-                result: Signs of an unearthed or manufactured threat
+                text: Signs of an unearthed or manufactured threat
               - *Peril.9
               - *Peril.10
           opportunity:
@@ -851,15 +851,15 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Helpful vehicle or transport
+                text: Helpful vehicle or transport
               - <<: *Opportunity.1
-                result: Rare or valuable resource
+                text: Rare or valuable resource
               - <<: *Opportunity.2
-                result: Salvageable materials
+                text: Salvageable materials
               - <<: *Opportunity.3
-                result: Useful equipment
+                text: Useful equipment
               - <<: *Opportunity.4
-                result: Valuable cargo
+                text: Valuable cargo
       research:
         name: Research
         oracle_type: tables
@@ -873,25 +873,25 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Area.0
-                result: Clean room
+                text: Clean room
               - <<: *Area.1
-                result: Cold storage
+                text: Cold storage
               - <<: *Area.2
-                result: Creature or animal pens
+                text: Creature or animal pens
               - <<: *Area.3
-                result: Decontamination room
+                text: Decontamination room
               - <<: *Area.4
-                result: Hazardous material storage
+                text: Hazardous material storage
               - <<: *Area.5
-                result: Hydroponics or agriculture
+                text: Hydroponics or agriculture
               - <<: *Area.6
-                result: Isolation or containment
+                text: Isolation or containment
               - <<: *Area.7
-                result: Lab
+                text: Lab
               - <<: *Area.8
-                result: Library or records
+                text: Library or records
               - <<: *Area.9
-                result: Secure vault
+                text: Secure vault
               - *Area.10
               - *Area.11
           feature:
@@ -899,50 +899,50 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Feature.0
-                result: Aquarium or tank
+                text: Aquarium or tank
               - <<: *Feature.1
-                result: Biological specimens
+                text: Biological specimens
               - <<: *Feature.2
-                result: Bones or fossils
+                text: Bones or fossils
               - <<: *Feature.3
-                result: Broken equipment
+                text: Broken equipment
               - <<: *Feature.4
-                result: Cryptic research notes
+                text: Cryptic research notes
               - <<: *Feature.5
-                result: Hastily destroyed data
+                text: Hastily destroyed data
               - <<: *Feature.6
-                result: Hazmat suits
+                text: Hazmat suits
               - <<: *Feature.7
-                result: Inscrutable artifact
+                text: Inscrutable artifact
               - <<: *Feature.8
-                result: Invasive plant growth
+                text: Invasive plant growth
               - <<: *Feature.9
-                result: Recorded research log
+                text: Recorded research log
               - <<: *Feature.10
-                result: Spilled chemicals
+                text: Spilled chemicals
               - *Feature.11
           peril:
             <<: *Peril
             _source: *CollectionSource
             rows:
               - <<: *Peril.0
-                result: Automated containment protocols are activated
+                text: Automated containment protocols are activated
               - <<: *Peril.1
-                result: Biological infestation
+                text: Biological infestation
               - <<: *Peril.2
-                result: Dangerous specimen
+                text: Dangerous specimen
               - <<: *Peril.3
-                result: Disturbing outcome of a failed experiment
+                text: Disturbing outcome of a failed experiment
               - <<: *Peril.4
-                result: Evidence of sinister experiments
+                text: Evidence of sinister experiments
               - <<: *Peril.5
-                result: Fragile vault holds a dire threat
+                text: Fragile vault holds a dire threat
               - <<: *Peril.6
-                result: Signs of broken containment
+                text: Signs of broken containment
               - <<: *Peril.7
-                result: Toxic environment
+                text: Toxic environment
               - <<: *Peril.8
-                result: Unstable technology
+                text: Unstable technology
               - *Peril.9
               - *Peril.10
           opportunity:
@@ -950,12 +950,12 @@ oracles:
             _source: *CollectionSource
             rows:
               - <<: *Opportunity.0
-                result: Helpful research data
+                text: Helpful research data
               - <<: *Opportunity.1
-                result: Records of a notable discovery
+                text: Records of a notable discovery
               - <<: *Opportunity.2
-                result: Specialized research tools
+                text: Specialized research tools
               - <<: *Opportunity.3
-                result: Unique prototype
+                text: Unique prototype
               - <<: *Opportunity.4
-                result: Useful navigational data
+                text: Useful navigational data

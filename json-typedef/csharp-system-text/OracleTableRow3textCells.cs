@@ -6,16 +6,10 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Represents a single Feature entry from a delve site Domain card.
+    /// Represents a row in an oracle table with 3 text cells.
     /// </summary>
-    public class DelveSiteDomainFeatureRow
+    public class OracleTableRow3textCells
     {
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("_id")]
-        public DomainFeatureRowId Id { get; set; }
-
         /// <summary>
         /// High end of the dice range for this table row.
         /// </summary>
@@ -33,6 +27,12 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("text")]
         public MarkdownString Text { get; set; }
+
+        [JsonPropertyName("text2")]
+        public MarkdownString Text2 { get; set; }
+
+        [JsonPropertyName("text3")]
+        public MarkdownString Text3 { get; set; }
 
         [JsonPropertyName("_i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

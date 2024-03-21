@@ -19,7 +19,7 @@ oracles:
       activity:
         name: Activity
         canonical_name: 'Character: Activity'
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the [Focus](id:delve/oracles/feature/focus) oracle or [Theme](id:classic/oracles/action_and_theme/theme) oracle.
         suggestions:
           oracles:
@@ -35,206 +35,206 @@ oracles:
                   part_of_speech: gerund
             min: 1
             max: 2
-            result: Guarding
+            text: Guarding
           - <<: *i18n.gerund
             min: 3
             max: 4
-            result: Preserving
+            text: Preserving
           - <<: *i18n.gerund
             min: 5
             max: 6
-            result: Constructing
+            text: Constructing
           - <<: *i18n.gerund
             min: 7
             max: 8
-            result: Mending
+            text: Mending
           - <<: *i18n.gerund
             min: 9
             max: 10
-            result: Assisting
+            text: Assisting
           - <<: *i18n.gerund
             min: 11
             max: 12
-            result: Securing
+            text: Securing
           - <<: *i18n.gerund
             min: 13
             max: 14
-            result: Learning
+            text: Learning
           - <<: *i18n.gerund
             min: 15
             max: 16
-            result: Sneaking
+            text: Sneaking
           - <<: *i18n.gerund
             min: 17
             max: 18
-            result: Fleeing
+            text: Fleeing
           - <<: *i18n.gerund
             min: 19
             max: 20
-            result: Sacrificing
+            text: Sacrificing
           - <<: *i18n.gerund
             min: 21
             max: 22
-            result: Creating
+            text: Creating
           - <<: *i18n.gerund
             min: 23
             max: 24
-            result: Luring
+            text: Luring
           - <<: *i18n.gerund
             min: 25
             max: 26
-            result: Hunting
+            text: Hunting
           - <<: *i18n.gerund
             min: 27
             max: 28
-            result: Seizing
+            text: Seizing
           - <<: *i18n.gerund
             min: 29
             max: 30
-            result: Bargaining
+            text: Bargaining
           - <<: *i18n.gerund
             min: 31
             max: 32
-            result: Mimicking
+            text: Mimicking
           - <<: *i18n.gerund
             min: 33
             max: 34
-            result: Tricking
+            text: Tricking
           - <<: *i18n.gerund
             min: 35
             max: 36
-            result: Tracking
+            text: Tracking
           - <<: *i18n.gerund
             min: 37
             max: 38
-            result: Escorting
+            text: Escorting
           - <<: *i18n.gerund
             min: 39
             max: 40
-            result: Hiding
+            text: Hiding
           - <<: *i18n.gerund
             min: 41
             max: 42
-            result: Raiding
+            text: Raiding
           - <<: *i18n.gerund
             min: 43
             max: 44
-            result: Socializing
+            text: Socializing
           - <<: *i18n.gerund
             min: 45
             max: 46
-            result: Exploring
+            text: Exploring
           - <<: *i18n.gerund
             min: 47
             max: 48
-            result: Journeying
+            text: Journeying
           - <<: *i18n.gerund
             min: 49
             max: 50
-            result: Supporting
+            text: Supporting
           - <<: *i18n.gerund
             min: 51
             max: 52
-            result: Avoiding
+            text: Avoiding
           - <<: *i18n.gerund
             min: 53
             max: 54
-            result: Disabling
+            text: Disabling
           - <<: *i18n.gerund
             min: 55
             max: 56
-            result: Leading
+            text: Leading
           - <<: *i18n.gerund
             min: 57
             max: 58
-            result: Assaulting
+            text: Assaulting
           - <<: *i18n.gerund
             min: 59
             max: 60
-            result: Ensnaring
+            text: Ensnaring
           - <<: *i18n.gerund
             min: 61
             max: 62
-            result: Defending
+            text: Defending
           - <<: *i18n.gerund
             min: 63
             max: 64
-            result: Recovering
+            text: Recovering
           - <<: *i18n.gerund
             min: 65
             max: 66
-            result: Patrolling
+            text: Patrolling
           - <<: *i18n.gerund
             min: 67
             max: 68
-            result: Resting
+            text: Resting
           - <<: *i18n.gerund
             min: 69
             max: 70
-            result: Distracting
+            text: Distracting
           - <<: *i18n.gerund
             min: 71
             max: 72
-            result: Leaving
+            text: Leaving
           - <<: *i18n.gerund
             min: 73
             max: 74
-            result: Fighting
+            text: Fighting
           - <<: *i18n.gerund
             min: 75
             max: 76
-            result: Ambushing
+            text: Ambushing
           - <<: *i18n.gerund
             min: 77
             max: 78
-            result: Controlling
+            text: Controlling
           - <<: *i18n.gerund
             min: 79
             max: 80
-            result: Observing
+            text: Observing
           - <<: *i18n.gerund
             min: 81
             max: 82
-            result: Gathering
+            text: Gathering
           - <<: *i18n.gerund
             min: 83
             max: 84
-            result: Suffering
+            text: Suffering
           - <<: *i18n.gerund
             min: 85
             max: 86
-            result: Threatening
+            text: Threatening
           - <<: *i18n.gerund
             min: 87
             max: 88
-            result: Searching
+            text: Searching
           - <<: *i18n.gerund
             min: 89
             max: 90
-            result: Destroying
+            text: Destroying
           - <<: *i18n.gerund
             min: 91
             max: 92
-            result: Restoring
+            text: Restoring
           - <<: *i18n.gerund
             min: 93
             max: 94
-            result: Consuming
+            text: Consuming
           - <<: *i18n.gerund
             min: 95
             max: 96
-            result: Removing
+            text: Removing
           - <<: *i18n.gerund
             min: 97
             max: 98
-            result: Inspecting
+            text: Inspecting
           - <<: *i18n.gerund
             min: 99
             max: 100
-            result: Summoning
+            text: Summoning
       disposition:
         name: Disposition
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: Use this oracle when you want to define the initial tone of an encounter with an NPC or faction.
         canonical_name: 'Character: Disposition'
         # usage:
@@ -249,48 +249,48 @@ oracles:
                   part_of_speech: adjective
             min: 1
             max: 6
-            result: Helpful
+            text: Helpful
           - <<: *i18n.adjective
             min: 7
             max: 13
-            result: Friendly
+            text: Friendly
           - <<: *i18n.adjective
             min: 14
             max: 20
-            result: Cooperative
+            text: Cooperative
           - <<: *i18n.adjective
             min: 21
             max: 28
-            result: Curious
+            text: Curious
           - <<: *i18n.adjective
             min: 29
             max: 36
-            result: Indifferent
+            text: Indifferent
           - <<: *i18n.adjective
             min: 37
             max: 47
-            result: Suspicious
+            text: Suspicious
           - <<: *i18n.gerund
             min: 48
             max: 57
-            result: Wanting
+            text: Wanting
           - <<: *i18n.adjective
             min: 58
             max: 67
-            result: Desperate
+            text: Desperate
           - <<: *i18n.gerund
             min: 68
             max: 76
-            result: Demanding
+            text: Demanding
           - <<: *i18n.adjective
             min: 77
             max: 85
-            result: Unfriendly
+            text: Unfriendly
           - <<: *i18n.adjective
             min: 86
             max: 93
-            result: Threatening
+            text: Threatening
           - <<: *i18n.adjective
             min: 94
             max: 100
-            result: Hostile
+            text: Hostile

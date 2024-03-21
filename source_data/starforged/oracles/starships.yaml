@@ -18,12 +18,12 @@ oracles:
         _source: &CollectionSource
           <<: *Source
           page: 328
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         # content:
         #   part_of_speech: [fragment]
         #   tags: [objective]
         column_labels:
-          result: Mission
+          text: Mission
         summary: |-
           Use the Starship Mission table when prompted by another oracle, or to flesh out the nature of a ship or fleet which has a flexible or uncertain role. You can also roll to generate the focus of a spaceborne quest.
         # usage:
@@ -38,7 +38,7 @@ oracles:
                 starforged:
                   region: terminus
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             # rendering: &display:Mission
             # usage:
             #   requires:
@@ -48,139 +48,139 @@ oracles:
               - &Mission.0
                 min: 1
                 max: 3
-                result: Blockade a location
+                text: Blockade a location
                 # suggestions: [*roll:Place]
               - &Mission.1
                 min: 4
                 max: 6
-                result: Break a blockade
+                text: Break a blockade
               - &Mission.2
                 min: 7
                 max: 9
-                result: Collect a resource
+                text: Collect a resource
                 # suggestions: [*roll:Object]
               - &Mission.3
                 min: 10
                 max: 11
-                result: Command others
+                text: Command others
               - &Mission.4
                 min: 12
                 max: 14
-                result: Conduct diplomacy
+                text: Conduct diplomacy
               - &Mission.5
                 min: 15
                 max: 17
-                result: Conduct espionage
+                text: Conduct espionage
               - &Mission.6
                 min: 18
                 max: 20
-                result: Conduct piracy
+                text: Conduct piracy
               - &Mission.7
                 min: 21
                 max: 23
-                result: Conduct research
+                text: Conduct research
               - &Mission.8
                 min: 24
                 max: 26
-                result: Defend against an attack
+                text: Defend against an attack
               - &Mission.9
                 min: 27
                 max: 29
-                result: Deliver messages or data
+                text: Deliver messages or data
               - &Mission.10
                 min: 30
                 max: 32
-                result: Establish a settlement
+                text: Establish a settlement
               - &Mission.11
                 min: 33
                 max: 35
-                result: Evacuate a location
+                text: Evacuate a location
                 # suggestions: [*obj:Settlement]
               - &Mission.12
                 min: 36
                 max: 37
-                result: Explore a region
+                text: Explore a region
               - &Mission.13
                 min: 38
                 max: 39
-                result: Hold prisoners
+                text: Hold prisoners
               - &Mission.14
                 min: 40
                 max: 42
-                result: Hunt down another ship
+                text: Hunt down another ship
                 # suggestions: [*obj:Starship]
               - &Mission.15
                 min: 43
                 max: 45
-                result: Launch an attack
+                text: Launch an attack
               - &Mission.16
                 min: 46
                 max: 48
-                result: Patrol an area
+                text: Patrol an area
               - &Mission.17
                 min: 49
                 max: 51
-                result: Provide medical aid
+                text: Provide medical aid
               - &Mission.18
                 min: 52
                 max: 54
-                result: Provide repairs
+                text: Provide repairs
               - &Mission.19
                 min: 55
                 max: 57
-                result: Provide shelter
+                text: Provide shelter
               - &Mission.20
                 min: 58
                 max: 59
-                result: Quarantine a danger
+                text: Quarantine a danger
                 # suggestions: [*roll:Event]
               - &Mission.21
                 min: 60
                 max: 62
-                result: Raid a settlement
+                text: Raid a settlement
                 # suggestions: [*obj:Settlement]
               - &Mission.22
                 min: 63
                 max: 65
-                result: Resupply a settlement
+                text: Resupply a settlement
                 # suggestions: [*obj:Settlement]
               - &Mission.23
                 min: 66
                 max: 68
-                result: Retrieve salvage
+                text: Retrieve salvage
               - &Mission.24
                 min: 69
                 max: 71
-                result: Search and rescue
+                text: Search and rescue
               - &Mission.25
                 min: 72
                 max: 74
-                result: Smuggle cargo
+                text: Smuggle cargo
                 # suggestions: [*roll:Object]
               - &Mission.26
                 min: 75
                 max: 77
-                result: Survey a site
+                text: Survey a site
                 # suggestions: [*roll:Place]
               - &Mission.27
                 min: 78
                 max: 79
-                result: Test a technology
+                text: Test a technology
                 # suggestions: [*roll:Object]
               - &Mission.28
                 min: 80
                 max: 82
-                result: Transport cargo
+                text: Transport cargo
                 # suggestions: [*roll:Object]
               - &Mission.29
                 min: 83
                 max: 85
-                result: Transport passengers
+                text: Transport passengers
                 # suggestions: [*obj:Npc]
               - &Mission.30
                 min: 86
                 max: 90
-                result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+                text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                     auto: true
@@ -189,7 +189,7 @@ oracles:
               - &Mission.31
                 min: 91
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
@@ -199,7 +199,7 @@ oracles:
               tags:
                 starforged:
                   region: outlands
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source: *CollectionSource
             # rendering: *display:Mission
             # usage:
@@ -307,7 +307,7 @@ oracles:
                 starforged:
                   region: expanse
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             # rendering: *display:Mission
             # usage:
             #   requires:
@@ -417,126 +417,126 @@ oracles:
         #   initial: true
         # content:
         #   part_of_speech: [fragment]
-        oracle_type: table_details
+        oracle_type: table_text2
         column_labels:
           roll: Roll
-          result: Class
-          detail: Typical Role
+          text: Class
+          text2: Typical Role
         rows:
           - min: 1
             max: 2
-            result: Carrier
-            detail: Launches fighters
+            text: Carrier
+            text2: Launches fighters
             # set_attributes: {starship_type: [carrier]}
             _i18n: &i18n.result.common_noun
               result:
                 part_of_speech: common_noun
           - min: 3
             max: 6
-            result: Corvette
-            detail: Light attack ship
+            text: Corvette
+            text2: Light attack ship
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [corvette]}
           - min: 7
             max: 11
-            result: Courier
-            detail: Fast transport
+            text: Courier
+            text2: Fast transport
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [courier]}
           - min: 12
             max: 14
-            result: Cruiser
-            detail: Medium attack ship
+            text: Cruiser
+            text2: Medium attack ship
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [cruiser]}
           - min: 15
             max: 16
-            result: Dreadnought
-            detail: Heavy attack ship
+            text: Dreadnought
+            text2: Heavy attack ship
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [dreadnought]}
           - min: 17
             max: 19
-            result: Escape pod
-            detail: Survival craft
+            text: Escape pod
+            text2: Survival craft
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [escape]}
           - min: 20
             max: 22
-            result: Foundry
-            detail: Mobile construction platform
+            text: Foundry
+            text2: Mobile construction platform
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [foundry]}
           - min: 23
             max: 27
-            result: Harvester
-            detail: Fuel or energy excavator
+            text: Harvester
+            text2: Fuel or energy excavator
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [harvester]}
           - min: 28
             max: 33
-            result: Hauler
-            detail: Heavy transport
+            text: Hauler
+            text2: Heavy transport
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hauler]}
           - min: 34
             max: 36
-            result: Hunter
-            detail: Stealthy attack ship
+            text: Hunter
+            text2: Stealthy attack ship
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [hunter]}
           - min: 37
             max: 38
-            result: Ironhome
-            detail: Habitat
+            text: Ironhome
+            text2: Habitat
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [ironhome]}
           - min: 39
             max: 42
-            result: Mender
-            detail: Utility or repair
+            text: Mender
+            text2: Utility or repair
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [mender]}
           - min: 43
             max: 47
-            result: Outbounder
-            detail: Remote survey or research
+            text: Outbounder
+            text2: Remote survey or research
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [outbounder]}
           - min: 48
             max: 50
-            result: Pennant
-            detail: Command ship
+            text: Pennant
+            text2: Command ship
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [pennant]}
           - min: 51
             max: 56
-            result: Prospector
-            detail: Mineral excavator
+            text: Prospector
+            text2: Mineral excavator
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [prospector]}
           - min: 57
             max: 61
-            result: Reclaimer
-            detail: Salvage or rescue
+            text: Reclaimer
+            text2: Salvage or rescue
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [reclaimer]}
           - min: 62
             max: 64
-            result: Shuttle
-            detail: Short-range transport
+            text: Shuttle
+            text2: Short-range transport
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [shuttle]}
           - min: 65
             max: 67
-            result: Snub fighter
-            detail: Small attack craft
+            text: Snub fighter
+            text2: Small attack craft
             _i18n: *i18n.result.common_noun
             # set_attributes: {starship_type: [snub_fighter]}
           - min: 68
             max: 82
-            result: Multipurpose
-            detail: '[Starship Mission](id:starforged/oracles/starships/mission)'
+            text: Multipurpose
+            text2: '[Starship Mission](id:starforged/oracles/starships/mission)'
             oracle_rolls:
               - oracle: starforged/oracles/starships/mission
               # set_attributes: {starship_type: [multipurpose]}]
@@ -545,19 +545,19 @@ oracles:
                 part_of_speech: adjective
           - min: 83
             max: 84
-            result: Unusual or unknown
-            detail: null
+            text: Unusual or unknown
+            text2: null
             _i18n: *i18n.result.adjective
           - min: 85
             max: 94
-            result: '[Fleet](id:starforged/oracles/starships/fleet)'
-            detail: null
+            text: '[Fleet](id:starforged/oracles/starships/fleet)'
+            text2: null
             oracle_rolls:
               - oracle: starforged/oracles/starships/fleet
           - min: 95
             max: 100
-            result: Ships in conflict (roll twice)
-            detail: null
+            text: Ships in conflict (roll twice)
+            text2: null
             oracle_rolls:
               - oracle: starforged/oracles/starships/type
                 duplicates: keep
@@ -565,7 +565,7 @@ oracles:
           # TODO: format the above as a 2nd roll of this table + a game object hint
       fleet:
         name: Fleet
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 326
@@ -574,40 +574,40 @@ oracles:
         rows:
           - min: 1
             max: 10
-            result: Battle fleet
+            text: Battle fleet
             _i18n: *i18n.result.common_noun
           - min: 11
             max: 25
-            result: Pirate wing
+            text: Pirate wing
             _i18n: *i18n.result.common_noun
           - min: 26
             max: 35
-            result: Raider horde
+            text: Raider horde
             _i18n: *i18n.result.common_noun
           - min: 36
             max: 50
-            result: Salvager hive
+            text: Salvager hive
             _i18n: *i18n.result.common_noun
           - min: 51
             max: 60
-            result: Settler caravan
+            text: Settler caravan
             _i18n: *i18n.result.common_noun
           - min: 61
             max: 70
-            result: Trade caravan
+            text: Trade caravan
             _i18n: *i18n.result.common_noun
           - min: 71
             max: 90
-            result: Transport and escorts
+            text: Transport and escorts
             _i18n: *i18n.result.common_noun
           - min: 91
             max: 100
-            result: '[Starship Mission](id:starforged/oracles/starships/mission)'
+            text: '[Starship Mission](id:starforged/oracles/starships/mission)'
             oracle_rolls:
               - oracle: starforged/oracles/starships/mission
       initial_contact:
         name: Initial Contact
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 327
@@ -619,44 +619,44 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: Familiar
+            text: Familiar
           - min: 4
             max: 15
-            result: Friendly
+            text: Friendly
           - min: 16
             max: 25
-            result: Neutral / automated
+            text: Neutral / automated
           - min: 26
             max: 35
-            result: Wary
+            text: Wary
           - min: 36
             max: 40
-            result: Dismissive
+            text: Dismissive
           - min: 41
             max: 50
-            result: Uncooperative
+            text: Uncooperative
           - min: 51
             max: 65
-            result: Hostile
+            text: Hostile
           - min: 66
             max: 80
-            result: Asking for help
+            text: Asking for help
           - min: 81
             max: 85
-            result: In battle
+            text: In battle
           - min: 86
             max: 90
-            result: Unresponsive
+            text: Unresponsive
           - min: 91
             max: 95
-            result: Destroyed
+            text: Destroyed
           - min: 96
             max: 100
-            result: '[Derelict](id:starforged/collections/oracles/derelicts)'
+            text: '[Derelict](id:starforged/collections/oracles/derelicts)'
             # *inherit:Derelict.Starship
       first_look:
         name: First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 327
@@ -671,70 +671,70 @@ oracles:
         rows:
           - min: 1
             max: 4
-            result: Abnormal sensor readings
+            text: Abnormal sensor readings
           - min: 5
             max: 8
-            result: Brightly painted
+            text: Brightly painted
           - min: 9
             max: 13
-            result: Bristling with weapons
+            text: Bristling with weapons
           - min: 14
             max: 18
-            result: Dark or stealthy
+            text: Dark or stealthy
           - min: 19
             max: 23
-            result: Heavy armor
+            text: Heavy armor
           - min: 24
             max: 28
-            result: Immobile
+            text: Immobile
           - min: 29
             max: 33
-            result: Intimidating profile
+            text: Intimidating profile
           - min: 34
             max: 37
-            result: Large sensor arrays
+            text: Large sensor arrays
           - min: 38
             max: 41
-            result: Leaking radiation
+            text: Leaking radiation
           - min: 42
             max: 45
-            result: Low-profile or disguised
+            text: Low-profile or disguised
           - min: 46
             max: 49
-            result: Modern or advanced design
+            text: Modern or advanced design
           - min: 50
             max: 54
-            result: Obsolete design
+            text: Obsolete design
           - min: 55
             max: 59
-            result: Obvious damage
+            text: Obvious damage
           - min: 60
             max: 63
-            result: Biological components
+            text: Biological components
           - min: 64
             max: 67
-            result: Ornate markings
+            text: Ornate markings
           - min: 68
             max: 71
-            result: Oversized engines
+            text: Oversized engines
           - min: 72
             max: 75
-            result: Prominent guild emblem
+            text: Prominent guild emblem
           - min: 76
             max: 80
-            result: Refitted or repurposed hull
+            text: Refitted or repurposed hull
           - min: 81
             max: 85
-            result: Scarred hull
+            text: Scarred hull
           - min: 86
             max: 90
-            result: Built from scrap
+            text: Built from scrap
           - min: 91
             max: 94
-            result: Towing or linked
+            text: Towing or linked
           - min: 95
             max: 100
-            result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+            text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
             oracle_rolls:
               - oracle: starforged/oracles/core/descriptor
                 auto: true
@@ -742,7 +742,7 @@ oracles:
                 auto: true
       starship_name:
         name: Starship Name
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 329
@@ -757,313 +757,313 @@ oracles:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
           - min: 1
             max: 1
-            result: Arclight
+            text: Arclight
             # content: {part_of_speech: [compound noun]}
           - min: 2
             max: 2
-            result: Argent Arrow
+            text: Argent Arrow
           - min: 3
             max: 3
-            result: Artemis
+            text: Artemis
             # content: {part_of_speech: [proper noun]}
           - min: 4
             max: 4
-            result: Astral Explorer
+            text: Astral Explorer
           - min: 5
             max: 5
-            result: Atlas
+            text: Atlas
             # content: {part_of_speech: [proper noun]}
           - min: 6
             max: 6
-            result: Aurora
+            text: Aurora
           - min: 7
             max: 7
-            result: Avari’s Wake
+            text: Avari’s Wake
           - min: 8
             max: 8
-            result: Banshee’s Cry
+            text: Banshee’s Cry
           - min: 9
             max: 9
-            result: Beowulf
+            text: Beowulf
             # content: {part_of_speech: [proper noun]}
           - min: 10
             max: 10
-            result: Bloody Jaw
+            text: Bloody Jaw
           - min: 11
             max: 11
-            result: Broken Sword
+            text: Broken Sword
           - min: 12
             max: 12
-            result: Buccaneer
+            text: Buccaneer
           - min: 13
             max: 13
-            result: Cerelis Nine
+            text: Cerelis Nine
           - min: 14
             max: 14
-            result: Clarion Call
+            text: Clarion Call
           - min: 15
             max: 15
-            result: Dawn’s Herald
+            text: Dawn’s Herald
           - min: 16
             max: 16
-            result: Dead Reckoning
+            text: Dead Reckoning
           - min: 17
             max: 17
-            result: Drift Runner
+            text: Drift Runner
           - min: 18
             max: 18
-            result: Eclipse
+            text: Eclipse
           - min: 19
             max: 19
-            result: Elara Five
+            text: Elara Five
           - min: 20
             max: 20
-            result: Enchantress
+            text: Enchantress
           - min: 21
             max: 21
-            result: Endurance
+            text: Endurance
           - min: 22
             max: 22
-            result: Excalibur
+            text: Excalibur
             # content: {part_of_speech: [proper noun]}
           - min: 23
             max: 23
-            result: Eye of the Void
+            text: Eye of the Void
           - min: 24
             max: 24
-            result: Fall of Icarus
+            text: Fall of Icarus
           - min: 25
             max: 25
-            result: Fallen Light
+            text: Fallen Light
           - min: 26
             max: 26
-            result: False Hope
+            text: False Hope
           - min: 27
             max: 27
-            result: Firebreak
+            text: Firebreak
           - min: 28
             max: 28
-            result: First Light
+            text: First Light
           - min: 29
             max: 29
-            result: Forge Flier
+            text: Forge Flier
           - min: 30
             max: 30
-            result: Fortune’s Favor
+            text: Fortune’s Favor
           - min: 31
             max: 31
-            result: Freya’s Wrath
+            text: Freya’s Wrath
           - min: 32
             max: 32
-            result: Ghost
+            text: Ghost
           - min: 33
             max: 33
-            result: Guiding Star
+            text: Guiding Star
           - min: 34
             max: 34
-            result: Hand of Fate
+            text: Hand of Fate
           - min: 35
             max: 35
-            result: Herald of Doom
+            text: Herald of Doom
           - min: 36
             max: 36
-            result: Implacable
+            text: Implacable
           - min: 37
             max: 37
-            result: Implicit
+            text: Implicit
           - min: 38
             max: 38
-            result: Inferno
+            text: Inferno
           - min: 39
             max: 39
-            result: Invictus
+            text: Invictus
             # content: {part_of_speech: [proper noun]}
           - min: 40
             max: 40
-            result: Iron Cairn
+            text: Iron Cairn
           - min: 41
             max: 41
-            result: Karena’s Reverie
+            text: Karena’s Reverie
           - min: 42
             max: 42
-            result: Kraken
+            text: Kraken
           - min: 43
             max: 43
-            result: Kuno’s Hammer
+            text: Kuno’s Hammer
           - min: 44
             max: 44
-            result: Lightline
+            text: Lightline
           - min: 45
             max: 45
-            result: Lodestar
+            text: Lodestar
           - min: 46
             max: 46
-            result: Long Haul
+            text: Long Haul
           - min: 47
             max: 47
-            result: Lost Fortune
+            text: Lost Fortune
           - min: 48
             max: 48
-            result: Luminous Sorrow
+            text: Luminous Sorrow
           - min: 49
             max: 49
-            result: Manta
+            text: Manta
           - min: 50
             max: 50
-            result: Mercy
+            text: Mercy
           - min: 51
             max: 51
-            result: Mutara
+            text: Mutara
             # content: {part_of_speech: [proper noun]}
           - min: 52
             max: 52
-            result: Nebula Prowler
+            text: Nebula Prowler
           - min: 53
             max: 53
-            result: Newton’s Folly
+            text: Newton’s Folly
           - min: 54
             max: 54
-            result: Nightfall
+            text: Nightfall
           - min: 55
             max: 55
-            result: Nomad
+            text: Nomad
           - min: 56
             max: 56
-            result: Obsidian Trident
+            text: Obsidian Trident
           - min: 57
             max: 57
-            result: Onslaught
+            text: Onslaught
           - min: 58
             max: 58
-            result: Orca
+            text: Orca
           - min: 59
             max: 59
-            result: Outward Bound
+            text: Outward Bound
           - min: 60
             max: 60
-            result: Phantom
+            text: Phantom
           - min: 61
             max: 61
-            result: Photon
+            text: Photon
           - min: 62
             max: 62
-            result: Poltergeist
+            text: Poltergeist
           - min: 63
             max: 63
-            result: Profit Margin
+            text: Profit Margin
           - min: 64
             max: 64
-            result: Raven’s Call
+            text: Raven’s Call
           - min: 65
             max: 65
-            result: Raya’s Promise
+            text: Raya’s Promise
           - min: 66
             max: 66
-            result: Reaper
+            text: Reaper
           - min: 67
             max: 67
-            result: Reforged Hope
+            text: Reforged Hope
           - min: 68
             max: 68
-            result: Relentless
+            text: Relentless
           - min: 69
             max: 69
-            result: Royal Signet
+            text: Royal Signet
           - min: 70
             max: 70
-            result: Rubicon
+            text: Rubicon
             # content: {part_of_speech: [proper noun]}
           - min: 71
             max: 71
-            result: Sareea’s Tribute
+            text: Sareea’s Tribute
           - min: 72
             max: 72
-            result: Second Chance
+            text: Second Chance
           - min: 73
             max: 73
-            result: Shard of the Sun
+            text: Shard of the Sun
           - min: 74
             max: 74
-            result: Shattered Siege
+            text: Shattered Siege
           - min: 75
             max: 75
-            result: Shattered Star
+            text: Shattered Star
           - min: 76
             max: 76
-            result: Silver Talon
+            text: Silver Talon
           - min: 77
             max: 77
-            result: Smoldering Flame
+            text: Smoldering Flame
           - min: 78
             max: 78
-            result: Sovereign Skies
+            text: Sovereign Skies
           - min: 79
             max: 79
-            result: Sparrowhawk
+            text: Sparrowhawk
           - min: 80
             max: 80
-            result: Stardust
+            text: Stardust
           - min: 81
             max: 81
-            result: Starfall
+            text: Starfall
             # content: {part_of_speech: [compound noun]}
           - min: 82
             max: 82
-            result: Stellar Hawk
+            text: Stellar Hawk
           - min: 83
             max: 83
-            result: Stormswept
+            text: Stormswept
             # content: {part_of_speech: [compound noun]}
           - min: 84
             max: 84
-            result: Sundered Aegis
+            text: Sundered Aegis
           - min: 85
             max: 85
-            result: Sundown
+            text: Sundown
           - min: 86
             max: 86
-            result: Sureshot
+            text: Sureshot
             # content: {part_of_speech: [compound noun]}
           - min: 87
             max: 87
-            result: Terminus Clipper
+            text: Terminus Clipper
           - min: 88
             max: 88
-            result: Terrapin
+            text: Terrapin
           - min: 89
             max: 89
-            result: Timber Wolf
+            text: Timber Wolf
           - min: 90
             max: 90
-            result: Tip of the Spear
+            text: Tip of the Spear
           - min: 91
             max: 91
-            result: Titan
+            text: Titan
           - min: 92
             max: 92
-            result: Tormentor
+            text: Tormentor
           - min: 93
             max: 93
-            result: Trithia Six
+            text: Trithia Six
           - min: 94
             max: 94
-            result: Ultraviolet
+            text: Ultraviolet
           - min: 95
             max: 95
-            result: Valora’s Comet
+            text: Valora’s Comet
           - min: 96
             max: 96
-            result: Vengeance
+            text: Vengeance
           - min: 97
             max: 97
-            result: Venture
+            text: Venture
           - min: 98
             max: 98
-            result: Vigilant
+            text: Vigilant
           - min: 99
             max: 99
-            result: Voidtreader
+            text: Voidtreader
             # content: {part_of_speech: [compound noun]}
           - min: 100
             max: 100
-            result: Vulture
+            text: Vulture

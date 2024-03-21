@@ -38,7 +38,7 @@ oracles:
               oracles:
                 - starforged/oracles/characters/name/callsign
                 - starforged/oracles/characters/name/family_name
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - <<: &i18n.proper_noun
                   _i18n:
@@ -46,403 +46,403 @@ oracles:
                       part_of_speech: proper_noun
                 min: 1
                 max: 1
-                result: Akim
+                text: Akim
               - <<: *i18n.proper_noun
                 min: 2
                 max: 2
-                result: Alex
+                text: Alex
               - <<: *i18n.proper_noun
                 min: 3
                 max: 3
-                result: Alexis
+                text: Alexis
               - <<: *i18n.proper_noun
                 min: 4
                 max: 4
-                result: Alisa
+                text: Alisa
               - <<: *i18n.proper_noun
                 min: 5
                 max: 5
-                result: Althea
+                text: Althea
               - <<: *i18n.proper_noun
                 min: 6
                 max: 6
-                result: Amari
+                text: Amari
               - <<: *i18n.proper_noun
                 min: 7
                 max: 7
-                result: Aparna
+                text: Aparna
               - <<: *i18n.proper_noun
                 min: 8
                 max: 8
-                result: Argus
+                text: Argus
               - <<: *i18n.proper_noun
                 min: 9
                 max: 9
-                result: Arnav
+                text: Arnav
               - <<: *i18n.proper_noun
                 min: 10
                 max: 10
-                result: Ash
+                text: Ash
               - <<: *i18n.proper_noun
                 min: 11
                 max: 11
-                result: Asha
+                text: Asha
               - <<: *i18n.proper_noun
                 min: 12
                 max: 12
-                result: Astrid
+                text: Astrid
               - <<: *i18n.proper_noun
                 min: 13
                 max: 13
-                result: Aurora
+                text: Aurora
               - <<: *i18n.proper_noun
                 min: 14
                 max: 14
-                result: Ayako
+                text: Ayako
               - <<: *i18n.proper_noun
                 min: 15
                 max: 15
-                result: Azriel
+                text: Azriel
               - <<: *i18n.proper_noun
                 min: 16
                 max: 16
-                result: Blake
+                text: Blake
               - <<: *i18n.proper_noun
                 min: 17
                 max: 17
-                result: Brennan
+                text: Brennan
               - <<: *i18n.proper_noun
                 min: 18
                 max: 18
-                result: Brianna
+                text: Brianna
               - <<: *i18n.proper_noun
                 min: 19
                 max: 19
-                result: Bruna
+                text: Bruna
               - <<: *i18n.proper_noun
                 min: 20
                 max: 20
-                result: Bruno
+                text: Bruno
               - <<: *i18n.proper_noun
                 min: 21
                 max: 21
-                result: Cassidy
+                text: Cassidy
               - <<: *i18n.proper_noun
                 min: 22
                 max: 22
-                result: Christa
+                text: Christa
               - <<: *i18n.proper_noun
                 min: 23
                 max: 23
-                result: Cole
+                text: Cole
               - <<: *i18n.proper_noun
                 min: 24
                 max: 24
-                result: Corey
+                text: Corey
               - <<: *i18n.proper_noun
                 min: 25
                 max: 25
-                result: Creed
+                text: Creed
               - <<: *i18n.proper_noun
                 min: 26
                 max: 26
-                result: Derya
+                text: Derya
               - <<: *i18n.proper_noun
                 min: 27
                 max: 27
-                result: Dex
+                text: Dex
               - <<: *i18n.proper_noun
                 min: 28
                 max: 28
-                result: Doran
+                text: Doran
               - <<: *i18n.proper_noun
                 min: 29
                 max: 29
-                result: Echo
+                text: Echo
               - <<: *i18n.proper_noun
                 min: 30
                 max: 30
-                result: Eren
+                text: Eren
               - <<: *i18n.proper_noun
                 min: 31
                 max: 31
-                result: Erim
+                text: Erim
               - <<: *i18n.proper_noun
                 min: 32
                 max: 32
-                result: Esana
+                text: Esana
               - <<: *i18n.proper_noun
                 min: 33
                 max: 33
-                result: Eveline
+                text: Eveline
               - <<: *i18n.proper_noun
                 min: 34
                 max: 34
-                result: Faye
+                text: Faye
               - <<: *i18n.proper_noun
                 min: 35
                 max: 35
-                result: Fletcher
+                text: Fletcher
               - <<: *i18n.proper_noun
                 min: 36
                 max: 36
-                result: Flint
+                text: Flint
               - <<: *i18n.proper_noun
                 min: 37
                 max: 37
-                result: Florian
+                text: Florian
               - <<: *i18n.proper_noun
                 min: 38
                 max: 38
-                result: Gavin
+                text: Gavin
               - <<: *i18n.proper_noun
                 min: 39
                 max: 39
-                result: Halia
+                text: Halia
               - <<: *i18n.proper_noun
                 min: 40
                 max: 40
-                result: Ike
+                text: Ike
               - <<: *i18n.proper_noun
                 min: 41
                 max: 41
-                result: Isaac
+                text: Isaac
               - <<: *i18n.proper_noun
                 min: 42
                 max: 42
-                result: James
+                text: James
               - <<: *i18n.proper_noun
                 min: 43
                 max: 43
-                result: Janya
+                text: Janya
               - <<: *i18n.proper_noun
                 min: 44
                 max: 44
-                result: Jihun
+                text: Jihun
               - <<: *i18n.proper_noun
                 min: 45
                 max: 45
-                result: Jorunn
+                text: Jorunn
               - <<: *i18n.proper_noun
                 min: 46
                 max: 46
-                result: Juliana
+                text: Juliana
               - <<: *i18n.proper_noun
                 min: 47
                 max: 47
-                result: Juro
+                text: Juro
               - <<: *i18n.proper_noun
                 min: 48
                 max: 48
-                result: Kaisa
+                text: Kaisa
               - <<: *i18n.proper_noun
                 min: 49
                 max: 49
-                result: Karthik
+                text: Karthik
               - <<: *i18n.proper_noun
                 min: 50
                 max: 50
-                result: Kayla
+                text: Kayla
               - <<: *i18n.proper_noun
                 min: 51
                 max: 51
-                result: Kei
+                text: Kei
               - <<: *i18n.proper_noun
                 min: 52
                 max: 52
-                result: Kiana
+                text: Kiana
               - <<: *i18n.proper_noun
                 min: 53
                 max: 53
-                result: Kieran
+                text: Kieran
               - <<: *i18n.proper_noun
                 min: 54
                 max: 54
-                result: Kierra
+                text: Kierra
               - <<: *i18n.proper_noun
                 min: 55
                 max: 55
-                result: Kimora
+                text: Kimora
               - <<: *i18n.proper_noun
                 min: 56
                 max: 56
-                result: Kiri
+                text: Kiri
               - <<: *i18n.proper_noun
                 min: 57
                 max: 57
-                result: Kirsa
+                text: Kirsa
               - <<: *i18n.proper_noun
                 min: 58
                 max: 58
-                result: Kwan
+                text: Kwan
               - <<: *i18n.proper_noun
                 min: 59
                 max: 59
-                result: Kylar
+                text: Kylar
               - <<: *i18n.proper_noun
                 min: 60
                 max: 60
-                result: Landry
+                text: Landry
               - <<: *i18n.proper_noun
                 min: 61
                 max: 61
-                result: Logan
+                text: Logan
               - <<: *i18n.proper_noun
                 min: 62
                 max: 62
-                result: Lowell
+                text: Lowell
               - <<: *i18n.proper_noun
                 min: 63
                 max: 63
-                result: Lucas
+                text: Lucas
               - <<: *i18n.proper_noun
                 min: 64
                 max: 64
-                result: Curtis
+                text: Curtis
               - <<: *i18n.proper_noun
                 min: 65
                 max: 65
-                result: Luna
+                text: Luna
               - <<: *i18n.proper_noun
                 min: 66
                 max: 66
-                result: Lux
+                text: Lux
               - <<: *i18n.proper_noun
                 min: 67
                 max: 67
-                result: Mae
+                text: Mae
               - <<: *i18n.proper_noun
                 min: 68
                 max: 68
-                result: Magnus
+                text: Magnus
               - <<: *i18n.proper_noun
                 min: 69
                 max: 69
-                result: Mave
+                text: Mave
               - <<: *i18n.proper_noun
                 min: 70
                 max: 70
-                result: Merrick
+                text: Merrick
               - <<: *i18n.proper_noun
                 min: 71
                 max: 71
-                result: Mina
+                text: Mina
               - <<: *i18n.proper_noun
                 min: 72
                 max: 72
-                result: Nashida
+                text: Nashida
               - <<: *i18n.proper_noun
                 min: 73
                 max: 73
-                result: Nassar
+                text: Nassar
               - <<: *i18n.proper_noun
                 min: 74
                 max: 74
-                result: Ostara
+                text: Ostara
               - <<: *i18n.proper_noun
                 min: 75
                 max: 75
-                result: Qasira
+                text: Qasira
               - <<: *i18n.proper_noun
                 min: 76
                 max: 76
-                result: Quinn
+                text: Quinn
               - <<: *i18n.proper_noun
                 min: 77
                 max: 77
-                result: Ragnar
+                text: Ragnar
               - <<: *i18n.proper_noun
                 min: 78
                 max: 78
-                result: Raven
+                text: Raven
               - <<: *i18n.proper_noun
                 min: 79
                 max: 79
-                result: Ria
+                text: Ria
               - <<: *i18n.proper_noun
                 min: 80
                 max: 80
-                result: Rokuro
+                text: Rokuro
               - <<: *i18n.proper_noun
                 min: 81
                 max: 81
-                result: Roland
+                text: Roland
               - <<: *i18n.proper_noun
                 min: 82
                 max: 82
-                result: Rowena
+                text: Rowena
               - <<: *i18n.proper_noun
                 min: 83
                 max: 83
-                result: Sage
+                text: Sage
               - <<: *i18n.proper_noun
                 min: 84
                 max: 84
-                result: Saren
+                text: Saren
               - <<: *i18n.proper_noun
                 min: 85
                 max: 85
-                result: Annora
+                text: Annora
               - <<: *i18n.proper_noun
                 min: 86
                 max: 86
-                result: Severinus
+                text: Severinus
               - <<: *i18n.proper_noun
                 min: 87
                 max: 87
-                result: Shen
+                text: Shen
               - <<: *i18n.proper_noun
                 min: 88
                 max: 88
-                result: Talia
+                text: Talia
               - <<: *i18n.proper_noun
                 min: 89
                 max: 89
-                result: Tomiko
+                text: Tomiko
               - <<: *i18n.proper_noun
                 min: 90
                 max: 90
-                result: Ulan
+                text: Ulan
               - <<: *i18n.proper_noun
                 min: 91
                 max: 91
-                result: Valda
+                text: Valda
               - <<: *i18n.proper_noun
                 min: 92
                 max: 92
-                result: Venri
+                text: Venri
               - <<: *i18n.proper_noun
                 min: 93
                 max: 93
-                result: Vesper
+                text: Vesper
               - <<: *i18n.proper_noun
                 min: 94
                 max: 94
-                result: Vuldar
+                text: Vuldar
               - <<: *i18n.proper_noun
                 min: 95
                 max: 95
-                result: William
+                text: William
               - <<: *i18n.proper_noun
                 min: 96
                 max: 96
-                result: Yelena
+                text: Yelena
               - <<: *i18n.proper_noun
                 min: 97
                 max: 97
-                result: Zakia
+                text: Zakia
               - <<: *i18n.proper_noun
                 min: 98
                 max: 98
-                result: Zari
+                text: Zari
               - <<: *i18n.proper_noun
                 min: 99
                 max: 99
-                result: Zephyr
+                text: Zephyr
               - <<: *i18n.proper_noun
                 min: 100
                 max: 100
-                result: Zoya
+                text: Zoya
           callsign:
             name: Callsign
             # source:
@@ -453,408 +453,408 @@ oracles:
               oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/family_name
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 1
-                result: Albatross
+                text: Albatross
               - <<: *i18n.proper_noun
                 min: 2
                 max: 2
-                result: Angler
+                text: Angler
               - <<: *i18n.proper_noun
                 min: 3
                 max: 3
-                result: Anvil
+                text: Anvil
               - <<: *i18n.proper_noun
                 min: 4
                 max: 4
-                result: Badger
+                text: Badger
               - <<: *i18n.proper_noun
                 min: 5
                 max: 5
-                result: Bandit
+                text: Bandit
               - <<: *i18n.proper_noun
                 min: 6
                 max: 6
-                result: Bash
+                text: Bash
               - <<: *i18n.proper_noun
                 min: 7
                 max: 7
-                result: Basilisk
+                text: Basilisk
               - <<: *i18n.proper_noun
                 min: 8
                 max: 8
-                result: Bingo
+                text: Bingo
               - <<: *i18n.proper_noun
                 min: 9
                 max: 9
-                result: Blackbird
+                text: Blackbird
               - <<: *i18n.proper_noun
                 min: 10
                 max: 10
-                result: Blade
+                text: Blade
               - <<: *i18n.proper_noun
                 min: 11
                 max: 11
-                result: Bloodshot
+                text: Bloodshot
               - <<: *i18n.proper_noun
                 min: 12
                 max: 12
-                result: Bluewing
+                text: Bluewing
               - <<: *i18n.proper_noun
                 min: 13
                 max: 13
-                result: Bonfire
+                text: Bonfire
               - <<: *i18n.proper_noun
                 min: 14
                 max: 14
-                result: Book
+                text: Book
               - <<: *i18n.proper_noun
                 min: 15
                 max: 15
-                result: Breaker
+                text: Breaker
               - <<: *i18n.proper_noun
                 min: 16
                 max: 16
-                result: Brick
+                text: Brick
               - <<: *i18n.proper_noun
                 min: 17
                 max: 17
-                result: Buzz
+                text: Buzz
               - <<: *i18n.proper_noun
                 min: 18
                 max: 18
-                result: Buzzard
+                text: Buzzard
               - <<: *i18n.proper_noun
                 min: 19
                 max: 19
-                result: Centurion
+                text: Centurion
               - <<: *i18n.proper_noun
                 min: 20
                 max: 20
-                result: Chimera
+                text: Chimera
               - <<: *i18n.proper_noun
                 min: 21
                 max: 21
-                result: Circuit
+                text: Circuit
               - <<: *i18n.proper_noun
                 min: 22
                 max: 22
-                result: Clank
+                text: Clank
               - <<: *i18n.proper_noun
                 min: 23
                 max: 23
-                result: Cleric
+                text: Cleric
               - <<: *i18n.proper_noun
                 min: 24
                 max: 24
-                result: Crash
+                text: Crash
               - <<: *i18n.proper_noun
                 min: 25
                 max: 25
-                result: Cutter
+                text: Cutter
               - <<: *i18n.proper_noun
                 min: 26
                 max: 26
-                result: Cutthroat
+                text: Cutthroat
               - <<: *i18n.proper_noun
                 min: 27
                 max: 27
-                result: Cypher
+                text: Cypher
               - <<: *i18n.proper_noun
                 min: 28
                 max: 28
-                result: Dagger
+                text: Dagger
               - <<: *i18n.proper_noun
                 min: 29
                 max: 29
-                result: Dancer
+                text: Dancer
               - <<: *i18n.proper_noun
                 min: 30
                 max: 30
-                result: Dash
+                text: Dash
               - <<: *i18n.proper_noun
                 min: 31
                 max: 31
-                result: Deadeye
+                text: Deadeye
               - <<: *i18n.proper_noun
                 min: 32
                 max: 32
-                result: Deuce
+                text: Deuce
               - <<: *i18n.proper_noun
                 min: 33
                 max: 33
-                result: Failsafe
+                text: Failsafe
               - <<: *i18n.proper_noun
                 min: 34
                 max: 34
-                result: Farseer
+                text: Farseer
               - <<: *i18n.proper_noun
                 min: 35
                 max: 35
-                result: Fidget
+                text: Fidget
               - <<: *i18n.proper_noun
                 min: 36
                 max: 36
-                result: Firestarter
+                text: Firestarter
               - <<: *i18n.proper_noun
                 min: 37
                 max: 37
-                result: Fixer
+                text: Fixer
               - <<: *i18n.proper_noun
                 min: 38
                 max: 38
-                result: Flatline
+                text: Flatline
               - <<: *i18n.proper_noun
                 min: 39
                 max: 39
-                result: Ghost
+                text: Ghost
               - <<: *i18n.proper_noun
                 min: 40
                 max: 40
-                result: Grudge
+                text: Grudge
               - <<: *i18n.proper_noun
                 min: 41
                 max: 41
-                result: Gutshot
+                text: Gutshot
               - <<: *i18n.proper_noun
                 min: 42
                 max: 42
-                result: Harrow
+                text: Harrow
               - <<: *i18n.proper_noun
                 min: 43
                 max: 43
-                result: Havoc
+                text: Havoc
               - <<: *i18n.proper_noun
                 min: 44
                 max: 44
-                result: Hellhound
+                text: Hellhound
               - <<: *i18n.proper_noun
                 min: 45
                 max: 45
-                result: Hellion
+                text: Hellion
               - <<: *i18n.proper_noun
                 min: 46
                 max: 46
-                result: Hex
+                text: Hex
               - <<: *i18n.proper_noun
                 min: 47
                 max: 47
-                result: Hush
+                text: Hush
               - <<: *i18n.proper_noun
                 min: 48
                 max: 48
-                result: Irodescriptionnclad
+                text: Irodescriptionnclad
               - <<: *i18n.proper_noun
                 min: 49
                 max: 49
-                result: Jackal
+                text: Jackal
               - <<: *i18n.proper_noun
                 min: 50
                 max: 50
-                result: Jackpot
+                text: Jackpot
               - <<: *i18n.proper_noun
                 min: 51
                 max: 51
-                result: Jester
+                text: Jester
               - <<: *i18n.proper_noun
                 min: 52
                 max: 52
-                result: Link
+                text: Link
               - <<: *i18n.proper_noun
                 min: 53
                 max: 53
-                result: Longshot
+                text: Longshot
               - <<: *i18n.proper_noun
                 min: 54
                 max: 54
-                result: Mainframe
+                text: Mainframe
               - <<: *i18n.proper_noun
                 min: 55
                 max: 55
-                result: Mantis
+                text: Mantis
               - <<: *i18n.proper_noun
                 min: 56
                 max: 56
-                result: Mimic
+                text: Mimic
               - <<: *i18n.proper_noun
                 min: 57
                 max: 57
-                result: Mole
+                text: Mole
               - <<: *i18n.proper_noun
                 min: 58
                 max: 58
-                result: Monarch
+                text: Monarch
               - <<: *i18n.proper_noun
                 min: 59
                 max: 59
-                result: Mongoose
+                text: Mongoose
               - <<: *i18n.proper_noun
                 min: 60
                 max: 60
-                result: Nails
+                text: Nails
               - <<: *i18n.proper_noun
                 min: 61
                 max: 61
-                result: Ogre
+                text: Ogre
               - <<: *i18n.proper_noun
                 min: 62
                 max: 62
-                result: Omega
+                text: Omega
               - <<: *i18n.proper_noun
                 min: 63
                 max: 63
-                result: Overload
+                text: Overload
               - <<: *i18n.proper_noun
                 min: 64
                 max: 64
-                result: Packrat
+                text: Packrat
               - <<: *i18n.proper_noun
                 min: 65
                 max: 65
-                result: Paladin
+                text: Paladin
               - <<: *i18n.proper_noun
                 min: 66
                 max: 66
-                result: Phantom
+                text: Phantom
               - <<: *i18n.proper_noun
                 min: 67
                 max: 67
-                result: Phoenix
+                text: Phoenix
               - <<: *i18n.proper_noun
                 min: 68
                 max: 68
-                result: Pyro
+                text: Pyro
               - <<: *i18n.proper_noun
                 min: 69
                 max: 69
-                result: Quickdraw
+                text: Quickdraw
               - <<: *i18n.proper_noun
                 min: 70
                 max: 70
-                result: Razor
+                text: Razor
               - <<: *i18n.proper_noun
                 min: 71
                 max: 71
-                result: Rogue
+                text: Rogue
               - <<: *i18n.proper_noun
                 min: 72
                 max: 72
-                result: Rook
+                text: Rook
               - <<: *i18n.proper_noun
                 min: 73
                 max: 73
-                result: Rover
+                text: Rover
               - <<: *i18n.proper_noun
                 min: 74
                 max: 74
-                result: Scout
+                text: Scout
               - <<: *i18n.proper_noun
                 min: 75
                 max: 75
-                result: Shadow
+                text: Shadow
               - <<: *i18n.proper_noun
                 min: 76
                 max: 76
-                result: Shark
+                text: Shark
               - <<: *i18n.proper_noun
                 min: 77
                 max: 77
-                result: Shutdown
+                text: Shutdown
               - <<: *i18n.proper_noun
                 min: 78
                 max: 78
-                result: Slack
+                text: Slack
               - <<: *i18n.proper_noun
                 min: 79
                 max: 79
-                result: Slash
+                text: Slash
               - <<: *i18n.proper_noun
                 min: 80
                 max: 80
-                result: Snipe
+                text: Snipe
               - <<: *i18n.proper_noun
                 min: 81
                 max: 81
-                result: Spider
+                text: Spider
               - <<: *i18n.proper_noun
                 min: 82
                 max: 82
-                result: Splinter
+                text: Splinter
               - <<: *i18n.proper_noun
                 min: 83
                 max: 83
-                result: Static
+                text: Static
               - <<: *i18n.proper_noun
                 min: 84
                 max: 84
-                result: Stinger
+                text: Stinger
               - <<: *i18n.proper_noun
                 min: 85
                 max: 85
-                result: Straggler
+                text: Straggler
               - <<: *i18n.proper_noun
                 min: 86
                 max: 86
-                result: Swindle
+                text: Swindle
               - <<: *i18n.proper_noun
                 min: 87
                 max: 87
-                result: Tinker
+                text: Tinker
               - <<: *i18n.proper_noun
                 min: 88
                 max: 88
-                result: Touchdown
+                text: Touchdown
               - <<: *i18n.proper_noun
                 min: 89
                 max: 89
-                result: Tycoon
+                text: Tycoon
               - <<: *i18n.proper_noun
                 min: 90
                 max: 90
-                result: Vagabond
+                text: Vagabond
               - <<: *i18n.proper_noun
                 min: 91
                 max: 91
-                result: Valkyrie
+                text: Valkyrie
               - <<: *i18n.proper_noun
                 min: 92
                 max: 92
-                result: Vanguard
+                text: Vanguard
               - <<: *i18n.proper_noun
                 min: 93
                 max: 93
-                result: Vertigo
+                text: Vertigo
               - <<: *i18n.proper_noun
                 min: 94
                 max: 94
-                result: Warden
+                text: Warden
               - <<: *i18n.proper_noun
                 min: 95
                 max: 95
-                result: Watchdog
+                text: Watchdog
               - <<: *i18n.proper_noun
                 min: 96
                 max: 96
-                result: Wayfinder
+                text: Wayfinder
               - <<: *i18n.proper_noun
                 min: 97
                 max: 97
-                result: Whisper
+                text: Whisper
               - <<: *i18n.proper_noun
                 min: 98
                 max: 98
-                result: Wraith
+                text: Wraith
               - <<: *i18n.proper_noun
                 min: 99
                 max: 99
-                result: Wrongway
+                text: Wrongway
               - <<: *i18n.proper_noun
                 min: 100
                 max: 100
-                result: Zephyr
+                text: Zephyr
           family_name:
             name: Family Name
             # source:
@@ -865,412 +865,412 @@ oracles:
               oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/callsign
-            oracle_type: column_simple
+            oracle_type: column_basic
             rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 1
-                result: Kuzmin
+                text: Kuzmin
               - <<: *i18n.proper_noun
                 min: 2
                 max: 2
-                result: Durant
+                text: Durant
               - <<: *i18n.proper_noun
                 min: 3
                 max: 3
-                result: Jefferies
+                text: Jefferies
               - <<: *i18n.proper_noun
                 min: 4
                 max: 4
-                result: Velez
+                text: Velez
               - <<: *i18n.proper_noun
                 min: 5
                 max: 5
-                result: Lontoc
+                text: Lontoc
               - <<: *i18n.proper_noun
                 min: 6
                 max: 6
-                result: Wade
+                text: Wade
               - <<: *i18n.proper_noun
                 min: 7
                 max: 7
-                result: Kade
+                text: Kade
               - <<: *i18n.proper_noun
                 min: 8
                 max: 8
-                result: Thorn
+                text: Thorn
               - <<: *i18n.proper_noun
                 min: 9
                 max: 9
-                result: Khosla
+                text: Khosla
               - <<: *i18n.proper_noun
                 min: 10
                 max: 10
-                result: Hendrix
+                text: Hendrix
               - <<: *i18n.proper_noun
                 min: 11
                 max: 11
-                result: Okiro
+                text: Okiro
               - <<: *i18n.proper_noun
                 min: 12
                 max: 12
-                result: Ripley
+                text: Ripley
               - <<: *i18n.proper_noun
                 min: 13
                 max: 13
-                result: Talin
+                text: Talin
               - <<: *i18n.proper_noun
                 min: 14
                 max: 14
-                result: Jin
+                text: Jin
               - <<: *i18n.proper_noun
                 min: 15
                 max: 15
-                result: Finn
+                text: Finn
               - <<: *i18n.proper_noun
                 min: 16
                 max: 16
-                result: Solas
+                text: Solas
               - <<: *i18n.proper_noun
                 min: 17
                 max: 17
-                result: Quint
+                text: Quint
               - <<: *i18n.proper_noun
                 min: 18
                 max: 18
-                result: Keelan
+                text: Keelan
               - <<: *i18n.proper_noun
                 min: 19
                 max: 19
-                result: Silva
+                text: Silva
               - <<: *i18n.proper_noun
                 min: 20
                 max: 20
-                result: Valk
+                text: Valk
               - <<: *i18n.proper_noun
                 min: 21
                 max: 21
-                result: O'Brien
+                text: O'Brien
               - <<: *i18n.proper_noun
                 min: 22
                 max: 22
-                result: Ruiz
+                text: Ruiz
               - <<: *i18n.proper_noun
                 min: 23
                 max: 23
-                result: Stallard
+                text: Stallard
               - <<: *i18n.proper_noun
                 min: 24
                 max: 24
-                result: Mackenson
+                text: Mackenson
               - <<: *i18n.proper_noun
                 min: 25
                 max: 25
-                result: Jensen
+                text: Jensen
               - <<: *i18n.proper_noun
                 min: 26
                 max: 26
-                result: Sakir
+                text: Sakir
               - <<: *i18n.proper_noun
                 min: 27
                 max: 27
-                result: Tolari
+                text: Tolari
               - <<: *i18n.proper_noun
                 min: 28
                 max: 28
-                result: Kain
+                text: Kain
               - <<: *i18n.proper_noun
                 min: 29
                 max: 29
-                result: Carr
+                text: Carr
               - <<: *i18n.proper_noun
                 min: 30
                 max: 30
-                result: Valenus
+                text: Valenus
               - <<: *i18n.proper_noun
                 min: 31
                 max: 31
-                result: Kaan
+                text: Kaan
               - <<: *i18n.proper_noun
                 min: 32
                 max: 32
-                result: Taylan
+                text: Taylan
               - <<: *i18n.proper_noun
                 min: 33
                 max: 33
-                result: Legrand
+                text: Legrand
               - <<: *i18n.proper_noun
                 min: 34
                 max: 34
-                result: Jemison
+                text: Jemison
               - <<: *i18n.proper_noun
                 min: 35
                 max: 35
-                result: Arden
+                text: Arden
               - <<: *i18n.proper_noun
                 min: 36
                 max: 36
-                result: Sayer
+                text: Sayer
               - <<: *i18n.proper_noun
                 min: 37
                 max: 37
-                result: Kai
+                text: Kai
               - <<: *i18n.proper_noun
                 min: 38
                 max: 38
-                result: Slater
+                text: Slater
               - <<: *i18n.proper_noun
                 min: 39
                 max: 39
-                result: Edris
+                text: Edris
               - <<: *i18n.proper_noun
                 min: 40
                 max: 40
-                result: Sutton
+                text: Sutton
               - <<: *i18n.proper_noun
                 min: 41
                 max: 41
-                result: Savarin
+                text: Savarin
               - <<: *i18n.proper_noun
                 min: 42
                 max: 42
-                result: Bridger
+                text: Bridger
               - <<: *i18n.proper_noun
                 min: 43
                 max: 43
-                result: Mital
+                text: Mital
               - <<: *i18n.proper_noun
                 min: 44
                 max: 44
-                result: Shin
+                text: Shin
               - <<: *i18n.proper_noun
                 min: 45
                 max: 45
-                result: Nadir
+                text: Nadir
               - <<: *i18n.proper_noun
                 min: 46
                 max: 46
-                result: Santos
+                text: Santos
               - <<: *i18n.proper_noun
                 min: 47
                 max: 47
-                result: Mihara
+                text: Mihara
               - <<: *i18n.proper_noun
                 min: 48
                 max: 48
-                result: Buhari
+                text: Buhari
               - <<: *i18n.proper_noun
                 min: 49
                 max: 49
-                result: Salvi
+                text: Salvi
               - <<: *i18n.proper_noun
                 min: 50
                 max: 50
-                result: Adler
+                text: Adler
               - <<: *i18n.proper_noun
                 min: 51
                 max: 51
-                result: Takara
+                text: Takara
               - <<: *i18n.proper_noun
                 min: 52
                 max: 52
-                result: Shelton
+                text: Shelton
               - <<: *i18n.proper_noun
                 min: 53
                 max: 53
-                result: Vandu
+                text: Vandu
               - <<: *i18n.proper_noun
                 min: 54
                 max: 54
-                result: Vega
+                text: Vega
               - <<: *i18n.proper_noun
                 min: 55
                 max: 55
-                result: Zhang
+                text: Zhang
               - <<: *i18n.proper_noun
                 min: 56
                 max: 56
-                result: Savela
+                text: Savela
               - <<: *i18n.proper_noun
                 min: 57
                 max: 57
-                result: Hawking
+                text: Hawking
               - <<: *i18n.proper_noun
                 min: 58
                 max: 58
-                result: Jen
+                text: Jen
               - <<: *i18n.proper_noun
                 min: 59
                 max: 59
-                result: Hobbs
+                text: Hobbs
               - <<: *i18n.proper_noun
                 min: 60
                 max: 60
-                result: Holland
+                text: Holland
               - <<: *i18n.proper_noun
                 min: 61
                 max: 61
-                result: Silvius
+                text: Silvius
               - <<: *i18n.proper_noun
                 min: 62
                 max: 62
-                result: Freeman
+                text: Freeman
               - <<: *i18n.proper_noun
                 min: 63
                 max: 63
-                result: Barbosa
+                text: Barbosa
               - <<: *i18n.proper_noun
                 min: 64
                 max: 64
-                result: Winter
+                text: Winter
               - <<: *i18n.proper_noun
                 min: 65
                 max: 65
-                result: Hammond
+                text: Hammond
               - <<: *i18n.proper_noun
                 min: 66
                 max: 66
-                result: Archer
+                text: Archer
               - <<: *i18n.proper_noun
                 min: 67
                 max: 67
-                result: Barlowe
+                text: Barlowe
               - <<: *i18n.proper_noun
                 min: 68
                 max: 68
-                result: Shepherd
+                text: Shepherd
               - <<: *i18n.proper_noun
                 min: 69
                 max: 69
-                result: Griffin
+                text: Griffin
               - <<: *i18n.proper_noun
                 min: 70
                 max: 70
-                result: Frost
+                text: Frost
               - <<: *i18n.proper_noun
                 min: 71
                 max: 71
-                result: Quon
+                text: Quon
               - <<: *i18n.proper_noun
                 min: 72
                 max: 72
-                result: Malek
+                text: Malek
               - <<: *i18n.proper_noun
                 min: 73
                 max: 73
-                result: Murad
+                text: Murad
               - <<: *i18n.proper_noun
                 min: 74
                 max: 74
-                result: Becker
+                text: Becker
               - <<: *i18n.proper_noun
                 min: 75
                 max: 75
-                result: Ammar
+                text: Ammar
               - <<: *i18n.proper_noun
                 min: 76
                 max: 76
-                result: Braddock
+                text: Braddock
               - <<: *i18n.proper_noun
                 min: 77
                 max: 77
-                result: Blackstone
+                text: Blackstone
               - <<: *i18n.proper_noun
                 min: 78
                 max: 78
-                result: Hadley
+                text: Hadley
               - <<: *i18n.proper_noun
                 min: 79
                 max: 79
-                result: Farin
+                text: Farin
               - <<: *i18n.proper_noun
                 min: 80
                 max: 80
-                result: Kobayashi
+                text: Kobayashi
               - <<: *i18n.proper_noun
                 min: 81
                 max: 81
-                result: Duval
+                text: Duval
               - <<: *i18n.proper_noun
                 min: 82
                 max: 82
-                result: Hunter
+                text: Hunter
               - <<: *i18n.proper_noun
                 min: 83
                 max: 83
-                result: Beckett
+                text: Beckett
               - <<: *i18n.proper_noun
                 min: 84
                 max: 84
-                result: Dykstra
+                text: Dykstra
               - <<: *i18n.proper_noun
                 min: 85
                 max: 85
-                result: Gray
+                text: Gray
               - <<: *i18n.proper_noun
                 min: 86
                 max: 86
-                result: Sedano
+                text: Sedano
               - <<: *i18n.proper_noun
                 min: 87
                 max: 87
-                result: Bai
+                text: Bai
               - <<: *i18n.proper_noun
                 min: 88
                 max: 88
-                result: Booker
+                text: Booker
               - <<: *i18n.proper_noun
                 min: 89
                 max: 89
-                result: Sato
+                text: Sato
               - <<: *i18n.proper_noun
                 min: 90
                 max: 90
-                result: Vayan
+                text: Vayan
               - <<: *i18n.proper_noun
                 min: 91
                 max: 91
-                result: Bond
+                text: Bond
               - <<: *i18n.proper_noun
                 min: 92
                 max: 92
-                result: Stark
+                text: Stark
               - <<: *i18n.proper_noun
                 min: 93
                 max: 93
-                result: Stirling
+                text: Stirling
               - <<: *i18n.proper_noun
                 min: 94
                 max: 94
-                result: Wolfe
+                text: Wolfe
               - <<: *i18n.proper_noun
                 min: 95
                 max: 95
-                result: O'Niel
+                text: O'Niel
               - <<: *i18n.proper_noun
                 min: 96
                 max: 96
-                result: Petrov
+                text: Petrov
               - <<: *i18n.proper_noun
                 min: 97
                 max: 97
-                result: Nazari
+                text: Nazari
               - <<: *i18n.proper_noun
                 min: 98
                 max: 98
-                result: Darwin
+                text: Darwin
               - <<: *i18n.proper_noun
                 min: 99
                 max: 99
-                result: Pearson
+                text: Pearson
               - <<: *i18n.proper_noun
                 min: 100
                 max: 100
-                result: Volkov
+                text: Volkov
     contents:
       first_look:
         name: First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 330
@@ -1286,165 +1286,165 @@ oracles:
                   part_of_speech: adjective
             min: 1
             max: 3
-            result: Accented
+            text: Accented
           - <<: *i18n.adjective
             min: 4
             max: 6
-            result: Accompanied
+            text: Accompanied
           - <<: *i18n.adjective
             min: 7
             max: 8
-            result: Adorned
+            text: Adorned
           - <<: *i18n.adjective
             min: 9
             max: 11
-            result: Aged
+            text: Aged
           - <<: &i18n.gerund
               _i18n:
                 result:
                   part_of_speech: gerund
             min: 12
             max: 13
-            result: Alluring
+            text: Alluring
           - <<: *i18n.adjective
             min: 14
             max: 15
-            result: Armed
+            text: Armed
           - <<: *i18n.adjective
             min: 16
             max: 17
-            result: Armored
+            text: Armored
           - <<: *i18n.adjective
             min: 18
             max: 20
-            result: Athletic
+            text: Athletic
           - <<: *i18n.adjective
             min: 21
             max: 23
-            result: Attractive
+            text: Attractive
           - <<: *i18n.adjective
             min: 24
             max: 25
-            result: Augmented
+            text: Augmented
           - <<: *i18n.adjective
             min: 26
             max: 27
-            result: Concealed
+            text: Concealed
           - <<: *i18n.adjective
             min: 28
             max: 30
-            result: Distracted
+            text: Distracted
           - <<: *i18n.adjective
             min: 31
             max: 33
-            result: Eccentric
+            text: Eccentric
           - <<: *i18n.adjective
             min: 34
             max: 35
-            result: Energetic
+            text: Energetic
           - <<: *i18n.adjective
             min: 36
             max: 37
-            result: Flashy
+            text: Flashy
           - <<: *i18n.adjective
             min: 38
             max: 40
-            result: Graceful
+            text: Graceful
           - <<: *i18n.adjective
             min: 41
             max: 43
-            result: Grim
+            text: Grim
           - <<: *i18n.adjective
             min: 44
             max: 46
-            result: Haggard
+            text: Haggard
           - <<: *i18n.adjective
             min: 47
             max: 49
-            result: Ill-equipped
+            text: Ill-equipped
           - <<: *i18n.gerund
             min: 50
             max: 52
-            result: Imposing
+            text: Imposing
           - <<: *i18n.adjective
             min: 53
             max: 55
-            result: Large
+            text: Large
           - <<: *i18n.adjective
             min: 56
             max: 57
-            result: Mutated
+            text: Mutated
           - <<: *i18n.adjective
             min: 58
             max: 60
-            result: Plain
+            text: Plain
           - <<: *i18n.adjective
             min: 61
             max: 62
-            result: Poised
+            text: Poised
           - <<: *i18n.adjective
             min: 63
             max: 65
-            result: Scarred
+            text: Scarred
           - <<: *i18n.adjective
             min: 66
             max: 68
-            result: Scruffy
+            text: Scruffy
           - <<: *i18n.adjective
             min: 69
             max: 71
-            result: Shifty
+            text: Shifty
           - <<: *i18n.adjective
             min: 72
             max: 73
-            result: Sickly
+            text: Sickly
           - <<: *i18n.adjective
             min: 74
             max: 76
-            result: Slight
+            text: Slight
           - <<: *i18n.gerund
             min: 77
             max: 78
-            result: Swaggering
+            text: Swaggering
           - <<: *i18n.adjective
             min: 79
             max: 81
-            result: Tattooed
+            text: Tattooed
           - <<: *i18n.adjective
             min: 82
             max: 83
-            result: Threatened
+            text: Threatened
           - <<: *i18n.adjective
             min: 84
             max: 85
-            result: Uncanny
+            text: Uncanny
           - <<: *i18n.adjective
             min: 86
             max: 87
-            result: Visibly disabled
+            text: Visibly disabled
           - <<: *i18n.adjective
             min: 88
             max: 90
-            result: Weathered
+            text: Weathered
           - <<: *i18n.adjective
             min: 91
             max: 92
-            result: Well-equipped
+            text: Well-equipped
           - <<: *i18n.adjective
             min: 93
             max: 95
-            result: Wiry
+            text: Wiry
           - <<: *i18n.adjective
             min: 96
             max: 97
-            result: Wounded
+            text: Wounded
           - <<: *i18n.adjective
             min: 98
             max: 100
-            result: Youthful
+            text: Youthful
       initial_disposition:
         name: Initial Disposition
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 330
@@ -1454,54 +1454,54 @@ oracles:
           - <<: *i18n.adjective
             min: 1
             max: 6
-            result: Helpful
+            text: Helpful
           - <<: *i18n.adjective
             min: 7
             max: 14
-            result: Friendly
+            text: Friendly
           - <<: *i18n.adjective
             min: 15
             max: 22
-            result: Cooperative
+            text: Cooperative
           - <<: *i18n.adjective
             min: 23
             max: 30
-            result: Curious
+            text: Curious
           - <<: *i18n.adjective
             min: 31
             max: 40
-            result: Indifferent
+            text: Indifferent
           - <<: *i18n.adjective
             min: 41
             max: 50
-            result: Suspicious
+            text: Suspicious
           - <<: *i18n.gerund
             min: 51
             max: 60
-            result: Wanting
+            text: Wanting
           - <<: *i18n.adjective
             min: 61
             max: 70
-            result: Desperate
+            text: Desperate
           - <<: *i18n.gerund
             min: 71
             max: 78
-            result: Demanding
+            text: Demanding
           - <<: *i18n.adjective
             min: 79
             max: 86
-            result: Unfriendly
+            text: Unfriendly
           - <<: *i18n.gerund
             min: 87
             max: 94
-            result: Threatening
+            text: Threatening
           - <<: *i18n.adjective
             min: 95
             max: 100
-            result: Hostile
+            text: Hostile
       role:
         name: Character Role
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 331
@@ -1512,191 +1512,191 @@ oracles:
                   part_of_speech: common_noun
             min: 1
             max: 2
-            result: Agent
+            text: Agent
           - <<: *i18n.common_noun
             min: 3
             max: 4
-            result: AI
+            text: AI
           - <<: *i18n.common_noun
             min: 5
             max: 6
-            result: Artisan
+            text: Artisan
           - <<: *i18n.common_noun
             min: 7
             max: 8
-            result: Assassin
+            text: Assassin
           - <<: *i18n.common_noun
             min: 9
             max: 10
-            result: Bounty Hunter
+            text: Bounty Hunter
           - <<: *i18n.common_noun
             min: 11
             max: 12
-            result: Courier
+            text: Courier
           - <<: *i18n.common_noun
             min: 13
             max: 14
-            result: Crew
+            text: Crew
           - <<: *i18n.common_noun
             min: 15
             max: 16
-            result: Criminal
+            text: Criminal
           - <<: *i18n.common_noun
             min: 17
             max: 18
-            result: Cultist
+            text: Cultist
           - <<: *i18n.common_noun
             min: 19
             max: 20
-            result: Diplomat
+            text: Diplomat
           - <<: *i18n.common_noun
             min: 21
             max: 22
-            result: Engineer
+            text: Engineer
           - <<: *i18n.common_noun
             min: 23
             max: 24
-            result: Entertainer
+            text: Entertainer
           - <<: *i18n.common_noun
             min: 25
             max: 26
-            result: Explorer
+            text: Explorer
           - <<: *i18n.common_noun
             min: 27
             max: 28
-            result: Farmer
+            text: Farmer
           - <<: *i18n.common_noun
             min: 29
             max: 30
-            result: Fugitive
+            text: Fugitive
           - <<: *i18n.common_noun
             min: 31
             max: 32
-            result: Guard
+            text: Guard
           - <<: *i18n.common_noun
             min: 33
             max: 34
-            result: Guide
+            text: Guide
           - <<: *i18n.common_noun
             min: 35
             max: 36
-            result: Healer
+            text: Healer
           - <<: *i18n.common_noun
             min: 37
             max: 38
-            result: Historian
+            text: Historian
           - <<: *i18n.common_noun
             min: 39
             max: 40
-            result: Hunter
+            text: Hunter
           - <<: *i18n.common_noun
             min: 41
             max: 42
-            result: Investigator
+            text: Investigator
           - <<: *i18n.common_noun
             min: 43
             max: 44
-            result: Laborer
+            text: Laborer
           - <<: *i18n.common_noun
             min: 45
             max: 46
-            result: Lawkeeper
+            text: Lawkeeper
           - <<: *i18n.common_noun
             min: 47
             max: 48
-            result: Leader
+            text: Leader
           - <<: *i18n.common_noun
             min: 49
             max: 50
-            result: Mercenary
+            text: Mercenary
           - <<: *i18n.common_noun
             min: 51
             max: 52
-            result: Merchant
+            text: Merchant
           - <<: *i18n.common_noun
             min: 53
             max: 54
-            result: Miner
+            text: Miner
           - <<: *i18n.common_noun
             min: 55
             max: 56
-            result: Mystic
+            text: Mystic
           - <<: *i18n.common_noun
             min: 57
             max: 58
-            result: Navigator
+            text: Navigator
           - <<: *i18n.common_noun
             min: 59
             max: 60
-            result: Outcast
+            text: Outcast
           - <<: *i18n.common_noun
             min: 61
             max: 62
-            result: Pilgrim
+            text: Pilgrim
           - <<: *i18n.common_noun
             min: 63
             max: 64
-            result: Pilot
+            text: Pilot
           - <<: *i18n.common_noun
             min: 65
             max: 66
-            result: Pirate
+            text: Pirate
           - <<: *i18n.common_noun
             min: 67
             max: 68
-            result: Preacher
+            text: Preacher
           - <<: *i18n.common_noun
             min: 69
             max: 70
-            result: Prophet
+            text: Prophet
           - <<: *i18n.common_noun
             min: 71
             max: 72
-            result: Raider
+            text: Raider
           - <<: *i18n.common_noun
             min: 73
             max: 74
-            result: Researcher
+            text: Researcher
           - <<: *i18n.common_noun
             min: 75
             max: 76
-            result: Scavenger
+            text: Scavenger
           - <<: *i18n.common_noun
             min: 77
             max: 78
-            result: Scholar
+            text: Scholar
           - <<: *i18n.common_noun
             min: 79
             max: 80
-            result: Scout
+            text: Scout
           - <<: *i18n.common_noun
             min: 81
             max: 82
-            result: Shipwright
+            text: Shipwright
           - <<: *i18n.common_noun
             min: 83
             max: 84
-            result: Smuggler
+            text: Smuggler
           - <<: *i18n.common_noun
             min: 85
             max: 86
-            result: Soldier
+            text: Soldier
           - <<: *i18n.common_noun
             min: 87
             max: 88
-            result: Spacer
+            text: Spacer
           - <<: *i18n.common_noun
             min: 89
             max: 90
-            result: Technician
+            text: Technician
           - <<: *i18n.common_noun
             min: 91
             max: 92
-            result: Thief
+            text: Thief
           - min: 93
             max: 95
             <<: &ActionTheme
-              result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+              text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
               oracle_rolls:
                 - oracle: starforged/oracles/core/action
                   auto: true
@@ -1705,13 +1705,13 @@ oracles:
           - min: 96
             max: 100
             <<: &RollTwice
-              result: Roll twice
+              text: Roll twice
               oracle_rolls:
                 - number_of_rolls: 2
                   auto: true
       goal:
         name: Character Goal
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 331
@@ -1721,144 +1721,144 @@ oracles:
         rows:
           - min: 1
             max: 2
-            result: Avenge a wrong
+            text: Avenge a wrong
             # suggestions: [*roll:Event]
           - min: 3
             max: 4
-            result: Build a home
+            text: Build a home
           - min: 5
             max: 7
-            result: Build a relationship
+            text: Build a relationship
             # suggestions: [*obj:Npc]
           - min: 8
             max: 10
-            result: Claim a resource
+            text: Claim a resource
             # suggestions: [*roll:Object]
           - min: 11
             max: 12
-            result: Collect a debt
+            text: Collect a debt
           - min: 13
             max: 14
-            result: Craft an object
+            text: Craft an object
             # suggestions: [*roll:Object]
           - min: 15
             max: 16
-            result: Cure an ill
+            text: Cure an ill
           - min: 17
             max: 18
-            result: Defeat a rival
+            text: Defeat a rival
             # suggestions: [*obj:Npc]
           - min: 19
             max: 20
-            result: Defend a person
+            text: Defend a person
             # suggestions: [*obj:Npc]
           - min: 21
             max: 23
-            result: Defend a place
+            text: Defend a place
             # suggestions: [*roll:Place]
           - min: 24
             max: 25
-            result: Discover a truth
+            text: Discover a truth
             # suggestions: [*roll:Event]
           - min: 26
             max: 27
-            result: End a conflict
+            text: End a conflict
             # suggestions: [*roll:Event]
           - min: 28
             max: 29
-            result: Escape a captor
+            text: Escape a captor
           - min: 30
             max: 31
-            result: Fight injustice
+            text: Fight injustice
           - min: 32
             max: 33
-            result: Find a person
+            text: Find a person
             # suggestions: [*obj:Npc]
           - min: 34
             max: 35
-            result: Forge an alliance
+            text: Forge an alliance
             # suggestions: [*obj:Faction]
           - min: 36
             max: 37
-            result: Gain knowledge
+            text: Gain knowledge
             # suggestions: [*roll:Event]
           - min: 38
             max: 39
-            result: Gain riches
+            text: Gain riches
           - min: 40
             max: 41
-            result: Maintain order
+            text: Maintain order
           - min: 42
             max: 43
-            result: Make an agreement
+            text: Make an agreement
             # suggestions: [*roll:Event]
           - min: 44
             max: 45
-            result: Obtain an object
+            text: Obtain an object
             # suggestions: [*roll:Object]
           - min: 46
             max: 47
-            result: Pay a debt
+            text: Pay a debt
           - min: 48
             max: 49
-            result: Protect a lifeform
+            text: Protect a lifeform
             # suggestions: [*obj:Creature]
           - min: 50
             max: 51
-            result: Protect a secret
+            text: Protect a secret
             # suggestions: [*roll:Event]
           - min: 52
             max: 53
-            result: Prove worthiness
+            text: Prove worthiness
             # suggestions: [*roll:Event]
           - min: 54
             max: 55
-            result: Rebel against power
+            text: Rebel against power
           - min: 56
             max: 57
-            result: Refute a falsehood
+            text: Refute a falsehood
           - min: 58
             max: 59
-            result: Repair a technology
+            text: Repair a technology
             # suggestions: [*roll:Object]
           - min: 60
             max: 61
-            result: Resolve a dispute
+            text: Resolve a dispute
             # suggestions: [*roll:Event]
           - min: 62
             max: 63
-            result: Restore a relationship
+            text: Restore a relationship
             # suggestions: [*obj:Npc]
           - min: 64
             max: 65
-            result: Sabotage a technology
+            text: Sabotage a technology
             # suggestions: [*roll:Object]
           - min: 66
             max: 68
-            result: Secure a resource
+            text: Secure a resource
             # suggestions: [*roll:Object]
           - min: 69
             max: 70
-            result: Seek redemption
+            text: Seek redemption
             # suggestions: [*roll:Event]
           - min: 71
             max: 72
-            result: Seize power
+            text: Seize power
             # suggestions: [*roll:Event]
           - min: 73
             max: 74
-            result: Solve a mystery
+            text: Solve a mystery
             # suggestions: [*roll:Event]
           - min: 75
             max: 76
-            result: Spread faith
+            text: Spread faith
           - min: 77
             max: 78
-            result: Travel to a place
+            text: Travel to a place
             # suggestions: [*roll:Place]
           - min: 79
             max: 80
-            result: Undermine a relationship
+            text: Undermine a relationship
             # suggestions: [*obj:Npc]
           - min: 81
             max: 90
@@ -1868,7 +1868,7 @@ oracles:
             <<: *RollTwice
       revealed_aspect:
         name: Revealed Character Aspect
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 332
@@ -1882,400 +1882,400 @@ oracles:
           - <<: *i18n.adjective
             min: 1
             max: 1
-            result: Addicted
+            text: Addicted
           - <<: *i18n.adjective
             min: 2
             max: 2
-            result: Adventurous
+            text: Adventurous
           - <<: *i18n.adjective
             min: 3
             max: 3
-            result: Afflicted
+            text: Afflicted
           - <<: *i18n.adjective
             min: 4
             max: 4
-            result: Aggressive
+            text: Aggressive
           - <<: *i18n.adjective
             min: 5
             max: 5
-            result: Ambitious
+            text: Ambitious
           - <<: *i18n.adjective
             min: 6
             max: 6
-            result: Angry
+            text: Angry
           - <<: *i18n.adjective
             min: 7
             max: 7
-            result: Anxious
+            text: Anxious
           - <<: *i18n.adjective
             min: 8
             max: 8
-            result: Apathetic
+            text: Apathetic
           - <<: *i18n.adjective
             min: 9
             max: 9
-            result: Bitter
+            text: Bitter
           - <<: *i18n.adjective
             min: 10
             max: 10
-            result: Boastful
+            text: Boastful
           - <<: *i18n.adjective
             min: 11
             max: 11
-            result: Boisterous
+            text: Boisterous
           - <<: *i18n.adjective
             min: 12
             max: 12
-            result: Bold
+            text: Bold
           - <<: *i18n.adjective
             min: 13
             max: 13
-            result: Brave
+            text: Brave
           - <<: *i18n.adjective
             min: 14
             max: 14
-            result: Careless
+            text: Careless
           - <<: *i18n.adjective
             min: 15
             max: 15
-            result: Cautious
+            text: Cautious
           - <<: *i18n.adjective
             min: 16
             max: 16
-            result: Charismatic
+            text: Charismatic
           - <<: *i18n.adjective
             min: 17
             max: 17
-            result: Clever
+            text: Clever
           - <<: *i18n.adjective
             min: 18
             max: 18
-            result: Conceited
+            text: Conceited
           - <<: *i18n.adjective
             min: 19
             max: 19
-            result: Confident
+            text: Confident
           - <<: *i18n.adjective
             min: 20
             max: 20
-            result: Confused
+            text: Confused
           - <<: *i18n.adjective
             min: 21
             max: 21
-            result: Connected
+            text: Connected
           - <<: *i18n.adjective
             min: 22
             max: 22
-            result: Corrupted
+            text: Corrupted
           - <<: *i18n.adjective
             min: 23
             max: 23
-            result: Cowardly
+            text: Cowardly
           - <<: *i18n.adjective
             min: 24
             max: 24
-            result: Creative
+            text: Creative
           - <<: *i18n.adjective
             min: 25
             max: 25
-            result: Critical
+            text: Critical
           - <<: *i18n.adjective
             min: 26
             max: 26
-            result: Cruel
+            text: Cruel
           - <<: *i18n.adjective
             min: 27
             max: 27
-            result: Cunning
+            text: Cunning
           - <<: *i18n.adjective
             min: 28
             max: 28
-            result: Dangerous
+            text: Dangerous
           - <<: *i18n.adjective
             min: 29
             max: 29
-            result: Deceitful
+            text: Deceitful
           - <<: *i18n.adjective
             min: 30
             max: 30
-            result: Defiant
+            text: Defiant
           - <<: *i18n.adjective
             min: 31
             max: 31
-            result: Determined
+            text: Determined
           - <<: *i18n.adjective
             min: 32
             max: 32
-            result: Disabled
+            text: Disabled
           - <<: *i18n.adjective
             min: 33
             max: 33
-            result: Doomed
+            text: Doomed
           - <<: *i18n.adjective
             min: 34
             max: 34
-            result: Driven
+            text: Driven
           - <<: *i18n.adjective
             min: 35
             max: 35
-            result: Dying
+            text: Dying
           - <<: *i18n.adjective
             min: 36
             max: 36
-            result: Envious
+            text: Envious
           - <<: *i18n.adjective
             min: 37
             max: 37
-            result: Experienced
+            text: Experienced
           - <<: *i18n.adjective
             min: 38
             max: 38
-            result: Faithful
+            text: Faithful
           - <<: *i18n.adjective
             min: 39
             max: 39
-            result: Generous
+            text: Generous
           - <<: *i18n.adjective
             min: 40
             max: 40
-            result: Gifted
+            text: Gifted
           - <<: *i18n.adjective
             min: 41
             max: 41
-            result: Greedy
+            text: Greedy
           - <<: *i18n.adjective
             min: 42
             max: 42
-            result: Grief-stricken
+            text: Grief-stricken
           - <<: *i18n.adjective
             min: 43
             max: 43
-            result: Handy
+            text: Handy
           - <<: *i18n.adjective
             min: 44
             max: 44
-            result: Hardhearted
+            text: Hardhearted
           - <<: *i18n.adjective
             min: 45
             max: 45
-            result: Haunted
+            text: Haunted
           - <<: *i18n.adjective
             min: 46
             max: 46
-            result: Honorable
+            text: Honorable
           - <<: *i18n.adjective
             min: 47
             max: 47
-            result: Hot-tempered
+            text: Hot-tempered
           - <<: *i18n.adjective
             min: 48
             max: 48
-            result: Impulsive
+            text: Impulsive
           - <<: *i18n.adjective
             min: 49
             max: 49
-            result: Incompetent
+            text: Incompetent
           - <<: *i18n.adjective
             min: 50
             max: 50
-            result: Independent
+            text: Independent
           - <<: *i18n.adjective
             min: 51
             max: 51
-            result: Infamous
+            text: Infamous
           - <<: *i18n.adjective
             min: 52
             max: 52
-            result: Influential
+            text: Influential
           - <<: *i18n.adjective
             min: 53
             max: 53
-            result: Insensitive
+            text: Insensitive
           - <<: *i18n.adjective
             min: 54
             max: 54
-            result: Insightful
+            text: Insightful
           - <<: *i18n.adjective
             min: 55
             max: 55
-            result: Intelligent
+            text: Intelligent
           - <<: *i18n.adjective
             min: 56
             max: 56
-            result: Intolerant
+            text: Intolerant
           - <<: *i18n.adjective
             min: 57
             max: 57
-            result: Ironsworn
+            text: Ironsworn
           - <<: *i18n.adjective
             min: 58
             max: 58
-            result: Kind
+            text: Kind
           - <<: *i18n.adjective
             min: 59
             max: 59
-            result: Law-abiding
+            text: Law-abiding
           - <<: *i18n.adjective
             min: 60
             max: 60
-            result: Lonely
+            text: Lonely
           - <<: *i18n.adjective
             min: 61
             max: 61
-            result: Loving
+            text: Loving
           - <<: *i18n.adjective
             min: 62
             max: 62
-            result: Loyal
+            text: Loyal
           - <<: *i18n.adjective
             min: 63
             max: 63
-            result: Manipulative
+            text: Manipulative
           - <<: *i18n.adjective
             min: 64
             max: 64
-            result: Oblivious
+            text: Oblivious
           - <<: *i18n.adjective
             min: 65
             max: 65
-            result: Obsessed
+            text: Obsessed
           - <<: *i18n.adjective
             min: 66
             max: 66
-            result: Oppressed
+            text: Oppressed
           - <<: *i18n.adjective
             min: 67
             max: 67
-            result: Passive
+            text: Passive
           - <<: *i18n.adjective
             min: 68
             max: 68
-            result: Powerful
+            text: Powerful
           - <<: *i18n.adjective
             min: 69
             max: 69
-            result: Proud
+            text: Proud
           - <<: *i18n.adjective
             min: 70
             max: 70
-            result: Quiet
+            text: Quiet
           - <<: *i18n.adjective
             min: 71
             max: 71
-            result: Quirky
+            text: Quirky
           - <<: *i18n.adjective
             min: 72
             max: 72
-            result: Rebellious
+            text: Rebellious
           - <<: *i18n.adjective
             min: 73
             max: 73
-            result: Reclusive
+            text: Reclusive
           - <<: *i18n.adjective
             min: 74
             max: 74
-            result: Relaxed
+            text: Relaxed
           - <<: *i18n.adjective
             min: 75
             max: 75
-            result: Remorseful
+            text: Remorseful
           - <<: *i18n.adjective
             min: 76
             max: 76
-            result: Resourceful
+            text: Resourceful
           - <<: *i18n.adjective
             min: 77
             max: 77
-            result: Secretive
+            text: Secretive
           - <<: *i18n.adjective
             min: 78
             max: 78
-            result: Selfish
+            text: Selfish
           - <<: *i18n.adjective
             min: 79
             max: 79
-            result: Sociable
+            text: Sociable
           - <<: *i18n.adjective
             min: 80
             max: 80
-            result: Stealthy
+            text: Stealthy
           - <<: *i18n.adjective
             min: 81
             max: 81
-            result: Stern
+            text: Stern
           - <<: *i18n.adjective
             min: 82
             max: 82
-            result: Stingy
+            text: Stingy
           - <<: *i18n.adjective
             min: 83
             max: 83
-            result: Stoic
+            text: Stoic
           - <<: *i18n.adjective
             min: 84
             max: 84
-            result: Strong
+            text: Strong
           - <<: *i18n.adjective
             min: 85
             max: 85
-            result: Stubborn
+            text: Stubborn
           - <<: *i18n.adjective
             min: 86
             max: 86
-            result: Successful
+            text: Successful
           - <<: *i18n.adjective
             min: 87
             max: 87
-            result: Suspicious
+            text: Suspicious
           - <<: *i18n.adjective
             min: 88
             max: 88
-            result: Talented
+            text: Talented
           - <<: *i18n.adjective
             min: 89
             max: 89
-            result: Technical
+            text: Technical
           - <<: *i18n.adjective
             min: 90
             max: 90
-            result: Timid
+            text: Timid
           - <<: *i18n.adjective
             min: 91
             max: 91
-            result: Tolerant
+            text: Tolerant
           - <<: *i18n.adjective
             min: 92
             max: 92
-            result: Tough
+            text: Tough
           - <<: *i18n.adjective
             min: 93
             max: 93
-            result: Vengeful
+            text: Vengeful
           - <<: *i18n.adjective
             min: 94
             max: 94
-            result: Violent
+            text: Violent
           - <<: *i18n.adjective
             min: 95
             max: 95
-            result: Wary
+            text: Wary
           - <<: *i18n.adjective
             min: 96
             max: 96
-            result: Watchful
+            text: Watchful
           - <<: *i18n.adjective
             min: 97
             max: 97
-            result: Weak
+            text: Weak
           - <<: *i18n.adjective
             min: 98
             max: 98
-            result: Weary
+            text: Weary
           - <<: *i18n.adjective
             min: 99
             max: 99
-            result: Wild
+            text: Wild
           - <<: *i18n.adjective
             min: 100
             max: 100
-            result: Wise
+            text: Wise

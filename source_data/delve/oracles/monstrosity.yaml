@@ -38,7 +38,7 @@ oracles:
       size:
         name: Size
         canonical_name: 'Monstrosity: Size'
-        oracle_type: table_simple
+        oracle_type: table_basic
         # usage:
         #   initial: true
         _source:
@@ -47,26 +47,26 @@ oracles:
         rows:
           - min: 1
             max: 5
-            result: Tiny (rodent-sized)
+            text: Tiny (rodent-sized)
           - min: 6
             max: 30
-            result: Small (hound-sized)
+            text: Small (hound-sized)
           - min: 31
             max: 65
-            result: Medium (person-sized)
+            text: Medium (person-sized)
           - min: 66
             max: 94
-            result: Large (giant-sized)
+            text: Large (giant-sized)
           - min: 95
             max: 99
-            result: Huge (whale-sized)
+            text: Huge (whale-sized)
           - min: 100
             max: 100
-            result: Titanic (incomprehensible)
+            text: Titanic (incomprehensible)
       primary_form:
         name: Primary Form
         canonical_name: 'Monstrosity: Primary Form'
-        oracle_type: table_simple
+        oracle_type: table_basic
         summary: |-
           Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
         # usage:
@@ -81,77 +81,77 @@ oracles:
                   part_of_speech: adjunct_common_noun
             min: 1
             max: 15
-            result: Beast / mammal
+            text: Beast / mammal
           - <<: *i18n.adjunct_common_noun
             min: 16
             max: 25
-            result: Humanoid
+            text: Humanoid
           - <<: *i18n.adjunct_common_noun
             min: 26
             max: 31
-            result: Bird
+            text: Bird
           - <<: *i18n.adjunct_common_noun
             min: 32
             max: 37
-            result: Spider
+            text: Spider
           - <<: *i18n.adjunct_common_noun
             min: 38
             max: 43
-            result: Snake
+            text: Snake
           - <<: *i18n.adjunct_common_noun
             min: 44
             max: 49
-            result: Worm / slug
+            text: Worm / slug
           - <<: *i18n.adjunct_common_noun
             min: 50
             max: 55
-            result: Lizard
+            text: Lizard
           - <<: *i18n.adjunct_common_noun
             min: 56
             max: 61
-            result: Insect
+            text: Insect
           - <<: &i18n.adjective
               _i18n:
                 result:
                   part_of_speech: adjective
             min: 62
             max: 66
-            result: Amorphous
+            text: Amorphous
           - <<: *i18n.adjunct_common_noun
             min: 67
             max: 69
-            result: Crustacean
+            text: Crustacean
           - <<: *i18n.adjunct_common_noun
             min: 70
             max: 71
-            result: Fish
+            text: Fish
           - <<: *i18n.adjunct_common_noun
             min: 72
             max: 73
-            result: Octopoid
+            text: Octopoid
           - <<: *i18n.adjunct_common_noun
             min: 74
             max: 75
-            result: Amphibian
+            text: Amphibian
           - <<: *i18n.adjunct_common_noun
             min: 76
             max: 77
-            result: Plant
+            text: Plant
           - <<: *i18n.adjective
             min: 78
             max: 78
-            result: Incorporeal
+            text: Incorporeal
           - <<: *i18n.adjunct_common_noun
             min: 79
             max: 79
-            result: Mineral
+            text: Mineral
           - <<: *i18n.adjective
             min: 80
             max: 80
-            result: Elemental
+            text: Elemental
           - min: 81
             max: 100
-            result: Hybrid (roll twice)
+            text: Hybrid (roll twice)
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
@@ -159,7 +159,7 @@ oracles:
       characteristics:
         name: Characteristics
         canonical_name: 'Monstrosity: Characteristics'
-        oracle_type: table_simple
+        oracle_type: table_basic
         # recommended_rolls:
         #   min: 1
         #   max: 4
@@ -173,92 +173,92 @@ oracles:
         rows:
           - min: 1
             max: 5
-            result: Extra limbs
+            text: Extra limbs
           - min: 6
             max: 10
-            result: Fangs / rows of sharp teeth
+            text: Fangs / rows of sharp teeth
           - min: 11
             max: 15
-            result: Claws / talons
+            text: Claws / talons
           - min: 16
             max: 20
-            result: Strange color / markings
+            text: Strange color / markings
           - min: 21
             max: 25
-            result: Horns / tusks
+            text: Horns / tusks
           - min: 26
             max: 30
-            result: Oversized mouth
+            text: Oversized mouth
           - min: 31
             max: 35
-            result: Spikes / spines
+            text: Spikes / spines
           - min: 36
             max: 40
-            result: Tail
+            text: Tail
           - min: 41
             max: 45
-            result: Multi-segmented body
+            text: Multi-segmented body
           - min: 46
             max: 50
-            result: Wings
+            text: Wings
           - min: 51
             max: 54
-            result: Stinger / barbs
+            text: Stinger / barbs
           - min: 55
             max: 58
-            result: Many-eyed
+            text: Many-eyed
           - min: 59
             max: 62
-            result: Distinctive sound
+            text: Distinctive sound
           - min: 63
             max: 66
-            result: Tentacles / tendrils
+            text: Tentacles / tendrils
           - min: 67
             max: 69
-            result: Mandibles / pincers
+            text: Mandibles / pincers
           - min: 70
             max: 72
-            result: Luminescent
+            text: Luminescent
           - min: 73
             max: 75
-            result: Antennae / sensory organs
+            text: Antennae / sensory organs
           - min: 76
             max: 78
-            result: Proboscis / inner jaw
+            text: Proboscis / inner jaw
           - min: 79
             max: 81
-            result: Exoskeleton / shell
+            text: Exoskeleton / shell
           - min: 82
             max: 84
-            result: Bony protuberances
+            text: Bony protuberances
           - min: 85
             max: 87
-            result: Corrupted flesh
+            text: Corrupted flesh
           - min: 88
             max: 90
-            result: Semi-transparent
+            text: Semi-transparent
           - min: 91
             max: 93
-            result: Scarred / injured
+            text: Scarred / injured
           - min: 94
             max: 95
-            result: Egg sac / carried offspring
+            text: Egg sac / carried offspring
           - min: 96
             max: 97
-            result: Rotting / skeletal
+            text: Rotting / skeletal
           - min: 98
             max: 98
-            result: Mummified / desiccated
+            text: Mummified / desiccated
           - min: 99
             max: 99
-            result: Multi-headed
+            text: Multi-headed
           - min: 100
             max: 100
-            result: Etched with mystic runes
+            text: Etched with mystic runes
       abilities:
         name: Abilities
         canonical_name: 'Monstrosity: Abilities'
-        oracle_type: table_simple
+        oracle_type: table_basic
         # recommended_rolls:
         #   min: 1
         #   max: 4
@@ -274,121 +274,121 @@ oracles:
         rows:
           - min: 1
             max: 4
-            result: Keen senses
+            text: Keen senses
           - min: 5
             max: 8
-            result: Intimidating vocalization
+            text: Intimidating vocalization
           - min: 9
             max: 12
-            result: Climber
+            text: Climber
           - min: 13
             max: 16
-            result: Intelligent
+            text: Intelligent
           - min: 17
             max: 20
-            result: Swift
+            text: Swift
           - min: 21
             max: 24
-            result: Powerful bite
+            text: Powerful bite
           - min: 25
             max: 28
-            result: Stealthy / ambusher
+            text: Stealthy / ambusher
           - min: 29
             max: 32
-            result: Horrid visage
+            text: Horrid visage
           - min: 33
             max: 36
-            result: Strong
+            text: Strong
           - min: 37
             max: 40
-            result: Camouflaged
+            text: Camouflaged
           - min: 41
             max: 43
-            result: Flier / glider
+            text: Flier / glider
           - min: 44
             max: 46
-            result: Poisonous
+            text: Poisonous
           - min: 47
             max: 49
-            result: Semiaquatic / swimmer
+            text: Semiaquatic / swimmer
           - min: 50
             max: 52
-            result: Grappler / entangler
+            text: Grappler / entangler
           - min: 53
             max: 55
-            result: Leaper
+            text: Leaper
           - min: 56
             max: 58
-            result: Crusher / constrictor
+            text: Crusher / constrictor
           - min: 59
             max: 61
-            result: Armored
+            text: Armored
           - min: 62
             max: 64
-            result: Burrower
+            text: Burrower
           - min: 65
             max: 67
-            result: Noxious smell
+            text: Noxious smell
           - min: 68
             max: 69
-            result: Trap-setter
+            text: Trap-setter
           - min: 70
             max: 71
-            result: Parasitic
+            text: Parasitic
           - min: 72
             max: 73
-            result: Vibration sense
+            text: Vibration sense
           - min: 74
             max: 75
-            result: Breath weapon / toxic spew
+            text: Breath weapon / toxic spew
           - min: 76
             max: 77
-            result: Mimicry
+            text: Mimicry
           - min: 78
             max: 79
-            result: Shapeshifting
+            text: Shapeshifting
           - min: 80
             max: 81
-            result: Control lesser creatures
+            text: Control lesser creatures
           - min: 82
             max: 83
-            result: Echolocation
+            text: Echolocation
           - min: 84
             max: 85
-            result: Electric shock
+            text: Electric shock
           - min: 86
             max: 87
-            result: Acidic
+            text: Acidic
           - min: 88
             max: 89
-            result: Symbiotic
+            text: Symbiotic
           - min: 90
             max: 91
-            result: Shoot projectiles
+            text: Shoot projectiles
           - min: 92
             max: 92
-            result: Paralyzing
+            text: Paralyzing
           - min: 93
             max: 93
-            result: Immune to iron
+            text: Immune to iron
           - min: 94
             max: 94
-            result: Feels no pain
+            text: Feels no pain
           - min: 95
             max: 95
-            result: Enact rituals
+            text: Enact rituals
           - min: 96
             max: 96
-            result: Create illusions
+            text: Create illusions
           - min: 97
             max: 97
-            result: Mind control / telepathy
+            text: Mind control / telepathy
           - min: 98
             max: 98
-            result: Move between realities
+            text: Move between realities
           - min: 99
             max: 99
-            result: Wield weapons
+            text: Wield weapons
           - min: 100
             max: 100
-            result: Control elements
+            text: Control elements

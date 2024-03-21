@@ -22,7 +22,7 @@ import JtdType from '../../scripts/json-typedef/typedef.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
 
 const TableRowBase = Type.Object({
-	result: Type.Ref(Localize.MarkdownString, {
+	text: Type.Ref(Localize.MarkdownString, {
 		description: 'The primary text content of this row.'
 	}),
 	icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
@@ -98,21 +98,20 @@ export function StaticRowPartial<
 		additionalProperties: true
 	})
 }
-// export const OracleTableRowSimple = Generic.IdentifiedNode(
+// export const OracleTableRowBasic = Generic.IdentifiedNode(
 // 	Type.Ref(Id.OracleTableRowId),
 // 	CloneType(TableRowNullableMixin),
 // 	{
-// 		$id: 'OracleTableRowSimple',
+// 		$id: 'OracleTableRowBasic',
 // 		description: 'Represents a row in an oracle table.'
 // 	}
 // )
-export const OracleTableRowSimple = CloneType(TableRowNullableMixin, {
-	$id: 'OracleTableRowSimple',
-	description: 'Represents a row in an oracle table.'
+export const OracleTableRowBasic = CloneType(TableRowNullableMixin, {
+	$id: 'OracleTableRowBasic',
+	description: 'Represents a row in an oracle table, with a single text cell.'
 })
 
-
-export type OracleTableRowSimple = Static<typeof OracleTableRowSimple>
+export type OracleTableRowBasic = Static<typeof OracleTableRowBasic>
 
 // export const OracleTableRowDetails = Generic.IdentifiedNode(
 // 	Type.Ref(Id.OracleTableRowId),
@@ -132,11 +131,11 @@ export type OracleTableRowSimple = Static<typeof OracleTableRowSimple>
 // 			'Represents a row in an oracle table that provides additional details.'
 // 	}
 // )
-export const OracleTableRowDetails = Utils.Assign(
+export const OracleTableRow2TextCells = Utils.Assign(
 	[
 		TableRowNullableMixin,
 		Type.Object({
-			detail: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+			text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
 				default: undefined,
 				description:
 					'The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.'
@@ -144,12 +143,35 @@ export const OracleTableRowDetails = Utils.Assign(
 		})
 	],
 	{
-		$id: 'OracleTableRowDetails',
+		$id: 'OracleTableRow2TextCells',
 		description:
 			'Represents a row in an oracle table that provides additional details.'
 	}
 )
-export type OracleTableRowDetails = Static<typeof OracleTableRowDetails>
+export type OracleTableRow2TextCells = Static<typeof OracleTableRow2TextCells>
+
+export const OracleTableRow3TextCells = Utils.Assign(
+	[
+		TableRowNullableMixin,
+		Type.Object({
+			text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+				default: undefined,
+				description:
+					'The second text column for this row. Use `null` to represent a cell with a blank or empty vlue.'
+			}),
+			text3: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+				default: undefined,
+				description:
+					'The third text column for this row. Use `null` to represent a cell with a blank or empty vlue.'
+			})
+		})
+	],
+	{
+		$id: 'OracleTableRow3TextCells',
+		description: 'Represents a row in an oracle table with 3 text cells.'
+	}
+)
+export type OracleTableRow3TextCells = Static<typeof OracleTableRow3TextCells>
 
 type StringDefaultsFor<T extends TObject> = {
 	[K in
@@ -179,19 +201,25 @@ export function ColumnLabels<
 	)
 }
 
-export const SimpleRowLabels = ColumnLabels<typeof OracleTableRowSimple>({
+export const SimpleColumnLabels = ColumnLabels<typeof OracleTableRowBasic>({
 	roll: 'Roll',
-	result: 'Result'
+	text: 'Result'
 })
-export const DetailsRowLabels = ColumnLabels<typeof OracleTableRowDetails>({
+export const DetailsColumnLabels = ColumnLabels<typeof OracleTableRow2TextCells>({
 	roll: 'Roll',
-	result: 'Result',
-	detail: 'Detail'
+	text: 'Result',
+	text2: 'Details'
 })
 
+export const Text3ColumnLabels = ColumnLabels<typeof OracleTableRow3TextCells>({
+	roll: 'Roll',
+	text: undefined,
+	text2: undefined,
+	text3: undefined
+})
 
 export const OracleTableRow = Type.Union(
-	[Type.Ref(OracleTableRowSimple), Type.Ref(OracleTableRowDetails)],
+	[Type.Ref(OracleTableRowBasic), Type.Ref(OracleTableRow2TextCells)],
 	{ $id: 'OracleTableRow' }
 )
 

@@ -3,13 +3,9 @@ import { Id, Localize, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as TableRow from './oracles/TableRow.js'
 
-export const TruthOptionTableRow = Type.Omit(
-	TableRow.OracleTableRowSimple,
-	['_id'],
-	{
-		$id: 'TruthOptionTableRow'
-	}
-)
+export const TruthOptionTableRow = Type.Omit(TableRow.OracleTableRowBasic, ['_id'], {
+	$id: 'TruthOptionTableRow'
+})
 export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
 
 export const TruthOption = Generic.IdentifiedNode(

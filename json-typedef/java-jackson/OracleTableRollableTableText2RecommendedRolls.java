@@ -6,14 +6,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class OracleTableRollableTableSimpleRecommendedRolls {
+public class OracleTableRollableTableText2RecommendedRolls {
     @JsonProperty("max")
     private Short max;
 
     @JsonProperty("min")
     private Short min;
 
-    public OracleTableRollableTableSimpleRecommendedRolls() {
+    public OracleTableRollableTableText2RecommendedRolls() {
     }
 
     /**

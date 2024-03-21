@@ -21,9 +21,9 @@ oracles:
         #   requires:
         #     attributes:
         #       region: null
-        oracle_type: table_shared_results
+        oracle_type: table_shared_text
         column_labels:
-          result: Number
+          text: Number
         contents:
           terminus:
             <<: &OracleTable.Terminus
@@ -32,7 +32,7 @@ oracles:
                 starforged:
                   region: terminus
             # source: *CollectionSource
-            oracle_type: column_simple
+            oracle_type: column_basic
             # rendering: &Pop.rendering
             # usage:
             #   requires:
@@ -42,30 +42,30 @@ oracles:
               - &Pop.0
                 min: 1
                 max: 10
-                result: Few
+                text: Few
                 # set_attributes: {population: [few]}
               - &Pop.1
                 min: 11
                 max: 25
-                result: Dozens
+                text: Dozens
                 # set_attributes: {population: [dozens]}
               - &Pop.2
                 min: 26
                 max: 55
-                result: Hundreds
+                text: Hundreds
                 # set_attributes: {population: [hundreds]}
               - &Pop.3
                 min: 56
                 max: 85
-                result: Thousands
+                text: Thousands
                 # set_attributes: {population: [thousands]}
               - &Pop.4
                 min: 86
                 max: 100
-                result: Tens of thousands
+                text: Tens of thousands
                 # set_attributes: {population: [tens_of_thousands]}
           outlands:
-            oracle_type: column_simple
+            oracle_type: column_basic
             <<: &OracleTable.Outlands
               name: Outlands
               tags:
@@ -94,7 +94,7 @@ oracles:
                 max: 100
                 <<: *Pop.4
           expanse:
-            oracle_type: column_simple
+            oracle_type: column_basic
             <<: &OracleTable.Expanse
               name: Expanse
               tags:
@@ -125,7 +125,7 @@ oracles:
     contents:
       location:
         name: Location
-        oracle_type: table_simple
+        oracle_type: table_basic
         # _templateOracleTable: *template.info:Generic.Location
         _source:
           <<: *Source
@@ -135,19 +135,19 @@ oracles:
         rows:
           - min: 1
             max: 40
-            result: Planetside
+            text: Planetside
             icon: icon/oracles/location/planetside.svg
           - min: 41
             max: 75
-            result: Orbital
+            text: Orbital
             icon: icon/oracles/location/orbital.svg
           - min: 76
             max: 100
-            result: Deep Space
+            text: Deep Space
             icon: icon/oracles/location/deep_space.svg
       first_look:
         name: First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 323
@@ -162,68 +162,68 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: Beautiful architecture
+            text: Beautiful architecture
           - min: 4
             max: 9
-            result: Built from organic materials
+            text: Built from organic materials
           - min: 10
             max: 15
-            result: Built from random scrap
+            text: Built from random scrap
           - min: 16
             max: 21
-            result: Built within repurposed ship
+            text: Built within repurposed ship
           - min: 22
             max: 26
-            result: Built within terrain or asteroid
+            text: Built within terrain or asteroid
           - min: 27
             max: 31
-            result: Defensible location
+            text: Defensible location
           - min: 32
             max: 35
-            result: Elevated or multi-level construction
+            text: Elevated or multi-level construction
           - min: 36
             max: 40
-            result: Hidden or subsurface location
+            text: Hidden or subsurface location
           - min: 41
             max: 43
-            result: High-tech construction
+            text: High-tech construction
           - min: 44
             max: 49
-            result: Industrial architecture
+            text: Industrial architecture
           - min: 50
             max: 53
-            result: Intimidating defenses
+            text: Intimidating defenses
           - min: 54
             max: 56
-            result: Moving or transforming
+            text: Moving or transforming
           - min: 57
             max: 61
-            result: Obvious social stratification
+            text: Obvious social stratification
           - min: 62
             max: 66
-            result: Precarious location
+            text: Precarious location
           - min: 67
             max: 72
-            result: Rustic architecture
+            text: Rustic architecture
           - min: 73
             max: 76
-            result: Significant structural damage
+            text: Significant structural damage
           - min: 77
             max: 80
-            result: Sprawling or dispersed structures
+            text: Sprawling or dispersed structures
           - min: 81
             max: 83
-            result: Temporary or seasonal location
+            text: Temporary or seasonal location
           - min: 84
             max: 87
-            result: Toxic or polluted habitat
+            text: Toxic or polluted habitat
           - min: 88
             max: 90
-            result: 'Within or near [Precursor Vault](id:starforged/collections/oracles/vaults)'
+            text: 'Within or near [Precursor Vault](id:starforged/collections/oracles/vaults)'
             # suggestions: [*obj:Vault]
           - min: 91
             max: 100
-            result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+            text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
             oracle_rolls:
               - oracle: starforged/oracles/core/descriptor
                 auto: true
@@ -232,7 +232,7 @@ oracles:
 
       initial_contact:
         name: Initial Contact
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 323
@@ -244,52 +244,52 @@ oracles:
         rows:
           - min: 1
             max: 20
-            result: Welcoming
+            text: Welcoming
             # set_attributes: {initial_contact: [welcoming]}
           - min: 21
             max: 30
-            result: Neutral / automated
+            text: Neutral / automated
             # set_attributes: {initial_contact: [neutral_automated]}
           - min: 31
             max: 50
-            result: Wary
+            text: Wary
             # set_attributes: {initial_contact: [wary]}
           - min: 51
             max: 60
-            result: Uncooperative
+            text: Uncooperative
             # set_attributes: {initial_contact: [uncooperative]}
           - min: 61
             max: 70
-            result: Hostile
+            text: Hostile
             # set_attributes: {initial_contact: [hostile]}
           - min: 71
             max: 83
-            result: Asking for help
+            text: Asking for help
             # set_attributes: {initial_contact: [asking_for_help]}
           - min: 84
             max: 86
-            result: In battle
+            text: In battle
             # set_attributes: {initial_contact: [in_battle]}
           - min: 87
             max: 89
-            result: Captured
+            text: Captured
             # set_attributes: {initial_contact: [captured]}
           - min: 90
             max: 92
-            result: Unresponsive
+            text: Unresponsive
             # set_attributes: {initial_contact: [unresponsive]}
           - min: 93
             max: 95
-            result: Destroyed
+            text: Destroyed
             # set_attributes: {initial_contact: [destroyed]}
           - min: 96
             max: 100
-            result: '[Derelict](id:starforged/collections/oracles/derelicts)'
+            text: '[Derelict](id:starforged/collections/oracles/derelicts)'
             # *inherit:Derelict.Settlement
 
       authority:
         name: Authority
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 323
@@ -302,41 +302,41 @@ oracles:
                   part_of_speech: adjective
             min: 1
             max: 15
-            result: None / lawless
+            text: None / lawless
             # set_attributes: {authority: [none_lawless]}
           - <<: *i18n.result.adjective
             min: 16
             max: 30
-            result: Ineffectual
+            text: Ineffectual
             # set_attributes: {authority: [ineffectual]}
           - <<: *i18n.result.adjective
             min: 31
             max: 45
-            result: Tolerant
+            text: Tolerant
             # set_attributes: {authority: [tolerant]}
           - <<: *i18n.result.adjective
             min: 46
             max: 55
-            result: Fair
+            text: Fair
             # set_attributes: {authority: [fair]}
           - <<: *i18n.result.adjective
             min: 56
             max: 70
-            result: Unyielding
+            text: Unyielding
             # set_attributes: {authority: [unyielding]}
           - <<: *i18n.result.adjective
             min: 71
             max: 85
-            result: Corrupt
+            text: Corrupt
             # set_attributes: {authority: [corrupt]}
           - <<: *i18n.result.adjective
             min: 86
             max: 100
-            result: Oppressive
+            text: Oppressive
             # set_attributes: {authority: [oppressive]}
       projects:
         name: Settlement Projects
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 324
@@ -355,138 +355,138 @@ oracles:
                   part_of_speech: common_noun
             min: 1
             max: 5
-            result: Agriculture
+            text: Agriculture
           - <<: *i18n.result.common_noun
             min: 6
             max: 7
-            result: Archeology
+            text: Archeology
           - <<: *i18n.result.common_noun
             min: 8
             max: 9
-            result: Automation
+            text: Automation
           - <<: *i18n.result.common_noun
             min: 10
             max: 11
-            result: Black market
+            text: Black market
           - <<: *i18n.result.common_noun
             min: 12
             max: 13
-            result: Command
+            text: Command
           - <<: *i18n.result.common_noun
             min: 14
             max: 17
-            result: Defense
+            text: Defense
           - <<: *i18n.result.common_noun
             min: 18
             max: 22
-            result: Energy
+            text: Energy
           - <<: &i18n.result.gerund
               _i18n:
                 result:
                   part_of_speech: gerund
             min: 23
             max: 25
-            result: Engineering
+            text: Engineering
           - <<: *i18n.result.common_noun
             min: 26
             max: 27
-            result: Entertainment
+            text: Entertainment
           - <<: *i18n.result.common_noun
             min: 28
             max: 29
-            result: Environmentalism
+            text: Environmentalism
           - <<: *i18n.result.common_noun
             min: 30
             max: 31
-            result: Evacuation
+            text: Evacuation
           - <<: *i18n.result.common_noun
             min: 32
             max: 33
-            result: Expansion
+            text: Expansion
           - <<: *i18n.result.common_noun
             min: 34
             max: 37
-            result: Exploration
+            text: Exploration
           - <<: *i18n.result.common_noun
             min: 38
             max: 39
-            result: Festival
+            text: Festival
           - <<: *i18n.result.common_noun
             min: 40
             max: 41
-            result: History
+            text: History
           - <<: *i18n.result.gerund
             min: 42
             max: 43
-            result: Hunting
+            text: Hunting
           - <<: *i18n.result.gerund
             min: 44
             max: 46
-            result: Manufacturing
+            text: Manufacturing
           - <<: *i18n.result.common_noun
             min: 47
             max: 49
-            result: Medical
+            text: Medical
           - <<: *i18n.result.common_noun
             min: 50
             max: 51
-            result: Migration
+            text: Migration
           - <<: *i18n.result.gerund
             min: 52
             max: 57
-            result: Mining
+            text: Mining
           - <<: *i18n.result.common_noun
             min: 58
             max: 59
-            result: Pacifism
+            text: Pacifism
           - <<: *i18n.result.gerund
             min: 60
             max: 62
-            result: Raiding
+            text: Raiding
           - <<: *i18n.result.common_noun
             min: 63
             max: 65
-            result: Research
+            text: Research
           - <<: *i18n.result.common_noun
             min: 66
             max: 69
-            result: Salvage
+            text: Salvage
           - <<: *i18n.result.common_noun
             min: 70
             max: 72
-            result: Secrecy
+            text: Secrecy
           - <<: *i18n.result.gerund
             min: 73
             max: 75
-            result: Shipbuilding
+            text: Shipbuilding
           - <<: *i18n.result.common_noun
             min: 76
             max: 78
-            result: Spirituality
+            text: Spirituality
           - <<: *i18n.result.common_noun
             min: 79
             max: 84
-            result: Subsistence
+            text: Subsistence
           - <<: *i18n.result.common_noun
             min: 85
             max: 86
-            result: Surveillance
+            text: Surveillance
           - <<: *i18n.result.gerund
             min: 87
             max: 88
-            result: Terraforming
+            text: Terraforming
           - <<: *i18n.result.common_noun
             min: 89
             max: 92
-            result: Trade
+            text: Trade
           - <<: *i18n.result.common_noun
             min: 93
             max: 95
-            result: Warfare
+            text: Warfare
           - min: 96
             max: 100
             <<: &ActionTheme
-              result: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+              text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
               oracle_rolls:
                 - oracle: starforged/oracles/core/action
                   auto: true
@@ -494,7 +494,7 @@ oracles:
                   auto: true
       trouble:
         name: Settlement Trouble
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 324
@@ -510,128 +510,128 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: Battle for leadership
+            text: Battle for leadership
             # suggestions: [*obj:Faction]
           - min: 4
             max: 6
-            result: Betrayal from within
+            text: Betrayal from within
           - min: 7
             max: 8
-            result: Caught in the crossfire
+            text: Caught in the crossfire
           - min: 9
             max: 11
-            result: Changing environment
+            text: Changing environment
           - min: 12
             max: 13
-            result: Clash of cultures
+            text: Clash of cultures
             # suggestions: [*roll:Event]
           - min: 14
             max: 17
-            result: Dangerous discovery
+            text: Dangerous discovery
             # suggestions: [*roll:Event]
           - min: 18
             max: 21
-            result: Depleted supplies
+            text: Depleted supplies
             # suggestions: [*roll:Object]
           - min: 22
             max: 24
-            result: Deprived of a resource
+            text: Deprived of a resource
             # suggestions: [*roll:Object]
           - min: 25
             max: 28
-            result: Failing technology
+            text: Failing technology
             # suggestions: [*roll:Object]
           - min: 29
             max: 32
-            result: Feuding factions
+            text: Feuding factions
           - min: 33
             max: 34
-            result: Ghostly visitations
+            text: Ghostly visitations
           - min: 35
             max: 38
-            result: Hazardous environment
+            text: Hazardous environment
             # suggestions: [*roll:Object]
           - min: 39
             max: 42
-            result: Hostile lifeforms
+            text: Hostile lifeforms
             # suggestions: [*obj:Creature]
           - min: 43
             max: 45
-            result: Impassable route
+            text: Impassable route
           - min: 46
             max: 48
-            result: Impending attack
+            text: Impending attack
           - min: 49
             max: 51
-            result: Impending natural disaster
+            text: Impending natural disaster
             # suggestions: [*roll:Event]
           - min: 52
             max: 53
-            result: Invasive organisms
+            text: Invasive organisms
           - min: 54
             max: 55
-            result: Mounting debt
+            text: Mounting debt
           - min: 56
             max: 57
-            result: Mysterious deaths
+            text: Mysterious deaths
           - min: 58
             max: 60
-            result: Overdue delivery
+            text: Overdue delivery
           - min: 61
             max: 62
-            result: Plagued by sickness
+            text: Plagued by sickness
           - min: 63
             max: 65
-            result: Preyed upon by raiders
+            text: Preyed upon by raiders
           - min: 66
             max: 67
-            result: Revolt against leadership
+            text: Revolt against leadership
             # suggestions: [*obj:Npc]
           - min: 68
             max: 69
-            result: Sabotaged technology
+            text: Sabotaged technology
             # suggestions: [*roll:Object]
           - min: 70
             max: 71
-            result: Shunned by others
+            text: Shunned by others
           - min: 72
             max: 74
-            result: Social strife
+            text: Social strife
             # suggestions: [*roll:Event]
           - min: 75
             max: 76
-            result: Someone is ill or injured
+            text: Someone is ill or injured
             # suggestions: [*obj:Npc]
           - min: 77
             max: 78
-            result: Someone is missing
+            text: Someone is missing
             # suggestions: [*obj:Npc]
           - min: 79
             max: 80
-            result: Stolen technology or object
+            text: Stolen technology or object
             # suggestions: [*roll:Object]
           - min: 81
             max: 83
-            result: Strange phenomenon
+            text: Strange phenomenon
             # suggestions: [*roll:Event]
           - min: 84
             max: 86
-            result: Toxic waste or pollution
+            text: Toxic waste or pollution
             # suggestions: [*roll:Object]
           - min: 87
             max: 88
-            result: Volatile energy source
+            text: Volatile energy source
             # suggestions: [*roll:Object]
           - min: 89
             max: 90
-            result: Vulnerable lifeforms
+            text: Vulnerable lifeforms
             # suggestions: [*obj:Creature]
           - min: 91
             max: 100
             <<: *ActionTheme
       name:
         name: Settlement Name
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 325
@@ -649,478 +649,478 @@ oracles:
                   part_of_speech: proper_noun
             min: 1
             max: 1
-            result: Aegis
+            text: Aegis
           - <<: *i18n.result.proper_noun
             min: 2
             max: 2
-            result: Altair
+            text: Altair
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 3
             max: 3
-            result: Altura
+            text: Altura
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 4
             max: 4
-            result: Amity
+            text: Amity
           - <<: *i18n.result.proper_noun
             min: 5
             max: 5
-            result: Apex
+            text: Apex
           - <<: *i18n.result.proper_noun
             min: 6
             max: 6
-            result: Apogee
+            text: Apogee
           - <<: *i18n.result.proper_noun
             min: 7
             max: 7
-            result: Argosy
+            text: Argosy
           - <<: *i18n.result.proper_noun
             min: 8
             max: 8
-            result: Astra
+            text: Astra
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 9
             max: 9
-            result: Aurora
+            text: Aurora
           - <<: *i18n.result.proper_noun
             min: 10
             max: 10
-            result: Beacon
+            text: Beacon
           - <<: *i18n.result.proper_noun
             min: 11
             max: 11
-            result: Brink
+            text: Brink
           - <<: *i18n.result.proper_noun
             min: 12
             max: 12
-            result: Bulwark
+            text: Bulwark
           - <<: *i18n.result.proper_noun
             min: 13
             max: 13
-            result: Burnell
+            text: Burnell
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 14
             max: 14
-            result: Burrow
+            text: Burrow
           - <<: *i18n.result.proper_noun
             min: 15
             max: 15
-            result: Concord
+            text: Concord
           - <<: *i18n.result.proper_noun
             min: 16
             max: 16
-            result: Crux
+            text: Crux
           - <<: *i18n.result.proper_noun
             min: 17
             max: 17
-            result: Deadrock
+            text: Deadrock
             # content: {part_of_speech: [compound noun]}
           - <<: *i18n.result.proper_noun
             min: 18
             max: 18
-            result: Deception
+            text: Deception
           - <<: *i18n.result.proper_noun
             min: 19
             max: 19
-            result: Elysium
+            text: Elysium
           - <<: *i18n.result.proper_noun
             min: 20
             max: 20
-            result: Enigma
+            text: Enigma
           - <<: *i18n.result.proper_noun
             min: 21
             max: 21
-            result: Erebus
+            text: Erebus
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 22
             max: 22
-            result: Eris
+            text: Eris
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 23
             max: 23
-            result: Evenfall
+            text: Evenfall
           - <<: *i18n.result.proper_noun
             min: 24
             max: 24
-            result: Eventide
+            text: Eventide
           - <<: *i18n.result.proper_noun
             min: 25
             max: 25
-            result: Farpoint
+            text: Farpoint
             # content: {part_of_speech: [compound noun]}
           - <<: *i18n.result.proper_noun
             min: 26
             max: 26
-            result: Felicity
+            text: Felicity
           - <<: *i18n.result.proper_noun
             min: 27
             max: 27
-            result: Florin
+            text: Florin
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 28
             max: 28
-            result: Forlorn
+            text: Forlorn
           - <<: *i18n.result.proper_noun
             min: 29
             max: 29
-            result: Forsaken
+            text: Forsaken
           - <<: *i18n.result.proper_noun
             min: 30
             max: 30
-            result: Freya
+            text: Freya
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 31
             max: 31
-            result: Glimmer
+            text: Glimmer
           - <<: *i18n.result.proper_noun
             min: 32
             max: 32
-            result: Gloam
+            text: Gloam
           - <<: *i18n.result.proper_noun
             min: 33
             max: 33
-            result: Hearth
+            text: Hearth
           - <<: *i18n.result.proper_noun
             min: 34
             max: 34
-            result: Helia
+            text: Helia
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 35
             max: 35
-            result: Hypatia
+            text: Hypatia
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 36
             max: 36
-            result: Hyperion
+            text: Hyperion
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 37
             max: 37
-            result: Janus
+            text: Janus
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 38
             max: 38
-            result: Karma
+            text: Karma
           - <<: *i18n.result.proper_noun
             min: 39
             max: 39
-            result: Kepler
+            text: Kepler
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 40
             max: 40
-            result: Koshiba
+            text: Koshiba
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 41
             max: 41
-            result: Lagrange
+            text: Lagrange
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 42
             max: 42
-            result: Larissa
+            text: Larissa
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 43
             max: 43
-            result: Lasthope
+            text: Lasthope
             # content: {part_of_speech: [compound noun]}
           - <<: *i18n.result.proper_noun
             min: 44
             max: 44
-            result: Lastport
+            text: Lastport
             # content: {part_of_speech: [compound noun]}
           - <<: *i18n.result.proper_noun
             min: 45
             max: 45
-            result: Legacy
+            text: Legacy
           - <<: *i18n.result.proper_noun
             min: 46
             max: 46
-            result: Lodestar
+            text: Lodestar
           - <<: *i18n.result.proper_noun
             min: 47
             max: 47
-            result: Luminus
+            text: Luminus
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 48
             max: 48
-            result: Lyra
+            text: Lyra
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 49
             max: 49
-            result: Marrow
+            text: Marrow
           - <<: *i18n.result.proper_noun
             min: 50
             max: 50
-            result: Meridian
+            text: Meridian
           - <<: *i18n.result.proper_noun
             min: 51
             max: 51
-            result: Moirai
+            text: Moirai
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 52
             max: 52
-            result: Mudd
+            text: Mudd
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 53
             max: 53
-            result: Neoma
+            text: Neoma
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 54
             max: 54
-            result: Nerio
+            text: Nerio
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 55
             max: 55
-            result: Nova
+            text: Nova
           - <<: *i18n.result.proper_noun
             min: 56
             max: 56
-            result: Nyx
+            text: Nyx
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 57
             max: 57
-            result: Osseus
+            text: Osseus
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 58
             max: 58
-            result: Paradox
+            text: Paradox
           - <<: *i18n.result.proper_noun
             min: 59
             max: 59
-            result: Paragon
+            text: Paragon
           - <<: *i18n.result.proper_noun
             min: 60
             max: 60
-            result: Paxton
+            text: Paxton
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 61
             max: 61
-            result: Perchance
+            text: Perchance
           - <<: *i18n.result.proper_noun
             min: 62
             max: 62
-            result: Pinnacle
+            text: Pinnacle
           - <<: *i18n.result.proper_noun
             min: 63
             max: 63
-            result: Polaris
+            text: Polaris
           - <<: *i18n.result.proper_noun
             min: 64
             max: 64
-            result: Portent
+            text: Portent
           - <<: *i18n.result.proper_noun
             min: 65
             max: 65
-            result: Prism
+            text: Prism
           - <<: *i18n.result.proper_noun
             min: 66
             max: 66
-            result: Providence
+            text: Providence
           - <<: *i18n.result.proper_noun
             min: 67
             max: 67
-            result: Purgatory
+            text: Purgatory
           - <<: *i18n.result.proper_noun
             min: 68
             max: 68
-            result: Rampart
+            text: Rampart
           - <<: *i18n.result.proper_noun
             min: 69
             max: 69
-            result: Ramshackle
+            text: Ramshackle
           - <<: *i18n.result.proper_noun
             min: 70
             max: 70
-            result: Redemption
+            text: Redemption
           - <<: *i18n.result.proper_noun
             min: 71
             max: 71
-            result: Redhaven
+            text: Redhaven
             # content: {part_of_speech: [compound noun]}
           - <<: *i18n.result.proper_noun
             min: 72
             max: 72
-            result: Relic
+            text: Relic
           - <<: *i18n.result.proper_noun
             min: 73
             max: 73
-            result: Reprise
+            text: Reprise
           - <<: *i18n.result.proper_noun
             min: 74
             max: 74
-            result: Reverie
+            text: Reverie
           - <<: *i18n.result.proper_noun
             min: 75
             max: 75
-            result: Rhiannon
+            text: Rhiannon
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 76
             max: 76
-            result: Rockhome
+            text: Rockhome
           - <<: *i18n.result.proper_noun
             min: 77
             max: 77
-            result: Rust
+            text: Rust
           - <<: *i18n.result.proper_noun
             min: 78
             max: 78
-            result: Sagan
+            text: Sagan
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 79
             max: 79
-            result: Sanctity
+            text: Sanctity
           - <<: *i18n.result.proper_noun
             min: 80
             max: 80
-            result: Selena
+            text: Selena
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 81
             max: 81
-            result: Sepulcher
+            text: Sepulcher
           - <<: *i18n.result.proper_noun
             min: 82
             max: 82
-            result: Sigil
+            text: Sigil
           - <<: *i18n.result.proper_noun
             min: 83
             max: 83
-            result: Silvana
+            text: Silvana
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 84
             max: 84
-            result: Sirius
+            text: Sirius
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 85
             max: 85
-            result: Sisyphus
+            text: Sisyphus
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 86
             max: 86
-            result: Solitude
+            text: Solitude
           - <<: *i18n.result.proper_noun
             min: 87
             max: 87
-            result: Spire
+            text: Spire
           - <<: *i18n.result.proper_noun
             min: 88
             max: 88
-            result: Starfall
+            text: Starfall
             # content: {part_of_speech: [compound noun]}
           - <<: *i18n.result.proper_noun
             min: 89
             max: 89
-            result: Summit
+            text: Summit
           - <<: *i18n.result.proper_noun
             min: 90
             max: 90
-            result: Tranquility
+            text: Tranquility
           - <<: *i18n.result.proper_noun
             min: 91
             max: 91
-            result: Tyson
+            text: Tyson
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 92
             max: 92
-            result: Unity
+            text: Unity
           - <<: *i18n.result.proper_noun
             min: 93
             max: 93
-            result: Utopia
+            text: Utopia
           - <<: *i18n.result.proper_noun
             min: 94
             max: 94
-            result: Vega
+            text: Vega
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 95
             max: 95
-            result: Vesper
+            text: Vesper
           - <<: *i18n.result.proper_noun
             min: 96
             max: 96
-            result: Wayward
+            text: Wayward
           - <<: *i18n.result.proper_noun
             min: 97
             max: 97
-            result: Welkin
+            text: Welkin
           - <<: *i18n.result.proper_noun
             min: 98
             max: 98
-            result: Wellspring
+            text: Wellspring
           - <<: *i18n.result.proper_noun
             min: 99
             max: 99
-            result: Weyland
+            text: Weyland
             # content: {part_of_speech: [proper noun]}
           - <<: *i18n.result.proper_noun
             min: 100
             max: 100
-            result: Wreck
+            text: Wreck
       name_tags:
         name: Name tags
         # not technically a table, but might be useful to randomize for settlement names
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 325
         rows:
           - min: 1
             max: 1
-            result: Base
+            text: Base
           - min: 2
             max: 2
-            result: Citadel
+            text: Citadel
           - min: 3
             max: 3
-            result: Depot
+            text: Depot
           - min: 4
             max: 4
-            result: Fortress
+            text: Fortress
           - min: 5
             max: 5
-            result: Hold
+            text: Hold
           - min: 6
             max: 6
-            result: Landing
+            text: Landing
           - min: 7
             max: 7
-            result: Outpost
+            text: Outpost
           - min: 8
             max: 8
-            result: Port
+            text: Port
           - min: 9
             max: 9
-            result: Station
+            text: Station
           - min: 10
             max: 10
-            result: Terminal
+            text: Terminal

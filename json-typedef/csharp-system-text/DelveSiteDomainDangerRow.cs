@@ -31,8 +31,8 @@ namespace Datasworn
         /// <summary>
         /// The primary text content of this row.
         /// </summary>
-        [JsonPropertyName("result")]
-        public MarkdownString Result { get; set; }
+        [JsonPropertyName("text")]
+        public MarkdownString Text { get; set; }
 
         [JsonPropertyName("_i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

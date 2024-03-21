@@ -19,12 +19,13 @@ namespace Datasworn
         Keep,
 
         /// <summary>
-        /// Duplicates should be kept, and they compound to make things worse.
+        /// Duplicate results should be kept, and they compound to make things
+        /// worse.
         /// </summary>
         MakeItWorse,
 
         /// <summary>
-        /// Duplicates results should be re-rolled.
+        /// Duplicate results should be re-rolled.
         /// </summary>
         Reroll,
     }

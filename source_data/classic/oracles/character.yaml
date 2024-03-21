@@ -15,7 +15,7 @@ oracles:
     contents:
       role:
         name: Character Role
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 10: Character Role'
         summary: Use this oracle to define the background for a character, or to generate a random encounter.
         _source:
@@ -28,123 +28,123 @@ oracles:
                   part_of_speech: common_noun
             min: 1
             max: 2
-            result: Criminal
+            text: Criminal
           - <<: *i18n.common_noun
             min: 3
             max: 4
-            result: Healer
+            text: Healer
           - <<: *i18n.common_noun
             min: 5
             max: 6
-            result: Bandit
+            text: Bandit
           - <<: *i18n.common_noun
             min: 7
             max: 9
-            result: Guide
+            text: Guide
           - <<: *i18n.common_noun
             min: 10
             max: 12
-            result: Performer
+            text: Performer
           - <<: *i18n.common_noun
             min: 13
             max: 15
-            result: Miner
+            text: Miner
           - <<: *i18n.common_noun
             min: 16
             max: 18
-            result: Mercenary
+            text: Mercenary
           - <<: *i18n.common_noun
             min: 19
             max: 21
-            result: Outcast
+            text: Outcast
           - <<: *i18n.common_noun
             min: 22
             max: 24
-            result: Vagrant
+            text: Vagrant
           - <<: *i18n.common_noun
             min: 25
             max: 27
-            result: Forester
+            text: Forester
           - <<: *i18n.common_noun
             min: 28
             max: 30
-            result: Traveler
+            text: Traveler
           - <<: *i18n.common_noun
             min: 31
             max: 33
-            result: Mystic
+            text: Mystic
           - <<: *i18n.common_noun
             min: 34
             max: 36
-            result: Priest
+            text: Priest
           - <<: *i18n.common_noun
             min: 37
             max: 39
-            result: Sailor
+            text: Sailor
           - <<: *i18n.common_noun
             min: 40
             max: 42
-            result: Pilgrim
+            text: Pilgrim
           - <<: *i18n.common_noun
             min: 43
             max: 45
-            result: Thief
+            text: Thief
           - <<: *i18n.common_noun
             min: 46
             max: 48
-            result: Adventurer
+            text: Adventurer
           - <<: *i18n.common_noun
             min: 49
             max: 51
-            result: Forager
+            text: Forager
           - <<: *i18n.common_noun
             min: 52
             max: 54
-            result: Leader
+            text: Leader
           - <<: *i18n.common_noun
             min: 55
             max: 58
-            result: Guard
+            text: Guard
           - <<: *i18n.common_noun
             min: 59
             max: 62
-            result: Artisan
+            text: Artisan
           - <<: *i18n.common_noun
             min: 63
             max: 66
-            result: Scout
+            text: Scout
           - <<: *i18n.common_noun
             min: 67
             max: 70
-            result: Herder
+            text: Herder
           - <<: *i18n.common_noun
             min: 71
             max: 74
-            result: Fisher
+            text: Fisher
           - <<: *i18n.common_noun
             min: 75
             max: 79
-            result: Warrior
+            text: Warrior
           - <<: *i18n.common_noun
             min: 80
             max: 84
-            result: Hunter
+            text: Hunter
           - <<: *i18n.common_noun
             min: 85
             max: 89
-            result: Raider
+            text: Raider
           - <<: *i18n.common_noun
             min: 90
             max: 94
-            result: Trader
+            text: Trader
           - <<: *i18n.common_noun
             min: 95
             max: 99
-            result: Farmer
+            text: Farmer
           - <<: *i18n.common_noun
             min: 100
             max: 100
-            result: Unusual role
+            text: Unusual role
             suggestions:
               oracles:
                 - classic/oracles/action_and_theme/action
@@ -153,110 +153,110 @@ oracles:
         name: Character Goal
         canonical_name: 'Oracle 11: Character Goal'
         summary: Use this oracle to define the primary motivation of an NPC or a faction. It can also be used to kick-off a personal quest for your own character.
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source:
           <<: *Source
           page: 182
         rows:
           - min: 1
             max: 3
-            result: Obtain an object
+            text: Obtain an object
           - min: 4
             max: 6
-            result: Make an agreement
+            text: Make an agreement
           - min: 7
             max: 9
-            result: Build a relationship
+            text: Build a relationship
           - min: 10
             max: 12
-            result: Undermine a relationship
+            text: Undermine a relationship
           - min: 13
             max: 15
-            result: Seek a truth
+            text: Seek a truth
           - min: 16
             max: 18
-            result: Pay a debt
+            text: Pay a debt
           - min: 19
             max: 21
-            result: Refute a falsehood
+            text: Refute a falsehood
           - min: 22
             max: 24
-            result: Harm a rival
+            text: Harm a rival
           - min: 25
             max: 27
-            result: Cure an ill
+            text: Cure an ill
           - min: 28
             max: 30
-            result: Find a person
+            text: Find a person
           - min: 31
             max: 33
-            result: Find a home
+            text: Find a home
           - min: 34
             max: 36
-            result: Seize power
+            text: Seize power
           - min: 37
             max: 39
-            result: Restore a relationship
+            text: Restore a relationship
           - min: 40
             max: 42
-            result: Create an item
+            text: Create an item
           - min: 43
             max: 45
-            result: Travel to a place
+            text: Travel to a place
           - min: 46
             max: 48
-            result: Secure provisions
+            text: Secure provisions
           - min: 49
             max: 51
-            result: Rebel against power
+            text: Rebel against power
           - min: 52
             max: 54
-            result: Collect a debt
+            text: Collect a debt
           - min: 55
             max: 57
-            result: Protect a secret
+            text: Protect a secret
           - min: 58
             max: 60
-            result: Spread faith
+            text: Spread faith
           - min: 61
             max: 63
-            result: Enrich themselves
+            text: Enrich themselves
           - min: 64
             max: 66
-            result: Protect a person
+            text: Protect a person
           - min: 67
             max: 69
-            result: Protect the status quo
+            text: Protect the status quo
           - min: 70
             max: 72
-            result: Advance status
+            text: Advance status
           - min: 73
             max: 75
-            result: Defend a place
+            text: Defend a place
           - min: 76
             max: 78
-            result: Avenge a wrong
+            text: Avenge a wrong
           - min: 79
             max: 81
-            result: Fulfill a duty
+            text: Fulfill a duty
           - min: 82
             max: 84
-            result: Gain knowledge
+            text: Gain knowledge
           - min: 85
             max: 87
-            result: Prove worthiness
+            text: Prove worthiness
           - min: 88
             max: 90
-            result: Find redemption
+            text: Find redemption
           - min: 91
             max: 92
-            result: Escape from something
+            text: Escape from something
           - min: 93
             max: 95
-            result: Resolve a dispute
+            text: Resolve a dispute
           - min: 96
             max: 100
-            result: Roll twice
+            text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
@@ -265,7 +265,7 @@ oracles:
         canonical_name: 'Oracle 12: Character Descriptor'
         summary: Use this oracle to help flesh out a character’s personality or physical characteristics. Roll more than once to add additional detail.
         # usage:
-        oracle_type: table_simple
+        oracle_type: table_basic
         recommended_rolls:
           min: 1
           max: 3 # a bit arbitrary, but reasonable
@@ -279,403 +279,403 @@ oracles:
                   part_of_speech: adjective
             min: 1
             max: 1
-            result: Stoic
+            text: Stoic
           - <<: *i18n.adjective
             min: 2
             max: 2
-            result: Attractive
+            text: Attractive
           - <<: *i18n.adjective
             min: 3
             max: 3
-            result: Passive
+            text: Passive
           - <<: *i18n.adjective
             min: 4
             max: 4
-            result: Aloof
+            text: Aloof
           - <<: *i18n.adjective
             min: 5
             max: 5
-            result: Affectionate
+            text: Affectionate
           - <<: *i18n.adjective
             min: 6
             max: 6
-            result: Generous
+            text: Generous
           - <<: *i18n.adjective
             min: 7
             max: 7
-            result: Smug
+            text: Smug
           - <<: *i18n.adjective
             min: 8
             max: 8
-            result: Armed
+            text: Armed
           - <<: *i18n.adjective
             min: 9
             max: 9
-            result: Clever
+            text: Clever
           - <<: *i18n.adjective
             min: 10
             max: 10
-            result: Brave
+            text: Brave
           - <<: *i18n.adjective
             min: 11
             max: 11
-            result: Ugly
+            text: Ugly
           - <<: *i18n.adjective
             min: 12
             max: 12
-            result: Sociable
+            text: Sociable
           - <<: *i18n.adjective
             min: 13
             max: 13
-            result: Doomed
+            text: Doomed
           - <<: *i18n.adjective
             min: 14
             max: 14
-            result: Connected
+            text: Connected
           - <<: *i18n.adjective
             min: 15
             max: 15
-            result: Bold
+            text: Bold
           - <<: *i18n.adjective
             min: 16
             max: 16
-            result: Jealous
+            text: Jealous
           - <<: *i18n.adjective
             min: 17
             max: 17
-            result: Angry
+            text: Angry
           - <<: *i18n.adjective
             min: 18
             max: 18
-            result: Active
+            text: Active
           - <<: *i18n.adjective
             min: 19
             max: 19
-            result: Suspicious
+            text: Suspicious
           - <<: *i18n.adjective
             min: 20
             max: 20
-            result: Hostile
+            text: Hostile
           - <<: *i18n.adjective
             min: 21
             max: 21
-            result: Hardhearted
+            text: Hardhearted
           - <<: *i18n.adjective
             min: 22
             max: 22
-            result: Successful
+            text: Successful
           - <<: *i18n.adjective
             min: 23
             max: 23
-            result: Talented
+            text: Talented
           - <<: *i18n.adjective
             min: 24
             max: 24
-            result: Experienced
+            text: Experienced
           - <<: *i18n.adjective
             min: 25
             max: 25
-            result: Deceitful
+            text: Deceitful
           - <<: *i18n.adjective
             min: 26
             max: 26
-            result: Ambitious
+            text: Ambitious
           - <<: *i18n.adjective
             min: 27
             max: 27
-            result: Aggressive
+            text: Aggressive
           - <<: *i18n.adjective
             min: 28
             max: 28
-            result: Conceited
+            text: Conceited
           - <<: *i18n.adjective
             min: 29
             max: 29
-            result: Proud
+            text: Proud
           - <<: *i18n.adjective
             min: 30
             max: 30
-            result: Stern
+            text: Stern
           - <<: *i18n.adjective
             min: 31
             max: 31
-            result: Dependent
+            text: Dependent
           - <<: *i18n.adjective
             min: 32
             max: 32
-            result: Wary
+            text: Wary
           - <<: *i18n.adjective
             min: 33
             max: 33
-            result: Strong
+            text: Strong
           - <<: *i18n.adjective
             min: 34
             max: 34
-            result: Insightful
+            text: Insightful
           - <<: *i18n.adjective
             min: 35
             max: 35
-            result: Dangerous
+            text: Dangerous
           - <<: *i18n.adjective
             min: 36
             max: 36
-            result: Quirky
+            text: Quirky
           - <<: *i18n.adjective
             min: 37
             max: 37
-            result: Cheery
+            text: Cheery
           - <<: *i18n.adjective
             min: 38
             max: 38
-            result: Disfigured
+            text: Disfigured
           - <<: *i18n.adjective
             min: 39
             max: 39
-            result: Intolerant
+            text: Intolerant
           - <<: *i18n.adjective
             min: 40
             max: 40
-            result: Skilled
+            text: Skilled
           - <<: *i18n.adjective
             min: 41
             max: 41
-            result: Stingy
+            text: Stingy
           - <<: *i18n.adjective
             min: 42
             max: 42
-            result: Timid
+            text: Timid
           - <<: *i18n.adjective
             min: 43
             max: 43
-            result: Insensitive
+            text: Insensitive
           - <<: *i18n.adjective
             min: 44
             max: 44
-            result: Wild
+            text: Wild
           - <<: *i18n.adjective
             min: 45
             max: 45
-            result: Bitter
+            text: Bitter
           - <<: *i18n.adjective
             min: 46
             max: 46
-            result: Cunning
+            text: Cunning
           - <<: *i18n.adjective
             min: 47
             max: 47
-            result: Remorseful
+            text: Remorseful
           - <<: *i18n.adjective
             min: 48
             max: 48
-            result: Kind
+            text: Kind
           - <<: &i18n.gerund
               _i18n:
                 result:
                   part_of_speech: gerund
             min: 49
             max: 49
-            result: Charming
+            text: Charming
           - <<: *i18n.adjective
             min: 50
             max: 50
-            result: Oblivious
+            text: Oblivious
           - <<: *i18n.adjective
             min: 51
             max: 51
-            result: Critical
+            text: Critical
           - <<: *i18n.adjective
             min: 52
             max: 52
-            result: Cautious
+            text: Cautious
           - <<: *i18n.adjective
             min: 53
             max: 53
-            result: Resourceful
+            text: Resourceful
           - <<: *i18n.adjective
             min: 54
             max: 54
-            result: Weary
+            text: Weary
           - <<: *i18n.adjective
             min: 55
             max: 55
-            result: Wounded
+            text: Wounded
           - <<: *i18n.adjective
             min: 56
             max: 56
-            result: Anxious
+            text: Anxious
           - <<: *i18n.adjective
             min: 57
             max: 57
-            result: Powerful
+            text: Powerful
           - <<: *i18n.adjective
             min: 58
             max: 58
-            result: Athletic
+            text: Athletic
           - <<: *i18n.adjective
             min: 59
             max: 59
-            result: Driven
+            text: Driven
           - <<: *i18n.adjective
             min: 60
             max: 60
-            result: Cruel
+            text: Cruel
           - <<: *i18n.adjective
             min: 61
             max: 61
-            result: Quiet
+            text: Quiet
           - <<: *i18n.adjective
             min: 62
             max: 62
-            result: Honest
+            text: Honest
           - <<: *i18n.adjective
             min: 63
             max: 63
-            result: Infamous
+            text: Infamous
           - <<: *i18n.gerund
             min: 64
             max: 64
-            result: Dying
+            text: Dying
           - <<: *i18n.adjective
             min: 65
             max: 65
-            result: Reclusive
+            text: Reclusive
           - <<: *i18n.adjective
             min: 66
             max: 66
-            result: Artistic
+            text: Artistic
           - <<: *i18n.adjective
             min: 67
             max: 67
-            result: Disabled
+            text: Disabled
           - <<: *i18n.adjective
             min: 68
             max: 68
-            result: Confused
+            text: Confused
           - <<: *i18n.adjective
             min: 69
             max: 69
-            result: Manipulative
+            text: Manipulative
           - <<: *i18n.adjective
             min: 70
             max: 70
-            result: Relaxed
+            text: Relaxed
           - <<: *i18n.adjective
             min: 71
             max: 71
-            result: Stealthy
+            text: Stealthy
           - <<: *i18n.adjective
             min: 72
             max: 72
-            result: Confident
+            text: Confident
           - <<: *i18n.adjective
             min: 73
             max: 73
-            result: Weak
+            text: Weak
           - <<: *i18n.adjective
             min: 74
             max: 74
-            result: Friendly
+            text: Friendly
           - <<: *i18n.adjective
             min: 75
             max: 75
-            result: Wise
+            text: Wise
           - <<: *i18n.adjective
             min: 76
             max: 76
-            result: Influential
+            text: Influential
           - <<: *i18n.adjective
             min: 77
             max: 77
-            result: Young
+            text: Young
           - <<: *i18n.adjective
             min: 78
             max: 78
-            result: Adventurous
+            text: Adventurous
           - <<: *i18n.adjective
             min: 79
             max: 79
-            result: Oppressed
+            text: Oppressed
           - <<: *i18n.adjective
             min: 80
             max: 80
-            result: Vengeful
+            text: Vengeful
           - <<: *i18n.adjective
             min: 81
             max: 81
-            result: Cooperative
+            text: Cooperative
           - <<: *i18n.adjective
             min: 82
             max: 82
-            result: Armored
+            text: Armored
           - <<: *i18n.adjective
             min: 83
             max: 83
-            result: Apathetic
+            text: Apathetic
           - <<: *i18n.adjective
             min: 84
             max: 84
-            result: Determined
+            text: Determined
           - <<: *i18n.adjective
             min: 85
             max: 85
-            result: Loyal
+            text: Loyal
           - <<: *i18n.adjective
             min: 86
             max: 86
-            result: Sick
+            text: Sick
           - <<: *i18n.adjective
             min: 87
             max: 87
-            result: Religious
+            text: Religious
           - <<: *i18n.adjective
             min: 88
             max: 88
-            result: Selfish
+            text: Selfish
           - <<: *i18n.adjective
             min: 89
             max: 89
-            result: Old
+            text: Old
           - <<: *i18n.adjective
             min: 90
             max: 90
-            result: Fervent
+            text: Fervent
           - <<: *i18n.adjective
             min: 91
             max: 91
-            result: Violent
+            text: Violent
           - <<: *i18n.adjective
             min: 92
             max: 92
-            result: Agreeable
+            text: Agreeable
           - <<: *i18n.adjective
             min: 93
             max: 93
-            result: Hot-tempered
+            text: Hot-tempered
           - <<: *i18n.adjective
             min: 94
             max: 94
-            result: Stubborn
+            text: Stubborn
           - <<: *i18n.adjective
             min: 95
             max: 95
-            result: Incompetent
+            text: Incompetent
           - <<: *i18n.adjective
             min: 96
             max: 96
-            result: Greedy
+            text: Greedy
           - <<: *i18n.adjective
             min: 97
             max: 97
-            result: Cowardly
+            text: Cowardly
           - <<: *i18n.adjective
             min: 98
             max: 98
-            result: Obsessed
+            text: Obsessed
           - <<: *i18n.adjective
             min: 99
             max: 99
-            result: Careless
+            text: Careless
           - <<: *i18n.adjective
             min: 100
             max: 100
-            result: Ironsworn
+            text: Ironsworn

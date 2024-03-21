@@ -34,16 +34,16 @@ truths:
         table:
           - min: 1
             max: 25
-            result: Temporal distortions from a supermassive black hole
+            text: Temporal distortions from a supermassive black hole
           - min: 26
             max: 50
-            result: Sudden dark matter decay
+            text: Sudden dark matter decay
           - min: 51
             max: 75
-            result: Superweapon run amok
+            text: Superweapon run amok
           - min: 76
             max: 100
-            result: Scientific experiment gone awry
+            text: Scientific experiment gone awry
         quest_starter: |-
           The galaxy your people left behind is a cold, lightless grave. But a solitary star still glows, a beacon in a vast darkness. How did this star survive the plague? Why do you vow to find the means to travel across the immeasurable gulf to this distant light?
       - min: 34
@@ -58,25 +58,25 @@ truths:
         table:
           - min: 1
             max: 15
-            result: Corrupting biological scourges
+            text: Corrupting biological scourges
           - min: 16
             max: 30
-            result: 'Swarming, animalistic creatures'
+            text: 'Swarming, animalistic creatures'
           - min: 31
             max: 44
-            result: Monstrous humanoids
+            text: Monstrous humanoids
           - min: 45
             max: 58
-            result: 'Spirits of alluring, divine form'
+            text: 'Spirits of alluring, divine form'
           - min: 59
             max: 72
-            result: Beings of chaotic energy
+            text: Beings of chaotic energy
           - min: 73
             max: 86
-            result: Titanic creatures of horrific power
+            text: Titanic creatures of horrific power
           - min: 87
             max: 100
-            result: World-eating abominations of unimaginable scale
+            text: World-eating abominations of unimaginable scale
         quest_starter: |-
           Here in the Forge, a rogue faction holds an artifact of these interdimensional entities. What is the nature of this relic? What power or dark fate does the faction intend to unleash?
       - min: 68
@@ -91,19 +91,19 @@ truths:
         table:
           - min: 1
             max: 20
-            result: Artificial intelligence
+            text: Artificial intelligence
           - min: 21
             max: 40
-            result: Religious zealots
+            text: Religious zealots
           - min: 41
             max: 60
-            result: Genetically engineered soldiers
+            text: Genetically engineered soldiers
           - min: 61
             max: 80
-            result: Self-replicating nanomachines
+            text: Self-replicating nanomachines
           - min: 81
             max: 100
-            result: A tyrannical faction or leader
+            text: A tyrannical faction or leader
         quest_starter: |-
           A delegation of your dreaded foe arrives in the Forge. They claim to represent a rebel force seeking sanctuary. In return, they offer vital information. What news do they carry?
     your_character: |-
@@ -284,19 +284,19 @@ truths:
         table:
           - min: 1
             max: 20
-            result: Genetic engineering
+            text: Genetic engineering
           - min: 21
             max: 40
-            result: Psychic experimentation
+            text: Psychic experimentation
           - min: 41
             max: 60
-            result: Evolutionary mutations
+            text: Evolutionary mutations
           - min: 61
             max: 80
-            result: Magitech augmentations
+            text: Magitech augmentations
           - min: 81
             max: 100
-            result: Ancient knowledge held by secretive orders
+            text: Ancient knowledge held by secretive orders
         quest_starter: |-
           A young paragon wields incredible power, but cannot control it. They have been shunned by family and friends. They are also hunted by a person or organization who seeks to use them as a weapon. Why are you sworn to protect the paragon? What fabled location might offer a new home for them?
       - min: 68
@@ -390,13 +390,13 @@ truths:
         table:
           - min: 1
             max: 33
-            result: The energies of the Forge corrupt advanced systems
+            text: The energies of the Forge corrupt advanced systems
           - min: 34
             max: 67
-            result: AI was outlawed in the aftermath of the machine wars
+            text: AI was outlawed in the aftermath of the machine wars
           - min: 68
             max: 100
-            result: We have lost the knowledge to create and maintain AI
+            text: We have lost the knowledge to create and maintain AI
         quest_starter: |-
           An Adept is tormented by a dire future they have seen for the inhabitants of the Forge. What does this vision show?
       - min: 34

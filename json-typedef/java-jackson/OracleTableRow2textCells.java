@@ -8,18 +8,21 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * Represents a row in an oracle table.
+ * Represents a row in an oracle table that provides additional details.
  */
 @JsonSerialize
-public class OracleTableRowSimple {
+public class OracleTableRow2textCells {
     @JsonProperty("max")
     private Short max;
 
     @JsonProperty("min")
     private Short min;
 
-    @JsonProperty("result")
-    private MarkdownString result;
+    @JsonProperty("text")
+    private MarkdownString text;
+
+    @JsonProperty("text2")
+    private MarkdownString text2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_i18n")
@@ -45,7 +48,7 @@ public class OracleTableRowSimple {
     @JsonProperty("template")
     private OracleRollTemplate template;
 
-    public OracleTableRowSimple() {
+    public OracleTableRow2textCells() {
     }
 
     /**
@@ -81,19 +84,33 @@ public class OracleTableRowSimple {
     }
 
     /**
-     * Getter for result.<p>
+     * Getter for text.<p>
      * The primary text content of this row.
      */
-    public MarkdownString getResult() {
-        return result;
+    public MarkdownString getText() {
+        return text;
     }
 
     /**
-     * Setter for result.<p>
+     * Setter for text.<p>
      * The primary text content of this row.
      */
-    public void setResult(MarkdownString result) {
-        this.result = result;
+    public void setText(MarkdownString text) {
+        this.text = text;
+    }
+
+    /**
+     * Getter for text2.<p>
+     */
+    public MarkdownString getText2() {
+        return text2;
+    }
+
+    /**
+     * Setter for text2.<p>
+     */
+    public void setText2(MarkdownString text2) {
+        this.text2 = text2;
     }
 
     /**

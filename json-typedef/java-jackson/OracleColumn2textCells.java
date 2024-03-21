@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @JsonSerialize
-public class OracleColumnDetails {
+public class OracleColumn2textCells {
     @JsonProperty("_id")
     private OracleRollableId id;
 
@@ -20,10 +20,10 @@ public class OracleColumnDetails {
     private Label name;
 
     @JsonProperty("oracle_type")
-    private OracleColumnDetailsOracleType oracleType;
+    private OracleColumn2textCellsOracleType oracleType;
 
     @JsonProperty("rows")
-    private List<OracleTableRowDetails> rows;
+    private List<OracleTableRow2textCells> rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("color")
@@ -53,7 +53,7 @@ public class OracleColumnDetails {
     @JsonProperty("tags")
     private Map<String, Map<String, Tag>> tags;
 
-    public OracleColumnDetails() {
+    public OracleColumn2textCells() {
     }
 
     /**
@@ -107,14 +107,14 @@ public class OracleColumnDetails {
     /**
      * Getter for oracleType.<p>
      */
-    public OracleColumnDetailsOracleType getOracleType() {
+    public OracleColumn2textCellsOracleType getOracleType() {
         return oracleType;
     }
 
     /**
      * Setter for oracleType.<p>
      */
-    public void setOracleType(OracleColumnDetailsOracleType oracleType) {
+    public void setOracleType(OracleColumn2textCellsOracleType oracleType) {
         this.oracleType = oracleType;
     }
 
@@ -122,7 +122,7 @@ public class OracleColumnDetails {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRowDetails> getRows() {
+    public List<OracleTableRow2textCells> getRows() {
         return rows;
     }
 
@@ -130,7 +130,7 @@ public class OracleColumnDetails {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRowDetails> rows) {
+    public void setRows(List<OracleTableRow2textCells> rows) {
         this.rows = rows;
     }
 

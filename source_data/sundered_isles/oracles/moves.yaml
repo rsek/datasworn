@@ -16,105 +16,105 @@ oracles:
         _source:
           <<: *Source
         name: Begin a Session
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 10
-            result: Flashback reveals an aspect of your background or nature
+            text: Flashback reveals an aspect of your background or nature
           - min: 11
             max: 20
-            result: Flashback reveals an aspect of another character, place, or faction
+            text: Flashback reveals an aspect of another character, place, or faction
           - min: 21
             max: 30
-            result: Influential character or faction is introduced or given new detail
+            text: Influential character or faction is introduced or given new detail
           - min: 31
             max: 40
-            result: Seemingly unrelated situations are shown to be connected
+            text: Seemingly unrelated situations are shown to be connected
           - min: 41
             max: 50
-            result: External factors create new danger, urgency, or importance for a quest
+            text: External factors create new danger, urgency, or importance for a quest
           - min: 51
             max: 60
-            result: Important character is put in danger or suffers a misadventure
+            text: Important character is put in danger or suffers a misadventure
           - min: 61
             max: 70
-            result: Key location is made unsafe or becomes mired in conflict
+            text: Key location is made unsafe or becomes mired in conflict
           - min: 71
             max: 80
-            result: Unexpected return of an enemy or threat
+            text: Unexpected return of an enemy or threat
           - min: 81
             max: 90
-            result: Peril lies ahead or lurks just out of view
+            text: Peril lies ahead or lurks just out of view
           - min: 91
             max: 100
-            result: Unforeseen aid is on the way or within reach
+            text: Unforeseen aid is on the way or within reach
       make_a_discovery:
         _source:
           <<: *Source
         name: Make a Discovery
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 4
-            result: Historical archive of a momentous or miraculous event
+            text: Historical archive of a momentous or miraculous event
           - min: 5
             max: 10
-            result: Awe-inspiring creature or beast
+            text: Awe-inspiring creature or beast
           - min: 11
             max: 14
-            result: Benevolent spirit or apparition
+            text: Benevolent spirit or apparition
           - min: 15
             max: 20
-            result: Breathtaking landmark or natural feature
+            text: Breathtaking landmark or natural feature
           - min: 21
             max: 26
-            result: Extraordinary weather or environment
+            text: Extraordinary weather or environment
           - min: 27
             max: 30
-            result: Fabled treasure
+            text: Fabled treasure
           - min: 31
             max: 34
-            result: Helpful visions or prophesies
+            text: Helpful visions or prophesies
           - min: 35
             max: 40
-            result: Logs or charts with surprising information
+            text: Logs or charts with surprising information
           - min: 41
             max: 46
-            result: Map with the location of hidden riches or secrets
+            text: Map with the location of hidden riches or secrets
           - min: 47
             max: 50
-            result: Miraculous machine or technology
+            text: Miraculous machine or technology
           - min: 51
             max: 54
-            result: Monumental architecture or artistry of another age
+            text: Monumental architecture or artistry of another age
           - min: 55
             max: 58
-            result: Mythical being or people
+            text: Mythical being or people
           - min: 59
             max: 64
-            result: Natural habitat with abundant and unusual life
+            text: Natural habitat with abundant and unusual life
           - min: 65
             max: 68
-            result: Otherworldly path or passage
+            text: Otherworldly path or passage
           - min: 69
             max: 72
-            result: Prized natural resource
+            text: Prized natural resource
           - min: 73
             max: 78
-            result: Promising wreck or ruin with lost secrets
+            text: Promising wreck or ruin with lost secrets
           - min: 79
             max: 82
-            result: Relic of legendary power
+            text: Relic of legendary power
           - min: 83
             max: 86
-            result: Safeguarded or hidden location
+            text: Safeguarded or hidden location
           - min: 87
             max: 90
-            result: Ship of remarkable construction or function
+            text: Ship of remarkable construction or function
           - min: 91
             max: 100
             <<: &RollTwice
-              result: Roll twice
+              text: Roll twice
               oracle_rolls:
                 - auto: true
                   number_of_rolls: 2
@@ -122,224 +122,224 @@ oracles:
         _source:
           <<: *Source
         name: Confront Chaos
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 6
-            result: Accursed ship of grim form
+            text: Accursed ship of grim form
           - min: 7
             max: 10
-            result: Baneful spirit or apparition
+            text: Baneful spirit or apparition
           - min: 11
             max: 16
-            result: Blighted or malignant habitat
+            text: Blighted or malignant habitat
           - min: 17
             max: 22
-            result: Corrupted wreck or ruin with lurking danger
+            text: Corrupted wreck or ruin with lurking danger
           - min: 23
             max: 26
-            result: Cursed or corrupted people
+            text: Cursed or corrupted people
           - min: 27
             max: 32
-            result: Cursed treasure of irresistible lure
+            text: Cursed treasure of irresistible lure
           - min: 33
             max: 36
-            result: Dead given unnatural life
+            text: Dead given unnatural life
           - min: 37
             max: 42
-            result: Forsaken lands or landmark
+            text: Forsaken lands or landmark
           - min: 43
             max: 48
-            result: Harbinger of an imminent attack or invasion
+            text: Harbinger of an imminent attack or invasion
           - min: 49
             max: 52
-            result: Harrowing visions or prophesies
+            text: Harrowing visions or prophesies
           - min: 53
             max: 56
-            result: Machine or technology of dreadful power
+            text: Machine or technology of dreadful power
           - min: 57
             max: 62
-            result: Message or clues bearing a dire warning
+            text: Message or clues bearing a dire warning
           - min: 63
             max: 68
-            result: Relic of malevolent power
+            text: Relic of malevolent power
           - min: 69
             max: 72
-            result: Signs of an impending natural disaster
+            text: Signs of an impending natural disaster
           - min: 73
             max: 76
-            result: Site of a baffling disappearance
+            text: Site of a baffling disappearance
           - min: 77
             max: 80
-            result: Site of terrible carnage
+            text: Site of terrible carnage
           - min: 81
             max: 84
-            result: Swarming creatures of insatiable hunger or fury
+            text: Swarming creatures of insatiable hunger or fury
           - min: 85
             max: 90
-            result: Unnerving weather or environmental effects
+            text: Unnerving weather or environmental effects
           - min: 91
             max: 94
-            result: Worshipers of great and dreadful powers
+            text: Worshipers of great and dreadful powers
           - min: 95
             max: 100
-            result: Wrathful beast of monstrous proportions
+            text: Wrathful beast of monstrous proportions
       take_decisive_action:
         _source:
           <<: *Source
         name: Take Decisive Action
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 40
-            result: 'It’s worse than you thought: Make a [suffer move](id:sundered_isles/collections/moves/suffer) (-2)'
+            text: 'It’s worse than you thought: Make a [suffer move](id:sundered_isles/collections/moves/suffer) (-2)'
           - min: 41
             max: 52
-            result: 'Victory is short-lived: A new peril or foe appears'
+            text: 'Victory is short-lived: A new peril or foe appears'
           - min: 53
             max: 64
-            result: 'You face collateral damage: Something is lost, damaged, or broken'
+            text: 'You face collateral damage: Something is lost, damaged, or broken'
           - min: 65
             max: 76
-            result: 'Others pay the price: Someone else suffers the cost'
+            text: 'Others pay the price: Someone else suffers the cost'
           - min: 77
             max: 88
-            result: 'Others won’t forget: You are marked for vengeance'
+            text: 'Others won’t forget: You are marked for vengeance'
           - min: 89
             max: 100
-            result: 'It gets complicated: The true nature of a foe or objective is revealed'
+            text: 'It gets complicated: The true nature of a foe or objective is revealed'
       endure_harm:
         _source:
           <<: *Source
         name: Endure Harm
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 10
-            result: You suffer mortal harm. [Face Death](id:sundered_isles/moves/threshold/face_death).
+            text: You suffer mortal harm. [Face Death](id:sundered_isles/moves/threshold/face_death).
           - min: 11
             max: 20
-            result: You are dying. Within an hour or two, you must [Heal](id:sundered_isles/moves/recover/heal) and raise your health above 0, or [Face Death](id:sundered_isles/moves/threshold/face_death).
+            text: You are dying. Within an hour or two, you must [Heal](id:sundered_isles/moves/recover/heal) and raise your health above 0, or [Face Death](id:sundered_isles/moves/threshold/face_death).
           - min: 21
             max: 35
-            result: You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, [Face Death](id:sundered_isles/moves/threshold/face_death).
+            text: You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, [Face Death](id:sundered_isles/moves/threshold/face_death).
           - min: 36
             max: 50
-            result: You are reeling. If you engage in any vigorous activity before taking a breather, roll on this table again (before resolving the other move).
+            text: You are reeling. If you engage in any vigorous activity before taking a breather, roll on this table again (before resolving the other move).
           - min: 51
             max: 100
-            result: You are still standing.
+            text: You are still standing.
       endure_stress:
         _source:
           <<: *Source
         name: Endure Stress
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 10
-            result: You are overwhelmed. [Face Desolation](id:sundered_isles/moves/threshold/face_desolation).
+            text: You are overwhelmed. [Face Desolation](id:sundered_isles/moves/threshold/face_desolation).
           - min: 11
             max: 25
-            result: You give up. [Forsake Your Vow](id:sundered_isles/moves/quest/forsake_your_vow).
+            text: You give up. [Forsake Your Vow](id:sundered_isles/moves/quest/forsake_your_vow).
           - min: 26
             max: 50
-            result: You give in to fear or compulsion, and act against your better instincts.
+            text: You give in to fear or compulsion, and act against your better instincts.
           - min: 51
             max: 100
-            result: You persevere.
+            text: You persevere.
       withstand_damage:
         _source:
           <<: *Source
         name: Withstand Damage
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 10
-            result: Immediate catastrophic destruction or sinking. You and your allies must [Endure Harm](id:sundered_isles/moves/suffer/endure_harm) or [Face Death](id:sundered_isles/moves/threshold/face_death), as appropriate.
+            text: Immediate catastrophic destruction or sinking. You and your allies must [Endure Harm](id:sundered_isles/moves/suffer/endure_harm) or [Face Death](id:sundered_isles/moves/threshold/face_death), as appropriate.
           - min: 11
             max: 25
-            result: Destruction or sinking is imminent and unavoidable. All aboard must find a way to safety.
+            text: Destruction or sinking is imminent and unavoidable. All aboard must find a way to safety.
           - min: 26
             max: 40
-            result: Destruction or sinking is imminent, but can be averted if you [Repair](id:sundered_isles/moves/recover/repair) your vehicle and raise its integrity above 0. If you fail, see 11–25.
+            text: Destruction or sinking is imminent, but can be averted if you [Repair](id:sundered_isles/moves/recover/repair) your vehicle and raise its integrity above 0. If you fail, see 11–25.
           - min: 41
             max: 55
-            result: You cannot [Repair](id:sundered_isles/moves/recover/repair) this vehicle until you [Resupply](id:sundered_isles/moves/recover/resupply) and obtain crucial parts or materials. If you roll this result again prior to that, see 11–25.
+            text: You cannot [Repair](id:sundered_isles/moves/recover/repair) this vehicle until you [Resupply](id:sundered_isles/moves/recover/resupply) and obtain crucial parts or materials. If you roll this result again prior to that, see 11–25.
           - min: 56
             max: 70
-            result: The vehicle is crippled. To get it back in action, you must [Repair](id:sundered_isles/moves/recover/repair) and raise its integrity above 0.
+            text: The vehicle is crippled. To get it back in action, you must [Repair](id:sundered_isles/moves/recover/repair) and raise its integrity above 0.
           - min: 71
             max: 85
-            result: Those aboard bear the brunt of the damage. You and your allies must make the [Endure Harm](id:sundered_isles/moves/suffer/endure_harm), [Endure Stress](id:sundered_isles/moves/suffer/endure_stress), or [Companion Takes a Hit](id:sundered_isles/moves/suffer/companion_takes_a_hit) move, suffering a serious (-2) cost.
+            text: Those aboard bear the brunt of the damage. You and your allies must make the [Endure Harm](id:sundered_isles/moves/suffer/endure_harm), [Endure Stress](id:sundered_isles/moves/suffer/endure_stress), or [Companion Takes a Hit](id:sundered_isles/moves/suffer/companion_takes_a_hit) move, suffering a serious (-2) cost.
           - min: 86
             max: 95
-            result: You’ve lost gear, cargo, or provisions. [Sacrifice Resources](id:sundered_isles/moves/suffer/sacrifice_resources) (-2).
+            text: You’ve lost gear, cargo, or provisions. [Sacrifice Resources](id:sundered_isles/moves/suffer/sacrifice_resources) (-2).
           - min: 96
             max: 100
-            result: Against all odds, the vehicle holds together.
+            text: Against all odds, the vehicle holds together.
       pay_the_price:
         _source:
           <<: *Source
         name: Pay the Price
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 2
-            result: A trusted individual or community acts against you
+            text: A trusted individual or community acts against you
           - min: 3
             max: 4
-            result: An individual or community you care about is exposed to danger
+            text: An individual or community you care about is exposed to danger
           - min: 5
             max: 7
-            result: You encounter signs of a looming threat
+            text: You encounter signs of a looming threat
           - min: 8
             max: 10
-            result: You create an opportunity for an enemy
+            text: You create an opportunity for an enemy
           - min: 11
             max: 14
-            result: You face a tough choice
+            text: You face a tough choice
           - min: 15
             max: 18
-            result: You face the consequences of an earlier choice
+            text: You face the consequences of an earlier choice
           - min: 19
             max: 22
-            result: A surprising development complicates your quest
+            text: A surprising development complicates your quest
           - min: 23
             max: 26
-            result: You are separated from something or someone
+            text: You are separated from something or someone
           - min: 27
             max: 32
-            result: Your action causes collateral damage or has an unintended effect
+            text: Your action causes collateral damage or has an unintended effect
           - min: 33
             max: 38
-            result: Something of value is lost or destroyed
+            text: Something of value is lost or destroyed
           - min: 39
             max: 44
-            result: The environment or terrain introduces a new hazard
+            text: The environment or terrain introduces a new hazard
           - min: 45
             max: 50
-            result: A new enemy is revealed
+            text: A new enemy is revealed
           - min: 51
             max: 56
-            result: A friend, companion, or ally is in harm’s way (or you are, if alone)
+            text: A friend, companion, or ally is in harm’s way (or you are, if alone)
           - min: 57
             max: 62
-            result: Your equipment or vehicle fails you
+            text: Your equipment or vehicle fails you
           - min: 63
             max: 68
-            result: Your vehicle suffers damage
+            text: Your vehicle suffers damage
           - min: 69
             max: 74
-            result: You waste resources
+            text: You waste resources
           - min: 75
             max: 81
-            result: You are harmed
+            text: You are harmed
           - min: 82
             max: 88
-            result: You are stressed
+            text: You are stressed
           - min: 89
             max: 95
-            result: You are delayed or put at a disadvantage
+            text: You are delayed or put at a disadvantage
           - min: 96
             max: 100
             <<: *RollTwice

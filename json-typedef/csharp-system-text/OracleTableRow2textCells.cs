@@ -8,11 +8,8 @@ namespace Datasworn
     /// <summary>
     /// Represents a row in an oracle table that provides additional details.
     /// </summary>
-    public class OracleTableRowDetails
+    public class OracleTableRow2textCells
     {
-        [JsonPropertyName("detail")]
-        public MarkdownString Detail { get; set; }
-
         /// <summary>
         /// High end of the dice range for this table row.
         /// </summary>
@@ -28,8 +25,11 @@ namespace Datasworn
         /// <summary>
         /// The primary text content of this row.
         /// </summary>
-        [JsonPropertyName("result")]
-        public MarkdownString Result { get; set; }
+        [JsonPropertyName("text")]
+        public MarkdownString Text { get; set; }
+
+        [JsonPropertyName("text2")]
+        public MarkdownString Text2 { get; set; }
 
         [JsonPropertyName("_i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

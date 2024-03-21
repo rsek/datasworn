@@ -16,26 +16,26 @@ oracles:
         _source:
           <<: *Source
         name: Location
-        oracle_type: table_details
+        oracle_type: table_text2
         summary: Roll for a location when learning about a distant settlement. If you come upon a settlement in your travels, you may instead use the context of your current location.
         rows:
           - min: 1
             max: 50
-            result: Seafront
-            detail: By the sea
+            text: Seafront
+            text2: By the sea
           - min: 51
             max: 75
-            result: Inland
-            detail: Within the island interior
+            text: Inland
+            text2: Within the island interior
           - min: 76
             max: 100
-            result: Waterside
-            detail: By an inland body of water
+            text: Waterside
+            text2: By an inland body of water
       aesthetics:
         _source:
           <<: *Source
         name: Aesthetics
-        oracle_type: table_details
+        oracle_type: table_text2
         summary: Use this table to reveal the ambiance and architecture of the settlement. Smaller settlements likely have a single style, while larger settlements might have multiple styles across sections or districts.
         # rendering:
         #   style: standalone
@@ -52,195 +52,195 @@ oracles:
         rows:
           - min: 1
             max: 10
-            result: Ancient
-            detail: Ancestral structures which have stood the test of time
+            text: Ancient
+            text2: Ancestral structures which have stood the test of time
           - min: 11
             max: 20
-            result: Dismal
-            detail: Grimy, tightly-packed structures and shadowed paths
+            text: Dismal
+            text2: Grimy, tightly-packed structures and shadowed paths
           - min: 21
             max: 25
-            result: Earthen
-            detail: Carved into the terrain
+            text: Earthen
+            text2: Carved into the terrain
           - min: 26
             max: 35
-            result: Foreboding
-            detail: Structures with ornate, dramatic forms and cavernous interiors
+            text: Foreboding
+            text2: Structures with ornate, dramatic forms and cavernous interiors
           - min: 36
             max: 45
-            result: Fortified
-            detail: Imposing structures hardened against assaults
+            text: Fortified
+            text2: Imposing structures hardened against assaults
           - min: 46
             max: 50
-            result: Garish
-            detail: Structures with tacky design and showy adornments
+            text: Garish
+            text2: Structures with tacky design and showy adornments
           - min: 51
             max: 55
-            result: Grand
-            detail: Majestic structures with opulent details
+            text: Grand
+            text2: Majestic structures with opulent details
           - min: 56
             max: 65
-            result: Idyllic
-            detail: Organic forms and materials, at one with the landscape
+            text: Idyllic
+            text2: Organic forms and materials, at one with the landscape
           - min: 66
             max: 70
-            result: Industrial
-            detail: Grim, utilitarian structures, built for function over form
+            text: Industrial
+            text2: Grim, utilitarian structures, built for function over form
           - min: 71
             max: 75
-            result: Makeshift
-            detail: Temporary shelters for nomadic or displaced people
+            text: Makeshift
+            text2: Temporary shelters for nomadic or displaced people
           - min: 76
             max: 85
-            result: Modest
-            detail: Practical, charming structures
+            text: Modest
+            text2: Practical, charming structures
           - min: 86
             max: 95
-            result: Ramshackle
-            detail: Haphazard structures using scavenged or repurposed materials
+            text: Ramshackle
+            text2: Haphazard structures using scavenged or repurposed materials
           - min: 96
             max: 100
-            result: Wondrous
-            detail: Enigmatic structures of awe-inspiring design or function
+            text: Wondrous
+            text2: Enigmatic structures of awe-inspiring design or function
       first_look:
         _source:
           <<: *Source
         name: First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 2
-            result: Adorned with colorful banners
+            text: Adorned with colorful banners
           - min: 3
             max: 4
-            result: Among sprawling trees
+            text: Among sprawling trees
           - min: 5
             max: 6
-            result: Armed with archaic weapons
+            text: Armed with archaic weapons
           - min: 7
             max: 8
-            result: Bisected by a wide waterway or ravine
+            text: Bisected by a wide waterway or ravine
           - min: 9
             max: 10
-            result: Blockaded or under siege
+            text: Blockaded or under siege
           - min: 11
             max: 12
-            result: Built on high ground
+            text: Built on high ground
           - min: 13
             max: 14
-            result: Built over water
+            text: Built over water
           - min: 15
             max: 16
-            result: Busy or overcrowded
+            text: Busy or overcrowded
           - min: 17
             max: 18
-            result: Chorus of ringing bells
+            text: Chorus of ringing bells
           - min: 19
             max: 20
-            result: Colossal statue or monolith
+            text: Colossal statue or monolith
           - min: 21
             max: 22
-            result: Concentric layout
+            text: Concentric layout
           - min: 23
             max: 24
-            result: Connected by lofty bridges
+            text: Connected by lofty bridges
           - min: 25
             max: 26
-            result: Conspicuous guardposts and patrols
+            text: Conspicuous guardposts and patrols
           - min: 27
             max: 28
-            result: Decorated for a festival or celebration
+            text: Decorated for a festival or celebration
           - min: 29
             max: 30
-            result: Defended by an imposing stronghold
+            text: Defended by an imposing stronghold
           - min: 31
             max: 32
-            result: Displaying trophies of defeated foes
+            text: Displaying trophies of defeated foes
           - min: 33
             max: 34
-            result: Elevated structures and walkways
+            text: Elevated structures and walkways
           - min: 35
             max: 36
-            result: Encampment of pilgrims or refugees
+            text: Encampment of pilgrims or refugees
           - min: 37
             max: 38
-            result: Entrance via a colossal gate or archway
+            text: Entrance via a colossal gate or archway
           - min: 39
             max: 40
-            result: Expanding with new construction
+            text: Expanding with new construction
           - min: 41
             max: 42
-            result: Filled with song and music
+            text: Filled with song and music
           - min: 43
             max: 44
-            result: Garden-like setting
+            text: Garden-like setting
           - min: 45
             max: 46
-            result: Hastily improvised defenses
+            text: Hastily improvised defenses
           - min: 47
             max: 48
-            result: Lanterns hung from every surface
+            text: Lanterns hung from every surface
           - min: 49
             max: 50
-            result: Major new project under construction
+            text: Major new project under construction
           - min: 51
             max: 52
-            result: Maze of canals
+            text: Maze of canals
           - min: 53
             max: 54
-            result: Multi-level layout
+            text: Multi-level layout
           - min: 55
             max: 56
-            result: Numerous comings and goings
+            text: Numerous comings and goings
           - min: 57
             max: 58
-            result: Obvious signs of unrest
+            text: Obvious signs of unrest
           - min: 59
             max: 60
-            result: Partially destroyed by fire
+            text: Partially destroyed by fire
           - min: 61
             max: 62
-            result: Prominent tower or lighthouse
+            text: Prominent tower or lighthouse
           - min: 63
             max: 64
-            result: Protected by stout walls
+            text: Protected by stout walls
           - min: 65
             max: 66
-            result: Quiet or sparsely populated
+            text: Quiet or sparsely populated
           - min: 67
             max: 68
-            result: Scars of numerous attacks
+            text: Scars of numerous attacks
           - min: 69
             max: 70
-            result: Sections or districts divided by barriers
+            text: Sections or districts divided by barriers
           - min: 71
             max: 72
-            result: Shadowed by large terrain feature
+            text: Shadowed by large terrain feature
           - min: 73
             max: 74
-            result: Signs of an occupying force
+            text: Signs of an occupying force
           - min: 75
             max: 76
-            result: Suffered severe storm damage
+            text: Suffered severe storm damage
           - min: 77
             max: 78
-            result: Surrounded by rugged or dense terrain
+            text: Surrounded by rugged or dense terrain
           - min: 79
             max: 80
-            result: Under attack
+            text: Under attack
           - min: 81
             max: 82
-            result: Veiled with a haze of mist or smoke
+            text: Veiled with a haze of mist or smoke
           - min: 83
             max: 84
-            result: Visited by large fleet or caravan
+            text: Visited by large fleet or caravan
           - min: 85
             max: 90
-            result: Built among > [Ruins]
+            text: Built among > [Ruins]
           - min: 91
             max: 100
             <<: &DescriptorFocus
-              result: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+              text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
               oracle_rolls:
                 - oracle: sundered_isles/oracles/core/descriptor
                   auto: true
@@ -250,428 +250,428 @@ oracles:
         _source:
           <<: *Source
         name: Cursed First Look
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 2
-            result: Armed with sorcerous weapons
+            text: Armed with sorcerous weapons
           - min: 3
             max: 6
-            result: Assailed by a monstrous beast
+            text: Assailed by a monstrous beast
           - min: 7
             max: 10
-            result: Beset by swarms of monstrous creatures
+            text: Beset by swarms of monstrous creatures
           - min: 11
             max: 14
-            result: Besieged or invaded by a cursed faction
+            text: Besieged or invaded by a cursed faction
           - min: 15
             max: 16
-            result: Built among titanic bones
+            text: Built among titanic bones
           - min: 17
             max: 20
-            result: Cloaked by a grim darkness
+            text: Cloaked by a grim darkness
           - min: 21
             max: 22
-            result: Corpses displayed as a warning
+            text: Corpses displayed as a warning
           - min: 23
             max: 26
-            result: Cowering or reclusive inhabitants
+            text: Cowering or reclusive inhabitants
           - min: 27
             max: 30
-            result: Dreadful phantom whispers
+            text: Dreadful phantom whispers
           - min: 31
             max: 32
-            result: Encrusted with barnacles or fungi
+            text: Encrusted with barnacles or fungi
           - min: 33
             max: 36
-            result: Exodus of fleeing inhabitants
+            text: Exodus of fleeing inhabitants
           - min: 37
             max: 40
-            result: Festooned with bones and skulls
+            text: Festooned with bones and skulls
           - min: 41
             max: 44
-            result: Fetid, foul-colored water
+            text: Fetid, foul-colored water
           - min: 45
             max: 46
-            result: Giant burning pyre
+            text: Giant burning pyre
           - min: 47
             max: 48
-            result: Glimpses of monstrous shadows
+            text: Glimpses of monstrous shadows
           - min: 49
             max: 52
-            result: Hordes of circling carrion birds
+            text: Hordes of circling carrion birds
           - min: 53
             max: 54
-            result: Hung with thick strands of webbing
+            text: Hung with thick strands of webbing
           - min: 55
             max: 58
-            result: Infernal machineworks and acrid smoke
+            text: Infernal machineworks and acrid smoke
           - min: 59
             max: 62
-            result: Ominous central structure
+            text: Ominous central structure
           - min: 63
             max: 66
-            result: Overpowering stench of decay
+            text: Overpowering stench of decay
           - min: 67
             max: 70
-            result: Overtaken by malignant plants
+            text: Overtaken by malignant plants
           - min: 71
             max: 74
-            result: Shrouded by a clinging, persistent fog
+            text: Shrouded by a clinging, persistent fog
           - min: 75
             max: 76
-            result: Sinister songs or chants
+            text: Sinister songs or chants
           - min: 77
             max: 80
-            result: Sinking into the earth or sea
+            text: Sinking into the earth or sea
           - min: 81
             max: 82
-            result: Spectral structures of shifting form
+            text: Spectral structures of shifting form
           - min: 83
             max: 84
-            result: Suffused with eerie green light
+            text: Suffused with eerie green light
           - min: 85
             max: 88
-            result: Surrounded by blighted terrain
+            text: Surrounded by blighted terrain
           - min: 89
             max: 92
-            result: Swarms of roosting bats
+            text: Swarms of roosting bats
           - min: 93
             max: 96
-            result: Unsettling angles and labyrinthine paths
+            text: Unsettling angles and labyrinthine paths
           - min: 97
             max: 100
-            result: '[Cursed Weather]'
+            text: '[Cursed Weather]'
       cursed_focus:
         _source:
           <<: *Source
         name: Cursed Focus
         summary: If you roll a [Settlement Focus] curse, take your result on that table and make note that it is cursed. Something about this activity has an uncanny or dreadful aspect. If you investigate or interact further, use the table below to help reveal the industry’s relationship to a cursed power.
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 10
-            result: Acting to fulfill a dreadful bargain
+            text: Acting to fulfill a dreadful bargain
           - min: 11
             max: 20
-            result: Bound to the service of a cursed power
+            text: Bound to the service of a cursed power
           - min: 21
             max: 30
-            result: Corrupted or sickened by the effects of a cursed location or relic
+            text: Corrupted or sickened by the effects of a cursed location or relic
           - min: 31
             max: 40
-            result: Desperately working in defiance of a cursed power
+            text: Desperately working in defiance of a cursed power
           - min: 41
             max: 50
-            result: Enduring dreadful conditions
+            text: Enduring dreadful conditions
           - min: 51
             max: 60
-            result: Granted unusual abilities or resources by a cursed power
+            text: Granted unusual abilities or resources by a cursed power
           - min: 61
             max: 70
-            result: In zealous service of a cursed power
+            text: In zealous service of a cursed power
           - min: 71
             max: 80
-            result: Lost lives or resources under the deprivations of a cursed power
+            text: Lost lives or resources under the deprivations of a cursed power
           - min: 81
             max: 90
-            result: Targeted by a cursed power
+            text: Targeted by a cursed power
           - min: 91
             max: 100
-            result: Unwittingly helping or unleashing a cursed power
+            text: Unwittingly helping or unleashing a cursed power
       detail:
         _source:
           <<: *Source
         name: Settlement Details
         summary: As you spend time in a settlement, use this table to reveal uncovered aspects and overheard rumors.
-        oracle_type: table_simple
+        oracle_type: table_basic
         rows:
           - min: 1
             max: 1
-            result: A valuable nearby resource is uncovered, and the race is on to claim or control it
+            text: A valuable nearby resource is uncovered, and the race is on to claim or control it
           - min: 2
             max: 2
-            result: A soothsayer warns of a calamitous event in the settlement's future
+            text: A soothsayer warns of a calamitous event in the settlement's future
           - min: 3
             max: 3
-            result: A pack of wild dogs roam the settlement
+            text: A pack of wild dogs roam the settlement
           - min: 4
             max: 4
-            result: An important trade route is plagued by pirates or bandits
+            text: An important trade route is plagued by pirates or bandits
           - min: 5
             max: 5
-            result: Wanted posters, bearing sketches of the same face, are plastered on every corner
+            text: Wanted posters, bearing sketches of the same face, are plastered on every corner
           - min: 6
             max: 6
-            result: Rooftop roosts are home to messenger birds
+            text: Rooftop roosts are home to messenger birds
           - min: 7
             max: 7
-            result: The settlement produces a unique and valuable good or service
+            text: The settlement produces a unique and valuable good or service
           - min: 8
             max: 8
-            result: A tradeship or caravan, loaded with goods from the isles and beyond, is due to arrive
+            text: A tradeship or caravan, loaded with goods from the isles and beyond, is due to arrive
           - min: 9
             max: 9
-            result: An important resource or asset was sabotaged by an unknown culprit
+            text: An important resource or asset was sabotaged by an unknown culprit
           - min: 10
             max: 10
-            result: A notable member of the community is gravely ill
+            text: A notable member of the community is gravely ill
           - min: 11
             max: 11
-            result: A conflict between two prominent groups or families has boiled over
+            text: A conflict between two prominent groups or families has boiled over
           - min: 12
             max: 12
-            result: The locals favor a sneakily robust brew or spirit
+            text: The locals favor a sneakily robust brew or spirit
           - min: 13
             max: 13
-            result: A bladesmith crafts swords of unequal quality
+            text: A bladesmith crafts swords of unequal quality
           - min: 14
             max: 14
-            result: A crucial expedition or mission is long overdue
+            text: A crucial expedition or mission is long overdue
           - min: 15
             max: 15
-            result: Locals speak of ill winds and a coming storm
+            text: Locals speak of ill winds and a coming storm
           - min: 16
             max: 16
-            result: Mysterious fires plague the settlement
+            text: Mysterious fires plague the settlement
           - min: 17
             max: 17
-            result: Another people once lived in this place, but abandoned it for reasons unknown
+            text: Another people once lived in this place, but abandoned it for reasons unknown
           - min: 18
             max: 18
-            result: A group of fisher folk or hunters recently returned with an unusual catch
+            text: A group of fisher folk or hunters recently returned with an unusual catch
           - min: 19
             max: 19
-            result: Faded bloodstains mar the stones of a central square
+            text: Faded bloodstains mar the stones of a central square
           - min: 20
             max: 20
-            result: A section of the settlement is collapsing into an expanding sinkhole
+            text: A section of the settlement is collapsing into an expanding sinkhole
           - min: 21
             max: 21
-            result: An underworld figure wields influence from the shadows
+            text: An underworld figure wields influence from the shadows
           - min: 22
             max: 22
-            result: Residents sing a hymn or shanty which reveals something of this place’s dark history
+            text: Residents sing a hymn or shanty which reveals something of this place’s dark history
           - min: 23
             max: 23
-            result: The community has domesticated an unusual type of creature
+            text: The community has domesticated an unusual type of creature
           - min: 24
             max: 24
-            result: Among a certain class of citizens, the slightest insult leads to a duel
+            text: Among a certain class of citizens, the slightest insult leads to a duel
           - min: 25
             max: 25
-            result: A notorious criminal is captured and awaiting punishment
+            text: A notorious criminal is captured and awaiting punishment
           - min: 26
             max: 26
-            result: Nearby lands or waters have fallen barren
+            text: Nearby lands or waters have fallen barren
           - min: 27
             max: 27
-            result: Solemn funeral processions often snake their way through the streets
+            text: Solemn funeral processions often snake their way through the streets
           - min: 28
             max: 28
-            result: A mysterious traveler was found gravely injured outside the settlement
+            text: A mysterious traveler was found gravely injured outside the settlement
           - min: 29
             max: 29
-            result: A powerful outside faction seeks control of a resource or industry
+            text: A powerful outside faction seeks control of a resource or industry
           - min: 30
             max: 30
-            result: A high-stakes gambling hall operates out of a hidden backroom
+            text: A high-stakes gambling hall operates out of a hidden backroom
           - min: 31
             max: 31
-            result: Motifs of a specific creature adorn the architecture
+            text: Motifs of a specific creature adorn the architecture
           - min: 32
             max: 32
-            result: A building or location within the settlement is off-limits to outsiders
+            text: A building or location within the settlement is off-limits to outsiders
           - min: 33
             max: 33
-            result: A fearsome creature or beast lairs nearby
+            text: A fearsome creature or beast lairs nearby
           - min: 34
             max: 34
-            result: A mysterious ship or caravan, here on a layover, is heavily guarded
+            text: A mysterious ship or caravan, here on a layover, is heavily guarded
           - min: 35
             max: 35
-            result: Workers are in revolt and an industry stalls
+            text: Workers are in revolt and an industry stalls
           - min: 36
             max: 36
-            result: Elaborate murals detail a key moment in the settlement's history
+            text: Elaborate murals detail a key moment in the settlement's history
           - min: 37
             max: 37
-            result: A masked vigilante has taken matters into their own hands
+            text: A masked vigilante has taken matters into their own hands
           - min: 38
             max: 38
-            result: This place is prone to natural disasters
+            text: This place is prone to natural disasters
           - min: 39
             max: 39
-            result: The residents are divided into rigid castes
+            text: The residents are divided into rigid castes
           - min: 40
             max: 40
-            result: Local wildlife, given free reign by the residents, is a constant nuisance
+            text: Local wildlife, given free reign by the residents, is a constant nuisance
           - min: 41
             max: 41
-            result: The residents observe a daily ritual or remembrance
+            text: The residents observe a daily ritual or remembrance
           - min: 42
             max: 42
-            result: A rival faction seized nearby territory or resources
+            text: A rival faction seized nearby territory or resources
           - min: 43
             max: 43
-            result: A vital expedition is in need of an escort
+            text: A vital expedition is in need of an escort
           - min: 44
             max: 44
-            result: An ancient and inscrutable monument stands in the center of this settlement
+            text: An ancient and inscrutable monument stands in the center of this settlement
           - min: 45
             max: 45
-            result: A resident recently fled or escaped in the wake of a crime
+            text: A resident recently fled or escaped in the wake of a crime
           - min: 46
             max: 46
-            result: A shadowy local fence can obtain nearly anything—for a price
+            text: A shadowy local fence can obtain nearly anything—for a price
           - min: 47
             max: 47
-            result: The residents are anxious over a string of recent disappearances
+            text: The residents are anxious over a string of recent disappearances
           - min: 48
             max: 48
-            result: This place offers a vibrant array of cultures and influences
+            text: This place offers a vibrant array of cultures and influences
           - min: 49
             max: 49
-            result: Leadership is in the midst of a power struggle
+            text: Leadership is in the midst of a power struggle
           - min: 50
             max: 50
-            result: A local official is corrupt, but no one dares stand against them
+            text: A local official is corrupt, but no one dares stand against them
           - min: 51
             max: 51
-            result: Provisions are ruined or in short supply
+            text: Provisions are ruined or in short supply
           - min: 52
             max: 52
-            result: A nest of insurgents, conspiring against a powerful faction, operate or hide here
+            text: A nest of insurgents, conspiring against a powerful faction, operate or hide here
           - min: 53
             max: 53
-            result: An artificer crafts elaborate prosthetic devices
+            text: An artificer crafts elaborate prosthetic devices
           - min: 54
             max: 54
-            result: A series of unexplained thefts baffle authorities
+            text: A series of unexplained thefts baffle authorities
           - min: 55
             max: 55
-            result: Connections with a vital trading partner are severed
+            text: Connections with a vital trading partner are severed
           - min: 56
             max: 56
-            result: A notable member of the community is missing
+            text: A notable member of the community is missing
           - min: 57
             max: 57
-            result: The settlement is built above a complex network of caves or catacombs
+            text: The settlement is built above a complex network of caves or catacombs
           - min: 58
             max: 58
-            result: The leadership is incompetent or incapacitated
+            text: The leadership is incompetent or incapacitated
           - min: 59
             max: 59
-            result: Refugees or outcasts from another community are seeking sanctuary
+            text: Refugees or outcasts from another community are seeking sanctuary
           - min: 60
             max: 60
-            result: An exclusive social event is upcoming
+            text: An exclusive social event is upcoming
           - min: 61
             max: 61
-            result: An elaborate memorial marks the site of a historic tragedy or disaster
+            text: An elaborate memorial marks the site of a historic tragedy or disaster
           - min: 62
             max: 62
-            result: Travelers or scouts report a military force is on the move nearby
+            text: Travelers or scouts report a military force is on the move nearby
           - min: 63
             max: 63
-            result: A plague of vermin infests this place
+            text: A plague of vermin infests this place
           - min: 64
             max: 64
-            result: A tattoo artist is famed for the quality of their designs and vibrancy of their inks
+            text: A tattoo artist is famed for the quality of their designs and vibrancy of their inks
           - min: 65
             max: 65
-            result: Many residents are in debt to a ruthless loan shark
+            text: Many residents are in debt to a ruthless loan shark
           - min: 66
             max: 66
-            result: A prominent statue is vandalized and broken, its subject forsaken by the residents
+            text: A prominent statue is vandalized and broken, its subject forsaken by the residents
           - min: 67
             max: 67
-            result: Preparations are underway for a major festival
+            text: Preparations are underway for a major festival
           - min: 68
             max: 68
-            result: Buildings are defaced with a cryptic glyph
+            text: Buildings are defaced with a cryptic glyph
           - min: 69
             max: 69
-            result: A troupe of visiting entertainers perform each night
+            text: A troupe of visiting entertainers perform each night
           - min: 70
             max: 70
-            result: A section of the settlement is sealed off or quarantined
+            text: A section of the settlement is sealed off or quarantined
           - min: 71
             max: 71
-            result: An group of residents is shunned by others
+            text: An group of residents is shunned by others
           - min: 72
             max: 72
-            result: A traveling alchemist promises miracle cures
+            text: A traveling alchemist promises miracle cures
           - min: 73
             max: 73
-            result: Artistic depictions of a venerated figure appear throughout the settlement
+            text: Artistic depictions of a venerated figure appear throughout the settlement
           - min: 74
             max: 74
-            result: A new religious order is gaining an ardent following
+            text: A new religious order is gaining an ardent following
           - min: 75
             max: 75
-            result: A portion of the settlement lies abandoned
+            text: A portion of the settlement lies abandoned
           - min: 76
             max: 76
-            result: Rumors swirl around the identity of a mysterious new visitor
+            text: Rumors swirl around the identity of a mysterious new visitor
           - min: 77
             max: 77
-            result: This residents hold a long-standing grudge against a nearby community
+            text: This residents hold a long-standing grudge against a nearby community
           - min: 78
             max: 78
-            result: An archive of books and charts, collected from all corners of the isle, is kept here
+            text: An archive of books and charts, collected from all corners of the isle, is kept here
           - min: 79
             max: 79
-            result: Mysterious cloaked figures watch you, then scuttle away when you catch their gaze
+            text: Mysterious cloaked figures watch you, then scuttle away when you catch their gaze
           - min: 80
             max: 80
-            result: A hallowed cultural or religious relic is missing
+            text: A hallowed cultural or religious relic is missing
           - min: 81
             max: 81
-            result: A cohort of dangerous-looking ruffians has arrived, their purpose unknown
+            text: A cohort of dangerous-looking ruffians has arrived, their purpose unknown
           - min: 82
             max: 82
-            result: A bounty hunter is hot on the trail of their target
+            text: A bounty hunter is hot on the trail of their target
           - min: 83
             max: 83
-            result: A curio merchant sells strange and exclusive wares
+            text: A curio merchant sells strange and exclusive wares
           - min: 84
             max: 84
-            result: This community owes a mounting debt to another settlement or faction
+            text: This community owes a mounting debt to another settlement or faction
           - min: 85
             max: 85
-            result: The smell of rich food and spices leads to a secluded market
+            text: The smell of rich food and spices leads to a secluded market
           - min: 86
             max: 86
-            result: An insurgency is brewing against the settlement's leadership or occupiers
+            text: An insurgency is brewing against the settlement's leadership or occupiers
           - min: 87
             max: 87
-            result: A sickness is spreading
+            text: A sickness is spreading
           - min: 88
             max: 88
-            result: An impromptu memorial marks the site of a recent tragedy
+            text: An impromptu memorial marks the site of a recent tragedy
           - min: 89
             max: 89
-            result: A months-old crime goes unpunished, and the locals have no hope of justice
+            text: A months-old crime goes unpunished, and the locals have no hope of justice
           - min: 90
             max: 90
-            result: A resident desperately seeks escort or passage out of this place
+            text: A resident desperately seeks escort or passage out of this place
           - min: 91
             max: 91
-            result: A tournament is underway
+            text: A tournament is underway
           - min: 92
             max: 92
-            result: An abandoned site marks the remains of a failed industry
+            text: An abandoned site marks the remains of a failed industry
           - min: 93
             max: 93
-            result: A location or resource is said to have curative properties
+            text: A location or resource is said to have curative properties
           - min: 94
             max: 94
-            result: The leaders are puppets for a greater power
+            text: The leaders are puppets for a greater power
           - min: 95
             max: 97
             <<: &ActionTheme
-              result: '[Action](id:sundered_isles/oracles/core/theme) + [Theme](id:sundered_isles/oracles/core/theme)'
+              text: '[Action](id:sundered_isles/oracles/core/theme) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
                 - oracle: sundered_isles/oracles/core/theme
                   auto: true
@@ -684,206 +684,206 @@ oracles:
         _source:
           <<: *Source
         name: Cursed Settlement Details
-        oracle_type: table_simple
+        oracle_type: table_basic
         tags:
           sundered_isles:
             cursed_version_of: sundered_isles/oracles/core/descriptor
         rows:
           - min: 1
             max: 1
-            result: Gold coins and a pile of bones sit within the murky waters of an old well
+            text: Gold coins and a pile of bones sit within the murky waters of an old well
           - min: 2
             max: 2
-            result: Plaintive cries, ignored by the residents, echo from within a sealed well
+            text: Plaintive cries, ignored by the residents, echo from within a sealed well
           - min: 3
             max: 3
-            result: Eerie lights gather outside the settlement on moonless nights
+            text: Eerie lights gather outside the settlement on moonless nights
           - min: 4
             max: 4
-            result: The stained glass windows of a temple depict unsettling scenes
+            text: The stained glass windows of a temple depict unsettling scenes
           - min: 5
             max: 5
-            result: A former garden is now a dark, thorny thicket; residents give it a wide berth
+            text: A former garden is now a dark, thorny thicket; residents give it a wide berth
           - min: 6
             max: 6
-            result: Bells ring of their own accord
+            text: Bells ring of their own accord
           - min: 7
             max: 7
-            result: On the anniversary of a tragedy, a spectral procession moves through the streets
+            text: On the anniversary of a tragedy, a spectral procession moves through the streets
           - min: 8
             max: 8
-            result: Moonlight reveals inscriptions of dark secrets on gravestones
+            text: Moonlight reveals inscriptions of dark secrets on gravestones
           - min: 9
             max: 9
-            result: A gambling hall deals in soulbound stakes
+            text: A gambling hall deals in soulbound stakes
           - min: 10
             max: 10
-            result: An artificer crafts diabolical machines
+            text: An artificer crafts diabolical machines
           - min: 11
             max: 11
-            result: A spreading sickness causes hideous deformities
+            text: A spreading sickness causes hideous deformities
           - min: 12
             max: 12
-            result: Back alleys and shadowy paths often lead to unexpected destinations
+            text: Back alleys and shadowy paths often lead to unexpected destinations
           - min: 13
             max: 13
-            result: Visitors are welcome here, but rarely leave
+            text: Visitors are welcome here, but rarely leave
           - min: 14
             max: 14
-            result: Each night, a wretched phantom walks the same route through the settlement
+            text: Each night, a wretched phantom walks the same route through the settlement
           - min: 15
             max: 15
-            result: A tavernkeeper's pet, an old parrot, speaks uncomfortable truths
+            text: A tavernkeeper's pet, an old parrot, speaks uncomfortable truths
           - min: 16
             max: 16
-            result: This settlement is curiously without children
+            text: This settlement is curiously without children
           - min: 17
             max: 17
-            result: Candlelight glimmers within a boarded-up building
+            text: Candlelight glimmers within a boarded-up building
           - min: 18
             max: 18
-            result: A shop displays a menagerie of strange and dangerous creatures
+            text: A shop displays a menagerie of strange and dangerous creatures
           - min: 19
             max: 19
-            result: Something burrows below, undermining building foundations
+            text: Something burrows below, undermining building foundations
           - min: 20
             max: 20
-            result: A black hound with eyes of fire is often seen roaming the graveyard
+            text: A black hound with eyes of fire is often seen roaming the graveyard
           - min: 21
             max: 21
-            result: A sorcerer claims the ability to bring the dead back to life—for a costly price
+            text: A sorcerer claims the ability to bring the dead back to life—for a costly price
           - min: 22
             max: 22
-            result: Distant chants and drumming echo within the night
+            text: Distant chants and drumming echo within the night
           - min: 23
             max: 23
-            result: Wind chimes, carved from bones, hang from the eaves
+            text: Wind chimes, carved from bones, hang from the eaves
           - min: 24
             max: 24
-            result: Walls are scarred with bestial scratches
+            text: Walls are scarred with bestial scratches
           - min: 25
             max: 25
-            result: Knocking and scratching is heard from within a sealed crypt or barrow
+            text: Knocking and scratching is heard from within a sealed crypt or barrow
           - min: 26
             max: 26
-            result: A tattooist creates works that are said to reveal something of the wearer's fate
+            text: A tattooist creates works that are said to reveal something of the wearer's fate
           - min: 27
             max: 27
-            result: A stubborn patch of blood never comes clean
+            text: A stubborn patch of blood never comes clean
           - min: 28
             max: 28
-            result: Oversized spiders scurry among the rafters
+            text: Oversized spiders scurry among the rafters
           - min: 29
             max: 29
-            result: A statue weeps bloody tears
+            text: A statue weeps bloody tears
           - min: 30
             max: 30
-            result: A reclusive resident is said to have lived here for centuries
+            text: A reclusive resident is said to have lived here for centuries
           - min: 31
             max: 32
-            result: A soothsayer wanders the streets, warning of impending doom
+            text: A soothsayer wanders the streets, warning of impending doom
           - min: 33
             max: 34
-            result: A nighttime market offers an array of wondrous and dreadful rarities
+            text: A nighttime market offers an array of wondrous and dreadful rarities
           - min: 35
             max: 36
-            result: At night, sinister howls echo across the surrounding landscape
+            text: At night, sinister howls echo across the surrounding landscape
           - min: 37
             max: 38
-            result: Within a central square, unnatural darkness clings to a twisted tree
+            text: Within a central square, unnatural darkness clings to a twisted tree
           - min: 39
             max: 40
-            result: A mauled or blood-drained corpse was recently discovered
+            text: A mauled or blood-drained corpse was recently discovered
           - min: 41
             max: 42
-            result: A monstrous beast lairs nearby
+            text: A monstrous beast lairs nearby
           - min: 43
             max: 44
-            result: Residents refuse to go into a nearby wood
+            text: Residents refuse to go into a nearby wood
           - min: 45
             max: 46
-            result: This place is infested with unnaturally large rats
+            text: This place is infested with unnaturally large rats
           - min: 47
             max: 48
-            result: Phantom, unintelligible whispers drift on the wind
+            text: Phantom, unintelligible whispers drift on the wind
           - min: 49
             max: 50
-            result: Lanterns and candles struggle to hold a flame
+            text: Lanterns and candles struggle to hold a flame
           - min: 51
             max: 52
-            result: Protective glyphs are carved upon outer walls or boundary stones
+            text: Protective glyphs are carved upon outer walls or boundary stones
           - min: 53
             max: 54
-            result: Mystic symbols are etched into nearly every doorway
+            text: Mystic symbols are etched into nearly every doorway
           - min: 55
             max: 56
-            result: The water here is foul, but residents drink it willingly
+            text: The water here is foul, but residents drink it willingly
           - min: 57
             max: 58
-            result: The residents avoid venturing out into the strange mist that often blankets this place
+            text: The residents avoid venturing out into the strange mist that often blankets this place
           - min: 59
             max: 60
-            result: A child's laughter and song rings out from no discernable source
+            text: A child's laughter and song rings out from no discernable source
           - min: 61
             max: 62
-            result: An abandoned fort overlooks this place—but none dare enter
+            text: An abandoned fort overlooks this place—but none dare enter
           - min: 63
             max: 64
-            result: An apothecary crafts vile potions and poisons
+            text: An apothecary crafts vile potions and poisons
           - min: 65
             max: 66
-            result: A forlorn specter stands at the edge of the settlement, awaiting someone's return
+            text: A forlorn specter stands at the edge of the settlement, awaiting someone's return
           - min: 67
             max: 68
-            result: Mysterious disappearances are all too common
+            text: Mysterious disappearances are all too common
           - min: 69
             max: 70
-            result: An ancient altar is stained with blood
+            text: An ancient altar is stained with blood
           - min: 71
             max: 72
-            result: Laughter rings hollow among these people, and smiles never reach their eyes
+            text: Laughter rings hollow among these people, and smiles never reach their eyes
           - min: 73
             max: 74
-            result: An unsettling chill pervades the air around an abandoned building
+            text: An unsettling chill pervades the air around an abandoned building
           - min: 75
             max: 76
-            result: Plants do not flourish here
+            text: Plants do not flourish here
           - min: 77
             max: 78
-            result: Building surfaces and paths are slick with a creeping black moss
+            text: Building surfaces and paths are slick with a creeping black moss
           - min: 79
             max: 80
-            result: A mysterious visitor bears a silver blade, marking them as a monster hunter
+            text: A mysterious visitor bears a silver blade, marking them as a monster hunter
           - min: 81
             max: 82
-            result: Residents whisper of a long-ago injustice, and the curse they bear for that collective sin
+            text: Residents whisper of a long-ago injustice, and the curse they bear for that collective sin
           - min: 83
             max: 84
-            result: Under moonlight, this place changes
+            text: Under moonlight, this place changes
           - min: 85
             max: 86
-            result: Residents and visitors share the same disturbing dream
+            text: Residents and visitors share the same disturbing dream
           - min: 87
             max: 88
-            result: Carrion birds gather among the eaves, waiting
+            text: Carrion birds gather among the eaves, waiting
           - min: 89
             max: 90
-            result: Ghosts haunt a prominent establishment
+            text: Ghosts haunt a prominent establishment
           - min: 91
             max: 92
-            result: A religious movement is outwardly benevolent, but residents whisper of secret motives
+            text: A religious movement is outwardly benevolent, but residents whisper of secret motives
           - min: 93
             max: 94
-            result: Residents sing a hymn or shanty which reveals something of this place's dark history
+            text: Residents sing a hymn or shanty which reveals something of this place's dark history
           - min: 95
             max: 96
-            result: The sun doesn't rise as it should with the dawn
+            text: The sun doesn't rise as it should with the dawn
           - min: 97
             max: 98
-            result: Mysterious cloaked figures watch you, then scuttle away when you catch their gaze
+            text: Mysterious cloaked figures watch you, then scuttle away when you catch their gaze
           - min: 99
             max: 100
-            result: Large cockroaches boil from hidden spaces
+            text: Large cockroaches boil from hidden spaces
     collections:
       size:
         _source:
@@ -913,23 +913,23 @@ oracles:
             oracle_type: column_details
             rows:
               - <<: &Size.0
-                  result: Village or outpost
-                  detail: Dozens
+                  text: Village or outpost
+                  text2: Dozens
                 min: 1
                 max: 30
               - <<: &Size.1
-                  result: Town
-                  detail: Hundreds
+                  text: Town
+                  text2: Hundreds
                 min: 31
                 max: 70
               - <<: &Size.2
-                  result: City
-                  detail: Thousands
+                  text: City
+                  text2: Thousands
                 min: 71
                 max: 98
               - <<: &Size.3
-                  result: City-state
-                  detail: Tens of thousands
+                  text: City-state
+                  text2: Tens of thousands
                 min: 99
                 max: 100
 
@@ -981,114 +981,114 @@ oracles:
             _source:
               <<: *Source
             name: Disposition
-            oracle_type: table_simple
+            oracle_type: table_basic
             rows:
               - min: 1
                 max: 5
-                result: Hostile
+                text: Hostile
               - min: 6
                 max: 15
-                result: Threatening
+                text: Threatening
               - min: 16
                 max: 25
-                result: Demanding
+                text: Demanding
               - min: 26
                 max: 35
-                result: Unwelcoming
+                text: Unwelcoming
               - min: 36
                 max: 50
-                result: Wary
+                text: Wary
               - min: 51
                 max: 65
-                result: Indifferent
+                text: Indifferent
               - min: 66
                 max: 75
-                result: In need
+                text: In need
               - min: 76
                 max: 85
-                result: Welcoming
+                text: Welcoming
               - min: 86
                 max: 95
-                result: Friendly
+                text: Friendly
               - min: 96
                 max: 100
-                result: Helpful
+                text: Helpful
           authority:
             _source:
               <<: *Source
             name: Authority
-            oracle_type: table_simple
+            oracle_type: table_basic
             rows:
               - min: 1
                 max: 10
-                result: Ruthless
+                text: Ruthless
               - min: 11
                 max: 20
-                result: Oppressive
+                text: Oppressive
               - min: 21
                 max: 30
-                result: Corrupt
+                text: Corrupt
               - min: 31
                 max: 40
-                result: Firm
+                text: Firm
               - min: 41
                 max: 50
-                result: Lawless
+                text: Lawless
               - min: 51
                 max: 60
-                result: Disputed
+                text: Disputed
               - min: 61
                 max: 70
-                result: Ambivalent
+                text: Ambivalent
               - min: 71
                 max: 80
-                result: Fair
+                text: Fair
               - min: 81
                 max: 90
-                result: Protective
+                text: Protective
               - min: 91
                 max: 100
-                result: Benevolent
+                text: Benevolent
         collections:
           controlling_faction:
             _source:
               <<: *Source
             name: Controlling Faction
-            oracle_type: table_shared_results
+            oracle_type: table_shared_text
             contents:
               myriads:
                 # source:
                 #   <<: *Source
                 name: Myriads
                 summary: Central Seas
-                oracle_type: column_simple
+                oracle_type: column_basic
                 rows:
                   - min: 1
                     max: 60
                     <<: &ControllingFaction.0
-                      result: Known faction
+                      text: Known faction
                   - min: 61
                     max: 75
                     <<: &ControllingFaction.1
-                      result: Unknown faction
+                      text: Unknown faction
                   - min: 76
                     max: 90
                     <<: &ControllingFaction.2
-                      result: Independent
+                      text: Independent
                   - min: 91
                     max: 95
                     <<: &ControllingFaction.3
-                      result: Factions in cooperation
+                      text: Factions in cooperation
                   - min: 96
                     max: 100
                     <<: &ControllingFaction.4
-                      result: Factions in conflict
+                      text: Factions in conflict
               margins:
                 # source:
                 #   <<: *Source
                 name: Margins
                 summary: Outer Seas
-                oracle_type: column_simple
+                oracle_type: column_basic
                 rows:
                   - min: 1
                     max: 45
@@ -1111,7 +1111,7 @@ oracles:
                 #   <<: *Source
                 name: Reaches
                 summary: Remote Seas
-                oracle_type: column_simple
+                oracle_type: column_basic
                 rows:
                   - min: 1
                     max: 30
@@ -1144,187 +1144,187 @@ oracles:
                   - min: 1
                     max: 3
                     <<: &Focus.0
-                      result: Piracy
-                      detail: Pirate court, smuggler dens, taverns
+                      text: Piracy
+                      text2: Pirate court, smuggler dens, taverns
                   - min: 4
                     max: 9
                     <<: &Focus.1
-                      result: Shipbuilding
-                      detail: Dry docks, lumber mills, shipwrights
+                      text: Shipbuilding
+                      text2: Dry docks, lumber mills, shipwrights
                   - min: 10
                     max: 12
                     <<: &Focus.2
-                      result: Whaling
-                      detail: Whaling ships, processing plants, wharfs
+                      text: Whaling
+                      text2: Whaling ships, processing plants, wharfs
                   - min: 13
                     max: 14
                     <<: &Focus.3
-                      result: Wrecking
-                      detail: Ship graveyard
+                      text: Wrecking
+                      text2: Ship graveyard
                   - min: 15
                     max: 22
                     <<: &Focus.4
-                      result: Fishing
-                      detail: Boatwrights, fishmongers, net makers
+                      text: Fishing
+                      text2: Boatwrights, fishmongers, net makers
                   - min: 23
                     max: 24
                     <<: &Focus.5
-                      result: Alcohol Production
-                      detail: Breweries, distilleries, wineries
+                      text: Alcohol Production
+                      text2: Breweries, distilleries, wineries
                   - min: 25
                     max: 25
                     <<: &Focus.6
-                      result: Archeology
-                      detail: Excavation sites, field camps, relic hunters
+                      text: Archeology
+                      text2: Excavation sites, field camps, relic hunters
                   - min: 26
                     max: 27
                     <<: &Focus.7
-                      result: Crafts
-                      detail: Artisans, markets, workshops
+                      text: Crafts
+                      text2: Artisans, markets, workshops
                   - min: 28
                     max: 29
                     <<: &Focus.8
-                      result: Culture
-                      detail: Archives, festivals, historical sites
+                      text: Culture
+                      text2: Archives, festivals, historical sites
                   - min: 30
                     max: 35
                     <<: &Focus.9
-                      result: Defense
-                      detail: Armories, fortifications, militia
+                      text: Defense
+                      text2: Armories, fortifications, militia
                   - min: 36
                     max: 36
                     <<: &Focus.10
-                      result: Dueling
-                      detail: Dueling grounds, fencing schools
+                      text: Dueling
+                      text2: Dueling grounds, fencing schools
                   - min: 37
                     max: 38
                     <<: &Focus.11
-                      result: Education
-                      detail: Libraries, universities
+                      text: Education
+                      text2: Libraries, universities
                   - min: 39
                     max: 40
                     <<: &Focus.12
-                      result: Entertainment
-                      detail: Arenas, fairs, street performers, theaters
+                      text: Entertainment
+                      text2: Arenas, fairs, street performers, theaters
                   - min: 41
                     max: 42
                     <<: &Focus.13
-                      result: Espionage
-                      detail: Assassin guild, spy network
+                      text: Espionage
+                      text2: Assassin guild, spy network
                   - min: 43
                     max: 44
                     <<: &Focus.14
-                      result: Exploration
-                      detail: Navigators guild, outfitters, scouts
+                      text: Exploration
+                      text2: Navigators guild, outfitters, scouts
                   - min: 45
                     max: 48
                     <<: &Focus.15
-                      result: Farming
-                      detail: Fields, granaries, mills, orchards
+                      text: Farming
+                      text2: Fields, granaries, mills, orchards
                   - min: 49
                     max: 54
                     <<: &Focus.16
-                      result: Hospitality
-                      detail: Bath houses, brothels, inns, taverns
+                      text: Hospitality
+                      text2: Bath houses, brothels, inns, taverns
                   - min: 55
                     max: 55
                     <<: &Focus.17
-                      result: Hunting
-                      detail: Animal trainers, taxidermists, tanners
+                      text: Hunting
+                      text2: Animal trainers, taxidermists, tanners
                   - min: 56
                     max: 57
                     <<: &Focus.18
-                      result: Law
-                      detail: Courts, gallows, patrols, prisons
+                      text: Law
+                      text2: Courts, gallows, patrols, prisons
                   - min: 58
                     max: 58
                     <<: &Focus.19
-                      result: Livestock / horses
-                      detail: Ranches, slaughterhouses, stables
+                      text: Livestock / horses
+                      text2: Ranches, slaughterhouses, stables
                   - min: 59
                     max: 59
                     <<: &Focus.20
-                      result: Logging
-                      detail: Logging camps, sawmills
+                      text: Logging
+                      text2: Logging camps, sawmills
                   - min: 60
                     max: 61
                     <<: &Focus.21
-                      result: Medicine
-                      detail: Apothecaries, herbalists, infirmaries
+                      text: Medicine
+                      text2: Apothecaries, herbalists, infirmaries
                   - min: 62
                     max: 62
                     <<: &Focus.22
-                      result: Metalworking
-                      detail: Artificers, blacksmiths, forges
+                      text: Metalworking
+                      text2: Artificers, blacksmiths, forges
                   - min: 63
                     max: 63
                     <<: &Focus.23
-                      result: Mining
-                      detail: Foundries, mines, smelters
+                      text: Mining
+                      text2: Foundries, mines, smelters
                   - min: 64
                     max: 65
                     <<: &Focus.24
-                      result: Mysticism
-                      detail: Alchemists, curio dealers, enclaves, mystics
+                      text: Mysticism
+                      text2: Alchemists, curio dealers, enclaves, mystics
                   - min: 66
                     max: 66
                     <<: &Focus.25
-                      result: Nature
-                      detail: Animal sanctuaries, gardens, groves
+                      text: Nature
+                      text2: Animal sanctuaries, gardens, groves
                   - min: 67
                     max: 68
                     <<: &Focus.26
-                      result: Religion
-                      detail: Monasteries, sacred sites, temples
+                      text: Religion
+                      text2: Monasteries, sacred sites, temples
                   - min: 69
                     max: 70
                     <<: &Focus.27
-                      result: Science
-                      detail: Academies, naturalist guild, observatories
+                      text: Science
+                      text2: Academies, naturalist guild, observatories
                   - min: 71
                     max: 73
                     <<: &Focus.28
-                      result: Smuggling
-                      detail: Black market, fences, smugglers
+                      text: Smuggling
+                      text2: Black market, fences, smugglers
                   - min: 74
                     max: 75
                     <<: &Focus.29
-                      result: Society
-                      detail: Balls, boutiques, social clubs, tailors
+                      text: Society
+                      text2: Balls, boutiques, social clubs, tailors
                   - min: 76
                     max: 77
                     <<: &Focus.30
-                      result: Statecraft
-                      detail: Embassies, envoys, court or council
+                      text: Statecraft
+                      text2: Embassies, envoys, court or council
                   - min: 78
                     max: 78
                     <<: &Focus.31
-                      result: Stoneworking
-                      detail: Masons, quarries, stone yards
+                      text: Stoneworking
+                      text2: Masons, quarries, stone yards
                   - min: 79
                     max: 86
                     <<: &Focus.32
-                      result: Trade
-                      detail: Auction house, markets, merchant guild
+                      text: Trade
+                      text2: Auction house, markets, merchant guild
                   - min: 87
                     max: 89
                     <<: &Focus.33
-                      result: Vices
-                      detail: Brothels, drug dens, gambling halls, taverns
+                      text: Vices
+                      text2: Brothels, drug dens, gambling halls, taverns
                   - min: 90
                     max: 93
                     <<: &Focus.34
-                      result: Warfare
-                      detail: Armies or fleets, command post, forts
+                      text: Warfare
+                      text2: Armies or fleets, command post, forts
                   - min: 94
                     max: 95
                     <<: &Focus.35
-                      result: Weaponry
-                      detail: Cannon foundries, gunsmiths, powder mills
+                      text: Weaponry
+                      text2: Cannon foundries, gunsmiths, powder mills
                   - &Focus.36
                     min: 96
                     max: 100
-                    detail: null
+                    text2: null
                     <<: *ActionTheme
               inland:
                 # source:

@@ -14,1221 +14,1221 @@ oracles:
     contents:
       action:
         _source: *Source
-        oracle_type: table_simple
+        oracle_type: table_basic
         name: Action
         rows:
           - min: 1
             max: 1
-            result: Abandon
+            text: Abandon
           - min: 2
             max: 2
-            result: Acquire
+            text: Acquire
           - min: 3
             max: 3
-            result: Advance
+            text: Advance
           - min: 4
             max: 4
-            result: Affect
+            text: Affect
           - min: 5
             max: 5
-            result: Aid
+            text: Aid
           - min: 6
             max: 6
-            result: Arrive
+            text: Arrive
           - min: 7
             max: 7
-            result: Assault
+            text: Assault
           - min: 8
             max: 8
-            result: Attack
+            text: Attack
           - min: 9
             max: 9
-            result: Avenge
+            text: Avenge
           - min: 10
             max: 10
-            result: Avoid
+            text: Avoid
           - min: 11
             max: 11
-            result: Await
+            text: Await
           - min: 12
             max: 12
-            result: Begin
+            text: Begin
           - min: 13
             max: 13
-            result: Betray
+            text: Betray
           - min: 14
             max: 14
-            result: Blockade
+            text: Blockade
           - min: 15
             max: 15
-            result: Bolster
+            text: Bolster
           - min: 16
             max: 16
-            result: Breach
+            text: Breach
           - min: 17
             max: 17
-            result: Break
+            text: Break
           - min: 18
             max: 18
-            result: Capture
+            text: Capture
           - min: 19
             max: 19
-            result: Challenge
+            text: Challenge
           - min: 20
             max: 20
-            result: Change
+            text: Change
           - min: 21
             max: 21
-            result: Charge
+            text: Charge
           - min: 22
             max: 22
-            result: Clash
+            text: Clash
           - min: 23
             max: 23
-            result: Command
+            text: Command
           - min: 24
             max: 24
-            result: Communicate
+            text: Communicate
           - min: 25
             max: 25
-            result: Construct
+            text: Construct
           - min: 26
             max: 26
-            result: Control
+            text: Control
           - min: 27
             max: 27
-            result: Coordinate
+            text: Coordinate
           - min: 28
             max: 28
-            result: Create
+            text: Create
           - min: 29
             max: 29
-            result: Debate
+            text: Debate
           - min: 30
             max: 30
-            result: Defeat
+            text: Defeat
           - min: 31
             max: 31
-            result: Defend
+            text: Defend
           - min: 32
             max: 32
-            result: Deflect
+            text: Deflect
           - min: 33
             max: 33
-            result: Defy
+            text: Defy
           - min: 34
             max: 34
-            result: Deliver
+            text: Deliver
           - min: 35
             max: 35
-            result: Demand
+            text: Demand
           - min: 36
             max: 36
-            result: Depart
+            text: Depart
           - min: 37
             max: 37
-            result: Destroy
+            text: Destroy
           - min: 38
             max: 38
-            result: Distract
+            text: Distract
           - min: 39
             max: 39
-            result: Eliminate
+            text: Eliminate
           - min: 40
             max: 40
-            result: Endure
+            text: Endure
           - min: 41
             max: 41
-            result: Escalate
+            text: Escalate
           - min: 42
             max: 42
-            result: Escort
+            text: Escort
           - min: 43
             max: 43
-            result: Evade
+            text: Evade
           - min: 44
             max: 44
-            result: Explore
+            text: Explore
           - min: 45
             max: 45
-            result: Falter
+            text: Falter
           - min: 46
             max: 46
-            result: Find
+            text: Find
           - min: 47
             max: 47
-            result: Finish
+            text: Finish
           - min: 48
             max: 48
-            result: Focus
+            text: Focus
           - min: 49
             max: 49
-            result: Follow
+            text: Follow
           - min: 50
             max: 50
-            result: Fortify
+            text: Fortify
           - min: 51
             max: 51
-            result: Gather
+            text: Gather
           - min: 52
             max: 52
-            result: Guard
+            text: Guard
           - min: 53
             max: 53
-            result: Hide
+            text: Hide
           - min: 54
             max: 54
-            result: Hold
+            text: Hold
           - min: 55
             max: 55
-            result: Hunt
+            text: Hunt
           - min: 56
             max: 56
-            result: Initiate
+            text: Initiate
           - min: 57
             max: 57
-            result: Inspect
+            text: Inspect
           - min: 58
             max: 58
-            result: Investigate
+            text: Investigate
           - min: 59
             max: 59
-            result: Journey
+            text: Journey
           - min: 60
             max: 60
-            result: Learn
+            text: Learn
           - min: 61
             max: 61
-            result: Leave
+            text: Leave
           - min: 62
             max: 62
-            result: Locate
+            text: Locate
           - min: 63
             max: 63
-            result: Lose
+            text: Lose
           - min: 64
             max: 64
-            result: Manipulate
+            text: Manipulate
           - min: 65
             max: 65
-            result: Mourn
+            text: Mourn
           - min: 66
             max: 66
-            result: Move
+            text: Move
           - min: 67
             max: 67
-            result: Oppose
+            text: Oppose
           - min: 68
             max: 68
-            result: Overwhelm
+            text: Overwhelm
           - min: 69
             max: 69
-            result: Persevere
+            text: Persevere
           - min: 70
             max: 70
-            result: Preserve
+            text: Preserve
           - min: 71
             max: 71
-            result: Protect
+            text: Protect
           - min: 72
             max: 72
-            result: Raid
+            text: Raid
           - min: 73
             max: 73
-            result: Reduce
+            text: Reduce
           - min: 74
             max: 74
-            result: Refuse
+            text: Refuse
           - min: 75
             max: 75
-            result: Reject
+            text: Reject
           - min: 76
             max: 76
-            result: Release
+            text: Release
           - min: 77
             max: 77
-            result: Remove
+            text: Remove
           - min: 78
             max: 78
-            result: Resist
+            text: Resist
           - min: 79
             max: 79
-            result: Restore
+            text: Restore
           - min: 80
             max: 80
-            result: Reveal
+            text: Reveal
           - min: 81
             max: 81
-            result: Risk
+            text: Risk
           - min: 82
             max: 82
-            result: Scheme
+            text: Scheme
           - min: 83
             max: 83
-            result: Search
+            text: Search
           - min: 84
             max: 84
-            result: Secure
+            text: Secure
           - min: 85
             max: 85
-            result: Seize
+            text: Seize
           - min: 86
             max: 86
-            result: Serve
+            text: Serve
           - min: 87
             max: 87
-            result: Share
+            text: Share
           - min: 88
             max: 88
-            result: Strengthen
+            text: Strengthen
           - min: 89
             max: 89
-            result: Study
+            text: Study
           - min: 90
             max: 90
-            result: Summon
+            text: Summon
           - min: 91
             max: 91
-            result: Support
+            text: Support
           - min: 92
             max: 92
-            result: Suppress
+            text: Suppress
           - min: 93
             max: 93
-            result: Surrender
+            text: Surrender
           - min: 94
             max: 94
-            result: Swear
+            text: Swear
           - min: 95
             max: 95
-            result: Threaten
+            text: Threaten
           - min: 96
             max: 96
-            result: Transform
+            text: Transform
           - min: 97
             max: 97
-            result: Uncover
+            text: Uncover
           - min: 98
             max: 98
-            result: Uphold
+            text: Uphold
           - min: 99
             max: 99
-            result: Weaken
+            text: Weaken
           - min: 100
             max: 100
-            result: Withdraw
+            text: Withdraw
       theme:
         _source: *Source
-        oracle_type: table_simple
+        oracle_type: table_basic
         name: Theme
         rows:
           - min: 1
             max: 1
-            result: Ability
+            text: Ability
           - min: 2
             max: 2
-            result: Advantage
+            text: Advantage
           - min: 3
             max: 3
-            result: Alliance
+            text: Alliance
           - min: 4
             max: 4
-            result: Authority
+            text: Authority
           - min: 5
             max: 5
-            result: Balance
+            text: Balance
           - min: 6
             max: 6
-            result: Barrier
+            text: Barrier
           - min: 7
             max: 7
-            result: Belief
+            text: Belief
           - min: 8
             max: 8
-            result: Blood
+            text: Blood
           - min: 9
             max: 9
-            result: Bond
+            text: Bond
           - min: 10
             max: 10
-            result: Bounty
+            text: Bounty
           - min: 11
             max: 11
-            result: Burden
+            text: Burden
           - min: 12
             max: 12
-            result: Commerce
+            text: Commerce
           - min: 13
             max: 13
-            result: Community
+            text: Community
           - min: 14
             max: 14
-            result: Corruption
+            text: Corruption
           - min: 15
             max: 15
-            result: Creation
+            text: Creation
           - min: 16
             max: 16
-            result: Crime
+            text: Crime
           - min: 17
             max: 17
-            result: Culture
+            text: Culture
           - min: 18
             max: 18
-            result: Cure
+            text: Cure
           - min: 19
             max: 19
-            result: Curse
+            text: Curse
           - min: 20
             max: 20
-            result: Danger
+            text: Danger
           - min: 21
             max: 21
-            result: Death
+            text: Death
           - min: 22
             max: 22
-            result: Debt
+            text: Debt
           - min: 23
             max: 23
-            result: Decay
+            text: Decay
           - min: 24
             max: 24
-            result: Deception
+            text: Deception
           - min: 25
             max: 25
-            result: Defense
+            text: Defense
           - min: 26
             max: 26
-            result: Destiny
+            text: Destiny
           - min: 27
             max: 27
-            result: Disaster
+            text: Disaster
           - min: 28
             max: 28
-            result: Discovery
+            text: Discovery
           - min: 29
             max: 29
-            result: Disease
+            text: Disease
           - min: 30
             max: 30
-            result: Dream
+            text: Dream
           - min: 31
             max: 31
-            result: Duty
+            text: Duty
           - min: 32
             max: 32
-            result: Enemy
+            text: Enemy
           - min: 33
             max: 33
-            result: Expedition
+            text: Expedition
           - min: 34
             max: 34
-            result: Faction
+            text: Faction
           - min: 35
             max: 35
-            result: Fame
+            text: Fame
           - min: 36
             max: 36
-            result: Family
+            text: Family
           - min: 37
             max: 37
-            result: Fear
+            text: Fear
           - min: 38
             max: 38
-            result: Fellowship
+            text: Fellowship
           - min: 39
             max: 39
-            result: Freedom
+            text: Freedom
           - min: 40
             max: 40
-            result: Greed
+            text: Greed
           - min: 41
             max: 41
-            result: Hardship
+            text: Hardship
           - min: 42
             max: 42
-            result: Hate
+            text: Hate
           - min: 43
             max: 43
-            result: Health
+            text: Health
           - min: 44
             max: 44
-            result: History
+            text: History
           - min: 45
             max: 45
-            result: Home
+            text: Home
           - min: 46
             max: 46
-            result: Honor
+            text: Honor
           - min: 47
             max: 47
-            result: Hope
+            text: Hope
           - min: 48
             max: 48
-            result: Industry
+            text: Industry
           - min: 49
             max: 49
-            result: Innocence
+            text: Innocence
           - min: 50
             max: 50
-            result: Knowledge
+            text: Knowledge
           - min: 51
             max: 51
-            result: Labor
+            text: Labor
           - min: 52
             max: 52
-            result: Language
+            text: Language
           - min: 53
             max: 53
-            result: Law
+            text: Law
           - min: 54
             max: 54
-            result: Leadership
+            text: Leadership
           - min: 55
             max: 55
-            result: Legacy
+            text: Legacy
           - min: 56
             max: 56
-            result: Life
+            text: Life
           - min: 57
             max: 57
-            result: Love
+            text: Love
           - min: 58
             max: 58
-            result: Memory
+            text: Memory
           - min: 59
             max: 59
-            result: Nature
+            text: Nature
           - min: 60
             max: 60
-            result: Navigation
+            text: Navigation
           - min: 61
             max: 61
-            result: Opportunity
+            text: Opportunity
           - min: 62
             max: 62
-            result: Peace
+            text: Peace
           - min: 63
             max: 63
-            result: Phenomenon
+            text: Phenomenon
           - min: 64
             max: 64
-            result: Possession
+            text: Possession
           - min: 65
             max: 65
-            result: Power
+            text: Power
           - min: 66
             max: 66
-            result: Price
+            text: Price
           - min: 67
             max: 67
-            result: Pride
+            text: Pride
           - min: 68
             max: 68
-            result: Prize
+            text: Prize
           - min: 69
             max: 69
-            result: Prophesy
+            text: Prophesy
           - min: 70
             max: 70
-            result: Protection
+            text: Protection
           - min: 71
             max: 71
-            result: Quest
+            text: Quest
           - min: 72
             max: 72
-            result: Relationship
+            text: Relationship
           - min: 73
             max: 73
-            result: Religion
+            text: Religion
           - min: 74
             max: 74
-            result: Reputation
+            text: Reputation
           - min: 75
             max: 75
-            result: Resource
+            text: Resource
           - min: 76
             max: 76
-            result: Revenge
+            text: Revenge
           - min: 77
             max: 77
-            result: Rival
+            text: Rival
           - min: 78
             max: 78
-            result: Rumor
+            text: Rumor
           - min: 79
             max: 79
-            result: Safety
+            text: Safety
           - min: 80
             max: 80
-            result: Sanctuary
+            text: Sanctuary
           - min: 81
             max: 81
-            result: Secret
+            text: Secret
           - min: 82
             max: 82
-            result: Solution
+            text: Solution
           - min: 83
             max: 83
-            result: Spirit
+            text: Spirit
           - min: 84
             max: 84
-            result: Stranger
+            text: Stranger
           - min: 85
             max: 85
-            result: Strategy
+            text: Strategy
           - min: 86
             max: 86
-            result: Strength
+            text: Strength
           - min: 87
             max: 87
-            result: Superstition
+            text: Superstition
           - min: 88
             max: 88
-            result: Supply
+            text: Supply
           - min: 89
             max: 89
-            result: Survival
+            text: Survival
           - min: 90
             max: 90
-            result: Time
+            text: Time
           - min: 91
             max: 91
-            result: Trade
+            text: Trade
           - min: 92
             max: 92
-            result: Treaty
+            text: Treaty
           - min: 93
             max: 93
-            result: Truth
+            text: Truth
           - min: 94
             max: 94
-            result: Vengeance
+            text: Vengeance
           - min: 95
             max: 95
-            result: Vow
+            text: Vow
           - min: 96
             max: 96
-            result: War
+            text: War
           - min: 97
             max: 97
-            result: Warning
+            text: Warning
           - min: 98
             max: 98
-            result: Weakness
+            text: Weakness
           - min: 99
             max: 99
-            result: Wealth
+            text: Wealth
           - min: 100
             max: 100
-            result: Weapon
+            text: Weapon
       descriptor:
         name: Descriptor
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source: *Source
         rows:
           - min: 1
             max: 1
-            result: Abandoned
+            text: Abandoned
           - min: 2
             max: 2
-            result: Abundant
+            text: Abundant
           - min: 3
             max: 3
-            result: Active
+            text: Active
           - min: 4
             max: 4
-            result: Ancient
+            text: Ancient
           - min: 5
             max: 5
-            result: Barren
+            text: Barren
           - min: 6
             max: 6
-            result: Blighted
+            text: Blighted
           - min: 7
             max: 7
-            result: Blocked
+            text: Blocked
           - min: 8
             max: 8
-            result: Breached
+            text: Breached
           - min: 9
             max: 9
-            result: Broken
+            text: Broken
           - min: 10
             max: 10
-            result: Captured
+            text: Captured
           - min: 11
             max: 11
-            result: Chaotic
+            text: Chaotic
           - min: 12
             max: 12
-            result: Charted
+            text: Charted
           - min: 13
             max: 13
-            result: Collapsed
+            text: Collapsed
           - min: 14
             max: 14
-            result: Colossal
+            text: Colossal
           - min: 15
             max: 15
-            result: Confined
+            text: Confined
           - min: 16
             max: 16
-            result: Conspicuous
+            text: Conspicuous
           - min: 17
             max: 17
-            result: Constructed
+            text: Constructed
           - min: 18
             max: 18
-            result: Contested
+            text: Contested
           - min: 19
             max: 19
-            result: Corrupted
+            text: Corrupted
           - min: 20
             max: 20
-            result: Created
+            text: Created
           - min: 21
             max: 21
-            result: Cursed
+            text: Cursed
           - min: 22
             max: 22
-            result: Damaged
+            text: Damaged
           - min: 23
             max: 23
-            result: Dead
+            text: Dead
           - min: 24
             max: 24
-            result: Deadly
+            text: Deadly
           - min: 25
             max: 25
-            result: Decaying
+            text: Decaying
           - min: 26
             max: 26
-            result: Deep
+            text: Deep
           - min: 27
             max: 27
-            result: Defended
+            text: Defended
           - min: 28
             max: 28
-            result: Dense
+            text: Dense
           - min: 29
             max: 29
-            result: Depleted
+            text: Depleted
           - min: 30
             max: 30
-            result: Desolate
+            text: Desolate
           - min: 31
             max: 31
-            result: Destroyed
+            text: Destroyed
           - min: 32
             max: 32
-            result: Diverse
+            text: Diverse
           - min: 33
             max: 33
-            result: Empty
+            text: Empty
           - min: 34
             max: 34
-            result: Ensnaring
+            text: Ensnaring
           - min: 35
             max: 35
-            result: Expansive
+            text: Expansive
           - min: 36
             max: 36
-            result: Exposed
+            text: Exposed
           - min: 37
             max: 37
-            result: Fertile
+            text: Fertile
           - min: 38
             max: 38
-            result: Fiery
+            text: Fiery
           - min: 39
             max: 39
-            result: Flooded
+            text: Flooded
           - min: 40
             max: 40
-            result: Foreboding
+            text: Foreboding
           - min: 41
             max: 41
-            result: Forgotten
+            text: Forgotten
           - min: 42
             max: 42
-            result: Forsaken
+            text: Forsaken
           - min: 43
             max: 43
-            result: Fortified
+            text: Fortified
           - min: 44
             max: 44
-            result: Foul
+            text: Foul
           - min: 45
             max: 45
-            result: Fragile
+            text: Fragile
           - min: 46
             max: 46
-            result: Frozen
+            text: Frozen
           - min: 47
             max: 47
-            result: Functional
+            text: Functional
           - min: 48
             max: 48
-            result: Grim
+            text: Grim
           - min: 49
             max: 49
-            result: Guarded
+            text: Guarded
           - min: 50
             max: 50
-            result: Haunted
+            text: Haunted
           - min: 51
             max: 51
-            result: Hidden
+            text: Hidden
           - min: 52
             max: 52
-            result: Hoarded
+            text: Hoarded
           - min: 53
             max: 53
-            result: Hostile
+            text: Hostile
           - min: 54
             max: 54
-            result: Inaccessible
+            text: Inaccessible
           - min: 55
             max: 55
-            result: Infested
+            text: Infested
           - min: 56
             max: 56
-            result: Inhabited
+            text: Inhabited
           - min: 57
             max: 57
-            result: Isolated
+            text: Isolated
           - min: 58
             max: 58
-            result: Living
+            text: Living
           - min: 59
             max: 59
-            result: Lost
+            text: Lost
           - min: 60
             max: 60
-            result: Lush
+            text: Lush
           - min: 61
             max: 61
-            result: Makeshift
+            text: Makeshift
           - min: 62
             max: 62
-            result: Mechanical
+            text: Mechanical
           - min: 63
             max: 63
-            result: Misleading
+            text: Misleading
           - min: 64
             max: 64
-            result: Moving
+            text: Moving
           - min: 65
             max: 65
-            result: Mysterious
+            text: Mysterious
           - min: 66
             max: 66
-            result: Natural
+            text: Natural
           - min: 67
             max: 67
-            result: New
+            text: New
           - min: 68
             max: 68
-            result: Obscured
+            text: Obscured
           - min: 69
             max: 69
-            result: Open
+            text: Open
           - min: 70
             max: 70
-            result: Peaceful
+            text: Peaceful
           - min: 71
             max: 71
-            result: Perilous
+            text: Perilous
           - min: 72
             max: 72
-            result: Pillaged
+            text: Pillaged
           - min: 73
             max: 73
-            result: Powerful
+            text: Powerful
           - min: 74
             max: 74
-            result: Preserved
+            text: Preserved
           - min: 75
             max: 75
-            result: Prominent
+            text: Prominent
           - min: 76
             max: 76
-            result: Protected
+            text: Protected
           - min: 77
             max: 77
-            result: Rare
+            text: Rare
           - min: 78
             max: 78
-            result: Remote
+            text: Remote
           - min: 79
             max: 79
-            result: Rich
+            text: Rich
           - min: 80
             max: 80
-            result: Ruined
+            text: Ruined
           - min: 81
             max: 81
-            result: Sacred
+            text: Sacred
           - min: 82
             max: 82
-            result: Safe
+            text: Safe
           - min: 83
             max: 83
-            result: Sealed
+            text: Sealed
           - min: 84
             max: 84
-            result: Secret
+            text: Secret
           - min: 85
             max: 85
-            result: Settled
+            text: Settled
           - min: 86
             max: 86
-            result: Shrouded
+            text: Shrouded
           - min: 87
             max: 87
-            result: Stolen
+            text: Stolen
           - min: 88
             max: 88
-            result: Stormy
+            text: Stormy
           - min: 89
             max: 89
-            result: Stranded
+            text: Stranded
           - min: 90
             max: 90
-            result: Strange
+            text: Strange
           - min: 91
             max: 91
-            result: Sunken
+            text: Sunken
           - min: 92
             max: 92
-            result: Toxic
+            text: Toxic
           - min: 93
             max: 93
-            result: Trapped
+            text: Trapped
           - min: 94
             max: 94
-            result: Undersea
+            text: Undersea
           - min: 95
             max: 95
-            result: Undiscovered
+            text: Undiscovered
           - min: 96
             max: 96
-            result: Unnatural
+            text: Unnatural
           - min: 97
             max: 97
-            result: Unstable
+            text: Unstable
           - min: 98
             max: 98
-            result: Valuable
+            text: Valuable
           - min: 99
             max: 99
-            result: Violent
+            text: Violent
           - min: 100
             max: 100
-            result: Wrecked
+            text: Wrecked
       focus:
         name: Focus
-        oracle_type: table_simple
+        oracle_type: table_basic
         _source: *Source
         rows:
           - min: 1
             max: 1
-            result: Ammunition
+            text: Ammunition
           - min: 2
             max: 2
-            result: Anchorage
+            text: Anchorage
           - min: 3
             max: 3
-            result: Animal
+            text: Animal
           - min: 4
             max: 4
-            result: Apparition
+            text: Apparition
           - min: 5
             max: 5
-            result: Art
+            text: Art
           - min: 6
             max: 6
-            result: Artifact
+            text: Artifact
           - min: 7
             max: 7
-            result: Battleground
+            text: Battleground
           - min: 8
             max: 8
-            result: Beast
+            text: Beast
           - min: 9
             max: 9
-            result: Blockade
+            text: Blockade
           - min: 10
             max: 10
-            result: Boat
+            text: Boat
           - min: 11
             max: 11
-            result: Book
+            text: Book
           - min: 12
             max: 12
-            result: Boundary
+            text: Boundary
           - min: 13
             max: 13
-            result: Cache
+            text: Cache
           - min: 14
             max: 14
-            result: Cargo
+            text: Cargo
           - min: 15
             max: 15
-            result: Commander
+            text: Commander
           - min: 16
             max: 16
-            result: Commodity
+            text: Commodity
           - min: 17
             max: 17
-            result: Confinement
+            text: Confinement
           - min: 18
             max: 18
-            result: Connection
+            text: Connection
           - min: 19
             max: 19
-            result: Container
+            text: Container
           - min: 20
             max: 20
-            result: Contraband
+            text: Contraband
           - min: 21
             max: 21
-            result: Corpse
+            text: Corpse
           - min: 22
             max: 22
-            result: Creation
+            text: Creation
           - min: 23
             max: 23
-            result: Creature
+            text: Creature
           - min: 24
             max: 24
-            result: Crew
+            text: Crew
           - min: 25
             max: 25
-            result: Debris
+            text: Debris
           - min: 26
             max: 26
-            result: Derelict
+            text: Derelict
           - min: 27
             max: 27
-            result: Discovery
+            text: Discovery
           - min: 28
             max: 28
-            result: Enclosure
+            text: Enclosure
           - min: 29
             max: 29
-            result: Energy
+            text: Energy
           - min: 30
             max: 30
-            result: Equipment
+            text: Equipment
           - min: 31
             max: 31
-            result: Faction
+            text: Faction
           - min: 32
             max: 32
-            result: Flag
+            text: Flag
           - min: 33
             max: 33
-            result: Fleet
+            text: Fleet
           - min: 34
             max: 34
-            result: Force
+            text: Force
           - min: 35
             max: 35
-            result: Fortification
+            text: Fortification
           - min: 36
             max: 36
-            result: Gadget
+            text: Gadget
           - min: 37
             max: 37
-            result: Grave
+            text: Grave
           - min: 38
             max: 38
-            result: Habitat
+            text: Habitat
           - min: 39
             max: 39
-            result: Hazard
+            text: Hazard
           - min: 40
             max: 40
-            result: Hideaway
+            text: Hideaway
           - min: 41
             max: 41
-            result: Home
+            text: Home
           - min: 42
             max: 42
-            result: Illusion
+            text: Illusion
           - min: 43
             max: 43
-            result: Island
+            text: Island
           - min: 44
             max: 44
-            result: Lair
+            text: Lair
           - min: 45
             max: 45
-            result: Land
+            text: Land
           - min: 46
             max: 46
-            result: Leader
+            text: Leader
           - min: 47
             max: 47
-            result: Machine
+            text: Machine
           - min: 48
             max: 48
-            result: Map
+            text: Map
           - min: 49
             max: 49
-            result: Material
+            text: Material
           - min: 50
             max: 50
-            result: Medicine
+            text: Medicine
           - min: 51
             max: 51
-            result: Message
+            text: Message
           - min: 52
             max: 52
-            result: Mist
+            text: Mist
           - min: 53
             max: 53
-            result: Monument
+            text: Monument
           - min: 54
             max: 54
-            result: Obstacle
+            text: Obstacle
           - min: 55
             max: 55
-            result: Outbreak
+            text: Outbreak
           - min: 56
             max: 56
-            result: Outpost
+            text: Outpost
           - min: 57
             max: 57
-            result: Path
+            text: Path
           - min: 58
             max: 58
-            result: People
+            text: People
           - min: 59
             max: 59
-            result: Person
+            text: Person
           - min: 60
             max: 60
-            result: Pirate
+            text: Pirate
           - min: 61
             max: 61
-            result: Port
+            text: Port
           - min: 62
             max: 62
-            result: Provisions
+            text: Provisions
           - min: 63
             max: 63
-            result: Reef
+            text: Reef
           - min: 64
             max: 64
-            result: Refuge
+            text: Refuge
           - min: 65
             max: 65
-            result: Relic
+            text: Relic
           - min: 66
             max: 66
-            result: Remains
+            text: Remains
           - min: 67
             max: 67
-            result: Rendezvous
+            text: Rendezvous
           - min: 68
             max: 68
-            result: Resource
+            text: Resource
           - min: 69
             max: 69
-            result: Rock
+            text: Rock
           - min: 70
             max: 70
-            result: Ruins
+            text: Ruins
           - min: 71
             max: 71
-            result: Sail
+            text: Sail
           - min: 72
             max: 72
-            result: Salvage
+            text: Salvage
           - min: 73
             max: 73
-            result: Sea
+            text: Sea
           - min: 74
             max: 74
-            result: Shelter
+            text: Shelter
           - min: 75
             max: 75
-            result: Ship
+            text: Ship
           - min: 76
             max: 76
-            result: Shore
+            text: Shore
           - min: 77
             max: 77
-            result: Shortcut
+            text: Shortcut
           - min: 78
             max: 78
-            result: Sound
+            text: Sound
           - min: 79
             max: 79
-            result: Storage
+            text: Storage
           - min: 80
             max: 80
-            result: Storm
+            text: Storm
           - min: 81
             max: 81
-            result: Structure
+            text: Structure
           - min: 82
             max: 82
-            result: Supply
+            text: Supply
           - min: 83
             max: 83
-            result: Symbol
+            text: Symbol
           - min: 84
             max: 84
-            result: Terrain
+            text: Terrain
           - min: 85
             max: 85
-            result: Territory
+            text: Territory
           - min: 86
             max: 86
-            result: Threshold
+            text: Threshold
           - min: 87
             max: 87
-            result: Tool
+            text: Tool
           - min: 88
             max: 88
-            result: Town
+            text: Town
           - min: 89
             max: 89
-            result: Trap
+            text: Trap
           - min: 90
             max: 90
-            result: Treasure
+            text: Treasure
           - min: 91
             max: 91
-            result: Vault
+            text: Vault
           - min: 92
             max: 92
-            result: Vegetation
+            text: Vegetation
           - min: 93
             max: 93
-            result: Vessel
+            text: Vessel
           - min: 94
             max: 94
-            result: Village
+            text: Village
           - min: 95
             max: 95
-            result: Void
+            text: Void
           - min: 96
             max: 96
-            result: Water
+            text: Water
           - min: 97
             max: 97
-            result: Weapon
+            text: Weapon
           - min: 98
             max: 98
-            result: Weather
+            text: Weather
           - min: 99
             max: 99
-            result: Wind
+            text: Wind
           - min: 100
             max: 100
-            result: Wreckage
+            text: Wreckage

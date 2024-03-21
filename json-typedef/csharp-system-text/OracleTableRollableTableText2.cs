@@ -6,19 +6,18 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// An OracleCollection representing a single table with multiple roll
-    /// columns and one `result` column.
+    /// A rollable oracle table with one roll column and two text columns.
     /// </summary>
-    public class OracleCollectionTableSharedResults : OracleCollection
+    public class OracleTableRollableTableText2 : OracleTableRollable
     {
         [JsonPropertyName("oracle_type")]
-        public string OracleType { get => "table_shared_results"; }
+        public string OracleType { get => "table_text2"; }
 
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
         [JsonPropertyName("_id")]
-        public OracleCollectionId Id { get; set; }
+        public OracleRollableId Id { get; set; }
 
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
@@ -33,13 +32,25 @@ namespace Datasworn
         /// table row).
         /// </summary>
         [JsonPropertyName("column_labels")]
-        public OracleCollectionTableSharedResultsColumnLabels ColumnLabels { get; set; }
+        public OracleTableRollableTableText2ColumnLabels ColumnLabels { get; set; }
+
+        /// <summary>
+        /// The roll used to select a result on this oracle.
+        /// </summary>
+        [JsonPropertyName("dice")]
+        public DiceExpression Dice { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
+
+        /// <summary>
+        /// An array of objects, each representing a single row of the table.
+        /// </summary>
+        [JsonPropertyName("rows")]
+        public IList<OracleTableRow2textCells> Rows { get; set; }
 
         /// <summary>
         /// The name of this item as it appears on the page in the book, if it's
@@ -50,62 +61,51 @@ namespace Datasworn
         public Label? CanonicalName { get; set; }
 
         /// <summary>
-        /// A thematic color associated with this collection.
-        /// </summary>
-        [JsonPropertyName("color")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public CssColor? Color { get; set; }
-
-        [JsonPropertyName("contents")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, OracleColumnSimple> Contents { get; set; }
-
-        /// <summary>
-        /// A longer description of this collection, which might include
-        /// multiple paragraphs. If it's only a couple sentences, use the
-        /// `summary` key instead.
+        /// A longer description of the oracle table's intended usage, which
+        /// might include multiple paragraphs. If it's only a couple sentences,
+        /// use the `summary` key instead.
         /// </summary>
         [JsonPropertyName("description")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public MarkdownString? Description { get; set; }
 
         /// <summary>
-        /// This collection's content enhances the identified collection, rather
-        /// than being a standalone collection of its own.
-        /// </summary>
-        [JsonPropertyName("enhances")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleCollectionId? Enhances { get; set; }
-
-        /// <summary>
-        /// An SVG icon associated with this collection.
+        /// An icon that represents this table.
         /// </summary>
         [JsonPropertyName("icon")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public SvgImageUrl? Icon { get; set; }
 
-        [JsonPropertyName("images")]
+        /// <summary>
+        /// Most oracle tables are insensitive to matches, but a few define
+        /// special match behavior.
+        /// </summary>
+        [JsonPropertyName("match")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<WebpImageUrl> Images { get; set; }
+        public OracleMatchBehavior? Match { get; set; }
+
+        [JsonPropertyName("recommended_rolls")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public OracleTableRollableTableText2RecommendedRolls RecommendedRolls { get; set; }
 
         /// <summary>
-        /// This collection replaces the identified collection. References
-        /// to the replaced collection can be considered equivalent to this
-        /// collection.
+        /// Indicates that this object replaces the identified OracleRollable.
+        /// References to the replaced object can be considered equivalent to
+        /// this object.
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleCollectionId? Replaces { get; set; }
+        public OracleRollableId? Replaces { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
 
         /// <summary>
-        /// A brief summary of this collection, no more than a few sentences
-        /// in length. This is intended for use in application tooltips and
-        /// similar sorts of hints. Longer text should use the "description"
-        /// key instead.
+        /// A brief summary of the oracle table's intended usage, no more than
+        /// a few sentences in length. This is intended for use in application
+        /// tooltips and similar sorts of hints. Longer text should use the
+        /// "description" key instead.
         /// </summary>
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

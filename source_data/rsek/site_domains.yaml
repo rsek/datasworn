@@ -17,41 +17,41 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: 'Metaphoric feature: walled heart, etc.'
+        text: 'Metaphoric feature: walled heart, etc.'
       - min: 44
         max: 56
-        result: Salient locales in patchwork/fragments
+        text: Salient locales in patchwork/fragments
       - min: 57
         max: 64
-        result: Recent memory
+        text: Recent memory
       - min: 65
         max: 68
-        result: Formative memory
+        text: Formative memory
       - min: 69
         max: 72
-        result: Lost or repressed memory
+        text: Lost or repressed memory
       - min: 73
         max: 76
-        result: '"Happy place" or dearest wish fulfilled'
+        text: '"Happy place" or dearest wish fulfilled'
       - min: 77
         max: 80
-        result: Personal hell or worst fears realized
+        text: Personal hell or worst fears realized
       - min: 81
         max: 84
-        result: Embodiment of trait/ideal/principle
+        text: Embodiment of trait/ideal/principle
       - min: 85
         max: 88
-        result: You find an earlier feature changed
+        text: You find an earlier feature changed
       - &Feature.unusual
         min: 89
         max: 98
-        result: Something unusual or unexpected
+        text: Something unusual or unexpected
         suggestions:
           oracles:
             - delve/oracles/feature/aspect
             - delve/oracles/feature/focus
       - &Feature.newTheme
-        result: You transition into a new theme
+        text: You transition into a new theme
         min: 99
         max: 99
         suggestions:
@@ -60,26 +60,26 @@ site_domains:
       - &Feature.newDomain
         min: 100
         max: 100
-        result: You transition into a new domain
+        text: You transition into a new domain
         suggestions:
           oracles:
             - delve/oracles/site_nature/domain
     dangers:
       - min: 31
         max: 33
-        result: Time variance complicates real world
+        text: Time variance complicates real world
       - min: 34
         max: 36
-        result: Space and distance obey no law
+        text: Space and distance obey no law
       - min: 37
         max: 39
-        result: Personal demons turn on you
+        text: Personal demons turn on you
       - min: 40
         max: 42
-        result: Subconscious defends against intruder
+        text: Subconscious defends against intruder
       - min: 43
         max: 45
-        result: Denizen intrudes in dreamscape
+        text: Denizen intrudes in dreamscape
   infrastructure:
     name: Infrastructure
     _source: *Source
@@ -88,50 +88,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Dank tunnels or passages
+        text: Dank tunnels or passages
       - min: 44
         max: 56
-        result: Junction, vault, or chamber
+        text: Junction, vault, or chamber
       - min: 57
         max: 64
-        result: Ladder or stairway
+        text: Ladder or stairway
       - min: 65
         max: 68
-        result: Graffiti or signage
+        text: Graffiti or signage
       - min: 69
         max: 72
-        result: Light filters in from above or outside
+        text: Light filters in from above or outside
       - min: 73
         max: 76
-        result: Storage or control room
+        text: Storage or control room
       - min: 77
         max: 80
-        result: Derelict, damaged, or forgotten area
+        text: Derelict, damaged, or forgotten area
       - min: 81
         max: 84
-        result: Pipes, conduits, or conveyance
+        text: Pipes, conduits, or conveyance
       - min: 85
         max: 88
-        result: Signs of habitation or labor
+        text: Signs of habitation or labor
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen guards or maintains site
+        text: Denizen guards or maintains site
       - min: 34
         max: 36
-        result: Denizen uses site to pass unseen
+        text: Denizen uses site to pass unseen
       - min: 37
         max: 39
-        result: Vermin or dangerous flora thrive
+        text: Vermin or dangerous flora thrive
       - min: 40
         max: 42
-        result: Path is unstable or cramped
+        text: Path is unstable or cramped
       - min: 43
         max: 45
-        result: Area contaminated or hazardous
+        text: Area contaminated or hazardous
   plains:
     name: Plains
     _source: *Source
@@ -140,50 +140,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Open plains
+        text: Open plains
       - min: 44
         max: 56
-        result: Low, rolling hills
+        text: Low, rolling hills
       - min: 57
         max: 64
-        result: Heath, shrubland, or stand of trees
+        text: Heath, shrubland, or stand of trees
       - min: 65
         max: 68
-        result: Waterway
+        text: Waterway
       - min: 69
         max: 72
-        result: Shallow lake, bog, or fen
+        text: Shallow lake, bog, or fen
       - min: 73
         max: 76
-        result: Escarpment or ridge
+        text: Escarpment or ridge
       - min: 77
         max: 80
-        result: Way-marker or cairn
+        text: Way-marker or cairn
       - min: 81
         max: 84
-        result: Animal herd, wild or tended
+        text: Animal herd, wild or tended
       - min: 85
         max: 88
-        result: Camp or outpost
+        text: Camp or outpost
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen hunts
+        text: Denizen hunts
       - min: 34
         max: 36
-        result: Sinkhole or burrow
+        text: Sinkhole or burrow
       - min: 37
         max: 39
-        result: Pollen, biting insects, or cold snap
+        text: Pollen, biting insects, or cold snap
       - min: 40
         max: 42
-        result: Extreme wind or wildfire
+        text: Extreme wind or wildfire
       - min: 43
         max: 45
-        result: Storm or flash flood
+        text: Storm or flash flood
   repository:
     name: Repository
     _source: *Source
@@ -192,50 +192,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Items ordered or on display
+        text: Items ordered or on display
       - min: 44
         max: 56
-        result: Items being organized/moved/tended
+        text: Items being organized/moved/tended
       - min: 57
         max: 64
-        result: Items in long-term storage
+        text: Items in long-term storage
       - min: 65
         max: 68
-        result: Items in use
+        text: Items in use
       - min: 69
         max: 72
-        result: Items overwhelm storage space
+        text: Items overwhelm storage space
       - min: 73
         max: 76
-        result: Item in the open or prominent display
+        text: Item in the open or prominent display
       - min: 77
         max: 80
-        result: Ladder or stairwell
+        text: Ladder or stairwell
       - min: 81
         max: 84
-        result: Guard post or staff quarters
+        text: Guard post or staff quarters
       - min: 85
         max: 88
-        result: Office or workspace
+        text: Office or workspace
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen guards items
+        text: Denizen guards items
       - min: 34
         max: 36
-        result: Denizen studies or tends items
+        text: Denizen studies or tends items
       - min: 37
         max: 39
-        result: Denizen takes or destroys items
+        text: Denizen takes or destroys items
       - min: 40
         max: 42
-        result: Alarm trigger or other security feature
+        text: Alarm trigger or other security feature
       - min: 43
         max: 45
-        result: Precarious or unnavigable storage
+        text: Precarious or unnavigable storage
   revel:
     name: Revel
     _source: *Source
@@ -244,50 +244,50 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Crowd of revellers
+        text: Crowd of revellers
       - min: 44
         max: 56
-        result: Area held by one social circle/in-group
+        text: Area held by one social circle/in-group
       - min: 57
         max: 64
-        result: Purveyor of refreshment/entertainment
+        text: Purveyor of refreshment/entertainment
       - min: 65
         max: 68
-        result: Denizen seeks a new lover
+        text: Denizen seeks a new lover
       - min: 69
         max: 72
-        result: Denizen here for duty or peer pressure
+        text: Denizen here for duty or peer pressure
       - min: 73
         max: 76
-        result: Denizen here to show off or get even
+        text: Denizen here to show off or get even
       - min: 77
         max: 80
-        result: Denizen here to network or social-climb
+        text: Denizen here to network or social-climb
       - min: 81
         max: 84
-        result: Public display of affection or quarrel
+        text: Public display of affection or quarrel
       - min: 85
         max: 88
-        result: A pocket of relative calm and quiet
+        text: A pocket of relative calm and quiet
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
       - min: 31
         max: 33
-        result: Heedless revellers impede your progress
+        text: Heedless revellers impede your progress
       - min: 34
         max: 36
-        result: Tempting or dangerous diversion
+        text: Tempting or dangerous diversion
       - min: 37
         max: 39
-        result: Ostracism or social climbing targets you
+        text: Ostracism or social climbing targets you
       - min: 40
         max: 42
-        result: Revel used as cover for some odious end
+        text: Revel used as cover for some odious end
       - min: 43
         max: 45
-        result: Unforeseen guest complicates matters
+        text: Unforeseen guest complicates matters
   wastes:
     name: Wastes
     _source: *Source
@@ -296,47 +296,47 @@ site_domains:
     features:
       - min: 21
         max: 43
-        result: Barren plain or dunes
+        text: Barren plain or dunes
       - min: 44
         max: 56
-        result: Rugged, banded hills or ridge
+        text: Rugged, banded hills or ridge
       - min: 57
         max: 64
-        result: Butte or mesa
+        text: Butte or mesa
       - min: 65
         max: 68
-        result: Dry stream-bed
+        text: Dry stream-bed
       - min: 69
         max: 72
-        result: Wind-carved rock formation
+        text: Wind-carved rock formation
       - min: 73
         max: 76
-        result: Lichens, grass, cacti, or shrubs
+        text: Lichens, grass, cacti, or shrubs
       - min: 77
         max: 80
-        result: Canyon or ravine
+        text: Canyon or ravine
       - min: 81
         max: 84
-        result: Eroding wind reveals relic or remains
+        text: Eroding wind reveals relic or remains
       - min: 85
         max: 88
-        result: Camp or outpost
+        text: Camp or outpost
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
       - min: 31
         max: 33
-        result: Denizen competes for scarce resource
+        text: Denizen competes for scarce resource
       - min: 34
         max: 36
-        result: Extreme temperature
+        text: Extreme temperature
       - min: 37
         max: 39
-        result: Fog, mirage, or dust devil
+        text: Fog, mirage, or dust devil
       - min: 40
         max: 42
-        result: Perilous climb or descent
+        text: Perilous climb or descent
       - min: 43
         max: 45
-        result: Storm of ice, dust, or sand
+        text: Storm of ice, dust, or sand

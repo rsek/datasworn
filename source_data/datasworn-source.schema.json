@@ -2851,7 +2851,7 @@
 		},
 		"OracleDuplicateBehavior": {
 			"title": "OracleDuplicateBehavior",
-			"description": "Special roll instructions to use when rolling multiple times on a single oracle.\n\n  - `reroll`: Duplicates results should be re-rolled.\n  - `keep`: Duplicates results should be kept.\n  - `make_it_worse`: Duplicates should be kept, and they compound to make things worse.",
+			"description": "Special roll instructions to use when rolling multiple times on a single oracle.\n\n  - `reroll`: Duplicate results should be re-rolled.\n  - `keep`: Duplicates results should be kept.\n  - `make_it_worse`: Duplicate results should be kept, and they compound to make things worse.",
 			"enum": ["reroll", "keep", "make_it_worse"]
 		},
 		"OracleMatchBehavior": {
@@ -2895,12 +2895,12 @@
 				},
 				"auto": {
 					"type": "boolean",
-					"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as \"Action + Theme\" or \"Roll Twice\".",
+					"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle texts only provide useful information once a secondary roll occurs, such as \"Action + Theme\" or \"Roll Twice\".",
 					"default": false
 				},
 				"duplicates": {
 					"$ref": "#/definitions/OracleDuplicateBehavior",
-					"description": "Special rules on how to handle duplicate results, when rolling multiple times.",
+					"description": "Special rules on how to handle duplicate texts, when rolling multiple times.",
 					"default": "reroll"
 				},
 				"number_of_rolls": {
@@ -2915,23 +2915,23 @@
 		"OracleRollTemplate": {
 			"title": "OracleRollTemplate",
 			"type": "object",
-			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#result`, `OracleTableRow#detail`, and `OracleTableRow#description`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{result:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#result` from the target oracle table ID.",
+			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID.",
 			"releaseStage": "experimental",
 			"properties": {
-				"result": {
+				"text": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#result.",
+					"description": "A string template that may be used in place of OracleTableRow#text.",
 					"examples": [
-						"{{result:starforged/oracles/factions/affiliation}} of the {{result:starforged/oracles/factions/legacy}} {{result:starforged/oracles/factions/identity}}"
+						"{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
 					]
 				},
-				"detail": {
+				"text2": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#detail."
+					"description": "A string template that may be used in place of OracleTableRow#text2."
 				},
-				"description": {
+				"text3": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#description."
+					"description": "A string template that may be used in place of OracleTableRow#text3."
 				}
 			},
 			"additionalProperties": false
@@ -2946,8 +2946,9 @@
 					"enum": [
 						"tables",
 						"table_shared_rolls",
-						"table_shared_results",
-						"table_shared_details"
+						"table_shared_text",
+						"table_shared_text2",
+						"table_shared_text3"
 					]
 				}
 			},
@@ -2983,32 +2984,45 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "table_shared_results",
+								"const": "table_shared_text",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleTableSharedResults"
+						"$ref": "#/definitions/OracleTableSharedTextColumn"
 					}
 				},
 				{
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "table_shared_details",
+								"const": "table_shared_text2",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleTableSharedDetails"
+						"$ref": "#/definitions/OracleTableShared2TextColumns"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_shared_text3",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTableShared3TextColumns"
 					}
 				}
 			]
 		},
-		"OracleColumnDetails": {
-			"title": "OracleColumnDetails",
+		"OracleColumn2TextCells": {
+			"title": "OracleColumn2TextCells",
 			"type": "object",
 			"required": ["name", "oracle_type", "rows"],
 			"properties": {
@@ -3022,7 +3036,7 @@
 				},
 				"oracle_type": {
 					"type": "string",
-					"const": "column_details"
+					"const": "column_text2"
 				},
 				"replaces": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3071,7 +3085,77 @@
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/definitions/OracleTableRowDetails"
+						"$ref": "#/definitions/OracleTableRow2TextCells"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleColumn3TextCells": {
+			"title": "OracleColumn3TextCells",
+			"type": "object",
+			"required": ["name", "oracle_type", "rows"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary label at the head of this column."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "column_3_text_cells"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An optional icon for this column."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"type": "object",
+					"releaseStage": "experimental",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/definitions/Tag"
+								}
+							}
+						}
+					}
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRow3TextCells"
 					}
 				}
 			},
@@ -3093,7 +3177,7 @@
 				},
 				"oracle_type": {
 					"type": "string",
-					"const": "column_simple"
+					"const": "column_basic"
 				},
 				"replaces": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3142,7 +3226,7 @@
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/definitions/OracleTableRowSimple"
+						"$ref": "#/definitions/OracleTableRowBasic"
 					}
 				}
 			},
@@ -3156,12 +3240,14 @@
 			"required": ["oracle_type"],
 			"properties": {
 				"oracle_type": {
-					"default": "table_simple",
+					"default": "table_basic",
 					"enum": [
-						"table_simple",
-						"table_details",
-						"column_simple",
-						"column_details"
+						"table_basic",
+						"table_text2",
+						"table_3_text_columns",
+						"column_basic",
+						"column_text2",
+						"column_3_text_cells"
 					]
 				}
 			},
@@ -3171,7 +3257,7 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "table_simple",
+								"const": "table_basic",
 								"type": "string"
 							}
 						}
@@ -3184,20 +3270,33 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "table_details",
+								"const": "table_text2",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleTableDetails"
+						"$ref": "#/definitions/OracleTable2TextColumns"
 					}
 				},
 				{
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "column_simple",
+								"const": "table_3_text_columns",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTable3TextColumns"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "column_basic",
 								"type": "string"
 							}
 						}
@@ -3210,21 +3309,34 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "column_details",
+								"const": "column_text2",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleColumnDetails"
+						"$ref": "#/definitions/OracleColumn2TextCells"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "column_3_text_cells",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleColumn3TextCells"
 					}
 				}
 			]
 		},
-		"OracleTableDetails": {
-			"title": "OracleTableDetails",
+		"OracleTable2TextColumns": {
+			"title": "OracleTable2TextColumns",
 			"type": "object",
-			"description": "A rollable oracle table with one roll column, one `result` column, and one `detail` column.",
+			"description": "A rollable oracle table with one roll column and two text columns.",
 			"required": ["name", "oracle_type", "rows", "_source"],
 			"properties": {
 				"_id": {
@@ -3241,7 +3353,7 @@
 				},
 				"oracle_type": {
 					"type": "string",
-					"const": "table_details"
+					"const": "table_text2"
 				},
 				"replaces": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3287,22 +3399,22 @@
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"roll": "Roll",
-						"result": "Result",
-						"detail": "Detail"
+						"text": "Result",
+						"text2": "Details"
 					},
-					"required": ["roll", "result", "detail"],
+					"required": ["roll", "text", "text2"],
 					"properties": {
 						"roll": {
 							"$ref": "#/definitions/Label",
 							"default": "Roll"
 						},
-						"result": {
+						"text": {
 							"$ref": "#/definitions/Label",
 							"default": "Result"
 						},
-						"detail": {
+						"text2": {
 							"$ref": "#/definitions/Label",
-							"default": "Detail"
+							"default": "Details"
 						}
 					}
 				},
@@ -3328,7 +3440,123 @@
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/definitions/OracleTableRowDetails"
+						"$ref": "#/definitions/OracleTableRow2TextCells"
+					}
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTable3TextColumns": {
+			"title": "OracleTable3TextColumns",
+			"type": "object",
+			"description": "A rollable oracle table with one roll column and 3 text columns.",
+			"required": ["name", "oracle_type", "rows", "_source"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "table_3_text_columns"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon that represents this table."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
+				"column_labels": {
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"roll": "Roll"
+					},
+					"required": ["roll", "text", "text2", "text3"],
+					"properties": {
+						"roll": {
+							"$ref": "#/definitions/Label",
+							"default": "Roll"
+						},
+						"text": {
+							"$ref": "#/definitions/Label"
+						},
+						"text2": {
+							"$ref": "#/definitions/Label"
+						},
+						"text3": {
+							"$ref": "#/definitions/Label"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"type": "object",
+					"releaseStage": "experimental",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/definitions/Tag"
+								}
+							}
+						}
+					}
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"items": {
+						"$ref": "#/definitions/OracleTableRow3TextCells"
 					}
 				},
 				"_source": {
@@ -3345,8 +3573,8 @@
 			"required": ["oracle_type"],
 			"properties": {
 				"oracle_type": {
-					"default": "table_simple",
-					"enum": ["table_simple", "table_details"]
+					"default": "table_basic",
+					"enum": ["table_basic", "table_text2"]
 				}
 			},
 			"additionalProperties": true,
@@ -3355,7 +3583,7 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "table_simple",
+								"const": "table_basic",
 								"type": "string"
 							}
 						}
@@ -3368,13 +3596,13 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "table_details",
+								"const": "table_text2",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleTableDetails"
+						"$ref": "#/definitions/OracleTable2TextColumns"
 					}
 				}
 			]
@@ -3383,18 +3611,18 @@
 			"title": "OracleTableRow",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/OracleTableRowSimple"
+					"$ref": "#/definitions/OracleTableRowBasic"
 				},
 				{
-					"$ref": "#/definitions/OracleTableRowDetails"
+					"$ref": "#/definitions/OracleTableRow2TextCells"
 				}
 			]
 		},
-		"OracleTableRowDetails": {
-			"title": "OracleTableRowDetails",
+		"OracleTableRow2TextCells": {
+			"title": "OracleTableRow2TextCells",
 			"type": "object",
 			"description": "Represents a row in an oracle table that provides additional details.",
-			"required": ["result", "detail"],
+			"required": ["text", "text2"],
 			"properties": {
 				"min": {
 					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
@@ -3425,11 +3653,11 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
-				"result": {
+				"text": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
-				"detail": {
+				"text2": {
 					"description": "The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.",
 					"anyOf": [
 						{
@@ -3465,11 +3693,11 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRowSimple": {
-			"title": "OracleTableRowSimple",
+		"OracleTableRow3TextCells": {
+			"title": "OracleTableRow3TextCells",
 			"type": "object",
-			"description": "Represents a row in an oracle table.",
-			"required": ["result"],
+			"description": "Represents a row in an oracle table with 3 text cells.",
+			"required": ["text", "text2", "text3"],
 			"properties": {
 				"min": {
 					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
@@ -3500,7 +3728,93 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
-				"result": {
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"text2": {
+					"description": "The second text column for this row. Use `null` to represent a cell with a blank or empty vlue.",
+					"anyOf": [
+						{
+							"$ref": "#/definitions/MarkdownString"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text3": {
+					"description": "The third text column for this row. Use `null` to represent a cell with a blank or empty vlue.",
+					"anyOf": [
+						{
+							"$ref": "#/definitions/MarkdownString"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints"
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTableRowBasic": {
+			"title": "OracleTableRowBasic",
+			"type": "object",
+			"description": "Represents a row in an oracle table, with a single text cell.",
+			"required": ["text"],
+			"properties": {
+				"min": {
+					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"type": "integer",
+							"description": "Low end of the dice range for this table row."
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"max": {
+					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"type": "integer",
+							"description": "High end of the dice range for this table row."
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"text": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
@@ -3529,10 +3843,10 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableSharedDetails": {
-			"title": "OracleTableSharedDetails",
+		"OracleTableShared2TextColumns": {
+			"title": "OracleTableShared2TextColumns",
 			"type": "object",
-			"description": "An OracleCollection representing a single table with multiple roll columns, one `result` column, and one `detail` column.",
+			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
 			"required": ["name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
@@ -3549,8 +3863,8 @@
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A table with multiple roll columns, one result column, and one details column.",
-					"const": "table_shared_details"
+					"description": "A table with multiple unique roll columns, and 2 shared text columns.",
+					"const": "table_shared_text2"
 				},
 				"replaces": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3588,7 +3902,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/OracleColumnDetails"
+							"$ref": "#/definitions/OracleColumn2TextCells"
 						}
 					}
 				},
@@ -3596,18 +3910,18 @@
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
-						"result": "Result",
-						"detail": "Detail"
+						"text": "Result",
+						"text2": "Details"
 					},
-					"required": ["result", "detail"],
+					"required": ["text", "text2"],
 					"properties": {
-						"result": {
+						"text": {
 							"$ref": "#/definitions/Label",
 							"default": "Result"
 						},
-						"detail": {
+						"text2": {
 							"$ref": "#/definitions/Label",
-							"default": "Detail"
+							"default": "Details"
 						}
 					}
 				},
@@ -3636,10 +3950,10 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableSharedResults": {
-			"title": "OracleTableSharedResults",
+		"OracleTableShared3TextColumns": {
+			"title": "OracleTableShared3TextColumns",
 			"type": "object",
-			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
+			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
 			"required": ["name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
@@ -3656,8 +3970,8 @@
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A table with multiple roll columns and one result column.",
-					"const": "table_shared_results"
+					"description": "A table with multiple unique roll columns, and 3 shared text columns.",
+					"const": "table_shared_text3"
 				},
 				"replaces": {
 					"$ref": "#/definitions/OracleCollectionId",
@@ -3695,7 +4009,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/OracleColumnSimple"
+							"$ref": "#/definitions/OracleColumn2TextCells"
 						}
 					}
 				},
@@ -3703,11 +4017,11 @@
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
-						"result": "Result"
+						"text": "Result"
 					},
-					"required": ["result"],
+					"required": ["text"],
 					"properties": {
-						"result": {
+						"text": {
 							"$ref": "#/definitions/Label",
 							"default": "Result"
 						}
@@ -3758,7 +4072,7 @@
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A table with one roll column and multiple result columns.",
+					"description": "A table with one shared roll column, and multiple unique text columns.",
 					"default": "table_shared_rolls",
 					"const": "table_shared_rolls"
 				},
@@ -3841,6 +4155,108 @@
 			},
 			"additionalProperties": false
 		},
+		"OracleTableSharedTextColumn": {
+			"title": "OracleTableSharedTextColumn",
+			"type": "object",
+			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
+			"required": ["name", "oracle_type", "_source"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"description": "A table with multiple unique roll columns, and one shared text column.",
+					"const": "table_shared_text"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"enhances": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/definitions/OracleColumnSimple"
+						}
+					}
+				},
+				"column_labels": {
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"text": "Result"
+					},
+					"required": ["text"],
+					"properties": {
+						"text": {
+							"$ref": "#/definitions/Label",
+							"default": "Result"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"type": "object",
+					"releaseStage": "experimental",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/definitions/Tag"
+								}
+							}
+						}
+					}
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				}
+			},
+			"additionalProperties": false
+		},
 		"OracleTableSimple": {
 			"title": "OracleTableSimple",
 			"type": "object",
@@ -3861,7 +4277,7 @@
 				},
 				"oracle_type": {
 					"type": "string",
-					"const": "table_simple"
+					"const": "table_basic"
 				},
 				"replaces": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -3907,15 +4323,15 @@
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"roll": "Roll",
-						"result": "Result"
+						"text": "Result"
 					},
-					"required": ["roll", "result"],
+					"required": ["roll", "text"],
 					"properties": {
 						"roll": {
 							"$ref": "#/definitions/Label",
 							"default": "Roll"
 						},
-						"result": {
+						"text": {
 							"$ref": "#/definitions/Label",
 							"default": "Result"
 						}
@@ -3943,7 +4359,7 @@
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
-						"$ref": "#/definitions/OracleTableRowSimple"
+						"$ref": "#/definitions/OracleTableRowBasic"
 					}
 				},
 				"_source": {
@@ -6708,8 +7124,8 @@
 		"TruthOptionTableRow": {
 			"title": "TruthOptionTableRow",
 			"type": "object",
-			"description": "Represents a row in an oracle table.",
-			"required": ["result"],
+			"description": "Represents a row in an oracle table, with a single text cell.",
+			"required": ["text"],
 			"properties": {
 				"min": {
 					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
@@ -6740,7 +7156,7 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
-				"result": {
+				"text": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
@@ -7705,7 +8121,7 @@
 			"title": "DelveSiteDomainDangerRow",
 			"type": "object",
 			"description": "Represents a single Danger entry from a delve site Domain card.",
-			"required": ["min", "max", "result"],
+			"required": ["min", "max", "text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DomainDangerRowId",
@@ -7722,7 +8138,7 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
-				"result": {
+				"text": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
@@ -7755,7 +8171,7 @@
 			"title": "DelveSiteDomainFeatureRow",
 			"type": "object",
 			"description": "Represents a single Feature entry from a delve site Domain card.",
-			"required": ["min", "max", "result"],
+			"required": ["min", "max", "text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DomainFeatureRowId",
@@ -7772,7 +8188,7 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
-				"result": {
+				"text": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
@@ -8148,7 +8564,7 @@
 			"title": "DelveSiteThemeDangerRow",
 			"type": "object",
 			"description": "Represents a single Danger entry from a delve site Theme card.",
-			"required": ["min", "max", "result"],
+			"required": ["min", "max", "text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/ThemeDangerRowId",
@@ -8165,7 +8581,7 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
-				"result": {
+				"text": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},
@@ -8198,7 +8614,7 @@
 			"title": "DelveSiteThemeFeatureRow",
 			"type": "object",
 			"description": "Represents a single Feature entry from a delve site Theme card.",
-			"required": ["min", "max", "result"],
+			"required": ["min", "max", "text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/ThemeFeatureRowId",
@@ -8215,7 +8631,7 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
-				"result": {
+				"text": {
 					"$ref": "#/definitions/MarkdownString",
 					"description": "The primary text content of this row."
 				},

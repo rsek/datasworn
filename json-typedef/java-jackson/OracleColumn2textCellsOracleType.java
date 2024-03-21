@@ -4,7 +4,7 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public enum OracleColumnDetailsOracleType {
-    @JsonProperty("column_details")
-    COLUMN_DETAILS,
+public enum OracleColumn2textCellsOracleType {
+    @JsonProperty("column_text2")
+    COLUMN_TEXT2,
 }

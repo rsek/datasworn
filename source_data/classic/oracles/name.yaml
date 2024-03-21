@@ -27,7 +27,7 @@ oracles:
               <<: *Source
               page: 184
             name: Table A
-            oracle_type: table_simple
+            oracle_type: table_basic
             canonical_name: Ironlander Names
             rows:
               - <<: &i18n.proper_noun
@@ -36,811 +36,811 @@ oracles:
                       part_of_speech: proper_noun
                 min: 1
                 max: 1
-                result: Solana
+                text: Solana
               - <<: *i18n.proper_noun
                 min: 2
                 max: 2
-                result: Keelan
+                text: Keelan
               - <<: *i18n.proper_noun
                 min: 3
                 max: 3
-                result: Cadigan
+                text: Cadigan
               - <<: *i18n.proper_noun
                 min: 4
                 max: 4
-                result: Sola
+                text: Sola
               - <<: *i18n.proper_noun
                 min: 5
                 max: 5
-                result: Kodroth
+                text: Kodroth
               - <<: *i18n.proper_noun
                 min: 6
                 max: 6
-                result: Kione
+                text: Kione
               - <<: *i18n.proper_noun
                 min: 7
                 max: 7
-                result: Katja
+                text: Katja
               - <<: *i18n.proper_noun
                 min: 8
                 max: 8
-                result: Tio
+                text: Tio
               - <<: *i18n.proper_noun
                 min: 9
                 max: 9
-                result: Artiga
+                text: Artiga
               - <<: *i18n.proper_noun
                 min: 10
                 max: 10
-                result: Eos
+                text: Eos
               - <<: *i18n.proper_noun
                 min: 11
                 max: 11
-                result: Bastien
+                text: Bastien
               - <<: *i18n.proper_noun
                 min: 12
                 max: 12
-                result: Elli
+                text: Elli
               - <<: *i18n.proper_noun
                 min: 13
                 max: 13
-                result: Maura
+                text: Maura
               - <<: *i18n.proper_noun
                 min: 14
                 max: 14
-                result: Haleema
+                text: Haleema
               - <<: *i18n.proper_noun
                 min: 15
                 max: 15
-                result: Abella
+                text: Abella
               - <<: *i18n.proper_noun
                 min: 16
                 max: 16
-                result: Morter
+                text: Morter
               - <<: *i18n.proper_noun
                 min: 17
                 max: 17
-                result: Wulan
+                text: Wulan
               - <<: *i18n.proper_noun
                 min: 18
                 max: 18
-                result: Mai
+                text: Mai
               - <<: *i18n.proper_noun
                 min: 19
                 max: 19
-                result: Farina
+                text: Farina
               - <<: *i18n.proper_noun
                 min: 20
                 max: 20
-                result: Pearce
+                text: Pearce
               - <<: *i18n.proper_noun
                 min: 21
                 max: 21
-                result: Wynne
+                text: Wynne
               - <<: *i18n.proper_noun
                 min: 22
                 max: 22
-                result: Haf
+                text: Haf
               - <<: *i18n.proper_noun
                 min: 23
                 max: 23
-                result: Aeddon
+                text: Aeddon
               - <<: *i18n.proper_noun
                 min: 24
                 max: 24
-                result: Khinara
+                text: Khinara
               - <<: *i18n.proper_noun
                 min: 25
                 max: 25
-                result: Milla
+                text: Milla
               - <<: *i18n.proper_noun
                 min: 26
                 max: 26
-                result: Nakata
+                text: Nakata
               - <<: *i18n.proper_noun
                 min: 27
                 max: 27
-                result: Kynan
+                text: Kynan
               - <<: *i18n.proper_noun
                 min: 28
                 max: 28
-                result: Kiah
+                text: Kiah
               - <<: *i18n.proper_noun
                 min: 29
                 max: 29
-                result: Jaggar
+                text: Jaggar
               - <<: *i18n.proper_noun
                 min: 30
                 max: 30
-                result: Beca
+                text: Beca
               - <<: *i18n.proper_noun
                 min: 31
                 max: 31
-                result: Ikram
+                text: Ikram
               - <<: *i18n.proper_noun
                 min: 32
                 max: 32
-                result: Melia
+                text: Melia
               - <<: *i18n.proper_noun
                 min: 33
                 max: 33
-                result: Sidan
+                text: Sidan
               - <<: *i18n.proper_noun
                 min: 34
                 max: 34
-                result: Deshi
+                text: Deshi
               - <<: *i18n.proper_noun
                 min: 35
                 max: 35
-                result: Tessa
+                text: Tessa
               - <<: *i18n.proper_noun
                 min: 36
                 max: 36
-                result: Sibila
+                text: Sibila
               - <<: *i18n.proper_noun
                 min: 37
                 max: 37
-                result: Morien
+                text: Morien
               - <<: *i18n.proper_noun
                 min: 38
                 max: 38
-                result: Mona
+                text: Mona
               - <<: *i18n.proper_noun
                 min: 39
                 max: 39
-                result: Padma
+                text: Padma
               - <<: *i18n.proper_noun
                 min: 40
                 max: 40
-                result: Avella
+                text: Avella
               - <<: *i18n.proper_noun
                 min: 41
                 max: 41
-                result: Naila
+                text: Naila
               - <<: *i18n.proper_noun
                 min: 42
                 max: 42
-                result: Lio
+                text: Lio
               - <<: *i18n.proper_noun
                 min: 43
                 max: 43
-                result: Cera
+                text: Cera
               - <<: *i18n.proper_noun
                 min: 44
                 max: 44
-                result: Ithela
+                text: Ithela
               - <<: *i18n.proper_noun
                 min: 45
                 max: 45
-                result: Zhan
+                text: Zhan
               - <<: *i18n.proper_noun
                 min: 46
                 max: 46
-                result: Kaivan
+                text: Kaivan
               - <<: *i18n.proper_noun
                 min: 47
                 max: 47
-                result: Valeri
+                text: Valeri
               - <<: *i18n.proper_noun
                 min: 48
                 max: 48
-                result: Hirsham
+                text: Hirsham
               - <<: *i18n.proper_noun
                 min: 49
                 max: 49
-                result: Pemba
+                text: Pemba
               - <<: *i18n.proper_noun
                 min: 50
                 max: 50
-                result: Edda
+                text: Edda
               - <<: *i18n.proper_noun
                 min: 51
                 max: 51
-                result: Lestara
+                text: Lestara
               - <<: *i18n.proper_noun
                 min: 52
                 max: 52
-                result: Lago
+                text: Lago
               - <<: *i18n.proper_noun
                 min: 53
                 max: 53
-                result: Elstan
+                text: Elstan
               - <<: *i18n.proper_noun
                 min: 54
                 max: 54
-                result: Saskia
+                text: Saskia
               - <<: *i18n.proper_noun
                 min: 55
                 max: 55
-                result: Kabeera
+                text: Kabeera
               - <<: *i18n.proper_noun
                 min: 56
                 max: 56
-                result: Caldas
+                text: Caldas
               - <<: *i18n.proper_noun
                 min: 57
                 max: 57
-                result: Nisus
+                text: Nisus
               - <<: *i18n.proper_noun
                 min: 58
                 max: 58
-                result: Serene
+                text: Serene
               - <<: *i18n.proper_noun
                 min: 59
                 max: 59
-                result: Chenda
+                text: Chenda
               - <<: *i18n.proper_noun
                 min: 60
                 max: 60
-                result: Themon
+                text: Themon
               - <<: *i18n.proper_noun
                 min: 61
                 max: 61
-                result: Erin
+                text: Erin
               - <<: *i18n.proper_noun
                 min: 62
                 max: 62
-                result: Alban
+                text: Alban
               - <<: *i18n.proper_noun
                 min: 63
                 max: 63
-                result: Parcell
+                text: Parcell
               - <<: *i18n.proper_noun
                 min: 64
                 max: 64
-                result: Jelma
+                text: Jelma
               - <<: *i18n.proper_noun
                 min: 65
                 max: 65
-                result: Willa
+                text: Willa
               - <<: *i18n.proper_noun
                 min: 66
                 max: 66
-                result: Nadira
+                text: Nadira
               - <<: *i18n.proper_noun
                 min: 67
                 max: 67
-                result: Gwen
+                text: Gwen
               - <<: *i18n.proper_noun
                 min: 68
                 max: 68
-                result: Amara
+                text: Amara
               - <<: *i18n.proper_noun
                 min: 69
                 max: 69
-                result: Masias
+                text: Masias
               - <<: *i18n.proper_noun
                 min: 70
                 max: 70
-                result: Kanno
+                text: Kanno
               - <<: *i18n.proper_noun
                 min: 71
                 max: 71
-                result: Razeena
+                text: Razeena
               - <<: *i18n.proper_noun
                 min: 72
                 max: 72
-                result: Mira
+                text: Mira
               - <<: *i18n.proper_noun
                 min: 73
                 max: 73
-                result: Perella
+                text: Perella
               - <<: *i18n.proper_noun
                 min: 74
                 max: 74
-                result: Myrick
+                text: Myrick
               - <<: *i18n.proper_noun
                 min: 75
                 max: 75
-                result: Qamar
+                text: Qamar
               - <<: *i18n.proper_noun
                 min: 76
                 max: 76
-                result: Kormak
+                text: Kormak
               - <<: *i18n.proper_noun
                 min: 77
                 max: 77
-                result: Zura
+                text: Zura
               - <<: *i18n.proper_noun
                 min: 78
                 max: 78
-                result: Zanita
+                text: Zanita
               - <<: *i18n.proper_noun
                 min: 79
                 max: 79
-                result: Brynn
+                text: Brynn
               - <<: *i18n.proper_noun
                 min: 80
                 max: 80
-                result: Tegan
+                text: Tegan
               - <<: *i18n.proper_noun
                 min: 81
                 max: 81
-                result: Pendry
+                text: Pendry
               - <<: *i18n.proper_noun
                 min: 82
                 max: 82
-                result: Quinn
+                text: Quinn
               - <<: *i18n.proper_noun
                 min: 83
                 max: 83
-                result: Fanir
+                text: Fanir
               - <<: *i18n.proper_noun
                 min: 84
                 max: 84
-                result: Glain
+                text: Glain
               - <<: *i18n.proper_noun
                 min: 85
                 max: 85
-                result: Emelyn
+                text: Emelyn
               - <<: *i18n.proper_noun
                 min: 86
                 max: 86
-                result: Kendi
+                text: Kendi
               - <<: *i18n.proper_noun
                 min: 87
                 max: 87
-                result: Althus
+                text: Althus
               - <<: *i18n.proper_noun
                 min: 88
                 max: 88
-                result: Leela
+                text: Leela
               - <<: *i18n.proper_noun
                 min: 89
                 max: 89
-                result: Ishana
+                text: Ishana
               - <<: *i18n.proper_noun
                 min: 90
                 max: 90
-                result: Flint
+                text: Flint
               - <<: *i18n.proper_noun
                 min: 91
                 max: 91
-                result: Delkash
+                text: Delkash
               - <<: *i18n.proper_noun
                 min: 92
                 max: 92
-                result: Nia
+                text: Nia
               - <<: *i18n.proper_noun
                 min: 93
                 max: 93
-                result: Nan
+                text: Nan
               - <<: *i18n.proper_noun
                 min: 94
                 max: 94
-                result: Keeara
+                text: Keeara
               - <<: *i18n.proper_noun
                 min: 95
                 max: 95
-                result: Katania
+                text: Katania
               - <<: *i18n.proper_noun
                 min: 96
                 max: 96
-                result: Morell
+                text: Morell
               - <<: *i18n.proper_noun
                 min: 97
                 max: 97
-                result: Temir
+                text: Temir
               - <<: *i18n.proper_noun
                 min: 98
                 max: 98
-                result: Bas
+                text: Bas
               - <<: *i18n.proper_noun
                 min: 99
                 max: 99
-                result: Sabine
+                text: Sabine
               - <<: *i18n.proper_noun
                 min: 100
                 max: 100
-                result: Tallus
+                text: Tallus
           b:
             _source:
               <<: *Source
               page: 185
             canonical_name: Ironlander Names
             name: Table B
-            oracle_type: table_simple
+            oracle_type: table_basic
             rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 1
-                result: Segura
+                text: Segura
               - <<: *i18n.proper_noun
                 min: 2
                 max: 2
-                result: Gethin
+                text: Gethin
               - <<: *i18n.proper_noun
                 min: 3
                 max: 3
-                result: Bataar
+                text: Bataar
               - <<: *i18n.proper_noun
                 min: 4
                 max: 4
-                result: Basira
+                text: Basira
               - <<: *i18n.proper_noun
                 min: 5
                 max: 5
-                result: Joa
+                text: Joa
               - <<: *i18n.proper_noun
                 min: 6
                 max: 6
-                result: Glynn
+                text: Glynn
               - <<: *i18n.proper_noun
                 min: 7
                 max: 7
-                result: Toran
+                text: Toran
               - <<: *i18n.proper_noun
                 min: 8
                 max: 8
-                result: Arasen
+                text: Arasen
               - <<: *i18n.proper_noun
                 min: 9
                 max: 9
-                result: Kuron
+                text: Kuron
               - <<: *i18n.proper_noun
                 min: 10
                 max: 10
-                result: Griff
+                text: Griff
               - <<: *i18n.proper_noun
                 min: 11
                 max: 11
-                result: Owena
+                text: Owena
               - <<: *i18n.proper_noun
                 min: 12
                 max: 12
-                result: Adda
+                text: Adda
               - <<: *i18n.proper_noun
                 min: 13
                 max: 13
-                result: Euros
+                text: Euros
               - <<: *i18n.proper_noun
                 min: 14
                 max: 14
-                result: Kova
+                text: Kova
               - <<: *i18n.proper_noun
                 min: 15
                 max: 15
-                result: Kara
+                text: Kara
               - <<: *i18n.proper_noun
                 min: 16
                 max: 16
-                result: Morgan
+                text: Morgan
               - <<: *i18n.proper_noun
                 min: 17
                 max: 17
-                result: Nanda
+                text: Nanda
               - <<: *i18n.proper_noun
                 min: 18
                 max: 18
-                result: Tamara
+                text: Tamara
               - <<: *i18n.proper_noun
                 min: 19
                 max: 19
-                result: Asha
+                text: Asha
               - <<: *i18n.proper_noun
                 min: 20
                 max: 20
-                result: Delos
+                text: Delos
               - <<: *i18n.proper_noun
                 min: 21
                 max: 21
-                result: Torgan
+                text: Torgan
               - <<: *i18n.proper_noun
                 min: 22
                 max: 22
-                result: Makari
+                text: Makari
               - <<: *i18n.proper_noun
                 min: 23
                 max: 23
-                result: Selva
+                text: Selva
               - <<: *i18n.proper_noun
                 min: 24
                 max: 24
-                result: Kimura
+                text: Kimura
               - <<: *i18n.proper_noun
                 min: 25
                 max: 25
-                result: Rhian
+                text: Rhian
               - <<: *i18n.proper_noun
                 min: 26
                 max: 26
-                result: Tristan
+                text: Tristan
               - <<: *i18n.proper_noun
                 min: 27
                 max: 27
-                result: Siorra
+                text: Siorra
               - <<: *i18n.proper_noun
                 min: 28
                 max: 28
-                result: Sayer
+                text: Sayer
               - <<: *i18n.proper_noun
                 min: 29
                 max: 29
-                result: Cortina
+                text: Cortina
               - <<: *i18n.proper_noun
                 min: 30
                 max: 30
-                result: Vesna
+                text: Vesna
               - <<: *i18n.proper_noun
                 min: 31
                 max: 31
-                result: Kataka
+                text: Kataka
               - <<: *i18n.proper_noun
                 min: 32
                 max: 32
-                result: Keyshia
+                text: Keyshia
               - <<: *i18n.proper_noun
                 min: 33
                 max: 33
-                result: Mila
+                text: Mila
               - <<: *i18n.proper_noun
                 min: 34
                 max: 34
-                result: Lili
+                text: Lili
               - <<: *i18n.proper_noun
                 min: 35
                 max: 35
-                result: Vigo
+                text: Vigo
               - <<: *i18n.proper_noun
                 min: 36
                 max: 36
-                result: Sadia
+                text: Sadia
               - <<: *i18n.proper_noun
                 min: 37
                 max: 37
-                result: Malik
+                text: Malik
               - <<: *i18n.proper_noun
                 min: 38
                 max: 38
-                result: Dag
+                text: Dag
               - <<: *i18n.proper_noun
                 min: 39
                 max: 39
-                result: Kuno
+                text: Kuno
               - <<: *i18n.proper_noun
                 min: 40
                 max: 40
-                result: Reva
+                text: Reva
               - <<: *i18n.proper_noun
                 min: 41
                 max: 41
-                result: Kai
+                text: Kai
               - <<: *i18n.proper_noun
                 min: 42
                 max: 42
-                result: Kalina
+                text: Kalina
               - <<: *i18n.proper_noun
                 min: 43
                 max: 43
-                result: Jihan
+                text: Jihan
               - <<: *i18n.proper_noun
                 min: 44
                 max: 44
-                result: Hennion
+                text: Hennion
               - <<: *i18n.proper_noun
                 min: 45
                 max: 45
-                result: Abram
+                text: Abram
               - <<: *i18n.proper_noun
                 min: 46
                 max: 46
-                result: Aida
+                text: Aida
               - <<: *i18n.proper_noun
                 min: 47
                 max: 47
-                result: Myrtle
+                text: Myrtle
               - <<: *i18n.proper_noun
                 min: 48
                 max: 48
-                result: Nekun
+                text: Nekun
               - <<: *i18n.proper_noun
                 min: 49
                 max: 49
-                result: Menna
+                text: Menna
               - <<: *i18n.proper_noun
                 min: 50
                 max: 50
-                result: Tahir
+                text: Tahir
               - <<: *i18n.proper_noun
                 min: 51
                 max: 51
-                result: Sarria
+                text: Sarria
               - <<: *i18n.proper_noun
                 min: 52
                 max: 52
-                result: Nakura
+                text: Nakura
               - <<: *i18n.proper_noun
                 min: 53
                 max: 53
-                result: Akiya
+                text: Akiya
               - <<: *i18n.proper_noun
                 min: 54
                 max: 54
-                result: Talan
+                text: Talan
               - <<: *i18n.proper_noun
                 min: 55
                 max: 55
-                result: Mattick
+                text: Mattick
               - <<: *i18n.proper_noun
                 min: 56
                 max: 56
-                result: Okoth
+                text: Okoth
               - <<: *i18n.proper_noun
                 min: 57
                 max: 57
-                result: Khulan
+                text: Khulan
               - <<: *i18n.proper_noun
                 min: 58
                 max: 58
-                result: Verena
+                text: Verena
               - <<: *i18n.proper_noun
                 min: 59
                 max: 59
-                result: Beltran
+                text: Beltran
               - <<: *i18n.proper_noun
                 min: 60
                 max: 60
-                result: Del
+                text: Del
               - <<: *i18n.proper_noun
                 min: 61
                 max: 61
-                result: Ranna
+                text: Ranna
               - <<: *i18n.proper_noun
                 min: 62
                 max: 62
-                result: Alina
+                text: Alina
               - <<: *i18n.proper_noun
                 min: 63
                 max: 63
-                result: Muna
+                text: Muna
               - <<: *i18n.proper_noun
                 min: 64
                 max: 64
-                result: Mura
+                text: Mura
               - <<: *i18n.proper_noun
                 min: 65
                 max: 65
-                result: Torrens
+                text: Torrens
               - <<: *i18n.proper_noun
                 min: 66
                 max: 66
-                result: Yuda
+                text: Yuda
               - <<: *i18n.proper_noun
                 min: 67
                 max: 67
-                result: Nazmi
+                text: Nazmi
               - <<: *i18n.proper_noun
                 min: 68
                 max: 68
-                result: Ghalen
+                text: Ghalen
               - <<: *i18n.proper_noun
                 min: 69
                 max: 69
-                result: Sarda
+                text: Sarda
               - <<: *i18n.proper_noun
                 min: 70
                 max: 70
-                result: Shona
+                text: Shona
               - <<: *i18n.proper_noun
                 min: 71
                 max: 71
-                result: Kalidas
+                text: Kalidas
               - <<: *i18n.proper_noun
                 min: 72
                 max: 72
-                result: Wena
+                text: Wena
               - <<: *i18n.proper_noun
                 min: 73
                 max: 73
-                result: Sendra
+                text: Sendra
               - <<: *i18n.proper_noun
                 min: 74
                 max: 74
-                result: Kori
+                text: Kori
               - <<: *i18n.proper_noun
                 min: 75
                 max: 75
-                result: Setara
+                text: Setara
               - <<: *i18n.proper_noun
                 min: 76
                 max: 76
-                result: Lucia
+                text: Lucia
               - <<: *i18n.proper_noun
                 min: 77
                 max: 77
-                result: Maya
+                text: Maya
               - <<: *i18n.proper_noun
                 min: 78
                 max: 78
-                result: Reema
+                text: Reema
               - <<: *i18n.proper_noun
                 min: 79
                 max: 79
-                result: Yorath
+                text: Yorath
               - <<: *i18n.proper_noun
                 min: 80
                 max: 80
-                result: Rhoddri
+                text: Rhoddri
               - <<: *i18n.proper_noun
                 min: 81
                 max: 81
-                result: Shekhar
+                text: Shekhar
               - <<: *i18n.proper_noun
                 min: 82
                 max: 82
-                result: Servan
+                text: Servan
               - <<: *i18n.proper_noun
                 min: 83
                 max: 83
-                result: Reese
+                text: Reese
               - <<: *i18n.proper_noun
                 min: 84
                 max: 84
-                result: Kenrick
+                text: Kenrick
               - <<: *i18n.proper_noun
                 min: 85
                 max: 85
-                result: Indirra
+                text: Indirra
               - <<: *i18n.proper_noun
                 min: 86
                 max: 86
-                result: Giliana
+                text: Giliana
               - <<: *i18n.proper_noun
                 min: 87
                 max: 87
-                result: Jebran
+                text: Jebran
               - <<: *i18n.proper_noun
                 min: 88
                 max: 88
-                result: Kotama
+                text: Kotama
               - <<: *i18n.proper_noun
                 min: 89
                 max: 89
-                result: Fara
+                text: Fara
               - <<: *i18n.proper_noun
                 min: 90
                 max: 90
-                result: Katrin
+                text: Katrin
               - <<: *i18n.proper_noun
                 min: 91
                 max: 91
-                result: Namba
+                text: Namba
               - <<: *i18n.proper_noun
                 min: 92
                 max: 92
-                result: Lona
+                text: Lona
               - <<: *i18n.proper_noun
                 min: 93
                 max: 93
-                result: Taylah
+                text: Taylah
               - <<: *i18n.proper_noun
                 min: 94
                 max: 94
-                result: Kato
+                text: Kato
               - <<: *i18n.proper_noun
                 min: 95
                 max: 95
-                result: Esra
+                text: Esra
               - <<: *i18n.proper_noun
                 min: 96
                 max: 96
-                result: Eleri
+                text: Eleri
               - <<: *i18n.proper_noun
                 min: 97
                 max: 97
-                result: Irsia
+                text: Irsia
               - <<: *i18n.proper_noun
                 min: 98
                 max: 98
-                result: Kayu
+                text: Kayu
               - <<: *i18n.proper_noun
                 min: 99
                 max: 99
-                result: Bevan
+                text: Bevan
               - <<: *i18n.proper_noun
                 min: 100
                 max: 100
-                result: Chandra
+                text: Chandra
       other:
         name: Other Names
         canonical_name: 'Oracle 15: Other Names'
@@ -852,323 +852,323 @@ oracles:
         contents:
           giants:
             name: Giants
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 4
-                result: Chony
+                text: Chony
               - <<: *i18n.proper_noun
                 min: 5
                 max: 8
-                result: Banda
+                text: Banda
               - <<: *i18n.proper_noun
                 min: 9
                 max: 12
-                result: Jochu
+                text: Jochu
               - <<: *i18n.proper_noun
                 min: 13
                 max: 16
-                result: Kira
+                text: Kira
               - <<: *i18n.proper_noun
                 min: 17
                 max: 20
-                result: Khatir
+                text: Khatir
               - <<: *i18n.proper_noun
                 min: 21
                 max: 24
-                result: Chaidu
+                text: Chaidu
               - <<: *i18n.proper_noun
                 min: 25
                 max: 28
-                result: Atan
+                text: Atan
               - <<: *i18n.proper_noun
                 min: 29
                 max: 32
-                result: Buandu
+                text: Buandu
               - <<: *i18n.proper_noun
                 min: 33
                 max: 36
-                result: Javyn
+                text: Javyn
               - <<: *i18n.proper_noun
                 min: 37
                 max: 40
-                result: Khashin
+                text: Khashin
               - <<: *i18n.proper_noun
                 min: 41
                 max: 44
-                result: Bayara
+                text: Bayara
               - <<: *i18n.proper_noun
                 min: 45
                 max: 48
-                result: Temura
+                text: Temura
               - <<: *i18n.proper_noun
                 min: 49
                 max: 52
-                result: Kidha
+                text: Kidha
               - <<: *i18n.proper_noun
                 min: 53
                 max: 56
-                result: Kathos
+                text: Kathos
               - <<: *i18n.proper_noun
                 min: 57
                 max: 60
-                result: Tanua
+                text: Tanua
               - <<: *i18n.proper_noun
                 min: 61
                 max: 64
-                result: Bashtu
+                text: Bashtu
               - <<: *i18n.proper_noun
                 min: 65
                 max: 68
-                result: Jaran
+                text: Jaran
               - <<: *i18n.proper_noun
                 min: 69
                 max: 72
-                result: Othos
+                text: Othos
               - <<: *i18n.proper_noun
                 min: 73
                 max: 76
-                result: Khutan
+                text: Khutan
               - <<: *i18n.proper_noun
                 min: 77
                 max: 80
-                result: Otaan
+                text: Otaan
               - <<: *i18n.proper_noun
                 min: 81
                 max: 84
-                result: Martu
+                text: Martu
               - <<: *i18n.proper_noun
                 min: 85
                 max: 88
-                result: Baku
+                text: Baku
               - <<: *i18n.proper_noun
                 min: 89
                 max: 92
-                result: Tuban
+                text: Tuban
               - <<: *i18n.proper_noun
                 min: 93
                 max: 96
-                result: Qudan
+                text: Qudan
               - <<: *i18n.proper_noun
                 min: 97
                 max: 100
-                result: Denua
+                text: Denua
           varou:
             name: Varou
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 4
-                result: Vata
+                text: Vata
               - <<: *i18n.proper_noun
                 min: 5
                 max: 8
-                result: Zora
+                text: Zora
               - <<: *i18n.proper_noun
                 min: 9
                 max: 12
-                result: Jasna
+                text: Jasna
               - <<: *i18n.proper_noun
                 min: 13
                 max: 16
-                result: Charna
+                text: Charna
               - <<: *i18n.proper_noun
                 min: 17
                 max: 20
-                result: Tana
+                text: Tana
               - <<: *i18n.proper_noun
                 min: 21
                 max: 24
-                result: Soveen
+                text: Soveen
               - <<: *i18n.proper_noun
                 min: 25
                 max: 28
-                result: Radka
+                text: Radka
               - <<: *i18n.proper_noun
                 min: 29
                 max: 32
-                result: Zlata
+                text: Zlata
               - <<: *i18n.proper_noun
                 min: 33
                 max: 36
-                result: Leesla
+                text: Leesla
               - <<: *i18n.proper_noun
                 min: 37
                 max: 40
-                result: Byna
+                text: Byna
               - <<: *i18n.proper_noun
                 min: 41
                 max: 44
-                result: Meeka
+                text: Meeka
               - <<: *i18n.proper_noun
                 min: 45
                 max: 48
-                result: Iskra
+                text: Iskra
               - <<: *i18n.proper_noun
                 min: 49
                 max: 52
-                result: Jarek
+                text: Jarek
               - <<: *i18n.proper_noun
                 min: 53
                 max: 56
-                result: Darva
+                text: Darva
               - <<: *i18n.proper_noun
                 min: 57
                 max: 60
-                result: Neda
+                text: Neda
               - <<: *i18n.proper_noun
                 min: 61
                 max: 64
-                result: Keha
+                text: Keha
               - <<: *i18n.proper_noun
                 min: 65
                 max: 68
-                result: Zhivka
+                text: Zhivka
               - <<: *i18n.proper_noun
                 min: 69
                 max: 72
-                result: Kvata
+                text: Kvata
               - <<: *i18n.proper_noun
                 min: 73
                 max: 76
-                result: Staysa
+                text: Staysa
               - <<: *i18n.proper_noun
                 min: 77
                 max: 80
-                result: Evka
+                text: Evka
               - <<: *i18n.proper_noun
                 min: 81
                 max: 84
-                result: Vuksha
+                text: Vuksha
               - <<: *i18n.proper_noun
                 min: 85
                 max: 88
-                result: Muko
+                text: Muko
               - <<: *i18n.proper_noun
                 min: 89
                 max: 92
-                result: Dreko
+                text: Dreko
               - <<: *i18n.proper_noun
                 min: 93
                 max: 96
-                result: Aleko
+                text: Aleko
               - <<: *i18n.proper_noun
                 min: 97
                 max: 100
-                result: Vojan
+                text: Vojan
           trolls:
             name: Trolls
-            oracle_type: column_simple
+            oracle_type: column_basic
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
                 min: 1
                 max: 4
-                result: Rattle
+                text: Rattle
               - <<: *i18n.proper_noun
                 min: 5
                 max: 8
-                result: Scratch
+                text: Scratch
               - <<: *i18n.proper_noun
                 min: 9
                 max: 12
-                result: Wallow
+                text: Wallow
               - <<: *i18n.proper_noun
                 min: 13
                 max: 16
-                result: Groak
+                text: Groak
               - <<: *i18n.proper_noun
                 min: 17
                 max: 20
-                result: Gimble
+                text: Gimble
               - <<: *i18n.proper_noun
                 min: 21
                 max: 24
-                result: Scar
+                text: Scar
               - <<: *i18n.proper_noun
                 min: 25
                 max: 28
-                result: Cratch
+                text: Cratch
               - <<: *i18n.proper_noun
                 min: 29
                 max: 32
-                result: Creech
+                text: Creech
               - <<: *i18n.proper_noun
                 min: 33
                 max: 36
-                result: Shush
+                text: Shush
               - <<: *i18n.proper_noun
                 min: 37
                 max: 40
-                result: Glush
+                text: Glush
               - <<: *i18n.proper_noun
                 min: 41
                 max: 44
-                result: Slar
+                text: Slar
               - <<: *i18n.proper_noun
                 min: 45
                 max: 48
-                result: Gnash
+                text: Gnash
               - <<: *i18n.proper_noun
                 min: 49
                 max: 52
-                result: Stoad
+                text: Stoad
               - <<: *i18n.proper_noun
                 min: 53
                 max: 56
-                result: Grig
+                text: Grig
               - <<: *i18n.proper_noun
                 min: 57
                 max: 60
-                result: Bleat
+                text: Bleat
               - <<: *i18n.proper_noun
                 min: 61
                 max: 64
-                result: Chortle
+                text: Chortle
               - <<: *i18n.proper_noun
                 min: 65
                 max: 68
-                result: Cluck
+                text: Cluck
               - <<: *i18n.proper_noun
                 min: 69
                 max: 72
-                result: Slith
+                text: Slith
               - <<: *i18n.proper_noun
                 min: 73
                 max: 76
-                result: Mongo
+                text: Mongo
               - <<: *i18n.proper_noun
                 min: 77
                 max: 80
-                result: Creak
+                text: Creak
               - <<: *i18n.proper_noun
                 min: 81
                 max: 84
-                result: Burble
+                text: Burble
               - <<: *i18n.proper_noun
                 min: 85
                 max: 88
-                result: Vrusk
+                text: Vrusk
               - <<: *i18n.proper_noun
                 min: 89
                 max: 92
-                result: Snuffle
+                text: Snuffle
               - <<: *i18n.proper_noun
                 min: 93
                 max: 96
-                result: Leech
+                text: Leech
               - <<: *i18n.proper_noun
                 min: 97
                 max: 100
-                result: Herk
+                text: Herk
     contents:
       elf:
         name: Elf Names
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 14: Elf Names'
         summary: Use this oracle to generate a name for an elf character.
         _source:
@@ -1178,200 +1178,200 @@ oracles:
           - <<: *i18n.proper_noun
             min: 1
             max: 2
-            result: Arsula
+            text: Arsula
           - <<: *i18n.proper_noun
             min: 3
             max: 4
-            result: Naidita
+            text: Naidita
           - <<: *i18n.proper_noun
             min: 5
             max: 6
-            result: Belesunna
+            text: Belesunna
           - <<: *i18n.proper_noun
             min: 7
             max: 8
-            result: Vidarna
+            text: Vidarna
           - <<: *i18n.proper_noun
             min: 9
             max: 10
-            result: Ninsunu
+            text: Ninsunu
           - <<: *i18n.proper_noun
             min: 11
             max: 12
-            result: Balathu
+            text: Balathu
           - <<: *i18n.proper_noun
             min: 13
             max: 14
-            result: Dorosi
+            text: Dorosi
           - <<: *i18n.proper_noun
             min: 15
             max: 16
-            result: Gezera
+            text: Gezera
           - <<: *i18n.proper_noun
             min: 17
             max: 18
-            result: Zursan
+            text: Zursan
           - <<: *i18n.proper_noun
             min: 19
             max: 20
-            result: Seleeku
+            text: Seleeku
           - <<: *i18n.proper_noun
             min: 21
             max: 22
-            result: Utamara
+            text: Utamara
           - <<: *i18n.proper_noun
             min: 23
             max: 24
-            result: Nebakay
+            text: Nebakay
           - <<: *i18n.proper_noun
             min: 25
             max: 26
-            result: Dismashk
+            text: Dismashk
           - <<: *i18n.proper_noun
             min: 27
             max: 28
-            result: Mitunu
+            text: Mitunu
           - <<: *i18n.proper_noun
             min: 29
             max: 30
-            result: Atani
+            text: Atani
           - <<: *i18n.proper_noun
             min: 31
             max: 32
-            result: Kinzura
+            text: Kinzura
           - <<: *i18n.proper_noun
             min: 33
             max: 34
-            result: Sumula
+            text: Sumula
           - <<: *i18n.proper_noun
             min: 35
             max: 36
-            result: Ukames
+            text: Ukames
           - <<: *i18n.proper_noun
             min: 37
             max: 38
-            result: Ahmeshki
+            text: Ahmeshki
           - <<: *i18n.proper_noun
             min: 39
             max: 40
-            result: Ilsit
+            text: Ilsit
           - <<: *i18n.proper_noun
             min: 41
             max: 42
-            result: Mayatanay
+            text: Mayatanay
           - <<: *i18n.proper_noun
             min: 43
             max: 44
-            result: Etana
+            text: Etana
           - <<: *i18n.proper_noun
             min: 45
             max: 46
-            result: Gamanna
+            text: Gamanna
           - <<: *i18n.proper_noun
             min: 47
             max: 48
-            result: Nessana
+            text: Nessana
           - <<: *i18n.proper_noun
             min: 49
             max: 50
-            result: Uralar
+            text: Uralar
           - <<: *i18n.proper_noun
             min: 51
             max: 52
-            result: Tishetu
+            text: Tishetu
           - <<: *i18n.proper_noun
             min: 53
             max: 54
-            result: Leucia
+            text: Leucia
           - <<: *i18n.proper_noun
             min: 55
             max: 56
-            result: Sutahe
+            text: Sutahe
           - <<: *i18n.proper_noun
             min: 57
             max: 58
-            result: Dotani
+            text: Dotani
           - <<: *i18n.proper_noun
             min: 59
             max: 60
-            result: Uktannu
+            text: Uktannu
           - <<: *i18n.proper_noun
             min: 61
             max: 62
-            result: Retenay
+            text: Retenay
           - <<: *i18n.proper_noun
             min: 63
             max: 64
-            result: Kendalanu
+            text: Kendalanu
           - <<: *i18n.proper_noun
             min: 65
             max: 66
-            result: Tahuta
+            text: Tahuta
           - <<: *i18n.proper_noun
             min: 67
             max: 68
-            result: Mattissa
+            text: Mattissa
           - <<: *i18n.proper_noun
             min: 69
             max: 70
-            result: Anatu
+            text: Anatu
           - <<: *i18n.proper_noun
             min: 71
             max: 72
-            result: Aralu
+            text: Aralu
           - <<: *i18n.proper_noun
             min: 73
             max: 74
-            result: Arakhi
+            text: Arakhi
           - <<: *i18n.proper_noun
             min: 75
             max: 76
-            result: Ibrahem
+            text: Ibrahem
           - <<: *i18n.proper_noun
             min: 77
             max: 78
-            result: Sinosu
+            text: Sinosu
           - <<: *i18n.proper_noun
             min: 79
             max: 80
-            result: Jemshida
+            text: Jemshida
           - <<: *i18n.proper_noun
             min: 81
             max: 82
-            result: Visapni
+            text: Visapni
           - <<: *i18n.proper_noun
             min: 83
             max: 84
-            result: Hullata
+            text: Hullata
           - <<: *i18n.proper_noun
             min: 85
             max: 86
-            result: Sidura
+            text: Sidura
           - <<: *i18n.proper_noun
             min: 87
             max: 88
-            result: Kerihu
+            text: Kerihu
           - <<: *i18n.proper_noun
             min: 89
             max: 90
-            result: Ereshki
+            text: Ereshki
           - <<: *i18n.proper_noun
             min: 91
             max: 92
-            result: Cybela
+            text: Cybela
           - <<: *i18n.proper_noun
             min: 93
             max: 94
-            result: Anunna
+            text: Anunna
           - <<: *i18n.proper_noun
             min: 95
             max: 96
-            result: Otani
+            text: Otani
           - <<: *i18n.proper_noun
             min: 97
             max: 98
-            result: Ditani
+            text: Ditani
           - <<: *i18n.proper_noun
             min: 99
             max: 100
-            result: Faraza
+            text: Faraza

@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    public class OracleTableRollableTableSimpleRecommendedRolls
+    public class OracleTableRollableTableText2RecommendedRolls
     {
         [JsonPropertyName("max")]
         public short Max { get; set; }

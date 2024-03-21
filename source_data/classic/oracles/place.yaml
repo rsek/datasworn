@@ -15,7 +15,7 @@ oracles:
     contents:
       region:
         name: Region
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 3: Region'
         summary: Use this oracle when you want to randomly select a region with the Ironlands.
         _source:
@@ -25,37 +25,37 @@ oracles:
         rows:
           - min: 1
             max: 12
-            result: '[Barrier Islands](id:classic/atlas/ironlands/barrier_islands)'
+            text: '[Barrier Islands](id:classic/atlas/ironlands/barrier_islands)'
           - min: 13
             max: 24
-            result: '[Ragged Coast](id:classic/atlas/ironlands/ragged_coast)'
+            text: '[Ragged Coast](id:classic/atlas/ironlands/ragged_coast)'
           - min: 25
             max: 34
-            result: '[Deep Wilds](id:classic/atlas/ironlands/deep_wilds)'
+            text: '[Deep Wilds](id:classic/atlas/ironlands/deep_wilds)'
           - min: 35
             max: 46
-            result: '[Flooded Lands](id:classic/atlas/ironlands/flooded_lands)'
+            text: '[Flooded Lands](id:classic/atlas/ironlands/flooded_lands)'
           - min: 47
             max: 60
-            result: '[Havens](id:classic/atlas/ironlands/havens)'
+            text: '[Havens](id:classic/atlas/ironlands/havens)'
           - min: 61
             max: 72
-            result: '[Hinterlands](id:classic/atlas/ironlands/hinterlands)'
+            text: '[Hinterlands](id:classic/atlas/ironlands/hinterlands)'
           - min: 73
             max: 84
-            result: '[Tempest Hills](id:classic/atlas/ironlands/tempest_hills)'
+            text: '[Tempest Hills](id:classic/atlas/ironlands/tempest_hills)'
           - min: 85
             max: 94
-            result: '[Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains)'
+            text: '[Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains)'
           - min: 95
             max: 99
-            result: '[Shattered Wastes](id:classic/atlas/ironlands/shattered_wastes)'
+            text: '[Shattered Wastes](id:classic/atlas/ironlands/shattered_wastes)'
           - min: 100
             max: 100
-            result: Elsewhere
+            text: Elsewhere
       location:
         name: Location
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 4: Location'
         summary: Use this oracle when traveling to generate a point-of-interest or to answer a question about a place where someone or something can be found.
         _source:
@@ -69,210 +69,210 @@ oracles:
                   part_of_speech: common_noun
             min: 1
             max: 1
-            result: Hideout
+            text: Hideout
           - <<: *i18n.common_noun
             min: 2
             max: 2
-            result: Ruin
+            text: Ruin
           - <<: *i18n.common_noun
             min: 3
             max: 3
-            result: Mine
+            text: Mine
           - <<: *i18n.common_noun
             min: 4
             max: 4
-            result: Waste
+            text: Waste
           - <<: *i18n.common_noun
             min: 5
             max: 5
-            result: Mystical Site
+            text: Mystical Site
           - <<: *i18n.common_noun
             min: 6
             max: 6
-            result: Path
+            text: Path
           - <<: *i18n.common_noun
             min: 7
             max: 7
-            result: Outpost
+            text: Outpost
           - <<: *i18n.common_noun
             min: 8
             max: 8
-            result: Wall
+            text: Wall
           - <<: *i18n.common_noun
             min: 9
             max: 9
-            result: Battlefield
+            text: Battlefield
           - <<: *i18n.common_noun
             min: 10
             max: 10
-            result: Hovel
+            text: Hovel
           - <<: *i18n.common_noun
             min: 11
             max: 11
-            result: Spring
+            text: Spring
           - <<: *i18n.common_noun
             min: 12
             max: 12
-            result: Lair
+            text: Lair
           - <<: *i18n.common_noun
             min: 13
             max: 13
-            result: Fort
+            text: Fort
           - <<: *i18n.common_noun
             min: 14
             max: 14
-            result: Bridge
+            text: Bridge
           - <<: *i18n.common_noun
             min: 15
             max: 15
-            result: Camp
+            text: Camp
           - <<: *i18n.common_noun
             min: 16
             max: 16
-            result: Cairn/Grave
+            text: Cairn/Grave
           - <<: *i18n.common_noun
             min: 17
             max: 18
-            result: Caravan
+            text: Caravan
           - <<: *i18n.common_noun
             min: 19
             max: 20
-            result: Waterfall
+            text: Waterfall
           - <<: *i18n.common_noun
             min: 21
             max: 22
-            result: Cave
+            text: Cave
           - <<: *i18n.common_noun
             min: 23
             max: 24
-            result: Swamp
+            text: Swamp
           - <<: *i18n.common_noun
             min: 25
             max: 26
-            result: Fen
+            text: Fen
           - <<: *i18n.common_noun
             min: 27
             max: 28
-            result: Ravine
+            text: Ravine
           - <<: *i18n.common_noun
             min: 29
             max: 30
-            result: Road
+            text: Road
           - <<: *i18n.common_noun
             min: 31
             max: 32
-            result: Tree
+            text: Tree
           - <<: *i18n.common_noun
             min: 33
             max: 34
-            result: Pond
+            text: Pond
           - <<: *i18n.common_noun
             min: 35
             max: 36
-            result: Fields
+            text: Fields
           - <<: *i18n.common_noun
             min: 37
             max: 38
-            result: Marsh
+            text: Marsh
           - <<: *i18n.common_noun
             min: 39
             max: 40
-            result: Steading
+            text: Steading
           - <<: *i18n.common_noun
             min: 41
             max: 42
-            result: Rapids
+            text: Rapids
           - <<: *i18n.common_noun
             min: 43
             max: 44
-            result: Pass
+            text: Pass
           - <<: *i18n.common_noun
             min: 45
             max: 46
-            result: Trail
+            text: Trail
           - <<: *i18n.common_noun
             min: 47
             max: 48
-            result: Glade
+            text: Glade
           - <<: *i18n.common_noun
             min: 49
             max: 50
-            result: Plain
+            text: Plain
           - <<: *i18n.common_noun
             min: 51
             max: 52
-            result: Ridge
+            text: Ridge
           - <<: *i18n.common_noun
             min: 53
             max: 54
-            result: Cliff
+            text: Cliff
           - <<: *i18n.common_noun
             min: 55
             max: 56
-            result: Grove
+            text: Grove
           - <<: *i18n.common_noun
             min: 57
             max: 58
-            result: Village
+            text: Village
           - <<: *i18n.common_noun
             min: 59
             max: 60
-            result: Moor
+            text: Moor
           - <<: *i18n.common_noun
             min: 61
             max: 62
-            result: Thicket
+            text: Thicket
           - <<: *i18n.common_noun
             min: 63
             max: 64
-            result: River Ford
+            text: River Ford
           - <<: *i18n.common_noun
             min: 65
             max: 66
-            result: Valley
+            text: Valley
           - <<: *i18n.common_noun
             min: 67
             max: 68
-            result: Bay/Fjord
+            text: Bay/Fjord
           - <<: *i18n.common_noun
             min: 69
             max: 70
-            result: Foothills
+            text: Foothills
           - <<: *i18n.common_noun
             min: 71
             max: 72
-            result: Lake
+            text: Lake
           - <<: *i18n.common_noun
             min: 73
             max: 75
-            result: River
+            text: River
           - <<: *i18n.common_noun
             min: 76
             max: 79
-            result: Forest
+            text: Forest
           - <<: *i18n.common_noun
             min: 80
             max: 83
-            result: Coast
+            text: Coast
           - <<: *i18n.common_noun
             min: 84
             max: 88
-            result: Hill
+            text: Hill
           - <<: *i18n.common_noun
             min: 89
             max: 93
-            result: Mountain
+            text: Mountain
           - <<: *i18n.common_noun
             min: 94
             max: 99
-            result: Woods
+            text: Woods
           - <<: *i18n.common_noun
             min: 100
             max: 100
-            result: Anomaly
+            text: Anomaly
       coastal_waters_location:
         name: Coastal Waters Location
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 5: Coastal Waters Location'
         summary: Use this oracle to identify a point-of-interest or destination when you are traveling by ship or boat.
         _source:
@@ -283,74 +283,74 @@ oracles:
           - <<: *i18n.common_noun
             min: 1
             max: 1
-            result: Fleet
+            text: Fleet
           - <<: *i18n.common_noun
             min: 2
             max: 2
-            result: Sargassum
+            text: Sargassum
           - <<: *i18n.common_noun
             min: 3
             max: 3
-            result: Flotsam
+            text: Flotsam
           - <<: *i18n.common_noun
             min: 4
             max: 4
-            result: Mystical Site
+            text: Mystical Site
           - <<: *i18n.common_noun
             min: 5
             max: 5
-            result: Lair
+            text: Lair
           - <<: *i18n.common_noun
             min: 6
             max: 10
-            result: Wreck
+            text: Wreck
           - <<: *i18n.common_noun
             min: 11
             max: 15
-            result: Harbor
+            text: Harbor
           - <<: *i18n.common_noun
             min: 16
             max: 23
-            result: Ship/Boat
+            text: Ship/Boat
           - <<: *i18n.common_noun
             min: 24
             max: 30
-            result: Rocks
+            text: Rocks
           - <<: *i18n.common_noun
             min: 31
             max: 38
-            result: Fjord
+            text: Fjord
           - <<: *i18n.common_noun
             min: 39
             max: 46
-            result: Estuary
+            text: Estuary
           - <<: *i18n.common_noun
             min: 47
             max: 54
-            result: Cove
+            text: Cove
           - <<: *i18n.common_noun
             min: 55
             max: 62
-            result: Bay
+            text: Bay
           - <<: *i18n.common_noun
             min: 63
             max: 70
-            result: Ice
+            text: Ice
           - <<: *i18n.common_noun
             min: 71
             max: 85
-            result: Island
+            text: Island
           - <<: *i18n.common_noun
             min: 86
             max: 99
-            result: Open Water
+            text: Open Water
           - <<: *i18n.common_noun
             min: 100
             max: 100
-            result: Anomaly
+            text: Anomaly
       descriptor:
         name: Location Descriptor
-        oracle_type: table_simple
+        oracle_type: table_basic
         canonical_name: 'Oracle 6: Location Descriptor'
         summary: Use this oracle to add detail to the [Location](id:classic/oracles/place/location) or [Coastal Waters Location](id:classic/oracles/place/coastal_waters_location) oracles, or by itself to generate a description of a location. Roll more than once for extra detail.
         _source:
@@ -364,200 +364,200 @@ oracles:
                   part_of_speech: adjective
             min: 1
             max: 2
-            result: High
+            text: High
           - <<: *i18n.adjective
             min: 3
             max: 4
-            result: Remote
+            text: Remote
           - <<: *i18n.adjective
             min: 5
             max: 6
-            result: Exposed
+            text: Exposed
           - <<: *i18n.adjective
             min: 7
             max: 8
-            result: Small
+            text: Small
           - <<: *i18n.adjective
             min: 9
             max: 10
-            result: Broken
+            text: Broken
           - <<: *i18n.adjective
             min: 11
             max: 12
-            result: Diverse
+            text: Diverse
           - <<: *i18n.adjective
             min: 13
             max: 14
-            result: Rough
+            text: Rough
           - <<: *i18n.adjective
             min: 15
             max: 16
-            result: Dark
+            text: Dark
           - <<: *i18n.adjective
             min: 17
             max: 18
-            result: Shadowy
+            text: Shadowy
           - <<: *i18n.adjective
             min: 19
             max: 20
-            result: Contested
+            text: Contested
           - <<: *i18n.adjective
             min: 21
             max: 22
-            result: Grim
+            text: Grim
           - <<: *i18n.adjective
             min: 23
             max: 24
-            result: Wild
+            text: Wild
           - <<: *i18n.adjective
             min: 25
             max: 26
-            result: Fertile
+            text: Fertile
           - <<: *i18n.adjective
             min: 27
             max: 28
-            result: Blocked
+            text: Blocked
           - <<: *i18n.adjective
             min: 29
             max: 30
-            result: Ancient
+            text: Ancient
           - <<: *i18n.adjective
             min: 31
             max: 32
-            result: Perilous
+            text: Perilous
           - <<: *i18n.adjective
             min: 33
             max: 34
-            result: Hidden
+            text: Hidden
           - <<: *i18n.adjective
             min: 35
             max: 36
-            result: Occupied
+            text: Occupied
           - <<: *i18n.adjective
             min: 37
             max: 38
-            result: Rich
+            text: Rich
           - <<: *i18n.adjective
             min: 39
             max: 40
-            result: Big
+            text: Big
           - <<: *i18n.adjective
             min: 41
             max: 42
-            result: Savage
+            text: Savage
           - <<: *i18n.adjective
             min: 43
             max: 44
-            result: Defended
+            text: Defended
           - <<: *i18n.adjective
             min: 45
             max: 46
-            result: Withered
+            text: Withered
           - <<: *i18n.adjective
             min: 47
             max: 48
-            result: Mystical
+            text: Mystical
           - <<: *i18n.adjective
             min: 49
             max: 50
-            result: Inaccessible
+            text: Inaccessible
           - <<: *i18n.adjective
             min: 51
             max: 52
-            result: Protected
+            text: Protected
           - <<: *i18n.adjective
             min: 53
             max: 54
-            result: Abandoned
+            text: Abandoned
           - <<: *i18n.adjective
             min: 55
             max: 56
-            result: Wide
+            text: Wide
           - <<: *i18n.adjective
             min: 57
             max: 58
-            result: Foul
+            text: Foul
           - <<: *i18n.adjective
             min: 59
             max: 60
-            result: Dead
+            text: Dead
           - <<: *i18n.adjective
             min: 61
             max: 62
-            result: Ruined
+            text: Ruined
           - <<: *i18n.adjective
             min: 63
             max: 64
-            result: Barren
+            text: Barren
           - <<: *i18n.adjective
             min: 65
             max: 66
-            result: Cold
+            text: Cold
           - <<: *i18n.adjective
             min: 67
             max: 68
-            result: Blighted
+            text: Blighted
           - <<: *i18n.adjective
             min: 69
             max: 70
-            result: Low
+            text: Low
           - <<: *i18n.adjective
             min: 71
             max: 72
-            result: Beautiful
+            text: Beautiful
           - <<: *i18n.adjective
             min: 73
             max: 74
-            result: Abundant
+            text: Abundant
           - <<: *i18n.adjective
             min: 75
             max: 76
-            result: Lush
+            text: Lush
           - <<: *i18n.adjective
             min: 77
             max: 78
-            result: Flooded
+            text: Flooded
           - <<: *i18n.adjective
             min: 79
             max: 80
-            result: Empty
+            text: Empty
           - <<: *i18n.adjective
             min: 81
             max: 82
-            result: Strange
+            text: Strange
           - <<: *i18n.adjective
             min: 83
             max: 84
-            result: Corrupted
+            text: Corrupted
           - <<: *i18n.adjective
             min: 85
             max: 86
-            result: Peaceful
+            text: Peaceful
           - <<: *i18n.adjective
             min: 87
             max: 88
-            result: Forgotten
+            text: Forgotten
           - <<: *i18n.adjective
             min: 89
             max: 90
-            result: Expansive
+            text: Expansive
           - <<: *i18n.adjective
             min: 91
             max: 92
-            result: Settled
+            text: Settled
           - <<: *i18n.adjective
             min: 93
             max: 94
-            result: Dense
+            text: Dense
           - <<: *i18n.adjective
             min: 95
             max: 96
-            result: Civilized
+            text: Civilized
           - <<: *i18n.adjective
             min: 97
             max: 98
-            result: Desolate
+            text: Desolate
           - <<: *i18n.adjective
             min: 99
             max: 100
-            result: Isolated
+            text: Isolated
