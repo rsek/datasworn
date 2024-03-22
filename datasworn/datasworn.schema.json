@@ -3676,6 +3676,7 @@
 					}
 				},
 				"column_labels": {
+					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
@@ -3782,6 +3783,7 @@
 					}
 				},
 				"column_labels": {
+					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
@@ -3884,6 +3886,7 @@
 					}
 				},
 				"column_labels": {
+					"title": "ColumnLabels",
 					"type": "object",
 					"description": "Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.",
 					"default": {
@@ -3985,6 +3988,7 @@
 					}
 				},
 				"column_labels": {
+					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
@@ -4092,6 +4096,7 @@
 					}
 				},
 				"column_labels": {
+					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
@@ -4211,6 +4216,7 @@
 					}
 				},
 				"column_labels": {
+					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
@@ -4335,6 +4341,7 @@
 					}
 				},
 				"column_labels": {
+					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {

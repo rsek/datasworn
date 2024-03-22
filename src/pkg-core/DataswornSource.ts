@@ -600,7 +600,7 @@ export type CssColor = string
  * A date formatted YYYY-MM-DD.
  * @remarks You may prefer to deserialize this as a Date object.
  * @pattern ```javascript
- * /[0-9]{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1])/
+ * /[0-9]{4}-((0[0-9])|(1[0-2]))-(([0-2][0-9])|(3[0-1]))/
  * ```
  */
 export type Date = string
