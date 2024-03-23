@@ -1,0 +1,554 @@
+_id: sundered_isles
+package_type: ruleset
+oracles:
+  campaign_launch:
+    name: Campaign Launch Oracles
+    _source: &Source
+      title: Sundered Isles Book Preview
+      authors:
+        - name: Shawn Tomkin
+      license: null
+      url: https://ironswornrpg.com
+      date: 2024-03-10
+    collections:
+      character_creation:
+        name: Character Creation Oracles
+        oracle_type: tables
+        _source: *Source
+        contents:
+          your_backstory:
+            name: Your Backstory
+            oracle_type: table_text
+            summary: What is your backstory? What events or compelling need put you on a path of adventure? If you’re not sure, roll or chose on this table for inspiration.
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 3
+                text: Abandoned a life of privilege or power
+              - min: 4
+                max: 7
+                text: Betrayed by a close friend, lover, or family member
+              - min: 8
+                max: 11
+                text: Caught up in a forbidden or unlikely romance
+              - min: 12
+                max: 14
+                text: Deserted the military
+              - min: 15
+                max: 18
+                text: Entrusted with a valuable secret
+              - min: 19
+                max: 22
+                text: Escaped unjust captivity
+              - min: 23
+                max: 26
+                text: Fled a cruel upbringing
+              - min: 27
+                max: 30
+                text: Following in the footsteps of famous or notorious kin
+              - min: 31
+                max: 34
+                text: Forcefully exiled from your land or people
+              - min: 35
+                max: 37
+                text: Found adrift with no memory of your former life
+              - min: 38
+                max: 40
+                text: Framed for a crime you didn't commit
+              - min: 41
+                max: 43
+                text: Guided by a dream or prophecy
+              - min: 44
+                max: 46
+                text: Home destroyed by disaster or war
+              - min: 47
+                max: 49
+                text: Home occupied by an enemy faction
+              - min: 50
+                max: 53
+                text: Joined a mutiny, uprising, or rebellion
+              - min: 54
+                max: 56
+                text: Joined a secret society
+              - min: 57
+                max: 59
+                text: Living under a stolen or assumed identity
+              - min: 60
+                max: 63
+                text: Loved one gone missing
+              - min: 64
+                max: 67
+                text: Marooned by former shipmates
+              - min: 68
+                max: 71
+                text: On the run with a stolen object of great value
+              - min: 72
+                max: 75
+                text: Raised by or fell in with criminals or pirates
+              - min: 76
+                max: 79
+                text: Refugee from a distant land
+              - min: 80
+                max: 83
+                text: Survived a disaster or battle at sea
+              - min: 84
+                max: 86
+                text: Took up a vendetta against a powerful figure or faction
+              - min: 87
+                max: 89
+                text: Trained in a rare or secret craft by a skilled mentor
+              - min: 90
+                max: 93
+                text: Trying to forget a disastrous love affair
+              - min: 94
+                max: 96
+                text: Undone by a personal vice
+              - min: 97
+                max: 100
+                text: Wronged a powerful figure or faction who seeks retribution
+          your_backstory_cursed:
+            name: Your Cursed Backstory
+            oracle_type: table_text
+            summary: Cursed backstories involve uncanny forces, monstrous foes, and strange technologies. If this isn’t appropriate for your setting, don’t roll the cursed die. If you want to emphasize those aspects of the world, feel free to roll directly on this table.
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 7
+                text: Banished because of uncanny nature or abilities
+              - min: 8
+                max: 14
+                text: Bearing a relic of dreadful power
+              - min: 15
+                max: 20
+                text: Desperate to unlock the secrets of forbidden magic
+              - min: 21
+                max: 26
+                text: Forged and made animate by forbidden technologies
+              - min: 27
+                max: 33
+                text: Grievously wounded and given new life by forbidden magic or technology
+              - min: 34
+                max: 40
+                text: Haunted by the spirit of someone you failed or wronged
+              - min: 41
+                max: 47
+                text: Home destroyed by a monstrous beast
+              - min: 48
+                max: 54
+                text: Home destroyed by undead or inhuman foes
+              - min: 55
+                max: 61
+                text: Inherited a dreadful curse
+              - min: 62
+                max: 67
+                text: Killed an albatross; plagued by foul luck ever since
+              - min: 68
+                max: 73
+                text: Sole survivor of a string of unlikely disasters
+              - min: 74
+                max: 80
+                text: Suffered a vision of a horrible fate
+              - min: 81
+                max: 87
+                text: Survived an attack at sea by a cursed ship
+              - min: 88
+                max: 94
+                text: Survived an attack at sea by a monstrous sea beast
+              - min: 95
+                max: 100
+                text: Targeted or hunted by a dreadful being
+
+          your_persona:
+            name: Your Persona
+            oracle_type: table_text2
+            # TODO: figure out how to convey the special icons
+            _source:
+              <<: *Source
+            rows:
+            - min: 1
+              max: 3
+              text: Apothecary
+              text2: HEALER, PEDDLER
+            - min: 4
+              max: 6
+              text: Assassin
+              text2: BLADEMASTER, BOUNTY HUNTER
+            - min: 7
+              max: 9
+              text: Beast Hunter
+              text2: HARPOONER, SLAYER
+            - min: 10
+              max: 12
+              text: Blockade Runner
+              text2: COURIER, NAVIGATOR
+            - min: 13
+              max: 15
+              text: Brigand
+              text2: PISTOLEER, SCOUNDREL
+            - min: 16
+              max: 18
+              text: Buccaneer
+              text2: SWASHBUCKLER, PIRATE CAPTAIN
+            - min: 19
+              max: 20
+              text: Bulwark
+              text2: BRAWLER, LOYALIST
+            - min: 21
+              max: 23
+              text: Castaway
+              text2: JINX, SCAVENGER
+            - min: 24
+              max: 26
+              text: Charlatan
+              text2: SCOUNDREL, SOCIALITE
+            - min: 27
+              max: 28
+              text: Cloak and Dagger
+              text2: CUTTHROAT, SPY
+            - min: 29
+              max: 30
+              text: Cultist
+              text2: DEVOTANT, NECROMANCER
+            - min: 31
+              max: 32
+              text: Deathbound
+              text2: FATED, HAUNTED
+            - min: 33
+              max: 35
+              text: Elementalist
+              text2: FIREBRAND, SORCERER
+            - min: 36
+              max: 38
+              text: Emissary
+              text2: DIPLOMAT, SPY
+            - min: 39
+              max: 41
+              text: Gallant
+              text2: DUELIST, SOCIALITE
+            - min: 42
+              max: 43
+              text: Guild Mage
+              text2: BANNERSWORN, SORCERER
+            - min: 44
+              max: 46
+              text: Gunner
+              text2: CANNONEER, VETERAN
+            - min: 47
+              max: 49
+              text: Hired Gun
+              text2: MERCENARY, MUSKETEER
+            - min: 50
+              max: 51
+              text: Ironclad
+              text2: ARMORED, BRAWLER
+            - min: 52
+              max: 53
+              text: Jury-Rig
+              text2: CONSTRUCT, SCAVENGER
+
+
+            - min: 54
+              max: 55
+              text: Monster Hunter
+              text2: BLADEMASTER, SLAYER
+            - min: 56
+              max: 58
+              text: Naturalist
+              text2: OVERLANDER, SCHOLAR (Natural history)
+            - min: 59
+              max: 61
+              text: Old Salt
+              text2: SEADOG, SHIPWRIGHT
+            - min: 62
+              max: 64
+              text: Pilgrim
+              text2: DEVOTANT, NAVIGATOR
+            - min: 65
+              max: 66
+              text: Piper
+              text2: MUSICIAN, LOYALIST
+            - min: 67
+              max: 69
+              text: Renegade
+              text2: FUGITIVE, VETERAN
+            - min: 70
+              max: 71
+              text: Saboteur
+              text2: DEMOLITIONIST, SPY
+            - min: 72
+              max: 73
+              text: Sea Witch
+              text2: SEER, WINDBINDER
+            - min: 74
+              max: 75
+              text: Shadow Assassin
+              text2: CUTTHROAT, SHADE
+            - min: 76
+              max: 77
+              text: Shipbreaker
+              text2: KINETIC, SCAVENGER
+            - min: 78
+              max: 79
+              text: Siren
+              text2: EMPATH, MUSICIAN
+            - min: 80
+              max: 81
+              text: Skipper
+              text2: LEADER, SEADOG
+            - min: 82
+              max: 84
+              text: Smuggler
+              text2: FUGITIVE, PEDDLER
+            - min: 85
+              max: 86
+              text: Sole Survivor
+              text2: HAUNTED, VESTIGE
+            - min: 87
+              max: 88
+              text: Spiritualist
+              text2: SEER, SLEUTH
+            - min: 89
+              max: 91
+              text: Stowaway
+              text2: URCHIN, OUTCAST
+            - min: 92
+              max: 94
+              text: Surgeon
+              text2: HEALER, SCHOLAR (Medicine)
+            - min: 95
+              max: 96
+              text: Tinker
+              text2: AUGMENTED, GEARHEAD
+            - min: 97
+              max: 98
+              text: Vanguard
+              text2: DECK CLEANER, BANNERSWORN
+            - min: 99
+              max: 100
+              text: War Machine
+              text2: CONSTRUCT, MERCENARY
+      ship_creation:
+        name: Ship Creation
+        oracle_type: tables
+        _source: *Source
+        contents:
+          history:
+            _source: *Source
+            name: Ship History
+            oracle_type: table_text
+            rows:
+              - min: 1
+                max: 5
+                text: Acquired in a duel of honor
+              - min: 6
+                max: 10
+                text: Awarded by a vote of the crew, after the former captain died an untimely death
+              - min: 11
+                max: 15
+                text: Bestowed by an eccentric shipwright
+              - min: 16
+                max: 20
+                text: Built or refitted by a community, and granted to its captain as their emissary
+              - min: 21
+                max: 25
+                text: Captured in battle, and awarded by the former captain
+              - min: 26
+                max: 30
+                text: Earned in exchange for a perilous undertaking or heroic deed
+              - min: 31
+                max: 35
+                text: Entrusted by a faction, and commanded in their service
+              - min: 36
+                max: 40
+                text: Found as a wreck, and refitted to make it seaworthy
+              - min: 41
+                max: 45
+                text: Gifted by an anonymous benefactor
+              - min: 46
+                max: 50
+                text: Inherited from a dead or missing relative or mentor
+              - min: 51
+                max: 55
+                text: Leased under exorbitant terms
+              - min: 56
+                max: 60
+                text: Obtained in trade for a precious object
+              - min: 61
+                max: 65
+                text: Obtained through a false identity or counterfeit documents
+              - min: 66
+                max: 70
+                text: On grant from an underworld figure in exchange for completing unscrupulous missions
+              - min: 71
+                max: 75
+                text: Once a timeworn, unwanted ship, painstakingly refitted to its new role
+              - min: 76
+                max: 80
+                text: Purchased at a suspiciously cheap price
+              - min: 81
+                max: 85
+                text: Seized in a mutiny against its former captain
+              - min: 86
+                max: 90
+                text: Stolen from under the nose of a powerful faction
+              - min: 91
+                max: 95
+                text: Taken while fleeing an attack or disaster
+              - min: 96
+                max: 100
+                text: Won in a high-stakes bet
+          history_cursed:
+            name: Cursed Ship
+            oracle_type: table_text
+            _source: *Source
+            rows:
+              - min: 1
+                max: 10
+                text: Awarded by its former—and now dead—captain, who still haunts its decks
+              - min: 11
+                max: 20
+                text: Bound to a role as its new commander by a beguiling curse
+              - min: 21
+                max: 30
+                text: Cobbled together from salvage found within a graveyard of forsaken ships
+              - min: 31
+                max: 40
+                text: Discovered within a hidden sea cave after calling to you in a dream
+              - min: 41
+                max: 50
+                text: Found adrift in perfect condition, with no sign of the crew
+              - min: 51
+                max: 60
+                text: Gifted by a dreadful entity in exchange for a dark favor; you reneged on their terms
+              - min: 61
+                max: 70
+                text: Granted in an accursed agreement, sealed in blood
+              - min: 71
+                max: 80
+                text: Improbably found as a derelict well inland; moved and refloated with much effort
+              - min: 81
+                max: 90
+                text: Raised from the sunken depths as a boon from the sea itself
+              - min: 91
+                max: 100
+                text: Taken in spite of its cursed reputation, when no one else would sail it
+          crew:
+            name: Crew Characteristics
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 8
+                text: Eclectic mix of all sorts of folk
+              - min: 9
+                max: 14
+                text: Adventurers and trailblazers, seeking the far horizon
+              - min: 15
+                max: 18
+                text: Disciplined military force, doing their duty
+              - min: 19
+                max: 22
+                text: Experienced mariners, lending an able hand
+              - min: 23
+                max: 26
+                text: Glory hunters, looking to make a mark
+              - min: 27
+                max: 32
+                text: Kin of a seafaring people, honoring traditions
+              - min: 33
+                max: 38
+                text: Marauders and brigands, taking their share of the spoils
+              - min: 39
+                max: 44
+                text: Novice mariners, undertaking their first adventure
+              - min: 45
+                max: 48
+                text: Old salts brought out of retirement, undertaking a final adventure
+              - min: 49
+                max: 54
+                text: Outcasts and exiles, bound by their differences
+              - min: 55
+                max: 60
+                text: Rebels, fighting for freedom
+              - min: 61
+                max: 66
+                text: Refugees from a faraway land, finding a new home
+              - min: 67
+                max: 70
+                text: Religious zealots, serving their god
+              - min: 71
+                max: 74
+                text: Scoundrels and spies, always watching
+              - min: 75
+                max: 78
+                text: Survivors of a horrible cataclysm, preserving what remains
+              - min: 79
+                max: 82
+                text: Survivors of a terrible attack, seeking revenge
+              - min: 83
+                max: 86
+                text: Turncoat imperials, sworn against former compatriots
+              - min: 87
+                max: 90
+                text: Unprincipled mercenaries, earning blood money
+              - min: 91
+                max: 100
+                text: Roll twice; these groups are at odds
+          crew_cursed:
+            name: Cursed Crew
+            oracle_type: table_text
+            # TODO: additive curse
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 5
+                text: Bound to the ship, unable to sail another
+              - min: 6
+                max: 10
+                text: Bound to the will of a dreadful artifact
+              - min: 11
+                max: 15
+                text: Built or augmented with strange technologies
+              - min: 16
+                max: 20
+                text: Cursed with foreknowledge of a dreadful fate
+              - min: 21
+                max: 25
+                text: Hunted by a vengeful sea beast
+              - min: 26
+                max: 30
+                text: In the service of a malevolent god or entity
+              - min: 31
+                max: 40
+                text: Obsessed with superstitious routines and rituals
+              - min: 41
+                max: 45
+                text: Once dead, now cursed with unnatural life
+              - min: 46
+                max: 50
+                text: Plagued with unnatural sickness
+              - min: 51
+                max: 60
+                text: Suffers a jinxed reputation, and forsaken by others
+              - min: 61
+                max: 65
+                text: Suffers an insatiable need
+              - min: 66
+                max: 75
+                text: Survivors of an attack by a horrifying foe or monstrous beast
+              - min: 76
+                max: 85
+                text: Tattooed with elaborate mystical wards
+              - min: 86
+                max: 95
+                text: Tormented by unforgiving spirits
+              - min: 96
+                max: 100
+                text: True nature revealed under moonlight

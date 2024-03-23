@@ -28,7 +28,7 @@ oracles:
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_version: sundered_isles/oracles/caves/cursed_threshold
+            cursed_version: sundered_isles/oracles/caves/threshold_cursed
         recommended_rolls:
           min: 1
           max: 2
@@ -83,12 +83,13 @@ oracles:
           - min: 95
             max: 100
             text: "[Descriptor + Focus]"
-      cursed_threshold:
+      threshold_cursed:
         name: Cursed Cave Threshold
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_version_of: sundered_isles/oracles/caves/threshold
+            cursed_version_of:
+              - sundered_isles/oracles/caves/threshold
         _source:
           <<: *Source
         rows:
@@ -190,7 +191,7 @@ oracles:
             text: Unstable caves
             text2: Tremors; minor rockfalls
             text3: The cave collapses!
-      cursed_lurking_threat:
+      lurking_threat_cursed:
         name: Cursed Lurking Threat
         oracle_type: table_text3
         column_labels: *LurkingThreatColumnLabels
@@ -292,7 +293,7 @@ oracles:
               max: 2
             tags:
               sundered_isles:
-                cursed_version: sundered_isles/oracles/caves/sea_cave/cursed_features
+                cursed_version: sundered_isles/oracles/caves/sea_cave/features_cursed
             _source:
               <<: *Source
             rows:
@@ -501,12 +502,13 @@ oracles:
                 max: 100
                 text: Descriptor + Focus; pg 120–121
 
-          cursed_features:
+          features_cursed:
             name: Sea Cave Cursed Features
             oracle_type: table_text
             tags:
               sundered_isles:
-                cursed_version_of: sundered_isles/oracles/caves/sea_cave/features
+                cursed_version_of:
+                  - sundered_isles/oracles/caves/sea_cave/features
             _source:
               <<: *Source
             rows:
@@ -735,7 +737,7 @@ oracles:
               max: 2
             tags:
               sundered_isles:
-                cursed_version: sundered_isles/oracles/caves/inland_cave/cursed_features
+                cursed_version: sundered_isles/oracles/caves/inland_cave/features_cursed
             _source:
               <<: *Source
             rows:
@@ -944,12 +946,13 @@ oracles:
                 max: 100
                 text: Descriptor + Focus; pg 120–121
 
-          cursed_features:
+          features_cursed:
             name: Inland Cave Cursed Features
             oracle_type: table_text
             tags:
               sundered_isles:
-                cursed_version_of: sundered_isles/oracles/caves/inland_cave/features
+                cursed_version_of:
+                  - sundered_isles/oracles/caves/inland_cave/features
             _source:
               <<: *Source
             rows:

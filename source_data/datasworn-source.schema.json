@@ -2907,12 +2907,12 @@
 				},
 				"auto": {
 					"type": "boolean",
-					"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle texts only provide useful information once a secondary roll occurs, such as \"Action + Theme\" or \"Roll Twice\".",
+					"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as \"Action + Theme\" or \"Roll twice\".",
 					"default": false
 				},
 				"duplicates": {
 					"$ref": "#/definitions/OracleDuplicateBehavior",
-					"description": "Special rules on how to handle duplicate texts, when rolling multiple times.",
+					"description": "Special rules on how to handle duplicate results, when rolling multiple times.",
 					"default": "reroll"
 				},
 				"number_of_rolls": {
@@ -3492,7 +3492,7 @@
 		"OracleTableRowText2": {
 			"title": "OracleTableRowText2",
 			"type": "object",
-			"description": "Represents a row in an oracle table that provides additional details.",
+			"description": "Represents a row in an oracle table that provides a secondary text field.",
 			"required": ["text", "text2"],
 			"properties": {
 				"min": {
@@ -3529,7 +3529,7 @@
 					"description": "The primary text content of this row."
 				},
 				"text2": {
-					"description": "The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.",
+					"description": "The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.",
 					"anyOf": [
 						{
 							"$ref": "#/definitions/MarkdownString"
@@ -3604,7 +3604,7 @@
 					"description": "The primary text content of this row."
 				},
 				"text2": {
-					"description": "The second text column for this row. Use `null` to represent a cell with a blank or empty vlue.",
+					"description": "The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.",
 					"anyOf": [
 						{
 							"$ref": "#/definitions/MarkdownString"
@@ -3615,7 +3615,7 @@
 					]
 				},
 				"text3": {
-					"description": "The third text column for this row. Use `null` to represent a cell with a blank or empty vlue.",
+					"description": "The tertiary text for this row. Use `null` to represent a cell with a blank or empty vlue.",
 					"anyOf": [
 						{
 							"$ref": "#/definitions/MarkdownString"

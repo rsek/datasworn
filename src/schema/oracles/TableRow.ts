@@ -138,14 +138,14 @@ export const OracleTableRowText2 = Utils.Assign(
 			text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
 				default: undefined,
 				description:
-					'The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.'
+					'The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
 			})
 		})
 	],
 	{
 		$id: 'OracleTableRowText2',
 		description:
-			'Represents a row in an oracle table that provides additional details.'
+			'Represents a row in an oracle table that provides a secondary text field.'
 	}
 )
 export type OracleTableRowText2 = Static<typeof OracleTableRowText2>
@@ -157,12 +157,12 @@ export const OracleTableRowText3 = Utils.Assign(
 			text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
 				default: undefined,
 				description:
-					'The second text column for this row. Use `null` to represent a cell with a blank or empty vlue.'
+					'The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
 			}),
 			text3: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
 				default: undefined,
 				description:
-					'The third text column for this row. Use `null` to represent a cell with a blank or empty vlue.'
+					'The tertiary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
 			})
 		})
 	],

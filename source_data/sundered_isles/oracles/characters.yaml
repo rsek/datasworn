@@ -17,6 +17,9 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/characters/first_look_cursed
         _source:
           <<: *Source
         rows:
@@ -140,9 +143,13 @@ oracles:
           - min: 98
             max: 100
             text: Youthful
-      cursed_first_look:
+      first_look_cursed:
         name: Cursed First Look
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/characters/first_look
         _source:
           <<: *Source
         rows:
@@ -491,6 +498,9 @@ oracles:
                     oracle: sundered_isles/oracles/core/focus
       trademark_weapons:
         name: Trademark Weapons
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/characters/weapon_details_cursed
         _source:
           <<: *Source
         oracle_type: table_text
@@ -609,12 +619,16 @@ oracles:
           - min: 98
             max: 100
             <<: *RollTwice
-      cursed_weapon_detail:
+      weapon_detail_cursed:
         name: Cursed Weapon Detail
         oracle_type: table_text
         _source:
           <<: *Source
-        # TODO: curse metadata should note whether it *combines* or *replaces*
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/characters/trademark_weapons
+            curse_is_additive: true
         summary: If you roll a Trademark Weapon curse, take your result and give that weapon a cursed aspect from the table below.
         rows:
           - min: 1
@@ -671,12 +685,18 @@ oracles:
           - min: 96
             max: 100
             text: Wreathed in smoke and ash
-      revealed_aspects:
-        name: Revealed Aspects
+      details:
+        name: Character Details
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/characters/details_cursed
+        summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
+        recommended_rolls:
+          min: 1
+          max: 2
         _source:
           <<: *Source
-        summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         rows:
           - min: 1
             max: 1
@@ -978,8 +998,12 @@ oracles:
           - min: 100
             max: 100
             text: Wise
-      cursed_aspects:
-        name: Cursed Aspects
+      details_cursed:
+        name: Cursed Character Details
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/characters/details
         oracle_type: table_text
         _source:
           <<: *Source
@@ -989,13 +1013,13 @@ oracles:
             text: Bewitched
           - min: 6
             max: 10
-            text: Corrupted
+            text: Deep-dwelling
           - min: 11
             max: 15
-            text: Deep-dwelling
+            text: Doomed
           - min: 16
             max: 25
-            text: Doomed
+            text: Drowned
           - min: 26
             max: 30
             text: Eldritch
@@ -1032,9 +1056,12 @@ oracles:
           - min: 96
             max: 100
             text: Vampiric
-      goal:
-        name: Goal
+      goals:
+        name: Character Goals
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/characters/goals_cursed
         _source:
           <<: *Source
         rows:
@@ -1182,9 +1209,13 @@ oracles:
           - min: 95
             max: 100
             <<: *ActionTheme
-      cursed_goal:
-        name: Cursed Goal
+      goals_cursed:
+        name: Cursed Character Goals
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/characters/goals
         _source:
           <<: *Source
         rows:
@@ -1248,12 +1279,6 @@ oracles:
           - min: 95
             max: 100
             text: Wreak bloody vengeance
-      # name:
-      #   name: Character Name
-      #   _source:
-      #     <<: *Source
-      #   rows:
-
     collections:
       roles:
         name: Roles
@@ -1674,3 +1699,1084 @@ oracles:
               - min: 91
                 max: 100
                 text: Woodworker
+      name:
+        name: Character Name
+        oracle_type: table_shared_rolls
+        _source:
+          <<: *Source
+        contents:
+          given_name_a:
+            name: Given Name
+            oracle_type: column_text
+            rows:
+              - text: Aisha
+              - text: Alexis
+              - text: Ali
+              - text: Alisa
+              - text: Althea
+              - text: Amar
+              - text: Amelia
+              - text: Amir
+              - text: Amity
+              - text: Anand
+              - text: Anne
+              - text: Aparna
+              - text: Aphra
+              - text: Ara
+              - text: Archer
+              - text: Asha
+              - text: Astrid
+              - text: Atticus
+              - text: Aubrey
+              - text: Aurora
+              - text: Azriel
+              - text: Barnabas
+              - text: Becca
+              - text: Bill
+              - text: Blythe
+              - text: Bonney
+              - text: Brianna
+              - text: Briar
+              - text: Bruna
+              - text: Cadigan
+              - text: Callum
+              - text: Calypso
+              - text: Carrington
+              - text: Caspian
+              - text: Cassidy
+              - text: Cassius
+              - text: Catalina
+              - text: Cheng
+              - text: Christa
+              - text: Corey
+              - text: Cormac
+              - text: Crassus
+              - text: Cyrus
+              - text: Damaris
+              - text: Darius
+              - text: Derya
+              - text: Dex
+              - text: Diana
+              - text: Diego
+              - text: Dorian
+              - text: Drake
+              - text: Duncan
+              - text: Echo
+              - text: Edda
+              - text: Edmund
+              - text: Edward
+              - text: Elara
+              - text: Elizabeth
+              - text: Elli
+              - text: Ember
+              - text: Erim
+              - text: Esana
+              - text: Esmeralda
+              - text: Felicity
+              - text: Fernando
+              - text: Fionn
+              - text: Fitz
+              - text: Florian
+              - text: Francisco
+              - text: Gideon
+              - text: Grace
+              - text: Gwen
+              - text: Hale
+              - text: Halia
+              - text: Hannah
+              - text: Hannibal
+              - text: Haruto
+              - text: Hina
+              - text: Horatio
+              - text: Icarus
+              - text: Idris
+              - text: Inigo
+              - text: Isabel
+              - text: Jack
+              - text: Jasper
+              - text: Jihun
+              - text: Jonas
+              - text: Jorunn
+              - text: Juliana
+              - text: Junho
+              - text: Juro
+              - text: Kahu
+              - text: Kaisa
+              - text: Kaito
+              - text: Kanoa
+              - text: Karthik
+              - text: Katarina
+              - text: Kauri
+              - text: Keelan
+              - text: Kei
+          family_name_a:
+            name: Family Name
+            oracle_type: column_text
+            rows:
+              - text: Qadir
+              - text: Whitlock
+              - text: Toprak
+              - text: Velez
+              - text: Tadena
+              - text: Shah
+              - text: Hammond
+              - text: Sharif
+              - text: Ambrose
+              - text: Verma
+              - text: Hunter
+              - text: Kade
+              - text: Sharpe
+              - text: Yoon
+              - text: Barlowe
+              - text: Okiro
+              - text: Ripley
+              - text: Gloom
+              - text: Blackwood
+              - text: Talin
+              - text: Devereux
+              - text: Silver
+              - text: Torgan
+              - text: Bennet
+              - text: Mattick
+              - text: Gray
+              - text: Fletcher
+              - text: Jamison
+              - text: Silva
+              - text: Hargrove
+              - text: McCabe
+              - text: Lorcan
+              - text: Egan
+              - text: Ashley
+              - text: Osborn
+              - text: Sutton
+              - text: Delgado
+              - text: Zhou
+              - text: Ruiz
+              - text: Mackenson
+              - text: O'Reilly
+              - text: Bane
+              - text: Dagon
+              - text: Hunt
+              - text: Booth
+              - text: Aktuna
+              - text: Tolari
+              - text: Ashby
+              - text: Morales
+              - text: Solace
+              - text: Thorn
+              - text: Cowley
+              - text: Carr
+              - text: Smith
+              - text: Pierce
+              - text: Quint
+              - text: Shaw
+              - text: Bond
+              - text: Granger
+              - text: Marlowe
+              - text: Kaan
+              - text: Taylan
+              - text: Blake
+              - text: Stanton
+              - text: Costa
+              - text: O'Rourke
+              - text: Burke
+              - text: Kai
+              - text: Ramos
+              - text: Brook
+              - text: Moreau
+              - text: Webb
+              - text: Shelton
+              - text: Edris
+              - text: Agosto
+              - text: Knight
+              - text: Sato
+              - text: Leota
+              - text: Hope
+              - text: Bates
+              - text: Dahir
+              - text: Dias
+              - text: Fernandes
+              - text: Braxton
+              - text: Fairchild
+              - text: Shin
+              - text: Fairweather
+              - text: Nadir
+              - text: Santos
+              - text: Lee
+              - text: Mihara
+              - text: Rangi
+              - text: Buhari
+              - text: Nishimura
+              - text: Tavita
+              - text: Salvi
+              - text: Volkov
+              - text: Ngata
+              - text: Sayer
+              - text: Takara
+          given_name_b:
+            name: Given Name
+            oracle_type: column_text
+            rows:
+              - text: Khalid
+              - text: Kiana
+              - text: Kimora
+              - text: Kiri
+              - text: Kirsa
+              - text: Kwan
+              - text: Kylar
+              - text: Lazar
+              - text: Leonor
+              - text: Lucas
+              - text: Lucius
+              - text: Luna
+              - text: Lux
+              - text: Lyana
+              - text: Lydia
+              - text: Lyra
+              - text: Mae
+              - text: Malcolm
+              - text: Marama
+              - text: Margery
+              - text: Maria
+              - text: Mary
+              - text: Maura
+              - text: Maya
+              - text: Meera
+              - text: Mia
+              - text: Miguel
+              - text: Mina
+              - text: Ming
+              - text: Miranda
+              - text: Morien
+              - text: Nashida
+              - text: Nasra
+              - text: Nassar
+              - text: Ned
+              - text: Nerissa
+              - text: Nettie
+              - text: Nix
+              - text: Odysseus
+              - text: Olivia
+              - text: Opal
+              - text: Ostara
+              - text: Qasira
+              - text: Quentin
+              - text: Quincy
+              - text: Quinn
+              - text: Radha
+              - text: Rahul
+              - text: Ranna
+              - text: Raven
+              - text: Reginald
+              - text: Rei
+              - text: Ria
+              - text: Ricardo
+              - text: Roderick
+              - text: Rodrigo
+              - text: Rokuro
+              - text: Roland
+              - text: Rose
+              - text: Rowena
+              - text: Sabine
+              - text: Sabrina
+              - text: Sage
+              - text: Saida
+              - text: Sakura
+              - text: Salim
+              - text: Samira
+              - text: Seamus
+              - text: Seren
+              - text: Shannon
+              - text: Shen
+              - text: Silas
+              - text: Simon
+              - text: Solana
+              - text: Solomon
+              - text: Sophia
+              - text: Sora
+              - text: Sujin
+              - text: Talia
+              - text: Tama
+              - text: Tao
+              - text: Thaddeus
+              - text: Thalia
+              - text: Tobias
+              - text: Tom
+              - text: Ulan
+              - text: Uther
+              - text: Vasco
+              - text: Venri
+              - text: Verity
+              - text: Vesper
+              - text: Vuldar
+              - text: Will
+              - text: Winona
+              - text: Wynne
+              - text: Xin
+              - text: Yasmin
+              - text: Yuna
+              - text: Zakia
+              - text: Zura
+          family_name_b:
+            name: Family Name
+            oracle_type: column_text
+            rows:
+              - text: Mahdi
+              - text: Barrow
+              - text: Merrick
+              - text: Morgan
+              - text: Hawking
+              - text: Jen
+              - text: Hobbs
+              - text: Frost
+              - text: Dias
+              - text: Barbosa
+              - text: Curry
+              - text: Zhang
+              - text: Sterling
+              - text: Vaaz
+              - text: Graves
+              - text: Griffin
+              - text: Ivers
+              - text: Edwards
+              - text: Roa
+              - text: Bolton
+              - text: Reyes
+              - text: Pearson
+              - text: Caldas
+              - text: Khosla
+              - text: Singh
+              - text: Drago
+              - text: Nuno
+              - text: Quon
+              - text: Chen
+              - text: Harrington
+              - text: Swann
+              - text: Malek
+              - text: Yusuf
+              - text: Murad
+              - text: Bannister
+              - text: Eaton
+              - text: Cromwell
+              - text: Brydon
+              - text: Carver
+              - text: Prescott
+              - text: Crowley
+              - text: Becker
+              - text: Ammar
+              - text: Durand
+              - text: Blackstone
+              - text: Braddock
+              - text: Kumar
+              - text: Patel
+              - text: Darwin
+              - text: Castillo
+              - text: Hughes
+              - text: Yoshida
+              - text: Farin
+              - text: Gaspar
+              - text: Capstone
+              - text: Torres
+              - text: Kobayashi
+              - text: Slater
+              - text: Dawson
+              - text: Sparke
+              - text: Delos
+              - text: Fitzpatrick
+              - text: Grimshaw
+              - text: Hassan
+              - text: Tanaka
+              - text: Hakim
+              - text: Osman
+              - text: Finn
+              - text: Vega
+              - text: O'Brien
+              - text: Bai
+              - text: Hayes
+              - text: Valk
+              - text: Russo
+              - text: Yarrow
+              - text: Hadley
+              - text: Kimura
+              - text: Kang
+              - text: Booker
+              - text: Ariki
+              - text: Lin
+              - text: Finch
+              - text: Beckett
+              - text: Cain
+              - text: Ashcroft
+              - text: Vayan
+              - text: Bastien
+              - text: Almeida
+              - text: Stark
+              - text: Cowell
+              - text: Stirling
+              - text: Wolfe
+              - text: Jones
+              - text: Lambert
+              - text: Khulan
+              - text: Wu
+              - text: Ahmed
+              - text: Han
+              - text: Nazari
+              - text: Winter
+          moniker:
+            name: Moniker
+            oracle_type: column_text
+            summary: If you are revealing a moniker for a character with a dreadful, ill-fated, mechanical, or eldritch aspect, use the [Cursed Moniker] table on page 189.
+            rows:
+              - min: 1
+                max: 1
+                text: Albatross
+              - min: 2
+                max: 2
+                text: Angler
+              - min: 3
+                max: 3
+                text: Bailer
+              - min: 4
+                max: 4
+                text: Ballast
+              - min: 5
+                max: 5
+                text: Barnacle
+              - min: 6
+                max: 6
+                text: Bilge Rat
+              - min: 7
+                max: 7
+                text: Blackbeard
+              - min: 8
+                max: 8
+                text: Bluecoat
+              - min: 9
+                max: 9
+                text: Blunderbuss
+              - min: 10
+                max: 10
+                text: Bones
+              - min: 11
+                max: 11
+                text: Breakwater
+              - min: 12
+                max: 12
+                text: Brine
+              - min: 13
+                max: 13
+                text: Broadside
+              - min: 14
+                max: 14
+                text: Castoff
+              - min: 15
+                max: 15
+                text: Chum
+              - min: 16
+                max: 16
+                text: Crimson
+              - min: 17
+                max: 17
+                text: Croaker
+              - min: 18
+                max: 18
+                text: Crow
+              - min: 19
+                max: 19
+                text: Cutlass
+              - min: 20
+                max: 20
+                text: Cuttle
+              - min: 21
+                max: 21
+                text: Cyclone
+              - min: 22
+                max: 22
+                text: Deadeye
+              - min: 23
+                max: 23
+                text: Deadshot
+              - min: 24
+                max: 24
+                text: Derelict
+              - min: 25
+                max: 25
+                text: Dice
+              - min: 26
+                max: 26
+                text: Doldrum
+              - min: 27
+                max: 27
+                text: Dredge
+              - min: 28
+                max: 28
+                text: Drift
+              - min: 29
+                max: 29
+                text: Fetch
+              - min: 30
+                max: 30
+                text: Fiddle
+              - min: 31
+                max: 31
+                text: Fishbait
+              - min: 32
+                max: 32
+                text: Flintlock
+              - min: 33
+                max: 33
+                text: Flotsam
+              - min: 34
+                max: 34
+                text: Goldtooth
+              - min: 35
+                max: 35
+                text: Graybeard
+              - min: 36
+                max: 36
+                text: Greenhorn
+              - min: 37
+                max: 37
+                text: Groggy
+              - min: 38
+                max: 38
+                text: Half-hand
+              - min: 39
+                max: 39
+                text: Hardtack
+              - min: 40
+                max: 40
+                text: Havoc
+              - min: 41
+                max: 41
+                text: Hook
+              - min: 42
+                max: 42
+                text: Hound
+              - min: 43
+                max: 43
+                text: Lubber
+              - min: 44
+                max: 44
+                text: Lucky
+              - min: 45
+                max: 45
+                text: No-name
+              - min: 46
+                max: 46
+                text: One-eye
+              - min: 47
+                max: 47
+                text: One-hand
+              - min: 48
+                max: 48
+                text: Overboard
+              - min: 49
+                max: 49
+                text: Patch
+              - min: 50
+                max: 50
+                text: Pegleg
+              - min: 51
+                max: 51
+                text: Plank
+              - min: 52
+                max: 52
+                text: Powderkeg
+              - min: 53
+                max: 53
+                text: Quill
+              - min: 54
+                max: 54
+                text: Red-eye
+              - min: 55
+                max: 55
+                text: Redbeard
+              - min: 56
+                max: 56
+                text: Rigger
+              - min: 57
+                max: 57
+                text: Rotgut
+              - min: 58
+                max: 58
+                text: Rover
+              - min: 59
+                max: 59
+                text: Rudder
+              - min: 60
+                max: 60
+                text: Sabre
+              - min: 61
+                max: 61
+                text: Sage
+              - min: 62
+                max: 62
+                text: Salt
+              - min: 63
+                max: 63
+                text: Saltbeard
+              - min: 64
+                max: 64
+                text: Saltblood
+              - min: 65
+                max: 65
+                text: Saltbone
+              - min: 66
+                max: 66
+                text: Scratch
+              - min: 67
+                max: 67
+                text: Scupper
+              - min: 68
+                max: 68
+                text: Scurvy
+              - min: 69
+                max: 69
+                text: Scuttle
+              - min: 70
+                max: 70
+                text: Shark-slayer
+              - min: 71
+                max: 71
+                text: Sharkbite
+              - min: 72
+                max: 72
+                text: Sharktooth
+              - min: 73
+                max: 73
+                text: Shivers
+              - min: 74
+                max: 74
+                text: Silverblade
+              - min: 75
+                max: 75
+                text: Silvereye
+              - min: 76
+                max: 76
+                text: Silvertongue
+              - min: 77
+                max: 77
+                text: Six-finger
+              - min: 78
+                max: 78
+                text: Skipjack
+              - min: 79
+                max: 79
+                text: Snipe
+              - min: 80
+                max: 80
+                text: Sparrow
+              - min: 81
+                max: 81
+                text: Splinter
+              - min: 82
+                max: 82
+                text: Splitskull
+              - min: 83
+                max: 83
+                text: Squall
+              - min: 84
+                max: 84
+                text: Stingray
+              - min: 85
+                max: 85
+                text: Stormcrow
+              - min: 86
+                max: 86
+                text: Swab
+              - min: 87
+                max: 87
+                text: Swagger
+              - min: 88
+                max: 88
+                text: Swiftblade
+              - min: 89
+                max: 89
+                text: Tack
+              - min: 90
+                max: 90
+                text: Tall-tale
+              - min: 91
+                max: 91
+                text: Talon
+              - min: 92
+                max: 92
+                text: Three-sheets
+              - min: 93
+                max: 93
+                text: Timbers
+              - min: 94
+                max: 94
+                text: Tinker
+              - min: 95
+                max: 95
+                text: Turncoat
+              - min: 96
+                max: 96
+                text: Two-face
+              - min: 97
+                max: 97
+                text: Vixen
+              - min: 98
+                max: 98
+                text: Weather-eye
+              - min: 99
+                max: 99
+                text: Whisper
+              - min: 100
+                max: 100
+                text: Windward
+# TODO: probably a case for this being a table grouping rather than a supertable. the given + family names could be merged into 1d200 tables instead of columns.
+      moniker_cursed:
+        name: Cursed Moniker
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          type:
+            name: Cursed Moniker Type
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 40
+                text: '[Dreadful Persona](id:sundered_isles/oracles/characters/name/moniker_cursed/dreadful_persona)'
+                oracle_rolls:
+                  - auto: true
+                    oracle: sundered_isles/oracles/characters/name/moniker_cursed/dreadful_persona
+                    number_of_rolls: 1
+              - min: 41
+                max: 60
+                text: '[Eldritch Powers](id:sundered_isles/oracles/characters/name/moniker_cursed/eldritch_powers)'
+                oracle_rolls:
+                  - auto: true
+                    oracle: sundered_isles/oracles/characters/name/moniker_cursed/eldritch_powers
+                    number_of_rolls: 1
+              - min: 61
+                max: 90
+                text: '[Ill-Fated Nature](id:sundered_isles/oracles/characters/name/moniker_cursed/ill_fated_nature)'
+                oracle_rolls:
+                  - auto: true
+                    oracle: sundered_isles/oracles/characters/name/moniker_cursed/ill_fated_nature
+                    number_of_rolls: 1
+              - min: 91
+                max: 100
+                text: '[Mechanical Form](id:sundered_isles/oracles/characters/name/moniker_cursed/mechanical_form)'
+                oracle_rolls:
+                  - auto: true
+                    oracle: sundered_isles/oracles/characters/name/moniker_cursed/mechanical_form
+                    number_of_rolls: 1
+          dreadful_persona:
+            name: Dreadful Persona
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 2
+                text: Banshee
+              - min: 3
+                max: 4
+                text: Barracuda
+              - min: 5
+                max: 7
+                text: Blackheart
+              - min: 8
+                max: 10
+                text: Blackmask
+              - min: 11
+                max: 13
+                text: Blacksail
+              - min: 14
+                max: 16
+                text: Bloodbeard
+              - min: 17
+                max: 19
+                text: Bloodblade
+              - min: 20
+                max: 22
+                text: Bloodskull
+              - min: 23
+                max: 25
+                text: Bloodtide
+              - min: 26
+                max: 28
+                text: Bloody-hand
+              - min: 29
+                max: 31
+                text: Boneblade
+              - min: 32
+                max: 34
+                text: Bonerender
+              - min: 35
+                max: 36
+                text: Carrion Eater
+              - min: 37
+                max: 39
+                text: Chimera
+              - min: 40
+                max: 41
+                text: Corpsehand
+              - min: 42
+                max: 44
+                text: Darktide
+              - min: 45
+                max: 47
+                text: Deathmask
+              - min: 48
+                max: 50
+                text: Dreadskull
+              - min: 51
+                max: 52
+                text: Fleshcarver
+              - min: 53
+                max: 55
+                text: Gloamheart
+              - min: 56
+                max: 58
+                text: Hellhound
+              - min: 59
+                max: 60
+                text: Hellion
+              - min: 61
+                max: 63
+                text: Jackal
+              - min: 64
+                max: 65
+                text: Keelhaul
+              - min: 66
+                max: 68
+                text: Pyre
+              - min: 69
+                max: 71
+                text: Reaver
+              - min: 72
+                max: 74
+                text: Redpalm
+              - min: 75
+                max: 77
+                text: Redskull
+              - min: 78
+                max: 80
+                text: Seafang
+              - min: 81
+                max: 83
+                text: Skullcrusher
+              - min: 84
+                max: 85
+                text: Soulless
+              - min: 86
+                max: 88
+                text: Specter
+              - min: 89
+                max: 91
+                text: Spider
+              - min: 92
+                max: 94
+                text: Spinebreaker
+              - min: 95
+                max: 97
+                text: Stoneheart
+              - min: 98
+                max: 100
+                text: Vulture
+          eldritch_powers:
+            name: Eldritch Powers
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 4
+                text: Acolyte
+              - min: 5
+                max: 8
+                text: Beastblood
+              - min: 9
+                max: 12
+                text: Bonebinder
+              - min: 13
+                max: 16
+                text: Darkshroud
+              - min: 17
+                max: 20
+                text: Deathtouch
+              - min: 21
+                max: 24
+                text: Enchanter
+              - min: 25
+                max: 28
+                text: Gravebreaker
+              - min: 29
+                max: 32
+                text: Harvester
+              - min: 33
+                max: 36
+                text: Herald
+              - min: 37
+                max: 41
+                text: Hex
+              - min: 42
+                max: 45
+                text: Hullcrusher
+              - min: 46
+                max: 49
+                text: Moonborn
+              - min: 50
+                max: 53
+                text: Oracle
+              - min: 54
+                max: 57
+                text: Prophet
+              - min: 58
+                max: 62
+                text: Seawitch
+              - min: 63
+                max: 66
+                text: Shadow
+              - min: 67
+                max: 70
+                text: Siren
+              - min: 71
+                max: 74
+                text: Soothsayer
+              - min: 75
+                max: 78
+                text: Soulbinder
+              - min: 79
+                max: 83
+                text: Tempest
+              - min: 84
+                max: 87
+                text: Tome
+              - min: 88
+                max: 91
+                text: Valkyrie
+              - min: 92
+                max: 96
+                text: Warlock
+              - min: 97
+                max: 100
+                text: Windcaller
+          ill_fated_nature:
+            name: Ill-fated Nature
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 5
+                text: Blackspot
+              - min: 6
+                max: 10
+                text: Blight
+              - min: 11
+                max: 15
+                text: Calamity
+              - min: 16
+                max: 20
+                text: Fluke
+              - min: 21
+                max: 25
+                text: Graves
+              - min: 26
+                max: 30
+                text: Grim
+              - min: 31
+                max: 35
+                text: Harbinger
+              - min: 36
+                max: 40
+                text: Harrow
+              - min: 41
+                max: 45
+                text: Husk
+              - min: 46
+                max: 50
+                text: Jinx
+              - min: 51
+                max: 55
+                text: Jonah
+              - min: 56
+                max: 60
+                text: Leech
+              - min: 61
+                max: 65
+                text: Luckless
+              - min: 66
+                max: 70
+                text: Maggot
+              - min: 71
+                max: 75
+                text: Pox
+              - min: 76
+                max: 80
+                text: Rot
+              - min: 81
+                max: 85
+                text: Scar
+              - min: 86
+                max: 90
+                text: Scourge
+              - min: 91
+                max: 95
+                text: Twice-drowned
+              - min: 96
+                max: 100
+                text: Wither
+          mechanical_form:
+            name: Mechanical Form
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 7
+                text: Anvil
+              - min: 8
+                max: 13
+                text: Bladehand
+              - min: 14
+                max: 20
+                text: Brassbolt
+              - min: 21
+                max: 26
+                text: Clank
+              - min: 27
+                max: 33
+                text: Cog
+              - min: 34
+                max: 40
+                text: Forgeheart
+              - min: 41
+                max: 46
+                text: Gadget
+              - min: 47
+                max: 52
+                text: Gear
+              - min: 53
+                max: 58
+                text: Ironclaw
+              - min: 59
+                max: 64
+                text: Ironeye
+              - min: 65
+                max: 70
+                text: Ironshell
+              - min: 71
+                max: 76
+                text: Rattle
+              - min: 77
+                max: 82
+                text: Rig
+              - min: 83
+                max: 88
+                text: Rust
+              - min: 89
+                max: 94
+                text: Spark
+              - min: 95
+                max: 100
+                text: Tinker
+

@@ -408,6 +408,12 @@ class Asset:
     player's allies, too.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     attachments: 'Optional[AssetAttachment]'
     canonical_name: 'Optional[Label]'
     """
@@ -456,6 +462,7 @@ class Asset:
             _from_json_data(bool, data.get("count_as_impact")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(bool, data.get("shared")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[AssetAttachment], data.get("attachments")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -476,6 +483,8 @@ class Asset:
         data["count_as_impact"] = _to_json_data(self.count_as_impact)
         data["name"] = _to_json_data(self.name)
         data["shared"] = _to_json_data(self.shared)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.attachments is not None:
              data["attachments"] = _to_json_data(self.attachments)
         if self.canonical_name is not None:
@@ -518,6 +527,12 @@ class AssetAbility:
     The complete rules text of this asset ability.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     controls: 'Optional[Dict[str, AssetAbilityControlField]]'
     """
     Fields whose values are expected to change over the life of the asset.
@@ -558,6 +573,7 @@ class AssetAbility:
             _from_json_data(AssetAbilityID, data.get("_id")),
             _from_json_data(bool, data.get("enabled")),
             _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Dict[str, AssetAbilityControlField]], data.get("controls")),
             _from_json_data(Optional[AssetEnhancement], data.get("enhance_asset")),
             _from_json_data(Optional[List[MoveEnhancement]], data.get("enhance_moves")),
@@ -571,6 +587,8 @@ class AssetAbility:
         data["_id"] = _to_json_data(self.id)
         data["enabled"] = _to_json_data(self.enabled)
         data["text"] = _to_json_data(self.text)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.controls is not None:
              data["controls"] = _to_json_data(self.controls)
         if self.enhance_asset is not None:
@@ -889,6 +907,12 @@ class AssetCollection:
     The primary name/label for this item.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -941,6 +965,7 @@ class AssetCollection:
             _from_json_data(AssetCollectionID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Asset]], data.get("contents")),
@@ -959,6 +984,8 @@ class AssetCollection:
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -1793,6 +1820,12 @@ class Atlas:
     The primary name/label for this item.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -1846,6 +1879,7 @@ class Atlas:
             _from_json_data(AtlasID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -1865,6 +1899,8 @@ class Atlas:
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.collections is not None:
@@ -1916,6 +1952,12 @@ class AtlasEntry:
     The primary name/label for this item.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -1936,6 +1978,7 @@ class AtlasEntry:
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(List[MarkdownString], data.get("features")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -1951,6 +1994,8 @@ class AtlasEntry:
         data["description"] = _to_json_data(self.description)
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.quest_starter is not None:
@@ -2163,6 +2208,12 @@ class DelveSite:
 
     rank: 'ChallengeRank'
     theme: 'DelveSiteThemeID'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -2196,6 +2247,7 @@ class DelveSite:
             _from_json_data(Label, data.get("name")),
             _from_json_data(ChallengeRank, data.get("rank")),
             _from_json_data(DelveSiteThemeID, data.get("theme")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[str], data.get("extra_card")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2214,6 +2266,8 @@ class DelveSite:
         data["name"] = _to_json_data(self.name)
         data["rank"] = _to_json_data(self.rank)
         data["theme"] = _to_json_data(self.theme)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.extra_card is not None:
@@ -2238,6 +2292,12 @@ class DelveSiteDenizen:
     frequency: 'DelveSiteDenizenFrequency'
     max: 'int'
     min: 'int'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     name: 'Optional[Label]'
     npc: 'Optional[NpcID]'
     """
@@ -2252,6 +2312,7 @@ class DelveSiteDenizen:
             _from_json_data(DelveSiteDenizenFrequency, data.get("frequency")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("name")),
             _from_json_data(Optional[NpcID], data.get("npc")),
         )
@@ -2262,6 +2323,8 @@ class DelveSiteDenizen:
         data["frequency"] = _to_json_data(self.frequency)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.name is not None:
              data["name"] = _to_json_data(self.name)
         if self.npc is not None:
@@ -2321,6 +2384,12 @@ class DelveSiteDomain:
     """
 
     summary: 'MarkdownString'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -2350,6 +2419,7 @@ class DelveSiteDomain:
             _from_json_data(List[DelveSiteDomainFeatureRow], data.get("features")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MarkdownString, data.get("summary")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2366,6 +2436,8 @@ class DelveSiteDomain:
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
         data["summary"] = _to_json_data(self.summary)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -2406,6 +2478,12 @@ class DelveSiteDomainDangerRow:
     The primary text content of this row.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
@@ -2428,6 +2506,7 @@ class DelveSiteDomainDangerRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2442,6 +2521,8 @@ class DelveSiteDomainDangerRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -2482,6 +2563,12 @@ class DelveSiteDomainFeatureRow:
     The primary text content of this row.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
@@ -2504,6 +2591,7 @@ class DelveSiteDomainFeatureRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2518,6 +2606,8 @@ class DelveSiteDomainFeatureRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -2587,6 +2677,12 @@ class DelveSiteTheme:
     """
 
     summary: 'MarkdownString'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -2607,6 +2703,7 @@ class DelveSiteTheme:
             _from_json_data(List[DelveSiteThemeFeatureRow], data.get("features")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MarkdownString, data.get("summary")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2622,6 +2719,8 @@ class DelveSiteTheme:
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
         data["summary"] = _to_json_data(self.summary)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -2660,6 +2759,12 @@ class DelveSiteThemeDangerRow:
     The primary text content of this row.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
@@ -2682,6 +2787,7 @@ class DelveSiteThemeDangerRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2696,6 +2802,8 @@ class DelveSiteThemeDangerRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -2736,6 +2844,12 @@ class DelveSiteThemeFeatureRow:
     The primary text content of this row.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     i18n: 'Optional[I18nHints]'
     embed_table: 'Optional[OracleRollableID]'
     """
@@ -2758,6 +2872,7 @@ class DelveSiteThemeFeatureRow:
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2772,6 +2887,8 @@ class DelveSiteThemeFeatureRow:
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -3161,6 +3278,12 @@ class MoveActionRoll(Move):
     Trigger conditions for this move.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -3193,6 +3316,7 @@ class MoveActionRoll(Move):
             _from_json_data(MoveOutcomes, data.get("outcomes")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerActionRoll, data.get("trigger")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
@@ -3208,6 +3332,8 @@ class MoveActionRoll(Move):
         data["outcomes"] = _to_json_data(self.outcomes)
         data["text"] = _to_json_data(self.text)
         data["trigger"] = _to_json_data(self.trigger)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.oracles is not None:
@@ -3252,6 +3378,12 @@ class MoveNoRoll(Move):
     Trigger conditions for this move.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -3283,6 +3415,7 @@ class MoveNoRoll(Move):
             _from_json_data(Label, data.get("name")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerNoRoll, data.get("trigger")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
@@ -3297,6 +3430,8 @@ class MoveNoRoll(Move):
         data["name"] = _to_json_data(self.name)
         data["text"] = _to_json_data(self.text)
         data["trigger"] = _to_json_data(self.trigger)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.oracles is not None:
@@ -3349,6 +3484,12 @@ class MoveProgressRoll(Move):
     Trigger conditions for this move.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -3382,6 +3523,7 @@ class MoveProgressRoll(Move):
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(ProgressTrackTypeInfo, data.get("tracks")),
             _from_json_data(TriggerProgressRoll, data.get("trigger")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
@@ -3398,6 +3540,8 @@ class MoveProgressRoll(Move):
         data["text"] = _to_json_data(self.text)
         data["tracks"] = _to_json_data(self.tracks)
         data["trigger"] = _to_json_data(self.trigger)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.oracles is not None:
@@ -3445,6 +3589,12 @@ class MoveSpecialTrack(Move):
     Trigger conditions for this move.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -3477,6 +3627,7 @@ class MoveSpecialTrack(Move):
             _from_json_data(MoveOutcomes, data.get("outcomes")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(TriggerSpecialTrack, data.get("trigger")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
@@ -3492,6 +3643,8 @@ class MoveSpecialTrack(Move):
         data["outcomes"] = _to_json_data(self.outcomes)
         data["text"] = _to_json_data(self.text)
         data["trigger"] = _to_json_data(self.trigger)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.oracles is not None:
@@ -3520,6 +3673,12 @@ class MoveCategory:
     name: 'Label'
     """
     The primary name/label for this item.
+    """
+
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
     """
 
     canonical_name: 'Optional[Label]'
@@ -3574,6 +3733,7 @@ class MoveCategory:
             _from_json_data(MoveCategoryID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Move]], data.get("contents")),
@@ -3592,6 +3752,8 @@ class MoveCategory:
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -3867,6 +4029,12 @@ class Npc:
     """
 
     tactics: 'List[MarkdownString]'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -3892,6 +4060,7 @@ class Npc:
             _from_json_data(NpcNature, data.get("nature")),
             _from_json_data(ChallengeRank, data.get("rank")),
             _from_json_data(List[MarkdownString], data.get("tactics")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -3912,6 +4081,8 @@ class Npc:
         data["nature"] = _to_json_data(self.nature)
         data["rank"] = _to_json_data(self.rank)
         data["tactics"] = _to_json_data(self.tactics)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.quest_starter is not None:
@@ -3944,6 +4115,12 @@ class NpcCollection:
     name: 'Label'
     """
     The primary name/label for this item.
+    """
+
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
     """
 
     canonical_name: 'Optional[Label]'
@@ -3998,6 +4175,7 @@ class NpcCollection:
             _from_json_data(NpcCollectionID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, Npc]], data.get("contents")),
@@ -4016,6 +4194,8 @@ class NpcCollection:
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4105,6 +4285,12 @@ class NpcVariant:
     The suggested challenge rank for this NPC.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     summary: 'Optional[MarkdownString]'
 
     @classmethod
@@ -4115,6 +4301,7 @@ class NpcVariant:
             _from_json_data(Label, data.get("name")),
             _from_json_data(NpcNature, data.get("nature")),
             _from_json_data(ChallengeRank, data.get("rank")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
         )
 
@@ -4125,6 +4312,8 @@ class NpcVariant:
         data["name"] = _to_json_data(self.name)
         data["nature"] = _to_json_data(self.nature)
         data["rank"] = _to_json_data(self.rank)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
         return data
@@ -4237,6 +4426,12 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     The primary name/label for this item.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -4291,6 +4486,7 @@ class OracleCollectionTableSharedRolls(OracleCollection):
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleCollectionTableSharedRollsColumnLabels, data.get("column_labels")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, OracleColumnText]], data.get("contents")),
@@ -4310,6 +4506,8 @@ class OracleCollectionTableSharedRolls(OracleCollection):
         data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4383,6 +4581,12 @@ class OracleCollectionTableSharedText(OracleCollection):
     The primary name/label for this item.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -4437,6 +4641,7 @@ class OracleCollectionTableSharedText(OracleCollection):
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleCollectionTableSharedTextColumnLabels, data.get("column_labels")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, OracleColumnText]], data.get("contents")),
@@ -4456,6 +4661,8 @@ class OracleCollectionTableSharedText(OracleCollection):
         data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4532,6 +4739,12 @@ class OracleCollectionTableSharedText2(OracleCollection):
     The primary name/label for this item.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -4586,6 +4799,7 @@ class OracleCollectionTableSharedText2(OracleCollection):
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleCollectionTableSharedText2ColumnLabels, data.get("column_labels")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, OracleColumnText2]], data.get("contents")),
@@ -4605,6 +4819,8 @@ class OracleCollectionTableSharedText2(OracleCollection):
         data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4678,6 +4894,12 @@ class OracleCollectionTableSharedText3(OracleCollection):
     The primary name/label for this item.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -4732,6 +4954,7 @@ class OracleCollectionTableSharedText3(OracleCollection):
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(OracleCollectionTableSharedText3ColumnLabels, data.get("column_labels")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, OracleColumnText2]], data.get("contents")),
@@ -4751,6 +4974,8 @@ class OracleCollectionTableSharedText3(OracleCollection):
         data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.color is not None:
@@ -4796,6 +5021,12 @@ class OracleCollectionTables(OracleCollection):
     name: 'Label'
     """
     The primary name/label for this item.
+    """
+
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
     """
 
     canonical_name: 'Optional[Label]'
@@ -4852,6 +5083,7 @@ class OracleCollectionTables(OracleCollection):
             _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[Dict[str, OracleCollection]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -4871,6 +5103,8 @@ class OracleCollectionTables(OracleCollection):
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.collections is not None:
@@ -4948,6 +5182,12 @@ class OracleColumnText:
     An array of objects, each representing a single row of the table.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     color: 'Optional[CSSColor]'
     """
     An optional thematic color for this column. For an example, see "Basic
@@ -4989,6 +5229,7 @@ class OracleColumnText:
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleColumnTextOracleType, data.get("oracle_type")),
             _from_json_data(List[OracleTableRowText], data.get("rows")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
@@ -5005,6 +5246,8 @@ class OracleColumnText:
         data["name"] = _to_json_data(self.name)
         data["oracle_type"] = _to_json_data(self.oracle_type)
         data["rows"] = _to_json_data(self.rows)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.color is not None:
              data["color"] = _to_json_data(self.color)
         if self.icon is not None:
@@ -5053,6 +5296,12 @@ class OracleColumnText2:
     An array of objects, each representing a single row of the table.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     color: 'Optional[CSSColor]'
     """
     An optional thematic color for this column. For an example, see "Basic
@@ -5094,6 +5343,7 @@ class OracleColumnText2:
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleColumnText2OracleType, data.get("oracle_type")),
             _from_json_data(List[OracleTableRowText2], data.get("rows")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleMatchBehavior], data.get("match")),
@@ -5110,6 +5360,8 @@ class OracleColumnText2:
         data["name"] = _to_json_data(self.name)
         data["oracle_type"] = _to_json_data(self.oracle_type)
         data["rows"] = _to_json_data(self.rows)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.color is not None:
              data["color"] = _to_json_data(self.color)
         if self.icon is not None:
@@ -5174,15 +5426,16 @@ class OracleRoll:
     auto: 'bool'
     """
     Both Ironsworn and Starforged explicitly recommend *against* rolling
-    all details at once. That said, some oracle texts only provide useful
+    all details at once. That said, some oracle results only provide useful
     information once a secondary roll occurs, such as "Action + Theme" or "Roll
-    Twice".
+    twice".
     """
 
     dice: 'DiceExpression'
     duplicates: 'OracleDuplicateBehavior'
     """
-    Special rules on how to handle duplicate texts, when rolling multiple times.
+    Special rules on how to handle duplicate results, when rolling multiple
+    times.
     """
 
     number_of_rolls: 'int'
@@ -5370,6 +5623,12 @@ class OracleTableRollableTableText(OracleTableRollable):
     An array of objects, each representing a single row of the table.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -5423,6 +5682,7 @@ class OracleTableRollableTableText(OracleTableRollable):
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[OracleTableRowText], data.get("rows")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -5442,6 +5702,8 @@ class OracleTableRollableTableText(OracleTableRollable):
         data["dice"] = _to_json_data(self.dice)
         data["name"] = _to_json_data(self.name)
         data["rows"] = _to_json_data(self.rows)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -5544,6 +5806,12 @@ class OracleTableRollableTableText2(OracleTableRollable):
     An array of objects, each representing a single row of the table.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -5597,6 +5865,7 @@ class OracleTableRollableTableText2(OracleTableRollable):
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[OracleTableRowText2], data.get("rows")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -5616,6 +5885,8 @@ class OracleTableRollableTableText2(OracleTableRollable):
         data["dice"] = _to_json_data(self.dice)
         data["name"] = _to_json_data(self.name)
         data["rows"] = _to_json_data(self.rows)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -5721,6 +5992,12 @@ class OracleTableRollableTableText3(OracleTableRollable):
     An array of objects, each representing a single row of the table.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -5774,6 +6051,7 @@ class OracleTableRollableTableText3(OracleTableRollable):
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[OracleTableRowText3], data.get("rows")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -5793,6 +6071,8 @@ class OracleTableRollableTableText3(OracleTableRollable):
         data["dice"] = _to_json_data(self.dice)
         data["name"] = _to_json_data(self.name)
         data["rows"] = _to_json_data(self.rows)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
@@ -5885,7 +6165,7 @@ class OracleTableRowText:
 @dataclass
 class OracleTableRowText2:
     """
-    Represents a row in an oracle table that provides additional details.
+    Represents a row in an oracle table that provides a secondary text field.
     """
 
     max: 'int'
@@ -6070,6 +6350,12 @@ class OracleTablesCollection:
     A grouping of separate tables.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -6124,6 +6410,7 @@ class OracleTablesCollection:
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleTablesCollectionOracleType, data.get("oracle_type")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[Dict[str, OracleCollection]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -6144,6 +6431,8 @@ class OracleTablesCollection:
         data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
         data["oracle_type"] = _to_json_data(self.oracle_type)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.collections is not None:
@@ -6349,6 +6638,12 @@ class Rarity:
     spend 3 experience points to purchase a rarity.
     """
 
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -6368,6 +6663,7 @@ class Rarity:
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(int, data.get("xp_cost")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -6382,6 +6678,8 @@ class Rarity:
         data["description"] = _to_json_data(self.description)
         data["name"] = _to_json_data(self.name)
         data["xp_cost"] = _to_json_data(self.xp_cost)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.icon is not None:
@@ -8407,6 +8705,12 @@ class Truth:
     """
 
     options: 'List[TruthOption]'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     canonical_name: 'Optional[Label]'
     """
     The name of this item as it appears on the page in the book, if it's
@@ -8426,6 +8730,7 @@ class Truth:
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[TruthOption], data.get("options")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -8440,6 +8745,8 @@ class Truth:
         data["_source"] = _to_json_data(self.source)
         data["name"] = _to_json_data(self.name)
         data["options"] = _to_json_data(self.options)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.icon is not None:
@@ -8478,6 +8785,12 @@ class TruthOption:
 
     description: 'MarkdownString'
     quest_starter: 'MarkdownString'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
     max: 'Optional[int]'
     min: 'Optional[int]'
     summary: 'Optional[MarkdownString]'
@@ -8489,6 +8802,7 @@ class TruthOption:
             _from_json_data(TruthOptionID, data.get("_id")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(MarkdownString, data.get("quest_starter")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[int], data.get("max")),
             _from_json_data(Optional[int], data.get("min")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
@@ -8500,6 +8814,8 @@ class TruthOption:
         data["_id"] = _to_json_data(self.id)
         data["description"] = _to_json_data(self.description)
         data["quest_starter"] = _to_json_data(self.quest_starter)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.max is not None:
              data["max"] = _to_json_data(self.max)
         if self.min is not None:

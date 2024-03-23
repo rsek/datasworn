@@ -1679,6 +1679,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -1745,6 +1751,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -1866,6 +1878,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"summary": {
 					"ref": "MarkdownString"
 				}
@@ -1913,13 +1931,13 @@
 				"auto": {
 					"type": "boolean",
 					"metadata": {
-						"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle texts only provide useful information once a secondary roll occurs, such as \"Action + Theme\" or \"Roll Twice\"."
+						"description": "Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as \"Action + Theme\" or \"Roll twice\"."
 					}
 				},
 				"duplicates": {
 					"ref": "OracleDuplicateBehavior",
 					"metadata": {
-						"description": "Special rules on how to handle duplicate texts, when rolling multiple times."
+						"description": "Special rules on how to handle duplicate results, when rolling multiple times."
 					}
 				},
 				"dice": {
@@ -1986,6 +2004,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -2105,6 +2129,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -2216,6 +2246,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -2330,6 +2366,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -2441,6 +2483,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -2557,6 +2605,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"summary": {
 					"ref": "MarkdownString",
 					"metadata": {
@@ -2643,6 +2697,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"summary": {
 					"ref": "MarkdownString",
 					"metadata": {
@@ -2744,6 +2804,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -2863,6 +2929,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -2985,6 +3057,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -3160,7 +3238,7 @@
 				}
 			},
 			"metadata": {
-				"description": "Represents a row in an oracle table that provides additional details."
+				"description": "Represents a row in an oracle table that provides a secondary text field."
 			}
 		},
 		"OracleTableRowText3": {
@@ -3252,6 +3330,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -3401,6 +3485,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -3476,6 +3566,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -3560,6 +3656,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -3638,6 +3740,12 @@
 						}
 					},
 					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
 						"canonical_name": {
 							"ref": "Label",
 							"metadata": {
@@ -3703,6 +3811,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -4329,6 +4443,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -4415,6 +4535,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"name": {
 					"ref": "Label",
 					"metadata": {
@@ -4668,6 +4794,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -5456,6 +5588,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -5508,6 +5646,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"min": {
 					"type": "int16"
 				},
@@ -5600,6 +5744,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -5714,6 +5864,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -5811,6 +5967,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -5880,6 +6042,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -5941,6 +6109,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"name": {
 					"ref": "Label"
 				},
@@ -5997,6 +6171,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -6064,6 +6244,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},
@@ -6123,6 +6309,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},
@@ -6189,6 +6381,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"canonical_name": {
 					"ref": "Label",
 					"metadata": {
@@ -6250,6 +6448,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},
@@ -6309,6 +6513,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},

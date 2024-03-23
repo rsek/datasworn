@@ -9,7 +9,7 @@ oracles:
           - name: Shawn Tomkin
         license: null
         url: https://ironswornrpg.com
-        date: 2023-09-11
+        date: 2024-03-10
     name: Overland Adventures
     contents:
       regions:
@@ -21,50 +21,54 @@ oracles:
           text: Result
           text2: Detail
         rows:
-          - min: 1
-            max: 20
-            text: '[Highlands]'
-            text2: &highlands.summary Hilly or mountainous terrain
-          - min: 21
-            max: 45
-            text: '[Jungle]'
-            text2: &jungle.summary Dense tropical rainforest
-          - min: 46
-            max: 50
-            text: '[Lava Field]'
-            text2: &lava_field.summary Lands scarred by volcanic eruptions
-          - min: 51
-            max: 55
-            text: '[Marsh]'
-            text2: &marsh.summary Waterlogged region with grasses and reeds
-          - min: 56
-            max: 60
-            text: '[River]'
-            text2: &river.summary Major inland waterway
-          - min: 61
-            max: 65
-            text: '[Scrub]'
-            text2: &scrub.summary Open landscape dominated by grass or shrubs
-          - min: 66
-            max: 75
-            text: '[Shore]'
-            text2: &shore.summary Where the land meets the sea
-          - min: 76
-            max: 85
-            text: '[Swamp]'
-            text2: &swamp.summary Flooded forest with thick vegetation
-          - min: 86
-            max: 90
-            text: '[Wastes]'
-            text2: &wastes.summary Arid, rocky terrain
-          - min: 91
-            max: 100
-            text: '[Woodland]'
-            text2: &woodland.summary Forested lands
-      detail:
+        - min: 1
+          max: 20
+          text: Highlands
+          text2: &highlands.summary Hilly or mountainous terrain
+        - min: 21
+          max: 45
+          text: Jungle
+          text2: &jungle.summary Dense tropical rainforest
+        - min: 46
+          max: 50
+          text: Lava Field
+          text2: &lava_field.summary Lands scarred by volcanic eruptions
+        - min: 51
+          max: 55
+          text: Marsh
+          text2: &marsh.summary Waterlogged region with grasses and reeds
+        - min: 56
+          max: 60
+          text: River
+          text2: &river.summary Major inland waterway
+        - min: 61
+          max: 65
+          text: Scrub
+          text2: &scrub.summary Open landscape dominated by grass or shrubs
+        - min: 66
+          max: 75
+          text: Shore
+          text2: &shore.summary Where the land meets the sea
+        - min: 76
+          max: 85
+          text: Swamp
+          text2: &swamp.summary Flooded forest with thick vegetation
+        - min: 86
+          max: 90
+          text: Wastes
+          text2: &wastes.summary Arid, rocky terrain
+        - min: 91
+          max: 100
+          text: Woodland
+          text2: &woodland.summary Forested lands
+      details:
         _source: *Source
         name: Overland Details
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/overland/details_cursed
         oracle_type: table_text
+        summary: This table reveals occurrences on an overland expedition. Possible results include locations, events, sightings, and encounters.
         rows:
           - min: 1
             max: 1
@@ -92,7 +96,7 @@ oracles:
             text: A stone arch marks the entrance of a burial mound
           - min: 9
             max: 9
-            text: You cross paths with a lone traveller who is leading a heavily-burdened pack animal
+            text: You cross paths with a lone traveler who is leading a heavily-burdened pack animal
           - min: 10
             max: 10
             text: Rodents of unusual size appear
@@ -293,7 +297,7 @@ oracles:
             text: Crushed and broken vegetation marks the path of a large creature
           - min: 76
             max: 76
-            text: The smell of cooking and the sound of conversation indicates the presence ofcamp a nearby
+            text: The smell of cooking and the sound of conversation indicates a nearby camp
           - min: 77
             max: 77
             text: Ruins rise above the distant terrain
@@ -366,9 +370,13 @@ oracles:
           - min: 100
             max: 100
             text: This area is adorned with colorful banners
-      cursed_details:
+      details_cursed:
         _source: *Source
         name: Cursed Overland Details
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/overland/details
         oracle_type: table_text
         rows:
           - min: 1
@@ -388,7 +396,7 @@ oracles:
             text: The earth trembles as one beast battles another
           - min: 6
             max: 6
-            text: A skull with a gemstone in its mouth watches over the path—as you approach, it speaks
+            text: A skull watches over the path—as you approach, it speaks
           - min: 7
             max: 7
             text: Unnatural darkness envelops your surroundings
@@ -544,7 +552,7 @@ oracles:
             text: A party member is stricken with a hideous sickness
           - min: 58
             max: 58
-            text: A sinister effigy of a human figure, crafted from dead wood, towers above the landcape
+            text: A sinister effigy of a human figure, crafted from dead wood, towers above the landscape
           - min: 59
             max: 59
             text: A sorrowful song, seemingly without a source, echoes across the landscape
@@ -667,14 +675,15 @@ oracles:
             text: Furrowed ground and broken trees mark the path of a monstrous beast
           - min: 99
             max: 99
-            text: A hulking, beastial form emerges from a dark cave
+            text: A hulking, bestial form emerges from a dark cave
           - min: 100
             max: 100
             text: That’s the third time today you’ve passed that tree—you’re sure of it
-      peril:
+      perils:
         _source: *Source
         name: Overland Perils
         oracle_type: table_text
+        summary: Use this table when you want inspiration for a trouble during island exploration or on an overland expedition.
         rows:
           - min: 1
             max: 3
@@ -783,12 +792,12 @@ oracles:
                   oracle: sundered_isles/oracles/core/theme
           - min: 100
             max: 100
-            <<: &RollTwice
-              text: Roll twice
-              oracle_rolls:
-                - auto: true
-                  number_of_rolls: 2
-      opportunity:
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: reroll
+      opportunities:
         _source: *Source
         name: Overland Opportunities
         oracle_type: table_text
@@ -868,6 +877,92 @@ oracles:
           - min: 97
             max: 100
             text: Vantage point reveals the lay of the land
+      landmark_cursed:
+        name: Cursed Landmark
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/overland/region_landmarks/*
+        _source:
+          <<: *Source
+        rows:
+          - min: 1
+            max: 5
+            text: Colossal bones
+          - min: 6
+            max: 10
+            text: Copse of diseased trees
+          - min: 11
+            max: 15
+            text: Destructive trail of a monstrous beast
+          - min: 16
+            max: 18
+            text: Eldritch monument
+          - min: 19
+            max: 21
+            text: Exhumed or upturned graves
+          - min: 22
+            max: 24
+            text: Field of crude grave markers
+          - min: 25
+            max: 27
+            text: Forlorn remains of a violent battle
+          - min: 28
+            max: 32
+            text: Foul nest or lair of a monstrous beast
+          - min: 33
+            max: 35
+            text: Gravity-defying terrain or water
+          - min: 36
+            max: 43
+            text: Imposing, skull-shaped outcrop
+          - min: 44
+            max: 46
+            text: Inscrutable iron pillars
+          - min: 47
+            max: 51
+            text: Large cairn built of skulls and bones
+          - min: 52
+            max: 56
+            text: Large pile of bones and offal
+          - min: 57
+            max: 61
+            text: Lifeless settlement
+          - min: 62
+            max: 64
+            text: Noxious, sludge-filled waterway or poo
+          - min: 65
+            max: 67
+            text: Oversized insect mound
+          - min: 68
+            max: 72
+            text: Rotting corpse of a monstrous beast
+          - min: 73
+            max: 75
+            text: Silent, abandoned settlement
+          - min: 76
+            max: 78
+            text: Smoking meteorite scar
+          - min: 79
+            max: 81
+            text: Stinking, sulfurous pit
+          - min: 82
+            max: 84
+            text: Titanic machine
+          - min: 85
+            max: 89
+            text: Foreboding [Cave](id:sundered_isles/collections/oracles/caves)
+          - min: 90
+            max: 94
+            text: Grounded [Shipwreck](id:sundered_isles/collections/oracles/shipwrecks)
+          - min: 95
+            max: 100
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: keep
     collections:
       waypoints:
         _source: *Source
@@ -879,18 +974,18 @@ oracles:
             summary: Central Seas
             oracle_type: column_text
             rows:
-              - min: 1
+              -  &Waypoints.0
+                min: 1
                 max: 20
-                <<: &Waypoints.0
-                  text: |-
-                    Feature of the landscape
-                      [Region Landmarks]
-              - min: 21
+                text: |-
+                  Feature of the landscape
+                    [Region Landmarks]
+              - &Waypoints.1
+                min: 21
                 max: 30
-                <<: &Waypoints.1
-                  text: |-
-                    Changing landscape
-                      [Overland Regions](id:sundered_isles/oracles/overland/regions)
+                text: |-
+                  Changing landscape
+                    [Overland Regions](id:sundered_isles/oracles/overland/regions)
               - min: 31
                 max: 35
                 <<: &Waypoints.2
@@ -920,27 +1015,27 @@ oracles:
                   text: |-
                     Relic of the past
                       [Ruins](id:sundered_isles/collections/oracles/ruins)
-              - min: 76
+              - &Waypoints.6
+                min: 76
                 max: 85
-                <<: &Waypoints.6
-                  text: |-
-                    Character focus
-                      [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
+                text: |-
+                  Character focus
+                    [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
               - &Waypoints.7
                 min: 86
                 max: 100
-                <<: *RollTwice
+                text: Roll twice
+                oracle_rolls:
+                  - auto: true
+                    number_of_rolls: 2
+                    duplicates: keep
           margins:
             name: Margins
             summary: Outer Seas
             oracle_type: column_text
             rows:
-              - min: 1
-                max: 20
-                <<: *Waypoints.0
-              - min: 21
-                max: 30
-                <<: *Waypoints.1
+              - *Waypoints.0
+              - *Waypoints.1
               - min: 31
                 max: 38
                 <<: *Waypoints.2
@@ -953,21 +1048,15 @@ oracles:
               - min: 68
                 max: 75
                 <<: *Waypoints.5
-              - min: 76
-                max: 85
-                <<: *Waypoints.6
+              - *Waypoints.6
               - *Waypoints.7
           reaches:
             name: Reaches
             summary: Remote Seas
             oracle_type: column_text
             rows:
-              - min: 1
-                max: 20
-                <<: *Waypoints.0
-              - min: 21
-                max: 30
-                <<: *Waypoints.1
+              - *Waypoints.0
+              - *Waypoints.1
               - min: 31
                 max: 40
                 <<: *Waypoints.2
@@ -980,19 +1069,20 @@ oracles:
               - min: 66
                 max: 75
                 <<: *Waypoints.5
-              - min: 76
-                max: 85
-                <<: *Waypoints.6
+              - *Waypoints.6
               - *Waypoints.7
-      regional_landmarks:
+      region_landmarks:
         _source: *Source
-        name: Regional Landmarks
+        name: Region Landmarks
         oracle_type: tables
         contents:
           highlands:
             _source: *Source
             name: Highlands
             oracle_type: table_text
+            tags: &Landmark.tags
+              sundered_isles:
+                cursed_version: sundered_isles/oracles/overland/landmark_cursed
             summary: *highlands.summary
             rows:
               - <<: &Landmark.0
@@ -1080,6 +1170,7 @@ oracles:
             name: Jungle
             oracle_type: table_text
             summary: *jungle.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Ancient tree with a vast canopy
@@ -1121,12 +1212,12 @@ oracles:
                 text: Whispering bamboo grove
               - <<: *Landmark.19
                 text: Wide, slow-moving river
-
           lava_field:
             _source: *Source
             name: Lava Field
             oracle_type: table_text
             summary: *lava_field.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Boiling lake
@@ -1168,19 +1259,19 @@ oracles:
                 text: Towering cinder cone
               - <<: *Landmark.19
                 text: Vents spewing steam and volcanic gases
-
           marsh:
             _source: *Source
             name: Marsh
             oracle_type: table_text
             summary: *marsh.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Bursts of flaming marsh gas
               - <<: *Landmark.1
                 text: Copse of rotted tree trunks
               - <<: *Landmark.2
-                text: Dense thicket of of reeds
+                text: Dense thicket of reeds
               - <<: *Landmark.3
                 text: Field of flowers upon sodden ground
               - <<: *Landmark.4
@@ -1215,12 +1306,12 @@ oracles:
                 text: Wide, algae-covered pond
               - <<: *Landmark.19
                 text: Witchlights dance above dark pools
-
           river:
             _source: *Source
             name: River
             oracle_type: table_text
             summary: *river.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Branching watercourse
@@ -1262,12 +1353,12 @@ oracles:
                 text: Trees crowd the river's edge
               - <<: *Landmark.19
                 text: Wrecked ship or boat
-
           scrub:
             _source: *Source
             name: Scrub
             oracle_type: table_text
             summary: *scrub.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Abandoned homestead
@@ -1309,12 +1400,12 @@ oracles:
                 text: Watering hole
               - <<: *Landmark.19
                 text: Weathered burial mounds
-
           shore:
             _source: *Source
             name: Shore
             oracle_type: table_text
             summary: *shore.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Approaching or anchored ship
@@ -1347,7 +1438,7 @@ oracles:
               - <<: *Landmark.14
                 text: Squawking seabirds circling tall rocks
               - <<: *Landmark.15
-                text: Stormswept debris
+                text: Storm-swept debris
               - <<: *Landmark.16
                 text: Tall seaside cliffs
               - <<: *Landmark.17
@@ -1356,12 +1447,12 @@ oracles:
                 text: Wave-swept pebble beach
               - <<: *Landmark.19
                 text: Wide, saltwater channel
-
           swamp:
             _source: *Source
             name: Swamp
             oracle_type: table_text
             summary: *swamp.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Abandoned boat or raft
@@ -1378,7 +1469,7 @@ oracles:
               - <<: *Landmark.6
                 text: Dense canopy of intertwined branches
               - <<: *Landmark.7
-                text: Insects swarm above stangnant water
+                text: Insects swarm above stagnant water
               - <<: *Landmark.8
                 text: Large sandy island topped by trees
               - <<: *Landmark.9
@@ -1403,59 +1494,59 @@ oracles:
                 text: Watery maze of towering tree trunks
               - <<: *Landmark.19
                 text: Wrecked ship or boat
-
           wastes:
             _source: *Source
             name: Wastes
             oracle_type: table_text
             summary: *wastes.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
-                text: Carrion birds roosting in a dead tree
-              - <<: *Landmark.1
-                text: Dried riverbed
-              - <<: *Landmark.2
-                text: Freshwater spring oasis
-              - <<: *Landmark.3
-                text: Maze of wind-carved spires
-              - <<: *Landmark.4
-                text: Narrow trail through steep-sided ravine
-              - <<: *Landmark.5
-                text: Natural stone bridge spans a canyon
-              - <<: *Landmark.6
-                text: Parched lakebed
-              - <<: *Landmark.7
-                text: Petrified forest
-              - <<: *Landmark.8
-                text: Plain of rocky rubble
-              - <<: *Landmark.9
-                text: Shadowy cave
-              - <<: *Landmark.10
-                text: Sprawling skeletal remains
-              - <<: *Landmark.11
-                text: Expanse of shifting, loose sand
-              - <<: *Landmark.12
-                text: Towering stone arches
-              - <<: *Landmark.13
                 text: Abandoned mineshaft
-              - <<: *Landmark.14
-                text: Fossilized tracks of an ancient beast
-              - <<: *Landmark.15
-                text: Rainbow-hued rock formations
-              - <<: *Landmark.16
-                text: Rock walls with ancient petroglyphs
-              - <<: *Landmark.17
-                text: Half-buried statue
-              - <<: *Landmark.18
-                text: Sun-bleached bones of a leviathan
-              - <<: *Landmark.19
+              - <<: *Landmark.1
                 text: Animal tracks in the sand
-
+              - <<: *Landmark.2
+                text: Carrion birds roosting in a dead tree
+              - <<: *Landmark.3
+                text: Dried riverbed
+              - <<: *Landmark.4
+                text: Expanse of shifting, loose sand
+              - <<: *Landmark.5
+                text: Fossilized tracks of an ancient beast
+              - <<: *Landmark.6
+                text: Freshwater spring oasis
+              - <<: *Landmark.7
+                text: Half-buried statue
+              - <<: *Landmark.8
+                text: Maze of wind-carved spires
+              - <<: *Landmark.9
+                text: Narrow trail through steep-sided ravine
+              - <<: *Landmark.10
+                text: Natural stone bridge spans a canyon
+              - <<: *Landmark.11
+                text: Parched lakebed
+              - <<: *Landmark.12
+                text: Petrified forest
+              - <<: *Landmark.13
+                text: Plain of rocky rubble
+              - <<: *Landmark.14
+                text: Rainbow-hued rock formations
+              - <<: *Landmark.15
+                text: Rock walls with ancient petroglyphs
+              - <<: *Landmark.16
+                text: Shadowy cave
+              - <<: *Landmark.17
+                text: Sprawling bones of a leviathan
+              - <<: *Landmark.18
+                text: Sun-bleached skeletal remains
+              - <<: *Landmark.19
+                text: Towering stone arches
           woodland:
             _source: *Source
             name: Woodland
             oracle_type: table_text
             summary: *woodland.summary
+            tags: *Landmark.tags
             rows:
               - <<: *Landmark.0
                 text: Cave tucked behind a misty waterfall
@@ -1476,7 +1567,7 @@ oracles:
               - <<: *Landmark.8
                 text: Pond sheltered by close-packed trees
               - <<: *Landmark.9
-                text: Ring of standing stones
+                text: Ring of rune-etched standing stones
               - <<: *Landmark.10
                 text: Rocky promontory
               - <<: *Landmark.11

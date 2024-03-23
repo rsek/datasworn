@@ -6,7 +6,8 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Represents a row in an oracle table that provides additional details.
+    /// Represents a row in an oracle table that provides a secondary text
+    /// field.
     /// </summary>
     public class OracleTableRowText2
     {

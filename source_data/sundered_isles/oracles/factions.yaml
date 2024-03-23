@@ -15,24 +15,29 @@ oracles:
       type:
         name: Faction Type
         oracle_type: table_text2
+        summary: 'On a cursed result, choose one: Make the faction one of The Cursed (page 196), or keep the result and give the faction Cursed Aspects (page 196).'
         _source:
           <<: *Source
         rows:
           - min: 1
             max: 50
             text: Society
-            text2: People who share traditions and a way of life
+            text2: &society.summary People who share traditions and a way of life
           - min: 51
             max: 80
             text: Organization
-            text2: People joined in a collective trade, pursuit, or goal
+            text2: &organization.summary People joined in a collective trade, pursuit, or goal
           - min: 81
             max: 100
             text: Empire
-            text2: People seeking dominion over the isles
+            text2: &empire.summary People seeking dominion over the isles
       influence:
         name: Faction Influence
         oracle_type: table_text2
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Summary
         _source:
           <<: *Source
         rows:
@@ -64,11 +69,11 @@ oracles:
             max: 100
             text: Inescapable
             text2: Pervasive influence across a vast area
-
       relationships:
         _source: *Source
         oracle_type: table_text
         name: Faction Relationships
+        summary: When you have a question about the relationship of one faction to another—or how an individual relates to a faction—use this table. The result is the commonly understood connection, but might not tell the whole story.
         rows:
           - min: 1
             max: 10
@@ -101,224 +106,1453 @@ oracles:
             max: 100
             text: Trades resources or favors with
     collections:
-      inspiration:
-        _source: *Source
-        name: Faction Inspiration
+      sample_factions:
+        name: Sample Factions
         oracle_type: tables
+        _source:
+          <<: *Source
         contents:
-          nations_and_cultures:
-            _source: *Source
-            name: Nations and Cultures
+          societies:
+            name: Societies
             oracle_type: table_text2
-            # rendering:
-            #   style: standalone
-            #   columns:
-            #     - label: Roll
-            #       content_type: roll
-            #     - label: Name
-            #       content_type: result
-            #     - label: Detail
-            #       content_type: summary
+            summary: *society.summary
+            _source:
+              <<: *Source
             rows:
-              - min: 1
-                max: 10
-                text: Akiya
-                text2: Alliance of clans known for their sleek and speedy ships; they gather each year to celebrate the ebb of the storm season, and hang rows of vibrantly colored flags from their ship’s rigging to honor the dead
-              - min: 11
-                max: 20
-                text: Arsu / Azizos
-                text2: Swearing fealty to a pair of rulers descended from rival heirs, these people often war against each other, but now have a fragile alliance against a mutual foe
-              - min: 21
-                max: 30
-                text: Kai
-                text2: Builds their homes and ships from luminous glimmerwood, harvested from the coastal marshes of their homeland—an environment which is under threat of destruction
-              - min: 31
-                max: 40
-                text: Khazeera
-                text2: Inhabits an enduring city-state at the edge of an active volcano; molten rock and slag from this sacred volcano is used in the heated shot for their destructive cannonry, and their soldiers and soldiers wield blades forged in its fires
-              - min: 41
-                max: 50
-                text: Morien
-                text2: Seafolk who forsake cannons and muskets; they sail low-profile catamarans and set upon their foes with stealthy ambushes
-              - min: 51
-                max: 60
-                text: Otani
-                text2: People who dwell in island highlands. They largely forsake the sea, but send out envoys to build ties with other communities
-              - min: 61
-                max: 70
-                text: Sularia
-                text2: Beast-bonded people who commune with and sail alongside magnificent elder rays, and are sworn to protect the seas from hunters and despoilers
-              - min: 71
-                max: 80
-                text: Talan
-                text2: Scrappy seafolk who range far among the islands; they maintain a floating trade settlement open to any who visit with shuttered gunports
-              - min: 81
-                max: 90
-                text: Thalassa
-                text2: Recent refugees of a cataclysmic war in a far-off land, desperate to gain support against the enemy they believe will follow them to the isles
-              - min: 91
-                max: 100
-                text: Uktanu
-                text2: Reclusive people who trace their lineage to the first inhabitants of the isles; they are sworn to protect the sacred sites and relics of their ancient forebears
-          organizations_and_identities:
-            _source: *Source
-            name: Organizations and Identities
+            - min: 1
+              max: 10
+              text: Akiya
+              text2: Coalition of clans known for their sleek and speedy ships. They gather each year to celebrate the ebb of the storm season, and hang rows of vibrantly colored flags from their ship’s rigging to honor the dead.
+            - min: 11
+              max: 20
+              text: Arsu / Azizos
+              text2: Once a single tribe, the loyalty of these people is divided between two rulers descended from rival heirs. They often war against one another, but now have a fragile alliance against a mutual foe.
+            - min: 21
+              max: 30
+              text: Kai
+              text2: Seagoing folk who build their homes and ships from luminous glimmerwood. This resource is harvested from the coastal swamps of their homeland, an environment under threat of destruction.
+            - min: 31
+              max: 40
+              text: Khazeera
+              text2: Warring people who inhabit an enduring city-state at the edge of an active volcano. Molten rock and slag from this sacred volcano is used in the heated shot for their destructive cannonry, and their soldiers wield blades forged in its fires.
+            - min: 41
+              max: 50
+              text: Morien
+              text2: Seafolk who forsake cannons and muskets. They sail low-profile catamarans and set upon their foes with stealthy ambushes.
+            - min: 51
+              max: 60
+              text: Otani
+              text2: People who dwell in island highlands. They largely forsake the sea, but send out seafaring envoys to build ties with other communities.
+            - min: 61
+              max: 70
+              text: Sularia
+              text2: Beast-bonded people who commune with magnificent elder rays. They are sworn to protect the seas from hunters and despoilers.
+            - min: 71
+              max: 80
+              text: Talan
+              text2: Scrappy seafolk who range far among the islands. They maintain a floating trade settlement open to any who visit with shuttered gunports.
+            - min: 81
+              max: 90
+              text: Thalassa
+              text2: Recent refugees of a cataclysmic war. They are desperate to gain allies against the enemy they believe will follow them to the isles.
+            - min: 91
+              max: 100
+              text: Uktanu
+              text2: Reclusive people who trace their lineage to the first inhabitants of the isles. They are sworn to protect the sacred sites and relics of their ancient forebears.
+          organizations:
+            name: Organizations
             oracle_type: table_text2
-            # rendering:
-            #   style: standalone
-            #   columns:
-            #     - label: Roll
-            #       content_type: roll
-            #     - label: Name
-            #       content_type: result
-            #     - label: Detail
-            #       content_type: summary
+            summary: *organization.summary
+            _source:
+              <<: *Source
             rows:
               - min: 1
                 max: 10
                 text: Bloody Skulls
-                text2: Bands of shipwreckers and scavengers who lie in wait along hazardous passages; they believe that painting their faces with a death-like visage will protect against retribution by spirits of the dead
+                text2: Bands of scavenging shipbreakers who lie in wait along hazardous passages. They believe that painting their faces with a death-like visage will protect against retribution by spirits of the dead.
               - min: 11
                 max: 20
-                text: Cynosure Society
-                text2: League of scientists and naturalists who record their findings in exhaustively-detailed journals, which are then copied and recorded by archivists at a grand central library
+                text: Cynosure League
+                text2: Guild of scientists and naturalists who record their findings in exhaustively-detailed journals. Their works are copied and recorded by archivists at a grand central library.
               - min: 21
                 max: 30
                 text: Ebb Tide
-                text2: Covert insurgency of spies and saboteurs; they seek to cripple imperial ambitions from within, and use trained gulls to carry messages to collaborators
+                text2: Covert insurgency of spies and saboteurs. They seek to cripple imperial ambitions from within, and use trained gulls to carry vital messages to collaborators.
               - min: 31
                 max: 40
                 text: Faceless Accord
-                text2: Turncoat imperials sailing in defiance of colonial powers; they conceal their identities behind iron masks to protect kinfolk still under imperial rule
+                text2: Renegades sailing in defiance of imperial powers. They conceal their identities behind iron masks to protect kinfolk still under imperial rule
               - min: 41
                 max: 50
-                text: Forsaken Fleet 	Powerful clan of pirates led by a marauder known as the Raven
-                text2: Queen; they recently sacked and seized a major port town and made it a refuge for outlaws and outcasts
+                text: Forsaken Fleet
+                text2: Powerful clan of pirates led by a marauder known as the Raven Queen. They recently sacked and seized a major port town and made it a refuge for outlaws and outcasts
               - min: 51
                 max: 60
-                text: Harbingers
-                text2: Ancient sorcerous order that bind their vows and channel their magic through ornate iron staves; they recruit talented initiates from across the isles
+                text: Ironmongers
+                text2: Guild of shipbuilders and arms manufacturers who supply their destructive wares to the highest bidder. They secretly incite wars to expand their fortune.
               - min: 61
                 max: 70
-                text: Ironmongers
-                text2: Guild of shipbuilders and arms manufacturers who supply their destructive wares to the highest bidder; they secretly incite wars to build business
+                text: Moonsingers
+                text2: Mystic coven that draw their powers from the dance of the moons and the rhythm of the tides. They recruit and train talented initiates from across the isles.
               - min: 71
                 max: 80
-                text: Starmarked
-                text2: Guild of navigators who preserve age-old astronomical charts on their bodies as tattoos, etched in phosphorescent ink
+                text: Saltblood
+                text2: Mariners bound to an age-old seafaring fellowship. They recognize fellow saltbloods and communicate using complex hand signals.
               - min: 81
                 max: 90
                 text: Tide Runners
-                text2: Smugglers who rely on speed, stealth, and the cover of foul weather or moonless nights to ferry their ill-gotten goods from island to island
+                text2: Smugglers who ferry their ill-gotten goods from island to island. They rely on speed, stealth, and the cover of foul weather or moonless nights.
               - min: 91
                 max: 100
                 text: Wayfarers
-                text2: Independent merchants who range across the isles and beyond, transporting rare and unusual cargo aboard their vibrantly painted ships
+                text2: Peddlers who range across the isles and beyond. They transport rare and unusual cargo aboard their vibrantly painted ships.
           empires:
-            _source: *Source
             name: Empires
             oracle_type: table_text2
-            # rendering:
-            #   style: standalone
-            #   columns:
-            #     - label: Roll
-            #       content_type: roll
-            #     - label: Name
-            #       content_type: result
-            #     - label: Detail
-            #       content_type: summary
+            summary: *empire.summary
+            _source:
+              <<: *Source
             rows:
-              - min: 1
-                max: 10
-                text: Argosy Company
-                text2: Trade company which commands a fleet of beast- hunting ships and pays bounties on beasts to independent ships; their unscrupulous merchants deal in trophies and resources gathered from slain creatures
-              - min: 11
-                max: 20
-                text: Eldarian Remnants
-                text2: Loyalists of a fallen empire who seek to rebuild their former glory among the isles; the sails of their ships are emblazoned with a rising sun
-              - min: 21
-                max: 30
-                text: Empire of Solas
-                text2: Age-old dominion ruled by an immortal god- emperor; their ostentatious ships are adorned with gold metalwork and filigreed sails
-              - min: 31
-                max: 40
-                text: Firgovian Regency
-                text2: Fracturing empire facing a succession crisis in the aftermath of the monarch’s assassination; rival claimants gather their armies and navies to take the crown by force
-              - min: 41
-                max: 50
-                text: Hand of Theya
-                text2: Iron-fisted theocracy under the rule of a council of priests; their mandates are enforced by red-robed inquisitors
-              - min: 51
-                max: 60
-                text: Kyrody Dominion
-                text2: Expansive empire with far-flung territories; their holdings within the isles are overseen by corrupt and squabbling governors, each vying for greater power and wealth
-              - min: 61
-                max: 70
-                text: Meridian Company
-                text2: Powerful trade company with diverse holdings and boundless political influence; they function as the shadow government behind other powers
-              - min: 71
-                max: 80
-                text: Norish Empire
-                text2: Ambitious empire which wields a powerful military, including the elite dragon-riders of the Crimson Guard
-              - min: 81
-                max: 90
-                text: Skulde Alliance
-                text2: War-mongering clans newly united under a powerful warlord; their warships are fitted with imposing rams and heavy boarding ramps
-              - min: 91
-                max: 100
-                text: Sovereign States
-                text2: Industrialist power formed from the remnants of warring nations; governed by an oligarchical council whose members scheme to serve their own interests
-          the_cursed:
-            _source: *Source
+            - min: 1
+              max: 10
+              text: Argosy Company
+              text2: Trade company which commands a fleet of beast-hunting ships and pays bounties on beasts to independent captains. Their unscrupulous merchants deal in trophies and resources gathered from slain creatures.
+            - min: 11
+              max: 20
+              text: Eldarian Remnants
+              text2: Loyalists of a fallen empire who seek to rebuild their former glory among the isles, guided by a charismatic and shrewd military leader. The sails of their ships are emblazoned with a burning phoenix.
+            - min: 21
+              max: 30
+              text: Empire of Solas
+              text2: Age-old dominion ruled by an immortal god-emperor. Their ostentatious ships are adorned with gold metalwork and filigreed sails.
+            - min: 31
+              max: 40
+              text: Firgovian Regency
+              text2: Fracturing empire facing a succession crisis in the aftermath of the monarch’s assassination. Rival claimants gather their armies and navies to take the crown by force.
+            - min: 41
+              max: 50
+              text: Hand of Theya
+              text2: Iron-fisted theocracy under the rule of a council of priests. Their mandates are enforced by red-robed inquisitors.
+            - min: 51
+              max: 60
+              text: Kyrody Dominion
+              text2: Expansive empire with far-flung territories. Their holdings within the isles are overseen by corrupt and squabbling governors, each vying for greater power and wealth.
+            - min: 61
+              max: 70
+              text: Meridian Company
+              text2: Powerful trade company with diverse holdings and boundless political influence. They function as a shadow government behind other powers.
+            - min: 71
+              max: 80
+              text: Norish Empire
+              text2: War-mongering clans newly united under a powerful warlord. Their warships are fitted with imposing rams and heavy boarding ramps.
+            - min: 81
+              max: 90
+              text: Skulde Alliance
+              text2: Ambitious empire which wields a powerful military. At the vanguard of their fleets are the dragon-riders of the Crimson Guard, who house their steeds and launch their attacks from colossal carrier ships.
+            - min: 91
+              max: 100
+              text: Sovereign States
+              text2: Industrialist power formed from the remnants of warring nations. They are governed by an oligarchical council whose members scheme and backstab to advance their own interests.
+          cursed:
             name: The Cursed
             oracle_type: table_text2
-            # rendering:
-            #   style: standalone
-            #   columns:
-            #     - label: Roll
-            #       content_type: roll
-            #     - label: Name
-            #       content_type: result
-            #     - label: Detail
-            #       content_type: summary
+            summary: &cursed.summary People transformed or bound by dreadful curses
+            _source:
+              <<: *Source
+            rows:
+            - min: 1
+              max: 10
+              text: Acheron’s Armada
+              text2: Ghost ships under the command of an undead imperial admiral. This vengeful wraith seeks to carry on the war that cost them their life.
+            - min: 11
+              max: 20
+              text: Blighthulk
+              text2: Titanic ship cursed with incessant corrosion and rot. Its crew must constantly add wood, sails, and fittings from salvaged wrecks and defeated foes into this massive and unnerving chimera-craft.
+            - min: 21
+              max: 30
+              text: Bloodmarked League
+              text2: An order of occultists, each bearing a blood-red tattoo on their wrist, who are dedicated to hunting and banishing the restless dead.
+            - min: 31
+              max: 40
+              text: Brineblessed
+              text2: Cult of sailors cursed by a drowned god. Their bodies and ships are corrupted by horrible aspects of the sea—riddled with barnacles, rotting sea weed, and brackish slime.
+            - min: 41
+              max: 50
+              text: Carrion Fleet
+              text2: Fleet under the command of a necromancer. The dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth.
+            - min: 51
+              max: 60
+              text: Fireships
+              text2: Ships burning with unquenchable fire and crewed by bone-scorched undead. The flagship was set aflame by marauders in a port attack, and its cursed commander seeks to spread the fire to other vessels and expand the accursed fleet.
+            - min: 61
+              max: 70
+              text: Forgeborn
+              text2: Uncanny metal automatons who are said to embody the stolen souls of dead mariners. They cruise the isles in ironclad ships.
+            - min: 71
+              max: 80
+              text: Gilded Fleet
+              text2: Pirates who seized a forbidden treasure. They are cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles.
+            - min: 81
+              max: 90
+              text: Nightships
+              text2: Dread ships of the vampire clans, shrouded in an eternal gloom. Their undead crews leave wrecks and blood-drained corpses in their wake.
+            - min: 91
+              max: 100
+              text: Tidebound
+              text2: Devout cultists who were granted eternal life in exchange for unending service their patron sea god. They must not tarry on land or at anchor, lest death catches up with them to take its toll.
+
+
+
+
+      society:
+        name: Society
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          chronicles:
+            name: Society Chronicles
+            oracle_type: table_text
+            summary: Use this table to generate a history of notable events that shaped a society. Create a timeline of two or three milestones, envisioning how they led the society to its current place among the isles. The most recent event can help inspire a current situation that creates troubles or opportunities—or both—for these people.
+            recommended_rolls:
+              min: 2
+              max: 4
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 2
+                text: Betrayed by a longtime ally
+              - min: 3
+                max: 4
+                text: Betrayed by a treacherous leader
+              - min: 5
+                max: 6
+                text: Broke faith with a longtime ally
+              - min: 7
+                max: 8
+                text: Built a wondrous monument
+              - min: 9
+                max: 10
+                text: Caught in the crossfire of a war
+              - min: 11
+                max: 13
+                text: Discovered or obtained a rare resource
+              - min: 14
+                max: 15
+                text: Established a form of art or expression
+              - min: 16
+                max: 17
+                text: Established a new system of governance
+              - min: 18
+                max: 19
+                text: Established a powerful military force
+              - min: 20
+                max: 22
+                text: Established a unique trade or craft
+              - min: 23
+                max: 25
+                text: Exploited by a self-serving faction
+              - min: 26
+                max: 27
+                text: Faced a religious or spiritual schism
+              - min: 28
+                max: 30
+                text: Faced a troubled succession
+              - min: 31
+                max: 33
+                text: Faced occupation or invasion
+              - min: 34
+                max: 35
+                text: Faced the wasting of a place or resource
+              - min: 36
+                max: 38
+                text: Fateful encounter with another faction
+              - min: 39
+                max: 40
+                text: Fell into a bad debt or bargain
+              - min: 41
+                max: 42
+                text: Fled or abandoned an important location
+              - min: 43
+                max: 44
+                text: Formed an important bond or alliance
+              - min: 45
+                max: 46
+                text: Forsook a religion or belief system
+              - min: 47
+                max: 48
+                text: Fought a decisive battle
+              - min: 49
+                max: 51
+                text: Fought a war or revolution
+              - min: 52
+                max: 53
+                text: Founded a great settlement
+              - min: 54
+                max: 55
+                text: Founded a key academy or archive
+              - min: 56
+                max: 57
+                text: Founded a technology or innovation
+              - min: 58
+                max: 59
+                text: Gained a notable artifact or treasure
+              - min: 60
+                max: 61
+                text: Lost a notable artifact or treasure
+              - min: 62
+                max: 63
+                text: Made peace with a rival or enemy
+              - min: 64
+                max: 65
+                text: Reclaimed an important location
+              - min: 66
+                max: 68
+                text: Recorded a fateful prophecy
+              - min: 69
+                max: 70
+                text: Saw the collapse of a longtime ally
+              - min: 71
+                max: 73
+                text: Saw the emergence of a prophesied hero
+              - min: 74
+                max: 75
+                text: Saw the rise of a self-serving despot
+              - min: 76
+                max: 77
+                text: Saw the rise of an influential organization
+              - min: 78
+                max: 80
+                text: Scattered to far-flung locations
+              - min: 81
+                max: 83
+                text: Splintered into rival factions
+              - min: 84
+                max: 85
+                text: Suffered a devastating natural disaster
+              - min: 86
+                max: 87
+                text: Suffered a scarcity of resources
+              - min: 88
+                max: 89
+                text: Suffered internal strife or unrest
+              - min: 90
+                max: 91
+                text: Suffered the loss of a respected leader
+              - min: 92
+                max: 93
+                text: Took refuge in a remote or secret place
+              - min: 94
+                max: 96
+                text: Undertook a great migration or exodus
+              - min: 97
+                max: 98
+                text: Unified disparate tribes or clans
+              - min: 99
+                max: 100
+                text: Vanquished a rival or enemy
+          overseers:
+            name: Society Overseers
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            summary: Use this table to reveal the most influential or powerful leaders within a society.
+            rows:
+              - min: 1
+                max: 5
+                text: Appointed local leaders
+              - min: 6
+                max: 10
+                text: Artisans or trade guilds
+              - min: 11
+                max: 15
+                text: Delegates gathered at convocations
+              - min: 16
+                max: 25
+                text: Elder councils
+              - min: 26
+                max: 35
+                text: Hereditary rulers
+              - min: 36
+                max: 40
+                text: Mystics or seers
+              - min: 41
+                max: 45
+                text: Prophesied or fated rulers
+              - min: 46
+                max: 50
+                text: Religious orders
+              - min: 51
+                max: 55
+                text: Scholars or sages
+              - min: 56
+                max: 60
+                text: Shadowy cabals
+              - min: 61
+                max: 70
+                text: Warlords or champions
+              - min: 71
+                max: 80
+                text: Single absolute authority
+              - min: 81
+                max: 90
+                text: Operatives of another faction
+              - min: 91
+                max: 100
+                text: Varied or informal leadership
+          touchstones:
+            name: Society Touchstones
+            oracle_type: table_text
+            summary: These touchstones represent common aspects of a society—not universal truths. Individual people and communities can contradict these assumptions with their own touchstones. If you encounter a far-flung community that is part of a known society, you can check this table again for unique characteristics.
+            recommended_rolls:
+              min: 1
+              max: 3
+            _source:
+              <<: *Source
+            rows:
+            - min: 1
+              max: 1
+              text: Affinity for celestial objects and motifs
+            - min: 2
+              max: 2
+              text: Affinity for nature and related motifs
+            - min: 3
+              max: 3
+              text: Affinty for the sea and related motifs
+            - min: 4
+              max: 4
+              text: Afiinity for fire and related motifs
+            - min: 5
+              max: 5
+              text: Banishes the disloyal
+            - min: 6
+              max: 6
+              text: Forsakes ships and the sea
+            - min: 7
+              max: 7
+              text: Idealizes grace and swiftness
+            - min: 8
+              max: 8
+              text: Idealizes strength and power
+            - min: 9
+              max: 9
+              text: Idealizes subterfuge and cunning
+            - min: 10
+              max: 10
+              text: Lives mostly at sea
+            - min: 11
+              max: 11
+              text: Practices communal living
+            - min: 12
+              max: 12
+              text: Practices mysticism or magic
+            - min: 13
+              max: 13
+              text: Practicies unusual death rites
+            - min: 14
+              max: 14
+              text: Resolves disputes through formal duels
+            - min: 15
+              max: 15
+              text: Studies the stars and moons for portents
+            - min: 16
+              max: 16
+              text: Suspicious of outsiders
+            - min: 17
+              max: 17
+              text: Trains an order of elite warriors
+            - min: 18
+              max: 18
+              text: Values artistic expression
+            - min: 19
+              max: 19
+              text: Values conquest and battle prowess
+            - min: 20
+              max: 20
+              text: Values courtesy and hospitality
+            - min: 21
+              max: 21
+              text: Values crafts and workmanship
+            - min: 22
+              max: 22
+              text: Values diplomacy and negotiation
+            - min: 23
+              max: 23
+              text: Values farming and agriculture
+            - min: 24
+              max: 24
+              text: Values medicine and healing
+            - min: 25
+              max: 25
+              text: Values science and knowledge
+            - min: 26
+              max: 26
+              text: Values stewardship of nature
+            - min: 27
+              max: 27
+              text: Values trade and commerce
+            - min: 28
+              max: 28
+              text: Values voyage and discovery
+            - min: 29
+              max: 30
+              text: Bonds with a certain type of creature
+            - min: 31
+              max: 32
+              text: Builds elaborate monuments
+            - min: 33
+              max: 34
+              text: Carefully preserves histories and maps
+            - min: 35
+              max: 36
+              text: Conducts piracy or raids
+            - min: 37
+              max: 38
+              text: Conducts rites of adulthood or ascension
+            - min: 39
+              max: 40
+              text: Distrustful of mysticism or magic
+            - min: 41
+              max: 42
+              text: Embarks on pilgrimages
+            - min: 43
+              max: 44
+              text: Favors a signature weapon
+            - min: 45
+              max: 46
+              text: Favors audacious and distinctive styles
+            - min: 47
+              max: 48
+              text: Favors austere and practical styles
+            - min: 49
+              max: 50
+              text: Favors body modifications or tattoos
+            - min: 51
+              max: 52
+              text: Favors isolationism and privacy
+            - min: 53
+              max: 54
+              text: Favors jewelry and adornments
+            - min: 55
+              max: 56
+              text: Follows a code of pacifism
+            - min: 57
+              max: 58
+              text: Follows a nomadic lifestyle
+            - min: 59
+              max: 60
+              text: Follows elaborate rules of courtship
+            - min: 61
+              max: 62
+              text: Guided by a strict code of honor
+            - min: 63
+              max: 64
+              text: Guided by superstition or prophecy
+            - min: 65
+              max: 66
+              text: Holds communal hunts
+            - min: 67
+              max: 68
+              text: Holds seasonal festivals
+            - min: 69
+              max: 70
+              text: Holds tournaments of skill or prowess
+            - min: 71
+              max: 72
+              text: Idolizes a martyred leader
+            - min: 73
+              max: 74
+              text: Lives within familial clans
+            - min: 75
+              max: 76
+              text: Maintains a strict caste system
+            - min: 77
+              max: 78
+              text: Perpetuates blood feuds
+            - min: 79
+              max: 80
+              text: Practices a renowned trade or craft
+            - min: 81
+              max: 82
+              text: Practices meditation
+            - min: 83
+              max: 84
+              text: Practices storytelling and oral histories
+            - min: 85
+              max: 86
+              text: Practices unique forms of dance or music
+            - min: 87
+              max: 88
+              text: Rallies communal defenses or miltias
+            - min: 89
+              max: 90
+              text: Reveres ancestors
+            - min: 91
+              max: 92
+              text: Reveres nature and natural forces
+            - min: 93
+              max: 94
+              text: Sails in a distinctive type of vessel
+            - min: 95
+              max: 96
+              text: Seeks wisdom from oracles or seers
+            - min: 97
+              max: 98
+              text: Shuns modern technology or weaponry
+            - min: 99
+              max: 100
+              text: Speaks an ancient language
+      organization:
+        name: Organization
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          type:
+            name: Organization Type
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 2
+                text: Artisans
+              - min: 3
+                max: 6
+                text: Assassins
+              - min: 7
+                max: 10
+                text: Couriers
+              - min: 11
+                max: 18
+                text: Courtesans
+              - min: 19
+                max: 24
+                text: Healers
+              - min: 25
+                max: 30
+                text: Hunters
+              - min: 31
+                max: 36
+                text: Insurgents
+              - min: 37
+                max: 44
+                text: Mariners
+              - min: 45
+                max: 46
+                text: Mercenaries / privateers
+              - min: 47
+                max: 52
+                text: Mystics / seers
+              - min: 53
+                max: 56
+                text: Naturalists
+              - min: 57
+                max: 60
+                text: Navigators / cartographers
+              - min: 61
+                max: 62
+                text: Pirates / raiders
+              - min: 63
+                max: 66
+                text: Rebels
+              - min: 67
+                max: 72
+                text: Relic hunters
+              - min: 73
+                max: 76
+                text: Religious disciples
+              - min: 77
+                max: 78
+                text: Shipbuilders
+              - min: 79
+                max: 84
+                text: Smugglers
+              - min: 85
+                max: 90
+                text: Spies
+              - min: 91
+                max: 96
+                text: Traders
+              - min: 97
+                max: 100
+                text: Wreckers
+          methods:
+            name: Organization Methods
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 4
+                text: Evaluates recruits with elaborate tests
+              - min: 5
+                max: 8
+                text: Governed by a shadowy court or council
+              - min: 9
+                max: 11
+                text: Guided by a distinguished leader
+              - min: 12
+                max: 14
+                text: Holds challenges to test skills
+              - min: 15
+                max: 18
+                text: Holds regular gatherings or assemblies
+              - min: 19
+                max: 22
+                text: Honors fallen members with ceremonies
+              - min: 23
+                max: 25
+                text: Idolizes a long-dead founder
+              - min: 26
+                max: 28
+                text: Imposes rigorous admittance standards
+              - min: 29
+                max: 32
+                text: Maintains a central archive of knowledge
+              - min: 33
+                max: 35
+                text: Maintains a strict hierarchy by seniority
+              - min: 36
+                max: 38
+                text: Maintains nuetrality in a notable conflict
+              - min: 39
+                max: 41
+                text: Members adopt body ornamentations
+              - min: 42
+                max: 44
+                text: Members adopt disguises or personas
+              - min: 45
+                max: 47
+                text: Members bear an organization symbol
+              - min: 48
+                max: 51
+                text: Members share a unique language
+              - min: 52
+                max: 54
+                text: Members use a secret greeting
+              - min: 55
+                max: 58
+                text: Operates a system of apprenticeship
+              - min: 59
+                max: 62
+                text: Operates as independent cells
+              - min: 63
+                max: 65
+                text: Operates custom ships
+              - min: 66
+                max: 68
+                text: Operates under strict codes or laws
+              - min: 69
+                max: 71
+                text: Recruits members far-and-wide
+              - min: 72
+                max: 74
+                text: Relies on divination or prophecy
+              - min: 75
+                max: 77
+                text: Relies on mysticism or superstition
+              - min: 78
+                max: 80
+                text: Relies on trained creatures
+              - min: 81
+                max: 84
+                text: Splintered from another organization
+              - min: 85
+                max: 87
+                text: Traces its history to an ancient founding
+              - min: 88
+                max: 90
+                text: Trades in a unique currency or asset
+              - min: 91
+                max: 94
+                text: Uses a system of coded messages
+              - min: 95
+                max: 97
+                text: Uses specialized equipment or weapons
+              - min: 98
+                max: 100
+                text: Worships a god or faith
+          secrets:
+            name: Organization Secrets
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 5
+                text: Acquired an unexpected fortune
+              - min: 6
+                max: 10
+                text: Colluding with a criminal enterprise
+              - min: 11
+                max: 15
+                text: Corrupt leaders are siphoning resources
+              - min: 16
+                max: 20
+                text: Exploiting a prophecy or superstition
+              - min: 21
+                max: 25
+                text: Guided by a shadowy leader
+              - min: 26
+                max: 30
+                text: Harboring a fugitive within its ranks
+              - min: 31
+                max: 35
+                text: Holding leverage against a rival faction
+              - min: 36
+                max: 40
+                text: Holds a rare or powerful relic
+              - min: 41
+                max: 45
+                text: Infiltrated by a rival faction
+              - min: 46
+                max: 50
+                text: Has a true purpose behind this false front
+              - min: 51
+                max: 55
+                text: Operates from a secret location
+              - min: 56
+                max: 60
+                text: Owes a crippling debt
+              - min: 61
+                max: 65
+                text: Plagued by infighting
+              - min: 66
+                max: 70
+                text: Relies on spies and informants
+              - min: 71
+                max: 75
+                text: Relies on bribes to corrupt officials
+              - min: 76
+                max: 80
+                text: Suffering incompetent leadership
+              - min: 81
+                max: 85
+                text: Suffering the shortage of a key resource
+              - min: 86
+                max: 90
+                text: Supported by a mysterious benefactor
+              - min: 91
+                max: 95
+                text: Trafficking in dangerous goods
+              - min: 96
+                max: 100
+                text: Works covertly to incite conflicts
+      empire:
+        name: Empire
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          leadership:
+            name: Imperial Leadership
+            oracle_type: table_text
+            _source:
+              <<: *Source
             rows:
               - min: 1
                 max: 10
-                text: Acheron's Armada
-                text2: Ghost ships under the command of an undead imperial admiral; this vengeful wraith seeks to carry on the war that cost them their life
+                text: Assembly or council
               - min: 11
                 max: 20
-                text: Blighthulk
-                text2: Titanic ship cursed with incessant corrosion and rot; its crew must constantly add wood, sails, and fittings from salvaged wrecks or defeated foes into this massive and unnerving chimera-craft
+                text: Dynastic ruler
               - min: 21
                 max: 30
-                text: Bloodborn Raiders
-                text2: Clan of marauders who take on bestial forms, attacking ships and settlements under the light of the moon
+                text: Military leader
               - min: 31
+                max: 35
+                text: Prophesied ruler
+              - min: 36
+                max: 45
+                text: Regent
+              - min: 46
+                max: 55
+                text: Regional governors
+              - min: 56
+                max: 65
+                text: Religious leader
+              - min: 66
+                max: 75
+                text: Self-appointed dictator
+              - min: 76
+                max: 85
+                text: Wealthy elite
+              - min: 86
+                max: 100
+                text: Power struggle (roll twice)
+                oracle_rolls:
+                  - auto: true
+                    number_of_rolls: 2
+                    duplicates: keep
+          tactics:
+            name: Imperial Tactics
+            oracle_type: table_text
+            summary: Empires deploy any number of strategies to expand their power and influence. Use this table to reveal the most visible methods or a current focus for an empire.
+            recommended_rolls:
+              min: 2
+              max: 3
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 3
+                text: Assasination
+              - min: 4
+                max: 6
+                text: Collusion with criminal factions
+              - min: 7
+                max: 10
+                text: Cultural suppression and assimilation
+              - min: 11
+                max: 13
+                text: Demands of conformity
+              - min: 14
+                max: 17
+                text: Disciplined military forces
+              - min: 18
+                max: 20
+                text: Displays of opulence
+              - min: 21
+                max: 24
+                text: Dogmatic religion
+              - min: 25
+                max: 28
+                text: Elite military units at the vanguard
+              - min: 29
+                max: 32
+                text: Embargoes and blockades
+              - min: 33
+                max: 36
+                text: Exploitation of natural resources
+              - min: 37
                 max: 40
-                text: Brineblessed
-                text2: Cult of sailors cursed by a drowned god; their bodies and ships are corrupted by horrible aspects of the sea
+                text: Exploitation of workers
               - min: 41
+                max: 44
+                text: Exploration and colonization
+              - min: 45
+                max: 47
+                text: Hoarding of relics
+              - min: 48
+                max: 51
+                text: Indoctrination and propaganda
+              - min: 52
+                max: 55
+                text: Industry and commerce
+              - min: 56
+                max: 58
+                text: Mysticism or magic
+              - min: 59
+                max: 62
+                text: Naval firepower
+              - min: 63
+                max: 66
+                text: Privateers and mercenaries
+              - min: 67
+                max: 69
+                text: Proxy wars and subversion
+              - min: 70
+                max: 72
+                text: Puppet governments
+              - min: 73
+                max: 76
+                text: Relentless agents or operatives
+              - min: 77
+                max: 79
+                text: Rigid class structures
+              - min: 80
+                max: 83
+                text: Secrecy and espionage
+              - min: 84
+                max: 86
+                text: Superstition or prophecy
+              - min: 87
+                max: 90
+                text: Theft of resources and riches
+              - min: 91
+                max: 93
+                text: Treaties and alliances
+              - min: 94
+                max: 96
+                text: Unification of splintered factions
+              - min: 97
+                max: 100
+                text: Unyielding authority and laws
+          vulnerabilities:
+            name: Imperial vulnerabilities
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 4
+                text: Catastrophic military defeat
+              - min: 5
+                max: 8
+                text: Coffers are running low
+              - min: 9
+                max: 12
+                text: Crippling bureaucracy
+              - min: 13
+                max: 16
+                text: Defection of a key ally
+              - min: 17
+                max: 20
+                text: Defiant colony
+              - min: 21
+                max: 24
+                text: Feckless or distracted leadership
+              - min: 25
+                max: 28
+                text: Impending succession crisis
+              - min: 29
+                max: 34
+                text: Infighting and treachery among leaders
+              - min: 35
+                max: 38
+                text: Infiltrated by a rival
+              - min: 39
+                max: 42
+                text: Insurgency recruits new members
+              - min: 43
+                max: 46
+                text: Overconfidence in a tactic or weapon
+              - min: 47
                 max: 50
-                text: Carrion Fleet
-                text2: Fleet under the command of a necromancer; the dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth
+                text: Overextended military
               - min: 51
-                max: 60
-                text: Fireships
-                text2: Ships burning with unquenchable fire and crewed by bone-scorched undead; the flagship was set aflame by marauders in a port attack, and its commander seeks to spread the fire to other vessels and expand the accursed fleet
-              - min: 61
+                max: 54
+                text: Prophecy of their downfall
+              - min: 55
+                max: 58
+                text: Rampant internal corruption
+              - min: 59
+                max: 62
+                text: Religious schism causes dissent
+              - min: 63
+                max: 66
+                text: Rival empire emerges
+              - min: 67
+                max: 72
+                text: Sparks of rebellion
+              - min: 73
+                max: 78
+                text: Vulnerable industry
+              - min: 79
+                max: 84
+                text: Vulnerable resource in short supply
+              - min: 85
+                max: 90
+                text: Vulnerable trade route
+              - min: 91
+                max: 96
+                text: Vulnerable treasure hoard
+              - min: 97
+                max: 100
+                text: Whispers of a potential coup
+      cursed:
+        name: The Cursed
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          role:
+            name: Cursed Faction Role
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            rows:
+              - min: 1
+                max: 10
+                text: Artificers
+              - min: 11
+                max: 15
+                text: Beast hunters
+              - min: 16
+                max: 25
+                text: Constructs
+              - min: 26
+                max: 30
+                text: Cultists
+              - min: 31
+                max: 35
+                text: Deep-dwellers
+              - min: 36
+                max: 40
+                text: Ghost hunters or occultists
+              - min: 41
+                max: 45
+                text: Lycanthropes or shape changers
+              - min: 46
+                max: 55
+                text: Monster hunters
+              - min: 56
+                max: 65
+                text: Necromancers
+              - min: 66
                 max: 70
-                text: Forgeborn
-                text2: Uncanny automatons who are said to embody the stolen souls of dead mariners; they cruise the isles in ironclad ships
+                text: Sorcerers or witches
               - min: 71
                 max: 80
-                text: Gilded Fleet
-                text2: Pirates who seized a forbidden treasure, and are now cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles
+                text: Undead or undying
               - min: 81
+                max: 85
+                text: Vampires
+              - min: 86
                 max: 90
-                text: Nightships
-                text2: Dread ships of the vampire clans, shrouded in an eternal gloom; their soulless crews leave only wrecks and blood-drained corpses in their wake
+                text: Witch hunters
               - min: 91
                 max: 100
-                text: Tidebound
-                text2: Devout followers of an ancient seafarer faith, granted eternal life to serve their patron god— but they must not tarry on land or at anchor, lest death catches up with them to take its toll
+                text: Roll twice; combine those results as a single faction or set them against each other as opposing factions
+                oracle_rolls:
+                  - auto: true
+                    number_of_rolls: 2
+                    duplicates: keep
+          aspects:
+            name: Cursed Aspects
+            oracle_type: table_text
+            _source:
+              <<: *Source
+            recommended_rolls:
+              min: 1
+              max: 2
+            summary: Use this table to reveal uncanny aspects of a faction or its members.
+            rows:
+              - min: 1
+                max: 3
+                text: Adopts multiple identities or forms
+              - min: 4
+                max: 6
+                text: Aided by a monstrous guardian
+              - min: 7
+                max: 8
+                text: Aided by infernal machines
+              - min: 9
+                max: 11
+                text: Bears a dreadful sigil or mark
+              - min: 12
+                max: 14
+                text: Consumed by dreadful vengeance
+              - min: 15
+                max: 17
+                text: Cursed by a spiteful god or entity
+              - min: 18
+                max: 20
+                text: Cursed by the deeds of their forebears
+              - min: 21
+                max: 23
+                text: Disguises their true nature
+              - min: 24
+                max: 26
+                text: Driven by dreadful vengeance
+              - min: 27
+                max: 29
+                text: Empowered or bound by fire
+              - min: 30
+                max: 32
+                text: Empowered or bound by the night
+              - min: 33
+                max: 35
+                text: Empowered or bound by the sea
+              - min: 36
+                max: 38
+                text: Empowered or bound by the wilds
+              - min: 39
+                max: 41
+                text: Forsaken or banished by others
+              - min: 42
+                max: 44
+                text: Forsakes the sunlight
+              - min: 45
+                max: 47
+                text: Gathers unwilling supplicants or recruits
+              - min: 48
+                max: 50
+                text: Haunted by unforgiving spirits
+              - min: 51
+                max: 53
+                text: Heralded by eerie weather or effects
+              - min: 54
+                max: 56
+                text: Holds a cursed relic or treasure
+              - min: 57
+                max: 59
+                text: Hunted by a dreadful faction or entity
+              - min: 60
+                max: 62
+                text: Invokes or summons dreadful creatures
+              - min: 63
+                max: 65
+                text: Members speak a sinister language
+              - min: 66
+                max: 68
+                text: Operates from a hidden location
+              - min: 69
+                max: 71
+                text: Practices dreadful rituals
+              - min: 72
+                max: 74
+                text: Sails dreadful ships
+              - min: 75
+                max: 77
+                text: Stricken with a terrible need
+              - min: 78
+                max: 80
+                text: Suffers from wasting or decay
+              - min: 81
+                max: 83
+                text: Supernaturally bound to a place or ship
+              - min: 84
+                max: 86
+                text: True nature revealed in moonlight
+              - min: 87
+                max: 89
+                text: Wields a weapon of dreadful power
+              - min: 90
+                max: 92
+                text: Wields an alluring nature
+              - min: 93
+                max: 95
+                text: Wields dreadful magic
+              - min: 96
+                max: 97
+                text: Wields strange technologies
+              - min: 98
+                max: 100
+                text: Worships a dreadful god or entity
+
+
+
+
+      # inspiration:
+      #   _source: *Source
+      #   name: Faction Inspiration
+      #   oracle_type: tables
+      #   contents:
+      #     nations_and_cultures:
+      #       _source: *Source
+      #       name: Nations and Cultures
+      #       oracle_type: table_text2
+      #       # rendering:
+      #       #   style: standalone
+      #       #   columns:
+      #       #     - label: Roll
+      #       #       content_type: roll
+      #       #     - label: Name
+      #       #       content_type: result
+      #       #     - label: Detail
+      #       #       content_type: summary
+      #       rows:
+      #         - min: 1
+      #           max: 10
+      #           text: Akiya
+      #           text2: Alliance of clans known for their sleek and speedy ships; they gather each year to celebrate the ebb of the storm season, and hang rows of vibrantly colored flags from their ship’s rigging to honor the dead
+      #         - min: 11
+      #           max: 20
+      #           text: Arsu / Azizos
+      #           text2: Swearing fealty to a pair of rulers descended from rival heirs, these people often war against each other, but now have a fragile alliance against a mutual foe
+      #         - min: 21
+      #           max: 30
+      #           text: Kai
+      #           text2: Builds their homes and ships from luminous glimmerwood, harvested from the coastal marshes of their homeland—an environment which is under threat of destruction
+      #         - min: 31
+      #           max: 40
+      #           text: Khazeera
+      #           text2: Inhabits an enduring city-state at the edge of an active volcano; molten rock and slag from this sacred volcano is used in the heated shot for their destructive cannonry, and their soldiers and soldiers wield blades forged in its fires
+      #         - min: 41
+      #           max: 50
+      #           text: Morien
+      #           text2: Seafolk who forsake cannons and muskets; they sail low-profile catamarans and set upon their foes with stealthy ambushes
+      #         - min: 51
+      #           max: 60
+      #           text: Otani
+      #           text2: People who dwell in island highlands. They largely forsake the sea, but send out envoys to build ties with other communities
+      #         - min: 61
+      #           max: 70
+      #           text: Sularia
+      #           text2: Beast-bonded people who commune with and sail alongside magnificent elder rays, and are sworn to protect the seas from hunters and despoilers
+      #         - min: 71
+      #           max: 80
+      #           text: Talan
+      #           text2: Scrappy seafolk who range far among the islands; they maintain a floating trade settlement open to any who visit with shuttered gunports
+      #         - min: 81
+      #           max: 90
+      #           text: Thalassa
+      #           text2: Recent refugees of a cataclysmic war in a far-off land, desperate to gain support against the enemy they believe will follow them to the isles
+      #         - min: 91
+      #           max: 100
+      #           text: Uktanu
+      #           text2: Reclusive people who trace their lineage to the first inhabitants of the isles; they are sworn to protect the sacred sites and relics of their ancient forebears
+      #     organizations_and_identities:
+      #       _source: *Source
+      #       name: Organizations and Identities
+      #       oracle_type: table_text2
+      #       # rendering:
+      #       #   style: standalone
+      #       #   columns:
+      #       #     - label: Roll
+      #       #       content_type: roll
+      #       #     - label: Name
+      #       #       content_type: result
+      #       #     - label: Detail
+      #       #       content_type: summary
+      #       rows:
+      #         - min: 1
+      #           max: 10
+      #           text: Bloody Skulls
+      #           text2: Bands of shipwreckers and scavengers who lie in wait along hazardous passages; they believe that painting their faces with a death-like visage will protect against retribution by spirits of the dead
+      #         - min: 11
+      #           max: 20
+      #           text: Cynosure Society
+      #           text2: League of scientists and naturalists who record their findings in exhaustively-detailed journals, which are then copied and recorded by archivists at a grand central library
+      #         - min: 21
+      #           max: 30
+      #           text: Ebb Tide
+      #           text2: Covert insurgency of spies and saboteurs; they seek to cripple imperial ambitions from within, and use trained gulls to carry messages to collaborators
+      #         - min: 31
+      #           max: 40
+      #           text: Faceless Accord
+      #           text2: Turncoat imperials sailing in defiance of colonial powers; they conceal their identities behind iron masks to protect kinfolk still under imperial rule
+      #         - min: 41
+      #           max: 50
+      #           text: Forsaken Fleet 	Powerful clan of pirates led by a marauder known as the Raven
+      #           text2: Queen; they recently sacked and seized a major port town and made it a refuge for outlaws and outcasts
+      #         - min: 51
+      #           max: 60
+      #           text: Harbingers
+      #           text2: Ancient sorcerous order that bind their vows and channel their magic through ornate iron staves; they recruit talented initiates from across the isles
+      #         - min: 61
+      #           max: 70
+      #           text: Ironmongers
+      #           text2: Guild of shipbuilders and arms manufacturers who supply their destructive wares to the highest bidder; they secretly incite wars to build business
+      #         - min: 71
+      #           max: 80
+      #           text: Starmarked
+      #           text2: Guild of navigators who preserve age-old astronomical charts on their bodies as tattoos, etched in phosphorescent ink
+      #         - min: 81
+      #           max: 90
+      #           text: Tide Runners
+      #           text2: Smugglers who rely on speed, stealth, and the cover of foul weather or moonless nights to ferry their ill-gotten goods from island to island
+      #         - min: 91
+      #           max: 100
+      #           text: Wayfarers
+      #           text2: Independent merchants who range across the isles and beyond, transporting rare and unusual cargo aboard their vibrantly painted ships
+      #     empires:
+      #       _source: *Source
+      #       name: Empires
+      #       oracle_type: table_text2
+      #       # rendering:
+      #       #   style: standalone
+      #       #   columns:
+      #       #     - label: Roll
+      #       #       content_type: roll
+      #       #     - label: Name
+      #       #       content_type: result
+      #       #     - label: Detail
+      #       #       content_type: summary
+      #       rows:
+      #         - min: 1
+      #           max: 10
+      #           text: Argosy Company
+      #           text2: Trade company which commands a fleet of beast- hunting ships and pays bounties on beasts to independent ships; their unscrupulous merchants deal in trophies and resources gathered from slain creatures
+      #         - min: 11
+      #           max: 20
+      #           text: Eldarian Remnants
+      #           text2: Loyalists of a fallen empire who seek to rebuild their former glory among the isles; the sails of their ships are emblazoned with a rising sun
+      #         - min: 21
+      #           max: 30
+      #           text: Empire of Solas
+      #           text2: Age-old dominion ruled by an immortal god- emperor; their ostentatious ships are adorned with gold metalwork and filigreed sails
+      #         - min: 31
+      #           max: 40
+      #           text: Firgovian Regency
+      #           text2: Fracturing empire facing a succession crisis in the aftermath of the monarch’s assassination; rival claimants gather their armies and navies to take the crown by force
+      #         - min: 41
+      #           max: 50
+      #           text: Hand of Theya
+      #           text2: Iron-fisted theocracy under the rule of a council of priests; their mandates are enforced by red-robed inquisitors
+      #         - min: 51
+      #           max: 60
+      #           text: Kyrody Dominion
+      #           text2: Expansive empire with far-flung territories; their holdings within the isles are overseen by corrupt and squabbling governors, each vying for greater power and wealth
+      #         - min: 61
+      #           max: 70
+      #           text: Meridian Company
+      #           text2: Powerful trade company with diverse holdings and boundless political influence; they function as the shadow government behind other powers
+      #         - min: 71
+      #           max: 80
+      #           text: Norish Empire
+      #           text2: Ambitious empire which wields a powerful military, including the elite dragon-riders of the Crimson Guard
+      #         - min: 81
+      #           max: 90
+      #           text: Skulde Alliance
+      #           text2: War-mongering clans newly united under a powerful warlord; their warships are fitted with imposing rams and heavy boarding ramps
+      #         - min: 91
+      #           max: 100
+      #           text: Sovereign States
+      #           text2: Industrialist power formed from the remnants of warring nations; governed by an oligarchical council whose members scheme to serve their own interests
+      #     the_cursed:
+      #       _source: *Source
+      #       name: The Cursed
+      #       oracle_type: table_text2
+      #       # rendering:
+      #       #   style: standalone
+      #       #   columns:
+      #       #     - label: Roll
+      #       #       content_type: roll
+      #       #     - label: Name
+      #       #       content_type: result
+      #       #     - label: Detail
+      #       #       content_type: summary
+      #       rows:
+      #         - min: 1
+      #           max: 10
+      #           text: Acheron's Armada
+      #           text2: Ghost ships under the command of an undead imperial admiral; this vengeful wraith seeks to carry on the war that cost them their life
+      #         - min: 11
+      #           max: 20
+      #           text: Blighthulk
+      #           text2: Titanic ship cursed with incessant corrosion and rot; its crew must constantly add wood, sails, and fittings from salvaged wrecks or defeated foes into this massive and unnerving chimera-craft
+      #         - min: 21
+      #           max: 30
+      #           text: Bloodborn Raiders
+      #           text2: Clan of marauders who take on bestial forms, attacking ships and settlements under the light of the moon
+      #         - min: 31
+      #           max: 40
+      #           text: Brineblessed
+      #           text2: Cult of sailors cursed by a drowned god; their bodies and ships are corrupted by horrible aspects of the sea
+      #         - min: 41
+      #           max: 50
+      #           text: Carrion Fleet
+      #           text2: Fleet under the command of a necromancer; the dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth
+      #         - min: 51
+      #           max: 60
+      #           text: Fireships
+      #           text2: Ships burning with unquenchable fire and crewed by bone-scorched undead; the flagship was set aflame by marauders in a port attack, and its commander seeks to spread the fire to other vessels and expand the accursed fleet
+      #         - min: 61
+      #           max: 70
+      #           text: Forgeborn
+      #           text2: Uncanny automatons who are said to embody the stolen souls of dead mariners; they cruise the isles in ironclad ships
+      #         - min: 71
+      #           max: 80
+      #           text: Gilded Fleet
+      #           text2: Pirates who seized a forbidden treasure, and are now cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles
+      #         - min: 81
+      #           max: 90
+      #           text: Nightships
+      #           text2: Dread ships of the vampire clans, shrouded in an eternal gloom; their soulless crews leave only wrecks and blood-drained corpses in their wake
+      #         - min: 91
+      #           max: 100
+      #           text: Tidebound
+      #           text2: Devout followers of an ancient seafarer faith, granted eternal life to serve their patron god— but they must not tarry on land or at anchor, lest death catches up with them to take its toll

@@ -19,6 +19,15 @@ namespace Datasworn
         [JsonPropertyName("quest_starter")]
         public MarkdownString QuestStarter { get; set; }
 
+        /// <summary>
+        /// Any implementation hints or other developer-facing comments on
+        /// this object. These should be omitted when presenting the object
+        /// for gameplay.
+        /// </summary>
+        [JsonPropertyName("_comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string Comment { get; set; }
+
         [JsonPropertyName("max")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public short? Max { get; set; }

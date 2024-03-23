@@ -231,6 +231,10 @@ module Datasworn
     # Starforged's module and command vehicle assets) are shared amongst the
     # player's allies, too.
     attr_accessor :shared
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :attachments
 
     # The name of this item as it appears on the page in the book, if it's
@@ -267,6 +271,7 @@ module Datasworn
       out.count_as_impact = Datasworn::from_json_data(TrueClass, data["count_as_impact"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.shared = Datasworn::from_json_data(TrueClass, data["shared"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.attachments = Datasworn::from_json_data(AssetAttachment, data["attachments"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -288,6 +293,7 @@ module Datasworn
       data["count_as_impact"] = Datasworn::to_json_data(count_as_impact)
       data["name"] = Datasworn::to_json_data(name)
       data["shared"] = Datasworn::to_json_data(shared)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["attachments"] = Datasworn::to_json_data(attachments) unless attachments.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -312,6 +318,10 @@ module Datasworn
 
     # The complete rules text of this asset ability.
     attr_accessor :text
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
 
     # Fields whose values are expected to change over the life of the asset.
     attr_accessor :controls
@@ -339,6 +349,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(AssetAbilityID, data["_id"])
       out.enabled = Datasworn::from_json_data(TrueClass, data["enabled"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.controls = Datasworn::from_json_data(Hash[String, AssetAbilityControlField], data["controls"])
       out.enhance_asset = Datasworn::from_json_data(AssetEnhancement, data["enhance_asset"])
       out.enhance_moves = Datasworn::from_json_data(Array[MoveEnhancement], data["enhance_moves"])
@@ -353,6 +364,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["enabled"] = Datasworn::to_json_data(enabled)
       data["text"] = Datasworn::to_json_data(text)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["controls"] = Datasworn::to_json_data(controls) unless controls.nil?
       data["enhance_asset"] = Datasworn::to_json_data(enhance_asset) unless enhance_asset.nil?
       data["enhance_moves"] = Datasworn::to_json_data(enhance_moves) unless enhance_moves.nil?
@@ -579,6 +591,10 @@ module Datasworn
     # The primary name/label for this item.
     attr_accessor :name
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -616,6 +632,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(AssetCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, Asset], data["contents"])
@@ -635,6 +652,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -1225,6 +1243,10 @@ module Datasworn
     # The primary name/label for this item.
     attr_accessor :name
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -1263,6 +1285,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(AtlasID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, Atlas], data["collections"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -1283,6 +1306,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -1314,6 +1338,10 @@ module Datasworn
     # The primary name/label for this item.
     attr_accessor :name
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -1330,6 +1358,7 @@ module Datasworn
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.features = Datasworn::from_json_data(Array[MarkdownString], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -1346,6 +1375,7 @@ module Datasworn
       data["description"] = Datasworn::to_json_data(description)
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
@@ -1521,6 +1551,10 @@ module Datasworn
     attr_accessor :rank
     attr_accessor :theme
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -1546,6 +1580,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
       out.theme = Datasworn::from_json_data(DelveSiteThemeID, data["theme"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.extra_card = Datasworn::from_json_data(String, data["extra_card"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1565,6 +1600,7 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["rank"] = Datasworn::to_json_data(rank)
       data["theme"] = Datasworn::to_json_data(theme)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["extra_card"] = Datasworn::to_json_data(extra_card) unless extra_card.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1581,6 +1617,10 @@ module Datasworn
     attr_accessor :frequency
     attr_accessor :max
     attr_accessor :min
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :name
 
     # The ID of the relevant NPC entry, if one is specified.
@@ -1592,6 +1632,7 @@ module Datasworn
       out.frequency = Datasworn::from_json_data(DelveSiteDenizenFrequency, data["frequency"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.npc = Datasworn::from_json_data(NpcID, data["npc"])
       out
@@ -1603,6 +1644,7 @@ module Datasworn
       data["frequency"] = Datasworn::to_json_data(frequency)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["name"] = Datasworn::to_json_data(name) unless name.nil?
       data["npc"] = Datasworn::to_json_data(npc) unless npc.nil?
       data
@@ -1669,6 +1711,10 @@ module Datasworn
     attr_accessor :name
     attr_accessor :summary
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -1692,6 +1738,7 @@ module Datasworn
       out.features = Datasworn::from_json_data(Array[DelveSiteDomainFeatureRow], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1709,6 +1756,7 @@ module Datasworn
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
       data["summary"] = Datasworn::to_json_data(summary)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1732,6 +1780,10 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -1749,6 +1801,7 @@ module Datasworn
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1764,6 +1817,7 @@ module Datasworn
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1787,6 +1841,10 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -1804,6 +1862,7 @@ module Datasworn
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1819,6 +1878,7 @@ module Datasworn
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1874,6 +1934,10 @@ module Datasworn
     attr_accessor :name
     attr_accessor :summary
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -1890,6 +1954,7 @@ module Datasworn
       out.features = Datasworn::from_json_data(Array[DelveSiteThemeFeatureRow], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1906,6 +1971,7 @@ module Datasworn
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
       data["summary"] = Datasworn::to_json_data(summary)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1928,6 +1994,10 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -1945,6 +2015,7 @@ module Datasworn
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1960,6 +2031,7 @@ module Datasworn
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1983,6 +2055,10 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -2000,6 +2076,7 @@ module Datasworn
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -2015,6 +2092,7 @@ module Datasworn
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -2338,6 +2416,7 @@ module Datasworn
     attr_accessor :outcomes
     attr_accessor :text
     attr_accessor :trigger
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
     attr_accessor :replaces
@@ -2353,6 +2432,7 @@ module Datasworn
       out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerActionRoll, data["trigger"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
@@ -2369,6 +2449,7 @@ module Datasworn
       data["outcomes"] = Datasworn::to_json_data(outcomes)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
@@ -2385,6 +2466,7 @@ module Datasworn
     attr_accessor :name
     attr_accessor :text
     attr_accessor :trigger
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
     attr_accessor :replaces
@@ -2399,6 +2481,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerNoRoll, data["trigger"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
@@ -2414,6 +2497,7 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
@@ -2434,6 +2518,7 @@ module Datasworn
     attr_accessor :text
     attr_accessor :tracks
     attr_accessor :trigger
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
     attr_accessor :replaces
@@ -2450,6 +2535,7 @@ module Datasworn
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.tracks = Datasworn::from_json_data(ProgressTrackTypeInfo, data["tracks"])
       out.trigger = Datasworn::from_json_data(TriggerProgressRoll, data["trigger"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
@@ -2467,6 +2553,7 @@ module Datasworn
       data["text"] = Datasworn::to_json_data(text)
       data["tracks"] = Datasworn::to_json_data(tracks)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
@@ -2486,6 +2573,7 @@ module Datasworn
     attr_accessor :outcomes
     attr_accessor :text
     attr_accessor :trigger
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
     attr_accessor :replaces
@@ -2501,6 +2589,7 @@ module Datasworn
       out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerSpecialTrack, data["trigger"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
       out.replaces = Datasworn::from_json_data(MoveID, data["replaces"])
@@ -2517,6 +2606,7 @@ module Datasworn
       data["outcomes"] = Datasworn::to_json_data(outcomes)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
@@ -2536,6 +2626,10 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -2574,6 +2668,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(MoveCategoryID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, Move], data["contents"])
@@ -2593,6 +2688,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -2828,6 +2924,10 @@ module Datasworn
     attr_accessor :rank
     attr_accessor :tactics
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -2849,6 +2949,7 @@ module Datasworn
       out.nature = Datasworn::from_json_data(NpcNature, data["nature"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
       out.tactics = Datasworn::from_json_data(Array[MarkdownString], data["tactics"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -2870,6 +2971,7 @@ module Datasworn
       data["nature"] = Datasworn::to_json_data(nature)
       data["rank"] = Datasworn::to_json_data(rank)
       data["tactics"] = Datasworn::to_json_data(tactics)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
@@ -2891,6 +2993,10 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
 
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
@@ -2929,6 +3035,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(NpcCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, Npc], data["contents"])
@@ -2948,6 +3055,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3022,6 +3130,10 @@ module Datasworn
 
     # The suggested challenge rank for this NPC.
     attr_accessor :rank
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :summary
 
     def self.from_json_data(data)
@@ -3031,6 +3143,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.nature = Datasworn::from_json_data(NpcNature, data["nature"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out
     end
@@ -3042,6 +3155,7 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["nature"] = Datasworn::to_json_data(nature)
       data["rank"] = Datasworn::to_json_data(rank)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data
     end
@@ -3152,6 +3266,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
     attr_accessor :contents
@@ -3171,6 +3286,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedRollsColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText], data["contents"])
@@ -3191,6 +3307,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3231,6 +3348,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
     attr_accessor :contents
@@ -3250,6 +3368,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedTextColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText], data["contents"])
@@ -3270,6 +3389,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3313,6 +3433,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
     attr_accessor :contents
@@ -3332,6 +3453,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedText2ColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText2], data["contents"])
@@ -3352,6 +3474,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3392,6 +3515,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
     attr_accessor :contents
@@ -3411,6 +3535,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedText3ColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText2], data["contents"])
@@ -3431,6 +3556,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
@@ -3452,6 +3578,7 @@ module Datasworn
     attr_accessor :id
     attr_accessor :source
     attr_accessor :name
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :collections
     attr_accessor :color
@@ -3471,6 +3598,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, OracleCollection], data["collections"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -3491,6 +3619,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -3559,6 +3688,10 @@ module Datasworn
     # An array of objects, each representing a single row of the table.
     attr_accessor :rows
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # An optional thematic color for this column. For an example, see "Basic
     # Creature Form" (Starforged p. 337)
     attr_accessor :color
@@ -3588,6 +3721,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleColumnTextOracleType, data["oracle_type"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
@@ -3605,6 +3739,7 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["oracle_type"] = Datasworn::to_json_data(oracle_type)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["match"] = Datasworn::to_json_data(match) unless match.nil?
@@ -3652,6 +3787,10 @@ module Datasworn
     # An array of objects, each representing a single row of the table.
     attr_accessor :rows
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # An optional thematic color for this column. For an example, see "Basic
     # Creature Form" (Starforged p. 337)
     attr_accessor :color
@@ -3681,6 +3820,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleColumnText2OracleType, data["oracle_type"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
@@ -3698,6 +3838,7 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["oracle_type"] = Datasworn::to_json_data(oracle_type)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["match"] = Datasworn::to_json_data(match) unless match.nil?
@@ -3760,13 +3901,13 @@ module Datasworn
 
   class OracleRoll
     # Both Ironsworn and Starforged explicitly recommend *against* rolling
-    # all details at once. That said, some oracle texts only provide useful
+    # all details at once. That said, some oracle results only provide useful
     # information once a secondary roll occurs, such as "Action + Theme" or
-    # "Roll Twice".
+    # "Roll twice".
     attr_accessor :auto
     attr_accessor :dice
 
-    # Special rules on how to handle duplicate texts, when rolling multiple
+    # Special rules on how to handle duplicate results, when rolling multiple
     # times.
     attr_accessor :duplicates
 
@@ -3906,6 +4047,7 @@ module Datasworn
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :description
     attr_accessor :icon
@@ -3925,6 +4067,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -3945,6 +4088,7 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -4009,6 +4153,7 @@ module Datasworn
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :description
     attr_accessor :icon
@@ -4028,6 +4173,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -4048,6 +4194,7 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -4115,6 +4262,7 @@ module Datasworn
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
+    attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :description
     attr_accessor :icon
@@ -4134,6 +4282,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText3], data["rows"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -4154,6 +4303,7 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -4217,7 +4367,7 @@ module Datasworn
     end
   end
 
-  # Represents a row in an oracle table that provides additional details.
+  # Represents a row in an oracle table that provides a secondary text field.
   class OracleTableRowText2
     # High end of the dice range for this table row.
     attr_accessor :max
@@ -4365,6 +4515,10 @@ module Datasworn
     # A grouping of separate tables.
     attr_accessor :oracle_type
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -4404,6 +4558,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleTablesCollectionOracleType, data["oracle_type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, OracleCollection], data["collections"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -4425,6 +4580,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -4622,6 +4778,10 @@ module Datasworn
     # spend 3 experience points to purchase a rarity.
     attr_accessor :xp_cost
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -4637,6 +4797,7 @@ module Datasworn
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.xp_cost = Datasworn::from_json_data(Integer, data["xp_cost"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -4652,6 +4813,7 @@ module Datasworn
       data["description"] = Datasworn::to_json_data(description)
       data["name"] = Datasworn::to_json_data(name)
       data["xp_cost"] = Datasworn::to_json_data(xp_cost)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
@@ -6496,6 +6658,10 @@ module Datasworn
     attr_accessor :name
     attr_accessor :options
 
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
     # The name of this item as it appears on the page in the book, if it's
     # different from `name`.
     attr_accessor :canonical_name
@@ -6511,6 +6677,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.options = Datasworn::from_json_data(Array[TruthOption], data["options"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -6526,6 +6693,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["options"] = Datasworn::to_json_data(options)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
@@ -6556,6 +6724,10 @@ module Datasworn
     attr_accessor :id
     attr_accessor :description
     attr_accessor :quest_starter
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
     attr_accessor :max
     attr_accessor :min
     attr_accessor :summary
@@ -6566,6 +6738,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(TruthOptionID, data["_id"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
@@ -6578,6 +6751,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["description"] = Datasworn::to_json_data(description)
       data["quest_starter"] = Datasworn::to_json_data(quest_starter)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["max"] = Datasworn::to_json_data(max) unless max.nil?
       data["min"] = Datasworn::to_json_data(min) unless min.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?

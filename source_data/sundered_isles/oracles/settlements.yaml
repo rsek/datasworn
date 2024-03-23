@@ -10,45 +10,40 @@ oracles:
         license: null
         url: https://ironswornrpg.com
         date: 2023-09-11
-    name: Settlements
+    name: Settlement Oracles
     contents:
       location:
         _source:
           <<: *Source
-        name: Location
+        name: Settlement Location
         oracle_type: table_text2
-        summary: Roll for a location when learning about a distant settlement. If you come upon a settlement in your travels, you may instead use the context of your current location.
+        summary: Roll for a location when learning about a distant settlement. If you come upon a settlement in your travels, choose a location appropriate to your surroundings.
         rows:
           - min: 1
-            max: 50
-            text: Seafront
-            text2: By the sea
-          - min: 51
-            max: 75
+            max: 60
+            text: Shore
+            text2: Where the land meets the sea
+          - min: 61
+            max: 80
             text: Inland
             text2: Within the island interior
-          - min: 76
+          - min: 81
             max: 100
             text: Waterside
             text2: By an inland body of water
       aesthetics:
         _source:
           <<: *Source
-        name: Aesthetics
+        name: Settlement Aesthetics
         oracle_type: table_text2
         summary: Use this table to reveal the ambiance and architecture of the settlement. Smaller settlements likely have a single style, while larger settlements might have multiple styles across sections or districts.
-        # rendering:
-        #   style: standalone
-        #   columns:
-        #     roll:
-        #       label: Roll
-        #       content_type: roll
-        #     text:
-        #       label: Result
-        #       content_type: result
-        #     detail:
-        #       label: Detail
-        #       content_type: summary
+        recommended_rolls:
+          min: 1
+          max: 2
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Detail
         rows:
           - min: 1
             max: 10
@@ -57,7 +52,7 @@ oracles:
           - min: 11
             max: 20
             text: Dismal
-            text2: Grimy, tightly-packed structures and shadowed paths
+            text2: Gloomy, tightly-packed structures and shadowed paths
           - min: 21
             max: 25
             text: Earthen
@@ -102,11 +97,18 @@ oracles:
             max: 100
             text: Wondrous
             text2: Enigmatic structures of awe-inspiring design or function
+
       first_look:
         _source:
           <<: *Source
-        name: First Look
+        name: Settlement First Look
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/settlements/first_look_cursed
+        recommended_rolls:
+          min: 1
+          max: 2
         rows:
           - min: 1
             max: 2
@@ -236,21 +238,24 @@ oracles:
             text: Visited by large fleet or caravan
           - min: 85
             max: 90
-            text: Built among > [Ruins]
+            text: Built among [Ruins](id:sundered_isles/collections/oracles/ruins)
           - min: 91
             max: 100
-            <<: &DescriptorFocus
-              text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
-              oracle_rolls:
-                - oracle: sundered_isles/oracles/core/descriptor
-                  auto: true
-                - oracle: sundered_isles/oracles/core/focus
-                  auto: true
-      cursed_first_look:
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+      first_look_cursed:
         _source:
           <<: *Source
-        name: Cursed First Look
+        name: Cursed Settlement First Look
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/settlements/first_look
         rows:
           - min: 1
             max: 2
@@ -329,7 +334,7 @@ oracles:
             text: Spectral structures of shifting form
           - min: 83
             max: 84
-            text: Suffused with eerie green light
+            text: Suffused with eerie light
           - min: 85
             max: 88
             text: Surrounded by blighted terrain
@@ -341,12 +346,16 @@ oracles:
             text: Unsettling angles and labyrinthine paths
           - min: 97
             max: 100
-            text: '[Cursed Weather]'
+            text: '[Cursed Weather](id:sundered_isles/oracles/weather/cursed)'
       cursed_focus:
         _source:
           <<: *Source
-        name: Cursed Focus
-        summary: If you roll a [Settlement Focus] curse, take your result on that table and make note that it is cursed. Something about this activity has an uncanny or dreadful aspect. If you investigate or interact further, use the table below to help reveal the industry’s relationship to a cursed power.
+        name: Cursed Settlement Focus
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/settlements/focus/*
+        summary: If you roll a [Settlement Focus](id:sundered_isles/collections/settlements/focus) curse, take your result on that table and make note that it is cursed. Something about this activity has an uncanny or dreadful aspect. If you investigate or interact further, use the table below to help reveal the industry’s relationship to a cursed power.
         oracle_type: table_text
         rows:
           - min: 1
@@ -379,12 +388,18 @@ oracles:
           - min: 91
             max: 100
             text: Unwittingly helping or unleashing a cursed power
-      detail:
+      details:
         _source:
           <<: *Source
         name: Settlement Details
         summary: As you spend time in a settlement, use this table to reveal uncovered aspects and overheard rumors.
         oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/settlements/details_cursed
+        recommended_rolls:
+          min: 1
+          max: 2
         rows:
           - min: 1
             max: 1
@@ -670,24 +685,29 @@ oracles:
             text: The leaders are puppets for a greater power
           - min: 95
             max: 97
-            <<: &ActionTheme
-              text: '[Action](id:sundered_isles/oracles/core/theme) + [Theme](id:sundered_isles/oracles/core/theme)'
-              oracle_rolls:
-                - oracle: sundered_isles/oracles/core/theme
-                  auto: true
-                - oracle: sundered_isles/oracles/core/theme
-                  auto: true
+            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/action
+              - auto: true
+                oracle: sundered_isles/oracles/core/theme
           - min: 98
             max: 100
-            <<: *DescriptorFocus
-      cursed_details:
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+      details_cursed:
         _source:
           <<: *Source
         name: Cursed Settlement Details
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_version_of: sundered_isles/oracles/core/descriptor
+            cursed_version_of:
+              - sundered_isles/oracles/settlements/details
         rows:
           - min: 1
             max: 1
@@ -888,7 +908,7 @@ oracles:
       size:
         _source:
           <<: *Source
-        name: Size
+        name: Settlement Size
         oracle_type: table_shared_text2
         # rendering:
         #   columns:
@@ -906,8 +926,6 @@ oracles:
         #       table_key: myriads
         contents:
           myriads:
-            # source:
-            #   <<: *Source
             name: Myriads
             summary: Central Seas
             oracle_type: column_text2
@@ -932,10 +950,7 @@ oracles:
                   text2: Tens of thousands
                 min: 99
                 max: 100
-
           margins:
-            # source:
-            #   <<: *Source
             name: Margins
             summary: Outer Seas
             oracle_type: column_text2
@@ -953,8 +968,6 @@ oracles:
                 max: 100
                 <<: *Size.3
           reaches:
-            # source:
-            #   <<: *Source
             name: Reaches
             summary: Remote Seas
             oracle_type: column_text2
@@ -976,89 +989,15 @@ oracles:
           <<: *Source
         name: Settlement Identity
         oracle_type: tables
-        contents:
-          disposition:
-            _source:
-              <<: *Source
-            name: Disposition
-            oracle_type: table_text
-            rows:
-              - min: 1
-                max: 5
-                text: Hostile
-              - min: 6
-                max: 15
-                text: Threatening
-              - min: 16
-                max: 25
-                text: Demanding
-              - min: 26
-                max: 35
-                text: Unwelcoming
-              - min: 36
-                max: 50
-                text: Wary
-              - min: 51
-                max: 65
-                text: Indifferent
-              - min: 66
-                max: 75
-                text: In need
-              - min: 76
-                max: 85
-                text: Welcoming
-              - min: 86
-                max: 95
-                text: Friendly
-              - min: 96
-                max: 100
-                text: Helpful
-          authority:
-            _source:
-              <<: *Source
-            name: Authority
-            oracle_type: table_text
-            rows:
-              - min: 1
-                max: 10
-                text: Ruthless
-              - min: 11
-                max: 20
-                text: Oppressive
-              - min: 21
-                max: 30
-                text: Corrupt
-              - min: 31
-                max: 40
-                text: Firm
-              - min: 41
-                max: 50
-                text: Lawless
-              - min: 51
-                max: 60
-                text: Disputed
-              - min: 61
-                max: 70
-                text: Ambivalent
-              - min: 71
-                max: 80
-                text: Fair
-              - min: 81
-                max: 90
-                text: Protective
-              - min: 91
-                max: 100
-                text: Benevolent
         collections:
           controlling_faction:
             _source:
               <<: *Source
-            name: Controlling Faction
+            name: Settlement Controlling Faction
             oracle_type: table_shared_text
+            summary: If the location of the settlement or your initial impression doesn’t reveal its identity, check the Controlling Faction table below. If this place is inhabited or overseen by a known faction, choose or roll on your faction influence grid (page 54). If it is independent or aligned with an unknown faction, use the Disposition and Authority tables to help envision the reaction to your arrival and the apparent nature of the leadership.
             contents:
               myriads:
-                # source:
-                #   <<: *Source
                 name: Myriads
                 summary: Central Seas
                 oracle_type: column_text
@@ -1084,8 +1023,6 @@ oracles:
                     <<: &ControllingFaction.4
                       text: Factions in conflict
               margins:
-                # source:
-                #   <<: *Source
                 name: Margins
                 summary: Outer Seas
                 oracle_type: column_text
@@ -1105,10 +1042,7 @@ oracles:
                   - min: 96
                     max: 100
                     <<: *ControllingFaction.4
-
               reaches:
-                # source:
-                #   <<: *Source
                 name: Reaches
                 summary: Remote Seas
                 oracle_type: column_text
@@ -1134,11 +1068,13 @@ oracles:
             name: Settlement Focus
             summary: Sections of a large city or city-state can contain their own pursuits and industries, and can even span geographies (seafront, inland, or waterside). Revisit this table if you spend time in a place and learn more about its activities.
             oracle_type: table_shared_text2
+            # TODO: recommended rolls property for supertables? or just for all rollables?
+            column_labels:
+              text: Activity
+              text2: Typical Facilities or Services
             contents:
-              seafront:
-                # source:
-                #   <<: *Source
-                name: Seafront
+              shore:
+                name: Shore
                 oracle_type: column_text2
                 rows:
                   - min: 1
@@ -1170,7 +1106,7 @@ oracles:
                     max: 24
                     <<: &Focus.5
                       text: Alcohol Production
-                      text2: Breweries, distilleries, wineries
+                      text2:  Breweries, distilleries, wineries
                   - min: 25
                     max: 25
                     <<: &Focus.6
@@ -1230,7 +1166,7 @@ oracles:
                     max: 55
                     <<: &Focus.17
                       text: Hunting
-                      text2: Animal trainers, taxidermists, tanners
+                      text2: Animal trainers, tanners, taxidermists,
                   - min: 56
                     max: 57
                     <<: &Focus.18
@@ -1325,10 +1261,13 @@ oracles:
                     min: 96
                     max: 100
                     text2: null
-                    <<: *ActionTheme
+                    text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+                    oracle_rolls:
+                      - auto: true
+                        oracle: sundered_isles/oracles/core/action
+                      - auto: true
+                        oracle: sundered_isles/oracles/core/theme
               inland:
-                # source:
-                #   <<: *Source
                 name: Inland
                 oracle_type: column_text2
                 rows:
@@ -1434,8 +1373,6 @@ oracles:
                     <<: *Focus.35
                   - *Focus.36
               waterside:
-                # source:
-                #   <<: *Source
                 name: Waterside
                 oracle_type: column_text2
                 rows:
@@ -1454,7 +1391,7 @@ oracles:
                     max: 5
                     <<: *Focus.7
                   - min: 6
-                    max: 11
+                    max: 1
                     <<: *Focus.8
                   - min: 12
                     max: 13
@@ -1538,3 +1475,76 @@ oracles:
                     max: 95
                     <<: *Focus.35
                   - *Focus.36
+        contents:
+          disposition:
+            _source:
+              <<: *Source
+            name: Settlement Disposition
+            oracle_type: table_text
+            rows:
+              - min: 1
+                max: 5
+                text: Hostile
+              - min: 6
+                max: 15
+                text: Threatening
+              - min: 16
+                max: 25
+                text: Demanding
+              - min: 26
+                max: 35
+                text: Unwelcoming
+              - min: 36
+                max: 50
+                text: Wary
+              - min: 51
+                max: 65
+                text: Indifferent
+              - min: 66
+                max: 75
+                text: In need
+              - min: 76
+                max: 85
+                text: Welcoming
+              - min: 86
+                max: 95
+                text: Friendly
+              - min: 96
+                max: 100
+                text: Helpful
+          authority:
+            _source:
+              <<: *Source
+            name: Settlement Authority
+            oracle_type: table_text
+            rows:
+              - min: 1
+                max: 10
+                text: Ruthless
+              - min: 11
+                max: 20
+                text: Oppressive
+              - min: 21
+                max: 30
+                text: Corrupt
+              - min: 31
+                max: 40
+                text: Firm
+              - min: 41
+                max: 50
+                text: Lawless
+              - min: 51
+                max: 60
+                text: Disputed
+              - min: 61
+                max: 70
+                text: Ambivalent
+              - min: 71
+                max: 80
+                text: Fair
+              - min: 81
+                max: 90
+                text: Protective
+              - min: 91
+                max: 100
+                text: Benevolent

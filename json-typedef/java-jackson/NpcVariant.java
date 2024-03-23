@@ -24,6 +24,10 @@ public class NpcVariant {
     private ChallengeRank rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("_comment")
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("summary")
     private MarkdownString summary;
 
@@ -102,6 +106,24 @@ public class NpcVariant {
      */
     public void setRank(ChallengeRank rank) {
         this.rank = rank;
+    }
+
+    /**
+     * Getter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    /**
+     * Setter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     /**

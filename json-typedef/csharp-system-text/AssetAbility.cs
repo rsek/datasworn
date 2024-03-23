@@ -30,6 +30,15 @@ namespace Datasworn
         public MarkdownString Text { get; set; }
 
         /// <summary>
+        /// Any implementation hints or other developer-facing comments on
+        /// this object. These should be omitted when presenting the object
+        /// for gameplay.
+        /// </summary>
+        [JsonPropertyName("_comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string Comment { get; set; }
+
+        /// <summary>
         /// Fields whose values are expected to change over the life of the
         /// asset.
         /// </summary>

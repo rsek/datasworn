@@ -225,6 +225,10 @@ type Asset struct {
 	// player's allies, too.
 	Shared bool `json:"shared"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	Attachments *AssetAttachment `json:"attachments,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
@@ -265,6 +269,10 @@ type AssetAbility struct {
 
 	// The complete rules text of this asset ability.
 	Text MarkdownString `json:"text"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// Fields whose values are expected to change over the life of the asset.
 	Controls map[string]AssetAbilityControlField `json:"controls,omitempty"`
@@ -479,6 +487,10 @@ type AssetCollection struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1042,6 +1054,10 @@ type Atlas struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1095,6 +1111,10 @@ type AtlasEntry struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1182,6 +1202,10 @@ type DelveSite struct {
 
 	Theme DelveSiteThemeID `json:"theme"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1210,6 +1234,10 @@ type DelveSiteDenizen struct {
 	Max int16 `json:"max"`
 
 	Min int16 `json:"min"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	Name *Label `json:"name,omitempty"`
 
@@ -1252,6 +1280,10 @@ type DelveSiteDomain struct {
 
 	Summary MarkdownString `json:"summary"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1286,6 +1318,10 @@ type DelveSiteDomainDangerRow struct {
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
 	// Hints that the identified table should be rendered inside this table row.
@@ -1314,6 +1350,10 @@ type DelveSiteDomainFeatureRow struct {
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
@@ -1354,6 +1394,10 @@ type DelveSiteTheme struct {
 
 	Summary MarkdownString `json:"summary"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1380,6 +1424,10 @@ type DelveSiteThemeDangerRow struct {
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
@@ -1409,6 +1457,10 @@ type DelveSiteThemeFeatureRow struct {
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
@@ -1594,6 +1646,10 @@ type MoveActionRoll struct {
 	// Trigger conditions for this move.
 	Trigger TriggerActionRoll `json:"trigger"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1629,6 +1685,10 @@ type MoveNoRoll struct {
 
 	// Trigger conditions for this move.
 	Trigger TriggerNoRoll `json:"trigger"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1673,6 +1733,10 @@ type MoveProgressRoll struct {
 	// Trigger conditions for this move.
 	Trigger TriggerProgressRoll `json:"trigger"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1713,6 +1777,10 @@ type MoveSpecialTrack struct {
 	// Trigger conditions for this move.
 	Trigger TriggerSpecialTrack `json:"trigger"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1741,6 +1809,10 @@ type MoveCategory struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -1926,6 +1998,10 @@ type Npc struct {
 
 	Tactics []MarkdownString `json:"tactics"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -1953,6 +2029,10 @@ type NpcCollection struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2016,6 +2096,10 @@ type NpcVariant struct {
 
 	// The suggested challenge rank for this NPC.
 	Rank ChallengeRank `json:"rank"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	Summary *MarkdownString `json:"summary,omitempty"`
 }
@@ -2143,6 +2227,10 @@ type OracleCollectionTableSharedRolls struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -2201,6 +2289,10 @@ type OracleCollectionTableSharedText struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2263,6 +2355,10 @@ type OracleCollectionTableSharedText2 struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -2322,6 +2418,10 @@ type OracleCollectionTableSharedText3 struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -2370,6 +2470,10 @@ type OracleCollectionTables struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2434,6 +2538,10 @@ type OracleColumnText struct {
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText `json:"rows"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// An optional thematic color for this column. For an example, see "Basic
 	// Creature Form" (Starforged p. 337)
 	Color *CSSColor `json:"color,omitempty"`
@@ -2479,6 +2587,10 @@ type OracleColumnText2 struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText2 `json:"rows"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// An optional thematic color for this column. For an example, see "Basic
 	// Creature Form" (Starforged p. 337)
@@ -2526,14 +2638,15 @@ type OracleMatchBehavior struct {
 
 type OracleRoll struct {
 	// Both Ironsworn and Starforged explicitly recommend *against* rolling
-	// all details at once. That said, some oracle texts only provide useful
+	// all details at once. That said, some oracle results only provide useful
 	// information once a secondary roll occurs, such as "Action + Theme" or "Roll
-	// Twice".
+	// twice".
 	Auto bool `json:"auto"`
 
 	Dice DiceExpression `json:"dice"`
 
-	// Special rules on how to handle duplicate texts, when rolling multiple times.
+	// Special rules on how to handle duplicate results, when rolling multiple
+	// times.
 	Duplicates OracleDuplicateBehavior `json:"duplicates"`
 
 	// The number of times to roll.
@@ -2650,6 +2763,10 @@ type OracleTableRollableTableText struct {
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText `json:"rows"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -2721,6 +2838,10 @@ type OracleTableRollableTableText2 struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText2 `json:"rows"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -2796,6 +2917,10 @@ type OracleTableRollableTableText3 struct {
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText3 `json:"rows"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -2856,7 +2981,7 @@ type OracleTableRowText struct {
 	Template *OracleRollTemplate `json:"template,omitempty"`
 }
 
-// Represents a row in an oracle table that provides additional details.
+// Represents a row in an oracle table that provides a secondary text field.
 type OracleTableRowText2 struct {
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
@@ -2936,6 +3061,10 @@ type OracleTablesCollection struct {
 
 	// A grouping of separate tables.
 	OracleType OracleTablesCollectionOracleType `json:"oracle_type"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -3071,6 +3200,10 @@ type Rarity struct {
 	// balance of rarity abilities, you can ignore these variable costs. If so,
 	// spend 3 experience points to purchase a rarity.
 	XpCost int16 `json:"xp_cost"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
@@ -4070,6 +4203,10 @@ type Truth struct {
 
 	Options []TruthOption `json:"options"`
 
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	// The name of this item as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
@@ -4095,6 +4232,10 @@ type TruthOption struct {
 	Description MarkdownString `json:"description"`
 
 	QuestStarter MarkdownString `json:"quest_starter"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	Max *int16 `json:"max,omitempty"`
 

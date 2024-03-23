@@ -99,6 +99,9 @@ oracles:
       offshore_observations:
         _source: *Source
         name: Offshore Observations
+        tags:
+          sundered_isles:
+            cursed_version: sundered_isles/oracles/islands/offshore_observations_cursed
         oracle_type: table_text
         rows:
           - min: 1
@@ -230,9 +233,13 @@ oracles:
           - min: 91
             max: 100
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
-      cursed_offshore_observations:
+      offshore_observations_cursed:
         _source: *Source
         name: Cursed Offshore Observations
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/islands/offshore_observations
         oracle_type: table_text
         rows:
           - min: 1
@@ -365,18 +372,6 @@ oracles:
             _source: *Source
             name: Size
             oracle_type: table_text2
-            # rendering:
-            #   style: standalone
-            #   columns:
-            #     roll:
-            #       label: Roll
-            #       content_type: roll
-            #     text:
-            #       label: Result
-            #       content_type: result
-            #     time:
-            #       content_type: summary
-            #       label: Time to Walk the Island Circumference
             column_labels:
               roll: Roll
               text: Result

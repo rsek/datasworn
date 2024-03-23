@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * Represents a row in an oracle table that provides additional details.
+ * Represents a row in an oracle table that provides a secondary text field.
  */
 @JsonSerialize
 public class OracleTableRowText2 {

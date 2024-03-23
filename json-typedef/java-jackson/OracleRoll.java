@@ -28,9 +28,9 @@ public class OracleRoll {
     /**
      * Getter for auto.<p>
      * Both Ironsworn and Starforged explicitly recommend *against* rolling
-     * all details at once. That said, some oracle texts only provide useful
+     * all details at once. That said, some oracle results only provide useful
      * information once a secondary roll occurs, such as "Action + Theme" or
-     * "Roll Twice".
+     * "Roll twice".
      */
     public Boolean getAuto() {
         return auto;
@@ -39,9 +39,9 @@ public class OracleRoll {
     /**
      * Setter for auto.<p>
      * Both Ironsworn and Starforged explicitly recommend *against* rolling
-     * all details at once. That said, some oracle texts only provide useful
+     * all details at once. That said, some oracle results only provide useful
      * information once a secondary roll occurs, such as "Action + Theme" or
-     * "Roll Twice".
+     * "Roll twice".
      */
     public void setAuto(Boolean auto) {
         this.auto = auto;
@@ -63,7 +63,7 @@ public class OracleRoll {
 
     /**
      * Getter for duplicates.<p>
-     * Special rules on how to handle duplicate texts, when rolling multiple
+     * Special rules on how to handle duplicate results, when rolling multiple
      * times.
      */
     public OracleDuplicateBehavior getDuplicates() {
@@ -72,7 +72,7 @@ public class OracleRoll {
 
     /**
      * Setter for duplicates.<p>
-     * Special rules on how to handle duplicate texts, when rolling multiple
+     * Special rules on how to handle duplicate results, when rolling multiple
      * times.
      */
     public void setDuplicates(OracleDuplicateBehavior duplicates) {

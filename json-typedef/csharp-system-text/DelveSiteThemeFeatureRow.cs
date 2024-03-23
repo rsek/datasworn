@@ -34,6 +34,15 @@ namespace Datasworn
         [JsonPropertyName("text")]
         public MarkdownString Text { get; set; }
 
+        /// <summary>
+        /// Any implementation hints or other developer-facing comments on
+        /// this object. These should be omitted when presenting the object
+        /// for gameplay.
+        /// </summary>
+        [JsonPropertyName("_comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string Comment { get; set; }
+
         [JsonPropertyName("_i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public I18nHints? I18n { get; set; }

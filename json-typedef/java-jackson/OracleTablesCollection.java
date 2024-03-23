@@ -27,6 +27,10 @@ public class OracleTablesCollection {
     private OracleTablesCollectionOracleType oracleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("_comment")
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
     private Label canonicalName;
 
@@ -141,6 +145,24 @@ public class OracleTablesCollection {
      */
     public void setOracleType(OracleTablesCollectionOracleType oracleType) {
         this.oracleType = oracleType;
+    }
+
+    /**
+     * Getter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    /**
+     * Setter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     /**

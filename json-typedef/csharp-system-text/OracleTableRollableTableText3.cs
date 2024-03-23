@@ -53,6 +53,15 @@ namespace Datasworn
         public IList<OracleTableRowText3> Rows { get; set; }
 
         /// <summary>
+        /// Any implementation hints or other developer-facing comments on
+        /// this object. These should be omitted when presenting the object
+        /// for gameplay.
+        /// </summary>
+        [JsonPropertyName("_comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string Comment { get; set; }
+
+        /// <summary>
         /// The name of this item as it appears on the page in the book, if it's
         /// different from `name`.
         /// </summary>

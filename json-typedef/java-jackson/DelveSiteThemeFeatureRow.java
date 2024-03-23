@@ -25,6 +25,10 @@ public class DelveSiteThemeFeatureRow {
     private MarkdownString text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("_comment")
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_i18n")
     private I18nHints i18n;
 
@@ -113,6 +117,24 @@ public class DelveSiteThemeFeatureRow {
      */
     public void setText(MarkdownString text) {
         this.text = text;
+    }
+
+    /**
+     * Getter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    /**
+     * Setter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     /**

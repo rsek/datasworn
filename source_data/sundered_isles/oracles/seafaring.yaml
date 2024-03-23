@@ -253,7 +253,7 @@ oracles:
         summary: This table reveals occurrences on a seafaring expedition. Possible results include locations, events, sightings, and encounters.
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/seafaring/cursed_details
+            cursed_version: sundered_isles/oracles/seafaring/cursed_details
         rows:
           - min: 1
             max: 1

@@ -265,6 +265,12 @@ pub struct Asset {
     #[serde(rename = "shared")]
     pub shared: bool,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     #[serde(rename = "attachments")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub attachments: Option<Box<AssetAttachment>>,
@@ -328,6 +334,12 @@ pub struct AssetAbility {
     /// The complete rules text of this asset ability.
     #[serde(rename = "text")]
     pub text: MarkdownString,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// Fields whose values are expected to change over the life of the asset.
     #[serde(rename = "controls")]
@@ -525,6 +537,12 @@ pub struct AssetCollection {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -1011,6 +1029,12 @@ pub struct Atlas {
     #[serde(rename = "name")]
     pub name: Label,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -1096,6 +1120,12 @@ pub struct AtlasEntry {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -1218,6 +1248,12 @@ pub struct DelveSite {
     #[serde(rename = "theme")]
     pub theme: DelveSiteThemeId,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -1263,6 +1299,12 @@ pub struct DelveSiteDenizen {
 
     #[serde(rename = "min")]
     pub min: i16,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     #[serde(rename = "name")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1320,6 +1362,12 @@ pub struct DelveSiteDomain {
     #[serde(rename = "summary")]
     pub summary: MarkdownString,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -1371,6 +1419,12 @@ pub struct DelveSiteDomainDangerRow {
     #[serde(rename = "text")]
     pub text: MarkdownString,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub i18n: Option<Box<I18nHints>>,
@@ -1417,6 +1471,12 @@ pub struct DelveSiteDomainFeatureRow {
     /// The primary text content of this row.
     #[serde(rename = "text")]
     pub text: MarkdownString,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1477,6 +1537,12 @@ pub struct DelveSiteTheme {
     #[serde(rename = "summary")]
     pub summary: MarkdownString,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -1518,6 +1584,12 @@ pub struct DelveSiteThemeDangerRow {
     /// The primary text content of this row.
     #[serde(rename = "text")]
     pub text: MarkdownString,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1565,6 +1637,12 @@ pub struct DelveSiteThemeFeatureRow {
     /// The primary text content of this row.
     #[serde(rename = "text")]
     pub text: MarkdownString,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1761,6 +1839,12 @@ pub struct MoveActionRoll {
     #[serde(rename = "trigger")]
     pub trigger: TriggerActionRoll,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -1812,6 +1896,12 @@ pub struct MoveNoRoll {
     /// Trigger conditions for this move.
     #[serde(rename = "trigger")]
     pub trigger: TriggerNoRoll,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -1875,6 +1965,12 @@ pub struct MoveProgressRoll {
     #[serde(rename = "trigger")]
     pub trigger: TriggerProgressRoll,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -1932,6 +2028,12 @@ pub struct MoveSpecialTrack {
     #[serde(rename = "trigger")]
     pub trigger: TriggerSpecialTrack,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -1974,6 +2076,12 @@ pub struct MoveCategory {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2177,6 +2285,12 @@ pub struct Npc {
     #[serde(rename = "tactics")]
     pub tactics: Vec<MarkdownString>,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -2222,6 +2336,12 @@ pub struct NpcCollection {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2314,6 +2434,12 @@ pub struct NpcVariant {
     /// The suggested challenge rank for this NPC.
     #[serde(rename = "rank")]
     pub rank: ChallengeRank,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2423,6 +2549,12 @@ pub struct OracleCollectionTableSharedRolls {
     #[serde(rename = "name")]
     pub name: Label,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -2511,6 +2643,12 @@ pub struct OracleCollectionTableSharedText {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2604,6 +2742,12 @@ pub struct OracleCollectionTableSharedText2 {
     #[serde(rename = "name")]
     pub name: Label,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -2693,6 +2837,12 @@ pub struct OracleCollectionTableSharedText3 {
     #[serde(rename = "name")]
     pub name: Label,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -2768,6 +2918,12 @@ pub struct OracleCollectionTables {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -2863,6 +3019,12 @@ pub struct OracleColumnText {
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText>,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// An optional thematic color for this column. For an example, see "Basic
     /// Creature Form" (Starforged p. 337)
     #[serde(rename = "color")]
@@ -2928,6 +3090,12 @@ pub struct OracleColumnText2 {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText2>,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// An optional thematic color for this column. For an example, see "Basic
     /// Creature Form" (Starforged p. 337)
@@ -2995,16 +3163,16 @@ pub struct OracleMatchBehavior {
 #[derive(Serialize, Deserialize)]
 pub struct OracleRoll {
     /// Both Ironsworn and Starforged explicitly recommend *against* rolling
-    /// all details at once. That said, some oracle texts only provide useful
+    /// all details at once. That said, some oracle results only provide useful
     /// information once a secondary roll occurs, such as "Action + Theme" or
-    /// "Roll Twice".
+    /// "Roll twice".
     #[serde(rename = "auto")]
     pub auto: bool,
 
     #[serde(rename = "dice")]
     pub dice: DiceExpression,
 
-    /// Special rules on how to handle duplicate texts, when rolling multiple
+    /// Special rules on how to handle duplicate results, when rolling multiple
     /// times.
     #[serde(rename = "duplicates")]
     pub duplicates: OracleDuplicateBehavior,
@@ -3109,6 +3277,12 @@ pub struct OracleTableRollableTableText {
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText>,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -3212,6 +3386,12 @@ pub struct OracleTableRollableTableText2 {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText2>,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -3320,6 +3500,12 @@ pub struct OracleTableRollableTableText3 {
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText3>,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -3415,7 +3601,7 @@ pub struct OracleTableRowText {
     pub template: Option<Box<OracleRollTemplate>>,
 }
 
-/// Represents a row in an oracle table that provides additional details.
+/// Represents a row in an oracle table that provides a secondary text field.
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableRowText2 {
     /// High end of the dice range for this table row.
@@ -3537,6 +3723,12 @@ pub struct OracleTablesCollection {
     /// A grouping of separate tables.
     #[serde(rename = "oracle_type")]
     pub oracleType: OracleTablesCollectionOracleType,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -3722,6 +3914,12 @@ pub struct Rarity {
     /// spend 3 experience points to purchase a rarity.
     #[serde(rename = "xp_cost")]
     pub xpCost: i16,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
@@ -4822,6 +5020,12 @@ pub struct Truth {
     #[serde(rename = "options")]
     pub options: Vec<TruthOption>,
 
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     /// The name of this item as it appears on the page in the book, if it's
     /// different from `name`.
     #[serde(rename = "canonical_name")]
@@ -4863,6 +5067,12 @@ pub struct TruthOption {
 
     #[serde(rename = "quest_starter")]
     pub questStarter: MarkdownString,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
 
     #[serde(rename = "max")]
     #[serde(skip_serializing_if = "Option::is_none")]

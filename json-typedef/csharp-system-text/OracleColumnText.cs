@@ -38,6 +38,15 @@ namespace Datasworn
         public IList<OracleTableRowText> Rows { get; set; }
 
         /// <summary>
+        /// Any implementation hints or other developer-facing comments on
+        /// this object. These should be omitted when presenting the object
+        /// for gameplay.
+        /// </summary>
+        [JsonPropertyName("_comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string Comment { get; set; }
+
+        /// <summary>
         /// An optional thematic color for this column. For an example, see
         /// "Basic Creature Form" (Starforged p. 337)
         /// </summary>

@@ -32,6 +32,10 @@ public class OracleTableRollableTableText3 extends OracleTableRollable {
     private List<OracleTableRowText3> rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("_comment")
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
     private Label canonicalName;
 
@@ -168,6 +172,24 @@ public class OracleTableRollableTableText3 extends OracleTableRollable {
      */
     public void setRows(List<OracleTableRowText3> rows) {
         this.rows = rows;
+    }
+
+    /**
+     * Getter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    /**
+     * Setter for comment.<p>
+     * Any implementation hints or other developer-facing comments on this
+     * object. These should be omitted when presenting the object for gameplay.
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     /**

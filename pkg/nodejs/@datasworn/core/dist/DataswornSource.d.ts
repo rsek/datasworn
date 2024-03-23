@@ -1288,6 +1288,10 @@ export interface Npc {
      */
     _id?: NpcId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -1326,6 +1330,10 @@ export interface NpcCollection {
      * The unique Datasworn ID for this item.
      */
     _id?: NpcCollectionId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -1397,6 +1405,10 @@ export interface NpcVariant {
      * The unique Datasworn ID for this item.
      */
     _id?: NpcVariantId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     name: Label;
     /**
      * The suggested challenge rank for this NPC.
@@ -1433,12 +1445,12 @@ export interface OracleRoll {
      */
     oracle?: OracleRollableId | null;
     /**
-     * Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle texts only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll Twice".
+     * Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll twice".
      * @default false
      */
     auto?: boolean;
     /**
-     * Special rules on how to handle duplicate texts, when rolling multiple times.
+     * Special rules on how to handle duplicate results, when rolling multiple times.
      * @default "reroll"
      */
     duplicates?: OracleDuplicateBehavior;
@@ -1488,6 +1500,10 @@ export interface OracleColumnText {
      */
     _id?: OracleRollableId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary label at the head of this column.
      */
     name: Label;
@@ -1533,6 +1549,10 @@ export interface OracleColumnText2 {
      */
     _id?: OracleRollableId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary label at the head of this column.
      */
     name: Label;
@@ -1577,6 +1597,10 @@ export interface OracleColumnText3 {
      * The unique Datasworn ID for this item.
      */
     _id?: OracleRollableId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary label at the head of this column.
      */
@@ -1663,7 +1687,7 @@ export interface OracleTableRowText {
     max?: number | null;
 }
 /**
- * Represents a row in an oracle table that provides additional details.
+ * Represents a row in an oracle table that provides a secondary text field.
  */
 export interface OracleTableRowText2 {
     /**
@@ -1697,7 +1721,7 @@ export interface OracleTableRowText2 {
      */
     max?: number | null;
     /**
-     * The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.
+     * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
      */
     text2: MarkdownString | null;
 }
@@ -1736,11 +1760,11 @@ export interface OracleTableRowText3 {
      */
     max?: number | null;
     /**
-     * The second text column for this row. Use `null` to represent a cell with a blank or empty vlue.
+     * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
      */
     text2: MarkdownString | null;
     /**
-     * The third text column for this row. Use `null` to represent a cell with a blank or empty vlue.
+     * The tertiary text for this row. Use `null` to represent a cell with a blank or empty vlue.
      */
     text3: MarkdownString | null;
 }
@@ -1752,6 +1776,10 @@ export interface OracleTableShared2TextColumns {
      * The unique Datasworn ID for this item.
      */
     _id?: OracleCollectionId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -1832,6 +1860,10 @@ export interface OracleTableShared3TextColumns {
      */
     _id?: OracleCollectionId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -1905,6 +1937,10 @@ export interface OracleTableSharedRolls {
      * The unique Datasworn ID for this item.
      */
     _id?: OracleCollectionId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -1980,6 +2016,10 @@ export interface OracleTableSharedTextColumn {
      */
     _id?: OracleCollectionId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -2053,6 +2093,10 @@ export interface OracleTableText {
      * The unique Datasworn ID for this item.
      */
     _id?: OracleRollableId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -2139,6 +2183,10 @@ export interface OracleTableText2 {
      * The unique Datasworn ID for this item.
      */
     _id?: OracleRollableId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -2231,6 +2279,10 @@ export interface OracleTableText3 {
      */
     _id?: OracleRollableId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -2318,6 +2370,10 @@ export interface OracleTablesCollection {
      */
     _id?: OracleCollectionId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -2395,6 +2451,10 @@ export interface MoveActionRoll {
      */
     _id?: MoveId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -2454,6 +2514,10 @@ export interface MoveCategory {
      */
     _id?: MoveCategoryId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -2512,6 +2576,10 @@ export interface MoveNoRoll {
      * The unique Datasworn ID for this item.
      */
     _id?: MoveId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -2597,6 +2665,10 @@ export interface MoveProgressRoll {
      */
     _id?: MoveId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -2669,6 +2741,10 @@ export interface MoveSpecialTrack {
      * The unique Datasworn ID for this item.
      */
     _id?: MoveId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -2976,6 +3052,10 @@ export interface Asset {
      */
     _id?: AssetId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -3047,6 +3127,10 @@ export interface AssetAbility {
      * The unique Datasworn ID for this item.
      */
     _id?: AssetAbilityId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * A handful of asset abilities have a label/name, for instance classic Ironsworn companion assets. Most canonical assets omit this property.
      */
@@ -3157,6 +3241,10 @@ export interface AssetCollection {
      * The unique Datasworn ID for this item.
      */
     _id?: AssetCollectionId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -3563,6 +3651,10 @@ export interface Truth {
      */
     _id?: TruthId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -3589,6 +3681,10 @@ export interface TruthOption {
      * The unique Datasworn ID for this item.
      */
     _id?: TruthOptionId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     min?: number;
     max?: number;
     summary?: MarkdownString;
@@ -3639,6 +3735,10 @@ export interface Atlas {
      * The unique Datasworn ID for this item.
      */
     _id?: AtlasId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -3699,6 +3799,10 @@ export interface AtlasEntry {
      */
     _id?: AtlasEntryId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -3746,6 +3850,10 @@ export interface Rarity {
      */
     _id?: RarityId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary name/label for this item.
      */
     name: Label;
@@ -3788,6 +3896,10 @@ export interface DelveSite {
      * The unique Datasworn ID for this item.
      */
     _id?: DelveSiteId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -3886,6 +3998,10 @@ export interface DelveSiteDenizen {
      * The unique Datasworn ID for this item.
      */
     _id?: DelveSiteDenizenId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     name?: Label;
     min: number;
     max: number;
@@ -3904,6 +4020,10 @@ export interface DelveSiteDomain {
      * The unique Datasworn ID for this item.
      */
     _id?: DelveSiteDomainId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -4013,6 +4133,10 @@ export interface DelveSiteDomainDangerRow {
      */
     _id?: DomainDangerRowId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary text content of this row.
      */
     text: MarkdownString;
@@ -4050,6 +4174,10 @@ export interface DelveSiteDomainFeatureRow {
      */
     _id?: DomainFeatureRowId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary text content of this row.
      */
     text: MarkdownString;
@@ -4086,6 +4214,10 @@ export interface DelveSiteTheme {
      * The unique Datasworn ID for this item.
      */
     _id?: DelveSiteThemeId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary name/label for this item.
      */
@@ -4188,6 +4320,10 @@ export interface DelveSiteThemeDangerRow {
      */
     _id?: ThemeDangerRowId;
     /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
      * The primary text content of this row.
      */
     text: MarkdownString;
@@ -4224,6 +4360,10 @@ export interface DelveSiteThemeFeatureRow {
      * The unique Datasworn ID for this item.
      */
     _id?: ThemeFeatureRowId;
+    /**
+     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
     /**
      * The primary text content of this row.
      */

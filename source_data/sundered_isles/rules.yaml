@@ -122,17 +122,18 @@ rules:
       description: Expertise, knowledge, and observation.
   tags:
     cursed_version_of:
-      description: This oracle table is the cursed version of another oracle table.
+      description: This oracle is the cursed version of one or more oracles.
       applies_to: [oracle_rollable]
-      value_type: oracle_rollable
-    cursed_version:
-      description: This oracle table has a cursed version.
-      applies_to: [oracle_rollable]
+      wildcard: true
       value_type: oracle_rollable
     curse_is_additive:
-      description: If `true`, this cursed table adds to the original result of the non-cursed table, rather than replacing it. Only relevant if the `cursed_version_of` tag is present.
+      description: If `true`, this cursed oracle adds to the original result of the non-oracle table, rather than replacing it. Only relevant if the `cursed_version_of` tag is present.
       applies_to: [oracle_rollable]
       value_type: boolean
+    cursed_version:
+      description: This oracle  has a cursed version.
+      applies_to: [oracle_rollable]
+      value_type: oracle_rollable
     region:
       description: This oracle table applies to a specific region of the Sundered Isles.
       applies_to: [oracle_rollable]

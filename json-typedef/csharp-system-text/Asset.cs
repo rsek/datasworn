@@ -51,6 +51,15 @@ namespace Datasworn
         [JsonPropertyName("shared")]
         public bool Shared { get; set; }
 
+        /// <summary>
+        /// Any implementation hints or other developer-facing comments on
+        /// this object. These should be omitted when presenting the object
+        /// for gameplay.
+        /// </summary>
+        [JsonPropertyName("_comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string Comment { get; set; }
+
         [JsonPropertyName("attachments")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public AssetAttachment? Attachments { get; set; }
