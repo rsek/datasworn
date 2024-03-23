@@ -38,11 +38,11 @@ export const OracleRoll = Type.Object(
 		auto: Type.Boolean({
 			default: false,
 			description:
-				'Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle texts only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll Twice".'
+				'Both Ironsworn and Starforged explicitly recommend *against* rolling all details at once. That said, some oracle results only provide useful information once a secondary roll occurs, such as "Action + Theme" or "Roll twice".'
 		}),
 		duplicates: Type.Ref(OracleDuplicateBehavior, {
 			description:
-				'Special rules on how to handle duplicate texts, when rolling multiple times.',
+				'Special rules on how to handle duplicate results, when rolling multiple times.',
 			default: 'reroll'
 		}),
 		dice: Utils.Nullable(Type.Ref(DiceExpression), {
