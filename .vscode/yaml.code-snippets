@@ -133,7 +133,7 @@
     "body": [
       "tags:",
       "  sundered_isles:",
-      "    cursed_version: sundered_isles/oracles/$0"
+      "    cursed_version: sundered_isles/oracles/$0_cursed"
     ]
   },
   "Cursed Version Of": {
@@ -142,14 +142,15 @@
     "body": [
       "tags:",
       "  sundered_isles:",
-      "    cursed_version_of: sundered_isles/oracles/$0"
+      "    cursed_version_of:",
+      "      - sundered_isles/oracles/$0"
     ]
   },
 	"Format simple table rows": {
 		"scope": "yaml",
 		"prefix": "rows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+|> [A-Z].+)\\s*\\n/  - min: $1\n    max: $2\n    text: $3\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+|> [A-Z].+)\\s*\\n/  - min: $1\n    max: $2\n    text: $3\n/g}"
 		],
 		"description": "Formats table rows from copied from Okular as YAML data"
 	},
@@ -173,16 +174,16 @@
 		"scope": "yaml",
 		"prefix": "brows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*\\n/- min: $1\n  max: $2\n  text:\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*\\n/- min: $1\n  max: $2\n/g}"
 		],
-		"description": "Formats table rows from copied from Okular as YAML data"
+		"description": "Formats table rows (number range only) from copied from Okular as YAML data"
 	},
 
 	"Format single number range rows": {
 		"scope": "yaml",
-		"prefix": "r1rows",
+		"prefix": "d%rows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)-?(?<max>[0-9]+)?\\s*(?<result>[A-Z].+)\\s*\\n/- min: $1\n  max: $1\n  text: $3\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)-?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s*\\n/- min: $1\n  max: $1\n  text: $3\n/g}"
 		],
 		"description": "Formats table rows from copied from Okular as YAML data"
 	},
@@ -192,8 +193,51 @@
 		"body": [
 			"${CLIPBOARD/(.*)\\n/- text: $1\n/g}"
 		],
-		"description": "Formats table rows from copied from Okular as YAML data"
+		"description": "Formats table rows (text only) from copied from Okular as YAML data"
 	},
+	"Format unrollable/null rows (text2)": {
+		"scope": "yaml",
+		"prefix": "nrows2",
+		"body": [
+			"${CLIPBOARD/(.*)\t(.*)\\n/- text: $1\n  text2: $2\n/g}"
+		],
+		"description": "Formats table rows (text only) from copied from Okular as YAML data"
+	},
+  "Action + Theme row": {
+    "scope": "yaml",
+    "prefix": "atrow",
+    "body": [
+      "text: '[Action](id:${1|sundered_isles,starforged,delve,classic|}/oracles/core/action) + [Theme](id:$1/oracles/core/theme)'",
+      "oracle_rolls:",
+      "  - auto: true",
+      "    oracle: $1/oracles/core/action",
+      "  - auto: true",
+      "    oracle: $1/oracles/core/theme"
+    ]
+  },
+  "Descriptor + Focus row": {
+    "scope": "yaml",
+    "prefix": "dfrow",
+    "body": [
+      "text: '[Descriptor](id:${1|sundered_isles,starforged,delve,classic|}/oracles/core/descriptor) + [Focus](id:$1/oracles/core/focus)'",
+      "oracle_rolls:",
+      "  - auto: true",
+      "    oracle: $1/oracles/core/descriptor",
+      "  - auto: true",
+      "    oracle: $1/oracles/core/focus"
+    ]
+  },
+  "Roll twice row": {
+    "scope": "yaml",
+    "prefix": "r2row",
+    "body": [
+      "oracle_rolls:",
+      "  - auto: true",
+      "    number_of_rolls: 2",
+      "    duplicates: ${1|reroll,keep,make_it_worse|}"
+    ]
+  },
+
 	"Collection": {
 		"scope": "yaml",
 		"prefix": "col",
@@ -206,9 +250,20 @@
 			"    ${0}"
 		]
 	},
+  "OracleColumn": {
+    "scope": "yaml",
+    "prefix": "ocol",
+    "body": [
+      "${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
+			"  name: ${10:}",
+      "  oracle_type: ${12|column_text,column_text2,column_text3|}",
+			"  rows:",
+			"    ${0}"
+    ]
+  },
   "OracleCollection": {
 		"scope": "yaml",
-		"prefix": "oc",
+		"prefix": "oclct",
 		"body": [
 			"${11:${10/(\\w+)(\\s)?/${1:/downcase}${2:+_}/g}}:",
 			"  name: ${10:}",
@@ -305,7 +360,7 @@
 			"    - name: Shawn Tomkin",
 			"  license: ${14:null}",
 			"  url: https://ironswornrpg.com",
-			"  date: 2023-09-11"
+			"  date: 2024-03-10"
 		]
 	}
 }

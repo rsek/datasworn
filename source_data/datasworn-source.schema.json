@@ -2710,6 +2710,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -2792,6 +2796,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -2838,6 +2846,10 @@
 				},
 				"description": {
 					"$ref": "#/definitions/MarkdownString"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3088,6 +3100,10 @@
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText"
 					}
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3158,6 +3174,10 @@
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText2"
 					}
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3228,6 +3248,10 @@
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText3"
 					}
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3730,6 +3754,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3833,6 +3861,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3937,6 +3969,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4040,6 +4076,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4153,6 +4193,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4271,6 +4315,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4388,6 +4436,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4486,6 +4538,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4644,6 +4700,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4758,6 +4818,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4897,6 +4961,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -5050,6 +5118,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -5166,6 +5238,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -5747,6 +5823,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -5814,6 +5894,10 @@
 							"$ref": "#/definitions/Move"
 						}
 					}
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -6086,6 +6170,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7107,6 +7195,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7140,6 +7232,10 @@
 					"items": {
 						"$ref": "#/definitions/TruthOptionTableRow"
 					}
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7296,6 +7392,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7357,6 +7457,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7429,6 +7533,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7756,6 +7864,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7784,6 +7896,10 @@
 				},
 				"frequency": {
 					"$ref": "#/definitions/DelveSiteDenizenFrequency"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8136,6 +8252,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8186,6 +8306,10 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8236,6 +8360,10 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8579,6 +8707,10 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8629,6 +8761,10 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8679,6 +8815,10 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false

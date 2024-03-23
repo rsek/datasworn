@@ -20,7 +20,18 @@ export function IdentifiedNode<T extends TObject>(
 	const { description, $comment } = schema
 
 	const result = Utils.Assign(
-		[Type.Object({ _id: Utils.Computed(_id) }), schema],
+		[
+			Type.Object({
+				_id: Utils.Computed(_id),
+				_comment: Type.Optional(
+					Type.String({
+						description:
+							'Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.'
+					})
+				)
+			}),
+			schema
+		],
 		{
 			description,
 			$comment,
