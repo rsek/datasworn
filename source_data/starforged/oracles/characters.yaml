@@ -30,8 +30,6 @@ oracles:
         contents:
           given:
             name: Given Name
-            # source:
-            #   <<: *Source
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
@@ -40,413 +38,410 @@ oracles:
                 - starforged/oracles/characters/name/family_name
             oracle_type: column_text
             rows:
-              - <<: &i18n.proper_noun
-                  _i18n:
-                    text:
-                      part_of_speech: proper_noun
-                min: 1
+              - min: 1
                 max: 1
                 text: Akim
-              - <<: *i18n.proper_noun
-                min: 2
+                _i18n: &ProperNoun
+                  text:
+                    part_of_speech: proper_noun
+              - min: 2
                 max: 2
                 text: Alex
-              - <<: *i18n.proper_noun
-                min: 3
+                _i18n: *ProperNoun
+              - min: 3
                 max: 3
                 text: Alexis
-              - <<: *i18n.proper_noun
-                min: 4
+                _i18n: *ProperNoun
+              - min: 4
                 max: 4
                 text: Alisa
-              - <<: *i18n.proper_noun
-                min: 5
+                _i18n: *ProperNoun
+              - min: 5
                 max: 5
                 text: Althea
-              - <<: *i18n.proper_noun
-                min: 6
+                _i18n: *ProperNoun
+              - min: 6
                 max: 6
                 text: Amari
-              - <<: *i18n.proper_noun
-                min: 7
+                _i18n: *ProperNoun
+              - min: 7
                 max: 7
                 text: Aparna
-              - <<: *i18n.proper_noun
-                min: 8
+                _i18n: *ProperNoun
+              - min: 8
                 max: 8
                 text: Argus
-              - <<: *i18n.proper_noun
-                min: 9
+                _i18n: *ProperNoun
+              - min: 9
                 max: 9
                 text: Arnav
-              - <<: *i18n.proper_noun
-                min: 10
+                _i18n: *ProperNoun
+              - min: 10
                 max: 10
                 text: Ash
-              - <<: *i18n.proper_noun
-                min: 11
+                _i18n: *ProperNoun
+              - min: 11
                 max: 11
                 text: Asha
-              - <<: *i18n.proper_noun
-                min: 12
+                _i18n: *ProperNoun
+              - min: 12
                 max: 12
                 text: Astrid
-              - <<: *i18n.proper_noun
-                min: 13
+                _i18n: *ProperNoun
+              - min: 13
                 max: 13
                 text: Aurora
-              - <<: *i18n.proper_noun
-                min: 14
+                _i18n: *ProperNoun
+              - min: 14
                 max: 14
                 text: Ayako
-              - <<: *i18n.proper_noun
-                min: 15
+                _i18n: *ProperNoun
+              - min: 15
                 max: 15
                 text: Azriel
-              - <<: *i18n.proper_noun
-                min: 16
+                _i18n: *ProperNoun
+              - min: 16
                 max: 16
                 text: Blake
-              - <<: *i18n.proper_noun
-                min: 17
+                _i18n: *ProperNoun
+              - min: 17
                 max: 17
                 text: Brennan
-              - <<: *i18n.proper_noun
-                min: 18
+                _i18n: *ProperNoun
+              - min: 18
                 max: 18
                 text: Brianna
-              - <<: *i18n.proper_noun
-                min: 19
+                _i18n: *ProperNoun
+              - min: 19
                 max: 19
                 text: Bruna
-              - <<: *i18n.proper_noun
-                min: 20
+                _i18n: *ProperNoun
+              - min: 20
                 max: 20
                 text: Bruno
-              - <<: *i18n.proper_noun
-                min: 21
+                _i18n: *ProperNoun
+              - min: 21
                 max: 21
                 text: Cassidy
-              - <<: *i18n.proper_noun
-                min: 22
+                _i18n: *ProperNoun
+              - min: 22
                 max: 22
                 text: Christa
-              - <<: *i18n.proper_noun
-                min: 23
+                _i18n: *ProperNoun
+              - min: 23
                 max: 23
                 text: Cole
-              - <<: *i18n.proper_noun
-                min: 24
+                _i18n: *ProperNoun
+              - min: 24
                 max: 24
                 text: Corey
-              - <<: *i18n.proper_noun
-                min: 25
+                _i18n: *ProperNoun
+              - min: 25
                 max: 25
                 text: Creed
-              - <<: *i18n.proper_noun
-                min: 26
+                _i18n: *ProperNoun
+              - min: 26
                 max: 26
                 text: Derya
-              - <<: *i18n.proper_noun
-                min: 27
+                _i18n: *ProperNoun
+              - min: 27
                 max: 27
                 text: Dex
-              - <<: *i18n.proper_noun
-                min: 28
+                _i18n: *ProperNoun
+              - min: 28
                 max: 28
                 text: Doran
-              - <<: *i18n.proper_noun
-                min: 29
+                _i18n: *ProperNoun
+              - min: 29
                 max: 29
                 text: Echo
-              - <<: *i18n.proper_noun
-                min: 30
+                _i18n: *ProperNoun
+              - min: 30
                 max: 30
                 text: Eren
-              - <<: *i18n.proper_noun
-                min: 31
+                _i18n: *ProperNoun
+              - min: 31
                 max: 31
                 text: Erim
-              - <<: *i18n.proper_noun
-                min: 32
+                _i18n: *ProperNoun
+              - min: 32
                 max: 32
                 text: Esana
-              - <<: *i18n.proper_noun
-                min: 33
+                _i18n: *ProperNoun
+              - min: 33
                 max: 33
                 text: Eveline
-              - <<: *i18n.proper_noun
-                min: 34
+                _i18n: *ProperNoun
+              - min: 34
                 max: 34
                 text: Faye
-              - <<: *i18n.proper_noun
-                min: 35
+                _i18n: *ProperNoun
+              - min: 35
                 max: 35
                 text: Fletcher
-              - <<: *i18n.proper_noun
-                min: 36
+                _i18n: *ProperNoun
+              - min: 36
                 max: 36
                 text: Flint
-              - <<: *i18n.proper_noun
-                min: 37
+                _i18n: *ProperNoun
+              - min: 37
                 max: 37
                 text: Florian
-              - <<: *i18n.proper_noun
-                min: 38
+                _i18n: *ProperNoun
+              - min: 38
                 max: 38
                 text: Gavin
-              - <<: *i18n.proper_noun
-                min: 39
+                _i18n: *ProperNoun
+              - min: 39
                 max: 39
                 text: Halia
-              - <<: *i18n.proper_noun
-                min: 40
+                _i18n: *ProperNoun
+              - min: 40
                 max: 40
                 text: Ike
-              - <<: *i18n.proper_noun
-                min: 41
+                _i18n: *ProperNoun
+              - min: 41
                 max: 41
                 text: Isaac
-              - <<: *i18n.proper_noun
-                min: 42
+                _i18n: *ProperNoun
+              - min: 42
                 max: 42
                 text: James
-              - <<: *i18n.proper_noun
-                min: 43
+                _i18n: *ProperNoun
+              - min: 43
                 max: 43
                 text: Janya
-              - <<: *i18n.proper_noun
-                min: 44
+                _i18n: *ProperNoun
+              - min: 44
                 max: 44
                 text: Jihun
-              - <<: *i18n.proper_noun
-                min: 45
+                _i18n: *ProperNoun
+              - min: 45
                 max: 45
                 text: Jorunn
-              - <<: *i18n.proper_noun
-                min: 46
+                _i18n: *ProperNoun
+              - min: 46
                 max: 46
                 text: Juliana
-              - <<: *i18n.proper_noun
-                min: 47
+                _i18n: *ProperNoun
+              - min: 47
                 max: 47
                 text: Juro
-              - <<: *i18n.proper_noun
-                min: 48
+                _i18n: *ProperNoun
+              - min: 48
                 max: 48
                 text: Kaisa
-              - <<: *i18n.proper_noun
-                min: 49
+                _i18n: *ProperNoun
+              - min: 49
                 max: 49
                 text: Karthik
-              - <<: *i18n.proper_noun
-                min: 50
+                _i18n: *ProperNoun
+              - min: 50
                 max: 50
                 text: Kayla
-              - <<: *i18n.proper_noun
-                min: 51
+                _i18n: *ProperNoun
+              - min: 51
                 max: 51
                 text: Kei
-              - <<: *i18n.proper_noun
-                min: 52
+                _i18n: *ProperNoun
+              - min: 52
                 max: 52
                 text: Kiana
-              - <<: *i18n.proper_noun
-                min: 53
+                _i18n: *ProperNoun
+              - min: 53
                 max: 53
                 text: Kieran
-              - <<: *i18n.proper_noun
-                min: 54
+                _i18n: *ProperNoun
+              - min: 54
                 max: 54
                 text: Kierra
-              - <<: *i18n.proper_noun
-                min: 55
+                _i18n: *ProperNoun
+              - min: 55
                 max: 55
                 text: Kimora
-              - <<: *i18n.proper_noun
-                min: 56
+                _i18n: *ProperNoun
+              - min: 56
                 max: 56
                 text: Kiri
-              - <<: *i18n.proper_noun
-                min: 57
+                _i18n: *ProperNoun
+              - min: 57
                 max: 57
                 text: Kirsa
-              - <<: *i18n.proper_noun
-                min: 58
+                _i18n: *ProperNoun
+              - min: 58
                 max: 58
                 text: Kwan
-              - <<: *i18n.proper_noun
-                min: 59
+                _i18n: *ProperNoun
+              - min: 59
                 max: 59
                 text: Kylar
-              - <<: *i18n.proper_noun
-                min: 60
+                _i18n: *ProperNoun
+              - min: 60
                 max: 60
                 text: Landry
-              - <<: *i18n.proper_noun
-                min: 61
+                _i18n: *ProperNoun
+              - min: 61
                 max: 61
                 text: Logan
-              - <<: *i18n.proper_noun
-                min: 62
+                _i18n: *ProperNoun
+              - min: 62
                 max: 62
                 text: Lowell
-              - <<: *i18n.proper_noun
-                min: 63
+                _i18n: *ProperNoun
+              - min: 63
                 max: 63
                 text: Lucas
-              - <<: *i18n.proper_noun
-                min: 64
+                _i18n: *ProperNoun
+              - min: 64
                 max: 64
                 text: Curtis
-              - <<: *i18n.proper_noun
-                min: 65
+                _i18n: *ProperNoun
+              - min: 65
                 max: 65
                 text: Luna
-              - <<: *i18n.proper_noun
-                min: 66
+                _i18n: *ProperNoun
+              - min: 66
                 max: 66
                 text: Lux
-              - <<: *i18n.proper_noun
-                min: 67
+                _i18n: *ProperNoun
+              - min: 67
                 max: 67
                 text: Mae
-              - <<: *i18n.proper_noun
-                min: 68
+                _i18n: *ProperNoun
+              - min: 68
                 max: 68
                 text: Magnus
-              - <<: *i18n.proper_noun
-                min: 69
+                _i18n: *ProperNoun
+              - min: 69
                 max: 69
                 text: Mave
-              - <<: *i18n.proper_noun
-                min: 70
+                _i18n: *ProperNoun
+              - min: 70
                 max: 70
                 text: Merrick
-              - <<: *i18n.proper_noun
-                min: 71
+                _i18n: *ProperNoun
+              - min: 71
                 max: 71
                 text: Mina
-              - <<: *i18n.proper_noun
-                min: 72
+                _i18n: *ProperNoun
+              - min: 72
                 max: 72
                 text: Nashida
-              - <<: *i18n.proper_noun
-                min: 73
+                _i18n: *ProperNoun
+              - min: 73
                 max: 73
                 text: Nassar
-              - <<: *i18n.proper_noun
-                min: 74
+                _i18n: *ProperNoun
+              - min: 74
                 max: 74
                 text: Ostara
-              - <<: *i18n.proper_noun
-                min: 75
+                _i18n: *ProperNoun
+              - min: 75
                 max: 75
                 text: Qasira
-              - <<: *i18n.proper_noun
-                min: 76
+                _i18n: *ProperNoun
+              - min: 76
                 max: 76
                 text: Quinn
-              - <<: *i18n.proper_noun
-                min: 77
+                _i18n: *ProperNoun
+              - min: 77
                 max: 77
                 text: Ragnar
-              - <<: *i18n.proper_noun
-                min: 78
+                _i18n: *ProperNoun
+              - min: 78
                 max: 78
                 text: Raven
-              - <<: *i18n.proper_noun
-                min: 79
+                _i18n: *ProperNoun
+              - min: 79
                 max: 79
                 text: Ria
-              - <<: *i18n.proper_noun
-                min: 80
+                _i18n: *ProperNoun
+              - min: 80
                 max: 80
                 text: Rokuro
-              - <<: *i18n.proper_noun
-                min: 81
+                _i18n: *ProperNoun
+              - min: 81
                 max: 81
                 text: Roland
-              - <<: *i18n.proper_noun
-                min: 82
+                _i18n: *ProperNoun
+              - min: 82
                 max: 82
                 text: Rowena
-              - <<: *i18n.proper_noun
-                min: 83
+                _i18n: *ProperNoun
+              - min: 83
                 max: 83
                 text: Sage
-              - <<: *i18n.proper_noun
-                min: 84
+                _i18n: *ProperNoun
+              - min: 84
                 max: 84
                 text: Saren
-              - <<: *i18n.proper_noun
-                min: 85
+                _i18n: *ProperNoun
+              - min: 85
                 max: 85
                 text: Annora
-              - <<: *i18n.proper_noun
-                min: 86
+                _i18n: *ProperNoun
+              - min: 86
                 max: 86
                 text: Severinus
-              - <<: *i18n.proper_noun
-                min: 87
+                _i18n: *ProperNoun
+              - min: 87
                 max: 87
                 text: Shen
-              - <<: *i18n.proper_noun
-                min: 88
+                _i18n: *ProperNoun
+              - min: 88
                 max: 88
                 text: Talia
-              - <<: *i18n.proper_noun
-                min: 89
+                _i18n: *ProperNoun
+              - min: 89
                 max: 89
                 text: Tomiko
-              - <<: *i18n.proper_noun
-                min: 90
+                _i18n: *ProperNoun
+              - min: 90
                 max: 90
                 text: Ulan
-              - <<: *i18n.proper_noun
-                min: 91
+                _i18n: *ProperNoun
+              - min: 91
                 max: 91
                 text: Valda
-              - <<: *i18n.proper_noun
-                min: 92
+                _i18n: *ProperNoun
+              - min: 92
                 max: 92
                 text: Venri
-              - <<: *i18n.proper_noun
-                min: 93
+                _i18n: *ProperNoun
+              - min: 93
                 max: 93
                 text: Vesper
-              - <<: *i18n.proper_noun
-                min: 94
+                _i18n: *ProperNoun
+              - min: 94
                 max: 94
                 text: Vuldar
-              - <<: *i18n.proper_noun
-                min: 95
+                _i18n: *ProperNoun
+              - min: 95
                 max: 95
                 text: William
-              - <<: *i18n.proper_noun
-                min: 96
+                _i18n: *ProperNoun
+              - min: 96
                 max: 96
                 text: Yelena
-              - <<: *i18n.proper_noun
-                min: 97
+                _i18n: *ProperNoun
+              - min: 97
                 max: 97
                 text: Zakia
-              - <<: *i18n.proper_noun
-                min: 98
+                _i18n: *ProperNoun
+              - min: 98
                 max: 98
                 text: Zari
-              - <<: *i18n.proper_noun
-                min: 99
+                _i18n: *ProperNoun
+              - min: 99
                 max: 99
                 text: Zephyr
-              - <<: *i18n.proper_noun
-                min: 100
+                _i18n: *ProperNoun
+              - min: 100
                 max: 100
                 text: Zoya
+                _i18n: *ProperNoun
           callsign:
             name: Callsign
-            # source:
-            #   <<: *Source
             summary: |-
               Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.
             suggestions:
@@ -455,410 +450,408 @@ oracles:
                 - starforged/oracles/characters/name/family_name
             oracle_type: column_text
             rows:
-              - <<: *i18n.proper_noun
-                min: 1
+              - min: 1
                 max: 1
                 text: Albatross
-              - <<: *i18n.proper_noun
-                min: 2
+                _i18n: *ProperNoun
+              - min: 2
                 max: 2
                 text: Angler
-              - <<: *i18n.proper_noun
-                min: 3
+                _i18n: *ProperNoun
+              - min: 3
                 max: 3
                 text: Anvil
-              - <<: *i18n.proper_noun
-                min: 4
+                _i18n: *ProperNoun
+              - min: 4
                 max: 4
                 text: Badger
-              - <<: *i18n.proper_noun
-                min: 5
+                _i18n: *ProperNoun
+              - min: 5
                 max: 5
                 text: Bandit
-              - <<: *i18n.proper_noun
-                min: 6
+                _i18n: *ProperNoun
+              - min: 6
                 max: 6
                 text: Bash
-              - <<: *i18n.proper_noun
-                min: 7
+                _i18n: *ProperNoun
+              - min: 7
                 max: 7
                 text: Basilisk
-              - <<: *i18n.proper_noun
-                min: 8
+                _i18n: *ProperNoun
+              - min: 8
                 max: 8
                 text: Bingo
-              - <<: *i18n.proper_noun
-                min: 9
+                _i18n: *ProperNoun
+              - min: 9
                 max: 9
                 text: Blackbird
-              - <<: *i18n.proper_noun
-                min: 10
+                _i18n: *ProperNoun
+              - min: 10
                 max: 10
                 text: Blade
-              - <<: *i18n.proper_noun
-                min: 11
+                _i18n: *ProperNoun
+              - min: 11
                 max: 11
                 text: Bloodshot
-              - <<: *i18n.proper_noun
-                min: 12
+                _i18n: *ProperNoun
+              - min: 12
                 max: 12
                 text: Bluewing
-              - <<: *i18n.proper_noun
-                min: 13
+                _i18n: *ProperNoun
+              - min: 13
                 max: 13
                 text: Bonfire
-              - <<: *i18n.proper_noun
-                min: 14
+                _i18n: *ProperNoun
+              - min: 14
                 max: 14
                 text: Book
-              - <<: *i18n.proper_noun
-                min: 15
+                _i18n: *ProperNoun
+              - min: 15
                 max: 15
                 text: Breaker
-              - <<: *i18n.proper_noun
-                min: 16
+                _i18n: *ProperNoun
+              - min: 16
                 max: 16
                 text: Brick
-              - <<: *i18n.proper_noun
-                min: 17
+                _i18n: *ProperNoun
+              - min: 17
                 max: 17
                 text: Buzz
-              - <<: *i18n.proper_noun
-                min: 18
+                _i18n: *ProperNoun
+              - min: 18
                 max: 18
                 text: Buzzard
-              - <<: *i18n.proper_noun
-                min: 19
+                _i18n: *ProperNoun
+              - min: 19
                 max: 19
                 text: Centurion
-              - <<: *i18n.proper_noun
-                min: 20
+                _i18n: *ProperNoun
+              - min: 20
                 max: 20
                 text: Chimera
-              - <<: *i18n.proper_noun
-                min: 21
+                _i18n: *ProperNoun
+              - min: 21
                 max: 21
                 text: Circuit
-              - <<: *i18n.proper_noun
-                min: 22
+                _i18n: *ProperNoun
+              - min: 22
                 max: 22
                 text: Clank
-              - <<: *i18n.proper_noun
-                min: 23
+                _i18n: *ProperNoun
+              - min: 23
                 max: 23
                 text: Cleric
-              - <<: *i18n.proper_noun
-                min: 24
+                _i18n: *ProperNoun
+              - min: 24
                 max: 24
                 text: Crash
-              - <<: *i18n.proper_noun
-                min: 25
+                _i18n: *ProperNoun
+              - min: 25
                 max: 25
                 text: Cutter
-              - <<: *i18n.proper_noun
-                min: 26
+                _i18n: *ProperNoun
+              - min: 26
                 max: 26
                 text: Cutthroat
-              - <<: *i18n.proper_noun
-                min: 27
+                _i18n: *ProperNoun
+              - min: 27
                 max: 27
                 text: Cypher
-              - <<: *i18n.proper_noun
-                min: 28
+                _i18n: *ProperNoun
+              - min: 28
                 max: 28
                 text: Dagger
-              - <<: *i18n.proper_noun
-                min: 29
+                _i18n: *ProperNoun
+              - min: 29
                 max: 29
                 text: Dancer
-              - <<: *i18n.proper_noun
-                min: 30
+                _i18n: *ProperNoun
+              - min: 30
                 max: 30
                 text: Dash
-              - <<: *i18n.proper_noun
-                min: 31
+                _i18n: *ProperNoun
+              - min: 31
                 max: 31
                 text: Deadeye
-              - <<: *i18n.proper_noun
-                min: 32
+                _i18n: *ProperNoun
+              - min: 32
                 max: 32
                 text: Deuce
-              - <<: *i18n.proper_noun
-                min: 33
+                _i18n: *ProperNoun
+              - min: 33
                 max: 33
                 text: Failsafe
-              - <<: *i18n.proper_noun
-                min: 34
+                _i18n: *ProperNoun
+              - min: 34
                 max: 34
                 text: Farseer
-              - <<: *i18n.proper_noun
-                min: 35
+                _i18n: *ProperNoun
+              - min: 35
                 max: 35
                 text: Fidget
-              - <<: *i18n.proper_noun
-                min: 36
+                _i18n: *ProperNoun
+              - min: 36
                 max: 36
                 text: Firestarter
-              - <<: *i18n.proper_noun
-                min: 37
+                _i18n: *ProperNoun
+              - min: 37
                 max: 37
                 text: Fixer
-              - <<: *i18n.proper_noun
-                min: 38
+                _i18n: *ProperNoun
+              - min: 38
                 max: 38
                 text: Flatline
-              - <<: *i18n.proper_noun
-                min: 39
+                _i18n: *ProperNoun
+              - min: 39
                 max: 39
                 text: Ghost
-              - <<: *i18n.proper_noun
-                min: 40
+                _i18n: *ProperNoun
+              - min: 40
                 max: 40
                 text: Grudge
-              - <<: *i18n.proper_noun
-                min: 41
+                _i18n: *ProperNoun
+              - min: 41
                 max: 41
                 text: Gutshot
-              - <<: *i18n.proper_noun
-                min: 42
+                _i18n: *ProperNoun
+              - min: 42
                 max: 42
                 text: Harrow
-              - <<: *i18n.proper_noun
-                min: 43
+                _i18n: *ProperNoun
+              - min: 43
                 max: 43
                 text: Havoc
-              - <<: *i18n.proper_noun
-                min: 44
+                _i18n: *ProperNoun
+              - min: 44
                 max: 44
                 text: Hellhound
-              - <<: *i18n.proper_noun
-                min: 45
+                _i18n: *ProperNoun
+              - min: 45
                 max: 45
                 text: Hellion
-              - <<: *i18n.proper_noun
-                min: 46
+                _i18n: *ProperNoun
+              - min: 46
                 max: 46
                 text: Hex
-              - <<: *i18n.proper_noun
-                min: 47
+                _i18n: *ProperNoun
+              - min: 47
                 max: 47
                 text: Hush
-              - <<: *i18n.proper_noun
-                min: 48
+                _i18n: *ProperNoun
+              - min: 48
                 max: 48
                 text: Irodescriptionnclad
-              - <<: *i18n.proper_noun
-                min: 49
+                _i18n: *ProperNoun
+              - min: 49
                 max: 49
                 text: Jackal
-              - <<: *i18n.proper_noun
-                min: 50
+                _i18n: *ProperNoun
+              - min: 50
                 max: 50
                 text: Jackpot
-              - <<: *i18n.proper_noun
-                min: 51
+                _i18n: *ProperNoun
+              - min: 51
                 max: 51
                 text: Jester
-              - <<: *i18n.proper_noun
-                min: 52
+                _i18n: *ProperNoun
+              - min: 52
                 max: 52
                 text: Link
-              - <<: *i18n.proper_noun
-                min: 53
+                _i18n: *ProperNoun
+              - min: 53
                 max: 53
                 text: Longshot
-              - <<: *i18n.proper_noun
-                min: 54
+                _i18n: *ProperNoun
+              - min: 54
                 max: 54
                 text: Mainframe
-              - <<: *i18n.proper_noun
-                min: 55
+                _i18n: *ProperNoun
+              - min: 55
                 max: 55
                 text: Mantis
-              - <<: *i18n.proper_noun
-                min: 56
+                _i18n: *ProperNoun
+              - min: 56
                 max: 56
                 text: Mimic
-              - <<: *i18n.proper_noun
-                min: 57
+                _i18n: *ProperNoun
+              - min: 57
                 max: 57
                 text: Mole
-              - <<: *i18n.proper_noun
-                min: 58
+                _i18n: *ProperNoun
+              - min: 58
                 max: 58
                 text: Monarch
-              - <<: *i18n.proper_noun
-                min: 59
+                _i18n: *ProperNoun
+              - min: 59
                 max: 59
                 text: Mongoose
-              - <<: *i18n.proper_noun
-                min: 60
+                _i18n: *ProperNoun
+              - min: 60
                 max: 60
                 text: Nails
-              - <<: *i18n.proper_noun
-                min: 61
+                _i18n: *ProperNoun
+              - min: 61
                 max: 61
                 text: Ogre
-              - <<: *i18n.proper_noun
-                min: 62
+                _i18n: *ProperNoun
+              - min: 62
                 max: 62
                 text: Omega
-              - <<: *i18n.proper_noun
-                min: 63
+                _i18n: *ProperNoun
+              - min: 63
                 max: 63
                 text: Overload
-              - <<: *i18n.proper_noun
-                min: 64
+                _i18n: *ProperNoun
+              - min: 64
                 max: 64
                 text: Packrat
-              - <<: *i18n.proper_noun
-                min: 65
+                _i18n: *ProperNoun
+              - min: 65
                 max: 65
                 text: Paladin
-              - <<: *i18n.proper_noun
-                min: 66
+                _i18n: *ProperNoun
+              - min: 66
                 max: 66
                 text: Phantom
-              - <<: *i18n.proper_noun
-                min: 67
+                _i18n: *ProperNoun
+              - min: 67
                 max: 67
                 text: Phoenix
-              - <<: *i18n.proper_noun
-                min: 68
+                _i18n: *ProperNoun
+              - min: 68
                 max: 68
                 text: Pyro
-              - <<: *i18n.proper_noun
-                min: 69
+                _i18n: *ProperNoun
+              - min: 69
                 max: 69
                 text: Quickdraw
-              - <<: *i18n.proper_noun
-                min: 70
+                _i18n: *ProperNoun
+              - min: 70
                 max: 70
                 text: Razor
-              - <<: *i18n.proper_noun
-                min: 71
+                _i18n: *ProperNoun
+              - min: 71
                 max: 71
                 text: Rogue
-              - <<: *i18n.proper_noun
-                min: 72
+                _i18n: *ProperNoun
+              - min: 72
                 max: 72
                 text: Rook
-              - <<: *i18n.proper_noun
-                min: 73
+                _i18n: *ProperNoun
+              - min: 73
                 max: 73
                 text: Rover
-              - <<: *i18n.proper_noun
-                min: 74
+                _i18n: *ProperNoun
+              - min: 74
                 max: 74
                 text: Scout
-              - <<: *i18n.proper_noun
-                min: 75
+                _i18n: *ProperNoun
+              - min: 75
                 max: 75
                 text: Shadow
-              - <<: *i18n.proper_noun
-                min: 76
+                _i18n: *ProperNoun
+              - min: 76
                 max: 76
                 text: Shark
-              - <<: *i18n.proper_noun
-                min: 77
+                _i18n: *ProperNoun
+              - min: 77
                 max: 77
                 text: Shutdown
-              - <<: *i18n.proper_noun
-                min: 78
+                _i18n: *ProperNoun
+              - min: 78
                 max: 78
                 text: Slack
-              - <<: *i18n.proper_noun
-                min: 79
+                _i18n: *ProperNoun
+              - min: 79
                 max: 79
                 text: Slash
-              - <<: *i18n.proper_noun
-                min: 80
+                _i18n: *ProperNoun
+              - min: 80
                 max: 80
                 text: Snipe
-              - <<: *i18n.proper_noun
-                min: 81
+                _i18n: *ProperNoun
+              - min: 81
                 max: 81
                 text: Spider
-              - <<: *i18n.proper_noun
-                min: 82
+                _i18n: *ProperNoun
+              - min: 82
                 max: 82
                 text: Splinter
-              - <<: *i18n.proper_noun
-                min: 83
+                _i18n: *ProperNoun
+              - min: 83
                 max: 83
                 text: Static
-              - <<: *i18n.proper_noun
-                min: 84
+                _i18n: *ProperNoun
+              - min: 84
                 max: 84
                 text: Stinger
-              - <<: *i18n.proper_noun
-                min: 85
+                _i18n: *ProperNoun
+              - min: 85
                 max: 85
                 text: Straggler
-              - <<: *i18n.proper_noun
-                min: 86
+                _i18n: *ProperNoun
+              - min: 86
                 max: 86
                 text: Swindle
-              - <<: *i18n.proper_noun
-                min: 87
+                _i18n: *ProperNoun
+              - min: 87
                 max: 87
                 text: Tinker
-              - <<: *i18n.proper_noun
-                min: 88
+                _i18n: *ProperNoun
+              - min: 88
                 max: 88
                 text: Touchdown
-              - <<: *i18n.proper_noun
-                min: 89
+                _i18n: *ProperNoun
+              - min: 89
                 max: 89
                 text: Tycoon
-              - <<: *i18n.proper_noun
-                min: 90
+                _i18n: *ProperNoun
+              - min: 90
                 max: 90
                 text: Vagabond
-              - <<: *i18n.proper_noun
-                min: 91
+                _i18n: *ProperNoun
+              - min: 91
                 max: 91
                 text: Valkyrie
-              - <<: *i18n.proper_noun
-                min: 92
+                _i18n: *ProperNoun
+              - min: 92
                 max: 92
                 text: Vanguard
-              - <<: *i18n.proper_noun
-                min: 93
+                _i18n: *ProperNoun
+              - min: 93
                 max: 93
                 text: Vertigo
-              - <<: *i18n.proper_noun
-                min: 94
+                _i18n: *ProperNoun
+              - min: 94
                 max: 94
                 text: Warden
-              - <<: *i18n.proper_noun
-                min: 95
+                _i18n: *ProperNoun
+              - min: 95
                 max: 95
                 text: Watchdog
-              - <<: *i18n.proper_noun
-                min: 96
+                _i18n: *ProperNoun
+              - min: 96
                 max: 96
                 text: Wayfinder
-              - <<: *i18n.proper_noun
-                min: 97
+                _i18n: *ProperNoun
+              - min: 97
                 max: 97
                 text: Whisper
-              - <<: *i18n.proper_noun
-                min: 98
+                _i18n: *ProperNoun
+              - min: 98
                 max: 98
                 text: Wraith
-              - <<: *i18n.proper_noun
-                min: 99
+                _i18n: *ProperNoun
+              - min: 99
                 max: 99
                 text: Wrongway
-              - <<: *i18n.proper_noun
-                min: 100
+                _i18n: *ProperNoun
+              - min: 100
                 max: 100
                 text: Zephyr
+                _i18n: *ProperNoun
           family_name:
             name: Family Name
-            # source:
-            #   <<: *Source
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
@@ -867,406 +860,406 @@ oracles:
                 - starforged/oracles/characters/name/callsign
             oracle_type: column_text
             rows:
-              - <<: *i18n.proper_noun
-                min: 1
+              - min: 1
                 max: 1
                 text: Kuzmin
-              - <<: *i18n.proper_noun
-                min: 2
+                _i18n: *ProperNoun
+              - min: 2
                 max: 2
                 text: Durant
-              - <<: *i18n.proper_noun
-                min: 3
+                _i18n: *ProperNoun
+              - min: 3
                 max: 3
                 text: Jefferies
-              - <<: *i18n.proper_noun
-                min: 4
+                _i18n: *ProperNoun
+              - min: 4
                 max: 4
                 text: Velez
-              - <<: *i18n.proper_noun
-                min: 5
+                _i18n: *ProperNoun
+              - min: 5
                 max: 5
                 text: Lontoc
-              - <<: *i18n.proper_noun
-                min: 6
+                _i18n: *ProperNoun
+              - min: 6
                 max: 6
                 text: Wade
-              - <<: *i18n.proper_noun
-                min: 7
+                _i18n: *ProperNoun
+              - min: 7
                 max: 7
                 text: Kade
-              - <<: *i18n.proper_noun
-                min: 8
+                _i18n: *ProperNoun
+              - min: 8
                 max: 8
                 text: Thorn
-              - <<: *i18n.proper_noun
-                min: 9
+                _i18n: *ProperNoun
+              - min: 9
                 max: 9
                 text: Khosla
-              - <<: *i18n.proper_noun
-                min: 10
+                _i18n: *ProperNoun
+              - min: 10
                 max: 10
                 text: Hendrix
-              - <<: *i18n.proper_noun
-                min: 11
+                _i18n: *ProperNoun
+              - min: 11
                 max: 11
                 text: Okiro
-              - <<: *i18n.proper_noun
-                min: 12
+                _i18n: *ProperNoun
+              - min: 12
                 max: 12
                 text: Ripley
-              - <<: *i18n.proper_noun
-                min: 13
+                _i18n: *ProperNoun
+              - min: 13
                 max: 13
                 text: Talin
-              - <<: *i18n.proper_noun
-                min: 14
+                _i18n: *ProperNoun
+              - min: 14
                 max: 14
                 text: Jin
-              - <<: *i18n.proper_noun
-                min: 15
+                _i18n: *ProperNoun
+              - min: 15
                 max: 15
                 text: Finn
-              - <<: *i18n.proper_noun
-                min: 16
+                _i18n: *ProperNoun
+              - min: 16
                 max: 16
                 text: Solas
-              - <<: *i18n.proper_noun
-                min: 17
+                _i18n: *ProperNoun
+              - min: 17
                 max: 17
                 text: Quint
-              - <<: *i18n.proper_noun
-                min: 18
+                _i18n: *ProperNoun
+              - min: 18
                 max: 18
                 text: Keelan
-              - <<: *i18n.proper_noun
-                min: 19
+                _i18n: *ProperNoun
+              - min: 19
                 max: 19
                 text: Silva
-              - <<: *i18n.proper_noun
-                min: 20
+                _i18n: *ProperNoun
+              - min: 20
                 max: 20
                 text: Valk
-              - <<: *i18n.proper_noun
-                min: 21
+                _i18n: *ProperNoun
+              - min: 21
                 max: 21
                 text: O'Brien
-              - <<: *i18n.proper_noun
-                min: 22
+                _i18n: *ProperNoun
+              - min: 22
                 max: 22
                 text: Ruiz
-              - <<: *i18n.proper_noun
-                min: 23
+                _i18n: *ProperNoun
+              - min: 23
                 max: 23
                 text: Stallard
-              - <<: *i18n.proper_noun
-                min: 24
+                _i18n: *ProperNoun
+              - min: 24
                 max: 24
                 text: Mackenson
-              - <<: *i18n.proper_noun
-                min: 25
+                _i18n: *ProperNoun
+              - min: 25
                 max: 25
                 text: Jensen
-              - <<: *i18n.proper_noun
-                min: 26
+                _i18n: *ProperNoun
+              - min: 26
                 max: 26
                 text: Sakir
-              - <<: *i18n.proper_noun
-                min: 27
+                _i18n: *ProperNoun
+              - min: 27
                 max: 27
                 text: Tolari
-              - <<: *i18n.proper_noun
-                min: 28
+                _i18n: *ProperNoun
+              - min: 28
                 max: 28
                 text: Kain
-              - <<: *i18n.proper_noun
-                min: 29
+                _i18n: *ProperNoun
+              - min: 29
                 max: 29
                 text: Carr
-              - <<: *i18n.proper_noun
-                min: 30
+                _i18n: *ProperNoun
+              - min: 30
                 max: 30
                 text: Valenus
-              - <<: *i18n.proper_noun
-                min: 31
+                _i18n: *ProperNoun
+              - min: 31
                 max: 31
                 text: Kaan
-              - <<: *i18n.proper_noun
-                min: 32
+                _i18n: *ProperNoun
+              - min: 32
                 max: 32
                 text: Taylan
-              - <<: *i18n.proper_noun
-                min: 33
+                _i18n: *ProperNoun
+              - min: 33
                 max: 33
                 text: Legrand
-              - <<: *i18n.proper_noun
-                min: 34
+                _i18n: *ProperNoun
+              - min: 34
                 max: 34
                 text: Jemison
-              - <<: *i18n.proper_noun
-                min: 35
+                _i18n: *ProperNoun
+              - min: 35
                 max: 35
                 text: Arden
-              - <<: *i18n.proper_noun
-                min: 36
+                _i18n: *ProperNoun
+              - min: 36
                 max: 36
                 text: Sayer
-              - <<: *i18n.proper_noun
-                min: 37
+                _i18n: *ProperNoun
+              - min: 37
                 max: 37
                 text: Kai
-              - <<: *i18n.proper_noun
-                min: 38
+                _i18n: *ProperNoun
+              - min: 38
                 max: 38
                 text: Slater
-              - <<: *i18n.proper_noun
-                min: 39
+                _i18n: *ProperNoun
+              - min: 39
                 max: 39
                 text: Edris
-              - <<: *i18n.proper_noun
-                min: 40
+                _i18n: *ProperNoun
+              - min: 40
                 max: 40
                 text: Sutton
-              - <<: *i18n.proper_noun
-                min: 41
+                _i18n: *ProperNoun
+              - min: 41
                 max: 41
                 text: Savarin
-              - <<: *i18n.proper_noun
-                min: 42
+                _i18n: *ProperNoun
+              - min: 42
                 max: 42
                 text: Bridger
-              - <<: *i18n.proper_noun
-                min: 43
+                _i18n: *ProperNoun
+              - min: 43
                 max: 43
                 text: Mital
-              - <<: *i18n.proper_noun
-                min: 44
+                _i18n: *ProperNoun
+              - min: 44
                 max: 44
                 text: Shin
-              - <<: *i18n.proper_noun
-                min: 45
+                _i18n: *ProperNoun
+              - min: 45
                 max: 45
                 text: Nadir
-              - <<: *i18n.proper_noun
-                min: 46
+                _i18n: *ProperNoun
+              - min: 46
                 max: 46
                 text: Santos
-              - <<: *i18n.proper_noun
-                min: 47
+                _i18n: *ProperNoun
+              - min: 47
                 max: 47
                 text: Mihara
-              - <<: *i18n.proper_noun
-                min: 48
+                _i18n: *ProperNoun
+              - min: 48
                 max: 48
                 text: Buhari
-              - <<: *i18n.proper_noun
-                min: 49
+                _i18n: *ProperNoun
+              - min: 49
                 max: 49
                 text: Salvi
-              - <<: *i18n.proper_noun
-                min: 50
+                _i18n: *ProperNoun
+              - min: 50
                 max: 50
                 text: Adler
-              - <<: *i18n.proper_noun
-                min: 51
+                _i18n: *ProperNoun
+              - min: 51
                 max: 51
                 text: Takara
-              - <<: *i18n.proper_noun
-                min: 52
+                _i18n: *ProperNoun
+              - min: 52
                 max: 52
                 text: Shelton
-              - <<: *i18n.proper_noun
-                min: 53
+                _i18n: *ProperNoun
+              - min: 53
                 max: 53
                 text: Vandu
-              - <<: *i18n.proper_noun
-                min: 54
+                _i18n: *ProperNoun
+              - min: 54
                 max: 54
                 text: Vega
-              - <<: *i18n.proper_noun
-                min: 55
+                _i18n: *ProperNoun
+              - min: 55
                 max: 55
                 text: Zhang
-              - <<: *i18n.proper_noun
-                min: 56
+                _i18n: *ProperNoun
+              - min: 56
                 max: 56
                 text: Savela
-              - <<: *i18n.proper_noun
-                min: 57
+                _i18n: *ProperNoun
+              - min: 57
                 max: 57
                 text: Hawking
-              - <<: *i18n.proper_noun
-                min: 58
+                _i18n: *ProperNoun
+              - min: 58
                 max: 58
                 text: Jen
-              - <<: *i18n.proper_noun
-                min: 59
+                _i18n: *ProperNoun
+              - min: 59
                 max: 59
                 text: Hobbs
-              - <<: *i18n.proper_noun
-                min: 60
+                _i18n: *ProperNoun
+              - min: 60
                 max: 60
                 text: Holland
-              - <<: *i18n.proper_noun
-                min: 61
+                _i18n: *ProperNoun
+              - min: 61
                 max: 61
                 text: Silvius
-              - <<: *i18n.proper_noun
-                min: 62
+                _i18n: *ProperNoun
+              - min: 62
                 max: 62
                 text: Freeman
-              - <<: *i18n.proper_noun
-                min: 63
+                _i18n: *ProperNoun
+              - min: 63
                 max: 63
                 text: Barbosa
-              - <<: *i18n.proper_noun
-                min: 64
+                _i18n: *ProperNoun
+              - min: 64
                 max: 64
                 text: Winter
-              - <<: *i18n.proper_noun
-                min: 65
+                _i18n: *ProperNoun
+              - min: 65
                 max: 65
                 text: Hammond
-              - <<: *i18n.proper_noun
-                min: 66
+                _i18n: *ProperNoun
+              - min: 66
                 max: 66
                 text: Archer
-              - <<: *i18n.proper_noun
-                min: 67
+                _i18n: *ProperNoun
+              - min: 67
                 max: 67
                 text: Barlowe
-              - <<: *i18n.proper_noun
-                min: 68
+                _i18n: *ProperNoun
+              - min: 68
                 max: 68
                 text: Shepherd
-              - <<: *i18n.proper_noun
-                min: 69
+                _i18n: *ProperNoun
+              - min: 69
                 max: 69
                 text: Griffin
-              - <<: *i18n.proper_noun
-                min: 70
+                _i18n: *ProperNoun
+              - min: 70
                 max: 70
                 text: Frost
-              - <<: *i18n.proper_noun
-                min: 71
+                _i18n: *ProperNoun
+              - min: 71
                 max: 71
                 text: Quon
-              - <<: *i18n.proper_noun
-                min: 72
+                _i18n: *ProperNoun
+              - min: 72
                 max: 72
                 text: Malek
-              - <<: *i18n.proper_noun
-                min: 73
+                _i18n: *ProperNoun
+              - min: 73
                 max: 73
                 text: Murad
-              - <<: *i18n.proper_noun
-                min: 74
+                _i18n: *ProperNoun
+              - min: 74
                 max: 74
                 text: Becker
-              - <<: *i18n.proper_noun
-                min: 75
+                _i18n: *ProperNoun
+              - min: 75
                 max: 75
                 text: Ammar
-              - <<: *i18n.proper_noun
-                min: 76
+                _i18n: *ProperNoun
+              - min: 76
                 max: 76
                 text: Braddock
-              - <<: *i18n.proper_noun
-                min: 77
+                _i18n: *ProperNoun
+              - min: 77
                 max: 77
                 text: Blackstone
-              - <<: *i18n.proper_noun
-                min: 78
+                _i18n: *ProperNoun
+              - min: 78
                 max: 78
                 text: Hadley
-              - <<: *i18n.proper_noun
-                min: 79
+                _i18n: *ProperNoun
+              - min: 79
                 max: 79
                 text: Farin
-              - <<: *i18n.proper_noun
-                min: 80
+                _i18n: *ProperNoun
+              - min: 80
                 max: 80
                 text: Kobayashi
-              - <<: *i18n.proper_noun
-                min: 81
+                _i18n: *ProperNoun
+              - min: 81
                 max: 81
                 text: Duval
-              - <<: *i18n.proper_noun
-                min: 82
+                _i18n: *ProperNoun
+              - min: 82
                 max: 82
                 text: Hunter
-              - <<: *i18n.proper_noun
-                min: 83
+                _i18n: *ProperNoun
+              - min: 83
                 max: 83
                 text: Beckett
-              - <<: *i18n.proper_noun
-                min: 84
+                _i18n: *ProperNoun
+              - min: 84
                 max: 84
                 text: Dykstra
-              - <<: *i18n.proper_noun
-                min: 85
+                _i18n: *ProperNoun
+              - min: 85
                 max: 85
                 text: Gray
-              - <<: *i18n.proper_noun
-                min: 86
+                _i18n: *ProperNoun
+              - min: 86
                 max: 86
                 text: Sedano
-              - <<: *i18n.proper_noun
-                min: 87
+                _i18n: *ProperNoun
+              - min: 87
                 max: 87
                 text: Bai
-              - <<: *i18n.proper_noun
-                min: 88
+                _i18n: *ProperNoun
+              - min: 88
                 max: 88
                 text: Booker
-              - <<: *i18n.proper_noun
-                min: 89
+                _i18n: *ProperNoun
+              - min: 89
                 max: 89
                 text: Sato
-              - <<: *i18n.proper_noun
-                min: 90
+                _i18n: *ProperNoun
+              - min: 90
                 max: 90
                 text: Vayan
-              - <<: *i18n.proper_noun
-                min: 91
+                _i18n: *ProperNoun
+              - min: 91
                 max: 91
                 text: Bond
-              - <<: *i18n.proper_noun
-                min: 92
+                _i18n: *ProperNoun
+              - min: 92
                 max: 92
                 text: Stark
-              - <<: *i18n.proper_noun
-                min: 93
+                _i18n: *ProperNoun
+              - min: 93
                 max: 93
                 text: Stirling
-              - <<: *i18n.proper_noun
-                min: 94
+                _i18n: *ProperNoun
+              - min: 94
                 max: 94
                 text: Wolfe
-              - <<: *i18n.proper_noun
-                min: 95
+                _i18n: *ProperNoun
+              - min: 95
                 max: 95
                 text: O'Niel
-              - <<: *i18n.proper_noun
-                min: 96
+                _i18n: *ProperNoun
+              - min: 96
                 max: 96
                 text: Petrov
-              - <<: *i18n.proper_noun
-                min: 97
+                _i18n: *ProperNoun
+              - min: 97
                 max: 97
                 text: Nazari
-              - <<: *i18n.proper_noun
-                min: 98
+                _i18n: *ProperNoun
+              - min: 98
                 max: 98
                 text: Darwin
-              - <<: *i18n.proper_noun
-                min: 99
+                _i18n: *ProperNoun
+              - min: 99
                 max: 99
                 text: Pearson
-              - <<: *i18n.proper_noun
-                min: 100
+                _i18n: *ProperNoun
+              - min: 100
                 max: 100
                 text: Volkov
+                _i18n: *ProperNoun
     contents:
       first_look:
         name: First Look
@@ -1280,168 +1273,166 @@ oracles:
           min: 1
           max: 2
         rows:
-          - <<: &i18n.adjective
-              _i18n:
-                text:
-                  part_of_speech: adjective
-            min: 1
+          - min: 1
             max: 3
             text: Accented
-          - <<: *i18n.adjective
-            min: 4
+            _i18n: &Adjective
+              text:
+                part_of_speech: adjective
+          - min: 4
             max: 6
             text: Accompanied
-          - <<: *i18n.adjective
-            min: 7
+            _i18n: *Adjective
+          - min: 7
             max: 8
             text: Adorned
-          - <<: *i18n.adjective
-            min: 9
+            _i18n: *Adjective
+          - min: 9
             max: 11
             text: Aged
-          - <<: &i18n.gerund
-              _i18n:
-                text:
-                  part_of_speech: gerund
-            min: 12
+            _i18n: *Adjective
+          - min: 12
             max: 13
             text: Alluring
-          - <<: *i18n.adjective
-            min: 14
+            _i18n: &Gerund
+              text:
+                part_of_speech: gerund
+          - min: 14
             max: 15
             text: Armed
-          - <<: *i18n.adjective
-            min: 16
+            _i18n: *Adjective
+          - min: 16
             max: 17
             text: Armored
-          - <<: *i18n.adjective
-            min: 18
+            _i18n: *Adjective
+          - min: 18
             max: 20
             text: Athletic
-          - <<: *i18n.adjective
-            min: 21
+            _i18n: *Adjective
+          - min: 21
             max: 23
             text: Attractive
-          - <<: *i18n.adjective
-            min: 24
+            _i18n: *Adjective
+          - min: 24
             max: 25
             text: Augmented
-          - <<: *i18n.adjective
-            min: 26
+            _i18n: *Adjective
+          - min: 26
             max: 27
             text: Concealed
-          - <<: *i18n.adjective
-            min: 28
+            _i18n: *Adjective
+          - min: 28
             max: 30
             text: Distracted
-          - <<: *i18n.adjective
-            min: 31
+            _i18n: *Adjective
+          - min: 31
             max: 33
             text: Eccentric
-          - <<: *i18n.adjective
-            min: 34
+            _i18n: *Adjective
+          - min: 34
             max: 35
             text: Energetic
-          - <<: *i18n.adjective
-            min: 36
+            _i18n: *Adjective
+          - min: 36
             max: 37
             text: Flashy
-          - <<: *i18n.adjective
-            min: 38
+            _i18n: *Adjective
+          - min: 38
             max: 40
             text: Graceful
-          - <<: *i18n.adjective
-            min: 41
+            _i18n: *Adjective
+          - min: 41
             max: 43
             text: Grim
-          - <<: *i18n.adjective
-            min: 44
+            _i18n: *Adjective
+          - min: 44
             max: 46
             text: Haggard
-          - <<: *i18n.adjective
-            min: 47
+            _i18n: *Adjective
+          - min: 47
             max: 49
             text: Ill-equipped
-          - <<: *i18n.gerund
-            min: 50
+            _i18n: *Adjective
+          - min: 50
             max: 52
             text: Imposing
-          - <<: *i18n.adjective
-            min: 53
+            _i18n: *Gerund
+          - min: 53
             max: 55
             text: Large
-          - <<: *i18n.adjective
-            min: 56
+            _i18n: *Adjective
+          - min: 56
             max: 57
             text: Mutated
-          - <<: *i18n.adjective
-            min: 58
+            _i18n: *Adjective
+          - min: 58
             max: 60
             text: Plain
-          - <<: *i18n.adjective
-            min: 61
+            _i18n: *Adjective
+          - min: 61
             max: 62
             text: Poised
-          - <<: *i18n.adjective
-            min: 63
+            _i18n: *Adjective
+          - min: 63
             max: 65
             text: Scarred
-          - <<: *i18n.adjective
-            min: 66
+            _i18n: *Adjective
+          - min: 66
             max: 68
             text: Scruffy
-          - <<: *i18n.adjective
-            min: 69
+            _i18n: *Adjective
+          - min: 69
             max: 71
             text: Shifty
-          - <<: *i18n.adjective
-            min: 72
+            _i18n: *Adjective
+          - min: 72
             max: 73
             text: Sickly
-          - <<: *i18n.adjective
-            min: 74
+            _i18n: *Adjective
+          - min: 74
             max: 76
             text: Slight
-          - <<: *i18n.gerund
-            min: 77
+            _i18n: *Adjective
+          - min: 77
             max: 78
             text: Swaggering
-          - <<: *i18n.adjective
-            min: 79
+            _i18n: *Gerund
+          - min: 79
             max: 81
             text: Tattooed
-          - <<: *i18n.adjective
-            min: 82
+            _i18n: *Adjective
+          - min: 82
             max: 83
             text: Threatened
-          - <<: *i18n.adjective
-            min: 84
+            _i18n: *Adjective
+          - min: 84
             max: 85
             text: Uncanny
-          - <<: *i18n.adjective
-            min: 86
+            _i18n: *Adjective
+          - min: 86
             max: 87
             text: Visibly disabled
-          - <<: *i18n.adjective
-            min: 88
+            _i18n: *Adjective
+          - min: 88
             max: 90
             text: Weathered
-          - <<: *i18n.adjective
-            min: 91
+            _i18n: *Adjective
+          - min: 91
             max: 92
             text: Well-equipped
-          - <<: *i18n.adjective
-            min: 93
+            _i18n: *Adjective
+          - min: 93
             max: 95
             text: Wiry
-          - <<: *i18n.adjective
-            min: 96
+            _i18n: *Adjective
+          - min: 96
             max: 97
             text: Wounded
-          - <<: *i18n.adjective
-            min: 98
+            _i18n: *Adjective
+          - min: 98
             max: 100
             text: Youthful
+            _i18n: *Adjective
       initial_disposition:
         name: Initial Disposition
         oracle_type: table_text
@@ -1451,54 +1442,54 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - <<: *i18n.adjective
-            min: 1
+          - min: 1
             max: 6
             text: Helpful
-          - <<: *i18n.adjective
-            min: 7
+            _i18n: *Adjective
+          - min: 7
             max: 14
             text: Friendly
-          - <<: *i18n.adjective
-            min: 15
+            _i18n: *Adjective
+          - min: 15
             max: 22
             text: Cooperative
-          - <<: *i18n.adjective
-            min: 23
+            _i18n: *Adjective
+          - min: 23
             max: 30
             text: Curious
-          - <<: *i18n.adjective
-            min: 31
+            _i18n: *Adjective
+          - min: 31
             max: 40
             text: Indifferent
-          - <<: *i18n.adjective
-            min: 41
+            _i18n: *Adjective
+          - min: 41
             max: 50
             text: Suspicious
-          - <<: *i18n.gerund
-            min: 51
+            _i18n: *Adjective
+          - min: 51
             max: 60
             text: Wanting
-          - <<: *i18n.adjective
-            min: 61
+            _i18n: *Gerund
+          - min: 61
             max: 70
             text: Desperate
-          - <<: *i18n.gerund
-            min: 71
+            _i18n: *Adjective
+          - min: 71
             max: 78
             text: Demanding
-          - <<: *i18n.adjective
-            min: 79
+            _i18n: *Gerund
+          - min: 79
             max: 86
             text: Unfriendly
-          - <<: *i18n.gerund
-            min: 87
+            _i18n: *Adjective
+          - min: 87
             max: 94
             text: Threatening
-          - <<: *i18n.adjective
-            min: 95
+            _i18n: *Gerund
+          - min: 95
             max: 100
             text: Hostile
+            _i18n: *Adjective
       role:
         name: Character Role
         oracle_type: table_text
@@ -1506,193 +1497,192 @@ oracles:
           <<: *Source
           page: 331
         rows:
-          - <<: &i18n.common_noun
-              _i18n:
-                text:
-                  part_of_speech: common_noun
-            min: 1
+          - min: 1
             max: 2
             text: Agent
-          - <<: *i18n.common_noun
-            min: 3
+            _i18n: &CommonNoun
+              text:
+                part_of_speech: common_noun
+          - min: 3
             max: 4
             text: AI
-          - <<: *i18n.common_noun
-            min: 5
+            _i18n: *CommonNoun
+          - min: 5
             max: 6
             text: Artisan
-          - <<: *i18n.common_noun
-            min: 7
+            _i18n: *CommonNoun
+          - min: 7
             max: 8
             text: Assassin
-          - <<: *i18n.common_noun
-            min: 9
+            _i18n: *CommonNoun
+          - min: 9
             max: 10
             text: Bounty Hunter
-          - <<: *i18n.common_noun
-            min: 11
+            _i18n: *CommonNoun
+          - min: 11
             max: 12
             text: Courier
-          - <<: *i18n.common_noun
-            min: 13
+            _i18n: *CommonNoun
+          - min: 13
             max: 14
             text: Crew
-          - <<: *i18n.common_noun
-            min: 15
+            _i18n: *CommonNoun
+          - min: 15
             max: 16
             text: Criminal
-          - <<: *i18n.common_noun
-            min: 17
+            _i18n: *CommonNoun
+          - min: 17
             max: 18
             text: Cultist
-          - <<: *i18n.common_noun
-            min: 19
+            _i18n: *CommonNoun
+          - min: 19
             max: 20
             text: Diplomat
-          - <<: *i18n.common_noun
-            min: 21
+            _i18n: *CommonNoun
+          - min: 21
             max: 22
             text: Engineer
-          - <<: *i18n.common_noun
-            min: 23
+            _i18n: *CommonNoun
+          - min: 23
             max: 24
             text: Entertainer
-          - <<: *i18n.common_noun
-            min: 25
+            _i18n: *CommonNoun
+          - min: 25
             max: 26
             text: Explorer
-          - <<: *i18n.common_noun
-            min: 27
+            _i18n: *CommonNoun
+          - min: 27
             max: 28
             text: Farmer
-          - <<: *i18n.common_noun
-            min: 29
+            _i18n: *CommonNoun
+          - min: 29
             max: 30
             text: Fugitive
-          - <<: *i18n.common_noun
-            min: 31
+            _i18n: *CommonNoun
+          - min: 31
             max: 32
             text: Guard
-          - <<: *i18n.common_noun
-            min: 33
+            _i18n: *CommonNoun
+          - min: 33
             max: 34
             text: Guide
-          - <<: *i18n.common_noun
-            min: 35
+            _i18n: *CommonNoun
+          - min: 35
             max: 36
             text: Healer
-          - <<: *i18n.common_noun
-            min: 37
+            _i18n: *CommonNoun
+          - min: 37
             max: 38
             text: Historian
-          - <<: *i18n.common_noun
-            min: 39
+            _i18n: *CommonNoun
+          - min: 39
             max: 40
             text: Hunter
-          - <<: *i18n.common_noun
-            min: 41
+            _i18n: *CommonNoun
+          - min: 41
             max: 42
             text: Investigator
-          - <<: *i18n.common_noun
-            min: 43
+            _i18n: *CommonNoun
+          - min: 43
             max: 44
             text: Laborer
-          - <<: *i18n.common_noun
-            min: 45
+            _i18n: *CommonNoun
+          - min: 45
             max: 46
             text: Lawkeeper
-          - <<: *i18n.common_noun
-            min: 47
+            _i18n: *CommonNoun
+          - min: 47
             max: 48
             text: Leader
-          - <<: *i18n.common_noun
-            min: 49
+            _i18n: *CommonNoun
+          - min: 49
             max: 50
             text: Mercenary
-          - <<: *i18n.common_noun
-            min: 51
+            _i18n: *CommonNoun
+          - min: 51
             max: 52
             text: Merchant
-          - <<: *i18n.common_noun
-            min: 53
+            _i18n: *CommonNoun
+          - min: 53
             max: 54
             text: Miner
-          - <<: *i18n.common_noun
-            min: 55
+            _i18n: *CommonNoun
+          - min: 55
             max: 56
             text: Mystic
-          - <<: *i18n.common_noun
-            min: 57
+            _i18n: *CommonNoun
+          - min: 57
             max: 58
             text: Navigator
-          - <<: *i18n.common_noun
-            min: 59
+            _i18n: *CommonNoun
+          - min: 59
             max: 60
             text: Outcast
-          - <<: *i18n.common_noun
-            min: 61
+            _i18n: *CommonNoun
+          - min: 61
             max: 62
             text: Pilgrim
-          - <<: *i18n.common_noun
-            min: 63
+            _i18n: *CommonNoun
+          - min: 63
             max: 64
             text: Pilot
-          - <<: *i18n.common_noun
-            min: 65
+            _i18n: *CommonNoun
+          - min: 65
             max: 66
             text: Pirate
-          - <<: *i18n.common_noun
-            min: 67
+            _i18n: *CommonNoun
+          - min: 67
             max: 68
             text: Preacher
-          - <<: *i18n.common_noun
-            min: 69
+            _i18n: *CommonNoun
+          - min: 69
             max: 70
             text: Prophet
-          - <<: *i18n.common_noun
-            min: 71
+            _i18n: *CommonNoun
+          - min: 71
             max: 72
             text: Raider
-          - <<: *i18n.common_noun
-            min: 73
+            _i18n: *CommonNoun
+          - min: 73
             max: 74
             text: Researcher
-          - <<: *i18n.common_noun
-            min: 75
+            _i18n: *CommonNoun
+          - min: 75
             max: 76
             text: Scavenger
-          - <<: *i18n.common_noun
-            min: 77
+            _i18n: *CommonNoun
+          - min: 77
             max: 78
             text: Scholar
-          - <<: *i18n.common_noun
-            min: 79
+            _i18n: *CommonNoun
+          - min: 79
             max: 80
             text: Scout
-          - <<: *i18n.common_noun
-            min: 81
+            _i18n: *CommonNoun
+          - min: 81
             max: 82
             text: Shipwright
-          - <<: *i18n.common_noun
-            min: 83
+            _i18n: *CommonNoun
+          - min: 83
             max: 84
             text: Smuggler
-          - <<: *i18n.common_noun
-            min: 85
+            _i18n: *CommonNoun
+          - min: 85
             max: 86
             text: Soldier
-          - <<: *i18n.common_noun
-            min: 87
+            _i18n: *CommonNoun
+          - min: 87
             max: 88
             text: Spacer
-          - <<: *i18n.common_noun
-            min: 89
+            _i18n: *CommonNoun
+          - min: 89
             max: 90
             text: Technician
-          - <<: *i18n.common_noun
-            min: 91
+            _i18n: *CommonNoun
+          - min: 91
             max: 92
             text: Thief
+            _i18n: *CommonNoun
           - min: 93
             max: 95
             <<: &ActionTheme
@@ -1879,403 +1869,403 @@ oracles:
           min: 1
           max: 3
         rows:
-          - <<: *i18n.adjective
-            min: 1
+          - min: 1
             max: 1
             text: Addicted
-          - <<: *i18n.adjective
-            min: 2
+            _i18n: *Adjective
+          - min: 2
             max: 2
             text: Adventurous
-          - <<: *i18n.adjective
-            min: 3
+            _i18n: *Adjective
+          - min: 3
             max: 3
             text: Afflicted
-          - <<: *i18n.adjective
-            min: 4
+            _i18n: *Adjective
+          - min: 4
             max: 4
             text: Aggressive
-          - <<: *i18n.adjective
-            min: 5
+            _i18n: *Adjective
+          - min: 5
             max: 5
             text: Ambitious
-          - <<: *i18n.adjective
-            min: 6
+            _i18n: *Adjective
+          - min: 6
             max: 6
             text: Angry
-          - <<: *i18n.adjective
-            min: 7
+            _i18n: *Adjective
+          - min: 7
             max: 7
             text: Anxious
-          - <<: *i18n.adjective
-            min: 8
+            _i18n: *Adjective
+          - min: 8
             max: 8
             text: Apathetic
-          - <<: *i18n.adjective
-            min: 9
+            _i18n: *Adjective
+          - min: 9
             max: 9
             text: Bitter
-          - <<: *i18n.adjective
-            min: 10
+            _i18n: *Adjective
+          - min: 10
             max: 10
             text: Boastful
-          - <<: *i18n.adjective
-            min: 11
+            _i18n: *Adjective
+          - min: 11
             max: 11
             text: Boisterous
-          - <<: *i18n.adjective
-            min: 12
+            _i18n: *Adjective
+          - min: 12
             max: 12
             text: Bold
-          - <<: *i18n.adjective
-            min: 13
+            _i18n: *Adjective
+          - min: 13
             max: 13
             text: Brave
-          - <<: *i18n.adjective
-            min: 14
+            _i18n: *Adjective
+          - min: 14
             max: 14
             text: Careless
-          - <<: *i18n.adjective
-            min: 15
+            _i18n: *Adjective
+          - min: 15
             max: 15
             text: Cautious
-          - <<: *i18n.adjective
-            min: 16
+            _i18n: *Adjective
+          - min: 16
             max: 16
             text: Charismatic
-          - <<: *i18n.adjective
-            min: 17
+            _i18n: *Adjective
+          - min: 17
             max: 17
             text: Clever
-          - <<: *i18n.adjective
-            min: 18
+            _i18n: *Adjective
+          - min: 18
             max: 18
             text: Conceited
-          - <<: *i18n.adjective
-            min: 19
+            _i18n: *Adjective
+          - min: 19
             max: 19
             text: Confident
-          - <<: *i18n.adjective
-            min: 20
+            _i18n: *Adjective
+          - min: 20
             max: 20
             text: Confused
-          - <<: *i18n.adjective
-            min: 21
+            _i18n: *Adjective
+          - min: 21
             max: 21
             text: Connected
-          - <<: *i18n.adjective
-            min: 22
+            _i18n: *Adjective
+          - min: 22
             max: 22
             text: Corrupted
-          - <<: *i18n.adjective
-            min: 23
+            _i18n: *Adjective
+          - min: 23
             max: 23
             text: Cowardly
-          - <<: *i18n.adjective
-            min: 24
+            _i18n: *Adjective
+          - min: 24
             max: 24
             text: Creative
-          - <<: *i18n.adjective
-            min: 25
+            _i18n: *Adjective
+          - min: 25
             max: 25
             text: Critical
-          - <<: *i18n.adjective
-            min: 26
+            _i18n: *Adjective
+          - min: 26
             max: 26
             text: Cruel
-          - <<: *i18n.adjective
-            min: 27
+            _i18n: *Adjective
+          - min: 27
             max: 27
             text: Cunning
-          - <<: *i18n.adjective
-            min: 28
+            _i18n: *Adjective
+          - min: 28
             max: 28
             text: Dangerous
-          - <<: *i18n.adjective
-            min: 29
+            _i18n: *Adjective
+          - min: 29
             max: 29
             text: Deceitful
-          - <<: *i18n.adjective
-            min: 30
+            _i18n: *Adjective
+          - min: 30
             max: 30
             text: Defiant
-          - <<: *i18n.adjective
-            min: 31
+            _i18n: *Adjective
+          - min: 31
             max: 31
             text: Determined
-          - <<: *i18n.adjective
-            min: 32
+            _i18n: *Adjective
+          - min: 32
             max: 32
             text: Disabled
-          - <<: *i18n.adjective
-            min: 33
+            _i18n: *Adjective
+          - min: 33
             max: 33
             text: Doomed
-          - <<: *i18n.adjective
-            min: 34
+            _i18n: *Adjective
+          - min: 34
             max: 34
             text: Driven
-          - <<: *i18n.adjective
-            min: 35
+            _i18n: *Adjective
+          - min: 35
             max: 35
             text: Dying
-          - <<: *i18n.adjective
-            min: 36
+            _i18n: *Adjective
+          - min: 36
             max: 36
             text: Envious
-          - <<: *i18n.adjective
-            min: 37
+            _i18n: *Adjective
+          - min: 37
             max: 37
             text: Experienced
-          - <<: *i18n.adjective
-            min: 38
+            _i18n: *Adjective
+          - min: 38
             max: 38
             text: Faithful
-          - <<: *i18n.adjective
-            min: 39
+            _i18n: *Adjective
+          - min: 39
             max: 39
             text: Generous
-          - <<: *i18n.adjective
-            min: 40
+            _i18n: *Adjective
+          - min: 40
             max: 40
             text: Gifted
-          - <<: *i18n.adjective
-            min: 41
+            _i18n: *Adjective
+          - min: 41
             max: 41
             text: Greedy
-          - <<: *i18n.adjective
-            min: 42
+            _i18n: *Adjective
+          - min: 42
             max: 42
             text: Grief-stricken
-          - <<: *i18n.adjective
-            min: 43
+            _i18n: *Adjective
+          - min: 43
             max: 43
             text: Handy
-          - <<: *i18n.adjective
-            min: 44
+            _i18n: *Adjective
+          - min: 44
             max: 44
             text: Hardhearted
-          - <<: *i18n.adjective
-            min: 45
+            _i18n: *Adjective
+          - min: 45
             max: 45
             text: Haunted
-          - <<: *i18n.adjective
-            min: 46
+            _i18n: *Adjective
+          - min: 46
             max: 46
             text: Honorable
-          - <<: *i18n.adjective
-            min: 47
+            _i18n: *Adjective
+          - min: 47
             max: 47
             text: Hot-tempered
-          - <<: *i18n.adjective
-            min: 48
+            _i18n: *Adjective
+          - min: 48
             max: 48
             text: Impulsive
-          - <<: *i18n.adjective
-            min: 49
+            _i18n: *Adjective
+          - min: 49
             max: 49
             text: Incompetent
-          - <<: *i18n.adjective
-            min: 50
+            _i18n: *Adjective
+          - min: 50
             max: 50
             text: Independent
-          - <<: *i18n.adjective
-            min: 51
+            _i18n: *Adjective
+          - min: 51
             max: 51
             text: Infamous
-          - <<: *i18n.adjective
-            min: 52
+            _i18n: *Adjective
+          - min: 52
             max: 52
             text: Influential
-          - <<: *i18n.adjective
-            min: 53
+            _i18n: *Adjective
+          - min: 53
             max: 53
             text: Insensitive
-          - <<: *i18n.adjective
-            min: 54
+            _i18n: *Adjective
+          - min: 54
             max: 54
             text: Insightful
-          - <<: *i18n.adjective
-            min: 55
+            _i18n: *Adjective
+          - min: 55
             max: 55
             text: Intelligent
-          - <<: *i18n.adjective
-            min: 56
+            _i18n: *Adjective
+          - min: 56
             max: 56
             text: Intolerant
-          - <<: *i18n.adjective
-            min: 57
+            _i18n: *Adjective
+          - min: 57
             max: 57
             text: Ironsworn
-          - <<: *i18n.adjective
-            min: 58
+            _i18n: *Adjective
+          - min: 58
             max: 58
             text: Kind
-          - <<: *i18n.adjective
-            min: 59
+            _i18n: *Adjective
+          - min: 59
             max: 59
             text: Law-abiding
-          - <<: *i18n.adjective
-            min: 60
+            _i18n: *Adjective
+          - min: 60
             max: 60
             text: Lonely
-          - <<: *i18n.adjective
-            min: 61
+            _i18n: *Adjective
+          - min: 61
             max: 61
             text: Loving
-          - <<: *i18n.adjective
-            min: 62
+            _i18n: *Adjective
+          - min: 62
             max: 62
             text: Loyal
-          - <<: *i18n.adjective
-            min: 63
+            _i18n: *Adjective
+          - min: 63
             max: 63
             text: Manipulative
-          - <<: *i18n.adjective
-            min: 64
+            _i18n: *Adjective
+          - min: 64
             max: 64
             text: Oblivious
-          - <<: *i18n.adjective
-            min: 65
+            _i18n: *Adjective
+          - min: 65
             max: 65
             text: Obsessed
-          - <<: *i18n.adjective
-            min: 66
+            _i18n: *Adjective
+          - min: 66
             max: 66
             text: Oppressed
-          - <<: *i18n.adjective
-            min: 67
+            _i18n: *Adjective
+          - min: 67
             max: 67
             text: Passive
-          - <<: *i18n.adjective
-            min: 68
+            _i18n: *Adjective
+          - min: 68
             max: 68
             text: Powerful
-          - <<: *i18n.adjective
-            min: 69
+            _i18n: *Adjective
+          - min: 69
             max: 69
             text: Proud
-          - <<: *i18n.adjective
-            min: 70
+            _i18n: *Adjective
+          - min: 70
             max: 70
             text: Quiet
-          - <<: *i18n.adjective
-            min: 71
+            _i18n: *Adjective
+          - min: 71
             max: 71
             text: Quirky
-          - <<: *i18n.adjective
-            min: 72
+            _i18n: *Adjective
+          - min: 72
             max: 72
             text: Rebellious
-          - <<: *i18n.adjective
-            min: 73
+            _i18n: *Adjective
+          - min: 73
             max: 73
             text: Reclusive
-          - <<: *i18n.adjective
-            min: 74
+            _i18n: *Adjective
+          - min: 74
             max: 74
             text: Relaxed
-          - <<: *i18n.adjective
-            min: 75
+            _i18n: *Adjective
+          - min: 75
             max: 75
             text: Remorseful
-          - <<: *i18n.adjective
-            min: 76
+            _i18n: *Adjective
+          - min: 76
             max: 76
             text: Resourceful
-          - <<: *i18n.adjective
-            min: 77
+            _i18n: *Adjective
+          - min: 77
             max: 77
             text: Secretive
-          - <<: *i18n.adjective
-            min: 78
+            _i18n: *Adjective
+          - min: 78
             max: 78
             text: Selfish
-          - <<: *i18n.adjective
-            min: 79
+            _i18n: *Adjective
+          - min: 79
             max: 79
             text: Sociable
-          - <<: *i18n.adjective
-            min: 80
+            _i18n: *Adjective
+          - min: 80
             max: 80
             text: Stealthy
-          - <<: *i18n.adjective
-            min: 81
+            _i18n: *Adjective
+          - min: 81
             max: 81
             text: Stern
-          - <<: *i18n.adjective
-            min: 82
+            _i18n: *Adjective
+          - min: 82
             max: 82
             text: Stingy
-          - <<: *i18n.adjective
-            min: 83
+            _i18n: *Adjective
+          - min: 83
             max: 83
             text: Stoic
-          - <<: *i18n.adjective
-            min: 84
+            _i18n: *Adjective
+          - min: 84
             max: 84
             text: Strong
-          - <<: *i18n.adjective
-            min: 85
+            _i18n: *Adjective
+          - min: 85
             max: 85
             text: Stubborn
-          - <<: *i18n.adjective
-            min: 86
+            _i18n: *Adjective
+          - min: 86
             max: 86
             text: Successful
-          - <<: *i18n.adjective
-            min: 87
+            _i18n: *Adjective
+          - min: 87
             max: 87
             text: Suspicious
-          - <<: *i18n.adjective
-            min: 88
+            _i18n: *Adjective
+          - min: 88
             max: 88
             text: Talented
-          - <<: *i18n.adjective
-            min: 89
+            _i18n: *Adjective
+          - min: 89
             max: 89
             text: Technical
-          - <<: *i18n.adjective
-            min: 90
+            _i18n: *Adjective
+          - min: 90
             max: 90
             text: Timid
-          - <<: *i18n.adjective
-            min: 91
+            _i18n: *Adjective
+          - min: 91
             max: 91
             text: Tolerant
-          - <<: *i18n.adjective
-            min: 92
+            _i18n: *Adjective
+          - min: 92
             max: 92
             text: Tough
-          - <<: *i18n.adjective
-            min: 93
+            _i18n: *Adjective
+          - min: 93
             max: 93
             text: Vengeful
-          - <<: *i18n.adjective
-            min: 94
+            _i18n: *Adjective
+          - min: 94
             max: 94
             text: Violent
-          - <<: *i18n.adjective
-            min: 95
+            _i18n: *Adjective
+          - min: 95
             max: 95
             text: Wary
-          - <<: *i18n.adjective
-            min: 96
+            _i18n: *Adjective
+          - min: 96
             max: 96
             text: Watchful
-          - <<: *i18n.adjective
-            min: 97
+            _i18n: *Adjective
+          - min: 97
             max: 97
             text: Weak
-          - <<: *i18n.adjective
-            min: 98
+            _i18n: *Adjective
+          - min: 98
             max: 98
             text: Weary
-          - <<: *i18n.adjective
-            min: 99
+            _i18n: *Adjective
+          - min: 99
             max: 99
             text: Wild
-          - <<: *i18n.adjective
-            min: 100
+            _i18n: *Adjective
+          - min: 100
             max: 100
             text: Wise
+            _i18n: *Adjective

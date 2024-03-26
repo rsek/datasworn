@@ -1,0 +1,200 @@
+_id: starsmith
+datasworn_version: 0.0.9
+package_type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith
+  authors:
+    - name: Eric Bright
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
+oracles:
+  districts:
+    name: Districts
+    oracle_type: tables
+    _comment: Extension of the oracle table
+    _source: *Source
+    contents:
+      zones:
+        name: Zones
+        oracle_type: table_text
+        dice: 1d100
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 20
+            text: ▶Community
+          - min: 21
+            max: 30
+            text: ▶Engineering
+          - min: 31
+            max: 55
+            text: ▶Living
+          - min: 56
+            max: 65
+            text: ▶Medical
+          - min: 66
+            max: 75
+            text: ▶Operations
+          - min: 76
+            max: 90
+            text: ▶Production
+          - min: 91
+            max: 100
+            text: ▶Research
+      area:
+        name: Research Area
+        oracle_type: table_text
+        dice: 1d100
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 8
+            text: Agricultural enhancement
+          - min: 9
+            max: 16
+            text: Armament or defense
+          - min: 17
+            max: 24
+            text: Astronomy or starships
+          - min: 25
+            max: 32
+            text: Chemistry or physics
+          - min: 33
+            max: 40
+            text: Computer or AI
+          - min: 41
+            max: 48
+            text: Cybernetics or augments
+          - min: 49
+            max: 56
+            text: Genetics or biology
+          - min: 57
+            max: 64
+            text: Historical records
+          - min: 65
+            max: 72
+            text: Material or mechanical
+          - min: 73
+            max: 80
+            text: University system
+          - min: 81
+            max: 88
+            text: Zoology or xenobiology
+          - min: 89
+            max: 100
+            text: New zone via ▶Access
+      feature:
+        name: Research Feature
+        oracle_type: table_text
+        dice: 1d100
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 8
+            text: Aquarium or tank
+          - min: 9
+            max: 16
+            text: Biological specimens
+          - min: 17
+            max: 24
+            text: Cages or pens
+          - min: 25
+            max: 32
+            text: Database
+          - min: 33
+            max: 40
+            text: Decontamination room
+          - min: 41
+            max: 48
+            text: Hazardous material storage
+          - min: 49
+            max: 56
+            text: Hydroponics bay
+          - min: 57
+            max: 64
+            text: Secretive Laboratory
+          - min: 65
+            max: 72
+            text: Specialized equipment
+          - min: 73
+            max: 80
+            text: Storage area
+          - min: 81
+            max: 88
+            text: Strict access protocols
+          - min: 89
+            max: 100
+            text: ▶Descriptor + Focus
+      peril:
+        name: Research Peril
+        oracle_type: table_text
+        dice: 1d100
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 10
+            text: Accusations of espionage
+          - min: 11
+            max: 20
+            text: Automated containment protocols
+          - min: 21
+            max: 30
+            text: Dangerous specimen
+          - min: 31
+            max: 40
+            text: Discovery used for ill
+          - min: 41
+            max: 50
+            text: Disturbing outcome of a failed experiment
+          - min: 51
+            max: 60
+            text: Evidence of sinister experiments
+          - min: 61
+            max: 70
+            text: Forced NDA or limited access
+          - min: 71
+            max: 80
+            text: Legal infraction
+          - min: 81
+            max: 90
+            text: Unstable technology
+          - min: 91
+            max: 98
+            text: ▶Action + Theme
+          - min: 99
+            max: 100
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      opportunity:
+        name: Research Opportunity
+        oracle_type: table_text
+        dice: 1d100
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 20
+            text: Access to specialized research tools
+          - min: 21
+            max: 40
+            text: Access to unique prototype
+          - min: 41
+            max: 60
+            text: Helpful researcher or data
+          - min: 61
+            max: 80
+            text: Insight to a potential solution
+          - min: 81
+            max: 100
+            text: Investment or collaborative opportunity

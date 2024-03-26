@@ -1,0 +1,1652 @@
+_id: starsmith
+datasworn_version: 0.0.9
+package_type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith
+  authors:
+    - name: Eric Bright
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
+oracles:
+  vaults:
+    name: Vaults
+    oracle_type: tables
+    # summary: Extension of the oracle table
+    # description: Extension of the oracle table
+    _source: *Source
+    contents:
+      form:
+        name: Form
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/vaults/form
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 135
+            text: Woven into environment
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 136
+            max: 160
+            text: Enclosed settlement
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 161
+            max: 180
+            text: Temple
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 181
+            max: 195
+            text: Rube-Goldberg
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 196
+            max: 200
+            text: Incomprehensible
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 201
+            max: 235
+            text: Virtual environment
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 236
+            max: 260
+            text: Extra-dimensional
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 261
+            max: 280
+            text: Weapon
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 281
+            max: 295
+            text: Power source
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 296
+            max: 300
+            text: Incomprehensible
+            _i18n:
+              text:
+                part_of_speech: common_noun
+      shape:
+        name: Shape
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/vaults/shape
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 115
+            text: Rotating wheel
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 116
+            max: 120
+            text: Geometric (cone)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 121
+            max: 125
+            text: Geometric (cylinder)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 126
+            max: 130
+            text: Geometric (prism)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 131
+            max: 135
+            text: Geometric (octahedron)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 136
+            max: 140
+            text: Geometric (dodecahedron)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 141
+            max: 145
+            text: Geometric (icosahedron)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 146
+            max: 155
+            text: Topopolis
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 156
+            max: 160
+            text: Multi-platformed
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 161
+            max: 165
+            text: Pits or shafts
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 166
+            max: 168
+            text: Walled
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 169
+            max: 173
+            text: Dimpled
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 174
+            max: 176
+            text: Coffin-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 177
+            max: 179
+            text: Fractal
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 180
+            max: 185
+            text: Chained modules
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 186
+            max: 200
+            text: Roll twice
+            _i18n:
+              text:
+                part_of_speech: adjective
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 215
+            text: Asteroidal
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 216
+            max: 220
+            text: Geometric (anticube)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 221
+            max: 225
+            text: Geometric (Archimedean)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 226
+            max: 230
+            text: Geometric (Kepler-Poinsot)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 231
+            max: 235
+            text: Geometric (quadrilateral frustum)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 236
+            max: 240
+            text: Geometric (rhombohedron)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 241
+            max: 245
+            text: Geometric (square cupola)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 246
+            max: 255
+            text: Geometric (helix)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 256
+            max: 260
+            text: Elliptical
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 261
+            max: 265
+            text: Trenches
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 266
+            max: 268
+            text: Tiered
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 269
+            max: 273
+            text: Bubbled
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 274
+            max: 276
+            text: Columned
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 277
+            max: 279
+            text: Undulating
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 280
+            max: 285
+            text: Periodic or function-based shapeshifts
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 286
+            max: 300
+            text: Roll twice
+            _i18n:
+              text:
+                part_of_speech: adjective
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      material:
+        name: Material
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/vaults/material
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 130
+            text: Metallic (grooved)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 131
+            max: 160
+            text: Metallic (pitted)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 161
+            max: 170
+            text: Packed earth
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 171
+            max: 174
+            text: Hardened plastics
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 175
+            max: 178
+            text: Pearl-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 179
+            max: 182
+            text: Scale-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 183
+            max: 186
+            text: Wood-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 187
+            max: 188
+            text: Plasma
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 189
+            max: 190
+            text: Gaseous
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 191
+            max: 200
+            text: Roll twice
+            _i18n:
+              text:
+                part_of_speech: adjective
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 230
+            text: Metallic (jagged)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 231
+            max: 260
+            text: Metallic (layered)
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 261
+            max: 270
+            text: Concrete-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 271
+            max: 274
+            text: Ceramic
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 275
+            max: 278
+            text: Fur- or feather-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 279
+            max: 282
+            text: Shell-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 283
+            max: 286
+            text: Stringed or corded
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 287
+            max: 288
+            text: Force fields
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 289
+            max: 290
+            text: Packed ice
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 291
+            max: 300
+            text: Roll twice
+            _i18n:
+              text:
+                part_of_speech: adjective
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      outer_first_look:
+        name: Outer First Look
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/vaults/outer_first_look
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 103
+            text: Artificial gravity
+          - min: 104
+            max: 107
+            text: Augmented or recent additions
+          - min: 108
+            max: 110
+            text: Bigger on the inside
+          - min: 111
+            max: 114
+            text: Centered at an impact site
+          - min: 115
+            max: 117
+            text: Centralized core structure
+          - min: 118
+            max: 120
+            text: Comms dish or tower
+          - min: 121
+            max: 123
+            text: Encased in a field of time dilation
+          - min: 124
+            max: 126
+            text: Enhancing its environment
+          - min: 127
+            max: 130
+            text: Entrance for specialized vehicle
+          - min: 131
+            max: 133
+            text: Garbled broadcast
+          - min: 134
+            max: 136
+            text: Garish coloring
+          - min: 137
+            max: 140
+            text: Ghastly and grisly omens
+          - min: 141
+            max: 143
+            text: Inconsistent readings
+          - min: 144
+            max: 147
+            text: Infiltrating scans
+          - min: 148
+            max: 151
+            text: Leaking noxious gases
+          - min: 152
+            max: 154
+            text: Light absorbing field
+          - min: 155
+            max: 158
+            text: Long tunnel as possible entrance
+          - min: 159
+            max: 161
+            text: Pictographs
+          - min: 162
+            max: 164
+            text: Proximity projected emotions
+          - min: 165
+            max: 167
+            text: Radiation leak
+          - min: 168
+            max: 170
+            text: Ravaged by time
+          - min: 171
+            max: 173
+            text: Reinforced exterior
+          - min: 174
+            max: 176
+            text: Rotating discs or spirals
+          - min: 177
+            max: 179
+            text: Scaled for smaller beings
+          - min: 180
+            max: 182
+            text: Seamless or smooth structure
+          - min: 183
+            max: 185
+            text: Signs of failed incursions
+          - min: 186
+            max: 189
+            text: Stuck or arrested motion
+          - min: 190
+            max: 192
+            text: Surrounded by lush environment
+          - min: 193
+            max: 195
+            text: Teleporting to new locations
+          - min: 196
+            max: 200
+            text: ▶Descriptor + Focus
+          - min: 201
+            max: 203
+            text: Aura of cognition suppression or memory wiping
+          - min: 204
+            max: 207
+            text: Automated message
+          - min: 208
+            max: 210
+            text: Claustrophobic entrance
+          - min: 211
+            max: 214
+            text: Collapsed structure
+          - min: 215
+            max: 217
+            text: Damaged exterior
+          - min: 218
+            max: 220
+            text: Designed for non-humanoids
+          - min: 221
+            max: 223
+            text: Electrostatic field
+          - min: 224
+            max: 226
+            text: Encased in swirling force
+          - min: 227
+            max: 230
+            text: Energy surges
+          - min: 231
+            max: 233
+            text: Environment threatens the vault
+          - min: 234
+            max: 236
+            text: Evidence of invasive lifeforms
+          - min: 237
+            max: 240
+            text: Flashes from the past
+          - min: 241
+            max: 243
+            text: Hauntingly shadowed
+          - min: 244
+            max: 247
+            text: Impossible readings
+          - min: 248
+            max: 251
+            text: Intermingled with terrain
+          - min: 252
+            max: 254
+            text: Leaking viscous fluids
+          - min: 255
+            max: 258
+            text: Malfunctioning cloaking device
+          - min: 259
+            max: 261
+            text: Multiple connections
+          - min: 262
+            max: 264
+            text: Nano-transforming exterior
+          - min: 265
+            max: 267
+            text: Orbiting structures
+          - min: 268
+            max: 270
+            text: Patterns of flashing lights
+          - min: 271
+            max: 273
+            text: Penrose stairs or tridents
+          - min: 274
+            max: 276
+            text: Phasing through time
+          - min: 277
+            max: 279
+            text: Precarious point of entry
+          - min: 280
+            max: 282
+            text: Quantum entangled parts
+          - min: 283
+            max: 285
+            text: Reflective surfaces
+          - min: 286
+            max: 289
+            text: Shifting gravitational fields
+          - min: 290
+            max: 292
+            text: Surrounded by dangerous environment
+          - min: 293
+            max: 295
+            text: Warning signs left by previous explorers
+          - min: 296
+            max: 300
+            text: ▶Descriptor + Focus
+      inner_first_look:
+        name: Inner First Look
+        oracle_type: table_text
+        dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 3
+            text: Abnormal gravity
+          - min: 4
+            max: 6
+            text: Automated defenses
+          - min: 7
+            max: 9
+            text: Biological infestation
+          - min: 10
+            max: 12
+            text: Carried tech is disrupted
+          - min: 13
+            max: 15
+            text: Complex textures or patterns
+          - min: 16
+            max: 18
+            text: Corpses of intruders
+          - min: 19
+            max: 21
+            text: Damage and debris
+          - min: 22
+            max: 24
+            text: Deteriorating spaces
+          - min: 25
+            max: 27
+            text: Dissonant tones or music
+          - min: 28
+            max: 30
+            text: Energy surges
+          - min: 31
+            max: 33
+            text: Environment reacts to your presence
+          - min: 34
+            max: 36
+            text: Evidence of looting or scavenging
+          - min: 37
+            max: 39
+            text: Excessive cold
+          - min: 40
+            max: 42
+            text: Excessive heat
+          - min: 43
+            max: 45
+            text: Faint ambient lighting
+          - min: 46
+            max: 48
+            text: Impenetrable darkness
+          - min: 49
+            max: 51
+            text: Intense smell
+          - min: 52
+            max: 54
+            text: Magnetic surfaces
+          - min: 55
+            max: 57
+            text: Material does not match exterior
+          - min: 58
+            max: 60
+            text: Ornate markings or symbols
+          - min: 61
+            max: 63
+            text: Reactive lighting responds to your presence
+          - min: 64
+            max: 66
+            text: Scale does not match exterior
+          - min: 67
+            max: 69
+            text: Signs of invasive lifeforms
+          - min: 70
+            max: 72
+            text: Surfaces respond to touch
+          - min: 73
+            max: 75
+            text: Thick haze or smoke
+          - min: 76
+            max: 78
+            text: Thick or fluid atmosphere
+          - min: 79
+            max: 81
+            text: Thrumming or droning sound
+          - min: 82
+            max: 84
+            text: Toxic atmosphere
+          - min: 85
+            max: 87
+            text: Toxic residue
+          - min: 88
+            max: 90
+            text: Well-preserved
+          - min: 91
+            max: 93
+            text: Wet or humid
+          - min: 94
+            max: 100
+            text: ▶Descriptor + Focus
+          - min: 101
+            max: 103
+            text: Arcing electrical sparks
+          - min: 104
+            max: 106
+            text: Automated messages
+          - min: 107
+            max: 109
+            text: Biological residue
+          - min: 110
+            max: 112
+            text: Blinding flood lights
+          - min: 113
+            max: 115
+            text: Dangerous atmosphere
+          - min: 116
+            max: 118
+            text: Dangerous sonic emissions
+          - min: 119
+            max: 121
+            text: Design does not match exterior
+          - min: 122
+            max: 124
+            text: Destructive nanites
+          - min: 125
+            max: 127
+            text: Dry or arid
+          - min: 128
+            max: 130
+            text: Eerie silence
+          - min: 131
+            max: 133
+            text: Electrical burning smell
+          - min: 134
+            max: 136
+            text: Encrypted tech interfaces
+          - min: 137
+            max: 139
+            text: Evidence of a skirmish or battle
+          - min: 140
+            max: 142
+            text: Evidence of failed scavenging attempts
+          - min: 143
+            max: 145
+            text: Extreme compartmentalization
+          - min: 146
+            max: 148
+            text: Frost-rimed or shattered material
+          - min: 149
+            max: 151
+            text: Hologram initiated by your presence
+          - min: 152
+            max: 154
+            text: Ill-preserved
+          - min: 155
+            max: 157
+            text: Indistinguishable passageways
+          - min: 158
+            max: 160
+            text: Interface requires DNA sample to activate
+          - min: 161
+            max: 163
+            text: Lack of atmosphere
+          - min: 164
+            max: 166
+            text: Lack of main power
+          - min: 167
+            max: 169
+            text: Lockdown initiated by your presence
+          - min: 170
+            max: 172
+            text: Melted or scorched material
+          - min: 173
+            max: 175
+            text: Organized spaces
+          - min: 176
+            max: 178
+            text: Power-conducting surfaces
+          - min: 179
+            max: 181
+            text: Primitive scratches and scrawls
+          - min: 182
+            max: 184
+            text: Remains of ancient defenders
+          - min: 185
+            max: 187
+            text: Shifting gravity
+          - min: 188
+            max: 190
+            text: Signs of aggressive AI
+          - min: 191
+            max: 193
+            text: Whirring or clicking sound
+          - min: 194
+            max: 200
+            text: ▶Descriptor + Focus
+          - min: 201
+            max: 203
+            text: Augmented reality environment
+          - min: 204
+            max: 206
+            text: Cargo pods or storage units for unknown material
+          - min: 207
+            max: 209
+            text: Chemical residue
+          - min: 210
+            max: 212
+            text: Chirping or beeping sound
+          - min: 213
+            max: 215
+            text: Complex systems
+          - min: 216
+            max: 218
+            text: Computer systems compromised
+          - min: 219
+            max: 221
+            text: Corroded surfaces or equipment
+          - min: 222
+            max: 224
+            text: Directional markings respond to your presence
+          - min: 225
+            max: 227
+            text: Environmental controls gone haywire
+          - min: 228
+            max: 230
+            text: Ethereal whispers
+          - min: 231
+            max: 233
+            text: Evidence of traps and other defenses
+          - min: 234
+            max: 236
+            text: Hissing and steaming pipes
+          - min: 237
+            max: 239
+            text: Inter-dimensional folding of space
+          - min: 240
+            max: 242
+            text: Intermittent power
+          - min: 243
+            max: 245
+            text: Lack of evidence of biological life
+          - min: 246
+            max: 248
+            text: Lack of gravity
+          - min: 249
+            max: 251
+            text: Lack of structural integrity
+          - min: 252
+            max: 254
+            text: Language or symbols do not match exterior
+          - min: 255
+            max: 257
+            text: Maintenance drones
+          - min: 258
+            max: 260
+            text: Nauseating odors
+          - min: 261
+            max: 263
+            text: Overwhelming sounds
+          - min: 264
+            max: 266
+            text: Pulsing lights
+          - min: 267
+            max: 269
+            text: Radioactive environment
+          - min: 270
+            max: 272
+            text: Rapidly shifting temperatures
+          - min: 273
+            max: 275
+            text: Reverent icons or sculptures
+          - min: 276
+            max: 278
+            text: Signs of mass death
+          - min: 279
+            max: 281
+            text: Spartan or utilitarian
+          - min: 282
+            max: 284
+            text: Spatial instability
+          - min: 285
+            max: 287
+            text: Sticky, viscous surfaces
+          - min: 288
+            max: 290
+            text: Systems react to your presence
+          - min: 291
+            max: 293
+            text: Variable environment attuned to different biologies
+          - min: 294
+            max: 300
+            text: ▶Descriptor + Focus
+      purpose:
+        name: Vault Purpose
+        oracle_type: table_text
+        dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 3
+            text: Capture or control of other beings
+          - min: 4
+            max: 6
+            text: Command or communication relay
+          - min: 7
+            max: 9
+            text: Commemoration of an event
+          - min: 10
+            max: 12
+            text: Conduit to mystical powers
+          - min: 13
+            max: 16
+            text: Conservation of living specimens
+          - min: 17
+            max: 20
+            text: Containment of a powerful being
+          - min: 21
+            max: 24
+            text: Containment of dangerous creatures
+          - min: 25
+            max: 27
+            text: Containment of weapons
+          - min: 28
+            max: 31
+            text: Control of a destructive weapon
+          - min: 32
+            max: 34
+            text: Generation of defenses or barriers
+          - min: 35
+            max: 38
+            text: Generation or transformation of energy
+          - min: 39
+            max: 41
+            text: Harvesting of resources
+          - min: 42
+            max: 44
+            text: Interment of the dead
+          - min: 45
+            max: 47
+            text: Manipulation of spacetime
+          - min: 48
+            max: 50
+            text: Manufacturing of lifeforms
+          - min: 51
+            max: 53
+            text: Manufacturing of machines or devices
+          - min: 54
+            max: 56
+            text: Passage to another location
+          - min: 57
+            max: 59
+            text: Preservation of an ancient intelligence
+          - min: 60
+            max: 62
+            text: Preservation of maps or navigational data
+          - min: 63
+            max: 66
+            text: Protection of a sacred artifact
+          - min: 67
+            max: 69
+            text: Researching science or technology
+          - min: 70
+            max: 73
+            text: Safekeeping of cultural records or memories
+          - min: 74
+            max: 77
+            text: Shelter for inhabitants
+          - min: 78
+            max: 80
+            text: Stockpiling of resources
+          - min: 81
+            max: 83
+            text: Surveying or monitoring of a location
+          - min: 84
+            max: 87
+            text: Transformation of terrain or environments
+          - min: 88
+            max: 90
+            text: Worship of a god or being
+          - min: 91
+            max: 95
+            text: ▶Action + Theme
+          - min: 96
+            max: 100
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 101
+            max: 103
+            text: Augmenting of lifeforms
+          - min: 104
+            max: 106
+            text: Blockading a location
+          - min: 107
+            max: 109
+            text: Caring for the unborn
+          - min: 110
+            max: 112
+            text: Clearing navigational passages
+          - min: 113
+            max: 116
+            text: Collection of cultural artifacts
+          - min: 117
+            max: 120
+            text: Conduct dark rituals
+          - min: 121
+            max: 124
+            text: Conduct research on sapient beings
+          - min: 125
+            max: 127
+            text: Containment of dangerous stellar phenomenon
+          - min: 128
+            max: 131
+            text: Creation of a sacred artifact
+          - min: 132
+            max: 134
+            text: Emergency bunker
+          - min: 135
+            max: 138
+            text: Harvesting or draining energy
+          - min: 139
+            max: 141
+            text: Manipulation of an ancient intelligence
+          - min: 142
+            max: 144
+            text: Monitoring spacetime activity
+          - min: 145
+            max: 147
+            text: Museum or showcase of living specimens
+          - min: 148
+            max: 150
+            text: Preparation for future event
+          - min: 151
+            max: 153
+            text: Prison for spacetime criminals
+          - min: 154
+            max: 156
+            text: Processing of resources
+          - min: 157
+            max: 159
+            text: Production of starships
+          - min: 160
+            max: 162
+            text: Production of weapons
+          - min: 163
+            max: 166
+            text: Protecting dangerous data
+          - min: 167
+            max: 169
+            text: Protecting of a passage or route
+          - min: 170
+            max: 173
+            text: Recycling or repurposing of machines or devices
+          - min: 174
+            max: 177
+            text: Relocation of inhabitants
+          - min: 178
+            max: 180
+            text: Researching biology or chemistry
+          - min: 181
+            max: 183
+            text: Strip-mining region for resources
+          - min: 184
+            max: 187
+            text: Surveillance center
+          - min: 188
+            max: 190
+            text: Veneration of a leader
+          - min: 191
+            max: 195
+            text: ▶Action + Theme
+          - min: 196
+            max: 200
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 203
+            text: Breeding dangerous creatures
+          - min: 204
+            max: 206
+            text: Containment of a spacetime rift
+          - min: 207
+            max: 209
+            text: Coordination of vast network
+          - min: 210
+            max: 212
+            text: Distributing resources
+          - min: 213
+            max: 216
+            text: Empowering an already powerful being
+          - min: 217
+            max: 220
+            text: Enacting a divine purpose
+          - min: 221
+            max: 224
+            text: Enhance creation of stellar bodies
+          - min: 225
+            max: 227
+            text: Establishing settlements
+          - min: 228
+            max: 231
+            text: Expansion of powerful artificial intelligence
+          - min: 232
+            max: 234
+            text: Exploitation of living specimens
+          - min: 235
+            max: 238
+            text: Expunge or suppress mystical powers
+          - min: 239
+            max: 241
+            text: Generation of automated troops
+          - min: 242
+            max: 244
+            text: Hybridizing lifeforms
+          - min: 245
+            max: 247
+            text: Long distance energy transfer
+          - min: 248
+            max: 250
+            text: Maintenance of automated troops
+          - min: 251
+            max: 253
+            text: Manipulation of a past event
+          - min: 254
+            max: 256
+            text: Military command center
+          - min: 257
+            max: 259
+            text: Pass judgment on other beings
+          - min: 260
+            max: 262
+            text: Preservation of the minds of long dead sages
+          - min: 263
+            max: 266
+            text: Rebuilding a destroyed location
+          - min: 267
+            max: 269
+            text: Researching health and medicine
+          - min: 270
+            max: 273
+            text: Sanctification of location
+          - min: 274
+            max: 277
+            text: Spreading knowledge of previous cultures
+          - min: 278
+            max: 280
+            text: Starship deployment center
+          - min: 281
+            max: 283
+            text: Storage of dangerous waste
+          - min: 284
+            max: 287
+            text: Subdual or re-education of inhabitants
+          - min: 288
+            max: 290
+            text: Territorial expansion or conquest
+          - min: 291
+            max: 295
+            text: ▶Action + Theme
+          - min: 296
+            max: 300
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      feature:
+        name: Sanctum Feature
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/vaults/sanctum/feature
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 102
+            text: Activity monitors showing unreadable data
+          - min: 103
+            max: 105
+            text: Barrier of thrumming force
+          - min: 106
+            max: 107
+            text: Bigger on the inside
+          - min: 108
+            max: 110
+            text: Booming voice addresses you
+          - min: 111
+            max: 113
+            text: Breach or debris
+          - min: 114
+            max: 116
+            text: Bubbling tubes of bright liquid
+          - min: 117
+            max: 119
+            text: Ceremonial remains of the dead
+          - min: 120
+            max: 121
+            text: Corrupted lifeforms
+          - min: 122
+            max: 124
+            text: Crushed or buckled spaces
+          - min: 125
+            max: 126
+            text: Environment composed of artificial fields of force
+          - min: 127
+            max: 128
+            text: Fully organic chamber
+          - min: 129
+            max: 131
+            text: Injection tubes ready to insert
+          - min: 132
+            max: 134
+            text: Inscrutable object vibrating with power
+          - min: 135
+            max: 137
+            text: Inter-dimensional echoes
+          - min: 138
+            max: 140
+            text: Lifeforms connected to machines
+          - min: 141
+            max: 143
+            text: Palatial ornamentation
+          - min: 144
+            max: 146
+            text: Pods or chambers with lifeforms in suspended animation
+          - min: 147
+            max: 149
+            text: Pulsing electronic heart
+          - min: 150
+            max: 151
+            text: Rampant nanite infestation
+          - min: 152
+            max: 154
+            text: Remains of invasive creatures
+          - min: 155
+            max: 157
+            text: Repository of organic matter
+          - min: 158
+            max: 160
+            text: Rotating walls grant intermittent access
+          - min: 161
+            max: 163
+            text: Shifting gravity
+          - min: 164
+            max: 166
+            text: Slowly opening chamber spewing forth smoke
+          - min: 167
+            max: 169
+            text: Small central chamber wrapped in security
+          - min: 170
+            max: 172
+            text: Spatial distortions
+          - min: 173
+            max: 174
+            text: Squad of maintenance bots
+          - min: 175
+            max: 176
+            text: Surfaces encased in ice
+          - min: 177
+            max: 179
+            text: Swirling portal
+          - min: 180
+            max: 182
+            text: Thick clouds of unknown substance
+          - min: 183
+            max: 185
+            text: Transport chamber touring the facility
+          - min: 186
+            max: 188
+            text: Tubules and vents
+          - min: 189
+            max: 190
+            text: Visions of this place in possible futures
+          - min: 191
+            max: 195
+            text: ▶Descriptor + Focus
+          - min: 196
+            max: 200
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 202
+            text: Abandoned hive
+          - min: 203
+            max: 205
+            text: Altered pressure
+          - min: 206
+            max: 207
+            text: Banks of unmoving automatons
+          - min: 208
+            max: 210
+            text: Breaking the laws of physics
+          - min: 211
+            max: 213
+            text: Central raised dais or throne
+          - min: 214
+            max: 216
+            text: Clicking of processors
+          - min: 217
+            max: 219
+            text: Communication from the multiverse
+          - min: 220
+            max: 221
+            text: Cracking cocoons
+          - min: 222
+            max: 224
+            text: Damaged or destroyed spaces
+          - min: 225
+            max: 226
+            text: Doorway to an impossible place
+          - min: 227
+            max: 228
+            text: Elaborate mindscape
+          - min: 229
+            max: 231
+            text: Empty containers with unknown residue
+          - min: 232
+            max: 234
+            text: Flashing interface surfaces
+          - min: 235
+            max: 237
+            text: Floating spaces tethered by energy
+          - min: 238
+            max: 240
+            text: Forces pulling towards a center orb
+          - min: 241
+            max: 243
+            text: Full-body interface designed for different biology
+          - min: 244
+            max: 246
+            text: Gears and pistons
+          - min: 247
+            max: 249
+            text: Inscrutable object connected to low-tech equipment
+          - min: 250
+            max: 251
+            text: Messages from the past
+          - min: 252
+            max: 254
+            text: Mind-altering atmosphere
+          - min: 255
+            max: 257
+            text: Observation chamber
+          - min: 258
+            max: 260
+            text: Organic pods with unknown occupants
+          - min: 261
+            max: 263
+            text: Pulsing plasma conduits
+          - min: 264
+            max: 266
+            text: Reinforced barricade
+          - min: 267
+            max: 269
+            text: Remains of invaders
+          - min: 270
+            max: 272
+            text: Smoking banks of cryogenic pods
+          - min: 273
+            max: 274
+            text: Spaces and tech that respond to intentions
+          - min: 275
+            max: 276
+            text: Spiraling tower
+          - min: 277
+            max: 279
+            text: Sterilized environment
+          - min: 280
+            max: 282
+            text: Surfaces encased in hardened silt
+          - min: 283
+            max: 285
+            text: Temple or ziggurat
+          - min: 286
+            max: 288
+            text: Unresponsive drones or servant bots
+          - min: 289
+            max: 290
+            text: Visions of a connected vault or network
+          - min: 291
+            max: 295
+            text: ▶Descriptor + Focus
+          - min: 296
+            max: 300
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      peril:
+        name: Sanctum Peril
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/vaults/sanctum/peril
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 105
+            text: Assaulted by the spirits of those who came before
+          - min: 106
+            max: 110
+            text: Automated weapons take aim
+          - min: 111
+            max: 115
+            text: Backed into a corner by foes
+          - min: 116
+            max: 120
+            text: Bowel-shaking earthquakes of doubt and remorse
+          - min: 121
+            max: 125
+            text: Charnel house or pit slick with fresh kills
+          - min: 126
+            max: 130
+            text: Confounding spatial displacements
+          - min: 131
+            max: 135
+            text: Corrupted AI vexes you with riddles
+          - min: 136
+            max: 140
+            text: Destructive energies lash out
+          - min: 141
+            max: 145
+            text: Environment hostile to organic life
+          - min: 146
+            max: 150
+            text: Failing life support systems
+          - min: 151
+            max: 155
+            text: Knockout gas threatens consciousness
+          - min: 156
+            max: 160
+            text: Mechanical trap is sprung
+          - min: 161
+            max: 165
+            text: Pitted against an ally
+          - min: 166
+            max: 170
+            text: Powerful being awakened
+          - min: 171
+            max: 175
+            text: Shifting environment impedes progress
+          - min: 176
+            max: 180
+            text: Target slips out of reach
+          - min: 181
+            max: 185
+            text: Trophy wall of conquests holds an empty space for you
+          - min: 186
+            max: 190
+            text: Visions of past failure cause dangerous hesitation
+          - min: 191
+            max: 195
+            text: You are marked by spiritual corruption
+          - min: 196
+            max: 199
+            text: ▶Action + Theme
+          - min: 200
+            max: 200
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 205
+            text: Adaptive systems respond to confound you
+          - min: 206
+            max: 210
+            text: Artificially housed consciousnesses direct foes
+          - min: 211
+            max: 215
+            text: Chains, physical or emotional, bind you here
+          - min: 216
+            max: 220
+            text: Concussive forces knock you around
+          - min: 221
+            max: 225
+            text: Defensive systems herd you towards danger
+          - min: 226
+            max: 230
+            text: Energy core in cascade failure
+          - min: 231
+            max: 235
+            text: Gravitational forces wreak havoc
+          - min: 236
+            max: 240
+            text: Hidden foes demand your surrender
+          - min: 241
+            max: 245
+            text: Immobilized by unnatural forces
+          - min: 246
+            max: 250
+            text: Impartial guardian strikes with ferocity
+          - min: 251
+            max: 255
+            text: Murphy's Law manifests in force
+          - min: 256
+            max: 260
+            text: Necessary tool not readily at hand
+          - min: 261
+            max: 265
+            text: Object of fascination distracts until it's too late
+          - min: 266
+            max: 270
+            text: Offered a devil's bargain
+          - min: 271
+            max: 275
+            text: Psychic or psionic assault
+          - min: 276
+            max: 280
+            text: Rivals hold leverage over the objective
+          - min: 281
+            max: 285
+            text: Scene of heart-wrenching torture or sacrifice
+          - min: 286
+            max: 290
+            text: Slow drain of humanity and empathy
+          - min: 291
+            max: 295
+            text: Thrust into a most dangerous game
+          - min: 296
+            max: 299
+            text: ▶Action + Theme
+          - min: 300
+            max: 300
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      opportunity:
+        name: Sanctum Opportunity
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/vaults/sanctum/opportunity
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 110
+            text: Access to specialized equipment
+          - min: 111
+            max: 120
+            text: Clue points to the solution of a vexing problem
+          - min: 121
+            max: 130
+            text: Command codes found
+          - min: 131
+            max: 140
+            text: Deeper insight into the creators of this site
+          - min: 141
+            max: 150
+            text: Defensive systems target you for protection
+          - min: 151
+            max: 160
+            text: Destination or target is closer than thought
+          - min: 161
+            max: 170
+            text: Garbled message becomes clear
+          - min: 171
+            max: 180
+            text: Gear or equipment can be repaired or replaced
+          - min: 181
+            max: 190
+            text: Unexpected ally appears
+          - min: 191
+            max: 200
+            text: Vision of a possible future points to a path forward
+          - min: 201
+            max: 210
+            text: A foe or rival's hand is tipped
+          - min: 211
+            max: 220
+            text: Access to valuable data
+          - min: 221
+            max: 230
+            text: Clue reveals a previously unknown connection
+          - min: 231
+            max: 240
+            text: Defensive systems stand down
+          - min: 241
+            max: 250
+            text: Means of exit presents itself
+          - min: 251
+            max: 260
+            text: News grants hope where previously hope was lost
+          - min: 261
+            max: 270
+            text: Operations manual discovered
+          - min: 271
+            max: 280
+            text: Opportunity to make a significant choice
+          - min: 281
+            max: 290
+            text: Opportunity to outmaneuver or trap a foe
+          - min: 291
+            max: 300
+            text: This site may be given new purpose

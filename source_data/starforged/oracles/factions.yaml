@@ -12,6 +12,905 @@ oracles:
         authors:
           - name: Shawn Tomkin
       page: 340
+    contents:
+      type:
+        name: Faction Type
+        _source:
+          <<: *Source
+          page: 340
+        oracle_type: table_text2
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Summary
+        # usage:
+        #   initial: true
+        rows:
+          - min: 1
+            max: 40
+            text: '[Dominion](id:starforged/oracles/factions/dominion)'
+            text2: 'Governing power'
+            oracle_rolls:
+              - oracle: starforged/oracles/factions/dominion
+              - oracle: starforged/oracles/factions/dominion_leadership
+            # set_attributes: {faction_type: [dominion]}
+          - min: 41
+            max: 70
+            text: '[Guild](id:starforged/oracles/factions/guild)'
+            text2: 'Organization of specialists'
+            oracle_rolls:
+              - oracle: starforged/oracles/factions/guild
+            # set_attributes: {faction_type: [guild]}
+          - min: 71
+            max: 100
+            text: '[Fringe Group](id:starforged/oracles/factions/fringe_group)'
+            text2: 'Band of outlaws, outcasts, or rogues'
+            oracle_rolls:
+              - oracle: starforged/oracles/factions/fringe_group
+            # set_attributes: {faction_type: [fringe_group]}
+      influence:
+        name: Influence
+        _source:
+          <<: *Source
+          page: 340
+        oracle_type: table_text2
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Summary
+        rows:
+          - <<: *i18n.result.adjective
+            min: 1
+            max: 10
+            text: Forsaken
+            text2: Banished or forgotten
+            # set_attributes: {influence: [forsaken]}
+          - <<: *i18n.result.adjective
+            min: 11
+            max: 30
+            text: Isolated
+            text2: Limited influence in a remote location
+            # set_attributes: {influence: [isolated]}
+          - <<: *i18n.result.adjective
+            min: 31
+            max: 50
+            text: Localized
+            text2: Marginal influence in a single sector
+            # set_attributes: {influence: [localized]}
+          - <<: *i18n.result.adjective
+            min: 51
+            max: 70
+            text: Established
+            text2: Strong influence in a single sector
+            # set_attributes: {influence: [established]}
+          - <<: *i18n.result.adjective
+            min: 71
+            max: 85
+            text: Notable
+            text2: Dispersed influence across a few sectors
+            # set_attributes: {influence: [notable]}
+          - <<: *i18n.result.adjective
+            min: 86
+            max: 95
+            text: Dominant
+            text2: Far-reaching influence across many sectors
+            # set_attributes: {influence: [dominant]}
+          - <<: *i18n.result.adjective
+            min: 96
+            max: 100
+            text: Inescapable
+            text2: Pervasive influence across inhabited space
+            # set_attributes: {influence: [inescapable]}
+      dominion:
+        name: Dominion
+        oracle_type: table_text
+        icon: icons/factions/dominion.svg
+        _source:
+          <<: *Source
+          page: 341
+        # usage:
+        recommended_rolls:
+          min: 1
+          max: 3
+        #   initial: true
+        #   requires:
+        #     attributes:
+        #       faction_type: [dominion]
+        # content:
+        #   tags: [abstract noun]
+        rows:
+          - <<: *i18n.result.common_noun
+            min: 1
+            max: 5
+            text: Agriculture
+            # set_attributes: {dominion: [agriculture]}
+          - <<: *i18n.result.common_noun
+            min: 6
+            max: 9
+            text: Artistry
+            # set_attributes: {dominion: [artistry]}
+          - <<: *i18n.result.common_noun
+            min: 10
+            max: 14
+            text: Commerce
+            # set_attributes: {dominion: [commerce]}
+          - <<: *i18n.result.common_noun
+            min: 15
+            max: 18
+            text: Conquest
+            # set_attributes: {dominion: [conquest]}
+          - <<: *i18n.result.common_noun
+            min: 19
+            max: 22
+            text: Construction
+            # set_attributes: {dominion: [construction]}
+          - <<: *i18n.result.common_noun
+            min: 23
+            max: 26
+            text: Diplomacy
+            # set_attributes: {dominion: [diplomacy]}
+          - <<: *i18n.result.common_noun
+            min: 27
+            max: 30
+            text: Education
+            # set_attributes: {dominion: [education]}
+          - <<: *i18n.result.common_noun
+            min: 31
+            max: 34
+            text: Environmentalism
+            # set_attributes: {dominion: [environmentalism]}
+          - <<: *i18n.result.common_noun
+            min: 35
+            max: 38
+            text: Exploration
+            # set_attributes: {dominion: [exploration]}
+          - <<: *i18n.result.common_noun
+            min: 39
+            max: 42
+            text: Faith
+            # set_attributes: {dominion: [faith]}
+          - <<: *i18n.result.common_noun
+            min: 43
+            max: 46
+            text: History
+            # set_attributes: {dominion: [history]}
+          - <<: *i18n.result.common_noun
+            min: 47
+            max: 50
+            text: Honor
+            # set_attributes: {dominion: [honor]}
+          - <<: *i18n.result.common_noun
+            min: 51
+            max: 55
+            text: Industry
+            # set_attributes: {dominion: [industry]}
+          - <<: *i18n.result.common_noun
+            min: 56
+            max: 59
+            text: Isolationism
+            # set_attributes: {dominion: [isolationism]}
+          - <<: *i18n.result.common_noun
+            min: 60
+            max: 63
+            text: Law
+            # set_attributes: {dominion: [law]}
+          - <<: *i18n.result.common_noun
+            min: 64
+            max: 67
+            text: Mysticism
+            # set_attributes: {dominion: [mysticism]}
+          - <<: *i18n.result.common_noun
+            min: 68
+            max: 71
+            text: Pacifism
+            # set_attributes: {dominion: [pacifism]}
+          - <<: *i18n.result.common_noun
+            min: 72
+            max: 75
+            text: Prophecy
+            # set_attributes: {dominion: [prophecy]}
+          - <<: *i18n.result.common_noun
+            min: 76
+            max: 79
+            text: Science
+            # set_attributes: {dominion: [science]}
+          - <<: *i18n.result.common_noun
+            min: 80
+            max: 83
+            text: Secrecy
+            # set_attributes: {dominion: [secrecy]}
+          - <<: *i18n.result.common_noun
+            min: 84
+            max: 87
+            text: Technology
+            # set_attributes: {dominion: [technology]}
+          - <<: *i18n.result.common_noun
+            min: 88
+            max: 91
+            text: Treachery
+            # set_attributes: {dominion: [treachery]}
+          - <<: *i18n.result.common_noun
+            min: 92
+            max: 96
+            text: Warfare
+            # set_attributes: {dominion: [warfare]}
+          - <<: *i18n.result.common_noun
+            min: 97
+            max: 100
+            text: Wealth
+            # set_attributes: {dominion: [wealth]}
+      dominion_leadership:
+        name: 'Dominion: Leadership'
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 341
+        # usage:
+        #   initial: true
+        #   requires:
+        #     attributes:
+        #       faction_type: [dominion]
+        # content:
+        #   part_of_speech: [fragment]
+        #   tags: [description]
+        rows:
+          - min: 1
+            max: 5
+            text: Anarchist
+            # set_attributes: {leadership: [anarchist]}
+          - min: 6
+            max: 15
+            text: Disputed leadership
+            # set_attributes: {leadership: [disputed_leadership]}
+          - min: 16
+            max: 30
+            text: Authoritarian dictatorship
+            # set_attributes: {leadership: [authoritarian_dictatorship]}
+          - min: 31
+            max: 45
+            text: Oligarchical elite
+            # set_attributes: {leadership: [oligarchical_elite]}
+          - min: 46
+            max: 60
+            text: Dynastic lineage
+            # set_attributes: {leadership: [dynastic_lineage]}
+          - min: 61
+            max: 70
+            text: Fated or prophesied leader
+            # set_attributes: {leadership: [fated_or_prophesied_leader]}
+          - min: 71
+            max: 80
+            text: Clan chiefs or elders
+            # set_attributes: {leadership: [clan_chiefs_or_elders]}
+          - min: 81
+            max: 90
+            text: Elected representatives
+            # set_attributes: {leadership: [elected_representatives]}
+          - min: 91
+            max: 95
+            text: Machine intelligence
+            # set_attributes: {leadership: [machine_intelligence]}
+          - min: 96
+            max: 100
+            text: Varied / decentralized
+            # set_attributes: {leadership: [varied_decentralized]}
+      guild:
+        name: Guild
+        oracle_type: table_text
+        icon: icons/factions/guild.svg
+        _source:
+          <<: *Source
+          page: 341
+        # usage:
+        #   initial: true
+        #   requires:
+        #     attributes:
+        #       faction_type: [guild]
+        # content:
+        #   tags: [actor]
+        rows:
+          - <<: *i18n.result.common_noun
+            min: 1
+            max: 5
+            text: Assassins
+            # set_attributes: {guild: [assassins]}
+          - <<: *i18n.result.common_noun
+            min: 6
+            max: 10
+            text: Bounty Hunters
+            # set_attributes: {guild: [bounty_hunters]}
+          - <<: *i18n.result.common_noun
+            min: 11
+            max: 15
+            text: Couriers
+            # set_attributes: {guild: [couriers]}
+          - <<: *i18n.result.common_noun
+            min: 16
+            max: 20
+            text: Courtesans
+            # set_attributes: {guild: [courtesans]}
+          - <<: *i18n.result.common_noun
+            min: 21
+            max: 25
+            text: Engineers
+            # set_attributes: {guild: [engineers]}
+          - <<: *i18n.result.common_noun
+            min: 26
+            max: 30
+            text: Healers
+            # set_attributes: {guild: [healers]}
+          - <<: *i18n.result.common_noun
+            min: 31
+            max: 40
+            text: Industrialists
+            # set_attributes: {guild: [industrialists]}
+          - <<: *i18n.result.common_noun
+            min: 41
+            max: 50
+            text: Mercenaries
+            # set_attributes: {guild: [mercenaries]}
+          - <<: *i18n.result.common_noun
+            min: 51
+            max: 60
+            text: Merchants
+            # set_attributes: {guild: [merchants]}
+          - <<: *i18n.result.common_noun
+            min: 61
+            max: 65
+            text: Mystics
+            # set_attributes: {guild: [mystics]}
+          - <<: *i18n.result.common_noun
+            min: 66
+            max: 75
+            text: Navigators
+            # set_attributes: {guild: [navigators]}
+          - <<: *i18n.result.common_noun
+            min: 76
+            max: 80
+            text: Peacekeepers
+            # set_attributes: {guild: [peacekeepers]}
+          - <<: *i18n.result.common_noun
+            min: 81
+            max: 85
+            text: Researchers
+            # set_attributes: {guild: [researchers]}
+          - <<: *i18n.result.common_noun
+            min: 86
+            max: 90
+            text: Spies
+            # set_attributes: {guild: [spies]}
+          - <<: *i18n.result.common_noun
+            min: 91
+            max: 100
+            text: Roll twice
+            oracle_rolls:
+              - number_of_rolls: 2
+                auto: true
+      fringe_group:
+        name: Fringe Group
+        oracle_type: table_text
+        icon: icons/factions/fringe_group.svg
+        _source:
+          <<: *Source
+          page: 341
+        # usage:
+        #   requires:
+        #     attributes:
+        #       faction_type: [fringe_group]
+        # content:
+        #   tags: [actor]
+        rows:
+          - <<: *i18n.result.common_noun
+            min: 1
+            max: 5
+            text: Cultists
+            # set_attributes: {fringe_group: [cultists]}
+          - <<: *i18n.result.common_noun
+            min: 6
+            max: 15
+            text: Exiles
+            # set_attributes: {fringe_group: [exiles]}
+          - <<: *i18n.result.common_noun
+            min: 16
+            max: 25
+            text: Gangsters
+            # set_attributes: {fringe_group: [gangsters]}
+          - <<: *i18n.result.common_noun
+            min: 26
+            max: 35
+            text: Hackers
+            # set_attributes: {fringe_group: [hackers]}
+          - <<: *i18n.result.common_noun
+            min: 36
+            max: 40
+            text: Monster hunters
+            # set_attributes: {fringe_group: [monster_hunters]}
+          - <<: *i18n.result.common_noun
+            min: 41
+            max: 50
+            text: Pirates
+            # set_attributes: {fringe_group: [pirates]}
+          - <<: *i18n.result.common_noun
+            min: 51
+            max: 60
+            text: Raiders
+            # set_attributes: {fringe_group: [raiders]}
+          - <<: *i18n.result.common_noun
+            min: 61
+            max: 70
+            text: Rebels
+            # set_attributes: {fringe_group: [rebels]}
+          - <<: *i18n.result.common_noun
+            min: 71
+            max: 75
+            text: Rogue AI
+            # set_attributes: {fringe_group: [rogue_ai]}
+          - <<: *i18n.result.common_noun
+            min: 76
+            max: 85
+            text: Scavengers
+            # set_attributes: {fringe_group: [scavengers]}
+          - <<: *i18n.result.common_noun
+            min: 86
+            max: 95
+            text: Smugglers
+            # set_attributes: {fringe_group: [smugglers]}
+          - <<: *i18n.result.common_noun
+            min: 96
+            max: 100
+            text: Roll twice
+            oracle_rolls:
+              - number_of_rolls: 2
+                auto: true
+      projects:
+        name: Faction Projects
+        _source:
+          <<: *Source
+          page: 342
+        # content:
+        #   part_of_speech: [fragment]
+        #   tags: [objective]
+        # usage:
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        description: |-
+          Pick or roll on this table to reveal the current focus of a faction. Then, use the nature of the organization to help envision the meaning of the project. The result may introduce events that motivate your character to aid or resist the project, or can serve as background detail for your setting. If you would like to track the faction’s progress, set a clock for the project using the campaign clock guidelines on page 235.
+        rows:
+          - min: 1
+            max: 3
+            text: Broaden scope of the faction to include a new focus
+          - min: 4
+            max: 6
+            text: Build or secure a powerful device
+          - min: 7
+            max: 9
+            text: Consolidate control of a valuable commodity
+          - min: 10
+            max: 12
+            text: Destroy or defeat a rival
+          - min: 13
+            max: 15
+            text: Disrupt the operations of a rival
+          - min: 16
+            max: 18
+            text: Escape the control of another faction or power
+          - min: 19
+            max: 21
+            text: Establish a monument or memorial
+          - min: 22
+            max: 24
+            text: Establish a safe refuge or headquarters
+          - min: 25
+            max: 27
+            text: Expand operations to a new location or sector
+          - min: 28
+            max: 30
+            text: Form an alliance
+          - min: 31
+            max: 33
+            text: Fulfill a prophecy
+          - min: 34
+            max: 36
+            text: Give aid to a faction
+          - min: 37
+            max: 39
+            text: Harness unnatural or forbidden power
+          - min: 40
+            max: 42
+            text: Hunt down a rogue asset
+          - min: 43
+            max: 45
+            text: Incite conflict among rivals
+          - min: 46
+            max: 48
+            text: Negotiate an agreement
+          - min: 49
+            max: 51
+            text: Obtain a needed commodity
+          - min: 52
+            max: 54
+            text: Obtain an important cultural artifact
+          - min: 55
+            max: 57
+            text: Obtain crucial data or information
+          - min: 58
+            max: 60
+            text: Obtain incriminating information about a rival
+          - min: 61
+            max: 63
+            text: Prevent a prophecy
+          - min: 64
+            max: 66
+            text: Put down an internal revolt or rebellion
+          - min: 67
+            max: 69
+            text: Repay a debt
+          - min: 70
+            max: 72
+            text: Rescue or recover a group or asset
+          - min: 73
+            max: 75
+            text: Research an innovation
+          - min: 76
+            max: 78
+            text: Resolve a conflict with another faction
+          - min: 79
+            max: 81
+            text: Reunite splintered elements of the faction
+          - min: 82
+            max: 84
+            text: Seize a powerful artifact or valuable treasure
+          - min: 85
+            max: 87
+            text: Seize rival territory or operations
+          - min: 88
+            max: 90
+            text: Subsume another faction
+          - min: 91
+            max: 93
+            text: Transport a valued asset
+          - min: 94
+            max: 96
+            text: Usurp leadership within a rival faction
+          - min: 97
+            max: 100
+            <<: &ActionTheme
+              text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+              oracle_rolls:
+                - oracle: starforged/oracles/core/action
+                  auto: true
+                - oracle: starforged/oracles/core/theme
+                  auto: true
+      relationships:
+        name: Faction Relationships
+        _source:
+          <<: *Source
+          page: 343
+        oracle_type: table_text
+        # content:
+        #   part_of_speech: [fragment]
+        description: |-
+          Factions add scale and narrative opportunities to your setting. But keep it manageable. Don’t overload your campaign with factions. Instead, focus on your interactions and entanglements with members of a few interesting factions. Then, when you have a question about the relationship of one faction to another, use this table. The result is the commonly understood connection between those factions. Further investigations or events may reveal a deeper or alternate truth.
+        rows:
+          - min: 1
+            max: 4
+            text: Antagonistic towards
+          - min: 5
+            max: 8
+            text: Apathetic or unaware of
+          - min: 9
+            max: 11
+            text: Betrayed by
+          - min: 12
+            max: 14
+            text: Broke faith with
+          - min: 15
+            max: 18
+            text: Distrustful of
+          - min: 19
+            max: 22
+            text: Does business with
+          - min: 23
+            max: 25
+            text: Extorted by
+          - min: 26
+            max: 29
+            text: Holds contempt for
+          - min: 30
+            max: 33
+            text: Holds leverage over
+          - min: 34
+            max: 36
+            text: In control of
+          - min: 37
+            max: 40
+            text: Maneuvering against
+          - min: 41
+            max: 44
+            text: Needs aid from
+          - min: 45
+            max: 47
+            text: Negotiating with
+          - min: 48
+            max: 51
+            text: Open alliance with
+          - min: 52
+            max: 54
+            text: Owes a debt to
+          - min: 55
+            max: 58
+            text: Shares a rivalry with
+          - min: 59
+            max: 61
+            text: Shares power with
+          - min: 62
+            max: 64
+            text: Shows respect for
+          - min: 65
+            max: 67
+            text: Splintered from
+          - min: 68
+            max: 70
+            text: Subordinate to
+          - min: 71
+            max: 74
+            text: Supplied with resources by
+          - min: 75
+            max: 78
+            text: Supplies resources to
+          - min: 79
+            max: 81
+            text: Temporary alliance with
+          - min: 82
+            max: 85
+            text: Tolerates
+          - min: 86
+            max: 89
+            text: Trades favors with
+          - min: 90
+            max: 92
+            text: Unjustly accused by
+          - min: 93
+            max: 96
+            text: Warring with
+          - min: 97
+            max: 100
+            text: Roll twice
+            oracle_rolls:
+              - number_of_rolls: 2
+                auto: true
+      quirks:
+        name: Faction Quirks
+        _source:
+          <<: *Source
+          page: 346
+        oracle_type: table_text
+        # content:
+        #   part_of_speech: [fragment]
+        #   tags: [description]
+        # usage:
+        recommended_rolls:
+          min: 1
+          max: 2
+        description: |-
+          Roll or pick known characteristics of the faction and its members using this table. But keep in mind that even within a small or specialized faction, there are no absolutes. These quirks represent common attitudes, practices, or approaches, but are not universal to every member of that faction. Leave room in your portrayal for diversity and contradictions.
+        rows:
+          - min: 1
+            max: 3
+            text: Ancient or coded language
+          - min: 4
+            max: 6
+            text: Animal or creature motif used as a faction symbol
+          - min: 7
+            max: 9
+            text: Banishes the disloyal
+          - min: 10
+            max: 12
+            text: Body augmentations are respected and valued
+          - min: 13
+            max: 15
+            text: Body ornamentations signify castes or roles
+          - min: 16
+            max: 18
+            text: Conceals individual identity
+          - min: 19
+            max: 21
+            text: Dependent on an addictive substance
+          - min: 22
+            max: 24
+            text: Distinctive or elaborate clothing
+          - min: 25
+            max: 27
+            text: Elite soldiers provide defense or serve as bodyguards
+          - min: 28
+            max: 30
+            text: Favors a signature weapon
+          - min: 31
+            max: 33
+            text: Guided by superstition or prophecy
+          - min: 34
+            max: 36
+            text: Heavily stratified social structure
+          - min: 37
+            max: 39
+            text: Hoards precursor artifacts
+          - min: 40
+            max: 42
+            text: Honors the fallen through unusual death rites
+          - min: 43
+            max: 45
+            text: Idolizes a long-dead founder or martyr
+          - min: 46
+            max: 48
+            text: Keeps exhaustive records or archives
+          - min: 49
+            max: 51
+            text: Lives off-planet in spaceborne fleets
+          - min: 52
+            max: 54
+            text: Members take a new name when joining the faction
+          - min: 55
+            max: 57
+            text: Nomadic people and mobile operations
+          - min: 58
+            max: 60
+            text: Operates under strict codes or laws
+          - min: 61
+            max: 63
+            text: Recognizes others through a distinctive greeting or gesture
+          - min: 64
+            max: 66
+            text: Reliant on machine intelligence
+          - min: 67
+            max: 69
+            text: Resolves disputes through formal duels
+          - min: 70
+            max: 72
+            text: Rites of adulthood or ascension
+          - min: 73
+            max: 75
+            text: Shuns or distrusts machine intelligence
+          - min: 76
+            max: 78
+            text: Starships share a distinctive and recognizable profile
+          - min: 79
+            max: 81
+            text: Suspicious of outsiders
+          - min: 82
+            max: 84
+            text: Symbiotic relationship with a specific type of creature
+          - min: 85
+            max: 87
+            text: Trades in a unique currency or commodity
+          - min: 88
+            max: 90
+            text: Trains in a demanding physical discipline or martial art
+          - min: 91
+            max: 93
+            text: Wields unnatural abilities or strange technologies
+          - min: 94
+            max: 96
+            text: Work or environment causes mutations
+          - min: 97
+            max: 100
+            <<: *ActionTheme
+      rumors:
+        name: Faction Rumors
+        _source:
+          <<: *Source
+          page: 347
+        oracle_type: table_text
+        # content:
+        #   part_of_speech: [fragment]
+        #   tags: [event, present]
+        # usage:
+        recommended_rolls:
+          min: 1
+          max: 2
+        summary: |-
+          Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.
+        rows:
+          - min: 1
+            max: 3
+            text: Caught in the crossfire of feuding factions
+          - min: 4
+            max: 6
+            text: Colluding with a criminal enterprise
+          - min: 7
+            max: 9
+            text: Corrupted by a dangerous power
+          - min: 10
+            max: 12
+            text: Critical resource is in short supply
+          - min: 13
+            max: 15
+            text: Defenses are overextended
+          - min: 16
+            max: 18
+            text: Developing revolutionary technology
+          - min: 19
+            max: 21
+            text: Digital systems are corrupted or infiltrated
+          - min: 22
+            max: 24
+            text: Heavily in debt
+          - min: 25
+            max: 27
+            text: Hit hard by a recent attack or calamity
+          - min: 28
+            max: 30
+            text: Holds a powerful artifact
+          - min: 31
+            max: 33
+            text: Holds incriminating information against a leader or faction
+          - min: 34
+            max: 36
+            text: Hoarding a valuable commodity
+          - min: 37
+            max: 39
+            text: Infiltrated by a rival faction
+          - min: 40
+            max: 42
+            text: Knows the location of a fabled treasure or lost technology
+          - min: 43
+            max: 45
+            text: Leaders are haunted by a dark prophecy
+          - min: 46
+            max: 48
+            text: Leaders are incompetent
+          - min: 49
+            max: 51
+            text: Leaders are puppets of another power or faction
+          - min: 52
+            max: 54
+            text: Lesser members of the leadership are plotting a coup
+          - min: 55
+            max: 57
+            text: New belief or religion is creating a schism among members
+          - min: 58
+            max: 60
+            text: Operations are a false front for their true purpose
+          - min: 61
+            max: 63
+            text: Overdependence on a failing or vulnerable technology
+          - min: 64
+            max: 66
+            text: Plagued by infighting and low morale
+          - min: 67
+            max: 69
+            text: Plotting to betray an allied faction
+          - min: 70
+            max: 72
+            text: Preparing a major offensive or operation
+          - min: 73
+            max: 75
+            text: Pulling the strings of a leader or faction
+          - min: 76
+            max: 78
+            text: Recently acquired an unexpected fortune
+          - min: 79
+            max: 81
+            text: Secretly supporting a reviled faction
+          - min: 82
+            max: 84
+            text: Sheltering an infamous or dangerous fugitive
+          - min: 85
+            max: 87
+            text: Suffered destructive sabotage from within
+          - min: 88
+            max: 90
+            text: Suffering a shortage of key workers or personnel
+          - min: 91
+            max: 93
+            text: Uprising or revolt is brewing from within
+          - min: 94
+            max: 96
+            text: Vulnerable to attack or aggression
+          - min: 97
+            max: 100
+            <<: *ActionTheme
     collections:
       name:
         name: Faction Name
@@ -594,903 +1493,3 @@ oracles:
                 min: 99
                 max: 100
                 text: Wrights
-    contents:
-      type:
-        name: Faction Type
-        _source:
-          <<: *Source
-          page: 340
-        oracle_type: table_text2
-        column_labels:
-          roll: Roll
-          text: Result
-          text2: Summary
-        # usage:
-        #   initial: true
-        rows:
-          - min: 1
-            max: 40
-            text: '[Dominion](id:starforged/oracles/factions/dominion)'
-            text2: 'Governing power'
-            oracle_rolls:
-              - oracle: starforged/oracles/factions/dominion
-              - oracle: starforged/oracles/factions/dominion_leadership
-            # set_attributes: {faction_type: [dominion]}
-          - min: 41
-            max: 70
-            text: '[Guild](id:starforged/oracles/factions/guild)'
-            text2: 'Organization of specialists'
-            oracle_rolls:
-              - oracle: starforged/oracles/factions/guild
-            # set_attributes: {faction_type: [guild]}
-          - min: 71
-            max: 100
-            text: '[Fringe Group](id:starforged/oracles/factions/fringe_group)'
-            text2: 'Band of outlaws, outcasts, or rogues'
-            oracle_rolls:
-              - oracle: starforged/oracles/factions/fringe_group
-            # set_attributes: {faction_type: [fringe_group]}
-      influence:
-        name: Influence
-        _source:
-          <<: *Source
-          page: 340
-        # details_label: summary
-        oracle_type: table_text2
-        column_labels:
-          roll: Roll
-          text: Result
-          text2: Summary
-        rows:
-          - <<: *i18n.result.adjective
-            min: 1
-            max: 10
-            text: Forsaken
-            text2: Banished or forgotten
-            # set_attributes: {influence: [forsaken]}
-          - <<: *i18n.result.adjective
-            min: 11
-            max: 30
-            text: Isolated
-            text2: Limited influence in a remote location
-            # set_attributes: {influence: [isolated]}
-          - <<: *i18n.result.adjective
-            min: 31
-            max: 50
-            text: Localized
-            text2: Marginal influence in a single sector
-            # set_attributes: {influence: [localized]}
-          - <<: *i18n.result.adjective
-            min: 51
-            max: 70
-            text: Established
-            text2: Strong influence in a single sector
-            # set_attributes: {influence: [established]}
-          - <<: *i18n.result.adjective
-            min: 71
-            max: 85
-            text: Notable
-            text2: Dispersed influence across a few sectors
-            # set_attributes: {influence: [notable]}
-          - <<: *i18n.result.adjective
-            min: 86
-            max: 95
-            text: Dominant
-            text2: Far-reaching influence across many sectors
-            # set_attributes: {influence: [dominant]}
-          - <<: *i18n.result.adjective
-            min: 96
-            max: 100
-            text: Inescapable
-            text2: Pervasive influence across inhabited space
-            # set_attributes: {influence: [inescapable]}
-      dominion:
-        name: Dominion
-        oracle_type: table_text
-        icon: icons/factions/dominion.svg
-        _source:
-          <<: *Source
-          page: 341
-        # usage:
-        recommended_rolls:
-          min: 1
-          max: 3
-        #   initial: true
-        #   requires:
-        #     attributes:
-        #       faction_type: [dominion]
-        # content:
-        #   tags: [abstract noun]
-        rows:
-          - <<: *i18n.result.common_noun
-            min: 1
-            max: 5
-            text: Agriculture
-            # set_attributes: {dominion: [agriculture]}
-          - <<: *i18n.result.common_noun
-            min: 6
-            max: 9
-            text: Artistry
-            # set_attributes: {dominion: [artistry]}
-          - <<: *i18n.result.common_noun
-            min: 10
-            max: 14
-            text: Commerce
-            # set_attributes: {dominion: [commerce]}
-          - <<: *i18n.result.common_noun
-            min: 15
-            max: 18
-            text: Conquest
-            # set_attributes: {dominion: [conquest]}
-          - <<: *i18n.result.common_noun
-            min: 19
-            max: 22
-            text: Construction
-            # set_attributes: {dominion: [construction]}
-          - <<: *i18n.result.common_noun
-            min: 23
-            max: 26
-            text: Diplomacy
-            # set_attributes: {dominion: [diplomacy]}
-          - <<: *i18n.result.common_noun
-            min: 27
-            max: 30
-            text: Education
-            # set_attributes: {dominion: [education]}
-          - <<: *i18n.result.common_noun
-            min: 31
-            max: 34
-            text: Environmentalism
-            # set_attributes: {dominion: [environmentalism]}
-          - <<: *i18n.result.common_noun
-            min: 35
-            max: 38
-            text: Exploration
-            # set_attributes: {dominion: [exploration]}
-          - <<: *i18n.result.common_noun
-            min: 39
-            max: 42
-            text: Faith
-            # set_attributes: {dominion: [faith]}
-          - <<: *i18n.result.common_noun
-            min: 43
-            max: 46
-            text: History
-            # set_attributes: {dominion: [history]}
-          - <<: *i18n.result.common_noun
-            min: 47
-            max: 50
-            text: Honor
-            # set_attributes: {dominion: [honor]}
-          - <<: *i18n.result.common_noun
-            min: 51
-            max: 55
-            text: Industry
-            # set_attributes: {dominion: [industry]}
-          - <<: *i18n.result.common_noun
-            min: 56
-            max: 59
-            text: Isolationism
-            # set_attributes: {dominion: [isolationism]}
-          - <<: *i18n.result.common_noun
-            min: 60
-            max: 63
-            text: Law
-            # set_attributes: {dominion: [law]}
-          - <<: *i18n.result.common_noun
-            min: 64
-            max: 67
-            text: Mysticism
-            # set_attributes: {dominion: [mysticism]}
-          - <<: *i18n.result.common_noun
-            min: 68
-            max: 71
-            text: Pacifism
-            # set_attributes: {dominion: [pacifism]}
-          - <<: *i18n.result.common_noun
-            min: 72
-            max: 75
-            text: Prophecy
-            # set_attributes: {dominion: [prophecy]}
-          - <<: *i18n.result.common_noun
-            min: 76
-            max: 79
-            text: Science
-            # set_attributes: {dominion: [science]}
-          - <<: *i18n.result.common_noun
-            min: 80
-            max: 83
-            text: Secrecy
-            # set_attributes: {dominion: [secrecy]}
-          - <<: *i18n.result.common_noun
-            min: 84
-            max: 87
-            text: Technology
-            # set_attributes: {dominion: [technology]}
-          - <<: *i18n.result.common_noun
-            min: 88
-            max: 91
-            text: Treachery
-            # set_attributes: {dominion: [treachery]}
-          - <<: *i18n.result.common_noun
-            min: 92
-            max: 96
-            text: Warfare
-            # set_attributes: {dominion: [warfare]}
-          - <<: *i18n.result.common_noun
-            min: 97
-            max: 100
-            text: Wealth
-            # set_attributes: {dominion: [wealth]}
-      dominion_leadership:
-        name: 'Dominion: Leadership'
-        oracle_type: table_text
-        _source:
-          <<: *Source
-          page: 341
-        # usage:
-        #   initial: true
-        #   requires:
-        #     attributes:
-        #       faction_type: [dominion]
-        # content:
-        #   part_of_speech: [fragment]
-        #   tags: [description]
-        rows:
-          - min: 1
-            max: 5
-            text: Anarchist
-            # set_attributes: {leadership: [anarchist]}
-          - min: 6
-            max: 15
-            text: Disputed leadership
-            # set_attributes: {leadership: [disputed_leadership]}
-          - min: 16
-            max: 30
-            text: Authoritarian dictatorship
-            # set_attributes: {leadership: [authoritarian_dictatorship]}
-          - min: 31
-            max: 45
-            text: Oligarchical elite
-            # set_attributes: {leadership: [oligarchical_elite]}
-          - min: 46
-            max: 60
-            text: Dynastic lineage
-            # set_attributes: {leadership: [dynastic_lineage]}
-          - min: 61
-            max: 70
-            text: Fated or prophesied leader
-            # set_attributes: {leadership: [fated_or_prophesied_leader]}
-          - min: 71
-            max: 80
-            text: Clan chiefs or elders
-            # set_attributes: {leadership: [clan_chiefs_or_elders]}
-          - min: 81
-            max: 90
-            text: Elected representatives
-            # set_attributes: {leadership: [elected_representatives]}
-          - min: 91
-            max: 95
-            text: Machine intelligence
-            # set_attributes: {leadership: [machine_intelligence]}
-          - min: 96
-            max: 100
-            text: Varied / decentralized
-            # set_attributes: {leadership: [varied_decentralized]}
-      guild:
-        name: Guild
-        oracle_type: table_text
-        icon: icons/factions/guild.svg
-        _source:
-          <<: *Source
-          page: 341
-        # usage:
-        #   initial: true
-        #   requires:
-        #     attributes:
-        #       faction_type: [guild]
-        # content:
-        #   tags: [actor]
-        rows:
-          - <<: *i18n.result.common_noun
-            min: 1
-            max: 5
-            text: Assassins
-            # set_attributes: {guild: [assassins]}
-          - <<: *i18n.result.common_noun
-            min: 6
-            max: 10
-            text: Bounty Hunters
-            # set_attributes: {guild: [bounty_hunters]}
-          - <<: *i18n.result.common_noun
-            min: 11
-            max: 15
-            text: Couriers
-            # set_attributes: {guild: [couriers]}
-          - <<: *i18n.result.common_noun
-            min: 16
-            max: 20
-            text: Courtesans
-            # set_attributes: {guild: [courtesans]}
-          - <<: *i18n.result.common_noun
-            min: 21
-            max: 25
-            text: Engineers
-            # set_attributes: {guild: [engineers]}
-          - <<: *i18n.result.common_noun
-            min: 26
-            max: 30
-            text: Healers
-            # set_attributes: {guild: [healers]}
-          - <<: *i18n.result.common_noun
-            min: 31
-            max: 40
-            text: Industrialists
-            # set_attributes: {guild: [industrialists]}
-          - <<: *i18n.result.common_noun
-            min: 41
-            max: 50
-            text: Mercenaries
-            # set_attributes: {guild: [mercenaries]}
-          - <<: *i18n.result.common_noun
-            min: 51
-            max: 60
-            text: Merchants
-            # set_attributes: {guild: [merchants]}
-          - <<: *i18n.result.common_noun
-            min: 61
-            max: 65
-            text: Mystics
-            # set_attributes: {guild: [mystics]}
-          - <<: *i18n.result.common_noun
-            min: 66
-            max: 75
-            text: Navigators
-            # set_attributes: {guild: [navigators]}
-          - <<: *i18n.result.common_noun
-            min: 76
-            max: 80
-            text: Peacekeepers
-            # set_attributes: {guild: [peacekeepers]}
-          - <<: *i18n.result.common_noun
-            min: 81
-            max: 85
-            text: Researchers
-            # set_attributes: {guild: [researchers]}
-          - <<: *i18n.result.common_noun
-            min: 86
-            max: 90
-            text: Spies
-            # set_attributes: {guild: [spies]}
-          - <<: *i18n.result.common_noun
-            min: 91
-            max: 100
-            text: Roll twice
-            oracle_rolls:
-              - number_of_rolls: 2
-                auto: true
-      fringe_group:
-        name: Fringe Group
-        oracle_type: table_text
-        icon: icons/factions/fringe_group.svg
-        _source:
-          <<: *Source
-          page: 341
-        # usage:
-        #   requires:
-        #     attributes:
-        #       faction_type: [fringe_group]
-        # content:
-        #   tags: [actor]
-        rows:
-          - <<: *i18n.result.common_noun
-            min: 1
-            max: 5
-            text: Cultists
-            # set_attributes: {fringe_group: [cultists]}
-          - <<: *i18n.result.common_noun
-            min: 6
-            max: 15
-            text: Exiles
-            # set_attributes: {fringe_group: [exiles]}
-          - <<: *i18n.result.common_noun
-            min: 16
-            max: 25
-            text: Gangsters
-            # set_attributes: {fringe_group: [gangsters]}
-          - <<: *i18n.result.common_noun
-            min: 26
-            max: 35
-            text: Hackers
-            # set_attributes: {fringe_group: [hackers]}
-          - <<: *i18n.result.common_noun
-            min: 36
-            max: 40
-            text: Monster hunters
-            # set_attributes: {fringe_group: [monster_hunters]}
-          - <<: *i18n.result.common_noun
-            min: 41
-            max: 50
-            text: Pirates
-            # set_attributes: {fringe_group: [pirates]}
-          - <<: *i18n.result.common_noun
-            min: 51
-            max: 60
-            text: Raiders
-            # set_attributes: {fringe_group: [raiders]}
-          - <<: *i18n.result.common_noun
-            min: 61
-            max: 70
-            text: Rebels
-            # set_attributes: {fringe_group: [rebels]}
-          - <<: *i18n.result.common_noun
-            min: 71
-            max: 75
-            text: Rogue AI
-            # set_attributes: {fringe_group: [rogue_ai]}
-          - <<: *i18n.result.common_noun
-            min: 76
-            max: 85
-            text: Scavengers
-            # set_attributes: {fringe_group: [scavengers]}
-          - <<: *i18n.result.common_noun
-            min: 86
-            max: 95
-            text: Smugglers
-            # set_attributes: {fringe_group: [smugglers]}
-          - <<: *i18n.result.common_noun
-            min: 96
-            max: 100
-            text: Roll twice
-            oracle_rolls:
-              - number_of_rolls: 2
-                auto: true
-      projects:
-        name: Faction
-        _source:
-          <<: *Source
-          page: 342
-        # content:
-        #   part_of_speech: [fragment]
-        #   tags: [objective]
-        # usage:
-        oracle_type: table_text
-        recommended_rolls:
-          min: 1
-          max: 2
-        description: |-
-          Pick or roll on this table to reveal the current focus of a faction. Then, use the nature of the organization to help envision the meaning of the project. The result may introduce events that motivate your character to aid or resist the project, or can serve as background detail for your setting. If you would like to track the faction’s progress, set a clock for the project using the campaign clock guidelines on page 235.
-        rows:
-          - min: 1
-            max: 3
-            text: Broaden scope of the faction to include a new focus
-          - min: 4
-            max: 6
-            text: Build or secure a powerful device
-          - min: 7
-            max: 9
-            text: Consolidate control of a valuable commodity
-          - min: 10
-            max: 12
-            text: Destroy or defeat a rival
-          - min: 13
-            max: 15
-            text: Disrupt the operations of a rival
-          - min: 16
-            max: 18
-            text: Escape the control of another faction or power
-          - min: 19
-            max: 21
-            text: Establish a monument or memorial
-          - min: 22
-            max: 24
-            text: Establish a safe refuge or headquarters
-          - min: 25
-            max: 27
-            text: Expand operations to a new location or sector
-          - min: 28
-            max: 30
-            text: Form an alliance
-          - min: 31
-            max: 33
-            text: Fulfill a prophecy
-          - min: 34
-            max: 36
-            text: Give aid to a faction
-          - min: 37
-            max: 39
-            text: Harness unnatural or forbidden power
-          - min: 40
-            max: 42
-            text: Hunt down a rogue asset
-          - min: 43
-            max: 45
-            text: Incite conflict among rivals
-          - min: 46
-            max: 48
-            text: Negotiate an agreement
-          - min: 49
-            max: 51
-            text: Obtain a needed commodity
-          - min: 52
-            max: 54
-            text: Obtain an important cultural artifact
-          - min: 55
-            max: 57
-            text: Obtain crucial data or information
-          - min: 58
-            max: 60
-            text: Obtain incriminating information about a rival
-          - min: 61
-            max: 63
-            text: Prevent a prophecy
-          - min: 64
-            max: 66
-            text: Put down an internal revolt or rebellion
-          - min: 67
-            max: 69
-            text: Repay a debt
-          - min: 70
-            max: 72
-            text: Rescue or recover a group or asset
-          - min: 73
-            max: 75
-            text: Research an innovation
-          - min: 76
-            max: 78
-            text: Resolve a conflict with another faction
-          - min: 79
-            max: 81
-            text: Reunite splintered elements of the faction
-          - min: 82
-            max: 84
-            text: Seize a powerful artifact or valuable treasure
-          - min: 85
-            max: 87
-            text: Seize rival territory or operations
-          - min: 88
-            max: 90
-            text: Subsume another faction
-          - min: 91
-            max: 93
-            text: Transport a valued asset
-          - min: 94
-            max: 96
-            text: Usurp leadership within a rival faction
-          - min: 97
-            max: 100
-            <<: &ActionTheme
-              text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
-              oracle_rolls:
-                - oracle: starforged/oracles/core/action
-                  auto: true
-                - oracle: starforged/oracles/core/theme
-                  auto: true
-      relationships:
-        name: Faction Relationships
-        _source:
-          <<: *Source
-          page: 343
-        oracle_type: table_text
-        # content:
-        #   part_of_speech: [fragment]
-        description: |-
-          Factions add scale and narrative opportunities to your setting. But keep it manageable. Don’t overload your campaign with factions. Instead, focus on your interactions and entanglements with members of a few interesting factions. Then, when you have a question about the relationship of one faction to another, use this table. The result is the commonly understood connection between those factions. Further investigations or events may reveal a deeper or alternate truth.
-        rows:
-          - min: 1
-            max: 4
-            text: Antagonistic towards
-          - min: 5
-            max: 8
-            text: Apathetic or unaware of
-          - min: 9
-            max: 11
-            text: Betrayed by
-          - min: 12
-            max: 14
-            text: Broke faith with
-          - min: 15
-            max: 18
-            text: Distrustful of
-          - min: 19
-            max: 22
-            text: Does business with
-          - min: 23
-            max: 25
-            text: Extorted by
-          - min: 26
-            max: 29
-            text: Holds contempt for
-          - min: 30
-            max: 33
-            text: Holds leverage over
-          - min: 34
-            max: 36
-            text: In control of
-          - min: 37
-            max: 40
-            text: Maneuvering against
-          - min: 41
-            max: 44
-            text: Needs aid from
-          - min: 45
-            max: 47
-            text: Negotiating with
-          - min: 48
-            max: 51
-            text: Open alliance with
-          - min: 52
-            max: 54
-            text: Owes a debt to
-          - min: 55
-            max: 58
-            text: Shares a rivalry with
-          - min: 59
-            max: 61
-            text: Shares power with
-          - min: 62
-            max: 64
-            text: Shows respect for
-          - min: 65
-            max: 67
-            text: Splintered from
-          - min: 68
-            max: 70
-            text: Subordinate to
-          - min: 71
-            max: 74
-            text: Supplied with resources by
-          - min: 75
-            max: 78
-            text: Supplies resources to
-          - min: 79
-            max: 81
-            text: Temporary alliance with
-          - min: 82
-            max: 85
-            text: Tolerates
-          - min: 86
-            max: 89
-            text: Trades favors with
-          - min: 90
-            max: 92
-            text: Unjustly accused by
-          - min: 93
-            max: 96
-            text: Warring with
-          - min: 97
-            max: 100
-            text: Roll twice
-            oracle_rolls:
-              - number_of_rolls: 2
-                auto: true
-      quirks:
-        name: Faction Quirks
-        _source:
-          <<: *Source
-          page: 346
-        oracle_type: table_text
-        # content:
-        #   part_of_speech: [fragment]
-        #   tags: [description]
-        # usage:
-        recommended_rolls:
-          min: 1
-          max: 2
-        description: |-
-          Roll or pick known characteristics of the faction and its members using this table. But keep in mind that even within a small or specialized faction, there are no absolutes. These quirks represent common attitudes, practices, or approaches, but are not universal to every member of that faction. Leave room in your portrayal for diversity and contradictions.
-        rows:
-          - min: 1
-            max: 3
-            text: Ancient or coded language
-          - min: 4
-            max: 6
-            text: Animal or creature motif used as a faction symbol
-          - min: 7
-            max: 9
-            text: Banishes the disloyal
-          - min: 10
-            max: 12
-            text: Body augmentations are respected and valued
-          - min: 13
-            max: 15
-            text: Body ornamentations signify castes or roles
-          - min: 16
-            max: 18
-            text: Conceals individual identity
-          - min: 19
-            max: 21
-            text: Dependent on an addictive substance
-          - min: 22
-            max: 24
-            text: Distinctive or elaborate clothing
-          - min: 25
-            max: 27
-            text: Elite soldiers provide defense or serve as bodyguards
-          - min: 28
-            max: 30
-            text: Favors a signature weapon
-          - min: 31
-            max: 33
-            text: Guided by superstition or prophecy
-          - min: 34
-            max: 36
-            text: Heavily stratified social structure
-          - min: 37
-            max: 39
-            text: Hoards precursor artifacts
-          - min: 40
-            max: 42
-            text: Honors the fallen through unusual death rites
-          - min: 43
-            max: 45
-            text: Idolizes a long-dead founder or martyr
-          - min: 46
-            max: 48
-            text: Keeps exhaustive records or archives
-          - min: 49
-            max: 51
-            text: Lives off-planet in spaceborne fleets
-          - min: 52
-            max: 54
-            text: Members take a new name when joining the faction
-          - min: 55
-            max: 57
-            text: Nomadic people and mobile operations
-          - min: 58
-            max: 60
-            text: Operates under strict codes or laws
-          - min: 61
-            max: 63
-            text: Recognizes others through a distinctive greeting or gesture
-          - min: 64
-            max: 66
-            text: Reliant on machine intelligence
-          - min: 67
-            max: 69
-            text: Resolves disputes through formal duels
-          - min: 70
-            max: 72
-            text: Rites of adulthood or ascension
-          - min: 73
-            max: 75
-            text: Shuns or distrusts machine intelligence
-          - min: 76
-            max: 78
-            text: Starships share a distinctive and recognizable profile
-          - min: 79
-            max: 81
-            text: Suspicious of outsiders
-          - min: 82
-            max: 84
-            text: Symbiotic relationship with a specific type of creature
-          - min: 85
-            max: 87
-            text: Trades in a unique currency or commodity
-          - min: 88
-            max: 90
-            text: Trains in a demanding physical discipline or martial art
-          - min: 91
-            max: 93
-            text: Wields unnatural abilities or strange technologies
-          - min: 94
-            max: 96
-            text: Work or environment causes mutations
-          - min: 97
-            max: 100
-            <<: *ActionTheme
-      rumors:
-        name: Faction Rumors
-        _source:
-          <<: *Source
-          page: 347
-        oracle_type: table_text
-        # content:
-        #   part_of_speech: [fragment]
-        #   tags: [event, present]
-        # usage:
-        recommended_rolls:
-          min: 1
-          max: 2
-        summary: |-
-          Use this table when you are in a position to investigate a faction by uncovering secrets or fishing for gossip.
-        rows:
-          - min: 1
-            max: 3
-            text: Caught in the crossfire of feuding factions
-          - min: 4
-            max: 6
-            text: Colluding with a criminal enterprise
-          - min: 7
-            max: 9
-            text: Corrupted by a dangerous power
-          - min: 10
-            max: 12
-            text: Critical resource is in short supply
-          - min: 13
-            max: 15
-            text: Defenses are overextended
-          - min: 16
-            max: 18
-            text: Developing revolutionary technology
-          - min: 19
-            max: 21
-            text: Digital systems are corrupted or infiltrated
-          - min: 22
-            max: 24
-            text: Heavily in debt
-          - min: 25
-            max: 27
-            text: Hit hard by a recent attack or calamity
-          - min: 28
-            max: 30
-            text: Holds a powerful artifact
-          - min: 31
-            max: 33
-            text: Holds incriminating information against a leader or faction
-          - min: 34
-            max: 36
-            text: Hoarding a valuable commodity
-          - min: 37
-            max: 39
-            text: Infiltrated by a rival faction
-          - min: 40
-            max: 42
-            text: Knows the location of a fabled treasure or lost technology
-          - min: 43
-            max: 45
-            text: Leaders are haunted by a dark prophecy
-          - min: 46
-            max: 48
-            text: Leaders are incompetent
-          - min: 49
-            max: 51
-            text: Leaders are puppets of another power or faction
-          - min: 52
-            max: 54
-            text: Lesser members of the leadership are plotting a coup
-          - min: 55
-            max: 57
-            text: New belief or religion is creating a schism among members
-          - min: 58
-            max: 60
-            text: Operations are a false front for their true purpose
-          - min: 61
-            max: 63
-            text: Overdependence on a failing or vulnerable technology
-          - min: 64
-            max: 66
-            text: Plagued by infighting and low morale
-          - min: 67
-            max: 69
-            text: Plotting to betray an allied faction
-          - min: 70
-            max: 72
-            text: Preparing a major offensive or operation
-          - min: 73
-            max: 75
-            text: Pulling the strings of a leader or faction
-          - min: 76
-            max: 78
-            text: Recently acquired an unexpected fortune
-          - min: 79
-            max: 81
-            text: Secretly supporting a reviled faction
-          - min: 82
-            max: 84
-            text: Sheltering an infamous or dangerous fugitive
-          - min: 85
-            max: 87
-            text: Suffered destructive sabotage from within
-          - min: 88
-            max: 90
-            text: Suffering a shortage of key workers or personnel
-          - min: 91
-            max: 93
-            text: Uprising or revolt is brewing from within
-          - min: 94
-            max: 96
-            text: Vulnerable to attack or aggression
-          - min: 97
-            max: 100
-            <<: *ActionTheme

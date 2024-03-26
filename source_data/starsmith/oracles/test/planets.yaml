@@ -1,0 +1,683 @@
+_id: starsmith
+datasworn_version: 0.0.9
+package_type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith
+  authors:
+    - name: Eric Bright
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
+oracles:
+  planets:
+    name: Planets
+    oracle_type: tables
+    _comment: Extension of the oracle table
+    # description: Extension of the oracle table
+    _source: *Source
+    contents:
+      observed_from_space:
+        name: Vital Observed From Space
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/planets/vital/observed_from_space
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 111
+            text: Dramatic tidal system
+          - min: 112
+            max: 122
+            text: Erratic orbit around central star
+          - min: 123
+            max: 133
+            text: Life confined to a single continent
+          - min: 134
+            max: 144
+            text: Low gravity
+          - min: 145
+            max: 155
+            text: Moon that is its own vital world
+          - min: 156
+            max: 166
+            text: Nearby asteroid belt
+          - min: 167
+            max: 177
+            text: Sister planet in the same orbit but opposite the star
+          - min: 178
+            max: 188
+            text: Vibrantly colored waterways
+          - min: 189
+            max: 198
+            text: ▶Descriptor + Focus
+          - min: 199
+            max: 200
+            text: ▶Precursor Vault (orbital)
+          - min: 201
+            max: 211
+            text: Biome of exaggerated size
+          - min: 212
+            max: 222
+            text: Fluctuating gravity
+          - min: 223
+            max: 233
+            text: Large moon with its own moon
+          - min: 234
+            max: 244
+            text: Life only on hemisphere permanently facing the star
+          - min: 245
+            max: 255
+            text: Nebula trailing dust stuck in planet's gravity
+          - min: 256
+            max: 266
+            text: Recent large impact crater and dusty Atmosphere
+          - min: 267
+            max: 277
+            text: Rotation about core as well as polar axis rotation
+          - min: 278
+            max: 288
+            text: Vibrantly colored weather systems
+          - min: 289
+            max: 298
+            text: ▶Descriptor + Focus
+          - min: 299
+            max: 300
+            text: ▶Precursor Vault (orbital)
+      feature:
+        name: Vital Feature
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/planets/vital/feature
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 107
+            text: Creature nursery grounds
+          - min: 108
+            max: 114
+            text: Dramatically separated tracts of terrain
+          - min: 115
+            max: 121
+            text: Extreme temperature fluctuations
+          - min: 122
+            max: 128
+            text: Frequent coastal hurricanes
+          - min: 129
+            max: 135
+            text: Geothermal heat source
+          - min: 136
+            max: 142
+            text: Invasive floral species
+          - min: 143
+            max: 149
+            text: Maze of geological formations
+          - min: 150
+            max: 156
+            text: Paths frequented by predators
+          - min: 157
+            max: 163
+            text: Rare mineral deposits
+          - min: 164
+            max: 170
+            text: Signs of a degrading biosphere
+          - min: 171
+            max: 177
+            text: Twisting tornadoes
+          - min: 178
+            max: 184
+            text: Vibrant auroras
+          - min: 185
+            max: 191
+            text: Yawning sinkhole
+          - min: 192
+            max: 198
+            text: ▶Descriptor + Focus
+          - min: 199
+            max: 200
+            text: ▶Precursor Vault (planetside)
+          - min: 201
+            max: 207
+            text: Active volcanoes
+          - min: 208
+            max: 214
+            text: Creatures in conflict
+          - min: 215
+            max: 221
+            text: Crushing landslide
+          - min: 222
+            max: 228
+            text: Destructive insect swarms
+          - min: 229
+            max: 235
+            text: Evidence of greenhouse effects
+          - min: 236
+            max: 242
+            text: Fluctuating radiation
+          - min: 243
+            max: 249
+            text: Herd of migratory creatures
+          - min: 250
+            max: 256
+            text: Intricate geological formations
+          - min: 257
+            max: 263
+            text: Low altitude jet stream sustaining strong winds
+          - min: 264
+            max: 270
+            text: Signs of a recent wildfire
+          - min: 271
+            max: 277
+            text: Torrential rains
+          - min: 278
+            max: 284
+            text: Treacherous and rugged terrain
+          - min: 285
+            max: 291
+            text: Vents leaking hot gases
+          - min: 292
+            max: 298
+            text: ▶Descriptor + Focus
+          - min: 299
+            max: 300
+            text: ▶Precursor Vault (planetside)
+      name:
+        name: Vital Name
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/planets/vital/name
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 105
+            text: Aisha
+          - min: 106
+            max: 110
+            text: Anastasia
+          - min: 111
+            max: 115
+            text: Bion
+          - min: 116
+            max: 120
+            text: Cansu
+          - min: 121
+            max: 125
+            text: Dagian
+          - min: 126
+            max: 130
+            text: Ercan
+          - min: 131
+            max: 135
+            text: Fajr
+          - min: 136
+            max: 140
+            text: Genesis
+          - min: 141
+            max: 145
+            text: Hiwot
+          - min: 146
+            max: 150
+            text: Inizio
+          - min: 151
+            max: 155
+            text: Jengu
+          - min: 156
+            max: 160
+            text: Kia
+          - min: 161
+            max: 165
+            text: Luljeta
+          - min: 166
+            max: 170
+            text: Nolosha
+          - min: 171
+            max: 175
+            text: Omri
+          - min: 176
+            max: 180
+            text: Saol
+          - min: 181
+            max: 185
+            text: Shenghuo
+          - min: 186
+            max: 190
+            text: Valetudo
+          - min: 191
+            max: 195
+            text: Wahuj
+          - min: 196
+            max: 200
+            text: Zivot
+          - min: 201
+            max: 205
+            text: Anahit
+          - min: 206
+            max: 210
+            text: Ankur
+          - min: 211
+            max: 215
+            text: Borvo
+          - min: 216
+            max: 220
+            text: Chae-Won
+          - min: 221
+            max: 225
+            text: Enid
+          - min: 226
+            max: 230
+            text: Erinle
+          - min: 231
+            max: 235
+            text: Feronia
+          - min: 236
+            max: 240
+            text: Haoma
+          - min: 241
+            max: 245
+            text: Hua Tuo
+          - min: 246
+            max: 250
+            text: Isis
+          - min: 251
+            max: 255
+            text: Jindagee
+          - min: 256
+            max: 260
+            text: Leben
+          - min: 261
+            max: 265
+            text: Noema
+          - min: 266
+            max: 270
+            text: Nyssa
+          - min: 271
+            max: 275
+            text: Renata
+          - min: 276
+            max: 280
+            text: Seikatsu
+          - min: 281
+            max: 285
+            text: Umar
+          - min: 286
+            max: 290
+            text: Vihaan
+          - min: 291
+            max: 295
+            text: Zera
+          - min: 296
+            max: 300
+            text: Zoticus
+      type:
+        name: Vital Plant Type
+        oracle_type: table_text
+        dice: 1d100
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 10
+            text: Grass
+          - min: 11
+            max: 20
+            text: Moss
+          - min: 21
+            max: 30
+            text: Root vegetable
+          - min: 31
+            max: 40
+            text: Shrub
+          - min: 41
+            max: 50
+            text: Tree, medium
+          - min: 51
+            max: 60
+            text: Tree, small
+          - min: 61
+            max: 70
+            text: Tree, tall
+          - min: 71
+            max: 80
+            text: Vine, climbing
+          - min: 81
+            max: 90
+            text: Vine, creeping
+          - min: 91
+            max: 100
+            text: Weed
+      characteristic:
+        name: Vital Plant Characteristic
+        oracle_type: table_text
+        dice: 1d100
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 10
+            text: Airborne, toxic pollen
+          - min: 11
+            max: 20
+            text: Blade-like leaves
+          - min: 21
+            max: 30
+            text: Flexible, fibrous stalks
+          - min: 31
+            max: 40
+            text: Fruit bearing
+          - min: 41
+            max: 50
+            text: Poisonous, oily coating
+          - min: 51
+            max: 60
+            text: Protected seed pods
+          - min: 61
+            max: 70
+            text: Rigid stalks
+          - min: 71
+            max: 80
+            text: Sharp thorns
+          - min: 81
+            max: 90
+            text: Sticky sap
+          - min: 91
+            max: 100
+            text: Thick bark
+      first_look:
+        name: Vital Plant First Look
+        oracle_type: table_text
+        dice: 1d6
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 1
+            text: Broad leaves
+          - min: 2
+            max: 2
+            text: Fragrant leaves
+          - min: 3
+            max: 3
+            text: Multi-pronged leaves
+          - min: 4
+            max: 4
+            text: Narrow leaves
+          - min: 5
+            max: 5
+            text: Twisted shoots/branches
+          - min: 6
+            max: 6
+            text: Vibrant colors
+      lifebearing:
+        name: Opportunity Lifebearing
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/planets/opportunity/lifebearing
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 104
+            text: Benign creatures willing to serve or aid
+          - min: 105
+            max: 108
+            text: Clue to a lifeform's needs, motivations or patterns
+          - min: 109
+            max: 112
+            text: Interesting or helpful aspect of ecosystem
+          - min: 113
+            max: 116
+            text: Interesting or helpful aspect of microbial life
+          - min: 117
+            max: 120
+            text: Observation of a rare lifeform
+          - min: 121
+            max: 124
+            text: Potential for life is revealed
+          - min: 125
+            max: 128
+            text: Abandoned compound or station
+          - min: 129
+            max: 132
+            text: Advance warning of a coming conflict
+          - min: 133
+            max: 136
+            text: Clue to a foe's motivation
+          - min: 137
+            max: 140
+            text: Fortuitous change in terrain or conditions
+          - min: 141
+            max: 144
+            text: Friendly traveler offers aid or information
+          - min: 145
+            max: 148
+            text: Interesting site offer opportunities for discoveries
+          - min: 149
+            max: 152
+            text: Location of strategic value is discovered
+          - min: 153
+            max: 156
+            text: Moment of insight or clarity
+          - min: 157
+            max: 160
+            text: Mutually beneficial offer is made
+          - min: 161
+            max: 164
+            text: New acquaintance is made
+          - min: 165
+            max: 168
+            text: Opening to confront a foe with advantage
+          - min: 169
+            max: 172
+            text: Opportunity to make foe's goals more difficult
+          - min: 173
+            max: 176
+            text: Path offers a shortcut to an objective
+          - min: 177
+            max: 180
+            text: Positive conviction is reinforced
+          - min: 181
+            max: 184
+            text: Progress on a quest was nearer than you thought
+          - min: 185
+            max: 188
+            text: Rare resource is discovered
+          - min: 189
+            max: 192
+            text: Rich source of data
+          - min: 193
+            max: 196
+            text: Significance of this place is revealed
+          - min: 197
+            max: 200
+            text: Vantage point reveals the location of a foe
+          - min: 201
+            max: 204
+            text: Advance warning of a lifeform threat
+          - min: 205
+            max: 208
+            text: Clue to a lifeform's strengths or capabilities
+          - min: 209
+            max: 212
+            text: Fortuitous change in creature behavior
+          - min: 213
+            max: 216
+            text: Friendly interaction with a symbiotic lifeform
+          - min: 217
+            max: 220
+            text: Remains of a lifeform offer insight
+          - min: 221
+            max: 224
+            text: Evidence of previous life is discovered
+          - min: 225
+            max: 228
+            text: Abandoned specialized equipment
+          - min: 229
+            max: 232
+            text: Advance warning of a foe changing plans
+          - min: 233
+            max: 236
+            text: Another adversary of a foe is revealed
+          - min: 237
+            max: 240
+            text: Base of operations for a foe is discovered
+          - min: 241
+            max: 244
+            text: Clue to the future of this place is revealed
+          - min: 245
+            max: 248
+            text: Dangerous resource rendered inert
+          - min: 249
+            max: 252
+            text: Environmental conditions hide your movements
+          - min: 253
+            max: 256
+            text: Friendly traveler seeks aid or information
+          - min: 257
+            max: 260
+            text: Helpful or encouraging message from an acquaintance
+          - min: 261
+            max: 264
+            text: Interesting or helpful natural occurrence
+          - min: 265
+            max: 268
+            text: Item found that makes a quest easier
+          - min: 269
+            max: 272
+            text: Negative conviction is undermined
+          - min: 273
+            max: 276
+            text: Opening to deceive foe or throw them off the scent
+          - min: 277
+            max: 280
+            text: Opportunity to grow a relationship
+          - min: 281
+            max: 284
+            text: Rival seeks your help
+          - min: 285
+            max: 288
+            text: Secret to traversing a navigational hazard is found
+          - min: 289
+            max: 292
+            text: Site would be of interest to a connection
+          - min: 293
+            max: 296
+            text: Threat of a foe is reduced
+          - min: 297
+            max: 300
+            text: Vantage point reveals the location of a resource
+      lifeless:
+        name: Opportunity Lifeless
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/planets/opportunity/lifeless
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 126
+            max: 130
+            text: Friendly traveler offers aid or information
+          - min: 131
+            max: 135
+            text: Interesting site offer opportunities for discoveries
+          - min: 136
+            max: 140
+            text: Location of strategic value is discovered
+          - min: 141
+            max: 145
+            text: Moment of insight or clarity
+          - min: 146
+            max: 150
+            text: Mutually beneficial offer is made
+          - min: 151
+            max: 155
+            text: New acquaintance is made
+          - min: 156
+            max: 160
+            text: Opening to confront a foe with advantage
+          - min: 161
+            max: 165
+            text: Opportunity to make foe's goals more difficult
+          - min: 166
+            max: 170
+            text: Path offers a shortcut to an objective
+          - min: 171
+            max: 175
+            text: Positive conviction is reinforced
+          - min: 176
+            max: 180
+            text: Progress on a quest was nearer than you thought
+          - min: 181
+            max: 185
+            text: Rare resource is discovered
+          - min: 186
+            max: 190
+            text: Rich source of data
+          - min: 191
+            max: 195
+            text: Significance of this place is revealed
+          - min: 196
+            max: 200
+            text: Vantage point reveals the location of a foe
+          - min: 201
+            max: 205
+            text: Evidence of previous life is discovered
+          - min: 206
+            max: 210
+            text: Abandoned specialized equipment
+          - min: 211
+            max: 215
+            text: Advance warning of a foe changing plans
+          - min: 216
+            max: 220
+            text: Another adversary of a foe is revealed
+          - min: 221
+            max: 225
+            text: Base of operations for a foe is discovered
+          - min: 226
+            max: 230
+            text: Clue to the future of this place is revealed
+          - min: 231
+            max: 235
+            text: Dangerous resource rendered inert
+          - min: 236
+            max: 240
+            text: Environmental conditions hide your movements
+          - min: 241
+            max: 245
+            text: Friendly traveler seeks aid or information
+          - min: 246
+            max: 250
+            text: Helpful or encouraging message from an acquaintance
+          - min: 251
+            max: 255
+            text: Interesting or helpful natural occurrence
+          - min: 256
+            max: 260
+            text: Item found that makes a quest easier
+          - min: 261
+            max: 265
+            text: Negative conviction is undermined
+          - min: 266
+            max: 270
+            text: Opening to deceive foe or throw them off the scent
+          - min: 271
+            max: 275
+            text: Opportunity to grow a relationship
+          - min: 276
+            max: 280
+            text: Rival seeks your help
+          - min: 281
+            max: 285
+            text: Secret to traversing a navigational hazard is found
+          - min: 286
+            max: 290
+            text: Site would be of interest to a connection
+          - min: 291
+            max: 295
+            text: Threat of a foe is reduced
+          - min: 296
+            max: 300
+            text: Vantage point reveals the location of a resource

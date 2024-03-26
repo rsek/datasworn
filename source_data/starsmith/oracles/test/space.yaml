@@ -1,0 +1,1913 @@
+_id: starsmith
+datasworn_version: 0.0.9
+package_type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith
+  authors:
+    - name: Eric Bright
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
+oracles:
+  space:
+    name: Space
+    oracle_type: tables
+    # summary: Extension of the oracle table
+    # description: Extension of the oracle table
+    _source: *Source
+    contents:
+      terminus:
+        name: Sighting Terminus
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/space/sighting/terminus
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 115
+            text: ▶Stellar Object
+          - min: 116
+            max: 135
+            text: ▶Planet
+          - min: 136
+            max: 140
+            text: ▶Settlement
+          - min: 141
+            max: 147
+            text: ▶Starship
+          - min: 148
+            max: 151
+            text: ▶Derelict
+          - min: 152
+            max: 153
+            text: ▶Precursor Vault
+          - min: 154
+            max: 155
+            text: ▶Creature
+          - min: 156
+            max: 160
+            text: ▶Descriptor + Focus
+          - min: 161
+            max: 165
+            text: "Debris field: Oort cloud"
+          - min: 166
+            max: 168
+            text: "Debris field: Synestia"
+          - min: 169
+            max: 170
+            text: "Debris field: Asteroid belt"
+          - min: 171
+            max: 172
+            text: "Debris field: Organic matter"
+          - min: 173
+            max: 174
+            text: "Debris field: Jettisoned cargo"
+          - min: 175
+            max: 176
+            text: Rogue binary asteroids
+          - min: 177
+            max: 178
+            text: Accretion disc with no planet
+          - min: 179
+            max: 181
+            text: Extreme solar flare
+          - min: 182
+            max: 183
+            text: Comets on a collision course
+          - min: 184
+            max: 185
+            text: Temporal fluctuations
+          - min: 186
+            max: 193
+            text: Electromagnetic emission nebula
+          - min: 194
+            max: 198
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 199
+            max: 200
+            text: Roll three times
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 3
+          - min: 201
+            max: 215
+            text: ▶Stellar Object
+          - min: 216
+            max: 235
+            text: ▶Planet
+          - min: 236
+            max: 240
+            text: ▶Settlement
+          - min: 241
+            max: 247
+            text: ▶Starship
+          - min: 248
+            max: 251
+            text: ▶Derelict
+          - min: 252
+            max: 253
+            text: ▶Precursor Vault
+          - min: 254
+            max: 255
+            text: ▶Creature
+          - min: 256
+            max: 260
+            text: ▶Descriptor + Focus
+          - min: 261
+            max: 265
+            text: "Debris field: Colliding asteroid fields"
+          - min: 266
+            max: 268
+            text: "Debris field: Micrometeoroids"
+          - min: 269
+            max: 270
+            text: "Debris field: Scattered disc"
+          - min: 271
+            max: 272
+            text: "Debris field: Blinding bolides"
+          - min: 273
+            max: 274
+            text: "Debris field: Mine field"
+          - min: 275
+            max: 276
+            text: Rogue dwarf planet
+          - min: 277
+            max: 278
+            text: Planet killing comet
+          - min: 279
+            max: 281
+            text: Pulsing radiation storm
+          - min: 282
+            max: 283
+            text: Roiling plasma storm
+          - min: 284
+            max: 285
+            text: Burst of gamma rays
+          - min: 286
+            max: 293
+            text: Supernova remnant
+          - min: 294
+            max: 298
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 299
+            max: 300
+            text: Roll three times
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 3
+      outlands:
+        name: Sighting Outlands
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/space/sighting/outlands
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 115
+            text: ▶Stellar Object
+          - min: 116
+            max: 135
+            text: ▶Planet
+          - min: 136
+            max: 138
+            text: ▶Settlement
+          - min: 139
+            max: 143
+            text: ▶Starship
+          - min: 144
+            max: 146
+            text: ▶Derelict
+          - min: 147
+            max: 149
+            text: ▶Precursor Vault
+          - min: 150
+            max: 152
+            text: ▶Creature
+          - min: 153
+            max: 158
+            text: ▶Descriptor + Focus
+          - min: 159
+            max: 163
+            text: "Debris field: Oort cloud"
+          - min: 164
+            max: 166
+            text: "Debris field: Synestia"
+          - min: 167
+            max: 168
+            text: "Debris field: Asteroid belt"
+          - min: 169
+            max: 170
+            text: "Debris field: Organic matter"
+          - min: 171
+            max: 172
+            text: "Debris field: Jettisoned cargo"
+          - min: 173
+            max: 174
+            text: Rogue binary asteroids
+          - min: 175
+            max: 176
+            text: Accretion disc with no planet
+          - min: 177
+            max: 180
+            text: Extreme solar flare
+          - min: 181
+            max: 182
+            text: Comets on a collision course
+          - min: 183
+            max: 185
+            text: Temporal fluctuations
+          - min: 186
+            max: 193
+            text: Electromagnetic emission nebula
+          - min: 194
+            max: 198
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 199
+            max: 200
+            text: Roll three times
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 3
+          - min: 201
+            max: 215
+            text: ▶Stellar Object
+          - min: 216
+            max: 235
+            text: ▶Planet
+          - min: 236
+            max: 238
+            text: ▶Settlement
+          - min: 239
+            max: 243
+            text: ▶Starship
+          - min: 244
+            max: 246
+            text: ▶Derelict
+          - min: 247
+            max: 249
+            text: ▶Precursor Vault
+          - min: 250
+            max: 252
+            text: ▶Creature
+          - min: 253
+            max: 258
+            text: ▶Descriptor + Focus
+          - min: 259
+            max: 263
+            text: "Debris field: Colliding asteroid fields"
+          - min: 264
+            max: 266
+            text: "Debris field: Micrometeoroids"
+          - min: 267
+            max: 268
+            text: "Debris field: Scattered disc"
+          - min: 269
+            max: 270
+            text: "Debris field: Blinding bolides"
+          - min: 271
+            max: 272
+            text: "Debris field: Mine field"
+          - min: 273
+            max: 274
+            text: Rogue dwarf planet
+          - min: 275
+            max: 276
+            text: Planet killing comet
+          - min: 277
+            max: 280
+            text: Pulsing radiation storm
+          - min: 281
+            max: 282
+            text: Roiling plasma storm
+          - min: 283
+            max: 285
+            text: Burst of gamma rays
+          - min: 286
+            max: 293
+            text: Supernova remnant
+          - min: 294
+            max: 298
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 299
+            max: 300
+            text: Roll three times
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 3
+      expanse:
+        name: Sighting Expanse
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/space/sighting/expanse
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 115
+            text: ▶Stellar Object
+          - min: 116
+            max: 135
+            text: ▶Planet
+          - min: 136
+            max: 137
+            text: ▶Settlement
+          - min: 138
+            max: 139
+            text: ▶Starship
+          - min: 140
+            max: 141
+            text: ▶Derelict
+          - min: 142
+            max: 145
+            text: ▶Precursor Vault
+          - min: 146
+            max: 149
+            text: ▶Creature
+          - min: 150
+            max: 156
+            text: ▶Descriptor + Focus
+          - min: 157
+            max: 161
+            text: "Debris field: Oort cloud"
+          - min: 162
+            max: 164
+            text: "Debris field: Synestia"
+          - min: 165
+            max: 166
+            text: "Debris field: Asteroid belt"
+          - min: 167
+            max: 168
+            text: "Debris field: Organic matter"
+          - min: 169
+            max: 170
+            text: "Debris field: Jettisoned cargo"
+          - min: 171
+            max: 172
+            text: Rogue binary asteroids
+          - min: 173
+            max: 174
+            text: Accretion disc with no planet
+          - min: 175
+            max: 179
+            text: Extreme solar flare
+          - min: 180
+            max: 181
+            text: Comets on a collision course
+          - min: 182
+            max: 185
+            text: Temporal fluctuations
+          - min: 186
+            max: 193
+            text: Electromagnetic emission nebula
+          - min: 194
+            max: 198
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 199
+            max: 200
+            text: Roll three times
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 3
+          - min: 201
+            max: 215
+            text: ▶Stellar Object
+          - min: 216
+            max: 235
+            text: ▶Planet
+          - min: 236
+            max: 237
+            text: ▶Settlement
+          - min: 238
+            max: 239
+            text: ▶Starship
+          - min: 240
+            max: 241
+            text: ▶Derelict
+          - min: 242
+            max: 245
+            text: ▶Precursor Vault
+          - min: 246
+            max: 249
+            text: ▶Creature
+          - min: 250
+            max: 256
+            text: ▶Descriptor + Focus
+          - min: 257
+            max: 261
+            text: "Debris field: Colliding asteroid fields"
+          - min: 262
+            max: 264
+            text: "Debris field: Micrometeoroids"
+          - min: 265
+            max: 266
+            text: "Debris field: Scattered disc"
+          - min: 267
+            max: 268
+            text: "Debris field: Blinding bolides"
+          - min: 269
+            max: 270
+            text: "Debris field: Mine field"
+          - min: 271
+            max: 272
+            text: Rogue dwarf planet
+          - min: 273
+            max: 274
+            text: Planet killing comet
+          - min: 275
+            max: 279
+            text: Pulsing radiation storm
+          - min: 280
+            max: 281
+            text: Roiling plasma storm
+          - min: 282
+            max: 285
+            text: Burst of gamma rays
+          - min: 286
+            max: 293
+            text: Supernova remnant
+          - min: 294
+            max: 298
+            text: Roll twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 299
+            max: 300
+            text: Roll three times
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 3
+      prefix:
+        name: Sector Name Prefix
+        oracle_type: table_text
+        dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 2
+            text: Accursed
+          - min: 3
+            max: 4
+            text: Ashen
+          - min: 5
+            max: 6
+            text: Asteria
+          - min: 7
+            max: 8
+            text: Bitter
+          - min: 9
+            max: 10
+            text: Blighted
+          - min: 11
+            max: 12
+            text: Bloodied
+          - min: 13
+            max: 14
+            text: Boundless
+          - min: 15
+            max: 16
+            text: Burning
+          - min: 17
+            max: 18
+            text: Cortana
+          - min: 19
+            max: 20
+            text: Corvus
+          - min: 21
+            max: 22
+            text: Crimson
+          - min: 23
+            max: 24
+            text: Cygnus
+          - min: 25
+            max: 26
+            text: Delphi
+          - min: 27
+            max: 28
+            text: Delphian
+          - min: 29
+            max: 30
+            text: Devil’s
+          - min: 31
+            max: 32
+            text: Ebon
+          - min: 33
+            max: 34
+            text: Essus
+          - min: 35
+            max: 36
+            text: Fallen
+          - min: 37
+            max: 38
+            text: Ferrous
+          - min: 39
+            max: 40
+            text: Fool’s
+          - min: 41
+            max: 42
+            text: Forgotten
+          - min: 43
+            max: 44
+            text: Haunted
+          - min: 45
+            max: 46
+            text: Hidden
+          - min: 47
+            max: 48
+            text: Hollow
+          - min: 49
+            max: 50
+            text: Igneous
+          - min: 51
+            max: 52
+            text: Infernal
+          - min: 53
+            max: 54
+            text: Invidia
+          - min: 55
+            max: 56
+            text: Iron
+          - min: 57
+            max: 58
+            text: Kalidas
+          - min: 59
+            max: 60
+            text: Kronos
+          - min: 61
+            max: 62
+            text: Lacuna
+          - min: 63
+            max: 64
+            text: Lumen
+          - min: 65
+            max: 66
+            text: Mobius
+          - min: 67
+            max: 68
+            text: Morien
+          - min: 69
+            max: 70
+            text: Onyx
+          - min: 71
+            max: 72
+            text: Outer
+          - min: 73
+            max: 74
+            text: Sanguis
+          - min: 75
+            max: 76
+            text: Scarred
+          - min: 77
+            max: 78
+            text: Scorched
+          - min: 79
+            max: 80
+            text: Shattered
+          - min: 81
+            max: 82
+            text: Shrouded
+          - min: 83
+            max: 84
+            text: Sindri
+          - min: 85
+            max: 86
+            text: Solana
+          - min: 87
+            max: 88
+            text: Stygian
+          - min: 89
+            max: 90
+            text: Sulaco
+          - min: 91
+            max: 92
+            text: Sundered
+          - min: 93
+            max: 94
+            text: Thunor
+          - min: 95
+            max: 96
+            text: Vanguard
+          - min: 97
+            max: 98
+            text: Veiled
+          - min: 99
+            max: 100
+            text: Wasted
+          - min: 101
+            max: 102
+            text: Alpha
+          - min: 103
+            max: 104
+            text: Amber
+          - min: 105
+            max: 106
+            text: Amethyst
+          - min: 107
+            max: 108
+            text: Ardor
+          - min: 109
+            max: 110
+            text: Azure
+          - min: 111
+            max: 112
+            text: Barren
+          - min: 113
+            max: 114
+            text: Beta
+          - min: 115
+            max: 116
+            text: Blasted
+          - min: 117
+            max: 118
+            text: Blatta
+          - min: 119
+            max: 120
+            text: Bleak
+          - min: 121
+            max: 122
+            text: Chernit
+          - min: 123
+            max: 124
+            text: Collapsed
+          - min: 125
+            max: 126
+            text: Delta
+          - min: 127
+            max: 128
+            text: Demonic
+          - min: 129
+            max: 130
+            text: Deserted
+          - min: 131
+            max: 132
+            text: Ebony
+          - min: 133
+            max: 134
+            text: Emerald
+          - min: 135
+            max: 136
+            text: "False"
+          - min: 137
+            max: 138
+            text: Foul
+          - min: 139
+            max: 140
+            text: Fractured
+          - min: 141
+            max: 142
+            text: Gamma
+          - min: 143
+            max: 144
+            text: Glowing
+          - min: 145
+            max: 146
+            text: Impes
+          - min: 147
+            max: 148
+            text: Indigo
+          - min: 149
+            max: 150
+            text: Letum
+          - min: 151
+            max: 152
+            text: Lost
+          - min: 153
+            max: 154
+            text: Malevolent
+          - min: 155
+            max: 156
+            text: Marred
+          - min: 157
+            max: 158
+            text: Metus
+          - min: 159
+            max: 160
+            text: Mors
+          - min: 161
+            max: 162
+            text: Nequam
+          - min: 163
+            max: 164
+            text: Obitus
+          - min: 165
+            max: 166
+            text: Omega
+          - min: 167
+            max: 168
+            text: Pale
+          - min: 169
+            max: 170
+            text: Perdita
+          - min: 171
+            max: 172
+            text: Procella
+          - min: 173
+            max: 174
+            text: Raven
+          - min: 175
+            max: 176
+            text: Rubicund
+          - min: 177
+            max: 178
+            text: Ruddy
+          - min: 179
+            max: 180
+            text: Ruined
+          - min: 181
+            max: 182
+            text: Sable
+          - min: 183
+            max: 184
+            text: Saffron
+          - min: 185
+            max: 186
+            text: Sapphire
+          - min: 187
+            max: 188
+            text: Scarlet
+          - min: 189
+            max: 190
+            text: Sigma
+          - min: 191
+            max: 192
+            text: Spectral
+          - min: 193
+            max: 194
+            text: Sunken
+          - min: 195
+            max: 196
+            text: Timor
+          - min: 197
+            max: 198
+            text: Unda
+          - min: 199
+            max: 200
+            text: Verdant
+          - min: 201
+            max: 202
+            text: Aether
+          - min: 203
+            max: 204
+            text: Afflicted
+          - min: 205
+            max: 206
+            text: Aurora
+          - min: 207
+            max: 208
+            text: Caducus
+          - min: 209
+            max: 210
+            text: Caelestis
+          - min: 211
+            max: 212
+            text: Caligo
+          - min: 213
+            max: 214
+            text: Caminus
+          - min: 215
+            max: 216
+            text: Cerulean
+          - min: 217
+            max: 218
+            text: Chronos
+          - min: 219
+            max: 220
+            text: Cleptos
+          - min: 221
+            max: 222
+            text: Cobalt
+          - min: 223
+            max: 224
+            text: Corrupted
+          - min: 225
+            max: 226
+            text: Cracked
+          - min: 227
+            max: 228
+            text: Cursed
+          - min: 229
+            max: 230
+            text: Draco
+          - min: 231
+            max: 232
+            text: Erebus
+          - min: 233
+            max: 234
+            text: Eternis
+          - min: 235
+            max: 236
+            text: Fiendish
+          - min: 237
+            max: 238
+            text: Forsaken
+          - min: 239
+            max: 240
+            text: Ghostly
+          - min: 241
+            max: 242
+            text: Hydra
+          - min: 243
+            max: 244
+            text: Ignis
+          - min: 245
+            max: 246
+            text: Illusory
+          - min: 247
+            max: 248
+            text: Infirm
+          - min: 249
+            max: 250
+            text: Krasnyc
+          - min: 251
+            max: 252
+            text: Larua
+          - min: 253
+            max: 254
+            text: Latro
+          - min: 255
+            max: 256
+            text: Lower
+          - min: 257
+            max: 258
+            text: Lues
+          - min: 259
+            max: 260
+            text: Malum
+          - min: 261
+            max: 262
+            text: Mendax
+          - min: 263
+            max: 264
+            text: Naptha
+          - min: 265
+            max: 266
+            text: Nero
+          - min: 267
+            max: 268
+            text: Nova
+          - min: 269
+            max: 270
+            text: Nyxian
+          - min: 271
+            max: 272
+            text: Obsidian
+          - min: 273
+            max: 274
+            text: Phantom
+          - min: 275
+            max: 276
+            text: Potestas
+          - min: 277
+            max: 278
+            text: Radiant
+          - min: 279
+            max: 280
+            text: Robur
+          - min: 281
+            max: 282
+            text: Tainted
+          - min: 283
+            max: 284
+            text: Tawny
+          - min: 285
+            max: 286
+            text: Tenebris
+          - min: 287
+            max: 288
+            text: Umbral
+          - min: 289
+            max: 290
+            text: Unseen
+          - min: 291
+            max: 292
+            text: Unyielding
+          - min: 293
+            max: 294
+            text: Vermilion
+          - min: 295
+            max: 296
+            text: Viper's
+          - min: 297
+            max: 298
+            text: Wicked
+          - min: 299
+            max: 300
+            text: Withered
+      suffix:
+        name: Sector Name Suffix
+        oracle_type: table_text
+        dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 2
+            text: Abyss
+          - min: 3
+            max: 4
+            text: Anvil
+          - min: 5
+            max: 6
+            text: Arch
+          - min: 7
+            max: 8
+            text: Breach
+          - min: 9
+            max: 10
+            text: Chain
+          - min: 11
+            max: 12
+            text: Channel
+          - min: 13
+            max: 14
+            text: Chasm
+          - min: 15
+            max: 16
+            text: Circlet
+          - min: 17
+            max: 18
+            text: Cluster
+          - min: 19
+            max: 20
+            text: Crossing
+          - min: 21
+            max: 22
+            text: Crown
+          - min: 23
+            max: 24
+            text: Currents
+          - min: 25
+            max: 26
+            text: Deep
+          - min: 27
+            max: 28
+            text: Desolation
+          - min: 29
+            max: 30
+            text: Drift
+          - min: 31
+            max: 32
+            text: Flow
+          - min: 33
+            max: 34
+            text: Flux
+          - min: 35
+            max: 36
+            text: Gap
+          - min: 37
+            max: 38
+            text: Gate
+          - min: 39
+            max: 40
+            text: Gyre
+          - min: 41
+            max: 42
+            text: Heart
+          - min: 43
+            max: 44
+            text: Helix
+          - min: 45
+            max: 46
+            text: Juncture
+          - min: 47
+            max: 48
+            text: Limits
+          - min: 49
+            max: 50
+            text: Locus
+          - min: 51
+            max: 52
+            text: Maelstrom
+          - min: 53
+            max: 54
+            text: Margin
+          - min: 55
+            max: 56
+            text: Maw
+          - min: 57
+            max: 58
+            text: Maze
+          - min: 59
+            max: 60
+            text: Nexus
+          - min: 61
+            max: 62
+            text: Oasis
+          - min: 63
+            max: 64
+            text: Pass
+          - min: 65
+            max: 66
+            text: Pit
+          - min: 67
+            max: 68
+            text: Pyre
+          - min: 69
+            max: 70
+            text: Reach
+          - min: 71
+            max: 72
+            text: Rest
+          - min: 73
+            max: 74
+            text: Rift
+          - min: 75
+            max: 76
+            text: Sanctum
+          - min: 77
+            max: 78
+            text: Shallows
+          - min: 79
+            max: 80
+            text: Shoal
+          - min: 81
+            max: 82
+            text: Spine
+          - min: 83
+            max: 84
+            text: Straits
+          - min: 85
+            max: 86
+            text: Threshold
+          - min: 87
+            max: 88
+            text: Tide
+          - min: 89
+            max: 90
+            text: Verge
+          - min: 91
+            max: 92
+            text: Vertex
+          - min: 93
+            max: 94
+            text: Vigil
+          - min: 95
+            max: 96
+            text: Void
+          - min: 97
+            max: 98
+            text: Web
+          - min: 99
+            max: 100
+            text: Zenith
+          - min: 101
+            max: 102
+            text: Aperture
+          - min: 103
+            max: 104
+            text: Arm
+          - min: 105
+            max: 106
+            text: Belt
+          - min: 107
+            max: 108
+            text: Claw
+          - min: 109
+            max: 110
+            text: Cleft
+          - min: 111
+            max: 112
+            text: Clutch
+          - min: 113
+            max: 114
+            text: Conduit
+          - min: 115
+            max: 116
+            text: Connection
+          - min: 117
+            max: 118
+            text: Core
+          - min: 119
+            max: 120
+            text: Crest
+          - min: 121
+            max: 122
+            text: Crossroads
+          - min: 123
+            max: 124
+            text: Crucible
+          - min: 125
+            max: 126
+            text: Depths
+          - min: 127
+            max: 128
+            text: Devastation
+          - min: 129
+            max: 130
+            text: Diadem
+          - min: 131
+            max: 132
+            text: Embers
+          - min: 133
+            max: 134
+            text: Fissure
+          - min: 135
+            max: 136
+            text: Flock
+          - min: 137
+            max: 138
+            text: Focus
+          - min: 139
+            max: 140
+            text: Ford
+          - min: 141
+            max: 142
+            text: Furnace
+          - min: 143
+            max: 144
+            text: Gateway
+          - min: 145
+            max: 146
+            text: Gulf
+          - min: 147
+            max: 148
+            text: Halo
+          - min: 149
+            max: 150
+            text: Hammer
+          - min: 151
+            max: 152
+            text: Hook
+          - min: 153
+            max: 154
+            text: Horizon
+          - min: 155
+            max: 156
+            text: Hub
+          - min: 157
+            max: 158
+            text: Isolation
+          - min: 159
+            max: 160
+            text: Kiln
+          - min: 161
+            max: 162
+            text: Legacy
+          - min: 163
+            max: 164
+            text: Manus
+          - min: 165
+            max: 166
+            text: Nest
+          - min: 167
+            max: 168
+            text: Patch
+          - min: 169
+            max: 170
+            text: Peak
+          - min: 171
+            max: 172
+            text: Pinnacle
+          - min: 173
+            max: 174
+            text: Pole
+          - min: 175
+            max: 176
+            text: Portal
+          - min: 177
+            max: 178
+            text: Revelation
+          - min: 179
+            max: 180
+            text: Rupture
+          - min: 181
+            max: 182
+            text: Scourge
+          - min: 183
+            max: 184
+            text: Shackle
+          - min: 185
+            max: 186
+            text: Shadow
+          - min: 187
+            max: 188
+            text: Slag
+          - min: 189
+            max: 190
+            text: Solitude
+          - min: 191
+            max: 192
+            text: Spate
+          - min: 193
+            max: 194
+            text: Spire
+          - min: 195
+            max: 196
+            text: Torrent
+          - min: 197
+            max: 198
+            text: Traverse
+          - min: 199
+            max: 200
+            text: Visage
+          - min: 201
+            max: 202
+            text: Altar
+          - min: 203
+            max: 204
+            text: Arc
+          - min: 205
+            max: 206
+            text: Band
+          - min: 207
+            max: 208
+            text: Border
+          - min: 209
+            max: 210
+            text: Brim
+          - min: 211
+            max: 212
+            text: Brink
+          - min: 213
+            max: 214
+            text: Calamity
+          - min: 215
+            max: 216
+            text: Craw
+          - min: 217
+            max: 218
+            text: Debt
+          - min: 219
+            max: 220
+            text: Departure
+          - min: 221
+            max: 222
+            text: Doubt
+          - min: 223
+            max: 224
+            text: Dread
+          - min: 225
+            max: 226
+            text: Edge
+          - min: 227
+            max: 228
+            text: Essence
+          - min: 229
+            max: 230
+            text: Flaw
+          - min: 231
+            max: 232
+            text: Fringe
+          - min: 233
+            max: 234
+            text: Gamut
+          - min: 235
+            max: 236
+            text: Guard
+          - min: 237
+            max: 238
+            text: Haunt
+          - min: 239
+            max: 240
+            text: Hearth
+          - min: 241
+            max: 242
+            text: Impasse
+          - min: 243
+            max: 244
+            text: Inception
+          - min: 245
+            max: 246
+            text: Interval
+          - min: 247
+            max: 248
+            text: Knot
+          - min: 249
+            max: 250
+            text: Labyrinth
+          - min: 251
+            max: 252
+            text: Lookout
+          - min: 253
+            max: 254
+            text: Loop
+          - min: 255
+            max: 256
+            text: Menace
+          - min: 257
+            max: 258
+            text: Mire
+          - min: 259
+            max: 260
+            text: Morass
+          - min: 261
+            max: 262
+            text: Net
+          - min: 263
+            max: 264
+            text: Quandary
+          - min: 265
+            max: 266
+            text: Rim
+          - min: 267
+            max: 268
+            text: Ring
+          - min: 269
+            max: 270
+            text: Roost
+          - min: 271
+            max: 272
+            text: Schism
+          - min: 273
+            max: 274
+            text: Seclusion
+          - min: 275
+            max: 276
+            text: Shrine
+          - min: 277
+            max: 278
+            text: Spiral
+          - min: 279
+            max: 280
+            text: Stream
+          - min: 281
+            max: 282
+            text: Summit
+          - min: 283
+            max: 284
+            text: Tangle
+          - min: 285
+            max: 286
+            text: Tempest
+          - min: 287
+            max: 288
+            text: Temple
+          - min: 289
+            max: 290
+            text: Tendril
+          - min: 291
+            max: 292
+            text: Tomb
+          - min: 293
+            max: 294
+            text: Trench
+          - min: 295
+            max: 296
+            text: Wave
+          - min: 297
+            max: 298
+            text: Weave
+          - min: 299
+            max: 300
+            text: Wellspring
+      object:
+        name: Stellar Object
+        oracle_type: table_text
+        dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 15
+            text: Smoldering red star
+          - min: 16
+            max: 30
+            text: Glowing orange star
+          - min: 31
+            max: 45
+            text: Burning yellow star
+          - min: 46
+            max: 50
+            text: Blazing blue star
+          - min: 51
+            max: 60
+            text: Young star incubating in a molecular cloud
+          - min: 61
+            max: 70
+            text: White dwarf shining with spectral light
+          - min: 71
+            max: 75
+            text: Corrupted star radiating with unnatural light
+          - min: 76
+            max: 80
+            text: Neutron star surrounded by intense magnetic fields
+          - min: 81
+            max: 85
+            text: Two stars in close orbit connected by fiery tendrils
+          - min: 86
+            max: 90
+            text: Black hole allows nothing to escape - not even light
+          - min: 91
+            max: 98
+            text: Hypergiant star generating turbulent solar winds
+          - min: 99
+            max: 99
+            text: Artificial star constructed by a long-dead civilization
+          - min: 100
+            max: 100
+            text: Unstable star showing signs of impending supernova
+          - min: 101
+            max: 115
+            text: Sickly green star that absorbs energy as well as emitting it
+          - min: 116
+            max: 130
+            text: Vibrant pink star crackling with electricity
+          - min: 131
+            max: 145
+            text: Blinding white star burning hot
+          - min: 146
+            max: 150
+            text: Ethereal purple star whose light bends unnaturally
+          - min: 151
+            max: 160
+            text: Protostar just beginning to take form
+          - min: 161
+            max: 170
+            text: Cooled black dwarf with extreme density
+          - min: 171
+            max: 175
+            text: Excited star infused with hydrogen
+          - min: 176
+            max: 180
+            text: Magnetar emitting high energy radiation
+          - min: 181
+            max: 185
+            text: Cluster of small stars orbiting each other
+          - min: 186
+            max: 190
+            text: Quasi-star with a black hole at its center
+          - min: 191
+            max: 198
+            text: Preon star emitting quantum particles
+          - min: 199
+            max: 199
+            text: Dyson sphere that is decaying
+          - min: 200
+            max: 200
+            text: Dark matter star annihilating matter as it grows
+          - min: 201
+            max: 215
+            text: Dull red star burning an element other than hydrogen
+          - min: 216
+            max: 230
+            text: Flaring orange star with a larger than normal heliosphere
+          - min: 231
+            max: 245
+            text: Pale blue star surrounded by a ring of plasma
+          - min: 246
+            max: 250
+            text: Ghostly gray star emitting light more particle than wave
+          - min: 251
+            max: 260
+            text: Infant star nursery with multiple stars
+          - min: 261
+            max: 270
+            text: Brown dwarf with unstable hydrogen fusion
+          - min: 271
+            max: 275
+            text: Star burning an impossible element as fuel
+          - min: 276
+            max: 280
+            text: Pulsar with tight beam radiation from its poles
+          - min: 281
+            max: 285
+            text: Two stars in distant orbit forming gravitational pulses
+          - min: 286
+            max: 290
+            text: White hole emitting strange energy
+          - min: 291
+            max: 298
+            text: Quark star with extreme temperatures
+          - min: 299
+            max: 299
+            text: Ringworld megastructure leaking atmosphere
+          - min: 300
+            max: 300
+            text: Unstable wormhole drawing in everything nearby
+      peril:
+        name: Peril
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/space/peril
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 103
+            text: Accused of a crime, the chase begins
+          - min: 104
+            max: 106
+            text: Air supply dwindles or is damaged
+          - min: 107
+            max: 109
+            text: Caught in the crossfire of a skirmish
+          - min: 110
+            max: 112
+            text: Checkpoint demands that you stop for inspection
+          - min: 113
+            max: 115
+            text: Cloaking field hides a danger
+          - min: 116
+            max: 118
+            text: Critical data corrupted in ship's computer
+          - min: 119
+            max: 121
+            text: Engines threaten to overload
+          - min: 122
+            max: 124
+            text: Food supplies tainted
+          - min: 125
+            max: 127
+            text: Hidden threat within the ship is revealed
+          - min: 128
+            max: 130
+            text: Hull breached by micrometeoroid
+          - min: 131
+            max: 133
+            text: Known passage is no longer safe
+          - min: 134
+            max: 136
+            text: Lifeform threatens others nearby
+          - min: 137
+            max: 139
+            text: Moon's orbit goes rogue
+          - min: 140
+            max: 142
+            text: Nanobots alter ship's systems
+          - min: 143
+            max: 145
+            text: Navigational array malfunctions
+          - min: 146
+            max: 148
+            text: Nearby settlement sends out fighters
+          - min: 149
+            max: 151
+            text: Nearby star goes dangerously cold
+          - min: 152
+            max: 154
+            text: Nearby vessel disappears in a flash of light
+          - min: 155
+            max: 157
+            text: New foe appears or sends a threat
+          - min: 158
+            max: 160
+            text: Orbital debris threatens the ship
+          - min: 161
+            max: 163
+            text: Power needs rerouted around a blown relay
+          - min: 164
+            max: 166
+            text: Power surge broadcasts your location throughout the sector
+          - min: 167
+            max: 169
+            text: Rift between allies forms
+          - min: 170
+            max: 172
+            text: Self-destruct sequence triggered
+          - min: 173
+            max: 175
+            text: Ship caught in slingshot gravity
+          - min: 176
+            max: 178
+            text: Solar storm obscures sensors
+          - min: 179
+            max: 181
+            text: Space madness takes hold
+          - min: 182
+            max: 184
+            text: Sudden depressurization of a compartment
+          - min: 185
+            max: 187
+            text: Sudden increase in gravitational pull
+          - min: 188
+            max: 190
+            text: Unexplained and frightening occurrences
+          - min: 191
+            max: 193
+            text: Volatile gases surround the ship
+          - min: 194
+            max: 196
+            text: Weapon system malfunctions
+          - min: 197
+            max: 199
+            text: ▶Action + Theme
+          - min: 200
+            max: 200
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 203
+            text: Access to a critical deck is blocked
+          - min: 204
+            max: 206
+            text: An objective is in a death spiral towards a star
+          - min: 207
+            max: 209
+            text: Beacons warn of a quarantined area ahead
+          - min: 210
+            max: 212
+            text: Communications systems have been bugged
+          - min: 213
+            max: 215
+            text: Drones surveil and flee
+          - min: 216
+            max: 218
+            text: Eggs covering a rogue asteroid begin to hatch
+          - min: 219
+            max: 221
+            text: Encrypted signal points to an imminent attack
+          - min: 222
+            max: 224
+            text: Energy net surrounds the ship
+          - min: 225
+            max: 227
+            text: Erratic asteroids impede movement
+          - min: 228
+            max: 230
+            text: Escape pods going in separate directions all call for help
+          - min: 231
+            max: 233
+            text: Fleet demands payment for safe travel
+          - min: 234
+            max: 236
+            text: Garbled calls for help from an unknown source
+          - min: 237
+            max: 239
+            text: Gravitational maelstrom
+          - min: 240
+            max: 242
+            text: Hairline fracture somewhere onboard slowly leaks air
+          - min: 243
+            max: 245
+            text: Hallucinogenic gas infiltrates the air recycler
+          - min: 246
+            max: 248
+            text: 'Incoming message: "Prepare to be boarded"'
+          - min: 249
+            max: 251
+            text: Large solar flare compromises communications
+          - min: 252
+            max: 254
+            text: Malicious code takes over a system
+          - min: 255
+            max: 257
+            text: Maneuvering thrusters malfunction
+          - min: 258
+            max: 260
+            text: Microorganism feeds off ship's power supply
+          - min: 261
+            max: 263
+            text: Mysterious sealed crate is found in the cargo hold
+          - min: 264
+            max: 266
+            text: Ominous signs and portents
+          - min: 267
+            max: 269
+            text: Parasites feast on a long dead space creature
+          - min: 270
+            max: 272
+            text: Sensors are giving false readings
+          - min: 273
+            max: 275
+            text: Ship moves with a life of its own
+          - min: 276
+            max: 278
+            text: Space suits are compromised
+          - min: 279
+            max: 281
+            text: System redundancies fail leaving only faulty primaries online
+          - min: 282
+            max: 284
+            text: Threatening vessel moves in
+          - min: 285
+            max: 287
+            text: Time distortions make locating celestial objects impossible
+          - min: 288
+            max: 290
+            text: True nature of a connection is revealed
+          - min: 291
+            max: 293
+            text: Unexpected foe appears with a new advantage
+          - min: 294
+            max: 296
+            text: Water supply malfunctions
+          - min: 297
+            max: 299
+            text: ▶Action + Theme
+          - min: 300
+            max: 300
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      opportunity:
+        name: Opportunity
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/space/opportunity
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 104
+            text: Advance warning of a coming conflict
+          - min: 105
+            max: 108
+            text: Asteroid belt rich with minerals
+          - min: 109
+            max: 112
+            text: Base of operations for a foe is discovered
+          - min: 113
+            max: 116
+            text: Clue to a foe's motivation
+          - min: 117
+            max: 120
+            text: Clue to a lifeform's needs, motivations or patterns
+          - min: 121
+            max: 124
+            text: Coordinates of a nearby passage detected
+          - min: 125
+            max: 128
+            text: Dark side of a moon shields you from notice
+          - min: 129
+            max: 132
+            text: Decrypted signal offers insight
+          - min: 133
+            max: 136
+            text: Environmental hazard resolves itself
+          - min: 137
+            max: 140
+            text: Friendly starship offers aid or information
+          - min: 141
+            max: 144
+            text: Gain access to previously restricted data
+          - min: 145
+            max: 148
+            text: History or nature of a site is revealed
+          - min: 149
+            max: 152
+            text: Internal sensors spot a malfunction before it is dangerous
+          - min: 153
+            max: 156
+            text: Mutually beneficial offer is made
+          - min: 157
+            max: 160
+            text: New acquaintance is made
+          - min: 161
+            max: 164
+            text: Newly constructed facility offers specialized help
+          - min: 165
+            max: 168
+            text: Observation of a rare lifeform
+          - min: 169
+            max: 172
+            text: Opportunity to grow a relationship
+          - min: 173
+            max: 176
+            text: Positive conviction is reinforced
+          - min: 177
+            max: 180
+            text: Progress on a quest was nearer than you thought
+          - min: 181
+            max: 184
+            text: Salvaged parts are compatible with your systems
+          - min: 185
+            max: 188
+            text: Sector map is offered or found
+          - min: 189
+            max: 192
+            text: Sensors reveal an exploitable pattern in celestial objects
+          - min: 193
+            max: 196
+            text: Trading starship offers respite and resupply
+          - min: 197
+            max: 200
+            text: Your efforts are more effective than expected
+          - min: 201
+            max: 204
+            text: Abandoned settlement still has supplies
+          - min: 205
+            max: 208
+            text: Advance warning of a lifeform threat
+          - min: 209
+            max: 212
+            text: Another adversary of a foe is revealed
+          - min: 213
+            max: 216
+            text: Clue to a lifeform's strengths or capabilities
+          - min: 217
+            max: 220
+            text: Cultural expert offers insight
+          - min: 221
+            max: 224
+            text: Decontamination protocols isolate a vector before it can spread
+          - min: 225
+            max: 228
+            text: Dispute between allies is settled
+          - min: 229
+            max: 232
+            text: Environmental conditions hide your movements
+          - min: 233
+            max: 236
+            text: Faint precursor signal offers a tantalizing mystery
+          - min: 237
+            max: 240
+            text: Foe caught in a vulnerable position
+          - min: 241
+            max: 244
+            text: Friendly fleet passes by
+          - min: 245
+            max: 248
+            text: Friendly interaction with a symbiotic lifeform
+          - min: 249
+            max: 252
+            text: Friendly spacers volunteer aboard ship for a time
+          - min: 253
+            max: 256
+            text: Friendly starship seeks aid or information
+          - min: 257
+            max: 260
+            text: Item found that makes a quest easier
+          - min: 261
+            max: 264
+            text: Location of strategic value is discovered
+          - min: 265
+            max: 268
+            text: Negative conviction is undermined
+          - min: 269
+            max: 272
+            text: Rival seeks your help
+          - min: 273
+            max: 276
+            text: Secret to traversing a navigational hazard is found
+          - min: 277
+            max: 280
+            text: Sensors reveal a shorter path to your objective
+          - min: 281
+            max: 284
+            text: Significance of a site is revealed
+          - min: 285
+            max: 288
+            text: Threat of a foe is reduced
+          - min: 289
+            max: 292
+            text: Useful specialist asks for passage aboard your vessel
+          - min: 293
+            max: 296
+            text: Valuable sensor data is recovered from wreckage
+          - min: 297
+            max: 300
+            text: You find a way to temporarily boost a system's power

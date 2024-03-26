@@ -162,11 +162,11 @@ oracles:
               - &Feature.12
                 min: 97
                 max: 100
-                text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                text: '[Descriptor](id:starsmith/oracles/core/descriptor) + [Focus](id:starsmith/oracles/core/focus)'
                 oracle_rolls:
-                  - oracle: starforged/oracles/core/descriptor
+                  - oracle: starsmith/oracles/core/descriptor
                     auto: true
-                  - oracle: starforged/oracles/core/focus
+                  - oracle: starsmith/oracles/core/focus
                     auto: true
           peril:
             <<: &Peril
@@ -217,11 +217,11 @@ oracles:
               - &Peril.10
                 min: 91
                 max: 98
-                text: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action](starsmith/oracles/core/action) + [Theme](starsmith/oracles/core/theme)'
                 oracle_rolls:
-                  - oracle: starforged/oracles/core/action
+                  - oracle: starsmith/oracles/core/action
                     auto: true
-                  - oracle: starforged/oracles/core/theme
+                  - oracle: starsmith/oracles/core/theme
                     auto: true
               - &Peril.11
                 min: 99

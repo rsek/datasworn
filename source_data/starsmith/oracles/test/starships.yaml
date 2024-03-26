@@ -1,0 +1,2192 @@
+_id: starsmith
+datasworn_version: 0.0.9
+package_type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith
+  authors:
+    - name: Eric Bright
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
+oracles:
+  starships:
+    name: Starships
+    oracle_type: tables
+    _comment: Extension of the oracle table
+    _source: *Source
+    contents:
+      type:
+        name: Type
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/starships/type
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 102
+            text: Scorpion - Launches atmospheric fighters
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 103
+            max: 106
+            text: Lightning - Light bomber
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 107
+            max: 111
+            text: Knight - Escort fighter
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 112
+            max: 114
+            text: Thunder - Medium bomber
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 115
+            max: 116
+            text: Storm - Heavy bomber
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 117
+            max: 119
+            text: Montgomery - Maintenance craft
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 120
+            max: 122
+            text: Fabricator - Mobile production plant
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 123
+            max: 127
+            text: Generator - Mobile power supplier
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 128
+            max: 133
+            text: Conveyor - Medium transport
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 134
+            max: 136
+            text: Infiltrator - Stealthy surveillance craft
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 137
+            max: 138
+            text: Devastator - Vessel of mass destruction
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 139
+            max: 142
+            text: Explorer - Deep space cruiser
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 143
+            max: 147
+            text: Caduceus - Medical ship
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 148
+            max: 150
+            text: Horizon - Mobile communications array
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 151
+            max: 156
+            text: Compass - Surveyor ship
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 157
+            max: 161
+            text: Tug - Wreckage transport
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 162
+            max: 164
+            text: Coach - Interplanetary transport
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 165
+            max: 167
+            text: Schooner - Solar sail vessel
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 168
+            max: 182
+            text: Multipurpose - ▶Starship Mission
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 183
+            max: 184
+            text: Unusual or unknown
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 185
+            max: 194
+            text: ▶Fleet
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 195
+            max: 200
+            text: Ships in conflict (roll twice)
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 201
+            max: 202
+            text: Frigate - Troop carrier
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 203
+            max: 206
+            text: Spartan - Light defender
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 207
+            max: 211
+            text: Garrison - System patrol ship
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 212
+            max: 214
+            text: Corinthian - Medium defender
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 215
+            max: 216
+            text: Centurion - Heavy defender
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 217
+            max: 219
+            text: Flier - Solo racing ship
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 220
+            max: 222
+            text: Castle - Mobile fortress
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 223
+            max: 227
+            text: Respirator - Gas collector
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 228
+            max: 233
+            text: Invader - Massive troop transport
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 234
+            max: 236
+            text: Crawler - Mine layer
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 237
+            max: 238
+            text: Destroyer - Planet killer
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 239
+            max: 242
+            text: Oracle - Deep space science vessel
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 243
+            max: 247
+            text: Discovery - Science vessel
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 248
+            max: 250
+            text: Shipwright - Mobile drydock
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 251
+            max: 256
+            text: Distiller - Mobile mineral processor
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 257
+            max: 261
+            text: Amphibian - Planetary lander
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 262
+            max: 264
+            text: Train - Unmanned transport
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 265
+            max: 267
+            text: Jumper - Short burst Eidolon drive ship
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 268
+            max: 282
+            text: Multipurpose - ▶Starship Mission
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 283
+            max: 284
+            text: Unusual or unknown
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 285
+            max: 294
+            text: ▶Fleet
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 295
+            max: 300
+            text: Ships in conflict (roll twice)
+            _i18n:
+              text:
+                part_of_speech: common_noun
+      fleet:
+        name: Fleet
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/starships/fleet
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 110
+            text: Border patrol
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 111
+            max: 125
+            text: Mercenary force
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 126
+            max: 135
+            text: Engineering team
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 136
+            max: 150
+            text: Corporate excavators
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 151
+            max: 160
+            text: Automated cryo-sleepers
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 161
+            max: 170
+            text: Religious caravan
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 171
+            max: 190
+            text: Unaligned sanctuary ships
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 191
+            max: 200
+            text: ▶Starship Mission
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 201
+            max: 210
+            text: Battle training group
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 211
+            max: 225
+            text: Crippled battle group
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 226
+            max: 235
+            text: Construction team
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 236
+            max: 250
+            text: Corporate survey team
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 251
+            max: 260
+            text: Sight-seeing tour
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 261
+            max: 270
+            text: Entertainment caravan
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 271
+            max: 290
+            text: Exploratory caravan
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 291
+            max: 300
+            text: ▶Starship Mission
+            _i18n:
+              text:
+                part_of_speech: common_noun
+      contact:
+        name: Initial Contact
+        oracle_type: table_text
+        dice: 1d300
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 3
+            text: Familiar
+          - min: 4
+            max: 15
+            text: Friendly
+          - min: 16
+            max: 25
+            text: Neutral / automated
+          - min: 26
+            max: 35
+            text: Wary
+          - min: 36
+            max: 40
+            text: Dismissive
+          - min: 41
+            max: 50
+            text: Uncooperative
+          - min: 51
+            max: 65
+            text: Hostile
+          - min: 66
+            max: 80
+            text: Asking for help
+          - min: 81
+            max: 85
+            text: In battle
+          - min: 86
+            max: 90
+            text: Unresponsive
+          - min: 91
+            max: 95
+            text: Destroyed
+          - min: 96
+            max: 100
+            text: ▶Derelict
+          - min: 101
+            max: 103
+            text: Helpful
+          - min: 104
+            max: 115
+            text: All business
+          - min: 116
+            max: 125
+            text: Tolerant
+          - min: 126
+            max: 135
+            text: Defensive
+          - min: 136
+            max: 140
+            text: Reckless showboating
+          - min: 141
+            max: 150
+            text: Asking for a bribe
+          - min: 151
+            max: 165
+            text: Easily offended
+          - min: 166
+            max: 180
+            text: Demanding
+          - min: 181
+            max: 185
+            text: In crisis
+          - min: 186
+            max: 190
+            text: On emergency power
+          - min: 191
+            max: 195
+            text: Drifting dead in space
+          - min: 196
+            max: 200
+            text: ▶Derelict
+          - min: 201
+            max: 203
+            text: Informative
+          - min: 204
+            max: 215
+            text: Seeking mutual benefit
+          - min: 216
+            max: 225
+            text: Bureaucratic protocols
+          - min: 226
+            max: 235
+            text: Apathetic
+          - min: 236
+            max: 240
+            text: Stubborn contrarian
+          - min: 241
+            max: 250
+            text: Arrogant jerk
+          - min: 251
+            max: 265
+            text: Apathetic
+          - min: 266
+            max: 280
+            text: Wants to travel together
+          - min: 281
+            max: 285
+            text: In a time crunch
+          - min: 286
+            max: 290
+            text: Looped distress call
+          - min: 291
+            max: 295
+            text: Core going critical
+          - min: 296
+            max: 300
+            text: ▶Derelict
+      first_look:
+        name: First Look
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/starships/first_look
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 104
+            text: Strange energy spikes
+          - min: 105
+            max: 108
+            text: Highly reflective
+          - min: 109
+            max: 113
+            text: Large, central weapon
+          - min: 114
+            max: 118
+            text: Atmosphere thrusters
+          - min: 119
+            max: 123
+            text: Ablative armor
+          - min: 124
+            max: 128
+            text: Swift vector changes
+          - min: 129
+            max: 133
+            text: Ceremonial profile
+          - min: 134
+            max: 137
+            text: Specialized sensors
+          - min: 138
+            max: 141
+            text: Bussard ramscoop
+          - min: 142
+            max: 145
+            text: ID markings defaced
+          - min: 146
+            max: 149
+            text: Fluid design
+          - min: 150
+            max: 154
+            text: Retro-fitted
+          - min: 155
+            max: 159
+            text: Fresh damage
+          - min: 160
+            max: 163
+            text: AI pilot
+          - min: 164
+            max: 167
+            text: Cultural markings
+          - min: 168
+            max: 171
+            text: Streamlined engines
+          - min: 172
+            max: 175
+            text: Prominent political emblem
+          - min: 176
+            max: 180
+            text: Cobbled together hull
+          - min: 181
+            max: 185
+            text: New exterior
+          - min: 186
+            max: 190
+            text: Hull of unknown alloy
+          - min: 191
+            max: 194
+            text: Ejected life pods
+          - min: 195
+            max: 200
+            text: ▶Descriptor + Focus
+          - min: 201
+            max: 204
+            text: Sensor ghosts
+          - min: 205
+            max: 208
+            text: Light sails
+          - min: 209
+            max: 213
+            text: No signs of weapons
+          - min: 214
+            max: 218
+            text: Ostentatious running lights
+          - min: 219
+            max: 223
+            text: Lack of combat armor
+          - min: 224
+            max: 228
+            text: Rotational gravity generator
+          - min: 229
+            max: 233
+            text: Designed for speed
+          - min: 234
+            max: 237
+            text: Sensor scrambler
+          - min: 238
+            max: 241
+            text: Singularity power source
+          - min: 242
+            max: 245
+            text: Vessel reported as destroyed
+          - min: 246
+            max: 249
+            text: Superfluous design
+          - min: 250
+            max: 254
+            text: Recent upgrades
+          - min: 255
+            max: 259
+            text: Non-functioning subsystem
+          - min: 260
+            max: 263
+            text: Biological rated cargo hold
+          - min: 264
+            max: 267
+            text: Kill count markings
+          - min: 268
+            max: 271
+            text: Experimental engines
+          - min: 272
+            max: 275
+            text: Prominent religious emblem
+          - min: 276
+            max: 280
+            text: Robotic appendages
+          - min: 281
+            max: 285
+            text: Hull breach
+          - min: 286
+            max: 290
+            text: Nano-tech hull
+          - min: 291
+            max: 294
+            text: Active maintenance bots
+          - min: 295
+            max: 300
+            text: ▶Descriptor + Focus
+      terminus:
+        name: Mission Terminus
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/starships/mission/terminus
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 103
+            text: Enforce martial law
+          - min: 104
+            max: 106
+            text: Reinforce supply lines
+          - min: 107
+            max: 109
+            text: Destroy a resource
+          - min: 110
+            max: 111
+            text: Follow orders
+          - min: 112
+            max: 114
+            text: Disrupt diplomatic relations
+          - min: 115
+            max: 117
+            text: Infiltrate territory
+          - min: 118
+            max: 120
+            text: Negotiate a treaty
+          - min: 121
+            max: 123
+            text: Conduct questionable experiments
+          - min: 124
+            max: 126
+            text: Prepare for impending disaster
+          - min: 127
+            max: 129
+            text: Confiscate data
+          - min: 130
+            max: 132
+            text: Establish a passage
+          - min: 133
+            max: 135
+            text: Rebuild location
+          - min: 136
+            max: 137
+            text: Investigate space lifeforms
+          - min: 138
+            max: 139
+            text: Apprehend criminals
+          - min: 140
+            max: 142
+            text: Uncover hidden location
+          - min: 143
+            max: 145
+            text: Search and destroy
+          - min: 146
+            max: 148
+            text: Protect location
+          - min: 149
+            max: 151
+            text: Provide supplies
+          - min: 152
+            max: 154
+            text: Perform satellite/probe maintenance
+          - min: 155
+            max: 157
+            text: Protect valuable witness
+          - min: 158
+            max: 159
+            text: Assess quarantined zone danger
+          - min: 160
+            max: 162
+            text: Extort a settlement
+          - min: 163
+            max: 165
+            text: Pickup sensitive cargo
+          - min: 166
+            max: 168
+            text: Scrub evidence
+          - min: 169
+            max: 171
+            text: Take hostage
+          - min: 172
+            max: 174
+            text: Establish new trade routes
+          - min: 175
+            max: 177
+            text: Map a sector
+          - min: 178
+            max: 179
+            text: Test a weapon
+          - min: 180
+            max: 182
+            text: Transport vehicles
+          - min: 183
+            max: 185
+            text: Transport leaders in secret
+          - min: 186
+            max: 190
+            text: ▶Action + Theme
+          - min: 191
+            max: 200
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 203
+            text: Escalate regional tensions
+          - min: 204
+            max: 206
+            text: Setup defensive perimeter
+          - min: 207
+            max: 209
+            text: Trade a resource
+          - min: 210
+            max: 211
+            text: Flee duty or orders
+          - min: 212
+            max: 214
+            text: Stoke rebellion
+          - min: 215
+            max: 217
+            text: Sabotage the competition
+          - min: 218
+            max: 220
+            text: Broker a deal
+          - min: 221
+            max: 223
+            text: Eliminate evidence of research
+          - min: 224
+            max: 226
+            text: Perform saber rattling
+          - min: 227
+            max: 229
+            text: Proselytize belief
+          - min: 230
+            max: 232
+            text: Lay claim to territory
+          - min: 233
+            max: 235
+            text: Mobilize a location against a threat
+          - min: 236
+            max: 237
+            text: Study stellar phenomenon
+          - min: 238
+            max: 239
+            text: Transfer dangerous prisoner
+          - min: 240
+            max: 242
+            text: Collect a bounty
+          - min: 243
+            max: 245
+            text: Preemptive strike mission
+          - min: 246
+            max: 248
+            text: Upgrade infrastructure
+          - min: 249
+            max: 251
+            text: Transport medical specialist
+          - min: 252
+            max: 254
+            text: Transport engineering specialist
+          - min: 255
+            max: 257
+            text: Prevent stellar disaster
+          - min: 258
+            max: 259
+            text: Research quarantined environment
+          - min: 260
+            max: 262
+            text: Reinforce settlement defenses
+          - min: 263
+            max: 265
+            text: Pickup valuable cargo
+          - min: 266
+            max: 268
+            text: Deliver salvage
+          - min: 269
+            max: 271
+            text: Break out prisoner
+          - min: 272
+            max: 274
+            text: Smuggle people
+          - min: 275
+            max: 277
+            text: Shutdown illegal activity
+          - min: 278
+            max: 279
+            text: Test an alliance
+          - min: 280
+            max: 282
+            text: Transport energy source
+          - min: 283
+            max: 285
+            text: Transport lifeforms
+          - min: 286
+            max: 290
+            text: ▶Action + Theme
+          - min: 291
+            max: 300
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      outlands:
+        name: Mission Outlands
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/starships/mission/outlands
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 102
+            text: Enforce martial law
+          - min: 103
+            max: 104
+            text: Reinforce supply lines
+          - min: 105
+            max: 107
+            text: Destroy a resource
+          - min: 108
+            max: 109
+            text: Follow orders
+          - min: 110
+            max: 111
+            text: Disrupt diplomatic relations
+          - min: 112
+            max: 113
+            text: Infiltrate territory
+          - min: 114
+            max: 116
+            text: Negotiate a treaty
+          - min: 117
+            max: 120
+            text: Conduct questionable experiments
+          - min: 121
+            max: 124
+            text: Prepare for impending disaster
+          - min: 125
+            max: 128
+            text: Confiscate data
+          - min: 129
+            max: 132
+            text: Establish a passage
+          - min: 133
+            max: 136
+            text: Rebuild location
+          - min: 137
+            max: 140
+            text: Investigate space lifeforms
+          - min: 141
+            max: 142
+            text: Apprehend criminals
+          - min: 143
+            max: 145
+            text: Uncover hidden location
+          - min: 146
+            max: 148
+            text: Search and destroy
+          - min: 149
+            max: 150
+            text: Protect location
+          - min: 151
+            max: 153
+            text: Provide supplies
+          - min: 154
+            max: 156
+            text: Perform satellite/probe maintenance
+          - min: 157
+            max: 159
+            text: Protect valuable witness
+          - min: 160
+            max: 161
+            text: Assess quarantined zone danger
+          - min: 162
+            max: 164
+            text: Extort a settlement
+          - min: 165
+            max: 168
+            text: Pickup sensitive cargo
+          - min: 169
+            max: 171
+            text: Scrub evidence
+          - min: 172
+            max: 173
+            text: Take hostage
+          - min: 174
+            max: 175
+            text: Establish new trade routes
+          - min: 176
+            max: 178
+            text: Map a sector
+          - min: 179
+            max: 180
+            text: Test a weapon
+          - min: 181
+            max: 183
+            text: Transport vehicles
+          - min: 184
+            max: 185
+            text: Transport leaders in secret
+          - min: 186
+            max: 190
+            text: ▶Action + Theme
+          - min: 191
+            max: 200
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 202
+            text: Escalate regional tensions
+          - min: 203
+            max: 204
+            text: Setup defensive perimeter
+          - min: 205
+            max: 207
+            text: Trade a resource
+          - min: 208
+            max: 209
+            text: Flee duty or orders
+          - min: 210
+            max: 211
+            text: Stoke rebellion
+          - min: 212
+            max: 213
+            text: Sabotage the competition
+          - min: 214
+            max: 216
+            text: Broker a deal
+          - min: 217
+            max: 220
+            text: Eliminate evidence of research
+          - min: 221
+            max: 224
+            text: Perform saber rattling
+          - min: 225
+            max: 228
+            text: Proselytize belief
+          - min: 229
+            max: 232
+            text: Lay claim to territory
+          - min: 233
+            max: 236
+            text: Mobilize a location against a threat
+          - min: 237
+            max: 240
+            text: Study stellar phenomenon
+          - min: 241
+            max: 242
+            text: Transfer dangerous prisoner
+          - min: 243
+            max: 245
+            text: Collect a bounty
+          - min: 246
+            max: 248
+            text: Preemptive strike mission
+          - min: 249
+            max: 250
+            text: Upgrade infrastructure
+          - min: 251
+            max: 253
+            text: Transport medical specialist
+          - min: 254
+            max: 256
+            text: Transport engineering specialist
+          - min: 257
+            max: 259
+            text: Prevent stellar disaster
+          - min: 260
+            max: 261
+            text: Research quarantined environment
+          - min: 262
+            max: 264
+            text: Reinforce settlement defenses
+          - min: 265
+            max: 268
+            text: Pickup valuable cargo
+          - min: 269
+            max: 271
+            text: Deliver salvage
+          - min: 272
+            max: 273
+            text: Break out prisoner
+          - min: 274
+            max: 275
+            text: Smuggle people
+          - min: 276
+            max: 278
+            text: Shutdown illegal activity
+          - min: 279
+            max: 280
+            text: Test an alliance
+          - min: 281
+            max: 283
+            text: Transport energy source
+          - min: 284
+            max: 285
+            text: Transport lifeforms
+          - min: 286
+            max: 290
+            text: ▶Action + Theme
+          - min: 291
+            max: 300
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      expanse:
+        name: Mission Expanse
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/starships/mission/expanse
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 102
+            text: Enforce martial law
+          - min: 103
+            max: 104
+            text: Reinforce supply lines
+          - min: 105
+            max: 108
+            text: Destroy a resource
+          - min: 109
+            max: 110
+            text: Follow orders
+          - min: 111
+            max: 112
+            text: Disrupt diplomatic relations
+          - min: 113
+            max: 114
+            text: Infiltrate territory
+          - min: 115
+            max: 116
+            text: Negotiate a treaty
+          - min: 117
+            max: 122
+            text: Conduct questionable experiments
+          - min: 123
+            max: 125
+            text: Prepare for impending disaster
+          - min: 126
+            max: 129
+            text: Confiscate data
+          - min: 130
+            max: 135
+            text: Establish a passage
+          - min: 136
+            max: 139
+            text: Rebuild location
+          - min: 140
+            max: 145
+            text: Investigate space lifeforms
+          - min: 146
+            max: 147
+            text: Apprehend criminals
+          - min: 148
+            max: 149
+            text: Uncover hidden location
+          - min: 150
+            max: 151
+            text: Search and destroy
+          - min: 152
+            max: 153
+            text: Protect location
+          - min: 154
+            max: 155
+            text: Provide supplies
+          - min: 156
+            max: 157
+            text: Perform satellite/probe maintenance
+          - min: 158
+            max: 161
+            text: Protect valuable witness
+          - min: 162
+            max: 163
+            text: Assess quarantined zone danger
+          - min: 164
+            max: 165
+            text: Extort a settlement
+          - min: 166
+            max: 169
+            text: Pickup sensitive cargo
+          - min: 170
+            max: 171
+            text: Scrub evidence
+          - min: 172
+            max: 173
+            text: Take hostage
+          - min: 174
+            max: 175
+            text: Establish new trade routes
+          - min: 176
+            max: 177
+            text: Map a sector
+          - min: 178
+            max: 179
+            text: Test a weapon
+          - min: 180
+            max: 183
+            text: Transport vehicles
+          - min: 184
+            max: 185
+            text: Transport leaders in secret
+          - min: 186
+            max: 190
+            text: ▶Action + Theme
+          - min: 191
+            max: 200
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+          - min: 201
+            max: 202
+            text: Escalate regional tensions
+          - min: 203
+            max: 204
+            text: Setup defensive perimeter
+          - min: 205
+            max: 208
+            text: Trade a resource
+          - min: 209
+            max: 210
+            text: Flee duty or orders
+          - min: 211
+            max: 212
+            text: Stoke rebellion
+          - min: 213
+            max: 214
+            text: Sabotage the competition
+          - min: 215
+            max: 216
+            text: Broker a deal
+          - min: 217
+            max: 222
+            text: Eliminate evidence of research
+          - min: 223
+            max: 225
+            text: Perform saber rattling
+          - min: 226
+            max: 229
+            text: Proselytize belief
+          - min: 230
+            max: 235
+            text: Lay claim to territory
+          - min: 236
+            max: 239
+            text: Mobilize a location against a threat
+          - min: 240
+            max: 245
+            text: Study stellar phenomenon
+          - min: 246
+            max: 247
+            text: Transfer dangerous prisoner
+          - min: 248
+            max: 249
+            text: Collect a bounty
+          - min: 250
+            max: 251
+            text: Preemptive strike mission
+          - min: 252
+            max: 253
+            text: Upgrade infrastructure
+          - min: 254
+            max: 255
+            text: Transport medical specialist
+          - min: 256
+            max: 257
+            text: Transport engineering specialist
+          - min: 258
+            max: 261
+            text: Prevent stellar disaster
+          - min: 262
+            max: 263
+            text: Research quarantined environment
+          - min: 264
+            max: 265
+            text: Reinforce settlement defenses
+          - min: 266
+            max: 269
+            text: Pickup valuable cargo
+          - min: 270
+            max: 271
+            text: Deliver salvage
+          - min: 272
+            max: 273
+            text: Break out prisoner
+          - min: 274
+            max: 275
+            text: Smuggle people
+          - min: 276
+            max: 277
+            text: Shutdown illegal activity
+          - min: 278
+            max: 279
+            text: Test an alliance
+          - min: 280
+            max: 283
+            text: Transport energy source
+          - min: 284
+            max: 285
+            text: Transport lifeforms
+          - min: 286
+            max: 290
+            text: ▶Action + Theme
+          - min: 291
+            max: 300
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: null
+                dice: null
+                auto: true
+                duplicates: reroll
+                number_of_rolls: 2
+      name:
+        name: Name
+        oracle_type: table_text
+        dice: 1d300
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 1
+            text: Arclight
+          - min: 2
+            max: 2
+            text: Argent Arrow
+          - min: 3
+            max: 3
+            text: Artemis
+          - min: 4
+            max: 4
+            text: Astral Explorer
+          - min: 5
+            max: 5
+            text: Atlas
+          - min: 6
+            max: 6
+            text: Aurora
+          - min: 7
+            max: 7
+            text: Avari’s Wake
+          - min: 8
+            max: 8
+            text: Banshee’s Cry
+          - min: 9
+            max: 9
+            text: Beowulf
+          - min: 10
+            max: 10
+            text: Bloody Jaw
+          - min: 11
+            max: 11
+            text: Broken Sword
+          - min: 12
+            max: 12
+            text: Buccaneer
+          - min: 13
+            max: 13
+            text: Cerelis Nine
+          - min: 14
+            max: 14
+            text: Clarion Call
+          - min: 15
+            max: 15
+            text: Dawn’s Herald
+          - min: 16
+            max: 16
+            text: Dead Reckoning
+          - min: 17
+            max: 17
+            text: Drift Runner
+          - min: 18
+            max: 18
+            text: Eclipse
+          - min: 19
+            max: 19
+            text: Elara Five
+          - min: 20
+            max: 20
+            text: Enchantress
+          - min: 21
+            max: 21
+            text: Endurance
+          - min: 22
+            max: 22
+            text: Excalibur
+          - min: 23
+            max: 23
+            text: Eye of the Void
+          - min: 24
+            max: 24
+            text: Fall of Icarus
+          - min: 25
+            max: 25
+            text: Fallen Light
+          - min: 26
+            max: 26
+            text: False Hope
+          - min: 27
+            max: 27
+            text: Firebreak
+          - min: 28
+            max: 28
+            text: First Light
+          - min: 29
+            max: 29
+            text: Forge Flier
+          - min: 30
+            max: 30
+            text: Fortune’s Favor
+          - min: 31
+            max: 31
+            text: Freya’s Wrath
+          - min: 32
+            max: 32
+            text: Ghost
+          - min: 33
+            max: 33
+            text: Guiding Star
+          - min: 34
+            max: 34
+            text: Hand of Fate
+          - min: 35
+            max: 35
+            text: Herald of Doom
+          - min: 36
+            max: 36
+            text: Implacable
+          - min: 37
+            max: 37
+            text: Implicit
+          - min: 38
+            max: 38
+            text: Inferno
+          - min: 39
+            max: 39
+            text: Invictus
+          - min: 40
+            max: 40
+            text: Iron Cairn
+          - min: 41
+            max: 41
+            text: Karena’s Reverie
+          - min: 42
+            max: 42
+            text: Kraken
+          - min: 43
+            max: 43
+            text: Kuno’s Hammer
+          - min: 44
+            max: 44
+            text: Lightline
+          - min: 45
+            max: 45
+            text: Lodestar
+          - min: 46
+            max: 46
+            text: Long Haul
+          - min: 47
+            max: 47
+            text: Lost Fortune
+          - min: 48
+            max: 48
+            text: Luminous Sorrow
+          - min: 49
+            max: 49
+            text: Manta
+          - min: 50
+            max: 50
+            text: Mercy
+          - min: 51
+            max: 51
+            text: Mutara
+          - min: 52
+            max: 52
+            text: Nebula Prowler
+          - min: 53
+            max: 53
+            text: Newton’s Folly
+          - min: 54
+            max: 54
+            text: Nightfall
+          - min: 55
+            max: 55
+            text: Nomad
+          - min: 56
+            max: 56
+            text: Obsidian Trident
+          - min: 57
+            max: 57
+            text: Onslaught
+          - min: 58
+            max: 58
+            text: Orca
+          - min: 59
+            max: 59
+            text: Outward Bound
+          - min: 60
+            max: 60
+            text: Phantom
+          - min: 61
+            max: 61
+            text: Photon
+          - min: 62
+            max: 62
+            text: Poltergeist
+          - min: 63
+            max: 63
+            text: Profit Margin
+          - min: 64
+            max: 64
+            text: Raven’s Call
+          - min: 65
+            max: 65
+            text: Raya’s Promise
+          - min: 66
+            max: 66
+            text: Reaper
+          - min: 67
+            max: 67
+            text: Reforged Hope
+          - min: 68
+            max: 68
+            text: Relentless
+          - min: 69
+            max: 69
+            text: Royal Signet
+          - min: 70
+            max: 70
+            text: Rubicon
+          - min: 71
+            max: 71
+            text: Sareea’s Tribute
+          - min: 72
+            max: 72
+            text: Second Chance
+          - min: 73
+            max: 73
+            text: Shard of the Sun
+          - min: 74
+            max: 74
+            text: Shattered Siege
+          - min: 75
+            max: 75
+            text: Shattered Star
+          - min: 76
+            max: 76
+            text: Silver Talon
+          - min: 77
+            max: 77
+            text: Smoldering Flame
+          - min: 78
+            max: 78
+            text: Sovereign Skies
+          - min: 79
+            max: 79
+            text: Sparrowhawk
+          - min: 80
+            max: 80
+            text: Stardust
+          - min: 81
+            max: 81
+            text: Starfall
+          - min: 82
+            max: 82
+            text: Stellar Hawk
+          - min: 83
+            max: 83
+            text: Stormswept
+          - min: 84
+            max: 84
+            text: Sundered Aegis
+          - min: 85
+            max: 85
+            text: Sundown
+          - min: 86
+            max: 86
+            text: Sureshot
+          - min: 87
+            max: 87
+            text: Terminus Clipper
+          - min: 88
+            max: 88
+            text: Terrapin
+          - min: 89
+            max: 89
+            text: Timber Wolf
+          - min: 90
+            max: 90
+            text: Tip of the Spear
+          - min: 91
+            max: 91
+            text: Titan
+          - min: 92
+            max: 92
+            text: Tormentor
+          - min: 93
+            max: 93
+            text: Trithia Six
+          - min: 94
+            max: 94
+            text: Ultraviolet
+          - min: 95
+            max: 95
+            text: Valora’s Comet
+          - min: 96
+            max: 96
+            text: Vengeance
+          - min: 97
+            max: 97
+            text: Venture
+          - min: 98
+            max: 98
+            text: Vigilant
+          - min: 99
+            max: 99
+            text: Voidtreader
+          - min: 100
+            max: 100
+            text: Vulture
+          - min: 101
+            max: 101
+            text: Aegean Foil
+          - min: 102
+            max: 102
+            text: Alpha Strike
+          - min: 103
+            max: 103
+            text: Antioch
+          - min: 104
+            max: 104
+            text: Ascender
+          - min: 105
+            max: 105
+            text: Avalon
+          - min: 106
+            max: 106
+            text: Belled Cat
+          - min: 107
+            max: 107
+            text: Beta Beast
+          - min: 108
+            max: 108
+            text: Blazing Inferno
+          - min: 109
+            max: 109
+            text: Blue Lancer
+          - min: 110
+            max: 110
+            text: Breacher
+          - min: 111
+            max: 111
+            text: Capricorn
+          - min: 112
+            max: 112
+            text: Castle Crasher
+          - min: 113
+            max: 113
+            text: Chosen Folly
+          - min: 114
+            max: 114
+            text: Cobra Strike
+          - min: 115
+            max: 115
+            text: Contessa
+          - min: 116
+            max: 116
+            text: Crane's Leap
+          - min: 117
+            max: 117
+            text: Cydonia
+          - min: 118
+            max: 118
+            text: Data Lore
+          - min: 119
+            max: 119
+            text: Deep Space Wine
+          - min: 120
+            max: 120
+            text: Delta Flier
+          - min: 121
+            max: 121
+            text: Destiny
+          - min: 122
+            max: 122
+            text: Dreamweaver
+          - min: 123
+            max: 123
+            text: Errant Fool
+          - min: 124
+            max: 124
+            text: Expeditor
+          - min: 125
+            max: 125
+            text: Fairlight
+          - min: 126
+            max: 126
+            text: Fighting Falcon
+          - min: 127
+            max: 127
+            text: Fisher King
+          - min: 128
+            max: 128
+            text: Fortitude
+          - min: 129
+            max: 129
+            text: Gale Force
+          - min: 130
+            max: 130
+            text: Gamma Ghost
+          - min: 131
+            max: 131
+            text: Golden Dragon
+          - min: 132
+            max: 132
+            text: Gosling
+          - min: 133
+            max: 133
+            text: Grey Mantis
+          - min: 134
+            max: 134
+            text: Hawker Hurricane
+          - min: 135
+            max: 135
+            text: Hellcat
+          - min: 136
+            max: 136
+            text: Hermes
+          - min: 137
+            max: 137
+            text: High Fidelity
+          - min: 138
+            max: 138
+            text: Hummingbird
+          - min: 139
+            max: 139
+            text: Icy Unicorn
+          - min: 140
+            max: 140
+            text: Infinite Horizon
+          - min: 141
+            max: 141
+            text: Iron Blade
+          - min: 142
+            max: 142
+            text: Ironclad Lady
+          - min: 143
+            max: 143
+            text: Joint Expedition
+          - min: 144
+            max: 144
+            text: Karma
+          - min: 145
+            max: 145
+            text: King's Lark
+          - min: 146
+            max: 146
+            text: Knight's Helm
+          - min: 147
+            max: 147
+            text: Lady's Lake
+          - min: 148
+            max: 148
+            text: Lavish Victor
+          - min: 149
+            max: 149
+            text: Lodestar Lock
+          - min: 150
+            max: 150
+            text: Long Shot
+          - min: 151
+            max: 151
+            text: Loyal Chancellor
+          - min: 152
+            max: 152
+            text: Market's Edge
+          - min: 153
+            max: 153
+            text: Megalodon
+          - min: 154
+            max: 154
+            text: Mighty Ranger
+          - min: 155
+            max: 155
+            text: Misty Eyes
+          - min: 156
+            max: 156
+            text: Navigator
+          - min: 157
+            max: 157
+            text: Nemesis
+          - min: 158
+            max: 158
+            text: Night Out
+          - min: 159
+            max: 159
+            text: Nightingale
+          - min: 160
+            max: 160
+            text: Nova Gremlin
+          - min: 161
+            max: 161
+            text: Odysseus
+          - min: 162
+            max: 162
+            text: Olympia
+          - min: 163
+            max: 163
+            text: Opportunity
+          - min: 164
+            max: 164
+            text: Owl's Wisdom
+          - min: 165
+            max: 165
+            text: Peak Velocity
+          - min: 166
+            max: 166
+            text: Piper's Tune
+          - min: 167
+            max: 167
+            text: Priceless Discovery
+          - min: 168
+            max: 168
+            text: Purple Raven
+          - min: 169
+            max: 169
+            text: Queen's Consort
+          - min: 170
+            max: 170
+            text: Reliant
+          - min: 171
+            max: 171
+            text: Rim Razor
+          - min: 172
+            max: 172
+            text: Risky Enterprise
+          - min: 173
+            max: 173
+            text: Running Gambler
+          - min: 174
+            max: 174
+            text: Scaled Drake
+          - min: 175
+            max: 175
+            text: Serendipity
+          - min: 176
+            max: 176
+            text: Shrike
+          - min: 177
+            max: 177
+            text: Siren Song
+          - min: 178
+            max: 178
+            text: Skymaster
+          - min: 179
+            max: 179
+            text: Space Madness
+          - min: 180
+            max: 180
+            text: Starburst
+          - min: 181
+            max: 181
+            text: Starlight
+          - min: 182
+            max: 182
+            text: Starwolf
+          - min: 183
+            max: 183
+            text: Stellar Mystery
+          - min: 184
+            max: 184
+            text: Stunning Six
+          - min: 185
+            max: 185
+            text: Swift Viper
+          - min: 186
+            max: 186
+            text: Tachyon Burst
+          - min: 187
+            max: 187
+            text: Theseus' Bones
+          - min: 188
+            max: 188
+            text: Tigercat
+          - min: 189
+            max: 189
+            text: Traveling Tutor
+          - min: 190
+            max: 190
+            text: True Talisman
+          - min: 191
+            max: 191
+            text: Ventura
+          - min: 192
+            max: 192
+            text: Visund
+          - min: 193
+            max: 193
+            text: Wanderlust
+          - min: 194
+            max: 194
+            text: Wellington Way
+          - min: 195
+            max: 195
+            text: White Wyrm
+          - min: 196
+            max: 196
+            text: Wildcat
+          - min: 197
+            max: 197
+            text: Winged Ex
+          - min: 198
+            max: 198
+            text: Wolverine
+          - min: 199
+            max: 199
+            text: Xerxes
+          - min: 200
+            max: 200
+            text: Zealous Gnat
+          - min: 201
+            max: 201
+            text: Alexandrite
+          - min: 202
+            max: 202
+            text: Ambition
+          - min: 203
+            max: 203
+            text: Argus Watch
+          - min: 204
+            max: 204
+            text: Asperity
+          - min: 205
+            max: 205
+            text: Barden
+          - min: 206
+            max: 206
+            text: Bermuda Trip
+          - min: 207
+            max: 207
+            text: Black Lion
+          - min: 208
+            max: 208
+            text: Bloodhound
+          - min: 209
+            max: 209
+            text: Bold Endeavor
+          - min: 210
+            max: 210
+            text: Breaking Wind
+          - min: 211
+            max: 211
+            text: Carpe Diem
+          - min: 212
+            max: 212
+            text: Catalina
+          - min: 213
+            max: 213
+            text: Cobalt Reaver
+          - min: 214
+            max: 214
+            text: Constellation Lock
+          - min: 215
+            max: 215
+            text: Coranado Corsair
+          - min: 216
+            max: 216
+            text: Cyclopse
+          - min: 217
+            max: 217
+            text: Dark Void
+          - min: 218
+            max: 218
+            text: Dauntless
+          - min: 219
+            max: 219
+            text: Defiance
+          - min: 220
+            max: 220
+            text: Descender
+          - min: 221
+            max: 221
+            text: Dominator
+          - min: 222
+            max: 222
+            text: Dusty Skimmer
+          - min: 223
+            max: 223
+            text: Euphoria
+          - min: 224
+            max: 224
+            text: Fairchild
+          - min: 225
+            max: 225
+            text: Fell Hammer
+          - min: 226
+            max: 226
+            text: Firelight
+          - min: 227
+            max: 227
+            text: Fleetwood Hack
+          - min: 228
+            max: 228
+            text: Galaxy's Guide
+          - min: 229
+            max: 229
+            text: Galloping Mustang
+          - min: 230
+            max: 230
+            text: Gladius
+          - min: 231
+            max: 231
+            text: Good Hope
+          - min: 232
+            max: 232
+            text: Green Havoc
+          - min: 233
+            max: 233
+            text: Haughty Bear
+          - min: 234
+            max: 234
+            text: Hedged Bet
+          - min: 235
+            max: 235
+            text: Helldiver
+          - min: 236
+            max: 236
+            text: Hidden Pearl
+          - min: 237
+            max: 237
+            text: Hoverfly
+          - min: 238
+            max: 238
+            text: Hypothetical Dilemma
+          - min: 239
+            max: 239
+            text: Infineon
+          - min: 240
+            max: 240
+            text: Ionic Boom
+          - min: 241
+            max: 241
+            text: Iron Shield
+          - min: 242
+            max: 242
+            text: Isolde
+          - min: 243
+            max: 243
+            text: Journey's Prize
+          - min: 244
+            max: 244
+            text: Kelvin Hopper
+          - min: 245
+            max: 245
+            text: Kittyhawk
+          - min: 246
+            max: 246
+            text: Kraken Released
+          - min: 247
+            max: 247
+            text: Last Hope
+          - min: 248
+            max: 248
+            text: Legacy
+          - min: 249
+            max: 249
+            text: Lonestar's Jam
+          - min: 250
+            max: 250
+            text: Long Weekend
+          - min: 251
+            max: 251
+            text: Mariner's Trident
+          - min: 252
+            max: 252
+            text: Marquise
+          - min: 253
+            max: 253
+            text: Meteor
+          - min: 254
+            max: 254
+            text: Millennium Raptor
+          - min: 255
+            max: 255
+            text: Myth Adventure
+          - min: 256
+            max: 256
+            text: Nebula Chaser
+          - min: 257
+            max: 257
+            text: Niagara
+          - min: 258
+            max: 258
+            text: Nighthawk
+          - min: 259
+            max: 259
+            text: Northrup Ram
+          - min: 260
+            max: 260
+            text: Obsidian Heart
+          - min: 261
+            max: 261
+            text: Old Buoy
+          - min: 262
+            max: 262
+            text: Opal Star
+          - min: 263
+            max: 263
+            text: Ormen Lange
+          - min: 264
+            max: 264
+            text: Paladin
+          - min: 265
+            max: 265
+            text: Pinched Penny
+          - min: 266
+            max: 266
+            text: Polaris
+          - min: 267
+            max: 267
+            text: Pura Vida
+          - min: 268
+            max: 268
+            text: Quantum Jump
+          - min: 269
+            max: 269
+            text: Red Zeppelin
+          - min: 270
+            max: 270
+            text: Resplendent
+          - min: 271
+            max: 271
+            text: Rising Tide
+          - min: 272
+            max: 272
+            text: Rosenberg Bridge
+          - min: 273
+            max: 273
+            text: Sapphira
+          - min: 274
+            max: 274
+            text: Sentinel
+          - min: 275
+            max: 275
+            text: Shallow Pass
+          - min: 276
+            max: 276
+            text: Silent Night
+          - min: 277
+            max: 277
+            text: Skyfall
+          - min: 278
+            max: 278
+            text: Slim Vector
+          - min: 279
+            max: 279
+            text: Star Voyager
+          - min: 280
+            max: 280
+            text: Stargazer
+          - min: 281
+            max: 281
+            text: Starling Jay
+          - min: 282
+            max: 282
+            text: Stellar Kart
+          - min: 283
+            max: 283
+            text: Stinson's Rocket
+          - min: 284
+            max: 284
+            text: Sunny Day
+          - min: 285
+            max: 285
+            text: Swoose Goose
+          - min: 286
+            max: 286
+            text: Taloned Eagle
+          - min: 287
+            max: 287
+            text: Thunderbolt
+          - min: 288
+            max: 288
+            text: Tiger's Claw
+          - min: 289
+            max: 289
+            text: Triumph
+          - min: 290
+            max: 290
+            text: Valiant
+          - min: 291
+            max: 291
+            text: Vindicator
+          - min: 292
+            max: 292
+            text: Vulpine Prize
+          - min: 293
+            max: 293
+            text: Wayfarer
+          - min: 294
+            max: 294
+            text: Whirlwind
+          - min: 295
+            max: 295
+            text: Wide Berth
+          - min: 296
+            max: 296
+            text: Willow Wisp
+          - min: 297
+            max: 297
+            text: Wichita Two-Step
+          - min: 298
+            max: 298
+            text: Wraith
+          - min: 299
+            max: 299
+            text: Xenial Traveler
+          - min: 300
+            max: 300
+            text: Zephyr

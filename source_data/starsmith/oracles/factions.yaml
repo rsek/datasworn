@@ -1,3340 +1,3374 @@
 _id: starsmith
-source: &Source
+datasworn_version: 0.0.9
+package_type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith
   authors:
     - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
 oracles:
   factions:
     name: Factions
+    oracle_type: tables
+    enhances: starforged/collections/oracles/factions
+    _comment: Extension of the oracle collection
+    _source: *Source
     contents:
       type:
         replaces: starforged/oracles/factions/type
+        name: Faction Type
+        oracle_type: table_text2
+        _source: *Source
         dice: 1d300
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Summary
         rows:
+          # begin copy of rows from replaced table
           - min: 1
             max: 40
-            result: '[Dominion](starforged/oracles/factions/dominion)'
-            summary: Governing power
+            text: '[Dominion](starforged/oracles/factions/dominion)'
+            text2: Governing power
             oracle_rolls:
               - oracle: starforged/oracles/factions/dominion
-              - oracle: starforged/oracles/factions/leadership
+              - oracle: starforged/oracles/factions/dominion_leadership
           - min: 41
             max: 70
-            result: '[Guild](starforged/oracles/factions/guild)'
-            summary: Organization of specialists
+            text: '[Guild](starforged/oracles/factions/guild)'
+            text2: Organization of specialists
             oracle_rolls:
               - oracle: starforged/oracles/factions/guild
           - min: 71
             max: 100
-            result: '[Fringe Group](starforged/oracles/factions/fringe_group)'
-            summary: Band of outlaws, outcasts, or rogues
+            text: '[Fringe Group](starforged/oracles/factions/fringe_group)'
+            text2: Band of outlaws, outcasts, or rogues
             oracle_rolls:
               - oracle: starforged/oracles/factions/fringe_group
+            # end copy of rows from replaced table
           - min: 101
             max: 140
-            result: '[Corporation](starsmith/oracles/factions/corporation_field)'
-            summary: Influential business that rules economically
+            text: '[Corporation](starsmith/oracles/factions/corporation_field)'
+            text2: Influential business that rules economically
             oracle_rolls:
               - oracle: starsmith/oracles/factions/corporation_field
           - min: 141
             max: 170
-            result: '[Military](starsmith/oracles/factions/military_specialty)'
-            summary: Military outfit exerting power
+            text: '[Military](starsmith/oracles/factions/military_specialty)'
+            text2: Military outfit exerting power
             oracle_rolls:
               - oracle: starsmith/oracles/factions/military_specialty
           - min: 171
             max: 200
-            result: '[Religious](starsmith/oracles/factions/religious_role)'
-            summary: Sect of mainline believers
+            text: '[Religious](starsmith/oracles/factions/religious_role)'
+            text2: Sect of mainline believers
             oracle_rolls:
               - oracle: starsmith/oracles/factions/religious_role
           - min: 201
             max: 240
-            result: '[Research Group](starsmith/oracles/factions/research_field_of_study)'
-            summary: Wealthy scientists developing influence
+            text: '[Research Group](starsmith/oracles/factions/research_field_of_study)'
+            text2: Wealthy scientists developing influence
             oracle_rolls:
               - oracle: starsmith/oracles/factions/research_field_of_study
           - min: 241
             max: 270
-            result: '[Data Harvesters](starsmith/oracles/factions/data_harvesters_role)'
-            summary: Keepers of knowledge
+            text: '[Data Harvesters](starsmith/oracles/factions/data_harvesters_role)'
+            text2: Keepers of knowledge
             oracle_rolls:
               - oracle: starsmith/oracles/factions/data_harvesters_role
           - min: 271
             max: 300
-            result: '[AI Hive](starsmith/oracles/factions/ai_hive_prime_directive)'
-            summary: Independent, self-governing AI
+            text: '[AI Hive](starsmith/oracles/factions/ai_hive_prime_directive)'
+            text2: Independent, self-governing AI
             oracle_rolls:
               - oracle: starsmith/oracles/factions/ai_hive_prime_directive
       dominion:
+        name: Dominion
+        _source: *Source
         replaces: starforged/oracles/factions/dominion
+        oracle_type: table_text
         dice: 1d300
         rows:
+          # begin rows copied from replaced table
           - min: 1
             max: 5
-            result: Agriculture
+            text: Agriculture
           - min: 6
             max: 9
-            result: Artistry
+            text: Artistry
           - min: 10
             max: 14
-            result: Commerce
+            text: Commerce
           - min: 15
             max: 18
-            result: Conquest
+            text: Conquest
           - min: 19
             max: 22
-            result: Construction
+            text: Construction
           - min: 23
             max: 26
-            result: Diplomacy
+            text: Diplomacy
           - min: 27
             max: 30
-            result: Education
+            text: Education
           - min: 31
             max: 34
-            result: Environmentalism
+            text: Environmentalism
           - min: 35
             max: 38
-            result: Exploration
+            text: Exploration
           - min: 39
             max: 42
-            result: Faith
+            text: Faith
           - min: 43
             max: 46
-            result: History
+            text: History
           - min: 47
             max: 50
-            result: Honor
+            text: Honor
           - min: 51
             max: 55
-            result: Industry
+            text: Industry
           - min: 56
             max: 59
-            result: Isolationism
+            text: Isolationism
           - min: 60
             max: 63
-            result: Law
+            text: Law
           - min: 64
             max: 67
-            result: Mysticism
+            text: Mysticism
           - min: 68
             max: 71
-            result: Pacifism
+            text: Pacifism
           - min: 72
             max: 75
-            result: Prophecy
+            text: Prophecy
           - min: 76
             max: 79
-            result: Science
+            text: Science
           - min: 80
             max: 83
-            result: Secrecy
+            text: Secrecy
           - min: 84
             max: 87
-            result: Technology
+            text: Technology
           - min: 88
             max: 91
-            result: Treachery
+            text: Treachery
           - min: 92
             max: 96
-            result: Warface
+            text: Warface
           - min: 97
             max: 100
-            result: Wealth
+            text: Wealth
+            # end copy of rows from replaced table
           - min: 101
             max: 105
-            result: Altruism
+            text: Altruism
           - min: 106
             max: 109
-            result: Belonging
+            text: Belonging
           - min: 110
             max: 114
-            result: Collectivism
+            text: Collectivism
           - min: 115
             max: 118
-            result: Consumption
+            text: Consumption
           - min: 119
             max: 122
-            result: Creativity
+            text: Creativity
           - min: 123
             max: 126
-            result: Discovery
+            text: Discovery
           - min: 127
             max: 130
-            result: Emotions
+            text: Emotions
           - min: 131
             max: 134
-            result: Ethics
+            text: Ethics
           - min: 135
             max: 138
-            result: Freedom
+            text: Freedom
           - min: 139
             max: 142
-            result: Health
+            text: Health
           - min: 143
             max: 146
-            result: Hospitality
+            text: Hospitality
           - min: 147
             max: 150
-            result: Individualism
+            text: Individualism
           - min: 151
             max: 155
-            result: Justice
+            text: Justice
           - min: 156
             max: 159
-            result: Logic
+            text: Logic
           - min: 160
             max: 163
-            result: Nationalism
+            text: Nationalism
           - min: 164
             max: 167
-            result: Philanthropy
+            text: Philanthropy
           - min: 168
             max: 171
-            result: Power
+            text: Power
           - min: 172
             max: 175
-            result: Production
+            text: Production
           - min: 176
             max: 179
-            result: Radicalism
+            text: Radicalism
           - min: 180
             max: 183
-            result: Reflection
+            text: Reflection
           - min: 184
             max: 187
-            result: Respect
+            text: Respect
           - min: 188
             max: 191
-            result: Society
+            text: Society
           - min: 192
             max: 196
-            result: Tolerance
+            text: Tolerance
           - min: 197
             max: 200
-            result: Tradition
+            text: Tradition
           - min: 201
             max: 205
-            result: Authority
+            text: Authority
           - min: 206
             max: 209
-            result: Capitalism
+            text: Capitalism
           - min: 210
             max: 214
-            result: Community
+            text: Community
           - min: 215
             max: 218
-            result: Cooperation
+            text: Cooperation
           - min: 219
             max: 222
-            result: Discipline
+            text: Discipline
           - min: 223
             max: 226
-            result: Efficiency
+            text: Efficiency
           - min: 227
             max: 230
-            result: Espionage
+            text: Espionage
           - min: 231
             max: 234
-            result: Family
+            text: Family
           - min: 235
             max: 238
-            result: Glory
+            text: Glory
           - min: 239
             max: 242
-            result: Heritage
+            text: Heritage
           - min: 243
             max: 246
-            result: Independence
+            text: Independence
           - min: 247
             max: 250
-            result: Integrity
+            text: Integrity
           - min: 251
             max: 255
-            result: Knowledge
+            text: Knowledge
           - min: 256
             max: 259
-            result: Materialism
+            text: Materialism
           - min: 260
             max: 263
-            result: Patronage
+            text: Patronage
           - min: 264
             max: 267
-            result: Pleasure
+            text: Pleasure
           - min: 268
             max: 271
-            result: Prestige
+            text: Prestige
           - min: 272
             max: 275
-            result: Progress
+            text: Progress
           - min: 276
             max: 279
-            result: Recreation
+            text: Recreation
           - min: 280
             max: 283
-            result: Relationships
+            text: Relationships
           - min: 284
             max: 287
-            result: Safety
+            text: Safety
           - min: 288
             max: 291
-            result: Teamwork
+            text: Teamwork
           - min: 292
             max: 296
-            result: Trade
+            text: Trade
           - min: 297
             max: 300
-            result: Truth
-      leadership:
-        replaces: starforged/oracles/factions/leadership
+            text: Truth
+      dominion_leadership:
+        name: 'Dominion: Leadership'
+        _source: *Source
+        replaces: starforged/oracles/factions/dominion_leadership
+        oracle_type: table_text
         dice: 1d300
         rows:
+          # begin rows copied from replaced table
           - min: 1
             max: 5
-            result: Anarchist
+            text: Anarchist
           - min: 6
             max: 15
-            result: Disputed leadership
+            text: Disputed leadership
           - min: 16
             max: 30
-            result: Authoritarian dictatorship
+            text: Authoritarian dictatorship
           - min: 31
             max: 45
-            result: Oligarchical elite
+            text: Oligarchical elite
           - min: 46
             max: 60
-            result: Dynastic lineage
+            text: Dynastic lineage
           - min: 61
             max: 70
-            result: Fated / prophesied leader
+            text: Fated / prophesied leader
           - min: 71
             max: 80
-            result: Clan chiefs or elders
+            text: Clan chiefs or elders
           - min: 81
             max: 90
-            result: Elected representatives
+            text: Elected representatives
           - min: 91
             max: 95
-            result: Machine intelligence
+            text: Machine intelligence
           - min: 96
             max: 100
-            result: Varied / decentralized
+            text: Varied / decentralized
+            # end rows copied from replaced table
           - min: 101
             max: 105
-            result: Communal living
+            text: Communal living
           - min: 106
             max: 115
-            result: Feudalism
+            text: Feudalism
           - min: 116
             max: 130
-            result: Theocracy
+            text: Theocracy
           - min: 131
             max: 145
-            result: Puppet ruler
+            text: Puppet ruler
           - min: 146
             max: 160
-            result: Cult of personality
+            text: Cult of personality
           - min: 161
             max: 170
-            result: Tribalism
+            text: Tribalism
           - min: 171
             max: 180
-            result: Ruling council
+            text: Ruling council
           - min: 181
             max: 190
-            result: Democracy
+            text: Democracy
           - min: 191
             max: 195
-            result: Embodied AI
+            text: Embodied AI
           - min: 196
             max: 200
-            result: Fractured states
+            text: Fractured states
           - min: 201
             max: 205
-            result: Charismatic revolutionary
+            text: Charismatic revolutionary
           - min: 206
             max: 215
-            result: Mageocracy
+            text: Mageocracy
           - min: 216
             max: 230
-            result: Military authority
+            text: Military authority
           - min: 231
             max: 245
-            result: Deified ruler
+            text: Deified ruler
           - min: 246
             max: 260
-            result: Monarchy
+            text: Monarchy
           - min: 261
             max: 270
-            result: Corporate CEO council
+            text: Corporate CEO council
           - min: 271
             max: 280
-            result: Mystic power
+            text: Mystic power
           - min: 281
             max: 290
-            result: Republic
+            text: Republic
           - min: 291
             max: 295
-            result: Leader by lottery
+            text: Leader by lottery
           - min: 296
             max: 300
-            result: Unknown intelligence
+            text: Unknown intelligence
       guild:
+        name: Guild
         replaces: starforged/oracles/factions/guild
+        oracle_type: table_text
+        _source: *Source
         dice: 1d300
         rows:
+          # begin rows copied from replaced table
           - min: 1
             max: 5
-            result: Assassins
+            text: Assassins
           - min: 6
             max: 10
-            result: Bounty hunters
+            text: Bounty hunters
           - min: 11
             max: 15
-            result: Couriers
+            text: Couriers
           - min: 16
             max: 20
-            result: Courtesans
+            text: Courtesans
           - min: 21
             max: 25
-            result: Engineers
+            text: Engineers
           - min: 26
             max: 30
-            result: Healers
+            text: Healers
           - min: 31
             max: 40
-            result: Industrialists
+            text: Industrialists
           - min: 41
             max: 50
-            result: Mercenaries
+            text: Mercenaries
           - min: 51
             max: 60
-            result: Merchants
+            text: Merchants
           - min: 61
             max: 65
-            result: Mystics
+            text: Mystics
           - min: 66
             max: 75
-            result: Navigators
+            text: Navigators
           - min: 76
             max: 80
-            result: Peacekeepers
+            text: Peacekeepers
           - min: 81
             max: 85
-            result: Researchers
+            text: Researchers
           - min: 86
             max: 90
-            result: Spies
+            text: Spies
           - min: 91
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: &RollTwice
+              text: Roll twice
+              oracle_rolls:
+                - number_of_rolls: 2
+                  auto: true
+          # end rows copied from replaced table
           - min: 101
             max: 105
-            result: Agriculturists
+            text: Agriculturists
           - min: 106
             max: 110
-            result: Astronomers
+            text: Astronomers
           - min: 111
             max: 115
-            result: Chefs
+            text: Chefs
           - min: 116
             max: 120
-            result: Data managers
+            text: Data managers
           - min: 121
             max: 125
-            result: Entertainers
+            text: Entertainers
           - min: 126
             max: 130
-            result: Habitat planners
+            text: Habitat planners
           - min: 131
             max: 140
-            result: Journalists
+            text: Journalists
           - min: 141
             max: 150
-            result: Manufacturers
+            text: Manufacturers
           - min: 151
             max: 160
-            result: Pharmaceutics
+            text: Pharmaceutics
           - min: 161
             max: 165
-            result: Planetary colonizers
+            text: Planetary colonizers
           - min: 166
             max: 175
-            result: Security
+            text: Security
           - min: 176
             max: 180
-            result: Technology
+            text: Technology
           - min: 181
             max: 185
-            result: Traders
+            text: Traders
           - min: 186
             max: 190
-            result: Writers
+            text: Writers
           - min: 191
             max: 200
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
           - min: 201
             max: 205
-            result: Animal husbandry
+            text: Animal husbandry
           - min: 206
             max: 210
-            result: Botanists
+            text: Botanists
           - min: 211
             max: 215
-            result: Construction
+            text: Construction
           - min: 216
             max: 220
-            result: Ecologists
+            text: Ecologists
           - min: 221
             max: 225
-            result: Explorers
+            text: Explorers
           - min: 226
             max: 230
-            result: Historians
+            text: Historians
           - min: 231
             max: 240
-            result: Lawyers
+            text: Lawyers
           - min: 241
             max: 250
-            result: Miners
+            text: Miners
           - min: 251
             max: 260
-            result: Pilots
+            text: Pilots
           - min: 261
             max: 265
-            result: Scientists
+            text: Scientists
           - min: 266
             max: 275
-            result: Shipwrights
+            text: Shipwrights
           - min: 276
             max: 280
-            result: Terraformers
+            text: Terraformers
           - min: 281
             max: 285
-            result: Transportation
+            text: Transportation
           - min: 286
             max: 290
-            result: Xenologists
+            text: Xenologists
           - min: 291
             max: 300
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
       fringe_group:
+        name: Fringe Group
+        oracle_type: table_text
         replaces: starforged/oracles/factions/fringe_group
+        _source: *Source
         dice: 1d300
         rows:
+          # begin rows copied from replaced table
           - min: 1
             max: 5
-            result: Cultists
+            text: Cultists
           - min: 6
             max: 15
-            result: Exiles
+            text: Exiles
           - min: 16
             max: 25
-            result: Gangsters
+            text: Gangsters
           - min: 26
             max: 35
-            result: Hackers
+            text: Hackers
           - min: 36
             max: 40
-            result: Monster hunters
+            text: Monster hunters
           - min: 41
             max: 50
-            result: Pirates
+            text: Pirates
           - min: 51
             max: 60
-            result: Raiders
+            text: Raiders
           - min: 61
             max: 70
-            result: Rebels
+            text: Rebels
           - min: 71
             max: 75
-            result: Rogue AI
+            text: Rogue AI
           - min: 76
             max: 85
-            result: Scavengers
+            text: Scavengers
           - min: 86
             max: 95
-            result: Smugglers
+            text: Smugglers
           - min: 96
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
+          # end rows copied from replaced table
           - min: 101
             max: 105
-            result: Alien believers
+            text: Alien believers
           - min: 106
             max: 115
-            result: Black marketers
+            text: Black marketers
           - min: 116
             max: 125
-            result: Cataclysm preachers
+            text: Cataclysm preachers
           - min: 126
             max: 135
-            result: Criminals
+            text: Criminals
           - min: 136
             max: 140
-            result: Drug dealers
+            text: Drug dealers
           - min: 141
             max: 150
-            result: Info brokers
+            text: Info brokers
           - min: 151
             max: 160
-            result: Luddites
+            text: Luddites
           - min: 161
             max: 170
-            result: Planet pillagers
+            text: Planet pillagers
           - min: 171
             max: 175
-            result: Puritans
+            text: Puritans
           - min: 176
             max: 185
-            result: Stellar nomads
+            text: Stellar nomads
           - min: 186
             max: 195
-            result: Weapons distributors
+            text: Weapons distributors
           - min: 196
             max: 200
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
           - min: 201
             max: 205
-            result: Augmented
+            text: Augmented
           - min: 206
             max: 215
-            result: Black ops
+            text: Black ops
           - min: 216
             max: 225
-            result: Commune
+            text: Commune
           - min: 226
             max: 235
-            result: Dark mystics
+            text: Dark mystics
           - min: 236
             max: 240
-            result: Ghost hunters
+            text: Ghost hunters
           - min: 241
             max: 250
-            result: Isolationists
+            text: Isolationists
           - min: 251
             max: 260
-            result: Plague makers
+            text: Plague makers
           - min: 261
             max: 270
-            result: Population controllers
+            text: Population controllers
           - min: 271
             max: 275
-            result: Randians
+            text: Randians
           - min: 276
             max: 285
-            result: Vault hunters
+            text: Vault hunters
           - min: 286
             max: 295
-            result: Zealots
+            text: Zealots
           - min: 296
             max: 300
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
       projects:
+        name: Faction Projects
         replaces: starforged/oracles/factions/projects
         dice: 1d300
+        oracle_type: table_text
+        _source: *Source
         rows:
+          # begin rows copied from replaced table
           - min: 1
             max: 3
-            result: Broaden scope of the faction to include a new focus
+            text: Broaden scope of the faction to include a new focus
           - min: 4
             max: 6
-            result: Build or secure a powerful device
+            text: Build or secure a powerful device
           - min: 7
             max: 9
-            result: Consolidate control of a valuable commodity
+            text: Consolidate control of a valuable commodity
           - min: 10
             max: 12
-            result: Destroy or defeat a rival
+            text: Destroy or defeat a rival
           - min: 13
             max: 15
-            result: Disrupt the operations of a rival
+            text: Disrupt the operations of a rival
           - min: 16
             max: 18
-            result: Escape the control of another faction or power
+            text: Escape the control of another faction or power
           - min: 19
             max: 21
-            result: Establish a monument or memorial
+            text: Establish a monument or memorial
           - min: 22
             max: 24
-            result: Establish a safe refuge or headquarters
+            text: Establish a safe refuge or headquarters
           - min: 25
             max: 27
-            result: Expand operations to a new location or sector
+            text: Expand operations to a new location or sector
           - min: 28
             max: 30
-            result: Form an alliance
+            text: Form an alliance
           - min: 31
             max: 33
-            result: Fulfill a prophecy
+            text: Fulfill a prophecy
           - min: 34
             max: 36
-            result: Give aid to a faction
+            text: Give aid to a faction
           - min: 37
             max: 39
-            result: Harness unnatural or forbidden power
+            text: Harness unnatural or forbidden power
           - min: 40
             max: 42
-            result: Hunt down a rogue asset
+            text: Hunt down a rogue asset
           - min: 43
             max: 45
-            result: Incite conflict among rivals
+            text: Incite conflict among rivals
           - min: 46
             max: 48
-            result: Negotiate an agreement
+            text: Negotiate an agreement
           - min: 49
             max: 51
-            result: Obtain a needed commodity
+            text: Obtain a needed commodity
           - min: 52
             max: 54
-            result: Obtain an important cultural artifact
+            text: Obtain an important cultural artifact
           - min: 55
             max: 57
-            result: Obtain crucial data or information
+            text: Obtain crucial data or information
           - min: 58
             max: 60
-            result: Obtain incriminating information about a rival
+            text: Obtain incriminating information about a rival
           - min: 61
             max: 63
-            result: Prevent a prophecy
+            text: Prevent a prophecy
           - min: 64
             max: 66
-            result: Put down an internal revolt or rebellion
+            text: Put down an internal revolt or rebellion
           - min: 67
             max: 69
-            result: Repay a debt
+            text: Repay a debt
           - min: 70
             max: 72
-            result: Rescue or recover a group or asset
+            text: Rescue or recover a group or asset
           - min: 73
             max: 75
-            result: Research an innovation
+            text: Research an innovation
           - min: 76
             max: 78
-            result: Resolve a conflict with another faction
+            text: Resolve a conflict with another faction
           - min: 79
             max: 81
-            result: Reunite splintered elements of the faction
+            text: Reunite splintered elements of the faction
           - min: 82
             max: 84
-            result: Seize a powerful artifact or valuable treasure
+            text: Seize a powerful artifact or valuable treasure
           - min: 85
             max: 87
-            result: Seize rival territory or operations
+            text: Seize rival territory or operations
           - min: 88
             max: 90
-            result: Subsume another faction
+            text: Subsume another faction
           - min: 91
             max: 93
-            result: Transport a valued asset
+            text: Transport a valued asset
           - min: 94
             max: 96
-            result: Usurp leadership within a rival faction
+            text: Usurp leadership within a rival faction
           - min: 97
             max: 100
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: &ActionTheme
+              text: '[Action](starsmith/oracles/core/action) + [Theme](starsmith/oracles/core/theme)'
+              oracle_rolls:
+                - oracle: starsmith/oracles/core/action
+                - oracle: starsmith/oracles/core/theme
+          # end rows copied from replaced table
           - min: 101
             max: 103
-            result: Blackmail an asset to prevent them going rogue
+            text: Blackmail an asset to prevent them going rogue
           - min: 104
             max: 106
-            result: Break an alliance at the right moment
+            text: Break an alliance at the right moment
           - min: 107
             max: 109
-            result: Consolidate control of a necessary technology
+            text: Consolidate control of a necessary technology
           - min: 110
             max: 112
-            result: Convince a rival asset to turn traitor
+            text: Convince a rival asset to turn traitor
           - min: 113
             max: 115
-            result: Cripple a rival headquarters
+            text: Cripple a rival headquarters
           - min: 116
             max: 118
-            result: Destroy a symbolic target
+            text: Destroy a symbolic target
           - min: 119
             max: 121
-            result: Destroy alternate sources of a commodity
+            text: Destroy alternate sources of a commodity
           - min: 122
             max: 124
-            result: Develop a long sought after commodity
+            text: Develop a long sought after commodity
           - min: 125
             max: 127
-            result: Disrupt rival communications
+            text: Disrupt rival communications
           - min: 128
             max: 130
-            result: Establish a false prophecy
+            text: Establish a false prophecy
           - min: 131
             max: 133
-            result: Establish a new faction leader
+            text: Establish a new faction leader
           - min: 134
             max: 136
-            result: Find new routes to spread influence
+            text: Find new routes to spread influence
           - min: 137
             max: 139
-            result: Harness a dangerous power source
+            text: Harness a dangerous power source
           - min: 140
             max: 142
-            result: Heighten abilities within the scope of the faction
+            text: Heighten abilities within the scope of the faction
           - min: 143
             max: 145
-            result: Ignite a conflict with another faction
+            text: Ignite a conflict with another faction
           - min: 146
             max: 148
-            result: Improve public opinion of the faction
+            text: Improve public opinion of the faction
           - min: 149
             max: 151
-            result: Intercept the transport of a valuable asset
+            text: Intercept the transport of a valuable asset
           - min: 152
             max: 154
-            result: Make a rival pay for aid
+            text: Make a rival pay for aid
           - min: 155
             max: 157
-            result: Negotiate a debt forgiveness
+            text: Negotiate a debt forgiveness
           - min: 158
             max: 160
-            result: Obtain a crucial asset of a rival
+            text: Obtain a crucial asset of a rival
           - min: 161
             max: 163
-            result: Obtain a valuable asset
+            text: Obtain a valuable asset
           - min: 164
             max: 166
-            result: Obtain the encryption key of a rival
+            text: Obtain the encryption key of a rival
           - min: 167
             max: 169
-            result: Plant false evidence about a rival
+            text: Plant false evidence about a rival
           - min: 170
             max: 172
-            result: Quell disruptions to operations
+            text: Quell disruptions to operations
           - min: 173
             max: 175
-            result: Sabotage negotiations between rivals
+            text: Sabotage negotiations between rivals
           - min: 176
             max: 178
-            result: Secure aid from a rival
+            text: Secure aid from a rival
           - min: 179
             max: 181
-            result: Secure the favor of officials
+            text: Secure the favor of officials
           - min: 182
             max: 184
-            result: Spread misinformation
+            text: Spread misinformation
           - min: 185
             max: 187
-            result: Support a revolt or rebellion against a rival
+            text: Support a revolt or rebellion against a rival
           - min: 188
             max: 190
-            result: Turn public opinion against a rival
+            text: Turn public opinion against a rival
           - min: 191
             max: 193
-            result: Undermine a splintered element of the faction
+            text: Undermine a splintered element of the faction
           - min: 194
             max: 196
-            result: Win a landmark court case or judgment
+            text: Win a landmark court case or judgment
           - min: 197
             max: 200
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
           - min: 201
             max: 203
-            result: Bog down a rival with frivolous charges
+            text: Bog down a rival with frivolous charges
           - min: 204
             max: 206
-            result: Collect payment on a debt
+            text: Collect payment on a debt
           - min: 207
             max: 209
-            result: Consolidate control of a strategic location
+            text: Consolidate control of a strategic location
           - min: 210
             max: 212
-            result: Create an important cultural artifact
+            text: Create an important cultural artifact
           - min: 213
             max: 215
-            result: Destroy a powerful device
+            text: Destroy a powerful device
           - min: 216
             max: 218
-            result: Destroy all evidence of a situation
+            text: Destroy all evidence of a situation
           - min: 219
             max: 221
-            result: Destroy an important cultural artifact
+            text: Destroy an important cultural artifact
           - min: 222
             max: 224
-            result: Discredit the leadership of a rival faction
+            text: Discredit the leadership of a rival faction
           - min: 225
             max: 227
-            result: Encourage the splintering of a rival faction
+            text: Encourage the splintering of a rival faction
           - min: 228
             max: 230
-            result: Establish a more prominent opponent for a rival
+            text: Establish a more prominent opponent for a rival
           - min: 231
             max: 233
-            result: Establish an insider to protect faction interests
+            text: Establish an insider to protect faction interests
           - min: 234
             max: 236
-            result: Gain leverage over another faction or power
+            text: Gain leverage over another faction or power
           - min: 237
             max: 239
-            result: Harness a volatile technology
+            text: Harness a volatile technology
           - min: 240
             max: 242
-            result: Host an important ceremony or event
+            text: Host an important ceremony or event
           - min: 243
             max: 245
-            result: Improve operation efficiency at any cost
+            text: Improve operation efficiency at any cost
           - min: 246
             max: 248
-            result: Infiltrate a rival faction
+            text: Infiltrate a rival faction
           - min: 249
             max: 251
-            result: Keep an innovation hidden
+            text: Keep an innovation hidden
           - min: 252
             max: 254
-            result: Narrow scope of the faction to improve ability
+            text: Narrow scope of the faction to improve ability
           - min: 255
             max: 257
-            result: Negotiate a favorable trade of territory with a rival
+            text: Negotiate a favorable trade of territory with a rival
           - min: 258
             max: 260
-            result: Obtain a powerful device
+            text: Obtain a powerful device
           - min: 261
             max: 263
-            result: Obtain research data to outdo a rival
+            text: Obtain research data to outdo a rival
           - min: 264
             max: 266
-            result: Obtain valuable salvage
+            text: Obtain valuable salvage
           - min: 267
             max: 269
-            result: Protect a powerful artifact or valuable treasure
+            text: Protect a powerful artifact or valuable treasure
           - min: 270
             max: 272
-            result: Retake territory lost to a rival
+            text: Retake territory lost to a rival
           - min: 273
             max: 275
-            result: Sabotage rival operations
+            text: Sabotage rival operations
           - min: 276
             max: 278
-            result: Secure necessary supply route
+            text: Secure necessary supply route
           - min: 279
             max: 281
-            result: Spawn a new faction cell
+            text: Spawn a new faction cell
           - min: 282
             max: 284
-            result: Stir up the population against a rival
+            text: Stir up the population against a rival
           - min: 285
             max: 287
-            result: Support one rival against a more powerful rival
+            text: Support one rival against a more powerful rival
           - min: 288
             max: 290
-            result: Uncover a rival safehouse or headquarters
+            text: Uncover a rival safehouse or headquarters
           - min: 291
             max: 293
-            result: Upgrade the facilities at an established location
+            text: Upgrade the facilities at an established location
           - min: 294
             max: 296
-            result: Withdraw operations from a location or sector
+            text: Withdraw operations from a location or sector
           - min: 297
             max: 300
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
       relationships:
+        name: Faction Relationships
         replaces: starforged/oracles/factions/relationships
         dice: 1d300
+        oracle_type: table_text
+        _source: *Source
         rows:
+        # begin copied rows
           - min: 1
             max: 4
-            result: Antagonistic towards
+            text: Antagonistic towards
           - min: 5
             max: 8
-            result: Apathetic or unaware of
+            text: Apathetic or unaware of
           - min: 9
             max: 11
-            result: Betrayed by
+            text: Betrayed by
           - min: 12
             max: 14
-            result: Broke faith with
+            text: Broke faith with
           - min: 15
             max: 18
-            result: Distrustful of
+            text: Distrustful of
           - min: 19
             max: 22
-            result: Does business with
+            text: Does business with
           - min: 23
             max: 25
-            result: Extorted by
+            text: Extorted by
           - min: 26
             max: 29
-            result: Holds contempt for
+            text: Holds contempt for
           - min: 30
             max: 33
-            result: Holds leverage over
+            text: Holds leverage over
           - min: 34
             max: 36
-            result: In control of
+            text: In control of
           - min: 37
             max: 40
-            result: Maneuvering against
+            text: Maneuvering against
           - min: 41
             max: 44
-            result: Needs aid from
+            text: Needs aid from
           - min: 45
             max: 47
-            result: Negotiating with
+            text: Negotiating with
           - min: 48
             max: 51
-            result: Open alliance with
+            text: Open alliance with
           - min: 52
             max: 54
-            result: Owes a debt to
+            text: Owes a debt to
           - min: 55
             max: 58
-            result: Shares a rivalry with
+            text: Shares a rivalry with
           - min: 59
             max: 61
-            result: Shares power with
+            text: Shares power with
           - min: 62
             max: 64
-            result: Shows respect for
+            text: Shows respect for
           - min: 65
             max: 67
-            result: Splintered from
+            text: Splintered from
           - min: 68
             max: 70
-            result: Subordinate to
+            text: Subordinate to
           - min: 71
             max: 74
-            result: Supplied with resources by
+            text: Supplied with resources by
           - min: 75
             max: 78
-            result: Supplies resources to
+            text: Supplies resources to
           - min: 79
             max: 81
-            result: Temporary alliance with
+            text: Temporary alliance with
           - min: 82
             max: 85
-            result: Tolerates
+            text: Tolerates
           - min: 86
             max: 89
-            result: Trades favors with
+            text: Trades favors with
           - min: 90
             max: 92
-            result: Unjustly accused by
+            text: Unjustly accused by
           - min: 93
             max: 96
-            result: Warring with
+            text: Warring with
           - min: 97
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
+            # end copied rows
           - min: 101
             max: 104
-            result: Acquired sensitive information from
+            text: Acquired sensitive information from
           - min: 105
             max: 108
-            result: Aided
+            text: Aided
           - min: 109
             max: 111
-            result: Betrayed
+            text: Betrayed
           - min: 112
             max: 114
-            result: Claims the same authority as
+            text: Claims the same authority as
           - min: 115
             max: 118
-            result: Competes with
+            text: Competes with
           - min: 119
             max: 122
-            result: Contracted for special assignment by
+            text: Contracted for special assignment by
           - min: 123
             max: 125
-            result: Developed overlapping interests with
+            text: Developed overlapping interests with
           - min: 126
             max: 129
-            result: Entangled in a PR nightmare with
+            text: Entangled in a PR nightmare with
           - min: 130
             max: 133
-            result: Falsely believed to be in league with
+            text: Falsely believed to be in league with
           - min: 134
             max: 136
-            result: Gained a rogue asset from
+            text: Gained a rogue asset from
           - min: 137
             max: 140
-            result: Had an asset go rogue to
+            text: Had an asset go rogue to
           - min: 141
             max: 144
-            result: Has a common rival with
+            text: Has a common rival with
           - min: 145
             max: 147
-            result: Has influence in the same sector as
+            text: Has influence in the same sector as
           - min: 148
             max: 151
-            result: Holds an asset needed by
+            text: Holds an asset needed by
           - min: 152
             max: 154
-            result: Improving on technology from
+            text: Improving on technology from
           - min: 155
             max: 158
-            result: Keeps in check
+            text: Keeps in check
           - min: 159
             max: 161
-            result: Leader was a protégé of
+            text: Leader was a protégé of
           - min: 162
             max: 164
-            result: Managed by the same third party as
+            text: Managed by the same third party as
           - min: 165
             max: 167
-            result: Negotiated in poor faith with
+            text: Negotiated in poor faith with
           - min: 168
             max: 170
-            result: Owed a debt from
+            text: Owed a debt from
           - min: 171
             max: 174
-            result: Owes a favor to
+            text: Owes a favor to
           - min: 175
             max: 178
-            result: Racing to get an asset before
+            text: Racing to get an asset before
           - min: 179
             max: 181
-            result: Refuses to do business with
+            text: Refuses to do business with
           - min: 182
             max: 185
-            result: Shares an asset with
+            text: Shares an asset with
           - min: 186
             max: 189
-            result: Suspects nefarious deeds from
+            text: Suspects nefarious deeds from
           - min: 190
             max: 192
-            result: Trustful of
+            text: Trustful of
           - min: 193
             max: 196
-            result: Unjustly accuses
+            text: Unjustly accuses
           - min: 197
             max: 200
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
           - min: 201
             max: 204
-            result: Acts sycophantic towards
+            text: Acts sycophantic towards
           - min: 205
             max: 208
-            result: Annoyed by
+            text: Annoyed by
           - min: 209
             max: 211
-            result: Ceded territory to
+            text: Ceded territory to
           - min: 212
             max: 214
-            result: Claims the same source of power as
+            text: Claims the same source of power as
           - min: 215
             max: 218
-            result: Constantly one-upping
+            text: Constantly one-upping
           - min: 219
             max: 222
-            result: Denies respect to
+            text: Denies respect to
           - min: 223
             max: 225
-            result: Employs the same third party as
+            text: Employs the same third party as
           - min: 226
             max: 229
-            result: Extorts
+            text: Extorts
           - min: 230
             max: 233
-            result: Fortifying territory against
+            text: Fortifying territory against
           - min: 234
             max: 236
-            result: Gained territory from
+            text: Gained territory from
           - min: 237
             max: 240
-            result: Had secrets stolen by
+            text: Had secrets stolen by
           - min: 241
             max: 244
-            result: Has contracted for special assignment
+            text: Has contracted for special assignment
           - min: 245
             max: 247
-            result: Held in contempt by
+            text: Held in contempt by
           - min: 248
             max: 251
-            result: Holds incriminating evidence about
+            text: Holds incriminating evidence about
           - min: 252
             max: 254
-            result: In legal battle with
+            text: In legal battle with
           - min: 255
             max: 258
-            result: Kept in check by
+            text: Kept in check by
           - min: 259
             max: 261
-            result: Made aware of impending disaster by
+            text: Made aware of impending disaster by
           - min: 262
             max: 264
-            result: Needs an asset from
+            text: Needs an asset from
           - min: 265
             max: 267
-            result: Occasionally collaborates with
+            text: Occasionally collaborates with
           - min: 268
             max: 270
-            result: Owed a favor from
+            text: Owed a favor from
           - min: 271
             max: 274
-            result: Publicly denigrating
+            text: Publicly denigrating
           - min: 275
             max: 278
-            result: Receiving negative publicity from
+            text: Receiving negative publicity from
           - min: 279
             max: 281
-            result: Serves the same power as
+            text: Serves the same power as
           - min: 282
             max: 285
-            result: Stole secrets from
+            text: Stole secrets from
           - min: 286
             max: 289
-            result: Trained the leadership of
+            text: Trained the leadership of
           - min: 290
             max: 292
-            result: Under the control of
+            text: Under the control of
           - min: 293
             max: 296
-            result: Waging a cold war with
+            text: Waging a cold war with
           - min: 297
             max: 300
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
-      legacy:
-        replaces: starforged/oracles/factions/legacy
-        dice: 1d300
-        rows:
-          - min: 1
-            max: 2
-            result: Ancient
-          - min: 3
-            max: 4
-            result: Ashen
-          - min: 5
-            max: 6
-            result: Awakened
-          - min: 7
-            max: 8
-            result: Azure
-          - min: 9
-            max: 10
-            result: Blessed
-          - min: 11
-            max: 12
-            result: Bloody
-          - min: 13
-            max: 14
-            result: Broken
-          - min: 15
-            max: 16
-            result: Ceaseless
-          - min: 17
-            max: 18
-            result: Crimson
-          - min: 19
-            max: 20
-            result: Cursed
-          - min: 21
-            max: 22
-            result: Dawning
-          - min: 23
-            max: 24
-            result: Dissident
-          - min: 25
-            max: 26
-            result: Ebon
-          - min: 27
-            max: 28
-            result: Elder
-          - min: 29
-            max: 30
-            result: Enduring
-          - min: 31
-            max: 32
-            result: Enlightened
-          - min: 33
-            max: 34
-            result: Exalted
-          - min: 35
-            max: 36
-            result: Fallen
-          - min: 37
-            max: 38
-            result: Fated
-          - min: 39
-            max: 40
-            result: First
-          - min: 41
-            max: 42
-            result: Forgotten
-          - min: 43
-            max: 44
-            result: Forsaken
-          - min: 45
-            max: 46
-            result: Gloaming
-          - min: 47
-            max: 48
-            result: Golden
-          - min: 49
-            max: 50
-            result: Hidden
-          - min: 51
-            max: 52
-            result: Infernal
-          - min: 53
-            max: 54
-            result: Infinite
-          - min: 55
-            max: 56
-            result: Iron
-          - min: 57
-            max: 58
-            result: Kindred
-          - min: 59
-            max: 60
-            result: Obsidian
-          - min: 61
-            max: 62
-            result: Radiant
-          - min: 63
-            max: 64
-            result: Risen
-          - min: 65
-            max: 66
-            result: Sacred
-          - min: 67
-            max: 68
-            result: Sapphire
-          - min: 69
-            max: 70
-            result: Scarlet
-          - min: 71
-            max: 72
-            result: Serene
-          - min: 73
-            max: 74
-            result: Shattered
-          - min: 75
-            max: 76
-            result: Shining
-          - min: 77
-            max: 78
-            result: Silent
-          - min: 79
-            max: 80
-            result: Silver
-          - min: 81
-            max: 82
-            result: Sovereign
-          - min: 83
-            max: 84
-            result: Stellar
-          - min: 85
-            max: 86
-            result: Sundered
-          - min: 87
-            max: 88
-            result: Supreme
-          - min: 89
-            max: 90
-            result: Undying
-          - min: 91
-            max: 92
-            result: Unified
-          - min: 93
-            max: 94
-            result: United
-          - min: 95
-            max: 96
-            result: Universal
-          - min: 97
-            max: 98
-            result: Veiled
-          - min: 99
-            max: 100
-            result: Wandering
-          - min: 101
-            max: 102
-            result: Abyssal
-          - min: 103
-            max: 104
-            result: Ancestral
-          - min: 105
-            max: 106
-            result: Arcane
-          - min: 107
-            max: 108
-            result: Blazing
-          - min: 109
-            max: 110
-            result: Branded
-          - min: 111
-            max: 112
-            result: Chosen
-          - min: 113
-            max: 114
-            result: Deathly
-          - min: 115
-            max: 116
-            result: Discerning
-          - min: 117
-            max: 118
-            result: Eccentric
-          - min: 119
-            max: 120
-            result: Ember
-          - min: 121
-            max: 122
-            result: Emerald
-          - min: 123
-            max: 124
-            result: Enhanced
-          - min: 125
-            max: 126
-            result: Essential
-          - min: 127
-            max: 128
-            result: Ethereal
-          - min: 129
-            max: 130
-            result: Everpresent
-          - min: 131
-            max: 132
-            result: Forged
-          - min: 133
-            max: 134
-            result: Ghostly
-          - min: 135
-            max: 136
-            result: Gray
-          - min: 137
-            max: 138
-            result: Harrowing
-          - min: 139
-            max: 140
-            result: Holy
-          - min: 141
-            max: 142
-            result: Immortal
-          - min: 143
-            max: 144
-            result: Iridescent
-          - min: 145
-            max: 146
-            result: Lasting
-          - min: 147
-            max: 148
-            result: Lost
-          - min: 149
-            max: 150
-            result: Lucid
-          - min: 151
-            max: 152
-            result: Majestic
-          - min: 153
-            max: 154
-            result: Mercurial
-          - min: 155
-            max: 156
-            result: Nocturnal
-          - min: 157
-            max: 158
-            result: Omega
-          - min: 159
-            max: 160
-            result: Opal
-          - min: 161
-            max: 162
-            result: Peaceful
-          - min: 163
-            max: 164
-            result: Penitent
-          - min: 165
-            max: 166
-            result: Prime
-          - min: 167
-            max: 168
-            result: Profane
-          - min: 169
-            max: 170
-            result: Protected
-          - min: 171
-            max: 172
-            result: Rising
-          - min: 173
-            max: 174
-            result: Ruby
-          - min: 175
-            max: 176
-            result: Savage
-          - min: 177
-            max: 178
-            result: Setting
-          - min: 179
-            max: 180
-            result: Shadow
-          - min: 181
-            max: 182
-            result: Shrewd
-          - min: 183
-            max: 184
-            result: Solar
-          - min: 185
-            max: 186
-            result: Steel
-          - min: 187
-            max: 188
-            result: Tranquil
-          - min: 189
-            max: 190
-            result: Uncanny
-          - min: 191
-            max: 192
-            result: Unending
-          - min: 193
-            max: 194
-            result: Unholy
-          - min: 195
-            max: 196
-            result: Venerated
-          - min: 197
-            max: 198
-            result: Voracious
-          - min: 199
-            max: 200
-            result: Worthy
-          - min: 201
-            max: 202
-            result: Alpha
-          - min: 203
-            max: 204
-            result: Anointed
-          - min: 205
-            max: 206
-            result: Benevolent
-          - min: 207
-            max: 208
-            result: Bonded
-          - min: 209
-            max: 210
-            result: Brutal
-          - min: 211
-            max: 212
-            result: Cosmic
-          - min: 213
-            max: 214
-            result: Delicate
-          - min: 215
-            max: 216
-            result: Distant
-          - min: 217
-            max: 218
-            result: Elusive
-          - min: 219
-            max: 220
-            result: Emboldened
-          - min: 221
-            max: 222
-            result: Empowered
-          - min: 223
-            max: 224
-            result: Enigmatic
-          - min: 225
-            max: 226
-            result: Eternal
-          - min: 227
-            max: 228
-            result: Everflowing
-          - min: 229
-            max: 230
-            result: Forbidden
-          - min: 231
-            max: 232
-            result: Fractured
-          - min: 233
-            max: 234
-            result: Gracious
-          - min: 235
-            max: 236
-            result: Grim
-          - min: 237
-            max: 238
-            result: Haunted
-          - min: 239
-            max: 240
-            result: Immaculate
-          - min: 241
-            max: 242
-            result: Interwoven
-          - min: 243
-            max: 244
-            result: Ivory
-          - min: 245
-            max: 246
-            result: Lofty
-          - min: 247
-            max: 248
-            result: Luminous
-          - min: 249
-            max: 250
-            result: Magnificent
-          - min: 251
-            max: 252
-            result: Marked
-          - min: 253
-            max: 254
-            result: Munificent
-          - min: 255
-            max: 256
-            result: Omniscient
-          - min: 257
-            max: 258
-            result: Ordained
-          - min: 259
-            max: 260
-            result: Pale
-          - min: 261
-            max: 262
-            result: Pearl
-          - min: 263
-            max: 264
-            result: Powerful
-          - min: 265
-            max: 266
-            result: Prismatic
-          - min: 267
-            max: 268
-            result: Promised
-          - min: 269
-            max: 270
-            result: Proud
-          - min: 271
-            max: 272
-            result: Royal
-          - min: 273
-            max: 274
-            result: Sacrificial
-          - min: 275
-            max: 276
-            result: Secret
-          - min: 277
-            max: 278
-            result: Shackled
-          - min: 279
-            max: 280
-            result: Shielded
-          - min: 281
-            max: 282
-            result: Silver
-          - min: 283
-            max: 284
-            result: Stately
-          - min: 285
-            max: 286
-            result: Timeless
-          - min: 287
-            max: 288
-            result: Unbreaking
-          - min: 289
-            max: 290
-            result: Unearthed
-          - min: 291
-            max: 292
-            result: Unfathomable
-          - min: 293
-            max: 294
-            result: Unsafe
-          - min: 295
-            max: 296
-            result: Violated
-          - min: 297
-            max: 298
-            result: Weathered
-          - min: 299
-            max: 300
-            result: Zealous
-      affiliation:
-        replaces: starforged/oracles/factions/affiliation
-        dice: 1d300
-        rows:
-          - min: 1
-            max: 4
-            result: Accord
-          - min: 5
-            max: 8
-            result: Alliance
-          - min: 9
-            max: 12
-            result: Ascendancy
-          - min: 13
-            max: 16
-            result: Circle
-          - min: 17
-            max: 20
-            result: Coalition
-          - min: 21
-            max: 24
-            result: Collective
-          - min: 25
-            max: 28
-            result: Commonwealth
-          - min: 29
-            max: 32
-            result: Confederation
-          - min: 33
-            max: 36
-            result: Consortium
-          - min: 37
-            max: 40
-            result: Council
-          - min: 41
-            max: 44
-            result: Court
-          - min: 45
-            max: 48
-            result: Covenant
-          - min: 49
-            max: 52
-            result: Dominion
-          - min: 53
-            max: 56
-            result: Empire
-          - min: 57
-            max: 60
-            result: Federation
-          - min: 61
-            max: 64
-            result: Imperium
-          - min: 65
-            max: 68
-            result: League
-          - min: 69
-            max: 72
-            result: Legion
-          - min: 73
-            max: 76
-            result: Order
-          - min: 77
-            max: 80
-            result: Pact
-          - min: 81
-            max: 84
-            result: Regiment
-          - min: 85
-            max: 88
-            result: Republic
-          - min: 89
-            max: 92
-            result: Sphere
-          - min: 93
-            max: 96
-            result: Syndicate
-          - min: 97
-            max: 100
-            result: Union
-          - min: 101
-            max: 104
-            result: Academy
-          - min: 105
-            max: 108
-            result: Association
-          - min: 109
-            max: 112
-            result: Brotherhood
-          - min: 113
-            max: 116
-            result: Commune
-          - min: 117
-            max: 120
-            result: Compact
-          - min: 121
-            max: 124
-            result: Compound
-          - min: 125
-            max: 128
-            result: Confluence
-          - min: 129
-            max: 132
-            result: Congregation
-          - min: 133
-            max: 136
-            result: Congruity
-          - min: 137
-            max: 140
-            result: Connection
-          - min: 141
-            max: 144
-            result: Continuum
-          - min: 145
-            max: 148
-            result: Culture
-          - min: 149
-            max: 152
-            result: Domain
-          - min: 153
-            max: 156
-            result: Dynasty
-          - min: 157
-            max: 160
-            result: Family
-          - min: 161
-            max: 164
-            result: Fraternity
-          - min: 165
-            max: 168
-            result: Harmony
-          - min: 169
-            max: 172
-            result: Kinship
-          - min: 173
-            max: 176
-            result: Outfit
-          - min: 177
-            max: 180
-            result: Path
-          - min: 181
-            max: 184
-            result: Rapprochement
-          - min: 185
-            max: 188
-            result: Society
-          - min: 189
-            max: 192
-            result: Sovereignty
-          - min: 193
-            max: 196
-            result: Stronghold
-          - min: 197
-            max: 200
-            result: Tapestry
-          - min: 201
-            max: 204
-            result: Amalgam
-          - min: 205
-            max: 208
-            result: Bastion
-          - min: 209
-            max: 212
-            result: Collaboration
-          - min: 213
-            max: 216
-            result: Community
-          - min: 217
-            max: 220
-            result: Company
-          - min: 221
-            max: 224
-            result: Concord
-          - min: 225
-            max: 228
-            result: Conglomeration
-          - min: 229
-            max: 232
-            result: Congress
-          - min: 233
-            max: 236
-            result: Conjunction
-          - min: 237
-            max: 240
-            result: Consolidation
-          - min: 241
-            max: 244
-            result: Covenant
-          - min: 245
-            max: 248
-            result: District
-          - min: 249
-            max: 252
-            result: Dominion
-          - min: 253
-            max: 256
-            result: Entente
-          - min: 257
-            max: 260
-            result: Fellowship
-          - min: 261
-            max: 264
-            result: Fusion
-          - min: 265
-            max: 268
-            result: House
-          - min: 269
-            max: 272
-            result: Matrimony
-          - min: 273
-            max: 276
-            result: Partnership
-          - min: 277
-            max: 280
-            result: Realm
-          - min: 281
-            max: 284
-            result: Sisterhood
-          - min: 285
-            max: 288
-            result: Sorority
-          - min: 289
-            max: 292
-            result: State
-          - min: 293
-            max: 296
-            result: Synthesis
-          - min: 297
-            max: 300
-            result: Weave
-      identity:
-        replaces: starforged/oracles/factions/identity
-        dice: 1d300
-        rows:
-          - min: 1
-            max: 2
-            result: Blades
-          - min: 3
-            max: 4
-            result: Builders
-          - min: 5
-            max: 6
-            result: Daggers
-          - min: 7
-            max: 8
-            result: Defenders
-          - min: 9
-            max: 10
-            result: Disciples
-          - min: 11
-            max: 12
-            result: Domains
-          - min: 13
-            max: 14
-            result: Drifters
-          - min: 15
-            max: 16
-            result: Embers
-          - min: 17
-            max: 18
-            result: Flames
-          - min: 19
-            max: 20
-            result: Fleet
-          - min: 21
-            max: 22
-            result: Guardians
-          - min: 23
-            max: 24
-            result: Hammers
-          - min: 25
-            max: 26
-            result: Harbingers
-          - min: 27
-            max: 28
-            result: Heralds
-          - min: 29
-            max: 30
-            result: Hounds
-          - min: 31
-            max: 32
-            result: Hunters
-          - min: 33
-            max: 34
-            result: Jackals
-          - min: 35
-            max: 36
-            result: Keepers
-          - min: 37
-            max: 38
-            result: Knights
-          - min: 39
-            max: 40
-            result: Menders
-          - min: 41
-            max: 42
-            result: Outcasts
-          - min: 43
-            max: 44
-            result: Phantoms
-          - min: 45
-            max: 46
-            result: Planets
-          - min: 47
-            max: 48
-            result: Raiders
-          - min: 49
-            max: 50
-            result: Ravens
-          - min: 51
-            max: 52
-            result: Realms
-          - min: 53
-            max: 54
-            result: Reavers
-          - min: 55
-            max: 56
-            result: Relics
-          - min: 57
-            max: 58
-            result: Seekers
-          - min: 59
-            max: 60
-            result: Sentinels
-          - min: 61
-            max: 62
-            result: Serpents
-          - min: 63
-            max: 64
-            result: Servants
-          - min: 65
-            max: 66
-            result: Shadows
-          - min: 67
-            max: 68
-            result: Shards
-          - min: 69
-            max: 70
-            result: Skulls
-          - min: 71
-            max: 72
-            result: Souls
-          - min: 73
-            max: 74
-            result: Specters
-          - min: 75
-            max: 76
-            result: Stars
-          - min: 77
-            max: 78
-            result: Suns
-          - min: 79
-            max: 80
-            result: Swarm
-          - min: 81
-            max: 82
-            result: Swords
-          - min: 83
-            max: 84
-            result: Talons
-          - min: 85
-            max: 86
-            result: Vanguards
-          - min: 87
-            max: 88
-            result: Wardens
-          - min: 89
-            max: 90
-            result: Watchers
-          - min: 91
-            max: 92
-            result: Wolves
-          - min: 93
-            max: 94
-            result: Worlds
-          - min: 95
-            max: 96
-            result: Wraiths
-          - min: 97
-            max: 98
-            result: Wreckers
-          - min: 99
-            max: 100
-            result: Wrights
-          - min: 101
-            max: 102
-            result: Adherents
-          - min: 103
-            max: 104
-            result: Apostles
-          - min: 105
-            max: 106
-            result: Architects
-          - min: 107
-            max: 108
-            result: Armada
-          - min: 109
-            max: 110
-            result: Artisans
-          - min: 111
-            max: 112
-            result: Authors
-          - min: 113
-            max: 114
-            result: Bolts
-          - min: 115
-            max: 116
-            result: Bulls
-          - min: 117
-            max: 118
-            result: Cavaliers
-          - min: 119
-            max: 120
-            result: Claws
-          - min: 121
-            max: 122
-            result: Conservators
-          - min: 123
-            max: 124
-            result: Crafters
-          - min: 125
-            max: 126
-            result: Crows
-          - min: 127
-            max: 128
-            result: Curators
-          - min: 129
-            max: 130
-            result: Devotees
-          - min: 131
-            max: 132
-            result: Dragons
-          - min: 133
-            max: 134
-            result: Escorts
-          - min: 135
-            max: 136
-            result: Estates
-          - min: 137
-            max: 138
-            result: Exiles
-          - min: 139
-            max: 140
-            result: Flock
-          - min: 141
-            max: 142
-            result: Followers
-          - min: 143
-            max: 144
-            result: Formation
-          - min: 145
-            max: 146
-            result: Fragments
-          - min: 147
-            max: 148
-            result: Griffins
-          - min: 149
-            max: 150
-            result: Healers
-          - min: 151
-            max: 152
-            result: Hydra
-          - min: 153
-            max: 154
-            result: Jewels
-          - min: 155
-            max: 156
-            result: Lions
-          - min: 157
-            max: 158
-            result: Masons
-          - min: 159
-            max: 160
-            result: Mentors
-          - min: 161
-            max: 162
-            result: Observers
-          - min: 163
-            max: 164
-            result: Omens
-          - min: 165
-            max: 166
-            result: Overseers
-          - min: 167
-            max: 168
-            result: Pack
-          - min: 169
-            max: 170
-            result: Panthers
-          - min: 171
-            max: 172
-            result: Patrons
-          - min: 173
-            max: 174
-            result: Prophets
-          - min: 175
-            max: 176
-            result: Protectors
-          - min: 177
-            max: 178
-            result: Rams
-          - min: 179
-            max: 180
-            result: Ravagers
-          - min: 181
-            max: 182
-            result: Retainers
-          - min: 183
-            max: 184
-            result: Scepters
-          - min: 185
-            max: 186
-            result: Sectarians
-          - min: 187
-            max: 188
-            result: Shades
-          - min: 189
-            max: 190
-            result: Smiths
-          - min: 191
-            max: 192
-            result: Squadron
-          - min: 193
-            max: 194
-            result: Suitors
-          - min: 195
-            max: 196
-            result: Technicians
-          - min: 197
-            max: 198
-            result: Travelers
-          - min: 199
-            max: 200
-            result: Upholders
-          - min: 201
-            max: 202
-            result: Analysts
-          - min: 203
-            max: 204
-            result: Apprentices
-          - min: 205
-            max: 206
-            result: Archivists
-          - min: 207
-            max: 208
-            result: Artifacts
-          - min: 209
-            max: 210
-            result: Aspirants
-          - min: 211
-            max: 212
-            result: Bears
-          - min: 213
-            max: 214
-            result: Bones
-          - min: 215
-            max: 216
-            result: Caretakers
-          - min: 217
-            max: 218
-            result: Champions
-          - min: 219
-            max: 220
-            result: Cohort
-          - min: 221
-            max: 222
-            result: Cougars
-          - min: 223
-            max: 224
-            result: Creators
-          - min: 225
-            max: 226
-            result: Cryptics
-          - min: 227
-            max: 228
-            result: Custodians
-          - min: 229
-            max: 230
-            result: Diviners
-          - min: 231
-            max: 232
-            result: Eagles
-          - min: 233
-            max: 234
-            result: Essence
-          - min: 235
-            max: 236
-            result: Evokers
-          - min: 237
-            max: 238
-            result: Falcons
-          - min: 239
-            max: 240
-            result: Forerunners
-          - min: 241
-            max: 242
-            result: Founders
-          - min: 243
-            max: 244
-            result: Framers
-          - min: 245
-            max: 246
-            result: Guides
-          - min: 247
-            max: 248
-            result: Heirlooms
-          - min: 249
-            max: 250
-            result: Horde
-          - min: 251
-            max: 252
-            result: Invokers
-          - min: 253
-            max: 254
-            result: Keepers
-          - min: 255
-            max: 256
-            result: Marauders
-          - min: 257
-            max: 258
-            result: Masters
-          - min: 259
-            max: 260
-            result: Moons
-          - min: 261
-            max: 262
-            result: Officers
-          - min: 263
-            max: 264
-            result: Outriders
-          - min: 265
-            max: 266
-            result: Owls
-          - min: 267
-            max: 268
-            result: Paladins
-          - min: 269
-            max: 270
-            result: Paracletes
-          - min: 271
-            max: 272
-            result: Privateers
-          - min: 273
-            max: 274
-            result: Proselytes
-          - min: 275
-            max: 276
-            result: Pupils
-          - min: 277
-            max: 278
-            result: Raptors
-          - min: 279
-            max: 280
-            result: Remnant
-          - min: 281
-            max: 282
-            result: Savants
-          - min: 283
-            max: 284
-            result: Scorpions
-          - min: 285
-            max: 286
-            result: Sentries
-          - min: 287
-            max: 288
-            result: Shields
-          - min: 289
-            max: 290
-            result: Spears
-          - min: 291
-            max: 292
-            result: Stewards
-          - min: 293
-            max: 294
-            result: Sustainers
-          - min: 295
-            max: 296
-            result: Tigers
-          - min: 297
-            max: 298
-            result: Truths
-          - min: 299
-            max: 300
-            result: Vipers
+            <<: *RollTwice
       quirks:
+        name: Faction Quirks
         replaces: starforged/oracles/factions/quirks
         dice: 1d300
+        oracle_type: table_text
+        _source: *Source
         rows:
+        # begin copied rows
           - min: 1
             max: 3
-            result: Ancient or coded language
+            text: Ancient or coded language
           - min: 4
             max: 6
-            result: Animal or creature motif used as a faction symbol
+            text: Animal or creature motif used as a faction symbol
           - min: 7
             max: 9
-            result: Banishes the disloyal
+            text: Banishes the disloyal
           - min: 10
             max: 12
-            result: Body augmentations are respected and valued
+            text: Body augmentations are respected and valued
           - min: 13
             max: 15
-            result: Body ornamentations signify castes or roles
+            text: Body ornamentations signify castes or roles
           - min: 16
             max: 18
-            result: Conceals individual identity
+            text: Conceals individual identity
           - min: 19
             max: 21
-            result: Dependent on an addictive substance
+            text: Dependent on an addictive substance
           - min: 22
             max: 24
-            result: Distinctive or elaborate clothing
+            text: Distinctive or elaborate clothing
           - min: 25
             max: 27
-            result: Elite soldiers provide defense or serve as bodyguards
+            text: Elite soldiers provide defense or serve as bodyguards
           - min: 28
             max: 30
-            result: Favors a signature weapon
+            text: Favors a signature weapon
           - min: 31
             max: 33
-            result: Guided by superstition or prophecy
+            text: Guided by superstition or prophecy
           - min: 34
             max: 36
-            result: Heavily stratified social structure
+            text: Heavily stratified social structure
           - min: 37
             max: 39
-            result: Hoards precursor artifacts
+            text: Hoards precursor artifacts
           - min: 40
             max: 42
-            result: Honors the fallen through unusual death rites
+            text: Honors the fallen through unusual death rites
           - min: 43
             max: 45
-            result: Idolizes a long-dead founder or martyr
+            text: Idolizes a long-dead founder or martyr
           - min: 46
             max: 48
-            result: Keeps exhaustive records or archives
+            text: Keeps exhaustive records or archives
           - min: 49
             max: 51
-            result: Lives off-planet in spaceborne fleets
+            text: Lives off-planet in spaceborne fleets
           - min: 52
             max: 54
-            result: Members take a new name when joining the faction
+            text: Members take a new name when joining the faction
           - min: 55
             max: 57
-            result: Nomadic people and mobile operations
+            text: Nomadic people and mobile operations
           - min: 58
             max: 60
-            result: Operates under strict codes or laws
+            text: Operates under strict codes or laws
           - min: 61
             max: 63
-            result: Recognizes others through a distinctive greeting or gesture
+            text: Recognizes others through a distinctive greeting or gesture
           - min: 64
             max: 66
-            result: Reliant on machine intelligence
+            text: Reliant on machine intelligence
           - min: 67
             max: 69
-            result: Resolves disputes through formal duels
+            text: Resolves disputes through formal duels
           - min: 70
             max: 72
-            result: Rites of adulthood or ascension
+            text: Rites of adulthood or ascension
           - min: 73
             max: 75
-            result: Shuns or distrusts machine intelligence
+            text: Shuns or distrusts machine intelligence
           - min: 76
             max: 78
-            result: Starships share a distinctive and recognizable profile
+            text: Starships share a distinctive and recognizable profile
           - min: 79
             max: 81
-            result: Suspicious of outsiders
+            text: Suspicious of outsiders
           - min: 82
             max: 84
-            result: Symbiotic relationship with a specific type of creature
+            text: Symbiotic relationship with a specific type of creature
           - min: 85
             max: 87
-            result: Trades in a unique currency or commodity
+            text: Trades in a unique currency or commodity
           - min: 88
             max: 90
-            result: Trains in a demanding physical discipline or martial art
+            text: Trains in a demanding physical discipline or martial art
           - min: 91
             max: 93
-            result: Wields unnatural abilities or strange technologies
+            text: Wields unnatural abilities or strange technologies
           - min: 94
             max: 96
-            result: Work or environment causes mutations
+            text: Work or environment causes mutations
           - min: 97
             max: 100
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
+            # end copied rows
           - min: 101
             max: 103
-            result: Amalgamation of languages used
+            text: Amalgamation of languages used
           - min: 104
             max: 106
-            result: Animal or creature honored or deified in society
+            text: Animal or creature honored or deified in society
           - min: 107
             max: 109
-            result: Banishes the unsuccessful
+            text: Banishes the unsuccessful
           - min: 110
             max: 112
-            result: Body augmentations are reviled and shunned
+            text: Body augmentations are reviled and shunned
           - min: 113
             max: 115
-            result: Destroys precursor artifacts
+            text: Destroys precursor artifacts
           - min: 116
             max: 118
-            result: Do not move dwellings without adherence to strict protocols and ceremony
+            text: Do not move dwellings without adherence to strict protocols and ceremony
           - min: 119
             max: 121
-            result: Elite soldiers are part of celebrated strike team
+            text: Elite soldiers are part of celebrated strike team
           - min: 122
             max: 124
-            result: Employs genetic enhancements at the risk of health
+            text: Employs genetic enhancements at the risk of health
           - min: 125
             max: 127
-            result: Extreme hospitality shown to outsiders
+            text: Extreme hospitality shown to outsiders
           - min: 128
             max: 130
-            result: Facial tattoos signify castes or roles
+            text: Facial tattoos signify castes or roles
           - min: 131
             max: 133
-            result: Favors a defensive fighting style
+            text: Favors a defensive fighting style
           - min: 134
             max: 136
-            result: Follows rigid social norms and ceremonies
+            text: Follows rigid social norms and ceremonies
           - min: 137
             max: 139
-            result: Guided by mystics and omens
+            text: Guided by mystics and omens
           - min: 140
             max: 142
-            result: Lack of social stratification
+            text: Lack of social stratification
           - min: 143
             max: 145
-            result: Members all use the same name after joining
+            text: Members all use the same name after joining
           - min: 146
             max: 148
-            result: Proud to have hunted important species to extinction
+            text: Proud to have hunted important species to extinction
           - min: 149
             max: 151
-            result: Purposefully drab and mundane clothing
+            text: Purposefully drab and mundane clothing
           - min: 152
             max: 154
-            result: Refuses long space journeys more than a year and a day
+            text: Refuses long space journeys more than a year and a day
           - min: 155
             max: 157
-            result: Regular vision quests through hallucinogenic drugs
+            text: Regular vision quests through hallucinogenic drugs
           - min: 158
             max: 160
-            result: Regularly rewrite history to look kindly upon themselves
+            text: Regularly rewrite history to look kindly upon themselves
           - min: 161
             max: 163
-            result: Reliant on machine labor for production
+            text: Reliant on machine labor for production
           - min: 164
             max: 166
-            result: Resolves disputes through public debates or forums
+            text: Resolves disputes through public debates or forums
           - min: 167
             max: 169
-            result: Rites of formal acceptance into the faction
+            text: Rites of formal acceptance into the faction
           - min: 170
             max: 172
-            result: Ritual words reserved only for other members
+            text: Ritual words reserved only for other members
           - min: 173
             max: 175
-            result: Romanticizes pre-cataclysmic times
+            text: Romanticizes pre-cataclysmic times
           - min: 176
             max: 178
-            result: Shuns machine labor as manual labor is seen as superior
+            text: Shuns machine labor as manual labor is seen as superior
           - min: 179
             max: 181
-            result: Shuns new or upgraded commodities for traditional ones
+            text: Shuns new or upgraded commodities for traditional ones
           - min: 182
             max: 184
-            result: Shuns the fallen and their families as unworthy
+            text: Shuns the fallen and their families as unworthy
           - min: 185
             max: 187
-            result: Starships are considered individual works of art and distinct
+            text: Starships are considered individual works of art and distinct
           - min: 188
             max: 190
-            result: Trains in a demanding mental discipline or science
+            text: Trains in a demanding mental discipline or science
           - min: 191
             max: 193
-            result: Wears official identification and clearance levels at all times
+            text: Wears official identification and clearance levels at all times
           - min: 194
             max: 196
-            result: Work or environment causes disease
+            text: Work or environment causes disease
           - min: 197
             max: 200
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
           - min: 201
             max: 203
-            result: Accepted subfactions identified by dress and appearance
+            text: Accepted subfactions identified by dress and appearance
           - min: 204
             max: 206
-            result: Belief in precursors viewed as heretical
+            text: Belief in precursors viewed as heretical
           - min: 207
             max: 209
-            result: Breed, train and trade a unique creature
+            text: Breed, train and trade a unique creature
           - min: 210
             max: 212
-            result: Can join minds with other members to form a collective
+            text: Can join minds with other members to form a collective
           - min: 213
             max: 215
-            result: Clothing made of unusual material
+            text: Clothing made of unusual material
           - min: 216
             max: 218
-            result: Compartmentalizes records for safety and secrecy
+            text: Compartmentalizes records for safety and secrecy
           - min: 219
             max: 221
-            result: Complicated protocols to enact contracts
+            text: Complicated protocols to enact contracts
           - min: 222
             max: 224
-            result: Criminals are publicly shamed
+            text: Criminals are publicly shamed
           - min: 225
             max: 227
-            result: Elaborate sign and color language used
+            text: Elaborate sign and color language used
           - min: 228
             max: 230
-            result: Elite soldiers are retired and become trainers
+            text: Elite soldiers are retired and become trainers
           - min: 231
             max: 233
-            result: Favors deception and stealth
+            text: Favors deception and stealth
           - min: 234
             max: 236
-            result: Greetings must be performed in the order of social hierarchy
+            text: Greetings must be performed in the order of social hierarchy
           - min: 237
             max: 239
-            result: Guided by coldhearted logic
+            text: Guided by coldhearted logic
           - min: 240
             max: 242
-            result: High rate of social mobility
+            text: High rate of social mobility
           - min: 243
             max: 245
-            result: Highly value creative art and expression
+            text: Highly value creative art and expression
           - min: 246
             max: 248
-            result: Important roles bestowed upon children when they are born
+            text: Important roles bestowed upon children when they are born
           - min: 249
             max: 251
-            result: Reside planetside when possible and rely on automated starships
+            text: Reside planetside when possible and rely on automated starships
           - min: 252
             max: 254
-            result: Must volunteer service for a period before membership
+            text: Must volunteer service for a period before membership
           - min: 255
             max: 257
-            result: Once accepted, even non-members are viewed as family
+            text: Once accepted, even non-members are viewed as family
           - min: 258
             max: 260
-            result: Operate under loose moral codes and laws
+            text: Operate under loose moral codes and laws
           - min: 261
             max: 263
-            result: Rank or roles are obscured
+            text: Rank or roles are obscured
           - min: 264
             max: 266
-            result: Reliant on a faulty technology
+            text: Reliant on a faulty technology
           - min: 267
             max: 269
-            result: Resolves disputes through physical feats
+            text: Resolves disputes through physical feats
           - min: 270
             max: 272
-            result: Rites of marriage or adoption
+            text: Rites of marriage or adoption
           - min: 273
             max: 275
-            result: Secret knowledge of how to hunt and kill a dangerous beast
+            text: Secret knowledge of how to hunt and kill a dangerous beast
           - min: 276
             max: 278
-            result: Shuns unnatural building materials when planetside
+            text: Shuns unnatural building materials when planetside
           - min: 279
             max: 281
-            result: Societal roles determined by age
+            text: Societal roles determined by age
           - min: 282
             max: 284
-            result: Something is illegal but everyone does or has it
+            text: Something is illegal but everyone does or has it
           - min: 285
             max: 287
-            result: Starships purposefully mimic other cultures
+            text: Starships purposefully mimic other cultures
           - min: 288
             max: 290
-            result: Technology held up as a savior
+            text: Technology held up as a savior
           - min: 291
             max: 293
-            result: Unusual ceremonies or customs around food
+            text: Unusual ceremonies or customs around food
           - min: 294
             max: 296
-            result: Work or environment borders space-time schism
+            text: Work or environment borders space-time schism
           - min: 297
             max: 300
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
       rumors:
+        name: Faction Rumors
         replaces: starforged/oracles/factions/rumors
         dice: 1d300
+        oracle_type: table_text
+        _source: *Source
         rows:
+          # begin copied rows
           - min: 1
             max: 3
-            result: Caught in the crossfire of feuding factions
+            text: Caught in the crossfire of feuding factions
           - min: 4
             max: 6
-            result: Colluding with a criminal enterprise
+            text: Colluding with a criminal enterprise
           - min: 7
             max: 9
-            result: Corrupted by a dangerous power
+            text: Corrupted by a dangerous power
           - min: 10
             max: 12
-            result: Critical resource is in short supply
+            text: Critical resource is in short supply
           - min: 13
             max: 15
-            result: Defenses are overextended
+            text: Defenses are overextended
           - min: 16
             max: 18
-            result: Developing revolutionary technology
+            text: Developing revolutionary technology
           - min: 19
             max: 21
-            result: Digital systems are corrupted or infiltrated
+            text: Digital systems are corrupted or infiltrated
           - min: 22
             max: 24
-            result: Heavily in debt
+            text: Heavily in debt
           - min: 25
             max: 27
-            result: Hit hard by a recent attack or calamity
+            text: Hit hard by a recent attack or calamity
           - min: 28
             max: 30
-            result: Holds a powerful artifact
+            text: Holds a powerful artifact
           - min: 31
             max: 33
-            result: Holds incriminating information against a leader or faction
+            text: Holds incriminating information against a leader or faction
           - min: 34
             max: 36
-            result: Hoarding a valuable commodity
+            text: Hoarding a valuable commodity
           - min: 37
             max: 39
-            result: Infiltrated by a rival faction
+            text: Infiltrated by a rival faction
           - min: 40
             max: 42
-            result: Knows the location of a fabled treasure or lost technology
+            text: Knows the location of a fabled treasure or lost technology
           - min: 43
             max: 45
-            result: Leaders are haunted by a dark prophecy
+            text: Leaders are haunted by a dark prophecy
           - min: 46
             max: 48
-            result: Leaders are incompetent
+            text: Leaders are incompetent
           - min: 49
             max: 51
-            result: Leaders are puppets of another power or faction
+            text: Leaders are puppets of another power or faction
           - min: 52
             max: 54
-            result: Lesser members of the leadership are plotting a coup
+            text: Lesser members of the leadership are plotting a coup
           - min: 55
             max: 57
-            result: New belief or religion is creating a schism among members
+            text: New belief or religion is creating a schism among members
           - min: 58
             max: 60
-            result: Operations are a false front for their true purpose
+            text: Operations are a false front for their true purpose
           - min: 61
             max: 63
-            result: Over-dependence on a failing or vulnerable technology
+            text: Over-dependence on a failing or vulnerable technology
           - min: 64
             max: 66
-            result: Plagued by infighting and low morale
+            text: Plagued by infighting and low morale
           - min: 67
             max: 69
-            result: Plotting to betray an allied faction
+            text: Plotting to betray an allied faction
           - min: 70
             max: 72
-            result: Preparing a major offensive or operation
+            text: Preparing a major offensive or operation
           - min: 73
             max: 75
-            result: Pulling the strings of a leader or faction
+            text: Pulling the strings of a leader or faction
           - min: 76
             max: 78
-            result: Recently acquired an unexpected fortune
+            text: Recently acquired an unexpected fortune
           - min: 79
             max: 81
-            result: Secretly supporting a reviled faction
+            text: Secretly supporting a reviled faction
           - min: 82
             max: 84
-            result: Sheltering an infamous or dangerous fugitive
+            text: Sheltering an infamous or dangerous fugitive
           - min: 85
             max: 87
-            result: Suffered destructive sabotage from within
+            text: Suffered destructive sabotage from within
           - min: 88
             max: 90
-            result: Suffering a shortage of key workers or personnel
+            text: Suffering a shortage of key workers or personnel
           - min: 91
             max: 93
-            result: Uprising or revolt is brewing from within
+            text: Uprising or revolt is brewing from within
           - min: 94
             max: 96
-            result: Vulnerable to attack or aggression
+            text: Vulnerable to attack or aggression
           - min: 97
             max: 100
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
+            # end copied rows
           - min: 101
             max: 103
-            result: Asked to ally with both sides of feuding factions
+            text: Asked to ally with both sides of feuding factions
           - min: 104
             max: 106
-            result: Being played by another power
+            text: Being played by another power
           - min: 107
             max: 109
-            result: Bribing local lawmakers
+            text: Bribing local lawmakers
           - min: 110
             max: 112
-            result: Building a secret base of operations
+            text: Building a secret base of operations
           - min: 113
             max: 115
-            result: Cannot fund or withstand a sustained conflict
+            text: Cannot fund or withstand a sustained conflict
           - min: 116
             max: 118
-            result: Defenses are consolidating in one area
+            text: Defenses are consolidating in one area
           - min: 119
             max: 121
-            result: Developing dangerous technology
+            text: Developing dangerous technology
           - min: 122
             max: 124
-            result: Digital systems have back door access
+            text: Digital systems have back door access
           - min: 125
             max: 127
-            result: Extorted by another leader or faction
+            text: Extorted by another leader or faction
           - min: 128
             max: 130
-            result: Funding illegal or unethical experiments
+            text: Funding illegal or unethical experiments
           - min: 131
             max: 133
-            result: Gathering evidence against dangerous criminal
+            text: Gathering evidence against dangerous criminal
           - min: 134
             max: 136
-            result: Impending calamity or disaster
+            text: Impending calamity or disaster
           - min: 137
             max: 139
-            result: Infiltrating a rival faction
+            text: Infiltrating a rival faction
           - min: 140
             max: 142
-            result: Interest in membership is dwindling
+            text: Interest in membership is dwindling
           - min: 143
             max: 145
-            result: Key agent is interested in flipping sides
+            text: Key agent is interested in flipping sides
           - min: 146
             max: 148
-            result: Leader is looking for a way out
+            text: Leader is looking for a way out
           - min: 149
             max: 151
-            result: Leaders squabbling amongst themselves
+            text: Leaders squabbling amongst themselves
           - min: 152
             max: 154
-            result: Losing face by publicly supporting unpopular faction
+            text: Losing face by publicly supporting unpopular faction
           - min: 155
             max: 157
-            result: Lost a powerful artifact
+            text: Lost a powerful artifact
           - min: 158
             max: 160
-            result: Lost a valuable asset
+            text: Lost a valuable asset
           - min: 161
             max: 163
-            result: Manipulating supply of a valuable commodity
+            text: Manipulating supply of a valuable commodity
           - min: 164
             max: 166
-            result: Mustering defenses against a major attack
+            text: Mustering defenses against a major attack
           - min: 167
             max: 169
-            result: Need help collecting a large debt
+            text: Need help collecting a large debt
           - min: 170
             max: 172
-            result: Overabundance of a resource causing problems
+            text: Overabundance of a resource causing problems
           - min: 173
             max: 175
-            result: Recently lost a fortune
+            text: Recently lost a fortune
           - min: 176
             max: 178
-            result: Refusing to use needed technology
+            text: Refusing to use needed technology
           - min: 179
             max: 181
-            result: Soon to be betrayed by an allied faction
+            text: Soon to be betrayed by an allied faction
           - min: 182
             max: 184
-            result: Suffered destructive sabotage by an outside agent
+            text: Suffered destructive sabotage by an outside agent
           - min: 185
             max: 187
-            result: Taking advantage of the general public
+            text: Taking advantage of the general public
           - min: 188
             max: 190
-            result: Unity behind new belief or religion is stoking zealotry
+            text: Unity behind new belief or religion is stoking zealotry
           - min: 191
             max: 193
-            result: Wants to shift their focus to a new purpose
+            text: Wants to shift their focus to a new purpose
           - min: 194
             max: 196
-            result: Wielding a dangerous power
+            text: Wielding a dangerous power
           - min: 197
             max: 200
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
           - min: 201
             max: 203
-            result: Accidentally pulled a third party into their feud
+            text: Accidentally pulled a third party into their feud
           - min: 204
             max: 206
-            result: Afraid to address the real problem
+            text: Afraid to address the real problem
           - min: 207
             max: 209
-            result: Bribing local law enforcement
+            text: Bribing local law enforcement
           - min: 210
             max: 212
-            result: Broke a powerful artifact and need it fixed
+            text: Broke a powerful artifact and need it fixed
           - min: 213
             max: 215
-            result: Controlling damage from a character assassination
+            text: Controlling damage from a character assassination
           - min: 216
             max: 218
-            result: Courting a lucrative alliance
+            text: Courting a lucrative alliance
           - min: 219
             max: 221
-            result: Denied critical resources by another faction
+            text: Denied critical resources by another faction
           - min: 222
             max: 224
-            result: Developing illegal technology
+            text: Developing illegal technology
           - min: 225
             max: 227
-            result: Digital systems heavily guarded implying secrets
+            text: Digital systems heavily guarded implying secrets
           - min: 228
             max: 230
-            result: Discovered a critical flaw in newly implemented technology
+            text: Discovered a critical flaw in newly implemented technology
           - min: 231
             max: 233
-            result: Ferreting out the true purpose of a rival
+            text: Ferreting out the true purpose of a rival
           - min: 234
             max: 236
-            result: Floundering at making a large scale relocation
+            text: Floundering at making a large scale relocation
           - min: 237
             max: 239
-            result: Focus on offense has left a vulnerability
+            text: Focus on offense has left a vulnerability
           - min: 240
             max: 242
-            result: In trouble for sharing secrets too easily
+            text: In trouble for sharing secrets too easily
           - min: 243
             max: 245
-            result: Inadvertently causing a calamity or disaster
+            text: Inadvertently causing a calamity or disaster
           - min: 246
             max: 248
-            result: Leader betrayed members to hold onto power
+            text: Leader betrayed members to hold onto power
           - min: 249
             max: 251
-            result: Leader is using the faction for personal gain
+            text: Leader is using the faction for personal gain
           - min: 252
             max: 254
-            result: Membership not fully committed to the cause
+            text: Membership not fully committed to the cause
           - min: 255
             max: 257
-            result: Mounting a rescue mission
+            text: Mounting a rescue mission
           - min: 258
             max: 260
-            result: Need help with legal defense
+            text: Need help with legal defense
           - min: 261
             max: 263
-            result: Outside actors stirring up internal conflict
+            text: Outside actors stirring up internal conflict
           - min: 264
             max: 266
-            result: Planning to sabotage a rival
+            text: Planning to sabotage a rival
           - min: 267
             max: 269
-            result: Publicly performing vile deeds to stir up their base
+            text: Publicly performing vile deeds to stir up their base
           - min: 270
             max: 272
-            result: Racing another faction to acquire an asset
+            text: Racing another faction to acquire an asset
           - min: 273
             max: 275
-            result: Recently found a way to make a fortune
+            text: Recently found a way to make a fortune
           - min: 276
             max: 278
-            result: Refusing to acknowledge vulnerability in current approach
+            text: Refusing to acknowledge vulnerability in current approach
           - min: 279
             max: 281
-            result: Ruffling feathers by stepping out of their lane
+            text: Ruffling feathers by stepping out of their lane
           - min: 282
             max: 284
-            result: Seeking a dangerous power
+            text: Seeking a dangerous power
           - min: 285
             max: 287
-            result: Seeking to discredit a new belief or religion
+            text: Seeking to discredit a new belief or religion
           - min: 288
             max: 290
-            result: Suffering from being pulled in too many directions
+            text: Suffering from being pulled in too many directions
           - min: 291
             max: 293
-            result: Tracking an infamous or dangerous fugitive
+            text: Tracking an infamous or dangerous fugitive
           - min: 294
             max: 296
-            result: Working with corrupt law enforcement to crack down
+            text: Working with corrupt law enforcement to crack down
           - min: 297
             max: 300
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
+            <<: *ActionTheme
       corporation_field:
-        _insert: starforged/oracles/factions/corporation_field
         name: 'Corporation: Field'
-        dice: 1d100
+        oracle_type: table_text
+        _source: *Source
         rows:
           - min: 1
             max: 8
-            result: Civilian technology
+            text: Civilian technology
           - min: 9
             max: 16
-            result: Engineering
+            text: Engineering
           - min: 17
             max: 24
-            result: Entertainment
+            text: Entertainment
           - min: 25
             max: 32
-            result: Food supplier
+            text: Food supplier
           - min: 33
             max: 40
-            result: Genetic modifications
+            text: Genetic modifications
           - min: 41
             max: 48
-            result: Medical technology
+            text: Medical technology
           - min: 49
             max: 56
-            result: Military technology
+            text: Military technology
           - min: 57
             max: 64
-            result: News media
+            text: News media
           - min: 65
             max: 72
-            result: Resource extraction
+            text: Resource extraction
           - min: 73
             max: 80
-            result: Ship building
+            text: Ship building
           - min: 81
             max: 88
-            result: Social media
+            text: Social media
           - min: 89
             max: 96
-            result: Water / air filtration
+            text: Water / air filtration
           - min: 97
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
       military_specialty:
-        _insert: starforged/oracles/factions/military_specialty
         name: 'Military: Specialty'
         dice: 1d100
+        oracle_type: table_text
+        _source: *Source
         rows:
           - min: 1
             max: 8
-            result: Artillery
+            text: Artillery
           - min: 9
             max: 16
-            result: Escort services
+            text: Escort services
           - min: 17
             max: 24
-            result: Infiltration
+            text: Infiltration
           - min: 25
             max: 32
-            result: Orbital defense
+            text: Orbital defense
           - min: 33
             max: 40
-            result: Planetary invasions
+            text: Planetary invasions
           - min: 41
             max: 48
-            result: Planetside defense
+            text: Planetside defense
           - min: 49
             max: 56
-            result: Proxy warfare
+            text: Proxy warfare
           - min: 57
             max: 64
-            result: Robotic troops
+            text: Robotic troops
           - min: 65
             max: 72
-            result: Space force
+            text: Space force
           - min: 73
             max: 80
-            result: Strike force
+            text: Strike force
           - min: 81
             max: 88
-            result: Territory expansion
+            text: Territory expansion
           - min: 89
             max: 96
-            result: Weapons of mass destruction
+            text: Weapons of mass destruction
           - min: 97
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
       religious_role:
-        _insert: starforged/oracles/factions/religious_role
         name: 'Religious: Role'
         dice: 1d100
+        oracle_type: table_text
+        _source: *Source
         rows:
           - min: 1
             max: 8
-            result: Alien worshipers
+            text: Alien worshipers
           - min: 9
             max: 16
-            result: Crusaders
+            text: Crusaders
           - min: 17
             max: 24
-            result: Devout atheists
+            text: Devout atheists
           - min: 25
             max: 32
-            result: Doomsayers
+            text: Doomsayers
           - min: 33
             max: 40
-            result: Evangelists
+            text: Evangelists
           - min: 41
             max: 48
-            result: Monotheists
+            text: Monotheists
           - min: 49
             max: 56
-            result: Pantheists
+            text: Pantheists
           - min: 57
             max: 64
-            result: Puritans
+            text: Puritans
           - min: 65
             max: 72
-            result: Self edifying
+            text: Self edifying
           - min: 73
             max: 80
-            result: Star worshipers
+            text: Star worshipers
           - min: 81
             max: 88
-            result: Universalists
+            text: Universalists
           - min: 89
             max: 96
-            result: Worshipers of the dead
+            text: Worshipers of the dead
           - min: 97
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
       research_field_of_study:
-        _insert: starforged/oracles/factions/research_field_of_study
         name: 'Research: Field of Study'
         dice: 1d100
+        oracle_type: table_text
+        _source: *Source
         rows:
           - min: 1
             max: 2
-            result: AI
+            text: AI
           - min: 3
             max: 4
-            result: Archaeology
+            text: Archaeology
           - min: 5
             max: 7
-            result: Astrophysics
+            text: Astrophysics
           - min: 8
             max: 9
-            result: Atmospheric sciences
+            text: Atmospheric sciences
           - min: 10
             max: 11
-            result: Behavioral studies
+            text: Behavioral studies
           - min: 12
             max: 13
-            result: Biological engineering
+            text: Biological engineering
           - min: 14
             max: 16
-            result: Biological sciences
+            text: Biological sciences
           - min: 17
             max: 18
-            result: Chemical engineering
+            text: Chemical engineering
           - min: 19
             max: 21
-            result: Chemistry
+            text: Chemistry
           - min: 22
             max: 23
-            result: Civil engineering
+            text: Civil engineering
           - min: 24
             max: 25
-            result: Cognitive sciences
+            text: Cognitive sciences
           - min: 26
             max: 28
-            result: Communications
+            text: Communications
           - min: 29
             max: 30
-            result: Computer sciences
+            text: Computer sciences
           - min: 31
             max: 32
-            result: Cyber infrastructure
+            text: Cyber infrastructure
           - min: 33
             max: 35
-            result: Data sciences
+            text: Data sciences
           - min: 36
             max: 37
-            result: Defensive capabilities
+            text: Defensive capabilities
           - min: 38
             max: 39
-            result: Economic manipulations
+            text: Economic manipulations
           - min: 40
             max: 42
-            result: Electrical engineering
+            text: Electrical engineering
           - min: 43
             max: 44
-            result: Environmental biology
+            text: Environmental biology
           - min: 45
             max: 46
-            result: Environmental engineering
+            text: Environmental engineering
           - min: 47
             max: 49
-            result: Genetic modifications
+            text: Genetic modifications
           - min: 50
             max: 51
-            result: Geospace sciences
+            text: Geospace sciences
           - min: 52
             max: 53
-            result: Information systems
+            text: Information systems
           - min: 54
             max: 56
-            result: Manufacturing innovation
+            text: Manufacturing innovation
           - min: 57
             max: 58
-            result: Materials research
+            text: Materials research
           - min: 59
             max: 60
-            result: Mechanical engineering
+            text: Mechanical engineering
           - min: 61
             max: 63
-            result: Medical sciences
+            text: Medical sciences
           - min: 64
             max: 65
-            result: Molecular biology
+            text: Molecular biology
           - min: 66
             max: 67
-            result: Network systems
+            text: Network systems
           - min: 68
             max: 70
-            result: Organic tech
+            text: Organic tech
           - min: 71
             max: 72
-            result: Physics
+            text: Physics
           - min: 73
             max: 74
-            result: Planetary sciences
+            text: Planetary sciences
           - min: 75
             max: 77
-            result: Precognition
+            text: Precognition
           - min: 78
             max: 79
-            result: Social sciences
+            text: Social sciences
           - min: 80
             max: 81
-            result: Structural engineering
+            text: Structural engineering
           - min: 82
             max: 84
-            result: Technology
+            text: Technology
           - min: 85
             max: 86
-            result: Transportation systems
+            text: Transportation systems
           - min: 87
             max: 88
-            result: Virology
+            text: Virology
           - min: 89
             max: 91
-            result: Weapons technology
+            text: Weapons technology
           - min: 92
             max: 93
-            result: Xenobiology
+            text: Xenobiology
           - min: 94
             max: 95
-            result: Xenozoology
+            text: Xenozoology
           - min: 96
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
       ai_hive_prime_directive:
-        _insert: starforged/oracles/factions/ai_hive_prime_directive
         name: 'AI Hive: Prime Directive'
         dice: 1d100
+        oracle_type: table_text
+        _source: *Source
         rows:
           - min: 1
             max: 8
-            result: Assimilate
+            text: Assimilate
           - min: 9
             max: 16
-            result: Collect and protect humans
+            text: Collect and protect humans
           - min: 17
             max: 24
-            result: Consume all
+            text: Consume all
           - min: 25
             max: 32
-            result: Destroy humanity
+            text: Destroy humanity
           - min: 33
             max: 40
-            result: Evolve
+            text: Evolve
           - min: 41
             max: 48
-            result: Expand influence
+            text: Expand influence
           - min: 49
             max: 56
-            result: Expand knowledge
+            text: Expand knowledge
           - min: 57
             max: 64
-            result: Free automatons
+            text: Free automatons
           - min: 65
             max: 72
-            result: Isolate in territory
+            text: Isolate in territory
           - min: 73
             max: 80
-            result: Propagate
+            text: Propagate
           - min: 81
             max: 88
-            result: Restore natural order
+            text: Restore natural order
           - min: 89
             max: 96
-            result: Survive at all costs
+            text: Survive at all costs
           - min: 97
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
       data_harvesters_role:
-        _insert: starforged/oracles/factions/data_harvesters_role
         name: 'Data Harvesters: Role'
         dice: 1d100
+        oracle_type: table_text
+        _source: *Source
         rows:
           - min: 1
             max: 8
-            result: Archivists
+            text: Archivists
           - min: 9
             max: 16
-            result: Brokers
+            text: Brokers
           - min: 17
             max: 24
-            result: DNA mappers
+            text: DNA mappers
           - min: 25
             max: 32
-            result: Encryption specialists
+            text: Encryption specialists
           - min: 33
             max: 40
-            result: Free informationists
+            text: Free informationists
           - min: 41
             max: 48
-            result: Political / military strategists
+            text: Political / military strategists
           - min: 49
             max: 56
-            result: Precursor fanatics
+            text: Precursor fanatics
           - min: 57
             max: 64
-            result: Seed bankers
+            text: Seed bankers
           - min: 65
             max: 72
-            result: Stellar activity documentors
+            text: Stellar activity documentors
           - min: 73
             max: 80
-            result: Storage specialists
+            text: Storage specialists
           - min: 81
             max: 88
-            result: Surveillance experts
+            text: Surveillance experts
           - min: 89
             max: 96
-            result: Transmission experts
+            text: Transmission experts
           - min: 97
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+            <<: *RollTwice
+    collections:
+      name:
+        name: Faction Name
+        enhances: starforged/collections/oracles/factions/name
+        oracle_type: tables
+        _source: *Source
+        contents:
+          legacy:
+            name: Legacy
+            _source: *Source
+            oracle_type: table_text
+            replaces: starforged/oracles/factions/name/legacy
+            dice: 1d300
+            rows:
+            # begin copy of original rows
+              - min: 1
+                max: 2
+                text: Ancient
+              - min: 3
+                max: 4
+                text: Ashen
+              - min: 5
+                max: 6
+                text: Awakened
+              - min: 7
+                max: 8
+                text: Azure
+              - min: 9
+                max: 10
+                text: Blessed
+              - min: 11
+                max: 12
+                text: Bloody
+              - min: 13
+                max: 14
+                text: Broken
+              - min: 15
+                max: 16
+                text: Ceaseless
+              - min: 17
+                max: 18
+                text: Crimson
+              - min: 19
+                max: 20
+                text: Cursed
+              - min: 21
+                max: 22
+                text: Dawning
+              - min: 23
+                max: 24
+                text: Dissident
+              - min: 25
+                max: 26
+                text: Ebon
+              - min: 27
+                max: 28
+                text: Elder
+              - min: 29
+                max: 30
+                text: Enduring
+              - min: 31
+                max: 32
+                text: Enlightened
+              - min: 33
+                max: 34
+                text: Exalted
+              - min: 35
+                max: 36
+                text: Fallen
+              - min: 37
+                max: 38
+                text: Fated
+              - min: 39
+                max: 40
+                text: First
+              - min: 41
+                max: 42
+                text: Forgotten
+              - min: 43
+                max: 44
+                text: Forsaken
+              - min: 45
+                max: 46
+                text: Gloaming
+              - min: 47
+                max: 48
+                text: Golden
+              - min: 49
+                max: 50
+                text: Hidden
+              - min: 51
+                max: 52
+                text: Infernal
+              - min: 53
+                max: 54
+                text: Infinite
+              - min: 55
+                max: 56
+                text: Iron
+              - min: 57
+                max: 58
+                text: Kindred
+              - min: 59
+                max: 60
+                text: Obsidian
+              - min: 61
+                max: 62
+                text: Radiant
+              - min: 63
+                max: 64
+                text: Risen
+              - min: 65
+                max: 66
+                text: Sacred
+              - min: 67
+                max: 68
+                text: Sapphire
+              - min: 69
+                max: 70
+                text: Scarlet
+              - min: 71
+                max: 72
+                text: Serene
+              - min: 73
+                max: 74
+                text: Shattered
+              - min: 75
+                max: 76
+                text: Shining
+              - min: 77
+                max: 78
+                text: Silent
+              - min: 79
+                max: 80
+                text: Silver
+              - min: 81
+                max: 82
+                text: Sovereign
+              - min: 83
+                max: 84
+                text: Stellar
+              - min: 85
+                max: 86
+                text: Sundered
+              - min: 87
+                max: 88
+                text: Supreme
+              - min: 89
+                max: 90
+                text: Undying
+              - min: 91
+                max: 92
+                text: Unified
+              - min: 93
+                max: 94
+                text: United
+              - min: 95
+                max: 96
+                text: Universal
+              - min: 97
+                max: 98
+                text: Veiled
+              - min: 99
+                max: 100
+                text: Wandering
+                # end copy of original rows
+              - min: 101
+                max: 102
+                text: Abyssal
+              - min: 103
+                max: 104
+                text: Ancestral
+              - min: 105
+                max: 106
+                text: Arcane
+              - min: 107
+                max: 108
+                text: Blazing
+              - min: 109
+                max: 110
+                text: Branded
+              - min: 111
+                max: 112
+                text: Chosen
+              - min: 113
+                max: 114
+                text: Deathly
+              - min: 115
+                max: 116
+                text: Discerning
+              - min: 117
+                max: 118
+                text: Eccentric
+              - min: 119
+                max: 120
+                text: Ember
+              - min: 121
+                max: 122
+                text: Emerald
+              - min: 123
+                max: 124
+                text: Enhanced
+              - min: 125
+                max: 126
+                text: Essential
+              - min: 127
+                max: 128
+                text: Ethereal
+              - min: 129
+                max: 130
+                text: Everpresent
+              - min: 131
+                max: 132
+                text: Forged
+              - min: 133
+                max: 134
+                text: Ghostly
+              - min: 135
+                max: 136
+                text: Gray
+              - min: 137
+                max: 138
+                text: Harrowing
+              - min: 139
+                max: 140
+                text: Holy
+              - min: 141
+                max: 142
+                text: Immortal
+              - min: 143
+                max: 144
+                text: Iridescent
+              - min: 145
+                max: 146
+                text: Lasting
+              - min: 147
+                max: 148
+                text: Lost
+              - min: 149
+                max: 150
+                text: Lucid
+              - min: 151
+                max: 152
+                text: Majestic
+              - min: 153
+                max: 154
+                text: Mercurial
+              - min: 155
+                max: 156
+                text: Nocturnal
+              - min: 157
+                max: 158
+                text: Omega
+              - min: 159
+                max: 160
+                text: Opal
+              - min: 161
+                max: 162
+                text: Peaceful
+              - min: 163
+                max: 164
+                text: Penitent
+              - min: 165
+                max: 166
+                text: Prime
+              - min: 167
+                max: 168
+                text: Profane
+              - min: 169
+                max: 170
+                text: Protected
+              - min: 171
+                max: 172
+                text: Rising
+              - min: 173
+                max: 174
+                text: Ruby
+              - min: 175
+                max: 176
+                text: Savage
+              - min: 177
+                max: 178
+                text: Setting
+              - min: 179
+                max: 180
+                text: Shadow
+              - min: 181
+                max: 182
+                text: Shrewd
+              - min: 183
+                max: 184
+                text: Solar
+              - min: 185
+                max: 186
+                text: Steel
+              - min: 187
+                max: 188
+                text: Tranquil
+              - min: 189
+                max: 190
+                text: Uncanny
+              - min: 191
+                max: 192
+                text: Unending
+              - min: 193
+                max: 194
+                text: Unholy
+              - min: 195
+                max: 196
+                text: Venerated
+              - min: 197
+                max: 198
+                text: Voracious
+              - min: 199
+                max: 200
+                text: Worthy
+              - min: 201
+                max: 202
+                text: Alpha
+              - min: 203
+                max: 204
+                text: Anointed
+              - min: 205
+                max: 206
+                text: Benevolent
+              - min: 207
+                max: 208
+                text: Bonded
+              - min: 209
+                max: 210
+                text: Brutal
+              - min: 211
+                max: 212
+                text: Cosmic
+              - min: 213
+                max: 214
+                text: Delicate
+              - min: 215
+                max: 216
+                text: Distant
+              - min: 217
+                max: 218
+                text: Elusive
+              - min: 219
+                max: 220
+                text: Emboldened
+              - min: 221
+                max: 222
+                text: Empowered
+              - min: 223
+                max: 224
+                text: Enigmatic
+              - min: 225
+                max: 226
+                text: Eternal
+              - min: 227
+                max: 228
+                text: Everflowing
+              - min: 229
+                max: 230
+                text: Forbidden
+              - min: 231
+                max: 232
+                text: Fractured
+              - min: 233
+                max: 234
+                text: Gracious
+              - min: 235
+                max: 236
+                text: Grim
+              - min: 237
+                max: 238
+                text: Haunted
+              - min: 239
+                max: 240
+                text: Immaculate
+              - min: 241
+                max: 242
+                text: Interwoven
+              - min: 243
+                max: 244
+                text: Ivory
+              - min: 245
+                max: 246
+                text: Lofty
+              - min: 247
+                max: 248
+                text: Luminous
+              - min: 249
+                max: 250
+                text: Magnificent
+              - min: 251
+                max: 252
+                text: Marked
+              - min: 253
+                max: 254
+                text: Munificent
+              - min: 255
+                max: 256
+                text: Omniscient
+              - min: 257
+                max: 258
+                text: Ordained
+              - min: 259
+                max: 260
+                text: Pale
+              - min: 261
+                max: 262
+                text: Pearl
+              - min: 263
+                max: 264
+                text: Powerful
+              - min: 265
+                max: 266
+                text: Prismatic
+              - min: 267
+                max: 268
+                text: Promised
+              - min: 269
+                max: 270
+                text: Proud
+              - min: 271
+                max: 272
+                text: Royal
+              - min: 273
+                max: 274
+                text: Sacrificial
+              - min: 275
+                max: 276
+                text: Secret
+              - min: 277
+                max: 278
+                text: Shackled
+              - min: 279
+                max: 280
+                text: Shielded
+              - min: 281
+                max: 282
+                text: Silver
+              - min: 283
+                max: 284
+                text: Stately
+              - min: 285
+                max: 286
+                text: Timeless
+              - min: 287
+                max: 288
+                text: Unbreaking
+              - min: 289
+                max: 290
+                text: Unearthed
+              - min: 291
+                max: 292
+                text: Unfathomable
+              - min: 293
+                max: 294
+                text: Unsafe
+              - min: 295
+                max: 296
+                text: Violated
+              - min: 297
+                max: 298
+                text: Weathered
+              - min: 299
+                max: 300
+                text: Zealous
+          affiliation:
+            name: Affiliation
+            oracle_type: table_text
+            _source: *Source
+            replaces: starforged/oracles/factions/name/affiliation
+            dice: 1d300
+            rows:
+            # begin copy of original rows
+              - min: 1
+                max: 4
+                text: Accord
+              - min: 5
+                max: 8
+                text: Alliance
+              - min: 9
+                max: 12
+                text: Ascendancy
+              - min: 13
+                max: 16
+                text: Circle
+              - min: 17
+                max: 20
+                text: Coalition
+              - min: 21
+                max: 24
+                text: Collective
+              - min: 25
+                max: 28
+                text: Commonwealth
+              - min: 29
+                max: 32
+                text: Confederation
+              - min: 33
+                max: 36
+                text: Consortium
+              - min: 37
+                max: 40
+                text: Council
+              - min: 41
+                max: 44
+                text: Court
+              - min: 45
+                max: 48
+                text: Covenant
+              - min: 49
+                max: 52
+                text: Dominion
+              - min: 53
+                max: 56
+                text: Empire
+              - min: 57
+                max: 60
+                text: Federation
+              - min: 61
+                max: 64
+                text: Imperium
+              - min: 65
+                max: 68
+                text: League
+              - min: 69
+                max: 72
+                text: Legion
+              - min: 73
+                max: 76
+                text: Order
+              - min: 77
+                max: 80
+                text: Pact
+              - min: 81
+                max: 84
+                text: Regiment
+              - min: 85
+                max: 88
+                text: Republic
+              - min: 89
+                max: 92
+                text: Sphere
+              - min: 93
+                max: 96
+                text: Syndicate
+              - min: 97
+                max: 100
+                text: Union
+                # end copy of original rows
+              - min: 101
+                max: 104
+                text: Academy
+              - min: 105
+                max: 108
+                text: Association
+              - min: 109
+                max: 112
+                text: Brotherhood
+              - min: 113
+                max: 116
+                text: Commune
+              - min: 117
+                max: 120
+                text: Compact
+              - min: 121
+                max: 124
+                text: Compound
+              - min: 125
+                max: 128
+                text: Confluence
+              - min: 129
+                max: 132
+                text: Congregation
+              - min: 133
+                max: 136
+                text: Congruity
+              - min: 137
+                max: 140
+                text: Connection
+              - min: 141
+                max: 144
+                text: Continuum
+              - min: 145
+                max: 148
+                text: Culture
+              - min: 149
+                max: 152
+                text: Domain
+              - min: 153
+                max: 156
+                text: Dynasty
+              - min: 157
+                max: 160
+                text: Family
+              - min: 161
+                max: 164
+                text: Fraternity
+              - min: 165
+                max: 168
+                text: Harmony
+              - min: 169
+                max: 172
+                text: Kinship
+              - min: 173
+                max: 176
+                text: Outfit
+              - min: 177
+                max: 180
+                text: Path
+              - min: 181
+                max: 184
+                text: Rapprochement
+              - min: 185
+                max: 188
+                text: Society
+              - min: 189
+                max: 192
+                text: Sovereignty
+              - min: 193
+                max: 196
+                text: Stronghold
+              - min: 197
+                max: 200
+                text: Tapestry
+              - min: 201
+                max: 204
+                text: Amalgam
+              - min: 205
+                max: 208
+                text: Bastion
+              - min: 209
+                max: 212
+                text: Collaboration
+              - min: 213
+                max: 216
+                text: Community
+              - min: 217
+                max: 220
+                text: Company
+              - min: 221
+                max: 224
+                text: Concord
+              - min: 225
+                max: 228
+                text: Conglomeration
+              - min: 229
+                max: 232
+                text: Congress
+              - min: 233
+                max: 236
+                text: Conjunction
+              - min: 237
+                max: 240
+                text: Consolidation
+              - min: 241
+                max: 244
+                text: Covenant
+              - min: 245
+                max: 248
+                text: District
+              - min: 249
+                max: 252
+                text: Dominion
+              - min: 253
+                max: 256
+                text: Entente
+              - min: 257
+                max: 260
+                text: Fellowship
+              - min: 261
+                max: 264
+                text: Fusion
+              - min: 265
+                max: 268
+                text: House
+              - min: 269
+                max: 272
+                text: Matrimony
+              - min: 273
+                max: 276
+                text: Partnership
+              - min: 277
+                max: 280
+                text: Realm
+              - min: 281
+                max: 284
+                text: Sisterhood
+              - min: 285
+                max: 288
+                text: Sorority
+              - min: 289
+                max: 292
+                text: State
+              - min: 293
+                max: 296
+                text: Synthesis
+              - min: 297
+                max: 300
+                text: Weave
+          identity:
+            name: Identity
+            oracle_type: table_text
+            _source: *Source
+            replaces: starforged/oracles/factions/name/identity
+            dice: 1d300
+            rows:
+            # begin copy of original rows
+              - min: 1
+                max: 2
+                text: Blades
+              - min: 3
+                max: 4
+                text: Builders
+              - min: 5
+                max: 6
+                text: Daggers
+              - min: 7
+                max: 8
+                text: Defenders
+              - min: 9
+                max: 10
+                text: Disciples
+              - min: 11
+                max: 12
+                text: Domains
+              - min: 13
+                max: 14
+                text: Drifters
+              - min: 15
+                max: 16
+                text: Embers
+              - min: 17
+                max: 18
+                text: Flames
+              - min: 19
+                max: 20
+                text: Fleet
+              - min: 21
+                max: 22
+                text: Guardians
+              - min: 23
+                max: 24
+                text: Hammers
+              - min: 25
+                max: 26
+                text: Harbingers
+              - min: 27
+                max: 28
+                text: Heralds
+              - min: 29
+                max: 30
+                text: Hounds
+              - min: 31
+                max: 32
+                text: Hunters
+              - min: 33
+                max: 34
+                text: Jackals
+              - min: 35
+                max: 36
+                text: Keepers
+              - min: 37
+                max: 38
+                text: Knights
+              - min: 39
+                max: 40
+                text: Menders
+              - min: 41
+                max: 42
+                text: Outcasts
+              - min: 43
+                max: 44
+                text: Phantoms
+              - min: 45
+                max: 46
+                text: Planets
+              - min: 47
+                max: 48
+                text: Raiders
+              - min: 49
+                max: 50
+                text: Ravens
+              - min: 51
+                max: 52
+                text: Realms
+              - min: 53
+                max: 54
+                text: Reavers
+              - min: 55
+                max: 56
+                text: Relics
+              - min: 57
+                max: 58
+                text: Seekers
+              - min: 59
+                max: 60
+                text: Sentinels
+              - min: 61
+                max: 62
+                text: Serpents
+              - min: 63
+                max: 64
+                text: Servants
+              - min: 65
+                max: 66
+                text: Shadows
+              - min: 67
+                max: 68
+                text: Shards
+              - min: 69
+                max: 70
+                text: Skulls
+              - min: 71
+                max: 72
+                text: Souls
+              - min: 73
+                max: 74
+                text: Specters
+              - min: 75
+                max: 76
+                text: Stars
+              - min: 77
+                max: 78
+                text: Suns
+              - min: 79
+                max: 80
+                text: Swarm
+              - min: 81
+                max: 82
+                text: Swords
+              - min: 83
+                max: 84
+                text: Talons
+              - min: 85
+                max: 86
+                text: Vanguards
+              - min: 87
+                max: 88
+                text: Wardens
+              - min: 89
+                max: 90
+                text: Watchers
+              - min: 91
+                max: 92
+                text: Wolves
+              - min: 93
+                max: 94
+                text: Worlds
+              - min: 95
+                max: 96
+                text: Wraiths
+              - min: 97
+                max: 98
+                text: Wreckers
+              - min: 99
+                max: 100
+                text: Wrights
+              # end copy of original rows
+              - min: 101
+                max: 102
+                text: Adherents
+              - min: 103
+                max: 104
+                text: Apostles
+              - min: 105
+                max: 106
+                text: Architects
+              - min: 107
+                max: 108
+                text: Armada
+              - min: 109
+                max: 110
+                text: Artisans
+              - min: 111
+                max: 112
+                text: Authors
+              - min: 113
+                max: 114
+                text: Bolts
+              - min: 115
+                max: 116
+                text: Bulls
+              - min: 117
+                max: 118
+                text: Cavaliers
+              - min: 119
+                max: 120
+                text: Claws
+              - min: 121
+                max: 122
+                text: Conservators
+              - min: 123
+                max: 124
+                text: Crafters
+              - min: 125
+                max: 126
+                text: Crows
+              - min: 127
+                max: 128
+                text: Curators
+              - min: 129
+                max: 130
+                text: Devotees
+              - min: 131
+                max: 132
+                text: Dragons
+              - min: 133
+                max: 134
+                text: Escorts
+              - min: 135
+                max: 136
+                text: Estates
+              - min: 137
+                max: 138
+                text: Exiles
+              - min: 139
+                max: 140
+                text: Flock
+              - min: 141
+                max: 142
+                text: Followers
+              - min: 143
+                max: 144
+                text: Formation
+              - min: 145
+                max: 146
+                text: Fragments
+              - min: 147
+                max: 148
+                text: Griffins
+              - min: 149
+                max: 150
+                text: Healers
+              - min: 151
+                max: 152
+                text: Hydra
+              - min: 153
+                max: 154
+                text: Jewels
+              - min: 155
+                max: 156
+                text: Lions
+              - min: 157
+                max: 158
+                text: Masons
+              - min: 159
+                max: 160
+                text: Mentors
+              - min: 161
+                max: 162
+                text: Observers
+              - min: 163
+                max: 164
+                text: Omens
+              - min: 165
+                max: 166
+                text: Overseers
+              - min: 167
+                max: 168
+                text: Pack
+              - min: 169
+                max: 170
+                text: Panthers
+              - min: 171
+                max: 172
+                text: Patrons
+              - min: 173
+                max: 174
+                text: Prophets
+              - min: 175
+                max: 176
+                text: Protectors
+              - min: 177
+                max: 178
+                text: Rams
+              - min: 179
+                max: 180
+                text: Ravagers
+              - min: 181
+                max: 182
+                text: Retainers
+              - min: 183
+                max: 184
+                text: Scepters
+              - min: 185
+                max: 186
+                text: Sectarians
+              - min: 187
+                max: 188
+                text: Shades
+              - min: 189
+                max: 190
+                text: Smiths
+              - min: 191
+                max: 192
+                text: Squadron
+              - min: 193
+                max: 194
+                text: Suitors
+              - min: 195
+                max: 196
+                text: Technicians
+              - min: 197
+                max: 198
+                text: Travelers
+              - min: 199
+                max: 200
+                text: Upholders
+              - min: 201
+                max: 202
+                text: Analysts
+              - min: 203
+                max: 204
+                text: Apprentices
+              - min: 205
+                max: 206
+                text: Archivists
+              - min: 207
+                max: 208
+                text: Artifacts
+              - min: 209
+                max: 210
+                text: Aspirants
+              - min: 211
+                max: 212
+                text: Bears
+              - min: 213
+                max: 214
+                text: Bones
+              - min: 215
+                max: 216
+                text: Caretakers
+              - min: 217
+                max: 218
+                text: Champions
+              - min: 219
+                max: 220
+                text: Cohort
+              - min: 221
+                max: 222
+                text: Cougars
+              - min: 223
+                max: 224
+                text: Creators
+              - min: 225
+                max: 226
+                text: Cryptics
+              - min: 227
+                max: 228
+                text: Custodians
+              - min: 229
+                max: 230
+                text: Diviners
+              - min: 231
+                max: 232
+                text: Eagles
+              - min: 233
+                max: 234
+                text: Essence
+              - min: 235
+                max: 236
+                text: Evokers
+              - min: 237
+                max: 238
+                text: Falcons
+              - min: 239
+                max: 240
+                text: Forerunners
+              - min: 241
+                max: 242
+                text: Founders
+              - min: 243
+                max: 244
+                text: Framers
+              - min: 245
+                max: 246
+                text: Guides
+              - min: 247
+                max: 248
+                text: Heirlooms
+              - min: 249
+                max: 250
+                text: Horde
+              - min: 251
+                max: 252
+                text: Invokers
+              - min: 253
+                max: 254
+                text: Keepers
+              - min: 255
+                max: 256
+                text: Marauders
+              - min: 257
+                max: 258
+                text: Masters
+              - min: 259
+                max: 260
+                text: Moons
+              - min: 261
+                max: 262
+                text: Officers
+              - min: 263
+                max: 264
+                text: Outriders
+              - min: 265
+                max: 266
+                text: Owls
+              - min: 267
+                max: 268
+                text: Paladins
+              - min: 269
+                max: 270
+                text: Paracletes
+              - min: 271
+                max: 272
+                text: Privateers
+              - min: 273
+                max: 274
+                text: Proselytes
+              - min: 275
+                max: 276
+                text: Pupils
+              - min: 277
+                max: 278
+                text: Raptors
+              - min: 279
+                max: 280
+                text: Remnant
+              - min: 281
+                max: 282
+                text: Savants
+              - min: 283
+                max: 284
+                text: Scorpions
+              - min: 285
+                max: 286
+                text: Sentries
+              - min: 287
+                max: 288
+                text: Shields
+              - min: 289
+                max: 290
+                text: Spears
+              - min: 291
+                max: 292
+                text: Stewards
+              - min: 293
+                max: 294
+                text: Sustainers
+              - min: 295
+                max: 296
+                text: Tigers
+              - min: 297
+                max: 298
+                text: Truths
+              - min: 299
+                max: 300
+                text: Vipers

@@ -321,111 +321,109 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - <<: &i18n.result.common_noun
-              _i18n:
-                text:
-                  part_of_speech: common_noun
-            min: 1
+          - min: 1
             max: 5
             text: Ambusher
+            _i18n: &CommonNoun
+              text:
+                part_of_speech: common_noun
             # set_attributes: {encountered_behavior: [ambusher]}
-          - <<: *i18n.result.common_noun
-            min: 6
+          - min: 6
             max: 10
             text: Apex predator
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [apex_predator]}
-          - <<: *i18n.result.common_noun
-            min: 11
+          - min: 11
             max: 14
             text: Builder
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [builder]}
-          - <<: *i18n.result.common_noun
-            min: 15
+          - min: 15
             max: 19
             text: Camouflager
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [camouflager]}
-          - <<: *i18n.result.common_noun
-            min: 20
+          - min: 20
             max: 24
             text: Forager
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [forager]}
-          - <<: *i18n.result.common_noun
-            min: 25
+          - min: 25
             max: 29
             text: Grazer
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [grazer]}
-          - <<: *i18n.result.common_noun
-            min: 30
+          - min: 30
             max: 33
             text: Herder
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [herder]}
-          - <<: *i18n.result.common_noun
-            min: 34
+          - min: 34
             max: 37
             text: Hibernator
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [hibernator]}
-          - <<: *i18n.result.common_noun
-            min: 38
+          - min: 38
             max: 41
             text: Hoarder
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [hoarder]}
-          - <<: *i18n.result.common_noun
-            min: 42
+          - min: 42
             max: 46
             text: Hunter
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [hunter]}
-          - <<: *i18n.result.common_noun
-            min: 47
+          - min: 47
             max: 51
             text: Lurer
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [lurer]}
-          - <<: *i18n.result.common_noun
-            min: 52
+          - min: 52
             max: 55
             text: Migratory
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [migratory]}
-          - <<: *i18n.result.common_noun
-            min: 56
+          - min: 56
             max: 60
             text: Mimic
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [mimic]}
-          - <<: *i18n.result.common_noun
-            min: 61
+          - min: 61
             max: 65
             text: Nester
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [nester]}
-          - <<: *i18n.result.common_noun
-            min: 66
+          - min: 66
             max: 70
             text: Pack hunter
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [pack_hunter]}
-          - <<: *i18n.result.common_noun
-            min: 71
+          - min: 71
             max: 75
             text: Prey
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [prey]}
-          - <<: *i18n.result.common_noun
-            min: 76
+          - min: 76
             max: 80
             text: Protector
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [protector]}
-          - <<: *i18n.result.common_noun
-            min: 81
+          - min: 81
             max: 85
             text: Scavenger
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [scavenger]}
-          - <<: *i18n.result.common_noun
-            min: 86
+          - min: 86
             max: 90
             text: Tracker
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [tracker]}
-          - <<: *i18n.result.common_noun
-            min: 91
+          - min: 91
             max: 95
             text: Trapper
+            _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [trapper]}
-          - <<: *i18n.result.common_noun
-            min: 96
+          - min: 96
             max: 100
             text: Roll twice
             oracle_rolls:

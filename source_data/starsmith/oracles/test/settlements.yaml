@@ -1,0 +1,2207 @@
+_id: starsmith
+datasworn_version: 0.0.9
+package_type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith
+  authors:
+    - name: Eric Bright
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
+oracles:
+  settlements:
+    name: Settlements
+    oracle_type: tables
+    # summary: Extension of the oracle table
+    # description: Extension of the oracle table
+    _source: *Source
+    contents:
+      location:
+        name: Location
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/settlements/location
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 140
+            icon: icon/oracles/location/planetside.svg
+            text: Asteroid belt
+          - min: 141
+            max: 175
+            icon: icon/oracles/location/planetside.svg
+            text: Nebula cloud
+          - min: 176
+            max: 200
+            icon: icon/oracles/location/planetside.svg
+            text: Wormhole
+          - min: 201
+            max: 240
+            icon: icon/oracles/location/planetside.svg
+            text: Asteroid
+          - min: 241
+            max: 275
+            icon: icon/oracles/location/planetside.svg
+            text: Planetary ring
+          - min: 276
+            max: 300
+            icon: icon/oracles/location/planetside.svg
+            text: Exoplanet
+      first_look:
+        name: First Look
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/settlements/first_look
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 104
+            text: Mix of cultural architecture
+          - min: 105
+            max: 108
+            text: Built within a dome
+          - min: 109
+            max: 114
+            text: Built upon previous settlement
+          - min: 115
+            max: 120
+            text: Built with freshly fabricated materials
+          - min: 121
+            max: 125
+            text: Takes advantage of natural terrain defenses
+          - min: 126
+            max: 129
+            text: Large greenhouse or arboretum
+          - min: 130
+            max: 134
+            text: Shielding or camouflage system
+          - min: 135
+            max: 137
+            text: Construction cobbled together
+          - min: 138
+            max: 143
+            text: Utilitarian architecture
+          - min: 144
+            max: 148
+            text: Ineffective defenses
+          - min: 149
+            max: 151
+            text: Independent modules
+          - min: 152
+            max: 156
+            text: Strong presence of authority
+          - min: 157
+            max: 161
+            text: Location of natural beauty
+          - min: 162
+            max: 165
+            text: Lack of emblems or signage
+          - min: 166
+            max: 171
+            text: Geometric architecture
+          - min: 172
+            max: 176
+            text: Significant repairs underway
+          - min: 177
+            max: 180
+            text: Structures tightly packed
+          - min: 181
+            max: 183
+            text: Permanent structures in progress
+          - min: 184
+            max: 187
+            text: Vibrant or verdant habitat
+          - min: 188
+            max: 190
+            text: Within or near ▶Precursor Vault
+          - min: 191
+            max: 200
+            text: ▶Descriptor + Focus
+          - min: 201
+            max: 204
+            text: Rounded or curved architecture
+          - min: 205
+            max: 208
+            text: Built side by side with ancient structures
+          - min: 209
+            max: 214
+            text: Transit tubes connecting areas
+          - min: 215
+            max: 220
+            text: Industrial vehicles or tools
+          - min: 221
+            max: 225
+            text: Settlement itself is a working ship
+          - min: 226
+            max: 229
+            text: Spaceport or docking area
+          - min: 230
+            max: 234
+            text: Sensor or detection grid
+          - min: 235
+            max: 237
+            text: Prominent power plant
+          - min: 238
+            max: 243
+            text: Neon lights and attention grabbing signs
+          - min: 244
+            max: 248
+            text: Damaged defenses
+          - min: 249
+            max: 251
+            text: Heavy vehicle traffic
+          - min: 252
+            max: 256
+            text: Large, shared spaces
+          - min: 257
+            max: 261
+            text: Location with unusual atmospheric conditions
+          - min: 262
+            max: 265
+            text: Emphasis on the arts
+          - min: 266
+            max: 271
+            text: Brutalist architecture
+          - min: 272
+            max: 276
+            text: Aqueduct or water purification plant
+          - min: 277
+            max: 280
+            text: Structures stacked vertically
+          - min: 281
+            max: 283
+            text: Structures being dismantled
+          - min: 284
+            max: 287
+            text: Stertile or pristine habitat
+          - min: 288
+            max: 290
+            text: Within or near ▶Precursor Vault
+          - min: 291
+            max: 300
+            text: ▶Descriptor + Focus
+      contact:
+        name: Initial Contact
+        oracle_type: table_text
+        dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 1
+            max: 20
+            text: Welcoming
+          - min: 21
+            max: 30
+            text: Neutral / automated
+          - min: 31
+            max: 50
+            text: Wary
+          - min: 51
+            max: 60
+            text: Uncooperative
+          - min: 61
+            max: 70
+            text: Hostile
+          - min: 71
+            max: 83
+            text: Asking for help
+          - min: 84
+            max: 86
+            text: In battle
+          - min: 87
+            max: 89
+            text: Captured
+          - min: 90
+            max: 92
+            text: Unresponsive
+          - min: 93
+            max: 95
+            text: Destroyed
+          - min: 96
+            max: 100
+            text: ▶Derelict
+          - min: 101
+            max: 120
+            text: Helpful
+          - min: 121
+            max: 130
+            text: All business
+          - min: 131
+            max: 150
+            text: Tolerant
+          - min: 151
+            max: 160
+            text: Defensive
+          - min: 161
+            max: 170
+            text: Easily offended
+          - min: 171
+            max: 183
+            text: Asking for bribe
+          - min: 184
+            max: 186
+            text: Environmental crisis
+          - min: 187
+            max: 189
+            text: Quarantined
+          - min: 190
+            max: 192
+            text: Looped distress call
+          - min: 193
+            max: 195
+            text: Completely shielded
+          - min: 196
+            max: 200
+            text: ▶Derelict
+          - min: 201
+            max: 220
+            text: Informative
+          - min: 221
+            max: 230
+            text: Apathetic
+          - min: 231
+            max: 250
+            text: Settlement first
+          - min: 251
+            max: 260
+            text: Stubborn contrarian
+          - min: 261
+            max: 270
+            text: Arrogant jerk
+          - min: 271
+            max: 283
+            text: Bureaucratic protocols
+          - min: 284
+            max: 286
+            text: Social upheaval
+          - min: 287
+            max: 289
+            text: Cultural observance
+          - min: 290
+            max: 292
+            text: Communications down
+          - min: 293
+            max: 295
+            text: Attacks on sight
+          - min: 296
+            max: 300
+            text: ▶Derelict
+      authority:
+        name: Authority
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/settlements/authority
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 115
+            text: Tribal
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 116
+            max: 130
+            text: Theocratic
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 131
+            max: 145
+            text: Feudalistic
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 146
+            max: 155
+            text: Democratic
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 156
+            max: 170
+            text: Authoritarian
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 171
+            max: 185
+            text: Oligarchic
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 186
+            max: 200
+            text: Tyrannical
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 201
+            max: 215
+            text: Cult-like
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 216
+            max: 230
+            text: Legalistic
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 231
+            max: 245
+            text: Collective good first
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 246
+            max: 255
+            text: Charitable
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 256
+            max: 270
+            text: Single-minded
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 271
+            max: 285
+            text: Prejudiced
+            _i18n:
+              text:
+                part_of_speech: adjective
+          - min: 286
+            max: 300
+            text: Takes advantage
+            _i18n:
+              text:
+                part_of_speech: adjective
+      projects:
+        name: Projects
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/settlements/projects
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 105
+            text: Air supply
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 106
+            max: 107
+            text: Cultural arts
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 108
+            max: 109
+            text: Coding
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 110
+            max: 111
+            text: Trade routes
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 112
+            max: 113
+            text: Communications
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 114
+            max: 117
+            text: Fortification
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 118
+            max: 122
+            text: Fuel
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 123
+            max: 125
+            text: Architecture
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 126
+            max: 127
+            text: Gambling
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 128
+            max: 129
+            text: Waste recycling
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 130
+            max: 131
+            text: Housing
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 132
+            max: 133
+            text: Repurposing
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 134
+            max: 137
+            text: Planetary mapping
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 138
+            max: 139
+            text: Laws
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 140
+            max: 141
+            text: Education
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 142
+            max: 143
+            text: Trapping
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 144
+            max: 146
+            text: Infrastructure
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 147
+            max: 149
+            text: Psychological
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 150
+            max: 151
+            text: Xenobiology
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 152
+            max: 157
+            text: Animal husbandry
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 158
+            max: 159
+            text: Political activism
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 160
+            max: 162
+            text: Patrolling
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 163
+            max: 165
+            text: Weaponry
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 166
+            max: 169
+            text: Piracy
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 170
+            max: 172
+            text: Espionage
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 173
+            max: 175
+            text: Planning new settlement
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 176
+            max: 178
+            text: Community identity
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 179
+            max: 184
+            text: Rationing
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 185
+            max: 186
+            text: Perimeter fencing
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 187
+            max: 188
+            text: Atmosphere building
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 189
+            max: 192
+            text: Peace treaty
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 193
+            max: 195
+            text: Security
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 196
+            max: 200
+            text: ▶Action + Theme
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 201
+            max: 205
+            text: Water supply
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 206
+            max: 207
+            text: Beautification
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 208
+            max: 209
+            text: Job creation
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 210
+            max: 211
+            text: Economy building
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 212
+            max: 213
+            text: Restructuring command
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 214
+            max: 217
+            text: Spaceport
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 218
+            max: 222
+            text: Pollution control
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 223
+            max: 225
+            text: Technology
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 226
+            max: 227
+            text: Mindfulness
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 228
+            max: 229
+            text: Soil health
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 230
+            max: 231
+            text: Emergency planning
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 232
+            max: 233
+            text: "Territory withdrawal "
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 234
+            max: 237
+            text: Resource surveying
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 238
+            max: 239
+            text: Political ceremony
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 240
+            max: 241
+            text: Journalism
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 242
+            max: 243
+            text: Population growth
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 244
+            max: 246
+            text: Industrialization
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 247
+            max: 249
+            text: Community health
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 250
+            max: 251
+            text: Habitat building
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 252
+            max: 257
+            text: Resource management
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 258
+            max: 259
+            text: Weather manipulation
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 260
+            max: 262
+            text: Demolition
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 263
+            max: 265
+            text: Data mining
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 266
+            max: 269
+            text: Reclamation
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 270
+            max: 272
+            text: Intelligence gathering
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 273
+            max: 275
+            text: Eidolon drive upgrades
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 276
+            max: 278
+            text: Encouraging diversity
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 279
+            max: 284
+            text: Nutrition
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 285
+            max: 286
+            text: Defining authority
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 287
+            max: 288
+            text: Warmongering
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 289
+            max: 292
+            text: Connecting settlements
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 293
+            max: 295
+            text: Alliance building
+            _i18n:
+              text:
+                part_of_speech: common_noun
+          - min: 296
+            max: 300
+            text: ▶Action + Theme
+            _i18n:
+              text:
+                part_of_speech: common_noun
+      trouble:
+        name: Trouble
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/settlements/trouble
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 103
+            text: Personal rivalry
+          - min: 104
+            max: 106
+            text: Haunted by past wrong
+          - min: 107
+            max: 108
+            text: Production halted
+          - min: 109
+            max: 111
+            text: Unjust leadership
+          - min: 112
+            max: 113
+            text: Disastrous accident
+          - min: 114
+            max: 117
+            text: Innocent accused
+          - min: 118
+            max: 121
+            text: Lost trade cargo
+          - min: 122
+            max: 124
+            text: Urgent expedition
+          - min: 125
+            max: 128
+            text: Water poisoned
+          - min: 129
+            max: 132
+            text: Political schism
+          - min: 133
+            max: 134
+            text: Dark omens
+          - min: 135
+            max: 138
+            text: Environmental change
+          - min: 139
+            max: 142
+            text: Lifeform on the hunt
+          - min: 143
+            max: 145
+            text: Infrastructure damaged
+          - min: 146
+            max: 148
+            text: Criminal organization
+          - min: 149
+            max: 151
+            text: Cleanup from disaster
+          - min: 152
+            max: 153
+            text: Scourge of vermin
+          - min: 154
+            max: 155
+            text: Debt collectors arrive
+          - min: 156
+            max: 157
+            text: Mysterious thefts
+          - min: 158
+            max: 160
+            text: Citizens trapped
+          - min: 161
+            max: 162
+            text: Dangerous mutations
+          - min: 163
+            max: 165
+            text: Surge of refugees
+          - min: 166
+            max: 167
+            text: Disregard for democracy
+          - min: 168
+            max: 169
+            text: Vehicle crash
+          - min: 170
+            max: 171
+            text: Outcast seeks revenge
+          - min: 172
+            max: 174
+            text: Elaborate hoax
+          - min: 175
+            max: 176
+            text: Someone is captured
+          - min: 177
+            max: 178
+            text: Conspiratorial cover up
+          - min: 179
+            max: 180
+            text: Destroyed tech or object
+          - min: 181
+            max: 183
+            text: Mass hysteria
+          - min: 184
+            max: 186
+            text: Radiation surge
+          - min: 187
+            max: 188
+            text: Unstable technology
+          - min: 189
+            max: 190
+            text: Vulnerable supply line
+          - min: 191
+            max: 200
+            text: ▶Action + Theme
+          - min: 201
+            max: 203
+            text: Rival settlement
+          - min: 204
+            max: 206
+            text: There’s a score to settle
+          - min: 207
+            max: 208
+            text: Mine collapse
+          - min: 209
+            max: 211
+            text: Incompetent leadership
+          - min: 212
+            max: 213
+            text: Dangerous tradition
+          - min: 214
+            max: 217
+            text: Reckless warmongering
+          - min: 218
+            max: 221
+            text: Pirates plague travelers
+          - min: 222
+            max: 224
+            text: Resources stolen
+          - min: 225
+            max: 228
+            text: Blighted crops
+          - min: 229
+            max: 232
+            text: Political protests
+          - min: 233
+            max: 234
+            text: Detrimental isolationism
+          - min: 235
+            max: 238
+            text: Defying of physics
+          - min: 239
+            max: 242
+            text: Prolific lifeforms
+          - min: 243
+            max: 245
+            text: Loss of vehicles
+          - min: 246
+            max: 248
+            text: Treaty abandoned
+          - min: 249
+            max: 251
+            text: Communications lost
+          - min: 252
+            max: 253
+            text: Symbiotic lifeforms lost
+          - min: 254
+            max: 255
+            text: People refusing taxes
+          - min: 256
+            max: 257
+            text: Open defiance of laws
+          - min: 258
+            max: 260
+            text: Dangerous celestial event
+          - min: 261
+            max: 262
+            text: Nutrient deficiencies
+          - min: 263
+            max: 265
+            text: War erupts
+          - min: 266
+            max: 267
+            text: Oligarchs tighten grip
+          - min: 268
+            max: 269
+            text: Habitat compromised
+          - min: 270
+            max: 271
+            text: Stranger sows discord
+          - min: 272
+            max: 274
+            text: Fleecing the population
+          - min: 275
+            max: 276
+            text: Someone is threatened
+          - min: 277
+            max: 278
+            text: Assassination attempt
+          - min: 279
+            max: 280
+            text: Defenses compromised
+          - min: 281
+            max: 283
+            text: Fearful witch hunts
+          - min: 284
+            max: 286
+            text: Shift in gravity
+          - min: 287
+            max: 288
+            text: Inconsistent energy supply
+          - min: 289
+            max: 290
+            text: Vulnerable people group
+          - min: 291
+            max: 300
+            text: ▶Action + Theme
+      name:
+        name: Name
+        oracle_type: table_text
+        dice: 1d300
+        replaces: starforged/oracles/settlements/name
+        # summary: Extension of the oracle table
+        _source: *Source
+        rows:
+          - min: 101
+            max: 101
+            text: Achilles
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 102
+            max: 102
+            text: Adin
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 103
+            max: 103
+            text: Aeternitas
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 104
+            max: 104
+            text: Aion
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 105
+            max: 105
+            text: Amphitrite
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 106
+            max: 106
+            text: Ananta
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 107
+            max: 107
+            text: Anytos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 108
+            max: 108
+            text: Apollo
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 109
+            max: 109
+            text: Artemis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 110
+            max: 110
+            text: Ashta
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 111
+            max: 111
+            text: Asteria
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 112
+            max: 112
+            text: Athena
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 113
+            max: 113
+            text: Atmos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 114
+            max: 114
+            text: Ayeliski
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 115
+            max: 115
+            text: Bacchus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 116
+            max: 116
+            text: Balder
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 117
+            max: 117
+            text: Beyla
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 118
+            max: 118
+            text: Borealis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 119
+            max: 119
+            text: Brahma
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 120
+            max: 120
+            text: Caelus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 121
+            max: 121
+            text: Chronos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 122
+            max: 122
+            text: Crescent
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 123
+            max: 123
+            text: Cronus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 124
+            max: 124
+            text: Cybele
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 125
+            max: 125
+            text: Deimos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 126
+            max: 126
+            text: Demeter
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 127
+            max: 127
+            text: Dionysus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 128
+            max: 128
+            text: Eir
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 129
+            max: 129
+            text: Eos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 130
+            max: 130
+            text: Epimetheus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 131
+            max: 131
+            text: Eternis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 132
+            max: 132
+            text: Forseti
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 133
+            max: 133
+            text: Freyr
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 134
+            max: 134
+            text: Gersemi
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 135
+            max: 135
+            text: Govinda
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 136
+            max: 136
+            text: Hades
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 137
+            max: 137
+            text: Harmonia
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 138
+            max: 138
+            text: Heirloom
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 139
+            max: 139
+            text: Hemera
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 140
+            max: 140
+            text: Hera
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 141
+            max: 141
+            text: Hodor
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 142
+            max: 142
+            text: Horus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 143
+            max: 143
+            text: Hymn
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 144
+            max: 144
+            text: Idunn
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 145
+            max: 145
+            text: Inception
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 146
+            max: 146
+            text: Kali
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 147
+            max: 147
+            text: Kanati
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 148
+            max: 148
+            text: Lelantos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 149
+            max: 149
+            text: Liberty
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 150
+            max: 150
+            text: Lodurr
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 151
+            max: 151
+            text: Lunis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 152
+            max: 152
+            text: Magni
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 153
+            max: 153
+            text: Mahavidya
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 154
+            max: 154
+            text: Marvel
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 155
+            max: 155
+            text: Meili
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 156
+            max: 156
+            text: Menoetius
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 157
+            max: 157
+            text: Mimir
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 158
+            max: 158
+            text: Mohini
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 159
+            max: 159
+            text: Narayana
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 160
+            max: 160
+            text: Nemesis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 161
+            max: 161
+            text: Nerthus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 162
+            max: 162
+            text: Nimbus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 163
+            max: 163
+            text: Novis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 164
+            max: 164
+            text: Ocasta
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 165
+            max: 165
+            text: Omega
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 166
+            max: 166
+            text: Ourea
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 167
+            max: 167
+            text: Parvati
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 168
+            max: 168
+            text: Perses
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 169
+            max: 169
+            text: Phantom
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 170
+            max: 170
+            text: Phoenix
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 171
+            max: 171
+            text: Pioneer
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 172
+            max: 172
+            text: Pontus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 173
+            max: 173
+            text: Prodigy
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 174
+            max: 174
+            text: Proserpina
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 175
+            max: 175
+            text: Rebus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 176
+            max: 176
+            text: Rindar
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 177
+            max: 177
+            text: Rudron
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 178
+            max: 178
+            text: Sandraudiga
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 179
+            max: 179
+            text: Sati
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 180
+            max: 180
+            text: Selu
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 181
+            max: 181
+            text: Shangris
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 182
+            max: 182
+            text: Shiva
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 183
+            max: 183
+            text: Silenus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 184
+            max: 184
+            text: Sita
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 185
+            max: 185
+            text: Sunna
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 186
+            max: 186
+            text: Tanfana
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 187
+            max: 187
+            text: Terminus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 188
+            max: 188
+            text: Thalassa
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 189
+            max: 189
+            text: Theia
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 190
+            max: 190
+            text: Thiasos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 191
+            max: 191
+            text: Thyrsus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 192
+            max: 192
+            text: Titan
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 193
+            max: 193
+            text: Tyr
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 194
+            max: 194
+            text: Upulvan
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 195
+            max: 195
+            text: Vali
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 196
+            max: 196
+            text: Vasus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 197
+            max: 197
+            text: Vesta
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 198
+            max: 198
+            text: Virtue
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 199
+            max: 199
+            text: Vishnu
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 200
+            max: 200
+            text: Warden
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 201
+            max: 201
+            text: Achlys
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 202
+            max: 202
+            text: Adityas
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 203
+            max: 203
+            text: Aether
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 204
+            max: 204
+            text: Alpha
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 205
+            max: 205
+            text: Ananke
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 206
+            max: 206
+            text: Anemone
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 207
+            max: 207
+            text: Aphrodite
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 208
+            max: 208
+            text: Ares
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 209
+            max: 209
+            text: Asgaya
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 210
+            max: 210
+            text: Ashvins
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 211
+            max: 211
+            text: Astraeus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 212
+            max: 212
+            text: Atlas
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 213
+            max: 213
+            text: Avatar
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 214
+            max: 214
+            text: Azura
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 215
+            max: 215
+            text: Baduhenna
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 216
+            max: 216
+            text: Bellona
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 217
+            max: 217
+            text: Bholenath
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 218
+            max: 218
+            text: Bragi
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 219
+            max: 219
+            text: Caravel
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 220
+            max: 220
+            text: Ceres
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 221
+            max: 221
+            text: Coeus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 222
+            max: 222
+            text: Crius
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 223
+            max: 223
+            text: Curiosity
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 224
+            max: 224
+            text: Dawn
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 225
+            max: 225
+            text: Dellinger
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 226
+            max: 226
+            text: Dione
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 227
+            max: 227
+            text: Durga
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 228
+            max: 228
+            text: Empyrea
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 229
+            max: 229
+            text: Eostre
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 230
+            max: 230
+            text: Epiphany
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 231
+            max: 231
+            text: Fable
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 232
+            max: 232
+            text: Fortuna
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 233
+            max: 233
+            text: Ganga
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 234
+            max: 234
+            text: Gigagei
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 235
+            max: 235
+            text: Gullveig
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 236
+            max: 236
+            text: Halo
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 237
+            max: 237
+            text: Hayagriva
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 238
+            max: 238
+            text: Helios
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 239
+            max: 239
+            text: Hephaestus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 240
+            max: 240
+            text: Hermes
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 241
+            max: 241
+            text: Hoenir
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 242
+            max: 242
+            text: Hretha
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 243
+            max: 243
+            text: Iapetus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 244
+            max: 244
+            text: Ignis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 245
+            max: 245
+            text: Irpa
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 246
+            max: 246
+            text: Kalona
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 247
+            max: 247
+            text: Lakshmi
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 248
+            max: 248
+            text: Leto
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 249
+            max: 249
+            text: Lingo
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 250
+            max: 250
+            text: Lofin
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 251
+            max: 251
+            text: Madhava
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 252
+            max: 252
+            text: Mahadevi
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 253
+            max: 253
+            text: Mani
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 254
+            max: 254
+            text: Matrikas
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 255
+            max: 255
+            text: Memnto
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 256
+            max: 256
+            text: Metis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 257
+            max: 257
+            text: Minerva
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 258
+            max: 258
+            text: Mythos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 259
+            max: 259
+            text: Narmada
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 260
+            max: 260
+            text: Nemo
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 261
+            max: 261
+            text: Nesoi
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 262
+            max: 262
+            text: Njorder
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 263
+            max: 263
+            text: Nox
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 264
+            max: 264
+            text: Olympus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 265
+            max: 265
+            text: Orphan
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 266
+            max: 266
+            text: Pallas
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 267
+            max: 267
+            text: Periboea
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 268
+            max: 268
+            text: Perumal
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 269
+            max: 269
+            text: Phobos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 270
+            max: 270
+            text: Pilgrim
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 271
+            max: 271
+            text: Pomona
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 272
+            max: 272
+            text: Poseidon
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 273
+            max: 273
+            text: Prometheus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 274
+            max: 274
+            text: Rangana
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 275
+            max: 275
+            text: Rhea
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 276
+            max: 276
+            text: Rudras
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 277
+            max: 277
+            text: Saga
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 278
+            max: 278
+            text: Saraswati
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 279
+            max: 279
+            text: Selene
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 280
+            max: 280
+            text: Serenity
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 281
+            max: 281
+            text: Shepherd
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 282
+            max: 282
+            text: Shu
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 283
+            max: 283
+            text: Sinthgunt
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 284
+            max: 284
+            text: Spectrum
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 285
+            max: 285
+            text: Syceus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 286
+            max: 286
+            text: Tartarus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 287
+            max: 287
+            text: Tethys
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 288
+            max: 288
+            text: Thanatos
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 289
+            max: 289
+            text: Themis
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 290
+            max: 290
+            text: Thirumal
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 291
+            max: 291
+            text: Timi
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 292
+            max: 292
+            text: Titanus
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 293
+            max: 293
+            text: Unelauhi
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 294
+            max: 294
+            text: Uyaga
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 295
+            max: 295
+            text: Valor
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 296
+            max: 296
+            text: Veritas
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 297
+            max: 297
+            text: Vidarr
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 298
+            max: 298
+            text: Visage
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 299
+            max: 299
+            text: Vor
+            _i18n:
+              text:
+                part_of_speech: proper_noun
+          - min: 300
+            max: 300
+            text: Zisa
+            _i18n:
+              text:
+                part_of_speech: proper_noun
