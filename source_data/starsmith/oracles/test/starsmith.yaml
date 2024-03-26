@@ -10,7 +10,7 @@ ruleset: starforged
   url: https://playeveryrole.com/starsmith-products/
   license: https://creativecommons.org/licenses/by/4.0
 oracles:
-  miscellaneous:
+  misc:
     name: Miscellaneous
     oracle_type: tables
     _comment: Extension of the oracle table
