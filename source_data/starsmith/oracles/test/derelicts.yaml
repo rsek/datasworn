@@ -15,12 +15,12 @@ oracles:
     oracle_type: tables
     _comment: Extension of the oracle table
     _source: *Source
+    enhances: starforged/collections/oracles/derelicts
     contents:
       location_and_type:
         name: Location and Type
         oracle_type: table_text
         dice: 1d100
-        _comment: Extension of the oracle table
         _source: *Source
         rows:
           - min: 1
@@ -49,6 +49,38 @@ oracles:
         _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
+          - min: 1
+            max: 15
+            text: Blocked access
+          - min: 16
+            max: 30
+            text: Corpses
+          - min: 31
+            max: 45
+            text: Hazardous readings
+          - min: 46
+            max: 50
+            text: Mutated structure
+          - min: 51
+            max: 60
+            text: Odd orientation
+          - min: 61
+            max: 65
+            text: Overgrown or entangled
+          - min: 66
+            max: 80
+            text: Sending a signal or message
+          - min: 81
+            max: 85
+            text: Signs that others are here
+          - min: 86
+            max: 95
+            text: Stripped exterior
+          - min: 96
+            max: 100
+            text: Time or reality distortions
+        # end copied rows
           - min: 101
             max: 115
             text: Explosive hole in the exterior
@@ -117,6 +149,110 @@ oracles:
         _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
+          - min: 1
+            max: 3
+            text: Abnormal gravity
+          - min: 4
+            max: 6
+            text: Active bots
+          - min: 7
+            max: 9
+            text: Archaic equipment
+          - min: 10
+            max: 12
+            text: Automated announcements
+          - min: 13
+            max: 15
+            text: Biological infestation
+          - min: 16
+            max: 18
+            text: Charred surfaces
+          - min: 19
+            max: 21
+            text: Claw marks
+          - min: 22
+            max: 24
+            text: Cluttered with debris
+          - min: 25
+            max: 27
+            text: Corroded surfaces
+          - min: 28
+            max: 30
+            text: Cramped spaces
+          - min: 31
+            max: 33
+            text: Creaking hull
+          - min: 34
+            max: 36
+            text: Esoteric writing or symbols
+          - min: 37
+            max: 39
+            text: Evidence of new inhabitants
+          - min: 40
+            max: 42
+            text: Exposed wiring or conduits
+          - min: 43
+            max: 45
+            text: Flashing strobe lights
+          - min: 46
+            max: 48
+            text: Fluctuating power
+          - min: 49
+            max: 51
+            text: Haunting visions of the dead
+          - min: 52
+            max: 54
+            text: Hazardous temperature
+          - min: 55
+            max: 57
+            text: Heavy steam or moisture
+          - min: 58
+            max: 60
+            text: Littered with corpses
+          - min: 61
+            max: 63
+            text: Nesting or feeding creatures
+          - min: 64
+            max: 66
+            text: Ornate furnishings
+          - min: 67
+            max: 69
+            text: Scarred by gunfire
+          - min: 70
+            max: 72
+            text: Sealed against intruders
+          - min: 73
+            max: 75
+            text: Signs of looting or scavenging
+          - min: 76
+            max: 78
+            text: Smell of decay
+          - min: 79
+            max: 81
+            text: Splattered with blood
+          - min: 82
+            max: 84
+            text: Temporal distortions
+          - min: 85
+            max: 87
+            text: Thick haze or smoke
+          - min: 88
+            max: 90
+            text: Unstable energy surges
+          - min: 91
+            max: 93
+            text: Watchful AI
+          - min: 94
+            max: 100
+            <<: &DescriptorFocus
+              text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+              oracle_rolls:
+                - oracle: starforged/oracles/core/descriptor
+                  auto: true
+                - oracle: starforged/oracles/core/focus
+                  auto: true
+        # end copied rows
           - min: 101
             max: 103
             text: Abnormal atmosphere
@@ -212,7 +348,7 @@ oracles:
             text: Trails of ooze
           - min: 194
             max: 200
-            text: ▶Descriptor + Focus
+            <<: *DescriptorFocus
           - min: 201
             max: 203
             text: Abnormal structure material
@@ -308,4 +444,4 @@ oracles:
             text: Wide-open spaces
           - min: 294
             max: 300
-            text: ▶Descriptor + Focus
+            <<: *DescriptorFocus

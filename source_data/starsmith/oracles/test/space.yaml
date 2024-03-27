@@ -11,1407 +11,1800 @@ ruleset: starforged
   license: https://creativecommons.org/licenses/by/4.0
 oracles:
   space:
-    name: Space
+    name: Space Encounters
     oracle_type: tables
-    # summary: Extension of the oracle table
+    # _comment: Extension of the oracle table
     # description: Extension of the oracle table
     _source: *Source
+    collections:
+      sighting:
+        name: Space Sighting
+        oracle_type: table_shared_text
+        _source:
+          <<: *Source
+        contents:
+          terminus:
+            name: Terminus
+            oracle_type: column_text
+            dice: 1d300
+            replaces: starforged/oracles/space/sighting/terminus
+            # _comment: Extension of the oracle table
+            rows:
+            # begin copied rows
+              - &Sighting.0
+                min: 1
+                max: 15
+                <<: &StellarObject
+                  text: '[Stellar Object](id:starforged/oracles/space/stellar_object)'
+                  oracle_rolls:
+                    - oracle: starforged/oracles/space/stellar_object
+              - &Sighting.1
+                min: 16
+                max: 35
+                <<: &Planet
+                  text: '[Planet](id:starforged/collections/oracles/planets)'
+              - min: 36
+                max: 40
+                <<: &Sighting.2
+                  text: '[Settlement](id:starforged/collections/oracles/settlements)'
+              - min: 41
+                max: 47
+                <<: &Sighting.3
+                  text: '[Starship](id:starforged/collections/oracles/starships)'
+              - min: 48
+                max: 51
+                <<: &Sighting.4
+                  text: '[Derelict](id:starforged/collections/oracles/derelicts)'
+              - min: 52
+                max: 53
+                <<: &Sighting.5
+                  text: '[Precursor Vault](id:starforged/collections/oracles/vaults)'
+              - min: 54
+                max: 55
+                <<: &Sighting.6
+                  text: '[Creature](id:starforged/collections/oracles/creatures)'
+              - min: 56
+                max: 60
+                <<: &Sighting.7
+                  text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  oracle_rolls:
+                    - oracle: starforged/oracles/core/descriptor
+                      auto: true
+                    - oracle: starforged/oracles/core/focus
+                      auto: true
+              - min: 61
+                max: 65
+                <<: &Sighting.8
+                  text: 'Debris field: Mineral asteroids'
+              - min: 66
+                max: 68
+                <<: &Sighting.9
+                  text: 'Debris field: Frozen asteroids'
+              - min: 69
+                max: 70
+                <<: &Sighting.10
+                  text: 'Debris field: Crystalline asteroids'
+              - min: 71
+                max: 72
+                <<: &Sighting.11
+                  text: 'Debris field: Creature boneyard'
+              - min: 73
+                max: 74
+                <<: &Sighting.12
+                  text: 'Debris field: Metallic wreckage'
+              - min: 75
+                max: 76
+                <<: &Sighting.13
+                  text: Large rogue asteroid
+              - min: 77
+                max: 78
+                <<: &Sighting.14
+                  text: Comet with a tail of ionized gas
+              - min: 79
+                max: 81
+                <<: &Sighting.15
+                  text: Fiery energy storm
+              - min: 82
+                max: 83
+                <<: &Sighting.16
+                  text: Chaotic meteoroid storm
+              - min: 84
+                max: 85
+                <<: &Sighting.17
+                  text: Turbulent gravitational wave
+              - min: 86
+                max: 93
+                <<: &Sighting.18
+                  text: Dense nebula cloud
+              - &Sighting.19
+                min: 94
+                max: 98
+                <<: &RollTwiceKeepDuplicates
+                  text: Roll twice
+                  oracle_rolls:
+                    - number_of_rolls: 2
+                      auto: true
+                      duplicates: keep
+              - &Sighting.20
+                min: 99
+                max: 100
+                <<: &RollThreeTimesKeepDuplicates
+                  text: Roll three times
+                  oracle_rolls:
+                    - number_of_rolls: 3
+                      auto: true
+                      duplicates: keep
+            # end copied rows
+              - min: 101
+                max: 115
+                <<: *StellarObject
+              - min: 116
+                max: 135
+                <<: *Planet
+              - min: 136
+                max: 140
+                <<: *Sighting.2
+              - min: 141
+                max: 147
+                <<: *Sighting.3
+              - min: 148
+                max: 151
+                <<: *Sighting.4
+              - min: 152
+                max: 153
+                <<: *Sighting.5
+              - min: 154
+                max: 155
+                <<: *Sighting.6
+              - min: 156
+                max: 160
+                <<: *Sighting.7
+              - min: 161
+                max: 165
+                <<: &Sighting.21
+                  text: "Debris field: Oort cloud"
+              - min: 166
+                max: 168
+                <<: &Sighting.22
+                  text: "Debris field: Synestia"
+              - min: 169
+                max: 170
+                <<: &Sighting.23
+                  text: "Debris field: Asteroid belt"
+              - min: 171
+                max: 172
+                <<: &Sighting.24
+                  text: "Debris field: Organic matter"
+              - min: 173
+                max: 174
+                <<: &Sighting.25
+                  text: "Debris field: Jettisoned cargo"
+              - min: 175
+                max: 176
+                <<: &Sighting.26
+                  text: Rogue binary asteroids
+              - min: 177
+                max: 178
+                <<: &Sighting.27
+                  text: Accretion disc with no planet
+              - min: 179
+                max: 181
+                <<: &Sighting.28
+                  text: Extreme solar flare
+              - min: 182
+                max: 183
+                <<: &Sighting.29
+                  text: Comets on a collision course
+              - min: 184
+                max: 185
+                <<: &Sighting.30
+                  text: Temporal fluctuations
+              - min: 186
+                max: 193
+                <<: &Sighting.31
+                  text: Electromagnetic emission nebula
+              - min: 194
+                max: 198
+                <<: *RollTwiceKeepDuplicates
+              - min: 199
+                max: 200
+                <<: *RollThreeTimesKeepDuplicates
+              - min: 201
+                max: 215
+                <<: *StellarObject
+              - min: 216
+                max: 235
+                <<: *Planet
+              - min: 236
+                max: 240
+                <<: *Sighting.2
+              - min: 241
+                max: 247
+                <<: *Sighting.3
+              - min: 248
+                max: 251
+                <<: *Sighting.4
+              - min: 252
+                max: 253
+                <<: *Sighting.5
+              - min: 254
+                max: 255
+                <<: *Sighting.6
+              - min: 256
+                max: 260
+                <<: *Sighting.7
+              - min: 261
+                max: 265
+                <<: &Sighting.32
+                  text: "Debris field: Colliding asteroid fields"
+              - min: 266
+                max: 268
+                <<: &Sighting.33
+                  text: "Debris field: Micrometeoroids"
+              - min: 269
+                max: 270
+                <<: &Sighting.34
+                  text: "Debris field: Scattered disc"
+              - min: 271
+                max: 272
+                <<: &Sighting.35
+                  text: "Debris field: Blinding bolides"
+              - min: 273
+                max: 274
+                <<: &Sighting.36
+                  text: "Debris field: Mine field"
+              - min: 275
+                max: 276
+                <<: &Sighting.37
+                  text: Rogue dwarf planet
+              - min: 277
+                max: 278
+                <<: &Sighting.38
+                  text: Planet killing comet
+              - min: 279
+                max: 281
+                <<: &Sighting.39
+                  text: Pulsing radiation storm
+              - min: 282
+                max: 283
+                <<: &Sighting.40
+                  text: Roiling plasma storm
+              - min: 284
+                max: 285
+                <<: &Sighting.41
+                  text: Burst of gamma rays
+              - min: 286
+                max: 293
+                <<: &Sighting.42
+                  text: Supernova remnant
+              - min: 294
+                max: 298
+                <<: *RollTwiceKeepDuplicates
+              - min: 299
+                max: 300
+                <<: *RollThreeTimesKeepDuplicates
+          outlands:
+            name: Outlands
+            oracle_type: column_text
+            dice: 1d300
+            replaces: starforged/oracles/space/sighting/outlands
+            # _comment: Extension of the oracle table
+            rows:
+            # begin rows
+              - *Sighting.0
+              - *Sighting.1
+              - min: 36
+                max: 38
+                <<: *Sighting.2
+              - min: 39
+                max: 43
+                <<: *Sighting.3
+              - min: 44
+                max: 46
+                <<: *Sighting.4
+              - min: 47
+                max: 49
+                <<: *Sighting.5
+              - min: 50
+                max: 52
+                <<: *Sighting.6
+              - min: 53
+                max: 58
+                <<: *Sighting.7
+              - min: 59
+                max: 63
+                <<: *Sighting.8
+              - min: 64
+                max: 66
+                <<: *Sighting.9
+              - min: 67
+                max: 68
+                <<: *Sighting.10
+              - min: 69
+                max: 70
+                <<: *Sighting.11
+              - min: 71
+                max: 72
+                <<: *Sighting.12
+              - min: 73
+                max: 74
+                <<: *Sighting.13
+              - min: 75
+                max: 76
+                <<: *Sighting.14
+              - min: 77
+                max: 80
+                <<: *Sighting.15
+              - min: 81
+                max: 82
+                <<: *Sighting.16
+              - min: 83
+                max: 85
+                <<: *Sighting.17
+              - min: 86
+                max: 93
+                <<: *Sighting.18
+              - *Sighting.19
+              - *Sighting.20
+            # end rows
+              - min: 101
+                max: 115
+                <<: *StellarObject
+              - min: 116
+                max: 135
+                <<: *Planet
+              - min: 136
+                max: 138
+                <<: *Sighting.2
+              - min: 139
+                max: 143
+                <<: *Sighting.3
+              - min: 144
+                max: 146
+                <<: *Sighting.4
+              - min: 147
+                max: 149
+                <<: *Sighting.5
+              - min: 150
+                max: 152
+                <<: *Sighting.6
+              - min: 153
+                max: 158
+                <<: *Sighting.7
+              - min: 159
+                max: 163
+                text: "Debris field: Oort cloud"
+              - min: 164
+                max: 166
+                text: "Debris field: Synestia"
+              - min: 167
+                max: 168
+                text: "Debris field: Asteroid belt"
+              - min: 169
+                max: 170
+                text: "Debris field: Organic matter"
+              - min: 171
+                max: 172
+                text: "Debris field: Jettisoned cargo"
+              - min: 173
+                max: 174
+                text: Rogue binary asteroids
+              - min: 175
+                max: 176
+                text: Accretion disc with no planet
+              - min: 177
+                max: 180
+                text: Extreme solar flare
+              - min: 181
+                max: 182
+                text: Comets on a collision course
+              - min: 183
+                max: 185
+                text: Temporal fluctuations
+              - min: 186
+                max: 193
+                text: Electromagnetic emission nebula
+              - min: 194
+                max: 198
+                <<: *RollTwiceKeepDuplicates
+              - min: 199
+                max: 200
+                <<: *RollThreeTimesKeepDuplicates
+              - min: 201
+                max: 215
+                <<: *StellarObject
+              - min: 216
+                max: 235
+                <<: *Planet
+              - min: 236
+                max: 238
+                <<: *Sighting.2
+              - min: 239
+                max: 243
+                <<: *Sighting.3
+              - min: 244
+                max: 246
+                <<: *Sighting.4
+              - min: 247
+                max: 249
+                <<: *Sighting.5
+              - min: 250
+                max: 252
+                <<: *Sighting.6
+              - min: 253
+                max: 258
+                <<: *Sighting.7
+              - min: 259
+                max: 263
+                text: "Debris field: Colliding asteroid fields"
+              - min: 264
+                max: 266
+                text: "Debris field: Micrometeoroids"
+              - min: 267
+                max: 268
+                text: "Debris field: Scattered disc"
+              - min: 269
+                max: 270
+                text: "Debris field: Blinding bolides"
+              - min: 271
+                max: 272
+                text: "Debris field: Mine field"
+              - min: 273
+                max: 274
+                text: Rogue dwarf planet
+              - min: 275
+                max: 276
+                text: Planet killing comet
+              - min: 277
+                max: 280
+                text: Pulsing radiation storm
+              - min: 281
+                max: 282
+                text: Roiling plasma storm
+              - min: 283
+                max: 285
+                text: Burst of gamma rays
+              - min: 286
+                max: 293
+                text: Supernova remnant
+              - min: 294
+                max: 298
+                <<: *RollTwiceKeepDuplicates
+              - min: 299
+                max: 300
+                <<: *RollThreeTimesKeepDuplicates
+          expanse:
+            name: Expanse
+            oracle_type: column_text
+            dice: 1d300
+            replaces: starforged/oracles/space/sighting/expanse
+            # _comment: Extension of the oracle table
+            rows:
+            # begin copied rows
+              - *Sighting.0
+              - *Sighting.1
+              - min: 36
+                max: 37
+                <<: *Sighting.2
+              - min: 38
+                max: 39
+                <<: *Sighting.3
+              - min: 40
+                max: 41
+                <<: *Sighting.4
+              - min: 42
+                max: 45
+                <<: *Sighting.5
+              - min: 46
+                max: 49
+                <<: *Sighting.6
+              - min: 50
+                max: 56
+                <<: *Sighting.7
+              - min: 57
+                max: 61
+                <<: *Sighting.8
+              - min: 62
+                max: 64
+                <<: *Sighting.9
+              - min: 65
+                max: 66
+                <<: *Sighting.10
+              - min: 67
+                max: 68
+                <<: *Sighting.11
+              - min: 69
+                max: 70
+                <<: *Sighting.12
+              - min: 71
+                max: 72
+                <<: *Sighting.13
+              - min: 73
+                max: 74
+                <<: *Sighting.14
+              - min: 75
+                max: 79
+                <<: *Sighting.15
+              - min: 80
+                max: 81
+                <<: *Sighting.16
+              - min: 82
+                max: 85
+                <<: *Sighting.17
+              - min: 86
+                max: 93
+                <<: *Sighting.18
+              - *Sighting.19
+              - *Sighting.20
+              # end copied rows
+              - min: 101
+                max: 115
+                <<: *StellarObject
+              - min: 116
+                max: 135
+                <<: *Planet
+              - min: 136
+                max: 137
+                <<: *Sighting.2
+              - min: 138
+                max: 139
+                <<: *Sighting.3
+              - min: 140
+                max: 141
+                <<: *Sighting.4
+              - min: 142
+                max: 145
+                <<: *Sighting.5
+              - min: 146
+                max: 149
+                <<: *Sighting.6
+              - min: 150
+                max: 156
+                <<: *Sighting.7
+              - min: 157
+                max: 161
+                <<: *Sighting.21
+              - min: 162
+                max: 164
+                <<: *Sighting.22
+              - min: 165
+                max: 166
+                <<: *Sighting.23
+              - min: 167
+                max: 168
+                <<: *Sighting.24
+              - min: 169
+                max: 170
+                <<: *Sighting.25
+              - min: 171
+                max: 172
+                <<: *Sighting.26
+              - min: 173
+                max: 174
+                <<: *Sighting.27
+              - min: 175
+                max: 179
+                <<: *Sighting.28
+              - min: 180
+                max: 181
+                <<: *Sighting.29
+              - min: 182
+                max: 185
+                <<: *Sighting.30
+              - min: 186
+                max: 193
+                <<: *Sighting.31
+              - min: 194
+                max: 198
+                <<: *RollTwiceKeepDuplicates
+              - min: 199
+                max: 200
+                <<: *RollThreeTimesKeepDuplicates
+              - min: 201
+                max: 215
+                <<: *StellarObject
+              - min: 216
+                max: 235
+                <<: *Planet
+              - min: 236
+                max: 237
+                <<: *Sighting.2
+              - min: 238
+                max: 239
+                <<: *Sighting.3
+              - min: 240
+                max: 241
+                <<: *Sighting.4
+              - min: 242
+                max: 245
+                <<: *Sighting.5
+              - min: 246
+                max: 249
+                <<: *Sighting.6
+              - min: 250
+                max: 256
+                <<: *Sighting.7
+              - min: 257
+                max: 261
+                <<: *Sighting.32
+              - min: 262
+                max: 264
+                <<: *Sighting.33
+              - min: 265
+                max: 266
+                <<: *Sighting.34
+              - min: 267
+                max: 268
+                <<: *Sighting.35
+              - min: 269
+                max: 270
+                <<: *Sighting.36
+              - min: 271
+                max: 272
+                <<: *Sighting.37
+              - min: 273
+                max: 274
+                <<: *Sighting.38
+              - min: 275
+                max: 279
+                <<: *Sighting.39
+              - min: 280
+                max: 281
+                <<: *Sighting.40
+              - min: 282
+                max: 285
+                <<: *Sighting.41
+              - min: 286
+                max: 293
+                <<: *Sighting.42
+              - min: 294
+                max: 298
+                <<: *RollTwiceKeepDuplicates
+              - min: 299
+                max: 300
+                <<: *RollThreeTimesKeepDuplicates
+      sector_name:
+        name: Sector Name
+        oracle_type: table_shared_rolls
+        _source:
+          <<: *Source
+        contents:
+          prefix:
+            name: Prefix
+            oracle_type: column_text
+            dice: 1d300
+            _comment: Extension of the oracle table
+            replaces: starforged/oracles/space/sector_name/prefix
+            rows:
+            # begin copied rows
+              - <<: &SectorName.0
+                  min: 1
+                  max: 2
+                text: Accursed
+                _i18n: &Adjective
+                  text:
+                    part_of_speech: adjective
+              - <<: &SectorName.1
+                  min: 3
+                  max: 4
+                text: Ashen
+                _i18n: *Adjective
+              - <<: &SectorName.2
+                  min: 5
+                  max: 6
+                text: Asteria
+                _i18n: &AdjunctProperNoun
+                  text:
+                    part_of_speech: adjunct_proper_noun
+              - <<: &SectorName.3
+                  min: 7
+                  max: 8
+                text: Bitter
+                _i18n: *Adjective
+              - <<: &SectorName.4
+                  min: 9
+                  max: 10
+                text: Blighted
+                _i18n: *Adjective
+              - <<: &SectorName.5
+                  min: 11
+                  max: 12
+                text: Bloodied
+                _i18n: *Adjective
+              - <<: &SectorName.6
+                  min: 13
+                  max: 14
+                text: Boundless
+                _i18n: *Adjective
+              - <<: &SectorName.7
+                  min: 15
+                  max: 16
+                text: Burning
+                _i18n:
+                  text:
+                    part_of_speech: gerund
+              - <<: &SectorName.8
+                  min: 17
+                  max: 18
+                text: Cortana
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.9
+                  min: 19
+                  max: 20
+                text: Corvus
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.10
+                  min: 21
+                  max: 22
+                text: Crimson
+              - <<: &SectorName.11
+                  min: 23
+                  max: 24
+                text: Cygnus
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.12
+                  min: 25
+                  max: 26
+                text: Delphi
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.13
+                  min: 27
+                  max: 28
+                text: Delphian
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.14
+                  min: 29
+                  max: 30
+                text: Devil's
+                # content: {part_of_speech: [proper noun, possessive case]}
+              - <<: &SectorName.15
+                  min: 31
+                  max: 32
+                text: Ebon
+                _i18n: *Adjective
+              - <<: &SectorName.16
+                  min: 33
+                  max: 34
+                text: Essus
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.17
+                  min: 35
+                  max: 36
+                _i18n: *Adjective
+                text: Fallen
+              - <<: &SectorName.18
+                  min: 37
+                  max: 38
+                _i18n: *Adjective
+                text: Ferrous
+              - <<: &SectorName.19
+                  min: 39
+                  max: 40
+                text: Fool's
+                # content: {part_of_speech: [proper noun, possessive case]}
+              - <<: &SectorName.20
+                  min: 41
+                  max: 42
+                text: Forgotten
+                _i18n: *Adjective
+              - <<: &SectorName.21
+                  min: 43
+                  max: 44
+                text: Haunted
+                _i18n: *Adjective
+              - <<: &SectorName.22
+                  min: 45
+                  max: 46
+                text: Hidden
+                _i18n: *Adjective
+              - <<: &SectorName.23
+                  min: 47
+                  max: 48
+                text: Hollow
+                _i18n: *Adjective
+              - <<: &SectorName.24
+                  min: 49
+                  max: 50
+                text: Igneous
+                _i18n: *Adjective
+              - <<: &SectorName.25
+                  min: 51
+                  max: 52
+                text: Infernal
+                _i18n: *Adjective
+              - <<: &SectorName.26
+                  min: 53
+                  max: 54
+                text: Invidia
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.27
+                  min: 55
+                  max: 56
+                text: Iron
+                _i18n: &i18n.result.adjunct_common_noun
+                  text:
+                    part_of_speech: adjunct_common_noun
+              - <<: &SectorName.28
+                  min: 57
+                  max: 58
+                text: Kalidas
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.29
+                  min: 59
+                  max: 60
+                text: Kronos
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.30
+                  min: 61
+                  max: 62
+                text: Lacuna
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.31
+                  min: 63
+                  max: 64
+                text: Lumen
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.32
+                  min: 65
+                  max: 66
+                text: Mobius
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.33
+                  min: 67
+                  max: 68
+                text: Morien
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.34
+                  min: 69
+                  max: 70
+                text: Onyx
+                _i18n: *i18n.result.adjunct_common_noun
+              - <<: &SectorName.35
+                  min: 71
+                  max: 72
+                text: Outer
+                _i18n: *Adjective
+              - <<: &SectorName.36
+                  min: 73
+                  max: 74
+                text: Sanguis
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.37
+                  min: 75
+                  max: 76
+                text: Scarred
+                _i18n: *Adjective
+              - <<: &SectorName.38
+                  min: 77
+                  max: 78
+                text: Scorched
+                _i18n: *Adjective
+              - <<: &SectorName.39
+                  min: 79
+                  max: 80
+                text: Shattered
+                _i18n: *Adjective
+              - <<: &SectorName.40
+                  min: 81
+                  max: 82
+                text: Shrouded
+                _i18n: *Adjective
+              - <<: &SectorName.41
+                  min: 83
+                  max: 84
+                text: Sindri
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.42
+                  min: 85
+                  max: 86
+                text: Solana
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.43
+                  min: 87
+                  max: 88
+                text: Stygian
+                _i18n: *Adjective
+              - <<: &SectorName.44
+                  min: 89
+                  max: 90
+                text: Sulaco
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.45
+                  min: 91
+                  max: 92
+                text: Sundered
+                _i18n: *Adjective
+              - <<: &SectorName.46
+                  min: 93
+                  max: 94
+                text: Thunor
+                _i18n: *AdjunctProperNoun
+              - <<: &SectorName.47
+                  min: 95
+                  max: 96
+                text: Vanguard
+                _i18n: *Adjective
+              - <<: &SectorName.48
+                  min: 97
+                  max: 98
+                text: Veiled
+                _i18n: *Adjective
+              - <<: &SectorName.49
+                  min: 99
+                  max: 100
+                text: Wasted
+                _i18n: *Adjective
+                # end copied rows
+              - <<: &SectorName.50
+                  min: 101
+                  max: 102
+                text: Alpha
+              - <<: &SectorName.51
+                  min: 103
+                  max: 104
+                text: Amber
+              - <<: &SectorName.52
+                  min: 105
+                  max: 106
+                text: Amethyst
+              - <<: &SectorName.53
+                  min: 107
+                  max: 108
+                text: Ardor
+              - <<: &SectorName.54
+                  min: 109
+                  max: 110
+                text: Azure
+              - <<: &SectorName.55
+                  min: 111
+                  max: 112
+                text: Barren
+              - <<: &SectorName.56
+                  min: 113
+                  max: 114
+                text: Beta
+              - <<: &SectorName.57
+                  min: 115
+                  max: 116
+                text: Blasted
+              - <<: &SectorName.58
+                  min: 117
+                  max: 118
+                text: Blatta
+              - <<: &SectorName.59
+                  min: 119
+                  max: 120
+                text: Bleak
+              - <<: &SectorName.60
+                  min: 121
+                  max: 122
+                text: Chernit
+              - <<: &SectorName.61
+                  min: 123
+                  max: 124
+                text: Collapsed
+              - <<: &SectorName.62
+                  min: 125
+                  max: 126
+                text: Delta
+              - <<: &SectorName.63
+                  min: 127
+                  max: 128
+                text: Demonic
+              - <<: &SectorName.64
+                  min: 129
+                  max: 130
+                text: Deserted
+              - <<: &SectorName.65
+                  min: 131
+                  max: 132
+                text: Ebony
+              - <<: &SectorName.66
+                  min: 133
+                  max: 134
+                text: Emerald
+              - <<: &SectorName.67
+                  min: 135
+                  max: 136
+                text: "False"
+              - <<: &SectorName.68
+                  min: 137
+                  max: 138
+                text: Foul
+              - <<: &SectorName.69
+                  min: 139
+                  max: 140
+                text: Fractured
+              - <<: &SectorName.70
+                  min: 141
+                  max: 142
+                text: Gamma
+              - <<: &SectorName.71
+                  min: 143
+                  max: 144
+                text: Glowing
+              - <<: &SectorName.72
+                  min: 145
+                  max: 146
+                text: Impes
+              - <<: &SectorName.73
+                  min: 147
+                  max: 148
+                text: Indigo
+              - <<: &SectorName.74
+                  min: 149
+                  max: 150
+                text: Letum
+              - <<: &SectorName.75
+                  min: 151
+                  max: 152
+                text: Lost
+              - <<: &SectorName.76
+                  min: 153
+                  max: 154
+                text: Malevolent
+              - <<: &SectorName.77
+                  min: 155
+                  max: 156
+                text: Marred
+              - <<: &SectorName.78
+                  min: 157
+                  max: 158
+                text: Metus
+              - <<: &SectorName.79
+                  min: 159
+                  max: 160
+                text: Mors
+              - <<: &SectorName.80
+                  min: 161
+                  max: 162
+                text: Nequam
+              - <<: &SectorName.81
+                  min: 163
+                  max: 164
+                text: Obitus
+              - <<: &SectorName.82
+                  min: 165
+                  max: 166
+                text: Omega
+              - <<: &SectorName.83
+                  min: 167
+                  max: 168
+                text: Pale
+              - <<: &SectorName.84
+                  min: 169
+                  max: 170
+                text: Perdita
+              - <<: &SectorName.85
+                  min: 171
+                  max: 172
+                text: Procella
+              - <<: &SectorName.86
+                  min: 173
+                  max: 174
+                text: Raven
+              - <<: &SectorName.87
+                  min: 175
+                  max: 176
+                text: Rubicund
+              - <<: &SectorName.88
+                  min: 177
+                  max: 178
+                text: Ruddy
+              - <<: &SectorName.89
+                  min: 179
+                  max: 180
+                text: Ruined
+              - <<: &SectorName.90
+                  min: 181
+                  max: 182
+                text: Sable
+              - <<: &SectorName.91
+                  min: 183
+                  max: 184
+                text: Saffron
+              - <<: &SectorName.92
+                  min: 185
+                  max: 186
+                text: Sapphire
+              - <<: &SectorName.93
+                  min: 187
+                  max: 188
+                text: Scarlet
+              - <<: &SectorName.94
+                  min: 189
+                  max: 190
+                text: Sigma
+              - <<: &SectorName.95
+                  min: 191
+                  max: 192
+                text: Spectral
+              - <<: &SectorName.96
+                  min: 193
+                  max: 194
+                text: Sunken
+              - <<: &SectorName.97
+                  min: 195
+                  max: 196
+                text: Timor
+              - <<: &SectorName.98
+                  min: 197
+                  max: 198
+                text: Unda
+              - <<: &SectorName.99
+                  min: 199
+                  max: 200
+                text: Verdant
+              - <<: &SectorName.100
+                  min: 201
+                  max: 202
+                text: Aether
+              - <<: &SectorName.101
+                  min: 203
+                  max: 204
+                text: Afflicted
+              - <<: &SectorName.102
+                  min: 205
+                  max: 206
+                text: Aurora
+              - <<: &SectorName.103
+                  min: 207
+                  max: 208
+                text: Caducus
+              - <<: &SectorName.104
+                  min: 209
+                  max: 210
+                text: Caelestis
+              - <<: &SectorName.105
+                  min: 211
+                  max: 212
+                text: Caligo
+              - <<: &SectorName.106
+                  min: 213
+                  max: 214
+                text: Caminus
+              - <<: &SectorName.107
+                  min: 215
+                  max: 216
+                text: Cerulean
+              - <<: &SectorName.108
+                  min: 217
+                  max: 218
+                text: Chronos
+              - <<: &SectorName.109
+                  min: 219
+                  max: 220
+                text: Cleptos
+              - <<: &SectorName.110
+                  min: 221
+                  max: 222
+                text: Cobalt
+              - <<: &SectorName.111
+                  min: 223
+                  max: 224
+                text: Corrupted
+              - <<: &SectorName.112
+                  min: 225
+                  max: 226
+                text: Cracked
+              - <<: &SectorName.113
+                  min: 227
+                  max: 228
+                text: Cursed
+              - <<: &SectorName.114
+                  min: 229
+                  max: 230
+                text: Draco
+              - <<: &SectorName.115
+                  min: 231
+                  max: 232
+                text: Erebus
+              - <<: &SectorName.116
+                  min: 233
+                  max: 234
+                text: Eternis
+              - <<: &SectorName.117
+                  min: 235
+                  max: 236
+                text: Fiendish
+              - <<: &SectorName.118
+                  min: 237
+                  max: 238
+                text: Forsaken
+              - <<: &SectorName.119
+                  min: 239
+                  max: 240
+                text: Ghostly
+              - <<: &SectorName.120
+                  min: 241
+                  max: 242
+                text: Hydra
+              - <<: &SectorName.121
+                  min: 243
+                  max: 244
+                text: Ignis
+              - <<: &SectorName.122
+                  min: 245
+                  max: 246
+                text: Illusory
+              - <<: &SectorName.123
+                  min: 247
+                  max: 248
+                text: Infirm
+              - <<: &SectorName.124
+                  min: 249
+                  max: 250
+                text: Krasnyc
+              - <<: &SectorName.125
+                  min: 251
+                  max: 252
+                text: Larua
+              - <<: &SectorName.126
+                  min: 253
+                  max: 254
+                text: Latro
+              - <<: &SectorName.127
+                  min: 255
+                  max: 256
+                text: Lower
+              - <<: &SectorName.128
+                  min: 257
+                  max: 258
+                text: Lues
+              - <<: &SectorName.129
+                  min: 259
+                  max: 260
+                text: Malum
+              - <<: &SectorName.130
+                  min: 261
+                  max: 262
+                text: Mendax
+              - <<: &SectorName.131
+                  min: 263
+                  max: 264
+                text: Naptha
+              - <<: &SectorName.132
+                  min: 265
+                  max: 266
+                text: Nero
+              - <<: &SectorName.133
+                  min: 267
+                  max: 268
+                text: Nova
+              - <<: &SectorName.134
+                  min: 269
+                  max: 270
+                text: Nyxian
+              - <<: &SectorName.135
+                  min: 271
+                  max: 272
+                text: Obsidian
+              - <<: &SectorName.136
+                  min: 273
+                  max: 274
+                text: Phantom
+              - <<: &SectorName.137
+                  min: 275
+                  max: 276
+                text: Potestas
+              - <<: &SectorName.138
+                  min: 277
+                  max: 278
+                text: Radiant
+              - <<: &SectorName.139
+                  min: 279
+                  max: 280
+                text: Robur
+              - <<: &SectorName.140
+                  min: 281
+                  max: 282
+                text: Tainted
+              - <<: &SectorName.141
+                  min: 283
+                  max: 284
+                text: Tawny
+              - <<: &SectorName.142
+                  min: 285
+                  max: 286
+                text: Tenebris
+              - <<: &SectorName.143
+                  min: 287
+                  max: 288
+                text: Umbral
+              - <<: &SectorName.144
+                  min: 289
+                  max: 290
+                text: Unseen
+              - <<: &SectorName.145
+                  min: 291
+                  max: 292
+                text: Unyielding
+              - <<: &SectorName.146
+                  min: 293
+                  max: 294
+                text: Vermilion
+              - <<: &SectorName.147
+                  min: 295
+                  max: 296
+                text: Viper's
+              - <<: &SectorName.148
+                  min: 297
+                  max: 298
+                text: Wicked
+              - <<: &SectorName.149
+                  min: 299
+                  max: 300
+                text: Withered
+          suffix:
+            name: Suffix
+            oracle_type: column_text
+            dice: 1d300
+            replaces: starforged/oracles/space/sector_name/suffix
+            _comment: Extension of the oracle table
+            rows:
+              # begin copied rows
+              - <<: *SectorName.0
+                _i18n: &CommonNounAsProperNoun
+                  text:
+                    part_of_speech: common_noun_as_proper_noun
+                text: Abyss
+              - <<: *SectorName.1
+                _i18n: *CommonNounAsProperNoun
+                text: Anvil
+              - <<: *SectorName.2
+                _i18n: *CommonNounAsProperNoun
+                text: Arch
+              - <<: *SectorName.3
+                _i18n: *CommonNounAsProperNoun
+                text: Breach
+              - <<: *SectorName.4
+                _i18n: *CommonNounAsProperNoun
+                text: Chain
+              - <<: *SectorName.5
+                _i18n: *CommonNounAsProperNoun
+                text: Channel
+              - <<: *SectorName.6
+                _i18n: *CommonNounAsProperNoun
+                text: Chasm
+              - <<: *SectorName.7
+                _i18n: *CommonNounAsProperNoun
+                text: Circlet
+              - <<: *SectorName.8
+                _i18n: *CommonNounAsProperNoun
+                text: Cluster
+              - <<: *SectorName.9
+                _i18n: *CommonNounAsProperNoun
+                text: Crossing
+              - <<: *SectorName.10
+                _i18n: *CommonNounAsProperNoun
+                text: Crown
+              - <<: *SectorName.11
+                _i18n: *CommonNounAsProperNoun
+                text: Currents
+              - <<: *SectorName.12
+                _i18n: *CommonNounAsProperNoun
+                text: Deep
+              - <<: *SectorName.13
+                _i18n: *CommonNounAsProperNoun
+                text: Desolation
+              - <<: *SectorName.14
+                _i18n: *CommonNounAsProperNoun
+                text: Drift
+              - <<: *SectorName.15
+                _i18n: *CommonNounAsProperNoun
+                text: Flow
+              - <<: *SectorName.16
+                _i18n: *CommonNounAsProperNoun
+                text: Flux
+              - <<: *SectorName.17
+                _i18n: *CommonNounAsProperNoun
+                text: Gap
+              - <<: *SectorName.18
+                _i18n: *CommonNounAsProperNoun
+                text: Gate
+              - <<: *SectorName.19
+                _i18n: *CommonNounAsProperNoun
+                text: Gyre
+              - <<: *SectorName.20
+                _i18n: *CommonNounAsProperNoun
+                text: Heart
+              - <<: *SectorName.21
+                _i18n: *CommonNounAsProperNoun
+                text: Helix
+              - <<: *SectorName.22
+                _i18n: *CommonNounAsProperNoun
+                text: Juncture
+              - <<: *SectorName.23
+                _i18n: *CommonNounAsProperNoun
+                text: Limits
+              - <<: *SectorName.24
+                _i18n: *CommonNounAsProperNoun
+                text: Locus
+              - <<: *SectorName.25
+                _i18n: *CommonNounAsProperNoun
+                text: Maelstrom
+              - <<: *SectorName.26
+                _i18n: *CommonNounAsProperNoun
+                text: Margin
+              - <<: *SectorName.27
+                _i18n: *CommonNounAsProperNoun
+                text: Maw
+              - <<: *SectorName.28
+                _i18n: *CommonNounAsProperNoun
+                text: Maze
+              - <<: *SectorName.29
+                _i18n: *CommonNounAsProperNoun
+                text: Nexus
+              - <<: *SectorName.30
+                _i18n: *CommonNounAsProperNoun
+                text: Oasis
+              - <<: *SectorName.31
+                _i18n: *CommonNounAsProperNoun
+                text: Pass
+              - <<: *SectorName.32
+                _i18n: *CommonNounAsProperNoun
+                text: Pit
+              - <<: *SectorName.33
+                _i18n: *CommonNounAsProperNoun
+                text: Pyre
+              - <<: *SectorName.34
+                _i18n: *CommonNounAsProperNoun
+                text: Reach
+              - <<: *SectorName.35
+                _i18n: *CommonNounAsProperNoun
+                text: Rest
+              - <<: *SectorName.36
+                _i18n: *CommonNounAsProperNoun
+                text: Rift
+              - <<: *SectorName.37
+                _i18n: *CommonNounAsProperNoun
+                text: Sanctum
+              - <<: *SectorName.38
+                _i18n: *CommonNounAsProperNoun
+                text: Shallows
+              - <<: *SectorName.39
+                _i18n: *CommonNounAsProperNoun
+                text: Shoal
+              - <<: *SectorName.40
+                _i18n: *CommonNounAsProperNoun
+                text: Spine
+              - <<: *SectorName.41
+                _i18n: *CommonNounAsProperNoun
+                text: Straits
+              - <<: *SectorName.42
+                _i18n: *CommonNounAsProperNoun
+                text: Threshold
+              - <<: *SectorName.43
+                _i18n: *CommonNounAsProperNoun
+                text: Tide
+              - <<: *SectorName.44
+                _i18n: *CommonNounAsProperNoun
+                text: Verge
+              - <<: *SectorName.45
+                _i18n: *CommonNounAsProperNoun
+                text: Vertex
+              - <<: *SectorName.46
+                _i18n: *CommonNounAsProperNoun
+                text: Vigil
+              - <<: *SectorName.47
+                _i18n: *CommonNounAsProperNoun
+                text: Void
+              - <<: *SectorName.48
+                _i18n: *CommonNounAsProperNoun
+                text: Web
+              - <<: *SectorName.49
+                _i18n: *CommonNounAsProperNoun
+                text: Zenith
+              # end copied rows
+              - <<: *SectorName.50
+                _i18n: *CommonNounAsProperNoun
+                text: Aperture
+              - <<: *SectorName.51
+                _i18n: *CommonNounAsProperNoun
+                text: Arm
+              - <<: *SectorName.52
+                _i18n: *CommonNounAsProperNoun
+                text: Belt
+              - <<: *SectorName.53
+                _i18n: *CommonNounAsProperNoun
+                text: Claw
+              - <<: *SectorName.54
+                _i18n: *CommonNounAsProperNoun
+                text: Cleft
+              - <<: *SectorName.55
+                _i18n: *CommonNounAsProperNoun
+                text: Clutch
+              - <<: *SectorName.56
+                _i18n: *CommonNounAsProperNoun
+                text: Conduit
+              - <<: *SectorName.57
+                _i18n: *CommonNounAsProperNoun
+                text: Connection
+              - <<: *SectorName.58
+                _i18n: *CommonNounAsProperNoun
+                text: Core
+              - <<: *SectorName.59
+                _i18n: *CommonNounAsProperNoun
+                text: Crest
+              - <<: *SectorName.60
+                _i18n: *CommonNounAsProperNoun
+                text: Crossroads
+              - <<: *SectorName.61
+                _i18n: *CommonNounAsProperNoun
+                text: Crucible
+              - <<: *SectorName.62
+                _i18n: *CommonNounAsProperNoun
+                text: Depths
+              - <<: *SectorName.63
+                _i18n: *CommonNounAsProperNoun
+                text: Devastation
+              - <<: *SectorName.64
+                _i18n: *CommonNounAsProperNoun
+                text: Diadem
+              - <<: *SectorName.65
+                _i18n: *CommonNounAsProperNoun
+                text: Embers
+              - <<: *SectorName.66
+                _i18n: *CommonNounAsProperNoun
+                text: Fissure
+              - <<: *SectorName.67
+                _i18n: *CommonNounAsProperNoun
+                text: Flock
+              - <<: *SectorName.68
+                _i18n: *CommonNounAsProperNoun
+                text: Focus
+              - <<: *SectorName.69
+                _i18n: *CommonNounAsProperNoun
+                text: Ford
+              - <<: *SectorName.70
+                _i18n: *CommonNounAsProperNoun
+                text: Furnace
+              - <<: *SectorName.71
+                _i18n: *CommonNounAsProperNoun
+                text: Gateway
+              - <<: *SectorName.72
+                _i18n: *CommonNounAsProperNoun
+                text: Gulf
+              - <<: *SectorName.73
+                _i18n: *CommonNounAsProperNoun
+                text: Halo
+              - <<: *SectorName.74
+                _i18n: *CommonNounAsProperNoun
+                text: Hammer
+              - <<: *SectorName.75
+                _i18n: *CommonNounAsProperNoun
+                text: Hook
+              - <<: *SectorName.76
+                _i18n: *CommonNounAsProperNoun
+                text: Horizon
+              - <<: *SectorName.77
+                _i18n: *CommonNounAsProperNoun
+                text: Hub
+              - <<: *SectorName.78
+                _i18n: *CommonNounAsProperNoun
+                text: Isolation
+              - <<: *SectorName.79
+                _i18n: *CommonNounAsProperNoun
+                text: Kiln
+              - <<: *SectorName.80
+                _i18n: *CommonNounAsProperNoun
+                text: Legacy
+              - <<: *SectorName.81
+                _i18n: *CommonNounAsProperNoun
+                text: Manus
+              - <<: *SectorName.82
+                _i18n: *CommonNounAsProperNoun
+                text: Nest
+              - <<: *SectorName.83
+                _i18n: *CommonNounAsProperNoun
+                text: Patch
+              - <<: *SectorName.84
+                _i18n: *CommonNounAsProperNoun
+                text: Peak
+              - <<: *SectorName.85
+                _i18n: *CommonNounAsProperNoun
+                text: Pinnacle
+              - <<: *SectorName.86
+                _i18n: *CommonNounAsProperNoun
+                text: Pole
+              - <<: *SectorName.87
+                _i18n: *CommonNounAsProperNoun
+                text: Portal
+              - <<: *SectorName.88
+                _i18n: *CommonNounAsProperNoun
+                text: Revelation
+              - <<: *SectorName.89
+                _i18n: *CommonNounAsProperNoun
+                text: Rupture
+              - <<: *SectorName.90
+                _i18n: *CommonNounAsProperNoun
+                text: Scourge
+              - <<: *SectorName.91
+                _i18n: *CommonNounAsProperNoun
+                text: Shackle
+              - <<: *SectorName.92
+                _i18n: *CommonNounAsProperNoun
+                text: Shadow
+              - <<: *SectorName.93
+                _i18n: *CommonNounAsProperNoun
+                text: Slag
+              - <<: *SectorName.94
+                _i18n: *CommonNounAsProperNoun
+                text: Solitude
+              - <<: *SectorName.95
+                _i18n: *CommonNounAsProperNoun
+                text: Spate
+              - <<: *SectorName.96
+                _i18n: *CommonNounAsProperNoun
+                text: Spire
+              - <<: *SectorName.97
+                _i18n: *CommonNounAsProperNoun
+                text: Torrent
+              - <<: *SectorName.98
+                _i18n: *CommonNounAsProperNoun
+                text: Traverse
+              - <<: *SectorName.99
+                _i18n: *CommonNounAsProperNoun
+                text: Visage
+              - <<: *SectorName.100
+                _i18n: *CommonNounAsProperNoun
+                text: Altar
+              - <<: *SectorName.101
+                _i18n: *CommonNounAsProperNoun
+                text: Arc
+              - <<: *SectorName.102
+                _i18n: *CommonNounAsProperNoun
+                text: Band
+              - <<: *SectorName.103
+                _i18n: *CommonNounAsProperNoun
+                text: Border
+              - <<: *SectorName.104
+                _i18n: *CommonNounAsProperNoun
+                text: Brim
+              - <<: *SectorName.105
+                _i18n: *CommonNounAsProperNoun
+                text: Brink
+              - <<: *SectorName.106
+                _i18n: *CommonNounAsProperNoun
+                text: Calamity
+              - <<: *SectorName.107
+                _i18n: *CommonNounAsProperNoun
+                text: Craw
+              - <<: *SectorName.108
+                _i18n: *CommonNounAsProperNoun
+                text: Debt
+              - <<: *SectorName.109
+                _i18n: *CommonNounAsProperNoun
+                text: Departure
+              - <<: *SectorName.110
+                _i18n: *CommonNounAsProperNoun
+                text: Doubt
+              - <<: *SectorName.111
+                _i18n: *CommonNounAsProperNoun
+                text: Dread
+              - <<: *SectorName.112
+                _i18n: *CommonNounAsProperNoun
+                text: Edge
+              - <<: *SectorName.113
+                _i18n: *CommonNounAsProperNoun
+                text: Essence
+              - <<: *SectorName.114
+                _i18n: *CommonNounAsProperNoun
+                text: Flaw
+              - <<: *SectorName.115
+                _i18n: *CommonNounAsProperNoun
+                text: Fringe
+              - <<: *SectorName.116
+                _i18n: *CommonNounAsProperNoun
+                text: Gamut
+              - <<: *SectorName.117
+                _i18n: *CommonNounAsProperNoun
+                text: Guard
+              - <<: *SectorName.118
+                _i18n: *CommonNounAsProperNoun
+                text: Haunt
+              - <<: *SectorName.119
+                _i18n: *CommonNounAsProperNoun
+                text: Hearth
+              - <<: *SectorName.120
+                _i18n: *CommonNounAsProperNoun
+                text: Impasse
+              - <<: *SectorName.121
+                _i18n: *CommonNounAsProperNoun
+                text: Inception
+              - <<: *SectorName.122
+                _i18n: *CommonNounAsProperNoun
+                text: Interval
+              - <<: *SectorName.123
+                _i18n: *CommonNounAsProperNoun
+                text: Knot
+              - <<: *SectorName.124
+                _i18n: *CommonNounAsProperNoun
+                text: Labyrinth
+              - <<: *SectorName.125
+                _i18n: *CommonNounAsProperNoun
+                text: Lookout
+              - <<: *SectorName.126
+                _i18n: *CommonNounAsProperNoun
+                text: Loop
+              - <<: *SectorName.127
+                _i18n: *CommonNounAsProperNoun
+                text: Menace
+              - <<: *SectorName.128
+                _i18n: *CommonNounAsProperNoun
+                text: Mire
+              - <<: *SectorName.129
+                _i18n: *CommonNounAsProperNoun
+                text: Morass
+              - <<: *SectorName.130
+                _i18n: *CommonNounAsProperNoun
+                text: Net
+              - <<: *SectorName.131
+                _i18n: *CommonNounAsProperNoun
+                text: Quandary
+              - <<: *SectorName.132
+                _i18n: *CommonNounAsProperNoun
+                text: Rim
+              - <<: *SectorName.133
+                _i18n: *CommonNounAsProperNoun
+                text: Ring
+              - <<: *SectorName.134
+                _i18n: *CommonNounAsProperNoun
+                text: Roost
+              - <<: *SectorName.135
+                _i18n: *CommonNounAsProperNoun
+                text: Schism
+              - <<: *SectorName.136
+                _i18n: *CommonNounAsProperNoun
+                text: Seclusion
+              - <<: *SectorName.137
+                _i18n: *CommonNounAsProperNoun
+                text: Shrine
+              - <<: *SectorName.138
+                _i18n: *CommonNounAsProperNoun
+                text: Spiral
+              - <<: *SectorName.139
+                _i18n: *CommonNounAsProperNoun
+                text: Stream
+              - <<: *SectorName.140
+                _i18n: *CommonNounAsProperNoun
+                text: Summit
+              - <<: *SectorName.141
+                _i18n: *CommonNounAsProperNoun
+                text: Tangle
+              - <<: *SectorName.142
+                _i18n: *CommonNounAsProperNoun
+                text: Tempest
+              - <<: *SectorName.143
+                _i18n: *CommonNounAsProperNoun
+                text: Temple
+              - <<: *SectorName.144
+                _i18n: *CommonNounAsProperNoun
+                text: Tendril
+              - <<: *SectorName.145
+                _i18n: *CommonNounAsProperNoun
+                text: Tomb
+              - <<: *SectorName.146
+                _i18n: *CommonNounAsProperNoun
+                text: Trench
+              - <<: *SectorName.147
+                _i18n: *CommonNounAsProperNoun
+                text: Wave
+              - <<: *SectorName.148
+                _i18n: *CommonNounAsProperNoun
+                text: Weave
+              - <<: *SectorName.149
+                _i18n: *CommonNounAsProperNoun
+                text: Wellspring
     contents:
-      terminus:
-        name: Sighting Terminus
-        oracle_type: table_text
-        dice: 1d300
-        replaces: starforged/oracles/space/sighting/terminus
-        # summary: Extension of the oracle table
-        _source: *Source
-        rows:
-          - min: 101
-            max: 115
-            text: ▶Stellar Object
-          - min: 116
-            max: 135
-            text: ▶Planet
-          - min: 136
-            max: 140
-            text: ▶Settlement
-          - min: 141
-            max: 147
-            text: ▶Starship
-          - min: 148
-            max: 151
-            text: ▶Derelict
-          - min: 152
-            max: 153
-            text: ▶Precursor Vault
-          - min: 154
-            max: 155
-            text: ▶Creature
-          - min: 156
-            max: 160
-            text: ▶Descriptor + Focus
-          - min: 161
-            max: 165
-            text: "Debris field: Oort cloud"
-          - min: 166
-            max: 168
-            text: "Debris field: Synestia"
-          - min: 169
-            max: 170
-            text: "Debris field: Asteroid belt"
-          - min: 171
-            max: 172
-            text: "Debris field: Organic matter"
-          - min: 173
-            max: 174
-            text: "Debris field: Jettisoned cargo"
-          - min: 175
-            max: 176
-            text: Rogue binary asteroids
-          - min: 177
-            max: 178
-            text: Accretion disc with no planet
-          - min: 179
-            max: 181
-            text: Extreme solar flare
-          - min: 182
-            max: 183
-            text: Comets on a collision course
-          - min: 184
-            max: 185
-            text: Temporal fluctuations
-          - min: 186
-            max: 193
-            text: Electromagnetic emission nebula
-          - min: 194
-            max: 198
-            text: Roll twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
-          - min: 199
-            max: 200
-            text: Roll three times
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 3
-          - min: 201
-            max: 215
-            text: ▶Stellar Object
-          - min: 216
-            max: 235
-            text: ▶Planet
-          - min: 236
-            max: 240
-            text: ▶Settlement
-          - min: 241
-            max: 247
-            text: ▶Starship
-          - min: 248
-            max: 251
-            text: ▶Derelict
-          - min: 252
-            max: 253
-            text: ▶Precursor Vault
-          - min: 254
-            max: 255
-            text: ▶Creature
-          - min: 256
-            max: 260
-            text: ▶Descriptor + Focus
-          - min: 261
-            max: 265
-            text: "Debris field: Colliding asteroid fields"
-          - min: 266
-            max: 268
-            text: "Debris field: Micrometeoroids"
-          - min: 269
-            max: 270
-            text: "Debris field: Scattered disc"
-          - min: 271
-            max: 272
-            text: "Debris field: Blinding bolides"
-          - min: 273
-            max: 274
-            text: "Debris field: Mine field"
-          - min: 275
-            max: 276
-            text: Rogue dwarf planet
-          - min: 277
-            max: 278
-            text: Planet killing comet
-          - min: 279
-            max: 281
-            text: Pulsing radiation storm
-          - min: 282
-            max: 283
-            text: Roiling plasma storm
-          - min: 284
-            max: 285
-            text: Burst of gamma rays
-          - min: 286
-            max: 293
-            text: Supernova remnant
-          - min: 294
-            max: 298
-            text: Roll twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
-          - min: 299
-            max: 300
-            text: Roll three times
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 3
-      outlands:
-        name: Sighting Outlands
-        oracle_type: table_text
-        dice: 1d300
-        replaces: starforged/oracles/space/sighting/outlands
-        # summary: Extension of the oracle table
-        _source: *Source
-        rows:
-          - min: 101
-            max: 115
-            text: ▶Stellar Object
-          - min: 116
-            max: 135
-            text: ▶Planet
-          - min: 136
-            max: 138
-            text: ▶Settlement
-          - min: 139
-            max: 143
-            text: ▶Starship
-          - min: 144
-            max: 146
-            text: ▶Derelict
-          - min: 147
-            max: 149
-            text: ▶Precursor Vault
-          - min: 150
-            max: 152
-            text: ▶Creature
-          - min: 153
-            max: 158
-            text: ▶Descriptor + Focus
-          - min: 159
-            max: 163
-            text: "Debris field: Oort cloud"
-          - min: 164
-            max: 166
-            text: "Debris field: Synestia"
-          - min: 167
-            max: 168
-            text: "Debris field: Asteroid belt"
-          - min: 169
-            max: 170
-            text: "Debris field: Organic matter"
-          - min: 171
-            max: 172
-            text: "Debris field: Jettisoned cargo"
-          - min: 173
-            max: 174
-            text: Rogue binary asteroids
-          - min: 175
-            max: 176
-            text: Accretion disc with no planet
-          - min: 177
-            max: 180
-            text: Extreme solar flare
-          - min: 181
-            max: 182
-            text: Comets on a collision course
-          - min: 183
-            max: 185
-            text: Temporal fluctuations
-          - min: 186
-            max: 193
-            text: Electromagnetic emission nebula
-          - min: 194
-            max: 198
-            text: Roll twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
-          - min: 199
-            max: 200
-            text: Roll three times
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 3
-          - min: 201
-            max: 215
-            text: ▶Stellar Object
-          - min: 216
-            max: 235
-            text: ▶Planet
-          - min: 236
-            max: 238
-            text: ▶Settlement
-          - min: 239
-            max: 243
-            text: ▶Starship
-          - min: 244
-            max: 246
-            text: ▶Derelict
-          - min: 247
-            max: 249
-            text: ▶Precursor Vault
-          - min: 250
-            max: 252
-            text: ▶Creature
-          - min: 253
-            max: 258
-            text: ▶Descriptor + Focus
-          - min: 259
-            max: 263
-            text: "Debris field: Colliding asteroid fields"
-          - min: 264
-            max: 266
-            text: "Debris field: Micrometeoroids"
-          - min: 267
-            max: 268
-            text: "Debris field: Scattered disc"
-          - min: 269
-            max: 270
-            text: "Debris field: Blinding bolides"
-          - min: 271
-            max: 272
-            text: "Debris field: Mine field"
-          - min: 273
-            max: 274
-            text: Rogue dwarf planet
-          - min: 275
-            max: 276
-            text: Planet killing comet
-          - min: 277
-            max: 280
-            text: Pulsing radiation storm
-          - min: 281
-            max: 282
-            text: Roiling plasma storm
-          - min: 283
-            max: 285
-            text: Burst of gamma rays
-          - min: 286
-            max: 293
-            text: Supernova remnant
-          - min: 294
-            max: 298
-            text: Roll twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
-          - min: 299
-            max: 300
-            text: Roll three times
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 3
-      expanse:
-        name: Sighting Expanse
-        oracle_type: table_text
-        dice: 1d300
-        replaces: starforged/oracles/space/sighting/expanse
-        # summary: Extension of the oracle table
-        _source: *Source
-        rows:
-          - min: 101
-            max: 115
-            text: ▶Stellar Object
-          - min: 116
-            max: 135
-            text: ▶Planet
-          - min: 136
-            max: 137
-            text: ▶Settlement
-          - min: 138
-            max: 139
-            text: ▶Starship
-          - min: 140
-            max: 141
-            text: ▶Derelict
-          - min: 142
-            max: 145
-            text: ▶Precursor Vault
-          - min: 146
-            max: 149
-            text: ▶Creature
-          - min: 150
-            max: 156
-            text: ▶Descriptor + Focus
-          - min: 157
-            max: 161
-            text: "Debris field: Oort cloud"
-          - min: 162
-            max: 164
-            text: "Debris field: Synestia"
-          - min: 165
-            max: 166
-            text: "Debris field: Asteroid belt"
-          - min: 167
-            max: 168
-            text: "Debris field: Organic matter"
-          - min: 169
-            max: 170
-            text: "Debris field: Jettisoned cargo"
-          - min: 171
-            max: 172
-            text: Rogue binary asteroids
-          - min: 173
-            max: 174
-            text: Accretion disc with no planet
-          - min: 175
-            max: 179
-            text: Extreme solar flare
-          - min: 180
-            max: 181
-            text: Comets on a collision course
-          - min: 182
-            max: 185
-            text: Temporal fluctuations
-          - min: 186
-            max: 193
-            text: Electromagnetic emission nebula
-          - min: 194
-            max: 198
-            text: Roll twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
-          - min: 199
-            max: 200
-            text: Roll three times
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 3
-          - min: 201
-            max: 215
-            text: ▶Stellar Object
-          - min: 216
-            max: 235
-            text: ▶Planet
-          - min: 236
-            max: 237
-            text: ▶Settlement
-          - min: 238
-            max: 239
-            text: ▶Starship
-          - min: 240
-            max: 241
-            text: ▶Derelict
-          - min: 242
-            max: 245
-            text: ▶Precursor Vault
-          - min: 246
-            max: 249
-            text: ▶Creature
-          - min: 250
-            max: 256
-            text: ▶Descriptor + Focus
-          - min: 257
-            max: 261
-            text: "Debris field: Colliding asteroid fields"
-          - min: 262
-            max: 264
-            text: "Debris field: Micrometeoroids"
-          - min: 265
-            max: 266
-            text: "Debris field: Scattered disc"
-          - min: 267
-            max: 268
-            text: "Debris field: Blinding bolides"
-          - min: 269
-            max: 270
-            text: "Debris field: Mine field"
-          - min: 271
-            max: 272
-            text: Rogue dwarf planet
-          - min: 273
-            max: 274
-            text: Planet killing comet
-          - min: 275
-            max: 279
-            text: Pulsing radiation storm
-          - min: 280
-            max: 281
-            text: Roiling plasma storm
-          - min: 282
-            max: 285
-            text: Burst of gamma rays
-          - min: 286
-            max: 293
-            text: Supernova remnant
-          - min: 294
-            max: 298
-            text: Roll twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
-          - min: 299
-            max: 300
-            text: Roll three times
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 3
-      prefix:
-        name: Sector Name Prefix
-        oracle_type: table_text
-        dice: 1d300
-        # summary: Extension of the oracle table
-        _source: *Source
-        rows:
-          - min: 1
-            max: 2
-            text: Accursed
-          - min: 3
-            max: 4
-            text: Ashen
-          - min: 5
-            max: 6
-            text: Asteria
-          - min: 7
-            max: 8
-            text: Bitter
-          - min: 9
-            max: 10
-            text: Blighted
-          - min: 11
-            max: 12
-            text: Bloodied
-          - min: 13
-            max: 14
-            text: Boundless
-          - min: 15
-            max: 16
-            text: Burning
-          - min: 17
-            max: 18
-            text: Cortana
-          - min: 19
-            max: 20
-            text: Corvus
-          - min: 21
-            max: 22
-            text: Crimson
-          - min: 23
-            max: 24
-            text: Cygnus
-          - min: 25
-            max: 26
-            text: Delphi
-          - min: 27
-            max: 28
-            text: Delphian
-          - min: 29
-            max: 30
-            text: Devil’s
-          - min: 31
-            max: 32
-            text: Ebon
-          - min: 33
-            max: 34
-            text: Essus
-          - min: 35
-            max: 36
-            text: Fallen
-          - min: 37
-            max: 38
-            text: Ferrous
-          - min: 39
-            max: 40
-            text: Fool’s
-          - min: 41
-            max: 42
-            text: Forgotten
-          - min: 43
-            max: 44
-            text: Haunted
-          - min: 45
-            max: 46
-            text: Hidden
-          - min: 47
-            max: 48
-            text: Hollow
-          - min: 49
-            max: 50
-            text: Igneous
-          - min: 51
-            max: 52
-            text: Infernal
-          - min: 53
-            max: 54
-            text: Invidia
-          - min: 55
-            max: 56
-            text: Iron
-          - min: 57
-            max: 58
-            text: Kalidas
-          - min: 59
-            max: 60
-            text: Kronos
-          - min: 61
-            max: 62
-            text: Lacuna
-          - min: 63
-            max: 64
-            text: Lumen
-          - min: 65
-            max: 66
-            text: Mobius
-          - min: 67
-            max: 68
-            text: Morien
-          - min: 69
-            max: 70
-            text: Onyx
-          - min: 71
-            max: 72
-            text: Outer
-          - min: 73
-            max: 74
-            text: Sanguis
-          - min: 75
-            max: 76
-            text: Scarred
-          - min: 77
-            max: 78
-            text: Scorched
-          - min: 79
-            max: 80
-            text: Shattered
-          - min: 81
-            max: 82
-            text: Shrouded
-          - min: 83
-            max: 84
-            text: Sindri
-          - min: 85
-            max: 86
-            text: Solana
-          - min: 87
-            max: 88
-            text: Stygian
-          - min: 89
-            max: 90
-            text: Sulaco
-          - min: 91
-            max: 92
-            text: Sundered
-          - min: 93
-            max: 94
-            text: Thunor
-          - min: 95
-            max: 96
-            text: Vanguard
-          - min: 97
-            max: 98
-            text: Veiled
-          - min: 99
-            max: 100
-            text: Wasted
-          - min: 101
-            max: 102
-            text: Alpha
-          - min: 103
-            max: 104
-            text: Amber
-          - min: 105
-            max: 106
-            text: Amethyst
-          - min: 107
-            max: 108
-            text: Ardor
-          - min: 109
-            max: 110
-            text: Azure
-          - min: 111
-            max: 112
-            text: Barren
-          - min: 113
-            max: 114
-            text: Beta
-          - min: 115
-            max: 116
-            text: Blasted
-          - min: 117
-            max: 118
-            text: Blatta
-          - min: 119
-            max: 120
-            text: Bleak
-          - min: 121
-            max: 122
-            text: Chernit
-          - min: 123
-            max: 124
-            text: Collapsed
-          - min: 125
-            max: 126
-            text: Delta
-          - min: 127
-            max: 128
-            text: Demonic
-          - min: 129
-            max: 130
-            text: Deserted
-          - min: 131
-            max: 132
-            text: Ebony
-          - min: 133
-            max: 134
-            text: Emerald
-          - min: 135
-            max: 136
-            text: "False"
-          - min: 137
-            max: 138
-            text: Foul
-          - min: 139
-            max: 140
-            text: Fractured
-          - min: 141
-            max: 142
-            text: Gamma
-          - min: 143
-            max: 144
-            text: Glowing
-          - min: 145
-            max: 146
-            text: Impes
-          - min: 147
-            max: 148
-            text: Indigo
-          - min: 149
-            max: 150
-            text: Letum
-          - min: 151
-            max: 152
-            text: Lost
-          - min: 153
-            max: 154
-            text: Malevolent
-          - min: 155
-            max: 156
-            text: Marred
-          - min: 157
-            max: 158
-            text: Metus
-          - min: 159
-            max: 160
-            text: Mors
-          - min: 161
-            max: 162
-            text: Nequam
-          - min: 163
-            max: 164
-            text: Obitus
-          - min: 165
-            max: 166
-            text: Omega
-          - min: 167
-            max: 168
-            text: Pale
-          - min: 169
-            max: 170
-            text: Perdita
-          - min: 171
-            max: 172
-            text: Procella
-          - min: 173
-            max: 174
-            text: Raven
-          - min: 175
-            max: 176
-            text: Rubicund
-          - min: 177
-            max: 178
-            text: Ruddy
-          - min: 179
-            max: 180
-            text: Ruined
-          - min: 181
-            max: 182
-            text: Sable
-          - min: 183
-            max: 184
-            text: Saffron
-          - min: 185
-            max: 186
-            text: Sapphire
-          - min: 187
-            max: 188
-            text: Scarlet
-          - min: 189
-            max: 190
-            text: Sigma
-          - min: 191
-            max: 192
-            text: Spectral
-          - min: 193
-            max: 194
-            text: Sunken
-          - min: 195
-            max: 196
-            text: Timor
-          - min: 197
-            max: 198
-            text: Unda
-          - min: 199
-            max: 200
-            text: Verdant
-          - min: 201
-            max: 202
-            text: Aether
-          - min: 203
-            max: 204
-            text: Afflicted
-          - min: 205
-            max: 206
-            text: Aurora
-          - min: 207
-            max: 208
-            text: Caducus
-          - min: 209
-            max: 210
-            text: Caelestis
-          - min: 211
-            max: 212
-            text: Caligo
-          - min: 213
-            max: 214
-            text: Caminus
-          - min: 215
-            max: 216
-            text: Cerulean
-          - min: 217
-            max: 218
-            text: Chronos
-          - min: 219
-            max: 220
-            text: Cleptos
-          - min: 221
-            max: 222
-            text: Cobalt
-          - min: 223
-            max: 224
-            text: Corrupted
-          - min: 225
-            max: 226
-            text: Cracked
-          - min: 227
-            max: 228
-            text: Cursed
-          - min: 229
-            max: 230
-            text: Draco
-          - min: 231
-            max: 232
-            text: Erebus
-          - min: 233
-            max: 234
-            text: Eternis
-          - min: 235
-            max: 236
-            text: Fiendish
-          - min: 237
-            max: 238
-            text: Forsaken
-          - min: 239
-            max: 240
-            text: Ghostly
-          - min: 241
-            max: 242
-            text: Hydra
-          - min: 243
-            max: 244
-            text: Ignis
-          - min: 245
-            max: 246
-            text: Illusory
-          - min: 247
-            max: 248
-            text: Infirm
-          - min: 249
-            max: 250
-            text: Krasnyc
-          - min: 251
-            max: 252
-            text: Larua
-          - min: 253
-            max: 254
-            text: Latro
-          - min: 255
-            max: 256
-            text: Lower
-          - min: 257
-            max: 258
-            text: Lues
-          - min: 259
-            max: 260
-            text: Malum
-          - min: 261
-            max: 262
-            text: Mendax
-          - min: 263
-            max: 264
-            text: Naptha
-          - min: 265
-            max: 266
-            text: Nero
-          - min: 267
-            max: 268
-            text: Nova
-          - min: 269
-            max: 270
-            text: Nyxian
-          - min: 271
-            max: 272
-            text: Obsidian
-          - min: 273
-            max: 274
-            text: Phantom
-          - min: 275
-            max: 276
-            text: Potestas
-          - min: 277
-            max: 278
-            text: Radiant
-          - min: 279
-            max: 280
-            text: Robur
-          - min: 281
-            max: 282
-            text: Tainted
-          - min: 283
-            max: 284
-            text: Tawny
-          - min: 285
-            max: 286
-            text: Tenebris
-          - min: 287
-            max: 288
-            text: Umbral
-          - min: 289
-            max: 290
-            text: Unseen
-          - min: 291
-            max: 292
-            text: Unyielding
-          - min: 293
-            max: 294
-            text: Vermilion
-          - min: 295
-            max: 296
-            text: Viper's
-          - min: 297
-            max: 298
-            text: Wicked
-          - min: 299
-            max: 300
-            text: Withered
-      suffix:
-        name: Sector Name Suffix
-        oracle_type: table_text
-        dice: 1d300
-        # summary: Extension of the oracle table
-        _source: *Source
-        rows:
-          - min: 1
-            max: 2
-            text: Abyss
-          - min: 3
-            max: 4
-            text: Anvil
-          - min: 5
-            max: 6
-            text: Arch
-          - min: 7
-            max: 8
-            text: Breach
-          - min: 9
-            max: 10
-            text: Chain
-          - min: 11
-            max: 12
-            text: Channel
-          - min: 13
-            max: 14
-            text: Chasm
-          - min: 15
-            max: 16
-            text: Circlet
-          - min: 17
-            max: 18
-            text: Cluster
-          - min: 19
-            max: 20
-            text: Crossing
-          - min: 21
-            max: 22
-            text: Crown
-          - min: 23
-            max: 24
-            text: Currents
-          - min: 25
-            max: 26
-            text: Deep
-          - min: 27
-            max: 28
-            text: Desolation
-          - min: 29
-            max: 30
-            text: Drift
-          - min: 31
-            max: 32
-            text: Flow
-          - min: 33
-            max: 34
-            text: Flux
-          - min: 35
-            max: 36
-            text: Gap
-          - min: 37
-            max: 38
-            text: Gate
-          - min: 39
-            max: 40
-            text: Gyre
-          - min: 41
-            max: 42
-            text: Heart
-          - min: 43
-            max: 44
-            text: Helix
-          - min: 45
-            max: 46
-            text: Juncture
-          - min: 47
-            max: 48
-            text: Limits
-          - min: 49
-            max: 50
-            text: Locus
-          - min: 51
-            max: 52
-            text: Maelstrom
-          - min: 53
-            max: 54
-            text: Margin
-          - min: 55
-            max: 56
-            text: Maw
-          - min: 57
-            max: 58
-            text: Maze
-          - min: 59
-            max: 60
-            text: Nexus
-          - min: 61
-            max: 62
-            text: Oasis
-          - min: 63
-            max: 64
-            text: Pass
-          - min: 65
-            max: 66
-            text: Pit
-          - min: 67
-            max: 68
-            text: Pyre
-          - min: 69
-            max: 70
-            text: Reach
-          - min: 71
-            max: 72
-            text: Rest
-          - min: 73
-            max: 74
-            text: Rift
-          - min: 75
-            max: 76
-            text: Sanctum
-          - min: 77
-            max: 78
-            text: Shallows
-          - min: 79
-            max: 80
-            text: Shoal
-          - min: 81
-            max: 82
-            text: Spine
-          - min: 83
-            max: 84
-            text: Straits
-          - min: 85
-            max: 86
-            text: Threshold
-          - min: 87
-            max: 88
-            text: Tide
-          - min: 89
-            max: 90
-            text: Verge
-          - min: 91
-            max: 92
-            text: Vertex
-          - min: 93
-            max: 94
-            text: Vigil
-          - min: 95
-            max: 96
-            text: Void
-          - min: 97
-            max: 98
-            text: Web
-          - min: 99
-            max: 100
-            text: Zenith
-          - min: 101
-            max: 102
-            text: Aperture
-          - min: 103
-            max: 104
-            text: Arm
-          - min: 105
-            max: 106
-            text: Belt
-          - min: 107
-            max: 108
-            text: Claw
-          - min: 109
-            max: 110
-            text: Cleft
-          - min: 111
-            max: 112
-            text: Clutch
-          - min: 113
-            max: 114
-            text: Conduit
-          - min: 115
-            max: 116
-            text: Connection
-          - min: 117
-            max: 118
-            text: Core
-          - min: 119
-            max: 120
-            text: Crest
-          - min: 121
-            max: 122
-            text: Crossroads
-          - min: 123
-            max: 124
-            text: Crucible
-          - min: 125
-            max: 126
-            text: Depths
-          - min: 127
-            max: 128
-            text: Devastation
-          - min: 129
-            max: 130
-            text: Diadem
-          - min: 131
-            max: 132
-            text: Embers
-          - min: 133
-            max: 134
-            text: Fissure
-          - min: 135
-            max: 136
-            text: Flock
-          - min: 137
-            max: 138
-            text: Focus
-          - min: 139
-            max: 140
-            text: Ford
-          - min: 141
-            max: 142
-            text: Furnace
-          - min: 143
-            max: 144
-            text: Gateway
-          - min: 145
-            max: 146
-            text: Gulf
-          - min: 147
-            max: 148
-            text: Halo
-          - min: 149
-            max: 150
-            text: Hammer
-          - min: 151
-            max: 152
-            text: Hook
-          - min: 153
-            max: 154
-            text: Horizon
-          - min: 155
-            max: 156
-            text: Hub
-          - min: 157
-            max: 158
-            text: Isolation
-          - min: 159
-            max: 160
-            text: Kiln
-          - min: 161
-            max: 162
-            text: Legacy
-          - min: 163
-            max: 164
-            text: Manus
-          - min: 165
-            max: 166
-            text: Nest
-          - min: 167
-            max: 168
-            text: Patch
-          - min: 169
-            max: 170
-            text: Peak
-          - min: 171
-            max: 172
-            text: Pinnacle
-          - min: 173
-            max: 174
-            text: Pole
-          - min: 175
-            max: 176
-            text: Portal
-          - min: 177
-            max: 178
-            text: Revelation
-          - min: 179
-            max: 180
-            text: Rupture
-          - min: 181
-            max: 182
-            text: Scourge
-          - min: 183
-            max: 184
-            text: Shackle
-          - min: 185
-            max: 186
-            text: Shadow
-          - min: 187
-            max: 188
-            text: Slag
-          - min: 189
-            max: 190
-            text: Solitude
-          - min: 191
-            max: 192
-            text: Spate
-          - min: 193
-            max: 194
-            text: Spire
-          - min: 195
-            max: 196
-            text: Torrent
-          - min: 197
-            max: 198
-            text: Traverse
-          - min: 199
-            max: 200
-            text: Visage
-          - min: 201
-            max: 202
-            text: Altar
-          - min: 203
-            max: 204
-            text: Arc
-          - min: 205
-            max: 206
-            text: Band
-          - min: 207
-            max: 208
-            text: Border
-          - min: 209
-            max: 210
-            text: Brim
-          - min: 211
-            max: 212
-            text: Brink
-          - min: 213
-            max: 214
-            text: Calamity
-          - min: 215
-            max: 216
-            text: Craw
-          - min: 217
-            max: 218
-            text: Debt
-          - min: 219
-            max: 220
-            text: Departure
-          - min: 221
-            max: 222
-            text: Doubt
-          - min: 223
-            max: 224
-            text: Dread
-          - min: 225
-            max: 226
-            text: Edge
-          - min: 227
-            max: 228
-            text: Essence
-          - min: 229
-            max: 230
-            text: Flaw
-          - min: 231
-            max: 232
-            text: Fringe
-          - min: 233
-            max: 234
-            text: Gamut
-          - min: 235
-            max: 236
-            text: Guard
-          - min: 237
-            max: 238
-            text: Haunt
-          - min: 239
-            max: 240
-            text: Hearth
-          - min: 241
-            max: 242
-            text: Impasse
-          - min: 243
-            max: 244
-            text: Inception
-          - min: 245
-            max: 246
-            text: Interval
-          - min: 247
-            max: 248
-            text: Knot
-          - min: 249
-            max: 250
-            text: Labyrinth
-          - min: 251
-            max: 252
-            text: Lookout
-          - min: 253
-            max: 254
-            text: Loop
-          - min: 255
-            max: 256
-            text: Menace
-          - min: 257
-            max: 258
-            text: Mire
-          - min: 259
-            max: 260
-            text: Morass
-          - min: 261
-            max: 262
-            text: Net
-          - min: 263
-            max: 264
-            text: Quandary
-          - min: 265
-            max: 266
-            text: Rim
-          - min: 267
-            max: 268
-            text: Ring
-          - min: 269
-            max: 270
-            text: Roost
-          - min: 271
-            max: 272
-            text: Schism
-          - min: 273
-            max: 274
-            text: Seclusion
-          - min: 275
-            max: 276
-            text: Shrine
-          - min: 277
-            max: 278
-            text: Spiral
-          - min: 279
-            max: 280
-            text: Stream
-          - min: 281
-            max: 282
-            text: Summit
-          - min: 283
-            max: 284
-            text: Tangle
-          - min: 285
-            max: 286
-            text: Tempest
-          - min: 287
-            max: 288
-            text: Temple
-          - min: 289
-            max: 290
-            text: Tendril
-          - min: 291
-            max: 292
-            text: Tomb
-          - min: 293
-            max: 294
-            text: Trench
-          - min: 295
-            max: 296
-            text: Wave
-          - min: 297
-            max: 298
-            text: Weave
-          - min: 299
-            max: 300
-            text: Wellspring
       object:
         name: Stellar Object
         oracle_type: table_text
         dice: 1d300
-        # summary: Extension of the oracle table
+        _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
           - min: 1
             max: 15
             text: Smoldering red star
@@ -1438,10 +1831,10 @@ oracles:
             text: Neutron star surrounded by intense magnetic fields
           - min: 81
             max: 85
-            text: Two stars in close orbit connected by fiery tendrils
+            text: Two stars in close orbit connected by fiery tendrils of energy
           - min: 86
             max: 90
-            text: Black hole allows nothing to escape - not even light
+            text: Black hole allows nothing to escape—not even light
           - min: 91
             max: 98
             text: Hypergiant star generating turbulent solar winds
@@ -1451,6 +1844,7 @@ oracles:
           - min: 100
             max: 100
             text: Unstable star showing signs of impending supernova
+          # end copied rows
           - min: 101
             max: 115
             text: Sickly green star that absorbs energy as well as emitting it
@@ -1530,13 +1924,127 @@ oracles:
             max: 300
             text: Unstable wormhole drawing in everything nearby
       peril:
-        name: Peril
+        name: Spaceborne Peril
         oracle_type: table_text
         dice: 1d300
         replaces: starforged/oracles/space/peril
-        # summary: Extension of the oracle table
+        # _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
+          - min: 1
+            max: 3
+            text: Artificial gravity generator malfunctions
+          - min: 4
+            max: 6
+            text: Automated defenses or mines protect this area
+          - min: 7
+            max: 9
+            text: Compartment catches fire or is breached
+          - min: 10
+            max: 12
+            text: Contagion or illness threatens to take hold
+          - min: 13
+            max: 15
+            text: Dust clouds imperil navigation or conceal foes
+          - min: 16
+            max: 18
+            text: Energy storm looms
+          - min: 19
+            max: 21
+            text: Familiar foe appears or sends an ominous message
+          - min: 22
+            max: 24
+            text: Gravity well or vortex takes hold
+          - min: 25
+            max: 27
+            text: Imperiled ship calls for help
+          - min: 28
+            max: 30
+            text: Important device fails or malfunctions
+          - min: 31
+            max: 33
+            text: Infestation is revealed
+          - min: 34
+            max: 36
+            text: Intruder or stowaway creates trouble
+          - min: 37
+            max: 39
+            text: Isolation or fear presses in
+          - min: 40
+            max: 42
+            text: Life support system malfunctions
+          - min: 43
+            max: 45
+            text: Meteoroid storm fills the sky
+          - min: 46
+            max: 48
+            text: Mysterious wreckage portends a new threat
+          - min: 49
+            max: 51
+            text: Nearby settlement calls for help
+          - min: 52
+            max: 54
+            text: Old repair or patch fails
+          - min: 55
+            max: 57
+            text: Onboard dispute or inner turmoil causes a disruption
+          - min: 58
+            max: 60
+            text: Others obstruct your path or form a blockade
+          - min: 61
+            max: 63
+            text: Phantom signals suggest a lurking foe
+          - min: 64
+            max: 66
+            text: Pirates hunt for prey
+          - min: 67
+            max: 69
+            text: Power fails
+          - min: 70
+            max: 72
+            text: Primary drive or generator malfunctions
+          - min: 73
+            max: 75
+            text: Sabotage is revealed
+          - min: 76
+            max: 78
+            text: Shockwave or gravity wave approaches
+          - min: 79
+            max: 81
+            text: Someone questions your presence here
+          - min: 82
+            max: 84
+            text: Stellar anomaly emits hazardous energies
+          - min: 85
+            max: 87
+            text: Threatening lifeform draws near
+          - min: 88
+            max: 90
+            text: Troubling visions or apparitions
+          - min: 91
+            max: 93
+            text: 'True nature of a cargo, occupant, or passenger is revealed'
+          - min: 94
+            max: 96
+            text: Unsettling sounds or disturbances
+          - min: 97
+            max: 99
+            <<: &ActionTheme
+              text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+              oracle_rolls:
+                - oracle: starforged/oracles/core/action
+                  auto: true
+                - oracle: starforged/oracles/core/theme
+                  auto: true
+          - min: 100
+            max: 100
+            <<: &RollTwice
+              text: Roll twice
+              oracle_rolls:
+                - number_of_rolls: 2
+                  auto: true
+        # end copied rows
           - min: 101
             max: 103
             text: Accused of a crime, the chase begins
@@ -1635,16 +2143,10 @@ oracles:
             text: Weapon system malfunctions
           - min: 197
             max: 199
-            text: ▶Action + Theme
+            <<: *ActionTheme
           - min: 200
             max: 200
-            text: Roll Twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
+            <<: *RollTwice
           - min: 201
             max: 203
             text: Access to a critical deck is blocked
@@ -1743,24 +2245,95 @@ oracles:
             text: Water supply malfunctions
           - min: 297
             max: 299
-            text: ▶Action + Theme
+            <<: *ActionTheme
           - min: 300
             max: 300
-            text: Roll Twice
-            oracle_rolls:
-              - oracle: null
-                dice: null
-                auto: true
-                duplicates: reroll
-                number_of_rolls: 2
+            <<: *RollTwice
       opportunity:
-        name: Opportunity
+        name: Spaceborne Opportunity
         oracle_type: table_text
         dice: 1d300
         replaces: starforged/oracles/space/opportunity
-        # summary: Extension of the oracle table
+        _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
+          - min: 1
+            max: 4
+            text: Advance warning of an environmental threat
+          - min: 5
+            max: 8
+            text: Automated signal offers a helpful message or warning
+          - min: 9
+            max: 12
+            text: Cache of cargo or supplies
+          - min: 13
+            max: 16
+            text: Chance for fellowship or a moment of inner peace
+          - min: 17
+            max: 20
+            text: Clear path through otherwise perilous space
+          - min: 21
+            max: 24
+            text: Clue offers insight into a current quest or mystery
+          - min: 25
+            max: 28
+            text: Clue to a lifeform's nature or vulnerabilities
+          - min: 29
+            max: 32
+            text: Derelict ripe for the picking
+          - min: 33
+            max: 36
+            text: Foe inadvertently reveals themselves or tips their hand
+          - min: 37
+            max: 40
+            text: Friendly interaction with a benign lifeform
+          - min: 41
+            max: 44
+            text: Friendly settlement in range
+          - min: 45
+            max: 48
+            text: Friendly spacers at work here
+          - min: 49
+            max: 52
+            text: Friendly starship crosses your path
+          - min: 53
+            max: 56
+            text: Helpful or encouraging message from an acquaintance
+          - min: 57
+            max: 60
+            text: Impressive vista offers comfort or inspiration
+          - min: 61
+            max: 64
+            text: Interesting site offers opportunities for exploration
+          - min: 65
+            max: 68
+            text: Mineral or energy resource detected
+          - min: 69
+            max: 72
+            text: Navigational or environmental hazard is left behind
+          - min: 73
+            max: 76
+            text: Opening to escape or avoid foes
+          - min: 77
+            max: 80
+            text: Plea for help from a potential benefactor
+          - min: 81
+            max: 84
+            text: Probe or beacon with useful data
+          - min: 85
+            max: 88
+            text: 'Refuge offers a place to hide, plan, or recover'
+          - min: 89
+            max: 92
+            text: Sensors pinpoint a lurking foe
+          - min: 93
+            max: 96
+            text: Sensors reveal helpful or interesting environmental data
+          - min: 97
+            max: 100
+            text: Vehicle or equipment performs beyond expectations
+          # end copied rows
           - min: 101
             max: 104
             text: Advance warning of a coming conflict

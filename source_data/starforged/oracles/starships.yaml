@@ -44,12 +44,11 @@ oracles:
             #   requires:
             #     attributes:
             #       region: [terminus]
-            rows: &table:Mission
+            rows:
               - &Mission.0
                 min: 1
                 max: 3
                 text: Blockade a location
-                # suggestions: [*roll:Place]
               - &Mission.1
                 min: 4
                 max: 6
@@ -58,7 +57,6 @@ oracles:
                 min: 7
                 max: 9
                 text: Collect a resource
-                # suggestions: [*roll:Object]
               - &Mission.3
                 min: 10
                 max: 11
@@ -95,7 +93,6 @@ oracles:
                 min: 33
                 max: 35
                 text: Evacuate a location
-                # suggestions: [*obj:Settlement]
               - &Mission.12
                 min: 36
                 max: 37
@@ -108,7 +105,6 @@ oracles:
                 min: 40
                 max: 42
                 text: Hunt down another ship
-                # suggestions: [*obj:Starship]
               - &Mission.15
                 min: 43
                 max: 45
@@ -138,12 +134,10 @@ oracles:
                 min: 60
                 max: 62
                 text: Raid a settlement
-                # suggestions: [*obj:Settlement]
               - &Mission.22
                 min: 63
                 max: 65
                 text: Resupply a settlement
-                # suggestions: [*obj:Settlement]
               - &Mission.23
                 min: 66
                 max: 68
@@ -156,27 +150,22 @@ oracles:
                 min: 72
                 max: 74
                 text: Smuggle cargo
-                # suggestions: [*roll:Object]
               - &Mission.26
                 min: 75
                 max: 77
                 text: Survey a site
-                # suggestions: [*roll:Place]
               - &Mission.27
                 min: 78
                 max: 79
                 text: Test a technology
-                # suggestions: [*roll:Object]
               - &Mission.28
                 min: 80
                 max: 82
                 text: Transport cargo
-                # suggestions: [*roll:Object]
               - &Mission.29
                 min: 83
                 max: 85
                 text: Transport passengers
-                # suggestions: [*obj:Npc]
               - &Mission.30
                 min: 86
                 max: 90
@@ -413,10 +402,6 @@ oracles:
         _source:
           <<: *Source
           page: 326
-        # usage:
-        #   initial: true
-        # content:
-        #   part_of_speech: [fragment]
         oracle_type: table_text2
         column_labels:
           roll: Roll
@@ -427,127 +412,108 @@ oracles:
             max: 2
             text: Carrier
             text2: Launches fighters
-            # set_attributes: {starship_type: [carrier]}
-            _i18n: &i18n.result.common_noun
+            _i18n: &CommonNoun
               text:
                 part_of_speech: common_noun
           - min: 3
             max: 6
             text: Corvette
             text2: Light attack ship
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [corvette]}
+            _i18n: *CommonNoun
           - min: 7
             max: 11
             text: Courier
             text2: Fast transport
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [courier]}
+            _i18n: *CommonNoun
           - min: 12
             max: 14
             text: Cruiser
             text2: Medium attack ship
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [cruiser]}
+            _i18n: *CommonNoun
           - min: 15
             max: 16
             text: Dreadnought
             text2: Heavy attack ship
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [dreadnought]}
+            _i18n: *CommonNoun
           - min: 17
             max: 19
             text: Escape pod
             text2: Survival craft
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [escape]}
+            _i18n: *CommonNoun
           - min: 20
             max: 22
             text: Foundry
             text2: Mobile construction platform
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [foundry]}
+            _i18n: *CommonNoun
           - min: 23
             max: 27
             text: Harvester
             text2: Fuel or energy excavator
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [harvester]}
+            _i18n: *CommonNoun
           - min: 28
             max: 33
             text: Hauler
             text2: Heavy transport
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [hauler]}
+            _i18n: *CommonNoun
           - min: 34
             max: 36
             text: Hunter
             text2: Stealthy attack ship
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [hunter]}
+            _i18n: *CommonNoun
           - min: 37
             max: 38
             text: Ironhome
             text2: Habitat
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [ironhome]}
+            _i18n: *CommonNoun
           - min: 39
             max: 42
             text: Mender
             text2: Utility or repair
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [mender]}
+            _i18n: *CommonNoun
           - min: 43
             max: 47
             text: Outbounder
             text2: Remote survey or research
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [outbounder]}
+            _i18n: *CommonNoun
           - min: 48
             max: 50
             text: Pennant
             text2: Command ship
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [pennant]}
+            _i18n: *CommonNoun
           - min: 51
             max: 56
             text: Prospector
             text2: Mineral excavator
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [prospector]}
+            _i18n: *CommonNoun
           - min: 57
             max: 61
             text: Reclaimer
             text2: Salvage or rescue
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [reclaimer]}
+            _i18n: *CommonNoun
           - min: 62
             max: 64
             text: Shuttle
             text2: Short-range transport
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [shuttle]}
+            _i18n: *CommonNoun
           - min: 65
             max: 67
             text: Snub fighter
             text2: Small attack craft
-            _i18n: *i18n.result.common_noun
-            # set_attributes: {starship_type: [snub_fighter]}
+            _i18n: *CommonNoun
           - min: 68
             max: 82
             text: Multipurpose
             text2: '[Starship Mission](id:starforged/oracles/starships/mission)'
             oracle_rolls:
               - oracle: starforged/oracles/starships/mission
-              # set_attributes: {starship_type: [multipurpose]}]
-            _i18n: &i18n.result.adjective
+            _i18n: &Adjective
               text:
                 part_of_speech: adjective
           - min: 83
             max: 84
             text: Unusual or unknown
             text2: null
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 85
             max: 94
             text: '[Fleet](id:starforged/oracles/starships/fleet)'
@@ -559,10 +525,8 @@ oracles:
             text: Ships in conflict (roll twice)
             text2: null
             oracle_rolls:
-              - oracle: starforged/oracles/starships/type
-                duplicates: keep
+              - duplicates: keep
                 number_of_rolls: 2
-          # TODO: format the above as a 2nd roll of this table + a game object hint
       fleet:
         name: Fleet
         oracle_type: table_text
@@ -575,31 +539,31 @@ oracles:
           - min: 1
             max: 10
             text: Battle fleet
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 11
             max: 25
             text: Pirate wing
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 26
             max: 35
             text: Raider horde
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 36
             max: 50
             text: Salvager hive
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 51
             max: 60
             text: Settler caravan
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 61
             max: 70
             text: Trade caravan
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 71
             max: 90
             text: Transport and escorts
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 91
             max: 100
             text: '[Starship Mission](id:starforged/oracles/starships/mission)'
@@ -653,7 +617,6 @@ oracles:
           - min: 96
             max: 100
             text: '[Derelict](id:starforged/collections/oracles/derelicts)'
-            # *inherit:Derelict.Starship
       first_look:
         name: First Look
         oracle_type: table_text

@@ -72,25 +72,25 @@ oracles:
           - min: 1
             max: 35
             text: Structure
-            _i18n: &i18n.result.common_noun
+            _i18n: &CommonNoun
               text:
                 part_of_speech: common_noun
           - min: 36
             max: 60
             text: Vessel
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 61
             max: 80
             text: Monument
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 81
             max: 95
             text: Machine
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 96
             max: 100
             text: Incomprehensible
-            _i18n: &i18n.result.adjective
+            _i18n: &Adjective
               text:
                 part_of_speech: adjective
       shape:
@@ -105,58 +105,58 @@ oracles:
           - min: 1
             max: 15
             text: Practical or functional
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 16
             max: 20
             text: Geometric (complex shape)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 21
             max: 25
             text: Geometric (cube)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 26
             max: 30
             text: Geometric (obelisk)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 31
             max: 35
             text: Geometric (pyramid)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 36
             max: 40
             text: Geometric (ring or torus)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 41
             max: 45
             text: Geometric (sphere)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 46
             max: 55
             text: Organic or curved
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 56
             max: 60
             text: Platform or disc
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 61
             max: 65
             text: Spires or towers
-            _i18n: *i18n.result.common_noun
+            _i18n: *CommonNoun
           - min: 66
             max: 68
             text: Domed
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 69
             max: 73
             text: Spiky
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 74
             max: 76
             text: Sculptural or effigy
           - min: 77
             max: 79
             text: Amorphous
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 80
             max: 85
             text: Transforming
@@ -169,7 +169,6 @@ oracles:
             oracle_rolls:
               - number_of_rolls: 2
                 auto: true
-
       material:
         name: Material
         oracle_type: table_text
@@ -182,31 +181,31 @@ oracles:
           - min: 1
             max: 30
             text: Metallic (industrial)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 31
             max: 60
             text: Metallic (smooth)
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 61
             max: 70
             text: Rocky or stone-like
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 71
             max: 74
             text: Crystalline or glass-like
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 75
             max: 78
             text: Bone-like
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 79
             max: 82
             text: Flesh-like
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 83
             max: 86
             text: Plant-like
-            _i18n: *i18n.result.adjective
+            _i18n: *Adjective
           - min: 87
             max: 88
             text: Energy
@@ -240,91 +239,120 @@ oracles:
         rows:
           - min: 1
             max: 3
-            text: Corrupting its environment # is
+            text: Corrupting its environment
+            # is
           - min: 4
             max: 7
-            text: Automated defenses # has
+            text: Automated defenses
+            # has
           - min: 8
             max: 10
-            text: Breached exterior # has
+            text: Breached exterior
+            # has
           - min: 11
             max: 14
-            text: Broken or fragmented # is
+            text: Broken or fragmented
+            # is
           - min: 15
             max: 17
-            text: Camouflaged or hidden # is
+            text: Camouflaged or hidden
+            # is
           - min: 18
             max: 20
-            text: Cavernous opening # has
+            text: Cavernous opening
+            # has
           - min: 21
             max: 23
-            text: Dispersed structures # has
+            text: Dispersed structures
+            # has
           - min: 24
             max: 26
-            text: Dreadful premonitions # emits
+            text: Dreadful premonitions
+            # emits
           - min: 27
             max: 30
-            text: Electromagnetic field # has? emits?
+            text: Electromagnetic field
+            # has? emits?
           - min: 31
             max: 33
-            text: Embedded within terrain # is
+            text: Embedded within terrain
+            # is
           - min: 34
             max: 36
-            text: Encased in an energy field # is
+            text: Encased in an energy field
+            # is
           - min: 37
             max: 40
-            text: Energy core or conduit # has
+            text: Energy core or conduit
+            # has
           - min: 41
             max: 43
-            text: Fractal patterns # has
+            text: Fractal patterns
+            # has
           - min: 44
             max: 47
-            text: Glyphs or symbols # has
+            text: Glyphs or symbols
+            # has
           - min: 48
             max: 51
-            text: Hazardous readings # emits? has?
+            text: Hazardous readings
+            # emits? has?
           - min: 52
             max: 54
-            text: Levitating or in motion # is
+            text: Levitating or in motion
+            # is
           - min: 55
             max: 58
-            text: Lighted or illuminated # is
+            text: Lighted or illuminated
+            # is
           - min: 59
             max: 61
-            text: No obvious point of entry # has
+            text: No obvious point of entry
+            # has
           - min: 62
             max: 64
-            text: Overgrown or entangled # is
+            text: Overgrown or entangled
+            # is
           - min: 65
             max: 67
-            text: Perfectly preserved # is
+            text: Perfectly preserved
+            # is
           - min: 68
             max: 70
-            text: Phasing in and out of reality # is
+            text: Phasing in and out of reality
+            # is
           - min: 71
             max: 73
-            text: Physical barrier # has
+            text: Physical barrier
+            # has
           - min: 74
             max: 76
-            text: Pitted or scarred # is
+            text: Pitted or scarred
+            # is
           - min: 77
             max: 79
-            text: Scaled for outsized beings # is
+            text: Scaled for outsized beings
+            # is
           - min: 80
             max: 82
-            text: Shrouded in mist or haze # is
+            text: Shrouded in mist or haze
+            # is
           - min: 83
             max: 85
-            text: Signs of invaders # has? bearing?
+            text: Signs of invaders
+            # has? bearing?
           - min: 86
             max: 89
-            text: Sound or signal # emits?
+            text: Sound or signal
+            # emits?
           - min: 90
             max: 92
-            text: Strong gravity well # has
+            text: Strong gravity well
+            # has
           - min: 93
             max: 95
-            text: Surrounded by destruction # is
+            text: Surrounded by destruction
+            # is
           - min: 96
             max: 100
             <<: &DescriptorFocus

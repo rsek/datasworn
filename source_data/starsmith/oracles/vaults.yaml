@@ -16,201 +16,201 @@ oracles:
         rows:
           - min: 1
             max: 35
-            result: Structure
+            text: Structure
           - min: 36
             max: 60
-            result: Vessel
+            text: Vessel
           - min: 61
             max: 80
-            result: Monument
+            text: Monument
           - min: 81
             max: 95
-            result: Machine
+            text: Machine
           - min: 96
             max: 100
-            result: Incomprehensible
+            text: Incomprehensible
           - min: 101
             max: 135
-            result: Woven into environment
+            text: Woven into environment
           - min: 136
             max: 160
-            result: Enclosed settlement
+            text: Enclosed settlement
           - min: 161
             max: 180
-            result: Temple
+            text: Temple
           - min: 181
             max: 195
-            result: Rube-Goldberg
+            text: Rube-Goldberg
           - min: 196
             max: 200
-            result: Incomprehensible
+            text: Incomprehensible
           - min: 201
             max: 235
-            result: Virtual environment
+            text: Virtual environment
           - min: 236
             max: 260
-            result: Extra-dimensional
+            text: Extra-dimensional
           - min: 261
             max: 280
-            result: Weapon
+            text: Weapon
           - min: 281
             max: 295
-            result: Power source
+            text: Power source
           - min: 296
             max: 300
-            result: Incomprehensible
+            text: Incomprehensible
       shape:
         replaces: starforged/oracles/vaults/shape
         dice: 1d300
         rows:
           - min: 1
             max: 15
-            result: Practical or functional
+            text: Practical or functional
           - min: 16
             max: 20
-            result: Geometric (complex shape)
+            text: Geometric (complex shape)
           - min: 21
             max: 25
-            result: Geometric (cube)
+            text: Geometric (cube)
           - min: 26
             max: 30
-            result: Geometric (obelisk)
+            text: Geometric (obelisk)
           - min: 31
             max: 35
-            result: Geometric (pyramid)
+            text: Geometric (pyramid)
           - min: 36
             max: 40
-            result: Geometric (ring or torus)
+            text: Geometric (ring or torus)
           - min: 41
             max: 45
-            result: Geometric (sphere)
+            text: Geometric (sphere)
           - min: 46
             max: 55
-            result: Organic or curved
+            text: Organic or curved
           - min: 56
             max: 60
-            result: Platform or disc
+            text: Platform or disc
           - min: 61
             max: 65
-            result: Spires or towers
+            text: Spires or towers
           - min: 66
             max: 68
-            result: Domed
+            text: Domed
           - min: 69
             max: 73
-            result: Spiky
+            text: Spiky
           - min: 74
             max: 76
-            result: Sculptural or effigy
+            text: Sculptural or effigy
           - min: 77
             max: 79
-            result: Amorphous
+            text: Amorphous
           - min: 80
             max: 85
-            result: Transforming
+            text: Transforming
           - min: 86
             max: 100
-            result: Roll twice
+            text: Roll twice
             multiple_rolls:
               amount: 2
           - min: 101
             max: 115
-            result: Rotating wheel
+            text: Rotating wheel
           - min: 116
             max: 120
-            result: Geometric (cone)
+            text: Geometric (cone)
           - min: 121
             max: 125
-            result: Geometric (cylinder)
+            text: Geometric (cylinder)
           - min: 126
             max: 130
-            result: Geometric (prism)
+            text: Geometric (prism)
           - min: 131
             max: 135
-            result: Geometric (octahedron)
+            text: Geometric (octahedron)
           - min: 136
             max: 140
-            result: Geometric (dodecahedron)
+            text: Geometric (dodecahedron)
           - min: 141
             max: 145
-            result: Geometric (icosahedron)
+            text: Geometric (icosahedron)
           - min: 146
             max: 155
-            result: Topopolis
+            text: Topopolis
           - min: 156
             max: 160
-            result: Multi-platformed
+            text: Multi-platformed
           - min: 161
             max: 165
-            result: Pits or shafts
+            text: Pits or shafts
           - min: 166
             max: 168
-            result: Walled
+            text: Walled
           - min: 169
             max: 173
-            result: Dimpled
+            text: Dimpled
           - min: 174
             max: 176
-            result: Coffin-like
+            text: Coffin-like
           - min: 177
             max: 179
-            result: Fractal
+            text: Fractal
           - min: 180
             max: 185
-            result: Chained modules
+            text: Chained modules
           - min: 186
             max: 200
-            result: Roll twice
+            text: Roll twice
             multiple_rolls:
               amount: 2
           - min: 201
             max: 215
-            result: Asteroidal
+            text: Asteroidal
           - min: 216
             max: 220
-            result: Geometric (anticube)
+            text: Geometric (anticube)
           - min: 221
             max: 225
-            result: Geometric (Archimedean)
+            text: Geometric (Archimedean)
           - min: 226
             max: 230
-            result: Geometric (Kepler-Poinsot)
+            text: Geometric (Kepler-Poinsot)
           - min: 231
             max: 235
-            result: Geometric (quadrilateral frustum)
+            text: Geometric (quadrilateral frustum)
           - min: 236
             max: 240
-            result: Geometric (rhombohedron)
+            text: Geometric (rhombohedron)
           - min: 241
             max: 245
-            result: Geometric (square cupola)
+            text: Geometric (square cupola)
           - min: 246
             max: 255
-            result: Geometric (helix)
+            text: Geometric (helix)
           - min: 256
             max: 260
-            result: Elliptical
+            text: Elliptical
           - min: 261
             max: 265
-            result: Trenches
+            text: Trenches
           - min: 266
             max: 268
-            result: Tiered
+            text: Tiered
           - min: 269
             max: 273
-            result: Bubbled
+            text: Bubbled
           - min: 274
             max: 276
-            result: Columned
+            text: Columned
           - min: 277
             max: 279
-            result: Undulating
+            text: Undulating
           - min: 280
             max: 285
-            result: Periodic or function-based shapeshifts
+            text: Periodic or function-based shapeshifts
           - min: 286
             max: 300
-            result: Roll twice
+            text: Roll twice
             multiple_rolls:
               amount: 2
       material:
@@ -219,98 +219,98 @@ oracles:
         rows:
           - min: 1
             max: 30
-            result: Metallic (industrial)
+            text: Metallic (industrial)
           - min: 31
             max: 60
-            result: Metallic (smooth)
+            text: Metallic (smooth)
           - min: 61
             max: 70
-            result: Rocky or stone-like
+            text: Rocky or stone-like
           - min: 71
             max: 74
-            result: Crystalline or glass-like
+            text: Crystalline or glass-like
           - min: 75
             max: 78
-            result: Bone-like
+            text: Bone-like
           - min: 79
             max: 82
-            result: Flesh-like
+            text: Flesh-like
           - min: 83
             max: 86
-            result: Plant-like
+            text: Plant-like
           - min: 87
             max: 88
-            result: Energy
+            text: Energy
           - min: 89
             max: 90
-            result: Liquid
+            text: Liquid
           - min: 91
             max: 100
-            result: Roll twice
+            text: Roll twice
             multiple_rolls:
               amount: 2
           - min: 101
             max: 130
-            result: Metallic (grooved)
+            text: Metallic (grooved)
           - min: 131
             max: 160
-            result: Metallic (pitted)
+            text: Metallic (pitted)
           - min: 161
             max: 170
-            result: Packed earth
+            text: Packed earth
           - min: 171
             max: 174
-            result: Hardened plastics
+            text: Hardened plastics
           - min: 175
             max: 178
-            result: Pearl-like
+            text: Pearl-like
           - min: 179
             max: 182
-            result: Scale-like
+            text: Scale-like
           - min: 183
             max: 186
-            result: Wood-like
+            text: Wood-like
           - min: 187
             max: 188
-            result: Plasma
+            text: Plasma
           - min: 189
             max: 190
-            result: Gaseous
+            text: Gaseous
           - min: 191
             max: 200
-            result: Roll twice
+            text: Roll twice
             multiple_rolls:
               amount: 2
           - min: 201
             max: 230
-            result: Metallic (jagged)
+            text: Metallic (jagged)
           - min: 231
             max: 260
-            result: Metallic (layered)
+            text: Metallic (layered)
           - min: 261
             max: 270
-            result: Concrete-like
+            text: Concrete-like
           - min: 271
             max: 274
-            result: Ceramic
+            text: Ceramic
           - min: 275
             max: 278
-            result: Fur- or feather-like
+            text: Fur- or feather-like
           - min: 279
             max: 282
-            result: Shell-like
+            text: Shell-like
           - min: 283
             max: 286
-            result: Stringed or corded
+            text: Stringed or corded
           - min: 287
             max: 288
-            result: Force fields
+            text: Force fields
           - min: 289
             max: 290
-            result: Packed ice
+            text: Packed ice
           - min: 291
             max: 300
-            result: Roll twice
+            text: Roll twice
             multiple_rolls:
               amount: 2
       first_look:
@@ -319,95 +319,95 @@ oracles:
         rows:
           - min: 1
             max: 3
-            result: Corrupting its environment
+            text: Corrupting its environment
           - min: 4
             max: 7
-            result: Automated defenses
+            text: Automated defenses
           - min: 8
             max: 10
-            result: Breached exterior
+            text: Breached exterior
           - min: 11
             max: 14
-            result: Broken or fragmented
+            text: Broken or fragmented
           - min: 15
             max: 17
-            result: Camouflaged or hidden
+            text: Camouflaged or hidden
           - min: 18
             max: 20
-            result: Cavernous opening
+            text: Cavernous opening
           - min: 21
             max: 23
-            result: Dispersed structures
+            text: Dispersed structures
           - min: 24
             max: 26
-            result: Dreadful premonitions
+            text: Dreadful premonitions
           - min: 27
             max: 30
-            result: Electromagnetic field
+            text: Electromagnetic field
           - min: 31
             max: 33
-            result: Embedded within terrain
+            text: Embedded within terrain
           - min: 34
             max: 36
-            result: Encased in an energy field
+            text: Encased in an energy field
           - min: 37
             max: 40
-            result: Energy core or conduit
+            text: Energy core or conduit
           - min: 41
             max: 43
-            result: Fractal patterns
+            text: Fractal patterns
           - min: 44
             max: 47
-            result: Glyphs or symbols
+            text: Glyphs or symbols
           - min: 48
             max: 51
-            result: Hazardous readings
+            text: Hazardous readings
           - min: 52
             max: 54
-            result: Levitating or in motion
+            text: Levitating or in motion
           - min: 55
             max: 58
-            result: Lighted or illuminated
+            text: Lighted or illuminated
           - min: 59
             max: 61
-            result: No obvious point of entry
+            text: No obvious point of entry
           - min: 62
             max: 64
-            result: Overgrown or entangled
+            text: Overgrown or entangled
           - min: 65
             max: 67
-            result: Perfectly preserved
+            text: Perfectly preserved
           - min: 68
             max: 70
-            result: Phasing in and out of reality
+            text: Phasing in and out of reality
           - min: 71
             max: 73
-            result: Physical barrier
+            text: Physical barrier
           - min: 74
             max: 76
-            result: Pitted or scarred
+            text: Pitted or scarred
           - min: 77
             max: 79
-            result: Scaled for outsized beings
+            text: Scaled for outsized beings
           - min: 80
             max: 82
-            result: Shrouded in mist or haze
+            text: Shrouded in mist or haze
           - min: 83
             max: 85
-            result: Signs of invaders
+            text: Signs of invaders
           - min: 86
             max: 89
-            result: Sound or signal
+            text: Sound or signal
           - min: 90
             max: 92
-            result: Strong gravity well
+            text: Strong gravity well
           - min: 93
             max: 95
-            result: Surrounded by destruction
+            text: Surrounded by destruction
           - min: 96
             max: 100
             <<: &DescriptorFocus
-              result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+              text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
               oracle_rolls:
                 - oracle: starforged/oracles/core/descriptor
                   auto: true
@@ -415,181 +415,181 @@ oracles:
                   auto: true
           - min: 101
             max: 103
-            result: Artificial gravity
+            text: Artificial gravity
           - min: 104
             max: 107
-            result: Augmented or recent additions
+            text: Augmented or recent additions
           - min: 108
             max: 110
-            result: Bigger on the inside
+            text: Bigger on the inside
           - min: 111
             max: 114
-            result: Centered at an impact site
+            text: Centered at an impact site
           - min: 115
             max: 117
-            result: Centralized core structure
+            text: Centralized core structure
           - min: 118
             max: 120
-            result: Comms dish or tower
+            text: Comms dish or tower
           - min: 121
             max: 123
-            result: Encased in a field of time dilation
+            text: Encased in a field of time dilation
           - min: 124
             max: 126
-            result: Enhancing its environment
+            text: Enhancing its environment
           - min: 127
             max: 130
-            result: Entrance for specialized vehicle
+            text: Entrance for specialized vehicle
           - min: 131
             max: 133
-            result: Garbled broadcast
+            text: Garbled broadcast
           - min: 134
             max: 136
-            result: Garish coloring
+            text: Garish coloring
           - min: 137
             max: 140
-            result: Ghastly and grisly omens
+            text: Ghastly and grisly omens
           - min: 141
             max: 143
-            result: Inconsistent readings
+            text: Inconsistent readings
           - min: 144
             max: 147
-            result: Infiltrating scans
+            text: Infiltrating scans
           - min: 148
             max: 151
-            result: Leaking noxious gases
+            text: Leaking noxious gases
           - min: 152
             max: 154
-            result: Light absorbing field
+            text: Light absorbing field
           - min: 155
             max: 158
-            result: Long tunnel as possible entrance
+            text: Long tunnel as possible entrance
           - min: 159
             max: 161
-            result: Pictographs
+            text: Pictographs
           - min: 162
             max: 164
-            result: Proximity projected emotions
+            text: Proximity projected emotions
           - min: 165
             max: 167
-            result: Radiation leak
+            text: Radiation leak
           - min: 168
             max: 170
-            result: Ravaged by time
+            text: Ravaged by time
           - min: 171
             max: 173
-            result: Reinforced exterior
+            text: Reinforced exterior
           - min: 174
             max: 176
-            result: Rotating discs or spirals
+            text: Rotating discs or spirals
           - min: 177
             max: 179
-            result: Scaled for smaller beings
+            text: Scaled for smaller beings
           - min: 180
             max: 182
-            result: Seamless or smooth structure
+            text: Seamless or smooth structure
           - min: 183
             max: 185
-            result: Signs of failed incursions
+            text: Signs of failed incursions
           - min: 186
             max: 189
-            result: Stuck or arrested motion
+            text: Stuck or arrested motion
           - min: 190
             max: 192
-            result: Surrounded by lush environment
+            text: Surrounded by lush environment
           - min: 193
             max: 195
-            result: Teleporting to new locations
+            text: Teleporting to new locations
           - min: 196
             max: 200
             <<: *DescriptorFocus
           - min: 201
             max: 203
-            result: Aura of cognition suppression or memory wiping
+            text: Aura of cognition suppression or memory wiping
           - min: 204
             max: 207
-            result: Automated message
+            text: Automated message
           - min: 208
             max: 210
-            result: Claustrophobic entrance
+            text: Claustrophobic entrance
           - min: 211
             max: 214
-            result: Collapsed structure
+            text: Collapsed structure
           - min: 215
             max: 217
-            result: Damaged exterior
+            text: Damaged exterior
           - min: 218
             max: 220
-            result: Designed for non-humanoids
+            text: Designed for non-humanoids
           - min: 221
             max: 223
-            result: Electrostatic field
+            text: Electrostatic field
           - min: 224
             max: 226
-            result: Encased in swirling force
+            text: Encased in swirling force
           - min: 227
             max: 230
-            result: Energy surges
+            text: Energy surges
           - min: 231
             max: 233
-            result: Environment threatens the vault
+            text: Environment threatens the vault
           - min: 234
             max: 236
-            result: Evidence of invasive lifeforms
+            text: Evidence of invasive lifeforms
           - min: 237
             max: 240
-            result: Flashes from the past
+            text: Flashes from the past
           - min: 241
             max: 243
-            result: Hauntingly shadowed
+            text: Hauntingly shadowed
           - min: 244
             max: 247
-            result: Impossible readings
+            text: Impossible readings
           - min: 248
             max: 251
-            result: Intermingled with terrain
+            text: Intermingled with terrain
           - min: 252
             max: 254
-            result: Leaking viscous fluids
+            text: Leaking viscous fluids
           - min: 255
             max: 258
-            result: Malfunctioning cloaking device
+            text: Malfunctioning cloaking device
           - min: 259
             max: 261
-            result: Multiple connections
+            text: Multiple connections
           - min: 262
             max: 264
-            result: Nano-transforming exterior
+            text: Nano-transforming exterior
           - min: 265
             max: 267
-            result: Orbiting structures
+            text: Orbiting structures
           - min: 268
             max: 270
-            result: Patterns of flashing lights
+            text: Patterns of flashing lights
           - min: 271
             max: 273
-            result: Penrose stairs or tridents
+            text: Penrose stairs or tridents
           - min: 274
             max: 276
-            result: Phasing through time
+            text: Phasing through time
           - min: 277
             max: 279
-            result: Precarious point of entry
+            text: Precarious point of entry
           - min: 280
             max: 282
-            result: Quantum entangled parts
+            text: Quantum entangled parts
           - min: 283
             max: 285
-            result: Reflective surfaces
+            text: Reflective surfaces
           - min: 286
             max: 289
-            result: Shifting gravitational fields
+            text: Shifting gravitational fields
           - min: 290
             max: 292
-            result: Surrounded by dangerous environment
+            text: Surrounded by dangerous environment
           - min: 293
             max: 295
-            result: Warning signs left by previous explorers
+            text: Warning signs left by previous explorers
           - min: 296
             max: 300
             <<: *DescriptorFocus
@@ -603,289 +603,289 @@ oracles:
             rows:
               - min: 1
                 max: 3
-                result: Abnormal gravity
+                text: Abnormal gravity
               - min: 4
                 max: 6
-                result: Automated defenses
+                text: Automated defenses
               - min: 7
                 max: 9
-                result: Biological infestation
+                text: Biological infestation
               - min: 10
                 max: 12
-                result: Carried tech is disrupted
+                text: Carried tech is disrupted
               - min: 13
                 max: 15
-                result: Complex textures or patterns
+                text: Complex textures or patterns
               - min: 16
                 max: 18
-                result: Corpses of intruders
+                text: Corpses of intruders
               - min: 19
                 max: 21
-                result: Damage and debris
+                text: Damage and debris
               - min: 22
                 max: 24
-                result: Deteriorating spaces
+                text: Deteriorating spaces
               - min: 25
                 max: 27
-                result: Dissonant tones or music
+                text: Dissonant tones or music
               - min: 28
                 max: 30
-                result: Energy surges
+                text: Energy surges
               - min: 31
                 max: 33
-                result: Environment reacts to your presence
+                text: Environment reacts to your presence
               - min: 34
                 max: 36
-                result: Evidence of looting or scavenging
+                text: Evidence of looting or scavenging
               - min: 37
                 max: 39
-                result: Excessive cold
+                text: Excessive cold
               - min: 40
                 max: 42
-                result: Excessive heat
+                text: Excessive heat
               - min: 43
                 max: 45
-                result: Faint ambient lighting
+                text: Faint ambient lighting
               - min: 46
                 max: 48
-                result: Impenetrable darkness
+                text: Impenetrable darkness
               - min: 49
                 max: 51
-                result: Intense smell
+                text: Intense smell
               - min: 52
                 max: 54
-                result: Magnetic surfaces
+                text: Magnetic surfaces
               - min: 55
                 max: 57
-                result: Material does not match exterior
+                text: Material does not match exterior
               - min: 58
                 max: 60
-                result: Ornate markings or symbols
+                text: Ornate markings or symbols
               - min: 61
                 max: 63
-                result: Reactive lighting responds to your presence
+                text: Reactive lighting responds to your presence
               - min: 64
                 max: 66
-                result: Scale does not match exterior
+                text: Scale does not match exterior
               - min: 67
                 max: 69
-                result: Signs of invasive lifeforms
+                text: Signs of invasive lifeforms
               - min: 70
                 max: 72
-                result: Surfaces respond to touch
+                text: Surfaces respond to touch
               - min: 73
                 max: 75
-                result: Thick haze or smoke
+                text: Thick haze or smoke
               - min: 76
                 max: 78
-                result: Thick or fluid atmosphere
+                text: Thick or fluid atmosphere
               - min: 79
                 max: 81
-                result: Thrumming or droning sound
+                text: Thrumming or droning sound
               - min: 82
                 max: 84
-                result: Toxic atmosphere
+                text: Toxic atmosphere
               - min: 85
                 max: 87
-                result: Toxic residue
+                text: Toxic residue
               - min: 88
                 max: 90
-                result: Well-preserved
+                text: Well-preserved
               - min: 91
                 max: 93
-                result: Wet or humid
+                text: Wet or humid
               - min: 94
                 max: 100
                 <<: *DescriptorFocus
               - min: 101
                 max: 103
-                result: Arcing electrical sparks
+                text: Arcing electrical sparks
               - min: 104
                 max: 106
-                result: Automated messages
+                text: Automated messages
               - min: 107
                 max: 109
-                result: Biological residue
+                text: Biological residue
               - min: 110
                 max: 112
-                result: Blinding flood lights
+                text: Blinding flood lights
               - min: 113
                 max: 115
-                result: Dangerous atmosphere
+                text: Dangerous atmosphere
               - min: 116
                 max: 118
-                result: Dangerous sonic emissions
+                text: Dangerous sonic emissions
               - min: 119
                 max: 121
-                result: Design does not match exterior
+                text: Design does not match exterior
               - min: 122
                 max: 124
-                result: Destructive nanites
+                text: Destructive nanites
               - min: 125
                 max: 127
-                result: Dry or arid
+                text: Dry or arid
               - min: 128
                 max: 130
-                result: Eerie silence
+                text: Eerie silence
               - min: 131
                 max: 133
-                result: Electrical burning smell
+                text: Electrical burning smell
               - min: 134
                 max: 136
-                result: Encrypted tech interfaces
+                text: Encrypted tech interfaces
               - min: 137
                 max: 139
-                result: Evidence of a skirmish or battle
+                text: Evidence of a skirmish or battle
               - min: 140
                 max: 142
-                result: Evidence of failed scavenging attempts
+                text: Evidence of failed scavenging attempts
               - min: 143
                 max: 145
-                result: Extreme compartmentalization
+                text: Extreme compartmentalization
               - min: 146
                 max: 148
-                result: Frost-rimed or shattered material
+                text: Frost-rimed or shattered material
               - min: 149
                 max: 151
-                result: Hologram initiated by your presence
+                text: Hologram initiated by your presence
               - min: 152
                 max: 154
-                result: Ill-preserved
+                text: Ill-preserved
               - min: 155
                 max: 157
-                result: Indistinguishable passageways
+                text: Indistinguishable passageways
               - min: 158
                 max: 160
-                result: Interface requires DNA sample to activate
+                text: Interface requires DNA sample to activate
               - min: 161
                 max: 163
-                result: Lack of atmosphere
+                text: Lack of atmosphere
               - min: 164
                 max: 166
-                result: Lack of main power
+                text: Lack of main power
               - min: 167
                 max: 169
-                result: Lockdown initiated by your presence
+                text: Lockdown initiated by your presence
               - min: 170
                 max: 172
-                result: Melted or scorched material
+                text: Melted or scorched material
               - min: 173
                 max: 175
-                result: Organized spaces
+                text: Organized spaces
               - min: 176
                 max: 178
-                result: Power-conducting surfaces
+                text: Power-conducting surfaces
               - min: 179
                 max: 181
-                result: Primitive scratches and scrawls
+                text: Primitive scratches and scrawls
               - min: 182
                 max: 184
-                result: Remains of ancient defenders
+                text: Remains of ancient defenders
               - min: 185
                 max: 187
-                result: Shifting gravity
+                text: Shifting gravity
               - min: 188
                 max: 190
-                result: Signs of aggressive AI
+                text: Signs of aggressive AI
               - min: 191
                 max: 193
-                result: Whirring or clicking sound
+                text: Whirring or clicking sound
               - min: 194
                 max: 200
                 <<: *DescriptorFocus
               - min: 201
                 max: 203
-                result: Augmented reality environment
+                text: Augmented reality environment
               - min: 204
                 max: 206
-                result: Cargo pods or storage units for unknown material
+                text: Cargo pods or storage units for unknown material
               - min: 207
                 max: 209
-                result: Chemical residue
+                text: Chemical residue
               - min: 210
                 max: 212
-                result: Chirping or beeping sound
+                text: Chirping or beeping sound
               - min: 213
                 max: 215
-                result: Complex systems
+                text: Complex systems
               - min: 216
                 max: 218
-                result: Computer systems compromised
+                text: Computer systems compromised
               - min: 219
                 max: 221
-                result: Corroded surfaces or equipment
+                text: Corroded surfaces or equipment
               - min: 222
                 max: 224
-                result: Directional markings respond to your presence
+                text: Directional markings respond to your presence
               - min: 225
                 max: 227
-                result: Environmental controls gone haywire
+                text: Environmental controls gone haywire
               - min: 228
                 max: 230
-                result: Ethereal whispers
+                text: Ethereal whispers
               - min: 231
                 max: 233
-                result: Evidence of traps and other defenses
+                text: Evidence of traps and other defenses
               - min: 234
                 max: 236
-                result: Hissing and steaming pipes
+                text: Hissing and steaming pipes
               - min: 237
                 max: 239
-                result: Inter-dimensional folding of space
+                text: Inter-dimensional folding of space
               - min: 240
                 max: 242
-                result: Intermittent power
+                text: Intermittent power
               - min: 243
                 max: 245
-                result: Lack of evidence of biological life
+                text: Lack of evidence of biological life
               - min: 246
                 max: 248
-                result: Lack of gravity
+                text: Lack of gravity
               - min: 249
                 max: 251
-                result: Lack of structural integrity
+                text: Lack of structural integrity
               - min: 252
                 max: 254
-                result: Language or symbols do not match exterior
+                text: Language or symbols do not match exterior
               - min: 255
                 max: 257
-                result: Maintenance drones
+                text: Maintenance drones
               - min: 258
                 max: 260
-                result: Nauseating odors
+                text: Nauseating odors
               - min: 261
                 max: 263
-                result: Overwhelming sounds
+                text: Overwhelming sounds
               - min: 264
                 max: 266
-                result: Pulsing lights
+                text: Pulsing lights
               - min: 267
                 max: 269
-                result: Radioactive environment
+                text: Radioactive environment
               - min: 270
                 max: 272
-                result: Rapidly shifting temperatures
+                text: Rapidly shifting temperatures
               - min: 273
                 max: 275
-                result: Reverent icons or sculptures
+                text: Reverent icons or sculptures
               - min: 276
                 max: 278
-                result: Signs of mass death
+                text: Signs of mass death
               - min: 279
                 max: 281
-                result: Spartan or utilitarian
+                text: Spartan or utilitarian
               - min: 282
                 max: 284
-                result: Spatial instability
+                text: Spatial instability
               - min: 285
                 max: 287
-                result: Sticky, viscous surfaces
+                text: Sticky, viscous surfaces
               - min: 288
                 max: 290
-                result: Systems react to your presence
+                text: Systems react to your presence
               - min: 291
                 max: 293
-                result: Variable environment attuned to different biologies
+                text: Variable environment attuned to different biologies
               - min: 294
                 max: 300
                 <<: *DescriptorFocus
@@ -895,323 +895,323 @@ oracles:
             rows:
               - min: 1
                 max: 3
-                result: Ascending or descending path
+                text: Ascending or descending path
               - min: 4
                 max: 6
-                result: Biological growths
+                text: Biological growths
               - min: 7
                 max: 8
-                result: Blood trail
+                text: Blood trail
               - min: 9
                 max: 10
-                result: Breached or ruptured area
+                text: Breached or ruptured area
               - min: 11
                 max: 13
-                result: Broken or inactive machinery
+                text: Broken or inactive machinery
               - min: 14
                 max: 15
-                result: Clinging mist
+                text: Clinging mist
               - min: 16
                 max: 18
-                result: Damage or debris
+                text: Damage or debris
               - min: 19
                 max: 20
-                result: Echoing noises
+                text: Echoing noises
               - min: 21
                 max: 22
-                result: Elevated path over chasm or shaft
+                text: Elevated path over chasm or shaft
               - min: 23
                 max: 25
-                result: Energy discharges
+                text: Energy discharges
               - min: 26
                 max: 28
-                result: Enigmatic controls or terminal
+                text: Enigmatic controls or terminal
               - min: 29
                 max: 30
-                result: Garden or invasive plant life
+                text: Garden or invasive plant life
               - min: 31
                 max: 32
-                result: Inscrutable object lies dark and silent
+                text: Inscrutable object lies dark and silent
               - min: 33
                 max: 35
-                result: Intersection or hub
+                text: Intersection or hub
               - min: 36
                 max: 38
-                result: Intricate symbols or pictographs
+                text: Intricate symbols or pictographs
               - min: 39
                 max: 41
-                result: Looted or dismantled technology
+                text: Looted or dismantled technology
               - min: 42
                 max: 44
-                result: Looted or empty containers
+                text: Looted or empty containers
               - min: 45
                 max: 47
-                result: Mazelike passages
+                text: Mazelike passages
               - min: 48
                 max: 49
-                result: Moving platform or lift
+                text: Moving platform or lift
               - min: 50
                 max: 52
-                result: Mummified or decayed corpses
+                text: Mummified or decayed corpses
               - min: 53
                 max: 55
-                result: Narrowing or widening path
+                text: Narrowing or widening path
               - min: 56
                 max: 58
-                result: Pooled liquid
+                text: Pooled liquid
               - min: 59
                 max: 61
-                result: Remains of intruders
+                text: Remains of intruders
               - min: 62
                 max: 63
-                result: Scattered bones
+                text: Scattered bones
               - min: 64
                 max: 66
-                result: Scrawled markings
+                text: Scrawled markings
               - min: 67
                 max: 68
-                result: Signs of an attack or battle
+                text: Signs of an attack or battle
               - min: 69
                 max: 71
-                result: Signs of invasive creatures
+                text: Signs of invasive creatures
               - min: 72
                 max: 73
-                result: Surfaces honeycombed with openings
+                text: Surfaces honeycombed with openings
               - min: 74
                 max: 76
-                result: Unintelligible recorded message
+                text: Unintelligible recorded message
               - min: 77
                 max: 79
-                result: Unintelligible whispers
+                text: Unintelligible whispers
               - min: 80
                 max: 82
-                result: Vaulted chamber
+                text: Vaulted chamber
               - min: 83
                 max: 85
-                result: Vertical shaft
+                text: Vertical shaft
               - min: 86
                 max: 90
-                result: Transition into the [Sanctum](starforged/oracles/vaults/sanctum)
+                text: Transition into the [Sanctum](starforged/oracles/vaults/sanctum)
               - min: 91
                 max: 95
                 <<: *DescriptorFocus
               - min: 96
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 101
                 max: 103
-                result: Bulkheads closing off passages
+                text: Bulkheads closing off passages
               - min: 104
                 max: 106
-                result: Ceremonial conference chamber
+                text: Ceremonial conference chamber
               - min: 107
                 max: 108
-                result: Choking gases
+                text: Choking gases
               - min: 109
                 max: 110
-                result: Crudely arranged corpses
+                text: Crudely arranged corpses
               - min: 111
                 max: 113
-                result: Damaged controls or terminal
+                text: Damaged controls or terminal
               - min: 114
                 max: 115
-                result: Dripping fluids
+                text: Dripping fluids
               - min: 116
                 max: 118
-                result: Enigmatic language
+                text: Enigmatic language
               - min: 119
                 max: 120
-                result: Evidence of intruders
+                text: Evidence of intruders
               - min: 121
                 max: 122
-                result: Flying sparks and smoke
+                text: Flying sparks and smoke
               - min: 123
                 max: 125
-                result: Garbled logs of ill omen
+                text: Garbled logs of ill omen
               - min: 126
                 max: 128
-                result: Hallway of doors
+                text: Hallway of doors
               - min: 129
                 max: 130
-                result: Hastily built reinforcement
+                text: Hastily built reinforcement
               - min: 131
                 max: 132
-                result: Hidden door now exposed
+                text: Hidden door now exposed
               - min: 133
                 max: 135
-                result: Horizontal shaft
+                text: Horizontal shaft
               - min: 136
                 max: 138
-                result: Hydroponics pods
+                text: Hydroponics pods
               - min: 139
                 max: 141
-                result: Inscrutable object flashing with light or warning beeps
+                text: Inscrutable object flashing with light or warning beeps
               - min: 142
                 max: 144
-                result: Interred corpses
+                text: Interred corpses
               - min: 145
                 max: 147
-                result: Ladder or staircase
+                text: Ladder or staircase
               - min: 148
                 max: 149
-                result: Malfunctioning machinery
+                text: Malfunctioning machinery
               - min: 150
                 max: 152
-                result: Mineral deposits
+                text: Mineral deposits
               - min: 153
                 max: 155
-                result: Precarious passage over chasm or shaft
+                text: Precarious passage over chasm or shaft
               - min: 156
                 max: 158
-                result: Scrawled warning signs
+                text: Scrawled warning signs
               - min: 159
                 max: 161
-                result: Sealed and locked containers
+                text: Sealed and locked containers
               - min: 162
                 max: 163
-                result: Signs of inhabitants
+                text: Signs of inhabitants
               - min: 164
                 max: 166
-                result: Sloping passageway
+                text: Sloping passageway
               - min: 167
                 max: 168
-                result: Strange technology of unknown purpose
+                text: Strange technology of unknown purpose
               - min: 169
                 max: 171
-                result: Swarm of nanites
+                text: Swarm of nanites
               - min: 172
                 max: 173
-                result: Thrumming sounds
+                text: Thrumming sounds
               - min: 174
                 max: 176
-                result: Trail of chemical fluid
+                text: Trail of chemical fluid
               - min: 177
                 max: 179
-                result: Transportation tube
+                text: Transportation tube
               - min: 180
                 max: 182
-                result: Uninvited visions of the past
+                text: Uninvited visions of the past
               - min: 183
                 max: 185
-                result: Violent shaking
+                text: Violent shaking
               - min: 186
                 max: 190
-                result: Transition into the [Sanctum](starforged/oracles/vaults/sanctum)
+                text: Transition into the [Sanctum](starforged/oracles/vaults/sanctum)
               - min: 191
                 max: 195
                 <<: *DescriptorFocus
               - min: 196
                 max: 200
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 201
                 max: 203
-                result: Congealed liquids
+                text: Congealed liquids
               - min: 204
                 max: 206
-                result: Controls with a flashing countdown
+                text: Controls with a flashing countdown
               - min: 207
                 max: 208
-                result: Cramped and cluttered paths
+                text: Cramped and cluttered paths
               - min: 209
                 max: 210
-                result: Damaged support structures
+                text: Damaged support structures
               - min: 211
                 max: 213
-                result: Decaying or crumbling passages
+                text: Decaying or crumbling passages
               - min: 214
                 max: 215
-                result: Displayed floorplan or lighted paths
+                text: Displayed floorplan or lighted paths
               - min: 216
                 max: 218
-                result: Distant crashes, thuds, or booms
+                text: Distant crashes, thuds, or booms
               - min: 219
                 max: 220
-                result: Escalator or moving walkway
+                text: Escalator or moving walkway
               - min: 221
                 max: 222
-                result: Evidence of past pathogens
+                text: Evidence of past pathogens
               - min: 223
                 max: 225
-                result: Exposed crawl space
+                text: Exposed crawl space
               - min: 226
                 max: 228
-                result: Flashing emergency lights
+                text: Flashing emergency lights
               - min: 229
                 max: 230
-                result: Garish décor or markings
+                text: Garish décor or markings
               - min: 231
                 max: 232
-                result: Ghostly visions
+                text: Ghostly visions
               - min: 233
                 max: 235
-                result: Glitchy hologram
+                text: Glitchy hologram
               - min: 236
                 max: 238
-                result: Grand hall
+                text: Grand hall
               - min: 239
                 max: 241
-                result: Hissing steam and heat
+                text: Hissing steam and heat
               - min: 242
                 max: 244
-                result: Hoarfrost and biting cold
+                text: Hoarfrost and biting cold
               - min: 245
                 max: 247
-                result: Hobbled maintenance bots
+                text: Hobbled maintenance bots
               - min: 248
                 max: 249
-                result: Lifeform remains on display
+                text: Lifeform remains on display
               - min: 250
                 max: 252
-                result: Looted storage facility
+                text: Looted storage facility
               - min: 253
                 max: 255
-                result: Lowered floor arena
+                text: Lowered floor arena
               - min: 256
                 max: 258
-                result: Menagerie or biological specimens
+                text: Menagerie or biological specimens
               - min: 259
                 max: 261
-                result: Morgue filled to capacity
+                text: Morgue filled to capacity
               - min: 262
                 max: 263
-                result: Mounted orb of unknown purpose
+                text: Mounted orb of unknown purpose
               - min: 264
                 max: 266
-                result: Moving passageways
+                text: Moving passageways
               - min: 267
                 max: 268
-                result: Poorly repaired breaches
+                text: Poorly repaired breaches
               - min: 269
                 max: 271
-                result: Scene of mass death
+                text: Scene of mass death
               - min: 272
                 max: 273
-                result: Scientifically impossible technology
+                text: Scientifically impossible technology
               - min: 274
                 max: 276
-                result: Signs of a disastrous event
+                text: Signs of a disastrous event
               - min: 277
                 max: 279
-                result: Systematic markings of previous explorers
+                text: Systematic markings of previous explorers
               - min: 280
                 max: 282
-                result: Trail of discarded items
+                text: Trail of discarded items
               - min: 283
                 max: 285
-                result: Trash compactor
+                text: Trash compactor
               - min: 286
                 max: 290
-                result: Transition into the [Sanctum](starforged/oracles/vaults/sanctum)
+                text: Transition into the [Sanctum](starforged/oracles/vaults/sanctum)
               - min: 291
                 max: 295
                 <<: *DescriptorFocus
               - min: 296
                 max: 300
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
           peril:
@@ -1220,206 +1220,206 @@ oracles:
             rows:
               - min: 1
                 max: 5
-                result: Broken path
+                text: Broken path
               - min: 6
                 max: 10
-                result: Change in atmosphere or environment
+                text: Change in atmosphere or environment
               - min: 11
                 max: 15
-                result: Corrosive environment
+                text: Corrosive environment
               - min: 16
                 max: 20
-                result: Dire warning left by other explorers
+                text: Dire warning left by other explorers
               - min: 21
                 max: 25
-                result: Foes close in
+                text: Foes close in
               - min: 26
                 max: 30
-                result: Fragile structural integrity
+                text: Fragile structural integrity
               - min: 31
                 max: 35
-                result: Hazardous path designed for traversal by other beings
+                text: Hazardous path designed for traversal by other beings
               - min: 36
                 max: 40
-                result: Important gear malfunctions
+                text: Important gear malfunctions
               - min: 41
                 max: 45
-                result: Isolation or fear presses in
+                text: Isolation or fear presses in
               - min: 46
                 max: 50
-                result: Mechanical trap
+                text: Mechanical trap
               - min: 51
                 max: 55
-                result: Mist or darkness conceals dangers
+                text: Mist or darkness conceals dangers
               - min: 56
                 max: 60
-                result: Puzzling mystery blocks the way
+                text: Puzzling mystery blocks the way
               - min: 61
                 max: 65
-                result: Radioactive hot spot
+                text: Radioactive hot spot
               - min: 66
                 max: 70
-                result: Rivals seek what lay within
+                text: Rivals seek what lay within
               - min: 71
                 max: 75
-                result: Signs of a contagion
+                text: Signs of a contagion
               - min: 76
                 max: 80
-                result: Signs of a lurking foe
+                text: Signs of a lurking foe
               - min: 81
                 max: 85
-                result: Tempting location or object holds hidden dangers
+                text: Tempting location or object holds hidden dangers
               - min: 86
                 max: 90
-                result: Toxic atmosphere
+                text: Toxic atmosphere
               - min: 91
                 max: 95
-                result: Unnerving sound or sensation
+                text: Unnerving sound or sensation
               - min: 96
                 max: 99
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 100
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 101
                 max: 105
-                result: Betrayed by false sensor readings
+                text: Betrayed by false sensor readings
               - min: 106
                 max: 110
-                result: Blinding or overwhelming lights
+                text: Blinding or overwhelming lights
               - min: 111
                 max: 115
-                result: Blocked path
+                text: Blocked path
               - min: 116
                 max: 120
-                result: Dangerous lifeform nesting
+                text: Dangerous lifeform nesting
               - min: 121
                 max: 125
-                result: Electrified environment
+                text: Electrified environment
               - min: 126
                 max: 130
-                result: Emergency protocols activated
+                text: Emergency protocols activated
               - min: 131
                 max: 135
-                result: Environmental hazard containment systems failure
+                text: Environmental hazard containment systems failure
               - min: 136
                 max: 140
-                result: Explosive decompression or venting
+                text: Explosive decompression or venting
               - min: 141
                 max: 145
-                result: Lack of atmosphere
+                text: Lack of atmosphere
               - min: 146
                 max: 150
-                result: Malfunctioning maintenance bots
+                text: Malfunctioning maintenance bots
               - min: 151
                 max: 155
-                result: Movement in the shadows
+                text: Movement in the shadows
               - min: 156
                 max: 160
-                result: New foe appears
+                text: New foe appears
               - min: 161
                 max: 165
-                result: Past comes back to haunt you
+                text: Past comes back to haunt you
               - min: 166
                 max: 170
-                result: Protective suit or environment breach
+                text: Protective suit or environment breach
               - min: 171
                 max: 175
-                result: Rivals hold a secret from within
+                text: Rivals hold a secret from within
               - min: 176
                 max: 180
-                result: Security system blocks the way
+                text: Security system blocks the way
               - min: 181
                 max: 185
-                result: Shifts in gravity
+                text: Shifts in gravity
               - min: 186
                 max: 190
-                result: Structural collapse pins important object
+                text: Structural collapse pins important object
               - min: 191
                 max: 195
-                result: Valuable data being erased or degraded
+                text: Valuable data being erased or degraded
               - min: 196
                 max: 199
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 200
                 max: 200
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 201
                 max: 205
-                result: Adhesive or difficult terrain
+                text: Adhesive or difficult terrain
               - min: 206
                 max: 210
-                result: Automated defense system activated
+                text: Automated defense system activated
               - min: 211
                 max: 215
-                result: Crippling waves of emotion
+                text: Crippling waves of emotion
               - min: 216
                 max: 220
-                result: Critical overload imminent
+                text: Critical overload imminent
               - min: 221
                 max: 225
-                result: Crucial gear must be jury rigged
+                text: Crucial gear must be jury rigged
               - min: 226
                 max: 230
-                result: Floor gives way
+                text: Floor gives way
               - min: 231
                 max: 235
-                result: Foes join forces
+                text: Foes join forces
               - min: 236
                 max: 240
-                result: Ghost in the machine
+                text: Ghost in the machine
               - min: 241
                 max: 245
-                result: Grim scenes weigh you down
+                text: Grim scenes weigh you down
               - min: 246
                 max: 250
-                result: Hallucinations test your perception of reality
+                text: Hallucinations test your perception of reality
               - min: 251
                 max: 255
-                result: It was a red herring
+                text: It was a red herring
               - min: 256
                 max: 260
-                result: Lockdown initiated
+                text: Lockdown initiated
               - min: 261
                 max: 265
-                result: Magnetic environment
+                text: Magnetic environment
               - min: 266
                 max: 270
-                result: Opportunity is lost
+                text: Opportunity is lost
               - min: 271
                 max: 275
-                result: Precarious path
+                text: Precarious path
               - min: 276
                 max: 280
-                result: Rivals damaged what lay within
+                text: Rivals damaged what lay within
               - min: 281
                 max: 285
-                result: Runaway AI opposes you
+                text: Runaway AI opposes you
               - min: 286
                 max: 290
-                result: Stellar activity interferes with equipment
+                text: Stellar activity interferes with equipment
               - min: 291
                 max: 295
-                result: Sterilizing agents released
+                text: Sterilizing agents released
               - min: 296
                 max: 299
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 300
                 max: 300
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
           opportunity:
@@ -1428,94 +1428,94 @@ oracles:
             rows:
               - min: 1
                 max: 10
-                result: Clue points the way to your destination or target
+                text: Clue points the way to your destination or target
               - min: 11
                 max: 20
-                result: Clue to a lifeform’s nature or vulnerabilities
+                text: Clue to a lifeform’s nature or vulnerabilities
               - min: 21
                 max: 30
-                result: Helpful gear left by another explorer
+                text: Helpful gear left by another explorer
               - min: 31
                 max: 40
-                result: Insight into the nature or history of this site
+                text: Insight into the nature or history of this site
               - min: 41
                 max: 50
-                result: Intriguing device or artifact
+                text: Intriguing device or artifact
               - min: 51
                 max: 60
-                result: Opening to get the drop on a foe
+                text: Opening to get the drop on a foe
               - min: 61
                 max: 70
-                result: Opening to outmaneuver or escape a threat or foe
+                text: Opening to outmaneuver or escape a threat or foe
               - min: 71
                 max: 80
-                result: Salvageable resource
+                text: Salvageable resource
               - min: 81
                 max: 90
-                result: Secure area offers a moment of peace
+                text: Secure area offers a moment of peace
               - min: 91
                 max: 100
-                result: Shortcut or less perilous path speeds your way
+                text: Shortcut or less perilous path speeds your way
               - min: 101
                 max: 110
-                result: Clue connecting two threads
+                text: Clue connecting two threads
               - min: 111
                 max: 120
-                result: Clue to a master plan
+                text: Clue to a master plan
               - min: 121
                 max: 130
-                result: Encouraging message or log
+                text: Encouraging message or log
               - min: 131
                 max: 140
-                result: Friendly or helpful AI
+                text: Friendly or helpful AI
               - min: 141
                 max: 150
-                result: Helpful message left by another explorer
+                text: Helpful message left by another explorer
               - min: 151
                 max: 160
-                result: Insight into the creators of this site
+                text: Insight into the creators of this site
               - min: 161
                 max: 170
-                result: Intriguing data or notes
+                text: Intriguing data or notes
               - min: 171
                 max: 180
-                result: Opening to parlay with a foe or rival
+                text: Opening to parlay with a foe or rival
               - min: 181
                 max: 190
-                result: Opening to trap a foe
+                text: Opening to trap a foe
               - min: 191
                 max: 200
-                result: Portable power supply
+                text: Portable power supply
               - min: 201
                 max: 210
-                result: Access to data obtained or granted
+                text: Access to data obtained or granted
               - min: 211
                 max: 220
-                result: Clue to a rival's weakness
+                text: Clue to a rival's weakness
               - min: 221
                 max: 230
-                result: Clue to bypassing defensive systems
+                text: Clue to bypassing defensive systems
               - min: 231
                 max: 240
-                result: Insight into previous intruders
+                text: Insight into previous intruders
               - min: 241
                 max: 250
-                result: Intriguing augmentation or module for gear
+                text: Intriguing augmentation or module for gear
               - min: 251
                 max: 260
-                result: Opening to drive a wedge between foes
+                text: Opening to drive a wedge between foes
               - min: 261
                 max: 270
-                result: Opening to eliminate a foe
+                text: Opening to eliminate a foe
               - min: 271
                 max: 280
-                result: Sight or experience inspires awe
+                text: Sight or experience inspires awe
               - min: 281
                 max: 290
-                result: Unexpected ally appears
+                text: Unexpected ally appears
               - min: 291
                 max: 300
-                result: Usable computer interface
+                text: Usable computer interface
       sanctum:
         name: Sanctum
         contents:
@@ -1525,278 +1525,278 @@ oracles:
             rows:
               - min: 1
                 max: 3
-                result: Capture or control of other beings
+                text: Capture or control of other beings
               - min: 4
                 max: 6
-                result: Command or communication relay
+                text: Command or communication relay
               - min: 7
                 max: 9
-                result: Commemoration of an event
+                text: Commemoration of an event
               - min: 10
                 max: 12
-                result: Conduit to mystical powers
+                text: Conduit to mystical powers
               - min: 13
                 max: 16
-                result: Conservation of living specimens
+                text: Conservation of living specimens
               - min: 17
                 max: 20
-                result: Containment of a powerful being
+                text: Containment of a powerful being
               - min: 21
                 max: 24
-                result: Containment of dangerous creatures
+                text: Containment of dangerous creatures
               - min: 25
                 max: 27
-                result: Containment of weapons
+                text: Containment of weapons
               - min: 28
                 max: 31
-                result: Control of a destructive weapon
+                text: Control of a destructive weapon
               - min: 32
                 max: 34
-                result: Generation of defenses or barriers
+                text: Generation of defenses or barriers
               - min: 35
                 max: 38
-                result: Generation or transformation of energy
+                text: Generation or transformation of energy
               - min: 39
                 max: 41
-                result: Harvesting of resources
+                text: Harvesting of resources
               - min: 42
                 max: 44
-                result: Interment of the dead
+                text: Interment of the dead
               - min: 45
                 max: 47
-                result: Manipulation of spacetime
+                text: Manipulation of spacetime
               - min: 48
                 max: 50
-                result: Manufacturing of lifeforms
+                text: Manufacturing of lifeforms
               - min: 51
                 max: 53
-                result: Manufacturing of machines or devices
+                text: Manufacturing of machines or devices
               - min: 54
                 max: 56
-                result: Passage to another location
+                text: Passage to another location
               - min: 57
                 max: 59
-                result: Preservation of an ancient intelligence
+                text: Preservation of an ancient intelligence
               - min: 60
                 max: 62
-                result: Preservation of maps or navigational data
+                text: Preservation of maps or navigational data
               - min: 63
                 max: 66
-                result: Protection of a sacred artifact
+                text: Protection of a sacred artifact
               - min: 67
                 max: 69
-                result: Researching science or technology
+                text: Researching science or technology
               - min: 70
                 max: 73
-                result: Safekeeping of cultural records or memories
+                text: Safekeeping of cultural records or memories
               - min: 74
                 max: 77
-                result: Shelter for inhabitants
+                text: Shelter for inhabitants
               - min: 78
                 max: 80
-                result: Stockpiling of resources
+                text: Stockpiling of resources
               - min: 81
                 max: 83
-                result: Surveying or monitoring of a location
+                text: Surveying or monitoring of a location
               - min: 84
                 max: 87
-                result: Transformation of terrain or environments
+                text: Transformation of terrain or environments
               - min: 88
                 max: 90
-                result: Worship of a god or being
+                text: Worship of a god or being
               - min: 91
                 max: 95
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 96
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 101
                 max: 103
-                result: Augmenting of lifeforms
+                text: Augmenting of lifeforms
               - min: 104
                 max: 106
-                result: Blockading a location
+                text: Blockading a location
               - min: 107
                 max: 109
-                result: Caring for the unborn
+                text: Caring for the unborn
               - min: 110
                 max: 112
-                result: Clearing navigational passages
+                text: Clearing navigational passages
               - min: 113
                 max: 116
-                result: Collection of cultural artifacts
+                text: Collection of cultural artifacts
               - min: 117
                 max: 120
-                result: Conduct dark rituals
+                text: Conduct dark rituals
               - min: 121
                 max: 124
-                result: Conduct research on sapient beings
+                text: Conduct research on sapient beings
               - min: 125
                 max: 127
-                result: Containment of dangerous stellar phenomenon
+                text: Containment of dangerous stellar phenomenon
               - min: 128
                 max: 131
-                result: Creation of a sacred artifact
+                text: Creation of a sacred artifact
               - min: 132
                 max: 134
-                result: Emergency bunker
+                text: Emergency bunker
               - min: 135
                 max: 138
-                result: Harvesting or draining energy
+                text: Harvesting or draining energy
               - min: 139
                 max: 141
-                result: Manipulation of an ancient intelligence
+                text: Manipulation of an ancient intelligence
               - min: 142
                 max: 144
-                result: Monitoring spacetime activity
+                text: Monitoring spacetime activity
               - min: 145
                 max: 147
-                result: Museum or showcase of living specimens
+                text: Museum or showcase of living specimens
               - min: 148
                 max: 150
-                result: Preparation for future event
+                text: Preparation for future event
               - min: 151
                 max: 153
-                result: Prison for spacetime criminals
+                text: Prison for spacetime criminals
               - min: 154
                 max: 156
-                result: Processing of resources
+                text: Processing of resources
               - min: 157
                 max: 159
-                result: Production of starships
+                text: Production of starships
               - min: 160
                 max: 162
-                result: Production of weapons
+                text: Production of weapons
               - min: 163
                 max: 166
-                result: Protecting dangerous data
+                text: Protecting dangerous data
               - min: 167
                 max: 169
-                result: Protecting of a passage or route
+                text: Protecting of a passage or route
               - min: 170
                 max: 173
-                result: Recycling or repurposing of machines or devices
+                text: Recycling or repurposing of machines or devices
               - min: 174
                 max: 177
-                result: Relocation of inhabitants
+                text: Relocation of inhabitants
               - min: 178
                 max: 180
-                result: Researching biology or chemistry
+                text: Researching biology or chemistry
               - min: 181
                 max: 183
-                result: Strip-mining region for resources
+                text: Strip-mining region for resources
               - min: 184
                 max: 187
-                result: Surveillance center
+                text: Surveillance center
               - min: 188
                 max: 190
-                result: Veneration of a leader
+                text: Veneration of a leader
               - min: 191
                 max: 195
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 196
                 max: 200
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 201
                 max: 203
-                result: Breeding dangerous creatures
+                text: Breeding dangerous creatures
               - min: 204
                 max: 206
-                result: Containment of a spacetime rift
+                text: Containment of a spacetime rift
               - min: 207
                 max: 209
-                result: Coordination of vast network
+                text: Coordination of vast network
               - min: 210
                 max: 212
-                result: Distributing resources
+                text: Distributing resources
               - min: 213
                 max: 216
-                result: Empowering an already powerful being
+                text: Empowering an already powerful being
               - min: 217
                 max: 220
-                result: Enacting a divine purpose
+                text: Enacting a divine purpose
               - min: 221
                 max: 224
-                result: Enhance creation of stellar bodies
+                text: Enhance creation of stellar bodies
               - min: 225
                 max: 227
-                result: Establishing settlements
+                text: Establishing settlements
               - min: 228
                 max: 231
-                result: Expansion of powerful artificial intelligence
+                text: Expansion of powerful artificial intelligence
               - min: 232
                 max: 234
-                result: Exploitation of living specimens
+                text: Exploitation of living specimens
               - min: 235
                 max: 238
-                result: Expunge or suppress mystical powers
+                text: Expunge or suppress mystical powers
               - min: 239
                 max: 241
-                result: Generation of automated troops
+                text: Generation of automated troops
               - min: 242
                 max: 244
-                result: Hybridizing lifeforms
+                text: Hybridizing lifeforms
               - min: 245
                 max: 247
-                result: Long distance energy transfer
+                text: Long distance energy transfer
               - min: 248
                 max: 250
-                result: Maintenance of automated troops
+                text: Maintenance of automated troops
               - min: 251
                 max: 253
-                result: Manipulation of a past event
+                text: Manipulation of a past event
               - min: 254
                 max: 256
-                result: Military command center
+                text: Military command center
               - min: 257
                 max: 259
-                result: Pass judgment on other beings
+                text: Pass judgment on other beings
               - min: 260
                 max: 262
-                result: Preservation of the minds of long dead sages
+                text: Preservation of the minds of long dead sages
               - min: 263
                 max: 266
-                result: Rebuilding a destroyed location
+                text: Rebuilding a destroyed location
               - min: 267
                 max: 269
-                result: Researching health and medicine
+                text: Researching health and medicine
               - min: 270
                 max: 273
-                result: Sanctification of location
+                text: Sanctification of location
               - min: 274
                 max: 277
-                result: Spreading knowledge of previous cultures
+                text: Spreading knowledge of previous cultures
               - min: 278
                 max: 280
-                result: Starship deployment center
+                text: Starship deployment center
               - min: 281
                 max: 283
-                result: Storage of dangerous waste
+                text: Storage of dangerous waste
               - min: 284
                 max: 287
-                result: Subdual or re-education of inhabitants
+                text: Subdual or re-education of inhabitants
               - min: 288
                 max: 290
-                result: Territorial expansion or conquest
+                text: Territorial expansion or conquest
               - min: 291
                 max: 295
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 296
                 max: 300
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
           feature:
@@ -1805,323 +1805,323 @@ oracles:
             rows:
               - min: 1
                 max: 2
-                result: Abyssal pit or chasm
+                text: Abyssal pit or chasm
               - min: 3
                 max: 5
-                result: Altered gravity
+                text: Altered gravity
               - min: 6
                 max: 7
-                result: Area filled with strange liquid
+                text: Area filled with strange liquid
               - min: 8
                 max: 10
-                result: Area humming with aberrant energy
+                text: Area humming with aberrant energy
               - min: 11
                 max: 13
-                result: Blasted or wrecked area
+                text: Blasted or wrecked area
               - min: 14
                 max: 16
-                result: Central chamber of immense proportions or grandeur
+                text: Central chamber of immense proportions or grandeur
               - min: 17
                 max: 19
-                result: Colossal machine
+                text: Colossal machine
               - min: 20
                 max: 21
-                result: Corrupted plant life
+                text: Corrupted plant life
               - min: 22
                 max: 24
-                result: Enigmatic mechanisms come to life
+                text: Enigmatic mechanisms come to life
               - min: 25
                 max: 26
-                result: Haze of spores or nanomachines
+                text: Haze of spores or nanomachines
               - min: 27
                 max: 28
-                result: Incomprehensible architecture or geometry
+                text: Incomprehensible architecture or geometry
               - min: 29
                 max: 31
-                result: Incongruent space contradicts the nature of this site
+                text: Incongruent space contradicts the nature of this site
               - min: 32
                 max: 34
-                result: Inscrutable object emits sound and energy
+                text: Inscrutable object emits sound and energy
               - min: 35
                 max: 37
-                result: Machinery fused with organic growths
+                text: Machinery fused with organic growths
               - min: 38
                 max: 40
-                result: Moving chamber or passage
+                text: Moving chamber or passage
               - min: 41
                 max: 43
-                result: Mutated remains of the dead
+                text: Mutated remains of the dead
               - min: 44
                 max: 46
-                result: Nest of invasive creatures
+                text: Nest of invasive creatures
               - min: 47
                 max: 49
-                result: Pockets or layers of altered atmosphere
+                text: Pockets or layers of altered atmosphere
               - min: 50
                 max: 51
-                result: Pods or chambers with preserved corpses
+                text: Pods or chambers with preserved corpses
               - min: 52
                 max: 54
-                result: Pools of strange liquid
+                text: Pools of strange liquid
               - min: 55
                 max: 57
-                result: Pulsating surfaces
+                text: Pulsating surfaces
               - min: 58
                 max: 60
-                result: Rampant biological infestation
+                text: Rampant biological infestation
               - min: 61
                 max: 63
-                result: Repository of biological specimens
+                text: Repository of biological specimens
               - min: 64
                 max: 66
-                result: Sealed chamber
+                text: Sealed chamber
               - min: 67
                 max: 69
-                result: Sealed containers of inscrutable purpose
+                text: Sealed containers of inscrutable purpose
               - min: 70
                 max: 72
-                result: Simulated or illusionary environment
+                text: Simulated or illusionary environment
               - min: 73
                 max: 74
-                result: Surfaces covered in slime or fungus
+                text: Surfaces covered in slime or fungus
               - min: 75
                 max: 76
-                result: Temporal distortions
+                text: Temporal distortions
               - min: 77
                 max: 79
-                result: Transforming spaces
+                text: Transforming spaces
               - min: 80
                 max: 82
-                result: Visions of this place in another time
+                text: Visions of this place in another time
               - min: 83
                 max: 85
-                result: Visions or reflections of another reality
+                text: Visions or reflections of another reality
               - min: 86
                 max: 88
-                result: Warped or misshapen spaces
+                text: Warped or misshapen spaces
               - min: 89
                 max: 90
-                result: Whispering voices speak to you
+                text: Whispering voices speak to you
               - min: 91
                 max: 95
                 <<: *DescriptorFocus
               - min: 96
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 101
                 max: 102
-                result: Activity monitors showing unreadable data
+                text: Activity monitors showing unreadable data
               - min: 103
                 max: 105
-                result: Barrier of thrumming force
+                text: Barrier of thrumming force
               - min: 106
                 max: 107
-                result: Bigger on the inside
+                text: Bigger on the inside
               - min: 108
                 max: 110
-                result: Booming voice addresses you
+                text: Booming voice addresses you
               - min: 111
                 max: 113
-                result: Breach or debris
+                text: Breach or debris
               - min: 114
                 max: 116
-                result: Bubbling tubes of bright liquid
+                text: Bubbling tubes of bright liquid
               - min: 117
                 max: 119
-                result: Ceremonial remains of the dead
+                text: Ceremonial remains of the dead
               - min: 120
                 max: 121
-                result: Corrupted lifeforms
+                text: Corrupted lifeforms
               - min: 122
                 max: 124
-                result: Crushed or buckled spaces
+                text: Crushed or buckled spaces
               - min: 125
                 max: 126
-                result: Environment composed of artificial fields of force
+                text: Environment composed of artificial fields of force
               - min: 127
                 max: 128
-                result: Fully organic chamber
+                text: Fully organic chamber
               - min: 129
                 max: 131
-                result: Injection tubes ready to insert
+                text: Injection tubes ready to insert
               - min: 132
                 max: 134
-                result: Inscrutable object vibrating with power
+                text: Inscrutable object vibrating with power
               - min: 135
                 max: 137
-                result: Inter-dimensional echoes
+                text: Inter-dimensional echoes
               - min: 138
                 max: 140
-                result: Lifeforms connected to machines
+                text: Lifeforms connected to machines
               - min: 141
                 max: 143
-                result: Palatial ornamentation
+                text: Palatial ornamentation
               - min: 144
                 max: 146
-                result: Pods or chambers with lifeforms in suspended animation
+                text: Pods or chambers with lifeforms in suspended animation
               - min: 147
                 max: 149
-                result: Pulsing electronic heart
+                text: Pulsing electronic heart
               - min: 150
                 max: 151
-                result: Rampant nanite infestation
+                text: Rampant nanite infestation
               - min: 152
                 max: 154
-                result: Remains of invasive creatures
+                text: Remains of invasive creatures
               - min: 155
                 max: 157
-                result: Repository of organic matter
+                text: Repository of organic matter
               - min: 158
                 max: 160
-                result: Rotating walls grant intermittent access
+                text: Rotating walls grant intermittent access
               - min: 161
                 max: 163
-                result: Shifting gravity
+                text: Shifting gravity
               - min: 164
                 max: 166
-                result: Slowly opening chamber spewing forth smoke
+                text: Slowly opening chamber spewing forth smoke
               - min: 167
                 max: 169
-                result: Small central chamber wrapped in security
+                text: Small central chamber wrapped in security
               - min: 170
                 max: 172
-                result: Spatial distortions
+                text: Spatial distortions
               - min: 173
                 max: 174
-                result: Squad of maintenance bots
+                text: Squad of maintenance bots
               - min: 175
                 max: 176
-                result: Surfaces encased in ice
+                text: Surfaces encased in ice
               - min: 177
                 max: 179
-                result: Swirling portal
+                text: Swirling portal
               - min: 180
                 max: 182
-                result: Thick clouds of unknown substance
+                text: Thick clouds of unknown substance
               - min: 183
                 max: 185
-                result: Transport chamber touring the facility
+                text: Transport chamber touring the facility
               - min: 186
                 max: 188
-                result: Tubules and vents
+                text: Tubules and vents
               - min: 189
                 max: 190
-                result: Visions of this place in possible futures
+                text: Visions of this place in possible futures
               - min: 191
                 max: 195
                 <<: *DescriptorFocus
               - min: 196
                 max: 200
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 201
                 max: 202
-                result: Abandoned hive
+                text: Abandoned hive
               - min: 203
                 max: 205
-                result: Altered pressure
+                text: Altered pressure
               - min: 206
                 max: 207
-                result: Banks of unmoving automatons
+                text: Banks of unmoving automatons
               - min: 208
                 max: 210
-                result: Breaking the laws of physics
+                text: Breaking the laws of physics
               - min: 211
                 max: 213
-                result: Central raised dais or throne
+                text: Central raised dais or throne
               - min: 214
                 max: 216
-                result: Clicking of processors
+                text: Clicking of processors
               - min: 217
                 max: 219
-                result: Communication from the multiverse
+                text: Communication from the multiverse
               - min: 220
                 max: 221
-                result: Cracking cocoons
+                text: Cracking cocoons
               - min: 222
                 max: 224
-                result: Damaged or destroyed spaces
+                text: Damaged or destroyed spaces
               - min: 225
                 max: 226
-                result: Doorway to an impossible place
+                text: Doorway to an impossible place
               - min: 227
                 max: 228
-                result: Elaborate mindscape
+                text: Elaborate mindscape
               - min: 229
                 max: 231
-                result: Empty containers with unknown residue
+                text: Empty containers with unknown residue
               - min: 232
                 max: 234
-                result: Flashing interface surfaces
+                text: Flashing interface surfaces
               - min: 235
                 max: 237
-                result: Floating spaces tethered by energy
+                text: Floating spaces tethered by energy
               - min: 238
                 max: 240
-                result: Forces pulling towards a center orb
+                text: Forces pulling towards a center orb
               - min: 241
                 max: 243
-                result: Full-body interface designed for different biology
+                text: Full-body interface designed for different biology
               - min: 244
                 max: 246
-                result: Gears and pistons
+                text: Gears and pistons
               - min: 247
                 max: 249
-                result: Inscrutable object connected to low-tech equipment
+                text: Inscrutable object connected to low-tech equipment
               - min: 250
                 max: 251
-                result: Messages from the past
+                text: Messages from the past
               - min: 252
                 max: 254
-                result: Mind-altering atmosphere
+                text: Mind-altering atmosphere
               - min: 255
                 max: 257
-                result: Observation chamber
+                text: Observation chamber
               - min: 258
                 max: 260
-                result: Organic pods with unknown occupants
+                text: Organic pods with unknown occupants
               - min: 261
                 max: 263
-                result: Pulsing plasma conduits
+                text: Pulsing plasma conduits
               - min: 264
                 max: 266
-                result: Reinforced barricade
+                text: Reinforced barricade
               - min: 267
                 max: 269
-                result: Remains of invaders
+                text: Remains of invaders
               - min: 270
                 max: 272
-                result: Smoking banks of cryogenic pods
+                text: Smoking banks of cryogenic pods
               - min: 273
                 max: 274
-                result: Spaces and tech that respond to intentions
+                text: Spaces and tech that respond to intentions
               - min: 275
                 max: 276
-                result: Spiraling tower
+                text: Spiraling tower
               - min: 277
                 max: 279
-                result: Sterilized environment
+                text: Sterilized environment
               - min: 280
                 max: 282
-                result: Surfaces encased in hardened silt
+                text: Surfaces encased in hardened silt
               - min: 283
                 max: 285
-                result: Temple or ziggurat
+                text: Temple or ziggurat
               - min: 286
                 max: 288
-                result: Unresponsive drones or servant bots
+                text: Unresponsive drones or servant bots
               - min: 289
                 max: 290
-                result: Visions of a connected vault or network
+                text: Visions of a connected vault or network
               - min: 291
                 max: 295
                 <<: *DescriptorFocus
               - min: 296
                 max: 300
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
           peril:
@@ -2130,206 +2130,206 @@ oracles:
             rows:
               - min: 1
                 max: 5
-                result: Camouflaged or transforming foe reveals itself
+                text: Camouflaged or transforming foe reveals itself
               - min: 6
                 max: 10
-                result: Confounding distortions of the timestream
+                text: Confounding distortions of the timestream
               - min: 11
                 max: 15
-                result: Destructive environmental disturbance
+                text: Destructive environmental disturbance
               - min: 16
                 max: 20
-                result: Horrifying fate for a previous intruder
+                text: Horrifying fate for a previous intruder
               - min: 21
                 max: 25
-                result: Important equipment rendered useless
+                text: Important equipment rendered useless
               - min: 26
                 max: 30
-                result: Led astray or lured into danger by a manifestation or illusion
+                text: Led astray or lured into danger by a manifestation or illusion
               - min: 31
                 max: 35
-                result: Lost the way or separated from others
+                text: Lost the way or separated from others
               - min: 36
                 max: 40
-                result: Manifestations prey upon your weaknesses or worries
+                text: Manifestations prey upon your weaknesses or worries
               - min: 41
                 max: 45
-                result: Other intruders have been corrupted or mutated by this place
+                text: Other intruders have been corrupted or mutated by this place
               - min: 46
                 max: 50
-                result: Paranoia or suspicion takes hold
+                text: Paranoia or suspicion takes hold
               - min: 51
                 max: 55
-                result: Path behind you is sealed
+                text: Path behind you is sealed
               - min: 56
                 max: 60
-                result: Powerful foe strikes without warning
+                text: Powerful foe strikes without warning
               - min: 61
                 max: 65
-                result: Restless dead awaken
+                text: Restless dead awaken
               - min: 66
                 max: 70
-                result: Scene of hideous violence or death
+                text: Scene of hideous violence or death
               - min: 71
                 max: 75
-                result: Snared in an unnatural trap
+                text: Snared in an unnatural trap
               - min: 76
                 max: 80
-                result: Spawning or swarming foes surround you
+                text: Spawning or swarming foes surround you
               - min: 81
                 max: 85
-                result: Sudden structural collapse or failure
+                text: Sudden structural collapse or failure
               - min: 86
                 max: 90
-                result: Temptations to linger or remain in this site
+                text: Temptations to linger or remain in this site
               - min: 91
                 max: 95
-                result: You are marked by physical corruption or mutation
+                text: You are marked by physical corruption or mutation
               - min: 96
                 max: 99
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 100
                 max: 100
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 101
                 max: 105
-                result: Assaulted by the spirits of those who came before
+                text: Assaulted by the spirits of those who came before
               - min: 106
                 max: 110
-                result: Automated weapons take aim
+                text: Automated weapons take aim
               - min: 111
                 max: 115
-                result: Backed into a corner by foes
+                text: Backed into a corner by foes
               - min: 116
                 max: 120
-                result: Bowel-shaking earthquakes of doubt and remorse
+                text: Bowel-shaking earthquakes of doubt and remorse
               - min: 121
                 max: 125
-                result: Charnel house or pit slick with fresh kills
+                text: Charnel house or pit slick with fresh kills
               - min: 126
                 max: 130
-                result: Confounding spatial displacements
+                text: Confounding spatial displacements
               - min: 131
                 max: 135
-                result: Corrupted AI vexes you with riddles
+                text: Corrupted AI vexes you with riddles
               - min: 136
                 max: 140
-                result: Destructive energies lash out
+                text: Destructive energies lash out
               - min: 141
                 max: 145
-                result: Environment hostile to organic life
+                text: Environment hostile to organic life
               - min: 146
                 max: 150
-                result: Failing life support systems
+                text: Failing life support systems
               - min: 151
                 max: 155
-                result: Knockout gas threatens consciousness
+                text: Knockout gas threatens consciousness
               - min: 156
                 max: 160
-                result: Mechanical trap is sprung
+                text: Mechanical trap is sprung
               - min: 161
                 max: 165
-                result: Pitted against an ally
+                text: Pitted against an ally
               - min: 166
                 max: 170
-                result: Powerful being awakened
+                text: Powerful being awakened
               - min: 171
                 max: 175
-                result: Shifting environment impedes progress
+                text: Shifting environment impedes progress
               - min: 176
                 max: 180
-                result: Target slips out of reach
+                text: Target slips out of reach
               - min: 181
                 max: 185
-                result: Trophy wall of conquests holds an empty space for you
+                text: Trophy wall of conquests holds an empty space for you
               - min: 186
                 max: 190
-                result: Visions of past failure cause dangerous hesitation
+                text: Visions of past failure cause dangerous hesitation
               - min: 191
                 max: 195
-                result: You are marked by spiritual corruption
+                text: You are marked by spiritual corruption
               - min: 196
                 max: 199
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 200
                 max: 200
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
               - min: 201
                 max: 205
-                result: Adaptive systems respond to confound you
+                text: Adaptive systems respond to confound you
               - min: 206
                 max: 210
-                result: Artificially housed consciousnesses direct foes
+                text: Artificially housed consciousnesses direct foes
               - min: 211
                 max: 215
-                result: Chains, physical or emotional, bind you here
+                text: Chains, physical or emotional, bind you here
               - min: 216
                 max: 220
-                result: Concussive forces knock you around
+                text: Concussive forces knock you around
               - min: 221
                 max: 225
-                result: Defensive systems herd you towards danger
+                text: Defensive systems herd you towards danger
               - min: 226
                 max: 230
-                result: Energy core in cascade failure
+                text: Energy core in cascade failure
               - min: 231
                 max: 235
-                result: Gravitational forces wreak havoc
+                text: Gravitational forces wreak havoc
               - min: 236
                 max: 240
-                result: Hidden foes demand your surrender
+                text: Hidden foes demand your surrender
               - min: 241
                 max: 245
-                result: Immobilized by unnatural forces
+                text: Immobilized by unnatural forces
               - min: 246
                 max: 250
-                result: Impartial guardian strikes with ferocity
+                text: Impartial guardian strikes with ferocity
               - min: 251
                 max: 255
-                result: Murphy's Law manifests in force
+                text: Murphy's Law manifests in force
               - min: 256
                 max: 260
-                result: Necessary tool not readily at hand
+                text: Necessary tool not readily at hand
               - min: 261
                 max: 265
-                result: Object of fascination distracts until it's too late
+                text: Object of fascination distracts until it's too late
               - min: 266
                 max: 270
-                result: Offered a devil's bargain
+                text: Offered a devil's bargain
               - min: 271
                 max: 275
-                result: Psychic or psionic assault
+                text: Psychic or psionic assault
               - min: 276
                 max: 280
-                result: Rivals hold leverage over the objective
+                text: Rivals hold leverage over the objective
               - min: 281
                 max: 285
-                result: Scene of heart-wrenching torture or sacrifice
+                text: Scene of heart-wrenching torture or sacrifice
               - min: 286
                 max: 290
-                result: Slow drain of humanity and empathy
+                text: Slow drain of humanity and empathy
               - min: 291
                 max: 295
-                result: Thrust into a most dangerous game
+                text: Thrust into a most dangerous game
               - min: 296
                 max: 299
-                result: '[Action + Theme](starforged/oracles/core/action)'
+                text: '[Action + Theme](starforged/oracles/core/action)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
                   - oracle: starforged/oracles/core/theme
               - min: 300
                 max: 300
-                result: Roll twice
+                text: Roll twice
                 multiple_rolls:
                   amount: 2
           opportunity:
@@ -2338,91 +2338,91 @@ oracles:
             rows:
               - min: 1
                 max: 10
-                result: Access to a secret or protected area
+                text: Access to a secret or protected area
               - min: 11
                 max: 20
-                result: Clue points the way to your destination or target
+                text: Clue points the way to your destination or target
               - min: 21
                 max: 30
-                result: Comforting illusion or vision
+                text: Comforting illusion or vision
               - min: 31
                 max: 40
-                result: Control or terminal adjusts to accept your input
+                text: Control or terminal adjusts to accept your input
               - min: 41
                 max: 50
-                result: Deeper insight into the history or nature of this site
+                text: Deeper insight into the history or nature of this site
               - min: 51
                 max: 60
-                result: Device or artifact reveals its purpose
+                text: Device or artifact reveals its purpose
               - min: 61
                 max: 70
-                result: Environment adjusts to better suit you
+                text: Environment adjusts to better suit you
               - min: 71
                 max: 80
-                result: Foes stand down or give way
+                text: Foes stand down or give way
               - min: 81
                 max: 90
-                result: Key offers control of a function or aspect of this site
+                text: Key offers control of a function or aspect of this site
               - min: 91
                 max: 100
-                result: Shortcut or less perilous path speeds your way
+                text: Shortcut or less perilous path speeds your way
               - min: 101
                 max: 110
-                result: Access to specialized equipment
+                text: Access to specialized equipment
               - min: 111
                 max: 120
-                result: Clue points to the solution of a vexing problem
+                text: Clue points to the solution of a vexing problem
               - min: 121
                 max: 130
-                result: Command codes found
+                text: Command codes found
               - min: 131
                 max: 140
-                result: Deeper insight into the creators of this site
+                text: Deeper insight into the creators of this site
               - min: 141
                 max: 150
-                result: Defensive systems target you for protection
+                text: Defensive systems target you for protection
               - min: 151
                 max: 160
-                result: Destination or target is closer than thought
+                text: Destination or target is closer than thought
               - min: 161
                 max: 170
-                result: Garbled message becomes clear
+                text: Garbled message becomes clear
               - min: 171
                 max: 180
-                result: Gear or equipment can be repaired or replaced
+                text: Gear or equipment can be repaired or replaced
               - min: 181
                 max: 190
-                result: Unexpected ally appears
+                text: Unexpected ally appears
               - min: 191
                 max: 200
-                result: Vision of a possible future points to a path forward
+                text: Vision of a possible future points to a path forward
               - min: 201
                 max: 210
-                result: A foe or rival's hand is tipped
+                text: A foe or rival's hand is tipped
               - min: 211
                 max: 220
-                result: Access to valuable data
+                text: Access to valuable data
               - min: 221
                 max: 230
-                result: Clue reveals a previously unknown connection
+                text: Clue reveals a previously unknown connection
               - min: 231
                 max: 240
-                result: Defensive systems stand down
+                text: Defensive systems stand down
               - min: 241
                 max: 250
-                result: Means of exit presents itself
+                text: Means of exit presents itself
               - min: 251
                 max: 260
-                result: News grants hope where previously hope was lost
+                text: News grants hope where previously hope was lost
               - min: 261
                 max: 270
-                result: Operations manual discovered
+                text: Operations manual discovered
               - min: 271
                 max: 280
-                result: Opportunity to make a significant choice
+                text: Opportunity to make a significant choice
               - min: 281
                 max: 290
-                result: Opportunity to outmaneuver or trap a foe
+                text: Opportunity to outmaneuver or trap a foe
               - min: 291
                 max: 300
-                result: This site may be given new purpose
+                text: This site may be given new purpose

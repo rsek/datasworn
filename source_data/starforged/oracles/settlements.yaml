@@ -43,27 +43,22 @@ oracles:
                 min: 1
                 max: 10
                 text: Few
-                # set_attributes: {population: [few]}
               - &Pop.1
                 min: 11
                 max: 25
                 text: Dozens
-                # set_attributes: {population: [dozens]}
               - &Pop.2
                 min: 26
                 max: 55
                 text: Hundreds
-                # set_attributes: {population: [hundreds]}
               - &Pop.3
                 min: 56
                 max: 85
                 text: Thousands
-                # set_attributes: {population: [thousands]}
               - &Pop.4
                 min: 86
                 max: 100
                 text: Tens of thousands
-                # set_attributes: {population: [tens_of_thousands]}
           outlands:
             oracle_type: column_text
             <<: &OracleTable.Outlands
@@ -245,48 +240,36 @@ oracles:
           - min: 1
             max: 20
             text: Welcoming
-            # set_attributes: {initial_contact: [welcoming]}
           - min: 21
             max: 30
             text: Neutral / automated
-            # set_attributes: {initial_contact: [neutral_automated]}
           - min: 31
             max: 50
             text: Wary
-            # set_attributes: {initial_contact: [wary]}
           - min: 51
             max: 60
             text: Uncooperative
-            # set_attributes: {initial_contact: [uncooperative]}
           - min: 61
             max: 70
             text: Hostile
-            # set_attributes: {initial_contact: [hostile]}
           - min: 71
             max: 83
             text: Asking for help
-            # set_attributes: {initial_contact: [asking_for_help]}
           - min: 84
             max: 86
             text: In battle
-            # set_attributes: {initial_contact: [in_battle]}
           - min: 87
             max: 89
             text: Captured
-            # set_attributes: {initial_contact: [captured]}
           - min: 90
             max: 92
             text: Unresponsive
-            # set_attributes: {initial_contact: [unresponsive]}
           - min: 93
             max: 95
             text: Destroyed
-            # set_attributes: {initial_contact: [destroyed]}
           - min: 96
             max: 100
             text: '[Derelict](id:starforged/collections/oracles/derelicts)'
-            # *inherit:Derelict.Settlement
-
       authority:
         name: Authority
         oracle_type: table_text
@@ -296,44 +279,36 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - <<: &i18n.result.adjective
-              _i18n:
-                text:
-                  part_of_speech: adjective
-            min: 1
+          - min: 1
             max: 15
             text: None / lawless
-            # set_attributes: {authority: [none_lawless]}
-          - <<: *i18n.result.adjective
-            min: 16
+            _i18n: &Adjective
+              text:
+                part_of_speech: adjective
+          - min: 16
             max: 30
             text: Ineffectual
-            # set_attributes: {authority: [ineffectual]}
-          - <<: *i18n.result.adjective
-            min: 31
+            _i18n: *Adjective
+          - min: 31
             max: 45
             text: Tolerant
-            # set_attributes: {authority: [tolerant]}
-          - <<: *i18n.result.adjective
-            min: 46
+            _i18n: *Adjective
+          - min: 46
             max: 55
             text: Fair
-            # set_attributes: {authority: [fair]}
-          - <<: *i18n.result.adjective
-            min: 56
+            _i18n: *Adjective
+          - min: 56
             max: 70
             text: Unyielding
-            # set_attributes: {authority: [unyielding]}
-          - <<: *i18n.result.adjective
-            min: 71
+            _i18n: *Adjective
+          - min: 71
             max: 85
             text: Corrupt
-            # set_attributes: {authority: [corrupt]}
-          - <<: *i18n.result.adjective
-            min: 86
+            _i18n: *Adjective
+          - min: 86
             max: 100
             text: Oppressive
-            # set_attributes: {authority: [oppressive]}
+            _i18n: *Adjective
       projects:
         name: Settlement Projects
         oracle_type: table_text
@@ -349,140 +324,138 @@ oracles:
         summary: |-
           Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.
         rows:
-          - <<: &i18n.result.common_noun
-              _i18n:
-                text:
-                  part_of_speech: common_noun
-            min: 1
+          - min: 1
             max: 5
             text: Agriculture
-          - <<: *i18n.result.common_noun
-            min: 6
+            _i18n: &CommonNoun
+              text:
+                part_of_speech: common_noun
+          - min: 6
             max: 7
             text: Archeology
-          - <<: *i18n.result.common_noun
-            min: 8
+            _i18n: *CommonNoun
+          - min: 8
             max: 9
             text: Automation
-          - <<: *i18n.result.common_noun
-            min: 10
+            _i18n: *CommonNoun
+          - min: 10
             max: 11
             text: Black market
-          - <<: *i18n.result.common_noun
-            min: 12
+            _i18n: *CommonNoun
+          - min: 12
             max: 13
             text: Command
-          - <<: *i18n.result.common_noun
-            min: 14
+            _i18n: *CommonNoun
+          - min: 14
             max: 17
             text: Defense
-          - <<: *i18n.result.common_noun
-            min: 18
+            _i18n: *CommonNoun
+          - min: 18
             max: 22
             text: Energy
-          - <<: &i18n.result.gerund
-              _i18n:
-                text:
-                  part_of_speech: gerund
-            min: 23
+            _i18n: *CommonNoun
+          - min: 23
             max: 25
             text: Engineering
-          - <<: *i18n.result.common_noun
-            min: 26
+            _i18n: &Gerund
+              text:
+                part_of_speech: gerund
+          - min: 26
             max: 27
             text: Entertainment
-          - <<: *i18n.result.common_noun
-            min: 28
+            _i18n: *CommonNoun
+          - min: 28
             max: 29
             text: Environmentalism
-          - <<: *i18n.result.common_noun
-            min: 30
+            _i18n: *CommonNoun
+          - min: 30
             max: 31
             text: Evacuation
-          - <<: *i18n.result.common_noun
-            min: 32
+            _i18n: *CommonNoun
+          - min: 32
             max: 33
             text: Expansion
-          - <<: *i18n.result.common_noun
-            min: 34
+            _i18n: *CommonNoun
+          - min: 34
             max: 37
             text: Exploration
-          - <<: *i18n.result.common_noun
-            min: 38
+            _i18n: *CommonNoun
+          - min: 38
             max: 39
             text: Festival
-          - <<: *i18n.result.common_noun
-            min: 40
+            _i18n: *CommonNoun
+          - min: 40
             max: 41
             text: History
-          - <<: *i18n.result.gerund
-            min: 42
+            _i18n: *CommonNoun
+          - min: 42
             max: 43
             text: Hunting
-          - <<: *i18n.result.gerund
-            min: 44
+            _i18n: *Gerund
+          - min: 44
             max: 46
             text: Manufacturing
-          - <<: *i18n.result.common_noun
-            min: 47
+            _i18n: *Gerund
+          - min: 47
             max: 49
             text: Medical
-          - <<: *i18n.result.common_noun
-            min: 50
+            _i18n: *CommonNoun
+          - min: 50
             max: 51
             text: Migration
-          - <<: *i18n.result.gerund
-            min: 52
+            _i18n: *CommonNoun
+          - min: 52
             max: 57
             text: Mining
-          - <<: *i18n.result.common_noun
-            min: 58
+            _i18n: *Gerund
+          - min: 58
             max: 59
             text: Pacifism
-          - <<: *i18n.result.gerund
-            min: 60
+            _i18n: *CommonNoun
+          - min: 60
             max: 62
             text: Raiding
-          - <<: *i18n.result.common_noun
-            min: 63
+            _i18n: *Gerund
+          - min: 63
             max: 65
             text: Research
-          - <<: *i18n.result.common_noun
-            min: 66
+            _i18n: *CommonNoun
+          - min: 66
             max: 69
             text: Salvage
-          - <<: *i18n.result.common_noun
-            min: 70
+            _i18n: *CommonNoun
+          - min: 70
             max: 72
             text: Secrecy
-          - <<: *i18n.result.gerund
-            min: 73
+            _i18n: *CommonNoun
+          - min: 73
             max: 75
             text: Shipbuilding
-          - <<: *i18n.result.common_noun
-            min: 76
+            _i18n: *Gerund
+          - min: 76
             max: 78
             text: Spirituality
-          - <<: *i18n.result.common_noun
-            min: 79
+            _i18n: *CommonNoun
+          - min: 79
             max: 84
             text: Subsistence
-          - <<: *i18n.result.common_noun
-            min: 85
+            _i18n: *CommonNoun
+          - min: 85
             max: 86
             text: Surveillance
-          - <<: *i18n.result.gerund
-            min: 87
+            _i18n: *CommonNoun
+          - min: 87
             max: 88
             text: Terraforming
-          - <<: *i18n.result.common_noun
-            min: 89
+            _i18n: *Gerund
+          - min: 89
             max: 92
             text: Trade
-          - <<: *i18n.result.common_noun
-            min: 93
+            _i18n: *CommonNoun
+          - min: 93
             max: 95
             text: Warfare
+            _i18n: *CommonNoun
           - min: 96
             max: 100
             <<: &ActionTheme
@@ -643,449 +616,416 @@ oracles:
         #   tags: [name]
         rows:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
-          - <<: &i18n.result.proper_noun
-              _i18n:
-                text:
-                  part_of_speech: proper_noun
-            min: 1
+          - min: 1
             max: 1
             text: Aegis
-          - <<: *i18n.result.proper_noun
-            min: 2
+            _i18n: &CommonNounAsProperNoun
+              text:
+                part_of_speech: common_noun_as_proper_noun
+          - min: 2
             max: 2
             text: Altair
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 3
+            _i18n: &ProperNoun
+                text:
+                  part_of_speech: proper_noun
+          - min: 3
             max: 3
             text: Altura
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 4
+            _i18n: *ProperNoun
+          - min: 4
             max: 4
             text: Amity
-          - <<: *i18n.result.proper_noun
-            min: 5
+            _i18n: *CommonNounAsProperNoun
+          - min: 5
             max: 5
             text: Apex
-          - <<: *i18n.result.proper_noun
-            min: 6
+            _i18n: *CommonNounAsProperNoun
+          - min: 6
             max: 6
             text: Apogee
-          - <<: *i18n.result.proper_noun
-            min: 7
+            _i18n: *CommonNounAsProperNoun
+          - min: 7
             max: 7
             text: Argosy
-          - <<: *i18n.result.proper_noun
-            min: 8
+            _i18n: *CommonNounAsProperNoun
+          - min: 8
             max: 8
             text: Astra
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 9
+            _i18n: *ProperNoun
+          - min: 9
             max: 9
             text: Aurora
-          - <<: *i18n.result.proper_noun
-            min: 10
+            _i18n: *CommonNounAsProperNoun
+          - min: 10
             max: 10
             text: Beacon
-          - <<: *i18n.result.proper_noun
-            min: 11
+            _i18n: *CommonNounAsProperNoun
+          - min: 11
             max: 11
             text: Brink
-          - <<: *i18n.result.proper_noun
-            min: 12
+            _i18n: *CommonNounAsProperNoun
+          - min: 12
             max: 12
             text: Bulwark
-          - <<: *i18n.result.proper_noun
-            min: 13
+            _i18n: *CommonNounAsProperNoun
+          - min: 13
             max: 13
             text: Burnell
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 14
+            _i18n: *ProperNoun
+          - min: 14
             max: 14
             text: Burrow
-          - <<: *i18n.result.proper_noun
-            min: 15
+            _i18n: *CommonNounAsProperNoun
+          - min: 15
             max: 15
             text: Concord
-          - <<: *i18n.result.proper_noun
-            min: 16
+            _i18n: *CommonNounAsProperNoun
+          - min: 16
             max: 16
             text: Crux
-          - <<: *i18n.result.proper_noun
-            min: 17
+            _i18n: *CommonNounAsProperNoun
+          - min: 17
             max: 17
             text: Deadrock
+            _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - <<: *i18n.result.proper_noun
-            min: 18
+          - min: 18
             max: 18
             text: Deception
-          - <<: *i18n.result.proper_noun
-            min: 19
+            _i18n: *CommonNounAsProperNoun
+          - min: 19
             max: 19
             text: Elysium
-          - <<: *i18n.result.proper_noun
-            min: 20
+            _i18n: *CommonNounAsProperNoun
+          - min: 20
             max: 20
             text: Enigma
-          - <<: *i18n.result.proper_noun
-            min: 21
+            _i18n: *CommonNounAsProperNoun
+          - min: 21
             max: 21
             text: Erebus
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 22
+            _i18n: *ProperNoun
+          - min: 22
             max: 22
             text: Eris
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 23
+            _i18n: *ProperNoun
+          - min: 23
             max: 23
             text: Evenfall
-          - <<: *i18n.result.proper_noun
-            min: 24
+            _i18n: *CommonNounAsProperNoun
+          - min: 24
             max: 24
             text: Eventide
-          - <<: *i18n.result.proper_noun
-            min: 25
+            _i18n: *CommonNounAsProperNoun
+          - min: 25
             max: 25
             text: Farpoint
+            _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - <<: *i18n.result.proper_noun
-            min: 26
+          - min: 26
             max: 26
             text: Felicity
-          - <<: *i18n.result.proper_noun
-            min: 27
+            _i18n: *CommonNounAsProperNoun
+          - min: 27
             max: 27
             text: Florin
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 28
+            _i18n: *ProperNoun
+          - min: 28
             max: 28
             text: Forlorn
-          - <<: *i18n.result.proper_noun
-            min: 29
+            _i18n: &AdjectiveAsProperNoun
+              text:
+                part_of_speech: adjective_as_proper_noun
+          - min: 29
             max: 29
             text: Forsaken
-          - <<: *i18n.result.proper_noun
-            min: 30
+            _i18n: *AdjectiveAsProperNoun
+          - min: 30
             max: 30
             text: Freya
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 31
+            _i18n: *ProperNoun
+          - min: 31
             max: 31
             text: Glimmer
-          - <<: *i18n.result.proper_noun
-            min: 32
+            _i18n: *CommonNounAsProperNoun
+          - min: 32
             max: 32
             text: Gloam
-          - <<: *i18n.result.proper_noun
-            min: 33
+            _i18n: *CommonNounAsProperNoun
+          - min: 33
             max: 33
             text: Hearth
-          - <<: *i18n.result.proper_noun
-            min: 34
+            _i18n: *CommonNounAsProperNoun
+          - min: 34
             max: 34
             text: Helia
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 35
+            _i18n: *ProperNoun
+          - min: 35
             max: 35
             text: Hypatia
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 36
+            _i18n: *ProperNoun
+          - min: 36
             max: 36
             text: Hyperion
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 37
+            _i18n: *ProperNoun
+          - min: 37
             max: 37
             text: Janus
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 38
+            _i18n: *ProperNoun
+          - min: 38
             max: 38
             text: Karma
-          - <<: *i18n.result.proper_noun
-            min: 39
+            _i18n: *CommonNounAsProperNoun
+          - min: 39
             max: 39
             text: Kepler
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 40
+            _i18n: *ProperNoun
+          - min: 40
             max: 40
             text: Koshiba
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 41
+            _i18n: *ProperNoun
+          - min: 41
             max: 41
             text: Lagrange
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 42
+            _i18n: *ProperNoun
+          - min: 42
             max: 42
             text: Larissa
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 43
+            _i18n: *ProperNoun
+          - min: 43
             max: 43
             text: Lasthope
             # content: {part_of_speech: [compound noun]}
-          - <<: *i18n.result.proper_noun
-            min: 44
+          - min: 44
             max: 44
             text: Lastport
             # content: {part_of_speech: [compound noun]}
-          - <<: *i18n.result.proper_noun
-            min: 45
+          - min: 45
             max: 45
             text: Legacy
-          - <<: *i18n.result.proper_noun
-            min: 46
+            _i18n: *CommonNounAsProperNoun
+          - min: 46
             max: 46
             text: Lodestar
-          - <<: *i18n.result.proper_noun
-            min: 47
+            _i18n: *CommonNounAsProperNoun
+          - min: 47
             max: 47
             text: Luminus
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 48
+            _i18n: *ProperNoun
+          - min: 48
             max: 48
             text: Lyra
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 49
+            _i18n: *ProperNoun
+          - min: 49
             max: 49
             text: Marrow
-          - <<: *i18n.result.proper_noun
-            min: 50
+            _i18n: *CommonNounAsProperNoun
+          - min: 50
             max: 50
             text: Meridian
-          - <<: *i18n.result.proper_noun
-            min: 51
+            _i18n: *CommonNounAsProperNoun
+          - min: 51
             max: 51
             text: Moirai
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 52
+            _i18n: *ProperNoun
+          - min: 52
             max: 52
             text: Mudd
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 53
+            _i18n: *ProperNoun
+          - min: 53
             max: 53
             text: Neoma
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 54
+            _i18n: *ProperNoun
+          - min: 54
             max: 54
             text: Nerio
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 55
+            _i18n: *ProperNoun
+          - min: 55
             max: 55
             text: Nova
-          - <<: *i18n.result.proper_noun
-            min: 56
+            _i18n: *CommonNounAsProperNoun
+          - min: 56
             max: 56
             text: Nyx
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 57
+            _i18n: *ProperNoun
+          - min: 57
             max: 57
             text: Osseus
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 58
+            _i18n: *ProperNoun
+          - min: 58
             max: 58
             text: Paradox
-          - <<: *i18n.result.proper_noun
-            min: 59
+            _i18n: *CommonNounAsProperNoun
+          - min: 59
             max: 59
             text: Paragon
-          - <<: *i18n.result.proper_noun
-            min: 60
+            _i18n: *CommonNounAsProperNoun
+          - min: 60
             max: 60
             text: Paxton
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 61
+            _i18n: *ProperNoun
+          - min: 61
             max: 61
             text: Perchance
-          - <<: *i18n.result.proper_noun
-            min: 62
+            # _i18n: *AdverbAsProperNoun
+          - min: 62
             max: 62
             text: Pinnacle
-          - <<: *i18n.result.proper_noun
-            min: 63
+            _i18n: *CommonNounAsProperNoun
+          - min: 63
             max: 63
             text: Polaris
-          - <<: *i18n.result.proper_noun
-            min: 64
+            _i18n: *ProperNoun
+          - min: 64
             max: 64
             text: Portent
-          - <<: *i18n.result.proper_noun
-            min: 65
+            _i18n: *CommonNounAsProperNoun
+          - min: 65
             max: 65
             text: Prism
-          - <<: *i18n.result.proper_noun
-            min: 66
+            _i18n: *CommonNounAsProperNoun
+          - min: 66
             max: 66
             text: Providence
-          - <<: *i18n.result.proper_noun
-            min: 67
+            _i18n: *CommonNounAsProperNoun
+          - min: 67
             max: 67
             text: Purgatory
-          - <<: *i18n.result.proper_noun
-            min: 68
+            _i18n: *CommonNounAsProperNoun
+          - min: 68
             max: 68
             text: Rampart
-          - <<: *i18n.result.proper_noun
-            min: 69
+            _i18n: *CommonNounAsProperNoun
+          - min: 69
             max: 69
             text: Ramshackle
-          - <<: *i18n.result.proper_noun
-            min: 70
+            _i18n: *AdjectiveAsProperNoun
+          - min: 70
             max: 70
             text: Redemption
-          - <<: *i18n.result.proper_noun
-            min: 71
+            _i18n: *CommonNounAsProperNoun
+          - min: 71
             max: 71
             text: Redhaven
+            _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - <<: *i18n.result.proper_noun
-            min: 72
+          - min: 72
             max: 72
             text: Relic
-          - <<: *i18n.result.proper_noun
-            min: 73
+            _i18n: *CommonNounAsProperNoun
+          - min: 73
             max: 73
             text: Reprise
-          - <<: *i18n.result.proper_noun
-            min: 74
+            _i18n: *CommonNounAsProperNoun
+          - min: 74
             max: 74
             text: Reverie
-          - <<: *i18n.result.proper_noun
-            min: 75
+            _i18n: *CommonNounAsProperNoun
+          - min: 75
             max: 75
             text: Rhiannon
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 76
+            _i18n: *ProperNoun
+          - min: 76
             max: 76
             text: Rockhome
-          - <<: *i18n.result.proper_noun
-            min: 77
+            _i18n: *CommonNounAsProperNoun
+          - min: 77
             max: 77
             text: Rust
-          - <<: *i18n.result.proper_noun
-            min: 78
+            _i18n: *CommonNounAsProperNoun
+          - min: 78
             max: 78
             text: Sagan
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 79
+            _i18n: *ProperNoun
+          - min: 79
             max: 79
             text: Sanctity
-          - <<: *i18n.result.proper_noun
-            min: 80
+            _i18n: *CommonNounAsProperNoun
+          - min: 80
             max: 80
             text: Selena
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 81
+            _i18n: *ProperNoun
+          - min: 81
             max: 81
             text: Sepulcher
-          - <<: *i18n.result.proper_noun
-            min: 82
+            _i18n: *CommonNounAsProperNoun
+          - min: 82
             max: 82
             text: Sigil
-          - <<: *i18n.result.proper_noun
-            min: 83
+            _i18n: *CommonNounAsProperNoun
+          - min: 83
             max: 83
             text: Silvana
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 84
+            _i18n: *ProperNoun
+          - min: 84
             max: 84
             text: Sirius
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 85
+            _i18n: *ProperNoun
+          - min: 85
             max: 85
             text: Sisyphus
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 86
+            _i18n: *ProperNoun
+          - min: 86
             max: 86
             text: Solitude
-          - <<: *i18n.result.proper_noun
-            min: 87
+            _i18n: *CommonNounAsProperNoun
+          - min: 87
             max: 87
             text: Spire
-          - <<: *i18n.result.proper_noun
-            min: 88
+            _i18n: *CommonNounAsProperNoun
+          - min: 88
             max: 88
             text: Starfall
+            _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - <<: *i18n.result.proper_noun
-            min: 89
+          - min: 89
             max: 89
             text: Summit
-          - <<: *i18n.result.proper_noun
-            min: 90
+            _i18n: *CommonNounAsProperNoun
+          - min: 90
             max: 90
             text: Tranquility
-          - <<: *i18n.result.proper_noun
-            min: 91
+            _i18n: *CommonNounAsProperNoun
+          - min: 91
             max: 91
             text: Tyson
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 92
+            _i18n: *ProperNoun
+          - min: 92
             max: 92
             text: Unity
-          - <<: *i18n.result.proper_noun
-            min: 93
+            _i18n: *CommonNounAsProperNoun
+          - min: 93
             max: 93
             text: Utopia
-          - <<: *i18n.result.proper_noun
-            min: 94
+            _i18n: *CommonNounAsProperNoun
+          - min: 94
             max: 94
             text: Vega
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 95
+            _i18n: *ProperNoun
+          - min: 95
             max: 95
             text: Vesper
-          - <<: *i18n.result.proper_noun
-            min: 96
+            _i18n: *CommonNounAsProperNoun
+          - min: 96
             max: 96
             text: Wayward
-          - <<: *i18n.result.proper_noun
-            min: 97
+            _i18n: *CommonNounAsProperNoun
+          - min: 97
             max: 97
             text: Welkin
-          - <<: *i18n.result.proper_noun
-            min: 98
+            _i18n: *CommonNounAsProperNoun
+          - min: 98
             max: 98
             text: Wellspring
-          - <<: *i18n.result.proper_noun
-            min: 99
+            _i18n: *CommonNounAsProperNoun
+          - min: 99
             max: 99
             text: Weyland
-            # content: {part_of_speech: [proper noun]}
-          - <<: *i18n.result.proper_noun
-            min: 100
+            _i18n: *ProperNoun
+          - min: 100
             max: 100
             text: Wreck
+            _i18n: *CommonNounAsProperNoun
       name_tags:
         name: Name tags
         # not technically a table, but might be useful to randomize for settlement names

@@ -880,6 +880,7 @@ oracles:
             name: Lifeless
             replaces: starforged/oracles/planets/opportunity/lifeless
             dice: 1d300
+            oracle_type: column_text
             rows:
             # begin copied rows
               - min: 1

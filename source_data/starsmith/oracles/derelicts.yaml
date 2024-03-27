@@ -4,7 +4,7 @@ ruleset: starforged
 oracles:
   derelicts:
     name: Derelicts
-    source: &Source
+    _source: &Source
       authors:
         - name: Eric Bright
       date: '2023-03-19'
@@ -13,204 +13,204 @@ oracles:
       url: https://playeveryrole.com/
     contents:
       outer_first_look:
-        source:
+        _source:
           <<: *Source
         replaces: starforged/oracles/derelicts/outer_first_look
         dice: 1d300
         rows:
           - min: 1
             max: 15
-            result: Blocked access
+            text: Blocked access
           - min: 16
             max: 30
-            result: Corpses
+            text: Corpses
           - min: 31
             max: 45
-            result: Hazardous readings
+            text: Hazardous readings
           - min: 46
             max: 50
-            result: Mutated structure
+            text: Mutated structure
           - min: 51
             max: 60
-            result: Odd orientation
+            text: Odd orientation
           - min: 61
             max: 65
-            result: Overgrown or entangled
+            text: Overgrown or entangled
           - min: 66
             max: 80
-            result: Sending a signal or message
+            text: Sending a signal or message
           - min: 81
             max: 85
-            result: Signs that others are here
+            text: Signs that others are here
           - min: 86
             max: 95
-            result: Stripped exterior
+            text: Stripped exterior
           - min: 96
             max: 100
-            result: Time or reality distortion
+            text: Time or reality distortion
           - min: 101
             max: 115
-            result: Explosive hole in the exterior
+            text: Explosive hole in the exterior
           - min: 116
             max: 130
-            result: Haphazard goods or cargo flotsam
+            text: Haphazard goods or cargo flotsam
           - min: 131
             max: 145
-            result: Arcing electricity and sparks
+            text: Arcing electricity and sparks
           - min: 146
             max: 150
-            result: Crushed structure
+            text: Crushed structure
           - min: 151
             max: 160
-            result: Hodgepodge construction
+            text: Hodgepodge construction
           - min: 161
             max: 165
-            result: Unstable location or orbit
+            text: Unstable location or orbit
           - min: 166
             max: 180
-            result: Specialized scientific equipment
+            text: Specialized scientific equipment
           - min: 181
             max: 185
-            result: Signs of a battle
+            text: Signs of a battle
           - min: 186
             max: 195
-            result: Pristine exterior
+            text: Pristine exterior
           - min: 196
             max: 200
-            result: Signs of the supernatural
+            text: Signs of the supernatural
           - min: 201
             max: 215
-            result: Sprung traps
+            text: Sprung traps
           - min: 216
             max: 230
-            result: Abandoned weapons
+            text: Abandoned weapons
           - min: 231
             max: 245
-            result: Leaking unknown gases or vapor
+            text: Leaking unknown gases or vapor
           - min: 246
             max: 250
-            result: Multiple attached structures
+            text: Multiple attached structures
           - min: 251
             max: 260
-            result: Clearly lacking a key system
+            text: Clearly lacking a key system
           - min: 261
             max: 265
-            result: Partially buried or subsumed
+            text: Partially buried or subsumed
           - min: 266
             max: 280
-            result: Message scrawled on exterior
+            text: Message scrawled on exterior
           - min: 281
             max: 285
-            result: Signs of lifeforms
+            text: Signs of lifeforms
           - min: 286
             max: 295
-            result: Deteriorating exterior
+            text: Deteriorating exterior
           - min: 296
             max: 300
-            result: Affected by local stellar phenomenon
+            text: Affected by local stellar phenomenon
       inner_first_look:
-        source:
+        _source:
           <<: *Source
         replaces: starforged/oracles/derelicts/inner_first_look
         dice: 1d300
         rows:
           - min: 1
             max: 3
-            result: Abnormal gravity
+            text: Abnormal gravity
           - min: 4
             max: 6
-            result: Active bots
+            text: Active bots
           - min: 7
             max: 9
-            result: Archaic equipment
+            text: Archaic equipment
           - min: 10
             max: 12
-            result: Automated announcements
+            text: Automated announcements
           - min: 13
             max: 15
-            result: Biological infestation
+            text: Biological infestation
           - min: 16
             max: 18
-            result: Charred surfaces
+            text: Charred surfaces
           - min: 19
             max: 21
-            result: Claw marks
+            text: Claw marks
           - min: 22
             max: 24
-            result: Cluttered with debris
+            text: Cluttered with debris
           - min: 25
             max: 27
-            result: Corroded surfaces
+            text: Corroded surfaces
           - min: 28
             max: 30
-            result: Cramped spaces
+            text: Cramped spaces
           - min: 31
             max: 33
-            result: Creaking hull
+            text: Creaking hull
           - min: 34
             max: 36
-            result: Esoteric writing or symbols
+            text: Esoteric writing or symbols
           - min: 37
             max: 39
-            result: Evidence of new inhabitants
+            text: Evidence of new inhabitants
           - min: 40
             max: 42
-            result: Exposed wiring or conduits
+            text: Exposed wiring or conduits
           - min: 43
             max: 45
-            result: Flashing strobe lights
+            text: Flashing strobe lights
           - min: 46
             max: 48
-            result: Fluctuating power
+            text: Fluctuating power
           - min: 49
             max: 51
-            result: Haunting vision of the dead
+            text: Haunting vision of the dead
           - min: 52
             max: 54
-            result: Hazardous temperature
+            text: Hazardous temperature
           - min: 55
             max: 57
-            result: Heavy steam or moisture
+            text: Heavy steam or moisture
           - min: 58
             max: 60
-            result: Littered with corpses
+            text: Littered with corpses
           - min: 61
             max: 63
-            result: Nesting or feeding creatures
+            text: Nesting or feeding creatures
           - min: 64
             max: 66
-            result: Ornate furnishings
+            text: Ornate furnishings
           - min: 67
             max: 69
-            result: Scarred by gunfire
+            text: Scarred by gunfire
           - min: 70
             max: 72
-            result: Sealed against intruders
+            text: Sealed against intruders
           - min: 73
             max: 75
-            result: Signs of looting or scavenging
+            text: Signs of looting or scavenging
           - min: 76
             max: 78
-            result: Smell or decay
+            text: Smell or decay
           - min: 79
             max: 81
-            result: Splattered with blood
+            text: Splattered with blood
           - min: 82
             max: 84
-            result: Temporal distortions
+            text: Temporal distortions
           - min: 85
             max: 87
-            result: Thick haze or smoke
+            text: Thick haze or smoke
           - min: 88
             max: 90
-            result: Unstable energy surges
+            text: Unstable energy surges
           - min: 91
             max: 93
-            result: Watchful AI
+            text: Watchful AI
           - min: 94
             max: 100
             <<: &DescriptorFocus
-              result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+              text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
               oracle_rolls:
                 - oracle: starforged/oracles/core/descriptor
                   auto: true
@@ -218,217 +218,217 @@ oracles:
                   auto: true
           - min: 101
             max: 103
-            result: Abnormal atmosphere
+            text: Abnormal atmosphere
           - min: 104
             max: 106
-            result: Acid burns
+            text: Acid burns
           - min: 107
             max: 109
-            result: Blinding sparks
+            text: Blinding sparks
           - min: 110
             max: 112
-            result: Bloodied melee weapons
+            text: Bloodied melee weapons
           - min: 113
             max: 115
-            result: Bright warning signs
+            text: Bright warning signs
           - min: 116
             max: 118
-            result: Broken barricades
+            text: Broken barricades
           - min: 119
             max: 121
-            result: Corpses arranged strangely
+            text: Corpses arranged strangely
           - min: 122
             max: 124
-            result: Cracked hull
+            text: Cracked hull
           - min: 125
             max: 127
-            result: Deactivated bots
+            text: Deactivated bots
           - min: 128
             max: 130
-            result: Empty spaces
+            text: Empty spaces
           - min: 131
             max: 133
-            result: Environmental systems gone haywire
+            text: Environmental systems gone haywire
           - min: 134
             max: 136
-            result: Everything neatly stowed
+            text: Everything neatly stowed
           - min: 137
             max: 139
-            result: Evidence of previous inhabitants
+            text: Evidence of previous inhabitants
           - min: 140
             max: 142
-            result: Experimental tech
+            text: Experimental tech
           - min: 143
             max: 145
-            result: Gravity distortions
+            text: Gravity distortions
           - min: 146
             max: 148
-            result: Hibernating creatures
+            text: Hibernating creatures
           - min: 149
             max: 151
-            result: Hyperbaric oxygen levels
+            text: Hyperbaric oxygen levels
           - min: 152
             max: 154
-            result: Nanite infestation
+            text: Nanite infestation
           - min: 155
             max: 157
-            result: Overcharged systems
+            text: Overcharged systems
           - min: 158
             max: 160
-            result: Pipes leaking fluids
+            text: Pipes leaking fluids
           - min: 161
             max: 163
-            result: Pitch black
+            text: Pitch black
           - min: 164
             max: 166
-            result: Pulsing of a distant engine
+            text: Pulsing of a distant engine
           - min: 167
             max: 169
-            result: Running computer virus
+            text: Running computer virus
           - min: 170
             max: 172
-            result: Screen crawling with text
+            text: Screen crawling with text
           - min: 173
             max: 175
-            result: Shadows on the move
+            text: Shadows on the move
           - min: 176
             max: 178
-            result: Signs of hasty evacuation
+            text: Signs of hasty evacuation
           - min: 179
             max: 181
-            result: Sounds of activity
+            text: Sounds of activity
           - min: 182
             max: 184
-            result: Spartan furnishings
+            text: Spartan furnishings
           - min: 185
             max: 187
-            result: Thick layer of dust
+            text: Thick layer of dust
           - min: 188
             max: 190
-            result: Tooth marks
+            text: Tooth marks
           - min: 191
             max: 193
-            result: Trails of ooze
+            text: Trails of ooze
           - min: 194
             max: 200
             <<: *DescriptorFocus
           - min: 201
             max: 203
-            result: Abnormal structure material
+            text: Abnormal structure material
           - min: 204
             max: 206
-            result: Cracks venting gas
+            text: Cracks venting gas
           - min: 207
             max: 209
-            result: Creatures being birthed
+            text: Creatures being birthed
           - min: 210
             max: 212
-            result: Dangerous radiation levels
+            text: Dangerous radiation levels
           - min: 213
             max: 215
-            result: Destroyed bots
+            text: Destroyed bots
           - min: 216
             max: 218
-            result: Evidence of faction meddling
+            text: Evidence of faction meddling
           - min: 219
             max: 221
-            result: Fire suppression activated
+            text: Fire suppression activated
           - min: 222
             max: 224
-            result: Furnishings to fit unknown biology
+            text: Furnishings to fit unknown biology
           - min: 225
             max: 227
-            result: Future tech
+            text: Future tech
           - min: 228
             max: 230
-            result: Glitching welcome hologram
+            text: Glitching welcome hologram
           - min: 231
             max: 233
-            result: Highlighted pathways
+            text: Highlighted pathways
           - min: 234
             max: 236
-            result: Icy, shattered remains
+            text: Icy, shattered remains
           - min: 237
             max: 239
-            result: Ill omen
+            text: Ill omen
           - min: 240
             max: 242
-            result: Last captain's log playing on a loop
+            text: Last captain's log playing on a loop
           - min: 243
             max: 245
-            result: Lifeform spoor
+            text: Lifeform spoor
           - min: 246
             max: 248
-            result: Lifeforms caught in traps
+            text: Lifeforms caught in traps
           - min: 249
             max: 251
-            result: Loss of atmosphere
+            text: Loss of atmosphere
           - min: 252
             max: 254
-            result: Malfunctioning maintenance bots
+            text: Malfunctioning maintenance bots
           - min: 255
             max: 257
-            result: Medical quarantine
+            text: Medical quarantine
           - min: 258
             max: 260
-            result: Packed cargo pods
+            text: Packed cargo pods
           - min: 261
             max: 263
-            result: Pristine surfaces
+            text: Pristine surfaces
           - min: 264
             max: 266
-            result: Rapid pressure shifts
+            text: Rapid pressure shifts
           - min: 267
             max: 269
-            result: Reinforced hull
+            text: Reinforced hull
           - min: 270
             max: 272
-            result: Rising waters
+            text: Rising waters
           - min: 273
             max: 275
-            result: Signs of hasty modifications
+            text: Signs of hasty modifications
           - min: 276
             max: 278
-            result: Smoldering power relays
+            text: Smoldering power relays
           - min: 279
             max: 281
-            result: Stale atmosphere
+            text: Stale atmosphere
           - min: 282
             max: 284
-            result: Surfaces iced over
+            text: Surfaces iced over
           - min: 285
             max: 287
-            result: System malfunctions
+            text: System malfunctions
           - min: 288
             max: 290
-            result: Uncanny mineral buildup
+            text: Uncanny mineral buildup
           - min: 291
             max: 293
-            result: Wide-open spaces
+            text: Wide-open spaces
           - min: 294
             max: 300
             <<: *DescriptorFocus
       location_and_type:
-        source:
+        _source:
           <<: *Source
         name: Location and Type
         dice: 1d100
         rows:
           - min: 1
             max: 10
-            result: Planetside starship
+            text: Planetside starship
           - min: 11
             max: 40
-            result: Planetside settlement
+            text: Planetside settlement
           - min: 41
             max: 48
-            result: Orbital starship
+            text: Orbital starship
           - min: 49
             max: 60
-            result: Orbital settlement
+            text: Orbital settlement
           - min: 61
             max: 90
-            result: Deep Space starship
+            text: Deep Space starship
           - min: 91
             max: 100
-            result: Deep Space settlement
+            text: Deep Space settlement

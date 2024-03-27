@@ -20,194 +20,255 @@ oracles:
           oracle_type: tables
           _source: *Source
           enhances: starforged/collections/oracles/planets/desert
+        description: An arid land devoid of most life stretches around the globe. If there is any vegetation, it is sparse at best as few plants can survive the choking sandstorms. Rocky sea beds now filled with sand hint that water once covered large areas of the surface centuries or millennia ago. The utter desolation is forbidding.
         contents:
           name:
-            replaces: starforged/oracles/planets/desert/name
             <<: &Name
               name: Name
               oracle_type: table_text
               dice: 1d300
               _source: *Source
+            replaces: starforged/oracles/planets/desert/name
             rows:
-              - min: 1
-                max: 5
+              - <<: &Name.0
+                  min: 1
+                  max: 5
                 text: Abalos
-              - min: 6
-                max: 10
+              - <<: &Name.1
+                  min: 6
+                  max: 10
                 text: Audun
-              - min: 11
-                max: 15
+              - <<: &Name.2
+                  min: 11
+                  max: 15
                 text: Bishop
-              - min: 16
-                max: 20
+              - <<: &Name.3
+                  min: 16
+                  max: 20
                 text: Desolation
-              - min: 21
-                max: 25
+              - <<: &Name.4
+                  min: 21
+                  max: 25
                 text: Dykuma
-              - min: 26
-                max: 30
+              - <<: &Name.5
+                  min: 26
+                  max: 30
                 text: Fallow
-              - min: 31
-                max: 35
+              - <<: &Name.6
+                  min: 31
+                  max: 35
                 text: Helios
-              - min: 36
-                max: 40
+              - <<: &Name.7
+                  min: 36
+                  max: 40
                 text: Mirage
-              - min: 41
-                max: 45
+              - <<: &Name.8
+                  min: 41
+                  max: 45
                 text: Morricone
-              - min: 46
-                max: 50
+              - <<: &Name.9
+                  min: 46
+                  max: 50
                 text: Nux
-              - min: 51
-                max: 55
+              - <<: &Name.10
+                  min: 51
+                  max: 55
                 text: Ordos
-              - min: 56
-                max: 60
+              - <<: &Name.11
+                  min: 56
+                  max: 60
                 text: Petra
-              - min: 61
-                max: 65
+              - <<: &Name.12
+                  min: 61
+                  max: 65
                 text: Pyla
-              - min: 66
-                max: 70
+              - <<: &Name.13
+                  min: 66
+                  max: 70
                 text: Sabulo
-              - min: 71
-                max: 75
+              - <<: &Name.14
+                  min: 71
+                  max: 75
                 text: Saffron
-              - min: 76
-                max: 80
+              - <<: &Name.15
+                  min: 76
+                  max: 80
                 text: Sirocco
-              - min: 81
-                max: 85
+              - <<: &Name.16
+                  min: 81
+                  max: 85
                 text: Sulis
-              - min: 86
-                max: 90
+              - <<: &Name.17
+                  min: 86
+                  max: 90
                 text: Torrid
-              - min: 91
-                max: 95
+              - <<: &Name.18
+                  min: 91
+                  max: 95
                 text: Umber
-              - min: 96
-                max: 100
+              - <<: &Name.19
+                  min: 96
+                  max: 100
                 text: Vermillion
-              - min: 101
-                max: 105
+              - <<: &Name.20
+                  min: 101
+                  max: 105
                 text: Ammos
-              - min: 106
-                max: 110
+              - <<: &Name.21
+                  min: 106
+                  max: 110
                 text: Aridia
-              - min: 111
-                max: 115
+              - <<: &Name.22
+                  min: 111
+                  max: 115
                 text: Cadiz
-              - min: 116
-                max: 120
+              - <<: &Name.23
+                  min: 116
+                  max: 120
                 text: Chaliki
-              - min: 121
-                max: 125
+              - <<: &Name.24
+                  min: 121
+                  max: 125
                 text: Datura
-              - min: 126
-                max: 130
+              - <<: &Name.25
+                  min: 126
+                  max: 130
                 text: Edafos
-              - min: 131
-                max: 135
+              - <<: &Name.26
+                  min: 131
+                  max: 135
                 text: Eurus
-              - min: 136
-                max: 140
+              - <<: &Name.27
+                  min: 136
+                  max: 140
                 text: Hammada
-              - min: 141
-                max: 145
+              - <<: &Name.28
+                  min: 141
+                  max: 145
                 text: Johona
-              - min: 146
-                max: 150
+              - <<: &Name.29
+                  min: 146
+                  max: 150
                 text: Lutum
-              - min: 151
-                max: 155
+              - <<: &Name.30
+                  min: 151
+                  max: 155
                 text: Marram
-              - min: 156
-                max: 160
+              - <<: &Name.31
+                  min: 156
+                  max: 160
                 text: Odora
-              - min: 161
-                max: 165
+              - <<: &Name.32
+                  min: 161
+                  max: 165
                 text: Ramadi
-              - min: 166
-                max: 170
+              - <<: &Name.33
+                  min: 166
+                  max: 170
                 text: Salado
-              - min: 171
-                max: 175
+              - <<: &Name.34
+                  min: 171
+                  max: 175
                 text: Skoni
-              - min: 176
-                max: 180
+              - <<: &Name.35
+                  min: 176
+                  max: 180
                 text: Sordes
-              - min: 181
-                max: 185
+              - <<: &Name.36
+                  min: 181
+                  max: 185
                 text: Sykuma
-              - min: 186
-                max: 190
+              - <<: &Name.37
+                  min: 186
+                  max: 190
                 text: Tanami
-              - min: 191
-                max: 195
+              - <<: &Name.38
+                  min: 191
+                  max: 195
                 text: Ventus
-              - min: 196
-                max: 200
+              - <<: &Name.39
+                  min: 196
+                  max: 200
                 text: Vromia
-              - min: 201
-                max: 205
+              - <<: &Name.40
+                  min: 201
+                  max: 205
                 text: Addax
-              - min: 206
-                max: 210
+              - <<: &Name.41
+                  min: 206
+                  max: 210
                 text: Aedis
-              - min: 211
-                max: 215
+              - <<: &Name.42
+                  min: 211
+                  max: 215
                 text: Almyros
-              - min: 216
-                max: 220
+              - <<: &Name.43
+                  min: 216
+                  max: 220
                 text: Ammolofos
-              - min: 221
-                max: 225
+              - <<: &Name.44
+                  min: 221
+                  max: 225
                 text: Anemos
-              - min: 226
-                max: 230
+              - <<: &Name.45
+                  min: 226
+                  max: 230
                 text: Diamerisma
-              - min: 231
-                max: 235
+              - <<: &Name.46
+                  min: 231
+                  max: 235
                 text: Diavivro
-              - min: 236
-                max: 240
+              - <<: &Name.47
+                  min: 236
+                  max: 240
                 text: Eolian
-              - min: 241
-                max: 245
+              - <<: &Name.48
+                  min: 241
+                  max: 245
                 text: Ephedra
-              - min: 246
-                max: 250
+              - <<: &Name.49
+                  min: 246
+                  max: 250
                 text: Fanum
-              - min: 251
-                max: 255
+              - <<: &Name.50
+                  min: 251
+                  max: 255
                 text: Harenae
-              - min: 256
-                max: 260
+              - <<: &Name.51
+                  min: 256
+                  max: 260
                 text: Hyrax
-              - min: 261
-                max: 265
+              - <<: &Name.52
+                  min: 261
+                  max: 265
                 text: Jacinto
-              - min: 266
-                max: 270
+              - <<: &Name.53
+                  min: 266
+                  max: 270
                 text: Kuuma
-              - min: 271
-                max: 275
+              - <<: &Name.54
+                  min: 271
+                  max: 275
                 text: Maru
-              - min: 276
-                max: 280
+              - <<: &Name.55
+                  min: 276
+                  max: 280
                 text: Paedor
-              - min: 281
-                max: 285
+              - <<: &Name.56
+                  min: 281
+                  max: 285
                 text: Planus
-              - min: 286
-                max: 290
+              - <<: &Name.57
+                  min: 286
+                  max: 290
                 text: Ryn
-              - min: 291
-                max: 295
+              - <<: &Name.58
+                  min: 291
+                  max: 295
                 text: Senita
-              - min: 296
-                max: 300
+              - <<: &Name.59
+                  min: 296
+                  max: 300
                 text: Yucca
           observed_from_space:
             <<: &ObservedFromSpace
@@ -217,31 +278,41 @@ oracles:
               _source: *Source
             replaces: starforged/oracles/planets/desert/observed_from_space
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: &ObservedFromSpace.0
+                  min: 1
+                  max: 11
                 text: Dry seabeds
-              - min: 12
-                max: 22
+              - <<: &ObservedFromSpace.1
+                  min: 12
+                  max: 22
                 text: Expansive dune seas
-              - min: 23
-                max: 33
+              - <<: &ObservedFromSpace.2
+                  min: 23
+                  max: 33
                 text: Massive canyons
-              - min: 34
-                max: 44
+              - <<: &ObservedFromSpace.3
+                  min: 34
+                  max: 44
                 text: Perpetual daylight
-              - min: 45
-                max: 55
+              - <<: &ObservedFromSpace.4
+                  min: 45
+                  max: 55
                 text: Rugged mountains
-              - min: 56
-                max: 66
+              - <<: &ObservedFromSpace.5
+                  min: 56
+                  max: 66
                 text: Sprawling salt flats
-              - min: 67
-                max: 77
+              - <<: &ObservedFromSpace.6
+                  min: 67
+                  max: 77
                 text: Vast plateaus
-              - min: 78
-                max: 88
+              - <<: &ObservedFromSpace.7
+                  min: 78
+                  max: 88
                 text: Vibrant terrain colors
-              - min: 89
+              - &ObservedFromSpace.8
+                min: 89
                 max: 98
                 <<: &DescriptorFocus
                   text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
@@ -250,69 +321,92 @@ oracles:
                       auto: true
                     - oracle: starforged/oracles/core/focus
                       auto: true
-              - min: 99
+              - &ObservedFromSpace.9
+                min: 99
                 max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+                <<: &PrecursorVaultOrbital
+                  text: '[Precursor Vault](starforged/collections/oracles/vaults) (orbital)'
+                # end copied rows
+              - <<: &ObservedFromSpace.10
+                  min: 101
+                  max: 111
                 text: Bi-directional winds cause multiple large, parallel sand dunes
-              - min: 112
-                max: 122
+              - <<: &ObservedFromSpace.11
+                  min: 112
+                  max: 122
                 text: Extreme winds cause large sand dunes to move in waves
-              - min: 123
-                max: 133
+              - <<: &ObservedFromSpace.12
+                  min: 123
+                  max: 133
                 text: Large, selenite crystals growing skyward
-              - min: 134
-                max: 144
+              - <<: &ObservedFromSpace.13
+                  min: 134
+                  max: 144
                 text: Long, flat stretches of sand sheets
-              - min: 145
-                max: 155
+              - <<: &ObservedFromSpace.14
+                  min: 145
+                  max: 155
                 text: Perpetual continent-sized sandstorm sparking with electricity
-              - min: 156
-                max: 166
+              - <<: &ObservedFromSpace.15
+                  min: 156
+                  max: 166
                 text: Salt flats paved with giant tessellated stone
-              - min: 167
-                max: 177
+              - <<: &ObservedFromSpace.16
+                  min: 167
+                  max: 177
                 text: Ship-sized rocks smoothed by exfoliating blasts of sand
-              - min: 178
-                max: 188
+              - <<: &ObservedFromSpace.17
+                  min: 178
+                  max: 188
                 text: Tendrils of dry riverbeds
-              - min: 189
+              - &ObservedFromSpace.18
+                min: 189
                 max: 198
                 <<: *DescriptorFocus
-              - min: 199
+              - &ObservedFromSpace.19
+                min: 199
                 max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+                <<: *PrecursorVaultOrbital
+              - <<: &ObservedFromSpace.20
+                  min: 201
+                  max: 211
                 text: Basins of gypsum-filled white sand
-              - min: 212
-                max: 222
+              - <<: &ObservedFromSpace.21
+                  min: 212
+                  max: 222
                 text: Dry endorheic basins that once gathered rain water
-              - min: 223
-                max: 233
+              - <<: &ObservedFromSpace.22
+                  min: 223
+                  max: 233
                 text: Large alluvial fans
-              - min: 234
-                max: 244
+              - <<: &ObservedFromSpace.23
+                  min: 234
+                  max: 244
                 text: Mountains cracked and crumbling into limestone boulders
-              - min: 245
-                max: 255
+              - <<: &ObservedFromSpace.24
+                  min: 245
+                  max: 255
                 text: Mountain-sized dust devils in a complicated dance
-              - min: 256
-                max: 266
+              - <<: &ObservedFromSpace.25
+                  min: 256
+                  max: 266
                 text: Stones covered in desert varnish made by clay-eating bacteria
-              - min: 267
-                max: 277
+              - <<: &ObservedFromSpace.26
+                  min: 267
+                  max: 277
                 text: Tiny dots of color amidst the sandy brown
-              - min: 278
-                max: 288
+              - <<: &ObservedFromSpace.27
+                  min: 278
+                  max: 288
                 text: Variable winds cause large star dunes piling higher and higher
-              - min: 289
+              - &ObservedFromSpace.28
+                min: 289
                 max: 298
                 <<: *DescriptorFocus
-              - min: 299
+              - &ObservedFromSpace.29
+                min: 299
                 max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+                <<: *PrecursorVaultOrbital
           planetside_feature:
             <<: &PlanetsideFeature
               name: Planetside Feature
@@ -321,145 +415,192 @@ oracles:
               _source: *Source
             replaces: starforged/oracles/planets/desert/planetside_feature
             rows:
-              - min: 1
-                max: 7
+              - <<: &PlanetsideFeature.0
+                  min: 1
+                  max: 7
                 text: Cavernous sinkholes
-              - min: 8
-                max: 14
+              - <<: &PlanetsideFeature.1
+                  min: 8
+                  max: 14
                 text: Engulfing sandstorms
-              - min: 15
-                max: 21
+              - <<: &PlanetsideFeature.2
+                  min: 15
+                  max: 21
                 text: Fleeting rainstorms and flash floods
-              - min: 22
-                max: 28
+              - <<: &PlanetsideFeature.3
+                  min: 22
+                  max: 28
                 text: Flooded grottos
-              - min: 29
-                max: 35
+              - <<: &PlanetsideFeature.4
+                  min: 29
+                  max: 35
                 text: Petrified forest
-              - min: 36
-                max: 42
+              - <<: &PlanetsideFeature.5
+                  min: 36
+                  max: 42
                 text: Rampaging whirlwinds
-              - min: 43
-                max: 49
+              - <<: &PlanetsideFeature.6
+                  min: 43
+                  max: 49
                 text: Scorched glass plains
-              - min: 50
-                max: 56
+              - <<: &PlanetsideFeature.7
+                  min: 50
+                  max: 56
                 text: Severe temperature fluctuations
-              - min: 57
-                max: 63
+              - <<: &PlanetsideFeature.8
+                  min: 57
+                  max: 63
                 text: Sunbaked bones of titanic creatures
-              - min: 64
-                max: 70
+              - <<: &PlanetsideFeature.9
+                  min: 64
+                  max: 70
                 text: Timeworn cliffside caves
-              - min: 71
-                max: 77
+              - <<: &PlanetsideFeature.10
+                  min: 71
+                  max: 77
                 text: Towering rock formations
-              - min: 78
-                max: 84
+              - <<: &PlanetsideFeature.11
+                  min: 78
+                  max: 84
                 text: Violent electrical storms
-              - min: 85
-                max: 91
+              - <<: &PlanetsideFeature.12
+                  min: 85
+                  max: 91
                 text: Windborne metallic sand
-              - min: 92
+              - &PlanetsideFeature.13
+                min: 92
                 max: 98
                 <<: *DescriptorFocus
-              - min: 99
+              - &PlanetsideFeature.14
+                min: 99
                 max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+                <<: &PrecursorVaultPlanetside
+                  text: '[Precursor Vault](starforged/collections/oracles/vaults) (planetside)'
+              - <<: &PlanetsideFeature.15
+                  min: 101
+                  max: 107
                 text: Boulders of salt
-              - min: 108
-                max: 114
+              - <<: &PlanetsideFeature.16
+                  min: 108
+                  max: 114
                 text: Canyon pass continuing to narrow
-              - min: 115
-                max: 121
+              - <<: &PlanetsideFeature.17
+                  min: 115
+                  max: 121
                 text: Crater hole filled with sand leading to underground tunnels
-              - min: 122
-                max: 128
+              - <<: &PlanetsideFeature.18
+                  min: 122
+                  max: 128
                 text: Deep gorges cut through multi-hued strata of rock
-              - min: 129
-                max: 135
+              - <<: &PlanetsideFeature.19
+                  min: 129
+                  max: 135
                 text: Inverted pyramids of rock formed by ground-hugging winds
-              - min: 136
-                max: 142
+              - <<: &PlanetsideFeature.20
+                  min: 136
+                  max: 142
                 text: Layered waves of brightly colored sand
-              - min: 143
-                max: 149
+              - <<: &PlanetsideFeature.21
+                  min: 143
+                  max: 149
                 text: Mountainous dunes undergoing an avalanche of sand
-              - min: 150
-                max: 156
+              - <<: &PlanetsideFeature.22
+                  min: 150
+                  max: 156
                 text: Pocket caves dug by the claws of a long-dead creature
-              - min: 157
-                max: 163
+              - <<: &PlanetsideFeature.23
+                  min: 157
+                  max: 163
                 text: Rock archways eroded by wind
-              - min: 164
-                max: 170
+              - <<: &PlanetsideFeature.24
+                  min: 164
+                  max: 170
                 text: Sand gathered in a pyramid-like structure
-              - min: 171
-                max: 177
+              - <<: &PlanetsideFeature.25
+                  min: 171
+                  max: 177
                 text: Seas of glaring white sand
-              - min: 178
-                max: 184
+              - <<: &PlanetsideFeature.26
+                  min: 178
+                  max: 184
                 text: Small area that could be an oasis given rain
-              - min: 185
-                max: 191
+              - <<: &PlanetsideFeature.27
+                  min: 185
+                  max: 191
                 text: Static charges rippling across churning sand
-              - min: 192
+              - &PlanetsideFeature.28
+                min: 192
                 max: 198
                 <<: *DescriptorFocus
-              - min: 199
+              - &PlanetsideFeature.29
+                min: 199
                 max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+                <<: *PrecursorVaultPlanetside
+              - <<: &PlanetsideFeature.30
+                  min: 201
+                  max: 207
                 text: Concave sand dunes spilling ever forward
-              - min: 208
-                max: 214
+              - <<: &PlanetsideFeature.31
+                  min: 208
+                  max: 214
                 text: Deep cylindrical hole with rocky walls and water at the bottom
-              - min: 215
-                max: 221
+              - <<: &PlanetsideFeature.32
+                  min: 215
+                  max: 221
                 text: Field of lightning-shaped glass shards
-              - min: 222
-                max: 228
+              - <<: &PlanetsideFeature.33
+                  min: 222
+                  max: 228
                 text: Flat sand sheets undulating with tiny ripples in the wind
-              - min: 229
-                max: 235
+              - <<: &PlanetsideFeature.34
+                  min: 229
+                  max: 235
                 text: Granite boulders still eroding
-              - min: 236
-                max: 242
+              - <<: &PlanetsideFeature.35
+                  min: 236
+                  max: 242
                 text: Heat waves distorting distant mountains
-              - min: 243
-                max: 249
+              - <<: &PlanetsideFeature.36
+                  min: 243
+                  max: 249
                 text: Large depression that clearly held water at some point
-              - min: 250
-                max: 256
+              - <<: &PlanetsideFeature.37
+                  min: 250
+                  max: 256
                 text: Plateau top composed of a huge and precariously balanced rock
-              - min: 257
-                max: 263
+              - <<: &PlanetsideFeature.38
+                  min: 257
+                  max: 263
                 text: Quicksand moist with ground water
-              - min: 264
-                max: 270
+              - <<: &PlanetsideFeature.39
+                  min: 264
+                  max: 270
                 text: Sand dotted with an unusual color of an unknown element
-              - min: 271
-                max: 277
+              - <<: &PlanetsideFeature.40
+                  min: 271
+                  max: 277
                 text: Sinkhole swallowing up the sand
-              - min: 278
-                max: 284
+              - <<: &PlanetsideFeature.41
+                  min: 278
+                  max: 284
                 text: Spiked salt deposits dotting the plains
-              - min: 285
-                max: 291
+              - <<: &PlanetsideFeature.42
+                  min: 285
+                  max: 291
                 text: Whirlwind with a compressed pillar of sand at the center
-              - min: 292
+              - &PlanetsideFeature.43
+                min: 292
                 max: 298
                 <<: *DescriptorFocus
-              - min: 299
+              - &PlanetsideFeature.44
+                min: 299
                 max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+                <<: *PrecursorVaultPlanetside
       furnace:
         name: Furnace
         enhances: starforged/collections/oracles/planets/furnace
         <<: *Planet
+        description: Volcanic ruptures dot the surface of this planet allowing lava, ash and gas to escape from magma chambers deep within the core. The sheer volume of fiery lava casts an eerie red glow onto anything in orbit. Steam swirls through the Atmosphere creating massive weather systems.
         contents:
           name:
             replaces: starforged/oracles/planets/furnace/name
@@ -649,239 +790,156 @@ oracles:
             replaces: starforged/oracles/planets/furnace/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Fiery world-spanning chasms
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Glowing rivers of lava
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Lightning-wracked ash clouds
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Magma seas
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Massive supervolcano
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Once verdant terrain
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Towering mountain ranges
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: World-spanning fissures
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Continent-sized crater filled with lava
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Coronae, rocky crowns up to a thousand miles wide
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Large novae, rapidly cooled lava forming star-shaped ridges
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Liquid water at the pole surrounded by vast steam clouds
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Massive shield volcano with concentric lava rings
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Mountains reaching into the upper Atmosphere
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Rocky fields that change color based on temperature
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Smooth, flat plains dotted by sporatic volcannoes
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Canals of lava flowing towards an ocean of molten rock
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Continent-sized crater filled with obsidian
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Gigantic trench in the scorched ocean bed
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Large arachnoids, radial ground fissures near volcanoes
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Massive pancake dome volcano engorged with lava
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Tesserae, raised tiles forming a maze of ridges and valleys
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Ultraviolet absorbing clouds moving at hurricane speeds
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Volcanic eruption ejecting debris nearly into space
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/furnace/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Blinding ash storms
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Catastrophic earthquakes
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Colorful geothermal springs
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Intricate volcanic rock formations
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Lava tube tunnel networks
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Masses of scorched bones
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Plains of volcanic glass
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Pools of liquid metal
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Rocky islands adrift on magma
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Roiling clouds of superheated gas
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Scalding geysers
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Silica or metal storms
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Steaming mudflats
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              - <<: *PlanetsideFeature.15
                 text: Acidic rain accompanied by fiery hail
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Black sand beach
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Dark plain of glassy obsidian
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Field of tesserae, folded and fractured terrain
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Hexagonal lava deposits
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Impact craters from previous volcano explosions
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Narrow rock bridge over a river of lava
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Porous pumice rocks rounded by the winds
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Smoldering caldera
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Steep-sided graben, downward thrust land along a fault line
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Suffocating clouds of gas
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Tornado of fire and ash
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Volcano slowly building in activity
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Dark fields of basalt rock
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Electromagnetic waves pulsing from iron concentrations
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Glowing lake of lava
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Iron-rich fields of basalt rock
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Long dormant volcano
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Maze of magma rivulets obscured by heatwaves
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Near vertical horst, upward thrust land along a fault line
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Roaming firestorm
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Rolling fog of noxious smoke and ash
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Sinkholes formed by collapsed lava chambers
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Swirls of cooling lava transforming into igneous rocks
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Volcanically powered hot springs
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Waterfalls of lava
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       grave:
         name: Grave
         enhances: starforged/collections/oracles/planets/grave
         <<: *Planet
+        description: This world was once home to a robust civilization but is now nothing more than a desiccated husk. Ruins, battlefields, and disconcerting silence cover the surface. Did anyone make it off-world before the end?
         contents:
           name:
             replaces: starforged/oracles/planets/grave/name
@@ -1071,239 +1129,157 @@ oracles:
             replaces: starforged/oracles/planets/grave/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Broken moon
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Cratered surface
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Dry seabeds
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Irradiated Atmosphere
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Orbiting ship graveyard
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Perpetual overcast
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Sky-breaching ruins
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Vast wastelands
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Artificial moon in a decaying orbit
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Crumbling domed cities
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Debris field of dead satellites
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Massive areas of strip mining
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Tiny polar ice caps nearly melted away
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Tracts of scorched earth
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Violent weather systems
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Weakened and sporadic magnetosphere
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Bodies of noxious water
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Chain of islands that is a peninsula now flooded by the ocean
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Cluster of asteroids and dead mining ships
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Erratic orbital path within the solar system
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Malfunctioning planetary defense system
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Shattered mountains
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Towering walls pushing back the sea to house dead cities
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Toxic coastlines
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/grave/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Acid pools
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Ash dunes
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Corrosive rains
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Dead forests
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Fetid mudflats
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Mass graves
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Moldering bones
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Noxious fog
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Radioactive hotspots
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Ravaged cities
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Scarred battlefields
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Ship graveyards
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Whispers of the dead
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Abandoned engines of war
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Boiling lake
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Breached bunker
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Destroyed data hubs
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Fireballs from falling space debris
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Layers of hardened dust from chemical attacks
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Looted industrial complexes
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Messages left by those who perished
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Mountains of waste
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Quagmire of pollution
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Remains of a gigantic creature
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Shipyard with unfinished starships
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Storm swirling with detritus
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Bombed military complexes
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Broken infrastructure for mass transit systems
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Crumbling monuments to power
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Deep trenches dug for warfare
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Desert sands turned to glass
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Dry riverbed
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Evidence of the use of weapons of mass destruction
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Flotsam littered shoreline
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Humanoid remains still in life-like poses
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Indications of a corrupt or brutal system of justice
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Poisoned spring waters
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Rotted vertical farms
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Stash of time-worn weapons
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       ice:
         name: Ice
         enhances: starforged/collections/oracles/planets/ice
         <<: *Planet
+        description: A world blanketed in snow, winter has come and never leaves. Vast tundras sprawl across the surface while continent-sized glaciers carve out whole mountain ranges. Even from orbit it is difficult to tell whether one area is a landmass or just a large snowstorm. Parts of the ocean flash froze leaving waves of ice behind.
         contents:
           name:
             replaces: starforged/oracles/planets/ice/name
@@ -1493,239 +1469,157 @@ oracles:
             replaces: starforged/oracles/planets/ice/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Feeble sunlight
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Frozen Oceans
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Rocky glacial islands
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Snowbound mountains
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Sky-breaching geysers
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Supersized ice volcano
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Vibrantly colored ice
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: World-spanning ice canyon
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Active volcanoes with swiftly hardening lava
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Ancient river beds now frozen solid
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Deep fjords carved by ice
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Glaciers with smooth, windswept tops
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Mountains of pure ice in the midst of the ocean
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Solitary island that appears unfrozen
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Thick magnetosphere reflecting most light
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Turbulent jet streams filled with ice and snow
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Coastlines layered with ice
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Desolate tundra
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Earthquakes that fracture whole glaciers
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Eye of calm weather over one pole
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Glacier eating into a mountainside
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Rapidly switching magnetic poles
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Series of connected and frozen lakes
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Unfrozen ocean filled with icebergs
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/ice/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Abyssal ice fissures
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Blinding snow storms
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Clusters of ice spikes
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Colossal ice caves
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Glistening ice spires
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Massive snow drifts
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Preserved carcasses
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Rocky islands amid icy wastes
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Shattered plains of pack ice
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Steaming hot springs
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Subsurface liquid oceans
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Vibrant auroras
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Wind-carved ice formations
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Avalanche of ice and snow
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Bridge of ice connecting glaciers
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Devastating hail storms
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Emeralds of ice
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Fierce lightning fueled by solar radiation
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Hidden valley with relatively little snow
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Preserved midden heap of an ancient people
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: River of glacial melt
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Sections of ice jutting up at odd angles
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Spheres of ice rounded by the wind
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Sprawling tunnels through the ice
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Thin ice covering a deep lake
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Whirlpool dragging icebergs to the depths
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Columns of ice
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Crystal clear ice reflecting the stars
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Cylinders of snow gathering speed as they roll
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Dark ice formed into geometric patterns
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Deep cave with steamy Atmosphere
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Freezing rain
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Hollow dome of ice
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Impact crater that has shattered the ice
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Liquid lake warmed by geothermal heat
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Plains of tightly packed snow and howling wind
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Pockets of gas frozen in ice
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Sea with super-dense ice on the floor
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Vertical cliffs of ice
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       jovian:
         name: Jovian
         enhances: starforged/collections/oracles/planets/jovian
         <<: *Planet
+        description: Dense gases make up discernible and colorful layers on the way down to this planet’s tiny core of dense rock and magma. Storms perpetually rage in the Atmosphere with constant winds blowing at hurricane force or greater. It is said that some individual storms have lasted for centuries.
         contents:
           name:
             replaces: starforged/oracles/planets/jovian/name
@@ -1915,239 +1809,157 @@ oracles:
             replaces: starforged/oracles/planets/jovian/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Complex ring system
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Intense gravity well
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Numerous moons
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Perpetual superstorm
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Powerful magnetic field
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Severe electrical storms
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Superheated Atmosphere
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Unusual atmospheric colors
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Area of unusual calm in the planet's Atmosphere
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Asteroid belt near the planet's orbit
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Atmosphere constantly changing colors
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Cloud nebula surrounding the planet
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Hyper-dense Atmosphere
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Pulsing magnetic field
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Supercooled Atmosphere
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Superstorm that produces an aurora
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Atmospheric pocket where all colors turn gray
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Continent-sized tornado of swirling color
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Gravity waves pushing away from the planet
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Radiation in specific Atmosphere layers
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Second planet following behind in the Jovian's orbit
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Storm laced with heavy debris
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Teardrop shaped accretion disk
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Varying atmospheric conditions based on layers
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/jovian/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Clouds of metal particles
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Crystalline rains
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Floating glaciers
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Floating islands
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Layer of suspended liquid
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Pockets of explosive gases
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Powerful vortexes
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Radiation fields
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Storm-swept rocky debris
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Torrential rain
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Towering thunderheads
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Violent turbulence
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Zones of localized Atmosphere
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Airborne rivers
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Crystal cloud structures
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Field of charged particles
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Floating strands of lava from ejecta
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Irresistable air currents
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Liquid vortex
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Metallic rains
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Moon-like structures within the Atmosphere
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Pockets of calm that form and reform
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Pockets of noxious vapors
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Rain composed of supercooled gaseous elements
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Rocky debris smashed together into odd shapes
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Streaks of colored stratus clouds
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Airflow in a constant vector
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Ash-filled clouds
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Clouds of plasma
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Constant drizzle and fog
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Crushing surface gravity
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Field of abruptly altered gravity
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Mountains of diamonds jutting up from below
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Multiple storm fronts clashing
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Pockets of thickened and viscous gas
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Rain that falls as a solid body of water
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Rocky hail
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Sand tornado digging up planet's core
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Tiny cirrocumuls clouds all of different colors
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       jungle:
         name: Jungle
         enhances: starforged/collections/oracles/planets/jungle
         <<: *Planet
+        description: Dense forests and tangled vegetation cover more primeval growth from millennia past all over the surface of this planet. Life here is savage and fierce, fighting to thrive and not just survive. What secrets the rain-soaked canopy hides is anyone’s guess, but the diversity of life here suggests there will indeed be secrets.
         contents:
           name:
             replaces: starforged/oracles/planets/jungle/name
@@ -2337,239 +2149,157 @@ oracles:
             replaces: starforged/oracles/planets/jungle/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Cloud-breaching trees
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Expansive rivers or wetlands
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Inland seas
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Massive canyons
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Persistent cloud cover
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Towering mountains
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Unbroken canopy
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Unusual vegetation color
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Canopy broken by an impact crater
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Interconnected system of lakes
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Intermittent storm systems
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Rolling hills of forests
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Solitary mountain reaching to the heavens
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Supersized plateaus
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Waters of an unusual color palette
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Wide river deltas
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: All rivers lead to a single ocean
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Atmosphere near 100% humidity
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Maze of crisscrossing rivers
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Swath of grassy plains
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Vegetation floating on the oceans
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Vibrant colored islands
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: World tree with its own ecosystem
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Zone of petrified forest
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/jungle/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Bioluminescent flora
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Deep river gorges
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Extensive exposed root systems
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Immense tiered waterfalls
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Languid rivers
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Low-lying fog
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Plunging sinkholes
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Scarred clearings
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Sinking quagmires
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Surging rivers
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Torrential rainstorms
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Violent electrical storms
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Waterlogged caves
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Bioluminescent fauna
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Caverns with their own weather system
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Clearings choked by vines
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Cliffs with holes burrowed in the side
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Flooded rivers carrying debris
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Fog hovering in the canopy
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Lakes with their own tidal system
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Lightning strikes dancing within the canopy
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Monstrous monsoons
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Newly flooded lowlands
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Noxious tar pits
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Rivers joining whose multi-colored waters don't mix
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Trees intertwined in symbiosis
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Clouds that fluctuate in elevation
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Crystal clear watering holes
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Deafening thunderstorms
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Deep series of caves
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Dense underbrush with unique defense mechanisms
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Fauna with extreme camouflage
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Geysers of mineral rich water
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Intense heat waves
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Lake with a natural dam near bursting
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Lazy shallow streams
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Mountains dotted with rocky clearings
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Underground rivers
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Vegetation growing in geometric designs
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       ocean:
         name: Ocean
         enhances: starforged/collections/oracles/planets/ocean
         <<: *Planet
+        description: 'Ocean worlds may be an endless sea of water, but some are made up of other thalassogen such as ammonia, lava, or hydrocarbons. Other ocean worlds have their worlds contained between two icy spheres: a top layer protecting the water from solar radiation and a lower layer protecting the water from the planet’s core.'
         contents:
           name:
             replaces: starforged/oracles/planets/ocean/name
@@ -2759,239 +2489,157 @@ oracles:
             replaces: starforged/oracles/planets/ocean/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Complex reef systems
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Emerging volcanoes
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Floating forests
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Global hurricanes
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Large moon and strong tides
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Scattered islands
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Semi-frozen oceans
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Unusual water color
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Eerie glow from active subsurface volcanoes
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Floating isles of barren volcanic rock
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Hemisphere-spanning whirpool
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Jungles of algae blooms and kelp
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Lonely land mass
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Multiple moons producing a swift tide cycle
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Ocean currents, each a different color
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Sections of boiling seas
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Active core that heats and cools the waters in a cycle
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Bobbing islands produces fierce undertows
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Clouds of ash and vapor circumnavigating the globe
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Complete lack of land
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Constant rain
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Floatings sections of congealing mud and sand
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Highly reflective waters
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Island-sized sponges
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/ocean/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Abyssal trenches
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Living islands
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Luminescent seas
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Roaming icebergs
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Shallow-water plains
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Subsurface volcanoes
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Titanic waves
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Undersea air pockets
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Undersea caves
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Undersea forests
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Unrelenting rainfall
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Violent currents
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Windborne waterspouts
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Abyssal plains
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Airborne solid particles like a dry rain
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Algae-covered remains of a great creature
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Continental slope in mid-formation
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Dazzling lightning storms
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Flat plains of thin ice
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Powerful geysers
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Radioactive currents
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Raging whirpools
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Sizzling remains of a comet strike
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Undersea hot springs
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Undersea impact craters
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Underwater mountain ridges
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Abyssal hills
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Bubbling gas vents
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Continental shelf nearly formed
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Freezing icespouts from large temperature variations
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Freshly churned earth from the sea floor
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Heavy liquid particles acting like underwater rain
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Islands that sink and resurface with the tides
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Jagged seamounts
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Maelstrom moving with the currents
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Petrified forest now sunk to the depths
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Pockets of opaque waters
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Walls of frozen waves
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Yawning sinkhole in the ocean floor
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       rocky:
         name: Rocky
         enhances: starforged/collections/oracles/planets/rocky
         <<: *Planet
+        description: All rocky planets have a metallic core, but the type of rock that dominates on their surface can be silicon-based or carbon-based. Either type of surface can be hostile to life and treacherous to traverse. These planets may be a source of minerals, but the environment is unforgiving.
         contents:
           name:
             replaces: starforged/oracles/planets/rocky/name
@@ -3181,239 +2829,157 @@ oracles:
             <<: *ObservedFromSpace
             replaces: starforged/oracles/planets/rocky/observed_from_space
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Barren plains
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Constant asteroid strikes
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Dense ring system
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Jagged mountains
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Massive impact crater
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Misshapen form (low gravity)
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Perpetual night
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Towering plateaus
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Cloud-breaching volcanoes
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Continent-spanning canyons
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Erratic orbit
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Light and dark side of the planet
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Massive comets in a slowly decaying orbit
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Pockmarked plains
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Sphere of rocky debris surrounding the planet
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Varied colors indicating different minerals
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Dried ocean beds
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Giant duststorm
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Planet has no rotation
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Solitary moon
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Super-dense core (high gravity)
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: System of concentric rings
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Vast rocky desert
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Visible fault lines
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/rocky/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Crystalline formations
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Crystalline caves
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Exposed mineral deposits
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Geometric terrain features
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Geothermal vents
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Glassy impact craters
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Massive dust dunes
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Powerful magnetic fields
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Rubble-strewn lava fields
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Steam-heated caves
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Subsurface magma flows
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Swirling low-lying gases
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Towering rocky spires
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Active volcanoes
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Blinding duststorm
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Caverns of chalky rock
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Cooled caves from a lopsided core
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Desert of tiny pebbles
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Exposed lava flow
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Lava formations
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Localized site of radioactivity
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Minerals covered in thick layers of dust
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Mountain side shattered by a meteor strike
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Natural arches between huge cliffs
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Pillars of lava deposits
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Spherical rocks that seem to move of their accord
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Bottomless sinkholes
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Boulders of unusual size
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Caverns formed by earthquakes
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Dust plains that cannot bear weight
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Field of broken obsidian
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Fractured surface creating an unnatural design
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Multiple impact craters each from a different origin
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Pillars of rock that have fallen on top of each other
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Rocky landslides
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Small pools of lava leaking up to the surface
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Subsurface lake
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Terrifying electric storm
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Wind-carved rock formations
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       shattered:
         name: Shattered
         enhances: starforged/collections/oracles/planets/shattered
         <<: *Planet
+        description: Destructive forces have torn this world to pieces. Chunks of earth and debris orbit around larger sections of the remaining partial planet. The planetary core is no longer in tact and bleeds out into space. What caused this destruction is unknown, but if it is still around, it is surely dangerous.
         contents:
           name:
             replaces: starforged/oracles/planets/shattered/name
@@ -3603,238 +3169,156 @@ oracles:
             replaces: starforged/oracles/planets/shattered/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Demolished space fleet
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Dense ring system
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Fiery planetary core
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Geomagnetic storms
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Intense solar radiation
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Preserved planetary fragment
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Swirling debris field
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Unbroken moon
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Debris field falling on larger planetary fragments
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Exposed and rapidly cooling core
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Inoperative planetary defense system
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Moon in decaying orbit
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Pulverized planetary fragments
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Radiation leaking from the core
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Scattered ring system swirling wildly
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Storms of meteorites
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Abandoned orbital stations
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Dead and frozen core
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Debris field fused together by intense heat
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Erratic magnetic pulses
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Moon pushed into an unusual orbit
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Radiation on specific fragments
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Ring system with large gaps
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Solar winds scattering planetary fragments
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/shattered/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Broken cities
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Colliding fragments
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Energy storms
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Exposed caverns
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Fluctuating gravity
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Magnetic disturbances
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Molten fissures
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Phantom visions of the past
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Pocket Atmosphere
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Residual energy storms
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Swirling corrosive gases
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Unstable and fracturing terrain
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Venting magma
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Blinding storm of rock and dust
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Brilliant aurora on the starward edge
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Delayed shock waves
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Destroyed space ports
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Dramatic change in fragment spin
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Fiery hail of debris
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Pressurized gas vents propelling fragments
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Shattered underground bunkers
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Small fragments fusing back together via magma
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Sounds that should be impossible to hear
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Sudden depressurization of Atmosphere
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Swirling metallic shards
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Terrain on a collision course
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Abandoned military equipment
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Concussive explosions
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Evidence of everyday lives lost
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Intense impacts of large debris
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Leaking poisonous fumes
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Localized stable terrain
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Mineral deposits broken from the earth
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Mountain sides crumbling into free orbit
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Radiation from derelict power plants
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Still active volcano
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Sudden loss of gravity
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Tornado of low gravity magma
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Violent atmospheric changes
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       tainted:
         name: Tainted
         enhances: starforged/collections/oracles/planets/tainted
+        description: 'The evolution of life itself is responsible for the death of this planet. Whether a civilization greedily consumed the planetary resources thereby polluting the world or a dangerous micro-organism proliferated rapidly, the result is the same: a planet of death.'
         <<: *Planet
         contents:
           name:
@@ -4025,238 +3509,156 @@ oracles:
             replaces: starforged/oracles/planets/tainted/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Expansive fungal plains
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Fungal forests
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: Scabrous, infected terrain
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Sky-breaching fungus
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Sludge-filled river networks
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Stagnant cloud cover
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Thick, murky Atmosphere
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Toxic seas
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Barren hills
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Crumbling mountain ranges
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Eerie colored lakes
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Fungal islands floating on the seas
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Spore clouds forming weather systems
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Terrain rich from decaying vegetation
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Toxic storms
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Vibrant, layered Atmosphere
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Cloud cover broken only by most direct sunlight
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Fungal bogs
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Impact craters being swiftly overtaken by fungus
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Mountains of fungus
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Surfaced eroded to a near perfect sphere
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Swirling Atmosphere of glowing particles
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Tidal zones of sludge
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Toxic planet covering leaking into space
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/tainted/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Caustic gas storms
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Corrosive, low-lying fog
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Fungus-encrusted caves
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Gelatinous ponds
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Hallucinogenic toxins
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Layers of fast-growing lichen
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Moldering bones
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Mutated flora
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Poisonous gas vents
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Spore clouds
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Terrain marred by fleshy pustules
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Toxic rain
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Virulent fungal infestations
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Desolate area where even the fungi are dead
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Fungus-eating forest
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Layer of spores kicked up by movement
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Lightning storms setting fungus ablaze
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Mutated fauna
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Plains of bursting fungi
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Sinkholes with fungus-lined walls
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Sleep-inducing toxins
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Slow moving viscous flood
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Steaming gas vents
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Torrential downpour
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Trapped and dying fauna
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Warring fungal species
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Avalanche of fungus
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Bioluminescent fungus
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Creatures composed of fungus
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Euphoric toxins
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Forest of fungus acidic to touch
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Geysers of sludge
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Mind-controlling fungal infestations
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Rain of spores that swiftly take root
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Remains uncannily perserved under a layer of slime
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Slimy cliff of sporadically falling fungus
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Stream full of water absorbing fungus
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Terrain with false surfaces of fungus
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Violent windstorm blowing heavy chunks of fungus
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
       vital:
         name: Vital
         enhances: starforged/collections/oracles/planets/vital
+        description: Against all odds, life finds a way. Even in the emptiness of space, tiny pockets of hope can be found, and this planet offers that. Liquid water exists here which has given a chance for both flora and fauna to flourish. If you can’t find exactly what you need here, you can at least find a moment of respite.
         <<: *Planet
         contents:
           name:
@@ -4447,235 +3849,152 @@ oracles:
             replaces: starforged/oracles/planets/vital/observed_from_space
             <<: *ObservedFromSpace
             rows:
-              - min: 1
-                max: 11
+              # begin copied rows
+              - <<: *ObservedFromSpace.0
                 text: Complex ring system
-              - min: 12
-                max: 22
+              - <<: *ObservedFromSpace.1
                 text: Dramatic seasonal variation
-              - min: 23
-                max: 33
+              - <<: *ObservedFromSpace.2
                 text: High gravity
-              - min: 34
-                max: 44
+              - <<: *ObservedFromSpace.3
                 text: Large moon
-              - min: 45
-                max: 55
+              - <<: *ObservedFromSpace.4
                 text: Narrow livable band
-              - min: 56
-                max: 66
+              - <<: *ObservedFromSpace.5
                 text: Numerous small moons
-              - min: 67
-                max: 77
+              - <<: *ObservedFromSpace.6
                 text: Unusual day or night cycle
-              - min: 78
-                max: 88
+              - <<: *ObservedFromSpace.7
                 text: Vibrantly colored landscapes
-              - min: 89
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 101
-                max: 111
+              - *ObservedFromSpace.8
+              - *ObservedFromSpace.9
+              # end copied rows
+              - <<: *ObservedFromSpace.10
                 text: Dramatic tidal system
-              - min: 112
-                max: 122
+              - <<: *ObservedFromSpace.11
                 text: Erratic orbit around central star
-              - min: 123
-                max: 133
+              - <<: *ObservedFromSpace.12
                 text: Life confined to a single continent
-              - min: 134
-                max: 144
+              - <<: *ObservedFromSpace.13
                 text: Low gravity
-              - min: 145
-                max: 155
+              - <<: *ObservedFromSpace.14
                 text: Moon that is its own vital world
-              - min: 156
-                max: 166
+              - <<: *ObservedFromSpace.15
                 text: Nearby asteroid belt
-              - min: 167
-                max: 177
+              - <<: *ObservedFromSpace.16
                 text: Sister planet in the same orbit but opposite the star
-              - min: 178
-                max: 188
+              - <<: *ObservedFromSpace.17
                 text: Vibrantly colored waterways
-              - min: 189
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
-              - min: 201
-                max: 211
+              - *ObservedFromSpace.18
+              - *ObservedFromSpace.19
+              - <<: *ObservedFromSpace.20
                 text: Biome of exaggerated size
-              - min: 212
-                max: 222
+              - <<: *ObservedFromSpace.21
                 text: Fluctuating gravity
-              - min: 223
-                max: 233
+              - <<: *ObservedFromSpace.22
                 text: Large moon with its own moon
-              - min: 234
-                max: 244
+              - <<: *ObservedFromSpace.23
                 text: Life only on hemisphere permanently facing the star
-              - min: 245
-                max: 255
+              - <<: *ObservedFromSpace.24
                 text: Nebula trailing dust stuck in planet's gravity
-              - min: 256
-                max: 266
+              - <<: *ObservedFromSpace.25
                 text: Recent large impact crater and dusty Atmosphere
-              - min: 267
-                max: 277
+              - <<: *ObservedFromSpace.26
                 text: Rotation about core as well as polar axis rotation
-              - min: 278
-                max: 288
+              - <<: *ObservedFromSpace.27
                 text: Vibrantly colored weather systems
-              - min: 289
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (orbital)'
+              - *ObservedFromSpace.28
+              - *ObservedFromSpace.29
           planetside_feature:
             replaces: starforged/oracles/planets/vital/planetside_feature
             <<: *PlanetsideFeature
             rows:
-              - min: 1
-                max: 7
+              # begin copied rows
+              - <<: *PlanetsideFeature.0
                 text: Background radiation
-              - min: 8
-                max: 14
+              - <<: *PlanetsideFeature.1
                 text: Chaotically juxtaposed biomes
-              - min: 15
-                max: 21
+              - <<: *PlanetsideFeature.2
                 text: Creature boneyards
-              - min: 22
-                max: 28
+              - <<: *PlanetsideFeature.3
                 text: Creature lairs or watering holes
-              - min: 29
-                max: 35
+              - <<: *PlanetsideFeature.4
                 text: Crystalline formations
-              - min: 36
-                max: 42
+              - <<: *PlanetsideFeature.5
                 text: Fierce electrical storms
-              - min: 43
-                max: 49
+              - <<: *PlanetsideFeature.6
                 text: Floating terrain
-              - min: 50
-                max: 56
+              - <<: *PlanetsideFeature.7
                 text: Frequent seismic activity
-              - min: 57
-                max: 63
+              - <<: *PlanetsideFeature.8
                 text: Magnetic disturbances
-              - min: 64
-                max: 70
+              - <<: *PlanetsideFeature.9
                 text: Scarred or excavated terrain
-              - min: 71
-                max: 77
+              - <<: *PlanetsideFeature.10
                 text: Signs of an engineered biosphere
-              - min: 78
-                max: 84
+              - <<: *PlanetsideFeature.11
                 text: Sudden weather fluctuations
-              - min: 85
-                max: 91
+              - <<: *PlanetsideFeature.12
                 text: Towering geological formations
-              - min: 92
-                max: 98
-                <<: *DescriptorFocus
-              - min: 99
-                max: 100
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 101
-                max: 107
+              - *PlanetsideFeature.13
+              - *PlanetsideFeature.14
+              # end of copied rows
+              - <<: *PlanetsideFeature.15
                 text: Creature nursery grounds
-              - min: 108
-                max: 114
+              - <<: *PlanetsideFeature.16
                 text: Dramatically separated tracts of terrain
-              - min: 115
-                max: 121
+              - <<: *PlanetsideFeature.17
                 text: Extreme temperature fluctuations
-              - min: 122
-                max: 128
+              - <<: *PlanetsideFeature.18
                 text: Frequent coastal hurricanes
-              - min: 129
-                max: 135
+              - <<: *PlanetsideFeature.19
                 text: Geothermal heat source
-              - min: 136
-                max: 142
+              - <<: *PlanetsideFeature.20
                 text: Invasive floral species
-              - min: 143
-                max: 149
+              - <<: *PlanetsideFeature.21
                 text: Maze of geological formations
-              - min: 150
-                max: 156
+              - <<: *PlanetsideFeature.22
                 text: Paths frequented by predators
-              - min: 157
-                max: 163
+              - <<: *PlanetsideFeature.23
                 text: Rare mineral deposits
-              - min: 164
-                max: 170
+              - <<: *PlanetsideFeature.24
                 text: Signs of a degrading biosphere
-              - min: 171
-                max: 177
+              - <<: *PlanetsideFeature.25
                 text: Twisting tornadoes
-              - min: 178
-                max: 184
+              - <<: *PlanetsideFeature.26
                 text: Vibrant auroras
-              - min: 185
-                max: 191
+              - <<: *PlanetsideFeature.27
                 text: Yawning sinkhole
-              - min: 192
-                max: 198
-                <<: *DescriptorFocus
-              - min: 199
-                max: 200
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
-              - min: 201
-                max: 207
+              - *PlanetsideFeature.28
+              - *PlanetsideFeature.29
+              - <<: *PlanetsideFeature.30
                 text: Active volcanoes
-              - min: 208
-                max: 214
+              - <<: *PlanetsideFeature.31
                 text: Creatures in conflict
-              - min: 215
-                max: 221
+              - <<: *PlanetsideFeature.32
                 text: Crushing landslide
-              - min: 222
-                max: 228
+              - <<: *PlanetsideFeature.33
                 text: Destructive insect swarms
-              - min: 229
-                max: 235
+              - <<: *PlanetsideFeature.34
                 text: Evidence of greenhouse effects
-              - min: 236
-                max: 242
+              - <<: *PlanetsideFeature.35
                 text: Fluctuating radiation
-              - min: 243
-                max: 249
+              - <<: *PlanetsideFeature.36
                 text: Herd of migratory creatures
-              - min: 250
-                max: 256
+              - <<: *PlanetsideFeature.37
                 text: Intricate geological formations
-              - min: 257
-                max: 263
+              - <<: *PlanetsideFeature.38
                 text: Low altitude jet stream sustaining strong winds
-              - min: 264
-                max: 270
+              - <<: *PlanetsideFeature.39
                 text: Signs of a recent wildfire
-              - min: 271
-                max: 277
+              - <<: *PlanetsideFeature.40
                 text: Torrential rains
-              - min: 278
-                max: 284
+              - <<: *PlanetsideFeature.41
                 text: Treacherous and rugged terrain
-              - min: 285
-                max: 291
+              - <<: *PlanetsideFeature.42
                 text: Vents leaking hot gases
-              - min: 292
-                max: 298
-                <<: *DescriptorFocus
-              - min: 299
-                max: 300
-                text: '[Precursor Vault](starforged/oracles/vaults) (planetside)'
+              - *PlanetsideFeature.43
+              - *PlanetsideFeature.44
         collections:
           plant:
             name: Plant
