@@ -21,10 +21,11 @@ oracles:
         name: Story Complication
         oracle_type: table_text
         dice: 1d300
-        replaces: starforged/oracles/misc/story_complication
+        replaces: starsmith/oracles/misc/story_complication
         _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
           - min: 1
             max: 4
             text: Crucial equipment or device fails
@@ -116,6 +117,7 @@ oracles:
               oracle_rolls:
                 - auto: true
                   number_of_rolls: 2
+            # end copied rows
           - min: 101
             max: 104
             text: A secret or unsavory past event from your life is revealed
@@ -294,10 +296,11 @@ oracles:
         name: Story Clue
         oracle_type: table_text
         dice: 1d300
-        replaces: starforged/oracles/misc/story_clue
+        replaces: starsmith/oracles/misc/story_clue
         _comment: Extension of the oracle table
         _source: *Source
         rows:
+          # begin copied rows
           - min: 1
             max: 3
             text: Affirms a previously understood fact or clue
@@ -391,12 +394,13 @@ oracles:
           - min: 91
             max: 100
             <<: &DescriptorFocus
-                text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                text: '[Descriptor](id:starsmith/oracles/core/descriptor) + [Focus](id:starsmith/oracles/core/focus)'
                 oracle_rolls:
-                  - oracle: starforged/oracles/core/descriptor
+                  - oracle: starsmith/oracles/core/descriptor
                     auto: true
-                  - oracle: starforged/oracles/core/focus
+                  - oracle: starsmith/oracles/core/focus
                     auto: true
+            # end copied rows
           - min: 101
             max: 103
             text: Brings to light a prior altercation involving a connected leader
@@ -596,10 +600,11 @@ oracles:
         name: Combat Action
         oracle_type: table_text
         dice: 1d300
-        replaces: starforged/oracles/misc/combat_action
+        replaces: starsmith/oracles/misc/combat_action
         _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
           - min: 1
             max: 3
             text: Block a path or cut off an objective
@@ -699,6 +704,7 @@ oracles:
           - min: 97
             max: 100
             <<: *RollTwice
+          # end copied rows
           - min: 101
             max: 103
             text: Aid another
@@ -900,11 +906,12 @@ oracles:
       anomaly_effect:
         name: Anomaly Effect
         oracle_type: table_text
-        replaces: starforged/oracles/misc/anomaly_effect
+        replaces: starsmith/oracles/misc/anomaly_effect
         dice: 1d300
         _comment: Extension of the oracle table
         _source: *Source
         rows:
+        # begin copied rows
           - min: 1
             max: 3
             text: Alters or focuses gravity
@@ -1004,6 +1011,7 @@ oracles:
           - min: 97
             max: 100
             <<: *RollTwice
+          # end copied rows
           - min: 101
             max: 103
             text: Allows the spirits of the dead to speak
