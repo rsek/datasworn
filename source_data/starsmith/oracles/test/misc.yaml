@@ -21,7 +21,7 @@ oracles:
         name: Story Complication
         oracle_type: table_text
         dice: 1d300
-        replaces: starsmith/oracles/misc/story_complication
+        replaces: starforged/oracles/misc/story_complication
         _comment: Extension of the oracle table
         _source: *Source
         rows:
@@ -296,7 +296,7 @@ oracles:
         name: Story Clue
         oracle_type: table_text
         dice: 1d300
-        replaces: starsmith/oracles/misc/story_clue
+        replaces: starforged/oracles/misc/story_clue
         _comment: Extension of the oracle table
         _source: *Source
         rows:
@@ -600,7 +600,7 @@ oracles:
         name: Combat Action
         oracle_type: table_text
         dice: 1d300
-        replaces: starsmith/oracles/misc/combat_action
+        replaces: starforged/oracles/misc/combat_action
         _comment: Extension of the oracle table
         _source: *Source
         rows:
@@ -906,7 +906,7 @@ oracles:
       anomaly_effect:
         name: Anomaly Effect
         oracle_type: table_text
-        replaces: starsmith/oracles/misc/anomaly_effect
+        replaces: starforged/oracles/misc/anomaly_effect
         dice: 1d300
         _comment: Extension of the oracle table
         _source: *Source
