@@ -199,7 +199,7 @@
 	"oracles": {
 		"campaign_launch": {
 			"_id": "starforged/collections/oracles/campaign_launch",
-			"name": "Campaign Launch",
+			"name": "Campaign Launch Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"background_assets": {
@@ -11394,12 +11394,7 @@
 									"duplicates": "reroll",
 									"number_of_rolls": 2
 								}
-							],
-							"_i18n": {
-								"text": {
-									"part_of_speech": "common_noun"
-								}
-							}
+							]
 						}
 					],
 					"_source": {
@@ -16797,7 +16792,7 @@
 				},
 				"projects": {
 					"_id": "starforged/oracles/factions/projects",
-					"name": "Faction",
+					"name": "Faction Projects",
 					"oracle_type": "table_text",
 					"dice": "1d100",
 					"description": "Pick or roll on this table to reveal the current focus of a faction. Then, use the nature of the organization to help envision the meaning of the project. The result may introduce events that motivate your character to aid or resist the project, or can serve as background detail for your setting. If you would like to track the faction’s progress, set a clock for the project using the campaign clock guidelines on page 235.",
@@ -31886,7 +31881,7 @@
 							"text": "Aegis",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31916,7 +31911,7 @@
 							"text": "Amity",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31926,7 +31921,7 @@
 							"text": "Apex",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31936,7 +31931,7 @@
 							"text": "Apogee",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31946,7 +31941,7 @@
 							"text": "Argosy",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31966,7 +31961,7 @@
 							"text": "Aurora",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31976,7 +31971,7 @@
 							"text": "Beacon",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31986,7 +31981,7 @@
 							"text": "Brink",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -31996,7 +31991,7 @@
 							"text": "Bulwark",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32016,7 +32011,7 @@
 							"text": "Burrow",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32026,7 +32021,7 @@
 							"text": "Concord",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32036,7 +32031,7 @@
 							"text": "Crux",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32056,7 +32051,7 @@
 							"text": "Deception",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32066,7 +32061,7 @@
 							"text": "Elysium",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32076,7 +32071,7 @@
 							"text": "Enigma",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32106,7 +32101,7 @@
 							"text": "Evenfall",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32116,7 +32111,7 @@
 							"text": "Eventide",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32136,7 +32131,7 @@
 							"text": "Felicity",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32156,7 +32151,7 @@
 							"text": "Forlorn",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "adjective_as_proper_noun"
 								}
 							}
 						},
@@ -32166,7 +32161,7 @@
 							"text": "Forsaken",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "adjective_as_proper_noun"
 								}
 							}
 						},
@@ -32186,7 +32181,7 @@
 							"text": "Glimmer",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32196,7 +32191,7 @@
 							"text": "Gloam",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32206,7 +32201,7 @@
 							"text": "Hearth",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32256,7 +32251,7 @@
 							"text": "Karma",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32303,22 +32298,12 @@
 						{
 							"min": 43,
 							"max": 43,
-							"text": "Lasthope",
-							"_i18n": {
-								"text": {
-									"part_of_speech": "proper_noun"
-								}
-							}
+							"text": "Lasthope"
 						},
 						{
 							"min": 44,
 							"max": 44,
-							"text": "Lastport",
-							"_i18n": {
-								"text": {
-									"part_of_speech": "proper_noun"
-								}
-							}
+							"text": "Lastport"
 						},
 						{
 							"min": 45,
@@ -32326,7 +32311,7 @@
 							"text": "Legacy",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32336,7 +32321,7 @@
 							"text": "Lodestar",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32366,7 +32351,7 @@
 							"text": "Marrow",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32376,7 +32361,7 @@
 							"text": "Meridian",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32426,7 +32411,7 @@
 							"text": "Nova",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32456,7 +32441,7 @@
 							"text": "Paradox",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32466,7 +32451,7 @@
 							"text": "Paragon",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32483,12 +32468,7 @@
 						{
 							"min": 61,
 							"max": 61,
-							"text": "Perchance",
-							"_i18n": {
-								"text": {
-									"part_of_speech": "proper_noun"
-								}
-							}
+							"text": "Perchance"
 						},
 						{
 							"min": 62,
@@ -32496,7 +32476,7 @@
 							"text": "Pinnacle",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32516,7 +32496,7 @@
 							"text": "Portent",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32526,7 +32506,7 @@
 							"text": "Prism",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32536,7 +32516,7 @@
 							"text": "Providence",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32546,7 +32526,7 @@
 							"text": "Purgatory",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32556,7 +32536,7 @@
 							"text": "Rampart",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32566,7 +32546,7 @@
 							"text": "Ramshackle",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "adjective_as_proper_noun"
 								}
 							}
 						},
@@ -32576,7 +32556,7 @@
 							"text": "Redemption",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32596,7 +32576,7 @@
 							"text": "Relic",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32606,7 +32586,7 @@
 							"text": "Reprise",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32616,7 +32596,7 @@
 							"text": "Reverie",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32636,7 +32616,7 @@
 							"text": "Rockhome",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32646,7 +32626,7 @@
 							"text": "Rust",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32666,7 +32646,7 @@
 							"text": "Sanctity",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32686,7 +32666,7 @@
 							"text": "Sepulcher",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32696,7 +32676,7 @@
 							"text": "Sigil",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32736,7 +32716,7 @@
 							"text": "Solitude",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32746,7 +32726,7 @@
 							"text": "Spire",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32766,7 +32746,7 @@
 							"text": "Summit",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32776,7 +32756,7 @@
 							"text": "Tranquility",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32796,7 +32776,7 @@
 							"text": "Unity",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32806,7 +32786,7 @@
 							"text": "Utopia",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32826,7 +32806,7 @@
 							"text": "Vesper",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32836,7 +32816,7 @@
 							"text": "Wayward",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32846,7 +32826,7 @@
 							"text": "Welkin",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32856,7 +32836,7 @@
 							"text": "Wellspring",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						},
@@ -32876,7 +32856,7 @@
 							"text": "Wreck",
 							"_i18n": {
 								"text": {
-									"part_of_speech": "proper_noun"
+									"part_of_speech": "common_noun_as_proper_noun"
 								}
 							}
 						}
@@ -35407,7 +35387,7 @@
 							"text2": null,
 							"oracle_rolls": [
 								{
-									"oracle": "starforged/oracles/starships/type",
+									"oracle": null,
 									"dice": null,
 									"auto": false,
 									"duplicates": "keep",

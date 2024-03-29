@@ -59,45 +59,47 @@ oracles:
           text: Result
           text2: Summary
         rows:
-          - <<: *i18n.result.adjective
-            min: 1
+          - min: 1
             max: 10
             text: Forsaken
+            _i18n: &Adjective
+              text:
+                part_of_speech: adjective
             text2: Banished or forgotten
             # set_attributes: {influence: [forsaken]}
-          - <<: *i18n.result.adjective
-            min: 11
+          - min: 11
             max: 30
+            _i18n: *Adjective
             text: Isolated
             text2: Limited influence in a remote location
             # set_attributes: {influence: [isolated]}
-          - <<: *i18n.result.adjective
-            min: 31
+          - min: 31
             max: 50
+            _i18n: *Adjective
             text: Localized
             text2: Marginal influence in a single sector
             # set_attributes: {influence: [localized]}
-          - <<: *i18n.result.adjective
-            min: 51
+          - min: 51
             max: 70
+            _i18n: *Adjective
             text: Established
             text2: Strong influence in a single sector
             # set_attributes: {influence: [established]}
-          - <<: *i18n.result.adjective
-            min: 71
+          - min: 71
             max: 85
+            _i18n: *Adjective
             text: Notable
             text2: Dispersed influence across a few sectors
             # set_attributes: {influence: [notable]}
-          - <<: *i18n.result.adjective
-            min: 86
+          - min: 86
             max: 95
+            _i18n: *Adjective
             text: Dominant
             text2: Far-reaching influence across many sectors
             # set_attributes: {influence: [dominant]}
-          - <<: *i18n.result.adjective
-            min: 96
+          - min: 96
             max: 100
+            _i18n: *Adjective
             text: Inescapable
             text2: Pervasive influence across inhabited space
             # set_attributes: {influence: [inescapable]}
@@ -119,122 +121,124 @@ oracles:
         # content:
         #   tags: [abstract noun]
         rows:
-          - <<: *i18n.result.common_noun
+          - _i18n: &CommonNoun
+              text:
+                part_of_speech: common_noun
             min: 1
             max: 5
             text: Agriculture
             # set_attributes: {dominion: [agriculture]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 6
             max: 9
             text: Artistry
             # set_attributes: {dominion: [artistry]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 10
             max: 14
             text: Commerce
             # set_attributes: {dominion: [commerce]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 15
             max: 18
             text: Conquest
             # set_attributes: {dominion: [conquest]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 19
             max: 22
             text: Construction
             # set_attributes: {dominion: [construction]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 23
             max: 26
             text: Diplomacy
             # set_attributes: {dominion: [diplomacy]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 27
             max: 30
             text: Education
             # set_attributes: {dominion: [education]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 31
             max: 34
             text: Environmentalism
             # set_attributes: {dominion: [environmentalism]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 35
             max: 38
             text: Exploration
             # set_attributes: {dominion: [exploration]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 39
             max: 42
             text: Faith
             # set_attributes: {dominion: [faith]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 43
             max: 46
             text: History
             # set_attributes: {dominion: [history]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 47
             max: 50
             text: Honor
             # set_attributes: {dominion: [honor]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 51
             max: 55
             text: Industry
             # set_attributes: {dominion: [industry]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 56
             max: 59
             text: Isolationism
             # set_attributes: {dominion: [isolationism]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 60
             max: 63
             text: Law
             # set_attributes: {dominion: [law]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 64
             max: 67
             text: Mysticism
             # set_attributes: {dominion: [mysticism]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 68
             max: 71
             text: Pacifism
             # set_attributes: {dominion: [pacifism]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 72
             max: 75
             text: Prophecy
             # set_attributes: {dominion: [prophecy]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 76
             max: 79
             text: Science
             # set_attributes: {dominion: [science]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 80
             max: 83
             text: Secrecy
             # set_attributes: {dominion: [secrecy]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 84
             max: 87
             text: Technology
             # set_attributes: {dominion: [technology]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 88
             max: 91
             text: Treachery
             # set_attributes: {dominion: [treachery]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 92
             max: 96
             text: Warfare
             # set_attributes: {dominion: [warfare]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 97
             max: 100
             text: Wealth
@@ -309,77 +313,77 @@ oracles:
         # content:
         #   tags: [actor]
         rows:
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 1
             max: 5
             text: Assassins
             # set_attributes: {guild: [assassins]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 6
             max: 10
             text: Bounty Hunters
             # set_attributes: {guild: [bounty_hunters]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 11
             max: 15
             text: Couriers
             # set_attributes: {guild: [couriers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 16
             max: 20
             text: Courtesans
             # set_attributes: {guild: [courtesans]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 21
             max: 25
             text: Engineers
             # set_attributes: {guild: [engineers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 26
             max: 30
             text: Healers
             # set_attributes: {guild: [healers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 31
             max: 40
             text: Industrialists
             # set_attributes: {guild: [industrialists]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 41
             max: 50
             text: Mercenaries
             # set_attributes: {guild: [mercenaries]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 51
             max: 60
             text: Merchants
             # set_attributes: {guild: [merchants]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 61
             max: 65
             text: Mystics
             # set_attributes: {guild: [mystics]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 66
             max: 75
             text: Navigators
             # set_attributes: {guild: [navigators]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 76
             max: 80
             text: Peacekeepers
             # set_attributes: {guild: [peacekeepers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 81
             max: 85
             text: Researchers
             # set_attributes: {guild: [researchers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 86
             max: 90
             text: Spies
             # set_attributes: {guild: [spies]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 91
             max: 100
             text: Roll twice
@@ -400,62 +404,62 @@ oracles:
         # content:
         #   tags: [actor]
         rows:
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 1
             max: 5
             text: Cultists
             # set_attributes: {fringe_group: [cultists]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 6
             max: 15
             text: Exiles
             # set_attributes: {fringe_group: [exiles]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 16
             max: 25
             text: Gangsters
             # set_attributes: {fringe_group: [gangsters]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 26
             max: 35
             text: Hackers
             # set_attributes: {fringe_group: [hackers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 36
             max: 40
             text: Monster hunters
             # set_attributes: {fringe_group: [monster_hunters]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 41
             max: 50
             text: Pirates
             # set_attributes: {fringe_group: [pirates]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 51
             max: 60
             text: Raiders
             # set_attributes: {fringe_group: [raiders]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 61
             max: 70
             text: Rebels
             # set_attributes: {fringe_group: [rebels]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 71
             max: 75
             text: Rogue AI
             # set_attributes: {fringe_group: [rogue_ai]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 76
             max: 85
             text: Scavengers
             # set_attributes: {fringe_group: [scavengers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 86
             max: 95
             text: Smugglers
             # set_attributes: {fringe_group: [smugglers]}
-          - <<: *i18n.result.common_noun
+          - _i18n: *CommonNoun
             min: 96
             max: 100
             text: Roll twice
@@ -965,48 +969,45 @@ oracles:
             # content:
             #   part_of_speech: [proper noun fragment]
             rows:
-              - <<: &i18n.result.adjective
-                  _i18n:
-                    text:
-                      part_of_speech: adjective
-                min: 1
+              - min: 1
                 max: 2
+                _i18n: *Adjective
                 text: Ancient
-              - <<: *i18n.result.adjective
-                min: 3
+              - min: 3
                 max: 4
+                _i18n: *Adjective
                 text: Ashen
-              - <<: *i18n.result.adjective
-                min: 5
+              - min: 5
                 max: 6
+                _i18n: *Adjective
                 text: Awakened
-              - <<: *i18n.result.adjective
-                min: 7
+              - min: 7
                 max: 8
+                _i18n: *Adjective
                 text: Azure
-              - <<: *i18n.result.adjective
-                min: 9
+              - min: 9
                 max: 10
+                _i18n: *Adjective
                 text: Blessed
-              - <<: *i18n.result.adjective
-                min: 11
+              - min: 11
                 max: 12
+                _i18n: *Adjective
                 text: Bloody
-              - <<: *i18n.result.adjective
-                min: 13
+              - min: 13
                 max: 14
+                _i18n: *Adjective
                 text: Broken
-              - <<: *i18n.result.adjective
-                min: 15
+              - min: 15
                 max: 16
+                _i18n: *Adjective
                 text: Ceaseless
-              - <<: *i18n.result.adjective
-                min: 17
+              - min: 17
                 max: 18
+                _i18n: *Adjective
                 text: Crimson
-              - <<: *i18n.result.adjective
-                min: 19
+              - min: 19
                 max: 20
+                _i18n: *Adjective
                 text: Cursed
               - <<: &i18n.result.gerund
                   _i18n:
@@ -1015,157 +1016,157 @@ oracles:
                 min: 21
                 max: 22
                 text: Dawning
-              - <<: *i18n.result.adjective
-                min: 23
+              - min: 23
                 max: 24
+                _i18n: *Adjective
                 text: Dissident
-              - <<: *i18n.result.adjective
-                min: 25
+              - min: 25
                 max: 26
+                _i18n: *Adjective
                 text: Ebon
-              - <<: *i18n.result.adjective
-                min: 27
+              - min: 27
                 max: 28
+                _i18n: *Adjective
                 text: Elder
               - <<: *i18n.result.gerund
                 min: 29
                 max: 30
                 text: Enduring
-              - <<: *i18n.result.adjective
-                min: 31
+              - min: 31
                 max: 32
+                _i18n: *Adjective
                 text: Enlightened
-              - <<: *i18n.result.adjective
-                min: 33
+              - min: 33
                 max: 34
+                _i18n: *Adjective
                 text: Exalted
-              - <<: *i18n.result.adjective
-                min: 35
+              - min: 35
                 max: 36
+                _i18n: *Adjective
                 text: Fallen
-              - <<: *i18n.result.adjective
-                min: 37
+              - min: 37
                 max: 38
+                _i18n: *Adjective
                 text: Fated
-              - <<: *i18n.result.adjective
-                min: 39
+              - min: 39
                 max: 40
+                _i18n: *Adjective
                 text: First
-              - <<: *i18n.result.adjective
-                min: 41
+              - min: 41
                 max: 42
+                _i18n: *Adjective
                 text: Forgotten
-              - <<: *i18n.result.adjective
-                min: 43
+              - min: 43
                 max: 44
+                _i18n: *Adjective
                 text: Forsaken
               - <<: *i18n.result.gerund
                 min: 45
                 max: 46
                 text: Gloaming
-              - <<: *i18n.result.adjective
-                min: 47
+              - min: 47
                 max: 48
+                _i18n: *Adjective
                 text: Golden
-              - <<: *i18n.result.adjective
-                min: 49
+              - min: 49
                 max: 50
+                _i18n: *Adjective
                 text: Hidden
-              - <<: *i18n.result.adjective
-                min: 51
+              - min: 51
                 max: 52
+                _i18n: *Adjective
                 text: Infernal
-              - <<: *i18n.result.adjective
-                min: 53
+              - min: 53
                 max: 54
+                _i18n: *Adjective
                 text: Infinite
-              - <<: *i18n.result.adjective
-                min: 55
+              - min: 55
                 max: 56
+                _i18n: *Adjective
                 text: Iron
-              - <<: *i18n.result.adjective
-                min: 57
+              - min: 57
                 max: 58
+                _i18n: *Adjective
                 text: Kindred
-              - <<: *i18n.result.adjective
-                min: 59
+              - min: 59
                 max: 60
+                _i18n: *Adjective
                 text: Obsidian
-              - <<: *i18n.result.adjective
-                min: 61
+              - min: 61
                 max: 62
+                _i18n: *Adjective
                 text: Radiant
-              - <<: *i18n.result.adjective
-                min: 63
+              - min: 63
                 max: 64
+                _i18n: *Adjective
                 text: Risen
-              - <<: *i18n.result.adjective
-                min: 65
+              - min: 65
                 max: 66
+                _i18n: *Adjective
                 text: Sacred
-              - <<: *i18n.result.adjective
-                min: 67
+              - min: 67
                 max: 68
+                _i18n: *Adjective
                 text: Sapphire
-              - <<: *i18n.result.adjective
-                min: 69
+              - min: 69
                 max: 70
+                _i18n: *Adjective
                 text: Scarlet
-              - <<: *i18n.result.adjective
-                min: 71
+              - min: 71
                 max: 72
+                _i18n: *Adjective
                 text: Serene
-              - <<: *i18n.result.adjective
-                min: 73
+              - min: 73
                 max: 74
+                _i18n: *Adjective
                 text: Shattered
               - <<: *i18n.result.gerund
                 min: 75
                 max: 76
                 text: Shining
-              - <<: *i18n.result.adjective
-                min: 77
+              - min: 77
                 max: 78
+                _i18n: *Adjective
                 text: Silent
-              - <<: *i18n.result.adjective
-                min: 79
+              - min: 79
                 max: 80
+                _i18n: *Adjective
                 text: Silver
-              - <<: *i18n.result.adjective
-                min: 81
+              - min: 81
                 max: 82
+                _i18n: *Adjective
                 text: Sovereign
-              - <<: *i18n.result.adjective
-                min: 83
+              - min: 83
                 max: 84
+                _i18n: *Adjective
                 text: Stellar
-              - <<: *i18n.result.adjective
-                min: 85
+              - min: 85
                 max: 86
+                _i18n: *Adjective
                 text: Sundered
-              - <<: *i18n.result.adjective
-                min: 87
+              - min: 87
                 max: 88
+                _i18n: *Adjective
                 text: Supreme
               - <<: *i18n.result.gerund
                 min: 89
                 max: 90
                 text: Undying
-              - <<: *i18n.result.adjective
-                min: 91
+              - min: 91
                 max: 92
+                _i18n: *Adjective
                 text: Unified
-              - <<: *i18n.result.adjective
-                min: 93
+              - min: 93
                 max: 94
+                _i18n: *Adjective
                 text: United
-              - <<: *i18n.result.adjective
-                min: 95
+              - min: 95
                 max: 96
+                _i18n: *Adjective
                 text: Universal
-              - <<: *i18n.result.adjective
-                min: 97
+              - min: 97
                 max: 98
+                _i18n: *Adjective
                 text: Veiled
               - <<: *i18n.result.gerund
                 min: 99
@@ -1181,106 +1182,103 @@ oracles:
             #   part_of_speech: [proper noun fragment]
             #   tags: [organization, actor]
             rows:
-              - <<: &i18n.result.common_noun
-                  _i18n:
-                    text:
-                      part_of_speech: common_noun
-                min: 1
+              - min: 1
                 max: 4
+                _i18n: *CommonNoun
                 text: Accord
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 5
                 max: 8
                 text: Alliance
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 9
                 max: 12
                 text: Ascendancy
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 13
                 max: 16
                 text: Circle
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 17
                 max: 20
                 text: Coalition
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 21
                 max: 24
                 text: Collective
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 25
                 max: 28
                 text: Commonwealth
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 29
                 max: 32
                 text: Confederation
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 33
                 max: 36
                 text: Consortium
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 37
                 max: 40
                 text: Council
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 41
                 max: 44
                 text: Court
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 45
                 max: 48
                 text: Covenant
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 49
                 max: 52
                 text: Dominion
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 53
                 max: 56
                 text: Empire
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 57
                 max: 60
                 text: Federation
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 61
                 max: 64
                 text: Imperium
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 65
                 max: 68
                 text: League
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 69
                 max: 72
                 text: Legion
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 73
                 max: 76
                 text: Order
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 77
                 max: 80
                 text: Pact
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 81
                 max: 84
                 text: Regiment
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 85
                 max: 88
                 text: Republic
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 89
                 max: 92
                 text: Sphere
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 93
                 max: 96
                 text: Syndicate
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 97
                 max: 100
                 text: Union
@@ -1293,203 +1291,203 @@ oracles:
             # content:
             #   part_of_speech: [plural, proper noun fragment]
             rows:
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 1
                 max: 2
                 text: Blades
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 3
                 max: 4
                 text: Builders
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 5
                 max: 6
                 text: Daggers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 7
                 max: 8
                 text: Defenders
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 9
                 max: 10
                 text: Disciples
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 11
                 max: 12
                 text: Domains
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 13
                 max: 14
                 text: Drifters
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 15
                 max: 16
                 text: Embers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 17
                 max: 18
                 text: Flames
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 19
                 max: 20
                 text: Fleet
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 21
                 max: 22
                 text: Guardians
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 23
                 max: 24
                 text: Hammers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 25
                 max: 26
                 text: Harbingers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 27
                 max: 28
                 text: Heralds
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 29
                 max: 30
                 text: Hounds
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 31
                 max: 32
                 text: Hunters
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 33
                 max: 34
                 text: Jackals
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 35
                 max: 36
                 text: Keepers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 37
                 max: 38
                 text: Knights
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 39
                 max: 40
                 text: Menders
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 41
                 max: 42
                 text: Outcasts
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 43
                 max: 44
                 text: Phantoms
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 45
                 max: 46
                 text: Planets
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 47
                 max: 48
                 text: Raiders
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 49
                 max: 50
                 text: Ravens
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 51
                 max: 52
                 text: Realms
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 53
                 max: 54
                 text: Reavers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 55
                 max: 56
                 text: Relics
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 57
                 max: 58
                 text: Seekers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 59
                 max: 60
                 text: Sentinels
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 61
                 max: 62
                 text: Serpents
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 63
                 max: 64
                 text: Servants
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 65
                 max: 66
                 text: Shadows
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 67
                 max: 68
                 text: Shards
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 69
                 max: 70
                 text: Skulls
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 71
                 max: 72
                 text: Souls
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 73
                 max: 74
                 text: Specters
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 75
                 max: 76
                 text: Stars
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 77
                 max: 78
                 text: Suns
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 79
                 max: 80
                 text: Swarm
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 81
                 max: 82
                 text: Swords
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 83
                 max: 84
                 text: Talons
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 85
                 max: 86
                 text: Vanguards
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 87
                 max: 88
                 text: Wardens
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 89
                 max: 90
                 text: Watchers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 91
                 max: 92
                 text: Wolves
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 93
                 max: 94
                 text: Worlds
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 95
                 max: 96
                 text: Wraiths
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 97
                 max: 98
                 text: Wreckers
-              - <<: *i18n.result.common_noun
+              - _i18n: *CommonNoun
                 min: 99
                 max: 100
                 text: Wrights

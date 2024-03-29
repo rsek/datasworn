@@ -13,10 +13,9 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _IdParser_instances, _a, _IdParser_datasworn, _IdParser_resetCachedProperties, _IdParser_matcher, _IdParser_rulesPackage, _IdParser_typeKeys, _IdParser_pathKeys, _IdParser_path, _IdParser_validateKey, _IdParser_validateRulesPackage, _IdParser_validateCollectionKey;
+var _IdParser_instances, _a, _IdParser_datasworn, _IdParser_resetCachedProperties, _IdParser_matcher, _IdParser_createMatcher, _IdParser_getElementRegExFragment, _IdParser_rulesPackage, _IdParser_typeKeys, _IdParser_pathKeys, _IdParser_path, _IdParser_validateKey, _IdParser_validateRulesPackage, _IdParser_validateCollectionKey;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RecursiveCollectionId = exports.RecursiveCollectableId = exports.NonRecursiveCollectionId = exports.NonRecursiveCollectableId = exports.NonCollectableId = exports.IdParser = void 0;
-const nanomatch_1 = __importDefault(require("nanomatch"));
 const index_js_1 = require("./IdElements/index.js");
 const ObjectGlobber_js_1 = __importDefault(require("./ObjectGlobPath/ObjectGlobber.js"));
 const Errors_js_1 = require("./Id/Errors.js");
@@ -34,7 +33,9 @@ class IdParser {
      */
     constructor(options) {
         _IdParser_instances.add(this);
-        _IdParser_matcher.set(this, null);
+        _IdParser_matcher.set(this, null
+        /** The regular expression that matches for a wildcard ID. */
+        );
         _IdParser_rulesPackage.set(this, void 0);
         _IdParser_typeKeys.set(this, void 0);
         _IdParser_pathKeys.set(this, void 0);
@@ -77,12 +78,10 @@ class IdParser {
     get elements() {
         return [this.rulesPackage, ...this.typeKeys, ...this.pathKeys];
     }
+    /** The regular expression that matches for a wildcard ID. */
     get matcher() {
-        if (__classPrivateFieldGet(this, _IdParser_matcher, "f") == null) {
-            const matcher = nanomatch_1.default.matcher(this.toString());
-            __classPrivateFieldSet(this, _IdParser_matcher, matcher, "f");
-            return matcher;
-        }
+        if (!(__classPrivateFieldGet(this, _IdParser_matcher, "f") instanceof RegExp))
+            __classPrivateFieldSet(this, _IdParser_matcher, __classPrivateFieldGet(_a, _a, "m", _IdParser_createMatcher).call(_a, ...this.elements), "f");
         return __classPrivateFieldGet(this, _IdParser_matcher, "f");
     }
     get rulesPackage() {
@@ -200,7 +199,7 @@ class IdParser {
             const { _id } = value;
             if (typeof _id !== 'string')
                 return false;
-            return this.matcher(_id);
+            return this.matcher.test(_id);
         });
     }
     // static from<T extends Strings.AnyId>(
@@ -356,6 +355,20 @@ exports.IdParser = IdParser;
 _a = IdParser, _IdParser_matcher = new WeakMap(), _IdParser_rulesPackage = new WeakMap(), _IdParser_typeKeys = new WeakMap(), _IdParser_pathKeys = new WeakMap(), _IdParser_path = new WeakMap(), _IdParser_instances = new WeakSet(), _IdParser_resetCachedProperties = function _IdParser_resetCachedProperties() {
     __classPrivateFieldSet(this, _IdParser_matcher, null, "f");
     __classPrivateFieldSet(this, _IdParser_path, null, "f");
+}, _IdParser_createMatcher = function _IdParser_createMatcher(...elements) {
+    return new RegExp('^' + elements.map(__classPrivateFieldGet(_a, _a, "m", _IdParser_getElementRegExFragment)).join('/') + '$');
+}, _IdParser_getElementRegExFragment = function _IdParser_getElementRegExFragment(element, index) {
+    switch (element) {
+        case index_js_1.CONST.WildcardString:
+            // if it's the first element, return the namespace-specific pattern
+            return index === 0
+                ? _a.NamespacePattern.source
+                : _a.DictKeyPattern.source;
+        case index_js_1.CONST.GlobstarString:
+            return _a.RecursiveDictKeyPattern.source;
+        default:
+            return element;
+    }
 }, _IdParser_validateKey = function _IdParser_validateKey(key, recursive = false, collection = false) {
     if (recursive && collection)
         index_js_1.TypeGuard.AnyWildcard(key) || index_js_1.TypeGuard.DictKey(key);
@@ -368,6 +381,9 @@ _a = IdParser, _IdParser_matcher = new WeakMap(), _IdParser_rulesPackage = new W
         : __classPrivateFieldGet(this, _a, "m", _IdParser_validateKey).call(this, key);
 };
 _IdParser_datasworn = { value: null };
+IdParser.NamespacePattern = /([a-z0-9_]{3,})/;
+IdParser.DictKeyPattern = /([a-z][a-z_]*)/;
+IdParser.RecursiveDictKeyPattern = /([a-z][a-z_]*)(\/([a-z][a-z_]*)){0,2}/;
 class CollectionId extends IdParser {
     constructor(rulesPackage, subtype, ...pathKeys) {
         super({

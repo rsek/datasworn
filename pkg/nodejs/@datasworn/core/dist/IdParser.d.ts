@@ -27,7 +27,11 @@ declare abstract class IdParser<RulesPackage extends string = string, TypeKeys e
     toString(): this['id'];
     /** The parsed elements of the ID as an array of strings. */
     get elements(): string[];
-    get matcher(): any;
+    /** The regular expression that matches for a wildcard ID. */
+    get matcher(): RegExp;
+    static readonly NamespacePattern: RegExp;
+    static readonly DictKeyPattern: RegExp;
+    static readonly RecursiveDictKeyPattern: RegExp;
     get rulesPackage(): RulesPackage;
     set rulesPackage(value: RulesPackage);
     get typeKeys(): TypeKeys;
