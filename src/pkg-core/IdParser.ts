@@ -1,4 +1,3 @@
-import nanomatch from 'nanomatch'
 import type * as Datasworn from './Datasworn.js'
 
 import { CONST, TypeElements, TypeGuard } from './IdElements/index.js'
@@ -92,15 +91,40 @@ abstract class IdParser<
 		this.#path = null
 	}
 
-	#matcher: null | ((str: string) => boolean) = null
+	#matcher: null | RegExp = null
+
+	/** The regular expression that matches for a wildcard ID. */
 	get matcher() {
-		if (this.#matcher == null) {
-			const matcher = nanomatch.matcher(this.toString())
-			this.#matcher = matcher
-			return matcher
-		}
+		if (!(this.#matcher instanceof RegExp))
+			this.#matcher = IdParser.#createMatcher(...this.elements)
 
 		return this.#matcher
+	}
+
+	static readonly NamespacePattern = /([a-z0-9_]{3,})/
+	static readonly DictKeyPattern = /([a-z][a-z_]*)/
+	static readonly RecursiveDictKeyPattern =
+		/([a-z][a-z_]*)(\/([a-z][a-z_]*)){0,2}/
+
+	static #createMatcher(...elements: string[]) {
+		return new RegExp(
+			'^' + elements.map(IdParser.#getElementRegExFragment).join('/') + '$'
+		)
+	}
+
+	static #getElementRegExFragment(element: string, index: number) {
+		switch (element) {
+			case CONST.WildcardString:
+				// if it's the first element, return the namespace-specific pattern
+				return index === 0
+					? IdParser.NamespacePattern.source
+					: IdParser.DictKeyPattern.source
+			case CONST.GlobstarString:
+				return IdParser.RecursiveDictKeyPattern.source
+
+			default:
+				return element
+		}
 	}
 
 	#rulesPackage: RulesPackage
@@ -254,7 +278,7 @@ abstract class IdParser<
 			if (!('_id' in value)) return false
 			const { _id } = value
 			if (typeof _id !== 'string') return false
-			return this.matcher(_id)
+			return this.matcher.test(_id)
 		})
 	}
 
@@ -1171,12 +1195,11 @@ namespace RecursiveCollectionId {
 		extends CollectionId.Options<T> {}
 }
 
-// const id = new RecursiveCollectionId({
-// 	rulesPackage: 'sundered_isles',
-// 	subtype: 'oracles',
-// 	collectionKeys: ['foo'] as const,
-// 	key: 'bar'
-// })
+// const id = new RecursiveCollectionId('sundered_isles', 'oracles', '**')
+// const toMatch = 'sundered_isles/collections/oracles/core'
+
+// console.log(id.matcher)
+// console.log(id.matcher.test(toMatch))
 
 export {
 	IdParser,
