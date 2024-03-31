@@ -1350,10 +1350,10 @@ pub struct DelveSiteDomain {
     pub source: SourceInfo,
 
     #[serde(rename = "dangers")]
-    pub dangers: Vec<DelveSiteDomainDangerRow>,
+    pub dangers: Vec<OracleTableRowText>,
 
     #[serde(rename = "features")]
-    pub features: Vec<DelveSiteDomainFeatureRow>,
+    pub features: Vec<OracleTableRowText>,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1400,92 +1400,6 @@ pub struct DelveSiteDomain {
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
-/// Represents a single Danger entry from a delve site Domain card.
-#[derive(Serialize, Deserialize)]
-pub struct DelveSiteDomainDangerRow {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
-
-    /// The primary text content of this row.
-    #[serde(rename = "text")]
-    pub text: MarkdownString,
-
-    #[serde(rename = "_i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
-
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
-}
-
-/// Represents a single Feature entry from a delve site Domain card.
-#[derive(Serialize, Deserialize)]
-pub struct DelveSiteDomainFeatureRow {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
-
-    /// The primary text content of this row.
-    #[serde(rename = "text")]
-    pub text: MarkdownString,
-
-    #[serde(rename = "_i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
-
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
-}
-
 /// A unique ID for a DelveSiteDomain.
 pub type DelveSiteDomainId = String;
 
@@ -1505,10 +1419,10 @@ pub struct DelveSiteTheme {
     pub source: SourceInfo,
 
     #[serde(rename = "dangers")]
-    pub dangers: Vec<DelveSiteThemeDangerRow>,
+    pub dangers: Vec<OracleTableRowText>,
 
     #[serde(rename = "features")]
-    pub features: Vec<DelveSiteThemeFeatureRow>,
+    pub features: Vec<OracleTableRowText>,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1544,92 +1458,6 @@ pub struct DelveSiteTheme {
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
-}
-
-/// Represents a single Danger entry from a delve site Theme card.
-#[derive(Serialize, Deserialize)]
-pub struct DelveSiteThemeDangerRow {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
-
-    /// The primary text content of this row.
-    #[serde(rename = "text")]
-    pub text: MarkdownString,
-
-    #[serde(rename = "_i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
-
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
-}
-
-/// Represents a single Feature entry from a delve site Theme card.
-#[derive(Serialize, Deserialize)]
-pub struct DelveSiteThemeFeatureRow {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
-
-    /// The primary text content of this row.
-    #[serde(rename = "text")]
-    pub text: MarkdownString,
-
-    #[serde(rename = "_i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
-
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
 }
 
 /// A unique ID for a DelveSiteTheme.

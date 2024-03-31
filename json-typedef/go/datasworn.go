@@ -1271,9 +1271,9 @@ type DelveSiteDomain struct {
 	// item, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	Dangers []DelveSiteDomainDangerRow `json:"dangers"`
+	Dangers []OracleTableRowText `json:"dangers"`
 
-	Features []DelveSiteDomainFeatureRow `json:"features"`
+	Features []OracleTableRowText `json:"features"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1304,58 +1304,6 @@ type DelveSiteDomain struct {
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
-// Represents a single Danger entry from a delve site Domain card.
-type DelveSiteDomainDangerRow struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
-
-	// The primary text content of this row.
-	Text MarkdownString `json:"text"`
-
-	I18n *I18nHints `json:"_i18n,omitempty"`
-
-	// Hints that the identified table should be rendered inside this table row.
-	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	// Further oracle rolls prompted by this table row.
-	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	Template *OracleRollTemplate `json:"template,omitempty"`
-}
-
-// Represents a single Feature entry from a delve site Domain card.
-type DelveSiteDomainFeatureRow struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
-
-	// The primary text content of this row.
-	Text MarkdownString `json:"text"`
-
-	I18n *I18nHints `json:"_i18n,omitempty"`
-
-	// Hints that the identified table should be rendered inside this table row.
-	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	// Further oracle rolls prompted by this table row.
-	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	Template *OracleRollTemplate `json:"template,omitempty"`
-}
-
 // A unique ID for a DelveSiteDomain.
 type DelveSiteDomainID = string
 
@@ -1371,9 +1319,9 @@ type DelveSiteTheme struct {
 	// item, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	Dangers []DelveSiteThemeDangerRow `json:"dangers"`
+	Dangers []OracleTableRowText `json:"dangers"`
 
-	Features []DelveSiteThemeFeatureRow `json:"features"`
+	Features []OracleTableRowText `json:"features"`
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
@@ -1395,58 +1343,6 @@ type DelveSiteTheme struct {
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
-}
-
-// Represents a single Danger entry from a delve site Theme card.
-type DelveSiteThemeDangerRow struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
-
-	// The primary text content of this row.
-	Text MarkdownString `json:"text"`
-
-	I18n *I18nHints `json:"_i18n,omitempty"`
-
-	// Hints that the identified table should be rendered inside this table row.
-	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	// Further oracle rolls prompted by this table row.
-	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	Template *OracleRollTemplate `json:"template,omitempty"`
-}
-
-// Represents a single Feature entry from a delve site Theme card.
-type DelveSiteThemeFeatureRow struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
-
-	// The primary text content of this row.
-	Text MarkdownString `json:"text"`
-
-	I18n *I18nHints `json:"_i18n,omitempty"`
-
-	// Hints that the identified table should be rendered inside this table row.
-	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	// Further oracle rolls prompted by this table row.
-	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	Template *OracleRollTemplate `json:"template,omitempty"`
 }
 
 // A unique ID for a DelveSiteTheme.

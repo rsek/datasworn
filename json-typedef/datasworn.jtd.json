@@ -6133,12 +6133,12 @@
 				},
 				"features": {
 					"elements": {
-						"ref": "DelveSiteDomainFeatureRow"
+						"ref": "OracleTableRowText"
 					}
 				},
 				"dangers": {
 					"elements": {
-						"ref": "DelveSiteDomainDangerRow"
+						"ref": "OracleTableRowText"
 					}
 				}
 			},
@@ -6188,112 +6188,6 @@
 				"description": "A delve site Domain card."
 			}
 		},
-		"DelveSiteDomainDangerRow": {
-			"properties": {
-				"text": {
-					"ref": "MarkdownString",
-					"metadata": {
-						"description": "The primary text content of this row."
-					}
-				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
-				}
-			},
-			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
-					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				}
-			},
-			"metadata": {
-				"description": "Represents a single Danger entry from a delve site Domain card."
-			}
-		},
-		"DelveSiteDomainFeatureRow": {
-			"properties": {
-				"text": {
-					"ref": "MarkdownString",
-					"metadata": {
-						"description": "The primary text content of this row."
-					}
-				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
-				}
-			},
-			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
-					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				}
-			},
-			"metadata": {
-				"description": "Represents a single Feature entry from a delve site Domain card."
-			}
-		},
 		"DelveSiteTheme": {
 			"properties": {
 				"_id": {
@@ -6319,12 +6213,12 @@
 				},
 				"features": {
 					"elements": {
-						"ref": "DelveSiteThemeFeatureRow"
+						"ref": "OracleTableRowText"
 					}
 				},
 				"dangers": {
 					"elements": {
-						"ref": "DelveSiteThemeDangerRow"
+						"ref": "OracleTableRowText"
 					}
 				}
 			},
@@ -6366,112 +6260,6 @@
 			},
 			"metadata": {
 				"description": "A delve site theme card."
-			}
-		},
-		"DelveSiteThemeDangerRow": {
-			"properties": {
-				"text": {
-					"ref": "MarkdownString",
-					"metadata": {
-						"description": "The primary text content of this row."
-					}
-				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
-				}
-			},
-			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
-					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				}
-			},
-			"metadata": {
-				"description": "Represents a single Danger entry from a delve site Theme card."
-			}
-		},
-		"DelveSiteThemeFeatureRow": {
-			"properties": {
-				"text": {
-					"ref": "MarkdownString",
-					"metadata": {
-						"description": "The primary text content of this row."
-					}
-				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
-				}
-			},
-			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
-					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				}
-			},
-			"metadata": {
-				"description": "Represents a single Feature entry from a delve site Theme card."
 			}
 		}
 	}

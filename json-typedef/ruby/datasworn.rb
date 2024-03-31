@@ -1734,8 +1734,8 @@ module Datasworn
       out = DelveSiteDomain.new
       out.id = Datasworn::from_json_data(DelveSiteDomainID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
-      out.dangers = Datasworn::from_json_data(Array[DelveSiteDomainDangerRow], data["dangers"])
-      out.features = Datasworn::from_json_data(Array[DelveSiteDomainFeatureRow], data["features"])
+      out.dangers = Datasworn::from_json_data(Array[OracleTableRowText], data["dangers"])
+      out.features = Datasworn::from_json_data(Array[OracleTableRowText], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
@@ -1763,106 +1763,6 @@ module Datasworn
       data["name_oracle"] = Datasworn::to_json_data(name_oracle) unless name_oracle.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data
-    end
-  end
-
-  # Represents a single Danger entry from a delve site Domain card.
-  class DelveSiteDomainDangerRow
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
-
-    # The primary text content of this row.
-    attr_accessor :text
-    attr_accessor :i18n
-
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
-
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :template
-
-    def self.from_json_data(data)
-      out = DelveSiteDomainDangerRow.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
-      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
-      data["text"] = Datasworn::to_json_data(text)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
-      data
-    end
-  end
-
-  # Represents a single Feature entry from a delve site Domain card.
-  class DelveSiteDomainFeatureRow
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
-
-    # The primary text content of this row.
-    attr_accessor :text
-    attr_accessor :i18n
-
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
-
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :template
-
-    def self.from_json_data(data)
-      out = DelveSiteDomainFeatureRow.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
-      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
-      data["text"] = Datasworn::to_json_data(text)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
       data
     end
   end
@@ -1928,8 +1828,8 @@ module Datasworn
       out = DelveSiteTheme.new
       out.id = Datasworn::from_json_data(DelveSiteThemeID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
-      out.dangers = Datasworn::from_json_data(Array[DelveSiteThemeDangerRow], data["dangers"])
-      out.features = Datasworn::from_json_data(Array[DelveSiteThemeFeatureRow], data["features"])
+      out.dangers = Datasworn::from_json_data(Array[OracleTableRowText], data["dangers"])
+      out.features = Datasworn::from_json_data(Array[OracleTableRowText], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
@@ -1955,106 +1855,6 @@ module Datasworn
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data
-    end
-  end
-
-  # Represents a single Danger entry from a delve site Theme card.
-  class DelveSiteThemeDangerRow
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
-
-    # The primary text content of this row.
-    attr_accessor :text
-    attr_accessor :i18n
-
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
-
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :template
-
-    def self.from_json_data(data)
-      out = DelveSiteThemeDangerRow.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
-      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
-      data["text"] = Datasworn::to_json_data(text)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
-      data
-    end
-  end
-
-  # Represents a single Feature entry from a delve site Theme card.
-  class DelveSiteThemeFeatureRow
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
-
-    # The primary text content of this row.
-    attr_accessor :text
-    attr_accessor :i18n
-
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
-
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :template
-
-    def self.from_json_data(data)
-      out = DelveSiteThemeFeatureRow.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
-      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
-      data["text"] = Datasworn::to_json_data(text)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
       data
     end
   end

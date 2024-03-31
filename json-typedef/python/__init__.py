@@ -2376,8 +2376,8 @@ class DelveSiteDomain:
     item, including the author and licensing information.
     """
 
-    dangers: 'List[DelveSiteDomainDangerRow]'
-    features: 'List[DelveSiteDomainFeatureRow]'
+    dangers: 'List[OracleTableRowText]'
+    features: 'List[OracleTableRowText]'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -2415,8 +2415,8 @@ class DelveSiteDomain:
         return cls(
             _from_json_data(DelveSiteDomainID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
-            _from_json_data(List[DelveSiteDomainDangerRow], data.get("dangers")),
-            _from_json_data(List[DelveSiteDomainFeatureRow], data.get("features")),
+            _from_json_data(List[OracleTableRowText], data.get("dangers")),
+            _from_json_data(List[OracleTableRowText], data.get("features")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MarkdownString, data.get("summary")),
             _from_json_data(Optional[str], data.get("_comment")),
@@ -2450,144 +2450,6 @@ class DelveSiteDomain:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.tags is not None:
              data["tags"] = _to_json_data(self.tags)
-        return data
-
-@dataclass
-class DelveSiteDomainDangerRow:
-    """
-    Represents a single Danger entry from a delve site Domain card.
-    """
-
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
-    text: 'MarkdownString'
-    """
-    The primary text content of this row.
-    """
-
-    i18n: 'Optional[I18nHints]'
-    embed_table: 'Optional[OracleRollableID]'
-    """
-    Hints that the identified table should be rendered inside this table row.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleRoll]]'
-    """
-    Further oracle rolls prompted by this table row.
-    """
-
-    suggestions: 'Optional[Suggestions]'
-    template: 'Optional[OracleRollTemplate]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DelveSiteDomainDangerRow':
-        return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
-            _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[I18nHints], data.get("_i18n")),
-            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
-            _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[OracleRollTemplate], data.get("template")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
-        data["text"] = _to_json_data(self.text)
-        if self.i18n is not None:
-             data["_i18n"] = _to_json_data(self.i18n)
-        if self.embed_table is not None:
-             data["embed_table"] = _to_json_data(self.embed_table)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        if self.oracle_rolls is not None:
-             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
-        if self.suggestions is not None:
-             data["suggestions"] = _to_json_data(self.suggestions)
-        if self.template is not None:
-             data["template"] = _to_json_data(self.template)
-        return data
-
-@dataclass
-class DelveSiteDomainFeatureRow:
-    """
-    Represents a single Feature entry from a delve site Domain card.
-    """
-
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
-    text: 'MarkdownString'
-    """
-    The primary text content of this row.
-    """
-
-    i18n: 'Optional[I18nHints]'
-    embed_table: 'Optional[OracleRollableID]'
-    """
-    Hints that the identified table should be rendered inside this table row.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleRoll]]'
-    """
-    Further oracle rolls prompted by this table row.
-    """
-
-    suggestions: 'Optional[Suggestions]'
-    template: 'Optional[OracleRollTemplate]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DelveSiteDomainFeatureRow':
-        return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
-            _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[I18nHints], data.get("_i18n")),
-            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
-            _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[OracleRollTemplate], data.get("template")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
-        data["text"] = _to_json_data(self.text)
-        if self.i18n is not None:
-             data["_i18n"] = _to_json_data(self.i18n)
-        if self.embed_table is not None:
-             data["embed_table"] = _to_json_data(self.embed_table)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        if self.oracle_rolls is not None:
-             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
-        if self.suggestions is not None:
-             data["suggestions"] = _to_json_data(self.suggestions)
-        if self.template is not None:
-             data["template"] = _to_json_data(self.template)
         return data
 
 @dataclass
@@ -2637,8 +2499,8 @@ class DelveSiteTheme:
     item, including the author and licensing information.
     """
 
-    dangers: 'List[DelveSiteThemeDangerRow]'
-    features: 'List[DelveSiteThemeFeatureRow]'
+    dangers: 'List[OracleTableRowText]'
+    features: 'List[OracleTableRowText]'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -2667,8 +2529,8 @@ class DelveSiteTheme:
         return cls(
             _from_json_data(DelveSiteThemeID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
-            _from_json_data(List[DelveSiteThemeDangerRow], data.get("dangers")),
-            _from_json_data(List[DelveSiteThemeFeatureRow], data.get("features")),
+            _from_json_data(List[OracleTableRowText], data.get("dangers")),
+            _from_json_data(List[OracleTableRowText], data.get("features")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MarkdownString, data.get("summary")),
             _from_json_data(Optional[str], data.get("_comment")),
@@ -2699,144 +2561,6 @@ class DelveSiteTheme:
              data["suggestions"] = _to_json_data(self.suggestions)
         if self.tags is not None:
              data["tags"] = _to_json_data(self.tags)
-        return data
-
-@dataclass
-class DelveSiteThemeDangerRow:
-    """
-    Represents a single Danger entry from a delve site Theme card.
-    """
-
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
-    text: 'MarkdownString'
-    """
-    The primary text content of this row.
-    """
-
-    i18n: 'Optional[I18nHints]'
-    embed_table: 'Optional[OracleRollableID]'
-    """
-    Hints that the identified table should be rendered inside this table row.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleRoll]]'
-    """
-    Further oracle rolls prompted by this table row.
-    """
-
-    suggestions: 'Optional[Suggestions]'
-    template: 'Optional[OracleRollTemplate]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DelveSiteThemeDangerRow':
-        return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
-            _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[I18nHints], data.get("_i18n")),
-            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
-            _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[OracleRollTemplate], data.get("template")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
-        data["text"] = _to_json_data(self.text)
-        if self.i18n is not None:
-             data["_i18n"] = _to_json_data(self.i18n)
-        if self.embed_table is not None:
-             data["embed_table"] = _to_json_data(self.embed_table)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        if self.oracle_rolls is not None:
-             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
-        if self.suggestions is not None:
-             data["suggestions"] = _to_json_data(self.suggestions)
-        if self.template is not None:
-             data["template"] = _to_json_data(self.template)
-        return data
-
-@dataclass
-class DelveSiteThemeFeatureRow:
-    """
-    Represents a single Feature entry from a delve site Theme card.
-    """
-
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
-    text: 'MarkdownString'
-    """
-    The primary text content of this row.
-    """
-
-    i18n: 'Optional[I18nHints]'
-    embed_table: 'Optional[OracleRollableID]'
-    """
-    Hints that the identified table should be rendered inside this table row.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    oracle_rolls: 'Optional[List[OracleRoll]]'
-    """
-    Further oracle rolls prompted by this table row.
-    """
-
-    suggestions: 'Optional[Suggestions]'
-    template: 'Optional[OracleRollTemplate]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DelveSiteThemeFeatureRow':
-        return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
-            _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[I18nHints], data.get("_i18n")),
-            _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
-            _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[OracleRollTemplate], data.get("template")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
-        data["text"] = _to_json_data(self.text)
-        if self.i18n is not None:
-             data["_i18n"] = _to_json_data(self.i18n)
-        if self.embed_table is not None:
-             data["embed_table"] = _to_json_data(self.embed_table)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        if self.oracle_rolls is not None:
-             data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
-        if self.suggestions is not None:
-             data["suggestions"] = _to_json_data(self.suggestions)
-        if self.template is not None:
-             data["template"] = _to_json_data(self.template)
         return data
 
 @dataclass

@@ -4410,7 +4410,7 @@ export interface DelveSiteDomain {
 	 * An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites.
 	 */
 	name_oracle?: OracleRollableId
-	features: DelveSiteDomainFeatureRow[] &
+	features: OracleTableRowText[] &
 		[
 			{
 				min: 21
@@ -4461,7 +4461,7 @@ export interface DelveSiteDomain {
 				max: 100
 			}
 		]
-	dangers: DelveSiteDomainDangerRow[] &
+	dangers: OracleTableRowText[] &
 		[
 			{
 				min: 31
@@ -4484,74 +4484,6 @@ export interface DelveSiteDomain {
 				max: 45
 			}
 		]
-}
-
-/**
- * Represents a single Danger entry from a delve site Domain card.
- */
-export interface DelveSiteDomainDangerRow {
-	/**
-	 * The primary text content of this row.
-	 */
-	text: MarkdownString
-	icon?: SvgImageUrl
-	/**
-	 * Further oracle rolls prompted by this table row.
-	 */
-	oracle_rolls?: OracleRoll[]
-	suggestions?: Suggestions
-	/**
-	 * Hints that the identified table should be rendered inside this table row.
-	 * @experimental
-	 */
-	embed_table?: OracleRollableId
-	/**
-	 * @experimental
-	 */
-	template?: OracleRollTemplate
-	_i18n?: I18nHints
-	/**
-	 * Low end of the dice range for this table row.
-	 */
-	min: number
-	/**
-	 * High end of the dice range for this table row.
-	 */
-	max: number
-}
-
-/**
- * Represents a single Feature entry from a delve site Domain card.
- */
-export interface DelveSiteDomainFeatureRow {
-	/**
-	 * The primary text content of this row.
-	 */
-	text: MarkdownString
-	icon?: SvgImageUrl
-	/**
-	 * Further oracle rolls prompted by this table row.
-	 */
-	oracle_rolls?: OracleRoll[]
-	suggestions?: Suggestions
-	/**
-	 * Hints that the identified table should be rendered inside this table row.
-	 * @experimental
-	 */
-	embed_table?: OracleRollableId
-	/**
-	 * @experimental
-	 */
-	template?: OracleRollTemplate
-	_i18n?: I18nHints
-	/**
-	 * Low end of the dice range for this table row.
-	 */
-	min: number
-	/**
-	 * High end of the dice range for this table row.
-	 */
-	max: number
 }
 
 /**
@@ -4588,7 +4520,7 @@ export interface DelveSiteTheme {
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
-	features: DelveSiteThemeFeatureRow[] &
+	features: OracleTableRowText[] &
 		[
 			{
 				min: 1
@@ -4611,7 +4543,7 @@ export interface DelveSiteTheme {
 				max: 20
 			}
 		]
-	dangers: DelveSiteThemeDangerRow[] &
+	dangers: OracleTableRowText[] &
 		[
 			{
 				min: 1
@@ -4662,72 +4594,4 @@ export interface DelveSiteTheme {
 				max: 30
 			}
 		]
-}
-
-/**
- * Represents a single Danger entry from a delve site Theme card.
- */
-export interface DelveSiteThemeDangerRow {
-	/**
-	 * The primary text content of this row.
-	 */
-	text: MarkdownString
-	icon?: SvgImageUrl
-	/**
-	 * Further oracle rolls prompted by this table row.
-	 */
-	oracle_rolls?: OracleRoll[]
-	suggestions?: Suggestions
-	/**
-	 * Hints that the identified table should be rendered inside this table row.
-	 * @experimental
-	 */
-	embed_table?: OracleRollableId
-	/**
-	 * @experimental
-	 */
-	template?: OracleRollTemplate
-	_i18n?: I18nHints
-	/**
-	 * Low end of the dice range for this table row.
-	 */
-	min: number
-	/**
-	 * High end of the dice range for this table row.
-	 */
-	max: number
-}
-
-/**
- * Represents a single Feature entry from a delve site Theme card.
- */
-export interface DelveSiteThemeFeatureRow {
-	/**
-	 * The primary text content of this row.
-	 */
-	text: MarkdownString
-	icon?: SvgImageUrl
-	/**
-	 * Further oracle rolls prompted by this table row.
-	 */
-	oracle_rolls?: OracleRoll[]
-	suggestions?: Suggestions
-	/**
-	 * Hints that the identified table should be rendered inside this table row.
-	 * @experimental
-	 */
-	embed_table?: OracleRollableId
-	/**
-	 * @experimental
-	 */
-	template?: OracleRollTemplate
-	_i18n?: I18nHints
-	/**
-	 * Low end of the dice range for this table row.
-	 */
-	min: number
-	/**
-	 * High end of the dice range for this table row.
-	 */
-	max: number
 }

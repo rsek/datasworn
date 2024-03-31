@@ -2,24 +2,30 @@ import { Type, type Static, CloneType } from '@sinclair/typebox'
 import { JsonTypeDef } from '../Symbols.js'
 import { toJtdElements } from '../../scripts/json-typedef/utils.js'
 import { Id, Localize, Metadata } from '../common/index.js'
-import { StaticRowPartial, TableRowMixin } from '../oracles/TableRow.js'
+import {
+	OracleTableRowText,
+	StaticRowPartial,
+	TableRowMixin
+} from '../oracles/TableRow.js'
 import * as Generic from '../Generic.js'
 
-export const DelveSiteDomainFeatureRow = CloneType(TableRowMixin, {
-	$id: 'DelveSiteDomainFeatureRow',
-	description:
-		'Represents a single Feature entry from a delve site Domain card.'
-})
-export type DelveSiteDomainFeatureRow = Static<typeof DelveSiteDomainFeatureRow>
-export const DelveSiteDomainDangerRow = CloneType(TableRowMixin, {
-	$id: 'DelveSiteDomainDangerRow',
-	description: 'Represents a single Danger entry from a delve site Domain card.'
-})
-export type DelveSiteDomainDangerRow = Static<typeof DelveSiteDomainDangerRow>
+// export const DelveSiteDomainFeatureRow = CloneType(TableRowMixin, {
+// 	$id: 'DelveSiteDomainFeatureRow',
+// 	description:
+// 		'Represents a single Feature entry from a delve site Domain card.'
+// })
+// export type DelveSiteDomainFeatureRow = Static<typeof DelveSiteDomainFeatureRow>
+// export const DelveSiteDomainDangerRow = CloneType(TableRowMixin, {
+// 	$id: 'DelveSiteDomainDangerRow',
+// 	description: 'Represents a single Danger entry from a delve site Domain card.'
+// })
+// export type DelveSiteDomainDangerRow = Static<typeof DelveSiteDomainDangerRow>
 
-const DelveSiteDomainFeatures = Type.Array(Type.Ref(DelveSiteDomainFeatureRow))
+// const DelveSiteDomainFeatures = Type.Array(Type.Ref(DelveSiteDomainFeatureRow))
+const DelveSiteDomainFeatures = Type.Array(Type.Ref(OracleTableRowText))
 
-const DelveSiteDomainDangers = Type.Array(Type.Ref(DelveSiteDomainDangerRow))
+// const DelveSiteDomainDangers = Type.Array(Type.Ref(DelveSiteDomainDangerRow))
+const DelveSiteDomainDangers = Type.Array(Type.Ref(OracleTableRowText))
 
 export const DelveSiteDomain = Generic.SourcedNode(
 	Type.Ref(Id.DelveSiteDomainId),

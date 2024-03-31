@@ -589,8 +589,8 @@ module Datasworn
   class DelveSiteDomain
     attr_accessor id: DelveSiteDomainID
     attr_accessor source: SourceInfo
-    attr_accessor dangers: Array[DelveSiteDomainDangerRow]
-    attr_accessor features: Array[DelveSiteDomainFeatureRow]
+    attr_accessor dangers: Array[OracleTableRowText]
+    attr_accessor features: Array[OracleTableRowText]
     attr_accessor name: Label
     attr_accessor summary: MarkdownString
     attr_accessor comment: String?
@@ -602,36 +602,6 @@ module Datasworn
     attr_accessor tags: Hash[String, Hash[String, Tag]]?
 
     def self.from_json_data: (untyped) -> DelveSiteDomain
-    def to_json_data: () -> untyped
-  end
-
-  class DelveSiteDomainDangerRow
-    attr_accessor max: Integer
-    attr_accessor min: Integer
-    attr_accessor text: MarkdownString
-    attr_accessor i18n: I18nHints?
-    attr_accessor embed_table: OracleRollableID?
-    attr_accessor icon: SvgImageURL?
-    attr_accessor oracle_rolls: Array[OracleRoll]?
-    attr_accessor suggestions: Suggestions?
-    attr_accessor template: OracleRollTemplate?
-
-    def self.from_json_data: (untyped) -> DelveSiteDomainDangerRow
-    def to_json_data: () -> untyped
-  end
-
-  class DelveSiteDomainFeatureRow
-    attr_accessor max: Integer
-    attr_accessor min: Integer
-    attr_accessor text: MarkdownString
-    attr_accessor i18n: I18nHints?
-    attr_accessor embed_table: OracleRollableID?
-    attr_accessor icon: SvgImageURL?
-    attr_accessor oracle_rolls: Array[OracleRoll]?
-    attr_accessor suggestions: Suggestions?
-    attr_accessor template: OracleRollTemplate?
-
-    def self.from_json_data: (untyped) -> DelveSiteDomainFeatureRow
     def to_json_data: () -> untyped
   end
 
@@ -652,8 +622,8 @@ module Datasworn
   class DelveSiteTheme
     attr_accessor id: DelveSiteThemeID
     attr_accessor source: SourceInfo
-    attr_accessor dangers: Array[DelveSiteThemeDangerRow]
-    attr_accessor features: Array[DelveSiteThemeFeatureRow]
+    attr_accessor dangers: Array[OracleTableRowText]
+    attr_accessor features: Array[OracleTableRowText]
     attr_accessor name: Label
     attr_accessor summary: MarkdownString
     attr_accessor comment: String?
@@ -664,36 +634,6 @@ module Datasworn
     attr_accessor tags: Hash[String, Hash[String, Tag]]?
 
     def self.from_json_data: (untyped) -> DelveSiteTheme
-    def to_json_data: () -> untyped
-  end
-
-  class DelveSiteThemeDangerRow
-    attr_accessor max: Integer
-    attr_accessor min: Integer
-    attr_accessor text: MarkdownString
-    attr_accessor i18n: I18nHints?
-    attr_accessor embed_table: OracleRollableID?
-    attr_accessor icon: SvgImageURL?
-    attr_accessor oracle_rolls: Array[OracleRoll]?
-    attr_accessor suggestions: Suggestions?
-    attr_accessor template: OracleRollTemplate?
-
-    def self.from_json_data: (untyped) -> DelveSiteThemeDangerRow
-    def to_json_data: () -> untyped
-  end
-
-  class DelveSiteThemeFeatureRow
-    attr_accessor max: Integer
-    attr_accessor min: Integer
-    attr_accessor text: MarkdownString
-    attr_accessor i18n: I18nHints?
-    attr_accessor embed_table: OracleRollableID?
-    attr_accessor icon: SvgImageURL?
-    attr_accessor oracle_rolls: Array[OracleRoll]?
-    attr_accessor suggestions: Suggestions?
-    attr_accessor template: OracleRollTemplate?
-
-    def self.from_json_data: (untyped) -> DelveSiteThemeFeatureRow
     def to_json_data: () -> untyped
   end
 

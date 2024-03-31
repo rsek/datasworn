@@ -2,23 +2,31 @@ import { Type, type Static, CloneType } from '@sinclair/typebox'
 import { JsonTypeDef } from '../Symbols.js'
 import { toJtdElements } from '../../scripts/json-typedef/utils.js'
 import { Id, Localize, Metadata } from '../common/index.js'
-import { StaticRowPartial, TableRowMixin } from '../oracles/TableRow.js'
+import {
+	OracleTableRowText,
+	StaticRowPartial,
+	TableRowMixin
+} from '../oracles/TableRow.js'
 import * as Generic from '../Generic.js'
 
-export const DelveSiteThemeFeatureRow = CloneType(TableRowMixin, {
-	$id: 'DelveSiteThemeFeatureRow',
-	description: 'Represents a single Feature entry from a delve site Theme card.'
-})
-export type DelveSiteThemeFeatureRow = Static<typeof DelveSiteThemeFeatureRow>
+// export const DelveSiteThemeFeatureRow = CloneType(TableRowMixin, {
+// 	$id: 'DelveSiteThemeFeatureRow',
+// 	description: 'Represents a single Feature entry from a delve site Theme card.'
+// })
+// export type DelveSiteThemeFeatureRow = Static<typeof DelveSiteThemeFeatureRow>
 
-export const DelveSiteThemeDangerRow = CloneType(TableRowMixin, {
-	$id: 'DelveSiteThemeDangerRow',
-	description: 'Represents a single Danger entry from a delve site Theme card.'
-})
-const DelveSiteThemeFeatures = Type.Array(Type.Ref(DelveSiteThemeFeatureRow))
-const DelveSiteThemeDangers = Type.Array(Type.Ref(DelveSiteThemeDangerRow))
+// export const DelveSiteThemeDangerRow = CloneType(TableRowMixin, {
+// 	$id: 'DelveSiteThemeDangerRow',
+// 	description: 'Represents a single Danger entry from a delve site Theme card.'
+// })
+// export type DelveSiteThemeDangerRow = Static<typeof DelveSiteThemeDangerRow>
 
-export type DelveSiteThemeDangerRow = Static<typeof DelveSiteThemeDangerRow>
+// const DelveSiteThemeFeatures = Type.Array(Type.Ref(DelveSiteThemeFeatureRow))
+// const DelveSiteThemeDangers = Type.Array(Type.Ref(DelveSiteThemeDangerRow))
+
+const DelveSiteThemeFeatures = Type.Array(Type.Ref(OracleTableRowText))
+const DelveSiteThemeDangers = Type.Array(Type.Ref(OracleTableRowText))
+
 export const DelveSiteTheme = Generic.SourcedNode(
 	Type.Ref(Id.DelveSiteThemeId),
 	Type.Object({

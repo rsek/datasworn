@@ -20,10 +20,10 @@ public class DelveSiteDomain {
     private SourceInfo source;
 
     @JsonProperty("dangers")
-    private List<DelveSiteDomainDangerRow> dangers;
+    private List<OracleTableRowText> dangers;
 
     @JsonProperty("features")
-    private List<DelveSiteDomainFeatureRow> features;
+    private List<OracleTableRowText> features;
 
     @JsonProperty("name")
     private Label name;
@@ -99,28 +99,28 @@ public class DelveSiteDomain {
     /**
      * Getter for dangers.<p>
      */
-    public List<DelveSiteDomainDangerRow> getDangers() {
+    public List<OracleTableRowText> getDangers() {
         return dangers;
     }
 
     /**
      * Setter for dangers.<p>
      */
-    public void setDangers(List<DelveSiteDomainDangerRow> dangers) {
+    public void setDangers(List<OracleTableRowText> dangers) {
         this.dangers = dangers;
     }
 
     /**
      * Getter for features.<p>
      */
-    public List<DelveSiteDomainFeatureRow> getFeatures() {
+    public List<OracleTableRowText> getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(List<DelveSiteDomainFeatureRow> features) {
+    public void setFeatures(List<OracleTableRowText> features) {
         this.features = features;
     }
 

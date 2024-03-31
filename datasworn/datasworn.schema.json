@@ -7883,7 +7883,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/DelveSiteDomainFeatureRow"
+								"$ref": "#/definitions/OracleTableRowText"
 							}
 						},
 						{
@@ -8081,7 +8081,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/DelveSiteDomainDangerRow"
+								"$ref": "#/definitions/OracleTableRowText"
 							}
 						},
 						{
@@ -8200,96 +8200,6 @@
 				}
 			}
 		},
-		"DelveSiteDomainDangerRow": {
-			"title": "DelveSiteDomainDangerRow",
-			"type": "object",
-			"description": "Represents a single Danger entry from a delve site Domain card.",
-			"required": ["min", "max", "text"],
-			"properties": {
-				"min": {
-					"type": "integer",
-					"description": "Low end of the dice range for this table row."
-				},
-				"max": {
-					"type": "integer",
-					"description": "High end of the dice range for this table row."
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
-				},
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "The primary text content of this row."
-				},
-				"template": {
-					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "experimental"
-				},
-				"embed_table": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "experimental"
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"oracle_rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/definitions/OracleRoll"
-					}
-				},
-				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
-				}
-			}
-		},
-		"DelveSiteDomainFeatureRow": {
-			"title": "DelveSiteDomainFeatureRow",
-			"type": "object",
-			"description": "Represents a single Feature entry from a delve site Domain card.",
-			"required": ["min", "max", "text"],
-			"properties": {
-				"min": {
-					"type": "integer",
-					"description": "Low end of the dice range for this table row."
-				},
-				"max": {
-					"type": "integer",
-					"description": "High end of the dice range for this table row."
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
-				},
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "The primary text content of this row."
-				},
-				"template": {
-					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "experimental"
-				},
-				"embed_table": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "experimental"
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"oracle_rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/definitions/OracleRoll"
-					}
-				},
-				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
-				}
-			}
-		},
 		"DelveSiteTheme": {
 			"title": "DelveSiteTheme",
 			"type": "object",
@@ -8319,7 +8229,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/DelveSiteThemeFeatureRow"
+								"$ref": "#/definitions/OracleTableRowText"
 							}
 						},
 						{
@@ -8412,7 +8322,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/DelveSiteThemeDangerRow"
+								"$ref": "#/definitions/OracleTableRowText"
 							}
 						},
 						{
@@ -8633,96 +8543,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				}
-			}
-		},
-		"DelveSiteThemeDangerRow": {
-			"title": "DelveSiteThemeDangerRow",
-			"type": "object",
-			"description": "Represents a single Danger entry from a delve site Theme card.",
-			"required": ["min", "max", "text"],
-			"properties": {
-				"min": {
-					"type": "integer",
-					"description": "Low end of the dice range for this table row."
-				},
-				"max": {
-					"type": "integer",
-					"description": "High end of the dice range for this table row."
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
-				},
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "The primary text content of this row."
-				},
-				"template": {
-					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "experimental"
-				},
-				"embed_table": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "experimental"
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"oracle_rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/definitions/OracleRoll"
-					}
-				},
-				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
-				}
-			}
-		},
-		"DelveSiteThemeFeatureRow": {
-			"title": "DelveSiteThemeFeatureRow",
-			"type": "object",
-			"description": "Represents a single Feature entry from a delve site Theme card.",
-			"required": ["min", "max", "text"],
-			"properties": {
-				"min": {
-					"type": "integer",
-					"description": "Low end of the dice range for this table row."
-				},
-				"max": {
-					"type": "integer",
-					"description": "High end of the dice range for this table row."
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
-				},
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "The primary text content of this row."
-				},
-				"template": {
-					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "experimental"
-				},
-				"embed_table": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "experimental"
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"oracle_rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/definitions/OracleRoll"
-					}
-				},
-				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		}

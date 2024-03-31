@@ -24,10 +24,10 @@ namespace Datasworn
         public SourceInfo Source { get; set; }
 
         [JsonPropertyName("dangers")]
-        public IList<DelveSiteThemeDangerRow> Dangers { get; set; }
+        public IList<OracleTableRowText> Dangers { get; set; }
 
         [JsonPropertyName("features")]
-        public IList<DelveSiteThemeFeatureRow> Features { get; set; }
+        public IList<OracleTableRowText> Features { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.
