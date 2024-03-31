@@ -21,13 +21,7 @@ export type DelveSiteDenizenFrequency = Static<typeof DelveSiteDenizenFrequency>
 export const DelveSiteDenizen = Generic.IdentifiedNode(
 	Type.Ref(Id.DelveSiteDenizenId),
 	Type.Object({
-		name: Type.Optional(
-			Type.Ref(
-				// FIXME i18n keyword doesn't seem to work on Label, or when it's set here. maybe something to do with the parent array being an allOf?
-				Localize.Label,
-				{}
-			)
-		),
+		name: Type.Optional(Type.Ref(Localize.Label)),
 		min: Type.Integer(),
 		max: Type.Integer(),
 		npc: Type.Optional(

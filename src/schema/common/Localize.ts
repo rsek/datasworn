@@ -29,12 +29,12 @@ export type MarkdownString = Static<typeof Label>
 
 export const TemplateString = Type.String({
 	$id: 'TemplateString',
+	i18n: true,
 	description: `A rich text string in Markdown with replaced values from oracle roll results.
 
 The custom syntax \`{{some_row_key:some_oracle_table_id}}\` should be replaced by the \`some_row_key\` string of a rolled oracle table. This is usually the \`result\` key, for example \`{{result:starforged/oracles/core/action}}\`
 `,
 	format: 'markdown',
-	i18n: true,
 	releaseStage: 'experimental'
 })
 export type TemplateString = Static<typeof TemplateString>
