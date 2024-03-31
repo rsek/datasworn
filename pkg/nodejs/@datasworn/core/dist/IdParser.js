@@ -365,6 +365,7 @@ _a = IdParser, _IdParser_matcher = new WeakMap(), _IdParser_rulesPackage = new W
                 ? _a.NamespacePattern.source
                 : _a.DictKeyPattern.source;
         case index_js_1.CONST.GlobstarString:
+            // TODO: to enforce maximum depth, dynamically generate this pattern based on current recursion level
             return _a.RecursiveDictKeyPattern.source;
         default:
             return element;
@@ -381,9 +382,9 @@ _a = IdParser, _IdParser_matcher = new WeakMap(), _IdParser_rulesPackage = new W
         : __classPrivateFieldGet(this, _a, "m", _IdParser_validateKey).call(this, key);
 };
 _IdParser_datasworn = { value: null };
-IdParser.NamespacePattern = /([a-z0-9_]{3,})/;
-IdParser.DictKeyPattern = /([a-z][a-z_]*)/;
-IdParser.RecursiveDictKeyPattern = /([a-z][a-z_]*)(\/([a-z][a-z_]*)){0,2}/;
+IdParser.NamespacePattern = /[a-z0-9_]{3,}/;
+IdParser.DictKeyPattern = /[a-z][a-z_]*/;
+IdParser.RecursiveDictKeyPattern = /[a-z][a-z_]*(\/[a-z][a-z_]*){0,2}/;
 class CollectionId extends IdParser {
     constructor(rulesPackage, subtype, ...pathKeys) {
         super({
