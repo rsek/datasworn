@@ -245,9 +245,14 @@ function renderJsValue(value: unknown): string {
 			break
 
 		case typeof value === 'object':
-			result = `{\n${indent(
-				map(value as any, (v, k) => `${k}: ${renderJsValue(v)}`).join(',\n')
-			)}\n}`
+			result =
+				Object.keys(value as any).length > 0
+					? `{}`
+					: `{\n${indent(
+							map(value as any, (v, k) => `${k}: ${renderJsValue(v)}`).join(
+								',\n'
+							)
+						)}\n}`
 			break
 		case typeof value === 'string':
 		case typeof value === 'number':
