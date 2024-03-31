@@ -606,11 +606,9 @@ module Datasworn
   end
 
   class DelveSiteDomainDangerRow
-    attr_accessor id: DomainDangerRowID
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor text: MarkdownString
-    attr_accessor comment: String?
     attr_accessor i18n: I18nHints?
     attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
@@ -623,11 +621,9 @@ module Datasworn
   end
 
   class DelveSiteDomainFeatureRow
-    attr_accessor id: DomainFeatureRowID
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor text: MarkdownString
-    attr_accessor comment: String?
     attr_accessor i18n: I18nHints?
     attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
@@ -672,11 +668,9 @@ module Datasworn
   end
 
   class DelveSiteThemeDangerRow
-    attr_accessor id: ThemeDangerRowID
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor text: MarkdownString
-    attr_accessor comment: String?
     attr_accessor i18n: I18nHints?
     attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
@@ -689,11 +683,9 @@ module Datasworn
   end
 
   class DelveSiteThemeFeatureRow
-    attr_accessor id: ThemeFeatureRowID
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor text: MarkdownString
-    attr_accessor comment: String?
     attr_accessor i18n: I18nHints?
     attr_accessor embed_table: OracleRollableID?
     attr_accessor icon: SvgImageURL?
@@ -723,20 +715,6 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> DictKey
-    def to_json_data: () -> untyped
-  end
-
-  class DomainDangerRowID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> DomainDangerRowID
-    def to_json_data: () -> untyped
-  end
-
-  class DomainFeatureRowID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> DomainFeatureRowID
     def to_json_data: () -> untyped
   end
 
@@ -2152,20 +2130,6 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> TemplateString
-    def to_json_data: () -> untyped
-  end
-
-  class ThemeDangerRowID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> ThemeDangerRowID
-    def to_json_data: () -> untyped
-  end
-
-  class ThemeFeatureRowID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> ThemeFeatureRowID
     def to_json_data: () -> untyped
   end
 

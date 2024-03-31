@@ -1769,9 +1769,6 @@ module Datasworn
 
   # Represents a single Danger entry from a delve site Domain card.
   class DelveSiteDomainDangerRow
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
-
     # High end of the dice range for this table row.
     attr_accessor :max
 
@@ -1780,10 +1777,6 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
-
-    # Any implementation hints or other developer-facing comments on this
-    # object. These should be omitted when presenting the object for gameplay.
-    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -1797,11 +1790,9 @@ module Datasworn
 
     def self.from_json_data(data)
       out = DelveSiteDomainDangerRow.new
-      out.id = Datasworn::from_json_data(DomainDangerRowID, data["_id"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1813,11 +1804,9 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["_id"] = Datasworn::to_json_data(id)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
-      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1830,9 +1819,6 @@ module Datasworn
 
   # Represents a single Feature entry from a delve site Domain card.
   class DelveSiteDomainFeatureRow
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
-
     # High end of the dice range for this table row.
     attr_accessor :max
 
@@ -1841,10 +1827,6 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
-
-    # Any implementation hints or other developer-facing comments on this
-    # object. These should be omitted when presenting the object for gameplay.
-    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -1858,11 +1840,9 @@ module Datasworn
 
     def self.from_json_data(data)
       out = DelveSiteDomainFeatureRow.new
-      out.id = Datasworn::from_json_data(DomainFeatureRowID, data["_id"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -1874,11 +1854,9 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["_id"] = Datasworn::to_json_data(id)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
-      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -1983,9 +1961,6 @@ module Datasworn
 
   # Represents a single Danger entry from a delve site Theme card.
   class DelveSiteThemeDangerRow
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
-
     # High end of the dice range for this table row.
     attr_accessor :max
 
@@ -1994,10 +1969,6 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
-
-    # Any implementation hints or other developer-facing comments on this
-    # object. These should be omitted when presenting the object for gameplay.
-    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -2011,11 +1982,9 @@ module Datasworn
 
     def self.from_json_data(data)
       out = DelveSiteThemeDangerRow.new
-      out.id = Datasworn::from_json_data(ThemeDangerRowID, data["_id"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -2027,11 +1996,9 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["_id"] = Datasworn::to_json_data(id)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
-      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -2044,9 +2011,6 @@ module Datasworn
 
   # Represents a single Feature entry from a delve site Theme card.
   class DelveSiteThemeFeatureRow
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
-
     # High end of the dice range for this table row.
     attr_accessor :max
 
@@ -2055,10 +2019,6 @@ module Datasworn
 
     # The primary text content of this row.
     attr_accessor :text
-
-    # Any implementation hints or other developer-facing comments on this
-    # object. These should be omitted when presenting the object for gameplay.
-    attr_accessor :comment
     attr_accessor :i18n
 
     # Hints that the identified table should be rendered inside this table row.
@@ -2072,11 +2032,9 @@ module Datasworn
 
     def self.from_json_data(data)
       out = DelveSiteThemeFeatureRow.new
-      out.id = Datasworn::from_json_data(ThemeFeatureRowID, data["_id"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -2088,11 +2046,9 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["_id"] = Datasworn::to_json_data(id)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["text"] = Datasworn::to_json_data(text)
-      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -2139,36 +2095,6 @@ module Datasworn
 
     def self.from_json_data(data)
       out = DictKey.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
-  # A unique ID for a DomainDangerRow.
-  class DomainDangerRowID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DomainDangerRowID.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
-  # A unique ID for a DomainFeatureRow.
-  class DomainFeatureRowID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DomainFeatureRowID.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end
@@ -6196,36 +6122,6 @@ module Datasworn
 
     def self.from_json_data(data)
       out = TemplateString.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
-  # A unique ID for a ThemeDangerRow.
-  class ThemeDangerRowID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = ThemeDangerRowID.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
-  # A unique ID for a ThemeFeatureRow.
-  class ThemeFeatureRowID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = ThemeFeatureRowID.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end

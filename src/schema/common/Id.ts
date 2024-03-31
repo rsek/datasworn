@@ -178,15 +178,15 @@ export const DelveSiteThemeIdWildcard = toWildcard(DelveSiteThemeId, {
 	$id: 'DelveSiteThemeIdWildcard'
 })
 export type DelveSiteThemeIdWildcard = Static<typeof DelveSiteThemeIdWildcard>
-export const ThemeFeatureRowId = Extend(DelveSiteThemeId, ['features', DiceRange], {
-	$id: 'ThemeFeatureRowId'
-})
-export type ThemeFeatureRowId = Opaque<Static<typeof ThemeFeatureRowId>>
+// export const ThemeFeatureRowId = Extend(DelveSiteThemeId, ['features', DiceRange], {
+// 	$id: 'ThemeFeatureRowId'
+// })
+// export type ThemeFeatureRowId = Opaque<Static<typeof ThemeFeatureRowId>>
 
-export const ThemeDangerRowId = Extend(DelveSiteThemeId, ['dangers', DiceRange], {
-	$id: 'ThemeDangerRowId'
-})
-export type ThemeDangerRowId = Opaque<Static<typeof ThemeDangerRowId>>
+// export const ThemeDangerRowId = Extend(DelveSiteThemeId, ['dangers', DiceRange], {
+// 	$id: 'ThemeDangerRowId'
+// })
+// export type ThemeDangerRowId = Opaque<Static<typeof ThemeDangerRowId>>
 
 export const DelveSiteDomainId = UncollectableId(['site_domains'], {
 	$id: 'DelveSiteDomainId',
@@ -199,23 +199,23 @@ export const DelveSiteDomainIdWildcard = toWildcard(DelveSiteDomainId, {
 })
 export type DelveSiteDomainIdWildcard = Static<typeof DelveSiteDomainIdWildcard>
 
-export const DomainFeatureRowId = Extend(
-	DelveSiteDomainId,
-	['features', DiceRange],
-	{
-		$id: 'DomainFeatureRowId'
-	}
-)
-export type DomainFeatureRowId = Opaque<Static<typeof DomainFeatureRowId>>
+// export const DomainFeatureRowId = Extend(
+// 	DelveSiteDomainId,
+// 	['features', DiceRange],
+// 	{
+// 		$id: 'DomainFeatureRowId'
+// 	}
+// )
+// export type DomainFeatureRowId = Opaque<Static<typeof DomainFeatureRowId>>
 
-export const DomainDangerRowId = Extend(
-	DelveSiteDomainId,
-	['dangers', DiceRange],
-	{
-		$id: 'DomainDangerRowId'
-	}
-)
-export type DomainDangerRowId = Opaque<Static<typeof DomainDangerRowId>>
+// export const DomainDangerRowId = Extend(
+// 	DelveSiteDomainId,
+// 	['dangers', DiceRange],
+// 	{
+// 		$id: 'DomainDangerRowId'
+// 	}
+// )
+// export type DomainDangerRowId = Opaque<Static<typeof DomainDangerRowId>>
 
 export const MoveCategoryId = CollectionId(['moves'], {
 	examples: ['starforged/collections/moves/adventure'],
@@ -309,16 +309,16 @@ const RowWithRange = Extend(OracleRollableId, [DiceRange], {
 })
 const RowNull = Extend(OracleRollableId, [Index], { $id: 'RowNull' })
 
-export const OracleTableRowId = IdUnion([RowWithRange, RowNull], {
-	examples: [
-		'classic/oracles/action_and_theme/action/1-1',
-		'starforged/oracles/derelicts/zones/starship/0'
-	],
-	description:
-		"Normally, rows will end with two numbers separated by a dash, indicating their dice range.\n\nRows with a single number represent unrollable rows that are sometimes included for rendering purposes; in this case, the number represents the row's index.",
-	$id: 'OracleTableRowId'
-})
-export type OracleTableRowId = Opaque<Static<typeof OracleCollectionId>>
+// export const OracleTableRowId = IdUnion([RowWithRange, RowNull], {
+// 	examples: [
+// 		'classic/oracles/action_and_theme/action/1-1',
+// 		'starforged/oracles/derelicts/zones/starship/0'
+// 	],
+// 	description:
+// 		"Normally, rows will end with two numbers separated by a dash, indicating their dice range.\n\nRows with a single number represent unrollable rows that are sometimes included for rendering purposes; in this case, the number represents the row's index.",
+// 	$id: 'OracleTableRowId'
+// })
+// export type OracleTableRowId = Opaque<Static<typeof OracleCollectionId>>
 
 export const RarityId = UncollectableId(['rarities'], {
 	examples: ['classic/rarities/ayethins_journal'],

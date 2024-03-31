@@ -406,20 +406,6 @@
 				"pattern": "^([a-z][a-z_]*)$"
 			}
 		},
-		"DomainDangerRowId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a DomainDangerRow.",
-				"pattern": "^([a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)\\/dangers\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-			}
-		},
-		"DomainFeatureRowId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a DomainFeatureRow.",
-				"pattern": "^([a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)\\/features\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-			}
-		},
 		"ExpansionId": {
 			"type": "string",
 			"metadata": {
@@ -537,20 +523,6 @@
 					"starforged"
 				],
 				"pattern": "^([a-z0-9_]{3,})$"
-			}
-		},
-		"ThemeDangerRowId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a ThemeDangerRow.",
-				"pattern": "^([a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)\\/dangers\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-			}
-		},
-		"ThemeFeatureRowId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a ThemeFeatureRow.",
-				"pattern": "^([a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)\\/features\\/([1-9][0-9]*)-([1-9][0-9]*)$"
 			}
 		},
 		"TruthId": {
@@ -6218,12 +6190,6 @@
 		},
 		"DelveSiteDomainDangerRow": {
 			"properties": {
-				"_id": {
-					"ref": "DomainDangerRowId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
 				"text": {
 					"ref": "MarkdownString",
 					"metadata": {
@@ -6244,12 +6210,6 @@
 				}
 			},
 			"optionalProperties": {
-				"_comment": {
-					"type": "string",
-					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-					}
-				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},
@@ -6283,12 +6243,6 @@
 		},
 		"DelveSiteDomainFeatureRow": {
 			"properties": {
-				"_id": {
-					"ref": "DomainFeatureRowId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
 				"text": {
 					"ref": "MarkdownString",
 					"metadata": {
@@ -6309,12 +6263,6 @@
 				}
 			},
 			"optionalProperties": {
-				"_comment": {
-					"type": "string",
-					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-					}
-				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},
@@ -6422,12 +6370,6 @@
 		},
 		"DelveSiteThemeDangerRow": {
 			"properties": {
-				"_id": {
-					"ref": "ThemeDangerRowId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
 				"text": {
 					"ref": "MarkdownString",
 					"metadata": {
@@ -6448,12 +6390,6 @@
 				}
 			},
 			"optionalProperties": {
-				"_comment": {
-					"type": "string",
-					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-					}
-				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},
@@ -6487,12 +6423,6 @@
 		},
 		"DelveSiteThemeFeatureRow": {
 			"properties": {
-				"_id": {
-					"ref": "ThemeFeatureRowId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
 				"text": {
 					"ref": "MarkdownString",
 					"metadata": {
@@ -6513,12 +6443,6 @@
 				}
 			},
 			"optionalProperties": {
-				"_comment": {
-					"type": "string",
-					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-					}
-				},
 				"icon": {
 					"ref": "SvgImageUrl"
 				},

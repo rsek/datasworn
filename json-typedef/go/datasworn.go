@@ -1306,9 +1306,6 @@ type DelveSiteDomain struct {
 
 // Represents a single Danger entry from a delve site Domain card.
 type DelveSiteDomainDangerRow struct {
-	// The unique Datasworn ID for this item.
-	ID DomainDangerRowID `json:"_id"`
-
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 
@@ -1317,10 +1314,6 @@ type DelveSiteDomainDangerRow struct {
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
-
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
@@ -1339,9 +1332,6 @@ type DelveSiteDomainDangerRow struct {
 
 // Represents a single Feature entry from a delve site Domain card.
 type DelveSiteDomainFeatureRow struct {
-	// The unique Datasworn ID for this item.
-	ID DomainFeatureRowID `json:"_id"`
-
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 
@@ -1350,10 +1340,6 @@ type DelveSiteDomainFeatureRow struct {
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
-
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
@@ -1413,9 +1399,6 @@ type DelveSiteTheme struct {
 
 // Represents a single Danger entry from a delve site Theme card.
 type DelveSiteThemeDangerRow struct {
-	// The unique Datasworn ID for this item.
-	ID ThemeDangerRowID `json:"_id"`
-
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 
@@ -1424,10 +1407,6 @@ type DelveSiteThemeDangerRow struct {
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
-
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
@@ -1446,9 +1425,6 @@ type DelveSiteThemeDangerRow struct {
 
 // Represents a single Feature entry from a delve site Theme card.
 type DelveSiteThemeFeatureRow struct {
-	// The unique Datasworn ID for this item.
-	ID ThemeFeatureRowID `json:"_id"`
-
 	// High end of the dice range for this table row.
 	Max int16 `json:"max"`
 
@@ -1457,10 +1433,6 @@ type DelveSiteThemeFeatureRow struct {
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
-
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
 
 	I18n *I18nHints `json:"_i18n,omitempty"`
 
@@ -1485,12 +1457,6 @@ type DiceExpression = string
 
 // A `snake_case` key used in a Datasworn dictionary object.
 type DictKey = string
-
-// A unique ID for a DomainDangerRow.
-type DomainDangerRowID = string
-
-// A unique ID for a DomainFeatureRow.
-type DomainFeatureRowID = string
 
 // The ID of a Datasworn package that relies on an external package to provide
 // its ruleset.
@@ -4018,12 +3984,6 @@ type TagRuleTruth struct {
 // by the `some_row_key` string of a rolled oracle table. This is usually the
 // `result` key, for example `{{result:starforged/oracles/core/action}}`
 type TemplateString = string
-
-// A unique ID for a ThemeDangerRow.
-type ThemeDangerRowID = string
-
-// A unique ID for a ThemeFeatureRow.
-type ThemeFeatureRowID = string
 
 // Describes trigger conditions for a move that makes an action roll.
 type TriggerActionRoll struct {

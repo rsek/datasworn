@@ -1,29 +1,20 @@
-import { Type, type Static } from '@sinclair/typebox'
+import { Type, type Static, CloneType } from '@sinclair/typebox'
 import { JsonTypeDef } from '../Symbols.js'
 import { toJtdElements } from '../../scripts/json-typedef/utils.js'
 import { Id, Localize, Metadata } from '../common/index.js'
 import { StaticRowPartial, TableRowMixin } from '../oracles/TableRow.js'
 import * as Generic from '../Generic.js'
 
-export const DelveSiteDomainFeatureRow = Generic.IdentifiedNode(
-	Type.Ref(Id.DomainFeatureRowId),
-	TableRowMixin,
-	{
-		$id: 'DelveSiteDomainFeatureRow',
-		description:
-			'Represents a single Feature entry from a delve site Domain card.'
-	}
-)
+export const DelveSiteDomainFeatureRow = CloneType(TableRowMixin, {
+	$id: 'DelveSiteDomainFeatureRow',
+	description:
+		'Represents a single Feature entry from a delve site Domain card.'
+})
 export type DelveSiteDomainFeatureRow = Static<typeof DelveSiteDomainFeatureRow>
-export const DelveSiteDomainDangerRow = Generic.IdentifiedNode(
-	Type.Ref(Id.DomainDangerRowId),
-	TableRowMixin,
-	{
-		$id: 'DelveSiteDomainDangerRow',
-		description:
-			'Represents a single Danger entry from a delve site Domain card.'
-	}
-)
+export const DelveSiteDomainDangerRow = CloneType(TableRowMixin, {
+	$id: 'DelveSiteDomainDangerRow',
+	description: 'Represents a single Danger entry from a delve site Domain card.'
+})
 export type DelveSiteDomainDangerRow = Static<typeof DelveSiteDomainDangerRow>
 
 const DelveSiteDomainFeatures = Type.Array(Type.Ref(DelveSiteDomainFeatureRow))

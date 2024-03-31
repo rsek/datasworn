@@ -2458,11 +2458,6 @@ class DelveSiteDomainDangerRow:
     Represents a single Danger entry from a delve site Domain card.
     """
 
-    id: 'DomainDangerRowID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     max: 'int'
     """
     High end of the dice range for this table row.
@@ -2476,12 +2471,6 @@ class DelveSiteDomainDangerRow:
     text: 'MarkdownString'
     """
     The primary text content of this row.
-    """
-
-    comment: 'Optional[str]'
-    """
-    Any implementation hints or other developer-facing comments on this object.
-    These should be omitted when presenting the object for gameplay.
     """
 
     i18n: 'Optional[I18nHints]'
@@ -2502,11 +2491,9 @@ class DelveSiteDomainDangerRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomainDangerRow':
         return cls(
-            _from_json_data(DomainDangerRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2517,12 +2504,9 @@ class DelveSiteDomainDangerRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
-        if self.comment is not None:
-             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -2543,11 +2527,6 @@ class DelveSiteDomainFeatureRow:
     Represents a single Feature entry from a delve site Domain card.
     """
 
-    id: 'DomainFeatureRowID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     max: 'int'
     """
     High end of the dice range for this table row.
@@ -2561,12 +2540,6 @@ class DelveSiteDomainFeatureRow:
     text: 'MarkdownString'
     """
     The primary text content of this row.
-    """
-
-    comment: 'Optional[str]'
-    """
-    Any implementation hints or other developer-facing comments on this object.
-    These should be omitted when presenting the object for gameplay.
     """
 
     i18n: 'Optional[I18nHints]'
@@ -2587,11 +2560,9 @@ class DelveSiteDomainFeatureRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomainFeatureRow':
         return cls(
-            _from_json_data(DomainFeatureRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2602,12 +2573,9 @@ class DelveSiteDomainFeatureRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
-        if self.comment is not None:
-             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -2739,11 +2707,6 @@ class DelveSiteThemeDangerRow:
     Represents a single Danger entry from a delve site Theme card.
     """
 
-    id: 'ThemeDangerRowID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     max: 'int'
     """
     High end of the dice range for this table row.
@@ -2757,12 +2720,6 @@ class DelveSiteThemeDangerRow:
     text: 'MarkdownString'
     """
     The primary text content of this row.
-    """
-
-    comment: 'Optional[str]'
-    """
-    Any implementation hints or other developer-facing comments on this object.
-    These should be omitted when presenting the object for gameplay.
     """
 
     i18n: 'Optional[I18nHints]'
@@ -2783,11 +2740,9 @@ class DelveSiteThemeDangerRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteThemeDangerRow':
         return cls(
-            _from_json_data(ThemeDangerRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2798,12 +2753,9 @@ class DelveSiteThemeDangerRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
-        if self.comment is not None:
-             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -2824,11 +2776,6 @@ class DelveSiteThemeFeatureRow:
     Represents a single Feature entry from a delve site Theme card.
     """
 
-    id: 'ThemeFeatureRowID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     max: 'int'
     """
     High end of the dice range for this table row.
@@ -2842,12 +2789,6 @@ class DelveSiteThemeFeatureRow:
     text: 'MarkdownString'
     """
     The primary text content of this row.
-    """
-
-    comment: 'Optional[str]'
-    """
-    Any implementation hints or other developer-facing comments on this object.
-    These should be omitted when presenting the object for gameplay.
     """
 
     i18n: 'Optional[I18nHints]'
@@ -2868,11 +2809,9 @@ class DelveSiteThemeFeatureRow:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteThemeFeatureRow':
         return cls(
-            _from_json_data(ThemeFeatureRowID, data.get("_id")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(MarkdownString, data.get("text")),
-            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -2883,12 +2822,9 @@ class DelveSiteThemeFeatureRow:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["_id"] = _to_json_data(self.id)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["text"] = _to_json_data(self.text)
-        if self.comment is not None:
-             data["_comment"] = _to_json_data(self.comment)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
         if self.embed_table is not None:
@@ -2943,36 +2879,6 @@ class DictKey:
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DictKey':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class DomainDangerRowID:
-    """
-    A unique ID for a DomainDangerRow.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DomainDangerRowID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class DomainFeatureRowID:
-    """
-    A unique ID for a DomainFeatureRow.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DomainFeatureRowID':
         return cls(_from_json_data(str, data))
 
     def to_json_data(self) -> Any:
@@ -8156,36 +8062,6 @@ class TemplateString:
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'TemplateString':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class ThemeDangerRowID:
-    """
-    A unique ID for a ThemeDangerRow.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ThemeDangerRowID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class ThemeFeatureRowID:
-    """
-    A unique ID for a ThemeFeatureRow.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ThemeFeatureRowID':
         return cls(_from_json_data(str, data))
 
     def to_json_data(self) -> Any:

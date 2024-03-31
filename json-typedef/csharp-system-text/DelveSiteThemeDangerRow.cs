@@ -11,12 +11,6 @@ namespace Datasworn
     public class DelveSiteThemeDangerRow
     {
         /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("_id")]
-        public ThemeDangerRowId Id { get; set; }
-
-        /// <summary>
         /// High end of the dice range for this table row.
         /// </summary>
         [JsonPropertyName("max")]
@@ -33,15 +27,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("text")]
         public MarkdownString Text { get; set; }
-
-        /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
-        /// </summary>
-        [JsonPropertyName("_comment")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public string Comment { get; set; }
 
         [JsonPropertyName("_i18n")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

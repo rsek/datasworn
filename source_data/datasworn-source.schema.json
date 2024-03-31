@@ -460,18 +460,6 @@
 			"$comment": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
 			"pattern": "^([a-z][a-z_]*)$"
 		},
-		"DomainDangerRowId": {
-			"title": "DomainDangerRowId",
-			"type": "string",
-			"description": "A unique ID for a DomainDangerRow.",
-			"pattern": "^([a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)\\/dangers\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-		},
-		"DomainFeatureRowId": {
-			"title": "DomainFeatureRowId",
-			"type": "string",
-			"description": "A unique ID for a DomainFeatureRow.",
-			"pattern": "^([a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)\\/features\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-		},
 		"ExpansionId": {
 			"title": "ExpansionId",
 			"type": "string",
@@ -653,26 +641,6 @@
 			],
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/oracles((\\/([a-z][a-z_]*)){1,3}|\\/\\*\\*|\\/\\*\\*\\/([a-z][a-z_]*)|\\/([a-z][a-z_]*)\\/\\*\\*)\\/(\\*|([a-z][a-z_]*))$"
 		},
-		"OracleTableRowId": {
-			"title": "OracleTableRowId",
-			"description": "Normally, rows will end with two numbers separated by a dash, indicating their dice range.\n\nRows with a single number represent unrollable rows that are sometimes included for rendering purposes; in this case, the number represents the row's index.",
-			"examples": [
-				"classic/oracles/action_and_theme/action/1-1",
-				"starforged/oracles/derelicts/zones/starship/0"
-			],
-			"anyOf": [
-				{
-					"type": "string",
-					"description": "A unique ID for a RowWithRange.",
-					"pattern": "^([a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-				},
-				{
-					"type": "string",
-					"description": "A unique ID for a RowNull.",
-					"pattern": "^([a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)\\/(0|[1-9][0-9]*)$"
-				}
-			]
-		},
 		"RarityId": {
 			"title": "RarityId",
 			"type": "string",
@@ -709,18 +677,6 @@
 			"type": "string",
 			"description": "A unique ID for a StatRule.",
 			"pattern": "^([a-z0-9_]{3,})\\/rules\\/stats\\/([a-z][a-z_]*)$"
-		},
-		"ThemeDangerRowId": {
-			"title": "ThemeDangerRowId",
-			"type": "string",
-			"description": "A unique ID for a ThemeDangerRow.",
-			"pattern": "^([a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)\\/dangers\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-		},
-		"ThemeFeatureRowId": {
-			"title": "ThemeFeatureRowId",
-			"type": "string",
-			"description": "A unique ID for a ThemeFeatureRow.",
-			"pattern": "^([a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)\\/features\\/([1-9][0-9]*)-([1-9][0-9]*)$"
 		},
 		"TruthId": {
 			"title": "TruthId",
@@ -8266,10 +8222,6 @@
 			"description": "Represents a single Danger entry from a delve site Domain card.",
 			"required": ["min", "max", "text"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/DomainDangerRowId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"type": "integer",
 					"description": "Low end of the dice range for this table row."
@@ -8306,10 +8258,6 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8320,10 +8268,6 @@
 			"description": "Represents a single Feature entry from a delve site Domain card.",
 			"required": ["min", "max", "text"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/DomainFeatureRowId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"type": "integer",
 					"description": "Low end of the dice range for this table row."
@@ -8360,10 +8304,6 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8721,10 +8661,6 @@
 			"description": "Represents a single Danger entry from a delve site Theme card.",
 			"required": ["min", "max", "text"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/ThemeDangerRowId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"type": "integer",
 					"description": "Low end of the dice range for this table row."
@@ -8761,10 +8697,6 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8775,10 +8707,6 @@
 			"description": "Represents a single Feature entry from a delve site Theme card.",
 			"required": ["min", "max", "text"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/ThemeFeatureRowId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"type": "integer",
 					"description": "Low end of the dice range for this table row."
@@ -8815,10 +8743,6 @@
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints"
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false

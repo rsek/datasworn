@@ -1403,10 +1403,6 @@ pub struct DelveSiteDomain {
 /// Represents a single Danger entry from a delve site Domain card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDomainDangerRow {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: DomainDangerRowId,
-
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,
@@ -1418,12 +1414,6 @@ pub struct DelveSiteDomainDangerRow {
     /// The primary text content of this row.
     #[serde(rename = "text")]
     pub text: MarkdownString,
-
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1456,10 +1446,6 @@ pub struct DelveSiteDomainDangerRow {
 /// Represents a single Feature entry from a delve site Domain card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDomainFeatureRow {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: DomainFeatureRowId,
-
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,
@@ -1471,12 +1457,6 @@ pub struct DelveSiteDomainFeatureRow {
     /// The primary text content of this row.
     #[serde(rename = "text")]
     pub text: MarkdownString,
-
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1569,10 +1549,6 @@ pub struct DelveSiteTheme {
 /// Represents a single Danger entry from a delve site Theme card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteThemeDangerRow {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: ThemeDangerRowId,
-
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,
@@ -1584,12 +1560,6 @@ pub struct DelveSiteThemeDangerRow {
     /// The primary text content of this row.
     #[serde(rename = "text")]
     pub text: MarkdownString,
-
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1622,10 +1592,6 @@ pub struct DelveSiteThemeDangerRow {
 /// Represents a single Feature entry from a delve site Theme card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteThemeFeatureRow {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: ThemeFeatureRowId,
-
     /// High end of the dice range for this table row.
     #[serde(rename = "max")]
     pub max: i16,
@@ -1637,12 +1603,6 @@ pub struct DelveSiteThemeFeatureRow {
     /// The primary text content of this row.
     #[serde(rename = "text")]
     pub text: MarkdownString,
-
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
 
     #[serde(rename = "_i18n")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1680,12 +1640,6 @@ pub type DiceExpression = String;
 
 /// A `snake_case` key used in a Datasworn dictionary object.
 pub type DictKey = String;
-
-/// A unique ID for a DomainDangerRow.
-pub type DomainDangerRowId = String;
-
-/// A unique ID for a DomainFeatureRow.
-pub type DomainFeatureRowId = String;
 
 /// The ID of a Datasworn package that relies on an external package to provide
 /// its ruleset.
@@ -4751,12 +4705,6 @@ pub struct TagRuleTruth {
 /// by the `some_row_key` string of a rolled oracle table. This is usually the
 /// `result` key, for example `{{result:starforged/oracles/core/action}}`
 pub type TemplateString = String;
-
-/// A unique ID for a ThemeDangerRow.
-pub type ThemeDangerRowId = String;
-
-/// A unique ID for a ThemeFeatureRow.
-pub type ThemeFeatureRowId = String;
 
 /// Describes trigger conditions for a move that makes an action roll.
 #[derive(Serialize, Deserialize)]

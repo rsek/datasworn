@@ -12,9 +12,6 @@ import java.util.List;
  */
 @JsonSerialize
 public class DelveSiteThemeDangerRow {
-    @JsonProperty("_id")
-    private ThemeDangerRowId id;
-
     @JsonProperty("max")
     private Short max;
 
@@ -23,10 +20,6 @@ public class DelveSiteThemeDangerRow {
 
     @JsonProperty("text")
     private MarkdownString text;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("_comment")
-    private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_i18n")
@@ -53,22 +46,6 @@ public class DelveSiteThemeDangerRow {
     private OracleRollTemplate template;
 
     public DelveSiteThemeDangerRow() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public ThemeDangerRowId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(ThemeDangerRowId id) {
-        this.id = id;
     }
 
     /**
@@ -117,24 +94,6 @@ public class DelveSiteThemeDangerRow {
      */
     public void setText(MarkdownString text) {
         this.text = text;
-    }
-
-    /**
-     * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public String getComment() {
-        return comment;
-    }
-
-    /**
-     * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public void setComment(String comment) {
-        this.comment = comment;
     }
 
     /**

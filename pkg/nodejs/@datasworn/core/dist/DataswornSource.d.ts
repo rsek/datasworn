@@ -294,20 +294,6 @@ export type DelveSiteThemeIdWildcard = string;
  */
 export type DictKey = string;
 /**
- * A unique ID for a DomainDangerRow.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/site_domains\/([a-z][a-z_]*)\/dangers\/([1-9][0-9]*)-([1-9][0-9]*)$/
- * ```
- */
-export type DomainDangerRowId = string;
-/**
- * A unique ID for a DomainFeatureRow.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/site_domains\/([a-z][a-z_]*)\/features\/([1-9][0-9]*)-([1-9][0-9]*)$/
- * ```
- */
-export type DomainFeatureRowId = string;
-/**
  * The ID of a Datasworn package that relies on an external package to provide its ruleset.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})$/
@@ -429,14 +415,6 @@ export type OracleRollableId = string;
  */
 export type OracleRollableIdWildcard = string;
 /**
- * Normally, rows will end with two numbers separated by a dash, indicating their dice range.
- *
- * Rows with a single number represent unrollable rows that are sometimes included for rendering purposes; in this case, the number represents the row's index.
- * @example "classic/oracles/action_and_theme/action/1-1"
- * @example "starforged/oracles/derelicts/zones/starship/0"
- */
-export type OracleTableRowId = string;
-/**
  * A unique ID for a Rarity.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/rarities\/([a-z][a-z_]*)$/
@@ -477,20 +455,6 @@ export type SpecialTrackRuleId = string;
  * ```
  */
 export type StatRuleId = string;
-/**
- * A unique ID for a ThemeDangerRow.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/site_themes\/([a-z][a-z_]*)\/dangers\/([1-9][0-9]*)-([1-9][0-9]*)$/
- * ```
- */
-export type ThemeDangerRowId = string;
-/**
- * A unique ID for a ThemeFeatureRow.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/site_themes\/([a-z][a-z_]*)\/features\/([1-9][0-9]*)-([1-9][0-9]*)$/
- * ```
- */
-export type ThemeFeatureRowId = string;
 /**
  * A unique ID for a Truth.
  * @pattern ```javascript
@@ -4082,14 +4046,6 @@ export interface DelveSiteDomain {
  */
 export interface DelveSiteDomainDangerRow {
     /**
-     * The unique Datasworn ID for this item.
-     */
-    _id?: DomainDangerRowId;
-    /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
-    /**
      * The primary text content of this row.
      */
     text: MarkdownString;
@@ -4122,14 +4078,6 @@ export interface DelveSiteDomainDangerRow {
  * Represents a single Feature entry from a delve site Domain card.
  */
 export interface DelveSiteDomainFeatureRow {
-    /**
-     * The unique Datasworn ID for this item.
-     */
-    _id?: DomainFeatureRowId;
-    /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
     /**
      * The primary text content of this row.
      */
@@ -4269,14 +4217,6 @@ export interface DelveSiteTheme {
  */
 export interface DelveSiteThemeDangerRow {
     /**
-     * The unique Datasworn ID for this item.
-     */
-    _id?: ThemeDangerRowId;
-    /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
-    /**
      * The primary text content of this row.
      */
     text: MarkdownString;
@@ -4309,14 +4249,6 @@ export interface DelveSiteThemeDangerRow {
  * Represents a single Feature entry from a delve site Theme card.
  */
 export interface DelveSiteThemeFeatureRow {
-    /**
-     * The unique Datasworn ID for this item.
-     */
-    _id?: ThemeFeatureRowId;
-    /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
     /**
      * The primary text content of this row.
      */
