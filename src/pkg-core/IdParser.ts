@@ -101,10 +101,9 @@ abstract class IdParser<
 		return this.#matcher
 	}
 
-	static readonly NamespacePattern = /([a-z0-9_]{3,})/
-	static readonly DictKeyPattern = /([a-z][a-z_]*)/
-	static readonly RecursiveDictKeyPattern =
-		/([a-z][a-z_]*)(\/([a-z][a-z_]*)){0,2}/
+	static readonly NamespacePattern = /[a-z0-9_]{3,}/
+	static readonly DictKeyPattern = /[a-z][a-z_]*/
+	static readonly RecursiveDictKeyPattern = /[a-z][a-z_]*(\/[a-z][a-z_]*){0,2}/
 
 	static #createMatcher(...elements: string[]) {
 		return new RegExp(
@@ -120,6 +119,7 @@ abstract class IdParser<
 					? IdParser.NamespacePattern.source
 					: IdParser.DictKeyPattern.source
 			case CONST.GlobstarString:
+				// TODO: to enforce maximum depth, dynamically generate this pattern based on current recursion level
 				return IdParser.RecursiveDictKeyPattern.source
 
 			default:
@@ -1195,11 +1195,19 @@ namespace RecursiveCollectionId {
 		extends CollectionId.Options<T> {}
 }
 
-// const id = new RecursiveCollectionId('sundered_isles', 'oracles', '**')
-// const toMatch = 'sundered_isles/collections/oracles/core'
+// const parser = new RecursiveCollectionId('*', 'oracles', '**')
+// const toMatch = [
+// 	'sundered_isles/collections/oracles/core',
+// 	'starforged/collections/oracles/planets/furnace',
+// 	'starforged/collections/oracles/planets/furnace/settlements'
+// ]
 
-// console.log(id.matcher)
-// console.log(id.matcher.test(toMatch))
+// console.log(parser.matcher)
+
+// for (const testId of toMatch) {
+// 	console.log(testId, parser.matcher.test(testId))
+// }
+
 
 export {
 	IdParser,
