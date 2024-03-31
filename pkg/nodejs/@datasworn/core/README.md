@@ -1,4 +1,4 @@
-# Datasworn v0.0.8
+# Datasworn v0.0.9
 
 Traversal utilities, JSON schema, and Typescript declarations common to Datasworn packages.
 
@@ -36,11 +36,11 @@ const rulesPackages: Datasworn.RulesPackage[] = (await Promise.all([
 
 ```
 
-##### Using JSON modules
+##### Example: Using JSON modules
 
 ```typescript
-import starforged from '@datasworn/starforged/json/starforged.json' assert { type: 'json' }
-import classic from '@datasworn/ironsworn-classic/json/classic.json' assert { type: 'json' }
+import starforged from '@datasworn/starforged/json/starforged.json' with { type: 'json' }
+import classic from '@datasworn/ironsworn-classic/json/classic.json' with { type: 'json' }
 
 const rulesPackages = [starforged, classic] as Datasworn.RulesPackage[]
 
