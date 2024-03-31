@@ -125,10 +125,11 @@ function extractType(schema: TSchema): string {
 			return uniq(schema.anyOf.map(extractType)).join(' | ')
 		case TypeGuard.IsIntersect(schema):
 			return uniq(schema.allOf.map(extractType)).join(' & ')
-		case TypeGuard.IsRecord(schema):
-			return `Record<DictKey, ${extractType(
-				Object.values(schema.patternProperties)[0]
-			)}>`
+		case TypeGuard.IsRecord(schema): {
+			const keyType = 'DictKey'
+			const valueType = extractType(Object.values(schema.patternProperties)[0])
+			return `Record<${keyType}, ${valueType}> | Map<${keyType}, ${valueType}>`
+		}
 		case TDiscriminatedUnion(schema):
 			return schema.allOf.map((item) => extractType(item.then)).join(' | ')
 		case TUnionEnum(schema):
