@@ -1,5 +1,5 @@
 import { Type, type Static, type TUnsafe, TProperties } from '@sinclair/typebox'
-import { type Id, Metadata } from './common/index.js'
+import { type Id, Metadata, Localize } from './common/index.js'
 import * as Generic from './Generic.js'
 
 import { type TAssetCollection } from './Assets.js'
@@ -29,6 +29,9 @@ const datasworn_version = Utils.Computed(
 
 const RulesPackageMetaProps = {
 	datasworn_version,
+	name: Utils.SourceOptional(Type.Ref(Localize.Label)),
+	description: Type.Optional(Type.Ref(Localize.MarkdownString)),
+	type: Type.Literal('package'),
 	...mapValues(Type.Required(Type.Omit(SourceInfo, ['page'])).properties, (v) =>
 		Utils.SourceOptional(v)
 	)

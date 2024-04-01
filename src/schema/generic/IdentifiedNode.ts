@@ -6,7 +6,7 @@ import { setDescriptions } from '../utils/typebox.js'
 
 export function IdentifiedNode<T extends TObject>(
 	_id: Id.TAnyId,
-	schema: T,
+	base: T,
 	options: ObjectOptions = {}
 ) {
 	// console.log('BASE', schema)
@@ -17,7 +17,7 @@ export function IdentifiedNode<T extends TObject>(
 	// 		options
 	// 	) as TIdentifiedNode<T>
 	// console.log('ADDED ID', result)
-	const { description, $comment } = schema
+	const { description, $comment } = base
 
 	const result = Utils.Assign(
 		[
@@ -30,7 +30,7 @@ export function IdentifiedNode<T extends TObject>(
 					})
 				)
 			}),
-			schema
+			base
 		],
 		{
 			description,

@@ -52,6 +52,7 @@ const AssetMixin = Type.Object({
 
 export const Asset = Generic.Collectable(
 	Type.Ref(Id.AssetId),
+	'asset',
 	Utils.Assign([
 		AssetMixin,
 		AssetPropertiesEnhanceable(
@@ -68,6 +69,7 @@ export type Asset = Generic.Collectable<
 
 export const AssetCollection = Generic.Collection(
 	Type.Ref(Id.AssetCollectionId),
+	'asset_collection',
 	Type.Ref<TUnsafe<Asset>>('Asset'),
 	{},
 	{

@@ -71,6 +71,7 @@ function RollableTable<OracleRow extends TObject>(
 	)
 	return Generic.RecursiveCollectable(
 		Type.Ref(Id.OracleRollableId),
+		'oracle_rollable',
 		base,
 		options
 	)
@@ -84,7 +85,8 @@ function RollableTableColumn<OracleRow extends TObject>(
 	const base = Utils.Discriminable(
 		Type.Object({
 			...ColumnMixin.properties,
-			...RollableMixin(row).properties
+			...RollableMixin(row).properties,
+			type: Type.Literal('oracle_rollable')
 		}),
 		'oracle_type',
 		mappingKey
@@ -111,7 +113,11 @@ function OracleRollableBase<
 	}) as TObject<
 		(typeof TableMeta)['properties'] & Props & { rows: TArray<OracleRow> }
 	>
-	return Generic.RecursiveCollectable(Type.Ref(Id.OracleRollableId), base)
+	return Generic.RecursiveCollectable(
+		Type.Ref(Id.OracleRollableId),
+		'oracle_rollable',
+		base
+	)
 }
 
 function OracleColumnBase<

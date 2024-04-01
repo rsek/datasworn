@@ -13,7 +13,8 @@ import { type TFuzzyObject } from '../utils/typebox.js'
 import {
 	OracleColumnText2,
 	OracleColumnText,
-	OracleTableRollable
+	OracleTableRollable,
+	OracleColumnText3
 } from './OracleRollable.js'
 import {
 	ColumnLabels,
@@ -94,6 +95,7 @@ function OracleCollectionBase<
 	if (!recursive)
 		return Generic.Collection(
 			Type.Ref(Id.OracleCollectionId),
+			'oracle_collection',
 			rollable,
 			properties,
 			options
@@ -101,7 +103,12 @@ function OracleCollectionBase<
 
 	// recursive version can recurse to *any* OracleCollection
 	const result = Generic.RecursiveCollection(
-		Generic.Collection(Type.Ref(Id.OracleCollectionId), rollable, properties),
+		Generic.Collection(
+			Type.Ref(Id.OracleCollectionId),
+			'oracle_collection',
+			rollable,
+			properties
+		),
 		options
 	) as any
 
@@ -157,7 +164,7 @@ export const OracleTableSharedRolls = OracleCollectionBase(
 export type TOracleTableSharedRolls = typeof OracleTableSharedRolls
 export type OracleTableSharedRolls = Static<TOracleTableSharedRolls>
 
-export const OracleTableSharedTextColumn = OracleCollectionBase(
+export const OracleTableSharedText = OracleCollectionBase(
 	{
 		column_labels: ColumnLabels<typeof OracleTableRowText>({
 			text: 'Result'
@@ -170,16 +177,16 @@ export const OracleTableSharedTextColumn = OracleCollectionBase(
 	Type.Ref(OracleColumnText),
 	false,
 	{
-		$id: 'OracleTableSharedTextColumn',
+		$id: 'OracleTableSharedText',
 		description:
 			'An OracleCollection representing a single table with multiple roll columns and one `result` column.'
 	}
 )
 
-export type TOracleTableSharedTextColumn = typeof OracleTableSharedTextColumn
-export type OracleTableSharedTextColumn = Static<TOracleTableSharedTextColumn>
+export type TOracleTableSharedText = typeof OracleTableSharedText
+export type OracleTableSharedText = Static<TOracleTableSharedText>
 
-export const OracleTableShared2TextColumns = OracleCollectionBase(
+export const OracleTableSharedText2 = OracleCollectionBase(
 	{
 		column_labels: ColumnLabels<typeof OracleTableRowText2>({
 			text: 'Result',
@@ -193,18 +200,16 @@ export const OracleTableShared2TextColumns = OracleCollectionBase(
 	Type.Ref(OracleColumnText2),
 	false,
 	{
-		$id: 'OracleTableShared2TextColumns',
+		$id: 'OracleTableSharedText2',
 		description:
 			'An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.'
 	}
 )
 
-export type TOracleTableShared2TextColumns =
-	typeof OracleTableShared2TextColumns
-export type OracleTableShared2TextColumns =
-	Static<TOracleTableShared2TextColumns>
+export type TOracleTableSharedText2 = typeof OracleTableSharedText2
+export type OracleTableSharedText2 = Static<TOracleTableSharedText2>
 
-export const OracleTableShared3TextColumns = OracleCollectionBase(
+export const OracleTableSharedText3 = OracleCollectionBase(
 	{
 		column_labels: ColumnLabels<typeof OracleTableRowText3>({
 			text: 'Result'
@@ -214,27 +219,25 @@ export const OracleTableShared3TextColumns = OracleCollectionBase(
 			'table_shared_text3'
 		)
 	},
-	Type.Ref(OracleColumnText2),
+	Type.Ref(OracleColumnText3),
 	false,
 	{
-		$id: 'OracleTableShared3TextColumns',
+		$id: 'OracleTableSharedText3',
 		description:
 			'An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.'
 	}
 )
 
-export type TOracleTableShared3TextColumns =
-	typeof OracleTableShared3TextColumns
-export type OracleTableShared3TextColumns =
-	Static<TOracleTableShared3TextColumns>
+export type TOracleTableSharedText3 = typeof OracleTableSharedText3
+export type OracleTableSharedText3 = Static<TOracleTableSharedText3>
 
 export const OracleCollection = Utils.DiscriminatedUnion(
 	[
 		OracleTablesCollection,
 		OracleTableSharedRolls,
-		OracleTableSharedTextColumn,
-		OracleTableShared2TextColumns,
-		OracleTableShared3TextColumns
+		OracleTableSharedText,
+		OracleTableSharedText2,
+		OracleTableSharedText3
 	],
 	'oracle_type',
 	{ $id: 'OracleCollection' }

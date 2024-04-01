@@ -63,11 +63,13 @@ export function Collection<
 	Props extends TProperties
 >(
 	_id: TCollectionID,
+	typeLiteral: string,
 	collectable: Collectable,
 	properties: Props,
 	options: SchemaOptions = {}
 ) {
 	const generic = {
+		type: Type.Literal(typeLiteral),
 		enhances: Type.Optional(
 			CloneType(_id, {
 				description:

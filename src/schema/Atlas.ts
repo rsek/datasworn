@@ -5,6 +5,7 @@ import { Cyclopedia } from './generic/Mixin.js'
 
 export const AtlasEntry = Generic.RecursiveCollectable(
 	Type.Ref(Id.AtlasEntryId),
+	'atlas_entry',
 	Cyclopedia,
 	{
 		$id: 'AtlasEntry',
@@ -19,6 +20,7 @@ export type AtlasEntry = Static<typeof AtlasEntry>
 
 const AtlasBase = Generic.Collection(
 	Type.Ref(Id.AtlasId),
+	'atlas',
 	Type.Ref(AtlasEntry),
 	{}
 )

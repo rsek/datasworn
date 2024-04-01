@@ -50,6 +50,7 @@ export type NpcVariant = Static<typeof NpcVariant>
 
 export const Npc = Generic.Collectable(
 	Type.Ref(Id.NpcId),
+	'npc',
 	Utils.Assign([
 		NpcMixin,
 		Type.Object({
@@ -67,6 +68,7 @@ export type Npc = Static<typeof Npc>
 
 export const NpcCollection = Generic.Collection(
 	Type.Ref(Id.NpcCollectionId),
+	'npc_collection',
 	Type.Ref(Npc),
 	{},
 	{

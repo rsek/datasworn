@@ -1,4 +1,9 @@
-import { type ObjectOptions, type TObject } from '@sinclair/typebox'
+import {
+	CloneType,
+	Type,
+	type ObjectOptions,
+	type TObject
+} from '@sinclair/typebox'
 import { SourcedNode, type TSourcedNode } from './SourcedNode.js'
 import { type TAnyId } from '../common/Id.js'
 
@@ -8,9 +13,13 @@ type CollectableID = TAnyId
 
 export function Collectable<T extends TObject>(
 	_id: CollectableID,
-	schema: T,
+	type: string,
+	base: T,
 	options: ObjectOptions = {}
 ) {
+	const schema = CloneType(base, {
+		properties: { ...base.properties, type: Type.Literal(type) }
+	})
 	return SourcedNode(_id, schema, {
 		...options,
 		[CollectableBrand]: 'Collectable'
@@ -28,10 +37,11 @@ type RecursiveCollectableID = TAnyId
 
 export function RecursiveCollectable<T extends TObject>(
 	_id: RecursiveCollectableID,
-	schema: T,
+	type: string,
+	base: T,
 	options: ObjectOptions = {}
 ) {
-	return Collectable(_id, schema, {
+	return Collectable(_id, type, base, {
 		...options,
 		[CollectableBrand]: 'Collectable',
 		[RecursiveCollectableBrand]: 'RecursiveCollectable'

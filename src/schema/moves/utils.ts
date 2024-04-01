@@ -64,7 +64,7 @@ export function Move<
 			outcomes: Outcomes
 		}
 	>
-	return Generic.Collectable(Type.Ref(Id.MoveId), base, options)
+	return Generic.Collectable(Type.Ref(Id.MoveId), 'move', base, options)
 }
 export type TMove<
 	RollType extends MoveRollType,
