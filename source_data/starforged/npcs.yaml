@@ -5,6 +5,7 @@ type: package
 npcs:
   sample_npcs:
     name: Sample NPCs
+    type: npc_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -15,6 +16,7 @@ npcs:
           - name: Shawn Tomkin
     contents:
       chiton:
+        type: npc
         name: Chiton
         nature: Monster
         summary: Insectoid horde
@@ -53,6 +55,7 @@ npcs:
         quest_starter: |-
           At a remote facility, researchers are studying a newly-discovered chiton queen larva. The immature queen is held in frozen stasis, but something might have gone wrong. The return of a transport ship ferrying supplies to the researchers is weeks overdue. What is your connection to the facility or to the faction overseeing it?
       colossus:
+        type: npc
         name: Colossus
         nature: Machine
         summary: Ancient mechanical giants
@@ -87,6 +90,7 @@ npcs:
         quest_starter: |-
           A faction discovered a heavily damaged but dormant colossus, gaining access for the first time to the internal systems of one of these great machines. The researches believe it can be controlled by a human through a neural connection, and are studying the means of awakening it with this new programming. What purpose do they have for it? Are you sworn to aid them or stop them?
       crystallid:
+        type: npc
         name: Crystallid
         nature: Creature
         summary: Crystalline entities
@@ -119,6 +123,7 @@ npcs:
         quest_starter: |-
           A prospector returns from a planetside expedition with tales of an immense crystallid hoard of uncountable riches. But this treasure is guarded by the largest, most aggressive crystallid they've ever encountered, and they barely escaped with their life. They seek your help in securing the nest in exchange for a share of the profits. What drives you to accept this perilous bargain?
       drift_pirate:
+        type: npc
         name: Drift pirate
         nature: Human
         summary: Spacegoing marauders
@@ -159,6 +164,7 @@ npcs:
         quest_starter: |-
           A drift pirate captain seizes an experimental new e-drive, and uses it to stalk ships with deadly efficiency. Who created this new drive, and what are they willing to pay to get it back?
       ember_wisp:
+        type: npc
         name: Ember wisp
         nature: Creature
         summary: Energy-based lifeforms
@@ -190,6 +196,7 @@ npcs:
         quest_starter: |-
           Along a remote passage, a swarm of ember wisps left a cargo ship stranded and without power. What crucial and time-sensitive cargo does this ship carry? Who races against you to secure it?
       firestorm_trooper:
+        type: npc
         name: Firestorm trooper
         nature: Human
         summary: Fanatical raiders
@@ -229,6 +236,7 @@ npcs:
         quest_starter: |-
           Despite conflicting creeds, several firestorm clans unite beneath the banner of Torren the Purifier to invade the Terminus. Their next target is a world at the nexus of trade lanes. What is this planet, and why is it important to you?
       flarewing_shark:
+        type: npc
         name: Flarewing shark
         nature: Creature
         summary: Deep sea predators
@@ -263,6 +271,7 @@ npcs:
         quest_starter: |-
           In the twilight zone of a tidally-locked watery planet, an underwater mining settlement is the target of an ancient flarewing. In the murk of those dark waters, the beast attacks dive teams, carrier subs, dredging equipment—even undersea platforms. Operations are now stalled, cutting off a key source of unprocessed fuel in the sector. Meanwhile, the settlement's leader, grief-stricken by the loss of someone dear to them, vows to destroy the flarewing. What is your relation to this person? Do you support them in their obsession, or is there a way for the settlers to coexist with this creature?
       ghost:
+        type: npc
         name: Ghost
         _source:
           <<: *Source
@@ -298,6 +307,7 @@ npcs:
         quest_starter: |-
           A ghost haunts your starship. What is the nature of this spirit, and what quest must you undertake to put it to rest?
       gnawling:
+        type: npc
         name: Gnawling
         nature: Creature
         _source:
@@ -331,6 +341,7 @@ npcs:
         quest_starter: |-
           An orbital settlement is overrun by gnawlings and abandoned. What precious thing still lies within? Why are you sworn to retrieve it from this infested place?
       howlcat:
+        type: npc
         name: Howlcat
         _source:
           <<: *Source
@@ -366,6 +377,7 @@ npcs:
         quest_starter: |-
           A long-abandoned settlement, now reclaimed by the jungle, holds something of value or importance. But there is no clear landing site near the settlement, and the surrounding lands are home to a pack of fearsome howlcats. What is it you seek in that forsaken place, and how will you avoid becoming a howlcat's next meal?
       iron_auger:
+        type: npc
         name: Iron auger
         nature: Machine
         summary: Self-replicating harvesters
@@ -406,6 +418,7 @@ npcs:
         quest_starter: |-
           As a massive auger approaches an orbital station under your protection, you face a difficult choice. Do you find a way to evacuate and save who you can, or attempt to bring down the mighty machine?
       puppet_vine:
+        type: npc
         name: Puppet vine
         _source:
           <<: *Source
@@ -437,6 +450,7 @@ npcs:
         quest_starter: |-
           At a remote settlement, a settler is attacked by a puppet vine and infected. The outpost's fast-thinking healer puts the victim in stasis, stopping—for now—the sprouting and spread of the vines. But time is of the essence. They need someone to transport the stasis pod and its unfortunate occupant to a distant facility for treatment, and your ship is the only one currently planetside. What do they offer to gain your help in this risky mission?
       pyralis:
+        type: npc
         name: Pyralis
         nature: Creature
         summary: Fireborne gliders
@@ -473,6 +487,7 @@ npcs:
         quest_starter: |-
           A critically damaged spaceship is stranded amid the hellscape of a furnace world. You are sworn to rescue the crew of this ill-fated vessel, but the frequent ash storms prevent vehicular operations—you'll need to make the perilous journey on foot. To make matters worse, the wreck is within the territory of a particularly aggressive and powerful pyralis. How will you survive the journey across its hunting grounds?
       risen:
+        type: npc
         name: Risen
         nature: Horror
         summary: Shambling undead
@@ -507,6 +522,7 @@ npcs:
         quest_starter: |-
           Hundreds died in an industrial accident within an orbital facility, and are said to now be twice-born as risen. Triggering a reactor meltdown will obliterate this place and put its undead inhabitants to rest. Why are you sworn to see it done?
       scrap_bandit:
+        type: npc
         name: Scrap bandit
         nature: Human
         summary: Wandering raiders
@@ -543,6 +559,7 @@ npcs:
         quest_starter: |-
           In a far-flung sector, a titanic creature threatens a key planetside settlement. The only possible defense against this beast is the mighty war rig belonging to a clan of scrap bandits. But can you convince the bandits to risk their rig to protect the settlers? If so, what will they demand in return?
       servitor:
+        type: npc
         name: Servitor
         nature: Machine
         _source:
@@ -576,6 +593,7 @@ npcs:
         quest_starter: |-
           An awakened bot, recently struck out on their own, is looking for work on a starship venturing out into the Expanse. They say they are in search of a relic of the past—something that might shed some light on their own creation. What is it they seek, and why do you vow to help them?
       sicklehorn:
+        type: npc
         name: Sicklehorn
         nature: Creature
         summary: Domesticated herd animal
@@ -615,6 +633,7 @@ npcs:
         quest_starter: |-
           A settlement's prized sicklehorn matriarch has been stolen, the herd is in disarray, and the settlers won't survive another year without her return. The theft is blamed on a rival settlement on the same planet, but raiders also plague this sector. How are you involved?
       sky_roost:
+        type: npc
         name: Sky roost
         _source:
           <<: *Source
@@ -650,6 +669,7 @@ npcs:
         quest_starter: |-
           Sky roosts are dying. A disease is spreading among them, threatening the delicate ecosystem of their world. What human operations do you suspect lie at the heart of this sickness?
       technoplasm:
+        type: npc
         name: Technoplasm
         _source:
           <<: *Source
@@ -688,6 +708,7 @@ npcs:
         quest_starter: |-
           An outcast cult believes technoplasm is the ultimate synthesis of machine and flesh. They are plotting to unleash it upon populated space. What decisive first strike have they set in motion, and how do you learn of their scheme?
       void_shepherd:
+        type: npc
         name: Void shepherd
         _source:
           <<: *Source
@@ -722,6 +743,7 @@ npcs:
         quest_starter: |-
           Several pods of void shepherds shelter within the debris of a shattered world. An expansive mining operation is harvesting the ore-rich rocks of the system, and the shepherds dance playfully in the wake of prospector and transport ships. But an aberrant, predatory creature has made this place its hunting ground, posing a threat to both the shepherd pods and the miners. What is the nature of this creature, and why are you sworn to end its attacks?
       warden:
+        type: npc
         name: Warden
         _source:
           <<: *Source
@@ -760,6 +782,7 @@ npcs:
         quest_starter: |-
           There are rumors of an enclave well beyond the inhabited sectors, a place where wardens can live in peace. An emerging threat against the people of the Forge causes you to seek out the aid of these living relics. What do you offer in return for their help?
       water_witcher:
+        type: npc
         name: Water witcher
         _source:
           <<: *Source
@@ -795,6 +818,7 @@ npcs:
         quest_starter: |-
           A dowser has gone missing in the vast wastes of a newly-settled desert world, leaving behind their distraught waterwitcher. You are sworn to find the wayward dowser, and must serve as an unlikely keeper for their furry companion. What is your relationship to the dowser?
       worldbreaker:
+        type: npc
         name: Worldbreaker
         _source:
           <<: *Source
