@@ -1,8 +1,10 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 assets:
   deed:
     name: Deed Assets
+    type: asset_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -13,6 +15,7 @@ assets:
     contents:
       cohort:
         _source: *Source
+        type: asset
         name: Cohort
         category: Deed
         requirement: Once you [Make a Connection](id:sundered_isles/moves/connection/make_a_connection) and accept them as a crewmate...
@@ -26,6 +29,7 @@ assets:
               When you [Secure an Advantage](id:sundered_isles/moves/adventure/secure_an_advantage) by gathering your specialists to strategize or problem-solve, you may reroll one die for each participating specialist.
       damned:
         _source: *Source
+        type: asset
         name: Damned
         requirement: Once you mark tormented or doomed...
         category: Deed
@@ -44,6 +48,7 @@ assets:
       fleet_commander:
         _source: *Source
         name: Fleet Commander
+        type: asset
         requirement: Once you fill 12 legacy track boxes and take command of a mighty fleet...
         category: Deed
         abilities:
@@ -73,6 +78,7 @@ assets:
       undead:
         _source: *Source
         name: Undead
+        type: asset
         category: Deed
         requirement: Once you die or are cursed with undeath...
         count_as_impact: true

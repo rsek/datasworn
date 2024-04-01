@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   vaults:
     name: Precursor Vaults
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -18,6 +20,7 @@ oracles:
       location:
         name: Location
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 360
@@ -37,6 +40,7 @@ oracles:
       scale:
         name: Scale
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 360
@@ -63,6 +67,7 @@ oracles:
       form:
         name: Form
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 360
@@ -96,6 +101,7 @@ oracles:
       shape:
         name: Shape
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 361
@@ -172,6 +178,7 @@ oracles:
       material:
         name: Material
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 361
@@ -225,6 +232,7 @@ oracles:
       outer_first_look:
         name: Outer First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 361
@@ -366,6 +374,7 @@ oracles:
       interior:
         name: Interior
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 364
@@ -374,6 +383,7 @@ oracles:
         contents:
           first_look:
             oracle_type: table_text
+            type: oracle_rollable
             name: Inner First Look
             _source: *CollectionSource
             # usage:
@@ -484,6 +494,7 @@ oracles:
                 <<: *DescriptorFocus
           feature:
             oracle_type: table_text
+            type: oracle_rollable
             name: Interior Feature
             _source:
               <<: *Source
@@ -604,6 +615,7 @@ oracles:
           peril:
             name: Interior Peril
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
               page: 367
@@ -689,6 +701,7 @@ oracles:
           opportunity:
             name: Interior Opportunity
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
               page: 367
@@ -732,6 +745,7 @@ oracles:
       sanctum:
         name: Sanctum
         oracle_type: tables
+        type: oracle_collection
         summary: As you delve deeper into a vault, the corruption and strangeness of the place takes hold. Use the Sanctum Feature table to represent the aberrant nature of a vault’s depths.
         icon: icons/vaults/sanctum.svg
         _source:
@@ -743,6 +757,7 @@ oracles:
               <<: *Source
               page: 365
             oracle_type: table_text
+            type: oracle_rollable
             name: Vault Purpose
             # content:
             #   part_of_speech: [fragment]
@@ -845,6 +860,7 @@ oracles:
               page: 368
             name: Sanctum Feature
             oracle_type: table_text
+            type: oracle_rollable
             # usage:
             #   repeatable: true
             # content:
@@ -964,6 +980,7 @@ oracles:
               page: 369
             name: Sanctum Peril
             oracle_type: table_text
+            type: oracle_rollable
             # usage:
             #   repeatable: true
             # content:
@@ -1047,6 +1064,7 @@ oracles:
             #   part_of_speech: [fragment]
             #   tags: [opportunity]
             oracle_type: table_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 10

@@ -1,9 +1,11 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
   feature:
     name: Feature
+    type: oracle_collection
     _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
@@ -22,6 +24,7 @@ oracles:
       aspect:
         name: Aspect
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Feature: Aspect'
         suggestions:
           oracles:
@@ -239,6 +242,7 @@ oracles:
       focus:
         name: Focus
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Feature: Focus'
         suggestions:
           oracles:

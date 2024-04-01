@@ -1,9 +1,11 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
   moves:
     name: Moves
+    type: oracle_collection
     enhances: classic/collections/oracles/moves
     _source:
       <<: &Source
@@ -17,6 +19,7 @@ oracles:
     collections:
       delve_the_depths:
         oracle_type: table_shared_text
+        type: oracle_collection
         # rendering:
         #   columns:
         #     - content_type: roll
@@ -39,6 +42,7 @@ oracles:
             <<: &DelveTheDepths
               # source: *CollectionSource
               oracle_type: column_text
+              type: oracle_rollable
             rows:
               - min: 1
                 max: 45
@@ -97,6 +101,7 @@ oracles:
       find_an_opportunity:
         name: Find an Opportunity
         oracle_type: table_text
+        type: oracle_rollable
         # Move: delve/moves/delve/find_an_opportunity
         _source:
           <<: *Source
@@ -135,6 +140,7 @@ oracles:
       reveal_a_danger:
         name: Reveal a Danger
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 34
@@ -183,6 +189,7 @@ oracles:
         name: Reveal a Danger (alternate version)
         replaces: delve/oracles/moves/reveal_a_danger
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 68
@@ -224,6 +231,7 @@ oracles:
       advance_a_threat:
         name: Advance a Threat
         oracle_type: table_text
+        type: oracle_rollable
         match:
           text: |-
             On a match, this development also exposes a surprising aspect of the threat’s plan or nature.

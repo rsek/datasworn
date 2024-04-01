@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   settlements:
     name: Settlements
+    type: oracle_collection
     _source: &CollectionSource
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -22,6 +24,7 @@ oracles:
         #     attributes:
         #       region: null
         oracle_type: table_shared_text
+        type: oracle_collection
         column_labels:
           text: Number
         contents:
@@ -33,6 +36,7 @@ oracles:
                   region: terminus
             # source: *CollectionSource
             oracle_type: column_text
+            type: oracle_rollable
             # rendering: &Pop.rendering
             # usage:
             #   requires:
@@ -61,6 +65,7 @@ oracles:
                 text: Tens of thousands
           outlands:
             oracle_type: column_text
+            type: oracle_rollable
             <<: &OracleTable.Outlands
               name: Outlands
               tags:
@@ -90,6 +95,7 @@ oracles:
                 <<: *Pop.4
           expanse:
             oracle_type: column_text
+            type: oracle_rollable
             <<: &OracleTable.Expanse
               name: Expanse
               tags:
@@ -121,6 +127,7 @@ oracles:
       location:
         name: Location
         oracle_type: table_text
+        type: oracle_rollable
         # _templateOracleTable: *template.info:Generic.Location
         _source:
           <<: *Source
@@ -143,6 +150,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 323
@@ -228,6 +236,7 @@ oracles:
       initial_contact:
         name: Initial Contact
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 323
@@ -273,6 +282,7 @@ oracles:
       authority:
         name: Authority
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 323
@@ -312,6 +322,7 @@ oracles:
       projects:
         name: Settlement Projects
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 324
@@ -468,6 +479,7 @@ oracles:
       trouble:
         name: Settlement Trouble
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 324
@@ -605,6 +617,7 @@ oracles:
       name:
         name: Settlement Name
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 325
@@ -1031,6 +1044,7 @@ oracles:
         # not technically a table, but might be useful to randomize for settlement names
         dice: 1d10
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 325

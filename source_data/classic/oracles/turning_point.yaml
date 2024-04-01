@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 oracles:
   turning_point:
     name: Turning Point Oracles
+    type: oracle_collection
     _source:
       <<: &Source
         authors:
@@ -16,6 +18,7 @@ oracles:
       combat_action:
         name: Combat Action
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Oracle 16: Combat Action'
         summary: Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe does next, particularly when they have initiative, roll on this table and interpret the result as appropriate to the situation.
         _source:
@@ -79,6 +82,7 @@ oracles:
       mystic_backlash:
         name: Mystic Backlash
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Oracle 17: Mystic Backlash'
         _source:
           <<: *Source
@@ -169,6 +173,7 @@ oracles:
         canonical_name: 'Oracle 18: Major Plot Twist'
         name: Major Plot Twist
         oracle_type: table_text
+        type: oracle_rollable
         summary: Use this oracle to introduce a narrative surprise or revelation. Most of these results have a negative implication, and can be used to resolve a match at a crucial moment in your story. In particular, this is an effective tool to leverage when you make a move with matched 10’s on the challenge dice.
         _source:
           <<: *Source
@@ -244,6 +249,7 @@ oracles:
         canonical_name: 'Oracle 19: Challenge Rank'
         name: Challenge Rank
         oracle_type: table_text
+        type: oracle_rollable
         summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
         _source: &CollectionSource
           <<: *Source

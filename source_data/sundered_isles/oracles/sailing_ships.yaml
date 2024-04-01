@@ -1,8 +1,10 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   sailing_ships:
     name: Sailing Ships
+    type: oracle_collection
     _source:
       <<: &Source
         title: Sundered Isles
@@ -19,6 +21,7 @@ oracles:
         summary: Use this table to generate the scale of a ship sighting, ranging from a single small ship to a massive armada.
         description: The ship challenge ranks are a starting place. Adjust for the capability of the forces you command and the nature of your objectives. Also, keep in mind that the rank of a ship is relative to other ship-scale vehicles, creatures, or powers. See page 54 for tips on handing naval encounters.
         oracle_type: table_text2
+        type: oracle_rollable
         rows:
           - min: 1
             max: 30
@@ -67,6 +70,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -187,6 +191,7 @@ oracles:
       cursed_first_look:
         name: Cursed First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -289,6 +294,7 @@ oracles:
       symbol:
         name: Symbol
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -439,6 +445,7 @@ oracles:
       cursed_symbol:
         name: Cursed Symbol
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -481,6 +488,7 @@ oracles:
       cursed_mission:
         name: Cursed Ship Mission
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           # TODO: additive curse
@@ -513,6 +521,7 @@ oracles:
       revaled_aspects:
         name: Revaled Aspects
         oracle_type: table_text
+        type: oracle_rollable
         summary: When upon a ship other than your own—visiting,to reveal new details. exploring, or boarding—use this table.
         _source:
           <<: *Source
@@ -634,6 +643,7 @@ oracles:
       cursed_aspects:
         name: Cursed Aspects
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -718,6 +728,7 @@ oracles:
       cargo:
         name: Cargo
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: Use this table when surveying a ship’s hold or if coming upon lost or abandoned cargo. Roll or choose a number of items as appropriate to the nature of the find. For example, once for the hold of a typical warship, or up to four times for a fully loaded tradeship. Ships also typically carry basic munitions and provisions for the crew, but this table reveals the details of cargo such as trade goods and plunder.
@@ -863,6 +874,7 @@ oracles:
       cursed_cargo:
         name: Cursed Cargo
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -929,12 +941,14 @@ oracles:
       position:
         name: Position
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           range:
             name: Range
             oracle_type: table_text2
+            type: oracle_rollable
             _source:
               <<: *Source
             column_labels:
@@ -961,6 +975,7 @@ oracles:
           status:
             name: Status
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -996,6 +1011,7 @@ oracles:
         _source:
           <<: *Source
         oracle_type: table_shared_text
+        type: oracle_collection
         contents:
           myriads:
             name: Myriads
@@ -1003,6 +1019,7 @@ oracles:
             #   <<: *Source
             summary: Central Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - &ControllingFaction.0
                 min: 1
@@ -1022,6 +1039,7 @@ oracles:
             #   <<: *Source
             summary: Outer Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1038,6 +1056,7 @@ oracles:
             #   <<: *Source
             summary: Remote Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - <<: *ControllingFaction.0
                 min: 1
@@ -1054,6 +1073,7 @@ oracles:
           <<: *Source
         summary: A ship’s faction can reveal its role, such as warship, tradeship, or whaler. If the ship is independent, the faction unknown, or if you simply want more detail, use this table. Alernatively, use the captain’s goal (page 179) to set the ship’s purpose.
         oracle_type: table_shared_text
+        type: oracle_collection
         # rendering:
         #   columns:
         #     - label: Small
@@ -1088,6 +1108,7 @@ oracles:
             # source:
             #   <<: *Source
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - &ShipMission.0
                 text: Blockade a location
@@ -1171,6 +1192,7 @@ oracles:
             # source:
             #   <<: *Source
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - *ShipMission.0
               - *ShipMission.1
@@ -1226,6 +1248,7 @@ oracles:
             # source:
             #   <<: *Source
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - <<: *ShipMission.0
                 min: 1
@@ -1287,6 +1310,7 @@ oracles:
           huge:
             name: Huge
             oracle_type: column_text
+            type: oracle_rollable
             # source:
             #   <<: *Source
             rows:
@@ -1350,6 +1374,7 @@ oracles:
           flotilla:
             name: Flotilla
             oracle_type: column_text
+            type: oracle_rollable
             # source:
             #   <<: *Source
             rows:
@@ -1413,6 +1438,7 @@ oracles:
           fleet:
             name: Fleet
             oracle_type: column_text
+            type: oracle_rollable
             # source:
             #   <<: *Source
             rows:
@@ -1470,6 +1496,7 @@ oracles:
           armada:
             name: Armada
             oracle_type: column_text
+            type: oracle_rollable
             # source:
             #   <<: *Source
             rows:

@@ -1,8 +1,10 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   campaign_launch:
     name: Campaign Launch Oracles
+    type: oracle_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -14,11 +16,13 @@ oracles:
       character_creation:
         name: Character Creation Oracles
         oracle_type: tables
+        type: oracle_collection
         _source: *Source
         contents:
           your_backstory:
             name: Your Backstory
             oracle_type: table_text
+            type: oracle_rollable
             summary: What is your backstory? What events or compelling need put you on a path of adventure? If you’re not sure, roll or chose on this table for inspiration.
             recommended_rolls:
               min: 1
@@ -113,6 +117,7 @@ oracles:
           your_backstory_cursed:
             name: Your Cursed Backstory
             oracle_type: table_text
+            type: oracle_rollable
             summary: Cursed backstories involve uncanny forces, monstrous foes, and strange technologies. If this isn’t appropriate for your setting, don’t roll the cursed die. If you want to emphasize those aspects of the world, feel free to roll directly on this table.
             _source:
               <<: *Source
@@ -166,6 +171,7 @@ oracles:
           your_persona:
             name: Your Persona
             oracle_type: table_text2
+            type: oracle_rollable
             # TODO: figure out how to convey the special icons
             _source:
               <<: *Source
@@ -335,12 +341,14 @@ oracles:
       ship_creation:
         name: Ship Creation
         oracle_type: tables
+        type: oracle_collection
         _source: *Source
         contents:
           history:
             _source: *Source
             name: Ship History
             oracle_type: table_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 5
@@ -405,6 +413,7 @@ oracles:
           history_cursed:
             name: Cursed Ship
             oracle_type: table_text
+            type: oracle_rollable
             _source: *Source
             rows:
               - min: 1
@@ -440,6 +449,7 @@ oracles:
           crew:
             name: Crew Characteristics
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -503,6 +513,7 @@ oracles:
           crew_cursed:
             name: Cursed Crew
             oracle_type: table_text
+            type: oracle_rollable
             # TODO: additive curse
             _source:
               <<: *Source

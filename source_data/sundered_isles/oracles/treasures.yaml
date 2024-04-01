@@ -1,8 +1,10 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   treasures:
     name: Treasures
+    type: oracle_collection
     _source:
       <<: &Source
         title: Sundered Isles
@@ -15,6 +17,7 @@ oracles:
       location:
         name: Location
         oracle_type: table_text
+        type: oracle_rollable
         summary: If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.
         _source:
           <<: *Source
@@ -40,6 +43,7 @@ oracles:
       cursed_location:
         name: Cursed Location
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -76,6 +80,7 @@ oracles:
       repository:
         name: Repository
         oracle_type: table_text2
+        type: oracle_rollable
         _source:
           <<: *Source
         # rendering:
@@ -111,6 +116,7 @@ oracles:
       aspects:
         name: Aspects
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: Use this table to reveal characteristics of a treasure or its surroundings. Since the results often introduce twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.
@@ -166,6 +172,7 @@ oracles:
       cursed_aspects:
         name: Cursed Aspects
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -232,6 +239,7 @@ oracles:
       precious_items:
         name: Precious Items
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: Roll or select a number of items on this table as set by the treasure’s Value (page 185). Each result represents a quantity of that item, such as a lockbox filled with pearls, a barrel of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the Tokens table (below).
@@ -317,6 +325,7 @@ oracles:
       tokens:
         name: Tokens
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -623,6 +632,7 @@ oracles:
       cursed_tokens:
         name: Cursed tokens
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -744,6 +754,7 @@ oracles:
           <<: *Source
         summary: A trove or hoard contain a vast array of riches. Collecting and transporting a trove requires great effort, while the logistics of gathering a hoard is an inconceivable task.
         oracle_type: table_shared_text2
+        type: oracle_collection
         # rendering:
         #   columns:
         #     - table_key: small
@@ -761,6 +772,7 @@ oracles:
           small:
             name: Small
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - &Value.0
                 min: 1
@@ -782,6 +794,7 @@ oracles:
           medium:
             name: Medium
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - <<: *Value.0
                 min: 1
@@ -794,6 +807,7 @@ oracles:
           large:
             name: Large
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
             - <<: *Value.0
               min: 1
@@ -808,6 +822,7 @@ oracles:
           vast:
             name: Vast
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - <<: *Value.0
                 min: 1

@@ -1,5 +1,6 @@
 _id: starforged
 package_type: ruleset
+type: package
 assets:
   support_vehicle:
     _source:
@@ -76,6 +77,7 @@ assets:
               - enhances:
                   - starforged/moves/suffer/withstand_damage
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -97,6 +99,7 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: On your hoverbike
@@ -142,6 +145,7 @@ assets:
               - enhances:
                   - starforged/moves/exploration/finish_an_expedition
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -161,6 +165,7 @@ assets:
                   - 'starforged/moves/*/face_danger'
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: By taking a hit or crashing through an obstacle
@@ -200,6 +205,7 @@ assets:
                   - starforged/moves/combat/gain_ground
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: By maneuvering your pod through a hazardous or obstructed area
@@ -270,6 +276,7 @@ assets:
                   - starforged/moves/exploration/undertake_an_expedition
                   - starforged/moves/exploration/set_a_course
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Rely on the skiff's simple durability
@@ -286,6 +293,7 @@ assets:
                   - starforged/moves/combat/strike
                   - starforged/moves/combat/clash
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: By firing the skiff's cannon
@@ -320,6 +328,7 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: In your snub fighter

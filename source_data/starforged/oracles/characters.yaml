@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   characters:
     oracle_type: tables
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -20,6 +22,7 @@ oracles:
       name:
         name: Character Name
         oracle_type: table_shared_rolls
+        type: oracle_collection
         _source:
           <<: *Source
           page: 333
@@ -37,6 +40,7 @@ oracles:
                 - starforged/oracles/characters/name/callsign
                 - starforged/oracles/characters/name/family_name
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 1
@@ -449,6 +453,7 @@ oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/family_name
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 1
@@ -859,6 +864,7 @@ oracles:
                 - starforged/oracles/characters/name/given_name
                 - starforged/oracles/characters/name/callsign
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 1
@@ -1264,6 +1270,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 330
@@ -1436,6 +1443,7 @@ oracles:
       initial_disposition:
         name: Initial Disposition
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 330
@@ -1493,6 +1501,7 @@ oracles:
       role:
         name: Character Role
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 331
@@ -1702,6 +1711,7 @@ oracles:
       goal:
         name: Character Goal
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 331
@@ -1859,6 +1869,7 @@ oracles:
       revealed_aspect:
         name: Revealed Character Aspect
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 332

@@ -1,9 +1,11 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   campaign_launch:
     name: Campaign Launch Oracles
     oracle_type: tables
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -22,6 +24,7 @@ oracles:
         summary: |-
           If you want some direction for your starting paths, roll or pick from the table below and take the two paths associated with your selected background.
         oracle_type: table_text2
+        type: oracle_rollable
         column_labels:
           roll: Roll
           text: Background
@@ -213,6 +216,7 @@ oracles:
       backstory_prompts:
         name: Backstory Prompts
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 106
@@ -270,6 +274,7 @@ oracles:
       starship_history:
         name: Starship History
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 108
@@ -318,6 +323,7 @@ oracles:
       starship_quirks:
         name: Starship Quirks
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 109
@@ -394,6 +400,7 @@ oracles:
       sector_trouble:
         name: Sector Trouble
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 126
@@ -480,6 +487,7 @@ oracles:
       inciting_incident:
         name: Inciting Incident
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 130

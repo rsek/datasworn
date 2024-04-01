@@ -1,5 +1,6 @@
 _id: starforged
 package_type: ruleset
+type: package
 <<: &Source
   authors:
     - name: Shawn Tomkin

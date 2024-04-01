@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   creatures:
     name: Creatures
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -20,6 +22,7 @@ oracles:
         # usage:
         #   initial: true
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 336
@@ -72,6 +75,7 @@ oracles:
       scale:
         name: Scale
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 336
@@ -121,6 +125,7 @@ oracles:
       ultra_scale:
         name: Ultra-scale
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 336
@@ -145,6 +150,7 @@ oracles:
       first_look:
         name: Creature First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 338
@@ -312,6 +318,7 @@ oracles:
       encountered_behavior:
         name: Encountered Behavior
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 338
@@ -432,6 +439,7 @@ oracles:
       revealed_aspect:
         name: Revealed Creature Aspect
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 339
@@ -600,6 +608,7 @@ oracles:
       basic_form:
         name: Creature Basic Form
         oracle_type: table_shared_text
+        type: oracle_collection
         _source:
           <<: *Source
           page: 337
@@ -618,6 +627,7 @@ oracles:
             icon: *Space.icon
             color: '#131A1C'
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             # requires:
             #   attributes:
@@ -719,6 +729,7 @@ oracles:
             name: Interior
             icon: *Interior.icon
             oracle_type: column_text
+            type: oracle_rollable
             color: '#80868E'
             # usage:
             #   requires:
@@ -782,6 +793,7 @@ oracles:
             color: '#CA181A'
             icon: *Land.icon
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires:
             #     attributes:
@@ -842,6 +854,7 @@ oracles:
           liquid:
             name: Liquid
             oracle_type: column_text
+            type: oracle_rollable
             color: '#0079BB'
             icon: *Liquid.icon
             # usage:
@@ -904,6 +917,7 @@ oracles:
           air:
             name: Air
             oracle_type: column_text
+            type: oracle_rollable
             color: '#8D1D82'
             icon: *Air.icon
             # usage:

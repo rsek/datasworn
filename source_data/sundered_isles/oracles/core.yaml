@@ -1,8 +1,10 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   core:
     oracle_type: tables
+    type: oracle_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -15,6 +17,7 @@ oracles:
       action:
         _source: *Source
         oracle_type: table_text
+        type: oracle_rollable
         name: Action
         rows:
           - min: 1
@@ -320,6 +323,7 @@ oracles:
       theme:
         _source: *Source
         oracle_type: table_text
+        type: oracle_rollable
         name: Theme
         rows:
           - min: 1
@@ -625,6 +629,7 @@ oracles:
       descriptor:
         name: Descriptor
         oracle_type: table_text
+        type: oracle_rollable
         _source: *Source
         rows:
           - min: 1
@@ -930,6 +935,7 @@ oracles:
       focus:
         name: Focus
         oracle_type: table_text
+        type: oracle_rollable
         _source: *Source
         rows:
           - min: 1

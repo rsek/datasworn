@@ -1,9 +1,11 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   core:
     name: Core Oracles
     oracle_type: tables
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -17,6 +19,7 @@ oracles:
       action:
         name: Action
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 296
@@ -431,6 +434,7 @@ oracles:
       theme:
         name: Theme
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 297
@@ -846,6 +850,7 @@ oracles:
       descriptor:
         name: Descriptor
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 298
@@ -1260,6 +1265,7 @@ oracles:
       focus:
         name: Focus
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 299

@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 moves:
   session:
     name: Session Moves
+    type: move_category
     color: '#3F8C8A'
     _source:
       <<: &Source
@@ -23,6 +25,7 @@ moves:
       begin_a_session:
         name: Begin a Session
         roll_type: no_roll
+        type: move
         trigger:
           text: When you begin a significant session or chapter of play...
         oracles:
@@ -43,6 +46,7 @@ moves:
       set_a_flag:
         name: Set a Flag
         roll_type: no_roll
+        type: move
         trigger:
           text: When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching...
         text: |-
@@ -55,6 +59,7 @@ moves:
       change_your_fate:
         name: Change Your Fate
         roll_type: no_roll
+        type: move
         trigger:
           text: When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment...
         text: |-
@@ -71,6 +76,7 @@ moves:
       take_a_break:
         name: Take a Break
         roll_type: no_roll
+        type: move
         trigger:
           text: When you resolve a progress move or complete an intense scenario...
         text: |-
@@ -84,6 +90,7 @@ moves:
       end_a_session:
         name: End a Session
         roll_type: no_roll
+        type: move
         trigger:
           text: When you end a significant session or chapter of play...
         text: |-
@@ -98,6 +105,7 @@ moves:
           page: 145
   adventure:
     name: Adventure Moves
+    type: move_category
     color: &adventure.color '#206087'
     _source:
       <<: *Source
@@ -110,6 +118,7 @@ moves:
       face_danger:
         name: Face Danger
         roll_type: action_roll
+        type: move
         trigger:
           text: When you attempt something risky or react to an imminent threat...
           conditions:
@@ -165,6 +174,7 @@ moves:
       secure_an_advantage:
         name: Secure an Advantage
         roll_type: action_roll
+        type: move
         trigger:
           text: When you assess a situation, make preparations, or attempt to gain leverage...
           conditions:
@@ -227,6 +237,7 @@ moves:
         oracles: # TODO: figure out whether this is best left as an Oracle or a Suggestions item. it's called out in the text of the table, but not the move. still, it seems sensible.
           - starforged/oracles/misc/story_clue
         roll_type: action_roll
+        type: move
         trigger:
           text: When you search for clues, conduct an investigation, analyze evidence, or do research...
           conditions:
@@ -255,6 +266,7 @@ moves:
       compel:
         name: Compel
         roll_type: action_roll
+        type: move
         trigger:
           text: When you try to persuade someone or make them an offer...
           conditions:
@@ -298,6 +310,7 @@ moves:
       aid_your_ally:
         name: Aid Your Ally
         roll_type: no_roll
+        type: move
         trigger:
           text: When you act in direct support of an ally...
         text: |-
@@ -310,6 +323,7 @@ moves:
       check_your_gear:
         name: Check Your Gear
         roll_type: action_roll
+        type: move
         trigger:
           text: When you check to see if you have a specific helpful item or resource...
           conditions:
@@ -344,6 +358,7 @@ moves:
           page: 153
   quest:
     name: Quest Moves
+    type: move_category
     color: '#805A90'
     summary: Make these __quest moves__ when you swear vows, make progress on your quests, and resolve vows.
     description: |-
@@ -357,6 +372,7 @@ moves:
       swear_an_iron_vow:
         name: Swear an Iron Vow
         roll_type: action_roll
+        type: move
         trigger:
           text: When you swear upon iron to complete a quest...
           conditions:
@@ -385,6 +401,7 @@ moves:
       reach_a_milestone:
         name: Reach a Milestone
         roll_type: no_roll
+        type: move
         trigger:
           text: When you make headway in your quest...
         text: |-
@@ -404,6 +421,7 @@ moves:
       fulfill_your_vow:
         name: Fulfill Your Vow
         roll_type: progress_roll
+        type: move
         tracks:
           category: Vow
         trigger:
@@ -441,6 +459,7 @@ moves:
       forsake_your_vow:
         name: Forsake Your Vow
         roll_type: no_roll
+        type: move
         trigger:
           text: When you renounce your quest, betray your promise, or the goal is lost to you...
         text: |-
@@ -459,6 +478,7 @@ moves:
           page: 160
   connection:
     name: Connection Moves
+    type: move_category
     color: '#4A5791'
     _source:
       <<: *Source
@@ -473,6 +493,7 @@ moves:
       make_a_connection:
         name: Make a Connection
         roll_type: action_roll
+        type: move
         trigger:
           text: When you search out a new relationship or give focus to an existing relationship (not an ally or companion)...
           conditions:
@@ -504,6 +525,7 @@ moves:
       develop_your_relationship:
         name: Develop Your Relationship
         roll_type: action_roll
+        type: move
         trigger:
           text: When you reinforce your relationship with a connection...
           conditions:
@@ -555,6 +577,7 @@ moves:
       test_your_relationship:
         name: Test Your Relationship
         roll_type: action_roll
+        type: move
         trigger:
           text: When your relationship with a connection is tested through conflict, betrayal, or circumstance...
           conditions:
@@ -591,6 +614,7 @@ moves:
       forge_a_bond:
         name: Forge a Bond
         roll_type: progress_roll
+        type: move
         tracks:
           category: Connection
         trigger:
@@ -631,6 +655,7 @@ moves:
           page: 166
   exploration:
     name: Exploration Moves
+    type: move_category
     color: '#427FAA'
     summary: |-
       Make __exploration moves__ as you traverse uncharted space, the surface of inhospitable planets, the depths of foreboding derelicts or enigmatic alien vaults, and other perilous sites.
@@ -645,6 +670,7 @@ moves:
       undertake_an_expedition:
         name: Undertake an Expedition
         roll_type: action_roll
+        type: move
         trigger:
           text: When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site...
           conditions:
@@ -695,6 +721,7 @@ moves:
       explore_a_waypoint:
         name: Explore a Waypoint
         roll_type: action_roll
+        type: move
         trigger:
           text: When you divert from an expedition to examine a notable location...
           conditions:
@@ -731,6 +758,7 @@ moves:
       make_a_discovery:
         name: Make a Discovery
         roll_type: no_roll
+        type: move
         trigger:
           text: When your exploration of a waypoint uncovers something wondrous...
         oracles:
@@ -745,6 +773,7 @@ moves:
       confront_chaos:
         name: Confront Chaos
         roll_type: no_roll
+        type: move
         trigger:
           text: When your exploration of a waypoint uncovers something dreadful...
         oracles:
@@ -761,6 +790,7 @@ moves:
       finish_an_expedition:
         name: Finish an Expedition
         roll_type: progress_roll
+        type: move
         tracks:
           category: Expedition
         trigger:
@@ -797,6 +827,7 @@ moves:
       set_a_course:
         name: Set a Course
         roll_type: action_roll
+        type: move
         trigger:
           text: When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site...
           conditions:
@@ -832,6 +863,7 @@ moves:
           page: 180
   combat:
     name: Combat Moves
+    type: move_category
     color: '#818992'
     _source:
       <<: *Source
@@ -846,6 +878,7 @@ moves:
       enter_the_fray:
         name: Enter the Fray
         roll_type: action_roll
+        type: move
         trigger:
           text: When you initiate combat or are forced into a fight...
           conditions:
@@ -908,6 +941,7 @@ moves:
       gain_ground:
         name: Gain Ground
         roll_type: action_roll
+        type: move
         trigger:
           text: When you are in control and take action in a fight to reinforce your position or move toward an objective...
           conditions:
@@ -975,6 +1009,7 @@ moves:
       react_under_fire:
         name: React Under Fire
         roll_type: action_roll
+        type: move
         trigger:
           text: When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle...
           conditions:
@@ -1030,6 +1065,7 @@ moves:
       strike:
         name: Strike
         roll_type: action_roll
+        type: move
         trigger:
           text: When you are in control and assault a foe at close quarters, or when you attack at a distance...
           conditions:
@@ -1064,6 +1100,7 @@ moves:
       clash:
         name: Clash
         roll_type: action_roll
+        type: move
         trigger:
           text: When you are in a bad spot and fight back against a foe at close quarters, or when you exchange fire at a distance...
           conditions:
@@ -1098,6 +1135,7 @@ moves:
       take_decisive_action:
         name: Take Decisive Action
         roll_type: progress_roll
+        type: move
         tracks:
           category: Combat
         trigger:
@@ -1135,6 +1173,7 @@ moves:
       face_defeat:
         name: Face Defeat
         roll_type: no_roll
+        type: move
         trigger:
           text: When you abandon or are deprived of an objective...
         text: |-
@@ -1147,6 +1186,7 @@ moves:
       battle:
         name: Battle
         roll_type: action_roll
+        type: move
         trigger:
           text: When you fight a battle and it happens in a blur...
           conditions:
@@ -1201,6 +1241,7 @@ moves:
           page: 197
   suffer:
     name: Suffer Moves
+    type: move_category
     color: '#883529'
     summary: |-
       When you bear the brunt of a failed action or make a concession, the suffer moves help resolve the cost.
@@ -1213,6 +1254,7 @@ moves:
       lose_momentum:
         name: Lose Momentum
         roll_type: no_roll
+        type: move
         trigger:
           text: When you are delayed or disadvantaged...
         text: |-
@@ -1228,6 +1270,7 @@ moves:
       endure_harm:
         name: Endure Harm
         roll_type: action_roll
+        type: move
         trigger:
           text: When you face physical injury, fatigue, or illness...
           conditions:
@@ -1274,6 +1317,7 @@ moves:
       endure_stress:
         name: Endure Stress
         roll_type: action_roll
+        type: move
         trigger:
           text: When you face mental strain, shock, or despair...
           conditions:
@@ -1320,6 +1364,7 @@ moves:
       companion_takes_a_hit:
         name: Companion Takes a Hit
         roll_type: action_roll
+        type: move
         trigger:
           text: When your companion faces physical hardship...
           conditions:
@@ -1355,6 +1400,7 @@ moves:
       sacrifice_resources:
         name: Sacrifice Resources
         roll_type: no_roll
+        type: move
         trigger:
           text: When you lose or consume resources...
         text: |-
@@ -1367,6 +1413,7 @@ moves:
       withstand_damage:
         name: Withstand Damage
         roll_type: action_roll
+        type: move
         trigger:
           text: When your vehicle faces a damaging situation or environment...
           conditions:
@@ -1422,6 +1469,7 @@ moves:
           page: 206
   recover:
     name: Recover Moves
+    type: move_category
     color: '#488B44'
     summary: Make these __recover moves__ when you attempt to rest, recover, or refit.
     description: |-
@@ -1435,6 +1483,7 @@ moves:
       sojourn:
         name: Sojourn
         roll_type: action_roll
+        type: move
         trigger:
           text: When you spend time recovering within a community...
           conditions:
@@ -1472,6 +1521,7 @@ moves:
       heal:
         name: Heal
         roll_type: action_roll
+        type: move
         trigger:
           text: When you receive medical care or provide treatment...
           conditions:
@@ -1526,6 +1576,7 @@ moves:
       hearten:
         name: Hearten
         roll_type: action_roll
+        type: move
         trigger:
           text: When you socialize, share intimacy, or find a moment of peace...
           conditions:
@@ -1557,6 +1608,7 @@ moves:
       resupply:
         name: Resupply
         roll_type: action_roll
+        type: move
         trigger:
           text: When you attempt to bolster your readiness...
           conditions:
@@ -1619,6 +1671,7 @@ moves:
       repair:
         name: Repair
         roll_type: action_roll
+        type: move
         trigger:
           text: When you make repairs to your vehicles, modules, mechanical companions, or other devices...
           conditions:
@@ -1704,6 +1757,7 @@ moves:
           page: 214
   threshold:
     name: Threshold Moves
+    type: move_category
     color: '#1D1D1B'
     summary: |-
       Despite your best efforts to overcome the perils of the Forge, calamitous events may bring you to the precipice of life and death, redemption and desolation, perseverance and destruction.
@@ -1718,6 +1772,7 @@ moves:
       face_death:
         name: Face Death
         roll_type: action_roll
+        type: move
         trigger:
           text: When you are brought to the brink of death with a chance for recovery or redemption...
           conditions:
@@ -1753,6 +1808,7 @@ moves:
       face_desolation:
         name: Face Desolation
         roll_type: action_roll
+        type: move
         trigger:
           text: When you are brought to the brink of desolation...
           conditions:
@@ -1788,6 +1844,7 @@ moves:
       overcome_destruction:
         name: Overcome Destruction
         roll_type: special_track
+        type: move
         trigger:
           text: When your command vehicle is destroyed or irrevocably lost...
           conditions:
@@ -1829,6 +1886,7 @@ moves:
           page: 220
   legacy:
     name: Legacy Moves
+    type: move_category
     color: '#4F5A69'
     _source:
       <<: *Source
@@ -1843,6 +1901,7 @@ moves:
       earn_experience:
         name: Earn Experience
         roll_type: no_roll
+        type: move
         trigger:
           text: When you fill a box (four ticks) on any legacy track...
         text: |-
@@ -1855,6 +1914,7 @@ moves:
       advance:
         name: Advance
         roll_type: no_roll
+        type: move
         trigger:
           text: When you develop your abilities, improve your resources, gain a reward, or boost your influence...
         text: |-
@@ -1871,6 +1931,7 @@ moves:
       continue_a_legacy:
         name: Continue a Legacy
         roll_type: special_track
+        type: move
         trigger:
           text: When you retire from your life as Ironsworn, or succumb to death or desolation...
           conditions:
@@ -1944,6 +2005,7 @@ moves:
           page: 226
   fate:
     name: Fate Moves
+    type: move_category
     color: '#8F477B'
     summary: |-
       In solo and co-op play, the __fate moves__ mediate the result of other moves or serve as inspirational prompts for your story.
@@ -1956,6 +2018,7 @@ moves:
       ask_the_oracle:
         name: Ask the Oracle
         roll_type: no_roll
+        type: move
         trigger:
           text: When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events...
         oracles:
@@ -1987,6 +2050,7 @@ moves:
       pay_the_price:
         name: Pay the Price
         roll_type: no_roll
+        type: move
         trigger:
           text: When you suffer the outcome of an action...
         oracles:
@@ -2005,6 +2069,7 @@ moves:
           page: 232
   scene_challenge:
     name: Scene Challenge Moves
+    type: move_category
     # NB: strictly speaking, these aren't a formal category of moves, but given their status as optional rules, grouping them together is practical
     color: *adventure.color # these don't have an accent color in the rules guide, but since they overlap with the Adventure category this is a reasonable stopgap.
     summary: |-
@@ -2020,6 +2085,7 @@ moves:
       begin_the_scene:
         name: Begin the Scene
         roll_type: no_roll
+        type: move
         trigger:
           text: When you face an extended or complex challenge...
         text: |-
@@ -2037,6 +2103,7 @@ moves:
         name: Face Danger (Scene Challenge)
         # variant_of: starforged/moves/adventure/face_danger
         roll_type: action_roll
+        type: move
         trigger:
           text: When you attempt something risky or react to an imminent threat within a scene challenge...
           conditions:
@@ -2093,6 +2160,7 @@ moves:
         name: Secure an Advantage (Scene Challenge)
         # variant_of: starforged/moves/adventure/secure_an_advantage
         roll_type: action_roll
+        type: move
         trigger:
           text: When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge...
           conditions:
@@ -2157,6 +2225,7 @@ moves:
       finish_the_scene:
         name: Finish the Scene
         roll_type: progress_roll
+        type: move
         tracks:
           category: Scene Challenge
         trigger:

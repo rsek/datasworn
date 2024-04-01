@@ -1,4 +1,5 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
@@ -39,6 +40,7 @@ oracles:
         name: Size
         canonical_name: 'Monstrosity: Size'
         oracle_type: table_text
+        type: oracle_rollable
         # usage:
         #   initial: true
         _source:
@@ -67,6 +69,7 @@ oracles:
         name: Primary Form
         canonical_name: 'Monstrosity: Primary Form'
         oracle_type: table_text
+        type: oracle_rollable
         summary: |-
           Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
         # usage:
@@ -160,6 +163,7 @@ oracles:
         name: Characteristics
         canonical_name: 'Monstrosity: Characteristics'
         oracle_type: table_text
+        type: oracle_rollable
         # recommended_rolls:
         #   min: 1
         #   max: 4
@@ -259,6 +263,7 @@ oracles:
         name: Abilities
         canonical_name: 'Monstrosity: Abilities'
         oracle_type: table_text
+        type: oracle_rollable
         # recommended_rolls:
         #   min: 1
         #   max: 4

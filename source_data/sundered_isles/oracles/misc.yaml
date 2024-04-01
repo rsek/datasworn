@@ -1,5 +1,6 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   misc:
     name: Miscellaneous Oracles
@@ -18,6 +19,7 @@ oracles:
         _source:
           <<: *Source
         oracle_type: table_text2
+        type: oracle_rollable
         summary: If you want to explore an interlude scene, or are prompted by another table to trigger an interlude at a waypoint, check the table below for inspiration. To learn more about character interludes, see page 64.
         column_labels:
           roll: Roll
@@ -147,6 +149,7 @@ oracles:
       prompts:
         name: Prompts
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: Use this table to choose a structured prompt from among the Core oracles (pages 112–115). Roll on each table and interpret the response as appropriate to the question and situation.

@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   misc:
     name: Miscellaneous Oracles
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -16,6 +18,7 @@ oracles:
       story_complication:
         name: Story Complication
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 380
@@ -124,6 +127,7 @@ oracles:
       story_clue:
         name: Story Clue
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 381
@@ -235,6 +239,7 @@ oracles:
       anomaly_effect:
         name: Anomaly Effect
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 382
@@ -349,6 +354,7 @@ oracles:
       combat_action:
         name: Combat Action
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 383

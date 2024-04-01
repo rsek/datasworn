@@ -1,9 +1,11 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   caves:
     name: Cave Oracles
     oracle_type: tables
+    type: oracle_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -15,6 +17,7 @@ oracles:
       type:
         name: Cave Type
         oracle_type: table_text2
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -26,6 +29,7 @@ oracles:
       threshold:
         name: Cave Threshold
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/caves/threshold_cursed
@@ -86,6 +90,7 @@ oracles:
       threshold_cursed:
         name: Cursed Cave Threshold
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version_of:
@@ -138,6 +143,7 @@ oracles:
       lurking_threat:
         name: Lurking Threat
         oracle_type: table_text3
+        type: oracle_rollable
         column_labels: &LurkingThreatColumnLabels
           roll: Roll
           text: Threat
@@ -194,6 +200,7 @@ oracles:
       lurking_threat_cursed:
         name: Cursed Lurking Threat
         oracle_type: table_text3
+        type: oracle_rollable
         column_labels: *LurkingThreatColumnLabels
         _source:
           <<: *Source
@@ -228,12 +235,14 @@ oracles:
       scale:
         name: Cave Scale
         oracle_type: table_shared_text2
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           sea_cave:
             name: Sea Cave
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 30
@@ -263,6 +272,7 @@ oracles:
           inland_cave:
             name: Inland Cave
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - <<: *Scale.0
                 min: 1
@@ -282,12 +292,14 @@ oracles:
       sea_cave:
         name: Sea Cave Details
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           features:
             name: Sea Cave Features
             oracle_type: table_text
+            type: oracle_rollable
             recommended_rolls:
               min: 1
               max: 2
@@ -505,6 +517,7 @@ oracles:
           features_cursed:
             name: Sea Cave Cursed Features
             oracle_type: table_text
+            type: oracle_rollable
             tags:
               sundered_isles:
                 cursed_version_of:
@@ -576,6 +589,7 @@ oracles:
           perils:
             name: Sea Cave Perils
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -649,6 +663,7 @@ oracles:
           opportunities:
             name: Sea Cave Opportunities
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -686,6 +701,7 @@ oracles:
           heart:
             name: Sea Cave Heart
             oracle_type: table_text
+            type: oracle_rollable
             recommended_rolls:
               min: 1
               max: 2
@@ -726,12 +742,14 @@ oracles:
       inland_cave:
         name: Inland Cave Details
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           features:
             name: Inland Cave Features
             oracle_type: table_text
+            type: oracle_rollable
             recommended_rolls:
               min: 1
               max: 2
@@ -949,6 +967,7 @@ oracles:
           features_cursed:
             name: Inland Cave Cursed Features
             oracle_type: table_text
+            type: oracle_rollable
             tags:
               sundered_isles:
                 cursed_version_of:
@@ -1020,6 +1039,7 @@ oracles:
           perils:
             name: Inland Cave Perils
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1093,6 +1113,7 @@ oracles:
           opportunities:
             name: Inland Cave Opportunities
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1130,6 +1151,7 @@ oracles:
           heart:
             name: Inland Cave Heart
             oracle_type: table_text
+            type: oracle_rollable
             recommended_rolls:
               min: 1
               max: 2

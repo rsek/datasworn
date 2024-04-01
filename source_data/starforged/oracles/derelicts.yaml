@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   derelicts:
     name: Derelicts
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -26,6 +28,7 @@ oracles:
         #   initial: true
         #   requires: *attr:Location.Any
         oracle_type: table_shared_text
+        type: oracle_collection
         contents:
           planetside:
             name: Planetside
@@ -35,6 +38,7 @@ oracles:
             # source: *CollectionSource
             icon: icon/oracles/location/planetside.svg
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires: *attr:Location.Planetside
             rows:
@@ -60,6 +64,7 @@ oracles:
             # source: *CollectionSource
             icon: icon/oracles/location/orbital.svg
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires: *attr:Location.Orbital
             rows:
@@ -83,6 +88,7 @@ oracles:
             # source: *CollectionSource
             icon: icon/oracles/location/deep_space.svg
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires: *attr:Location.DeepSpace
             rows:
@@ -105,12 +111,14 @@ oracles:
           page: 351
         summary: &Zones.Summary If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.
         oracle_type: table_shared_text
+        type: oracle_collection
         contents:
           starship:
             name: Starship
             # source: *CollectionSource
             summary: *Zones.Summary
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires:
             #     attributes:
@@ -169,6 +177,7 @@ oracles:
             # source: *CollectionSource
             summary: *Zones.Summary
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires:
             #     attributes:
@@ -200,6 +209,7 @@ oracles:
       location:
         name: Location
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 348
@@ -228,6 +238,7 @@ oracles:
       condition:
         name: Condition
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 348
@@ -257,6 +268,7 @@ oracles:
       outer_first_look:
         name: Outer First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 349
@@ -300,6 +312,7 @@ oracles:
       inner_first_look:
         name: Inner First Look
         oracle_type: table_text
+        type: oracle_rollable
         summary: Use these First Look tables for your initial survey of the derelict's interior.
         _source:
           <<: *Source

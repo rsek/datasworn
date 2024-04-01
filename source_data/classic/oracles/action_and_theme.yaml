@@ -1,5 +1,6 @@
 _id: classic
 package_type: ruleset
+type: package
 oracles:
   action_and_theme:
     _source:
@@ -12,9 +13,11 @@ oracles:
         date: 2019-06-05
       page: 174
     name: Action and Theme Oracles
+    type: oracle_collection
     contents:
       action:
         name: Action
+        type: oracle_rollable
         oracle_type: table_text
         canonical_name: 'Oracle 1: Action'
         suggestions:
@@ -430,6 +433,7 @@ oracles:
             <<: *i18n.verb
       theme:
         name: Theme
+        type: oracle_rollable
         canonical_name: 'Oracle 2: Theme'
         oracle_type: table_text
         _source:

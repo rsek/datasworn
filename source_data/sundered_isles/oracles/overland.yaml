@@ -1,7 +1,9 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   overland:
+    type: oracle_collection
     _source:
       <<: &Source
         title: Sundered Isles Book Preview
@@ -16,6 +18,7 @@ oracles:
         _source: *Source
         name: Overland Regions
         oracle_type: table_text2
+        type: oracle_rollable
         column_labels:
           roll: Roll
           text: Result
@@ -68,6 +71,7 @@ oracles:
           sundered_isles:
             cursed_version: sundered_isles/oracles/overland/details_cursed
         oracle_type: table_text
+        type: oracle_rollable
         summary: This table reveals occurrences on an overland expedition. Possible results include locations, events, sightings, and encounters.
         rows:
           - min: 1
@@ -378,6 +382,7 @@ oracles:
             cursed_version_of:
               - sundered_isles/oracles/overland/details
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 1
@@ -683,6 +688,7 @@ oracles:
         _source: *Source
         name: Overland Perils
         oracle_type: table_text
+        type: oracle_rollable
         summary: Use this table when you want inspiration for a trouble during island exploration or on an overland expedition.
         rows:
           - min: 1
@@ -801,6 +807,7 @@ oracles:
         _source: *Source
         name: Overland Opportunities
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 4
@@ -880,6 +887,7 @@ oracles:
       landmark_cursed:
         name: Cursed Landmark
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version_of:
@@ -968,11 +976,13 @@ oracles:
         _source: *Source
         name: Waypoints
         oracle_type: table_shared_text
+        type: oracle_collection
         contents:
           myriads:
             name: Myriads
             summary: Central Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               -  &Waypoints.0
                 min: 1
@@ -1033,6 +1043,7 @@ oracles:
             name: Margins
             summary: Outer Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - *Waypoints.0
               - *Waypoints.1
@@ -1054,6 +1065,7 @@ oracles:
             name: Reaches
             summary: Remote Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - *Waypoints.0
               - *Waypoints.1
@@ -1075,11 +1087,13 @@ oracles:
         _source: *Source
         name: Region Landmarks
         oracle_type: tables
+        type: oracle_collection
         contents:
           highlands:
             _source: *Source
             name: Highlands
             oracle_type: table_text
+            type: oracle_rollable
             tags: &Landmark.tags
               sundered_isles:
                 cursed_version: sundered_isles/oracles/overland/landmark_cursed
@@ -1169,6 +1183,7 @@ oracles:
             _source: *Source
             name: Jungle
             oracle_type: table_text
+            type: oracle_rollable
             summary: *jungle.summary
             tags: *Landmark.tags
             rows:
@@ -1216,6 +1231,7 @@ oracles:
             _source: *Source
             name: Lava Field
             oracle_type: table_text
+            type: oracle_rollable
             summary: *lava_field.summary
             tags: *Landmark.tags
             rows:
@@ -1263,6 +1279,7 @@ oracles:
             _source: *Source
             name: Marsh
             oracle_type: table_text
+            type: oracle_rollable
             summary: *marsh.summary
             tags: *Landmark.tags
             rows:
@@ -1310,6 +1327,7 @@ oracles:
             _source: *Source
             name: River
             oracle_type: table_text
+            type: oracle_rollable
             summary: *river.summary
             tags: *Landmark.tags
             rows:
@@ -1357,6 +1375,7 @@ oracles:
             _source: *Source
             name: Scrub
             oracle_type: table_text
+            type: oracle_rollable
             summary: *scrub.summary
             tags: *Landmark.tags
             rows:
@@ -1404,6 +1423,7 @@ oracles:
             _source: *Source
             name: Shore
             oracle_type: table_text
+            type: oracle_rollable
             summary: *shore.summary
             tags: *Landmark.tags
             rows:
@@ -1451,6 +1471,7 @@ oracles:
             _source: *Source
             name: Swamp
             oracle_type: table_text
+            type: oracle_rollable
             summary: *swamp.summary
             tags: *Landmark.tags
             rows:
@@ -1498,6 +1519,7 @@ oracles:
             _source: *Source
             name: Wastes
             oracle_type: table_text
+            type: oracle_rollable
             summary: *wastes.summary
             tags: *Landmark.tags
             rows:
@@ -1545,6 +1567,7 @@ oracles:
             _source: *Source
             name: Woodland
             oracle_type: table_text
+            type: oracle_rollable
             summary: *woodland.summary
             tags: *Landmark.tags
             rows:

@@ -1,8 +1,10 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   factions:
     oracle_type: tables
+    type: oracle_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -15,6 +17,7 @@ oracles:
       type:
         name: Faction Type
         oracle_type: table_text2
+        type: oracle_rollable
         summary: 'On a cursed result, choose one: Make the faction one of The Cursed (page 196), or keep the result and give the faction Cursed Aspects (page 196).'
         _source:
           <<: *Source
@@ -34,6 +37,7 @@ oracles:
       influence:
         name: Faction Influence
         oracle_type: table_text2
+        type: oracle_rollable
         column_labels:
           roll: Roll
           text: Result
@@ -72,6 +76,7 @@ oracles:
       relationships:
         _source: *Source
         oracle_type: table_text
+        type: oracle_rollable
         name: Faction Relationships
         summary: When you have a question about the relationship of one faction to another—or how an individual relates to a faction—use this table. The result is the commonly understood connection, but might not tell the whole story.
         rows:
@@ -109,12 +114,14 @@ oracles:
       sample_factions:
         name: Sample Factions
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           societies:
             name: Societies
             oracle_type: table_text2
+            type: oracle_rollable
             summary: *society.summary
             _source:
               <<: *Source
@@ -162,6 +169,7 @@ oracles:
           organizations:
             name: Organizations
             oracle_type: table_text2
+            type: oracle_rollable
             summary: *organization.summary
             _source:
               <<: *Source
@@ -209,6 +217,7 @@ oracles:
           empires:
             name: Empires
             oracle_type: table_text2
+            type: oracle_rollable
             summary: *empire.summary
             _source:
               <<: *Source
@@ -256,6 +265,7 @@ oracles:
           cursed:
             name: The Cursed
             oracle_type: table_text2
+            type: oracle_rollable
             summary: &cursed.summary People transformed or bound by dreadful curses
             _source:
               <<: *Source
@@ -307,12 +317,14 @@ oracles:
       society:
         name: Society
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           chronicles:
             name: Society Chronicles
             oracle_type: table_text
+            type: oracle_rollable
             summary: Use this table to generate a history of notable events that shaped a society. Create a timeline of two or three milestones, envisioning how they led the society to its current place among the isles. The most recent event can help inspire a current situation that creates troubles or opportunities—or both—for these people.
             recommended_rolls:
               min: 2
@@ -455,6 +467,7 @@ oracles:
           overseers:
             name: Society Overseers
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             summary: Use this table to reveal the most influential or powerful leaders within a society.
@@ -504,6 +517,7 @@ oracles:
           touchstones:
             name: Society Touchstones
             oracle_type: table_text
+            type: oracle_rollable
             summary: These touchstones represent common aspects of a society—not universal truths. Individual people and communities can contradict these assumptions with their own touchstones. If you encounter a far-flung community that is part of a known society, you can check this table again for unique characteristics.
             recommended_rolls:
               min: 1
@@ -706,12 +720,14 @@ oracles:
       organization:
         name: Organization
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           type:
             name: Organization Type
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -781,6 +797,7 @@ oracles:
           methods:
             name: Organization Methods
             oracle_type: table_text
+            type: oracle_rollable
             recommended_rolls:
               min: 1
               max: 2
@@ -880,6 +897,7 @@ oracles:
           secrets:
             name: Organization Secrets
             oracle_type: table_text
+            type: oracle_rollable
             recommended_rolls:
               min: 1
               max: 2
@@ -949,12 +967,14 @@ oracles:
       empire:
         name: Empire
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           leadership:
             name: Imperial Leadership
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -995,6 +1015,7 @@ oracles:
           tactics:
             name: Imperial Tactics
             oracle_type: table_text
+            type: oracle_rollable
             summary: Empires deploy any number of strategies to expand their power and influence. Use this table to reveal the most visible methods or a current focus for an empire.
             recommended_rolls:
               min: 2
@@ -1089,6 +1110,7 @@ oracles:
           vulnerabilities:
             name: Imperial vulnerabilities
             oracle_type: table_text
+            type: oracle_rollable
             recommended_rolls:
               min: 1
               max: 2
@@ -1164,12 +1186,14 @@ oracles:
       cursed:
         name: The Cursed
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           role:
             name: Cursed Faction Role
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1222,6 +1246,7 @@ oracles:
           aspects:
             name: Cursed Aspects
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             recommended_rolls:

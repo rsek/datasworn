@@ -1,4 +1,5 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
@@ -24,6 +25,7 @@ oracles:
         name: Event
         canonical_name: 'Trap: Event'
         oracle_type: table_text
+        type: oracle_rollable
         suggestions:
           oracles:
             - delve/oracles/trap/component
@@ -138,6 +140,7 @@ oracles:
         name: Component
         canonical_name: 'Trap: Component'
         oracle_type: table_text
+        type: oracle_rollable
         suggestions:
           oracles:
             - delve/oracles/trap/event

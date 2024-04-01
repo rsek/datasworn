@@ -1,10 +1,12 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
   combat_event:
     name: Combat Event
     summary: Determine the actions of a character, creature, or force during a fight.
+    type: oracle_collection
     _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
@@ -27,6 +29,7 @@ oracles:
       method:
         name: Method
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Combat Event: Method'
         suggestions:
           oracles:
@@ -241,6 +244,7 @@ oracles:
       target:
         name: Target
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Combat Event: Target'
         suggestions:
           oracles:

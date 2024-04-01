@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 oracles:
   character:
     name: Character
+    type: oracle_collection
     _source:
       <<: &Source
         authors:
@@ -15,6 +17,7 @@ oracles:
     contents:
       role:
         name: Character Role
+        type: oracle_rollable
         oracle_type: table_text
         canonical_name: 'Oracle 10: Character Role'
         summary: Use this oracle to define the background for a character, or to generate a random encounter.
@@ -151,6 +154,7 @@ oracles:
                 - classic/oracles/action_and_theme/theme
       goal:
         name: Character Goal
+        type: oracle_rollable
         canonical_name: 'Oracle 11: Character Goal'
         summary: Use this oracle to define the primary motivation of an NPC or a faction. It can also be used to kick-off a personal quest for your own character.
         oracle_type: table_text
@@ -263,6 +267,7 @@ oracles:
       descriptor:
         name: Character Descriptor
         canonical_name: 'Oracle 12: Character Descriptor'
+        type: oracle_rollable
         summary: Use this oracle to help flesh out a character’s personality or physical characteristics. Roll more than once to add additional detail.
         # usage:
         oracle_type: table_text

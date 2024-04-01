@@ -1,10 +1,12 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
   site_nature:
     name: Site Nature
     summary: Randomly select a theme and domain for a perilous location.
+    type: oracle_collection
     description: |-
       Use these oracles to generate a random theme and domain for a site. Alternatively, you can print out the theme and domain cards and draw a random result. Or use the [Site Name oracles](id:delve/collections/oracles/site_name) to inspire the selection of a theme and domain.
     _source:
@@ -22,6 +24,7 @@ oracles:
         name: Theme
         canonical_name: 'Site Nature: Theme'
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 212
@@ -54,6 +57,7 @@ oracles:
         name: Domain
         canonical_name: 'Site Nature: Domain'
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 212

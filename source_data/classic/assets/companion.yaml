@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 assets:
   companion:
     name: Companion Assets
+    type: asset_collection
     _source:
       <<: &Source
         authors:
@@ -18,6 +20,7 @@ assets:
       Companions utilize a health track and may suffer harm as a result of one of your moves. When your companion takes damage, make the [Companion Endure Harm](id:classic/moves/suffer/companion_endure_harm) move to determine the outcome. See page 43 to learn more.
     contents:
       cave_lion:
+        type: asset
         category: Companion
         _source:
           <<: &AssetSource
@@ -86,6 +89,7 @@ assets:
                   - classic/moves/adventure/make_camp
                   - classic/moves/relationship/sojourn
       giant_spider:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -144,6 +148,7 @@ assets:
             max: 4
             value: 4
       hawk:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -213,6 +218,7 @@ assets:
                         - using: stat
                           stat: wits # 'ambushed' is already how +wits is flavoured
       horse:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -274,6 +280,7 @@ assets:
             max: 5
             value: 5
       hound:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -327,6 +334,7 @@ assets:
             max: 4
             value: 4
       kindred:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -385,6 +393,7 @@ assets:
                   - classic/moves/suffer/face_desolation
                 roll_type: action_roll
       mammoth:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -434,6 +443,7 @@ assets:
             max: 5
             value: 5
       owl:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -494,6 +504,7 @@ assets:
             value: 3
             max: 3
       raven:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource
@@ -546,6 +557,7 @@ assets:
             max: 2
             value: 2
       young_wyvern:
+        type: asset
         category: Companion
         _source:
           <<: *AssetSource

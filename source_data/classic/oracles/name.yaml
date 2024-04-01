@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 oracles:
   name:
     name: Name
+    type: oracle_collection
     _source:
       <<: &Source
         authors:
@@ -16,6 +18,7 @@ oracles:
       ironlander:
         name: Ironlander Names
         oracle_type: tables
+        type: oracle_collection
         canonical_name: 'Oracle 13: Ironlander Names'
         summary: Use this oracle to quickly generate a name for an Ironlander character. Roll on either table. Surnames are not used in the Ironlands, and names are often gender-neutral.
         _source:
@@ -28,6 +31,7 @@ oracles:
               page: 184
             name: Table A
             oracle_type: table_text
+            type: oracle_rollable
             canonical_name: Ironlander Names
             rows:
               - <<: &i18n.proper_noun
@@ -440,6 +444,7 @@ oracles:
             canonical_name: Ironlander Names
             name: Table B
             oracle_type: table_text
+            type: oracle_rollable
             rows:
               - <<: *i18n.proper_noun
                 min: 1
@@ -846,6 +851,7 @@ oracles:
         canonical_name: 'Oracle 15: Other Names'
         summary: Use this oracle to generate names for other firstborn characters.
         oracle_type: table_shared_rolls
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 187
@@ -853,6 +859,7 @@ oracles:
           giants:
             name: Giants
             oracle_type: column_text
+            type: oracle_rollable
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
@@ -958,6 +965,7 @@ oracles:
           varou:
             name: Varou
             oracle_type: column_text
+            type: oracle_rollable
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
@@ -1063,6 +1071,7 @@ oracles:
           trolls:
             name: Trolls
             oracle_type: column_text
+            type: oracle_rollable
             # source: *CollectionSource
             rows:
               - <<: *i18n.proper_noun
@@ -1169,6 +1178,7 @@ oracles:
       elf:
         name: Elf Names
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Oracle 14: Elf Names'
         summary: Use this oracle to generate a name for an elf character.
         _source:

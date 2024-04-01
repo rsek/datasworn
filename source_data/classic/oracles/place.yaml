@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 oracles:
   place:
     name: Place Oracles
+    type: oracle_collection
     _source:
       <<: &Source
         authors:
@@ -16,6 +18,7 @@ oracles:
       region:
         name: Region
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Oracle 3: Region'
         summary: Use this oracle when you want to randomly select a region with the Ironlands.
         _source:
@@ -56,6 +59,7 @@ oracles:
       location:
         name: Location
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Oracle 4: Location'
         summary: Use this oracle when traveling to generate a point-of-interest or to answer a question about a place where someone or something can be found.
         _source:
@@ -273,6 +277,7 @@ oracles:
       coastal_waters_location:
         name: Coastal Waters Location
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Oracle 5: Coastal Waters Location'
         summary: Use this oracle to identify a point-of-interest or destination when you are traveling by ship or boat.
         _source:
@@ -351,6 +356,7 @@ oracles:
       descriptor:
         name: Location Descriptor
         oracle_type: table_text
+        type: oracle_rollable
         canonical_name: 'Oracle 6: Location Descriptor'
         summary: Use this oracle to add detail to the [Location](id:classic/oracles/place/location) or [Coastal Waters Location](id:classic/oracles/place/coastal_waters_location) oracles, or by itself to generate a description of a location. Roll more than once for extra detail.
         _source:

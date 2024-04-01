@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   location_themes:
     name: Location Themes
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -29,6 +31,7 @@ oracles:
       type:
         name: Theme Type
         oracle_type: table_text2
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 370
@@ -93,6 +96,7 @@ oracles:
       chaotic:
         name: Chaotic
         oracle_type: tables
+        type: oracle_collection
         summary: *Chaotic.summary
         _source: &CollectionSource
           <<: *Source
@@ -104,6 +108,7 @@ oracles:
               name: Feature
               summary: Use this table to reveal a new aspect of the location.
               oracle_type: table_text
+              type: oracle_rollable
             _source: *CollectionSource
             rows:
               - &Feature.0
@@ -169,6 +174,7 @@ oracles:
               name: Peril
               summary: Use this table to help envision a complication or hazard.
               oracle_type: table_text
+              type: oracle_rollable
             _source: *CollectionSource
             rows:
               - &Peril.0
@@ -233,6 +239,7 @@ oracles:
               name: Opportunity
               summary: Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.
               oracle_type: table_text
+              type: oracle_rollable
             _source: *CollectionSource
             rows:
               - &Opportunity.0
@@ -258,6 +265,7 @@ oracles:
       fortified:
         name: Fortified
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 373
@@ -336,6 +344,7 @@ oracles:
       haunted:
         name: Haunted
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 374
@@ -414,6 +423,7 @@ oracles:
       infested:
         name: Infested
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 375
@@ -492,6 +502,7 @@ oracles:
       inhabited:
         name: Inhabited
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 376
@@ -570,6 +581,7 @@ oracles:
       mechanical:
         name: Mechanical
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 377
@@ -648,6 +660,7 @@ oracles:
       ruined:
         name: Ruined
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 378
@@ -726,6 +739,7 @@ oracles:
       sacred:
         name: Sacred
         oracle_type: tables
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 379

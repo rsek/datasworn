@@ -1,5 +1,6 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   space:
     name: Space Encounters
@@ -17,6 +18,7 @@ oracles:
         name: Space Sighting
         _source: *CollectionSource
         oracle_type: table_shared_text
+        type: oracle_collection
         summary: |-
           Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) to envision the primary feature of a waypoint as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition). Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.
         # usage:
@@ -32,6 +34,7 @@ oracles:
               starforged:
                 region: terminus
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - &Sighting.0
                 min: 1
@@ -139,6 +142,7 @@ oracles:
               starforged:
                 region: outlands
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - *Sighting.0
               - *Sighting.1
@@ -199,6 +203,7 @@ oracles:
               starforged:
                 region: expanse
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - *Sighting.0
               - *Sighting.1
@@ -261,12 +266,14 @@ oracles:
         summary: To give a sector or region of space a random name, roll once for the first word and once for the second word.
         description: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
         oracle_type: table_shared_rolls
+        type: oracle_collection
         # template:
         #   text: '{{text:starforged/oracles/space/sector_name/prefix}} {{text:starforged/oracles/space/sector_name/suffix}}'
         contents:
           prefix:
             name: Prefix
             oracle_type: column_text
+            type: oracle_rollable
             suggestions:
               oracles:
                 - starforged/oracles/space/sector_name/suffix
@@ -534,6 +541,7 @@ oracles:
           suffix:
             name: Suffix
             oracle_type: column_text
+            type: oracle_rollable
             summary: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
             suggestions:
               oracles:
@@ -701,6 +709,7 @@ oracles:
       stellar_object:
         name: Stellar Object
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 303
@@ -753,6 +762,7 @@ oracles:
           page: 304
         name: Spaceborne Peril
         oracle_type: table_text
+        type: oracle_rollable
         # usage:
         #   repeatable: true
         #   requires:
@@ -876,6 +886,7 @@ oracles:
                 auto: true
       opportunity:
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 305

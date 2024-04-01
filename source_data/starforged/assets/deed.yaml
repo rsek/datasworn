@@ -1,5 +1,6 @@
 _id: starforged
 package_type: ruleset
+type: package
 assets:
   deed:
     _source:
@@ -40,6 +41,7 @@ assets:
               - enhances:
                   - starforged/moves/recover/sojourn
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: At your bond-mate's home
@@ -68,6 +70,7 @@ assets:
               - enhances:
                   - starforged/moves/exploration/set_a_course
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Back to your bond-mate's location
@@ -93,6 +96,7 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: In service to your home (formidable or greater)
@@ -101,6 +105,7 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
+                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -115,6 +120,7 @@ assets:
               - enhances:
                   - starforged/moves/recover/sojourn
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: In your home (and you don't linger)
@@ -124,6 +130,7 @@ assets:
               - enhances:
                   - starforged/moves/recover/sojourn
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -135,6 +142,7 @@ assets:
               - enhances:
                   - starforged/moves/exploration/set_a_course
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: For home
@@ -157,6 +165,7 @@ assets:
                   - starforged/moves/adventure/compel
                   - starforged/moves/connection/make_a_connection
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Among those who would know your reputation
@@ -179,6 +188,7 @@ assets:
               - enhances:
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Through intimidation or command (once per fight)
@@ -197,6 +207,7 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: To redeem yourself (extreme or greater, one time only)
@@ -212,6 +223,7 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/adventure/compel
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: By reaffirming your commitment to your marked vow
@@ -224,6 +236,7 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
+                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -242,6 +255,7 @@ assets:
                   - starforged/moves/suffer/endure_harm
                   - starforged/moves/threshold/face_death
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: When you are at 0 health
@@ -253,6 +267,7 @@ assets:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
                 roll_type: progress_roll
+                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -264,6 +279,7 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: By studying a place where death left its mark
@@ -283,6 +299,7 @@ assets:
               - enhances:
                   - starforged/moves/suffer/endure_stress
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: When you are haunted by past experiences
@@ -307,6 +324,7 @@ assets:
                 _source: *AssetSource
                 name: Seek Safe Haven
                 roll_type: special_track
+                type: move
                 trigger:
                   text: When you seek a safe location in a remote environment...
                   conditions:
@@ -344,6 +362,7 @@ assets:
               - enhances:
                   - starforged/moves/suffer/endure_stress
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - method: player_choice

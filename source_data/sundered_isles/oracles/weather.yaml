@@ -1,5 +1,6 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   weather:
     _source: &Source
@@ -10,11 +11,13 @@ oracles:
       url: https://ironswornrpg.com
       date: 2023-11-29
     name: Weather
+    type: oracle_collection
     collections:
       conditions:
         _source: *Source
         name: Weather Conditions
         oracle_type: table_shared_text
+        type: oracle_collection
         summary: If you’d like to establish the time of day for an encounter or scene, roll a single oracle die. If even, it’s daytime; if odd, it’s night. Higher numbers are later in that period.
         contents:
           myriads:
@@ -22,6 +25,7 @@ oracles:
             name: Myriads
             summary: Central Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 70
@@ -40,6 +44,7 @@ oracles:
             name: Margins
             summary: Outer Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 60
@@ -52,6 +57,7 @@ oracles:
             name: Reaches
             summary: Remote Seas
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 50
@@ -68,6 +74,7 @@ oracles:
           text: Result
           text2: Detail
         oracle_type: table_text2
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/weather/cursed
@@ -105,6 +112,7 @@ oracles:
         name: Duration of Foul or Cursed Weather
         dice: 1d10
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 2
@@ -119,6 +127,7 @@ oracles:
         _source: *Source
         name: Cursed Weather
         oracle_type: table_text2
+        type: oracle_rollable
         column_labels:
           roll: Roll
           text: Result

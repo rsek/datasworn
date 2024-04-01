@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   planets:
     name: Planets
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -15,6 +17,7 @@ oracles:
       desert:
         name: Desert World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/desert-01.webp
           - images/planets/desert-02.webp
@@ -27,12 +30,14 @@ oracles:
             <<: &Settlements
               name: Settlements
               oracle_type: table_shared_text
+              type: oracle_collection
             _source: *CollectionSource
             contents:
               terminus:
                 <<: &OracleTable.Terminus
                   name: Terminus
                   oracle_type: column_text
+                  type: oracle_rollable
                   tags:
                     starforged:
                       region: terminus
@@ -62,6 +67,7 @@ oracles:
                 <<: &OracleTable.Outlands
                   name: Outlands
                   oracle_type: column_text
+                  type: oracle_rollable
                   tags:
                     starforged:
                       region: outlands
@@ -86,6 +92,7 @@ oracles:
                 <<: &OracleTable.Expanse
                   name: Expanse
                   oracle_type: column_text
+                  type: oracle_rollable
                   tags:
                     starforged:
                       region: expanse
@@ -109,6 +116,7 @@ oracles:
               name: Sample Names
               dice: 1d20
               oracle_type: table_text
+              type: oracle_rollable
             _source: *CollectionSource
             rows:
               - min: 1
@@ -175,6 +183,7 @@ oracles:
             <<: &Atmosphere
               name: Atmosphere
               oracle_type: table_text
+              type: oracle_rollable
             _source: *CollectionSource
             rows:
               - min: 1
@@ -205,6 +214,7 @@ oracles:
             <<: &ObservedFromSpace
               name: Observed From Space
               oracle_type: table_text
+              type: oracle_rollable
               recommended_rolls:
                 min: 1
                 max: 2
@@ -260,6 +270,7 @@ oracles:
             <<: &Feature
               name: Planetside Feature
               oracle_type: table_text
+              type: oracle_rollable
               recommended_rolls:
                 min: 1
                 max: 2
@@ -329,6 +340,7 @@ oracles:
             <<: &Life
               name: Life
               oracle_type: table_text
+              type: oracle_rollable
             _source: *CollectionSource
             rows:
               - min: 1
@@ -358,6 +370,7 @@ oracles:
       furnace:
         name: Furnace World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/furnace-01.webp
           - images/planets/furnace-02.webp
@@ -588,6 +601,7 @@ oracles:
       grave:
         name: Grave World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/grave-01.webp
           - images/planets/grave-02.webp
@@ -810,6 +824,7 @@ oracles:
       ice:
         name: Ice World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/ice-01.webp
           - images/planets/ice-02.webp
@@ -1042,6 +1057,7 @@ oracles:
       jovian:
         name: Jovian World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/jovian-01.webp
           - images/planets/jovian-02.webp
@@ -1270,6 +1286,7 @@ oracles:
       jungle:
         name: Jungle World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/jungle-01.webp
           - images/planets/jungle-02.webp
@@ -1500,6 +1517,7 @@ oracles:
       ocean:
         name: Ocean World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/ocean-01.webp
           - images/planets/ocean-02.webp
@@ -1736,6 +1754,7 @@ oracles:
       rocky:
         name: Rocky World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/rocky-01.webp
           - images/planets/rocky-02.webp
@@ -1964,6 +1983,7 @@ oracles:
       shattered:
         name: Shattered World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/shattered-01.webp
           - images/planets/shattered-02.webp
@@ -2188,6 +2208,7 @@ oracles:
       tainted:
         name: Tainted World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/tainted-01.webp
           - images/planets/tainted-02.webp
@@ -2416,6 +2437,7 @@ oracles:
       vital:
         name: Vital World
         oracle_type: tables
+        type: oracle_collection
         images:
           - images/planets/vital-01.webp
           - images/planets/vital-02.webp
@@ -2650,6 +2672,7 @@ oracles:
           diversity:
             name: Diversity
             oracle_type: table_text
+            type: oracle_rollable
             _source: *CollectionSource
             summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
             rows:
@@ -2686,6 +2709,7 @@ oracles:
           biomes:
             name: Biomes
             oracle_type: table_text
+            type: oracle_rollable
             _source: *CollectionSource
             rows:
               - min: 1

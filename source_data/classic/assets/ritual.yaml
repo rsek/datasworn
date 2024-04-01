@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 assets:
   ritual:
     name: Ritual Assets
+    type: asset_collection
     _source:
       <<: &Source
         authors:
@@ -18,6 +20,7 @@ assets:
       All rituals utilize a move as their default marked ability. You must make this move and the associated action roll to trigger the effect. Any secondary abilities you gain by upgrading the asset are dependent on performing the ritual described as the default ability.
     contents:
       augur:
+        type: asset
         category: Ritual
         _source:
           <<: &AssetSource
@@ -33,6 +36,7 @@ assets:
             enabled: true
             moves:
               augur:
+                type: move
                 name: Augur
                 _source: *AssetSource
                 roll_type: action_roll
@@ -67,6 +71,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/augur/abilities/0/moves/augur
       awakening:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -79,6 +84,7 @@ assets:
             enabled: true
             moves:
               awaken_simulacrum:
+                type: move
                 name: Awaken Simulacrum
                 _source: *AssetSource
                 roll_type: action_roll
@@ -118,6 +124,7 @@ assets:
             max: 3
             value: 3
       bind:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -130,6 +137,7 @@ assets:
             enabled: true
             moves:
               bind:
+                type: move
                 name: Bind
                 _source: *AssetSource
                 roll_type: action_roll
@@ -163,6 +171,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/bind/abilities/0/moves/bind
       communion:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -175,6 +184,7 @@ assets:
             enabled: true
             moves:
               commune:
+                type: move
                 name: Commune
                 _source: *AssetSource
                 roll_type: action_roll
@@ -208,6 +218,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/communion/abilities/0/moves/commune
       divination:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -220,6 +231,7 @@ assets:
             enabled: true
             moves:
               cast_runes:
+                type: move
                 name: Cast Runes
                 _source: *AssetSource
                 roll_type: action_roll
@@ -257,6 +269,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/divination/abilities/0/moves/cast_runes
       invoke:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -269,6 +282,7 @@ assets:
             enabled: true
             moves:
               invoke:
+                type: move
                 name: Invoke
                 _source: *AssetSource
                 roll_type: action_roll
@@ -332,6 +346,7 @@ assets:
             max: 6
             value: 0
       keen:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -344,6 +359,7 @@ assets:
             enabled: true
             moves:
               keen:
+                type: move
                 name: Keen
                 _source: *AssetSource
                 roll_type: action_roll
@@ -377,6 +393,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/keen/abilities/0/moves/keen
       leech:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -390,6 +407,7 @@ assets:
             # TODO: conditional debility
             moves:
               draw_blood_rune:
+                type: move
                 name: Draw Blood Rune
                 _source: *AssetSource
                 roll_type: action_roll
@@ -425,6 +443,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/leech/abilities/0/moves/draw_blood_rune
       lightbearer:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -446,6 +465,7 @@ assets:
             enabled: true
             moves:
               capture_light:
+                type: move
                 name: Capture Light
                 _source: *AssetSource
                 roll_type: action_roll
@@ -490,6 +510,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/lightbearer/abilities/0/moves/capture_light
       scry:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -506,6 +527,7 @@ assets:
             enabled: true
             moves:
               scry:
+                type: move
                 name: Scry
                 _source: *AssetSource
                 roll_type: action_roll
@@ -543,6 +565,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/scry/abilities/0/moves/scry
       shadow_walk:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -555,6 +578,7 @@ assets:
             enabled: true
             moves:
               shadow_walk:
+                type: move
                 name: Shadow-Walk
                 _source: *AssetSource
                 roll_type: action_roll
@@ -588,6 +612,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/shadow_walk/abilities/0/moves/shadow_walk
       sway:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -600,6 +625,7 @@ assets:
             enabled: true
             moves:
               sway:
+                type: move
                 name: Sway
                 _source: *AssetSource
                 roll_type: action_roll
@@ -634,6 +660,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/sway/abilities/0/moves/sway
       talisman:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -646,6 +673,7 @@ assets:
             enabled: true
             moves:
               fashion_talisman:
+                type: move
                 name: Fashion Talisman
                 _source: *AssetSource
                 roll_type: action_roll
@@ -677,6 +705,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/talisman/abilities/0/moves/fashion_talisman
       tether:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -689,6 +718,7 @@ assets:
             enabled: true
             moves:
               tether:
+                type: move
                 name: Tether
                 _source: *AssetSource
                 roll_type: action_roll
@@ -743,6 +773,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/tether/abilities/0/moves/tether
       totem:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -755,6 +786,7 @@ assets:
             enabled: true
             moves:
               focus_totem:
+                type: move
                 name: Focus Totem
                 _source: *AssetSource
                 roll_type: action_roll
@@ -788,6 +820,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/totem/abilities/0/moves/focus_totem
       visage:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -801,6 +834,7 @@ assets:
             enabled: true
             moves:
               paint_visage:
+                type: move
                 name: Paint Visage
                 _source: *AssetSource
                 roll_type: action_roll
@@ -834,6 +868,7 @@ assets:
                 enhances:
                   - classic/assets/ritual/visage/abilities/0/moves/paint_visage
       ward:
+        type: asset
         category: Ritual
         _source:
           <<: *AssetSource
@@ -850,6 +885,7 @@ assets:
             enabled: true
             moves:
               ward:
+                type: move
                 name: Ward
                 _source: *AssetSource
                 roll_type: action_roll

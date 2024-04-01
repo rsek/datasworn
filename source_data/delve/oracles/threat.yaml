@@ -1,9 +1,11 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
   threat:
     name: Threat
+    type: oracle_collection
     summary: In support of the optional threat mechanics, use these oracles to introduce a threat and determine its actions within your world.
     description: |-
       These oracles support the optional threat mechanics detailed in Chapter 6.
@@ -31,6 +33,7 @@ oracles:
         name: Category
         <<: &Threat
           oracle_type: table_text
+          type: oracle_rollable
         _source:
           <<: *Source
           page: 220

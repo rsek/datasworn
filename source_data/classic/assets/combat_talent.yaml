@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 assets:
   combat_talent:
     name: Combat Talent Assets
+    type: asset_collection
     _source:
       <<: &Source
         authors:
@@ -18,6 +20,7 @@ assets:
       Combat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a [Shield-Bearer](id:classic/assets/combat_talent/shield-bearer) and don’t have a shield at the ready, you can’t use the asset’s abilities.
     contents:
       archer:
+        type: asset
         category: Combat Talent
         _source:
           <<: &AssetSource
@@ -80,6 +83,7 @@ assets:
                       method: null
 
       berserker:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -130,6 +134,7 @@ assets:
                       roll_options: null
                       method: null
       brawler:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -176,6 +181,7 @@ assets:
                       roll_options: null
                       method: null
       cutthroat:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -233,6 +239,7 @@ assets:
                         - using: stat
                           stat: shadow
       duelist:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -272,6 +279,7 @@ assets:
                   - classic/moves/relationship/draw_the_circle
                 roll_type: action_roll
       fletcher:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -311,6 +319,7 @@ assets:
             moves:
               craft_arrow:
                 name: Craft Arrow
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
                 trigger:
@@ -338,6 +347,7 @@ assets:
                     text: |-
                       On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price).
       ironclad:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -409,6 +419,7 @@ assets:
                       roll_options: null
                       method: null
       long_arm:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -460,6 +471,7 @@ assets:
                         ally: true
 
       shield_bearer:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -507,6 +519,7 @@ assets:
                   - classic/moves/suffer/endure_harm
                 roll_type: action_roll
       skirmisher:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -559,6 +572,7 @@ assets:
                       roll_options: null
                       method: null
       slinger:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -605,6 +619,7 @@ assets:
                       roll_options: null
                       method: null
       sunderer:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -644,6 +659,7 @@ assets:
             moves:
               carve_rune:
                 name: Carve Rune
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
                 trigger:
@@ -664,6 +680,7 @@ assets:
                       Inflict +1d6 harm (one time only) when you [Strike](id:classic/moves/combat/strike) or [Clash](id:classic/moves/combat/clash).
                   miss: *MoveOutcome.Miss.Generic
       swordmaster:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource
@@ -699,6 +716,7 @@ assets:
                       roll_options: null
                       method: null
       thunder_bringer:
+        type: asset
         category: Combat Talent
         _source:
           <<: *AssetSource

@@ -1,8 +1,10 @@
 _id: classic
 package_type: ruleset
+type: package
 moves:
   adventure:
     name: Adventure Moves
+    type: move_category
     _source:
       <<: &Source
         authors:
@@ -17,6 +19,7 @@ moves:
     contents:
       face_danger:
         name: Face Danger
+        type: move
         roll_type: action_roll
         trigger:
           text: When you attempt something risky or react to an imminent threat...
@@ -83,6 +86,7 @@ moves:
             text: On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/moves/fate/pay_the_price).
       secure_an_advantage:
         name: Secure an Advantage
+        type: move
         roll_type: action_roll
         trigger:
           text: When you assess a situation, make preparations, or attempt to gain leverage...
@@ -145,6 +149,7 @@ moves:
             text: On a __miss__, you fail or your assumptions betray you. [Pay the Price](id:classic/moves/fate/pay_the_price).
       gather_information:
         name: Gather Information
+        type: move
         roll_type: action_roll
         trigger:
           text: When you search an area, ask questions, conduct an investigation, or follow a track...
@@ -173,6 +178,7 @@ moves:
             text: On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](id:classic/moves/fate/pay_the_price).
       heal:
         name: Heal
+        type: move
         roll_type: action_roll
         trigger:
           text: When you treat an injury or ailment...
@@ -208,6 +214,7 @@ moves:
             text: On a __miss__, your aid is ineffective. [Pay the Price](id:classic/moves/fate/pay_the_price).
       resupply:
         name: Resupply
+        type: move
         roll_type: action_roll
         trigger:
           text: When you hunt, forage, or scavenge...
@@ -236,6 +243,7 @@ moves:
             text: On a __miss__, you find nothing helpful. [Pay the Price](id:classic/moves/fate/pay_the_price).
       make_camp:
         name: Make Camp
+        type: move
         roll_type: action_roll
         trigger:
           text: When you rest and recover for several hours in the wild...
@@ -282,6 +290,7 @@ moves:
             text: On a __miss__, you take no comfort. [Pay the Price](id:classic/moves/fate/pay_the_price).
       undertake_a_journey:
         name: Undertake a Journey
+        type: move
         roll_type: action_roll
         trigger:
           text: When you travel across hazardous or unfamiliar lands...
@@ -328,6 +337,7 @@ moves:
             text: On a __miss__, you are waylaid by a perilous event. [Pay the Price](id:classic/moves/fate/pay_the_price).
       reach_your_destination:
         name: Reach Your Destination
+        type: move
         roll_type: progress_roll
         tracks:
           category: Journey
@@ -363,6 +373,7 @@ moves:
                 * Take +1 momentum.
   relationship:
     name: Relationship Moves
+    type: move_category
     _source:
       <<: *Source
       page: 69
@@ -371,6 +382,7 @@ moves:
     contents:
       compel:
         name: Compel
+        type: move
         roll_type: action_roll
         trigger:
           text: When you attempt to persuade someone to do something...
@@ -417,6 +429,7 @@ moves:
             text: On a __miss__, they refuse or make a demand which costs you greatly. [Pay the Price](id:classic/moves/fate/pay_the_price).
       sojourn:
         name: Sojourn
+        type: move
         roll_type: action_roll
         trigger:
           text: When you spend time in a community seeking assistance...
@@ -500,6 +513,7 @@ moves:
             text: On a __miss__, you find no help here. [Pay the Price](id:classic/moves/fate/pay_the_price).
       draw_the_circle:
         name: Draw the Circle
+        type: move
         roll_type: action_roll
         trigger:
           text: When you challenge someone to a formal duel, or accept a challenge...
@@ -555,6 +569,7 @@ moves:
               Then, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you.
       forge_a_bond:
         name: Forge a Bond
+        type: move
         roll_type: action_roll
         trigger:
           text: When you spend significant time with a person or community, stand together to face hardships, or make sacrifices for their cause...
@@ -592,6 +607,7 @@ moves:
               On a __miss__, they reject you. [Pay the Price](id:classic/moves/fate/pay_the_price).
       test_your_bond:
         name: Test Your Bond
+        type: move
         roll_type: action_roll
         trigger:
           text: When your bond is tested through conflict, betrayal, or circumstance...
@@ -629,6 +645,7 @@ moves:
               On a __miss__, clear the bond and [Pay the Price](id:classic/moves/fate/pay_the_price).
       aid_your_ally:
         name: Aid Your Ally
+        type: move
         _source:
           <<: *Source
           page: 76
@@ -639,6 +656,7 @@ moves:
         # TODO: forward to another move ID?
       write_your_epilogue:
         name: Write Your Epilogue
+        type: move
         _source:
           <<: *Source
           page: 77
@@ -666,6 +684,7 @@ moves:
             text: On a __miss__, your fears are realized.
   combat:
     name: Combat Moves
+    type: move_category
     _source:
       <<: *Source
       page: 78
@@ -674,6 +693,7 @@ moves:
     contents:
       enter_the_fray:
         name: Enter the Fray
+        type: move
         roll_type: action_roll
         trigger:
           text: When you enter into combat...
@@ -732,6 +752,7 @@ moves:
             text: On a __miss__, combat begins with you at a disadvantage. [Pay the Price](id:classic/moves/fate/pay_the_price). Your foe has initiative.
       strike:
         name: Strike
+        type: move
         roll_type: action_roll
         trigger:
           text: When you have initiative and attack...
@@ -766,6 +787,7 @@ moves:
             text: On a __miss__, your attack fails and you must [Pay the Price](id:classic/moves/fate/pay_the_price). Your foe has initiative.
       clash:
         name: Clash
+        type: move
         roll_type: action_roll
         trigger:
           text: 'When your foe has initiative and you...'
@@ -807,6 +829,7 @@ moves:
             text: On a __miss__, you are outmatched and must [Pay the Price](id:classic/moves/fate/pay_the_price). Your foe has initiative.
       turn_the_tide:
         name: Turn the Tide
+        type: move
         roll_type: no_roll
         trigger:
           text: Once per fight, when you risk it all...
@@ -816,6 +839,7 @@ moves:
         text: Once per fight, when you __risk it all__, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. [Pay the Price](id:classic/moves/fate/pay_the_price).
       end_the_fight:
         name: End the Fight
+        type: move
         roll_type: progress_roll
         tracks:
           category: Combat
@@ -861,6 +885,7 @@ moves:
             text: On a __miss__, you have lost this fight. [Pay the Price](id:classic/moves/fate/pay_the_price).
       battle:
         name: Battle
+        type: move
         roll_type: action_roll
         trigger:
           text: When you fight a battle, and it happens in a blur, and you...
@@ -916,6 +941,7 @@ moves:
             text: On a __miss__, you are defeated and the objective is lost to you. [Pay the Price](id:classic/moves/fate/pay_the_price).
   suffer:
     name: Suffer Moves
+    type: move_category
     _source:
       <<: *Source
       page: 90
@@ -924,6 +950,7 @@ moves:
     contents:
       endure_harm:
         name: Endure Harm
+        type: move
         oracles:
           - classic/oracles/moves/endure_harm
         roll_type: action_roll
@@ -969,6 +996,7 @@ moves:
               {{table:classic/oracles/moves/endure_harm}}
       face_death:
         name: Face Death
+        type: move
         roll_type: action_roll
         trigger:
           text: When you are brought to the brink of death, and glimpse the world beyond...
@@ -1004,6 +1032,7 @@ moves:
             text: On a __miss__, you are dead.
       companion_endure_harm:
         name: Companion Endure Harm
+        type: move
         roll_type: action_roll
         trigger:
           text: When your companion faces physical damage...
@@ -1041,6 +1070,7 @@ moves:
               If you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it.
       endure_stress:
         name: Endure Stress
+        type: move
         oracles:
           - classic/oracles/moves/endure_stress
         roll_type: action_roll
@@ -1085,6 +1115,7 @@ moves:
               {{table:classic/oracles/moves/endure_stress}}
       face_desolation:
         name: Face Desolation
+        type: move
         roll_type: action_roll
         trigger:
           text: When you are brought to the brink of desolation...
@@ -1120,6 +1151,7 @@ moves:
             text: On a __miss__, you succumb to despair or horror and are lost.
       out_of_supply:
         name: Out of Supply
+        type: move
         _source:
           <<: *Source
           page: 97
@@ -1129,6 +1161,7 @@ moves:
         text: When __your supply is exhausted__ (reduced to 0), mark unprepared. If you suffer additional -supply while unprepared, you must exchange each additional -supply for any combination of -health, -spirit or -momentum as appropriate to the circumstances.
       face_a_setback:
         name: Face a Setback
+        type: move
         roll_type: no_roll
         _source:
           <<: *Source
@@ -1142,6 +1175,7 @@ moves:
             * Envision an event or discovery ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional _momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).
   quest:
     name: Quest Moves
+    type: move_category
     _source:
       <<: *Source
       page: 98
@@ -1150,6 +1184,7 @@ moves:
     contents:
       swear_an_iron_vow:
         name: Swear an Iron Vow
+        type: move
         roll_type: action_roll
         trigger:
           text: When you swear upon iron to complete a quest...
@@ -1185,6 +1220,7 @@ moves:
                 * You give up: [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow).
       reach_a_milestone:
         name: Reach a Milestone
+        type: move
         roll_type: no_roll
         _source:
           <<: *Source
@@ -1201,6 +1237,7 @@ moves:
             * Epic quest: Mark 1 tick.
       fulfill_your_vow:
         name: Fulfill Your Vow
+        type: move
         _source:
           <<: *Source
           page: 101
@@ -1236,6 +1273,7 @@ moves:
                 * You give up: [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow).
       forsake_your_vow:
         name: Forsake Your Vow
+        type: move
         _source:
           <<: *Source
           page: 102
@@ -1245,6 +1283,7 @@ moves:
         text: When __you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow and [Endure Stress](id:classic/moves/suffer/endure_stress). You suffer _spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.
       advance:
         name: Advance
+        type: move
         _source:
           <<: *Source
           page: 103
@@ -1254,6 +1293,7 @@ moves:
         text: When __you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset.
   fate:
     name: Fate Moves
+    type: move_category
     _source:
       <<: *Source
       page: 98
@@ -1270,6 +1310,7 @@ moves:
     contents:
       pay_the_price:
         name: Pay the Price
+        type: move
         oracles:
           - classic/oracles/moves/pay_the_price
         _source:
@@ -1288,6 +1329,7 @@ moves:
           {{table:classic/oracles/moves/pay_the_price}}
       ask_the_oracle:
         name: Ask the Oracle
+        type: move
         oracles:
           - classic/oracles/moves/ask_the_oracle/small_chance
           - classic/oracles/moves/ask_the_oracle/unlikely

@@ -1,7 +1,9 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   islands:
+    type: oracle_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -14,6 +16,7 @@ oracles:
       coastline_aspects:
         name: Coastline Aspects
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 90
@@ -103,6 +106,7 @@ oracles:
           sundered_isles:
             cursed_version: sundered_isles/oracles/islands/offshore_observations_cursed
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 2
@@ -241,6 +245,7 @@ oracles:
             cursed_version_of:
               - sundered_isles/oracles/islands/offshore_observations
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 3
@@ -367,11 +372,13 @@ oracles:
         _source: *Source
         name: Island Landscape
         oracle_type: tables
+        type: oracle_collection
         contents:
           size:
             _source: *Source
             name: Size
             oracle_type: table_text2
+            type: oracle_rollable
             column_labels:
               roll: Roll
               text: Result
@@ -397,6 +404,7 @@ oracles:
             _source: *Source
             name: Terrain
             oracle_type: table_text2
+            type: oracle_rollable
             column_labels:
               roll: Roll
               text: Result
@@ -439,6 +447,7 @@ oracles:
             _source: *Source
             name: Vitality
             oracle_type: table_shared_text2
+            type: oracle_collection
             column_labels:
               text: Result
               text2: Detail
@@ -449,6 +458,7 @@ oracles:
                   name: Myriads
                   summary: Central Seas
                 oracle_type: column_text2
+                type: oracle_rollable
                 rows:
                   - min: 1
                     max: 15
@@ -486,6 +496,7 @@ oracles:
                   name: Margins
                   summary: Outer Seas
                 oracle_type: column_text2
+                type: oracle_rollable
                 rows:
                   - min: 1
                     max: 10
@@ -511,6 +522,7 @@ oracles:
                   name: Reaches
                   summary: Remote Seas
                 oracle_type: column_text2
+                type: oracle_rollable
                 rows:
                   - min: 1
                     max: 5
@@ -534,6 +546,7 @@ oracles:
         _source: *Source
         name: Visible Habitation
         oracle_type: table_shared_text
+        type: oracle_collection
         column_labels:
           text: Result
         contents:
@@ -541,6 +554,7 @@ oracles:
             <<: *Myriads
             # source: *Source
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 35
@@ -570,6 +584,7 @@ oracles:
             # source: *Source
             <<: *Margins
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 50
@@ -593,6 +608,7 @@ oracles:
             # source: *Source
             <<: *Reaches
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 65

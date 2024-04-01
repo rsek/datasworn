@@ -1,5 +1,6 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   seafaring:
     _source:
@@ -11,6 +12,7 @@ oracles:
         url: https://ironswornrpg.com
         date: 2023-09-11
     name: Seafaring Adventures
+    type: oracle_collection
     collections:
       waypoints:
         _source: &CollectionSource
@@ -18,12 +20,14 @@ oracles:
           date: 2023-11-29
         name: Seafaring Waypoints
         oracle_type: tables
+        type: oracle_collection
         summary: |-
           These tables help inspire locations, events, and encounters on a seafaring expedition. Use the [Known Waters](id:sundered_isles/oracles/seafaring/waypoints/known_waters) table if you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition) among or between known islands, such as when following a chart of local islands. Use the [Unknown Waters](id:sundered_isles/oracles/seafaring/waypoints/unknown_waters) table when navigating seas with the prospect of encountering unrevealed islands.
         collections:
           known_waters:
             name: Known Waters
             oracle_type: table_shared_text
+            type: oracle_collection
             _source: &TableSource
               <<: *CollectionSource
             summary: |-
@@ -35,6 +39,7 @@ oracles:
                   name: Myriads
                   summary: Central Seas
                   oracle_type: column_text
+                  type: oracle_rollable
                 rows:
                   - min: 1
                     max: 25
@@ -93,6 +98,7 @@ oracles:
                   name: Margins
                   summary: Outer Seas
                   oracle_type: column_text
+                  type: oracle_rollable
                 rows:
                   - min: 1
                     max: 15
@@ -121,6 +127,7 @@ oracles:
                   name: Reaches
                   summary: Remote Seas
                   oracle_type: column_text
+                  type: oracle_rollable
                 rows:
                   - min: 1
                     max: 5
@@ -146,6 +153,7 @@ oracles:
           unknown_waters:
             name: Unknown Waters
             oracle_type: table_shared_text
+            type: oracle_collection
             _source: &TableSource
               <<: *CollectionSource
             summary: |-
@@ -250,6 +258,7 @@ oracles:
         _source: *Source
         name: Seafaring Details
         oracle_type: table_text
+        type: oracle_rollable
         summary: This table reveals occurrences on a seafaring expedition. Possible results include locations, events, sightings, and encounters.
         tags:
           sundered_isles:
@@ -559,6 +568,7 @@ oracles:
         _source: *Source
         name: Cursed Seafaring Details
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version_of:
@@ -869,6 +879,7 @@ oracles:
         name: Seafaring
         summary: Roll or choose on this table when you want inspiration for a trouble during ocean exploration or on a seagoing expedition.
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 3
@@ -983,6 +994,7 @@ oracles:
         name: Seafaring Opportunities
         summary: Roll or choose on this table when you want inspiration for a beneficial encounter or event on a seagoing journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:sundered_isles/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint) and find an opportunity.
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 4

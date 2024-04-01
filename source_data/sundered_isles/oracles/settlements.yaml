@@ -1,5 +1,6 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   settlements:
     _source:
@@ -11,12 +12,14 @@ oracles:
         url: https://ironswornrpg.com
         date: 2023-09-11
     name: Settlement Oracles
+    type: oracle_collection
     contents:
       location:
         _source:
           <<: *Source
         name: Settlement Location
         oracle_type: table_text2
+        type: oracle_rollable
         summary: Roll for a location when learning about a distant settlement. If you come upon a settlement in your travels, choose a location appropriate to your surroundings.
         rows:
           - min: 1
@@ -36,6 +39,7 @@ oracles:
           <<: *Source
         name: Settlement Aesthetics
         oracle_type: table_text2
+        type: oracle_rollable
         summary: Use this table to reveal the ambiance and architecture of the settlement. Smaller settlements likely have a single style, while larger settlements might have multiple styles across sections or districts.
         recommended_rolls:
           min: 1
@@ -103,6 +107,7 @@ oracles:
           <<: *Source
         name: Settlement First Look
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/settlements/first_look_cursed
@@ -252,6 +257,7 @@ oracles:
           <<: *Source
         name: Cursed Settlement First Look
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version_of:
@@ -357,6 +363,7 @@ oracles:
               - sundered_isles/oracles/settlements/focus/*
         summary: If you roll a [Settlement Focus](id:sundered_isles/collections/settlements/focus) curse, take your result on that table and make note that it is cursed. Something about this activity has an uncanny or dreadful aspect. If you investigate or interact further, use the table below to help reveal the industry’s relationship to a cursed power.
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 10
@@ -394,6 +401,7 @@ oracles:
         name: Settlement Details
         summary: As you spend time in a settlement, use this table to reveal uncovered aspects and overheard rumors.
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/settlements/details_cursed
@@ -704,6 +712,7 @@ oracles:
           <<: *Source
         name: Cursed Settlement Details
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version_of:
@@ -910,6 +919,7 @@ oracles:
           <<: *Source
         name: Settlement Size
         oracle_type: table_shared_text2
+        type: oracle_collection
         # rendering:
         #   columns:
         #     - table_key: myriads
@@ -929,6 +939,7 @@ oracles:
             name: Myriads
             summary: Central Seas
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - <<: &Size.0
                   text: Village or outpost
@@ -954,6 +965,7 @@ oracles:
             name: Margins
             summary: Outer Seas
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 40
@@ -971,6 +983,7 @@ oracles:
             name: Reaches
             summary: Remote Seas
             oracle_type: column_text2
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 50
@@ -989,18 +1002,21 @@ oracles:
           <<: *Source
         name: Settlement Identity
         oracle_type: tables
+        type: oracle_collection
         collections:
           controlling_faction:
             _source:
               <<: *Source
             name: Settlement Controlling Faction
             oracle_type: table_shared_text
+            type: oracle_collection
             summary: If the location of the settlement or your initial impression doesn’t reveal its identity, check the Controlling Faction table below. If this place is inhabited or overseen by a known faction, choose or roll on your faction influence grid (page 54). If it is independent or aligned with an unknown faction, use the Disposition and Authority tables to help envision the reaction to your arrival and the apparent nature of the leadership.
             contents:
               myriads:
                 name: Myriads
                 summary: Central Seas
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                   - min: 1
                     max: 60
@@ -1026,6 +1042,7 @@ oracles:
                 name: Margins
                 summary: Outer Seas
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                   - min: 1
                     max: 45
@@ -1046,6 +1063,7 @@ oracles:
                 name: Reaches
                 summary: Remote Seas
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                   - min: 1
                     max: 30
@@ -1068,6 +1086,7 @@ oracles:
             name: Settlement Focus
             summary: Sections of a large city or city-state can contain their own pursuits and industries, and can even span geographies (seafront, inland, or waterside). Revisit this table if you spend time in a place and learn more about its activities.
             oracle_type: table_shared_text2
+            type: oracle_collection
             # TODO: recommended rolls property for supertables? or just for all rollables?
             column_labels:
               text: Activity
@@ -1076,6 +1095,7 @@ oracles:
               shore:
                 name: Shore
                 oracle_type: column_text2
+                type: oracle_rollable
                 rows:
                   - min: 1
                     max: 3
@@ -1270,6 +1290,7 @@ oracles:
               inland:
                 name: Inland
                 oracle_type: column_text2
+                type: oracle_rollable
                 rows:
                   - *Focus.0
                   - *Focus.1
@@ -1375,6 +1396,7 @@ oracles:
               waterside:
                 name: Waterside
                 oracle_type: column_text2
+                type: oracle_rollable
                 rows:
                   - *Focus.0
                   - *Focus.1
@@ -1481,6 +1503,7 @@ oracles:
               <<: *Source
             name: Settlement Disposition
             oracle_type: table_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 5
@@ -1517,6 +1540,7 @@ oracles:
               <<: *Source
             name: Settlement Authority
             oracle_type: table_text
+            type: oracle_rollable
             rows:
               - min: 1
                 max: 10

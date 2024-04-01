@@ -1,8 +1,10 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 npcs:
   ironlanders:
+    type: npc_collection
     name: Ironlanders
     enhances: classic/collections/npcs/ironlanders
     _source:
@@ -16,6 +18,7 @@ npcs:
       page: 110
     contents:
       husk:
+        type: npc
         name: Husk
         nature: Ironlander
         rank: 3
@@ -53,6 +56,7 @@ npcs:
         quest_starter: |-
           Someone you are sworn to protect is stricken with a curse and falls into an unending sleep. Slowly, their heartbeat fades. They lie at the threshold between life and death. Your only hope lies with the husk who dwells in a nearby [Infested](id:delve/site_themes/infested) [Shadowfen](id:delve/site_domains/shadowfen). Will they have a cure? What will they demand in return?
       zealot:
+        type: npc
         name: Zealot
         nature: Ironlander
         rank: 1
@@ -90,6 +94,7 @@ npcs:
         quest_starter: |-
           You have lost someone to an emerging sect which seeks to unleash a forgotten power or entity. They dwell within a [Hallowed](id:delve/site_themes/hallowed) [Underkeep](id:delve/site_domains/underkeep). What is the nature of their belief? Will you attempt to save this person from their faith, or see them destroyed along with it?
   firstborn:
+    type: npc_collection
     name: Firstborn
     enhances: classic/collections/npcs/firstborn
     _source:
@@ -97,6 +102,7 @@ npcs:
       page: 112
     contents:
       atanya:
+        type: npc
         name: Atanya
         nature: Firstborn
         rank: 2
@@ -128,6 +134,7 @@ npcs:
         your_truth: |-
           Atanya ships sometimes sail to the west, and do not return for months or years. Some are never seen again. What is rumored to lie beyond the western horizon?
       merrow:
+        type: npc
         name: Merrow
         nature: Firstborn
         rank: 2
@@ -160,6 +167,7 @@ npcs:
         your_truth: |-
           The merrow worship one god above all others. What form does it take? What does it demand of its supplicants?
   animals:
+    type: npc_collection
     name: Animals
     enhances: classic/collections/npcs/animals
     _source:
@@ -167,6 +175,7 @@ npcs:
       page: 114
     contents:
       bladewing:
+        type: npc
         name: Bladewing
         nature: Animal
         rank: 2
@@ -198,6 +207,7 @@ npcs:
         your_truth: |-
           A clan of hill people conduct ceremonial hunts of the bladewings, and decorate their banners and shields with its form. Their mystics and warriors even wear the leathery wings as ornamentation. What powers or protections do they believe this imparts?
       carrion_newt:
+        type: npc
         name: Carrion Newt
         nature: Animal
         rank: 3
@@ -231,6 +241,7 @@ npcs:
         your_truth: |-
           Carrion newt eggs are prized by a specific culture or settlement for some purpose. What is it?
       cave_lion:
+        type: npc
         name: Cave Lion
         nature: Animal
         rank: 3
@@ -257,6 +268,7 @@ npcs:
         quest_starter: |-
           A large cave lion kills livestock in outlying Ironlander steadings, and attacked a farmer. It hunts well beyond its usual territory, and is said to lair in a [Wild](id:delve/site_themes/wild) [Cavern](id:delve/site_domains/cavern). What has driven this beast from its hunting grounds?
       deep_rat:
+        type: npc
         name: Deep Rat
         nature: Animal
         rank: 1
@@ -288,6 +300,7 @@ npcs:
         your_truth: |-
           During the longest night of winter, deep rats swarm the surface world. They are drawn inexorably to a specific place. What is it?
       nightmare_spider:
+        type: npc
         name: Nightmare Spider
         nature: Animal
         rank: 2
@@ -321,6 +334,7 @@ npcs:
         your_truth: |-
           Nightmare spider toxin is harvested for a specific rite or practice. What is it?
       shroud_crab:
+        type: npc
         name: Shroud Crab
         nature: Animal
         rank: 1
@@ -352,6 +366,7 @@ npcs:
         quest_starter: |-
           A vengeful [husk](id:delve/npcs/ironlanders/husk) curses a seaside settlement and summons a horde of shroud crabs to overrun the place in a flood of clattering legs and snapping claws. The husk dwells within an [Infested](id:delve/site_themes/infested) [Sea Cave](id:delve/site_domains/sea_cave), protected by other shroud crabs. There, she prepares an even more horrible show of her power—one which will threaten villages up and down the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast).
       trog:
+        type: npc
         name: Trog
         nature: Animal
         rank: 2
@@ -385,6 +400,7 @@ npcs:
         your_truth: |-
           Some insist that following a trog tunnel into the depths of the earth will eventually lead you to a vast cavern as expansive as the overlands. Is there any truth to this? What secret people or culture lives within this hidden realm?
   beasts:
+    type: npc_collection
     name: Beasts
     enhances: classic/collections/npcs/beasts
     _source:
@@ -392,6 +408,7 @@ npcs:
       page: 121
     contents:
       chitter:
+        type: npc
         name: Chitter
         nature: Beast
         rank: 2
@@ -424,6 +441,7 @@ npcs:
         quest_starter: |-
           An Ironlander scavenged a relic from an [Ancient](id:delve/site_themes/ancient) [Underkeep](id:delve/site_domains/underkeep), bringing it back to their settlement. Now, as if lured by this object, chitters attack in overwhelming waves. The walls will not hold much longer. What is this object, and what connection does it have to these creatures?
       gnarl:
+        type: npc
         name: Gnarl
         nature: Beast
         rank: 4
@@ -454,6 +472,7 @@ npcs:
         quest_starter: |-
           A fire rages within a [Ravaged](id:delve/site_themes/ravaged) [Tanglewood](id:delve/site_domains/tanglewood). In that place dwells an unusually large gnarl, its ancient hide as white as new snow. Why are you sworn to guide this creature safely through the blaze? What was the source of the fire? Who opposes you in this quest?
       iron_wracked_beast:
+        type: npc
         name: Iron-Wracked Beast
         nature: Beast
         rank: 3
@@ -488,6 +507,7 @@ npcs:
         your_truth: |-
           A sect of [zealots](id:delve/npcs/ironlanders/zealot) believe the Iron Blight is a divine manifestation. What god do they worship? What purpose do they believe the disease fulfills, and how to they intend to hasten the will of their god?
       kraken:
+        type: npc
         name: Kraken
         nature: Beast
         rank: 5
@@ -517,6 +537,7 @@ npcs:
         your_truth: |-
           A clan of seafolk conduct a yearly hunt to kill a kraken. Although they have never succeeded, and untold Ironlanders have died in the quest, the practice persists. What event or change do they believe killing the beast will bring about? What venerated weapon do they wield in this hunt?
       nightspawn:
+        type: npc
         name: Nightspawn
         nature: Beast
         rank: 3
@@ -552,6 +573,7 @@ npcs:
         quest_starter: |-
           The first settlers, your forebears, told tales of a great nightspawn at the heart of a [Ravaged](id:delve/site_themes/ravaged) [Ruin](id:delve/site_domains/ruin). According to those stories, it guards a pool of life-giving water. Any who have since tried to plunder that place have not returned. Or they have come back broken in mind or body. What now compels you to delve into this site?
       rhaskar:
+        type: npc
         name: Rhaskar
         nature: Beast
         rank: 4
@@ -582,6 +604,7 @@ npcs:
         quest_starter: |-
           Settlements and ships along the northern expanse of the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast) face repeated attacks from a large rhaskar. The creature appears amidst a fierce snowstorm, makes it savage assault, and fades back into the blizzard like a ghost. It seems to act out of a pure compulsion to cause terror and inflict violence rather than any need for food. A hunter tracked it to a [Wild](id:delve/site_themes/wild) [Frozen Cavern](id:delve/site_domains/frozen_cavern). But they heeded the warning of a pile of bones at the entrance and refused to enter that place.
       wyrm:
+        type: npc
         name: Wyrm
         nature: Beast
         rank: 5
@@ -614,6 +637,7 @@ npcs:
         your_truth: |-
           Tales tell of the World-Eater, the mother of all wyrms, and the great hero who battled her to save an Old World kingdom. Many claim to have relics from that great battle, or to be descended from that hero. But there is only one true legacy which survives today. What is it, and what clans or factions seek to control it?
   horrors:
+    type: npc_collection
     name: Horrors
     enhances: classic/collections/npcs/horrors
     _source:
@@ -621,6 +645,7 @@ npcs:
       page: 128
     contents:
       blighthound:
+        type: npc
         name: Blighthound
         nature: Horror
         rank: 3
@@ -654,6 +679,7 @@ npcs:
         quest_starter: |-
           Every night, a blighthound appears outside a settlement at the edge of a [Wild](id:delve/site_themes/wild) [Tanglewood](id:delve/site_domains/tanglewood), observing silently from within the mist. The people are gripped with a cold fear, wondering what fate will befall them. If any approach the blighthound, it leads them into the depths of the woods...
       bog_rot:
+        type: npc
         name: Bog Rot
         nature: Horror
         rank: 2
@@ -688,6 +714,7 @@ npcs:
         your_truth: |-
           Ironlanders in the [Flooded Lands](id:classic/atlas/ironlands/flooded_lands) enact a particular burial practice to ensure their kin do not someday rise as a bog rot from that baneful soil. What is it?
       bonehorde:
+        type: npc
         name: Bonehorde
         nature: Horror
         rank: 4
@@ -722,6 +749,7 @@ npcs:
         quest_starter: |-
           For months, someone has been stealing remains from local graves and barrows. Now, a bonehorde emerges from a [Haunted](id:delve/site_themes/haunted) [Tanglewood](id:delve/site_domains/tanglewood) to attack nearby communities and travelers. Who commands this foul aberration, and for what purpose?
       thrall:
+        type: npc
         name: Thrall
         nature: Horror
         rank: 2
@@ -756,6 +784,7 @@ npcs:
         your_truth: |-
           To detect the presence of a spirit, drawing it out of the thrall for a few moments, mystics must perform a dangerous ritual. What is the nature of this ritual, and what rare or elusive component does it require?
       wight:
+        type: npc
         name: Wight
         nature: Horror
         rank: 3
@@ -794,6 +823,7 @@ npcs:
         quest_starter: |-
           A wight is in search of the person it is sworn to protect, now held in a [Fortified](id:delve/site_themes/fortified) [Stronghold](id:delve/site_domains/stronghold). Who does it seek? Why were they taken? Will you stand against the wight, or help them?
   anomalies:
+    type: npc_collection
     name: Anomalies
     _source:
       <<: *Source
@@ -801,6 +831,7 @@ npcs:
     description: Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.
     contents:
       blood_thorn:
+        type: npc
         name: Blood Thorn
         nature: Anomaly
         rank: 2
@@ -830,6 +861,7 @@ npcs:
         your_truth: |-
           Each spring, a vibrant red flower sprouts from blood thorn branches. This blossom is coveted as an ingredient for alchemical elixirs. What effect does it provide?
       circle_of_stones:
+        type: npc
         name: Circle of Stones
         nature: Anomaly
         rank: 2
@@ -867,6 +899,7 @@ npcs:
         your_truth: |-
           The stones covet a particular type of memory above all others. What is it, and what do they offer in exchange?
       glimmer:
+        type: npc
         name: Glimmer
         nature: Anomaly
         rank: 2
@@ -905,6 +938,7 @@ npcs:
         your_truth: |-
           If you seek the guidance of a glimmer, you can try summoning one through a specific rite. What must you do? What cost must be paid?
       gloom:
+        type: npc
         name: Gloom
         nature: Anomaly
         rank: 2
@@ -937,6 +971,7 @@ npcs:
         your_truth: |-
           Is there a benevolent counterpart to a gloom—one which offers light and hope instead of darkness and despair? Is this the cure for someone who suffers the aftermath of a gloom’s visions? What is it called, and where can it be found?
       maelstrom:
+        type: npc
         name: Maelstrom
         nature: Anomaly
         rank: 2
@@ -969,6 +1004,7 @@ npcs:
         your_truth: |-
           Some believe that you must cast a particular thing of value into a maelstrom in trade for your life. What is it?
       tempest:
+        type: npc
         name: Tempest
         nature: Anomaly
         rank: 2

@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   planets:
     name: Planets
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -16,6 +18,7 @@ oracles:
       class:
         name: Planetary Class
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 306
@@ -88,6 +91,7 @@ oracles:
           <<: *Source
           page: 320
         oracle_type: table_shared_text
+        type: oracle_collection
         # rendering:
         #   columns:
         #     - content_type: roll
@@ -112,6 +116,7 @@ oracles:
             # source: *CollectionSource
             name: Lifebearing
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires: &attr:Life.Lifebearing
             #     attributes:
@@ -278,6 +283,7 @@ oracles:
             name: Lifeless
             # source: *CollectionSource
             oracle_type: column_text
+            type: oracle_rollable
             # usage:
             #   requires: &attr:Life.Lifeless
             #     attributes:
@@ -391,6 +397,7 @@ oracles:
           <<: *Source
           page: 321
         oracle_type: table_shared_text
+        type: oracle_collection
         # content:
         #   part_of_speech: [fragment]
         #   tags: [opportunity]
@@ -404,6 +411,7 @@ oracles:
         contents:
           lifebearing:
             oracle_type: column_text
+            type: oracle_rollable
             name: Lifebearing
             # source: *CollectionSource
             # usage:
@@ -497,6 +505,7 @@ oracles:
                 # suggestions: [*roll:Object]
           lifeless:
             oracle_type: column_text
+            type: oracle_rollable
             name: Lifeless
             # source: *CollectionSource
             # usage:

@@ -1,8 +1,10 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 assets:
   path:
     name: Path Assets
+    type: asset_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -14,6 +16,7 @@ assets:
       automaton:
         _source: *Source
         name: Automaton
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -42,6 +45,7 @@ assets:
       cannoneer:
         _source: *Source
         name: Cannoneer
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -54,6 +58,7 @@ assets:
       crew_commander:
         _source: *Source
         name: Crew Commander
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -64,6 +69,7 @@ assets:
                 _source: *Source
                 name: Bolster Crew
                 roll_type: action_roll
+                type: move
                 trigger:
                   text: When you bolster you crew by providing a notable reward or respite...
                   conditions:
@@ -124,6 +130,7 @@ assets:
       cutthroat:
         _source: *Source
         name: Cutthroat
+        type: asset
         category: Path
         requirement: If you wield knives...
         abilities:
@@ -137,6 +144,7 @@ assets:
       deck_clearer:
         _source: *Source
         name: Deck Clearer
+        type: asset
         category: Path
         requirement: If you wield a scattergun...
         abilities:
@@ -150,6 +158,7 @@ assets:
       duelist:
         _source: *Source
         name: Duelist
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -162,6 +171,7 @@ assets:
       harpooner:
         _source: *Source
         name: Harpooner
+        type: asset
         category: Path
         requirement: If you wield a handheld harpoon...
         abilities:
@@ -174,6 +184,7 @@ assets:
               When you [Resupply](id:sundered_isles/moves/recover/resupply) by hunting large game, add +1 and take +1 supply on a hit. On a miss with a match, there’s always a bigger fish; you draw the attention of a notable threat.
       jinx:
         name: Jinx
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -186,6 +197,7 @@ assets:
       merchant:
         _source: *Source
         name: Merchant
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -201,6 +213,7 @@ assets:
       musician:
         _source: *Source
         name: Musician
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -216,6 +229,7 @@ assets:
       musketeer:
         _source: *Source
         name: Musketeer
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -228,6 +242,7 @@ assets:
       necromancer:
         _source: *Source
         name: necromancer
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -283,6 +298,7 @@ assets:
       overlander:
         _source: *Source
         name: Overlander
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -295,6 +311,7 @@ assets:
       pirate_captain:
         _source: *Source
         name: Pirate Captain
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -309,6 +326,7 @@ assets:
       pistoleer:
         _source: *Source
         name: Pistoleer
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -321,6 +339,7 @@ assets:
       scholar:
         _source: *Source
         name: Scholar
+        type: asset
         category: Path
         options:
           field_one:
@@ -340,6 +359,7 @@ assets:
       seadog:
         _source: *Source
         name: Seadog
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -352,6 +372,7 @@ assets:
       shipwright:
         _source: *Source
         name: Shipwright
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -364,6 +385,7 @@ assets:
       socialite:
         _source: *Source
         name: Socialite
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -380,6 +402,7 @@ assets:
       sorcerer:
         _source: *Source
         name: Sorcerer
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -396,6 +419,7 @@ assets:
       spy:
         _source: *Source
         name: Spy
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -411,6 +435,7 @@ assets:
       swashbuckler:
         _source: *Source
         name: Swashbuckler
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -423,6 +448,7 @@ assets:
       urchin:
         _source: *Source
         name: Urchin
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -473,6 +499,7 @@ assets:
       windbinder:
         _source: *Source
         name: Windbinder
+        type: asset
         category: Path
         abilities:
           - enabled: true
@@ -483,6 +510,7 @@ assets:
                 _source: *Source
                 name: Bind Winds
                 roll_type: action_roll
+                type: move
                 trigger:
                   text: When you bind the winds to your will...
                   conditions:

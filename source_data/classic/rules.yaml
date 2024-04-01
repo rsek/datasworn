@@ -1,5 +1,6 @@
 _id: classic
 package_type: ruleset
+type: package
 <<: &Source
   title: Ironsworn Rulebook
   url: https://ironswornrpg.com

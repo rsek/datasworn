@@ -1,7 +1,9 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 assets:
   command_vehicle:
+    type: asset_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -13,6 +15,7 @@ assets:
     color: &CommandVehicle.color '#9aa3ad'
     contents:
       flagship:
+        type: asset
         name: Flagship
         category: Command Vehicle
         color: *CommandVehicle.color
@@ -55,11 +58,13 @@ assets:
         _source: *Source
   incidental_vehicle:
     _source: *Source
+    type: asset_collection
     name: Incidental Vehicle Assets
     # TODO: figure out whether this should be represented as multiple assets
     summary: When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to cargo and shipwide provisions.
     contents:
       sailing_ship:
+        type: asset
         name: Sailing Ship
         shared: true
         category: Incidental Vehicle
@@ -109,9 +114,11 @@ assets:
   support_vehicle:
     _source: *Source
     name: Support Vehicle Assets
+    type: asset_collection
     color: &SupportVehicle.color '#495790'
     contents:
       diving_bell:
+        type: asset
         name: Diving Bell
         <<: &SupportVehicle
           options: *Options_Name
@@ -159,6 +166,7 @@ assets:
                   conditions:
                     - text: when you use the diving bell to [Explore a Waypoint](id:sundered_isles/moves/exploration/explore_a_waypoint)
       flying_machine:
+        type: asset
         name: Flying Machine
         <<: *SupportVehicle
         controls:
@@ -201,6 +209,7 @@ assets:
                   conditions:
                     - text: When you scout ahead as you [Set a Course](id:sundered_isles/moves/exploration/set_a_course)
       longboat:
+        type: asset
         name: Longboat
         <<: *SupportVehicle
         abilities:

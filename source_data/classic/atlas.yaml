@@ -1,5 +1,6 @@
 _id: classic
 package_type: ruleset
+type: package
 # Summaries from Lodestar.
 atlas:
   ironlands:
@@ -12,10 +13,12 @@ atlas:
         title: Ironsworn Rulebook
         date: 2019-06-05
     name: The Ironlands
+    type: atlas
     summary: 'The Ironlands is a rugged peninsula of isolated settlements and untracked wilds on the frontier of the known world. Two generations ago, your people settled here when a cataclysm drove them from their former homes.'
     contents:
       barrier_islands:
         name: Barrier Islands
+        type: atlas_entry
         summary: This long chain of bleak islands parallels the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast). The islands are sparsely populated by [Ironlanders](id:classic/collections/npcs/ironlanders), mostly fisher-folk who brave the surrounding waters.
         _source:
           <<: *Source
@@ -38,6 +41,7 @@ atlas:
           The spectral maiden appears at the bow of your ship, offering to guide you safely through the storm—for a price. What does she demand of you?
       ragged_coast:
         name: Ragged Coast
+        type: atlas_entry
         summary: This is a rugged land of snow-capped cliffs overlooking blue waters. [Ironlander](id:classic/collections/npcs/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys.
         _source:
           <<: *Source
@@ -60,6 +64,7 @@ atlas:
           A ship which set off from a coastal settlement is found washed up on shore. It is empty. This ship carried something of great importance, now lost. What was it, and why do you swear to recover it?
       deep_wilds:
         name: Deep Wilds
+        type: atlas_entry
         summary: This vast swath of ancient forest is largely uninhabited and unexplored by [Ironlanders](id:classic/collections/npcs/ironlanders). Most avoid this region.
         _source:
           <<: *Source
@@ -81,6 +86,7 @@ atlas:
           An [Ironlander](id:classic/collections/npcs/ironlanders) has sided with an enemy in the heart of the Wilds, and is leading attacks against Ironlander settlements. Who is this person? Who have they joined forces with? What will you do to stop these attacks?
       flooded_lands:
         name: Flooded Lands
+        type: atlas_entry
         summary: This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. A few hardy [Ironlanders](id:classic/collections/npcs/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands.
         _source:
           <<: *Source
@@ -103,6 +109,7 @@ atlas:
           Rising flood waters threaten to overwhelm an Ironlander settlement. Escape by boat is the only option, but there are few boats and many people. What’s more, there is something hungry in the water, waiting to feed.
       havens:
         name: Havens
+        type: atlas_entry
         summary: This is an expansive area of forests, rivers, shrubland, and low hills. It is a relative oasis in the harsh Ironlands, but even here there is little comfort or safety.
         _source:
           <<: *Source
@@ -124,6 +131,7 @@ atlas:
           A settlement has fallen under the unjust rule of a cruel leader. What leverage do they hold over these people? What is your connection to the community? What can be done to overthrow this tyrant?
       hinterlands:
         name: Hinterlands
+        type: atlas_entry
         summary: This imposing terrain consists of dense forests nestled against rugged hills. The Ironlander settlements in this region serve primarily as bases for hunters and trappers.
         _source:
           <<: *Source
@@ -147,6 +155,7 @@ atlas:
           A group of [Ironlanders](id:classic/collections/npcs/ironlanders) have been forced out of their Hinterland settlement. What caused them to leave? With winter coming, and food in short supply, will you attempt to reclaim their settlement or convince someone to take them in?
       tempest_hills:
         name: Tempest Hills
+        type: atlas_entry
         summary: These highlands are defined by rugged hills, low mountains, thin woods, and grassy plateaus. [Ironlanders](id:classic/collections/npcs/ironlanders) live here in nomadic camps or mining settlements.
         _source:
           <<: *Source
@@ -170,6 +179,7 @@ atlas:
           You have come across or learned of a rich source of unclaimed iron and silver among these hills. What hazards must be overcome before a mine can be established? What force opposes you or attempts to establish its own claim?
       veiled_mountains:
         name: Veiled Mountains
+        type: atlas_entry
         summary: These great peaks mark the northern bounds of the settled lands. A few hardy [Ironlanders](id:classic/collections/npcs/ironlanders) dwell here in small mining communities. Most of them head south before the long, brutal winter takes hold.
         _source:
           <<: *Source
@@ -190,6 +200,7 @@ atlas:
           As winter fast approaches, there is no sign of the [Ironlanders](id:classic/collections/npcs/ironlanders) who live in a small mining community on the flanks of the Veils. They should have been off the mountain weeks ago. Time is running out.
       shattered_wastes:
         name: Shattered Wastes
+        type: atlas_entry
         summary: This plain of jagged, broken ice is uninhabited by [Ironlanders](id:classic/collections/npcs/ironlanders). No one knows the bounds of this land or what lies beyond.
         _source:
           <<: *Source

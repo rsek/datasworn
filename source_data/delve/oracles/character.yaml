@@ -1,9 +1,11 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
   character:
     enhances: classic/collections/oracles/character
+    type: oracle_collection
     name: Character
     summary: Set the initial disposition for a character, or reveal what activity they are focused on when you first encounter them.
     _source:
@@ -20,6 +22,7 @@ oracles:
         name: Activity
         canonical_name: 'Character: Activity'
         oracle_type: table_text
+        type: oracle_rollable
         summary: To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the [Focus](id:delve/oracles/feature/focus) oracle or [Theme](id:classic/oracles/action_and_theme/theme) oracle.
         suggestions:
           oracles:
@@ -235,6 +238,7 @@ oracles:
       disposition:
         name: Disposition
         oracle_type: table_text
+        type: oracle_rollable
         summary: Use this oracle when you want to define the initial tone of an encounter with an NPC or faction.
         canonical_name: 'Character: Disposition'
         # usage:

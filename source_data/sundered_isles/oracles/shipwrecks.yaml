@@ -1,9 +1,11 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   shipwrecks:
     name: Shipwreck Oracles
     oracle_type: tables
+    type: oracle_collection
     _source: &Source
       title: Sundered Isles Book Preview
       authors:
@@ -16,6 +18,7 @@ oracles:
       location:
         name: Shipwreck Location
         oracle_type: table_text2
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: When learning about a distant shipwreck, use the table below to reveal where it met its sad fate. If you come upon a wreck in your travels, pick a locatation as appropriate to your surroundings.
@@ -47,6 +50,7 @@ oracles:
       first_look:
         name: Shipwreck First Look
         oracle_type: table_text
+        type: oracle_rollable
         recommended_rolls:
           min: 1
           max: 2
@@ -163,6 +167,7 @@ oracles:
       first_look_cursed:
         name: Cursed Shipwreck First Look
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -253,6 +258,7 @@ oracles:
       details:
         name: Shipwreck Details
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: Use this table to reveal details of a wreck. Roll once or twice when searching a small ship, and up to three times when surveying a large vessel. These details are revealed in the context of another move—such as Explore a Waypoint or Gather Information—but might prompt additional actions or investigations.
@@ -358,6 +364,7 @@ oracles:
       details_cursed:
         name: Cursed Shipwreck Details
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -454,6 +461,7 @@ oracles:
       perils:
         name: Shipwreck Perils
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: Use this table when you explore, investigate, or scavenge a wreck and encounter a complication. See page 201 for details.
@@ -525,6 +533,7 @@ oracles:
       opportunities:
         name: Shipwreck Opportunities
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         summary: Use this table when you uncover an opportunity while exploring, investigating, or scavenging a wreck.
@@ -559,6 +568,7 @@ oracles:
       orientation:
         name: Shipwreck Orientation
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         summary: Use the tables on the opposite page to reveal the state of the wreck, which can help frame the challenges of accessing or exploring the site. See page 201 for suggested gameplay procedures when searching a shipwreck.
@@ -566,12 +576,14 @@ oracles:
           position:
             name: Position
             oracle_type: table_shared_text
+            type: oracle_collection
             _source:
               <<: *Source
             contents:
               sea:
                 name: Sea
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                 - min: 1
                   max: 30
@@ -601,6 +613,7 @@ oracles:
               shore:
                 name: Shore
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                 - <<: *Position.0
                   min: 1
@@ -624,6 +637,7 @@ oracles:
               sea_cave:
                 name: Sea Cave
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                 - <<: *Position.0
                   min: 1
@@ -647,6 +661,7 @@ oracles:
               swamp:
                 name: Swamp
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                 - <<: *Position.0
                   min: 1
@@ -670,6 +685,7 @@ oracles:
               river:
                 name: River
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                 - <<: *Position.0
                   min: 1
@@ -693,6 +709,7 @@ oracles:
               inland:
                 name: Inland
                 oracle_type: column_text
+                type: oracle_rollable
                 rows:
                 - *Position.0
                 - *Position.1
@@ -709,6 +726,7 @@ oracles:
           scale:
             name: Scale
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -733,6 +751,7 @@ oracles:
           wholeness:
             name: Wholeness
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:

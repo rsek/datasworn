@@ -1,4 +1,5 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 oracles:
@@ -34,6 +35,7 @@ oracles:
         _source: *Source
         canonical_name: 'Site Name: Format'
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - <<: &i18n.template.result.proper_noun
               _i18n:
@@ -108,6 +110,7 @@ oracles:
       description:
         canonical_name: 'Site Name: Description'
         oracle_type: table_text
+        type: oracle_rollable
         name: Description
         _source:
           <<: *Source
@@ -325,6 +328,7 @@ oracles:
       detail:
         canonical_name: 'Site Name: Detail'
         oracle_type: table_text
+        type: oracle_rollable
         name: Detail
         _source:
           <<: *Source
@@ -536,6 +540,7 @@ oracles:
       namesake:
         canonical_name: 'Site Name: Namesake'
         oracle_type: table_text
+        type: oracle_rollable
         name: Namesake
         summary: |-
           You may also use your preferred name randomizer to generate a Namesake for your site. If you want to add details for the Namesake, use the [Character oracles](id:classic/collections/oracles/character) in *Ironsworn Core*. This may help inspire a deeper understanding of the history of the site.
@@ -750,6 +755,7 @@ oracles:
         name: Place
         canonical_name: 'Site Name: Place'
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 210
@@ -842,6 +848,7 @@ oracles:
       place:
         canonical_name: 'Site Name: Place'
         oracle_type: tables
+        type: oracle_collection
         name: Place
         _source:
           <<: *Source
@@ -851,6 +858,7 @@ oracles:
             name: Barrow
             <<: &Place
               oracle_type: table_text
+              type: oracle_rollable
             # rendering:
             #   style: embed_in_row
               # embed_in: delve/oracles/site_name/place/1-6

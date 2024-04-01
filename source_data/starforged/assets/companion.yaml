@@ -1,5 +1,6 @@
 _id: starforged
 package_type: ruleset
+type: package
 assets:
   companion:
     _source:
@@ -58,6 +59,7 @@ assets:
                   - starforged/moves/exploration/undertake_an_expedition
                   - starforged/moves/exploration/set_a_course
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: While riding your banshee
@@ -83,6 +85,7 @@ assets:
               - enhances:
                   - '*/moves/combat/*'
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: When aided by your banshee
@@ -109,6 +112,7 @@ assets:
                 enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Aided by your combat bot
@@ -124,6 +128,7 @@ assets:
                   - starforged/moves/adventure/compel
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Using the threat of violence while the bot brings its weapons to bear
@@ -134,6 +139,7 @@ assets:
               - enhances:
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Once per fight, by using the combat bot to draw fire or create a diversion
@@ -155,6 +161,7 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: By studying your glowcat’s reactions in a charged interaction
@@ -166,6 +173,7 @@ assets:
               - enhances:
                   - starforged/moves/adventure/compel
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: When your glowcat’s reactions help guide your approach
@@ -177,6 +185,7 @@ assets:
               - enhances:
                   - starforged/moves/suffer/endure_stress
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: In the company of the glowcat
@@ -239,6 +248,7 @@ assets:
               - enhances:
                   - starforged/moves/suffer/companion_takes_a_hit
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: For the rockhorn
@@ -250,6 +260,7 @@ assets:
                   - starforged/moves/suffer/endure_harm
                   - starforged/moves/suffer/endure_stress
                 roll_type: action_roll
+                type: move
 
       sidekick:
         name: Sidekick
@@ -284,6 +295,7 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: With the support of your sidekick
@@ -292,6 +304,7 @@ assets:
               - enhances:
                   - starforged/moves/combat/clash
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Together with your sidekick
@@ -304,6 +317,7 @@ assets:
                   - 'starforged/moves/*/face_danger'
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Your sidekick acts to get you out of a tough spot
@@ -336,6 +350,7 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: By remotely observing a situation from your sprite's perspective
@@ -361,6 +376,7 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Overland or within a site (assisted by your survey bot)
@@ -374,6 +390,7 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Once per expedition, by sending the survey bot to scout ahead
@@ -384,6 +401,7 @@ assets:
               - enhances:
                   - starforged/moves/exploration/explore_a_waypoint
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Aided by the survey bot's sensors
@@ -391,6 +409,7 @@ assets:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: To detect a threat
@@ -457,6 +476,7 @@ assets:
               - enhances:
                   - starforged/moves/recover/repair
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: Aided by the bot
@@ -468,6 +488,7 @@ assets:
               - enhances:
                   - starforged/moves/adventure/check_your_gear
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: To see if your utility bot has a specific tool or technique available
@@ -490,6 +511,7 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
+                type: move
                 trigger:
                   conditions:
                     - text: On a spaceborne journey as your voidglider helps guide the way

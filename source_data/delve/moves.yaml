@@ -1,9 +1,11 @@
 _id: delve
+type: package
 package_type: expansion
 ruleset: classic
 moves:
   delve:
     name: Delve Moves
+    type: move_category
     _source:
       <<:  &Source
         title: 'Ironsworn: Delve'
@@ -18,6 +20,7 @@ moves:
     contents:
       discover_a_site:
         roll_type: no_roll
+        type: move
         name: Discover a Site
         _source:
           <<: *Source
@@ -39,6 +42,7 @@ moves:
       delve_the_depths:
         name: Delve the Depths
         roll_type: action_roll
+        type: move
         trigger:
           text: When you traverse an area within a perilous site...
           conditions:
@@ -94,6 +98,7 @@ moves:
           <<: *Source
           page: 30
         roll_type: no_roll
+        type: move
         trigger:
           text: When you encounter a helpful situation or feature within a site...
         oracles:
@@ -110,6 +115,7 @@ moves:
       reveal_a_danger:
         name: Reveal a Danger
         roll_type: no_roll
+        type: move
         _source:
           <<: *Source
           page: 34
@@ -124,6 +130,7 @@ moves:
       check_your_gear:
         name: Check Your Gear
         roll_type: action_roll
+        type: move
         trigger:
           text: When you check to see if you have a specific helpful item, and you have at least +1 supply...
           conditions:
@@ -155,6 +162,7 @@ moves:
           <<: *Source
           page: 40
         roll_type: progress_roll
+        type: move
         tracks:
           category: Delve
         trigger:
@@ -187,6 +195,7 @@ moves:
       escape_the_depths:
         name: Escape the Depths
         roll_type: action_roll
+        type: move
         trigger:
           text: When you flee or withdraw from a site...
           conditions:
@@ -258,6 +267,7 @@ moves:
               On a __miss__, a dire threat or imposing obstacle stands in your way. [Reveal a Danger](id:delve/moves/delve/reveal_a_danger). If you survive, you may make your escape.
       reveal_a_danger_alt:
         roll_type: no_roll
+        type: move
         name: Reveal a Danger (alternate version)
         replaces: delve/moves/delve/reveal_a_danger
         oracles:
@@ -274,6 +284,7 @@ moves:
           {{table:delve/oracles/moves/reveal_a_danger_alt}}
   failure:
     name: Failure Moves
+    type: move_category
     # optional: true
     description: Failure is a key part of your journey within the Ironlands. If you’d like to make those failures a more influential aspect of your character’s evolution—while taking a bit of the sting out of rolling a miss—use these optional mechanics.
     _source:
@@ -282,6 +293,7 @@ moves:
     contents:
       mark_your_failure:
         roll_type: no_roll
+        type: move
         name: Mark Your Failure
         # optional: true
         _source:
@@ -297,6 +309,7 @@ moves:
           <<: *Source
           page: 59
         roll_type: special_track
+        type: move
         trigger:
           text: When you spend time reflecting on your hardships and missteps...
           conditions:
@@ -331,6 +344,7 @@ moves:
               On a __miss__, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Then, envision how you set off on an ill-fated path.
   threat:
     name: Threat Moves
+    type: move_category
     # optional: true
     _source:
       <<: *Source
@@ -344,6 +358,7 @@ moves:
     contents:
       advance_a_threat:
         roll_type: no_roll
+        type: move
         name: Advance a Threat
         # optional: true
         _source:
@@ -365,6 +380,7 @@ moves:
         name: Take a Hiatus
         # optional: true
         roll_type: no_roll
+        type: move
         _source:
           <<: *Source
           page: 158
@@ -380,6 +396,7 @@ moves:
           Then, for each active threat, [Advance a Threat](id:delve/moves/legacy/advance_a_threat).
   rarity:
     name: Rarity Moves
+    type: move_category
     _source:
       <<: *Source
       page: 172
@@ -392,6 +409,7 @@ moves:
     contents:
       wield_a_rarity:
         roll_type: no_roll # FIXME: not the most intuitive label. could this be done better?
+        type: move
         name: Wield a Rarity
         # optional: true
         _source:

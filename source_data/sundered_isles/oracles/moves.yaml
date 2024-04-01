@@ -1,5 +1,6 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   move:
     name: Move Oracles
@@ -17,6 +18,7 @@ oracles:
           <<: *Source
         name: Begin a Session
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 10
@@ -53,6 +55,7 @@ oracles:
           <<: *Source
         name: Make a Discovery
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 4
@@ -123,6 +126,7 @@ oracles:
           <<: *Source
         name: Confront Chaos
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 6
@@ -189,6 +193,7 @@ oracles:
           <<: *Source
         name: Take Decisive Action
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 40
@@ -213,6 +218,7 @@ oracles:
           <<: *Source
         name: Endure Harm
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 10
@@ -234,6 +240,7 @@ oracles:
           <<: *Source
         name: Endure Stress
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 10
@@ -252,6 +259,7 @@ oracles:
           <<: *Source
         name: Withstand Damage
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 10
@@ -282,6 +290,7 @@ oracles:
           <<: *Source
         name: Pay the Price
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 2

@@ -1,8 +1,10 @@
 _id: starforged
 package_type: ruleset
+type: package
 oracles:
   moves:
     name: Move Oracles
+    type: oracle_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -16,6 +18,7 @@ oracles:
       ask_the_oracle:
         name: Ask the Oracle
         oracle_type: table_shared_text
+        type: oracle_collection
         _source: &CollectionSource
           <<: *Source
           page: 229
@@ -27,6 +30,7 @@ oracles:
               match:
                 text: On a match, envision an extreme result or twist.
               oracle_type: column_text
+              type: oracle_rollable
             # Aliases: ["90"]
             rows:
               - min: 1
@@ -83,6 +87,7 @@ oracles:
       begin_a_session:
         name: Begin a Session
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 141
@@ -126,6 +131,7 @@ oracles:
       make_a_discovery:
         name: Make a Discovery
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 176
@@ -223,6 +229,7 @@ oracles:
       confront_chaos:
         name: Confront Chaos
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 177
@@ -309,6 +316,7 @@ oracles:
       take_decisive_action:
         name: Take Decisive Action
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 194
@@ -336,6 +344,7 @@ oracles:
       endure_harm:
         name: Endure Harm
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 200
@@ -360,6 +369,7 @@ oracles:
       endure_stress:
         name: Endure Stress
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 202
@@ -381,6 +391,7 @@ oracles:
       withstand_damage:
         name: Withstand Damage
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 206
@@ -414,6 +425,7 @@ oracles:
       pay_the_price:
         name: Pay the Price
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
           page: 232

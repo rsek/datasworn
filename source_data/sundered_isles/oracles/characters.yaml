@@ -1,9 +1,11 @@
 _id: sundered_isles
 package_type: ruleset
+type: package
 oracles:
   characters:
     name: Characters
     oracle_type: tables
+    type: oracle_collection
     _source:
       <<: &Source
         title: Sundered Isles
@@ -17,6 +19,7 @@ oracles:
       first_look:
         name: First Look
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/characters/first_look_cursed
@@ -146,6 +149,7 @@ oracles:
       first_look_cursed:
         name: Cursed First Look
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version_of:
@@ -192,6 +196,7 @@ oracles:
       initial_disposition:
         name: Initial Dispostion
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -235,6 +240,7 @@ oracles:
         name: Identity
         summary: You may envision a character’s role, occupation, or persona using the broad categories below. For more detail, check the related subtable.
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -339,6 +345,7 @@ oracles:
         _source:
           <<: *Source
         oracle_type: table_text
+        type: oracle_rollable
         rows:
             - min: 1
               max: 2
@@ -504,6 +511,7 @@ oracles:
         _source:
           <<: *Source
         oracle_type: table_text
+        type: oracle_rollable
         rows:
           - min: 1
             max: 3
@@ -622,6 +630,7 @@ oracles:
       weapon_detail_cursed:
         name: Cursed Weapon Detail
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         tags:
@@ -688,6 +697,7 @@ oracles:
       details:
         name: Character Details
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/characters/details_cursed
@@ -1005,6 +1015,7 @@ oracles:
             cursed_version_of:
               - sundered_isles/oracles/characters/details
         oracle_type: table_text
+        type: oracle_rollable
         _source:
           <<: *Source
         rows:
@@ -1059,6 +1070,7 @@ oracles:
       goals:
         name: Character Goals
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/characters/goals_cursed
@@ -1212,6 +1224,7 @@ oracles:
       goals_cursed:
         name: Cursed Character Goals
         oracle_type: table_text
+        type: oracle_rollable
         tags:
           sundered_isles:
             cursed_version_of:
@@ -1283,12 +1296,14 @@ oracles:
       roles:
         name: Roles
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           academic:
             name: Academic
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1310,6 +1325,7 @@ oracles:
           agent:
             name: Agent
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1332,6 +1348,7 @@ oracles:
           caregiver:
             name: Caregiver
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1353,6 +1370,7 @@ oracles:
           combatant:
             name: Combatant
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1375,6 +1393,7 @@ oracles:
           devotant:
             name: Devotant
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1396,6 +1415,7 @@ oracles:
           laborer:
             name: Laborer
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1417,6 +1437,7 @@ oracles:
           merchant:
             name: Merchant
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1438,6 +1459,7 @@ oracles:
           mystic:
             name: Mystic
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1459,6 +1481,7 @@ oracles:
           outcast:
             name: Outcast
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1495,6 +1518,7 @@ oracles:
           outlander:
             name: Outlander
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1516,6 +1540,7 @@ oracles:
           performer:
             name: Performer
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1537,6 +1562,7 @@ oracles:
           sailor:
             name: Sailor
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1573,6 +1599,7 @@ oracles:
           scavenger:
             name: Scavenger
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1594,6 +1621,7 @@ oracles:
           outlaw:
             name: Outlaw
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1630,6 +1658,7 @@ oracles:
           statesperson:
             name: Statesperson
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1666,6 +1695,7 @@ oracles:
           tradesperson:
             name: Tradesperson
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -1702,12 +1732,14 @@ oracles:
       name:
         name: Character Name
         oracle_type: table_shared_rolls
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           given_name_a:
             name: Given Name
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - text: Aisha
               - text: Alexis
@@ -1812,6 +1844,7 @@ oracles:
           family_name_a:
             name: Family Name
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - text: Qadir
               - text: Whitlock
@@ -1916,6 +1949,7 @@ oracles:
           given_name_b:
             name: Given Name
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - text: Khalid
               - text: Kiana
@@ -2020,6 +2054,7 @@ oracles:
           family_name_b:
             name: Family Name
             oracle_type: column_text
+            type: oracle_rollable
             rows:
               - text: Mahdi
               - text: Barrow
@@ -2124,6 +2159,7 @@ oracles:
           moniker:
             name: Moniker
             oracle_type: column_text
+            type: oracle_rollable
             summary: If you are revealing a moniker for a character with a dreadful, ill-fated, mechanical, or eldritch aspect, use the [Cursed Moniker] table on page 189.
             rows:
               - min: 1
@@ -2430,12 +2466,14 @@ oracles:
       moniker_cursed:
         name: Cursed Moniker
         oracle_type: tables
+        type: oracle_collection
         _source:
           <<: *Source
         contents:
           type:
             name: Cursed Moniker Type
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -2470,6 +2508,7 @@ oracles:
           dreadful_persona:
             name: Dreadful Persona
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -2584,6 +2623,7 @@ oracles:
           eldritch_powers:
             name: Eldritch Powers
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -2662,6 +2702,7 @@ oracles:
           ill_fated_nature:
             name: Ill-fated Nature
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
@@ -2728,6 +2769,7 @@ oracles:
           mechanical_form:
             name: Mechanical Form
             oracle_type: table_text
+            type: oracle_rollable
             _source:
               <<: *Source
             rows:
