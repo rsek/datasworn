@@ -1,6 +1,5 @@
 _id: starforged
-package_type: ruleset
-type: package
+type: ruleset
 assets:
   module:
     _source:
@@ -13,6 +12,7 @@ assets:
           - name: Shawn Tomkin
       page: 55
     name: Module Assets
+    type: asset_collection
     color: &ModuleAsset.color '#7f5a90'
     # Summary: Enhanced features or capabilities of your STARSHIP. As with the ship itself, these are shared assets; a module’s abilities can benefit other player characters if it’s reasonable for them to make use of it.
     description: |-
@@ -24,6 +24,7 @@ assets:
     contents:
       engine_upgrade:
         name: Engine Upgrade
+        type: asset
         <<: &ModuleAsset
           category: Module
           shared: true
@@ -44,7 +45,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In your vehicle
@@ -61,7 +61,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In your vehicle and you choose to maneuver (before moving)
@@ -70,7 +69,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In your vehicle and you choose to boost (before rolling)
@@ -87,6 +85,7 @@ assets:
                       roll_options: null
       expanded_hold:
         name: Expanded Hold
+        type: asset
         <<: *ModuleAsset
         controls:
           cargo:
@@ -128,6 +127,7 @@ assets:
                       roll_options: null
       grappler:
         name: Grappler
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: &GrapplerMove |-
@@ -169,14 +169,12 @@ assets:
               - enhances:
                   - starforged/assets/module/grappler/abilities/0/moves/ready_grappler
                 roll_type: action_roll
-                type: move
           - text: |-
               When you [Take Decisive Action](id:starforged/moves/combat/take_decisive_action) by firing the grappler, you may reroll one challenge die.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By firing the grappler
@@ -184,6 +182,7 @@ assets:
                       method: null
       heavy_cannons:
         name: Heavy Cannons
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -196,7 +195,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you aim your cannons and use them to [Strike](id:starforged/moves/combat/strike)
@@ -208,7 +206,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/clash
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Once per fight, when you [Clash](id:starforged/moves/combat/clash) by committing to an all-or-nothing exchange of fire
@@ -229,6 +226,7 @@ assets:
                       method: null
       internal_refit:
         name: Internal Refit
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -238,7 +236,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: On the first leg of your journey (dangerous or greater)
@@ -249,9 +246,9 @@ assets:
             moves:
               draw_reserves:
                 name: Draw Reserves
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and your supply is reduced to 0...
                   conditions:
@@ -273,7 +270,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To oppose an invader within your vessel
@@ -281,6 +277,7 @@ assets:
                       method: null
       medbay:
         name: Medbay
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -290,7 +287,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/heal
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you use your medbay to [Heal](id:starforged/moves/recover/heal) yourself or another patient
@@ -302,7 +298,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/heal
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you or an ally mark the permanently harmed impact and are brought to the medbay without delay (less than an hour or so)
@@ -317,7 +312,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By performing a risky medical procedure
@@ -326,7 +320,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Through an autopsy or medical examination
@@ -334,6 +327,7 @@ assets:
                       roll_options: null
       missile_array:
         name: Missile Array
+        type: asset
         <<: *ModuleAsset
         controls:
           ammo:
@@ -354,7 +348,6 @@ assets:
                   - starforged/moves/combat/strike
                   - starforged/moves/combat/clash
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With a missile attack
@@ -363,7 +356,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/resupply
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In a place where your missiles can be replenished
@@ -386,7 +378,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you have at least 3 ammo and [Take Decisive Action](id:starforged/moves/combat/take_decisive_action) by unleashing all of your missiles
@@ -394,6 +385,7 @@ assets:
                       roll_options: null
       overseer:
         name: Overseer
+        type: asset
         options: &Options_Name
           name:
             label: name
@@ -407,7 +399,6 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By talking through a situation with the overseer AI
@@ -422,14 +413,12 @@ assets:
               - enhances:
                   - starforged/moves/suffer/withstand_damage
                 roll_type: action_roll
-                type: move
           - text: |-
               The overseer can pilot the vehicle independently. When you [Face Danger](id:starforged/moves/adventure/face_danger) by handing over control to the AI in an emergency, or to summon the vehicle remotely within a hazardous situation, you may roll +integrity. If you do, take +1 momentum on a hit.
             enhance_moves:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By handing over control to the AI in an emergency, or to summon the vehicle remotely within a hazardous situation
@@ -439,6 +428,7 @@ assets:
                           control: integrity
       reinforced_hull:
         name: Reinforced Hull
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -460,7 +450,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Against a foe who knows your reputation
@@ -479,6 +468,7 @@ assets:
                       method: null
       research_lab:
         name: Research Lab
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -500,7 +490,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -512,7 +501,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -521,7 +509,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -530,7 +517,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -538,6 +524,7 @@ assets:
                       text: *ResearchLabVow
       sensor_array:
         name: Sensor Array
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -547,7 +534,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In your vehicle
@@ -572,7 +558,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -589,7 +574,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Against an ambush
@@ -600,7 +584,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To detect a hidden threat
@@ -610,6 +593,7 @@ assets:
                           control: integrity
       shields:
         name: Shields
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: &ShieldsMove |-
@@ -618,9 +602,9 @@ assets:
             moves:
               raise_shields:
                 name: Raise Shields
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you raise your shields...
                   conditions:
@@ -653,7 +637,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By letting your shields take the blow
@@ -668,7 +651,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -686,6 +668,7 @@ assets:
                 - starforged/assets/module/shields/abilities/0/moves/raise_shields
       stealth_tech:
         name: Stealth Tech
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -701,7 +684,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -713,7 +695,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you travel stealthily (in your vehicle)
@@ -732,7 +713,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: You are poised to [Strike](id:starforged/moves/combat/strike) from hiding (and choose to strike true)
@@ -743,7 +723,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: You are poised to [Strike](id:starforged/moves/combat/strike) from hiding (and choose to strike hard)
@@ -753,6 +732,7 @@ assets:
                           stat: shadow
       vehicle_bay:
         name: Vehicle Bay
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -762,7 +742,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/repair
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -774,7 +753,6 @@ assets:
               - enhances:
                   - starforged/moves/suffer/withstand_damage
                 roll_type: action_roll
-                type: move
           - text: |-
               When you make a move to launch from or land on your command vehicle in a perilous situation or environment, reroll any dice and take +1 momentum on a hit.
             enhance_moves:
@@ -786,6 +764,7 @@ assets:
                       text: When you make a move to launch from or land on your command vehicle in a perilous situation or environment
       workshop:
         name: Workshop
+        type: asset
         <<: *ModuleAsset
         abilities:
           - text: |-
@@ -816,7 +795,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger: &WorkshopVowTrigger
                   conditions:
                     - roll_options: null
@@ -833,5 +811,4 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger: *WorkshopVowTrigger

@@ -1,10 +1,10 @@
 _id: delve
-type: package
-package_type: expansion
+type: expansion
 ruleset: classic
 oracles:
   site_name:
     name: Site Name
+    type: oracle_collection
     summary: Give a site a name or learn more about its characteristics and history.
     description: |-
       To generate a name for a site, first roll on the [Format](id:delve/oracles/site_name/format) table. Then, fill in the blanks by using the [Description](id:delve/oracles/site_name/description), [Detail](id:delve/oracles/site_name/detail), [Namesake](id:delve/oracles/site_name/namesake), and [Place](id:delve/oracles/site_name/place) oracles.

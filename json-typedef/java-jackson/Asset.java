@@ -31,6 +31,9 @@ public class Asset {
     @JsonProperty("shared")
     private Boolean shared;
 
+    @JsonProperty("type")
+    private AssetType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -192,6 +195,20 @@ public class Asset {
      */
     public void setShared(Boolean shared) {
         this.shared = shared;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public AssetType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(AssetType type) {
+        this.type = type;
     }
 
     /**

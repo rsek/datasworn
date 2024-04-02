@@ -11,8 +11,8 @@ namespace Datasworn
     /// </summary>
     public class RulesPackageRuleset : RulesPackage
     {
-        [JsonPropertyName("package_type")]
-        public string PackageType { get => "ruleset"; }
+        [JsonPropertyName("type")]
+        public string Type_ { get => "ruleset"; }
 
         [JsonPropertyName("_id")]
         public RulesetId Id { get; set; }
@@ -90,6 +90,10 @@ namespace Datasworn
         [JsonPropertyName("delve_sites")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public IDictionary<string, DelveSite> DelveSites { get; set; }
+
+        [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public MarkdownString? Description { get; set; }
 
         /// <summary>
         /// A dictionary object containing NPC collections, which contain NPCs.

@@ -9,10 +9,10 @@
 			"title": "RulesPackage",
 			"type": "object",
 			"description": "Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `package_type` property as a discriminator.",
-			"required": ["package_type"],
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.",
+			"required": ["type"],
 			"properties": {
-				"package_type": {
+				"type": {
 					"enum": ["ruleset", "expansion"]
 				}
 			},
@@ -21,7 +21,7 @@
 				{
 					"if": {
 						"properties": {
-							"package_type": {
+							"type": {
 								"const": "ruleset",
 								"type": "string"
 							}
@@ -34,7 +34,7 @@
 				{
 					"if": {
 						"properties": {
-							"package_type": {
+							"type": {
 								"const": "expansion",
 								"type": "string"
 							}
@@ -50,21 +50,21 @@
 			"title": "Ruleset",
 			"type": "object",
 			"description": "A standalone Datasworn package that describes its own ruleset.",
-			"required": ["_id", "package_type"],
+			"required": ["_id", "type"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/RulesetId"
-				},
-				"title": {
-					"$ref": "#/definitions/SourceTitle"
 				},
 				"datasworn_version": {
 					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
 				},
-				"package_type": {
+				"type": {
 					"type": "string",
 					"const": "ruleset"
+				},
+				"title": {
+					"$ref": "#/definitions/SourceTitle"
 				},
 				"authors": {
 					"type": "array",
@@ -88,6 +88,9 @@
 				},
 				"rules": {
 					"$ref": "#/definitions/Rules"
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"oracles": {
 					"type": "object",
@@ -196,21 +199,21 @@
 			"title": "Expansion",
 			"type": "object",
 			"description": "A Datasworn package that relies on an external package to provide its ruleset.",
-			"required": ["_id", "package_type", "ruleset"],
+			"required": ["_id", "type", "ruleset"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/ExpansionId"
-				},
-				"title": {
-					"$ref": "#/definitions/SourceTitle"
 				},
 				"datasworn_version": {
 					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
 				},
-				"package_type": {
+				"type": {
 					"type": "string",
 					"const": "expansion"
+				},
+				"title": {
+					"$ref": "#/definitions/SourceTitle"
 				},
 				"authors": {
 					"type": "array",
@@ -237,6 +240,9 @@
 				},
 				"rules": {
 					"$ref": "#/definitions/RulesExpansion"
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString"
 				},
 				"oracles": {
 					"type": "object",
@@ -658,7 +664,7 @@
 			"title": "RulesetId",
 			"type": "string",
 			"description": "The ID of standalone Datasworn package that describes its own ruleset.",
-			"examples": ["classic", "starforged"],
+			"examples": ["classic", "starforged", "sundered_isles"],
 			"pattern": "^([a-z0-9_]{3,})$"
 		},
 		"SpecialTrackRuleId": {
@@ -690,13 +696,6 @@
 			"type": "string",
 			"description": "A wildcarded ID that can be used to match multiple Truths.",
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/truths\\/(\\*|([a-z][a-z_]*))$"
-		},
-		"TruthOptionId": {
-			"title": "TruthOptionId",
-			"type": "string",
-			"description": "A unique ID for a TruthOption.",
-			"examples": ["classic/truths/iron/0", "starforged/truths/iron/0"],
-			"pattern": "^([a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)\\/(0|[1-9][0-9]*)$"
 		},
 		"AuthorInfo": {
 			"title": "AuthorInfo",
@@ -2577,6 +2576,7 @@
 			"type": "object",
 			"description": "A non-player character entry, similar to those in Chapter 5 of the Ironsworn Rulebook, or Chapter 4 of Starforged.",
 			"required": [
+				"type",
 				"name",
 				"rank",
 				"nature",
@@ -2590,6 +2590,10 @@
 				"_id": {
 					"$ref": "#/definitions/NpcId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "npc"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -2677,11 +2681,15 @@
 		"NpcCollection": {
 			"title": "NpcCollection",
 			"type": "object",
-			"required": ["name", "_source"],
+			"required": ["type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/NpcCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "npc_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -2958,7 +2966,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleTableSharedTextColumn"
+						"$ref": "#/definitions/OracleTableSharedText"
 					}
 				},
 				{
@@ -2971,7 +2979,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleTableShared2TextColumns"
+						"$ref": "#/definitions/OracleTableSharedText2"
 					}
 				},
 				{
@@ -2984,7 +2992,7 @@
 						}
 					},
 					"then": {
-						"$ref": "#/definitions/OracleTableShared3TextColumns"
+						"$ref": "#/definitions/OracleTableSharedText3"
 					}
 				}
 			]
@@ -2993,11 +3001,15 @@
 			"title": "OracleColumnText",
 			"type": "object",
 			"description": "Represents a single column in an OracleCollection.",
-			"required": ["name", "oracle_type", "rows"],
+			"required": ["type", "name", "oracle_type", "rows"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3067,11 +3079,15 @@
 		"OracleColumnText2": {
 			"title": "OracleColumnText2",
 			"type": "object",
-			"required": ["name", "oracle_type", "rows"],
+			"required": ["type", "name", "oracle_type", "rows"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3141,11 +3157,15 @@
 		"OracleColumnText3": {
 			"title": "OracleColumnText3",
 			"type": "object",
-			"required": ["name", "oracle_type", "rows"],
+			"required": ["type", "name", "oracle_type", "rows"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3606,15 +3626,242 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableShared2TextColumns": {
-			"title": "OracleTableShared2TextColumns",
+		"OracleTableSharedRolls": {
+			"title": "OracleTableSharedRolls",
 			"type": "object",
-			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
-			"required": ["name", "oracle_type", "_source"],
+			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
+			"required": ["type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"description": "A table with one shared roll column, and multiple unique text columns.",
+					"default": "table_shared_rolls",
+					"const": "table_shared_rolls"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"enhances": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/definitions/OracleColumnText"
+						}
+					}
+				},
+				"column_labels": {
+					"title": "ColumnLabels",
+					"type": "object",
+					"description": "Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.",
+					"default": {
+						"roll": "Roll"
+					},
+					"required": ["roll"],
+					"properties": {
+						"roll": {
+							"$ref": "#/definitions/Label",
+							"default": "Roll"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"type": "object",
+					"releaseStage": "experimental",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/definitions/Tag"
+								}
+							}
+						}
+					}
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTableSharedText": {
+			"title": "OracleTableSharedText",
+			"type": "object",
+			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
+			"required": ["type", "name", "oracle_type", "_source"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"description": "A table with multiple unique roll columns, and one shared text column.",
+					"const": "table_shared_text"
+				},
+				"replaces": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+				},
+				"enhances": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this collection."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this collection."
+					}
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"contents": {
+					"type": "object",
+					"$comment": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/definitions/OracleColumnText"
+						}
+					}
+				},
+				"column_labels": {
+					"title": "ColumnLabels",
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"text": "Result"
+					},
+					"required": ["text"],
+					"properties": {
+						"text": {
+							"$ref": "#/definitions/Label",
+							"default": "Result"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"type": "object",
+					"releaseStage": "experimental",
+					"patternProperties": {
+						"^([a-z0-9_]{3,})$": {
+							"type": "object",
+							"$comment": "Deserialize as a dictionary object.",
+							"patternProperties": {
+								"^([a-z][a-z_]*)$": {
+									"$ref": "#/definitions/Tag"
+								}
+							}
+						}
+					}
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				}
+			},
+			"additionalProperties": false
+		},
+		"OracleTableSharedText2": {
+			"title": "OracleTableSharedText2",
+			"type": "object",
+			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
+			"required": ["type", "name", "oracle_type", "_source"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/OracleCollectionId",
+					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3718,15 +3965,19 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableShared3TextColumns": {
-			"title": "OracleTableShared3TextColumns",
+		"OracleTableSharedText3": {
+			"title": "OracleTableSharedText3",
 			"type": "object",
 			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
-			"required": ["name", "oracle_type", "_source"],
+			"required": ["type", "name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3777,222 +4028,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/OracleColumnText2"
-						}
-					}
-				},
-				"column_labels": {
-					"title": "ColumnLabels",
-					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
-					"default": {
-						"text": "Result"
-					},
-					"required": ["text"],
-					"properties": {
-						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
-						}
-					}
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
-				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				}
-			},
-			"additionalProperties": false
-		},
-		"OracleTableSharedRolls": {
-			"title": "OracleTableSharedRolls",
-			"type": "object",
-			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
-			"required": ["name", "_source"],
-			"properties": {
-				"_id": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "The unique Datasworn ID for this item."
-				},
-				"name": {
-					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
-				},
-				"canonical_name": {
-					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
-				},
-				"oracle_type": {
-					"type": "string",
-					"description": "A table with one shared roll column, and multiple unique text columns.",
-					"default": "table_shared_rolls",
-					"const": "table_shared_rolls"
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
-				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
-				},
-				"color": {
-					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An SVG icon associated with this collection."
-				},
-				"images": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
-					}
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
-				},
-				"contents": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/OracleColumnText"
-						}
-					}
-				},
-				"column_labels": {
-					"title": "ColumnLabels",
-					"type": "object",
-					"description": "Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.",
-					"default": {
-						"roll": "Roll"
-					},
-					"required": ["roll"],
-					"properties": {
-						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
-						}
-					}
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
-				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				}
-			},
-			"additionalProperties": false
-		},
-		"OracleTableSharedTextColumn": {
-			"title": "OracleTableSharedTextColumn",
-			"type": "object",
-			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
-			"required": ["name", "oracle_type", "_source"],
-			"properties": {
-				"_id": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "The unique Datasworn ID for this item."
-				},
-				"name": {
-					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
-				},
-				"canonical_name": {
-					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
-				},
-				"oracle_type": {
-					"type": "string",
-					"description": "A table with multiple unique roll columns, and one shared text column.",
-					"const": "table_shared_text"
-				},
-				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
-				},
-				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
-				},
-				"color": {
-					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An SVG icon associated with this collection."
-				},
-				"images": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
-					}
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
-				},
-				"contents": {
-					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
-					"patternProperties": {
-						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/OracleColumnText"
+							"$ref": "#/definitions/OracleColumnText3"
 						}
 					}
 				},
@@ -4044,11 +4080,15 @@
 			"title": "OracleTableText",
 			"type": "object",
 			"description": "Represents a basic rollable oracle table with one roll column and one text result column.",
-			"required": ["name", "oracle_type", "rows", "_source"],
+			"required": ["type", "name", "oracle_type", "rows", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4161,11 +4201,15 @@
 			"title": "OracleTableText2",
 			"type": "object",
 			"description": "A rollable oracle table with one roll column and two text columns.",
-			"required": ["name", "oracle_type", "rows", "_source"],
+			"required": ["type", "name", "oracle_type", "rows", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4283,11 +4327,15 @@
 			"title": "OracleTableText3",
 			"type": "object",
 			"description": "A rollable oracle table with one roll column and 3 text columns.",
-			"required": ["name", "oracle_type", "rows", "_source"],
+			"required": ["type", "name", "oracle_type", "rows", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4404,11 +4452,15 @@
 			"title": "OracleTablesCollection",
 			"type": "object",
 			"description": "An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.",
-			"required": ["name", "_source"],
+			"required": ["type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4586,6 +4638,7 @@
 			"type": "object",
 			"description": "A move that makes an action roll.",
 			"required": [
+				"type",
 				"name",
 				"roll_type",
 				"trigger",
@@ -4597,6 +4650,10 @@
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4699,11 +4756,15 @@
 		"MoveCategory": {
 			"title": "MoveCategory",
 			"type": "object",
-			"required": ["name", "_source"],
+			"required": ["type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveCategoryId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move_category"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4852,11 +4913,15 @@
 			"title": "MoveNoRoll",
 			"type": "object",
 			"description": "A move that makes no progress rolls or action rolls.",
-			"required": ["name", "roll_type", "trigger", "text", "_source"],
+			"required": ["type", "name", "roll_type", "trigger", "text", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4999,6 +5064,7 @@
 			"type": "object",
 			"description": "A progress move that rolls on a standard progress track type (whose features are defined by this move object). For progress rolls that use special tracks, see MoveSpecialTrack.",
 			"required": [
+				"type",
 				"name",
 				"roll_type",
 				"tracks",
@@ -5011,6 +5077,10 @@
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -5124,6 +5194,7 @@
 			"type": "object",
 			"description": "A progress move that rolls on a special track, such as Legacies (Starforged) or Bonds (classic Ironsworn). For progress moves that use standard progress tracks, see MoveProgressRoll instead.",
 			"required": [
+				"type",
 				"name",
 				"roll_type",
 				"trigger",
@@ -5135,6 +5206,10 @@
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -5678,11 +5753,15 @@
 		"Asset": {
 			"title": "Asset",
 			"type": "object",
-			"required": ["name", "category", "abilities", "_source"],
+			"required": ["type", "name", "category", "abilities", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "asset"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -6051,11 +6130,15 @@
 		"AssetCollection": {
 			"title": "AssetCollection",
 			"type": "object",
-			"required": ["name", "_source"],
+			"required": ["type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "asset_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7164,10 +7247,6 @@
 			"type": "object",
 			"required": ["description", "quest_starter"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/TruthOptionId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"type": "integer"
 				},
@@ -7186,76 +7265,8 @@
 				"table": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/TruthOptionTableRow"
+						"$ref": "#/definitions/OracleTableRowText"
 					}
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				}
-			},
-			"additionalProperties": false
-		},
-		"TruthOptionTableRow": {
-			"title": "TruthOptionTableRow",
-			"type": "object",
-			"description": "Represents a row in an oracle table, with a single text cell.",
-			"required": ["text"],
-			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
-				},
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "The primary text content of this row."
-				},
-				"template": {
-					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "experimental"
-				},
-				"embed_table": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "experimental"
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"oracle_rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/definitions/OracleRoll"
-					}
-				},
-				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
 				}
 			},
 			"additionalProperties": false
@@ -7264,11 +7275,15 @@
 			"title": "Atlas",
 			"type": "object",
 			"releaseStage": "experimental",
-			"required": ["name", "_source"],
+			"required": ["type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "atlas"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7360,11 +7375,15 @@
 			"title": "Atlas entry",
 			"type": "object",
 			"description": "An atlas entry, like the Ironlands region entries found in classic Ironsworn.",
-			"required": ["name", "features", "description", "_source"],
+			"required": ["type", "name", "features", "description", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasEntryId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "atlas_entry"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",

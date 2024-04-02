@@ -1,10 +1,10 @@
 _id: delve
-type: package
-package_type: expansion
+type: expansion
 ruleset: classic
 oracles:
   monstrosity:
     name: Monstrosity
+    type: oracle_collection
     summary: Discover the nature of a [nightspawn](id:delve/npcs/horrors/nightspawn) or other frightful creature within your world.
     description: |-
       Use the Monstrosity oracle to define the nature of a [Nightspawn](id:delve/npcs/horrors/nightspawn), or to introduce a new type of [animal](id:classic/collections/npcs/animal), [beast](id:classic/collections/npcs/beast), or [horror](id:classic/collections/npcs/horror) in your world.

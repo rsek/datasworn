@@ -26,6 +26,9 @@ public class OracleCollectionTableSharedText extends OracleCollection {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("type")
+    private OracleCollectionTableSharedTextType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -143,6 +146,20 @@ public class OracleCollectionTableSharedText extends OracleCollection {
      */
     public void setName(Label name) {
         this.name = name;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public OracleCollectionTableSharedTextType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(OracleCollectionTableSharedTextType type) {
+        this.type = type;
     }
 
     /**

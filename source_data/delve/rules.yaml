@@ -1,6 +1,5 @@
 _id: delve
-type: package
-package_type: expansion
+type: expansion
 ruleset: classic
 <<: &Source
   license: https://creativecommons.org/licenses/by/4.0

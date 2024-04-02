@@ -36,6 +36,9 @@ namespace Datasworn
         [JsonPropertyName("oracle_type")]
         public OracleTablesCollectionOracleType OracleType { get; set; }
 
+        [JsonPropertyName("type")]
+        public OracleTablesCollectionType Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object

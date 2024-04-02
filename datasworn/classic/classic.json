@@ -1,8 +1,8 @@
 {
 	"_id": "classic",
-	"title": "Ironsworn Rulebook",
 	"datasworn_version": "0.0.9",
-	"package_type": "ruleset",
+	"type": "ruleset",
+	"title": "Ironsworn Rulebook",
 	"authors": [
 		{
 			"name": "Shawn Tomkin"
@@ -152,11 +152,13 @@
 	"oracles": {
 		"action_and_theme": {
 			"_id": "classic/collections/oracles/action_and_theme",
+			"type": "oracle_collection",
 			"name": "Action and Theme Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"action": {
 					"_id": "classic/oracles/action_and_theme/action",
+					"type": "oracle_rollable",
 					"name": "Action",
 					"canonical_name": "Oracle 1: Action",
 					"oracle_type": "table_text",
@@ -1186,6 +1188,7 @@
 				},
 				"theme": {
 					"_id": "classic/oracles/action_and_theme/theme",
+					"type": "oracle_rollable",
 					"name": "Theme",
 					"canonical_name": "Oracle 2: Theme",
 					"oracle_type": "table_text",
@@ -2229,11 +2232,13 @@
 		},
 		"character": {
 			"_id": "classic/collections/oracles/character",
+			"type": "oracle_collection",
 			"name": "Character",
 			"oracle_type": "tables",
 			"contents": {
 				"role": {
 					"_id": "classic/oracles/character/role",
+					"type": "oracle_rollable",
 					"name": "Character Role",
 					"canonical_name": "Oracle 10: Character Role",
 					"oracle_type": "table_text",
@@ -2566,6 +2571,7 @@
 				},
 				"goal": {
 					"_id": "classic/oracles/character/goal",
+					"type": "oracle_rollable",
 					"name": "Character Goal",
 					"canonical_name": "Oracle 11: Character Goal",
 					"oracle_type": "table_text",
@@ -2766,6 +2772,7 @@
 				},
 				"descriptor": {
 					"_id": "classic/oracles/character/descriptor",
+					"type": "oracle_rollable",
 					"name": "Character Descriptor",
 					"canonical_name": "Oracle 12: Character Descriptor",
 					"oracle_type": "table_text",
@@ -3810,11 +3817,13 @@
 		},
 		"moves": {
 			"_id": "classic/collections/oracles/moves",
+			"type": "oracle_collection",
 			"name": "Moves",
 			"oracle_type": "tables",
 			"contents": {
 				"endure_harm": {
 					"_id": "classic/oracles/moves/endure_harm",
+					"type": "oracle_rollable",
 					"name": "Endure Harm",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -3864,6 +3873,7 @@
 				},
 				"endure_stress": {
 					"_id": "classic/oracles/moves/endure_stress",
+					"type": "oracle_rollable",
 					"name": "Endure Stress",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -3908,6 +3918,7 @@
 				},
 				"pay_the_price": {
 					"_id": "classic/oracles/moves/pay_the_price",
+					"type": "oracle_rollable",
 					"name": "Pay the Price",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -4023,11 +4034,13 @@
 			"collections": {
 				"ask_the_oracle": {
 					"_id": "classic/collections/oracles/moves/ask_the_oracle",
+					"type": "oracle_collection",
 					"name": "Ask the Oracle",
 					"oracle_type": "table_shared_text",
 					"contents": {
 						"almost_certain": {
 							"_id": "classic/oracles/moves/ask_the_oracle/almost_certain",
+							"type": "oracle_rollable",
 							"name": "Almost Certain",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -4049,6 +4062,7 @@
 						},
 						"likely": {
 							"_id": "classic/oracles/moves/ask_the_oracle/likely",
+							"type": "oracle_rollable",
 							"name": "Likely",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -4070,6 +4084,7 @@
 						},
 						"fifty_fifty": {
 							"_id": "classic/oracles/moves/ask_the_oracle/fifty_fifty",
+							"type": "oracle_rollable",
 							"name": "50/50",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -4091,6 +4106,7 @@
 						},
 						"unlikely": {
 							"_id": "classic/oracles/moves/ask_the_oracle/unlikely",
+							"type": "oracle_rollable",
 							"name": "Unlikely",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -4112,6 +4128,7 @@
 						},
 						"small_chance": {
 							"_id": "classic/oracles/moves/ask_the_oracle/small_chance",
+							"type": "oracle_rollable",
 							"name": "Small Chance",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -4164,11 +4181,13 @@
 		},
 		"name": {
 			"_id": "classic/collections/oracles/name",
+			"type": "oracle_collection",
 			"name": "Name",
 			"oracle_type": "tables",
 			"contents": {
 				"elf": {
 					"_id": "classic/oracles/name/elf",
+					"type": "oracle_rollable",
 					"name": "Elf Names",
 					"canonical_name": "Oracle 14: Elf Names",
 					"oracle_type": "table_text",
@@ -4697,6 +4716,7 @@
 			"collections": {
 				"ironlander": {
 					"_id": "classic/collections/oracles/name/ironlander",
+					"type": "oracle_collection",
 					"name": "Ironlander Names",
 					"canonical_name": "Oracle 13: Ironlander Names",
 					"oracle_type": "tables",
@@ -4704,6 +4724,7 @@
 					"contents": {
 						"a": {
 							"_id": "classic/oracles/name/ironlander/a",
+							"type": "oracle_rollable",
 							"name": "Table A",
 							"canonical_name": "Ironlander Names",
 							"oracle_type": "table_text",
@@ -5729,6 +5750,7 @@
 						},
 						"b": {
 							"_id": "classic/oracles/name/ironlander/b",
+							"type": "oracle_rollable",
 							"name": "Table B",
 							"canonical_name": "Ironlander Names",
 							"oracle_type": "table_text",
@@ -6768,6 +6790,7 @@
 				},
 				"other": {
 					"_id": "classic/collections/oracles/name/other",
+					"type": "oracle_collection",
 					"name": "Other Names",
 					"canonical_name": "Oracle 15: Other Names",
 					"oracle_type": "table_shared_rolls",
@@ -6775,6 +6798,7 @@
 					"contents": {
 						"giants": {
 							"_id": "classic/oracles/name/other/giants",
+							"type": "oracle_rollable",
 							"name": "Giants",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -7033,6 +7057,7 @@
 						},
 						"varou": {
 							"_id": "classic/oracles/name/other/varou",
+							"type": "oracle_rollable",
 							"name": "Varou",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -7291,6 +7316,7 @@
 						},
 						"trolls": {
 							"_id": "classic/oracles/name/other/trolls",
+							"type": "oracle_rollable",
 							"name": "Trolls",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -7580,11 +7606,13 @@
 		},
 		"place": {
 			"_id": "classic/collections/oracles/place",
+			"type": "oracle_collection",
 			"name": "Place Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"region": {
 					"_id": "classic/oracles/place/region",
+					"type": "oracle_rollable",
 					"name": "Region",
 					"canonical_name": "Oracle 3: Region",
 					"oracle_type": "table_text",
@@ -7661,6 +7689,7 @@
 				},
 				"location": {
 					"_id": "classic/oracles/place/location",
+					"type": "oracle_rollable",
 					"name": "Location",
 					"canonical_name": "Oracle 4: Location",
 					"oracle_type": "table_text",
@@ -8197,6 +8226,7 @@
 				},
 				"coastal_waters_location": {
 					"_id": "classic/oracles/place/coastal_waters_location",
+					"type": "oracle_rollable",
 					"name": "Coastal Waters Location",
 					"canonical_name": "Oracle 5: Coastal Waters Location",
 					"oracle_type": "table_text",
@@ -8393,6 +8423,7 @@
 				},
 				"descriptor": {
 					"_id": "classic/oracles/place/descriptor",
+					"type": "oracle_rollable",
 					"name": "Location Descriptor",
 					"canonical_name": "Oracle 6: Location Descriptor",
 					"oracle_type": "table_text",
@@ -8933,12 +8964,14 @@
 		},
 		"settlement": {
 			"_id": "classic/collections/oracles/settlement",
+			"type": "oracle_collection",
 			"name": "Settlement Oracles",
 			"oracle_type": "tables",
 			"summary": "To give the settlement additional detail, roll on the [Location Descriptor](classic/oracles/place/descriptor) oracle. To spark an idea for an event or feature related to the settlement, roll on the [Action](id:classic/oracles/action_and_theme/action) and [Theme](id:classic/oracles/action_and_theme/theme) oracles.",
 			"contents": {
 				"trouble": {
 					"_id": "classic/oracles/settlement/trouble",
+					"type": "oracle_rollable",
 					"name": "Settlement Trouble",
 					"canonical_name": "Oracle 9: Settlement Trouble",
 					"oracle_type": "table_text",
@@ -9204,6 +9237,7 @@
 				},
 				"name": {
 					"_id": "classic/oracles/settlement/name",
+					"type": "oracle_rollable",
 					"name": "Settlement Name",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -9336,12 +9370,14 @@
 			"collections": {
 				"name": {
 					"_id": "classic/collections/oracles/settlement/name",
+					"type": "oracle_collection",
 					"name": "Settlement Name",
 					"canonical_name": "Oracle 7: Settlement Name",
 					"oracle_type": "tables",
 					"contents": {
 						"landscape_feature": {
 							"_id": "classic/oracles/settlement/name/landscape_feature",
+							"type": "oracle_rollable",
 							"name": "Landscape Feature",
 							"canonical_name": "A feature of the landscape",
 							"oracle_type": "table_text",
@@ -9468,6 +9504,7 @@
 						},
 						"manmade_edifice": {
 							"_id": "classic/oracles/settlement/name/manmade_edifice",
+							"type": "oracle_rollable",
 							"name": "Manmade Edifice",
 							"canonical_name": "A manmade edifice",
 							"oracle_type": "table_text",
@@ -9594,6 +9631,7 @@
 						},
 						"creature": {
 							"_id": "classic/oracles/settlement/name/creature",
+							"type": "oracle_rollable",
 							"name": "Creature",
 							"canonical_name": "A creature",
 							"oracle_type": "table_text",
@@ -9720,6 +9758,7 @@
 						},
 						"historical_event": {
 							"_id": "classic/oracles/settlement/name/historical_event",
+							"type": "oracle_rollable",
 							"name": "Historical Event",
 							"canonical_name": "A historical event",
 							"oracle_type": "table_text",
@@ -9846,6 +9885,7 @@
 						},
 						"old_world_language": {
 							"_id": "classic/oracles/settlement/name/old_world_language",
+							"type": "oracle_rollable",
 							"name": "Old World Language",
 							"canonical_name": "A word in an Old World language",
 							"oracle_type": "table_text",
@@ -9972,6 +10012,7 @@
 						},
 						"environmental_aspect": {
 							"_id": "classic/oracles/settlement/name/environmental_aspect",
+							"type": "oracle_rollable",
 							"name": "Environmental Aspect",
 							"canonical_name": "A season or environmental aspect",
 							"oracle_type": "table_text",
@@ -10098,6 +10139,7 @@
 						},
 						"something_else": {
 							"_id": "classic/oracles/settlement/name/something_else",
+							"type": "oracle_rollable",
 							"name": "Something Else",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -10186,6 +10228,7 @@
 				},
 				"quick_name": {
 					"_id": "classic/collections/oracles/settlement/quick_name",
+					"type": "oracle_collection",
 					"name": "Quick Settlement Name Generator",
 					"canonical_name": "Oracle 8: Quick Settlement Name Generator",
 					"oracle_type": "table_shared_rolls",
@@ -10193,6 +10236,7 @@
 					"contents": {
 						"prefix": {
 							"_id": "classic/oracles/settlement/quick_name/prefix",
+							"type": "oracle_rollable",
 							"name": "Prefix",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -10451,6 +10495,7 @@
 						},
 						"suffix": {
 							"_id": "classic/oracles/settlement/quick_name/suffix",
+							"type": "oracle_rollable",
 							"name": "Suffix",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -10740,11 +10785,13 @@
 		},
 		"turning_point": {
 			"_id": "classic/collections/oracles/turning_point",
+			"type": "oracle_collection",
 			"name": "Turning Point Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"combat_action": {
 					"_id": "classic/oracles/turning_point/combat_action",
+					"type": "oracle_rollable",
 					"name": "Combat Action",
 					"canonical_name": "Oracle 16: Combat Action",
 					"oracle_type": "table_text",
@@ -10861,6 +10908,7 @@
 				},
 				"mystic_backlash": {
 					"_id": "classic/oracles/turning_point/mystic_backlash",
+					"type": "oracle_rollable",
 					"name": "Mystic Backlash",
 					"canonical_name": "Oracle 17: Mystic Backlash",
 					"oracle_type": "table_text",
@@ -11021,6 +11069,7 @@
 				},
 				"major_plot_twist": {
 					"_id": "classic/oracles/turning_point/major_plot_twist",
+					"type": "oracle_rollable",
 					"name": "Major Plot Twist",
 					"canonical_name": "Oracle 18: Major Plot Twist",
 					"oracle_type": "table_text",
@@ -11156,6 +11205,7 @@
 				},
 				"challenge_rank": {
 					"_id": "classic/oracles/turning_point/challenge_rank",
+					"type": "oracle_rollable",
 					"name": "Challenge Rank",
 					"canonical_name": "Oracle 19: Challenge Rank",
 					"oracle_type": "table_text",
@@ -11223,11 +11273,13 @@
 	"assets": {
 		"combat_talent": {
 			"_id": "classic/collections/assets/combat_talent",
+			"type": "asset_collection",
 			"name": "Combat Talent Assets",
 			"description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform [combat moves](id:classic/collections/moves/combat). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a [Shield-Bearer](id:classic/assets/combat_talent/shield-bearer) and don’t have a shield at the ready, you can’t use the asset’s abilities.",
 			"contents": {
 				"archer": {
 					"_id": "classic/assets/combat_talent/archer",
+					"type": "asset",
 					"name": "Archer",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -11336,6 +11388,7 @@
 				},
 				"berserker": {
 					"_id": "classic/assets/combat_talent/berserker",
+					"type": "asset",
 					"name": "Berserker",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -11424,6 +11477,7 @@
 				},
 				"brawler": {
 					"_id": "classic/assets/combat_talent/brawler",
+					"type": "asset",
 					"name": "Brawler",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -11514,6 +11568,7 @@
 				},
 				"cutthroat": {
 					"_id": "classic/assets/combat_talent/cutthroat",
+					"type": "asset",
 					"name": "Cutthroat",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -11614,6 +11669,7 @@
 				},
 				"duelist": {
 					"_id": "classic/assets/combat_talent/duelist",
+					"type": "asset",
 					"name": "Duelist",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -11686,6 +11742,7 @@
 				},
 				"fletcher": {
 					"_id": "classic/assets/combat_talent/fletcher",
+					"type": "asset",
 					"name": "Fletcher",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -11738,6 +11795,7 @@
 							"moves": {
 								"craft_arrow": {
 									"_id": "classic/assets/combat_talent/fletcher/abilities/2/moves/craft_arrow",
+									"type": "move",
 									"name": "Craft Arrow",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -11796,6 +11854,7 @@
 				},
 				"ironclad": {
 					"_id": "classic/assets/combat_talent/ironclad",
+					"type": "asset",
 					"name": "Ironclad",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -11914,6 +11973,7 @@
 				},
 				"long_arm": {
 					"_id": "classic/assets/combat_talent/long_arm",
+					"type": "asset",
 					"name": "Long-Arm",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -12012,6 +12072,7 @@
 				},
 				"shield_bearer": {
 					"_id": "classic/assets/combat_talent/shield_bearer",
+					"type": "asset",
 					"name": "Shield-Bearer",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -12098,6 +12159,7 @@
 				},
 				"skirmisher": {
 					"_id": "classic/assets/combat_talent/skirmisher",
+					"type": "asset",
 					"name": "Skirmisher",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -12189,6 +12251,7 @@
 				},
 				"slinger": {
 					"_id": "classic/assets/combat_talent/slinger",
+					"type": "asset",
 					"name": "Slinger",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -12271,6 +12334,7 @@
 				},
 				"sunderer": {
 					"_id": "classic/assets/combat_talent/sunderer",
+					"type": "asset",
 					"name": "Sunderer",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -12330,6 +12394,7 @@
 							"moves": {
 								"carve_rune": {
 									"_id": "classic/assets/combat_talent/sunderer/abilities/2/moves/carve_rune",
+									"type": "move",
 									"name": "Carve Rune",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -12388,6 +12453,7 @@
 				},
 				"swordmaster": {
 					"_id": "classic/assets/combat_talent/swordmaster",
+					"type": "asset",
 					"name": "Swordmaster",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -12455,6 +12521,7 @@
 				},
 				"thunder_bringer": {
 					"_id": "classic/assets/combat_talent/thunder_bringer",
+					"type": "asset",
 					"name": "Thunder-Bringer",
 					"category": "Combat Talent",
 					"count_as_impact": false,
@@ -12546,11 +12613,13 @@
 		},
 		"companion": {
 			"_id": "classic/collections/assets/companion",
+			"type": "asset_collection",
 			"name": "Companion Assets",
 			"description": "Companions are your NPC helpers. When you acquire a companion, give them a name and envision their appearance and personality. If they don’t have a starting ability, choose one. Upgrading a companion enables additional abilities.\n\nCompanions utilize a health track and may suffer harm as a result of one of your moves. When your companion takes damage, make the [Companion Endure Harm](id:classic/moves/suffer/companion_endure_harm) move to determine the outcome. See page 43 to learn more.",
 			"contents": {
 				"cave_lion": {
 					"_id": "classic/assets/companion/cave_lion",
+					"type": "asset",
 					"name": "Cave Lion",
 					"category": "Companion",
 					"options": {
@@ -12665,6 +12734,7 @@
 				},
 				"giant_spider": {
 					"_id": "classic/assets/companion/giant_spider",
+					"type": "asset",
 					"name": "Giant Spider",
 					"category": "Companion",
 					"options": {
@@ -12785,6 +12855,7 @@
 				},
 				"hawk": {
 					"_id": "classic/assets/companion/hawk",
+					"type": "asset",
 					"name": "Hawk",
 					"category": "Companion",
 					"options": {
@@ -12926,6 +12997,7 @@
 				},
 				"horse": {
 					"_id": "classic/assets/companion/horse",
+					"type": "asset",
 					"name": "Horse",
 					"category": "Companion",
 					"options": {
@@ -13056,6 +13128,7 @@
 				},
 				"hound": {
 					"_id": "classic/assets/companion/hound",
+					"type": "asset",
 					"name": "Hound",
 					"category": "Companion",
 					"options": {
@@ -13169,6 +13242,7 @@
 				},
 				"kindred": {
 					"_id": "classic/assets/companion/kindred",
+					"type": "asset",
 					"name": "Kindred",
 					"category": "Companion",
 					"options": {
@@ -13293,6 +13367,7 @@
 				},
 				"mammoth": {
 					"_id": "classic/assets/companion/mammoth",
+					"type": "asset",
 					"name": "Mammoth",
 					"category": "Companion",
 					"options": {
@@ -13399,6 +13474,7 @@
 				},
 				"owl": {
 					"_id": "classic/assets/companion/owl",
+					"type": "asset",
 					"name": "Owl",
 					"category": "Companion",
 					"options": {
@@ -13518,6 +13594,7 @@
 				},
 				"raven": {
 					"_id": "classic/assets/companion/raven",
+					"type": "asset",
 					"name": "Raven",
 					"category": "Companion",
 					"options": {
@@ -13631,6 +13708,7 @@
 				},
 				"young_wyvern": {
 					"_id": "classic/assets/companion/young_wyvern",
+					"type": "asset",
 					"name": "Young Wyvern",
 					"category": "Companion",
 					"options": {
@@ -13751,12 +13829,14 @@
 		},
 		"path": {
 			"_id": "classic/collections/assets/path",
+			"type": "asset_collection",
 			"name": "Path Assets",
 			"summary": "Paths represent your background, interests, training, and skills.",
 			"description": "Paths represent your background, interests, training, and skills. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. For example, a [Ritualist](id:classic/assets/path/ritualist) would likely have a different outlook than a [Veteran](id:classic/assets/path/veteran). Choosing both those paths can reflect an evolution of your character or an interesting background.",
 			"contents": {
 				"alchemist": {
 					"_id": "classic/assets/path/alchemist",
+					"type": "asset",
 					"name": "Alchemist",
 					"category": "Path",
 					"count_as_impact": false,
@@ -13769,6 +13849,7 @@
 							"moves": {
 								"create_elixir": {
 									"_id": "classic/assets/path/alchemist/abilities/0/moves/create_elixir",
+									"type": "move",
 									"name": "Create Elixir",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -13894,6 +13975,7 @@
 				},
 				"animal_kin": {
 					"_id": "classic/assets/path/animal_kin",
+					"type": "asset",
 					"name": "Animal Kin",
 					"category": "Path",
 					"count_as_impact": false,
@@ -13975,6 +14057,7 @@
 				},
 				"banner_sworn": {
 					"_id": "classic/assets/path/banner_sworn",
+					"type": "asset",
 					"name": "Banner-Sworn",
 					"category": "Path",
 					"options": {
@@ -14071,6 +14154,7 @@
 				},
 				"battle_scarred": {
 					"_id": "classic/assets/path/battle_scarred",
+					"type": "asset",
 					"name": "Battle-Scarred",
 					"category": "Path",
 					"count_as_impact": false,
@@ -14132,6 +14216,7 @@
 				},
 				"blade_bound": {
 					"_id": "classic/assets/path/blade_bound",
+					"type": "asset",
 					"name": "Blade-Bound",
 					"category": "Path",
 					"options": {
@@ -14224,6 +14309,7 @@
 				},
 				"bonded": {
 					"_id": "classic/assets/path/bonded",
+					"type": "asset",
 					"name": "Bonded",
 					"category": "Path",
 					"count_as_impact": false,
@@ -14281,6 +14367,7 @@
 				},
 				"commander": {
 					"_id": "classic/assets/path/commander",
+					"type": "asset",
 					"name": "Commander",
 					"category": "Path",
 					"count_as_impact": false,
@@ -14390,6 +14477,7 @@
 				},
 				"dancer": {
 					"_id": "classic/assets/path/dancer",
+					"type": "asset",
 					"name": "Dancer",
 					"category": "Path",
 					"count_as_impact": false,
@@ -14465,6 +14553,7 @@
 							"moves": {
 								"commemorate": {
 									"_id": "classic/assets/path/dancer/abilities/2/moves/commemorate",
+									"type": "move",
 									"name": "Commemorate",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -14523,6 +14612,7 @@
 				},
 				"devotant": {
 					"_id": "classic/assets/path/devotant",
+					"type": "asset",
 					"name": "Devotant",
 					"category": "Path",
 					"options": {
@@ -14679,6 +14769,7 @@
 				},
 				"empowered": {
 					"_id": "classic/assets/path/empowered",
+					"type": "asset",
 					"name": "Empowered",
 					"category": "Path",
 					"options": {
@@ -14771,6 +14862,7 @@
 				},
 				"fated": {
 					"_id": "classic/assets/path/fated",
+					"type": "asset",
 					"name": "Fated",
 					"category": "Path",
 					"count_as_impact": false,
@@ -14855,6 +14947,7 @@
 				},
 				"fortune_hunter": {
 					"_id": "classic/assets/path/fortune_hunter",
+					"type": "asset",
 					"name": "Fortune Hunter",
 					"category": "Path",
 					"count_as_impact": false,
@@ -14957,6 +15050,7 @@
 				},
 				"herbalist": {
 					"_id": "classic/assets/path/herbalist",
+					"type": "asset",
 					"name": "Herbalist",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15054,6 +15148,7 @@
 				},
 				"honorbound": {
 					"_id": "classic/assets/path/honorbound",
+					"type": "asset",
 					"name": "Honorbound",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15120,6 +15215,7 @@
 				},
 				"improviser": {
 					"_id": "classic/assets/path/improviser",
+					"type": "asset",
 					"name": "Improviser",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15208,6 +15304,7 @@
 				},
 				"infiltrator": {
 					"_id": "classic/assets/path/infiltrator",
+					"type": "asset",
 					"name": "Infiltrator",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15317,6 +15414,7 @@
 				},
 				"lorekeeper": {
 					"_id": "classic/assets/path/lorekeeper",
+					"type": "asset",
 					"name": "Lorekeeper",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15415,6 +15513,7 @@
 				},
 				"loyalist": {
 					"_id": "classic/assets/path/loyalist",
+					"type": "asset",
 					"name": "Loyalist",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15495,6 +15594,7 @@
 				},
 				"masked": {
 					"_id": "classic/assets/path/masked",
+					"type": "asset",
 					"name": "Masked",
 					"category": "Path",
 					"options": {
@@ -15631,6 +15731,7 @@
 				},
 				"oathbreaker": {
 					"_id": "classic/assets/path/oathbreaker",
+					"type": "asset",
 					"name": "Oathbreaker",
 					"category": "Path",
 					"count_as_impact": true,
@@ -15716,6 +15817,7 @@
 				},
 				"outcast": {
 					"_id": "classic/assets/path/outcast",
+					"type": "asset",
 					"name": "Outcast",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15734,6 +15836,7 @@
 							"moves": {
 								"scrape_by": {
 									"_id": "classic/assets/path/outcast/abilities/0/moves/scrape_by",
+									"type": "move",
 									"name": "Scrape By",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -15814,6 +15917,7 @@
 				},
 				"pretender": {
 					"_id": "classic/assets/path/pretender",
+					"type": "asset",
 					"name": "Pretender",
 					"category": "Path",
 					"count_as_impact": false,
@@ -15826,6 +15930,7 @@
 							"moves": {
 								"establish_false_identity": {
 									"_id": "classic/assets/path/pretender/abilities/0/moves/establish_false_identity",
+									"type": "move",
 									"name": "Establish False Identity",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -15935,6 +16040,7 @@
 				},
 				"revenant": {
 					"_id": "classic/assets/path/revenant",
+					"type": "asset",
 					"name": "Revenant",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16020,6 +16126,7 @@
 				},
 				"rider": {
 					"_id": "classic/assets/path/rider",
+					"type": "asset",
 					"name": "Rider",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16111,6 +16218,7 @@
 				},
 				"ritualist": {
 					"_id": "classic/assets/path/ritualist",
+					"type": "asset",
 					"name": "Ritualist",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16169,6 +16277,7 @@
 				},
 				"shadow_kin": {
 					"_id": "classic/assets/path/shadow_kin",
+					"type": "asset",
 					"name": "Shadow-Kin",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16231,6 +16340,7 @@
 				},
 				"sighted": {
 					"_id": "classic/assets/path/sighted",
+					"type": "asset",
 					"name": "Sighted",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16319,6 +16429,7 @@
 				},
 				"slayer": {
 					"_id": "classic/assets/path/slayer",
+					"type": "asset",
 					"name": "Slayer",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16439,6 +16550,7 @@
 				},
 				"spirit_bound": {
 					"_id": "classic/assets/path/spirit_bound",
+					"type": "asset",
 					"name": "Spirit-Bound",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16523,6 +16635,7 @@
 				},
 				"storyweaver": {
 					"_id": "classic/assets/path/storyweaver",
+					"type": "asset",
 					"name": "Storyweaver",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16599,6 +16712,7 @@
 				},
 				"trickster": {
 					"_id": "classic/assets/path/trickster",
+					"type": "asset",
 					"name": "Trickster",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16685,6 +16799,7 @@
 				},
 				"veteran": {
 					"_id": "classic/assets/path/veteran",
+					"type": "asset",
 					"name": "Veteran",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16764,6 +16879,7 @@
 				},
 				"waterborn": {
 					"_id": "classic/assets/path/waterborn",
+					"type": "asset",
 					"name": "Waterborn",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16849,6 +16965,7 @@
 				},
 				"wayfinder": {
 					"_id": "classic/assets/path/wayfinder",
+					"type": "asset",
 					"name": "Wayfinder",
 					"category": "Path",
 					"count_as_impact": false,
@@ -16937,6 +17054,7 @@
 				},
 				"weaponmaster": {
 					"_id": "classic/assets/path/weaponmaster",
+					"type": "asset",
 					"name": "Weaponmaster",
 					"category": "Path",
 					"count_as_impact": false,
@@ -17019,6 +17137,7 @@
 				},
 				"wildblood": {
 					"_id": "classic/assets/path/wildblood",
+					"type": "asset",
 					"name": "Wildblood",
 					"category": "Path",
 					"count_as_impact": false,
@@ -17112,6 +17231,7 @@
 				},
 				"wright": {
 					"_id": "classic/assets/path/wright",
+					"type": "asset",
 					"name": "Wright",
 					"category": "Path",
 					"options": {
@@ -17244,11 +17364,13 @@
 		},
 		"ritual": {
 			"_id": "classic/collections/assets/ritual",
+			"type": "asset_collection",
 			"name": "Ritual Assets",
 			"description": "Magic in *Ironsworn* is cast through rituals which help support your actions or act as unique moves. Like all assets, rituals can be selected as you gain experience and can be upgraded over time to make them more flexible or powerful.\n\nAll rituals utilize a move as their default marked ability. You must make this move and the associated action roll to trigger the effect. Any secondary abilities you gain by upgrading the asset are dependent on performing the ritual described as the default ability.",
 			"contents": {
 				"augur": {
 					"_id": "classic/assets/ritual/augur",
+					"type": "asset",
 					"name": "Augur",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17261,6 +17383,7 @@
 							"moves": {
 								"augur": {
 									"_id": "classic/assets/ritual/augur/abilities/0/moves/augur",
+									"type": "move",
 									"name": "Augur",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -17345,6 +17468,7 @@
 				},
 				"awakening": {
 					"_id": "classic/assets/ritual/awakening",
+					"type": "asset",
 					"name": "Awakening",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17357,6 +17481,7 @@
 							"moves": {
 								"awaken_simulacrum": {
 									"_id": "classic/assets/ritual/awakening/abilities/0/moves/awaken_simulacrum",
+									"type": "move",
 									"name": "Awaken Simulacrum",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -17451,6 +17576,7 @@
 				},
 				"bind": {
 					"_id": "classic/assets/ritual/bind",
+					"type": "asset",
 					"name": "Bind",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17463,6 +17589,7 @@
 							"moves": {
 								"bind": {
 									"_id": "classic/assets/ritual/bind/abilities/0/moves/bind",
+									"type": "move",
 									"name": "Bind",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -17547,6 +17674,7 @@
 				},
 				"communion": {
 					"_id": "classic/assets/ritual/communion",
+					"type": "asset",
 					"name": "Communion",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17559,6 +17687,7 @@
 							"moves": {
 								"commune": {
 									"_id": "classic/assets/ritual/communion/abilities/0/moves/commune",
+									"type": "move",
 									"name": "Commune",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -17643,6 +17772,7 @@
 				},
 				"divination": {
 					"_id": "classic/assets/ritual/divination",
+					"type": "asset",
 					"name": "Divination",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17655,6 +17785,7 @@
 							"moves": {
 								"cast_runes": {
 									"_id": "classic/assets/ritual/divination/abilities/0/moves/cast_runes",
+									"type": "move",
 									"name": "Cast Runes",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -17739,6 +17870,7 @@
 				},
 				"invoke": {
 					"_id": "classic/assets/ritual/invoke",
+					"type": "asset",
 					"name": "Invoke",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17775,6 +17907,7 @@
 							"moves": {
 								"invoke": {
 									"_id": "classic/assets/ritual/invoke/abilities/0/moves/invoke",
+									"type": "move",
 									"name": "Invoke",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -17882,6 +18015,7 @@
 				},
 				"keen": {
 					"_id": "classic/assets/ritual/keen",
+					"type": "asset",
 					"name": "Keen",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17894,6 +18028,7 @@
 							"moves": {
 								"keen": {
 									"_id": "classic/assets/ritual/keen/abilities/0/moves/keen",
+									"type": "move",
 									"name": "Keen",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -17978,6 +18113,7 @@
 				},
 				"leech": {
 					"_id": "classic/assets/ritual/leech",
+					"type": "asset",
 					"name": "Leech",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -17990,6 +18126,7 @@
 							"moves": {
 								"draw_blood_rune": {
 									"_id": "classic/assets/ritual/leech/abilities/0/moves/draw_blood_rune",
+									"type": "move",
 									"name": "Draw Blood Rune",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18074,6 +18211,7 @@
 				},
 				"lightbearer": {
 					"_id": "classic/assets/ritual/lightbearer",
+					"type": "asset",
 					"name": "Lightbearer",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18086,6 +18224,7 @@
 							"moves": {
 								"capture_light": {
 									"_id": "classic/assets/ritual/lightbearer/abilities/0/moves/capture_light",
+									"type": "move",
 									"name": "Capture Light",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18201,6 +18340,7 @@
 				},
 				"scry": {
 					"_id": "classic/assets/ritual/scry",
+					"type": "asset",
 					"name": "Scry",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18213,6 +18353,7 @@
 							"moves": {
 								"scry": {
 									"_id": "classic/assets/ritual/scry/abilities/0/moves/scry",
+									"type": "move",
 									"name": "Scry",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18297,6 +18438,7 @@
 				},
 				"shadow_walk": {
 					"_id": "classic/assets/ritual/shadow_walk",
+					"type": "asset",
 					"name": "Shadow-Walk",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18309,6 +18451,7 @@
 							"moves": {
 								"shadow_walk": {
 									"_id": "classic/assets/ritual/shadow_walk/abilities/0/moves/shadow_walk",
+									"type": "move",
 									"name": "Shadow-Walk",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18393,6 +18536,7 @@
 				},
 				"sway": {
 					"_id": "classic/assets/ritual/sway",
+					"type": "asset",
 					"name": "Sway",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18405,6 +18549,7 @@
 							"moves": {
 								"sway": {
 									"_id": "classic/assets/ritual/sway/abilities/0/moves/sway",
+									"type": "move",
 									"name": "Sway",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18489,6 +18634,7 @@
 				},
 				"talisman": {
 					"_id": "classic/assets/ritual/talisman",
+					"type": "asset",
 					"name": "Talisman",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18501,6 +18647,7 @@
 							"moves": {
 								"fashion_talisman": {
 									"_id": "classic/assets/ritual/talisman/abilities/0/moves/fashion_talisman",
+									"type": "move",
 									"name": "Fashion Talisman",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18585,6 +18732,7 @@
 				},
 				"tether": {
 					"_id": "classic/assets/ritual/tether",
+					"type": "asset",
 					"name": "Tether",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18625,6 +18773,7 @@
 							"moves": {
 								"tether": {
 									"_id": "classic/assets/ritual/tether/abilities/0/moves/tether",
+									"type": "move",
 									"name": "Tether",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18716,6 +18865,7 @@
 				},
 				"totem": {
 					"_id": "classic/assets/ritual/totem",
+					"type": "asset",
 					"name": "Totem",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18728,6 +18878,7 @@
 							"moves": {
 								"focus_totem": {
 									"_id": "classic/assets/ritual/totem/abilities/0/moves/focus_totem",
+									"type": "move",
 									"name": "Focus Totem",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18812,6 +18963,7 @@
 				},
 				"visage": {
 					"_id": "classic/assets/ritual/visage",
+					"type": "asset",
 					"name": "Visage",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18824,6 +18976,7 @@
 							"moves": {
 								"paint_visage": {
 									"_id": "classic/assets/ritual/visage/abilities/0/moves/paint_visage",
+									"type": "move",
 									"name": "Paint Visage",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18908,6 +19061,7 @@
 				},
 				"ward": {
 					"_id": "classic/assets/ritual/ward",
+					"type": "asset",
 					"name": "Ward",
 					"category": "Ritual",
 					"count_as_impact": false,
@@ -18920,6 +19074,7 @@
 							"moves": {
 								"ward": {
 									"_id": "classic/assets/ritual/ward/abilities/0/moves/ward",
+									"type": "move",
 									"name": "Ward",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -19020,11 +19175,13 @@
 	"atlas": {
 		"ironlands": {
 			"_id": "classic/collections/atlas/ironlands",
+			"type": "atlas",
 			"name": "The Ironlands",
 			"summary": "The Ironlands is a rugged peninsula of isolated settlements and untracked wilds on the frontier of the known world. Two generations ago, your people settled here when a cataclysm drove them from their former homes.",
 			"contents": {
 				"barrier_islands": {
 					"_id": "classic/atlas/ironlands/barrier_islands",
+					"type": "atlas_entry",
 					"name": "Barrier Islands",
 					"summary": "This long chain of bleak islands parallels the [Ragged Coast](id:classic/atlas/ironlands/ragged_coast). The islands are sparsely populated by [Ironlanders](id:classic/collections/npcs/ironlanders), mostly fisher-folk who brave the surrounding waters.",
 					"features": [
@@ -19055,6 +19212,7 @@
 				},
 				"ragged_coast": {
 					"_id": "classic/atlas/ironlands/ragged_coast",
+					"type": "atlas_entry",
 					"name": "Ragged Coast",
 					"summary": "This is a rugged land of snow-capped cliffs overlooking blue waters. [Ironlander](id:classic/collections/npcs/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys.",
 					"features": [
@@ -19083,6 +19241,7 @@
 				},
 				"deep_wilds": {
 					"_id": "classic/atlas/ironlands/deep_wilds",
+					"type": "atlas_entry",
 					"name": "Deep Wilds",
 					"summary": "This vast swath of ancient forest is largely uninhabited and unexplored by [Ironlanders](id:classic/collections/npcs/ironlanders). Most avoid this region.",
 					"features": [
@@ -19112,6 +19271,7 @@
 				},
 				"flooded_lands": {
 					"_id": "classic/atlas/ironlands/flooded_lands",
+					"type": "atlas_entry",
 					"name": "Flooded Lands",
 					"summary": "This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. A few hardy [Ironlanders](id:classic/collections/npcs/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands.",
 					"features": [
@@ -19140,6 +19300,7 @@
 				},
 				"havens": {
 					"_id": "classic/atlas/ironlands/havens",
+					"type": "atlas_entry",
 					"name": "Havens",
 					"summary": "This is an expansive area of forests, rivers, shrubland, and low hills. It is a relative oasis in the harsh Ironlands, but even here there is little comfort or safety.",
 					"features": [
@@ -19167,6 +19328,7 @@
 				},
 				"hinterlands": {
 					"_id": "classic/atlas/ironlands/hinterlands",
+					"type": "atlas_entry",
 					"name": "Hinterlands",
 					"summary": "This imposing terrain consists of dense forests nestled against rugged hills. The Ironlander settlements in this region serve primarily as bases for hunters and trappers.",
 					"features": [
@@ -19194,6 +19356,7 @@
 				},
 				"tempest_hills": {
 					"_id": "classic/atlas/ironlands/tempest_hills",
+					"type": "atlas_entry",
 					"name": "Tempest Hills",
 					"summary": "These highlands are defined by rugged hills, low mountains, thin woods, and grassy plateaus. [Ironlanders](id:classic/collections/npcs/ironlanders) live here in nomadic camps or mining settlements.",
 					"features": [
@@ -19223,6 +19386,7 @@
 				},
 				"veiled_mountains": {
 					"_id": "classic/atlas/ironlands/veiled_mountains",
+					"type": "atlas_entry",
 					"name": "Veiled Mountains",
 					"summary": "These great peaks mark the northern bounds of the settled lands. A few hardy [Ironlanders](id:classic/collections/npcs/ironlanders) dwell here in small mining communities. Most of them head south before the long, brutal winter takes hold.",
 					"features": [
@@ -19251,6 +19415,7 @@
 				},
 				"shattered_wastes": {
 					"_id": "classic/atlas/ironlands/shattered_wastes",
+					"type": "atlas_entry",
 					"name": "Shattered Wastes",
 					"summary": "This plain of jagged, broken ice is uninhabited by [Ironlanders](id:classic/collections/npcs/ironlanders). No one knows the bounds of this land or what lies beyond.",
 					"features": [
@@ -19292,11 +19457,13 @@
 	"moves": {
 		"adventure": {
 			"_id": "classic/collections/moves/adventure",
+			"type": "move_category",
 			"name": "Adventure Moves",
 			"summary": "Adventure moves are used as you travel the Ironlands, investigate situations, and deal with threats.",
 			"contents": {
 				"face_danger": {
 					"_id": "classic/moves/adventure/face_danger",
+					"type": "move",
 					"name": "Face Danger",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19381,6 +19548,7 @@
 				},
 				"secure_an_advantage": {
 					"_id": "classic/moves/adventure/secure_an_advantage",
+					"type": "move",
 					"name": "Secure an Advantage",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19465,6 +19633,7 @@
 				},
 				"gather_information": {
 					"_id": "classic/moves/adventure/gather_information",
+					"type": "move",
 					"name": "Gather Information",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19508,6 +19677,7 @@
 				},
 				"heal": {
 					"_id": "classic/moves/adventure/heal",
+					"type": "move",
 					"name": "Heal",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19565,6 +19735,7 @@
 				},
 				"resupply": {
 					"_id": "classic/moves/adventure/resupply",
+					"type": "move",
 					"name": "Resupply",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19608,6 +19779,7 @@
 				},
 				"make_camp": {
 					"_id": "classic/moves/adventure/make_camp",
+					"type": "move",
 					"name": "Make Camp",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19651,6 +19823,7 @@
 				},
 				"undertake_a_journey": {
 					"_id": "classic/moves/adventure/undertake_a_journey",
+					"type": "move",
 					"name": "Undertake a Journey",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19694,6 +19867,7 @@
 				},
 				"reach_your_destination": {
 					"_id": "classic/moves/adventure/reach_your_destination",
+					"type": "move",
 					"name": "Reach Your Destination",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -19753,11 +19927,13 @@
 		},
 		"relationship": {
 			"_id": "classic/collections/moves/relationship",
+			"type": "move_category",
 			"name": "Relationship Moves",
 			"summary": "Relationship moves are made as you interact with others in the world, fight duels, form bonds, support your allies, and determine the ultimate fate of your character.",
 			"contents": {
 				"compel": {
 					"_id": "classic/moves/relationship/compel",
+					"type": "move",
 					"name": "Compel",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19822,6 +19998,7 @@
 				},
 				"sojourn": {
 					"_id": "classic/moves/relationship/sojourn",
+					"type": "move",
 					"name": "Sojourn",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19865,6 +20042,7 @@
 				},
 				"draw_the_circle": {
 					"_id": "classic/moves/relationship/draw_the_circle",
+					"type": "move",
 					"name": "Draw the Circle",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19908,6 +20086,7 @@
 				},
 				"forge_a_bond": {
 					"_id": "classic/moves/relationship/forge_a_bond",
+					"type": "move",
 					"name": "Forge a Bond",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19951,6 +20130,7 @@
 				},
 				"test_your_bond": {
 					"_id": "classic/moves/relationship/test_your_bond",
+					"type": "move",
 					"name": "Test Your Bond",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -19994,6 +20174,7 @@
 				},
 				"aid_your_ally": {
 					"_id": "classic/moves/relationship/aid_your_ally",
+					"type": "move",
 					"name": "Aid Your Ally",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20017,6 +20198,7 @@
 				},
 				"write_your_epilogue": {
 					"_id": "classic/moves/relationship/write_your_epilogue",
+					"type": "move",
 					"name": "Write Your Epilogue",
 					"roll_type": "special_track",
 					"trigger": {
@@ -20073,11 +20255,13 @@
 		},
 		"combat": {
 			"_id": "classic/collections/moves/combat",
+			"type": "move_category",
 			"name": "Combat Moves",
 			"summary": "When there are no other options, when the sword slips free of its sheath, when the arrow is nocked, when the shield is brought to bear, make these moves.",
 			"contents": {
 				"enter_the_fray": {
 					"_id": "classic/moves/combat/enter_the_fray",
+					"type": "move",
 					"name": "Enter the Fray",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20142,6 +20326,7 @@
 				},
 				"strike": {
 					"_id": "classic/moves/combat/strike",
+					"type": "move",
 					"name": "Strike",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20196,6 +20381,7 @@
 				},
 				"clash": {
 					"_id": "classic/moves/combat/clash",
+					"type": "move",
 					"name": "Clash",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20250,6 +20436,7 @@
 				},
 				"turn_the_tide": {
 					"_id": "classic/moves/combat/turn_the_tide",
+					"type": "move",
 					"name": "Turn the Tide",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20273,6 +20460,7 @@
 				},
 				"end_the_fight": {
 					"_id": "classic/moves/combat/end_the_fight",
+					"type": "move",
 					"name": "End the Fight",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -20318,6 +20506,7 @@
 				},
 				"battle": {
 					"_id": "classic/moves/combat/battle",
+					"type": "move",
 					"name": "Battle",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20416,11 +20605,13 @@
 		},
 		"suffer": {
 			"_id": "classic/collections/moves/suffer",
+			"type": "move_category",
 			"name": "Suffer Moves",
 			"summary": "These moves are made as a result of a perilous event or bad outcome on other moves. They represent what happens to you, and how you hold up against the trauma.",
 			"contents": {
 				"endure_harm": {
 					"_id": "classic/moves/suffer/endure_harm",
+					"type": "move",
 					"name": "Endure Harm",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20469,6 +20660,7 @@
 				},
 				"face_death": {
 					"_id": "classic/moves/suffer/face_death",
+					"type": "move",
 					"name": "Face Death",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20512,6 +20704,7 @@
 				},
 				"companion_endure_harm": {
 					"_id": "classic/moves/suffer/companion_endure_harm",
+					"type": "move",
 					"name": "Companion Endure Harm",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20560,6 +20753,7 @@
 				},
 				"endure_stress": {
 					"_id": "classic/moves/suffer/endure_stress",
+					"type": "move",
 					"name": "Endure Stress",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20608,6 +20802,7 @@
 				},
 				"face_desolation": {
 					"_id": "classic/moves/suffer/face_desolation",
+					"type": "move",
 					"name": "Face Desolation",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20651,6 +20846,7 @@
 				},
 				"out_of_supply": {
 					"_id": "classic/moves/suffer/out_of_supply",
+					"type": "move",
 					"name": "Out of Supply",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20674,6 +20870,7 @@
 				},
 				"face_a_setback": {
 					"_id": "classic/moves/suffer/face_a_setback",
+					"type": "move",
 					"name": "Face a Setback",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20711,11 +20908,13 @@
 		},
 		"quest": {
 			"_id": "classic/collections/moves/quest",
+			"type": "move_category",
 			"name": "Quest Moves",
 			"summary": "Making and fulfilling vows is central to your character’s motivations. These oaths drive your story and give you the means to gain experience and acquire new abilities. When you embark upon a quest, manage your progress on a quest, seek to complete a quest, or gain the rewards of a quest, make these moves.",
 			"contents": {
 				"swear_an_iron_vow": {
 					"_id": "classic/moves/quest/swear_an_iron_vow",
+					"type": "move",
 					"name": "Swear an Iron Vow",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -20759,6 +20958,7 @@
 				},
 				"reach_a_milestone": {
 					"_id": "classic/moves/quest/reach_a_milestone",
+					"type": "move",
 					"name": "Reach a Milestone",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20782,6 +20982,7 @@
 				},
 				"fulfill_your_vow": {
 					"_id": "classic/moves/quest/fulfill_your_vow",
+					"type": "move",
 					"name": "Fulfill Your Vow",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -20827,6 +21028,7 @@
 				},
 				"forsake_your_vow": {
 					"_id": "classic/moves/quest/forsake_your_vow",
+					"type": "move",
 					"name": "Forsake Your Vow",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20850,6 +21052,7 @@
 				},
 				"advance": {
 					"_id": "classic/moves/quest/advance",
+					"type": "move",
 					"name": "Advance",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20887,12 +21090,14 @@
 		},
 		"fate": {
 			"_id": "classic/collections/moves/fate",
+			"type": "move_category",
 			"name": "Fate Moves",
 			"summary": "When you face the outcome of a move, want to know what happens next, or have a question about people, places and events external to your character, the fate moves help you discover an answer.",
 			"description": "In solo and co-op play, the fate moves mediate the result of other moves or serve as inspirational prompts for your story. When you face the outcome of a move, want to know what happens next, or have a question about people, places and events external to your character, the fate moves help you discover an answer.\n\nIn guided mode, your GM represents the whims of fate. They can reference these moves as they like, but they can also decide the outcome or direct the question back to you.\n\nThere are three key aspects of using the fate moves:\n  * __Instinct:__ If an answer to a question or the result of a situation is obvious, interesting and dramatic, make it happen.\n  * __Randomness:__ You can roll on random tables to generate a result or answer a question.\n  * __Inspiration:__ You can use creative prompts, such as those included in the oracles chapter (page 165) to guide your story.",
 			"contents": {
 				"pay_the_price": {
 					"_id": "classic/moves/fate/pay_the_price",
+					"type": "move",
 					"name": "Pay the Price",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20917,6 +21122,7 @@
 				},
 				"ask_the_oracle": {
 					"_id": "classic/moves/fate/ask_the_oracle",
+					"type": "move",
 					"name": "Ask the Oracle",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -20963,12 +21169,14 @@
 	"npcs": {
 		"ironlanders": {
 			"_id": "classic/collections/npcs/ironlanders",
+			"type": "npc_collection",
 			"name": "Ironlanders",
 			"summary": "The __Ironlanders__ are the humans who have settled these lands.",
 			"description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can [Ask the Oracle](id:classic/oracles/turning_point/challenge_rank/foe), or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__.",
 			"contents": {
 				"broken": {
 					"_id": "classic/npcs/ironlanders/broken",
+					"type": "npc",
 					"name": "Broken",
 					"rank": 1,
 					"nature": "Ironlander",
@@ -20997,6 +21205,7 @@
 				},
 				"common_folk": {
 					"_id": "classic/npcs/ironlanders/common_folk",
+					"type": "npc",
 					"name": "Common Folk",
 					"rank": 1,
 					"nature": "Ironlander",
@@ -21024,6 +21233,7 @@
 				},
 				"hunter": {
 					"_id": "classic/npcs/ironlanders/hunter",
+					"type": "npc",
 					"name": "Hunter",
 					"rank": 2,
 					"nature": "Ironlander",
@@ -21051,6 +21261,7 @@
 				},
 				"mystic": {
 					"_id": "classic/npcs/ironlanders/mystic",
+					"type": "npc",
 					"name": "Mystic",
 					"rank": 2,
 					"nature": "Ironlander",
@@ -21078,6 +21289,7 @@
 				},
 				"raider": {
 					"_id": "classic/npcs/ironlanders/raider",
+					"type": "npc",
 					"name": "Raider",
 					"rank": 2,
 					"nature": "Ironlander",
@@ -21106,6 +21318,7 @@
 				},
 				"warrior": {
 					"_id": "classic/npcs/ironlanders/warrior",
+					"type": "npc",
 					"name": "Warrior",
 					"rank": 2,
 					"nature": "Ironlander",
@@ -21148,12 +21361,14 @@
 		},
 		"firstborn": {
 			"_id": "classic/collections/npcs/firstborn",
+			"type": "npc_collection",
 			"name": "Firstborn",
 			"summary": "The __Firstborn__ are beings who walked the Ironlands uncountable years before humans arrived.",
 			"description": "The firstborn lived here long before the humans landed on these shores. The humans, in their arrogance, named this peninsula the Ironlands and called themselves Ironlanders—but the firstborn gave it names of their own in a time beyond the reach of memory.",
 			"contents": {
 				"elf": {
 					"_id": "classic/npcs/firstborn/elf",
+					"type": "npc",
 					"name": "Elf",
 					"rank": 2,
 					"nature": "Firstborn",
@@ -21190,6 +21405,7 @@
 				},
 				"giant": {
 					"_id": "classic/npcs/firstborn/giant",
+					"type": "npc",
 					"name": "Giant",
 					"rank": 4,
 					"nature": "Firstborn",
@@ -21223,6 +21439,7 @@
 				},
 				"primordial": {
 					"_id": "classic/npcs/firstborn/primordial",
+					"type": "npc",
 					"name": "Primordial",
 					"rank": 4,
 					"nature": "Firstborn",
@@ -21250,6 +21467,7 @@
 				},
 				"troll": {
 					"_id": "classic/npcs/firstborn/troll",
+					"type": "npc",
 					"name": "Troll",
 					"rank": 3,
 					"nature": "Firstborn",
@@ -21279,6 +21497,7 @@
 				},
 				"varou": {
 					"_id": "classic/npcs/firstborn/varou",
+					"type": "npc",
 					"name": "Varou",
 					"rank": 2,
 					"nature": "Firstborn",
@@ -21328,12 +21547,14 @@
 		},
 		"animals": {
 			"_id": "classic/collections/npcs/animals",
+			"type": "npc_collection",
 			"name": "Animals",
 			"summary": "__Animals__ are common creatures.",
 			"description": "animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the [Old World](id:classic/truths/old_world).\n\nMost wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, [Resupply](id:classic/moves/adventure/resupply) can represent hunting for deer or small game.\n\nA few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.",
 			"contents": {
 				"bear": {
 					"_id": "classic/npcs/animals/bear",
+					"type": "npc",
 					"name": "Bear",
 					"rank": 3,
 					"nature": "Animal",
@@ -21357,6 +21578,7 @@
 				},
 				"boar": {
 					"_id": "classic/npcs/animals/boar",
+					"type": "npc",
 					"name": "Boar",
 					"rank": 2,
 					"nature": "Animal",
@@ -21380,6 +21602,7 @@
 				},
 				"gaunt": {
 					"_id": "classic/npcs/animals/gaunt",
+					"type": "npc",
 					"name": "Gaunt",
 					"rank": 2,
 					"nature": "Animal",
@@ -21408,6 +21631,7 @@
 				},
 				"marsh_rat": {
 					"_id": "classic/npcs/animals/marsh_rat",
+					"type": "npc",
 					"name": "Marsh Rat",
 					"rank": 1,
 					"nature": "Animal",
@@ -21431,6 +21655,7 @@
 				},
 				"wolf": {
 					"_id": "classic/npcs/animals/wolf",
+					"type": "npc",
 					"name": "Wolf",
 					"rank": 2,
 					"nature": "Animal",
@@ -21468,12 +21693,14 @@
 		},
 		"beasts": {
 			"_id": "classic/collections/npcs/beasts",
+			"type": "npc_collection",
 			"name": "Beasts",
 			"summary": "__Beasts__ are monstrous creatures of unusual size and cunning.",
 			"description": "Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the [Old World](id:classic/truths/old_world).",
 			"contents": {
 				"basilisk": {
 					"_id": "classic/npcs/beasts/basilisk",
+					"type": "npc",
 					"name": "Basilisk",
 					"rank": 4,
 					"nature": "Beast",
@@ -21507,6 +21734,7 @@
 				},
 				"elder_beast": {
 					"_id": "classic/npcs/beasts/elder_beast",
+					"type": "npc",
 					"name": "Elder Beast",
 					"rank": 4,
 					"nature": "Beast",
@@ -21534,6 +21762,7 @@
 				},
 				"harrow_spider": {
 					"_id": "classic/npcs/beasts/harrow_spider",
+					"type": "npc",
 					"name": "Harrow Spider",
 					"rank": 2,
 					"nature": "Beast",
@@ -21561,6 +21790,7 @@
 				},
 				"leviathan": {
 					"_id": "classic/npcs/beasts/leviathan",
+					"type": "npc",
 					"name": "Leviathan",
 					"rank": 5,
 					"nature": "Beast",
@@ -21594,6 +21824,7 @@
 				},
 				"mammoth": {
 					"_id": "classic/npcs/beasts/mammoth",
+					"type": "npc",
 					"name": "Mammoth",
 					"rank": 4,
 					"nature": "Beast",
@@ -21625,6 +21856,7 @@
 				},
 				"wyvern": {
 					"_id": "classic/npcs/beasts/wyvern",
+					"type": "npc",
 					"name": "Wyvern",
 					"rank": 4,
 					"nature": "Beast",
@@ -21673,12 +21905,14 @@
 		},
 		"horrors": {
 			"_id": "classic/collections/npcs/horrors",
+			"type": "npc_collection",
 			"name": "Horrors",
 			"summary": "__Horrors__ are supernatural beings.",
 			"description": "Horrors are supernatural entities. In the [Old World](id:classic/truths/old_world), they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.\n\nMany horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.",
 			"contents": {
 				"bonewalker": {
 					"_id": "classic/npcs/horrors/bonewalker",
+					"type": "npc",
 					"name": "Bonewalker",
 					"rank": 2,
 					"nature": "Horror",
@@ -21710,6 +21944,7 @@
 				},
 				"frostbound": {
 					"_id": "classic/npcs/horrors/frostbound",
+					"type": "npc",
 					"name": "Frostbound",
 					"rank": 3,
 					"nature": "Horror",
@@ -21738,6 +21973,7 @@
 				},
 				"chimera": {
 					"_id": "classic/npcs/horrors/chimera",
+					"type": "npc",
 					"name": "Chimera",
 					"rank": 4,
 					"nature": "Horror",
@@ -21768,6 +22004,7 @@
 				},
 				"haunt": {
 					"_id": "classic/npcs/horrors/haunt",
+					"type": "npc",
 					"name": "Haunt",
 					"rank": 2,
 					"nature": "Horror",
@@ -21801,6 +22038,7 @@
 				},
 				"hollow": {
 					"_id": "classic/npcs/horrors/hollow",
+					"type": "npc",
 					"name": "Hollow",
 					"rank": 4,
 					"nature": "Horror",
@@ -21833,6 +22071,7 @@
 				},
 				"iron_revenant": {
 					"_id": "classic/npcs/horrors/iron_revenant",
+					"type": "npc",
 					"name": "Iron Revenant",
 					"rank": 4,
 					"nature": "Horror",
@@ -21863,6 +22102,7 @@
 				},
 				"sodden": {
 					"_id": "classic/npcs/horrors/sodden",
+					"type": "npc",
 					"name": "Sodden",
 					"rank": 3,
 					"nature": "Horror",
@@ -21915,17 +22155,14 @@
 			"name": "The Old World",
 			"options": [
 				{
-					"_id": "classic/truths/old_world/0",
 					"description": "The savage clans called the Skulde invaded the kingdoms of the Old World. Our armies fell. Most were killed or taken into slavery. Those who escaped set sail aboard anything that would float. After an arduous months-long voyage, the survivors made landfall upon the Ironlands.",
 					"quest_starter": "You are a descendant of the Skulde. Because of your heritage, your family has long borne the distrust of your fellow Ironlanders. Now, a small force of Skulde have landed on our shores. Are they the harbinger of an invasion? Where do your loyalties lie?"
 				},
 				{
-					"_id": "classic/truths/old_world/1",
 					"description": "The sickness moved like a horrible wave across the Old World, killing all in its path. Thousands fled aboard ships. However, the plague could not be outrun. On many ships, the disease was contained through ruthless measures—tossing overboard any who exhibited the slightest symptom. Other ships were forever lost. In the end, those who survived found the Ironlands and made it their new home. Some say we will forever be cursed by those we left behind.",
 					"quest_starter": "A settlement is stricken by disease. Though this sickness bears some similarities to the Old World plague, it doesn’t kill its victims. Instead, it changes them. How does this disease manifest? Why do you swear to seek out a cure?"
 				},
 				{
-					"_id": "classic/truths/old_world/2",
 					"description": "The Old World could no longer sustain us. We were too large in number. We had felled the forests. Our crops withered in the barren ground. The cities and villages overflowed with desperate, hungry people. Petty kings battled for scraps. We cast our fate to the sea and found the Ironlands. A new world. A fresh start.",
 					"quest_starter": "Decades ago, the exodus ended. Since then, no ships have sailed here from the Old World. Until now. Word comes of a single ship, newly arrived across the vast ocean, grounded on the rocks of the Barrier Islands. When you hear the name of this ship, you swear to uncover the fate of its passengers. Why is it so important to you?"
 				}
@@ -21948,17 +22185,14 @@
 			"name": "Iron",
 			"options": [
 				{
-					"_id": "classic/truths/iron/0",
 					"description": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron.",
 					"quest_starter": "The caravan, bound for the distant southlands, left the mining settlement last season but never arrived at its destination. It carried a bounty of black iron. Why is finding this lost caravan so important to you?"
 				},
 				{
-					"_id": "classic/truths/iron/1",
 					"description": "The weather is bleak. Rain and wind sweep in from the ocean. The winters are long and bitter. One of the first settlers complained, \"Only those made of iron dare live in this foul place\" – and thus our land was named.",
 					"quest_starter": "The harvest fell short. The unrelenting snows left the village isolated. The food is running out. What will you do to see these people through this harsh season?"
 				},
 				{
-					"_id": "classic/truths/iron/2",
 					"description": "Inscrutable metal pillars are found throughout the land. They are iron gray, and smooth as river stone. No one knows their purpose. Some say they are as old as the world. Some, such as the Iron Priests, worship them and swear vows upon them. Most make the warding sign and hurry along their way when they happen across one. The pillars do not tarnish, and even the sharpest blade cannot mark them.",
 					"quest_starter": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?"
 				}
@@ -21981,17 +22215,14 @@
 			"name": "Legacies",
 			"options": [
 				{
-					"_id": "classic/truths/legacies/0",
 					"description": "We are the first humans to walk these lands.",
 					"quest_starter": "In the writings of one of the first settlers, there is a description of a glade in the heart of the Deep Wilds. The spirits of this place are said to grant a miraculous blessing. What boon does it bestow?"
 				},
 				{
-					"_id": "classic/truths/legacies/1",
 					"description": "Other humans sailed here from the Old World untold years ago, but all that is left of them is a savage, feral people we call the broken. Is their fate to become our own?",
 					"quest_starter": "You find a child—one of the broken. It is wounded, and hunted by others of its kind. Do you protect it, even at the risk of inviting the wrath of the broken tribes?"
 				},
 				{
-					"_id": "classic/truths/legacies/2",
 					"description": "Before the Ironlanders, before even the firstborn, another people lived here. Their ancient ruins are found throughout the Ironlands.",
 					"quest_starter": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you."
 				}
@@ -22014,17 +22245,14 @@
 			"name": "Communities",
 			"options": [
 				{
-					"_id": "classic/truths/communities/0",
 					"description": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion.",
 					"quest_starter": "In the dead of winter, a desperate man arrives at a snowbound steading. He is wounded, hungry, and nearly frozen to death. His family has been taken. By whom? Will you brave the merciless winter to save them?"
 				},
 				{
-					"_id": "classic/truths/communities/1",
 					"description": "We live in communities called circles. These are settlements ranging in size from a steading with a few families to a village of several hundred. Some circles belong to nomadic folk. Some powerful circles might include a cluster of settlements. We trade (and sometimes feud) with other circles.",
 					"quest_starter": "A decades-long feud between two circles has flared into open conflict. What is the cause of this dispute? Do you join in the fight, or swear to put a stop to it?"
 				},
 				{
-					"_id": "classic/truths/communities/2",
 					"description": "We have forged the Ironlands into a home. Villages within the Havens are connected by well-trod roads. Trade caravans travel between settlements in the Havens and those in outlying regions. Even so, much of this land is untamed.",
 					"quest_starter": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?"
 				}
@@ -22047,17 +22275,14 @@
 			"name": "Leaders",
 			"options": [
 				{
-					"_id": "classic/truths/leaders/0",
 					"description": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
 					"quest_starter": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, you must make this vision a reality."
 				},
 				{
-					"_id": "classic/truths/leaders/1",
 					"description": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
 					"quest_starter": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?"
 				},
 				{
-					"_id": "classic/truths/leaders/2",
 					"description": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
 					"quest_starter": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two when an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
 				}
@@ -22080,17 +22305,14 @@
 			"name": "Defense",
 			"options": [
 				{
-					"_id": "classic/truths/defense/0",
 					"description": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. When a community is threatened, the people stand together to protect their own.",
 					"quest_starter": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?"
 				},
 				{
-					"_id": "classic/truths/defense/1",
 					"description": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
 					"quest_starter": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?"
 				},
 				{
-					"_id": "classic/truths/defense/2",
 					"description": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
 					"quest_starter": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
 				}
@@ -22113,17 +22335,14 @@
 			"name": "Mysticism",
 			"options": [
 				{
-					"_id": "classic/truths/mysticism/0",
 					"description": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
 					"quest_starter": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?"
 				},
 				{
-					"_id": "classic/truths/mysticism/1",
 					"description": "Magic is rare and dangerous, but those few who wield the power are truly gifted.",
 					"quest_starter": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?"
 				},
 				{
-					"_id": "classic/truths/mysticism/2",
 					"description": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
 					"quest_starter": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
 				}
@@ -22146,17 +22365,14 @@
 			"name": "Religion",
 			"options": [
 				{
-					"_id": "classic/truths/religion/0",
 					"description": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us.",
 					"quest_starter": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?"
 				},
 				{
-					"_id": "classic/truths/religion/1",
 					"description": "The people honor old gods and new. In this harsh land, a prayer is a simple but powerful comfort.",
 					"quest_starter": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this journey? Who seeks to stop them and why?"
 				},
 				{
-					"_id": "classic/truths/religion/2",
 					"description": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
 					"quest_starter": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
 				}
@@ -22179,17 +22395,14 @@
 			"name": "Firstborn",
 			"options": [
 				{
-					"_id": "classic/truths/firstborn/0",
 					"description": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
 					"quest_starter": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?"
 				},
 				{
-					"_id": "classic/truths/firstborn/1",
 					"description": "The firstborn live in isolation and are fiercely protective of their own lands.",
 					"quest_starter": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?"
 				},
 				{
-					"_id": "classic/truths/firstborn/2",
 					"description": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer welcome here.",
 					"quest_starter": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
 				}
@@ -22212,17 +22425,14 @@
 			"name": "Beasts",
 			"options": [
 				{
-					"_id": "classic/truths/beasts/0",
 					"description": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist.",
 					"quest_starter": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?"
 				},
 				{
-					"_id": "classic/truths/beasts/1",
 					"description": "Monstrous beasts stalk the wild areas of the Ironlands.",
 					"quest_starter": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?"
 				},
 				{
-					"_id": "classic/truths/beasts/2",
 					"description": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, but range into the settled lands to hunt. There, they often prey on cattle, but attacks on travelers, caravans, or even settlements are not uncommon.",
 					"quest_starter": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
 				}
@@ -22245,17 +22455,14 @@
 			"name": "Horrors",
 			"options": [
 				{
-					"_id": "classic/truths/horrors/0",
 					"description": "Nothing but stories to frighten children.",
 					"quest_starter": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, but there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?"
 				},
 				{
-					"_id": "classic/truths/horrors/1",
 					"description": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, when all is wreathed in darkness, only fools venture beyond their homes.",
 					"quest_starter": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?"
 				},
 				{
-					"_id": "classic/truths/horrors/2",
 					"description": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
 					"quest_starter": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
 				}

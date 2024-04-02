@@ -45,6 +45,10 @@ public class RulesPackageExpansion extends RulesPackage {
     private Map<String, DelveSite> delveSites;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("description")
+    private MarkdownString description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("license")
     private License license;
 
@@ -219,6 +223,20 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setDelveSites(Map<String, DelveSite> delveSites) {
         this.delveSites = delveSites;
+    }
+
+    /**
+     * Getter for description.<p>
+     */
+    public MarkdownString getDescription() {
+        return description;
+    }
+
+    /**
+     * Setter for description.<p>
+     */
+    public void setDescription(MarkdownString description) {
+        this.description = description;
     }
 
     /**

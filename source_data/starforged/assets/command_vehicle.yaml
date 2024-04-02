@@ -1,8 +1,8 @@
 _id: starforged
-package_type: ruleset
-type: package
+type: ruleset
 assets:
   command_vehicle:
+    type: asset_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -22,6 +22,7 @@ assets:
     contents:
       starship:
         name: Starship
+        type: asset
         <<: &CommandVehicleAsset
           shared: true
           category: Command Vehicle
@@ -67,14 +68,12 @@ assets:
               - enhances:
                   - starforged/moves/legacy/advance
                 roll_type: no_roll
-                type: move
           - text: |-
               When you [Finish an Expedition](id:starforged/moves/exploration/finish_an_expedition) (dangerous or greater) in your starship and score a hit, this journey strengthened your ties to your ship and any fellow travelers. You and your allies may mark 1 tick on your bonds legacy track.
             enhance_moves:
               - enhances:
                   - starforged/moves/exploration/finish_an_expedition
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -86,7 +85,6 @@ assets:
               - enhances:
                   - starforged/moves/suffer/withstand_damage
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To your Starship

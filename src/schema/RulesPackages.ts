@@ -29,9 +29,8 @@ const datasworn_version = Utils.Computed(
 
 const RulesPackageMetaProps = {
 	datasworn_version,
-	name: Utils.SourceOptional(Type.Ref(Localize.Label)),
+	// name: Utils.SourceOptional(Type.Ref(Localize.Label)),
 	description: Type.Optional(Type.Ref(Localize.MarkdownString)),
-	type: Type.Literal('package'),
 	...mapValues(Type.Required(Type.Omit(SourceInfo, ['page'])).properties, (v) =>
 		Utils.SourceOptional(v)
 	)
@@ -41,7 +40,7 @@ export const Ruleset = Type.Object(
 	{
 		// ruleset ID isn't optional in source, so we don't flag it with IdentifiedNode
 		_id: Type.Ref<typeof Id.RulesetId>('RulesetId'),
-		package_type: Type.Literal('ruleset'),
+		type: Type.Literal('ruleset'),
 		...RulesPackageMetaProps,
 		rules: Utils.SourceOptional(Type.Ref<TRules>('Rules')),
 		oracles: Utils.SourceOptional(
@@ -125,15 +124,12 @@ export type Ruleset = Static<typeof Ruleset>
 
 export const Expansion = Utils.Assign(
 	[
-		Type.Omit(Type.Partial(Ruleset), [
-			'_id',
-			'package_type',
-			'rules',
-			'datasworn_version'
-		]),
+		Type.Partial(
+			Type.Omit(Ruleset, ['_id', 'type', 'rules', 'datasworn_version'])
+		),
 		Type.Object({
 			_id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
-			package_type: Type.Literal('expansion'),
+			type: Type.Literal('expansion'),
 			...RulesPackageMetaProps,
 			ruleset: Type.Ref<typeof Id.RulesetId>('RulesetId'),
 			rules: Type.Optional(Type.Ref(Rules.RulesExpansion))
@@ -147,14 +143,10 @@ export const Expansion = Utils.Assign(
 )
 export type Expansion = Static<typeof Expansion>
 
-export const RulesPackage = Utils.DiscriminatedUnion(
-	[Ruleset, Expansion],
-	'package_type',
-	{
-		description:
-			'Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.',
-		title: CONST.rootSchemaName,
-		$id: CONST.rootSchemaName
-	}
-)
+export const RulesPackage = Utils.DiscriminatedUnion([Ruleset, Expansion], 'type', {
+	description:
+		'Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.',
+	title: CONST.rootSchemaName,
+	$id: CONST.rootSchemaName
+})
 export type RulesPackage = Static<typeof RulesPackage>

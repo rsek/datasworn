@@ -23,7 +23,7 @@ import {
 
 export const RulesetId = Id([Pkg], {
 	$id: 'RulesetId',
-	examples: ['classic', 'starforged'],
+	examples: ['classic', 'starforged', 'sundered_isles'],
 	description:
 		'The ID of standalone Datasworn package that describes its own ruleset.'
 })
@@ -365,11 +365,11 @@ export const TruthIdWildcard = toWildcard(TruthId, {
 export type TruthIdWildcard = Static<typeof TruthIdWildcard>
 
 
-export const TruthOptionId = Extend(TruthId, [Index], {
-	examples: ['classic/truths/iron/0', 'starforged/truths/iron/0'],
-	$id: 'TruthOptionId'
-})
-export type TruthOptionId = Opaque<Static<typeof TruthOptionId>>
+// export const TruthOptionId = Extend(TruthId, [Index], {
+// 	examples: ['classic/truths/iron/0', 'starforged/truths/iron/0'],
+// 	$id: 'TruthOptionId'
+// })
+// export type TruthOptionId = Opaque<Static<typeof TruthOptionId>>
 
 const RuleIdHead: IdElement[] = [Pkg, 'rules']
 

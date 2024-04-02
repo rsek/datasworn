@@ -1,8 +1,8 @@
 {
 	"_id": "delve",
-	"title": "Ironsworn: Delve",
 	"datasworn_version": "0.0.9",
-	"package_type": "expansion",
+	"type": "expansion",
+	"title": "Ironsworn: Delve",
 	"authors": [
 		{
 			"name": "Shawn Tomkin"
@@ -26,6 +26,7 @@
 	"oracles": {
 		"character": {
 			"_id": "delve/collections/oracles/character",
+			"type": "oracle_collection",
 			"name": "Character",
 			"oracle_type": "tables",
 			"enhances": "classic/collections/oracles/character",
@@ -33,6 +34,7 @@
 			"contents": {
 				"activity": {
 					"_id": "delve/oracles/character/activity",
+					"type": "oracle_rollable",
 					"name": "Activity",
 					"canonical_name": "Character: Activity",
 					"oracle_type": "table_text",
@@ -565,6 +567,7 @@
 				},
 				"disposition": {
 					"_id": "delve/oracles/character/disposition",
+					"type": "oracle_rollable",
 					"name": "Disposition",
 					"canonical_name": "Character: Disposition",
 					"oracle_type": "table_text",
@@ -725,6 +728,7 @@
 		},
 		"combat_event": {
 			"_id": "delve/collections/oracles/combat_event",
+			"type": "oracle_collection",
 			"name": "Combat Event",
 			"oracle_type": "tables",
 			"summary": "Determine the actions of a character, creature, or force during a fight.",
@@ -732,6 +736,7 @@
 			"contents": {
 				"method": {
 					"_id": "delve/oracles/combat_event/method",
+					"type": "oracle_rollable",
 					"name": "Method",
 					"canonical_name": "Combat Event: Method",
 					"oracle_type": "table_text",
@@ -1260,6 +1265,7 @@
 				},
 				"target": {
 					"_id": "delve/oracles/combat_event/target",
+					"type": "oracle_rollable",
 					"name": "Target",
 					"canonical_name": "Combat Event: Target",
 					"oracle_type": "table_text",
@@ -1805,6 +1811,7 @@
 		},
 		"feature": {
 			"_id": "delve/collections/oracles/feature",
+			"type": "oracle_collection",
 			"name": "Feature",
 			"oracle_type": "tables",
 			"summary": "Use the [Aspect](id:delve/oracles/feature/aspect) and [Focus](id:delve/oracles/feature/focus) oracles to answer questions or provide inspiration for a location or event within a site.",
@@ -1812,6 +1819,7 @@
 			"contents": {
 				"aspect": {
 					"_id": "delve/oracles/feature/aspect",
+					"type": "oracle_rollable",
 					"name": "Aspect",
 					"canonical_name": "Feature: Aspect",
 					"oracle_type": "table_text",
@@ -2340,6 +2348,7 @@
 				},
 				"focus": {
 					"_id": "delve/oracles/feature/focus",
+					"type": "oracle_rollable",
 					"name": "Focus",
 					"canonical_name": "Feature: Focus",
 					"oracle_type": "table_text",
@@ -2882,6 +2891,7 @@
 		},
 		"monstrosity": {
 			"_id": "delve/collections/oracles/monstrosity",
+			"type": "oracle_collection",
 			"name": "Monstrosity",
 			"oracle_type": "tables",
 			"summary": "Discover the nature of a [nightspawn](id:delve/npcs/horrors/nightspawn) or other frightful creature within your world.",
@@ -2889,6 +2899,7 @@
 			"contents": {
 				"size": {
 					"_id": "delve/oracles/monstrosity/size",
+					"type": "oracle_rollable",
 					"name": "Size",
 					"canonical_name": "Monstrosity: Size",
 					"oracle_type": "table_text",
@@ -2944,6 +2955,7 @@
 				},
 				"primary_form": {
 					"_id": "delve/oracles/monstrosity/primary_form",
+					"type": "oracle_rollable",
 					"name": "Primary Form",
 					"canonical_name": "Monstrosity: Primary Form",
 					"oracle_type": "table_text",
@@ -3154,6 +3166,7 @@
 				},
 				"characteristics": {
 					"_id": "delve/oracles/monstrosity/characteristics",
+					"type": "oracle_rollable",
 					"name": "Characteristics",
 					"canonical_name": "Monstrosity: Characteristics",
 					"oracle_type": "table_text",
@@ -3321,6 +3334,7 @@
 				},
 				"abilities": {
 					"_id": "delve/oracles/monstrosity/abilities",
+					"type": "oracle_rollable",
 					"name": "Abilities",
 					"canonical_name": "Monstrosity: Abilities",
 					"oracle_type": "table_text",
@@ -3570,12 +3584,14 @@
 		},
 		"moves": {
 			"_id": "delve/collections/oracles/moves",
+			"type": "oracle_collection",
 			"name": "Moves",
 			"oracle_type": "tables",
 			"enhances": "classic/collections/oracles/moves",
 			"contents": {
 				"find_an_opportunity": {
 					"_id": "delve/oracles/moves/find_an_opportunity",
+					"type": "oracle_rollable",
 					"name": "Find an Opportunity",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -3650,6 +3666,7 @@
 				},
 				"reveal_a_danger": {
 					"_id": "delve/oracles/moves/reveal_a_danger",
+					"type": "oracle_rollable",
 					"name": "Reveal a Danger",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -3743,6 +3760,7 @@
 				},
 				"reveal_a_danger_alt": {
 					"_id": "delve/oracles/moves/reveal_a_danger_alt",
+					"type": "oracle_rollable",
 					"name": "Reveal a Danger (alternate version)",
 					"oracle_type": "table_text",
 					"replaces": "delve/oracles/moves/reveal_a_danger",
@@ -3827,6 +3845,7 @@
 				},
 				"advance_a_threat": {
 					"_id": "delve/oracles/moves/advance_a_threat",
+					"type": "oracle_rollable",
 					"name": "Advance a Threat",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -3871,11 +3890,13 @@
 			"collections": {
 				"delve_the_depths": {
 					"_id": "delve/collections/oracles/moves/delve_the_depths",
+					"type": "oracle_collection",
 					"name": "Delve the Depths",
 					"oracle_type": "table_shared_text",
 					"contents": {
 						"edge": {
 							"_id": "delve/oracles/moves/delve_the_depths/edge",
+							"type": "oracle_rollable",
 							"name": "Edge",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -3909,6 +3930,7 @@
 						},
 						"shadow": {
 							"_id": "delve/oracles/moves/delve_the_depths/shadow",
+							"type": "oracle_rollable",
 							"name": "Shadow",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -3942,6 +3964,7 @@
 						},
 						"wits": {
 							"_id": "delve/oracles/moves/delve_the_depths/wits",
+							"type": "oracle_rollable",
 							"name": "Wits",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -4006,6 +4029,7 @@
 		},
 		"site_name": {
 			"_id": "delve/collections/oracles/site_name",
+			"type": "oracle_collection",
 			"name": "Site Name",
 			"oracle_type": "tables",
 			"summary": "Give a site a name or learn more about its characteristics and history.",
@@ -4013,6 +4037,7 @@
 			"contents": {
 				"format": {
 					"_id": "delve/oracles/site_name/format",
+					"type": "oracle_rollable",
 					"name": "Format",
 					"canonical_name": "Site Name: Format",
 					"oracle_type": "table_text",
@@ -4275,6 +4300,7 @@
 				},
 				"description": {
 					"_id": "delve/oracles/site_name/description",
+					"type": "oracle_rollable",
 					"name": "Description",
 					"canonical_name": "Site Name: Description",
 					"oracle_type": "table_text",
@@ -4800,6 +4826,7 @@
 				},
 				"detail": {
 					"_id": "delve/oracles/site_name/detail",
+					"type": "oracle_rollable",
 					"name": "Detail",
 					"canonical_name": "Site Name: Detail",
 					"oracle_type": "table_text",
@@ -5325,6 +5352,7 @@
 				},
 				"namesake": {
 					"_id": "delve/oracles/site_name/namesake",
+					"type": "oracle_rollable",
 					"name": "Namesake",
 					"canonical_name": "Site Name: Namesake",
 					"oracle_type": "table_text",
@@ -5851,6 +5879,7 @@
 				},
 				"place": {
 					"_id": "delve/oracles/site_name/place",
+					"type": "oracle_rollable",
 					"name": "Place",
 					"canonical_name": "Site Name: Place",
 					"oracle_type": "table_text",
@@ -6058,12 +6087,14 @@
 			"collections": {
 				"place": {
 					"_id": "delve/collections/oracles/site_name/place",
+					"type": "oracle_collection",
 					"name": "Place",
 					"canonical_name": "Site Name: Place",
 					"oracle_type": "tables",
 					"contents": {
 						"barrow": {
 							"_id": "delve/oracles/site_name/place/barrow",
+							"type": "oracle_rollable",
 							"name": "Barrow",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6148,6 +6179,7 @@
 						},
 						"cavern": {
 							"_id": "delve/oracles/site_name/place/cavern",
+							"type": "oracle_rollable",
 							"name": "Cavern",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6272,6 +6304,7 @@
 						},
 						"frozen_cavern": {
 							"_id": "delve/oracles/site_name/place/frozen_cavern",
+							"type": "oracle_rollable",
 							"name": "Frozen Cavern",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6396,6 +6429,7 @@
 						},
 						"icereach": {
 							"_id": "delve/oracles/site_name/place/icereach",
+							"type": "oracle_rollable",
 							"name": "Icereach",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6480,6 +6514,7 @@
 						},
 						"mine": {
 							"_id": "delve/oracles/site_name/place/mine",
+							"type": "oracle_rollable",
 							"name": "Mine",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6564,6 +6599,7 @@
 						},
 						"pass": {
 							"_id": "delve/oracles/site_name/place/pass",
+							"type": "oracle_rollable",
 							"name": "Pass",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6688,6 +6724,7 @@
 						},
 						"ruin": {
 							"_id": "delve/oracles/site_name/place/ruin",
+							"type": "oracle_rollable",
 							"name": "Ruin",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6812,6 +6849,7 @@
 						},
 						"sea_cave": {
 							"_id": "delve/oracles/site_name/place/sea_cave",
+							"type": "oracle_rollable",
 							"name": "Sea Cave",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -6896,6 +6934,7 @@
 						},
 						"shadowfen": {
 							"_id": "delve/oracles/site_name/place/shadowfen",
+							"type": "oracle_rollable",
 							"name": "Shadowfen",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -7020,6 +7059,7 @@
 						},
 						"stronghold": {
 							"_id": "delve/oracles/site_name/place/stronghold",
+							"type": "oracle_rollable",
 							"name": "Stronghold",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -7144,6 +7184,7 @@
 						},
 						"tanglewood": {
 							"_id": "delve/oracles/site_name/place/tanglewood",
+							"type": "oracle_rollable",
 							"name": "Tanglewood",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -7248,6 +7289,7 @@
 						},
 						"underkeep": {
 							"_id": "delve/oracles/site_name/place/underkeep",
+							"type": "oracle_rollable",
 							"name": "Underkeep",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -7400,6 +7442,7 @@
 		},
 		"site_nature": {
 			"_id": "delve/collections/oracles/site_nature",
+			"type": "oracle_collection",
 			"name": "Site Nature",
 			"oracle_type": "tables",
 			"summary": "Randomly select a theme and domain for a perilous location.",
@@ -7407,6 +7450,7 @@
 			"contents": {
 				"theme": {
 					"_id": "delve/oracles/site_nature/theme",
+					"type": "oracle_rollable",
 					"name": "Theme",
 					"canonical_name": "Site Nature: Theme",
 					"oracle_type": "table_text",
@@ -7472,6 +7516,7 @@
 				},
 				"domain": {
 					"_id": "delve/oracles/site_nature/domain",
+					"type": "oracle_rollable",
 					"name": "Domain",
 					"canonical_name": "Site Nature: Domain",
 					"oracle_type": "table_text",
@@ -7571,6 +7616,7 @@
 		},
 		"threat": {
 			"_id": "delve/collections/oracles/threat",
+			"type": "oracle_collection",
 			"name": "Threat",
 			"oracle_type": "tables",
 			"summary": "In support of the optional threat mechanics, use these oracles to introduce a threat and determine its actions within your world.",
@@ -7578,6 +7624,7 @@
 			"contents": {
 				"category": {
 					"_id": "delve/oracles/threat/category",
+					"type": "oracle_rollable",
 					"name": "Category",
 					"canonical_name": "Threat: Category",
 					"oracle_type": "table_text",
@@ -7662,6 +7709,7 @@
 				},
 				"burgeoning_conflict": {
 					"_id": "delve/oracles/threat/burgeoning_conflict",
+					"type": "oracle_rollable",
 					"name": "Burgeoning Conflict",
 					"canonical_name": "Threat: Burgeoning Conflict",
 					"oracle_type": "table_text",
@@ -7737,6 +7785,7 @@
 				},
 				"cursed_site": {
 					"_id": "delve/oracles/threat/cursed_site",
+					"type": "oracle_rollable",
 					"name": "Cursed Site",
 					"canonical_name": "Threat: Cursed Site",
 					"oracle_type": "table_text",
@@ -7812,6 +7861,7 @@
 				},
 				"environmental_calamity": {
 					"_id": "delve/oracles/threat/environmental_calamity",
+					"type": "oracle_rollable",
 					"name": "Environmental Calamity",
 					"canonical_name": "Threat: Environmental Calamity",
 					"oracle_type": "table_text",
@@ -7887,6 +7937,7 @@
 				},
 				"malignant_plague": {
 					"_id": "delve/oracles/threat/malignant_plague",
+					"type": "oracle_rollable",
 					"name": "Malignant Plague",
 					"canonical_name": "Threat: Malignant Plague",
 					"oracle_type": "table_text",
@@ -7962,6 +8013,7 @@
 				},
 				"rampaging_creature": {
 					"_id": "delve/oracles/threat/rampaging_creature",
+					"type": "oracle_rollable",
 					"name": "Rampaging Creature",
 					"canonical_name": "Threat: Rampaging Creature",
 					"oracle_type": "table_text",
@@ -8037,6 +8089,7 @@
 				},
 				"ravaging_horde": {
 					"_id": "delve/oracles/threat/ravaging_horde",
+					"type": "oracle_rollable",
 					"name": "Ravaging Horde",
 					"canonical_name": "Threat: Ravaging Horde",
 					"oracle_type": "table_text",
@@ -8112,6 +8165,7 @@
 				},
 				"scheming_leader": {
 					"_id": "delve/oracles/threat/scheming_leader",
+					"type": "oracle_rollable",
 					"name": "Scheming Leader",
 					"canonical_name": "Threat: Scheming Leader",
 					"oracle_type": "table_text",
@@ -8187,6 +8241,7 @@
 				},
 				"power_hungry_mystic": {
 					"_id": "delve/oracles/threat/power_hungry_mystic",
+					"type": "oracle_rollable",
 					"name": "Power-Hungry Mystic",
 					"canonical_name": "Threat: Power-Hungry Mystic",
 					"oracle_type": "table_text",
@@ -8262,6 +8317,7 @@
 				},
 				"zealous_cult": {
 					"_id": "delve/oracles/threat/zealous_cult",
+					"type": "oracle_rollable",
 					"name": "Zealous Cult",
 					"canonical_name": "Threat: Zealous Cult",
 					"oracle_type": "table_text",
@@ -8351,6 +8407,7 @@
 		},
 		"trap": {
 			"_id": "delve/collections/oracles/trap",
+			"type": "oracle_collection",
 			"name": "Trap",
 			"oracle_type": "tables",
 			"summary": "Identify the characteristics and effects of a trap within a site.",
@@ -8358,6 +8415,7 @@
 			"contents": {
 				"trap": {
 					"_id": "delve/oracles/trap/trap",
+					"type": "oracle_rollable",
 					"name": "Event",
 					"canonical_name": "Trap: Event",
 					"oracle_type": "table_text",
@@ -8636,6 +8694,7 @@
 				},
 				"component": {
 					"_id": "delve/oracles/trap/component",
+					"type": "oracle_rollable",
 					"name": "Component",
 					"canonical_name": "Trap: Component",
 					"oracle_type": "table_text",
@@ -8932,11 +8991,13 @@
 	"moves": {
 		"delve": {
 			"_id": "delve/collections/moves/delve",
+			"type": "move_category",
 			"name": "Delve Moves",
 			"summary": "As you explore a perilous site, you’ll trigger moves. The moves included with this supplement help you resolve the outcome of your expedition—whether you make progress, and what dangers or opportunities you encounter.",
 			"contents": {
 				"discover_a_site": {
 					"_id": "delve/moves/delve/discover_a_site",
+					"type": "move",
 					"name": "Discover a Site",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -8960,6 +9021,7 @@
 				},
 				"delve_the_depths": {
 					"_id": "delve/moves/delve/delve_the_depths",
+					"type": "move",
 					"name": "Delve the Depths",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -9029,6 +9091,7 @@
 				},
 				"find_an_opportunity": {
 					"_id": "delve/moves/delve/find_an_opportunity",
+					"type": "move",
 					"name": "Find an Opportunity",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -9053,6 +9116,7 @@
 				},
 				"reveal_a_danger": {
 					"_id": "delve/moves/delve/reveal_a_danger",
+					"type": "move",
 					"name": "Reveal a Danger",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -9077,6 +9141,7 @@
 				},
 				"check_your_gear": {
 					"_id": "delve/moves/delve/check_your_gear",
+					"type": "move",
 					"name": "Check Your Gear",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -9120,6 +9185,7 @@
 				},
 				"locate_your_objective": {
 					"_id": "delve/moves/delve/locate_your_objective",
+					"type": "move",
 					"name": "Locate Your Objective",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -9165,6 +9231,7 @@
 				},
 				"escape_the_depths": {
 					"_id": "delve/moves/delve/escape_the_depths",
+					"type": "move",
 					"name": "Escape the Depths",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -9249,6 +9316,7 @@
 				},
 				"reveal_a_danger_alt": {
 					"_id": "delve/moves/delve/reveal_a_danger_alt",
+					"type": "move",
 					"name": "Reveal a Danger (alternate version)",
 					"roll_type": "no_roll",
 					"replaces": "delve/moves/delve/reveal_a_danger",
@@ -9288,11 +9356,13 @@
 		},
 		"failure": {
 			"_id": "delve/collections/moves/failure",
+			"type": "move_category",
 			"name": "Failure Moves",
 			"description": "Failure is a key part of your journey within the Ironlands. If you’d like to make those failures a more influential aspect of your character’s evolution—while taking a bit of the sting out of rolling a miss—use these optional mechanics.",
 			"contents": {
 				"mark_your_failure": {
 					"_id": "delve/moves/failure/mark_your_failure",
+					"type": "move",
 					"name": "Mark Your Failure",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -9316,6 +9386,7 @@
 				},
 				"learn_from_your_failures": {
 					"_id": "delve/moves/failure/learn_from_your_failures",
+					"type": "move",
 					"name": "Learn From Your Failures",
 					"roll_type": "special_track",
 					"trigger": {
@@ -9372,12 +9443,14 @@
 		},
 		"threat": {
 			"_id": "delve/collections/moves/threat",
+			"type": "move_category",
 			"name": "Threat Moves",
 			"summary": "__Threats__ are an optional mechanic for your *Ironsworn* campaign which will make the forces in your world more active and responsive. Your vows will gain new urgency as threats work against you.",
 			"description": "The world does not wait for you. As you undertake journeys to distant locations, explore perilous places, and spend time recovering from your adventures, the forces which oppose you will advance their own agenda. When you suffer setbacks, those forces will take advantage of your failure to gain new ground.\n\n__Threats__ are an optional mechanic for your *Ironsworn* campaign which will make the forces in your world more active and responsive. Your vows will gain new urgency as threats work against you.",
 			"contents": {
 				"advance_a_threat": {
 					"_id": "delve/moves/threat/advance_a_threat",
+					"type": "move",
 					"name": "Advance a Threat",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -9402,6 +9475,7 @@
 				},
 				"take_a_hiatus": {
 					"_id": "delve/moves/threat/take_a_hiatus",
+					"type": "move",
 					"name": "Take a Hiatus",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -9439,12 +9513,14 @@
 		},
 		"rarity": {
 			"_id": "delve/collections/moves/rarity",
+			"type": "move_category",
 			"name": "Rarity Moves",
 			"summary": "Rarities are enchanted objects you use to bolster your existing abilities.",
 			"description": "History is often chronicled through objects of power. Wars and accords, struggles and triumphs, love and hate, sacrifice and death—these legacies can imbue objects with cultural importance and supernatural gifts.\n\nIn __Ironsworn__, these items are called *rarities*. They may be handed down through generations, lost or hidden away in the depths of perilous sites, coveted by powerful forces, or forgotten and discarded. When you obtain a rarity through the course of your story, you gain a subtle but lasting impact on your character and their abilities.",
 			"contents": {
 				"wield_a_rarity": {
 					"_id": "delve/moves/rarity/wield_a_rarity",
+					"type": "move",
 					"name": "Wield a Rarity",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -9484,11 +9560,13 @@
 	"npcs": {
 		"ironlanders": {
 			"_id": "delve/collections/npcs/ironlanders",
+			"type": "npc_collection",
 			"name": "Ironlanders",
 			"enhances": "classic/collections/npcs/ironlanders",
 			"contents": {
 				"husk": {
 					"_id": "delve/npcs/ironlanders/husk",
+					"type": "npc",
 					"name": "Husk",
 					"rank": 3,
 					"nature": "Ironlander",
@@ -9525,6 +9603,7 @@
 				},
 				"zealot": {
 					"_id": "delve/npcs/ironlanders/zealot",
+					"type": "npc",
 					"name": "Zealot",
 					"rank": 1,
 					"nature": "Ironlander",
@@ -9570,11 +9649,13 @@
 		},
 		"firstborn": {
 			"_id": "delve/collections/npcs/firstborn",
+			"type": "npc_collection",
 			"name": "Firstborn",
 			"enhances": "classic/collections/npcs/firstborn",
 			"contents": {
 				"atanya": {
 					"_id": "delve/npcs/firstborn/atanya",
+					"type": "npc",
 					"name": "Atanya",
 					"rank": 2,
 					"nature": "Firstborn",
@@ -9606,6 +9687,7 @@
 				},
 				"merrow": {
 					"_id": "delve/npcs/firstborn/merrow",
+					"type": "npc",
 					"name": "Merrow",
 					"rank": 2,
 					"nature": "Firstborn",
@@ -9648,11 +9730,13 @@
 		},
 		"animals": {
 			"_id": "delve/collections/npcs/animals",
+			"type": "npc_collection",
 			"name": "Animals",
 			"enhances": "classic/collections/npcs/animals",
 			"contents": {
 				"bladewing": {
 					"_id": "delve/npcs/animals/bladewing",
+					"type": "npc",
 					"name": "Bladewing",
 					"rank": 2,
 					"nature": "Animal",
@@ -9684,6 +9768,7 @@
 				},
 				"carrion_newt": {
 					"_id": "delve/npcs/animals/carrion_newt",
+					"type": "npc",
 					"name": "Carrion Newt",
 					"rank": 3,
 					"nature": "Animal",
@@ -9716,6 +9801,7 @@
 				},
 				"cave_lion": {
 					"_id": "delve/npcs/animals/cave_lion",
+					"type": "npc",
 					"name": "Cave Lion",
 					"rank": 3,
 					"nature": "Animal",
@@ -9739,6 +9825,7 @@
 				},
 				"deep_rat": {
 					"_id": "delve/npcs/animals/deep_rat",
+					"type": "npc",
 					"name": "Deep Rat",
 					"rank": 1,
 					"nature": "Animal",
@@ -9768,6 +9855,7 @@
 				},
 				"nightmare_spider": {
 					"_id": "delve/npcs/animals/nightmare_spider",
+					"type": "npc",
 					"name": "Nightmare Spider",
 					"rank": 2,
 					"nature": "Animal",
@@ -9800,6 +9888,7 @@
 				},
 				"shroud_crab": {
 					"_id": "delve/npcs/animals/shroud_crab",
+					"type": "npc",
 					"name": "Shroud Crab",
 					"rank": 1,
 					"nature": "Animal",
@@ -9832,6 +9921,7 @@
 				},
 				"trog": {
 					"_id": "delve/npcs/animals/trog",
+					"type": "npc",
 					"name": "Trog",
 					"rank": 2,
 					"nature": "Animal",
@@ -9880,11 +9970,13 @@
 		},
 		"beasts": {
 			"_id": "delve/collections/npcs/beasts",
+			"type": "npc_collection",
 			"name": "Beasts",
 			"enhances": "classic/collections/npcs/beasts",
 			"contents": {
 				"chitter": {
 					"_id": "delve/npcs/beasts/chitter",
+					"type": "npc",
 					"name": "Chitter",
 					"rank": 2,
 					"nature": "Beast",
@@ -9912,6 +10004,7 @@
 				},
 				"gnarl": {
 					"_id": "delve/npcs/beasts/gnarl",
+					"type": "npc",
 					"name": "Gnarl",
 					"rank": 4,
 					"nature": "Beast",
@@ -9940,6 +10033,7 @@
 				},
 				"iron_wracked_beast": {
 					"_id": "delve/npcs/beasts/iron_wracked_beast",
+					"type": "npc",
 					"name": "Iron-Wracked Beast",
 					"rank": 3,
 					"nature": "Beast",
@@ -9968,6 +10062,7 @@
 				},
 				"kraken": {
 					"_id": "delve/npcs/beasts/kraken",
+					"type": "npc",
 					"name": "Kraken",
 					"rank": 5,
 					"nature": "Beast",
@@ -10001,6 +10096,7 @@
 				},
 				"nightspawn": {
 					"_id": "delve/npcs/beasts/nightspawn",
+					"type": "npc",
 					"name": "Nightspawn",
 					"rank": 3,
 					"nature": "Beast",
@@ -10032,6 +10128,7 @@
 				},
 				"rhaskar": {
 					"_id": "delve/npcs/beasts/rhaskar",
+					"type": "npc",
 					"name": "Rhaskar",
 					"rank": 4,
 					"nature": "Beast",
@@ -10065,6 +10162,7 @@
 				},
 				"wyrm": {
 					"_id": "delve/npcs/beasts/wyrm",
+					"type": "npc",
 					"name": "Wyrm",
 					"rank": 5,
 					"nature": "Beast",
@@ -10113,11 +10211,13 @@
 		},
 		"horrors": {
 			"_id": "delve/collections/npcs/horrors",
+			"type": "npc_collection",
 			"name": "Horrors",
 			"enhances": "classic/collections/npcs/horrors",
 			"contents": {
 				"blighthound": {
 					"_id": "delve/npcs/horrors/blighthound",
+					"type": "npc",
 					"name": "Blighthound",
 					"rank": 3,
 					"nature": "Horror",
@@ -10145,6 +10245,7 @@
 				},
 				"bog_rot": {
 					"_id": "delve/npcs/horrors/bog_rot",
+					"type": "npc",
 					"name": "Bog Rot",
 					"rank": 2,
 					"nature": "Horror",
@@ -10177,6 +10278,7 @@
 				},
 				"bonehorde": {
 					"_id": "delve/npcs/horrors/bonehorde",
+					"type": "npc",
 					"name": "Bonehorde",
 					"rank": 4,
 					"nature": "Horror",
@@ -10208,6 +10310,7 @@
 				},
 				"thrall": {
 					"_id": "delve/npcs/horrors/thrall",
+					"type": "npc",
 					"name": "Thrall",
 					"rank": 2,
 					"nature": "Horror",
@@ -10243,6 +10346,7 @@
 				},
 				"wight": {
 					"_id": "delve/npcs/horrors/wight",
+					"type": "npc",
 					"name": "Wight",
 					"rank": 3,
 					"nature": "Horror",
@@ -10288,11 +10392,13 @@
 		},
 		"anomalies": {
 			"_id": "delve/collections/npcs/anomalies",
+			"type": "npc_collection",
 			"name": "Anomalies",
 			"description": "Old magic permeates the Ironlands. These forces sometimes manifest as an anomaly, which is an otherworldly feature of the terrain or environment. Some are the embodiment of ancient spirits, and have unknowable motivations. Others are forces of nature given cruel purpose.",
 			"contents": {
 				"blood_thorn": {
 					"_id": "delve/npcs/anomalies/blood_thorn",
+					"type": "npc",
 					"name": "Blood Thorn",
 					"rank": 2,
 					"nature": "Anomaly",
@@ -10321,6 +10427,7 @@
 				},
 				"circle_of_stones": {
 					"_id": "delve/npcs/anomalies/circle_of_stones",
+					"type": "npc",
 					"name": "Circle of Stones",
 					"rank": 2,
 					"nature": "Anomaly",
@@ -10353,6 +10460,7 @@
 				},
 				"glimmer": {
 					"_id": "delve/npcs/anomalies/glimmer",
+					"type": "npc",
 					"name": "Glimmer",
 					"rank": 2,
 					"nature": "Anomaly",
@@ -10384,6 +10492,7 @@
 				},
 				"gloom": {
 					"_id": "delve/npcs/anomalies/gloom",
+					"type": "npc",
 					"name": "Gloom",
 					"rank": 2,
 					"nature": "Anomaly",
@@ -10413,6 +10522,7 @@
 				},
 				"maelstrom": {
 					"_id": "delve/npcs/anomalies/maelstrom",
+					"type": "npc",
 					"name": "Maelstrom",
 					"rank": 2,
 					"nature": "Anomaly",
@@ -10446,6 +10556,7 @@
 				},
 				"tempest": {
 					"_id": "delve/npcs/anomalies/tempest",
+					"type": "npc",
 					"name": "Tempest",
 					"rank": 2,
 					"nature": "Anomaly",

@@ -8,11 +8,8 @@ import { Keywords } from '../augmentations.js'
 // TODO: this could be done programmatically by looking at the appropriate symbol key on DiscriminatedUnion schemas
 const discriminatorKeys = [
 	'category',
-	'card_type',
-	'content_type',
 	'field_type',
 	'roll_type',
-	'package_type',
 	'choice_type',
 	'oracle_type',
 	'value_type',
@@ -108,11 +105,12 @@ const sourceMetadataKeys = [...Object.keys(SourceInfo.properties), 'email']
 
 export const dataSwornKeyOrder = [
 	...idKeys,
+	'datasworn_version',
+	'type',
 	'title',
 	'name',
 	'canonical_name',
 	'label',
-	'datasworn_version',
 	...discriminatorKeys,
 	...sourceMetadataKeys,
 	'ruleset',

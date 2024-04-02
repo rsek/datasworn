@@ -9,10 +9,10 @@
 			"title": "RulesPackage",
 			"type": "object",
 			"description": "Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `package_type` property as a discriminator.",
-			"required": ["package_type"],
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.",
+			"required": ["type"],
 			"properties": {
-				"package_type": {
+				"type": {
 					"enum": ["ruleset", "expansion"]
 				}
 			},
@@ -21,7 +21,7 @@
 				{
 					"if": {
 						"properties": {
-							"package_type": {
+							"type": {
 								"const": "ruleset",
 								"type": "string"
 							}
@@ -34,7 +34,7 @@
 				{
 					"if": {
 						"properties": {
-							"package_type": {
+							"type": {
 								"const": "expansion",
 								"type": "string"
 							}
@@ -52,10 +52,9 @@
 			"description": "A standalone Datasworn package that describes its own ruleset.",
 			"required": [
 				"_id",
-				"title",
-				"name",
 				"datasworn_version",
-				"package_type",
+				"type",
+				"title",
 				"authors",
 				"date",
 				"url",
@@ -63,26 +62,22 @@
 				"rules",
 				"oracles",
 				"assets",
-				"moves",
-				"type"
+				"moves"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/RulesetId"
 				},
-				"title": {
-					"$ref": "#/definitions/SourceTitle"
-				},
-				"name": {
-					"$ref": "#/definitions/Label"
-				},
 				"datasworn_version": {
 					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
 				},
-				"package_type": {
+				"type": {
 					"type": "string",
 					"const": "ruleset"
+				},
+				"title": {
+					"$ref": "#/definitions/SourceTitle"
 				},
 				"authors": {
 					"type": "array",
@@ -209,10 +204,6 @@
 							"$ref": "#/definitions/Truth"
 						}
 					}
-				},
-				"type": {
-					"type": "string",
-					"const": "package"
 				}
 			}
 		},
@@ -220,24 +211,21 @@
 			"title": "Expansion",
 			"type": "object",
 			"description": "A Datasworn package that relies on an external package to provide its ruleset.",
-			"required": ["_id", "datasworn_version", "package_type", "ruleset"],
+			"required": ["_id", "datasworn_version", "type", "ruleset"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/ExpansionId"
-				},
-				"title": {
-					"$ref": "#/definitions/SourceTitle"
-				},
-				"name": {
-					"$ref": "#/definitions/Label"
 				},
 				"datasworn_version": {
 					"$ref": "#/definitions/SemanticVersion",
 					"description": "The version of the Datasworn format used by this data."
 				},
-				"package_type": {
+				"type": {
 					"type": "string",
 					"const": "expansion"
+				},
+				"title": {
+					"$ref": "#/definitions/SourceTitle"
 				},
 				"authors": {
 					"type": "array",
@@ -367,10 +355,6 @@
 							"$ref": "#/definitions/Truth"
 						}
 					}
-				},
-				"type": {
-					"type": "string",
-					"const": "package"
 				}
 			}
 		},
@@ -670,7 +654,7 @@
 			"title": "RulesetId",
 			"type": "string",
 			"description": "The ID of standalone Datasworn package that describes its own ruleset.",
-			"examples": ["classic", "starforged"],
+			"examples": ["classic", "starforged", "sundered_isles"],
 			"pattern": "^([a-z0-9_]{3,})$"
 		},
 		"SpecialTrackRuleId": {
@@ -702,13 +686,6 @@
 			"type": "string",
 			"description": "A wildcarded ID that can be used to match multiple Truths.",
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/truths\\/(\\*|([a-z][a-z_]*))$"
-		},
-		"TruthOptionId": {
-			"title": "TruthOptionId",
-			"type": "string",
-			"description": "A unique ID for a TruthOption.",
-			"examples": ["classic/truths/iron/0", "starforged/truths/iron/0"],
-			"pattern": "^([a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)\\/(0|[1-9][0-9]*)$"
 		},
 		"AuthorInfo": {
 			"title": "AuthorInfo",
@@ -2596,6 +2573,7 @@
 			"description": "A non-player character entry, similar to those in Chapter 5 of the Ironsworn Rulebook, or Chapter 4 of Starforged.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"rank",
 				"nature",
@@ -2603,13 +2581,16 @@
 				"drives",
 				"tactics",
 				"description",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/NpcId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "npc"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -2690,21 +2671,21 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "npc"
 				}
 			}
 		},
 		"NpcCollection": {
 			"title": "NpcCollection",
 			"type": "object",
-			"required": ["_id", "name", "_source", "type"],
+			"required": ["_id", "type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/NpcCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "npc_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -2779,10 +2760,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "npc_collection"
 				}
 			}
 		},
@@ -3016,11 +2993,15 @@
 			"title": "OracleColumnText",
 			"type": "object",
 			"description": "Represents a single column in an OracleCollection.",
-			"required": ["_id", "name", "oracle_type", "dice", "rows", "type"],
+			"required": ["_id", "type", "name", "oracle_type", "dice", "rows"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3083,21 +3064,21 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_rollable"
 				}
 			}
 		},
 		"OracleColumnText2": {
 			"title": "OracleColumnText2",
 			"type": "object",
-			"required": ["_id", "name", "oracle_type", "dice", "rows", "type"],
+			"required": ["_id", "type", "name", "oracle_type", "dice", "rows"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3160,21 +3141,21 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_rollable"
 				}
 			}
 		},
 		"OracleColumnText3": {
 			"title": "OracleColumnText3",
 			"type": "object",
-			"required": ["_id", "name", "oracle_type", "dice", "rows", "type"],
+			"required": ["_id", "type", "name", "oracle_type", "dice", "rows"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3237,10 +3218,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_rollable"
 				}
 			}
 		},
@@ -3641,16 +3618,20 @@
 			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"oracle_type",
 				"column_labels",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3746,10 +3727,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_collection"
 				}
 			}
 		},
@@ -3759,16 +3736,20 @@
 			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"oracle_type",
 				"column_labels",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3863,10 +3844,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_collection"
 				}
 			}
 		},
@@ -3876,16 +3853,20 @@
 			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"oracle_type",
 				"column_labels",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -3985,10 +3966,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_collection"
 				}
 			}
 		},
@@ -3998,16 +3975,20 @@
 			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"oracle_type",
 				"column_labels",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4102,10 +4083,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_collection"
 				}
 			}
 		},
@@ -4115,18 +4092,22 @@
 			"description": "Represents a basic rollable oracle table with one roll column and one text result column.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"oracle_type",
 				"dice",
 				"column_labels",
 				"rows",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4231,10 +4212,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_rollable"
 				}
 			}
 		},
@@ -4244,18 +4221,22 @@
 			"description": "A rollable oracle table with one roll column and two text columns.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"oracle_type",
 				"dice",
 				"column_labels",
 				"rows",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4365,10 +4346,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_rollable"
 				}
 			}
 		},
@@ -4378,18 +4355,22 @@
 			"description": "A rollable oracle table with one roll column and 3 text columns.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"oracle_type",
 				"dice",
 				"column_labels",
 				"rows",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4498,10 +4479,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_rollable"
 				}
 			}
 		},
@@ -4509,11 +4486,15 @@
 			"title": "OracleTablesCollection",
 			"type": "object",
 			"description": "An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.",
-			"required": ["_id", "name", "oracle_type", "_source", "type"],
+			"required": ["_id", "type", "name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4603,10 +4584,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "oracle_collection"
 				}
 			}
 		},
@@ -4695,18 +4672,22 @@
 			"description": "A move that makes an action roll.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"roll_type",
 				"trigger",
 				"text",
 				"outcomes",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4770,10 +4751,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "move"
 				}
 			}
 		},
@@ -4811,11 +4788,15 @@
 		"MoveCategory": {
 			"title": "MoveCategory",
 			"type": "object",
-			"required": ["_id", "name", "_source", "type"],
+			"required": ["_id", "type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveCategoryId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move_category"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -4890,10 +4871,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "move_category"
 				}
 			}
 		},
@@ -4969,18 +4946,22 @@
 			"description": "A move that makes no progress rolls or action rolls.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"roll_type",
 				"trigger",
 				"text",
 				"outcomes",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -5045,10 +5026,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "move"
 				}
 			}
 		},
@@ -5124,19 +5101,23 @@
 			"description": "A progress move that rolls on a standard progress track type (whose features are defined by this move object). For progress rolls that use special tracks, see MoveSpecialTrack.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"roll_type",
 				"tracks",
 				"trigger",
 				"text",
 				"outcomes",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -5204,10 +5185,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "move"
 				}
 			}
 		},
@@ -5253,18 +5230,22 @@
 			"description": "A progress move that rolls on a special track, such as Legacies (Starforged) or Bonds (classic Ironsworn). For progress moves that use standard progress tracks, see MoveProgressRoll instead.",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"roll_type",
 				"trigger",
 				"text",
 				"outcomes",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -5328,10 +5309,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "move"
 				}
 			}
 		},
@@ -5799,18 +5776,22 @@
 			"type": "object",
 			"required": [
 				"_id",
+				"type",
 				"name",
 				"category",
 				"count_as_impact",
 				"shared",
 				"abilities",
-				"_source",
-				"type"
+				"_source"
 			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "asset"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -5911,10 +5892,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "asset"
 				}
 			}
 		},
@@ -6190,11 +6167,15 @@
 		"AssetCollection": {
 			"title": "AssetCollection",
 			"type": "object",
-			"required": ["_id", "name", "_source", "type"],
+			"required": ["_id", "type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetCollectionId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "asset_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -6269,10 +6250,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "asset_collection"
 				}
 			}
 		},
@@ -7292,12 +7269,8 @@
 		"TruthOption": {
 			"title": "TruthOption",
 			"type": "object",
-			"required": ["_id", "description", "quest_starter"],
+			"required": ["description", "quest_starter"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/TruthOptionId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"min": {
 					"type": "integer"
 				},
@@ -7316,75 +7289,8 @@
 				"table": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/TruthOptionTableRow"
+						"$ref": "#/definitions/OracleTableRowText"
 					}
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				}
-			}
-		},
-		"TruthOptionTableRow": {
-			"title": "TruthOptionTableRow",
-			"type": "object",
-			"description": "Represents a row in an oracle table, with a single text cell.",
-			"required": ["min", "max", "text"],
-			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
-				},
-				"text": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "The primary text content of this row."
-				},
-				"template": {
-					"$ref": "#/definitions/OracleRollTemplate",
-					"releaseStage": "experimental"
-				},
-				"embed_table": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Hints that the identified table should be rendered inside this table row.",
-					"releaseStage": "experimental"
-				},
-				"suggestions": {
-					"$ref": "#/definitions/Suggestions"
-				},
-				"oracle_rolls": {
-					"type": "array",
-					"description": "Further oracle rolls prompted by this table row.",
-					"items": {
-						"$ref": "#/definitions/OracleRoll"
-					}
-				},
-				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
 				}
 			}
 		},
@@ -7392,11 +7298,15 @@
 			"title": "Atlas",
 			"type": "object",
 			"releaseStage": "experimental",
-			"required": ["_id", "name", "_source", "type"],
+			"required": ["_id", "type", "name", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "atlas"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7480,10 +7390,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "atlas"
 				}
 			}
 		},
@@ -7491,11 +7397,15 @@
 			"title": "AtlasEntry",
 			"type": "object",
 			"description": "An atlas entry, like the Ironlands region entries found in classic Ironsworn.",
-			"required": ["_id", "name", "features", "description", "_source", "type"],
+			"required": ["_id", "type", "name", "features", "description", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasEntryId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "atlas_entry"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7548,10 +7458,6 @@
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-				},
-				"type": {
-					"type": "string",
-					"const": "atlas_entry"
 				}
 			}
 		},

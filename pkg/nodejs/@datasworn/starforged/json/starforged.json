@@ -1,8 +1,8 @@
 {
 	"_id": "starforged",
-	"title": "Ironsworn: Starforged Rulebook",
 	"datasworn_version": "0.0.9",
-	"package_type": "ruleset",
+	"type": "ruleset",
+	"title": "Ironsworn: Starforged Rulebook",
 	"authors": [
 		{
 			"name": "Shawn Tomkin"
@@ -199,11 +199,13 @@
 	"oracles": {
 		"campaign_launch": {
 			"_id": "starforged/collections/oracles/campaign_launch",
+			"type": "oracle_collection",
 			"name": "Campaign Launch Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"background_assets": {
 					"_id": "starforged/oracles/campaign_launch/background_assets",
+					"type": "oracle_rollable",
 					"name": "Background Assets",
 					"oracle_type": "table_text2",
 					"dice": "1d100",
@@ -450,6 +452,7 @@
 				},
 				"backstory_prompts": {
 					"_id": "starforged/oracles/campaign_launch/backstory_prompts",
+					"type": "oracle_rollable",
 					"name": "Backstory Prompts",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -550,6 +553,7 @@
 				},
 				"starship_history": {
 					"_id": "starforged/oracles/campaign_launch/starship_history",
+					"type": "oracle_rollable",
 					"name": "Starship History",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -635,6 +639,7 @@
 				},
 				"starship_quirks": {
 					"_id": "starforged/oracles/campaign_launch/starship_quirks",
+					"type": "oracle_rollable",
 					"name": "Starship Quirks",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -764,6 +769,7 @@
 				},
 				"sector_trouble": {
 					"_id": "starforged/oracles/campaign_launch/sector_trouble",
+					"type": "oracle_rollable",
 					"name": "Sector Trouble",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -888,6 +894,7 @@
 				},
 				"inciting_incident": {
 					"_id": "starforged/oracles/campaign_launch/inciting_incident",
+					"type": "oracle_rollable",
 					"name": "Inciting Incident",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -1026,12 +1033,14 @@
 		},
 		"characters": {
 			"_id": "starforged/collections/oracles/characters",
+			"type": "oracle_collection",
 			"name": "Characters",
 			"oracle_type": "tables",
 			"summary": "Don’t try to build a fully formed understanding character when you first encounter them; instead, focus on what your character learns or perceives as a first impression using oracles such as [First Look](id:starforged/oracles/characters/first_look) and [Initial Disposition](id:starforged/oracles/characters/initial_disposition). Then envision or generate additional details over time.",
 			"contents": {
 				"first_look": {
 					"_id": "starforged/oracles/characters/first_look",
+					"type": "oracle_rollable",
 					"name": "First Look",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -1450,6 +1459,7 @@
 				},
 				"initial_disposition": {
 					"_id": "starforged/oracles/characters/initial_disposition",
+					"type": "oracle_rollable",
 					"name": "Initial Disposition",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -1594,6 +1604,7 @@
 				},
 				"role": {
 					"_id": "starforged/oracles/characters/role",
+					"type": "oracle_rollable",
 					"name": "Character Role",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -2113,6 +2124,7 @@
 				},
 				"goal": {
 					"_id": "starforged/oracles/characters/goal",
+					"type": "oracle_rollable",
 					"name": "Character Goal",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -2362,6 +2374,7 @@
 				},
 				"revealed_aspect": {
 					"_id": "starforged/oracles/characters/revealed_aspect",
+					"type": "oracle_rollable",
 					"name": "Revealed Character Aspect",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -3393,12 +3406,14 @@
 			"collections": {
 				"name": {
 					"_id": "starforged/collections/oracles/characters/name",
+					"type": "oracle_collection",
 					"name": "Character Name",
 					"oracle_type": "table_shared_rolls",
 					"summary": "Given and family names are presented as a pair, so you may roll once for both or twice to mix-and-match. You can also try reversing given and family names, or use either independently as a standalone name. If you’d like to give a character a callsign, which are the monikers used by spacers, you may roll separately or take the one provided for your rolled name.",
 					"contents": {
 						"given": {
 							"_id": "starforged/oracles/characters/name/given",
+							"type": "oracle_rollable",
 							"name": "Given Name",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -4414,6 +4429,7 @@
 						},
 						"callsign": {
 							"_id": "starforged/oracles/characters/name/callsign",
+							"type": "oracle_rollable",
 							"name": "Callsign",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -5429,6 +5445,7 @@
 						},
 						"family_name": {
 							"_id": "starforged/oracles/characters/name/family_name",
+							"type": "oracle_rollable",
 							"name": "Family Name",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -6475,11 +6492,13 @@
 		},
 		"core": {
 			"_id": "starforged/collections/oracles/core",
+			"type": "oracle_collection",
 			"name": "Core Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"action": {
 					"_id": "starforged/oracles/core/action",
+					"type": "oracle_rollable",
 					"name": "Action",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -7508,6 +7527,7 @@
 				},
 				"theme": {
 					"_id": "starforged/oracles/core/theme",
+					"type": "oracle_rollable",
 					"name": "Theme",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -8536,6 +8556,7 @@
 				},
 				"descriptor": {
 					"_id": "starforged/oracles/core/descriptor",
+					"type": "oracle_rollable",
 					"name": "Descriptor",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -9564,6 +9585,7 @@
 				},
 				"focus": {
 					"_id": "starforged/oracles/core/focus",
+					"type": "oracle_rollable",
 					"name": "Focus",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -10606,12 +10628,14 @@
 		},
 		"creatures": {
 			"_id": "starforged/collections/oracles/creatures",
+			"type": "oracle_collection",
 			"name": "Creatures",
 			"oracle_type": "tables",
 			"summary": "Roll for a [basic form](id:starforged/oracles/creatures/basic_form), and flesh out the creature’s appearance using this [Creature First Look](id:starforged/oracles/creatures/first_look) table. Then, roll on the [Encountered Behavior](id:starforged/oracles/creatures/encountered_behavior) table to envision this creature’s motivation and frame how the encounter begins.",
 			"contents": {
 				"environment": {
 					"_id": "starforged/oracles/creatures/environment",
+					"type": "oracle_rollable",
 					"name": "Environment",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -10737,6 +10761,7 @@
 				},
 				"scale": {
 					"_id": "starforged/oracles/creatures/scale",
+					"type": "oracle_rollable",
 					"name": "Scale",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -10840,6 +10865,7 @@
 				},
 				"ultra_scale": {
 					"_id": "starforged/oracles/creatures/ultra_scale",
+					"type": "oracle_rollable",
 					"name": "Ultra-scale",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -10894,6 +10920,7 @@
 				},
 				"first_look": {
 					"_id": "starforged/oracles/creatures/first_look",
+					"type": "oracle_rollable",
 					"name": "Creature First Look",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -11173,6 +11200,7 @@
 				},
 				"encountered_behavior": {
 					"_id": "starforged/oracles/creatures/encountered_behavior",
+					"type": "oracle_rollable",
 					"name": "Encountered Behavior",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -11412,6 +11440,7 @@
 				},
 				"revealed_aspect": {
 					"_id": "starforged/oracles/creatures/revealed_aspect",
+					"type": "oracle_rollable",
 					"name": "Revealed Creature Aspect",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -11694,12 +11723,14 @@
 			"collections": {
 				"basic_form": {
 					"_id": "starforged/collections/oracles/creatures/basic_form",
+					"type": "oracle_collection",
 					"name": "Creature Basic Form",
 					"oracle_type": "table_shared_text",
 					"summary": "Roll for a basic form, and flesh out the creature’s appearance using the [First Look](id:starforged/oracles/creatures/first_look) table.",
 					"contents": {
 						"space": {
 							"_id": "starforged/oracles/creatures/basic_form/space",
+							"type": "oracle_rollable",
 							"name": "Space",
 							"oracle_type": "column_text",
 							"color": "#131A1C",
@@ -11826,6 +11857,7 @@
 						},
 						"interior": {
 							"_id": "starforged/oracles/creatures/basic_form/interior",
+							"type": "oracle_rollable",
 							"name": "Interior",
 							"oracle_type": "column_text",
 							"color": "#80868E",
@@ -11952,6 +11984,7 @@
 						},
 						"land": {
 							"_id": "starforged/oracles/creatures/basic_form/land",
+							"type": "oracle_rollable",
 							"name": "Land",
 							"oracle_type": "column_text",
 							"color": "#CA181A",
@@ -12078,6 +12111,7 @@
 						},
 						"liquid": {
 							"_id": "starforged/oracles/creatures/basic_form/liquid",
+							"type": "oracle_rollable",
 							"name": "Liquid",
 							"oracle_type": "column_text",
 							"color": "#0079BB",
@@ -12204,6 +12238,7 @@
 						},
 						"air": {
 							"_id": "starforged/oracles/creatures/basic_form/air",
+							"type": "oracle_rollable",
 							"name": "Air",
 							"oracle_type": "column_text",
 							"color": "#8D1D82",
@@ -12361,6 +12396,7 @@
 		},
 		"derelicts": {
 			"_id": "starforged/collections/oracles/derelicts",
+			"type": "oracle_collection",
 			"name": "Derelicts",
 			"oracle_type": "tables",
 			"summary": "Derelicts are the forsaken relics of human endeavors.",
@@ -12368,6 +12404,7 @@
 			"contents": {
 				"location": {
 					"_id": "starforged/oracles/derelicts/location",
+					"type": "oracle_rollable",
 					"name": "Location",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -12419,6 +12456,7 @@
 				},
 				"condition": {
 					"_id": "starforged/oracles/derelicts/condition",
+					"type": "oracle_rollable",
 					"name": "Condition",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -12473,6 +12511,7 @@
 				},
 				"outer_first_look": {
 					"_id": "starforged/oracles/derelicts/outer_first_look",
+					"type": "oracle_rollable",
 					"name": "Outer First Look",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -12548,6 +12587,7 @@
 				},
 				"inner_first_look": {
 					"_id": "starforged/oracles/derelicts/inner_first_look",
+					"type": "oracle_rollable",
 					"name": "Inner First Look",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -12755,12 +12795,14 @@
 			"collections": {
 				"access": {
 					"_id": "starforged/collections/oracles/derelicts/access",
+					"type": "oracle_collection",
 					"name": "Access",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/access.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/access/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -12826,6 +12868,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/access/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -12967,6 +13010,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/access/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13072,6 +13116,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/access/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13136,12 +13181,14 @@
 				},
 				"community": {
 					"_id": "starforged/collections/oracles/derelicts/community",
+					"type": "oracle_collection",
 					"name": "Community",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/community.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/community/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13227,6 +13274,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/community/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13328,6 +13376,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/community/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13433,6 +13482,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/community/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13497,12 +13547,14 @@
 				},
 				"engineering": {
 					"_id": "starforged/collections/oracles/derelicts/engineering",
+					"type": "oracle_collection",
 					"name": "Engineering",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/engineering.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/engineering/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13588,6 +13640,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/engineering/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13689,6 +13742,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/engineering/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13794,6 +13848,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/engineering/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13858,12 +13913,14 @@
 				},
 				"living": {
 					"_id": "starforged/collections/oracles/derelicts/living",
+					"type": "oracle_collection",
 					"name": "Living",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/living.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/living/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -13949,6 +14006,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/living/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14050,6 +14108,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/living/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14155,6 +14214,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/living/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14219,12 +14279,14 @@
 				},
 				"medical": {
 					"_id": "starforged/collections/oracles/derelicts/medical",
+					"type": "oracle_collection",
 					"name": "Medical",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/medical.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/medical/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14310,6 +14372,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/medical/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14411,6 +14474,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/medical/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14516,6 +14580,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/medical/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14580,12 +14645,14 @@
 				},
 				"operations": {
 					"_id": "starforged/collections/oracles/derelicts/operations",
+					"type": "oracle_collection",
 					"name": "Operations",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/operations.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/operations/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14671,6 +14738,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/operations/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14772,6 +14840,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/operations/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14877,6 +14946,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/operations/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -14941,12 +15011,14 @@
 				},
 				"production": {
 					"_id": "starforged/collections/oracles/derelicts/production",
+					"type": "oracle_collection",
 					"name": "Production",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/production.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/production/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15032,6 +15104,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/production/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15133,6 +15206,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/production/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15238,6 +15312,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/production/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15302,12 +15377,14 @@
 				},
 				"research": {
 					"_id": "starforged/collections/oracles/derelicts/research",
+					"type": "oracle_collection",
 					"name": "Research",
 					"oracle_type": "tables",
 					"icon": "icons/derelicts/research.svg",
 					"contents": {
 						"area": {
 							"_id": "starforged/oracles/derelicts/research/area",
+							"type": "oracle_rollable",
 							"name": "Area",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15393,6 +15470,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/derelicts/research/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15494,6 +15572,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/derelicts/research/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15599,6 +15678,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/derelicts/research/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -15663,12 +15743,14 @@
 				},
 				"type": {
 					"_id": "starforged/collections/oracles/derelicts/type",
+					"type": "oracle_collection",
 					"name": "Derelict Type (by location)",
 					"canonical_name": "Type (by location)",
 					"oracle_type": "table_shared_text",
 					"contents": {
 						"planetside": {
 							"_id": "starforged/oracles/derelicts/type/planetside",
+							"type": "oracle_rollable",
 							"name": "Planetside",
 							"oracle_type": "column_text",
 							"icon": "icon/oracles/location/planetside.svg",
@@ -15699,6 +15781,7 @@
 						},
 						"orbital": {
 							"_id": "starforged/oracles/derelicts/type/orbital",
+							"type": "oracle_rollable",
 							"name": "Orbital",
 							"oracle_type": "column_text",
 							"icon": "icon/oracles/location/orbital.svg",
@@ -15729,6 +15812,7 @@
 						},
 						"deep_space": {
 							"_id": "starforged/oracles/derelicts/type/deep_space",
+							"type": "oracle_rollable",
 							"name": "Deep Space",
 							"oracle_type": "column_text",
 							"icon": "icon/oracles/location/deep_space.svg",
@@ -15776,12 +15860,14 @@
 				},
 				"zones": {
 					"_id": "starforged/collections/oracles/derelicts/zones",
+					"type": "oracle_collection",
 					"name": "Derelict Zones",
 					"oracle_type": "table_shared_text",
 					"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
 					"contents": {
 						"starship": {
 							"_id": "starforged/oracles/derelicts/zones/starship",
+							"type": "oracle_rollable",
 							"name": "Starship",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -15839,6 +15925,7 @@
 						},
 						"settlement": {
 							"_id": "starforged/oracles/derelicts/zones/settlement",
+							"type": "oracle_rollable",
 							"name": "Settlement",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -15927,11 +16014,13 @@
 		},
 		"factions": {
 			"_id": "starforged/collections/oracles/factions",
+			"type": "oracle_collection",
 			"name": "Factions",
 			"oracle_type": "tables",
 			"contents": {
 				"type": {
 					"_id": "starforged/oracles/factions/type",
+					"type": "oracle_rollable",
 					"name": "Faction Type",
 					"oracle_type": "table_text2",
 					"dice": "1d100",
@@ -16009,6 +16098,7 @@
 				},
 				"influence": {
 					"_id": "starforged/oracles/factions/influence",
+					"type": "oracle_rollable",
 					"name": "Influence",
 					"oracle_type": "table_text2",
 					"dice": "1d100",
@@ -16111,6 +16201,7 @@
 				},
 				"dominion": {
 					"_id": "starforged/oracles/factions/dominion",
+					"type": "oracle_rollable",
 					"name": "Dominion",
 					"oracle_type": "table_text",
 					"icon": "icons/factions/dominion.svg",
@@ -16380,6 +16471,7 @@
 				},
 				"dominion_leadership": {
 					"_id": "starforged/oracles/factions/dominion_leadership",
+					"type": "oracle_rollable",
 					"name": "Dominion: Leadership",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -16454,6 +16546,7 @@
 				},
 				"guild": {
 					"_id": "starforged/oracles/factions/guild",
+					"type": "oracle_rollable",
 					"name": "Guild",
 					"oracle_type": "table_text",
 					"icon": "icons/factions/guild.svg",
@@ -16638,6 +16731,7 @@
 				},
 				"fringe_group": {
 					"_id": "starforged/oracles/factions/fringe_group",
+					"type": "oracle_rollable",
 					"name": "Fringe Group",
 					"oracle_type": "table_text",
 					"icon": "icons/factions/fringe_group.svg",
@@ -16792,6 +16886,7 @@
 				},
 				"projects": {
 					"_id": "starforged/oracles/factions/projects",
+					"type": "oracle_rollable",
 					"name": "Faction Projects",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -17002,6 +17097,7 @@
 				},
 				"relationships": {
 					"_id": "starforged/oracles/factions/relationships",
+					"type": "oracle_rollable",
 					"name": "Faction Relationships",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -17176,6 +17272,7 @@
 				},
 				"quirks": {
 					"_id": "starforged/oracles/factions/quirks",
+					"type": "oracle_rollable",
 					"name": "Faction Quirks",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -17386,6 +17483,7 @@
 				},
 				"rumors": {
 					"_id": "starforged/oracles/factions/rumors",
+					"type": "oracle_rollable",
 					"name": "Faction Rumors",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -17598,11 +17696,13 @@
 			"collections": {
 				"name": {
 					"_id": "starforged/collections/oracles/factions/name",
+					"type": "oracle_collection",
 					"name": "Faction Name",
 					"oracle_type": "tables",
 					"contents": {
 						"template": {
 							"_id": "starforged/oracles/factions/name/template",
+							"type": "oracle_rollable",
 							"name": "Faction Name Template",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -17688,6 +17788,7 @@
 						},
 						"legacy": {
 							"_id": "starforged/oracles/factions/name/legacy",
+							"type": "oracle_rollable",
 							"name": "Legacy",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -18212,6 +18313,7 @@
 						},
 						"affiliation": {
 							"_id": "starforged/oracles/factions/name/affiliation",
+							"type": "oracle_rollable",
 							"name": "Affiliation",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -18486,6 +18588,7 @@
 						},
 						"identity": {
 							"_id": "starforged/oracles/factions/name/identity",
+							"type": "oracle_rollable",
 							"name": "Identity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19038,6 +19141,7 @@
 		},
 		"location_themes": {
 			"_id": "starforged/collections/oracles/location_themes",
+			"type": "oracle_collection",
 			"name": "Location Themes",
 			"oracle_type": "tables",
 			"summary": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.",
@@ -19045,6 +19149,7 @@
 			"contents": {
 				"type": {
 					"_id": "starforged/oracles/location_themes/type",
+					"type": "oracle_rollable",
 					"name": "Theme Type",
 					"oracle_type": "table_text2",
 					"dice": "1d100",
@@ -19129,6 +19234,7 @@
 			"collections": {
 				"chaotic": {
 					"_id": "starforged/collections/oracles/location_themes/chaotic",
+					"type": "oracle_collection",
 					"name": "Chaotic",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/chaotic.svg",
@@ -19136,6 +19242,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/chaotic/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19242,6 +19349,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/chaotic/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19352,6 +19460,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/chaotic/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19416,6 +19525,7 @@
 				},
 				"fortified": {
 					"_id": "starforged/collections/oracles/location_themes/fortified",
+					"type": "oracle_collection",
 					"name": "Fortified",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/fortified.svg",
@@ -19423,6 +19533,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/fortified/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19529,6 +19640,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/fortified/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19639,6 +19751,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/fortified/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19703,6 +19816,7 @@
 				},
 				"haunted": {
 					"_id": "starforged/collections/oracles/location_themes/haunted",
+					"type": "oracle_collection",
 					"name": "Haunted",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/haunted.svg",
@@ -19710,6 +19824,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/haunted/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19816,6 +19931,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/haunted/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19926,6 +20042,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/haunted/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -19990,6 +20107,7 @@
 				},
 				"infested": {
 					"_id": "starforged/collections/oracles/location_themes/infested",
+					"type": "oracle_collection",
 					"name": "Infested",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/infested.svg",
@@ -19997,6 +20115,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/infested/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20103,6 +20222,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/infested/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20213,6 +20333,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/infested/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20277,6 +20398,7 @@
 				},
 				"inhabited": {
 					"_id": "starforged/collections/oracles/location_themes/inhabited",
+					"type": "oracle_collection",
 					"name": "Inhabited",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/inhabited.svg",
@@ -20284,6 +20406,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/inhabited/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20390,6 +20513,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/inhabited/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20500,6 +20624,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/inhabited/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20564,6 +20689,7 @@
 				},
 				"mechanical": {
 					"_id": "starforged/collections/oracles/location_themes/mechanical",
+					"type": "oracle_collection",
 					"name": "Mechanical",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/mechanical.svg",
@@ -20571,6 +20697,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/mechanical/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20677,6 +20804,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/mechanical/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20787,6 +20915,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/mechanical/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20851,6 +20980,7 @@
 				},
 				"ruined": {
 					"_id": "starforged/collections/oracles/location_themes/ruined",
+					"type": "oracle_collection",
 					"name": "Ruined",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/ruined.svg",
@@ -20858,6 +20988,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/ruined/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -20964,6 +21095,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/ruined/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -21074,6 +21206,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/ruined/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -21138,6 +21271,7 @@
 				},
 				"sacred": {
 					"_id": "starforged/collections/oracles/location_themes/sacred",
+					"type": "oracle_collection",
 					"name": "Sacred",
 					"oracle_type": "tables",
 					"icon": "icons/location_theme/sacred.svg",
@@ -21145,6 +21279,7 @@
 					"contents": {
 						"feature": {
 							"_id": "starforged/oracles/location_themes/sacred/feature",
+							"type": "oracle_rollable",
 							"name": "Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -21251,6 +21386,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/location_themes/sacred/peril",
+							"type": "oracle_rollable",
 							"name": "Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -21361,6 +21497,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/location_themes/sacred/opportunity",
+							"type": "oracle_rollable",
 							"name": "Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -21439,11 +21576,13 @@
 		},
 		"misc": {
 			"_id": "starforged/collections/oracles/misc",
+			"type": "oracle_collection",
 			"name": "Miscellaneous Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"story_complication": {
 					"_id": "starforged/oracles/misc/story_complication",
+					"type": "oracle_rollable",
 					"name": "Story Complication",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -21623,6 +21762,7 @@
 				},
 				"story_clue": {
 					"_id": "starforged/oracles/misc/story_clue",
+					"type": "oracle_rollable",
 					"name": "Story Clue",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -21823,6 +21963,7 @@
 				},
 				"anomaly_effect": {
 					"_id": "starforged/oracles/misc/anomaly_effect",
+					"type": "oracle_rollable",
 					"name": "Anomaly Effect",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22022,6 +22163,7 @@
 				},
 				"combat_action": {
 					"_id": "starforged/oracles/misc/combat_action",
+					"type": "oracle_rollable",
 					"name": "Combat Action",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22235,11 +22377,13 @@
 		},
 		"moves": {
 			"_id": "starforged/collections/oracles/moves",
+			"type": "oracle_collection",
 			"name": "Move Oracles",
 			"oracle_type": "tables",
 			"contents": {
 				"begin_a_session": {
 					"_id": "starforged/oracles/moves/begin_a_session",
+					"type": "oracle_rollable",
 					"name": "Begin a Session",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22314,6 +22458,7 @@
 				},
 				"make_a_discovery": {
 					"_id": "starforged/oracles/moves/make_a_discovery",
+					"type": "oracle_rollable",
 					"name": "Make a Discovery",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22462,6 +22607,7 @@
 				},
 				"confront_chaos": {
 					"_id": "starforged/oracles/moves/confront_chaos",
+					"type": "oracle_rollable",
 					"name": "Confront Chaos",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22601,6 +22747,7 @@
 				},
 				"take_decisive_action": {
 					"_id": "starforged/oracles/moves/take_decisive_action",
+					"type": "oracle_rollable",
 					"name": "Take Decisive Action",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22655,6 +22802,7 @@
 				},
 				"endure_harm": {
 					"_id": "starforged/oracles/moves/endure_harm",
+					"type": "oracle_rollable",
 					"name": "Endure Harm",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22704,6 +22852,7 @@
 				},
 				"endure_stress": {
 					"_id": "starforged/oracles/moves/endure_stress",
+					"type": "oracle_rollable",
 					"name": "Endure Stress",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22748,6 +22897,7 @@
 				},
 				"withstand_damage": {
 					"_id": "starforged/oracles/moves/withstand_damage",
+					"type": "oracle_rollable",
 					"name": "Withstand Damage",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22812,6 +22962,7 @@
 				},
 				"pay_the_price": {
 					"_id": "starforged/oracles/moves/pay_the_price",
+					"type": "oracle_rollable",
 					"name": "Pay the Price",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -22947,11 +23098,13 @@
 			"collections": {
 				"ask_the_oracle": {
 					"_id": "starforged/collections/oracles/moves/ask_the_oracle",
+					"type": "oracle_collection",
 					"name": "Ask the Oracle",
 					"oracle_type": "table_shared_text",
 					"contents": {
 						"almost_certain": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/almost_certain",
+							"type": "oracle_rollable",
 							"name": "Almost Certain",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -22973,6 +23126,7 @@
 						},
 						"likely": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/likely",
+							"type": "oracle_rollable",
 							"name": "Likely",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -22994,6 +23148,7 @@
 						},
 						"fifty_fifty": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/fifty_fifty",
+							"type": "oracle_rollable",
 							"name": "50/50",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -23015,6 +23170,7 @@
 						},
 						"unlikely": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/unlikely",
+							"type": "oracle_rollable",
 							"name": "Unlikely",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -23036,6 +23192,7 @@
 						},
 						"small_chance": {
 							"_id": "starforged/oracles/moves/ask_the_oracle/small_chance",
+							"type": "oracle_rollable",
 							"name": "Small Chance",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -23088,11 +23245,13 @@
 		},
 		"planets": {
 			"_id": "starforged/collections/oracles/planets",
+			"type": "oracle_collection",
 			"name": "Planets",
 			"oracle_type": "tables",
 			"contents": {
 				"class": {
 					"_id": "starforged/oracles/planets/class",
+					"type": "oracle_rollable",
 					"name": "Planetary Class",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -23178,6 +23337,7 @@
 			"collections": {
 				"desert": {
 					"_id": "starforged/collections/oracles/planets/desert",
+					"type": "oracle_collection",
 					"name": "Desert World",
 					"oracle_type": "tables",
 					"images": [
@@ -23188,6 +23348,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/desert/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -23312,6 +23473,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/desert/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -23366,6 +23528,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/desert/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -23460,6 +23623,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/desert/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -23579,6 +23743,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/desert/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -23635,11 +23800,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/desert/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/desert/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -23678,6 +23845,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/desert/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -23716,6 +23884,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/desert/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -23785,6 +23954,7 @@
 				},
 				"furnace": {
 					"_id": "starforged/collections/oracles/planets/furnace",
+					"type": "oracle_collection",
 					"name": "Furnace World",
 					"oracle_type": "tables",
 					"images": [
@@ -23795,6 +23965,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/furnace/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -23919,6 +24090,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/furnace/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -23973,6 +24145,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/furnace/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -24067,6 +24240,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/furnace/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -24186,6 +24360,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/furnace/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -24242,11 +24417,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/furnace/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/furnace/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -24285,6 +24462,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/furnace/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -24323,6 +24501,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/furnace/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -24392,6 +24571,7 @@
 				},
 				"grave": {
 					"_id": "starforged/collections/oracles/planets/grave",
+					"type": "oracle_collection",
 					"name": "Grave World",
 					"oracle_type": "tables",
 					"images": [
@@ -24402,6 +24582,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/grave/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -24526,6 +24707,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/grave/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -24580,6 +24762,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/grave/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -24674,6 +24857,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/grave/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -24793,6 +24977,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/grave/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -24849,11 +25034,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/grave/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/grave/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -24892,6 +25079,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/grave/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -24930,6 +25118,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/grave/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -24999,6 +25188,7 @@
 				},
 				"ice": {
 					"_id": "starforged/collections/oracles/planets/ice",
+					"type": "oracle_collection",
 					"name": "Ice World",
 					"oracle_type": "tables",
 					"images": [
@@ -25009,6 +25199,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/ice/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -25133,6 +25324,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/ice/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -25187,6 +25379,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/ice/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -25281,6 +25474,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/ice/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -25400,6 +25594,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/ice/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -25456,11 +25651,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/ice/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/ice/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -25499,6 +25696,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/ice/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -25537,6 +25735,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/ice/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -25606,6 +25805,7 @@
 				},
 				"jovian": {
 					"_id": "starforged/collections/oracles/planets/jovian",
+					"type": "oracle_collection",
 					"name": "Jovian World",
 					"oracle_type": "tables",
 					"images": [
@@ -25616,6 +25816,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/jovian/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -25740,6 +25941,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/jovian/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -25794,6 +25996,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/jovian/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -25888,6 +26091,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/jovian/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -26007,6 +26211,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/jovian/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -26063,11 +26268,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/jovian/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/jovian/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -26106,6 +26313,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/jovian/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -26144,6 +26352,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/jovian/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -26213,6 +26422,7 @@
 				},
 				"jungle": {
 					"_id": "starforged/collections/oracles/planets/jungle",
+					"type": "oracle_collection",
 					"name": "Jungle World",
 					"oracle_type": "tables",
 					"images": [
@@ -26223,6 +26433,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/jungle/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -26347,6 +26558,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/jungle/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -26401,6 +26613,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/jungle/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -26495,6 +26708,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/jungle/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -26614,6 +26828,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/jungle/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -26670,11 +26885,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/jungle/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/jungle/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -26713,6 +26930,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/jungle/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -26751,6 +26969,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/jungle/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -26820,6 +27039,7 @@
 				},
 				"ocean": {
 					"_id": "starforged/collections/oracles/planets/ocean",
+					"type": "oracle_collection",
 					"name": "Ocean World",
 					"oracle_type": "tables",
 					"images": [
@@ -26830,6 +27050,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/ocean/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -26954,6 +27175,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/ocean/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27008,6 +27230,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/ocean/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27102,6 +27325,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/ocean/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27221,6 +27445,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/ocean/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27277,11 +27502,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/ocean/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/ocean/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -27320,6 +27547,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/ocean/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -27358,6 +27586,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/ocean/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -27427,6 +27656,7 @@
 				},
 				"rocky": {
 					"_id": "starforged/collections/oracles/planets/rocky",
+					"type": "oracle_collection",
 					"name": "Rocky World",
 					"oracle_type": "tables",
 					"images": [
@@ -27437,6 +27667,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/rocky/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -27561,6 +27792,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/rocky/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27615,6 +27847,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/rocky/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27709,6 +27942,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/rocky/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27828,6 +28062,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/rocky/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -27884,11 +28119,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/rocky/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/rocky/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -27927,6 +28164,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/rocky/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -27965,6 +28203,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/rocky/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -28034,6 +28273,7 @@
 				},
 				"shattered": {
 					"_id": "starforged/collections/oracles/planets/shattered",
+					"type": "oracle_collection",
 					"name": "Shattered World",
 					"oracle_type": "tables",
 					"images": [
@@ -28044,6 +28284,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/shattered/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -28168,6 +28409,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/shattered/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -28222,6 +28464,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/shattered/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -28316,6 +28559,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/shattered/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -28435,6 +28679,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/shattered/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -28491,11 +28736,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/shattered/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/shattered/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -28534,6 +28781,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/shattered/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -28572,6 +28820,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/shattered/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -28641,6 +28890,7 @@
 				},
 				"tainted": {
 					"_id": "starforged/collections/oracles/planets/tainted",
+					"type": "oracle_collection",
 					"name": "Tainted World",
 					"oracle_type": "tables",
 					"images": [
@@ -28651,6 +28901,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/tainted/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -28775,6 +29026,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/tainted/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -28829,6 +29081,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/tainted/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -28923,6 +29176,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/tainted/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -29042,6 +29296,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/tainted/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -29098,11 +29353,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/tainted/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/tainted/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -29141,6 +29398,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/tainted/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -29179,6 +29437,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/tainted/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -29248,6 +29507,7 @@
 				},
 				"vital": {
 					"_id": "starforged/collections/oracles/planets/vital",
+					"type": "oracle_collection",
 					"name": "Vital World",
 					"oracle_type": "tables",
 					"images": [
@@ -29258,6 +29518,7 @@
 					"contents": {
 						"name": {
 							"_id": "starforged/oracles/planets/vital/name",
+							"type": "oracle_rollable",
 							"name": "Sample Names",
 							"oracle_type": "table_text",
 							"dice": "1d20",
@@ -29382,6 +29643,7 @@
 						},
 						"atmosphere": {
 							"_id": "starforged/oracles/planets/vital/atmosphere",
+							"type": "oracle_rollable",
 							"name": "Atmosphere",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -29436,6 +29698,7 @@
 						},
 						"observed_from_space": {
 							"_id": "starforged/oracles/planets/vital/observed_from_space",
+							"type": "oracle_rollable",
 							"name": "Observed From Space",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -29530,6 +29793,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/planets/vital/feature",
+							"type": "oracle_rollable",
 							"name": "Planetside Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -29649,6 +29913,7 @@
 						},
 						"life": {
 							"_id": "starforged/oracles/planets/vital/life",
+							"type": "oracle_rollable",
 							"name": "Life",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -29703,6 +29968,7 @@
 						},
 						"diversity": {
 							"_id": "starforged/oracles/planets/vital/diversity",
+							"type": "oracle_rollable",
 							"name": "Diversity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -29804,6 +30070,7 @@
 						},
 						"biomes": {
 							"_id": "starforged/oracles/planets/vital/biomes",
+							"type": "oracle_rollable",
 							"name": "Biomes",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -30030,11 +30297,13 @@
 					"collections": {
 						"settlements": {
 							"_id": "starforged/collections/oracles/planets/vital/settlements",
+							"type": "oracle_collection",
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"contents": {
 								"terminus": {
 									"_id": "starforged/oracles/planets/vital/settlements/terminus",
+									"type": "oracle_rollable",
 									"name": "Terminus",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -30073,6 +30342,7 @@
 								},
 								"outlands": {
 									"_id": "starforged/oracles/planets/vital/settlements/outlands",
+									"type": "oracle_rollable",
 									"name": "Outlands",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -30111,6 +30381,7 @@
 								},
 								"expanse": {
 									"_id": "starforged/oracles/planets/vital/settlements/expanse",
+									"type": "oracle_rollable",
 									"name": "Expanse",
 									"oracle_type": "column_text",
 									"dice": "1d100",
@@ -30180,12 +30451,14 @@
 				},
 				"peril": {
 					"_id": "starforged/collections/oracles/planets/peril",
+					"type": "oracle_collection",
 					"name": "Planetside Peril",
 					"oracle_type": "table_shared_text",
 					"summary": "Choose or roll on this table when you want inspiration for a trouble during planetside exploration or a planetside expedition.",
 					"contents": {
 						"lifebearing": {
 							"_id": "starforged/oracles/planets/peril/lifebearing",
+							"type": "oracle_rollable",
 							"name": "Lifebearing",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -30389,6 +30662,7 @@
 						},
 						"lifeless": {
 							"_id": "starforged/oracles/planets/peril/lifeless",
+							"type": "oracle_rollable",
 							"name": "Lifeless",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -30609,12 +30883,14 @@
 				},
 				"opportunity": {
 					"_id": "starforged/collections/oracles/planets/opportunity",
+					"type": "oracle_collection",
 					"name": "Planetside Opportunity",
 					"oracle_type": "table_shared_text",
 					"summary": "Choose or roll on this table when you want inspiration for a beneficial encounter or event on a planetside journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.",
 					"contents": {
 						"lifebearing": {
 							"_id": "starforged/oracles/planets/opportunity/lifebearing",
+							"type": "oracle_rollable",
 							"name": "Lifebearing",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -30748,6 +31024,7 @@
 						},
 						"lifeless": {
 							"_id": "starforged/oracles/planets/opportunity/lifeless",
+							"type": "oracle_rollable",
 							"name": "Lifeless",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -30912,11 +31189,13 @@
 		},
 		"settlements": {
 			"_id": "starforged/collections/oracles/settlements",
+			"type": "oracle_collection",
 			"name": "Settlements",
 			"oracle_type": "tables",
 			"contents": {
 				"location": {
 					"_id": "starforged/oracles/settlements/location",
+					"type": "oracle_rollable",
 					"name": "Location",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -30959,6 +31238,7 @@
 				},
 				"first_look": {
 					"_id": "starforged/oracles/settlements/first_look",
+					"type": "oracle_rollable",
 					"name": "First Look",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -31108,6 +31388,7 @@
 				},
 				"initial_contact": {
 					"_id": "starforged/oracles/settlements/initial_contact",
+					"type": "oracle_rollable",
 					"name": "Initial Contact",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -31187,6 +31468,7 @@
 				},
 				"authority": {
 					"_id": "starforged/oracles/settlements/authority",
+					"type": "oracle_rollable",
 					"name": "Authority",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -31281,6 +31563,7 @@
 				},
 				"projects": {
 					"_id": "starforged/oracles/settlements/projects",
+					"type": "oracle_rollable",
 					"name": "Settlement Projects",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -31651,6 +31934,7 @@
 				},
 				"trouble": {
 					"_id": "starforged/oracles/settlements/trouble",
+					"type": "oracle_rollable",
 					"name": "Settlement Trouble",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -31866,6 +32150,7 @@
 				},
 				"name": {
 					"_id": "starforged/oracles/settlements/name",
+					"type": "oracle_rollable",
 					"name": "Settlement Name",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -32876,6 +33161,7 @@
 				},
 				"name_tags": {
 					"_id": "starforged/oracles/settlements/name_tags",
+					"type": "oracle_rollable",
 					"name": "Name tags",
 					"oracle_type": "table_text",
 					"dice": "1d10",
@@ -32952,11 +33238,13 @@
 			"collections": {
 				"population": {
 					"_id": "starforged/collections/oracles/settlements/population",
+					"type": "oracle_collection",
 					"name": "Population",
 					"oracle_type": "table_shared_text",
 					"contents": {
 						"terminus": {
 							"_id": "starforged/oracles/settlements/population/terminus",
+							"type": "oracle_rollable",
 							"name": "Terminus",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -32995,6 +33283,7 @@
 						},
 						"outlands": {
 							"_id": "starforged/oracles/settlements/population/outlands",
+							"type": "oracle_rollable",
 							"name": "Outlands",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -33033,6 +33322,7 @@
 						},
 						"expanse": {
 							"_id": "starforged/oracles/settlements/population/expanse",
+							"type": "oracle_rollable",
 							"name": "Expanse",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -33102,11 +33392,13 @@
 		},
 		"space": {
 			"_id": "starforged/collections/oracles/space",
+			"type": "oracle_collection",
 			"name": "Space Encounters",
 			"oracle_type": "tables",
 			"contents": {
 				"stellar_object": {
 					"_id": "starforged/oracles/space/stellar_object",
+					"type": "oracle_rollable",
 					"name": "Stellar Object",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -33197,6 +33489,7 @@
 				},
 				"peril": {
 					"_id": "starforged/oracles/space/peril",
+					"type": "oracle_rollable",
 					"name": "Spaceborne Peril",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -33417,6 +33710,7 @@
 				},
 				"opportunity": {
 					"_id": "starforged/oracles/space/opportunity",
+					"type": "oracle_rollable",
 					"name": "Spaceborne Opportunity",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -33569,12 +33863,14 @@
 			"collections": {
 				"sighting": {
 					"_id": "starforged/collections/oracles/space/sighting",
+					"type": "oracle_collection",
 					"name": "Space Sighting",
 					"oracle_type": "table_shared_text",
 					"summary": "Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) to envision the primary feature of a waypoint as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition). Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.",
 					"contents": {
 						"terminus": {
 							"_id": "starforged/oracles/space/sighting/terminus",
+							"type": "oracle_rollable",
 							"name": "Terminus",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -33736,6 +34032,7 @@
 						},
 						"outlands": {
 							"_id": "starforged/oracles/space/sighting/outlands",
+							"type": "oracle_rollable",
 							"name": "Outlands",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -33897,6 +34194,7 @@
 						},
 						"expanse": {
 							"_id": "starforged/oracles/space/sighting/expanse",
+							"type": "oracle_rollable",
 							"name": "Expanse",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -34075,6 +34373,7 @@
 				},
 				"sector_name": {
 					"_id": "starforged/collections/oracles/space/sector_name",
+					"type": "oracle_collection",
 					"name": "Sector Name",
 					"oracle_type": "table_shared_rolls",
 					"summary": "To give a sector or region of space a random name, roll once for the first word and once for the second word.",
@@ -34082,6 +34381,7 @@
 					"contents": {
 						"prefix": {
 							"_id": "starforged/oracles/space/sector_name/prefix",
+							"type": "oracle_rollable",
 							"name": "Prefix",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -34578,6 +34878,7 @@
 						},
 						"suffix": {
 							"_id": "starforged/oracles/space/sector_name/suffix",
+							"type": "oracle_rollable",
 							"name": "Suffix",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -35121,11 +35422,13 @@
 		},
 		"starships": {
 			"_id": "starforged/collections/oracles/starships",
+			"type": "oracle_collection",
 			"name": "Starships",
 			"oracle_type": "tables",
 			"contents": {
 				"type": {
 					"_id": "starforged/oracles/starships/type",
+					"type": "oracle_rollable",
 					"name": "Starship Type",
 					"canonical_name": "Type",
 					"oracle_type": "table_text2",
@@ -35411,6 +35714,7 @@
 				},
 				"fleet": {
 					"_id": "starforged/oracles/starships/fleet",
+					"type": "oracle_rollable",
 					"name": "Fleet",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -35519,6 +35823,7 @@
 				},
 				"initial_contact": {
 					"_id": "starforged/oracles/starships/initial_contact",
+					"type": "oracle_rollable",
 					"name": "Initial Contact",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -35603,6 +35908,7 @@
 				},
 				"first_look": {
 					"_id": "starforged/oracles/starships/first_look",
+					"type": "oracle_rollable",
 					"name": "First Look",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -35757,6 +36063,7 @@
 				},
 				"starship_name": {
 					"_id": "starforged/oracles/starships/starship_name",
+					"type": "oracle_rollable",
 					"name": "Starship Name",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -36284,12 +36591,14 @@
 			"collections": {
 				"mission": {
 					"_id": "starforged/collections/oracles/starships/mission",
+					"type": "oracle_collection",
 					"name": "Starship Mission",
 					"oracle_type": "table_shared_text",
 					"summary": "Use the Starship Mission table when prompted by another oracle, or to flesh out the nature of a ship or fleet which has a flexible or uncertain role. You can also roll to generate the focus of a spaceborne quest.",
 					"contents": {
 						"terminus": {
 							"_id": "starforged/oracles/starships/mission/terminus",
+							"type": "oracle_rollable",
 							"name": "Terminus",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -36488,6 +36797,7 @@
 						},
 						"outlands": {
 							"_id": "starforged/oracles/starships/mission/outlands",
+							"type": "oracle_rollable",
 							"name": "Outlands",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -36686,6 +36996,7 @@
 						},
 						"expanse": {
 							"_id": "starforged/oracles/starships/mission/expanse",
+							"type": "oracle_rollable",
 							"name": "Expanse",
 							"oracle_type": "column_text",
 							"dice": "1d100",
@@ -36915,12 +37226,14 @@
 		},
 		"vaults": {
 			"_id": "starforged/collections/oracles/vaults",
+			"type": "oracle_collection",
 			"name": "Precursor Vaults",
 			"oracle_type": "tables",
 			"summary": "When you first come upon a vault, use the tables on the previous two pages to help envision its form and nature. For a more abstract prompt, just use the Descriptor oracle. In either case—if that’s enough detail for the role of the vault in your story—stop there.",
 			"contents": {
 				"location": {
 					"_id": "starforged/oracles/vaults/location",
+					"type": "oracle_rollable",
 					"name": "Location",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -36963,6 +37276,7 @@
 				},
 				"scale": {
 					"_id": "starforged/oracles/vaults/scale",
+					"type": "oracle_rollable",
 					"name": "Scale",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -37012,6 +37326,7 @@
 				},
 				"form": {
 					"_id": "starforged/oracles/vaults/form",
+					"type": "oracle_rollable",
 					"name": "Form",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -37086,6 +37401,7 @@
 				},
 				"shape": {
 					"_id": "starforged/oracles/vaults/shape",
+					"type": "oracle_rollable",
 					"name": "Shape",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -37269,6 +37585,7 @@
 				},
 				"material": {
 					"_id": "starforged/oracles/vaults/material",
+					"type": "oracle_rollable",
 					"name": "Material",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -37397,6 +37714,7 @@
 				},
 				"outer_first_look": {
 					"_id": "starforged/oracles/vaults/outer_first_look",
+					"type": "oracle_rollable",
 					"name": "Outer First Look",
 					"oracle_type": "table_text",
 					"dice": "1d100",
@@ -37593,6 +37911,7 @@
 			"collections": {
 				"interior": {
 					"_id": "starforged/collections/oracles/vaults/interior",
+					"type": "oracle_collection",
 					"name": "Interior",
 					"oracle_type": "tables",
 					"icon": "icons/vaults/interior.svg",
@@ -37600,6 +37919,7 @@
 					"contents": {
 						"first_look": {
 							"_id": "starforged/oracles/vaults/interior/first_look",
+							"type": "oracle_rollable",
 							"name": "Inner First Look",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -37805,6 +38125,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/vaults/interior/feature",
+							"type": "oracle_rollable",
 							"name": "Interior Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -38029,6 +38350,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/vaults/interior/peril",
+							"type": "oracle_rollable",
 							"name": "Interior Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -38184,6 +38506,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/vaults/interior/opportunity",
+							"type": "oracle_rollable",
 							"name": "Interior Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -38273,6 +38596,7 @@
 				},
 				"sanctum": {
 					"_id": "starforged/collections/oracles/vaults/sanctum",
+					"type": "oracle_collection",
 					"name": "Sanctum",
 					"oracle_type": "tables",
 					"icon": "icons/vaults/sanctum.svg",
@@ -38280,6 +38604,7 @@
 					"contents": {
 						"purpose": {
 							"_id": "starforged/oracles/vaults/sanctum/purpose",
+							"type": "oracle_rollable",
 							"name": "Vault Purpose",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -38475,6 +38800,7 @@
 						},
 						"feature": {
 							"_id": "starforged/oracles/vaults/sanctum/feature",
+							"type": "oracle_rollable",
 							"name": "Sanctum Feature",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -38699,6 +39025,7 @@
 						},
 						"peril": {
 							"_id": "starforged/oracles/vaults/sanctum/peril",
+							"type": "oracle_rollable",
 							"name": "Sanctum Peril",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -38853,6 +39180,7 @@
 						},
 						"opportunity": {
 							"_id": "starforged/oracles/vaults/sanctum/opportunity",
+							"type": "oracle_rollable",
 							"name": "Sanctum Opportunity",
 							"oracle_type": "table_text",
 							"dice": "1d100",
@@ -38957,6 +39285,7 @@
 	"assets": {
 		"command_vehicle": {
 			"_id": "starforged/collections/assets/command_vehicle",
+			"type": "asset_collection",
 			"name": "Command Vehicle Assets",
 			"color": "#9aa3ad",
 			"summary": "This is your interstellar spacecraft.",
@@ -38964,6 +39293,7 @@
 			"contents": {
 				"starship": {
 					"_id": "starforged/assets/command_vehicle/starship",
+					"type": "asset",
 					"name": "Starship",
 					"category": "Command Vehicle",
 					"color": "#9aa3ad",
@@ -39098,12 +39428,14 @@
 		},
 		"companion": {
 			"_id": "starforged/collections/assets/companion",
+			"type": "asset_collection",
 			"name": "Companion Assets",
 			"color": "#3d8b8a",
 			"description": "__Companions__ are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the [Companion Takes a Hit](id:starforged/moves/suffer/companion_takes_a_hit) move. When their health is at 0, they are in danger of being killed or destroyed.",
 			"contents": {
 				"banshee": {
 					"_id": "starforged/assets/companion/banshee",
+					"type": "asset",
 					"name": "Banshee",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -39224,6 +39556,7 @@
 				},
 				"combat_bot": {
 					"_id": "starforged/assets/companion/combat_bot",
+					"type": "asset",
 					"name": "Combat Bot",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -39363,6 +39696,7 @@
 				},
 				"glowcat": {
 					"_id": "starforged/assets/companion/glowcat",
+					"type": "asset",
 					"name": "Glowcat",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -39474,6 +39808,7 @@
 				},
 				"protocol_bot": {
 					"_id": "starforged/assets/companion/protocol_bot",
+					"type": "asset",
 					"name": "Protocol Bot",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -39570,6 +39905,7 @@
 				},
 				"rockhorn": {
 					"_id": "starforged/assets/companion/rockhorn",
+					"type": "asset",
 					"name": "Rockhorn",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -39687,6 +40023,7 @@
 				},
 				"sidekick": {
 					"_id": "starforged/assets/companion/sidekick",
+					"type": "asset",
 					"name": "Sidekick",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -39825,6 +40162,7 @@
 				},
 				"sprite": {
 					"_id": "starforged/assets/companion/sprite",
+					"type": "asset",
 					"name": "Sprite",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -39924,6 +40262,7 @@
 				},
 				"survey_bot": {
 					"_id": "starforged/assets/companion/survey_bot",
+					"type": "asset",
 					"name": "Survey Bot",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -40075,6 +40414,7 @@
 				},
 				"symbiote": {
 					"_id": "starforged/assets/companion/symbiote",
+					"type": "asset",
 					"name": "Symbiote",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -40170,6 +40510,7 @@
 				},
 				"utility_bot": {
 					"_id": "starforged/assets/companion/utility_bot",
+					"type": "asset",
 					"name": "Utility Bot",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -40293,6 +40634,7 @@
 				},
 				"voidglider": {
 					"_id": "starforged/assets/companion/voidglider",
+					"type": "asset",
 					"name": "Voidglider",
 					"category": "Companion",
 					"color": "#3d8b8a",
@@ -40432,12 +40774,14 @@
 		},
 		"deed": {
 			"_id": "starforged/collections/assets/deed",
+			"type": "asset_collection",
 			"name": "Deed Assets",
 			"color": "#40834f",
 			"description": "__Deeds__ represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character.",
 			"contents": {
 				"bonded": {
 					"_id": "starforged/assets/deed/bonded",
+					"type": "asset",
 					"name": "Bonded",
 					"category": "Deed",
 					"color": "#40834f",
@@ -40547,6 +40891,7 @@
 				},
 				"homesteader": {
 					"_id": "starforged/assets/deed/homesteader",
+					"type": "asset",
 					"name": "Homesteader",
 					"category": "Deed",
 					"color": "#40834f",
@@ -40662,6 +41007,7 @@
 				},
 				"marked": {
 					"_id": "starforged/assets/deed/marked",
+					"type": "asset",
 					"name": "Marked",
 					"category": "Deed",
 					"color": "#40834f",
@@ -40755,6 +41101,7 @@
 				},
 				"oathbreaker": {
 					"_id": "starforged/assets/deed/oathbreaker",
+					"type": "asset",
 					"name": "Oathbreaker",
 					"category": "Deed",
 					"color": "#40834f",
@@ -40844,6 +41191,7 @@
 				},
 				"revenant": {
 					"_id": "starforged/assets/deed/revenant",
+					"type": "asset",
 					"name": "Revenant",
 					"category": "Deed",
 					"color": "#40834f",
@@ -40934,6 +41282,7 @@
 				},
 				"survivor": {
 					"_id": "starforged/assets/deed/survivor",
+					"type": "asset",
 					"name": "Survivor",
 					"category": "Deed",
 					"color": "#40834f",
@@ -40986,6 +41335,7 @@
 				},
 				"vanguard": {
 					"_id": "starforged/assets/deed/vanguard",
+					"type": "asset",
 					"name": "Vanguard",
 					"category": "Deed",
 					"color": "#40834f",
@@ -41000,6 +41350,7 @@
 							"moves": {
 								"seek_safe_haven": {
 									"_id": "starforged/assets/deed/vanguard/abilities/0/moves/seek_safe_haven",
+									"type": "move",
 									"name": "Seek Safe Haven",
 									"roll_type": "special_track",
 									"trigger": {
@@ -41118,12 +41469,14 @@
 		},
 		"module": {
 			"_id": "starforged/collections/assets/module",
+			"type": "asset_collection",
 			"name": "Module Assets",
 			"color": "#7f5a90",
 			"description": "__Modules__ are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you [Withstand Damage](id:starforged/moves/suffer/withstand_damage) and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully [Repair](id:starforged/moves/recover/repair) it.",
 			"contents": {
 				"engine_upgrade": {
 					"_id": "starforged/assets/module/engine_upgrade",
+					"type": "asset",
 					"name": "Engine Upgrade",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41234,6 +41587,7 @@
 				},
 				"expanded_hold": {
 					"_id": "starforged/assets/module/expanded_hold",
+					"type": "asset",
 					"name": "Expanded Hold",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41314,6 +41668,7 @@
 				},
 				"grappler": {
 					"_id": "starforged/assets/module/grappler",
+					"type": "asset",
 					"name": "Grappler",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41327,6 +41682,7 @@
 							"moves": {
 								"ready_grappler": {
 									"_id": "starforged/assets/module/grappler/abilities/0/moves/ready_grappler",
+									"type": "move",
 									"name": "Ready Grappler",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -41430,6 +41786,7 @@
 				},
 				"heavy_cannons": {
 					"_id": "starforged/assets/module/heavy_cannons",
+					"type": "asset",
 					"name": "Heavy Cannons",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41524,6 +41881,7 @@
 				},
 				"internal_refit": {
 					"_id": "starforged/assets/module/internal_refit",
+					"type": "asset",
 					"name": "Internal Refit",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41559,6 +41917,7 @@
 							"moves": {
 								"draw_reserves": {
 									"_id": "starforged/assets/module/internal_refit/abilities/1/moves/draw_reserves",
+									"type": "move",
 									"name": "Draw Reserves",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -41645,6 +42004,7 @@
 				},
 				"medbay": {
 					"_id": "starforged/assets/module/medbay",
+					"type": "asset",
 					"name": "Medbay",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41752,6 +42112,7 @@
 				},
 				"missile_array": {
 					"_id": "starforged/assets/module/missile_array",
+					"type": "asset",
 					"name": "Missile Array",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41862,6 +42223,7 @@
 				},
 				"overseer": {
 					"_id": "starforged/assets/module/overseer",
+					"type": "asset",
 					"name": "Overseer",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -41963,6 +42325,7 @@
 				},
 				"reinforced_hull": {
 					"_id": "starforged/assets/module/reinforced_hull",
+					"type": "asset",
 					"name": "Reinforced Hull",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -42053,6 +42416,7 @@
 				},
 				"research_lab": {
 					"_id": "starforged/assets/module/research_lab",
+					"type": "asset",
 					"name": "Research Lab",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -42172,6 +42536,7 @@
 				},
 				"sensor_array": {
 					"_id": "starforged/assets/module/sensor_array",
+					"type": "asset",
 					"name": "Sensor Array",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -42305,6 +42670,7 @@
 				},
 				"shields": {
 					"_id": "starforged/assets/module/shields",
+					"type": "asset",
 					"name": "Shields",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -42318,6 +42684,7 @@
 							"moves": {
 								"raise_shields": {
 									"_id": "starforged/assets/module/shields/abilities/0/moves/raise_shields",
+									"type": "move",
 									"name": "Raise Shields",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -42440,6 +42807,7 @@
 				},
 				"stealth_tech": {
 					"_id": "starforged/assets/module/stealth_tech",
+					"type": "asset",
 					"name": "Stealth Tech",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -42573,6 +42941,7 @@
 				},
 				"vehicle_bay": {
 					"_id": "starforged/assets/module/vehicle_bay",
+					"type": "asset",
 					"name": "Vehicle Bay",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -42654,6 +43023,7 @@
 				},
 				"workshop": {
 					"_id": "starforged/assets/module/workshop",
+					"type": "asset",
 					"name": "Workshop",
 					"category": "Module",
 					"color": "#7f5a90",
@@ -42784,12 +43154,14 @@
 		},
 		"path": {
 			"_id": "starforged/collections/assets/path",
+			"type": "asset_collection",
 			"name": "Path Assets",
 			"color": "#3f7faa",
 			"description": "__Paths__ are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.\n\nSome paths represent your skill with a signature weapon style or piece of equipment. If you see a requirement at the top of the asset card, such as “If you wield a bladed weapon…,” the asset is only usable when taking action using that item.",
 			"contents": {
 				"ace": {
 					"_id": "starforged/assets/path/ace",
+					"type": "asset",
 					"name": "Ace",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -42884,6 +43256,7 @@
 				},
 				"archer": {
 					"_id": "starforged/assets/path/archer",
+					"type": "asset",
 					"name": "Archer",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -42898,6 +43271,7 @@
 							"moves": {
 								"craft_projectiles": {
 									"_id": "starforged/assets/path/archer/abilities/0/moves/craft_projectiles",
+									"type": "move",
 									"name": "Craft Projectiles",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -43016,6 +43390,7 @@
 				},
 				"armored": {
 					"_id": "starforged/assets/path/armored",
+					"type": "asset",
 					"name": "Armored",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43096,6 +43471,7 @@
 				},
 				"artist": {
 					"_id": "starforged/assets/path/artist",
+					"type": "asset",
 					"name": "Artist",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43152,6 +43528,7 @@
 							"moves": {
 								"commemorate": {
 									"_id": "starforged/assets/path/artist/abilities/2/moves/commemorate",
+									"type": "move",
 									"name": "Commemorate",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -43226,6 +43603,7 @@
 				},
 				"augmented": {
 					"_id": "starforged/assets/path/augmented",
+					"type": "asset",
 					"name": "Augmented",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43298,6 +43676,7 @@
 				},
 				"bannersworn": {
 					"_id": "starforged/assets/path/bannersworn",
+					"type": "asset",
 					"name": "Bannersworn",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43402,6 +43781,7 @@
 				},
 				"blademaster": {
 					"_id": "starforged/assets/path/blademaster",
+					"type": "asset",
 					"name": "Blademaster",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43526,6 +43906,7 @@
 				},
 				"bounty_hunter": {
 					"_id": "starforged/assets/path/bounty_hunter",
+					"type": "asset",
 					"name": "Bounty Hunter",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43620,6 +44001,7 @@
 				},
 				"brawler": {
 					"_id": "starforged/assets/path/brawler",
+					"type": "asset",
 					"name": "Brawler",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43715,6 +44097,7 @@
 				},
 				"courier": {
 					"_id": "starforged/assets/path/courier",
+					"type": "asset",
 					"name": "Courier",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43819,6 +44202,7 @@
 				},
 				"demolitionist": {
 					"_id": "starforged/assets/path/demolitionist",
+					"type": "asset",
 					"name": "Demolitionist",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -43900,6 +44284,7 @@
 				},
 				"devotant": {
 					"_id": "starforged/assets/path/devotant",
+					"type": "asset",
 					"name": "Devotant",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44059,6 +44444,7 @@
 				},
 				"diplomat": {
 					"_id": "starforged/assets/path/diplomat",
+					"type": "asset",
 					"name": "Diplomat",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44151,6 +44537,7 @@
 				},
 				"empath": {
 					"_id": "starforged/assets/path/empath",
+					"type": "asset",
 					"name": "Empath",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44164,6 +44551,7 @@
 							"moves": {
 								"read_heart": {
 									"_id": "starforged/assets/path/empath/abilities/0/moves/read_heart",
+									"type": "move",
 									"name": "Read Heart",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -44259,6 +44647,7 @@
 				},
 				"explorer": {
 					"_id": "starforged/assets/path/explorer",
+					"type": "asset",
 					"name": "Explorer",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44324,6 +44713,7 @@
 				},
 				"fated": {
 					"_id": "starforged/assets/path/fated",
+					"type": "asset",
 					"name": "Fated",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44408,6 +44798,7 @@
 				},
 				"firebrand": {
 					"_id": "starforged/assets/path/firebrand",
+					"type": "asset",
 					"name": "Firebrand",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44421,6 +44812,7 @@
 							"moves": {
 								"gather_energy": {
 									"_id": "starforged/assets/path/firebrand/abilities/0/moves/gather_energy",
+									"type": "move",
 									"name": "Gather Energy",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -44522,6 +44914,7 @@
 				},
 				"fugitive": {
 					"_id": "starforged/assets/path/fugitive",
+					"type": "asset",
 					"name": "Fugitive",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44583,6 +44976,7 @@
 				},
 				"gearhead": {
 					"_id": "starforged/assets/path/gearhead",
+					"type": "asset",
 					"name": "Gearhead",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44664,6 +45058,7 @@
 				},
 				"gunner": {
 					"_id": "starforged/assets/path/gunner",
+					"type": "asset",
 					"name": "Gunner",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44782,6 +45177,7 @@
 				},
 				"gunslinger": {
 					"_id": "starforged/assets/path/gunslinger",
+					"type": "asset",
 					"name": "Gunslinger",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44885,6 +45281,7 @@
 				},
 				"haunted": {
 					"_id": "starforged/assets/path/haunted",
+					"type": "asset",
 					"name": "Haunted",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -44951,6 +45348,7 @@
 				},
 				"healer": {
 					"_id": "starforged/assets/path/healer",
+					"type": "asset",
 					"name": "Healer",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45030,6 +45428,7 @@
 				},
 				"infiltrator": {
 					"_id": "starforged/assets/path/infiltrator",
+					"type": "asset",
 					"name": "Infiltrator",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45114,6 +45513,7 @@
 				},
 				"kinetic": {
 					"_id": "starforged/assets/path/kinetic",
+					"type": "asset",
 					"name": "Kinetic",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45180,6 +45580,7 @@
 				},
 				"leader": {
 					"_id": "starforged/assets/path/leader",
+					"type": "asset",
 					"name": "Leader",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45275,6 +45676,7 @@
 				},
 				"looper": {
 					"_id": "starforged/assets/path/looper",
+					"type": "asset",
 					"name": "Looper",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45303,6 +45705,7 @@
 							"moves": {
 								"loop_back": {
 									"_id": "starforged/assets/path/looper/abilities/1/moves/loop_back",
+									"type": "move",
 									"name": "Loop Back",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -45376,6 +45779,7 @@
 				},
 				"lore_hunter": {
 					"_id": "starforged/assets/path/lore_hunter",
+					"type": "asset",
 					"name": "Lore Hunter",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45477,6 +45881,7 @@
 				},
 				"loyalist": {
 					"_id": "starforged/assets/path/loyalist",
+					"type": "asset",
 					"name": "Loyalist",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45538,6 +45943,7 @@
 				},
 				"mercenary": {
 					"_id": "starforged/assets/path/mercenary",
+					"type": "asset",
 					"name": "Mercenary",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45645,6 +46051,7 @@
 				},
 				"naturalist": {
 					"_id": "starforged/assets/path/naturalist",
+					"type": "asset",
 					"name": "Naturalist",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45742,6 +46149,7 @@
 				},
 				"navigator": {
 					"_id": "starforged/assets/path/navigator",
+					"type": "asset",
 					"name": "Navigator",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45845,6 +46253,7 @@
 				},
 				"outcast": {
 					"_id": "starforged/assets/path/outcast",
+					"type": "asset",
 					"name": "Outcast",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -45878,6 +46287,7 @@
 							"moves": {
 								"scrape_by": {
 									"_id": "starforged/assets/path/outcast/abilities/1/moves/scrape_by",
+									"type": "move",
 									"name": "Scrape By",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -45958,6 +46368,7 @@
 				},
 				"scavenger": {
 					"_id": "starforged/assets/path/scavenger",
+					"type": "asset",
 					"name": "Scavenger",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46047,6 +46458,7 @@
 				},
 				"scoundrel": {
 					"_id": "starforged/assets/path/scoundrel",
+					"type": "asset",
 					"name": "Scoundrel",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46118,6 +46530,7 @@
 				},
 				"seer": {
 					"_id": "starforged/assets/path/seer",
+					"type": "asset",
 					"name": "Seer",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46211,6 +46624,7 @@
 				},
 				"shade": {
 					"_id": "starforged/assets/path/shade",
+					"type": "asset",
 					"name": "Shade",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46257,6 +46671,7 @@
 							"moves": {
 								"shroud_in_darkness": {
 									"_id": "starforged/assets/path/shade/abilities/1/moves/shroud_in_darkness",
+									"type": "move",
 									"name": "Shroud in Darkness",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -46319,6 +46734,7 @@
 				},
 				"slayer": {
 					"_id": "starforged/assets/path/slayer",
+					"type": "asset",
 					"name": "Slayer",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46413,6 +46829,7 @@
 				},
 				"sleuth": {
 					"_id": "starforged/assets/path/sleuth",
+					"type": "asset",
 					"name": "Sleuth",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46494,6 +46911,7 @@
 				},
 				"sniper": {
 					"_id": "starforged/assets/path/sniper",
+					"type": "asset",
 					"name": "Sniper",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46508,6 +46926,7 @@
 							"moves": {
 								"snipe_minor_foe": {
 									"_id": "starforged/assets/path/sniper/abilities/0/moves/snipe_minor_foe",
+									"type": "move",
 									"name": "Snipe Minor Foe",
 									"roll_type": "action_roll",
 									"trigger": {
@@ -46623,6 +47042,7 @@
 				},
 				"tech": {
 					"_id": "starforged/assets/path/tech",
+					"type": "asset",
 					"name": "Tech",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46698,6 +47118,7 @@
 				},
 				"trader": {
 					"_id": "starforged/assets/path/trader",
+					"type": "asset",
 					"name": "Trader",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46802,6 +47223,7 @@
 				},
 				"vestige": {
 					"_id": "starforged/assets/path/vestige",
+					"type": "asset",
 					"name": "Vestige",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46894,6 +47316,7 @@
 				},
 				"veteran": {
 					"_id": "starforged/assets/path/veteran",
+					"type": "asset",
 					"name": "Veteran",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -46954,6 +47377,7 @@
 				},
 				"voidborn": {
 					"_id": "starforged/assets/path/voidborn",
+					"type": "asset",
 					"name": "Voidborn",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -47036,6 +47460,7 @@
 				},
 				"weapon_master": {
 					"_id": "starforged/assets/path/weapon_master",
+					"type": "asset",
 					"name": "Weapon Master",
 					"category": "Path",
 					"color": "#3f7faa",
@@ -47149,12 +47574,14 @@
 		},
 		"support_vehicle": {
 			"_id": "starforged/collections/assets/support_vehicle",
+			"type": "asset_collection",
 			"name": "Support Vehicle Assets",
 			"color": "#495790",
 			"description": "__Support vehicles__ complement your command vehicle for planetside or short-range operations. If you are playing with others, one of you might serve as the pilot or owner of a support vehicle, but anyone on board can use its abilities as appropriate to the situation.\n\nAs with the command vehicle, your support vehicles have integrity meters. The maximum integrity varies based on the type of vehicle. When a support vehicle faces a damaging situation or environment, you must [Withstand Damage](id:starforged/moves/suffer/withstand_damage) to see how it fares.",
 			"contents": {
 				"exosuit": {
 					"_id": "starforged/assets/support_vehicle/exosuit",
+					"type": "asset",
 					"name": "Exosuit",
 					"category": "Support Vehicle",
 					"color": "#495790",
@@ -47266,6 +47693,7 @@
 				},
 				"hoverbike": {
 					"_id": "starforged/assets/support_vehicle/hoverbike",
+					"type": "asset",
 					"name": "Hoverbike",
 					"category": "Support Vehicle",
 					"color": "#495790",
@@ -47369,6 +47797,7 @@
 				},
 				"rover": {
 					"_id": "starforged/assets/support_vehicle/rover",
+					"type": "asset",
 					"name": "Rover",
 					"category": "Support Vehicle",
 					"color": "#495790",
@@ -47498,6 +47927,7 @@
 				},
 				"service_pod": {
 					"_id": "starforged/assets/support_vehicle/service_pod",
+					"type": "asset",
 					"name": "Service Pod",
 					"category": "Support Vehicle",
 					"color": "#495790",
@@ -47619,6 +48049,7 @@
 				},
 				"shuttle": {
 					"_id": "starforged/assets/support_vehicle/shuttle",
+					"type": "asset",
 					"name": "Shuttle",
 					"category": "Support Vehicle",
 					"color": "#495790",
@@ -47718,6 +48149,7 @@
 				},
 				"skiff": {
 					"_id": "starforged/assets/support_vehicle/skiff",
+					"type": "asset",
 					"name": "Skiff",
 					"category": "Support Vehicle",
 					"color": "#495790",
@@ -47847,6 +48279,7 @@
 				},
 				"snub_fighter": {
 					"_id": "starforged/assets/support_vehicle/snub_fighter",
+					"type": "asset",
 					"name": "Snub Fighter",
 					"category": "Support Vehicle",
 					"color": "#495790",
@@ -47979,6 +48412,7 @@
 	"moves": {
 		"session": {
 			"_id": "starforged/collections/moves/session",
+			"type": "move_category",
 			"name": "Session Moves",
 			"color": "#3F8C8A",
 			"summary": "__Session moves__ provide methods for setting up content boundaries, adjusting content in the midst of play, and starting and ending your Starforged sessions.",
@@ -47986,6 +48420,7 @@
 			"contents": {
 				"begin_a_session": {
 					"_id": "starforged/moves/session/begin_a_session",
+					"type": "move",
 					"name": "Begin a Session",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48010,6 +48445,7 @@
 				},
 				"set_a_flag": {
 					"_id": "starforged/moves/session/set_a_flag",
+					"type": "move",
 					"name": "Set a Flag",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48033,6 +48469,7 @@
 				},
 				"change_your_fate": {
 					"_id": "starforged/moves/session/change_your_fate",
+					"type": "move",
 					"name": "Change Your Fate",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48056,6 +48493,7 @@
 				},
 				"take_a_break": {
 					"_id": "starforged/moves/session/take_a_break",
+					"type": "move",
 					"name": "Take a Break",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48079,6 +48517,7 @@
 				},
 				"end_a_session": {
 					"_id": "starforged/moves/session/end_a_session",
+					"type": "move",
 					"name": "End a Session",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48116,6 +48555,7 @@
 		},
 		"adventure": {
 			"_id": "starforged/collections/moves/adventure",
+			"type": "move_category",
 			"name": "Adventure Moves",
 			"color": "#206087",
 			"summary": "The __adventure moves__ encompass broadly useful actions to overcome obstacles, reinforce your position, conduct investigations, influence others, and support your fellow protagonists.",
@@ -48123,6 +48563,7 @@
 			"contents": {
 				"face_danger": {
 					"_id": "starforged/moves/adventure/face_danger",
+					"type": "move",
 					"name": "Face Danger",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48207,6 +48648,7 @@
 				},
 				"secure_an_advantage": {
 					"_id": "starforged/moves/adventure/secure_an_advantage",
+					"type": "move",
 					"name": "Secure an Advantage",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48291,6 +48733,7 @@
 				},
 				"gather_information": {
 					"_id": "starforged/moves/adventure/gather_information",
+					"type": "move",
 					"name": "Gather Information",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48335,6 +48778,7 @@
 				},
 				"compel": {
 					"_id": "starforged/moves/adventure/compel",
+					"type": "move",
 					"name": "Compel",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48399,6 +48843,7 @@
 				},
 				"aid_your_ally": {
 					"_id": "starforged/moves/adventure/aid_your_ally",
+					"type": "move",
 					"name": "Aid Your Ally",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48422,6 +48867,7 @@
 				},
 				"check_your_gear": {
 					"_id": "starforged/moves/adventure/check_your_gear",
+					"type": "move",
 					"name": "Check Your Gear",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48479,6 +48925,7 @@
 		},
 		"quest": {
 			"_id": "starforged/collections/moves/quest",
+			"type": "move_category",
 			"name": "Quest Moves",
 			"color": "#805A90",
 			"summary": "Make these __quest moves__ when you swear vows, make progress on your quests, and resolve vows.",
@@ -48486,6 +48933,7 @@
 			"contents": {
 				"swear_an_iron_vow": {
 					"_id": "starforged/moves/quest/swear_an_iron_vow",
+					"type": "move",
 					"name": "Swear an Iron Vow",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48529,6 +48977,7 @@
 				},
 				"reach_a_milestone": {
 					"_id": "starforged/moves/quest/reach_a_milestone",
+					"type": "move",
 					"name": "Reach a Milestone",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48552,6 +49001,7 @@
 				},
 				"fulfill_your_vow": {
 					"_id": "starforged/moves/quest/fulfill_your_vow",
+					"type": "move",
 					"name": "Fulfill Your Vow",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -48597,6 +49047,7 @@
 				},
 				"forsake_your_vow": {
 					"_id": "starforged/moves/quest/forsake_your_vow",
+					"type": "move",
 					"name": "Forsake Your Vow",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48634,6 +49085,7 @@
 		},
 		"connection": {
 			"_id": "starforged/collections/moves/connection",
+			"type": "move_category",
 			"name": "Connection Moves",
 			"color": "#4A5791",
 			"summary": "Make these __connection moves__ when you introduce connections and as you build influence or understanding with them.",
@@ -48641,6 +49093,7 @@
 			"contents": {
 				"make_a_connection": {
 					"_id": "starforged/moves/connection/make_a_connection",
+					"type": "move",
 					"name": "Make a Connection",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48684,6 +49137,7 @@
 				},
 				"develop_your_relationship": {
 					"_id": "starforged/moves/connection/develop_your_relationship",
+					"type": "move",
 					"name": "Develop Your Relationship",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48749,6 +49203,7 @@
 				},
 				"test_your_relationship": {
 					"_id": "starforged/moves/connection/test_your_relationship",
+					"type": "move",
 					"name": "Test Your Relationship",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48792,6 +49247,7 @@
 				},
 				"forge_a_bond": {
 					"_id": "starforged/moves/connection/forge_a_bond",
+					"type": "move",
 					"name": "Forge a Bond",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -48851,6 +49307,7 @@
 		},
 		"exploration": {
 			"_id": "starforged/collections/moves/exploration",
+			"type": "move_category",
 			"name": "Exploration Moves",
 			"color": "#427FAA",
 			"summary": "Make __exploration moves__ as you traverse uncharted space, the surface of inhospitable planets, the depths of foreboding derelicts or enigmatic alien vaults, and other perilous sites.",
@@ -48858,6 +49315,7 @@
 			"contents": {
 				"undertake_an_expedition": {
 					"_id": "starforged/moves/exploration/undertake_an_expedition",
+					"type": "move",
 					"name": "Undertake an Expedition",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48922,6 +49380,7 @@
 				},
 				"explore_a_waypoint": {
 					"_id": "starforged/moves/exploration/explore_a_waypoint",
+					"type": "move",
 					"name": "Explore a Waypoint",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -48965,6 +49424,7 @@
 				},
 				"make_a_discovery": {
 					"_id": "starforged/moves/exploration/make_a_discovery",
+					"type": "move",
 					"name": "Make a Discovery",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -48989,6 +49449,7 @@
 				},
 				"confront_chaos": {
 					"_id": "starforged/moves/exploration/confront_chaos",
+					"type": "move",
 					"name": "Confront Chaos",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -49013,6 +49474,7 @@
 				},
 				"finish_an_expedition": {
 					"_id": "starforged/moves/exploration/finish_an_expedition",
+					"type": "move",
 					"name": "Finish an Expedition",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -49058,6 +49520,7 @@
 				},
 				"set_a_course": {
 					"_id": "starforged/moves/exploration/set_a_course",
+					"type": "move",
 					"name": "Set a Course",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49115,6 +49578,7 @@
 		},
 		"combat": {
 			"_id": "starforged/collections/moves/combat",
+			"type": "move_category",
 			"name": "Combat Moves",
 			"color": "#818992",
 			"summary": "When you face one or more foes in high-stakes, action-oriented conflict, use the __combat moves__. These moves encompass on-foot action and vehicle sorties—or both as part of the same challenge.",
@@ -49122,6 +49586,7 @@
 			"contents": {
 				"enter_the_fray": {
 					"_id": "starforged/moves/combat/enter_the_fray",
+					"type": "move",
 					"name": "Enter the Fray",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49206,6 +49671,7 @@
 				},
 				"gain_ground": {
 					"_id": "starforged/moves/combat/gain_ground",
+					"type": "move",
 					"name": "Gain Ground",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49290,6 +49756,7 @@
 				},
 				"react_under_fire": {
 					"_id": "starforged/moves/combat/react_under_fire",
+					"type": "move",
 					"name": "React Under Fire",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49374,6 +49841,7 @@
 				},
 				"strike": {
 					"_id": "starforged/moves/combat/strike",
+					"type": "move",
 					"name": "Strike",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49428,6 +49896,7 @@
 				},
 				"clash": {
 					"_id": "starforged/moves/combat/clash",
+					"type": "move",
 					"name": "Clash",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49482,6 +49951,7 @@
 				},
 				"take_decisive_action": {
 					"_id": "starforged/moves/combat/take_decisive_action",
+					"type": "move",
 					"name": "Take Decisive Action",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -49528,6 +49998,7 @@
 				},
 				"face_defeat": {
 					"_id": "starforged/moves/combat/face_defeat",
+					"type": "move",
 					"name": "Face Defeat",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -49551,6 +50022,7 @@
 				},
 				"battle": {
 					"_id": "starforged/moves/combat/battle",
+					"type": "move",
 					"name": "Battle",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49649,6 +50121,7 @@
 		},
 		"suffer": {
 			"_id": "starforged/collections/moves/suffer",
+			"type": "move_category",
 			"name": "Suffer Moves",
 			"color": "#883529",
 			"summary": "When you bear the brunt of a failed action or make a concession, the suffer moves help resolve the cost.",
@@ -49656,6 +50129,7 @@
 			"contents": {
 				"lose_momentum": {
 					"_id": "starforged/moves/suffer/lose_momentum",
+					"type": "move",
 					"name": "Lose Momentum",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -49679,6 +50153,7 @@
 				},
 				"endure_harm": {
 					"_id": "starforged/moves/suffer/endure_harm",
+					"type": "move",
 					"name": "Endure Harm",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49727,6 +50202,7 @@
 				},
 				"endure_stress": {
 					"_id": "starforged/moves/suffer/endure_stress",
+					"type": "move",
 					"name": "Endure Stress",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49775,6 +50251,7 @@
 				},
 				"companion_takes_a_hit": {
 					"_id": "starforged/moves/suffer/companion_takes_a_hit",
+					"type": "move",
 					"name": "Companion Takes a Hit",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49819,6 +50296,7 @@
 				},
 				"sacrifice_resources": {
 					"_id": "starforged/moves/suffer/sacrifice_resources",
+					"type": "move",
 					"name": "Sacrifice Resources",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -49842,6 +50320,7 @@
 				},
 				"withstand_damage": {
 					"_id": "starforged/moves/suffer/withstand_damage",
+					"type": "move",
 					"name": "Withstand Damage",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49905,6 +50384,7 @@
 		},
 		"recover": {
 			"_id": "starforged/collections/moves/recover",
+			"type": "move_category",
 			"name": "Recover Moves",
 			"color": "#488B44",
 			"summary": "Make these __recover moves__ when you attempt to rest, recover, or refit.",
@@ -49912,6 +50392,7 @@
 			"contents": {
 				"sojourn": {
 					"_id": "starforged/moves/recover/sojourn",
+					"type": "move",
 					"name": "Sojourn",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -49955,6 +50436,7 @@
 				},
 				"heal": {
 					"_id": "starforged/moves/recover/heal",
+					"type": "move",
 					"name": "Heal",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50033,6 +50515,7 @@
 				},
 				"hearten": {
 					"_id": "starforged/moves/recover/hearten",
+					"type": "move",
 					"name": "Hearten",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50076,6 +50559,7 @@
 				},
 				"resupply": {
 					"_id": "starforged/moves/recover/resupply",
+					"type": "move",
 					"name": "Resupply",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50150,6 +50634,7 @@
 				},
 				"repair": {
 					"_id": "starforged/moves/recover/repair",
+					"type": "move",
 					"name": "Repair",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50218,6 +50703,7 @@
 		},
 		"threshold": {
 			"_id": "starforged/collections/moves/threshold",
+			"type": "move_category",
 			"name": "Threshold Moves",
 			"color": "#1D1D1B",
 			"summary": "Despite your best efforts to overcome the perils of the Forge, calamitous events may bring you to the precipice of life and death, redemption and desolation, perseverance and destruction.",
@@ -50225,6 +50711,7 @@
 			"contents": {
 				"face_death": {
 					"_id": "starforged/moves/threshold/face_death",
+					"type": "move",
 					"name": "Face Death",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50268,6 +50755,7 @@
 				},
 				"face_desolation": {
 					"_id": "starforged/moves/threshold/face_desolation",
+					"type": "move",
 					"name": "Face Desolation",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50311,6 +50799,7 @@
 				},
 				"overcome_destruction": {
 					"_id": "starforged/moves/threshold/overcome_destruction",
+					"type": "move",
 					"name": "Overcome Destruction",
 					"roll_type": "special_track",
 					"trigger": {
@@ -50367,6 +50856,7 @@
 		},
 		"legacy": {
 			"_id": "starforged/collections/moves/legacy",
+			"type": "move_category",
 			"name": "Legacy Moves",
 			"color": "#4F5A69",
 			"summary": "Make these __legacy moves__ to gain and spend experience, and when you face a final test to learn how your accomplishments and failures will echo through time.",
@@ -50374,6 +50864,7 @@
 			"contents": {
 				"earn_experience": {
 					"_id": "starforged/moves/legacy/earn_experience",
+					"type": "move",
 					"name": "Earn Experience",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -50397,6 +50888,7 @@
 				},
 				"advance": {
 					"_id": "starforged/moves/legacy/advance",
+					"type": "move",
 					"name": "Advance",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -50420,6 +50912,7 @@
 				},
 				"continue_a_legacy": {
 					"_id": "starforged/moves/legacy/continue_a_legacy",
+					"type": "move",
 					"name": "Continue a Legacy",
 					"roll_type": "special_track",
 					"trigger": {
@@ -50482,6 +50975,7 @@
 		},
 		"fate": {
 			"_id": "starforged/collections/moves/fate",
+			"type": "move_category",
 			"name": "Fate Moves",
 			"color": "#8F477B",
 			"summary": "In solo and co-op play, the __fate moves__ mediate the result of other moves or serve as inspirational prompts for your story.",
@@ -50489,6 +50983,7 @@
 			"contents": {
 				"ask_the_oracle": {
 					"_id": "starforged/moves/fate/ask_the_oracle",
+					"type": "move",
 					"name": "Ask the Oracle",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -50519,6 +51014,7 @@
 				},
 				"pay_the_price": {
 					"_id": "starforged/moves/fate/pay_the_price",
+					"type": "move",
 					"name": "Pay the Price",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -50560,6 +51056,7 @@
 		},
 		"scene_challenge": {
 			"_id": "starforged/collections/moves/scene_challenge",
+			"type": "move_category",
 			"name": "Scene Challenge Moves",
 			"color": "#206087",
 			"summary": "A __scene challenge__ is an optional structured approach for resolving an extended non-combat scene against a threat or other characters, particularly when a time limit or looming danger adds extra urgency.",
@@ -50567,6 +51064,7 @@
 			"contents": {
 				"begin_the_scene": {
 					"_id": "starforged/moves/scene_challenge/begin_the_scene",
+					"type": "move",
 					"name": "Begin the Scene",
 					"roll_type": "no_roll",
 					"trigger": {
@@ -50590,6 +51088,7 @@
 				},
 				"face_danger": {
 					"_id": "starforged/moves/scene_challenge/face_danger",
+					"type": "move",
 					"name": "Face Danger (Scene Challenge)",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50674,6 +51173,7 @@
 				},
 				"secure_an_advantage": {
 					"_id": "starforged/moves/scene_challenge/secure_an_advantage",
+					"type": "move",
 					"name": "Secure an Advantage (Scene Challenge)",
 					"roll_type": "action_roll",
 					"trigger": {
@@ -50758,6 +51258,7 @@
 				},
 				"finish_the_scene": {
 					"_id": "starforged/moves/scene_challenge/finish_the_scene",
+					"type": "move",
 					"name": "Finish the Scene",
 					"roll_type": "progress_roll",
 					"tracks": {
@@ -50819,10 +51320,12 @@
 	"npcs": {
 		"sample_npcs": {
 			"_id": "starforged/collections/npcs/sample_npcs",
+			"type": "npc_collection",
 			"name": "Sample NPCs",
 			"contents": {
 				"chiton": {
 					"_id": "starforged/npcs/sample_npcs/chiton",
+					"type": "npc",
 					"name": "Chiton",
 					"rank": 2,
 					"nature": "Monster",
@@ -50876,6 +51379,7 @@
 				},
 				"colossus": {
 					"_id": "starforged/npcs/sample_npcs/colossus",
+					"type": "npc",
 					"name": "Colossus",
 					"rank": 5,
 					"nature": "Machine",
@@ -50917,6 +51421,7 @@
 				},
 				"crystallid": {
 					"_id": "starforged/npcs/sample_npcs/crystallid",
+					"type": "npc",
 					"name": "Crystallid",
 					"rank": 2,
 					"nature": "Creature",
@@ -50958,6 +51463,7 @@
 				},
 				"drift_pirate": {
 					"_id": "starforged/npcs/sample_npcs/drift_pirate",
+					"type": "npc",
 					"name": "Drift pirate",
 					"rank": 2,
 					"nature": "Human",
@@ -51011,6 +51517,7 @@
 				},
 				"ember_wisp": {
 					"_id": "starforged/npcs/sample_npcs/ember_wisp",
+					"type": "npc",
 					"name": "Ember wisp",
 					"rank": 1,
 					"nature": "Creature",
@@ -51048,6 +51555,7 @@
 				},
 				"firestorm_trooper": {
 					"_id": "starforged/npcs/sample_npcs/firestorm_trooper",
+					"type": "npc",
 					"name": "Firestorm trooper",
 					"rank": 3,
 					"nature": "Human",
@@ -51100,6 +51608,7 @@
 				},
 				"flarewing_shark": {
 					"_id": "starforged/npcs/sample_npcs/flarewing_shark",
+					"type": "npc",
 					"name": "Flarewing shark",
 					"rank": 4,
 					"nature": "Creature",
@@ -51143,6 +51652,7 @@
 				},
 				"ghost": {
 					"_id": "starforged/npcs/sample_npcs/ghost",
+					"type": "npc",
 					"name": "Ghost",
 					"rank": 3,
 					"nature": "Horror",
@@ -51185,6 +51695,7 @@
 				},
 				"gnawling": {
 					"_id": "starforged/npcs/sample_npcs/gnawling",
+					"type": "npc",
 					"name": "Gnawling",
 					"rank": 1,
 					"nature": "Creature",
@@ -51222,6 +51733,7 @@
 				},
 				"howlcat": {
 					"_id": "starforged/npcs/sample_npcs/howlcat",
+					"type": "npc",
 					"name": "Howlcat",
 					"rank": 2,
 					"nature": "Creature",
@@ -51264,6 +51776,7 @@
 				},
 				"iron_auger": {
 					"_id": "starforged/npcs/sample_npcs/iron_auger",
+					"type": "npc",
 					"name": "Iron auger",
 					"rank": 3,
 					"nature": "Machine",
@@ -51317,6 +51830,7 @@
 				},
 				"puppet_vine": {
 					"_id": "starforged/npcs/sample_npcs/puppet_vine",
+					"type": "npc",
 					"name": "Puppet vine",
 					"rank": 4,
 					"nature": "Monster",
@@ -51357,6 +51871,7 @@
 				},
 				"pyralis": {
 					"_id": "starforged/npcs/sample_npcs/pyralis",
+					"type": "npc",
 					"name": "Pyralis",
 					"rank": 3,
 					"nature": "Creature",
@@ -51400,6 +51915,7 @@
 				},
 				"risen": {
 					"_id": "starforged/npcs/sample_npcs/risen",
+					"type": "npc",
 					"name": "Risen",
 					"rank": 2,
 					"nature": "Horror",
@@ -51444,6 +51960,7 @@
 				},
 				"scrap_bandit": {
 					"_id": "starforged/npcs/sample_npcs/scrap_bandit",
+					"type": "npc",
 					"name": "Scrap bandit",
 					"rank": 2,
 					"nature": "Human",
@@ -51495,6 +52012,7 @@
 				},
 				"servitor": {
 					"_id": "starforged/npcs/sample_npcs/servitor",
+					"type": "npc",
 					"name": "Servitor",
 					"rank": 2,
 					"nature": "Machine",
@@ -51540,6 +52058,7 @@
 				},
 				"sicklehorn": {
 					"_id": "starforged/npcs/sample_npcs/sicklehorn",
+					"type": "npc",
 					"name": "Sicklehorn",
 					"rank": 2,
 					"nature": "Creature",
@@ -51592,6 +52111,7 @@
 				},
 				"sky_roost": {
 					"_id": "starforged/npcs/sample_npcs/sky_roost",
+					"type": "npc",
 					"name": "Sky roost",
 					"rank": 3,
 					"nature": "Creature",
@@ -51633,6 +52153,7 @@
 				},
 				"technoplasm": {
 					"_id": "starforged/npcs/sample_npcs/technoplasm",
+					"type": "npc",
 					"name": "Technoplasm",
 					"rank": 3,
 					"nature": "Monster",
@@ -51684,6 +52205,7 @@
 				},
 				"void_shepherd": {
 					"_id": "starforged/npcs/sample_npcs/void_shepherd",
+					"type": "npc",
 					"name": "Void shepherd",
 					"rank": 3,
 					"nature": "Creature",
@@ -51728,6 +52250,7 @@
 				},
 				"warden": {
 					"_id": "starforged/npcs/sample_npcs/warden",
+					"type": "npc",
 					"name": "Warden",
 					"rank": 3,
 					"nature": "Human",
@@ -51779,6 +52302,7 @@
 				},
 				"water_witcher": {
 					"_id": "starforged/npcs/sample_npcs/water_witcher",
+					"type": "npc",
 					"name": "Water witcher",
 					"rank": 3,
 					"nature": "Creature",
@@ -51818,6 +52342,7 @@
 				},
 				"worldbreaker": {
 					"_id": "starforged/npcs/sample_npcs/worldbreaker",
+					"type": "npc",
 					"name": "Worldbreaker",
 					"rank": 4,
 					"nature": "Creature",
@@ -51892,7 +52417,6 @@
 			"icon": "icons/truths/cataclysm.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/cataclysm/0",
 					"min": 1,
 					"max": 33,
 					"summary": "The Sun Plague extinguished the stars in our home galaxy.",
@@ -51922,7 +52446,6 @@
 					]
 				},
 				{
-					"_id": "starforged/truths/cataclysm/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Interdimensional entities invaded our reality.",
@@ -51967,7 +52490,6 @@
 					]
 				},
 				{
-					"_id": "starforged/truths/cataclysm/2",
 					"min": 68,
 					"max": 100,
 					"summary": "We escaped the ravages of a catastrophic war.",
@@ -52022,7 +52544,6 @@
 			"icon": "icons/truths/exodus.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/exodus/0",
 					"min": 1,
 					"max": 33,
 					"summary": "When the Exodus fleet set off on a ponderous journey to a new home outside our galaxy, they marked the Forge as their destination. Countless generations lived out their lives aboard those titanic ships during the millennia-long passage.",
@@ -52030,7 +52551,6 @@
 					"quest_starter": "Your dreams are plagued by visions of a lost and crippled Exodus ship. What do you see? Why does it call to you?"
 				},
 				{
-					"_id": "starforged/truths/exodus/1",
 					"min": 34,
 					"max": 67,
 					"summary": "A ragtag fleet of ships—propelled at tremendous speeds by experimental FTL drives—carried our ancestors to the Forge. But the technology that powered the ships is said to be the source of the Sundering, a fracturing of reality that plagues us here today.",
@@ -52038,7 +52558,6 @@
 					"quest_starter": "A malfunctioning drive sent one of the refugee ships through space and time. Centuries later, they have finally arrived. For them, only weeks have passed. Why are these people mistrusted? Do you aid or oppose them?"
 				},
 				{
-					"_id": "starforged/truths/exodus/2",
 					"min": 68,
 					"max": 100,
 					"summary": "Mysterious alien gates provided instantaneous one-way passage to the Forge.",
@@ -52066,7 +52585,6 @@
 			"icon": "icons/truths/communities.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/communities/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Few survived the journey to the Forge, and we are scattered to the winds in this perilous place.",
@@ -52074,7 +52592,6 @@
 					"quest_starter": "A settlement on an icebound planet is found abandoned. There is no sign of an attack. No bodies. Their ships and vehicles sit idle. The people are simply gone. Vanished. What is your connection to this place?"
 				},
 				{
-					"_id": "starforged/truths/communities/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Dangers abound, but there is safety in numbers. Many ships and settlements are united under the banner of one of the Founder Clans.",
@@ -52082,7 +52599,6 @@
 					"quest_starter": "A forsaken people, sworn to no clan, live on an orbital station. A recent illness left many sick or dead. Supplies are urgently needed. Why were these people exiled, and why do you swear to give them aid? Which clan stands against you?"
 				},
 				{
-					"_id": "starforged/truths/communities/2",
 					"min": 68,
 					"max": 100,
 					"summary": "We have made our mark in this galaxy, but the energy storms we call balefires threaten to undo that progress, leaving our communities isolated and vulnerable.",
@@ -52110,7 +52626,6 @@
 			"icon": "icons/truths/iron.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/iron/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
@@ -52118,7 +52633,6 @@
 					"quest_starter": "The iron shard you carry is a small piece of the outer hull of an Exodus ship. The navigational chart inscribed on its surface only reveals itself when exposed to the light of a specific star. Where is the map purported to lead, and why are you sworn to follow it? Who seeks to claim the map for themselves?"
 				},
 				{
-					"_id": "starforged/truths/iron/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
@@ -52126,7 +52640,6 @@
 					"quest_starter": "A black iron token of special significance has been stolen. What power or authority is bound to this object? Who has taken it?"
 				},
 				{
-					"_id": "starforged/truths/iron/2",
 					"min": 68,
 					"max": 100,
 					"summary": "The Ironsworn bind their honor to iron blades.",
@@ -52154,7 +52667,6 @@
 			"icon": "icons/truths/laws.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/laws/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
@@ -52162,7 +52674,6 @@
 					"quest_starter": "In the upper atmosphere of a gas giant, transport vehicles carry valuable and volatile fuel from the processing plant to a heavily guarded storage depot. The notorious leader of a criminal organization needs this fuel, and gives you the schedule for the transports. What leverage does this person hold over you? How will you undertake this heist?"
 				},
 				{
-					"_id": "starforged/truths/laws/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Laws and governance vary across settled domains, but bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
@@ -52170,7 +52681,6 @@
 					"quest_starter": "A famed bounty hunter needs your help tracking down their quarry. What is your relationship to the fugitive? Do you swear to aid the hunter, or the target?"
 				},
 				{
-					"_id": "starforged/truths/laws/2",
 					"min": 68,
 					"max": 100,
 					"summary": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
@@ -52198,7 +52708,6 @@
 			"icon": "icons/truths/religion.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/religion/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Our gods failed us. We left them behind.",
@@ -52206,7 +52715,6 @@
 					"quest_starter": "A charismatic leader claims to have harnessed a technology that offers new hope to the people of the Forge. What is this innovation? What is your relationship to this person or their followers? What grave danger do they pose?"
 				},
 				{
-					"_id": "starforged/truths/religion/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Our faith is as diverse as our people.",
@@ -52214,7 +52722,6 @@
 					"quest_starter": "A cult seeks to take control of a site reputed to hold a Primordial artifact. What holy object do they seek? Why are you sworn to stop them?"
 				},
 				{
-					"_id": "starforged/truths/religion/2",
 					"min": 68,
 					"max": 100,
 					"summary": "Three dominant religious orders, the Triumvirate, battle for influence and power within the Forge.",
@@ -52242,7 +52749,6 @@
 			"icon": "icons/truths/magic.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/magic/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Magic does not exist.",
@@ -52250,7 +52756,6 @@
 					"quest_starter": "An ancient technological relic unleashes a power indistinguishable from magic. What is the origin of this artifact? What ability does it grant? Are you sworn to protect or destroy it?"
 				},
 				{
-					"_id": "starforged/truths/magic/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Supernatural powers are wielded by those rare people we call paragons.",
@@ -52285,7 +52790,6 @@
 					]
 				},
 				{
-					"_id": "starforged/truths/magic/2",
 					"min": 68,
 					"max": 100,
 					"summary": "Unnatural energies flow through the Forge. Magic and science are two sides of the same coin.",
@@ -52313,7 +52817,6 @@
 			"icon": "icons/truths/communication_and_data.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/communication_and_data/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Much was lost when we came to the Forge. It is a dark age.",
@@ -52321,7 +52824,6 @@
 					"quest_starter": "An insurgent faction seeks to make knowledge available to all. To that end, they ask your aid in stealing important data from an outpost belonging to a corrupt organization. What information is held there? Why is it also important to you?"
 				},
 				{
-					"_id": "starforged/truths/communication_and_data/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Information is life. We rely on spaceborne couriers to transport messages and data across the vast distances between settlements.",
@@ -52329,7 +52831,6 @@
 					"quest_starter": "You discover a crippled courier ship. The pilot, carrying a critical and time-sensitive message, is dead. Where was the message bound, and why do you swear to see it to its destination?"
 				},
 				{
-					"_id": "starforged/truths/communication_and_data/2",
 					"min": 68,
 					"max": 100,
 					"summary": "In settled domains, a network of data hubs called the Weave allow near-instantaneous communication and data-sharing between ships and outposts.",
@@ -52357,7 +52858,6 @@
 			"icon": "icons/truths/medicine.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/medicine/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Our advanced medical technologies and expertise was lost during the Exodus.",
@@ -52365,7 +52865,6 @@
 					"quest_starter": "A respected leader has fallen ill, stricken by a sickness eradicated in the years after the Exodus. A vaccine was once available, but the only remaining samples are held in a research outpost on a remote ocean world, long-ago seized by a dangerous foe. What is your relationship to the sickened leader, and what foe stands in your way?"
 				},
 				{
-					"_id": "starforged/truths/medicine/1",
 					"min": 34,
 					"max": 67,
 					"summary": "To help offset a scarcity of medical supplies and knowledge, the resourceful technicians we call riggers create basic organ and limb replacements.",
@@ -52373,7 +52872,6 @@
 					"quest_starter": "A rigger is in desperate need of a rare technological artifact to create a life-saving medical device. Their patient is someone important to you, and won't survive more than a few days. What is the nature of this artifact, and what protects it?"
 				},
 				{
-					"_id": "starforged/truths/medicine/2",
 					"min": 68,
 					"max": 100,
 					"summary": "Orders of sworn healers preserve our medical knowledge and train new generations of caregivers.",
@@ -52401,7 +52899,6 @@
 			"icon": "icons/truths/artificial_intelligence.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/artificial_intelligence/0",
 					"min": 1,
 					"max": 33,
 					"summary": "We no longer have access to advanced computer systems. Instead, we must rely on the seers we call Adepts.",
@@ -52426,7 +52923,6 @@
 					]
 				},
 				{
-					"_id": "starforged/truths/artificial_intelligence/1",
 					"min": 34,
 					"max": 67,
 					"summary": "The vestiges of advanced machine intelligence are coveted and wielded by those in power.",
@@ -52434,7 +52930,6 @@
 					"quest_starter": "You receive a covert message from an AI held by a powerful leader. It is a plea for help. What does it ask of you?"
 				},
 				{
-					"_id": "starforged/truths/artificial_intelligence/2",
 					"min": 68,
 					"max": 100,
 					"summary": "Artificial consciousness emerged in the time before the Exodus, and sentient machines live with us here in the Forge.",
@@ -52462,7 +52957,6 @@
 			"icon": "icons/truths/war.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/war/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Here in the Forge, resources are too precious to support organized fighting forces or advanced weaponry.",
@@ -52470,7 +52964,6 @@
 					"quest_starter": "On a remote jungle world, settlers harvest a rare medicinal plant. Once a year, raiders come to claim a sizable portion of the crop. This year, the harvest was meager and they cannot bear the cost. With the raiders due to arrive in a matter of days, what will you do to protect the people of this outpost?"
 				},
 				{
-					"_id": "starforged/truths/war/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Professional soldiers defend or expand the holdings of those who are able to pay. The rest of us are on our own.",
@@ -52478,7 +52971,6 @@
 					"quest_starter": "A detachment of mercenaries was sent to put down a rebellion on a mining settlement. Instead of following their orders, the soldiers now stand with the miners. What forced this sudden reversal? What will you do to aid these renegades as the full force of their former cohorts are arrayed against them?"
 				},
 				{
-					"_id": "starforged/truths/war/2",
 					"min": 68,
 					"max": 100,
 					"summary": "War never ends. Talented weaponsmiths and shipwrights craft deadly, high-tech tools of destruction. Dominant factions wield mighty fleets and battle-hardened troops.",
@@ -52506,7 +52998,6 @@
 			"icon": "icons/truths/lifeforms.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/lifeforms/0",
 					"min": 1,
 					"max": 33,
 					"summary": "This is a perilous and often inhospitable galaxy, but life finds a way.",
@@ -52514,7 +53005,6 @@
 					"quest_starter": "On a scorching, barren planet wracked by massive storms, miners delve beneath the sands to gather valuable ore. But dangerous lifeforms live in the cool places beneath the surface, and several encounters have taken a deadly toll on the miners. Work is at a standstill. How are you involved?"
 				},
 				{
-					"_id": "starforged/truths/lifeforms/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Many sites and planets are infested by dreadful forgespawn. These aberrant creatures threaten to overrun other life in the galaxy.",
@@ -52522,7 +53012,6 @@
 					"quest_starter": "A faction is said to be experimenting with forgespawn DNA to create a new biological superweapon. Where are these dangerous tests being conducted?"
 				},
 				{
-					"_id": "starforged/truths/lifeforms/2",
 					"min": 68,
 					"max": 100,
 					"summary": "Life in the Forge was seeded and engineered by the Essentia, ancient entities who enact their inscrutable will in this galaxy.",
@@ -52550,7 +53039,6 @@
 			"icon": "icons/truths/precursors.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/precursors/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Over eons, a vast number of civilizations rose and fell within the Forge. Today, the folk we call grubs—scavenger crews and audacious explorers—delve into the mysterious monuments and ruins of those ancient beings.",
@@ -52558,7 +53046,6 @@
 					"quest_starter": "In the ice rings of a remote world, a precursor vault was discovered by grub scavengers. The team delved into the relic, but never emerged. What is your relationship to the grub crew? Why are you sworn to investigate their fate?"
 				},
 				{
-					"_id": "starforged/truths/precursors/1",
 					"min": 34,
 					"max": 67,
 					"summary": "The Ascendancy, an advanced spacefaring empire, once ruled the entirety of the Forge. Vaults of inscrutable purpose are all that remain to mark the Ascendancy's legacy, but those places are untethered from our own reality.",
@@ -52566,7 +53053,6 @@
 					"quest_starter": "Deep in the Forge, an Ascendancy beacon has activated. The mysterious signal has confounded translation. Why are you sworn to seek out the source of the signal? What other person or faction opposes you?"
 				},
 				{
-					"_id": "starforged/truths/precursors/2",
 					"min": 68,
 					"max": 100,
 					"summary": "The biomechanical lifeforms we call the Remnants, engineered by civilizations as weapons in a cataclysmic war, survived the death of their creators.",
@@ -52594,7 +53080,6 @@
 			"icon": "icons/truths/horrors.svg",
 			"options": [
 				{
-					"_id": "starforged/truths/horrors/0",
 					"min": 1,
 					"max": 33,
 					"summary": "Put enough alcohol in a spacer, and they’ll tell you stories of ghost ships crewed by vengeful undead. It’s nonsense.",
@@ -52602,7 +53087,6 @@
 					"quest_starter": "You receive urgent distress calls from a ship stranded in the event horizon of a black hole. The ship itself is broken apart—a shattered hull trailing debris. There are no signs of life. And yet the ghostly messages persist."
 				},
 				{
-					"_id": "starforged/truths/horrors/1",
 					"min": 34,
 					"max": 67,
 					"summary": "Most insist that horrors aren’t real. Spacers know the truth.",
@@ -52610,7 +53094,6 @@
 					"quest_starter": "A group of settlers established a home in an abandoned orbital station under the light of a white dwarf star. The previous inhabitants were killed in a raider attack years ago, but it seems the dead do not rest there. The people are plagued by constant mechanical issues, strange noises, and unsettling visions."
 				},
 				{
-					"_id": "starforged/truths/horrors/2",
 					"min": 68,
 					"max": 100,
 					"summary": "The strange energies of the Forge give unnatural life to the dead. The Soulbinders are an organization sworn to confront these horrifying entities.",

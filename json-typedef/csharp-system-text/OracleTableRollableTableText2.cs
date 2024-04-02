@@ -52,6 +52,9 @@ namespace Datasworn
         [JsonPropertyName("rows")]
         public IList<OracleTableRowText2> Rows { get; set; }
 
+        [JsonPropertyName("type")]
+        public OracleTableRollableTableText2Type Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object

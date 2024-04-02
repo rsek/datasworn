@@ -32,6 +32,9 @@ public class OracleTableRollableTableText extends OracleTableRollable {
     @JsonProperty("rows")
     private List<OracleTableRowText> rows;
 
+    @JsonProperty("type")
+    private OracleTableRollableTableTextType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -173,6 +176,20 @@ public class OracleTableRollableTableText extends OracleTableRollable {
      */
     public void setRows(List<OracleTableRowText> rows) {
         this.rows = rows;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public OracleTableRollableTableTextType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(OracleTableRollableTableTextType type) {
+        this.type = type;
     }
 
     /**

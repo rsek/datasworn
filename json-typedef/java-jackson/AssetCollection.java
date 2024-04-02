@@ -19,6 +19,9 @@ public class AssetCollection {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("type")
+    private AssetCollectionType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -118,6 +121,20 @@ public class AssetCollection {
      */
     public void setName(Label name) {
         this.name = name;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public AssetCollectionType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(AssetCollectionType type) {
+        this.type = type;
     }
 
     /**

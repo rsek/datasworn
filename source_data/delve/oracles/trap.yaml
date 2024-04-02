@@ -1,6 +1,5 @@
 _id: delve
-type: package
-package_type: expansion
+type: expansion
 ruleset: classic
 oracles:
   trap:
@@ -14,6 +13,7 @@ oracles:
           - name: Shawn Tomkin
       page: 217
     name: Trap
+    type: oracle_collection
     summary: Identify the characteristics and effects of a trap within a site.
     # TODO: replace the page ref for scene challenges to an article on the topic, once that's available
     description: |-

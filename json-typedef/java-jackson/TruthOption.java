@@ -9,18 +9,11 @@ import java.util.List;
 
 @JsonSerialize
 public class TruthOption {
-    @JsonProperty("_id")
-    private TruthOptionId id;
-
     @JsonProperty("description")
     private MarkdownString description;
 
     @JsonProperty("quest_starter")
     private MarkdownString questStarter;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("_comment")
-    private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("max")
@@ -36,25 +29,9 @@ public class TruthOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("table")
-    private List<TruthOptionTableRow> table;
+    private List<OracleTableRowText> table;
 
     public TruthOption() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public TruthOptionId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(TruthOptionId id) {
-        this.id = id;
     }
 
     /**
@@ -83,24 +60,6 @@ public class TruthOption {
      */
     public void setQuestStarter(MarkdownString questStarter) {
         this.questStarter = questStarter;
-    }
-
-    /**
-     * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public String getComment() {
-        return comment;
-    }
-
-    /**
-     * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public void setComment(String comment) {
-        this.comment = comment;
     }
 
     /**
@@ -148,14 +107,14 @@ public class TruthOption {
     /**
      * Getter for table.<p>
      */
-    public List<TruthOptionTableRow> getTable() {
+    public List<OracleTableRowText> getTable() {
         return table;
     }
 
     /**
      * Setter for table.<p>
      */
-    public void setTable(List<TruthOptionTableRow> table) {
+    public void setTable(List<OracleTableRowText> table) {
         this.table = table;
     }
 }

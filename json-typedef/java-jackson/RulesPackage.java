@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * Describes game rules compatible with the Ironsworn tabletop role-playing game
  * by Shawn Tomkin.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "package_type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "expansion", value = RulesPackageExpansion.class),
     @JsonSubTypes.Type(name = "ruleset", value = RulesPackageRuleset.class),

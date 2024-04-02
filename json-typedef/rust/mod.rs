@@ -8,7 +8,7 @@ use std::collections::HashMap;
 /// Describes game rules compatible with the Ironsworn tabletop role-playing
 /// game by Shawn Tomkin.
 #[derive(Serialize, Deserialize)]
-#[serde(tag = "package_type")]
+#[serde(tag = "type")]
 pub enum RulesPackage {
     #[serde(rename = "expansion")]
     Expansion(RulesPackageExpansion),
@@ -58,6 +58,10 @@ pub struct RulesPackageExpansion {
     #[serde(rename = "delve_sites")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub delveSites: Option<Box<HashMap<String, DelveSite>>>,
+
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
 
     #[serde(rename = "license")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -173,6 +177,10 @@ pub struct RulesPackageRuleset {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub delveSites: Option<Box<HashMap<String, DelveSite>>>,
 
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
     /// A dictionary object containing NPC collections, which contain NPCs.
     #[serde(rename = "npcs")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -232,6 +240,12 @@ pub enum ActionRollMethod {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum AssetType {
+    #[serde(rename = "asset")]
+    Asset,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct Asset {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
@@ -264,6 +278,9 @@ pub struct Asset {
     /// player's allies, too.
     #[serde(rename = "shared")]
     pub shared: bool,
+
+    #[serde(rename = "type")]
+    pub type_: AssetType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -524,6 +541,12 @@ pub struct AssetAttachment {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum AssetCollectionType {
+    #[serde(rename = "asset_collection")]
+    AssetCollection,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct AssetCollection {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
@@ -537,6 +560,9 @@ pub struct AssetCollection {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: AssetCollectionType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1015,6 +1041,12 @@ pub struct AssetOptionFieldText {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum AtlasType {
+    #[serde(rename = "atlas")]
+    Atlas,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct Atlas {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
@@ -1028,6 +1060,9 @@ pub struct Atlas {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: AtlasType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1098,6 +1133,12 @@ pub struct Atlas {
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum AtlasEntryType {
+    #[serde(rename = "atlas_entry")]
+    AtlasEntry,
+}
+
 /// An atlas entry, like the Ironlands region entries found in classic
 /// Ironsworn.
 #[derive(Serialize, Deserialize)]
@@ -1120,6 +1161,9 @@ pub struct AtlasEntry {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: AtlasEntryType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1594,6 +1638,12 @@ pub enum Move {
     SpecialTrack(MoveSpecialTrack),
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum MoveActionRollType {
+    #[serde(rename = "move")]
+    Move,
+}
+
 /// A move that makes an action roll.
 #[derive(Serialize, Deserialize)]
 pub struct MoveActionRoll {
@@ -1620,6 +1670,9 @@ pub struct MoveActionRoll {
     /// Trigger conditions for this move.
     #[serde(rename = "trigger")]
     pub trigger: TriggerActionRoll,
+
+    #[serde(rename = "type")]
+    pub type_: MoveActionRollType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1655,6 +1708,12 @@ pub struct MoveActionRoll {
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum MoveNoRollType {
+    #[serde(rename = "move")]
+    Move,
+}
+
 /// A move that makes no progress rolls or action rolls.
 #[derive(Serialize, Deserialize)]
 pub struct MoveNoRoll {
@@ -1678,6 +1737,9 @@ pub struct MoveNoRoll {
     /// Trigger conditions for this move.
     #[serde(rename = "trigger")]
     pub trigger: TriggerNoRoll,
+
+    #[serde(rename = "type")]
+    pub type_: MoveNoRollType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1711,6 +1773,12 @@ pub struct MoveNoRoll {
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum MoveProgressRollType {
+    #[serde(rename = "move")]
+    Move,
 }
 
 /// A progress move that rolls on a standard progress track type (whose features
@@ -1747,6 +1815,9 @@ pub struct MoveProgressRoll {
     #[serde(rename = "trigger")]
     pub trigger: TriggerProgressRoll,
 
+    #[serde(rename = "type")]
+    pub type_: MoveProgressRollType,
+
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
     #[serde(rename = "_comment")]
@@ -1779,6 +1850,12 @@ pub struct MoveProgressRoll {
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum MoveSpecialTrackType {
+    #[serde(rename = "move")]
+    Move,
 }
 
 /// A progress move that rolls on a special track, such as Legacies (Starforged)
@@ -1810,6 +1887,9 @@ pub struct MoveSpecialTrack {
     #[serde(rename = "trigger")]
     pub trigger: TriggerSpecialTrack,
 
+    #[serde(rename = "type")]
+    pub type_: MoveSpecialTrackType,
+
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
     #[serde(rename = "_comment")]
@@ -1845,6 +1925,12 @@ pub struct MoveSpecialTrack {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum MoveCategoryType {
+    #[serde(rename = "move_category")]
+    MoveCategory,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct MoveCategory {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
@@ -1858,6 +1944,9 @@ pub struct MoveCategory {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: MoveCategoryType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2031,6 +2120,12 @@ pub struct MoveOutcomes {
     pub weakHit: MoveOutcome,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum NpcType {
+    #[serde(rename = "npc")]
+    Npc,
+}
+
 /// A non-player character entry, similar to those in Chapter 5 of the Ironsworn
 /// Rulebook, or Chapter 4 of Starforged.
 #[derive(Serialize, Deserialize)]
@@ -2066,6 +2161,9 @@ pub struct Npc {
 
     #[serde(rename = "tactics")]
     pub tactics: Vec<MarkdownString>,
+
+    #[serde(rename = "type")]
+    pub type_: NpcType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2105,6 +2203,12 @@ pub struct Npc {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum NpcCollectionType {
+    #[serde(rename = "npc_collection")]
+    NpcCollection,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct NpcCollection {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
@@ -2118,6 +2222,9 @@ pub struct NpcCollection {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: NpcCollectionType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2307,6 +2414,12 @@ pub struct OracleCollectionTableSharedRollsColumnLabels {
     pub roll: Label,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum OracleCollectionTableSharedRollsType {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
 /// An OracleCollection representing a single table with one roll column and
 /// multiple `result` columns.
 #[derive(Serialize, Deserialize)]
@@ -2330,6 +2443,9 @@ pub struct OracleCollectionTableSharedRolls {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: OracleCollectionTableSharedRollsType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2404,6 +2520,12 @@ pub struct OracleCollectionTableSharedTextColumnLabels {
     pub text: Label,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum OracleCollectionTableSharedTextType {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
 /// An OracleCollection representing a single table with multiple roll columns
 /// and one `result` column.
 #[derive(Serialize, Deserialize)]
@@ -2425,6 +2547,9 @@ pub struct OracleCollectionTableSharedText {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: OracleCollectionTableSharedTextType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2502,6 +2627,12 @@ pub struct OracleCollectionTableSharedText2ColumnLabels {
     pub text2: Label,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum OracleCollectionTableSharedText2Type {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
 /// An OracleCollection representing a single table with multiple roll columns,
 /// and 2 shared text columns.
 #[derive(Serialize, Deserialize)]
@@ -2523,6 +2654,9 @@ pub struct OracleCollectionTableSharedText2 {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: OracleCollectionTableSharedText2Type,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2597,6 +2731,12 @@ pub struct OracleCollectionTableSharedText3ColumnLabels {
     pub text: Label,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum OracleCollectionTableSharedText3Type {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
 /// An OracleCollection representing a single table with multiple roll columns,
 /// and 2 shared text columns.
 #[derive(Serialize, Deserialize)]
@@ -2619,6 +2759,9 @@ pub struct OracleCollectionTableSharedText3 {
     #[serde(rename = "name")]
     pub name: Label,
 
+    #[serde(rename = "type")]
+    pub type_: OracleCollectionTableSharedText3Type,
+
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
     #[serde(rename = "_comment")]
@@ -2638,7 +2781,7 @@ pub struct OracleCollectionTableSharedText3 {
 
     #[serde(rename = "contents")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<Box<HashMap<String, OracleColumnText2>>>,
+    pub contents: Option<Box<HashMap<String, OracleColumnText3>>>,
 
     /// A longer description of this collection, which might include multiple
     /// paragraphs. If it's only a couple sentences, use the `summary` key
@@ -2684,6 +2827,12 @@ pub struct OracleCollectionTableSharedText3 {
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum OracleCollectionTablesType {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
 /// An OracleCollection that represents a category or grouping of tables, which
 /// may themselves be `OracleTablesCollection`s.
 #[derive(Serialize, Deserialize)]
@@ -2700,6 +2849,9 @@ pub struct OracleCollectionTables {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: OracleCollectionTablesType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2779,6 +2931,12 @@ pub enum OracleColumnTextOracleType {
     ColumnText,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum OracleColumnTextType {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
 /// Represents a single column in an OracleCollection.
 #[derive(Serialize, Deserialize)]
 pub struct OracleColumnText {
@@ -2800,6 +2958,9 @@ pub struct OracleColumnText {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleColumnTextType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -2853,6 +3014,12 @@ pub enum OracleColumnText2OracleType {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum OracleColumnText2Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct OracleColumnText2 {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
@@ -2872,6 +3039,90 @@ pub struct OracleColumnText2 {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText2>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleColumnText2Type,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// An optional thematic color for this column. For an example, see "Basic
+    /// Creature Form" (Starforged p. 337)
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    /// An optional icon for this column.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    /// Indicates that this object replaces the identified OracleRollable.
+    /// References to the replaced object can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// Optional secondary text at the head of this column. For best results,
+    /// this should be no more than a few words in length.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleColumnText3OracleType {
+    #[serde(rename = "column_text3")]
+    ColumnText3,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleColumnText3Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleColumnText3 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary label at the head of this column.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleColumnText3OracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleTableRowText3>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleColumnText3Type,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -3021,6 +3272,12 @@ pub struct OracleTableRollableTableTextColumnLabels {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum OracleTableRollableTableTextType {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct OracleTableRollableTableTextRecommendedRolls {
     #[serde(rename = "max")]
     pub max: i16,
@@ -3058,6 +3315,9 @@ pub struct OracleTableRollableTableText {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableRollableTableTextType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -3132,6 +3392,12 @@ pub struct OracleTableRollableTableText2ColumnLabels {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum OracleTableRollableTableText2Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct OracleTableRollableTableText2RecommendedRolls {
     #[serde(rename = "max")]
     pub max: i16,
@@ -3168,6 +3434,9 @@ pub struct OracleTableRollableTableText2 {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText2>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableRollableTableText2Type,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -3245,6 +3514,12 @@ pub struct OracleTableRollableTableText3ColumnLabels {
 }
 
 #[derive(Serialize, Deserialize)]
+pub enum OracleTableRollableTableText3Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct OracleTableRollableTableText3RecommendedRolls {
     #[serde(rename = "max")]
     pub max: i16,
@@ -3281,6 +3556,9 @@ pub struct OracleTableRollableTableText3 {
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
     pub rows: Vec<OracleTableRowText3>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableRollableTableText3Type,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -3485,6 +3763,12 @@ pub enum OracleTablesCollectionOracleType {
     Tables,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum OracleTablesCollectionType {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
 /// An OracleCollection that represents a category or grouping of tables, which
 /// may themselves be `OracleTablesCollection`s.
 #[derive(Serialize, Deserialize)]
@@ -3505,6 +3789,9 @@ pub struct OracleTablesCollection {
     /// A grouping of separate tables.
     #[serde(rename = "oracle_type")]
     pub oracleType: OracleTablesCollectionOracleType,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTablesCollectionType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -4834,21 +5121,11 @@ pub type TruthId = String;
 
 #[derive(Serialize, Deserialize)]
 pub struct TruthOption {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: TruthOptionId,
-
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
     #[serde(rename = "quest_starter")]
     pub questStarter: MarkdownString,
-
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
 
     #[serde(rename = "max")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -4864,53 +5141,7 @@ pub struct TruthOption {
 
     #[serde(rename = "table")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub table: Option<Box<Vec<TruthOptionTableRow>>>,
-}
-
-/// A unique ID for a TruthOption.
-pub type TruthOptionId = String;
-
-/// Represents a row in an oracle table, with a single text cell.
-#[derive(Serialize, Deserialize)]
-pub struct TruthOptionTableRow {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
-
-    /// The primary text content of this row.
-    #[serde(rename = "text")]
-    pub text: MarkdownString,
-
-    #[serde(rename = "_i18n")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
-
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
-
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
+    pub table: Option<Box<Vec<OracleTableRowText>>>,
 }
 
 /// An absolute URL pointing to a website.

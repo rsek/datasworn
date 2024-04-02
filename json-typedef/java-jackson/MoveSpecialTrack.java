@@ -33,6 +33,9 @@ public class MoveSpecialTrack extends Move {
     @JsonProperty("trigger")
     private TriggerSpecialTrack trigger;
 
+    @JsonProperty("type")
+    private MoveSpecialTrackType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -154,6 +157,20 @@ public class MoveSpecialTrack extends Move {
      */
     public void setTrigger(TriggerSpecialTrack trigger) {
         this.trigger = trigger;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public MoveSpecialTrackType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(MoveSpecialTrackType type) {
+        this.type = type;
     }
 
     /**

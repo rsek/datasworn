@@ -36,6 +36,9 @@ namespace Datasworn
         [JsonPropertyName("name")]
         public Label Name { get; set; }
 
+        [JsonPropertyName("type")]
+        public AtlasEntryType Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object

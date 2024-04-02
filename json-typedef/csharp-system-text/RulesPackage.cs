@@ -20,7 +20,7 @@ namespace Datasworn
         public override RulesPackage Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var readerCopy = reader;
-            var tagValue = JsonDocument.ParseValue(ref reader).RootElement.GetProperty("package_type").GetString();
+            var tagValue = JsonDocument.ParseValue(ref reader).RootElement.GetProperty("type").GetString();
 
             switch (tagValue)
             {
@@ -29,7 +29,7 @@ namespace Datasworn
                 case "ruleset":
                     return JsonSerializer.Deserialize<RulesPackageRuleset>(ref readerCopy, options);
                 default:
-                    throw new ArgumentException(String.Format("Bad PackageType value: {0}", tagValue));
+                    throw new ArgumentException(String.Format("Bad Type_ value: {0}", tagValue));
             }
         }
 

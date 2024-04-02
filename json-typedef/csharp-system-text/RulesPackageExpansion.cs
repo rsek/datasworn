@@ -12,8 +12,8 @@ namespace Datasworn
     /// </summary>
     public class RulesPackageExpansion : RulesPackage
     {
-        [JsonPropertyName("package_type")]
-        public string PackageType { get => "expansion"; }
+        [JsonPropertyName("type")]
+        public string Type_ { get => "expansion"; }
 
         [JsonPropertyName("_id")]
         public ExpansionId Id { get; set; }
@@ -66,6 +66,10 @@ namespace Datasworn
         [JsonPropertyName("delve_sites")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public IDictionary<string, DelveSite> DelveSites { get; set; }
+
+        [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public MarkdownString? Description { get; set; }
 
         [JsonPropertyName("license")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

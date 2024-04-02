@@ -51,6 +51,9 @@ namespace Datasworn
         [JsonPropertyName("shared")]
         public bool Shared { get; set; }
 
+        [JsonPropertyName("type")]
+        public AssetType Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object

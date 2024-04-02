@@ -3,27 +3,29 @@ import { Id, Localize, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as TableRow from './oracles/TableRow.js'
 
-export const TruthOptionTableRow = Type.Omit(
-	TableRow.OracleTableRowText,
-	['_id'],
-	{
-		$id: 'TruthOptionTableRow'
-	}
-)
-export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
+// export const TruthOptionTableRow = Type.Omit(
+// 	TableRow.OracleTableRowText,
+// 	['_id'],
+// 	{
+// 		$id: 'TruthOptionTableRow'
+// 	}
+// )
+// export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
 
-export const TruthOption = Generic.IdentifiedNode(
-	Type.Ref(Id.TruthOptionId),
-	Type.Object({
+export const TruthOption = Type.Object(
+	{
 		min: Type.Optional(Type.Integer()),
 		max: Type.Optional(Type.Integer()),
 		summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		description: Type.Ref(Localize.MarkdownString),
 		quest_starter: Type.Ref(Localize.MarkdownString),
-		table: Type.Optional(Type.Array(Type.Ref(TruthOptionTableRow)))
-	}),
+		// TODO: this should probably be a proper table object so that custom dice can be specified...
+		table: Type.Optional(Type.Array(Type.Ref(TableRow.OracleTableRowText)))
+	},
 	{ $id: 'TruthOption' }
 )
+
+
 
 export type TruthOption = Static<typeof TruthOption>
 

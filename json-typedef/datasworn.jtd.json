@@ -1,5 +1,5 @@
 {
-	"discriminator": "package_type",
+	"discriminator": "type",
 	"mapping": {
 		"ruleset": {
 			"properties": {
@@ -84,6 +84,9 @@
 				}
 			},
 			"optionalProperties": {
+				"description": {
+					"ref": "MarkdownString"
+				},
 				"atlas": {
 					"values": {
 						"ref": "Atlas"
@@ -168,6 +171,9 @@
 				}
 			},
 			"optionalProperties": {
+				"description": {
+					"ref": "MarkdownString"
+				},
 				"title": {
 					"type": "string",
 					"metadata": {
@@ -520,7 +526,8 @@
 				"description": "The ID of standalone Datasworn package that describes its own ruleset.",
 				"examples": [
 					"classic",
-					"starforged"
+					"starforged",
+					"sundered_isles"
 				],
 				"pattern": "^([a-z0-9_]{3,})$"
 			}
@@ -534,17 +541,6 @@
 					"starforged/truths/iron"
 				],
 				"pattern": "^([a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)$"
-			}
-		},
-		"TruthOptionId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a TruthOption.",
-				"examples": [
-					"classic/truths/iron/0",
-					"starforged/truths/iron/0"
-				],
-				"pattern": "^([a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)\\/(0|[1-9][0-9]*)$"
 			}
 		},
 		"AuthorInfo": {
@@ -1648,6 +1644,11 @@
 					"elements": {
 						"ref": "MarkdownString"
 					}
+				},
+				"type": {
+					"enum": [
+						"npc"
+					]
 				}
 			},
 			"optionalProperties": {
@@ -1720,6 +1721,11 @@
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
+				},
+				"type": {
+					"enum": [
+						"npc_collection"
+					]
 				}
 			},
 			"optionalProperties": {
@@ -1973,6 +1979,11 @@
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
+						},
+						"type": {
+							"enum": [
+								"oracle_collection"
+							]
 						}
 					},
 					"optionalProperties": {
@@ -2088,6 +2099,11 @@
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
+						},
+						"type": {
+							"enum": [
+								"oracle_collection"
+							]
 						},
 						"column_labels": {
 							"properties": {
@@ -2206,6 +2222,11 @@
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
 						},
+						"type": {
+							"enum": [
+								"oracle_collection"
+							]
+						},
 						"column_labels": {
 							"properties": {
 								"text": {
@@ -2322,6 +2343,11 @@
 							"metadata": {
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
+						},
+						"type": {
+							"enum": [
+								"oracle_collection"
+							]
 						},
 						"column_labels": {
 							"properties": {
@@ -2443,6 +2469,11 @@
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
 						},
+						"type": {
+							"enum": [
+								"oracle_collection"
+							]
+						},
 						"column_labels": {
 							"properties": {
 								"text": {
@@ -2529,7 +2560,7 @@
 						},
 						"contents": {
 							"values": {
-								"ref": "OracleColumnText2"
+								"ref": "OracleColumnText3"
 							},
 							"metadata": {
 								"propertyPattern": "^([a-z][a-z_]*)$"
@@ -2569,6 +2600,11 @@
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
 					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
 				},
 				"oracle_type": {
 					"enum": [
@@ -2662,9 +2698,109 @@
 						"description": "An array of objects, each representing a single row of the table."
 					}
 				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
 				"oracle_type": {
 					"enum": [
 						"column_text2"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+					}
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An optional icon for this column."
+					}
+				},
+				"replaces": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"tags": {
+					"values": {
+						"values": {
+							"ref": "Tag"
+						},
+						"metadata": {
+							"propertyPattern": "^([a-z][a-z_]*)$"
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^([a-z0-9_]{3,})$"
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				}
+			},
+			"metadata": {}
+		},
+		"OracleColumnText3": {
+			"properties": {
+				"_id": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary label at the head of this column."
+					}
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleTableRowText3"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"oracle_type": {
+					"enum": [
+						"column_text3"
 					]
 				}
 			},
@@ -2773,6 +2909,11 @@
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
 							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
 						}
 					},
 					"optionalProperties": {
@@ -2898,6 +3039,11 @@
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
 							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
 						}
 					},
 					"optionalProperties": {
@@ -3026,6 +3172,11 @@
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
 							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
 						}
 					},
 					"optionalProperties": {
@@ -3292,6 +3443,11 @@
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
 				},
+				"type": {
+					"enum": [
+						"oracle_collection"
+					]
+				},
 				"oracle_type": {
 					"enum": [
 						"tables"
@@ -3454,6 +3610,11 @@
 						},
 						"outcomes": {
 							"ref": "MoveOutcomes"
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
 						}
 					},
 					"optionalProperties": {
@@ -3535,6 +3696,11 @@
 							"metadata": {
 								"description": "Trigger conditions for this move."
 							}
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
 						}
 					},
 					"optionalProperties": {
@@ -3619,6 +3785,11 @@
 						},
 						"outcomes": {
 							"ref": "MoveOutcomes"
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
 						},
 						"tracks": {
 							"ref": "ProgressTrackTypeInfo",
@@ -3709,6 +3880,11 @@
 						},
 						"outcomes": {
 							"ref": "MoveOutcomes"
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
 						}
 					},
 					"optionalProperties": {
@@ -3780,6 +3956,11 @@
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
+				},
+				"type": {
+					"enum": [
+						"move_category"
+					]
 				}
 			},
 			"optionalProperties": {
@@ -4412,6 +4593,11 @@
 					"metadata": {
 						"description": "Most assets only benefit to their owner, but certain assets (like Starforged's module and command vehicle assets) are shared amongst the player's allies, too."
 					}
+				},
+				"type": {
+					"enum": [
+						"asset"
+					]
 				}
 			},
 			"optionalProperties": {
@@ -4763,6 +4949,11 @@
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
+				},
+				"type": {
+					"enum": [
+						"asset_collection"
+					]
 				}
 			},
 			"optionalProperties": {
@@ -5604,12 +5795,6 @@
 		},
 		"TruthOption": {
 			"properties": {
-				"_id": {
-					"ref": "TruthOptionId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
 				"description": {
 					"ref": "MarkdownString"
 				},
@@ -5618,12 +5803,6 @@
 				}
 			},
 			"optionalProperties": {
-				"_comment": {
-					"type": "string",
-					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-					}
-				},
 				"min": {
 					"type": "int16"
 				},
@@ -5635,63 +5814,9 @@
 				},
 				"table": {
 					"elements": {
-						"ref": "TruthOptionTableRow"
+						"ref": "OracleTableRowText"
 					}
 				}
-			},
-			"metadata": {}
-		},
-		"TruthOptionTableRow": {
-			"properties": {
-				"text": {
-					"ref": "MarkdownString",
-					"metadata": {
-						"description": "The primary text content of this row."
-					}
-				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
-				}
-			},
-			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
-					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
-					}
-				},
-				"suggestions": {
-					"ref": "Suggestions"
-				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				}
-			},
-			"metadata": {
-				"description": "Represents a row in an oracle table, with a single text cell."
 			}
 		},
 		"Atlas": {
@@ -5713,6 +5838,11 @@
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
+				},
+				"type": {
+					"enum": [
+						"atlas"
+					]
 				}
 			},
 			"optionalProperties": {
@@ -5833,6 +5963,11 @@
 				},
 				"description": {
 					"ref": "MarkdownString"
+				},
+				"type": {
+					"enum": [
+						"atlas_entry"
+					]
 				}
 			},
 			"optionalProperties": {

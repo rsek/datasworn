@@ -28,6 +28,9 @@ public class AtlasEntry {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("type")
+    private AtlasEntryType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -135,6 +138,20 @@ public class AtlasEntry {
      */
     public void setName(Label name) {
         this.name = name;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public AtlasEntryType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(AtlasEntryType type) {
+        this.type = type;
     }
 
     /**

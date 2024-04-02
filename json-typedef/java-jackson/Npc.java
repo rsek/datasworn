@@ -41,6 +41,9 @@ public class Npc {
     @JsonProperty("tactics")
     private List<MarkdownString> tactics;
 
+    @JsonProperty("type")
+    private NpcType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -210,6 +213,20 @@ public class Npc {
      */
     public void setTactics(List<MarkdownString> tactics) {
         this.tactics = tactics;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public NpcType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(NpcType type) {
+        this.type = type;
     }
 
     /**

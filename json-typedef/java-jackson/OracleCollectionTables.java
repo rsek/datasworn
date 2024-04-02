@@ -23,6 +23,9 @@ public class OracleCollectionTables extends OracleCollection {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("type")
+    private OracleCollectionTablesType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -126,6 +129,20 @@ public class OracleCollectionTables extends OracleCollection {
      */
     public void setName(Label name) {
         this.name = name;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public OracleCollectionTablesType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(OracleCollectionTablesType type) {
+        this.type = type;
     }
 
     /**

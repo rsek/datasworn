@@ -56,6 +56,9 @@ namespace Datasworn
         [JsonPropertyName("trigger")]
         public TriggerProgressRoll Trigger { get; set; }
 
+        [JsonPropertyName("type")]
+        public MoveProgressRollType Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object

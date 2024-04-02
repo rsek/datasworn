@@ -1,8 +1,8 @@
 _id: starforged
-package_type: ruleset
-type: package
+type: ruleset
 assets:
   support_vehicle:
+    type: asset_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -22,6 +22,7 @@ assets:
     contents:
       exosuit:
         name: Exosuit
+        type: asset
         <<: &SupportVehicleAsset
           category: Support Vehicle
           shared: true
@@ -77,7 +78,6 @@ assets:
               - enhances:
                   - starforged/moves/suffer/withstand_damage
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -85,6 +85,7 @@ assets:
                       text: To your Exosuit
       hoverbike:
         name: Hoverbike
+        type: asset
         <<: *SupportVehicleAsset
         controls:
           integrity:
@@ -99,7 +100,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: On your hoverbike
@@ -122,6 +122,7 @@ assets:
             # TODO: momentum burn trigger
       rover:
         name: Rover
+        type: asset
         <<: *SupportVehicleAsset
         controls:
           integrity:
@@ -145,7 +146,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/finish_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -165,7 +165,6 @@ assets:
                   - 'starforged/moves/*/face_danger'
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By taking a hit or crashing through an obstacle
@@ -176,6 +175,7 @@ assets:
                           assets: null
       service_pod:
         name: Service Pod
+        type: asset
         <<: *SupportVehicleAsset
         controls:
           integrity:
@@ -205,7 +205,6 @@ assets:
                   - starforged/moves/combat/gain_ground
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By maneuvering your pod through a hazardous or obstructed area
@@ -225,6 +224,7 @@ assets:
                       text: When you make a move while controlling the pod and push its capabilities to the limit
       shuttle:
         name: Shuttle
+        type: asset
         <<: *SupportVehicleAsset
         controls:
           integrity:
@@ -262,6 +262,7 @@ assets:
                       text: To your shuttle
       skiff:
         name: Skiff
+        type: asset
         <<: *SupportVehicleAsset
         controls:
           integrity:
@@ -276,7 +277,6 @@ assets:
                   - starforged/moves/exploration/undertake_an_expedition
                   - starforged/moves/exploration/set_a_course
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Rely on the skiff's simple durability
@@ -293,7 +293,6 @@ assets:
                   - starforged/moves/combat/strike
                   - starforged/moves/combat/clash
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By firing the skiff's cannon
@@ -315,6 +314,7 @@ assets:
                       text: In your skiff
       snub_fighter:
         name: Snub Fighter
+        type: asset
         <<: *SupportVehicleAsset
         controls:
           integrity:
@@ -328,7 +328,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In your snub fighter

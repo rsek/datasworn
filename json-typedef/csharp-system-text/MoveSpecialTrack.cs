@@ -49,6 +49,9 @@ namespace Datasworn
         [JsonPropertyName("trigger")]
         public TriggerSpecialTrack Trigger { get; set; }
 
+        [JsonPropertyName("type")]
+        public MoveSpecialTrackType Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object

@@ -7,26 +7,11 @@ namespace Datasworn
 {
     public class TruthOption
     {
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("_id")]
-        public TruthOptionId Id { get; set; }
-
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
 
         [JsonPropertyName("quest_starter")]
         public MarkdownString QuestStarter { get; set; }
-
-        /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
-        /// </summary>
-        [JsonPropertyName("_comment")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public string Comment { get; set; }
 
         [JsonPropertyName("max")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -42,6 +27,6 @@ namespace Datasworn
 
         [JsonPropertyName("table")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<TruthOptionTableRow> Table { get; set; }
+        public IList<OracleTableRowText> Table { get; set; }
     }
 }

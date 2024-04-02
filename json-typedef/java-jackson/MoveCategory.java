@@ -19,6 +19,9 @@ public class MoveCategory {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("type")
+    private MoveCategoryType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -118,6 +121,20 @@ public class MoveCategory {
      */
     public void setName(Label name) {
         this.name = name;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public MoveCategoryType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(MoveCategoryType type) {
+        this.type = type;
     }
 
     /**

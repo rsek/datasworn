@@ -8,13 +8,13 @@ module Datasworn
   # Describes game rules compatible with the Ironsworn tabletop role-playing
   # game by Shawn Tomkin.
   class RulesPackage
-    attr_accessor :package_type
+    attr_accessor :type
 
     def self.from_json_data(data)
       {
         "expansion" => RulesPackageExpansion,
         "ruleset" => RulesPackageRuleset,
-      }[data["package_type"]].from_json_data(data)
+      }[data["type"]].from_json_data(data)
     end
   end
 
@@ -29,6 +29,7 @@ module Datasworn
     attr_accessor :authors
     attr_accessor :date
     attr_accessor :delve_sites
+    attr_accessor :description
     attr_accessor :license
     attr_accessor :moves
     attr_accessor :npcs
@@ -43,7 +44,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = RulesPackageExpansion.new
-      out.package_type = "expansion"
+      out.type = "expansion"
       out.id = Datasworn::from_json_data(ExpansionID, data["_id"])
       out.datasworn_version = Datasworn::from_json_data(SemanticVersion, data["datasworn_version"])
       out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
@@ -52,6 +53,7 @@ module Datasworn
       out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
       out.date = Datasworn::from_json_data(DateTime, data["date"])
       out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.license = Datasworn::from_json_data(License, data["license"])
       out.moves = Datasworn::from_json_data(Hash[String, MoveCategory], data["moves"])
       out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
@@ -67,7 +69,7 @@ module Datasworn
     end
 
     def to_json_data
-      data = { "package_type" => "expansion" }
+      data = { "type" => "expansion" }
       data["_id"] = Datasworn::to_json_data(id)
       data["datasworn_version"] = Datasworn::to_json_data(datasworn_version)
       data["ruleset"] = Datasworn::to_json_data(ruleset)
@@ -76,6 +78,7 @@ module Datasworn
       data["authors"] = Datasworn::to_json_data(authors) unless authors.nil?
       data["date"] = Datasworn::to_json_data(date) unless date.nil?
       data["delve_sites"] = Datasworn::to_json_data(delve_sites) unless delve_sites.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["license"] = Datasworn::to_json_data(license) unless license.nil?
       data["moves"] = Datasworn::to_json_data(moves) unless moves.nil?
       data["npcs"] = Datasworn::to_json_data(npcs) unless npcs.nil?
@@ -106,6 +109,7 @@ module Datasworn
     attr_accessor :url
     attr_accessor :atlas
     attr_accessor :delve_sites
+    attr_accessor :description
     attr_accessor :npcs
     attr_accessor :rarities
     attr_accessor :site_domains
@@ -114,7 +118,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = RulesPackageRuleset.new
-      out.package_type = "ruleset"
+      out.type = "ruleset"
       out.id = Datasworn::from_json_data(RulesetID, data["_id"])
       out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
       out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
@@ -128,6 +132,7 @@ module Datasworn
       out.url = Datasworn::from_json_data(WebURL, data["url"])
       out.atlas = Datasworn::from_json_data(Hash[String, Atlas], data["atlas"])
       out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
       out.rarities = Datasworn::from_json_data(Hash[String, Rarity], data["rarities"])
       out.site_domains = Datasworn::from_json_data(Hash[String, DelveSiteDomain], data["site_domains"])
@@ -137,7 +142,7 @@ module Datasworn
     end
 
     def to_json_data
-      data = { "package_type" => "ruleset" }
+      data = { "type" => "ruleset" }
       data["_id"] = Datasworn::to_json_data(id)
       data["assets"] = Datasworn::to_json_data(assets)
       data["authors"] = Datasworn::to_json_data(authors)
@@ -151,6 +156,7 @@ module Datasworn
       data["url"] = Datasworn::to_json_data(url)
       data["atlas"] = Datasworn::to_json_data(atlas) unless atlas.nil?
       data["delve_sites"] = Datasworn::to_json_data(delve_sites) unless delve_sites.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["npcs"] = Datasworn::to_json_data(npcs) unless npcs.nil?
       data["rarities"] = Datasworn::to_json_data(rarities) unless rarities.nil?
       data["site_domains"] = Datasworn::to_json_data(site_domains) unless site_domains.nil?
@@ -207,6 +213,28 @@ module Datasworn
     end
   end
 
+  class AssetType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ASSET = new("asset")
+
+    def self.from_json_data(data)
+      {
+        "asset" => ASSET,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   class Asset
     # The unique Datasworn ID for this item.
     attr_accessor :id
@@ -231,6 +259,7 @@ module Datasworn
     # Starforged's module and command vehicle assets) are shared amongst the
     # player's allies, too.
     attr_accessor :shared
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -271,6 +300,7 @@ module Datasworn
       out.count_as_impact = Datasworn::from_json_data(TrueClass, data["count_as_impact"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.shared = Datasworn::from_json_data(TrueClass, data["shared"])
+      out.type = Datasworn::from_json_data(AssetType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.attachments = Datasworn::from_json_data(AssetAttachment, data["attachments"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -293,6 +323,7 @@ module Datasworn
       data["count_as_impact"] = Datasworn::to_json_data(count_as_impact)
       data["name"] = Datasworn::to_json_data(name)
       data["shared"] = Datasworn::to_json_data(shared)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["attachments"] = Datasworn::to_json_data(attachments) unless attachments.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
@@ -580,6 +611,28 @@ module Datasworn
     end
   end
 
+  class AssetCollectionType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ASSET_COLLECTION = new("asset_collection")
+
+    def self.from_json_data(data)
+      {
+        "asset_collection" => ASSET_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   class AssetCollection
     # The unique Datasworn ID for this item.
     attr_accessor :id
@@ -590,6 +643,7 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -632,6 +686,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(AssetCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(AssetCollectionType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -652,6 +707,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -1232,6 +1288,28 @@ module Datasworn
     end
   end
 
+  class AtlasType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ATLAS = new("atlas")
+
+    def self.from_json_data(data)
+      {
+        "atlas" => ATLAS,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   class Atlas
     # The unique Datasworn ID for this item.
     attr_accessor :id
@@ -1242,6 +1320,7 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -1285,6 +1364,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(AtlasID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(AtlasType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, Atlas], data["collections"])
@@ -1306,6 +1386,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
@@ -1323,6 +1404,28 @@ module Datasworn
     end
   end
 
+  class AtlasEntryType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ATLAS_ENTRY = new("atlas_entry")
+
+    def self.from_json_data(data)
+      {
+        "atlas_entry" => ATLAS_ENTRY,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # An atlas entry, like the Ironlands region entries found in classic
   # Ironsworn.
   class AtlasEntry
@@ -1337,6 +1440,7 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -1358,6 +1462,7 @@ module Datasworn
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.features = Datasworn::from_json_data(Array[MarkdownString], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(AtlasEntryType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
@@ -1375,6 +1480,7 @@ module Datasworn
       data["description"] = Datasworn::to_json_data(description)
       data["features"] = Datasworn::to_json_data(features)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
@@ -2134,6 +2240,28 @@ module Datasworn
     end
   end
 
+  class MoveActionRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # A move that makes an action roll.
   class MoveActionRoll < Move
     attr_accessor :id
@@ -2142,6 +2270,7 @@ module Datasworn
     attr_accessor :outcomes
     attr_accessor :text
     attr_accessor :trigger
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
@@ -2158,6 +2287,7 @@ module Datasworn
       out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerActionRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveActionRollType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
@@ -2175,6 +2305,7 @@ module Datasworn
       data["outcomes"] = Datasworn::to_json_data(outcomes)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
@@ -2185,6 +2316,28 @@ module Datasworn
     end
   end
 
+  class MoveNoRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # A move that makes no progress rolls or action rolls.
   class MoveNoRoll < Move
     attr_accessor :id
@@ -2192,6 +2345,7 @@ module Datasworn
     attr_accessor :name
     attr_accessor :text
     attr_accessor :trigger
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
@@ -2207,6 +2361,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerNoRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveNoRollType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
@@ -2223,6 +2378,7 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
@@ -2230,6 +2386,28 @@ module Datasworn
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
+    end
+  end
+
+  class MoveProgressRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
     end
   end
 
@@ -2244,6 +2422,7 @@ module Datasworn
     attr_accessor :text
     attr_accessor :tracks
     attr_accessor :trigger
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
@@ -2261,6 +2440,7 @@ module Datasworn
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.tracks = Datasworn::from_json_data(ProgressTrackTypeInfo, data["tracks"])
       out.trigger = Datasworn::from_json_data(TriggerProgressRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveProgressRollType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
@@ -2279,6 +2459,7 @@ module Datasworn
       data["text"] = Datasworn::to_json_data(text)
       data["tracks"] = Datasworn::to_json_data(tracks)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
@@ -2286,6 +2467,28 @@ module Datasworn
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
+    end
+  end
+
+  class MoveSpecialTrackType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
     end
   end
 
@@ -2299,6 +2502,7 @@ module Datasworn
     attr_accessor :outcomes
     attr_accessor :text
     attr_accessor :trigger
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :oracles
@@ -2315,6 +2519,7 @@ module Datasworn
       out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.trigger = Datasworn::from_json_data(TriggerSpecialTrack, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveSpecialTrackType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.oracles = Datasworn::from_json_data(Array[OracleRollableID], data["oracles"])
@@ -2332,6 +2537,7 @@ module Datasworn
       data["outcomes"] = Datasworn::to_json_data(outcomes)
       data["text"] = Datasworn::to_json_data(text)
       data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
@@ -2339,6 +2545,28 @@ module Datasworn
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
+    end
+  end
+
+  class MoveCategoryType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE_CATEGORY = new("move_category")
+
+    def self.from_json_data(data)
+      {
+        "move_category" => MOVE_CATEGORY,
+      }[data]
+    end
+
+    def to_json_data
+      value
     end
   end
 
@@ -2352,6 +2580,7 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -2394,6 +2623,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(MoveCategoryID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(MoveCategoryType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -2414,6 +2644,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -2629,6 +2860,28 @@ module Datasworn
     end
   end
 
+  class NpcType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    NPC = new("npc")
+
+    def self.from_json_data(data)
+      {
+        "npc" => NPC,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # A non-player character entry, similar to those in Chapter 5 of the Ironsworn
   # Rulebook, or Chapter 4 of Starforged.
   class Npc
@@ -2649,6 +2902,7 @@ module Datasworn
     # The suggested challenge rank for this NPC.
     attr_accessor :rank
     attr_accessor :tactics
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -2675,6 +2929,7 @@ module Datasworn
       out.nature = Datasworn::from_json_data(NpcNature, data["nature"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
       out.tactics = Datasworn::from_json_data(Array[MarkdownString], data["tactics"])
+      out.type = Datasworn::from_json_data(NpcType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
@@ -2697,6 +2952,7 @@ module Datasworn
       data["nature"] = Datasworn::to_json_data(nature)
       data["rank"] = Datasworn::to_json_data(rank)
       data["tactics"] = Datasworn::to_json_data(tactics)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["quest_starter"] = Datasworn::to_json_data(quest_starter) unless quest_starter.nil?
@@ -2706,6 +2962,28 @@ module Datasworn
       data["variants"] = Datasworn::to_json_data(variants) unless variants.nil?
       data["your_truth"] = Datasworn::to_json_data(your_truth) unless your_truth.nil?
       data
+    end
+  end
+
+  class NpcCollectionType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    NPC_COLLECTION = new("npc_collection")
+
+    def self.from_json_data(data)
+      {
+        "npc_collection" => NPC_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
     end
   end
 
@@ -2719,6 +2997,7 @@ module Datasworn
 
     # The primary name/label for this item.
     attr_accessor :name
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -2761,6 +3040,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(NpcCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(NpcCollectionType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -2781,6 +3061,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -2985,6 +3266,28 @@ module Datasworn
     end
   end
 
+  class OracleCollectionTableSharedRollsType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # An OracleCollection representing a single table with one roll column and
   # multiple `result` columns.
   class OracleCollectionTableSharedRolls < OracleCollection
@@ -2992,6 +3295,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
@@ -3012,6 +3316,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedRollsColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(OracleCollectionTableSharedRollsType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -3033,6 +3338,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -3067,6 +3373,28 @@ module Datasworn
     end
   end
 
+  class OracleCollectionTableSharedTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # An OracleCollection representing a single table with multiple roll columns
   # and one `result` column.
   class OracleCollectionTableSharedText < OracleCollection
@@ -3074,6 +3402,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
@@ -3094,6 +3423,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedTextColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(OracleCollectionTableSharedTextType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -3115,6 +3445,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -3152,6 +3483,28 @@ module Datasworn
     end
   end
 
+  class OracleCollectionTableSharedText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # An OracleCollection representing a single table with multiple roll columns,
   # and 2 shared text columns.
   class OracleCollectionTableSharedText2 < OracleCollection
@@ -3159,6 +3512,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
@@ -3179,6 +3533,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedText2ColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(OracleCollectionTableSharedText2Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -3200,6 +3555,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -3234,6 +3590,28 @@ module Datasworn
     end
   end
 
+  class OracleCollectionTableSharedText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # An OracleCollection representing a single table with multiple roll columns,
   # and 2 shared text columns.
   class OracleCollectionTableSharedText3 < OracleCollection
@@ -3241,6 +3619,7 @@ module Datasworn
     attr_accessor :source
     attr_accessor :column_labels
     attr_accessor :name
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :color
@@ -3261,10 +3640,11 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedText3ColumnLabels, data["column_labels"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(OracleCollectionTableSharedText3Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
-      out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText2], data["contents"])
+      out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText3], data["contents"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.enhances = Datasworn::from_json_data(OracleCollectionID, data["enhances"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -3282,6 +3662,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["column_labels"] = Datasworn::to_json_data(column_labels)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -3298,12 +3679,35 @@ module Datasworn
     end
   end
 
+  class OracleCollectionTablesType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # An OracleCollection that represents a category or grouping of tables, which
   # may themselves be `OracleTablesCollection`s.
   class OracleCollectionTables < OracleCollection
     attr_accessor :id
     attr_accessor :source
     attr_accessor :name
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :collections
@@ -3324,6 +3728,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.type = Datasworn::from_json_data(OracleCollectionTablesType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, OracleCollection], data["collections"])
@@ -3345,6 +3750,7 @@ module Datasworn
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
@@ -3399,6 +3805,28 @@ module Datasworn
     end
   end
 
+  class OracleColumnTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # Represents a single column in an OracleCollection.
   class OracleColumnText
     # The unique Datasworn ID for this item.
@@ -3413,6 +3841,7 @@ module Datasworn
 
     # An array of objects, each representing a single row of the table.
     attr_accessor :rows
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -3447,6 +3876,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleColumnTextOracleType, data["oracle_type"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.type = Datasworn::from_json_data(OracleColumnTextType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -3465,6 +3895,7 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["oracle_type"] = Datasworn::to_json_data(oracle_type)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -3499,6 +3930,28 @@ module Datasworn
     end
   end
 
+  class OracleColumnText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   class OracleColumnText2
     # The unique Datasworn ID for this item.
     attr_accessor :id
@@ -3512,6 +3965,7 @@ module Datasworn
 
     # An array of objects, each representing a single row of the table.
     attr_accessor :rows
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -3546,6 +4000,7 @@ module Datasworn
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleColumnText2OracleType, data["oracle_type"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.type = Datasworn::from_json_data(OracleColumnText2Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -3564,6 +4019,131 @@ module Datasworn
       data["name"] = Datasworn::to_json_data(name)
       data["oracle_type"] = Datasworn::to_json_data(oracle_type)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  class OracleColumnText3OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    COLUMN_TEXT3 = new("column_text3")
+
+    def self.from_json_data(data)
+      {
+        "column_text3" => COLUMN_TEXT3,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleColumnText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleColumnText3
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary label at the head of this column.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Any implementation hints or other developer-facing comments on this
+    # object. These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # An optional thematic color for this column. For an example, see "Basic
+    # Creature Form" (Starforged p. 337)
+    attr_accessor :color
+
+    # An optional icon for this column.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+
+    # Indicates that this object replaces the identified OracleRollable.
+    # References to the replaced object can be considered equivalent to this
+    # object.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # Optional secondary text at the head of this column. For best results, this
+    # should be no more than a few words in length.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleColumnText3.new
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleColumnText3OracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleTableRowText3], data["rows"])
+      out.type = Datasworn::from_json_data(OracleColumnText3Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.replaces = Datasworn::from_json_data(OracleRollableID, data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Hash[String, Hash[String, Tag]], data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
@@ -3745,6 +4325,28 @@ module Datasworn
     end
   end
 
+  class OracleTableRollableTableTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   class OracleTableRollableTableTextRecommendedRolls
     attr_accessor :max
     attr_accessor :min
@@ -3773,6 +4375,7 @@ module Datasworn
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :description
@@ -3793,6 +4396,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.type = Datasworn::from_json_data(OracleTableRollableTableTextType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
@@ -3814,6 +4418,7 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
@@ -3852,6 +4457,28 @@ module Datasworn
     end
   end
 
+  class OracleTableRollableTableText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   class OracleTableRollableTableText2RecommendedRolls
     attr_accessor :max
     attr_accessor :min
@@ -3879,6 +4506,7 @@ module Datasworn
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :description
@@ -3899,6 +4527,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.type = Datasworn::from_json_data(OracleTableRollableTableText2Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
@@ -3920,6 +4549,7 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
@@ -3961,6 +4591,28 @@ module Datasworn
     end
   end
 
+  class OracleTableRollableTableText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   class OracleTableRollableTableText3RecommendedRolls
     attr_accessor :max
     attr_accessor :min
@@ -3988,6 +4640,7 @@ module Datasworn
     attr_accessor :dice
     attr_accessor :name
     attr_accessor :rows
+    attr_accessor :type
     attr_accessor :comment
     attr_accessor :canonical_name
     attr_accessor :description
@@ -4008,6 +4661,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.rows = Datasworn::from_json_data(Array[OracleTableRowText3], data["rows"])
+      out.type = Datasworn::from_json_data(OracleTableRollableTableText3Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
@@ -4029,6 +4683,7 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
@@ -4225,6 +4880,28 @@ module Datasworn
     end
   end
 
+  class OracleTablesCollectionType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # An OracleCollection that represents a category or grouping of tables, which
   # may themselves be `OracleTablesCollection`s.
   class OracleTablesCollection
@@ -4240,6 +4917,7 @@ module Datasworn
 
     # A grouping of separate tables.
     attr_accessor :oracle_type
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -4284,6 +4962,7 @@ module Datasworn
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleTablesCollectionOracleType, data["oracle_type"])
+      out.type = Datasworn::from_json_data(OracleTablesCollectionType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.collections = Datasworn::from_json_data(Hash[String, OracleCollection], data["collections"])
@@ -4306,6 +4985,7 @@ module Datasworn
       data["_source"] = Datasworn::to_json_data(source)
       data["name"] = Datasworn::to_json_data(name)
       data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["collections"] = Datasworn::to_json_data(collections) unless collections.nil?
@@ -6416,14 +7096,8 @@ module Datasworn
   end
 
   class TruthOption
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
     attr_accessor :description
     attr_accessor :quest_starter
-
-    # Any implementation hints or other developer-facing comments on this
-    # object. These should be omitted when presenting the object for gameplay.
-    attr_accessor :comment
     attr_accessor :max
     attr_accessor :min
     attr_accessor :summary
@@ -6431,92 +7105,23 @@ module Datasworn
 
     def self.from_json_data(data)
       out = TruthOption.new
-      out.id = Datasworn::from_json_data(TruthOptionID, data["_id"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
-      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
-      out.table = Datasworn::from_json_data(Array[TruthOptionTableRow], data["table"])
+      out.table = Datasworn::from_json_data(Array[OracleTableRowText], data["table"])
       out
     end
 
     def to_json_data
       data = {}
-      data["_id"] = Datasworn::to_json_data(id)
       data["description"] = Datasworn::to_json_data(description)
       data["quest_starter"] = Datasworn::to_json_data(quest_starter)
-      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["max"] = Datasworn::to_json_data(max) unless max.nil?
       data["min"] = Datasworn::to_json_data(min) unless min.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["table"] = Datasworn::to_json_data(table) unless table.nil?
-      data
-    end
-  end
-
-  # A unique ID for a TruthOption.
-  class TruthOptionID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = TruthOptionID.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
-  # Represents a row in an oracle table, with a single text cell.
-  class TruthOptionTableRow
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
-
-    # The primary text content of this row.
-    attr_accessor :text
-    attr_accessor :i18n
-
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
-
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :template
-
-    def self.from_json_data(data)
-      out = TruthOptionTableRow.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
-      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
-      data["text"] = Datasworn::to_json_data(text)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
       data
     end
   end

@@ -41,6 +41,9 @@ namespace Datasworn
         [JsonPropertyName("name")]
         public Label Name { get; set; }
 
+        [JsonPropertyName("type")]
+        public OracleCollectionTableSharedText3Type Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object
@@ -67,7 +70,7 @@ namespace Datasworn
 
         [JsonPropertyName("contents")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, OracleColumnText2> Contents { get; set; }
+        public IDictionary<string, OracleColumnText3> Contents { get; set; }
 
         /// <summary>
         /// A longer description of this collection, which might include

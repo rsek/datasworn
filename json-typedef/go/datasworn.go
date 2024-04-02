@@ -11,7 +11,7 @@ import (
 // Describes game rules compatible with the Ironsworn tabletop role-playing game
 // by Shawn Tomkin.
 type RulesPackage struct {
-	PackageType string
+	Type string
 
 	Expansion RulesPackageExpansion
 
@@ -19,18 +19,18 @@ type RulesPackage struct {
 }
 
 func (v RulesPackage) MarshalJSON() ([]byte, error) {
-	switch v.PackageType {
+	switch v.Type {
 	case "expansion":
-		return json.Marshal(struct { T string `json:"package_type"`; RulesPackageExpansion }{ v.PackageType, v.Expansion })
+		return json.Marshal(struct { T string `json:"type"`; RulesPackageExpansion }{ v.Type, v.Expansion })
 	case "ruleset":
-		return json.Marshal(struct { T string `json:"package_type"`; RulesPackageRuleset }{ v.PackageType, v.Ruleset })
+		return json.Marshal(struct { T string `json:"type"`; RulesPackageRuleset }{ v.Type, v.Ruleset })
 	}
 
-	return nil, fmt.Errorf("bad PackageType value: %s", v.PackageType)
+	return nil, fmt.Errorf("bad Type value: %s", v.Type)
 }
 
 func (v *RulesPackage) UnmarshalJSON(b []byte) error {
-	var t struct { T string `json:"package_type"` }
+	var t struct { T string `json:"type"` }
 	if err := json.Unmarshal(b, &t); err != nil {
 		return err
 	}
@@ -42,14 +42,14 @@ func (v *RulesPackage) UnmarshalJSON(b []byte) error {
 	case "ruleset":
 		err = json.Unmarshal(b, &v.Ruleset)
 	default:
-		err = fmt.Errorf("bad PackageType value: %s", t.T)
+		err = fmt.Errorf("bad Type value: %s", t.T)
 	}
 
 	if err != nil {
 		return err
 	}
 
-	v.PackageType = t.T
+	v.Type = t.T
 	return nil
 }
 
@@ -80,6 +80,8 @@ type RulesPackageExpansion struct {
 	// A dictionary object of delve sites, like the premade delve sites presented
 	// in Ironsworn: Delve
 	DelveSites map[string]DelveSite `json:"delve_sites,omitempty"`
+
+	Description *MarkdownString `json:"description,omitempty"`
 
 	License *License `json:"license,omitempty"`
 
@@ -157,6 +159,8 @@ type RulesPackageRuleset struct {
 	// in Ironsworn: Delve
 	DelveSites map[string]DelveSite `json:"delve_sites,omitempty"`
 
+	Description *MarkdownString `json:"description,omitempty"`
+
 	// A dictionary object containing NPC collections, which contain NPCs.
 	Npcs map[string]NpcCollection `json:"npcs,omitempty"`
 
@@ -199,6 +203,12 @@ const (
 	ActionRollMethodWeakHit ActionRollMethod = "weak_hit"
 )
 
+type AssetType string
+
+const (
+	AssetTypeAsset AssetType = "asset"
+)
+
 type Asset struct {
 	// The unique Datasworn ID for this item.
 	ID AssetID `json:"_id"`
@@ -224,6 +234,8 @@ type Asset struct {
 	// Starforged's module and command vehicle assets) are shared amongst the
 	// player's allies, too.
 	Shared bool `json:"shared"`
+
+	Type AssetType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -477,6 +489,12 @@ type AssetAttachment struct {
 	Max int16 `json:"max"`
 }
 
+type AssetCollectionType string
+
+const (
+	AssetCollectionTypeAssetCollection AssetCollectionType = "asset_collection"
+)
+
 type AssetCollection struct {
 	// The unique Datasworn ID for this item.
 	ID AssetCollectionID `json:"_id"`
@@ -487,6 +505,8 @@ type AssetCollection struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type AssetCollectionType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1043,6 +1063,12 @@ type AssetOptionFieldText struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 }
 
+type AtlasType string
+
+const (
+	AtlasTypeAtlas AtlasType = "atlas"
+)
+
 type Atlas struct {
 	// The unique Datasworn ID for this item.
 	ID AtlasID `json:"_id"`
@@ -1053,6 +1079,8 @@ type Atlas struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type AtlasType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1096,6 +1124,12 @@ type Atlas struct {
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
+type AtlasEntryType string
+
+const (
+	AtlasEntryTypeAtlasEntry AtlasEntryType = "atlas_entry"
+)
+
 // An atlas entry, like the Ironlands region entries found in classic Ironsworn.
 type AtlasEntry struct {
 	// The unique Datasworn ID for this item.
@@ -1111,6 +1145,8 @@ type AtlasEntry struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type AtlasEntryType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1488,6 +1524,12 @@ func (v *Move) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+type MoveActionRollType string
+
+const (
+	MoveActionRollTypeMove MoveActionRollType = "move"
+)
+
 // A move that makes an action roll.
 type MoveActionRoll struct {
 	// The unique Datasworn ID for this item.
@@ -1508,6 +1550,8 @@ type MoveActionRoll struct {
 	// Trigger conditions for this move.
 	Trigger TriggerActionRoll `json:"trigger"`
 
+	Type MoveActionRollType `json:"type"`
+
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
 	Comment *string `json:"_comment,omitempty"`
@@ -1529,6 +1573,12 @@ type MoveActionRoll struct {
 
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
+
+type MoveNoRollType string
+
+const (
+	MoveNoRollTypeMove MoveNoRollType = "move"
+)
 
 // A move that makes no progress rolls or action rolls.
 type MoveNoRoll struct {
@@ -1548,6 +1598,8 @@ type MoveNoRoll struct {
 	// Trigger conditions for this move.
 	Trigger TriggerNoRoll `json:"trigger"`
 
+	Type MoveNoRollType `json:"type"`
+
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
 	Comment *string `json:"_comment,omitempty"`
@@ -1569,6 +1621,12 @@ type MoveNoRoll struct {
 
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
+
+type MoveProgressRollType string
+
+const (
+	MoveProgressRollTypeMove MoveProgressRollType = "move"
+)
 
 // A progress move that rolls on a standard progress track type (whose features
 // are defined by this move object). For progress rolls that use special tracks,
@@ -1595,6 +1653,8 @@ type MoveProgressRoll struct {
 	// Trigger conditions for this move.
 	Trigger TriggerProgressRoll `json:"trigger"`
 
+	Type MoveProgressRollType `json:"type"`
+
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
 	Comment *string `json:"_comment,omitempty"`
@@ -1616,6 +1676,12 @@ type MoveProgressRoll struct {
 
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
+
+type MoveSpecialTrackType string
+
+const (
+	MoveSpecialTrackTypeMove MoveSpecialTrackType = "move"
+)
 
 // A progress move that rolls on a special track, such as Legacies (Starforged)
 // or Bonds (classic Ironsworn). For progress moves that use standard progress
@@ -1639,6 +1705,8 @@ type MoveSpecialTrack struct {
 	// Trigger conditions for this move.
 	Trigger TriggerSpecialTrack `json:"trigger"`
 
+	Type MoveSpecialTrackType `json:"type"`
+
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
 	Comment *string `json:"_comment,omitempty"`
@@ -1661,6 +1729,12 @@ type MoveSpecialTrack struct {
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
+type MoveCategoryType string
+
+const (
+	MoveCategoryTypeMoveCategory MoveCategoryType = "move_category"
+)
+
 type MoveCategory struct {
 	// The unique Datasworn ID for this item.
 	ID MoveCategoryID `json:"_id"`
@@ -1671,6 +1745,8 @@ type MoveCategory struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type MoveCategoryType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1834,6 +1910,12 @@ type MoveOutcomes struct {
 	WeakHit MoveOutcome `json:"weak_hit"`
 }
 
+type NpcType string
+
+const (
+	NpcTypeNpc NpcType = "npc"
+)
+
 // A non-player character entry, similar to those in Chapter 5 of the Ironsworn
 // Rulebook, or Chapter 4 of Starforged.
 type Npc struct {
@@ -1860,6 +1942,8 @@ type Npc struct {
 
 	Tactics []MarkdownString `json:"tactics"`
 
+	Type NpcType `json:"type"`
+
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
 	Comment *string `json:"_comment,omitempty"`
@@ -1881,6 +1965,12 @@ type Npc struct {
 	YourTruth *MarkdownString `json:"your_truth,omitempty"`
 }
 
+type NpcCollectionType string
+
+const (
+	NpcCollectionTypeNpcCollection NpcCollectionType = "npc_collection"
+)
+
 type NpcCollection struct {
 	// The unique Datasworn ID for this item.
 	ID NpcCollectionID `json:"_id"`
@@ -1891,6 +1981,8 @@ type NpcCollection struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type NpcCollectionType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2071,6 +2163,12 @@ type OracleCollectionTableSharedRollsColumnLabels struct {
 	Roll Label `json:"roll"`
 }
 
+type OracleCollectionTableSharedRollsType string
+
+const (
+	OracleCollectionTableSharedRollsTypeOracleCollection OracleCollectionTableSharedRollsType = "oracle_collection"
+)
+
 // An OracleCollection representing a single table with one roll column and
 // multiple `result` columns.
 type OracleCollectionTableSharedRolls struct {
@@ -2088,6 +2186,8 @@ type OracleCollectionTableSharedRolls struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type OracleCollectionTableSharedRollsType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2135,6 +2235,12 @@ type OracleCollectionTableSharedTextColumnLabels struct {
 	Text Label `json:"text"`
 }
 
+type OracleCollectionTableSharedTextType string
+
+const (
+	OracleCollectionTableSharedTextTypeOracleCollection OracleCollectionTableSharedTextType = "oracle_collection"
+)
+
 // An OracleCollection representing a single table with multiple roll columns
 // and one `result` column.
 type OracleCollectionTableSharedText struct {
@@ -2151,6 +2257,8 @@ type OracleCollectionTableSharedText struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type OracleCollectionTableSharedTextType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2200,6 +2308,12 @@ type OracleCollectionTableSharedText2ColumnLabels struct {
 	Text2 Label `json:"text2"`
 }
 
+type OracleCollectionTableSharedText2Type string
+
+const (
+	OracleCollectionTableSharedText2TypeOracleCollection OracleCollectionTableSharedText2Type = "oracle_collection"
+)
+
 // An OracleCollection representing a single table with multiple roll columns,
 // and 2 shared text columns.
 type OracleCollectionTableSharedText2 struct {
@@ -2216,6 +2330,8 @@ type OracleCollectionTableSharedText2 struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type OracleCollectionTableSharedText2Type `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2263,6 +2379,12 @@ type OracleCollectionTableSharedText3ColumnLabels struct {
 	Text Label `json:"text"`
 }
 
+type OracleCollectionTableSharedText3Type string
+
+const (
+	OracleCollectionTableSharedText3TypeOracleCollection OracleCollectionTableSharedText3Type = "oracle_collection"
+)
+
 // An OracleCollection representing a single table with multiple roll columns,
 // and 2 shared text columns.
 type OracleCollectionTableSharedText3 struct {
@@ -2280,6 +2402,8 @@ type OracleCollectionTableSharedText3 struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
+	Type OracleCollectionTableSharedText3Type `json:"type"`
+
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
 	Comment *string `json:"_comment,omitempty"`
@@ -2291,7 +2415,7 @@ type OracleCollectionTableSharedText3 struct {
 	// A thematic color associated with this collection.
 	Color *CSSColor `json:"color,omitempty"`
 
-	Contents map[string]OracleColumnText2 `json:"contents,omitempty"`
+	Contents map[string]OracleColumnText3 `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
@@ -2320,6 +2444,12 @@ type OracleCollectionTableSharedText3 struct {
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
+type OracleCollectionTablesType string
+
+const (
+	OracleCollectionTablesTypeOracleCollection OracleCollectionTablesType = "oracle_collection"
+)
+
 // An OracleCollection that represents a category or grouping of tables, which
 // may themselves be `OracleTablesCollection`s.
 type OracleCollectionTables struct {
@@ -2332,6 +2462,8 @@ type OracleCollectionTables struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type OracleCollectionTablesType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2384,6 +2516,12 @@ const (
 	OracleColumnTextOracleTypeColumnText OracleColumnTextOracleType = "column_text"
 )
 
+type OracleColumnTextType string
+
+const (
+	OracleColumnTextTypeOracleRollable OracleColumnTextType = "oracle_rollable"
+)
+
 // Represents a single column in an OracleCollection.
 type OracleColumnText struct {
 	// The unique Datasworn ID for this item.
@@ -2399,6 +2537,8 @@ type OracleColumnText struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText `json:"rows"`
+
+	Type OracleColumnTextType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2435,6 +2575,12 @@ const (
 	OracleColumnText2OracleTypeColumnText2 OracleColumnText2OracleType = "column_text2"
 )
 
+type OracleColumnText2Type string
+
+const (
+	OracleColumnText2TypeOracleRollable OracleColumnText2Type = "oracle_rollable"
+)
+
 type OracleColumnText2 struct {
 	// The unique Datasworn ID for this item.
 	ID OracleRollableID `json:"_id"`
@@ -2449,6 +2595,66 @@ type OracleColumnText2 struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText2 `json:"rows"`
+
+	Type OracleColumnText2Type `json:"type"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
+	// An optional thematic color for this column. For an example, see "Basic
+	// Creature Form" (Starforged p. 337)
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An optional icon for this column.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	// Most oracle tables are insensitive to matches, but a few define special
+	// match behavior.
+	Match *OracleMatchBehavior `json:"match,omitempty"`
+
+	// Indicates that this object replaces the identified OracleRollable.
+	// References to the replaced object can be considered equivalent to this
+	// object.
+	Replaces *OracleRollableID `json:"replaces,omitempty"`
+
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	// Optional secondary text at the head of this column. For best results, this
+	// should be no more than a few words in length.
+	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+}
+
+type OracleColumnText3OracleType string
+
+const (
+	OracleColumnText3OracleTypeColumnText3 OracleColumnText3OracleType = "column_text3"
+)
+
+type OracleColumnText3Type string
+
+const (
+	OracleColumnText3TypeOracleRollable OracleColumnText3Type = "oracle_rollable"
+)
+
+type OracleColumnText3 struct {
+	// The unique Datasworn ID for this item.
+	ID OracleRollableID `json:"_id"`
+
+	// The roll used to select a result on this oracle.
+	Dice DiceExpression `json:"dice"`
+
+	// The primary label at the head of this column.
+	Name Label `json:"name"`
+
+	OracleType OracleColumnText3OracleType `json:"oracle_type"`
+
+	// An array of objects, each representing a single row of the table.
+	Rows []OracleTableRowText3 `json:"rows"`
+
+	Type OracleColumnText3Type `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2596,6 +2802,12 @@ type OracleTableRollableTableTextColumnLabels struct {
 	Text Label `json:"text"`
 }
 
+type OracleTableRollableTableTextType string
+
+const (
+	OracleTableRollableTableTextTypeOracleRollable OracleTableRollableTableTextType = "oracle_rollable"
+)
+
 type OracleTableRollableTableTextRecommendedRolls struct {
 	Max int16 `json:"max"`
 
@@ -2624,6 +2836,8 @@ type OracleTableRollableTableText struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText `json:"rows"`
+
+	Type OracleTableRollableTableTextType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2673,6 +2887,12 @@ type OracleTableRollableTableText2ColumnLabels struct {
 	Text2 Label `json:"text2"`
 }
 
+type OracleTableRollableTableText2Type string
+
+const (
+	OracleTableRollableTableText2TypeOracleRollable OracleTableRollableTableText2Type = "oracle_rollable"
+)
+
 type OracleTableRollableTableText2RecommendedRolls struct {
 	Max int16 `json:"max"`
 
@@ -2700,6 +2920,8 @@ type OracleTableRollableTableText2 struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText2 `json:"rows"`
+
+	Type OracleTableRollableTableText2Type `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2751,6 +2973,12 @@ type OracleTableRollableTableText3ColumnLabels struct {
 	Text3 Label `json:"text3"`
 }
 
+type OracleTableRollableTableText3Type string
+
+const (
+	OracleTableRollableTableText3TypeOracleRollable OracleTableRollableTableText3Type = "oracle_rollable"
+)
+
 type OracleTableRollableTableText3RecommendedRolls struct {
 	Max int16 `json:"max"`
 
@@ -2778,6 +3006,8 @@ type OracleTableRollableTableText3 struct {
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleTableRowText3 `json:"rows"`
+
+	Type OracleTableRollableTableText3Type `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -2908,6 +3138,12 @@ const (
 	OracleTablesCollectionOracleTypeTables OracleTablesCollectionOracleType = "tables"
 )
 
+type OracleTablesCollectionType string
+
+const (
+	OracleTablesCollectionTypeOracleCollection OracleTablesCollectionType = "oracle_collection"
+)
+
 // An OracleCollection that represents a category or grouping of tables, which
 // may themselves be `OracleTablesCollection`s.
 type OracleTablesCollection struct {
@@ -2923,6 +3159,8 @@ type OracleTablesCollection struct {
 
 	// A grouping of separate tables.
 	OracleType OracleTablesCollectionOracleType `json:"oracle_type"`
+
+	Type OracleTablesCollectionType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -4082,16 +4320,9 @@ type Truth struct {
 type TruthID = string
 
 type TruthOption struct {
-	// The unique Datasworn ID for this item.
-	ID TruthOptionID `json:"_id"`
-
 	Description MarkdownString `json:"description"`
 
 	QuestStarter MarkdownString `json:"quest_starter"`
-
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
 
 	Max *int16 `json:"max,omitempty"`
 
@@ -4099,36 +4330,7 @@ type TruthOption struct {
 
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Table []TruthOptionTableRow `json:"table,omitempty"`
-}
-
-// A unique ID for a TruthOption.
-type TruthOptionID = string
-
-// Represents a row in an oracle table, with a single text cell.
-type TruthOptionTableRow struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
-
-	// The primary text content of this row.
-	Text MarkdownString `json:"text"`
-
-	I18n *I18nHints `json:"_i18n,omitempty"`
-
-	// Hints that the identified table should be rendered inside this table row.
-	EmbedTable *OracleRollableID `json:"embed_table,omitempty"`
-
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	// Further oracle rolls prompted by this table row.
-	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	Template *OracleRollTemplate `json:"template,omitempty"`
+	Table []OracleTableRowText `json:"table,omitempty"`
 }
 
 // An absolute URL pointing to a website.

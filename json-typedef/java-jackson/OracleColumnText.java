@@ -28,6 +28,9 @@ public class OracleColumnText {
     @JsonProperty("rows")
     private List<OracleTableRowText> rows;
 
+    @JsonProperty("type")
+    private OracleColumnTextType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -139,6 +142,20 @@ public class OracleColumnText {
      */
     public void setRows(List<OracleTableRowText> rows) {
         this.rows = rows;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public OracleColumnTextType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(OracleColumnTextType type) {
+        this.type = type;
     }
 
     /**

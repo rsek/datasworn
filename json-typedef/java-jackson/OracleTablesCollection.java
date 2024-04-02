@@ -26,6 +26,9 @@ public class OracleTablesCollection {
     @JsonProperty("oracle_type")
     private OracleTablesCollectionOracleType oracleType;
 
+    @JsonProperty("type")
+    private OracleTablesCollectionType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -145,6 +148,20 @@ public class OracleTablesCollection {
      */
     public void setOracleType(OracleTablesCollectionOracleType oracleType) {
         this.oracleType = oracleType;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public OracleTablesCollectionType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(OracleTablesCollectionType type) {
+        this.type = type;
     }
 
     /**

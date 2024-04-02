@@ -36,6 +36,9 @@ public class MoveProgressRoll extends Move {
     @JsonProperty("trigger")
     private TriggerProgressRoll trigger;
 
+    @JsonProperty("type")
+    private MoveProgressRollType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -175,6 +178,20 @@ public class MoveProgressRoll extends Move {
      */
     public void setTrigger(TriggerProgressRoll trigger) {
         this.trigger = trigger;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public MoveProgressRollType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(MoveProgressRollType type) {
+        this.type = type;
     }
 
     /**

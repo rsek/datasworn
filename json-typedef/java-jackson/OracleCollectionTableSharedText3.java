@@ -26,6 +26,9 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("type")
+    private OracleCollectionTableSharedText3Type type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -40,7 +43,7 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("contents")
-    private Map<String, OracleColumnText2> contents;
+    private Map<String, OracleColumnText3> contents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("description")
@@ -146,6 +149,20 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     }
 
     /**
+     * Getter for type.<p>
+     */
+    public OracleCollectionTableSharedText3Type getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(OracleCollectionTableSharedText3Type type) {
+        this.type = type;
+    }
+
+    /**
      * Getter for comment.<p>
      * Any implementation hints or other developer-facing comments on this
      * object. These should be omitted when presenting the object for gameplay.
@@ -200,14 +217,14 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     /**
      * Getter for contents.<p>
      */
-    public Map<String, OracleColumnText2> getContents() {
+    public Map<String, OracleColumnText3> getContents() {
         return contents;
     }
 
     /**
      * Setter for contents.<p>
      */
-    public void setContents(Map<String, OracleColumnText2> contents) {
+    public void setContents(Map<String, OracleColumnText3> contents) {
         this.contents = contents;
     }
 

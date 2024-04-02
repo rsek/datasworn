@@ -28,6 +28,9 @@ public class MoveNoRoll extends Move {
     @JsonProperty("trigger")
     private TriggerNoRoll trigger;
 
+    @JsonProperty("type")
+    private MoveNoRollType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -135,6 +138,20 @@ public class MoveNoRoll extends Move {
      */
     public void setTrigger(TriggerNoRoll trigger) {
         this.trigger = trigger;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public MoveNoRollType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(MoveNoRollType type) {
+        this.type = type;
     }
 
     /**

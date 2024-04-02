@@ -1,8 +1,8 @@
 _id: starforged
-package_type: ruleset
-type: package
+type: ruleset
 assets:
   path:
+    type: asset_collection
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'
@@ -22,6 +22,7 @@ assets:
     contents:
       ace:
         name: Ace
+        type: asset
         <<: &PathAsset
           category: Path
           color: *PathAsset.color
@@ -37,7 +38,6 @@ assets:
                   - 'starforged/moves/*/face_danger'
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By guiding your vehicle through a hazard or out of harm’s way
@@ -61,7 +61,6 @@ assets:
               - enhances:
                   - starforged/moves/suffer/endure_stress
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: While piloting a vehicle
@@ -75,6 +74,7 @@ assets:
                           control: integrity
       archer:
         name: Archer
+        type: asset
         <<: *PathAsset
         requirement: If you wield a power bow...
         controls:
@@ -93,9 +93,9 @@ assets:
             moves:
               craft_projectiles:
                 name: Craft Projectiles
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you replenish your ammo by crafting projectiles...
                   conditions:
@@ -122,7 +122,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - method: player_choice
@@ -142,6 +141,7 @@ assets:
                       method: null
       armored:
         name: Armored
+        type: asset
         <<: *PathAsset
         requirement: If you wear your finely crafted set of personal armor...
         controls:
@@ -160,7 +160,6 @@ assets:
                   - starforged/moves/combat/react_under_fire
                   - starforged/moves/combat/clash
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: While putting trust in your armor’s strength against physical attacks or impact
@@ -174,7 +173,6 @@ assets:
               - enhances:
                   - starforged/moves/suffer/endure_harm
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By letting your armor take the hit
@@ -182,6 +180,7 @@ assets:
                       method: null
       artist:
         name: Artist
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -201,7 +200,6 @@ assets:
                   - starforged/moves/adventure/gather_information
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By studying the aesthetics of a being or culture
@@ -212,9 +210,9 @@ assets:
             moves:
               commemorate:
                 name: Commemorate
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you create or perform a significant artistic work as a public memorial or tribute...
                   conditions:
@@ -244,6 +242,7 @@ assets:
                       On a __miss__, the work is ignored, misunderstood, or co-opted, and you must [Pay the Price](id:starforged/moves/fate/pay_the_price).
       augmented:
         name: Augmented
+        type: asset
         <<: *PathAsset
         options:
           one:
@@ -277,9 +276,9 @@ assets:
                   - starforged/moves/suffer/endure_harm
                   - starforged/moves/threshold/face_death
                 roll_type: action_roll
-                type: move
       bannersworn:
         name: Bannersworn
+        type: asset
         <<: *PathAsset
         options:
           ideology:
@@ -293,7 +292,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In service to your bound clan, faction, or creed
@@ -305,7 +303,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/sojourn
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -316,7 +313,6 @@ assets:
               - enhances:
                   - starforged/moves/connection/forge_a_bond
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With anyone of your ideology
@@ -333,6 +329,7 @@ assets:
                       method: null
       blademaster:
         name: Blademaster
+        type: asset
         <<: *PathAsset
         requirement: If you wield a bladed weapon...
         abilities:
@@ -344,7 +341,6 @@ assets:
                   - starforged/moves/combat/clash
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you wield a bladed weapon in close quarters
@@ -359,7 +355,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By moving into close quarters against your foe (and choosing to charge)
@@ -370,7 +365,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By moving into close quarters against your foe (and choosing to evade)
@@ -398,9 +392,9 @@ assets:
                       roll_options: null
                       method: null
                 roll_type: action_roll
-                type: move
       bounty_hunter:
         name: Bounty Hunter
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -410,7 +404,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you take a bounty contract and [Swear an Iron Vow](id:starforged/moves/quest/swear_an_iron_vow) to see it done
@@ -419,7 +412,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - text: On a hunt
@@ -434,7 +426,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Related to a bounty
@@ -446,7 +437,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In a fight against a bounty target or their agents
@@ -454,6 +444,7 @@ assets:
                       method: null
       brawler:
         name: Brawler
+        type: asset
         <<: *PathAsset
         requirement: If you fight unarmed or with a close quarters weapon...
         abilities:
@@ -464,7 +455,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By attempting to disarm, trip, shove, grapple, or stun your foe (while fighting unarmed or with a close quarters weapon)
@@ -480,7 +470,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/clash
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Aggressively, in close quarters (choose before rolling)
@@ -489,7 +478,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/clash
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Defensively, in close quarters (choose before rolling)
@@ -501,7 +489,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Already positioned in close quarters against your foe
@@ -509,6 +496,7 @@ assets:
                       method: null
       courier:
         name: Courier
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -518,7 +506,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To transport and protect something precious
@@ -528,7 +515,6 @@ assets:
                   - starforged/moves/exploration/undertake_an_expedition
                   - starforged/moves/exploration/set_a_course
                 roll_type: action_roll
-                type: move
                 #       You may suffer -1 safety as the cost.
 
                 #       When safety falls to 0, envision a major complication related to this mission. If you overcome the threat, mark progress twice on this quest. Then, set safety to 3.
@@ -542,7 +528,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -555,7 +540,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/sojourn
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: During a courier mission
@@ -573,6 +557,7 @@ assets:
             min: 0
       demolitionist:
         name: Demolitionist
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -601,7 +586,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -609,6 +593,7 @@ assets:
                       roll_options: null
       devotant:
         name: Devotant
+        type: asset
         <<: *PathAsset
         options:
           name:
@@ -652,7 +637,6 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By calling on your god, power, or entity for guidance or aid
@@ -672,7 +656,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In service to your faith
@@ -684,7 +667,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -696,7 +678,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/hearten
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Through contemplation or sharing of your faith
@@ -707,6 +688,7 @@ assets:
                           assets: null
       diplomat:
         name: Diplomat
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -716,7 +698,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To resolve a dispute, negotiate an agreement, or gather support
@@ -725,7 +706,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -748,13 +728,12 @@ assets:
                   - starforged/moves/connection/make_a_connection
                   - starforged/moves/connection/sojourn
                 roll_type: action_roll
-                type: move
               - enhances:
                   - starforged/moves/connection/sojourn
                 roll_type: action_roll
-                type: move
       empath:
         name: Empath
+        type: asset
         <<: *PathAsset
         abilities:
           - text: &EmpathMove |-
@@ -763,9 +742,9 @@ assets:
             moves:
               read_heart:
                 name: Read Heart
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you read the intent, emotions, or memories of a nearby being...
                   conditions:
@@ -790,14 +769,12 @@ assets:
               - enhances:
                   - starforged/assets/path/empath/abilities/0/moves/read_heart
                 roll_type: action_roll
-                type: move
           - text: |-
               When you [Face Danger](id:starforged/moves/adventure/face_danger) to soothe a being’s distress by creating an empathic bond, roll +spirit and take +1 momentum on a hit. If they are an ally, also give them +2 spirit on a hit.
             enhance_moves:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To soothe a being's distress by creating an empathic bond
@@ -807,6 +784,7 @@ assets:
                           condition_meter: spirit
       explorer:
         name: Explorer
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -816,11 +794,9 @@ assets:
               - enhances:
                   - starforged/moves/exploration/explore_a_waypoint
                 roll_type: action_roll
-                type: move
               - enhances:
                   - starforged/moves/exploration/finish_an_expedition
                 roll_type: action_roll
-                type: move
           - # TODO: non move trigger
             text: |-
               When you come across a wondrous sight or phenomenon, such as an extraordinary planet, majestic creature, or dazzling stellar object, choose one:
@@ -833,7 +809,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By studying a newfound place from a safe position
@@ -841,6 +816,7 @@ assets:
                       method: null
       fated:
         name: Fated
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -851,7 +827,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - text: On your background vow
@@ -865,7 +840,6 @@ assets:
                   - starforged/moves/threshold/face_death
                   - starforged/moves/threshold/face_desolation
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: While your background vow is unfulfilled
@@ -882,6 +856,7 @@ assets:
                       roll_options: null
       firebrand:
         name: Firebrand
+        type: asset
         <<: *PathAsset
         abilities:
           - text: &FirebrandMove |-
@@ -890,9 +865,9 @@ assets:
             moves:
               gather_energy:
                 name: Gather Energy
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you rest and meditate to gather fiery energy...
                   conditions:
@@ -923,7 +898,6 @@ assets:
               - enhances:
                   - starforged/moves/suffer/endure_harm
                 roll_type: action_roll
-                type: move
           - text: |-
               When you have at least +3 fire, you may [Gain Ground](id:starforged/moves/combat/gain_ground) or [Strike](id:starforged/moves/combat/strike) by unleashing hell. If you do, take an automatic strong hit and mark progress. Then, set your fire to 0.
             enhance_moves:
@@ -931,7 +905,6 @@ assets:
                   - starforged/moves/combat/gain_ground
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you have at least +3 fire and unleash hell
@@ -946,6 +919,7 @@ assets:
             min: 0
       fugitive:
         name: Fugitive
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -983,6 +957,7 @@ assets:
 
       gearhead:
         name: Gearhead
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1002,7 +977,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By studying or disassembling a machine or device
@@ -1014,7 +988,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By spending sufficient time (a couple of hours or more) to assemble or enhance a device for a powerful but limited role
@@ -1023,6 +996,7 @@ assets:
               # TODO: separate move extension for device use?
       gunner:
         name: Gunner
+        type: asset
         <<: *PathAsset
         requirement: If you wield a heavy ranged personal weapon...
         abilities:
@@ -1036,7 +1010,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With a heavy ranged personal weapon, and choose to pin them down (before rolling)
@@ -1046,7 +1019,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With a heavy ranged personal weapon, and choose to make them hurt (before rolling)
@@ -1058,7 +1030,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
                 roll_type: progress_roll
-                type: move
                 trigger:
                   conditions:
                     - method: null
@@ -1074,7 +1045,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/clash
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With your favorite gun
@@ -1084,7 +1054,6 @@ assets:
                   - starforged/moves/combat/enter_the_fray
                   - starforged/moves/suffer/endure_stress
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: While wielding your favorite gun
@@ -1093,6 +1062,7 @@ assets:
 
       gunslinger:
         name: Gunslinger
+        type: asset
         <<: *PathAsset
         requirement: If you wield a pistol...
         abilities:
@@ -1103,7 +1073,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By facing off against your foe
@@ -1123,7 +1092,6 @@ assets:
                   - starforged/moves/combat/gain_ground
                   - starforged/moves/combat/react_under_fire
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By moving into cover
@@ -1136,7 +1104,6 @@ assets:
                   - starforged/moves/adventure/compel
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With the threat of violence by holding someone at gunpoint
@@ -1145,6 +1112,7 @@ assets:
 
       haunted:
         name: Haunted
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1163,7 +1131,6 @@ assets:
               - enhances:
                   - starforged/moves/threshold/face_death
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Guided by the spirit that haunts you
@@ -1183,6 +1150,7 @@ assets:
             # - outcomes: *Take1MomentumOnHit.outcomes
       healer:
         name: Healer
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1192,7 +1160,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/heal
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Give medical care to yourself
@@ -1201,7 +1168,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/heal
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Give medical care to another character
@@ -1213,7 +1179,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By studying medical evidence or biological remains
@@ -1224,6 +1189,7 @@ assets:
       # TODO: style as move?
       infiltrator:
         name: Infiltrator
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1243,7 +1209,6 @@ assets:
                   - 'starforged/moves/*/face_danger'
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To establish a false identity
@@ -1256,7 +1221,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/check_your_gear
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: For a device with a specific function to aid in infiltration, espionage, or sabotage
@@ -1264,6 +1228,7 @@ assets:
                       method: null
       kinetic:
         name: Kinetic
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1292,6 +1257,7 @@ assets:
                       method: strong_hit
       leader:
         name: Leader
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1301,7 +1267,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/aid_your_ally
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you [Aid Your Ally](id:starforged/moves/adventure/aid_your_ally) through leadership, coordination, or planning
@@ -1313,7 +1278,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By coordinating with your team as they wade into the fight
@@ -1338,6 +1302,7 @@ assets:
                       method: null
       looper:
         name: Looper
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1348,20 +1313,18 @@ assets:
                   - starforged/moves/suffer/endure_harm
                   - starforged/moves/suffer/companion_takes_a_hit
                   - starforged/moves/suffer/withstand_damage
-                roll_type:
-                type: move
-                  action_roll
+                roll_type: action_roll
                   # TODO: possible to add cost option here?
           - text: &LooperMove |-
               When you create a link to the current point in time, note the value of condition meters for you and your allies. You can retain only one active link. If you later loop back to this moment, roll +the gap in time: +4 if minutes, +3 if hours, or +2 if days. You may not burn momentum on this roll. On a strong hit, return to the linked point, retain any progress, and set condition meters (except for spirit) to their original values. On a weak hit, as above, but [Endure Stress](id:starforged/moves/suffer/endure_stress) (-2). On a miss, as with a strong hit, but you find the timeline corrupted; [Pay the Price](id:starforged/moves/fate/pay_the_price).
             moves:
               loop_back:
                 name: Loop Back
+                type: move
                 _source: *AssetSource
                 # Burn momentum: false
                 #TODO: add to IMove? Move usage?
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you loop back to a linked moment in time...
                   conditions:
@@ -1398,6 +1361,7 @@ assets:
       # what about "Alters: null"? is there a way to make it explicit that it's only supposed to be added to those?
       lore_hunter:
         name: Lore Hunter
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1407,7 +1371,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger: &LoreHunterQuestTrigger
                   conditions:
                     - text: To recover valuable knowledge or an extraordinary relic (formidable or greater)
@@ -1416,11 +1379,9 @@ assets:
               - enhances:
                   - starforged/moves/quest/reach_a_milestone
                 roll_type: no_roll
-                type: move
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger: *LoreHunterQuestTrigger
 
           - text: |-
@@ -1439,7 +1400,6 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you recall esoteric knowledge
@@ -1447,6 +1407,7 @@ assets:
                       method: null
       loyalist:
         name: Loyalist
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1472,6 +1433,7 @@ assets:
                         player: false
       mercenary:
         name: Mercenary
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1481,7 +1443,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger: &Mercenary.trigger
                   conditions:
                     - text: To wage war or defend others from war in exchange for payment or promises
@@ -1490,7 +1451,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger: *Mercenary.trigger
           - text: |-
               When you [Make a Connection](id:starforged/moves/connection/make_a_connection) by searching out or making contact with someone in need of your services, add +1 and take +1 momentum on a hit. On a strong hit with a match, this mission pits you against an unresolved aspect of your past or a hated foe; mark 2 ticks on your quests legacy track.
@@ -1498,7 +1458,6 @@ assets:
               - enhances:
                   - starforged/moves/connection/make_a_connection
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By searching out or making contact with someone in need of your services
@@ -1510,7 +1469,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/check_your_gear
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In the midst of a fight
@@ -1519,7 +1477,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/resupply
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By looting the field of battle in the aftermath of a fight
@@ -1527,6 +1484,7 @@ assets:
                       method: null
       naturalist:
         name: Naturalist
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1537,7 +1495,6 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Using your knowledge of lifeforms or planetside ecosystems
@@ -1558,7 +1515,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/resupply
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To scavenge resources in a life-bearing natural environment
@@ -1567,7 +1523,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Against an environmental threat
@@ -1576,6 +1531,7 @@ assets:
 
       navigator:
         name: Navigator
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1591,7 +1547,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/set_a_course
                 roll_type: action_roll
-                type: move
                 #   Choose one.
 
                 #     * Follow the fastest path: Take +2 momentum on a strong hit.
@@ -1602,7 +1557,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By charting the way forward
@@ -1612,7 +1566,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/face_danger'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To find a path around a hazard
@@ -1622,7 +1575,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: About a location by studying your charts
@@ -1635,7 +1587,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -1645,6 +1596,7 @@ assets:
                         ally: true
       outcast:
         name: Outcast
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1654,7 +1606,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/hearten
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In isolation, attempting find solace in fond memories or a hopeful wish (decide before rolling)
@@ -1666,9 +1617,9 @@ assets:
             moves:
               scrape_by:
                 name: Scrape By
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and your supply is reduced to 0...
                   conditions:
@@ -1690,7 +1641,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/sojourn
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -1700,6 +1650,7 @@ assets:
                         ally: true
       scavenger:
         name: Scavenger
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1709,7 +1660,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By scavenging a wreck, ruin, or abandoned site
@@ -1721,7 +1671,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To cobble together an ad hoc tool, device, or weapon
@@ -1733,7 +1682,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/check_your_gear
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - method: highest
@@ -1744,6 +1692,7 @@ assets:
                           condition_meter: supply
       scoundrel:
         name: Scoundrel
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1762,7 +1711,6 @@ assets:
               - enhances:
                   - starforged/moves/connection/make_a_connection
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To search out a new contact
@@ -1781,6 +1729,7 @@ assets:
             # TODO: momentum burn trigger
       seer:
         name: Seer
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1793,7 +1742,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gather_information
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: When you focus or meditate to [Gather Information](id:starforged/moves/adventure/gather_information) about a place, being, or situation (in person or remotely)
@@ -1807,7 +1755,6 @@ assets:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -1819,7 +1766,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/sojourn
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -1829,6 +1775,7 @@ assets:
                         ally: true
       shade:
         name: Shade
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1858,9 +1805,9 @@ assets:
             moves:
               shroud_in_darkness:
                 name: Shroud in Darkness
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you expand your veil to immerse your surroundings in darkness...
                   conditions:
@@ -1881,6 +1828,7 @@ assets:
             # TODO: non move trigger?
       slayer:
         name: Slayer
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1900,7 +1848,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger: &Slayer.trigger
                   conditions:
                     - text: To slay an inhuman foe in service to a community (formidable or greater)
@@ -1909,7 +1856,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/fulfill_your_vow
                 roll_type: progress_roll
-                type: move
                 trigger: *Slayer.trigger
           - text: |-
               When you [Enter the Fray](id:starforged/moves/combat/enter_the_fray) with an objective to slay an inhuman foe, take +2 momentum. If you choose to face the creature on its own terms as you begin the fight, envision the crucial weapon, protection, or aid you set aside, and set the objective one rank higher. If you [Take Decisive Action](id:starforged/moves/combat/take_decisive_action) after making this sacrifice and score a strong hit, take a trophy of your victory and mark 2 ticks on your quests legacy track.
@@ -1917,7 +1863,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With an objective to slay an inhuman foe
@@ -1925,6 +1870,7 @@ assets:
                       method: null
       sleuth:
         name: Sleuth
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1935,7 +1881,6 @@ assets:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: To solve a murder, disappearance, theft, or other mystery (no greater than formidable)
@@ -1957,7 +1902,6 @@ assets:
               - enhances:
                   - starforged/moves/connection/make_a_connection
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -1965,6 +1909,7 @@ assets:
                       method: weak_hit
       sniper:
         name: Sniper
+        type: asset
         <<: *PathAsset
         requirement: If you wield a rifle...
         abilities:
@@ -1974,9 +1919,9 @@ assets:
             moves:
               snipe_minor_foe:
                 name: Snipe Minor Foe
+                type: move
                 _source: *AssetSource
                 roll_type: action_roll
-                type: move
                 trigger:
                   text: When you target a minor foe from a distance (outside of a fight)...
                   conditions:
@@ -2001,7 +1946,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: From a distance with time enough to line up your shot
@@ -2015,7 +1959,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By studying a distant situation through your rifle scope
@@ -2024,7 +1967,6 @@ assets:
               - enhances:
                   - starforged/moves/adventure/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By taking careful aim
@@ -2033,6 +1975,7 @@ assets:
 
       tech:
         name: Tech
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -2051,7 +1994,6 @@ assets:
               - enhances:
                   - starforged/moves/suffer/withstand_damage
                 roll_type: action_roll
-                type: move
           - text: |-
               When you [Face Danger](id:starforged/moves/adventure/face_danger) or [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by creating a computer program to perform a specific, complex function, add +2 and take +1 momentum on a hit. One time only, when you trigger the program to fulfill its purpose, reroll any dice.
             enhance_moves:
@@ -2059,7 +2001,6 @@ assets:
                   - 'starforged/moves/*/face_danger'
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By creating a computer program to perform a specific, complex function
@@ -2067,6 +2008,7 @@ assets:
                       method: null
       trader:
         name: Trader
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -2076,7 +2018,6 @@ assets:
                   - starforged/moves/recover/sojourn
                   - starforged/moves/adventure/compel
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options:
@@ -2090,7 +2031,6 @@ assets:
               - enhances:
                   - starforged/moves/connection/make_a_connection
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: With a merchant or supplier
@@ -2099,7 +2039,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/resupply
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By bartering with a merchant or supplier connection
@@ -2111,7 +2050,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/make_a_connection
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -2121,6 +2059,7 @@ assets:
                         ally: true
       vestige:
         name: Vestige
+        type: asset
         <<: *PathAsset
         options:
           last_of:
@@ -2135,7 +2074,6 @@ assets:
                   - starforged/moves/threshold/face_death
                   - starforged/moves/threshold/face_desolation
                 roll_type: action_roll
-                type: move
           - text: |-
               When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Compel](id:starforged/moves/adventure/compel) through a tale, performance, or ceremony, envision what you reveal of your heritage. Then, add +1 and take +1 momentum on a hit.
             enhance_moves:
@@ -2143,7 +2081,6 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/adventure/compel
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Through a tale, performance, or ceremony
@@ -2166,6 +2103,7 @@ assets:
                 #       # default text: "You may reroll your action die."
       veteran:
         name: Veteran
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -2188,7 +2126,6 @@ assets:
               - enhances:
                   - starforged/moves/connection/make_a_connection
                 roll_type: action_roll
-                type: move
                 #         You have a history: you once fought beside them, and they owe you a favor. Mark 1 tick on your bonds legacy track, and [Develop Your Relationship](id:starforged/moves/connection/develop_your_relationship) now.
           - text: |-
               When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) by recounting or recalling a hard-won lesson from your battlefield experiences, envision the memory and add +1. On a hit, take +1 momentum.
@@ -2197,7 +2134,6 @@ assets:
                   - 'starforged/moves/*/secure_an_advantage'
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By recounting or recalling a hard-won lesson from your battlefield experiences
@@ -2205,6 +2141,7 @@ assets:
                       method: null
       voidborn:
         name: Voidborn
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -2217,7 +2154,6 @@ assets:
                   - starforged/moves/recover/sojourn
                   - starforged/moves/connection/make_a_connection
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Within a spacebound community
@@ -2226,7 +2162,6 @@ assets:
               - enhances:
                   - starforged/moves/recover/hearten
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Within a spacebound community
@@ -2243,6 +2178,7 @@ assets:
                       method: null
       weapon_master:
         name: Weapon Master
+        type: asset
         <<: *PathAsset
         abilities:
           - text: |-
@@ -2252,7 +2188,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: In personal combat
@@ -2262,7 +2197,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/gain_ground
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - roll_options: null
@@ -2274,7 +2208,6 @@ assets:
               - enhances:
                   - starforged/moves/combat/strike
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: Using a personal weapon which has limited ammo or a single-use mode
@@ -2286,7 +2219,6 @@ assets:
               - enhances:
                   - 'starforged/moves/*/secure_an_advantage'
                 roll_type: action_roll
-                type: move
                 trigger:
                   conditions:
                     - text: By suiting up and gathering your gear for a perilous encounter or mission

@@ -13,13 +13,13 @@ export const TruthOption: Transformer<
 	Datasworn.TruthOption,
 	Datasworn.Truth
 > = {
-	_id: function (
-		data: DataswornSource.TruthOption,
-		key: string | number,
-		parent: SourcedNode
-	): string {
-		return trackID(`${parent._id}/${key}`)
-	}
+	// _id: function (
+	// 	data: DataswornSource.TruthOption,
+	// 	key: string | number,
+	// 	parent: SourcedNode
+	// ): string {
+	// 	return trackID(`${parent._id}/${key}`)
+	// }
 }
 
 export const Truth = sourcedTransformer<
