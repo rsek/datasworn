@@ -1245,10 +1245,12 @@ type DelveSite struct {
 	// item, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
+	// Represents the delve site's denizen matrix as an array of objects.
 	Denizens []DelveSiteDenizen `json:"denizens"`
 
 	Description MarkdownString `json:"description"`
 
+	// The ID of the site's DelveSiteDomain card.
 	Domain DelveSiteDomainID `json:"domain"`
 
 	// The primary name/label for this item.
@@ -1256,6 +1258,7 @@ type DelveSite struct {
 
 	Rank ChallengeRank `json:"rank"`
 
+	// The ID of the site's DelveSiteTheme card.
 	Theme DelveSiteThemeID `json:"theme"`
 
 	Type DelveSiteType `json:"type"`

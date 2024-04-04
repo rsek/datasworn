@@ -4242,13 +4242,22 @@ export interface DelveSite {
 	 * The ID of an atlas entry representing the region in which this delve site is located.
 	 */
 	region?: AtlasEntryId
+	/**
+	 * The ID of the site's DelveSiteTheme card.
+	 */
 	theme: DelveSiteThemeId
+	/**
+	 * The ID of the site's DelveSiteDomain card.
+	 */
 	domain: DelveSiteDomainId
 	/**
 	 * An additional theme or domain card ID, for use with optional rules in Ironsworn: Delve.
 	 */
 	extra_card?: DelveSiteThemeId | DelveSiteDomainId
 	description: MarkdownString
+	/**
+	 * Represents the delve site's denizen matrix as an array of objects.
+	 */
 	denizens: DelveSiteDenizen[] &
 		[
 			{

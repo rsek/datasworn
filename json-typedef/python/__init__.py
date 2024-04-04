@@ -2291,8 +2291,16 @@ class DelveSite:
     """
 
     denizens: 'List[DelveSiteDenizen]'
+    """
+    Represents the delve site's denizen matrix as an array of objects.
+    """
+
     description: 'MarkdownString'
     domain: 'DelveSiteDomainID'
+    """
+    The ID of the site's DelveSiteDomain card.
+    """
+
     name: 'Label'
     """
     The primary name/label for this item.
@@ -2300,6 +2308,10 @@ class DelveSite:
 
     rank: 'ChallengeRank'
     theme: 'DelveSiteThemeID'
+    """
+    The ID of the site's DelveSiteTheme card.
+    """
+
     type: 'DelveSiteType'
     comment: 'Optional[str]'
     """

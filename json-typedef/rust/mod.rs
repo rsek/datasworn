@@ -1294,12 +1294,14 @@ pub struct DelveSite {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
+    /// Represents the delve site's denizen matrix as an array of objects.
     #[serde(rename = "denizens")]
     pub denizens: Vec<DelveSiteDenizen>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
+    /// The ID of the site's DelveSiteDomain card.
     #[serde(rename = "domain")]
     pub domain: DelveSiteDomainId,
 
@@ -1310,6 +1312,7 @@ pub struct DelveSite {
     #[serde(rename = "rank")]
     pub rank: ChallengeRank,
 
+    /// The ID of the site's DelveSiteTheme card.
     #[serde(rename = "theme")]
     pub theme: DelveSiteThemeId,
 

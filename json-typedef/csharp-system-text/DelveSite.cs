@@ -23,12 +23,18 @@ namespace Datasworn
         [JsonPropertyName("_source")]
         public SourceInfo Source { get; set; }
 
+        /// <summary>
+        /// Represents the delve site's denizen matrix as an array of objects.
+        /// </summary>
         [JsonPropertyName("denizens")]
         public IList<DelveSiteDenizen> Denizens { get; set; }
 
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
 
+        /// <summary>
+        /// The ID of the site's DelveSiteDomain card.
+        /// </summary>
         [JsonPropertyName("domain")]
         public DelveSiteDomainId Domain { get; set; }
 
@@ -41,6 +47,9 @@ namespace Datasworn
         [JsonPropertyName("rank")]
         public ChallengeRank Rank { get; set; }
 
+        /// <summary>
+        /// The ID of the site's DelveSiteTheme card.
+        /// </summary>
         [JsonPropertyName("theme")]
         public DelveSiteThemeId Theme { get; set; }
 

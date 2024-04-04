@@ -6137,10 +6137,16 @@
 					"ref": "ChallengeRank"
 				},
 				"theme": {
-					"ref": "DelveSiteThemeId"
+					"ref": "DelveSiteThemeId",
+					"metadata": {
+						"description": "The ID of the site's DelveSiteTheme card."
+					}
 				},
 				"domain": {
-					"ref": "DelveSiteDomainId"
+					"ref": "DelveSiteDomainId",
+					"metadata": {
+						"description": "The ID of the site's DelveSiteDomain card."
+					}
 				},
 				"description": {
 					"ref": "MarkdownString"
@@ -6148,6 +6154,9 @@
 				"denizens": {
 					"elements": {
 						"ref": "DelveSiteDenizen"
+					},
+					"metadata": {
+						"description": "Represents the delve site's denizen matrix as an array of objects."
 					}
 				}
 			},

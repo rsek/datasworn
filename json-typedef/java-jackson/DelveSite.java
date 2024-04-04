@@ -107,6 +107,7 @@ public class DelveSite {
 
     /**
      * Getter for denizens.<p>
+     * Represents the delve site's denizen matrix as an array of objects.
      */
     public List<DelveSiteDenizen> getDenizens() {
         return denizens;
@@ -114,6 +115,7 @@ public class DelveSite {
 
     /**
      * Setter for denizens.<p>
+     * Represents the delve site's denizen matrix as an array of objects.
      */
     public void setDenizens(List<DelveSiteDenizen> denizens) {
         this.denizens = denizens;
@@ -135,6 +137,7 @@ public class DelveSite {
 
     /**
      * Getter for domain.<p>
+     * The ID of the site's DelveSiteDomain card.
      */
     public DelveSiteDomainId getDomain() {
         return domain;
@@ -142,6 +145,7 @@ public class DelveSite {
 
     /**
      * Setter for domain.<p>
+     * The ID of the site's DelveSiteDomain card.
      */
     public void setDomain(DelveSiteDomainId domain) {
         this.domain = domain;
@@ -179,6 +183,7 @@ public class DelveSite {
 
     /**
      * Getter for theme.<p>
+     * The ID of the site's DelveSiteTheme card.
      */
     public DelveSiteThemeId getTheme() {
         return theme;
@@ -186,6 +191,7 @@ public class DelveSite {
 
     /**
      * Setter for theme.<p>
+     * The ID of the site's DelveSiteTheme card.
      */
     public void setTheme(DelveSiteThemeId theme) {
         this.theme = theme;

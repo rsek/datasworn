@@ -7559,10 +7559,12 @@
 					"description": "The ID of an atlas entry representing the region in which this delve site is located."
 				},
 				"theme": {
-					"$ref": "#/definitions/DelveSiteThemeId"
+					"$ref": "#/definitions/DelveSiteThemeId",
+					"description": "The ID of the site's DelveSiteTheme card."
 				},
 				"domain": {
-					"$ref": "#/definitions/DelveSiteDomainId"
+					"$ref": "#/definitions/DelveSiteDomainId",
+					"description": "The ID of the site's DelveSiteDomain card."
 				},
 				"extra_card": {
 					"description": "An additional theme or domain card ID, for use with optional rules in Ironsworn: Delve.",
@@ -7607,6 +7609,8 @@
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"denizens": {
+					"description": "Represents the delve site's denizen matrix as an array of objects.",
+					"rollable": "1d100",
 					"allOf": [
 						{
 							"type": "array",

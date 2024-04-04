@@ -77,8 +77,12 @@ export const DelveSite = Generic.SourcedNode(
 					'The ID of an atlas entry representing the region in which this delve site is located.'
 			})
 		),
-		theme: Type.Ref(Id.DelveSiteThemeId),
-		domain: Type.Ref(Id.DelveSiteDomainId),
+		theme: Type.Ref(Id.DelveSiteThemeId, {
+			description: "The ID of the site's DelveSiteTheme card."
+		}),
+		domain: Type.Ref(Id.DelveSiteDomainId, {
+			description: "The ID of the site's DelveSiteDomain card."
+		}),
 		extra_card: Type.Optional(
 			Type.Union(
 				[Type.Ref(Id.DelveSiteThemeId), Type.Ref(Id.DelveSiteDomainId)],
@@ -111,7 +115,10 @@ export const DelveSite = Generic.SourcedNode(
 			{
 				[JsonTypeDef]: {
 					schema: toJtdElements(DelveSiteDenizens)
-				}
+				},
+				rollable: '1d100',
+				description:
+					"Represents the delve site's denizen matrix as an array of objects."
 			}
 		)
 	}),

@@ -1716,13 +1716,19 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
+
+    # Represents the delve site's denizen matrix as an array of objects.
     attr_accessor :denizens
     attr_accessor :description
+
+    # The ID of the site's DelveSiteDomain card.
     attr_accessor :domain
 
     # The primary name/label for this item.
     attr_accessor :name
     attr_accessor :rank
+
+    # The ID of the site's DelveSiteTheme card.
     attr_accessor :theme
     attr_accessor :type
 
