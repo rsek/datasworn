@@ -55,9 +55,11 @@ const metadataKeys: string[] = []
 function replacer(k: string, v: unknown) {
 	if (metadataKeys.includes(k)) return undefined
 
+	// omit $ids that aren't the root URI, they're redundant and only there for TypeBox
 	if (k === '$id' && typeof v === 'string' && !v.startsWith('http'))
 		return undefined
 
+	// adjust references for use with standard json validation
 	if (
 		k === '$ref' &&
 		typeof v === 'string' &&
