@@ -1286,9 +1286,6 @@ type DelveSite struct {
 // Represents an entry in a site denizen matrix. Denizen matrices are described
 // in Ironsworn: Delve.
 type DelveSiteDenizen struct {
-	// The unique Datasworn ID for this item.
-	ID DelveSiteDenizenID `json:"_id"`
-
 	Frequency DelveSiteDenizenFrequency `json:"frequency"`
 
 	// High end of the dice range for this denizen.
@@ -1296,10 +1293,6 @@ type DelveSiteDenizen struct {
 
 	// Low end of the dice range for this denizen.
 	Min int16 `json:"min"`
-
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
 
 	// A name for the denizen, if it's different than the `name` property of the
 	// NPC.
@@ -1322,9 +1315,6 @@ const (
 
 	DelveSiteDenizenFrequencyVeryCommon DelveSiteDenizenFrequency = "very_common"
 )
-
-// A unique ID for a DelveSiteDenizen.
-type DelveSiteDenizenID = string
 
 type DelveSiteDomainType string
 

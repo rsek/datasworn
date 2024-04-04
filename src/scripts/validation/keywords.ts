@@ -11,5 +11,20 @@ export const KEYWORDS: Record<string, Omit<KeywordDefinition, 'keyword'>> = {
 	},
 	remarks: {
 		metaSchema: Keywords.remarks
+	},
+	rollable: {
+		type: 'array',
+		items: {
+			type: 'object',
+			properties: {
+				min: {
+					anyOf: [{ type: 'integer' }, { type: 'null' }]
+				},
+				max: {
+					anyOf: [{ type: 'integer' }, { type: 'null' }]
+				}
+			}
+		},
+		metaSchema: Keywords.rollable
 	}
 }

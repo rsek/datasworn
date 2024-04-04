@@ -1791,8 +1791,6 @@ module Datasworn
   # Represents an entry in a site denizen matrix. Denizen matrices are described
   # in Ironsworn: Delve.
   class DelveSiteDenizen
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
     attr_accessor :frequency
 
     # High end of the dice range for this denizen.
@@ -1800,10 +1798,6 @@ module Datasworn
 
     # Low end of the dice range for this denizen.
     attr_accessor :min
-
-    # Any implementation hints or other developer-facing comments on this
-    # object. These should be omitted when presenting the object for gameplay.
-    attr_accessor :comment
 
     # A name for the denizen, if it's different than the `name` property of
     # the NPC.
@@ -1814,11 +1808,9 @@ module Datasworn
 
     def self.from_json_data(data)
       out = DelveSiteDenizen.new
-      out.id = Datasworn::from_json_data(DelveSiteDenizenID, data["_id"])
       out.frequency = Datasworn::from_json_data(DelveSiteDenizenFrequency, data["frequency"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
-      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.npc = Datasworn::from_json_data(NpcID, data["npc"])
       out
@@ -1826,11 +1818,9 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["_id"] = Datasworn::to_json_data(id)
       data["frequency"] = Datasworn::to_json_data(frequency)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
-      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["name"] = Datasworn::to_json_data(name) unless name.nil?
       data["npc"] = Datasworn::to_json_data(npc) unless npc.nil?
       data
@@ -1864,21 +1854,6 @@ module Datasworn
 
     def to_json_data
       value
-    end
-  end
-
-  # A unique ID for a DelveSiteDenizen.
-  class DelveSiteDenizenID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DelveSiteDenizenID.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
     end
   end
 

@@ -51,7 +51,8 @@ function RollableMixin<OracleRow extends TObject>(row: TRef<OracleRow>) {
 		type: Type.Literal('oracle_rollable'),
 		rows: Type.Array(row, {
 			description:
-				'An array of objects, each representing a single row of the table.'
+				'An array of objects, each representing a single row of the table.',
+			rollable: true
 		})
 	})
 }

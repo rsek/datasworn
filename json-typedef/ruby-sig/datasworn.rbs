@@ -624,11 +624,9 @@ module Datasworn
   end
 
   class DelveSiteDenizen
-    attr_accessor id: DelveSiteDenizenID
     attr_accessor frequency: DelveSiteDenizenFrequency
     attr_accessor max: Integer
     attr_accessor min: Integer
-    attr_accessor comment: String?
     attr_accessor name: Label?
     attr_accessor npc: NpcID?
 
@@ -646,13 +644,6 @@ module Datasworn
     VERY_COMMON: DelveSiteDenizenFrequency
 
     def self.from_json_data: (untyped) -> DelveSiteDenizenFrequency
-    def to_json_data: () -> untyped
-  end
-
-  class DelveSiteDenizenID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> DelveSiteDenizenID
     def to_json_data: () -> untyped
   end
 

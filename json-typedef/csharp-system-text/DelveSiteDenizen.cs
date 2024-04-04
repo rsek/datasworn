@@ -10,12 +10,6 @@ namespace Datasworn
     /// </summary>
     public class DelveSiteDenizen
     {
-        /// <summary>
-        /// The unique Datasworn ID for this item.
-        /// </summary>
-        [JsonPropertyName("_id")]
-        public DelveSiteDenizenId Id { get; set; }
-
         [JsonPropertyName("frequency")]
         public DelveSiteDenizenFrequency Frequency { get; set; }
 
@@ -30,15 +24,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("min")]
         public short Min { get; set; }
-
-        /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
-        /// </summary>
-        [JsonPropertyName("_comment")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public string Comment { get; set; }
 
         /// <summary>
         /// A name for the denizen, if it's different than the `name` property

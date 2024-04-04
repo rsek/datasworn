@@ -241,14 +241,6 @@ export type AtlasEntryIdWildcard = string;
  */
 export type ConditionMeterRuleId = string;
 /**
- * A unique ID for a DelveSiteDenizen.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/delve_sites\/([a-z][a-z_]*)\/denizens\/([1-9][0-9]*)-([1-9][0-9]*)$/
- * ```
- * @example "delve/delve_sites/alvas_rest/denizens/1-27"
- */
-export type DelveSiteDenizenId = string;
-/**
  * A unique ID for a DelveSiteDomain.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/site_domains\/([a-z][a-z_]*)$/
@@ -3897,14 +3889,6 @@ export interface DelveSite {
  * Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.
  */
 export interface DelveSiteDenizen {
-    /**
-     * The unique Datasworn ID for this item.
-     */
-    _id: DelveSiteDenizenId;
-    /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
     /**
      * A name for the denizen, if it's different than the `name` property of the NPC.
      */

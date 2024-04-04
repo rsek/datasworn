@@ -2384,11 +2384,6 @@ class DelveSiteDenizen:
     in Ironsworn: Delve.
     """
 
-    id: 'DelveSiteDenizenID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
     frequency: 'DelveSiteDenizenFrequency'
     max: 'int'
     """
@@ -2398,12 +2393,6 @@ class DelveSiteDenizen:
     min: 'int'
     """
     Low end of the dice range for this denizen.
-    """
-
-    comment: 'Optional[str]'
-    """
-    Any implementation hints or other developer-facing comments on this object.
-    These should be omitted when presenting the object for gameplay.
     """
 
     name: 'Optional[Label]'
@@ -2421,23 +2410,18 @@ class DelveSiteDenizen:
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDenizen':
         return cls(
-            _from_json_data(DelveSiteDenizenID, data.get("_id")),
             _from_json_data(DelveSiteDenizenFrequency, data.get("frequency")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
-            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("name")),
             _from_json_data(Optional[NpcID], data.get("npc")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["_id"] = _to_json_data(self.id)
         data["frequency"] = _to_json_data(self.frequency)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
-        if self.comment is not None:
-             data["_comment"] = _to_json_data(self.comment)
         if self.name is not None:
              data["name"] = _to_json_data(self.name)
         if self.npc is not None:
@@ -2456,21 +2440,6 @@ class DelveSiteDenizenFrequency(Enum):
 
     def to_json_data(self) -> Any:
         return self.value
-
-@dataclass
-class DelveSiteDenizenID:
-    """
-    A unique ID for a DelveSiteDenizen.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DelveSiteDenizenID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 class DelveSiteDomainType(Enum):
     DELVE_SITE_DOMAIN = "delve_site_domain"

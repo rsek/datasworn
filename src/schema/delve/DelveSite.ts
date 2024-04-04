@@ -18,9 +18,8 @@ export const DelveSiteDenizenFrequency = Utils.UnionEnum(
 )
 export type DelveSiteDenizenFrequency = Static<typeof DelveSiteDenizenFrequency>
 
-export const DelveSiteDenizen = Generic.IdentifiedNode(
-	Type.Ref(Id.DelveSiteDenizenId),
-	Type.Object({
+export const DelveSiteDenizen = Type.Object(
+	{
 		name: Type.Optional(
 			Type.Ref(Localize.Label, {
 				description:
@@ -39,7 +38,7 @@ export const DelveSiteDenizen = Generic.IdentifiedNode(
 			})
 		),
 		frequency: Type.Ref(DelveSiteDenizenFrequency)
-	}),
+	},
 	{
 		$id: 'DelveSiteDenizen',
 		description:

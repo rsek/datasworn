@@ -34,7 +34,7 @@ export const Truth = Generic.SourcedNode(
 	Type.Object({
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 		summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
-		options: Type.Array(Type.Ref(TruthOption)),
+		options: Type.Array(Type.Ref(TruthOption), { rollable: '1d100' }),
 		your_character: Type.Optional(Type.Ref(Localize.MarkdownString))
 	}),
 	{

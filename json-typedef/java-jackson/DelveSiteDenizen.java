@@ -12,9 +12,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonSerialize
 public class DelveSiteDenizen {
-    @JsonProperty("_id")
-    private DelveSiteDenizenId id;
-
     @JsonProperty("frequency")
     private DelveSiteDenizenFrequency frequency;
 
@@ -25,10 +22,6 @@ public class DelveSiteDenizen {
     private Short min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("_comment")
-    private String comment;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("name")
     private Label name;
 
@@ -37,22 +30,6 @@ public class DelveSiteDenizen {
     private NpcId npc;
 
     public DelveSiteDenizen() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public DelveSiteDenizenId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(DelveSiteDenizenId id) {
-        this.id = id;
     }
 
     /**
@@ -99,24 +76,6 @@ public class DelveSiteDenizen {
      */
     public void setMin(Short min) {
         this.min = min;
-    }
-
-    /**
-     * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public String getComment() {
-        return comment;
-    }
-
-    /**
-     * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public void setComment(String comment) {
-        this.comment = comment;
     }
 
     /**

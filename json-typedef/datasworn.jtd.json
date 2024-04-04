@@ -371,16 +371,6 @@
 				"pattern": "^([a-z0-9_]{3,})\\/atlas\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
 			}
 		},
-		"DelveSiteDenizenId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a DelveSiteDenizen.",
-				"examples": [
-					"delve/delve_sites/alvas_rest/denizens/1-27"
-				],
-				"pattern": "^([a-z0-9_]{3,})\\/delve_sites\\/([a-z][a-z_]*)\\/denizens\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-			}
-		},
 		"DelveSiteDomainId": {
 			"type": "string",
 			"metadata": {
@@ -6212,12 +6202,6 @@
 		},
 		"DelveSiteDenizen": {
 			"properties": {
-				"_id": {
-					"ref": "DelveSiteDenizenId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
 				"min": {
 					"type": "int16",
 					"metadata": {
@@ -6235,12 +6219,6 @@
 				}
 			},
 			"optionalProperties": {
-				"_comment": {
-					"type": "string",
-					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-					}
-				},
 				"name": {
 					"ref": "Label",
 					"metadata": {

@@ -589,13 +589,6 @@
 			],
 			"pattern": "^([a-z0-9_]{3,})\\/rules\\/condition_meters\\/([a-z][a-z_]*)$"
 		},
-		"DelveSiteDenizenId": {
-			"title": "DelveSiteDenizenId",
-			"type": "string",
-			"description": "A unique ID for a DelveSiteDenizen.",
-			"examples": ["delve/delve_sites/alvas_rest/denizens/1-27"],
-			"pattern": "^([a-z0-9_]{3,})\\/delve_sites\\/([a-z][a-z_]*)\\/denizens\\/([1-9][0-9]*)-([1-9][0-9]*)$"
-		},
 		"DelveSiteDomainId": {
 			"title": "DelveSiteDomainId",
 			"type": "string",
@@ -3241,6 +3234,7 @@
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText"
 					}
@@ -3319,6 +3313,7 @@
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText2"
 					}
@@ -3397,6 +3392,7 @@
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText3"
 					}
@@ -4359,6 +4355,7 @@
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText"
 					}
@@ -4485,6 +4482,7 @@
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText2"
 					}
@@ -4607,6 +4605,7 @@
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText3"
 					}
@@ -7373,6 +7372,7 @@
 				},
 				"options": {
 					"type": "array",
+					"rollable": "1d100",
 					"items": {
 						"$ref": "#/definitions/TruthOption"
 					}
@@ -8031,10 +8031,6 @@
 			"description": "Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.",
 			"required": ["min", "max", "frequency"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/DelveSiteDenizenId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"name": {
 					"$ref": "#/definitions/Label",
 					"description": "A name for the denizen, if it's different than the `name` property of the NPC."
@@ -8053,10 +8049,6 @@
 				},
 				"frequency": {
 					"$ref": "#/definitions/DelveSiteDenizenFrequency"
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false

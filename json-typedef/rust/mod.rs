@@ -1357,10 +1357,6 @@ pub struct DelveSite {
 /// in Ironsworn: Delve.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDenizen {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: DelveSiteDenizenId,
-
     #[serde(rename = "frequency")]
     pub frequency: DelveSiteDenizenFrequency,
 
@@ -1371,12 +1367,6 @@ pub struct DelveSiteDenizen {
     /// Low end of the dice range for this denizen.
     #[serde(rename = "min")]
     pub min: i16,
-
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
 
     /// A name for the denizen, if it's different than the `name` property of
     /// the NPC.
@@ -1407,9 +1397,6 @@ pub enum DelveSiteDenizenFrequency {
     #[serde(rename = "very_common")]
     VeryCommon,
 }
-
-/// A unique ID for a DelveSiteDenizen.
-pub type DelveSiteDenizenId = String;
 
 #[derive(Serialize, Deserialize)]
 pub enum DelveSiteDomainType {

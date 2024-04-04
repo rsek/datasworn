@@ -162,11 +162,11 @@ export const DelveSiteIdWildcard = toWildcard(DelveSiteId, {
 })
 export type DelveSiteIdWildcard = Static<typeof DelveSiteIdWildcard>
 
-export const DelveSiteDenizenId = Extend(DelveSiteId, ['denizens', DiceRange], {
-	examples: ['delve/delve_sites/alvas_rest/denizens/1-27'],
-	$id: 'DelveSiteDenizenId'
-})
-export type DelveSiteDenizenId = Opaque<Static<typeof DelveSiteId>>
+// export const DelveSiteDenizenId = Extend(DelveSiteId, ['denizens', DiceRange], {
+// 	examples: ['delve/delve_sites/alvas_rest/denizens/1-27'],
+// 	$id: 'DelveSiteDenizenId'
+// })
+// export type DelveSiteDenizenId = Opaque<Static<typeof DelveSiteId>>
 
 export const DelveSiteThemeId = UncollectableId(['site_themes'], {
 	$id: 'DelveSiteThemeId',
