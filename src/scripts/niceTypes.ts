@@ -9,6 +9,7 @@ import {
 	ToUnion
 } from '../schema/Utils.js'
 import { TSchema, Type, CloneType, TypeGuard } from '@sinclair/typebox'
+import Log from './utils/Log.js'
 // import { CompilerOptions, ScriptTarget } from 'typescript'
 // import { shellify } from '../shellify.js'
 

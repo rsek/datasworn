@@ -2,6 +2,7 @@
 	"_id": "delve",
 	"datasworn_version": "0.0.9",
 	"type": "expansion",
+	"ruleset": "classic",
 	"title": "Ironsworn: Delve",
 	"authors": [
 		{
@@ -11,7 +12,6 @@
 	"date": "2020-02-13",
 	"url": "https://ironswornrpg.com",
 	"license": "https://creativecommons.org/licenses/by/4.0",
-	"ruleset": "classic",
 	"rules": {
 		"special_tracks": {
 			"failure_track": {

@@ -31,6 +31,10 @@ pub struct RulesPackageExpansion {
     #[serde(rename = "_id")]
     pub id: ExpansionId,
 
+    /// The version of the Datasworn format used by this data.
+    #[serde(rename = "datasworn_version")]
+    pub dataswornVersion: RulesPackageExpansionDataswornVersion,
+
     #[serde(rename = "ruleset")]
     pub ruleset: RulesetId,
 
@@ -49,11 +53,6 @@ pub struct RulesPackageExpansion {
     #[serde(rename = "authors")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authors: Option<Box<Vec<AuthorInfo>>>,
-
-    /// The version of the Datasworn format used by this data.
-    #[serde(rename = "datasworn_version")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub dataswornVersion: Option<Box<RulesPackageExpansionDataswornVersion>>,
 
     /// The date of the source documents's last update, formatted YYYY-MM-DD.
     /// Required because it's used to determine whether the data needs updating.

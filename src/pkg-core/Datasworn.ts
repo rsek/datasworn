@@ -94,13 +94,6 @@ export interface Ruleset {
  * A Datasworn package that relies on an external package to provide its ruleset.
  */
 export interface Expansion {
-	/**
-	 * The version of the Datasworn format used by this data.
-	 * @pattern ```javascript
-	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
-	 * ```
-	 */
-	datasworn_version?: '0.0.9'
 	description?: MarkdownString
 	title?: SourceTitle
 	/**
@@ -173,6 +166,13 @@ export interface Expansion {
 		| Map<DictKey, DelveSiteDomain>
 	_id: ExpansionId
 	type: 'expansion'
+	/**
+	 * The version of the Datasworn format used by this data.
+	 * @pattern ```javascript
+	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+	 * ```
+	 */
+	datasworn_version: '0.0.9'
 	ruleset: RulesetId
 	rules?: RulesExpansion
 }

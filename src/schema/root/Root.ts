@@ -20,13 +20,6 @@ export interface RootOptions extends SchemaOptions {
 
 export type TRoot<T extends TSchema = TSchema> = T & RootOptions
 
-const RootObjectMixin = Type.Object(
-	{
-		datasworn_version: Version
-	},
-	{ additionalProperties: true }
-)
-
 export function RootObject<T extends TSchema, Options extends RootOptions>(
 	base: T,
 	options: Options
@@ -45,7 +38,7 @@ export function SourceRootObject<
 	T extends TSchema,
 	Options extends RootOptions
 >(base: T, options: Options) {
-	return CloneType(Type.Intersect([base, RootObjectMixin]), {
+	return CloneType(base, {
 		...options,
 
 		[DefsKey]: mapValues(options[DefsKey], (v, k) =>

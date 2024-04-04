@@ -1,17 +1,27 @@
 /**
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.
+ * The root object for a Datasworn source file, whose schema is discriminated by the `type` property. Unlike the JSON schema for distribution, this may be a standalone object (Asset, Npc, Move, OracleRollable, DelveSite, DelveSiteTheme, DelveSiteDomain, or Rarity), but it still must specify its `ruleset` and `datasworn_version`.
  */
 export type SourceRoot =
-	| Ruleset
-	| Expansion
-	| Asset
-	| Npc
-	| Move
-	| OracleRollable
-	| DelveSite
-	| DelveSiteTheme
-	| DelveSiteDomain
-	| Rarity
+	| RulesPackage
+	| ((
+			| Asset
+			| Npc
+			| Move
+			| OracleRollable
+			| DelveSite
+			| DelveSiteTheme
+			| DelveSiteDomain
+			| Rarity
+	  ) & {
+			/**
+			 * The version of the Datasworn format used by this data.
+			 * @pattern ```javascript
+			 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+			 * ```
+			 */
+			datasworn_version: '0.0.9'
+			ruleset: RulesetId
+	  })
 
 /**
  * Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.
@@ -109,13 +119,6 @@ export interface Ruleset {
  * A Datasworn package that relies on an external package to provide its ruleset.
  */
 export interface Expansion {
-	/**
-	 * The version of the Datasworn format used by this data.
-	 * @pattern ```javascript
-	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
-	 * ```
-	 */
-	datasworn_version?: '0.0.9'
 	description?: MarkdownString
 	title?: SourceTitle
 	/**
@@ -188,6 +191,13 @@ export interface Expansion {
 		| Map<DictKey, DelveSiteDomain>
 	_id: ExpansionId
 	type: 'expansion'
+	/**
+	 * The version of the Datasworn format used by this data.
+	 * @pattern ```javascript
+	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+	 * ```
+	 */
+	datasworn_version: '0.0.9'
 	ruleset: RulesetId
 	rules?: RulesExpansion
 }

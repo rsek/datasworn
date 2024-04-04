@@ -163,11 +163,6 @@
 				"_id": {
 					"ref": "ExpansionId"
 				},
-				"ruleset": {
-					"ref": "RulesetId"
-				}
-			},
-			"optionalProperties": {
 				"datasworn_version": {
 					"enum": [
 						"0.0.9"
@@ -177,6 +172,11 @@
 						"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 					}
 				},
+				"ruleset": {
+					"ref": "RulesetId"
+				}
+			},
+			"optionalProperties": {
 				"description": {
 					"ref": "MarkdownString"
 				},

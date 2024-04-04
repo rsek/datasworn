@@ -49,6 +49,11 @@ class RulesPackageExpansion(RulesPackage):
     """
 
     id: 'ExpansionID'
+    datasworn_version: 'RulesPackageExpansionDataswornVersion'
+    """
+    The version of the Datasworn format used by this data.
+    """
+
     ruleset: 'RulesetID'
     assets: 'Optional[Dict[str, AssetCollection]]'
     """
@@ -64,11 +69,6 @@ class RulesPackageExpansion(RulesPackage):
     authors: 'Optional[List[AuthorInfo]]'
     """
     Lists authors credited by the source material.
-    """
-
-    datasworn_version: 'Optional[RulesPackageExpansionDataswornVersion]'
-    """
-    The version of the Datasworn format used by this data.
     """
 
     date: 'Optional[datetime]'
@@ -139,11 +139,11 @@ class RulesPackageExpansion(RulesPackage):
         return cls(
             "expansion",
             _from_json_data(ExpansionID, data.get("_id")),
+            _from_json_data(RulesPackageExpansionDataswornVersion, data.get("datasworn_version")),
             _from_json_data(RulesetID, data.get("ruleset")),
             _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
             _from_json_data(Optional[Dict[str, AtlasCollection]], data.get("atlas")),
             _from_json_data(Optional[List[AuthorInfo]], data.get("authors")),
-            _from_json_data(Optional[RulesPackageExpansionDataswornVersion], data.get("datasworn_version")),
             _from_json_data(Optional[datetime], data.get("date")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
@@ -163,6 +163,7 @@ class RulesPackageExpansion(RulesPackage):
     def to_json_data(self) -> Any:
         data = { "type": "expansion" }
         data["_id"] = _to_json_data(self.id)
+        data["datasworn_version"] = _to_json_data(self.datasworn_version)
         data["ruleset"] = _to_json_data(self.ruleset)
         if self.assets is not None:
              data["assets"] = _to_json_data(self.assets)
@@ -170,8 +171,6 @@ class RulesPackageExpansion(RulesPackage):
              data["atlas"] = _to_json_data(self.atlas)
         if self.authors is not None:
              data["authors"] = _to_json_data(self.authors)
-        if self.datasworn_version is not None:
-             data["datasworn_version"] = _to_json_data(self.datasworn_version)
         if self.date is not None:
              data["date"] = _to_json_data(self.date)
         if self.delve_sites is not None:

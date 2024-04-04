@@ -20,11 +20,11 @@ module Datasworn
 
   class RulesPackageExpansion < RulesPackage
     attr_accessor id: ExpansionID
+    attr_accessor datasworn_version: RulesPackageExpansionDataswornVersion
     attr_accessor ruleset: RulesetID
     attr_accessor assets: Hash[String, AssetCollection]?
     attr_accessor atlas: Hash[String, AtlasCollection]?
     attr_accessor authors: Array[AuthorInfo]?
-    attr_accessor datasworn_version: RulesPackageExpansionDataswornVersion?
     attr_accessor date: DateTime?
     attr_accessor delve_sites: Hash[String, DelveSite]?
     attr_accessor description: MarkdownString?

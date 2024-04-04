@@ -21,6 +21,7 @@ import {
 	TNullable,
 	TUnionEnum
 } from '../../schema/Utils.js'
+import Log from '../utils/Log.js'
 
 export function extractDefs(defs: Record<string, TSchema>) {
 	return mapValues(defs, (v, k) => renderDefinition(k, v))
@@ -33,7 +34,6 @@ const extractableKeywords: string[] = [
 	'i18n',
 	'deprecated'
 ]
-
 
 // keywords where a string value is expected, and the string value is the keyword
 const extractableKeywordValues: string[] = ['releaseStage']
@@ -101,7 +101,13 @@ function renderJsDoc(lines: string[]) {
 }
 
 function extractType(schema: TSchema): string {
+	// if (schema.$id) Log.info(`constructing type for ${schema.$id}`)
 	switch (true) {
+		case TypeGuard.IsIntersect(schema):
+			return uniq(schema.allOf.map(extractType))
+				.map((type) => (type.includes('|') ? '(' + type + ')' : type))
+				.join(' & ')
+
 		case TypeGuard.IsThis(schema):
 		case TypeGuard.IsRef(schema):
 			return schema.$ref
@@ -123,8 +129,6 @@ function extractType(schema: TSchema): string {
 		case TypeGuard.IsUnion(schema):
 		case TNullable(schema):
 			return uniq(schema.anyOf.map(extractType)).join(' | ')
-		case TypeGuard.IsIntersect(schema):
-			return uniq(schema.allOf.map(extractType)).join(' & ')
 		case TypeGuard.IsRecord(schema): {
 			const keyType = 'DictKey'
 			const valueType = extractType(Object.values(schema.patternProperties)[0])

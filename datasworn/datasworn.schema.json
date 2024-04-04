@@ -214,7 +214,7 @@
 			"title": "Expansion",
 			"type": "object",
 			"description": "A Datasworn package that relies on an external package to provide its ruleset.",
-			"required": ["_id", "type", "ruleset"],
+			"required": ["_id", "datasworn_version", "type", "ruleset"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/ExpansionId"
@@ -228,6 +228,9 @@
 				"type": {
 					"type": "string",
 					"const": "expansion"
+				},
+				"ruleset": {
+					"$ref": "#/definitions/RulesetId"
 				},
 				"title": {
 					"$ref": "#/definitions/SourceTitle"
@@ -251,9 +254,6 @@
 				},
 				"license": {
 					"$ref": "#/definitions/License"
-				},
-				"ruleset": {
-					"$ref": "#/definitions/RulesetId"
 				},
 				"rules": {
 					"$ref": "#/definitions/RulesExpansion"

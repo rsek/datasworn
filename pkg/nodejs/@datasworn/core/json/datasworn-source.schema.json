@@ -1,179 +1,162 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://ironswornrpg.com/datasworn-source.schema.json",
+	"$ref": "#/definitions/SourceRoot",
 	"title": "DataswornSource v0.0.9",
 	"description": "Source data schema for Datasworn, which describes game rules compatible with the Ironsworn tabletop roleplaying game by Shawn Tomkin.\n\nThe source data omits IDs, and makes properties that provide a default value optional; these values are inserted during validation/processing to produce the JSON for distribution.",
-	"allOf": [
-		{
-			"$ref": "#/definitions/SourceRoot"
-		},
-		{
-			"type": "object",
-			"required": ["datasworn_version"],
-			"properties": {
-				"datasworn_version": {
-					"type": "string",
-					"description": "The version of the Datasworn format used by this data.",
-					"const": "0.0.9",
-					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
-				}
-			},
-			"additionalProperties": true
-		}
-	],
 	"definitions": {
 		"SourceRoot": {
 			"title": "SourceRoot",
-			"type": "object",
-			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.",
-			"required": ["type"],
-			"properties": {
-				"type": {
-					"enum": [
-						"ruleset",
-						"expansion",
-						"asset",
-						"npc",
-						"move",
-						"oracle_rollable",
-						"delve_site",
-						"delve_site_theme",
-						"delve_site_domain",
-						"rarity"
+			"description": "The root object for a Datasworn source file, whose schema is discriminated by the `type` property. Unlike the JSON schema for distribution, this may be a standalone object (Asset, Npc, Move, OracleRollable, DelveSite, DelveSiteTheme, DelveSiteDomain, or Rarity), but it still must specify its `ruleset` and `datasworn_version`.",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/RulesPackage"
+				},
+				{
+					"allOf": [
+						{
+							"type": "object",
+							"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.",
+							"required": ["type"],
+							"properties": {
+								"type": {
+									"enum": [
+										"asset",
+										"npc",
+										"move",
+										"oracle_rollable",
+										"delve_site",
+										"delve_site_theme",
+										"delve_site_domain",
+										"rarity"
+									]
+								}
+							},
+							"additionalProperties": true,
+							"allOf": [
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "asset",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/Asset"
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "npc",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/Npc"
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "move",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/Move"
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "oracle_rollable",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/OracleRollable"
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "delve_site",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/DelveSite"
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "delve_site_theme",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/DelveSiteTheme"
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "delve_site_domain",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/DelveSiteDomain"
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "rarity",
+												"type": "string"
+											}
+										}
+									},
+									"then": {
+										"$ref": "#/definitions/Rarity"
+									}
+								}
+							]
+						},
+						{
+							"type": "object",
+							"required": ["datasworn_version", "ruleset"],
+							"properties": {
+								"datasworn_version": {
+									"type": "string",
+									"description": "The version of the Datasworn format used by this data.",
+									"const": "0.0.9",
+									"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+								},
+								"ruleset": {
+									"$ref": "#/definitions/RulesetId"
+								}
+							},
+							"additionalProperties": true
+						}
 					]
-				}
-			},
-			"additionalProperties": true,
-			"allOf": [
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "ruleset",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/Ruleset"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "expansion",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/Expansion"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "asset",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/Asset"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "npc",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/Npc"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "move",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/Move"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "oracle_rollable",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/OracleRollable"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "delve_site",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/DelveSite"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "delve_site_theme",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/DelveSiteTheme"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "delve_site_domain",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/DelveSiteDomain"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"type": {
-								"const": "rarity",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/Rarity"
-					}
 				}
 			]
 		},
@@ -373,7 +356,7 @@
 			"title": "Expansion",
 			"type": "object",
 			"description": "A Datasworn package that relies on an external package to provide its ruleset.",
-			"required": ["_id", "type", "ruleset"],
+			"required": ["_id", "datasworn_version", "type", "ruleset"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/ExpansionId"
@@ -387,6 +370,9 @@
 				"type": {
 					"type": "string",
 					"const": "expansion"
+				},
+				"ruleset": {
+					"$ref": "#/definitions/RulesetId"
 				},
 				"title": {
 					"$ref": "#/definitions/SourceTitle"
@@ -410,9 +396,6 @@
 				},
 				"license": {
 					"$ref": "#/definitions/License"
-				},
-				"ruleset": {
-					"$ref": "#/definitions/RulesetId"
 				},
 				"rules": {
 					"$ref": "#/definitions/RulesExpansion"

@@ -136,7 +136,9 @@ export type Ruleset = Static<typeof Ruleset>
 
 export const Expansion = Utils.Assign(
 	[
-		Type.Partial(Type.Omit(Ruleset, ['_id', 'type', 'rules'])),
+		Type.Partial(
+			Type.Omit(Ruleset, ['_id', 'type', 'rules', 'datasworn_version'])
+		),
 		Type.Object({
 			_id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
 			type: Type.Literal('expansion'),

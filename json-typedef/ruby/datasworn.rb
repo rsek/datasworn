@@ -45,11 +45,11 @@ module Datasworn
   # ruleset.
   class RulesPackageExpansion < RulesPackage
     attr_accessor :id
+    attr_accessor :datasworn_version
     attr_accessor :ruleset
     attr_accessor :assets
     attr_accessor :atlas
     attr_accessor :authors
-    attr_accessor :datasworn_version
     attr_accessor :date
     attr_accessor :delve_sites
     attr_accessor :description
@@ -69,11 +69,11 @@ module Datasworn
       out = RulesPackageExpansion.new
       out.type = "expansion"
       out.id = Datasworn::from_json_data(ExpansionID, data["_id"])
+      out.datasworn_version = Datasworn::from_json_data(RulesPackageExpansionDataswornVersion, data["datasworn_version"])
       out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
       out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
       out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
       out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
-      out.datasworn_version = Datasworn::from_json_data(RulesPackageExpansionDataswornVersion, data["datasworn_version"])
       out.date = Datasworn::from_json_data(DateTime, data["date"])
       out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
@@ -94,11 +94,11 @@ module Datasworn
     def to_json_data
       data = { "type" => "expansion" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["datasworn_version"] = Datasworn::to_json_data(datasworn_version)
       data["ruleset"] = Datasworn::to_json_data(ruleset)
       data["assets"] = Datasworn::to_json_data(assets) unless assets.nil?
       data["atlas"] = Datasworn::to_json_data(atlas) unless atlas.nil?
       data["authors"] = Datasworn::to_json_data(authors) unless authors.nil?
-      data["datasworn_version"] = Datasworn::to_json_data(datasworn_version) unless datasworn_version.nil?
       data["date"] = Datasworn::to_json_data(date) unless date.nil?
       data["delve_sites"] = Datasworn::to_json_data(delve_sites) unless delve_sites.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?

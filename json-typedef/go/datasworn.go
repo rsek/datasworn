@@ -65,6 +65,9 @@ const (
 type RulesPackageExpansion struct {
 	ID ExpansionID `json:"_id"`
 
+	// The version of the Datasworn format used by this data.
+	DataswornVersion RulesPackageExpansionDataswornVersion `json:"datasworn_version"`
+
 	Ruleset RulesetID `json:"ruleset"`
 
 	// A dictionary object containing asset collections, which contain assets.
@@ -76,9 +79,6 @@ type RulesPackageExpansion struct {
 
 	// Lists authors credited by the source material.
 	Authors []AuthorInfo `json:"authors,omitempty"`
-
-	// The version of the Datasworn format used by this data.
-	DataswornVersion *RulesPackageExpansionDataswornVersion `json:"datasworn_version,omitempty"`
 
 	// The date of the source documents's last update, formatted YYYY-MM-DD.
 	// Required because it's used to determine whether the data needs updating.

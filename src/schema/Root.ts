@@ -1,7 +1,7 @@
 import { type Static, Type, type TSchema } from '@sinclair/typebox'
 import * as CONST from '../scripts/const.js'
 
-import { Expansion, Ruleset, RulesPackage } from './RulesPackages.js'
+import { Expansion, Ruleset, RulesPackage, Version } from './RulesPackages.js'
 import { RootObject, SourceRootObject } from './root/Root.js'
 import Defs from './Defs.js'
 
@@ -17,26 +17,40 @@ import {
 	Move
 } from './index.js'
 import * as Utils from './Utils.js'
+import { RulesetId } from './common/Id.js'
 
-const SourceRoot = Utils.DiscriminatedUnion(
+const RootObjectMixin = Type.Object(
 	{
-		ruleset: Ruleset,
-		expansion: Expansion,
-		asset: Asset,
-		npc: Npc,
-		move: Move,
-		oracle_rollable: OracleRollable,
-		// delve types
-		delve_site: DelveSite,
-		delve_site_theme: DelveSiteTheme,
-		delve_site_domain: DelveSiteDomain,
-		rarity: Rarity
+		datasworn_version: Version,
+		ruleset: Type.Ref(RulesetId)
 	},
-	'type',
-	{
-		$id: 'SourceRoot'
-	}
+	{ additionalProperties: true }
 )
+
+const StandaloneNode = Type.Intersect([
+	Utils.DiscriminatedUnion(
+		{
+			asset: Asset,
+			npc: Npc,
+			move: Move,
+			oracle_rollable: OracleRollable,
+			// delve types
+			delve_site: DelveSite,
+			delve_site_theme: DelveSiteTheme,
+			delve_site_domain: DelveSiteDomain,
+			rarity: Rarity
+		},
+		'type'
+	),
+	RootObjectMixin
+])
+
+// this isn't friendly to JTD, but currently the source schema isn't processed for JTD anyways
+const SourceRoot = Type.Union([Type.Ref(RulesPackage), StandaloneNode], {
+	$id: 'SourceRoot',
+	description:
+		'The root object for a Datasworn source file, whose schema is discriminated by the `type` property. Unlike the JSON schema for distribution, this may be a standalone object (Asset, Npc, Move, OracleRollable, DelveSite, DelveSiteTheme, DelveSiteDomain, or Rarity), but it still must specify its `ruleset` and `datasworn_version`.'
+})
 
 export const DataswornSchema = RootObject(Type.Ref(RulesPackage), {
 	$schema: CONST.$schema,
