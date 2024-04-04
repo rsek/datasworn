@@ -210,7 +210,7 @@ export function toJtdDiscriminator<
 	// 	])
 	// )
 
-	console.log(discriminator, jtdMapping)
+	// console.log(discriminator, jtdMapping)
 	return JtdType.Union(jtdMapping, discriminator)
 }
 

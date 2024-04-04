@@ -6,6 +6,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * Represents an entry in a site denizen matrix. Denizen matrices are described
+ * in Ironsworn: Delve.
+ */
 @JsonSerialize
 public class DelveSiteDenizen {
     @JsonProperty("_id")
@@ -67,6 +71,7 @@ public class DelveSiteDenizen {
 
     /**
      * Getter for max.<p>
+     * High end of the dice range for this denizen.
      */
     public Short getMax() {
         return max;
@@ -74,6 +79,7 @@ public class DelveSiteDenizen {
 
     /**
      * Setter for max.<p>
+     * High end of the dice range for this denizen.
      */
     public void setMax(Short max) {
         this.max = max;
@@ -81,6 +87,7 @@ public class DelveSiteDenizen {
 
     /**
      * Getter for min.<p>
+     * Low end of the dice range for this denizen.
      */
     public Short getMin() {
         return min;
@@ -88,6 +95,7 @@ public class DelveSiteDenizen {
 
     /**
      * Setter for min.<p>
+     * Low end of the dice range for this denizen.
      */
     public void setMin(Short min) {
         this.min = min;
@@ -113,6 +121,8 @@ public class DelveSiteDenizen {
 
     /**
      * Getter for name.<p>
+     * A name for the denizen, if it's different than the `name` property of
+     * the NPC.
      */
     public Label getName() {
         return name;
@@ -120,6 +130,8 @@ public class DelveSiteDenizen {
 
     /**
      * Setter for name.<p>
+     * A name for the denizen, if it's different than the `name` property of
+     * the NPC.
      */
     public void setName(Label name) {
         this.name = name;

@@ -1879,6 +1879,9 @@ export interface OracleTableRowText {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
+	/**
+	 * @experimental
+	 */
 	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
@@ -1915,6 +1918,9 @@ export interface OracleTableRowText2 {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
+	/**
+	 * @experimental
+	 */
 	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
@@ -1955,6 +1961,9 @@ export interface OracleTableRowText3 {
 	 * @experimental
 	 */
 	template?: OracleRollTemplate
+	/**
+	 * @experimental
+	 */
 	_i18n?: I18nHints
 	/**
 	 * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
@@ -2531,9 +2540,6 @@ export interface OracleTableText3 {
 	 * @default {}
 	 */
 	column_labels?: {
-		/**
-		 * @default "Roll"
-		 */
 		roll: Label
 		text: Label
 		text2: Label
@@ -3720,7 +3726,7 @@ export type AssetOptionField =
 
 /**
  * A clock with 4 or more segments.
- * @remarks Semantics are similar to `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).
+ * @remarks Semantics are similar to HTML `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).
  */
 export interface ClockField {
 	label: InputLabel
@@ -4328,6 +4334,9 @@ export interface DelveSite {
 		]
 }
 
+/**
+ * Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.
+ */
 export interface DelveSiteDenizen {
 	/**
 	 * The unique Datasworn ID for this item.
@@ -4337,8 +4346,17 @@ export interface DelveSiteDenizen {
 	 * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
 	 */
 	_comment?: string
+	/**
+	 * A name for the denizen, if it's different than the `name` property of the NPC.
+	 */
 	name?: Label
+	/**
+	 * Low end of the dice range for this denizen.
+	 */
 	min: number
+	/**
+	 * High end of the dice range for this denizen.
+	 */
 	max: number
 	/**
 	 * The ID of the relevant NPC entry, if one is specified.

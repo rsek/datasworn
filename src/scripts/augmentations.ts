@@ -9,10 +9,12 @@ export namespace Keywords {
 	})
 	export const i18n = Type.Boolean({ default: false })
 	export const deprecated = Type.Boolean({ default: false })
+  export const remarks = Type.String()
 }
 
 declare module '@sinclair/typebox' {
 	interface SchemaOptions {
+		remarks?: Static<typeof Keywords.remarks>
 		releaseStage?: Static<typeof Keywords.releaseStage>
 		deprecated?: Static<typeof Keywords.deprecated>
 		/** A less complex alternate version of the schema for use with code generation tools. */

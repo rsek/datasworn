@@ -73,7 +73,8 @@ const defsBase = pickBy(
 		if (!TypeGuard.IsSchema(schema)) return false
 
 		if (typeof schema.$id !== 'string') {
-			Log.warn(`Schema in #/${DefsKey}, but doesn't have an ID?`, schema)
+			Log.warn(`Schema in #/${DefsKey}, but doesn't have an ID?`)
+			Log.warn(JSON.stringify(schema))
 			return false
 		}
 

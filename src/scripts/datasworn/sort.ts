@@ -238,6 +238,7 @@ const schemaKeyOrder = [
 	'title',
 	'type',
 	'description',
+	'remarks',
 	'$comment',
 	...keywordKeys,
 	'default',

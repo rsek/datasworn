@@ -8,5 +8,8 @@ export const KEYWORDS: Record<string, Omit<KeywordDefinition, 'keyword'>> = {
 	i18n: {
 		type: 'string',
 		metaSchema: Keywords.i18n
+	},
+	remarks: {
+		metaSchema: Keywords.remarks
 	}
 }

@@ -21,9 +21,18 @@ export type DelveSiteDenizenFrequency = Static<typeof DelveSiteDenizenFrequency>
 export const DelveSiteDenizen = Generic.IdentifiedNode(
 	Type.Ref(Id.DelveSiteDenizenId),
 	Type.Object({
-		name: Type.Optional(Type.Ref(Localize.Label)),
-		min: Type.Integer(),
-		max: Type.Integer(),
+		name: Type.Optional(
+			Type.Ref(Localize.Label, {
+				description:
+					"A name for the denizen, if it's different than the `name` property of the NPC."
+			})
+		),
+		min: Type.Integer({
+			description: 'Low end of the dice range for this denizen.'
+		}),
+		max: Type.Integer({
+			description: 'High end of the dice range for this denizen.'
+		}),
 		npc: Type.Optional(
 			Type.Ref(Id.NpcId, {
 				description: 'The ID of the relevant NPC entry, if one is specified.'
@@ -31,7 +40,11 @@ export const DelveSiteDenizen = Generic.IdentifiedNode(
 		),
 		frequency: Type.Ref(DelveSiteDenizenFrequency)
 	}),
-	{ $id: 'DelveSiteDenizen' }
+	{
+		$id: 'DelveSiteDenizen',
+		description:
+			'Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.'
+	}
 )
 export type DelveSiteDenizen = Static<typeof DelveSiteDenizen>
 function StaticDenizenRowStub<

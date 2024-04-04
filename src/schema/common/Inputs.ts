@@ -147,7 +147,7 @@ export const Counter: TIntegerInput<
 	{
 		description:
 			'A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.',
-		$comment: 'Semantics are similar to `<input type="number" step="1">`'
+		remarks: 'Semantics are similar to `<input type="number" step="1">`'
 	}
 ) satisfies TInput<TInteger>
 
@@ -175,8 +175,8 @@ export const Clock = IntegerInput(
 	},
 	{
 		description: 'A clock with 4 or more segments.',
-		$comment:
-			'Semantics are similar to `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).'
+		remarks:
+			'Semantics are similar to HTML `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).'
 	}
 )
 export type TClock = typeof Clock
@@ -230,7 +230,7 @@ export const Checkbox = Input(
 	Type.Boolean({ description: 'Is the box checked?', default: false }),
 	{
 		description: 'Represents a checkbox.',
-		$comment: 'Semantics are similar to the `<input type="checkbox">` element.'
+		remarks: 'Semantics are similar to the `<input type="checkbox">` element.'
 	}
 )
 export type Checkbox = Static<typeof Checkbox>
@@ -243,7 +243,7 @@ export const TextInput = Input(
 	}),
 	{
 		description: 'Represents an input that accepts plain text.',
-		$comment: 'Semantics are similar to the HTML `<input type="text">` element.'
+		remarks: 'Semantics are similar to the HTML `<input type="text">` element.'
 	}
 )
 export type TextInput = Static<typeof TextInput>
@@ -264,7 +264,7 @@ export function SelectOption<T extends TObject>(
 ) {
 	return Utils.Assign([SelectOptionBase, schema], {
 		description: 'Represents an option in a list of choices.',
-		$comment: 'Semantics are similar to the HTML `<option>` element.',
+		remarks: 'Semantics are similar to the HTML `<option>` element.',
 		...options
 	})
 }
@@ -302,7 +302,7 @@ export function SelectChoicesGroup<Option extends TRef<TSelectChoice<TObject>>>(
 	const mixin = Choices(optionSchema)
 	return Utils.Assign([SelectChoicesGroupBase, mixin], {
 		description: 'Represents a grouping of options in a list of choices.',
-		$comment: 'Semantics are similar to the HTML `<optgroup>` element.',
+		remarks: 'Semantics are similar to the HTML `<optgroup>` element.',
 		title: optionSchema.title ? optionSchema.title + 'Group' : undefined,
 		...options
 	}) as TObject<
@@ -345,7 +345,7 @@ export function SelectWithGroups<Option extends TSelectChoice<TObject>>(
 	)
 	return Utils.Assign([SelectBase, mixin], {
 		description: 'Represents a list of mutually exclusive choices.',
-		$comment: 'Semantics are similar to the HTML `<select>` element',
+		remarks: 'Semantics are similar to the HTML `<select>` element',
 		...options
 	}) as TObject<
 		ObjectProperties<typeof SelectBase> & ObjectProperties<typeof mixin>
@@ -366,7 +366,7 @@ export function Select<
 
 	return Utils.Assign([SelectBase, mixin], {
 		description: 'Represents a list of mutually exclusive choices.',
-		$comment: 'Semantics are similar to the HTML `<select>` element',
+		remarks: 'Semantics are similar to the HTML `<select>` element',
 		...options
 	}) as TObject<
 		ObjectProperties<typeof SelectBase> & ObjectProperties<typeof mixin>

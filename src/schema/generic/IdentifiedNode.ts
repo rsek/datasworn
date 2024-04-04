@@ -17,7 +17,7 @@ export function IdentifiedNode<T extends TObject>(
 	// 		options
 	// 	) as TIdentifiedNode<T>
 	// console.log('ADDED ID', result)
-	const { description, $comment } = base
+	const { description, remarks } = base
 
 	const result = Utils.Assign(
 		[
@@ -34,7 +34,7 @@ export function IdentifiedNode<T extends TObject>(
 		],
 		{
 			description,
-			$comment,
+			remarks,
 			...options
 		}
 	)

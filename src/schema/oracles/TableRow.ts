@@ -42,7 +42,11 @@ const TableRowBase = Type.Object({
 	template: Type.Optional(
 		Type.Ref(Rolls.OracleRollTemplate, { releaseStage: 'experimental' })
 	),
-	_i18n: Type.Optional(Type.Ref(Localize.I18nHints))
+	_i18n: Type.Optional(
+		Type.Ref(Localize.I18nHints, {
+			releaseStage: 'experimental'
+		})
+	)
 })
 
 export const TableRowMixin = Utils.Assign([
@@ -213,8 +217,7 @@ export const Text2ColumnLabels = ColumnLabels<typeof OracleTableRowText2>({
 })
 
 export const Text3ColumnLabels = ColumnLabels<typeof OracleTableRowText3>({
-	// purposefully undefined, not really any *common* use cases we can make assumptions about
-	roll: 'Roll',
+	roll: undefined,
 	text: undefined,
 	text2: undefined,
 	text3: undefined

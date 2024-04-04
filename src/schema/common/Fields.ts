@@ -27,7 +27,7 @@ function InputField<T extends Base.TInput<TSchema>, V extends string>(
 	type: V,
 	options: ObjectOptions = {}
 ) {
-	const { description, $comment } = base
+	const { description, remarks } = base
 
 	const mixin = Type.Object({
 		[DISCRIMINATOR]: Type.Literal(type),
@@ -40,7 +40,7 @@ function InputField<T extends Base.TInput<TSchema>, V extends string>(
 
 	const result = Utils.Assign([base, mixin], {
 		description,
-		$comment,
+		remarks,
 		[EnhanceableProperties]: [] as Array<keyof Static<T>>,
 		...options
 	}) as unknown as TInputField<T, V>

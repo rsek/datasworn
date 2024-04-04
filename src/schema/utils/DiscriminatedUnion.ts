@@ -132,7 +132,7 @@ export function DiscriminatedUnion<
 		allOf,
 		required: [discriminator],
 		type: 'object',
-		$comment: `Deserialize as a discriminated union/polymorphic object type, using the \`${discriminator}\` property as a discriminator.`,
+		remarks: `Deserialize as a discriminated union/polymorphic object type, using the \`${discriminator}\` property as a discriminator.`,
 
 		[Discriminator]: discriminator,
 		[Mapping]: mapping,

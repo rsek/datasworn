@@ -9,7 +9,7 @@
 			"title": "RulesPackage",
 			"type": "object",
 			"description": "Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.",
 			"required": ["type"],
 			"properties": {
 				"type": {
@@ -110,7 +110,7 @@
 				"oracles": {
 					"type": "object",
 					"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleTablesCollection"
@@ -120,7 +120,7 @@
 				"assets": {
 					"type": "object",
 					"description": "A dictionary object containing asset collections, which contain assets.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetCollection"
@@ -130,7 +130,7 @@
 				"atlas": {
 					"type": "object",
 					"description": "A dictionary object containing atlas collections, which contain atlas entries.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AtlasCollection"
@@ -140,7 +140,7 @@
 				"moves": {
 					"type": "object",
 					"description": "A dictionary object containing move categories, which contain moves.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/MoveCategory"
@@ -150,7 +150,7 @@
 				"npcs": {
 					"type": "object",
 					"description": "A dictionary object containing NPC collections, which contain NPCs.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/NpcCollection"
@@ -160,7 +160,7 @@
 				"rarities": {
 					"type": "object",
 					"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Rarity"
@@ -170,7 +170,7 @@
 				"delve_sites": {
 					"type": "object",
 					"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/DelveSite"
@@ -180,7 +180,7 @@
 				"site_domains": {
 					"type": "object",
 					"description": "A dictionary object containing delve site domains.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/DelveSiteDomain"
@@ -190,7 +190,7 @@
 				"site_themes": {
 					"type": "object",
 					"description": "A dictionary object containing delve site themes.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/DelveSiteTheme"
@@ -200,7 +200,7 @@
 				"truths": {
 					"type": "object",
 					"description": "A dictionary object of truth categories.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Truth"
@@ -264,7 +264,7 @@
 				"oracles": {
 					"type": "object",
 					"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleTablesCollection"
@@ -274,7 +274,7 @@
 				"assets": {
 					"type": "object",
 					"description": "A dictionary object containing asset collections, which contain assets.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetCollection"
@@ -284,7 +284,7 @@
 				"atlas": {
 					"type": "object",
 					"description": "A dictionary object containing atlas collections, which contain atlas entries.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AtlasCollection"
@@ -294,7 +294,7 @@
 				"moves": {
 					"type": "object",
 					"description": "A dictionary object containing move categories, which contain moves.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/MoveCategory"
@@ -304,7 +304,7 @@
 				"npcs": {
 					"type": "object",
 					"description": "A dictionary object containing NPC collections, which contain NPCs.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/NpcCollection"
@@ -314,7 +314,7 @@
 				"rarities": {
 					"type": "object",
 					"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Rarity"
@@ -324,7 +324,7 @@
 				"delve_sites": {
 					"type": "object",
 					"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/DelveSite"
@@ -334,7 +334,7 @@
 				"site_domains": {
 					"type": "object",
 					"description": "A dictionary object containing delve site domains.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/DelveSiteDomain"
@@ -344,7 +344,7 @@
 				"site_themes": {
 					"type": "object",
 					"description": "A dictionary object containing delve site themes.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/DelveSiteTheme"
@@ -354,7 +354,7 @@
 				"truths": {
 					"type": "object",
 					"description": "A dictionary object of truth categories.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Truth"
@@ -480,7 +480,7 @@
 			"title": "DictKey",
 			"type": "string",
 			"description": "A `snake_case` key used in a Datasworn dictionary object.",
-			"$comment": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
+			"remarks": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
 			"pattern": "^([a-z][a-z_]*)$"
 		},
 		"ExpansionId": {
@@ -726,13 +726,13 @@
 			"title": "CssColor",
 			"type": "string",
 			"description": "A CSS color value.",
-			"$comment": "See https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"
+			"remarks": "See https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"
 		},
 		"Date": {
 			"title": "Date",
 			"type": "string",
 			"description": "A date formatted YYYY-MM-DD.",
-			"$comment": "You may prefer to deserialize this as a Date object.",
+			"remarks": "You may prefer to deserialize this as a Date object.",
 			"format": "date",
 			"pattern": "[0-9]{4}-((0[0-9])|(1[0-2]))-(([0-2][0-9])|(3[0-1]))"
 		},
@@ -1046,7 +1046,7 @@
 				"contents": {
 					"type": "object",
 					"description": "A dictionary object of the Impacts in this category.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/ImpactRule"
@@ -1135,7 +1135,7 @@
 				"condition_meters": {
 					"type": "object",
 					"description": "Describes the standard condition meters used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/ConditionMeterRule"
@@ -1145,7 +1145,7 @@
 				"stats": {
 					"type": "object",
 					"description": "Describes the standard stats used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/StatRule"
@@ -1155,7 +1155,7 @@
 				"impacts": {
 					"type": "object",
 					"description": "Describes the standard impacts/debilities used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/ImpactCategory"
@@ -1165,7 +1165,7 @@
 				"special_tracks": {
 					"type": "object",
 					"description": "Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/SpecialTrackRule"
@@ -1174,7 +1174,7 @@
 				},
 				"tags": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"releaseStage": "experimental",
 					"default": {},
 					"patternProperties": {
@@ -1194,7 +1194,7 @@
 				"condition_meters": {
 					"type": "object",
 					"description": "Describes the standard condition meters used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/ConditionMeterRule"
@@ -1204,7 +1204,7 @@
 				"stats": {
 					"type": "object",
 					"description": "Describes the standard stats used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/StatRule"
@@ -1214,7 +1214,7 @@
 				"impacts": {
 					"type": "object",
 					"description": "Describes the standard impacts/debilities used by player characters in this ruleset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/ImpactCategory"
@@ -1224,7 +1224,7 @@
 				"special_tracks": {
 					"type": "object",
 					"description": "Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/SpecialTrackRule"
@@ -1233,7 +1233,7 @@
 				},
 				"tags": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"releaseStage": "experimental",
 					"default": {},
 					"patternProperties": {
@@ -1407,7 +1407,7 @@
 		"TagRule": {
 			"title": "TagRule",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `value_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `value_type` property as a discriminator.",
 			"required": ["value_type"],
 			"properties": {
 				"value_type": {
@@ -2264,7 +2264,7 @@
 				},
 				"controls": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"type": "object",
@@ -2425,7 +2425,7 @@
 			"title": "RollableValue",
 			"type": "object",
 			"description": "Provides a value like a stat, condition meter, or other number (usually for use in an action roll). The expected value is an integer, or null.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `using` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `using` property as a discriminator.",
 			"required": ["using"],
 			"properties": {
 				"using": {
@@ -2614,7 +2614,7 @@
 				},
 				"variants": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/NpcVariant"
@@ -2639,7 +2639,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -2712,7 +2712,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Npc"
@@ -2728,7 +2728,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -2891,7 +2891,7 @@
 		"OracleCollection": {
 			"title": "OracleCollection",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
 			"required": ["oracle_type"],
 			"properties": {
 				"oracle_type": {
@@ -3029,7 +3029,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -3106,7 +3106,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -3183,7 +3183,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -3209,7 +3209,7 @@
 			"title": "OracleRollable",
 			"type": "object",
 			"description": "A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
 			"required": ["oracle_type"],
 			"properties": {
 				"oracle_type": {
@@ -3308,7 +3308,7 @@
 		"OracleTableRollable": {
 			"title": "OracleTableRollable",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
 			"required": ["oracle_type"],
 			"properties": {
 				"oracle_type": {
@@ -3431,7 +3431,8 @@
 					}
 				},
 				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -3505,7 +3506,8 @@
 					}
 				},
 				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -3590,7 +3592,8 @@
 					}
 				},
 				"_i18n": {
-					"$ref": "#/definitions/I18nHints"
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
 				}
 			}
 		},
@@ -3662,7 +3665,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleColumnText"
@@ -3693,7 +3696,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -3779,7 +3782,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleColumnText"
@@ -3810,7 +3813,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -3896,7 +3899,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleColumnText2"
@@ -3932,7 +3935,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4018,7 +4021,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleColumnText3"
@@ -4049,7 +4052,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4171,7 +4174,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4305,7 +4308,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4409,14 +4412,11 @@
 					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
-					"default": {
-						"roll": "Roll"
-					},
+					"default": {},
 					"required": ["roll", "text", "text2", "text3"],
 					"properties": {
 						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
+							"$ref": "#/definitions/Label"
 						},
 						"text": {
 							"$ref": "#/definitions/Label"
@@ -4438,7 +4438,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4525,7 +4525,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleTableRollable"
@@ -4534,7 +4534,7 @@
 				},
 				"collections": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/OracleCollection"
@@ -4550,7 +4550,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4585,7 +4585,7 @@
 		"Move": {
 			"title": "Move",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.",
 			"required": ["roll_type"],
 			"properties": {
 				"roll_type": {
@@ -4717,7 +4717,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4821,7 +4821,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Move"
@@ -4837,7 +4837,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -4859,7 +4859,7 @@
 		"MoveEnhancement": {
 			"title": "MoveEnhancement",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.",
 			"required": ["roll_type"],
 			"properties": {
 				"roll_type": {
@@ -4992,7 +4992,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -5151,7 +5151,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -5275,7 +5275,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -5808,7 +5808,7 @@
 				"options": {
 					"type": "object",
 					"description": "Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetOptionField"
@@ -5842,7 +5842,7 @@
 				"controls": {
 					"type": "object",
 					"description": "Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetControlField"
@@ -5858,7 +5858,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -5899,7 +5899,7 @@
 				"options": {
 					"type": "object",
 					"description": "Fields that are expected to be set once and remain the same through the life of the asset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetAbilityOptionField"
@@ -5913,7 +5913,7 @@
 				"controls": {
 					"type": "object",
 					"description": "Fields whose values are expected to change over the life of the asset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetAbilityControlField"
@@ -5938,7 +5938,7 @@
 				"moves": {
 					"type": "object",
 					"description": "Unique moves added by this asset ability.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Move"
@@ -5950,7 +5950,7 @@
 		"AssetAbilityControlField": {
 			"title": "AssetAbilityControlField",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
 			"required": ["field_type"],
 			"properties": {
 				"field_type": {
@@ -6016,7 +6016,7 @@
 		"AssetAbilityOptionField": {
 			"title": "AssetAbilityOptionField",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
 			"required": ["field_type"],
 			"properties": {
 				"field_type": {
@@ -6200,7 +6200,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/Asset"
@@ -6216,7 +6216,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -6275,7 +6275,7 @@
 				"controls": {
 					"type": "object",
 					"description": "Checkbox controls rendered as part of the condition meter.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetConditionMeterControlField"
@@ -6321,7 +6321,7 @@
 			"title": "AssetConditionMeterControlField",
 			"type": "object",
 			"description": "A checkbox control field, rendered as part of an asset condition meter.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
 			"required": ["field_type"],
 			"properties": {
 				"field_type": {
@@ -6377,7 +6377,7 @@
 		"AssetControlField": {
 			"title": "AssetControlField",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
 			"required": ["field_type"],
 			"properties": {
 				"field_type": {
@@ -6448,7 +6448,7 @@
 		"AssetControlFieldEnhancement": {
 			"title": "AssetControlFieldEnhancement",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
 			"required": ["field_type"],
 			"properties": {
 				"field_type": {
@@ -6491,7 +6491,7 @@
 				"controls": {
 					"type": "object",
 					"description": "Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AssetControlFieldEnhancement"
@@ -6507,7 +6507,7 @@
 			"title": "AssetOptionField",
 			"type": "object",
 			"description": "Options are asset input fields which are set once, usually when the character takes the asset. The most common example is the \"name\" field on companion assets. A more complex example is the choice of a god's stat for the Devotant asset.",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `field_type` property as a discriminator.",
 			"required": ["field_type"],
 			"properties": {
 				"field_type": {
@@ -6561,7 +6561,7 @@
 			"title": "ClockField",
 			"type": "object",
 			"description": "A clock with 4 or more segments.",
-			"$comment": "Semantics are similar to `<input type=\"number\">`, but rendered as a clock (a circle with equally sized wedges).",
+			"remarks": "Semantics are similar to HTML `<input type=\"number\">`, but rendered as a clock (a circle with equally sized wedges).",
 			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
@@ -6643,7 +6643,7 @@
 			"title": "CounterField",
 			"type": "object",
 			"description": "A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum.",
-			"$comment": "Semantics are similar to `<input type=\"number\" step=\"1\">`",
+			"remarks": "Semantics are similar to `<input type=\"number\" step=\"1\">`",
 			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
@@ -6690,7 +6690,7 @@
 			"title": "SelectEnhancementField",
 			"type": "object",
 			"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).",
-			"$comment": "Semantics are similar to the HTML `<select>` element",
+			"remarks": "Semantics are similar to the HTML `<select>` element",
 			"required": ["label", "field_type", "choices", "value"],
 			"properties": {
 				"label": {
@@ -6702,11 +6702,11 @@
 				},
 				"choices": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"type": "object",
-							"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `choice_type` property as a discriminator.",
+							"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `choice_type` property as a discriminator.",
 							"required": ["choice_type"],
 							"properties": {
 								"choice_type": {
@@ -6769,7 +6769,7 @@
 			"title": "SelectEnhancementFieldChoice",
 			"type": "object",
 			"description": "Represents an option in a list of choices.",
-			"$comment": "Semantics are similar to the HTML `<option>` element.",
+			"remarks": "Semantics are similar to the HTML `<option>` element.",
 			"required": ["label", "choice_type"],
 			"properties": {
 				"label": {
@@ -6794,7 +6794,7 @@
 			"title": "SelectEnhancementFieldChoiceGroup",
 			"type": "object",
 			"description": "Represents a grouping of options in a list of choices.",
-			"$comment": "Semantics are similar to the HTML `<optgroup>` element.",
+			"remarks": "Semantics are similar to the HTML `<optgroup>` element.",
 			"required": ["name", "choice_type", "choices"],
 			"properties": {
 				"name": {
@@ -6807,7 +6807,7 @@
 				},
 				"choices": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/SelectEnhancementFieldChoice"
@@ -6820,7 +6820,7 @@
 			"title": "SelectValueField",
 			"type": "object",
 			"description": "Represents a list of mutually exclusive choices.",
-			"$comment": "Semantics are similar to the HTML `<select>` element",
+			"remarks": "Semantics are similar to the HTML `<select>` element",
 			"required": ["label", "field_type", "choices", "value"],
 			"properties": {
 				"label": {
@@ -6832,7 +6832,7 @@
 				},
 				"choices": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/SelectValueFieldChoice"
@@ -6862,7 +6862,7 @@
 		"SelectValueFieldChoice": {
 			"title": "SelectValueFieldChoice",
 			"type": "object",
-			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `using` property as a discriminator.",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `using` property as a discriminator.",
 			"required": ["using"],
 			"properties": {
 				"using": {
@@ -6890,7 +6890,7 @@
 					},
 					"then": {
 						"description": "Represents an option in a list of choices.",
-						"$comment": "Semantics are similar to the HTML `<option>` element.",
+						"remarks": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
 						"properties": {
 							"label": {
@@ -6923,7 +6923,7 @@
 					},
 					"then": {
 						"description": "Represents an option in a list of choices.",
-						"$comment": "Semantics are similar to the HTML `<option>` element.",
+						"remarks": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
 						"properties": {
 							"label": {
@@ -6956,7 +6956,7 @@
 					},
 					"then": {
 						"description": "Represents an option in a list of choices.",
-						"$comment": "Semantics are similar to the HTML `<option>` element.",
+						"remarks": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
 						"properties": {
 							"label": {
@@ -7006,7 +7006,7 @@
 					},
 					"then": {
 						"description": "Represents an option in a list of choices.",
-						"$comment": "Semantics are similar to the HTML `<option>` element.",
+						"remarks": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
 						"properties": {
 							"label": {
@@ -7055,7 +7055,7 @@
 					},
 					"then": {
 						"description": "Represents an option in a list of choices.",
-						"$comment": "Semantics are similar to the HTML `<option>` element.",
+						"remarks": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
 						"properties": {
 							"label": {
@@ -7090,7 +7090,7 @@
 					},
 					"then": {
 						"description": "Represents an option in a list of choices.",
-						"$comment": "Semantics are similar to the HTML `<option>` element.",
+						"remarks": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
 						"properties": {
 							"label": {
@@ -7124,7 +7124,7 @@
 					},
 					"then": {
 						"description": "Represents an option in a list of choices.",
-						"$comment": "Semantics are similar to the HTML `<option>` element.",
+						"remarks": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
 						"properties": {
 							"label": {
@@ -7152,7 +7152,7 @@
 			"title": "TextField",
 			"type": "object",
 			"description": "Represents an input that accepts plain text.",
-			"$comment": "Semantics are similar to the HTML `<input type=\"text\">` element.",
+			"remarks": "Semantics are similar to the HTML `<input type=\"text\">` element.",
 			"required": ["label", "field_type", "value"],
 			"properties": {
 				"label": {
@@ -7222,7 +7222,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -7323,7 +7323,7 @@
 				},
 				"contents": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AtlasEntry"
@@ -7332,7 +7332,7 @@
 				},
 				"collections": {
 					"type": "object",
-					"$comment": "Deserialize as a dictionary object.",
+					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
 							"$ref": "#/definitions/AtlasCollection"
@@ -7348,7 +7348,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -7416,7 +7416,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -7503,7 +7503,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -7593,7 +7593,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -7861,6 +7861,7 @@
 		"DelveSiteDenizen": {
 			"title": "DelveSiteDenizen",
 			"type": "object",
+			"description": "Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.",
 			"required": ["_id", "min", "max", "frequency"],
 			"properties": {
 				"_id": {
@@ -7868,17 +7869,20 @@
 					"description": "The unique Datasworn ID for this item."
 				},
 				"name": {
-					"$ref": "#/definitions/Label"
+					"$ref": "#/definitions/Label",
+					"description": "A name for the denizen, if it's different than the `name` property of the NPC."
 				},
 				"npc": {
 					"$ref": "#/definitions/NpcId",
 					"description": "The ID of the relevant NPC entry, if one is specified."
 				},
 				"min": {
-					"type": "integer"
+					"type": "integer",
+					"description": "Low end of the dice range for this denizen."
 				},
 				"max": {
-					"type": "integer"
+					"type": "integer",
+					"description": "High end of the dice range for this denizen."
 				},
 				"frequency": {
 					"$ref": "#/definitions/DelveSiteDenizenFrequency"
@@ -8237,7 +8241,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"
@@ -8595,7 +8599,7 @@
 					"patternProperties": {
 						"^([a-z0-9_]{3,})$": {
 							"type": "object",
-							"$comment": "Deserialize as a dictionary object.",
+							"remarks": "Deserialize as a dictionary object.",
 							"patternProperties": {
 								"^([a-z][a-z_]*)$": {
 									"$ref": "#/definitions/Tag"

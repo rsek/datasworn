@@ -40,7 +40,7 @@ export type ExpansionId = Static<typeof ExpansionId>
 export const DictKey = Id([Node], {
 	$id: 'DictKey',
 	description: 'A `snake_case` key used in a Datasworn dictionary object.',
-	$comment:
+	remarks:
 		"If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS."
 })
 export type DictKey = Static<typeof DictKey>

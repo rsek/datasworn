@@ -2379,6 +2379,11 @@ class DelveSite:
 
 @dataclass
 class DelveSiteDenizen:
+    """
+    Represents an entry in a site denizen matrix. Denizen matrices are described
+    in Ironsworn: Delve.
+    """
+
     id: 'DelveSiteDenizenID'
     """
     The unique Datasworn ID for this item.
@@ -2386,7 +2391,15 @@ class DelveSiteDenizen:
 
     frequency: 'DelveSiteDenizenFrequency'
     max: 'int'
+    """
+    High end of the dice range for this denizen.
+    """
+
     min: 'int'
+    """
+    Low end of the dice range for this denizen.
+    """
+
     comment: 'Optional[str]'
     """
     Any implementation hints or other developer-facing comments on this object.
@@ -2394,6 +2407,11 @@ class DelveSiteDenizen:
     """
 
     name: 'Optional[Label]'
+    """
+    A name for the denizen, if it's different than the `name` property of the
+    NPC.
+    """
+
     npc: 'Optional[NpcID]'
     """
     The ID of the relevant NPC entry, if one is specified.

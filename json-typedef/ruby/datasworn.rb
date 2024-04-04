@@ -1788,16 +1788,25 @@ module Datasworn
     end
   end
 
+  # Represents an entry in a site denizen matrix. Denizen matrices are described
+  # in Ironsworn: Delve.
   class DelveSiteDenizen
     # The unique Datasworn ID for this item.
     attr_accessor :id
     attr_accessor :frequency
+
+    # High end of the dice range for this denizen.
     attr_accessor :max
+
+    # Low end of the dice range for this denizen.
     attr_accessor :min
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
     attr_accessor :comment
+
+    # A name for the denizen, if it's different than the `name` property of
+    # the NPC.
     attr_accessor :name
 
     # The ID of the relevant NPC entry, if one is specified.

@@ -67,14 +67,13 @@ const tags: Record<string, Omit<KeywordDefinition, 'keyword'>> = {
 	packageDocumentation: { metaSchema: Type.Boolean() },
 	param: { metaSchema: Type.Boolean() },
 	private: { metaSchema: Type.Boolean() },
-	privateRemarks: { metaSchema: Type.Boolean() },
+	privateRemarks: { metaSchema: Type.String() },
 	property: { metaSchema: Type.Boolean() },
 	// protected: { metaSchema: Type.Boolean() },
 	// public: { metaSchema: Type.Boolean() },
 	// readonly: { metaSchema: Type.Boolean() },
 
-	// use JSON Schema $comment
-	// remarks: { metaSchema: Type.Boolean() },
+	remarks: { metaSchema: Type.String() },
 	returns: { metaSchema: Type.Boolean() },
 	satisfies: { metaSchema: Type.Boolean() },
 	sealed: { metaSchema: Type.Boolean() },

@@ -18,7 +18,7 @@ export function Dictionary<T extends TSchema>(
 		// Type.Transform(
 		Type.Record(Id.DictKey, schema, {
 			...options,
-			$comment: 'Deserialize as a dictionary object.',
+			remarks: 'Deserialize as a dictionary object.',
 			[DictionaryBrand]: 'Dictionary'
 		}) as TDictionary<T>
 	// )

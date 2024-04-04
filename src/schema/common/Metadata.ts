@@ -23,7 +23,7 @@ export const WebpImageUrl = Type.String({
 export type WebpImageUrl = Static<typeof WebpImageUrl>
 export const CssColor = Type.String({
 	$id: 'CssColor',
-	$comment: 'See https://developer.mozilla.org/en-US/docs/Web/CSS/color_value',
+	remarks: 'See https://developer.mozilla.org/en-US/docs/Web/CSS/color_value',
 	description: 'A CSS color value.'
 })
 export type CssColor = Static<typeof CssColor>
@@ -81,7 +81,7 @@ export const PageNumber = Type.Integer({
 export const Date = Type.String({
 	pattern: /[0-9]{4}-((0[0-9])|(1[0-2]))-(([0-2][0-9])|(3[0-1]))/.source,
 	format: 'date',
-	$comment: 'You may prefer to deserialize this as a Date object.',
+	remarks: 'You may prefer to deserialize this as a Date object.',
 	description: 'A date formatted YYYY-MM-DD.',
 	$id: 'Date'
 })

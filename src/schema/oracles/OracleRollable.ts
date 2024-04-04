@@ -59,12 +59,14 @@ function RollableMixin<OracleRow extends TObject>(row: TRef<OracleRow>) {
 function RollableTable<OracleRow extends TObject, MappingKey extends string>(
 	mappingKey: MappingKey,
 	row: TRef<OracleRow>,
-	column_labels: ReturnType<typeof ColumnLabels<OracleRow>>,
+	column_labels: ReturnType<typeof ColumnLabels<OracleRow>> | null,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
 	const base = Type.Object({
 		oracle_type: Type.Literal(mappingKey),
-		...TableMixin<OracleRow>(column_labels).properties,
+		...(column_labels != null
+			? TableMixin<OracleRow>(column_labels).properties
+			: {}),
 		...RollableMixin(row).properties
 	})
 	return Generic.RecursiveCollectable(

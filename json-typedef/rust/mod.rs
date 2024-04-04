@@ -1353,6 +1353,8 @@ pub struct DelveSite {
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
+/// Represents an entry in a site denizen matrix. Denizen matrices are described
+/// in Ironsworn: Delve.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDenizen {
     /// The unique Datasworn ID for this item.
@@ -1362,9 +1364,11 @@ pub struct DelveSiteDenizen {
     #[serde(rename = "frequency")]
     pub frequency: DelveSiteDenizenFrequency,
 
+    /// High end of the dice range for this denizen.
     #[serde(rename = "max")]
     pub max: i16,
 
+    /// Low end of the dice range for this denizen.
     #[serde(rename = "min")]
     pub min: i16,
 
@@ -1374,6 +1378,8 @@ pub struct DelveSiteDenizen {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub comment: Option<Box<String>>,
 
+    /// A name for the denizen, if it's different than the `name` property of
+    /// the NPC.
     #[serde(rename = "name")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<Box<Label>>,

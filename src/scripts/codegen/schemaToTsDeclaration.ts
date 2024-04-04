@@ -42,7 +42,7 @@ function extractKeywords(schema: TSchema) {
 	const jsDoc: string[] = []
 
 	if (schema.description) jsDoc.push(schema.description)
-	if (schema.$comment) jsDoc.push(tag('remarks', schema.$comment))
+	if (schema.remarks) jsDoc.push(tag('remarks', schema.remarks))
 	if (schema.pattern)
 		jsDoc.push(tag('pattern', wrapCodeBlock(`/${schema.pattern}/`)))
 	if (schema.examples)

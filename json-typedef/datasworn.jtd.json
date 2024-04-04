@@ -6219,10 +6219,16 @@
 					}
 				},
 				"min": {
-					"type": "int16"
+					"type": "int16",
+					"metadata": {
+						"description": "Low end of the dice range for this denizen."
+					}
 				},
 				"max": {
-					"type": "int16"
+					"type": "int16",
+					"metadata": {
+						"description": "High end of the dice range for this denizen."
+					}
 				},
 				"frequency": {
 					"ref": "DelveSiteDenizenFrequency"
@@ -6236,7 +6242,10 @@
 					}
 				},
 				"name": {
-					"ref": "Label"
+					"ref": "Label",
+					"metadata": {
+						"description": "A name for the denizen, if it's different than the `name` property of the NPC."
+					}
 				},
 				"npc": {
 					"ref": "NpcId",
@@ -6245,7 +6254,9 @@
 					}
 				}
 			},
-			"metadata": {}
+			"metadata": {
+				"description": "Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve."
+			}
 		},
 		"DelveSiteDenizenFrequency": {
 			"enum": [
