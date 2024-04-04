@@ -1,4 +1,4 @@
-import { Type } from '@sinclair/typebox'
+import { Type, type Static, type TSchema, type Kind } from '@sinclair/typebox'
 import { UnionEnum } from '../schema/Utils.js'
 import { type Simplify, type JsonTypeDef } from '../schema/Symbols.js'
 import { type Metadata } from './json-typedef/typedef.js'
@@ -35,4 +35,3 @@ declare global {
 		keys<T extends object>(object: T): (keyof T)[]
 	}
 }
-

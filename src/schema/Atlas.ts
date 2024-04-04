@@ -26,8 +26,7 @@ const AtlasBase = Generic.Collection(
 )
 
 export const Atlas = Generic.RecursiveCollection(AtlasBase, {
-	$id: 'Atlas',
-	releaseStage: 'experimental'
+	$id: 'Atlas'
 })
 
 export type TAtlas = typeof Atlas

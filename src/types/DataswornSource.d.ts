@@ -4046,9 +4046,6 @@ export interface TruthOption {
 	table?: OracleTableRowText[]
 }
 
-/**
- * @experimental
- */
 export interface Atlas {
 	/**
 	 * The unique Datasworn ID for this item.

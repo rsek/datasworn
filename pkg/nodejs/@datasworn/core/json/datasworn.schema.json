@@ -7272,7 +7272,6 @@
 		"Atlas": {
 			"title": "Atlas",
 			"type": "object",
-			"releaseStage": "experimental",
 			"required": ["_id", "type", "name", "_source"],
 			"properties": {
 				"_id": {

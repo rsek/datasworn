@@ -9,17 +9,9 @@ import { cloneDeep } from 'lodash-es'
 import type * as Datasworn from '../types/Datasworn.js'
 import type * as DataswornSource from '../types/DataswornSource.js'
 
-type FeatureOrDangerData =
-	| DataswornSource.DelveSiteThemeDangerRow
-	| DataswornSource.DelveSiteThemeFeatureRow
-	| DataswornSource.DelveSiteDomainDangerRow
-	| DataswornSource.DelveSiteDomainFeatureRow
+type FeatureOrDangerData = DataswornSource.OracleTableRowText
 
-type FeatureOrDanger =
-	| Datasworn.DelveSiteThemeDangerRow
-	| Datasworn.DelveSiteThemeFeatureRow
-	| Datasworn.DelveSiteDomainDangerRow
-	| Datasworn.DelveSiteDomainFeatureRow
+type FeatureOrDanger = Datasworn.OracleTableRowText
 
 interface FeatureOrDangerMap
 	extends Record<
@@ -27,12 +19,12 @@ interface FeatureOrDangerMap
 		Record<DelveSiteCardRowType, FeatureOrDanger>
 	> {
 	theme: {
-		feature: Datasworn.DelveSiteThemeFeatureRow
-		danger: Datasworn.DelveSiteThemeDangerRow
+		feature: Datasworn.OracleTableRowText
+		danger: Datasworn.OracleTableRowText
 	}
 	domain: {
-		feature: Datasworn.DelveSiteDomainFeatureRow
-		danger: Datasworn.DelveSiteDomainDangerRow
+		feature: Datasworn.OracleTableRowText
+		danger: Datasworn.OracleTableRowText
 	}
 }
 
@@ -109,23 +101,4 @@ export const DelveSiteDomain = sourcedTransformer<
 export const DelveSite = sourcedTransformer<
 	DataswornSource.DelveSite,
 	Datasworn.DelveSite
->({
-	denizens(data, key, parent) {
-		return data.denizens.map((row, index) =>
-			transform(row, index, this, DelveSiteDenizen)
-		) as Datasworn.DelveSite['denizens']
-	}
-})
-
-export const DelveSiteDenizen: Transformer<
-	DataswornSource.DelveSiteDenizen,
-	Datasworn.DelveSiteDenizen
-> = {
-	// _id: function (
-	// 	data: DataswornSource.DelveSiteDenizen,
-	// 	key: string | number,
-	// 	parent: SourcedNode
-	// ): string {
-	// 	return trackID(`${parent._id}/denizens/${data.min}-${data.max}`)
-	// }
-}
+>({})
