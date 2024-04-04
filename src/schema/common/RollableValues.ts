@@ -6,6 +6,7 @@ import {
 } from '@sinclair/typebox'
 import * as Utils from '../Utils.js'
 import { Id, Localize, Player } from './index.js'
+import { mapValues } from 'lodash-es'
 
 const RollableValueType = Utils.UnionEnumFromRecord(
 	{
@@ -127,18 +128,22 @@ export const CustomValue = RollableValueBase(
 )
 export type CustomValue = Static<typeof CustomValue>
 
-const valueTypes = [
-	StatValueRef,
-	ConditionMeterValueRef,
-	AssetControlValueRef,
-	AssetOptionValueRef,
-	AttachedAssetControlValueRef,
-	AttachedAssetOptionValueRef,
-	CustomValue
-]
-
-export const RollableValue = Utils.DiscriminatedUnion(valueTypes, 'using', {
-	$id: 'RollableValue'
-})
+export const RollableValue = Utils.DiscriminatedUnion(
+	{
+		stat: StatValueRef,
+		condition_meter: ConditionMeterValueRef,
+		asset_control: AssetControlValueRef,
+		asset_option: AssetOptionValueRef,
+		attached_asset_control: AttachedAssetControlValueRef,
+		attached_asset_option: AttachedAssetOptionValueRef,
+		custom: CustomValue
+	},
+	'using',
+	{
+		$id: 'RollableValue',
+		description:
+			'Provides a value like a stat, condition meter, or other number (usually for use in an action roll). The expected value is an integer, or null.'
+	}
+)
 
 export type RollableValue = Static<typeof RollableValue>

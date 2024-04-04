@@ -18,12 +18,6 @@ namespace Datasworn
         [JsonPropertyName("_id")]
         public ExpansionId Id { get; set; }
 
-        /// <summary>
-        /// The version of the Datasworn format used by this data.
-        /// </summary>
-        [JsonPropertyName("datasworn_version")]
-        public SemanticVersion DataswornVersion { get; set; }
-
         [JsonPropertyName("ruleset")]
         public RulesetId Ruleset { get; set; }
 
@@ -49,6 +43,13 @@ namespace Datasworn
         [JsonPropertyName("authors")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public IList<AuthorInfo> Authors { get; set; }
+
+        /// <summary>
+        /// The version of the Datasworn format used by this data.
+        /// </summary>
+        [JsonPropertyName("datasworn_version")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public RulesPackageExpansionDataswornVersion? DataswornVersion { get; set; }
 
         /// <summary>
         /// The date of the source documents's last update, formatted YYYY-MM-

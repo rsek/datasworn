@@ -5,6 +5,10 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+/**
+ * Provides a value like a stat, condition meter, or other number (usually for
+ * use in an action roll). The expected value is an integer, or null.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "using")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "asset_control", value = RollableValueAssetControl.class),

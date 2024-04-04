@@ -1,5 +1,5 @@
 import { type JSONSchema } from 'json-schema-to-typescript'
-import { defsKey } from '../const.js'
+import { DefsKey } from '../const.js'
 import { SourceInfo } from '../../schema/common/Metadata.js'
 import { RulesPackage } from '../../schema/RulesPackages.js'
 import Log from '../utils/Log.js'
@@ -7,6 +7,7 @@ import { Keywords } from '../augmentations.js'
 
 // TODO: this could be done programmatically by looking at the appropriate symbol key on DiscriminatedUnion schemas
 const discriminatorKeys = [
+	'type',
 	'category',
 	'field_type',
 	'roll_type',
@@ -163,6 +164,9 @@ export const dataSwornKeyOrder = [
 	'enhance_asset',
 	'oracle_rolls',
 	'tags',
+
+	'_comment',
+
 	// very long content
 
 	...longArrayKeys,
@@ -262,7 +266,10 @@ const schemaKeyOrder = [
 	'allOf',
 	'anyOf',
 	'oneOf',
-	defsKey
+	'if',
+	'then',
+	'else',
+	DefsKey
 ]
 
 export function sortSchemaKeys<T extends JSONSchema>(schema: T) {

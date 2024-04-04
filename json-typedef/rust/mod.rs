@@ -17,16 +17,19 @@ pub enum RulesPackage {
     Ruleset(RulesPackageRuleset),
 }
 
+/// The version of the Datasworn format used by this data.
+#[derive(Serialize, Deserialize)]
+pub enum RulesPackageExpansionDataswornVersion {
+    #[serde(rename = "0.0.9")]
+    DefaultName,
+}
+
 /// A Datasworn package that relies on an external package to provide its
 /// ruleset.
 #[derive(Serialize, Deserialize)]
 pub struct RulesPackageExpansion {
     #[serde(rename = "_id")]
     pub id: ExpansionId,
-
-    /// The version of the Datasworn format used by this data.
-    #[serde(rename = "datasworn_version")]
-    pub dataswornVersion: SemanticVersion,
 
     #[serde(rename = "ruleset")]
     pub ruleset: RulesetId,
@@ -46,6 +49,11 @@ pub struct RulesPackageExpansion {
     #[serde(rename = "authors")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub authors: Option<Box<Vec<AuthorInfo>>>,
+
+    /// The version of the Datasworn format used by this data.
+    #[serde(rename = "datasworn_version")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub dataswornVersion: Option<Box<RulesPackageExpansionDataswornVersion>>,
 
     /// The date of the source documents's last update, formatted YYYY-MM-DD.
     /// Required because it's used to determine whether the data needs updating.
@@ -119,6 +127,13 @@ pub struct RulesPackageExpansion {
     pub url: Option<Box<WebUrl>>,
 }
 
+/// The version of the Datasworn format used by this data.
+#[derive(Serialize, Deserialize)]
+pub enum RulesPackageRulesetDataswornVersion {
+    #[serde(rename = "0.0.9")]
+    DefaultName,
+}
+
 /// A standalone Datasworn package that describes its own ruleset.
 #[derive(Serialize, Deserialize)]
 pub struct RulesPackageRuleset {
@@ -135,7 +150,7 @@ pub struct RulesPackageRuleset {
 
     /// The version of the Datasworn format used by this data.
     #[serde(rename = "datasworn_version")]
-    pub dataswornVersion: SemanticVersion,
+    pub dataswornVersion: RulesPackageRulesetDataswornVersion,
 
     /// The date of the source documents's last update, formatted YYYY-MM-DD.
     /// Required because it's used to determine whether the data needs updating.
@@ -1261,6 +1276,12 @@ pub struct ConditionMeterRule {
 /// A CSS color value.
 pub type CssColor = String;
 
+#[derive(Serialize, Deserialize)]
+pub enum DelveSiteType {
+    #[serde(rename = "delve_site")]
+    DelveSite,
+}
+
 /// A delve site with a theme, domain, and denizens.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSite {
@@ -1291,6 +1312,9 @@ pub struct DelveSite {
 
     #[serde(rename = "theme")]
     pub theme: DelveSiteThemeId,
+
+    #[serde(rename = "type")]
+    pub type_: DelveSiteType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1381,6 +1405,12 @@ pub enum DelveSiteDenizenFrequency {
 /// A unique ID for a DelveSiteDenizen.
 pub type DelveSiteDenizenId = String;
 
+#[derive(Serialize, Deserialize)]
+pub enum DelveSiteDomainType {
+    #[serde(rename = "delve_site_domain")]
+    DelveSiteDomain,
+}
+
 /// A delve site Domain card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDomain {
@@ -1405,6 +1435,9 @@ pub struct DelveSiteDomain {
 
     #[serde(rename = "summary")]
     pub summary: MarkdownString,
+
+    #[serde(rename = "type")]
+    pub type_: DelveSiteDomainType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1450,6 +1483,12 @@ pub type DelveSiteDomainId = String;
 /// A unique ID for a DelveSite.
 pub type DelveSiteId = String;
 
+#[derive(Serialize, Deserialize)]
+pub enum DelveSiteThemeType {
+    #[serde(rename = "delve_site_theme")]
+    DelveSiteTheme,
+}
+
 /// A delve site theme card.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteTheme {
@@ -1474,6 +1513,9 @@ pub struct DelveSiteTheme {
 
     #[serde(rename = "summary")]
     pub summary: MarkdownString,
+
+    #[serde(rename = "type")]
+    pub type_: DelveSiteThemeType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1618,8 +1660,7 @@ pub type License = WebUrl;
 /// Localized text, formatted in Markdown.
 /// 
 /// It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates
-/// that the referenced oracle table is rendered there part of the source
-/// material.
+/// that the referenced oracle table is rendered there in the source material.
 pub type MarkdownString = String;
 
 #[derive(Serialize, Deserialize)]
@@ -2389,6 +2430,9 @@ pub enum ObjectType {
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "oracle_type")]
 pub enum OracleCollection {
+    #[serde(rename = "OracleTableSharedText3")]
+    OracleTableSharedText3(OracleCollectionOracleTableSharedText3),
+
     #[serde(rename = "table_shared_rolls")]
     TableSharedRolls(OracleCollectionTableSharedRolls),
 
@@ -2398,11 +2442,112 @@ pub enum OracleCollection {
     #[serde(rename = "table_shared_text2")]
     TableSharedText2(OracleCollectionTableSharedText2),
 
-    #[serde(rename = "table_shared_text3")]
-    TableSharedText3(OracleCollectionTableSharedText3),
-
     #[serde(rename = "tables")]
     Tables(OracleCollectionTables),
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleCollectionOracleTableSharedText3ColumnLabels {
+    #[serde(rename = "text")]
+    pub text: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleCollectionOracleTableSharedText3Type {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
+/// An OracleCollection representing a single table with multiple roll columns,
+/// and 2 shared text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleCollectionOracleTableSharedText3 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleCollectionOracleTableSharedText3ColumnLabels,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: OracleCollectionOracleTableSharedText3Type,
+
+    /// Any implementation hints or other developer-facing comments on this
+    /// object. These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A thematic color associated with this collection.
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    #[serde(rename = "contents")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub contents: Option<Box<HashMap<String, OracleColumnText3>>>,
+
+    /// A longer description of this collection, which might include multiple
+    /// paragraphs. If it's only a couple sentences, use the `summary` key
+    /// instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// This collection's content enhances the identified collection, rather
+    /// than being a standalone collection of its own.
+    #[serde(rename = "enhances")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhances: Option<Box<OracleCollectionId>>,
+
+    /// An SVG icon associated with this collection.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    #[serde(rename = "images")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub images: Option<Box<Vec<WebpImageUrl>>>,
+
+    /// This collection replaces the identified collection. References to the
+    /// replaced collection can be considered equivalent to this collection.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<OracleCollectionId>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of this collection, no more than a few sentences in
+    /// length. This is intended for use in application tooltips and similar
+    /// sorts of hints. Longer text should use the "description" key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
 
 /// Provides column labels for this table. The `roll` key refers to the roll
@@ -2678,110 +2823,6 @@ pub struct OracleCollectionTableSharedText2 {
     #[serde(rename = "contents")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contents: Option<Box<HashMap<String, OracleColumnText2>>>,
-
-    /// A longer description of this collection, which might include multiple
-    /// paragraphs. If it's only a couple sentences, use the `summary` key
-    /// instead.
-    #[serde(rename = "description")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub description: Option<Box<MarkdownString>>,
-
-    /// This collection's content enhances the identified collection, rather
-    /// than being a standalone collection of its own.
-    #[serde(rename = "enhances")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub enhances: Option<Box<OracleCollectionId>>,
-
-    /// An SVG icon associated with this collection.
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
-
-    #[serde(rename = "images")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub images: Option<Box<Vec<WebpImageUrl>>>,
-
-    /// This collection replaces the identified collection. References to the
-    /// replaced collection can be considered equivalent to this collection.
-    #[serde(rename = "replaces")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub replaces: Option<Box<OracleCollectionId>>,
-
-    #[serde(rename = "suggestions")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggestions: Option<Box<Suggestions>>,
-
-    /// A brief summary of this collection, no more than a few sentences in
-    /// length. This is intended for use in application tooltips and similar
-    /// sorts of hints. Longer text should use the "description" key instead.
-    #[serde(rename = "summary")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub summary: Option<Box<MarkdownString>>,
-
-    #[serde(rename = "tags")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
-}
-
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
-#[derive(Serialize, Deserialize)]
-pub struct OracleCollectionTableSharedText3ColumnLabels {
-    #[serde(rename = "text")]
-    pub text: Label,
-}
-
-#[derive(Serialize, Deserialize)]
-pub enum OracleCollectionTableSharedText3Type {
-    #[serde(rename = "oracle_collection")]
-    OracleCollection,
-}
-
-/// An OracleCollection representing a single table with multiple roll columns,
-/// and 2 shared text columns.
-#[derive(Serialize, Deserialize)]
-pub struct OracleCollectionTableSharedText3 {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: OracleCollectionId,
-
-    /// Attribution for the original source (such as a book or website) of this
-    /// item, including the author and licensing information.
-    #[serde(rename = "_source")]
-    pub source: SourceInfo,
-
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
-    #[serde(rename = "column_labels")]
-    pub columnLabels: OracleCollectionTableSharedText3ColumnLabels,
-
-    /// The primary name/label for this item.
-    #[serde(rename = "name")]
-    pub name: Label,
-
-    #[serde(rename = "type")]
-    pub type_: OracleCollectionTableSharedText3Type,
-
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
-
-    /// The name of this item as it appears on the page in the book, if it's
-    /// different from `name`.
-    #[serde(rename = "canonical_name")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub canonicalName: Option<Box<Label>>,
-
-    /// A thematic color associated with this collection.
-    #[serde(rename = "color")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub color: Option<Box<CssColor>>,
-
-    #[serde(rename = "contents")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub contents: Option<Box<HashMap<String, OracleColumnText3>>>,
 
     /// A longer description of this collection, which might include multiple
     /// paragraphs. If it's only a couple sentences, use the `summary` key
@@ -3949,6 +3990,12 @@ pub struct ProgressTrackTypeInfo {
     pub controls: Option<Box<HashMap<String, Option<Value>>>>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum RarityType {
+    #[serde(rename = "rarity")]
+    Rarity,
+}
+
 /// A rarity, as described in Ironsworn: Delve.
 #[derive(Serialize, Deserialize)]
 pub struct Rarity {
@@ -3971,6 +4018,9 @@ pub struct Rarity {
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,
+
+    #[serde(rename = "type")]
+    pub type_: RarityType,
 
     /// From Ironsworn: Delve, p. 174:
     /// 
@@ -4012,6 +4062,8 @@ pub struct Rarity {
 /// A unique ID for a Rarity.
 pub type RarityId = String;
 
+/// Provides a value like a stat, condition meter, or other number (usually for
+/// use in an action roll). The expected value is an integer, or null.
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "using")]
 pub enum RollableValue {
@@ -4356,8 +4408,6 @@ pub struct SelectValueFieldChoiceStat {
     #[serde(rename = "stat")]
     pub stat: StatKey,
 }
-
-pub type SemanticVersion = String;
 
 /// Metadata describing the original source of this item
 #[derive(Serialize, Deserialize)]

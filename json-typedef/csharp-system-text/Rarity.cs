@@ -38,6 +38,9 @@ namespace Datasworn
         [JsonPropertyName("name")]
         public Label Name { get; set; }
 
+        [JsonPropertyName("type")]
+        public RarityType Type_ { get; set; }
+
         /// <summary>
         /// From Ironsworn: Delve, p. 174:
         /// 

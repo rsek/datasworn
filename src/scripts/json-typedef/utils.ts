@@ -20,7 +20,7 @@ import {
 } from '@sinclair/typebox'
 import * as JTD from 'jtd'
 
-import JtdType, { Metadata } from './typedef.js'
+import JtdType, { Metadata, type TFields, type TStruct } from './typedef.js'
 
 import { JTDSchemaType, SomeJTDSchemaType } from 'ajv/dist/core.js'
 import {
@@ -41,11 +41,16 @@ import {
 } from 'lodash-es'
 import * as Generic from '../../schema/Generic.js'
 import * as Utils from '../../schema/Utils.js'
-import { TRoot } from '../../schema/root/SchemaRoot.js'
+import { TRoot } from '../../schema/root/Root.js'
 import Log from '../utils/Log.js'
-import { Discriminator, JsonTypeDef, Members } from '../../schema/Symbols.js'
+import {
+	Discriminator,
+	JsonTypeDef,
+	Mapping,
+	Members
+} from '../../schema/Symbols.js'
 import * as Assets from '../../schema/Assets.js'
-import { defsKey, rootSchemaName } from '../const.js'
+import { DefsKey, rootSchemaName } from '../const.js'
 
 /** Extract metadata from a JSON schema for use in a JTD schema's `metadata` property */
 export function extractMetadata<T extends TAnySchema>(jsonSchema: T) {
@@ -114,7 +119,7 @@ export function toJtdEnum<
 export const refTracker = new Set<string>()
 
 export function toJtdRef(schema: TRef | TThis) {
-	const ref = schema.$ref.replace(`#/${defsKey}/`, '')
+	const ref = schema.$ref.replace(`#/${DefsKey}/`, '')
 
 	refTracker.add(ref)
 
@@ -174,23 +179,39 @@ export function toJtdSingleEnum(schema: TLiteral<string>) {
 	return JtdType.Enum([schema.const])
 }
 
-export function toJtdDiscriminator(
-	schema: Utils.TDiscriminatedUnion<TObject[], string>
-) {
+export function toJtdDiscriminator<
+	M extends Utils.TDiscriminatorMap<Utils.TDiscriminable<TObject>>,
+	D extends Utils.TDiscriminableKeyFor<M>
+>(schema: Utils.TDiscriminatedUnion<M, D>) {
 	const discriminator = schema[Discriminator]
 
-	const mapping = Object.fromEntries(
-		schema[Members].map((subschema) => [
-			subschema.properties[discriminator].const,
-			{
+	// console.log(schema.$id)
+	// console.log(schema[Mapping])
+
+	const oldMapping = schema[Mapping]
+	const jtdMapping: Record<string, TStruct<TFields>> = {}
+
+	for (const k in oldMapping)
+		if (Object.prototype.hasOwnProperty.call(oldMapping, k)) {
+			const subschema = oldMapping[k]
+			jtdMapping[k] = {
 				...omit(toJtdProperties(subschema), `properties.${discriminator}`),
 				metadata: extractMetadata(subschema)
 			}
-		])
-	)
+		}
 
-	// console.log(discriminator, mapping)
-	return JtdType.Union(mapping, discriminator)
+	// const mapping = Object.fromEntries(
+	// 	mapValues(oldMapping, (subschema) => [
+	// 		subschema.properties[discriminator].const,
+	// 		{
+	// 			...omit(toJtdProperties(subschema), `properties.${discriminator}`),
+	// 			metadata: extractMetadata(subschema)
+	// 		}
+	// 	])
+	// )
+
+	console.log(discriminator, jtdMapping)
+	return JtdType.Union(jtdMapping, discriminator)
 }
 
 type TConvertible =
@@ -299,12 +320,12 @@ function toJtdForm(schema: TSchema): JTD.Schema | null {
 export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
 	const defs = {} as Record<string, JTD.Schema | undefined>
 
-	for (const k in schemaRoot[defsKey]) {
+	for (const k in schemaRoot[DefsKey]) {
 		if (k === rootSchemaName) continue
 		try {
-			defs[k] = toJtdForm(schemaRoot[defsKey][k])
+			defs[k] = toJtdForm(schemaRoot[DefsKey][k])
 		} catch (err) {
-			Log.error(`Couldn't convert ${schemaRoot[defsKey][k].$id}`, err)
+			Log.error(`Couldn't convert ${schemaRoot[DefsKey][k].$id}`, err)
 		}
 	}
 	// HACK: not sure why this is getting omitted, there's a few places it could happen and i havent tracked it down yet
@@ -313,7 +334,7 @@ export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
 	// 	omit(Assets.SelectEnhancementFieldChoice, JsonTypeDef)
 	// )
 
-	const base = toJtdForm(schemaRoot[defsKey][rootSchemaName])
+	const base = toJtdForm(schemaRoot[DefsKey][rootSchemaName])
 
 	if (isUndefined(base))
 		throw new Error(

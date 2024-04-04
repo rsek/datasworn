@@ -18,8 +18,8 @@ import {
 	setDescriptions,
 	type PickByType
 } from '../utils/typebox.js'
-import JtdType from '../../scripts/json-typedef/typedef.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
+import JtdType from '../../scripts/json-typedef/typedef.js'
 
 const TableRowBase = Type.Object({
 	text: Type.Ref(Localize.MarkdownString, {
@@ -226,7 +226,7 @@ export const OracleTableRow = Type.Union(
 		Type.Ref(OracleTableRowText2),
 		Type.Ref(OracleTableRowText3)
 	],
-	{ $id: 'OracleTableRow' }
+	{ $id: 'OracleTableRow', [JsonTypeDef]: { skip: true } }
 )
 
 export type OracleTableRow = Static<typeof OracleTableRow>

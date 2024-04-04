@@ -18,9 +18,9 @@ import {
 } from './OracleRollable.js'
 import {
 	ColumnLabels,
+	type OracleTableRowText,
 	type OracleTableRowText2,
-	type OracleTableRowText3,
-	type OracleTableRowText
+	type OracleTableRowText3
 } from './TableRow.js'
 
 const OracleCollectionType = Utils.UnionEnumFromRecord(
@@ -232,13 +232,13 @@ export type TOracleTableSharedText3 = typeof OracleTableSharedText3
 export type OracleTableSharedText3 = Static<TOracleTableSharedText3>
 
 export const OracleCollection = Utils.DiscriminatedUnion(
-	[
-		OracleTablesCollection,
-		OracleTableSharedRolls,
-		OracleTableSharedText,
-		OracleTableSharedText2,
+	{
+		tables: OracleTablesCollection,
+		table_shared_rolls: OracleTableSharedRolls,
+		table_shared_text: OracleTableSharedText,
+		table_shared_text2: OracleTableSharedText2,
 		OracleTableSharedText3
-	],
+	},
 	'oracle_type',
 	{ $id: 'OracleCollection' }
 )

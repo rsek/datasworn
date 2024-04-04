@@ -6,6 +6,10 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
+    /// <summary>
+    /// Provides a value like a stat, condition meter, or other number (usually
+    /// for use in an action roll). The expected value is an integer, or null.
+    /// </summary>
     [JsonConverter(typeof(RollableValueJsonConverter))]
     public abstract class RollableValue
     {

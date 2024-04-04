@@ -53,13 +53,17 @@ func (v *RulesPackage) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+// The version of the Datasworn format used by this data.
+type RulesPackageExpansionDataswornVersion string
+
+const (
+	RulesPackageExpansionDataswornVersion0 RulesPackageExpansionDataswornVersion = "0.0.9"
+)
+
 // A Datasworn package that relies on an external package to provide its
 // ruleset.
 type RulesPackageExpansion struct {
 	ID ExpansionID `json:"_id"`
-
-	// The version of the Datasworn format used by this data.
-	DataswornVersion SemanticVersion `json:"datasworn_version"`
 
 	Ruleset RulesetID `json:"ruleset"`
 
@@ -72,6 +76,9 @@ type RulesPackageExpansion struct {
 
 	// Lists authors credited by the source material.
 	Authors []AuthorInfo `json:"authors,omitempty"`
+
+	// The version of the Datasworn format used by this data.
+	DataswornVersion *RulesPackageExpansionDataswornVersion `json:"datasworn_version,omitempty"`
 
 	// The date of the source documents's last update, formatted YYYY-MM-DD.
 	// Required because it's used to determine whether the data needs updating.
@@ -117,6 +124,13 @@ type RulesPackageExpansion struct {
 	URL *WebURL `json:"url,omitempty"`
 }
 
+// The version of the Datasworn format used by this data.
+type RulesPackageRulesetDataswornVersion string
+
+const (
+	RulesPackageRulesetDataswornVersion0 RulesPackageRulesetDataswornVersion = "0.0.9"
+)
+
 // A standalone Datasworn package that describes its own ruleset.
 type RulesPackageRuleset struct {
 	ID RulesetID `json:"_id"`
@@ -128,7 +142,7 @@ type RulesPackageRuleset struct {
 	Authors []AuthorInfo `json:"authors"`
 
 	// The version of the Datasworn format used by this data.
-	DataswornVersion SemanticVersion `json:"datasworn_version"`
+	DataswornVersion RulesPackageRulesetDataswornVersion `json:"datasworn_version"`
 
 	// The date of the source documents's last update, formatted YYYY-MM-DD.
 	// Required because it's used to determine whether the data needs updating.
@@ -1216,6 +1230,12 @@ type ConditionMeterRule struct {
 // A CSS color value.
 type CSSColor = string
 
+type DelveSiteType string
+
+const (
+	DelveSiteTypeDelveSite DelveSiteType = "delve_site"
+)
+
 // A delve site with a theme, domain, and denizens.
 type DelveSite struct {
 	// The unique Datasworn ID for this item.
@@ -1237,6 +1257,8 @@ type DelveSite struct {
 	Rank ChallengeRank `json:"rank"`
 
 	Theme DelveSiteThemeID `json:"theme"`
+
+	Type DelveSiteType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1298,6 +1320,12 @@ const (
 // A unique ID for a DelveSiteDenizen.
 type DelveSiteDenizenID = string
 
+type DelveSiteDomainType string
+
+const (
+	DelveSiteDomainTypeDelveSiteDomain DelveSiteDomainType = "delve_site_domain"
+)
+
 // A delve site Domain card.
 type DelveSiteDomain struct {
 	// The unique Datasworn ID for this item.
@@ -1315,6 +1343,8 @@ type DelveSiteDomain struct {
 	Name Label `json:"name"`
 
 	Summary MarkdownString `json:"summary"`
+
+	Type DelveSiteDomainType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1346,6 +1376,12 @@ type DelveSiteDomainID = string
 // A unique ID for a DelveSite.
 type DelveSiteID = string
 
+type DelveSiteThemeType string
+
+const (
+	DelveSiteThemeTypeDelveSiteTheme DelveSiteThemeType = "delve_site_theme"
+)
+
 // A delve site theme card.
 type DelveSiteTheme struct {
 	// The unique Datasworn ID for this item.
@@ -1363,6 +1399,8 @@ type DelveSiteTheme struct {
 	Name Label `json:"name"`
 
 	Summary MarkdownString `json:"summary"`
+
+	Type DelveSiteThemeType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1465,8 +1503,7 @@ type License = WebURL
 // Localized text, formatted in Markdown.
 // 
 // It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates
-// that the referenced oracle table is rendered there part of the source
-// material.
+// that the referenced oracle table is rendered there in the source material.
 type MarkdownString = string
 
 type Move struct {
@@ -2098,27 +2135,27 @@ const (
 type OracleCollection struct {
 	OracleType string
 
+	OracleTableSharedText3 OracleCollectionOracleTableSharedText3
+
 	TableSharedRolls OracleCollectionTableSharedRolls
 
 	TableSharedText OracleCollectionTableSharedText
 
 	TableSharedText2 OracleCollectionTableSharedText2
 
-	TableSharedText3 OracleCollectionTableSharedText3
-
 	Tables OracleCollectionTables
 }
 
 func (v OracleCollection) MarshalJSON() ([]byte, error) {
 	switch v.OracleType {
+	case "OracleTableSharedText3":
+		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionOracleTableSharedText3 }{ v.OracleType, v.OracleTableSharedText3 })
 	case "table_shared_rolls":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedRolls }{ v.OracleType, v.TableSharedRolls })
 	case "table_shared_text":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedText }{ v.OracleType, v.TableSharedText })
 	case "table_shared_text2":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedText2 }{ v.OracleType, v.TableSharedText2 })
-	case "table_shared_text3":
-		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedText3 }{ v.OracleType, v.TableSharedText3 })
 	case "tables":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTables }{ v.OracleType, v.Tables })
 	}
@@ -2134,14 +2171,14 @@ func (v *OracleCollection) UnmarshalJSON(b []byte) error {
 
 	var err error
 	switch t.T {
+	case "OracleTableSharedText3":
+		err = json.Unmarshal(b, &v.OracleTableSharedText3)
 	case "table_shared_rolls":
 		err = json.Unmarshal(b, &v.TableSharedRolls)
 	case "table_shared_text":
 		err = json.Unmarshal(b, &v.TableSharedText)
 	case "table_shared_text2":
 		err = json.Unmarshal(b, &v.TableSharedText2)
-	case "table_shared_text3":
-		err = json.Unmarshal(b, &v.TableSharedText3)
 	case "tables":
 		err = json.Unmarshal(b, &v.Tables)
 	default:
@@ -2154,6 +2191,77 @@ func (v *OracleCollection) UnmarshalJSON(b []byte) error {
 
 	v.OracleType = t.T
 	return nil
+}
+
+// The label at the head of each table column. The `roll` key refers to the roll
+// column showing the dice range (`min` and `max` on each table row).
+type OracleCollectionOracleTableSharedText3ColumnLabels struct {
+	Text Label `json:"text"`
+}
+
+type OracleCollectionOracleTableSharedText3Type string
+
+const (
+	OracleCollectionOracleTableSharedText3TypeOracleCollection OracleCollectionOracleTableSharedText3Type = "oracle_collection"
+)
+
+// An OracleCollection representing a single table with multiple roll columns,
+// and 2 shared text columns.
+type OracleCollectionOracleTableSharedText3 struct {
+	// The unique Datasworn ID for this item.
+	ID OracleCollectionID `json:"_id"`
+
+	// Attribution for the original source (such as a book or website) of this
+	// item, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
+	// The label at the head of each table column. The `roll` key refers to the
+	// roll column showing the dice range (`min` and `max` on each table row).
+	ColumnLabels OracleCollectionOracleTableSharedText3ColumnLabels `json:"column_labels"`
+
+	// The primary name/label for this item.
+	Name Label `json:"name"`
+
+	Type OracleCollectionOracleTableSharedText3Type `json:"type"`
+
+	// Any implementation hints or other developer-facing comments on this object.
+	// These should be omitted when presenting the object for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
+	// The name of this item as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this collection.
+	Color *CSSColor `json:"color,omitempty"`
+
+	Contents map[string]OracleColumnText3 `json:"contents,omitempty"`
+
+	// A longer description of this collection, which might include multiple
+	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
+	Description *MarkdownString `json:"description,omitempty"`
+
+	// This collection's content enhances the identified collection, rather than
+	// being a standalone collection of its own.
+	Enhances *OracleCollectionID `json:"enhances,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
+
+	// This collection replaces the identified collection. References to the
+	// replaced collection can be considered equivalent to this collection.
+	Replaces *OracleCollectionID `json:"replaces,omitempty"`
+
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	// A brief summary of this collection, no more than a few sentences in length.
+	// This is intended for use in application tooltips and similar sorts of hints.
+	// Longer text should use the "description" key instead.
+	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
 
 // Provides column labels for this table. The `roll` key refers to the roll
@@ -2345,77 +2453,6 @@ type OracleCollectionTableSharedText2 struct {
 	Color *CSSColor `json:"color,omitempty"`
 
 	Contents map[string]OracleColumnText2 `json:"contents,omitempty"`
-
-	// A longer description of this collection, which might include multiple
-	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
-
-	// This collection's content enhances the identified collection, rather than
-	// being a standalone collection of its own.
-	Enhances *OracleCollectionID `json:"enhances,omitempty"`
-
-	// An SVG icon associated with this collection.
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	Images []WebpImageURL `json:"images,omitempty"`
-
-	// This collection replaces the identified collection. References to the
-	// replaced collection can be considered equivalent to this collection.
-	Replaces *OracleCollectionID `json:"replaces,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of this collection, no more than a few sentences in length.
-	// This is intended for use in application tooltips and similar sorts of hints.
-	// Longer text should use the "description" key instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
-
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
-}
-
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
-type OracleCollectionTableSharedText3ColumnLabels struct {
-	Text Label `json:"text"`
-}
-
-type OracleCollectionTableSharedText3Type string
-
-const (
-	OracleCollectionTableSharedText3TypeOracleCollection OracleCollectionTableSharedText3Type = "oracle_collection"
-)
-
-// An OracleCollection representing a single table with multiple roll columns,
-// and 2 shared text columns.
-type OracleCollectionTableSharedText3 struct {
-	// The unique Datasworn ID for this item.
-	ID OracleCollectionID `json:"_id"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"_source"`
-
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleCollectionTableSharedText3ColumnLabels `json:"column_labels"`
-
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
-	Type OracleCollectionTableSharedText3Type `json:"type"`
-
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
-
-	// The name of this item as it appears on the page in the book, if it's
-	// different from `name`.
-	CanonicalName *Label `json:"canonical_name,omitempty"`
-
-	// A thematic color associated with this collection.
-	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText3 `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
@@ -3273,6 +3310,12 @@ type ProgressTrackTypeInfo struct {
 	Controls map[string]interface{} `json:"controls,omitempty"`
 }
 
+type RarityType string
+
+const (
+	RarityTypeRarity RarityType = "rarity"
+)
+
 // A rarity, as described in Ironsworn: Delve.
 type Rarity struct {
 	// The unique Datasworn ID for this item.
@@ -3289,6 +3332,8 @@ type Rarity struct {
 
 	// The primary name/label for this item.
 	Name Label `json:"name"`
+
+	Type RarityType `json:"type"`
 
 	// From Ironsworn: Delve, p. 174:
 	// 
@@ -3319,6 +3364,8 @@ type Rarity struct {
 // A unique ID for a Rarity.
 type RarityID = string
 
+// Provides a value like a stat, condition meter, or other number (usually for
+// use in an action roll). The expected value is an integer, or null.
 type RollableValue struct {
 	Using string
 
@@ -3686,8 +3733,6 @@ type SelectValueFieldChoiceStat struct {
 
 	Stat StatKey `json:"stat"`
 }
-
-type SemanticVersion = string
 
 // Metadata describing the original source of this item
 type SourceInfo struct {

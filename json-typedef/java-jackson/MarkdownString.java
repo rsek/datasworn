@@ -9,8 +9,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Localized text, formatted in Markdown.
  * 
  * It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates
- * that the referenced oracle table is rendered there part of the source
- * material.
+ * that the referenced oracle table is rendered there in the source material.
  */
 public class MarkdownString {
     @JsonValue

@@ -28,6 +28,19 @@ class RulesPackage:
     def to_json_data(self) -> Any:
         pass
 
+class RulesPackageExpansionDataswornVersion(Enum):
+    """
+    The version of the Datasworn format used by this data.
+    """
+
+    DEFAULT_NAME = "0.0.9"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'RulesPackageExpansionDataswornVersion':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class RulesPackageExpansion(RulesPackage):
     """
@@ -36,11 +49,6 @@ class RulesPackageExpansion(RulesPackage):
     """
 
     id: 'ExpansionID'
-    datasworn_version: 'SemanticVersion'
-    """
-    The version of the Datasworn format used by this data.
-    """
-
     ruleset: 'RulesetID'
     assets: 'Optional[Dict[str, AssetCollection]]'
     """
@@ -56,6 +64,11 @@ class RulesPackageExpansion(RulesPackage):
     authors: 'Optional[List[AuthorInfo]]'
     """
     Lists authors credited by the source material.
+    """
+
+    datasworn_version: 'Optional[RulesPackageExpansionDataswornVersion]'
+    """
+    The version of the Datasworn format used by this data.
     """
 
     date: 'Optional[datetime]'
@@ -126,11 +139,11 @@ class RulesPackageExpansion(RulesPackage):
         return cls(
             "expansion",
             _from_json_data(ExpansionID, data.get("_id")),
-            _from_json_data(SemanticVersion, data.get("datasworn_version")),
             _from_json_data(RulesetID, data.get("ruleset")),
             _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
             _from_json_data(Optional[Dict[str, Atlas]], data.get("atlas")),
             _from_json_data(Optional[List[AuthorInfo]], data.get("authors")),
+            _from_json_data(Optional[RulesPackageExpansionDataswornVersion], data.get("datasworn_version")),
             _from_json_data(Optional[datetime], data.get("date")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
@@ -150,7 +163,6 @@ class RulesPackageExpansion(RulesPackage):
     def to_json_data(self) -> Any:
         data = { "type": "expansion" }
         data["_id"] = _to_json_data(self.id)
-        data["datasworn_version"] = _to_json_data(self.datasworn_version)
         data["ruleset"] = _to_json_data(self.ruleset)
         if self.assets is not None:
              data["assets"] = _to_json_data(self.assets)
@@ -158,6 +170,8 @@ class RulesPackageExpansion(RulesPackage):
              data["atlas"] = _to_json_data(self.atlas)
         if self.authors is not None:
              data["authors"] = _to_json_data(self.authors)
+        if self.datasworn_version is not None:
+             data["datasworn_version"] = _to_json_data(self.datasworn_version)
         if self.date is not None:
              data["date"] = _to_json_data(self.date)
         if self.delve_sites is not None:
@@ -188,6 +202,19 @@ class RulesPackageExpansion(RulesPackage):
              data["url"] = _to_json_data(self.url)
         return data
 
+class RulesPackageRulesetDataswornVersion(Enum):
+    """
+    The version of the Datasworn format used by this data.
+    """
+
+    DEFAULT_NAME = "0.0.9"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'RulesPackageRulesetDataswornVersion':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class RulesPackageRuleset(RulesPackage):
     """
@@ -205,7 +232,7 @@ class RulesPackageRuleset(RulesPackage):
     Lists authors credited by the source material.
     """
 
-    datasworn_version: 'SemanticVersion'
+    datasworn_version: 'RulesPackageRulesetDataswornVersion'
     """
     The version of the Datasworn format used by this data.
     """
@@ -286,7 +313,7 @@ class RulesPackageRuleset(RulesPackage):
             _from_json_data(RulesetID, data.get("_id")),
             _from_json_data(Dict[str, AssetCollection], data.get("assets")),
             _from_json_data(List[AuthorInfo], data.get("authors")),
-            _from_json_data(SemanticVersion, data.get("datasworn_version")),
+            _from_json_data(RulesPackageRulesetDataswornVersion, data.get("datasworn_version")),
             _from_json_data(datetime, data.get("date")),
             _from_json_data(License, data.get("license")),
             _from_json_data(Dict[str, MoveCategory], data.get("moves")),
@@ -2237,6 +2264,15 @@ class CSSColor:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
+class DelveSiteType(Enum):
+    DELVE_SITE = "delve_site"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'DelveSiteType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class DelveSite:
     """
@@ -2264,6 +2300,7 @@ class DelveSite:
 
     rank: 'ChallengeRank'
     theme: 'DelveSiteThemeID'
+    type: 'DelveSiteType'
     comment: 'Optional[str]'
     """
     Any implementation hints or other developer-facing comments on this object.
@@ -2303,6 +2340,7 @@ class DelveSite:
             _from_json_data(Label, data.get("name")),
             _from_json_data(ChallengeRank, data.get("rank")),
             _from_json_data(DelveSiteThemeID, data.get("theme")),
+            _from_json_data(DelveSiteType, data.get("type")),
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[str], data.get("extra_card")),
@@ -2322,6 +2360,7 @@ class DelveSite:
         data["name"] = _to_json_data(self.name)
         data["rank"] = _to_json_data(self.rank)
         data["theme"] = _to_json_data(self.theme)
+        data["type"] = _to_json_data(self.type)
         if self.comment is not None:
              data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
@@ -2415,6 +2454,15 @@ class DelveSiteDenizenID:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
+class DelveSiteDomainType(Enum):
+    DELVE_SITE_DOMAIN = "delve_site_domain"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'DelveSiteDomainType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class DelveSiteDomain:
     """
@@ -2440,6 +2488,7 @@ class DelveSiteDomain:
     """
 
     summary: 'MarkdownString'
+    type: 'DelveSiteDomainType'
     comment: 'Optional[str]'
     """
     Any implementation hints or other developer-facing comments on this object.
@@ -2475,6 +2524,7 @@ class DelveSiteDomain:
             _from_json_data(List[OracleTableRowText], data.get("features")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MarkdownString, data.get("summary")),
+            _from_json_data(DelveSiteDomainType, data.get("type")),
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
@@ -2492,6 +2542,7 @@ class DelveSiteDomain:
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
         data["summary"] = _to_json_data(self.summary)
+        data["type"] = _to_json_data(self.type)
         if self.comment is not None:
              data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
@@ -2538,6 +2589,15 @@ class DelveSiteID:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
+class DelveSiteThemeType(Enum):
+    DELVE_SITE_THEME = "delve_site_theme"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'DelveSiteThemeType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class DelveSiteTheme:
     """
@@ -2563,6 +2623,7 @@ class DelveSiteTheme:
     """
 
     summary: 'MarkdownString'
+    type: 'DelveSiteThemeType'
     comment: 'Optional[str]'
     """
     Any implementation hints or other developer-facing comments on this object.
@@ -2589,6 +2650,7 @@ class DelveSiteTheme:
             _from_json_data(List[OracleTableRowText], data.get("features")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(MarkdownString, data.get("summary")),
+            _from_json_data(DelveSiteThemeType, data.get("type")),
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
@@ -2605,6 +2667,7 @@ class DelveSiteTheme:
         data["features"] = _to_json_data(self.features)
         data["name"] = _to_json_data(self.name)
         data["summary"] = _to_json_data(self.summary)
+        data["type"] = _to_json_data(self.type)
         if self.comment is not None:
              data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
@@ -2900,8 +2963,7 @@ class MarkdownString:
     Localized text, formatted in Markdown.
     
     It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates
-    that the referenced oracle table is rendered there part of the source
-    material.
+    that the referenced oracle table is rendered there in the source material.
     """
 
     value: 'str'
@@ -4133,10 +4195,10 @@ class OracleCollection:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleCollection':
         variants: Dict[str, Type[OracleCollection]] = {
+            "OracleTableSharedText3": OracleCollectionOracleTableSharedText3,
             "table_shared_rolls": OracleCollectionTableSharedRolls,
             "table_shared_text": OracleCollectionTableSharedText,
             "table_shared_text2": OracleCollectionTableSharedText2,
-            "table_shared_text3": OracleCollectionTableSharedText3,
             "tables": OracleCollectionTables,
         }
 
@@ -4144,6 +4206,173 @@ class OracleCollection:
 
     def to_json_data(self) -> Any:
         pass
+
+@dataclass
+class OracleCollectionOracleTableSharedText3ColumnLabels:
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    text: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionOracleTableSharedText3ColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("text")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["text"] = _to_json_data(self.text)
+        return data
+
+class OracleCollectionOracleTableSharedText3Type(Enum):
+    ORACLE_COLLECTION = "oracle_collection"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionOracleTableSharedText3Type':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
+@dataclass
+class OracleCollectionOracleTableSharedText3(OracleCollection):
+    """
+    An OracleCollection representing a single table with multiple roll columns,
+    and 2 shared text columns.
+    """
+
+    id: 'OracleCollectionID'
+    """
+    The unique Datasworn ID for this item.
+    """
+
+    source: 'SourceInfo'
+    """
+    Attribution for the original source (such as a book or website) of this
+    item, including the author and licensing information.
+    """
+
+    column_labels: 'OracleCollectionOracleTableSharedText3ColumnLabels'
+    """
+    The label at the head of each table column. The `roll` key refers to the
+    roll column showing the dice range (`min` and `max` on each table row).
+    """
+
+    name: 'Label'
+    """
+    The primary name/label for this item.
+    """
+
+    type: 'OracleCollectionOracleTableSharedText3Type'
+    comment: 'Optional[str]'
+    """
+    Any implementation hints or other developer-facing comments on this object.
+    These should be omitted when presenting the object for gameplay.
+    """
+
+    canonical_name: 'Optional[Label]'
+    """
+    The name of this item as it appears on the page in the book, if it's
+    different from `name`.
+    """
+
+    color: 'Optional[CSSColor]'
+    """
+    A thematic color associated with this collection.
+    """
+
+    contents: 'Optional[Dict[str, OracleColumnText3]]'
+    description: 'Optional[MarkdownString]'
+    """
+    A longer description of this collection, which might include multiple
+    paragraphs. If it's only a couple sentences, use the `summary` key instead.
+    """
+
+    enhances: 'Optional[OracleCollectionID]'
+    """
+    This collection's content enhances the identified collection, rather than
+    being a standalone collection of its own.
+    """
+
+    icon: 'Optional[SvgImageURL]'
+    """
+    An SVG icon associated with this collection.
+    """
+
+    images: 'Optional[List[WebpImageURL]]'
+    replaces: 'Optional[OracleCollectionID]'
+    """
+    This collection replaces the identified collection. References to the
+    replaced collection can be considered equivalent to this collection.
+    """
+
+    suggestions: 'Optional[Suggestions]'
+    summary: 'Optional[MarkdownString]'
+    """
+    A brief summary of this collection, no more than a few sentences in length.
+    This is intended for use in application tooltips and similar sorts of hints.
+    Longer text should use the "description" key instead.
+    """
+
+    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionOracleTableSharedText3':
+        return cls(
+            "OracleTableSharedText3",
+            _from_json_data(OracleCollectionID, data.get("_id")),
+            _from_json_data(SourceInfo, data.get("_source")),
+            _from_json_data(OracleCollectionOracleTableSharedText3ColumnLabels, data.get("column_labels")),
+            _from_json_data(Label, data.get("name")),
+            _from_json_data(OracleCollectionOracleTableSharedText3Type, data.get("type")),
+            _from_json_data(Optional[str], data.get("_comment")),
+            _from_json_data(Optional[Label], data.get("canonical_name")),
+            _from_json_data(Optional[CSSColor], data.get("color")),
+            _from_json_data(Optional[Dict[str, OracleColumnText3]], data.get("contents")),
+            _from_json_data(Optional[MarkdownString], data.get("description")),
+            _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
+            _from_json_data(Optional[SvgImageURL], data.get("icon")),
+            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
+            _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
+            _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[MarkdownString], data.get("summary")),
+            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "oracle_type": "OracleTableSharedText3" }
+        data["_id"] = _to_json_data(self.id)
+        data["_source"] = _to_json_data(self.source)
+        data["column_labels"] = _to_json_data(self.column_labels)
+        data["name"] = _to_json_data(self.name)
+        data["type"] = _to_json_data(self.type)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
+        if self.canonical_name is not None:
+             data["canonical_name"] = _to_json_data(self.canonical_name)
+        if self.color is not None:
+             data["color"] = _to_json_data(self.color)
+        if self.contents is not None:
+             data["contents"] = _to_json_data(self.contents)
+        if self.description is not None:
+             data["description"] = _to_json_data(self.description)
+        if self.enhances is not None:
+             data["enhances"] = _to_json_data(self.enhances)
+        if self.icon is not None:
+             data["icon"] = _to_json_data(self.icon)
+        if self.images is not None:
+             data["images"] = _to_json_data(self.images)
+        if self.replaces is not None:
+             data["replaces"] = _to_json_data(self.replaces)
+        if self.suggestions is not None:
+             data["suggestions"] = _to_json_data(self.suggestions)
+        if self.summary is not None:
+             data["summary"] = _to_json_data(self.summary)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
+        return data
 
 @dataclass
 class OracleCollectionTableSharedRollsColumnLabels:
@@ -4620,173 +4849,6 @@ class OracleCollectionTableSharedText2(OracleCollection):
 
     def to_json_data(self) -> Any:
         data = { "oracle_type": "table_shared_text2" }
-        data["_id"] = _to_json_data(self.id)
-        data["_source"] = _to_json_data(self.source)
-        data["column_labels"] = _to_json_data(self.column_labels)
-        data["name"] = _to_json_data(self.name)
-        data["type"] = _to_json_data(self.type)
-        if self.comment is not None:
-             data["_comment"] = _to_json_data(self.comment)
-        if self.canonical_name is not None:
-             data["canonical_name"] = _to_json_data(self.canonical_name)
-        if self.color is not None:
-             data["color"] = _to_json_data(self.color)
-        if self.contents is not None:
-             data["contents"] = _to_json_data(self.contents)
-        if self.description is not None:
-             data["description"] = _to_json_data(self.description)
-        if self.enhances is not None:
-             data["enhances"] = _to_json_data(self.enhances)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
-        if self.images is not None:
-             data["images"] = _to_json_data(self.images)
-        if self.replaces is not None:
-             data["replaces"] = _to_json_data(self.replaces)
-        if self.suggestions is not None:
-             data["suggestions"] = _to_json_data(self.suggestions)
-        if self.summary is not None:
-             data["summary"] = _to_json_data(self.summary)
-        if self.tags is not None:
-             data["tags"] = _to_json_data(self.tags)
-        return data
-
-@dataclass
-class OracleCollectionTableSharedText3ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
-    text: 'Label'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedText3ColumnLabels':
-        return cls(
-            _from_json_data(Label, data.get("text")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["text"] = _to_json_data(self.text)
-        return data
-
-class OracleCollectionTableSharedText3Type(Enum):
-    ORACLE_COLLECTION = "oracle_collection"
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedText3Type':
-        return cls(data)
-
-    def to_json_data(self) -> Any:
-        return self.value
-
-@dataclass
-class OracleCollectionTableSharedText3(OracleCollection):
-    """
-    An OracleCollection representing a single table with multiple roll columns,
-    and 2 shared text columns.
-    """
-
-    id: 'OracleCollectionID'
-    """
-    The unique Datasworn ID for this item.
-    """
-
-    source: 'SourceInfo'
-    """
-    Attribution for the original source (such as a book or website) of this
-    item, including the author and licensing information.
-    """
-
-    column_labels: 'OracleCollectionTableSharedText3ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
-    name: 'Label'
-    """
-    The primary name/label for this item.
-    """
-
-    type: 'OracleCollectionTableSharedText3Type'
-    comment: 'Optional[str]'
-    """
-    Any implementation hints or other developer-facing comments on this object.
-    These should be omitted when presenting the object for gameplay.
-    """
-
-    canonical_name: 'Optional[Label]'
-    """
-    The name of this item as it appears on the page in the book, if it's
-    different from `name`.
-    """
-
-    color: 'Optional[CSSColor]'
-    """
-    A thematic color associated with this collection.
-    """
-
-    contents: 'Optional[Dict[str, OracleColumnText3]]'
-    description: 'Optional[MarkdownString]'
-    """
-    A longer description of this collection, which might include multiple
-    paragraphs. If it's only a couple sentences, use the `summary` key instead.
-    """
-
-    enhances: 'Optional[OracleCollectionID]'
-    """
-    This collection's content enhances the identified collection, rather than
-    being a standalone collection of its own.
-    """
-
-    icon: 'Optional[SvgImageURL]'
-    """
-    An SVG icon associated with this collection.
-    """
-
-    images: 'Optional[List[WebpImageURL]]'
-    replaces: 'Optional[OracleCollectionID]'
-    """
-    This collection replaces the identified collection. References to the
-    replaced collection can be considered equivalent to this collection.
-    """
-
-    suggestions: 'Optional[Suggestions]'
-    summary: 'Optional[MarkdownString]'
-    """
-    A brief summary of this collection, no more than a few sentences in length.
-    This is intended for use in application tooltips and similar sorts of hints.
-    Longer text should use the "description" key instead.
-    """
-
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedText3':
-        return cls(
-            "table_shared_text3",
-            _from_json_data(OracleCollectionID, data.get("_id")),
-            _from_json_data(SourceInfo, data.get("_source")),
-            _from_json_data(OracleCollectionTableSharedText3ColumnLabels, data.get("column_labels")),
-            _from_json_data(Label, data.get("name")),
-            _from_json_data(OracleCollectionTableSharedText3Type, data.get("type")),
-            _from_json_data(Optional[str], data.get("_comment")),
-            _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[CSSColor], data.get("color")),
-            _from_json_data(Optional[Dict[str, OracleColumnText3]], data.get("contents")),
-            _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[OracleCollectionID], data.get("enhances")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
-            _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
-            _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
-            _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "oracle_type": "table_shared_text3" }
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
         data["column_labels"] = _to_json_data(self.column_labels)
@@ -6625,6 +6687,15 @@ class ProgressTrackTypeInfo:
              data["controls"] = _to_json_data(self.controls)
         return data
 
+class RarityType(Enum):
+    RARITY = "rarity"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'RarityType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class Rarity:
     """
@@ -6653,6 +6724,7 @@ class Rarity:
     The primary name/label for this item.
     """
 
+    type: 'RarityType'
     xp_cost: 'int'
     """
     From Ironsworn: Delve, p. 174:
@@ -6690,6 +6762,7 @@ class Rarity:
             _from_json_data(AssetID, data.get("asset")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(RarityType, data.get("type")),
             _from_json_data(int, data.get("xp_cost")),
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
@@ -6705,6 +6778,7 @@ class Rarity:
         data["asset"] = _to_json_data(self.asset)
         data["description"] = _to_json_data(self.description)
         data["name"] = _to_json_data(self.name)
+        data["type"] = _to_json_data(self.type)
         data["xp_cost"] = _to_json_data(self.xp_cost)
         if self.comment is not None:
              data["_comment"] = _to_json_data(self.comment)
@@ -6735,6 +6809,11 @@ class RarityID:
 
 @dataclass
 class RollableValue:
+    """
+    Provides a value like a stat, condition meter, or other number (usually for
+    use in an action roll). The expected value is an integer, or null.
+    """
+
     using: 'str'
 
     @classmethod
@@ -7369,17 +7448,6 @@ class SelectValueFieldChoiceStat(SelectValueFieldChoice):
         data["label"] = _to_json_data(self.label)
         data["stat"] = _to_json_data(self.stat)
         return data
-
-@dataclass
-class SemanticVersion:
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SemanticVersion':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class SourceInfo:

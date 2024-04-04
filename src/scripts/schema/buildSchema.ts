@@ -12,7 +12,8 @@ import AJV from '../validation/ajv.js'
 import * as Schema from '../../schema/index.js'
 
 import JSL from 'json-schema-library'
-import { type TRoot } from '../../schema/root/SchemaRoot.js'
+import { type TRoot } from '../../schema/root/Root.js'
+import fsExtra from 'fs-extra/esm'
 
 const draft7 = new JSL.Draft07()
 
@@ -29,7 +30,7 @@ interface SchemaOptions {
 const schemaOptions: SchemaOptions[] = [
 	{
 		name: 'Datasworn',
-		rootSchema: Schema.DataswornRoot,
+		rootSchema: Schema.DataswornSchema,
 		paths: [CONST.SCHEMA_PATH],
 		messages: {
 			writeStart: '✏️  Writing schema for Datasworn',
@@ -38,7 +39,7 @@ const schemaOptions: SchemaOptions[] = [
 	},
 	{
 		name: 'DataswornSource',
-		rootSchema: Schema.DataswornSourceRoot,
+		rootSchema: Schema.DataswornSourceSchema,
 		paths: [CONST.SOURCEDATA_SCHEMA_PATH, CONST.SOURCE_SCHEMA_PATH],
 		messages: {
 			writeStart: '✏️  Writing schema for DataswornSource',
@@ -57,19 +58,29 @@ function replacer(k: string, v: unknown) {
 	if (k === '$id' && typeof v === 'string' && !v.startsWith('http'))
 		return undefined
 
-	if (k === '$ref' && typeof v === 'string' && !v.startsWith('http'))
-		return `#/${CONST.defsKey}/` + v
+	if (
+		k === '$ref' &&
+		typeof v === 'string' &&
+		!v.startsWith('http') &&
+		!v.startsWith(`#/${CONST.DefsKey}/`)
+	)
+		return `#/${CONST.DefsKey}/` + v
 
 	return v
 }
 
-for (const options of schemaOptions) {
-	AJV.addSchema(options.rootSchema as JsonSchema, options.name)
+for (const { rootSchema, name, paths, messages } of schemaOptions) {
+	// serialize first as a lazy way to strip some properties
+	// const serialized = JSON.stringify(options.rootSchema)
 
-	Log.info(options.messages.writeStart)
+	// await fsExtra.writeJSON('dump.json', rootSchema)
+
+	AJV.addSchema(rootSchema as JsonSchema, name)
+
+	Log.info(messages.writeStart)
 
 	try {
-		for (const path of options.paths) {
+		for (const path of paths) {
 			let sortedSchema: Record<string, unknown> = {}
 
 			draft7.eachSchema((schema, hashPointer) => {
@@ -78,11 +89,11 @@ for (const options of schemaOptions) {
 
 				if (pointer === '/') sortedSchema = newSchema
 				else JsonPointer.set(sortedSchema, pointer, newSchema)
-			}, options.rootSchema)
+			}, rootSchema)
 
 			// console.log(sortedSchema)
 
-			for (const path of options.paths)
+			for (const path of paths)
 				writeJSON(path, sortedSchema, {
 					prettierOptions,
 					replacer
@@ -91,13 +102,13 @@ for (const options of schemaOptions) {
 			writeJSON(path, sortedSchema, {
 				prettierOptions,
 				replacer
-			}).then(() => Log.info(options.messages.writeFinish))
+			}).then(() => Log.info(messages.writeFinish))
 		}
 	} catch (error) {
 		Log.error(error)
 
-		for (const path of options.paths)
-			writeJSON(path, options.rootSchema, { prettierOptions, replacer })
+		for (const path of paths)
+			writeJSON(path, rootSchema, { prettierOptions, replacer })
 	}
 }
 

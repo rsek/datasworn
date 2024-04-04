@@ -6,24 +6,27 @@ import {
 } from '@sinclair/typebox'
 import { SourcedNode, type TSourcedNode } from './SourcedNode.js'
 import { type TAnyId } from '../common/Id.js'
+import type { TDiscriminableBy } from '../Utils.js'
 
 export const CollectableBrand = Symbol('Collectable')
 export const RecursiveCollectableBrand = Symbol('RecursiveCollectable')
 type CollectableID = TAnyId
 
-export function Collectable<T extends TObject>(
+export function Collectable<T extends TObject, V extends string>(
 	_id: CollectableID,
-	type: string,
+	type: V,
 	base: T,
 	options: ObjectOptions = {}
 ) {
 	const schema = CloneType(base, {
 		properties: { ...base.properties, type: Type.Literal(type) }
-	})
+	}) as unknown as TDiscriminableBy<T, 'type', V>
 	return SourcedNode(_id, schema, {
 		...options,
 		[CollectableBrand]: 'Collectable'
-	}) as TCollectable<T> satisfies TSourcedNode<T>
+	}) as TCollectable<TDiscriminableBy<T, 'type', V>> satisfies TSourcedNode<
+		TDiscriminableBy<T, 'type', V>
+	>
 }
 
 export type Collectable<T extends object> = SourcedNode<T>
@@ -35,9 +38,9 @@ export type TCollectable<T extends TObject> = ReturnType<
 }
 type RecursiveCollectableID = TAnyId
 
-export function RecursiveCollectable<T extends TObject>(
+export function RecursiveCollectable<T extends TObject, V extends string>(
 	_id: RecursiveCollectableID,
-	type: string,
+	type: V,
 	base: T,
 	options: ObjectOptions = {}
 ) {
@@ -45,7 +48,9 @@ export function RecursiveCollectable<T extends TObject>(
 		...options,
 		[CollectableBrand]: 'Collectable',
 		[RecursiveCollectableBrand]: 'RecursiveCollectable'
-	}) as TRecursiveCollectable<T> satisfies TCollectable<T>
+	}) as TRecursiveCollectable<
+		TDiscriminableBy<T, 'type', V>
+	> satisfies TCollectable<TDiscriminableBy<T, 'type', V>>
 }
 
 export type TRecursiveCollectable<T extends TObject> = ReturnType<

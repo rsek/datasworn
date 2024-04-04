@@ -24,7 +24,7 @@ public class RulesPackageRuleset extends RulesPackage {
     private List<AuthorInfo> authors;
 
     @JsonProperty("datasworn_version")
-    private SemanticVersion dataswornVersion;
+    private RulesPackageRulesetDataswornVersion dataswornVersion;
 
     @JsonProperty("date")
     private OffsetDateTime date;
@@ -132,7 +132,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * Getter for dataswornVersion.<p>
      * The version of the Datasworn format used by this data.
      */
-    public SemanticVersion getDataswornVersion() {
+    public RulesPackageRulesetDataswornVersion getDataswornVersion() {
         return dataswornVersion;
     }
 
@@ -140,7 +140,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * Setter for dataswornVersion.<p>
      * The version of the Datasworn format used by this data.
      */
-    public void setDataswornVersion(SemanticVersion dataswornVersion) {
+    public void setDataswornVersion(RulesPackageRulesetDataswornVersion dataswornVersion) {
         this.dataswornVersion = dataswornVersion;
     }
 

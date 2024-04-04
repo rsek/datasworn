@@ -37,6 +37,9 @@ public class DelveSite {
     @JsonProperty("theme")
     private DelveSiteThemeId theme;
 
+    @JsonProperty("type")
+    private DelveSiteType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -186,6 +189,20 @@ public class DelveSite {
      */
     public void setTheme(DelveSiteThemeId theme) {
         this.theme = theme;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public DelveSiteType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(DelveSiteType type) {
+        this.type = type;
     }
 
     /**

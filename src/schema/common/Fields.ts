@@ -7,13 +7,14 @@ import {
 	type TRef,
 	type TSchema
 } from '@sinclair/typebox'
-import { Members } from '../Symbols.js'
+import { Mapping, Members } from '../Symbols.js'
 import { type TMoveEnhancement } from '../Moves.js'
 import * as Utils from '../Utils.js'
 import { type TAssetEnhancement } from '../assets/Enhancement.js'
 import * as Base from './Inputs.js'
 import * as Metadata from './Metadata.js'
 import { RollableValue } from './RollableValues.js'
+import { mapValues } from 'lodash-es'
 
 export const EnhanceableProperties = Symbol('EnhanceableProperties')
 
@@ -21,19 +22,15 @@ export const EnhanceableProperties = Symbol('EnhanceableProperties')
 export const DISCRIMINATOR = 'field_type' as const
 
 /** Wraps basic inputs with a descriminator and optional icon for use in discriminated union input fields. */
-function InputField<
-	T extends Base.TInput<TSchema>,
-	Discriminator extends string
->(
+function InputField<T extends Base.TInput<TSchema>, V extends string>(
 	base: T,
-	discriminator: Discriminator,
-	// _id:Id.TAnyId,
+	type: V,
 	options: ObjectOptions = {}
 ) {
 	const { description, $comment } = base
 
 	const mixin = Type.Object({
-		[DISCRIMINATOR]: Type.Literal(discriminator),
+		[DISCRIMINATOR]: Type.Literal(type),
 		icon: Type.Optional(
 			Type.Ref(Metadata.SvgImageUrl, {
 				description: 'An icon associated with this input.'
@@ -46,7 +43,7 @@ function InputField<
 		$comment,
 		[EnhanceableProperties]: [] as Array<keyof Static<T>>,
 		...options
-	}) as unknown as TInputField<T, Discriminator>
+	}) as unknown as TInputField<T, V>
 
 	// const result = Generic.IdentifiedNode(
 	// 	id,
@@ -66,7 +63,10 @@ function InputField<
 
 	return result
 }
-export type TInputField<T extends Base.TInput<TSchema>, Discriminator extends string> =
+export type TInputField<
+	T extends Base.TInput<TSchema>,
+	Discriminator extends string
+> =
 	// Generic.TIdentifiedNode<
 	TObject<
 		T['properties'] & {
@@ -82,12 +82,11 @@ export type TInputField<T extends Base.TInput<TSchema>, Discriminator extends st
 
 export type InputField<
 	T extends Base.Input<any>,
-	Discriminator extends string
+	V extends string
 > = Utils.Assign<
 	T,
 	{
-		// _id:string
-		[DISCRIMINATOR]: Discriminator
+		[DISCRIMINATOR]: V
 	}
 >
 
@@ -112,35 +111,13 @@ export function isEnhanceable(
 // 		}
 // 	)
 // }
-export const CounterField = InputField(
-	Base.Counter,
-	'counter',
-	// id,
-	{
-		[EnhanceableProperties]: ['max'],
-		$id: 'CounterField'
-	}
-)
+export const CounterField = InputField(Base.Counter, 'counter', {
+	[EnhanceableProperties]: ['max'],
+	$id: 'CounterField'
+})
 export type TCounterField = typeof CounterField
 export type CounterField = Static<TCounterField>
 
-// export function ClockField(
-// 	// _id:Id.TAnyId,
-// 	options: ObjectOptions = {}
-// ) {
-// 	const { $comment, description } = Base.Clock
-// 	return InputField(
-// 		Base.Clock,
-// 		'clock',
-// 		// id,
-// 		{
-// 			[EnhanceableProperties]: ['max'],
-// 			title: 'ClockField',
-// 			description,
-// 			$comment,
-// 			...options
-// 		}
-// 	)
 // }
 export const ClockField = InputField(Base.Clock, 'clock', {
 	[EnhanceableProperties]: ['max'],
@@ -149,18 +126,6 @@ export const ClockField = InputField(Base.Clock, 'clock', {
 export type TClockField = typeof ClockField
 export type ClockField = Static<TClockField>
 
-// export function ConditionMeterField() {
-// 	// _id:Id.TAnyId
-// 	return InputField(
-// 		Base.Meter(Type.Integer({ default: 0 }), Type.Integer()),
-// 		'condition_meter',
-// 		// id,
-// 		{
-// 			[EnhanceableProperties]: ['max'],
-// 			title: 'ConditionMeterField'
-// 		}
-// 	)
-// }
 export const ConditionMeterField = InputField(
 	Base.Meter(Type.Literal(true)),
 	'condition_meter',
@@ -173,20 +138,12 @@ export type TConditionMeterField = typeof ConditionMeterField
 export type ConditionMeterField = Static<TConditionMeterField>
 
 function SelectField<
-	Choice extends TRef<
-		| Base.TSelectChoice<TObject>
-		| Utils.TDiscriminatedUnion<Base.TSelectChoice<TObject>[], string>
-	>,
+	Choice extends TRef<TObject>,
 	Discriminator extends string
->(
-	choiceSchema: Choice,
-	discriminator: Discriminator,
-	// _id:Id.TAnyId,
-	options: ObjectOptions = {}
-) {
+>(choiceSchema: Choice, type: Discriminator, options: ObjectOptions = {}) {
 	return InputField(
 		Base.Select(choiceSchema),
-		discriminator,
+		type,
 		// id,
 		options
 	)
@@ -198,23 +155,29 @@ function SelectFieldWithGroups<
 >(
 	choiceSchema: Choice,
 	choiceGroupSchema: Base.TSelectChoicesGroup<TRef<Choice>>,
-	discriminator: Discriminator,
+	type: Discriminator,
 	// _id:Id.TAnyId,
 	options: ObjectOptions = {}
 ) {
 	return InputField(
 		Base.SelectWithGroups(choiceSchema, choiceGroupSchema),
-		discriminator,
+		type,
 		// id,
 		options
 	)
 }
 
 export const SelectValueFieldChoice = Utils.DiscriminatedUnion(
-	RollableValue[Members].map((subschema) => Base.SelectOption(subschema)),
+	mapValues(RollableValue[Mapping], (v) => Base.SelectOption(v)),
 	'using',
 	{ $id: 'SelectValueFieldChoice' }
 )
+
+export type SelectValueFieldChoice = {
+	label: string
+	choice_type: 'choice'
+}
+export type TSelectValueFieldChoice = typeof SelectValueFieldChoice
 
 // export function SelectValueField(
 // 	// _id:Id.TAnyId,

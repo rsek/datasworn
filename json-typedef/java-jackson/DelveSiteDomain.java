@@ -31,6 +31,9 @@ public class DelveSiteDomain {
     @JsonProperty("summary")
     private MarkdownString summary;
 
+    @JsonProperty("type")
+    private DelveSiteDomainType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -152,6 +155,20 @@ public class DelveSiteDomain {
      */
     public void setSummary(MarkdownString summary) {
         this.summary = summary;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public DelveSiteDomainType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(DelveSiteDomainType type) {
+        this.type = type;
     }
 
     /**

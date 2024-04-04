@@ -1,4 +1,19 @@
 /**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.
+ */
+export type SourceRoot =
+	| Ruleset
+	| Expansion
+	| Asset
+	| Npc
+	| Move
+	| OracleRollable
+	| DelveSite
+	| DelveSiteTheme
+	| DelveSiteDomain
+	| Rarity
+
+/**
  * Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.
  */
@@ -12,8 +27,11 @@ export interface Ruleset {
 	type: 'ruleset'
 	/**
 	 * The version of the Datasworn format used by this data.
+	 * @pattern ```javascript
+	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+	 * ```
 	 */
-	datasworn_version?: SemanticVersion
+	datasworn_version: '0.0.9'
 	description?: MarkdownString
 	title?: SourceTitle
 	/**
@@ -91,6 +109,13 @@ export interface Ruleset {
  * A Datasworn package that relies on an external package to provide its ruleset.
  */
 export interface Expansion {
+	/**
+	 * The version of the Datasworn format used by this data.
+	 * @pattern ```javascript
+	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+	 * ```
+	 */
+	datasworn_version?: '0.0.9'
 	description?: MarkdownString
 	title?: SourceTitle
 	/**
@@ -163,10 +188,6 @@ export interface Expansion {
 		| Map<DictKey, DelveSiteDomain>
 	_id: ExpansionId
 	type: 'expansion'
-	/**
-	 * The version of the Datasworn format used by this data.
-	 */
-	datasworn_version?: SemanticVersion
 	ruleset: RulesetId
 	rules?: RulesExpansion
 }
@@ -576,13 +597,6 @@ export type License = WebUrl | null
 export type PageNumber = number
 
 /**
- * @pattern ```javascript
- * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
- * ```
- */
-export type SemanticVersion = string
-
-/**
  * Metadata describing the original source of this item
  */
 export interface SourceInfo {
@@ -696,7 +710,7 @@ export type Label = string
 /**
  * Localized text, formatted in Markdown.
  *
- * It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there part of the source material.
+ * It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.
  * @i18n
  */
 export type MarkdownString = string
@@ -1399,6 +1413,7 @@ export interface CustomValue {
 }
 
 /**
+ * Provides a value like a stat, condition meter, or other number (usually for use in an action roll). The expected value is an integer, or null.
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `using` property as a discriminator.
  */
 export type RollableValue =
@@ -1702,11 +1717,11 @@ export interface OracleColumnText {
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 	suggestions?: Suggestions
+	type: 'oracle_rollable'
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
 	rows: OracleTableRowText[]
-	type: 'oracle_rollable'
 	oracle_type: 'column_text'
 }
 
@@ -1755,11 +1770,11 @@ export interface OracleColumnText2 {
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 	suggestions?: Suggestions
+	type: 'oracle_rollable'
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
 	rows: Array<OracleTableRowText2>
-	type: 'oracle_rollable'
 	oracle_type: 'column_text2'
 }
 
@@ -1808,11 +1823,11 @@ export interface OracleColumnText3 {
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 	suggestions?: Suggestions
+	type: 'oracle_rollable'
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
 	rows: Array<OracleTableRowText3>
-	type: 'oracle_rollable'
 	oracle_type: 'column_text3'
 }
 
@@ -2308,6 +2323,7 @@ export interface OracleTableText {
 	tags?:
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	oracle_type: 'table_text'
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -2357,12 +2373,11 @@ export interface OracleTableText {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
+	type: 'oracle_rollable'
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
 	rows: OracleTableRowText[]
-	oracle_type: 'table_text'
-	type: 'oracle_rollable'
 }
 
 /**
@@ -2396,6 +2411,7 @@ export interface OracleTableText2 {
 	tags?:
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	oracle_type: 'table_text2'
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -2449,12 +2465,11 @@ export interface OracleTableText2 {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
+	type: 'oracle_rollable'
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
 	rows: Array<OracleTableRowText2>
-	oracle_type: 'table_text2'
-	type: 'oracle_rollable'
 }
 
 /**
@@ -2488,6 +2503,7 @@ export interface OracleTableText3 {
 	tags?:
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	oracle_type: 'table_text3'
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -2536,12 +2552,11 @@ export interface OracleTableText3 {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
+	type: 'oracle_rollable'
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
 	rows: Array<OracleTableRowText3>
-	oracle_type: 'table_text3'
-	type: 'oracle_rollable'
 }
 
 /**
@@ -4190,6 +4205,7 @@ export interface Rarity {
 	 * The asset augmented by this rarity.
 	 */
 	asset: AssetId
+	type: 'rarity'
 	icon?: SvgImageUrl
 	/**
 	 * From Ironsworn: Delve, p. 174:
@@ -4236,6 +4252,7 @@ export interface DelveSite {
 	tags?:
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	type: 'delve_site'
 	icon?: SvgImageUrl
 	rank: ChallengeRank
 	/**
@@ -4371,6 +4388,7 @@ export interface DelveSiteDomain {
 	tags?:
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	type: 'delve_site_domain'
 	/**
 	 * @deprecated
 	 */
@@ -4488,6 +4506,7 @@ export interface DelveSiteTheme {
 	tags?:
 		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
 		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	type: 'delve_site_theme'
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl

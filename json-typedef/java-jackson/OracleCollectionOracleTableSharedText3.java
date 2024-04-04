@@ -13,7 +13,7 @@ import java.util.Map;
  * and 2 shared text columns.
  */
 @JsonSerialize
-public class OracleCollectionTableSharedText3 extends OracleCollection {
+public class OracleCollectionOracleTableSharedText3 extends OracleCollection {
     @JsonProperty("_id")
     private OracleCollectionId id;
 
@@ -21,13 +21,13 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     private SourceInfo source;
 
     @JsonProperty("column_labels")
-    private OracleCollectionTableSharedText3ColumnLabels columnLabels;
+    private OracleCollectionOracleTableSharedText3ColumnLabels columnLabels;
 
     @JsonProperty("name")
     private Label name;
 
     @JsonProperty("type")
-    private OracleCollectionTableSharedText3Type type;
+    private OracleCollectionOracleTableSharedText3Type type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
@@ -77,7 +77,7 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     @JsonProperty("tags")
     private Map<String, Map<String, Tag>> tags;
 
-    public OracleCollectionTableSharedText3() {
+    public OracleCollectionOracleTableSharedText3() {
     }
 
     /**
@@ -119,7 +119,7 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public OracleCollectionTableSharedText3ColumnLabels getColumnLabels() {
+    public OracleCollectionOracleTableSharedText3ColumnLabels getColumnLabels() {
         return columnLabels;
     }
 
@@ -128,7 +128,7 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
      * The label at the head of each table column. The `roll` key refers to the
      * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public void setColumnLabels(OracleCollectionTableSharedText3ColumnLabels columnLabels) {
+    public void setColumnLabels(OracleCollectionOracleTableSharedText3ColumnLabels columnLabels) {
         this.columnLabels = columnLabels;
     }
 
@@ -151,14 +151,14 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     /**
      * Getter for type.<p>
      */
-    public OracleCollectionTableSharedText3Type getType() {
+    public OracleCollectionOracleTableSharedText3Type getType() {
         return type;
     }
 
     /**
      * Setter for type.<p>
      */
-    public void setType(OracleCollectionTableSharedText3Type type) {
+    public void setType(OracleCollectionOracleTableSharedText3Type type) {
         this.type = type;
     }
 

@@ -1,5 +1,5 @@
 import { Type, type Static } from '@sinclair/typebox'
-import { snakeCase } from 'lodash-es'
+import { keyBy, snakeCase } from 'lodash-es'
 import { type SnakeCase } from 'type-fest'
 import { JsonTypeDef } from '../Symbols.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
@@ -102,41 +102,44 @@ const TagRuleBase = Type.Object({
 	description: Type.Ref(Localize.MarkdownString)
 })
 
-const typedTags = [
-	...(['boolean', 'integer'] as const).map((type) =>
+const typedTags = keyBy(
+	[
+		...(['boolean', 'integer'] as const).map((type) =>
+			Utils.Assign([
+				TagRuleBase,
+				Type.Object({
+					array: Type.Boolean({ default: false }),
+					value_type: Type.Literal(type)
+				})
+			])
+		),
+		...objectTypesSnakeCase.map((type) =>
+			Utils.Assign([
+				TagRuleBase,
+				Type.Object({
+					wildcard: Type.Boolean({
+						default: false,
+						description:
+							'If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.'
+					}),
+					value_type: Type.Literal(type)
+				})
+			])
+		),
 		Utils.Assign([
 			TagRuleBase,
 			Type.Object({
 				array: Type.Boolean({ default: false }),
-				value_type: Type.Literal(type)
+				value_type: Type.Literal('enum'),
+				enum: Type.Array(Type.Ref(Id.DictKey))
 			})
 		])
-	),
-	...objectTypesSnakeCase.map((type) =>
-		Utils.Assign([
-			TagRuleBase,
-			Type.Object({
-				wildcard: Type.Boolean({
-					default: false,
-					description:
-						'If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.'
-				}),
-				value_type: Type.Literal(type)
-			})
-		])
-	),
-	Utils.Assign([
-		TagRuleBase,
-		Type.Object({
-			array: Type.Boolean({ default: false }),
-			value_type: Type.Literal('enum'),
-			enum: Type.Array(Type.Ref(Id.DictKey))
-		})
-	])
-].map((tag) => ({
-	...tag,
-	title: 'TagRule' + pascalCase(tag.properties.value_type.const)
-}))
+	].map((tag) => ({
+		...tag,
+		title: 'TagRule' + pascalCase(tag.properties.value_type.const)
+	})),
+	(tag) => tag.properties.value_type.const
+)
 
 export const TagRule = Utils.DiscriminatedUnion(typedTags, 'value_type', {
 	$id: 'TagRule'

@@ -1,9 +1,9 @@
 import { TypeCompiler } from '@sinclair/typebox/compiler'
-import { DataswornRoot } from '../../schema/Root.js'
+import { DataswornSchema } from '../../schema/Root.js'
 import { type TSchema } from '@sinclair/typebox'
-import { defsKey } from '../const.js'
+import { DefsKey } from '../const.js'
 
-const { $schema, $id, [defsKey]: defs, ...root } = DataswornRoot
+const { $schema, $id, [DefsKey]: defs, ...root } = DataswornSchema
 
 const OutputValidator = TypeCompiler.Compile(
 	root as TSchema,

@@ -30,6 +30,7 @@ const DelveSiteThemeDangers = Type.Array(Type.Ref(OracleTableRowText))
 export const DelveSiteTheme = Generic.SourcedNode(
 	Type.Ref(Id.DelveSiteThemeId),
 	Type.Object({
+		type: Type.Literal('delve_site_theme'),
 		summary: Type.Ref(Localize.MarkdownString),
 		description: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),

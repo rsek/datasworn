@@ -65,7 +65,7 @@ export const AssetCardFlipField = Utils.Assign(
 )
 
 export const AssetConditionMeterControlField = Utils.DiscriminatedUnion(
-	[AssetCheckboxField, AssetCardFlipField],
+	{ checkbox: AssetCheckboxField, card_flip: AssetCardFlipField },
 	// .map(
 	// 	(fn) => fn()
 	// Type.Ref(Id.AssetConditionMeterControlFieldId
@@ -170,7 +170,11 @@ export type AssetConditionMeter = Simplify<Static<typeof AssetConditionMeter>>
 // )
 
 export const AssetOptionField = Utils.DiscriminatedUnion(
-	[Fields.SelectValueField, Fields.SelectEnhancementField, Fields.TextField],
+	{
+		select_value: Fields.SelectValueField,
+		select_enhancement: Fields.SelectEnhancementField,
+		text: Fields.TextField
+	},
 	Fields.DISCRIMINATOR,
 	{
 		$id: 'AssetOptionField',
@@ -204,12 +208,12 @@ export type TAssetOptionField = typeof AssetOptionField
 // )
 
 export const AssetControlField = Utils.DiscriminatedUnion(
-	[
-		AssetConditionMeter,
-		Fields.SelectEnhancementField,
-		AssetCheckboxField,
-		AssetCardFlipField
-	],
+	{
+		condition_meter: AssetConditionMeter,
+		select_enhancement: Fields.SelectEnhancementField,
+		checkbox: AssetCheckboxField,
+		card_flip: AssetCardFlipField
+	},
 	Fields.DISCRIMINATOR,
 	{
 		$id: 'AssetControlField'
@@ -241,12 +245,12 @@ export type AssetControlField = Static<typeof AssetControlField>
 // )
 
 export const AssetAbilityControlField = Utils.DiscriminatedUnion(
-	[
-		Fields.ClockField,
-		Fields.CounterField,
-		AssetCheckboxField,
-		Fields.TextField
-	],
+	{
+		clock: Fields.ClockField,
+		counter: Fields.CounterField,
+		checkbox: AssetCheckboxField,
+		text: Fields.TextField
+	},
 	Fields.DISCRIMINATOR,
 	{ $id: 'AssetAbilityControlField' }
 )
@@ -260,7 +264,9 @@ export type AssetAbilityControlField = Static<typeof AssetAbilityControlField>
 // 	()
 
 export const AssetAbilityOptionField = Utils.DiscriminatedUnion(
-	[Fields.TextField],
+	{
+		text: Fields.TextField
+	},
 	Fields.DISCRIMINATOR,
 	{ $id: 'AssetAbilityOptionField' }
 )

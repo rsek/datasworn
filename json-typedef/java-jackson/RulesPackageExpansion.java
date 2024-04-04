@@ -18,9 +18,6 @@ public class RulesPackageExpansion extends RulesPackage {
     @JsonProperty("_id")
     private ExpansionId id;
 
-    @JsonProperty("datasworn_version")
-    private SemanticVersion dataswornVersion;
-
     @JsonProperty("ruleset")
     private RulesetId ruleset;
 
@@ -35,6 +32,10 @@ public class RulesPackageExpansion extends RulesPackage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("authors")
     private List<AuthorInfo> authors;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("datasworn_version")
+    private RulesPackageExpansionDataswornVersion dataswornVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("date")
@@ -110,22 +111,6 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
-     * Getter for dataswornVersion.<p>
-     * The version of the Datasworn format used by this data.
-     */
-    public SemanticVersion getDataswornVersion() {
-        return dataswornVersion;
-    }
-
-    /**
-     * Setter for dataswornVersion.<p>
-     * The version of the Datasworn format used by this data.
-     */
-    public void setDataswornVersion(SemanticVersion dataswornVersion) {
-        this.dataswornVersion = dataswornVersion;
-    }
-
-    /**
      * Getter for ruleset.<p>
      */
     public RulesetId getRuleset() {
@@ -187,6 +172,22 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setAuthors(List<AuthorInfo> authors) {
         this.authors = authors;
+    }
+
+    /**
+     * Getter for dataswornVersion.<p>
+     * The version of the Datasworn format used by this data.
+     */
+    public RulesPackageExpansionDataswornVersion getDataswornVersion() {
+        return dataswornVersion;
+    }
+
+    /**
+     * Setter for dataswornVersion.<p>
+     * The version of the Datasworn format used by this data.
+     */
+    public void setDataswornVersion(RulesPackageExpansionDataswornVersion dataswornVersion) {
+        this.dataswornVersion = dataswornVersion;
     }
 
     /**

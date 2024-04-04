@@ -47,11 +47,11 @@ function featureOrDanger<TCard extends keyof FeatureOrDangerMap>(
 				data
 			)}`
 		)
-	const id = trackID(
-		`${parentID}/${rowType as string}s/${data.min}-${data.max}`
-	)
+	// const id = trackID(
+	// 	`${parentID}/${rowType as string}s/${data.min}-${data.max}`
+	// )
 	const result = cloneDeep(data) as FeatureOrDangerMap[TCard][typeof rowType]
-	result._id = id
+	// result._id = id
 	return result
 }
 
@@ -121,11 +121,11 @@ export const DelveSiteDenizen: Transformer<
 	DataswornSource.DelveSiteDenizen,
 	Datasworn.DelveSiteDenizen
 > = {
-	_id: function (
-		data: DataswornSource.DelveSiteDenizen,
-		key: string | number,
-		parent: SourcedNode
-	): string {
-		return trackID(`${parent._id}/denizens/${data.min}-${data.max}`)
-	}
+	// _id: function (
+	// 	data: DataswornSource.DelveSiteDenizen,
+	// 	key: string | number,
+	// 	parent: SourcedNode
+	// ): string {
+	// 	return trackID(`${parent._id}/denizens/${data.min}-${data.max}`)
+	// }
 }

@@ -8,7 +8,7 @@ namespace Datasworn
     /// The label at the head of each table column. The `roll` key refers to the
     /// roll column showing the dice range (`min` and `max` on each table row).
     /// </summary>
-    public class OracleCollectionTableSharedText3ColumnLabels
+    public class OracleCollectionOracleTableSharedText3ColumnLabels
     {
         [JsonPropertyName("text")]
         public Label Text { get; set; }

@@ -21,7 +21,7 @@ export type InputLabel = Lowercase<string>
 export const MarkdownString = Type.String({
 	$id: 'MarkdownString',
 	description:
-		'Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there part of the source material.',
+		'Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.',
 	format: 'markdown',
 	i18n: true
 })

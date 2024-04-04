@@ -27,6 +27,9 @@ public class Rarity {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("type")
+    private RarityType type;
+
     @JsonProperty("xp_cost")
     private Short xpCost;
 
@@ -131,6 +134,20 @@ public class Rarity {
      */
     public void setName(Label name) {
         this.name = name;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public RarityType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(RarityType type) {
+        this.type = type;
     }
 
     /**

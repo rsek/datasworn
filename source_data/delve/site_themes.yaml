@@ -1,8 +1,10 @@
 _id: delve
+datasworn_version: "0.0.9"
 type: expansion
 ruleset: classic
 site_themes:
   ancient:
+    type: delve_site_theme
     name: Ancient
     # https://game-icons.net/1x1/delapouite/ancient-sword.html
     _source:
@@ -77,6 +79,7 @@ site_themes:
         max: 30
         text: Others seek power or knowledge
   corrupted:
+    type: delve_site_theme
     name: Corrupted
     # https://game-icons.net/1x1/lorc/tentacle-strike.html
     _source:
@@ -142,6 +145,7 @@ site_themes:
         max: 30
         text: Dread harbingers of a greater magic
   fortified:
+    type: delve_site_theme
     name: Fortified
     # https://game-icons.net/1x1/lorc/barbed-sun.html
     _source:
@@ -208,6 +212,7 @@ site_themes:
         max: 30
         text: Alarm trigger
   hallowed:
+    type: delve_site_theme
     name: Hallowed
     # https://game-icons.net/1x1/lorc/fire-ring.html
     _source:
@@ -272,6 +277,7 @@ site_themes:
         max: 30
         text: Prophecies reveal a dark fate
   haunted:
+    type: delve_site_theme
     name: Haunted
     _source:
       <<: *Source
@@ -335,6 +341,7 @@ site_themes:
         max: 30
         text: Sudden, shocking manifestation
   infested:
+    type: delve_site_theme
     name: Infested
     # https://game-icons.net/1x1/lorc/lamprey-mouth.html
     _source:
@@ -400,6 +407,7 @@ site_themes:
         max: 30
         text: Victim’s horrible fate is revealed
   ravaged:
+    type: delve_site_theme
     name: Ravaged
     # https://game-icons.net/1x1/lorc/wind-hole.html
     _source:
@@ -464,6 +472,7 @@ site_themes:
         max: 30
         text: Ravages return anew
   wild:
+    type: delve_site_theme
     name: Wild
     # https://game-icons.net/1x1/skoll/fangs.html
     _source:

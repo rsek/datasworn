@@ -310,8 +310,9 @@ export function SelectChoicesGroup<Option extends TRef<TSelectChoice<TObject>>>(
 			ObjectProperties<typeof mixin>
 	>
 }
-export type TSelectChoicesGroup<Option extends TRef<TSelectChoice<TObject>>> =
-	ReturnType<typeof SelectChoicesGroup<Option>>
+export type TSelectChoicesGroup<
+	Option extends TRef<TSelectChoice<TObject>> | TSelectChoice<TObject>
+> = ReturnType<typeof SelectChoicesGroup<Option>>
 
 export type SelectChoicesGroup<Option extends SelectChoice<any>> = Static<
 	typeof SelectChoicesGroupBase
@@ -330,11 +331,17 @@ const SelectBase = Input(
 
 export function SelectWithGroups<Option extends TSelectChoice<TObject>>(
 	choiceSchema: Option,
-	choicesGroupSchema: TSelectChoicesGroup<TRef<Option>>,
+	choicesGroupSchema: TSelectChoicesGroup<TRef<Option> | Option>,
 	options: ObjectOptions = {}
 ) {
 	const mixin = Choices(
-		Utils.DiscriminatedUnion([choiceSchema, choicesGroupSchema], 'choice_type')
+		Utils.DiscriminatedUnion(
+			{
+				choice: choiceSchema,
+				choice_group: choicesGroupSchema
+			},
+			'choice_type'
+		)
 	)
 	return Utils.Assign([SelectBase, mixin], {
 		description: 'Represents a list of mutually exclusive choices.',
@@ -352,7 +359,7 @@ export function SelectWithGroups<Option extends TSelectChoice<TObject>>(
 export function Select<
 	Option extends TRef<
 		| TSelectChoice<TObject>
-		| Utils.TDiscriminatedUnion<TSelectChoice<TObject>[], string>
+		| Utils.TDiscriminatedUnion<TSelectChoice<TObject>, string>
 	>
 >(choiceSchema: Option, options: ObjectOptions = {}) {
 	const mixin = Choices(choiceSchema)

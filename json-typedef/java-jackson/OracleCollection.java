@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "oracle_type")
 @JsonSubTypes({
+    @JsonSubTypes.Type(name = "OracleTableSharedText3", value = OracleCollectionOracleTableSharedText3.class),
     @JsonSubTypes.Type(name = "table_shared_rolls", value = OracleCollectionTableSharedRolls.class),
     @JsonSubTypes.Type(name = "table_shared_text", value = OracleCollectionTableSharedText.class),
     @JsonSubTypes.Type(name = "table_shared_text2", value = OracleCollectionTableSharedText2.class),
-    @JsonSubTypes.Type(name = "table_shared_text3", value = OracleCollectionTableSharedText3.class),
     @JsonSubTypes.Type(name = "tables", value = OracleCollectionTables.class),
 })
 public abstract class OracleCollection {

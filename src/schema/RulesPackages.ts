@@ -2,17 +2,27 @@ import { Type, type Static, type TUnsafe, TProperties } from '@sinclair/typebox'
 import { type Id, Metadata, Localize } from './common/index.js'
 import * as Generic from './Generic.js'
 
-import { type TAssetCollection } from './Assets.js'
+import { Asset, type TAssetCollection } from './Assets.js'
 import { type TAtlas } from './Atlas.js'
 import {
 	type TDelveSiteDomain,
 	type TDelveSiteTheme,
-	type TDelveSite
+	type TDelveSite,
+	DelveSite,
+	DelveSiteTheme,
+	DelveSiteDomain
 } from './DelveSites.js'
-import { type MoveCategory } from './Moves.js'
-import { type TNpcCollection } from './Npcs.js'
+import {
+	Move,
+	MoveActionRoll,
+	MoveNoRoll,
+	type MoveCategory,
+	MoveProgressRoll,
+	MoveSpecialTrack
+} from './Moves.js'
+import { Npc, type TNpcCollection } from './Npcs.js'
 import { type TOracleTablesCollection } from './oracles/OracleCollection.js'
-import { type TRarity } from './Rarities.js'
+import { Rarity, type TRarity } from './Rarities.js'
 import { type TRules } from './Rules.js'
 import { type TTruth } from './Truths.js'
 import * as Utils from './Utils.js'
@@ -21,15 +31,16 @@ import { SourceInfo } from './common/Metadata.js'
 import { mapValues } from 'lodash-es'
 import * as CONST from '../scripts/const.js'
 
-const datasworn_version = Utils.Computed(
-	Type.Ref(Metadata.SemanticVersion, {
-		description: 'The version of the Datasworn format used by this data.'
-	})
-)
+export const Version = Type.Literal(CONST.VERSION, {
+	description: 'The version of the Datasworn format used by this data.',
+	pattern:
+		/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+			.source
+})
 
 const RulesPackageMetaProps = {
-	datasworn_version,
 	// name: Utils.SourceOptional(Type.Ref(Localize.Label)),
+	datasworn_version: Version,
 	description: Type.Optional(Type.Ref(Localize.MarkdownString)),
 	...mapValues(Type.Required(Type.Omit(SourceInfo, ['page'])).properties, (v) =>
 		Utils.SourceOptional(v)
@@ -116,6 +127,7 @@ export const Ruleset = Type.Object(
 	},
 	{
 		$id: 'Ruleset',
+		additionalProperties: true,
 		description:
 			'A standalone Datasworn package that describes its own ruleset.'
 	}
@@ -124,9 +136,7 @@ export type Ruleset = Static<typeof Ruleset>
 
 export const Expansion = Utils.Assign(
 	[
-		Type.Partial(
-			Type.Omit(Ruleset, ['_id', 'type', 'rules', 'datasworn_version'])
-		),
+		Type.Partial(Type.Omit(Ruleset, ['_id', 'type', 'rules'])),
 		Type.Object({
 			_id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
 			type: Type.Literal('expansion'),
@@ -136,6 +146,8 @@ export const Expansion = Utils.Assign(
 		})
 	],
 	{
+		additionalProperties: true,
+
 		description:
 			'A Datasworn package that relies on an external package to provide its ruleset.',
 		$id: 'Expansion'
@@ -143,10 +155,18 @@ export const Expansion = Utils.Assign(
 )
 export type Expansion = Static<typeof Expansion>
 
-export const RulesPackage = Utils.DiscriminatedUnion([Ruleset, Expansion], 'type', {
-	description:
-		'Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.',
-	title: CONST.rootSchemaName,
-	$id: CONST.rootSchemaName
-})
+export const RulesPackage = Utils.DiscriminatedUnion(
+	{
+		ruleset: Ruleset,
+		expansion: Expansion
+	},
+	'type',
+	{
+		description:
+			'Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin.',
+		title: CONST.rootSchemaName,
+		$id: CONST.rootSchemaName
+	}
+)
+
 export type RulesPackage = Static<typeof RulesPackage>

@@ -34,7 +34,7 @@ namespace Datasworn
         /// The version of the Datasworn format used by this data.
         /// </summary>
         [JsonPropertyName("datasworn_version")]
-        public SemanticVersion DataswornVersion { get; set; }
+        public RulesPackageRulesetDataswornVersion DataswornVersion { get; set; }
 
         /// <summary>
         /// The date of the source documents's last update, formatted YYYY-MM-

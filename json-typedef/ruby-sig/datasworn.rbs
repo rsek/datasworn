@@ -9,13 +9,22 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class RulesPackageExpansionDataswornVersion
+    attr_accessor value: String
+
+    DEFAULT_NAME: RulesPackageExpansionDataswornVersion
+
+    def self.from_json_data: (untyped) -> RulesPackageExpansionDataswornVersion
+    def to_json_data: () -> untyped
+  end
+
   class RulesPackageExpansion < RulesPackage
     attr_accessor id: ExpansionID
-    attr_accessor datasworn_version: SemanticVersion
     attr_accessor ruleset: RulesetID
     attr_accessor assets: Hash[String, AssetCollection]?
     attr_accessor atlas: Hash[String, Atlas]?
     attr_accessor authors: Array[AuthorInfo]?
+    attr_accessor datasworn_version: RulesPackageExpansionDataswornVersion?
     attr_accessor date: DateTime?
     attr_accessor delve_sites: Hash[String, DelveSite]?
     attr_accessor description: MarkdownString?
@@ -35,11 +44,20 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class RulesPackageRulesetDataswornVersion
+    attr_accessor value: String
+
+    DEFAULT_NAME: RulesPackageRulesetDataswornVersion
+
+    def self.from_json_data: (untyped) -> RulesPackageRulesetDataswornVersion
+    def to_json_data: () -> untyped
+  end
+
   class RulesPackageRuleset < RulesPackage
     attr_accessor id: RulesetID
     attr_accessor assets: Hash[String, AssetCollection]
     attr_accessor authors: Array[AuthorInfo]
-    attr_accessor datasworn_version: SemanticVersion
+    attr_accessor datasworn_version: RulesPackageRulesetDataswornVersion
     attr_accessor date: DateTime
     attr_accessor license: License
     attr_accessor moves: Hash[String, MoveCategory]
@@ -574,6 +592,15 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class DelveSiteType
+    attr_accessor value: String
+
+    DELVE_SITE: DelveSiteType
+
+    def self.from_json_data: (untyped) -> DelveSiteType
+    def to_json_data: () -> untyped
+  end
+
   class DelveSite
     attr_accessor id: DelveSiteID
     attr_accessor source: SourceInfo
@@ -583,6 +610,7 @@ module Datasworn
     attr_accessor name: Label
     attr_accessor rank: ChallengeRank
     attr_accessor theme: DelveSiteThemeID
+    attr_accessor type: DelveSiteType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor extra_card: String?
@@ -628,6 +656,15 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class DelveSiteDomainType
+    attr_accessor value: String
+
+    DELVE_SITE_DOMAIN: DelveSiteDomainType
+
+    def self.from_json_data: (untyped) -> DelveSiteDomainType
+    def to_json_data: () -> untyped
+  end
+
   class DelveSiteDomain
     attr_accessor id: DelveSiteDomainID
     attr_accessor source: SourceInfo
@@ -635,6 +672,7 @@ module Datasworn
     attr_accessor features: Array[OracleTableRowText]
     attr_accessor name: Label
     attr_accessor summary: MarkdownString
+    attr_accessor type: DelveSiteDomainType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
@@ -661,6 +699,15 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class DelveSiteThemeType
+    attr_accessor value: String
+
+    DELVE_SITE_THEME: DelveSiteThemeType
+
+    def self.from_json_data: (untyped) -> DelveSiteThemeType
+    def to_json_data: () -> untyped
+  end
+
   class DelveSiteTheme
     attr_accessor id: DelveSiteThemeID
     attr_accessor source: SourceInfo
@@ -668,6 +715,7 @@ module Datasworn
     attr_accessor features: Array[OracleTableRowText]
     attr_accessor name: Label
     attr_accessor summary: MarkdownString
+    attr_accessor type: DelveSiteThemeType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
@@ -1143,6 +1191,45 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleCollectionOracleTableSharedText3ColumnLabels
+    attr_accessor text: Label
+
+    def self.from_json_data: (untyped) -> OracleCollectionOracleTableSharedText3ColumnLabels
+    def to_json_data: () -> untyped
+  end
+
+  class OracleCollectionOracleTableSharedText3Type
+    attr_accessor value: String
+
+    ORACLE_COLLECTION: OracleCollectionOracleTableSharedText3Type
+
+    def self.from_json_data: (untyped) -> OracleCollectionOracleTableSharedText3Type
+    def to_json_data: () -> untyped
+  end
+
+  class OracleCollectionOracleTableSharedText3 < OracleCollection
+    attr_accessor id: OracleCollectionID
+    attr_accessor source: SourceInfo
+    attr_accessor column_labels: OracleCollectionOracleTableSharedText3ColumnLabels
+    attr_accessor name: Label
+    attr_accessor type: OracleCollectionOracleTableSharedText3Type
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor contents: Hash[String, OracleColumnText3]?
+    attr_accessor description: MarkdownString?
+    attr_accessor enhances: OracleCollectionID?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
+    attr_accessor replaces: OracleCollectionID?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+
+    def self.from_json_data: (untyped) -> OracleCollectionOracleTableSharedText3
+    def to_json_data: () -> untyped
+  end
+
   class OracleCollectionTableSharedRollsColumnLabels
     attr_accessor roll: Label
 
@@ -1258,45 +1345,6 @@ module Datasworn
     attr_accessor tags: Hash[String, Hash[String, Tag]]?
 
     def self.from_json_data: (untyped) -> OracleCollectionTableSharedText2
-    def to_json_data: () -> untyped
-  end
-
-  class OracleCollectionTableSharedText3ColumnLabels
-    attr_accessor text: Label
-
-    def self.from_json_data: (untyped) -> OracleCollectionTableSharedText3ColumnLabels
-    def to_json_data: () -> untyped
-  end
-
-  class OracleCollectionTableSharedText3Type
-    attr_accessor value: String
-
-    ORACLE_COLLECTION: OracleCollectionTableSharedText3Type
-
-    def self.from_json_data: (untyped) -> OracleCollectionTableSharedText3Type
-    def to_json_data: () -> untyped
-  end
-
-  class OracleCollectionTableSharedText3 < OracleCollection
-    attr_accessor id: OracleCollectionID
-    attr_accessor source: SourceInfo
-    attr_accessor column_labels: OracleCollectionTableSharedText3ColumnLabels
-    attr_accessor name: Label
-    attr_accessor type: OracleCollectionTableSharedText3Type
-    attr_accessor comment: String?
-    attr_accessor canonical_name: Label?
-    attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText3]?
-    attr_accessor description: MarkdownString?
-    attr_accessor enhances: OracleCollectionID?
-    attr_accessor icon: SvgImageURL?
-    attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: OracleCollectionID?
-    attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
-
-    def self.from_json_data: (untyped) -> OracleCollectionTableSharedText3
     def to_json_data: () -> untyped
   end
 
@@ -1796,12 +1844,22 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class RarityType
+    attr_accessor value: String
+
+    RARITY: RarityType
+
+    def self.from_json_data: (untyped) -> RarityType
+    def to_json_data: () -> untyped
+  end
+
   class Rarity
     attr_accessor id: RarityID
     attr_accessor source: SourceInfo
     attr_accessor asset: AssetID
     attr_accessor description: MarkdownString
     attr_accessor name: Label
+    attr_accessor type: RarityType
     attr_accessor xp_cost: Integer
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
@@ -2059,13 +2117,6 @@ module Datasworn
     attr_accessor stat: StatKey
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceStat
-    def to_json_data: () -> untyped
-  end
-
-  class SemanticVersion
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> SemanticVersion
     def to_json_data: () -> untyped
   end
 

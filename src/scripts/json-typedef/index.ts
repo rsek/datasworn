@@ -3,13 +3,13 @@ import * as JTD from 'jtd'
 import Log from '../utils/Log.js'
 import { refTracker, toJtdRoot } from './utils.js'
 
-import { DataswornRoot } from '../../schema/index.js'
+import { DataswornSchema } from '../../schema/index.js'
 import { isEmpty } from 'lodash-es'
 import { buildTypeDefs } from './buildTypeDefs.js'
 import { JTD_JSON_PATH } from './const.js'
 import { log } from 'console'
 
-const root: JTD.Schema = toJtdRoot(DataswornRoot)
+const root: JTD.Schema = toJtdRoot(DataswornSchema)
 
 for (const name of refTracker)
 	if (!(name in root?.definitions ?? {}))

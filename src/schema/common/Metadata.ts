@@ -28,13 +28,13 @@ export const CssColor = Type.String({
 })
 export type CssColor = Static<typeof CssColor>
 
-export const SemanticVersion = Type.String({
-	pattern:
-		/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
-			.source,
-	$id: 'SemanticVersion'
-})
-export type SemanticVersion = Static<typeof SemanticVersion>
+// export const SemanticVersion = Type.String({
+// 	pattern:
+// 		/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+// 			.source,
+// 	$id: 'SemanticVersion'
+// })
+// export type SemanticVersion = Static<typeof SemanticVersion>
 
 export const AuthorInfo = Type.Object(
 	{

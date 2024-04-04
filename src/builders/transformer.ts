@@ -25,7 +25,7 @@ export function sourcedTransformer<
 >(
 	partialTransformer: PartialKeys<
 		Transformer<TIn, TOut, TParent>,
-		'_id' | 'source'
+		'_id' | '_source'
 	>
 ) {
 	return {
@@ -69,7 +69,7 @@ export function collectionTransformer<
 	itemTransformer: Transformer<Collected<TIn>, Collected<TOut>, TOut>,
 	partialTransformer: Omit<
 		Transformer<TIn, TOut, TParent>,
-		'source' | '_id' | 'contents'
+		'_source' | '_id' | 'contents'
 	>,
 	isRecursive = false
 ) {
@@ -130,7 +130,7 @@ export function recursiveCollectionTransformer<
 	itemTransformer: TItemTransformer,
 	partialTransformer: Omit<
 		Transformer<TIn, TOut, TParent>,
-		'source' | '_id' | 'contents'
+		'_source' | '_id' | 'contents'
 	>
 ) {
 	const result = collectionTransformer<TIn, TOut, TParent>(
@@ -161,7 +161,11 @@ export function recursiveCollectionTransformer<
 	return result
 }
 
-export type Transformer<TIn, TOut, TParent extends SourcedNode | Rules | null> = {
+export type Transformer<
+	TIn,
+	TOut,
+	TParent extends SourcedNode | Rules | null
+> = {
 	[K in keyof Required<TOut> as K extends keyof TIn
 		? K extends InitialKeys
 			? K
@@ -178,7 +182,7 @@ export type Transformer<TIn, TOut, TParent extends SourcedNode | Rules | null> =
 			) => TOut[K] // if they both have the key and it's the same type value, omit -- it doesn't need transforming
 }
 
-type InitialKeys = '_id' | 'source'
+type InitialKeys = '_id' | '_source'
 
 export function transform<
 	TIn,
@@ -192,7 +196,7 @@ export function transform<
 ): TOut {
 	const result = cloneDeep(data) as Partial<TOut>
 
-	const initialKeys: InitialKeys[] = ['_id', 'source']
+	const initialKeys: InitialKeys[] = ['_id', '_source']
 
 	initialKeys.forEach((initialKey) => {
 		if ((transformer as any)[initialKey] != null) {

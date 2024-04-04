@@ -10,11 +10,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * column showing the dice range (`min` and `max` on each table row).
  */
 @JsonSerialize
-public class OracleCollectionTableSharedText3ColumnLabels {
+public class OracleCollectionOracleTableSharedText3ColumnLabels {
     @JsonProperty("text")
     private Label text;
 
-    public OracleCollectionTableSharedText3ColumnLabels() {
+    public OracleCollectionOracleTableSharedText3ColumnLabels() {
     }
 
     /**

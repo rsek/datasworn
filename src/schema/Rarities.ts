@@ -8,6 +8,7 @@ export const Rarity = Generic.SourcedNode(
 		asset: Type.Ref(Id.AssetId, {
 			description: 'The asset augmented by this rarity.'
 		}),
+		type: Type.Literal('rarity'),
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 		xp_cost: Type.Integer({
 			minimum: 3,

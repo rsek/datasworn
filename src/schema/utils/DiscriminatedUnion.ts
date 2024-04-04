@@ -1,161 +1,151 @@
 import {
+	CloneType,
 	Kind,
 	Type,
-	CloneType,
 	TypeRegistry,
 	type SchemaOptions,
 	type Static,
 	type TLiteral,
 	type TObject,
-	type TPick,
-	type TRef,
-	type TSchema
+	type TProperties,
+	type TSchema,
+	type TUnion,
+	type TRef
 } from '@sinclair/typebox'
-import { map, omit, pick, values } from 'lodash-es'
-import { Discriminator, Members } from '../Symbols.js'
+import { keyBy, omit } from 'lodash-es'
+import { Discriminator, Mapping, Members } from '../Symbols.js'
+import { type TIfThenElse } from './IfThen.js'
 import { UnionEnum, type TUnionEnum } from './UnionEnum.js'
-import type { ObjectProperties } from './ObjectProperties.js'
+import type {
+	OracleCollection,
+	OracleRollable,
+	OracleTableText,
+	OracleTableText2,
+	OracleTableText3,
+	TOracleTableText
+} from '../Oracles.js'
+import type { PickByType } from './typebox.js'
+import { IfThenElse } from './IfThen.js'
 
-export function DiscriminatedUnionFromMapping<
-	TDiscriminator extends string,
-	Mapping extends Record<string, TObject>
->(
-	discriminator: TDiscriminator,
-	mapping: Mapping,
-	options: SchemaOptions = {}
-) {
-	type Remapping = {
-		[P in string & keyof Mapping]: TDiscriminable<TDiscriminator, P, Mapping[P]>
-	}
-
-	const nuMapping = map(mapping, (v, k: keyof Mapping & string) =>
-		Discriminable(v, discriminator, k)
-	) as unknown as [...Remapping[keyof Remapping][]]
-
-	const schemas = values(nuMapping)
-
-	return DiscriminatedUnion(schemas, discriminator, options)
+type DiscriminableKeyOf<T> = keyof T & keyof PickByType<T, string> & string
+type DiscriminatorValueOf<T, D extends DiscriminableKeyOf<T>> = T[D] & string
+export type DiscriminatorMap<T, D extends DiscriminableKeyOf<T>> = {
+	[K in T as DiscriminatorValueOf<T, D>]: K
 }
 
-type TDiscriminable<
-	TDiscriminator extends string,
-	MappingKey extends string = string,
-	T extends TObject = TObject
-> = Omit<T, 'properties' | 'static'> & {
-	properties: ObjectProperties<T> & {
-		[D in TDiscriminator]: TLiteral<MappingKey>
-	}
-	static: Static<T> & { [D in TDiscriminator]: MappingKey }
-	params: unknown[]
+type ValueIn<T extends Record<any, TSchema>> =
+	T extends Record<any, infer U extends TSchema> ? U : never
+
+export type TDiscriminable<T extends TObject = TObject> = T | TRef<T>
+
+export type TDiscriminableBy<
+	T extends TObject,
+	D extends string,
+	V extends string = string
+> = TObject<T['properties'] & { [K in D]: TLiteral<V> }>
+
+type TDiscriminableKeyOf<T extends TDiscriminable> = DiscriminableKeyOf<
+	Static<T>
+>
+
+export type TDiscriminableKeyFor<T extends TDiscriminatorMap<TDiscriminable>> =
+	keyof Static<ValueIn<T>> & string
+
+type TDiscriminatorValueOf<
+	T extends TDiscriminable,
+	D extends TDiscriminableKeyOf<T>
+> = Static<T[D]>
+
+type TDiscriminatorValueFor<
+	T extends TDiscriminatorMap<TDiscriminable>,
+	D extends TDiscriminableKeyFor<T>
+> = Static<T[keyof T] & TSchema>[D]
+
+export type TDiscriminatorMap<
+	T extends TDiscriminable = TDiscriminable,
+	D extends TDiscriminableKeyOf<T> = TDiscriminableKeyOf<T>
+> = Record<D, T & TDiscriminable>
+// > = {
+// 	[Schema in T as Static<T>[D] & string]: Schema
+// }
+
+// type TDiscriminatorMap<D extends string, V extends string = string> = {
+// 	[K in V]: TDiscriminable<D, K>
+// }
+
+export interface TDiscriminatedUnion<
+	M extends TDiscriminatorMap<TDiscriminable>,
+	D extends TDiscriminableKeyFor<M>
+> extends TSchema {
 	type: 'object'
+	static: Static<TUnion<ValueIn<M>[]>>
+
+	properties: Record<D, TUnionEnum<(keyof this['static'] & string)[]>>
+
+	// without this, schemata won't validate if they add any new properties (which they almost certainly will)
+	additionalProperties: true
+
+	allOf: TIfThenElse<
+		TObject<{ [K in D]: TDiscriminatorValueOf<ValueIn<M>, D> }>,
+		ValueIn<M>
+	>[]
+
+	[Kind]: 'DiscriminatedUnion'
+	[Discriminator]: D
+	[Mapping]: M
 }
 
 export function Discriminable<
-	TDiscriminator extends string,
-	MappingKey extends string,
-	T extends TObject = TObject
->(
-	base: T,
-	discriminator: TDiscriminator,
-	mappingKey: MappingKey,
-	options = {}
-) {
-	const result = CloneType(base, options)
-	result.properties[discriminator] = Type.Literal(mappingKey)
-	result.required = [...(result.required ?? []), discriminator]
+	D extends string,
+	V extends string,
+	Base extends TObject = TObject
+>(base: Base, discriminator: D, mappingKey: V, options = {}) {
+	const newProps = {
+		...CloneType(base, options).properties,
+		[discriminator]: Type.Literal(mappingKey)
+	} as Base['properties'] & { [P in D]: TLiteral<V> }
 
-	return result as any as TDiscriminable<TDiscriminator, MappingKey, T>
-}
-
-export function setDiscriminatorDefault<T extends TDiscriminatedUnion>(
-	schema: T,
-	defaultValue: Static<T>[T[typeof Discriminator]]
-): T {
-	schema.properties[schema[Discriminator]].default = defaultValue
-	return schema
+	return Type.Object(newProps, options)
 }
 
 export function DiscriminatedUnion<
-	T extends TObject[],
-	TDiscriminator extends string & keyof Static<T[number]>
->(schemas: [...T], discriminator: TDiscriminator, options: SchemaOptions = {}) {
+	M extends TDiscriminatorMap<TDiscriminable<TObject>>,
+	D extends string & keyof Static<ValueIn<M>>
+>(mapping: M, discriminator: D, options: SchemaOptions = {}) {
 	if (!TypeRegistry.Has('DiscriminatedUnion'))
 		TypeRegistry.Set('DiscriminatedUnion', DiscriminatedUnionCheck)
 
-	const allOf = schemas.map((member) => {
-		const result = {
-			if: pick(
-				Type.Pick(member, [discriminator]),
-				`properties.${discriminator}.const`,
-				`properties.${discriminator}.type`
-			),
-			// if: Type.Unsafe<Static<(typeof member)['properties'][D]>>({
-			// 	properties: pick(member.properties, discriminator)
-			// }),
-			then:
-				member.$id == null
-					? CloneType(member, { additionalProperties: false })
-					: Type.Ref(member)
-		}
-
-		return result
-	}) as TDiscriminatedUnion<T, TDiscriminator>['allOf']
-
-	// const oneOf = schemas.map((member) => {
-	// 	const result =
-	// 		member.$id == null
-	// 			? CloneType(member, { additionalProperties: false })
-	// 			: Type.Ref(member)
-
-	// 	// brand the original member so that JTD schema generation skips them -- they won't need their own definition
-	// 	;(member as any)[JsonTypeDef] ||= {}
-	// 	;(member as any)[JsonTypeDef].skip = true
-
-	// 	return result
-	// })
-
-	type DiscriminatorValueLiteral = Static<T[number]>[TDiscriminator] & string
-
-	const literals = UnionEnum(
-		schemas.map(
-			(member) => member.properties[discriminator].const
-		) as DiscriminatorValueLiteral[]
+	const allOf = Object.entries(mapping).map(
+		([value, schema]: [TDiscriminatorValueFor<M>, M[keyof M]]) =>
+			Discriminated(
+				'$id' in schema ? Type.Ref(schema) : schema,
+				discriminator,
+				value
+			)
 	)
-	// const literals = Type.Enum(
-	// 	Object.fromEntries(
-	// 		schemas.map((member) => [
-	// 			member.properties[discriminator].const,
-	// 			member.properties[discriminator].const
-	// 		])
-	// 	)
-	// )
+	const discriminatorValues = UnionEnum(Object.keys(mapping))
 
-	const properties = { [discriminator]: literals } as Record<
-		TDiscriminator,
-		typeof literals
-	>
-
-	const result = {
+	return {
 		...options,
-		type: 'object',
-		params: undefined as any,
-		static: undefined as any,
-		allOf,
-		// oneOf,
-		$comment: `Deserialize as a discriminated union/polymorphic object type, using the \`${discriminator}\` property as a discriminator.`,
-		required: [discriminator],
+		properties: { [discriminator]: discriminatorValues },
 		additionalProperties: true,
-		properties,
-		[Kind]: 'DiscriminatedUnion',
-		[Discriminator]: discriminator,
-		[Members]: schemas
-	}
+		allOf,
+		required: [discriminator],
+		type: 'object',
+		$comment: `Deserialize as a discriminated union/polymorphic object type, using the \`${discriminator}\` property as a discriminator.`,
 
-	return result as TDiscriminatedUnion<T, TDiscriminator>
+		[Discriminator]: discriminator,
+		[Mapping]: mapping,
+
+		[Kind]: 'DiscriminatedUnion'
+	} as unknown as TDiscriminatedUnion<M, D>
 }
 
 function DiscriminatedUnionCheck(
-	schema: TDiscriminatedUnion<TObject[], string>,
+	schema: TDiscriminatedUnion<
+		TDiscriminatorMap<TDiscriminable>,
+		TDiscriminableKeyFor<unknown>
+	>,
 	value: unknown
 ) {
 	const discriminator = schema[Discriminator]
@@ -177,28 +167,6 @@ export function TDiscriminatedUnion<
 	return (schema as T)[Kind] === 'DiscriminatedUnion'
 }
 
-export interface TDiscriminatedUnion<
-	T extends TObject[] = TObject[],
-	TDiscriminator extends string & keyof Static<T[number]> = string &
-		keyof Static<T[number]>
-> extends TSchema {
-	type: 'object'
-	static: Static<T[number]>
-	properties: Record<
-		TDiscriminator,
-		TUnionEnum<(Static<T[number]>[TDiscriminator] & string)[]>
-	>
-	allOf: {
-		if: TPick<T[number], TDiscriminator>
-		then: T[number] | TRef<T[number]>
-	}[]
-	// oneOf: (T[number] | TRef<T[number]>)[]
-	additionalProperties: true
-	[Kind]: 'DiscriminatedUnion'
-	[Discriminator]: TDiscriminator
-	[Members]: [...T]
-}
-
 export function ToUnion<T extends TObject[]>(
 	schema: TDiscriminatedUnion<T, string>
 ) {
@@ -214,7 +182,31 @@ export function ToUnion<T extends TObject[]>(
 
 	const anyOf = schema.allOf.map(({ then }) => then) as T
 
-	// console.log(anyOf)
-
 	return Type.Union(anyOf, omit(base, ['properties']))
 }
+
+function Discriminated<
+	T extends TSchema,
+	K extends keyof Static<T>,
+	V extends Static<T>[K] & string
+>(schema: T, discriminator: K, value: V, options: SchemaOptions = {}) {
+	return {
+		...IfThenElse(
+			{
+				condition: {
+					...Type.Object(
+						{ [discriminator]: Type.Literal(value) }
+						// unset these to reduce schema clutter; they're redundant once the schema is composed
+					),
+					required: undefined,
+					type: undefined
+				},
+				ifTrue: schema
+			},
+			options
+		),
+		required: undefined,
+		type: undefined
+	}
+}
+

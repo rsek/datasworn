@@ -8,8 +8,10 @@ export const Extends = Symbol('Extends')
 export const JsonTypeDef = Symbol('JsonTypeDef')
 /** Hints discriminator key for DiscriminatedUnion schemata  */
 export const Discriminator = Symbol('Discriminator')
-/** Stores references to the member schema in  */
+/** Stores references to the member schema in a discriminated union */
 export const Members = Symbol('Members')
+/** Stores references to the member schema in a discriminated union */
+export const Mapping = Symbol('Mapping')
 
 /** A less complex alternate version of the schema for use with code generation tools. */
 export const Simplify = Symbol('Simplify')

@@ -1,10 +1,182 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://ironswornrpg.com/datasworn-source.schema.json",
-	"$ref": "#/definitions/RulesPackage",
 	"title": "DataswornSource v0.0.9",
 	"description": "Source data schema for Datasworn, which describes game rules compatible with the Ironsworn tabletop roleplaying game by Shawn Tomkin.\n\nThe source data omits IDs, and makes properties that provide a default value optional; these values are inserted during validation/processing to produce the JSON for distribution.",
+	"allOf": [
+		{
+			"$ref": "#/definitions/SourceRoot"
+		},
+		{
+			"type": "object",
+			"required": ["datasworn_version"],
+			"properties": {
+				"datasworn_version": {
+					"type": "string",
+					"description": "The version of the Datasworn format used by this data.",
+					"const": "0.0.9",
+					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+				}
+			},
+			"additionalProperties": true
+		}
+	],
 	"definitions": {
+		"SourceRoot": {
+			"title": "SourceRoot",
+			"type": "object",
+			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `type` property as a discriminator.",
+			"required": ["type"],
+			"properties": {
+				"type": {
+					"enum": [
+						"ruleset",
+						"expansion",
+						"asset",
+						"npc",
+						"move",
+						"oracle_rollable",
+						"delve_site",
+						"delve_site_theme",
+						"delve_site_domain",
+						"rarity"
+					]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "ruleset",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/Ruleset"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "expansion",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/Expansion"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "asset",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/Asset"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "npc",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/Npc"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "move",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/Move"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "oracle_rollable",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleRollable"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "delve_site",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/DelveSite"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "delve_site_theme",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/DelveSiteTheme"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "delve_site_domain",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/DelveSiteDomain"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "rarity",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/Rarity"
+					}
+				}
+			]
+		},
 		"RulesPackage": {
 			"title": "RulesPackage",
 			"type": "object",
@@ -50,14 +222,16 @@
 			"title": "Ruleset",
 			"type": "object",
 			"description": "A standalone Datasworn package that describes its own ruleset.",
-			"required": ["_id", "type"],
+			"required": ["_id", "datasworn_version", "type"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/RulesetId"
 				},
 				"datasworn_version": {
-					"$ref": "#/definitions/SemanticVersion",
-					"description": "The version of the Datasworn format used by this data."
+					"type": "string",
+					"description": "The version of the Datasworn format used by this data.",
+					"const": "0.0.9",
+					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 				},
 				"type": {
 					"type": "string",
@@ -193,7 +367,7 @@
 					}
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"Expansion": {
 			"title": "Expansion",
@@ -205,8 +379,10 @@
 					"$ref": "#/definitions/ExpansionId"
 				},
 				"datasworn_version": {
-					"$ref": "#/definitions/SemanticVersion",
-					"description": "The version of the Datasworn format used by this data."
+					"type": "string",
+					"description": "The version of the Datasworn format used by this data.",
+					"const": "0.0.9",
+					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 				},
 				"type": {
 					"type": "string",
@@ -345,7 +521,7 @@
 					}
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"AssetAbilityId": {
 			"title": "AssetAbilityId",
@@ -763,11 +939,6 @@
 			"description": "Represents a page number in a book.",
 			"minimum": 1
 		},
-		"SemanticVersion": {
-			"title": "SemanticVersion",
-			"type": "string",
-			"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
-		},
 		"SourceInfo": {
 			"title": "SourceInfo",
 			"type": "object",
@@ -953,7 +1124,7 @@
 		"MarkdownString": {
 			"title": "MarkdownString",
 			"type": "string",
-			"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there part of the source material.",
+			"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.",
 			"i18n": true,
 			"format": "markdown"
 		},
@@ -1448,7 +1619,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleBoolean",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1477,7 +1647,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1492,7 +1663,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleInteger",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1521,7 +1691,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1536,7 +1707,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleOracleRollable",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1566,7 +1736,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1581,7 +1752,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleMove",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1611,7 +1781,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1626,7 +1797,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleAsset",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1656,7 +1826,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1671,7 +1842,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleAtlasEntry",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1701,7 +1871,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1716,7 +1887,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleNpc",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1746,7 +1916,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1761,7 +1932,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleOracleCollection",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1791,7 +1961,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1806,7 +1977,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleMoveCategory",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1836,7 +2006,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1851,7 +2022,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleAssetCollection",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1881,7 +2051,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1896,7 +2067,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleAtlas",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1926,7 +2096,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1941,7 +2112,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleNpcCollection",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -1971,7 +2141,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -1986,7 +2157,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleDelveSite",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2016,7 +2186,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -2031,7 +2202,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleDelveSiteTheme",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2061,7 +2231,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -2076,7 +2247,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleDelveSiteDomain",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2106,7 +2276,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -2121,7 +2292,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleTruth",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2151,7 +2321,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -2166,7 +2337,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleRarity",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2196,7 +2366,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["description", "value_type"]
+						"required": ["description", "value_type"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -2211,7 +2382,6 @@
 					"then": {
 						"type": "object",
 						"title": "TagRuleEnum",
-						"additionalProperties": false,
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2246,7 +2416,8 @@
 								}
 							}
 						},
-						"required": ["description", "value_type", "enum"]
+						"required": ["description", "value_type", "enum"],
+						"additionalProperties": false
 					}
 				}
 			]
@@ -2444,6 +2615,7 @@
 		"RollableValue": {
 			"title": "RollableValue",
 			"type": "object",
+			"description": "Provides a value like a stat, condition meter, or other number (usually for use in an action roll). The expected value is an integer, or null.",
 			"$comment": "Deserialize as a discriminated union/polymorphic object type, using the `using` property as a discriminator.",
 			"required": ["using"],
 			"properties": {
@@ -2667,13 +2839,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -2757,13 +2929,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -2924,7 +3096,7 @@
 						"table_shared_rolls",
 						"table_shared_text",
 						"table_shared_text2",
-						"table_shared_text3"
+						"OracleTableSharedText3"
 					]
 				}
 			},
@@ -2986,7 +3158,7 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "table_shared_text3",
+								"const": "OracleTableSharedText3",
 								"type": "string"
 							}
 						}
@@ -3062,16 +3234,16 @@
 						}
 					}
 				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText"
 					}
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3140,16 +3312,16 @@
 						}
 					}
 				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText2"
 					}
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3218,16 +3390,16 @@
 						}
 					}
 				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
 					"items": {
 						"$ref": "#/definitions/OracleTableRowText3"
 					}
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -3240,7 +3412,6 @@
 			"required": ["oracle_type"],
 			"properties": {
 				"oracle_type": {
-					"default": "table_text",
 					"enum": [
 						"table_text",
 						"table_text2",
@@ -3340,7 +3511,6 @@
 			"required": ["oracle_type"],
 			"properties": {
 				"oracle_type": {
-					"default": "table_text",
 					"enum": ["table_text", "table_text2", "table_text3"]
 				}
 			},
@@ -3727,13 +3897,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -3838,13 +4008,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -3954,13 +4124,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4065,13 +4235,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4179,6 +4349,10 @@
 						}
 					}
 				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
@@ -4189,10 +4363,6 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4305,6 +4475,10 @@
 						}
 					}
 				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
@@ -4315,10 +4489,6 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4430,6 +4600,10 @@
 						}
 					}
 				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
 				"rows": {
 					"type": "array",
 					"description": "An array of objects, each representing a single row of the table.",
@@ -4440,10 +4614,6 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -4543,13 +4713,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4634,7 +4804,7 @@
 			]
 		},
 		"MoveActionRoll": {
-			"title": "Move (action roll)",
+			"title": "MoveActionRoll",
 			"type": "object",
 			"description": "A move that makes an action roll.",
 			"required": [
@@ -4710,13 +4880,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4832,13 +5002,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4979,13 +5149,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -5060,7 +5230,7 @@
 			"additionalProperties": false
 		},
 		"MoveProgressRoll": {
-			"title": "Progress Move",
+			"title": "MoveProgressRoll",
 			"type": "object",
 			"description": "A progress move that rolls on a standard progress track type (whose features are defined by this move object). For progress rolls that use special tracks, see MoveSpecialTrack.",
 			"required": [
@@ -5141,13 +5311,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -5190,7 +5360,7 @@
 			"enum": ["no_roll", "action_roll", "progress_roll", "special_track"]
 		},
 		"MoveSpecialTrack": {
-			"title": "Progress Move (special track roll)",
+			"title": "MoveSpecialTrack",
 			"type": "object",
 			"description": "A progress move that rolls on a special track, such as Legacies (Starforged) or Bonds (classic Ironsworn). For progress moves that use standard progress tracks, see MoveProgressRoll instead.",
 			"required": [
@@ -5266,13 +5436,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -5855,13 +6025,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -5913,6 +6083,10 @@
 					"$ref": "#/definitions/AssetEnhancement",
 					"description": "Changes made to the asset, when this ability is enabled."
 				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
 				"enhance_moves": {
 					"type": "array",
 					"description": "Describes changes made to various moves by this asset ability. Usually these require specific trigger conditions.",
@@ -5929,10 +6103,6 @@
 							"$ref": "#/definitions/Move"
 						}
 					}
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -6206,13 +6376,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -6952,7 +7122,6 @@
 						"description": "Represents an option in a list of choices.",
 						"$comment": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
-						"additionalProperties": false,
 						"properties": {
 							"label": {
 								"$ref": "#/definitions/InputLabel"
@@ -6987,7 +7156,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["label", "choice_type", "control", "using"]
+						"required": ["label", "choice_type", "control", "using"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -7003,7 +7173,6 @@
 						"description": "Represents an option in a list of choices.",
 						"$comment": "Semantics are similar to the HTML `<option>` element.",
 						"type": "object",
-						"additionalProperties": false,
 						"properties": {
 							"label": {
 								"$ref": "#/definitions/InputLabel"
@@ -7037,7 +7206,8 @@
 								"type": "string"
 							}
 						},
-						"required": ["label", "choice_type", "option", "using"]
+						"required": ["label", "choice_type", "option", "using"],
+						"additionalProperties": false
 					}
 				},
 				{
@@ -7231,13 +7401,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -7360,19 +7530,19 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
 		},
 		"AtlasEntry": {
-			"title": "Atlas entry",
+			"title": "AtlasEntry",
 			"type": "object",
 			"description": "An atlas entry, like the Ironlands region entries found in classic Ironsworn.",
 			"required": ["type", "name", "features", "description", "_source"],
@@ -7429,13 +7599,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -7456,11 +7626,15 @@
 			"title": "Rarity",
 			"type": "object",
 			"description": "A rarity, as described in Ironsworn: Delve.",
-			"required": ["name", "asset", "description", "_source"],
+			"required": ["type", "name", "asset", "description", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/RarityId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "rarity"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7505,13 +7679,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -7521,6 +7695,7 @@
 			"type": "object",
 			"description": "A delve site with a theme, domain, and denizens.",
 			"required": [
+				"type",
 				"name",
 				"theme",
 				"domain",
@@ -7533,6 +7708,10 @@
 				"_id": {
 					"$ref": "#/definitions/DelveSiteId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "delve_site"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7589,6 +7768,10 @@
 							}
 						}
 					}
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"denizens": {
 					"allOf": [
@@ -7839,10 +8022,6 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -7887,11 +8066,15 @@
 			"title": "DelveSiteDomain",
 			"type": "object",
 			"description": "A delve site Domain card.",
-			"required": ["name", "summary", "features", "dangers", "_source"],
+			"required": ["type", "name", "summary", "features", "dangers", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteDomainId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "delve_site_domain"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -8224,13 +8407,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -8239,11 +8422,15 @@
 			"title": "DelveSiteTheme",
 			"type": "object",
 			"description": "A delve site theme card.",
-			"required": ["name", "summary", "features", "dangers", "_source"],
+			"required": ["type", "name", "summary", "features", "dangers", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteThemeId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "delve_site_theme"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -8571,13 +8758,13 @@
 						}
 					}
 				},
-				"_source": {
-					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
-				},
 				"_comment": {
 					"type": "string",
 					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"_source": {
+					"$ref": "#/definitions/SourceInfo",
+					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false

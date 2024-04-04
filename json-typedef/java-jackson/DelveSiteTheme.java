@@ -31,6 +31,9 @@ public class DelveSiteTheme {
     @JsonProperty("summary")
     private MarkdownString summary;
 
+    @JsonProperty("type")
+    private DelveSiteThemeType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -148,6 +151,20 @@ public class DelveSiteTheme {
      */
     public void setSummary(MarkdownString summary) {
         this.summary = summary;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public DelveSiteThemeType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(DelveSiteThemeType type) {
+        this.type = type;
     }
 
     /**

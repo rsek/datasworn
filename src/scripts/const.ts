@@ -66,7 +66,7 @@ export const DELVE_SOURCE_ID =
 /** JSON schema draft used by Datasworn. */
 export const $schema = 'http://json-schema.org/draft-07/schema#' as const
 /** The standard key for definitions in the JSON schema draft. */
-export const defsKey = 'definitions' as const
+export const DefsKey = 'definitions' as const
 
 /** Identifier for the type at the root of a Datasworn JSON file. */
 export const rootSchemaName = 'RulesPackage'

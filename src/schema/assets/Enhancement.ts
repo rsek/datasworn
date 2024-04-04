@@ -40,7 +40,9 @@ export type AssetConditionMeterEnhancement = Static<
 >
 
 export const AssetControlFieldEnhancement = DiscriminatedUnion(
-	[AssetConditionMeterEnhancement],
+	{
+		condition_meter: AssetConditionMeterEnhancement
+	},
 	Fields.DISCRIMINATOR,
 	{ $id: 'AssetControlFieldEnhancement' }
 )

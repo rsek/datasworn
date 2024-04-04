@@ -48,6 +48,7 @@ function RollableMixin<OracleRow extends TObject>(row: TRef<OracleRow>) {
 	return Type.Object({
 		...CloneType(RollableMeta).properties,
 		...Type.Pick(Generic.SourcedNodeBase, ['tags', 'suggestions']).properties,
+		type: Type.Literal('oracle_rollable'),
 		rows: Type.Array(row, {
 			description:
 				'An array of objects, each representing a single row of the table.'
@@ -55,20 +56,17 @@ function RollableMixin<OracleRow extends TObject>(row: TRef<OracleRow>) {
 	})
 }
 
-function RollableTable<OracleRow extends TObject>(
-	mappingKey: string,
+function RollableTable<OracleRow extends TObject, MappingKey extends string>(
+	mappingKey: MappingKey,
 	row: TRef<OracleRow>,
 	column_labels: ReturnType<typeof ColumnLabels<OracleRow>>,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
-	const base = Utils.Discriminable(
-		Type.Object({
-			...TableMixin<OracleRow>(column_labels).properties,
-			...RollableMixin(row).properties
-		}),
-		'oracle_type',
-		mappingKey
-	)
+	const base = Type.Object({
+		oracle_type: Type.Literal(mappingKey),
+		...TableMixin<OracleRow>(column_labels).properties,
+		...RollableMixin(row).properties
+	})
 	return Generic.RecursiveCollectable(
 		Type.Ref(Id.OracleRollableId),
 		'oracle_rollable',
@@ -77,8 +75,11 @@ function RollableTable<OracleRow extends TObject>(
 	)
 }
 
-function RollableTableColumn<OracleRow extends TObject>(
-	mappingKey: string,
+function RollableTableColumn<
+	OracleRow extends TObject,
+	MappingKey extends string
+>(
+	mappingKey: MappingKey,
 	row: TRef<OracleRow>,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
@@ -130,7 +131,7 @@ function OracleColumnBase<
 		'images',
 		'description', // too long
 		'canonical_name', // no reason for `name` to be anything other than the column label
-		'source' // adequately provided by parent table
+		'_source' // adequately provided by parent table
 	] as (keyof Static<typeof base>)[]
 
 	return Type.Omit(base, toOmit)
@@ -208,38 +209,36 @@ export const OracleColumnText3 = RollableTableColumn(
 export type TOracleColumnText3 = typeof OracleColumnText3
 export type OracleColumnText3 = Static<typeof OracleColumnText2>
 
-export const OracleRollable = Utils.setDiscriminatorDefault(
-	Utils.DiscriminatedUnion(
-		[
-			OracleTableText,
-			OracleTableText2,
-			OracleTableText3,
-			OracleColumnText,
-			OracleColumnText2,
-			OracleColumnText3
-		],
-		'oracle_type',
-		{
-			$id: 'OracleRollable',
-			description:
-				'A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table.'
-		}
-	),
-	'table_text'
+export const OracleRollable = Utils.DiscriminatedUnion(
+	{
+		table_text: OracleTableText,
+		table_text2: OracleTableText2,
+		table_text3: OracleTableText3,
+		column_text: OracleColumnText,
+		column_text2: OracleColumnText2,
+		column_text3: OracleColumnText3
+	},
+	'oracle_type',
+	{
+		$id: 'OracleRollable',
+		description:
+			'A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table.'
+	}
 )
 
 export type OracleRollable = Static<typeof OracleRollable>
 export type TOracleRollable = typeof OracleRollable
 
-export const OracleTableRollable = Utils.setDiscriminatorDefault(
-	Utils.DiscriminatedUnion(
-		[OracleTableText, OracleTableText2, OracleTableText3],
-		'oracle_type',
-		{
-			$id: 'OracleTableRollable'
-		}
-	),
-	'table_text'
+export const OracleTableRollable = Utils.DiscriminatedUnion(
+	{
+		table_text: OracleTableText,
+		table_text2: OracleTableText2,
+		table_text3: OracleTableText3
+	},
+	'oracle_type',
+	{
+		$id: 'OracleTableRollable'
+	}
 )
 
 export type OracleTableRollable = Static<typeof OracleTableRollable>

@@ -4,7 +4,7 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public enum OracleCollectionTableSharedText3Type {
-    @JsonProperty("oracle_collection")
-    ORACLE_COLLECTION,
+public enum DelveSiteDomainType {
+    @JsonProperty("delve_site_domain")
+    DELVE_SITE_DOMAIN,
 }

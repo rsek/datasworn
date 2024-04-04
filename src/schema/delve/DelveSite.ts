@@ -56,6 +56,7 @@ const DelveSiteDenizens = Type.Array(Type.Ref(DelveSiteDenizen))
 export const DelveSite = Generic.SourcedNode(
 	Type.Ref(Id.DelveSiteId),
 	Type.Object({
+		type: Type.Literal('delve_site'),
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 		rank: Type.Ref(Progress.ChallengeRank),
 		region: Type.Optional(

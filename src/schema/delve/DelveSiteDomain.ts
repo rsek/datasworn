@@ -30,6 +30,7 @@ const DelveSiteDomainDangers = Type.Array(Type.Ref(OracleTableRowText))
 export const DelveSiteDomain = Generic.SourcedNode(
 	Type.Ref(Id.DelveSiteDomainId),
 	Type.Object({
+		type: Type.Literal('delve_site_domain'),
 		summary: Type.Ref(Localize.MarkdownString, { deprecated: true }),
 		description: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),

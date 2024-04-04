@@ -1,8 +1,10 @@
 _id: delve
+datasworn_version: "0.0.9"
 type: expansion
 ruleset: classic
 site_domains:
   barrow:
+    type: delve_site_domain
     name: Barrow
     name_oracle: delve/oracles/site_name/place/barrow
     # https://game-icons.net/1x1/cathelineau/tumulus.html
@@ -91,6 +93,7 @@ site_domains:
         max: 45
         text: Grave goods with hidden dangers
   cavern:
+    type: delve_site_domain
     name: Cavern
     name_oracle: delve/oracles/site_name/place/cavern
     # https://game-icons.net/1x1/lorc/stalagtite.html
@@ -150,6 +153,7 @@ site_domains:
         max: 45
         text: Fissure or sinkhole
   frozen_cavern:
+    type: delve_site_domain
     name: Frozen cavern
     name_oracle: delve/oracles/site_name/place/frozen_cavern
     _source:
@@ -208,6 +212,7 @@ site_domains:
         max: 45
         text: Disorienting reflections
   icereach:
+    type: delve_site_domain
     name: Icereach
     name_oracle: delve/oracles/site_name/place/icereach
     _source:
@@ -266,6 +271,7 @@ site_domains:
         max: 45
         text: Foul weather
   mine:
+    type: delve_site_domain
     name: Mine
     name_oracle: delve/oracles/site_name/place/mine
     # https://game-icons.net/1x1/delapouite/stone-pile.html
@@ -325,6 +331,7 @@ site_domains:
         max: 45
         text: Weakened terrain
   pass:
+    type: delve_site_domain
     name: Pass
     name_oracle: delve/oracles/site_name/place/pass
     _source:
@@ -383,6 +390,7 @@ site_domains:
         max: 45
         text: Foul weather
   ruin:
+    type: delve_site_domain
     name: Ruin
     name_oracle: delve/oracles/site_name/place/ruin
     # https://game-icons.net/1x1/delapouite/broken-wall.html
@@ -443,6 +451,7 @@ site_domains:
         max: 45
         text: Ancient secrets best left buried
   sea_cave:
+    type: delve_site_domain
     name: Sea cave
     name_oracle: delve/oracles/site_name/place/sea_cave
     _source:
@@ -501,6 +510,7 @@ site_domains:
         max: 45
         text: Claustrophobic squeeze
   shadowfen:
+    type: delve_site_domain
     name: Shadowfen
     name_oracle: delve/oracles/site_name/place/shadowfen
     _source:
@@ -559,6 +569,7 @@ site_domains:
         max: 45
         text: Hidden quagmire
   stronghold:
+    type: delve_site_domain
     name: Stronghold
     name_oracle: delve/oracles/site_name/place/stronghold
     _source:
@@ -615,6 +626,7 @@ site_domains:
         max: 45
         text: Alarm trigger
   tanglewood:
+    type: delve_site_domain
     name: Tanglewood
     name_oracle: delve/oracles/site_name/place/tanglewood
     # https://game-icons.net/1x1/lorc/dead-wood.html
@@ -675,6 +687,7 @@ site_domains:
         max: 45
         text: Entangling plant life
   underkeep:
+    type: delve_site_domain
     name: Underkeep
     name_oracle: delve/oracles/site_name/place/underkeep
     _source:

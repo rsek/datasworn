@@ -58,12 +58,21 @@ type TCollectionIdMixin<T extends TRef = TRef> = TObject<{
 	contents: TDictionary<T>
 }>
 
+/**
+ *
+ * @param _id The schema to use for the `_id` property.
+ * @param type The string literal value to use in the `type` discriminator property.
+ * @param collectable The schema for the type of object contained in the collection.
+ * @param properties Any additional properties to add to the Collection schema.
+ * @param options Any additional options for the schema.
+ */
 export function Collection<
 	Collectable extends TRef<TFuzzyObject>,
+	V extends string,
 	Props extends TProperties
 >(
 	_id: TCollectionID,
-	type: string,
+	type: V,
 	collectable: Collectable,
 	properties: Props,
 	options: SchemaOptions = {}
@@ -102,14 +111,17 @@ export function Collection<
 
 export type TCollection<
 	Collectable extends TRef<TFuzzyObject>,
+	V extends string,
 	Props extends TProperties
-> = ReturnType<typeof Collection<Collectable, Props>>
+> = ReturnType<typeof Collection<Collectable, V, Props>>
 
 export type Collection<
 	Collectable extends IdentifiedNode = IdentifiedNode,
+	V extends string = string,
 	Props extends object = object
 > = SourcedNode<{
 	_id: string
+	type: V
 	color?: string
 	summary?: string
 	description?: string
@@ -132,7 +144,7 @@ export type CollectionSource<T extends IdentifiedNode = IdentifiedNode> =
 export const RecursiveCollectionBrand = Symbol('RecursiveCollection')
 
 export function RecursiveCollection<
-	T extends TCollection<TRef<TFuzzyObject>, TProperties>
+	T extends TCollection<TRef<TFuzzyObject>, string, TProperties>
 >(
 	collection: T,
 	options: TypeFest.SetRequired<SchemaOptions, '$id'>
@@ -157,7 +169,7 @@ export function RecursiveCollection<
 /** Limits recursion to 3 levels (which is the maximum number of times the IDs can recurse through collections) */
 
 export type TRecursiveCollection<
-	Base extends TCollection<TRef<TFuzzyObject>, TProperties>,
+	Base extends TCollection<TRef<TFuzzyObject>, string, TProperties>,
 	Depth extends number = 3
 > = Base & {
 	[RecursiveCollectionBrand]: 'RecursiveCollection'

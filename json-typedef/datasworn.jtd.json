@@ -7,9 +7,12 @@
 					"ref": "RulesetId"
 				},
 				"datasworn_version": {
-					"ref": "SemanticVersion",
+					"enum": [
+						"0.0.9"
+					],
 					"metadata": {
-						"description": "The version of the Datasworn format used by this data."
+						"description": "The version of the Datasworn format used by this data.",
+						"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 					}
 				},
 				"title": {
@@ -160,17 +163,20 @@
 				"_id": {
 					"ref": "ExpansionId"
 				},
-				"datasworn_version": {
-					"ref": "SemanticVersion",
-					"metadata": {
-						"description": "The version of the Datasworn format used by this data."
-					}
-				},
 				"ruleset": {
 					"ref": "RulesetId"
 				}
 			},
 			"optionalProperties": {
+				"datasworn_version": {
+					"enum": [
+						"0.0.9"
+					],
+					"metadata": {
+						"description": "The version of the Datasworn format used by this data.",
+						"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+					}
+				},
 				"description": {
 					"ref": "MarkdownString"
 				},
@@ -596,12 +602,6 @@
 				]
 			}
 		},
-		"SemanticVersion": {
-			"type": "string",
-			"metadata": {
-				"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
-			}
-		},
 		"SourceInfo": {
 			"properties": {
 				"title": {
@@ -779,7 +779,7 @@
 		"MarkdownString": {
 			"type": "string",
 			"metadata": {
-				"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there part of the source material.",
+				"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.",
 				"format": "markdown"
 			}
 		},
@@ -1596,6 +1596,9 @@
 						"description": "An arbitrary static integer value with a label."
 					}
 				}
+			},
+			"metadata": {
+				"description": "Provides a value like a stat, condition meter, or other number (usually for use in an action roll). The expected value is an integer, or null."
 			}
 		},
 		"Npc": {
@@ -2449,7 +2452,7 @@
 						"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns."
 					}
 				},
-				"table_shared_text3": {
+				"OracleTableSharedText3": {
 					"properties": {
 						"_id": {
 							"ref": "OracleCollectionId",
@@ -2593,6 +2596,11 @@
 						"description": "The roll used to select a result on this oracle."
 					}
 				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
 				"rows": {
 					"elements": {
 						"ref": "OracleTableRowText"
@@ -2600,11 +2608,6 @@
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
 					}
-				},
-				"type": {
-					"enum": [
-						"oracle_rollable"
-					]
 				},
 				"oracle_type": {
 					"enum": [
@@ -2690,6 +2693,11 @@
 						"description": "The roll used to select a result on this oracle."
 					}
 				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
 				"rows": {
 					"elements": {
 						"ref": "OracleTableRowText2"
@@ -2697,11 +2705,6 @@
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
 					}
-				},
-				"type": {
-					"enum": [
-						"oracle_rollable"
-					]
 				},
 				"oracle_type": {
 					"enum": [
@@ -2785,6 +2788,11 @@
 						"description": "The roll used to select a result on this oracle."
 					}
 				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
 				"rows": {
 					"elements": {
 						"ref": "OracleTableRowText3"
@@ -2792,11 +2800,6 @@
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
 					}
-				},
-				"type": {
-					"enum": [
-						"oracle_rollable"
-					]
 				},
 				"oracle_type": {
 					"enum": [
@@ -2902,6 +2905,11 @@
 								"description": "The roll used to select a result on this oracle."
 							}
 						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
 						"rows": {
 							"elements": {
 								"ref": "OracleTableRowText"
@@ -2909,11 +2917,6 @@
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
 							}
-						},
-						"type": {
-							"enum": [
-								"oracle_rollable"
-							]
 						}
 					},
 					"optionalProperties": {
@@ -3032,6 +3035,11 @@
 								"description": "The roll used to select a result on this oracle."
 							}
 						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
 						"rows": {
 							"elements": {
 								"ref": "OracleTableRowText2"
@@ -3039,11 +3047,6 @@
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
 							}
-						},
-						"type": {
-							"enum": [
-								"oracle_rollable"
-							]
 						}
 					},
 					"optionalProperties": {
@@ -3165,6 +3168,11 @@
 								"description": "The roll used to select a result on this oracle."
 							}
 						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
 						"rows": {
 							"elements": {
 								"ref": "OracleTableRowText3"
@@ -3172,11 +3180,6 @@
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
 							}
-						},
-						"type": {
-							"enum": [
-								"oracle_rollable"
-							]
 						}
 					},
 					"optionalProperties": {
@@ -6063,6 +6066,11 @@
 						"description": "The asset augmented by this rarity."
 					}
 				},
+				"type": {
+					"enum": [
+						"rarity"
+					]
+				},
 				"xp_cost": {
 					"type": "int16",
 					"metadata": {
@@ -6129,6 +6137,11 @@
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
+				},
+				"type": {
+					"enum": [
+						"delve_site"
+					]
 				},
 				"rank": {
 					"ref": "ChallengeRank"
@@ -6263,6 +6276,11 @@
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
 				},
+				"type": {
+					"enum": [
+						"delve_site_domain"
+					]
+				},
 				"summary": {
 					"ref": "MarkdownString"
 				},
@@ -6342,6 +6360,11 @@
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
+				},
+				"type": {
+					"enum": [
+						"delve_site_theme"
+					]
 				},
 				"summary": {
 					"ref": "MarkdownString"

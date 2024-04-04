@@ -23,7 +23,7 @@ export const RulesPackage = sourcedTransformer<
 		key: string | number,
 		parent: null
 	) {
-		return VERSION
+		return data?.datasworn_version ?? VERSION
 	},
 	rules: function (
 		this: DataswornSource.RulesPackage,

@@ -9,10 +9,10 @@ namespace Datasworn
     /// An OracleCollection representing a single table with multiple roll
     /// columns, and 2 shared text columns.
     /// </summary>
-    public class OracleCollectionTableSharedText3 : OracleCollection
+    public class OracleCollectionOracleTableSharedText3 : OracleCollection
     {
         [JsonPropertyName("oracle_type")]
-        public string OracleType { get => "table_shared_text3"; }
+        public string OracleType { get => "OracleTableSharedText3"; }
 
         /// <summary>
         /// The unique Datasworn ID for this item.
@@ -33,7 +33,7 @@ namespace Datasworn
         /// table row).
         /// </summary>
         [JsonPropertyName("column_labels")]
-        public OracleCollectionTableSharedText3ColumnLabels ColumnLabels { get; set; }
+        public OracleCollectionOracleTableSharedText3ColumnLabels ColumnLabels { get; set; }
 
         /// <summary>
         /// The primary name/label for this item.
@@ -42,7 +42,7 @@ namespace Datasworn
         public Label Name { get; set; }
 
         [JsonPropertyName("type")]
-        public OracleCollectionTableSharedText3Type Type_ { get; set; }
+        public OracleCollectionOracleTableSharedText3Type Type_ { get; set; }
 
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
