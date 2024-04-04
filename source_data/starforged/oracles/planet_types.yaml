@@ -3,7 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   planets:
-    name: Planets
+    name: Planet Oracles
+    canonical_name: Planets
     type: oracle_collection
     _source:
       <<: &Source

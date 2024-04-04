@@ -1034,7 +1034,8 @@
 		"characters": {
 			"_id": "starforged/collections/oracles/characters",
 			"type": "oracle_collection",
-			"name": "Characters",
+			"name": "Character Oracles",
+			"canonical_name": "Characters",
 			"oracle_type": "tables",
 			"summary": "Don’t try to build a fully formed understanding character when you first encounter them; instead, focus on what your character learns or perceives as a first impression using oracles such as [First Look](id:starforged/oracles/characters/first_look) and [Initial Disposition](id:starforged/oracles/characters/initial_disposition). Then envision or generate additional details over time.",
 			"contents": {
@@ -10629,7 +10630,8 @@
 		"creatures": {
 			"_id": "starforged/collections/oracles/creatures",
 			"type": "oracle_collection",
-			"name": "Creatures",
+			"name": "Creature Oracles",
+			"canonical_name": "Creatures",
 			"oracle_type": "tables",
 			"summary": "Roll for a [basic form](id:starforged/oracles/creatures/basic_form), and flesh out the creature’s appearance using this [Creature First Look](id:starforged/oracles/creatures/first_look) table. Then, roll on the [Encountered Behavior](id:starforged/oracles/creatures/encountered_behavior) table to envision this creature’s motivation and frame how the encounter begins.",
 			"contents": {
@@ -12398,6 +12400,7 @@
 			"_id": "starforged/collections/oracles/derelicts",
 			"type": "oracle_collection",
 			"name": "Derelicts",
+			"canonical_name": "Derelicts",
 			"oracle_type": "tables",
 			"summary": "Derelicts are the forsaken relics of human endeavors.",
 			"description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](id:starforged/collections/oracles/starships) or [Settlement](id:starforged/collections/oracles/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.",
@@ -16015,7 +16018,8 @@
 		"factions": {
 			"_id": "starforged/collections/oracles/factions",
 			"type": "oracle_collection",
-			"name": "Factions",
+			"name": "Faction Oracles",
+			"canonical_name": "Factions",
 			"oracle_type": "tables",
 			"contents": {
 				"type": {
@@ -19142,7 +19146,8 @@
 		"location_themes": {
 			"_id": "starforged/collections/oracles/location_themes",
 			"type": "oracle_collection",
-			"name": "Location Themes",
+			"name": "Location Theme Oracles",
+			"canonical_name": "Location Themes",
 			"oracle_type": "tables",
 			"summary": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.",
 			"description": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.\n\nEach theme on the following pages includes a set of oracles.\n\n  * __Feature:__ Use this table to reveal a new aspect of the location.\n  * __Peril:__ Use this table to help envision a complication or hazard.\n  * __Opportunity:__ Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.\n\nYou can answer questions about a place using only the tables provided for a theme, such as when delving into an [Infested](id:starforged/collections/oracles/location_themes/infested) cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a [Haunted](id:starforged/collections/oracles/location_themes/haunted) [Grave World](id:starforged/collections/oracles/planets/grave), a [Ruined](id:starforged/collections/oracles/location_themes/ruined) [Derelict](id:starforged/collections/oracles/derelicts), a [Sacred](id:starforged/collections/oracles/location_themes/sacred) [Precursor Vault](id:starforged/collections/oracles/vaults), or an [Inhabited](id:starforged/collections/oracles/location_themes/inhabited) [Settlement](id:starforged/collections/oracles/settlements).\n\nWhen mixing-and-matching a theme with another set of tables, use the techniques described for an __oracle array__ (page 384) to determine which oracle you reference for that question or phase of your exploration.",
@@ -23246,7 +23251,8 @@
 		"planets": {
 			"_id": "starforged/collections/oracles/planets",
 			"type": "oracle_collection",
-			"name": "Planets",
+			"name": "Planet Oracles",
+			"canonical_name": "Planets",
 			"oracle_type": "tables",
 			"contents": {
 				"class": {
@@ -31190,7 +31196,8 @@
 		"settlements": {
 			"_id": "starforged/collections/oracles/settlements",
 			"type": "oracle_collection",
-			"name": "Settlements",
+			"name": "Settlement Oracles",
+			"canonical_name": "Settlements",
 			"oracle_type": "tables",
 			"contents": {
 				"location": {
@@ -33393,7 +33400,8 @@
 		"space": {
 			"_id": "starforged/collections/oracles/space",
 			"type": "oracle_collection",
-			"name": "Space Encounters",
+			"name": "Space Encounter Oracles",
+			"canonical_name": "Space Encounters",
 			"oracle_type": "tables",
 			"contents": {
 				"stellar_object": {
@@ -35423,7 +35431,8 @@
 		"starships": {
 			"_id": "starforged/collections/oracles/starships",
 			"type": "oracle_collection",
-			"name": "Starships",
+			"name": "Starship Oracles",
+			"canonical_name": "Starships",
 			"oracle_type": "tables",
 			"contents": {
 				"type": {
@@ -37227,7 +37236,8 @@
 		"vaults": {
 			"_id": "starforged/collections/oracles/vaults",
 			"type": "oracle_collection",
-			"name": "Precursor Vaults",
+			"name": "Precursor Vault Oracles",
+			"canonical_name": "Precursor Vaults",
 			"oracle_type": "tables",
 			"summary": "When you first come upon a vault, use the tables on the previous two pages to help envision its form and nature. For a more abstract prompt, just use the Descriptor oracle. In either case—if that’s enough detail for the role of the vault in your story—stop there.",
 			"contents": {

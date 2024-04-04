@@ -3,7 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   starships:
-    name: Starships
+    name: Starship Oracles
+    canonical_name: Starships
     type: oracle_collection
     oracle_type: tables
     _source:

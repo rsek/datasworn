@@ -3,7 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   settlements:
-    name: Settlements
+    name: Settlement Oracles
+    canonical_name: Settlements
     type: oracle_collection
     _source: &CollectionSource
       <<: &Source

@@ -3,7 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   location_themes:
-    name: Location Themes
+    name: Location Theme Oracles
+    canonical_name: Location Themes
     type: oracle_collection
     _source:
       <<: &Source

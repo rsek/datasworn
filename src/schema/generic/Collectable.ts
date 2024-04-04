@@ -6,7 +6,7 @@ import {
 } from '@sinclair/typebox'
 import { SourcedNode, type TSourcedNode } from './SourcedNode.js'
 import { type TAnyId } from '../common/Id.js'
-import type { TDiscriminableBy } from '../Utils.js'
+import { setSourceDataSchema, type TDiscriminableBy } from '../Utils.js'
 
 export const CollectableBrand = Symbol('Collectable')
 export const RecursiveCollectableBrand = Symbol('RecursiveCollectable')
@@ -21,10 +21,14 @@ export function Collectable<T extends TObject, V extends string>(
 	const schema = CloneType(base, {
 		properties: { ...base.properties, type: Type.Literal(type) }
 	}) as unknown as TDiscriminableBy<T, 'type', V>
-	return SourcedNode(_id, schema, {
-		...options,
-		[CollectableBrand]: 'Collectable'
-	}) as TCollectable<TDiscriminableBy<T, 'type', V>> satisfies TSourcedNode<
+
+	return setSourceDataSchema(
+		SourcedNode(_id, schema, {
+			...options,
+			[CollectableBrand]: 'Collectable'
+		}),
+		(schema) => ({ ...schema, additionalProperties: true })
+	) as TCollectable<TDiscriminableBy<T, 'type', V>> satisfies TSourcedNode<
 		TDiscriminableBy<T, 'type', V>
 	>
 }

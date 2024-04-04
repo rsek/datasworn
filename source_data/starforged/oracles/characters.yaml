@@ -3,6 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   characters:
+    name: Character Oracles
+    canonical_name: Characters
     oracle_type: tables
     type: oracle_collection
     _source:
@@ -14,7 +16,6 @@ oracles:
         authors:
           - name: Shawn Tomkin
       page: 330
-    name: Characters
     # Aliases: [NPC]
     summary: |-
       Don’t try to build a fully formed understanding character when you first encounter them; instead, focus on what your character learns or perceives as a first impression using oracles such as [First Look](id:starforged/oracles/characters/first_look) and [Initial Disposition](id:starforged/oracles/characters/initial_disposition). Then envision or generate additional details over time.

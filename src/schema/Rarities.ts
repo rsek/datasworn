@@ -1,32 +1,35 @@
 import { type Static, Type } from '@sinclair/typebox'
 import { Localize, Id, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
+import { setSourceDataSchema } from './Utils.js'
 
-export const Rarity = Generic.SourcedNode(
-	Type.Ref(Id.RarityId),
-	Type.Object({
-		asset: Type.Ref(Id.AssetId, {
-			description: 'The asset augmented by this rarity.'
-		}),
-		type: Type.Literal('rarity'),
-		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
-		xp_cost: Type.Integer({
-			minimum: 3,
-			maximum: 5,
-			default: 3,
-			description: `From Ironsworn: Delve, p. 174:
+export const Rarity = setSourceDataSchema(
+	Generic.SourcedNode(
+		Type.Ref(Id.RarityId),
+		Type.Object({
+			asset: Type.Ref(Id.AssetId, {
+				description: 'The asset augmented by this rarity.'
+			}),
+			type: Type.Literal('rarity'),
+			icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
+			xp_cost: Type.Integer({
+				minimum: 3,
+				maximum: 5,
+				default: 3,
+				description: `From Ironsworn: Delve, p. 174:
 
       Some assets will bring a rarity into play more often than others, so the experience point cost for a rarity will vary by the linked asset. These costs are shown in the tables on page 175.
 
       If you are playing solo, and aren’t concerned with the relative balance of rarity abilities, you can ignore these variable costs. If so, spend 3 experience points to purchase a rarity.`
+			}),
+			description: Type.Ref(Localize.MarkdownString)
 		}),
-		description: Type.Ref(Localize.MarkdownString)
-	}),
-	{
-		$id: 'Rarity',
-		description: 'A rarity, as described in Ironsworn: Delve.'
-	}
+		{
+			$id: 'Rarity',
+			description: 'A rarity, as described in Ironsworn: Delve.'
+		}
+	),
+	(schema) => ({ ...schema, additionalProperties: true })
 )
-
 export type Rarity = Static<typeof Rarity>
 export type TRarity = typeof Rarity

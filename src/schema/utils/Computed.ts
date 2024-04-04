@@ -74,7 +74,7 @@ export const GetSourceDataSchema = Symbol('GetSourceDataSchema')
 export function setSourceDataSchema<
 	T extends TSchema,
 	SourceSchema extends TSchema
->(schema: T, sourceSchema: SourceSchema | ((schema: T) => SourceSchema)) {
+>(schema: T, sourceSchema: SourceSchema | ((schema: T) => SourceSchema)): T {
 	const base = {
 		...CloneType(schema),
 		[GetSourceDataSchema]:

@@ -3,7 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   factions:
-    name: Factions
+    name: Faction Oracles
+    canonical_name: Factions
     type: oracle_collection
     _source:
       <<: &Source

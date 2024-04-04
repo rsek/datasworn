@@ -8,6 +8,7 @@ import {
 import { AssetPropertiesEnhanceable } from './assets/common.js'
 import { Id, Localize, Metadata } from './common/index.js'
 import * as Utils from './utils/Assign.js'
+import { setSourceDataSchema } from './Utils.js'
 
 const AssetMixin = Type.Object({
 	category: Type.Ref(Localize.Label, {

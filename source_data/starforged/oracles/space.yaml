@@ -3,9 +3,10 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   space:
+    name: Space Encounter Oracles
+    canonical_name: Space Encounters
     type: oracle_collection
     oracle_type: tables
-    name: Space Encounters
     _source: &CollectionSource
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'

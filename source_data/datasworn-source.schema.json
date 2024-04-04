@@ -2841,7 +2841,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"NpcCollection": {
 			"title": "NpcCollection",
@@ -4365,7 +4365,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"OracleTableText2": {
 			"title": "OracleTableText2",
@@ -4492,7 +4492,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"OracleTableText3": {
 			"title": "OracleTableText3",
@@ -4615,7 +4615,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"OracleTablesCollection": {
 			"title": "OracleTablesCollection",
@@ -4888,7 +4888,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"MoveActionRollEnhancement": {
 			"title": "MoveActionRollEnhancement",
@@ -5157,7 +5157,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"MoveNoRollEnhancement": {
 			"title": "MoveNoRollEnhancement",
@@ -5444,7 +5444,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"MoveSpecialTrackEnhancement": {
 			"title": "MoveSpecialTrackEnhancement",
@@ -6033,7 +6033,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"AssetAbility": {
 			"title": "AssetAbility",
@@ -7607,7 +7607,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"ConditionMeterKey": {
 			"$ref": "#/definitions/DictKey",
@@ -7687,7 +7687,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"DelveSite": {
 			"title": "DelveSite",
@@ -8027,7 +8027,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"DelveSiteDenizen": {
 			"title": "DelveSiteDenizen",
@@ -8415,7 +8415,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"DelveSiteTheme": {
 			"title": "DelveSiteTheme",
@@ -8766,7 +8766,7 @@
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		}
 	}
 }

@@ -3,7 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   creatures:
-    name: Creatures
+    name: Creature Oracles
+    canonical_name: Creatures
     type: oracle_collection
     _source:
       <<: &Source

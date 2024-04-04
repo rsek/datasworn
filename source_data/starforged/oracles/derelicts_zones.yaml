@@ -3,7 +3,8 @@ datasworn_version: "0.0.9"
 type: ruleset
 oracles:
   derelicts:
-    name: Derelicts
+    name: Derelict Oracles
+    canonical_name: Derelicts
     type: oracle_collection
     _source:
       <<: &Source
