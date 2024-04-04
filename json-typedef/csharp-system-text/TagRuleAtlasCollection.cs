@@ -5,10 +5,10 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    public class TagRuleAtlas : TagRule
+    public class TagRuleAtlasCollection : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "atlas"; }
+        public string ValueType_ { get => "atlas_collection"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }

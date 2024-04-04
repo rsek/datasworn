@@ -13,7 +13,7 @@ namespace Datasworn
 
         AssetCollection,
 
-        Atlas,
+        AtlasCollection,
 
         AtlasEntry,
 
@@ -50,8 +50,8 @@ namespace Datasworn
                     return ObjectType.Asset;
                 case "asset_collection":
                     return ObjectType.AssetCollection;
-                case "atlas":
-                    return ObjectType.Atlas;
+                case "atlas_collection":
+                    return ObjectType.AtlasCollection;
                 case "atlas_entry":
                     return ObjectType.AtlasEntry;
                 case "delve_site":
@@ -91,8 +91,8 @@ namespace Datasworn
                 case ObjectType.AssetCollection:
                     JsonSerializer.Serialize<string>(writer, "asset_collection", options);
                     return;
-                case ObjectType.Atlas:
-                    JsonSerializer.Serialize<string>(writer, "atlas", options);
+                case ObjectType.AtlasCollection:
+                    JsonSerializer.Serialize<string>(writer, "atlas_collection", options);
                     return;
                 case ObjectType.AtlasEntry:
                     JsonSerializer.Serialize<string>(writer, "atlas_entry", options);

@@ -9,11 +9,11 @@ import {
 export const AtlasEntry = sourcedTransformer<
 	DataswornSource.AtlasEntry,
 	Datasworn.AtlasEntry,
-	Datasworn.Atlas
+	Datasworn.AtlasCollection
 >({})
 
-export const Atlas = recursiveCollectionTransformer<
-	DataswornSource.Atlas,
-	Datasworn.Atlas,
+export const AtlasCollection = recursiveCollectionTransformer<
+	DataswornSource.AtlasCollection,
+	Datasworn.AtlasCollection,
 	null
 >('atlas', AtlasEntry, {})

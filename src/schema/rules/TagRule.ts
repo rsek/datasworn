@@ -20,7 +20,7 @@ const collectionTypes = [
 	'OracleCollection',
 	'MoveCategory',
 	'AssetCollection',
-	'Atlas',
+	'AtlasCollection',
 	'NpcCollection'
 ] as const
 const nonCollectableTypes = [

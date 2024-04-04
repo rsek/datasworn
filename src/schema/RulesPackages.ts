@@ -3,7 +3,7 @@ import { type Id, Metadata, Localize } from './common/index.js'
 import * as Generic from './Generic.js'
 
 import { Asset, type TAssetCollection } from './Assets.js'
-import { type TAtlas } from './Atlas.js'
+import { type TAtlasCollection } from './Atlas.js'
 import {
 	type TDelveSiteDomain,
 	type TDelveSiteTheme,
@@ -79,7 +79,7 @@ export const Ruleset = Type.Object(
 			})
 		),
 		atlas: Type.Optional(
-			Generic.Dictionary(Type.Ref<TAtlas>('Atlas'), {
+			Generic.Dictionary(Type.Ref<TAtlasCollection>('AtlasCollection'), {
 				default: undefined,
 				description:
 					'A dictionary object containing atlas collections, which contain atlas entries.'

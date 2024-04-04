@@ -5,13 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    public class Atlas
+    public class AtlasCollection
     {
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
         [JsonPropertyName("_id")]
-        public AtlasId Id { get; set; }
+        public AtlasCollectionId Id { get; set; }
 
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
@@ -27,7 +27,7 @@ namespace Datasworn
         public Label Name { get; set; }
 
         [JsonPropertyName("type")]
-        public AtlasType Type_ { get; set; }
+        public AtlasCollectionType Type_ { get; set; }
 
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
@@ -48,7 +48,7 @@ namespace Datasworn
 
         [JsonPropertyName("collections")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, Atlas> Collections { get; set; }
+        public IDictionary<string, AtlasCollection> Collections { get; set; }
 
         /// <summary>
         /// A thematic color associated with this collection.
@@ -76,7 +76,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("enhances")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public AtlasId? Enhances { get; set; }
+        public AtlasCollectionId? Enhances { get; set; }
 
         /// <summary>
         /// An SVG icon associated with this collection.
@@ -96,7 +96,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public AtlasId? Replaces { get; set; }
+        public AtlasCollectionId? Replaces { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

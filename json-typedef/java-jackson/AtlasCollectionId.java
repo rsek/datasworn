@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for an Atlas.
+ * A unique ID for an AtlasCollection.
  */
-public class AtlasId {
+public class AtlasCollectionId {
     @JsonValue
     private String value;
 
-    public AtlasId() {
+    public AtlasCollectionId() {
     }
 
     @JsonCreator
-    public AtlasId(String value) {
+    public AtlasCollectionId(String value) {
         this.value = value;
     }
 

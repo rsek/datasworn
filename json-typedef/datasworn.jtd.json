@@ -92,7 +92,7 @@
 				},
 				"atlas": {
 					"values": {
-						"ref": "Atlas"
+						"ref": "AtlasCollection"
 					},
 					"metadata": {
 						"propertyPattern": "^([a-z][a-z_]*)$",
@@ -249,7 +249,7 @@
 				},
 				"atlas": {
 					"values": {
-						"ref": "Atlas"
+						"ref": "AtlasCollection"
 					},
 					"metadata": {
 						"propertyPattern": "^([a-z][a-z_]*)$",
@@ -351,6 +351,16 @@
 				"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
 			}
 		},
+		"AtlasCollectionId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID for an AtlasCollection.",
+				"examples": [
+					"classic/collections/atlas/ironlands"
+				],
+				"pattern": "^([a-z0-9_]{3,})\\/collections\\/atlas\\/([a-z][a-z_]*)$"
+			}
+		},
 		"AtlasEntryId": {
 			"type": "string",
 			"metadata": {
@@ -359,16 +369,6 @@
 					"classic/atlas/ironlands/hinterlands"
 				],
 				"pattern": "^([a-z0-9_]{3,})\\/atlas\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
-			}
-		},
-		"AtlasId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for an Atlas.",
-				"examples": [
-					"classic/collections/atlas/ironlands"
-				],
-				"pattern": "^([a-z0-9_]{3,})\\/collections\\/atlas\\/([a-z][a-z_]*)$"
 			}
 		},
 		"DelveSiteDenizenId": {
@@ -941,7 +941,7 @@
 				"oracle_collection",
 				"move_category",
 				"asset_collection",
-				"atlas",
+				"atlas_collection",
 				"npc_collection",
 				"delve_site",
 				"delve_site_theme",
@@ -1286,7 +1286,7 @@
 						}
 					}
 				},
-				"atlas": {
+				"atlas_collection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -5822,10 +5822,10 @@
 				}
 			}
 		},
-		"Atlas": {
+		"AtlasCollection": {
 			"properties": {
 				"_id": {
-					"ref": "AtlasId",
+					"ref": "AtlasCollectionId",
 					"metadata": {
 						"description": "The unique Datasworn ID for this item."
 					}
@@ -5910,13 +5910,13 @@
 					}
 				},
 				"enhances": {
-					"ref": "AtlasId",
+					"ref": "AtlasCollectionId",
 					"metadata": {
 						"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 					}
 				},
 				"replaces": {
-					"ref": "AtlasId",
+					"ref": "AtlasCollectionId",
 					"metadata": {
 						"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 					}
@@ -5931,7 +5931,7 @@
 				},
 				"collections": {
 					"values": {
-						"ref": "Atlas"
+						"ref": "AtlasCollection"
 					},
 					"metadata": {
 						"propertyPattern": "^([a-z][a-z_]*)$"

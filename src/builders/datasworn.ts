@@ -7,7 +7,7 @@ import { DelveSite, DelveSiteDomain, DelveSiteTheme } from './delve-site.js'
 import { Rarity } from './rarities.js'
 import { Truth } from './truths.js'
 import { NpcCollection } from './npcs.js'
-import { Atlas } from './atlas.js'
+import { AtlasCollection } from './atlas.js'
 import { VERSION } from '../scripts/const.js'
 import type * as Datasworn from '../types/Datasworn.js'
 import type * as DataswornSource from '../types/DataswornSource.js'
@@ -86,7 +86,9 @@ export const RulesPackage = sourcedTransformer<
 		key: string | number,
 		parent: null
 	) {
-		return mapValues(data.atlas, (v, k) => transform(v, k, data, Atlas))
+		return mapValues(data.atlas, (v, k) =>
+			transform(v, k, data, AtlasCollection)
+		)
 	},
 	rarities: function (
 		this: DataswornSource.RulesPackage,

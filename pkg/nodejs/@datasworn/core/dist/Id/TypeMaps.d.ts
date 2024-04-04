@@ -3,7 +3,7 @@ import type * as Id from './Strings.js';
 import type * as IdElements from '../IdElements/index.js';
 interface CollectionSubtypesByName {
     AssetCollection: Datasworn.AssetCollection;
-    Atlas: Datasworn.Atlas;
+    AtlasCollection: Datasworn.AtlasCollection;
     MoveCategory: Datasworn.MoveCategory;
     NpcCollection: Datasworn.NpcCollection;
     OracleCollection: Datasworn.OracleCollection;
@@ -46,7 +46,7 @@ export type AnyCollectionTypeComposite = `${IdElements.TypeElements.Collection}$
 export type AnyTypeComposite = IdElements.TypeElements.NonCollectable | IdElements.TypeElements.Collectable.Any | AnyCollectionTypeComposite;
 export declare const TypeCompositesByName: {
     readonly AssetCollection: "collections/assets";
-    readonly Atlas: "collections/atlas";
+    readonly AtlasCollection: "collections/atlas";
     readonly MoveCategory: "collections/moves";
     readonly NpcCollection: "collections/npcs";
     readonly OracleCollection: "collections/oracles";
@@ -64,7 +64,7 @@ export declare const TypeCompositesByName: {
 export type TypeCompositesByName = typeof TypeCompositesByName;
 export declare const NamesByTypeComposite: {
     readonly 'collections/assets': "AssetCollection";
-    readonly 'collections/atlas': "Atlas";
+    readonly 'collections/atlas': "AtlasCollection";
     readonly 'collections/moves': "MoveCategory";
     readonly 'collections/npcs': "NpcCollection";
     readonly 'collections/oracles': "OracleCollection";
@@ -88,7 +88,7 @@ type TypesByTypeComposite = {
 export type TypeForTypeComposite<T extends AnyTypeComposite> = TypesByTypeComposite[T];
 export interface IdsByTypeName extends Record<AnyTypeName, Id.AnyId> {
     AssetCollection: Id.NonRecursiveCollectionId<string, 'assets'>;
-    Atlas: Id.RecursiveCollectionId<string, 'atlas'>;
+    AtlasCollection: Id.RecursiveCollectionId<string, 'atlas'>;
     MoveCategory: Id.NonRecursiveCollectionId<string, 'moves'>;
     NpcCollection: Id.RecursiveCollectionId<string, 'npcs'>;
     OracleCollection: Id.RecursiveCollectionId<string, 'oracles'>;
@@ -106,7 +106,7 @@ export interface IdsByTypeName extends Record<AnyTypeName, Id.AnyId> {
 export type IdForTypeName<T extends AnyTypeName> = IdsByTypeName[T];
 export declare const NamesByCollectionSubtype: {
     readonly assets: "AssetCollection";
-    readonly atlas: "Atlas";
+    readonly atlas: "AtlasCollection";
     readonly moves: "MoveCategory";
     readonly npcs: "NpcCollection";
     readonly oracles: "OracleCollection";

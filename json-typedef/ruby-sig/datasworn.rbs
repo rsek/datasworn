@@ -22,7 +22,7 @@ module Datasworn
     attr_accessor id: ExpansionID
     attr_accessor ruleset: RulesetID
     attr_accessor assets: Hash[String, AssetCollection]?
-    attr_accessor atlas: Hash[String, Atlas]?
+    attr_accessor atlas: Hash[String, AtlasCollection]?
     attr_accessor authors: Array[AuthorInfo]?
     attr_accessor datasworn_version: RulesPackageExpansionDataswornVersion?
     attr_accessor date: DateTime?
@@ -65,7 +65,7 @@ module Datasworn
     attr_accessor rules: Rules
     attr_accessor title: String
     attr_accessor url: WebURL
-    attr_accessor atlas: Hash[String, Atlas]?
+    attr_accessor atlas: Hash[String, AtlasCollection]?
     attr_accessor delve_sites: Hash[String, DelveSite]?
     attr_accessor description: MarkdownString?
     attr_accessor npcs: Hash[String, NpcCollection]?
@@ -475,35 +475,42 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class AtlasType
+  class AtlasCollectionType
     attr_accessor value: String
 
-    ATLAS: AtlasType
+    ATLAS: AtlasCollectionType
 
-    def self.from_json_data: (untyped) -> AtlasType
+    def self.from_json_data: (untyped) -> AtlasCollectionType
     def to_json_data: () -> untyped
   end
 
-  class Atlas
-    attr_accessor id: AtlasID
+  class AtlasCollection
+    attr_accessor id: AtlasCollectionID
     attr_accessor source: SourceInfo
     attr_accessor name: Label
-    attr_accessor type: AtlasType
+    attr_accessor type: AtlasCollectionType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor collections: Hash[String, Atlas]?
+    attr_accessor collections: Hash[String, AtlasCollection]?
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, AtlasEntry]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: AtlasID?
+    attr_accessor enhances: AtlasCollectionID?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: AtlasID?
+    attr_accessor replaces: AtlasCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Hash[String, Hash[String, Tag]]?
 
-    def self.from_json_data: (untyped) -> Atlas
+    def self.from_json_data: (untyped) -> AtlasCollection
+    def to_json_data: () -> untyped
+  end
+
+  class AtlasCollectionID
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> AtlasCollectionID
     def to_json_data: () -> untyped
   end
 
@@ -539,13 +546,6 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> AtlasEntryID
-    def to_json_data: () -> untyped
-  end
-
-  class AtlasID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> AtlasID
     def to_json_data: () -> untyped
   end
 
@@ -1166,7 +1166,7 @@ module Datasworn
 
     ASSET: ObjectType
     ASSET_COLLECTION: ObjectType
-    ATLAS: ObjectType
+    ATLAS_COLLECTION: ObjectType
     ATLAS_ENTRY: ObjectType
     DELVE_SITE: ObjectType
     DELVE_SITE_DOMAIN: ObjectType
@@ -2232,12 +2232,12 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class TagRuleAtlas < TagRule
+  class TagRuleAtlasCollection < TagRule
     attr_accessor applies_to: Array[ObjectType]
     attr_accessor description: MarkdownString
     attr_accessor wildcard: bool
 
-    def self.from_json_data: (untyped) -> TagRuleAtlas
+    def self.from_json_data: (untyped) -> TagRuleAtlasCollection
     def to_json_data: () -> untyped
   end
 

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NamesByNonCollectableType = exports.NamesByCollectableType = exports.NamesByCollectionSubtype = exports.NamesByTypeComposite = exports.TypeCompositesByName = void 0;
 exports.TypeCompositesByName = {
     AssetCollection: 'collections/assets',
-    Atlas: 'collections/atlas',
+    AtlasCollection: 'collections/atlas',
     MoveCategory: 'collections/moves',
     NpcCollection: 'collections/npcs',
     OracleCollection: 'collections/oracles',
@@ -20,7 +20,7 @@ exports.TypeCompositesByName = {
 };
 exports.NamesByTypeComposite = {
     'collections/assets': 'AssetCollection',
-    'collections/atlas': 'Atlas',
+    'collections/atlas': 'AtlasCollection',
     'collections/moves': 'MoveCategory',
     'collections/npcs': 'NpcCollection',
     'collections/oracles': 'OracleCollection',
@@ -37,7 +37,7 @@ exports.NamesByTypeComposite = {
 };
 exports.NamesByCollectionSubtype = {
     assets: 'AssetCollection',
-    atlas: 'Atlas',
+    atlas: 'AtlasCollection',
     moves: 'MoveCategory',
     npcs: 'NpcCollection',
     oracles: 'OracleCollection'

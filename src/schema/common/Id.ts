@@ -331,18 +331,18 @@ export const RarityIdWildcard = toWildcard(RarityId, {
 })
 export type RarityIdWildcard = Static<typeof RarityIdWildcard>
 
-export const AtlasId = CollectionId(['atlas'], {
+export const AtlasCollectionId = CollectionId(['atlas'], {
 	examples: ['classic/collections/atlas/ironlands'],
-	$id: 'AtlasId'
+	$id: 'AtlasCollectionId'
 })
-export type AtlasId = Opaque<Static<typeof AtlasId>>
+export type AtlasCollectionId = Opaque<Static<typeof AtlasCollectionId>>
 
-export const AtlasIdWildcard = toWildcard(AtlasId, {
-	$id: 'AtlasIdWildcard'
+export const AtlasCollectionIdWildcard = toWildcard(AtlasCollectionId, {
+	$id: 'AtlasCollectionIdWildcard'
 })
-export type AtlasIdWildcard = Static<typeof AtlasIdWildcard>
+export type AtlasCollectionIdWildcard = Static<typeof AtlasCollectionIdWildcard>
 
-export const AtlasEntryId = Extend(AtlasId, [Node], {
+export const AtlasEntryId = Extend(AtlasCollectionId, [Node], {
 	examples: ['classic/atlas/ironlands/hinterlands'],
 	$id: 'AtlasEntryId'
 })

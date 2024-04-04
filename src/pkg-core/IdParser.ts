@@ -1077,7 +1077,7 @@ namespace RecursiveCollectableId {
 }
 
 /**
- * Represents an ID for a {@link OracleCollection}, {@link NpcCollection}, or {@link Atlas}
+ * Represents an ID for a {@link OracleCollection}, {@link NpcCollection}, or {@link AtlasCollection}
  */
 class RecursiveCollectionId<
 	RulesPackage extends string = string,

@@ -436,7 +436,7 @@ class RecursiveCollectableId extends CollectableId {
 }
 exports.RecursiveCollectableId = RecursiveCollectableId;
 /**
- * Represents an ID for a {@link OracleCollection}, {@link NpcCollection}, or {@link Atlas}
+ * Represents an ID for a {@link OracleCollection}, {@link NpcCollection}, or {@link AtlasCollection}
  */
 class RecursiveCollectionId extends CollectionId {
     createChildCollectableId(childKey) {

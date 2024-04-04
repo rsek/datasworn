@@ -133,7 +133,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/Atlas"
+							"$ref": "#/definitions/AtlasCollection"
 						}
 					}
 				},
@@ -287,7 +287,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/Atlas"
+							"$ref": "#/definitions/AtlasCollection"
 						}
 					}
 				},
@@ -394,6 +394,19 @@
 			"description": "A wildcarded ID that can be used to match multiple Assets.",
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
 		},
+		"AtlasCollectionId": {
+			"title": "AtlasCollectionId",
+			"type": "string",
+			"description": "A unique ID for an AtlasCollection.",
+			"examples": ["classic/collections/atlas/ironlands"],
+			"pattern": "^([a-z0-9_]{3,})\\/collections\\/atlas\\/([a-z][a-z_]*)$"
+		},
+		"AtlasCollectionIdWildcard": {
+			"title": "AtlasCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded ID that can be used to match multiple AtlasCollections.",
+			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/collections\\/atlas\\/(\\*|([a-z][a-z_]*))$"
+		},
 		"AtlasEntryId": {
 			"title": "AtlasEntryId",
 			"type": "string",
@@ -406,19 +419,6 @@
 			"type": "string",
 			"description": "A wildcarded ID that can be used to match multiple AtlasEntrys.",
 			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/atlas\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
-		},
-		"AtlasId": {
-			"title": "AtlasId",
-			"type": "string",
-			"description": "A unique ID for an Atlas.",
-			"examples": ["classic/collections/atlas/ironlands"],
-			"pattern": "^([a-z0-9_]{3,})\\/collections\\/atlas\\/([a-z][a-z_]*)$"
-		},
-		"AtlasIdWildcard": {
-			"title": "AtlasIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Atlass.",
-			"pattern": "^(\\*|([a-z0-9_]{3,}))\\/collections\\/atlas\\/(\\*|([a-z][a-z_]*))$"
 		},
 		"ConditionMeterRuleId": {
 			"title": "ConditionMeterRuleId",
@@ -977,7 +977,7 @@
 				"oracle_collection",
 				"move_category",
 				"asset_collection",
-				"atlas",
+				"atlas_collection",
 				"npc_collection"
 			]
 		},
@@ -1330,7 +1330,7 @@
 					"$ref": "#/definitions/AssetCollectionId"
 				},
 				{
-					"$ref": "#/definitions/AtlasId"
+					"$ref": "#/definitions/AtlasCollectionId"
 				},
 				{
 					"$ref": "#/definitions/NpcCollectionId"
@@ -1379,7 +1379,7 @@
 								"$ref": "#/definitions/AssetCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/AtlasIdWildcard"
+								"$ref": "#/definitions/AtlasCollectionIdWildcard"
 							},
 							{
 								"$ref": "#/definitions/NpcCollectionIdWildcard"
@@ -1422,7 +1422,7 @@
 						"oracle_collection",
 						"move_category",
 						"asset_collection",
-						"atlas",
+						"atlas_collection",
 						"npc_collection",
 						"delve_site",
 						"delve_site_theme",
@@ -1877,7 +1877,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "atlas",
+								"const": "atlas_collection",
 								"type": "string"
 							}
 						}
@@ -1909,12 +1909,12 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "atlas",
+								"const": "atlas_collection",
 								"type": "string"
 							}
 						},
 						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleAtlas"
+						"title": "TagRuleAtlasCollection"
 					}
 				},
 				{
@@ -7269,13 +7269,13 @@
 				}
 			}
 		},
-		"Atlas": {
-			"title": "Atlas",
+		"AtlasCollection": {
+			"title": "AtlasCollection",
 			"type": "object",
 			"required": ["_id", "type", "name", "_source"],
 			"properties": {
 				"_id": {
-					"$ref": "#/definitions/AtlasId",
+					"$ref": "#/definitions/AtlasCollectionId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"type": {
@@ -7291,11 +7291,11 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/AtlasId",
+					"$ref": "#/definitions/AtlasCollectionId",
 					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
 				},
 				"enhances": {
-					"$ref": "#/definitions/AtlasId",
+					"$ref": "#/definitions/AtlasCollectionId",
 					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
 				},
 				"color": {
@@ -7335,7 +7335,7 @@
 					"$comment": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^([a-z][a-z_]*)$": {
-							"$ref": "#/definitions/Atlas"
+							"$ref": "#/definitions/AtlasCollection"
 						}
 					}
 				},

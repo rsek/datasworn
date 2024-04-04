@@ -6,7 +6,7 @@ import type * as IdElements from '../IdElements/index.js'
 
 interface CollectionSubtypesByName {
 	AssetCollection: Datasworn.AssetCollection
-	Atlas: Datasworn.Atlas
+	AtlasCollection: Datasworn.AtlasCollection
 	MoveCategory: Datasworn.MoveCategory
 	NpcCollection: Datasworn.NpcCollection
 	OracleCollection: Datasworn.OracleCollection
@@ -80,7 +80,7 @@ export type AnyTypeComposite =
 
 export const TypeCompositesByName = {
 	AssetCollection: 'collections/assets',
-	Atlas: 'collections/atlas',
+	AtlasCollection: 'collections/atlas',
 	MoveCategory: 'collections/moves',
 	NpcCollection: 'collections/npcs',
 	OracleCollection: 'collections/oracles',
@@ -100,7 +100,7 @@ export type TypeCompositesByName = typeof TypeCompositesByName
 
 export const NamesByTypeComposite = {
 	'collections/assets': 'AssetCollection',
-	'collections/atlas': 'Atlas',
+	'collections/atlas': 'AtlasCollection',
 	'collections/moves': 'MoveCategory',
 	'collections/npcs': 'NpcCollection',
 	'collections/oracles': 'OracleCollection',
@@ -135,7 +135,7 @@ export type TypeForTypeComposite<T extends AnyTypeComposite> =
 
 export interface IdsByTypeName extends Record<AnyTypeName, Id.AnyId> {
 	AssetCollection: Id.NonRecursiveCollectionId<string, 'assets'>
-	Atlas: Id.RecursiveCollectionId<string, 'atlas'>
+	AtlasCollection: Id.RecursiveCollectionId<string, 'atlas'>
 	MoveCategory: Id.NonRecursiveCollectionId<string, 'moves'>
 	NpcCollection: Id.RecursiveCollectionId<string, 'npcs'>
 	OracleCollection: Id.RecursiveCollectionId<string, 'oracles'>
@@ -153,10 +153,9 @@ export interface IdsByTypeName extends Record<AnyTypeName, Id.AnyId> {
 
 export type IdForTypeName<T extends AnyTypeName> = IdsByTypeName[T]
 
-
 export const NamesByCollectionSubtype = {
 	assets: 'AssetCollection',
-	atlas: 'Atlas',
+	atlas: 'AtlasCollection',
 	moves: 'MoveCategory',
 	npcs: 'NpcCollection',
 	oracles: 'OracleCollection'

@@ -72,7 +72,7 @@ type RulesPackageExpansion struct {
 
 	// A dictionary object containing atlas collections, which contain atlas
 	// entries.
-	Atlas map[string]Atlas `json:"atlas,omitempty"`
+	Atlas map[string]AtlasCollection `json:"atlas,omitempty"`
 
 	// Lists authors credited by the source material.
 	Authors []AuthorInfo `json:"authors,omitempty"`
@@ -167,7 +167,7 @@ type RulesPackageRuleset struct {
 
 	// A dictionary object containing atlas collections, which contain atlas
 	// entries.
-	Atlas map[string]Atlas `json:"atlas,omitempty"`
+	Atlas map[string]AtlasCollection `json:"atlas,omitempty"`
 
 	// A dictionary object of delve sites, like the premade delve sites presented
 	// in Ironsworn: Delve
@@ -1077,15 +1077,15 @@ type AssetOptionFieldText struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 }
 
-type AtlasType string
+type AtlasCollectionType string
 
 const (
-	AtlasTypeAtlas AtlasType = "atlas"
+	AtlasCollectionTypeAtlas AtlasCollectionType = "atlas"
 )
 
-type Atlas struct {
+type AtlasCollection struct {
 	// The unique Datasworn ID for this item.
-	ID AtlasID `json:"_id"`
+	ID AtlasCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
 	// item, including the author and licensing information.
@@ -1094,7 +1094,7 @@ type Atlas struct {
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 
-	Type AtlasType `json:"type"`
+	Type AtlasCollectionType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.
@@ -1104,7 +1104,7 @@ type Atlas struct {
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	Collections map[string]Atlas `json:"collections,omitempty"`
+	Collections map[string]AtlasCollection `json:"collections,omitempty"`
 
 	// A thematic color associated with this collection.
 	Color *CSSColor `json:"color,omitempty"`
@@ -1117,7 +1117,7 @@ type Atlas struct {
 
 	// This collection's content enhances the identified collection, rather than
 	// being a standalone collection of its own.
-	Enhances *AtlasID `json:"enhances,omitempty"`
+	Enhances *AtlasCollectionID `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
@@ -1126,7 +1126,7 @@ type Atlas struct {
 
 	// This collection replaces the identified collection. References to the
 	// replaced collection can be considered equivalent to this collection.
-	Replaces *AtlasID `json:"replaces,omitempty"`
+	Replaces *AtlasCollectionID `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1137,6 +1137,9 @@ type Atlas struct {
 
 	Tags map[string]map[string]Tag `json:"tags,omitempty"`
 }
+
+// A unique ID for an AtlasCollection.
+type AtlasCollectionID = string
 
 type AtlasEntryType string
 
@@ -1183,9 +1186,6 @@ type AtlasEntry struct {
 
 // A unique ID for an AtlasEntry.
 type AtlasEntryID = string
-
-// A unique ID for an Atlas.
-type AtlasID = string
 
 // Information on the original creator of this material.
 type AuthorInfo struct {
@@ -2105,7 +2105,7 @@ const (
 
 	ObjectTypeAssetCollection ObjectType = "asset_collection"
 
-	ObjectTypeAtlas ObjectType = "atlas"
+	ObjectTypeAtlasCollection ObjectType = "atlas_collection"
 
 	ObjectTypeAtlasEntry ObjectType = "atlas_entry"
 
@@ -3849,7 +3849,7 @@ type TagRule struct {
 
 	AssetCollection TagRuleAssetCollection
 
-	Atlas TagRuleAtlas
+	AtlasCollection TagRuleAtlasCollection
 
 	AtlasEntry TagRuleAtlasEntry
 
@@ -3888,8 +3888,8 @@ func (v TagRule) MarshalJSON() ([]byte, error) {
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAsset }{ v.ValueType, v.Asset })
 	case "asset_collection":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAssetCollection }{ v.ValueType, v.AssetCollection })
-	case "atlas":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAtlas }{ v.ValueType, v.Atlas })
+	case "atlas_collection":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAtlasCollection }{ v.ValueType, v.AtlasCollection })
 	case "atlas_entry":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAtlasEntry }{ v.ValueType, v.AtlasEntry })
 	case "boolean":
@@ -3937,8 +3937,8 @@ func (v *TagRule) UnmarshalJSON(b []byte) error {
 		err = json.Unmarshal(b, &v.Asset)
 	case "asset_collection":
 		err = json.Unmarshal(b, &v.AssetCollection)
-	case "atlas":
-		err = json.Unmarshal(b, &v.Atlas)
+	case "atlas_collection":
+		err = json.Unmarshal(b, &v.AtlasCollection)
 	case "atlas_entry":
 		err = json.Unmarshal(b, &v.AtlasEntry)
 	case "boolean":
@@ -4001,7 +4001,7 @@ type TagRuleAssetCollection struct {
 	Wildcard bool `json:"wildcard"`
 }
 
-type TagRuleAtlas struct {
+type TagRuleAtlasCollection struct {
 	AppliesTo []ObjectType `json:"applies_to"`
 
 	Description MarkdownString `json:"description"`

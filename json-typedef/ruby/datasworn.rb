@@ -71,7 +71,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(ExpansionID, data["_id"])
       out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
       out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
-      out.atlas = Datasworn::from_json_data(Hash[String, Atlas], data["atlas"])
+      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
       out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
       out.datasworn_version = Datasworn::from_json_data(RulesPackageExpansionDataswornVersion, data["datasworn_version"])
       out.date = Datasworn::from_json_data(DateTime, data["date"])
@@ -176,7 +176,7 @@ module Datasworn
       out.rules = Datasworn::from_json_data(Rules, data["rules"])
       out.title = Datasworn::from_json_data(String, data["title"])
       out.url = Datasworn::from_json_data(WebURL, data["url"])
-      out.atlas = Datasworn::from_json_data(Hash[String, Atlas], data["atlas"])
+      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
       out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
@@ -1334,7 +1334,7 @@ module Datasworn
     end
   end
 
-  class AtlasType
+  class AtlasCollectionType
     attr_accessor :value
 
     def initialize(value)
@@ -1356,7 +1356,7 @@ module Datasworn
     end
   end
 
-  class Atlas
+  class AtlasCollection
     # The unique Datasworn ID for this item.
     attr_accessor :id
 
@@ -1406,21 +1406,21 @@ module Datasworn
     attr_accessor :tags
 
     def self.from_json_data(data)
-      out = Atlas.new
-      out.id = Datasworn::from_json_data(AtlasID, data["_id"])
+      out = AtlasCollection.new
+      out.id = Datasworn::from_json_data(AtlasCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.type = Datasworn::from_json_data(AtlasType, data["type"])
+      out.type = Datasworn::from_json_data(AtlasCollectionType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
-      out.collections = Datasworn::from_json_data(Hash[String, Atlas], data["collections"])
+      out.collections = Datasworn::from_json_data(Hash[String, AtlasCollection], data["collections"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
       out.contents = Datasworn::from_json_data(Hash[String, AtlasEntry], data["contents"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.enhances = Datasworn::from_json_data(AtlasID, data["enhances"])
+      out.enhances = Datasworn::from_json_data(AtlasCollectionID, data["enhances"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
-      out.replaces = Datasworn::from_json_data(AtlasID, data["replaces"])
+      out.replaces = Datasworn::from_json_data(AtlasCollectionID, data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.tags = Datasworn::from_json_data(Hash[String, Hash[String, Tag]], data["tags"])
@@ -1447,6 +1447,21 @@ module Datasworn
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
+    end
+  end
+
+  # A unique ID for an AtlasCollection.
+  class AtlasCollectionID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AtlasCollectionID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
     end
   end
 
@@ -1544,21 +1559,6 @@ module Datasworn
 
     def self.from_json_data(data)
       out = AtlasEntryID.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
-    end
-  end
-
-  # A unique ID for an Atlas.
-  class AtlasID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = AtlasID.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end
@@ -3314,7 +3314,7 @@ module Datasworn
 
     ASSET = new("asset")
     ASSET_COLLECTION = new("asset_collection")
-    ATLAS = new("atlas")
+    ATLAS_COLLECTION = new("atlas_collection")
     ATLAS_ENTRY = new("atlas_entry")
     DELVE_SITE = new("delve_site")
     DELVE_SITE_DOMAIN = new("delve_site_domain")
@@ -3332,7 +3332,7 @@ module Datasworn
       {
         "asset" => ASSET,
         "asset_collection" => ASSET_COLLECTION,
-        "atlas" => ATLAS,
+        "atlas_collection" => ATLAS_COLLECTION,
         "atlas_entry" => ATLAS_ENTRY,
         "delve_site" => DELVE_SITE,
         "delve_site_domain" => DELVE_SITE_DOMAIN,
@@ -6287,7 +6287,7 @@ module Datasworn
       {
         "asset" => TagRuleAsset,
         "asset_collection" => TagRuleAssetCollection,
-        "atlas" => TagRuleAtlas,
+        "atlas_collection" => TagRuleAtlasCollection,
         "atlas_entry" => TagRuleAtlasEntry,
         "boolean" => TagRuleBoolean,
         "delve_site" => TagRuleDelveSite,
@@ -6353,14 +6353,14 @@ module Datasworn
     end
   end
 
-  class TagRuleAtlas < TagRule
+  class TagRuleAtlasCollection < TagRule
     attr_accessor :applies_to
     attr_accessor :description
     attr_accessor :wildcard
 
     def self.from_json_data(data)
-      out = TagRuleAtlas.new
-      out.value_type = "atlas"
+      out = TagRuleAtlasCollection.new
+      out.value_type = "atlas_collection"
       out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
@@ -6368,7 +6368,7 @@ module Datasworn
     end
 
     def to_json_data
-      data = { "value_type" => "atlas" }
+      data = { "value_type" => "atlas_collection" }
       data["applies_to"] = Datasworn::to_json_data(applies_to)
       data["description"] = Datasworn::to_json_data(description)
       data["wildcard"] = Datasworn::to_json_data(wildcard)

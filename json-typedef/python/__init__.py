@@ -55,7 +55,7 @@ class RulesPackageExpansion(RulesPackage):
     A dictionary object containing asset collections, which contain assets.
     """
 
-    atlas: 'Optional[Dict[str, Atlas]]'
+    atlas: 'Optional[Dict[str, AtlasCollection]]'
     """
     A dictionary object containing atlas collections, which contain atlas
     entries.
@@ -141,7 +141,7 @@ class RulesPackageExpansion(RulesPackage):
             _from_json_data(ExpansionID, data.get("_id")),
             _from_json_data(RulesetID, data.get("ruleset")),
             _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
-            _from_json_data(Optional[Dict[str, Atlas]], data.get("atlas")),
+            _from_json_data(Optional[Dict[str, AtlasCollection]], data.get("atlas")),
             _from_json_data(Optional[List[AuthorInfo]], data.get("authors")),
             _from_json_data(Optional[RulesPackageExpansionDataswornVersion], data.get("datasworn_version")),
             _from_json_data(Optional[datetime], data.get("date")),
@@ -266,7 +266,7 @@ class RulesPackageRuleset(RulesPackage):
     A URL where the source document is available.
     """
 
-    atlas: 'Optional[Dict[str, Atlas]]'
+    atlas: 'Optional[Dict[str, AtlasCollection]]'
     """
     A dictionary object containing atlas collections, which contain atlas
     entries.
@@ -321,7 +321,7 @@ class RulesPackageRuleset(RulesPackage):
             _from_json_data(Rules, data.get("rules")),
             _from_json_data(str, data.get("title")),
             _from_json_data(WebURL, data.get("url")),
-            _from_json_data(Optional[Dict[str, Atlas]], data.get("atlas")),
+            _from_json_data(Optional[Dict[str, AtlasCollection]], data.get("atlas")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[Dict[str, NpcCollection]], data.get("npcs")),
@@ -1861,18 +1861,18 @@ class AssetOptionFieldText(AssetOptionField):
              data["icon"] = _to_json_data(self.icon)
         return data
 
-class AtlasType(Enum):
+class AtlasCollectionType(Enum):
     ATLAS = "atlas"
     @classmethod
-    def from_json_data(cls, data: Any) -> 'AtlasType':
+    def from_json_data(cls, data: Any) -> 'AtlasCollectionType':
         return cls(data)
 
     def to_json_data(self) -> Any:
         return self.value
 
 @dataclass
-class Atlas:
-    id: 'AtlasID'
+class AtlasCollection:
+    id: 'AtlasCollectionID'
     """
     The unique Datasworn ID for this item.
     """
@@ -1888,7 +1888,7 @@ class Atlas:
     The primary name/label for this item.
     """
 
-    type: 'AtlasType'
+    type: 'AtlasCollectionType'
     comment: 'Optional[str]'
     """
     Any implementation hints or other developer-facing comments on this object.
@@ -1901,7 +1901,7 @@ class Atlas:
     different from `name`.
     """
 
-    collections: 'Optional[Dict[str, Atlas]]'
+    collections: 'Optional[Dict[str, AtlasCollection]]'
     color: 'Optional[CSSColor]'
     """
     A thematic color associated with this collection.
@@ -1914,7 +1914,7 @@ class Atlas:
     paragraphs. If it's only a couple sentences, use the `summary` key instead.
     """
 
-    enhances: 'Optional[AtlasID]'
+    enhances: 'Optional[AtlasCollectionID]'
     """
     This collection's content enhances the identified collection, rather than
     being a standalone collection of its own.
@@ -1926,7 +1926,7 @@ class Atlas:
     """
 
     images: 'Optional[List[WebpImageURL]]'
-    replaces: 'Optional[AtlasID]'
+    replaces: 'Optional[AtlasCollectionID]'
     """
     This collection replaces the identified collection. References to the
     replaced collection can be considered equivalent to this collection.
@@ -1943,22 +1943,22 @@ class Atlas:
     tags: 'Optional[Dict[str, Dict[str, Tag]]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Atlas':
+    def from_json_data(cls, data: Any) -> 'AtlasCollection':
         return cls(
-            _from_json_data(AtlasID, data.get("_id")),
+            _from_json_data(AtlasCollectionID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
             _from_json_data(Label, data.get("name")),
-            _from_json_data(AtlasType, data.get("type")),
+            _from_json_data(AtlasCollectionType, data.get("type")),
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
-            _from_json_data(Optional[Dict[str, Atlas]], data.get("collections")),
+            _from_json_data(Optional[Dict[str, AtlasCollection]], data.get("collections")),
             _from_json_data(Optional[CSSColor], data.get("color")),
             _from_json_data(Optional[Dict[str, AtlasEntry]], data.get("contents")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[AtlasID], data.get("enhances")),
+            _from_json_data(Optional[AtlasCollectionID], data.get("enhances")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
-            _from_json_data(Optional[AtlasID], data.get("replaces")),
+            _from_json_data(Optional[AtlasCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
@@ -1997,6 +1997,21 @@ class Atlas:
         if self.tags is not None:
              data["tags"] = _to_json_data(self.tags)
         return data
+
+@dataclass
+class AtlasCollectionID:
+    """
+    A unique ID for an AtlasCollection.
+    """
+
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'AtlasCollectionID':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
 
 class AtlasEntryType(Enum):
     ATLAS_ENTRY = "atlas_entry"
@@ -2103,21 +2118,6 @@ class AtlasEntryID:
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AtlasEntryID':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class AtlasID:
-    """
-    A unique ID for an Atlas.
-    """
-
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AtlasID':
         return cls(_from_json_data(str, data))
 
     def to_json_data(self) -> Any:
@@ -4168,7 +4168,7 @@ class NpcVariantID:
 class ObjectType(Enum):
     ASSET = "asset"
     ASSET_COLLECTION = "asset_collection"
-    ATLAS = "atlas"
+    ATLAS_COLLECTION = "atlas_collection"
     ATLAS_ENTRY = "atlas_entry"
     DELVE_SITE = "delve_site"
     DELVE_SITE_DOMAIN = "delve_site_domain"
@@ -7740,7 +7740,7 @@ class TagRule:
         variants: Dict[str, Type[TagRule]] = {
             "asset": TagRuleAsset,
             "asset_collection": TagRuleAssetCollection,
-            "atlas": TagRuleAtlas,
+            "atlas_collection": TagRuleAtlasCollection,
             "atlas_entry": TagRuleAtlasEntry,
             "boolean": TagRuleBoolean,
             "delve_site": TagRuleDelveSite,
@@ -7818,7 +7818,7 @@ class TagRuleAssetCollection(TagRule):
         return data
 
 @dataclass
-class TagRuleAtlas(TagRule):
+class TagRuleAtlasCollection(TagRule):
     applies_to: 'List[ObjectType]'
     description: 'MarkdownString'
     wildcard: 'bool'
@@ -7829,16 +7829,16 @@ class TagRuleAtlas(TagRule):
 
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleAtlas':
+    def from_json_data(cls, data: Any) -> 'TagRuleAtlasCollection':
         return cls(
-            "atlas",
+            "atlas_collection",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "atlas" }
+        data = { "value_type": "atlas_collection" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)

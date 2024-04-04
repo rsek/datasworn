@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "asset", value = TagRuleAsset.class),
     @JsonSubTypes.Type(name = "asset_collection", value = TagRuleAssetCollection.class),
-    @JsonSubTypes.Type(name = "atlas", value = TagRuleAtlas.class),
+    @JsonSubTypes.Type(name = "atlas_collection", value = TagRuleAtlasCollection.class),
     @JsonSubTypes.Type(name = "atlas_entry", value = TagRuleAtlasEntry.class),
     @JsonSubTypes.Type(name = "boolean", value = TagRuleBoolean.class),
     @JsonSubTypes.Type(name = "delve_site", value = TagRuleDelveSite.class),

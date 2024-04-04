@@ -35,7 +35,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("atlas")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, Atlas> Atlas { get; set; }
+        public IDictionary<string, AtlasCollection> Atlas { get; set; }
 
         /// <summary>
         /// Lists authors credited by the source material.

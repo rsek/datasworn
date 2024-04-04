@@ -24,8 +24,8 @@ namespace Datasworn
                     return JsonSerializer.Deserialize<TagRuleAsset>(ref readerCopy, options);
                 case "asset_collection":
                     return JsonSerializer.Deserialize<TagRuleAssetCollection>(ref readerCopy, options);
-                case "atlas":
-                    return JsonSerializer.Deserialize<TagRuleAtlas>(ref readerCopy, options);
+                case "atlas_collection":
+                    return JsonSerializer.Deserialize<TagRuleAtlasCollection>(ref readerCopy, options);
                 case "atlas_entry":
                     return JsonSerializer.Deserialize<TagRuleAtlasEntry>(ref readerCopy, options);
                 case "boolean":

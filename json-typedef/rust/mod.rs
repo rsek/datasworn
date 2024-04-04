@@ -43,7 +43,7 @@ pub struct RulesPackageExpansion {
     /// entries.
     #[serde(rename = "atlas")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub atlas: Option<Box<HashMap<String, Atlas>>>,
+    pub atlas: Option<Box<HashMap<String, AtlasCollection>>>,
 
     /// Lists authors credited by the source material.
     #[serde(rename = "authors")]
@@ -184,7 +184,7 @@ pub struct RulesPackageRuleset {
     /// entries.
     #[serde(rename = "atlas")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub atlas: Option<Box<HashMap<String, Atlas>>>,
+    pub atlas: Option<Box<HashMap<String, AtlasCollection>>>,
 
     /// A dictionary object of delve sites, like the premade delve sites
     /// presented in Ironsworn: Delve
@@ -1056,16 +1056,16 @@ pub struct AssetOptionFieldText {
 }
 
 #[derive(Serialize, Deserialize)]
-pub enum AtlasType {
+pub enum AtlasCollectionType {
     #[serde(rename = "atlas")]
     Atlas,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct Atlas {
+pub struct AtlasCollection {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
-    pub id: AtlasId,
+    pub id: AtlasCollectionId,
 
     /// Attribution for the original source (such as a book or website) of this
     /// item, including the author and licensing information.
@@ -1077,7 +1077,7 @@ pub struct Atlas {
     pub name: Label,
 
     #[serde(rename = "type")]
-    pub type_: AtlasType,
+    pub type_: AtlasCollectionType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.
@@ -1093,7 +1093,7 @@ pub struct Atlas {
 
     #[serde(rename = "collections")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub collections: Option<Box<HashMap<String, Atlas>>>,
+    pub collections: Option<Box<HashMap<String, AtlasCollection>>>,
 
     /// A thematic color associated with this collection.
     #[serde(rename = "color")]
@@ -1115,7 +1115,7 @@ pub struct Atlas {
     /// than being a standalone collection of its own.
     #[serde(rename = "enhances")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub enhances: Option<Box<AtlasId>>,
+    pub enhances: Option<Box<AtlasCollectionId>>,
 
     /// An SVG icon associated with this collection.
     #[serde(rename = "icon")]
@@ -1130,7 +1130,7 @@ pub struct Atlas {
     /// replaced collection can be considered equivalent to this collection.
     #[serde(rename = "replaces")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub replaces: Option<Box<AtlasId>>,
+    pub replaces: Option<Box<AtlasCollectionId>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1147,6 +1147,9 @@ pub struct Atlas {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
 }
+
+/// A unique ID for an AtlasCollection.
+pub type AtlasCollectionId = String;
 
 #[derive(Serialize, Deserialize)]
 pub enum AtlasEntryType {
@@ -1215,9 +1218,6 @@ pub struct AtlasEntry {
 
 /// A unique ID for an AtlasEntry.
 pub type AtlasEntryId = String;
-
-/// A unique ID for an Atlas.
-pub type AtlasId = String;
 
 /// Information on the original creator of this material.
 #[derive(Serialize, Deserialize)]
@@ -2387,8 +2387,8 @@ pub enum ObjectType {
     #[serde(rename = "asset_collection")]
     AssetCollection,
 
-    #[serde(rename = "atlas")]
-    Atlas,
+    #[serde(rename = "atlas_collection")]
+    AtlasCollection,
 
     #[serde(rename = "atlas_entry")]
     AtlasEntry,
@@ -4565,8 +4565,8 @@ pub enum TagRule {
     #[serde(rename = "asset_collection")]
     AssetCollection(TagRuleAssetCollection),
 
-    #[serde(rename = "atlas")]
-    Atlas(TagRuleAtlas),
+    #[serde(rename = "atlas_collection")]
+    AtlasCollection(TagRuleAtlasCollection),
 
     #[serde(rename = "atlas_entry")]
     AtlasEntry(TagRuleAtlasEntry),
@@ -4643,7 +4643,7 @@ pub struct TagRuleAssetCollection {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct TagRuleAtlas {
+pub struct TagRuleAtlasCollection {
     #[serde(rename = "applies_to")]
     pub appliesTo: Vec<ObjectType>,
 

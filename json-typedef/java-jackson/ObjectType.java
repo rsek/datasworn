@@ -11,8 +11,8 @@ public enum ObjectType {
     @JsonProperty("asset_collection")
     ASSET_COLLECTION,
 
-    @JsonProperty("atlas")
-    ATLAS,
+    @JsonProperty("atlas_collection")
+    ATLAS_COLLECTION,
 
     @JsonProperty("atlas_entry")
     ATLAS_ENTRY,

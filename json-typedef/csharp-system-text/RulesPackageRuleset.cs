@@ -81,7 +81,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("atlas")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, Atlas> Atlas { get; set; }
+        public IDictionary<string, AtlasCollection> Atlas { get; set; }
 
         /// <summary>
         /// A dictionary object of delve sites, like the premade delve sites

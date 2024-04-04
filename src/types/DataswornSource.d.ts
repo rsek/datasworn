@@ -70,7 +70,7 @@ export interface Ruleset {
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	atlas?: Record<DictKey, Atlas> | Map<DictKey, Atlas>
+	atlas?: Record<DictKey, AtlasCollection> | Map<DictKey, AtlasCollection>
 	/**
 	 * A dictionary object containing NPC collections, which contain NPCs.
 	 * @remarks Deserialize as a dictionary object.
@@ -153,7 +153,7 @@ export interface Expansion {
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	atlas?: Record<DictKey, Atlas> | Map<DictKey, Atlas>
+	atlas?: Record<DictKey, AtlasCollection> | Map<DictKey, AtlasCollection>
 	/**
 	 * A dictionary object containing NPC collections, which contain NPCs.
 	 * @remarks Deserialize as a dictionary object.
@@ -233,6 +233,23 @@ export type AssetId = string
 export type AssetIdWildcard = string
 
 /**
+ * A unique ID for an AtlasCollection.
+ * @pattern ```javascript
+ * /^([a-z0-9_]{3,})\/collections\/atlas\/([a-z][a-z_]*)$/
+ * ```
+ * @example "classic/collections/atlas/ironlands"
+ */
+export type AtlasCollectionId = string
+
+/**
+ * A wildcarded ID that can be used to match multiple AtlasCollections.
+ * @pattern ```javascript
+ * /^(\*|([a-z0-9_]{3,}))\/collections\/atlas\/(\*|([a-z][a-z_]*))$/
+ * ```
+ */
+export type AtlasCollectionIdWildcard = string
+
+/**
  * A unique ID for an AtlasEntry.
  * @pattern ```javascript
  * /^([a-z0-9_]{3,})\/atlas\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
@@ -248,23 +265,6 @@ export type AtlasEntryId = string
  * ```
  */
 export type AtlasEntryIdWildcard = string
-
-/**
- * A unique ID for an Atlas.
- * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/atlas\/([a-z][a-z_]*)$/
- * ```
- * @example "classic/collections/atlas/ironlands"
- */
-export type AtlasId = string
-
-/**
- * A wildcarded ID that can be used to match multiple Atlass.
- * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/collections\/atlas\/(\*|([a-z][a-z_]*))$/
- * ```
- */
-export type AtlasIdWildcard = string
 
 /**
  * A unique ID for a ConditionMeterRule.
@@ -760,7 +760,7 @@ export type CollectionType =
 	| 'oracle_collection'
 	| 'move_category'
 	| 'asset_collection'
-	| 'atlas'
+	| 'atlas_collection'
 	| 'npc_collection'
 
 /**
@@ -991,7 +991,7 @@ export type Tag =
 	| OracleCollectionId
 	| MoveCategoryId
 	| AssetCollectionId
-	| AtlasId
+	| AtlasCollectionId
 	| NpcCollectionId
 	| DelveSiteId
 	| DelveSiteThemeId
@@ -1007,7 +1007,7 @@ export type Tag =
 			| OracleCollectionIdWildcard
 			| MoveCategoryIdWildcard
 			| AssetCollectionIdWildcard
-			| AtlasIdWildcard
+			| AtlasCollectionIdWildcard
 			| NpcCollectionIdWildcard
 			| DelveSiteIdWildcard
 			| DelveSiteThemeIdWildcard
@@ -1170,7 +1170,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'atlas'
+			value_type: 'atlas_collection'
 	  }
 	| {
 			/**
@@ -4046,11 +4046,11 @@ export interface TruthOption {
 	table?: OracleTableRowText[]
 }
 
-export interface Atlas {
+export interface AtlasCollection {
 	/**
 	 * The unique Datasworn ID for this item.
 	 */
-	_id?: AtlasId
+	_id?: AtlasCollectionId
 	/**
 	 * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
 	 */
@@ -4095,11 +4095,11 @@ export interface Atlas {
 	/**
 	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
 	 */
-	enhances?: AtlasId
+	enhances?: AtlasCollectionId
 	/**
 	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
 	 */
-	replaces?: AtlasId
+	replaces?: AtlasCollectionId
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -4107,7 +4107,7 @@ export interface Atlas {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	collections?: Record<DictKey, Atlas> | Map<DictKey, Atlas>
+	collections?: Record<DictKey, AtlasCollection> | Map<DictKey, AtlasCollection>
 }
 
 /**

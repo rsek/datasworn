@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 @JsonSerialize
-public class Atlas {
+public class AtlasCollection {
     @JsonProperty("_id")
-    private AtlasId id;
+    private AtlasCollectionId id;
 
     @JsonProperty("_source")
     private SourceInfo source;
@@ -20,7 +20,7 @@ public class Atlas {
     private Label name;
 
     @JsonProperty("type")
-    private AtlasType type;
+    private AtlasCollectionType type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
@@ -32,7 +32,7 @@ public class Atlas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("collections")
-    private Map<String, Atlas> collections;
+    private Map<String, AtlasCollection> collections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("color")
@@ -48,7 +48,7 @@ public class Atlas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("enhances")
-    private AtlasId enhances;
+    private AtlasCollectionId enhances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
@@ -60,7 +60,7 @@ public class Atlas {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private AtlasId replaces;
+    private AtlasCollectionId replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -74,14 +74,14 @@ public class Atlas {
     @JsonProperty("tags")
     private Map<String, Map<String, Tag>> tags;
 
-    public Atlas() {
+    public AtlasCollection() {
     }
 
     /**
      * Getter for id.<p>
      * The unique Datasworn ID for this item.
      */
-    public AtlasId getId() {
+    public AtlasCollectionId getId() {
         return id;
     }
 
@@ -89,7 +89,7 @@ public class Atlas {
      * Setter for id.<p>
      * The unique Datasworn ID for this item.
      */
-    public void setId(AtlasId id) {
+    public void setId(AtlasCollectionId id) {
         this.id = id;
     }
 
@@ -130,14 +130,14 @@ public class Atlas {
     /**
      * Getter for type.<p>
      */
-    public AtlasType getType() {
+    public AtlasCollectionType getType() {
         return type;
     }
 
     /**
      * Setter for type.<p>
      */
-    public void setType(AtlasType type) {
+    public void setType(AtlasCollectionType type) {
         this.type = type;
     }
 
@@ -180,14 +180,14 @@ public class Atlas {
     /**
      * Getter for collections.<p>
      */
-    public Map<String, Atlas> getCollections() {
+    public Map<String, AtlasCollection> getCollections() {
         return collections;
     }
 
     /**
      * Setter for collections.<p>
      */
-    public void setCollections(Map<String, Atlas> collections) {
+    public void setCollections(Map<String, AtlasCollection> collections) {
         this.collections = collections;
     }
 
@@ -246,7 +246,7 @@ public class Atlas {
      * This collection's content enhances the identified collection, rather than
      * being a standalone collection of its own.
      */
-    public AtlasId getEnhances() {
+    public AtlasCollectionId getEnhances() {
         return enhances;
     }
 
@@ -255,7 +255,7 @@ public class Atlas {
      * This collection's content enhances the identified collection, rather than
      * being a standalone collection of its own.
      */
-    public void setEnhances(AtlasId enhances) {
+    public void setEnhances(AtlasCollectionId enhances) {
         this.enhances = enhances;
     }
 
@@ -294,7 +294,7 @@ public class Atlas {
      * This collection replaces the identified collection. References to the
      * replaced collection can be considered equivalent to this collection.
      */
-    public AtlasId getReplaces() {
+    public AtlasCollectionId getReplaces() {
         return replaces;
     }
 
@@ -303,7 +303,7 @@ public class Atlas {
      * This collection replaces the identified collection. References to the
      * replaced collection can be considered equivalent to this collection.
      */
-    public void setReplaces(AtlasId replaces) {
+    public void setReplaces(AtlasCollectionId replaces) {
         this.replaces = replaces;
     }
 

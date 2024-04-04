@@ -49,7 +49,7 @@ public class RulesPackageRuleset extends RulesPackage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("atlas")
-    private Map<String, Atlas> atlas;
+    private Map<String, AtlasCollection> atlas;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("delve_sites")
@@ -261,7 +261,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * A dictionary object containing atlas collections, which contain atlas
      * entries.
      */
-    public Map<String, Atlas> getAtlas() {
+    public Map<String, AtlasCollection> getAtlas() {
         return atlas;
     }
 
@@ -270,7 +270,7 @@ public class RulesPackageRuleset extends RulesPackage {
      * A dictionary object containing atlas collections, which contain atlas
      * entries.
      */
-    public void setAtlas(Map<String, Atlas> atlas) {
+    public void setAtlas(Map<String, AtlasCollection> atlas) {
         this.atlas = atlas;
     }
 

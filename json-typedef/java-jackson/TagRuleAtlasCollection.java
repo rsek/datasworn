@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class TagRuleAtlas extends TagRule {
+public class TagRuleAtlasCollection extends TagRule {
     @JsonProperty("applies_to")
     private List<ObjectType> appliesTo;
 
@@ -17,7 +17,7 @@ public class TagRuleAtlas extends TagRule {
     @JsonProperty("wildcard")
     private Boolean wildcard;
 
-    public TagRuleAtlas() {
+    public TagRuleAtlasCollection() {
     }
 
     /**

@@ -332,7 +332,7 @@ declare namespace RecursiveCollectableId {
     } : never;
 }
 /**
- * Represents an ID for a {@link OracleCollection}, {@link NpcCollection}, or {@link Atlas}
+ * Represents an ID for a {@link OracleCollection}, {@link NpcCollection}, or {@link AtlasCollection}
  */
 declare class RecursiveCollectionId<RulesPackage extends string = string, Subtype extends TypeElements.Collectable.Recursive = TypeElements.Collectable.Recursive, AncestorKeys extends Strings.CollectionAncestorKeys = Strings.CollectionAncestorKeys, Key extends string = string> extends CollectionId<RulesPackage, Subtype, AncestorKeys, Key> {
     createChildCollectableId<ChildKey extends string>(childKey: ChildKey): RecursiveCollectableId<RulesPackage, Subtype, [...AncestorKeys, Key], ChildKey>;
