@@ -11,6 +11,7 @@ export function FlatIntersect<T extends TObject[]>(
 	schemas: [...T],
 	options: ObjectOptions = {}
 ) {
+	// this isn't especially precise, but good enough for our purposes
 	const mergedProps = {} as UnionToIntersection<T[number]['properties']>
 
 	for (const schema of schemas) {
