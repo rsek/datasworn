@@ -2876,19 +2876,6 @@
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
 						},
-						"column_labels": {
-							"properties": {
-								"roll": {
-									"ref": "Label"
-								},
-								"text": {
-									"ref": "Label"
-								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
-							}
-						},
 						"dice": {
 							"ref": "DiceExpression",
 							"metadata": {
@@ -2906,6 +2893,19 @@
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						}
 					},
@@ -2938,6 +2938,18 @@
 								"propertyPattern": "^([a-z0-9_]{3,})$"
 							}
 						},
+						"replaces": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
 						"recommended_rolls": {
 							"properties": {
 								"min": {
@@ -2964,18 +2976,6 @@
 							"ref": "MarkdownString",
 							"metadata": {
 								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
-							}
-						},
-						"replaces": {
-							"ref": "OracleRollableId",
-							"metadata": {
-								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-							}
-						},
-						"match": {
-							"ref": "OracleMatchBehavior",
-							"metadata": {
-								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 							}
 						}
 					},
@@ -3003,22 +3003,6 @@
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
 						},
-						"column_labels": {
-							"properties": {
-								"roll": {
-									"ref": "Label"
-								},
-								"text": {
-									"ref": "Label"
-								},
-								"text2": {
-									"ref": "Label"
-								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
-							}
-						},
 						"dice": {
 							"ref": "DiceExpression",
 							"metadata": {
@@ -3036,6 +3020,22 @@
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						}
 					},
@@ -3068,6 +3068,18 @@
 								"propertyPattern": "^([a-z0-9_]{3,})$"
 							}
 						},
+						"replaces": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
 						"recommended_rolls": {
 							"properties": {
 								"min": {
@@ -3094,18 +3106,6 @@
 							"ref": "MarkdownString",
 							"metadata": {
 								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
-							}
-						},
-						"replaces": {
-							"ref": "OracleRollableId",
-							"metadata": {
-								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-							}
-						},
-						"match": {
-							"ref": "OracleMatchBehavior",
-							"metadata": {
-								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 							}
 						}
 					},
@@ -3133,25 +3133,6 @@
 								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 							}
 						},
-						"column_labels": {
-							"properties": {
-								"roll": {
-									"ref": "Label"
-								},
-								"text": {
-									"ref": "Label"
-								},
-								"text2": {
-									"ref": "Label"
-								},
-								"text3": {
-									"ref": "Label"
-								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
-							}
-						},
 						"dice": {
 							"ref": "DiceExpression",
 							"metadata": {
@@ -3169,6 +3150,25 @@
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								},
+								"text3": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						}
 					},
@@ -3201,6 +3201,18 @@
 								"propertyPattern": "^([a-z0-9_]{3,})$"
 							}
 						},
+						"replaces": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
 						"recommended_rolls": {
 							"properties": {
 								"min": {
@@ -3227,18 +3239,6 @@
 							"ref": "MarkdownString",
 							"metadata": {
 								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
-							}
-						},
-						"replaces": {
-							"ref": "OracleRollableId",
-							"metadata": {
-								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
-							}
-						},
-						"match": {
-							"ref": "OracleMatchBehavior",
-							"metadata": {
-								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
 							}
 						}
 					},
@@ -5736,6 +5736,9 @@
 					"metadata": {
 						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
 					}
+				},
+				"dice": {
+					"ref": "DiceExpression"
 				},
 				"options": {
 					"elements": {

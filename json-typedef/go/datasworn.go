@@ -4336,6 +4336,8 @@ type Truth struct {
 	// item, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
+	Dice DiceExpression `json:"dice"`
+
 	// The primary name/label for this item.
 	Name Label `json:"name"`
 

@@ -22153,6 +22153,7 @@
 		"old_world": {
 			"_id": "classic/truths/old_world",
 			"name": "The Old World",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "The savage clans called the Skulde invaded the kingdoms of the Old World. Our armies fell. Most were killed or taken into slavery. Those who escaped set sail aboard anything that would float. After an arduous months-long voyage, the survivors made landfall upon the Ironlands.",
@@ -22183,6 +22184,7 @@
 		"iron": {
 			"_id": "classic/truths/iron",
 			"name": "Iron",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron.",
@@ -22213,6 +22215,7 @@
 		"legacies": {
 			"_id": "classic/truths/legacies",
 			"name": "Legacies",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "We are the first humans to walk these lands.",
@@ -22243,6 +22246,7 @@
 		"communities": {
 			"_id": "classic/truths/communities",
 			"name": "Communities",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion.",
@@ -22273,6 +22277,7 @@
 		"leaders": {
 			"_id": "classic/truths/leaders",
 			"name": "Leaders",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
@@ -22303,6 +22308,7 @@
 		"defense": {
 			"_id": "classic/truths/defense",
 			"name": "Defense",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. When a community is threatened, the people stand together to protect their own.",
@@ -22333,6 +22339,7 @@
 		"mysticism": {
 			"_id": "classic/truths/mysticism",
 			"name": "Mysticism",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
@@ -22363,6 +22370,7 @@
 		"religion": {
 			"_id": "classic/truths/religion",
 			"name": "Religion",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us.",
@@ -22393,6 +22401,7 @@
 		"firstborn": {
 			"_id": "classic/truths/firstborn",
 			"name": "Firstborn",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
@@ -22423,6 +22432,7 @@
 		"beasts": {
 			"_id": "classic/truths/beasts",
 			"name": "Beasts",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist.",
@@ -22453,6 +22463,7 @@
 		"horrors": {
 			"_id": "classic/truths/horrors",
 			"name": "Horrors",
+			"dice": "1d100",
 			"options": [
 				{
 					"description": "Nothing but stories to frighten children.",

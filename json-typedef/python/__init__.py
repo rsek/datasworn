@@ -8763,6 +8763,7 @@ class Truth:
     item, including the author and licensing information.
     """
 
+    dice: 'DiceExpression'
     name: 'Label'
     """
     The primary name/label for this item.
@@ -8792,6 +8793,7 @@ class Truth:
         return cls(
             _from_json_data(TruthID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
+            _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[TruthOption], data.get("options")),
             _from_json_data(Optional[str], data.get("_comment")),
@@ -8807,6 +8809,7 @@ class Truth:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
         data["_source"] = _to_json_data(self.source)
+        data["dice"] = _to_json_data(self.dice)
         data["name"] = _to_json_data(self.name)
         data["options"] = _to_json_data(self.options)
         if self.comment is not None:

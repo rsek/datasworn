@@ -19,6 +19,9 @@ public class Truth {
     @JsonProperty("_source")
     private SourceInfo source;
 
+    @JsonProperty("dice")
+    private DiceExpression dice;
+
     @JsonProperty("name")
     private Label name;
 
@@ -88,6 +91,20 @@ public class Truth {
      */
     public void setSource(SourceInfo source) {
         this.source = source;
+    }
+
+    /**
+     * Getter for dice.<p>
+     */
+    public DiceExpression getDice() {
+        return dice;
+    }
+
+    /**
+     * Setter for dice.<p>
+     */
+    public void setDice(DiceExpression dice) {
+        this.dice = dice;
     }
 
     /**

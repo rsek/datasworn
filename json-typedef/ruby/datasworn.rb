@@ -7152,6 +7152,7 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # item, including the author and licensing information.
     attr_accessor :source
+    attr_accessor :dice
 
     # The primary name/label for this item.
     attr_accessor :name
@@ -7174,6 +7175,7 @@ module Datasworn
       out = Truth.new
       out.id = Datasworn::from_json_data(TruthID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.options = Datasworn::from_json_data(Array[TruthOption], data["options"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
@@ -7190,6 +7192,7 @@ module Datasworn
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
       data["_source"] = Datasworn::to_json_data(source)
+      data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["options"] = Datasworn::to_json_data(options)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?

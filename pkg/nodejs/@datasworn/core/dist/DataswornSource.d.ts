@@ -2071,6 +2071,24 @@ export interface OracleTableText {
      */
     tags?: Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>> | Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>;
     oracle_type: 'table_text';
+    /**
+     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+     */
+    replaces?: OracleRollableId;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: OracleTableRowText[];
     recommended_rolls?: {
         /**
          * @default 1
@@ -2107,24 +2125,6 @@ export interface OracleTableText {
          */
         text: Label;
     };
-    /**
-     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
-     */
-    replaces?: OracleRollableId;
-    /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
-     */
-    dice?: DiceExpression;
-    /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
-     */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: OracleTableRowText[];
 }
 /**
  * A rollable oracle table with one roll column and two text columns.
@@ -2156,6 +2156,24 @@ export interface OracleTableText2 {
      */
     tags?: Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>> | Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>;
     oracle_type: 'table_text2';
+    /**
+     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+     */
+    replaces?: OracleRollableId;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRowText2>;
     recommended_rolls?: {
         /**
          * @default 1
@@ -2196,24 +2214,6 @@ export interface OracleTableText2 {
          */
         text2: Label;
     };
-    /**
-     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
-     */
-    replaces?: OracleRollableId;
-    /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
-     */
-    dice?: DiceExpression;
-    /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
-     */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleTableRowText2>;
 }
 /**
  * A rollable oracle table with one roll column and 3 text columns.
@@ -2245,6 +2245,24 @@ export interface OracleTableText3 {
      */
     tags?: Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>> | Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>;
     oracle_type: 'table_text3';
+    /**
+     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+     */
+    replaces?: OracleRollableId;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRowText3>;
     recommended_rolls?: {
         /**
          * @default 1
@@ -2277,24 +2295,6 @@ export interface OracleTableText3 {
         text2: Label;
         text3: Label;
     };
-    /**
-     * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
-     */
-    replaces?: OracleRollableId;
-    /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
-     */
-    dice?: DiceExpression;
-    /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
-     */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleTableRowText3>;
 }
 /**
  * An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.
@@ -3614,6 +3614,10 @@ export interface Truth {
      * @experimental
      */
     tags?: Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>> | Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>;
+    /**
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
     icon?: SvgImageUrl;
     summary?: MarkdownString;
     options: TruthOption[];

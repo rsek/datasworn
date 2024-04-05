@@ -23,6 +23,7 @@ import {
 	OracleTableRowText3,
 	Text3ColumnLabels
 } from './TableRow.js'
+import { FlatIntersect } from '../utils/FlatIntersect.js'
 
 // metadata necessary to generate a roll result from an OracleRollable
 const RollableMeta = Type.Object({
@@ -63,13 +64,20 @@ function RollableTable<OracleRow extends TObject, MappingKey extends string>(
 	column_labels: ReturnType<typeof ColumnLabels<OracleRow>> | null,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
-	const base = Type.Object({
-		oracle_type: Type.Literal(mappingKey),
-		...(column_labels != null
-			? TableMixin<OracleRow>(column_labels).properties
-			: {}),
-		...RollableMixin(row).properties
-	})
+	// const base = Type.Object({
+	// 	oracle_type: Type.Literal(mappingKey),
+	// 	...(column_labels != null
+	// 		? TableMixin<OracleRow>(column_labels).properties
+	// 		: {}),
+	// 	...RollableMixin(row).properties
+	// })
+
+	const base = FlatIntersect([
+		Type.Object({ oracle_type: Type.Literal(mappingKey) }),
+		RollableMixin(row),
+		TableMixin<OracleRow>(column_labels ?? {})
+	])
+
 	return Generic.RecursiveCollectable(
 		Type.Ref(Id.OracleRollableId),
 		'oracle_rollable',
@@ -102,25 +110,32 @@ function OracleRollableBase<
 	Props extends TProperties,
 	OracleRow extends TRef<TObject>
 >(row: OracleRow, properties: Props) {
-	const base = Type.Object({
-		...CloneType(TableMeta).properties,
-		...CloneType(Type.Object(properties)).properties,
-		rows: Type.Array(
-			{
-				...row
-			},
-			{
+	const base2 = FlatIntersect([
+		TableMeta,
+		Type.Object({
+			...properties,
+			rows: Type.Array(row, {
 				description:
 					'An array of objects, each representing a single row of the table.'
-			}
-		)
-	}) as TObject<
-		(typeof TableMeta)['properties'] & Props & { rows: TArray<OracleRow> }
-	>
+			})
+		})
+	])
+	// const base = Type.Object({
+	// 	...CloneType(TableMeta).properties,
+	// 	...CloneType(Type.Object(properties)).properties,
+	// 	rows: Type.Array(row,
+	// 		{
+	// 			description:
+	// 				'An array of objects, each representing a single row of the table.'
+	// 		}
+	// 	)
+	// }) as TObject<
+	// 	(typeof TableMeta)['properties'] & Props & { rows: TArray<OracleRow> }
+	// >
 	return Generic.RecursiveCollectable(
 		Type.Ref(Id.OracleRollableId),
 		'oracle_rollable',
-		base
+		base2
 	)
 }
 

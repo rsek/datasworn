@@ -7183,7 +7183,7 @@
 			"title": "Truth",
 			"type": "object",
 			"description": "A setting truth category.",
-			"required": ["_id", "name", "options", "_source"],
+			"required": ["_id", "name", "dice", "options", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/TruthId",
@@ -7200,9 +7200,13 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"default": "1d100"
+				},
 				"options": {
 					"type": "array",
-					"rollable": "1d100",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/TruthOption"
 					}

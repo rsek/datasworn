@@ -23,6 +23,9 @@ namespace Datasworn
         [JsonPropertyName("_source")]
         public SourceInfo Source { get; set; }
 
+        [JsonPropertyName("dice")]
+        public DiceExpression Dice { get; set; }
+
         /// <summary>
         /// The primary name/label for this item.
         /// </summary>

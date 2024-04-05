@@ -5121,6 +5121,9 @@ pub struct Truth {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
     /// The primary name/label for this item.
     #[serde(rename = "name")]
     pub name: Label,

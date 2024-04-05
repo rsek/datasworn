@@ -2,6 +2,8 @@ import { Type, type Static } from '@sinclair/typebox'
 import { Id, Localize, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as TableRow from './oracles/TableRow.js'
+import { DiceExpression } from './common/Rolls.js'
+import { OracleTableText } from './index.js'
 
 // export const TruthOptionTableRow = Type.Omit(
 // 	TableRow.OracleTableRowText,
@@ -11,6 +13,8 @@ import * as TableRow from './oracles/TableRow.js'
 // 	}
 // )
 // export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
+
+const RollableStub = Type.Pick(OracleTableText, [])
 
 export const TruthOption = Type.Object(
 	{
@@ -25,16 +29,15 @@ export const TruthOption = Type.Object(
 	{ $id: 'TruthOption' }
 )
 
-
-
 export type TruthOption = Static<typeof TruthOption>
 
 export const Truth = Generic.SourcedNode(
 	Type.Ref(Id.TruthId),
 	Type.Object({
+		dice: Type.Ref(DiceExpression, { default: '1d100' }),
 		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 		summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
-		options: Type.Array(Type.Ref(TruthOption), { rollable: '1d100' }),
+		options: Type.Array(Type.Ref(TruthOption), { rollable: true }),
 		your_character: Type.Optional(Type.Ref(Localize.MarkdownString))
 	}),
 	{

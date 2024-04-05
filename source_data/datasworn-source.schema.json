@@ -7353,9 +7353,13 @@
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"default": "1d100"
+				},
 				"options": {
 					"type": "array",
-					"rollable": "1d100",
+					"rollable": true,
 					"items": {
 						"$ref": "#/definitions/TruthOption"
 					}

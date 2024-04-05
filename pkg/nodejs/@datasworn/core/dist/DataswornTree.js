@@ -16,6 +16,8 @@ class DataswornTree extends Map {
     set(key, value) {
         if (value._id !== key)
             throw new Error(`Expected a Datasworn RulesPackage object with ID "${key}", but the RulesPackage ID is ${value._id}`);
+        if (value.type !== 'ruleset' && value.type !== 'expansion')
+            throw new Error(`Expected a RulesPackage object with a type property value of "ruleset" or "expansion", but got ${String(value === null || value === void 0 ? void 0 : value.type)}`);
         return super.set(key, value);
     }
 }

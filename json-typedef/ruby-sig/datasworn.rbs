@@ -2521,6 +2521,7 @@ module Datasworn
   class Truth
     attr_accessor id: TruthID
     attr_accessor source: SourceInfo
+    attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor options: Array[TruthOption]
     attr_accessor comment: String?
