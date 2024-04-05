@@ -23,6 +23,9 @@ import * as Generic from '../Generic.js'
 import * as Utils from '../utils/Assign.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
 
+/** The property key used to discriminate move subtypes */
+export const moveDiscriminator = 'roll_type'
+
 const MoveBase = Type.Object({
 	replaces: Type.Optional(
 		Type.Ref(Id.MoveId, {
@@ -49,7 +52,7 @@ export function Move<
 	const base = Utils.Assign([
 		MoveBase,
 		Type.Object({
-			roll_type: ExtractLiteralFromEnum(MoveRollType, rollType),
+			[moveDiscriminator]: ExtractLiteralFromEnum(MoveRollType, rollType),
 			trigger: {
 				title: 'Trigger',
 				description: 'Trigger conditions for this move.',
@@ -59,7 +62,7 @@ export function Move<
 		})
 	]) as TObject<
 		ObjectProperties<typeof MoveBase> & {
-			roll_type: TLiteral<RollType>
+			[moveDiscriminator]: TLiteral<RollType>
 			trigger: Trigger
 			outcomes: Outcomes
 		}
@@ -78,7 +81,7 @@ export type Move<
 	Outcomes extends MoveOutcomes | null
 > = Generic.Collectable<
 	Static<typeof MoveBase> & {
-		roll_type: RollType
+		[moveDiscriminator]: RollType
 		trigger: MoveTrigger
 		outcomes: Outcomes
 	}
@@ -89,9 +92,8 @@ export function MoveEnhancement<
 	Trigger extends TRef<TTriggerEnhancement>
 >(rollType: RollType, trigger: Trigger, options: ObjectOptions = {}) {
 	const base = Type.Object({
-		roll_type: ExtractLiteralFromEnum(MoveRollType, rollType, {
-			description:
-				'A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties.'
+		[moveDiscriminator]: ExtractLiteralFromEnum(MoveRollType, rollType, {
+			description: `A move must have this \`${moveDiscriminator}\` to receive this enhancement. This is in addition to any other restrictions made by other properties.`
 		}),
 		trigger: Type.Optional(trigger)
 	})
@@ -103,6 +105,6 @@ export function MoveEnhancement<
 	})
 }
 export type MoveEnhancement<T extends MoveRollType, E> = Generic.EnhanceMany<{
-	roll_type: T
+	[moveDiscriminator]: T
 	trigger?: E
 }>

@@ -12,7 +12,7 @@ const addFormats = ajvFormatPkg.default
 
 const AJV = new Ajv({
 	logger: Log,
-	passContext: true,
+	// passContext: true,
 	// removeAdditional: true,
 	strict: 'log',
 	strictSchema: 'log',

@@ -1,23 +1,22 @@
-import { type Static, Type, type TSchema } from '@sinclair/typebox'
+import { Type, type Static } from '@sinclair/typebox'
 import * as CONST from '../scripts/const.js'
 
-import { Expansion, Ruleset, RulesPackage, Version } from './RulesPackages.js'
-import { RootObject, SourceRootObject } from './root/Root.js'
 import Defs from './Defs.js'
+import { RootObject, SourceRootObject } from './root/Root.js'
+import { RulesPackage, Version } from './RulesPackages.js'
 
+import { RulesetId } from './common/Id.js'
 import {
 	Asset,
 	DelveSite,
 	DelveSiteDomain,
 	DelveSiteTheme,
-	Metadata,
+	Move,
 	Npc,
 	OracleRollable,
-	Rarity,
-	Move
+	Rarity
 } from './index.js'
 import * as Utils from './Utils.js'
-import { RulesetId } from './common/Id.js'
 
 const RootObjectMixin = Type.Object(
 	{
@@ -73,3 +72,25 @@ export const DataswornSourceSchema = SourceRootObject(Type.Ref(SourceRoot), {
 
 export type DataswornSchema = Static<typeof DataswornSchema>
 export type DataswornSourceSchema = Static<typeof DataswornSourceSchema>
+
+// for (const schema of [
+// 	Defs.Asset,
+// 	...Object.values(Defs.Move[Mapping]),
+// 	...Object.values(Defs.OracleRollable[Mapping]),
+// 	Defs.AtlasEntry,
+// 	Defs.Npc,
+// 	Defs.DelveSiteTheme,
+// 	Defs.DelveSiteDomain,
+// 	Defs.DelveSite
+// ]) {
+// 	const base = {
+// 		type: schema.properties.type.const
+// 	}
+// 	for (const k in schema.properties) {
+// 		if (k.endsWith('_type')) base[k] = schema.properties[k].const
+// 	}
+// 	console.log(
+// 		schema.$id,
+// 		Value.Default(schema, Object.values(DataswornSchema[CONST.DefsKey]), base)
+// 	)
+// }
