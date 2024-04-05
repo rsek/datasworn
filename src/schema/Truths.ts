@@ -14,7 +14,7 @@ import { OracleTableText } from './index.js'
 // )
 // export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
 
-const RollableStub = Type.Pick(OracleTableText, [])
+const RollableStub = Type.Pick(OracleTableText, ['oracle_type', 'dice', 'rows'])
 
 export const TruthOption = Type.Object(
 	{
@@ -24,7 +24,10 @@ export const TruthOption = Type.Object(
 		description: Type.Ref(Localize.MarkdownString),
 		quest_starter: Type.Ref(Localize.MarkdownString),
 		// TODO: this should probably be a proper table object so that custom dice can be specified...
-		table: Type.Optional(Type.Array(Type.Ref(TableRow.OracleTableRowText)))
+		table: Type.Optional(
+			RollableStub
+			// Type.Array(Type.Ref(TableRow.OracleTableRowText))
+		)
 	},
 	{ $id: 'TruthOption' }
 )

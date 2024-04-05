@@ -5,7 +5,6 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
 
 @JsonSerialize
 public class TruthOption {
@@ -29,7 +28,7 @@ public class TruthOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("table")
-    private List<OracleTableRowText> table;
+    private TruthOptionTable table;
 
     public TruthOption() {
     }
@@ -106,15 +105,19 @@ public class TruthOption {
 
     /**
      * Getter for table.<p>
+     * Represents a basic rollable oracle table with one roll column and one
+     * text result column.
      */
-    public List<OracleTableRowText> getTable() {
+    public TruthOptionTable getTable() {
         return table;
     }
 
     /**
      * Setter for table.<p>
+     * Represents a basic rollable oracle table with one roll column and one
+     * text result column.
      */
-    public void setTable(List<OracleTableRowText> table) {
+    public void setTable(TruthOptionTable table) {
         this.table = table;
     }
 }

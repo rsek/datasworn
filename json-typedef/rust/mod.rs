@@ -5168,6 +5168,28 @@ pub struct Truth {
 pub type TruthId = String;
 
 #[derive(Serialize, Deserialize)]
+pub enum TruthOptionTableOracleType {
+    #[serde(rename = "table_text")]
+    TableText,
+}
+
+/// Represents a basic rollable oracle table with one roll column and one text
+/// result column.
+#[derive(Serialize, Deserialize)]
+pub struct TruthOptionTable {
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: TruthOptionTableOracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleTableRowText>,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct TruthOption {
     #[serde(rename = "description")]
     pub description: MarkdownString,
@@ -5187,9 +5209,11 @@ pub struct TruthOption {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
 
+    /// Represents a basic rollable oracle table with one roll column and one
+    /// text result column.
     #[serde(rename = "table")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub table: Option<Box<Vec<OracleTableRowText>>>,
+    pub table: Option<Box<TruthOptionTable>>,
 }
 
 /// An absolute URL pointing to a website.

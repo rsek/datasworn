@@ -2543,13 +2543,31 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class TruthOptionTableOracleType
+    attr_accessor value: String
+
+    TABLE_TEXT: TruthOptionTableOracleType
+
+    def self.from_json_data: (untyped) -> TruthOptionTableOracleType
+    def to_json_data: () -> untyped
+  end
+
+  class TruthOptionTable
+    attr_accessor dice: DiceExpression
+    attr_accessor oracle_type: TruthOptionTableOracleType
+    attr_accessor rows: Array[OracleTableRowText]
+
+    def self.from_json_data: (untyped) -> TruthOptionTable
+    def to_json_data: () -> untyped
+  end
+
   class TruthOption
     attr_accessor description: MarkdownString
     attr_accessor quest_starter: MarkdownString
     attr_accessor max: Integer?
     attr_accessor min: Integer?
     attr_accessor summary: MarkdownString?
-    attr_accessor table: Array[OracleTableRowText]?
+    attr_accessor table: TruthOptionTable?
 
     def self.from_json_data: (untyped) -> TruthOption
     def to_json_data: () -> untyped

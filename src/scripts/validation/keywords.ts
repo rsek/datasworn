@@ -1,6 +1,23 @@
 import { type KeywordDefinition } from 'ajv'
 import { Keywords } from '../augmentations.js'
 
+const rollableTableLike = {
+	/* type annotation omitted because it won't place nice with anyOf */
+	// type: 'array'
+
+	items: {
+		type: 'object',
+		properties: {
+			min: {
+				anyOf: [{ type: 'integer' }, { type: 'null' }]
+			},
+			max: {
+				anyOf: [{ type: 'integer' }, { type: 'null' }]
+			}
+		}
+	}
+}
+
 export const KEYWORDS: Record<string, Omit<KeywordDefinition, 'keyword'>> = {
 	releaseStage: {
 		metaSchema: Keywords.releaseStage
@@ -13,18 +30,7 @@ export const KEYWORDS: Record<string, Omit<KeywordDefinition, 'keyword'>> = {
 		metaSchema: Keywords.remarks
 	},
 	rollable: {
-		type: 'array',
-		items: {
-			type: 'object',
-			properties: {
-				min: {
-					anyOf: [{ type: 'integer' }, { type: 'null' }]
-				},
-				max: {
-					anyOf: [{ type: 'integer' }, { type: 'null' }]
-				}
-			}
-		},
+		...rollableTableLike,
 		metaSchema: Keywords.rollable
 	}
 }

@@ -52433,28 +52433,32 @@
 					"summary": "The Sun Plague extinguished the stars in our home galaxy.",
 					"description": "The anomaly traveled at incredible speeds, many times faster than light itself, and snuffed out the stars around us before we realized it was coming. Few of us survived as we made our way to this new galaxy. Here in the Forge, the stars are still aflame. We cling to their warmth like weary travelers huddled around a fire.\n\nWe suspect the sun plague was caused by:\n\n{{table:starforged/truths/cataclysm/0}}",
 					"quest_starter": "The galaxy your people left behind is a cold, lightless grave. But a solitary star still glows, a beacon in a vast darkness. How did this star survive the plague? Why do you vow to find the means to travel across the immeasurable gulf to this distant light?",
-					"table": [
-						{
-							"min": 1,
-							"max": 25,
-							"text": "Temporal distortions from a supermassive black hole"
-						},
-						{
-							"min": 26,
-							"max": 50,
-							"text": "Sudden dark matter decay"
-						},
-						{
-							"min": 51,
-							"max": 75,
-							"text": "Superweapon run amok"
-						},
-						{
-							"min": 76,
-							"max": 100,
-							"text": "Scientific experiment gone awry"
-						}
-					]
+					"table": {
+						"oracle_type": "table_text",
+						"dice": "1d100",
+						"rows": [
+							{
+								"min": 1,
+								"max": 25,
+								"text": "Temporal distortions from a supermassive black hole"
+							},
+							{
+								"min": 26,
+								"max": 50,
+								"text": "Sudden dark matter decay"
+							},
+							{
+								"min": 51,
+								"max": 75,
+								"text": "Superweapon run amok"
+							},
+							{
+								"min": 76,
+								"max": 100,
+								"text": "Scientific experiment gone awry"
+							}
+						]
+					}
 				},
 				{
 					"min": 34,
@@ -52462,43 +52466,47 @@
 					"summary": "Interdimensional entities invaded our reality.",
 					"description": "Without warning, these implacable and enigmatic beings ravaged our homeworlds. We could not stand against them. With the last of our defenses destroyed, our hope gone, we cast our fate to the Forge. Here, we can hide. Survive.\n\nThese entities took the form of:\n\n{{table:starforged/truths/cataclysm/1}}",
 					"quest_starter": "Here in the Forge, a rogue faction holds an artifact of these interdimensional entities. What is the nature of this relic? What power or dark fate does the faction intend to unleash?",
-					"table": [
-						{
-							"min": 1,
-							"max": 15,
-							"text": "Corrupting biological scourges"
-						},
-						{
-							"min": 16,
-							"max": 30,
-							"text": "Swarming, animalistic creatures"
-						},
-						{
-							"min": 31,
-							"max": 44,
-							"text": "Monstrous humanoids"
-						},
-						{
-							"min": 45,
-							"max": 58,
-							"text": "Spirits of alluring, divine form"
-						},
-						{
-							"min": 59,
-							"max": 72,
-							"text": "Beings of chaotic energy"
-						},
-						{
-							"min": 73,
-							"max": 86,
-							"text": "Titanic creatures of horrific power"
-						},
-						{
-							"min": 87,
-							"max": 100,
-							"text": "World-eating abominations of unimaginable scale"
-						}
-					]
+					"table": {
+						"oracle_type": "table_text",
+						"dice": "1d100",
+						"rows": [
+							{
+								"min": 1,
+								"max": 15,
+								"text": "Corrupting biological scourges"
+							},
+							{
+								"min": 16,
+								"max": 30,
+								"text": "Swarming, animalistic creatures"
+							},
+							{
+								"min": 31,
+								"max": 44,
+								"text": "Monstrous humanoids"
+							},
+							{
+								"min": 45,
+								"max": 58,
+								"text": "Spirits of alluring, divine form"
+							},
+							{
+								"min": 59,
+								"max": 72,
+								"text": "Beings of chaotic energy"
+							},
+							{
+								"min": 73,
+								"max": 86,
+								"text": "Titanic creatures of horrific power"
+							},
+							{
+								"min": 87,
+								"max": 100,
+								"text": "World-eating abominations of unimaginable scale"
+							}
+						]
+					}
 				},
 				{
 					"min": 68,
@@ -52506,33 +52514,37 @@
 					"summary": "We escaped the ravages of a catastrophic war.",
 					"description": "Over millennia, we consumed resources and shattered lives as we fueled the engines of industry, expansion, and war. In the end, a powerful foe took advantage of our rivalries in a violent bid for power. Fleeing the devastation, we assembled our fleets and traveled to the Forge. A new home. A fresh start.\n\nIn this final war, we were set upon by:\n\n{{table:starforged/truths/cataclysm/2}}",
 					"quest_starter": "A delegation of your dreaded foe arrives in the Forge. They claim to represent a rebel force seeking sanctuary. In return, they offer vital information. What news do they carry?",
-					"table": [
-						{
-							"min": 1,
-							"max": 20,
-							"text": "Artificial intelligence"
-						},
-						{
-							"min": 21,
-							"max": 40,
-							"text": "Religious zealots"
-						},
-						{
-							"min": 41,
-							"max": 60,
-							"text": "Genetically engineered soldiers"
-						},
-						{
-							"min": 61,
-							"max": 80,
-							"text": "Self-replicating nanomachines"
-						},
-						{
-							"min": 81,
-							"max": 100,
-							"text": "A tyrannical faction or leader"
-						}
-					]
+					"table": {
+						"oracle_type": "table_text",
+						"dice": "1d100",
+						"rows": [
+							{
+								"min": 1,
+								"max": 20,
+								"text": "Artificial intelligence"
+							},
+							{
+								"min": 21,
+								"max": 40,
+								"text": "Religious zealots"
+							},
+							{
+								"min": 41,
+								"max": 60,
+								"text": "Genetically engineered soldiers"
+							},
+							{
+								"min": 61,
+								"max": 80,
+								"text": "Self-replicating nanomachines"
+							},
+							{
+								"min": 81,
+								"max": 100,
+								"text": "A tyrannical faction or leader"
+							}
+						]
+					}
 				}
 			],
 			"your_character": "Do you possess a keepsake or artifact of pre-cataclysm society? What is it? Why is it important to you? If you are all that remains of a people or culture, you might be a [Vestige](id:starforged/assets/path/vestige).",
@@ -52778,33 +52790,37 @@
 					"summary": "Supernatural powers are wielded by those rare people we call paragons.",
 					"description": "While not magic in the truest sense, the abilities of the paragons are as close to magic as we can conjure.\n\nThese powers are born of:\n\n{{table:starforged/truths/magic/1}}",
 					"quest_starter": "A young paragon wields incredible power, but cannot control it. They have been shunned by family and friends. They are also hunted by a person or organization who seeks to use them as a weapon. Why are you sworn to protect the paragon? What fabled location might offer a new home for them?",
-					"table": [
-						{
-							"min": 1,
-							"max": 20,
-							"text": "Genetic engineering"
-						},
-						{
-							"min": 21,
-							"max": 40,
-							"text": "Psychic experimentation"
-						},
-						{
-							"min": 41,
-							"max": 60,
-							"text": "Evolutionary mutations"
-						},
-						{
-							"min": 61,
-							"max": 80,
-							"text": "Magitech augmentations"
-						},
-						{
-							"min": 81,
-							"max": 100,
-							"text": "Ancient knowledge held by secretive orders"
-						}
-					]
+					"table": {
+						"oracle_type": "table_text",
+						"dice": "1d100",
+						"rows": [
+							{
+								"min": 1,
+								"max": 20,
+								"text": "Genetic engineering"
+							},
+							{
+								"min": 21,
+								"max": 40,
+								"text": "Psychic experimentation"
+							},
+							{
+								"min": 41,
+								"max": 60,
+								"text": "Evolutionary mutations"
+							},
+							{
+								"min": 61,
+								"max": 80,
+								"text": "Magitech augmentations"
+							},
+							{
+								"min": 81,
+								"max": 100,
+								"text": "Ancient knowledge held by secretive orders"
+							}
+						]
+					}
 				},
 				{
 					"min": 68,
@@ -52924,23 +52940,27 @@
 					"summary": "We no longer have access to advanced computer systems. Instead, we must rely on the seers we call Adepts.",
 					"description": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because:\n\n{{table:starforged/truths/artificial_intelligence/0}}\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves.",
 					"quest_starter": "An Adept is tormented by a dire future they have seen for the inhabitants of the Forge. What does this vision show?",
-					"table": [
-						{
-							"min": 1,
-							"max": 33,
-							"text": "The energies of the Forge corrupt advanced systems"
-						},
-						{
-							"min": 34,
-							"max": 67,
-							"text": "AI was outlawed in the aftermath of the machine wars"
-						},
-						{
-							"min": 68,
-							"max": 100,
-							"text": "We have lost the knowledge to create and maintain AI"
-						}
-					]
+					"table": {
+						"oracle_type": "table_text",
+						"dice": "1d100",
+						"rows": [
+							{
+								"min": 1,
+								"max": 33,
+								"text": "The energies of the Forge corrupt advanced systems"
+							},
+							{
+								"min": 34,
+								"max": 67,
+								"text": "AI was outlawed in the aftermath of the machine wars"
+							},
+							{
+								"min": 68,
+								"max": 100,
+								"text": "We have lost the knowledge to create and maintain AI"
+							}
+						]
+					}
 				},
 				{
 					"min": 34,

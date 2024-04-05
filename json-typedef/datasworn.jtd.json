@@ -5809,8 +5809,29 @@
 					"ref": "MarkdownString"
 				},
 				"table": {
-					"elements": {
-						"ref": "OracleTableRowText"
+					"properties": {
+						"oracle_type": {
+							"enum": [
+								"table_text"
+							]
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Represents a basic rollable oracle table with one roll column and one text result column."
 					}
 				}
 			}

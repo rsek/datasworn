@@ -7221,12 +7221,64 @@ module Datasworn
     end
   end
 
+  class TruthOptionTableOracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_TEXT = new("table_text")
+
+    def self.from_json_data(data)
+      {
+        "table_text" => TABLE_TEXT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Represents a basic rollable oracle table with one roll column and one text
+  # result column.
+  class TruthOptionTable
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+
+    def self.from_json_data(data)
+      out = TruthOptionTable.new
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.oracle_type = Datasworn::from_json_data(TruthOptionTableOracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data
+    end
+  end
+
   class TruthOption
     attr_accessor :description
     attr_accessor :quest_starter
     attr_accessor :max
     attr_accessor :min
     attr_accessor :summary
+
+    # Represents a basic rollable oracle table with one roll column and one text
+    # result column.
     attr_accessor :table
 
     def self.from_json_data(data)
@@ -7236,7 +7288,7 @@ module Datasworn
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
-      out.table = Datasworn::from_json_data(Array[OracleTableRowText], data["table"])
+      out.table = Datasworn::from_json_data(TruthOptionTable, data["table"])
       out
     end
 

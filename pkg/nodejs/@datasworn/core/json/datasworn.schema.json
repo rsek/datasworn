@@ -7266,9 +7266,27 @@
 					"$ref": "#/definitions/MarkdownString"
 				},
 				"table": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+					"type": "object",
+					"description": "Represents a basic rollable oracle table with one roll column and one text result column.",
+					"required": ["oracle_type", "dice", "rows"],
+					"properties": {
+						"oracle_type": {
+							"type": "string",
+							"const": "table_text"
+						},
+						"dice": {
+							"$ref": "#/definitions/DiceExpression",
+							"description": "The roll used to select a result on this oracle.",
+							"default": "1d100"
+						},
+						"rows": {
+							"type": "array",
+							"description": "An array of objects, each representing a single row of the table.",
+							"rollable": true,
+							"items": {
+								"$ref": "#/definitions/OracleTableRowText"
+							}
+						}
 					}
 				}
 			}

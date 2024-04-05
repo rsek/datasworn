@@ -8843,6 +8843,49 @@ class TruthID:
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
+class TruthOptionTableOracleType(Enum):
+    TABLE_TEXT = "table_text"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TruthOptionTableOracleType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
+@dataclass
+class TruthOptionTable:
+    """
+    Represents a basic rollable oracle table with one roll column and one text
+    result column.
+    """
+
+    dice: 'DiceExpression'
+    """
+    The roll used to select a result on this oracle.
+    """
+
+    oracle_type: 'TruthOptionTableOracleType'
+    rows: 'List[OracleTableRowText]'
+    """
+    An array of objects, each representing a single row of the table.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TruthOptionTable':
+        return cls(
+            _from_json_data(DiceExpression, data.get("dice")),
+            _from_json_data(TruthOptionTableOracleType, data.get("oracle_type")),
+            _from_json_data(List[OracleTableRowText], data.get("rows")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["dice"] = _to_json_data(self.dice)
+        data["oracle_type"] = _to_json_data(self.oracle_type)
+        data["rows"] = _to_json_data(self.rows)
+        return data
+
 @dataclass
 class TruthOption:
     description: 'MarkdownString'
@@ -8850,7 +8893,12 @@ class TruthOption:
     max: 'Optional[int]'
     min: 'Optional[int]'
     summary: 'Optional[MarkdownString]'
-    table: 'Optional[List[OracleTableRowText]]'
+    table: 'Optional[TruthOptionTable]'
+    """
+    Represents a basic rollable oracle table with one roll column and one text
+    result column.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'TruthOption':
@@ -8860,7 +8908,7 @@ class TruthOption:
             _from_json_data(Optional[int], data.get("max")),
             _from_json_data(Optional[int], data.get("min")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[List[OracleTableRowText]], data.get("table")),
+            _from_json_data(Optional[TruthOptionTable], data.get("table")),
         )
 
     def to_json_data(self) -> Any:

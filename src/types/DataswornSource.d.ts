@@ -4054,7 +4054,21 @@ export interface TruthOption {
 	summary?: MarkdownString
 	description: MarkdownString
 	quest_starter: MarkdownString
-	table?: OracleTableRowText[]
+	/**
+	 * Represents a basic rollable oracle table with one roll column and one text result column.
+	 */
+	table?: {
+		oracle_type: 'table_text'
+		/**
+		 * The roll used to select a result on this oracle.
+		 * @default "1d100"
+		 */
+		dice: DiceExpression
+		/**
+		 * An array of objects, each representing a single row of the table.
+		 */
+		rows: OracleTableRowText[]
+	}
 }
 
 export interface AtlasCollection {

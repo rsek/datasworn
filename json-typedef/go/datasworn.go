@@ -4365,6 +4365,24 @@ type Truth struct {
 // A unique ID for a Truth.
 type TruthID = string
 
+type TruthOptionTableOracleType string
+
+const (
+	TruthOptionTableOracleTypeTableText TruthOptionTableOracleType = "table_text"
+)
+
+// Represents a basic rollable oracle table with one roll column and one text
+// result column.
+type TruthOptionTable struct {
+	// The roll used to select a result on this oracle.
+	Dice DiceExpression `json:"dice"`
+
+	OracleType TruthOptionTableOracleType `json:"oracle_type"`
+
+	// An array of objects, each representing a single row of the table.
+	Rows []OracleTableRowText `json:"rows"`
+}
+
 type TruthOption struct {
 	Description MarkdownString `json:"description"`
 
@@ -4376,7 +4394,9 @@ type TruthOption struct {
 
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Table []OracleTableRowText `json:"table,omitempty"`
+	// Represents a basic rollable oracle table with one roll column and one text
+	// result column.
+	Table *TruthOptionTable `json:"table,omitempty"`
 }
 
 // An absolute URL pointing to a website.
