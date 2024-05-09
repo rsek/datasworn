@@ -56,61 +56,62 @@ assets:
           - text: When you make a move to bargain or gain favor with the promise of resources from your hold, you may add +1 or +2. On a hit, [Sacrifice Resources](id:sundered_isles/moves/suffer/sacrifice_resources), suffering the amount added.
           - text: When you [Finish an Expedition](id:sundered_isles/moves/exploration/finish_an_expedition) (dangerous or greater) on a seagoing journey and score a hit, this expedition strengthened your ties to your ship and crew. You and your allies may mark 1 tick on your bonds legacy track.
         _source: *Source
-  incidental_vehicle:
-    _source: *Source
-    type: asset_collection
-    name: Incidental Vehicle Assets
-    # TODO: figure out whether this should be represented as multiple assets
-    summary: When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to cargo and shipwide provisions.
-    contents:
-      sailing_ship:
-        type: asset
-        name: Sailing Ship
-        shared: true
-        category: Incidental Vehicle
-        # TODO: should options be able to set the `value` of condition meters?
-        options:
-          nature:
-            label: nature
-            field_type: select_enhancement
-            choices:
-              heavy:
-                choice_type: choice
-                label: heavy
-                enhance_asset:
-                  controls:
-                    integrity:
-                      field_type: condition_meter
-                      max: 5
-              medium:
-                choice_type: choice
-                label: medium
-                enhance_asset:
-                  controls:
-                    integrity:
-                      field_type: condition_meter
-                      max: 4
-              light:
-                choice_type: choice
-                label: light
-                enhance_asset:
-                  controls:
-                    integrity:
-                      field_type: condition_meter
-                      max: 3
-        controls:
-          integrity:
-            label: integrity
-            field_type: condition_meter
-            max: 3
-            value: 3
-        abilities:
-          - enabled: true
-            text: |-
-              When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to cargo and shipwide provisions.
+## TODO: figure out if this should be in here. it's not an asset -- the book is explicit on this point! and if it's not an asset, it shouldn't be an asset object, should it?
+  # incidental_vehicle:
+  #   _source: *Source
+  #   type: asset_collection
+  #   name: Incidental Vehicle Assets
+  #   # TODO: figure out whether this should be represented as multiple assets
+  #   summary: When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to cargo and shipwide provisions.
+  #   contents:
+  #     sailing_ship:
+  #       type: asset
+  #       name: Sailing Ship
+  #       shared: true
+  #       category: Incidental Vehicle
+  #       # TODO: should options be able to set the `value` of condition meters?
+  #       options:
+  #         nature:
+  #           label: nature
+  #           field_type: select_enhancement
+  #           choices:
+  #             heavy:
+  #               choice_type: choice
+  #               label: heavy
+  #               enhance_asset:
+  #                 controls:
+  #                   integrity:
+  #                     field_type: condition_meter
+  #                     max: 5
+  #             medium:
+  #               choice_type: choice
+  #               label: medium
+  #               enhance_asset:
+  #                 controls:
+  #                   integrity:
+  #                     field_type: condition_meter
+  #                     max: 4
+  #             light:
+  #               choice_type: choice
+  #               label: light
+  #               enhance_asset:
+  #                 controls:
+  #                   integrity:
+  #                     field_type: condition_meter
+  #                     max: 3
+  #       controls:
+  #         integrity:
+  #           label: integrity
+  #           field_type: condition_meter
+  #           max: 3
+  #           value: 3
+  #       abilities:
+  #         - enabled: true
+  #           text: |-
+  #             When you gain command of this ship, envision its nature and assign a max integrity (5, 4, or 3). If this is your primary ship, it has up to 5 hold. You and your allies use your hold value as supply when taking action or suffering a cost related to cargo and shipwide provisions.
 
-              The ship cannot be marked as battered or cursed and cannot be enhanced with modules. If it is destroyed, sunk, lost, abandoned, or upgraded to [FLAGSHIP](id:sundered_isles/assets/command_vehicle/flagship) status, discard this card.
-        _source: *Source
+  #             The ship cannot be marked as battered or cursed and cannot be enhanced with modules. If it is destroyed, sunk, lost, abandoned, or upgraded to [FLAGSHIP](id:sundered_isles/assets/command_vehicle/flagship) status, discard this card.
+  #       _source: *Source
   support_vehicle:
     _source: *Source
     name: Support Vehicle Assets
