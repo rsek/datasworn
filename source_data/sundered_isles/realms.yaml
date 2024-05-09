@@ -4,6 +4,7 @@ type: ruleset
 atlas:
   realms:
     name: Realms
+    type: atlas
     _source:
       <<: &Source
         title: Sundered Isles
@@ -15,6 +16,7 @@ atlas:
     contents:
       seafaring:
         name: The Seafaring Realm
+        type: atlas_entry
         summary: In this realm, the Sundered Isles lie within vast and perilous seas.
         features:
           - Mist-shrouded islands
@@ -37,6 +39,7 @@ atlas:
           <<: *Source
       skyfaring:
         name: The Skyfaring Realm
+        type: atlas_entry
         summary: In this realm, the Sundered Isles are the lofty fragments of a ruined continent.
         features:
           - Airborne islands capped by clinging vegetation
@@ -58,6 +61,7 @@ atlas:
           <<: *Source
       starfaring:
         name: The Starfaring Realm
+        type: atlas_entry
         features:
           - Life-giving starborne currents
           - Colorful clouds of cosmic dust
