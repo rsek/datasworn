@@ -1,4 +1,4 @@
-# Datasworn v0.0.8
+# Datasworn v0.0.9
 
 [![@datasworn/core on npm](https://img.shields.io/npm/v/@datasworn/core?logo=npm)](https://www.npmjs.com/package/@datasworn/core)
 [![@datasworn/core on npm](https://img.shields.io/npm/dm/@datasworn/core?logo=npm)](https://www.npmjs.com/package/@datasworn/core)
@@ -9,7 +9,7 @@
 
 This is a pre-release of the successor to the original Datasworn repository and Dataforged package, which provided game rules from the *Ironsworn* and *Ironsworn: Starforged* in JSON.
 
-Until it reaches v1.0, it may receive breaking changes on any version change.
+**Until it reaches v1.0, it may receive breaking changes on any version change.**
 
 If you're looking for the original Datasworn JSON files, they are available on the [`legacy` branch](https://github.com/rsek/datasworn/tree/legacy).
 
