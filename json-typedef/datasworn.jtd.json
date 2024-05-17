@@ -8,7 +8,7 @@
 				},
 				"datasworn_version": {
 					"enum": [
-						"0.0.9"
+						"0.0.10"
 					],
 					"metadata": {
 						"description": "The version of the Datasworn format used by this data.",
@@ -165,7 +165,7 @@
 				},
 				"datasworn_version": {
 					"enum": [
-						"0.0.9"
+						"0.0.10"
 					],
 					"metadata": {
 						"description": "The version of the Datasworn format used by this data.",

@@ -28,11 +28,11 @@ module Datasworn
 
     private_class_method :new
 
-    DEFAULT_NAME = new("0.0.9")
+    DEFAULT_NAME = new("0.0.10")
 
     def self.from_json_data(data)
       {
-        "0.0.9" => DEFAULT_NAME,
+        "0.0.10" => DEFAULT_NAME,
       }[data]
     end
 
@@ -127,11 +127,11 @@ module Datasworn
 
     private_class_method :new
 
-    DEFAULT_NAME = new("0.0.9")
+    DEFAULT_NAME = new("0.0.10")
 
     def self.from_json_data(data)
       {
-        "0.0.9" => DEFAULT_NAME,
+        "0.0.10" => DEFAULT_NAME,
       }[data]
     end
 

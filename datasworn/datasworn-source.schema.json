@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://ironswornrpg.com/datasworn-source.schema.json",
 	"$ref": "#/definitions/SourceRoot",
-	"title": "DataswornSource v0.0.9",
+	"title": "DataswornSource v0.0.10",
 	"description": "Source data schema for Datasworn, which describes game rules compatible with the Ironsworn tabletop roleplaying game by Shawn Tomkin.\n\nThe source data omits IDs, and makes properties that provide a default value optional; these values are inserted during validation/processing to produce the JSON for distribution.",
 	"definitions": {
 		"SourceRoot": {
@@ -147,7 +147,7 @@
 								"datasworn_version": {
 									"type": "string",
 									"description": "The version of the Datasworn format used by this data.",
-									"const": "0.0.9",
+									"const": "0.0.10",
 									"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 								},
 								"ruleset": {
@@ -213,7 +213,7 @@
 				"datasworn_version": {
 					"type": "string",
 					"description": "The version of the Datasworn format used by this data.",
-					"const": "0.0.9",
+					"const": "0.0.10",
 					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 				},
 				"type": {
@@ -364,7 +364,7 @@
 				"datasworn_version": {
 					"type": "string",
 					"description": "The version of the Datasworn format used by this data.",
-					"const": "0.0.9",
+					"const": "0.0.10",
 					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 				},
 				"type": {

@@ -33,7 +33,7 @@ class RulesPackageExpansionDataswornVersion(Enum):
     The version of the Datasworn format used by this data.
     """
 
-    DEFAULT_NAME = "0.0.9"
+    DEFAULT_NAME = "0.0.10"
     @classmethod
     def from_json_data(cls, data: Any) -> 'RulesPackageExpansionDataswornVersion':
         return cls(data)
@@ -206,7 +206,7 @@ class RulesPackageRulesetDataswornVersion(Enum):
     The version of the Datasworn format used by this data.
     """
 
-    DEFAULT_NAME = "0.0.9"
+    DEFAULT_NAME = "0.0.10"
     @classmethod
     def from_json_data(cls, data: Any) -> 'RulesPackageRulesetDataswornVersion':
         return cls(data)

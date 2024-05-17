@@ -57,7 +57,7 @@ func (v *RulesPackage) UnmarshalJSON(b []byte) error {
 type RulesPackageExpansionDataswornVersion string
 
 const (
-	RulesPackageExpansionDataswornVersion0 RulesPackageExpansionDataswornVersion = "0.0.9"
+	RulesPackageExpansionDataswornVersion0 RulesPackageExpansionDataswornVersion = "0.0.10"
 )
 
 // A Datasworn package that relies on an external package to provide its
@@ -128,7 +128,7 @@ type RulesPackageExpansion struct {
 type RulesPackageRulesetDataswornVersion string
 
 const (
-	RulesPackageRulesetDataswornVersion0 RulesPackageRulesetDataswornVersion = "0.0.9"
+	RulesPackageRulesetDataswornVersion0 RulesPackageRulesetDataswornVersion = "0.0.10"
 )
 
 // A standalone Datasworn package that describes its own ruleset.

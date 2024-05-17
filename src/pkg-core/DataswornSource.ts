@@ -19,7 +19,7 @@ export type SourceRoot =
 			 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
 			 * ```
 			 */
-			datasworn_version: '0.0.9'
+			datasworn_version: '0.0.10'
 			ruleset: RulesetId
 	  })
 
@@ -41,7 +41,7 @@ export interface Ruleset {
 	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
 	 * ```
 	 */
-	datasworn_version: '0.0.9'
+	datasworn_version: '0.0.10'
 	description?: MarkdownString
 	title?: SourceTitle
 	/**
@@ -189,7 +189,7 @@ export interface Expansion {
 	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
 	 * ```
 	 */
-	datasworn_version: '0.0.9'
+	datasworn_version: '0.0.10'
 	ruleset: RulesetId
 	rules?: RulesExpansion
 }

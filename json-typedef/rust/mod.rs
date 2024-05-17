@@ -20,7 +20,7 @@ pub enum RulesPackage {
 /// The version of the Datasworn format used by this data.
 #[derive(Serialize, Deserialize)]
 pub enum RulesPackageExpansionDataswornVersion {
-    #[serde(rename = "0.0.9")]
+    #[serde(rename = "0.0.10")]
     DefaultName,
 }
 
@@ -129,7 +129,7 @@ pub struct RulesPackageExpansion {
 /// The version of the Datasworn format used by this data.
 #[derive(Serialize, Deserialize)]
 pub enum RulesPackageRulesetDataswornVersion {
-    #[serde(rename = "0.0.9")]
+    #[serde(rename = "0.0.10")]
     DefaultName,
 }
 
