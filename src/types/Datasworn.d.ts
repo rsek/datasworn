@@ -38,56 +38,52 @@ export interface Ruleset {
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles:
-		| Record<DictKey, OracleTablesCollection>
-		| Map<DictKey, OracleTablesCollection>
+	oracles: Record<DictKey, OracleTablesCollection>
 	/**
 	 * A dictionary object containing move categories, which contain moves.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	moves: Record<DictKey, MoveCategory> | Map<DictKey, MoveCategory>
+	moves: Record<DictKey, MoveCategory>
 	/**
 	 * A dictionary object containing asset collections, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	assets: Record<DictKey, AssetCollection> | Map<DictKey, AssetCollection>
+	assets: Record<DictKey, AssetCollection>
 	/**
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	atlas?: Record<DictKey, AtlasCollection> | Map<DictKey, AtlasCollection>
+	atlas?: Record<DictKey, AtlasCollection>
 	/**
 	 * A dictionary object containing NPC collections, which contain NPCs.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	npcs?: Record<DictKey, NpcCollection> | Map<DictKey, NpcCollection>
+	npcs?: Record<DictKey, NpcCollection>
 	/**
 	 * A dictionary object of truth categories.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	truths?: Record<DictKey, Truth> | Map<DictKey, Truth>
+	truths?: Record<DictKey, Truth>
 	/**
 	 * A dictionary object containing rarities, like those presented in Ironsworn: Delve.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	rarities?: Record<DictKey, Rarity> | Map<DictKey, Rarity>
+	rarities?: Record<DictKey, Rarity>
 	/**
 	 * A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	delve_sites?: Record<DictKey, DelveSite> | Map<DictKey, DelveSite>
+	delve_sites?: Record<DictKey, DelveSite>
 	/**
 	 * A dictionary object containing delve site themes.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	site_themes?: Record<DictKey, DelveSiteTheme> | Map<DictKey, DelveSiteTheme>
+	site_themes?: Record<DictKey, DelveSiteTheme>
 	/**
 	 * A dictionary object containing delve site domains.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	site_domains?:
-		| Record<DictKey, DelveSiteDomain>
-		| Map<DictKey, DelveSiteDomain>
+	site_domains?: Record<DictKey, DelveSiteDomain>
 }
 
 /**
@@ -114,56 +110,52 @@ export interface Expansion {
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?:
-		| Record<DictKey, OracleTablesCollection>
-		| Map<DictKey, OracleTablesCollection>
+	oracles?: Record<DictKey, OracleTablesCollection>
 	/**
 	 * A dictionary object containing move categories, which contain moves.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	moves?: Record<DictKey, MoveCategory> | Map<DictKey, MoveCategory>
+	moves?: Record<DictKey, MoveCategory>
 	/**
 	 * A dictionary object containing asset collections, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	assets?: Record<DictKey, AssetCollection> | Map<DictKey, AssetCollection>
+	assets?: Record<DictKey, AssetCollection>
 	/**
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	atlas?: Record<DictKey, AtlasCollection> | Map<DictKey, AtlasCollection>
+	atlas?: Record<DictKey, AtlasCollection>
 	/**
 	 * A dictionary object containing NPC collections, which contain NPCs.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	npcs?: Record<DictKey, NpcCollection> | Map<DictKey, NpcCollection>
+	npcs?: Record<DictKey, NpcCollection>
 	/**
 	 * A dictionary object of truth categories.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	truths?: Record<DictKey, Truth> | Map<DictKey, Truth>
+	truths?: Record<DictKey, Truth>
 	/**
 	 * A dictionary object containing rarities, like those presented in Ironsworn: Delve.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	rarities?: Record<DictKey, Rarity> | Map<DictKey, Rarity>
+	rarities?: Record<DictKey, Rarity>
 	/**
 	 * A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	delve_sites?: Record<DictKey, DelveSite> | Map<DictKey, DelveSite>
+	delve_sites?: Record<DictKey, DelveSite>
 	/**
 	 * A dictionary object containing delve site themes.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	site_themes?: Record<DictKey, DelveSiteTheme> | Map<DictKey, DelveSiteTheme>
+	site_themes?: Record<DictKey, DelveSiteTheme>
 	/**
 	 * A dictionary object containing delve site domains.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	site_domains?:
-		| Record<DictKey, DelveSiteDomain>
-		| Map<DictKey, DelveSiteDomain>
+	site_domains?: Record<DictKey, DelveSiteDomain>
 	_id: ExpansionId
 	type: 'expansion'
 	/**
@@ -793,7 +785,7 @@ export interface ImpactCategory {
 	 * A dictionary object of the Impacts in this category.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents: Record<DictKey, ImpactRule> | Map<DictKey, ImpactRule>
+	contents: Record<DictKey, ImpactRule>
 }
 
 /**
@@ -843,26 +835,22 @@ export interface Rules {
 	 * Describes the standard stats used by player characters in this ruleset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	stats: Record<DictKey, StatRule> | Map<DictKey, StatRule>
+	stats: Record<DictKey, StatRule>
 	/**
 	 * Describes the standard condition meters used by player characters in this ruleset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	condition_meters:
-		| Record<DictKey, ConditionMeterRule>
-		| Map<DictKey, ConditionMeterRule>
+	condition_meters: Record<DictKey, ConditionMeterRule>
 	/**
 	 * Describes the standard impacts/debilities used by player characters in this ruleset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	impacts: Record<DictKey, ImpactCategory> | Map<DictKey, ImpactCategory>
+	impacts: Record<DictKey, ImpactCategory>
 	/**
 	 * Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	special_tracks:
-		| Record<DictKey, SpecialTrackRule>
-		| Map<DictKey, SpecialTrackRule>
+	special_tracks: Record<DictKey, SpecialTrackRule>
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 * @default
@@ -873,7 +861,7 @@ export interface Rules {
 	 * ```
 	 * @experimental
 	 */
-	tags: Record<DictKey, TagRule> | Map<DictKey, TagRule>
+	tags: Record<DictKey, TagRule>
 }
 
 /**
@@ -885,26 +873,22 @@ export interface RulesExpansion {
 	 * Describes the standard stats used by player characters in this ruleset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	stats?: Record<DictKey, StatRule> | Map<DictKey, StatRule>
+	stats?: Record<DictKey, StatRule>
 	/**
 	 * Describes the standard condition meters used by player characters in this ruleset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	condition_meters?:
-		| Record<DictKey, ConditionMeterRule>
-		| Map<DictKey, ConditionMeterRule>
+	condition_meters?: Record<DictKey, ConditionMeterRule>
 	/**
 	 * Describes the standard impacts/debilities used by player characters in this ruleset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	impacts?: Record<DictKey, ImpactCategory> | Map<DictKey, ImpactCategory>
+	impacts?: Record<DictKey, ImpactCategory>
 	/**
 	 * Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	special_tracks?:
-		| Record<DictKey, SpecialTrackRule>
-		| Map<DictKey, SpecialTrackRule>
+	special_tracks?: Record<DictKey, SpecialTrackRule>
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 * @default
@@ -915,7 +899,7 @@ export interface RulesExpansion {
 	 * ```
 	 * @experimental
 	 */
-	tags?: Record<DictKey, TagRule> | Map<DictKey, TagRule>
+	tags?: Record<DictKey, TagRule>
 }
 
 /**
@@ -1280,7 +1264,7 @@ export interface ProgressTrackTypeInfo {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	controls?: Record<DictKey, {}> | Map<DictKey, {}>
+	controls?: Record<DictKey, {}>
 }
 
 /**
@@ -1444,9 +1428,7 @@ export interface Npc {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -1462,7 +1444,7 @@ export interface Npc {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	variants?: Record<DictKey, NpcVariant> | Map<DictKey, NpcVariant>
+	variants?: Record<DictKey, NpcVariant>
 	type: 'npc'
 }
 
@@ -1491,9 +1473,7 @@ export interface NpcCollection {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1523,7 +1503,7 @@ export interface NpcCollection {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?: Record<DictKey, Npc> | Map<DictKey, Npc>
+	contents?: Record<DictKey, Npc>
 }
 
 /**
@@ -1693,9 +1673,7 @@ export interface OracleColumnText {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	suggestions?: Suggestions
 	type: 'oracle_rollable'
 	/**
@@ -1746,9 +1724,7 @@ export interface OracleColumnText2 {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	suggestions?: Suggestions
 	type: 'oracle_rollable'
 	/**
@@ -1799,9 +1775,7 @@ export interface OracleColumnText3 {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	suggestions?: Suggestions
 	type: 'oracle_rollable'
 	/**
@@ -1993,9 +1967,7 @@ export interface OracleTableSharedRolls {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2025,7 +1997,7 @@ export interface OracleTableSharedRolls {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?: Record<DictKey, OracleColumnText> | Map<DictKey, OracleColumnText>
+	contents?: Record<DictKey, OracleColumnText>
 	/**
 	 * Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.
 	 * @default {}
@@ -2070,9 +2042,7 @@ export interface OracleTableSharedText {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2102,7 +2072,7 @@ export interface OracleTableSharedText {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?: Record<DictKey, OracleColumnText> | Map<DictKey, OracleColumnText>
+	contents?: Record<DictKey, OracleColumnText>
 	/**
 	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
 	 * @default {}
@@ -2147,9 +2117,7 @@ export interface OracleTableSharedText2 {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2179,9 +2147,7 @@ export interface OracleTableSharedText2 {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?:
-		| Record<DictKey, OracleColumnText2>
-		| Map<DictKey, OracleColumnText2>
+	contents?: Record<DictKey, OracleColumnText2>
 	/**
 	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
 	 * @default {}
@@ -2230,9 +2196,7 @@ export interface OracleTableSharedText3 {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2262,9 +2226,7 @@ export interface OracleTableSharedText3 {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?:
-		| Record<DictKey, OracleColumnText3>
-		| Map<DictKey, OracleColumnText3>
+	contents?: Record<DictKey, OracleColumnText3>
 	/**
 	 * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
 	 * @default {}
@@ -2309,9 +2271,7 @@ export interface OracleTableText {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	oracle_type: 'table_text'
 	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -2397,9 +2357,7 @@ export interface OracleTableText2 {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	oracle_type: 'table_text2'
 	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -2489,9 +2447,7 @@ export interface OracleTableText3 {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	oracle_type: 'table_text3'
 	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -2573,9 +2529,7 @@ export interface OracleTablesCollection {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2605,9 +2559,7 @@ export interface OracleTablesCollection {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?:
-		| Record<DictKey, OracleTableRollable>
-		| Map<DictKey, OracleTableRollable>
+	contents?: Record<DictKey, OracleTableRollable>
 	/**
 	 * A grouping of separate tables.
 	 */
@@ -2615,9 +2567,7 @@ export interface OracleTablesCollection {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	collections?:
-		| Record<DictKey, OracleCollection>
-		| Map<DictKey, OracleCollection>
+	collections?: Record<DictKey, OracleCollection>
 }
 
 /**
@@ -2675,9 +2625,7 @@ export interface MoveActionRoll {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2743,9 +2691,7 @@ export interface MoveCategory {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2775,7 +2721,7 @@ export interface MoveCategory {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?: Record<DictKey, Move> | Map<DictKey, Move>
+	contents?: Record<DictKey, Move>
 }
 
 /**
@@ -2815,9 +2761,7 @@ export interface MoveNoRoll {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2910,9 +2854,7 @@ export interface MoveProgressRoll {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2997,9 +2939,7 @@ export interface MoveSpecialTrack {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -3343,9 +3283,7 @@ export interface Asset {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A localized category label for this asset. This is the surtitle above the asset's name on the card.
 	 * @example "Combat Talent"
@@ -3370,7 +3308,7 @@ export interface Asset {
 	 * Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	options?: Record<DictKey, AssetOptionField> | Map<DictKey, AssetOptionField>
+	options?: Record<DictKey, AssetOptionField>
 	/**
 	 * Describes prerequisites for purchasing or using this asset.
 	 */
@@ -3380,9 +3318,7 @@ export interface Asset {
 	 * Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	controls?:
-		| Record<DictKey, AssetControlField>
-		| Map<DictKey, AssetControlField>
+	controls?: Record<DictKey, AssetControlField>
 	/**
 	 * If `true`, this asset counts as an impact (Starforged) or a debility (classic Ironsworn).
 	 * @default false
@@ -3426,21 +3362,17 @@ export interface AssetAbility {
 	 * Unique moves added by this asset ability.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	moves?: Record<DictKey, Move> | Map<DictKey, Move>
+	moves?: Record<DictKey, Move>
 	/**
 	 * Fields that are expected to be set once and remain the same through the life of the asset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	options?:
-		| Record<DictKey, AssetAbilityOptionField>
-		| Map<DictKey, AssetAbilityOptionField>
+	options?: Record<DictKey, AssetAbilityOptionField>
 	/**
 	 * Fields whose values are expected to change over the life of the asset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	controls?:
-		| Record<DictKey, AssetAbilityControlField>
-		| Map<DictKey, AssetAbilityControlField>
+	controls?: Record<DictKey, AssetAbilityControlField>
 	/**
 	 * Changes made to the asset, when this ability is enabled.
 	 */
@@ -3553,9 +3485,7 @@ export interface AssetCollection {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -3585,7 +3515,7 @@ export interface AssetCollection {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?: Record<DictKey, Asset> | Map<DictKey, Asset>
+	contents?: Record<DictKey, Asset>
 }
 
 /**
@@ -3634,9 +3564,7 @@ export interface AssetConditionMeter {
 	 * Checkbox controls rendered as part of the condition meter.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	controls?:
-		| Record<DictKey, AssetConditionMeterControlField>
-		| Map<DictKey, AssetConditionMeterControlField>
+	controls?: Record<DictKey, AssetConditionMeterControlField>
 }
 
 /**
@@ -3680,9 +3608,7 @@ export interface AssetEnhancement {
 	 * Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	controls?:
-		| Record<DictKey, AssetControlFieldEnhancement>
-		| Map<DictKey, AssetControlFieldEnhancement>
+	controls?: Record<DictKey, AssetControlFieldEnhancement>
 	suggestions?: Suggestions
 	/**
 	 * If `true`, this asset counts as an impact (Starforged) or a debility (classic Ironsworn).
@@ -3805,15 +3731,10 @@ export interface SelectEnhancementField {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	choices:
-		| Record<
-				DictKey,
-				SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup
-		  >
-		| Map<
-				DictKey,
-				SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup
-		  >
+	choices: Record<
+		DictKey,
+		SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup
+	>
 	field_type: 'select_enhancement'
 	/**
 	 * An icon associated with this input.
@@ -3845,9 +3766,7 @@ export interface SelectEnhancementFieldChoiceGroup {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	choices:
-		| Record<DictKey, SelectEnhancementFieldChoice>
-		| Map<DictKey, SelectEnhancementFieldChoice>
+	choices: Record<DictKey, SelectEnhancementFieldChoice>
 }
 
 /**
@@ -3864,9 +3783,7 @@ export interface SelectValueField {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	choices:
-		| Record<DictKey, SelectValueFieldChoice>
-		| Map<DictKey, SelectValueFieldChoice>
+	choices: Record<DictKey, SelectValueFieldChoice>
 	field_type: 'select_value'
 	/**
 	 * An icon associated with this input.
@@ -4014,9 +3931,7 @@ export interface Truth {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * @default "1d100"
 	 */
@@ -4075,9 +3990,7 @@ export interface AtlasCollection {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -4107,11 +4020,11 @@ export interface AtlasCollection {
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	contents?: Record<DictKey, AtlasEntry> | Map<DictKey, AtlasEntry>
+	contents?: Record<DictKey, AtlasEntry>
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
-	collections?: Record<DictKey, AtlasCollection> | Map<DictKey, AtlasCollection>
+	collections?: Record<DictKey, AtlasCollection>
 }
 
 /**
@@ -4142,9 +4055,7 @@ export interface AtlasEntry {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -4199,9 +4110,7 @@ export interface Rarity {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	/**
 	 * The asset augmented by this rarity.
 	 */
@@ -4250,9 +4159,7 @@ export interface DelveSite {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	type: 'delve_site'
 	icon?: SvgImageUrl
 	rank: ChallengeRank
@@ -4399,9 +4306,7 @@ export interface DelveSiteDomain {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	type: 'delve_site_domain'
 	/**
 	 * @deprecated
@@ -4517,9 +4422,7 @@ export interface DelveSiteTheme {
 	/**
 	 * @experimental
 	 */
-	tags?:
-		| Record<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
-		| Map<DictKey, Record<DictKey, Tag> | Map<DictKey, Tag>>
+	tags?: Record<DictKey, Record<DictKey, Tag>>
 	type: 'delve_site_theme'
 	summary: MarkdownString
 	description?: MarkdownString

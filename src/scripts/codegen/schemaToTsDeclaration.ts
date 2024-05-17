@@ -132,12 +132,15 @@ function extractType(schema: TSchema): string {
 		case TypeGuard.IsRecord(schema): {
 			const keyType = 'DictKey'
 			const valueType = extractType(Object.values(schema.patternProperties)[0])
-			return `Record<${keyType}, ${valueType}> | Map<${keyType}, ${valueType}>`
+			return `Record<${keyType}, ${valueType}>`
+			// return `Record<${keyType}, ${valueType}> | Map<${keyType}, ${valueType}>`
 		}
 		case TDiscriminatedUnion(schema):
-			return schema.allOf.map((item) => extractType(item.then)).join(' | ')
+			return uniq(schema.allOf.map((item) => extractType(item.then))).join(
+				' | '
+			)
 		case TUnionEnum(schema):
-			return schema.enum.map((v) => JSON.stringify(v)).join(' | ')
+			return uniq(schema.enum.map((v) => JSON.stringify(v))).join(' | ')
 
 		default:
 			throw new Error(`missing transform for kind: ${schema[Kind]}`)
