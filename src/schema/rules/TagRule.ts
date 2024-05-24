@@ -143,7 +143,7 @@ const typedTags = keyBy(
 						description:
 							'If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.'
 					}),
-					value_type: Type.Literal(type)
+					value_type: Type.Literal(snakeCase(type))
 				})
 			])
 		),
