@@ -1,6 +1,6 @@
 {
 	"_id": "classic",
-	"datasworn_version": "0.0.10",
+	"datasworn_version": "0.1.0",
 	"type": "ruleset",
 	"title": "Ironsworn Rulebook",
 	"authors": [
@@ -127,14 +127,14 @@
 						"prevents_recovery": [],
 						"permanent": false,
 						"shared": false,
-						"description": "Cursed is marked when you [Face Death] and return with a soul-bound quest. This burden can only be cleared by completing the quest."
+						"description": "Cursed is marked when you [Face Death](ironsworn/moves/suffer/face_death) and return with a soul-bound quest. This burden can only be cleared by completing the quest."
 					},
 					"tormented": {
 						"label": "tormented",
 						"prevents_recovery": [],
 						"permanent": false,
 						"shared": false,
-						"description": "Tormented is marked when you [Face Desolation] and undertake a quest to prevent a dire future."
+						"description": "Tormented is marked when you [Face Desolation](ironsworn/moves/suffer/face_desolation) and undertake a quest to prevent a dire future."
 					}
 				}
 			}
@@ -19175,7 +19175,7 @@
 	"atlas": {
 		"ironlands": {
 			"_id": "classic/collections/atlas/ironlands",
-			"type": "atlas",
+			"type": "atlas_collection",
 			"name": "The Ironlands",
 			"summary": "The Ironlands is a rugged peninsula of isolated settlements and untracked wilds on the frontier of the known world. Two generations ago, your people settled here when a cataclysm drove them from their former homes.",
 			"contents": {

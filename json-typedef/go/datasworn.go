@@ -57,7 +57,7 @@ func (v *RulesPackage) UnmarshalJSON(b []byte) error {
 type RulesPackageExpansionDataswornVersion string
 
 const (
-	RulesPackageExpansionDataswornVersion0 RulesPackageExpansionDataswornVersion = "0.0.10"
+	RulesPackageExpansionDataswornVersion0 RulesPackageExpansionDataswornVersion = "0.1.0"
 )
 
 // A Datasworn package that relies on an external package to provide its
@@ -128,7 +128,7 @@ type RulesPackageExpansion struct {
 type RulesPackageRulesetDataswornVersion string
 
 const (
-	RulesPackageRulesetDataswornVersion0 RulesPackageRulesetDataswornVersion = "0.0.10"
+	RulesPackageRulesetDataswornVersion0 RulesPackageRulesetDataswornVersion = "0.1.0"
 )
 
 // A standalone Datasworn package that describes its own ruleset.
@@ -281,7 +281,7 @@ type Asset struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // An asset ability: one of the purchasable features of an asset. Most assets
@@ -320,6 +320,8 @@ type AssetAbility struct {
 	// Fields that are expected to be set once and remain the same through the life
 	// of the asset.
 	Options map[string]AssetAbilityOptionField `json:"options,omitempty"`
+
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type AssetAbilityControlField struct {
@@ -559,7 +561,7 @@ type AssetCollection struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for an AssetCollection.
@@ -1080,7 +1082,7 @@ type AssetOptionFieldText struct {
 type AtlasCollectionType string
 
 const (
-	AtlasCollectionTypeAtlas AtlasCollectionType = "atlas"
+	AtlasCollectionTypeAtlasCollection AtlasCollectionType = "atlas_collection"
 )
 
 type AtlasCollection struct {
@@ -1135,7 +1137,7 @@ type AtlasCollection struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for an AtlasCollection.
@@ -1179,7 +1181,7 @@ type AtlasEntry struct {
 
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 
 	YourTruth *MarkdownString `json:"your_truth,omitempty"`
 }
@@ -1283,7 +1285,7 @@ type DelveSite struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // Represents an entry in a site denizen matrix. Denizen matrices are described
@@ -1366,7 +1368,7 @@ type DelveSiteDomain struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for a DelveSiteDomain.
@@ -1415,7 +1417,7 @@ type DelveSiteTheme struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for a DelveSiteTheme.
@@ -1607,7 +1609,7 @@ type MoveActionRoll struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type MoveNoRollType string
@@ -1655,7 +1657,7 @@ type MoveNoRoll struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type MoveProgressRollType string
@@ -1710,7 +1712,7 @@ type MoveProgressRoll struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type MoveSpecialTrackType string
@@ -1762,7 +1764,7 @@ type MoveSpecialTrack struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type MoveCategoryType string
@@ -1821,7 +1823,7 @@ type MoveCategory struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for a MoveCategory.
@@ -1994,7 +1996,7 @@ type Npc struct {
 
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 
 	Variants map[string]NpcVariant `json:"variants,omitempty"`
 
@@ -2057,7 +2059,7 @@ type NpcCollection struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for a NpcCollection.
@@ -2102,6 +2104,8 @@ type ObjectType string
 const (
 	ObjectTypeAsset ObjectType = "asset"
 
+	ObjectTypeAssetAbility ObjectType = "asset_ability"
+
 	ObjectTypeAssetCollection ObjectType = "asset_collection"
 
 	ObjectTypeAtlasCollection ObjectType = "atlas_collection"
@@ -2125,6 +2129,8 @@ const (
 	ObjectTypeOracleCollection ObjectType = "oracle_collection"
 
 	ObjectTypeOracleRollable ObjectType = "oracle_rollable"
+
+	ObjectTypeOracleTableRow ObjectType = "oracle_table_row"
 
 	ObjectTypeRarity ObjectType = "rarity"
 
@@ -2260,7 +2266,7 @@ type OracleCollectionOracleTableSharedText3 struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // Provides column labels for this table. The `roll` key refers to the roll
@@ -2333,7 +2339,7 @@ type OracleCollectionTableSharedRolls struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // The label at the head of each table column. The `roll` key refers to the roll
@@ -2404,7 +2410,7 @@ type OracleCollectionTableSharedText struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // The label at the head of each table column. The `roll` key refers to the roll
@@ -2477,7 +2483,7 @@ type OracleCollectionTableSharedText2 struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type OracleCollectionTablesType string
@@ -2540,7 +2546,7 @@ type OracleCollectionTables struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for an OracleCollection.
@@ -2602,7 +2608,7 @@ type OracleColumnText struct {
 	// should be no more than a few words in length.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type OracleColumnText2OracleType string
@@ -2660,7 +2666,7 @@ type OracleColumnText2 struct {
 	// should be no more than a few words in length.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type OracleColumnText3OracleType string
@@ -2718,7 +2724,7 @@ type OracleColumnText3 struct {
 	// should be no more than a few words in length.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // Special roll instructions to use when rolling multiple times on a single
@@ -2910,7 +2916,7 @@ type OracleTableRollableTableText struct {
 	// instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // The label at the head of each table column. The `roll` key refers to the roll
@@ -2994,7 +3000,7 @@ type OracleTableRollableTableText2 struct {
 	// instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // The label at the head of each table column. The `roll` key refers to the roll
@@ -3080,7 +3086,7 @@ type OracleTableRollableTableText3 struct {
 	// instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // Represents a row in an oracle table, with a single text cell.
@@ -3105,6 +3111,8 @@ type OracleTableRowText struct {
 	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags *Tags `json:"tags,omitempty"`
 
 	Template *OracleRollTemplate `json:"template,omitempty"`
 }
@@ -3133,6 +3141,8 @@ type OracleTableRowText2 struct {
 	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags *Tags `json:"tags,omitempty"`
 
 	Template *OracleRollTemplate `json:"template,omitempty"`
 }
@@ -3163,6 +3173,8 @@ type OracleTableRowText3 struct {
 	OracleRolls []OracleRoll `json:"oracle_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	Tags *Tags `json:"tags,omitempty"`
 
 	Template *OracleRollTemplate `json:"template,omitempty"`
 }
@@ -3237,7 +3249,7 @@ type OracleTablesCollection struct {
 	// Longer text should use the "description" key instead.
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 type PartOfSpeech string
@@ -3357,7 +3369,7 @@ type Rarity struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 }
 
 // A unique ID for a Rarity.
@@ -3852,17 +3864,11 @@ type TagRule struct {
 
 	AtlasEntry TagRuleAtlasEntry
 
-	Boolean TagRuleBoolean
-
 	DelveSite TagRuleDelveSite
 
 	DelveSiteDomain TagRuleDelveSiteDomain
 
 	DelveSiteTheme TagRuleDelveSiteTheme
-
-	Enum TagRuleEnum
-
-	Integer TagRuleInteger
 
 	Move TagRuleMove
 
@@ -3879,46 +3885,52 @@ type TagRule struct {
 	Rarity TagRuleRarity
 
 	Truth TagRuleTruth
+
+	Boolean TagRuleBoolean
+
+	Enum TagRuleEnum
+
+	Integer TagRuleInteger
 }
 
 func (v TagRule) MarshalJSON() ([]byte, error) {
 	switch v.ValueType {
-	case "asset":
+	case "Asset":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAsset }{ v.ValueType, v.Asset })
-	case "asset_collection":
+	case "AssetCollection":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAssetCollection }{ v.ValueType, v.AssetCollection })
-	case "atlas_collection":
+	case "AtlasCollection":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAtlasCollection }{ v.ValueType, v.AtlasCollection })
-	case "atlas_entry":
+	case "AtlasEntry":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAtlasEntry }{ v.ValueType, v.AtlasEntry })
+	case "DelveSite":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSite }{ v.ValueType, v.DelveSite })
+	case "DelveSiteDomain":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteDomain }{ v.ValueType, v.DelveSiteDomain })
+	case "DelveSiteTheme":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteTheme }{ v.ValueType, v.DelveSiteTheme })
+	case "Move":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMove }{ v.ValueType, v.Move })
+	case "MoveCategory":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMoveCategory }{ v.ValueType, v.MoveCategory })
+	case "Npc":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpc }{ v.ValueType, v.Npc })
+	case "NpcCollection":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpcCollection }{ v.ValueType, v.NpcCollection })
+	case "OracleCollection":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleCollection }{ v.ValueType, v.OracleCollection })
+	case "OracleRollable":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleRollable }{ v.ValueType, v.OracleRollable })
+	case "Rarity":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleRarity }{ v.ValueType, v.Rarity })
+	case "Truth":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleTruth }{ v.ValueType, v.Truth })
 	case "boolean":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleBoolean }{ v.ValueType, v.Boolean })
-	case "delve_site":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSite }{ v.ValueType, v.DelveSite })
-	case "delve_site_domain":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteDomain }{ v.ValueType, v.DelveSiteDomain })
-	case "delve_site_theme":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteTheme }{ v.ValueType, v.DelveSiteTheme })
 	case "enum":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleEnum }{ v.ValueType, v.Enum })
 	case "integer":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleInteger }{ v.ValueType, v.Integer })
-	case "move":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMove }{ v.ValueType, v.Move })
-	case "move_category":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMoveCategory }{ v.ValueType, v.MoveCategory })
-	case "npc":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpc }{ v.ValueType, v.Npc })
-	case "npc_collection":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpcCollection }{ v.ValueType, v.NpcCollection })
-	case "oracle_collection":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleCollection }{ v.ValueType, v.OracleCollection })
-	case "oracle_rollable":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleRollable }{ v.ValueType, v.OracleRollable })
-	case "rarity":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleRarity }{ v.ValueType, v.Rarity })
-	case "truth":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleTruth }{ v.ValueType, v.Truth })
 	}
 
 	return nil, fmt.Errorf("bad ValueType value: %s", v.ValueType)
@@ -3932,42 +3944,42 @@ func (v *TagRule) UnmarshalJSON(b []byte) error {
 
 	var err error
 	switch t.T {
-	case "asset":
+	case "Asset":
 		err = json.Unmarshal(b, &v.Asset)
-	case "asset_collection":
+	case "AssetCollection":
 		err = json.Unmarshal(b, &v.AssetCollection)
-	case "atlas_collection":
+	case "AtlasCollection":
 		err = json.Unmarshal(b, &v.AtlasCollection)
-	case "atlas_entry":
+	case "AtlasEntry":
 		err = json.Unmarshal(b, &v.AtlasEntry)
+	case "DelveSite":
+		err = json.Unmarshal(b, &v.DelveSite)
+	case "DelveSiteDomain":
+		err = json.Unmarshal(b, &v.DelveSiteDomain)
+	case "DelveSiteTheme":
+		err = json.Unmarshal(b, &v.DelveSiteTheme)
+	case "Move":
+		err = json.Unmarshal(b, &v.Move)
+	case "MoveCategory":
+		err = json.Unmarshal(b, &v.MoveCategory)
+	case "Npc":
+		err = json.Unmarshal(b, &v.Npc)
+	case "NpcCollection":
+		err = json.Unmarshal(b, &v.NpcCollection)
+	case "OracleCollection":
+		err = json.Unmarshal(b, &v.OracleCollection)
+	case "OracleRollable":
+		err = json.Unmarshal(b, &v.OracleRollable)
+	case "Rarity":
+		err = json.Unmarshal(b, &v.Rarity)
+	case "Truth":
+		err = json.Unmarshal(b, &v.Truth)
 	case "boolean":
 		err = json.Unmarshal(b, &v.Boolean)
-	case "delve_site":
-		err = json.Unmarshal(b, &v.DelveSite)
-	case "delve_site_domain":
-		err = json.Unmarshal(b, &v.DelveSiteDomain)
-	case "delve_site_theme":
-		err = json.Unmarshal(b, &v.DelveSiteTheme)
 	case "enum":
 		err = json.Unmarshal(b, &v.Enum)
 	case "integer":
 		err = json.Unmarshal(b, &v.Integer)
-	case "move":
-		err = json.Unmarshal(b, &v.Move)
-	case "move_category":
-		err = json.Unmarshal(b, &v.MoveCategory)
-	case "npc":
-		err = json.Unmarshal(b, &v.Npc)
-	case "npc_collection":
-		err = json.Unmarshal(b, &v.NpcCollection)
-	case "oracle_collection":
-		err = json.Unmarshal(b, &v.OracleCollection)
-	case "oracle_rollable":
-		err = json.Unmarshal(b, &v.OracleRollable)
-	case "rarity":
-		err = json.Unmarshal(b, &v.Rarity)
-	case "truth":
-		err = json.Unmarshal(b, &v.Truth)
 	default:
 		err = fmt.Errorf("bad ValueType value: %s", t.T)
 	}
@@ -4020,14 +4032,6 @@ type TagRuleAtlasEntry struct {
 	Wildcard bool `json:"wildcard"`
 }
 
-type TagRuleBoolean struct {
-	AppliesTo []ObjectType `json:"applies_to"`
-
-	Array bool `json:"array"`
-
-	Description MarkdownString `json:"description"`
-}
-
 type TagRuleDelveSite struct {
 	AppliesTo []ObjectType `json:"applies_to"`
 
@@ -4056,24 +4060,6 @@ type TagRuleDelveSiteTheme struct {
 	// If `true`, this field accepts an array of wildcard IDs. If `false`, this
 	// field accepts a single non-wildcard ID.
 	Wildcard bool `json:"wildcard"`
-}
-
-type TagRuleEnum struct {
-	AppliesTo []ObjectType `json:"applies_to"`
-
-	Array bool `json:"array"`
-
-	Description MarkdownString `json:"description"`
-
-	Enum []DictKey `json:"enum"`
-}
-
-type TagRuleInteger struct {
-	AppliesTo []ObjectType `json:"applies_to"`
-
-	Array bool `json:"array"`
-
-	Description MarkdownString `json:"description"`
 }
 
 type TagRuleMove struct {
@@ -4155,6 +4141,35 @@ type TagRuleTruth struct {
 	// field accepts a single non-wildcard ID.
 	Wildcard bool `json:"wildcard"`
 }
+
+type TagRuleBoolean struct {
+	AppliesTo []ObjectType `json:"applies_to"`
+
+	Array bool `json:"array"`
+
+	Description MarkdownString `json:"description"`
+}
+
+type TagRuleEnum struct {
+	AppliesTo []ObjectType `json:"applies_to"`
+
+	Array bool `json:"array"`
+
+	Description MarkdownString `json:"description"`
+
+	Enum []DictKey `json:"enum"`
+}
+
+type TagRuleInteger struct {
+	AppliesTo []ObjectType `json:"applies_to"`
+
+	Array bool `json:"array"`
+
+	Description MarkdownString `json:"description"`
+}
+
+// A dictionary of tags, keyed by the RulesetID that the tags are from.
+type Tags = map[string]map[string]Tag
 
 // A rich text string in Markdown with replaced values from oracle roll results.
 // 
@@ -4357,7 +4372,7 @@ type Truth struct {
 
 	Summary *MarkdownString `json:"summary,omitempty"`
 
-	Tags map[string]map[string]Tag `json:"tags,omitempty"`
+	Tags *Tags `json:"tags,omitempty"`
 
 	YourCharacter *MarkdownString `json:"your_character,omitempty"`
 }

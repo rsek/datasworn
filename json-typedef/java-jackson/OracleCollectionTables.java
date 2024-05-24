@@ -76,7 +76,7 @@ public class OracleCollectionTables extends OracleCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
-    private Map<String, Map<String, Tag>> tags;
+    private Tags tags;
 
     public OracleCollectionTables() {
     }
@@ -348,14 +348,14 @@ public class OracleCollectionTables extends OracleCollection {
     /**
      * Getter for tags.<p>
      */
-    public Map<String, Map<String, Tag>> getTags() {
+    public Tags getTags() {
         return tags;
     }
 
     /**
      * Setter for tags.<p>
      */
-    public void setTags(Map<String, Map<String, Tag>> tags) {
+    public void setTags(Tags tags) {
         this.tags = tags;
     }
 }

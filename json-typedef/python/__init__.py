@@ -33,7 +33,7 @@ class RulesPackageExpansionDataswornVersion(Enum):
     The version of the Datasworn format used by this data.
     """
 
-    DEFAULT_NAME = "0.0.10"
+    DEFAULT_NAME = "0.1.0"
     @classmethod
     def from_json_data(cls, data: Any) -> 'RulesPackageExpansionDataswornVersion':
         return cls(data)
@@ -206,7 +206,7 @@ class RulesPackageRulesetDataswornVersion(Enum):
     The version of the Datasworn format used by this data.
     """
 
-    DEFAULT_NAME = "0.0.10"
+    DEFAULT_NAME = "0.1.0"
     @classmethod
     def from_json_data(cls, data: Any) -> 'RulesPackageRulesetDataswornVersion':
         return cls(data)
@@ -494,7 +494,7 @@ class Asset:
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Asset':
@@ -516,7 +516,7 @@ class Asset:
             _from_json_data(Optional[Dict[str, AssetOptionField]], data.get("options")),
             _from_json_data(Optional[MarkdownString], data.get("requirement")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -612,6 +612,7 @@ class AssetAbility:
     of the asset.
     """
 
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetAbility':
@@ -626,6 +627,7 @@ class AssetAbility:
             _from_json_data(Optional[Dict[str, Move]], data.get("moves")),
             _from_json_data(Optional[Label], data.get("name")),
             _from_json_data(Optional[Dict[str, AssetAbilityOptionField]], data.get("options")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -647,6 +649,8 @@ class AssetAbility:
              data["name"] = _to_json_data(self.name)
         if self.options is not None:
              data["options"] = _to_json_data(self.options)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         return data
 
 @dataclass
@@ -1013,7 +1017,7 @@ class AssetCollection:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetCollection':
@@ -1033,7 +1037,7 @@ class AssetCollection:
             _from_json_data(Optional[AssetCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -1861,7 +1865,7 @@ class AssetOptionFieldText(AssetOptionField):
         return data
 
 class AtlasCollectionType(Enum):
-    ATLAS = "atlas"
+    ATLAS_COLLECTION = "atlas_collection"
     @classmethod
     def from_json_data(cls, data: Any) -> 'AtlasCollectionType':
         return cls(data)
@@ -1939,7 +1943,7 @@ class AtlasCollection:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AtlasCollection':
@@ -1960,7 +1964,7 @@ class AtlasCollection:
             _from_json_data(Optional[AtlasCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2062,7 +2066,7 @@ class AtlasEntry:
     quest_starter: 'Optional[MarkdownString]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
     your_truth: 'Optional[MarkdownString]'
 
     @classmethod
@@ -2079,7 +2083,7 @@ class AtlasEntry:
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
             _from_json_data(Optional[MarkdownString], data.get("your_truth")),
         )
 
@@ -2338,7 +2342,7 @@ class DelveSite:
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSite':
@@ -2358,7 +2362,7 @@ class DelveSite:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[AtlasEntryID], data.get("region")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2511,7 +2515,7 @@ class DelveSiteDomain:
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteDomain':
@@ -2529,7 +2533,7 @@ class DelveSiteDomain:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleRollableID], data.get("name_oracle")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -2637,7 +2641,7 @@ class DelveSiteTheme:
     description: 'Optional[MarkdownString]'
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DelveSiteTheme':
@@ -2654,7 +2658,7 @@ class DelveSiteTheme:
             _from_json_data(Optional[MarkdownString], data.get("description")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3060,7 +3064,7 @@ class MoveActionRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveActionRoll':
@@ -3078,7 +3082,7 @@ class MoveActionRoll(Move):
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3172,7 +3176,7 @@ class MoveNoRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveNoRoll':
@@ -3189,7 +3193,7 @@ class MoveNoRoll(Move):
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3290,7 +3294,7 @@ class MoveProgressRoll(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveProgressRoll':
@@ -3309,7 +3313,7 @@ class MoveProgressRoll(Move):
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3407,7 +3411,7 @@ class MoveSpecialTrack(Move):
     """
 
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveSpecialTrack':
@@ -3425,7 +3429,7 @@ class MoveSpecialTrack(Move):
             _from_json_data(Optional[List[OracleRollableID]], data.get("oracles")),
             _from_json_data(Optional[MoveID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3529,7 +3533,7 @@ class MoveCategory:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MoveCategory':
@@ -3549,7 +3553,7 @@ class MoveCategory:
             _from_json_data(Optional[MoveCategoryID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -3860,7 +3864,7 @@ class Npc:
     quest_starter: 'Optional[MarkdownString]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
     variants: 'Optional[Dict[str, NpcVariant]]'
     your_truth: 'Optional[MarkdownString]'
 
@@ -3882,7 +3886,7 @@ class Npc:
             _from_json_data(Optional[MarkdownString], data.get("quest_starter")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
             _from_json_data(Optional[Dict[str, NpcVariant]], data.get("variants")),
             _from_json_data(Optional[MarkdownString], data.get("your_truth")),
         )
@@ -3995,7 +3999,7 @@ class NpcCollection:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'NpcCollection':
@@ -4015,7 +4019,7 @@ class NpcCollection:
             _from_json_data(Optional[NpcCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4165,6 +4169,7 @@ class NpcVariantID:
 
 class ObjectType(Enum):
     ASSET = "asset"
+    ASSET_ABILITY = "asset_ability"
     ASSET_COLLECTION = "asset_collection"
     ATLAS_COLLECTION = "atlas_collection"
     ATLAS_ENTRY = "atlas_entry"
@@ -4177,6 +4182,7 @@ class ObjectType(Enum):
     NPC_COLLECTION = "npc_collection"
     ORACLE_COLLECTION = "oracle_collection"
     ORACLE_ROLLABLE = "oracle_rollable"
+    ORACLE_TABLE_ROW = "oracle_table_row"
     RARITY = "rarity"
     TRUTH = "truth"
     @classmethod
@@ -4314,7 +4320,7 @@ class OracleCollectionOracleTableSharedText3(OracleCollection):
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleCollectionOracleTableSharedText3':
@@ -4336,7 +4342,7 @@ class OracleCollectionOracleTableSharedText3(OracleCollection):
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4483,7 +4489,7 @@ class OracleCollectionTableSharedRolls(OracleCollection):
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedRolls':
@@ -4505,7 +4511,7 @@ class OracleCollectionTableSharedRolls(OracleCollection):
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4650,7 +4656,7 @@ class OracleCollectionTableSharedText(OracleCollection):
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedText':
@@ -4672,7 +4678,7 @@ class OracleCollectionTableSharedText(OracleCollection):
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4820,7 +4826,7 @@ class OracleCollectionTableSharedText2(OracleCollection):
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedText2':
@@ -4842,7 +4848,7 @@ class OracleCollectionTableSharedText2(OracleCollection):
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -4962,7 +4968,7 @@ class OracleCollectionTables(OracleCollection):
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleCollectionTables':
@@ -4984,7 +4990,7 @@ class OracleCollectionTables(OracleCollection):
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5119,7 +5125,7 @@ class OracleColumnText:
     should be no more than a few words in length.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleColumnText':
@@ -5137,7 +5143,7 @@ class OracleColumnText:
             _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5245,7 +5251,7 @@ class OracleColumnText2:
     should be no more than a few words in length.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleColumnText2':
@@ -5263,7 +5269,7 @@ class OracleColumnText2:
             _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5371,7 +5377,7 @@ class OracleColumnText3:
     should be no more than a few words in length.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleColumnText3':
@@ -5389,7 +5395,7 @@ class OracleColumnText3:
             _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5720,7 +5726,7 @@ class OracleTableRollableTableText(OracleTableRollable):
     instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRollableTableText':
@@ -5742,7 +5748,7 @@ class OracleTableRollableTableText(OracleTableRollable):
             _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -5915,7 +5921,7 @@ class OracleTableRollableTableText2(OracleTableRollable):
     instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRollableTableText2':
@@ -5937,7 +5943,7 @@ class OracleTableRollableTableText2(OracleTableRollable):
             _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -6113,7 +6119,7 @@ class OracleTableRollableTableText3(OracleTableRollable):
     instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRollableTableText3':
@@ -6135,7 +6141,7 @@ class OracleTableRollableTableText3(OracleTableRollable):
             _from_json_data(Optional[OracleRollableID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -6203,6 +6209,7 @@ class OracleTableRowText:
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Tags]'
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -6216,6 +6223,7 @@ class OracleTableRowText:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Tags], data.get("tags")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -6234,6 +6242,8 @@ class OracleTableRowText:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -6273,6 +6283,7 @@ class OracleTableRowText2:
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Tags]'
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -6287,6 +6298,7 @@ class OracleTableRowText2:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Tags], data.get("tags")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -6306,6 +6318,8 @@ class OracleTableRowText2:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -6346,6 +6360,7 @@ class OracleTableRowText3:
     """
 
     suggestions: 'Optional[Suggestions]'
+    tags: 'Optional[Tags]'
     template: 'Optional[OracleRollTemplate]'
 
     @classmethod
@@ -6361,6 +6376,7 @@ class OracleTableRowText3:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[OracleRoll]], data.get("oracle_rolls")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
+            _from_json_data(Optional[Tags], data.get("tags")),
             _from_json_data(Optional[OracleRollTemplate], data.get("template")),
         )
 
@@ -6381,6 +6397,8 @@ class OracleTableRowText3:
              data["oracle_rolls"] = _to_json_data(self.oracle_rolls)
         if self.suggestions is not None:
              data["suggestions"] = _to_json_data(self.suggestions)
+        if self.tags is not None:
+             data["tags"] = _to_json_data(self.tags)
         if self.template is not None:
              data["template"] = _to_json_data(self.template)
         return data
@@ -6487,7 +6505,7 @@ class OracleTablesCollection:
     Longer text should use the "description" key instead.
     """
 
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTablesCollection':
@@ -6509,7 +6527,7 @@ class OracleTablesCollection:
             _from_json_data(Optional[OracleCollectionID], data.get("replaces")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -6750,7 +6768,7 @@ class Rarity:
 
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Rarity':
@@ -6766,7 +6784,7 @@ class Rarity:
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
         )
 
     def to_json_data(self) -> Any:
@@ -7736,24 +7754,24 @@ class TagRule:
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRule':
         variants: Dict[str, Type[TagRule]] = {
-            "asset": TagRuleAsset,
-            "asset_collection": TagRuleAssetCollection,
-            "atlas_collection": TagRuleAtlasCollection,
-            "atlas_entry": TagRuleAtlasEntry,
+            "Asset": TagRuleAsset,
+            "AssetCollection": TagRuleAssetCollection,
+            "AtlasCollection": TagRuleAtlasCollection,
+            "AtlasEntry": TagRuleAtlasEntry,
+            "DelveSite": TagRuleDelveSite,
+            "DelveSiteDomain": TagRuleDelveSiteDomain,
+            "DelveSiteTheme": TagRuleDelveSiteTheme,
+            "Move": TagRuleMove,
+            "MoveCategory": TagRuleMoveCategory,
+            "Npc": TagRuleNpc,
+            "NpcCollection": TagRuleNpcCollection,
+            "OracleCollection": TagRuleOracleCollection,
+            "OracleRollable": TagRuleOracleRollable,
+            "Rarity": TagRuleRarity,
+            "Truth": TagRuleTruth,
             "boolean": TagRuleBoolean,
-            "delve_site": TagRuleDelveSite,
-            "delve_site_domain": TagRuleDelveSiteDomain,
-            "delve_site_theme": TagRuleDelveSiteTheme,
             "enum": TagRuleEnum,
             "integer": TagRuleInteger,
-            "move": TagRuleMove,
-            "move_category": TagRuleMoveCategory,
-            "npc": TagRuleNpc,
-            "npc_collection": TagRuleNpcCollection,
-            "oracle_collection": TagRuleOracleCollection,
-            "oracle_rollable": TagRuleOracleRollable,
-            "rarity": TagRuleRarity,
-            "truth": TagRuleTruth,
         }
 
         return variants[data["value_type"]].from_json_data(data)
@@ -7775,14 +7793,14 @@ class TagRuleAsset(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAsset':
         return cls(
-            "asset",
+            "Asset",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "asset" }
+        data = { "value_type": "Asset" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -7802,14 +7820,14 @@ class TagRuleAssetCollection(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAssetCollection':
         return cls(
-            "asset_collection",
+            "AssetCollection",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "asset_collection" }
+        data = { "value_type": "AssetCollection" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -7829,14 +7847,14 @@ class TagRuleAtlasCollection(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAtlasCollection':
         return cls(
-            "atlas_collection",
+            "AtlasCollection",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "atlas_collection" }
+        data = { "value_type": "AtlasCollection" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -7856,14 +7874,311 @@ class TagRuleAtlasEntry(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAtlasEntry':
         return cls(
-            "atlas_entry",
+            "AtlasEntry",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "atlas_entry" }
+        data = { "value_type": "AtlasEntry" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleDelveSite(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSite':
+        return cls(
+            "DelveSite",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "DelveSite" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleDelveSiteDomain(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteDomain':
+        return cls(
+            "DelveSiteDomain",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "DelveSiteDomain" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleDelveSiteTheme(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteTheme':
+        return cls(
+            "DelveSiteTheme",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "DelveSiteTheme" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleMove(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleMove':
+        return cls(
+            "Move",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "Move" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleMoveCategory(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleMoveCategory':
+        return cls(
+            "MoveCategory",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "MoveCategory" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleNpc(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleNpc':
+        return cls(
+            "Npc",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "Npc" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleNpcCollection(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleNpcCollection':
+        return cls(
+            "NpcCollection",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "NpcCollection" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleOracleCollection(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleOracleCollection':
+        return cls(
+            "OracleCollection",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "OracleCollection" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleOracleRollable(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleOracleRollable':
+        return cls(
+            "OracleRollable",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "OracleRollable" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleRarity(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleRarity':
+        return cls(
+            "Rarity",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "Rarity" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleTruth(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleTruth':
+        return cls(
+            "Truth",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "Truth" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -7889,87 +8204,6 @@ class TagRuleBoolean(TagRule):
         data["applies_to"] = _to_json_data(self.applies_to)
         data["array"] = _to_json_data(self.array)
         data["description"] = _to_json_data(self.description)
-        return data
-
-@dataclass
-class TagRuleDelveSite(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleDelveSite':
-        return cls(
-            "delve_site",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "delve_site" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleDelveSiteDomain(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteDomain':
-        return cls(
-            "delve_site_domain",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "delve_site_domain" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleDelveSiteTheme(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteTheme':
-        return cls(
-            "delve_site_theme",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "delve_site_theme" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
         return data
 
 @dataclass
@@ -8020,220 +8254,19 @@ class TagRuleInteger(TagRule):
         return data
 
 @dataclass
-class TagRuleMove(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
+class Tags:
     """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
+    A dictionary of tags, keyed by the RulesetID that the tags are from.
     """
 
+    value: 'Dict[str, Dict[str, Tag]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleMove':
-        return cls(
-            "move",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
+    def from_json_data(cls, data: Any) -> 'Tags':
+        return cls(_from_json_data(Dict[str, Dict[str, Tag]], data))
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "move" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleMoveCategory(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleMoveCategory':
-        return cls(
-            "move_category",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "move_category" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleNpc(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleNpc':
-        return cls(
-            "npc",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "npc" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleNpcCollection(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleNpcCollection':
-        return cls(
-            "npc_collection",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "npc_collection" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleOracleCollection(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleOracleCollection':
-        return cls(
-            "oracle_collection",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "oracle_collection" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleOracleRollable(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleOracleRollable':
-        return cls(
-            "oracle_rollable",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "oracle_rollable" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleRarity(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleRarity':
-        return cls(
-            "rarity",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "rarity" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleTruth(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleTruth':
-        return cls(
-            "truth",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "truth" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class TemplateString:
@@ -8785,7 +8818,7 @@ class Truth:
     icon: 'Optional[SvgImageURL]'
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
-    tags: 'Optional[Dict[str, Dict[str, Tag]]]'
+    tags: 'Optional[Tags]'
     your_character: 'Optional[MarkdownString]'
 
     @classmethod
@@ -8801,7 +8834,7 @@ class Truth:
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
-            _from_json_data(Optional[Dict[str, Dict[str, Tag]]], data.get("tags")),
+            _from_json_data(Optional[Tags], data.get("tags")),
             _from_json_data(Optional[MarkdownString], data.get("your_character")),
         )
 

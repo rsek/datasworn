@@ -21,7 +21,7 @@ namespace Datasworn
             string value = JsonSerializer.Deserialize<string>(ref reader, options);
             switch (value)
             {
-                case "0.0.10":
+                case "0.1.0":
                     return RulesPackageExpansionDataswornVersion.DefaultName;
                 default:
                     throw new ArgumentException(String.Format("Bad RulesPackageExpansionDataswornVersion value: {0}", value));
@@ -33,7 +33,7 @@ namespace Datasworn
             switch (value)
             {
                 case RulesPackageExpansionDataswornVersion.DefaultName:
-                    JsonSerializer.Serialize<string>(writer, "0.0.10", options);
+                    JsonSerializer.Serialize<string>(writer, "0.1.0", options);
                     return;
             }
         }

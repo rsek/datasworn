@@ -8,6 +8,9 @@ public enum ObjectType {
     @JsonProperty("asset")
     ASSET,
 
+    @JsonProperty("asset_ability")
+    ASSET_ABILITY,
+
     @JsonProperty("asset_collection")
     ASSET_COLLECTION,
 
@@ -43,6 +46,9 @@ public enum ObjectType {
 
     @JsonProperty("oracle_rollable")
     ORACLE_ROLLABLE,
+
+    @JsonProperty("oracle_table_row")
+    ORACLE_TABLE_ROW,
 
     @JsonProperty("rarity")
     RARITY,

@@ -9,7 +9,7 @@ namespace Datasworn
     [JsonConverter(typeof(AtlasCollectionTypeJsonConverter))]
     public enum AtlasCollectionType
     {
-        Atlas,
+        AtlasCollection,
     }
     public class AtlasCollectionTypeJsonConverter : JsonConverter<AtlasCollectionType>
     {
@@ -18,8 +18,8 @@ namespace Datasworn
             string value = JsonSerializer.Deserialize<string>(ref reader, options);
             switch (value)
             {
-                case "atlas":
-                    return AtlasCollectionType.Atlas;
+                case "atlas_collection":
+                    return AtlasCollectionType.AtlasCollection;
                 default:
                     throw new ArgumentException(String.Format("Bad AtlasCollectionType value: {0}", value));
             }
@@ -29,8 +29,8 @@ namespace Datasworn
         {
             switch (value)
             {
-                case AtlasCollectionType.Atlas:
-                    JsonSerializer.Serialize<string>(writer, "atlas", options);
+                case AtlasCollectionType.AtlasCollection:
+                    JsonSerializer.Serialize<string>(writer, "atlas_collection", options);
                     return;
             }
         }

@@ -20,7 +20,7 @@ pub enum RulesPackage {
 /// The version of the Datasworn format used by this data.
 #[derive(Serialize, Deserialize)]
 pub enum RulesPackageExpansionDataswornVersion {
-    #[serde(rename = "0.0.10")]
+    #[serde(rename = "0.1.0")]
     DefaultName,
 }
 
@@ -129,7 +129,7 @@ pub struct RulesPackageExpansion {
 /// The version of the Datasworn format used by this data.
 #[derive(Serialize, Deserialize)]
 pub enum RulesPackageRulesetDataswornVersion {
-    #[serde(rename = "0.0.10")]
+    #[serde(rename = "0.1.0")]
     DefaultName,
 }
 
@@ -347,7 +347,7 @@ pub struct Asset {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// An asset ability: one of the purchasable features of an asset. Most assets
@@ -404,6 +404,10 @@ pub struct AssetAbility {
     #[serde(rename = "options")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub options: Option<Box<HashMap<String, AssetAbilityOptionField>>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -640,7 +644,7 @@ pub struct AssetCollection {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for an AssetCollection.
@@ -1056,8 +1060,8 @@ pub struct AssetOptionFieldText {
 
 #[derive(Serialize, Deserialize)]
 pub enum AtlasCollectionType {
-    #[serde(rename = "atlas")]
-    Atlas,
+    #[serde(rename = "atlas_collection")]
+    AtlasCollection,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1144,7 +1148,7 @@ pub struct AtlasCollection {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for an AtlasCollection.
@@ -1208,7 +1212,7 @@ pub struct AtlasEntry {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 
     #[serde(rename = "your_truth")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -1352,7 +1356,7 @@ pub struct DelveSite {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// Represents an entry in a site denizen matrix. Denizen matrices are described
@@ -1469,7 +1473,7 @@ pub struct DelveSiteDomain {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for a DelveSiteDomain.
@@ -1538,7 +1542,7 @@ pub struct DelveSiteTheme {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for a DelveSiteTheme.
@@ -1741,7 +1745,7 @@ pub struct MoveActionRoll {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1808,7 +1812,7 @@ pub struct MoveNoRoll {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1885,7 +1889,7 @@ pub struct MoveProgressRoll {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1957,7 +1961,7 @@ pub struct MoveSpecialTrack {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2046,7 +2050,7 @@ pub struct MoveCategory {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for a MoveCategory.
@@ -2227,7 +2231,7 @@ pub struct Npc {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 
     #[serde(rename = "variants")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -2324,7 +2328,7 @@ pub struct NpcCollection {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for a NpcCollection.
@@ -2379,6 +2383,9 @@ pub enum ObjectType {
     #[serde(rename = "asset")]
     Asset,
 
+    #[serde(rename = "asset_ability")]
+    AssetAbility,
+
     #[serde(rename = "asset_collection")]
     AssetCollection,
 
@@ -2414,6 +2421,9 @@ pub enum ObjectType {
 
     #[serde(rename = "oracle_rollable")]
     OracleRollable,
+
+    #[serde(rename = "oracle_table_row")]
+    OracleTableRow,
 
     #[serde(rename = "rarity")]
     Rarity,
@@ -2542,7 +2552,7 @@ pub struct OracleCollectionOracleTableSharedText3 {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// Provides column labels for this table. The `roll` key refers to the roll
@@ -2649,7 +2659,7 @@ pub struct OracleCollectionTableSharedRolls {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// The label at the head of each table column. The `roll` key refers to the
@@ -2753,7 +2763,7 @@ pub struct OracleCollectionTableSharedText {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// The label at the head of each table column. The `roll` key refers to the
@@ -2860,7 +2870,7 @@ pub struct OracleCollectionTableSharedText2 {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2955,7 +2965,7 @@ pub struct OracleCollectionTables {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for an OracleCollection.
@@ -3040,7 +3050,7 @@ pub struct OracleColumnText {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3121,7 +3131,7 @@ pub struct OracleColumnText2 {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3202,7 +3212,7 @@ pub struct OracleColumnText3 {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// Special roll instructions to use when rolling multiple times on a single
@@ -3410,7 +3420,7 @@ pub struct OracleTableRollableTableText {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// The label at the head of each table column. The `roll` key refers to the
@@ -3529,7 +3539,7 @@ pub struct OracleTableRollableTableText2 {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// The label at the head of each table column. The `roll` key refers to the
@@ -3651,7 +3661,7 @@ pub struct OracleTableRollableTableText3 {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// Represents a row in an oracle table, with a single text cell.
@@ -3691,6 +3701,10 @@ pub struct OracleTableRowText {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
 
     #[serde(rename = "template")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3737,6 +3751,10 @@ pub struct OracleTableRowText2 {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
 
     #[serde(rename = "template")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3786,6 +3804,10 @@ pub struct OracleTableRowText3 {
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
 
     #[serde(rename = "template")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -3895,7 +3917,7 @@ pub struct OracleTablesCollection {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4051,7 +4073,7 @@ pub struct Rarity {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID for a Rarity.
@@ -4554,59 +4576,59 @@ pub type Tag = Option<Value>;
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "value_type")]
 pub enum TagRule {
-    #[serde(rename = "asset")]
+    #[serde(rename = "Asset")]
     Asset(TagRuleAsset),
 
-    #[serde(rename = "asset_collection")]
+    #[serde(rename = "AssetCollection")]
     AssetCollection(TagRuleAssetCollection),
 
-    #[serde(rename = "atlas_collection")]
+    #[serde(rename = "AtlasCollection")]
     AtlasCollection(TagRuleAtlasCollection),
 
-    #[serde(rename = "atlas_entry")]
+    #[serde(rename = "AtlasEntry")]
     AtlasEntry(TagRuleAtlasEntry),
+
+    #[serde(rename = "DelveSite")]
+    DelveSite(TagRuleDelveSite),
+
+    #[serde(rename = "DelveSiteDomain")]
+    DelveSiteDomain(TagRuleDelveSiteDomain),
+
+    #[serde(rename = "DelveSiteTheme")]
+    DelveSiteTheme(TagRuleDelveSiteTheme),
+
+    #[serde(rename = "Move")]
+    Move(TagRuleMove),
+
+    #[serde(rename = "MoveCategory")]
+    MoveCategory(TagRuleMoveCategory),
+
+    #[serde(rename = "Npc")]
+    Npc(TagRuleNpc),
+
+    #[serde(rename = "NpcCollection")]
+    NpcCollection(TagRuleNpcCollection),
+
+    #[serde(rename = "OracleCollection")]
+    OracleCollection(TagRuleOracleCollection),
+
+    #[serde(rename = "OracleRollable")]
+    OracleRollable(TagRuleOracleRollable),
+
+    #[serde(rename = "Rarity")]
+    Rarity(TagRuleRarity),
+
+    #[serde(rename = "Truth")]
+    Truth(TagRuleTruth),
 
     #[serde(rename = "boolean")]
     Boolean(TagRuleBoolean),
-
-    #[serde(rename = "delve_site")]
-    DelveSite(TagRuleDelveSite),
-
-    #[serde(rename = "delve_site_domain")]
-    DelveSiteDomain(TagRuleDelveSiteDomain),
-
-    #[serde(rename = "delve_site_theme")]
-    DelveSiteTheme(TagRuleDelveSiteTheme),
 
     #[serde(rename = "enum")]
     Enum(TagRuleEnum),
 
     #[serde(rename = "integer")]
     Integer(TagRuleInteger),
-
-    #[serde(rename = "move")]
-    Move(TagRuleMove),
-
-    #[serde(rename = "move_category")]
-    MoveCategory(TagRuleMoveCategory),
-
-    #[serde(rename = "npc")]
-    Npc(TagRuleNpc),
-
-    #[serde(rename = "npc_collection")]
-    NpcCollection(TagRuleNpcCollection),
-
-    #[serde(rename = "oracle_collection")]
-    OracleCollection(TagRuleOracleCollection),
-
-    #[serde(rename = "oracle_rollable")]
-    OracleRollable(TagRuleOracleRollable),
-
-    #[serde(rename = "rarity")]
-    Rarity(TagRuleRarity),
-
-    #[serde(rename = "truth")]
-    Truth(TagRuleTruth),
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4666,18 +4688,6 @@ pub struct TagRuleAtlasEntry {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct TagRuleBoolean {
-    #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
-
-    #[serde(rename = "array")]
-    pub array: bool,
-
-    #[serde(rename = "description")]
-    pub description: MarkdownString,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct TagRuleDelveSite {
     #[serde(rename = "applies_to")]
     pub appliesTo: Vec<ObjectType>,
@@ -4717,33 +4727,6 @@ pub struct TagRuleDelveSiteTheme {
     /// field accepts a single non-wildcard ID.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct TagRuleEnum {
-    #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
-
-    #[serde(rename = "array")]
-    pub array: bool,
-
-    #[serde(rename = "description")]
-    pub description: MarkdownString,
-
-    #[serde(rename = "enum")]
-    pub enum_: Vec<DictKey>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct TagRuleInteger {
-    #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
-
-    #[serde(rename = "array")]
-    pub array: bool,
-
-    #[serde(rename = "description")]
-    pub description: MarkdownString,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4857,6 +4840,48 @@ pub struct TagRuleTruth {
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
+
+#[derive(Serialize, Deserialize)]
+pub struct TagRuleBoolean {
+    #[serde(rename = "applies_to")]
+    pub appliesTo: Vec<ObjectType>,
+
+    #[serde(rename = "array")]
+    pub array: bool,
+
+    #[serde(rename = "description")]
+    pub description: MarkdownString,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct TagRuleEnum {
+    #[serde(rename = "applies_to")]
+    pub appliesTo: Vec<ObjectType>,
+
+    #[serde(rename = "array")]
+    pub array: bool,
+
+    #[serde(rename = "description")]
+    pub description: MarkdownString,
+
+    #[serde(rename = "enum")]
+    pub enum_: Vec<DictKey>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct TagRuleInteger {
+    #[serde(rename = "applies_to")]
+    pub appliesTo: Vec<ObjectType>,
+
+    #[serde(rename = "array")]
+    pub array: bool,
+
+    #[serde(rename = "description")]
+    pub description: MarkdownString,
+}
+
+/// A dictionary of tags, keyed by the RulesetID that the tags are from.
+pub type Tags = HashMap<String, HashMap<String, Tag>>;
 
 /// A rich text string in Markdown with replaced values from oracle roll
 /// results.
@@ -5157,7 +5182,7 @@ pub struct Truth {
 
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub tags: Option<Box<HashMap<String, HashMap<String, Tag>>>>,
+    pub tags: Option<Box<Tags>>,
 
     #[serde(rename = "your_character")]
     #[serde(skip_serializing_if = "Option::is_none")]

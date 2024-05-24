@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "https://ironswornrpg.com/datasworn-source.schema.json",
 	"$ref": "#/definitions/SourceRoot",
-	"title": "DataswornSource v0.0.10",
+	"title": "DataswornSource v0.1.0",
 	"description": "Source data schema for Datasworn, which describes game rules compatible with the Ironsworn tabletop roleplaying game by Shawn Tomkin.\n\nThe source data omits IDs, and makes properties that provide a default value optional; these values are inserted during validation/processing to produce the JSON for distribution.",
 	"definitions": {
 		"SourceRoot": {
@@ -147,7 +147,7 @@
 								"datasworn_version": {
 									"type": "string",
 									"description": "The version of the Datasworn format used by this data.",
-									"const": "0.0.10",
+									"const": "0.1.0",
 									"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 								},
 								"ruleset": {
@@ -213,7 +213,7 @@
 				"datasworn_version": {
 					"type": "string",
 					"description": "The version of the Datasworn format used by this data.",
-					"const": "0.0.10",
+					"const": "0.1.0",
 					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 				},
 				"type": {
@@ -364,7 +364,7 @@
 				"datasworn_version": {
 					"type": "string",
 					"description": "The version of the Datasworn format used by this data.",
-					"const": "0.0.10",
+					"const": "0.1.0",
 					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 				},
 				"type": {
@@ -1255,6 +1255,10 @@
 				"rarity"
 			]
 		},
+		"NonIdentifiableType": {
+			"title": "NonIdentifiableType",
+			"enum": ["asset_ability", "oracle_table_row"]
+		},
 		"ObjectType": {
 			"title": "ObjectType",
 			"anyOf": [
@@ -1266,6 +1270,9 @@
 				},
 				{
 					"$ref": "#/definitions/CollectionType"
+				},
+				{
+					"$ref": "#/definitions/NonIdentifiableType"
 				}
 			]
 		},
@@ -1562,21 +1569,21 @@
 					"enum": [
 						"boolean",
 						"integer",
-						"oracle_rollable",
-						"move",
-						"asset",
-						"atlas_entry",
-						"npc",
-						"oracle_collection",
-						"move_category",
-						"asset_collection",
-						"atlas_collection",
-						"npc_collection",
-						"delve_site",
-						"delve_site_theme",
-						"delve_site_domain",
-						"truth",
-						"rarity",
+						"OracleRollable",
+						"Move",
+						"Asset",
+						"AtlasEntry",
+						"Npc",
+						"OracleCollection",
+						"MoveCategory",
+						"AssetCollection",
+						"AtlasCollection",
+						"NpcCollection",
+						"DelveSite",
+						"DelveSiteTheme",
+						"DelveSiteDomain",
+						"Truth",
+						"Rarity",
 						"enum"
 					]
 				}
@@ -1675,7 +1682,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "oracle_rollable",
+								"const": "OracleRollable",
 								"type": "string"
 							}
 						}
@@ -1708,7 +1715,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "oracle_rollable",
+								"const": "OracleRollable",
 								"type": "string"
 							}
 						},
@@ -1720,7 +1727,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "move",
+								"const": "Move",
 								"type": "string"
 							}
 						}
@@ -1753,7 +1760,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "move",
+								"const": "Move",
 								"type": "string"
 							}
 						},
@@ -1765,7 +1772,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "asset",
+								"const": "Asset",
 								"type": "string"
 							}
 						}
@@ -1798,7 +1805,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "asset",
+								"const": "Asset",
 								"type": "string"
 							}
 						},
@@ -1810,7 +1817,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "atlas_entry",
+								"const": "AtlasEntry",
 								"type": "string"
 							}
 						}
@@ -1843,7 +1850,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "atlas_entry",
+								"const": "AtlasEntry",
 								"type": "string"
 							}
 						},
@@ -1855,7 +1862,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "npc",
+								"const": "Npc",
 								"type": "string"
 							}
 						}
@@ -1888,7 +1895,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "npc",
+								"const": "Npc",
 								"type": "string"
 							}
 						},
@@ -1900,7 +1907,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "oracle_collection",
+								"const": "OracleCollection",
 								"type": "string"
 							}
 						}
@@ -1933,7 +1940,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "oracle_collection",
+								"const": "OracleCollection",
 								"type": "string"
 							}
 						},
@@ -1945,7 +1952,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "move_category",
+								"const": "MoveCategory",
 								"type": "string"
 							}
 						}
@@ -1978,7 +1985,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "move_category",
+								"const": "MoveCategory",
 								"type": "string"
 							}
 						},
@@ -1990,7 +1997,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "asset_collection",
+								"const": "AssetCollection",
 								"type": "string"
 							}
 						}
@@ -2023,7 +2030,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "asset_collection",
+								"const": "AssetCollection",
 								"type": "string"
 							}
 						},
@@ -2035,7 +2042,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "atlas_collection",
+								"const": "AtlasCollection",
 								"type": "string"
 							}
 						}
@@ -2068,7 +2075,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "atlas_collection",
+								"const": "AtlasCollection",
 								"type": "string"
 							}
 						},
@@ -2080,7 +2087,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "npc_collection",
+								"const": "NpcCollection",
 								"type": "string"
 							}
 						}
@@ -2113,7 +2120,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "npc_collection",
+								"const": "NpcCollection",
 								"type": "string"
 							}
 						},
@@ -2125,7 +2132,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "delve_site",
+								"const": "DelveSite",
 								"type": "string"
 							}
 						}
@@ -2158,7 +2165,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "delve_site",
+								"const": "DelveSite",
 								"type": "string"
 							}
 						},
@@ -2170,7 +2177,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "delve_site_theme",
+								"const": "DelveSiteTheme",
 								"type": "string"
 							}
 						}
@@ -2203,7 +2210,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "delve_site_theme",
+								"const": "DelveSiteTheme",
 								"type": "string"
 							}
 						},
@@ -2215,7 +2222,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "delve_site_domain",
+								"const": "DelveSiteDomain",
 								"type": "string"
 							}
 						}
@@ -2248,7 +2255,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "delve_site_domain",
+								"const": "DelveSiteDomain",
 								"type": "string"
 							}
 						},
@@ -2260,7 +2267,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "truth",
+								"const": "Truth",
 								"type": "string"
 							}
 						}
@@ -2293,7 +2300,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "truth",
+								"const": "Truth",
 								"type": "string"
 							}
 						},
@@ -2305,7 +2312,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "rarity",
+								"const": "Rarity",
 								"type": "string"
 							}
 						}
@@ -2338,7 +2345,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "rarity",
+								"const": "Rarity",
 								"type": "string"
 							}
 						},
@@ -2397,6 +2404,25 @@
 					}
 				}
 			]
+		},
+		"Tags": {
+			"title": "Tags",
+			"type": "object",
+			"description": "A dictionary of tags, keyed by the RulesetID that the tags are from.",
+			"remarks": "Deserialize as a dictionary object.",
+			"releaseStage": "experimental",
+			"patternProperties": {
+				"^([a-z0-9_]{3,})$": {
+					"title": "RulesetTags",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^([a-z][a-z_]*)$": {
+							"$ref": "#/definitions/Tag"
+						}
+					}
+				}
+			}
 		},
 		"ChallengeRank": {
 			"title": "ChallengeRank",
@@ -2801,19 +2827,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -2891,19 +2905,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -3196,19 +3198,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -3275,19 +3265,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -3354,19 +3332,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -3608,6 +3574,9 @@
 						"$ref": "#/definitions/OracleRoll"
 					}
 				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints",
 					"releaseStage": "experimental"
@@ -3683,6 +3652,9 @@
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints",
@@ -3770,6 +3742,9 @@
 					"items": {
 						"$ref": "#/definitions/OracleRoll"
 					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
 				},
 				"_i18n": {
 					"$ref": "#/definitions/I18nHints",
@@ -3865,19 +3840,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -3976,19 +3939,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4092,19 +4043,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4203,19 +4142,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4317,19 +4244,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4444,19 +4359,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4567,19 +4470,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4681,19 +4572,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4848,19 +4727,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -4970,19 +4837,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -5117,19 +4972,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -5279,19 +5122,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -5404,19 +5235,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -5993,19 +5812,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -6064,6 +5871,9 @@
 				"enhance_asset": {
 					"$ref": "#/definitions/AssetEnhancement",
 					"description": "Changes made to the asset, when this ability is enabled."
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -6344,19 +6154,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -7374,19 +7172,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -7457,7 +7243,7 @@
 				},
 				"type": {
 					"type": "string",
-					"const": "atlas"
+					"const": "atlas_collection"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7520,19 +7306,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -7589,19 +7363,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -7669,19 +7431,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -7761,19 +7511,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -8397,19 +8135,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",
@@ -8748,19 +8474,7 @@
 					"$ref": "#/definitions/Suggestions"
 				},
 				"tags": {
-					"type": "object",
-					"releaseStage": "experimental",
-					"patternProperties": {
-						"^([a-z0-9_]{3,})$": {
-							"type": "object",
-							"remarks": "Deserialize as a dictionary object.",
-							"patternProperties": {
-								"^([a-z][a-z_]*)$": {
-									"$ref": "#/definitions/Tag"
-								}
-							}
-						}
-					}
+					"$ref": "#/definitions/Tags"
 				},
 				"_comment": {
 					"type": "string",

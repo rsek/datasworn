@@ -19,7 +19,7 @@ export type SourceRoot =
 			 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
 			 * ```
 			 */
-			datasworn_version: '0.0.10'
+			datasworn_version: '0.1.0'
 			ruleset: RulesetId
 	  })
 
@@ -41,7 +41,7 @@ export interface Ruleset {
 	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
 	 * ```
 	 */
-	datasworn_version: '0.0.10'
+	datasworn_version: '0.1.0'
 	description?: MarkdownString
 	title?: SourceTitle
 	/**
@@ -189,7 +189,7 @@ export interface Expansion {
 	 * /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
 	 * ```
 	 */
-	datasworn_version: '0.0.10'
+	datasworn_version: '0.1.0'
 	ruleset: RulesetId
 	rules?: RulesExpansion
 }
@@ -845,7 +845,13 @@ export type NonCollectableType =
 	| 'truth'
 	| 'rarity'
 
-export type ObjectType = CollectableType | NonCollectableType | CollectionType
+export type NonIdentifiableType = 'asset_ability' | 'oracle_table_row'
+
+export type ObjectType =
+	| CollectableType
+	| NonCollectableType
+	| CollectionType
+	| NonIdentifiableType
 
 /**
  * Describes rules for player characters in this ruleset, such as stats and condition meters.
@@ -1043,7 +1049,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'oracle_rollable'
+			value_type: 'OracleRollable'
 	  }
 	| {
 			/**
@@ -1057,7 +1063,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'move'
+			value_type: 'Move'
 	  }
 	| {
 			/**
@@ -1071,7 +1077,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'asset'
+			value_type: 'Asset'
 	  }
 	| {
 			/**
@@ -1085,7 +1091,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'atlas_entry'
+			value_type: 'AtlasEntry'
 	  }
 	| {
 			/**
@@ -1099,7 +1105,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'npc'
+			value_type: 'Npc'
 	  }
 	| {
 			/**
@@ -1113,7 +1119,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'oracle_collection'
+			value_type: 'OracleCollection'
 	  }
 	| {
 			/**
@@ -1127,7 +1133,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'move_category'
+			value_type: 'MoveCategory'
 	  }
 	| {
 			/**
@@ -1141,7 +1147,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'asset_collection'
+			value_type: 'AssetCollection'
 	  }
 	| {
 			/**
@@ -1155,7 +1161,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'atlas_collection'
+			value_type: 'AtlasCollection'
 	  }
 	| {
 			/**
@@ -1169,7 +1175,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'npc_collection'
+			value_type: 'NpcCollection'
 	  }
 	| {
 			/**
@@ -1183,7 +1189,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'delve_site'
+			value_type: 'DelveSite'
 	  }
 	| {
 			/**
@@ -1197,7 +1203,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'delve_site_theme'
+			value_type: 'DelveSiteTheme'
 	  }
 	| {
 			/**
@@ -1211,7 +1217,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'delve_site_domain'
+			value_type: 'DelveSiteDomain'
 	  }
 	| {
 			/**
@@ -1225,7 +1231,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'truth'
+			value_type: 'Truth'
 	  }
 	| {
 			/**
@@ -1239,7 +1245,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'rarity'
+			value_type: 'Rarity'
 	  }
 	| {
 			/**
@@ -1255,6 +1261,13 @@ export type TagRule =
 			value_type: 'enum'
 			enum: DictKey[]
 	  }
+
+/**
+ * A dictionary of tags, keyed by the RulesetID that the tags are from.
+ * @remarks Deserialize as a dictionary object.
+ * @experimental
+ */
+export type Tags = Record<DictKey, Record<DictKey, Tag>>
 
 /**
  * Challenge rank, represented as an integer from 1 (troublesome) to 5 (epic).
@@ -1446,10 +1459,7 @@ export interface Npc {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -1491,10 +1501,7 @@ export interface NpcCollection {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -1691,10 +1698,7 @@ export interface OracleColumnText {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	suggestions?: Suggestions
 	type: 'oracle_rollable'
 	/**
@@ -1742,10 +1746,7 @@ export interface OracleColumnText2 {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	suggestions?: Suggestions
 	type: 'oracle_rollable'
 	/**
@@ -1793,10 +1794,7 @@ export interface OracleColumnText3 {
 	 * Most oracle tables are insensitive to matches, but a few define special match behavior.
 	 */
 	match?: OracleMatchBehavior
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	suggestions?: Suggestions
 	type: 'oracle_rollable'
 	/**
@@ -1868,6 +1866,7 @@ export interface OracleTableRowText {
 	 * @default null
 	 */
 	max?: number | null
+	tags?: Tags
 }
 
 /**
@@ -1907,6 +1906,7 @@ export interface OracleTableRowText2 {
 	 * @default null
 	 */
 	max?: number | null
+	tags?: Tags
 	/**
 	 * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
 	 */
@@ -1950,6 +1950,7 @@ export interface OracleTableRowText3 {
 	 * @default null
 	 */
 	max?: number | null
+	tags?: Tags
 	/**
 	 * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
 	 */
@@ -1985,10 +1986,7 @@ export interface OracleTableSharedRolls {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2060,10 +2058,7 @@ export interface OracleTableSharedText {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2135,10 +2130,7 @@ export interface OracleTableSharedText2 {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2214,10 +2206,7 @@ export interface OracleTableSharedText3 {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2289,10 +2278,7 @@ export interface OracleTableText {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	oracle_type: 'table_text'
 	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -2375,10 +2361,7 @@ export interface OracleTableText2 {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	oracle_type: 'table_text2'
 	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -2465,10 +2448,7 @@ export interface OracleTableText3 {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	oracle_type: 'table_text3'
 	/**
 	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
@@ -2547,10 +2527,7 @@ export interface OracleTablesCollection {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2643,10 +2620,7 @@ export interface MoveActionRoll {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2709,10 +2683,7 @@ export interface MoveCategory {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -2779,10 +2750,7 @@ export interface MoveNoRoll {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2872,10 +2840,7 @@ export interface MoveProgressRoll {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -2957,10 +2922,7 @@ export interface MoveSpecialTrack {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
 	 */
@@ -3301,10 +3263,7 @@ export interface Asset {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A localized category label for this asset. This is the surtitle above the asset's name on the card.
 	 * @example "Combat Talent"
@@ -3402,6 +3361,7 @@ export interface AssetAbility {
 	 * Describes changes made to various moves by this asset ability. Usually these require specific trigger conditions.
 	 */
 	enhance_moves?: MoveEnhancement[]
+	tags?: Tags
 }
 
 /**
@@ -3503,10 +3463,7 @@ export interface AssetCollection {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -3949,10 +3906,7 @@ export interface Truth {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * @default "1d100"
 	 */
@@ -4008,10 +3962,7 @@ export interface AtlasCollection {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * A thematic color associated with this collection.
 	 */
@@ -4073,10 +4024,7 @@ export interface AtlasEntry {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	features: MarkdownString[]
 	summary?: MarkdownString
 	description: MarkdownString
@@ -4128,10 +4076,7 @@ export interface Rarity {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	/**
 	 * The asset augmented by this rarity.
 	 */
@@ -4177,10 +4122,7 @@ export interface DelveSite {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	type: 'delve_site'
 	icon?: SvgImageUrl
 	rank: ChallengeRank
@@ -4324,10 +4266,7 @@ export interface DelveSiteDomain {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	type: 'delve_site_domain'
 	/**
 	 * @deprecated
@@ -4440,10 +4379,7 @@ export interface DelveSiteTheme {
 	 */
 	_source: SourceInfo
 	suggestions?: Suggestions
-	/**
-	 * @experimental
-	 */
-	tags?: Record<DictKey, Record<DictKey, Tag>>
+	tags?: Tags
 	type: 'delve_site_theme'
 	summary: MarkdownString
 	description?: MarkdownString

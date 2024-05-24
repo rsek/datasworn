@@ -8,7 +8,7 @@ namespace Datasworn
     public class TagRuleOracleCollection : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "oracle_collection"; }
+        public string ValueType_ { get => "OracleCollection"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }

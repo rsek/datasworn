@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
-import java.util.Map;
 
 /**
  * A delve site with a theme, domain, and denizens.
@@ -66,7 +65,7 @@ public class DelveSite {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
-    private Map<String, Map<String, Tag>> tags;
+    private Tags tags;
 
     public DelveSite() {
     }
@@ -314,14 +313,14 @@ public class DelveSite {
     /**
      * Getter for tags.<p>
      */
-    public Map<String, Map<String, Tag>> getTags() {
+    public Tags getTags() {
         return tags;
     }
 
     /**
      * Setter for tags.<p>
      */
-    public void setTags(Map<String, Map<String, Tag>> tags) {
+    public void setTags(Tags tags) {
         this.tags = tags;
     }
 }

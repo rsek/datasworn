@@ -61,6 +61,10 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
 
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public Tags? Tags { get; set; }
+
         [JsonPropertyName("template")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public OracleRollTemplate? Template { get; set; }

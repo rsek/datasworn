@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
-import java.util.Map;
 
 @JsonSerialize
 public class OracleColumnText2 {
@@ -58,7 +57,7 @@ public class OracleColumnText2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
-    private Map<String, Map<String, Tag>> tags;
+    private Tags tags;
 
     public OracleColumnText2() {
     }
@@ -280,14 +279,14 @@ public class OracleColumnText2 {
     /**
      * Getter for tags.<p>
      */
-    public Map<String, Map<String, Tag>> getTags() {
+    public Tags getTags() {
         return tags;
     }
 
     /**
      * Setter for tags.<p>
      */
-    public void setTags(Map<String, Map<String, Tag>> tags) {
+    public void setTags(Tags tags) {
         this.tags = tags;
     }
 }

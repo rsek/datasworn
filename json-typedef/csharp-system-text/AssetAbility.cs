@@ -84,5 +84,9 @@ namespace Datasworn
         [JsonPropertyName("options")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public IDictionary<string, AssetAbilityOptionField> Options { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public Tags? Tags { get; set; }
     }
 }

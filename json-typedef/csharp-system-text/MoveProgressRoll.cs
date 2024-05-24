@@ -99,6 +99,6 @@ namespace Datasworn
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, IDictionary<string, Tag>> Tags { get; set; }
+        public Tags? Tags { get; set; }
     }
 }

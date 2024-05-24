@@ -8,7 +8,7 @@ namespace Datasworn
     public class TagRuleRarity : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "rarity"; }
+        public string ValueType_ { get => "Rarity"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }

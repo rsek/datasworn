@@ -11,6 +11,8 @@ namespace Datasworn
     {
         Asset,
 
+        AssetAbility,
+
         AssetCollection,
 
         AtlasCollection,
@@ -35,6 +37,8 @@ namespace Datasworn
 
         OracleRollable,
 
+        OracleTableRow,
+
         Rarity,
 
         Truth,
@@ -48,6 +52,8 @@ namespace Datasworn
             {
                 case "asset":
                     return ObjectType.Asset;
+                case "asset_ability":
+                    return ObjectType.AssetAbility;
                 case "asset_collection":
                     return ObjectType.AssetCollection;
                 case "atlas_collection":
@@ -72,6 +78,8 @@ namespace Datasworn
                     return ObjectType.OracleCollection;
                 case "oracle_rollable":
                     return ObjectType.OracleRollable;
+                case "oracle_table_row":
+                    return ObjectType.OracleTableRow;
                 case "rarity":
                     return ObjectType.Rarity;
                 case "truth":
@@ -87,6 +95,9 @@ namespace Datasworn
             {
                 case ObjectType.Asset:
                     JsonSerializer.Serialize<string>(writer, "asset", options);
+                    return;
+                case ObjectType.AssetAbility:
+                    JsonSerializer.Serialize<string>(writer, "asset_ability", options);
                     return;
                 case ObjectType.AssetCollection:
                     JsonSerializer.Serialize<string>(writer, "asset_collection", options);
@@ -123,6 +134,9 @@ namespace Datasworn
                     return;
                 case ObjectType.OracleRollable:
                     JsonSerializer.Serialize<string>(writer, "oracle_rollable", options);
+                    return;
+                case ObjectType.OracleTableRow:
+                    JsonSerializer.Serialize<string>(writer, "oracle_table_row", options);
                     return;
                 case ObjectType.Rarity:
                     JsonSerializer.Serialize<string>(writer, "rarity", options);

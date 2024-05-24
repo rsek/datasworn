@@ -8,7 +8,7 @@
 				},
 				"datasworn_version": {
 					"enum": [
-						"0.0.10"
+						"0.1.0"
 					],
 					"metadata": {
 						"description": "The version of the Datasworn format used by this data.",
@@ -165,7 +165,7 @@
 				},
 				"datasworn_version": {
 					"enum": [
-						"0.0.10"
+						"0.1.0"
 					],
 					"metadata": {
 						"description": "The version of the Datasworn format used by this data.",
@@ -937,7 +937,9 @@
 				"delve_site_theme",
 				"delve_site_domain",
 				"truth",
-				"rarity"
+				"rarity",
+				"asset_ability",
+				"oracle_table_row"
 			]
 		},
 		"Rules": {
@@ -1132,7 +1134,7 @@
 						}
 					}
 				},
-				"oracle_rollable": {
+				"OracleRollable": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1150,7 +1152,7 @@
 						}
 					}
 				},
-				"move": {
+				"Move": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1168,7 +1170,7 @@
 						}
 					}
 				},
-				"asset": {
+				"Asset": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1186,7 +1188,7 @@
 						}
 					}
 				},
-				"atlas_entry": {
+				"AtlasEntry": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1204,7 +1206,7 @@
 						}
 					}
 				},
-				"npc": {
+				"Npc": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1222,7 +1224,7 @@
 						}
 					}
 				},
-				"oracle_collection": {
+				"OracleCollection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1240,7 +1242,7 @@
 						}
 					}
 				},
-				"move_category": {
+				"MoveCategory": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1258,7 +1260,7 @@
 						}
 					}
 				},
-				"asset_collection": {
+				"AssetCollection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1276,7 +1278,7 @@
 						}
 					}
 				},
-				"atlas_collection": {
+				"AtlasCollection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1294,7 +1296,7 @@
 						}
 					}
 				},
-				"npc_collection": {
+				"NpcCollection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1312,7 +1314,7 @@
 						}
 					}
 				},
-				"delve_site": {
+				"DelveSite": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1330,7 +1332,7 @@
 						}
 					}
 				},
-				"delve_site_theme": {
+				"DelveSiteTheme": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1348,7 +1350,7 @@
 						}
 					}
 				},
-				"delve_site_domain": {
+				"DelveSiteDomain": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1366,7 +1368,7 @@
 						}
 					}
 				},
-				"truth": {
+				"Truth": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1384,7 +1386,7 @@
 						}
 					}
 				},
-				"rarity": {
+				"Rarity": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1422,6 +1424,20 @@
 						}
 					}
 				}
+			}
+		},
+		"Tags": {
+			"values": {
+				"values": {
+					"ref": "Tag"
+				},
+				"metadata": {
+					"propertyPattern": "^([a-z][a-z_]*)$"
+				}
+			},
+			"metadata": {
+				"propertyPattern": "^([a-z0-9_]{3,})$",
+				"description": "A dictionary of tags, keyed by the RulesetID that the tags are from."
 			}
 		},
 		"ChallengeRank": {
@@ -1661,17 +1677,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"summary": {
 					"ref": "MarkdownString"
@@ -1738,17 +1744,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"color": {
 					"ref": "CssColor",
@@ -1996,17 +1992,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"color": {
 							"ref": "CssColor",
@@ -2126,17 +2112,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"color": {
 							"ref": "CssColor",
@@ -2248,17 +2224,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"color": {
 							"ref": "CssColor",
@@ -2373,17 +2339,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"color": {
 							"ref": "CssColor",
@@ -2495,17 +2451,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"color": {
 							"ref": "CssColor",
@@ -2643,17 +2589,7 @@
 					}
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"suggestions": {
 					"ref": "Suggestions"
@@ -2740,17 +2676,7 @@
 					}
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"suggestions": {
 					"ref": "Suggestions"
@@ -2835,17 +2761,7 @@
 					}
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"suggestions": {
 					"ref": "Suggestions"
@@ -2926,17 +2842,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"replaces": {
 							"ref": "OracleRollableId",
@@ -3056,17 +2962,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"replaces": {
 							"ref": "OracleRollableId",
@@ -3189,17 +3085,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"replaces": {
 							"ref": "OracleRollableId",
@@ -3295,6 +3181,9 @@
 				},
 				"_i18n": {
 					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
 				}
 			},
 			"metadata": {
@@ -3351,6 +3240,9 @@
 				},
 				"_i18n": {
 					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
 				}
 			},
 			"metadata": {
@@ -3410,6 +3302,9 @@
 				},
 				"_i18n": {
 					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
 				}
 			},
 			"metadata": {
@@ -3467,17 +3362,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"color": {
 					"ref": "CssColor",
@@ -3627,17 +3512,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"replaces": {
 							"ref": "MoveId",
@@ -3713,17 +3588,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"replaces": {
 							"ref": "MoveId",
@@ -3808,17 +3673,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"replaces": {
 							"ref": "MoveId",
@@ -3897,17 +3752,7 @@
 							"ref": "Suggestions"
 						},
 						"tags": {
-							"values": {
-								"values": {
-									"ref": "Tag"
-								},
-								"metadata": {
-									"propertyPattern": "^([a-z][a-z_]*)$"
-								}
-							},
-							"metadata": {
-								"propertyPattern": "^([a-z0-9_]{3,})$"
-							}
+							"ref": "Tags"
 						},
 						"replaces": {
 							"ref": "MoveId",
@@ -3973,17 +3818,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"color": {
 					"ref": "CssColor",
@@ -4610,17 +4445,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"icon": {
 					"ref": "SvgImageUrl",
@@ -4738,6 +4563,9 @@
 					"metadata": {
 						"description": "Describes changes made to various moves by this asset ability. Usually these require specific trigger conditions."
 					}
+				},
+				"tags": {
+					"ref": "Tags"
 				}
 			},
 			"metadata": {
@@ -4966,17 +4794,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"color": {
 					"ref": "CssColor",
@@ -5763,17 +5581,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"icon": {
 					"ref": "SvgImageUrl"
@@ -5858,7 +5666,7 @@
 				},
 				"type": {
 					"enum": [
-						"atlas"
+						"atlas_collection"
 					]
 				}
 			},
@@ -5879,17 +5687,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"color": {
 					"ref": "CssColor",
@@ -6004,17 +5802,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"summary": {
 					"ref": "MarkdownString"
@@ -6112,17 +5900,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"icon": {
 					"ref": "SvgImageUrl"
@@ -6201,17 +5979,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"icon": {
 					"ref": "SvgImageUrl"
@@ -6334,17 +6102,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"description": {
 					"ref": "MarkdownString"
@@ -6419,17 +6177,7 @@
 					"ref": "Suggestions"
 				},
 				"tags": {
-					"values": {
-						"values": {
-							"ref": "Tag"
-						},
-						"metadata": {
-							"propertyPattern": "^([a-z][a-z_]*)$"
-						}
-					},
-					"metadata": {
-						"propertyPattern": "^([a-z0-9_]{3,})$"
-					}
+					"ref": "Tags"
 				},
 				"description": {
 					"ref": "MarkdownString"

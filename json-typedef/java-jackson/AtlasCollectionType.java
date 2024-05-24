@@ -5,6 +5,6 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum AtlasCollectionType {
-    @JsonProperty("atlas")
-    ATLAS,
+    @JsonProperty("atlas_collection")
+    ATLAS_COLLECTION,
 }

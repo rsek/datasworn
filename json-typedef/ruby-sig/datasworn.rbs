@@ -120,7 +120,7 @@ module Datasworn
     attr_accessor options: Hash[String, AssetOptionField]?
     attr_accessor requirement: MarkdownString?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> Asset
     def to_json_data: () -> untyped
@@ -137,6 +137,7 @@ module Datasworn
     attr_accessor moves: Hash[String, Move]?
     attr_accessor name: Label?
     attr_accessor options: Hash[String, AssetAbilityOptionField]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> AssetAbility
     def to_json_data: () -> untyped
@@ -249,7 +250,7 @@ module Datasworn
     attr_accessor replaces: AssetCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> AssetCollection
     def to_json_data: () -> untyped
@@ -478,7 +479,7 @@ module Datasworn
   class AtlasCollectionType
     attr_accessor value: String
 
-    ATLAS: AtlasCollectionType
+    ATLAS_COLLECTION: AtlasCollectionType
 
     def self.from_json_data: (untyped) -> AtlasCollectionType
     def to_json_data: () -> untyped
@@ -501,7 +502,7 @@ module Datasworn
     attr_accessor replaces: AtlasCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> AtlasCollection
     def to_json_data: () -> untyped
@@ -535,7 +536,7 @@ module Datasworn
     attr_accessor quest_starter: MarkdownString?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
     attr_accessor your_truth: MarkdownString?
 
     def self.from_json_data: (untyped) -> AtlasEntry
@@ -617,7 +618,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor region: AtlasEntryID?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> DelveSite
     def to_json_data: () -> untyped
@@ -670,7 +671,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor name_oracle: OracleRollableID?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> DelveSiteDomain
     def to_json_data: () -> untyped
@@ -712,7 +713,7 @@ module Datasworn
     attr_accessor description: MarkdownString?
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> DelveSiteTheme
     def to_json_data: () -> untyped
@@ -849,7 +850,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleRollableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> MoveActionRoll
     def to_json_data: () -> untyped
@@ -876,7 +877,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleRollableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> MoveNoRoll
     def to_json_data: () -> untyped
@@ -905,7 +906,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleRollableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> MoveProgressRoll
     def to_json_data: () -> untyped
@@ -933,7 +934,7 @@ module Datasworn
     attr_accessor oracles: Array[OracleRollableID]?
     attr_accessor replaces: MoveID?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> MoveSpecialTrack
     def to_json_data: () -> untyped
@@ -964,7 +965,7 @@ module Datasworn
     attr_accessor replaces: MoveCategoryID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> MoveCategory
     def to_json_data: () -> untyped
@@ -1072,7 +1073,7 @@ module Datasworn
     attr_accessor quest_starter: MarkdownString?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
     attr_accessor variants: Hash[String, NpcVariant]?
     attr_accessor your_truth: MarkdownString?
 
@@ -1105,7 +1106,7 @@ module Datasworn
     attr_accessor replaces: NpcCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> NpcCollection
     def to_json_data: () -> untyped
@@ -1156,6 +1157,7 @@ module Datasworn
     attr_accessor value: String
 
     ASSET: ObjectType
+    ASSET_ABILITY: ObjectType
     ASSET_COLLECTION: ObjectType
     ATLAS_COLLECTION: ObjectType
     ATLAS_ENTRY: ObjectType
@@ -1168,6 +1170,7 @@ module Datasworn
     NPC_COLLECTION: ObjectType
     ORACLE_COLLECTION: ObjectType
     ORACLE_ROLLABLE: ObjectType
+    ORACLE_TABLE_ROW: ObjectType
     RARITY: ObjectType
     TRUTH: ObjectType
 
@@ -1215,7 +1218,7 @@ module Datasworn
     attr_accessor replaces: OracleCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleCollectionOracleTableSharedText3
     def to_json_data: () -> untyped
@@ -1254,7 +1257,7 @@ module Datasworn
     attr_accessor replaces: OracleCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleCollectionTableSharedRolls
     def to_json_data: () -> untyped
@@ -1293,7 +1296,7 @@ module Datasworn
     attr_accessor replaces: OracleCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleCollectionTableSharedText
     def to_json_data: () -> untyped
@@ -1333,7 +1336,7 @@ module Datasworn
     attr_accessor replaces: OracleCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleCollectionTableSharedText2
     def to_json_data: () -> untyped
@@ -1365,7 +1368,7 @@ module Datasworn
     attr_accessor replaces: OracleCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleCollectionTables
     def to_json_data: () -> untyped
@@ -1410,7 +1413,7 @@ module Datasworn
     attr_accessor replaces: OracleRollableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleColumnText
     def to_json_data: () -> untyped
@@ -1448,7 +1451,7 @@ module Datasworn
     attr_accessor replaces: OracleRollableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleColumnText2
     def to_json_data: () -> untyped
@@ -1486,7 +1489,7 @@ module Datasworn
     attr_accessor replaces: OracleRollableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleColumnText3
     def to_json_data: () -> untyped
@@ -1586,7 +1589,7 @@ module Datasworn
     attr_accessor replaces: OracleRollableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTableRollableTableText
     def to_json_data: () -> untyped
@@ -1635,7 +1638,7 @@ module Datasworn
     attr_accessor replaces: OracleRollableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTableRollableTableText2
     def to_json_data: () -> untyped
@@ -1685,7 +1688,7 @@ module Datasworn
     attr_accessor replaces: OracleRollableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTableRollableTableText3
     def to_json_data: () -> untyped
@@ -1700,6 +1703,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Tags?
     attr_accessor template: OracleRollTemplate?
 
     def self.from_json_data: (untyped) -> OracleTableRowText
@@ -1716,6 +1720,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Tags?
     attr_accessor template: OracleRollTemplate?
 
     def self.from_json_data: (untyped) -> OracleTableRowText2
@@ -1733,6 +1738,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor oracle_rolls: Array[OracleRoll]?
     attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Tags?
     attr_accessor template: OracleRollTemplate?
 
     def self.from_json_data: (untyped) -> OracleTableRowText3
@@ -1775,7 +1781,7 @@ module Datasworn
     attr_accessor replaces: OracleCollectionID?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTablesCollection
     def to_json_data: () -> untyped
@@ -1856,7 +1862,7 @@ module Datasworn
     attr_accessor canonical_name: Label?
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> Rarity
     def to_json_data: () -> untyped
@@ -2241,15 +2247,6 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class TagRuleBoolean < TagRule
-    attr_accessor applies_to: Array[ObjectType]
-    attr_accessor array: bool
-    attr_accessor description: MarkdownString
-
-    def self.from_json_data: (untyped) -> TagRuleBoolean
-    def to_json_data: () -> untyped
-  end
-
   class TagRuleDelveSite < TagRule
     attr_accessor applies_to: Array[ObjectType]
     attr_accessor description: MarkdownString
@@ -2274,25 +2271,6 @@ module Datasworn
     attr_accessor wildcard: bool
 
     def self.from_json_data: (untyped) -> TagRuleDelveSiteTheme
-    def to_json_data: () -> untyped
-  end
-
-  class TagRuleEnum < TagRule
-    attr_accessor applies_to: Array[ObjectType]
-    attr_accessor array: bool
-    attr_accessor description: MarkdownString
-    attr_accessor enum: Array[DictKey]
-
-    def self.from_json_data: (untyped) -> TagRuleEnum
-    def to_json_data: () -> untyped
-  end
-
-  class TagRuleInteger < TagRule
-    attr_accessor applies_to: Array[ObjectType]
-    attr_accessor array: bool
-    attr_accessor description: MarkdownString
-
-    def self.from_json_data: (untyped) -> TagRuleInteger
     def to_json_data: () -> untyped
   end
 
@@ -2365,6 +2343,41 @@ module Datasworn
     attr_accessor wildcard: bool
 
     def self.from_json_data: (untyped) -> TagRuleTruth
+    def to_json_data: () -> untyped
+  end
+
+  class TagRuleBoolean < TagRule
+    attr_accessor applies_to: Array[ObjectType]
+    attr_accessor array: bool
+    attr_accessor description: MarkdownString
+
+    def self.from_json_data: (untyped) -> TagRuleBoolean
+    def to_json_data: () -> untyped
+  end
+
+  class TagRuleEnum < TagRule
+    attr_accessor applies_to: Array[ObjectType]
+    attr_accessor array: bool
+    attr_accessor description: MarkdownString
+    attr_accessor enum: Array[DictKey]
+
+    def self.from_json_data: (untyped) -> TagRuleEnum
+    def to_json_data: () -> untyped
+  end
+
+  class TagRuleInteger < TagRule
+    attr_accessor applies_to: Array[ObjectType]
+    attr_accessor array: bool
+    attr_accessor description: MarkdownString
+
+    def self.from_json_data: (untyped) -> TagRuleInteger
+    def to_json_data: () -> untyped
+  end
+
+  class Tags
+    attr_accessor value: Hash[String, Hash[String, Tag]]
+
+    def self.from_json_data: (untyped) -> Tags
     def to_json_data: () -> untyped
   end
 
@@ -2529,7 +2542,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
-    attr_accessor tags: Hash[String, Hash[String, Tag]]?
+    attr_accessor tags: Tags?
     attr_accessor your_character: MarkdownString?
 
     def self.from_json_data: (untyped) -> Truth

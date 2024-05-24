@@ -51,6 +51,10 @@ public class AssetAbility {
     @JsonProperty("options")
     private Map<String, AssetAbilityOptionField> options;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Tags tags;
+
     public AssetAbility() {
     }
 
@@ -220,5 +224,19 @@ public class AssetAbility {
      */
     public void setOptions(Map<String, AssetAbilityOptionField> options) {
         this.options = options;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Tags getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Tags tags) {
+        this.tags = tags;
     }
 }

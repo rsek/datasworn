@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * The version of the Datasworn format used by this data.
  */
 public enum RulesPackageExpansionDataswornVersion {
-    @JsonProperty("0.0.10")
+    @JsonProperty("0.1.0")
     DEFAULT_NAME,
 }

@@ -45,6 +45,10 @@ public class OracleTableRowText2 {
     private Suggestions suggestions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("tags")
+    private Tags tags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("template")
     private OracleRollTemplate template;
 
@@ -185,6 +189,20 @@ public class OracleTableRowText2 {
      */
     public void setSuggestions(Suggestions suggestions) {
         this.suggestions = suggestions;
+    }
+
+    /**
+     * Getter for tags.<p>
+     */
+    public Tags getTags() {
+        return tags;
+    }
+
+    /**
+     * Setter for tags.<p>
+     */
+    public void setTags(Tags tags) {
+        this.tags = tags;
     }
 
     /**

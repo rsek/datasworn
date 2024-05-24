@@ -8,7 +8,7 @@ namespace Datasworn
     public class TagRuleOracleRollable : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "oracle_rollable"; }
+        public string ValueType_ { get => "OracleRollable"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }
