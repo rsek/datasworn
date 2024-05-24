@@ -1,10 +1,10 @@
 import { Type, type Static } from '@sinclair/typebox'
-import * as Moves from '../Moves.js'
-import { Id, Localize } from '../common/index.js'
 import * as Generic from '../Generic.js'
+import * as Moves from '../Moves.js'
+import { type Tags } from '../Rules.js'
+import { Id, Localize } from '../common/index.js'
 import { AssetEnhancement } from './Enhancement.js'
 import { AssetAbilityControlField, AssetAbilityOptionField } from './Fields.js'
-import { Tags } from '../Rules.js'
 
 export const AssetAbility = Generic.IdentifiedNode(
 	Type.Ref(Id.AssetAbilityId),
