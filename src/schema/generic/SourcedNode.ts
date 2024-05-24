@@ -1,7 +1,7 @@
 import { Type, type ObjectOptions, type TObject } from '@sinclair/typebox'
 import * as Utils from '../Utils.js'
 import { Id, Localize, Metadata } from '../common/index.js'
-import { type Tag } from '../rules/TagRule.js'
+import { Tags, type Tag } from '../rules/TagRule.js'
 import { Dictionary } from './Dictionary.js'
 import { IdentifiedNode, type TIdentifiedNode } from './IdentifiedNode.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
@@ -26,11 +26,7 @@ export const SourcedNodeBase = Type.Object(
 		}),
 		suggestions: Type.Optional(Type.Ref(Metadata.Suggestions)),
 
-		tags: Type.Optional(
-			Type.Record(Id.RulesetId, Dictionary(Type.Ref<typeof Tag>('Tag')), {
-				releaseStage: 'experimental'
-			})
-		)
+		tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
 		// _sort: Type.Optional(SourceOnly(Type.Number()))
 	},
 	// overridden when it's used as a mixin, left in for use in validation

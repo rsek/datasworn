@@ -20,6 +20,7 @@ import {
 } from '../utils/typebox.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
+import { Tags } from '../Rules.js'
 
 const TableRowBase = Type.Object({
 	text: Type.Ref(Localize.MarkdownString, {
@@ -63,7 +64,8 @@ export const TableRowMixin = Utils.Assign([
 			[JsonTypeDef]: {
 				schema: JtdType.Int16()
 			}
-		})
+		}),
+		tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
 	})
 ])
 

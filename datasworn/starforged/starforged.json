@@ -17719,9 +17719,9 @@
 								{
 									"min": 1,
 									"max": 40,
-									"text": "[Legacy](id:starforged/oracles/factions/legacy) [Affiliation](id:starforged/oracles/factions/affiliation)",
+									"text": "[Legacy](id:starforged/oracles/factions/name/legacy) [Affiliation](id:starforged/oracles/factions/name/affiliation)",
 									"template": {
-										"text": "{{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/affiliation}}"
+										"text": "{{text:starforged/oracles/factions/name/legacy}} {{text:starforged/oracles/factions/name/affiliation}}"
 									},
 									"_i18n": {
 										"template": {
@@ -17734,9 +17734,9 @@
 								{
 									"min": 41,
 									"max": 55,
-									"text": "[Legacy](id:starforged/oracles/factions/legacy) [Identity](id:starforged/oracles/factions/identity)",
+									"text": "[Legacy](id:starforged/oracles/factions/name/legacy) [Identity](id:starforged/oracles/factions/name/identity)",
 									"template": {
-										"text": "{{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
+										"text": "{{text:starforged/oracles/factions/name/legacy}} {{text:starforged/oracles/factions/name/identity}}"
 									},
 									"_i18n": {
 										"template": {
@@ -17749,9 +17749,9 @@
 								{
 									"min": 56,
 									"max": 70,
-									"text": "[Identity](id:starforged/oracles/factions/identity) *of the* [Legacy](id:starforged/oracles/factions/legacy) [Affiliation](id:starforged/oracles/factions/affiliation)",
+									"text": "[Identity](id:starforged/oracles/factions/name/identity) *of the* [Legacy](id:starforged/oracles/factions/name/legacy) [Affiliation](id:starforged/oracles/factions/name/affiliation)",
 									"template": {
-										"text": "{{text:starforged/oracles/factions/identity}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/affiliation}}"
+										"text": "{{text:starforged/oracles/factions/name/identity}} of the {{text:starforged/oracles/factions/name/legacy}} {{text:starforged/oracles/factions/name/affiliation}}"
 									},
 									"_i18n": {
 										"template": {
@@ -17764,9 +17764,9 @@
 								{
 									"min": 71,
 									"max": 100,
-									"text": "[Affiliation](id:starforged/oracles/factions/affiliation) *of the* [Legacy](id:starforged/oracles/factions/legacy) [Identity](id:starforged/oracles/factions/identity)",
+									"text": "[Affiliation](id:starforged/oracles/factions/name/affiliation) *of the* [Legacy](id:starforged/oracles/factions/name/legacy) [Identity](id:starforged/oracles/factions/name/identity)",
 									"template": {
-										"text": "{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
+										"text": "{{text:starforged/oracles/factions/name/affiliation}} of the {{text:starforged/oracles/factions/name/legacy}} {{text:starforged/oracles/factions/name/identity}}"
 									},
 									"_i18n": {
 										"template": {

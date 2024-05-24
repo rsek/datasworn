@@ -4,7 +4,7 @@ type: ruleset
 atlas:
   realms:
     name: Realms
-    type: atlas
+    type: atlas_collection
     _source:
       <<: &Source
         title: Sundered Isles

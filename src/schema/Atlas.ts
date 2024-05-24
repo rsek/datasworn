@@ -20,7 +20,7 @@ export type AtlasEntry = Static<typeof AtlasEntry>
 
 const AtlasBase = Generic.Collection(
 	Type.Ref(Id.AtlasCollectionId),
-	'atlas',
+	'atlas_collection',
 	Type.Ref(AtlasEntry),
 	{}
 )

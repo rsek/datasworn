@@ -4,6 +4,7 @@ import { Id, Localize } from '../common/index.js'
 import * as Generic from '../Generic.js'
 import { AssetEnhancement } from './Enhancement.js'
 import { AssetAbilityControlField, AssetAbilityOptionField } from './Fields.js'
+import { Tags } from '../Rules.js'
 
 export const AssetAbility = Generic.IdentifiedNode(
 	Type.Ref(Id.AssetAbilityId),
@@ -49,7 +50,8 @@ export const AssetAbility = Generic.IdentifiedNode(
 					'Describes changes made to various moves by this asset ability. Usually these require specific trigger conditions.'
 				// releaseStage: 'experimental'
 			})
-		)
+		),
+		tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
 	}),
 	{
 		$id: 'AssetAbility',

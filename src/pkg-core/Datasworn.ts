@@ -4008,7 +4008,7 @@ export interface AtlasCollection {
 	 * An SVG icon associated with this collection.
 	 */
 	icon?: SvgImageUrl
-	type: 'atlas'
+	type: 'atlas_collection'
 	/**
 	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
 	 */

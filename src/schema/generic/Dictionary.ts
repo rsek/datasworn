@@ -9,14 +9,19 @@ import * as Id from '../common/Id.js'
 
 export const DictionaryBrand = Symbol('Dictionary')
 
-/** A dictionary-like object of key/value pairs. */
+/**
+ *
+ * @param schema The schema to use as the dictionary value.
+ * @param key The schema to use as the dictionary key (default: Id.DictKey)
+ * @param options Any object options to apply to this schema.
+ */
 export function Dictionary<T extends TSchema>(
 	schema: T,
-	options: ObjectOptions = {}
+	{ key, ...options }: { key?: TString } & ObjectOptions = { key: Id.DictKey }
 ) {
 	const dict =
 		// Type.Transform(
-		Type.Record(Id.DictKey, schema, {
+		Type.Record(key ?? Id.DictKey, schema, {
 			...options,
 			remarks: 'Deserialize as a dictionary object.',
 			[DictionaryBrand]: 'Dictionary'
