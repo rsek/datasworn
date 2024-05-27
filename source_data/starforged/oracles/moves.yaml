@@ -33,55 +33,45 @@ oracles:
               type: oracle_rollable
             # Aliases: ["90"]
             rows:
-              - min: 1
-                max: 90
+              - roll: { min: 1, max: 90 }
                 text: 'Yes'
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: 'No'
           likely:
             name: Likely
             <<: *AtO
             # Aliases: ["75"]
             rows:
-              - min: 1
-                max: 75
+              - roll: { min: 1, max: 75 }
                 text: 'Yes'
-              - min: 76
-                max: 100
+              - roll: { min: 76, max: 100 }
                 text: 'No'
           fifty_fifty:
             name: 50/50
             <<: *AtO
             # Aliases: ["50"]
             rows:
-              - min: 1
-                max: 50
+              - roll: { min: 1, max: 50 }
                 text: 'Yes'
-              - min: 51
-                max: 100
+              - roll: { min: 51, max: 100 }
                 text: 'No'
           unlikely:
             <<: *AtO
             name: Unlikely
             # Aliases: ["25"]
             rows:
-              - min: 1
-                max: 25
+              - roll: { min: 1, max: 25 }
                 text: 'Yes'
-              - min: 26
-                max: 100
+              - roll: { min: 26, max: 100 }
                 text: 'No'
           small_chance:
             <<: *AtO
             name: Small Chance
             # Aliases: ["10"]
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: 'Yes'
-              - min: 11
-                max: 100
+              - roll: { min: 11, max: 100 }
                 text: 'No'
     contents:
       begin_a_session:
@@ -94,39 +84,29 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Flashback reveals an aspect of your background or nature'
             # suggestions: [*roll:Event]
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Flashback reveals an aspect of another character, place, or faction'
             # suggestions: [*roll:Event, *obj:Faction]
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Influential character or faction is introduced or given new detail'
             # suggestions: [*obj:Npc, *obj:Faction]
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Seemingly unrelated situations are shown to be connected'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'External factors create new danger, urgency, or importance for a quest'
             # suggestions: [*roll:Event]
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Important character is put in danger or suffers a misadventure'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Key location is made unsafe or becomes mired in conflict'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Unexpected return of an enemy or threat'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Peril lies ahead or lurks just out of view'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Unforeseen aid is on the way or within reach'
       make_a_discovery:
         name: Make a Discovery
@@ -138,89 +118,66 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Advanced technology waiting to be harnessed or salvaged
             # suggestions: [*roll:Object]
-          - min: 5
-            max: 8
+          - roll: { min: 5, max: 8 }
             text: Ancient archive or message
             # suggestions: [*roll:Event]
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Artificial consciousness evolved to a higher state
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Clues to a crucial resource or uncharted domain
             # suggestions: [*roll:Object]
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Envoy from another time or reality
-          - min: 15
-            max: 22
+          - roll: { min: 15, max: 22 }
             text: Extraordinary natural phenomenon
-          - min: 23
-            max: 24
+          - roll: { min: 23, max: 24 }
             text: First contact with intelligent life
             # suggestions: [*obj:Creature]
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Gateway to another time or alternate reality
             # suggestions: [*roll:Event]
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Key to unlocking a language or method of communication
-          - min: 29
-            max: 34
+          - roll: { min: 29, max: 34 }
             text: Lost or hidden people
-          - min: 35
-            max: 42
+          - roll: { min: 35, max: 42 }
             text: Majestic or unusual lifeforms
             # suggestions: [*obj:Creature]
-          - min: 43
-            max: 46
+          - roll: { min: 43, max: 46 }
             text: Marvel of ancient engineering
             # suggestions: [*roll:Object]
-          - min: 47
-            max: 50
+          - roll: { min: 47, max: 50 }
             text: Miraculously preserved artifact or specimen
             # suggestions: [*roll:Object]
-          - min: 51
-            max: 56
+          - roll: { min: 51, max: 56 }
             text: Monumental architecture or artistry of an ancient civilization
             # suggestions: [*roll:Object]
-          - min: 57
-            max: 62
+          - roll: { min: 57, max: 62 }
             text: Mysterious device or artifact of potential value
             # suggestions: [*roll:Object]
-          - min: 63
-            max: 66
+          - roll: { min: 63, max: 66 }
             text: New understanding of an enduring mystery
             # suggestions: [*roll:Event]
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Pathway or means of travel to a distant location
             # suggestions: [*roll:Place]
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Person or lifeform with phenomenal abilities
             # suggestions: [*obj:Creature, *obj:Npc]
-          - min: 71
-            max: 78
+          - roll: { min: 71, max: 78 }
             text: Place of awe-inspiring beauty
-          - min: 79
-            max: 86
+          - roll: { min: 79, max: 86 }
             text: Rare and valuable resource
             # suggestions: [*roll:Object]
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Safeguarded or idyllic location
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Visions or prophesies of the future
             # suggestions: [*roll:Event]
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             <<: &RollTwice
               text: Roll twice
               oracle_rolls:
@@ -236,82 +193,59 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Baneful weapon of mass destruction
             # suggestions: [*roll:Object]
-          - min: 5
-            max: 9
+          - roll: { min: 5, max: 9 }
             text: Cataclysmic environmental effects
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Dead given unnatural life
-          - min: 13
-            max: 17
+          - roll: { min: 13, max: 17 }
             text: Destructive lifeform of monstrous proportion
             # suggestions: [*obj:Creature]
-          - min: 18
-            max: 20
+          - roll: { min: 18, max: 20 }
             text: Dread hallucinations or illusions
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: Harbingers of an imminent invasion
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Horde of insatiable hunger or fury
-          - min: 28
-            max: 32
+          - roll: { min: 28, max: 32 }
             text: Horrific lifeforms of inscrutable purpose
             # suggestions: [*obj:Creature]
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: Impostors in human form
-          - min: 37
-            max: 41
+          - roll: { min: 37, max: 41 }
             text: Machines made enemy
             # suggestions: [*roll:Object]
-          - min: 42
-            max: 45
+          - roll: { min: 42, max: 45 }
             text: Malignant contagion or parasite
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: Messenger or signal with a dire warning
             # suggestions: [*roll:Event]
-          - min: 51
-            max: 53
+          - roll: { min: 51, max: 53 }
             text: Passage to a grim alternate reality
-          - min: 54
-            max: 58
+          - roll: { min: 54, max: 58 }
             text: People corrupted by chaos
-          - min: 59
-            max: 63
+          - roll: { min: 59, max: 63 }
             text: Powerful distortions of time or space
-          - min: 64
-            max: 68
+          - roll: { min: 64, max: 68 }
             text: Signs of an impending catastrophe
-          - min: 69
-            max: 72
+          - roll: { min: 69, max: 72 }
             text: Site of a baffling disappearance
-          - min: 73
-            max: 77
+          - roll: { min: 73, max: 77 }
             text: Site of a horrible disaster
             # suggestions: [*roll:Event]
-          - min: 78
-            max: 82
+          - roll: { min: 78, max: 82 }
             text: Site of terrible carnage
-          - min: 83
-            max: 87
+          - roll: { min: 83, max: 87 }
             text: Technology nullified or made unstable
             # suggestions: [*roll:Object]
-          - min: 88
-            max: 92
+          - roll: { min: 88, max: 92 }
             text: Technology warped for dark purpose
-          - min: 93
-            max: 96
+          - roll: { min: 93, max: 96 }
             text: Vault of dread technology or power
             # suggestions: [*obj:Vault]
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: Worshipers of great and malevolent powers
       take_decisive_action:
         name: Take Decisive Action
@@ -323,23 +257,17 @@ oracles:
         # content:
         #   part_of_speech: [sentences]
         rows:
-          - min: 1
-            max: 40
+          - roll: { min: 1, max: 40 }
             text: 'It’s worse than you thought: Make a suffer move (-2)'
-          - min: 41
-            max: 52
+          - roll: { min: 41, max: 52 }
             text: 'Victory is short-lived: A new peril or foe appears'
-          - min: 53
-            max: 64
+          - roll: { min: 53, max: 64 }
             text: 'You face collateral damage: Something is lost, damaged, or broken'
-          - min: 65
-            max: 76
+          - roll: { min: 65, max: 76 }
             text: 'Others pay the price: Someone else suffers the cost'
-          - min: 77
-            max: 88
+          - roll: { min: 77, max: 88 }
             text: 'Others won’t forget: You are marked for vengeance'
-          - min: 89
-            max: 100
+          - roll: { min: 89, max: 100 }
             text: 'It gets complicated: The true nature of a foe or objective is revealed'
       endure_harm:
         name: Endure Harm
@@ -351,20 +279,15 @@ oracles:
         # content:
         #   part_of_speech: [sentences]
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'You suffer mortal harm. [Face Death](id:starforged/moves/threshold/face_death).'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'You are dying. Within an hour or two, you must [Heal](id:starforged/moves/recover/heal) and raise your health above 0, or [Face Death](id:starforged/moves/threshold/face_death).'
-          - min: 21
-            max: 35
+          - roll: { min: 21, max: 35 }
             text: 'You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, [Face Death](id:starforged/moves/threshold/face_death).'
-          - min: 36
-            max: 50
+          - roll: { min: 36, max: 50 }
             text: 'You are reeling and fighting to stay conscious. If you engage in any vigorous activity before taking a breather for a few minutes, roll on this table again (before resolving the other move).'
-          - min: 51
-            max: 100
+          - roll: { min: 51, max: 100 }
             text: You are still standing.
       endure_stress:
         name: Endure Stress
@@ -376,17 +299,13 @@ oracles:
         # content:
         #   part_of_speech: [sentences]
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'You are overwhelmed. [Face Desolation](id:starforged/moves/threshold/face_desolation).'
-          - min: 11
-            max: 25
+          - roll: { min: 11, max: 25 }
             text: 'You give up. [Forsake Your Vow](id:starforged/moves/quest/forsake_your_vow).'
-          - min: 26
-            max: 50
+          - roll: { min: 26, max: 50 }
             text: 'You give in to fear or compulsion, and act against your better instincts.'
-          - min: 51
-            max: 100
+          - roll: { min: 51, max: 100 }
             text: You persevere.
       withstand_damage:
         name: Withstand Damage
@@ -398,29 +317,21 @@ oracles:
         # content:
         #   part_of_speech: [sentences]
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Immediate catastrophic destruction. All aboard must [Endure Harm](id:starforged/moves/suffer/endure_harm) or [Face Death](id:starforged/moves/threshold/face_death), as appropriate.'
-          - min: 11
-            max: 25
+          - roll: { min: 11, max: 25 }
             text: 'Destruction is imminent and unavoidable. If you do not have the means or intention to get clear, [Endure Harm](id:starforged/moves/suffer/endure_harm) or [Face Death](id:starforged/moves/threshold/face_death) as appropriate.'
-          - min: 26
-            max: 40
+          - roll: { min: 26, max: 40 }
             text: 'Destruction is imminent, but can be averted if you [Repair](id:starforged/moves/recover/repair) your vehicle and raise its integrity above 0. If you fail, see 11-25.'
-          - min: 41
-            max: 55
+          - roll: { min: 41, max: 55 }
             text: 'You cannot [Repair](id:starforged/moves/recover/repair) this vehicle until you [Resupply](id:starforged/moves/recover/resupply) and obtain a crucial replacement part. If you roll this result again prior to that, see 11-25.'
-          - min: 56
-            max: 70
+          - roll: { min: 56, max: 70 }
             text: 'The vehicle is crippled or out of your control. To get it back in action, you must [Repair](id:starforged/moves/recover/repair) and raise its integrity above 0.'
-          - min: 71
-            max: 85
+          - roll: { min: 71, max: 85 }
             text: "It's a rough ride. All aboard must make the [Endure Harm](id:starforged/moves/suffer/endure_harm), [Endure Stress](id:starforged/moves/suffer/endure_stress), or [Companion Takes a Hit](id:starforged/moves/suffer/companion_takes_a_hit) move, suffering a serious (-2) cost."
-          - min: 86
-            max: 95
+          - roll: { min: 86, max: 95 }
             text: 'You’ve lost fuel, energy, or cargo. [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) (-2).'
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: 'Against all odds, the vehicle holds together.'
       pay_the_price:
         name: Pay the Price
@@ -432,63 +343,43 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: A trusted individual or community acts against you
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: An individual or community you care about is exposed to danger
-          - min: 5
-            max: 7
+          - roll: { min: 5, max: 7 }
             text: You encounter signs of a looming threat
-          - min: 8
-            max: 10
+          - roll: { min: 8, max: 10 }
             text: You create an opportunity for an enemy
-          - min: 11
-            max: 14
+          - roll: { min: 11, max: 14 }
             text: You face a tough choice
-          - min: 15
-            max: 18
+          - roll: { min: 15, max: 18 }
             text: You face the consequences of an earlier choice
-          - min: 19
-            max: 22
+          - roll: { min: 19, max: 22 }
             text: A surprising development complicates your quest
-          - min: 23
-            max: 26
+          - roll: { min: 23, max: 26 }
             text: You are separated from something or someone
-          - min: 27
-            max: 32
+          - roll: { min: 27, max: 32 }
             text: Your action causes collateral damage or has an unintended effect
-          - min: 33
-            max: 38
+          - roll: { min: 33, max: 38 }
             text: Something of value is lost or destroyed
-          - min: 39
-            max: 44
+          - roll: { min: 39, max: 44 }
             text: The environment or terrain introduces a new hazard
-          - min: 45
-            max: 50
+          - roll: { min: 45, max: 50 }
             text: A new enemy is revealed
-          - min: 51
-            max: 56
+          - roll: { min: 51, max: 56 }
             text: 'A friend, companion, or ally is in harm’s way (or you are, if alone)'
-          - min: 57
-            max: 62
+          - roll: { min: 57, max: 62 }
             text: Your equipment or vehicle malfunctions
-          - min: 63
-            max: 68
+          - roll: { min: 63, max: 68 }
             text: Your vehicle suffers damage
-          - min: 69
-            max: 74
+          - roll: { min: 69, max: 74 }
             text: You waste resources
-          - min: 75
-            max: 81
+          - roll: { min: 75, max: 81 }
             text: You are harmed
-          - min: 82
-            max: 88
+          - roll: { min: 82, max: 88 }
             text: You are stressed
-          - min: 89
-            max: 95
+          - roll: { min: 89, max: 95 }
             text: You are delayed or put at a disadvantage
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             <<: *RollTwice

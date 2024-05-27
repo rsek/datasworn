@@ -25,59 +25,41 @@ oracles:
           <<: *Source
           page: 188
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: 'Compel a surrender.'
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: 'Coordinate with allies.'
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: 'Gather reinforcements.'
-          - min: 10
-            max: 13
+          - roll: { min: 10, max: 13 }
             text: 'Seize something or someone.'
-          - min: 14
-            max: 17
+          - roll: { min: 14, max: 17 }
             text: 'Provoke a reckless response.'
-          - min: 18
-            max: 21
+          - roll: { min: 18, max: 21 }
             text: 'Intimidate or frighten.'
-          - min: 22
-            max: 25
+          - roll: { min: 22, max: 25 }
             text: 'Reveal a surprising truth.'
-          - min: 26
-            max: 29
+          - roll: { min: 26, max: 29 }
             text: 'Shift focus to someone or something else.'
-          - min: 30
-            max: 33
+          - roll: { min: 30, max: 33 }
             text: 'Destroy something, or render it useless.'
-          - min: 34
-            max: 39
+          - roll: { min: 34, max: 39 }
             text: 'Take a decisive action.'
-          - min: 40
-            max: 45
+          - roll: { min: 40, max: 45 }
             text: 'Reinforce defenses.'
-          - min: 46
-            max: 52
+          - roll: { min: 46, max: 52 }
             text: 'Ready an action.'
-          - min: 53
-            max: 60
+          - roll: { min: 53, max: 60 }
             text: 'Use the terrain to gain advantage.'
-          - min: 61
-            max: 68
+          - roll: { min: 61, max: 68 }
             text: 'Leverage the advantage of a weapon or ability.'
-          - min: 69
-            max: 78
+          - roll: { min: 69, max: 78 }
             text: 'Create an opportunity.'
-          - min: 79
-            max: 89
+          - roll: { min: 79, max: 89 }
             text: 'Attack with precision.'
-          - min: 90
-            max: 99
+          - roll: { min: 90, max: 99 }
             text: 'Attack with power.'
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: 'Take a completely unexpected action.'
       mystic_backlash:
         name: Mystic Backlash
@@ -89,80 +71,55 @@ oracles:
           page: 189
         summary: Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the [Pay the Price](id:classic/moves/fate/pay_the_price) table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: 'Your ritual has the opposite affect.'
-          - min: 5
-            max: 8
+          - roll: { min: 5, max: 8 }
             text: 'You are sapped of strength.'
-          - min: 9
-            max: 12
+          - roll: { min: 9, max: 12 }
             text: 'Your friend, ally, or companion is adversely affected.'
-          - min: 13
-            max: 16
+          - roll: { min: 13, max: 16 }
             text: 'You destroy an important object.'
-          - min: 17
-            max: 20
+          - roll: { min: 17, max: 20 }
             text: 'You inadvertently summon a horror.'
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: 'You collapse, and drift into a troubled sleep.'
-          - min: 25
-            max: 28
+          - roll: { min: 25, max: 28 }
             text: 'You undergo a physical torment which leaves its mark upon you.'
-          - min: 29
-            max: 32
+          - roll: { min: 29, max: 32 }
             text: 'You hear ghostly voices whispering of dark portents.'
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: 'You are lost in shadow, and find yourself in another place without memory of how you got there.'
-          - min: 37
-            max: 40
+          - roll: { min: 37, max: 40 }
             text: 'You alert someone or something to your presence.'
-          - min: 41
-            max: 44
+          - roll: { min: 41, max: 44 }
             text: 'You are not yourself, and act against a friend, ally, or companion.'
-          - min: 45
-            max: 48
+          - roll: { min: 45, max: 48 }
             text: 'You affect or damage your surroundings, causing a disturbance or potential harm.'
-          - min: 49
-            max: 52
+          - roll: { min: 49, max: 52 }
             text: 'You waste resources.'
-          - min: 53
-            max: 56
+          - roll: { min: 53, max: 56 }
             text: 'You suffer the loss of a sense for several hours.'
-          - min: 57
-            max: 60
+          - roll: { min: 57, max: 60 }
             text: 'You lose your connection to magic for a day or so, and cannot perform rituals.'
-          - min: 61
-            max: 64
+          - roll: { min: 61, max: 64 }
             text: 'Your ritual affects the target in an unexpected and problematic way.'
-          - min: 65
-            max: 68
+          - roll: { min: 65, max: 68 }
             text: 'Your ritual reveals a surprising and troubling truth.'
-          - min: 69
-            max: 72
+          - roll: { min: 69, max: 72 }
             text: 'You are tempted by dark powers.'
-          - min: 73
-            max: 76
+          - roll: { min: 73, max: 76 }
             text: 'You see a troubling vision of your future.'
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             text: "You can't perform this ritual again until you acquire an important component."
-          - min: 81
-            max: 84
+          - roll: { min: 81, max: 84 }
             text: 'You develop a strange fear or compulsion.'
-          - min: 85
-            max: 88
+          - roll: { min: 85, max: 88 }
             text: 'Your ritual causes creatures to exhibit strange or aggressive behavior.'
-          - min: 89
-            max: 92
+          - roll: { min: 89, max: 92 }
             text: 'You are tormented by an apparition from your past.'
-          - min: 93
-            max: 96
+          - roll: { min: 93, max: 96 }
             text: 'You are wracked with sudden sickness.'
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
             oracle_rolls:
               - number_of_rolls: 2
@@ -179,65 +136,45 @@ oracles:
           <<: *Source
           page: 190
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: 'It was all a diversion.'
-          - min: 6
-            max: 10
+          - roll: { min: 6, max: 10 }
             text: 'A dark secret is revealed.'
-          - min: 11
-            max: 15
+          - roll: { min: 11, max: 15 }
             text: 'A trap is sprung.'
-          - min: 16
-            max: 20
+          - roll: { min: 16, max: 20 }
             text: 'An assumption is revealed to be false.'
-          - min: 21
-            max: 25
+          - roll: { min: 21, max: 25 }
             text: 'A secret alliance is revealed.'
-          - min: 26
-            max: 30
+          - roll: { min: 26, max: 30 }
             text: 'Your actions benefit an enemy.'
-          - min: 31
-            max: 35
+          - roll: { min: 31, max: 35 }
             text: 'Someone returns unexpectedly.'
-          - min: 36
-            max: 40
+          - roll: { min: 36, max: 40 }
             text: 'A more dangerous foe is revealed.'
-          - min: 41
-            max: 45
+          - roll: { min: 41, max: 45 }
             text: 'You and an enemy share a common goal.'
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: 'A true identity is revealed.'
-          - min: 51
-            max: 55
+          - roll: { min: 51, max: 55 }
             text: 'You are betrayed by someone who was trusted.'
-          - min: 56
-            max: 60
+          - roll: { min: 56, max: 60 }
             text: 'You are too late.'
-          - min: 61
-            max: 65
+          - roll: { min: 61, max: 65 }
             text: 'The true enemy is revealed.'
-          - min: 66
-            max: 70
+          - roll: { min: 66, max: 70 }
             text: 'The enemy gains new allies.'
-          - min: 71
-            max: 75
+          - roll: { min: 71, max: 75 }
             text: 'A new danger appears.'
-          - min: 76
-            max: 80
+          - roll: { min: 76, max: 80 }
             text: 'Someone or something goes missing.'
-          - min: 81
-            max: 85
+          - roll: { min: 81, max: 85 }
             text: 'The truth of a relationship is revealed.'
-          - min: 86
-            max: 90
+          - roll: { min: 86, max: 90 }
             text: 'Two seemingly unrelated situations are shown to be connected.'
-          - min: 91
-            max: 95
+          - roll: { min: 91, max: 95 }
             text: 'Unexpected powers or abilities are revealed.'
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: 'Roll twice more on this table. Both results occur. If they are the same result, make it more dramatic.'
             oracle_rolls:
               - number_of_rolls: 2
@@ -256,28 +193,23 @@ oracles:
           page: 190
         rows:
           - &Troublesome
-            min: 1
-            max: 20
+            roll: { min: 1, max: 20 }
             text: Troublesome
             # text2: 'A challenging quest with a small number of obstacles'
           - &Dangerous
-            min: 21
-            max: 55
+            roll: { min: 21, max: 55 }
             text: Dangerous
             # text2: 'An involved quest with several tough obstacles'
           - &Formidable
-            min: 56
-            max: 80
+            roll: { min: 56, max: 80 }
             text: Formidable
             # text2: 'A complex quest with many intimidating obstacles'
           - &Extreme
-            min: 81
-            max: 93
+            roll: { min: 81, max: 93 }
             text: Extreme
             # text2: 'An overwhelming quest of staggering proportions'
           - &Epic
-            min: 94
-            max: 100
+            roll: { min: 94, max: 100 }
             text: Epic
             # text2: 'A life-defining quest of unknowable scope'
     # collections:

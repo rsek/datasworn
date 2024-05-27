@@ -37,207 +37,157 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: adjective
-            min: 1
-            max: 2
+            roll: { min: 1, max: 2 }
             text: Blocked
           - <<: *i18n.adjective
-            min: 3
-            max: 4
+            roll: { min: 3, max: 4 }
             text: Crafted
           - <<: *i18n.adjective
-            min: 5
-            max: 6
+            roll: { min: 5, max: 6 }
             text: Ancient
           - <<: *i18n.adjective
-            min: 7
-            max: 8
+            roll: { min: 7, max: 8 }
             text: Sunken
           - <<: *i18n.adjective
-            min: 9
-            max: 10
+            roll: { min: 9, max: 10 }
             text: Trapped
           - <<: *i18n.adjective
-            min: 11
-            max: 12
+            roll: { min: 11, max: 12 }
             text: Secret
           - <<: *i18n.adjective
-            min: 13
-            max: 14
+            roll: { min: 13, max: 14 }
             text: Toxic
           - <<: *i18n.adjective
-            min: 15
-            max: 16
+            roll: { min: 15, max: 16 }
             text: Ruined
           - <<: *i18n.adjective
-            min: 17
-            max: 18
+            roll: { min: 17, max: 18 }
             text: Defended
           - <<: &i18n.gerund
               _i18n:
                 text:
                   part_of_speech: gerund
-            min: 19
-            max: 20
+            roll: { min: 19, max: 20 }
             text: Decaying
           - <<: *i18n.adjective
-            min: 21
-            max: 22
+            roll: { min: 21, max: 22 }
             text: Marked
           - <<: *i18n.adjective
-            min: 23
-            max: 24
+            roll: { min: 23, max: 24 }
             text: Guarded
           - <<: *i18n.adjective
-            min: 25
-            max: 26
+            roll: { min: 25, max: 26 }
             text: Inaccessible
           - <<: *i18n.gerund
-            min: 27
-            max: 28
+            roll: { min: 27, max: 28 }
             text: Foreboding
           - <<: *i18n.adjective
-            min: 29
-            max: 30
+            roll: { min: 29, max: 30 }
             text: Veiled
           - <<: *i18n.adjective
-            min: 31
-            max: 32
+            roll: { min: 31, max: 32 }
             text: Deep
           - <<: *i18n.adjective
-            min: 33
-            max: 34
+            roll: { min: 33, max: 34 }
             text: Depleted
           - <<: *i18n.adjective
-            min: 35
-            max: 36
+            roll: { min: 35, max: 36 }
             text: Foul
           - <<: *i18n.adjective
-            min: 37
-            max: 38
+            roll: { min: 37, max: 38 }
             text: Elevated
           - <<: *i18n.gerund
-            min: 39
-            max: 40
+            roll: { min: 39, max: 40 }
             text: Moving
           - <<: *i18n.adjective
-            min: 41
-            max: 42
+            roll: { min: 41, max: 42 }
             text: Unnatural
           - <<: *i18n.adjective
-            min: 43
-            max: 44
+            roll: { min: 43, max: 44 }
             text: Active
           - <<: *i18n.adjective
-            min: 45
-            max: 46
+            roll: { min: 45, max: 46 }
             text: Confined
           - <<: *i18n.adjective
-            min: 47
-            max: 48
+            roll: { min: 47, max: 48 }
             text: Fortified
           - <<: *i18n.adjective
-            min: 49
-            max: 50
+            roll: { min: 49, max: 50 }
             text: Collapsed
           - <<: *i18n.adjective
-            min: 51
-            max: 52
+            roll: { min: 51, max: 52 }
             text: Isolated
           - <<: *i18n.adjective
-            min: 53
-            max: 54
+            roll: { min: 53, max: 54 }
             text: Destroyed
           - <<: *i18n.adjective
-            min: 55
-            max: 56
+            roll: { min: 55, max: 56 }
             text: Open
           - <<: *i18n.adjective
-            min: 57
-            max: 58
+            roll: { min: 57, max: 58 }
             text: Sacred
           - <<: *i18n.adjective
-            min: 59
-            max: 60
+            roll: { min: 59, max: 60 }
             text: Flooded
           - <<: *i18n.adjective
-            min: 61
-            max: 62
+            roll: { min: 61, max: 62 }
             text: Complex
           - <<: *i18n.adjective
-            min: 63
-            max: 64
+            roll: { min: 63, max: 64 }
             text: Abundant
           - <<: *i18n.adjective
-            min: 65
-            max: 66
+            roll: { min: 65, max: 66 }
             text: Hidden
           - <<: *i18n.adjective
-            min: 67
-            max: 68
+            roll: { min: 67, max: 68 }
             text: Expansive
           - <<: *i18n.adjective
-            min: 69
-            max: 70
+            roll: { min: 69, max: 70 }
             text: Mysterious
           - <<: *i18n.adjective
-            min: 71
-            max: 72
+            roll: { min: 71, max: 72 }
             text: Unstable
           - <<: *i18n.adjective
-            min: 73
-            max: 74
+            roll: { min: 73, max: 74 }
             text: Fragile
           - <<: *i18n.adjective
-            min: 75
-            max: 76
+            roll: { min: 75, max: 76 }
             text: Broken
           - <<: *i18n.gerund
-            min: 77
-            max: 78
+            roll: { min: 77, max: 78 }
             text: Ensnaring
           - <<: *i18n.adjective
-            min: 79
-            max: 80
+            roll: { min: 79, max: 80 }
             text: Pillaged
           - <<: *i18n.adjective
-            min: 81
-            max: 82
+            roll: { min: 81, max: 82 }
             text: Sealed
           - <<: *i18n.adjective
-            min: 83
-            max: 84
+            roll: { min: 83, max: 84 }
             text: Makeshift
           - <<: *i18n.adjective
-            min: 85
-            max: 86
+            roll: { min: 85, max: 86 }
             text: Treacherous
           - <<: *i18n.adjective
-            min: 87
-            max: 88
+            roll: { min: 87, max: 88 }
             text: Natural
           - <<: *i18n.adjective
-            min: 89
-            max: 90
+            roll: { min: 89, max: 90 }
             text: Dead
           - <<: *i18n.adjective
-            min: 91
-            max: 92
+            roll: { min: 91, max: 92 }
             text: Unusual
           - <<: *i18n.adjective
-            min: 93
-            max: 94
+            roll: { min: 93, max: 94 }
             text: Abandoned
           - <<: *i18n.adjective
-            min: 95
-            max: 96
+            roll: { min: 95, max: 96 }
             text: Deadly
           - <<: *i18n.adjective
-            min: 97
-            max: 98
+            roll: { min: 97, max: 98 }
             text: Forgotten
           - <<: *i18n.adjective
-            min: 99
-            max: 100
+            roll: { min: 99, max: 100 }
             text: Mystical
       focus:
         name: Focus
@@ -255,202 +205,152 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: common_noun
-            min: 1
-            max: 2
+            roll: { min: 1, max: 2 }
             text: Attack
           - <<: *i18n.common_noun
-            min: 3
-            max: 4
+            roll: { min: 3, max: 4 }
             text: Threshold
           - <<: *i18n.common_noun
-            min: 5
-            max: 6
+            roll: { min: 5, max: 6 }
             text: Boundary
           - <<: *i18n.common_noun
-            min: 7
-            max: 8
+            roll: { min: 7, max: 8 }
             text: Alarm
           - <<: *i18n.common_noun
-            min: 9
-            max: 10
+            roll: { min: 9, max: 10 }
             text: Exit
           - <<: *i18n.common_noun
-            min: 11
-            max: 12
+            roll: { min: 11, max: 12 }
             text: Passage
           - <<: *i18n.gerund
-            min: 13
-            max: 14
+            roll: { min: 13, max: 14 }
             text: Crossing
           - <<: *i18n.common_noun
-            min: 15
-            max: 16
+            roll: { min: 15, max: 16 }
             text: Trigger
           - <<: *i18n.common_noun
-            min: 17
-            max: 18
+            roll: { min: 17, max: 18 }
             text: Trap
           - <<: *i18n.common_noun
-            min: 19
-            max: 20
+            roll: { min: 19, max: 20 }
             text: Hideaway
           - <<: *i18n.common_noun
-            min: 21
-            max: 22
+            roll: { min: 21, max: 22 }
             text: Nature
           - <<: *i18n.common_noun
-            min: 23
-            max: 24
+            roll: { min: 23, max: 24 }
             text: Sign
           - <<: *i18n.common_noun
-            min: 25
-            max: 26
+            roll: { min: 25, max: 26 }
             text: Refuge
           - <<: *i18n.common_noun
-            min: 27
-            max: 28
+            roll: { min: 27, max: 28 }
             text: Valuables
           - <<: *i18n.common_noun
-            min: 29
-            max: 30
+            roll: { min: 29, max: 30 }
             text: Breach
           - <<: *i18n.common_noun
-            min: 31
-            max: 32
+            roll: { min: 31, max: 32 }
             text: Route
           - <<: *i18n.common_noun
-            min: 33
-            max: 34
+            roll: { min: 33, max: 34 }
             text: Location
           - <<: *i18n.common_noun
-            min: 35
-            max: 36
+            roll: { min: 35, max: 36 }
             text: Trail
           - <<: *i18n.common_noun
-            min: 37
-            max: 38
+            roll: { min: 37, max: 38 }
             text: Supply
           - <<: *i18n.common_noun
-            min: 39
-            max: 40
+            roll: { min: 39, max: 40 }
             text: History
           - <<: *i18n.common_noun
-            min: 41
-            max: 42
+            roll: { min: 41, max: 42 }
             text: Prisoner
           - <<: *i18n.common_noun
-            min: 43
-            max: 44
+            roll: { min: 43, max: 44 }
             text: Habitation
           - <<: *i18n.common_noun
-            min: 45
-            max: 46
+            roll: { min: 45, max: 46 }
             text: Debris
           - <<: *i18n.common_noun
-            min: 47
-            max: 48
+            roll: { min: 47, max: 48 }
             text: Creature
           - <<: *i18n.common_noun
-            min: 49
-            max: 50
+            roll: { min: 49, max: 50 }
             text: Lair
           - <<: *i18n.common_noun
-            min: 51
-            max: 52
+            roll: { min: 51, max: 52 }
             text: Person
           - <<: *i18n.common_noun
-            min: 53
-            max: 54
+            roll: { min: 53, max: 54 }
             text: Enclosure
           - <<: *i18n.common_noun
-            min: 55
-            max: 56
+            roll: { min: 55, max: 56 }
             text: Remains
           - <<: *i18n.common_noun
-            min: 57
-            max: 58
+            roll: { min: 57, max: 58 }
             text: Water
           - <<: *i18n.common_noun
-            min: 59
-            max: 60
+            roll: { min: 59, max: 60 }
             text: Message
           - <<: *i18n.common_noun
-            min: 61
-            max: 62
+            roll: { min: 61, max: 62 }
             text: Darkness
           - <<: *i18n.gerund
-            min: 63
-            max: 64
+            roll: { min: 63, max: 64 }
             text: Opening
           - <<: *i18n.common_noun
-            min: 65
-            max: 66
+            roll: { min: 65, max: 66 }
             text: Weapon
           - <<: *i18n.common_noun
-            min: 67
-            max: 68
+            roll: { min: 67, max: 68 }
             text: Entry
           - <<: *i18n.common_noun
-            min: 69
-            max: 70
+            roll: { min: 69, max: 70 }
             text: Illumination
           - <<: *i18n.common_noun
-            min: 71
-            max: 72
+            roll: { min: 71, max: 72 }
             text: Obstacle
           - <<: *i18n.common_noun
-            min: 73
-            max: 74
+            roll: { min: 73, max: 74 }
             text: Craft
           - <<: *i18n.common_noun
-            min: 75
-            max: 76
+            roll: { min: 75, max: 76 }
             text: Container
           - <<: *i18n.common_noun
-            min: 77
-            max: 78
+            roll: { min: 77, max: 78 }
             text: Information
           - <<: *i18n.common_noun
-            min: 79
-            max: 80
+            roll: { min: 79, max: 80 }
             text: Grave
           - <<: *i18n.common_noun
-            min: 81
-            max: 82
+            roll: { min: 81, max: 82 }
             text: Equipment
           - <<: *i18n.common_noun
-            min: 83
-            max: 84
+            roll: { min: 83, max: 84 }
             text: Shelter
           - <<: *i18n.common_noun
-            min: 85
-            max: 86
+            roll: { min: 85, max: 86 }
             text: Denizen
           - <<: *i18n.common_noun
-            min: 87
-            max: 88
+            roll: { min: 87, max: 88 }
             text: Environment
           - <<: *i18n.common_noun
-            min: 89
-            max: 90
+            roll: { min: 89, max: 90 }
             text: Material
           - <<: *i18n.common_noun
-            min: 91
-            max: 92
+            roll: { min: 91, max: 92 }
             text: Resource
           - <<: *i18n.common_noun
-            min: 93
-            max: 94
+            roll: { min: 93, max: 94 }
             text: Corruption
           - <<: *i18n.common_noun
-            min: 95
-            max: 96
+            roll: { min: 95, max: 96 }
             text: Death
           - <<: *i18n.common_noun
-            min: 97
-            max: 98
+            roll: { min: 97, max: 98 }
             text: Function
           - <<: *i18n.common_noun
-            min: 99
-            max: 100
+            roll: { min: 99, max: 100 }
             text: Power

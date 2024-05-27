@@ -48,23 +48,17 @@ oracles:
           <<: *Source
           page: 214
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Tiny (rodent-sized)
-          - min: 6
-            max: 30
+          - roll: { min: 6, max: 30 }
             text: Small (hound-sized)
-          - min: 31
-            max: 65
+          - roll: { min: 31, max: 65 }
             text: Medium (person-sized)
-          - min: 66
-            max: 94
+          - roll: { min: 66, max: 94 }
             text: Large (giant-sized)
-          - min: 95
-            max: 99
+          - roll: { min: 95, max: 99 }
             text: Huge (whale-sized)
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Titanic (incomprehensible)
       primary_form:
         name: Primary Form
@@ -83,78 +77,60 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: adjunct_common_noun
-            min: 1
-            max: 15
+            roll: { min: 1, max: 15 }
             text: Beast / mammal
           - <<: *i18n.adjunct_common_noun
-            min: 16
-            max: 25
+            roll: { min: 16, max: 25 }
             text: Humanoid
           - <<: *i18n.adjunct_common_noun
-            min: 26
-            max: 31
+            roll: { min: 26, max: 31 }
             text: Bird
           - <<: *i18n.adjunct_common_noun
-            min: 32
-            max: 37
+            roll: { min: 32, max: 37 }
             text: Spider
           - <<: *i18n.adjunct_common_noun
-            min: 38
-            max: 43
+            roll: { min: 38, max: 43 }
             text: Snake
           - <<: *i18n.adjunct_common_noun
-            min: 44
-            max: 49
+            roll: { min: 44, max: 49 }
             text: Worm / slug
           - <<: *i18n.adjunct_common_noun
-            min: 50
-            max: 55
+            roll: { min: 50, max: 55 }
             text: Lizard
           - <<: *i18n.adjunct_common_noun
-            min: 56
-            max: 61
+            roll: { min: 56, max: 61 }
             text: Insect
           - <<: &i18n.adjective
               _i18n:
                 text:
                   part_of_speech: adjective
-            min: 62
-            max: 66
+            roll: { min: 62, max: 66 }
             text: Amorphous
           - <<: *i18n.adjunct_common_noun
-            min: 67
-            max: 69
+            roll: { min: 67, max: 69 }
             text: Crustacean
           - <<: *i18n.adjunct_common_noun
-            min: 70
-            max: 71
+            roll: { min: 70, max: 71 }
             text: Fish
           - <<: *i18n.adjunct_common_noun
-            min: 72
-            max: 73
+            roll: { min: 72, max: 73 }
             text: Octopoid
           - <<: *i18n.adjunct_common_noun
-            min: 74
-            max: 75
+            roll: { min: 74, max: 75 }
             text: Amphibian
           - <<: *i18n.adjunct_common_noun
-            min: 76
-            max: 77
+            roll: { min: 76, max: 77 }
             text: Plant
           - <<: *i18n.adjective
-            min: 78
-            max: 78
+            roll: { min: 78, max: 78 }
             text: Incorporeal
           - <<: *i18n.adjunct_common_noun
-            min: 79
-            max: 79
+            roll: { min: 79, max: 79 }
             text: Mineral
           - <<: *i18n.adjective
-            min: 80
-            max: 80
+            roll: { min: 80, max: 80 }
             text: Elemental
-          - min: 81
-            max: 100
+          - roll: { min: 81, max: 100 }
             text: Hybrid (roll twice)
             oracle_rolls:
               - number_of_rolls: 2
@@ -176,89 +152,61 @@ oracles:
           <<: *Source
           page: 215
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Extra limbs
-          - min: 6
-            max: 10
+          - roll: { min: 6, max: 10 }
             text: Fangs / rows of sharp teeth
-          - min: 11
-            max: 15
+          - roll: { min: 11, max: 15 }
             text: Claws / talons
-          - min: 16
-            max: 20
+          - roll: { min: 16, max: 20 }
             text: Strange color / markings
-          - min: 21
-            max: 25
+          - roll: { min: 21, max: 25 }
             text: Horns / tusks
-          - min: 26
-            max: 30
+          - roll: { min: 26, max: 30 }
             text: Oversized mouth
-          - min: 31
-            max: 35
+          - roll: { min: 31, max: 35 }
             text: Spikes / spines
-          - min: 36
-            max: 40
+          - roll: { min: 36, max: 40 }
             text: Tail
-          - min: 41
-            max: 45
+          - roll: { min: 41, max: 45 }
             text: Multi-segmented body
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: Wings
-          - min: 51
-            max: 54
+          - roll: { min: 51, max: 54 }
             text: Stinger / barbs
-          - min: 55
-            max: 58
+          - roll: { min: 55, max: 58 }
             text: Many-eyed
-          - min: 59
-            max: 62
+          - roll: { min: 59, max: 62 }
             text: Distinctive sound
-          - min: 63
-            max: 66
+          - roll: { min: 63, max: 66 }
             text: Tentacles / tendrils
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Mandibles / pincers
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Luminescent
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Antennae / sensory organs
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Proboscis / inner jaw
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Exoskeleton / shell
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Bony protuberances
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Corrupted flesh
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Semi-transparent
-          - min: 91
-            max: 93
+          - roll: { min: 91, max: 93 }
             text: Scarred / injured
-          - min: 94
-            max: 95
+          - roll: { min: 94, max: 95 }
             text: Egg sac / carried offspring
-          - min: 96
-            max: 97
+          - roll: { min: 96, max: 97 }
             text: Rotting / skeletal
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Mummified / desiccated
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Multi-headed
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Etched with mystic runes
       abilities:
         name: Abilities
@@ -278,123 +226,83 @@ oracles:
           <<: *Source
           page: 216
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Keen senses
-          - min: 5
-            max: 8
+          - roll: { min: 5, max: 8 }
             text: Intimidating vocalization
-          - min: 9
-            max: 12
+          - roll: { min: 9, max: 12 }
             text: Climber
-          - min: 13
-            max: 16
+          - roll: { min: 13, max: 16 }
             text: Intelligent
-          - min: 17
-            max: 20
+          - roll: { min: 17, max: 20 }
             text: Swift
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: Powerful bite
-          - min: 25
-            max: 28
+          - roll: { min: 25, max: 28 }
             text: Stealthy / ambusher
-          - min: 29
-            max: 32
+          - roll: { min: 29, max: 32 }
             text: Horrid visage
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: Strong
-          - min: 37
-            max: 40
+          - roll: { min: 37, max: 40 }
             text: Camouflaged
-          - min: 41
-            max: 43
+          - roll: { min: 41, max: 43 }
             text: Flier / glider
-          - min: 44
-            max: 46
+          - roll: { min: 44, max: 46 }
             text: Poisonous
-          - min: 47
-            max: 49
+          - roll: { min: 47, max: 49 }
             text: Semiaquatic / swimmer
-          - min: 50
-            max: 52
+          - roll: { min: 50, max: 52 }
             text: Grappler / entangler
-          - min: 53
-            max: 55
+          - roll: { min: 53, max: 55 }
             text: Leaper
-          - min: 56
-            max: 58
+          - roll: { min: 56, max: 58 }
             text: Crusher / constrictor
-          - min: 59
-            max: 61
+          - roll: { min: 59, max: 61 }
             text: Armored
-          - min: 62
-            max: 64
+          - roll: { min: 62, max: 64 }
             text: Burrower
-          - min: 65
-            max: 67
+          - roll: { min: 65, max: 67 }
             text: Noxious smell
-          - min: 68
-            max: 69
+          - roll: { min: 68, max: 69 }
             text: Trap-setter
-          - min: 70
-            max: 71
+          - roll: { min: 70, max: 71 }
             text: Parasitic
-          - min: 72
-            max: 73
+          - roll: { min: 72, max: 73 }
             text: Vibration sense
-          - min: 74
-            max: 75
+          - roll: { min: 74, max: 75 }
             text: Breath weapon / toxic spew
-          - min: 76
-            max: 77
+          - roll: { min: 76, max: 77 }
             text: Mimicry
-          - min: 78
-            max: 79
+          - roll: { min: 78, max: 79 }
             text: Shapeshifting
-          - min: 80
-            max: 81
+          - roll: { min: 80, max: 81 }
             text: Control lesser creatures
-          - min: 82
-            max: 83
+          - roll: { min: 82, max: 83 }
             text: Echolocation
-          - min: 84
-            max: 85
+          - roll: { min: 84, max: 85 }
             text: Electric shock
-          - min: 86
-            max: 87
+          - roll: { min: 86, max: 87 }
             text: Acidic
-          - min: 88
-            max: 89
+          - roll: { min: 88, max: 89 }
             text: Symbiotic
-          - min: 90
-            max: 91
+          - roll: { min: 90, max: 91 }
             text: Shoot projectiles
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Paralyzing
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Immune to iron
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Feels no pain
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Enact rituals
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Create illusions
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Mind control / telepathy
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Move between realities
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Wield weapons
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Control elements

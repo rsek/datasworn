@@ -31,51 +31,41 @@ oracles:
               match:
                 text: On a match, an extreme result or twist has occurred.
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: 'No'
-              - min: 11
-                max: 100
+              - roll: { min: 11, max: 100 }
                 text: 'Yes'
           likely:
             name: Likely
             <<: *AtO
             rows:
-              - min: 1
-                max: 25
+              - roll: { min: 1, max: 25 }
                 text: 'No'
-              - min: 26
-                max: 100
+              - roll: { min: 26, max: 100 }
                 text: 'Yes'
           fifty_fifty:
             name: 50/50
             <<: *AtO
             rows:
-              - min: 1
-                max: 50
+              - roll: { min: 1, max: 50 }
                 text: 'No'
-              - min: 51
-                max: 100
+              - roll: { min: 51, max: 100 }
                 text: 'Yes'
           unlikely:
             name: Unlikely
             <<: *AtO
             rows:
-              - min: 1
-                max: 75
+              - roll: { min: 1, max: 75 }
                 text: 'No'
-              - min: 76
-                max: 100
+              - roll: { min: 76, max: 100 }
                 text: 'Yes'
           small_chance:
             name: Small Chance
             <<: *AtO
             rows:
-              - min: 1
-                max: 90
+              - roll: { min: 1, max: 90 }
                 text: 'No'
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: 'Yes'
     contents:
       endure_harm:
@@ -86,20 +76,15 @@ oracles:
           <<: *Source
           page: 91
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'The harm is mortal. [Face Death](id:classic/moves/suffer/face_death).'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'You are dying. You need to Heal within an hour or two, or [Face Death](id:classic/moves/suffer/face_death).'
-          - min: 21
-            max: 35
+          - roll: { min: 21, max: 35 }
             text: 'You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, [Face Death](id:classic/moves/suffer/face_death).'
-          - min: 36
-            max: 50
+          - roll: { min: 36, max: 50 }
             text: 'You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move).'
-          - min: 51
-            max: 100
+          - roll: { min: 51, max: 100 }
             text: 'You are battered but still standing.'
       endure_stress:
         name: Endure Stress
@@ -109,17 +94,13 @@ oracles:
           <<: *Source
           page: 93
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'You are overwhelmed. [Face Desolation](id:classic/moves/suffer/face_desolation).'
-          - min: 11
-            max: 25
+          - roll: { min: 11, max: 25 }
             text: 'You give up. [Forsake Your Vow](id:classic/moves/quest/forsake_your_vow) (if possible, one relevant to your current crisis).'
-          - min: 26
-            max: 50
+          - roll: { min: 26, max: 50 }
             text: 'You give in to a fear or compulsion, and act against your better instincts.'
-          - min: 51
-            max: 100
+          - roll: { min: 51, max: 100 }
             text: 'You persevere.'
       pay_the_price:
         name: Pay the Price
@@ -129,53 +110,37 @@ oracles:
           <<: *Source
           page: 105
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: 'Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](id:classic/moves/fate/ask_the_oracle) if unsure) and make it happen.'
-          - min: 3
-            max: 5
+          - roll: { min: 3, max: 5 }
             text: 'A person or community you trusted loses faith in you, or acts against you.'
-          - min: 6
-            max: 9
+          - roll: { min: 6, max: 9 }
             text: 'A person or community you care about is exposed to danger.'
-          - min: 10
-            max: 16
+          - roll: { min: 10, max: 16 }
             text: 'You are separated from something or someone.'
-          - min: 17
-            max: 23
+          - roll: { min: 17, max: 23 }
             text: 'Your action has an unintended effect.'
-          - min: 24
-            max: 32
+          - roll: { min: 24, max: 32 }
             text: 'Something of value is lost or destroyed.'
-          - min: 33
-            max: 41
+          - roll: { min: 33, max: 41 }
             text: 'The current situation worsens.'
-          - min: 42
-            max: 50
+          - roll: { min: 42, max: 50 }
             text: 'A new danger or foe is revealed.'
-          - min: 51
-            max: 59
+          - roll: { min: 51, max: 59 }
             text: 'It causes a delay or puts you at a disadvantage.'
-          - min: 60
-            max: 68
+          - roll: { min: 60, max: 68 }
             text: 'It is harmful.'
-          - min: 69
-            max: 76
+          - roll: { min: 69, max: 76 }
             text: 'It is stressful.'
-          - min: 77
-            max: 85
+          - roll: { min: 77, max: 85 }
             text: 'A surprising development complicates your quest.'
-          - min: 86
-            max: 90
+          - roll: { min: 86, max: 90 }
             text: 'It wastes resources.'
-          - min: 91
-            max: 94
+          - roll: { min: 91, max: 94 }
             text: 'It forces you to act against your best intentions.'
-          - min: 95
-            max: 98
+          - roll: { min: 95, max: 98 }
             text: 'A friend, companion, or ally is put in harm’s way (or you are, if alone).'
-          - min: 99
-            max: 100
+          - roll: { min: 99, max: 100 }
             text: 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
             oracle_rolls:
               - number_of_rolls: 2

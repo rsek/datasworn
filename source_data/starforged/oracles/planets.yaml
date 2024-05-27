@@ -30,58 +30,47 @@ oracles:
             - starforged/oracles/core/descriptor
         summary: This oracle provides a simple method of generating a planetary class. If this is enough information, stop there and envision the world as appropriate to its type. For a bit more detail, make a roll on the Descriptor oracle and envision how that aspect defines the nature of the planet or a specific planetside location.
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: '[Desert World](id:starforged/collections/oracles/planets/desert)'
             # game_objects: *obj:Planet.Desert
             # images: *images:DesertWorld
-          - min: 16
-            max: 30
+          - roll: { min: 16, max: 30 }
             text: '[Furnace World](id:starforged/collections/oracles/planets/furnace)'
             # game_objects: *obj:Planet.Furnace
             # images: *images:FurnaceWorld
-          - min: 31
-            max: 35
+          - roll: { min: 31, max: 35 }
             text: '[Grave World](id:starforged/collections/oracles/planets/grave)'
             # game_objects: *obj:Planet.Grave
             # images: *images:GraveWorld
-          - min: 36
-            max: 50
+          - roll: { min: 36, max: 50 }
             text: '[Ice World](id:starforged/collections/oracles/planets/ice)'
             # game_objects: *obj:Planet.Ice
             # images: *images:IceWorld
-          - min: 51
-            max: 65
+          - roll: { min: 51, max: 65 }
             text: '[Jovian World](id:starforged/collections/oracles/planets/jovian)'
             # game_objects: *obj:Planet.Jovian
             # images: *images:JovianWorld
-          - min: 66
-            max: 70
+          - roll: { min: 66, max: 70 }
             text: '[Jungle World](id:starforged/collections/oracles/planets/jungle)'
             # game_objects: *obj:Planet.Jungle
             # images: *images:JungleWorld
-          - min: 71
-            max: 75
+          - roll: { min: 71, max: 75 }
             text: '[Ocean World](id:starforged/collections/oracles/planets/ocean)'
             # game_objects: *obj:Planet.Ocean
             # images: *images:OceanWorld
-          - min: 76
-            max: 90
+          - roll: { min: 76, max: 90 }
             text: '[Rocky World](id:starforged/collections/oracles/planets/rocky)'
             # game_objects: *obj:Planet.Rocky
             # images: *images:RockyWorld
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: '[Shattered World](id:starforged/collections/oracles/planets/shattered)'
             # game_objects: *obj:Planet.Shattered
             # images: *images:ShatteredWorld
-          - min: 93
-            max: 98
+          - roll: { min: 93, max: 98 }
             text: '[Tainted World](id:starforged/collections/oracles/planets/tainted)'
             # game_objects: *obj:Planet.Tainted
             # images: *images:TaintedWorld
-          - min: 99
-            max: 100
+          - roll: { min: 99, max: 100 }
             text: '[Vital World](id:starforged/collections/oracles/planets/vital)'
             # game_objects: *obj:Planet.Vital
             # images: *images:VitalWorld
@@ -123,149 +112,116 @@ oracles:
             #     attributes:
             #       life: [none, extinct]
             rows: &table:Planets.Peril
-              - min: 1
-                max: 3
+              - roll: { min: 1, max: 3 }
                 <<: &PlanetPeril.0
                   text: Corrupted or mutated lifeform
                 # suggestions: [*obj:Creature]
               # TODO: suggest chaotic theme?
-              - min: 4
-                max: 6
+              - roll: { min: 4, max: 6 }
                 <<: &PlanetPeril.1
                   text: Signs of a lifeform's power or cunning
                 # suggestions: [*obj:Creature]
-              - min: 7
-                max: 9
+              - roll: { min: 7, max: 9 }
                 <<: &PlanetPeril.2
                   text: Hazardous plant life or malignant spores
-              - min: 10
-                max: 12
+              - roll: { min: 10, max: 12 }
                 <<: &PlanetPeril.3
                   text: Lifeform hunts for prey
                 # suggestions: [*obj:Creature]
-              - min: 13
-                max: 15
+              - roll: { min: 13, max: 15 }
                 <<: &PlanetPeril.4
                   text: Lifeform lairs here
                 # suggestions: [*obj:Creature]
-              - min: 16
-                max: 18
+              - roll: { min: 16, max: 18 }
                 <<: &PlanetPeril.5
                   text: Lifeforms guided by a greater threat
                 # suggestions: [*obj:Creature]
-              - min: 19
-                max: 21
+              - roll: { min: 19, max: 21 }
                 <<: &PlanetPeril.6
                   text: Lifeforms spooked or stampeding
                 # suggestions: [*obj:Creature]
-              - min: 22
-                max: 24
+              - roll: { min: 22, max: 24 }
                 <<: &PlanetPeril.7
                   text: Threatening lifeform draws near
                 # suggestions: [*obj:Creature]
-              - min: 25
-                max: 27
+              - roll: { min: 25, max: 27 }
                 <<: &PlanetPeril.8
                   text: Life is revealed or takes an unexpected form
                 # suggestions: [*obj:Creature]
-              - min: 28
-                max: 30
+              - roll: { min: 28, max: 30 }
                 <<: &PlanetPeril.9
                   text: Blocked or impassible path
-              - min: 31
-                max: 33
+              - roll: { min: 31, max: 33 }
                 <<: &PlanetPeril.10
                   text: Corrosive substance or environment
-              - min: 34
-                max: 36
+              - roll: { min: 34, max: 36 }
                 <<: &PlanetPeril.11
                   text: Disturbing remains or evidence of death
-              - min: 37
-                max: 39
+              - roll: { min: 37, max: 39 }
                 <<: &PlanetPeril.12
                   text: Drastic environmental change
-              - min: 40
-                max: 42
+              - roll: { min: 40, max: 42 }
                 <<: &PlanetPeril.13
                   text: Enemy holds this area
                 # suggestions: [*obj:LocationTheme.Fortified]
-              - min: 43
-                max: 45
+              - roll: { min: 43, max: 45 }
                 <<: &PlanetPeril.14
                   text: Entangling or engulfing hazard
-              - min: 46
-                max: 48
+              - roll: { min: 46, max: 48 }
                 <<: &PlanetPeril.15
                   text: Equipment fails or malfunctions
-              - min: 49
-                max: 51
+              - roll: { min: 49, max: 51 }
                 <<: &PlanetPeril.16
                   text: Guarded or patrolled path
                 # suggestions: [*obj:LocationTheme.Fortified]
-              - min: 52
-                max: 54
+              - roll: { min: 52, max: 54 }
                 <<: &PlanetPeril.17
                   text: Led astray
-              - min: 55
-                max: 57
+              - roll: { min: 55, max: 57 }
                 <<: &PlanetPeril.18
                   text: Lost the path
-              - min: 58
-                max: 60
+              - roll: { min: 58, max: 60 }
                 <<: &PlanetPeril.19
                   text: Meteorites fall from the sky
-              - min: 61
-                max: 63
+              - roll: { min: 61, max: 63 }
                 <<: &PlanetPeril.20
                   text: Irradiated area or object
-              - min: 64
-                max: 66
+              - roll: { min: 64, max: 66 }
                 <<: &PlanetPeril.21
                   text: Realization that something was left behind
-              - min: 67
-                max: 69
+              - roll: { min: 67, max: 69 }
                 <<: &PlanetPeril.22
                   text: Seismic or volcanic upheaval
-              - min: 70
-                max: 72
+              - roll: { min: 70, max: 72 }
                 <<: &PlanetPeril.23
                   text: Signs of a lurking or trailing foe
-              - min: 73
-                max: 75
+              - roll: { min: 73, max: 75 }
                 <<: &PlanetPeril.24
                   text: Storm or atmospheric disruption
-              - min: 76
-                max: 78
+              - roll: { min: 76, max: 78 }
                 <<: &PlanetPeril.25
                   text: Toxic or sickening environment
-              - min: 79
-                max: 81
+              - roll: { min: 79, max: 81 }
                 <<: &PlanetPeril.26
                   text: Trap or alarm
-              - min: 82
-                max: 84
+              - roll: { min: 82, max: 84 }
                 <<: &PlanetPeril.27
                   text: Treacherous or arduous path
-              - min: 85
-                max: 87
+              - roll: { min: 85, max: 87 }
                 <<: &PlanetPeril.28
                   text: Troubling visions or apparitions
                 # suggestions: [*obj:LocationTheme.Haunted]
-              - min: 88
-                max: 90
+              - roll: { min: 88, max: 90 }
                 <<: &PlanetPeril.29
                   text: Visibility hindered by atmospheric effects
-              - min: 91
-                max: 93
+              - roll: { min: 91, max: 93 }
                 <<: &PlanetPeril.30
                   text: Worrying arrival of a ship or vehicle
                 # suggestions: [*obj:Starship]
-              - min: 94
-                max: 96
+              - roll: { min: 94, max: 96 }
                 <<: &PlanetPeril.31
                   text: Wreckage or ruins portend a new threat
-              - min: 97
-                max: 99
+              - roll: { min: 97, max: 99 }
                 <<: &ActionTheme
                   text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
                   oracle_rolls:
@@ -273,8 +229,7 @@ oracles:
                       auto: true
                     - oracle: starforged/oracles/core/theme
                       auto: true
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 <<: &RollTwice
                   text: Roll twice
                   oracle_rolls:
@@ -314,83 +269,57 @@ oracles:
               - min: null
                 max: null
                 <<: *PlanetPeril.7
-              - min: 1
-                max: 3
+              - roll: { min: 1, max: 3 }
                 <<: *PlanetPeril.8
-              - min: 4
-                max: 7
+              - roll: { min: 4, max: 7 }
                 <<: *PlanetPeril.9
-              - min: 8
-                max: 11
+              - roll: { min: 8, max: 11 }
                 <<: *PlanetPeril.10
-              - min: 12
-                max: 15
+              - roll: { min: 12, max: 15 }
                 <<: *PlanetPeril.11
-              - min: 16
-                max: 19
+              - roll: { min: 16, max: 19 }
                 <<: *PlanetPeril.12
-              - min: 20
-                max: 23
+              - roll: { min: 20, max: 23 }
                 <<: *PlanetPeril.13
-              - min: 24
-                max: 27
+              - roll: { min: 24, max: 27 }
                 <<: *PlanetPeril.14
-              - min: 28
-                max: 31
+              - roll: { min: 28, max: 31 }
                 <<: *PlanetPeril.15
-              - min: 32
-                max: 35
+              - roll: { min: 32, max: 35 }
                 <<: *PlanetPeril.16
-              - min: 36
-                max: 39
+              - roll: { min: 36, max: 39 }
                 <<: *PlanetPeril.17
-              - min: 40
-                max: 43
+              - roll: { min: 40, max: 43 }
                 <<: *PlanetPeril.18
-              - min: 44
-                max: 47
+              - roll: { min: 44, max: 47 }
                 <<: *PlanetPeril.19
-              - min: 48
-                max: 51
+              - roll: { min: 48, max: 51 }
                 <<: *PlanetPeril.20
-              - min: 52
-                max: 55
+              - roll: { min: 52, max: 55 }
                 <<: *PlanetPeril.21
-              - min: 56
-                max: 59
+              - roll: { min: 56, max: 59 }
                 <<: *PlanetPeril.22
-              - min: 60
-                max: 63
+              - roll: { min: 60, max: 63 }
                 <<: *PlanetPeril.23
-              - min: 64
-                max: 67
+              - roll: { min: 64, max: 67 }
                 <<: *PlanetPeril.24
-              - min: 68
-                max: 71
+              - roll: { min: 68, max: 71 }
                 <<: *PlanetPeril.25
-              - min: 72
-                max: 75
+              - roll: { min: 72, max: 75 }
                 <<: *PlanetPeril.26
-              - min: 76
-                max: 79
+              - roll: { min: 76, max: 79 }
                 <<: *PlanetPeril.27
-              - min: 80
-                max: 83
+              - roll: { min: 80, max: 83 }
                 <<: *PlanetPeril.28
-              - min: 84
-                max: 87
+              - roll: { min: 84, max: 87 }
                 <<: *PlanetPeril.29
-              - min: 88
-                max: 91
+              - roll: { min: 88, max: 91 }
                 <<: *PlanetPeril.30
-              - min: 92
-                max: 95
+              - roll: { min: 92, max: 95 }
                 <<: *PlanetPeril.31
-              - min: 96
-                max: 99
+              - roll: { min: 96, max: 99 }
                 <<: *ActionTheme
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 <<: *RollTwice
       opportunity:
         name: Planetside Opportunity
@@ -418,90 +347,65 @@ oracles:
             # usage:
             #   requires: *attr:Life.Lifebearing
             rows:
-              - min: 1
-                max: 4
+              - roll: { min: 1, max: 4 }
                 text: &Opp.0 Clue to a lifeform's nature or vulnerabilities
                 # suggestions: [*obj:Creature]
-              - min: 5
-                max: 8
+              - roll: { min: 5, max: 8 }
                 text: &Opp.1 Friendly interaction with a benign lifeform
                 # suggestions: [*obj:Creature]
-              - min: 9
-                max: 12
+              - roll: { min: 9, max: 12 }
                 text: &Opp.2 Hunting or foraging opportunities are plentiful
-              - min: 13
-                max: 16
+              - roll: { min: 13, max: 16 }
                 text: &Opp.3 Interesting or helpful aspect of benign creatures
                 # suggestions: [*obj:Creature]
-              - min: 17
-                max: 20
+              - roll: { min: 17, max: 20 }
                 text: &Opp.4 Interesting or helpful aspect of local plant life
-              - min: 21
-                max: 24
+              - roll: { min: 21, max: 24 }
                 text: &Opp.5 Encounter reveals unexpected benign lifeforms
                 # suggestions: [*obj:Creature]
-              - min: 25
-                max: 28
+              - roll: { min: 25, max: 28 }
                 text: &Opp.6 Abandoned camp or vehicle
                 # suggestions: [*roll:Object]
-              - min: 29
-                max: 32
+              - roll: { min: 29, max: 32 }
                 text: &Opp.7 Advance warning of an environmental threat
-              - min: 33
-                max: 36
+              - roll: { min: 33, max: 36 }
                 text: &Opp.8 Clear path through otherwise perilous terrain
-              - min: 37
-                max: 40
+              - roll: { min: 37, max: 40 }
                 text: &Opp.9 Clue offers insight into a current quest or mystery
-              - min: 41
-                max: 44
+              - roll: { min: 41, max: 44 }
                 text: &Opp.10 Clue to the history or nature of this place
-              - min: 45
-                max: 48
+              - roll: { min: 45, max: 48 }
                 text: &Opp.11 Evidence that others have passed this way
-              - min: 49
-                max: 52
+              - roll: { min: 49, max: 52 }
                 text: &Opp.12 Foe reveals themselves or tips their hand
-              - min: 53
-                max: 56
+              - roll: { min: 53, max: 56 }
                 text: &Opp.13 Fortuitous change in the weather or atmosphere
-              - min: 57
-                max: 60
+              - roll: { min: 57, max: 60 }
                 text: &Opp.14 Friendly traveler crosses your path
-              - min: 61
-                max: 64
+              - roll: { min: 61, max: 64 }
                 text: &Opp.15 Helpful resource is in ample supply
                 # suggestions: [*roll:Object]
-              - min: 65
-                max: 68
+              - roll: { min: 65, max: 68 }
                 text: &Opp.16 Impressive vista offers comfort or inspiration
-              - min: 69
-                max: 72
+              - roll: { min: 69, max: 72 }
                 text: &Opp.17 Interesting artifact or device
                 # suggestions: [*roll:Object]
-              - min: 73
-                max: 76
+              - roll: { min: 73, max: 76 }
                 text: &Opp.18 Interesting site offers opportunities for exploration
                 # suggestions: [*roll:Object]
-              - min: 77
-                max: 80
+              - roll: { min: 77, max: 80 }
                 text: &Opp.19 Moment of fellowship or inner peace
-              - min: 81
-                max: 84
+              - roll: { min: 81, max: 84 }
                 text: &Opp.20 'Opening to distract, escape, or avoid foes'
-              - min: 85
-                max: 88
+              - roll: { min: 85, max: 88 }
                 text: &Opp.21 Opening to get the drop on a foe
-              - min: 89
-                max: 92
+              - roll: { min: 89, max: 92 }
                 text: &Opp.22 Plea for help from a potential benefactor
                 # suggestions: [*obj:Npc]
-              - min: 93
-                max: 96
+              - roll: { min: 93, max: 96 }
                 text: &Opp.23 'Refuge offers a place to hide, plan, or recover'
                 # suggestions: [*roll:Object]
-              - min: 97
-                max: 100
+              - roll: { min: 97, max: 100 }
                 text: &Opp.24 Vantage point reveals the lay of the land
                 # suggestions: [*roll:Object]
           lifeless:
@@ -527,63 +431,43 @@ oracles:
               - min: null
                 max: null
                 text: *Opp.4
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: *Opp.5
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 text: *Opp.6
-              - min: 11
-                max: 15
+              - roll: { min: 11, max: 15 }
                 text: *Opp.7
-              - min: 16
-                max: 20
+              - roll: { min: 16, max: 20 }
                 text: *Opp.8
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 text: *Opp.9
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 text: *Opp.10
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 text: *Opp.11
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 text: *Opp.12
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 text: *Opp.13
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 text: *Opp.14
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 text: *Opp.15
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 text: *Opp.16
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 text: *Opp.17
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 text: *Opp.18
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 text: *Opp.19
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 text: *Opp.20
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: *Opp.21
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: *Opp.22
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: *Opp.23
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: *Opp.24

@@ -26,35 +26,25 @@ oracles:
           title: Ironsworn Rulebook
           page: 176
         rows:
-          - min: 1
-            max: 12
+          - roll: { min: 1, max: 12 }
             text: '[Barrier Islands](id:classic/atlas/ironlands/barrier_islands)'
-          - min: 13
-            max: 24
+          - roll: { min: 13, max: 24 }
             text: '[Ragged Coast](id:classic/atlas/ironlands/ragged_coast)'
-          - min: 25
-            max: 34
+          - roll: { min: 25, max: 34 }
             text: '[Deep Wilds](id:classic/atlas/ironlands/deep_wilds)'
-          - min: 35
-            max: 46
+          - roll: { min: 35, max: 46 }
             text: '[Flooded Lands](id:classic/atlas/ironlands/flooded_lands)'
-          - min: 47
-            max: 60
+          - roll: { min: 47, max: 60 }
             text: '[Havens](id:classic/atlas/ironlands/havens)'
-          - min: 61
-            max: 72
+          - roll: { min: 61, max: 72 }
             text: '[Hinterlands](id:classic/atlas/ironlands/hinterlands)'
-          - min: 73
-            max: 84
+          - roll: { min: 73, max: 84 }
             text: '[Tempest Hills](id:classic/atlas/ironlands/tempest_hills)'
-          - min: 85
-            max: 94
+          - roll: { min: 85, max: 94 }
             text: '[Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains)'
-          - min: 95
-            max: 99
+          - roll: { min: 95, max: 99 }
             text: '[Shattered Wastes](id:classic/atlas/ironlands/shattered_wastes)'
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Elsewhere
       location:
         name: Location
@@ -71,208 +61,157 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: common_noun
-            min: 1
-            max: 1
+            roll: { min: 1, max: 1 }
             text: Hideout
           - <<: *i18n.common_noun
-            min: 2
-            max: 2
+            roll: { min: 2, max: 2 }
             text: Ruin
           - <<: *i18n.common_noun
-            min: 3
-            max: 3
+            roll: { min: 3, max: 3 }
             text: Mine
           - <<: *i18n.common_noun
-            min: 4
-            max: 4
+            roll: { min: 4, max: 4 }
             text: Waste
           - <<: *i18n.common_noun
-            min: 5
-            max: 5
+            roll: { min: 5, max: 5 }
             text: Mystical Site
           - <<: *i18n.common_noun
-            min: 6
-            max: 6
+            roll: { min: 6, max: 6 }
             text: Path
           - <<: *i18n.common_noun
-            min: 7
-            max: 7
+            roll: { min: 7, max: 7 }
             text: Outpost
           - <<: *i18n.common_noun
-            min: 8
-            max: 8
+            roll: { min: 8, max: 8 }
             text: Wall
           - <<: *i18n.common_noun
-            min: 9
-            max: 9
+            roll: { min: 9, max: 9 }
             text: Battlefield
           - <<: *i18n.common_noun
-            min: 10
-            max: 10
+            roll: { min: 10, max: 10 }
             text: Hovel
           - <<: *i18n.common_noun
-            min: 11
-            max: 11
+            roll: { min: 11, max: 11 }
             text: Spring
           - <<: *i18n.common_noun
-            min: 12
-            max: 12
+            roll: { min: 12, max: 12 }
             text: Lair
           - <<: *i18n.common_noun
-            min: 13
-            max: 13
+            roll: { min: 13, max: 13 }
             text: Fort
           - <<: *i18n.common_noun
-            min: 14
-            max: 14
+            roll: { min: 14, max: 14 }
             text: Bridge
           - <<: *i18n.common_noun
-            min: 15
-            max: 15
+            roll: { min: 15, max: 15 }
             text: Camp
           - <<: *i18n.common_noun
-            min: 16
-            max: 16
+            roll: { min: 16, max: 16 }
             text: Cairn/Grave
           - <<: *i18n.common_noun
-            min: 17
-            max: 18
+            roll: { min: 17, max: 18 }
             text: Caravan
           - <<: *i18n.common_noun
-            min: 19
-            max: 20
+            roll: { min: 19, max: 20 }
             text: Waterfall
           - <<: *i18n.common_noun
-            min: 21
-            max: 22
+            roll: { min: 21, max: 22 }
             text: Cave
           - <<: *i18n.common_noun
-            min: 23
-            max: 24
+            roll: { min: 23, max: 24 }
             text: Swamp
           - <<: *i18n.common_noun
-            min: 25
-            max: 26
+            roll: { min: 25, max: 26 }
             text: Fen
           - <<: *i18n.common_noun
-            min: 27
-            max: 28
+            roll: { min: 27, max: 28 }
             text: Ravine
           - <<: *i18n.common_noun
-            min: 29
-            max: 30
+            roll: { min: 29, max: 30 }
             text: Road
           - <<: *i18n.common_noun
-            min: 31
-            max: 32
+            roll: { min: 31, max: 32 }
             text: Tree
           - <<: *i18n.common_noun
-            min: 33
-            max: 34
+            roll: { min: 33, max: 34 }
             text: Pond
           - <<: *i18n.common_noun
-            min: 35
-            max: 36
+            roll: { min: 35, max: 36 }
             text: Fields
           - <<: *i18n.common_noun
-            min: 37
-            max: 38
+            roll: { min: 37, max: 38 }
             text: Marsh
           - <<: *i18n.common_noun
-            min: 39
-            max: 40
+            roll: { min: 39, max: 40 }
             text: Steading
           - <<: *i18n.common_noun
-            min: 41
-            max: 42
+            roll: { min: 41, max: 42 }
             text: Rapids
           - <<: *i18n.common_noun
-            min: 43
-            max: 44
+            roll: { min: 43, max: 44 }
             text: Pass
           - <<: *i18n.common_noun
-            min: 45
-            max: 46
+            roll: { min: 45, max: 46 }
             text: Trail
           - <<: *i18n.common_noun
-            min: 47
-            max: 48
+            roll: { min: 47, max: 48 }
             text: Glade
           - <<: *i18n.common_noun
-            min: 49
-            max: 50
+            roll: { min: 49, max: 50 }
             text: Plain
           - <<: *i18n.common_noun
-            min: 51
-            max: 52
+            roll: { min: 51, max: 52 }
             text: Ridge
           - <<: *i18n.common_noun
-            min: 53
-            max: 54
+            roll: { min: 53, max: 54 }
             text: Cliff
           - <<: *i18n.common_noun
-            min: 55
-            max: 56
+            roll: { min: 55, max: 56 }
             text: Grove
           - <<: *i18n.common_noun
-            min: 57
-            max: 58
+            roll: { min: 57, max: 58 }
             text: Village
           - <<: *i18n.common_noun
-            min: 59
-            max: 60
+            roll: { min: 59, max: 60 }
             text: Moor
           - <<: *i18n.common_noun
-            min: 61
-            max: 62
+            roll: { min: 61, max: 62 }
             text: Thicket
           - <<: *i18n.common_noun
-            min: 63
-            max: 64
+            roll: { min: 63, max: 64 }
             text: River Ford
           - <<: *i18n.common_noun
-            min: 65
-            max: 66
+            roll: { min: 65, max: 66 }
             text: Valley
           - <<: *i18n.common_noun
-            min: 67
-            max: 68
+            roll: { min: 67, max: 68 }
             text: Bay/Fjord
           - <<: *i18n.common_noun
-            min: 69
-            max: 70
+            roll: { min: 69, max: 70 }
             text: Foothills
           - <<: *i18n.common_noun
-            min: 71
-            max: 72
+            roll: { min: 71, max: 72 }
             text: Lake
           - <<: *i18n.common_noun
-            min: 73
-            max: 75
+            roll: { min: 73, max: 75 }
             text: River
           - <<: *i18n.common_noun
-            min: 76
-            max: 79
+            roll: { min: 76, max: 79 }
             text: Forest
           - <<: *i18n.common_noun
-            min: 80
-            max: 83
+            roll: { min: 80, max: 83 }
             text: Coast
           - <<: *i18n.common_noun
-            min: 84
-            max: 88
+            roll: { min: 84, max: 88 }
             text: Hill
           - <<: *i18n.common_noun
-            min: 89
-            max: 93
+            roll: { min: 89, max: 93 }
             text: Mountain
           - <<: *i18n.common_noun
-            min: 94
-            max: 99
+            roll: { min: 94, max: 99 }
             text: Woods
           - <<: *i18n.common_noun
-            min: 100
-            max: 100
+            roll: { min: 100, max: 100 }
             text: Anomaly
       coastal_waters_location:
         name: Coastal Waters Location
@@ -286,72 +225,55 @@ oracles:
           page: 176
         rows:
           - <<: *i18n.common_noun
-            min: 1
-            max: 1
+            roll: { min: 1, max: 1 }
             text: Fleet
           - <<: *i18n.common_noun
-            min: 2
-            max: 2
+            roll: { min: 2, max: 2 }
             text: Sargassum
           - <<: *i18n.common_noun
-            min: 3
-            max: 3
+            roll: { min: 3, max: 3 }
             text: Flotsam
           - <<: *i18n.common_noun
-            min: 4
-            max: 4
+            roll: { min: 4, max: 4 }
             text: Mystical Site
           - <<: *i18n.common_noun
-            min: 5
-            max: 5
+            roll: { min: 5, max: 5 }
             text: Lair
           - <<: *i18n.common_noun
-            min: 6
-            max: 10
+            roll: { min: 6, max: 10 }
             text: Wreck
           - <<: *i18n.common_noun
-            min: 11
-            max: 15
+            roll: { min: 11, max: 15 }
             text: Harbor
           - <<: *i18n.common_noun
-            min: 16
-            max: 23
+            roll: { min: 16, max: 23 }
             text: Ship/Boat
           - <<: *i18n.common_noun
-            min: 24
-            max: 30
+            roll: { min: 24, max: 30 }
             text: Rocks
           - <<: *i18n.common_noun
-            min: 31
-            max: 38
+            roll: { min: 31, max: 38 }
             text: Fjord
           - <<: *i18n.common_noun
-            min: 39
-            max: 46
+            roll: { min: 39, max: 46 }
             text: Estuary
           - <<: *i18n.common_noun
-            min: 47
-            max: 54
+            roll: { min: 47, max: 54 }
             text: Cove
           - <<: *i18n.common_noun
-            min: 55
-            max: 62
+            roll: { min: 55, max: 62 }
             text: Bay
           - <<: *i18n.common_noun
-            min: 63
-            max: 70
+            roll: { min: 63, max: 70 }
             text: Ice
           - <<: *i18n.common_noun
-            min: 71
-            max: 85
+            roll: { min: 71, max: 85 }
             text: Island
           - <<: *i18n.common_noun
-            min: 86
-            max: 99
+            roll: { min: 86, max: 99 }
             text: Open Water
           - <<: *i18n.common_noun
-            min: 100
-            max: 100
+            roll: { min: 100, max: 100 }
             text: Anomaly
       descriptor:
         name: Location Descriptor
@@ -368,202 +290,152 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: adjective
-            min: 1
-            max: 2
+            roll: { min: 1, max: 2 }
             text: High
           - <<: *i18n.adjective
-            min: 3
-            max: 4
+            roll: { min: 3, max: 4 }
             text: Remote
           - <<: *i18n.adjective
-            min: 5
-            max: 6
+            roll: { min: 5, max: 6 }
             text: Exposed
           - <<: *i18n.adjective
-            min: 7
-            max: 8
+            roll: { min: 7, max: 8 }
             text: Small
           - <<: *i18n.adjective
-            min: 9
-            max: 10
+            roll: { min: 9, max: 10 }
             text: Broken
           - <<: *i18n.adjective
-            min: 11
-            max: 12
+            roll: { min: 11, max: 12 }
             text: Diverse
           - <<: *i18n.adjective
-            min: 13
-            max: 14
+            roll: { min: 13, max: 14 }
             text: Rough
           - <<: *i18n.adjective
-            min: 15
-            max: 16
+            roll: { min: 15, max: 16 }
             text: Dark
           - <<: *i18n.adjective
-            min: 17
-            max: 18
+            roll: { min: 17, max: 18 }
             text: Shadowy
           - <<: *i18n.adjective
-            min: 19
-            max: 20
+            roll: { min: 19, max: 20 }
             text: Contested
           - <<: *i18n.adjective
-            min: 21
-            max: 22
+            roll: { min: 21, max: 22 }
             text: Grim
           - <<: *i18n.adjective
-            min: 23
-            max: 24
+            roll: { min: 23, max: 24 }
             text: Wild
           - <<: *i18n.adjective
-            min: 25
-            max: 26
+            roll: { min: 25, max: 26 }
             text: Fertile
           - <<: *i18n.adjective
-            min: 27
-            max: 28
+            roll: { min: 27, max: 28 }
             text: Blocked
           - <<: *i18n.adjective
-            min: 29
-            max: 30
+            roll: { min: 29, max: 30 }
             text: Ancient
           - <<: *i18n.adjective
-            min: 31
-            max: 32
+            roll: { min: 31, max: 32 }
             text: Perilous
           - <<: *i18n.adjective
-            min: 33
-            max: 34
+            roll: { min: 33, max: 34 }
             text: Hidden
           - <<: *i18n.adjective
-            min: 35
-            max: 36
+            roll: { min: 35, max: 36 }
             text: Occupied
           - <<: *i18n.adjective
-            min: 37
-            max: 38
+            roll: { min: 37, max: 38 }
             text: Rich
           - <<: *i18n.adjective
-            min: 39
-            max: 40
+            roll: { min: 39, max: 40 }
             text: Big
           - <<: *i18n.adjective
-            min: 41
-            max: 42
+            roll: { min: 41, max: 42 }
             text: Savage
           - <<: *i18n.adjective
-            min: 43
-            max: 44
+            roll: { min: 43, max: 44 }
             text: Defended
           - <<: *i18n.adjective
-            min: 45
-            max: 46
+            roll: { min: 45, max: 46 }
             text: Withered
           - <<: *i18n.adjective
-            min: 47
-            max: 48
+            roll: { min: 47, max: 48 }
             text: Mystical
           - <<: *i18n.adjective
-            min: 49
-            max: 50
+            roll: { min: 49, max: 50 }
             text: Inaccessible
           - <<: *i18n.adjective
-            min: 51
-            max: 52
+            roll: { min: 51, max: 52 }
             text: Protected
           - <<: *i18n.adjective
-            min: 53
-            max: 54
+            roll: { min: 53, max: 54 }
             text: Abandoned
           - <<: *i18n.adjective
-            min: 55
-            max: 56
+            roll: { min: 55, max: 56 }
             text: Wide
           - <<: *i18n.adjective
-            min: 57
-            max: 58
+            roll: { min: 57, max: 58 }
             text: Foul
           - <<: *i18n.adjective
-            min: 59
-            max: 60
+            roll: { min: 59, max: 60 }
             text: Dead
           - <<: *i18n.adjective
-            min: 61
-            max: 62
+            roll: { min: 61, max: 62 }
             text: Ruined
           - <<: *i18n.adjective
-            min: 63
-            max: 64
+            roll: { min: 63, max: 64 }
             text: Barren
           - <<: *i18n.adjective
-            min: 65
-            max: 66
+            roll: { min: 65, max: 66 }
             text: Cold
           - <<: *i18n.adjective
-            min: 67
-            max: 68
+            roll: { min: 67, max: 68 }
             text: Blighted
           - <<: *i18n.adjective
-            min: 69
-            max: 70
+            roll: { min: 69, max: 70 }
             text: Low
           - <<: *i18n.adjective
-            min: 71
-            max: 72
+            roll: { min: 71, max: 72 }
             text: Beautiful
           - <<: *i18n.adjective
-            min: 73
-            max: 74
+            roll: { min: 73, max: 74 }
             text: Abundant
           - <<: *i18n.adjective
-            min: 75
-            max: 76
+            roll: { min: 75, max: 76 }
             text: Lush
           - <<: *i18n.adjective
-            min: 77
-            max: 78
+            roll: { min: 77, max: 78 }
             text: Flooded
           - <<: *i18n.adjective
-            min: 79
-            max: 80
+            roll: { min: 79, max: 80 }
             text: Empty
           - <<: *i18n.adjective
-            min: 81
-            max: 82
+            roll: { min: 81, max: 82 }
             text: Strange
           - <<: *i18n.adjective
-            min: 83
-            max: 84
+            roll: { min: 83, max: 84 }
             text: Corrupted
           - <<: *i18n.adjective
-            min: 85
-            max: 86
+            roll: { min: 85, max: 86 }
             text: Peaceful
           - <<: *i18n.adjective
-            min: 87
-            max: 88
+            roll: { min: 87, max: 88 }
             text: Forgotten
           - <<: *i18n.adjective
-            min: 89
-            max: 90
+            roll: { min: 89, max: 90 }
             text: Expansive
           - <<: *i18n.adjective
-            min: 91
-            max: 92
+            roll: { min: 91, max: 92 }
             text: Settled
           - <<: *i18n.adjective
-            min: 93
-            max: 94
+            roll: { min: 93, max: 94 }
             text: Dense
           - <<: *i18n.adjective
-            min: 95
-            max: 96
+            roll: { min: 95, max: 96 }
             text: Civilized
           - <<: *i18n.adjective
-            min: 97
-            max: 98
+            roll: { min: 97, max: 98 }
             text: Desolate
           - <<: *i18n.adjective
-            min: 99
-            max: 100
+            roll: { min: 99, max: 100 }
             text: Isolated

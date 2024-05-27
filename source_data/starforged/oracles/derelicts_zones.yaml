@@ -34,29 +34,21 @@ oracles:
                 Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 50
+              - roll: { min: 1, max: 50 }
                 text: Corridor
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: Stairs
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: Lift or elevator
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: Catwalk or bridge
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: Vertical shaft or ladder
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: Hub or intersection
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: Crawl space or duct
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Airlock or external
           feature:
             <<: &Feature
@@ -67,65 +59,45 @@ oracles:
                 Roll on this table when you want to reveal new aspects of your current surroundings. This is best used sparingly—a bit of occasional extra detail or ambiance—rather than rolling for every segment of your exploration.
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: Abandoned gear
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 text: Blood trail
-              - min: 11
-                max: 15
+              - roll: { min: 11, max: 15 }
                 text: Breached door or hatch
-              - min: 16
-                max: 20
+              - roll: { min: 16, max: 20 }
                 text: Control or terminal station
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 text: Corpse
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 text: Dismantled equipment
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 text: Flashing strobes
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 text: Leaking pipes
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 text: Makeshift barricade
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 text: Opened or missing panels
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 text: Organic growths
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 text: Ruined bot
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 text: Scrawled warning
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 text: Sealed breach
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 text: Sounds of movement
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 text: Steam or smoke
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: Wandering bot
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: Windows or viewports
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: Wrecked passage or debris
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: &DescriptorFocus
                   text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls:
@@ -143,44 +115,34 @@ oracles:
             _source: *CollectionSource
             rows:
               - &Peril.0
-                min: 1
-                max: 10
+                roll: { min: 1, max: 10 }
                 text: Alarm or failsafe is triggered
               - &Peril.1
-                min: 11
-                max: 20
+                roll: { min: 11, max: 20 }
                 text: Automated defenses
               - &Peril.2
-                min: 21
-                max: 30
+                roll: { min: 21, max: 30 }
                 text: Blocked or sealed path
               - &Peril.3
-                min: 31
-                max: 40
+                roll: { min: 31, max: 40 }
                 text: Dreadful scene of death or violence
               - &Peril.4
-                min: 41
-                max: 50
+                roll: { min: 41, max: 50 }
                 text: Foe closes in
               - &Peril.5
-                min: 51
-                max: 60
+                roll: { min: 51, max: 60 }
                 text: Gear is failing or broken
               - &Peril.6
-                min: 61
-                max: 70
+                roll: { min: 61, max: 70 }
                 text: Hazardous environmental change
               - &Peril.7
-                min: 71
-                max: 80
+                roll: { min: 71, max: 80 }
                 text: Path is trapped
               - &Peril.8
-                min: 81
-                max: 90
+                roll: { min: 81, max: 90 }
                 text: Unsettling sound or disturbance
               - &Peril.9
-                min: 91
-                max: 98
+                roll: { min: 91, max: 98 }
                 text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
                 oracle_rolls:
                   - oracle: starforged/oracles/core/action
@@ -188,8 +150,7 @@ oracles:
                   - oracle: starforged/oracles/core/theme
                     auto: true
               - &Peril.10
-                min: 99
-                max: 100
+                roll: { min: 99, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -204,24 +165,19 @@ oracles:
                 Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.
             rows:
               - &Opportunity.0
-                min: 1
-                max: 20
+                roll: { min: 1, max: 20 }
                 text: Directions, shortcut, or alternate path
               - &Opportunity.1
-                min: 21
-                max: 40
+                roll: { min: 21, max: 40 }
                 text: Encounter with a friendly survivor, explorer, or denizen
               - &Opportunity.2
-                min: 41
-                max: 60
+                roll: { min: 41, max: 60 }
                 text: Hopeful signs of life
               - &Opportunity.3
-                min: 61
-                max: 80
+                roll: { min: 61, max: 80 }
                 text: Opening to outmaneuver or escape a threat or foe
               - &Opportunity.4
-                min: 81
-                max: 100
+                roll: { min: 81, max: 100 }
                 text: Useful equipment
       community:
         name: Community
@@ -237,105 +193,81 @@ oracles:
             _source: *CollectionSource
             rows:
               - &Area.0
-                min: 1
-                max: 8
+                roll: { min: 1, max: 8 }
                 text: Bar or club
               - &Area.1
-                min: 9
-                max: 16
+                roll: { min: 9, max: 16 }
                 text: Classroom or education
               - &Area.2
-                min: 17
-                max: 24
+                roll: { min: 17, max: 24 }
                 text: Concourse or hub
               - &Area.3
-                min: 25
-                max: 32
+                roll: { min: 25, max: 32 }
                 text: Entertainment
               - &Area.4
-                min: 33
-                max: 40
+                roll: { min: 33, max: 40 }
                 text: Gym or fitness
               - &Area.5
-                min: 41
-                max: 48
+                roll: { min: 41, max: 48 }
                 text: Market or trade
               - &Area.6
-                min: 49
-                max: 56
+                roll: { min: 49, max: 56 }
                 text: Park or garden
               - &Area.7
-                min: 57
-                max: 64
+                roll: { min: 57, max: 64 }
                 text: Promenade or overlook
               - &Area.8
-                min: 65
-                max: 72
+                roll: { min: 65, max: 72 }
                 text: Restaurant or dining
               - &Area.9
-                min: 73
-                max: 80
+                roll: { min: 73, max: 80 }
                 text: Temple or chapel
               - &Area.10
-                min: 81
-                max: 85
+                roll: { min: 81, max: 85 }
                 text: New zone
               - &Area.11
-                min: 86
-                max: 100
+                roll: { min: 86, max: 100 }
                 text: New zone via [Access](id:starforged/collections/oracles/derelicts/access)
           feature:
             <<: *Feature
             _source: *CollectionSource
             rows:
               - &Feature.0
-                min: 1
-                max: 8
+                roll: { min: 1, max: 8 }
                 text: Ad-hoc memorials
               - &Feature.1
-                min: 9
-                max: 16
+                roll: { min: 9, max: 16 }
                 text: Art depicting historic event
               - &Feature.2
-                min: 17
-                max: 24
+                roll: { min: 17, max: 24 }
                 text: Artificial environment
               - &Feature.3
-                min: 25
-                max: 32
+                roll: { min: 25, max: 32 }
                 text: Automated announcements
               - &Feature.4
-                min: 33
-                max: 40
+                roll: { min: 33, max: 40 }
                 text: Barricaded area
               - &Feature.5
-                min: 41
-                max: 48
+                roll: { min: 41, max: 48 }
                 text: Gaming devices or interfaces
               - &Feature.6
-                min: 49
-                max: 56
+                roll: { min: 49, max: 56 }
                 text: Graffiti or vandalization
               - &Feature.7
-                min: 57
-                max: 64
+                roll: { min: 57, max: 64 }
                 text: Guard post or surveillance
               - &Feature.8
-                min: 65
-                max: 72
+                roll: { min: 65, max: 72 }
                 text: Mass grave or corpses
               - &Feature.9
-                min: 73
-                max: 80
+                roll: { min: 73, max: 80 }
                 text: Panoramic viewport
               - &Feature.10
-                min: 81
-                max: 88
+                roll: { min: 81, max: 88 }
                 text: Rubble or debris
               - &Feature.11
                 <<: *DescriptorFocus
-                min: 89
-                max: 100
+                roll: { min: 89, max: 100 }
           peril:
             <<: *Peril
             _source: *CollectionSource

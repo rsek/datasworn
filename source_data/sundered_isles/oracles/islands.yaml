@@ -21,83 +21,57 @@ oracles:
           <<: *Source
           page: 90
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Broad bay protected by offshore islet
-          - min: 3
-            max: 8
+          - roll: { min: 3, max: 8 }
             text: Channel separates a neighboring island
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Dramatic columns of volcanic rock
-          - min: 11
-            max: 14
+          - roll: { min: 11, max: 14 }
             text: Deep harbor within artificial breakwater
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Expansive, gently-sloped beach
-          - min: 17
-            max: 26
+          - roll: { min: 17, max: 26 }
             text: Exposed mudflats
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Fringing reef and lagoon
-          - min: 29
-            max: 34
+          - roll: { min: 29, max: 34 }
             text: Inundated by tidal flooding
-          - min: 35
-            max: 38
+          - roll: { min: 35, max: 38 }
             text: Jagged outcroppings
-          - min: 39
-            max: 42
+          - roll: { min: 39, max: 42 }
             text: Marshy sloughs
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Narrow inlet into sheltered cove
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Numerous small beaches
-          - min: 47
-            max: 50
+          - roll: { min: 47, max: 50 }
             text: Remains of old seawall
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: River estuary
-          - min: 53
-            max: 56
+          - roll: { min: 53, max: 56 }
             text: Rocky ledges beneath stone bluffs
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Rocky promontory extends far out to sea
-          - min: 59
-            max: 62
+          - roll: { min: 59, max: 62 }
             text: Rocky shoals within shallow waters
-          - min: 63
-            max: 66
+          - roll: { min: 63, max: 66 }
             text: Rugged boulder beaches
-          - min: 67
-            max: 72
+          - roll: { min: 67, max: 72 }
             text: Sandy beaches and dunes
-          - min: 73
-            max: 78
+          - roll: { min: 73, max: 78 }
             text: Sea caves
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Sea stacks
-          - min: 81
-            max: 84
+          - roll: { min: 81, max: 84 }
             text: Shallow waters sheltered by sandbars
-          - min: 85
-            max: 88
+          - roll: { min: 85, max: 88 }
             text: Steep-sided gorge
-          - min: 89
-            max: 94
+          - roll: { min: 89, max: 94 }
             text: Swampy mangrove thickets
-          - min: 95
-            max: 98
+          - roll: { min: 95, max: 98 }
             text: Tall headlands surround pocket beach
-          - min: 99
-            max: 100
+          - roll: { min: 99, max: 100 }
             text: Towering cliffs rise directly from the sea
       offshore_observations:
         _source: *Source
@@ -108,134 +82,92 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Active lava flow
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: Among a densely clustered island chain
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Beached sea beast
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Bobbing cargo just offshore
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Buoy with a message or warning
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Burning landscape
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Cooling lava flow
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Crystal-clear coastal waters
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Dead reef system
-          - min: 19
-            max: 20
+          - roll: { min: 19, max: 20 }
             text: Distress signal
-          - min: 21
-            max: 22
+          - roll: { min: 21, max: 22 }
             text: Diverse wildlife
-          - min: 23
-            max: 24
+          - roll: { min: 23, max: 24 }
             text: Dolphins frolic in offshore waters
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Enormous sea cave
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Flocks of migrating birds
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Fragrant scents
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Geysering blowholes
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Gleam of a spyglass
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Landed or anchored boats
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Linked to an islet by a land bridge
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: Majestic seaside waterfall
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: Obscuring mist
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Old, crumbling dock
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Powerful shorebreaking waves
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Scars of recent storm damage
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Sharks prowl coastal waters
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Signs of a recent battle
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Sounds of distant gunfire
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Sounds of far-off music
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Stirrings of a large sea creature
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: Strong coastal currents
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Sunken wrecks form an artificial reef
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: Thick kelp forests under the surface
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Towering natural rock arch
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Unusual color beaches or terrain
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Vibrant offshore coral
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Walled shoreline
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Waters clogged with debris
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Whales congregate in coastal waters
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             # FIXME
             text: '[Ship](id:sundered_isles/collections/oracles/ship) (at anchor)'
-          - min: 81
-            max: 86
+          - roll: { min: 81, max: 86 }
             # FIXME
             text: '[Wreck](id:sundered_isles/collections/oracles/wreck)'
-          - min: 87
-            max: 90
+          - roll: { min: 87, max: 90 }
             # FIXME
             text: '[Ruins](id:sundered_isles/collections/oracles/ruins)'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       offshore_observations_cursed:
         _source: *Source
@@ -247,125 +179,85 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Alluring illusion
-          - min: 4
-            max: 5
+          - roll: { min: 4, max: 5 }
             text: Bloody coastal waters
-          - min: 6
-            max: 7
+          - roll: { min: 6, max: 7 }
             text: Bone reef
-          - min: 8
-            max: 10
+          - roll: { min: 8, max: 10 }
             text: Bone-covered beach
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Bound in snow or ice
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Dead sea life
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Devoid of wildlife
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Eerie singing or chants
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Glimpses of ghostly forms
-          - min: 22
-            max: 23
+          - roll: { min: 22, max: 23 }
             text: Heaped tangle of wrecked ships
-          - min: 24
-            max: 25
+          - roll: { min: 24, max: 25 }
             text: Hordes of fleeing birds
-          - min: 26
-            max: 28
+          - roll: { min: 26, max: 28 }
             text: Monstrous beast
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Nightmarish or unearthly wildlife
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Ominous, beastly howls
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Oversized plants or wildlife
-          - min: 35
-            max: 37
+          - roll: { min: 35, max: 37 }
             text: Phantom ship at anchor
-          - min: 38
-            max: 39
+          - roll: { min: 38, max: 39 }
             text: Phantom whispers
-          - min: 40
-            max: 41
+          - roll: { min: 40, max: 41 }
             text: Plants or creatures from out of time
-          - min: 42
-            max: 43
+          - roll: { min: 42, max: 43 }
             text: Resounding, titanic footfalls
-          - min: 44
-            max: 45
+          - roll: { min: 44, max: 45 }
             text: Rotting vegetation
-          - min: 46
-            max: 47
+          - roll: { min: 46, max: 47 }
             text: Shifting or changing terrain
-          - min: 48
-            max: 52
+          - roll: { min: 48, max: 52 }
             text: Ship graveyard
-          - min: 53
-            max: 55
+          - roll: { min: 53, max: 55 }
             text: Sinister warnings carved in rocks
-          - min: 56
-            max: 57
+          - roll: { min: 56, max: 57 }
             text: Skeletal corpses chained to rocks
-          - min: 58
-            max: 61
+          - roll: { min: 58, max: 61 }
             text: Skull-shaped terrain feature
-          - min: 62
-            max: 63
+          - roll: { min: 62, max: 63 }
             text: Spectral lights
-          - min: 64
-            max: 65
+          - roll: { min: 64, max: 65 }
             text: Stagnant, foul-smelling coastal waters
-          - min: 66
-            max: 68
+          - roll: { min: 66, max: 68 }
             text: Stench of death
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Surrounded by arcane barrier
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Terrain or vegetation draped with webs
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Titanic skeleton
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Undead wildlife
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             text: Unmoving fog
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Unnatural darkness
-          - min: 83
-            max: 85
+          - roll: { min: 83, max: 85 }
             text: Unnaturally aggressive wildlife
-          - min: 86
-            max: 88
+          - roll: { min: 86, max: 88 }
             text: Unnerving sense of being watched
-          - min: 89
-            max: 91
+          - roll: { min: 89, max: 91 }
             text: Unsettling quiet
-          - min: 92
-            max: 93
+          - roll: { min: 92, max: 93 }
             text: Uprooted or broken vegetation
-          - min: 94
-            max: 95
+          - roll: { min: 94, max: 95 }
             text: Washed-up corpses
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: '[Cursed Weather]'
     collections:
       landscape:
@@ -384,20 +276,16 @@ oracles:
               text: Result
               text2: Time to Walk the Island Circumference
             rows:
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 text: Small
                 text2: Hour or two
-              - min: 21
-                max: 50
+              - roll: { min: 21, max: 50 }
                 text: Medium
                 text2: Several hours
-              - min: 51
-                max: 90
+              - roll: { min: 51, max: 90 }
                 text: Large
                 text2: Days
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Vast
                 text2: Weeks
           terrain:
@@ -410,36 +298,28 @@ oracles:
               text: Result
               text2: Detail
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Sodden
                 text2: Low-lying wetlands
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Flat
                 text2: Expansive plains
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Rolling
                 text2: Hills or dunes
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Elevated
                 text2: Sheer cliffs rising to a mesa or plateau
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Sloped
                 text2: Terrain rising gradually to a prominent ridge or peak
-              - min: 51
-                max: 70
+              - roll: { min: 51, max: 70 }
                 text: Rugged
                 text2: Varied terrain of craggy hills and dramatic rock formations
-              - min: 71
-                max: 90
+              - roll: { min: 71, max: 90 }
                 text: Mountainous
                 text2: Imposing heights and deep valleys
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Volcanic
                 text2: Active volcanoes and lava fields
         collections:
@@ -460,33 +340,27 @@ oracles:
                 oracle_type: column_text2
                 type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 15
+                  - roll: { min: 1, max: 15 }
                     <<: &Vitality.0
                       text: Devastated
                       text2: Ravaged by natural forces or razed by despoilers
-                  - min: 16
-                    max: 30
+                  - roll: { min: 16, max: 30 }
                     <<: &Vitality.1
                       text: Dying
                       text2: Withered woodlands, blighted scrub, or sickly marshes
-                  - min: 31
-                    max: 40
+                  - roll: { min: 31, max: 40 }
                     <<: &Vitality.2
                       text: Desolate
                       text2: Arid wastes
-                  - min: 41
-                    max: 50
+                  - roll: { min: 41, max: 50 }
                     <<: &Vitality.3
                       text: Sparse
                       text2: Thin woodlands, bleak scrub, or stagnant marshes
-                  - min: 51
-                    max: 90
+                  - roll: { min: 51, max: 90 }
                     <<: &Vitality.4
                       text: Lush
                       text2: Verdant woodlands, dense jungles, or thriving swamps
-                  - min: 91
-                    max: 100
+                  - roll: { min: 91, max: 100 }
                     <<: &Vitality.5
                       text: Primeval
                       text2: Ancient jungles or impenetrable swamps
@@ -498,23 +372,17 @@ oracles:
                 oracle_type: column_text2
                 type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 10
+                  - roll: { min: 1, max: 10 }
                     <<: *Vitality.0
-                  - min: 11
-                    max: 20
+                  - roll: { min: 11, max: 20 }
                     <<: *Vitality.1
-                  - min: 21
-                    max: 25
+                  - roll: { min: 21, max: 25 }
                     <<: *Vitality.2
-                  - min: 26
-                    max: 35
+                  - roll: { min: 26, max: 35 }
                     <<: *Vitality.3
-                  - min: 36
-                    max: 85
+                  - roll: { min: 36, max: 85 }
                     <<: *Vitality.4
-                  - min: 86
-                    max: 100
+                  - roll: { min: 86, max: 100 }
                     <<: *Vitality.5
               reaches:
                 # source: *Source
@@ -524,23 +392,17 @@ oracles:
                 oracle_type: column_text2
                 type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 5
+                  - roll: { min: 1, max: 5 }
                     <<: *Vitality.0
-                  - min: 6
-                    max: 10
+                  - roll: { min: 6, max: 10 }
                     <<: *Vitality.1
-                  - min: 11
-                    max: 15
+                  - roll: { min: 11, max: 15 }
                     <<: *Vitality.2
-                  - min: 16
-                    max: 25
+                  - roll: { min: 16, max: 25 }
                     <<: *Vitality.3
-                  - min: 26
-                    max: 75
+                  - roll: { min: 26, max: 75 }
                     <<: *Vitality.4
-                  - min: 76
-                    max: 100
+                  - roll: { min: 76, max: 100 }
                     <<: *Vitality.5
       visible_habitation:
         _source: *Source
@@ -556,28 +418,22 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 35
+              - roll: { min: 1, max: 35 }
                 <<: &VisibleHabitation.0
                   text: No signs of habitation
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 <<: &VisibleHabitation.1
                   text: Inland smoke
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 <<: &VisibleHabitation.2
                   text: Costal boats
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 <<: &VisibleHabitation.3
                   text: Seaside camp
-              - min: 51
-                max: 85
+              - roll: { min: 51, max: 85 }
                 <<: &VisibleHabitation.4
                   text: Seaside settlement
-              - min: 86
-                max: 100
+              - roll: { min: 86, max: 100 }
                 <<: &VisibleHabitation.5
                   text: Mutliple visible communities or extensive cultivation
           margins:
@@ -586,23 +442,17 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 50
+              - roll: { min: 1, max: 50 }
                 <<: *VisibleHabitation.0
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 <<: *VisibleHabitation.1
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 <<: *VisibleHabitation.2
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 <<: *VisibleHabitation.3
-              - min: 66
-                max: 90
+              - roll: { min: 66, max: 90 }
                 <<: *VisibleHabitation.4
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *VisibleHabitation.5
           reaches:
             # source: *Source
@@ -610,21 +460,15 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 65
+              - roll: { min: 1, max: 65 }
                 <<: *VisibleHabitation.0
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 <<: *VisibleHabitation.1
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 <<: *VisibleHabitation.2
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 <<: *VisibleHabitation.3
-              - min: 81
-                max: 95
+              - roll: { min: 81, max: 95 }
                 <<: *VisibleHabitation.4
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: *VisibleHabitation.5

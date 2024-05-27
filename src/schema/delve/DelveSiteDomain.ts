@@ -46,18 +46,18 @@ export const DelveSiteDomain = setSourceDataSchema(
 				[
 					DelveSiteDomainFeatures,
 					Type.Tuple([
-						StaticRowPartial({ min: 21, max: 43 }),
-						StaticRowPartial({ min: 44, max: 56 }),
-						StaticRowPartial({ min: 57, max: 64 }),
-						StaticRowPartial({ min: 65, max: 68 }),
-						StaticRowPartial({ min: 69, max: 72 }),
-						StaticRowPartial({ min: 73, max: 76 }),
-						StaticRowPartial({ min: 77, max: 80 }),
-						StaticRowPartial({ min: 81, max: 84 }),
-						StaticRowPartial({ min: 85, max: 88 }),
+						StaticRowPartial({ roll: { min: 21, max: 43 } }),
+						StaticRowPartial({ roll: { min: 44, max: 56 } }),
+						StaticRowPartial({ roll: { min: 57, max: 64 } }),
+						StaticRowPartial({ roll: { min: 65, max: 68 } }),
+						StaticRowPartial({ roll: { min: 69, max: 72 } }),
+						StaticRowPartial({ roll: { min: 73, max: 76 } }),
+						StaticRowPartial({ roll: { min: 77, max: 80 } }),
+						StaticRowPartial({ roll: { min: 81, max: 84 } }),
+						StaticRowPartial({ roll: { min: 85, max: 88 } }),
 						StaticRowPartial(
 							// FIXME: disabled for now because the defaults make TypeCompiler upset
-							{ min: 89, max: 98 }
+							{ roll: { min: 89, max: 98 } }
 
 							// {
 							// 	result: 'Something unusual or unexpected',
@@ -70,7 +70,7 @@ export const DelveSiteDomain = setSourceDataSchema(
 							// }
 						),
 						StaticRowPartial(
-							{ min: 99, max: 99 }
+							{ roll: { min: 99, max: 99 } }
 							// {
 							// result: 'You transition into a new theme'
 							// suggestions: {
@@ -79,7 +79,7 @@ export const DelveSiteDomain = setSourceDataSchema(
 							// }
 						),
 						StaticRowPartial(
-							{ min: 100, max: 100 }
+							{ roll: { min: 100, max: 100 } }
 							// {
 							// 	result: 'You transition into a new domain',
 							// 	suggestions: {
@@ -99,11 +99,11 @@ export const DelveSiteDomain = setSourceDataSchema(
 				[
 					DelveSiteDomainDangers,
 					Type.Tuple([
-						StaticRowPartial({ min: 31, max: 33 }),
-						StaticRowPartial({ min: 34, max: 36 }),
-						StaticRowPartial({ min: 37, max: 39 }),
-						StaticRowPartial({ min: 40, max: 42 }),
-						StaticRowPartial({ min: 43, max: 45 })
+						StaticRowPartial({ roll: { min: 31, max: 33 } }),
+						StaticRowPartial({ roll: { min: 34, max: 36 } }),
+						StaticRowPartial({ roll: { min: 37, max: 39 } }),
+						StaticRowPartial({ roll: { min: 40, max: 42 } }),
+						StaticRowPartial({ roll: { min: 43, max: 45 } })
 					])
 				],
 				{

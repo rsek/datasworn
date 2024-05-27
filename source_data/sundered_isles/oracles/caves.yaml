@@ -34,58 +34,41 @@ oracles:
           sundered_isles:
             cursed_version: sundered_isles/oracles/caves/threshold_cursed
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 6
+          - roll: { min: 1, max: 6 }
             text: Archway of carved stone
-          - min: 7
-            max: 12
+          - roll: { min: 7, max: 12 }
             text: Barricaded or blocked
-          - min: 13
-            max: 19
+          - roll: { min: 13, max: 19 }
             text: Behind a waterfall
-          - min: 20
-            max: 25
+          - roll: { min: 20, max: 25 }
             text: Flanked by statues or monuments
-          - min: 26
-            max: 31
+          - roll: { min: 26, max: 31 }
             text: Fronted by carved stairs
-          - min: 32
-            max: 38
+          - roll: { min: 32, max: 38 }
             text: Immense entrance
-          - min: 39
-            max: 44
+          - roll: { min: 39, max: 44 }
             text: Marked with a message or warning
-          - min: 45
-            max: 50
+          - roll: { min: 45, max: 50 }
             text: Nearby camp, ship, or landed boat
-          - min: 51
-            max: 56
+          - roll: { min: 51, max: 56 }
             text: Overgrown with plants
-          - min: 57
-            max: 62
+          - roll: { min: 57, max: 62 }
             text: Perched high on a cliff face
-          - min: 63
-            max: 68
+          - roll: { min: 63, max: 68 }
             text: Sealed with a door or gate
-          - min: 69
-            max: 75
+          - roll: { min: 69, max: 75 }
             text: Swarming with bats
-          - min: 76
-            max: 81
+          - roll: { min: 76, max: 81 }
             text: Tight squeeze
-          - min: 82
-            max: 88
+          - roll: { min: 82, max: 88 }
             text: Vertical shaft
-          - min: 89
-            max: 94
+          - roll: { min: 89, max: 94 }
             text: Well-used path
-          - min: 95
-            max: 100
+          - roll: { min: 95, max: 100 }
             text: "[Descriptor + Focus]"
       threshold_cursed:
         name: Cursed Cave Threshold
@@ -98,47 +81,33 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 7
+          - roll: { min: 1, max: 7 }
             text: Bloody trail leading inside
-          - min: 8
-            max: 14
+          - roll: { min: 8, max: 14 }
             text: Carved with eldritch symbols
-          - min: 15
-            max: 21
+          - roll: { min: 15, max: 21 }
             text: Glimpses of a spectral form
-          - min: 22
-            max: 28
+          - roll: { min: 22, max: 28 }
             text: Guarded by a monstrous creature
-          - min: 29
-            max: 35
+          - roll: { min: 29, max: 35 }
             text: Hung with webs or mucus
-          - min: 36
-            max: 43
+          - roll: { min: 36, max: 43 }
             text: Littered with bones
-          - min: 44
-            max: 50
+          - roll: { min: 44, max: 50 }
             text: Marked with a foreboding warning
-          - min: 51
-            max: 57
+          - roll: { min: 51, max: 57 }
             text: Monstrous howls or roars from within
-          - min: 58
-            max: 64
+          - roll: { min: 58, max: 64 }
             text: Shrouded in unnatural fog
-          - min: 65
-            max: 72
+          - roll: { min: 65, max: 72 }
             text: Skull-shaped edifice
-          - min: 73
-            max: 79
+          - roll: { min: 73, max: 79 }
             text: Stench of death
-          - min: 80
-            max: 86
+          - roll: { min: 80, max: 86 }
             text: Surrounded by blighted terrain
-          - min: 87
-            max: 93
+          - roll: { min: 87, max: 93 }
             text: Unnerving sense of being watched
-          - min: 94
-            max: 100
+          - roll: { min: 94, max: 100 }
             text: Unnerving stillness or quiet
       lurking_threat:
         name: Lurking Threat
@@ -152,48 +121,39 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: Chilling cold
             text2: Creeping numbness; teeth-  chattering shivers
             text3: You are chilled to the bone!
-          - min: 16
-            max: 25
+          - roll: { min: 16, max: 25 }
             text: Devious trap
             text2: Minor puzzle; portentous clues
             text3: You face a confounding trap!
-          - min: 26
-            max: 35
+          - roll: { min: 26, max: 35 }
             text: Flash flood
             text2: Dripping water; rumbling echoes
             text3: A torrent of water floods in!
-          - min: 36
-            max: 50
+          - roll: { min: 36, max: 50 }
             text: Oppressive  confinement
             text2: Suffocating passages;  deepening darkness
             text3: You face confusion or panic!
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Restless magma
             text2: Stifling heat; venting steam
             text3: Magma causes destruction!
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: Rising water
             text2: Surging current; flooding spaces
             text3: The path is submerged!
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: Rival explorers
             text2: Echoing sounds; signs they  passed this way
             text3: Your rivals make their move!
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: Stalking predator
             text2: Glimpses of the creature;  remains of previous kills
             text3: The predator attacks!
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: Unstable caves
             text2: Tremors; minor rockfalls
             text3: The cave collapses!
@@ -205,28 +165,23 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 25
+          - roll: { min: 1, max: 25 }
             text: Dark-dwelling beings
             text2: Sense of being watched;  skulking shadows
             text3: Denizens defend their domain!
-          - min: 26
-            max: 50
+          - roll: { min: 26, max: 50 }
             text: Eldritch cultists
             text2: Accursed symbols; ritualistic  artifacts or remains
             text3: The cultists strike!
-          - min: 51
-            max: 70
+          - roll: { min: 51, max: 70 }
             text: Mighty beast
             text2: Territorial markings; signs or  sounds of a beast on the hunt
             text3: The beast attacks!
-          - min: 71
-            max: 85
+          - roll: { min: 71, max: 85 }
             text: Monstrous infestation
             text2: Skitters or splashes; foul nests
             text3: A vile swarm appears!
-          - min: 86
-            max: 100
+          - roll: { min: 86, max: 100 }
             text: Restless dead
             text2: Phantom whispers; glimpses of  spectral forms
             text3: The wrathful dead manifest!
@@ -244,28 +199,23 @@ oracles:
             oracle_type: column_text2
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 30
+              - roll: { min: 1, max: 30 }
                 <<: &Scale.0
                   text: Troublesome
                   text2: Minor cave system
-              - min: 31
-                max: 70
+              - roll: { min: 31, max: 70 }
                 <<: &Scale.1
                   text: Dangerous
                   text2: Limited cave system
-              - min: 71
-                max: 85
+              - roll: { min: 71, max: 85 }
                 <<: &Scale.2
                   text: Formidable
                   text2: Extensive cave system
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 <<: &Scale.3
                   text: Extreme
                   text2: Vast cave system
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: &Scale.4
                   text: Epic
                   text2: Fathomless cave system
@@ -275,20 +225,15 @@ oracles:
             type: oracle_rollable
             rows:
               - <<: *Scale.0
-                min: 1
-                max: 20
+                roll: { min: 1, max: 20 }
               - <<: *Scale.1
-                min: 21
-                max: 50
+                roll: { min: 21, max: 50 }
               - <<: *Scale.2
-                min: 51
-                max: 75
+                roll: { min: 51, max: 75 }
               - <<: *Scale.3
-                min: 76
-                max: 90
+                roll: { min: 76, max: 90 }
               - <<: *Scale.4
-                min: 91
-                max: 100
+                roll: { min: 91, max: 100 }
       sea_cave:
         name: Sea Cave Details
         oracle_type: tables
@@ -301,8 +246,7 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             recommended_rolls:
-              min: 1
-              max: 2
+              roll: { min: 1, max: 2 }
             tags:
               sundered_isles:
                 cursed_version: sundered_isles/oracles/caves/sea_cave/features_cursed
@@ -426,92 +370,63 @@ oracles:
               - min: 39
                 max:
                 text: Wet tracks at water's edge
-              - min: 40
-                max: 41
+              - roll: { min: 40, max: 41 }
                 text: Branching waterway
-              - min: 42
-                max: 43
+              - roll: { min: 42, max: 43 }
                 text: Dam of waterborne debris
-              - min: 44
-                max: 45
+              - roll: { min: 44, max: 45 }
                 text: Freshwater falls pouring from above
-              - min: 46
-                max: 47
+              - roll: { min: 46, max: 47 }
                 text: Fully submerged passage
-              - min: 48
-                max: 49
+              - roll: { min: 48, max: 49 }
                 text: Glimmer of metal in the water
-              - min: 50
-                max: 51
+              - roll: { min: 50, max: 51 }
                 text: Hordes of scuttling crabs
-              - min: 52
-                max: 53
+              - roll: { min: 52, max: 53 }
                 text: Idyllic pool with bountiful sea life
-              - min: 54
-                max: 55
+              - roll: { min: 54, max: 55 }
                 text: Intricate lava formations
-              - min: 56
-                max: 57
+              - roll: { min: 56, max: 57 }
                 text: Low-hanging rock formations
-              - min: 58
-                max: 59
+              - roll: { min: 58, max: 59 }
                 text: Low-lying mist
-              - min: 60
-                max: 61
+              - roll: { min: 60, max: 61 }
                 text: Massive, watery cavern
-              - min: 62
-                max: 63
+              - roll: { min: 62, max: 63 }
                 text: Perfectly crystalline water
-              - min: 64
-                max: 65
+              - roll: { min: 64, max: 65 }
                 text: Plunging series of terraced waterfalls
-              - min: 66
-                max: 67
+              - roll: { min: 66, max: 67 }
                 text: Rocky island surrounded by water
-              - min: 68
-                max: 69
+              - roll: { min: 68, max: 69 }
                 text: Shafts of natural light
-              - min: 70
-                max: 71
+              - roll: { min: 70, max: 71 }
                 text: Shallow pools and algae-covered rocks
-              - min: 72
-                max: 73
+              - roll: { min: 72, max: 73 }
                 text: Silt-clouded waters
-              - min: 74
-                max: 75
+              - roll: { min: 74, max: 75 }
                 text: Skeletal corpse
-              - min: 76
-                max: 77
+              - roll: { min: 76, max: 77 }
                 text: Sound of watery movement or splashes
-              - min: 78
-                max: 79
+              - roll: { min: 78, max: 79 }
                 text: Stirrings of a large creature
-              - min: 80
-                max: 81
+              - roll: { min: 80, max: 81 }
                 text: Surfaces encrusted with sea life
-              - min: 82
-                max: 83
+              - roll: { min: 82, max: 83 }
                 text: Surging waterway
-              - min: 84
-                max: 85
+              - roll: { min: 84, max: 85 }
                 text: Swirling whirlpool
-              - min: 86
-                max: 87
+              - roll: { min: 86, max: 87 }
                 text: Tight squeeze through narrowing tunnel
-              - min: 88
-                max: 89
+              - roll: { min: 88, max: 89 }
                 text: Waterlogged corpse
-              - min: 90
-                max: 91
+              - roll: { min: 90, max: 91 }
                 text: Wrecked or sunken boat
-              - min: 92
-                max: 93
+              - roll: { min: 92, max: 93 }
                 text: Corpse clutching a > Token; pg 217
-              - min: 94
-                max: 95
+              - roll: { min: 94, max: 95 }
                 text: Connection to an > Inland Cave; pg 210
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Descriptor + Focus; pg 120–121
 
           features_cursed:
@@ -525,65 +440,45 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: Bewitching illusion
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 text: Bloody water
-              - min: 11
-                max: 15
+              - roll: { min: 11, max: 15 }
                 text: Bones of a colossal beast
-              - min: 16
-                max: 20
+              - roll: { min: 16, max: 20 }
                 text: Corpses encrusted with sea life
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 text: Creepy echoes
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 text: Drowned corpses come to life
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 text: Eldritch symbols
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 text: Fouled water
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 text: Frozen water
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 text: Ghastly reflections in the water
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 text: Impenetrable darkness
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 text: Lights snuffed out
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 text: Monstrous water-dwelling predator
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 text: Rotting stench
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 text: Sea creatures mutated by darkness
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 text: Spectral manifestation
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: Unnatural cold
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: Unnaturally rising water
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: Unseen entities grab hold
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Water above, stone below
 
           perils:
@@ -593,71 +488,49 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 text: '[Lurking Threat]'
-              - min: 21
-                max: 24
+              - roll: { min: 21, max: 24 }
                 text: Aggressive creature
-              - min: 25
-                max: 28
+              - roll: { min: 25, max: 28 }
                 text: Bewildering paths
-              - min: 29
-                max: 32
+              - roll: { min: 29, max: 32 }
                 text: Blocked or barricaded path
-              - min: 33
-                max: 35
+              - roll: { min: 33, max: 35 }
                 text: Confounding puzzle
-              - min: 36
-                max: 39
+              - roll: { min: 36, max: 39 }
                 text: Difficult squeeze through flooded area
-              - min: 40
-                max: 43
+              - roll: { min: 40, max: 43 }
                 text: Equipment or boat suffers damage
-              - min: 44
-                max: 47
+              - roll: { min: 44, max: 47 }
                 text: Falling rocks
-              - min: 48
-                max: 51
+              - roll: { min: 48, max: 51 }
                 text: Fierce current
-              - min: 52
-                max: 55
+              - roll: { min: 52, max: 55 }
                 text: Grueling conditions
-              - min: 56
-                max: 58
+              - roll: { min: 56, max: 58 }
                 text: Hindered visibility
-              - min: 59
-                max: 62
+              - roll: { min: 59, max: 62 }
                 text: Lengthy submerged passage
-              - min: 63
-                max: 66
+              - roll: { min: 63, max: 66 }
                 text: Lost gear or supplies
-              - min: 67
-                max: 69
+              - roll: { min: 67, max: 69 }
                 text: Party member causes trouble
-              - min: 70
-                max: 73
+              - roll: { min: 70, max: 73 }
                 text: Quickly rising waters
-              - min: 74
-                max: 76
+              - roll: { min: 74, max: 76 }
                 text: Swarming creatures
-              - min: 77
-                max: 79
+              - roll: { min: 77, max: 79 }
                 text: Toxic or corrosive environment
-              - min: 80
-                max: 82
+              - roll: { min: 80, max: 82 }
                 text: Trap or alarm
-              - min: 83
-                max: 85
+              - roll: { min: 83, max: 85 }
                 text: Unfriendly explorers
-              - min: 86
-                max: 88
+              - roll: { min: 86, max: 88 }
                 text: Venomous creature
-              - min: 89
-                max: 94
+              - roll: { min: 89, max: 94 }
                 text: '[Action] + [Theme]'
-              - min: 95
-                max: 100
+              - roll: { min: 95, max: 100 }
                 text: Roll twice
 
           opportunities:
@@ -667,35 +540,25 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Advance warning of a danger
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Breathtaking natural feature
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Clue points the way forward
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Friendly denizen or explorer
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Helpful shortcut or detour
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: Safe refuge
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: Useful equipment or supplies
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: Washed up or lost [Cargo]
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 text: '[Treasure] (small repository)'
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: '[Treasure] (medium repository)'
 
           heart:
@@ -703,40 +566,29 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             recommended_rolls:
-              min: 1
-              max: 2
+              roll: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Elaborate trap or puzzle
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Lair of a beast
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Sacred or fabled artifact
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Secret hideout or refuge
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Wondrous natural environment
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: "[Ruin]"
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: "[Sailing Ship]"
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: "[Shipwreck]"
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 text: "[Treasure] (large repository)"
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: "[Treasure] (vast repository)"
 
       inland_cave:
@@ -751,8 +603,7 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             recommended_rolls:
-              min: 1
-              max: 2
+              roll: { min: 1, max: 2 }
             tags:
               sundered_isles:
                 cursed_version: sundered_isles/oracles/caves/inland_cave/features_cursed
@@ -876,92 +727,63 @@ oracles:
               - min: 39
                 max:
                 text: Veins of ore
-              - min: 40
-                max: 41
+              - roll: { min: 40, max: 41 }
                 text: Bat colony
-              - min: 42
-                max: 43
+              - roll: { min: 42, max: 43 }
                 text: Bioluminescent fungi
-              - min: 44
-                max: 45
+              - roll: { min: 44, max: 45 }
                 text: Boiling mud pits
-              - min: 46
-                max: 47
+              - roll: { min: 46, max: 47 }
                 text: Carpet of lichen
-              - min: 48
-                max: 49
+              - roll: { min: 48, max: 49 }
                 text: Clinging webs
-              - min: 50
-                max: 51
+              - roll: { min: 50, max: 51 }
                 text: Collapsed rubble
-              - min: 52
-                max: 53
+              - roll: { min: 52, max: 53 }
                 text: Crawling-height tunnel
-              - min: 54
-                max: 55
+              - roll: { min: 54, max: 55 }
                 text: Curtains of dangling roots or vines
-              - min: 56
-                max: 57
+              - roll: { min: 56, max: 57 }
                 text: Domed cavern
-              - min: 58
-                max: 59
+              - roll: { min: 58, max: 59 }
                 text: Earth-shaking tremor
-              - min: 60
-                max: 61
+              - roll: { min: 60, max: 61 }
                 text: Elaborate stone formations
-              - min: 62
-                max: 63
+              - roll: { min: 62, max: 63 }
                 text: Flooded shaft or sinkhole
-              - min: 64
-                max: 65
+              - roll: { min: 64, max: 65 }
                 text: Flooded tunnel
-              - min: 66
-                max: 67
+              - roll: { min: 66, max: 67 }
                 text: Labyrinth of stone formations
-              - min: 68
-                max: 69
+              - roll: { min: 68, max: 69 }
                 text: Massive, cathedral-like cavern
-              - min: 70
-                max: 71
+              - roll: { min: 70, max: 71 }
                 text: Moldering corpse
-              - min: 72
-                max: 73
+              - roll: { min: 72, max: 73 }
                 text: Plunging shaft leading downwards
-              - min: 74
-                max: 75
+              - roll: { min: 74, max: 75 }
                 text: Shafts of natural light
-              - min: 76
-                max: 77
+              - roll: { min: 76, max: 77 }
                 text: Skeletal corpse
-              - min: 78
-                max: 79
+              - roll: { min: 78, max: 79 }
                 text: Steaming hot springs
-              - min: 80
-                max: 81
+              - roll: { min: 80, max: 81 }
                 text: Steep escarpment
-              - min: 82
-                max: 83
+              - roll: { min: 82, max: 83 }
                 text: Thundering waterfall
-              - min: 84
-                max: 85
+              - roll: { min: 84, max: 85 }
                 text: Tight squeeze
-              - min: 86
-                max: 87
+              - roll: { min: 86, max: 87 }
                 text: Trail or splashes of blood
-              - min: 88
-                max: 89
+              - roll: { min: 88, max: 89 }
                 text: Underground lake
-              - min: 90
-                max: 91
+              - roll: { min: 90, max: 91 }
                 text: Underground river
-              - min: 92
-                max: 93
+              - roll: { min: 92, max: 93 }
                 text: Vertical chimney leading upward
-              - min: 94
-                max: 95
+              - roll: { min: 94, max: 95 }
                 text: Corpse clutching a > Token; pg 217
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Descriptor + Focus; pg 120–121
 
           features_cursed:
@@ -975,65 +797,45 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: Bewitching illusion
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 text: Bones of a colossal beast
-              - min: 11
-                max: 15
+              - roll: { min: 11, max: 15 }
                 text: Corpses come to life
-              - min: 16
-                max: 20
+              - roll: { min: 16, max: 20 }
                 text: Corpses entombed within stone
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 text: Creepy echoes
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 text: Eldritch shrine or monument
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 text: Impenetrable darkness
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 text: Lights snuffed out
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 text: Monstrous predator
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 text: Oversized eggs
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 text: Passage carved by a burrowing beast
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 text: Rotting stench
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 text: Spectral manifestation
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 text: Surfaces covered by cyst-like growths
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 text: Trail of ooze
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 text: Unnatural cold
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: Unnaturally aggressive insects or vermin
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: Unnaturally thick webbing
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: Unnerving howls or roars
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Webbed or cocooned corpses
 
           perils:
@@ -1043,71 +845,49 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 text: Lurking Threat; pg 207
-              - min: 21
-                max: 24
+              - roll: { min: 21, max: 24 }
                 text: Aggressive creature
-              - min: 25
-                max: 28
+              - roll: { min: 25, max: 28 }
                 text: Bewildering paths
-              - min: 29
-                max: 32
+              - roll: { min: 29, max: 32 }
                 text: Blocked or barricaded path
-              - min: 33
-                max: 36
+              - roll: { min: 33, max: 36 }
                 text: Cleverly camouflaged predator
-              - min: 37
-                max: 39
+              - roll: { min: 37, max: 39 }
                 text: Confounding puzzle
-              - min: 40
-                max: 43
+              - roll: { min: 40, max: 43 }
                 text: Crumbling cave floor
-              - min: 44
-                max: 46
+              - roll: { min: 44, max: 46 }
                 text: Disorienting smoke or steam
-              - min: 47
-                max: 50
+              - roll: { min: 47, max: 50 }
                 text: Falling rocks
-              - min: 51
-                max: 54
+              - roll: { min: 51, max: 54 }
                 text: Flooding
-              - min: 55
-                max: 58
+              - roll: { min: 55, max: 58 }
                 text: Grueling conditions
-              - min: 59
-                max: 62
+              - roll: { min: 59, max: 62 }
                 text: Lost gear or supplies
-              - min: 63
-                max: 65
+              - roll: { min: 63, max: 65 }
                 text: Party member causes trouble
-              - min: 66
-                max: 69
+              - roll: { min: 66, max: 69 }
                 text: Precipitous climb or descent
-              - min: 70
-                max: 72
+              - roll: { min: 70, max: 72 }
                 text: Swarming creatures
-              - min: 73
-                max: 75
+              - roll: { min: 73, max: 75 }
                 text: Toxic or corrosive environment
-              - min: 76
-                max: 78
+              - roll: { min: 76, max: 78 }
                 text: Trap or alarm
-              - min: 79
-                max: 82
+              - roll: { min: 79, max: 82 }
                 text: Treacherous footing
-              - min: 83
-                max: 85
+              - roll: { min: 83, max: 85 }
                 text: Unfriendly explorers
-              - min: 86
-                max: 88
+              - roll: { min: 86, max: 88 }
                 text: Venomous creature
-              - min: 89
-                max: 94
+              - roll: { min: 89, max: 94 }
                 text: Action + Theme; pg 118–119
-              - min: 95
-                max: 100
+              - roll: { min: 95, max: 100 }
                 text: Roll twice
 
           opportunities:
@@ -1117,35 +897,25 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Advance warning of a danger
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Breathtaking natural feature
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Clue points the way forward
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Friendly denizen or explorer
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Helpful shortcut or detour
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: Rare resource
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: Safe refuge
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: Useful equipment or supplies
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 text: Treasure; pg 215 (small repository)
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Treasure; pg 215 (medium repository)
 
           heart:
@@ -1153,38 +923,27 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             recommended_rolls:
-              min: 1
-              max: 2
+              roll: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Ancient Tomb
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Breathtaking natural environment
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Elaborate trap or puzzle
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Lair of a beast
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Rare or valuable ore
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: Sacred or fabled artifact
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: Secret hideout or refuge
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: Ruin; pg XX
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 text: Treasure; pg 215 (large repository)
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Treasure; pg 215 (vast repository)

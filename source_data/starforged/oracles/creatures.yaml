@@ -34,40 +34,35 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: common_noun
-            min: 1
-            max: 5
+            roll: { min: 1, max: 5 }
             text: Space
             icon: &Space.icon icons/creature/environment/space.svg
             # set_attributes: {environment: [space]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/space
           - <<:  *i18n.result.common_noun
-            min: 6
-            max: 15
+            roll: { min: 6, max: 15 }
             text: Interior
             icon: &Interior.icon icons/creature/environment/interior.svg
             # set_attributes: {environment: [interior]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/interior
           - <<:  *i18n.result.common_noun
-            min: 16
-            max: 55
+            roll: { min: 16, max: 55 }
             text: Land
             icon: &Land.icon icons/creature/environment/land.svg
             # set_attributes: {environment: [land]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/land
           - <<:  *i18n.result.common_noun
-            min: 56
-            max: 80
+            roll: { min: 56, max: 80 }
             text: Liquid
             icon: &Liquid.icon icons/creature/environment/liquid.svg
             # set_attributes: {environment: [liquid]}
             oracle_rolls:
               - oracle: starforged/oracles/creatures/basic_form/liquid
           - <<:  *i18n.result.common_noun
-            min: 81
-            max: 100
+            roll: { min: 81, max: 100 }
             text: Air
             icon: &Air.icon icons/creature/environment/air.svg
             # set_attributes: {environment: [air]}
@@ -87,38 +82,31 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: adjective
-            min: 1
-            max: 3
+            roll: { min: 1, max: 3 }
             text: Minuscule (bug-sized)
             # set_attributes: {creature_scale: [minuscule]}
           - <<: *i18n.result.adjective
-            min: 4
-            max: 10
+            roll: { min: 4, max: 10 }
             text: Tiny (rodent-sized)
             # set_attributes: {creature_scale: [tiny]}
           - <<: *i18n.result.adjective
-            min: 11
-            max: 25
+            roll: { min: 11, max: 25 }
             text: Small (dog-sized)
             # set_attributes: {creature_scale: [small]}
           - <<: *i18n.result.adjective
-            min: 26
-            max: 60
+            roll: { min: 26, max: 60 }
             text: Medium (person-sized)
             # set_attributes: {creature_scale: [medium]}
           - <<: *i18n.result.adjective
-            min: 61
-            max: 90
+            roll: { min: 61, max: 90 }
             text: Large (vehicle-sized)
             # set_attributes: {creature_scale: [large]}
           - <<: *i18n.result.adjective
-            min: 91
-            max: 99
+            roll: { min: 91, max: 99 }
             text: Huge (whale-sized)
             # set_attributes: {creature_scale: [huge]}
           - <<: *i18n.result.adjective
-            min: 100
-            max: 100
+            roll: { min: 100, max: 100 }
             text: '[Ultra-scale](id:starforged/oracles/creatures/ultra_scale)'
             oracle_rolls:
               - oracle: starforged/oracles/creatures/ultra_scale
@@ -134,18 +122,15 @@ oracles:
         #   initial: true
         rows:
           - <<: *i18n.result.adjective
-            min: 1
-            max: 89
+            roll: { min: 1, max: 89 }
             text: Titanic (hill-sized)
             # set_attributes: {creature_scale: [titanic]}
           - <<: *i18n.result.adjective
-            min: 90
-            max: 99
+            roll: { min: 90, max: 99 }
             text: Colossal (mountain-sized)
             # set_attributes: {creature_scale: [colossal]}
           - <<: *i18n.result.adjective
-            min: 100
-            max: 100
+            roll: { min: 100, max: 100 }
             text: Vast (planet-sized)
             # set_attributes: {creature_scale: [vast]}
       first_look:
@@ -158,163 +143,112 @@ oracles:
         # usage:
         #   initial: true
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         summary: |-
           Roll for a basic form, and flesh out the creature’s appearance using the First Look table.
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description, first look]
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Antennae or sensory organs
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: Armored
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Beautiful
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Biotech
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Bony or gaunt
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Brutish or muscled
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Camouflaged
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Claws or talons
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Compound eyes
-          - min: 19
-            max: 20
+          - roll: { min: 19, max: 20 }
             text: Comprised of many creatures
-          - min: 21
-            max: 22
+          - roll: { min: 21, max: 22 }
             text: Corrupted
-          - min: 23
-            max: 24
+          - roll: { min: 23, max: 24 }
             text: Crystalline
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Dead or undead
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Distinctive markings
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Distinctive smell
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Distinctive sound
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Dripping mucus
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Elongated Neck
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Energy emissions
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: Extra limbs
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: Faceless or inexpressive
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Fangs or rows of teeth
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Feathered
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Fungal growth
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: 'Fur, hair, or filaments'
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Graceful
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Hideous
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Hooded or crested
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Immobile or trapped
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: Injured or scarred
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Iridescent
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: Long-limbed
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Luminescent
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Mandibles or pincers
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Many-eyed
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Mineral or metallic
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Multi-jointed
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Multi-segmented body
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Ornamented or colorful
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Oversized mouth
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Prominent tail
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Prominent wings or fins
-          - min: 85
-            max: 86
+          - roll: { min: 85, max: 86 }
             text: Ridges or plates
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Scaled
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Single eye or oversized eyes
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: Spikes or spines
-          - min: 93
-            max: 94
+          - roll: { min: 93, max: 94 }
             text: Stinger or barbs
-          - min: 95
-            max: 96
+          - roll: { min: 95, max: 96 }
             text: Tentacles or tendrils
-          - min: 97
-            max: 98
+          - roll: { min: 97, max: 98 }
             text: Translucent
-          - min: 99
-            max: 100
+          - roll: { min: 99, max: 100 }
             text: Visible symbiote
       encountered_behavior:
         name: Encountered Behavior
@@ -329,110 +263,89 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Ambusher
             _i18n: &CommonNoun
               text:
                 part_of_speech: common_noun
             # set_attributes: {encountered_behavior: [ambusher]}
-          - min: 6
-            max: 10
+          - roll: { min: 6, max: 10 }
             text: Apex predator
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [apex_predator]}
-          - min: 11
-            max: 14
+          - roll: { min: 11, max: 14 }
             text: Builder
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [builder]}
-          - min: 15
-            max: 19
+          - roll: { min: 15, max: 19 }
             text: Camouflager
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [camouflager]}
-          - min: 20
-            max: 24
+          - roll: { min: 20, max: 24 }
             text: Forager
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [forager]}
-          - min: 25
-            max: 29
+          - roll: { min: 25, max: 29 }
             text: Grazer
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [grazer]}
-          - min: 30
-            max: 33
+          - roll: { min: 30, max: 33 }
             text: Herder
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [herder]}
-          - min: 34
-            max: 37
+          - roll: { min: 34, max: 37 }
             text: Hibernator
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [hibernator]}
-          - min: 38
-            max: 41
+          - roll: { min: 38, max: 41 }
             text: Hoarder
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [hoarder]}
-          - min: 42
-            max: 46
+          - roll: { min: 42, max: 46 }
             text: Hunter
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [hunter]}
-          - min: 47
-            max: 51
+          - roll: { min: 47, max: 51 }
             text: Lurer
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [lurer]}
-          - min: 52
-            max: 55
+          - roll: { min: 52, max: 55 }
             text: Migratory
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [migratory]}
-          - min: 56
-            max: 60
+          - roll: { min: 56, max: 60 }
             text: Mimic
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [mimic]}
-          - min: 61
-            max: 65
+          - roll: { min: 61, max: 65 }
             text: Nester
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [nester]}
-          - min: 66
-            max: 70
+          - roll: { min: 66, max: 70 }
             text: Pack hunter
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [pack_hunter]}
-          - min: 71
-            max: 75
+          - roll: { min: 71, max: 75 }
             text: Prey
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [prey]}
-          - min: 76
-            max: 80
+          - roll: { min: 76, max: 80 }
             text: Protector
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [protector]}
-          - min: 81
-            max: 85
+          - roll: { min: 81, max: 85 }
             text: Scavenger
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [scavenger]}
-          - min: 86
-            max: 90
+          - roll: { min: 86, max: 90 }
             text: Tracker
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [tracker]}
-          - min: 91
-            max: 95
+          - roll: { min: 91, max: 95 }
             text: Trapper
             _i18n: *CommonNoun
             # set_attributes: {encountered_behavior: [trapper]}
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
@@ -452,158 +365,107 @@ oracles:
         #   part_of_speech: [fragment]
         # usage:
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Alternative environment
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: Alternative movement
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Alternative senses
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Burrower
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Chameleon
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Clever
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Consumes energy
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Consumes inorganic matter
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Controlled or puppeteered
-          - min: 19
-            max: 20
+          - roll: { min: 19, max: 20 }
             text: Controls lesser creatures
-          - min: 21
-            max: 22
+          - roll: { min: 21, max: 22 }
             text: Corrosive excretion
-          - min: 23
-            max: 24
+          - roll: { min: 23, max: 24 }
             text: Crusher or constrictor
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Egg sac or carried offspring
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Electric shock
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Electromagnetic pulse
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Energy breath
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Energy manipulation
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Engineered biology
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Enhanced senses
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: Enhanced strength
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: Entangling secretion
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Extradimensional
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Hallucinogen secretion
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Hidden symbiote
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Hive mind
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Illusionary
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Infectious
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Infested with parasites
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Intimidating threat display
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: Limited sense
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Magnetic
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: Mental influence or control
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Metamorphic
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Noxious cloud or spores
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Paralytic toxin
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Parasitic
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Pheromones
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Poisonous
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Powerful bite
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Proboscis or inner jaw
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Projectile attack
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Radioactive
-          - min: 85
-            max: 86
+          - roll: { min: 85, max: 86 }
             text: Regeneration
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Replication
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Sacrificial defense
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: Shapechanger
-          - min: 93
-            max: 94
+          - roll: { min: 93, max: 94 }
             text: Telekinetic
-          - min: 95
-            max: 96
+          - roll: { min: 95, max: 96 }
             text: Teleportation
-          - min: 97
-            max: 98
+          - roll: { min: 97, max: 98 }
             text: Territorial
-          - min: 99
-            max: 100
+          - roll: { min: 99, max: 100 }
             text: Toxic spew
     collections:
       basic_form:
@@ -634,94 +496,76 @@ oracles:
             #   attributes:
             #     environment: [space]
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 <<: &BasicForm.0
                   text: Amoeba / pseudopods
                   icon: icons/creature/basic_form/amoeba_pseudopods.svg
-              - min: 6
-                max: 20
+              - roll: { min: 6, max: 20 }
                 <<: &BasicForm.1
                   text: Amorphous / elemental
                   icon: icons/creature/basic_form/amorphous_elemental.svg
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 <<: &BasicForm.2
                   text: Avian / winged
                   icon: icons/creature/basic_form/avian_winged.svg
-              - min: 31
-                max: 32
+              - roll: { min: 31, max: 32 }
                 <<: &BasicForm.3
                   text: Beast / mammal
                   icon: icons/creature/basic_form/beast_mammal.svg
-              - min: 33
-                max: 34
+              - roll: { min: 33, max: 34 }
                 <<: &BasicForm.4
                   text: Crustacean / shelled
                   icon: icons/creature/basic_form/crustacean_shelled.svg
-              - min: 35
-                max: 37
+              - roll: { min: 35, max: 37 }
                 <<: &BasicForm.5
                   text: Fish / torpedo-shaped
                   icon: icons/creature/basic_form/fish_torpedo_shaped.svg
-              - min: 38
-                max: 39
+              - roll: { min: 38, max: 39 }
                 <<: &BasicForm.6
                   text: Humanoid / bipedal
                   icon: icons/creature/basic_form/humanoid.svg
-              - min: 40
-                max: 41
+              - roll: { min: 40, max: 41 }
                 <<: &BasicForm.7
                   text: Insectoid / exoskeletal
                   icon: icons/creature/basic_form/insectoid_exoskeletal.svg
-              - min: 42
-                max: 60
+              - roll: { min: 42, max: 60 }
                 <<: &BasicForm.8
                   text: Jellyfish / gasbag
                   icon: icons/creature/basic_form/jellyish_gasbag.svg
-              - min: 61
-                max: 62
+              - roll: { min: 61, max: 62 }
                 <<: &BasicForm.9
                   text: Lizard / reptilian
                   icon: icons/creature/basic_form/lizard_reptilian.svg
-              - min: 63
-                max: 67
+              - roll: { min: 63, max: 67 }
                 <<: &BasicForm.10
                   text: Octopoid / tentacled
                   icon: icons/creature/basic_form/octopoid_tentacled.svg
-              - min: 68
-                max: 72
+              - roll: { min: 68, max: 72 }
                 <<: &BasicForm.11
                   text: Plant / fungus
                   icon: icons/creature/basic_form/plant_fungus.svg
-              - min: 73
-                max: 82
+              - roll: { min: 73, max: 82 }
                 <<: &BasicForm.12
                   text: Ray / flat-bodied
                   icon: icons/creature/basic_form/ray_flat_bodied.svg
-              - min: 83
-                max: 84
+              - roll: { min: 83, max: 84 }
                 <<: &BasicForm.13
                   text: Snake / eel
                   icon: icons/creature/basic_form/snake_eel.svg
-              - min: 85
-                max: 86
+              - roll: { min: 85, max: 86 }
                 <<: &BasicForm.14
                   text: Spider / web-weaver
                   icon: icons/creature/basic_form/spider_web_weaver.svg
-              - min: 87
-                max: 88
+              - roll: { min: 87, max: 88 }
                 <<: &BasicForm.15
                   text: Starfish / symmetrical
                   icon: icons/creature/basic_form/starfish_symmetrical.svg
-              - min: 89
-                max: 90
+              - roll: { min: 89, max: 90 }
                 <<: &BasicForm.16
                   text: Worm / slug / larva
                   icon: icons/creature/basic_form/worm_slug_larva.svg
               - &BasicForm.17
-                min: 91
-                max: 100
+                roll: { min: 91, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -737,56 +581,39 @@ oracles:
             #     attributes:
             #       environment: [interior]
             rows:
-              - min: 1
-                max: 3
+              - roll: { min: 1, max: 3 }
                 <<: *BasicForm.0
-              - min: 4
-                max: 6
+              - roll: { min: 4, max: 6 }
                 <<: *BasicForm.1
-              - min: 7
-                max: 12
+              - roll: { min: 7, max: 12 }
                 <<: *BasicForm.2
-              - min: 13
-                max: 19
+              - roll: { min: 13, max: 19 }
                 <<: *BasicForm.3
-              - min: 20
-                max: 22
+              - roll: { min: 20, max: 22 }
                 <<: *BasicForm.4
-              - min: 23
-                max: 24
+              - roll: { min: 23, max: 24 }
                 <<: *BasicForm.5
-              - min: 25
-                max: 37
+              - roll: { min: 25, max: 37 }
                 <<: *BasicForm.6
-              - min: 38
-                max: 49
+              - roll: { min: 38, max: 49 }
                 <<: *BasicForm.7
-              - min: 50
-                max: 51
+              - roll: { min: 50, max: 51 }
                 <<: *BasicForm.8
-              - min: 52
-                max: 56
+              - roll: { min: 52, max: 56 }
                 <<: *BasicForm.9
-              - min: 57
-                max: 58
+              - roll: { min: 57, max: 58 }
                 <<: *BasicForm.10
-              - min: 59
-                max: 63
+              - roll: { min: 59, max: 63 }
                 <<: *BasicForm.11
-              - min: 64
-                max: 65
+              - roll: { min: 64, max: 65 }
                 <<: *BasicForm.12
-              - min: 66
-                max: 68
+              - roll: { min: 66, max: 68 }
                 <<: *BasicForm.13
-              - min: 69
-                max: 83
+              - roll: { min: 69, max: 83 }
                 <<: *BasicForm.14
-              - min: 84
-                max: 85
+              - roll: { min: 84, max: 85 }
                 <<: *BasicForm.15
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 <<: *BasicForm.16
               - *BasicForm.17
           land:
@@ -800,56 +627,39 @@ oracles:
             #     attributes:
             #       environment: [land]
             rows:
-              - min: 1
-                max: 2
+              - roll: { min: 1, max: 2 }
                 <<: *BasicForm.0
-              - min: 3
-                max: 5
+              - roll: { min: 3, max: 5 }
                 <<: *BasicForm.1
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 <<: *BasicForm.2
-              - min: 11
-                max: 25
+              - roll: { min: 11, max: 25 }
                 <<: *BasicForm.3
-              - min: 26
-                max: 32
+              - roll: { min: 26, max: 32 }
                 <<: *BasicForm.4
-              - min: 33
-                max: 34
+              - roll: { min: 33, max: 34 }
                 <<: *BasicForm.5
-              - min: 35
-                max: 39
+              - roll: { min: 35, max: 39 }
                 <<: *BasicForm.6
-              - min: 40
-                max: 49
+              - roll: { min: 40, max: 49 }
                 <<: *BasicForm.7
-              - min: 50
-                max: 51
+              - roll: { min: 50, max: 51 }
                 <<: *BasicForm.8
-              - min: 52
-                max: 58
+              - roll: { min: 52, max: 58 }
                 <<: *BasicForm.9
-              - min: 59
-                max: 60
+              - roll: { min: 59, max: 60 }
                 <<: *BasicForm.10
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 <<: *BasicForm.11
-              - min: 66
-                max: 67
+              - roll: { min: 66, max: 67 }
                 <<: *BasicForm.12
-              - min: 68
-                max: 74
+              - roll: { min: 68, max: 74 }
                 <<: *BasicForm.13
-              - min: 75
-                max: 81
+              - roll: { min: 75, max: 81 }
                 <<: *BasicForm.14
-              - min: 82
-                max: 83
+              - roll: { min: 82, max: 83 }
                 <<: *BasicForm.15
-              - min: 84
-                max: 90
+              - roll: { min: 84, max: 90 }
                 <<: *BasicForm.16
               - *BasicForm.17
           liquid:
@@ -863,56 +673,39 @@ oracles:
             #     attributes:
             #       environment: [liquid]
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 <<: *BasicForm.0
-              - min: 6
-                max: 8
+              - roll: { min: 6, max: 8 }
                 <<: *BasicForm.1
-              - min: 9
-                max: 11
+              - roll: { min: 9, max: 11 }
                 <<: *BasicForm.2
-              - min: 12
-                max: 17
+              - roll: { min: 12, max: 17 }
                 <<: *BasicForm.3
-              - min: 18
-                max: 24
+              - roll: { min: 18, max: 24 }
                 <<: *BasicForm.4
-              - min: 25
-                max: 39
+              - roll: { min: 25, max: 39 }
                 <<: *BasicForm.5
-              - min: 40
-                max: 42
+              - roll: { min: 40, max: 42 }
                 <<: *BasicForm.6
-              - min: 43
-                max: 45
+              - roll: { min: 43, max: 45 }
                 <<: *BasicForm.7
-              - min: 46
-                max: 53
+              - roll: { min: 46, max: 53 }
                 <<: *BasicForm.8
-              - min: 54
-                max: 56
+              - roll: { min: 54, max: 56 }
                 <<: *BasicForm.9
-              - min: 57
-                max: 63
+              - roll: { min: 57, max: 63 }
                 <<: *BasicForm.10
-              - min: 64
-                max: 68
+              - roll: { min: 64, max: 68 }
                 <<: *BasicForm.11
-              - min: 69
-                max: 75
+              - roll: { min: 69, max: 75 }
                 <<: *BasicForm.12
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 <<: *BasicForm.13
-              - min: 81
-                max: 82
+              - roll: { min: 81, max: 82 }
                 <<: *BasicForm.14
-              - min: 83
-                max: 87
+              - roll: { min: 83, max: 87 }
                 <<: *BasicForm.15
-              - min: 88
-                max: 90
+              - roll: { min: 88, max: 90 }
                 <<: *BasicForm.16
               - *BasicForm.17
           air:
@@ -926,55 +719,38 @@ oracles:
             #     attributes:
             #       environment: [air]
             rows:
-              - min: 1
-                max: 2
+              - roll: { min: 1, max: 2 }
                 <<: *BasicForm.0
-              - min: 3
-                max: 12
+              - roll: { min: 3, max: 12 }
                 <<: *BasicForm.1
-              - min: 13
-                max: 37
+              - roll: { min: 13, max: 37 }
                 <<: *BasicForm.2
-              - min: 38
-                max: 40
+              - roll: { min: 38, max: 40 }
                 <<: *BasicForm.3
-              - min: 41
-                max: 42
+              - roll: { min: 41, max: 42 }
                 <<: *BasicForm.4
-              - min: 43
-                max: 47
+              - roll: { min: 43, max: 47 }
                 <<: *BasicForm.5
-              - min: 48
-                max: 49
+              - roll: { min: 48, max: 49 }
                 <<: *BasicForm.6
-              - min: 50
-                max: 51
+              - roll: { min: 50, max: 51 }
                 <<: *BasicForm.7
-              - min: 52
-                max: 66
+              - roll: { min: 52, max: 66 }
                 <<: *BasicForm.8
-              - min: 67
-                max: 68
+              - roll: { min: 67, max: 68 }
                 <<: *BasicForm.9
-              - min: 69
-                max: 70
+              - roll: { min: 69, max: 70 }
                 <<: *BasicForm.10
-              - min: 71
-                max: 72
+              - roll: { min: 71, max: 72 }
                 <<: *BasicForm.11
-              - min: 73
-                max: 82
+              - roll: { min: 73, max: 82 }
                 <<: *BasicForm.12
-              - min: 83
-                max: 84
+              - roll: { min: 83, max: 84 }
                 <<: *BasicForm.13
-              - min: 85
-                max: 86
+              - roll: { min: 85, max: 86 }
                 <<: *BasicForm.14
-              - min: 87
-                max: 88
+              - roll: { min: 87, max: 88 }
                 <<: *BasicForm.15
-              - min: 89
-                max: 90
+              - roll: { min: 89, max: 90 }
                 <<: *BasicForm.16
               - *BasicForm.17

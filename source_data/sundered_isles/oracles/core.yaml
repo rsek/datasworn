@@ -20,305 +20,205 @@ oracles:
         type: oracle_rollable
         name: Action
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Abandon
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Acquire
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Advance
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Affect
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Aid
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Arrive
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Assault
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Attack
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Avenge
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Avoid
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Await
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Begin
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Betray
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Blockade
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Bolster
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Breach
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Break
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Capture
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Challenge
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Change
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Charge
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Clash
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Command
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Communicate
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Construct
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Control
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Coordinate
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Create
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Debate
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Defeat
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Defend
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Deflect
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Defy
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Deliver
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Demand
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Depart
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Destroy
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Distract
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Eliminate
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Endure
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Escalate
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Escort
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Evade
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Explore
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Falter
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Find
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Finish
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Focus
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Follow
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Fortify
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Gather
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Guard
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Hide
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Hold
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Hunt
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Initiate
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Inspect
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Investigate
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Journey
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Learn
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Leave
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Locate
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Lose
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Manipulate
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Mourn
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Move
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Oppose
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Overwhelm
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Persevere
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Preserve
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Protect
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Raid
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Reduce
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Refuse
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Reject
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Release
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Remove
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Resist
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Restore
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Reveal
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Risk
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Scheme
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Search
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Secure
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Seize
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Serve
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Share
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Strengthen
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Study
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Summon
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Support
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Suppress
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Surrender
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Swear
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Threaten
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Transform
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Uncover
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Uphold
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Weaken
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Withdraw
       theme:
         _source: *Source
@@ -326,305 +226,205 @@ oracles:
         type: oracle_rollable
         name: Theme
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Ability
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Advantage
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Alliance
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Authority
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Balance
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Barrier
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Belief
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Blood
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Bond
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Bounty
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Burden
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Commerce
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Community
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Corruption
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Creation
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Crime
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Culture
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Cure
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Curse
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Danger
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Death
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Debt
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Decay
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Deception
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Defense
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Destiny
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Disaster
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Discovery
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Disease
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Dream
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Duty
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Enemy
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Expedition
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Faction
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Fame
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Family
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Fear
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Fellowship
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Freedom
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Greed
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Hardship
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Hate
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Health
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: History
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Home
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Honor
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Hope
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Industry
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Innocence
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Knowledge
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Labor
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Language
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Law
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Leadership
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Legacy
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Life
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Love
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Memory
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Nature
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Navigation
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Opportunity
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Peace
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Phenomenon
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Possession
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Power
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Price
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Pride
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Prize
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Prophesy
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Protection
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Quest
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Relationship
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Religion
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Reputation
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Resource
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Revenge
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Rival
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Rumor
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Safety
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Sanctuary
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Secret
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Solution
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Spirit
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Stranger
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Strategy
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Strength
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Superstition
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Supply
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Survival
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Time
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Trade
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Treaty
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Truth
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Vengeance
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Vow
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: War
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Warning
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Weakness
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Wealth
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Weapon
       descriptor:
         name: Descriptor
@@ -632,305 +432,205 @@ oracles:
         type: oracle_rollable
         _source: *Source
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Abandoned
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Abundant
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Active
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Ancient
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Barren
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Blighted
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Blocked
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Breached
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Broken
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Captured
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Chaotic
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Charted
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Collapsed
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Colossal
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Confined
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Conspicuous
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Constructed
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Contested
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Corrupted
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Created
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Cursed
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Damaged
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Dead
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Deadly
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Decaying
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Deep
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Defended
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Dense
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Depleted
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Desolate
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Destroyed
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Diverse
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Empty
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Ensnaring
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Expansive
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Exposed
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Fertile
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Fiery
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Flooded
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Foreboding
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Forgotten
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Forsaken
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Fortified
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Foul
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Fragile
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Frozen
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Functional
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Grim
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Guarded
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Haunted
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Hidden
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Hoarded
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Hostile
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Inaccessible
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Infested
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Inhabited
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Isolated
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Living
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Lost
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Lush
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Makeshift
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Mechanical
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Misleading
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Moving
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Mysterious
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Natural
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: New
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Obscured
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Open
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Peaceful
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Perilous
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Pillaged
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Powerful
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Preserved
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Prominent
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Protected
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Rare
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Remote
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Rich
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Ruined
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Sacred
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Safe
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Sealed
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Secret
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Settled
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Shrouded
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Stolen
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Stormy
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Stranded
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Strange
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Sunken
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Toxic
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Trapped
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Undersea
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Undiscovered
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Unnatural
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Unstable
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Valuable
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Violent
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Wrecked
       focus:
         name: Focus
@@ -938,303 +638,203 @@ oracles:
         type: oracle_rollable
         _source: *Source
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Ammunition
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Anchorage
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Animal
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Apparition
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Art
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Artifact
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Battleground
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Beast
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Blockade
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Boat
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Book
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Boundary
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Cache
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Cargo
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Commander
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Commodity
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Confinement
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Connection
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Container
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Contraband
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Corpse
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Creation
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Creature
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Crew
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Debris
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Derelict
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Discovery
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Enclosure
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Energy
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Equipment
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Faction
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Flag
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Fleet
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Force
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Fortification
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Gadget
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Grave
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Habitat
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Hazard
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Hideaway
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Home
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Illusion
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Island
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Lair
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Land
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Leader
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Machine
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Map
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Material
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Medicine
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Message
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Mist
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Monument
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Obstacle
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Outbreak
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Outpost
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Path
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: People
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Person
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Pirate
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Port
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Provisions
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Reef
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Refuge
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Relic
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Remains
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Rendezvous
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Resource
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Rock
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Ruins
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Sail
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Salvage
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Sea
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Shelter
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Ship
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Shore
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Shortcut
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Sound
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Storage
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Storm
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Structure
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Supply
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Symbol
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Terrain
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Territory
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Threshold
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Tool
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Town
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Trap
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Treasure
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Vault
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Vegetation
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Vessel
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Village
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Void
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Water
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Weapon
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Weather
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Wind
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Wreckage

@@ -26,16 +26,13 @@ oracles:
           <<: *Source
           page: 360
         rows:
-          - min: 1
-            max: 50
+          - roll: { min: 1, max: 50 }
             text: Planetside
             icon: icon/oracles/location/planetside.svg
-          - min: 51
-            max: 75
+          - roll: { min: 51, max: 75 }
             text: Orbital
             icon: icon/oracles/location/orbital.svg
-          - min: 76
-            max: 100
+          - roll: { min: 76, max: 100 }
             text: Deep Space
             icon: icon/oracles/location/deep_space.svg
       scale:
@@ -50,20 +47,15 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         rows:
-          - min: 1
-            max: 30
+          - roll: { min: 1, max: 30 }
             text: 'Minor, confined site'
-          - min: 31
-            max: 65
+          - roll: { min: 31, max: 65 }
             text: Typical site of limited scope
-          - min: 66
-            max: 90
+          - roll: { min: 66, max: 90 }
             text: 'Large, elaborate site'
-          - min: 91
-            max: 99
+          - roll: { min: 91, max: 99 }
             text: Vast site of unfathomable complexity
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: World-spanning site or megastructure
       form:
         name: Form
@@ -75,26 +67,21 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - min: 1
-            max: 35
+          - roll: { min: 1, max: 35 }
             text: Structure
             _i18n: &CommonNoun
               text:
                 part_of_speech: common_noun
-          - min: 36
-            max: 60
+          - roll: { min: 36, max: 60 }
             text: Vessel
             _i18n: *CommonNoun
-          - min: 61
-            max: 80
+          - roll: { min: 61, max: 80 }
             text: Monument
             _i18n: *CommonNoun
-          - min: 81
-            max: 95
+          - roll: { min: 81, max: 95 }
             text: Machine
             _i18n: *CommonNoun
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Incomprehensible
             _i18n: &Adjective
               text:
@@ -109,69 +96,53 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: Practical or functional
             _i18n: *Adjective
-          - min: 16
-            max: 20
+          - roll: { min: 16, max: 20 }
             text: Geometric (complex shape)
             _i18n: *Adjective
-          - min: 21
-            max: 25
+          - roll: { min: 21, max: 25 }
             text: Geometric (cube)
             _i18n: *Adjective
-          - min: 26
-            max: 30
+          - roll: { min: 26, max: 30 }
             text: Geometric (obelisk)
             _i18n: *Adjective
-          - min: 31
-            max: 35
+          - roll: { min: 31, max: 35 }
             text: Geometric (pyramid)
             _i18n: *Adjective
-          - min: 36
-            max: 40
+          - roll: { min: 36, max: 40 }
             text: Geometric (ring or torus)
             _i18n: *Adjective
-          - min: 41
-            max: 45
+          - roll: { min: 41, max: 45 }
             text: Geometric (sphere)
             _i18n: *Adjective
-          - min: 46
-            max: 55
+          - roll: { min: 46, max: 55 }
             text: Organic or curved
             _i18n: *Adjective
-          - min: 56
-            max: 60
+          - roll: { min: 56, max: 60 }
             text: Platform or disc
             _i18n: *CommonNoun
-          - min: 61
-            max: 65
+          - roll: { min: 61, max: 65 }
             text: Spires or towers
             _i18n: *CommonNoun
-          - min: 66
-            max: 68
+          - roll: { min: 66, max: 68 }
             text: Domed
             _i18n: *Adjective
-          - min: 69
-            max: 73
+          - roll: { min: 69, max: 73 }
             text: Spiky
             _i18n: *Adjective
-          - min: 74
-            max: 76
+          - roll: { min: 74, max: 76 }
             text: Sculptural or effigy
-          - min: 77
-            max: 79
+          - roll: { min: 77, max: 79 }
             text: Amorphous
             _i18n: *Adjective
-          - min: 80
-            max: 85
+          - roll: { min: 80, max: 85 }
             text: Transforming
             _i18n:
               text:
                 part_of_speech: gerund
-          - min: 86
-            max: 100
+          - roll: { min: 86, max: 100 }
             text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
@@ -186,46 +157,36 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - min: 1
-            max: 30
+          - roll: { min: 1, max: 30 }
             text: Metallic (industrial)
             _i18n: *Adjective
-          - min: 31
-            max: 60
+          - roll: { min: 31, max: 60 }
             text: Metallic (smooth)
             _i18n: *Adjective
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: Rocky or stone-like
             _i18n: *Adjective
-          - min: 71
-            max: 74
+          - roll: { min: 71, max: 74 }
             text: Crystalline or glass-like
             _i18n: *Adjective
-          - min: 75
-            max: 78
+          - roll: { min: 75, max: 78 }
             text: Bone-like
             _i18n: *Adjective
-          - min: 79
-            max: 82
+          - roll: { min: 79, max: 82 }
             text: Flesh-like
             _i18n: *Adjective
-          - min: 83
-            max: 86
+          - roll: { min: 83, max: 86 }
             text: Plant-like
             _i18n: *Adjective
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Energy
             _i18n: &i18n.result.adjunct_common_noun
               text:
                 part_of_speech: adjunct_common_noun
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Liquid
             _i18n: *i18n.result.adjunct_common_noun
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
@@ -243,127 +204,96 @@ oracles:
         # usage:
         #   initial: true
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Corrupting its environment
             # is
-          - min: 4
-            max: 7
+          - roll: { min: 4, max: 7 }
             text: Automated defenses
             # has
-          - min: 8
-            max: 10
+          - roll: { min: 8, max: 10 }
             text: Breached exterior
             # has
-          - min: 11
-            max: 14
+          - roll: { min: 11, max: 14 }
             text: Broken or fragmented
             # is
-          - min: 15
-            max: 17
+          - roll: { min: 15, max: 17 }
             text: Camouflaged or hidden
             # is
-          - min: 18
-            max: 20
+          - roll: { min: 18, max: 20 }
             text: Cavernous opening
             # has
-          - min: 21
-            max: 23
+          - roll: { min: 21, max: 23 }
             text: Dispersed structures
             # has
-          - min: 24
-            max: 26
+          - roll: { min: 24, max: 26 }
             text: Dreadful premonitions
             # emits
-          - min: 27
-            max: 30
+          - roll: { min: 27, max: 30 }
             text: Electromagnetic field
             # has? emits?
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Embedded within terrain
             # is
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Encased in an energy field
             # is
-          - min: 37
-            max: 40
+          - roll: { min: 37, max: 40 }
             text: Energy core or conduit
             # has
-          - min: 41
-            max: 43
+          - roll: { min: 41, max: 43 }
             text: Fractal patterns
             # has
-          - min: 44
-            max: 47
+          - roll: { min: 44, max: 47 }
             text: Glyphs or symbols
             # has
-          - min: 48
-            max: 51
+          - roll: { min: 48, max: 51 }
             text: Hazardous readings
             # emits? has?
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Levitating or in motion
             # is
-          - min: 55
-            max: 58
+          - roll: { min: 55, max: 58 }
             text: Lighted or illuminated
             # is
-          - min: 59
-            max: 61
+          - roll: { min: 59, max: 61 }
             text: No obvious point of entry
             # has
-          - min: 62
-            max: 64
+          - roll: { min: 62, max: 64 }
             text: Overgrown or entangled
             # is
-          - min: 65
-            max: 67
+          - roll: { min: 65, max: 67 }
             text: Perfectly preserved
             # is
-          - min: 68
-            max: 70
+          - roll: { min: 68, max: 70 }
             text: Phasing in and out of reality
             # is
-          - min: 71
-            max: 73
+          - roll: { min: 71, max: 73 }
             text: Physical barrier
             # has
-          - min: 74
-            max: 76
+          - roll: { min: 74, max: 76 }
             text: Pitted or scarred
             # is
-          - min: 77
-            max: 79
+          - roll: { min: 77, max: 79 }
             text: Scaled for outsized beings
             # is
-          - min: 80
-            max: 82
+          - roll: { min: 80, max: 82 }
             text: Shrouded in mist or haze
             # is
-          - min: 83
-            max: 85
+          - roll: { min: 83, max: 85 }
             text: Signs of invaders
             # has? bearing?
-          - min: 86
-            max: 89
+          - roll: { min: 86, max: 89 }
             text: Sound or signal
             # emits?
-          - min: 90
-            max: 92
+          - roll: { min: 90, max: 92 }
             text: Strong gravity well
             # has
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             text: Surrounded by destruction
             # is
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             <<: &DescriptorFocus
               text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
               oracle_rolls:
@@ -390,108 +320,75 @@ oracles:
             # usage:
             #   initial: true
             recommended_rolls:
-              min: 1
-              max: 2
+              roll: { min: 1, max: 2 }
             # content:
             #   part_of_speech: [fragment]
             #   tags: [first look]
             summary: Use this table to reveal what you see or encounter when first entering the site. These aspects, combined with the exterior features, will help you envision the nature and condition of the vault and provide context for the rest of your exploration.
             rows:
-              - min: 1
-                max: 3
+              - roll: { min: 1, max: 3 }
                 text: Abnormal gravity
-              - min: 4
-                max: 6
+              - roll: { min: 4, max: 6 }
                 text: Automated defenses
-              - min: 7
-                max: 9
+              - roll: { min: 7, max: 9 }
                 text: Biological infestation
-              - min: 10
-                max: 12
+              - roll: { min: 10, max: 12 }
                 text: Carried tech is disrupted
-              - min: 13
-                max: 15
+              - roll: { min: 13, max: 15 }
                 text: Complex textures or patterns
-              - min: 16
-                max: 18
+              - roll: { min: 16, max: 18 }
                 text: Corpses of intruders
-              - min: 19
-                max: 21
+              - roll: { min: 19, max: 21 }
                 text: Damage and debris
-              - min: 22
-                max: 24
+              - roll: { min: 22, max: 24 }
                 text: Deteriorating spaces
-              - min: 25
-                max: 27
+              - roll: { min: 25, max: 27 }
                 text: Dissonant tones or music
-              - min: 28
-                max: 30
+              - roll: { min: 28, max: 30 }
                 text: Energy surges
-              - min: 31
-                max: 33
+              - roll: { min: 31, max: 33 }
                 text: Environment reacts to your presence
-              - min: 34
-                max: 36
+              - roll: { min: 34, max: 36 }
                 text: Evidence of looting or scavenging
-              - min: 37
-                max: 39
+              - roll: { min: 37, max: 39 }
                 text: Excessive cold
-              - min: 40
-                max: 42
+              - roll: { min: 40, max: 42 }
                 text: Excessive heat
-              - min: 43
-                max: 45
+              - roll: { min: 43, max: 45 }
                 text: Faint ambient lighting
-              - min: 46
-                max: 48
+              - roll: { min: 46, max: 48 }
                 text: Impenetrable darkness
-              - min: 49
-                max: 51
+              - roll: { min: 49, max: 51 }
                 text: Intense smell
-              - min: 52
-                max: 54
+              - roll: { min: 52, max: 54 }
                 text: Magnetic surfaces
-              - min: 55
-                max: 57
+              - roll: { min: 55, max: 57 }
                 text: Material does not match exterior
-              - min: 58
-                max: 60
+              - roll: { min: 58, max: 60 }
                 text: Ornate markings or symbols
-              - min: 61
-                max: 63
+              - roll: { min: 61, max: 63 }
                 text: Reactive lighting responds to your presence
-              - min: 64
-                max: 66
+              - roll: { min: 64, max: 66 }
                 text: Scale does not match exterior
-              - min: 67
-                max: 69
+              - roll: { min: 67, max: 69 }
                 text: Signs of invasive lifeforms
-              - min: 70
-                max: 72
+              - roll: { min: 70, max: 72 }
                 text: Surfaces respond to touch
-              - min: 73
-                max: 75
+              - roll: { min: 73, max: 75 }
                 text: Thick haze or smoke
-              - min: 76
-                max: 78
+              - roll: { min: 76, max: 78 }
                 text: Thick or fluid atmosphere
-              - min: 79
-                max: 81
+              - roll: { min: 79, max: 81 }
                 text: Thrumming or droning sound
-              - min: 82
-                max: 84
+              - roll: { min: 82, max: 84 }
                 text: Toxic atmosphere
-              - min: 85
-                max: 87
+              - roll: { min: 85, max: 87 }
                 text: Toxic residue
-              - min: 88
-                max: 90
+              - roll: { min: 88, max: 90 }
                 text: Well-preserved
-              - min: 91
-                max: 93
+              - roll: { min: 91, max: 93 }
                 text: Wet or humid
-              - min: 94
-                max: 100
+              - roll: { min: 94, max: 100 }
                 <<: *DescriptorFocus
           feature:
             oracle_type: table_text
@@ -505,110 +402,75 @@ oracles:
             # content:
             #   part_of_speech: [fragment]
             rows:
-              - min: 1
-                max: 3
+              - roll: { min: 1, max: 3 }
                 text: Ascending or descending path
-              - min: 4
-                max: 6
+              - roll: { min: 4, max: 6 }
                 text: Biological growths
-              - min: 7
-                max: 8
+              - roll: { min: 7, max: 8 }
                 text: Blood trail
-              - min: 9
-                max: 10
+              - roll: { min: 9, max: 10 }
                 text: Breached or ruptured area
-              - min: 11
-                max: 13
+              - roll: { min: 11, max: 13 }
                 text: Broken or inactive machinery
-              - min: 14
-                max: 15
+              - roll: { min: 14, max: 15 }
                 text: Clinging mist
-              - min: 16
-                max: 18
+              - roll: { min: 16, max: 18 }
                 text: Damage or debris
-              - min: 19
-                max: 20
+              - roll: { min: 19, max: 20 }
                 text: Echoing noises
-              - min: 21
-                max: 22
+              - roll: { min: 21, max: 22 }
                 text: Elevated path over chasm or shaft
-              - min: 23
-                max: 25
+              - roll: { min: 23, max: 25 }
                 text: Energy discharges
-              - min: 26
-                max: 28
+              - roll: { min: 26, max: 28 }
                 text: Enigmatic controls or terminal
-              - min: 29
-                max: 30
+              - roll: { min: 29, max: 30 }
                 text: Garden or invasive plant life
-              - min: 31
-                max: 32
+              - roll: { min: 31, max: 32 }
                 text: Inscrutable object lies dark and silent
-              - min: 33
-                max: 35
+              - roll: { min: 33, max: 35 }
                 text: Intersection or hub
-              - min: 36
-                max: 38
+              - roll: { min: 36, max: 38 }
                 text: Intricate symbols or pictographs
-              - min: 39
-                max: 41
+              - roll: { min: 39, max: 41 }
                 text: Looted or dismantled technology
-              - min: 42
-                max: 44
+              - roll: { min: 42, max: 44 }
                 text: Looted or empty containers
-              - min: 45
-                max: 47
+              - roll: { min: 45, max: 47 }
                 text: Mazelike passages
-              - min: 48
-                max: 49
+              - roll: { min: 48, max: 49 }
                 text: Moving platform or lift
-              - min: 50
-                max: 52
+              - roll: { min: 50, max: 52 }
                 text: Mummified or decayed corpses
-              - min: 53
-                max: 55
+              - roll: { min: 53, max: 55 }
                 text: Narrowing or widening path
-              - min: 56
-                max: 58
+              - roll: { min: 56, max: 58 }
                 text: Pooled liquid
-              - min: 59
-                max: 61
+              - roll: { min: 59, max: 61 }
                 text: Remains of intruders
-              - min: 62
-                max: 63
+              - roll: { min: 62, max: 63 }
                 text: Scattered bones
-              - min: 64
-                max: 66
+              - roll: { min: 64, max: 66 }
                 text: Scrawled markings
-              - min: 67
-                max: 68
+              - roll: { min: 67, max: 68 }
                 text: Signs of an attack or battle
-              - min: 69
-                max: 71
+              - roll: { min: 69, max: 71 }
                 text: Signs of invasive creatures
-              - min: 72
-                max: 73
+              - roll: { min: 72, max: 73 }
                 text: Surfaces honeycombed with openings
-              - min: 74
-                max: 76
+              - roll: { min: 74, max: 76 }
                 text: Unintelligible recorded message
-              - min: 77
-                max: 79
+              - roll: { min: 77, max: 79 }
                 text: Unintelligible whispers
-              - min: 80
-                max: 82
+              - roll: { min: 80, max: 82 }
                 text: Vaulted chamber
-              - min: 83
-                max: 85
+              - roll: { min: 83, max: 85 }
                 text: Vertical shaft
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: 'Transition into the [Sanctum](id:starforged/oracles/vaults/sanctum)'
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 <<: *DescriptorFocus
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -627,65 +489,45 @@ oracles:
             #   part_of_speech: [fragment]
             #   tags: [peril, event, present]
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: Broken path
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 text: Change in atmosphere or environment
-              - min: 11
-                max: 15
+              - roll: { min: 11, max: 15 }
                 text: Corrosive environment
-              - min: 16
-                max: 20
+              - roll: { min: 16, max: 20 }
                 text: Dire warning left by other explorers
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 text: Foes close in
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 text: Fragile structural integrity
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 text: Hazardous path designed for traversal by other beings
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 text: Important gear malfunctions
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 text: Isolation or fear presses in
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 text: Mechanical trap
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 text: Mist or darkness conceals dangers
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 text: Puzzling mystery blocks the way
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 text: Radioactive hot spot
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 text: Rivals seek what lay within
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 text: Signs of a contagion
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 text: Signs of a lurking foe
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: Tempting location or object holds hidden dangers
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: Toxic atmosphere
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: Unnerving sound or sensation
-              - min: 96
-                max: 99
+              - roll: { min: 96, max: 99 }
                 <<: &ActionTheme
                   text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
                   oracle_rolls:
@@ -693,8 +535,7 @@ oracles:
                       auto: true
                     - oracle: starforged/oracles/core/theme
                       auto: true
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -713,35 +554,25 @@ oracles:
             #   part_of_speech: [fragment]
             #   tags: [opportunity]
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Clue points the way to your destination or target
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Clue to a lifeform's nature or vulnerabilities
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Helpful gear left by another explorer
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Insight into the nature or history of this site
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Intriguing device or artifact
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: Opening to get the drop on a foe
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: Opening to outmaneuver or escape a threat or foe
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: Salvageable resource
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 text: Secure area offers a moment of peace
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Shortcut or less perilous path speeds your way
       sanctum:
         name: Sanctum
@@ -765,92 +596,63 @@ oracles:
             summary: |-
               Because precursor vaults are alien and enigmatic, understanding their ultimate purpose requires investigation and exploration. Use this table to reveal the vault’s original function or role at an appropriate point in your survey. This can come as an outcome of completing an expedition, or when your story naturally leads you to a revelation of the site’s nature.
             rows:
-              - min: 1
-                max: 3
+              - roll: { min: 1, max: 3 }
                 text: Capture or control of other beings
-              - min: 4
-                max: 6
+              - roll: { min: 4, max: 6 }
                 text: Command or communication relay
-              - min: 7
-                max: 9
+              - roll: { min: 7, max: 9 }
                 text: Commemoration of an event
-              - min: 10
-                max: 12
+              - roll: { min: 10, max: 12 }
                 text: Conduit to mystical powers
-              - min: 13
-                max: 16
+              - roll: { min: 13, max: 16 }
                 text: Conservation of living specimens
-              - min: 17
-                max: 20
+              - roll: { min: 17, max: 20 }
                 text: Containment of a powerful being
-              - min: 21
-                max: 24
+              - roll: { min: 21, max: 24 }
                 text: Containment of dangerous creatures
-              - min: 25
-                max: 27
+              - roll: { min: 25, max: 27 }
                 text: Containment of weapons
-              - min: 28
-                max: 31
+              - roll: { min: 28, max: 31 }
                 text: Control of a destructive weapon
-              - min: 32
-                max: 34
+              - roll: { min: 32, max: 34 }
                 text: Generation of defenses or barriers
-              - min: 35
-                max: 38
+              - roll: { min: 35, max: 38 }
                 text: Generation or transformation of energy
-              - min: 39
-                max: 41
+              - roll: { min: 39, max: 41 }
                 text: Harvesting of resources
-              - min: 42
-                max: 44
+              - roll: { min: 42, max: 44 }
                 text: Interment of the dead
-              - min: 45
-                max: 47
+              - roll: { min: 45, max: 47 }
                 text: Manipulation of spacetime
-              - min: 48
-                max: 50
+              - roll: { min: 48, max: 50 }
                 text: Manufacturing of lifeforms
-              - min: 51
-                max: 53
+              - roll: { min: 51, max: 53 }
                 text: Manufacturing of machines or devices
-              - min: 54
-                max: 56
+              - roll: { min: 54, max: 56 }
                 text: Passage to another location
-              - min: 57
-                max: 59
+              - roll: { min: 57, max: 59 }
                 text: Preservation of an ancient intelligence
-              - min: 60
-                max: 62
+              - roll: { min: 60, max: 62 }
                 text: Preservation of maps or navigational data
-              - min: 63
-                max: 66
+              - roll: { min: 63, max: 66 }
                 text: Protection of a sacred artifact
-              - min: 67
-                max: 69
+              - roll: { min: 67, max: 69 }
                 text: Researching science or technology
-              - min: 70
-                max: 73
+              - roll: { min: 70, max: 73 }
                 text: Safekeeping of cultural records or memories
-              - min: 74
-                max: 77
+              - roll: { min: 74, max: 77 }
                 text: Shelter for inhabitants
-              - min: 78
-                max: 80
+              - roll: { min: 78, max: 80 }
                 text: Stockpiling of resources
-              - min: 81
-                max: 83
+              - roll: { min: 81, max: 83 }
                 text: Surveying or monitoring of a location
-              - min: 84
-                max: 87
+              - roll: { min: 84, max: 87 }
                 text: Transformation of terrain or environments
-              - min: 88
-                max: 90
+              - roll: { min: 88, max: 90 }
                 text: Worship of a god or being
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 <<: *ActionTheme
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -867,110 +669,75 @@ oracles:
             # content:
             #   part_of_speech: [fragment]
             rows:
-              - min: 1
-                max: 2
+              - roll: { min: 1, max: 2 }
                 text: Abyssal pit or chasm
-              - min: 3
-                max: 5
+              - roll: { min: 3, max: 5 }
                 text: Altered gravity
-              - min: 6
-                max: 7
+              - roll: { min: 6, max: 7 }
                 text: Area filled with strange liquid
-              - min: 8
-                max: 10
+              - roll: { min: 8, max: 10 }
                 text: Area humming with aberrant energy
-              - min: 11
-                max: 13
+              - roll: { min: 11, max: 13 }
                 text: Blasted or wrecked area
-              - min: 14
-                max: 16
+              - roll: { min: 14, max: 16 }
                 text: Central chamber of immense proportions or grandeur
-              - min: 17
-                max: 19
+              - roll: { min: 17, max: 19 }
                 text: Colossal machine
-              - min: 20
-                max: 21
+              - roll: { min: 20, max: 21 }
                 text: Corrupted plant life
-              - min: 22
-                max: 24
+              - roll: { min: 22, max: 24 }
                 text: Enigmatic mechanisms come to life
-              - min: 25
-                max: 26
+              - roll: { min: 25, max: 26 }
                 text: Haze of spores or nanomachines
-              - min: 27
-                max: 28
+              - roll: { min: 27, max: 28 }
                 text: Incomprehensible architecture or geometry
-              - min: 29
-                max: 31
+              - roll: { min: 29, max: 31 }
                 text: Incongruent space contradicts the nature of this site
-              - min: 32
-                max: 34
+              - roll: { min: 32, max: 34 }
                 text: Inscrutable object emits sound and energy
-              - min: 35
-                max: 37
+              - roll: { min: 35, max: 37 }
                 text: Machinery fused with organic growths
-              - min: 38
-                max: 40
+              - roll: { min: 38, max: 40 }
                 text: Moving chamber or passage
-              - min: 41
-                max: 43
+              - roll: { min: 41, max: 43 }
                 text: Mutated remains of the dead
-              - min: 44
-                max: 46
+              - roll: { min: 44, max: 46 }
                 text: Nest of invasive creatures
-              - min: 47
-                max: 49
+              - roll: { min: 47, max: 49 }
                 text: Pockets or layers of altered atmosphere
-              - min: 50
-                max: 51
+              - roll: { min: 50, max: 51 }
                 text: Pods or chambers with preserved corpses
-              - min: 52
-                max: 54
+              - roll: { min: 52, max: 54 }
                 text: Pools of strange liquid
-              - min: 55
-                max: 57
+              - roll: { min: 55, max: 57 }
                 text: Pulsating surfaces
-              - min: 58
-                max: 60
+              - roll: { min: 58, max: 60 }
                 text: Rampant biological infestation
-              - min: 61
-                max: 63
+              - roll: { min: 61, max: 63 }
                 text: Repository of biological specimens
-              - min: 64
-                max: 66
+              - roll: { min: 64, max: 66 }
                 text: Sealed chamber
-              - min: 67
-                max: 69
+              - roll: { min: 67, max: 69 }
                 text: Sealed containers of inscrutable purpose
-              - min: 70
-                max: 72
+              - roll: { min: 70, max: 72 }
                 text: Simulated or illusionary environment
-              - min: 73
-                max: 74
+              - roll: { min: 73, max: 74 }
                 text: Surfaces covered in slime or fungus
-              - min: 75
-                max: 76
+              - roll: { min: 75, max: 76 }
                 text: Temporal distortions
-              - min: 77
-                max: 79
+              - roll: { min: 77, max: 79 }
                 text: Transforming spaces
-              - min: 80
-                max: 82
+              - roll: { min: 80, max: 82 }
                 text: Visions of this place in another time
-              - min: 83
-                max: 85
+              - roll: { min: 83, max: 85 }
                 text: Visions or reflections of another reality
-              - min: 86
-                max: 88
+              - roll: { min: 86, max: 88 }
                 text: Warped or misshapen spaces
-              - min: 89
-                max: 90
+              - roll: { min: 89, max: 90 }
                 text: Whispering voices speak to you
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 <<: *DescriptorFocus
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -988,68 +755,47 @@ oracles:
             #   part_of_speech: [fragment]
             #   tags: [peril, event, present]
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: Camouflaged or transforming foe reveals itself
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 text: Confounding distortions of the timestream
-              - min: 11
-                max: 15
+              - roll: { min: 11, max: 15 }
                 text: Destructive environmental disturbance
-              - min: 16
-                max: 20
+              - roll: { min: 16, max: 20 }
                 text: Horrifying fate for a previous intruder
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 text: Important equipment rendered useless
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 text: Led astray or lured into danger by a manifestation or illusion
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 text: Lost the way or separated from others
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 text: Manifestations prey upon your weaknesses or worries
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 text: Other intruders have been corrupted or mutated by this place
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 text: Paranoia or suspicion takes hold
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 text: Path behind you is sealed
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 text: Powerful foe strikes without warning
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 text: Restless dead awaken
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 text: Scene of hideous violence or death
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 text: Snared in an unnatural trap
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 text: Spawning or swarming foes surround you
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: Sudden structural collapse or failure
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: Temptations to linger or remain in this site
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: You are marked by physical corruption or mutation
-              - min: 96
-                max: 99
+              - roll: { min: 96, max: 99 }
                 <<: *ActionTheme
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -1067,33 +813,23 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Access to a secret or protected area
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Clue points the way to your destination or target
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Comforting illusion or vision
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Control or terminal adjusts to accept your input
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Deeper insight into the history or nature of this site
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: Device or artifact reveals its purpose
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: Environment adjusts to better suit you
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: Foes stand down or give way
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 text: Key offers control of a function or aspect of this site
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Shortcut or less perilous path speeds your way

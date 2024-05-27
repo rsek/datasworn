@@ -41,20 +41,17 @@ oracles:
                   oracle_type: column_text
                   type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 25
+                  - roll: { min: 1, max: 25 }
                     <<: &WaypointKnown.0
                       text: |-
                         __Sails, ho!__
                           [Sailing Ships](id:sundered_isles/collections/oracles/ships)
-                  - min: 26
-                    max: 35
+                  - roll: { min: 26, max: 35 }
                     <<: &WaypointKnown.1
                       text: |-
                         __Changing weather__
                           [Weather](id:sundered_isles/collections/oracles/weather)
-                  - min: 36
-                    max: 55
+                  - roll: { min: 36, max: 55 }
                     <<: &WaypointKnown.2
                       text: |-
                         __Instance (choose one)__
@@ -64,20 +61,17 @@ oracles:
                         - oracle: sundered_isles/oracles/seafaring/details
                         - oracle: sundered_isles/oracles/core/descriptor
                         - oracle: sundered_isles/oracles/core/focus
-                  - min: 56
-                    max: 65
+                  - roll: { min: 56, max: 65 }
                     <<: &WaypointKnown.3
                       text: |-
                         __Lost souls__
                           [Shipwrecks](id:sundered_isles/collections/oracles/shipwrecks)
-                  - min: 66
-                    max: 70
+                  - roll: { min: 66, max: 70 }
                     <<: &WaypointKnown.4
                       text: |-
                         __Relic of the past__
                           [Ruins](id:sundered_isles/collections/oracles/ruins)
-                  - min: 71
-                    max: 85
+                  - roll: { min: 71, max: 85 }
                     <<: &WaypointKnown.5
                       text: |-
                         __Character focus__
@@ -85,8 +79,7 @@ oracles:
                       oracle_rolls:
                         - oracle: sundered_isles/oracles/misc/interlude_scene
                   - &WaypointKnown.6
-                    min: 86
-                    max: 100
+                    roll: { min: 86, max: 100 }
                     <<: &RollTwice
                       text: Roll twice
                       oracle_rolls:
@@ -100,26 +93,19 @@ oracles:
                   oracle_type: column_text
                   type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 15
+                  - roll: { min: 1, max: 15 }
                     <<: *WaypointKnown.0
-                  - min: 16
-                    max: 30
+                  - roll: { min: 16, max: 30 }
                     <<: *WaypointKnown.1
-                  - min: 31
-                    max: 50
+                  - roll: { min: 31, max: 50 }
                     <<: *WaypointKnown.2
-                  - min: 51
-                    max: 60
+                  - roll: { min: 51, max: 60 }
                     <<: *WaypointKnown.3
-                  - min: 61
-                    max: 70
+                  - roll: { min: 61, max: 70 }
                     <<: *WaypointKnown.4
-                  - min: 71
-                    max: 85
+                  - roll: { min: 71, max: 85 }
                     <<: *WaypointKnown.5
-                  - min: 86
-                    max: 100
+                  - roll: { min: 86, max: 100 }
                     <<: *WaypointKnown.6
               reaches:
                 # source: *TableSource
@@ -129,26 +115,19 @@ oracles:
                   oracle_type: column_text
                   type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 5
+                  - roll: { min: 1, max: 5 }
                     <<: *WaypointKnown.0
-                  - min: 6
-                    max: 25
+                  - roll: { min: 6, max: 25 }
                     <<: *WaypointKnown.1
-                  - min: 26
-                    max: 45
+                  - roll: { min: 26, max: 45 }
                     <<: *WaypointKnown.2
-                  - min: 46
-                    max: 55
+                  - roll: { min: 46, max: 55 }
                     <<: *WaypointKnown.3
-                  - min: 56
-                    max: 70
+                  - roll: { min: 56, max: 70 }
                     <<: *WaypointKnown.4
-                  - min: 71
-                    max: 85
+                  - roll: { min: 71, max: 85 }
                     <<: *WaypointKnown.5
-                  - min: 86
-                    max: 100
+                  - roll: { min: 86, max: 100 }
                     <<: *WaypointKnown.6
           unknown_waters:
             name: Unknown Waters
@@ -163,95 +142,71 @@ oracles:
                 <<: *Myriads
                 # source: *TableSource
                 rows:
-                  - min: 1
-                    max: 20
+                  - roll: { min: 1, max: 20 }
                     <<: &WaypointUnknown.0
                       text: |-
                         __Land, ho!__
                           [Islands](id:sundered_isles/collections/oracles/islands)
-                  - min: 21
-                    max: 35
+                  - roll: { min: 21, max: 35 }
                     <<: &WaypointUnknown.1
                       <<: *WaypointKnown.0
-                  - min: 36
-                    max: 45
+                  - roll: { min: 36, max: 45 }
                     <<: &WaypointUnknown.2
                       <<: *WaypointKnown.1
-                  - min: 46
-                    max: 60
+                  - roll: { min: 46, max: 60 }
                     <<: &WaypointUnknown.3
                       <<: *WaypointKnown.2
-                  - min: 61
-                    max: 70
+                  - roll: { min: 61, max: 70 }
                     <<: &WaypointUnknown.4
                       <<: *WaypointKnown.3
-                  - min: 71
-                    max: 75
+                  - roll: { min: 71, max: 75 }
                     <<: &WaypointUnknown.5
                       <<: *WaypointKnown.4
-                  - min: 76
-                    max: 90
+                  - roll: { min: 76, max: 90 }
                     <<: &WaypointUnknown.6
                       <<: *WaypointKnown.5
-                  - min: 91
-                    max: 100
+                  - roll: { min: 91, max: 100 }
                     <<: &WaypointUnknown.7
                       <<: *WaypointKnown.6
               margins:
                 <<: *Margins
                 # source: *TableSource
                 rows:
-                  - min: 1
-                    max: 15
+                  - roll: { min: 1, max: 15 }
                     <<: *WaypointUnknown.0
-                  - min: 16
-                    max: 25
+                  - roll: { min: 16, max: 25 }
                     <<: *WaypointUnknown.1
-                  - min: 26
-                    max: 40
+                  - roll: { min: 26, max: 40 }
                     <<: *WaypointUnknown.2
-                  - min: 41
-                    max: 55
+                  - roll: { min: 41, max: 55 }
                     <<: *WaypointUnknown.3
-                  - min: 56
-                    max: 65
+                  - roll: { min: 56, max: 65 }
                     <<: *WaypointUnknown.4
-                  - min: 66
-                    max: 75
+                  - roll: { min: 66, max: 75 }
                     <<: *WaypointUnknown.5
-                  - min: 76
-                    max: 90
+                  - roll: { min: 76, max: 90 }
                     <<: *WaypointUnknown.6
-                  - min: 91
-                    max: 100
+                  - roll: { min: 91, max: 100 }
                     <<: *WaypointUnknown.7
               reaches:
                 <<: *Reaches
                 # source: *TableSource
                 rows:
-                  - min: 1
-                    max: 10
+                  - roll: { min: 1, max: 10 }
                     <<: *WaypointUnknown.0
-                  - min: 11
-                    max: 15
+                  - roll: { min: 11, max: 15 }
                     <<: *WaypointUnknown.1
-                  - min: 16
-                    max: 35
+                  - roll: { min: 16, max: 35 }
                     <<: *WaypointUnknown.2
-                  - min: 36
-                    max: 50
+                  - roll: { min: 36, max: 50 }
                     <<: *WaypointUnknown.3
-                  - min: 51
-                    max: 60
+                  - roll: { min: 51, max: 60 }
                     <<: *WaypointUnknown.4
-                  - min: 61
-                    max: 75
+                  - roll: { min: 61, max: 75 }
                     <<: *WaypointUnknown.5
-                  - min: 76
-                    max: 90
+                  - roll: { min: 76, max: 90 }
                     <<: *WaypointUnknown.6
-                  - min: 91
-                    max: 100
+                  - roll: { min: 91, max: 100 }
                     <<: *WaypointUnknown.7
     contents:
       detail:
@@ -264,305 +219,205 @@ oracles:
           sundered_isles:
             cursed_version: sundered_isles/oracles/seafaring/cursed_details
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: A plume of smoke rises on the horizon
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Carved monoliths, taller than your ship, form a circle large enough to sail through
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: An albatross alights on the yardarm; it surveys the ship dispassionately
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: A large plank of driftwood bears a carved message
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Buoys mark hazardous waters
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Beast hunters, sailing a sleek-hulled ship, chase their quarry
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Sea caves pocket the steep flanks of a rocky islet
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: A rogue wave rises on the horizon
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Dagger-like rocks rise out of the sea
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Flags of unknown heraldry fly from a partially collapsed fort
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: A massive storm wall gathers in the distance, lighting flashing
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Waves surge against an exposed reef
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: A gull lands on the deck, a rolled slip of paper tied to its leg
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: A ship flounders on high seas, listing dangerously to one side
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Rusted anchors, hung like trophies from a rocky mount, clatter in the wind
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Labyrinthine mangroves sprawl along the shore of a tiny islet
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Survivors aboard a meager raft desperately flag you down
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Clusters of jagged rocks lurk just below the ocean waves
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: A crew struggles to refloat their ship, which is run aground on a sandbank
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Stone ruins lie just beneath the surface
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Waves pummel a shipwreck that lies split in two upon the rocks
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: A battered, drifting flag bears a familiar emblem
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: The air smells of smoke, and ash drifts on the wind
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: A battered, oarless longboat floats on the open sea
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: A planted flag and a lonely cairn stand atop a tiny rocky islet
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Something massive brushes against the hull before diving out of sight
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: The sound of distant cannon fire echoes across the sea
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Water churns as a large school of fish flees a predator
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Lashed-together shipwrecks, anchored to the sea floor, form a ramshackle floating home
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: A massive school of rays forms a roving shadow just below the surface
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Large sharks circle the ship
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Whales crest the surface, misting the air with saltwater spray
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Dolphins spin and jump at the bow
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: A giant whale, its back pierced by a wicked-looking harpoon, breaks the surface
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: A half-sunk rowboat, burdened with chests and barrels, bobs on the sea
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: A vast volcano dome, belching steam, sits just above the waves
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: A massive stone statue, cracked and worn by age, stands atop an eroded rock
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: A broken spire stands atop a lonely rock
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: A solitary mariner watches you from the deck of their single-masted boat
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Rocks and seabed muck, laid bare by a low tide, surround a narrow waterway
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: A brief, passing squall batters the ship with wind and rain
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: A multitude of jellyfish glimmer like pale lanterns
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: A long line of boats, laden with cargo and passengers, make their way across the sea
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: A settlement stands on an isolated islet
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: A massive stone statue, weathered and worn, stands atop an eroded rock
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: A rocky mount shelters a deep-water harbor
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: A graveyard of sun-bleached whale bones lies atop scattered shoals
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: A crumbling stone bridge spans the gap between two rocky islets
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Abundant sea life is visible in these crystal-clear shallows
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: A formation of sleek coastal boats race swiftly across the waves
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: A ship riddled with damage drifts past, seemingly uncrewed
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: A trade ship struggles at the edge of an expanding whirlpool
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Shattered debris drifts past
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: A stranded mariner waves from a tiny islet
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: A storm of falling stars streaks through the sky
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: A ship lies at anchor; its crew busily repairs torn sails and broken spars
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: A lone survivor clings to a floating crate
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Sea turtles swim in a lazy circle over a deep blue marine sinkhole
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: A long line of sails dot the horizon
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: A heavy chain is strung between rocks just below the waterline
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Sinking ships and struggling survivors mark the scene of a recent battle
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: A ravaged ship, burnt nearly to the waterline, floats aimlessly
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: A powerful current sweeps through a passage bounded by rocky shoals
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Wind-beaten trees cling precariously to a rocky mount
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Submerged heat vents send up roiling water and plumes of steam
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: A sudden gust pulls the sails and rigging taught, an omen of changing weather
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Boats gather in a circle as their passengers toss flowers into the sea
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: A glass bottle with a message bobs on the waves
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Whales congregate amid deep waters
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: A vibrantly-painted merchant vessel sends up a flag of welcome
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: A flurry of cannon fire flashes within a fog bank
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Sandbars are scattered across shallow waters
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Fruit trees cling to a grassy islet
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: A tangle of sea plants, muck, and debris spin slowly in a wide gyre
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: A massive fog bank stretches the length of the horizon
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: A small fleet of fishing boats head for deeper waters
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Sunken metal catches the light within clear waters
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Large lizards scamper along the narrow shore of a rocky islet
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Two ships sit side-by-side at anchor; crews move cargo from one to the other
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Flagged buoys mark a faction's claimed territory
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: A dark cave sits high above the waterline on a rocky pillar
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Thickly-packed seaweed carpets the water
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Ships exchange cannon fire in the distance; acrid smoke drifts for leagues
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Coral reefs lie in shallow, crystalline waters
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Swarms of sharks feed on a dead whale carcass
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: A small grove of palm trees and a simple hut stand atop a sandy islet
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Hordes of seabirds nest among a long row of guano-spattered sea stacks
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Manatees graze among a field of tall sea grass in shallow waters
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: On a moonless, cloudy night, deep darkness falls over the sea
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: The crew of a fishing boat struggles with a mighty catch
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Survivors wave from the deck of a sinking ship
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: A flash of reflected sunlight gleams from glass or metal in the distance
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Shrubs and colorful flowers carpet a rocky islet
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: A lone chest bobs in the waves
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Seals rest on the exposed keel of a capsized ship, barking as you come near
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Whale song, tinged with sadness, echoes across the sea
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: An imposing fort dominates the terrain of a rocky islet
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: A heap of flotsam and jetsam grinds against the shore of a rocky islet
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: A distant signal or beacon flares to life
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Smoke rises from among a grove of palms on a sandy isle
       cursed_details:
         _source: *Source
@@ -574,305 +429,205 @@ oracles:
             cursed_version_of:
               - sundered_isles/oracles/seafaring/details
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: An exodus of panicked birds darken the sky
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: The shadowy silhouette of a flying beast, barely visible in the mist, passes overhead
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: A maelstrom shimmers with mystic energies
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Iron fittings spontaneously rust and corrode
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: A ship is sighted but disappears if you look directly at it
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Pale sea turtles, their shells carved with strange runes, circle the ship
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Ragged slashes, as if from claws, appear in the sails
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: A parrot lands on a spar, squawks a foreboding message, and flies off
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Iron cages, each housing a sun-dried corpse, hang from a rocky mount
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: A titanic, sinuous skeleton lies atop a rocky shoal
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: A ship is spotted, identical to your own
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Elaborate and unsettling symbols mar the stone of a rocky islet
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Strands of kelp rise from the water, creeping and grasping
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: An eclipse overtakes the sun, stealing away the day
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: The sea suddenly smells of rot
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Countless dead fish float on the surface
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: A single albatross alights on the yardarm, then falls instantly dead
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: A perpetual fog bank, as still as a stone wall, lies ahead
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: A dark swarm of giant bats circles the ship
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: A monstrous sea beast appears, trailing the ship with an inexorable purpose
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: The ship's bell rings of its own accord
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Your ship comes to a sudden and shuddering stop in deep waters
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: The sea boils, sending up gouts of steam
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Tentacles, dripping with slimy brine, curl over the gunwales
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: A vast field of algae-covered bones lies scattered in shallow waters
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: The bloated corpse of an enormous beast floats past, a grisly bitemark in its flank
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Hundreds of carrion birds settle onto spars and rigging, waiting expectantly
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: An unblemished iron pillar stands in shallow waters
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Crewmembers are plagued by horrific visions or dreams
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: A narrow passage cuts through a churning, green fog
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: The sea spills like a waterfall into an unnatural chasm
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: A vast whirlpool opens ahead of the ship
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Strange shapes move within an approaching fog bank
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: All at once, the ship's lanterns go dark
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: The roar of a monstrous beast rises from a fog-shrouded islet
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Countless shipwrecks float in a tangle, drawn together by uncanny forces
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: The compass spins wildly
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: A tangled net holds the corpse of a ghastly, mutated creature
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: A cloaked figure stands in a boat that moves without oar or sail
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: A procession of oarless boats, hung with pale lanterns, hold silent figures
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: A day passes, but you and the crew have no memory of it
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Hordes of panicked rats emerge from the lower decks
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Bladelike iron shapes, carved with faintly-glowing symbols, jut from the sea
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: The seawater turns red and smells of blood
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: The ship's wheel turns of its own accord and then holds fast, setting a new course
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Mangled corpses, too many to count, drift on the water
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: One beast battles another, and the sea churns with blood
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: An unknown island, etched in black ink by an unseen hand, appears on the ship's charts
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Something knocks insistently against the underside of the hull
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: A monstrous beast stalks the ship
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Alluring songs beckon from among the rocks
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: A pale child stands on the shore of an otherwise deserted islet, smiling blankly
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: A giant mangrove, home to strange birdlike creatures, stands in stagnant waters
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: An unnatural current sweeps the ship onto a new course
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Hordes of scrabbling bone-white crabs climb the ship's hull
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: The shadowy outline of a frozen ship sits within an enormous wandering iceberg
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: A tattoo spontaneously appears on your forearm
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: A burning map, inscribed by an unseen hand, is scorched into the planks of the deck
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Fields of dead coral lay within foul-smelling waters
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: A tall mound of skulls sits upon a rocky islet
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: In the hold, frantic scratching emanates from within an unassuming crate
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Alluring lights glimmer beyond a gigantic stone archway
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Cockroaches swarm the deck
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: The sea ahead is a frozen sheet
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: A graveyard of dead ships lies trapped within a sargassum sea
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: A large blood slick covers the water
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: A watertight compartment spontaneously floods with seawater
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: A sorrowful shanty, seemingly without a source, echoes across the waters
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: A massive shape passes beneath your ship, sending it listing to one side
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Shadowy, vaporous ships cruise along the horizon
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: The tide slips away with unnatural speed, revealing patches of seafloor
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: A large winged form, cloaked in shadow, perches atop the main mast
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: A coffin, nailed shut and marked with cryptic symbols, bobs on the water
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Waking from a dream, you find yourself clutching a paper marked with a black spot
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: A ghostly message, written in blood, appears in the captain's logbook
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: A crewmember, moving as if in a trance, climbs over the gunwales and drops into the s
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Phantom voices carry on the wind, whispering a dreadful premonition
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Skeletal figures, welding corroded blades, clamber over the gunwales
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Bizarre jellyfish float through the air
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: The apparition of someone you knew delivers a warning before fading away
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: An enormous pale light rises from the murky depths
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: A crewmember is stricken with a hideous sickness
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Among the ship's stores, fresh water and wine turn to brine
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Flocks of birds fling themselves carelessly against the hull and sails
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Ghostly figures stand motionless and silent on the shore of a rocky islet
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: A wandering iceberg holds a tentacled form within its crystalline core
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: A leviathan's corpse bobs to the surface, its desiccated skull gaping
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: A spectral figure stands at the bow, pointing insistently at the horizon
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Objects fly through the air as if amid a whirlwind
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Perishable provisions turn to ash
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Barnacles foul the hull and deck, growing and spreading with uncanny speed
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: The sea turns dark, and something stirs within
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Monstrous eyes glimmer within the shadowy depths of an islet sea cave
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Wet footprints and sea muck trace a path on the deck
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Spectral forms with hollow eyes drift just below the water's surface
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: A distant ship floats above the water
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: A lone figure strides across the water with an unnatural gait
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: An unmoving fog clings to a rocky islet, shrouding all but the peak of a barren hill
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: The sound of sobbing echoes across mist-shrouded seas
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: The rising sun casts a baleful red glow
       peril:
         _source: *Source
@@ -881,104 +636,71 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Boarders strike without warning
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Crewmember goes missing
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: Crewmember is found dead
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Crewmember is injured
-          - min: 13
-            max: 15
+          - roll: { min: 13, max: 15 }
             text: Crewmembers argue or brawl
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Crewmembers challenge your decisions or command
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Crewmembers grow bored or restless
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Crewmembers grow suspicious of each other
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Dangerous current or whirlpool takes hold
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Enemies form a blockade
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Enemy ship is sighted
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Hostile beast attacks
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Hull is fouled or leaking
-          - min: 40
-            max: 42
+          - roll: { min: 40, max: 42 }
             text: Ill omens cause anxiety
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Imperiled ship signals for help
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Isolation or fear presses in
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Mysterious wreckage portends a new threat
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Provisions are spoiled or corrupted
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Rigging or equipment is damaged or broken
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Rogue wave strikes
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Sabotage is revealed
-          - min: 64
-            max: 66
+          - roll: { min: 64, max: 66 }
             text: Shallow waters or obstructions imperil navigation
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Shipboard fire breaks out
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Sickness threatens the health of the crew
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Storm looms
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Stowaway is revealed
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: True nature of a cargo, crewmember, or passenger is revealed
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Valuable cargo or provisions go missing
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Vermins infest spaces below decks
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Weather changes for the worse
-          - min: 91
-            max: 93
+          - roll: { min: 91, max: 93 }
             text: Wind recedes, and the sails fall slack
-          - min: 94
-            max: 96
+          - roll: { min: 94, max: 96 }
             text: You are lost or off course
-          - min: 97
-            max: 99
+          - roll: { min: 97, max: 99 }
             <<: &ActionTheme
               text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
@@ -986,8 +708,7 @@ oracles:
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
                   oracle: sundered_isles/oracles/core/theme
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             <<: *RollTwice
       opportunity:
         _source: *Source
@@ -996,78 +717,53 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Cache of cargo or supplies
-          - min: 5
-            max: 8
+          - roll: { min: 5, max: 8 }
             text: Chance for a moment of inner peace
-          - min: 9
-            max: 12
+          - roll: { min: 9, max: 12 }
             text: Clear passage through otherwise perilous seas
-          - min: 13
-            max: 16
+          - roll: { min: 13, max: 16 }
             text: Clue offers insight into a current quest or mystery
-          - min: 17
-            max: 20
+          - roll: { min: 17, max: 20 }
             text: Clue to a foe's nature or vulnerabilities
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: Creatures show the way or offer inspiration
-          - min: 25
-            max: 28
+          - roll: { min: 25, max: 28 }
             text: Crewmember offers insight or proposes a clever plan
-          - min: 29
-            max: 32
+          - roll: { min: 29, max: 32 }
             text: Crewmember reveals a helpful skill or background
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: Crewmembers support or validate your leadership
-          - min: 37
-            max: 40
+          - roll: { min: 37, max: 40 }
             text: Foe inadvertently reveals themselves or tips their hand
-          - min: 41
-            max: 44
+          - roll: { min: 41, max: 44 }
             text: Fortuitous wind or current speeds your way
-          - min: 45
-            max: 48
+          - roll: { min: 45, max: 48 }
             text: Friendly community in sight
-          - min: 49
-            max: 52
+          - roll: { min: 49, max: 52 }
             text: Friendly ship crosses your path
-          - min: 53
-            max: 56
+          - roll: { min: 53, max: 56 }
             text: Good omens offer encouragement
-          - min: 57
-            max: 60
+          - roll: { min: 57, max: 60 }
             text: Ideal weather takes hold
-          - min: 61
-            max: 64
+          - roll: { min: 61, max: 64 }
             text: Impressive vista offers comfort or inspiration
-          - min: 65
-            max: 68
+          - roll: { min: 65, max: 68 }
             text: Lookout pinpoints a lurking foe
-          - min: 69
-            max: 72
+          - roll: { min: 69, max: 72 }
             text: Message or map with useful information
-          - min: 73
-            max: 76
+          - roll: { min: 73, max: 76 }
             text: Occasion for celebration or remembrance with the crew
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             text: Opening to escape or avoid foes
-          - min: 81
-            max: 84
+          - roll: { min: 81, max: 84 }
             text: Plea for help from a potential benefactor
-          - min: 85
-            max: 88
+          - roll: { min: 85, max: 88 }
             text: Refuge offers a place to hide, plan, or recover
-          - min: 89
-            max: 92
+          - roll: { min: 89, max: 92 }
             text: Ship and crew perform beyond expectations
-          - min: 93
-            max: 96
+          - roll: { min: 93, max: 96 }
             text: Shipwreck or derelict ripe for the picking
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: Source of fresh provisions

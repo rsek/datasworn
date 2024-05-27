@@ -38,104 +38,79 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: verb
-            min: 1
-            max: 4
+            roll: { min: 1, max: 4 }
             text: Block
           - <<: *i18n.verb
-            min: 5
-            max: 8
+            roll: { min: 5, max: 8 }
             text: Create
           - <<: *i18n.verb
-            min: 9
-            max: 12
+            roll: { min: 9, max: 12 }
             text: Break
           - <<: *i18n.verb
-            min: 13
-            max: 16
+            roll: { min: 13, max: 16 }
             text: Puncture
           - <<: *i18n.verb
-            min: 17
-            max: 20
+            roll: { min: 17, max: 20 }
             text: Entangle
           - <<: *i18n.verb
-            min: 21
-            max: 24
+            roll: { min: 21, max: 24 }
             text: Enclose
           - <<: *i18n.verb
-            min: 25
-            max: 28
+            roll: { min: 25, max: 28 }
             text: Ambush
           - <<: *i18n.verb
-            min: 29
-            max: 32
+            roll: { min: 29, max: 32 }
             text: Snare
           - <<: *i18n.verb
-            min: 33
-            max: 36
+            roll: { min: 33, max: 36 }
             text: Change
           - <<: *i18n.verb
-            min: 37
-            max: 40
+            roll: { min: 37, max: 40 }
             text: Imitate
           - <<: *i18n.verb
-            min: 41
-            max: 44
+            roll: { min: 41, max: 44 }
             text: Crush
           - <<: *i18n.verb
-            min: 45
-            max: 48
+            roll: { min: 45, max: 48 }
             text: Drop
           - <<: *i18n.verb
-            min: 49
-            max: 52
+            roll: { min: 49, max: 52 }
             text: Conceal
           - <<: *i18n.verb
-            min: 53
-            max: 56
+            roll: { min: 53, max: 56 }
             text: Lure
           - <<: *i18n.verb
-            min: 57
-            max: 60
+            roll: { min: 57, max: 60 }
             text: Release
           - <<: *i18n.verb
-            min: 61
-            max: 64
+            roll: { min: 61, max: 64 }
             text: Obscure
           - <<: *i18n.verb
-            min: 65
-            max: 68
+            roll: { min: 65, max: 68 }
             text: Cut
           - <<: *i18n.verb
-            min: 69
-            max: 72
+            roll: { min: 69, max: 72 }
             text: Smother
           - <<: *i18n.verb
-            min: 73
-            max: 76
+            roll: { min: 73, max: 76 }
             text: Collapse
           - <<: *i18n.verb
-            min: 77
-            max: 80
+            roll: { min: 77, max: 80 }
             text: Summon
           - <<: *i18n.verb
-            min: 81
-            max: 84
+            roll: { min: 81, max: 84 }
             text: Move
           - <<: *i18n.verb
-            min: 85
-            max: 88
+            roll: { min: 85, max: 88 }
             text: Surprise
           - <<: *i18n.verb
-            min: 89
-            max: 92
+            roll: { min: 89, max: 92 }
             text: Divert
           - <<: *i18n.verb
-            min: 93
-            max: 96
+            roll: { min: 93, max: 96 }
             text: Attack
           - <<: *i18n.verb
-            min: 97
-            max: 100
+            roll: { min: 97, max: 100 }
             text: Trigger
       component:
         name: Component
@@ -153,102 +128,77 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: common_noun
-            min: 1
-            max: 4
+            roll: { min: 1, max: 4 }
             text: Pit
           - <<: *i18n.common_noun
-            min: 5
-            max: 8
+            roll: { min: 5, max: 8 }
             text: Water
           - <<: *i18n.common_noun
-            min: 9
-            max: 12
+            roll: { min: 9, max: 12 }
             text: Fire
           - <<: *i18n.common_noun
-            min: 13
-            max: 16
+            roll: { min: 13, max: 16 }
             text: Projectile
           - <<: *i18n.common_noun
-            min: 17
-            max: 20
+            roll: { min: 17, max: 20 }
             text: Passage
           - <<: *i18n.common_noun
-            min: 21
-            max: 24
+            roll: { min: 21, max: 24 }
             text: Fall
           - <<: *i18n.common_noun
-            min: 25
-            max: 28
+            roll: { min: 25, max: 28 }
             text: Debris
           - <<: *i18n.common_noun
-            min: 29
-            max: 32
+            roll: { min: 29, max: 32 }
             text: Fear
           - <<: *i18n.common_noun
-            min: 33
-            max: 36
+            roll: { min: 33, max: 36 }
             text: Alarm
           - <<: *i18n.common_noun
-            min: 37
-            max: 40
+            roll: { min: 37, max: 40 }
             text: Trigger
           - <<: *i18n.common_noun
-            min: 41
-            max: 44
+            roll: { min: 41, max: 44 }
             text: Cold
           - <<: *i18n.common_noun
-            min: 45
-            max: 48
+            roll: { min: 45, max: 48 }
             text: Weapon
           - <<: *i18n.common_noun
-            min: 49
-            max: 52
+            roll: { min: 49, max: 52 }
             text: Darkness
           - <<: *i18n.common_noun
-            min: 53
-            max: 56
+            roll: { min: 53, max: 56 }
             text: Decay
           - <<: *i18n.common_noun
-            min: 57
-            max: 60
+            roll: { min: 57, max: 60 }
             text: Path
           - <<: *i18n.common_noun
-            min: 61
-            max: 64
+            roll: { min: 61, max: 64 }
             text: Stone
           - <<: *i18n.common_noun
-            min: 65
-            max: 68
+            roll: { min: 65, max: 68 }
             text: Terrain
           - <<: *i18n.common_noun
-            min: 69
-            max: 72
+            roll: { min: 69, max: 72 }
             text: Poison
           - <<: *i18n.common_noun
-            min: 73
-            max: 76
+            roll: { min: 73, max: 76 }
             text: Barrier
           - <<: *i18n.common_noun
-            min: 77
-            max: 80
+            roll: { min: 77, max: 80 }
             text: Overhead
           - <<: *i18n.common_noun
-            min: 81
-            max: 84
+            roll: { min: 81, max: 84 }
             text: Magic
           - <<: *i18n.common_noun
-            min: 85
-            max: 88
+            roll: { min: 85, max: 88 }
             text: Toxin
           - <<: *i18n.common_noun
-            min: 89
-            max: 92
+            roll: { min: 89, max: 92 }
             text: Earth
           - <<: *i18n.common_noun
-            min: 93
-            max: 96
+            roll: { min: 93, max: 96 }
             text: Light
           - <<: *i18n.common_noun
-            min: 97
-            max: 100
+            roll: { min: 97, max: 100 }
             text: Denizen

@@ -22,16 +22,13 @@ oracles:
         type: oracle_rollable
         summary: Roll for a location when learning about a distant settlement. If you come upon a settlement in your travels, choose a location appropriate to your surroundings.
         rows:
-          - min: 1
-            max: 60
+          - roll: { min: 1, max: 60 }
             text: Shore
             text2: Where the land meets the sea
-          - min: 61
-            max: 80
+          - roll: { min: 61, max: 80 }
             text: Inland
             text2: Within the island interior
-          - min: 81
-            max: 100
+          - roll: { min: 81, max: 100 }
             text: Waterside
             text2: By an inland body of water
       aesthetics:
@@ -42,63 +39,49 @@ oracles:
         type: oracle_rollable
         summary: Use this table to reveal the ambiance and architecture of the settlement. Smaller settlements likely have a single style, while larger settlements might have multiple styles across sections or districts.
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         column_labels:
           roll: Roll
           text: Result
           text2: Detail
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: Ancient
             text2: Ancestral structures which have stood the test of time
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: Dismal
             text2: Gloomy, tightly-packed structures and shadowed paths
-          - min: 21
-            max: 25
+          - roll: { min: 21, max: 25 }
             text: Earthen
             text2: Carved into the terrain
-          - min: 26
-            max: 35
+          - roll: { min: 26, max: 35 }
             text: Foreboding
             text2: Structures with ornate, dramatic forms and cavernous interiors
-          - min: 36
-            max: 45
+          - roll: { min: 36, max: 45 }
             text: Fortified
             text2: Imposing structures hardened against assaults
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: Garish
             text2: Structures with tacky design and showy adornments
-          - min: 51
-            max: 55
+          - roll: { min: 51, max: 55 }
             text: Grand
             text2: Majestic structures with opulent details
-          - min: 56
-            max: 65
+          - roll: { min: 56, max: 65 }
             text: Idyllic
             text2: Organic forms and materials, at one with the landscape
-          - min: 66
-            max: 70
+          - roll: { min: 66, max: 70 }
             text: Industrial
             text2: Grim, utilitarian structures, built for function over form
-          - min: 71
-            max: 75
+          - roll: { min: 71, max: 75 }
             text: Makeshift
             text2: Temporary shelters for nomadic or displaced people
-          - min: 76
-            max: 85
+          - roll: { min: 76, max: 85 }
             text: Modest
             text2: Practical, charming structures
-          - min: 86
-            max: 95
+          - roll: { min: 86, max: 95 }
             text: Ramshackle
             text2: Haphazard structures using scavenged or repurposed materials
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Wondrous
             text2: Enigmatic structures of awe-inspiring design or function
 
@@ -112,140 +95,95 @@ oracles:
           sundered_isles:
             cursed_version: sundered_isles/oracles/settlements/first_look_cursed
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Adorned with colorful banners
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: Among sprawling trees
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Armed with archaic weapons
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Bisected by a wide waterway or ravine
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Blockaded or under siege
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Built on high ground
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Built over water
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Busy or overcrowded
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Chorus of ringing bells
-          - min: 19
-            max: 20
+          - roll: { min: 19, max: 20 }
             text: Colossal statue or monolith
-          - min: 21
-            max: 22
+          - roll: { min: 21, max: 22 }
             text: Concentric layout
-          - min: 23
-            max: 24
+          - roll: { min: 23, max: 24 }
             text: Connected by lofty bridges
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Conspicuous guardposts and patrols
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Decorated for a festival or celebration
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Defended by an imposing stronghold
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Displaying trophies of defeated foes
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Elevated structures and walkways
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Encampment of pilgrims or refugees
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Entrance via a colossal gate or archway
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: Expanding with new construction
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: Filled with song and music
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Garden-like setting
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Hastily improvised defenses
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Lanterns hung from every surface
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Major new project under construction
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Maze of canals
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Multi-level layout
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Numerous comings and goings
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Obvious signs of unrest
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: Partially destroyed by fire
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Prominent tower or lighthouse
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: Protected by stout walls
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Quiet or sparsely populated
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Scars of numerous attacks
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Sections or districts divided by barriers
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Shadowed by large terrain feature
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Signs of an occupying force
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Suffered severe storm damage
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Surrounded by rugged or dense terrain
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Under attack
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Veiled with a haze of mist or smoke
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Visited by large fleet or caravan
-          - min: 85
-            max: 90
+          - roll: { min: 85, max: 90 }
             text: Built among [Ruins](id:sundered_isles/collections/oracles/ruins)
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
             oracle_rolls:
               - auto: true
@@ -263,95 +201,65 @@ oracles:
             cursed_version_of:
               - sundered_isles/oracles/settlements/first_look
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Armed with sorcerous weapons
-          - min: 3
-            max: 6
+          - roll: { min: 3, max: 6 }
             text: Assailed by a monstrous beast
-          - min: 7
-            max: 10
+          - roll: { min: 7, max: 10 }
             text: Beset by swarms of monstrous creatures
-          - min: 11
-            max: 14
+          - roll: { min: 11, max: 14 }
             text: Besieged or invaded by a cursed faction
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Built among titanic bones
-          - min: 17
-            max: 20
+          - roll: { min: 17, max: 20 }
             text: Cloaked by a grim darkness
-          - min: 21
-            max: 22
+          - roll: { min: 21, max: 22 }
             text: Corpses displayed as a warning
-          - min: 23
-            max: 26
+          - roll: { min: 23, max: 26 }
             text: Cowering or reclusive inhabitants
-          - min: 27
-            max: 30
+          - roll: { min: 27, max: 30 }
             text: Dreadful phantom whispers
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Encrusted with barnacles or fungi
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: Exodus of fleeing inhabitants
-          - min: 37
-            max: 40
+          - roll: { min: 37, max: 40 }
             text: Festooned with bones and skulls
-          - min: 41
-            max: 44
+          - roll: { min: 41, max: 44 }
             text: Fetid, foul-colored water
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Giant burning pyre
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Glimpses of monstrous shadows
-          - min: 49
-            max: 52
+          - roll: { min: 49, max: 52 }
             text: Hordes of circling carrion birds
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Hung with thick strands of webbing
-          - min: 55
-            max: 58
+          - roll: { min: 55, max: 58 }
             text: Infernal machineworks and acrid smoke
-          - min: 59
-            max: 62
+          - roll: { min: 59, max: 62 }
             text: Ominous central structure
-          - min: 63
-            max: 66
+          - roll: { min: 63, max: 66 }
             text: Overpowering stench of decay
-          - min: 67
-            max: 70
+          - roll: { min: 67, max: 70 }
             text: Overtaken by malignant plants
-          - min: 71
-            max: 74
+          - roll: { min: 71, max: 74 }
             text: Shrouded by a clinging, persistent fog
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Sinister songs or chants
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             text: Sinking into the earth or sea
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Spectral structures of shifting form
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Suffused with eerie light
-          - min: 85
-            max: 88
+          - roll: { min: 85, max: 88 }
             text: Surrounded by blighted terrain
-          - min: 89
-            max: 92
+          - roll: { min: 89, max: 92 }
             text: Swarms of roosting bats
-          - min: 93
-            max: 96
+          - roll: { min: 93, max: 96 }
             text: Unsettling angles and labyrinthine paths
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: '[Cursed Weather](id:sundered_isles/oracles/weather/cursed)'
       cursed_focus:
         _source:
@@ -365,35 +273,25 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: Acting to fulfill a dreadful bargain
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: Bound to the service of a cursed power
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: Corrupted or sickened by the effects of a cursed location or relic
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: Desperately working in defiance of a cursed power
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: Enduring dreadful conditions
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Granted unusual abilities or resources by a cursed power
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: In zealous service of a cursed power
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: Lost lives or resources under the deprivations of a cursed power
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: Targeted by a cursed power
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: Unwittingly helping or unleashing a cursed power
       details:
         _source:
@@ -406,301 +304,204 @@ oracles:
           sundered_isles:
             cursed_version: sundered_isles/oracles/settlements/details_cursed
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: A valuable nearby resource is uncovered, and the race is on to claim or control it
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: A soothsayer warns of a calamitous event in the settlement's future
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: A pack of wild dogs roam the settlement
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: An important trade route is plagued by pirates or bandits
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Wanted posters, bearing sketches of the same face, are plastered on every corner
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Rooftop roosts are home to messenger birds
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: The settlement produces a unique and valuable good or service
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: A tradeship or caravan, loaded with goods from the isles and beyond, is due to arrive
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: An important resource or asset was sabotaged by an unknown culprit
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: A notable member of the community is gravely ill
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: A conflict between two prominent groups or families has boiled over
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: The locals favor a sneakily robust brew or spirit
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: A bladesmith crafts swords of unequal quality
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: A crucial expedition or mission is long overdue
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Locals speak of ill winds and a coming storm
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Mysterious fires plague the settlement
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Another people once lived in this place, but abandoned it for reasons unknown
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: A group of fisher folk or hunters recently returned with an unusual catch
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Faded bloodstains mar the stones of a central square
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: A section of the settlement is collapsing into an expanding sinkhole
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: An underworld figure wields influence from the shadows
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Residents sing a hymn or shanty which reveals something of this place’s dark history
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: The community has domesticated an unusual type of creature
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Among a certain class of citizens, the slightest insult leads to a duel
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: A notorious criminal is captured and awaiting punishment
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Nearby lands or waters have fallen barren
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Solemn funeral processions often snake their way through the streets
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: A mysterious traveler was found gravely injured outside the settlement
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: A powerful outside faction seeks control of a resource or industry
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: A high-stakes gambling hall operates out of a hidden backroom
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Motifs of a specific creature adorn the architecture
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: A building or location within the settlement is off-limits to outsiders
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: A fearsome creature or beast lairs nearby
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: A mysterious ship or caravan, here on a layover, is heavily guarded
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Workers are in revolt and an industry stalls
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Elaborate murals detail a key moment in the settlement's history
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: A masked vigilante has taken matters into their own hands
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: This place is prone to natural disasters
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: The residents are divided into rigid castes
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Local wildlife, given free reign by the residents, is a constant nuisance
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: The residents observe a daily ritual or remembrance
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: A rival faction seized nearby territory or resources
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: A vital expedition is in need of an escort
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: An ancient and inscrutable monument stands in the center of this settlement
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: A resident recently fled or escaped in the wake of a crime
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: A shadowy local fence can obtain nearly anything—for a price
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: The residents are anxious over a string of recent disappearances
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: This place offers a vibrant array of cultures and influences
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Leadership is in the midst of a power struggle
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: A local official is corrupt, but no one dares stand against them
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Provisions are ruined or in short supply
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: A nest of insurgents, conspiring against a powerful faction, operate or hide here
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: An artificer crafts elaborate prosthetic devices
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: A series of unexplained thefts baffle authorities
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Connections with a vital trading partner are severed
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: A notable member of the community is missing
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: The settlement is built above a complex network of caves or catacombs
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: The leadership is incompetent or incapacitated
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Refugees or outcasts from another community are seeking sanctuary
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: An exclusive social event is upcoming
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: An elaborate memorial marks the site of a historic tragedy or disaster
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Travelers or scouts report a military force is on the move nearby
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: A plague of vermin infests this place
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: A tattoo artist is famed for the quality of their designs and vibrancy of their inks
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Many residents are in debt to a ruthless loan shark
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: A prominent statue is vandalized and broken, its subject forsaken by the residents
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Preparations are underway for a major festival
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Buildings are defaced with a cryptic glyph
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: A troupe of visiting entertainers perform each night
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: A section of the settlement is sealed off or quarantined
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: An group of residents is shunned by others
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: A traveling alchemist promises miracle cures
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Artistic depictions of a venerated figure appear throughout the settlement
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: A new religious order is gaining an ardent following
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: A portion of the settlement lies abandoned
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Rumors swirl around the identity of a mysterious new visitor
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: This residents hold a long-standing grudge against a nearby community
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: An archive of books and charts, collected from all corners of the isle, is kept here
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Mysterious cloaked figures watch you, then scuttle away when you catch their gaze
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: A hallowed cultural or religious relic is missing
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: A cohort of dangerous-looking ruffians has arrived, their purpose unknown
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: A bounty hunter is hot on the trail of their target
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: A curio merchant sells strange and exclusive wares
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: This community owes a mounting debt to another settlement or faction
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: The smell of rich food and spices leads to a secluded market
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: An insurgency is brewing against the settlement's leadership or occupiers
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: A sickness is spreading
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: An impromptu memorial marks the site of a recent tragedy
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: A months-old crime goes unpunished, and the locals have no hope of justice
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: A resident desperately seeks escort or passage out of this place
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: A tournament is underway
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: An abandoned site marks the remains of a failed industry
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: A location or resource is said to have curative properties
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: The leaders are puppets for a greater power
-          - min: 95
-            max: 97
+          - roll: { min: 95, max: 97 }
             text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/action
               - auto: true
                 oracle: sundered_isles/oracles/core/theme
-          - min: 98
-            max: 100
+          - roll: { min: 98, max: 100 }
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
             oracle_rolls:
               - auto: true
@@ -718,200 +519,135 @@ oracles:
             cursed_version_of:
               - sundered_isles/oracles/settlements/details
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Gold coins and a pile of bones sit within the murky waters of an old well
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Plaintive cries, ignored by the residents, echo from within a sealed well
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Eerie lights gather outside the settlement on moonless nights
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: The stained glass windows of a temple depict unsettling scenes
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: A former garden is now a dark, thorny thicket; residents give it a wide berth
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Bells ring of their own accord
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: On the anniversary of a tragedy, a spectral procession moves through the streets
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Moonlight reveals inscriptions of dark secrets on gravestones
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: A gambling hall deals in soulbound stakes
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: An artificer crafts diabolical machines
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: A spreading sickness causes hideous deformities
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Back alleys and shadowy paths often lead to unexpected destinations
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Visitors are welcome here, but rarely leave
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Each night, a wretched phantom walks the same route through the settlement
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: A tavernkeeper's pet, an old parrot, speaks uncomfortable truths
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: This settlement is curiously without children
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Candlelight glimmers within a boarded-up building
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: A shop displays a menagerie of strange and dangerous creatures
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Something burrows below, undermining building foundations
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: A black hound with eyes of fire is often seen roaming the graveyard
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: A sorcerer claims the ability to bring the dead back to life—for a costly price
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Distant chants and drumming echo within the night
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Wind chimes, carved from bones, hang from the eaves
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Walls are scarred with bestial scratches
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Knocking and scratching is heard from within a sealed crypt or barrow
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: A tattooist creates works that are said to reveal something of the wearer's fate
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: A stubborn patch of blood never comes clean
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Oversized spiders scurry among the rafters
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: A statue weeps bloody tears
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: A reclusive resident is said to have lived here for centuries
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: A soothsayer wanders the streets, warning of impending doom
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: A nighttime market offers an array of wondrous and dreadful rarities
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: At night, sinister howls echo across the surrounding landscape
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Within a central square, unnatural darkness clings to a twisted tree
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: A mauled or blood-drained corpse was recently discovered
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: A monstrous beast lairs nearby
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Residents refuse to go into a nearby wood
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: This place is infested with unnaturally large rats
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Phantom, unintelligible whispers drift on the wind
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Lanterns and candles struggle to hold a flame
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Protective glyphs are carved upon outer walls or boundary stones
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Mystic symbols are etched into nearly every doorway
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: The water here is foul, but residents drink it willingly
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: The residents avoid venturing out into the strange mist that often blankets this place
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: A child's laughter and song rings out from no discernable source
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: An abandoned fort overlooks this place—but none dare enter
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: An apothecary crafts vile potions and poisons
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: A forlorn specter stands at the edge of the settlement, awaiting someone's return
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Mysterious disappearances are all too common
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: An ancient altar is stained with blood
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Laughter rings hollow among these people, and smiles never reach their eyes
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: An unsettling chill pervades the air around an abandoned building
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Plants do not flourish here
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Building surfaces and paths are slick with a creeping black moss
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: A mysterious visitor bears a silver blade, marking them as a monster hunter
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Residents whisper of a long-ago injustice, and the curse they bear for that collective sin
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Under moonlight, this place changes
-          - min: 85
-            max: 86
+          - roll: { min: 85, max: 86 }
             text: Residents and visitors share the same disturbing dream
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Carrion birds gather among the eaves, waiting
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Ghosts haunt a prominent establishment
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: A religious movement is outwardly benevolent, but residents whisper of secret motives
-          - min: 93
-            max: 94
+          - roll: { min: 93, max: 94 }
             text: Residents sing a hymn or shanty which reveals something of this place's dark history
-          - min: 95
-            max: 96
+          - roll: { min: 95, max: 96 }
             text: The sun doesn't rise as it should with the dawn
-          - min: 97
-            max: 98
+          - roll: { min: 97, max: 98 }
             text: Mysterious cloaked figures watch you, then scuttle away when you catch their gaze
-          - min: 99
-            max: 100
+          - roll: { min: 99, max: 100 }
             text: Large cockroaches boil from hidden spaces
     collections:
       size:
@@ -944,40 +680,32 @@ oracles:
               - <<: &Size.0
                   text: Village or outpost
                   text2: Dozens
-                min: 1
-                max: 30
+                roll: { min: 1, max: 30 }
               - <<: &Size.1
                   text: Town
                   text2: Hundreds
-                min: 31
-                max: 70
+                roll: { min: 31, max: 70 }
               - <<: &Size.2
                   text: City
                   text2: Thousands
-                min: 71
-                max: 98
+                roll: { min: 71, max: 98 }
               - <<: &Size.3
                   text: City-state
                   text2: Tens of thousands
-                min: 99
-                max: 100
+                roll: { min: 99, max: 100 }
           margins:
             name: Margins
             summary: Outer Seas
             oracle_type: column_text2
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 40
+              - roll: { min: 1, max: 40 }
                 <<: *Size.0
-              - min: 41
-                max: 75
+              - roll: { min: 41, max: 75 }
                 <<: *Size.1
-              - min: 76
-                max: 98
+              - roll: { min: 76, max: 98 }
                 <<: *Size.2
-              - min: 99
-                max: 100
+              - roll: { min: 99, max: 100 }
                 <<: *Size.3
           reaches:
             name: Reaches
@@ -985,17 +713,13 @@ oracles:
             oracle_type: column_text2
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 50
+              - roll: { min: 1, max: 50 }
                 <<: *Size.0
-              - min: 51
-                max: 80
+              - roll: { min: 51, max: 80 }
                 <<: *Size.1
-              - min: 81
-                max: 98
+              - roll: { min: 81, max: 98 }
                 <<: *Size.2
-              - min: 99
-                max: 100
+              - roll: { min: 99, max: 100 }
                 <<: *Size.3
       identity:
         _source:
@@ -1018,24 +742,19 @@ oracles:
                 oracle_type: column_text
                 type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 60
+                  - roll: { min: 1, max: 60 }
                     <<: &ControllingFaction.0
                       text: Known faction
-                  - min: 61
-                    max: 75
+                  - roll: { min: 61, max: 75 }
                     <<: &ControllingFaction.1
                       text: Unknown faction
-                  - min: 76
-                    max: 90
+                  - roll: { min: 76, max: 90 }
                     <<: &ControllingFaction.2
                       text: Independent
-                  - min: 91
-                    max: 95
+                  - roll: { min: 91, max: 95 }
                     <<: &ControllingFaction.3
                       text: Factions in cooperation
-                  - min: 96
-                    max: 100
+                  - roll: { min: 96, max: 100 }
                     <<: &ControllingFaction.4
                       text: Factions in conflict
               margins:
@@ -1044,20 +763,15 @@ oracles:
                 oracle_type: column_text
                 type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 45
+                  - roll: { min: 1, max: 45 }
                     <<: *ControllingFaction.0
-                  - min: 46
-                    max: 65
+                  - roll: { min: 46, max: 65 }
                     <<: *ControllingFaction.1
-                  - min: 66
-                    max: 90
+                  - roll: { min: 66, max: 90 }
                     <<: *ControllingFaction.2
-                  - min: 91
-                    max: 95
+                  - roll: { min: 91, max: 95 }
                     <<: *ControllingFaction.3
-                  - min: 96
-                    max: 100
+                  - roll: { min: 96, max: 100 }
                     <<: *ControllingFaction.4
               reaches:
                 name: Reaches
@@ -1065,20 +779,15 @@ oracles:
                 oracle_type: column_text
                 type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 30
+                  - roll: { min: 1, max: 30 }
                     <<: *ControllingFaction.0
-                  - min: 31
-                    max: 55
+                  - roll: { min: 31, max: 55 }
                     <<: *ControllingFaction.1
-                  - min: 56
-                    max: 90
+                  - roll: { min: 56, max: 90 }
                     <<: *ControllingFaction.2
-                  - min: 91
-                    max: 95
+                  - roll: { min: 91, max: 95 }
                     <<: *ControllingFaction.3
-                  - min: 96
-                    max: 100
+                  - roll: { min: 96, max: 100 }
                     <<: *ControllingFaction.4
           focus:
             _source:
@@ -1097,189 +806,152 @@ oracles:
                 oracle_type: column_text2
                 type: oracle_rollable
                 rows:
-                  - min: 1
-                    max: 3
+                  - roll: { min: 1, max: 3 }
                     <<: &Focus.0
                       text: Piracy
                       text2: Pirate court, smuggler dens, taverns
-                  - min: 4
-                    max: 9
+                  - roll: { min: 4, max: 9 }
                     <<: &Focus.1
                       text: Shipbuilding
                       text2: Dry docks, lumber mills, shipwrights
-                  - min: 10
-                    max: 12
+                  - roll: { min: 10, max: 12 }
                     <<: &Focus.2
                       text: Whaling
                       text2: Whaling ships, processing plants, wharfs
-                  - min: 13
-                    max: 14
+                  - roll: { min: 13, max: 14 }
                     <<: &Focus.3
                       text: Wrecking
                       text2: Ship graveyard
-                  - min: 15
-                    max: 22
+                  - roll: { min: 15, max: 22 }
                     <<: &Focus.4
                       text: Fishing
                       text2: Boatwrights, fishmongers, net makers
-                  - min: 23
-                    max: 24
+                  - roll: { min: 23, max: 24 }
                     <<: &Focus.5
                       text: Alcohol Production
                       text2:  Breweries, distilleries, wineries
-                  - min: 25
-                    max: 25
+                  - roll: { min: 25, max: 25 }
                     <<: &Focus.6
                       text: Archeology
                       text2: Excavation sites, field camps, relic hunters
-                  - min: 26
-                    max: 27
+                  - roll: { min: 26, max: 27 }
                     <<: &Focus.7
                       text: Crafts
                       text2: Artisans, markets, workshops
-                  - min: 28
-                    max: 29
+                  - roll: { min: 28, max: 29 }
                     <<: &Focus.8
                       text: Culture
                       text2: Archives, festivals, historical sites
-                  - min: 30
-                    max: 35
+                  - roll: { min: 30, max: 35 }
                     <<: &Focus.9
                       text: Defense
                       text2: Armories, fortifications, militia
-                  - min: 36
-                    max: 36
+                  - roll: { min: 36, max: 36 }
                     <<: &Focus.10
                       text: Dueling
                       text2: Dueling grounds, fencing schools
-                  - min: 37
-                    max: 38
+                  - roll: { min: 37, max: 38 }
                     <<: &Focus.11
                       text: Education
                       text2: Libraries, universities
-                  - min: 39
-                    max: 40
+                  - roll: { min: 39, max: 40 }
                     <<: &Focus.12
                       text: Entertainment
                       text2: Arenas, fairs, street performers, theaters
-                  - min: 41
-                    max: 42
+                  - roll: { min: 41, max: 42 }
                     <<: &Focus.13
                       text: Espionage
                       text2: Assassin guild, spy network
-                  - min: 43
-                    max: 44
+                  - roll: { min: 43, max: 44 }
                     <<: &Focus.14
                       text: Exploration
                       text2: Navigators guild, outfitters, scouts
-                  - min: 45
-                    max: 48
+                  - roll: { min: 45, max: 48 }
                     <<: &Focus.15
                       text: Farming
                       text2: Fields, granaries, mills, orchards
-                  - min: 49
-                    max: 54
+                  - roll: { min: 49, max: 54 }
                     <<: &Focus.16
                       text: Hospitality
                       text2: Bath houses, brothels, inns, taverns
-                  - min: 55
-                    max: 55
+                  - roll: { min: 55, max: 55 }
                     <<: &Focus.17
                       text: Hunting
                       text2: Animal trainers, tanners, taxidermists,
-                  - min: 56
-                    max: 57
+                  - roll: { min: 56, max: 57 }
                     <<: &Focus.18
                       text: Law
                       text2: Courts, gallows, patrols, prisons
-                  - min: 58
-                    max: 58
+                  - roll: { min: 58, max: 58 }
                     <<: &Focus.19
                       text: Livestock / horses
                       text2: Ranches, slaughterhouses, stables
-                  - min: 59
-                    max: 59
+                  - roll: { min: 59, max: 59 }
                     <<: &Focus.20
                       text: Logging
                       text2: Logging camps, sawmills
-                  - min: 60
-                    max: 61
+                  - roll: { min: 60, max: 61 }
                     <<: &Focus.21
                       text: Medicine
                       text2: Apothecaries, herbalists, infirmaries
-                  - min: 62
-                    max: 62
+                  - roll: { min: 62, max: 62 }
                     <<: &Focus.22
                       text: Metalworking
                       text2: Artificers, blacksmiths, forges
-                  - min: 63
-                    max: 63
+                  - roll: { min: 63, max: 63 }
                     <<: &Focus.23
                       text: Mining
                       text2: Foundries, mines, smelters
-                  - min: 64
-                    max: 65
+                  - roll: { min: 64, max: 65 }
                     <<: &Focus.24
                       text: Mysticism
                       text2: Alchemists, curio dealers, enclaves, mystics
-                  - min: 66
-                    max: 66
+                  - roll: { min: 66, max: 66 }
                     <<: &Focus.25
                       text: Nature
                       text2: Animal sanctuaries, gardens, groves
-                  - min: 67
-                    max: 68
+                  - roll: { min: 67, max: 68 }
                     <<: &Focus.26
                       text: Religion
                       text2: Monasteries, sacred sites, temples
-                  - min: 69
-                    max: 70
+                  - roll: { min: 69, max: 70 }
                     <<: &Focus.27
                       text: Science
                       text2: Academies, naturalist guild, observatories
-                  - min: 71
-                    max: 73
+                  - roll: { min: 71, max: 73 }
                     <<: &Focus.28
                       text: Smuggling
                       text2: Black market, fences, smugglers
-                  - min: 74
-                    max: 75
+                  - roll: { min: 74, max: 75 }
                     <<: &Focus.29
                       text: Society
                       text2: Balls, boutiques, social clubs, tailors
-                  - min: 76
-                    max: 77
+                  - roll: { min: 76, max: 77 }
                     <<: &Focus.30
                       text: Statecraft
                       text2: Embassies, envoys, court or council
-                  - min: 78
-                    max: 78
+                  - roll: { min: 78, max: 78 }
                     <<: &Focus.31
                       text: Stoneworking
                       text2: Masons, quarries, stone yards
-                  - min: 79
-                    max: 86
+                  - roll: { min: 79, max: 86 }
                     <<: &Focus.32
                       text: Trade
                       text2: Auction house, markets, merchant guild
-                  - min: 87
-                    max: 89
+                  - roll: { min: 87, max: 89 }
                     <<: &Focus.33
                       text: Vices
                       text2: Brothels, drug dens, gambling halls, taverns
-                  - min: 90
-                    max: 93
+                  - roll: { min: 90, max: 93 }
                     <<: &Focus.34
                       text: Warfare
                       text2: Armies or fleets, command post, forts
-                  - min: 94
-                    max: 95
+                  - roll: { min: 94, max: 95 }
                     <<: &Focus.35
                       text: Weaponry
                       text2: Cannon foundries, gunsmiths, powder mills
                   - &Focus.36
-                    min: 96
-                    max: 100
+                    roll: { min: 96, max: 100 }
                     text2: null
                     text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
                     oracle_rolls:
@@ -1296,101 +968,69 @@ oracles:
                   - *Focus.1
                   - *Focus.2
                   - *Focus.3
-                  - min: 1
-                    max: 12
+                  - roll: { min: 1, max: 12 }
                     <<: *Focus.4
-                  - min: 13
-                    max: 14
+                  - roll: { min: 13, max: 14 }
                     <<: *Focus.5
-                  - min: 15
-                    max: 15
+                  - roll: { min: 15, max: 15 }
                     <<: *Focus.6
-                  - min: 16
-                    max: 17
+                  - roll: { min: 16, max: 17 }
                     <<: *Focus.7
-                  - min: 18
-                    max: 20
+                  - roll: { min: 18, max: 20 }
                     <<: *Focus.8
-                  - min: 21
-                    max: 24
+                  - roll: { min: 21, max: 24 }
                     <<: *Focus.9
-                  - min: 25
-                    max: 25
+                  - roll: { min: 25, max: 25 }
                     <<: *Focus.10
-                  - min: 26
-                    max: 27
+                  - roll: { min: 26, max: 27 }
                     <<: *Focus.11
-                  - min: 28
-                    max: 28
+                  - roll: { min: 28, max: 28 }
                     <<: *Focus.12
-                  - min: 29
-                    max: 29
+                  - roll: { min: 29, max: 29 }
                     <<: *Focus.13
-                  - min: 30
-                    max: 31
+                  - roll: { min: 30, max: 31 }
                     <<: *Focus.14
-                  - min: 32
-                    max: 39
+                  - roll: { min: 32, max: 39 }
                     <<: *Focus.15
-                  - min: 40
-                    max: 43
+                  - roll: { min: 40, max: 43 }
                     <<: *Focus.16
-                  - min: 44
-                    max: 46
+                  - roll: { min: 44, max: 46 }
                     <<: *Focus.17
-                  - min: 47
-                    max: 47
+                  - roll: { min: 47, max: 47 }
                     <<: *Focus.18
-                  - min: 48
-                    max: 51
+                  - roll: { min: 48, max: 51 }
                     <<: *Focus.19
-                  - min: 52
-                    max: 57
+                  - roll: { min: 52, max: 57 }
                     <<: *Focus.20
-                  - min: 58
-                    max: 59
+                  - roll: { min: 58, max: 59 }
                     <<: *Focus.21
-                  - min: 60
-                    max: 63
+                  - roll: { min: 60, max: 63 }
                     <<: *Focus.22
-                  - min: 64
-                    max: 67
+                  - roll: { min: 64, max: 67 }
                     <<: *Focus.23
-                  - min: 68
-                    max: 69
+                  - roll: { min: 68, max: 69 }
                     <<: *Focus.24
-                  - min: 70
-                    max: 71
+                  - roll: { min: 70, max: 71 }
                     <<: *Focus.25
-                  - min: 72
-                    max: 73
+                  - roll: { min: 72, max: 73 }
                     <<: *Focus.26
-                  - min: 74
-                    max: 75
+                  - roll: { min: 74, max: 75 }
                     <<: *Focus.27
-                  - min: 76
-                    max: 77
+                  - roll: { min: 76, max: 77 }
                     <<: *Focus.28
-                  - min: 78
-                    max: 78
+                  - roll: { min: 78, max: 78 }
                     <<: *Focus.29
-                  - min: 79
-                    max: 79
+                  - roll: { min: 79, max: 79 }
                     <<: *Focus.30
-                  - min: 80
-                    max: 83
+                  - roll: { min: 80, max: 83 }
                     <<: *Focus.31
-                  - min: 84
-                    max: 89
+                  - roll: { min: 84, max: 89 }
                     <<: *Focus.32
-                  - min: 90
-                    max: 91
+                  - roll: { min: 90, max: 91 }
                     <<: *Focus.33
-                  - min: 92
-                    max: 93
+                  - roll: { min: 92, max: 93 }
                     <<: *Focus.34
-                  - min: 94
-                    max: 95
+                  - roll: { min: 94, max: 95 }
                     <<: *Focus.35
                   - *Focus.36
               waterside:
@@ -1403,98 +1043,67 @@ oracles:
                   - *Focus.2
                   - *Focus.3
                   - *Focus.4
-                  - min: 1
-                    max: 2
+                  - roll: { min: 1, max: 2 }
                     <<: *Focus.5
-                  - min: 3
-                    max: 3
+                  - roll: { min: 3, max: 3 }
                     <<: *Focus.6
-                  - min: 4
-                    max: 5
+                  - roll: { min: 4, max: 5 }
                     <<: *Focus.7
-                  - min: 6
-                    max: 1
+                  - roll: { min: 6, max: 1 }
                     <<: *Focus.8
-                  - min: 12
-                    max: 13
+                  - roll: { min: 12, max: 13 }
                     <<: *Focus.9
-                  - min: 14
-                    max: 14
+                  - roll: { min: 14, max: 14 }
                     <<: *Focus.10
-                  - min: 15
-                    max: 16
+                  - roll: { min: 15, max: 16 }
                     <<: *Focus.11
-                  - min: 17
-                    max: 17
+                  - roll: { min: 17, max: 17 }
                     <<: *Focus.12
-                  - min: 18
-                    max: 18
+                  - roll: { min: 18, max: 18 }
                     <<: *Focus.13
-                  - min: 19
-                    max: 20
+                  - roll: { min: 19, max: 20 }
                     <<: *Focus.14
-                  - min: 21
-                    max: 32
+                  - roll: { min: 21, max: 32 }
                     <<: *Focus.15
-                  - min: 33
-                    max: 34
+                  - roll: { min: 33, max: 34 }
                     <<: *Focus.16
-                  - min: 35
-                    max: 40
+                  - roll: { min: 35, max: 40 }
                     <<: *Focus.17
-                  - min: 41
-                    max: 41
+                  - roll: { min: 41, max: 41 }
                     <<: *Focus.18
-                  - min: 42
-                    max: 49
+                  - roll: { min: 42, max: 49 }
                     <<: *Focus.19
-                  - min: 50
-                    max: 53
+                  - roll: { min: 50, max: 53 }
                     <<: *Focus.20
-                  - min: 54
-                    max: 55
+                  - roll: { min: 54, max: 55 }
                     <<: *Focus.21
-                  - min: 56
-                    max: 61
+                  - roll: { min: 56, max: 61 }
                     <<: *Focus.22
-                  - min: 62
-                    max: 67
+                  - roll: { min: 62, max: 67 }
                     <<: *Focus.23
-                  - min: 68
-                    max: 69
+                  - roll: { min: 68, max: 69 }
                     <<: *Focus.24
-                  - min: 70
-                    max: 71
+                  - roll: { min: 70, max: 71 }
                     <<: *Focus.25
-                  - min: 72
-                    max: 73
+                  - roll: { min: 72, max: 73 }
                     <<: *Focus.26
-                  - min: 74
-                    max: 75
+                  - roll: { min: 74, max: 75 }
                     <<: *Focus.27
-                  - min: 76
-                    max: 76
+                  - roll: { min: 76, max: 76 }
                     <<: *Focus.28
-                  - min: 77
-                    max: 77
+                  - roll: { min: 77, max: 77 }
                     <<: *Focus.29
-                  - min: 78
-                    max: 78
+                  - roll: { min: 78, max: 78 }
                     <<: *Focus.30
-                  - min: 79
-                    max: 84
+                  - roll: { min: 79, max: 84 }
                     <<: *Focus.31
-                  - min: 85
-                    max: 90
+                  - roll: { min: 85, max: 90 }
                     <<: *Focus.32
-                  - min: 91
-                    max: 91
+                  - roll: { min: 91, max: 91 }
                     <<: *Focus.33
-                  - min: 92
-                    max: 93
+                  - roll: { min: 92, max: 93 }
                     <<: *Focus.34
-                  - min: 94
-                    max: 95
+                  - roll: { min: 94, max: 95 }
                     <<: *Focus.35
                   - *Focus.36
         contents:
@@ -1505,35 +1114,25 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: Hostile
-              - min: 6
-                max: 15
+              - roll: { min: 6, max: 15 }
                 text: Threatening
-              - min: 16
-                max: 25
+              - roll: { min: 16, max: 25 }
                 text: Demanding
-              - min: 26
-                max: 35
+              - roll: { min: 26, max: 35 }
                 text: Unwelcoming
-              - min: 36
-                max: 50
+              - roll: { min: 36, max: 50 }
                 text: Wary
-              - min: 51
-                max: 65
+              - roll: { min: 51, max: 65 }
                 text: Indifferent
-              - min: 66
-                max: 75
+              - roll: { min: 66, max: 75 }
                 text: In need
-              - min: 76
-                max: 85
+              - roll: { min: 76, max: 85 }
                 text: Welcoming
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 text: Friendly
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Helpful
           authority:
             _source:
@@ -1542,33 +1141,23 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Ruthless
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Oppressive
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 text: Corrupt
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 text: Firm
-              - min: 41
-                max: 50
+              - roll: { min: 41, max: 50 }
                 text: Lawless
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 text: Disputed
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 text: Ambivalent
-              - min: 71
-                max: 80
+              - roll: { min: 71, max: 80 }
                 text: Fair
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 text: Protective
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Benevolent

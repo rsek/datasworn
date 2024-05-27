@@ -14,18 +14,15 @@ truths:
         url: https://ironswornrpg.com
     summary: How did the isles earn their name?
     options:
-      - min: 1
-        max: 33
+      - roll: { min: 1, max: 33 }
         summary: A great war left horrible scars upon the isles.
         description: A generations-old war is only recently ended, and the reminders of that fruitless conflict are all around us. Islands wracked by destruction, seas tainted, people displaced. The cost is immeasurable, but some still squabble over what remains. War, it seems, never changes.
         quest_starter: A people, displaced by war, live on a remote island. A recent illness left many sick or dead. Supplies are urgently needed. Why do you swear to give them aid? Who stands against you, and why?
-      - min: 34
-        max: 67
+      - roll: { min: 34, max: 67 }
         summary: Eons ago, a vast cataclysm shattered continents.
         description: Lands broke apart in an apocalyptic disaster. Powerful cities fell. Fire, lava, and ash scoured what remained. The isles, scattered like broken shards, are the vestiges of these once-great lands, the gravestones of a fallen dominion. Life eventually returned to this realm, but the ancient wounds do not fully heal.
         quest_starter: You are haunted by dreams of this ancient cataclysm. In those dreams, you see a grand library of unfathomable scope, the collected knowledge of lost people and fallen dominions. What do you seek within this repository? Where does your quest begin?
-      - min: 68
-        max: 100
+      - roll: { min: 68, max: 100 }
         summary: Strange technologies unleashed a reality-fracturing wave of chaotic energy, forever reshaping the isles.
         description: An ambitious few dabbled in ancient secrets, and in doing so, ruptured time and space itself. Strange energies flowed into our world, allowing uncanny phenomena to take hold. Science and magic took new forms. People and creatures of other realms were cast into our own like jetsam in a turbulent tide. The isles are forever altered by the curse of these clashing realities.
         quest_starter: An explorer brings news. They’ve located what they say is a nexus of chaotic energy. If it could be deactivated, the isles might find some measure of peace. Which power or foe seeks to harness this energy to their own ends?

@@ -23,48 +23,41 @@ oracles:
         oracle_type: table_text2
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 30
+          - roll: { min: 1, max: 30 }
             text: Small
             text2: |-
               Rigging: 	One or two masts
               Crew:  	5–50
               Rank:  	Troublesome
               Examples:	 Cutter, Sloop
-          - min: 31
-            max: 55
+          - roll: { min: 31, max: 55 }
             text: Medium
             text2: |-
               Rigging: 	Two or three masts
               Crew:  	50–200
               Rank:  	Dangerous
               Examples: 	Corvette, Schooner
-          - min: 56
-            max: 75
+          - roll: { min: 56, max: 75 }
             text: Large
             text2: |-
               Rigging: 	Three or more masts
               Crew:  	200–500
               Rank:  	Formidable
               Examples:	 Frigate, Galleon
-          - min: 76
-            max: 85
+          - roll: { min: 76, max: 85 }
             text: Colossal
             text2: |-
               Rigging: 	Four or more masts
               Crew:  	500–1000
               Rank:  	Extreme
               Examples:	 Dreadnought, Titan
-          - min: 86
-            max: 95
+          - roll: { min: 86, max: 95 }
             text: Flotilla
             text2: Medium flagship and a few other ships
-          - min: 96
-            max: 99
+          - roll: { min: 96, max: 99 }
             text: Fleet
             text2: Large flagship and many other ships
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Armada
             text2: Colossal flagship and countless other ships
       first_look:
@@ -74,119 +67,81 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Accompanied by creatures
-          - min: 3
-            max: 5
+          - roll: { min: 3, max: 5 }
             text: Adorned with colorful banners
-          - min: 6
-            max: 8
+          - roll: { min: 6, max: 8 }
             text: Armed with archaic weapons
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Armed with mechanized weapons
-          - min: 11
-            max: 13
+          - roll: { min: 11, max: 13 }
             text: Armored prow or ram
-          - min: 14
-            max: 16
+          - roll: { min: 14, max: 16 }
             text: Battle-scarred hull
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Beast-hide sails
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Black hull and sails
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Blood-red sails
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Boarding prow or ramp
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Brightly-colored sails
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Constructed of unusual wood
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Displaying trophies of defeated foes
-          - min: 35
-            max: 37
+          - roll: { min: 35, max: 37 }
             text: Elaborately carved hull
-          - min: 38
-            max: 40
+          - roll: { min: 38, max: 40 }
             text: Famous or infamous vessel
-          - min: 41
-            max: 43
+          - roll: { min: 41, max: 43 }
             text: Gilded adornments and fittings
-          - min: 44
-            max: 46
+          - roll: { min: 44, max: 46 }
             text: Grandiose or imposing figurehead
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Hidden gunports
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Hung with lanterns
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Ironclad hull
-          - min: 53
-            max: 55
+          - roll: { min: 53, max: 55 }
             text: Large harpoon cannon
-          - min: 56
-            max: 57
+          - roll: { min: 56, max: 57 }
             text: Low-profile or shallow draft
-          - min: 58
-            max: 59
+          - roll: { min: 58, max: 59 }
             text: Mechanized propulsion
-          - min: 60
-            max: 61
+          - roll: { min: 60, max: 61 }
             text: Numerous launch boats
-          - min: 62
-            max: 64
+          - roll: { min: 62, max: 64 }
             text: Overgunned
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Overloaded or deep draft
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Painted hull
-          - min: 70
-            max: 71
+          - roll: { min: 70, max: 71 }
             text: Propelled or aided by oars
-          - min: 72
-            max: 74
+          - roll: { min: 72, max: 74 }
             text: Ramshackle construction or repairs
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Ravaged by fire
-          - min: 77
-            max: 79
+          - roll: { min: 77, max: 79 }
             text: Sails emblazoned with insignias
-          - min: 80
-            max: 81
+          - roll: { min: 80, max: 81 }
             text: Submersible
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Tall enclosed superstructure
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Torn sails and broken rigging
-          - min: 88
-            max: 89
+          - roll: { min: 88, max: 89 }
             text: Towing another ship
-          - min: 90
-            max: 92
+          - roll: { min: 90, max: 92 }
             text: Twin-hulled (catamaran)
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             text: Undergunned or unarmed
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_first_look:
         name: Cursed First Look
@@ -195,101 +150,69 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Accompanied by a monstrous beast
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Adorned with arcane symbols
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: Alight with unnatural flames
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Animate figurehead
-          - min: 13
-            max: 15
+          - roll: { min: 13, max: 15 }
             text: Arcane propulsion
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Bone-wrought hull
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Cloaked by smoke and ash
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Corpses hung from the rigging
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Draped with seawood
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Drowned or abyssal crew
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Eerie green illumination
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Encrusted with sea life
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Festooned with bones or skulls
-          - min: 40
-            max: 42
+          - roll: { min: 40, max: 42 }
             text: Flying or floating
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Illusionary or spectral form
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Malignant growths
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Maw-like prow
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Mechanized transformation
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Mechanized weaponry
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Mistlike sails
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Overpowering stench of decay
-          - min: 64
-            max: 67
+          - roll: { min: 64, max: 67 }
             text: Rotting hull and sails
-          - min: 68
-            max: 70
+          - roll: { min: 68, max: 70 }
             text: Sailing without a crew
-          - min: 71
-            max: 74
+          - roll: { min: 71, max: 74 }
             text: Sinister songs or chants
-          - min: 75
-            max: 77
+          - roll: { min: 75, max: 77 }
             text: Sorcerous weaponry
-          - min: 78
-            max: 80
+          - roll: { min: 78, max: 80 }
             text: Swarming with bats or carrion birds
-          - min: 81
-            max: 83
+          - roll: { min: 81, max: 83 }
             text: Tattered sails
-          - min: 84
-            max: 87
+          - roll: { min: 84, max: 87 }
             text: Teleporting
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Trail of blood in its wake
-          - min: 91
-            max: 93
+          - roll: { min: 91, max: 93 }
             text: Undead crew
-          - min: 94
-            max: 97
+          - roll: { min: 94, max: 97 }
             text: Wreathed in misty cold
-          - min: 98
-            max: 100
+          - roll: { min: 98, max: 100 }
             text: Shadowed by [Cursed Weather](id:sundered_isles/oracles/weather/cursed)
       symbol:
         name: Symbol
@@ -298,149 +221,101 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Albatross or gull
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: Angelic figure
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Bear
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Bull
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Celestial object
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Crossed weapons
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Crown or crest
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Divine figure
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Dolphin or porpoise
-          - min: 19
-            max: 20
+          - roll: { min: 19, max: 20 }
             text: Dragon
-          - min: 21
-            max: 22
+          - roll: { min: 21, max: 22 }
             text: Eagle or hawk
-          - min: 23
-            max: 24
+          - roll: { min: 23, max: 24 }
             text: Fish
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Flames
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Gorgon
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Griffin
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Holy symbol
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Horse
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Hound
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Jungle cat
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: Lion
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: Maiden Figure
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Martyred figure
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Memorialized figure
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Mermaid
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Multi-headed hydra
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Mystical Figure
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Noble figure
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Octopus or squid
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Phoenix
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: Ram
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Raven or crow
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: Scorpion
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Sea turtle
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Seahorse
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Serpent
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Shark
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Shield
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Skull and bones
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Swan
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Tree
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Unicorn
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Vulture
-          - min: 85
-            max: 86
+          - roll: { min: 85, max: 86 }
             text: Warrior Figure
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Waves
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Whale
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: Winged horse
-          - min: 93
-            max: 94
+          - roll: { min: 93, max: 94 }
             text: Wolf
-          - min: 95
-            max: 100
+          - roll: { min: 95, max: 100 }
             text: Roll twice
       cursed_symbol:
         name: Cursed Symbol
@@ -449,41 +324,29 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: Demonic figure
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: Eldritch being
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: Fanged skull
-          - min: 31
-            max: 35
+          - roll: { min: 31, max: 35 }
             text: Gargoyle
-          - min: 36
-            max: 45
+          - roll: { min: 36, max: 45 }
             text: Grim reaper
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: Headless figure
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Kraken or tentacles
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: Menacing Skeleton
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: Monstrous claw
-          - min: 81
-            max: 85
+          - roll: { min: 81, max: 85 }
             text: Monstrous eye
-          - min: 86
-            max: 95
+          - roll: { min: 86, max: 95 }
             text: Monstrous skull or jaws
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Spider
       cursed_mission:
         name: Cursed Ship Mission
@@ -494,29 +357,21 @@ oracles:
           # TODO: additive curse
         summary: If you roll a Ship Mission curse, take your result on that table and envision an uncanny or dreadful aspect. For details on how the ship or its mission relates to a cursed power, use the table below.
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: Acting to fulfill a dreadful bargain
-          - min: 16
-            max: 25
+          - roll: { min: 16, max: 25 }
             text: Bound unwillingly to the service of a cursed power
-          - min: 26
-            max: 35
+          - roll: { min: 26, max: 35 }
             text: Corrupted or sickened by the effects of a cursed ship or relic
-          - min: 36
-            max: 50
+          - roll: { min: 36, max: 50 }
             text: Desperately working in defiance of a cursed power
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Granted unusual abilities or resources by a cursed power
-          - min: 61
-            max: 75
+          - roll: { min: 61, max: 75 }
             text: In zealous service of a cursed power
-          - min: 76
-            max: 90
+          - roll: { min: 76, max: 90 }
             text: Suffering under the deprivations of a cursed captain
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: Unwittingly helping or unleashing a cursed power
       revaled_aspects:
         name: Revaled Aspects
@@ -526,119 +381,81 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Animal mascot
-          - min: 4
-            max: 5
+          - roll: { min: 4, max: 5 }
             text: Archive of books and charts
-          - min: 6
-            max: 8
+          - roll: { min: 6, max: 8 }
             text: Bloodstained deck
-          - min: 9
-            max: 11
+          - roll: { min: 9, max: 11 }
             text: Booby-trapped
-          - min: 12
-            max: 14
+          - roll: { min: 12, max: 14 }
             text: Carrying passengers
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Deck-clearing swivel cannons
-          - min: 17
-            max: 19
+          - roll: { min: 17, max: 19 }
             text: Empty cargo hold
-          - min: 20
-            max: 21
+          - roll: { min: 20, max: 21 }
             text: Extravagant furnishings and fittings
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Famed mariner serving aboard
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Fanatically loyal crew
-          - min: 27
-            max: 29
+          - roll: { min: 27, max: 29 }
             text: Full cargo hold
-          - min: 30
-            max: 32
+          - roll: { min: 30, max: 32 }
             text: Hidden cargo
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Hidden reinforcements
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Hidden stowaway
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Hidden workings or capabilities
-          - min: 40
-            max: 41
+          - roll: { min: 40, max: 41 }
             text: Holding prisoners
-          - min: 42
-            max: 43
+          - roll: { min: 42, max: 43 }
             text: Hung with charms and talismans
-          - min: 44
-            max: 45
+          - roll: { min: 44, max: 45 }
             text: Immaculately maintained
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: In general disrepair
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Infamous or famous captain
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Locked or barred compartments
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Low on provisions
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Mutinous crew
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Operating as a diversion
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: Operating under a false identity
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Overcrowded sickbay
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Palatial captain's cabin
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Plentiful provisions
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Stolen or captured ship
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Strife among the crew
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Undermanned
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Unexpected reveal of an acquaintance
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Venerable ship with a long history
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Well-stocked armory
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Without a commander
-          - min: 88
-            max: 91
+          - roll: { min: 88, max: 91 }
             text: Unexpected [Mission]
-          - min: 92
-            max: 95
+          - roll: { min: 92, max: 95 }
             text: '[Ship Damage]'
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
       cursed_aspects:
         name: Cursed Aspects
@@ -647,83 +464,57 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Bloody trail leads belowdecks
-          - min: 6
-            max: 10
+          - roll: { min: 6, max: 10 }
             text: Crawling with insects
-          - min: 11
-            max: 15
+          - roll: { min: 11, max: 15 }
             text: Crew held in thrall to sorcerous powers
-          - min: 16
-            max: 20
+          - roll: { min: 16, max: 20 }
             text: Diseased or corrupted crew
-          - min: 21
-            max: 23
+          - roll: { min: 21, max: 23 }
             text: Dreadful phantom whispers
-          - min: 24
-            max: 26
+          - roll: { min: 24, max: 26 }
             text: Fearsome creatures among the shadows
-          - min: 27
-            max: 29
+          - roll: { min: 27, max: 29 }
             text: Illusionary facade
-          - min: 30
-            max: 32
+          - roll: { min: 30, max: 32 }
             text: Lower decks strung with webs
-          - min: 33
-            max: 35
+          - roll: { min: 33, max: 35 }
             text: Marked with sorcerous glyphs
-          - min: 36
-            max: 40
+          - roll: { min: 36, max: 40 }
             text: Protected by a monstrous beast
-          - min: 41
-            max: 45
+          - roll: { min: 41, max: 45 }
             text: Putrefied provisions
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Reanimating crew
-          - min: 49
-            max: 53
+          - roll: { min: 49, max: 53 }
             text: Ritual circle or altar
-          - min: 54
-            max: 56
+          - roll: { min: 54, max: 56 }
             text: Rotten stench
-          - min: 57
-            max: 59
+          - roll: { min: 57, max: 59 }
             text: Scorched black by fire
-          - min: 60
-            max: 62
+          - roll: { min: 60, max: 62 }
             text: Sentient or living ship
-          - min: 63
-            max: 65
+          - roll: { min: 63, max: 65 }
             text: Sorcerous commander
-          - min: 66
-            max: 68
+          - roll: { min: 66, max: 68 }
             text: Sorcerous trap
-          - min: 69
-            max: 73
+          - roll: { min: 69, max: 73 }
             text: Spectral haunts
-          - min: 74
-            max: 76
+          - roll: { min: 74, max: 76 }
             text: Spreading decay
-          - min: 77
-            max: 79
+          - roll: { min: 77, max: 79 }
             text: Strewn with rusting cages and chains
-          - min: 80
-            max: 84
+          - roll: { min: 80, max: 84 }
             text: Swarming with large rats
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Transforming crew
-          - min: 88
-            max: 92
+          - roll: { min: 88, max: 92 }
             text: Truth revealed under moonlight
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             text: Victims entombed within ship structure
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Warnings scrawled in blood
       cargo:
         name: Cargo
@@ -733,134 +524,91 @@ oracles:
           <<: *Source
         summary: Use this table when surveying a ship’s hold or if coming upon lost or abandoned cargo. Roll or choose a number of items as appropriate to the nature of the find. For example, once for the hold of a typical warship, or up to four times for a fully loaded tradeship. Ships also typically carry basic munitions and provisions for the crew, but this table reveals the details of cargo such as trade goods and plunder.
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Ammunition
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: Artisan goods
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Artwork or antiques
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Beast bones
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Books or documents
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Cheese
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Cocoa
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Coffee
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Dyes
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Fish
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Fresh water
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Fruit or vegetables
-          - min: 27
-            max: 29
+          - roll: { min: 27, max: 29 }
             text: Grain or rice
-          - min: 30
-            max: 32
+          - roll: { min: 30, max: 32 }
             text: Gunpowder
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Hides or furs
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Hunting trophies
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Illicit drugs
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: Livestock
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: Logs and charts
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Lumber or timber
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Machinery
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Mead
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Meat
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Medical supplies
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Medicinal herbs
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Metals
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Mining equipment
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: Perfume
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Raw ore
-          - min: 64
-            max: 65
+          - roll: { min: 64, max: 65 }
             text: Rope or hemp
-          - min: 66
-            max: 68
+          - roll: { min: 66, max: 68 }
             text: Rum or grog
-          - min: 69
-            max: 71
+          - roll: { min: 69, max: 71 }
             text: Sailcloth
-          - min: 72
-            max: 73
+          - roll: { min: 72, max: 73 }
             text: Scavenged ship parts
-          - min: 74
-            max: 75
+          - roll: { min: 74, max: 75 }
             text: Spices
-          - min: 76
-            max: 77
+          - roll: { min: 76, max: 77 }
             text: Sugar or molasses
-          - min: 78
-            max: 80
+          - roll: { min: 78, max: 80 }
             text: Tea
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Textiles
-          - min: 83
-            max: 85
+          - roll: { min: 83, max: 85 }
             text: Tobacco
-          - min: 86
-            max: 88
+          - roll: { min: 86, max: 88 }
             text: Weapons
-          - min: 89
-            max: 91
+          - roll: { min: 89, max: 91 }
             text: Whale oil
-          - min: 92
-            max: 93
+          - roll: { min: 92, max: 93 }
             text: Wild animals
-          - min: 94
-            max: 95
+          - roll: { min: 94, max: 95 }
             text: Wine
-          - min: 96
-            max: 99
+          - roll: { min: 96, max: 99 }
             <<: &DescriptorFocus
               text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
               oracle_rolls:
@@ -868,8 +616,7 @@ oracles:
                   oracle: sundered_isles/oracles/core/descriptor
                 - auto: true
                   oracle: sundered_isles/oracles/core/focus
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: '[Treasure]'
       cursed_cargo:
         name: Cursed Cargo
@@ -878,53 +625,37 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Ancient sarcophagi
-          - min: 6
-            max: 12
+          - roll: { min: 6, max: 12 }
             text: Autonomous mechanical constructs
-          - min: 13
-            max: 17
+          - roll: { min: 13, max: 17 }
             text: Barrels of foul ichor
-          - min: 18
-            max: 24
+          - roll: { min: 18, max: 24 }
             text: Chained beast
-          - min: 25
-            max: 31
+          - roll: { min: 25, max: 31 }
             text: Cocooned victims
-          - min: 32
-            max: 36
+          - roll: { min: 32, max: 36 }
             text: Human bones
-          - min: 37
-            max: 43
+          - roll: { min: 37, max: 43 }
             text: Illusionary treasure
-          - min: 44
-            max: 48
+          - roll: { min: 44, max: 48 }
             text: Infernal weapons
-          - min: 49
-            max: 53
+          - roll: { min: 49, max: 53 }
             text: Maggot-infested meat
-          - min: 54
-            max: 60
+          - roll: { min: 54, max: 60 }
             text: Monstrous hunting trophies
-          - min: 61
-            max: 65
+          - roll: { min: 61, max: 65 }
             text: Mutated animals
-          - min: 66
-            max: 72
+          - roll: { min: 66, max: 72 }
             text: Poisoned grog
-          - min: 73
-            max: 79
+          - roll: { min: 73, max: 79 }
             text: Rotting corpses
-          - min: 80
-            max: 86
+          - roll: { min: 80, max: 86 }
             text: Sorcerous tomes
-          - min: 87
-            max: 93
+          - roll: { min: 87, max: 93 }
             text: Soul jars
-          - min: 94
-            max: 100
+          - roll: { min: 94, max: 100 }
             text: Trapped undead
       # name:
       #   name: Ship Name
@@ -956,20 +687,16 @@ oracles:
               text: Result
               text2: Detail
             rows:
-              - min: 1
-                max: 40
+              - roll: { min: 1, max: 40 }
                 text: Distant
                 text2: On the horizon and too far to make out details
-              - min: 41
-                max: 75
+              - roll: { min: 41, max: 75 }
                 text: Far
                 text2: Observable but well beyond weapons range
-              - min: 76
-                max: 95
+              - roll: { min: 76, max: 95 }
                 text: Medium
                 text2: Easily discernible and nearly within weapons range
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Near
                 text2: Sighted or revealed at very close range
           status:
@@ -979,32 +706,23 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: In Battle
-              - min: 11
-                max: 25
+              - roll: { min: 11, max: 25 }
                 text: Anchored
-              - min: 26
-                max: 35
+              - roll: { min: 26, max: 35 }
                 text: Getting underway
-              - min: 36
-                max: 60
+              - roll: { min: 36, max: 60 }
                 text: Underway (approaching)
-              - min: 61
-                max: 75
+              - roll: { min: 61, max: 75 }
                 text: Underway (outbound)
-              - min: 76
-                max: 85
+              - roll: { min: 76, max: 85 }
                 text: Underway (parallel)
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 text: In distress
-              - min: 96
-                max: 98
+              - roll: { min: 96, max: 98 }
                 text: Adrift
-              - min: 99
-                max: 100
+              - roll: { min: 99, max: 100 }
                 text: Run aground
       controlling_faction:
         name: Controlling Faction
@@ -1022,16 +740,13 @@ oracles:
             type: oracle_rollable
             rows:
               - &ControllingFaction.0
-                min: 1
-                max: 60
+                roll: { min: 1, max: 60 }
                 text: Known faction
               - &ControllingFaction.1
-                min: 61
-                max: 75
+                roll: { min: 61, max: 75 }
                 text: Unknown faction
               - &ControllingFaction.2
-                min: 76
-                max: 100
+                roll: { min: 76, max: 100 }
                 text: Independent
           margins:
             name: Margins
@@ -1042,14 +757,11 @@ oracles:
             type: oracle_rollable
             rows:
               - <<: *ControllingFaction.0
-                min: 1
-                max: 45
+                roll: { min: 1, max: 45 }
               - <<: *ControllingFaction.1
-                min: 46
-                max: 75
+                roll: { min: 46, max: 75 }
               - <<: *ControllingFaction.2
-                min: 76
-                max: 100
+                roll: { min: 76, max: 100 }
           reaches:
             name: Reaches
             # source:
@@ -1059,14 +771,11 @@ oracles:
             type: oracle_rollable
             rows:
               - <<: *ControllingFaction.0
-                min: 1
-                max: 25
+                roll: { min: 1, max: 25 }
               - <<: *ControllingFaction.1
-                min: 26
-                max: 60
+                roll: { min: 26, max: 60 }
               - <<: *ControllingFaction.2
-                min: 61
-                max: 100
+                roll: { min: 61, max: 100 }
       mission:
         name: Ship Mission
         _source:
@@ -1118,60 +827,46 @@ oracles:
                 text: Attack a Location
               - &ShipMission.3
                 text: Evacuate a location
-              - min: 1
-                max: 4
+              - roll: { min: 1, max: 4 }
                 <<: &ShipMission.4
                   text: Transport people
-              - min: 5
-                max: 8
+              - roll: { min: 5, max: 8 }
                 <<: &ShipMission.5
                   text: Transport cargo
-              - min: 9
-                max: 14
+              - roll: { min: 9, max: 14 }
                 <<: &ShipMission.6
                   text: Conduct trade
-              - min: 15
-                max: 18
+              - roll: { min: 15, max: 18 }
                 <<: &ShipMission.7
                   text: Hunt creatures
-              - min: 19
-                max: 22
+              - roll: { min: 19, max: 22 }
                 <<: &ShipMission.8
                   text: Patrol an area
-              - min: 23
-                max: 32
+              - roll: { min: 23, max: 32 }
                 <<: &ShipMission.9
                   text: Explore or travel to an area
-              - min: 33
-                max: 38
+              - roll: { min: 33, max: 38 }
                 <<: &ShipMission.10
                   text: Engage an enemy
-              - min: 39
-                max: 48
+              - roll: { min: 39, max: 48 }
                 <<: &ShipMission.11
                   text: Conduct piracy
-              - min: 49
-                max: 56
+              - roll: { min: 49, max: 56 }
                 <<: &ShipMission.12
                   text: Conduct diplomacy
-              - min: 57
-                max: 64
+              - roll: { min: 57, max: 64 }
                 <<: &ShipMission.13
                   text: Conduct espionage
-              - min: 65
-                max: 68
+              - roll: { min: 65, max: 68 }
                 <<: &ShipMission.14
                   text: Conduct research
-              - min: 69
-                max: 74
+              - roll: { min: 69, max: 74 }
                 <<: &ShipMission.15
                   text: Deliver item or message
-              - min: 75
-                max: 84
+              - roll: { min: 75, max: 84 }
                 <<: &ShipMission.16
                   text: Smuggle contraband
-              - min: 85
-                max: 94
+              - roll: { min: 85, max: 94 }
                 <<: &ShipMission.17
                   <<: &ActionTheme
                     text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
@@ -1180,8 +875,7 @@ oracles:
                         oracle: sundered_isles/oracles/core/action
                       - auto: true
                         oracle: sundered_isles/oracles/core/theme
-              - min: 95
-                max: 100
+              - roll: { min: 95, max: 100 }
                 <<: &ShipMission.18
                   text: Roll twice
                   oracle_rolls:
@@ -1199,50 +893,35 @@ oracles:
               - *ShipMission.2
               - *ShipMission.3
               - <<: *ShipMission.4
-                min: 1
-                max: 4
+                roll: { min: 1, max: 4 }
               - <<: *ShipMission.5
-                min: 7
-                max: 10
+                roll: { min: 7, max: 10 }
               - <<: *ShipMission.6
-                min: 11
-                max: 16
+                roll: { min: 11, max: 16 }
               - <<: *ShipMission.7
-                min: 17
-                max: 24
+                roll: { min: 17, max: 24 }
               - <<: *ShipMission.8
-                min: 25
-                max: 30
+                roll: { min: 25, max: 30 }
               - <<: *ShipMission.9
-                min: 31
-                max: 36
+                roll: { min: 31, max: 36 }
               - <<: *ShipMission.10
-                min: 37
-                max: 44
+                roll: { min: 37, max: 44 }
               - <<: *ShipMission.11
-                min: 45
-                max: 52
+                roll: { min: 45, max: 52 }
               - <<: *ShipMission.12
-                min: 53
-                max: 64
+                roll: { min: 53, max: 64 }
               - <<: *ShipMission.13
-                min: 65
-                max: 70
+                roll: { min: 65, max: 70 }
               - <<: *ShipMission.14
-                min: 71
-                max: 76
+                roll: { min: 71, max: 76 }
               - <<: *ShipMission.15
-                min: 77
-                max: 78
+                roll: { min: 77, max: 78 }
               - <<: *ShipMission.16
-                min: 79
-                max: 82
+                roll: { min: 79, max: 82 }
               - <<: *ShipMission.17
-                min: 83
-                max: 90
+                roll: { min: 83, max: 90 }
               - <<: *ShipMission.18
-                min: 91
-                max: 100
+                roll: { min: 91, max: 100 }
           large:
             name: Large
             # source:
@@ -1251,62 +930,43 @@ oracles:
             type: oracle_rollable
             rows:
               - <<: *ShipMission.0
-                min: 1
-                max: 2
+                roll: { min: 1, max: 2 }
               - <<: *ShipMission.1
-                min: 3
-                max: 4
+                roll: { min: 3, max: 4 }
               - <<: *ShipMission.2
-                min: 5
-                max: 6
+                roll: { min: 5, max: 6 }
               - <<: *ShipMission.3
-                min: 7
-                max: 8
+                roll: { min: 7, max: 8 }
               - <<: *ShipMission.4
-                min: 9
-                max: 14
+                roll: { min: 9, max: 14 }
               - <<: *ShipMission.5
-                min: 15
-                max: 22
+                roll: { min: 15, max: 22 }
               - <<: *ShipMission.6
-                min: 23
-                max: 30
+                roll: { min: 23, max: 30 }
               - <<: *ShipMission.7
-                min: 31
-                max: 36
+                roll: { min: 31, max: 36 }
               - <<: *ShipMission.8
-                min: 37
-                max: 42
+                roll: { min: 37, max: 42 }
               - <<: *ShipMission.9
-                min: 43
-                max: 48
+                roll: { min: 43, max: 48 }
               - <<: *ShipMission.10
-                min: 49
-                max: 58
+                roll: { min: 49, max: 58 }
               - <<: *ShipMission.11
-                min: 59
-                max: 70
+                roll: { min: 59, max: 70 }
               - <<: *ShipMission.12
-                min: 71
-                max: 74
+                roll: { min: 71, max: 74 }
               - <<: *ShipMission.13
-                min: 75
-                max: 76
+                roll: { min: 75, max: 76 }
               - <<: *ShipMission.14
-                min: 77
-                max: 78
+                roll: { min: 77, max: 78 }
               - <<: *ShipMission.15
-                min: 79
-                max: 80
+                roll: { min: 79, max: 80 }
               - <<: *ShipMission.16
-                min: 81
-                max: 84
+                roll: { min: 81, max: 84 }
               - <<: *ShipMission.17
-                min: 85
-                max: 94
+                roll: { min: 85, max: 94 }
               - <<: *ShipMission.18
-                min: 95
-                max: 100
+                roll: { min: 95, max: 100 }
           huge:
             name: Huge
             oracle_type: column_text
@@ -1315,62 +975,43 @@ oracles:
             #   <<: *Source
             rows:
               - <<: *ShipMission.0
-                min: 1
-                max: 4
+                roll: { min: 1, max: 4 }
               - <<: *ShipMission.1
-                min: 5
-                max: 8
+                roll: { min: 5, max: 8 }
               - <<: *ShipMission.2
-                min: 9
-                max: 12
+                roll: { min: 9, max: 12 }
               - <<: *ShipMission.3
-                min: 13
-                max: 16
+                roll: { min: 13, max: 16 }
               - <<: *ShipMission.4
-                min: 17
-                max: 20
+                roll: { min: 17, max: 20 }
               - <<: *ShipMission.5
-                min: 21
-                max: 28
+                roll: { min: 21, max: 28 }
               - <<: *ShipMission.6
-                min: 29
-                max: 36
+                roll: { min: 29, max: 36 }
               - <<: *ShipMission.7
-                min: 37
-                max: 42
+                roll: { min: 37, max: 42 }
               - <<: *ShipMission.8
-                min: 43
-                max: 48
+                roll: { min: 43, max: 48 }
               - <<: *ShipMission.9
-                min: 49
-                max: 52
+                roll: { min: 49, max: 52 }
               - <<: *ShipMission.10
-                min: 53
-                max: 64
+                roll: { min: 53, max: 64 }
               - <<: *ShipMission.11
-                min: 65
-                max: 74
+                roll: { min: 65, max: 74 }
               - <<: *ShipMission.12
-                min: 75
-                max: 76
+                roll: { min: 75, max: 76 }
               - <<: *ShipMission.13
-                min: 77
-                max: 78
+                roll: { min: 77, max: 78 }
               - <<: *ShipMission.14
-                min: 79
-                max: 80
+                roll: { min: 79, max: 80 }
               - <<: *ShipMission.15
-                min: 81
-                max: 82
+                roll: { min: 81, max: 82 }
               - <<: *ShipMission.16
-                min: 83
-                max: 84
+                roll: { min: 83, max: 84 }
               - <<: *ShipMission.17
-                min: 85
-                max: 94
+                roll: { min: 85, max: 94 }
               - <<: *ShipMission.18
-                min: 95
-                max: 100
+                roll: { min: 95, max: 100 }
           flotilla:
             name: Flotilla
             oracle_type: column_text
@@ -1379,62 +1020,43 @@ oracles:
             #   <<: *Source
             rows:
               - <<: *ShipMission.0
-                min: 1
-                max: 6
+                roll: { min: 1, max: 6 }
               - <<: *ShipMission.1
-                min: 7
-                max: 12
+                roll: { min: 7, max: 12 }
               - <<: *ShipMission.2
-                min: 13
-                max: 16
+                roll: { min: 13, max: 16 }
               - <<: *ShipMission.3
-                min: 17
-                max: 20
+                roll: { min: 17, max: 20 }
               - <<: *ShipMission.4
-                min: 21
-                max: 24
+                roll: { min: 21, max: 24 }
               - <<: *ShipMission.5
-                min: 25
-                max: 30
+                roll: { min: 25, max: 30 }
               - <<: *ShipMission.6
-                min: 31
-                max: 38
+                roll: { min: 31, max: 38 }
               - <<: *ShipMission.7
-                min: 39
-                max: 44
+                roll: { min: 39, max: 44 }
               - <<: *ShipMission.8
-                min: 45
-                max: 52
+                roll: { min: 45, max: 52 }
               - <<: *ShipMission.9
-                min: 53
-                max: 56
+                roll: { min: 53, max: 56 }
               - <<: *ShipMission.10
-                min: 57
-                max: 68
+                roll: { min: 57, max: 68 }
               - <<: *ShipMission.11
-                min: 69
-                max: 74
+                roll: { min: 69, max: 74 }
               - <<: *ShipMission.12
-                min: 75
-                max: 76
+                roll: { min: 75, max: 76 }
               - <<: *ShipMission.13
-                min: 77
-                max: 78
+                roll: { min: 77, max: 78 }
               - <<: *ShipMission.14
-                min: 79
-                max: 80
+                roll: { min: 79, max: 80 }
               - <<: *ShipMission.15
-                min: 81
-                max: 82
+                roll: { min: 81, max: 82 }
               - <<: *ShipMission.16
-                min: 83
-                max: 84
+                roll: { min: 83, max: 84 }
               - <<: *ShipMission.17
-                min: 85
-                max: 94
+                roll: { min: 85, max: 94 }
               - <<: *ShipMission.18
-                min: 95
-                max: 100
+                roll: { min: 95, max: 100 }
           fleet:
             name: Fleet
             oracle_type: column_text
@@ -1443,56 +1065,40 @@ oracles:
             #   <<: *Source
             rows:
               - <<: *ShipMission.0
-                min: 1
-                max: 10
+                roll: { min: 1, max: 10 }
               - <<: *ShipMission.1
-                min: 11
-                max: 20
+                roll: { min: 11, max: 20 }
               - <<: *ShipMission.2
-                min: 21
-                max: 26
+                roll: { min: 21, max: 26 }
               - <<: *ShipMission.3
-                min: 27
-                max: 32
+                roll: { min: 27, max: 32 }
               - <<: *ShipMission.4
-                min: 33
-                max: 36
+                roll: { min: 33, max: 36 }
               - <<: *ShipMission.5
-                min: 37
-                max: 40
+                roll: { min: 37, max: 40 }
               - <<: *ShipMission.6
-                min: 41
-                max: 44
+                roll: { min: 41, max: 44 }
               - <<: *ShipMission.7
-                min: 45
-                max: 48
+                roll: { min: 45, max: 48 }
               - <<: *ShipMission.8
-                min: 49
-                max: 58
+                roll: { min: 49, max: 58 }
               - <<: *ShipMission.9
-                min: 59
-                max: 62
+                roll: { min: 59, max: 62 }
               - <<: *ShipMission.10
-                min: 63
-                max: 76
+                roll: { min: 63, max: 76 }
               - <<: *ShipMission.11
-                min: 77
-                max: 80
+                roll: { min: 77, max: 80 }
               - <<: *ShipMission.12
-                min: 81
-                max: 82
+                roll: { min: 81, max: 82 }
               - <<: *ShipMission.13
-                min: 83
-                max: 84
+                roll: { min: 83, max: 84 }
               - *ShipMission.14
               - *ShipMission.15
               - *ShipMission.16
               - <<: *ShipMission.17
-                min: 85
-                max: 95
+                roll: { min: 85, max: 95 }
               - <<: *ShipMission.18
-                min: 95
-                max: 100
+                roll: { min: 95, max: 100 }
           armada:
             name: Armada
             oracle_type: column_text
@@ -1501,51 +1107,36 @@ oracles:
             #   <<: *Source
             rows:
               - <<: *ShipMission.0
-                min: 1
-                max: 12
+                roll: { min: 1, max: 12 }
               - <<: *ShipMission.1
-                min: 13
-                max: 24
+                roll: { min: 13, max: 24 }
               - <<: *ShipMission.2
-                min: 25
-                max: 32
+                roll: { min: 25, max: 32 }
               - <<: *ShipMission.3
-                min: 33
-                max: 38
+                roll: { min: 33, max: 38 }
               - <<: *ShipMission.4
-                min: 39
-                max: 40
+                roll: { min: 39, max: 40 }
               - <<: *ShipMission.5
-                min: 41
-                max: 42
+                roll: { min: 41, max: 42 }
               - <<: *ShipMission.6
-                min: 43
-                max: 44
+                roll: { min: 43, max: 44 }
               - <<: *ShipMission.7
-                min: 45
-                max: 48
+                roll: { min: 45, max: 48 }
               - <<: *ShipMission.8
-                min: 49
-                max: 60
+                roll: { min: 49, max: 60 }
               - <<: *ShipMission.9
-                min: 61
-                max: 62
+                roll: { min: 61, max: 62 }
               - <<: *ShipMission.10
-                min: 63
-                max: 80
+                roll: { min: 63, max: 80 }
               - <<: *ShipMission.11
-                min: 81
-                max: 82
+                roll: { min: 81, max: 82 }
               - <<: *ShipMission.12
-                min: 83
-                max: 84
+                roll: { min: 83, max: 84 }
               - *ShipMission.13
               - *ShipMission.14
               - *ShipMission.15
               - *ShipMission.16
               - <<: *ShipMission.17
-                min: 85
-                max: 94
+                roll: { min: 85, max: 94 }
               - <<: *ShipMission.18
-                min: 95
-                max: 100
+                roll: { min: 95, max: 100 }

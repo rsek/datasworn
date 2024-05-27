@@ -23,28 +23,22 @@ oracles:
           <<: *Source
         summary: When learning about a distant shipwreck, use the table below to reveal where it met its sad fate. If you come upon a wreck in your travels, pick a locatation as appropriate to your surroundings.
         rows:
-          - min: 1
-            max: 25
+          - roll: { min: 1, max: 25 }
             text: Sea
             text2: Amid open waters
-          - min: 26
-            max: 65
+          - roll: { min: 26, max: 65 }
             text: Shore
             text2: At water's edge
-          - min: 66
-            max: 75
+          - roll: { min: 66, max: 75 }
             text: Sea Cave
             text2: Within a tidal cave
-          - min: 76
-            max: 85
+          - roll: { min: 76, max: 85 }
             text: Swamp
             text2: Mired in wetlands
-          - min: 86
-            max: 95
+          - roll: { min: 86, max: 95 }
             text: River
             text2: Along an inland waterway
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Inland
             text2: Away from the sea
       first_look:
@@ -52,112 +46,77 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         _source:
           <<: *Source
         rows:
-        - min: 1
-          max: 2
+        - roll: { min: 1, max: 2 }
           text: Archaic construction
-        - min: 3
-          max: 6
+        - roll: { min: 3, max: 6 }
           text: Blackened by fire
-        - min: 7
-          max: 10
+        - roll: { min: 7, max: 10 }
           text: Blocked or difficult access
-        - min: 11
-          max: 14
+        - roll: { min: 11, max: 14 }
           text: Capsized or upside-down
-        - min: 15
-          max: 16
+        - roll: { min: 15, max: 16 }
           text: Claimed by a territorial creature
-        - min: 17
-          max: 18
+        - roll: { min: 17, max: 18 }
           text: Crawling with insects or sea life
-        - min: 19
-          max: 22
+        - roll: { min: 19, max: 22 }
           text: Creaking ominously
-        - min: 23
-          max: 24
+        - roll: { min: 23, max: 24 }
           text: Deck fouled with debris
-        - min: 25
-          max: 26
+        - roll: { min: 25, max: 26 }
           text: Encrusted with barnacles or fungi
-        - min: 27
-          max: 28
+        - roll: { min: 27, max: 28 }
           text: Famous or infamous vessel
-        - min: 29
-          max: 30
+        - roll: { min: 29, max: 30 }
           text: Finely-crafted figurehead, still intact
-        - min: 31
-          max: 32
+        - roll: { min: 31, max: 32 }
           text: Fitted with powerful weapons
-        - min: 33
-          max: 36
+        - roll: { min: 33, max: 36 }
           text: Flag of an unexpected faction
-        - min: 37
-          max: 40
+        - roll: { min: 37, max: 40 }
           text: Gaping hull breach
-        - min: 41
-          max: 42
+        - roll: { min: 41, max: 42 }
           text: Illuminated by bioluminescent organisms
-        - min: 43
-          max: 44
+        - roll: { min: 43, max: 44 }
           text: Ironclad construction
-        - min: 45
-          max: 46
+        - roll: { min: 45, max: 46 }
           text: Message scrawled on hull
-        - min: 47
-          max: 48
+        - roll: { min: 47, max: 48 }
           text: Missing launch boats
-        - min: 49
-          max: 50
+        - roll: { min: 49, max: 50 }
           text: Nearby ship or encampment
-        - min: 51
-          max: 52
+        - roll: { min: 51, max: 52 }
           text: Nesting or roosting creatures
-        - min: 53
-          max: 56
+        - roll: { min: 53, max: 56 }
           text: Once-grand adornments and fittings
-        - min: 57
-          max: 58
+        - roll: { min: 57, max: 58 }
           text: Overgrown with plants or sea life
-        - min: 59
-          max: 60
+        - roll: { min: 59, max: 60 }
           text: Partially buried or embedded
-        - min: 61
-          max: 64
+        - roll: { min: 61, max: 64 }
           text: Scarred by battle
-        - min: 65
-          max: 66
+        - roll: { min: 65, max: 66 }
           text: Scattered remains of the dead
-        - min: 67
-          max: 68
+        - roll: { min: 67, max: 68 }
           text: Shrouded beneath tattered sailcloth
-        - min: 69
-          max: 72
+        - roll: { min: 69, max: 72 }
           text: Signs of a survivor or squatter
-        - min: 73
-          max: 76
+        - roll: { min: 73, max: 76 }
           text: Steeply inclined or listing decks
-        - min: 77
-          max: 80
+        - roll: { min: 77, max: 80 }
           text: Stripped by scavengers
-        - min: 81
-          max: 82
+        - roll: { min: 81, max: 82 }
           text: Under construction or repair
-        - min: 83
-          max: 86
+        - roll: { min: 83, max: 86 }
           text: Unstable or sinking
-        - min: 87
-          max: 88
+        - roll: { min: 87, max: 88 }
           text: Unusual or unknown type of ship
-        - min: 89
-          max: 94
+        - roll: { min: 89, max: 94 }
           text: Scattered [Cargo] # p 141
-        - min: 95
-          max: 100
+        - roll: { min: 95, max: 100 }
           text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
           oracle_rolls:
             - auto: true
@@ -171,89 +130,61 @@ oracles:
         _source:
           <<: *Source
         rows:
-        - min: 1
-          max: 3
+        - roll: { min: 1, max: 3 }
           text: Alight with unnatural flames
-        - min: 4
-          max: 6
+        - roll: { min: 4, max: 6 }
           text: Caught within unnatural wind or vortex
-        - min: 7
-          max: 9
+        - roll: { min: 7, max: 9 }
           text: Covered in sorcerous symbols
-        - min: 10
-          max: 14
+        - roll: { min: 10, max: 14 }
           text: Defended by undead crew
-        - min: 15
-          max: 17
+        - roll: { min: 15, max: 17 }
           text: Dreadful figurehead, still intact
-        - min: 18
-          max: 22
+        - roll: { min: 18, max: 22 }
           text: Engulfed in unnatural mist or murk
-        - min: 23
-          max: 25
+        - roll: { min: 23, max: 25 }
           text: Foreboding warning scrawled on the hull
-        - min: 26
-          max: 28
+        - roll: { min: 26, max: 28 }
           text: Gigantic bite marks or claw marks
-        - min: 29
-          max: 33
+        - roll: { min: 29, max: 33 }
           text: Glimpses of the ship in its heyday
-        - min: 34
-          max: 38
+        - roll: { min: 34, max: 38 }
           text: Glimpses of the ship's final moments
-        - min: 39
-          max: 41
+        - roll: { min: 39, max: 41 }
           text: Haunting singing or music
-        - min: 42
-          max: 44
+        - roll: { min: 42, max: 44 }
           text: Hung or tangled with corpses or bones
-        - min: 45
-          max: 47
+        - roll: { min: 45, max: 47 }
           text: Hung with webs or mucus
-        - min: 48
-          max: 50
+        - roll: { min: 48, max: 50 }
           text: Overtaken by malignant plants
-        - min: 51
-          max: 53
+        - roll: { min: 51, max: 53 }
           text: Phantom figure beckons from the deck
-        - min: 54
-          max: 56
+        - roll: { min: 54, max: 56 }
           text: Phantom voices call out commands
-        - min: 57
-          max: 59
+        - roll: { min: 57, max: 59 }
           text: Rigged with infernal machinery
-        - min: 60
-          max: 62
+        - roll: { min: 60, max: 62 }
           text: Sails hoist as if getting underway
-        - min: 63
-          max: 65
+        - roll: { min: 63, max: 65 }
           text: Scarred by weapons of baneful power
-        - min: 66
-          max: 70
+        - roll: { min: 66, max: 70 }
           text: Ship's bell rings out
-        - min: 71
-          max: 75
+        - roll: { min: 71, max: 75 }
           text: Suffused with eerie light
-        - min: 76
-          max: 80
+        - roll: { min: 76, max: 80 }
           text: Surrounded by blighted terrain
-        - min: 81
-          max: 83
+        - roll: { min: 81, max: 83 }
           text: Surrounded by dead creatures
-        - min: 84
-          max: 86
+        - roll: { min: 84, max: 86 }
           text: Swarming with malignant creatures
-        - min: 87
-          max: 89
+        - roll: { min: 87, max: 89 }
           text: True nature revealed in moonlight
-        - min: 90
-          max: 94
+        - roll: { min: 90, max: 94 }
           text: Unnerving stillness or quiet
-        - min: 95
-          max: 97
+        - roll: { min: 95, max: 97 }
           text: Within the territory of a monstrous beast
-        - min: 98
-          max: 100
+        - roll: { min: 98, max: 100 }
           text: Wreathed in cold and ice
       details:
         name: Shipwreck Details
@@ -263,98 +194,67 @@ oracles:
           <<: *Source
         summary: Use this table to reveal details of a wreck. Roll once or twice when searching a small ship, and up to three times when surveying a large vessel. These details are revealed in the context of another move—such as Explore a Waypoint or Gather Information—but might prompt additional actions or investigations.
         recommended_rolls:
-          min: 1
-          max: 3
+          roll: { min: 1, max: 3 }
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Abandoned pet or mascot
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Ad hoc shrine or memorial
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: Barricaded or sealed compartment
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Blasted or wrecked area
-          - min: 13
-            max: 15
+          - roll: { min: 13, max: 15 }
             text: Bloody or violent trail
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Coded message
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Corpses or bones
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Creature using the wreck as a refuge
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Emptied cargo
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Extravagant furnishings
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Forcefully breached door or hatch
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Gaping hole
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Hastily written message or warning
-          - min: 40
-            max: 42
+          - roll: { min: 40, max: 42 }
             text: Hidden compartment
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Inscrutable machine or device
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Invaders or scavengers
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Invasive plants or sea life
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Journal or log reveals the ship's history
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Locked brig with unfortunate prisoner
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Makeshift barricade
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Mysterious locked container
-          - min: 64
-            max: 66
+          - roll: { min: 64, max: 66 }
             text: Ominous creaking
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Ransacked compartment
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Ruined supplies or provisions
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Scene of a last stand or fierce battle
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Sounds of habitation
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Stranded or trapped survivor
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Untouched compartment
-          - min: 85
-            max: 92
+          - roll: { min: 85, max: 92 }
             text: Personal memento ( > Token; pg 217 )
-          - min: 93
-            max: 100
+          - roll: { min: 93, max: 100 }
             text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
             oracle_rolls:
               - auto: true
@@ -368,95 +268,65 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Dead return to life
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Eerie phantom music
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Eldritch artifact
-          - min: 9
-            max: 12
+          - roll: { min: 9, max: 12 }
             text: Foreboding message
-          - min: 13
-            max: 16
+          - roll: { min: 13, max: 16 }
             text: Frightful phantom whispers
-          - min: 17
-            max: 20
+          - roll: { min: 17, max: 20 }
             text: Ghostly crew, going about their duties
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: Glimpses of a shadowy presence
-          - min: 25
-            max: 28
+          - roll: { min: 25, max: 28 }
             text: Haunting visions of the ship's past
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Infernal machine or device
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Lair of a monstrous creature
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: Monstrous claw marks
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Mutated remains of the dead
-          - min: 39
-            max: 42
+          - roll: { min: 39, max: 42 }
             text: Objects move of their own accord
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Rapidly-spreading decay
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Ritual circle or altar
-          - min: 47
-            max: 50
+          - roll: { min: 47, max: 50 }
             text: Ship's log tells a dreadful story
-          - min: 51
-            max: 54
+          - roll: { min: 51, max: 54 }
             text: Signs of a dreadful fate for the crew
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Signs of the ship getting underway
-          - min: 57
-            max: 60
+          - roll: { min: 57, max: 60 }
             text: Smell of rot
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Sorcerous energies
-          - min: 63
-            max: 66
+          - roll: { min: 63, max: 66 }
             text: Tortured spirits seeking absolution
-          - min: 67
-            max: 70
+          - roll: { min: 67, max: 70 }
             text: Unnatural cold
-          - min: 71
-            max: 74
+          - roll: { min: 71, max: 74 }
             text: Unnatural darkness
-          - min: 75
-            max: 78
+          - roll: { min: 75, max: 78 }
             text: Unnaturally flooded or air-filled space
-          - min: 79
-            max: 82
+          - roll: { min: 79, max: 82 }
             text: Unnaturally pristine compartment
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Unnerving eldritch glyphs
-          - min: 85
-            max: 86
+          - roll: { min: 85, max: 86 }
             text: Victims entombed in ship structure
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Onset of > Cursed Weather; page 133
-          - min: 89
-            max: 92
+          - roll: { min: 89, max: 92 }
             text: "> Cursed Token; page 219"
-          - min: 93
-            max: 100
+          - roll: { min: 93, max: 100 }
             text: "> Cursed Cargo; page 141"
       perils:
         name: Shipwreck Perils
@@ -466,65 +336,45 @@ oracles:
           <<: *Source
         summary: Use this table when you explore, investigate, or scavenge a wreck and encounter a complication. See page 201 for details.
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Booby-trapped passage or container
-          - min: 6
-            max: 10
+          - roll: { min: 6, max: 10 }
             text: Claustrophobic or unnerving spaces
-          - min: 11
-            max: 15
+          - roll: { min: 11, max: 15 }
             text: Collapsing overhead structure
-          - min: 16
-            max: 20
+          - roll: { min: 16, max: 20 }
             text: Dangerous or volatile cargo
-          - min: 21
-            max: 25
+          - roll: { min: 21, max: 25 }
             text: Disorienting murk or smoke
-          - min: 26
-            max: 30
+          - roll: { min: 26, max: 30 }
             text: Disturbing scene of death or violence
-          - min: 31
-            max: 35
+          - roll: { min: 31, max: 35 }
             text: Entangling debris
-          - min: 36
-            max: 40
+          - roll: { min: 36, max: 40 }
             text: Flooded or blocked space
-          - min: 41
-            max: 45
+          - roll: { min: 41, max: 45 }
             text: Foes or rivals arrive at the site
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: Hostile explorer or survivor
-          - min: 51
-            max: 55
+          - roll: { min: 51, max: 55 }
             text: Lair of a territorial creature
-          - min: 56
-            max: 60
+          - roll: { min: 56, max: 60 }
             text: Precarious path through wreckage
-          - min: 61
-            max: 65
+          - roll: { min: 61, max: 65 }
             text: Sense of being watched
-          - min: 66
-            max: 70
+          - roll: { min: 66, max: 70 }
             text: Signs of infestation or disease
-          - min: 71
-            max: 75
+          - roll: { min: 71, max: 75 }
             text: Sudden shifting of the wreck
-          - min: 76
-            max: 80
+          - roll: { min: 76, max: 80 }
             text: Swarm of aggressive creatures
-          - min: 81
-            max: 85
+          - roll: { min: 81, max: 85 }
             text: Tricky passage or descent
-          - min: 86
-            max: 90
+          - roll: { min: 86, max: 90 }
             text: Unstable or rotting deck
-          - min: 91
-            max: 95
+          - roll: { min: 91, max: 95 }
             text: Worsening weather or environment
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Roll twice
             oracle_rolls:
               - auto: true
@@ -538,26 +388,19 @@ oracles:
           <<: *Source
         summary: Use this table when you uncover an opportunity while exploring, investigating, or scavenging a wreck.
         rows:
-          - min: 1
-            max: 25
+          - roll: { min: 1, max: 25 }
             text: Useful provisions or salvage
-          - min: 26
-            max: 40
+          - roll: { min: 26, max: 40 }
             text: Intriguing map or chart
-          - min: 41
-            max: 55
+          - roll: { min: 41, max: 55 }
             text: Ship's log with valuable information
-          - min: 56
-            max: 65
+          - roll: { min: 56, max: 65 }
             text: Explorer or survivor with a tale to tell
-          - min: 66
-            max: 85
+          - roll: { min: 66, max: 85 }
             text: Intact > Cargo; pg 141
-          - min: 86
-            max: 96
+          - roll: { min: 86, max: 96 }
             text: "> Treasure; pg 215 (small repository)"
-          - min: 97
-            max: 99
+          - roll: { min: 97, max: 99 }
             text: "> Treasure; pg 215 (medium repository)"
           - min: 100
             max:
@@ -585,28 +428,22 @@ oracles:
                 oracle_type: column_text
                 type: oracle_rollable
                 rows:
-                - min: 1
-                  max: 30
+                - roll: { min: 1, max: 30 }
                   <<: &Position.0
                     text: Sunk and fully submerged
-                - min: 31
-                  max: 55
+                - roll: { min: 31, max: 55 }
                   <<: &Position.1
                     text: Adrift on the surface
-                - min: 56
-                  max: 65
+                - roll: { min: 56, max: 65 }
                   <<: &Position.2
                     text: Anchored in position on the surface
-                - min: 66
-                  max: 85
+                - roll: { min: 66, max: 85 }
                   <<: &Position.3
                     text: Awash / partially submerged
-                - min: 86
-                  max: 95
+                - roll: { min: 86, max: 95 }
                   <<: &Position.4
                     text: Stranded on dry ground or rocks
-                - min: 96
-                  max: 100
+                - roll: { min: 96, max: 100 }
                   <<: &Position.5
                     text: Perched on improbably high ground
 
@@ -616,23 +453,17 @@ oracles:
                 type: oracle_rollable
                 rows:
                 - <<: *Position.0
-                  min: 1
-                  max: 10
+                  roll: { min: 1, max: 10 }
                 - <<: *Position.1
-                  min: 11
-                  max: 20
+                  roll: { min: 11, max: 20 }
                 - <<: *Position.2
-                  min: 21
-                  max: 35
+                  roll: { min: 21, max: 35 }
                 - <<: *Position.3
-                  min: 36
-                  max: 65
+                  roll: { min: 36, max: 65 }
                 - <<: *Position.4
-                  min: 66
-                  max: 95
+                  roll: { min: 66, max: 95 }
                 - <<: *Position.5
-                  min: 96
-                  max: 100
+                  roll: { min: 96, max: 100 }
 
               sea_cave:
                 name: Sea Cave
@@ -640,23 +471,17 @@ oracles:
                 type: oracle_rollable
                 rows:
                 - <<: *Position.0
-                  min: 1
-                  max: 10
+                  roll: { min: 1, max: 10 }
                 - <<: *Position.1
-                  min: 11
-                  max: 25
+                  roll: { min: 11, max: 25 }
                 - <<: *Position.2
-                  min: 26
-                  max: 40
+                  roll: { min: 26, max: 40 }
                 - <<: *Position.3
-                  min: 41
-                  max: 70
+                  roll: { min: 41, max: 70 }
                 - <<: *Position.4
-                  min: 71
-                  max: 90
+                  roll: { min: 71, max: 90 }
                 - <<: *Position.5
-                  min: 91
-                  max: 100
+                  roll: { min: 91, max: 100 }
 
               swamp:
                 name: Swamp
@@ -664,23 +489,17 @@ oracles:
                 type: oracle_rollable
                 rows:
                 - <<: *Position.0
-                  min: 1
-                  max: 10
+                  roll: { min: 1, max: 10 }
                 - <<: *Position.1
-                  min: 11
-                  max: 20
+                  roll: { min: 11, max: 20 }
                 - <<: *Position.2
-                  min: 21
-                  max: 30
+                  roll: { min: 21, max: 30 }
                 - <<: *Position.3
-                  min: 31
-                  max: 60
+                  roll: { min: 31, max: 60 }
                 - <<: *Position.4
-                  min: 61
-                  max: 85
+                  roll: { min: 61, max: 85 }
                 - <<: *Position.5
-                  min: 86
-                  max: 100
+                  roll: { min: 86, max: 100 }
 
               river:
                 name: River
@@ -688,23 +507,17 @@ oracles:
                 type: oracle_rollable
                 rows:
                 - <<: *Position.0
-                  min: 1
-                  max: 15
+                  roll: { min: 1, max: 15 }
                 - <<: *Position.1
-                  min: 16
-                  max: 30
+                  roll: { min: 16, max: 30 }
                 - <<: *Position.2
-                  min: 31
-                  max: 45
+                  roll: { min: 31, max: 45 }
                 - <<: *Position.3
-                  min: 46
-                  max: 65
+                  roll: { min: 46, max: 65 }
                 - <<: *Position.4
-                  min: 66
-                  max: 85
+                  roll: { min: 66, max: 85 }
                 - <<: *Position.5
-                  min: 86
-                  max: 100
+                  roll: { min: 86, max: 100 }
 
               inland:
                 name: Inland
@@ -716,11 +529,9 @@ oracles:
                 - *Position.2
                 - *Position.3
                 - <<: *Position.4
-                  min: 1
-                  max: 80
+                  roll: { min: 1, max: 80 }
                 - <<: *Position.5
-                  min: 81
-                  max: 100
+                  roll: { min: 81, max: 100 }
 
         contents:
           scale:
@@ -730,20 +541,15 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 30
+              - roll: { min: 1, max: 30 }
                 text: Small (cutter, sloop)
-              - min: 31
-                max: 60
+              - roll: { min: 31, max: 60 }
                 text: Medium (corvette, schooner)
-              - min: 61
-                max: 85
+              - roll: { min: 61, max: 85 }
                 text: Large (frigate, galleon)
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 text: Colossal (titan, dreadnought)
-              - min: 96
-                max: 99
+              - roll: { min: 96, max: 99 }
                 text: Heap (tangled with another wreck)
               - min: 100
                 max:
@@ -755,21 +561,15 @@ oracles:
             _source:
               <<: *Source
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 text: Broken and missing large sections
-              - min: 11
-                max: 20
+              - roll: { min: 11, max: 20 }
                 text: Broken and scattered
-              - min: 21
-                max: 45
+              - roll: { min: 21, max: 45 }
                 text: Split in two
-              - min: 46
-                max: 70
+              - roll: { min: 46, max: 70 }
                 text: Somewhat intact, but fragile
-              - min: 71
-                max: 90
+              - roll: { min: 71, max: 90 }
                 text: Mostly intact
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Wholly intact

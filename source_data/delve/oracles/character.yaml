@@ -36,204 +36,154 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: gerund
-            min: 1
-            max: 2
+            roll: { min: 1, max: 2 }
             text: Guarding
           - <<: *i18n.gerund
-            min: 3
-            max: 4
+            roll: { min: 3, max: 4 }
             text: Preserving
           - <<: *i18n.gerund
-            min: 5
-            max: 6
+            roll: { min: 5, max: 6 }
             text: Constructing
           - <<: *i18n.gerund
-            min: 7
-            max: 8
+            roll: { min: 7, max: 8 }
             text: Mending
           - <<: *i18n.gerund
-            min: 9
-            max: 10
+            roll: { min: 9, max: 10 }
             text: Assisting
           - <<: *i18n.gerund
-            min: 11
-            max: 12
+            roll: { min: 11, max: 12 }
             text: Securing
           - <<: *i18n.gerund
-            min: 13
-            max: 14
+            roll: { min: 13, max: 14 }
             text: Learning
           - <<: *i18n.gerund
-            min: 15
-            max: 16
+            roll: { min: 15, max: 16 }
             text: Sneaking
           - <<: *i18n.gerund
-            min: 17
-            max: 18
+            roll: { min: 17, max: 18 }
             text: Fleeing
           - <<: *i18n.gerund
-            min: 19
-            max: 20
+            roll: { min: 19, max: 20 }
             text: Sacrificing
           - <<: *i18n.gerund
-            min: 21
-            max: 22
+            roll: { min: 21, max: 22 }
             text: Creating
           - <<: *i18n.gerund
-            min: 23
-            max: 24
+            roll: { min: 23, max: 24 }
             text: Luring
           - <<: *i18n.gerund
-            min: 25
-            max: 26
+            roll: { min: 25, max: 26 }
             text: Hunting
           - <<: *i18n.gerund
-            min: 27
-            max: 28
+            roll: { min: 27, max: 28 }
             text: Seizing
           - <<: *i18n.gerund
-            min: 29
-            max: 30
+            roll: { min: 29, max: 30 }
             text: Bargaining
           - <<: *i18n.gerund
-            min: 31
-            max: 32
+            roll: { min: 31, max: 32 }
             text: Mimicking
           - <<: *i18n.gerund
-            min: 33
-            max: 34
+            roll: { min: 33, max: 34 }
             text: Tricking
           - <<: *i18n.gerund
-            min: 35
-            max: 36
+            roll: { min: 35, max: 36 }
             text: Tracking
           - <<: *i18n.gerund
-            min: 37
-            max: 38
+            roll: { min: 37, max: 38 }
             text: Escorting
           - <<: *i18n.gerund
-            min: 39
-            max: 40
+            roll: { min: 39, max: 40 }
             text: Hiding
           - <<: *i18n.gerund
-            min: 41
-            max: 42
+            roll: { min: 41, max: 42 }
             text: Raiding
           - <<: *i18n.gerund
-            min: 43
-            max: 44
+            roll: { min: 43, max: 44 }
             text: Socializing
           - <<: *i18n.gerund
-            min: 45
-            max: 46
+            roll: { min: 45, max: 46 }
             text: Exploring
           - <<: *i18n.gerund
-            min: 47
-            max: 48
+            roll: { min: 47, max: 48 }
             text: Journeying
           - <<: *i18n.gerund
-            min: 49
-            max: 50
+            roll: { min: 49, max: 50 }
             text: Supporting
           - <<: *i18n.gerund
-            min: 51
-            max: 52
+            roll: { min: 51, max: 52 }
             text: Avoiding
           - <<: *i18n.gerund
-            min: 53
-            max: 54
+            roll: { min: 53, max: 54 }
             text: Disabling
           - <<: *i18n.gerund
-            min: 55
-            max: 56
+            roll: { min: 55, max: 56 }
             text: Leading
           - <<: *i18n.gerund
-            min: 57
-            max: 58
+            roll: { min: 57, max: 58 }
             text: Assaulting
           - <<: *i18n.gerund
-            min: 59
-            max: 60
+            roll: { min: 59, max: 60 }
             text: Ensnaring
           - <<: *i18n.gerund
-            min: 61
-            max: 62
+            roll: { min: 61, max: 62 }
             text: Defending
           - <<: *i18n.gerund
-            min: 63
-            max: 64
+            roll: { min: 63, max: 64 }
             text: Recovering
           - <<: *i18n.gerund
-            min: 65
-            max: 66
+            roll: { min: 65, max: 66 }
             text: Patrolling
           - <<: *i18n.gerund
-            min: 67
-            max: 68
+            roll: { min: 67, max: 68 }
             text: Resting
           - <<: *i18n.gerund
-            min: 69
-            max: 70
+            roll: { min: 69, max: 70 }
             text: Distracting
           - <<: *i18n.gerund
-            min: 71
-            max: 72
+            roll: { min: 71, max: 72 }
             text: Leaving
           - <<: *i18n.gerund
-            min: 73
-            max: 74
+            roll: { min: 73, max: 74 }
             text: Fighting
           - <<: *i18n.gerund
-            min: 75
-            max: 76
+            roll: { min: 75, max: 76 }
             text: Ambushing
           - <<: *i18n.gerund
-            min: 77
-            max: 78
+            roll: { min: 77, max: 78 }
             text: Controlling
           - <<: *i18n.gerund
-            min: 79
-            max: 80
+            roll: { min: 79, max: 80 }
             text: Observing
           - <<: *i18n.gerund
-            min: 81
-            max: 82
+            roll: { min: 81, max: 82 }
             text: Gathering
           - <<: *i18n.gerund
-            min: 83
-            max: 84
+            roll: { min: 83, max: 84 }
             text: Suffering
           - <<: *i18n.gerund
-            min: 85
-            max: 86
+            roll: { min: 85, max: 86 }
             text: Threatening
           - <<: *i18n.gerund
-            min: 87
-            max: 88
+            roll: { min: 87, max: 88 }
             text: Searching
           - <<: *i18n.gerund
-            min: 89
-            max: 90
+            roll: { min: 89, max: 90 }
             text: Destroying
           - <<: *i18n.gerund
-            min: 91
-            max: 92
+            roll: { min: 91, max: 92 }
             text: Restoring
           - <<: *i18n.gerund
-            min: 93
-            max: 94
+            roll: { min: 93, max: 94 }
             text: Consuming
           - <<: *i18n.gerund
-            min: 95
-            max: 96
+            roll: { min: 95, max: 96 }
             text: Removing
           - <<: *i18n.gerund
-            min: 97
-            max: 98
+            roll: { min: 97, max: 98 }
             text: Inspecting
           - <<: *i18n.gerund
-            min: 99
-            max: 100
+            roll: { min: 99, max: 100 }
             text: Summoning
       disposition:
         name: Disposition
@@ -251,50 +201,38 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: adjective
-            min: 1
-            max: 6
+            roll: { min: 1, max: 6 }
             text: Helpful
           - <<: *i18n.adjective
-            min: 7
-            max: 13
+            roll: { min: 7, max: 13 }
             text: Friendly
           - <<: *i18n.adjective
-            min: 14
-            max: 20
+            roll: { min: 14, max: 20 }
             text: Cooperative
           - <<: *i18n.adjective
-            min: 21
-            max: 28
+            roll: { min: 21, max: 28 }
             text: Curious
           - <<: *i18n.adjective
-            min: 29
-            max: 36
+            roll: { min: 29, max: 36 }
             text: Indifferent
           - <<: *i18n.adjective
-            min: 37
-            max: 47
+            roll: { min: 37, max: 47 }
             text: Suspicious
           - <<: *i18n.gerund
-            min: 48
-            max: 57
+            roll: { min: 48, max: 57 }
             text: Wanting
           - <<: *i18n.adjective
-            min: 58
-            max: 67
+            roll: { min: 58, max: 67 }
             text: Desperate
           - <<: *i18n.gerund
-            min: 68
-            max: 76
+            roll: { min: 68, max: 76 }
             text: Demanding
           - <<: *i18n.adjective
-            min: 77
-            max: 85
+            roll: { min: 77, max: 85 }
             text: Unfriendly
           - <<: *i18n.adjective
-            min: 86
-            max: 93
+            roll: { min: 86, max: 93 }
             text: Threatening
           - <<: *i18n.adjective
-            min: 94
-            max: 100
+            roll: { min: 94, max: 100 }
             text: Hostile

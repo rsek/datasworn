@@ -43,406 +43,306 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Akim
                 _i18n: &ProperNoun
                   text:
                     part_of_speech: proper_noun
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Alex
                 _i18n: *ProperNoun
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Alexis
                 _i18n: *ProperNoun
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Alisa
                 _i18n: *ProperNoun
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Althea
                 _i18n: *ProperNoun
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Amari
                 _i18n: *ProperNoun
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Aparna
                 _i18n: *ProperNoun
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Argus
                 _i18n: *ProperNoun
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Arnav
                 _i18n: *ProperNoun
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Ash
                 _i18n: *ProperNoun
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Asha
                 _i18n: *ProperNoun
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Astrid
                 _i18n: *ProperNoun
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Aurora
                 _i18n: *ProperNoun
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Ayako
                 _i18n: *ProperNoun
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Azriel
                 _i18n: *ProperNoun
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Blake
                 _i18n: *ProperNoun
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Brennan
                 _i18n: *ProperNoun
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Brianna
                 _i18n: *ProperNoun
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Bruna
                 _i18n: *ProperNoun
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Bruno
                 _i18n: *ProperNoun
-              - min: 21
-                max: 21
+              - roll: { min: 21, max: 21 }
                 text: Cassidy
                 _i18n: *ProperNoun
-              - min: 22
-                max: 22
+              - roll: { min: 22, max: 22 }
                 text: Christa
                 _i18n: *ProperNoun
-              - min: 23
-                max: 23
+              - roll: { min: 23, max: 23 }
                 text: Cole
                 _i18n: *ProperNoun
-              - min: 24
-                max: 24
+              - roll: { min: 24, max: 24 }
                 text: Corey
                 _i18n: *ProperNoun
-              - min: 25
-                max: 25
+              - roll: { min: 25, max: 25 }
                 text: Creed
                 _i18n: *ProperNoun
-              - min: 26
-                max: 26
+              - roll: { min: 26, max: 26 }
                 text: Derya
                 _i18n: *ProperNoun
-              - min: 27
-                max: 27
+              - roll: { min: 27, max: 27 }
                 text: Dex
                 _i18n: *ProperNoun
-              - min: 28
-                max: 28
+              - roll: { min: 28, max: 28 }
                 text: Doran
                 _i18n: *ProperNoun
-              - min: 29
-                max: 29
+              - roll: { min: 29, max: 29 }
                 text: Echo
                 _i18n: *ProperNoun
-              - min: 30
-                max: 30
+              - roll: { min: 30, max: 30 }
                 text: Eren
                 _i18n: *ProperNoun
-              - min: 31
-                max: 31
+              - roll: { min: 31, max: 31 }
                 text: Erim
                 _i18n: *ProperNoun
-              - min: 32
-                max: 32
+              - roll: { min: 32, max: 32 }
                 text: Esana
                 _i18n: *ProperNoun
-              - min: 33
-                max: 33
+              - roll: { min: 33, max: 33 }
                 text: Eveline
                 _i18n: *ProperNoun
-              - min: 34
-                max: 34
+              - roll: { min: 34, max: 34 }
                 text: Faye
                 _i18n: *ProperNoun
-              - min: 35
-                max: 35
+              - roll: { min: 35, max: 35 }
                 text: Fletcher
                 _i18n: *ProperNoun
-              - min: 36
-                max: 36
+              - roll: { min: 36, max: 36 }
                 text: Flint
                 _i18n: *ProperNoun
-              - min: 37
-                max: 37
+              - roll: { min: 37, max: 37 }
                 text: Florian
                 _i18n: *ProperNoun
-              - min: 38
-                max: 38
+              - roll: { min: 38, max: 38 }
                 text: Gavin
                 _i18n: *ProperNoun
-              - min: 39
-                max: 39
+              - roll: { min: 39, max: 39 }
                 text: Halia
                 _i18n: *ProperNoun
-              - min: 40
-                max: 40
+              - roll: { min: 40, max: 40 }
                 text: Ike
                 _i18n: *ProperNoun
-              - min: 41
-                max: 41
+              - roll: { min: 41, max: 41 }
                 text: Isaac
                 _i18n: *ProperNoun
-              - min: 42
-                max: 42
+              - roll: { min: 42, max: 42 }
                 text: James
                 _i18n: *ProperNoun
-              - min: 43
-                max: 43
+              - roll: { min: 43, max: 43 }
                 text: Janya
                 _i18n: *ProperNoun
-              - min: 44
-                max: 44
+              - roll: { min: 44, max: 44 }
                 text: Jihun
                 _i18n: *ProperNoun
-              - min: 45
-                max: 45
+              - roll: { min: 45, max: 45 }
                 text: Jorunn
                 _i18n: *ProperNoun
-              - min: 46
-                max: 46
+              - roll: { min: 46, max: 46 }
                 text: Juliana
                 _i18n: *ProperNoun
-              - min: 47
-                max: 47
+              - roll: { min: 47, max: 47 }
                 text: Juro
                 _i18n: *ProperNoun
-              - min: 48
-                max: 48
+              - roll: { min: 48, max: 48 }
                 text: Kaisa
                 _i18n: *ProperNoun
-              - min: 49
-                max: 49
+              - roll: { min: 49, max: 49 }
                 text: Karthik
                 _i18n: *ProperNoun
-              - min: 50
-                max: 50
+              - roll: { min: 50, max: 50 }
                 text: Kayla
                 _i18n: *ProperNoun
-              - min: 51
-                max: 51
+              - roll: { min: 51, max: 51 }
                 text: Kei
                 _i18n: *ProperNoun
-              - min: 52
-                max: 52
+              - roll: { min: 52, max: 52 }
                 text: Kiana
                 _i18n: *ProperNoun
-              - min: 53
-                max: 53
+              - roll: { min: 53, max: 53 }
                 text: Kieran
                 _i18n: *ProperNoun
-              - min: 54
-                max: 54
+              - roll: { min: 54, max: 54 }
                 text: Kierra
                 _i18n: *ProperNoun
-              - min: 55
-                max: 55
+              - roll: { min: 55, max: 55 }
                 text: Kimora
                 _i18n: *ProperNoun
-              - min: 56
-                max: 56
+              - roll: { min: 56, max: 56 }
                 text: Kiri
                 _i18n: *ProperNoun
-              - min: 57
-                max: 57
+              - roll: { min: 57, max: 57 }
                 text: Kirsa
                 _i18n: *ProperNoun
-              - min: 58
-                max: 58
+              - roll: { min: 58, max: 58 }
                 text: Kwan
                 _i18n: *ProperNoun
-              - min: 59
-                max: 59
+              - roll: { min: 59, max: 59 }
                 text: Kylar
                 _i18n: *ProperNoun
-              - min: 60
-                max: 60
+              - roll: { min: 60, max: 60 }
                 text: Landry
                 _i18n: *ProperNoun
-              - min: 61
-                max: 61
+              - roll: { min: 61, max: 61 }
                 text: Logan
                 _i18n: *ProperNoun
-              - min: 62
-                max: 62
+              - roll: { min: 62, max: 62 }
                 text: Lowell
                 _i18n: *ProperNoun
-              - min: 63
-                max: 63
+              - roll: { min: 63, max: 63 }
                 text: Lucas
                 _i18n: *ProperNoun
-              - min: 64
-                max: 64
+              - roll: { min: 64, max: 64 }
                 text: Curtis
                 _i18n: *ProperNoun
-              - min: 65
-                max: 65
+              - roll: { min: 65, max: 65 }
                 text: Luna
                 _i18n: *ProperNoun
-              - min: 66
-                max: 66
+              - roll: { min: 66, max: 66 }
                 text: Lux
                 _i18n: *ProperNoun
-              - min: 67
-                max: 67
+              - roll: { min: 67, max: 67 }
                 text: Mae
                 _i18n: *ProperNoun
-              - min: 68
-                max: 68
+              - roll: { min: 68, max: 68 }
                 text: Magnus
                 _i18n: *ProperNoun
-              - min: 69
-                max: 69
+              - roll: { min: 69, max: 69 }
                 text: Mave
                 _i18n: *ProperNoun
-              - min: 70
-                max: 70
+              - roll: { min: 70, max: 70 }
                 text: Merrick
                 _i18n: *ProperNoun
-              - min: 71
-                max: 71
+              - roll: { min: 71, max: 71 }
                 text: Mina
                 _i18n: *ProperNoun
-              - min: 72
-                max: 72
+              - roll: { min: 72, max: 72 }
                 text: Nashida
                 _i18n: *ProperNoun
-              - min: 73
-                max: 73
+              - roll: { min: 73, max: 73 }
                 text: Nassar
                 _i18n: *ProperNoun
-              - min: 74
-                max: 74
+              - roll: { min: 74, max: 74 }
                 text: Ostara
                 _i18n: *ProperNoun
-              - min: 75
-                max: 75
+              - roll: { min: 75, max: 75 }
                 text: Qasira
                 _i18n: *ProperNoun
-              - min: 76
-                max: 76
+              - roll: { min: 76, max: 76 }
                 text: Quinn
                 _i18n: *ProperNoun
-              - min: 77
-                max: 77
+              - roll: { min: 77, max: 77 }
                 text: Ragnar
                 _i18n: *ProperNoun
-              - min: 78
-                max: 78
+              - roll: { min: 78, max: 78 }
                 text: Raven
                 _i18n: *ProperNoun
-              - min: 79
-                max: 79
+              - roll: { min: 79, max: 79 }
                 text: Ria
                 _i18n: *ProperNoun
-              - min: 80
-                max: 80
+              - roll: { min: 80, max: 80 }
                 text: Rokuro
                 _i18n: *ProperNoun
-              - min: 81
-                max: 81
+              - roll: { min: 81, max: 81 }
                 text: Roland
                 _i18n: *ProperNoun
-              - min: 82
-                max: 82
+              - roll: { min: 82, max: 82 }
                 text: Rowena
                 _i18n: *ProperNoun
-              - min: 83
-                max: 83
+              - roll: { min: 83, max: 83 }
                 text: Sage
                 _i18n: *ProperNoun
-              - min: 84
-                max: 84
+              - roll: { min: 84, max: 84 }
                 text: Saren
                 _i18n: *ProperNoun
-              - min: 85
-                max: 85
+              - roll: { min: 85, max: 85 }
                 text: Annora
                 _i18n: *ProperNoun
-              - min: 86
-                max: 86
+              - roll: { min: 86, max: 86 }
                 text: Severinus
                 _i18n: *ProperNoun
-              - min: 87
-                max: 87
+              - roll: { min: 87, max: 87 }
                 text: Shen
                 _i18n: *ProperNoun
-              - min: 88
-                max: 88
+              - roll: { min: 88, max: 88 }
                 text: Talia
                 _i18n: *ProperNoun
-              - min: 89
-                max: 89
+              - roll: { min: 89, max: 89 }
                 text: Tomiko
                 _i18n: *ProperNoun
-              - min: 90
-                max: 90
+              - roll: { min: 90, max: 90 }
                 text: Ulan
                 _i18n: *ProperNoun
-              - min: 91
-                max: 91
+              - roll: { min: 91, max: 91 }
                 text: Valda
                 _i18n: *ProperNoun
-              - min: 92
-                max: 92
+              - roll: { min: 92, max: 92 }
                 text: Venri
                 _i18n: *ProperNoun
-              - min: 93
-                max: 93
+              - roll: { min: 93, max: 93 }
                 text: Vesper
                 _i18n: *ProperNoun
-              - min: 94
-                max: 94
+              - roll: { min: 94, max: 94 }
                 text: Vuldar
                 _i18n: *ProperNoun
-              - min: 95
-                max: 95
+              - roll: { min: 95, max: 95 }
                 text: William
                 _i18n: *ProperNoun
-              - min: 96
-                max: 96
+              - roll: { min: 96, max: 96 }
                 text: Yelena
                 _i18n: *ProperNoun
-              - min: 97
-                max: 97
+              - roll: { min: 97, max: 97 }
                 text: Zakia
                 _i18n: *ProperNoun
-              - min: 98
-                max: 98
+              - roll: { min: 98, max: 98 }
                 text: Zari
                 _i18n: *ProperNoun
-              - min: 99
-                max: 99
+              - roll: { min: 99, max: 99 }
                 text: Zephyr
                 _i18n: *ProperNoun
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 text: Zoya
                 _i18n: *ProperNoun
           callsign:
@@ -456,404 +356,304 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Albatross
                 _i18n: *ProperNoun
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Angler
                 _i18n: *ProperNoun
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Anvil
                 _i18n: *ProperNoun
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Badger
                 _i18n: *ProperNoun
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Bandit
                 _i18n: *ProperNoun
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Bash
                 _i18n: *ProperNoun
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Basilisk
                 _i18n: *ProperNoun
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Bingo
                 _i18n: *ProperNoun
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Blackbird
                 _i18n: *ProperNoun
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Blade
                 _i18n: *ProperNoun
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Bloodshot
                 _i18n: *ProperNoun
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Bluewing
                 _i18n: *ProperNoun
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Bonfire
                 _i18n: *ProperNoun
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Book
                 _i18n: *ProperNoun
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Breaker
                 _i18n: *ProperNoun
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Brick
                 _i18n: *ProperNoun
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Buzz
                 _i18n: *ProperNoun
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Buzzard
                 _i18n: *ProperNoun
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Centurion
                 _i18n: *ProperNoun
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Chimera
                 _i18n: *ProperNoun
-              - min: 21
-                max: 21
+              - roll: { min: 21, max: 21 }
                 text: Circuit
                 _i18n: *ProperNoun
-              - min: 22
-                max: 22
+              - roll: { min: 22, max: 22 }
                 text: Clank
                 _i18n: *ProperNoun
-              - min: 23
-                max: 23
+              - roll: { min: 23, max: 23 }
                 text: Cleric
                 _i18n: *ProperNoun
-              - min: 24
-                max: 24
+              - roll: { min: 24, max: 24 }
                 text: Crash
                 _i18n: *ProperNoun
-              - min: 25
-                max: 25
+              - roll: { min: 25, max: 25 }
                 text: Cutter
                 _i18n: *ProperNoun
-              - min: 26
-                max: 26
+              - roll: { min: 26, max: 26 }
                 text: Cutthroat
                 _i18n: *ProperNoun
-              - min: 27
-                max: 27
+              - roll: { min: 27, max: 27 }
                 text: Cypher
                 _i18n: *ProperNoun
-              - min: 28
-                max: 28
+              - roll: { min: 28, max: 28 }
                 text: Dagger
                 _i18n: *ProperNoun
-              - min: 29
-                max: 29
+              - roll: { min: 29, max: 29 }
                 text: Dancer
                 _i18n: *ProperNoun
-              - min: 30
-                max: 30
+              - roll: { min: 30, max: 30 }
                 text: Dash
                 _i18n: *ProperNoun
-              - min: 31
-                max: 31
+              - roll: { min: 31, max: 31 }
                 text: Deadeye
                 _i18n: *ProperNoun
-              - min: 32
-                max: 32
+              - roll: { min: 32, max: 32 }
                 text: Deuce
                 _i18n: *ProperNoun
-              - min: 33
-                max: 33
+              - roll: { min: 33, max: 33 }
                 text: Failsafe
                 _i18n: *ProperNoun
-              - min: 34
-                max: 34
+              - roll: { min: 34, max: 34 }
                 text: Farseer
                 _i18n: *ProperNoun
-              - min: 35
-                max: 35
+              - roll: { min: 35, max: 35 }
                 text: Fidget
                 _i18n: *ProperNoun
-              - min: 36
-                max: 36
+              - roll: { min: 36, max: 36 }
                 text: Firestarter
                 _i18n: *ProperNoun
-              - min: 37
-                max: 37
+              - roll: { min: 37, max: 37 }
                 text: Fixer
                 _i18n: *ProperNoun
-              - min: 38
-                max: 38
+              - roll: { min: 38, max: 38 }
                 text: Flatline
                 _i18n: *ProperNoun
-              - min: 39
-                max: 39
+              - roll: { min: 39, max: 39 }
                 text: Ghost
                 _i18n: *ProperNoun
-              - min: 40
-                max: 40
+              - roll: { min: 40, max: 40 }
                 text: Grudge
                 _i18n: *ProperNoun
-              - min: 41
-                max: 41
+              - roll: { min: 41, max: 41 }
                 text: Gutshot
                 _i18n: *ProperNoun
-              - min: 42
-                max: 42
+              - roll: { min: 42, max: 42 }
                 text: Harrow
                 _i18n: *ProperNoun
-              - min: 43
-                max: 43
+              - roll: { min: 43, max: 43 }
                 text: Havoc
                 _i18n: *ProperNoun
-              - min: 44
-                max: 44
+              - roll: { min: 44, max: 44 }
                 text: Hellhound
                 _i18n: *ProperNoun
-              - min: 45
-                max: 45
+              - roll: { min: 45, max: 45 }
                 text: Hellion
                 _i18n: *ProperNoun
-              - min: 46
-                max: 46
+              - roll: { min: 46, max: 46 }
                 text: Hex
                 _i18n: *ProperNoun
-              - min: 47
-                max: 47
+              - roll: { min: 47, max: 47 }
                 text: Hush
                 _i18n: *ProperNoun
-              - min: 48
-                max: 48
+              - roll: { min: 48, max: 48 }
                 text: Irodescriptionnclad
                 _i18n: *ProperNoun
-              - min: 49
-                max: 49
+              - roll: { min: 49, max: 49 }
                 text: Jackal
                 _i18n: *ProperNoun
-              - min: 50
-                max: 50
+              - roll: { min: 50, max: 50 }
                 text: Jackpot
                 _i18n: *ProperNoun
-              - min: 51
-                max: 51
+              - roll: { min: 51, max: 51 }
                 text: Jester
                 _i18n: *ProperNoun
-              - min: 52
-                max: 52
+              - roll: { min: 52, max: 52 }
                 text: Link
                 _i18n: *ProperNoun
-              - min: 53
-                max: 53
+              - roll: { min: 53, max: 53 }
                 text: Longshot
                 _i18n: *ProperNoun
-              - min: 54
-                max: 54
+              - roll: { min: 54, max: 54 }
                 text: Mainframe
                 _i18n: *ProperNoun
-              - min: 55
-                max: 55
+              - roll: { min: 55, max: 55 }
                 text: Mantis
                 _i18n: *ProperNoun
-              - min: 56
-                max: 56
+              - roll: { min: 56, max: 56 }
                 text: Mimic
                 _i18n: *ProperNoun
-              - min: 57
-                max: 57
+              - roll: { min: 57, max: 57 }
                 text: Mole
                 _i18n: *ProperNoun
-              - min: 58
-                max: 58
+              - roll: { min: 58, max: 58 }
                 text: Monarch
                 _i18n: *ProperNoun
-              - min: 59
-                max: 59
+              - roll: { min: 59, max: 59 }
                 text: Mongoose
                 _i18n: *ProperNoun
-              - min: 60
-                max: 60
+              - roll: { min: 60, max: 60 }
                 text: Nails
                 _i18n: *ProperNoun
-              - min: 61
-                max: 61
+              - roll: { min: 61, max: 61 }
                 text: Ogre
                 _i18n: *ProperNoun
-              - min: 62
-                max: 62
+              - roll: { min: 62, max: 62 }
                 text: Omega
                 _i18n: *ProperNoun
-              - min: 63
-                max: 63
+              - roll: { min: 63, max: 63 }
                 text: Overload
                 _i18n: *ProperNoun
-              - min: 64
-                max: 64
+              - roll: { min: 64, max: 64 }
                 text: Packrat
                 _i18n: *ProperNoun
-              - min: 65
-                max: 65
+              - roll: { min: 65, max: 65 }
                 text: Paladin
                 _i18n: *ProperNoun
-              - min: 66
-                max: 66
+              - roll: { min: 66, max: 66 }
                 text: Phantom
                 _i18n: *ProperNoun
-              - min: 67
-                max: 67
+              - roll: { min: 67, max: 67 }
                 text: Phoenix
                 _i18n: *ProperNoun
-              - min: 68
-                max: 68
+              - roll: { min: 68, max: 68 }
                 text: Pyro
                 _i18n: *ProperNoun
-              - min: 69
-                max: 69
+              - roll: { min: 69, max: 69 }
                 text: Quickdraw
                 _i18n: *ProperNoun
-              - min: 70
-                max: 70
+              - roll: { min: 70, max: 70 }
                 text: Razor
                 _i18n: *ProperNoun
-              - min: 71
-                max: 71
+              - roll: { min: 71, max: 71 }
                 text: Rogue
                 _i18n: *ProperNoun
-              - min: 72
-                max: 72
+              - roll: { min: 72, max: 72 }
                 text: Rook
                 _i18n: *ProperNoun
-              - min: 73
-                max: 73
+              - roll: { min: 73, max: 73 }
                 text: Rover
                 _i18n: *ProperNoun
-              - min: 74
-                max: 74
+              - roll: { min: 74, max: 74 }
                 text: Scout
                 _i18n: *ProperNoun
-              - min: 75
-                max: 75
+              - roll: { min: 75, max: 75 }
                 text: Shadow
                 _i18n: *ProperNoun
-              - min: 76
-                max: 76
+              - roll: { min: 76, max: 76 }
                 text: Shark
                 _i18n: *ProperNoun
-              - min: 77
-                max: 77
+              - roll: { min: 77, max: 77 }
                 text: Shutdown
                 _i18n: *ProperNoun
-              - min: 78
-                max: 78
+              - roll: { min: 78, max: 78 }
                 text: Slack
                 _i18n: *ProperNoun
-              - min: 79
-                max: 79
+              - roll: { min: 79, max: 79 }
                 text: Slash
                 _i18n: *ProperNoun
-              - min: 80
-                max: 80
+              - roll: { min: 80, max: 80 }
                 text: Snipe
                 _i18n: *ProperNoun
-              - min: 81
-                max: 81
+              - roll: { min: 81, max: 81 }
                 text: Spider
                 _i18n: *ProperNoun
-              - min: 82
-                max: 82
+              - roll: { min: 82, max: 82 }
                 text: Splinter
                 _i18n: *ProperNoun
-              - min: 83
-                max: 83
+              - roll: { min: 83, max: 83 }
                 text: Static
                 _i18n: *ProperNoun
-              - min: 84
-                max: 84
+              - roll: { min: 84, max: 84 }
                 text: Stinger
                 _i18n: *ProperNoun
-              - min: 85
-                max: 85
+              - roll: { min: 85, max: 85 }
                 text: Straggler
                 _i18n: *ProperNoun
-              - min: 86
-                max: 86
+              - roll: { min: 86, max: 86 }
                 text: Swindle
                 _i18n: *ProperNoun
-              - min: 87
-                max: 87
+              - roll: { min: 87, max: 87 }
                 text: Tinker
                 _i18n: *ProperNoun
-              - min: 88
-                max: 88
+              - roll: { min: 88, max: 88 }
                 text: Touchdown
                 _i18n: *ProperNoun
-              - min: 89
-                max: 89
+              - roll: { min: 89, max: 89 }
                 text: Tycoon
                 _i18n: *ProperNoun
-              - min: 90
-                max: 90
+              - roll: { min: 90, max: 90 }
                 text: Vagabond
                 _i18n: *ProperNoun
-              - min: 91
-                max: 91
+              - roll: { min: 91, max: 91 }
                 text: Valkyrie
                 _i18n: *ProperNoun
-              - min: 92
-                max: 92
+              - roll: { min: 92, max: 92 }
                 text: Vanguard
                 _i18n: *ProperNoun
-              - min: 93
-                max: 93
+              - roll: { min: 93, max: 93 }
                 text: Vertigo
                 _i18n: *ProperNoun
-              - min: 94
-                max: 94
+              - roll: { min: 94, max: 94 }
                 text: Warden
                 _i18n: *ProperNoun
-              - min: 95
-                max: 95
+              - roll: { min: 95, max: 95 }
                 text: Watchdog
                 _i18n: *ProperNoun
-              - min: 96
-                max: 96
+              - roll: { min: 96, max: 96 }
                 text: Wayfinder
                 _i18n: *ProperNoun
-              - min: 97
-                max: 97
+              - roll: { min: 97, max: 97 }
                 text: Whisper
                 _i18n: *ProperNoun
-              - min: 98
-                max: 98
+              - roll: { min: 98, max: 98 }
                 text: Wraith
                 _i18n: *ProperNoun
-              - min: 99
-                max: 99
+              - roll: { min: 99, max: 99 }
                 text: Wrongway
                 _i18n: *ProperNoun
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 text: Zephyr
                 _i18n: *ProperNoun
           family_name:
@@ -867,404 +667,304 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Kuzmin
                 _i18n: *ProperNoun
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Durant
                 _i18n: *ProperNoun
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Jefferies
                 _i18n: *ProperNoun
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Velez
                 _i18n: *ProperNoun
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Lontoc
                 _i18n: *ProperNoun
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Wade
                 _i18n: *ProperNoun
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Kade
                 _i18n: *ProperNoun
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Thorn
                 _i18n: *ProperNoun
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Khosla
                 _i18n: *ProperNoun
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Hendrix
                 _i18n: *ProperNoun
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Okiro
                 _i18n: *ProperNoun
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Ripley
                 _i18n: *ProperNoun
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Talin
                 _i18n: *ProperNoun
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Jin
                 _i18n: *ProperNoun
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Finn
                 _i18n: *ProperNoun
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Solas
                 _i18n: *ProperNoun
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Quint
                 _i18n: *ProperNoun
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Keelan
                 _i18n: *ProperNoun
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Silva
                 _i18n: *ProperNoun
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Valk
                 _i18n: *ProperNoun
-              - min: 21
-                max: 21
+              - roll: { min: 21, max: 21 }
                 text: O'Brien
                 _i18n: *ProperNoun
-              - min: 22
-                max: 22
+              - roll: { min: 22, max: 22 }
                 text: Ruiz
                 _i18n: *ProperNoun
-              - min: 23
-                max: 23
+              - roll: { min: 23, max: 23 }
                 text: Stallard
                 _i18n: *ProperNoun
-              - min: 24
-                max: 24
+              - roll: { min: 24, max: 24 }
                 text: Mackenson
                 _i18n: *ProperNoun
-              - min: 25
-                max: 25
+              - roll: { min: 25, max: 25 }
                 text: Jensen
                 _i18n: *ProperNoun
-              - min: 26
-                max: 26
+              - roll: { min: 26, max: 26 }
                 text: Sakir
                 _i18n: *ProperNoun
-              - min: 27
-                max: 27
+              - roll: { min: 27, max: 27 }
                 text: Tolari
                 _i18n: *ProperNoun
-              - min: 28
-                max: 28
+              - roll: { min: 28, max: 28 }
                 text: Kain
                 _i18n: *ProperNoun
-              - min: 29
-                max: 29
+              - roll: { min: 29, max: 29 }
                 text: Carr
                 _i18n: *ProperNoun
-              - min: 30
-                max: 30
+              - roll: { min: 30, max: 30 }
                 text: Valenus
                 _i18n: *ProperNoun
-              - min: 31
-                max: 31
+              - roll: { min: 31, max: 31 }
                 text: Kaan
                 _i18n: *ProperNoun
-              - min: 32
-                max: 32
+              - roll: { min: 32, max: 32 }
                 text: Taylan
                 _i18n: *ProperNoun
-              - min: 33
-                max: 33
+              - roll: { min: 33, max: 33 }
                 text: Legrand
                 _i18n: *ProperNoun
-              - min: 34
-                max: 34
+              - roll: { min: 34, max: 34 }
                 text: Jemison
                 _i18n: *ProperNoun
-              - min: 35
-                max: 35
+              - roll: { min: 35, max: 35 }
                 text: Arden
                 _i18n: *ProperNoun
-              - min: 36
-                max: 36
+              - roll: { min: 36, max: 36 }
                 text: Sayer
                 _i18n: *ProperNoun
-              - min: 37
-                max: 37
+              - roll: { min: 37, max: 37 }
                 text: Kai
                 _i18n: *ProperNoun
-              - min: 38
-                max: 38
+              - roll: { min: 38, max: 38 }
                 text: Slater
                 _i18n: *ProperNoun
-              - min: 39
-                max: 39
+              - roll: { min: 39, max: 39 }
                 text: Edris
                 _i18n: *ProperNoun
-              - min: 40
-                max: 40
+              - roll: { min: 40, max: 40 }
                 text: Sutton
                 _i18n: *ProperNoun
-              - min: 41
-                max: 41
+              - roll: { min: 41, max: 41 }
                 text: Savarin
                 _i18n: *ProperNoun
-              - min: 42
-                max: 42
+              - roll: { min: 42, max: 42 }
                 text: Bridger
                 _i18n: *ProperNoun
-              - min: 43
-                max: 43
+              - roll: { min: 43, max: 43 }
                 text: Mital
                 _i18n: *ProperNoun
-              - min: 44
-                max: 44
+              - roll: { min: 44, max: 44 }
                 text: Shin
                 _i18n: *ProperNoun
-              - min: 45
-                max: 45
+              - roll: { min: 45, max: 45 }
                 text: Nadir
                 _i18n: *ProperNoun
-              - min: 46
-                max: 46
+              - roll: { min: 46, max: 46 }
                 text: Santos
                 _i18n: *ProperNoun
-              - min: 47
-                max: 47
+              - roll: { min: 47, max: 47 }
                 text: Mihara
                 _i18n: *ProperNoun
-              - min: 48
-                max: 48
+              - roll: { min: 48, max: 48 }
                 text: Buhari
                 _i18n: *ProperNoun
-              - min: 49
-                max: 49
+              - roll: { min: 49, max: 49 }
                 text: Salvi
                 _i18n: *ProperNoun
-              - min: 50
-                max: 50
+              - roll: { min: 50, max: 50 }
                 text: Adler
                 _i18n: *ProperNoun
-              - min: 51
-                max: 51
+              - roll: { min: 51, max: 51 }
                 text: Takara
                 _i18n: *ProperNoun
-              - min: 52
-                max: 52
+              - roll: { min: 52, max: 52 }
                 text: Shelton
                 _i18n: *ProperNoun
-              - min: 53
-                max: 53
+              - roll: { min: 53, max: 53 }
                 text: Vandu
                 _i18n: *ProperNoun
-              - min: 54
-                max: 54
+              - roll: { min: 54, max: 54 }
                 text: Vega
                 _i18n: *ProperNoun
-              - min: 55
-                max: 55
+              - roll: { min: 55, max: 55 }
                 text: Zhang
                 _i18n: *ProperNoun
-              - min: 56
-                max: 56
+              - roll: { min: 56, max: 56 }
                 text: Savela
                 _i18n: *ProperNoun
-              - min: 57
-                max: 57
+              - roll: { min: 57, max: 57 }
                 text: Hawking
                 _i18n: *ProperNoun
-              - min: 58
-                max: 58
+              - roll: { min: 58, max: 58 }
                 text: Jen
                 _i18n: *ProperNoun
-              - min: 59
-                max: 59
+              - roll: { min: 59, max: 59 }
                 text: Hobbs
                 _i18n: *ProperNoun
-              - min: 60
-                max: 60
+              - roll: { min: 60, max: 60 }
                 text: Holland
                 _i18n: *ProperNoun
-              - min: 61
-                max: 61
+              - roll: { min: 61, max: 61 }
                 text: Silvius
                 _i18n: *ProperNoun
-              - min: 62
-                max: 62
+              - roll: { min: 62, max: 62 }
                 text: Freeman
                 _i18n: *ProperNoun
-              - min: 63
-                max: 63
+              - roll: { min: 63, max: 63 }
                 text: Barbosa
                 _i18n: *ProperNoun
-              - min: 64
-                max: 64
+              - roll: { min: 64, max: 64 }
                 text: Winter
                 _i18n: *ProperNoun
-              - min: 65
-                max: 65
+              - roll: { min: 65, max: 65 }
                 text: Hammond
                 _i18n: *ProperNoun
-              - min: 66
-                max: 66
+              - roll: { min: 66, max: 66 }
                 text: Archer
                 _i18n: *ProperNoun
-              - min: 67
-                max: 67
+              - roll: { min: 67, max: 67 }
                 text: Barlowe
                 _i18n: *ProperNoun
-              - min: 68
-                max: 68
+              - roll: { min: 68, max: 68 }
                 text: Shepherd
                 _i18n: *ProperNoun
-              - min: 69
-                max: 69
+              - roll: { min: 69, max: 69 }
                 text: Griffin
                 _i18n: *ProperNoun
-              - min: 70
-                max: 70
+              - roll: { min: 70, max: 70 }
                 text: Frost
                 _i18n: *ProperNoun
-              - min: 71
-                max: 71
+              - roll: { min: 71, max: 71 }
                 text: Quon
                 _i18n: *ProperNoun
-              - min: 72
-                max: 72
+              - roll: { min: 72, max: 72 }
                 text: Malek
                 _i18n: *ProperNoun
-              - min: 73
-                max: 73
+              - roll: { min: 73, max: 73 }
                 text: Murad
                 _i18n: *ProperNoun
-              - min: 74
-                max: 74
+              - roll: { min: 74, max: 74 }
                 text: Becker
                 _i18n: *ProperNoun
-              - min: 75
-                max: 75
+              - roll: { min: 75, max: 75 }
                 text: Ammar
                 _i18n: *ProperNoun
-              - min: 76
-                max: 76
+              - roll: { min: 76, max: 76 }
                 text: Braddock
                 _i18n: *ProperNoun
-              - min: 77
-                max: 77
+              - roll: { min: 77, max: 77 }
                 text: Blackstone
                 _i18n: *ProperNoun
-              - min: 78
-                max: 78
+              - roll: { min: 78, max: 78 }
                 text: Hadley
                 _i18n: *ProperNoun
-              - min: 79
-                max: 79
+              - roll: { min: 79, max: 79 }
                 text: Farin
                 _i18n: *ProperNoun
-              - min: 80
-                max: 80
+              - roll: { min: 80, max: 80 }
                 text: Kobayashi
                 _i18n: *ProperNoun
-              - min: 81
-                max: 81
+              - roll: { min: 81, max: 81 }
                 text: Duval
                 _i18n: *ProperNoun
-              - min: 82
-                max: 82
+              - roll: { min: 82, max: 82 }
                 text: Hunter
                 _i18n: *ProperNoun
-              - min: 83
-                max: 83
+              - roll: { min: 83, max: 83 }
                 text: Beckett
                 _i18n: *ProperNoun
-              - min: 84
-                max: 84
+              - roll: { min: 84, max: 84 }
                 text: Dykstra
                 _i18n: *ProperNoun
-              - min: 85
-                max: 85
+              - roll: { min: 85, max: 85 }
                 text: Gray
                 _i18n: *ProperNoun
-              - min: 86
-                max: 86
+              - roll: { min: 86, max: 86 }
                 text: Sedano
                 _i18n: *ProperNoun
-              - min: 87
-                max: 87
+              - roll: { min: 87, max: 87 }
                 text: Bai
                 _i18n: *ProperNoun
-              - min: 88
-                max: 88
+              - roll: { min: 88, max: 88 }
                 text: Booker
                 _i18n: *ProperNoun
-              - min: 89
-                max: 89
+              - roll: { min: 89, max: 89 }
                 text: Sato
                 _i18n: *ProperNoun
-              - min: 90
-                max: 90
+              - roll: { min: 90, max: 90 }
                 text: Vayan
                 _i18n: *ProperNoun
-              - min: 91
-                max: 91
+              - roll: { min: 91, max: 91 }
                 text: Bond
                 _i18n: *ProperNoun
-              - min: 92
-                max: 92
+              - roll: { min: 92, max: 92 }
                 text: Stark
                 _i18n: *ProperNoun
-              - min: 93
-                max: 93
+              - roll: { min: 93, max: 93 }
                 text: Stirling
                 _i18n: *ProperNoun
-              - min: 94
-                max: 94
+              - roll: { min: 94, max: 94 }
                 text: Wolfe
                 _i18n: *ProperNoun
-              - min: 95
-                max: 95
+              - roll: { min: 95, max: 95 }
                 text: O'Niel
                 _i18n: *ProperNoun
-              - min: 96
-                max: 96
+              - roll: { min: 96, max: 96 }
                 text: Petrov
                 _i18n: *ProperNoun
-              - min: 97
-                max: 97
+              - roll: { min: 97, max: 97 }
                 text: Nazari
                 _i18n: *ProperNoun
-              - min: 98
-                max: 98
+              - roll: { min: 98, max: 98 }
                 text: Darwin
                 _i18n: *ProperNoun
-              - min: 99
-                max: 99
+              - roll: { min: 99, max: 99 }
                 text: Pearson
                 _i18n: *ProperNoun
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 text: Volkov
                 _i18n: *ProperNoun
     contents:
@@ -1278,167 +978,127 @@ oracles:
         # usage:
         #   initial: true
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Accented
             _i18n: &Adjective
               text:
                 part_of_speech: adjective
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Accompanied
             _i18n: *Adjective
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Adorned
             _i18n: *Adjective
-          - min: 9
-            max: 11
+          - roll: { min: 9, max: 11 }
             text: Aged
             _i18n: *Adjective
-          - min: 12
-            max: 13
+          - roll: { min: 12, max: 13 }
             text: Alluring
             _i18n: &Gerund
               text:
                 part_of_speech: gerund
-          - min: 14
-            max: 15
+          - roll: { min: 14, max: 15 }
             text: Armed
             _i18n: *Adjective
-          - min: 16
-            max: 17
+          - roll: { min: 16, max: 17 }
             text: Armored
             _i18n: *Adjective
-          - min: 18
-            max: 20
+          - roll: { min: 18, max: 20 }
             text: Athletic
             _i18n: *Adjective
-          - min: 21
-            max: 23
+          - roll: { min: 21, max: 23 }
             text: Attractive
             _i18n: *Adjective
-          - min: 24
-            max: 25
+          - roll: { min: 24, max: 25 }
             text: Augmented
             _i18n: *Adjective
-          - min: 26
-            max: 27
+          - roll: { min: 26, max: 27 }
             text: Concealed
             _i18n: *Adjective
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Distracted
             _i18n: *Adjective
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Eccentric
             _i18n: *Adjective
-          - min: 34
-            max: 35
+          - roll: { min: 34, max: 35 }
             text: Energetic
             _i18n: *Adjective
-          - min: 36
-            max: 37
+          - roll: { min: 36, max: 37 }
             text: Flashy
             _i18n: *Adjective
-          - min: 38
-            max: 40
+          - roll: { min: 38, max: 40 }
             text: Graceful
             _i18n: *Adjective
-          - min: 41
-            max: 43
+          - roll: { min: 41, max: 43 }
             text: Grim
             _i18n: *Adjective
-          - min: 44
-            max: 46
+          - roll: { min: 44, max: 46 }
             text: Haggard
             _i18n: *Adjective
-          - min: 47
-            max: 49
+          - roll: { min: 47, max: 49 }
             text: Ill-equipped
             _i18n: *Adjective
-          - min: 50
-            max: 52
+          - roll: { min: 50, max: 52 }
             text: Imposing
             _i18n: *Gerund
-          - min: 53
-            max: 55
+          - roll: { min: 53, max: 55 }
             text: Large
             _i18n: *Adjective
-          - min: 56
-            max: 57
+          - roll: { min: 56, max: 57 }
             text: Mutated
             _i18n: *Adjective
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Plain
             _i18n: *Adjective
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Poised
             _i18n: *Adjective
-          - min: 63
-            max: 65
+          - roll: { min: 63, max: 65 }
             text: Scarred
             _i18n: *Adjective
-          - min: 66
-            max: 68
+          - roll: { min: 66, max: 68 }
             text: Scruffy
             _i18n: *Adjective
-          - min: 69
-            max: 71
+          - roll: { min: 69, max: 71 }
             text: Shifty
             _i18n: *Adjective
-          - min: 72
-            max: 73
+          - roll: { min: 72, max: 73 }
             text: Sickly
             _i18n: *Adjective
-          - min: 74
-            max: 76
+          - roll: { min: 74, max: 76 }
             text: Slight
             _i18n: *Adjective
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Swaggering
             _i18n: *Gerund
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Tattooed
             _i18n: *Adjective
-          - min: 82
-            max: 83
+          - roll: { min: 82, max: 83 }
             text: Threatened
             _i18n: *Adjective
-          - min: 84
-            max: 85
+          - roll: { min: 84, max: 85 }
             text: Uncanny
             _i18n: *Adjective
-          - min: 86
-            max: 87
+          - roll: { min: 86, max: 87 }
             text: Visibly disabled
             _i18n: *Adjective
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Weathered
             _i18n: *Adjective
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: Well-equipped
             _i18n: *Adjective
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             text: Wiry
             _i18n: *Adjective
-          - min: 96
-            max: 97
+          - roll: { min: 96, max: 97 }
             text: Wounded
             _i18n: *Adjective
-          - min: 98
-            max: 100
+          - roll: { min: 98, max: 100 }
             text: Youthful
             _i18n: *Adjective
       initial_disposition:
@@ -1451,52 +1111,40 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - min: 1
-            max: 6
+          - roll: { min: 1, max: 6 }
             text: Helpful
             _i18n: *Adjective
-          - min: 7
-            max: 14
+          - roll: { min: 7, max: 14 }
             text: Friendly
             _i18n: *Adjective
-          - min: 15
-            max: 22
+          - roll: { min: 15, max: 22 }
             text: Cooperative
             _i18n: *Adjective
-          - min: 23
-            max: 30
+          - roll: { min: 23, max: 30 }
             text: Curious
             _i18n: *Adjective
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: Indifferent
             _i18n: *Adjective
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: Suspicious
             _i18n: *Adjective
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Wanting
             _i18n: *Gerund
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: Desperate
             _i18n: *Adjective
-          - min: 71
-            max: 78
+          - roll: { min: 71, max: 78 }
             text: Demanding
             _i18n: *Gerund
-          - min: 79
-            max: 86
+          - roll: { min: 79, max: 86 }
             text: Unfriendly
             _i18n: *Adjective
-          - min: 87
-            max: 94
+          - roll: { min: 87, max: 94 }
             text: Threatening
             _i18n: *Gerund
-          - min: 95
-            max: 100
+          - roll: { min: 95, max: 100 }
             text: Hostile
             _i18n: *Adjective
       role:
@@ -1507,194 +1155,147 @@ oracles:
           <<: *Source
           page: 331
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Agent
             _i18n: &CommonNoun
               text:
                 part_of_speech: common_noun
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: AI
             _i18n: *CommonNoun
-          - min: 5
-            max: 6
+          - roll: { min: 5, max: 6 }
             text: Artisan
             _i18n: *CommonNoun
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Assassin
             _i18n: *CommonNoun
-          - min: 9
-            max: 10
+          - roll: { min: 9, max: 10 }
             text: Bounty Hunter
             _i18n: *CommonNoun
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Courier
             _i18n: *CommonNoun
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Crew
             _i18n: *CommonNoun
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Criminal
             _i18n: *CommonNoun
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Cultist
             _i18n: *CommonNoun
-          - min: 19
-            max: 20
+          - roll: { min: 19, max: 20 }
             text: Diplomat
             _i18n: *CommonNoun
-          - min: 21
-            max: 22
+          - roll: { min: 21, max: 22 }
             text: Engineer
             _i18n: *CommonNoun
-          - min: 23
-            max: 24
+          - roll: { min: 23, max: 24 }
             text: Entertainer
             _i18n: *CommonNoun
-          - min: 25
-            max: 26
+          - roll: { min: 25, max: 26 }
             text: Explorer
             _i18n: *CommonNoun
-          - min: 27
-            max: 28
+          - roll: { min: 27, max: 28 }
             text: Farmer
             _i18n: *CommonNoun
-          - min: 29
-            max: 30
+          - roll: { min: 29, max: 30 }
             text: Fugitive
             _i18n: *CommonNoun
-          - min: 31
-            max: 32
+          - roll: { min: 31, max: 32 }
             text: Guard
             _i18n: *CommonNoun
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Guide
             _i18n: *CommonNoun
-          - min: 35
-            max: 36
+          - roll: { min: 35, max: 36 }
             text: Healer
             _i18n: *CommonNoun
-          - min: 37
-            max: 38
+          - roll: { min: 37, max: 38 }
             text: Historian
             _i18n: *CommonNoun
-          - min: 39
-            max: 40
+          - roll: { min: 39, max: 40 }
             text: Hunter
             _i18n: *CommonNoun
-          - min: 41
-            max: 42
+          - roll: { min: 41, max: 42 }
             text: Investigator
             _i18n: *CommonNoun
-          - min: 43
-            max: 44
+          - roll: { min: 43, max: 44 }
             text: Laborer
             _i18n: *CommonNoun
-          - min: 45
-            max: 46
+          - roll: { min: 45, max: 46 }
             text: Lawkeeper
             _i18n: *CommonNoun
-          - min: 47
-            max: 48
+          - roll: { min: 47, max: 48 }
             text: Leader
             _i18n: *CommonNoun
-          - min: 49
-            max: 50
+          - roll: { min: 49, max: 50 }
             text: Mercenary
             _i18n: *CommonNoun
-          - min: 51
-            max: 52
+          - roll: { min: 51, max: 52 }
             text: Merchant
             _i18n: *CommonNoun
-          - min: 53
-            max: 54
+          - roll: { min: 53, max: 54 }
             text: Miner
             _i18n: *CommonNoun
-          - min: 55
-            max: 56
+          - roll: { min: 55, max: 56 }
             text: Mystic
             _i18n: *CommonNoun
-          - min: 57
-            max: 58
+          - roll: { min: 57, max: 58 }
             text: Navigator
             _i18n: *CommonNoun
-          - min: 59
-            max: 60
+          - roll: { min: 59, max: 60 }
             text: Outcast
             _i18n: *CommonNoun
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Pilgrim
             _i18n: *CommonNoun
-          - min: 63
-            max: 64
+          - roll: { min: 63, max: 64 }
             text: Pilot
             _i18n: *CommonNoun
-          - min: 65
-            max: 66
+          - roll: { min: 65, max: 66 }
             text: Pirate
             _i18n: *CommonNoun
-          - min: 67
-            max: 68
+          - roll: { min: 67, max: 68 }
             text: Preacher
             _i18n: *CommonNoun
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Prophet
             _i18n: *CommonNoun
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Raider
             _i18n: *CommonNoun
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Researcher
             _i18n: *CommonNoun
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Scavenger
             _i18n: *CommonNoun
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Scholar
             _i18n: *CommonNoun
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Scout
             _i18n: *CommonNoun
-          - min: 81
-            max: 82
+          - roll: { min: 81, max: 82 }
             text: Shipwright
             _i18n: *CommonNoun
-          - min: 83
-            max: 84
+          - roll: { min: 83, max: 84 }
             text: Smuggler
             _i18n: *CommonNoun
-          - min: 85
-            max: 86
+          - roll: { min: 85, max: 86 }
             text: Soldier
             _i18n: *CommonNoun
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Spacer
             _i18n: *CommonNoun
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Technician
             _i18n: *CommonNoun
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: Thief
             _i18n: *CommonNoun
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             <<: &ActionTheme
               text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
               oracle_rolls:
@@ -1702,8 +1303,7 @@ oracles:
                   auto: true
                 - oracle: starforged/oracles/core/theme
                   auto: true
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             <<: &RollTwice
               text: Roll twice
               oracle_rolls:
@@ -1720,152 +1320,112 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [objective]
         rows:
-          - min: 1
-            max: 2
+          - roll: { min: 1, max: 2 }
             text: Avenge a wrong
             # suggestions: [*roll:Event]
-          - min: 3
-            max: 4
+          - roll: { min: 3, max: 4 }
             text: Build a home
-          - min: 5
-            max: 7
+          - roll: { min: 5, max: 7 }
             text: Build a relationship
             # suggestions: [*obj:Npc]
-          - min: 8
-            max: 10
+          - roll: { min: 8, max: 10 }
             text: Claim a resource
             # suggestions: [*roll:Object]
-          - min: 11
-            max: 12
+          - roll: { min: 11, max: 12 }
             text: Collect a debt
-          - min: 13
-            max: 14
+          - roll: { min: 13, max: 14 }
             text: Craft an object
             # suggestions: [*roll:Object]
-          - min: 15
-            max: 16
+          - roll: { min: 15, max: 16 }
             text: Cure an ill
-          - min: 17
-            max: 18
+          - roll: { min: 17, max: 18 }
             text: Defeat a rival
             # suggestions: [*obj:Npc]
-          - min: 19
-            max: 20
+          - roll: { min: 19, max: 20 }
             text: Defend a person
             # suggestions: [*obj:Npc]
-          - min: 21
-            max: 23
+          - roll: { min: 21, max: 23 }
             text: Defend a place
             # suggestions: [*roll:Place]
-          - min: 24
-            max: 25
+          - roll: { min: 24, max: 25 }
             text: Discover a truth
             # suggestions: [*roll:Event]
-          - min: 26
-            max: 27
+          - roll: { min: 26, max: 27 }
             text: End a conflict
             # suggestions: [*roll:Event]
-          - min: 28
-            max: 29
+          - roll: { min: 28, max: 29 }
             text: Escape a captor
-          - min: 30
-            max: 31
+          - roll: { min: 30, max: 31 }
             text: Fight injustice
-          - min: 32
-            max: 33
+          - roll: { min: 32, max: 33 }
             text: Find a person
             # suggestions: [*obj:Npc]
-          - min: 34
-            max: 35
+          - roll: { min: 34, max: 35 }
             text: Forge an alliance
             # suggestions: [*obj:Faction]
-          - min: 36
-            max: 37
+          - roll: { min: 36, max: 37 }
             text: Gain knowledge
             # suggestions: [*roll:Event]
-          - min: 38
-            max: 39
+          - roll: { min: 38, max: 39 }
             text: Gain riches
-          - min: 40
-            max: 41
+          - roll: { min: 40, max: 41 }
             text: Maintain order
-          - min: 42
-            max: 43
+          - roll: { min: 42, max: 43 }
             text: Make an agreement
             # suggestions: [*roll:Event]
-          - min: 44
-            max: 45
+          - roll: { min: 44, max: 45 }
             text: Obtain an object
             # suggestions: [*roll:Object]
-          - min: 46
-            max: 47
+          - roll: { min: 46, max: 47 }
             text: Pay a debt
-          - min: 48
-            max: 49
+          - roll: { min: 48, max: 49 }
             text: Protect a lifeform
             # suggestions: [*obj:Creature]
-          - min: 50
-            max: 51
+          - roll: { min: 50, max: 51 }
             text: Protect a secret
             # suggestions: [*roll:Event]
-          - min: 52
-            max: 53
+          - roll: { min: 52, max: 53 }
             text: Prove worthiness
             # suggestions: [*roll:Event]
-          - min: 54
-            max: 55
+          - roll: { min: 54, max: 55 }
             text: Rebel against power
-          - min: 56
-            max: 57
+          - roll: { min: 56, max: 57 }
             text: Refute a falsehood
-          - min: 58
-            max: 59
+          - roll: { min: 58, max: 59 }
             text: Repair a technology
             # suggestions: [*roll:Object]
-          - min: 60
-            max: 61
+          - roll: { min: 60, max: 61 }
             text: Resolve a dispute
             # suggestions: [*roll:Event]
-          - min: 62
-            max: 63
+          - roll: { min: 62, max: 63 }
             text: Restore a relationship
             # suggestions: [*obj:Npc]
-          - min: 64
-            max: 65
+          - roll: { min: 64, max: 65 }
             text: Sabotage a technology
             # suggestions: [*roll:Object]
-          - min: 66
-            max: 68
+          - roll: { min: 66, max: 68 }
             text: Secure a resource
             # suggestions: [*roll:Object]
-          - min: 69
-            max: 70
+          - roll: { min: 69, max: 70 }
             text: Seek redemption
             # suggestions: [*roll:Event]
-          - min: 71
-            max: 72
+          - roll: { min: 71, max: 72 }
             text: Seize power
             # suggestions: [*roll:Event]
-          - min: 73
-            max: 74
+          - roll: { min: 73, max: 74 }
             text: Solve a mystery
             # suggestions: [*roll:Event]
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Spread faith
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Travel to a place
             # suggestions: [*roll:Place]
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Undermine a relationship
             # suggestions: [*obj:Npc]
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             <<: *ActionTheme
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             <<: *RollTwice
       revealed_aspect:
         name: Revealed Character Aspect
@@ -1878,406 +1438,305 @@ oracles:
           As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. You may ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         # usage:
         recommended_rolls:
-          min: 1
-          max: 3
+          roll: { min: 1, max: 3 }
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Addicted
             _i18n: *Adjective
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Adventurous
             _i18n: *Adjective
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Afflicted
             _i18n: *Adjective
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Aggressive
             _i18n: *Adjective
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Ambitious
             _i18n: *Adjective
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Angry
             _i18n: *Adjective
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Anxious
             _i18n: *Adjective
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Apathetic
             _i18n: *Adjective
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Bitter
             _i18n: *Adjective
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Boastful
             _i18n: *Adjective
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Boisterous
             _i18n: *Adjective
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Bold
             _i18n: *Adjective
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Brave
             _i18n: *Adjective
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Careless
             _i18n: *Adjective
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Cautious
             _i18n: *Adjective
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Charismatic
             _i18n: *Adjective
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Clever
             _i18n: *Adjective
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Conceited
             _i18n: *Adjective
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Confident
             _i18n: *Adjective
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Confused
             _i18n: *Adjective
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Connected
             _i18n: *Adjective
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Corrupted
             _i18n: *Adjective
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Cowardly
             _i18n: *Adjective
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Creative
             _i18n: *Adjective
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Critical
             _i18n: *Adjective
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Cruel
             _i18n: *Adjective
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Cunning
             _i18n: *Adjective
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Dangerous
             _i18n: *Adjective
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Deceitful
             _i18n: *Adjective
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Defiant
             _i18n: *Adjective
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Determined
             _i18n: *Adjective
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Disabled
             _i18n: *Adjective
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Doomed
             _i18n: *Adjective
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Driven
             _i18n: *Adjective
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Dying
             _i18n: *Adjective
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Envious
             _i18n: *Adjective
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Experienced
             _i18n: *Adjective
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Faithful
             _i18n: *Adjective
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Generous
             _i18n: *Adjective
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Gifted
             _i18n: *Adjective
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Greedy
             _i18n: *Adjective
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Grief-stricken
             _i18n: *Adjective
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Handy
             _i18n: *Adjective
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Hardhearted
             _i18n: *Adjective
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Haunted
             _i18n: *Adjective
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Honorable
             _i18n: *Adjective
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Hot-tempered
             _i18n: *Adjective
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Impulsive
             _i18n: *Adjective
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Incompetent
             _i18n: *Adjective
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Independent
             _i18n: *Adjective
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Infamous
             _i18n: *Adjective
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Influential
             _i18n: *Adjective
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Insensitive
             _i18n: *Adjective
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Insightful
             _i18n: *Adjective
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Intelligent
             _i18n: *Adjective
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Intolerant
             _i18n: *Adjective
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Ironsworn
             _i18n: *Adjective
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Kind
             _i18n: *Adjective
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Law-abiding
             _i18n: *Adjective
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Lonely
             _i18n: *Adjective
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Loving
             _i18n: *Adjective
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Loyal
             _i18n: *Adjective
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Manipulative
             _i18n: *Adjective
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Oblivious
             _i18n: *Adjective
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Obsessed
             _i18n: *Adjective
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Oppressed
             _i18n: *Adjective
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Passive
             _i18n: *Adjective
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Powerful
             _i18n: *Adjective
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Proud
             _i18n: *Adjective
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Quiet
             _i18n: *Adjective
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Quirky
             _i18n: *Adjective
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Rebellious
             _i18n: *Adjective
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Reclusive
             _i18n: *Adjective
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Relaxed
             _i18n: *Adjective
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Remorseful
             _i18n: *Adjective
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Resourceful
             _i18n: *Adjective
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Secretive
             _i18n: *Adjective
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Selfish
             _i18n: *Adjective
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Sociable
             _i18n: *Adjective
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Stealthy
             _i18n: *Adjective
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Stern
             _i18n: *Adjective
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Stingy
             _i18n: *Adjective
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Stoic
             _i18n: *Adjective
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Strong
             _i18n: *Adjective
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Stubborn
             _i18n: *Adjective
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Successful
             _i18n: *Adjective
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Suspicious
             _i18n: *Adjective
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Talented
             _i18n: *Adjective
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Technical
             _i18n: *Adjective
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Timid
             _i18n: *Adjective
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Tolerant
             _i18n: *Adjective
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Tough
             _i18n: *Adjective
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Vengeful
             _i18n: *Adjective
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Violent
             _i18n: *Adjective
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Wary
             _i18n: *Adjective
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Watchful
             _i18n: *Adjective
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Weak
             _i18n: *Adjective
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Weary
             _i18n: *Adjective
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Wild
             _i18n: *Adjective
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Wise
             _i18n: *Adjective

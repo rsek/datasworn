@@ -21,6 +21,7 @@ import {
 import Log from '../scripts/utils/Log.js'
 import { pickBy } from 'lodash-es'
 import { DefsKey } from '../scripts/const.js'
+import { DiceRange } from './common/Range.js'
 
 function validateSchemaDefinitions(defs: Record<string, TSchema>) {
 	const usedRefs = new Set<string>()
@@ -60,6 +61,7 @@ const defsBase = pickBy(
 		...RollableValues,
 		...Npcs,
 		...Rolls,
+		DiceRange,
 		...Oracles,
 		...Moves,
 		...Assets,

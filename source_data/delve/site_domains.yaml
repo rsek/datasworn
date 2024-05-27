@@ -23,74 +23,57 @@ site_domains:
 
       Even the most ancient of these sites still echo with the memory and power of lives once lived, battles once fought, loves gained or lost, and vows unfulfilled.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Burial chambers
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Maze of narrow passages
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Shrine
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Stately vault
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Offerings to the dead
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Statuary or tapestries
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Remains of a grave robber
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Mass grave
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Exhumed corpses
       - &Row.UnusualOrUnexpected
-        min: 89
-        max: 98
+        roll: { min: 89, max: 98 }
         text: Something unusual or unexpected
         suggestions:
           oracles:
             - delve/oracles/feature/aspect
             - delve/oracles/feature/focus
       - &Row.NewTheme
-        min: 99
-        max: 99
+        roll: { min: 99, max: 99 }
         text: You transition into a new theme
         suggestions:
           oracles:
             - delve/oracles/site_nature/theme
       - &Row.NewDomain
-        min: 100
-        max: 100
+        roll: { min: 100, max: 100 }
         text: You transition into a new domain
         suggestions:
           oracles:
             - delve/oracles/site_nature/domain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen guards this area
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Trap
         suggestions: &SuggestTrap
           oracles:
             - delve/oracles/trap/event
             - delve/oracles/trap/component
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Death makes its presence known
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Crumbling architecture
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Grave goods with hidden dangers
   cavern:
     type: delve_site_domain
@@ -106,51 +89,37 @@ site_domains:
 
       When you enter these sites, you are a trespasser in a hostile domain. What unseen things dwell here, watching and waiting, amidst the depths?
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Twisting passages
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Cramped caves
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Vast chamber
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Subterranean waterway
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Cave pool
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Natural bridge
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Towering stone formations
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Natural illumination
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Dark pit
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen lairs here
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Cave-in
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Flooding
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Perilous climb or descent
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Fissure or sinkhole
   frozen_cavern:
     type: delve_site_domain
@@ -165,51 +134,37 @@ site_domains:
 
       Entering a frozen cavern is like delving into another world. There is a stark beauty in the icebound passages and glistening chambers. Amazing discoveries, locked in the ice, lie unseen for millennia. But do not be distracted by those enticements. The hazards of this site have no sympathy for the unwary and ill-prepared.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Maze of icy tunnels
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Glistening cave
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Vast chamber
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Frigid waterway
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Icy pools
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Magnificent ice formations
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Frozen waterfall
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Deep crevasses
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Discovery locked in the ice
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen lairs here
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Fracturing ice
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Crumbling chasm
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Bitter chill
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Disorienting reflections
   icereach:
     type: delve_site_domain
@@ -224,51 +179,37 @@ site_domains:
 
       Only the cruelest, most powerful creatures can survive here. The terrain is rugged and cut-through with unstable ice and frigid waterways. Food is scarce. Bitter winds blast the landscape. The remains of ships, locked within the ice, stand as monuments to those who braved these places and were forever lost.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Plains of ice and snow
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Seawater channel
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Icy highlands
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Crevasse
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Ice floes
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Ship trapped in ice
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Animal herd or habitat
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Frozen carcass
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Camp or
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen hunts
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Fragile ice above watery depths
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Perilous climb or descent
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Avalanche or icefall
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Foul weather
   mine:
     type: delve_site_domain
@@ -284,51 +225,37 @@ site_domains:
 
       The iron and other metals claimed from these sites feed our furnaces. From those fires, we craft tools, armor, weapons, and other precious goods. Our hunger for these resources is never satiated, and we often dig into places best left undisturbed.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Cramped tunnels
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Mine works
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Excavated chamber
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Mineshaft
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Collapsed tunnel
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Cluttered storage
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Housing or common areas
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Flooded chamber
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Unearthed secret
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Cave-in
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Flooding
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Unstable platforms or architecture
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Hazardous gas pocket
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Weakened terrain
   pass:
     type: delve_site_domain
@@ -343,51 +270,37 @@ site_domains:
 
       Lonely cairns mark the resting places of those who walked these routes undefended or unprepared. Pray that your path here does not end under a pile of mountain stones.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Winding mountain path
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Snowfield or glacial rocks
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: River gorge
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Crashing waterfall
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Highland lake
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Forgotten cairn
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Bridge
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Overlook
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Camp or outpost
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen lairs here
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Denizen hunts
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Perilous climb or descent
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Avalanche or rockslide
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Foul weather
   ruin:
     type: delve_site_domain
@@ -403,52 +316,38 @@ site_domains:
 
       Newly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. But most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Crumbling corridors and chambers
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Collapsed architecture
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Rubble-choked hall
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Courtyard
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Archive or library
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Broken statuary or fading murals
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Preserved vault
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Temple to forgotten gods
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Mausoleum
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Ancient mechanism or trap
         suggestions: *SuggestTrap
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Collapsing wall or ceiling
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Blocked or broken passage
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Unstable floor above a new danger
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Ancient secrets best left buried
   sea_cave:
     type: delve_site_domain
@@ -463,51 +362,37 @@ site_domains:
 
       This is a realm of water and stone, cold and darkness. You are not welcome here.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Watery tunnels
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Eroded chamber
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Flooded chamber
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Vast chamber
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Dry passages
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Freshwater inlet
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Rocky island
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Waterborne debris
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Shipwreck or boat
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen strikes without warning
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Denizen lurks below
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Flooding
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Rushing current
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Claustrophobic squeeze
   shadowfen:
     type: delve_site_domain
@@ -522,51 +407,37 @@ site_domains:
 
       Be wary. When you enter a shadowfen, the specter of death is your constant companion.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Narrow path through a fetid bog
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Stagnant waterway
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Flooded thicket
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Island of dry land
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Submerged discovery
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Preserved corpses
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Overgrown structure
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Tall reeds
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Camp or outpost
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen hunts
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Deep water blocks the path
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Toxic environment
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Concealing or disorienting mist
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Hidden quagmire
   stronghold:
     type: delve_site_domain
@@ -578,52 +449,38 @@ site_domains:
     summary: A fortress secured against trespassers.
     description: These sites weather storms and sieges alike. Their walls stand firm against the forces of this dark land. They are fortified against attack and rife with guards, traps, and other defenses. For those who dwell within, strongholds provide the comfort of wood and stone, axe and bow. For those who seek to breach the walls, they can be as unyielding and unforgiving as the most stalwart ironbound shield.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Connecting passageways
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Barracks or common quarters
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Large hall
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Workshop or library
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Command center or leadership
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Ladder or stairwell
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Storage
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Kitchen or larder
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Courtyard
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Blocked or guarded path
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Caught in the open
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Chokepoint
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Trap
         suggestions: *SuggestTrap
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Alarm trigger
   tanglewood:
     type: delve_site_domain
@@ -639,52 +496,38 @@ site_domains:
 
       Many refuse to harvest wood from these places, believing the spirits who reside within will bring a curse upon them and their families. Others fear the creatures and beings which lurk within. For these reasons, even near settled areas, the tangles still stand.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Dense thicket
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Overgrown path
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Waterway
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Clearing
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Elder tree
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Brambles
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Overgrown structure
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Rocky outcrop
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Camp or outpost
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen hunts
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Denizen lairs here
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Trap or snare
         suggestions: *SuggestTrap
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Path leads you astray
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Entangling plant life
   underkeep:
     type: delve_site_domain
@@ -699,50 +542,36 @@ site_domains:
 
       Most [Ironlanders](id:classic/collections/npcs/ironlanders) stay well clear of these places. But some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Carved passages
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Hall or chamber
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Stairs into the depths
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Grand doorway or entrance
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Tomb or catacombs
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Rough-hewn cave
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Foundry or workshop
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Shrine or temple
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Imposing architecture or artistry
       - *Row.UnusualOrUnexpected
       - *Row.NewTheme
       - *Row.NewDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Ancient mechanism or trap
         suggestions: *SuggestTrap
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Crumbling architecture
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Blocked or broken passage
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Artifact with a hidden danger
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Denizen lurks in darkness

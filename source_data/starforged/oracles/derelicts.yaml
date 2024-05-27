@@ -42,15 +42,13 @@ oracles:
             # usage:
             #   requires: *attr:Location.Planetside
             rows:
-              - min: 1
-                max: 25
+              - roll: { min: 1, max: 25 }
                 text: Starship
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/starship
                 # *attr:DerelictType.Starship
-              - min: 26
-                max: 100
+              - roll: { min: 26, max: 100 }
                 text: Settlement
                 suggestions:
                   oracles:
@@ -68,14 +66,12 @@ oracles:
             # usage:
             #   requires: *attr:Location.Orbital
             rows:
-              - min: 1
-                max: 40
+              - roll: { min: 1, max: 40 }
                 text: Starship
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/starship
-              - min: 41
-                max: 100
+              - roll: { min: 41, max: 100 }
                 text: Settlement
                 suggestions:
                   oracles:
@@ -92,14 +88,12 @@ oracles:
             # usage:
             #   requires: *attr:Location.DeepSpace
             rows:
-              - min: 1
-                max: 75
+              - roll: { min: 1, max: 75 }
                 text: Starship
                 suggestions:
                   oracles:
                     - starforged/oracles/derelicts/zones/starship
-              - min: 76
-                max: 100
+              - roll: { min: 76, max: 100 }
                 text: Settlement
                 suggestions:
                   oracles:
@@ -133,41 +127,34 @@ oracles:
               - <<: &ZoneRow.1
                   text: '[Community](id:starforged/collections/oracles/derelicts/community)'
                   icon: icons/derelicts/community.svg
-                min: 1
-                max: 5
+                roll: { min: 1, max: 5 }
                 # game_objects: *obj:DerelictZone.Community
-              - min: 6
-                max: 30
+              - roll: { min: 6, max: 30 }
                 <<: &ZoneRow.2
                   text: '[Engineering](id:starforged/collections/oracles/derelicts/engineering)'
                   icon: icons/derelicts/engineering.svg
                 # game_objects: *obj:DerelictZone.Engineering
-              - min: 31
-                max: 55
+              - roll: { min: 31, max: 55 }
                 <<: &ZoneRow.3
                   text: '[Living](id:starforged/collections/oracles/derelicts/living)'
                   icon: icons/derelicts/living.svg
                   # game_objects: *obj:DerelictZone.Living
-              - min: 56
-                max: 65
+              - roll: { min: 56, max: 65 }
                 <<: &ZoneRow.4
                   text: '[Medical](id:starforged/collections/oracles/derelicts/medical)'
                   icon: icons/derelicts/medical.svg
                 # game_objects: *obj:DerelictZone.Medical
-              - min: 66
-                max: 85
+              - roll: { min: 66, max: 85 }
                 <<: &ZoneRow.5
                   text: '[Operations](id:starforged/collections/oracles/derelicts/operations)'
                   icon: icons/derelicts/operations.svg
                 # game_objects: *obj:DerelictZone.Operations
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 <<: &ZoneRow.6
                   text: '[Production](id:starforged/collections/oracles/derelicts/production)'
                   icon: icons/derelicts/production.svg
                 # game_objects: *obj:DerelictZone.Production
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: &ZoneRow.7
                   text: '[Research](id:starforged/collections/oracles/derelicts/research)'
                   icon: icons/derelicts/research.svg
@@ -184,26 +171,19 @@ oracles:
             #       derelict_type: [settlement]
             rows:
               - *ZoneRow.0
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 <<: *ZoneRow.1
-              - min: 21
-                max: 30
+              - roll: { min: 21, max: 30 }
                 <<: *ZoneRow.2
-              - min: 31
-                max: 50
+              - roll: { min: 31, max: 50 }
                 <<: *ZoneRow.3
-              - min: 51
-                max: 60
+              - roll: { min: 51, max: 60 }
                 <<: *ZoneRow.4
-              - min: 61
-                max: 70
+              - roll: { min: 61, max: 70 }
                 <<: *ZoneRow.5
-              - min: 71
-                max: 90
+              - roll: { min: 71, max: 90 }
                 <<: *ZoneRow.6
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *ZoneRow.7
     contents:
       location:
@@ -214,22 +194,19 @@ oracles:
           <<: *Source
           page: 348
         rows:
-          - min: 1
-            max: 40
+          - roll: { min: 1, max: 40 }
             text: Planetside
             icon: icon/oracles/location/planetside.svg
             suggestions:
               oracles:
                 - starforged/oracles/derelicts/type/planetside
-          - min: 41
-            max: 60
+          - roll: { min: 41, max: 60 }
             text: Orbital
             icon: icon/oracles/location/orbital.svg
             suggestions:
               oracles:
                 - starforged/oracles/derelicts/type/orbital
-          - min: 61
-            max: 100
+          - roll: { min: 61, max: 100 }
             text: Deep Space
             icon: icon/oracles/location/deep_space.svg
             suggestions:
@@ -247,23 +224,17 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: Functional
-          - min: 11
-            max: 30
+          - roll: { min: 11, max: 30 }
             text: Limited power
-          - min: 31
-            max: 60
+          - roll: { min: 31, max: 60 }
             text: Cold and dark
-          - min: 61
-            max: 90
+          - roll: { min: 61, max: 90 }
             text: Damaged or breached
-          - min: 91
-            max: 98
+          - roll: { min: 91, max: 98 }
             text: Heavily damaged
-          - min: 99
-            max: 100
+          - roll: { min: 99, max: 100 }
             text: Impending destruction
       outer_first_look:
         name: Outer First Look
@@ -279,35 +250,25 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [first look]
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: Blocked access
-          - min: 16
-            max: 30
+          - roll: { min: 16, max: 30 }
             text: Corpses
-          - min: 31
-            max: 45
+          - roll: { min: 31, max: 45 }
             text: Hazardous readings
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: Mutated structure
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Odd orientation
-          - min: 61
-            max: 65
+          - roll: { min: 61, max: 65 }
             text: Overgrown or entangled
-          - min: 66
-            max: 80
+          - roll: { min: 66, max: 80 }
             text: Sending a signal or message
-          - min: 81
-            max: 85
+          - roll: { min: 81, max: 85 }
             text: Signs that others are here
-          - min: 86
-            max: 95
+          - roll: { min: 86, max: 95 }
             text: Stripped exterior
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Time or reality distortions
       inner_first_look:
         name: Inner First Look
@@ -322,104 +283,71 @@ oracles:
         #   tags: [first look]
         # usage:
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Abnormal gravity
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Active bots
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: Archaic equipment
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Automated announcements
-          - min: 13
-            max: 15
+          - roll: { min: 13, max: 15 }
             text: Biological infestation
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Charred surfaces
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Claw marks
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Cluttered with debris
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Corroded surfaces
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Cramped spaces
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Creaking hull
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Esoteric writing or symbols
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Evidence of new inhabitants
-          - min: 40
-            max: 42
+          - roll: { min: 40, max: 42 }
             text: Exposed wiring or conduits
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Flashing strobe lights
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Fluctuating power
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Haunting visions of the dead
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Hazardous temperature
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Heavy steam or moisture
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Littered with corpses
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Nesting or feeding creatures
-          - min: 64
-            max: 66
+          - roll: { min: 64, max: 66 }
             text: Ornate furnishings
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Scarred by gunfire
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Sealed against intruders
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Signs of looting or scavenging
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Smell of decay
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Splattered with blood
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Temporal distortions
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Thick haze or smoke
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Unstable energy surges
-          - min: 91
-            max: 93
+          - roll: { min: 91, max: 93 }
             text: Watchful AI
-          - min: 94
-            max: 100
+          - roll: { min: 94, max: 100 }
             text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
             oracle_rolls:
               - oracle: starforged/oracles/core/descriptor

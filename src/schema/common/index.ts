@@ -16,3 +16,5 @@ export * as Inputs from './Inputs.js'
 
 // depends on Id, Localize, Player
 export * as RollableValues from './RollableValues.js'
+
+export * as Range from './Range.js'

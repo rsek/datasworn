@@ -29,29 +29,21 @@ oracles:
           <<: *Source
           page: 212
         rows:
-          - min: 1
-            max: 11
+          - roll: { min: 1, max: 11 }
             text: '[Ancient](id:delve/site_themes/ancient)'
-          - min: 12
-            max: 23
+          - roll: { min: 12, max: 23 }
             text: '[Corrupted](id:delve/site_themes/corrupted)'
-          - min: 24
-            max: 35
+          - roll: { min: 24, max: 35 }
             text: '[Fortified](id:delve/site_themes/fortified)'
-          - min: 36
-            max: 48
+          - roll: { min: 36, max: 48 }
             text: '[Hallowed](id:delve/site_themes/hallowed)'
-          - min: 49
-            max: 61
+          - roll: { min: 49, max: 61 }
             text: '[Haunted](id:delve/site_themes/haunted)'
-          - min: 62
-            max: 74
+          - roll: { min: 62, max: 74 }
             text: '[Infested](id:delve/site_themes/infested)'
-          - min: 75
-            max: 87
+          - roll: { min: 75, max: 87 }
             text: '[Ravaged](id:delve/site_themes/ravaged)'
-          - min: 88
-            max: 100
+          - roll: { min: 88, max: 100 }
             text: '[Wild](id:delve/site_themes/wild)'
       domain:
         name: Domain
@@ -62,39 +54,27 @@ oracles:
           <<: *Source
           page: 212
         rows:
-          - min: 1
-            max: 6
+          - roll: { min: 1, max: 6 }
             text: '[Barrow](id:delve/site_domains/barrow)'
-          - min: 7
-            max: 18
+          - roll: { min: 7, max: 18 }
             text: '[Cavern](id:delve/site_domains/cavern)'
-          - min: 19
-            max: 28
+          - roll: { min: 19, max: 28 }
             text: '[Frozen Cavern](id:delve/site_domains/frozen_cavern)'
-          - min: 29
-            max: 32
+          - roll: { min: 29, max: 32 }
             text: '[Icereach](id:delve/site_domains/icereach)'
-          - min: 33
-            max: 38
+          - roll: { min: 33, max: 38 }
             text: '[Mine](id:delve/site_domains/mine)'
-          - min: 39
-            max: 48
+          - roll: { min: 39, max: 48 }
             text: '[Pass](id:delve/site_domains/pass)'
-          - min: 49
-            max: 58
+          - roll: { min: 49, max: 58 }
             text: '[Ruin](id:delve/site_domains/ruin)'
-          - min: 59
-            max: 68
+          - roll: { min: 59, max: 68 }
             text: '[Sea Cave](id:delve/site_domains/sea_cave)'
-          - min: 69
-            max: 78
+          - roll: { min: 69, max: 78 }
             text: '[Shadowfen](id:delve/site_domains/shadowfen)'
-          - min: 79
-            max: 83
+          - roll: { min: 79, max: 83 }
             text: '[Stronghold](id:delve/site_domains/stronghold)'
-          - min: 84
-            max: 95
+          - roll: { min: 84, max: 95 }
             text: '[Tanglewood](id:delve/site_domains/tanglewood)'
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: '[Underkeep](id:delve/site_domains/underkeep)'

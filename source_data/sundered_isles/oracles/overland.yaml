@@ -24,44 +24,34 @@ oracles:
           text: Result
           text2: Detail
         rows:
-        - min: 1
-          max: 20
+        - roll: { min: 1, max: 20 }
           text: Highlands
           text2: &highlands.summary Hilly or mountainous terrain
-        - min: 21
-          max: 45
+        - roll: { min: 21, max: 45 }
           text: Jungle
           text2: &jungle.summary Dense tropical rainforest
-        - min: 46
-          max: 50
+        - roll: { min: 46, max: 50 }
           text: Lava Field
           text2: &lava_field.summary Lands scarred by volcanic eruptions
-        - min: 51
-          max: 55
+        - roll: { min: 51, max: 55 }
           text: Marsh
           text2: &marsh.summary Waterlogged region with grasses and reeds
-        - min: 56
-          max: 60
+        - roll: { min: 56, max: 60 }
           text: River
           text2: &river.summary Major inland waterway
-        - min: 61
-          max: 65
+        - roll: { min: 61, max: 65 }
           text: Scrub
           text2: &scrub.summary Open landscape dominated by grass or shrubs
-        - min: 66
-          max: 75
+        - roll: { min: 66, max: 75 }
           text: Shore
           text2: &shore.summary Where the land meets the sea
-        - min: 76
-          max: 85
+        - roll: { min: 76, max: 85 }
           text: Swamp
           text2: &swamp.summary Flooded forest with thick vegetation
-        - min: 86
-          max: 90
+        - roll: { min: 86, max: 90 }
           text: Wastes
           text2: &wastes.summary Arid, rocky terrain
-        - min: 91
-          max: 100
+        - roll: { min: 91, max: 100 }
           text: Woodland
           text2: &woodland.summary Forested lands
       details:
@@ -74,305 +64,205 @@ oracles:
         type: oracle_rollable
         summary: This table reveals occurrences on an overland expedition. Possible results include locations, events, sightings, and encounters.
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: A tree trunk bears a crudely carved message
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: You reach a vantage point, and catch sight of a beckoning sea
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Fossilized bones, the ribs of some ancient beast, arch over your path
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: A freshwater spring sits within a rocky nook
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Gunfire and the clash of steel signal the presence of a nearby battle
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: A large snake, its belly swollen with a recent meal, slithers across your path
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: A ransacked camp sits empty
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: A stone arch marks the entrance of a burial mound
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: You cross paths with a lone traveler who is leading a heavily-burdened pack animal
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Rodents of unusual size appear
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: An empty chest, its lock smashed and lid opened, sits abandoned in a recently-dug hole
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: You hear the faint sound of distant music or singing
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: The landscape bears the scars of a destructive fire
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: A procession of haggard refugees crosses your path
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Wildlife gathers around a watering hole
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Darkness beckons from within a deep cave
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: A chasm divides the landscape
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: An enormous pile of scat marks the presence of a large creature
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: An animal is caught in a trap
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: A ramshackle wooden barricade blocks your path
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: A cache of abandoned supplies is tucked under a nearby tree or overhang
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Lights glimmers in the distance
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: A swaying rope bridge spans a gap in the terrain
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Something stirs in nearby water, disturbing the placid surface
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: A trail of blood leads off the path
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: A little ways off the path, a large animal keeps pace with you
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Figures move across a distant ridge
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: An ancient mechanism grinds to life
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Large insect mounds blot the landscape
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: You encounter a wounded or sick stranger
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Dirt is mounded atop a freshly dug hole
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Carrion animals pick at the remains of a dead creature
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: You come upon the scene of a recent battle and spot a single, gravely-wounded survivor
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: A weathered flag is staked into the ground of a burial site
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Recently-dug holes pockmark the ground
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: A recent landslide, collapse, or rockfall scars the landscape
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: An X is carved into the terrain
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: A corroded ship's bell hangs from a wooden post
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: A thin column of smoke rises in the distance
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: A skeleton lies half-buried or tangled in the terrain
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: The clank of equipment and shouts of command signals an approaching armed patrol
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: The scorched path of a large meteorite is carved into the terrain
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: In the distance, circling carrion birds mark the site of a kill
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Drag marks and blood mar the ground
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Insects swarm protectively from their nest
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: A sign warns away trespassers
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Broken bones lay within an unearthed grave
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: The air smells of smoke, and ash drifts on the wind
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: The landscape takes on an unusual color
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: The path bears remnants of an old stone road
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: A distant volcano erupts, sending up plumes of smoke and ash
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: An animal is cornered by a larger predator
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: The air is suddenly filled with flying arrows from unseen assailants
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: An abandoned cart or wagon lies broken, its contents spilled across the ground
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: A crude map is scrawled on a rock
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: An intricate pattern of carved stones is laid into the ground
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: A rocky cairn and planted sword mark a lonely gravesite
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Partially buried weapons, armor, and bones mark the site of a long-ago battle
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: You catch sight of a glimmer of metal within the undergrowth
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: A flag bearing a familiar symbol hangs from a tall wooden pole
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: The ground bears the tracks or markings of a large animal
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: A skeletal corpse wears the decaying remains of an elaborate uniform
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Carefully stacked stones mark a gravesite
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Flocks of birds nest here; they squawk and chatter noisily
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Ash surrounds a long-cold funeral pyre
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: An enormous red lizard basks lazily on a rocky ledge
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: A herd of wildlife cuts across your path
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: You encounter a panicked stranger who is fleeing a pursuer
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: A flash of reflected sunlight gleams from glass or metal in the distance
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: In the distance, a colossal tree dominates the landscape
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: A tripwire is strung across your path
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: A set of roughly-chiseled headstones stand like broken teeth
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: An abandoned camp sits quiet
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: An abandoned campfire still smolders
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Crushed and broken vegetation marks the path of a large creature
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: The smell of cooking and the sound of conversation indicates a nearby camp
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Ruins rise above the distant terrain
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Swarms of colorful butterflies surround you
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: A large deer appears, watching you with an impassive but intelligent gaze
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Flies swirl around a partially-devoured animal carcass
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: A vast field of animal bones litter the ground
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: A solitary statue stands tall over the terrain
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Great plumes of smoke and fire rise in the distance
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: A long-dead corpse lies at the bottom of a pit
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Crystal-clear water glimmers within a sinkhole
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: A series of rope bridges connect trees or high terrain
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Two formidable animals engage in battle
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: An infant animal, abandoned or lost, mewls for its mother
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: The ground trembles with the movement of a large creature or herd of animals
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: A statue lies broken and scattered across your path
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Ornamental windchimes, clacking melodically, hang from tree branches
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: A worksite lies dormant, its equipment and supplies abandoned
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: You hear a crack of gunfire, and a musket shot buzzes past
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Someone calls out for help
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: A settlement sits upon a distant hill
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Ladders or ropes lead to higher terrain
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Footprints mark the path of a recent traveler
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: A noisy parrot squawks, whistles, and sings, as if putting on a performance
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Carved stones mark an old boundary line
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: This area is adorned with colorful banners
       details_cursed:
         _source: *Source
@@ -384,305 +274,205 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Your breath escapes in wisps of fog as an uncanny chill takes hold
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: A chaotic whirlwind scours the terrain
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Insects boil from blisters of oozing, corrupted terrain
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: The apparition of someone you knew delivers a warning before fading away
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: The earth trembles as one beast battles another
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: A skull watches over the path—as you approach, it speaks
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Unnatural darkness envelops your surroundings
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: In the distance, a great skull-shaped edifice rises above the terrain
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: A member of the party, muttering dreamily as if in a trance, leaves the path
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: An unending storm plagues the land ahead
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Gigantic insect husks litter the ground
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: An ancient stone statue comes to life
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: A standing stone is carved in the likeness of a horrific creature
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Nearby water ripples with the approach of something massive
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: You come upon a recently-killed traveler; their last words are written in blood
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: A crudely-fashioned effigy bears the likeness of someone you know
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: A torrent of seawater crashes into view, bearing a barnacle-encrusted ship
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Cocooned corpses hang from tree branches
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: An unearthly shriek pierces the air
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Ghostly figures stand in the path ahead, waiting
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Oversized insects swarm from a gigantic nest
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: The bones of dead beasts litter the ground
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: A massive pile of bones lies in a dark pit
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: A procession of silent spirits crosses your path
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: A monstrous flying beast circles overhead
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Fractured terrain floats in mid-air
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Something rumbles deep in the earth beneath you
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Blood and bodies are strewn across a campsite
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: A rotting chest flies open, spilling forth a horrific creature
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: A heavy iron door stands at the entrance of a cave mouth; within, something knocks
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: An eclipse overtakes the sun, stealing away the day
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: A skeletal figure lurches from the shadows, eye sockets ablaze
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Dozens of fish flop and struggle for breath on dry ground
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: A black iron pillar floats above the ground, humming softly
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Dozens of carrion birds settle into the trees around you, waiting expectantly
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Thick strands of webbing stretch across the terrain
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: A single step takes you into a new landscape or environment
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Briny water rises from the ground, quickly engulfing this area
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: You are overcome with a sense of deja vu; you have walked this path before
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Eerie howls echo from the depths of a cave
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: The wind carries the smell of rot
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Coins emblazoned with skulls gleam from the bottom of a nearby pool
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Vegetation wilts and decays before your eyes
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Hordes of panicked birds and animals burst onto the scene, fleeing an unseen threat
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: A pile of bones, each inscribed with elaborate sigils, is carefully arranged
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Ahead, footprints with no visible source spontaneously appear
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: A toppled statue speaks a foreboding message
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: A prominent statue is vandalized and broken, its subject now forsaken by the inhabitants
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: An enormous beast lies dead, a grisly bite mark on its flank
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: You come upon an animal carcass; something moves within its bloated gut
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: This area is bound in unnatural cold and ice
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Jagged, glassy rock reflects an unseen truth
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Strange energies glimmer within a stone arch
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Time passes, but you and others in your party have no memory of it
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: The terrain here is a confounding labyrinth
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: At the edges of your vision, shadows lurk
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: A party member is stricken with a hideous sickness
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: A sinister effigy of a human figure, crafted from dead wood, towers above the landscape
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: A sorrowful song, seemingly without a source, echoes across the landscape
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: The ground shakes with the movement of a titanic beast
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: You hear sinister chants—a portent of a nearby ritual in progress
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: A stone slab bears the remains of a horrific ritual
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: An unmoving fog clings to the terrain ahead
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: A massive, molted snakeskin is draped over a tree branch
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Thick webs form a shroud over an earthen pit
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: A sword is planted blade-down into the ribcage of a skeletal corpse; as you approach,whispers to you 	it
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Virulent fungal growths engulf the landscape
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Pale hands reach out of a dark body of water
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: A blood-red waterway carves a path through the terrain
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: A spectral figure appears, pointing insistently at a distant landmark
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: The path leads through a churning, green fog
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Clattering skulls hang like ornaments from a dead tree
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: An unsettling quiet descends over this area
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Corrupted or mutated creatures appear
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Horrific visions or dreams plague the party members
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: You glimpse a ship sailing among the clouds
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Countless dead animals litter the ground
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: A creature with uncanny camouflage makes itself visible
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Visions or apparitions reveal this land in another time
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Carrion birds circle just overhead, keeping pace as you travel
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: An undead beast, its form corrupted by wounds and rot, stalks this area
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: A grim, cloaked figure appears; it raises a skeletal hand to point at a distant landmark
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Carnivorous plants consume a corpse
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: A circle of cracked, lifeless ground surrounds an enigmatic stone pillar
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: This place is home to creatures and plants from out of time
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Hundreds—maybe thousands—of cracked and broken skulls litter the ground
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Skeletal corpses claw their way out of the ground
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Phantom voices carry on the wind, whispering a dreadful premonition
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Hundreds of stacked skulls form a tall cairn
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: A shipwreck sits precariously and improbably on high ground
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: You stumble upon a nest of massive eggs—within one of them, something stirs
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Blood drips from an overhang or branch
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: A gigantic weapon is half-buried in the terrain
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Vines or branches come to life, creeping and grasping
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Carried provisions suddenly turn foul
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: An illusionary path beckons
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: A swarm of enormous bats emerge from a dark cave
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Furrowed ground and broken trees mark the path of a monstrous beast
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: A hulking, bestial form emerges from a dark cave
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: That’s the third time today you’ve passed that tree—you’re sure of it
       perils:
         _source: *Source
@@ -691,104 +481,71 @@ oracles:
         type: oracle_rollable
         summary: Use this table when you want inspiration for a trouble during island exploration or on an overland expedition.
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Caught in a flood or forced to navigate a perilous waterway
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Cleverly camouflaged predator
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: Aggressive creature appears without warning
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Creatures spooked or stampeding
-          - min: 13
-            max: 15
+          - roll: { min: 13, max: 15 }
             text: Disturbing remains or evidence of death
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Enemy faction holds this area
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Equipment is damaged or lost
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Glimpses of a lurking or trailing foe
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Grueling terrain or environment tests endurance
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Guarded or patrolled path
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Hidden pit or sinkhole
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Impassable terrain blocks the way
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Landslide or rockfall
-          - min: 40
-            max: 42
+          - roll: { min: 40, max: 42 }
             text: Lost the path or took a wrong turn
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Party member is sickened or injured
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Party member stumbles into harm's way or draws attention
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Perilous ascent or descent
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Poisonous flora or venomous fauna
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Precipitous crossing or rickety bridge
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Provisions are wasted or lost
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Raging fire
-          - min: 64
-            max: 66
+          - roll: { min: 64, max: 66 }
             text: Seismic or volcanic upheaval
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Sense of being watched
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Signs of a predator on the hunt
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Swarming creatures or insects attack
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Terrain or obstacles force a risky detour
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Trap is set or alarm is raised
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Unfriendly travelers cross your path
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Unstable ground gives way
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Visibility hindered by smoke, fog, or darkness
-          - min: 91
-            max: 93
+          - roll: { min: 91, max: 93 }
             text: Wander into or near the lair of a predator
-          - min: 94
-            max: 96
+          - roll: { min: 94, max: 96 }
             text: Weather changes for the worse
-          - min: 97
-            max: 99
+          - roll: { min: 97, max: 99 }
             <<: &ActionTheme
               text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
@@ -796,8 +553,7 @@ oracles:
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
                   oracle: sundered_isles/oracles/core/theme
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Roll twice
             oracle_rolls:
               - auto: true
@@ -809,80 +565,55 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Advance warning of an ambush or lurking foe
-          - min: 5
-            max: 8
+          - roll: { min: 5, max: 8 }
             text: Cache of supplies
-          - min: 9
-            max: 12
+          - roll: { min: 9, max: 12 }
             text: Clear path through otherwise difficult terrain
-          - min: 13
-            max: 16
+          - roll: { min: 13, max: 16 }
             text: Clue offers insight into a current quest or mystery
-          - min: 17
-            max: 20
+          - roll: { min: 17, max: 20 }
             text: Clue to a a foe's nature or vulnerabilities
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: Clue to the history or nature of this land
-          - min: 25
-            max: 28
+          - roll: { min: 25, max: 28 }
             text: Creatures show the way or offer inspiration
-          - min: 29
-            max: 32
+          - roll: { min: 29, max: 32 }
             text: Evidence that others have passed this way
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: Foe inadvertently reveals themselves or tips their hand
-          - min: 37
-            max: 40
+          - roll: { min: 37, max: 40 }
             text: Friendly community in sight
-          - min: 41
-            max: 44
+          - roll: { min: 41, max: 44 }
             text: Helpful traveler crosses your path
-          - min: 45
-            max: 48
+          - roll: { min: 45, max: 48 }
             text: Ideal weather takes hold
-          - min: 49
-            max: 52
+          - roll: { min: 49, max: 52 }
             text: Impressive vista offers comfort or inspiration
-          - min: 53
-            max: 56
+          - roll: { min: 53, max: 56 }
             text: Moment of fellowship or inner peace
-          - min: 57
-            max: 60
+          - roll: { min: 57, max: 60 }
             text: Opening to distract, escape, or avoid foes
-          - min: 61
-            max: 64
+          - roll: { min: 61, max: 64 }
             text: Opening to get the drop on a foe
-          - min: 65
-            max: 68
+          - roll: { min: 65, max: 68 }
             text: Path transitions into favorable terrain
-          - min: 69
-            max: 72
+          - roll: { min: 69, max: 72 }
             text: Plants or herbs with helpful qualities
-          - min: 73
-            max: 76
+          - roll: { min: 73, max: 76 }
             text: Plea for help from a potential benefactor
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             text: Plentiful hunting or foraging opportunities
-          - min: 81
-            max: 84
+          - roll: { min: 81, max: 84 }
             text: Refuge offers a place to hide, plan, or recover
-          - min: 85
-            max: 88
+          - roll: { min: 85, max: 88 }
             text: Signpost or marker provides guidance
-          - min: 89
-            max: 92
+          - roll: { min: 89, max: 92 }
             text: Source of fresh water
-          - min: 93
-            max: 96
+          - roll: { min: 93, max: 96 }
             text: Unusual location offers opportunities for exploration
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: Vantage point reveals the lay of the land
       landmark_cursed:
         name: Cursed Landmark
@@ -895,77 +626,53 @@ oracles:
         _source:
           <<: *Source
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Colossal bones
-          - min: 6
-            max: 10
+          - roll: { min: 6, max: 10 }
             text: Copse of diseased trees
-          - min: 11
-            max: 15
+          - roll: { min: 11, max: 15 }
             text: Destructive trail of a monstrous beast
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Eldritch monument
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Exhumed or upturned graves
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Field of crude grave markers
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Forlorn remains of a violent battle
-          - min: 28
-            max: 32
+          - roll: { min: 28, max: 32 }
             text: Foul nest or lair of a monstrous beast
-          - min: 33
-            max: 35
+          - roll: { min: 33, max: 35 }
             text: Gravity-defying terrain or water
-          - min: 36
-            max: 43
+          - roll: { min: 36, max: 43 }
             text: Imposing, skull-shaped outcrop
-          - min: 44
-            max: 46
+          - roll: { min: 44, max: 46 }
             text: Inscrutable iron pillars
-          - min: 47
-            max: 51
+          - roll: { min: 47, max: 51 }
             text: Large cairn built of skulls and bones
-          - min: 52
-            max: 56
+          - roll: { min: 52, max: 56 }
             text: Large pile of bones and offal
-          - min: 57
-            max: 61
+          - roll: { min: 57, max: 61 }
             text: Lifeless settlement
-          - min: 62
-            max: 64
+          - roll: { min: 62, max: 64 }
             text: Noxious, sludge-filled waterway or poo
-          - min: 65
-            max: 67
+          - roll: { min: 65, max: 67 }
             text: Oversized insect mound
-          - min: 68
-            max: 72
+          - roll: { min: 68, max: 72 }
             text: Rotting corpse of a monstrous beast
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Silent, abandoned settlement
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Smoking meteorite scar
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Stinking, sulfurous pit
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Titanic machine
-          - min: 85
-            max: 89
+          - roll: { min: 85, max: 89 }
             text: Foreboding [Cave](id:sundered_isles/collections/oracles/caves)
-          - min: 90
-            max: 94
+          - roll: { min: 90, max: 94 }
             text: Grounded [Shipwreck](id:sundered_isles/collections/oracles/shipwrecks)
-          - min: 95
-            max: 100
+          - roll: { min: 95, max: 100 }
             text: Roll twice
             oracle_rolls:
               - auto: true
@@ -985,25 +692,21 @@ oracles:
             type: oracle_rollable
             rows:
               -  &Waypoints.0
-                min: 1
-                max: 20
+                roll: { min: 1, max: 20 }
                 text: |-
                   Feature of the landscape
                     [Region Landmarks]
               - &Waypoints.1
-                min: 21
-                max: 30
+                roll: { min: 21, max: 30 }
                 text: |-
                   Changing landscape
                     [Overland Regions](id:sundered_isles/oracles/overland/regions)
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 <<: &Waypoints.2
                   text: |-
                     Changing weather
                       [Weather](id:sundered_isles/collections/oracles/weather)
-              - min: 36
-                max: 55
+              - roll: { min: 36, max: 55 }
                 <<: &Waypoints.3
                   text: |-
                     Instance (choose one)
@@ -1013,27 +716,23 @@ oracles:
                     - oracle: sundered_isles/oracles/overland/details
                     - oracle: sundered_isles/oracles/core/descriptor
                     - oracle: sundered_isles/oracles/core/focus
-              - min: 56
-                max: 70
+              - roll: { min: 56, max: 70 }
                 <<: &Waypoints.4
                   text: |-
                     Inland community
                       [Settlements](id:sundered_isles/collections/oracles/settlements)
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 <<: &Waypoints.5
                   text: |-
                     Relic of the past
                       [Ruins](id:sundered_isles/collections/oracles/ruins)
               - &Waypoints.6
-                min: 76
-                max: 85
+                roll: { min: 76, max: 85 }
                 text: |-
                   Character focus
                     [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
               - &Waypoints.7
-                min: 86
-                max: 100
+                roll: { min: 86, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - auto: true
@@ -1047,17 +746,13 @@ oracles:
             rows:
               - *Waypoints.0
               - *Waypoints.1
-              - min: 31
-                max: 38
+              - roll: { min: 31, max: 38 }
                 <<: *Waypoints.2
-              - min: 39
-                max: 58
+              - roll: { min: 39, max: 58 }
                 <<: *Waypoints.3
-              - min: 59
-                max: 67
+              - roll: { min: 59, max: 67 }
                 <<: *Waypoints.4
-              - min: 68
-                max: 75
+              - roll: { min: 68, max: 75 }
                 <<: *Waypoints.5
               - *Waypoints.6
               - *Waypoints.7
@@ -1069,17 +764,13 @@ oracles:
             rows:
               - *Waypoints.0
               - *Waypoints.1
-              - min: 31
-                max: 40
+              - roll: { min: 31, max: 40 }
                 <<: *Waypoints.2
-              - min: 41
-                max: 60
+              - roll: { min: 41, max: 60 }
                 <<: *Waypoints.3
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 <<: *Waypoints.4
-              - min: 66
-                max: 75
+              - roll: { min: 66, max: 75 }
                 <<: *Waypoints.5
               - *Waypoints.6
               - *Waypoints.7
@@ -1100,84 +791,64 @@ oracles:
             summary: *highlands.summary
             rows:
               - <<: &Landmark.0
-                  min: 1
-                  max: 5
+                  roll: { min: 1, max: 5 }
                 text: Bubbling mountain spring
               - <<: &Landmark.1
-                  min: 6
-                  max: 10
+                  roll: { min: 6, max: 10 }
                 text: Cavernous opening in cliff face
               - <<: &Landmark.2
-                  min: 11
-                  max: 15
+                  roll: { min: 11, max: 15 }
                 text: Constructed bridge over a wide chasm
               - <<: &Landmark.3
-                  min: 16
-                  max: 20
+                  roll: { min: 16, max: 20 }
                 text: Crumbling watchtower atop an overlook
               - <<: &Landmark.4
-                  min: 21
-                  max: 25
+                  roll: { min: 21, max: 25 }
                 text: Fallen tree or stone arch over a gorge
               - <<: &Landmark.5
-                  min: 26
-                  max: 30
+                  roll: { min: 26, max: 30 }
                 text: Intricately stacked cairns
               - <<: &Landmark.6
-                  min: 31
-                  max: 35
+                  roll: { min: 31, max: 35 }
                 text: Mist-shrouded ravine
               - <<: &Landmark.7
-                  min: 36
-                  max: 40
+                  roll: { min: 36, max: 40 }
                 text: Narrow ridgeline trail
               - <<: &Landmark.8
-                  min: 41
-                  max: 45
+                  roll: { min: 41, max: 45 }
                 text: Ornate stone carvings
               - <<: &Landmark.9
-                  min: 46
-                  max: 50
+                  roll: { min: 46, max: 50 }
                 text: River crashing through a narrow gorge
               - <<: &Landmark.10
-                  min: 51
-                  max: 55
+                  roll: { min: 51, max: 55 }
                 text: Scars of a recent landslide
               - <<: &Landmark.11
-                  min: 56
-                  max: 60
+                  roll: { min: 56, max: 60 }
                 text: Sheer precipice
               - <<: &Landmark.12
-                  min: 61
-                  max: 65
+                  roll: { min: 61, max: 65 }
                 text: Sheltered highland lake
               - <<: &Landmark.13
-                  min: 66
-                  max: 70
+                  roll: { min: 66, max: 70 }
                 text: Steep, rocky slope
               - <<: &Landmark.14
-                  min: 71
-                  max: 75
+                  roll: { min: 71, max: 75 }
                 text: Stone stairs carved into a cliff face
               - <<: &Landmark.15
-                  min: 76
-                  max: 80
+                  roll: { min: 76, max: 80 }
                 text: Thundering waterfall
               - <<: &Landmark.16
-                  min: 81
-                  max: 85
+                  roll: { min: 81, max: 85 }
                 text: Towering rock spires
               - <<: &Landmark.17
-                  min: 86
-                  max: 90
+                  roll: { min: 86, max: 90 }
                 text: Vantage point with an expansive view
               - <<: &Landmark.18
-                  min: 91
-                  max: 95
+                  roll: { min: 91, max: 95 }
                 text: Veins of ore
               - <<: &Landmark.19
-                  min: 96
-                  max: 100
+                  roll: { min: 96, max: 100 }
                 text: Winding footpath
           jungle:
             _source: *Source

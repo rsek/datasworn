@@ -40,37 +40,29 @@ oracles:
             type: oracle_rollable
             rows:
               - &Sighting.0
-                min: 1
-                max: 15
+                roll: { min: 1, max: 15 }
                 text: '[Stellar Object](id:starforged/oracles/space/stellar_object)'
                 oracle_rolls:
                   - oracle: starforged/oracles/space/stellar_object
               - &Sighting.1
-                min: 16
-                max: 35
+                roll: { min: 16, max: 35 }
                 text: '[Planet](id:starforged/collections/oracles/planets)'
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 <<: &Sighting.2
                   text: '[Settlement](id:starforged/collections/oracles/settlements)'
-              - min: 41
-                max: 47
+              - roll: { min: 41, max: 47 }
                 <<: &Sighting.3
                   text: '[Starship](id:starforged/collections/oracles/starships)'
-              - min: 48
-                max: 51
+              - roll: { min: 48, max: 51 }
                 <<: &Sighting.4
                   text: '[Derelict](id:starforged/collections/oracles/derelicts)'
-              - min: 52
-                max: 53
+              - roll: { min: 52, max: 53 }
                 <<: &Sighting.5
                   text: '[Precursor Vault](id:starforged/collections/oracles/vaults)'
-              - min: 54
-                max: 55
+              - roll: { min: 54, max: 55 }
                 <<: &Sighting.6
                   text: '[Creature](id:starforged/collections/oracles/creatures)'
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 <<: &Sighting.7
                   text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls:
@@ -78,61 +70,48 @@ oracles:
                       auto: true
                     - oracle: starforged/oracles/core/focus
                       auto: true
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 <<: &Sighting.8
                   text: 'Debris field: Mineral asteroids'
-              - min: 66
-                max: 68
+              - roll: { min: 66, max: 68 }
                 <<: &Sighting.9
                   text: 'Debris field: Frozen asteroids'
-              - min: 69
-                max: 70
+              - roll: { min: 69, max: 70 }
                 <<: &Sighting.10
                   text: 'Debris field: Crystalline asteroids'
-              - min: 71
-                max: 72
+              - roll: { min: 71, max: 72 }
                 <<: &Sighting.11
                   text: 'Debris field: Creature boneyard'
-              - min: 73
-                max: 74
+              - roll: { min: 73, max: 74 }
                 <<: &Sighting.12
                   text: 'Debris field: Metallic wreckage'
-              - min: 75
-                max: 76
+              - roll: { min: 75, max: 76 }
                 <<: &Sighting.13
                   text: Large rogue asteroid
-              - min: 77
-                max: 78
+              - roll: { min: 77, max: 78 }
                 <<: &Sighting.14
                   text: Comet with a tail of ionized gas
-              - min: 79
-                max: 81
+              - roll: { min: 79, max: 81 }
                 <<: &Sighting.15
                   text: Fiery energy storm
-              - min: 82
-                max: 83
+              - roll: { min: 82, max: 83 }
                 <<: &Sighting.16
                   text: Chaotic meteoroid storm
-              - min: 84
-                max: 85
+              - roll: { min: 84, max: 85 }
                 <<: &Sighting.17
                   text: Turbulent gravitational wave
               - &Sighting.18
-                min: 86
-                max: 93
+                roll: { min: 86, max: 93 }
                 text: Dense nebula cloud
               - &Sighting.19
-                min: 94
-                max: 98
+                roll: { min: 94, max: 98 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
                     auto: true
                     duplicates: keep
               - &Sighting.20
-                min: 99
-                max: 100
+                roll: { min: 99, max: 100 }
                 text: Roll three times
                 oracle_rolls:
                   - number_of_rolls: 3
@@ -149,53 +128,37 @@ oracles:
             rows:
               - *Sighting.0
               - *Sighting.1
-              - min: 36
-                max: 38
+              - roll: { min: 36, max: 38 }
                 <<: *Sighting.2
-              - min: 39
-                max: 43
+              - roll: { min: 39, max: 43 }
                 <<: *Sighting.3
-              - min: 44
-                max: 46
+              - roll: { min: 44, max: 46 }
                 <<: *Sighting.4
-              - min: 47
-                max: 49
+              - roll: { min: 47, max: 49 }
                 <<: *Sighting.5
-              - min: 50
-                max: 52
+              - roll: { min: 50, max: 52 }
                 <<: *Sighting.6
-              - min: 53
-                max: 58
+              - roll: { min: 53, max: 58 }
                 <<: *Sighting.7
-              - min: 59
-                max: 63
+              - roll: { min: 59, max: 63 }
                 <<: *Sighting.8
-              - min: 64
-                max: 66
+              - roll: { min: 64, max: 66 }
                 <<: *Sighting.9
-              - min: 67
-                max: 68
+              - roll: { min: 67, max: 68 }
                 <<: *Sighting.10
-              - min: 69
-                max: 70
+              - roll: { min: 69, max: 70 }
                 <<: *Sighting.11
-              - min: 71
-                max: 72
+              - roll: { min: 71, max: 72 }
                 <<: *Sighting.12
-              - min: 73
-                max: 74
+              - roll: { min: 73, max: 74 }
                 <<: *Sighting.13
-              - min: 75
-                max: 76
+              - roll: { min: 75, max: 76 }
                 <<: *Sighting.14
-              - min: 77
-                max: 80
+              - roll: { min: 77, max: 80 }
                 <<: *Sighting.15
-              - min: 81
-                max: 82
+              - roll: { min: 81, max: 82 }
                 <<: *Sighting.16
-              - min: 83
-                max: 85
+              - roll: { min: 83, max: 85 }
                 <<: *Sighting.17
               - *Sighting.18
               - *Sighting.19
@@ -210,53 +173,37 @@ oracles:
             rows:
               - *Sighting.0
               - *Sighting.1
-              - min: 36
-                max: 37
+              - roll: { min: 36, max: 37 }
                 <<: *Sighting.2
-              - min: 38
-                max: 39
+              - roll: { min: 38, max: 39 }
                 <<: *Sighting.3
-              - min: 40
-                max: 41
+              - roll: { min: 40, max: 41 }
                 <<: *Sighting.4
-              - min: 42
-                max: 45
+              - roll: { min: 42, max: 45 }
                 <<: *Sighting.5
-              - min: 46
-                max: 49
+              - roll: { min: 46, max: 49 }
                 <<: *Sighting.6
-              - min: 50
-                max: 56
+              - roll: { min: 50, max: 56 }
                 <<: *Sighting.7
-              - min: 57
-                max: 61
+              - roll: { min: 57, max: 61 }
                 <<: *Sighting.8
-              - min: 62
-                max: 64
+              - roll: { min: 62, max: 64 }
                 <<: *Sighting.9
-              - min: 65
-                max: 66
+              - roll: { min: 65, max: 66 }
                 <<: *Sighting.10
-              - min: 67
-                max: 68
+              - roll: { min: 67, max: 68 }
                 <<: *Sighting.11
-              - min: 69
-                max: 70
+              - roll: { min: 69, max: 70 }
                 <<: *Sighting.12
-              - min: 71
-                max: 72
+              - roll: { min: 71, max: 72 }
                 <<: *Sighting.13
-              - min: 73
-                max: 74
+              - roll: { min: 73, max: 74 }
                 <<: *Sighting.14
-              - min: 75
-                max: 79
+              - roll: { min: 75, max: 79 }
                 <<: *Sighting.15
-              - min: 80
-                max: 81
+              - roll: { min: 80, max: 81 }
                 <<: *Sighting.16
-              - min: 82
-                max: 85
+              - roll: { min: 82, max: 85 }
                 <<: *Sighting.17
               - *Sighting.18
               - *Sighting.19
@@ -285,260 +232,210 @@ oracles:
             #   tags: [template fragment]
             rows:
               - <<: &SectorName.0
-                  min: 1
-                  max: 2
+                  roll: { min: 1, max: 2 }
                 text: Accursed
                 _i18n: &Adjective
                   text:
                     part_of_speech: adjective
               - <<: &SectorName.1
-                  min: 3
-                  max: 4
+                  roll: { min: 3, max: 4 }
                 text: Ashen
                 _i18n: *Adjective
               - <<: &SectorName.2
-                  min: 5
-                  max: 6
+                  roll: { min: 5, max: 6 }
                 text: Asteria
                 _i18n: &AdjunctProperNoun
                   text:
                     part_of_speech: adjunct_proper_noun
               - <<: &SectorName.3
-                  min: 7
-                  max: 8
+                  roll: { min: 7, max: 8 }
                 text: Bitter
                 _i18n: *Adjective
               - <<: &SectorName.4
-                  min: 9
-                  max: 10
+                  roll: { min: 9, max: 10 }
                 text: Blighted
                 _i18n: *Adjective
               - <<: &SectorName.5
-                  min: 11
-                  max: 12
+                  roll: { min: 11, max: 12 }
                 text: Bloodied
                 _i18n: *Adjective
               - <<: &SectorName.6
-                  min: 13
-                  max: 14
+                  roll: { min: 13, max: 14 }
                 text: Boundless
                 _i18n: *Adjective
               - <<: &SectorName.7
-                  min: 15
-                  max: 16
+                  roll: { min: 15, max: 16 }
                 text: Burning
                 _i18n:
                   text:
                     part_of_speech: gerund
               - <<: &SectorName.8
-                  min: 17
-                  max: 18
+                  roll: { min: 17, max: 18 }
                 text: Cortana
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.9
-                  min: 19
-                  max: 20
+                  roll: { min: 19, max: 20 }
                 text: Corvus
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.10
-                  min: 21
-                  max: 22
+                  roll: { min: 21, max: 22 }
                 text: Crimson
               - <<: &SectorName.11
-                  min: 23
-                  max: 24
+                  roll: { min: 23, max: 24 }
                 text: Cygnus
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.12
-                  min: 25
-                  max: 26
+                  roll: { min: 25, max: 26 }
                 text: Delphi
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.13
-                  min: 27
-                  max: 28
+                  roll: { min: 27, max: 28 }
                 text: Delphian
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.14
-                  min: 29
-                  max: 30
+                  roll: { min: 29, max: 30 }
                 text: Devil's
                 # content: {part_of_speech: [proper noun, possessive case]}
               - <<: &SectorName.15
-                  min: 31
-                  max: 32
+                  roll: { min: 31, max: 32 }
                 text: Ebon
                 _i18n: *Adjective
               - <<: &SectorName.16
-                  min: 33
-                  max: 34
+                  roll: { min: 33, max: 34 }
                 text: Essus
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.17
-                  min: 35
-                  max: 36
+                  roll: { min: 35, max: 36 }
                 _i18n: *Adjective
                 text: Fallen
               - <<: &SectorName.18
-                  min: 37
-                  max: 38
+                  roll: { min: 37, max: 38 }
                 _i18n: *Adjective
                 text: Ferrous
               - <<: &SectorName.19
-                  min: 39
-                  max: 40
+                  roll: { min: 39, max: 40 }
                 text: Fool's
                 # content: {part_of_speech: [proper noun, possessive case]}
               - <<: &SectorName.20
-                  min: 41
-                  max: 42
+                  roll: { min: 41, max: 42 }
                 text: Forgotten
                 _i18n: *Adjective
               - <<: &SectorName.21
-                  min: 43
-                  max: 44
+                  roll: { min: 43, max: 44 }
                 text: Haunted
                 _i18n: *Adjective
               - <<: &SectorName.22
-                  min: 45
-                  max: 46
+                  roll: { min: 45, max: 46 }
                 text: Hidden
                 _i18n: *Adjective
               - <<: &SectorName.23
-                  min: 47
-                  max: 48
+                  roll: { min: 47, max: 48 }
                 text: Hollow
                 _i18n: *Adjective
               - <<: &SectorName.24
-                  min: 49
-                  max: 50
+                  roll: { min: 49, max: 50 }
                 text: Igneous
                 _i18n: *Adjective
               - <<: &SectorName.25
-                  min: 51
-                  max: 52
+                  roll: { min: 51, max: 52 }
                 text: Infernal
                 _i18n: *Adjective
               - <<: &SectorName.26
-                  min: 53
-                  max: 54
+                  roll: { min: 53, max: 54 }
                 text: Invidia
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.27
-                  min: 55
-                  max: 56
+                  roll: { min: 55, max: 56 }
                 text: Iron
                 _i18n: &i18n.result.adjunct_common_noun
                   text:
                     part_of_speech: adjunct_common_noun
               - <<: &SectorName.28
-                  min: 57
-                  max: 58
+                  roll: { min: 57, max: 58 }
                 text: Kalidas
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.29
-                  min: 59
-                  max: 60
+                  roll: { min: 59, max: 60 }
                 text: Kronos
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.30
-                  min: 61
-                  max: 62
+                  roll: { min: 61, max: 62 }
                 text: Lacuna
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.31
-                  min: 63
-                  max: 64
+                  roll: { min: 63, max: 64 }
                 text: Lumen
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.32
-                  min: 65
-                  max: 66
+                  roll: { min: 65, max: 66 }
                 text: Mobius
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.33
-                  min: 67
-                  max: 68
+                  roll: { min: 67, max: 68 }
                 text: Morien
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.34
-                  min: 69
-                  max: 70
+                  roll: { min: 69, max: 70 }
                 text: Onyx
                 _i18n: *i18n.result.adjunct_common_noun
               - <<: &SectorName.35
-                  min: 71
-                  max: 72
+                  roll: { min: 71, max: 72 }
                 text: Outer
                 _i18n: *Adjective
               - <<: &SectorName.36
-                  min: 73
-                  max: 74
+                  roll: { min: 73, max: 74 }
                 text: Sanguis
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.37
-                  min: 75
-                  max: 76
+                  roll: { min: 75, max: 76 }
                 text: Scarred
                 _i18n: *Adjective
               - <<: &SectorName.38
-                  min: 77
-                  max: 78
+                  roll: { min: 77, max: 78 }
                 text: Scorched
                 _i18n: *Adjective
               - <<: &SectorName.39
-                  min: 79
-                  max: 80
+                  roll: { min: 79, max: 80 }
                 text: Shattered
                 _i18n: *Adjective
               - <<: &SectorName.40
-                  min: 81
-                  max: 82
+                  roll: { min: 81, max: 82 }
                 text: Shrouded
                 _i18n: *Adjective
               - <<: &SectorName.41
-                  min: 83
-                  max: 84
+                  roll: { min: 83, max: 84 }
                 text: Sindri
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.42
-                  min: 85
-                  max: 86
+                  roll: { min: 85, max: 86 }
                 text: Solana
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.43
-                  min: 87
-                  max: 88
+                  roll: { min: 87, max: 88 }
                 text: Stygian
                 _i18n: *Adjective
               - <<: &SectorName.44
-                  min: 89
-                  max: 90
+                  roll: { min: 89, max: 90 }
                 text: Sulaco
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.45
-                  min: 91
-                  max: 92
+                  roll: { min: 91, max: 92 }
                 text: Sundered
                 _i18n: *Adjective
               - <<: &SectorName.46
-                  min: 93
-                  max: 94
+                  roll: { min: 93, max: 94 }
                 text: Thunor
                 _i18n: *AdjunctProperNoun
               - <<: &SectorName.47
-                  min: 95
-                  max: 96
+                  roll: { min: 95, max: 96 }
                 text: Vanguard
                 _i18n: *Adjective
               - <<: &SectorName.48
-                  min: 97
-                  max: 98
+                  roll: { min: 97, max: 98 }
                 text: Veiled
                 _i18n: *Adjective
               - <<: &SectorName.49
-                  min: 99
-                  max: 100
+                  roll: { min: 99, max: 100 }
                 text: Wasted
                 _i18n: *Adjective
           suffix:
@@ -720,44 +617,31 @@ oracles:
         #   part_of_speech: [fragment]
         summary: Use the Stellar Object oracle to learn more about the primary star at a location. This is mostly to help you visualize your surroundings, but the strange or hazardous nature of some rare stars can incite new adventures.
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: Smoldering red star
-          - min: 16
-            max: 30
+          - roll: { min: 16, max: 30 }
             text: Glowing orange star
-          - min: 31
-            max: 45
+          - roll: { min: 31, max: 45 }
             text: Burning yellow star
-          - min: 46
-            max: 50
+          - roll: { min: 46, max: 50 }
             text: Blazing blue star
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Young star incubating in a molecular cloud
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: White dwarf shining with spectral light
-          - min: 71
-            max: 75
+          - roll: { min: 71, max: 75 }
             text: Corrupted star radiating with unnatural light
-          - min: 76
-            max: 80
+          - roll: { min: 76, max: 80 }
             text: Neutron star surrounded by intense magnetic fields
-          - min: 81
-            max: 85
+          - roll: { min: 81, max: 85 }
             text: Two stars in close orbit connected by fiery tendrils of energy
-          - min: 86
-            max: 90
+          - roll: { min: 86, max: 90 }
             text: Black hole allows nothing to escape—not even light
-          - min: 91
-            max: 98
+          - roll: { min: 91, max: 98 }
             text: Hypergiant star generating turbulent solar winds
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Artificial star constructed by a long-dead civilization
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Unstable star showing signs of impending supernova
       peril:
         _source:
@@ -776,104 +660,71 @@ oracles:
         #   part_of_speech: [fragment]
         summary: Choose or roll on this table when you want inspiration for a trouble during spaceborne exploration or on an interstellar expedition.
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Artificial gravity generator malfunctions
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Automated defenses or mines protect this area
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: Compartment catches fire or is breached
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Contagion or illness threatens to take hold
-          - min: 13
-            max: 15
+          - roll: { min: 13, max: 15 }
             text: Dust clouds imperil navigation or conceal foes
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Energy storm looms
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Familiar foe appears or sends an ominous message
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Gravity well or vortex takes hold
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Imperiled ship calls for help
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Important device fails or malfunctions
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Infestation is revealed
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Intruder or stowaway creates trouble
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Isolation or fear presses in
-          - min: 40
-            max: 42
+          - roll: { min: 40, max: 42 }
             text: Life support system malfunctions
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Meteoroid storm fills the sky
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Mysterious wreckage portends a new threat
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Nearby settlement calls for help
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Old repair or patch fails
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Onboard dispute or inner turmoil causes a disruption
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Others obstruct your path or form a blockade
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Phantom signals suggest a lurking foe
-          - min: 64
-            max: 66
+          - roll: { min: 64, max: 66 }
             text: Pirates hunt for prey
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Power fails
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Primary drive or generator malfunctions
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Sabotage is revealed
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Shockwave or gravity wave approaches
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Someone questions your presence here
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Stellar anomaly emits hazardous energies
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Threatening lifeform draws near
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Troubling visions or apparitions
-          - min: 91
-            max: 93
+          - roll: { min: 91, max: 93 }
             text: 'True nature of a cargo, occupant, or passenger is revealed'
-          - min: 94
-            max: 96
+          - roll: { min: 94, max: 96 }
             text: Unsettling sounds or disturbances
-          - min: 97
-            max: 99
+          - roll: { min: 97, max: 99 }
             <<: &ActionTheme
               text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
               oracle_rolls:
@@ -881,8 +732,7 @@ oracles:
                   auto: true
                 - oracle: starforged/oracles/core/theme
                   auto: true
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
@@ -904,78 +754,53 @@ oracles:
         #   tags: [opportunity]
         summary: Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and find an opportunity.
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Advance warning of an environmental threat
-          - min: 5
-            max: 8
+          - roll: { min: 5, max: 8 }
             text: Automated signal offers a helpful message or warning
-          - min: 9
-            max: 12
+          - roll: { min: 9, max: 12 }
             text: Cache of cargo or supplies
-          - min: 13
-            max: 16
+          - roll: { min: 13, max: 16 }
             text: Chance for fellowship or a moment of inner peace
-          - min: 17
-            max: 20
+          - roll: { min: 17, max: 20 }
             text: Clear path through otherwise perilous space
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: Clue offers insight into a current quest or mystery
-          - min: 25
-            max: 28
+          - roll: { min: 25, max: 28 }
             text: Clue to a lifeform's nature or vulnerabilities
-          - min: 29
-            max: 32
+          - roll: { min: 29, max: 32 }
             text: Derelict ripe for the picking
-          - min: 33
-            max: 36
+          - roll: { min: 33, max: 36 }
             text: Foe inadvertently reveals themselves or tips their hand
-          - min: 37
-            max: 40
+          - roll: { min: 37, max: 40 }
             text: Friendly interaction with a benign lifeform
-          - min: 41
-            max: 44
+          - roll: { min: 41, max: 44 }
             text: Friendly settlement in range
-          - min: 45
-            max: 48
+          - roll: { min: 45, max: 48 }
             text: Friendly spacers at work here
-          - min: 49
-            max: 52
+          - roll: { min: 49, max: 52 }
             text: Friendly starship crosses your path
-          - min: 53
-            max: 56
+          - roll: { min: 53, max: 56 }
             text: Helpful or encouraging message from an acquaintance
-          - min: 57
-            max: 60
+          - roll: { min: 57, max: 60 }
             text: Impressive vista offers comfort or inspiration
-          - min: 61
-            max: 64
+          - roll: { min: 61, max: 64 }
             text: Interesting site offers opportunities for exploration
-          - min: 65
-            max: 68
+          - roll: { min: 65, max: 68 }
             text: Mineral or energy resource detected
-          - min: 69
-            max: 72
+          - roll: { min: 69, max: 72 }
             text: Navigational or environmental hazard is left behind
-          - min: 73
-            max: 76
+          - roll: { min: 73, max: 76 }
             text: Opening to escape or avoid foes
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             text: Plea for help from a potential benefactor
-          - min: 81
-            max: 84
+          - roll: { min: 81, max: 84 }
             text: Probe or beacon with useful data
-          - min: 85
-            max: 88
+          - roll: { min: 85, max: 88 }
             text: 'Refuge offers a place to hide, plan, or recover'
-          - min: 89
-            max: 92
+          - roll: { min: 89, max: 92 }
             text: Sensors pinpoint a lurking foe
-          - min: 93
-            max: 96
+          - roll: { min: 93, max: 96 }
             text: Sensors reveal helpful or interesting environmental data
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: Vehicle or equipment performs beyond expectations

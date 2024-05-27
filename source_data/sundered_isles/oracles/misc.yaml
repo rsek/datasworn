@@ -26,124 +26,94 @@ oracles:
           text: Result
           text2: Prompts
         rows:
-          - min: 1
-            max: 4
+          - roll: { min: 1, max: 4 }
             text: Chronicle your Adventures
             text2: What do you describe within logs, journals, or maps? What place or adventure still calls to you?
-          - min: 5
-            max: 8
+          - roll: { min: 5, max: 8 }
             text: Commune with nature
             text2: What flora or fauna do you encounter? What inspiration do you draw from the experience?
-          - min: 9
-            max: 11
+          - roll: { min: 9, max: 11 }
             text: Concoct a plan
             text2: What new strategy do you devise? How will you put this plan in motion?
-          - min: 12
-            max: 14
+          - roll: { min: 12, max: 14 }
             text: Conduct research
             text2: What is the nature of the research? What information or insight do you gain?
-          - min: 15
-            max: 17
+          - roll: { min: 15, max: 17 }
             text: Conduct training
             text2: What skills or knowledge do you share? Who accepts the guidance, and who resists it?
-          - min: 18
-            max: 20
+          - roll: { min: 18, max: 20 }
             text: Confess a secret
             text2: What do you reveal of your nature or background? How do others respond?
-          - min: 21
-            max: 24
+          - roll: { min: 21, max: 24 }
             text: Conjure up the past
             text2: What is the subject of this reminiscence? Why is it meaningful in this moment?
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Create an object or artwork
             text2: What do you create? What is it intended for?
-          - min: 28
-            max: 31
+          - roll: { min: 28, max: 31 }
             text: Experience a dream or vision
             text2: What is the nature of the dream or vision? What meaning do you draw from it?
-          - min: 32
-            max: 34
+          - roll: { min: 32, max: 34 }
             text: Fight in a sparring match
             text2: Who do you spar with? What issues do you provoke or resolve during the match?
-          - min: 35
-            max: 37
+          - roll: { min: 35, max: 37 }
             text: Find peace
             text2: How do you reflect, meditate, or pray? What enlightenment do you gain?
-          - min: 38
-            max: 40
+          - roll: { min: 38, max: 40 }
             text: Hear a confession
             text2: Who shares an aspect of their nature or background? What do they reveal?
-          - min: 41
-            max: 43
+          - roll: { min: 41, max: 43 }
             text: Indulge a vice
             text2: What weakness or need do you indulge? How is this viewed by others?
-          - min: 44
-            max: 47
+          - roll: { min: 44, max: 47 }
             text: Join an event
             text2: What is the occasion of this social gathering? How do you participate?
-          - min: 48
-            max: 50
+          - roll: { min: 48, max: 50 }
             text: Lead or join a song
             text2: What is the subject of this song? Why is it meaningful to you or others?
-          - min: 51
-            max: 53
+          - roll: { min: 51, max: 53 }
             text: Motivate others
             text2: Why is this motivation needed, and what is your approach? How do they respond?
-          - min: 54
-            max: 56
+          - roll: { min: 54, max: 56 }
             text: Play a game
             text2: Who do you play with? What is discussed during the game?
-          - min: 57
-            max: 60
+          - roll: { min: 57, max: 60 }
             text: Practice a skill
             text2: What talent do you hone? What do you learn from the exercise?
-          - min: 61
-            max: 64
+          - roll: { min: 61, max: 64 }
             text: Ready your gear
             text2: How do you maintain your equipment or gear up? What are you preparing for?
-          - min: 65
-            max: 67
+          - roll: { min: 65, max: 67 }
             text: Record a message
             text2: Who is the message meant for? What news or feelings do you share?
-          - min: 68
-            max: 70
+          - roll: { min: 68, max: 70 }
             text: Reinvent your look
             text2: What inspires you to remake yourself? How do you debut your new look?
-          - min: 71
-            max: 73
+          - roll: { min: 71, max: 73 }
             text: Settle a conflict
             text2: What caused this argument or fight? How do you resolve the situation?
-          - min: 74
-            max: 76
+          - roll: { min: 74, max: 76 }
             text: Share intimacy
             text2: Who do you spend time with? How does your relationship evolve?
-          - min: 77
-            max: 79
+          - roll: { min: 77, max: 79 }
             text: Share your heritage
             text2: What do you offer of your family's or people's history? What memory or regret does it evoke?
-          - min: 80
-            max: 82
+          - roll: { min: 80, max: 82 }
             text: Stay vigilant
             text2: What are you on the lookout for? What do you spot or overhear?
-          - min: 83
-            max: 85
+          - roll: { min: 83, max: 85 }
             text: Stir up trouble
             text2: What conflict do you incite or inflame? Why is the situation left unresolved?
-          - min: 86
-            max: 89
+          - roll: { min: 86, max: 89 }
             text: Take in the view
             text2: What sublime or dramatic scenery do you witness? What emotion or memory does it inspire?
-          - min: 90
-            max: 92
+          - roll: { min: 90, max: 92 }
             text: Tell a tale
             text2: What is the nature of this myth or legend? What emotion or lesson lingers after the telling?
-          - min: 93
-            max: 96
+          - roll: { min: 93, max: 96 }
             text: Undertake a communal labor
             text2: What demanding project do you embark on with others? How does this bring you closer together?
-          - min: 97
-            max: 100
+          - roll: { min: 97, max: 100 }
             text: Undertake a menial task
             text2: What solitary chore do you perform? What do you daydream about as you work?
       prompts:
@@ -154,8 +124,7 @@ oracles:
           <<: *Source
         summary: Use this table to choose a structured prompt from among the Core oracles (pages 112–115). Roll on each table and interpret the response as appropriate to the question and situation.
         rows:
-          - min: 1
-            max: 20
+          - roll: { min: 1, max: 20 }
             <<: &ActionTheme
               text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
@@ -163,8 +132,7 @@ oracles:
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
                   oracle: sundered_isles/oracles/core/theme
-          - min: 21
-            max: 40
+          - roll: { min: 21, max: 40 }
             <<: &ActionFocus
               text: '[Action](id:sundered_isles/oracles/core/action) + [Focus](id:sundered_isles/oracles/core/focus)'
               oracle_rolls:
@@ -172,8 +140,7 @@ oracles:
                   oracle: sundered_isles/oracles/core/action
                 - auto: true
                   oracle: sundered_isles/oracles/core/focus
-          - min: 41
-            max: 60
+          - roll: { min: 41, max: 60 }
             <<: &DescriptorTheme
               text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Theme](id:sundered_isles/oracles/core/theme)'
               oracle_rolls:
@@ -181,8 +148,7 @@ oracles:
                   oracle: sundered_isles/oracles/core/descriptor
                 - auto: true
                   oracle: sundered_isles/oracles/core/theme
-          - min: 61
-            max: 80
+          - roll: { min: 61, max: 80 }
             <<: &DescriptorFocus
               text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
               oracle_rolls:
@@ -190,8 +156,7 @@ oracles:
                   oracle: sundered_isles/oracles/core/descriptor
                 - auto: true
                   oracle: sundered_isles/oracles/core/focus
-          - min: 81
-            max: 100
+          - roll: { min: 81, max: 100 }
             text: '[Action](id:sundered_isles/oracles/core/action) + [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
             <<: &ActionDescriptorFocus
               oracle_rolls:

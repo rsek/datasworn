@@ -28,407 +28,307 @@ oracles:
           <<: *Source
           page: 174
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Scheme
             <<: &i18n.verb
               _i18n:
                 text:
                   part_of_speech: verb
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Clash
             <<: *i18n.verb
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Weaken
             <<: *i18n.verb
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Initiate
             <<: *i18n.verb
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Create
             <<: *i18n.verb
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Swear
             <<: *i18n.verb
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Avenge
             <<: *i18n.verb
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Guard
             <<: *i18n.verb
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Defeat
             <<: *i18n.verb
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Control
             <<: *i18n.verb
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Break
             <<: *i18n.verb
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Risk
             <<: *i18n.verb
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Surrender
             <<: *i18n.verb
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Inspect
             <<: *i18n.verb
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Raid
             <<: *i18n.verb
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Evade
             <<: *i18n.verb
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Assault
             <<: *i18n.verb
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Deflect
             <<: *i18n.verb
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Threaten
             <<: *i18n.verb
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Attack
             <<: *i18n.verb
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Leave
             <<: *i18n.verb
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Preserve
             <<: *i18n.verb
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Manipulate
             <<: *i18n.verb
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Remove
             <<: *i18n.verb
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Eliminate
             <<: *i18n.verb
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Withdraw
             <<: *i18n.verb
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Abandon
             <<: *i18n.verb
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Investigate
             <<: *i18n.verb
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Hold
             <<: *i18n.verb
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Focus
             <<: *i18n.verb
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Uncover
             <<: *i18n.verb
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Breach
             <<: *i18n.verb
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Aid
             <<: *i18n.verb
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Uphold
             <<: *i18n.verb
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Falter
             <<: *i18n.verb
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Suppress
             <<: *i18n.verb
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Hunt
             <<: *i18n.verb
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Share
             <<: *i18n.verb
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Destroy
             <<: *i18n.verb
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Avoid
             <<: *i18n.verb
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Reject
             <<: *i18n.verb
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Demand
             <<: *i18n.verb
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Explore
             <<: *i18n.verb
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Bolster
             <<: *i18n.verb
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Seize
             <<: *i18n.verb
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Mourn
             <<: *i18n.verb
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Reveal
             <<: *i18n.verb
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Gather
             <<: *i18n.verb
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Defy
             <<: *i18n.verb
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Transform
             <<: *i18n.verb
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Persevere
             <<: *i18n.verb
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Serve
             <<: *i18n.verb
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Begin
             <<: *i18n.verb
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Move
             <<: *i18n.verb
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Coordinate
             <<: *i18n.verb
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Resist
             <<: *i18n.verb
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Await
             <<: *i18n.verb
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Impress
             <<: *i18n.verb
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Take
             <<: *i18n.verb
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Oppose
             <<: *i18n.verb
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Capture
             <<: *i18n.verb
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Overwhelm
             <<: *i18n.verb
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Challenge
             <<: *i18n.verb
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Acquire
             <<: *i18n.verb
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Protect
             <<: *i18n.verb
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Finish
             <<: *i18n.verb
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Strengthen
             <<: *i18n.verb
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Restore
             <<: *i18n.verb
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Advance
             <<: *i18n.verb
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Command
             <<: *i18n.verb
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Refuse
             <<: *i18n.verb
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Find
             <<: *i18n.verb
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Deliver
             <<: *i18n.verb
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Hide
             <<: *i18n.verb
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Fortify
             <<: *i18n.verb
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Betray
             <<: *i18n.verb
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Secure
             <<: *i18n.verb
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Arrive
             <<: *i18n.verb
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Affect
             <<: *i18n.verb
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Change
             <<: *i18n.verb
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Defend
             <<: *i18n.verb
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Debate
             <<: *i18n.verb
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Support
             <<: *i18n.verb
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Follow
             <<: *i18n.verb
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Construct
             <<: *i18n.verb
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Locate
             <<: *i18n.verb
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Endure
             <<: *i18n.verb
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Release
             <<: *i18n.verb
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Lose
             <<: *i18n.verb
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Reduce
             <<: *i18n.verb
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Escalate
             <<: *i18n.verb
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Distract
             <<: *i18n.verb
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Journey
             <<: *i18n.verb
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Escort
             <<: *i18n.verb
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Learn
             <<: *i18n.verb
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Communicate
             <<: *i18n.verb
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Depart
             <<: *i18n.verb
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Search
             <<: *i18n.verb
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Charge
             <<: *i18n.verb
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Summon
             <<: *i18n.verb
       theme:
@@ -444,406 +344,306 @@ oracles:
             - classic/oracles/action_and_theme/action
         summary: As with the [Action](id:classic/oracles/action_and_theme/action) oracle, this is an interpretative table which you can use to answer questions or generate new situations. Combined, the Action and Theme tables provide creative prompts suitable for most situations and questions. In fact, with some creative interpretations, it’s entirely possible to play with only these two tables.
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Risk
             <<: &i18n.common_noun
               _i18n:
                 text:
                   part_of_speech: common_noun
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Ability
             <<: *i18n.common_noun
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Price
             <<: *i18n.common_noun
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Ally
             <<: *i18n.common_noun
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Battle
             <<: *i18n.common_noun
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Safety
             <<: *i18n.common_noun
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Survival
             <<: *i18n.common_noun
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Weapon
             <<: *i18n.common_noun
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Wound
             <<: *i18n.common_noun
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Shelter
             <<: *i18n.common_noun
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Leader
             <<: *i18n.common_noun
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Fear
             <<: *i18n.common_noun
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Time
             <<: *i18n.common_noun
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Duty
             <<: *i18n.common_noun
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Secret
             <<: *i18n.common_noun
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Innocence
             <<: *i18n.common_noun
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Renown
             <<: *i18n.common_noun
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Direction
             <<: *i18n.common_noun
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Death
             <<: *i18n.common_noun
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Honor
             <<: *i18n.common_noun
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Labor
             <<: *i18n.common_noun
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Solution
             <<: *i18n.common_noun
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Tool
             <<: *i18n.common_noun
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Balance
             <<: *i18n.common_noun
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Love
             <<: *i18n.common_noun
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Barrier
             <<: *i18n.common_noun
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Creation
             <<: *i18n.common_noun
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Decay
             <<: *i18n.common_noun
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Trade
             <<: *i18n.common_noun
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Bond
             <<: *i18n.common_noun
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Hope
             <<: *i18n.common_noun
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Superstition
             <<: *i18n.common_noun
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Peace
             <<: *i18n.common_noun
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Deception
             <<: *i18n.common_noun
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: History
             <<: *i18n.common_noun
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: World
             <<: *i18n.common_noun
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Vow
             <<: *i18n.common_noun
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Protection
             <<: *i18n.common_noun
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Nature
             <<: *i18n.common_noun
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Opinion
             <<: *i18n.common_noun
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Burden
             <<: *i18n.common_noun
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Vengeance
             <<: *i18n.common_noun
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Opportunity
             <<: *i18n.common_noun
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Faction
             <<: *i18n.common_noun
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Danger
             <<: *i18n.common_noun
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Corruption
             <<: *i18n.common_noun
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Freedom
             <<: *i18n.common_noun
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Debt
             <<: *i18n.common_noun
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Hate
             <<: *i18n.common_noun
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Possession
             <<: *i18n.common_noun
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Stranger
             <<: *i18n.common_noun
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Passage
             <<: *i18n.common_noun
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Land
             <<: *i18n.common_noun
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Creature
             <<: *i18n.common_noun
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Disease
             <<: *i18n.common_noun
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Advantage
             <<: *i18n.common_noun
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Blood
             <<: *i18n.common_noun
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Language
             <<: *i18n.common_noun
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Rumor
             <<: *i18n.common_noun
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Weakness
             <<: *i18n.common_noun
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Greed
             <<: *i18n.common_noun
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Family
             <<: *i18n.common_noun
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Resource
             <<: *i18n.common_noun
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Structure
             <<: *i18n.common_noun
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Dream
             <<: *i18n.common_noun
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Community
             <<: *i18n.common_noun
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: War
             <<: *i18n.common_noun
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Portent
             <<: *i18n.common_noun
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Prize
             <<: *i18n.common_noun
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Destiny
             <<: *i18n.common_noun
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Momentum
             <<: *i18n.common_noun
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Power
             <<: *i18n.common_noun
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Memory
             <<: *i18n.common_noun
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Ruin
             <<: *i18n.common_noun
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Mysticism
             <<: *i18n.common_noun
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Rival
             <<: *i18n.common_noun
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Problem
             <<: *i18n.common_noun
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Idea
             <<: *i18n.common_noun
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Revenge
             <<: *i18n.common_noun
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Health
             <<: *i18n.common_noun
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Fellowship
             <<: *i18n.common_noun
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Enemy
             <<: *i18n.common_noun
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Religion
             <<: *i18n.common_noun
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Spirit
             <<: *i18n.common_noun
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Fame
             <<: *i18n.common_noun
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Desolation
             <<: *i18n.common_noun
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Strength
             <<: *i18n.common_noun
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Knowledge
             <<: *i18n.common_noun
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Truth
             <<: *i18n.common_noun
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Quest
             <<: *i18n.common_noun
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Pride
             <<: *i18n.common_noun
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Loss
             <<: *i18n.common_noun
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Law
             <<: *i18n.common_noun
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Path
             <<: *i18n.common_noun
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Warning
             <<: *i18n.common_noun
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Relationship
             <<: *i18n.common_noun
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Wealth
             <<: *i18n.common_noun
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Home
             <<: *i18n.common_noun
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Strategy
             <<: *i18n.common_noun
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Supply
             <<: *i18n.common_noun

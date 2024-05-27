@@ -45,24 +45,19 @@ oracles:
             #       region: [terminus]
             rows:
               - &Pop.0
-                min: 1
-                max: 10
+                roll: { min: 1, max: 10 }
                 text: Few
               - &Pop.1
-                min: 11
-                max: 25
+                roll: { min: 11, max: 25 }
                 text: Dozens
               - &Pop.2
-                min: 26
-                max: 55
+                roll: { min: 26, max: 55 }
                 text: Hundreds
               - &Pop.3
-                min: 56
-                max: 85
+                roll: { min: 56, max: 85 }
                 text: Thousands
               - &Pop.4
-                min: 86
-                max: 100
+                roll: { min: 86, max: 100 }
                 text: Tens of thousands
           outlands:
             oracle_type: column_text
@@ -79,20 +74,15 @@ oracles:
             #     attributes:
             #       region: [outlands]
             rows:
-              - min: 1
-                max: 15
+              - roll: { min: 1, max: 15 }
                 <<: *Pop.0
-              - min: 16
-                max: 35
+              - roll: { min: 16, max: 35 }
                 <<: *Pop.1
-              - min: 36
-                max: 65
+              - roll: { min: 36, max: 65 }
                 <<: *Pop.2
-              - min: 66
-                max: 90
+              - roll: { min: 66, max: 90 }
                 <<: *Pop.3
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *Pop.4
           expanse:
             oracle_type: column_text
@@ -109,20 +99,15 @@ oracles:
             #     attributes:
             #       region: [expanse]
             rows:
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 <<: *Pop.0
-              - min: 21
-                max: 50
+              - roll: { min: 21, max: 50 }
                 <<: *Pop.1
-              - min: 51
-                max: 80
+              - roll: { min: 51, max: 80 }
                 <<: *Pop.2
-              - min: 81
-                max: 95
+              - roll: { min: 81, max: 95 }
                 <<: *Pop.3
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: *Pop.4
     contents:
       location:
@@ -136,16 +121,13 @@ oracles:
         # _templateTableRows:
         #   content: *template.content:Generic.Location
         rows:
-          - min: 1
-            max: 40
+          - roll: { min: 1, max: 40 }
             text: Planetside
             icon: icon/oracles/location/planetside.svg
-          - min: 41
-            max: 75
+          - roll: { min: 41, max: 75 }
             text: Orbital
             icon: icon/oracles/location/orbital.svg
-          - min: 76
-            max: 100
+          - roll: { min: 76, max: 100 }
             text: Deep Space
             icon: icon/oracles/location/deep_space.svg
       first_look:
@@ -157,76 +139,54 @@ oracles:
           page: 323
         # usage:
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         #   initial: true
         # content:
         #   part_of_speech: [fragment]
         #   tags: [description]
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Beautiful architecture
-          - min: 4
-            max: 9
+          - roll: { min: 4, max: 9 }
             text: Built from organic materials
-          - min: 10
-            max: 15
+          - roll: { min: 10, max: 15 }
             text: Built from random scrap
-          - min: 16
-            max: 21
+          - roll: { min: 16, max: 21 }
             text: Built within repurposed ship
-          - min: 22
-            max: 26
+          - roll: { min: 22, max: 26 }
             text: Built within terrain or asteroid
-          - min: 27
-            max: 31
+          - roll: { min: 27, max: 31 }
             text: Defensible location
-          - min: 32
-            max: 35
+          - roll: { min: 32, max: 35 }
             text: Elevated or multi-level construction
-          - min: 36
-            max: 40
+          - roll: { min: 36, max: 40 }
             text: Hidden or subsurface location
-          - min: 41
-            max: 43
+          - roll: { min: 41, max: 43 }
             text: High-tech construction
-          - min: 44
-            max: 49
+          - roll: { min: 44, max: 49 }
             text: Industrial architecture
-          - min: 50
-            max: 53
+          - roll: { min: 50, max: 53 }
             text: Intimidating defenses
-          - min: 54
-            max: 56
+          - roll: { min: 54, max: 56 }
             text: Moving or transforming
-          - min: 57
-            max: 61
+          - roll: { min: 57, max: 61 }
             text: Obvious social stratification
-          - min: 62
-            max: 66
+          - roll: { min: 62, max: 66 }
             text: Precarious location
-          - min: 67
-            max: 72
+          - roll: { min: 67, max: 72 }
             text: Rustic architecture
-          - min: 73
-            max: 76
+          - roll: { min: 73, max: 76 }
             text: Significant structural damage
-          - min: 77
-            max: 80
+          - roll: { min: 77, max: 80 }
             text: Sprawling or dispersed structures
-          - min: 81
-            max: 83
+          - roll: { min: 81, max: 83 }
             text: Temporary or seasonal location
-          - min: 84
-            max: 87
+          - roll: { min: 84, max: 87 }
             text: Toxic or polluted habitat
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: 'Within or near [Precursor Vault](id:starforged/collections/oracles/vaults)'
             # suggestions: [*obj:Vault]
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
             oracle_rolls:
               - oracle: starforged/oracles/core/descriptor
@@ -247,38 +207,27 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [description]
         rows:
-          - min: 1
-            max: 20
+          - roll: { min: 1, max: 20 }
             text: Welcoming
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: Neutral / automated
-          - min: 31
-            max: 50
+          - roll: { min: 31, max: 50 }
             text: Wary
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: Uncooperative
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: Hostile
-          - min: 71
-            max: 83
+          - roll: { min: 71, max: 83 }
             text: Asking for help
-          - min: 84
-            max: 86
+          - roll: { min: 84, max: 86 }
             text: In battle
-          - min: 87
-            max: 89
+          - roll: { min: 87, max: 89 }
             text: Captured
-          - min: 90
-            max: 92
+          - roll: { min: 90, max: 92 }
             text: Unresponsive
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             text: Destroyed
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: '[Derelict](id:starforged/collections/oracles/derelicts)'
       authority:
         name: Authority
@@ -290,34 +239,27 @@ oracles:
         # usage:
         #   initial: true
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: None / lawless
             _i18n: &Adjective
               text:
                 part_of_speech: adjective
-          - min: 16
-            max: 30
+          - roll: { min: 16, max: 30 }
             text: Ineffectual
             _i18n: *Adjective
-          - min: 31
-            max: 45
+          - roll: { min: 31, max: 45 }
             text: Tolerant
             _i18n: *Adjective
-          - min: 46
-            max: 55
+          - roll: { min: 46, max: 55 }
             text: Fair
             _i18n: *Adjective
-          - min: 56
-            max: 70
+          - roll: { min: 56, max: 70 }
             text: Unyielding
             _i18n: *Adjective
-          - min: 71
-            max: 85
+          - roll: { min: 71, max: 85 }
             text: Corrupt
             _i18n: *Adjective
-          - min: 86
-            max: 100
+          - roll: { min: 86, max: 100 }
             text: Oppressive
             _i18n: *Adjective
       projects:
@@ -331,145 +273,111 @@ oracles:
         #   tags: [abstract noun]
         # usage:
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         summary: |-
           Check the Settlement Projects table when it’s appropriate for your character to know or uncover these details. Projects are the main industry, function, or focus of a settlement. They do not necessarily represent every activity at the site—particularly at a large settlement—but are the most visible or noteworthy aspects.
         rows:
-          - min: 1
-            max: 5
+          - roll: { min: 1, max: 5 }
             text: Agriculture
             _i18n: &CommonNoun
               text:
                 part_of_speech: common_noun
-          - min: 6
-            max: 7
+          - roll: { min: 6, max: 7 }
             text: Archeology
             _i18n: *CommonNoun
-          - min: 8
-            max: 9
+          - roll: { min: 8, max: 9 }
             text: Automation
             _i18n: *CommonNoun
-          - min: 10
-            max: 11
+          - roll: { min: 10, max: 11 }
             text: Black market
             _i18n: *CommonNoun
-          - min: 12
-            max: 13
+          - roll: { min: 12, max: 13 }
             text: Command
             _i18n: *CommonNoun
-          - min: 14
-            max: 17
+          - roll: { min: 14, max: 17 }
             text: Defense
             _i18n: *CommonNoun
-          - min: 18
-            max: 22
+          - roll: { min: 18, max: 22 }
             text: Energy
             _i18n: *CommonNoun
-          - min: 23
-            max: 25
+          - roll: { min: 23, max: 25 }
             text: Engineering
             _i18n: &Gerund
               text:
                 part_of_speech: gerund
-          - min: 26
-            max: 27
+          - roll: { min: 26, max: 27 }
             text: Entertainment
             _i18n: *CommonNoun
-          - min: 28
-            max: 29
+          - roll: { min: 28, max: 29 }
             text: Environmentalism
             _i18n: *CommonNoun
-          - min: 30
-            max: 31
+          - roll: { min: 30, max: 31 }
             text: Evacuation
             _i18n: *CommonNoun
-          - min: 32
-            max: 33
+          - roll: { min: 32, max: 33 }
             text: Expansion
             _i18n: *CommonNoun
-          - min: 34
-            max: 37
+          - roll: { min: 34, max: 37 }
             text: Exploration
             _i18n: *CommonNoun
-          - min: 38
-            max: 39
+          - roll: { min: 38, max: 39 }
             text: Festival
             _i18n: *CommonNoun
-          - min: 40
-            max: 41
+          - roll: { min: 40, max: 41 }
             text: History
             _i18n: *CommonNoun
-          - min: 42
-            max: 43
+          - roll: { min: 42, max: 43 }
             text: Hunting
             _i18n: *Gerund
-          - min: 44
-            max: 46
+          - roll: { min: 44, max: 46 }
             text: Manufacturing
             _i18n: *Gerund
-          - min: 47
-            max: 49
+          - roll: { min: 47, max: 49 }
             text: Medical
             _i18n: *CommonNoun
-          - min: 50
-            max: 51
+          - roll: { min: 50, max: 51 }
             text: Migration
             _i18n: *CommonNoun
-          - min: 52
-            max: 57
+          - roll: { min: 52, max: 57 }
             text: Mining
             _i18n: *Gerund
-          - min: 58
-            max: 59
+          - roll: { min: 58, max: 59 }
             text: Pacifism
             _i18n: *CommonNoun
-          - min: 60
-            max: 62
+          - roll: { min: 60, max: 62 }
             text: Raiding
             _i18n: *Gerund
-          - min: 63
-            max: 65
+          - roll: { min: 63, max: 65 }
             text: Research
             _i18n: *CommonNoun
-          - min: 66
-            max: 69
+          - roll: { min: 66, max: 69 }
             text: Salvage
             _i18n: *CommonNoun
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Secrecy
             _i18n: *CommonNoun
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Shipbuilding
             _i18n: *Gerund
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Spirituality
             _i18n: *CommonNoun
-          - min: 79
-            max: 84
+          - roll: { min: 79, max: 84 }
             text: Subsistence
             _i18n: *CommonNoun
-          - min: 85
-            max: 86
+          - roll: { min: 85, max: 86 }
             text: Surveillance
             _i18n: *CommonNoun
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Terraforming
             _i18n: *Gerund
-          - min: 89
-            max: 92
+          - roll: { min: 89, max: 92 }
             text: Trade
             _i18n: *CommonNoun
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             text: Warfare
             _i18n: *CommonNoun
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             <<: &ActionTheme
               text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
               oracle_rolls:
@@ -486,134 +394,99 @@ oracles:
           page: 324
         # usage:
         recommended_rolls:
-          min: 1
-          max: 2
+          roll: { min: 1, max: 2 }
         # content:
         #   part_of_speech: [fragment]
         #   tags: [peril, event, present]
         summary: |-
           Check the Settlement Trouble table when it’s appropriate for your character to know or uncover these details. The Settlement Trouble table provides a broad description of the site’s most dramatic current issue.
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Battle for leadership
             # suggestions: [*obj:Faction]
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Betrayal from within
-          - min: 7
-            max: 8
+          - roll: { min: 7, max: 8 }
             text: Caught in the crossfire
-          - min: 9
-            max: 11
+          - roll: { min: 9, max: 11 }
             text: Changing environment
-          - min: 12
-            max: 13
+          - roll: { min: 12, max: 13 }
             text: Clash of cultures
             # suggestions: [*roll:Event]
-          - min: 14
-            max: 17
+          - roll: { min: 14, max: 17 }
             text: Dangerous discovery
             # suggestions: [*roll:Event]
-          - min: 18
-            max: 21
+          - roll: { min: 18, max: 21 }
             text: Depleted supplies
             # suggestions: [*roll:Object]
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Deprived of a resource
             # suggestions: [*roll:Object]
-          - min: 25
-            max: 28
+          - roll: { min: 25, max: 28 }
             text: Failing technology
             # suggestions: [*roll:Object]
-          - min: 29
-            max: 32
+          - roll: { min: 29, max: 32 }
             text: Feuding factions
-          - min: 33
-            max: 34
+          - roll: { min: 33, max: 34 }
             text: Ghostly visitations
-          - min: 35
-            max: 38
+          - roll: { min: 35, max: 38 }
             text: Hazardous environment
             # suggestions: [*roll:Object]
-          - min: 39
-            max: 42
+          - roll: { min: 39, max: 42 }
             text: Hostile lifeforms
             # suggestions: [*obj:Creature]
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Impassable route
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Impending attack
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Impending natural disaster
             # suggestions: [*roll:Event]
-          - min: 52
-            max: 53
+          - roll: { min: 52, max: 53 }
             text: Invasive organisms
-          - min: 54
-            max: 55
+          - roll: { min: 54, max: 55 }
             text: Mounting debt
-          - min: 56
-            max: 57
+          - roll: { min: 56, max: 57 }
             text: Mysterious deaths
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Overdue delivery
-          - min: 61
-            max: 62
+          - roll: { min: 61, max: 62 }
             text: Plagued by sickness
-          - min: 63
-            max: 65
+          - roll: { min: 63, max: 65 }
             text: Preyed upon by raiders
-          - min: 66
-            max: 67
+          - roll: { min: 66, max: 67 }
             text: Revolt against leadership
             # suggestions: [*obj:Npc]
-          - min: 68
-            max: 69
+          - roll: { min: 68, max: 69 }
             text: Sabotaged technology
             # suggestions: [*roll:Object]
-          - min: 70
-            max: 71
+          - roll: { min: 70, max: 71 }
             text: Shunned by others
-          - min: 72
-            max: 74
+          - roll: { min: 72, max: 74 }
             text: Social strife
             # suggestions: [*roll:Event]
-          - min: 75
-            max: 76
+          - roll: { min: 75, max: 76 }
             text: Someone is ill or injured
             # suggestions: [*obj:Npc]
-          - min: 77
-            max: 78
+          - roll: { min: 77, max: 78 }
             text: Someone is missing
             # suggestions: [*obj:Npc]
-          - min: 79
-            max: 80
+          - roll: { min: 79, max: 80 }
             text: Stolen technology or object
             # suggestions: [*roll:Object]
-          - min: 81
-            max: 83
+          - roll: { min: 81, max: 83 }
             text: Strange phenomenon
             # suggestions: [*roll:Event]
-          - min: 84
-            max: 86
+          - roll: { min: 84, max: 86 }
             text: Toxic waste or pollution
             # suggestions: [*roll:Object]
-          - min: 87
-            max: 88
+          - roll: { min: 87, max: 88 }
             text: Volatile energy source
             # suggestions: [*roll:Object]
-          - min: 89
-            max: 90
+          - roll: { min: 89, max: 90 }
             text: Vulnerable lifeforms
             # suggestions: [*obj:Creature]
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             <<: *ActionTheme
       name:
         name: Settlement Name
@@ -630,414 +503,314 @@ oracles:
         #   tags: [name]
         rows:
           # in the context of this table, these are all proper nouns. outside of it, some have additional use as adjectives or common nouns. I've marked the ones which appear *only* as proper nouns with a technically-redundant "proper noun" tag.
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Aegis
             _i18n: &CommonNounAsProperNoun
               text:
                 part_of_speech: common_noun_as_proper_noun
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Altair
             _i18n: &ProperNoun
                 text:
                   part_of_speech: proper_noun
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Altura
             _i18n: *ProperNoun
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Amity
             _i18n: *CommonNounAsProperNoun
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Apex
             _i18n: *CommonNounAsProperNoun
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Apogee
             _i18n: *CommonNounAsProperNoun
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Argosy
             _i18n: *CommonNounAsProperNoun
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Astra
             _i18n: *ProperNoun
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Aurora
             _i18n: *CommonNounAsProperNoun
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Beacon
             _i18n: *CommonNounAsProperNoun
-          - min: 11
-            max: 11
+          - roll: { min: 11, max: 11 }
             text: Brink
             _i18n: *CommonNounAsProperNoun
-          - min: 12
-            max: 12
+          - roll: { min: 12, max: 12 }
             text: Bulwark
             _i18n: *CommonNounAsProperNoun
-          - min: 13
-            max: 13
+          - roll: { min: 13, max: 13 }
             text: Burnell
             _i18n: *ProperNoun
-          - min: 14
-            max: 14
+          - roll: { min: 14, max: 14 }
             text: Burrow
             _i18n: *CommonNounAsProperNoun
-          - min: 15
-            max: 15
+          - roll: { min: 15, max: 15 }
             text: Concord
             _i18n: *CommonNounAsProperNoun
-          - min: 16
-            max: 16
+          - roll: { min: 16, max: 16 }
             text: Crux
             _i18n: *CommonNounAsProperNoun
-          - min: 17
-            max: 17
+          - roll: { min: 17, max: 17 }
             text: Deadrock
             _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - min: 18
-            max: 18
+          - roll: { min: 18, max: 18 }
             text: Deception
             _i18n: *CommonNounAsProperNoun
-          - min: 19
-            max: 19
+          - roll: { min: 19, max: 19 }
             text: Elysium
             _i18n: *CommonNounAsProperNoun
-          - min: 20
-            max: 20
+          - roll: { min: 20, max: 20 }
             text: Enigma
             _i18n: *CommonNounAsProperNoun
-          - min: 21
-            max: 21
+          - roll: { min: 21, max: 21 }
             text: Erebus
             _i18n: *ProperNoun
-          - min: 22
-            max: 22
+          - roll: { min: 22, max: 22 }
             text: Eris
             _i18n: *ProperNoun
-          - min: 23
-            max: 23
+          - roll: { min: 23, max: 23 }
             text: Evenfall
             _i18n: *CommonNounAsProperNoun
-          - min: 24
-            max: 24
+          - roll: { min: 24, max: 24 }
             text: Eventide
             _i18n: *CommonNounAsProperNoun
-          - min: 25
-            max: 25
+          - roll: { min: 25, max: 25 }
             text: Farpoint
             _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - min: 26
-            max: 26
+          - roll: { min: 26, max: 26 }
             text: Felicity
             _i18n: *CommonNounAsProperNoun
-          - min: 27
-            max: 27
+          - roll: { min: 27, max: 27 }
             text: Florin
             _i18n: *ProperNoun
-          - min: 28
-            max: 28
+          - roll: { min: 28, max: 28 }
             text: Forlorn
             _i18n: &AdjectiveAsProperNoun
               text:
                 part_of_speech: adjective_as_proper_noun
-          - min: 29
-            max: 29
+          - roll: { min: 29, max: 29 }
             text: Forsaken
             _i18n: *AdjectiveAsProperNoun
-          - min: 30
-            max: 30
+          - roll: { min: 30, max: 30 }
             text: Freya
             _i18n: *ProperNoun
-          - min: 31
-            max: 31
+          - roll: { min: 31, max: 31 }
             text: Glimmer
             _i18n: *CommonNounAsProperNoun
-          - min: 32
-            max: 32
+          - roll: { min: 32, max: 32 }
             text: Gloam
             _i18n: *CommonNounAsProperNoun
-          - min: 33
-            max: 33
+          - roll: { min: 33, max: 33 }
             text: Hearth
             _i18n: *CommonNounAsProperNoun
-          - min: 34
-            max: 34
+          - roll: { min: 34, max: 34 }
             text: Helia
             _i18n: *ProperNoun
-          - min: 35
-            max: 35
+          - roll: { min: 35, max: 35 }
             text: Hypatia
             _i18n: *ProperNoun
-          - min: 36
-            max: 36
+          - roll: { min: 36, max: 36 }
             text: Hyperion
             _i18n: *ProperNoun
-          - min: 37
-            max: 37
+          - roll: { min: 37, max: 37 }
             text: Janus
             _i18n: *ProperNoun
-          - min: 38
-            max: 38
+          - roll: { min: 38, max: 38 }
             text: Karma
             _i18n: *CommonNounAsProperNoun
-          - min: 39
-            max: 39
+          - roll: { min: 39, max: 39 }
             text: Kepler
             _i18n: *ProperNoun
-          - min: 40
-            max: 40
+          - roll: { min: 40, max: 40 }
             text: Koshiba
             _i18n: *ProperNoun
-          - min: 41
-            max: 41
+          - roll: { min: 41, max: 41 }
             text: Lagrange
             _i18n: *ProperNoun
-          - min: 42
-            max: 42
+          - roll: { min: 42, max: 42 }
             text: Larissa
             _i18n: *ProperNoun
-          - min: 43
-            max: 43
+          - roll: { min: 43, max: 43 }
             text: Lasthope
             # content: {part_of_speech: [compound noun]}
-          - min: 44
-            max: 44
+          - roll: { min: 44, max: 44 }
             text: Lastport
             # content: {part_of_speech: [compound noun]}
-          - min: 45
-            max: 45
+          - roll: { min: 45, max: 45 }
             text: Legacy
             _i18n: *CommonNounAsProperNoun
-          - min: 46
-            max: 46
+          - roll: { min: 46, max: 46 }
             text: Lodestar
             _i18n: *CommonNounAsProperNoun
-          - min: 47
-            max: 47
+          - roll: { min: 47, max: 47 }
             text: Luminus
             _i18n: *ProperNoun
-          - min: 48
-            max: 48
+          - roll: { min: 48, max: 48 }
             text: Lyra
             _i18n: *ProperNoun
-          - min: 49
-            max: 49
+          - roll: { min: 49, max: 49 }
             text: Marrow
             _i18n: *CommonNounAsProperNoun
-          - min: 50
-            max: 50
+          - roll: { min: 50, max: 50 }
             text: Meridian
             _i18n: *CommonNounAsProperNoun
-          - min: 51
-            max: 51
+          - roll: { min: 51, max: 51 }
             text: Moirai
             _i18n: *ProperNoun
-          - min: 52
-            max: 52
+          - roll: { min: 52, max: 52 }
             text: Mudd
             _i18n: *ProperNoun
-          - min: 53
-            max: 53
+          - roll: { min: 53, max: 53 }
             text: Neoma
             _i18n: *ProperNoun
-          - min: 54
-            max: 54
+          - roll: { min: 54, max: 54 }
             text: Nerio
             _i18n: *ProperNoun
-          - min: 55
-            max: 55
+          - roll: { min: 55, max: 55 }
             text: Nova
             _i18n: *CommonNounAsProperNoun
-          - min: 56
-            max: 56
+          - roll: { min: 56, max: 56 }
             text: Nyx
             _i18n: *ProperNoun
-          - min: 57
-            max: 57
+          - roll: { min: 57, max: 57 }
             text: Osseus
             _i18n: *ProperNoun
-          - min: 58
-            max: 58
+          - roll: { min: 58, max: 58 }
             text: Paradox
             _i18n: *CommonNounAsProperNoun
-          - min: 59
-            max: 59
+          - roll: { min: 59, max: 59 }
             text: Paragon
             _i18n: *CommonNounAsProperNoun
-          - min: 60
-            max: 60
+          - roll: { min: 60, max: 60 }
             text: Paxton
             _i18n: *ProperNoun
-          - min: 61
-            max: 61
+          - roll: { min: 61, max: 61 }
             text: Perchance
             # _i18n: *AdverbAsProperNoun
-          - min: 62
-            max: 62
+          - roll: { min: 62, max: 62 }
             text: Pinnacle
             _i18n: *CommonNounAsProperNoun
-          - min: 63
-            max: 63
+          - roll: { min: 63, max: 63 }
             text: Polaris
             _i18n: *ProperNoun
-          - min: 64
-            max: 64
+          - roll: { min: 64, max: 64 }
             text: Portent
             _i18n: *CommonNounAsProperNoun
-          - min: 65
-            max: 65
+          - roll: { min: 65, max: 65 }
             text: Prism
             _i18n: *CommonNounAsProperNoun
-          - min: 66
-            max: 66
+          - roll: { min: 66, max: 66 }
             text: Providence
             _i18n: *CommonNounAsProperNoun
-          - min: 67
-            max: 67
+          - roll: { min: 67, max: 67 }
             text: Purgatory
             _i18n: *CommonNounAsProperNoun
-          - min: 68
-            max: 68
+          - roll: { min: 68, max: 68 }
             text: Rampart
             _i18n: *CommonNounAsProperNoun
-          - min: 69
-            max: 69
+          - roll: { min: 69, max: 69 }
             text: Ramshackle
             _i18n: *AdjectiveAsProperNoun
-          - min: 70
-            max: 70
+          - roll: { min: 70, max: 70 }
             text: Redemption
             _i18n: *CommonNounAsProperNoun
-          - min: 71
-            max: 71
+          - roll: { min: 71, max: 71 }
             text: Redhaven
             _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - min: 72
-            max: 72
+          - roll: { min: 72, max: 72 }
             text: Relic
             _i18n: *CommonNounAsProperNoun
-          - min: 73
-            max: 73
+          - roll: { min: 73, max: 73 }
             text: Reprise
             _i18n: *CommonNounAsProperNoun
-          - min: 74
-            max: 74
+          - roll: { min: 74, max: 74 }
             text: Reverie
             _i18n: *CommonNounAsProperNoun
-          - min: 75
-            max: 75
+          - roll: { min: 75, max: 75 }
             text: Rhiannon
             _i18n: *ProperNoun
-          - min: 76
-            max: 76
+          - roll: { min: 76, max: 76 }
             text: Rockhome
             _i18n: *CommonNounAsProperNoun
-          - min: 77
-            max: 77
+          - roll: { min: 77, max: 77 }
             text: Rust
             _i18n: *CommonNounAsProperNoun
-          - min: 78
-            max: 78
+          - roll: { min: 78, max: 78 }
             text: Sagan
             _i18n: *ProperNoun
-          - min: 79
-            max: 79
+          - roll: { min: 79, max: 79 }
             text: Sanctity
             _i18n: *CommonNounAsProperNoun
-          - min: 80
-            max: 80
+          - roll: { min: 80, max: 80 }
             text: Selena
             _i18n: *ProperNoun
-          - min: 81
-            max: 81
+          - roll: { min: 81, max: 81 }
             text: Sepulcher
             _i18n: *CommonNounAsProperNoun
-          - min: 82
-            max: 82
+          - roll: { min: 82, max: 82 }
             text: Sigil
             _i18n: *CommonNounAsProperNoun
-          - min: 83
-            max: 83
+          - roll: { min: 83, max: 83 }
             text: Silvana
             _i18n: *ProperNoun
-          - min: 84
-            max: 84
+          - roll: { min: 84, max: 84 }
             text: Sirius
             _i18n: *ProperNoun
-          - min: 85
-            max: 85
+          - roll: { min: 85, max: 85 }
             text: Sisyphus
             _i18n: *ProperNoun
-          - min: 86
-            max: 86
+          - roll: { min: 86, max: 86 }
             text: Solitude
             _i18n: *CommonNounAsProperNoun
-          - min: 87
-            max: 87
+          - roll: { min: 87, max: 87 }
             text: Spire
             _i18n: *CommonNounAsProperNoun
-          - min: 88
-            max: 88
+          - roll: { min: 88, max: 88 }
             text: Starfall
             _i18n: *ProperNoun
             # content: {part_of_speech: [compound noun]}
-          - min: 89
-            max: 89
+          - roll: { min: 89, max: 89 }
             text: Summit
             _i18n: *CommonNounAsProperNoun
-          - min: 90
-            max: 90
+          - roll: { min: 90, max: 90 }
             text: Tranquility
             _i18n: *CommonNounAsProperNoun
-          - min: 91
-            max: 91
+          - roll: { min: 91, max: 91 }
             text: Tyson
             _i18n: *ProperNoun
-          - min: 92
-            max: 92
+          - roll: { min: 92, max: 92 }
             text: Unity
             _i18n: *CommonNounAsProperNoun
-          - min: 93
-            max: 93
+          - roll: { min: 93, max: 93 }
             text: Utopia
             _i18n: *CommonNounAsProperNoun
-          - min: 94
-            max: 94
+          - roll: { min: 94, max: 94 }
             text: Vega
             _i18n: *ProperNoun
-          - min: 95
-            max: 95
+          - roll: { min: 95, max: 95 }
             text: Vesper
             _i18n: *CommonNounAsProperNoun
-          - min: 96
-            max: 96
+          - roll: { min: 96, max: 96 }
             text: Wayward
             _i18n: *CommonNounAsProperNoun
-          - min: 97
-            max: 97
+          - roll: { min: 97, max: 97 }
             text: Welkin
             _i18n: *CommonNounAsProperNoun
-          - min: 98
-            max: 98
+          - roll: { min: 98, max: 98 }
             text: Wellspring
             _i18n: *CommonNounAsProperNoun
-          - min: 99
-            max: 99
+          - roll: { min: 99, max: 99 }
             text: Weyland
             _i18n: *ProperNoun
-          - min: 100
-            max: 100
+          - roll: { min: 100, max: 100 }
             text: Wreck
             _i18n: *CommonNounAsProperNoun
       name_tags:
@@ -1050,33 +823,23 @@ oracles:
           <<: *Source
           page: 325
         rows:
-          - min: 1
-            max: 1
+          - roll: { min: 1, max: 1 }
             text: Base
-          - min: 2
-            max: 2
+          - roll: { min: 2, max: 2 }
             text: Citadel
-          - min: 3
-            max: 3
+          - roll: { min: 3, max: 3 }
             text: Depot
-          - min: 4
-            max: 4
+          - roll: { min: 4, max: 4 }
             text: Fortress
-          - min: 5
-            max: 5
+          - roll: { min: 5, max: 5 }
             text: Hold
-          - min: 6
-            max: 6
+          - roll: { min: 6, max: 6 }
             text: Landing
-          - min: 7
-            max: 7
+          - roll: { min: 7, max: 7 }
             text: Outpost
-          - min: 8
-            max: 8
+          - roll: { min: 8, max: 8 }
             text: Port
-          - min: 9
-            max: 9
+          - roll: { min: 9, max: 9 }
             text: Station
-          - min: 10
-            max: 10
+          - roll: { min: 10, max: 10 }
             text: Terminal

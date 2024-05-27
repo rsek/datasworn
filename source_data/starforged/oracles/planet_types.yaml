@@ -44,24 +44,19 @@ oracles:
                       region: terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 50
+                  - roll: { min: 1, max: 50 }
                     <<: &Settlements.0
                       text: None
-                  - min: 51
-                    max: 60
+                  - roll: { min: 51, max: 60 }
                     <<: &Settlements.1
                       text: Orbital settlement
-                  - min: 61
-                    max: 80
+                  - roll: { min: 61, max: 80 }
                     <<: &Settlements.2
                       text: Planetside settlement
-                  - min: 81
-                    max: 92
+                  - roll: { min: 81, max: 92 }
                     <<: &Settlements.3
                       text: Multiple settlements
-                  - min: 93
-                    max: 100
+                  - roll: { min: 93, max: 100 }
                     <<: &Settlements.4
                       text: Settlements in conflict
               outlands:
@@ -74,20 +69,15 @@ oracles:
                       region: outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 75
+                  - roll: { min: 1, max: 75 }
                     <<: *Settlements.0
-                  - min: 76
-                    max: 83
+                  - roll: { min: 76, max: 83 }
                     <<: *Settlements.1
-                  - min: 84
-                    max: 95
+                  - roll: { min: 84, max: 95 }
                     <<: *Settlements.2
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: &OracleTable.Expanse
@@ -99,14 +89,11 @@ oracles:
                       region: expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 90
+                  - roll: { min: 1, max: 90 }
                     <<: *Settlements.0
-                  - min: 91
-                    max: 96
+                  - roll: { min: 91, max: 96 }
                     <<: *Settlements.1
-                  - min: 97
-                    max: 100
+                  - roll: { min: 97, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -120,65 +107,45 @@ oracles:
               type: oracle_rollable
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Abalos
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Audun
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Bishop
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Desolation
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Dykuma
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Fallow
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Helios
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Mirage
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Morricone
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Nux
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Ordos
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Petra
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Pyla
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Sabulo
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Saffron
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Sirocco
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Sulis
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Torrid
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Umber
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Vermillion
           atmosphere:
             <<: &Atmosphere
@@ -187,28 +154,22 @@ oracles:
               type: oracle_rollable
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 <<: &Atmosphere.NoneThin
                   text: None / thin
-              - min: 11
-                max: 25
+              - roll: { min: 11, max: 25 }
                 <<: &Atmosphere.Toxic
                   text: Toxic
-              - min: 26
-                max: 40
+              - roll: { min: 26, max: 40 }
                 <<: &Atmosphere.Corrosive
                   text: Corrosive
-              - min: 41
-                max: 70
+              - roll: { min: 41, max: 70 }
                 <<: &Atmosphere.Marginal
                   text: Marginal
-              - min: 71
-                max: 95
+              - roll: { min: 71, max: 95 }
                 <<: &Atmosphere.Breathable
                   text: Breathable
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: &Atmosphere.Ideal
                   text: Ideal
           observed_from_space:
@@ -217,45 +178,35 @@ oracles:
               oracle_type: table_text
               type: oracle_rollable
               recommended_rolls:
-                min: 1
-                max: 2
+                roll: { min: 1, max: 2 }
             _source: *CollectionSource
             rows:
               - <<: &ObservedFromSpace.0
-                  min: 1
-                  max: 11
+                  roll: { min: 1, max: 11 }
                 text: Dry seabeds
               - <<: &ObservedFromSpace.1
-                  min: 12
-                  max: 22
+                  roll: { min: 12, max: 22 }
                 text: Expansive dune seas
               - <<: &ObservedFromSpace.2
-                  min: 23
-                  max: 33
+                  roll: { min: 23, max: 33 }
                 text: Massive canyons
               - <<: &ObservedFromSpace.3
-                  min: 34
-                  max: 44
+                  roll: { min: 34, max: 44 }
                 text: Perpetual daylight
               - <<: &ObservedFromSpace.4
-                  min: 45
-                  max: 55
+                  roll: { min: 45, max: 55 }
                 text: Rugged mountains
               - <<: &ObservedFromSpace.5
-                  min: 56
-                  max: 66
+                  roll: { min: 56, max: 66 }
                 text: Sprawling salt flats
               - <<: &ObservedFromSpace.6
-                  min: 67
-                  max: 77
+                  roll: { min: 67, max: 77 }
                 text: Vast plateaus
               - <<: &ObservedFromSpace.7
-                  min: 78
-                  max: 88
+                  roll: { min: 78, max: 88 }
                 text: Vibrant terrain colors
               - &ObservedFromSpace.8
-                min: 89
-                max: 98
+                roll: { min: 89, max: 98 }
                 <<: &DescriptorFocus
                   text: &DF.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls: &DF.rolls
@@ -264,8 +215,7 @@ oracles:
                     - oracle: starforged/oracles/core/focus
                       auto: true
               - &ObservedFromSpace.9
-                min: 99
-                max: 100
+                roll: { min: 99, max: 100 }
                 text: '[Precursor Vault](id:starforged/collections/oracles/vaults) (orbital)'
           feature:
             <<: &Feature
@@ -273,69 +223,53 @@ oracles:
               oracle_type: table_text
               type: oracle_rollable
               recommended_rolls:
-                min: 1
-                max: 2
+                roll: { min: 1, max: 2 }
             _source: *CollectionSource
             rows:
               - <<: &Feature.0
-                  min: 1
-                  max: 7
+                  roll: { min: 1, max: 7 }
                 text: Cavernous sinkholes
               - <<: &Feature.1
-                  min: 8
-                  max: 14
+                  roll: { min: 8, max: 14 }
                 text: Engulfing sandstorms
               - <<: &Feature.2
-                  min: 15
-                  max: 21
+                  roll: { min: 15, max: 21 }
                 text: Fleeting rainstorms and flash floods
               - <<: &Feature.3
-                  min: 22
-                  max: 28
+                  roll: { min: 22, max: 28 }
                 text: Flooded grottos
               - <<: &Feature.4
-                  min: 29
-                  max: 35
+                  roll: { min: 29, max: 35 }
                 text: Petrified forest
               - <<: &Feature.5
-                  min: 36
-                  max: 42
+                  roll: { min: 36, max: 42 }
                 text: Rampaging whirlwinds
               - <<: &Feature.6
-                  min: 43
-                  max: 49
+                  roll: { min: 43, max: 49 }
                 text: Scorched glass plains
               - <<: &Feature.7
-                  min: 50
-                  max: 56
+                  roll: { min: 50, max: 56 }
                 text: Severe temperature fluctuations
               - <<: &Feature.8
-                  min: 57
-                  max: 63
+                  roll: { min: 57, max: 63 }
                 text: Sunbaked bones of titanic creatures
               - <<: &Feature.9
-                  min: 64
-                  max: 70
+                  roll: { min: 64, max: 70 }
                 text: Timeworn cliffside caves
               - <<: &Feature.10
-                  min: 71
-                  max: 77
+                  roll: { min: 71, max: 77 }
                 text: Towering rock formations
               - <<: &Feature.11
-                  min: 78
-                  max: 84
+                  roll: { min: 78, max: 84 }
                 text: Violent electrical storms
               - <<: &Feature.12
-                  min: 85
-                  max: 91
+                  roll: { min: 85, max: 91 }
                 text: Windborne metallic sand
               - &Feature.13
-                min: 92
-                max: 98
+                roll: { min: 92, max: 98 }
                 <<: *DescriptorFocus
               - &Feature.14
-                min: 99
-                max: 100
+                roll: { min: 99, max: 100 }
                 text: '[Precursor Vault](id:starforged/collections/oracles/vaults) (planetside)'
           life:
             <<: &Life
@@ -344,28 +278,22 @@ oracles:
               type: oracle_rollable
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 <<: &Life.None
                   text: None
-              - min: 21
-                max: 40
+              - roll: { min: 21, max: 40 }
                 <<: &Life.Extinct
                   text: Extinct
-              - min: 41
-                max: 70
+              - roll: { min: 41, max: 70 }
                 <<: &Life.Scarce
                   text: Scarce
-              - min: 71
-                max: 90
+              - roll: { min: 71, max: 90 }
                 <<: &Life.Diverse
                   text: Diverse
-              - min: 91
-                max: 97
+              - roll: { min: 91, max: 97 }
                 <<: &Life.Bountiful
                   text: Bountiful
-              - min: 98
-                max: 100
+              - roll: { min: 98, max: 100 }
                 <<: &Life.Overrun
                   text: Overrun
       furnace:
@@ -388,52 +316,39 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 60
+                  - roll: { min: 1, max: 60 }
                     <<: *Settlements.0
-                  - min: 61
-                    max: 75
+                  - roll: { min: 61, max: 75 }
                     <<: *Settlements.1
-                  - min: 76
-                    max: 87
+                  - roll: { min: 76, max: 87 }
                     <<: *Settlements.2
-                  - min: 88
-                    max: 96
+                  - roll: { min: 88, max: 96 }
                     <<: *Settlements.3
-                  - min: 97
-                    max: 100
+                  - roll: { min: 97, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 85
+                  - roll: { min: 1, max: 85 }
                     <<: *Settlements.0
-                  - min: 86
-                    max: 92
+                  - roll: { min: 86, max: 92 }
                     <<: *Settlements.1
-                  - min: 93
-                    max: 97
+                  - roll: { min: 93, max: 97 }
                     <<: *Settlements.2
-                  - min: 98
-                    max: 99
+                  - roll: { min: 98, max: 99 }
                     <<: *Settlements.3
-                  - min: 100
-                    max: 100
+                  - roll: { min: 100, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 95
+                  - roll: { min: 1, max: 95 }
                     <<: *Settlements.0
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.1
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -443,84 +358,59 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Ash
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Azula
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Cinder
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Cyrus
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Draconus
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Effigy
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Ember
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Flint
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Hades
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Hera
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Ignis
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Inferno
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Ishum
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Kresnik
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Nemesis
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Obsidian
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Scorch
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Tana
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Vesta
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Vesuvius
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 <<: *Atmosphere.NoneThin
-              - min: 11
-                max: 50
+              - roll: { min: 11, max: 50 }
                 <<: *Atmosphere.Toxic
-              - min: 51
-                max: 65
+              - roll: { min: 51, max: 65 }
                 <<: *Atmosphere.Corrosive
-              - min: 66
-                max: 90
+              - roll: { min: 66, max: 90 }
                 <<: *Atmosphere.Marginal
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
@@ -581,23 +471,17 @@ oracles:
             <<: *Life
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 35
+              - roll: { min: 1, max: 35 }
                 <<: *Life.None
-              - min: 36
-                max: 60
+              - roll: { min: 36, max: 60 }
                 <<: *Life.Extinct
-              - min: 61
-                max: 85
+              - roll: { min: 61, max: 85 }
                 <<: *Life.Scarce
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 <<: *Life.Diverse
-              - min: 96
-                max: 98
+              - roll: { min: 96, max: 98 }
                 <<: *Life.Bountiful
-              - min: 99
-                max: 100
+              - roll: { min: 99, max: 100 }
                 <<: *Life.Overrun
       grave:
         name: Grave World
@@ -619,33 +503,25 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 80
+                  - roll: { min: 1, max: 80 }
                     <<: *Settlements.0
-                  - min: 81
-                    max: 90
+                  - roll: { min: 81, max: 90 }
                     <<: *Settlements.1
-                  - min: 91
-                    max: 95
+                  - roll: { min: 91, max: 95 }
                     <<: *Settlements.2
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 90
+                  - roll: { min: 1, max: 90 }
                     <<: *Settlements.0
-                  - min: 91
-                    max: 97
+                  - roll: { min: 91, max: 97 }
                     <<: *Settlements.1
-                  - min: 98
-                    max: 100
+                  - roll: { min: 98, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -653,14 +529,11 @@ oracles:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 95
+                  - roll: { min: 1, max: 95 }
                     <<: *Settlements.0
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.1
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -670,84 +543,59 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Anubis
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Banshee
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Barrow
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Cairn
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Cerberus
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Charon
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Elysia
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Keen
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Kur
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Lament
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Mantus
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Morrigan
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Mourn
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Necropolis
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Orcus
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Osiris
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Requiem
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Stygia
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Tartarus
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Thrace
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 <<: *Atmosphere.NoneThin
-              - min: 11
-                max: 45
+              - roll: { min: 11, max: 45 }
                 <<: *Atmosphere.Toxic
-              - min: 46
-                max: 70
+              - roll: { min: 46, max: 70 }
                 <<: *Atmosphere.Corrosive
-              - min: 71
-                max: 90
+              - roll: { min: 71, max: 90 }
                 <<: *Atmosphere.Marginal
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
@@ -808,17 +656,13 @@ oracles:
             <<: *Life
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 25
+              - roll: { min: 1, max: 25 }
                 <<: *Life.None
-              - min: 26
-                max: 75
+              - roll: { min: 26, max: 75 }
                 <<: *Life.Extinct
-              - min: 76
-                max: 95
+              - roll: { min: 76, max: 95 }
                 <<: *Life.Scarce
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: *Life.Diverse
               - *Life.Bountiful
               - *Life.Overrun
@@ -842,52 +686,39 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 50
+                  - roll: { min: 1, max: 50 }
                     <<: *Settlements.0
-                  - min: 51
-                    max: 60
+                  - roll: { min: 51, max: 60 }
                     <<: *Settlements.1
-                  - min: 61
-                    max: 80
+                  - roll: { min: 61, max: 80 }
                     <<: *Settlements.2
-                  - min: 81
-                    max: 92
+                  - roll: { min: 81, max: 92 }
                     <<: *Settlements.3
-                  - min: 93
-                    max: 100
+                  - roll: { min: 93, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 75
+                  - roll: { min: 1, max: 75 }
                     <<: *Settlements.0
-                  - min: 76
-                    max: 83
+                  - roll: { min: 76, max: 83 }
                     <<: *Settlements.1
-                  - min: 84
-                    max: 95
+                  - roll: { min: 84, max: 95 }
                     <<: *Settlements.2
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 90
+                  - roll: { min: 1, max: 90 }
                     <<: *Settlements.0
-                  - min: 91
-                    max: 96
+                  - roll: { min: 91, max: 96 }
                     <<: *Settlements.1
-                  - min: 97
-                    max: 100
+                  - roll: { min: 97, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -897,87 +728,61 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Beira
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Boreas
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Caradhras
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Cicero
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Demetria
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Enten
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Fissure
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Frost
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Gelida
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Jotunn
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Kanna
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Karn
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Kheimon
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Moroz
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Nix
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Olwen
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Osolok
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Taiga
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Thule
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Varnholme
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 15
+              - roll: { min: 1, max: 15 }
                 <<: *Atmosphere.NoneThin
-              - min: 16
-                max: 35
+              - roll: { min: 16, max: 35 }
                 <<: *Atmosphere.Toxic
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 <<: *Atmosphere.Corrosive
-              - min: 41
-                max: 70
+              - roll: { min: 41, max: 70 }
                 <<: *Atmosphere.Marginal
-              - min: 71
-                max: 95
+              - roll: { min: 71, max: 95 }
                 <<: *Atmosphere.Breathable
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
@@ -1037,23 +842,17 @@ oracles:
             <<: *Life
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 <<: *Life.None
-              - min: 21
-                max: 40
+              - roll: { min: 21, max: 40 }
                 <<: *Life.Extinct
-              - min: 41
-                max: 70
+              - roll: { min: 41, max: 70 }
                 <<: *Life.Scarce
-              - min: 71
-                max: 90
+              - roll: { min: 71, max: 90 }
                 <<: *Life.Diverse
-              - min: 91
-                max: 97
+              - roll: { min: 91, max: 97 }
                 <<: *Life.Bountiful
-              - min: 98
-                max: 100
+              - roll: { min: 98, max: 100 }
                 <<: *Life.Overrun
       jovian:
         name: Jovian World
@@ -1075,52 +874,39 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 50
+                  - roll: { min: 1, max: 50 }
                     <<: *Settlements.0
-                  - min: 51
-                    max: 70
+                  - roll: { min: 51, max: 70 }
                     <<: *Settlements.1
-                  - min: 71
-                    max: 85
+                  - roll: { min: 71, max: 85 }
                     <<: *Settlements.2
-                  - min: 86
-                    max: 95
+                  - roll: { min: 86, max: 95 }
                     <<: *Settlements.3
-                  - min: 96
-                    max: 100
+                  - roll: { min: 96, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 75
+                  - roll: { min: 1, max: 75 }
                     <<: *Settlements.0
-                  - min: 76
-                    max: 87
+                  - roll: { min: 76, max: 87 }
                     <<: *Settlements.1
-                  - min: 88
-                    max: 95
+                  - roll: { min: 88, max: 95 }
                     <<: *Settlements.2
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 90
+                  - roll: { min: 1, max: 90 }
                     <<: *Settlements.0
-                  - min: 91
-                    max: 96
+                  - roll: { min: 91, max: 96 }
                     <<: *Settlements.1
-                  - min: 97
-                    max: 100
+                  - roll: { min: 97, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -1130,82 +916,58 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Aether
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Arrokoth
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Esen
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Hanish
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Magnus
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Magonia
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Mistral
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Nephele
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Nimbus
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Nuada
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Nubium
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Serein
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Stratus
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Taranis
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Tempest
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Tenzin
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Tyr
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Veil
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Velum
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Zephyr
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
               - *Atmosphere.NoneThin
-              - min: 1
-                max: 50
+              - roll: { min: 1, max: 50 }
                 <<: *Atmosphere.Toxic
-              - min: 51
-                max: 65
+              - roll: { min: 51, max: 65 }
                 <<: *Atmosphere.Corrosive
-              - min: 66
-                max: 85
+              - roll: { min: 66, max: 85 }
                 <<: *Atmosphere.Marginal
-              - min: 86
-                max: 100
+              - roll: { min: 86, max: 100 }
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
@@ -1266,23 +1028,17 @@ oracles:
             <<: *Life
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 35
+              - roll: { min: 1, max: 35 }
                 <<: *Life.None
-              - min: 36
-                max: 60
+              - roll: { min: 36, max: 60 }
                 <<: *Life.Extinct
-              - min: 61
-                max: 85
+              - roll: { min: 61, max: 85 }
                 <<: *Life.Scarce
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 <<: *Life.Diverse
-              - min: 96
-                max: 98
+              - roll: { min: 96, max: 98 }
                 <<: *Life.Bountiful
-              - min: 99
-                max: 100
+              - roll: { min: 99, max: 100 }
                 <<: *Life.Overrun
       jungle:
         name: Jungle World
@@ -1304,58 +1060,43 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 40
+                  - roll: { min: 1, max: 40 }
                     <<: *Settlements.0
-                  - min: 41
-                    max: 55
+                  - roll: { min: 41, max: 55 }
                     <<: *Settlements.1
-                  - min: 56
-                    max: 80
+                  - roll: { min: 56, max: 80 }
                     <<: *Settlements.2
-                  - min: 81
-                    max: 92
+                  - roll: { min: 81, max: 92 }
                     <<: *Settlements.3
-                  - min: 93
-                    max: 100
+                  - roll: { min: 93, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 65
+                  - roll: { min: 1, max: 65 }
                     <<: *Settlements.0
-                  - min: 66
-                    max: 75
+                  - roll: { min: 66, max: 75 }
                     <<: *Settlements.1
-                  - min: 76
-                    max: 92
+                  - roll: { min: 76, max: 92 }
                     <<: *Settlements.2
-                  - min: 93
-                    max: 97
+                  - roll: { min: 93, max: 97 }
                     <<: *Settlements.3
-                  - min: 98
-                    max: 100
+                  - roll: { min: 98, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 85
+                  - roll: { min: 1, max: 85 }
                     <<: *Settlements.0
-                  - min: 86
-                    max: 90
+                  - roll: { min: 86, max: 90 }
                     <<: *Settlements.1
-                  - min: 91
-                    max: 97
+                  - roll: { min: 91, max: 97 }
                     <<: *Settlements.2
-                  - min: 98
-                    max: 99
+                  - roll: { min: 98, max: 99 }
                     <<: *Settlements.3
-                  - min: 100
-                    max: 100
+                  - roll: { min: 100, max: 100 }
                     <<: *Settlements.4
         contents:
           name:
@@ -1363,85 +1104,60 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Acacia
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Aster
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Beryl
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Celadon
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Ceres
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Damu
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Dryad
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Flora
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Iridum
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Iris
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Kishar
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Penumbra
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Roris
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Sylva
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Tangle
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Thorn
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Venom
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Verdure
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Veris
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Viridian
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
               - *Atmosphere.NoneThin
-              - min: 1
-                max: 25
+              - roll: { min: 1, max: 25 }
                 <<: *Atmosphere.Toxic
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 <<: *Atmosphere.Corrosive
-              - min: 31
-                max: 60
+              - roll: { min: 31, max: 60 }
                 <<: *Atmosphere.Marginal
-              - min: 61
-                max: 90
+              - roll: { min: 61, max: 90 }
                 <<: *Atmosphere.Breathable
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
@@ -1503,17 +1219,13 @@ oracles:
             rows:
               - *Life.None
               - *Life.Extinct
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 <<: *Life.Scarce
-              - min: 6
-                max: 35
+              - roll: { min: 6, max: 35 }
                 <<: *Life.Diverse
-              - min: 36
-                max: 75
+              - roll: { min: 36, max: 75 }
                 <<: *Life.Bountiful
-              - min: 76
-                max: 100
+              - roll: { min: 76, max: 100 }
                 <<: *Life.Overrun
       ocean:
         name: Ocean World
@@ -1535,58 +1247,43 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 40
+                  - roll: { min: 1, max: 40 }
                     <<: *Settlements.0
-                  - min: 41
-                    max: 55
+                  - roll: { min: 41, max: 55 }
                     <<: *Settlements.1
-                  - min: 56
-                    max: 80
+                  - roll: { min: 56, max: 80 }
                     <<: *Settlements.2
-                  - min: 81
-                    max: 92
+                  - roll: { min: 81, max: 92 }
                     <<: *Settlements.3
-                  - min: 93
-                    max: 100
+                  - roll: { min: 93, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 65
+                  - roll: { min: 1, max: 65 }
                     <<: *Settlements.0
-                  - min: 66
-                    max: 75
+                  - roll: { min: 66, max: 75 }
                     <<: *Settlements.1
-                  - min: 76
-                    max: 92
+                  - roll: { min: 76, max: 92 }
                     <<: *Settlements.2
-                  - min: 93
-                    max: 97
+                  - roll: { min: 93, max: 97 }
                     <<: *Settlements.3
-                  - min: 98
-                    max: 100
+                  - roll: { min: 98, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 85
+                  - roll: { min: 1, max: 85 }
                     <<: *Settlements.0
-                  - min: 86
-                    max: 90
+                  - roll: { min: 86, max: 90 }
                     <<: *Settlements.1
-                  - min: 91
-                    max: 97
+                  - roll: { min: 91, max: 97 }
                     <<: *Settlements.2
-                  - min: 98
-                    max: 99
+                  - roll: { min: 98, max: 99 }
                     <<: *Settlements.3
-                  - min: 100
-                    max: 100
+                  - roll: { min: 100, max: 100 }
                     <<: *Settlements.4
         contents:
           name:
@@ -1594,87 +1291,61 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Aegir
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Alon
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Clarion
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Darya
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Eldoris
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Horizon
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Hydra
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Kai
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Larimar
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Lotan
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Mira
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Navini
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Nerida
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Oceanus
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Pelagic
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Proteus
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Russalka
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Siren
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Thalassa
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Triton
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 <<: *Atmosphere.NoneThin
-              - min: 6
-                max: 20
+              - roll: { min: 6, max: 20 }
                 <<: *Atmosphere.Toxic
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 <<: *Atmosphere.Corrosive
-              - min: 26
-                max: 60
+              - roll: { min: 26, max: 60 }
                 <<: *Atmosphere.Marginal
-              - min: 61
-                max: 90
+              - roll: { min: 61, max: 90 }
                 <<: *Atmosphere.Breathable
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
@@ -1734,23 +1405,17 @@ oracles:
             <<: *Life
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 <<: *Life.None
-              - min: 6
-                max: 15
+              - roll: { min: 6, max: 15 }
                 <<: *Life.Extinct
-              - min: 16
-                max: 30
+              - roll: { min: 16, max: 30 }
                 <<: *Life.Scarce
-              - min: 31
-                max: 60
+              - roll: { min: 31, max: 60 }
                 <<: *Life.Diverse
-              - min: 61
-                max: 90
+              - roll: { min: 61, max: 90 }
                 <<: *Life.Bountiful
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *Life.Overrun
       rocky:
         name: Rocky World
@@ -1772,52 +1437,39 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 50
+                  - roll: { min: 1, max: 50 }
                     <<: *Settlements.0
-                  - min: 51
-                    max: 70
+                  - roll: { min: 51, max: 70 }
                     <<: *Settlements.1
-                  - min: 71
-                    max: 85
+                  - roll: { min: 71, max: 85 }
                     <<: *Settlements.2
-                  - min: 86
-                    max: 95
+                  - roll: { min: 86, max: 95 }
                     <<: *Settlements.3
-                  - min: 96
-                    max: 100
+                  - roll: { min: 96, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 75
+                  - roll: { min: 1, max: 75 }
                     <<: *Settlements.0
-                  - min: 76
-                    max: 87
+                  - roll: { min: 76, max: 87 }
                     <<: *Settlements.1
-                  - min: 88
-                    max: 95
+                  - roll: { min: 88, max: 95 }
                     <<: *Settlements.2
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 90
+                  - roll: { min: 1, max: 90 }
                     <<: *Settlements.0
-                  - min: 91
-                    max: 96
+                  - roll: { min: 91, max: 96 }
                     <<: *Settlements.1
-                  - min: 97
-                    max: 100
+                  - roll: { min: 97, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -1827,81 +1479,57 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Aphelion
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Artemis
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Capella
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Cobalt
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Crag
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Dusk
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Eos
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Hecate
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Imbrium
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Latona
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Losna
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Orpheus
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Ory
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Quietus
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Selene
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Silas
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Silex
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Slate
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Themis
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Umbra
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 65
+              - roll: { min: 1, max: 65 }
                 <<: *Atmosphere.NoneThin
-              - min: 66
-                max: 85
+              - roll: { min: 66, max: 85 }
                 <<: *Atmosphere.Toxic
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 <<: *Atmosphere.Corrosive
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 <<: *Atmosphere.Marginal
               - *Atmosphere.Breathable
               - *Atmosphere.Ideal
@@ -1963,23 +1591,17 @@ oracles:
             <<: *Life
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 65
+              - roll: { min: 1, max: 65 }
                 <<: *Life.None
-              - min: 66
-                max: 80
+              - roll: { min: 66, max: 80 }
                 <<: *Life.Extinct
-              - min: 81
-                max: 90
+              - roll: { min: 81, max: 90 }
                 <<: *Life.Scarce
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 <<: *Life.Diverse
-              - min: 96
-                max: 98
+              - roll: { min: 96, max: 98 }
                 <<: *Life.Bountiful
-              - min: 99
-                max: 100
+              - roll: { min: 99, max: 100 }
                 <<: *Life.Overrun
       shattered:
         name: Shattered World
@@ -2001,50 +1623,38 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 70
+                  - roll: { min: 1, max: 70 }
                     <<: *Settlements.0
-                  - min: 71
-                    max: 90
+                  - roll: { min: 71, max: 90 }
                     <<: *Settlements.1
-                  - min: 91
-                    max: 95
+                  - roll: { min: 91, max: 95 }
                     <<: *Settlements.2
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 85
+                  - roll: { min: 1, max: 85 }
                     <<: *Settlements.0
-                  - min: 86
-                    max: 96
+                  - roll: { min: 86, max: 96 }
                     <<: *Settlements.1
-                  - min: 97
-                    max: 99
+                  - roll: { min: 97, max: 99 }
                     <<: *Settlements.2
-                  - min: 100
-                    max: 100
+                  - roll: { min: 100, max: 100 }
                     <<: *Settlements.3
                   - *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 95
+                  - roll: { min: 1, max: 95 }
                     <<: *Settlements.0
-                  - min: 96
-                    max: 99
+                  - roll: { min: 96, max: 99 }
                     <<: *Settlements.1
-                  - min: 100
-                    max: 100
+                  - roll: { min: 100, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -2054,84 +1664,59 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Cavus
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Chrysalis
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Fragment
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Havoc
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Keres
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Lux
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Nemain
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Praxis
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Riven
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Schism
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Shell
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Slag
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Sliver
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Sunder
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Torment
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Vestige
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Vigrid
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Vortex
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Wrath
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Zix
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 93
+              - roll: { min: 1, max: 93 }
                 <<: *Atmosphere.NoneThin
-              - min: 94
-                max: 95
+              - roll: { min: 94, max: 95 }
                 <<: *Atmosphere.Toxic
-              - min: 96
-                max: 97
+              - roll: { min: 96, max: 97 }
                 <<: *Atmosphere.Corrosive
-              - min: 98
-                max: 99
+              - roll: { min: 98, max: 99 }
                 <<: *Atmosphere.Marginal
-              - min: 100
-                max: 100
+              - roll: { min: 100, max: 100 }
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
@@ -2192,17 +1777,13 @@ oracles:
             <<: *Life
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 30
+              - roll: { min: 1, max: 30 }
                 <<: *Life.None
-              - min: 31
-                max: 85
+              - roll: { min: 31, max: 85 }
                 <<: *Life.Extinct
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 <<: *Life.Scarce
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: *Life.Diverse
               - *Life.Bountiful
               - *Life.Overrun
@@ -2226,33 +1807,25 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 80
+                  - roll: { min: 1, max: 80 }
                     <<: *Settlements.0
-                  - min: 81
-                    max: 90
+                  - roll: { min: 81, max: 90 }
                     <<: *Settlements.1
-                  - min: 91
-                    max: 95
+                  - roll: { min: 91, max: 95 }
                     <<: *Settlements.2
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 90
+                  - roll: { min: 1, max: 90 }
                     <<: *Settlements.0
-                  - min: 91
-                    max: 97
+                  - roll: { min: 91, max: 97 }
                     <<: *Settlements.1
-                  - min: 98
-                    max: 100
+                  - roll: { min: 98, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -2260,14 +1833,11 @@ oracles:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 95
+                  - roll: { min: 1, max: 95 }
                     <<: *Settlements.0
-                  - min: 96
-                    max: 98
+                  - roll: { min: 96, max: 98 }
                     <<: *Settlements.1
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.2
                   - *Settlements.3
                   - *Settlements.4
@@ -2277,82 +1847,58 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Achlys
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Animus
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Bane
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Blight
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Carrion
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Chitin
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Datura
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Dreck
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Erra
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Febris
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Malacia
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Miasma
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Morbus
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Pathosis
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Pestis
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Scourge
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Telium
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Timoris
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Verus
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Xanthous
           atmosphere:
             <<: *Atmosphere
             _source: *CollectionSource
             rows:
               - *Atmosphere.NoneThin
-              - min: 1
-                max: 65
+              - roll: { min: 1, max: 65 }
                 <<: *Atmosphere.Toxic
-              - min: 66
-                max: 85
+              - roll: { min: 66, max: 85 }
                 <<: *Atmosphere.Corrosive
-              - min: 86
-                max: 95
+              - roll: { min: 86, max: 95 }
                 <<: *Atmosphere.Marginal
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 <<: *Atmosphere.Breathable
               - *Atmosphere.Ideal
           observed_from_space:
@@ -2375,8 +1921,7 @@ oracles:
                 text: Sky-breaching fungus
               - <<: *ObservedFromSpace.7
                 text: Sludge-filled river networks
-              - min: 89
-                max: 98
+              - roll: { min: 89, max: 98 }
                 <<: &DescriptorFocus
                   text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls:
@@ -2423,17 +1968,13 @@ oracles:
             rows:
               - *Life.None
               - *Life.Extinct
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 <<: *Life.Scarce
-              - min: 11
-                max: 35
+              - roll: { min: 11, max: 35 }
                 <<: *Life.Diverse
-              - min: 36
-                max: 65
+              - roll: { min: 36, max: 65 }
                 <<: *Life.Bountiful
-              - min: 66
-                max: 100
+              - roll: { min: 66, max: 100 }
                 <<: *Life.Overrun
       vital:
         name: Vital World
@@ -2455,58 +1996,43 @@ oracles:
                 <<: *OracleTable.Terminus
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 20
+                  - roll: { min: 1, max: 20 }
                     <<: *Settlements.0
-                  - min: 21
-                    max: 30
+                  - roll: { min: 21, max: 30 }
                     <<: *Settlements.1
-                  - min: 31
-                    max: 70
+                  - roll: { min: 31, max: 70 }
                     <<: *Settlements.2
-                  - min: 71
-                    max: 90
+                  - roll: { min: 71, max: 90 }
                     <<: *Settlements.3
-                  - min: 91
-                    max: 100
+                  - roll: { min: 91, max: 100 }
                     <<: *Settlements.4
               outlands:
                 <<: *OracleTable.Outlands
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 50
+                  - roll: { min: 1, max: 50 }
                     <<: *Settlements.0
-                  - min: 51
-                    max: 55
+                  - roll: { min: 51, max: 55 }
                     <<: *Settlements.1
-                  - min: 56
-                    max: 85
+                  - roll: { min: 56, max: 85 }
                     <<: *Settlements.2
-                  - min: 86
-                    max: 95
+                  - roll: { min: 86, max: 95 }
                     <<: *Settlements.3
-                  - min: 96
-                    max: 100
+                  - roll: { min: 96, max: 100 }
                     <<: *Settlements.4
               expanse:
                 <<: *OracleTable.Expanse
                 # source: *CollectionSource
                 rows:
-                  - min: 1
-                    max: 80
+                  - roll: { min: 1, max: 80 }
                     <<: *Settlements.0
-                  - min: 81
-                    max: 83
+                  - roll: { min: 81, max: 83 }
                     <<: *Settlements.1
-                  - min: 84
-                    max: 93
+                  - roll: { min: 84, max: 93 }
                     <<: *Settlements.2
-                  - min: 94
-                    max: 98
+                  - roll: { min: 94, max: 98 }
                     <<: *Settlements.3
-                  - min: 99
-                    max: 100
+                  - roll: { min: 99, max: 100 }
                     <<: *Settlements.4
         contents:
           name:
@@ -2514,65 +2040,45 @@ oracles:
             <<: *SampleNames
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 1
+              - roll: { min: 1, max: 1 }
                 text: Chiron
-              - min: 2
-                max: 2
+              - roll: { min: 2, max: 2 }
                 text: Demeter
-              - min: 3
-                max: 3
+              - roll: { min: 3, max: 3 }
                 text: Erebos
-              - min: 4
-                max: 4
+              - roll: { min: 4, max: 4 }
                 text: Erembour
-              - min: 5
-                max: 5
+              - roll: { min: 5, max: 5 }
                 text: Feronia
-              - min: 6
-                max: 6
+              - roll: { min: 6, max: 6 }
                 text: Fortuna
-              - min: 7
-                max: 7
+              - roll: { min: 7, max: 7 }
                 text: Gaia
-              - min: 8
-                max: 8
+              - roll: { min: 8, max: 8 }
                 text: Harbinger
-              - min: 9
-                max: 9
+              - roll: { min: 9, max: 9 }
                 text: Haven
-              - min: 10
-                max: 10
+              - roll: { min: 10, max: 10 }
                 text: Hope
-              - min: 11
-                max: 11
+              - roll: { min: 11, max: 11 }
                 text: Morpheus
-              - min: 12
-                max: 12
+              - roll: { min: 12, max: 12 }
                 text: Nemus
-              - min: 13
-                max: 13
+              - roll: { min: 13, max: 13 }
                 text: Sapphire
-              - min: 14
-                max: 14
+              - roll: { min: 14, max: 14 }
                 text: Serenity
-              - min: 15
-                max: 15
+              - roll: { min: 15, max: 15 }
                 text: Sif
-              - min: 16
-                max: 16
+              - roll: { min: 16, max: 16 }
                 text: Silva
-              - min: 17
-                max: 17
+              - roll: { min: 17, max: 17 }
                 text: Sirona
-              - min: 18
-                max: 18
+              - roll: { min: 18, max: 18 }
                 text: Solstice
-              - min: 19
-                max: 19
+              - roll: { min: 19, max: 19 }
                 text: Vale
-              - min: 20
-                max: 20
+              - roll: { min: 20, max: 20 }
                 text: Valinor
           atmosphere:
             <<: *Atmosphere
@@ -2581,14 +2087,11 @@ oracles:
               - *Atmosphere.NoneThin
               - *Atmosphere.Toxic
               - *Atmosphere.Corrosive
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 <<: *Atmosphere.Marginal
-              - min: 21
-                max: 50
+              - roll: { min: 21, max: 50 }
                 <<: *Atmosphere.Breathable
-              - min: 51
-                max: 100
+              - roll: { min: 51, max: 100 }
                 <<: *Atmosphere.Ideal
           observed_from_space:
             <<: *ObservedFromSpace
@@ -2610,8 +2113,7 @@ oracles:
                 text: Large moon
               - <<: *ObservedFromSpace.7
                 text: Narrow livable band
-              - min: 89
-                max: 98
+              - roll: { min: 89, max: 98 }
                 <<: &DescriptorFocus
                   text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
                   oracle_rolls:
@@ -2658,17 +2160,13 @@ oracles:
             rows:
               - *Life.None
               - *Life.Extinct
-              - min: 1
-                max: 10
+              - roll: { min: 1, max: 10 }
                 <<: *Life.Scarce
-              - min: 11
-                max: 45
+              - roll: { min: 11, max: 45 }
                 <<: *Life.Diverse
-              - min: 46
-                max: 85
+              - roll: { min: 46, max: 85 }
                 <<: *Life.Bountiful
-              - min: 86
-                max: 100
+              - roll: { min: 86, max: 100 }
                 <<: *Life.Overrun
           diversity:
             name: Diversity
@@ -2677,8 +2175,7 @@ oracles:
             _source: *CollectionSource
             summary: To learn the major terrain and environment types found on a Vital World, first roll on the diversity table. Then, roll the indicated number of times on the biomes table. If you get a duplicate result, roll again, or envision that landscape as more dominant, unusual, or dramatic.
             rows:
-              - min: 1
-                max: 20
+              - roll: { min: 1, max: 20 }
                 text: Simple (two biomes)
                 _i18n: &i18n.result.adjective
                   text:
@@ -2686,22 +2183,19 @@ oracles:
                 oracle_rolls:
                   - number_of_rolls: 2
                     oracle: &biome starforged/oracles/planets/vital/biomes
-              - min: 21
-                max: 70
+              - roll: { min: 21, max: 70 }
                 text: Diverse (three biomes)
                 _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 3
                     oracle: *biome
-              - min: 71
-                max: 90
+              - roll: { min: 71, max: 90 }
                 text: Complex (four biomes)
                 _i18n: *i18n.result.adjective
                 oracle_rolls:
                   - number_of_rolls: 4
                     oracle: *biome
-              - min: 91
-                max: 100
+              - roll: { min: 91, max: 100 }
                 text: Garden world (five or more biomes)
                 _i18n: *i18n.result.adjective
                 oracle_rolls:
@@ -2713,85 +2207,65 @@ oracles:
             type: oracle_rollable
             _source: *CollectionSource
             rows:
-              - min: 1
-                max: 5
+              - roll: { min: 1, max: 5 }
                 text: Caves
                 _i18n: &i18n.result.common_noun
                   text:
                     part_of_speech: common_noun
-              - min: 6
-                max: 10
+              - roll: { min: 6, max: 10 }
                 text: Cold forest
                 _i18n: *i18n.result.common_noun
-              - min: 11
-                max: 15
+              - roll: { min: 11, max: 15 }
                 text: Fungal
                 _i18n: *i18n.result.common_noun
-              - min: 16
-                max: 20
+              - roll: { min: 16, max: 20 }
                 text: Glacial or snow
                 _i18n: *i18n.result.common_noun
-              - min: 21
-                max: 25
+              - roll: { min: 21, max: 25 }
                 text: Grassland
                 _i18n: *i18n.result.common_noun
-              - min: 26
-                max: 30
+              - roll: { min: 26, max: 30 }
                 text: Islands
                 _i18n: *i18n.result.common_noun
-              - min: 31
-                max: 35
+              - roll: { min: 31, max: 35 }
                 text: Jungle
                 _i18n: *i18n.result.common_noun
-              - min: 36
-                max: 40
+              - roll: { min: 36, max: 40 }
                 text: Mountainous
                 _i18n: *i18n.result.common_noun
-              - min: 41
-                max: 45
+              - roll: { min: 41, max: 45 }
                 text: Ocean
                 _i18n: *i18n.result.common_noun
-              - min: 46
-                max: 50
+              - roll: { min: 46, max: 50 }
                 text: Rocky desert
                 _i18n: *i18n.result.common_noun
-              - min: 51
-                max: 55
+              - roll: { min: 51, max: 55 }
                 text: Sandy desert
                 _i18n: *i18n.result.common_noun
-              - min: 56
-                max: 60
+              - roll: { min: 56, max: 60 }
                 text: Savanna
                 _i18n: *i18n.result.common_noun
-              - min: 61
-                max: 65
+              - roll: { min: 61, max: 65 }
                 text: Shallow seas
                 _i18n: *i18n.result.common_noun
-              - min: 66
-                max: 70
+              - roll: { min: 66, max: 70 }
                 text: Shrubland
                 _i18n: *i18n.result.common_noun
-              - min: 71
-                max: 75
+              - roll: { min: 71, max: 75 }
                 text: Temperate rainforest
                 _i18n: *i18n.result.common_noun
-              - min: 76
-                max: 80
+              - roll: { min: 76, max: 80 }
                 text: Temperate forest
                 _i18n: *i18n.result.common_noun
-              - min: 81
-                max: 85
+              - roll: { min: 81, max: 85 }
                 text: Tundra
                 _i18n: *i18n.result.common_noun
-              - min: 86
-                max: 90
+              - roll: { min: 86, max: 90 }
                 text: Volcanic
                 _i18n: *i18n.result.common_noun
-              - min: 91
-                max: 95
+              - roll: { min: 91, max: 95 }
                 text: Waterways
                 _i18n: *i18n.result.common_noun
-              - min: 96
-                max: 100
+              - roll: { min: 96, max: 100 }
                 text: Wetland
                 _i18n: *i18n.result.common_noun

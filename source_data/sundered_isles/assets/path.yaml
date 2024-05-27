@@ -119,8 +119,7 @@ assets:
         controls:
           command:
             field_type: condition_meter
-            min: 0
-            max: 4
+            roll: { min: 0, max: 4 }
             value: 2
             label: command
             # TODO: counts as impact @ 0
@@ -293,8 +292,7 @@ assets:
               clock:
                 field_type: clock
                 label: corpse imbued with soulless life
-                min: 0
-                max: 4
+                roll: { min: 0, max: 4 }
       overlander:
         _source: *Source
         name: Overlander

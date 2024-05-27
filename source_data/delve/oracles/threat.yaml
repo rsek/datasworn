@@ -39,62 +39,52 @@ oracles:
           page: 220
         canonical_name: 'Threat: Category'
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: '[Burgeoning Conflict](id:delve/oracles/threat/burgeoning_conflict)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/burgeoning_conflict
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: '[Cursed Site](id:delve/oracles/threat/cursed_site)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/cursed_site
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: '[Environmental Calamity](id:delve/oracles/threat/environmental_calamity)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/environmental_calamity
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: '[Malignant Plague](id:delve/oracles/threat/malignant_plague)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/malignant_plague
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: '[Rampaging Creature](id:delve/oracles/threat/rampaging_creature)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/rampaging_creature
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: '[Ravaging Horde](id:delve/oracles/threat/ravaging_horde)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/ravaging_horde
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: '[Scheming Leader](id:delve/oracles/threat/scheming_leader)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/scheming_leader
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: '[Power-Hungry Mystic](id:delve/oracles/threat/power_hungry_mystic)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/power_hungry_mystic
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: '[Zealous Cult](id:delve/oracles/threat/zealous_cult)'
             # suggestions:
             #   oracles:
             #     - delve/oracles/threat/zealous_cult
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
@@ -107,35 +97,25 @@ oracles:
           <<: *Source
           page: 221
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Allow warmongers to gain influence'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Break a treaty'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Force a hasty decision'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Deepen suspicions'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Trigger a confrontation'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Subvert a potential accord'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Isolate the antagonists'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Draw new battle lines'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Reveal an unexpected aspect of the dispute'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Introduce a new person or faction to complicate the situation'
       cursed_site:
         name: Cursed Site
@@ -145,35 +125,25 @@ oracles:
           <<: *Source
           page: 221
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Unleash a creature or being'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Lure the unwary into its depths'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Offer promises of power'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Reveal a new aspect of its cursed history'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Expand its malignancy to surrounding lands'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Leave its mark on an inhabitant or visitor'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Reveal hidden depths'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Ensnare an important person or object'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Corrupt the environment'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Transform its nature'
       environmental_calamity:
         name: Environmental Calamity
@@ -183,35 +153,25 @@ oracles:
           <<: *Source
           page: 221
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Devastate a place'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Block a path'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Threaten a community with imminent destruction'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Manifest unexpected effects'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Expand in scope or intensity'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Allow someone to take advantage'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Deprive of resources'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Isolate an important person or community'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Force refugees into hostile lands'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Disrupt natural ecosystems'
       malignant_plague:
         name: Malignant Plague
@@ -221,35 +181,25 @@ oracles:
           <<: *Source
           page: 222
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Manifest new symptoms or effects'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Infect someone important'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Expand to new territory or communities'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Allow someone to take advantage'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Allow someone to take the blame'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Create panic or disorder'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Force a horrible decision'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Lure into complacency'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Reveal the root of the sickness'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Undermine a potential cure'
       rampaging_creature:
         name: Rampaging Creature
@@ -259,35 +209,25 @@ oracles:
           <<: *Source
           page: 222
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Reveal a new aspect of its nature or abilities'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Expand its territory'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Make a sudden and brutal attack'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Control or influence lesser creatures'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Create confusion or strife'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Leave foreboding signs'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Lure the unwary'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Imperil an event'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Assert control over a location'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Threaten resources'
       ravaging_horde:
         name: Ravaging Horde
@@ -297,35 +237,25 @@ oracles:
           <<: *Source
           page: 222
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Overrun defenses'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Gather resources'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Attack a location'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Expand forces'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Appoint or reveal a leader'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Send forth a champion'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Create a diversion'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Undermine an opposing force from within'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Cut off supplies or reinforcements'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Employ a new weapon'
       scheming_leader:
         name: Scheming Leader
@@ -335,35 +265,25 @@ oracles:
           <<: *Source
           page: 223
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Defeat an enemy'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Form a new alliance'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Usurp or undermine another leader'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Force the loyalty of a community or important person'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Enact a new law or tradition'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Rescind an old law or tradition'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Reveal a true intention'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Unravel an existing alliance'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Incite conflict'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Use an unexpected capability or asset'
       power_hungry_mystic:
         name: Power-Hungry Mystic
@@ -373,35 +293,25 @@ oracles:
           <<: *Source
           page: 223
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Gain hidden knowledge'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Assault an enemy with magic'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Despoil a place through magic'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Forge a bond with ancient forces'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Create magical wards or protections'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Obtain a powerful artifact'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Tempt with power or secrets'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Recruit a follower or ally'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Sacrifice something in exchange for greater power'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Use magic to trick or deceive'
       zealous_cult:
         name: Zealous Cult
@@ -411,33 +321,23 @@ oracles:
           <<: *Source
           page: 223
         rows:
-          - min: 1
-            max: 10
+          - roll: { min: 1, max: 10 }
             text: 'Overtake a faction or community'
-          - min: 11
-            max: 20
+          - roll: { min: 11, max: 20 }
             text: 'Unlock secrets to greater power'
-          - min: 21
-            max: 30
+          - roll: { min: 21, max: 30 }
             text: 'Establish false credibility'
-          - min: 31
-            max: 40
+          - roll: { min: 31, max: 40 }
             text: 'Appoint or reveal a leader'
-          - min: 41
-            max: 50
+          - roll: { min: 41, max: 50 }
             text: 'Lure new members or establish alliances'
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: 'Subvert opposition through devious schemes'
-          - min: 61
-            max: 70
+          - roll: { min: 61, max: 70 }
             text: 'Attack opposition directly'
-          - min: 71
-            max: 80
+          - roll: { min: 71, max: 80 }
             text: 'Spread the word of its doctrine'
-          - min: 81
-            max: 90
+          - roll: { min: 81, max: 90 }
             text: 'Reveal a dire prophecy'
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: 'Reveal its true nature or goal'

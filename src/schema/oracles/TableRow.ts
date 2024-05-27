@@ -21,6 +21,7 @@ import {
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
 import { Tags } from '../Rules.js'
+import { DiceRange } from '../common/Range.js'
 
 const TableRowBase = Type.Object({
 	text: Type.Ref(Localize.MarkdownString, {
@@ -53,56 +54,47 @@ const TableRowBase = Type.Object({
 export const TableRowMixin = Utils.Assign([
 	TableRowBase,
 	Type.Object({
-		min: Type.Integer({
-			description: 'Low end of the dice range for this table row.',
-			[JsonTypeDef]: {
-				schema: JtdType.Int16()
-			}
-		}),
-		max: Type.Integer({
-			description: 'High end of the dice range for this table row.',
-			[JsonTypeDef]: {
-				schema: JtdType.Int16()
-			}
-		}),
+		roll: Type.Ref(DiceRange),
 		tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
 	})
 ])
 
 export const TableRowNullableMixin = setDescriptions(
-	Utils.SetNullable(TableRowMixin, ['min', 'max']),
+	Utils.SetNullable(TableRowMixin, ['roll']),
 	{
-		min: 'Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.',
-		max: 'High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.'
+		roll: '`null` represents an unrollable row, included only for rendering purposes.'
 	}
 )
 
-export type TTableRow<
-	Min extends TSchema = TSchema,
-	Max extends TSchema = TSchema,
-	Props extends TProperties & { min: Min; max: Max } = { min: Min; max: Max }
-> = TObject<ObjectProperties<typeof TableRowBase> & Props>
+export type TTableRow<Roll extends TSchema = TSchema> = TObject<
+	ObjectProperties<typeof TableRowBase> & { roll: Roll }
+>
 
 type TableRow<
-	Min = number | null,
-	Max = number | null,
-	Props extends { min: Min; max: Max } = { min: Min; max: Max }
+	Roll = { min: number; max: number } | null,
+	Props extends { roll: Roll } = { roll: Roll }
 > = Props & Static<typeof TableRowBase>
 
 export function StaticRowPartial<
-	T extends Partial<Utils.CanBeLiteral<TableRow>>
+	T extends Partial<Utils.CanBeLiteral<TableRow> & Pick<TableRow, 'roll'>>
 >(
 	literals: T,
 	defaults: Partial<
 		TableRow & {
-			min?: number
-			max?: number
+			row: {
+				min: number
+				max: number
+			}
 		}
 	> = {}
 ) {
-	return WithDefaults(Utils.ObjectLiteral(literals), defaults as any, {
-		additionalProperties: true
-	})
+	return WithDefaults(
+		Utils.ObjectLiteral({ roll: literals }),
+		defaults as any,
+		{
+			additionalProperties: true
+		}
+	)
 }
 // export const OracleTableRowBasic = Generic.IdentifiedNode(
 // 	Type.Ref(Id.OracleTableRowId),

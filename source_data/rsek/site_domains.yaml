@@ -16,36 +16,26 @@ site_domains:
     icon: icons/site_domains/dreamscape.svg
     summary: A place where dream-logic supplants natural law.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: 'Metaphoric feature: walled heart, etc.'
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Salient locales in patchwork/fragments
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Recent memory
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Formative memory
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Lost or repressed memory
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: '"Happy place" or dearest wish fulfilled'
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Personal hell or worst fears realized
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Embodiment of trait/ideal/principle
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: You find an earlier feature changed
       - &Feature.unusual
-        min: 89
-        max: 98
+        roll: { min: 89, max: 98 }
         text: Something unusual or unexpected
         suggestions:
           oracles:
@@ -53,33 +43,26 @@ site_domains:
             - delve/oracles/feature/focus
       - &Feature.newTheme
         text: You transition into a new theme
-        min: 99
-        max: 99
+        roll: { min: 99, max: 99 }
         suggestions:
           oracles:
             - delve/oracles/site_nature/theme
       - &Feature.newDomain
-        min: 100
-        max: 100
+        roll: { min: 100, max: 100 }
         text: You transition into a new domain
         suggestions:
           oracles:
             - delve/oracles/site_nature/domain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Time variance complicates real world
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Space and distance obey no law
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Personal demons turn on you
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Subconscious defends against intruder
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Denizen intrudes in dreamscape
   infrastructure:
     name: Infrastructure
@@ -87,51 +70,37 @@ site_domains:
     icon: icons/site_domains/infrastructure.svg
     summary: The substrate of public life or private enterprise.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Dank tunnels or passages
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Junction, vault, or chamber
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Ladder or stairway
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Graffiti or signage
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Light filters in from above or outside
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Storage or control room
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Derelict, damaged, or forgotten area
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Pipes, conduits, or conveyance
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Signs of habitation or labor
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen guards or maintains site
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Denizen uses site to pass unseen
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Vermin or dangerous flora thrive
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Path is unstable or cramped
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Area contaminated or hazardous
   plains:
     name: Plains
@@ -139,51 +108,37 @@ site_domains:
     icon: icons/site_domains/plains.svg
     summary: A grassland, steppe, or other open country.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Open plains
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Low, rolling hills
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Heath, shrubland, or stand of trees
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Waterway
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Shallow lake, bog, or fen
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Escarpment or ridge
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Way-marker or cairn
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Animal herd, wild or tended
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Camp or outpost
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen hunts
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Sinkhole or burrow
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Pollen, biting insects, or cold snap
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Extreme wind or wildfire
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Storm or flash flood
   repository:
     name: Repository
@@ -191,51 +146,37 @@ site_domains:
     icon: icons/site_domains/repository.svg
     summary: A place to store or display precious things.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Items ordered or on display
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Items being organized/moved/tended
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Items in long-term storage
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Items in use
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Items overwhelm storage space
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Item in the open or prominent display
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Ladder or stairwell
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Guard post or staff quarters
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Office or workspace
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen guards items
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Denizen studies or tends items
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Denizen takes or destroys items
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Alarm trigger or other security feature
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Precarious or unnavigable storage
   revel:
     name: Revel
@@ -243,51 +184,37 @@ site_domains:
     icon: icons/site_domains/revel.svg
     summary: Functions, festivities, and frolics.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Crowd of revellers
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Area held by one social circle/in-group
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Purveyor of refreshment/entertainment
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Denizen seeks a new lover
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Denizen here for duty or peer pressure
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Denizen here to show off or get even
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Denizen here to network or social-climb
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Public display of affection or quarrel
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: A pocket of relative calm and quiet
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Heedless revellers impede your progress
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Tempting or dangerous diversion
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Ostracism or social climbing targets you
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Revel used as cover for some odious end
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Unforeseen guest complicates matters
   wastes:
     name: Wastes
@@ -295,49 +222,35 @@ site_domains:
     icon: icons/site_domains/wastes.svg
     summary: A badland, desert, tundra, or other barren place.
     features:
-      - min: 21
-        max: 43
+      - roll: { min: 21, max: 43 }
         text: Barren plain or dunes
-      - min: 44
-        max: 56
+      - roll: { min: 44, max: 56 }
         text: Rugged, banded hills or ridge
-      - min: 57
-        max: 64
+      - roll: { min: 57, max: 64 }
         text: Butte or mesa
-      - min: 65
-        max: 68
+      - roll: { min: 65, max: 68 }
         text: Dry stream-bed
-      - min: 69
-        max: 72
+      - roll: { min: 69, max: 72 }
         text: Wind-carved rock formation
-      - min: 73
-        max: 76
+      - roll: { min: 73, max: 76 }
         text: Lichens, grass, cacti, or shrubs
-      - min: 77
-        max: 80
+      - roll: { min: 77, max: 80 }
         text: Canyon or ravine
-      - min: 81
-        max: 84
+      - roll: { min: 81, max: 84 }
         text: Eroding wind reveals relic or remains
-      - min: 85
-        max: 88
+      - roll: { min: 85, max: 88 }
         text: Camp or outpost
       - *Feature.unusual
       - *Feature.newTheme
       - *Feature.newDomain
     dangers:
-      - min: 31
-        max: 33
+      - roll: { min: 31, max: 33 }
         text: Denizen competes for scarce resource
-      - min: 34
-        max: 36
+      - roll: { min: 34, max: 36 }
         text: Extreme temperature
-      - min: 37
-        max: 39
+      - roll: { min: 37, max: 39 }
         text: Fog, mirage, or dust devil
-      - min: 40
-        max: 42
+      - roll: { min: 40, max: 42 }
         text: Perilous climb or descent
-      - min: 43
-        max: 45
+      - roll: { min: 43, max: 45 }
         text: Storm of ice, dust, or sand

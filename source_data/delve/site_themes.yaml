@@ -22,61 +22,44 @@ site_themes:
 
       Walking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, but those treasures may come with a dire cost. Some secrets are best left buried.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Evidence of lost knowledge
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Inscrutable relics
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Ancient artistry or craft
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Preserved corpses or fossils
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Visions of this place in another time
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Ancient trap
         suggestions: &SuggestTrap
           oracles:
             - classic/oracles/trap/event
             - classic/oracles/trap/component
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Hazardous architecture or terrain
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Blocked or broken path
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Denizen protects an ancient secret
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen reveres an ancient power
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Living relics of a lost age
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Ancient evil resurgent
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Dire warnings of a long-buried danger
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Ancient disease or contamination
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Artifact of terrible meaning or power
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Disturbing evidence of ancient wrongs
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Others seek power or knowledge
   corrupted:
     type: delve_site_theme
@@ -91,58 +74,41 @@ site_themes:
 
       When you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Mystic focus or conduit
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Strange environmental disturbances
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Mystic runes or markings
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Blight or decay
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Evidence of a foul ritual
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Denizen spawned from dark magic
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Denizen controls dark magic
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen corrupted by dark magic
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Corruption marks you
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Innocents held in thrall
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Revelations of a terrible truth
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Mystic trap or trigger
         suggestions: *SuggestTrap
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Mystic barrier or ward
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Illusions lead you astray
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Dark ritual in progress
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Lingering effects of a dark ritual
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Dread harbingers of a greater magic
   fortified:
     type: delve_site_theme
@@ -157,59 +123,42 @@ site_themes:
 
       Infiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Camp or quarters
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Guarded location
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Storage or repository
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Work or training area
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Command center or leadership
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Denizen patrols the area
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Denizen on guard
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen ready to sound the alarm
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Denizen sets an ambush
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen lures you into a trap
         suggestions: *SuggestTrap
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Denizens converge on this area
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Pets or underlings
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Unexpected alliance revealed
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Nefarious plans revealed
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Unexpected leader revealed
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Trap
         suggestions: *SuggestTrap
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Alarm trigger
   hallowed:
     type: delve_site_theme
@@ -224,57 +173,40 @@ site_themes:
 
       Hallowed places may be warded by ancient rituals, or imbued with divine energy. But it is the faithful and the zealous who will sacrifice everything to defend this place.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Temple or altar
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Offerings or atonements
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Religious relic or idol
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Consecrated ground
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Dwellings or gathering place
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Denizen defends their sanctum
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Denizen enacts the will of their god
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen seeks martyrdom
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Secret of the faith is revealed
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Greater purpose is revealed
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Unexpected disciples are revealed
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Divine manifestations
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Aspect of the faith beguiles you
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Unexpected leader is revealed
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Embodiment of a god or myth
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Protective ward or barrier
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Prophecies reveal a dark fate
   haunted:
     type: delve_site_theme
@@ -288,57 +220,40 @@ site_themes:
 
       Some lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Tomb or burial site
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Blood was spilled here
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Unnatural mists or darkness
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Messages from beyond the grave
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Apparitions of a person or event
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Denizen haunts this area
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Unsettling sounds or foreboding signs
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen attacks without warning
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Denizen makes a costly demand
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen seizes your body or mind
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Denizen taunts or lures you
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: A disturbing truth is revealed
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Frightening visions
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: The environment is used against you
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Trickery leads you astray
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: True nature of this place is revealed
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Sudden, shocking manifestation
   infested:
     type: delve_site_theme
@@ -353,58 +268,41 @@ site_themes:
 
       Navigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. But it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Inhabited nest
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Abandoned nest
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Ravaged terrain or architecture
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Remains or carrion
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Hoarded food
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Denizens swarm and attack
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Toxic or sickening environment
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen stalks you
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Denizen takes or destroys something
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen reveals surprising cleverness
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Denizen guided by a greater threat
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Denizen blocks the path
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Denizen funnels you down a new path
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Denizen undermines the path
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Denizen lays in wait
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Trap or snare
         suggestions: *SuggestTrap
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Victim’s horrible fate is revealed
   ravaged:
     type: delve_site_theme
@@ -419,57 +317,40 @@ site_themes:
 
       Traversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Path of destruction
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Abandoned or ruined dwelling
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Untouched or preserved area
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Traces of what was lost
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Ill-fated victims
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Precarious architecture or terrain
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Imminent collapse or destruction
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Path undermined
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Blocked or broken path
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Vestiges of a destructive force
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Unexpected environmental threat
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Echoes of a troubling past
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Signs of a horrible fate
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Denizen seeks retribution
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Denizen leverages the environment
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Denizen restores what was lost
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Ravages return anew
   wild:
     type: delve_site_theme
@@ -484,55 +365,38 @@ site_themes:
 
       Be wary when you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Denizen’s lair
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Territorial markings
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Impressive flora or fauna
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Hunting ground or watering hole
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Remains or carrion
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Denizen hunts
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Denizen strikes without warning
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen leverages the environment
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Denizen wields unexpected abilities
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen guided by a greater threat
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Denizen protects something
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Hazardous terrain
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Weather or environmental threat
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Benign aspect becomes a threat
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Overzealous hunter
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Disturbing evidence of a victim’s fate
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Ill-fated victim in danger

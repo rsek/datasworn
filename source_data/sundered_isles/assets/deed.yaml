@@ -67,8 +67,7 @@ assets:
         controls:
           power:
             field_type: condition_meter
-            min: 0
-            max: 4
+            roll: { min: 0, max: 4 }
             value: 4
             label: power
             controls:

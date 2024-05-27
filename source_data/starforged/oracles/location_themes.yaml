@@ -45,50 +45,42 @@ oracles:
         summary: |-
           Choose a theme that supports what you know of that location’s nature. For a random theme, roll on the table above.
         rows:
-          - min: 1
-            max: 15
+          - roll: { min: 1, max: 15 }
             text: '[Chaotic](id:starforged/collections/oracles/location_themes/chaotic)'
             text2: &Chaotic.summary Reality is corrupted or warped in this place.
             icon: &Chaotic.icon icons/location_theme/chaotic.svg
             # set_attributes: {location_theme: [chaotic]}
-          - min: 16
-            max: 25
+          - roll: { min: 16, max: 25 }
             text: '[Fortified](id:starforged/collections/oracles/location_themes/fortified)'
             text2: &Fortified.summary Enemies defend this place against intruders.
             icon: &Fortified.icon icons/location_theme/fortified.svg
             # set_attributes: {location_theme: [fortified]}
-          - min: 26
-            max: 35
+          - roll: { min: 26, max: 35 }
             text: '[Haunted](id:starforged/collections/oracles/location_themes/haunted)'
             text2: &Haunted.summary Restless spirits are bound to this place.
             icon: &Haunted.icon icons/location_theme/haunted.svg
             # set_attributes: {location_theme: [haunted]}
-          - min: 36
-            max: 50
+          - roll: { min: 36, max: 50 }
             text: '[Infested](id:starforged/collections/oracles/location_themes/infested)'
             text2: &Infested.summary Foul creatures have overrun this place.
             icon: &Infested.icon icons/location_theme/infested.svg
             # set_attributes: {location_theme: [infested]}
-          - min: 51
-            max: 60
+          - roll: { min: 51, max: 60 }
             text: '[Inhabited](id:starforged/collections/oracles/location_themes/inhabited)'
             text2: &Inhabited.summary People have built a community in this place.
             icon: &Inhabited.icon icons/location_theme/inhabited.svg
             # set_attributes: {location_theme: [inhabited]}
-          - min: 61
-            max: 75
+          - roll: { min: 61, max: 75 }
             text: '[Mechanical](id:starforged/collections/oracles/location_themes/mechanical)'
             text2: &Mechanical.summary Machines and technology hold sway in this place.
             icon: &Mechanical.icon icons/location_theme/mechanical.svg
             # set_attributes: {location_theme: [mechanical]}
-          - min: 76
-            max: 90
+          - roll: { min: 76, max: 90 }
             text: '[Ruined](id:starforged/collections/oracles/location_themes/ruined)'
             text2: &Ruined.summary Time, disaster, or war have ravaged this place.
             icon: &Ruined.icon icons/location_theme/ruined.svg
             # set_attributes: {location_theme: [ruined]}
-          - min: 91
-            max: 100
+          - roll: { min: 91, max: 100 }
             text: '[Sacred](id:starforged/collections/oracles/location_themes/sacred)'
             text2: &Sacred.summary Worshipers glorify strange powers in this place.
             icon: &Sacred.icon icons/location_theme/sacred.svg
@@ -113,56 +105,43 @@ oracles:
             _source: *CollectionSource
             rows:
               - &Feature.0
-                min: 1
-                max: 8
+                roll: { min: 1, max: 8 }
                 text: Alterations in the flow of time
               - &Feature.1
-                min: 9
-                max: 16
+                roll: { min: 9, max: 16 }
                 text: 'Chaotic portal, focus, or conduit'
               - &Feature.2
-                min: 17
-                max: 24
+                roll: { min: 17, max: 24 }
                 text: Corrupted or warped architecture or terrain
               - &Feature.3
-                min: 25
-                max: 32
+                roll: { min: 25, max: 32 }
                 text: Corrupted or warped environment or ecosystem
               - &Feature.4
-                min: 33
-                max: 40
+                roll: { min: 33, max: 40 }
                 text: Corrupted or warped technology
               - &Feature.5
-                min: 41
-                max: 48
+                roll: { min: 41, max: 48 }
                 text: Cryptic device harnesses or powers chaos
               - &Feature.6
-                min: 49
-                max: 56
+                roll: { min: 49, max: 56 }
                 text: Distortions of gravity or other natural forces
               - &Feature.7
-                min: 57
-                max: 64
+                roll: { min: 57, max: 64 }
                 text: Energy field or barrier
               - &Feature.8
-                min: 65
-                max: 72
+                roll: { min: 65, max: 72 }
                 text: Glimpses of alternate realities
               - &Feature.9
-                min: 73
-                max: 80
+                roll: { min: 73, max: 80 }
                 text: Lifeforms mutated or altered by chaos
               - &Feature.10
-                min: 81
-                max: 88
+                roll: { min: 81, max: 88 }
                 text: Lifeforms spawned from chaos
               - &Feature.11
-                min: 89
-                max: 96
+                roll: { min: 89, max: 96 }
                 text: Visions of your past or future
               - &Feature.12
-                min: 97
-                max: 100
+                roll: { min: 97, max: 100 }
                 text: |-
                   [Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)
                 oracle_rolls:
@@ -179,48 +158,37 @@ oracles:
             _source: *CollectionSource
             rows:
               - &Peril.0
-                min: 1
-                max: 9
+                roll: { min: 1, max: 9 }
                 text: Chaos makes its mark upon you
               - &Peril.1
-                min: 10
-                max: 18
+                roll: { min: 10, max: 18 }
                 text: Chaos spreads or intensifies
               - &Peril.2
-                min: 19
-                max: 27
+                roll: { min: 19, max: 27 }
                 text: Chaos tempts or lures you
               - &Peril.3
-                min: 28
-                max: 36
+                roll: { min: 28, max: 36 }
                 text: Chaotic energies block the path or assail you
               - &Peril.4
-                min: 37
-                max: 45
+                roll: { min: 37, max: 45 }
                 text: Disorienting changes in time or location
               - &Peril.5
-                min: 46
-                max: 54
+                roll: { min: 46, max: 54 }
                 text: Dreadful scene of those who fell prey to chaos
               - &Peril.6
-                min: 55
-                max: 63
+                roll: { min: 55, max: 63 }
                 text: Equipment is made unstable or dangerous
               - &Peril.7
-                min: 64
-                max: 72
+                roll: { min: 64, max: 72 }
                 text: Foes harness or wield chaos
               - &Peril.8
-                min: 73
-                max: 81
+                roll: { min: 73, max: 81 }
                 text: Hazardous environmental changes
               - &Peril.9
-                min: 82
-                max: 90
+                roll: { min: 82, max: 90 }
                 text: Lifeforms made hostile by chaos
               - &Peril.10
-                min: 91
-                max: 98
+                roll: { min: 91, max: 98 }
                 text: |-
                   [Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)
                 oracle_rolls:
@@ -229,8 +197,7 @@ oracles:
                   - oracle: starforged/oracles/core/theme
                     auto: true
               - &Peril.11
-                min: 99
-                max: 100
+                roll: { min: 99, max: 100 }
                 text: Roll twice
                 oracle_rolls:
                   - number_of_rolls: 2
@@ -244,24 +211,19 @@ oracles:
             _source: *CollectionSource
             rows:
               - &Opportunity.0
-                min: 1
-                max: 20
+                roll: { min: 1, max: 20 }
                 text: Chaos ebbs or withdraws for a time
               - &Opportunity.1
-                min: 21
-                max: 40
+                roll: { min: 21, max: 40 }
                 text: Chaos empowers you with strange but useful abilities
               - &Opportunity.2
-                min: 41
-                max: 60
+                roll: { min: 41, max: 60 }
                 text: Chaos manifests as comforting or inspiring visions
               - &Opportunity.3
-                min: 61
-                max: 80
+                roll: { min: 61, max: 80 }
                 text: Chaotic changes hamper your foes
               - &Opportunity.4
-                min: 81
-                max: 100
+                roll: { min: 81, max: 100 }
                 text: Insight into the source or nature of the chaos
       fortified:
         name: Fortified

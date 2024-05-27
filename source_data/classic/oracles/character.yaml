@@ -29,124 +29,94 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: common_noun
-            min: 1
-            max: 2
+            roll: { min: 1, max: 2 }
             text: Criminal
           - <<: *i18n.common_noun
-            min: 3
-            max: 4
+            roll: { min: 3, max: 4 }
             text: Healer
           - <<: *i18n.common_noun
-            min: 5
-            max: 6
+            roll: { min: 5, max: 6 }
             text: Bandit
           - <<: *i18n.common_noun
-            min: 7
-            max: 9
+            roll: { min: 7, max: 9 }
             text: Guide
           - <<: *i18n.common_noun
-            min: 10
-            max: 12
+            roll: { min: 10, max: 12 }
             text: Performer
           - <<: *i18n.common_noun
-            min: 13
-            max: 15
+            roll: { min: 13, max: 15 }
             text: Miner
           - <<: *i18n.common_noun
-            min: 16
-            max: 18
+            roll: { min: 16, max: 18 }
             text: Mercenary
           - <<: *i18n.common_noun
-            min: 19
-            max: 21
+            roll: { min: 19, max: 21 }
             text: Outcast
           - <<: *i18n.common_noun
-            min: 22
-            max: 24
+            roll: { min: 22, max: 24 }
             text: Vagrant
           - <<: *i18n.common_noun
-            min: 25
-            max: 27
+            roll: { min: 25, max: 27 }
             text: Forester
           - <<: *i18n.common_noun
-            min: 28
-            max: 30
+            roll: { min: 28, max: 30 }
             text: Traveler
           - <<: *i18n.common_noun
-            min: 31
-            max: 33
+            roll: { min: 31, max: 33 }
             text: Mystic
           - <<: *i18n.common_noun
-            min: 34
-            max: 36
+            roll: { min: 34, max: 36 }
             text: Priest
           - <<: *i18n.common_noun
-            min: 37
-            max: 39
+            roll: { min: 37, max: 39 }
             text: Sailor
           - <<: *i18n.common_noun
-            min: 40
-            max: 42
+            roll: { min: 40, max: 42 }
             text: Pilgrim
           - <<: *i18n.common_noun
-            min: 43
-            max: 45
+            roll: { min: 43, max: 45 }
             text: Thief
           - <<: *i18n.common_noun
-            min: 46
-            max: 48
+            roll: { min: 46, max: 48 }
             text: Adventurer
           - <<: *i18n.common_noun
-            min: 49
-            max: 51
+            roll: { min: 49, max: 51 }
             text: Forager
           - <<: *i18n.common_noun
-            min: 52
-            max: 54
+            roll: { min: 52, max: 54 }
             text: Leader
           - <<: *i18n.common_noun
-            min: 55
-            max: 58
+            roll: { min: 55, max: 58 }
             text: Guard
           - <<: *i18n.common_noun
-            min: 59
-            max: 62
+            roll: { min: 59, max: 62 }
             text: Artisan
           - <<: *i18n.common_noun
-            min: 63
-            max: 66
+            roll: { min: 63, max: 66 }
             text: Scout
           - <<: *i18n.common_noun
-            min: 67
-            max: 70
+            roll: { min: 67, max: 70 }
             text: Herder
           - <<: *i18n.common_noun
-            min: 71
-            max: 74
+            roll: { min: 71, max: 74 }
             text: Fisher
           - <<: *i18n.common_noun
-            min: 75
-            max: 79
+            roll: { min: 75, max: 79 }
             text: Warrior
           - <<: *i18n.common_noun
-            min: 80
-            max: 84
+            roll: { min: 80, max: 84 }
             text: Hunter
           - <<: *i18n.common_noun
-            min: 85
-            max: 89
+            roll: { min: 85, max: 89 }
             text: Raider
           - <<: *i18n.common_noun
-            min: 90
-            max: 94
+            roll: { min: 90, max: 94 }
             text: Trader
           - <<: *i18n.common_noun
-            min: 95
-            max: 99
+            roll: { min: 95, max: 99 }
             text: Farmer
           - <<: *i18n.common_noun
-            min: 100
-            max: 100
+            roll: { min: 100, max: 100 }
             text: Unusual role
             suggestions:
               oracles:
@@ -162,104 +132,71 @@ oracles:
           <<: *Source
           page: 182
         rows:
-          - min: 1
-            max: 3
+          - roll: { min: 1, max: 3 }
             text: Obtain an object
-          - min: 4
-            max: 6
+          - roll: { min: 4, max: 6 }
             text: Make an agreement
-          - min: 7
-            max: 9
+          - roll: { min: 7, max: 9 }
             text: Build a relationship
-          - min: 10
-            max: 12
+          - roll: { min: 10, max: 12 }
             text: Undermine a relationship
-          - min: 13
-            max: 15
+          - roll: { min: 13, max: 15 }
             text: Seek a truth
-          - min: 16
-            max: 18
+          - roll: { min: 16, max: 18 }
             text: Pay a debt
-          - min: 19
-            max: 21
+          - roll: { min: 19, max: 21 }
             text: Refute a falsehood
-          - min: 22
-            max: 24
+          - roll: { min: 22, max: 24 }
             text: Harm a rival
-          - min: 25
-            max: 27
+          - roll: { min: 25, max: 27 }
             text: Cure an ill
-          - min: 28
-            max: 30
+          - roll: { min: 28, max: 30 }
             text: Find a person
-          - min: 31
-            max: 33
+          - roll: { min: 31, max: 33 }
             text: Find a home
-          - min: 34
-            max: 36
+          - roll: { min: 34, max: 36 }
             text: Seize power
-          - min: 37
-            max: 39
+          - roll: { min: 37, max: 39 }
             text: Restore a relationship
-          - min: 40
-            max: 42
+          - roll: { min: 40, max: 42 }
             text: Create an item
-          - min: 43
-            max: 45
+          - roll: { min: 43, max: 45 }
             text: Travel to a place
-          - min: 46
-            max: 48
+          - roll: { min: 46, max: 48 }
             text: Secure provisions
-          - min: 49
-            max: 51
+          - roll: { min: 49, max: 51 }
             text: Rebel against power
-          - min: 52
-            max: 54
+          - roll: { min: 52, max: 54 }
             text: Collect a debt
-          - min: 55
-            max: 57
+          - roll: { min: 55, max: 57 }
             text: Protect a secret
-          - min: 58
-            max: 60
+          - roll: { min: 58, max: 60 }
             text: Spread faith
-          - min: 61
-            max: 63
+          - roll: { min: 61, max: 63 }
             text: Enrich themselves
-          - min: 64
-            max: 66
+          - roll: { min: 64, max: 66 }
             text: Protect a person
-          - min: 67
-            max: 69
+          - roll: { min: 67, max: 69 }
             text: Protect the status quo
-          - min: 70
-            max: 72
+          - roll: { min: 70, max: 72 }
             text: Advance status
-          - min: 73
-            max: 75
+          - roll: { min: 73, max: 75 }
             text: Defend a place
-          - min: 76
-            max: 78
+          - roll: { min: 76, max: 78 }
             text: Avenge a wrong
-          - min: 79
-            max: 81
+          - roll: { min: 79, max: 81 }
             text: Fulfill a duty
-          - min: 82
-            max: 84
+          - roll: { min: 82, max: 84 }
             text: Gain knowledge
-          - min: 85
-            max: 87
+          - roll: { min: 85, max: 87 }
             text: Prove worthiness
-          - min: 88
-            max: 90
+          - roll: { min: 88, max: 90 }
             text: Find redemption
-          - min: 91
-            max: 92
+          - roll: { min: 91, max: 92 }
             text: Escape from something
-          - min: 93
-            max: 95
+          - roll: { min: 93, max: 95 }
             text: Resolve a dispute
-          - min: 96
-            max: 100
+          - roll: { min: 96, max: 100 }
             text: Roll twice
             oracle_rolls:
               - number_of_rolls: 2
@@ -272,8 +209,7 @@ oracles:
         # usage:
         oracle_type: table_text
         recommended_rolls:
-          min: 1
-          max: 3 # a bit arbitrary, but reasonable
+          roll: { min: 1, max: 3 } # a bit arbitrary, but reasonable
         _source:
           <<: *Source
           page: 183
@@ -282,405 +218,305 @@ oracles:
               _i18n:
                 text:
                   part_of_speech: adjective
-            min: 1
-            max: 1
+            roll: { min: 1, max: 1 }
             text: Stoic
           - <<: *i18n.adjective
-            min: 2
-            max: 2
+            roll: { min: 2, max: 2 }
             text: Attractive
           - <<: *i18n.adjective
-            min: 3
-            max: 3
+            roll: { min: 3, max: 3 }
             text: Passive
           - <<: *i18n.adjective
-            min: 4
-            max: 4
+            roll: { min: 4, max: 4 }
             text: Aloof
           - <<: *i18n.adjective
-            min: 5
-            max: 5
+            roll: { min: 5, max: 5 }
             text: Affectionate
           - <<: *i18n.adjective
-            min: 6
-            max: 6
+            roll: { min: 6, max: 6 }
             text: Generous
           - <<: *i18n.adjective
-            min: 7
-            max: 7
+            roll: { min: 7, max: 7 }
             text: Smug
           - <<: *i18n.adjective
-            min: 8
-            max: 8
+            roll: { min: 8, max: 8 }
             text: Armed
           - <<: *i18n.adjective
-            min: 9
-            max: 9
+            roll: { min: 9, max: 9 }
             text: Clever
           - <<: *i18n.adjective
-            min: 10
-            max: 10
+            roll: { min: 10, max: 10 }
             text: Brave
           - <<: *i18n.adjective
-            min: 11
-            max: 11
+            roll: { min: 11, max: 11 }
             text: Ugly
           - <<: *i18n.adjective
-            min: 12
-            max: 12
+            roll: { min: 12, max: 12 }
             text: Sociable
           - <<: *i18n.adjective
-            min: 13
-            max: 13
+            roll: { min: 13, max: 13 }
             text: Doomed
           - <<: *i18n.adjective
-            min: 14
-            max: 14
+            roll: { min: 14, max: 14 }
             text: Connected
           - <<: *i18n.adjective
-            min: 15
-            max: 15
+            roll: { min: 15, max: 15 }
             text: Bold
           - <<: *i18n.adjective
-            min: 16
-            max: 16
+            roll: { min: 16, max: 16 }
             text: Jealous
           - <<: *i18n.adjective
-            min: 17
-            max: 17
+            roll: { min: 17, max: 17 }
             text: Angry
           - <<: *i18n.adjective
-            min: 18
-            max: 18
+            roll: { min: 18, max: 18 }
             text: Active
           - <<: *i18n.adjective
-            min: 19
-            max: 19
+            roll: { min: 19, max: 19 }
             text: Suspicious
           - <<: *i18n.adjective
-            min: 20
-            max: 20
+            roll: { min: 20, max: 20 }
             text: Hostile
           - <<: *i18n.adjective
-            min: 21
-            max: 21
+            roll: { min: 21, max: 21 }
             text: Hardhearted
           - <<: *i18n.adjective
-            min: 22
-            max: 22
+            roll: { min: 22, max: 22 }
             text: Successful
           - <<: *i18n.adjective
-            min: 23
-            max: 23
+            roll: { min: 23, max: 23 }
             text: Talented
           - <<: *i18n.adjective
-            min: 24
-            max: 24
+            roll: { min: 24, max: 24 }
             text: Experienced
           - <<: *i18n.adjective
-            min: 25
-            max: 25
+            roll: { min: 25, max: 25 }
             text: Deceitful
           - <<: *i18n.adjective
-            min: 26
-            max: 26
+            roll: { min: 26, max: 26 }
             text: Ambitious
           - <<: *i18n.adjective
-            min: 27
-            max: 27
+            roll: { min: 27, max: 27 }
             text: Aggressive
           - <<: *i18n.adjective
-            min: 28
-            max: 28
+            roll: { min: 28, max: 28 }
             text: Conceited
           - <<: *i18n.adjective
-            min: 29
-            max: 29
+            roll: { min: 29, max: 29 }
             text: Proud
           - <<: *i18n.adjective
-            min: 30
-            max: 30
+            roll: { min: 30, max: 30 }
             text: Stern
           - <<: *i18n.adjective
-            min: 31
-            max: 31
+            roll: { min: 31, max: 31 }
             text: Dependent
           - <<: *i18n.adjective
-            min: 32
-            max: 32
+            roll: { min: 32, max: 32 }
             text: Wary
           - <<: *i18n.adjective
-            min: 33
-            max: 33
+            roll: { min: 33, max: 33 }
             text: Strong
           - <<: *i18n.adjective
-            min: 34
-            max: 34
+            roll: { min: 34, max: 34 }
             text: Insightful
           - <<: *i18n.adjective
-            min: 35
-            max: 35
+            roll: { min: 35, max: 35 }
             text: Dangerous
           - <<: *i18n.adjective
-            min: 36
-            max: 36
+            roll: { min: 36, max: 36 }
             text: Quirky
           - <<: *i18n.adjective
-            min: 37
-            max: 37
+            roll: { min: 37, max: 37 }
             text: Cheery
           - <<: *i18n.adjective
-            min: 38
-            max: 38
+            roll: { min: 38, max: 38 }
             text: Disfigured
           - <<: *i18n.adjective
-            min: 39
-            max: 39
+            roll: { min: 39, max: 39 }
             text: Intolerant
           - <<: *i18n.adjective
-            min: 40
-            max: 40
+            roll: { min: 40, max: 40 }
             text: Skilled
           - <<: *i18n.adjective
-            min: 41
-            max: 41
+            roll: { min: 41, max: 41 }
             text: Stingy
           - <<: *i18n.adjective
-            min: 42
-            max: 42
+            roll: { min: 42, max: 42 }
             text: Timid
           - <<: *i18n.adjective
-            min: 43
-            max: 43
+            roll: { min: 43, max: 43 }
             text: Insensitive
           - <<: *i18n.adjective
-            min: 44
-            max: 44
+            roll: { min: 44, max: 44 }
             text: Wild
           - <<: *i18n.adjective
-            min: 45
-            max: 45
+            roll: { min: 45, max: 45 }
             text: Bitter
           - <<: *i18n.adjective
-            min: 46
-            max: 46
+            roll: { min: 46, max: 46 }
             text: Cunning
           - <<: *i18n.adjective
-            min: 47
-            max: 47
+            roll: { min: 47, max: 47 }
             text: Remorseful
           - <<: *i18n.adjective
-            min: 48
-            max: 48
+            roll: { min: 48, max: 48 }
             text: Kind
           - <<: &i18n.gerund
               _i18n:
                 text:
                   part_of_speech: gerund
-            min: 49
-            max: 49
+            roll: { min: 49, max: 49 }
             text: Charming
           - <<: *i18n.adjective
-            min: 50
-            max: 50
+            roll: { min: 50, max: 50 }
             text: Oblivious
           - <<: *i18n.adjective
-            min: 51
-            max: 51
+            roll: { min: 51, max: 51 }
             text: Critical
           - <<: *i18n.adjective
-            min: 52
-            max: 52
+            roll: { min: 52, max: 52 }
             text: Cautious
           - <<: *i18n.adjective
-            min: 53
-            max: 53
+            roll: { min: 53, max: 53 }
             text: Resourceful
           - <<: *i18n.adjective
-            min: 54
-            max: 54
+            roll: { min: 54, max: 54 }
             text: Weary
           - <<: *i18n.adjective
-            min: 55
-            max: 55
+            roll: { min: 55, max: 55 }
             text: Wounded
           - <<: *i18n.adjective
-            min: 56
-            max: 56
+            roll: { min: 56, max: 56 }
             text: Anxious
           - <<: *i18n.adjective
-            min: 57
-            max: 57
+            roll: { min: 57, max: 57 }
             text: Powerful
           - <<: *i18n.adjective
-            min: 58
-            max: 58
+            roll: { min: 58, max: 58 }
             text: Athletic
           - <<: *i18n.adjective
-            min: 59
-            max: 59
+            roll: { min: 59, max: 59 }
             text: Driven
           - <<: *i18n.adjective
-            min: 60
-            max: 60
+            roll: { min: 60, max: 60 }
             text: Cruel
           - <<: *i18n.adjective
-            min: 61
-            max: 61
+            roll: { min: 61, max: 61 }
             text: Quiet
           - <<: *i18n.adjective
-            min: 62
-            max: 62
+            roll: { min: 62, max: 62 }
             text: Honest
           - <<: *i18n.adjective
-            min: 63
-            max: 63
+            roll: { min: 63, max: 63 }
             text: Infamous
           - <<: *i18n.gerund
-            min: 64
-            max: 64
+            roll: { min: 64, max: 64 }
             text: Dying
           - <<: *i18n.adjective
-            min: 65
-            max: 65
+            roll: { min: 65, max: 65 }
             text: Reclusive
           - <<: *i18n.adjective
-            min: 66
-            max: 66
+            roll: { min: 66, max: 66 }
             text: Artistic
           - <<: *i18n.adjective
-            min: 67
-            max: 67
+            roll: { min: 67, max: 67 }
             text: Disabled
           - <<: *i18n.adjective
-            min: 68
-            max: 68
+            roll: { min: 68, max: 68 }
             text: Confused
           - <<: *i18n.adjective
-            min: 69
-            max: 69
+            roll: { min: 69, max: 69 }
             text: Manipulative
           - <<: *i18n.adjective
-            min: 70
-            max: 70
+            roll: { min: 70, max: 70 }
             text: Relaxed
           - <<: *i18n.adjective
-            min: 71
-            max: 71
+            roll: { min: 71, max: 71 }
             text: Stealthy
           - <<: *i18n.adjective
-            min: 72
-            max: 72
+            roll: { min: 72, max: 72 }
             text: Confident
           - <<: *i18n.adjective
-            min: 73
-            max: 73
+            roll: { min: 73, max: 73 }
             text: Weak
           - <<: *i18n.adjective
-            min: 74
-            max: 74
+            roll: { min: 74, max: 74 }
             text: Friendly
           - <<: *i18n.adjective
-            min: 75
-            max: 75
+            roll: { min: 75, max: 75 }
             text: Wise
           - <<: *i18n.adjective
-            min: 76
-            max: 76
+            roll: { min: 76, max: 76 }
             text: Influential
           - <<: *i18n.adjective
-            min: 77
-            max: 77
+            roll: { min: 77, max: 77 }
             text: Young
           - <<: *i18n.adjective
-            min: 78
-            max: 78
+            roll: { min: 78, max: 78 }
             text: Adventurous
           - <<: *i18n.adjective
-            min: 79
-            max: 79
+            roll: { min: 79, max: 79 }
             text: Oppressed
           - <<: *i18n.adjective
-            min: 80
-            max: 80
+            roll: { min: 80, max: 80 }
             text: Vengeful
           - <<: *i18n.adjective
-            min: 81
-            max: 81
+            roll: { min: 81, max: 81 }
             text: Cooperative
           - <<: *i18n.adjective
-            min: 82
-            max: 82
+            roll: { min: 82, max: 82 }
             text: Armored
           - <<: *i18n.adjective
-            min: 83
-            max: 83
+            roll: { min: 83, max: 83 }
             text: Apathetic
           - <<: *i18n.adjective
-            min: 84
-            max: 84
+            roll: { min: 84, max: 84 }
             text: Determined
           - <<: *i18n.adjective
-            min: 85
-            max: 85
+            roll: { min: 85, max: 85 }
             text: Loyal
           - <<: *i18n.adjective
-            min: 86
-            max: 86
+            roll: { min: 86, max: 86 }
             text: Sick
           - <<: *i18n.adjective
-            min: 87
-            max: 87
+            roll: { min: 87, max: 87 }
             text: Religious
           - <<: *i18n.adjective
-            min: 88
-            max: 88
+            roll: { min: 88, max: 88 }
             text: Selfish
           - <<: *i18n.adjective
-            min: 89
-            max: 89
+            roll: { min: 89, max: 89 }
             text: Old
           - <<: *i18n.adjective
-            min: 90
-            max: 90
+            roll: { min: 90, max: 90 }
             text: Fervent
           - <<: *i18n.adjective
-            min: 91
-            max: 91
+            roll: { min: 91, max: 91 }
             text: Violent
           - <<: *i18n.adjective
-            min: 92
-            max: 92
+            roll: { min: 92, max: 92 }
             text: Agreeable
           - <<: *i18n.adjective
-            min: 93
-            max: 93
+            roll: { min: 93, max: 93 }
             text: Hot-tempered
           - <<: *i18n.adjective
-            min: 94
-            max: 94
+            roll: { min: 94, max: 94 }
             text: Stubborn
           - <<: *i18n.adjective
-            min: 95
-            max: 95
+            roll: { min: 95, max: 95 }
             text: Incompetent
           - <<: *i18n.adjective
-            min: 96
-            max: 96
+            roll: { min: 96, max: 96 }
             text: Greedy
           - <<: *i18n.adjective
-            min: 97
-            max: 97
+            roll: { min: 97, max: 97 }
             text: Cowardly
           - <<: *i18n.adjective
-            min: 98
-            max: 98
+            roll: { min: 98, max: 98 }
             text: Obsessed
           - <<: *i18n.adjective
-            min: 99
-            max: 99
+            roll: { min: 99, max: 99 }
             text: Careless
           - <<: *i18n.adjective
-            min: 100
-            max: 100
+            roll: { min: 100, max: 100 }
             text: Ironsworn

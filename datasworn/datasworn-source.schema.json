@@ -3062,6 +3062,22 @@
 			},
 			"additionalProperties": false
 		},
+		"DiceRange": {
+			"title": "DiceRange",
+			"type": "object",
+			"required": ["min", "max"],
+			"properties": {
+				"min": {
+					"type": "integer",
+					"description": "Low end of the dice range."
+				},
+				"max": {
+					"type": "integer",
+					"description": "High end of the dice range."
+				}
+			},
+			"additionalProperties": false
+		},
 		"OracleCollection": {
 			"title": "OracleCollection",
 			"type": "object",
@@ -3522,34 +3538,20 @@
 			"description": "Represents a row in an oracle table, with a single text cell.",
 			"required": ["text"],
 			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
 				},
 				"text": {
 					"$ref": "#/definitions/MarkdownString",
@@ -3590,34 +3592,20 @@
 			"description": "Represents a row in an oracle table that provides a secondary text field.",
 			"required": ["text", "text2"],
 			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
 				},
 				"text": {
 					"$ref": "#/definitions/MarkdownString",
@@ -3669,34 +3657,20 @@
 			"description": "Represents a row in an oracle table with 3 text cells.",
 			"required": ["text", "text2", "text3"],
 			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
 				},
 				"text": {
 					"$ref": "#/definitions/MarkdownString",
@@ -7188,13 +7162,10 @@
 		"TruthOption": {
 			"title": "TruthOption",
 			"type": "object",
-			"required": ["description", "quest_starter"],
+			"required": ["roll", "description", "quest_starter"],
 			"properties": {
-				"min": {
-					"type": "integer"
-				},
-				"max": {
-					"type": "integer"
+				"roll": {
+					"$ref": "#/definitions/DiceRange"
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString"
@@ -7532,228 +7503,168 @@
 							"items": [
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 1
-										},
-										"max": {
-											"type": "number",
-											"const": 27
-										},
 										"frequency": {
 											"type": "string",
 											"const": "very_common"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 28
-										},
-										"max": {
-											"type": "number",
-											"const": 41
-										},
 										"frequency": {
 											"type": "string",
 											"const": "common"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 42
-										},
-										"max": {
-											"type": "number",
-											"const": 55
-										},
 										"frequency": {
 											"type": "string",
 											"const": "common"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 56
-										},
-										"max": {
-											"type": "number",
-											"const": 69
-										},
 										"frequency": {
 											"type": "string",
 											"const": "common"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 70
-										},
-										"max": {
-											"type": "number",
-											"const": 75
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 76
-										},
-										"max": {
-											"type": "number",
-											"const": 81
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 82
-										},
-										"max": {
-											"type": "number",
-											"const": 87
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 88
-										},
-										"max": {
-											"type": "number",
-											"const": 93
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 94
-										},
-										"max": {
-											"type": "number",
-											"const": 95
-										},
 										"frequency": {
 											"type": "string",
 											"const": "rare"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 96
-										},
-										"max": {
-											"type": "number",
-											"const": 97
-										},
 										"frequency": {
 											"type": "string",
 											"const": "rare"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 98
-										},
-										"max": {
-											"type": "number",
-											"const": 99
-										},
 										"frequency": {
 											"type": "string",
 											"const": "rare"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 100
-										},
-										"max": {
-											"type": "number",
-											"const": 100
-										},
 										"frequency": {
 											"type": "string",
 											"const": "unforeseen"
+										},
+										"roll": {
+											"not": {}
 										}
 									},
 									"additionalProperties": true
@@ -7808,15 +7719,24 @@
 			"title": "DelveSiteDomain",
 			"type": "object",
 			"description": "A delve site Domain card.",
-			"required": ["type", "name", "summary", "features", "dangers", "_source"],
+			"required": [
+				"type",
+				"name",
+				"name_oracle",
+				"icon",
+				"summary",
+				"features",
+				"dangers",
+				"description",
+				"_source"
+			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteDomainId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"type": {
-					"type": "string",
-					"const": "delve_site_domain"
+					"not": {}
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7827,309 +7747,22 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"name_oracle": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
+					"not": {}
 				},
 				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
+					"not": {}
 				},
 				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"deprecated": true
+					"not": {}
 				},
 				"features": {
-					"allOf": [
-						{
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
-							}
-						},
-						{
-							"type": "array",
-							"items": [
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 21
-										},
-										"max": {
-											"type": "number",
-											"const": 43
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 44
-										},
-										"max": {
-											"type": "number",
-											"const": 56
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 57
-										},
-										"max": {
-											"type": "number",
-											"const": 64
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 65
-										},
-										"max": {
-											"type": "number",
-											"const": 68
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 69
-										},
-										"max": {
-											"type": "number",
-											"const": 72
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 73
-										},
-										"max": {
-											"type": "number",
-											"const": 76
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 77
-										},
-										"max": {
-											"type": "number",
-											"const": 80
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 81
-										},
-										"max": {
-											"type": "number",
-											"const": 84
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 85
-										},
-										"max": {
-											"type": "number",
-											"const": 88
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 89
-										},
-										"max": {
-											"type": "number",
-											"const": 98
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 99
-										},
-										"max": {
-											"type": "number",
-											"const": 99
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 100
-										},
-										"max": {
-											"type": "number",
-											"const": 100
-										}
-									},
-									"additionalProperties": true
-								}
-							],
-							"minItems": 12,
-							"maxItems": 12,
-							"additionalItems": false
-						}
-					]
+					"not": {}
 				},
 				"dangers": {
-					"allOf": [
-						{
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
-							}
-						},
-						{
-							"type": "array",
-							"items": [
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 31
-										},
-										"max": {
-											"type": "number",
-											"const": 33
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 34
-										},
-										"max": {
-											"type": "number",
-											"const": 36
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 37
-										},
-										"max": {
-											"type": "number",
-											"const": 39
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 40
-										},
-										"max": {
-											"type": "number",
-											"const": 42
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 43
-										},
-										"max": {
-											"type": "number",
-											"const": 45
-										}
-									},
-									"additionalProperties": true
-								}
-							],
-							"minItems": 5,
-							"maxItems": 5,
-							"additionalItems": false
-						}
-					]
+					"not": {}
 				},
 				"description": {
-					"$ref": "#/definitions/MarkdownString"
+					"not": {}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -8152,15 +7785,23 @@
 			"title": "DelveSiteTheme",
 			"type": "object",
 			"description": "A delve site theme card.",
-			"required": ["type", "name", "summary", "features", "dangers", "_source"],
+			"required": [
+				"type",
+				"name",
+				"icon",
+				"summary",
+				"features",
+				"dangers",
+				"description",
+				"_source"
+			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteThemeId",
 					"description": "The unique Datasworn ID for this item."
 				},
 				"type": {
-					"type": "string",
-					"const": "delve_site_theme"
+					"not": {}
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -8171,304 +7812,19 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
+					"not": {}
 				},
 				"summary": {
-					"$ref": "#/definitions/MarkdownString"
+					"not": {}
 				},
 				"features": {
-					"allOf": [
-						{
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
-							}
-						},
-						{
-							"type": "array",
-							"items": [
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 1
-										},
-										"max": {
-											"type": "number",
-											"const": 4
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 5
-										},
-										"max": {
-											"type": "number",
-											"const": 8
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 9
-										},
-										"max": {
-											"type": "number",
-											"const": 12
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 13
-										},
-										"max": {
-											"type": "number",
-											"const": 16
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 17
-										},
-										"max": {
-											"type": "number",
-											"const": 20
-										}
-									},
-									"additionalProperties": true
-								}
-							],
-							"minItems": 5,
-							"maxItems": 5,
-							"additionalItems": false
-						}
-					]
+					"not": {}
 				},
 				"dangers": {
-					"allOf": [
-						{
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
-							}
-						},
-						{
-							"type": "array",
-							"items": [
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 1
-										},
-										"max": {
-											"type": "number",
-											"const": 5
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 6
-										},
-										"max": {
-											"type": "number",
-											"const": 10
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 11
-										},
-										"max": {
-											"type": "number",
-											"const": 12
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 13
-										},
-										"max": {
-											"type": "number",
-											"const": 14
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 15
-										},
-										"max": {
-											"type": "number",
-											"const": 16
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 17
-										},
-										"max": {
-											"type": "number",
-											"const": 18
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 19
-										},
-										"max": {
-											"type": "number",
-											"const": 20
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 21
-										},
-										"max": {
-											"type": "number",
-											"const": 22
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 23
-										},
-										"max": {
-											"type": "number",
-											"const": 24
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 25
-										},
-										"max": {
-											"type": "number",
-											"const": 26
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 27
-										},
-										"max": {
-											"type": "number",
-											"const": 28
-										}
-									},
-									"additionalProperties": true
-								},
-								{
-									"type": "object",
-									"required": ["min", "max"],
-									"properties": {
-										"min": {
-											"type": "number",
-											"const": 29
-										},
-										"max": {
-											"type": "number",
-											"const": 30
-										}
-									},
-									"additionalProperties": true
-								}
-							],
-							"minItems": 12,
-							"maxItems": 12,
-							"additionalItems": false
-						}
-					]
+					"not": {}
 				},
 				"description": {
-					"$ref": "#/definitions/MarkdownString"
+					"not": {}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"

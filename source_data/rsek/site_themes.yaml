@@ -16,57 +16,40 @@ site_themes:
       date: 2022-07-05
     summary: This place reflects a delver's psyche back at them.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Echoes of a formative memory
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Vision of past life or path not taken
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Bizarre symbolic dream-imagery
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Environment reflects state of mind
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Environment is uncannily familiar
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: (Un)reality of past event is challenged
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Benign aspect morphs into terror
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Labyrinth or non-euclidian space
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Your own worst traits made manifest
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen resembles Bond/Companion
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Denizen resembles Threat/nemesis
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Vision of forsaken vow, past or future
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Vision of dire or apocalyptic future
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Time variance complicates real world
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Memory with awful new twist/context
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Painful memory in horrific detail
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Pleasant fantasy, easy to get lost in
   protean:
     name: Protean
@@ -74,57 +57,40 @@ site_themes:
     _source: *Source
     summary: A place of primordial chaos, in constant flux.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: New domain via gradual transition
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: New domain via patchwork
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: New domain via abrupt border
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: New domain via transformation
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: New domain via conveyance or door
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Terrain transforms under your feet
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Terrain transforms into denizen
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen transforms constantly
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Abrupt shift in gravity or climate
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen is chimera of denizens
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Draw a theme; 1st danger occurs
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Draw a theme; 2nd danger occurs
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Draw a domain; 1st danger occurs
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Draw a domain; 2nd danger occurs
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Draw a domain; 3rd danger occurs
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Draw a domain; 4th danger occurs
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Draw a domain; 5th danger occurs
   skyborne:
     name: Skyborne
@@ -132,58 +98,41 @@ site_themes:
     _source: *Source
     summary: A place that soars high above the world below.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Splendid view of the lands below
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Bridge or other crossing spanning a gap
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Platform or slow-drifting sky-island # TODO: revise to include e.g. cloudscape
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Nest, lair, or other dwelling
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Striking architecture, terrain, or flora
       # TODO: revise to indicate architecture or terrain peculiar to high altitudes
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Wide gap separates solid footing
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Denizen strikes from above
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizen blocks the way forward
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Denizen ambushes you near ledge
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen harasses with flyby attacks
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Small time window to make crossing
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Crumbling or unstable footing
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Abrupt precipice
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Vertigo or thin air takes its toll
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: Driving precipitation
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Passing cloud shrouds area in fog
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Buffeted by powerful winds
   threatened:
     name: Threatened
@@ -191,55 +140,38 @@ site_themes:
     _source: *Source
     summary: This place is on the verge of calamity.
     features:
-      - min: 1
-        max: 4
+      - roll: { min: 1, max: 4 }
         text: Area left unnervingly empty
-      - min: 5
-        max: 8
+      - roll: { min: 5, max: 8 }
         text: Area crowded with the desperate
-      - min: 9
-        max: 12
+      - roll: { min: 9, max: 12 }
         text: Dwelling currently being evacuated
-      - min: 13
-        max: 16
+      - roll: { min: 13, max: 16 }
         text: Area is (or is currently being) fortified
-      - min: 17
-        max: 20
+      - roll: { min: 17, max: 20 }
         text: Ill omen or sign of threat's handiwork
     dangers:
-      - min: 1
-        max: 5
+      - roll: { min: 1, max: 5 }
         text: Panic makes situation worse
-      - min: 6
-        max: 10
+      - roll: { min: 6, max: 10 }
         text: Denizen desperate to escape threat
-      - min: 11
-        max: 12
+      - roll: { min: 11, max: 12 }
         text: Denizens band together
-      - min: 13
-        max: 14
+      - roll: { min: 13, max: 14 }
         text: Denizen seeks to profit from situation
-      - min: 15
-        max: 16
+      - roll: { min: 15, max: 16 }
         text: Denizen hoards resources
-      - min: 17
-        max: 18
+      - roll: { min: 17, max: 18 }
         text: Denizen skeptical/ignorant of threat
-      - min: 19
-        max: 20
+      - roll: { min: 19, max: 20 }
         text: Denizen openly welcomes threat
-      - min: 21
-        max: 22
+      - roll: { min: 21, max: 22 }
         text: Denizen believes you're ally of threat
-      - min: 23
-        max: 24
+      - roll: { min: 23, max: 24 }
         text: Someone's sacrificed or scapegoated
-      - min: 25
-        max: 26
+      - roll: { min: 25, max: 26 }
         text: True nature revealed under pressure
-      - min: 27
-        max: 28
+      - roll: { min: 27, max: 28 }
         text: Unexpected ally of threat is revealed
-      - min: 29
-        max: 30
+      - roll: { min: 29, max: 30 }
         text: Foretaste of impending threat

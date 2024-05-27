@@ -53,13 +53,12 @@ function StaticDenizenRowStub<
 >(min: Min, max: Max, frequency: Frequency) {
 	return Utils.Assign(
 		[
-			StaticRowPartial({ min, max }),
+			StaticRowPartial({ roll: { min, max } }),
 			Type.Object({ frequency: Type.Literal(frequency) })
 		],
 		{ additionalProperties: true }
 	) as TObject<{
-		min: TLiteral<Min>
-		max: TLiteral<Max>
+		roll: { min: TLiteral<Min>; max: TLiteral<Max> }
 		frequency: TLiteral<Frequency>
 	}>
 }

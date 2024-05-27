@@ -4,6 +4,7 @@ import * as Generic from './Generic.js'
 import * as TableRow from './oracles/TableRow.js'
 import { DiceExpression } from './common/Rolls.js'
 import { OracleTableText } from './index.js'
+import { DiceRange } from './common/Range.js'
 
 // export const TruthOptionTableRow = Type.Omit(
 // 	TableRow.OracleTableRowText,
@@ -18,8 +19,7 @@ const RollableStub = Type.Pick(OracleTableText, ['oracle_type', 'dice', 'rows'])
 
 export const TruthOption = Type.Object(
 	{
-		min: Type.Optional(Type.Integer()),
-		max: Type.Optional(Type.Integer()),
+		roll: Type.Ref(DiceRange),
 		summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		description: Type.Ref(Localize.MarkdownString),
 		quest_starter: Type.Ref(Localize.MarkdownString),
