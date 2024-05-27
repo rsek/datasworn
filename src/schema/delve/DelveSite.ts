@@ -11,6 +11,8 @@ import { StaticRowPartial } from '../oracles/TableRow.js'
 import * as Utils from '../Utils.js'
 import * as Generic from '../Generic.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
+import { FlatIntersect } from '../utils/FlatIntersect.js'
+import { DiceRange, StaticDiceRange } from '../common/Range.js'
 
 export const DelveSiteDenizenFrequency = Utils.UnionEnum(
 	['very_common', 'common', 'uncommon', 'rare', 'unforeseen'],
@@ -26,18 +28,13 @@ export const DelveSiteDenizen = Type.Object(
 					"A name for the denizen, if it's different than the `name` property of the NPC."
 			})
 		),
-		min: Type.Integer({
-			description: 'Low end of the dice range for this denizen.'
-		}),
-		max: Type.Integer({
-			description: 'High end of the dice range for this denizen.'
-		}),
 		npc: Type.Optional(
 			Type.Ref(Id.NpcId, {
 				description: 'The ID of the relevant NPC entry, if one is specified.'
 			})
 		),
-		frequency: Type.Ref(DelveSiteDenizenFrequency)
+		frequency: Type.Ref(DelveSiteDenizenFrequency),
+		roll: Type.Ref(DiceRange)
 	},
 	{
 		$id: 'DelveSiteDenizen',
@@ -45,22 +42,20 @@ export const DelveSiteDenizen = Type.Object(
 			'Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.'
 	}
 )
+
 export type DelveSiteDenizen = Static<typeof DelveSiteDenizen>
 function StaticDenizenRowStub<
 	Min extends number,
 	Max extends number,
 	Frequency extends DelveSiteDenizenFrequency
 >(min: Min, max: Max, frequency: Frequency) {
-	return Utils.Assign(
-		[
-			StaticRowPartial({ roll: { min, max } }),
-			Type.Object({ frequency: Type.Literal(frequency) })
-		],
-		{ additionalProperties: true }
-	) as TObject<{
-		roll: { min: TLiteral<Min>; max: TLiteral<Max> }
-		frequency: TLiteral<Frequency>
-	}>
+	return Type.Object(
+		{
+			frequency: Type.Literal(frequency),
+			roll: StaticDiceRange(min, max)
+		},
+		{ additionalProperties: true, title: 'DelveSiteDenizenStatic' }
+	)
 }
 const DelveSiteDenizens = Type.Array(Type.Ref(DelveSiteDenizen))
 

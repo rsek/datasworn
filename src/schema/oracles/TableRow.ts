@@ -21,7 +21,8 @@ import {
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
 import { Tags } from '../Rules.js'
-import { DiceRange } from '../common/Range.js'
+import { DiceRange, StaticDiceRange } from '../common/Range.js'
+import type { SetRequired } from 'type-fest'
 
 const TableRowBase = Type.Object({
 	text: Type.Ref(Localize.MarkdownString, {
@@ -75,26 +76,8 @@ type TableRow<
 	Props extends { roll: Roll } = { roll: Roll }
 > = Props & Static<typeof TableRowBase>
 
-export function StaticRowPartial<
-	T extends Partial<Utils.CanBeLiteral<TableRow> & Pick<TableRow, 'roll'>>
->(
-	literals: T,
-	defaults: Partial<
-		TableRow & {
-			row: {
-				min: number
-				max: number
-			}
-		}
-	> = {}
-) {
-	return WithDefaults(
-		Utils.ObjectLiteral({ roll: literals }),
-		defaults as any,
-		{
-			additionalProperties: true
-		}
-	)
+export function StaticRowPartial(min: number, max: number) {
+	return Type.Object({ roll: StaticDiceRange(min, max) })
 }
 // export const OracleTableRowBasic = Generic.IdentifiedNode(
 // 	Type.Ref(Id.OracleTableRowId),

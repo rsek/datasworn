@@ -35,7 +35,7 @@ export const DelveSiteDomain = setSourceDataSchema(
 			type: Type.Literal('delve_site_domain'),
 			summary: Type.Ref(Localize.MarkdownString, { deprecated: true }),
 			description: Type.Optional(Type.Ref(Localize.MarkdownString)),
-			icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
+			// icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 			name_oracle: Type.Optional(
 				Type.Ref(Id.OracleRollableId, {
 					description:
@@ -46,18 +46,19 @@ export const DelveSiteDomain = setSourceDataSchema(
 				[
 					DelveSiteDomainFeatures,
 					Type.Tuple([
-						StaticRowPartial({ roll: { min: 21, max: 43 } }),
-						StaticRowPartial({ roll: { min: 44, max: 56 } }),
-						StaticRowPartial({ roll: { min: 57, max: 64 } }),
-						StaticRowPartial({ roll: { min: 65, max: 68 } }),
-						StaticRowPartial({ roll: { min: 69, max: 72 } }),
-						StaticRowPartial({ roll: { min: 73, max: 76 } }),
-						StaticRowPartial({ roll: { min: 77, max: 80 } }),
-						StaticRowPartial({ roll: { min: 81, max: 84 } }),
-						StaticRowPartial({ roll: { min: 85, max: 88 } }),
+						StaticRowPartial(21, 43),
+						StaticRowPartial(44, 56),
+						StaticRowPartial(57, 64),
+						StaticRowPartial(65, 68),
+						StaticRowPartial(69, 72),
+						StaticRowPartial(73, 76),
+						StaticRowPartial(77, 80),
+						StaticRowPartial(81, 84),
+						StaticRowPartial(85, 88),
 						StaticRowPartial(
 							// FIXME: disabled for now because the defaults make TypeCompiler upset
-							{ roll: { min: 89, max: 98 } }
+							89,
+							98
 
 							// {
 							// 	result: 'Something unusual or unexpected',
@@ -70,7 +71,8 @@ export const DelveSiteDomain = setSourceDataSchema(
 							// }
 						),
 						StaticRowPartial(
-							{ roll: { min: 99, max: 99 } }
+							99,
+							99
 							// {
 							// result: 'You transition into a new theme'
 							// suggestions: {
@@ -79,7 +81,8 @@ export const DelveSiteDomain = setSourceDataSchema(
 							// }
 						),
 						StaticRowPartial(
-							{ roll: { min: 100, max: 100 } }
+							100,
+							100
 							// {
 							// 	result: 'You transition into a new domain',
 							// 	suggestions: {
@@ -99,11 +102,11 @@ export const DelveSiteDomain = setSourceDataSchema(
 				[
 					DelveSiteDomainDangers,
 					Type.Tuple([
-						StaticRowPartial({ roll: { min: 31, max: 33 } }),
-						StaticRowPartial({ roll: { min: 34, max: 36 } }),
-						StaticRowPartial({ roll: { min: 37, max: 39 } }),
-						StaticRowPartial({ roll: { min: 40, max: 42 } }),
-						StaticRowPartial({ roll: { min: 43, max: 45 } })
+						StaticRowPartial(31, 33),
+						StaticRowPartial(34, 36),
+						StaticRowPartial(37, 39),
+						StaticRowPartial(40, 42),
+						StaticRowPartial(43, 45)
 					])
 				],
 				{
@@ -120,8 +123,6 @@ export const DelveSiteDomain = setSourceDataSchema(
 	),
 	(schema) => ({ ...schema, additionalProperties: true })
 )
-// console.log(DelveSiteDomain)
-// console.log(DelveSiteDomainPartial)
-// console.log(DelveSiteDomain)
+
 export type DelveSiteDomain = Static<typeof DelveSiteDomain>
 export type TDelveSiteDomain = typeof DelveSiteDomain
