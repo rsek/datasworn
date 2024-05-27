@@ -33,8 +33,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/caves/threshold_cursed
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         _source:
           <<: *Source
         rows:
@@ -245,8 +244,7 @@ oracles:
             name: Sea Cave Features
             oracle_type: table_text
             type: oracle_rollable
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             tags:
               sundered_isles:
                 cursed_version: sundered_isles/oracles/caves/sea_cave/features_cursed
@@ -565,8 +563,7 @@ oracles:
             name: Sea Cave Heart
             oracle_type: table_text
             type: oracle_rollable
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:
@@ -602,8 +599,7 @@ oracles:
             name: Inland Cave Features
             oracle_type: table_text
             type: oracle_rollable
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             tags:
               sundered_isles:
                 cursed_version: sundered_isles/oracles/caves/inland_cave/features_cursed
@@ -922,8 +918,7 @@ oracles:
             name: Inland Cave Heart
             oracle_type: table_text
             type: oracle_rollable
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:

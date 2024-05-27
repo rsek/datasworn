@@ -514,8 +514,7 @@ oracles:
           sundered_isles:
             cursed_version: sundered_isles/oracles/characters/details_cursed
         summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         _source:
           <<: *Source
         rows:

@@ -266,8 +266,7 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             summary: Use this table to generate a history of notable events that shaped a society. Create a timeline of two or three milestones, envisioning how they led the society to its current place among the isles. The most recent event can help inspire a current situation that creates troubles or opportunities—or both—for these people.
-            recommended_rolls:
-              roll: { min: 2, max: 4 }
+            recommended_rolls: { min: 2, max: 4 }
             _source:
               <<: *Source
             rows:
@@ -400,8 +399,7 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             summary: These touchstones represent common aspects of a society—not universal truths. Individual people and communities can contradict these assumptions with their own touchstones. If you encounter a far-flung community that is part of a known society, you can check this table again for unique characteristics.
-            recommended_rolls:
-              roll: { min: 1, max: 3 }
+            recommended_rolls: { min: 1, max: 3 }
             _source:
               <<: *Source
             rows:
@@ -593,8 +591,7 @@ oracles:
             name: Organization Methods
             oracle_type: table_text
             type: oracle_rollable
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:
@@ -662,8 +659,7 @@ oracles:
             name: Organization Secrets
             oracle_type: table_text
             type: oracle_rollable
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:
@@ -750,8 +746,7 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             summary: Empires deploy any number of strategies to expand their power and influence. Use this table to reveal the most visible methods or a current focus for an empire.
-            recommended_rolls:
-              roll: { min: 2, max: 3 }
+            recommended_rolls: { min: 2, max: 3 }
             _source:
               <<: *Source
             rows:
@@ -815,8 +810,7 @@ oracles:
             name: Imperial vulnerabilities
             oracle_type: table_text
             type: oracle_rollable
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:
@@ -916,8 +910,7 @@ oracles:
             type: oracle_rollable
             _source:
               <<: *Source
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             summary: Use this table to reveal uncanny aspects of a faction or its members.
             rows:
               - roll: { min: 1, max: 3 }

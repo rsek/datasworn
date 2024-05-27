@@ -977,8 +977,7 @@ oracles:
           page: 330
         # usage:
         #   initial: true
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         rows:
           - roll: { min: 1, max: 3 }
             text: Accented
@@ -1437,8 +1436,7 @@ oracles:
         summary: |-
           As you interact with a person to gain a deeper understanding of their nature and personality, roll on the this table to reveal new characteristics. You may ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         # usage:
-        recommended_rolls:
-          roll: { min: 1, max: 3 }
+        recommended_rolls: { min: 1, max: 3 }
         rows:
           - roll: { min: 1, max: 1 }
             text: Addicted

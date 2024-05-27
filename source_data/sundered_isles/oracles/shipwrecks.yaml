@@ -45,8 +45,7 @@ oracles:
         name: Shipwreck First Look
         oracle_type: table_text
         type: oracle_rollable
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         _source:
           <<: *Source
         rows:
@@ -193,8 +192,7 @@ oracles:
         _source:
           <<: *Source
         summary: Use this table to reveal details of a wreck. Roll once or twice when searching a small ship, and up to three times when surveying a large vessel. These details are revealed in the context of another move—such as Explore a Waypoint or Gather Information—but might prompt additional actions or investigations.
-        recommended_rolls:
-          roll: { min: 1, max: 3 }
+        recommended_rolls: { min: 1, max: 3 }
         rows:
           - roll: { min: 1, max: 3 }
             text: Abandoned pet or mascot

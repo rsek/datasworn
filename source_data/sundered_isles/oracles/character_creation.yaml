@@ -24,8 +24,7 @@ oracles:
             oracle_type: table_text
             type: oracle_rollable
             summary: What is your backstory? What events or compelling need put you on a path of adventure? If you’re not sure, roll or chose on this table for inspiration.
-            recommended_rolls:
-              roll: { min: 1, max: 2 }
+            recommended_rolls: { min: 1, max: 2 }
             _source:
               <<: *Source
             rows:

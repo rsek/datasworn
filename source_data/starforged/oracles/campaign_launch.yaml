@@ -286,8 +286,7 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [description]
         # usage:
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         rows:
           - roll: { min: 1, max: 5 }
             text: 'Engine room is scorched with old burn marks'

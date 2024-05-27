@@ -38,8 +38,7 @@ oracles:
         oracle_type: table_text2
         type: oracle_rollable
         summary: Use this table to reveal the ambiance and architecture of the settlement. Smaller settlements likely have a single style, while larger settlements might have multiple styles across sections or districts.
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         column_labels:
           roll: Roll
           text: Result
@@ -94,8 +93,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/settlements/first_look_cursed
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         rows:
           - roll: { min: 1, max: 2 }
             text: Adorned with colorful banners
@@ -303,8 +301,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version: sundered_isles/oracles/settlements/details_cursed
-        recommended_rolls:
-          roll: { min: 1, max: 2 }
+        recommended_rolls: { min: 1, max: 2 }
         rows:
           - roll: { min: 1, max: 1 }
             text: A valuable nearby resource is uncovered, and the race is on to claim or control it
