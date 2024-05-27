@@ -8,7 +8,7 @@ namespace Datasworn
     public class TagRuleMoveCategory : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "MoveCategory"; }
+        public string ValueType_ { get => "move_category"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }

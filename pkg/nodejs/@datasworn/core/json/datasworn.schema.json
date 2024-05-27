@@ -1414,21 +1414,21 @@
 					"enum": [
 						"boolean",
 						"integer",
-						"OracleRollable",
-						"Move",
-						"Asset",
-						"AtlasEntry",
-						"Npc",
-						"OracleCollection",
-						"MoveCategory",
-						"AssetCollection",
-						"AtlasCollection",
-						"NpcCollection",
-						"DelveSite",
-						"DelveSiteTheme",
-						"DelveSiteDomain",
-						"Truth",
-						"Rarity",
+						"oracle_rollable",
+						"move",
+						"asset",
+						"atlas_entry",
+						"npc",
+						"oracle_collection",
+						"move_category",
+						"asset_collection",
+						"atlas_collection",
+						"npc_collection",
+						"delve_site",
+						"delve_site_theme",
+						"delve_site_domain",
+						"truth",
+						"rarity",
 						"enum"
 					]
 				}
@@ -1525,7 +1525,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "OracleRollable",
+								"const": "oracle_rollable",
 								"type": "string"
 							}
 						}
@@ -1557,7 +1557,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "OracleRollable",
+								"const": "oracle_rollable",
 								"type": "string"
 							}
 						},
@@ -1569,7 +1569,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "Move",
+								"const": "move",
 								"type": "string"
 							}
 						}
@@ -1601,7 +1601,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "Move",
+								"const": "move",
 								"type": "string"
 							}
 						},
@@ -1613,7 +1613,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "Asset",
+								"const": "asset",
 								"type": "string"
 							}
 						}
@@ -1645,7 +1645,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "Asset",
+								"const": "asset",
 								"type": "string"
 							}
 						},
@@ -1657,7 +1657,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "AtlasEntry",
+								"const": "atlas_entry",
 								"type": "string"
 							}
 						}
@@ -1689,7 +1689,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "AtlasEntry",
+								"const": "atlas_entry",
 								"type": "string"
 							}
 						},
@@ -1701,7 +1701,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "Npc",
+								"const": "npc",
 								"type": "string"
 							}
 						}
@@ -1733,7 +1733,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "Npc",
+								"const": "npc",
 								"type": "string"
 							}
 						},
@@ -1745,7 +1745,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "OracleCollection",
+								"const": "oracle_collection",
 								"type": "string"
 							}
 						}
@@ -1777,7 +1777,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "OracleCollection",
+								"const": "oracle_collection",
 								"type": "string"
 							}
 						},
@@ -1789,7 +1789,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "MoveCategory",
+								"const": "move_category",
 								"type": "string"
 							}
 						}
@@ -1821,7 +1821,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "MoveCategory",
+								"const": "move_category",
 								"type": "string"
 							}
 						},
@@ -1833,7 +1833,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "AssetCollection",
+								"const": "asset_collection",
 								"type": "string"
 							}
 						}
@@ -1865,7 +1865,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "AssetCollection",
+								"const": "asset_collection",
 								"type": "string"
 							}
 						},
@@ -1877,7 +1877,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "AtlasCollection",
+								"const": "atlas_collection",
 								"type": "string"
 							}
 						}
@@ -1909,7 +1909,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "AtlasCollection",
+								"const": "atlas_collection",
 								"type": "string"
 							}
 						},
@@ -1921,7 +1921,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "NpcCollection",
+								"const": "npc_collection",
 								"type": "string"
 							}
 						}
@@ -1953,7 +1953,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "NpcCollection",
+								"const": "npc_collection",
 								"type": "string"
 							}
 						},
@@ -1965,7 +1965,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "DelveSite",
+								"const": "delve_site",
 								"type": "string"
 							}
 						}
@@ -1997,7 +1997,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "DelveSite",
+								"const": "delve_site",
 								"type": "string"
 							}
 						},
@@ -2009,7 +2009,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "DelveSiteTheme",
+								"const": "delve_site_theme",
 								"type": "string"
 							}
 						}
@@ -2041,7 +2041,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "DelveSiteTheme",
+								"const": "delve_site_theme",
 								"type": "string"
 							}
 						},
@@ -2053,7 +2053,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "DelveSiteDomain",
+								"const": "delve_site_domain",
 								"type": "string"
 							}
 						}
@@ -2085,7 +2085,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "DelveSiteDomain",
+								"const": "delve_site_domain",
 								"type": "string"
 							}
 						},
@@ -2097,7 +2097,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "Truth",
+								"const": "truth",
 								"type": "string"
 							}
 						}
@@ -2129,7 +2129,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "Truth",
+								"const": "truth",
 								"type": "string"
 							}
 						},
@@ -2141,7 +2141,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "Rarity",
+								"const": "rarity",
 								"type": "string"
 							}
 						}
@@ -2173,7 +2173,7 @@
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "Rarity",
+								"const": "rarity",
 								"type": "string"
 							}
 						},

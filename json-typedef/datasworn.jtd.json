@@ -1134,7 +1134,7 @@
 						}
 					}
 				},
-				"OracleRollable": {
+				"oracle_rollable": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1152,7 +1152,7 @@
 						}
 					}
 				},
-				"Move": {
+				"move": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1170,7 +1170,7 @@
 						}
 					}
 				},
-				"Asset": {
+				"asset": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1188,7 +1188,7 @@
 						}
 					}
 				},
-				"AtlasEntry": {
+				"atlas_entry": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1206,7 +1206,7 @@
 						}
 					}
 				},
-				"Npc": {
+				"npc": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1224,7 +1224,7 @@
 						}
 					}
 				},
-				"OracleCollection": {
+				"oracle_collection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1242,7 +1242,7 @@
 						}
 					}
 				},
-				"MoveCategory": {
+				"move_category": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1260,7 +1260,7 @@
 						}
 					}
 				},
-				"AssetCollection": {
+				"asset_collection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1278,7 +1278,7 @@
 						}
 					}
 				},
-				"AtlasCollection": {
+				"atlas_collection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1296,7 +1296,7 @@
 						}
 					}
 				},
-				"NpcCollection": {
+				"npc_collection": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1314,7 +1314,7 @@
 						}
 					}
 				},
-				"DelveSite": {
+				"delve_site": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1332,7 +1332,7 @@
 						}
 					}
 				},
-				"DelveSiteTheme": {
+				"delve_site_theme": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1350,7 +1350,7 @@
 						}
 					}
 				},
-				"DelveSiteDomain": {
+				"delve_site_domain": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1368,7 +1368,7 @@
 						}
 					}
 				},
-				"Truth": {
+				"truth": {
 					"properties": {
 						"applies_to": {
 							"elements": {
@@ -1386,7 +1386,7 @@
 						}
 					}
 				},
-				"Rarity": {
+				"rarity": {
 					"properties": {
 						"applies_to": {
 							"elements": {

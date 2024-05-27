@@ -80,7 +80,7 @@ export interface TDiscriminatedUnion<
 	type: 'object'
 	static: Static<TUnion<ValueIn<M>[]>>
 
-	properties: Record<D, TUnionEnum<(keyof this['static'] & string)[]>>
+	properties: Record<D, TUnionEnum<(Static<M[keyof M]>[D] & string)[]>>
 
 	// without this, schemata won't validate if they add any new properties (which they almost certainly will)
 	additionalProperties: true

@@ -1,9 +1,10 @@
-import { type Static, Type } from '@sinclair/typebox'
+import { type Static, Type, CloneType } from '@sinclair/typebox'
 import {
 	PKG_SCOPE_COMMUNITY,
 	PKG_SCOPE_OFFICIAL
 } from '../../../scripts/const.js'
 import { UnionEnumFromRecord } from '../../utils/UnionEnumFromRecord.js'
+import { RulesPackage } from '../../RulesPackages.js'
 
 export const DataPackageConfig = Type.Object({
 	id: Type.String({
@@ -11,10 +12,7 @@ export const DataPackageConfig = Type.Object({
 			'The namespace ID for this data set. This is the first path element of all its object IDs.'
 	}),
 	description: Type.Optional(Type.String()),
-	type: UnionEnumFromRecord({
-		standalone: 'A standalone ruleset.',
-		expansion: 'An expansion that depends on other rulesets.'
-	}),
+	type: CloneType(RulesPackage.properties.type),
 	pkg: Type.Object({
 		name: Type.String({
 			description: 'The package ID, not including its scope (see `scope`).'

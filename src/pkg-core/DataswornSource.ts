@@ -1049,7 +1049,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'OracleRollable'
+			value_type: 'oracle_rollable'
 	  }
 	| {
 			/**
@@ -1063,7 +1063,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'Move'
+			value_type: 'move'
 	  }
 	| {
 			/**
@@ -1077,7 +1077,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'Asset'
+			value_type: 'asset'
 	  }
 	| {
 			/**
@@ -1091,7 +1091,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'AtlasEntry'
+			value_type: 'atlas_entry'
 	  }
 	| {
 			/**
@@ -1105,7 +1105,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'Npc'
+			value_type: 'npc'
 	  }
 	| {
 			/**
@@ -1119,7 +1119,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'OracleCollection'
+			value_type: 'oracle_collection'
 	  }
 	| {
 			/**
@@ -1133,7 +1133,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'MoveCategory'
+			value_type: 'move_category'
 	  }
 	| {
 			/**
@@ -1147,7 +1147,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'AssetCollection'
+			value_type: 'asset_collection'
 	  }
 	| {
 			/**
@@ -1161,7 +1161,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'AtlasCollection'
+			value_type: 'atlas_collection'
 	  }
 	| {
 			/**
@@ -1175,7 +1175,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'NpcCollection'
+			value_type: 'npc_collection'
 	  }
 	| {
 			/**
@@ -1189,7 +1189,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'DelveSite'
+			value_type: 'delve_site'
 	  }
 	| {
 			/**
@@ -1203,7 +1203,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'DelveSiteTheme'
+			value_type: 'delve_site_theme'
 	  }
 	| {
 			/**
@@ -1217,7 +1217,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'DelveSiteDomain'
+			value_type: 'delve_site_domain'
 	  }
 	| {
 			/**
@@ -1231,7 +1231,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'Truth'
+			value_type: 'truth'
 	  }
 	| {
 			/**
@@ -1245,7 +1245,7 @@ export type TagRule =
 			 * @default false
 			 */
 			wildcard?: boolean
-			value_type: 'Rarity'
+			value_type: 'rarity'
 	  }
 	| {
 			/**

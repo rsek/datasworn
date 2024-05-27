@@ -20,42 +20,42 @@ namespace Datasworn
 
             switch (tagValue)
             {
-                case "Asset":
+                case "asset":
                     return JsonSerializer.Deserialize<TagRuleAsset>(ref readerCopy, options);
-                case "AssetCollection":
+                case "asset_collection":
                     return JsonSerializer.Deserialize<TagRuleAssetCollection>(ref readerCopy, options);
-                case "AtlasCollection":
+                case "atlas_collection":
                     return JsonSerializer.Deserialize<TagRuleAtlasCollection>(ref readerCopy, options);
-                case "AtlasEntry":
+                case "atlas_entry":
                     return JsonSerializer.Deserialize<TagRuleAtlasEntry>(ref readerCopy, options);
-                case "DelveSite":
-                    return JsonSerializer.Deserialize<TagRuleDelveSite>(ref readerCopy, options);
-                case "DelveSiteDomain":
-                    return JsonSerializer.Deserialize<TagRuleDelveSiteDomain>(ref readerCopy, options);
-                case "DelveSiteTheme":
-                    return JsonSerializer.Deserialize<TagRuleDelveSiteTheme>(ref readerCopy, options);
-                case "Move":
-                    return JsonSerializer.Deserialize<TagRuleMove>(ref readerCopy, options);
-                case "MoveCategory":
-                    return JsonSerializer.Deserialize<TagRuleMoveCategory>(ref readerCopy, options);
-                case "Npc":
-                    return JsonSerializer.Deserialize<TagRuleNpc>(ref readerCopy, options);
-                case "NpcCollection":
-                    return JsonSerializer.Deserialize<TagRuleNpcCollection>(ref readerCopy, options);
-                case "OracleCollection":
-                    return JsonSerializer.Deserialize<TagRuleOracleCollection>(ref readerCopy, options);
-                case "OracleRollable":
-                    return JsonSerializer.Deserialize<TagRuleOracleRollable>(ref readerCopy, options);
-                case "Rarity":
-                    return JsonSerializer.Deserialize<TagRuleRarity>(ref readerCopy, options);
-                case "Truth":
-                    return JsonSerializer.Deserialize<TagRuleTruth>(ref readerCopy, options);
                 case "boolean":
                     return JsonSerializer.Deserialize<TagRuleBoolean>(ref readerCopy, options);
+                case "delve_site":
+                    return JsonSerializer.Deserialize<TagRuleDelveSite>(ref readerCopy, options);
+                case "delve_site_domain":
+                    return JsonSerializer.Deserialize<TagRuleDelveSiteDomain>(ref readerCopy, options);
+                case "delve_site_theme":
+                    return JsonSerializer.Deserialize<TagRuleDelveSiteTheme>(ref readerCopy, options);
                 case "enum":
                     return JsonSerializer.Deserialize<TagRuleEnum>(ref readerCopy, options);
                 case "integer":
                     return JsonSerializer.Deserialize<TagRuleInteger>(ref readerCopy, options);
+                case "move":
+                    return JsonSerializer.Deserialize<TagRuleMove>(ref readerCopy, options);
+                case "move_category":
+                    return JsonSerializer.Deserialize<TagRuleMoveCategory>(ref readerCopy, options);
+                case "npc":
+                    return JsonSerializer.Deserialize<TagRuleNpc>(ref readerCopy, options);
+                case "npc_collection":
+                    return JsonSerializer.Deserialize<TagRuleNpcCollection>(ref readerCopy, options);
+                case "oracle_collection":
+                    return JsonSerializer.Deserialize<TagRuleOracleCollection>(ref readerCopy, options);
+                case "oracle_rollable":
+                    return JsonSerializer.Deserialize<TagRuleOracleRollable>(ref readerCopy, options);
+                case "rarity":
+                    return JsonSerializer.Deserialize<TagRuleRarity>(ref readerCopy, options);
+                case "truth":
+                    return JsonSerializer.Deserialize<TagRuleTruth>(ref readerCopy, options);
                 default:
                     throw new ArgumentException(String.Format("Bad ValueType_ value: {0}", tagValue));
             }

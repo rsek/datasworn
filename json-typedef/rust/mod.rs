@@ -4576,59 +4576,59 @@ pub type Tag = Option<Value>;
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "value_type")]
 pub enum TagRule {
-    #[serde(rename = "Asset")]
+    #[serde(rename = "asset")]
     Asset(TagRuleAsset),
 
-    #[serde(rename = "AssetCollection")]
+    #[serde(rename = "asset_collection")]
     AssetCollection(TagRuleAssetCollection),
 
-    #[serde(rename = "AtlasCollection")]
+    #[serde(rename = "atlas_collection")]
     AtlasCollection(TagRuleAtlasCollection),
 
-    #[serde(rename = "AtlasEntry")]
+    #[serde(rename = "atlas_entry")]
     AtlasEntry(TagRuleAtlasEntry),
-
-    #[serde(rename = "DelveSite")]
-    DelveSite(TagRuleDelveSite),
-
-    #[serde(rename = "DelveSiteDomain")]
-    DelveSiteDomain(TagRuleDelveSiteDomain),
-
-    #[serde(rename = "DelveSiteTheme")]
-    DelveSiteTheme(TagRuleDelveSiteTheme),
-
-    #[serde(rename = "Move")]
-    Move(TagRuleMove),
-
-    #[serde(rename = "MoveCategory")]
-    MoveCategory(TagRuleMoveCategory),
-
-    #[serde(rename = "Npc")]
-    Npc(TagRuleNpc),
-
-    #[serde(rename = "NpcCollection")]
-    NpcCollection(TagRuleNpcCollection),
-
-    #[serde(rename = "OracleCollection")]
-    OracleCollection(TagRuleOracleCollection),
-
-    #[serde(rename = "OracleRollable")]
-    OracleRollable(TagRuleOracleRollable),
-
-    #[serde(rename = "Rarity")]
-    Rarity(TagRuleRarity),
-
-    #[serde(rename = "Truth")]
-    Truth(TagRuleTruth),
 
     #[serde(rename = "boolean")]
     Boolean(TagRuleBoolean),
+
+    #[serde(rename = "delve_site")]
+    DelveSite(TagRuleDelveSite),
+
+    #[serde(rename = "delve_site_domain")]
+    DelveSiteDomain(TagRuleDelveSiteDomain),
+
+    #[serde(rename = "delve_site_theme")]
+    DelveSiteTheme(TagRuleDelveSiteTheme),
 
     #[serde(rename = "enum")]
     Enum(TagRuleEnum),
 
     #[serde(rename = "integer")]
     Integer(TagRuleInteger),
+
+    #[serde(rename = "move")]
+    Move(TagRuleMove),
+
+    #[serde(rename = "move_category")]
+    MoveCategory(TagRuleMoveCategory),
+
+    #[serde(rename = "npc")]
+    Npc(TagRuleNpc),
+
+    #[serde(rename = "npc_collection")]
+    NpcCollection(TagRuleNpcCollection),
+
+    #[serde(rename = "oracle_collection")]
+    OracleCollection(TagRuleOracleCollection),
+
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable(TagRuleOracleRollable),
+
+    #[serde(rename = "rarity")]
+    Rarity(TagRuleRarity),
+
+    #[serde(rename = "truth")]
+    Truth(TagRuleTruth),
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4688,6 +4688,18 @@ pub struct TagRuleAtlasEntry {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct TagRuleBoolean {
+    #[serde(rename = "applies_to")]
+    pub appliesTo: Vec<ObjectType>,
+
+    #[serde(rename = "array")]
+    pub array: bool,
+
+    #[serde(rename = "description")]
+    pub description: MarkdownString,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct TagRuleDelveSite {
     #[serde(rename = "applies_to")]
     pub appliesTo: Vec<ObjectType>,
@@ -4727,6 +4739,33 @@ pub struct TagRuleDelveSiteTheme {
     /// field accepts a single non-wildcard ID.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct TagRuleEnum {
+    #[serde(rename = "applies_to")]
+    pub appliesTo: Vec<ObjectType>,
+
+    #[serde(rename = "array")]
+    pub array: bool,
+
+    #[serde(rename = "description")]
+    pub description: MarkdownString,
+
+    #[serde(rename = "enum")]
+    pub enum_: Vec<DictKey>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct TagRuleInteger {
+    #[serde(rename = "applies_to")]
+    pub appliesTo: Vec<ObjectType>,
+
+    #[serde(rename = "array")]
+    pub array: bool,
+
+    #[serde(rename = "description")]
+    pub description: MarkdownString,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4839,45 +4878,6 @@ pub struct TagRuleTruth {
     /// field accepts a single non-wildcard ID.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct TagRuleBoolean {
-    #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
-
-    #[serde(rename = "array")]
-    pub array: bool,
-
-    #[serde(rename = "description")]
-    pub description: MarkdownString,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct TagRuleEnum {
-    #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
-
-    #[serde(rename = "array")]
-    pub array: bool,
-
-    #[serde(rename = "description")]
-    pub description: MarkdownString,
-
-    #[serde(rename = "enum")]
-    pub enum_: Vec<DictKey>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct TagRuleInteger {
-    #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
-
-    #[serde(rename = "array")]
-    pub array: bool,
-
-    #[serde(rename = "description")]
-    pub description: MarkdownString,
 }
 
 /// A dictionary of tags, keyed by the RulesetID that the tags are from.

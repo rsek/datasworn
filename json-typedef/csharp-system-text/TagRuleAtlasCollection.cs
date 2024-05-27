@@ -8,7 +8,7 @@ namespace Datasworn
     public class TagRuleAtlasCollection : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "AtlasCollection"; }
+        public string ValueType_ { get => "atlas_collection"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }

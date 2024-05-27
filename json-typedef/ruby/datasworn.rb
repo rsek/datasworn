@@ -6291,24 +6291,24 @@ module Datasworn
 
     def self.from_json_data(data)
       {
-        "Asset" => TagRuleAsset,
-        "AssetCollection" => TagRuleAssetCollection,
-        "AtlasCollection" => TagRuleAtlasCollection,
-        "AtlasEntry" => TagRuleAtlasEntry,
-        "DelveSite" => TagRuleDelveSite,
-        "DelveSiteDomain" => TagRuleDelveSiteDomain,
-        "DelveSiteTheme" => TagRuleDelveSiteTheme,
-        "Move" => TagRuleMove,
-        "MoveCategory" => TagRuleMoveCategory,
-        "Npc" => TagRuleNpc,
-        "NpcCollection" => TagRuleNpcCollection,
-        "OracleCollection" => TagRuleOracleCollection,
-        "OracleRollable" => TagRuleOracleRollable,
-        "Rarity" => TagRuleRarity,
-        "Truth" => TagRuleTruth,
+        "asset" => TagRuleAsset,
+        "asset_collection" => TagRuleAssetCollection,
+        "atlas_collection" => TagRuleAtlasCollection,
+        "atlas_entry" => TagRuleAtlasEntry,
         "boolean" => TagRuleBoolean,
+        "delve_site" => TagRuleDelveSite,
+        "delve_site_domain" => TagRuleDelveSiteDomain,
+        "delve_site_theme" => TagRuleDelveSiteTheme,
         "enum" => TagRuleEnum,
         "integer" => TagRuleInteger,
+        "move" => TagRuleMove,
+        "move_category" => TagRuleMoveCategory,
+        "npc" => TagRuleNpc,
+        "npc_collection" => TagRuleNpcCollection,
+        "oracle_collection" => TagRuleOracleCollection,
+        "oracle_rollable" => TagRuleOracleRollable,
+        "rarity" => TagRuleRarity,
+        "truth" => TagRuleTruth,
       }[data["value_type"]].from_json_data(data)
     end
   end
@@ -6320,7 +6320,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = TagRuleAsset.new
-      out.value_type = "Asset"
+      out.value_type = "asset"
       out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
@@ -6328,7 +6328,7 @@ module Datasworn
     end
 
     def to_json_data
-      data = { "value_type" => "Asset" }
+      data = { "value_type" => "asset" }
       data["applies_to"] = Datasworn::to_json_data(applies_to)
       data["description"] = Datasworn::to_json_data(description)
       data["wildcard"] = Datasworn::to_json_data(wildcard)
@@ -6343,7 +6343,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = TagRuleAssetCollection.new
-      out.value_type = "AssetCollection"
+      out.value_type = "asset_collection"
       out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
@@ -6351,7 +6351,7 @@ module Datasworn
     end
 
     def to_json_data
-      data = { "value_type" => "AssetCollection" }
+      data = { "value_type" => "asset_collection" }
       data["applies_to"] = Datasworn::to_json_data(applies_to)
       data["description"] = Datasworn::to_json_data(description)
       data["wildcard"] = Datasworn::to_json_data(wildcard)
@@ -6366,7 +6366,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = TagRuleAtlasCollection.new
-      out.value_type = "AtlasCollection"
+      out.value_type = "atlas_collection"
       out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
@@ -6374,7 +6374,7 @@ module Datasworn
     end
 
     def to_json_data
-      data = { "value_type" => "AtlasCollection" }
+      data = { "value_type" => "atlas_collection" }
       data["applies_to"] = Datasworn::to_json_data(applies_to)
       data["description"] = Datasworn::to_json_data(description)
       data["wildcard"] = Datasworn::to_json_data(wildcard)
@@ -6389,7 +6389,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = TagRuleAtlasEntry.new
-      out.value_type = "AtlasEntry"
+      out.value_type = "atlas_entry"
       out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
@@ -6397,260 +6397,7 @@ module Datasworn
     end
 
     def to_json_data
-      data = { "value_type" => "AtlasEntry" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleDelveSite < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleDelveSite.new
-      out.value_type = "DelveSite"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "DelveSite" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleDelveSiteDomain < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleDelveSiteDomain.new
-      out.value_type = "DelveSiteDomain"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "DelveSiteDomain" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleDelveSiteTheme < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleDelveSiteTheme.new
-      out.value_type = "DelveSiteTheme"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "DelveSiteTheme" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleMove < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleMove.new
-      out.value_type = "Move"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "Move" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleMoveCategory < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleMoveCategory.new
-      out.value_type = "MoveCategory"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "MoveCategory" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleNpc < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleNpc.new
-      out.value_type = "Npc"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "Npc" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleNpcCollection < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleNpcCollection.new
-      out.value_type = "NpcCollection"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "NpcCollection" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleOracleCollection < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleOracleCollection.new
-      out.value_type = "OracleCollection"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "OracleCollection" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleOracleRollable < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleOracleRollable.new
-      out.value_type = "OracleRollable"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "OracleRollable" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleRarity < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleRarity.new
-      out.value_type = "Rarity"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "Rarity" }
-      data["applies_to"] = Datasworn::to_json_data(applies_to)
-      data["description"] = Datasworn::to_json_data(description)
-      data["wildcard"] = Datasworn::to_json_data(wildcard)
-      data
-    end
-  end
-
-  class TagRuleTruth < TagRule
-    attr_accessor :applies_to
-    attr_accessor :description
-    attr_accessor :wildcard
-
-    def self.from_json_data(data)
-      out = TagRuleTruth.new
-      out.value_type = "Truth"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
-      out
-    end
-
-    def to_json_data
-      data = { "value_type" => "Truth" }
+      data = { "value_type" => "atlas_entry" }
       data["applies_to"] = Datasworn::to_json_data(applies_to)
       data["description"] = Datasworn::to_json_data(description)
       data["wildcard"] = Datasworn::to_json_data(wildcard)
@@ -6677,6 +6424,75 @@ module Datasworn
       data["applies_to"] = Datasworn::to_json_data(applies_to)
       data["array"] = Datasworn::to_json_data(array)
       data["description"] = Datasworn::to_json_data(description)
+      data
+    end
+  end
+
+  class TagRuleDelveSite < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleDelveSite.new
+      out.value_type = "delve_site"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "delve_site" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleDelveSiteDomain < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleDelveSiteDomain.new
+      out.value_type = "delve_site_domain"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "delve_site_domain" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleDelveSiteTheme < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleDelveSiteTheme.new
+      out.value_type = "delve_site_theme"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "delve_site_theme" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
       data
     end
   end
@@ -6726,6 +6542,190 @@ module Datasworn
       data["applies_to"] = Datasworn::to_json_data(applies_to)
       data["array"] = Datasworn::to_json_data(array)
       data["description"] = Datasworn::to_json_data(description)
+      data
+    end
+  end
+
+  class TagRuleMove < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleMove.new
+      out.value_type = "move"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "move" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleMoveCategory < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleMoveCategory.new
+      out.value_type = "move_category"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "move_category" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleNpc < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleNpc.new
+      out.value_type = "npc"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "npc" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleNpcCollection < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleNpcCollection.new
+      out.value_type = "npc_collection"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "npc_collection" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleOracleCollection < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleOracleCollection.new
+      out.value_type = "oracle_collection"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "oracle_collection" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleOracleRollable < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleOracleRollable.new
+      out.value_type = "oracle_rollable"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "oracle_rollable" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleRarity < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleRarity.new
+      out.value_type = "rarity"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "rarity" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
+      data
+    end
+  end
+
+  class TagRuleTruth < TagRule
+    attr_accessor :applies_to
+    attr_accessor :description
+    attr_accessor :wildcard
+
+    def self.from_json_data(data)
+      out = TagRuleTruth.new
+      out.value_type = "truth"
+      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
+      out
+    end
+
+    def to_json_data
+      data = { "value_type" => "truth" }
+      data["applies_to"] = Datasworn::to_json_data(applies_to)
+      data["description"] = Datasworn::to_json_data(description)
+      data["wildcard"] = Datasworn::to_json_data(wildcard)
       data
     end
   end

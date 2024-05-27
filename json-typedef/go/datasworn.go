@@ -3864,11 +3864,17 @@ type TagRule struct {
 
 	AtlasEntry TagRuleAtlasEntry
 
+	Boolean TagRuleBoolean
+
 	DelveSite TagRuleDelveSite
 
 	DelveSiteDomain TagRuleDelveSiteDomain
 
 	DelveSiteTheme TagRuleDelveSiteTheme
+
+	Enum TagRuleEnum
+
+	Integer TagRuleInteger
 
 	Move TagRuleMove
 
@@ -3885,52 +3891,46 @@ type TagRule struct {
 	Rarity TagRuleRarity
 
 	Truth TagRuleTruth
-
-	Boolean TagRuleBoolean
-
-	Enum TagRuleEnum
-
-	Integer TagRuleInteger
 }
 
 func (v TagRule) MarshalJSON() ([]byte, error) {
 	switch v.ValueType {
-	case "Asset":
+	case "asset":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAsset }{ v.ValueType, v.Asset })
-	case "AssetCollection":
+	case "asset_collection":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAssetCollection }{ v.ValueType, v.AssetCollection })
-	case "AtlasCollection":
+	case "atlas_collection":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAtlasCollection }{ v.ValueType, v.AtlasCollection })
-	case "AtlasEntry":
+	case "atlas_entry":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleAtlasEntry }{ v.ValueType, v.AtlasEntry })
-	case "DelveSite":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSite }{ v.ValueType, v.DelveSite })
-	case "DelveSiteDomain":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteDomain }{ v.ValueType, v.DelveSiteDomain })
-	case "DelveSiteTheme":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteTheme }{ v.ValueType, v.DelveSiteTheme })
-	case "Move":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMove }{ v.ValueType, v.Move })
-	case "MoveCategory":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMoveCategory }{ v.ValueType, v.MoveCategory })
-	case "Npc":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpc }{ v.ValueType, v.Npc })
-	case "NpcCollection":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpcCollection }{ v.ValueType, v.NpcCollection })
-	case "OracleCollection":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleCollection }{ v.ValueType, v.OracleCollection })
-	case "OracleRollable":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleRollable }{ v.ValueType, v.OracleRollable })
-	case "Rarity":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleRarity }{ v.ValueType, v.Rarity })
-	case "Truth":
-		return json.Marshal(struct { T string `json:"value_type"`; TagRuleTruth }{ v.ValueType, v.Truth })
 	case "boolean":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleBoolean }{ v.ValueType, v.Boolean })
+	case "delve_site":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSite }{ v.ValueType, v.DelveSite })
+	case "delve_site_domain":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteDomain }{ v.ValueType, v.DelveSiteDomain })
+	case "delve_site_theme":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleDelveSiteTheme }{ v.ValueType, v.DelveSiteTheme })
 	case "enum":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleEnum }{ v.ValueType, v.Enum })
 	case "integer":
 		return json.Marshal(struct { T string `json:"value_type"`; TagRuleInteger }{ v.ValueType, v.Integer })
+	case "move":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMove }{ v.ValueType, v.Move })
+	case "move_category":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleMoveCategory }{ v.ValueType, v.MoveCategory })
+	case "npc":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpc }{ v.ValueType, v.Npc })
+	case "npc_collection":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleNpcCollection }{ v.ValueType, v.NpcCollection })
+	case "oracle_collection":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleCollection }{ v.ValueType, v.OracleCollection })
+	case "oracle_rollable":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleOracleRollable }{ v.ValueType, v.OracleRollable })
+	case "rarity":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleRarity }{ v.ValueType, v.Rarity })
+	case "truth":
+		return json.Marshal(struct { T string `json:"value_type"`; TagRuleTruth }{ v.ValueType, v.Truth })
 	}
 
 	return nil, fmt.Errorf("bad ValueType value: %s", v.ValueType)
@@ -3944,42 +3944,42 @@ func (v *TagRule) UnmarshalJSON(b []byte) error {
 
 	var err error
 	switch t.T {
-	case "Asset":
+	case "asset":
 		err = json.Unmarshal(b, &v.Asset)
-	case "AssetCollection":
+	case "asset_collection":
 		err = json.Unmarshal(b, &v.AssetCollection)
-	case "AtlasCollection":
+	case "atlas_collection":
 		err = json.Unmarshal(b, &v.AtlasCollection)
-	case "AtlasEntry":
+	case "atlas_entry":
 		err = json.Unmarshal(b, &v.AtlasEntry)
-	case "DelveSite":
-		err = json.Unmarshal(b, &v.DelveSite)
-	case "DelveSiteDomain":
-		err = json.Unmarshal(b, &v.DelveSiteDomain)
-	case "DelveSiteTheme":
-		err = json.Unmarshal(b, &v.DelveSiteTheme)
-	case "Move":
-		err = json.Unmarshal(b, &v.Move)
-	case "MoveCategory":
-		err = json.Unmarshal(b, &v.MoveCategory)
-	case "Npc":
-		err = json.Unmarshal(b, &v.Npc)
-	case "NpcCollection":
-		err = json.Unmarshal(b, &v.NpcCollection)
-	case "OracleCollection":
-		err = json.Unmarshal(b, &v.OracleCollection)
-	case "OracleRollable":
-		err = json.Unmarshal(b, &v.OracleRollable)
-	case "Rarity":
-		err = json.Unmarshal(b, &v.Rarity)
-	case "Truth":
-		err = json.Unmarshal(b, &v.Truth)
 	case "boolean":
 		err = json.Unmarshal(b, &v.Boolean)
+	case "delve_site":
+		err = json.Unmarshal(b, &v.DelveSite)
+	case "delve_site_domain":
+		err = json.Unmarshal(b, &v.DelveSiteDomain)
+	case "delve_site_theme":
+		err = json.Unmarshal(b, &v.DelveSiteTheme)
 	case "enum":
 		err = json.Unmarshal(b, &v.Enum)
 	case "integer":
 		err = json.Unmarshal(b, &v.Integer)
+	case "move":
+		err = json.Unmarshal(b, &v.Move)
+	case "move_category":
+		err = json.Unmarshal(b, &v.MoveCategory)
+	case "npc":
+		err = json.Unmarshal(b, &v.Npc)
+	case "npc_collection":
+		err = json.Unmarshal(b, &v.NpcCollection)
+	case "oracle_collection":
+		err = json.Unmarshal(b, &v.OracleCollection)
+	case "oracle_rollable":
+		err = json.Unmarshal(b, &v.OracleRollable)
+	case "rarity":
+		err = json.Unmarshal(b, &v.Rarity)
+	case "truth":
+		err = json.Unmarshal(b, &v.Truth)
 	default:
 		err = fmt.Errorf("bad ValueType value: %s", t.T)
 	}
@@ -4032,6 +4032,14 @@ type TagRuleAtlasEntry struct {
 	Wildcard bool `json:"wildcard"`
 }
 
+type TagRuleBoolean struct {
+	AppliesTo []ObjectType `json:"applies_to"`
+
+	Array bool `json:"array"`
+
+	Description MarkdownString `json:"description"`
+}
+
 type TagRuleDelveSite struct {
 	AppliesTo []ObjectType `json:"applies_to"`
 
@@ -4060,6 +4068,24 @@ type TagRuleDelveSiteTheme struct {
 	// If `true`, this field accepts an array of wildcard IDs. If `false`, this
 	// field accepts a single non-wildcard ID.
 	Wildcard bool `json:"wildcard"`
+}
+
+type TagRuleEnum struct {
+	AppliesTo []ObjectType `json:"applies_to"`
+
+	Array bool `json:"array"`
+
+	Description MarkdownString `json:"description"`
+
+	Enum []DictKey `json:"enum"`
+}
+
+type TagRuleInteger struct {
+	AppliesTo []ObjectType `json:"applies_to"`
+
+	Array bool `json:"array"`
+
+	Description MarkdownString `json:"description"`
 }
 
 type TagRuleMove struct {
@@ -4140,32 +4166,6 @@ type TagRuleTruth struct {
 	// If `true`, this field accepts an array of wildcard IDs. If `false`, this
 	// field accepts a single non-wildcard ID.
 	Wildcard bool `json:"wildcard"`
-}
-
-type TagRuleBoolean struct {
-	AppliesTo []ObjectType `json:"applies_to"`
-
-	Array bool `json:"array"`
-
-	Description MarkdownString `json:"description"`
-}
-
-type TagRuleEnum struct {
-	AppliesTo []ObjectType `json:"applies_to"`
-
-	Array bool `json:"array"`
-
-	Description MarkdownString `json:"description"`
-
-	Enum []DictKey `json:"enum"`
-}
-
-type TagRuleInteger struct {
-	AppliesTo []ObjectType `json:"applies_to"`
-
-	Array bool `json:"array"`
-
-	Description MarkdownString `json:"description"`
 }
 
 // A dictionary of tags, keyed by the RulesetID that the tags are from.

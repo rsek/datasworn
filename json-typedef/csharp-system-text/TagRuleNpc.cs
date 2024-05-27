@@ -8,7 +8,7 @@ namespace Datasworn
     public class TagRuleNpc : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "Npc"; }
+        public string ValueType_ { get => "npc"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }

@@ -7,7 +7,7 @@ import {
 } from '../const.js'
 
 export const IronswornClassic: DataPackageConfig = {
-	type: 'standalone',
+	type: 'ruleset',
 	paths: {
 		source: path.join(ROOT_SOURCE_DATA, 'classic')
 	},
@@ -50,7 +50,7 @@ export const IronswornClassicDelve: DataPackageConfig = {
 
 export const Starforged: DataPackageConfig = {
 	id: 'starforged',
-	type: 'standalone',
+	type: 'ruleset',
 	paths: {
 		source: path.join(ROOT_SOURCE_DATA, 'starforged'),
 		assets: [

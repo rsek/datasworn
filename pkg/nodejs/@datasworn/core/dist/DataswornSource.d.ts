@@ -895,7 +895,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'OracleRollable';
+    value_type: 'oracle_rollable';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -908,7 +908,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'Move';
+    value_type: 'move';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -921,7 +921,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'Asset';
+    value_type: 'asset';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -934,7 +934,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'AtlasEntry';
+    value_type: 'atlas_entry';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -947,7 +947,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'Npc';
+    value_type: 'npc';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -960,7 +960,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'OracleCollection';
+    value_type: 'oracle_collection';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -973,7 +973,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'MoveCategory';
+    value_type: 'move_category';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -986,7 +986,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'AssetCollection';
+    value_type: 'asset_collection';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -999,7 +999,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'AtlasCollection';
+    value_type: 'atlas_collection';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -1012,7 +1012,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'NpcCollection';
+    value_type: 'npc_collection';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -1025,7 +1025,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'DelveSite';
+    value_type: 'delve_site';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -1038,7 +1038,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'DelveSiteTheme';
+    value_type: 'delve_site_theme';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -1051,7 +1051,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'DelveSiteDomain';
+    value_type: 'delve_site_domain';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -1064,7 +1064,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'Truth';
+    value_type: 'truth';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.
@@ -1077,7 +1077,7 @@ export type TagRule = {
      * @default false
      */
     wildcard?: boolean;
-    value_type: 'Rarity';
+    value_type: 'rarity';
 } | {
     /**
      * Types of object that can receive this tag, or `null` if any type of object accepts it.

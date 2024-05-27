@@ -2247,6 +2247,15 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class TagRuleBoolean < TagRule
+    attr_accessor applies_to: Array[ObjectType]
+    attr_accessor array: bool
+    attr_accessor description: MarkdownString
+
+    def self.from_json_data: (untyped) -> TagRuleBoolean
+    def to_json_data: () -> untyped
+  end
+
   class TagRuleDelveSite < TagRule
     attr_accessor applies_to: Array[ObjectType]
     attr_accessor description: MarkdownString
@@ -2271,6 +2280,25 @@ module Datasworn
     attr_accessor wildcard: bool
 
     def self.from_json_data: (untyped) -> TagRuleDelveSiteTheme
+    def to_json_data: () -> untyped
+  end
+
+  class TagRuleEnum < TagRule
+    attr_accessor applies_to: Array[ObjectType]
+    attr_accessor array: bool
+    attr_accessor description: MarkdownString
+    attr_accessor enum: Array[DictKey]
+
+    def self.from_json_data: (untyped) -> TagRuleEnum
+    def to_json_data: () -> untyped
+  end
+
+  class TagRuleInteger < TagRule
+    attr_accessor applies_to: Array[ObjectType]
+    attr_accessor array: bool
+    attr_accessor description: MarkdownString
+
+    def self.from_json_data: (untyped) -> TagRuleInteger
     def to_json_data: () -> untyped
   end
 
@@ -2343,34 +2371,6 @@ module Datasworn
     attr_accessor wildcard: bool
 
     def self.from_json_data: (untyped) -> TagRuleTruth
-    def to_json_data: () -> untyped
-  end
-
-  class TagRuleBoolean < TagRule
-    attr_accessor applies_to: Array[ObjectType]
-    attr_accessor array: bool
-    attr_accessor description: MarkdownString
-
-    def self.from_json_data: (untyped) -> TagRuleBoolean
-    def to_json_data: () -> untyped
-  end
-
-  class TagRuleEnum < TagRule
-    attr_accessor applies_to: Array[ObjectType]
-    attr_accessor array: bool
-    attr_accessor description: MarkdownString
-    attr_accessor enum: Array[DictKey]
-
-    def self.from_json_data: (untyped) -> TagRuleEnum
-    def to_json_data: () -> untyped
-  end
-
-  class TagRuleInteger < TagRule
-    attr_accessor applies_to: Array[ObjectType]
-    attr_accessor array: bool
-    attr_accessor description: MarkdownString
-
-    def self.from_json_data: (untyped) -> TagRuleInteger
     def to_json_data: () -> untyped
   end
 

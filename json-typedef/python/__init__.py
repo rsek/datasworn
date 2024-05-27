@@ -7754,24 +7754,24 @@ class TagRule:
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRule':
         variants: Dict[str, Type[TagRule]] = {
-            "Asset": TagRuleAsset,
-            "AssetCollection": TagRuleAssetCollection,
-            "AtlasCollection": TagRuleAtlasCollection,
-            "AtlasEntry": TagRuleAtlasEntry,
-            "DelveSite": TagRuleDelveSite,
-            "DelveSiteDomain": TagRuleDelveSiteDomain,
-            "DelveSiteTheme": TagRuleDelveSiteTheme,
-            "Move": TagRuleMove,
-            "MoveCategory": TagRuleMoveCategory,
-            "Npc": TagRuleNpc,
-            "NpcCollection": TagRuleNpcCollection,
-            "OracleCollection": TagRuleOracleCollection,
-            "OracleRollable": TagRuleOracleRollable,
-            "Rarity": TagRuleRarity,
-            "Truth": TagRuleTruth,
+            "asset": TagRuleAsset,
+            "asset_collection": TagRuleAssetCollection,
+            "atlas_collection": TagRuleAtlasCollection,
+            "atlas_entry": TagRuleAtlasEntry,
             "boolean": TagRuleBoolean,
+            "delve_site": TagRuleDelveSite,
+            "delve_site_domain": TagRuleDelveSiteDomain,
+            "delve_site_theme": TagRuleDelveSiteTheme,
             "enum": TagRuleEnum,
             "integer": TagRuleInteger,
+            "move": TagRuleMove,
+            "move_category": TagRuleMoveCategory,
+            "npc": TagRuleNpc,
+            "npc_collection": TagRuleNpcCollection,
+            "oracle_collection": TagRuleOracleCollection,
+            "oracle_rollable": TagRuleOracleRollable,
+            "rarity": TagRuleRarity,
+            "truth": TagRuleTruth,
         }
 
         return variants[data["value_type"]].from_json_data(data)
@@ -7793,14 +7793,14 @@ class TagRuleAsset(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAsset':
         return cls(
-            "Asset",
+            "asset",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "Asset" }
+        data = { "value_type": "asset" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -7820,14 +7820,14 @@ class TagRuleAssetCollection(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAssetCollection':
         return cls(
-            "AssetCollection",
+            "asset_collection",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "AssetCollection" }
+        data = { "value_type": "asset_collection" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -7847,14 +7847,14 @@ class TagRuleAtlasCollection(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAtlasCollection':
         return cls(
-            "AtlasCollection",
+            "atlas_collection",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "AtlasCollection" }
+        data = { "value_type": "atlas_collection" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -7874,311 +7874,14 @@ class TagRuleAtlasEntry(TagRule):
     @classmethod
     def from_json_data(cls, data: Any) -> 'TagRuleAtlasEntry':
         return cls(
-            "AtlasEntry",
+            "atlas_entry",
             _from_json_data(List[ObjectType], data.get("applies_to")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(bool, data.get("wildcard")),
         )
 
     def to_json_data(self) -> Any:
-        data = { "value_type": "AtlasEntry" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleDelveSite(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleDelveSite':
-        return cls(
-            "DelveSite",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "DelveSite" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleDelveSiteDomain(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteDomain':
-        return cls(
-            "DelveSiteDomain",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "DelveSiteDomain" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleDelveSiteTheme(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteTheme':
-        return cls(
-            "DelveSiteTheme",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "DelveSiteTheme" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleMove(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleMove':
-        return cls(
-            "Move",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "Move" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleMoveCategory(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleMoveCategory':
-        return cls(
-            "MoveCategory",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "MoveCategory" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleNpc(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleNpc':
-        return cls(
-            "Npc",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "Npc" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleNpcCollection(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleNpcCollection':
-        return cls(
-            "NpcCollection",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "NpcCollection" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleOracleCollection(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleOracleCollection':
-        return cls(
-            "OracleCollection",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "OracleCollection" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleOracleRollable(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleOracleRollable':
-        return cls(
-            "OracleRollable",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "OracleRollable" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleRarity(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleRarity':
-        return cls(
-            "Rarity",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "Rarity" }
-        data["applies_to"] = _to_json_data(self.applies_to)
-        data["description"] = _to_json_data(self.description)
-        data["wildcard"] = _to_json_data(self.wildcard)
-        return data
-
-@dataclass
-class TagRuleTruth(TagRule):
-    applies_to: 'List[ObjectType]'
-    description: 'MarkdownString'
-    wildcard: 'bool'
-    """
-    If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    field accepts a single non-wildcard ID.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'TagRuleTruth':
-        return cls(
-            "Truth",
-            _from_json_data(List[ObjectType], data.get("applies_to")),
-            _from_json_data(MarkdownString, data.get("description")),
-            _from_json_data(bool, data.get("wildcard")),
-        )
-
-    def to_json_data(self) -> Any:
-        data = { "value_type": "Truth" }
+        data = { "value_type": "atlas_entry" }
         data["applies_to"] = _to_json_data(self.applies_to)
         data["description"] = _to_json_data(self.description)
         data["wildcard"] = _to_json_data(self.wildcard)
@@ -8204,6 +7907,87 @@ class TagRuleBoolean(TagRule):
         data["applies_to"] = _to_json_data(self.applies_to)
         data["array"] = _to_json_data(self.array)
         data["description"] = _to_json_data(self.description)
+        return data
+
+@dataclass
+class TagRuleDelveSite(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSite':
+        return cls(
+            "delve_site",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "delve_site" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleDelveSiteDomain(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteDomain':
+        return cls(
+            "delve_site_domain",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "delve_site_domain" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleDelveSiteTheme(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleDelveSiteTheme':
+        return cls(
+            "delve_site_theme",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "delve_site_theme" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
         return data
 
 @dataclass
@@ -8251,6 +8035,222 @@ class TagRuleInteger(TagRule):
         data["applies_to"] = _to_json_data(self.applies_to)
         data["array"] = _to_json_data(self.array)
         data["description"] = _to_json_data(self.description)
+        return data
+
+@dataclass
+class TagRuleMove(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleMove':
+        return cls(
+            "move",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "move" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleMoveCategory(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleMoveCategory':
+        return cls(
+            "move_category",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "move_category" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleNpc(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleNpc':
+        return cls(
+            "npc",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "npc" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleNpcCollection(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleNpcCollection':
+        return cls(
+            "npc_collection",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "npc_collection" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleOracleCollection(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleOracleCollection':
+        return cls(
+            "oracle_collection",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "oracle_collection" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleOracleRollable(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleOracleRollable':
+        return cls(
+            "oracle_rollable",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "oracle_rollable" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleRarity(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleRarity':
+        return cls(
+            "rarity",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "rarity" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
+        return data
+
+@dataclass
+class TagRuleTruth(TagRule):
+    applies_to: 'List[ObjectType]'
+    description: 'MarkdownString'
+    wildcard: 'bool'
+    """
+    If `true`, this field accepts an array of wildcard IDs. If `false`, this
+    field accepts a single non-wildcard ID.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TagRuleTruth':
+        return cls(
+            "truth",
+            _from_json_data(List[ObjectType], data.get("applies_to")),
+            _from_json_data(MarkdownString, data.get("description")),
+            _from_json_data(bool, data.get("wildcard")),
+        )
+
+    def to_json_data(self) -> Any:
+        data = { "value_type": "truth" }
+        data["applies_to"] = _to_json_data(self.applies_to)
+        data["description"] = _to_json_data(self.description)
+        data["wildcard"] = _to_json_data(self.wildcard)
         return data
 
 @dataclass

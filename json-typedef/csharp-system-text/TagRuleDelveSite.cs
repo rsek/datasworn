@@ -8,7 +8,7 @@ namespace Datasworn
     public class TagRuleDelveSite : TagRule
     {
         [JsonPropertyName("value_type")]
-        public string ValueType_ { get => "DelveSite"; }
+        public string ValueType_ { get => "delve_site"; }
 
         [JsonPropertyName("applies_to")]
         public IList<ObjectType> AppliesTo { get; set; }
