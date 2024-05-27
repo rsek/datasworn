@@ -245,30 +245,14 @@ oracles:
             #     attributes:
             #       life: [none, extinct]
             rows:
-              - min: null
-                max: null
-                <<: *PlanetPeril.0
-              - min: null
-                max: null
-                <<: *PlanetPeril.1
-              - min: null
-                max: null
-                <<: *PlanetPeril.2
-              - min: null
-                max: null
-                <<: *PlanetPeril.3
-              - min: null
-                max: null
-                <<: *PlanetPeril.4
-              - min: null
-                max: null
-                <<: *PlanetPeril.5
-              - min: null
-                max: null
-                <<: *PlanetPeril.6
-              - min: null
-                max: null
-                <<: *PlanetPeril.7
+              - <<: *PlanetPeril.0
+              - <<: *PlanetPeril.1
+              - <<: *PlanetPeril.2
+              - <<: *PlanetPeril.3
+              - <<: *PlanetPeril.4
+              - <<: *PlanetPeril.5
+              - <<: *PlanetPeril.6
+              - <<: *PlanetPeril.7
               - roll: { min: 1, max: 3 }
                 <<: *PlanetPeril.8
               - roll: { min: 4, max: 7 }
@@ -416,21 +400,11 @@ oracles:
             # usage:
             #   requires: *attr:Life.Lifeless
             rows:
-              - min: null
-                max: null
-                text: *Opp.0
-              - min: null
-                max: null
-                text: *Opp.1
-              - min: null
-                max: null
-                text: *Opp.2
-              - min: null
-                max: null
-                text: *Opp.3
-              - min: null
-                max: null
-                text: *Opp.4
+              - text: *Opp.0
+              - text: *Opp.1
+              - text: *Opp.2
+              - text: *Opp.3
+              - text: *Opp.4
               - roll: { min: 1, max: 5 }
                 text: *Opp.5
               - roll: { min: 6, max: 10 }

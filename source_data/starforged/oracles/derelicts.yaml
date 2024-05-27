@@ -121,8 +121,6 @@ oracles:
               - <<: &ZoneRow.0
                   text: '[Access](id:starforged/collections/oracles/derelicts/access)'
                   icon: icons/derelicts/access.svg
-                min: null
-                max: null
                 # game_objects: *obj:DerelictZone.Access
               - <<: &ZoneRow.1
                   text: '[Community](id:starforged/collections/oracles/derelicts/community)'
